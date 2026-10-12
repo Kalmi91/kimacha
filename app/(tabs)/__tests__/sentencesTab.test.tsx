@@ -44,10 +44,13 @@ jest.mock('@/data/pcic', () => {
 
 import { act, fireEvent, render } from '@testing-library/react-native';
 
+import { __resetBetaForTest, setBeta } from '@/lib/beta';
+import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
+import { localDateString } from '@/lib/usageStats';
 import SentencesScreen from '../sentences';
 
 jest.setTimeout(30000);
@@ -85,6 +88,10 @@ const doneCount = (r: R) => String(r.getByTestId('sentences-progress-text').prop
 beforeEach(async () => {
   await getDb().resetPcicCards();
   await getDb().setOnboarding('en', 'es');
+  __resetBetaForTest();
+  await getDb().setBetaFlag('xpV2', false);
+  resetDailyXp();
+  await getDb().addDailyXpTenths(localDateString(), -100000);
   mockRecord.mockClear();
 });
 afterEach(() => setLanguage('en'));
@@ -214,5 +221,42 @@ describe('Sentences tab', () => {
     expect(r.getByText('The book and the table.')).toBeTruthy();
     expect(mockRecord).not.toHaveBeenCalled();
     expect(doneCount(r)).toBe('0 / 3');
+  });
+
+  // "el gato" is a one-word sentence on the word a1-w3 (reps 2): its half is worth 1 XP with the switch on.
+  const playGato = async (r: R) => {
+    build(r, ['el', 'gato']);
+    check(r);
+    next(r);
+    await flush();
+    typeIt(r, 'el gato');
+    next(r);
+    await flush();
+  };
+
+  it('beta xpV2 off (default): a right sentence gives the half but no XP', async () => {
+    await learnWords([3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    await playGato(r);
+    expect(mockRecord).toHaveBeenCalledTimes(1);
+    expect(await getDb().getDailyXpTenths(localDateString())).toBe(0);
+  });
+
+  it('beta xpV2 on: a right sentence earns one half XP per word (1 XP; 0.2 XP from the 3rd repetition)', async () => {
+    await setBeta('xpV2', true);
+    await learnWords([3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    await playGato(r);
+    expect(await getDb().getDailyXpTenths(localDateString())).toBe(10);
+    r.unmount();
+
+    await getDb().resetPcicCards();
+    await getDb().upsertPcicCard({ ...learned(3), reps: 3 });
+    const again = render(<SentencesScreen />);
+    await flush();
+    await playGato(again);
+    expect(await getDb().getDailyXpTenths(localDateString())).toBe(12);
   });
 });

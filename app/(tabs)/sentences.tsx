@@ -11,6 +11,7 @@ import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -66,6 +67,8 @@ export default function SentencesScreen() {
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
+  // beta: xpV2, each word's half of a right sentence earns XP; off = no XP, the old behavior.
+  const xpV2 = useBeta('xpV2');
 
   const [loading, setLoading] = useState(true);
   const [target, setTarget] = useState<PcicTarget>('es');
@@ -136,8 +139,7 @@ export default function SentencesScreen() {
     busy.current = true;
     try {
       if (correct) {
-        // xp: xpForHalf (6. lépés)
-        await recordSentenceHalves(current.wordIds);
+        await recordSentenceHalves(current.wordIds, undefined, xpV2);
         doneKeys.current.add(sentenceKey(current));
         setDone((n) => n + 1);
       }

@@ -7,6 +7,7 @@ import type { PcicItem } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { afterSentence, buildSentenceQueue, isDueCard, recordSentenceHalves, sentenceKey } from '@/lib/sentenceTab';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
+import { localDateString } from '@/lib/usageStats';
 
 const TODAY = '2026-10-12';
 
@@ -120,5 +121,17 @@ describe('recordSentenceHalves', () => {
     const again = (await db.getPcicCards()).find((c) => c.itemId === 'a1-s1')!;
     expect(again.halfSteps).toBe(0);
     expect(again.reps).toBe(3);
+  });
+
+  it('beta xpV2: off earns no XP; on, each half earns XP by its own word reps (1, or 0.2 from the 3rd)', async () => {
+    const db = getDb();
+    const day = localDateString();
+    await db.addDailyXpTenths(day, -100000);
+    await db.upsertPcicCard(learned(ITEMS[0]));
+    await db.upsertPcicCard({ ...learned(ITEMS[1]), reps: 3 });
+    await recordSentenceHalves(['a1-s1', 'a1-s2'], TODAY);
+    expect(await db.getDailyXpTenths(day)).toBe(0);
+    await recordSentenceHalves(['a1-s1', 'a1-s2', 'a1-nocard'], TODAY, true);
+    expect(await db.getDailyXpTenths(day)).toBe(10 + 2);
   });
 });
