@@ -12,12 +12,14 @@ import { useDockLift } from '@/components/learn/useDockLift';
 import ResultBadge from '@/components/ResultBadge';
 import SpeakButton from '@/components/SpeakButton';
 import { findPcicItem, setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { answerInputProps } from '@/lib/inputProps';
 import { speechLang } from '@/lib/languages';
 import { buildGapQueue, checkGap, type GapTask } from '@/lib/practice/gapFill';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
+import { recordCorrectHalf } from '@/lib/practice/halfXp';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { localDateString } from '@/lib/usageStats';
 
@@ -34,6 +36,8 @@ export default function PracticeScreen() {
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
+  // beta: xpV2, a correct answer (one half) earns XP; off = no XP, the old behavior.
+  const xpV2 = useBeta('xpV2');
   const { dockLift } = useDockLift();
   const [dockH, setDockH] = useState(DOCK_RESERVE);
 
@@ -97,8 +101,7 @@ export default function PracticeScreen() {
     // A failing save must not break the round.
     if (ok) {
       setRight((n) => n + 1);
-      // xp: xpForHalf (6. lépés)
-      void recordPracticeResult(task.itemId, 'correct').catch(() => {});
+      void recordCorrectHalf(task.itemId, xpV2).catch(() => {});
       pause.current = setTimeout(advance, CORRECT_PAUSE_MS);
     } else {
       void recordPracticeResult(task.itemId, 'wrongTyped').catch(() => {});

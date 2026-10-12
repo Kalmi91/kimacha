@@ -24,6 +24,8 @@ jest.mock('@/lib/practice/halfStep', () => {
 
 import { act, fireEvent, render } from '@testing-library/react-native';
 
+import { __resetBetaForTest, setBeta } from '@/lib/beta';
+import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
@@ -85,6 +87,10 @@ beforeEach(async () => {
   jest.useFakeTimers();
   await getDb().resetPcicCards();
   await getDb().setStrictAccents(false);
+  __resetBetaForTest();
+  await getDb().setBetaFlag('xpV2', false);
+  resetDailyXp();
+  await getDb().addDailyXpTenths(TODAY, -100000);
   mockRecord.mockClear();
   mockSpeak.mockClear();
 });
@@ -242,6 +248,38 @@ describe('Practice tab', () => {
     const view = await mount();
     await answer(view, 'Voy');
     expect(mockSpeak).toHaveBeenCalledWith('Voy con ella.', 'es-MX');
+    view.unmount();
+  });
+
+  it('beta xpV2 off (default): a right answer is a half, but earns no XP', async () => {
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    const view = await mount();
+    await answer(view, 'Voy');
+    expect(mockRecord).toHaveBeenLastCalledWith('o33', 'correct');
+    expect(await getDb().getDailyXpTenths(TODAY)).toBe(0);
+    view.unmount();
+  });
+
+  it('beta xpV2 on: a right answer earns 1 XP, 0.2 XP once the word has 3+ repetitions', async () => {
+    await setBeta('xpV2', true);
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    await getDb().upsertPcicCard(learned('o47', '2000-01-02', { reps: 3 }));
+    const view = await mount();
+    await answer(view, 'Voy');
+    expect(await getDb().getDailyXpTenths(TODAY)).toBe(10);
+    await afterPause();
+    await answer(view, 'Hablo');
+    expect(await getDb().getDailyXpTenths(TODAY)).toBe(12);
+    view.unmount();
+  });
+
+  it('beta xpV2 on: a wrong answer earns nothing', async () => {
+    await setBeta('xpV2', true);
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    const view = await mount();
+    await answer(view, 'xyz');
+    expect(mockRecord).toHaveBeenLastCalledWith('o33', 'wrongTyped');
+    expect(await getDb().getDailyXpTenths(TODAY)).toBe(0);
     view.unmount();
   });
 });
