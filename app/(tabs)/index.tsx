@@ -8,6 +8,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
+import { getBeta } from '@/lib/beta';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
@@ -406,6 +407,8 @@ export default function PcicScreen() {
     // After every 4th NEW word a sentence card can come
     // (practice only, its result does not write SRS).
     if (!wasNew) return;
+    // Beta "Sentences tab" on: the sentence cards live on that tab, none comes here.
+    if (getBeta('sentenceTab')) return;
     const cardsById = new Map(allLevelCards.map((c) => [c.itemId, c]));
     for (const [id, c] of allCards) cardsById.set(id, c);
     cardsById.set(next.itemId, next);
