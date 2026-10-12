@@ -7,6 +7,7 @@ import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
+import { useBeta } from '@/lib/beta';
 import { t } from '@/lib/i18n';
 import { languages } from '@/lib/languages';
 import {
@@ -80,7 +81,8 @@ export default function StatsScreen() {
   // The daily bar is shown in hours above 60 minutes, and switches to minutes on tap.
   const [chartInMinutes, setChartInMinutes] = useState(false);
 
-  const showLevels: boolean = false; // beta: levels
+  // beta: levels, the level card (Settings -> Beta); off = no card and no level data read.
+  const showLevels = useBeta('levels');
 
   // Refresh every time the tab gains focus so numbers stay current across app-wide activity.
   useFocusEffect(
