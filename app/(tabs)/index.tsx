@@ -11,7 +11,7 @@ import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
-import { addXp, xpForGrade, DAILY_XP_GOAL, type DailyXp } from '@/lib/dailyXp';
+import { addXp, getXp, wholeXp, xpForCard, DAILY_XP_GOAL, type DailyXp } from '@/lib/dailyXp';
 import { pcicItemsForLevel, findPcicItem, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade, type PcicGrade } from '@/lib/pcicMatch';
 import {
@@ -61,6 +61,9 @@ const SHEET_CLOSE_MS = 500;
 function pcicIntroOrder(memberIds: string[]): string[] {
   return thinSentences(memberIds, (id) => findPcicItem(id)?.kind, (id) => id);
 }
+
+// beta: xpV2 (the XP v2 values, lib/dailyXp.ts); PLAN-harom-jatek step 6 binds it to useBeta('xpV2').
+const XP_V2 = false;
 
 // Snapshot of one undoable grade. `counted` = whether it also advanced the
 // counters (the "Don't learn this" button will write false here).
@@ -204,7 +207,7 @@ export default function PcicScreen() {
     setDailyNewLimit(newLimit);
     setAgainDelaySec(delaySec);
     setToday(day);
-    setDailyXp({ date: day, xp: await db.getDailyXp(day) });
+    setDailyXp(await getXp(day));
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
     // Card-level resume: the saved order and the "again" timers are put back on the rebuilt queue (invalid after a day change / level change).
     const resume = await loadLearnResume(db);
@@ -299,7 +302,7 @@ export default function PcicScreen() {
   const dueRemaining = queue.filter((c) => c.state !== 'new').length;
   const newRemaining = queue.filter((c) => c.state === 'new').length;
   const doneToday = countDoneToday([...allCards.values()], today);
-  const xpToday = dailyXp.date === localDateString() ? dailyXp.xp : 0;
+  const xpToday = dailyXp.date === localDateString() ? wholeXp(dailyXp.xp) : 0;
   // The header shows WHAT today's introduction
   // consists of (word vs. sentence), plus today's total budget (limit + bonus).
   // The daily budget is DAILY, so "introduced today" counts across all levels: at the viewed level the live state
@@ -334,8 +337,8 @@ export default function PcicScreen() {
     // Learn tab, the only earlier caller, was removed); after the first call of the day the method is
     // a no-op, so it is safe on Again too.
     await getDb().updateStreak();
-    // "Knew it" earns XP (new word 3, review 2), "Didn't know" none.
-    const points = xpForGrade(wasNew, g);
+    // "Knew it" earns XP (new word 3, review 2; XP v2: lib/dailyXp.ts), "Didn't know" none.
+    const points = xpForCard({ isNew: wasNew, isDue: !wasNew && before.due <= today, reviewCount: before.reps, knew: g !== 'again' }, { v2: XP_V2 });
     const earned = points > 0 ? await addXp(points) : null;
     if (earned) setDailyXp(earned);
 
