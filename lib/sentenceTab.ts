@@ -7,7 +7,7 @@
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { isSentenceKnownIn, knownTokens, sentenceTokens, type ResolvedTense } from '@/lib/knownSentence';
-import { recordPracticeResult } from '@/lib/practice/halfStep';
+import { recordCorrectHalf } from '@/lib/practice/halfXp';
 import { learnedEntryOf, sentencePair, tileWords } from '@/lib/sentenceCards';
 import type { Sm2Card } from '@/lib/sm2';
 
@@ -111,12 +111,13 @@ export function afterSentence(queue: readonly SentenceEntry[], correct: boolean)
 
 /**
  * A correct sentence: each learned word in it gets one half (spec 5.1), once per word however often
- * it occurs. Returns how many words had a card that took the half.
+ * it occurs. Returns how many words had a card that took the half. With `v2` (beta xpV2) each
+ * half also earns its XP (lib/practice/halfXp.ts), one half per word; off = no XP, the old behavior.
  */
-export async function recordSentenceHalves(wordIds: readonly string[], today?: string): Promise<number> {
+export async function recordSentenceHalves(wordIds: readonly string[], today?: string, v2 = false): Promise<number> {
   let n = 0;
   for (const id of wordIds) {
-    if (await recordPracticeResult(id, 'correct', today)) n++;
+    if (await recordCorrectHalf(id, v2, today)) n++;
   }
   return n;
 }

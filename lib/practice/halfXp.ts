@@ -9,9 +9,10 @@ import { recordPracticeResult, type PracticeOutcome } from './halfStep';
 
 // `reviewCount` is the card's reps at the time of the answer, read BEFORE the half is recorded
 // (the second half moves the card one step, reps + 1), as xpForCard gets it on the main card.
-export async function recordCorrectHalf(cardId: string, v2: boolean): Promise<PracticeOutcome | null> {
+// `today` is for tests; left out, recordPracticeResult uses the local date.
+export async function recordCorrectHalf(cardId: string, v2: boolean, today?: string): Promise<PracticeOutcome | null> {
   const before = await getDb().getPcicCard(cardId);
-  const outcome = await recordPracticeResult(cardId, 'correct');
+  const outcome = today === undefined ? await recordPracticeResult(cardId, 'correct') : await recordPracticeResult(cardId, 'correct', today);
   if (outcome && before) {
     const points = xpForHalf({ reviewCount: before.reps }, { v2 });
     if (points > 0) await addXp(points);
