@@ -391,6 +391,16 @@ const es: Strings = {
     scheduleNextDays: (days: number) => `en ${days} ${days === 1 ? 'día' : 'días'}`,
     scheduleEmpty: '¡Todavía no hay nada guardado, aprende algunas palabras!',
   },
+  levelCard: {
+    title: 'Tu nivel',
+    level: (level: string) => `Nivel ${level}`,
+    heading: (level: string) => `Rumbo a ${level}`,
+    top: 'Has superado el nivel más alto.',
+    goal: (level: string) => `Para superar ${level}`,
+    rule: (pct: number) => `El ${pct}% de las palabras del nivel aprendidas y todos los temas de gramática hechos.`,
+    words: (known: number, needed: number, total: number, pct: number) => `Palabras aprendidas: ${known} / ${needed} (${pct}% de ${total})`,
+    grammar: (done: number, total: number) => `Temas de gramática hechos: ${done} / ${total}`,
+  },
   pcic: {
     badgeTotal: (n: number) => `${n} palabras`,
     badgeDue: (n: number) => `pendientes ${n}`,
