@@ -46,15 +46,25 @@ export function learnedEntries(
 ): LearnedEntry[] {
   const out: LearnedEntry[] = [];
   for (const card of cards) {
-    if (!isLearnedCard(card)) continue;
-    const item = findItem(card.itemId);
-    if (!item) continue;
-    out.push({
-      text: target === 'es' ? item.es : item.en,
-      pos: item.pos ?? (target === 'es' ? posOf(item)?.pos : undefined),
-    });
+    const entry = learnedEntryOf(card, target, findItem);
+    if (entry) out.push(entry);
   }
   return out;
+}
+
+/** The gate entry of one card, or null if the card is not learned (or its item is gone from the corpus). */
+export function learnedEntryOf(
+  card: Sm2Card,
+  target: PcicTarget,
+  findItem: (id: string) => PcicItem | undefined,
+): LearnedEntry | null {
+  if (!isLearnedCard(card)) return null;
+  const item = findItem(card.itemId);
+  if (!item) return null;
+  return {
+    text: target === 'es' ? item.es : item.en,
+    pos: item.pos ?? (target === 'es' ? posOf(item)?.pos : undefined),
+  };
 }
 
 const SENTENCE_PUNCT = /[.!?¡¿,;:]/g;
@@ -76,7 +86,7 @@ export function tileWords(sentence: string): string[] {
     .map((w, i) => (i === 0 ? w.charAt(0).toLowerCase() + w.slice(1) : w));
 }
 
-function sentencePair(item: PcicItem, target: PcicTarget): { source: string; target: string } | null {
+export function sentencePair(item: PcicItem, target: PcicTarget): { source: string; target: string } | null {
   const targetSentence = (target === 'es' ? item.exampleEs : item.exampleEn)?.trim();
   const sourceSentence = (target === 'es' ? item.exampleEn : item.exampleEs)?.trim();
   if (!targetSentence || !sourceSentence) return null;
