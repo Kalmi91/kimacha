@@ -465,12 +465,12 @@ const es: Strings = {
     roundScore: (right: number, total: number) => `${right} de ${total} correctas`,
     again: 'Practicar otra vez',
   },
-  // Pestaña Frases (beta): progreso, los dos pasos de una frase, estados vacío y ronda terminada.
+  // Pestaña Frases (beta): progreso (pasos: cada construcción más la única escritura), el paso de construir y el de escribir, estados vacío y ronda terminada.
   sentenceTab: {
     progress: (done: number, total: number) => `${done} / ${total}`,
-    progressA11y: (done: number, total: number) => `Frases hechas: ${done} de ${total}`,
-    stepBuild: 'Paso 1 de 2: construye la frase',
-    stepType: 'Paso 2 de 2: escribe la frase',
+    progressA11y: (done: number, total: number) => `Pasos hechos: ${done} de ${total}`,
+    stepBuild: (n: number, total: number) => `Construye la frase ${n} de ${total}`,
+    stepType: 'Último paso: escribe esta frase',
     empty: 'Aprende más palabras para desbloquear frases',
     roundDone: (n: number) => (n === 1 ? 'Ronda terminada: 1 frase' : `Ronda terminada: ${n} frases`),
     more: 'Más frases',

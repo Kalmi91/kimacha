@@ -11,8 +11,8 @@ import { recordCorrectHalf } from '@/lib/practice/halfXp';
 import { learnedEntryOf, sentencePair, tileWords } from '@/lib/sentenceCards';
 import type { Sm2Card } from '@/lib/sm2';
 
-/** How many sentences one round holds (the progress bar's whole). */
-export const SENTENCE_ROUND_SIZE = 10;
+/** How many sentences one round holds: all are built, then one of them is typed (lib/sentenceRound.ts). */
+export const SENTENCE_ROUND_SIZE = 4;
 
 export interface SentenceEntry {
   /** The item whose example sentence this is. */
