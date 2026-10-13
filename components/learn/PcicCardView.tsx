@@ -19,7 +19,8 @@ import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
 import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
-import DockedAction, { FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import DockedAction from '@/components/learn/DockedAction';
+import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
@@ -59,6 +60,7 @@ export default function PcicCardView({
   sourceLang,
   strictAccents,
   dockLift,
+  kbHeight,
   dockH,
   setDockH,
   languagePair,
@@ -339,6 +341,7 @@ export default function PcicCardView({
   // The docked Check bar switches to "Next" after reveal,
   // in the same place/size, with the suggested grade in the label.
   const nextGrade = grade ? suggestedGrade(grade) : null;
+  const dockInsets = dockScrollInsets(dockH, dockLift, kbHeight > 0);
 
   return (
     <KeyboardAvoidingView
@@ -369,8 +372,8 @@ export default function PcicCardView({
       )}
 
       <ScrollView
-        style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
+        style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: dockInsets.paddingBottom }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
