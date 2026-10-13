@@ -56,7 +56,7 @@ export async function recordPracticeResult(
   const card = await db.getPcicCard(cardId);
   if (!card || card.state === 'new') return null;
   const outcome = applyPracticeResult({ halfSteps: card.halfSteps ?? 0, wrongStreak: card.wrongStreak ?? 0 }, result);
-  const moved = outcome.srs === 'forward' ? sm2Review(card, 'good', today) : outcome.srs === 'back' ? sm2StepBack(card, today) : card;
+  const moved = outcome.srs === 'forward' && card.due <= today ? sm2Review(card, 'good', today) : outcome.srs === 'back' ? sm2StepBack(card, today) : card;
   await db.upsertPcicCard({ ...moved, halfSteps: outcome.halfSteps, wrongStreak: outcome.wrongStreak });
   return outcome;
 }

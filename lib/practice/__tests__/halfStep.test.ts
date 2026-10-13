@@ -93,12 +93,20 @@ describe('recordPracticeResult (memory db)', () => {
   });
 
   it('2 correct answers = 1 full step: the same schedule as the main card "Knew it" (good)', async () => {
-    const card = review('w2', { due: '2026-10-13', interval: 3 });
+    const card = review('w2', { due: TODAY, interval: 3 });
     await db.upsertPcicCard(card);
     await recordPracticeResult('w2', 'correct', TODAY);
     expect(await recordPracticeResult('w2', 'correct', TODAY)).toEqual({ halfSteps: 0, wrongStreak: 0, srs: 'forward' });
     const knewIt = sm2Review(card, 'good', TODAY);
     expect(await db.getPcicCard('w2')).toEqual({ ...knewIt, halfSteps: 0, wrongStreak: 0 });
+  });
+
+  it('2 correct answers on a word that is not due: the halves reset, but the interval and reps stay', async () => {
+    const card = review('w2b', { due: '2026-10-13', interval: 3 });
+    await db.upsertPcicCard(card);
+    await recordPracticeResult('w2b', 'correct', TODAY);
+    expect(await recordPracticeResult('w2b', 'correct', TODAY)).toEqual({ halfSteps: 0, wrongStreak: 0, srs: 'forward' });
+    expect(await db.getPcicCard('w2b')).toEqual({ ...card, halfSteps: 0, wrongStreak: 0 });
   });
 
   it('2 wrong typed answers in a row = 1 step back; a wrong pick in between changes nothing', async () => {
