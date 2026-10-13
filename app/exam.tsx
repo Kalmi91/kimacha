@@ -113,6 +113,8 @@ export default function ExamScreen() {
   const [results, setResults] = useState<ExamItemResult[]>([]);
   const [score, setScore] = useState<ExamScore | null>(null);
   const [leaving, setLeaving] = useState(false);
+  // The results of a last answer whose saving failed (offline, storage error): the retry button saves them again.
+  const [finishFailed, setFinishFailed] = useState<ExamItemResult[] | null>(null);
 
   const make = useCallback(
     (src: Source): ExamItem[] =>
@@ -197,7 +199,7 @@ export default function ExamScreen() {
   const answered = (correct: boolean) => {
     const all = [...results, { item: exam[index], correct }];
     setResults(all);
-    if (index + 1 >= exam.length) finish(all);
+    if (index + 1 >= exam.length) finish(all).catch(() => setFinishFailed(all));
     else setIndex(index + 1);
   };
 
@@ -226,6 +228,24 @@ export default function ExamScreen() {
       {part ? <FeedbackButton level={level} languagePair={pair} currentCard={`exam:${level}:${part}`} bottomOffset={bottomOffset} /> : null}
     </View>
   );
+
+  if (finishFailed) {
+    const again = finishFailed;
+    return shell(
+      <View style={styles.body}>
+        <Text testID="exam-finish-error" style={[styles.line, { color: colors.textMuted }]}>{s.backup.errorTitle}</Text>
+        <ExamButton
+          testID="exam-finish-retry"
+          label={s.exam.tryAgain}
+          onPress={() => {
+            setFinishFailed(null);
+            finish(again).catch(() => setFinishFailed(again));
+          }}
+        />
+      </View>,
+      'finish-error',
+    );
+  }
 
   if (phase === 'loading') {
     return shell(<ActivityIndicator style={styles.centered} color={colors.tint} />);

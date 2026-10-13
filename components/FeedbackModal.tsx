@@ -46,6 +46,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
   const [text, setText] = useState('');
   const [sending, setSending] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
+  const [sendError, setSendError] = useState(false);
   const [side, setSide] = useState<'left' | 'right'>('right');
 
   useEffect(() => {
@@ -73,6 +74,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
   const handleSend = async () => {
     if (!text.trim()) return;
     setSending(true);
+    setSendError(false);
 
     // User feedback: "set it up so that when you get feedback you can see
     // which card and which version of Kimacha it comes from". The card was
@@ -98,9 +100,20 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
         appVersion: build,
       });
 
+      // Offline or a non-2xx answer: keep the typed text and show an error
+      // instead of the thank-you toast (the text would be lost otherwise).
+      let failed = false;
       try {
-        await fetch(`${FEEDBACK_URL}?${params.toString()}`);
-      } catch {}
+        const res = await fetch(`${FEEDBACK_URL}?${params.toString()}`);
+        if (!res.ok) failed = true;
+      } catch {
+        failed = true;
+      }
+      if (failed) {
+        setSending(false);
+        setSendError(true);
+        return;
+      }
     }
 
     setSending(false);
@@ -159,23 +172,25 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
               placeholder={s.feedback.placeholder}
               placeholderTextColor={colors.tabIconDefault}
               value={text}
-              onChangeText={setText}
+              onChangeText={(v) => { setText(v); setSendError(false); }}
               multiline
               numberOfLines={4}
               textAlignVertical="top"
               autoFocus
             />
 
+            {sendError && <Text style={styles.sendError}>{s.backup.errorTitle}</Text>}
+
             {g.brutal ? (
               <View style={styles.modalButtons}>
-                <BrutalButton label={s.feedback.cancel} fill="paper" onPress={() => { setVisible(false); setText(''); }} style={styles.brutalModalBtn} />
+                <BrutalButton label={s.feedback.cancel} fill="paper" onPress={() => { setVisible(false); setText(''); setSendError(false); }} style={styles.brutalModalBtn} />
                 <BrutalButton label={sending ? '...' : s.feedback.send} fill="a" onPress={handleSend} disabled={!text.trim() || sending} style={styles.brutalModalBtn} />
               </View>
             ) : (
             <View style={styles.modalButtons}>
               <Pressable
                 style={[styles.modalBtn, { backgroundColor: colors.tabIconDefault }]}
-                onPress={() => { setVisible(false); setText(''); }}
+                onPress={() => { setVisible(false); setText(''); setSendError(false); }}
               >
                 <Text style={styles.modalBtnText}>{s.feedback.cancel}</Text>
               </Pressable>
@@ -196,6 +211,7 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
 }
 
 const styles = StyleSheet.create({
+  sendError: { color: '#EF4444', fontWeight: '600', marginBottom: 8 },
   fab: {
     position: 'absolute',
     bottom: 24,

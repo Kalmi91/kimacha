@@ -62,6 +62,8 @@ export default function PracticeScreen() {
   const pause = useRef<ReturnType<typeof setTimeout> | null>(null);
   // the local day the shown round was built on (a saved round is only resumed on the same day).
   const roundDate = useRef('');
+  // the direction of the shown round (null: no round on screen, nothing to practice).
+  const roundTarget = useRef<PcicTarget | null>(null);
   const right = results.filter((r) => r === 'right').length;
 
   // `fresh`: a new round even if one is saved (the "again" button).
@@ -73,6 +75,12 @@ export default function PracticeScreen() {
     setPcicTarget(dir);
     const [cards, strict] = await Promise.all([db.getPcicCards(), db.getStrictAccents()]);
     const today = localDateString();
+    // A round on screen (running or finished) survives leaving the tab; a new day, another direction or the
+    // "again" button replaces it. Without it the finished screen and the running pause would be thrown away.
+    if (!fresh && roundTarget.current === dir && roundDate.current === today) {
+      setStrictAccents(strict);
+      return;
+    }
     // an answer's pause must not move a round that is being replaced or resumed.
     if (pause.current) clearTimeout(pause.current);
     pause.current = null;
@@ -85,6 +93,7 @@ export default function PracticeScreen() {
     const done = resumed?.results ?? queue.map((): RoundAnswer => null);
     const at = resumed?.index ?? 0;
     roundDate.current = today;
+    roundTarget.current = queue.length > 0 ? dir : null;
     setTarget(dir);
     setStrictAccents(strict);
     setTasks(queue);
