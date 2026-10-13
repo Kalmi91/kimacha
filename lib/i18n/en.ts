@@ -507,12 +507,12 @@ export default {
     roundScore: (right: number, total: number) => `${right} of ${total} right`,
     again: 'Practice again',
   },
-  // Sentences tab (beta): header progress, the two steps of a sentence, empty and round-done states.
+  // Sentences tab (beta): header progress (steps: every build plus the one typing), the build and the typing step, empty and round-done states.
   sentenceTab: {
     progress: (done: number, total: number) => `${done} / ${total}`,
-    progressA11y: (done: number, total: number) => `Sentences done: ${done} of ${total}`,
-    stepBuild: 'Step 1 of 2: build the sentence',
-    stepType: 'Step 2 of 2: type the sentence',
+    progressA11y: (done: number, total: number) => `Steps done: ${done} of ${total}`,
+    stepBuild: (n: number, total: number) => `Build the sentence ${n} of ${total}`,
+    stepType: 'Last step: type this sentence',
     empty: 'Learn more words to unlock sentences',
     roundDone: (n: number) => (n === 1 ? 'Round done: 1 sentence' : `Round done: ${n} sentences`),
     more: 'More sentences',
