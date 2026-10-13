@@ -21,6 +21,7 @@ import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
 import DockedAction from '@/components/learn/DockedAction';
 import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
+import FabScrollView, { useFabInsets } from '@/components/FabScrollView';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
@@ -93,6 +94,7 @@ export default function PcicCardView({
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
+  const fab = useFabInsets();
 
   // The header's FIRST chip is the selected level,
   // tapping it opens the level picker sheet; the existing four chips are unchanged.
@@ -178,9 +180,9 @@ export default function PcicCardView({
           onClose={() => setLevelSheetOpen(false)}
         />
         {sentenceCard.kind === 'tiles' ? (
-          <ScrollView
+          <FabScrollView
             style={styles.cardScroll}
-            contentContainerStyle={[styles.cardScrollContent, { paddingBottom: g.brutal ? 100 : 24 }]}
+            contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 24 }]}
             keyboardShouldPersistTaps="handled"
             keyboardDismissMode="on-drag"
           >
@@ -194,7 +196,7 @@ export default function PcicCardView({
               onResult={() => setSentenceCard(null)}
               gradeButtons
             />
-          </ScrollView>
+          </FabScrollView>
         ) : (
           // The typing sentence card has its own scroller + the docked Check bar above the
           // keyboard (like on the word card), so there is no outer ScrollView.
@@ -207,6 +209,7 @@ export default function PcicCardView({
             sourceSpeechLocale={speechLang(sourceLang)}
             onResult={() => setSentenceCard(null)}
             dockLift={dockLift}
+            keyboardOpen={kbHeight > 0}
             dockH={dockH}
             onDockHeight={setDockH}
             gradeButtons
@@ -341,7 +344,7 @@ export default function PcicCardView({
   // The docked Check bar switches to "Next" after reveal,
   // in the same place/size, with the suggested grade in the label.
   const nextGrade = grade ? suggestedGrade(grade) : null;
-  const dockInsets = dockScrollInsets(dockH, dockLift, kbHeight > 0);
+  const dockInsets = dockScrollInsets(dockH, dockLift, kbHeight > 0, fab);
 
   return (
     <KeyboardAvoidingView
@@ -372,7 +375,7 @@ export default function PcicCardView({
       )}
 
       <ScrollView
-        style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
+        style={[styles.cardScroll, dockInsets.scroll]}
         contentContainerStyle={[styles.cardScrollContent, { paddingBottom: dockInsets.paddingBottom }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"

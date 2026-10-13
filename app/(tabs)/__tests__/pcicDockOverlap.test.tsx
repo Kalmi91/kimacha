@@ -81,7 +81,7 @@ describe('PCIC tab: the card never runs under the docked Next bar', () => {
     return utils;
   };
 
-  it('keyboard closed: the scroller ends at the top edge of the bar, with the Knew it row inside', async () => {
+  it('keyboard closed: the scroller ends above the bar and the 💬 button, with the Knew it row inside', async () => {
     const utils = await revealTallCard();
     const { getByText, UNSAFE_getByType } = utils;
 
@@ -95,9 +95,9 @@ describe('PCIC tab: the card never runs under the docked Next bar', () => {
     // distance of the scroller's bottom edge / of the bar's top edge above the container's bottom edge
     const scrollerBottom = (container.padding as number) + ((scroller.marginBottom as number) ?? 0);
     const barTop = NAV_BAR + DOCK_H;
-    expect(scrollerBottom).toBeGreaterThanOrEqual(barTop);
-    // the 💬 clearance at the end of the scroll is kept
-    expect(content.paddingBottom).toBe(FAB_CLEARANCE);
+    // and above the 💬 button floating over the bar (24 above it, 55 tall): it never covers the card, even before scrolling
+    expect(scrollerBottom).toBeGreaterThanOrEqual(barTop + FAB_CLEARANCE);
+    expect(content.paddingBottom).toBe(0);
   });
 
   it('keyboard open: the typing layout is unchanged (full-height scroller, room under the bar as padding)', async () => {

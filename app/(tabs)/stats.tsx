@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { StyleSheet, View, ScrollView, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
 import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
@@ -27,6 +27,7 @@ import { cardsForLevel } from '@/lib/pcicLevels';
 import { countKnown, countGraduated, countLearned } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
+import FabScrollView from '@/components/FabScrollView';
 import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import MockExamCard from '@/components/exam/MockExamCard';
@@ -169,7 +170,7 @@ export default function StatsScreen() {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <SkinBackdrop />
-      <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
+      <FabScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
         <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
 
       {/* badge of the PCIC level + known/total (interval
@@ -354,7 +355,7 @@ export default function StatsScreen() {
           </Text>
         </Card>
       )}
-      </ScrollView>
+      </FabScrollView>
 
       {/* the button floats OUTSIDE the ScrollView, as on the settings tab, not
           stuck to the bottom of the list. */}
@@ -370,7 +371,7 @@ const styles = StyleSheet.create({
   content: {
     padding: 24,
     paddingTop: 40,
-    paddingBottom: 60,
+    paddingBottom: 24,
   },
   title: {
     fontSize: 22,
@@ -397,8 +398,8 @@ const styles = StyleSheet.create({
   goalOuter: { marginBottom: 24 },
   scheduleOuter: { marginBottom: 12 },
   goalBox: { padding: 16, gap: 10 },
-  // The last card also scrolls out from under the chat button (FAB).
-  brutalContent: { paddingBottom: 100 },
+  // The chat button (FAB) sits outside the scroller (FabScrollView leaves room for it).
+  brutalContent: { paddingBottom: 32 },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalValue: { fontWeight: '500' },
   brutalBadgeText: { fontSize: 14 },
