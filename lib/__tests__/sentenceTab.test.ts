@@ -109,7 +109,7 @@ describe('recordSentenceHalves', () => {
 
   it('one half per learned word, once; a word without a card is skipped', async () => {
     const db = getDb();
-    await db.upsertPcicCard(learned(ITEMS[0]));
+    await db.upsertPcicCard(learned(ITEMS[0], TODAY));
     await db.upsertPcicCard(learned(ITEMS[1]));
     const n = await recordSentenceHalves(['a1-s1', 'a1-s2', 'a1-nocard'], TODAY);
     expect(n).toBe(2);

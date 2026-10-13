@@ -230,7 +230,7 @@ describe('the 4:1 rhythm', () => {
   });
 
   it('the half is paid by the builds only: one call per learned word of each sentence, the typing adds none', async () => {
-    await learnWords([1, 2, 3, 4]);
+    await learnWords([1, 2, 3, 4], [1, 2, 3, 4]); // due, so a full step moves the schedule
     const r = render(<SentencesScreen />);
     await flush();
     for (let i = 0; i < 4; i++) await buildCurrent(r);
