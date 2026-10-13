@@ -1,10 +1,11 @@
-// "Missing word" practice (Practice tab, spec HAROM-JATEK.md 5): a sentence of an already learned word with
-// that word blanked out. Pure logic, no I/O: the screen supplies the cards and the lookups.
+// The Practice tab's word source (spec HAROM-JATEK.md 5): which learned words a round may use, and where
+// one of them stands in its own example sentence. Pure logic, no I/O: the screen supplies the cards and the
+// lookups. (The "missing word" task that used this is gone; lib/practice/reading.ts builds the reading.)
 //
 // Sentence source: the word's own example sentence (words-open sentence_es / sentence_en). For the Spanish
-// target the blank is found through the data's own `sentence_lemmas` (one lemma per word of the sentence,
+// target the word is found through the data's own `sentence_lemmas` (one lemma per word of the sentence,
 // verified 1:1 with the sentence's words), so an inflected form works: for estar in "Yo estoy bien." the
-// blank is "estoy". A word with no such sentence is left out. The English target deck has no lemma data,
+// word is "estoy". A word with no such sentence is left out. The English target deck has no lemma data,
 // there the headword itself has to stand in the sentence.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
@@ -13,24 +14,21 @@ import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
 import openC1 from '@/data/words-open/c1.json';
-import { strictAnswerMatch } from '@/lib/answerMatch';
 import { addDays, type Sm2Card } from '@/lib/sm2';
 
-/** One round: the due words first, then the freshly learned ones, up to this many. */
-export const PRACTICE_SESSION_SIZE = 20;
 /** A word counts as freshly learned (Words tab) when it was first asked within this many days. */
 export const PRACTICE_RECENT_DAYS = 7;
 
 export interface GapTask {
   itemId: string;
-  /** The sentence up to the blank / after it (the blank is where the word stood). */
+  /** The sentence up to the word / after it. */
   before: string;
   after: string;
-  /** The word as written in the sentence (the inflected form), what has to be typed. */
+  /** The word as written in the sentence (the inflected form). */
   answer: string;
-  /** The same sentence in the other language, shown under the blank. */
+  /** The same sentence in the other language. */
   translation: string;
-  /** The word's meaning, the tip. */
+  /** The word's meaning. */
   meaning: string;
 }
 
@@ -69,7 +67,7 @@ function cut(sentence: string, start: number, end: number): Gap {
   return { before: sentence.slice(0, start), answer: sentence.slice(start, end), after: sentence.slice(end) };
 }
 
-/** The blank by lemma: the sentence's word whose lemma is the card's lemma; null if the two lists do not line up. */
+/** The word by lemma: the sentence's word whose lemma is the card's lemma; null if the two lists do not line up. */
 export function gapByLemma(sentence: string, info: GapSourceInfo): Gap | null {
   const words = [...sentence.matchAll(WORD)];
   if (words.length !== info.sentenceLemmas.length) return null;
@@ -79,7 +77,7 @@ export function gapByLemma(sentence: string, info: GapSourceInfo): Gap | null {
   return cut(sentence, word.index!, word.index! + word[0].length);
 }
 
-/** The blank by the headword itself (no lemma data): the first sentence word equal to it, case-insensitive. */
+/** The word by the headword itself (no lemma data): the first sentence word equal to it, case-insensitive. */
 export function gapByWord(sentence: string, headword: string): Gap | null {
   const want = headword.trim().toLowerCase();
   if (!want) return null;
@@ -111,38 +109,18 @@ export function gapTaskFor(
   };
 }
 
-export interface QueueDeps {
-  target: PcicTarget;
-  findItem: (id: string) => PcicItem | undefined;
-  today: string;
-  size?: number;
-  info?: (itemId: string) => GapSourceInfo | undefined;
-}
-
 /**
- * The round: the learned words with a usable sentence that are due (the longest overdue first), then the ones
- * first learned in the Words tab within the last PRACTICE_RECENT_DAYS days (the newest first), up to `size`
- * tasks. A word marked known by hand ("Don't learn this") was never learned, so it is left out; an older
- * word that is not due is left out too.
+ * The words a round may use, in order: the learned words that are due (the longest overdue first), then the
+ * ones first learned in the Words tab within the last PRACTICE_RECENT_DAYS days (the newest first). A word
+ * marked known by hand ("Don't learn this") was never learned, so it is left out; an older word that is not
+ * due is left out too.
  */
-export function buildGapQueue(cards: Iterable<Sm2Card>, deps: QueueDeps): GapTask[] {
+export function practiceCandidates(cards: Iterable<Sm2Card>, today: string): Sm2Card[] {
   const learned = [...cards].filter((c) => c.state !== 'new' && !c.known);
-  const isDue = (c: Sm2Card) => c.due !== '' && c.due <= deps.today;
+  const isDue = (c: Sm2Card) => c.due !== '' && c.due <= today;
   const due = learned.filter(isDue).sort((a, b) => (a.due < b.due ? -1 : a.due > b.due ? 1 : 0));
-  const since = addDays(deps.today, -PRACTICE_RECENT_DAYS);
+  const since = addDays(today, -PRACTICE_RECENT_DAYS);
   const fresh = (c: Sm2Card) => !isDue(c) && !!c.introducedAt && c.introducedAt >= since;
   const recent = learned.filter(fresh).sort((a, b) => (a.introducedAt! > b.introducedAt! ? -1 : a.introducedAt! < b.introducedAt! ? 1 : 0));
-  const out: GapTask[] = [];
-  for (const card of [...due, ...recent]) {
-    const item = deps.findItem(card.itemId);
-    const task = item ? gapTaskFor(item, deps.target, deps.info) : null;
-    if (task) out.push(task);
-    if (out.length >= (deps.size ?? PRACTICE_SESSION_SIZE)) break;
-  }
-  return out;
-}
-
-/** Whether the typed text is the blanked word; the accent rule is the Settings switch (strictAccents), like the other typing cards. */
-export function checkGap(typed: string, task: GapTask, strictAccents: boolean): boolean {
-  return strictAnswerMatch(typed, task.answer, { strictAccents });
+  return [...due, ...recent];
 }

@@ -1,6 +1,6 @@
-// The Practice tab (beta): "missing word" in a sentence. Mock pattern: pcicSpeak.test.tsx (db, router,
-// speech, safe area). recordPracticeResult is a call-through spy: the calls are asserted, and the real
-// half-step logic still writes the card, so the SRS effect is checked on the stored card.
+// The Practice tab (beta): a text of five sentences with a due word each, five questions, then the words go to the
+// Sentences tab. Mock pattern: pcicSpeak.test.tsx (db, router, speech, safe area). The real corpus is used: the
+// learner knows the first 100 words of A1 and the presente, so the sentences of the due words below are known.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
@@ -8,43 +8,44 @@ jest.mock('@/lib/speech', () => ({
   speakSequence: jest.fn(),
   stopSpeaking: jest.fn(),
 }));
+const mockPush = jest.fn();
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
     const { useEffect } = require('react');
     useEffect(cb, []);
   },
+  router: { push: (...args: unknown[]) => mockPush(...args) },
 }));
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
-jest.mock('@/lib/practice/halfStep', () => {
-  const actual = jest.requireActual('@/lib/practice/halfStep');
-  return { ...actual, recordPracticeResult: jest.fn(actual.recordPracticeResult) };
-});
 
 import { act, fireEvent, render } from '@testing-library/react-native';
 
+import { findPcicItem, pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { __resetBetaForTest, setBeta } from '@/lib/beta';
 import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
+import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { setLanguage } from '@/lib/i18n';
-import { recordPracticeResult } from '@/lib/practice/halfStep';
 import { parsePracticeRound } from '@/lib/practice/practiceRound';
+import { readingWordFor, resolveSet, type ResolvedQuestion } from '@/lib/practice/reading';
 import { speak } from '@/lib/speech';
-import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
+import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import PracticeScreen from '../practice';
 
-jest.setTimeout(30000);
+jest.setTimeout(60000);
 
-const mockRecord = recordPracticeResult as jest.Mock;
 const mockSpeak = speak as jest.Mock;
 const TODAY = localDateString();
 
-// Real words-open cards: o33 ir "Voy con ella." (Voy), o47 hablar "Hablo con mi madre." (Hablo),
-// o23 querer "Quiero una casa." (Quiero), o4 tú "Tú estás bien." (Tú).
+// The five due words, the longest overdue first, and their sentences (words-open sentence_es).
+const DUE = ['o19', 'o37', 'o20', 'o38', 'o3'];
+const SENTENCES = ['Estoy en casa.', 'Usted está bien.', 'Tiene una casa.', 'Mi madre está en casa.', 'Yo estoy bien.'];
+
 const learned = (itemId: string, due: string, over: Partial<Sm2Card> = {}): Sm2Card => ({
   ...sm2NewCard(itemId),
   state: 'review',
@@ -56,8 +57,26 @@ const learned = (itemId: string, due: string, over: Partial<Sm2Card> = {}): Sm2C
   ...over,
 });
 
+// The first 100 words of A1 are learned (not due), five of them are due. `dueIds` can shorten the due list.
+const learnWords = async (dueIds: string[] = DUE) => {
+  setPcicTarget('es');
+  for (const it of pcicItemsForLevel('A1').slice(0, 100)) {
+    const at = dueIds.indexOf(it.id);
+    await getDb().upsertPcicCard(learned(it.id, at === -1 ? '2099-01-01' : `2000-01-0${at + 1}`));
+  }
+};
+
+// a small deterministic [0, 1) source: the questions are drawn with Math.random
+const seeded = (seed: number) => {
+  let x = seed;
+  return () => {
+    x = (x * 1664525 + 1013904223) % 4294967296;
+    return x / 4294967296;
+  };
+};
+
 const flush = async () => {
-  for (let i = 0; i < 8; i++) {
+  for (let i = 0; i < 10; i++) {
     await act(async () => {
       await Promise.resolve();
     });
@@ -69,418 +88,419 @@ const mount = async () => {
   await flush();
   return view;
 };
-
 type View = Awaited<ReturnType<typeof mount>>;
 
-const answer = async (view: View, text: string) => {
-  fireEvent.changeText(view.getByTestId('practice-input'), text);
-  fireEvent.press(view.getByTestId('practice-action'));
+const press = async (view: View, testID: string) => {
+  fireEvent.press(view.getByTestId(testID));
   await flush();
 };
-// A right answer moves on by itself after the short feedback.
-const afterPause = async () => {
-  await act(async () => {
-    jest.advanceTimersByTime(1000);
-  });
-  await flush();
+const next = async (view: View) => press(view, 'practice-action');
+
+const saved = async () => parsePracticeRound(await getDb().getPracticeRound());
+// the questions of the saved round, as the screen shows them
+const questions = async (): Promise<ResolvedQuestion[]> => {
+  const round = (await saved())!;
+  const words = round.ids.map((id) => readingWordFor(findPcicItem(id)!, 'es')!);
+  return resolveSet(words, round.qs, findPcicItem, 'es')!.resolved;
+};
+const optionCount = (q: ResolvedQuestion) => (q.kind === 'meaning' ? q.options.length : 2);
+// Answers question n (1-based) right or wrong.
+const answer = async (view: View, n: number, right = true) => {
+  const q = (await questions())[n - 1];
+  await press(view, `practice-option-${right ? q.correct : (q.correct + 1) % optionCount(q)}`);
+};
+// the text -> question 1
+const toQuestions = async (view: View) => next(view);
+// answers every question (right) and moves to the sentences step
+const finishQuestions = async (view: View) => {
+  for (let n = 1; n <= 5; n++) {
+    await answer(view, n);
+    await next(view);
+  }
 };
 
 beforeEach(async () => {
-  jest.useFakeTimers();
+  mockPush.mockClear();
+  mockSpeak.mockClear();
+  jest.spyOn(Math, 'random').mockImplementation(seeded(11));
   await getDb().resetPcicCards();
   await getDb().setPracticeRound(null);
   await getDb().setStrictAccents(false);
+  await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 1, total: 1 });
   __resetBetaForTest();
   await getDb().setBetaFlag('xpV2', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(TODAY, -100000);
-  mockRecord.mockClear();
-  mockSpeak.mockClear();
 });
 afterEach(() => {
-  jest.useRealTimers();
+  jest.restoreAllMocks();
   setLanguage('en');
 });
 
-describe('Practice tab', () => {
-  it('no learned word: the empty state, in English and Spanish', async () => {
-    await getDb().upsertPcicCard(sm2NewCard('o33'));
+describe('Practice tab: the text', () => {
+  it('shows the five sentences as one paragraph with the due word of each highlighted, the read-aloud and the Next button', async () => {
+    await learnWords();
     const view = await mount();
-    expect(view.getByTestId('practice-empty')).toBeTruthy();
-    expect(view.getByText('Learn some words first')).toBeTruthy();
+    // the level counter on top (same as the Sentences tab); the screen has no title of its own, the tab navigator's header says "Practice".
+    expect(view.getByTestId('level-counter').props.accessibilityLabel).toMatch(/^Level [A-C]\d: \d+ words, \d+ due$/);
+    expect(view.queryByText('Practice')).toBeNull();
+    expect(view.getByTestId('practice-text').props.children).toHaveLength(5);
+    const flat = (node: unknown): string =>
+      Array.isArray(node) ? node.map(flat).join('') : typeof node === 'string' ? node : node && typeof node === 'object' && 'props' in node ? flat((node as { props: { children?: unknown } }).props.children) : '';
+    expect(flat(view.getByTestId('practice-text').props.children)).toBe(SENTENCES.join(' '));
+    expect([0, 1, 2, 3, 4].map((i) => view.getByTestId(`practice-word-${i}`).props.children)).toEqual(['casa', 'Usted', 'una', 'madre', 'bien']);
+    expect(view.getByText('Read aloud')).toBeTruthy();
+    expect(view.getByText('Next →')).toBeTruthy();
     view.unmount();
-    setLanguage('es');
-    const es = await mount();
-    expect(es.getByText('Aprende algunas palabras primero')).toBeTruthy();
-    expect(es.getByText('Práctica')).toBeTruthy();
-    es.unmount();
   });
 
-  it('shows the blanked sentence, the translation, the meaning tip, the progress and the labelled input', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    await getDb().upsertPcicCard(learned('o47', '2000-01-02'));
+  it('reads the whole paragraph aloud, in Spanish', async () => {
+    await learnWords();
     const view = await mount();
-    expect(view.getByText('Practice')).toBeTruthy();
-    expect(view.getByText('1/2')).toBeTruthy();
-    expect(view.getByTestId('practice-gap').props.children).toBe('_____');
-    expect(view.getByText('I go with her.')).toBeTruthy();
-    expect(view.getByText('Hint: to go')).toBeTruthy();
-    expect(view.getByLabelText('Type the missing word')).toBeTruthy();
-    // the screen reader gets the sentence with "blank", never the answer
-    expect(view.getByTestId('practice-sentence').props.accessibilityLabel).toBe('blank con ella.');
-    expect(view.getByText('✓ Check')).toBeTruthy();
+    await press(view, 'practice-speak');
+    expect(mockSpeak).toHaveBeenCalledWith(SENTENCES.join(' '), 'es-MX');
     view.unmount();
   });
 
   it('Spanish UI: the labels are Spanish', async () => {
     setLanguage('es');
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    await learnWords();
     const view = await mount();
-    expect(view.getByText('✓ Comprobar')).toBeTruthy();
-    expect(view.getByPlaceholderText('Palabra que falta')).toBeTruthy();
-    expect(view.getByText('Pista: to go')).toBeTruthy();
+    expect(view.getByText('Leer en voz alta')).toBeTruthy();
+    expect(view.getByText('Siguiente →')).toBeTruthy();
+    await toQuestions(view);
+    expect(view.getByText('1/5')).toBeTruthy();
+    expect(view.getByLabelText('Pregunta 1 de 5')).toBeTruthy();
     view.unmount();
   });
 
-  it('2 right answers on 2 words: recordPracticeResult(id, "correct") twice, each word gets one half', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    await getDb().upsertPcicCard(learned('o47', '2000-01-02'));
+  it('a sentence with a word the learner does not know is skipped and the next word comes; a word known by hand stays out', async () => {
+    await learnWords();
+    // a C1 word's sentence has words outside the first 100; o5 is marked known by hand; both would be first in line
+    await getDb().upsertPcicCard(learned(pcicItemsForLevel('C1')[0].id, '1999-01-01'));
+    await getDb().upsertPcicCard(learned('o5', '1999-01-02', { known: true }));
     const view = await mount();
-
-    await answer(view, 'voy');
-    expect(mockRecord).toHaveBeenLastCalledWith('o33', 'correct');
-    expect(view.getByText('Correct!')).toBeTruthy();
-    await afterPause();
-    expect(view.getByText('2/2')).toBeTruthy();
-    expect(view.getByText('I talk with my mother.')).toBeTruthy();
-
-    await answer(view, 'Hablo');
-    expect(mockRecord).toHaveBeenLastCalledWith('o47', 'correct');
-    expect(mockRecord.mock.calls.map((c) => c[1])).toEqual(['correct', 'correct']);
-    await afterPause();
-
-    // the round is over: score and the again button
-    expect(view.getByText('Round done')).toBeTruthy();
-    expect(view.getByText('2 of 2 right')).toBeTruthy();
-    // each word got only one half so far: no SRS move yet
-    expect((await getDb().getPcicCard('o33'))).toMatchObject({ halfSteps: 1, interval: 4, due: '2000-01-01' });
+    expect((await saved())!.ids).toEqual(DUE);
     view.unmount();
   });
 
-  it('2 rounds of right answers on the same word: the second half moves it one step (the next due date grows)', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+  it('too few words with a known sentence: the friendly empty state, in English and Spanish', async () => {
+    await learnWords(DUE.slice(0, 2));
     const view = await mount();
-    await answer(view, 'Voy');
-    await afterPause();
-    fireEvent.press(view.getByTestId('practice-again'));
-    await flush();
-    await answer(view, 'Voy');
-    await afterPause();
-    const card = (await getDb().getPcicCard('o33'))!;
-    expect(card.halfSteps).toBe(0);
-    expect(card.interval).toBeGreaterThan(4);
-    expect(card.due > addDays(TODAY, 4)).toBe(true);
+    expect(view.getByTestId('practice-empty')).toBeTruthy();
+    expect(view.getByText('Learn a few more words, then there will be something to read here')).toBeTruthy();
+    expect(view.queryByText('Next →')).toBeNull();
+    expect(await getDb().getPracticeRound()).toBeNull();
     view.unmount();
+    setLanguage('es');
+    const es = await mount();
+    expect(es.getByText('Aprende unas palabras más y aquí habrá algo para leer')).toBeTruthy();
+    expect(es.getByTestId('level-counter')).toBeTruthy();
+    es.unmount();
   });
 
-  it('2 wrong typed answers: recordPracticeResult(id, "wrongTyped") twice; the correct form is shown with a Next button', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    await getDb().upsertPcicCard(learned('o47', '2000-01-02'));
-    const view = await mount();
-
-    await answer(view, 'vas');
-    expect(mockRecord).toHaveBeenLastCalledWith('o33', 'wrongTyped');
-    expect(view.getByText('Wrong')).toBeTruthy();
-    expect(view.getByText('Correct: Voy')).toBeTruthy();
-    expect(view.getByTestId('practice-gap').props.children).toBe('Voy');
-    // no auto-advance after a wrong answer: it waits for Next
-    await afterPause();
-    expect(view.getByText('1/2')).toBeTruthy();
-    fireEvent.press(view.getByText('Next →'));
-    await flush();
-    expect(view.getByText('2/2')).toBeTruthy();
-
-    await answer(view, 'hablas');
-    expect(mockRecord.mock.calls.map((c) => c[1])).toEqual(['wrongTyped', 'wrongTyped']);
-    view.unmount();
-  });
-
-  it('2 wrong typed answers in a row on one word (two rounds): one step back', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    const view = await mount();
-    await answer(view, 'vas');
-    fireEvent.press(view.getByText('Next →'));
-    await flush();
-    fireEvent.press(view.getByTestId('practice-again'));
-    await flush();
-    await answer(view, 'vas');
-    const card = (await getDb().getPcicCard('o33'))!;
-    expect(card).toMatchObject({ wrongStreak: 0, halfSteps: 0, interval: 2 });
-    expect(card.due).toBe(addDays(TODAY, 2));
-    view.unmount();
-  });
-
-  it('the accent follows the Settings switch: off forgives it, on does not', async () => {
-    await getDb().upsertPcicCard(learned('o4', '2000-01-01'));
-    const off = await mount();
-    await answer(off, 'tu');
-    expect(mockRecord).toHaveBeenLastCalledWith('o4', 'correct');
-    off.unmount();
-
-    await getDb().setStrictAccents(true);
-    await getDb().setPracticeRound(null); // the first mount's answered round would be resumed
-    mockRecord.mockClear();
-    const on = await mount();
-    await answer(on, 'tu');
-    expect(mockRecord).toHaveBeenLastCalledWith('o4', 'wrongTyped');
-    expect(on.getByText('Correct: Tú')).toBeTruthy();
-    on.unmount();
-  });
-
-  it('an empty answer is not checked', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    const view = await mount();
-    fireEvent.press(view.getByTestId('practice-action'));
-    await flush();
-    expect(mockRecord).not.toHaveBeenCalled();
-    expect(view.queryByText('Wrong')).toBeNull();
-    view.unmount();
-  });
-
-  it('reads the whole sentence aloud after the answer, in Spanish', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    const view = await mount();
-    await answer(view, 'Voy');
-    expect(mockSpeak).toHaveBeenCalledWith('Voy con ella.', 'es-MX');
-    view.unmount();
-  });
-
-  it('beta xpV2 off (default): a right answer is a half, but earns no XP', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    const view = await mount();
-    await answer(view, 'Voy');
-    expect(mockRecord).toHaveBeenLastCalledWith('o33', 'correct');
-    expect(await getDb().getDailyXpTenths(TODAY)).toBe(0);
-    view.unmount();
-  });
-
-  it('beta xpV2 on: a right answer earns 1 XP, 0.2 XP once the word has 3+ repetitions', async () => {
-    await setBeta('xpV2', true);
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    await getDb().upsertPcicCard(learned('o47', '2000-01-02', { reps: 3 }));
-    const view = await mount();
-    await answer(view, 'Voy');
-    expect(await getDb().getDailyXpTenths(TODAY)).toBe(10);
-    await afterPause();
-    await answer(view, 'Hablo');
-    expect(await getDb().getDailyXpTenths(TODAY)).toBe(12);
-    view.unmount();
-  });
-
-  it('beta xpV2 on: a wrong answer earns nothing', async () => {
-    await setBeta('xpV2', true);
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    const view = await mount();
-    await answer(view, 'xyz');
-    expect(mockRecord).toHaveBeenLastCalledWith('o33', 'wrongTyped');
-    expect(await getDb().getDailyXpTenths(TODAY)).toBe(0);
-    view.unmount();
-  });
-});
-
-describe('Practice tab: feedback button', () => {
-  it('the floating feedback button is on the tab (round, empty state and finished screen) and sends the tab id', async () => {
+  it('nothing learned yet: the empty state', async () => {
     await getDb().upsertPcicCard(sm2NewCard('o33'));
-    const empty = await mount();
-    expect(empty.getByText('💬')).toBeTruthy();
-    empty.unmount();
-
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
     const view = await mount();
-    expect(view.getByLabelText('Feedback')).toBeTruthy();
-
-    global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
-    fireEvent.press(view.getByText('💬'));
-    fireEvent.changeText(view.getByPlaceholderText('Share your thoughts...'), 'nice');
-    await act(async () => {
-      fireEvent.press(view.getByText('Send'));
-    });
-    const url = (global.fetch as jest.Mock).mock.calls[0][0] as string;
-    const params = new URLSearchParams(url.split('?')[1]);
-    expect(params.get('currentCard')).toContain('practice-tab');
-    expect(params.get('languagePair')).toBe('en-es');
-    // @ts-expect-error test-only cleanup of a global set above
-    delete global.fetch;
-
-    await answer(view, 'Voy');
-    await afterPause();
-    expect(view.getByText('Round done')).toBeTruthy();
-    expect(view.getByLabelText('Feedback')).toBeTruthy();
+    expect(view.getByTestId('practice-empty')).toBeTruthy();
     view.unmount();
   });
 });
 
-describe('Practice tab: the word source', () => {
-  it('due words first, then the ones learned in the last 7 days; a hand-known and an old not-due word stay out', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01', { known: true, introducedAt: addDays(TODAY, -2) })); // hand-known
-    await getDb().upsertPcicCard(learned('o47', addDays(TODAY, 30), { introducedAt: addDays(TODAY, -8) })); // 8 days ago, not due
-    await getDb().upsertPcicCard(learned('o23', addDays(TODAY, 30), { introducedAt: addDays(TODAY, -3) })); // 3 days ago, not due
-    await getDb().upsertPcicCard(learned('o4', '2000-01-01')); // due
+describe('Practice tab: the questions', () => {
+  it('five questions, progress n/5, each with its options; meaning questions offer 3 meanings, true/false True and False', async () => {
+    await learnWords();
     const view = await mount();
-    expect(view.getByText('1/2')).toBeTruthy();
-    expect(view.getByText('You are fine.')).toBeTruthy(); // the due word first
-    await answer(view, 'Tú');
-    await afterPause();
-    expect(view.getByText('I want a house.')).toBeTruthy(); // then the freshly learned one
-    await answer(view, 'Quiero');
-    expect(mockRecord.mock.calls.map((c) => c[0])).toEqual(['o4', 'o23']);
+    await toQuestions(view);
+    const qs = await questions();
+    expect(qs).toHaveLength(5);
+    for (let n = 1; n <= 5; n++) {
+      const q = qs[n - 1];
+      expect(view.getByText(`${n}/5`)).toBeTruthy();
+      expect(view.getByLabelText(`Question ${n} of 5`)).toBeTruthy();
+      if (q.kind === 'meaning') {
+        expect(view.getByText(`What does “${q.word}” mean in the text?`)).toBeTruthy();
+        expect(q.options).toHaveLength(3);
+        expect(new Set(q.options).size).toBe(3);
+        q.options.forEach((o, i) => expect(view.getByTestId(`practice-option-${i}`).props.accessibilityLabel).toBe(o));
+      } else {
+        expect(view.getByText('True or false, based on the text:')).toBeTruthy();
+        expect(view.getByTestId('practice-statement').props.children).toBe(q.statement);
+        expect(view.getByText('True')).toBeTruthy();
+        expect(view.getByText('False')).toBeTruthy();
+      }
+      expect(view.queryByText('Next →')).toBeNull(); // Next comes after the answer
+      await answer(view, n);
+      await next(view);
+    }
+    view.unmount();
+  });
+
+  it('both kinds come, and the true/false ones are a true and a false statement', async () => {
+    await learnWords();
+    const view = await mount();
+    const qs = await questions();
+    expect(qs.filter((q) => q.kind === 'meaning')).toHaveLength(3);
+    const tf = qs.filter((q) => q.kind === 'truefalse');
+    expect(tf).toHaveLength(2);
+    expect(tf.filter((q) => q.kind === 'truefalse' && q.truth)).toHaveLength(1);
+    view.unmount();
+  });
+
+  it('a right answer: the option is marked, "Correct!", the meaning in a line, Next', async () => {
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    const q = (await questions())[0];
+    await answer(view, 1);
+    expect(view.getByText('Correct!')).toBeTruthy();
+    if (q.kind === 'meaning') {
+      expect(view.getByTestId('practice-explanation').props.children).toBe(`“${q.word}” means ${q.options[q.correct]}`);
+      expect(view.getByTestId(`practice-option-${q.correct}`).props.accessibilityLabel).toBe(`${q.options[q.correct]}, Correct!`);
+    }
+    expect(view.getByText('Next →')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('a wrong answer: "Wrong", the right option is marked, and the answer cannot be changed', async () => {
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    const q = (await questions())[0];
+    await answer(view, 1, false);
+    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.queryByText('Correct!')).toBeNull();
+    // a second tap on the right option changes nothing
+    await press(view, `practice-option-${q.correct}`);
+    expect(view.getByText('Wrong')).toBeTruthy();
+    expect((await saved())!.picks[0]).toBe((q.correct + 1) % optionCount(q));
+    view.unmount();
+  });
+
+  it('the true/false feedback says whether the sentence is in the text', async () => {
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    const qs = await questions();
+    for (let n = 1; n <= 5; n++) {
+      const q = qs[n - 1];
+      await answer(view, n);
+      if (q.kind === 'truefalse') {
+        expect(view.getByTestId('practice-explanation').props.children).toBe(q.truth ? 'This sentence is in the text.' : 'This sentence is not in the text.');
+      }
+      await next(view);
+    }
+    view.unmount();
+  });
+
+  it('the questions give no half and no XP, right or wrong', async () => {
+    await setBeta('xpV2', true);
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    await answer(view, 1);
+    await next(view);
+    await answer(view, 2, false);
+    expect(await getDb().getDailyXpTenths(TODAY)).toBe(0);
+    for (const id of DUE) expect(await getDb().getPcicCard(id)).toMatchObject({ halfSteps: 0, wrongStreak: 0, due: expect.stringMatching(/^2000-01-0/) });
+    view.unmount();
+  });
+});
+
+describe('Practice tab: the sentences step', () => {
+  it('after the 5 questions: "Questions done" and the button that opens the Sentences tab with the five card ids', async () => {
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    await finishQuestions(view);
+    expect(view.getByText('Questions done')).toBeTruthy();
+    expect(view.queryByText('1/5')).toBeNull();
+    expect(mockPush).not.toHaveBeenCalled();
+    await press(view, 'practice-sentences');
+    expect(view.getByText('Practice these words in sentences')).toBeTruthy();
+    expect(mockPush).toHaveBeenCalledTimes(1);
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/sentences', params: { focus: 'o19,o37,o20,o38,o3' } });
+    view.unmount();
+  });
+
+  it('Spanish UI: the labels of the step are Spanish', async () => {
+    setLanguage('es');
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    await finishQuestions(view);
+    expect(view.getByText('Preguntas terminadas')).toBeTruthy();
+    expect(view.getByText('Practica estas palabras en frases')).toBeTruthy();
+    expect(view.getByText('Otra lectura')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('"New reading" starts a new round at the text', async () => {
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    await finishQuestions(view);
+    await press(view, 'practice-again');
+    expect(view.getByText('Read aloud')).toBeTruthy();
+    expect(await saved()).toMatchObject({ step: 0, picks: [null, null, null, null, null] });
     view.unmount();
   });
 });
 
 describe('Practice tab: the round survives leaving the tab and the app', () => {
-  const three = async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    await getDb().upsertPcicCard(learned('o47', '2000-01-02'));
-    await getDb().upsertPcicCard(learned('o23', '2000-01-03'));
-  };
-  const saved = async () => parsePracticeRound(await getDb().getPracticeRound());
-
-  it('a started round is saved at once: the task order (card ids), index 0, no result yet', async () => {
-    await three();
+  it('a started round is saved at once: the words, the questions, the text step, nothing answered', async () => {
+    await learnWords();
     const view = await mount();
-    expect(await saved()).toEqual({ v: 1, date: TODAY, target: 'es', ids: ['o33', 'o47', 'o23'], index: 0, results: [null, null, null] });
+    const round = (await saved())!;
+    expect(round).toMatchObject({ v: 2, date: TODAY, target: 'es', ids: DUE, step: 0, picks: [null, null, null, null, null] });
+    expect(round.qs).toHaveLength(5);
     view.unmount();
   });
 
-  it('halfway through and re-mounted: the same index and the same order, even if a fresh round would be ordered differently', async () => {
-    await three();
-    const first = await mount();
-    await answer(first, 'Voy');
-    await afterPause();
-    expect(first.getByText('2/3')).toBeTruthy();
-    first.unmount();
+  it('every step is saved: question n, the answer, the sentences step', async () => {
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    expect(await saved()).toMatchObject({ step: 1, picks: [null, null, null, null, null] });
+    const q = (await questions())[0];
+    await answer(view, 1, false);
+    expect(await saved()).toMatchObject({ step: 1, picks: [(q.correct + 1) % optionCount(q), null, null, null, null] });
+    await next(view);
+    expect(await saved()).toMatchObject({ step: 2 });
+    view.unmount();
+  });
 
-    // a fresh round would now start with o23 (the longest overdue)
-    await getDb().upsertPcicCard(learned('o23', '1999-01-01'));
+  it('on the text and re-mounted: the same text, even if a fresh round would pick different words', async () => {
+    await learnWords();
+    const first = await mount();
+    const before = (await saved())!;
+    first.unmount();
+    // a fresh round would now start with o33, the longest overdue
+    await getDb().upsertPcicCard(learned('o33', '1999-01-01'));
     const second = await mount();
-    expect(second.getByText('2/3')).toBeTruthy();
-    expect(second.getByText('I talk with my mother.')).toBeTruthy();
-    expect(second.getByText('✓ Check')).toBeTruthy();
-    await answer(second, 'Hablo');
-    await afterPause();
-    expect(second.getByText('I want a house.')).toBeTruthy();
+    expect((await saved())!).toEqual(before);
+    expect(second.getByTestId('practice-word-0').props.children).toBe('casa');
     second.unmount();
   });
 
-  it('the right count of the round is kept: the score at the end covers the answers before the break', async () => {
-    await three();
+  it('on question 3 and re-mounted: the same question, the earlier answers kept', async () => {
+    await learnWords();
     const first = await mount();
-    await answer(first, 'Voy');
-    await afterPause();
-    await answer(first, 'zzz');
-    fireEvent.press(first.getByText('Next →'));
-    await flush();
+    await toQuestions(first);
+    await answer(first, 1);
+    await next(first);
+    await answer(first, 2, false);
+    await next(first);
+    const q3 = (await questions())[2];
     first.unmount();
+
     const second = await mount();
-    expect(second.getByText('3/3')).toBeTruthy();
-    await answer(second, 'Quiero');
-    await afterPause();
-    expect(second.getByText('2 of 3 right')).toBeTruthy();
+    expect(second.getByText('3/5')).toBeTruthy();
+    if (q3.kind === 'meaning') expect(second.getByText(`What does “${q3.word}” mean in the text?`)).toBeTruthy();
+    else expect(second.getByTestId('practice-statement').props.children).toBe(q3.statement);
+    expect(second.queryByText('Next →')).toBeNull();
+    const q1 = (await questions())[0];
+    expect((await saved())!.picks.slice(0, 2)).toEqual([q1.correct, expect.any(Number)]);
     second.unmount();
   });
 
-  it('a task answered right before the break is not asked again and gives no second half or XP', async () => {
-    await setBeta('xpV2', true);
-    await three();
+  it('a question answered before the break comes back answered (feedback and Next), and Next moves on', async () => {
+    await learnWords();
     const first = await mount();
-    await answer(first, 'Voy'); // leaves before the short pause ends
-    expect(mockRecord).toHaveBeenCalledTimes(1);
-    expect(await getDb().getDailyXpTenths(TODAY)).toBe(10);
+    await toQuestions(first);
+    await answer(first, 1, false);
     first.unmount();
 
     const second = await mount();
-    expect(second.getByText('2/3')).toBeTruthy();
-    expect(second.getByText('I talk with my mother.')).toBeTruthy();
-    expect(mockRecord).toHaveBeenCalledTimes(1);
-    expect(await getDb().getDailyXpTenths(TODAY)).toBe(10);
-    expect((await getDb().getPcicCard('o33'))).toMatchObject({ halfSteps: 1 });
+    expect(second.getByText('1/5')).toBeTruthy();
+    expect(second.getByText('Wrong')).toBeTruthy();
+    expect(second.getByText('Next →')).toBeTruthy();
+    await next(second);
+    expect(second.getByText('2/5')).toBeTruthy();
     second.unmount();
   });
 
-  it('a task answered wrong before the break comes back in its answered state: no second wrong, Next moves on', async () => {
-    await three();
+  it('on the sentences step and re-mounted: the step and its button come back', async () => {
+    await learnWords();
     const first = await mount();
-    await answer(first, 'vas');
-    expect(mockRecord).toHaveBeenCalledTimes(1);
+    await toQuestions(first);
+    await finishQuestions(first);
     first.unmount();
 
     const second = await mount();
-    expect(second.getByText('1/3')).toBeTruthy();
-    expect(second.getByText('Correct: Voy')).toBeTruthy();
-    expect(second.queryByText('✓ Check')).toBeNull();
-    fireEvent.press(second.getByText('Next →'));
-    await flush();
-    expect(second.getByText('2/3')).toBeTruthy();
-    expect(mockRecord).toHaveBeenCalledTimes(1);
-    expect((await getDb().getPcicCard('o33'))).toMatchObject({ wrongStreak: 1 });
+    expect(second.getByText('Questions done')).toBeTruthy();
+    await press(second, 'practice-sentences');
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/sentences', params: { focus: DUE.join(',') } });
     second.unmount();
   });
 
   it('a new day starts a new round: the saved one is replaced', async () => {
-    await three();
+    await learnWords();
     const first = await mount();
-    await answer(first, 'Voy');
-    await afterPause();
+    await toQuestions(first);
     first.unmount();
     const old = (await saved())!;
     await getDb().setPracticeRound(JSON.stringify({ ...old, date: '2000-01-01' }));
 
     const second = await mount();
-    expect(second.getByText('1/3')).toBeTruthy();
-    expect(await saved()).toMatchObject({ date: TODAY, index: 0, results: [null, null, null] });
+    expect(second.getByText('Read aloud')).toBeTruthy();
+    expect(await saved()).toMatchObject({ date: TODAY, step: 0 });
     second.unmount();
   });
 
-  it('the round ends: the saved round is deleted, and coming back starts a new one', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    const first = await mount();
-    expect(await saved()).not.toBeNull();
-    await answer(first, 'Voy');
-    await afterPause();
-    expect(first.getByText('Round done')).toBeTruthy();
-    expect(await getDb().getPracticeRound()).toBeNull();
-    first.unmount();
-
-    const second = await mount();
-    expect(second.getByText('1/1')).toBeTruthy();
-    expect(await saved()).toMatchObject({ index: 0, results: [null] });
-    second.unmount();
-  });
-
-  it('the app dies right after the last right answer: it comes back on the finished screen, and the saved round is gone', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    const first = await mount();
-    await answer(first, 'Voy');
-    first.unmount();
-    expect(await saved()).toMatchObject({ index: 0, results: ['right'] });
-
-    const second = await mount();
-    expect(second.getByText('Round done')).toBeTruthy();
-    expect(second.getByText('1 of 1 right')).toBeTruthy();
-    expect(await getDb().getPracticeRound()).toBeNull();
-    second.unmount();
-  });
-
-  it('a broken saved value, another direction or a word that is gone: a new round', async () => {
-    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
-    const other = { v: 1, date: TODAY, target: 'en', ids: ['o33'], index: 0, results: [null] };
-    const gone = { v: 1, date: TODAY, target: 'es', ids: ['o33', 'o9999'], index: 1, results: ['right', null] };
-    for (const raw of ['{broken', JSON.stringify(other), JSON.stringify(gone)]) {
+  it('an old missing-word round (v1), a broken value, another direction or a word that is gone: a new round, no error', async () => {
+    await learnWords();
+    const v1 = { v: 1, date: TODAY, target: 'es', ids: ['o19'], index: 1, results: ['right'] };
+    const other = { v: 2, date: TODAY, target: 'en', ids: DUE, qs: [{ kind: 'truefalse', sourceId: 'o19' }], step: 0, picks: [null] };
+    const gone = { v: 2, date: TODAY, target: 'es', ids: ['o19', 'o9999'], qs: [{ kind: 'truefalse', sourceId: 'o19' }], step: 0, picks: [null] };
+    for (const raw of [JSON.stringify(v1), '{broken', JSON.stringify(other), JSON.stringify(gone)]) {
       await getDb().setPracticeRound(raw);
       const view = await mount();
-      expect(view.getByText('1/1')).toBeTruthy();
+      expect(view.getByText('Read aloud')).toBeTruthy();
+      expect((await saved())!.ids).toEqual(DUE);
       view.unmount();
     }
+  });
+});
+
+describe('Practice tab: feedback button', () => {
+  it('the floating feedback button is on the text, a question, the sentences step and the empty state, with the screen id', async () => {
+    const empty = await mount();
+    expect(empty.getByText('💬')).toBeTruthy();
+    empty.unmount();
+
+    await learnWords();
+    const view = await mount();
+    const send = async (expected: string) => {
+      global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
+      fireEvent.press(view.getByText('💬'));
+      fireEvent.changeText(view.getByPlaceholderText('Share your thoughts...'), 'nice');
+      await act(async () => {
+        fireEvent.press(view.getByText('Send'));
+      });
+      const url = (global.fetch as jest.Mock).mock.calls[0][0] as string;
+      const params = new URLSearchParams(url.split('?')[1]);
+      expect(params.get('currentCard')).toContain(expected);
+      expect(params.get('languagePair')).toBe('en-es');
+      // @ts-expect-error test-only cleanup of a global set above
+      delete global.fetch;
+    };
+    expect(view.getByLabelText('Feedback')).toBeTruthy();
+    await send('practice-reading');
+
+    await toQuestions(view);
+    expect(view.getByLabelText('Feedback')).toBeTruthy();
+    await send('practice:q1');
+
+    await answer(view, 1);
+    await next(view);
+    await send('practice:q2');
+    for (let n = 2; n <= 5; n++) {
+      await answer(view, n);
+      await next(view);
+    }
+    expect(view.getByText('Questions done')).toBeTruthy();
+    expect(view.getByLabelText('Feedback')).toBeTruthy();
+    view.unmount();
   });
 });
