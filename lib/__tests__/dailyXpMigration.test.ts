@@ -1,4 +1,4 @@
-// daily_xp in integer tenths (migrateDailyXpTenths + the native SQLiteDB methods) against
+// daily_xp in integer tenths (the native SQLiteDB methods) against
 // a tiny stand-in for expo-sqlite that understands only the four daily_xp statements the
 // code issues (matched by their normalised text). No real SQLite runs in jest, so this
 // checks the wiring and the old-row conversion rules, not SQL syntax; the SQL itself was
@@ -45,44 +45,19 @@ const mockFakeDb = {
 
 jest.mock('expo-sqlite', () => ({ openDatabaseAsync: async () => mockFakeDb }));
 // open() runs runMigrations on the handle; the stand-in cannot run the whole schema script,
-// so only that call is replaced and migrateDailyXpTenths stays real.
+// so that call is replaced (migrateDailyXpTenths runs against real SQLite: migrationsSql.test.ts).
 jest.mock('../db/migrations', () => ({
   ...jest.requireActual('../db/migrations'),
   runMigrations: async () => 'en-es',
 }));
 
 import { getDb } from '../database';
-import { migrateDailyXpTenths } from '../db/migrations';
 
 beforeEach(() => {
   rows = [];
   hasTenthsColumn = false;
   mockFakeDb.execAsync.mockClear();
   mockFakeDb.runAsync.mockClear();
-});
-
-describe('migrateDailyXpTenths', () => {
-  it('adds the column and converts old whole-XP rows to tenths (x10)', async () => {
-    rows = [{ date: '2026-10-10', xp: 7 }, { date: '2026-10-11', xp: 0 }, { date: '2026-10-12', xp: 63 }];
-    await migrateDailyXpTenths(mockFakeDb as any);
-    expect(rows.map((r) => r.xp_tenths)).toEqual([70, 0, 630]);
-  });
-
-  it('is idempotent: a second run (column exists) changes nothing, even after new 0.2 steps', async () => {
-    rows = [{ date: '2026-10-10', xp: 7 }];
-    await migrateDailyXpTenths(mockFakeDb as any);
-    await getDb().addDailyXpTenths('2026-10-10', 2);
-    await migrateDailyXpTenths(mockFakeDb as any);
-    await migrateDailyXpTenths(mockFakeDb as any);
-    expect(rows[0].xp_tenths).toBe(72);
-    expect(await getDb().getDailyXpTenths('2026-10-10')).toBe(72);
-  });
-
-  it('works on an empty table and when the column already exists', async () => {
-    hasTenthsColumn = true;
-    await migrateDailyXpTenths(mockFakeDb as any);
-    expect(rows).toEqual([]);
-  });
 });
 
 describe('native daily_xp in tenths', () => {
