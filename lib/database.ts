@@ -458,8 +458,11 @@ class SQLiteDB implements DB {
     if (levelPrefix) {
       const ids = pcicItemsForLevel(levelPrefix.toUpperCase() as PcicLevel).map((i) => i.id);
       if (ids.length === 0) return;
-      const placeholders = ids.map(() => '?').join(',');
-      await db.runAsync(`DELETE FROM pcic_cards WHERE item_id IN (${placeholders})`, ids);
+      for (let i = 0; i < ids.length; i += 500) {
+        const chunk = ids.slice(i, i + 500);
+        const placeholders = chunk.map(() => '?').join(',');
+        await db.runAsync(`DELETE FROM pcic_cards WHERE item_id IN (${placeholders})`, chunk);
+      }
     } else {
       await db.runAsync('DELETE FROM pcic_cards');
     }
