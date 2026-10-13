@@ -141,7 +141,9 @@ describe('Practice tab: the text', () => {
   it('shows the five sentences as one paragraph with the due word of each highlighted, the read-aloud and the Next button', async () => {
     await learnWords();
     const view = await mount();
-    expect(view.getByText('Practice')).toBeTruthy();
+    // the level counter on top (same as the Sentences tab); the screen has no title of its own, the tab navigator's header says "Practice".
+    expect(view.getByTestId('level-counter').props.accessibilityLabel).toMatch(/^Level [A-C]\d: \d+ words, \d+ due$/);
+    expect(view.queryByText('Practice')).toBeNull();
     expect(view.getByTestId('practice-text').props.children).toHaveLength(5);
     const flat = (node: unknown): string =>
       Array.isArray(node) ? node.map(flat).join('') : typeof node === 'string' ? node : node && typeof node === 'object' && 'props' in node ? flat((node as { props: { children?: unknown } }).props.children) : '';
@@ -193,7 +195,7 @@ describe('Practice tab: the text', () => {
     setLanguage('es');
     const es = await mount();
     expect(es.getByText('Aprende unas palabras más y aquí habrá algo para leer')).toBeTruthy();
-    expect(es.getByText('Práctica')).toBeTruthy();
+    expect(es.getByTestId('level-counter')).toBeTruthy();
     es.unmount();
   });
 

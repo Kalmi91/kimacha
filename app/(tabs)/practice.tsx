@@ -13,6 +13,7 @@ import { useDockLift } from '@/components/learn/useDockLift';
 import FeedbackButton from '@/components/FeedbackModal';
 import ResultBadge from '@/components/ResultBadge';
 import SpeakButton from '@/components/SpeakButton';
+import LevelCounter from '@/components/practice/LevelCounter';
 import { findPcicItem, setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
@@ -150,9 +151,8 @@ export default function PracticeScreen() {
 
   const header = (
     <View style={styles.header}>
-      <Text accessibilityRole="header" variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
-        {s.tabs.practice}
-      </Text>
+      {/* No screen title: the tab navigator's header already says "Practice" (same as the Sentences tab). */}
+      <LevelCounter />
       {inQuestions && (
         <Text accessibilityLabel={s.practiceTab.progressLabel(step, count)} style={[styles.progress, { color: colors.tabIconDefault }]}>
           {s.practiceTab.progress(step, count)}
@@ -299,9 +299,7 @@ export default function PracticeScreen() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1 },
-  header: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', paddingHorizontal: 24, paddingTop: 40, paddingBottom: 12 },
-  title: { fontSize: 22, fontWeight: '700' },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 24, paddingTop: 16, paddingBottom: 12 },
   progress: { fontSize: 16, fontWeight: '600' },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 12 },
   emptyText: { fontSize: 18, fontWeight: '600', textAlign: 'center' },
