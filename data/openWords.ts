@@ -10,11 +10,6 @@ import type { Level, WordEntry, WordGender, WordPos } from '@/data/words';
 import { encliticBases, formsOfCard } from '@/lib/esForms';
 import { esFeminine, esPlural } from '@/lib/esInflect';
 import { conjugate, TENSES } from '@/lib/games/conjugate';
-import openA1 from '@/data/words-open/a1.json';
-import openA2 from '@/data/words-open/a2.json';
-import openB1 from '@/data/words-open/b1.json';
-import openB2 from '@/data/words-open/b2.json';
-import openC1 from '@/data/words-open/c1.json';
 
 interface OpenCard {
   order: number;
@@ -70,9 +65,25 @@ function toWord(c: OpenCard): OpenWord {
   return word;
 }
 
-const FILES: OpenCard[][] = [openA1, openA2, openB1, openB2, openC1] as OpenCard[][];
+let openWords: OpenWord[] | null = null;
 
-export const openWords: OpenWord[] = FILES.flatMap((cards) => cards.map(toWord));
+/**
+ * Every words-open card in WordEntry shape, A1 to C1. The five JSON files are required on the
+ * first call (not at import time), so a module or test that never needs the words never parses them.
+ */
+export function getOpenWords(): OpenWord[] {
+  if (!openWords) {
+    const files: OpenCard[][] = [
+      require('@/data/words-open/a1.json'),
+      require('@/data/words-open/a2.json'),
+      require('@/data/words-open/b1.json'),
+      require('@/data/words-open/b2.json'),
+      require('@/data/words-open/c1.json'),
+    ];
+    openWords = files.flatMap((cards) => cards.map(toWord));
+  }
+  return openWords;
+}
 
 /** The level in words-open: A0 → A1, C2 → C1 (A1 is the lower, C1 the upper bound). */
 export function openLevelOf(level: Level): Level {
@@ -82,14 +93,14 @@ export function openLevelOf(level: Level): Level {
 }
 
 export function getOpenWordsForLevel(level: Level): OpenWord[] {
-  return openWords.filter((w) => w.level === level);
+  return getOpenWords().filter((w) => w.level === level);
 }
 
 /** Every card from the level (after the clamp) cumulatively back down to A1. */
 export function getOpenWordsUpToLevel(level: Level): OpenWord[] {
   const idx = OPEN_LEVELS.indexOf(openLevelOf(level));
   const allowed = new Set(OPEN_LEVELS.slice(0, idx + 1));
-  return openWords.filter((w) => allowed.has(w.level));
+  return getOpenWords().filter((w) => allowed.has(w.level));
 }
 
 // Inflected form -> words-open lemma (glossary coverage, the fix after retiring
@@ -115,7 +126,7 @@ function buildFormIndex(): Map<string, OpenWord> {
     if (key && !index.has(key)) index.set(key, card);
     if (key && !folded.has(foldAccents(key))) folded.set(foldAccents(key), card);
   };
-  for (const card of openWords) {
+  for (const card of getOpenWords()) {
     for (const f of formsOfCard(card.es, card.openPos, FORM_DEPS)) add(f, card);
     // the pronoun written onto the verb has to be cut off the infinitive too (verlo): the head word also goes into the accent-free index
     if (card.openPos === 'verb') for (const alt of card.es.split(' / ')) add(alt, card);

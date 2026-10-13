@@ -42,8 +42,14 @@ export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number>
 
 // Play cut: story/chat/confusables/myth/ccat fields
 // removed, no caller since their tabs left in earlier steps.
+// One lazy registry line per lesson (generated: scripts/gen-content-index.mjs); `load` parses the JSON on first use.
+export interface GrammarIndexEntry {
+  id: string;
+  load: () => GrammarTopicData;
+}
+
 export interface LanguageContentBundle {
-  grammarTopics: GrammarTopicData[];
+  grammarIndex: GrammarIndexEntry[];
 }
 
 import { esContent } from './content/es';
@@ -214,13 +220,34 @@ export function grammarKindCounts(topic: GrammarTopicData): Record<GrammarKind, 
 // Every lesson is LessonV2 (schema 2); the old rule/more shape is gone.
 export type GrammarTopicData = LessonV2;
 
-const grammarTopicsByLang: Partial<Record<string, GrammarTopicData[]>> = byLang('grammarTopics');
+const grammarIndexByLang: Partial<Record<string, GrammarIndexEntry[]>> = byLang('grammarIndex');
+const grammarTopicCache = new Map<string, GrammarTopicData>();
+const grammarTopicsCache = new Map<string, GrammarTopicData[]>();
 
+/** The ids of a language's lessons in learning order, without loading any lesson JSON. */
+export function getGrammarTopicIds(lang: string): string[] {
+  return (grammarIndexByLang[lang] ?? []).map((e) => e.id);
+}
+
+/** Every lesson of the language (loads them all; where only ids or one lesson are needed, use getGrammarTopicIds / getGrammarTopic). */
 export function getGrammarTopics(lang: string): GrammarTopicData[] {
-  return grammarTopicsByLang[lang] ?? [];
+  let topics = grammarTopicsCache.get(lang);
+  if (!topics) {
+    topics = (grammarIndexByLang[lang] ?? []).map((e) => getGrammarTopic(lang, e.id)!);
+    grammarTopicsCache.set(lang, topics);
+  }
+  return topics;
 }
 
 export function getGrammarTopic(lang: string, topic: string): GrammarTopicData | undefined {
-  return getGrammarTopics(lang).find((t) => t.topic === topic);
+  const key = `${lang}/${topic}`;
+  let lesson = grammarTopicCache.get(key);
+  if (!lesson) {
+    const entry = grammarIndexByLang[lang]?.find((e) => e.id === topic);
+    if (!entry) return undefined;
+    lesson = entry.load();
+    grammarTopicCache.set(key, lesson);
+  }
+  return lesson;
 }
 
