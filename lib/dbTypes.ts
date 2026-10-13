@@ -76,6 +76,10 @@ export interface DB {
   // the beta switches (lib/beta.ts), app-wide; only the flags ever set are present.
   getBetaFlags(): Promise<Record<string, boolean>>;
   setBetaFlag(flag: string, on: boolean): Promise<void>;
+  // the unfinished Practice-tab round (lib/practice/practiceRound.ts), one JSON string, app-wide;
+  // null = no round saved.
+  getPracticeRound(): Promise<string | null>;
+  setPracticeRound(json: string | null): Promise<void>;
   // the selected PCIC level (A1-C1), app-wide, like the
   // status-bar tint. `levelPrefix` is optional: it clears only that level
   // (by the id list fetched from the loaded corpus, following lib/pcicLevels.ts

@@ -14,11 +14,12 @@ import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
 import openC1 from '@/data/words-open/c1.json';
 import { strictAnswerMatch } from '@/lib/answerMatch';
-import { shuffleArray } from '@/lib/shuffle';
-import type { Sm2Card } from '@/lib/sm2';
+import { addDays, type Sm2Card } from '@/lib/sm2';
 
-/** One round: the due words first, then earlier (not yet due) ones, up to this many. */
+/** One round: the due words first, then the freshly learned ones, up to this many. */
 export const PRACTICE_SESSION_SIZE = 20;
+/** A word counts as freshly learned (Words tab) when it was first asked within this many days. */
+export const PRACTICE_RECENT_DAYS = 7;
 
 export interface GapTask {
   itemId: string;
@@ -114,23 +115,25 @@ export interface QueueDeps {
   target: PcicTarget;
   findItem: (id: string) => PcicItem | undefined;
   today: string;
-  /** Seed of the shuffle of the not-yet-due words, so a round is reproducible. */
-  seed: number;
   size?: number;
   info?: (itemId: string) => GapSourceInfo | undefined;
 }
 
 /**
- * The round: every learned (not `new`) word with a usable sentence; the due ones first (the longest overdue
- * first), then earlier words that are not due yet, in a shuffled order, up to `size` tasks.
+ * The round: the learned words with a usable sentence that are due (the longest overdue first), then the ones
+ * first learned in the Words tab within the last PRACTICE_RECENT_DAYS days (the newest first), up to `size`
+ * tasks. A word marked known by hand ("Don't learn this") was never learned, so it is left out; an older
+ * word that is not due is left out too.
  */
 export function buildGapQueue(cards: Iterable<Sm2Card>, deps: QueueDeps): GapTask[] {
-  const learned = [...cards].filter((c) => c.state !== 'new');
+  const learned = [...cards].filter((c) => c.state !== 'new' && !c.known);
   const isDue = (c: Sm2Card) => c.due !== '' && c.due <= deps.today;
   const due = learned.filter(isDue).sort((a, b) => (a.due < b.due ? -1 : a.due > b.due ? 1 : 0));
-  const later = shuffleArray(learned.filter((c) => !isDue(c)), deps.seed);
+  const since = addDays(deps.today, -PRACTICE_RECENT_DAYS);
+  const fresh = (c: Sm2Card) => !isDue(c) && !!c.introducedAt && c.introducedAt >= since;
+  const recent = learned.filter(fresh).sort((a, b) => (a.introducedAt! > b.introducedAt! ? -1 : a.introducedAt! < b.introducedAt! ? 1 : 0));
   const out: GapTask[] = [];
-  for (const card of [...due, ...later]) {
+  for (const card of [...due, ...recent]) {
     const item = deps.findItem(card.itemId);
     const task = item ? gapTaskFor(item, deps.target, deps.info) : null;
     if (task) out.push(task);

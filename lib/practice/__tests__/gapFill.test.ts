@@ -25,7 +25,7 @@ const item = (id: string, es: string, en: string, exampleEs?: string, exampleEn?
   exampleEn,
 });
 
-const card = (itemId: string, state: Sm2Card['state'], due: string): Sm2Card => ({
+const card = (itemId: string, state: Sm2Card['state'], due: string, over: Partial<Sm2Card> = {}): Sm2Card => ({
   itemId,
   state,
   step: 0,
@@ -36,6 +36,7 @@ const card = (itemId: string, state: Sm2Card['state'], due: string): Sm2Card => 
   due,
   lastReview: null,
   introducedAt: null,
+  ...over,
 });
 
 // id -> item, and the lemma data that words-open carries (one lemma per word of the sentence).
@@ -60,7 +61,6 @@ const deps = (over: Partial<Parameters<typeof buildGapQueue>[1]> = {}) => ({
   target: 'es' as const,
   findItem,
   today: TODAY,
-  seed: 1,
   info,
   ...over,
 });
@@ -120,16 +120,38 @@ describe('gapTaskFor', () => {
 describe('buildGapQueue', () => {
   const ids = (q: GapTask[]) => q.map((t) => t.itemId);
 
-  it('due words first (longest overdue first), then earlier words that are not due', () => {
+  it('due words first (longest overdue first), then the freshly learned ones (newest first)', () => {
     const cards = [
-      card('o1', 'review', '2026-10-20'), // not due
-      card('o2', 'review', '2026-10-12'), // due today
-      card('o3', 'learning', '2026-10-09'), // due, 3 days overdue
-      card('o5', 'review', '2026-11-01'), // not due
+      card('o1', 'review', '2026-10-20', { introducedAt: '2026-10-08' }), // not due, learned 4 days ago
+      card('o2', 'review', '2026-10-12', { introducedAt: '2026-09-01' }), // due today
+      card('o3', 'learning', '2026-10-09', { introducedAt: '2026-09-01' }), // due, 3 days overdue
+      card('o5', 'review', '2026-11-01', { introducedAt: '2026-10-11' }), // not due, learned yesterday
     ];
-    const q = ids(buildGapQueue(cards, deps()));
-    expect(q.slice(0, 2)).toEqual(['o3', 'o2']);
-    expect(q.slice(2).sort()).toEqual(['o1', 'o5']);
+    expect(ids(buildGapQueue(cards, deps()))).toEqual(['o3', 'o2', 'o5', 'o1']);
+  });
+
+  it('the word source is due + the last 7 days: 3 days ago is in, 7 days ago is in, 8 days ago and no date are out', () => {
+    const cards = [
+      card('o1', 'review', '2026-10-20', { introducedAt: '2026-10-09' }), // 3 days ago
+      card('o2', 'review', '2026-10-20', { introducedAt: '2026-10-05' }), // 7 days ago
+      card('o3', 'review', '2026-10-20', { introducedAt: '2026-10-04' }), // 8 days ago
+      card('o5', 'review', '2026-10-20', { introducedAt: null }),
+    ];
+    expect(ids(buildGapQueue(cards, deps()))).toEqual(['o1', 'o2']);
+  });
+
+  it('an old word that is due still comes, however long ago it was learned', () => {
+    const q = buildGapQueue([card('o3', 'review', '2026-10-11', { introducedAt: '2026-01-01' })], deps());
+    expect(ids(q)).toEqual(['o3']);
+  });
+
+  it('a word marked known by hand is left out, whether it is due or was just marked', () => {
+    const cards = [
+      card('o1', 'review', '2026-10-01', { known: true, introducedAt: '2026-09-01' }), // due, known by hand
+      card('o2', 'review', '2026-12-11', { known: true, introducedAt: '2026-10-11' }), // marked yesterday
+      card('o3', 'review', '2026-10-20', { introducedAt: '2026-10-11' }), // really learned
+    ];
+    expect(ids(buildGapQueue(cards, deps()))).toEqual(['o3']);
   });
 
   it('a new word, a word without a sentence and an unknown id are left out', () => {
@@ -147,22 +169,19 @@ describe('buildGapQueue', () => {
     expect(q[0]).toMatchObject({ before: 'Es una casa ', answer: 'nueva', after: '.' });
   });
 
-  it('is capped at the round size, due words kept; the order of the rest follows the seed', () => {
+  it('is capped at the round size: the due words kept in front, then the newest learned', () => {
     const many: Record<string, PcicItem> = {};
     const manyInfo: Record<string, GapSourceInfo> = {};
     const cards: Sm2Card[] = [];
     for (let n = 0; n < 30; n++) {
       many[`w${n}`] = item(`w${n}`, 'ir', 'to go', 'Voy ya.', 'I go now.');
       manyInfo[`w${n}`] = { lemma: 'ir', sentenceLemmas: ['ir', 'ya'] };
-      cards.push(card(`w${n}`, 'review', n < 3 ? '2026-10-01' : '2026-12-01'));
+      const dueDate = n < 3 ? `2026-10-0${n + 1}` : '2026-12-01';
+      cards.push(card(`w${n}`, 'review', dueDate, { introducedAt: n === 3 ? '2026-10-11' : '2026-10-08' }));
     }
-    const run = (seed: number) =>
-      ids(buildGapQueue(cards, { target: 'es', findItem: (id) => many[id], today: TODAY, seed, info: (id) => manyInfo[id] }));
-    const a = run(7);
-    expect(a).toHaveLength(PRACTICE_SESSION_SIZE);
-    expect(a.slice(0, 3).sort()).toEqual(['w0', 'w1', 'w2']);
-    expect(run(7)).toEqual(a);
-    expect(run(8)).not.toEqual(a);
+    const q = ids(buildGapQueue(cards, { target: 'es', findItem: (id) => many[id], today: TODAY, info: (id) => manyInfo[id] }));
+    expect(q).toHaveLength(PRACTICE_SESSION_SIZE);
+    expect(q.slice(0, 4)).toEqual(['w0', 'w1', 'w2', 'w3']);
   });
 
   it('nothing learned yet: empty', () => {
