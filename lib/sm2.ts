@@ -117,6 +117,7 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
     case 'again':
       next.lapses = card.lapses + 1;
       next.ease = Math.max(EASE_FLOOR, card.ease - 0.2);
+      next.known = false;
       next.state = 'learning';
       next.step = 0;
       next.due = today;
