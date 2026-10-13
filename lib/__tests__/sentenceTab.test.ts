@@ -5,7 +5,8 @@ jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import type { PcicItem } from '@/data/pcic';
 import { getDb } from '@/lib/database';
-import { afterSentence, buildSentenceQueue, isDueCard, recordSentenceHalves, sentenceKey } from '@/lib/sentenceTab';
+import { afterSentence, buildSentenceQueue, isDueCard, recordTypedWords, sentenceKey } from '@/lib/sentenceTab';
+import type { WordVerdict } from '@/lib/sentenceTyping';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { localDateString } from '@/lib/usageStats';
 
@@ -63,6 +64,42 @@ describe('buildSentenceQueue', () => {
     expect(q.filter((e) => e.due).map((e) => e.itemId)).toEqual(['a1-s4']);
   });
 
+  it('more due words first, then fewer words; a sentence without a due word comes last', () => {
+    const cards = ITEMS.slice(0, 5).map((i) => learned(i));
+    cards[0] = learned(ITEMS[0], '2026-10-10'); // el libro due
+    cards[1] = learned(ITEMS[1], '2026-10-10'); // la mesa due
+    // s1 has both (2), s5 has mesa and s4 has libro (1 each, the shorter first), s3 has none
+    expect(queue(cards).map((e) => [e.itemId, e.dueIds.length])).toEqual([['a1-s1', 2], ['a1-s5', 1], ['a1-s4', 1], ['a1-s3', 0]]);
+  });
+
+  it('a less fresh review comes before a fresher one with as many due words, even if it is longer', () => {
+    const stale = { ...learned(ITEMS[4], '2026-10-10'), lastReview: '2026-09-01' }; // la casa (s5, 5 words)
+    const fresh = { ...learned(ITEMS[2], '2026-10-10'), lastReview: '2026-10-09' }; // el gato (s3, 2 words)
+    const q = queue([fresh, learned(ITEMS[1]), stale]);
+    expect(q.map((e) => [e.itemId, e.staleness])).toEqual([['a1-s5', '2026-09-01'], ['a1-s3', '2026-10-09']]);
+  });
+
+  it('focus: the sentences with the most focus words come first, before the due ones', () => {
+    const cards = ITEMS.slice(0, 5).map((i) => learned(i));
+    cards[3] = learned(ITEMS[3], '2026-10-10'); // el perro is due: s4 leads without a focus
+    expect(queue(cards)[0].itemId).toBe('a1-s4');
+    const q = queue(cards, { focus: new Set(['a1-s5']) });
+    expect(q[0].itemId).toBe('a1-s5');
+    expect(queue(cards, { focus: new Set(['nope']) })[0].itemId).toBe('a1-s4');
+  });
+
+  it('dueIds and slots: the due learned words, and per learned word the words of the sentence it owns', () => {
+    const cards = ITEMS.slice(0, 5).map((i) => learned(i));
+    cards[3] = learned(ITEMS[3], '2026-10-10'); // el perro due
+    const s4 = queue(cards).find((e) => e.itemId === 'a1-s4')!;
+    expect(s4.dueIds).toEqual(['a1-s4']);
+    expect([...s4.slots].sort((a, b) => a.id.localeCompare(b.id))).toEqual([
+      { id: 'a1-s1', words: ['libro'] },
+      { id: 'a1-s3', words: ['gato'] },
+      { id: 'a1-s4', words: ['perro'] },
+    ]);
+  });
+
   it('wordIds: each learned word of the sentence once; free words (el, la, y) are nobody\'s', () => {
     const q = queue(ITEMS.slice(0, 5).map((i) => learned(i)));
     const s4 = q.find((e) => e.itemId === 'a1-s4')!;
@@ -93,7 +130,7 @@ describe('isDueCard', () => {
 });
 
 describe('afterSentence', () => {
-  const e = (id: string) => ({ itemId: id, source: '', target: id, wordCount: 1, wordIds: [], due: false });
+  const e = (id: string) => ({ itemId: id, source: '', target: id, wordCount: 1, wordIds: [], due: false, dueIds: [], staleness: '', slots: [] });
   it('right: the head is gone; wrong: the head goes to the end', () => {
     const q = [e('a'), e('b'), e('c')];
     expect(afterSentence(q, true).map((x) => x.itemId)).toEqual(['b', 'c']);
@@ -102,36 +139,54 @@ describe('afterSentence', () => {
   });
 });
 
-describe('recordSentenceHalves', () => {
+describe('recordTypedWords', () => {
+  const v = (id: string, right: boolean, due = false): WordVerdict => ({ id, right, due });
+
   beforeEach(async () => {
     await getDb().resetPcicCards();
   });
 
-  it('one half per learned word, once; a word without a card is skipped', async () => {
+  it('one half per right word, once; a word without a card is skipped', async () => {
     const db = getDb();
     await db.upsertPcicCard(learned(ITEMS[0], TODAY));
     await db.upsertPcicCard(learned(ITEMS[1]));
-    const n = await recordSentenceHalves(['a1-s1', 'a1-s2', 'a1-nocard'], TODAY);
-    expect(n).toBe(2);
+    const n = await recordTypedWords([v('a1-s1', true), v('a1-s2', true), v('a1-nocard', true), v('a1-s1', true)], false, TODAY);
+    expect(n).toEqual({ right: 2, wrong: 0 });
     const cards = new Map((await db.getPcicCards()).map((c) => [c.itemId, c]));
-    expect(cards.get('a1-s1')?.halfSteps).toBe(1);
+    expect(cards.get('a1-s1')?.halfSteps).toBe(1); // the repeated verdict did not count twice
     expect(cards.get('a1-s2')?.halfSteps).toBe(1);
-    // a second right sentence: 2 halves = one full step (the due date moves)
-    await recordSentenceHalves(['a1-s1'], TODAY);
+    // a second typed sentence: 2 halves = one full step (the due date moves)
+    await recordTypedWords([v('a1-s1', true)], false, TODAY);
     const again = (await db.getPcicCards()).find((c) => c.itemId === 'a1-s1')!;
     expect(again.halfSteps).toBe(0);
     expect(again.reps).toBe(3);
   });
 
-  it('beta xpV2: off earns no XP; on, each half earns XP by its own word reps (1, or 0.2 from the 3rd)', async () => {
+  it('a wrong word counts as a wrong typed answer only when it is due; two in a row step the word back', async () => {
+    const db = getDb();
+    await db.upsertPcicCard(learned(ITEMS[0], '2026-10-10')); // due
+    await db.upsertPcicCard(learned(ITEMS[1])); // not due
+    const n = await recordTypedWords([v('a1-s1', false, true), v('a1-s2', false, false)], false, TODAY);
+    expect(n).toEqual({ right: 0, wrong: 1 });
+    let cards = new Map((await db.getPcicCards()).map((c) => [c.itemId, c]));
+    expect(cards.get('a1-s1')?.wrongStreak).toBe(1);
+    expect(cards.get('a1-s2')?.wrongStreak ?? 0).toBe(0);
+    await recordTypedWords([v('a1-s1', false, true)], false, TODAY);
+    cards = new Map((await db.getPcicCards()).map((c) => [c.itemId, c]));
+    expect(cards.get('a1-s1')?.wrongStreak).toBe(0); // the second miss moved it back one step
+    expect(cards.get('a1-s1')?.interval).toBeLessThan(3);
+  });
+
+  it('beta xpV2: off earns no XP; on, each right half earns XP by its own word reps (1, or 0.2 from the 3rd), a wrong word none', async () => {
     const db = getDb();
     const day = localDateString();
     await db.addDailyXpTenths(day, -100000);
     await db.upsertPcicCard(learned(ITEMS[0]));
     await db.upsertPcicCard({ ...learned(ITEMS[1]), reps: 3 });
-    await recordSentenceHalves(['a1-s1', 'a1-s2'], TODAY);
+    await db.upsertPcicCard(learned(ITEMS[2], '2026-10-10'));
+    await recordTypedWords([v('a1-s1', true), v('a1-s2', true)], false, TODAY);
     expect(await db.getDailyXpTenths(day)).toBe(0);
-    await recordSentenceHalves(['a1-s1', 'a1-s2', 'a1-nocard'], TODAY, true);
+    await recordTypedWords([v('a1-s1', true), v('a1-s2', true), v('a1-nocard', true), v('a1-s3', false, true)], true, TODAY);
     expect(await db.getDailyXpTenths(day)).toBe(10 + 2);
   });
 });

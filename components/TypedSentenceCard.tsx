@@ -17,7 +17,8 @@ import { answerInputProps } from '@/lib/inputProps';
 interface Props {
   sourceSentence: string;
   targetSentence: string;
-  onResult: (correct: boolean) => void;
+  // `typed` is the answer as typed (the Sentences tab credits its words one by one).
+  onResult: (correct: boolean, typed: string) => void;
   // Speech locale of the learned language, the right sentence is read aloud.
   speechLocale?: string;
   // The prompt sentence (in the source language) is spoken when the card opens,
@@ -108,7 +109,7 @@ export default function TypedSentenceCard({
               // another try instead of ending on "wrong".
               if (result === 'wrong') setResult(null);
             }}
-            onSubmitEditing={result ? () => onResult(result === 'correct') : handleCheck}
+            onSubmitEditing={result ? () => onResult(result === 'correct', typed) : handleCheck}
             editable={result !== 'correct'}
             autoFocus
             {...answerInputProps}
@@ -117,7 +118,7 @@ export default function TypedSentenceCard({
           {result && (result === 'wrong' || missed) && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
 
           {/* the same correct / wrong indicator on every card (colour + shape + ✓/✗ + text). */}
-          {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
+          {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} align="center" />}
 
           {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}
         </Card>
@@ -125,7 +126,7 @@ export default function TypedSentenceCard({
 
       <DockedAction
         label={result ? `${s.card.next} →` : `✓ ${s.card.check}`}
-        onPress={result ? () => onResult(result === 'correct') : handleCheck}
+        onPress={result ? () => onResult(result === 'correct', typed) : handleCheck}
         tone={result ? 'next' : 'check'}
         color={result ? (result === 'correct' ? colors.successFill : colors.danger) : undefined}
         bottom={dockLift}

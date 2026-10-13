@@ -475,6 +475,10 @@ const es: Strings = {
     roundDone: (n: number) => (n === 1 ? 'Ronda terminada: 1 frase' : `Ronda terminada: ${n} frases`),
     more: 'Más frases',
   },
+  // components/practice/LevelCounter.tsx (pestañas Frases y Práctica): el nivel y sus palabras, los mismos chips que la pestaña Palabras.
+  levelCounter: {
+    a11y: (level: string, total: number, due: number) => `Nivel ${level}: ${total} palabras, ${due} pendientes`,
+  },
   lessonTest: {
     take: 'Hacer el test de la lección',
     rules: (n: number, pct: number) => `${n} ${n === 1 ? 'pregunta' : 'preguntas'}, para aprobar ${pct}%`,

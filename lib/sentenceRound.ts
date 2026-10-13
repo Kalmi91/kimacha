@@ -1,8 +1,7 @@
-// The Sentences tab round (spec HAROM-JATEK.md 3): a round holds SENTENCE_ROUND_SIZE sentences, each built from tiles;
-// when all are built right, ONE of the built sentences is typed (picked from the round with a fixed seed, so the same
-// round always picks the same one). The half of a sentence (one per learned word) is paid when its BUILD is right, once:
-// the typing never pays again. A wrong build sends the sentence to the end of the round; a wrong typing sends the typed
-// sentence back to the end (it is built again, then typed again), neither takes anything back from the words.
+// The Sentences tab round (spec HAROM-JATEK.md 3): a round holds SENTENCE_ROUND_SIZE sentences to build from tiles (no
+// credit: lib/sentencePick.ts picks them), then ONE other, shorter sentence to type. Only the typing credits words, word
+// by word (lib/sentenceTyping.ts, lib/sentenceTab.ts recordTypedWords). A wrong build sends the sentence to the end of
+// the round; the typing ends the round, right or wrong (a retry would credit words that were just shown).
 //
 // Pure state functions plus the save of the round: it is kept so a round that was left (another tab, the app closed)
 // continues on the same sentence the same day, and is dropped when the round ends. Not saved: the half-built tiles.
@@ -21,45 +20,32 @@ export interface SentenceRound {
   day: string;
   /** The direction the round was built for (a direction switch makes it invalid). */
   target: PcicTarget;
-  /** The round's sentences in their first order (also the sentences' data: the saved round needs no queue rebuild). */
+  /** The `focus` route parameter the round was built for ('' = none): a different focus makes it invalid. */
+  focus: string;
+  /** The sentences to build, in their first order (also the sentences' data: the saved round needs no queue rebuild). */
   entries: SentenceEntry[];
   /** The itemIds still to build, the first is the current one; a wrong build puts it at the end. */
   queue: string[];
-  /** The itemIds built right: their halves are paid, they never pay again. */
+  /** The itemIds built right (progress only: a build credits nothing). */
   rated: string[];
-  /** The sentence picked for typing, null until every sentence was built right once. */
-  typeId: string | null;
+  /** The sentence to type: not one of `entries`, shorter than them (lib/sentencePick.ts). */
+  typed: SentenceEntry;
   phase: RoundPhase;
 }
 
-/** A fresh round over these sentences: every one still to build. */
-export function startRound(entries: SentenceEntry[], day: string, target: PcicTarget): SentenceRound {
-  return { day, target, entries, queue: entries.map((e) => e.itemId), rated: [], typeId: null, phase: 'build' };
+/** A fresh round: every build still to do, then the typing (straight to the typing when there is nothing to build). */
+export function startRound(entries: SentenceEntry[], typed: SentenceEntry, day: string, target: PcicTarget, focus = ''): SentenceRound {
+  return { day, target, focus, entries, queue: entries.map((e) => e.itemId), rated: [], typed, phase: entries.length === 0 ? 'type' : 'build' };
 }
 
-/** FNV-1a over the seed text: a small stable hash, no randomness, so a test and a saved round see the same pick. */
-function seedHash(seed: string): number {
-  let h = 0x811c9dc5;
-  for (let i = 0; i < seed.length; i++) {
-    h ^= seed.charCodeAt(i);
-    h = Math.imul(h, 0x01000193) >>> 0;
-  }
-  return h;
-}
-
-/** Which of the round's sentences is typed: a seeded pick from the first order of the round (day + the ids). */
-export function pickTypedId(day: string, ids: readonly string[]): string | null {
-  if (ids.length === 0) return null;
-  return ids[seedHash(`${day}|${ids.join(',')}`) % ids.length];
-}
-
-/** The sentence on screen: the head of the queue while building, the picked one while typing. */
+/** The sentence on screen: the head of the queue while building, the typed one while typing. */
 export function currentEntry(round: SentenceRound): SentenceEntry | undefined {
-  const id = round.phase === 'build' ? round.queue[0] : round.phase === 'type' ? round.typeId : undefined;
-  return id === undefined || id === null ? undefined : round.entries.find((e) => e.itemId === id);
+  if (round.phase === 'type') return round.typed;
+  if (round.phase !== 'build') return undefined;
+  return round.entries.find((e) => e.itemId === round.queue[0]);
 }
 
-/** Progress in steps: one build per sentence plus the one typing; a done step is a sentence built right or the typing right. */
+/** Progress in steps: one build per sentence plus the one typing; a done step is a sentence built right or the typing. */
 export function roundProgress(round: SentenceRound): { done: number; total: number } {
   return { done: round.rated.length + (round.phase === 'done' ? 1 : 0), total: round.entries.length + 1 };
 }
@@ -69,33 +55,31 @@ export function buildNumber(round: SentenceRound): number {
   return Math.min(round.rated.length + 1, Math.max(1, round.entries.length));
 }
 
+/** The sentences of the round, builds and the typed one. */
+export function roundSentences(round: SentenceRound): SentenceEntry[] {
+  return [...round.entries, round.typed];
+}
+
 /**
- * The build of the current sentence was answered. Right = the sentence leaves the queue and, the first time only, `pay`
- * is the sentence whose words get their half; the last right build moves on to the typing (the pick is made once).
- * Wrong = the sentence goes to the end of the queue, nothing is paid.
+ * The build of the current sentence was answered. Right = the sentence leaves the queue (the last one moves on to the
+ * typing); wrong = it goes to the end of the queue. Nothing is credited either way.
  */
-export function answerBuild(round: SentenceRound, correct: boolean): { round: SentenceRound; pay: SentenceEntry | null } {
+export function answerBuild(round: SentenceRound, correct: boolean): SentenceRound {
   const id = round.queue[0];
-  if (round.phase !== 'build' || id === undefined) return { round, pay: null };
-  if (!correct) return { round: { ...round, queue: [...round.queue.slice(1), id] }, pay: null };
-  const first = !round.rated.includes(id);
+  if (round.phase !== 'build' || id === undefined) return round;
+  if (!correct) return { ...round, queue: [...round.queue.slice(1), id] };
   const queue = round.queue.slice(1);
-  const typeId = queue.length === 0 ? round.typeId ?? pickTypedId(round.day, round.entries.map((e) => e.itemId)) : round.typeId;
-  return {
-    round: { ...round, queue, rated: first ? [...round.rated, id] : round.rated, typeId, phase: queue.length === 0 ? 'type' : 'build' },
-    pay: first ? round.entries.find((e) => e.itemId === id) ?? null : null,
-  };
+  return { ...round, queue, rated: round.rated.includes(id) ? round.rated : [...round.rated, id], phase: queue.length === 0 ? 'type' : 'build' };
 }
 
-/** The typing was answered: right ends the round; wrong sends the typed sentence back (built again, then typed again). */
-export function answerType(round: SentenceRound, correct: boolean): SentenceRound {
-  if (round.phase !== 'type' || round.typeId === null) return round;
-  return correct ? { ...round, phase: 'done' } : { ...round, queue: [round.typeId], phase: 'build' };
+/** The typing was answered: the round is over, right or wrong. */
+export function answerType(round: SentenceRound): SentenceRound {
+  return round.phase === 'type' ? { ...round, phase: 'done' } : round;
 }
 
-/** Whether a saved round is for this day and direction. */
-export function isRoundFor(saved: SentenceRound | null, day: string, target: PcicTarget): saved is SentenceRound {
-  return saved !== null && saved.day === day && saved.target === target;
+/** Whether a saved round is for this day, direction and focus. */
+export function isRoundFor(saved: SentenceRound | null, day: string, target: PcicTarget, focus = ''): saved is SentenceRound {
+  return saved !== null && saved.day === day && saved.target === target && saved.focus === focus;
 }
 
 const isStrings = (v: unknown): v is string[] => Array.isArray(v) && v.every((x) => typeof x === 'string');
@@ -105,10 +89,16 @@ function parseEntry(raw: unknown): SentenceEntry | null {
   const e = raw as Partial<SentenceEntry>;
   if (typeof e.itemId !== 'string' || typeof e.source !== 'string' || typeof e.target !== 'string') return null;
   if (typeof e.wordCount !== 'number' || !isStrings(e.wordIds) || typeof e.due !== 'boolean') return null;
-  return { itemId: e.itemId, source: e.source, target: e.target, wordCount: e.wordCount, wordIds: e.wordIds, due: e.due };
+  if (!isStrings(e.dueIds) || typeof e.staleness !== 'string' || !Array.isArray(e.slots)) return null;
+  const slots = e.slots.every((s) => typeof s === 'object' && s !== null && typeof s.id === 'string' && isStrings(s.words));
+  if (!slots) return null;
+  return { itemId: e.itemId, source: e.source, target: e.target, wordCount: e.wordCount, wordIds: e.wordIds, due: e.due, dueIds: e.dueIds, staleness: e.staleness, slots: e.slots };
 }
 
-/** A saved value back into a round, or null when it is not a round that can continue (broken, or a round that has ended). */
+/**
+ * A saved value back into a round, or null when it is not a round that can continue: broken, a round that has ended,
+ * or one saved by an older version (no separate typed sentence): that one simply starts again as a fresh round.
+ */
 export function parseSentenceRound(raw: unknown): SentenceRound | null {
   if (typeof raw !== 'object' || raw === null) return null;
   const r = raw as Partial<SentenceRound>;
@@ -119,12 +109,13 @@ export function parseSentenceRound(raw: unknown): SentenceRound | null {
     if (!entry) return null;
     entries.push(entry);
   }
-  if (entries.length === 0 || !isStrings(r.queue) || !isStrings(r.rated)) return null;
+  const typed = parseEntry(r.typed);
+  if (!typed || !isStrings(r.queue) || !isStrings(r.rated)) return null;
   const ids = new Set(entries.map((e) => e.itemId));
   if (![...r.queue, ...r.rated].every((id) => ids.has(id))) return null;
-  const typeId = typeof r.typeId === 'string' && ids.has(r.typeId) ? r.typeId : null;
-  if (r.phase === 'build' && r.queue.length > 0) return { day: r.day, target: r.target, entries, queue: r.queue, rated: r.rated, typeId, phase: 'build' };
-  if (r.phase === 'type' && typeId !== null && r.queue.length === 0) return { day: r.day, target: r.target, entries, queue: r.queue, rated: r.rated, typeId, phase: 'type' };
+  const base = { day: r.day, target: r.target, focus: typeof r.focus === 'string' ? r.focus : '', entries, queue: r.queue, rated: r.rated, typed };
+  if (r.phase === 'build' && r.queue.length > 0) return { ...base, phase: 'build' };
+  if (r.phase === 'type' && r.queue.length === 0) return { ...base, phase: 'type' };
   return null;
 }
 
