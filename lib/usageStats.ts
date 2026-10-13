@@ -64,7 +64,7 @@ export function localDateString(d: Date = new Date()): string {
 export function buildDayRange(days: number, end: Date = new Date()): string[] {
   const out: string[] = [];
   for (let i = days - 1; i >= 0; i--) {
-    out.push(localDateString(new Date(end.getTime() - i * 86400000)));
+    out.push(localDateString(new Date(end.getFullYear(), end.getMonth(), end.getDate() - i)));
   }
   return out;
 }
