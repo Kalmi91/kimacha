@@ -47,6 +47,8 @@ describe('FeedbackButton placement', () => {
     expect(fab.position).not.toBe('absolute');
     expect(fab.width).toBe(40);
     expect(fab.height).toBe(40);
+    // clear of the screen edge (the native header has no padding of its own at its right end)
+    expect(styleOf(header.getByTestId('feedback-header-end')).marginRight).toBe(16);
   });
 
   it('header: the same modal and the screen context travel with it (language pair, card)', async () => {

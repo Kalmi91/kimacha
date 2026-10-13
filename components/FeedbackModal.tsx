@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState, type ReactNode } from 'react';
-import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard, Share } from 'react-native';
+import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard, Share, Platform } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -230,7 +230,11 @@ export default function FeedbackButton(props: Props) {
   // The control lives in the navigator's header (headerRight) and carries this screen's context (level, pair, card).
   useEffect(() => {
     if (!inHeader) return;
-    setHeaderRight(() => <FeedbackControl level={level} languagePair={languagePair} currentCard={currentCard} slot="inline" />);
+    setHeaderRight(() => (
+      <View testID="feedback-header-end" style={styles.headerEnd}>
+        <FeedbackControl level={level} languagePair={languagePair} currentCard={currentCard} slot="inline" />
+      </View>
+    ));
   }, [inHeader, setHeaderRight, level, languagePair, currentCard]);
   useEffect(() => {
     if (!inHeader) return;
@@ -291,6 +295,8 @@ const styles = StyleSheet.create({
   // The header-sized button (placement 'header' / 'inline'): 40 px, in the layout flow, no shadow.
   slot: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
   corner: { position: 'absolute', top: 8, right: 8, zIndex: 100 },
+  // the native header has no padding at its right end (the web one does): the button's shadow would sit on the screen edge.
+  headerEnd: { marginRight: Platform.OS === 'web' ? 0 : 16 },
   brutalSlot: { width: 44, height: 44, borderRadius: 0, backgroundColor: 'transparent' },
   brutalSlotBox: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   slotText: { fontSize: 20 },
