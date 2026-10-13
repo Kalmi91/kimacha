@@ -1,15 +1,12 @@
 import { PCIC_LEVELS, findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
 import type { Sm2Card } from '@/lib/sm2';
 import {
-  PRACTICE_SESSION_SIZE,
-  buildGapQueue,
-  checkGap,
   gapByLemma,
   gapByWord,
   gapTaskFor,
   openGapInfo,
+  practiceCandidates,
   type GapSourceInfo,
-  type GapTask,
 } from '../gapFill';
 
 const TODAY = '2026-10-12';
@@ -56,15 +53,6 @@ const INFO: Record<string, GapSourceInfo> = {
   o6: { lemma: 'nuevo', sentenceLemmas: ['ser', 'uno', 'casa', 'nuevo'] },
 };
 const info = (id: string) => INFO[id];
-const findItem = (id: string) => Object.values(ITEMS).find((i) => i.id === id);
-const deps = (over: Partial<Parameters<typeof buildGapQueue>[1]> = {}) => ({
-  target: 'es' as const,
-  findItem,
-  today: TODAY,
-  info,
-  ...over,
-});
-
 describe('gapByLemma', () => {
   it('blanks the inflected form that stands in the sentence', () => {
     expect(gapByLemma('Voy con ella.', INFO.o1)).toEqual({ before: '', answer: 'Voy', after: ' con ella.' });
@@ -117,8 +105,8 @@ describe('gapTaskFor', () => {
   });
 });
 
-describe('buildGapQueue', () => {
-  const ids = (q: GapTask[]) => q.map((t) => t.itemId);
+describe('practiceCandidates', () => {
+  const ids = (cards: Sm2Card[]) => cards.map((c) => c.itemId);
 
   it('due words first (longest overdue first), then the freshly learned ones (newest first)', () => {
     const cards = [
@@ -127,7 +115,7 @@ describe('buildGapQueue', () => {
       card('o3', 'learning', '2026-10-09', { introducedAt: '2026-09-01' }), // due, 3 days overdue
       card('o5', 'review', '2026-11-01', { introducedAt: '2026-10-11' }), // not due, learned yesterday
     ];
-    expect(ids(buildGapQueue(cards, deps()))).toEqual(['o3', 'o2', 'o5', 'o1']);
+    expect(ids(practiceCandidates(cards, TODAY))).toEqual(['o3', 'o2', 'o5', 'o1']);
   });
 
   it('the word source is due + the last 7 days: 3 days ago is in, 7 days ago is in, 8 days ago and no date are out', () => {
@@ -137,12 +125,11 @@ describe('buildGapQueue', () => {
       card('o3', 'review', '2026-10-20', { introducedAt: '2026-10-04' }), // 8 days ago
       card('o5', 'review', '2026-10-20', { introducedAt: null }),
     ];
-    expect(ids(buildGapQueue(cards, deps()))).toEqual(['o1', 'o2']);
+    expect(ids(practiceCandidates(cards, TODAY))).toEqual(['o1', 'o2']);
   });
 
   it('an old word that is due still comes, however long ago it was learned', () => {
-    const q = buildGapQueue([card('o3', 'review', '2026-10-11', { introducedAt: '2026-01-01' })], deps());
-    expect(ids(q)).toEqual(['o3']);
+    expect(ids(practiceCandidates([card('o3', 'review', '2026-10-11', { introducedAt: '2026-01-01' })], TODAY))).toEqual(['o3']);
   });
 
   it('a word marked known by hand is left out, whether it is due or was just marked', () => {
@@ -151,58 +138,12 @@ describe('buildGapQueue', () => {
       card('o2', 'review', '2026-12-11', { known: true, introducedAt: '2026-10-11' }), // marked yesterday
       card('o3', 'review', '2026-10-20', { introducedAt: '2026-10-11' }), // really learned
     ];
-    expect(ids(buildGapQueue(cards, deps()))).toEqual(['o3']);
+    expect(ids(practiceCandidates(cards, TODAY))).toEqual(['o3']);
   });
 
-  it('a new word, a word without a sentence and an unknown id are left out', () => {
-    const cards = [
-      card('o1', 'new', ''),
-      card('o2', 'review', '2026-10-12'),
-      card('o4', 'review', '2026-10-12'), // no sentence
-      card('o99', 'review', '2026-10-12'), // not in the corpus
-    ];
-    expect(ids(buildGapQueue(cards, deps()))).toEqual(['o2']);
-  });
-
-  it('the inflected form of the word stands in the task', () => {
-    const q = buildGapQueue([card('o6', 'review', TODAY)], deps());
-    expect(q[0]).toMatchObject({ before: 'Es una casa ', answer: 'nueva', after: '.' });
-  });
-
-  it('is capped at the round size: the due words kept in front, then the newest learned', () => {
-    const many: Record<string, PcicItem> = {};
-    const manyInfo: Record<string, GapSourceInfo> = {};
-    const cards: Sm2Card[] = [];
-    for (let n = 0; n < 30; n++) {
-      many[`w${n}`] = item(`w${n}`, 'ir', 'to go', 'Voy ya.', 'I go now.');
-      manyInfo[`w${n}`] = { lemma: 'ir', sentenceLemmas: ['ir', 'ya'] };
-      const dueDate = n < 3 ? `2026-10-0${n + 1}` : '2026-12-01';
-      cards.push(card(`w${n}`, 'review', dueDate, { introducedAt: n === 3 ? '2026-10-11' : '2026-10-08' }));
-    }
-    const q = ids(buildGapQueue(cards, { target: 'es', findItem: (id) => many[id], today: TODAY, info: (id) => manyInfo[id] }));
-    expect(q).toHaveLength(PRACTICE_SESSION_SIZE);
-    expect(q.slice(0, 4)).toEqual(['w0', 'w1', 'w2', 'w3']);
-  });
-
-  it('nothing learned yet: empty', () => {
-    expect(buildGapQueue([], deps())).toEqual([]);
-    expect(buildGapQueue([card('o1', 'new', '')], deps())).toEqual([]);
-  });
-});
-
-describe('checkGap', () => {
-  const task: GapTask = { itemId: 'o9', before: 'Ella ', after: ' en casa.', answer: 'está', translation: 'She is at home.', meaning: 'to be' };
-
-  it('accent off: the missing accent is forgiven; accent on: it is the answer', () => {
-    expect(checkGap('esta', task, false)).toBe(true);
-    expect(checkGap('esta', task, true)).toBe(false);
-    expect(checkGap('está', task, true)).toBe(true);
-  });
-
-  it('case is forgiven, a wrong word is wrong', () => {
-    expect(checkGap('ESTÁ', task, true)).toBe(true);
-    expect(checkGap('estoy', task, false)).toBe(false);
-    expect(checkGap('', task, false)).toBe(false);
+  it('a new word is left out; nothing learned yet: empty', () => {
+    expect(practiceCandidates([card('o1', 'new', '')], TODAY)).toEqual([]);
+    expect(practiceCandidates([], TODAY)).toEqual([]);
   });
 });
 

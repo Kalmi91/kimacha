@@ -32,6 +32,11 @@ describe('parseWebTestParams', () => {
     expect(parseWebTestParams('?skin=zen&mode=auto')).toEqual({ skin: 'zen' });
   });
 
+  it('seed is accepted only as practice', () => {
+    expect(parseWebTestParams('?seed=practice')).toEqual({ seed: 'practice' });
+    expect(parseWebTestParams('?seed=x')).toBeNull();
+  });
+
   it('onboarded is true only for 1', () => {
     expect(parseWebTestParams('?onboarded=1')).toEqual({ onboarded: true });
     expect(parseWebTestParams('?onboarded=true')).toBeNull();
@@ -52,6 +57,7 @@ describe('applyWebTestParams', () => {
       setGrammarPalette: jest.fn().mockResolvedValue(undefined),
       setSkinMix: jest.fn().mockResolvedValue(undefined),
       setSkin: jest.fn().mockResolvedValue(undefined),
+      upsertPcicCard: jest.fn().mockResolvedValue(undefined),
     };
   }
 
@@ -68,6 +74,15 @@ describe('applyWebTestParams', () => {
     expect(db.setGrammarPalette).toHaveBeenCalledWith('cyan');
     expect(db.setSkinMix).toHaveBeenCalledWith({ colors: 'deco', font: 'zen', shape: 'brutal', decor: 'none' });
     expect(db.setSkin).toHaveBeenCalledWith('mix');
+  });
+
+  it('seed=practice writes every A1 card as learned and due today', async () => {
+    const db = fakeDb();
+    await applyWebTestParams(db as never, { seed: 'practice' });
+    expect(db.upsertPcicCard.mock.calls.length).toBeGreaterThan(0);
+    const card = db.upsertPcicCard.mock.calls[0][0];
+    expect(card.state).toBe('review');
+    expect(card.due).toBe(card.lastReview);
   });
 
   it('without parameters it writes nothing', async () => {

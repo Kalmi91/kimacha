@@ -493,19 +493,22 @@ export default {
     levelNotStarted: 'not started',
     levelRowIntroduced: (n: number, total: number) => `${n} / ${total} introduced`,
   },
-  // the Practice tab (beta): fill in the missing word of a sentence.
+  // the Practice tab (beta): a short text of words that are due, questions about it, then the same words in sentences.
   practiceTab: {
-    emptyTitle: 'Learn some words first',
+    emptyTitle: 'Learn a few more words, then there will be something to read here',
+    readAloud: 'Read aloud',
     progress: (n: number, total: number) => `${n}/${total}`,
-    progressLabel: (n: number, total: number) => `Sentence ${n} of ${total}`,
-    blankLabel: 'blank',
-    meaningHint: (meaning: string) => `Hint: ${meaning}`,
-    inputLabel: 'Type the missing word',
-    inputPlaceholder: 'Missing word',
-    correctForm: (word: string) => `Correct: ${word}`,
-    roundDone: 'Round done',
-    roundScore: (right: number, total: number) => `${right} of ${total} right`,
-    again: 'Practice again',
+    progressLabel: (n: number, total: number) => `Question ${n} of ${total}`,
+    questionMeaning: (word: string) => `What does “${word}” mean in the text?`,
+    questionTrueFalse: 'True or false, based on the text:',
+    optionTrue: 'True',
+    optionFalse: 'False',
+    rightMeaning: (word: string, meaning: string) => `“${word}” means ${meaning}`,
+    inText: 'This sentence is in the text.',
+    notInText: 'This sentence is not in the text.',
+    questionsDone: 'Questions done',
+    practiceSentences: 'Practice these words in sentences',
+    newReading: 'New reading',
   },
   // Sentences tab (beta): header progress (steps: every build plus the one typing), the build and the typing step, empty and round-done states.
   sentenceTab: {

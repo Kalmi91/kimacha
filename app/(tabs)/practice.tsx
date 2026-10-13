@@ -1,198 +1,196 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { Keyboard, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TextInput, View } from 'react-native';
-import { useFocusEffect } from 'expo-router';
+import { useCallback, useRef, useState, type ReactNode } from 'react';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { router, useFocusEffect } from 'expo-router';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
+import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { SkinBackdrop } from '@/components/skins/Slots';
-import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
-import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import { Card } from '@/components/grammar/Brutal';
+import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import FeedbackButton from '@/components/FeedbackModal';
 import ResultBadge from '@/components/ResultBadge';
 import SpeakButton from '@/components/SpeakButton';
+import LevelCounter from '@/components/practice/LevelCounter';
 import { findPcicItem, setPcicTarget, type PcicTarget } from '@/data/pcic';
-import { useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
+import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { t } from '@/lib/i18n';
-import { answerInputProps } from '@/lib/inputProps';
 import { speechLang } from '@/lib/languages';
-import { buildGapQueue, checkGap, gapTaskFor, type GapTask } from '@/lib/practice/gapFill';
-import { recordPracticeResult } from '@/lib/practice/halfStep';
-import { recordCorrectHalf } from '@/lib/practice/halfXp';
+import { resolvedTensesFromLessons } from '@/lib/knownSentence';
+import { dropOrphanCards } from '@/lib/pcicSession';
 import {
   loadPracticeRound,
   newPracticeRound,
   restorePracticeRound,
   savePracticeRound,
   type PracticeRound,
-  type RoundAnswer,
 } from '@/lib/practice/practiceRound';
+import { buildReadingSet, readingWordFor, type ReadingSet } from '@/lib/practice/reading';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { localDateString } from '@/lib/usageStats';
 
-// Beta tab (Settings -> Beta -> Practice tab): "missing word", a sentence of a learned word with the
-// word blanked out (lib/practice/gapFill.ts). A right answer is one half-step of the word, a wrong typed
-// one counts towards a step back (lib/practice/halfStep.ts, spec HAROM-JATEK.md 5.1). The unfinished
-// round is saved after every step (lib/practice/practiceRound.ts) and resumed on the same day.
-
-// A right answer shows its feedback this long, then the next sentence comes by itself.
-const CORRECT_PAUSE_MS = 900;
-const BLANK = '_____';
+// Beta tab (Settings -> Beta -> Practice tab), spec HAROM-JATEK.md 5: a short text of five sentences with a due
+// word each (highlighted, read aloud on request), five questions about it, then a button to the Sentences tab
+// for the same words (lib/practice/reading.ts builds the round). The questions give no half and no XP: the
+// repetition comes from the sentences. The unfinished round is saved after every step
+// (lib/practice/practiceRound.ts) and resumed on the same day.
 
 export default function PracticeScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
-  // beta: xpV2, a correct answer (one half) earns XP; off = no XP, the old behavior.
-  const xpV2 = useBeta('xpV2');
   const { dockLift } = useDockLift();
   const [dockH, setDockH] = useState(DOCK_RESERVE);
 
   const [loaded, setLoaded] = useState(false);
-  const [tasks, setTasks] = useState<GapTask[]>([]);
+  const [set, setSet] = useState<ReadingSet | null>(null);
   const [target, setTarget] = useState<PcicTarget>('es');
-  const [strictAccents, setStrictAccents] = useState(false);
-  const [index, setIndex] = useState(0);
-  const [results, setResults] = useState<RoundAnswer[]>([]);
-  const [typed, setTyped] = useState('');
-  const [result, setResult] = useState<'correct' | 'wrong' | null>(null);
-  const pause = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // 0 = the text, 1..n = question n, n + 1 = the step that sends the words to the Sentences tab.
+  const [step, setStep] = useState(0);
+  const [picks, setPicks] = useState<(number | null)[]>([]);
   // the local day the shown round was built on (a saved round is only resumed on the same day).
-  const roundDate = useRef('');
-  // the direction of the shown round (null: no round on screen, nothing to practice).
-  const roundTarget = useRef<PcicTarget | null>(null);
-  const right = results.filter((r) => r === 'right').length;
+  const [roundDate, setRoundDate] = useState('');
+  // the day and direction of the shown round, for the focus effect (its state is stale in the callback); target
+  // null: no round on screen, nothing to practice.
+  const shownDate = useRef('');
+  const shownTarget = useRef<PcicTarget | null>(null);
 
-  // `fresh`: a new round even if one is saved (the "again" button).
+  // `fresh`: a new round even if one is saved (the "new reading" button).
   const load = useCallback(async (fresh = false) => {
     const db = getDb();
     // The deck of the active direction has to be set before findPcicItem (same as the Learn tab).
     const onboarding = await db.getOnboarding();
     const dir = (onboarding?.target as PcicTarget) ?? 'es';
     setPcicTarget(dir);
-    const [cards, strict] = await Promise.all([db.getPcicCards(), db.getStrictAccents()]);
     const today = localDateString();
     // A round on screen (running or finished) survives leaving the tab; a new day, another direction or the
-    // "again" button replaces it. Without it the finished screen and the running pause would be thrown away.
-    if (!fresh && roundTarget.current === dir && roundDate.current === today) {
-      setStrictAccents(strict);
-      return;
-    }
-    // an answer's pause must not move a round that is being replaced or resumed.
-    if (pause.current) clearTimeout(pause.current);
-    pause.current = null;
+    // "new reading" button replaces it. Without it the finished screen would be thrown away.
+    if (!fresh && shownTarget.current === dir && shownDate.current === today) return;
     const saved = fresh ? null : await loadPracticeRound().catch(() => null);
-    const resumed = restorePracticeRound(saved, today, dir, (id) => {
-      const item = findPcicItem(id);
-      return item ? gapTaskFor(item, dir) : null;
-    });
-    const queue = resumed?.tasks ?? buildGapQueue(cards, { target: dir, findItem: findPcicItem, today });
-    const done = resumed?.results ?? queue.map((): RoundAnswer => null);
-    const at = resumed?.index ?? 0;
-    roundDate.current = today;
-    roundTarget.current = queue.length > 0 ? dir : null;
+    const resumed = restorePracticeRound(
+      saved,
+      today,
+      dir,
+      (id) => {
+        const item = findPcicItem(id);
+        return item ? readingWordFor(item, dir) : null;
+      },
+      findPcicItem,
+    );
+    let next = resumed?.set ?? null;
+    let at = resumed?.step ?? 0;
+    let done = resumed?.picks ?? [];
+    if (!resumed) {
+      const cards = dropOrphanCards(await db.getPcicCards(), (id) => findPcicItem(id) !== undefined);
+      const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
+      next = buildReadingSet({
+        target: dir,
+        cards,
+        tenses: resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()),
+        findItem: findPcicItem,
+        today,
+      });
+      at = 0;
+      done = next ? next.questions.map(() => null) : [];
+      // a new round is saved at once; no round (too few words) clears an old value.
+      void savePracticeRound(next ? newPracticeRound(next, dir, today) : null).catch(() => {});
+    }
+    setRoundDate(today);
+    shownDate.current = today;
+    shownTarget.current = next ? dir : null;
     setTarget(dir);
-    setStrictAccents(strict);
-    setTasks(queue);
-    setResults(done);
-    setIndex(at);
-    setTyped('');
-    setResult(done[at] === 'wrong' ? 'wrong' : null);
+    setSet(next);
+    setStep(at);
+    setPicks(done);
     setLoaded(true);
-    // a new round is saved at once; a resumed one that was already over is deleted.
-    if (!resumed && queue.length > 0) void savePracticeRound(newPracticeRound(queue, dir, today)).catch(() => {});
-    else if (resumed && at >= queue.length) void savePracticeRound(null).catch(() => {});
   }, []);
 
+  // Leaving the tab stops the read-aloud (the tab stays mounted).
   useFocusEffect(
     useCallback(() => {
       void load();
+      return () => stopSpeaking();
     }, [load]),
   );
 
-  const clearPause = () => {
-    if (pause.current) clearTimeout(pause.current);
-    pause.current = null;
+  const count = set?.questions.length ?? 0;
+  const inQuestions = !!set && step >= 1 && step <= count;
+  const question = inQuestions ? set!.resolved[step - 1] : undefined;
+  const pick = inQuestions ? picks[step - 1] : null;
+  const answered = pick !== null && pick !== undefined;
+
+  const persist = (at: number, done: (number | null)[]) => {
+    if (!set) return;
+    const round: PracticeRound = { v: 2, date: roundDate, target, ids: set.words.map((w) => w.itemId), qs: set.questions, step: at, picks: done };
+    void savePracticeRound(round).catch(() => {});
   };
-  useEffect(() => () => {
-    clearPause();
+  const goTo = (at: number) => {
     stopSpeaking();
-  }, []);
-
-  const task: GapTask | undefined = tasks[index];
-  const finished = loaded && tasks.length > 0 && index >= tasks.length;
-
-  // The round after this step is saved before the screen moves on (the last step deletes it).
-  const persist = (at: number, done: RoundAnswer[]): Promise<void> => {
-    if (at >= tasks.length) return savePracticeRound(null).catch(() => {});
-    const round: PracticeRound = { v: 1, date: roundDate.current, target, ids: tasks.map((t) => t.itemId), index: at, results: done };
-    return savePracticeRound(round).catch(() => {});
+    setStep(at);
+    persist(at, picks);
   };
-
-  // `at` / `done` are passed in: the pause timer is set in handleCheck, before the state it needs is rendered.
-  const goTo = (at: number, done: RoundAnswer[]) => {
-    clearPause();
-    void persist(at, done);
-    setIndex(at);
-    setTyped('');
-    setResult(null);
+  const choose = (index: number) => {
+    if (!inQuestions || answered) return;
+    const next = picks.map((p, i) => (i === step - 1 ? index : p));
+    setPicks(next);
+    persist(step, next);
   };
-  const advance = () => goTo(index + 1, results);
-
-  const handleCheck = () => {
-    if (!task || result || !typed.trim()) return;
-    Keyboard.dismiss();
-    const ok = checkGap(typed, task, strictAccents);
-    setResult(ok ? 'correct' : 'wrong');
-    const done = results.map((r, i) => (i === index ? (ok ? 'right' : 'wrong') : r));
-    setResults(done);
-    // The answer is saved BEFORE its half is recorded: if the app dies in between, a half is lost, but a
-    // resumed round never gives it (or its XP) a second time. A failing save must not break the round.
-    const saved = persist(index, done);
-    if (ok) {
-      void saved.then(() => recordCorrectHalf(task.itemId, xpV2)).catch(() => {});
-      pause.current = setTimeout(() => goTo(index + 1, done), CORRECT_PAUSE_MS);
-    } else {
-      void saved.then(() => recordPracticeResult(task.itemId, 'wrongTyped')).catch(() => {});
-    }
-    // The whole sentence is read aloud, after a right and a wrong answer alike.
+  const readAloud = () => {
+    if (!set) return;
     stopSpeaking();
-    speak(`${task.before}${task.answer}${task.after}`, speechLang(target));
+    speak(set.words.map((w) => w.sentence).join(' '), speechLang(target));
+  };
+  const practiceSentences = () => {
+    if (!set) return;
+    router.push({ pathname: '/sentences', params: { focus: set.words.map((w) => w.itemId).join(',') } });
   };
 
   const header = (
     <View style={styles.header}>
-      <Text accessibilityRole="header" variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
-        {s.tabs.practice}
-      </Text>
-      {task && (
-        <Text accessibilityLabel={s.practiceTab.progressLabel(index + 1, tasks.length)} style={[styles.progress, { color: colors.tabIconDefault }]}>
-          {s.practiceTab.progress(index + 1, tasks.length)}
+      {/* No screen title: the tab navigator's header already says "Practice" (same as the Sentences tab). */}
+      <LevelCounter />
+      {inQuestions && (
+        <Text accessibilityLabel={s.practiceTab.progressLabel(step, count)} style={[styles.progress, { color: colors.tabIconDefault }]}>
+          {s.practiceTab.progress(step, count)}
         </Text>
       )}
     </View>
   );
 
   const shell = (children: ReactNode, dock?: ReactNode) => (
-    <KeyboardAvoidingView
-      testID="practice-screen"
-      style={[styles.screen, { backgroundColor: colors.background }]}
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-    >
+    <View testID="practice-screen" style={[styles.screen, { backgroundColor: colors.background }]}>
       <SkinBackdrop />
       {header}
       {children}
       {dock}
-      <FeedbackButton level="-" languagePair={target === 'es' ? 'en-es' : 'es-en'} currentCard="practice-tab" bottomOffset={dock ? dockH + dockLift : 0} />
-    </KeyboardAvoidingView>
+      <FeedbackButton
+        level="-"
+        languagePair={target === 'es' ? 'en-es' : 'es-en'}
+        currentCard={inQuestions ? `practice:q${step}` : 'practice-reading'}
+        bottomOffset={dock ? dockH + dockLift : 0}
+      />
+    </View>
+  );
+  const dockAction = (testID: string, label: string, onPress: () => void) => (
+    <DockedAction testID={testID} label={label} onPress={onPress} tone="next" bottom={dockLift} colors={colors} onHeight={setDockH} />
+  );
+  const scroll = (children: ReactNode) => (
+    <ScrollView
+      style={styles.scroll}
+      contentContainerStyle={{ paddingBottom: dockH + dockLift + FAB_CLEARANCE }}
+      keyboardShouldPersistTaps="handled"
+    >
+      {children}
+    </ScrollView>
   );
 
   if (!loaded) return shell(null);
 
-  if (tasks.length === 0) {
+  if (!set) {
     return shell(
       <View style={styles.center}>
         <Text testID="practice-empty" style={[styles.emptyText, { color: colors.text }]}>{s.practiceTab.emptyTitle}</Text>
@@ -200,107 +198,133 @@ export default function PracticeScreen() {
     );
   }
 
-  if (finished) {
+  if (step === 0) {
     return shell(
-      <View style={styles.center}>
-        <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.practiceTab.roundDone}</Text>
-        <Text testID="practice-score" style={[styles.emptyText, { color: colors.text }]}>{s.practiceTab.roundScore(right, tasks.length)}</Text>
-      </View>,
-      <DockedAction
-        testID="practice-again"
-        label={s.practiceTab.again}
-        onPress={() => void load(true)}
-        tone="check"
-        bottom={dockLift}
-        colors={colors}
-        onHeight={setDockH}
-      />,
+      scroll(
+        <View style={styles.cardMargin}>
+        <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+          <Text testID="practice-text" style={[styles.paragraph, { color: colors.text }]}>
+            {set.words.map((w, i) => (
+              <Text key={w.itemId}>
+                {i > 0 ? ' ' : ''}
+                {w.before}
+                <Text testID={`practice-word-${i}`} style={[styles.word, { color: colors.tint }]}>{w.answer}</Text>
+                {w.after}
+              </Text>
+            ))}
+          </Text>
+          <SpeakButton
+            testID="practice-speak"
+            label={s.practiceTab.readAloud}
+            onPress={readAloud}
+            style={styles.speakBtn}
+            brutalStyle={styles.speakBrutal}
+            iconStyle={styles.speakIcon}
+            labelStyle={[styles.speakLabel, { color: colors.text }]}
+          />
+        </Card>
+        </View>,
+      ),
+      dockAction('practice-action', `${s.card.next} →`, () => goTo(1)),
     );
   }
 
-  const sourceLang = target === 'es' ? 'en' : 'es';
-  const gapColor = result === 'correct' ? colors.success : result === 'wrong' ? colors.danger : colors.tint;
+  if (!question) {
+    return shell(
+      <View style={styles.center}>
+        <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.practiceTab.questionsDone}</Text>
+        <Pressable testID="practice-again" accessibilityRole="button" onPress={() => void load(true)} style={styles.link}>
+          <Text style={[styles.linkText, { color: colors.tint }]}>{s.practiceTab.newReading}</Text>
+        </Pressable>
+      </View>,
+      dockAction('practice-sentences', s.practiceTab.practiceSentences, practiceSentences),
+    );
+  }
+
+  const options = question.kind === 'meaning' ? question.options : [s.practiceTab.optionTrue, s.practiceTab.optionFalse];
+  const correct = answered && pick === question.correct;
+  const explanation = question.kind === 'meaning'
+    ? s.practiceTab.rightMeaning(question.word, question.options[question.correct])
+    : question.truth ? s.practiceTab.inText : s.practiceTab.notInText;
   return shell(
-    <ScrollView
-      style={styles.scroll}
-      contentContainerStyle={{ paddingBottom: dockH + dockLift + 16 }}
-      keyboardShouldPersistTaps="handled"
-      keyboardDismissMode="on-drag"
-    >
-      <Card style={styles.cardMargin} classicStyle={styles.card} boxStyle={styles.brutalCard}>
-        <Text
-          testID="practice-sentence"
-          accessibilityLabel={result ? undefined : `${task!.before}${s.practiceTab.blankLabel}${task!.after}`}
-          style={[styles.sentence, { color: colors.text }]}
-        >
-          {task!.before}
-          <Text testID="practice-gap" style={{ color: gapColor, fontWeight: '800' }}>{result ? task!.answer : BLANK}</Text>
-          {task!.after}
-        </Text>
-
-        <View style={styles.translationRow}>
-          <Text testID="practice-translation" style={[styles.translation, { color: colors.tabIconDefault }]}>{task!.translation}</Text>
-          <SpeakButton onPress={() => speak(task!.translation, speechLang(sourceLang))} style={styles.speakBtn} iconStyle={styles.speakIcon} />
+    scroll(
+      <View style={styles.questionBox}>
+        <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+          {question.kind === 'meaning' ? (
+            <Text testID="practice-question" style={[styles.question, { color: colors.text }]}>{s.practiceTab.questionMeaning(question.word)}</Text>
+          ) : (
+            <>
+              <Text testID="practice-question" style={[styles.caption, { color: colors.textMuted }]}>{s.practiceTab.questionTrueFalse}</Text>
+              <Text testID="practice-statement" style={[styles.question, { color: colors.text }]}>{question.statement}</Text>
+            </>
+          )}
+        </Card>
+        <View style={styles.options}>
+          {options.map((option, i) => {
+            const chosenWrong = answered && pick === i && i !== question.correct;
+            const right = answered && i === question.correct;
+            const state = right ? s.card.correct : chosenWrong ? s.card.wrong : '';
+            return (
+              <Pressable
+                key={`${step}-${i}`}
+                testID={`practice-option-${i}`}
+                accessibilityRole="button"
+                accessibilityLabel={state ? `${option}, ${state}` : option}
+                onPress={() => choose(i)}
+                style={[
+                  styles.option,
+                  g.brutal && styles.brutalEdge,
+                  { backgroundColor: colors.card, borderColor: colors.border },
+                  right && { backgroundColor: colors.successFill, borderColor: colors.successFill },
+                  chosenWrong && { backgroundColor: colors.danger, borderColor: colors.danger },
+                ]}
+              >
+                <Text style={[styles.optionText, { color: chosenWrong ? colors.onTint : colors.text }]}>
+                  {right ? '✓ ' : chosenWrong ? '✗ ' : ''}
+                  {option}
+                </Text>
+              </Pressable>
+            );
+          })}
         </View>
-        <Text testID="practice-hint" style={[styles.hint, { color: colors.tabIconDefault }]}>{s.practiceTab.meaningHint(task!.meaning)}</Text>
-
-        <TextInput
-          key={index}
-          testID="practice-input"
-          accessibilityLabel={s.practiceTab.inputLabel}
-          style={[
-            styles.input,
-            { color: colors.text, borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault },
-            g.brutal && brutalInputStyle(g),
-            g.brutal && result && { borderColor: result === 'correct' ? colors.successFill : colors.danger },
-          ]}
-          placeholder={s.practiceTab.inputPlaceholder}
-          placeholderTextColor={colors.tabIconDefault}
-          value={typed}
-          onChangeText={setTyped}
-          onSubmitEditing={result ? advance : handleCheck}
-          editable={!result}
-          autoFocus
-          {...answerInputProps}
-        />
-
-        {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
-        {result === 'wrong' && <Text testID="practice-correct-form" style={[styles.correctLine, { color: colors.success }]}>{s.practiceTab.correctForm(task!.answer)}</Text>}
-      </Card>
-    </ScrollView>,
-    <DockedAction
-      testID="practice-action"
-      label={result ? `${s.card.next} →` : `✓ ${s.card.check}`}
-      onPress={result ? advance : handleCheck}
-      tone={result ? 'next' : 'check'}
-      color={result === 'wrong' ? colors.danger : result === 'correct' ? colors.successFill : undefined}
-      disabled={!result && !typed.trim()}
-      bottom={dockLift}
-      colors={colors}
-      onHeight={setDockH}
-    />,
+        {answered && (
+          <View style={styles.feedback}>
+            <ResultBadge correct={correct} label={correct ? s.card.correct : s.card.wrong} />
+            <Text testID="practice-explanation" style={[styles.explanation, { color: colors.text }]}>{explanation}</Text>
+          </View>
+        )}
+      </View>,
+    ),
+    answered ? dockAction('practice-action', `${s.card.next} →`, () => goTo(step + 1)) : undefined,
   );
 }
 
 const styles = StyleSheet.create({
   screen: { flex: 1 },
-  header: { flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', paddingHorizontal: 24, paddingTop: 40, paddingBottom: 12 },
-  title: { fontSize: 22, fontWeight: '700' },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
+  header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 24, paddingTop: 16, paddingBottom: 12 },
   progress: { fontSize: 16, fontWeight: '600' },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24, gap: 12 },
   emptyText: { fontSize: 18, fontWeight: '600', textAlign: 'center' },
   doneTitle: { fontSize: 24, fontWeight: '700', textAlign: 'center' },
   scroll: { flex: 1 },
-  cardMargin: { marginHorizontal: 20 },
-  card: { borderRadius: 20, padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
-  brutalCard: { padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
-  sentence: { fontSize: 22, fontWeight: '700', textAlign: 'center', lineHeight: 32 },
-  translationRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  translation: { fontSize: 16, textAlign: 'center', flexShrink: 1 },
-  speakBtn: { padding: 4, flexShrink: 0 },
-  speakIcon: { fontSize: 22 },
-  hint: { fontSize: 14, textAlign: 'center' },
-  input: { width: '100%', borderWidth: 2, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
-  correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
+  cardMargin: { marginHorizontal: spacing.xl },
+  questionBox: { marginHorizontal: spacing.xl, gap: spacing.md },
+  card: { borderRadius: radius.lg, padding: spacing.xl, gap: spacing.lg },
+  brutalCard: { padding: spacing.xl, gap: spacing.lg },
+  paragraph: { fontSize: fontSize.xl, lineHeight: 34 },
+  word: { fontWeight: '800', textDecorationLine: 'underline' },
+  speakBtn: { flexDirection: 'row', alignItems: 'center', gap: spacing.sm, alignSelf: 'flex-start', minHeight: tapTarget },
+  speakBrutal: { alignSelf: 'flex-start' },
+  speakIcon: { fontSize: fontSize.xl },
+  speakLabel: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
+  caption: { fontSize: fontSize.sm, textAlign: 'center' },
+  question: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center', lineHeight: lineHeight.xl },
+  options: { gap: spacing.sm },
+  option: { minHeight: tapTarget, borderRadius: radius.md, borderWidth: 1, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, justifyContent: 'center' },
+  brutalEdge: { borderRadius: 0, borderWidth: 2 },
+  optionText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
+  feedback: { gap: spacing.sm },
+  explanation: { fontSize: fontSize.md },
+  link: { minHeight: tapTarget, justifyContent: 'center', paddingHorizontal: spacing.lg },
+  linkText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
 });
