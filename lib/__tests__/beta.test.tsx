@@ -87,6 +87,21 @@ describe('beta flags and practice counters in the backup', () => {
     expect(await db.getBetaFlags()).toMatchObject({ xpV2: true });
   });
 
+  it('the unfinished practice round round-trips through exportAll / importAll; an old backup (no practice_round) loads as no round', async () => {
+    const db = getDb();
+    await db.setPracticeRound('{"v":1,"date":"2026-10-12"}');
+    const payload = JSON.parse(JSON.stringify(await db.exportAll()));
+    expect(() => validateBackupPayload(payload)).not.toThrow();
+    expect(payload.tables.user_meta[0].practice_round).toBe('{"v":1,"date":"2026-10-12"}');
+    await db.setPracticeRound(null);
+    await db.importAll(payload);
+    expect(await db.getPracticeRound()).toBe('{"v":1,"date":"2026-10-12"}');
+    delete payload.tables.user_meta[0].practice_round;
+    expect(() => validateBackupPayload(payload)).not.toThrow();
+    await db.importAll(payload);
+    expect(await db.getPracticeRound()).toBeNull();
+  });
+
   it('an old backup (no beta_flags, no half_steps / wrong_streak) validates and loads: switches off, counters 0', async () => {
     const db = getDb();
     await db.setBetaFlag('levels', true);

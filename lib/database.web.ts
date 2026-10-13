@@ -316,6 +316,17 @@ class MemoryDB implements DB {
     this.betaFlags = { ...this.betaFlags, [flag]: on };
   }
 
+  // the unfinished Practice-tab round (memory mirror of user_meta.practice_round).
+  private practiceRound: string | null = null;
+
+  async getPracticeRound(): Promise<string | null> {
+    return this.practiceRound;
+  }
+
+  async setPracticeRound(json: string | null): Promise<void> {
+    this.practiceRound = json;
+  }
+
   // see the resetPcicCards comment in lib/database.ts - the
   // real id list is fetched from the loaded corpus, not from the id prefix.
   async resetPcicCards(levelPrefix?: string): Promise<void> {
@@ -403,7 +414,7 @@ class MemoryDB implements DB {
         onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
         streak: [{ id: 1, ...this.streak }],
         user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
-        user_meta: [{ id: 1, user_id: '', first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null, beta_flags: Object.keys(this.betaFlags).length ? JSON.stringify(this.betaFlags) : null }],
+        user_meta: [{ id: 1, user_id: '', first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null, beta_flags: Object.keys(this.betaFlags).length ? JSON.stringify(this.betaFlags) : null, practice_round: this.practiceRound }],
         pcic_cards: [...this.pcicCards.values()].map(pcicToRow),
         mistake_batches: [...this.mistakeBatches].map(([batch_id, v]) => ({ batch_id, json: v.json, imported_at: v.importedAt })),
         mistake_cards: [...this.mistakeCards.values()].map(sm2ToRow),
@@ -459,6 +470,7 @@ class MemoryDB implements DB {
     this.skin = isSkinSelection(um?.skin) ? um.skin : null;
     this.skinMix = parseSkinMix(um?.skin_mix);
     this.betaFlags = parseBetaFlagMap(um?.beta_flags);
+    this.practiceRound = typeof um?.practice_round === 'string' ? um.practice_round : null;
     // A v1 file has no pcic_cards / mistake_* / usage_minutes: keep the local ones.
     if (t.pcic_cards) this.pcicCards = new Map(t.pcic_cards.map((r: any) => [r.item_id, rowToPcic(r)]));
     if (t.mistake_batches) this.mistakeBatches = new Map(t.mistake_batches.map((r: any) => [r.batch_id, { json: r.json, importedAt: r.imported_at }]));

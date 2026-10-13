@@ -288,6 +288,10 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
   try {
     await db.execAsync('ALTER TABLE user_meta ADD COLUMN pcic_level TEXT');
   } catch {}
+  // Migration: the unfinished Practice-tab round as a JSON string (DBs created before it was saved).
+  try {
+    await db.execAsync('ALTER TABLE user_meta ADD COLUMN practice_round TEXT');
+  } catch {}
   const meta = await db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
   if (!meta) {
     // user_id is NOT NULL but nothing reads it (the analytics that sent it are gone),
