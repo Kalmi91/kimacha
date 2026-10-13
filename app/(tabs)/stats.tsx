@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { StyleSheet, View, ScrollView, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable, ScrollView } from 'react-native';
 import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
@@ -356,9 +356,8 @@ export default function StatsScreen() {
       )}
       </ScrollView>
 
-      {/* the button floats OUTSIDE the ScrollView, as on the settings tab, not
-          stuck to the bottom of the list. */}
-      <FeedbackButton level="-" languagePair="-" currentCard="stats-tab" draggable />
+      {/* the 💬 button goes into the navigator's header (right end), not over the list. */}
+      <FeedbackButton placement="header" level="-" languagePair="-" currentCard="stats-tab" />
     </View>
   );
 }
@@ -370,7 +369,7 @@ const styles = StyleSheet.create({
   content: {
     padding: 24,
     paddingTop: 40,
-    paddingBottom: 60,
+    paddingBottom: 24,
   },
   title: {
     fontSize: 22,
@@ -397,8 +396,7 @@ const styles = StyleSheet.create({
   goalOuter: { marginBottom: 24 },
   scheduleOuter: { marginBottom: 12 },
   goalBox: { padding: 16, gap: 10 },
-  // The last card also scrolls out from under the chat button (FAB).
-  brutalContent: { paddingBottom: 100 },
+  brutalContent: { paddingBottom: 32 },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalValue: { fontWeight: '500' },
   brutalBadgeText: { fontSize: 14 },
