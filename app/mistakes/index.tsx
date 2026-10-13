@@ -15,6 +15,8 @@ import type { MistakesBatch } from '@/lib/mistakes/format';
 import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
 import { BrutalBackButton, BrutalButton, Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
+import FeedbackButton from '@/components/FeedbackModal';
+import type { Level } from '@/data/words';
 
 // one row per loaded batch (newest
 // first, from getMistakeBatches()), a wrong-words list, the grammar patterns
@@ -31,6 +33,7 @@ export default function MistakesReportScreen() {
   const [loading, setLoading] = useState(true);
   const [batches, setBatches] = useState<MistakesBatch[]>([]);
   const [dueCount, setDueCount] = useState(0);
+  const [level, setLevel] = useState<Level>('A1');
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -48,6 +51,8 @@ export default function MistakesReportScreen() {
     const cards = cardsForBatches(parsed);
     const progress = await db.getMistakeCards();
     const session = pickMistakeSession(progress, cards, localDateString());
+    const levelData = await db.getLevel();
+    setLevel((levelData.level as Level) ?? 'A1');
     setBatches(parsed);
     setDueCount(session.length);
     setLoading(false);
@@ -84,6 +89,7 @@ export default function MistakesReportScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
         <Text style={[styles.emptyText, { color: colors.tabIconDefault }]}>{s.mistakes.empty}</Text>
+        <FeedbackButton level={level} languagePair="en→es" currentCard="mistakes:report:empty" />
       </View>
     );
   }
@@ -180,6 +186,7 @@ export default function MistakesReportScreen() {
           );
         })}
       </ScrollView>
+      <FeedbackButton level={level} languagePair="en→es" currentCard="mistakes:report" />
     </View>
   );
 }

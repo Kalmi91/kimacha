@@ -24,6 +24,8 @@ import { useDockLift } from '@/components/learn/useDockLift';
 import { BrutalBackButton, BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
+import FeedbackButton from '@/components/FeedbackModal';
+import type { Level } from '@/data/words';
 
 // the PCIC card surface (CardShell,
 // DockedAction) over the cards lib/mistakes/deck.ts builds from every loaded
@@ -56,6 +58,7 @@ export default function MistakesDeckScreen() {
   const [typed, setTyped] = useState('');
   const [checked, setChecked] = useState(false);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
+  const [level, setLevel] = useState<Level>('A1');
 
   const load = useCallback(async () => {
     const db = getDb();
@@ -71,6 +74,8 @@ export default function MistakesDeckScreen() {
     const cards = cardsForBatches(batches);
     const progress = await db.getMistakeCards();
     const day = localDateString();
+    const levelData = await db.getLevel();
+    setLevel((levelData.level as Level) ?? 'A1');
     setToday(day);
     setCardsById(new Map(cards.map((c) => [c.cardId, c])));
     setQueue(pickMistakeSession(progress, cards, day));
@@ -144,6 +149,7 @@ export default function MistakesDeckScreen() {
           </Pressable>
           )}
         </View>
+        <FeedbackButton level={level} languagePair="en→es" currentCard="mistakes:deck:done" />
       </View>
     );
   }
@@ -257,6 +263,8 @@ export default function MistakesDeckScreen() {
         colors={colors}
         onHeight={setDockH}
       />
+
+      <FeedbackButton level={level} languagePair="en→es" currentCard={`mistakes:deck:${currentCard.cardId}`} bottomOffset={dockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }
