@@ -2,6 +2,9 @@
 module.exports = {
   preset: 'jest-expo',
   setupFiles: ['<rootDir>/jest.setup.js'],
+  // The grammar lessons and the word list are parsed on first use (lib/games/content.ts, data/openWords.ts),
+  // so a screen test's first render pays that load; the 5 s default is too tight when workers share the CPU.
+  testTimeout: 20000,
   // Transpile the RN/Expo ESM packages that ship untranspiled.
   transformIgnorePatterns: [
     'node_modules/(?!((jest-)?react-native|@react-native(-community)?|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules))',
