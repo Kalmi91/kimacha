@@ -1,5 +1,5 @@
 import { findWordByText, normalizeWordToken } from '@/data/words';
-import { openWords } from '@/data/openWords';
+import { getOpenWords } from '@/data/openWords';
 
 // User feedback (`sentence:El calabacín es una verdura verde.`): a tap
 // on any word of a sentence has to find that word's card, so it can go into the
@@ -18,7 +18,7 @@ describe('word lookup by text', () => {
   });
 
   it('finds a headword whose card carries an article the sentence dropped', () => {
-    const withArticle = openWords.find(w => /^(el|la|los|las) /.test(w.es));
+    const withArticle = getOpenWords().find(w => /^(el|la|los|las) /.test(w.es));
     expect(withArticle).toBeDefined();
     const bare = withArticle!.es.replace(/^(el|la|los|las) /, '');
     expect(findWordByText(bare, 'es', 'es')?.id).toBe(withArticle!.id);
@@ -50,7 +50,7 @@ describe('word lookup by text', () => {
   });
 
   it('does not gloss a form of a word that is not in the list', () => {
-    expect(openWords.some(w => w.lemma === 'zarpar')).toBe(false);
+    expect(getOpenWords().some(w => w.lemma === 'zarpar')).toBe(false);
     expect(findWordByText('zarpaba', 'es', 'es')).toBeUndefined();
     expect(findWordByText('zarpamos', 'es', 'es')).toBeUndefined();
   });

@@ -16,7 +16,7 @@
 // consist of two words, and these are exactly the most common level overshoots.
 
 import { LEVELS, type Level } from '@/data/words';
-import { openWords } from '@/data/openWords';
+import { getOpenWords } from '@/data/openWords';
 import { TENSES, conjugate, type Tense as SimpleTense } from '@/lib/games/conjugate';
 
 export type Structure =
@@ -105,7 +105,7 @@ function buildFormIndex(): Map<string, Structure> {
   const infinitives = new Set<string>();
   // the verbs of words-open; every alternative of a slash form ("volver / regresar")
   // is a separate infinitive.
-  for (const w of openWords) {
+  for (const w of getOpenWords()) {
     if (w.pos !== 'verb') continue;
     for (const alt of String(w.es ?? '').split(' / ')) {
       const es = alt.trim().toLowerCase();
@@ -144,7 +144,7 @@ let nonVerbForms: Set<string> | null = null;
 function getNonVerbForms(): Set<string> {
   if (nonVerbForms) return nonVerbForms;
   const set = new Set<string>();
-  for (const w of openWords) {
+  for (const w of getOpenWords()) {
     if (w.pos === 'verb') continue;
     // The `phrase` entries consist of several words ("no hablo español"), and among
     // their words there are also VERB FORMS. If we included them, we would knock out our own

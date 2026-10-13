@@ -12,7 +12,7 @@
 // The main corpus is data/words-open (data/openWords.ts);
 // the gender of a noun comes from the article (the old annotator took it from there too).
 import type { PcicKind } from '@/data/pcic';
-import { openWords } from '@/data/openWords';
+import { getOpenWords } from '@/data/openWords';
 import type { WordGender, WordPos } from '@/data/words';
 
 // the chip can get any corpus part of speech (not only noun/verb/phrase),
@@ -60,7 +60,7 @@ let lemmaIndex: Map<string, PosInfo | null> | null = null;
 function getLemmaIndex(): Map<string, PosInfo | null> {
   if (lemmaIndex) return lemmaIndex;
   const map = new Map<string, PosInfo | null>();
-  for (const w of openWords) {
+  for (const w of getOpenWords()) {
     const pos = CORPUS_POS_TO_PCIC[w.openPos];
     if (!pos) continue;
     const info: PosInfo = pos === 'noun' && w.gender ? { pos, gender: w.gender } : { pos };
