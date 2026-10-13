@@ -517,6 +517,10 @@ export default {
     roundDone: (n: number) => (n === 1 ? 'Round done: 1 sentence' : `Round done: ${n} sentences`),
     more: 'More sentences',
   },
+  // components/practice/LevelCounter.tsx (Sentences and Practice tabs): the level and its word counts, same chips as the Words tab.
+  levelCounter: {
+    a11y: (level: string, total: number, due: number) => `Level ${level}: ${total} words, ${due} due`,
+  },
   // labels of the end-of-lesson grammar quiz.
   lessonTest: {
     take: 'Take the lesson test',
