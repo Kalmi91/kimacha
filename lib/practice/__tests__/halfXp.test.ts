@@ -44,7 +44,7 @@ describe('recordCorrectHalf', () => {
   });
 
   it('the second half moves the card, and still pays by the reps before that answer', async () => {
-    await db.upsertPcicCard(learned('w4', 2));
+    await db.upsertPcicCard({ ...learned('w4', 2), due: TODAY });
     await recordCorrectHalf('w4', true);
     await recordCorrectHalf('w4', true);
     expect((await db.getPcicCard('w4'))?.reps).toBe(3);
