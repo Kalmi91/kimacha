@@ -1,9 +1,9 @@
 /** @jest-environment node */
 // The schema versioning (PRAGMA user_version + lib/db/migrations.ts) against a REAL SQLite
-// (sql.js, see helpers/sqljsDriver.ts), not a regex fake: an old, unversioned file keeps every
+// (sql.js, see lib/testing/sqljsDriver.ts), not a regex fake: an old, unversioned file keeps every
 // row, a new install gets the same schema in one go, a failing step rolls back completely.
 
-import { openSqlJsDb, type SqlJsDriver } from './helpers/sqljsDriver';
+import { openSqlJsDb, type SqlJsDriver } from '@/lib/testing/sqljsDriver';
 import { applyMigrations, LATEST_SCHEMA_VERSION, MIGRATIONS, migrateDailyXpTenths, runMigrations } from '../db/migrations';
 import { validateBackupPayload } from '../backup';
 
