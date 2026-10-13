@@ -198,4 +198,21 @@ describe('practice counters and beta flags (native db)', () => {
     await getDb().setBetaFlag('practiceTab', true);
     expect(mockFakeDb.runAsync).toHaveBeenCalledWith('UPDATE user_meta SET beta_flags = ? WHERE id = 1', ['{"xpV2":true,"practiceTab":true}']);
   });
+
+  it('getPracticeRound reads the user_meta string; no row value = null', async () => {
+    tables.user_meta = [{ id: 1, practice_round: '{"v":1}' }];
+    expect(await getDb().getPracticeRound()).toBe('{"v":1}');
+    tables.user_meta = [{ id: 1, practice_round: null }];
+    expect(await getDb().getPracticeRound()).toBeNull();
+    tables.user_meta = [];
+    expect(await getDb().getPracticeRound()).toBeNull();
+  });
+
+  it('setPracticeRound writes the string (null deletes it) to user_meta.practice_round', async () => {
+    mockFakeDb.runAsync.mockClear();
+    await getDb().setPracticeRound('{"v":1}');
+    expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET practice_round = ? WHERE id = 1', ['{"v":1}']);
+    await getDb().setPracticeRound(null);
+    expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET practice_round = ? WHERE id = 1', [null]);
+  });
 });

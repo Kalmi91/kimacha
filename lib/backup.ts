@@ -124,6 +124,7 @@ const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
     skin: { type: 'string', nullable: true },
     skin_mix: { type: 'string', nullable: true },
     beta_flags: { type: 'string', nullable: true },
+    practice_round: { type: 'string', nullable: true },
   },
   pcic_cards: {
     item_id: { type: 'string', nullable: false },
