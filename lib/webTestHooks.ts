@@ -2,7 +2,9 @@ import { Platform } from 'react-native';
 
 import { isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinMode, type SkinSelection } from '@/constants/Skins';
+import { pcicItemsForLevel } from '@/data/pcic';
 import type { DB } from '@/lib/database';
+import { localDateString } from '@/lib/usageStats';
 
 // Web test hooks for the automated UI-overlap test (scripts/ui-overlap.mjs).
 // They only live under Platform.OS === 'web'; on native getWebTestParams() is null, nothing changes.
@@ -11,12 +13,14 @@ import type { DB } from '@/lib/database';
 //   mode=light|dark     overrides the Settings Auto / Light / Dark
 //   pal=<sub-palette>   the Neo-brutalist sub-palette (brand|electric|lime|cyan|orange|classic)
 //   onboarded=1         puts onboarding into the done state with basic data (en→es, A1)
+//   seed=practice       every A1 card learned and due today (so the Practice tab has a reading to show)
 type WebTestParams = {
   skin?: SkinSelection;
   mix?: SkinMix;
   mode?: SkinMode;
   pal?: GrammarPaletteId;
   onboarded?: boolean;
+  seed?: 'practice';
 };
 
 // An invalid / unknown parameter is left out; if none is valid, null.
@@ -36,6 +40,7 @@ export function parseWebTestParams(search: string): WebTestParams | null {
   const pal = q.get('pal');
   if (isGrammarPaletteId(pal)) out.pal = pal;
   if (q.get('onboarded') === '1') out.onboarded = true;
+  if (q.get('seed') === 'practice') out.seed = 'practice';
   return Object.keys(out).length > 0 ? out : null;
 }
 
@@ -49,6 +54,12 @@ export async function applyWebTestParams(db: DB, p: WebTestParams): Promise<void
   if (p.onboarded) {
     await db.setOnboarding('en', 'es');
     await db.setPcicLevel('A1');
+  }
+  if (p.seed === 'practice') {
+    const today = localDateString();
+    for (const item of pcicItemsForLevel('A1')) {
+      await db.upsertPcicCard({ itemId: item.id, state: 'review', step: 0, ease: 2.5, interval: 3, reps: 3, lapses: 0, due: today, lastReview: today, introducedAt: today });
+    }
   }
   if (p.pal) await db.setGrammarPalette(p.pal);
   if (p.mix) await db.setSkinMix(p.mix);

@@ -86,6 +86,11 @@ const ROUTES = {
   // answer, which is read from the revealed answer after a preliminary "xyz" + Check, then the page is reloaded).
   'learn-revealed': { path: '/', onboarded: true, reveal: 'wrong' },
   'learn-revealed-ok': { path: '/', onboarded: true, reveal: 'ok' },
+  // Practice tab (behind a beta flag, but the route is reachable by URL): the reading card, then a question, then its answered state.
+  // `docked`: the content scrolls under a docked bar, so it is also checked scrolled to the bottom (same as `reveal`).
+  practice: { path: '/practice', onboarded: true, seed: 'practice', docked: true, ready: 'practice-text' },
+  'practice-question': { path: '/practice', onboarded: true, seed: 'practice', docked: true, steps: [{ testId: 'practice-action' }], ready: 'practice-question' },
+  'practice-answered': { path: '/practice', onboarded: true, seed: 'practice', docked: true, steps: [{ testId: 'practice-action' }, { testId: 'practice-option-0' }], ready: 'practice-explanation' },
 };
 // The docked Check button of the Learn card: a testID on the Neo-brutalist branch, the label on the Classic one.
 const CHECK = { testId: 'learn-docked-action', text: '✓ Check' };
@@ -845,6 +850,7 @@ async function main() {
       const q = new URLSearchParams({ skin: c.skin, mode: c.mode });
       if (c.skin === 'mix') q.set('mix', Object.values(SAMPLE_MIX).join('.'));
       if (def.onboarded) q.set('onboarded', '1');
+      if (def.seed) q.set('seed', def.seed);
       const url = `${base}${def.path}?${q}`;
       const comboIssues = [];
       let bottomIssues = [];
@@ -891,9 +897,9 @@ async function main() {
           await typeAndCheck(typed);
         }
         await settle();
-        const res = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(checks)}, ${JSON.stringify({ underDock: !!def.reveal })})`);
+        const res = await cdp.evaluate(`(${pageAnalyze})(${JSON.stringify(checks)}, ${JSON.stringify({ underDock: !!(def.reveal || def.docked) })})`);
         comboIssues.push(...res.issues);
-        if (def.reveal) {
+        if (def.reveal || def.docked) {
           // the content reaches under the docked bar: whether it comes out from under it when scrolled to the bottom (at the top,
           // the still scrollable part under the bar is not an error, see underDock). Contrast does not depend on scrolling, no need to repeat it.
           if (opt.shots || res.issues.length) await saveShot('');
@@ -914,7 +920,7 @@ async function main() {
         issues.push({ skin: c.skin, mode: c.mode, route: c.route, viewport: c.vp.name, ...i });
       }
       // for the revealed state the screenshot from the top is the one above (without -bottom), the one scrolled to the bottom is a separate file
-      if (def.reveal && !loadFailed) {
+      if ((def.reveal || def.docked) && !loadFailed) {
         if (opt.shots || bottomIssues.length) await saveShot('-bottom');
       } else if (opt.shots || comboIssues.length) {
         await saveShot('');

@@ -201,7 +201,8 @@ export default function PracticeScreen() {
   if (step === 0) {
     return shell(
       scroll(
-        <Card style={styles.cardMargin} classicStyle={styles.card} boxStyle={styles.brutalCard}>
+        <View style={styles.cardMargin}>
+        <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Text testID="practice-text" style={[styles.paragraph, { color: colors.text }]}>
             {set.words.map((w, i) => (
               <Text key={w.itemId}>
@@ -221,7 +222,8 @@ export default function PracticeScreen() {
             iconStyle={styles.speakIcon}
             labelStyle={[styles.speakLabel, { color: colors.text }]}
           />
-        </Card>,
+        </Card>
+        </View>,
       ),
       dockAction('practice-action', `${s.card.next} →`, () => goTo(1)),
     );
