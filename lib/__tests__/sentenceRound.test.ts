@@ -1,6 +1,6 @@
-// The Sentences tab round: 4 builds then exactly one typing (one of the built sentences, seeded pick), the half is paid at
-// a sentence's first right build only, a wrong step sends the sentence to the end, the saved round round-trips and
-// an unusable one reads as nothing.
+// The Sentences tab round: the builds (no credit), then exactly one typing of a separate sentence that ends the round,
+// a wrong build sends the sentence to the end, the saved round round-trips (with its focus) and an unusable one, or one
+// saved by the older version (typed sentence picked from the builds), reads as nothing and so starts a fresh round.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
@@ -14,8 +14,8 @@ import {
   isRoundFor,
   loadSentenceRound,
   parseSentenceRound,
-  pickTypedId,
   roundProgress,
+  roundSentences,
   saveSentenceRound,
   startRound,
   type SentenceRound,
@@ -24,128 +24,102 @@ import type { SentenceEntry } from '../sentenceTab';
 
 const DAY = '2026-10-12';
 
-const entry = (id: string): SentenceEntry => ({ itemId: id, source: `src ${id}`, target: `tgt ${id}`, wordCount: 2, wordIds: [`w-${id}`], due: false });
+const entry = (id: string): SentenceEntry => ({
+  itemId: id,
+  source: `src ${id}`,
+  target: `tgt ${id}`,
+  wordCount: 2,
+  wordIds: [`w-${id}`],
+  due: true,
+  dueIds: [`w-${id}`],
+  staleness: '2026-10-01',
+  slots: [{ id: `w-${id}`, words: [id] }],
+});
 const ENTRIES = ['a', 'b', 'c', 'd'].map(entry);
-const fresh = (entries = ENTRIES): SentenceRound => startRound(entries, DAY, 'es');
+const TYPED = entry('t');
+const fresh = (entries = ENTRIES, focus = ''): SentenceRound => startRound(entries, TYPED, DAY, 'es', focus);
 
-// Builds every current sentence right until the typing starts; returns the round and what was paid, in order.
-const buildAllRight = (start: SentenceRound) => {
+const buildAllRight = (start: SentenceRound): SentenceRound => {
   let round = start;
-  const paid: string[] = [];
-  while (round.phase === 'build') {
-    const r = answerBuild(round, true);
-    if (r.pay) paid.push(r.pay.itemId);
-    round = r.round;
-  }
-  return { round, paid };
+  while (round.phase === 'build') round = answerBuild(round, true);
+  return round;
 };
 
-describe('rhythm: all builds, then one typing', () => {
-  it('a fresh round: every sentence still to build, in order, nothing paid, no typing picked', () => {
+describe('rhythm: all builds, then one typing of another sentence', () => {
+  it('a fresh round: every sentence still to build, in order, the typed one waiting', () => {
     const r = fresh();
-    expect(r).toMatchObject({ day: DAY, target: 'es', queue: ['a', 'b', 'c', 'd'], rated: [], typeId: null, phase: 'build' });
+    expect(r).toMatchObject({ day: DAY, target: 'es', focus: '', queue: ['a', 'b', 'c', 'd'], rated: [], phase: 'build' });
+    expect(r.typed.itemId).toBe('t');
     expect(currentEntry(r)?.itemId).toBe('a');
     expect(roundProgress(r)).toEqual({ done: 0, total: 5 });
   });
 
-  it('4 right builds -> exactly one typing, and it is one of the 4; each sentence paid once, in build order', () => {
+  it('4 right builds -> the typing starts, and the sentence to type is the separate one, not a built one', () => {
     let r = fresh();
     for (let i = 0; i < 3; i++) {
-      r = answerBuild(r, true).round;
+      r = answerBuild(r, true);
       expect(r.phase).toBe('build');
-      expect(r.typeId).toBeNull();
     }
     const last = answerBuild(r, true);
-    expect(last.round.phase).toBe('type');
-    expect(last.round.queue).toEqual([]);
-    expect(['a', 'b', 'c', 'd']).toContain(last.round.typeId);
-    expect(currentEntry(last.round)?.itemId).toBe(last.round.typeId);
-    expect(last.round.rated).toEqual(['a', 'b', 'c', 'd']);
-    const typed = answerType(last.round, true);
-    expect(typed.phase).toBe('done');
-    expect(currentEntry(typed)).toBeUndefined();
-    expect(roundProgress(typed)).toEqual({ done: 5, total: 5 });
+    expect(last.phase).toBe('type');
+    expect(last.queue).toEqual([]);
+    expect(last.rated).toEqual(['a', 'b', 'c', 'd']);
+    expect(currentEntry(last)?.itemId).toBe('t');
+    expect(ENTRIES.map((e) => e.itemId)).not.toContain(currentEntry(last)?.itemId);
+    expect(roundProgress(last)).toEqual({ done: 4, total: 5 });
   });
 
-  it('the half is paid by the build only: the right typing pays nothing new', () => {
-    const { round, paid } = buildAllRight(fresh());
-    expect(paid).toEqual(['a', 'b', 'c', 'd']);
-    // answerType returns a round only: no pay channel at all
-    expect(answerType(round, true).rated).toEqual(['a', 'b', 'c', 'd']);
+  it('the typing ends the round, right or wrong: no second typing, no rebuild', () => {
+    const typing = buildAllRight(fresh());
+    const done = answerType(typing);
+    expect(done.phase).toBe('done');
+    expect(currentEntry(done)).toBeUndefined();
+    expect(roundProgress(done)).toEqual({ done: 5, total: 5 });
+    expect(done.queue).toEqual([]);
   });
 
-  it('a round with fewer sentences: builds of what there is, then one typing', () => {
-    const { round } = buildAllRight(fresh(ENTRIES.slice(0, 2)));
+  it('nothing to build (a single sentence in all): the round is the typing only', () => {
+    const r = fresh([]);
+    expect(r.phase).toBe('type');
+    expect(currentEntry(r)?.itemId).toBe('t');
+    expect(roundProgress(r)).toEqual({ done: 0, total: 1 });
+    expect(answerType(r).phase).toBe('done');
+  });
+
+  it('a round with fewer sentences: builds of what there is, then the typing', () => {
+    const round = buildAllRight(fresh(ENTRIES.slice(0, 2)));
     expect(round.phase).toBe('type');
-    expect(['a', 'b']).toContain(round.typeId);
     expect(roundProgress(round)).toEqual({ done: 2, total: 3 });
   });
-});
 
-describe('the seeded pick of the typed sentence', () => {
-  it('the same day and sentences always pick the same one; it is one of them', () => {
-    const ids = ['a', 'b', 'c', 'd'];
-    expect(pickTypedId(DAY, ids)).toBe(pickTypedId(DAY, ids));
-    expect(ids).toContain(pickTypedId(DAY, ids));
-    expect(pickTypedId(DAY, [])).toBeNull();
-    expect(pickTypedId(DAY, ['only'])).toBe('only');
-  });
-
-  it('the round picks with that seed, whatever the order the sentences were built in', () => {
-    const wrongFirst = answerBuild(fresh(), false).round; // a goes to the end: b, c, d, a
-    const { round } = buildAllRight(wrongFirst);
-    expect(round.typeId).toBe(pickTypedId(DAY, ['a', 'b', 'c', 'd']));
-  });
-
-  it('it is spread: over many days every place of 4 comes up', () => {
-    const places = new Set<number>();
-    for (let d = 1; d <= 60; d++) {
-      const day = `2026-11-${String(d % 28 + 1).padStart(2, '0')}-${d}`;
-      places.add(['a', 'b', 'c', 'd'].indexOf(pickTypedId(day, ['a', 'b', 'c', 'd']) as string));
-    }
-    expect([...places].sort()).toEqual([0, 1, 2, 3]);
+  it('roundSentences: the builds and the typed one', () => {
+    expect(roundSentences(fresh()).map((e) => e.itemId)).toEqual(['a', 'b', 'c', 'd', 't']);
   });
 });
 
 describe('wrong steps', () => {
-  it('a wrong build: the sentence goes to the end, nothing is paid or rated, the number of the build stays', () => {
+  it('a wrong build: the sentence goes to the end, nothing is rated, the number of the build stays', () => {
     const r = answerBuild(fresh(), false);
-    expect(r.pay).toBeNull();
-    expect(r.round.queue).toEqual(['b', 'c', 'd', 'a']);
-    expect(r.round.rated).toEqual([]);
-    expect(buildNumber(r.round)).toBe(1);
-    expect(roundProgress(r.round).done).toBe(0);
+    expect(r.queue).toEqual(['b', 'c', 'd', 'a']);
+    expect(r.rated).toEqual([]);
+    expect(buildNumber(r)).toBe(1);
+    expect(roundProgress(r).done).toBe(0);
   });
 
-  it('a sentence built wrong first is paid once it is built right, at its place in the round', () => {
-    const { round, paid } = buildAllRight(answerBuild(fresh(), false).round);
-    expect(paid).toEqual(['b', 'c', 'd', 'a']);
+  it('a sentence built wrong first is rated once it is built right, at its place in the round', () => {
+    const round = buildAllRight(answerBuild(fresh(), false));
+    expect(round.rated).toEqual(['b', 'c', 'd', 'a']);
     expect(round.phase).toBe('type');
-  });
-
-  it('a wrong typing: the typed sentence goes back to the end (built, then typed again), no new pay; the pick stays', () => {
-    const { round } = buildAllRight(fresh());
-    const typeId = round.typeId as string;
-    const back = answerType(round, false);
-    expect(back).toMatchObject({ phase: 'build', queue: [typeId], typeId });
-    expect(back.rated).toEqual(['a', 'b', 'c', 'd']);
-    const rebuilt = answerBuild(back, true);
-    expect(rebuilt.pay).toBeNull();
-    expect(rebuilt.round).toMatchObject({ phase: 'type', typeId });
-    // a wrong rebuild in between changes nothing about the pay either
-    const wrongAgain = answerBuild(back, false);
-    expect(wrongAgain.pay).toBeNull();
-    expect(wrongAgain.round.queue).toEqual([typeId]);
-    expect(answerType(rebuilt.round, true).phase).toBe('done');
   });
 
   it('a result for the wrong phase changes nothing', () => {
     const r = fresh();
-    expect(answerType(r, true)).toBe(r);
-    const { round } = buildAllRight(r);
-    expect(answerBuild(round, true)).toEqual({ round, pay: null });
-    const done = answerType(round, true);
-    expect(answerType(done, false)).toBe(done);
+    expect(answerType(r)).toBe(r);
+    const typing = buildAllRight(r);
+    expect(answerBuild(typing, true)).toBe(typing);
+    const done = answerType(typing);
+    expect(answerType(done)).toBe(done);
+    expect(answerBuild(done, false)).toBe(done);
   });
 });
 
@@ -153,10 +127,9 @@ describe('the number of the build', () => {
   it('counts the sentences built right plus the one on screen, never above the round size', () => {
     let r = fresh();
     expect(buildNumber(r)).toBe(1);
-    r = answerBuild(r, true).round;
+    r = answerBuild(r, true);
     expect(buildNumber(r)).toBe(2);
-    const { round } = buildAllRight(r);
-    expect(buildNumber(round)).toBe(4);
+    expect(buildNumber(buildAllRight(r))).toBe(4);
   });
 });
 
@@ -167,12 +140,15 @@ describe('the saved round', () => {
 
   it('save then load gives the same round, mid-build and while waiting for the typing', async () => {
     const db = getDb();
-    const mid = answerBuild(answerBuild(fresh(), true).round, false).round;
+    const mid = answerBuild(answerBuild(fresh(), true), false);
     await saveSentenceRound(db, mid);
     expect(await loadSentenceRound(db)).toEqual(mid);
-    const { round: typing } = buildAllRight(fresh());
+    const typing = buildAllRight(fresh());
     await saveSentenceRound(db, typing);
     expect(await loadSentenceRound(db)).toEqual(typing);
+    const typingOnly = fresh([], 'w-1,w-2');
+    await saveSentenceRound(db, typingOnly);
+    expect(await loadSentenceRound(db)).toEqual(typingOnly);
   });
 
   it('clear drops it; nothing saved reads as null', async () => {
@@ -183,11 +159,14 @@ describe('the saved round', () => {
     expect(await loadSentenceRound(db)).toBeNull();
   });
 
-  it('valid only for the same day and direction', () => {
-    const r = fresh();
-    expect(isRoundFor(r, DAY, 'es')).toBe(true);
-    expect(isRoundFor(r, '2026-10-13', 'es')).toBe(false);
-    expect(isRoundFor(r, DAY, 'en')).toBe(false);
+  it('valid only for the same day, direction and focus', () => {
+    const r = fresh(ENTRIES, 'w-1');
+    expect(isRoundFor(r, DAY, 'es', 'w-1')).toBe(true);
+    expect(isRoundFor(r, '2026-10-13', 'es', 'w-1')).toBe(false);
+    expect(isRoundFor(r, DAY, 'en', 'w-1')).toBe(false);
+    expect(isRoundFor(r, DAY, 'es', 'w-2')).toBe(false);
+    expect(isRoundFor(r, DAY, 'es')).toBe(false);
+    expect(isRoundFor(fresh(), DAY, 'es')).toBe(true);
     expect(isRoundFor(null, DAY, 'es')).toBe(false);
   });
 
@@ -200,16 +179,25 @@ describe('the saved round', () => {
       {},
       { ...ok, day: 5 },
       { ...ok, target: 'fr' },
-      { ...ok, entries: [] },
       { ...ok, entries: [{ itemId: 'a' }] },
+      { ...ok, entries: [{ ...ENTRIES[0], slots: [{ id: 'x' }] }] },
+      { ...ok, typed: undefined },
+      { ...ok, typed: { itemId: 't' } },
       { ...ok, queue: ['zzz'] },
       { ...ok, rated: ['zzz'] },
       { ...ok, queue: [], phase: 'build' }, // building with nothing left to build
-      { ...ok, phase: 'type', queue: [], typeId: null }, // typing with no pick
-      { ...ok, phase: 'type', typeId: 'a' }, // typing while sentences are still to build
+      { ...ok, phase: 'type' }, // typing while sentences are still to build
       { ...ok, phase: 'done' }, // a round that ended is never kept
     ]) {
       expect(parseSentenceRound(bad)).toBeNull();
     }
+  });
+
+  it('a round saved by the older version (the typed sentence was one of the built ones) starts again without an error', async () => {
+    const { typed: _typed, focus: _focus, ...rest } = fresh();
+    const old = { ...rest, typeId: 'b', entries: ENTRIES.map(({ dueIds: _d, staleness: _s, slots: _sl, ...e }) => e) };
+    expect(parseSentenceRound(old)).toBeNull();
+    await getDb().setGameProgress('app-resume', 'sentences', 'saved', old);
+    expect(await loadSentenceRound(getDb())).toBeNull();
   });
 });

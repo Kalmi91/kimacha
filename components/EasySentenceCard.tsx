@@ -132,7 +132,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
       </View>
 
       {/* the same correct / wrong indicator on every card (colour + shape + ✓/✗ + text). */}
-      {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} />}
+      {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} align="center" />}
 
       {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}
 
