@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, StyleSheet, View } from 'react-native';
 import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 
 import { Text } from '@/components/KText';
@@ -9,6 +9,7 @@ import FeedbackButton from '@/components/FeedbackModal';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { BrutalButton, SegmentBar } from '@/components/grammar/Brutal';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import FabScrollView from '@/components/FabScrollView';
 import { useDockLift } from '@/components/learn/useDockLift';
 import LevelCounter from '@/components/practice/LevelCounter';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
@@ -104,7 +105,7 @@ export default function SentencesScreen() {
   // The round on screen, for the focus effect (its state is stale in the callback).
   const roundRef = useRef<SentenceRound | null>(null);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
-  const { dockLift } = useDockLift();
+  const { dockLift, kbHeight } = useDockLift();
 
   // `fresh`: a new round even if one is on screen (the "more" button).
   const load = useCallback(async (fresh = false) => {
@@ -308,14 +309,14 @@ export default function SentencesScreen() {
         {round.phase === 'build' ? s.sentenceTab.stepBuild(buildNumber(round), round.entries.length) : s.sentenceTab.stepType}
       </Text>
       {round.phase === 'build' ? (
-        <ScrollView
+        <FabScrollView
           style={styles.cardScroll}
-          contentContainerStyle={{ paddingBottom: g.brutal ? 100 : 24 }}
+          contentContainerStyle={{ paddingBottom: 24 }}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
           <BuildStep key={`build-${current.itemId}-${seq}`} entry={current} target={target} onResult={(correct) => void onBuildResult(correct)} />
-        </ScrollView>
+        </FabScrollView>
       ) : (
         // The typing card has its own scroller + the docked Check bar above the keyboard (no outer ScrollView).
         <TypedSentenceCard
@@ -327,6 +328,7 @@ export default function SentencesScreen() {
           sourceSpeechLocale={speechLang(target === 'es' ? 'en' : 'es')}
           onResult={(correct, typed) => void onTypeResult(correct, typed)}
           dockLift={dockLift}
+          keyboardOpen={kbHeight > 0}
           dockH={dockH}
           onDockHeight={setDockH}
           gradeButtons

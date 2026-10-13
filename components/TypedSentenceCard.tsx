@@ -7,7 +7,9 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
-import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
+import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
+import { useFabInsets } from '@/components/FabScrollView';
 import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
 import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
@@ -30,6 +32,8 @@ interface Props {
   // PCIC word card (DockedAction). The parent supplies the keyboard lift (useDockLift) and receives the
   // bar's height so that the 💬 button can sit above it; with default values it also renders on its own (in a test).
   dockLift?: number;
+  // The keyboard is open: the scroller keeps its full height (see dockScrollInsets).
+  keyboardOpen?: boolean;
   dockH?: number;
   onDockHeight?: (h: number) => void;
   // The word card's "Didn't know" / "Knew it" button row after Check (overrides the displayed grade).
@@ -44,6 +48,7 @@ export default function TypedSentenceCard({
   sourceSpeechLocale,
   strictAccents = false,
   dockLift = 0,
+  keyboardOpen = false,
   dockH = DOCK_RESERVE,
   onDockHeight,
   gradeButtons = false,
@@ -51,6 +56,7 @@ export default function TypedSentenceCard({
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const fab = useFabInsets();
   const s = t();
 
   const [typed, setTyped] = useState('');
@@ -79,14 +85,16 @@ export default function TypedSentenceCard({
     }
   };
 
+  const dockInsets = dockScrollInsets(dockH, dockLift, keyboardOpen, fab);
+
   // The input and the feedback stay in the scrollable card; Check / Next is
   // a bar docked to the bottom of the screen (a direct child of the parent's KeyboardAvoidingView,
   // like on the PCIC word card), on the keyboard's top edge.
   return (
     <>
       <ScrollView
-        style={styles.scroll}
-        contentContainerStyle={{ paddingBottom: FAB_CLEARANCE + dockH + dockLift }}
+        style={[styles.scroll, dockInsets.scroll]}
+        contentContainerStyle={{ paddingBottom: dockInsets.paddingBottom }}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >

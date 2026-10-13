@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
 
@@ -26,6 +26,7 @@ import { lessonBadgePercent, lessonScoresByTopic } from '@/lib/grammar/lessonSco
 import { lessonTestPassedTopics } from '@/lib/grammar/lessonTest';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
+import FabScrollView from '@/components/FabScrollView';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
@@ -113,7 +114,7 @@ export default function GrammarSyllabusScreen() {
     return (
       <View style={[styles.container, { backgroundColor: g.bg }]}>
         <SkinBackdrop />
-        <ScrollView contentContainerStyle={styles.brutalBody}>
+        <FabScrollView contentContainerStyle={styles.brutalBody}>
           <SkinHeader>
             <View style={styles.brutalHeader}>
               <Text variant="title" style={[styles.brutalTitle, { color: g.ink }]}>{s.tabs.grammar}</Text>
@@ -228,7 +229,7 @@ export default function GrammarSyllabusScreen() {
           </BrutalBox>
 
           <Text style={[styles.footNote, { color: g.mu }]}>{s.grammar.footNote}</Text>
-        </ScrollView>
+        </FabScrollView>
 
         <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
       </View>
@@ -243,7 +244,7 @@ export default function GrammarSyllabusScreen() {
         {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
       </Text>
 
-      <ScrollView contentContainerStyle={styles.body}>
+      <FabScrollView contentContainerStyle={styles.body}>
         {syllabusLevels(learnedLang).map((lvl) => {
           const topics = syllabusForLevel(lvl, learnedLang);
           const written = topics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
@@ -364,7 +365,7 @@ export default function GrammarSyllabusScreen() {
         })}
 
         <Text style={[styles.footNote, { color: colors.tabIconDefault }]}>{s.grammar.footNote}</Text>
-      </ScrollView>
+      </FabScrollView>
 
       <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
     </View>
@@ -374,7 +375,7 @@ export default function GrammarSyllabusScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1 },
   subtitle: { fontSize: 13, textAlign: 'center', marginTop: 2, marginBottom: 8 },
-  body: { padding: 14, paddingBottom: 100, gap: 10 },
+  body: { padding: 14, paddingBottom: 24, gap: 10 },
   levelBlock: { gap: 8 },
   levelHeader: { borderRadius: 14, borderWidth: 1.5, padding: 14, gap: 2 },
   levelName: { fontSize: 17, fontWeight: '800' },
@@ -412,8 +413,8 @@ const styles = StyleSheet.create({
   topicBadgeCol: { alignItems: 'flex-end', gap: 2 },
   topicBadge: { fontSize: 12, fontWeight: '700' },
   // neo-brutalist form styles (titles and buttons uppercase, weight 500).
-  // paddingBottom: the last card can also scroll clear of the chat button (FAB).
-  brutalBody: { padding: 16, paddingBottom: 130, gap: 10 },
+  // the chat button (FAB) sits outside the scroller (FabScrollView leaves room for it).
+  brutalBody: { padding: 16, paddingBottom: 32, gap: 10 },
   brutalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
   brutalTitle: { fontSize: 30, fontWeight: '500', textTransform: 'uppercase' },
   brutalSmall: { fontSize: 11, fontWeight: '500' },

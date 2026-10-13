@@ -29,8 +29,8 @@
 // touch overlap by 1-2 px).
 // Elements that draw decorations (data-testid="decor-...") and their descendants are skipped; so is
 // the transient UsageToast, deliberately drawn over the content (data-testid="usage-toast").
-// The floating 💬 button (data-testid="feedback-fab") is skipped at the top of the scroll (scrolling solves it),
-// but in the check with the scroller set to the bottom it is part of the overlap check.
+// The floating 💬 button (data-testid="feedback-fab") is part of the overlap check everywhere, also at the top of the
+// scroll (scrollers end above the button's band, so it never covers a control before scrolling either).
 //
 // Output: ui-overlap-report.json + PNGs of the failing combinations in the ui-shots/ folder
 // (--shots: of every combination). Exit code: 0 = no issues, 1 = issues found, 2 = the test
@@ -373,8 +373,8 @@ function pageScrollBottom() {
 
 // The check: { issues: [{ type, text, other? }], stats }. opts.underDock: at the top of the scroll,
 // still scrollable content hanging under the docked bar (learn-dock) is not an overlap (with the scroller at
-// the bottom we check separately whether it comes out from under the bar). opts.fab: the 💬 button is part of the check
-// too (in the scrolled-to-bottom state nothing may hang under it; at the top scrolling solves it, so it is excluded there).
+// the bottom we check separately whether it comes out from under the bar). opts.fab: false leaves the 💬 button out of
+// the check (it is part of it by default, at the top of the scroll too).
 function pageAnalyze(checks, opts = {}) {
   const want = new Set(checks);
   const vw = document.documentElement.clientWidth;
@@ -383,8 +383,8 @@ function pageAnalyze(checks, opts = {}) {
   const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TITLE', 'META', 'LINK', 'HEAD']);
   const visible = (el) => el.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true });
   // decorations + floating elements deliberately drawn over the content (UsageToast, 💬 button)
-  const IGNORE = `[data-testid^="decor-"], [data-testid^="usage-toast"]${opts.fab ? '' : ', [data-testid="feedback-fab"]'}`;
-  const inDecor = (el) => !!el.closest(IGNORE) || (!opts.fab && (el.innerText ?? '').trim() === '💬');
+  const IGNORE = `[data-testid^="decor-"], [data-testid^="usage-toast"]${opts.fab === false ? ', [data-testid="feedback-fab"]' : ''}`;
+  const inDecor = (el) => !!el.closest(IGNORE) || (opts.fab === false && (el.innerText ?? '').trim() === '💬');
   const desc = (el) => {
     const r = el.getBoundingClientRect();
     const id = el.getAttribute('data-testid') ?? el.closest('[data-testid]')?.getAttribute('data-testid');

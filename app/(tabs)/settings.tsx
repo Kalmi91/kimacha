@@ -1,5 +1,5 @@
 import { useState, useCallback, type ReactNode } from 'react';
-import { StyleSheet, View, Pressable, Alert, Platform, ScrollView, Modal } from 'react-native';
+import { StyleSheet, View, Pressable, Alert, Platform, Modal } from 'react-native';
 import { Text } from '@/components/KText';
 import { useRouter, useFocusEffect } from 'expo-router';
 import { File, Paths } from 'expo-file-system';
@@ -36,6 +36,7 @@ import {
   AGAIN_DELAY_STEP_SEC,
 } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
+import FabScrollView from '@/components/FabScrollView';
 import { BrutalBox, BrutalSwitch } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import ThemeSwatch from '@/components/skins/ThemeSwatch';
@@ -392,7 +393,7 @@ export default function SettingsScreen() {
       {/* the page grew past one screen (the version line at its bottom was
           unreachable), so the settings list scrolls. The modal and the feedback
           FAB stay outside, pinned to the screen. */}
-      <ScrollView contentContainerStyle={styles.container}>
+      <FabScrollView contentContainerStyle={styles.container}>
       <Text style={[styles.sectionTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.tabs.settings}</Text>
 
       <Text style={[styles.sectionHint, { color: colors.textMuted, marginBottom: 8 }]}>{s.settings.themes.title}</Text>
@@ -552,7 +553,7 @@ export default function SettingsScreen() {
           <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
         </Row>
       )}
-      </ScrollView>
+      </FabScrollView>
 
       <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="settings-tab" />
 
@@ -613,9 +614,8 @@ const styles = StyleSheet.create({
   container: {
     padding: 24,
     paddingTop: 40,
-    // room under the last row so the FAB never covers it (96 → 120,
-    // so the last row of a longer list can also be scrolled above the 💬)
-    paddingBottom: 120,
+    // the 💬 FAB sits outside the scroller (FabScrollView leaves room for it), so it never covers a row
+    paddingBottom: 32,
   },
   versionText: {
     marginTop: 12,
