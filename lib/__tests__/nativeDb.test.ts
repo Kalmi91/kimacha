@@ -35,6 +35,11 @@ const mockFakeDb = {
       tables[m[1]] = [];
       return {};
     }
+    m = s.match(/^DELETE FROM (\w+) WHERE (\w+) IN \(/);
+    if (m) {
+      tables[m[1]] = rowsOf(m[1]).filter(r => !params.includes(r[m![2]]));
+      return {};
+    }
     m = s.match(/^INSERT INTO (\w+) \(([\w, ]+)\) VALUES/);
     if (m) {
       const cols = m[2].split(',').map(c => c.trim());
@@ -52,6 +57,7 @@ jest.mock('../db/migrations', () => ({
 
 import { getDb } from '../database';
 import { validateBackupPayload } from '../backup';
+import { pcicItemsForLevel } from '@/data/pcic';
 
 beforeEach(() => {
   for (const t of Object.keys(tables)) delete tables[t];
@@ -214,5 +220,19 @@ describe('practice counters and beta flags (native db)', () => {
     expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET practice_round = ? WHERE id = 1', ['{"v":1}']);
     await getDb().setPracticeRound(null);
     expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET practice_round = ? WHERE id = 1', [null]);
+  });
+});
+
+describe('resetPcicCards by level (native db)', () => {
+  it('clears every card of a big level in chunks of at most 500 ids, other levels stay', async () => {
+    const ids = pcicItemsForLevel('A2').map(i => i.id);
+    expect(ids.length).toBeGreaterThan(1000);
+    tables.pcic_cards = [...ids.map(id => pcicRow(id, '2026-10-08')), pcicRow('keep-me', '2026-10-08')];
+    mockFakeDb.runAsync.mockClear();
+    await getDb().resetPcicCards('a2');
+    expect(tables.pcic_cards.map(r => r.item_id)).toEqual(['keep-me']);
+    const deletes = mockFakeDb.runAsync.mock.calls.filter(c => String(c[0]).includes('IN ('));
+    expect(deletes.length).toBe(Math.ceil(ids.length / 500));
+    expect(deletes.every(c => (c[1] ?? []).length <= 500)).toBe(true);
   });
 });
