@@ -7,7 +7,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 
 import type { Level, WordEntry } from '@/data/words';
-import { openWords } from '@/data/openWords';
+import { getOpenWords } from '@/data/openWords';
 
 // Play cut: the en word-branch loader path
 // (getWordsForLevel(level, 'en')) is gone, so the cases below that guard
@@ -57,7 +57,7 @@ describe('Spanish word corpus (words-open)', () => {
   it('gives every word a globally unique id', () => {
     const seen = new Map<number, string>();
     const collisions: string[] = [];
-    for (const word of openWords) {
+    for (const word of getOpenWords()) {
       const owner = seen.get(word.id);
       if (owner) collisions.push(`${word.id}: ${owner} vs ${word.level} ${word.es}`);
       else seen.set(word.id, `${word.level} ${word.es}`);
@@ -68,7 +68,7 @@ describe('Spanish word corpus (words-open)', () => {
   it('teaches a headword+meaning on one level only', () => {
     const first = new Map<string, any>();
     const duplicates: string[] = [];
-    for (const word of [...openWords].sort((a, b) => LEVEL_ORDER.indexOf(a.level) - LEVEL_ORDER.indexOf(b.level))) {
+    for (const word of [...getOpenWords()].sort((a, b) => LEVEL_ORDER.indexOf(a.level) - LEVEL_ORDER.indexOf(b.level))) {
       const earlier = first.get(word.es);
       if (!earlier) first.set(word.es, word);
       else if (sharesMeaning(earlier, word)) {
@@ -89,7 +89,7 @@ describe('article agreement between the two sides of a card', () => {
   const EN_ARTICLE = /^(the|a|an)\s/i;
 
   it('never shows an English article for a Spanish form that has none', () => {
-    const offenders = openWords
+    const offenders = getOpenWords()
       .filter((w) => w.pos !== 'verb')
       .filter((w) => EN_ARTICLE.test(w.en ?? '') && !ES_ARTICLE.test(w.es ?? ''))
       // `un/una` is itself the article card, so the prompt "a / an" is the correct content there.
