@@ -11,6 +11,7 @@ import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { useSkinDecor } from '@/components/skins';
 import { t } from '@/lib/i18n';
 import { useBeta } from '@/lib/beta';
+import { FeedbackHeaderProvider } from '@/lib/feedbackHeader';
 
 export default function TabLayout() {
   const { theme, grammarPalette } = useTheme();
@@ -39,6 +40,8 @@ export default function TabLayout() {
 
   return (
     <Tabs
+      // every screen can put its 💬 button into its header (headerRight), see lib/feedbackHeader.tsx
+      screenLayout={({ navigation, children }) => <FeedbackHeaderProvider navigation={navigation}>{children}</FeedbackHeaderProvider>}
       screenOptions={{
         tabBarActiveTintColor: colors.tint,
         tabBarInactiveTintColor: colors.tabIconDefault,

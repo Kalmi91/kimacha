@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { StyleSheet, View, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable, ScrollView } from 'react-native';
 import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
@@ -27,7 +27,6 @@ import { cardsForLevel } from '@/lib/pcicLevels';
 import { countKnown, countGraduated, countLearned } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
 import FeedbackButton from '@/components/FeedbackModal';
-import FabScrollView from '@/components/FabScrollView';
 import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import MockExamCard from '@/components/exam/MockExamCard';
@@ -170,7 +169,7 @@ export default function StatsScreen() {
   return (
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <SkinBackdrop />
-      <FabScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
+      <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
         <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
 
       {/* badge of the PCIC level + known/total (interval
@@ -355,11 +354,10 @@ export default function StatsScreen() {
           </Text>
         </Card>
       )}
-      </FabScrollView>
+      </ScrollView>
 
-      {/* the button floats OUTSIDE the ScrollView, as on the settings tab, not
-          stuck to the bottom of the list. */}
-      <FeedbackButton level="-" languagePair="-" currentCard="stats-tab" draggable />
+      {/* the 💬 button goes into the navigator's header (right end), not over the list. */}
+      <FeedbackButton placement="header" level="-" languagePair="-" currentCard="stats-tab" />
     </View>
   );
 }
@@ -398,7 +396,6 @@ const styles = StyleSheet.create({
   goalOuter: { marginBottom: 24 },
   scheduleOuter: { marginBottom: 12 },
   goalBox: { padding: 16, gap: 10 },
-  // The chat button (FAB) sits outside the scroller (FabScrollView leaves room for it).
   brutalContent: { paddingBottom: 32 },
   brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalValue: { fontWeight: '500' },

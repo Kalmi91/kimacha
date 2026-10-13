@@ -29,8 +29,8 @@
 // touch overlap by 1-2 px).
 // Elements that draw decorations (data-testid="decor-...") and their descendants are skipped; so is
 // the transient UsageToast, deliberately drawn over the content (data-testid="usage-toast").
-// The floating 💬 button (data-testid="feedback-fab") is part of the overlap check everywhere, also at the top of the
-// scroll (scrollers end above the button's band, so it never covers a control before scrolling either).
+// The 💬 button (data-testid="feedback-fab" on the neo-brutalist themes) sits in the navigator header's right end (the
+// Learn tab and the neo-brutalist Course tab: in their own top row), so it is part of the overlap check like any control.
 //
 // Output: ui-overlap-report.json + PNGs of the failing combinations in the ui-shots/ folder
 // (--shots: of every combination). Exit code: 0 = no issues, 1 = issues found, 2 = the test
@@ -374,7 +374,7 @@ function pageScrollBottom() {
 // The check: { issues: [{ type, text, other? }], stats }. opts.underDock: at the top of the scroll,
 // still scrollable content hanging under the docked bar (learn-dock) is not an overlap (with the scroller at
 // the bottom we check separately whether it comes out from under the bar). opts.fab: false leaves the 💬 button out of
-// the check (it is part of it by default, at the top of the scroll too).
+// the check (it is part of it by default).
 function pageAnalyze(checks, opts = {}) {
   const want = new Set(checks);
   const vw = document.documentElement.clientWidth;
@@ -828,6 +828,9 @@ async function main() {
       }
     };
     const open = async (url) => {
+      // On a cold start the app returns to the last tab it was on (lib/useAppResume.ts, kept in localStorage): without
+      // forgetting it, the page opened after a Settings combination would come up as Settings.
+      await cdp.evaluate(`try { localStorage.removeItem('kimacha-resume'); } catch (e) {}`).catch(() => {});
       const loaded = cdp.waitEvent('Page.loadEventFired', 60000);
       await cdp.send('Page.navigate', { url });
       await loaded;

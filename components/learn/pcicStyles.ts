@@ -63,6 +63,9 @@ export const styles = StyleSheet.create({
   headerIcons: {
     flexDirection: 'row',
     alignItems: 'center',
+    // the 💬 button stays at the top right corner when the chip row wraps over several lines.
+    alignSelf: 'flex-start',
+    gap: 4,
   },
   // fix: today's word/sentence breakdown is its own full-width,
   // wrappable row under the chip row (see the Text after headerRow).
