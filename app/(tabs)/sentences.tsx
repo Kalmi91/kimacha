@@ -5,6 +5,7 @@ import { useFocusEffect } from 'expo-router';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import EasySentenceCard from '@/components/EasySentenceCard';
+import FeedbackButton from '@/components/FeedbackModal';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { BrutalButton, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -22,22 +23,28 @@ import { nearMissDistractors } from '@/lib/distractors';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import { tileWords } from '@/lib/sentenceCards';
 import {
-  SENTENCE_ROUND_SIZE,
-  afterSentence,
-  buildSentenceQueue,
-  recordSentenceHalves,
-  sentenceKey,
-  type SentenceEntry,
-} from '@/lib/sentenceTab';
+  answerBuild,
+  answerType,
+  buildNumber,
+  clearSentenceRound,
+  currentEntry,
+  isRoundFor,
+  loadSentenceRound,
+  roundProgress,
+  saveSentenceRound,
+  startRound,
+  type SentenceRound,
+} from '@/lib/sentenceRound';
+import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordSentenceHalves, sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 
-// Beta tab (Settings -> Beta -> Sentences tab), spec HAROM-JATEK.md 3. One sentence = two steps on the
-// same sentence: build it from word tiles (near-miss decoys), then type it. Both right = the sentence is done and
-// every learned word in it gets one half (lib/sentenceTab.ts recordSentenceHalves). A wrong step sends the
-// sentence to the end of the round. The cards are the Words tab's former sentence cards.
-
-type Phase = 'build' | 'type';
+// Beta tab (Settings -> Beta -> Sentences tab), spec HAROM-JATEK.md 3. A round = 4 sentences built from word tiles
+// (near-miss decoys), then ONE of the built sentences typed (lib/sentenceRound.ts: the round's state and its save).
+// A right build gives every learned word in the sentence one half (lib/sentenceTab.ts recordSentenceHalves), once;
+// the typing pays nothing new. A wrong step sends the sentence to the end of the round. The round is saved on every
+// step, so leaving the tab or the app and coming back continues it (same day). The cards are the Words tab's former
+// sentence cards.
 
 // The tile step; the decoys are picked once when the step mounts (a retry remounts it: key).
 function BuildStep({ entry, target, onResult }: { entry: SentenceEntry; target: PcicTarget; onResult: (correct: boolean) => void }) {
@@ -73,15 +80,12 @@ export default function SentencesScreen() {
   const [loading, setLoading] = useState(true);
   const [target, setTarget] = useState<PcicTarget>('es');
   const [strictAccents, setStrictAccents] = useState(false);
-  const [queue, setQueue] = useState<SentenceEntry[]>([]);
-  // This round: how many sentences it started with and how many are done (the progress).
-  const [total, setTotal] = useState(0);
-  const [done, setDone] = useState(0);
-  const [phase, setPhase] = useState<Phase>('build');
+  // The round on screen (lib/sentenceRound.ts): its sentences, what is left to build, what was built right, the typing.
+  const [round, setRound] = useState<SentenceRound | null>(null);
   // Bumps on every finished step, so a sentence that comes back gets fresh tiles and an empty input.
   const [seq, setSeq] = useState(0);
-  // Sentences finished (right) since the app opened: left out of the next rounds, or a word that is still due would
-  // bring the same sentence straight back.
+  // Sentences built right (their halves paid) since the app opened: left out of the next rounds, or a word that is
+  // still due would bring the same sentence straight back.
   const doneKeys = useRef(new Set<string>());
   const busy = useRef(false);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
@@ -94,23 +98,32 @@ export default function SentencesScreen() {
     // Must come before the corpus is read (data/pcic.ts: the loaded deck follows the target).
     setPcicTarget(dir);
     const today = localDateString();
-    const cards = dropOrphanCards(await db.getPcicCards(), (id) => findPcicItem(id) !== undefined);
-    const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
-    const round = buildSentenceQueue({
-      target: dir,
-      cards,
-      tenses: resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()),
-      items: PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)),
-      findItem: findPcicItem,
-      today,
-      done: doneKeys.current,
-    }).slice(0, SENTENCE_ROUND_SIZE);
+    // A round that was left (other tab, app closed) continues where it stopped, the same day and direction.
+    const saved = await loadSentenceRound(db);
+    let next: SentenceRound;
+    if (isRoundFor(saved, today, dir)) {
+      next = saved;
+      for (const e of saved.entries) if (saved.rated.includes(e.itemId)) doneKeys.current.add(sentenceKey(e));
+    } else {
+      const cards = dropOrphanCards(await db.getPcicCards(), (id) => findPcicItem(id) !== undefined);
+      const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
+      const entries = buildSentenceQueue({
+        target: dir,
+        cards,
+        tenses: resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()),
+        items: PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)),
+        findItem: findPcicItem,
+        today,
+        done: doneKeys.current,
+      }).slice(0, SENTENCE_ROUND_SIZE);
+      next = startRound(entries, today, dir);
+      // Saved at once (when there is a round): leaving before the first answer brings back the same sentences.
+      if (entries.length > 0) await saveSentenceRound(db, next);
+      else await clearSentenceRound(db);
+    }
     setTarget(dir);
     setStrictAccents(await db.getStrictAccents());
-    setQueue(round);
-    setTotal(round.length);
-    setDone(0);
-    setPhase('build');
+    setRound(next);
     setSeq((n) => n + 1);
     setLoading(false);
   }, []);
@@ -122,35 +135,56 @@ export default function SentencesScreen() {
     }, [load]),
   );
 
-  const current = queue[0];
+  const current = round ? currentEntry(round) : undefined;
+  const { done, total } = round && round.entries.length > 0 ? roundProgress(round) : { done: 0, total: 0 };
 
-  const onBuildResult = (correct: boolean) => {
-    if (correct) {
-      setPhase('type');
-      return;
-    }
-    // A wrong build ends the sentence for now (the typing step would only copy the answer shown): it comes back later.
-    setQueue((q) => afterSentence(q, false));
-    setSeq((n) => n + 1);
+  // The new state is saved BEFORE the halves are paid: a kill in between loses a half, it never pays one twice.
+  const keepRound = async (next: SentenceRound) => {
+    if (next.phase === 'done') await clearSentenceRound(getDb());
+    else await saveSentenceRound(getDb(), next);
   };
 
-  const onTypeResult = async (correct: boolean) => {
-    if (busy.current || !current) return;
+  const onBuildResult = async (correct: boolean) => {
+    if (busy.current || !round) return;
     busy.current = true;
     try {
-      if (correct) {
-        await recordSentenceHalves(current.wordIds, undefined, xpV2);
-        doneKeys.current.add(sentenceKey(current));
-        setDone((n) => n + 1);
+      // Right = the words of the sentence get their half (the first time only); wrong = the sentence goes to the end of
+      // the round, no result to the words (no step back from this tab).
+      const { round: next, pay } = answerBuild(round, correct);
+      await keepRound(next);
+      if (pay) {
+        await recordSentenceHalves(pay.wordIds, undefined, xpV2);
+        doneKeys.current.add(sentenceKey(pay));
       }
-      // A wrong typing sends no result to the words (no step back from this tab), the sentence just comes back later.
-      setQueue((q) => afterSentence(q, correct));
-      setPhase('build');
+      setRound(next);
       setSeq((n) => n + 1);
     } finally {
       busy.current = false;
     }
   };
+
+  const onTypeResult = async (correct: boolean) => {
+    if (busy.current || !round) return;
+    busy.current = true;
+    try {
+      // The typing pays nothing: its sentence was paid at its build. A wrong typing sends the sentence back to the end of the round.
+      const next = answerType(round, correct);
+      await keepRound(next);
+      setRound(next);
+      setSeq((n) => n + 1);
+    } finally {
+      busy.current = false;
+    }
+  };
+
+  const feedback = (
+    <FeedbackButton
+      level="-"
+      languagePair={target === 'es' ? 'en-es' : 'es-en'}
+      currentCard={current ? `sentences:${current.itemId}` : 'sentences-tab'}
+      bottomOffset={round?.phase === 'type' ? dockH + dockLift : undefined}
+    />
+  );
 
   const header = (
     <SkinHeader>
@@ -198,18 +232,19 @@ export default function SentencesScreen() {
         <Text testID="sentences-empty" style={[styles.hint, { color: colors.tabIconDefault }]}>
           {s.sentenceTab.empty}
         </Text>
+        {feedback}
       </View>
     );
   }
 
-  // The round is over: every sentence in it was built and typed right.
-  if (!current) {
+  // The round is over: every sentence in it was built right and the picked one typed right.
+  if (!round || !current) {
     return (
       <View testID="sentences-screen" style={[styles.container, { backgroundColor: colors.background }]}>
         <SkinBackdrop />
         {header}
         <Text testID="sentences-round-done" style={[styles.hint, { color: colors.text }]}>
-          {s.sentenceTab.roundDone(done)}
+          {s.sentenceTab.roundDone(round?.entries.length ?? 0)}
         </Text>
         {g.brutal ? (
           <BrutalButton testID="sentences-more" label={s.sentenceTab.more} fill="a" onPress={() => { setLoading(true); void load(); }} style={styles.moreBtn} />
@@ -226,6 +261,7 @@ export default function SentencesScreen() {
             <Text style={[styles.moreBtnText, { color: colors.onTint }]}>{s.sentenceTab.more}</Text>
           </Pressable>
         )}
+        {feedback}
       </View>
     );
   }
@@ -239,16 +275,16 @@ export default function SentencesScreen() {
       <SkinBackdrop />
       {header}
       <Text testID="sentences-step" style={[styles.stepText, { color: colors.tabIconDefault }]}>
-        {phase === 'build' ? s.sentenceTab.stepBuild : s.sentenceTab.stepType}
+        {round.phase === 'build' ? s.sentenceTab.stepBuild(buildNumber(round), round.entries.length) : s.sentenceTab.stepType}
       </Text>
-      {phase === 'build' ? (
+      {round.phase === 'build' ? (
         <ScrollView
           style={styles.cardScroll}
           contentContainerStyle={{ paddingBottom: g.brutal ? 100 : 24 }}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
-          <BuildStep key={`build-${current.itemId}-${seq}`} entry={current} target={target} onResult={onBuildResult} />
+          <BuildStep key={`build-${current.itemId}-${seq}`} entry={current} target={target} onResult={(correct) => void onBuildResult(correct)} />
         </ScrollView>
       ) : (
         // The typing card has its own scroller + the docked Check bar above the keyboard (no outer ScrollView).
@@ -266,6 +302,7 @@ export default function SentencesScreen() {
           gradeButtons
         />
       )}
+      {feedback}
     </KeyboardAvoidingView>
   );
 }
