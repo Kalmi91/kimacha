@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
 
@@ -26,7 +26,6 @@ import { lessonBadgePercent, lessonScoresByTopic } from '@/lib/grammar/lessonSco
 import { lessonTestPassedTopics } from '@/lib/grammar/lessonTest';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import FeedbackButton from '@/components/FeedbackModal';
-import FabScrollView from '@/components/FabScrollView';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
@@ -50,6 +49,8 @@ export default function GrammarSyllabusScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  // a phone's width: the neo-brutalist header (title + streak sticker + 💬) gets a smaller title there, a wide theme font would push the 💬 out.
+  const narrow = useWindowDimensions().width < 400;
   const s = t();
   const router = useRouter();
 
@@ -114,13 +115,19 @@ export default function GrammarSyllabusScreen() {
     return (
       <View style={[styles.container, { backgroundColor: g.bg }]}>
         <SkinBackdrop />
-        <FabScrollView contentContainerStyle={styles.brutalBody}>
+        {/* This tab draws its own header (the navigator's is off), so the 💬 button sits in its right end, outside the scroller. */}
+        <View style={styles.brutalHeaderWrap}>
           <SkinHeader>
             <View style={styles.brutalHeader}>
-              <Text variant="title" style={[styles.brutalTitle, { color: g.ink }]}>{s.tabs.grammar}</Text>
-              <Sticker testID="grammar-streak" label={`🔥 ${streak}`} fill="b" rotate={6} />
+              <Text variant="title" style={[styles.brutalTitle, narrow && styles.brutalTitleNarrow, { color: g.ink }]}>{s.tabs.grammar}</Text>
+              <View style={styles.brutalHeaderRight}>
+                <Sticker testID="grammar-streak" label={`🔥 ${streak}`} fill="b" rotate={6} />
+                <FeedbackButton placement="inline" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
+              </View>
             </View>
           </SkinHeader>
+        </View>
+        <ScrollView contentContainerStyle={styles.brutalBody}>
           <Text style={[styles.brutalSmall, { color: g.mu }]}>
             {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
           </Text>
@@ -229,9 +236,7 @@ export default function GrammarSyllabusScreen() {
           </BrutalBox>
 
           <Text style={[styles.footNote, { color: g.mu }]}>{s.grammar.footNote}</Text>
-        </FabScrollView>
-
-        <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
+        </ScrollView>
       </View>
     );
   }
@@ -244,7 +249,7 @@ export default function GrammarSyllabusScreen() {
         {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
       </Text>
 
-      <FabScrollView contentContainerStyle={styles.body}>
+      <ScrollView contentContainerStyle={styles.body}>
         {syllabusLevels(learnedLang).map((lvl) => {
           const topics = syllabusForLevel(lvl, learnedLang);
           const written = topics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
@@ -365,9 +370,9 @@ export default function GrammarSyllabusScreen() {
         })}
 
         <Text style={[styles.footNote, { color: colors.tabIconDefault }]}>{s.grammar.footNote}</Text>
-      </FabScrollView>
+      </ScrollView>
 
-      <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
+      <FeedbackButton placement="header" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
     </View>
   );
 }
@@ -413,10 +418,12 @@ const styles = StyleSheet.create({
   topicBadgeCol: { alignItems: 'flex-end', gap: 2 },
   topicBadge: { fontSize: 12, fontWeight: '700' },
   // neo-brutalist form styles (titles and buttons uppercase, weight 500).
-  // the chat button (FAB) sits outside the scroller (FabScrollView leaves room for it).
-  brutalBody: { padding: 16, paddingBottom: 32, gap: 10 },
+  brutalBody: { padding: 16, paddingTop: 0, paddingBottom: 32, gap: 10 },
+  brutalHeaderWrap: { paddingHorizontal: 16, paddingTop: 16, paddingBottom: 10 },
   brutalHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
-  brutalTitle: { fontSize: 30, fontWeight: '500', textTransform: 'uppercase' },
+  brutalHeaderRight: { flexShrink: 0, flexDirection: 'row', alignItems: 'center', gap: 8 },
+  brutalTitle: { flexShrink: 1, fontSize: 30, fontWeight: '500', textTransform: 'uppercase' },
+  brutalTitleNarrow: { fontSize: 22 },
   brutalSmall: { fontSize: 11, fontWeight: '500' },
   brutalLevelRow: { flexDirection: 'row', gap: 8 },
   brutalLevelBox: { flex: 1 },

@@ -9,7 +9,6 @@ import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
-import { useFabInsets } from '@/components/FabScrollView';
 import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
 import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
@@ -56,7 +55,6 @@ export default function TypedSentenceCard({
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
-  const fab = useFabInsets();
   const s = t();
 
   const [typed, setTyped] = useState('');
@@ -85,7 +83,7 @@ export default function TypedSentenceCard({
     }
   };
 
-  const dockInsets = dockScrollInsets(dockH, dockLift, keyboardOpen, fab);
+  const dockInsets = dockScrollInsets(dockH, dockLift, keyboardOpen);
 
   // The input and the feedback stay in the scrollable card; Check / Next is
   // a bar docked to the bottom of the screen (a direct child of the parent's KeyboardAvoidingView,
@@ -93,7 +91,7 @@ export default function TypedSentenceCard({
   return (
     <>
       <ScrollView
-        style={[styles.scroll, dockInsets.scroll]}
+        style={[styles.scroll, { marginBottom: dockInsets.marginBottom }]}
         contentContainerStyle={{ paddingBottom: dockInsets.paddingBottom }}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"

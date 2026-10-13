@@ -81,7 +81,7 @@ describe('PCIC tab: the card never runs under the docked Next bar', () => {
     return utils;
   };
 
-  it('keyboard closed: the scroller ends above the bar and the 💬 button, with the Knew it row inside', async () => {
+  it('keyboard closed: the scroller ends at the bar, with the Knew it row inside, and the 💬 button is in the header row', async () => {
     const utils = await revealTallCard();
     const { getByText, UNSAFE_getByType } = utils;
 
@@ -95,9 +95,13 @@ describe('PCIC tab: the card never runs under the docked Next bar', () => {
     // distance of the scroller's bottom edge / of the bar's top edge above the container's bottom edge
     const scrollerBottom = (container.padding as number) + ((scroller.marginBottom as number) ?? 0);
     const barTop = NAV_BAR + DOCK_H;
-    // and above the 💬 button floating over the bar (24 above it, 55 tall): it never covers the card, even before scrolling
-    expect(scrollerBottom).toBeGreaterThanOrEqual(barTop + FAB_CLEARANCE);
+    // the card gets all the room above the bar (the 💬 button no longer floats over the bottom edge, it is in the header row)
+    expect(scrollerBottom).toBeGreaterThanOrEqual(barTop);
+    expect(scrollerBottom).toBeLessThan(barTop + FAB_CLEARANCE);
     expect(content.paddingBottom).toBe(0);
+    const fab = StyleSheet.flatten(utils.getByLabelText('Feedback').props.style);
+    expect(fab.position).not.toBe('absolute');
+    expect(fab.width).toBe(40);
   });
 
   it('keyboard open: the typing layout is unchanged (full-height scroller, room under the bar as padding)', async () => {
@@ -111,6 +115,6 @@ describe('PCIC tab: the card never runs under the docked Next bar', () => {
     const scroller = StyleSheet.flatten(cardScroller(utils).props.style);
     const content = StyleSheet.flatten(cardScroller(utils).props.contentContainerStyle);
     expect(scroller.marginBottom ?? 0).toBe(0);
-    expect(content.paddingBottom).toBe(FAB_CLEARANCE + DOCK_H + 300 + NAV_BAR);
+    expect(content.paddingBottom).toBe(DOCK_H + 300 + NAV_BAR);
   });
 });

@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useContext, useEffect, useState, type ReactNode } from 'react';
 import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard, Share } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -10,6 +10,7 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { feedbackBuildTag } from '@/lib/appBuild';
 import { IS_PLAY_BUILD, FEEDBACK_URL } from '@/lib/buildFlavor';
+import { FeedbackHeaderContext } from '@/lib/feedbackHeader';
 
 interface Props {
   level: string;
@@ -21,7 +22,15 @@ interface Props {
   // extra room under the button, for screens that dock something along the
   // bottom edge (the learn card's Check bar) which the button would otherwise cover.
   bottomOffset?: number;
+  // 'fab' (default): the round button floating over the screen's bottom right corner (screens without a header).
+  // 'header': in the right end of the tab navigator's header (headerRight); with no navigator around (a test) it sits
+  //   in the screen's top right corner instead. 'inline': a header-sized button in the normal layout flow, for a screen
+  //   that draws its own top row (the Learn tab, the neo-brutalist Course tab).
+  placement?: 'fab' | 'header' | 'inline';
 }
+
+// `corner`: the 'header' button of a screen without a navigator header around it (jest renders the screens bare).
+type Slot = 'fab' | 'inline' | 'corner';
 
 // The modal's box is a BrutalBox on the brutalist palette, today's card on the classic palette.
 function ModalBox({ children }: { children: ReactNode }) {
@@ -36,7 +45,7 @@ function ModalBox({ children }: { children: ReactNode }) {
   return <View style={[styles.modal, { backgroundColor: g.paper }]}>{children}</View>;
 }
 
-export default function FeedbackButton({ level, languagePair, currentCard, draggable = false, bottomOffset = 0 }: Props) {
+function FeedbackControl({ level, languagePair, currentCard, draggable = false, bottomOffset = 0, slot }: Omit<Props, 'placement'> & { slot: Slot }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -128,23 +137,25 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
       <Pressable
         accessibilityRole="button"
         accessibilityLabel={s.feedback.button}
+        hitSlop={slot === 'fab' ? undefined : 4}
         style={[
-          styles.fab,
+          slot === 'fab' ? styles.fab : styles.slot,
+          slot === 'corner' && styles.corner,
           { backgroundColor: colors.tint },
-          g.brutal && styles.brutalFab,
-          draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
-          bottomOffset > 0 && { bottom: 24 + bottomOffset },
+          g.brutal && (slot === 'fab' ? styles.brutalFab : styles.brutalSlot),
+          slot === 'fab' && draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
+          slot === 'fab' && bottomOffset > 0 && { bottom: 24 + bottomOffset },
         ]}
         onPress={() => setVisible(true)}
         {...(draggable ? panResponder.panHandlers : {})}
       >
         {g.brutal ? (
           // A square BrutalBox with the fill instead of the circle.
-          <BrutalBox testID="feedback-fab" fill="a" boxStyle={styles.brutalFabBox}>
-            <Text style={styles.fabText}>💬</Text>
+          <BrutalBox testID="feedback-fab" fill="a" boxStyle={slot === 'fab' ? styles.brutalFabBox : styles.brutalSlotBox}>
+            <Text style={slot === 'fab' ? styles.fabText : styles.slotText}>💬</Text>
           </BrutalBox>
         ) : (
-          <Text style={styles.fabText}>💬</Text>
+          <Text style={slot === 'fab' ? styles.fabText : styles.slotText}>💬</Text>
         )}
       </Pressable>
 
@@ -210,6 +221,35 @@ export default function FeedbackButton({ level, languagePair, currentCard, dragg
   );
 }
 
+export default function FeedbackButton(props: Props) {
+  const { placement = 'fab', level, languagePair, currentCard, draggable, bottomOffset } = props;
+  // Set by the tabs layout around every screen; null where there is no navigator header (a test renders the screen bare).
+  const setHeaderRight = useContext(FeedbackHeaderContext);
+  const inHeader = placement === 'header' && setHeaderRight !== null;
+
+  // The control lives in the navigator's header (headerRight) and carries this screen's context (level, pair, card).
+  useEffect(() => {
+    if (!inHeader) return;
+    setHeaderRight(() => <FeedbackControl level={level} languagePair={languagePair} currentCard={currentCard} slot="inline" />);
+  }, [inHeader, setHeaderRight, level, languagePair, currentCard]);
+  useEffect(() => {
+    if (!inHeader) return;
+    return () => setHeaderRight(undefined);
+  }, [inHeader, setHeaderRight]);
+
+  if (inHeader) return null;
+  return (
+    <FeedbackControl
+      level={level}
+      languagePair={languagePair}
+      currentCard={currentCard}
+      draggable={draggable}
+      bottomOffset={bottomOffset}
+      slot={placement === 'header' ? 'corner' : placement}
+    />
+  );
+}
+
 const styles = StyleSheet.create({
   sendError: { color: '#EF4444', fontWeight: '600', marginBottom: 8 },
   fab: {
@@ -248,6 +288,12 @@ const styles = StyleSheet.create({
     elevation: 0,
   },
   brutalFabBox: { width: 52, height: 52, alignItems: 'center', justifyContent: 'center' },
+  // The header-sized button (placement 'header' / 'inline'): 40 px, in the layout flow, no shadow.
+  slot: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
+  corner: { position: 'absolute', top: 8, right: 8, zIndex: 100 },
+  brutalSlot: { width: 44, height: 44, borderRadius: 0, backgroundColor: 'transparent' },
+  brutalSlotBox: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
+  slotText: { fontSize: 20 },
   brutalModalOuter: {},
   brutalModal: { padding: 24 },
   brutalModalBtn: { flex: 1 },
