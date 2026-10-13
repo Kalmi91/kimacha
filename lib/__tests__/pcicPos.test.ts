@@ -52,7 +52,7 @@ describe('posOf', () => {
   it('on a conflicting corpus match (different part of speech) there is no chip', () => {
     jest.isolateModules(() => {
       jest.doMock('@/data/openWords', () => ({
-        openWords: [
+        getOpenWords: () => [
           { es: 'deber', openPos: 'verb' },
           { es: 'el deber', openPos: 'noun', gender: 'm' },
         ],

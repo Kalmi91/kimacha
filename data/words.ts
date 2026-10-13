@@ -43,7 +43,7 @@ export interface WordEntry {
   [key: string]: string | number | boolean | undefined;
 }
 
-import { findOpenWordByForm, openWords } from './openWords';
+import { findOpenWordByForm, getOpenWords } from './openWords';
 
 // User feedback (`sentence:El calabacín es una verdura verde.`), translated from Hungarian:
 // "if I tap ... on calabacín or on courset ... put it among the
@@ -62,7 +62,7 @@ export function normalizeWordToken(raw: string): string {
 // the lookup by text (glossary, mixed read-aloud)
 // runs on the words-open cards (data/openWords.ts), not on the old word list.
 function allWordsFor(): WordEntry[] {
-  return openWords;
+  return getOpenWords();
 }
 
 // A headword field can carry several glosses ("the lorry / the truck"), and each
