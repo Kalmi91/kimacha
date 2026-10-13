@@ -390,8 +390,7 @@ export default function SettingsScreen() {
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       <SkinBackdrop />
       {/* the page grew past one screen (the version line at its bottom was
-          unreachable), so the settings list scrolls. The modal and the feedback
-          FAB stay outside, pinned to the screen. */}
+          unreachable), so the settings list scrolls. The modal stays outside, pinned to the screen. */}
       <ScrollView contentContainerStyle={styles.container}>
       <Text style={[styles.sectionTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.tabs.settings}</Text>
 
@@ -554,7 +553,7 @@ export default function SettingsScreen() {
       )}
       </ScrollView>
 
-      <FeedbackButton level={level} languagePair={direction.join('→')} currentCard="settings-tab" />
+      <FeedbackButton placement="header" level={level} languagePair={direction.join('→')} currentCard="settings-tab" />
 
       {/* small sheet with the two directions, the
           current one ticked, modeled on LevelPickerSheet (components/LevelPickerSheet.tsx). */}
@@ -613,9 +612,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 24,
     paddingTop: 40,
-    // room under the last row so the FAB never covers it (96 → 120,
-    // so the last row of a longer list can also be scrolled above the 💬)
-    paddingBottom: 120,
+    paddingBottom: 32,
   },
   versionText: {
     marginTop: 12,

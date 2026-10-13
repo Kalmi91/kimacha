@@ -19,7 +19,8 @@ import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
 import CardNote from '@/components/learn/CardNote';
 import { SkinBackdrop, SkinHeader, SkinSpeakLabel, SkinWord } from '@/components/skins/Slots';
-import DockedAction, { FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import DockedAction from '@/components/learn/DockedAction';
+import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
@@ -59,6 +60,7 @@ export default function PcicCardView({
   sourceLang,
   strictAccents,
   dockLift,
+  kbHeight,
   dockH,
   setDockH,
   languagePair,
@@ -100,6 +102,10 @@ export default function PcicCardView({
   // loading) so that this file (785 lines) does not grow past 800; it only
   // renders if there is a loaded bundle.
 
+  // The 💬 button sits in the header row's right end (the Learn tab has no navigator header); its card context follows the
+  // screen: the sentence card, the done screen, or the word card on top.
+  const feedbackCard = sentenceCard ? `sentence:${sentenceCard.itemId}` : current && currentItem ? `pcic:${current.itemId}` : 'pcic';
+
   const headerRow = (
     <SkinHeader>
     <View style={styles.headerRow}>
@@ -131,6 +137,7 @@ export default function PcicCardView({
             <Text style={styles.resetIcon}>↶</Text>
           </Pressable>
         )}
+        <FeedbackButton placement="inline" level={level} languagePair={languagePair} currentCard={feedbackCard} />
       </View>
     </View>
     {/* fix: the old fifth BadgeRow chip (what today's introduction consists of
@@ -178,7 +185,7 @@ export default function PcicCardView({
         {sentenceCard.kind === 'tiles' ? (
           <ScrollView
             style={styles.cardScroll}
-            contentContainerStyle={[styles.cardScrollContent, { paddingBottom: g.brutal ? 100 : 24 }]}
+            contentContainerStyle={[styles.cardScrollContent, { paddingBottom: 24 }]}
             keyboardShouldPersistTaps="handled"
             keyboardDismissMode="on-drag"
           >
@@ -205,17 +212,12 @@ export default function PcicCardView({
             sourceSpeechLocale={speechLang(sourceLang)}
             onResult={() => setSentenceCard(null)}
             dockLift={dockLift}
+            keyboardOpen={kbHeight > 0}
             dockH={dockH}
             onDockHeight={setDockH}
             gradeButtons
           />
         )}
-        <FeedbackButton
-          level={level}
-          languagePair={languagePair}
-          currentCard={`sentence:${sentenceCard.itemId}`}
-          bottomOffset={sentenceCard.kind === 'tiles' ? undefined : dockH + dockLift}
-        />
       </KeyboardAvoidingView>
     );
   }
@@ -301,7 +303,6 @@ export default function PcicCardView({
             </View>
           </View>
         )}
-        <FeedbackButton level={level} languagePair={languagePair} currentCard="pcic" />
       </View>
     );
   }
@@ -339,6 +340,7 @@ export default function PcicCardView({
   // The docked Check bar switches to "Next" after reveal,
   // in the same place/size, with the suggested grade in the label.
   const nextGrade = grade ? suggestedGrade(grade) : null;
+  const dockInsets = dockScrollInsets(dockH, dockLift, kbHeight > 0);
 
   return (
     <KeyboardAvoidingView
@@ -369,8 +371,8 @@ export default function PcicCardView({
       )}
 
       <ScrollView
-        style={styles.cardScroll}
-        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: FAB_CLEARANCE + dockH + dockLift }]}
+        style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
+        contentContainerStyle={[styles.cardScrollContent, { paddingBottom: dockInsets.paddingBottom }]}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
@@ -542,8 +544,6 @@ export default function PcicCardView({
         colors={colors}
         onHeight={setDockH}
       />
-
-      <FeedbackButton level={level} languagePair={languagePair} currentCard={`pcic:${current.itemId}`} bottomOffset={dockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }

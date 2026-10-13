@@ -104,7 +104,7 @@ export default function SentencesScreen() {
   // The round on screen, for the focus effect (its state is stale in the callback).
   const roundRef = useRef<SentenceRound | null>(null);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
-  const { dockLift } = useDockLift();
+  const { dockLift, kbHeight } = useDockLift();
 
   // `fresh`: a new round even if one is on screen (the "more" button).
   const load = useCallback(async (fresh = false) => {
@@ -209,10 +209,10 @@ export default function SentencesScreen() {
 
   const feedback = (
     <FeedbackButton
+      placement="header"
       level="-"
       languagePair={target === 'es' ? 'en-es' : 'es-en'}
       currentCard={current ? `sentences:${current.itemId}` : 'sentences-tab'}
-      bottomOffset={round?.phase === 'type' ? dockH + dockLift : undefined}
     />
   );
 
@@ -310,7 +310,7 @@ export default function SentencesScreen() {
       {round.phase === 'build' ? (
         <ScrollView
           style={styles.cardScroll}
-          contentContainerStyle={{ paddingBottom: g.brutal ? 100 : 24 }}
+          contentContainerStyle={{ paddingBottom: 24 }}
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
@@ -327,6 +327,7 @@ export default function SentencesScreen() {
           sourceSpeechLocale={speechLang(target === 'es' ? 'en' : 'es')}
           onResult={(correct, typed) => void onTypeResult(correct, typed)}
           dockLift={dockLift}
+          keyboardOpen={kbHeight > 0}
           dockH={dockH}
           onDockHeight={setDockH}
           gradeButtons

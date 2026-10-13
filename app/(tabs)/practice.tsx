@@ -8,7 +8,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import { Card } from '@/components/grammar/Brutal';
-import DockedAction, { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import FeedbackButton from '@/components/FeedbackModal';
 import ResultBadge from '@/components/ResultBadge';
@@ -168,10 +168,10 @@ export default function PracticeScreen() {
       {children}
       {dock}
       <FeedbackButton
+        placement="header"
         level="-"
         languagePair={target === 'es' ? 'en-es' : 'es-en'}
         currentCard={inQuestions ? `practice:q${step}` : 'practice-reading'}
-        bottomOffset={dock ? dockH + dockLift : 0}
       />
     </View>
   );
@@ -181,7 +181,7 @@ export default function PracticeScreen() {
   const scroll = (children: ReactNode) => (
     <ScrollView
       style={styles.scroll}
-      contentContainerStyle={{ paddingBottom: dockH + dockLift + FAB_CLEARANCE }}
+      contentContainerStyle={{ paddingBottom: dockH + dockLift }}
       keyboardShouldPersistTaps="handled"
     >
       {children}

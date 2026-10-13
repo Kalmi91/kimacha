@@ -114,7 +114,7 @@ export function usePcicSession() {
   // and for the 💬 bottomOffset (DockedAction.tsx; Learn's DOCK_RESERVE is the default).
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   // The docked bar rises above the keyboard, as on the Learn tab.
-  const { dockLift } = useDockLift();
+  const { dockLift, kbHeight } = useDockLift();
   // The input field gets focus on every NEW card (see the
   // effect below), not only on first mount (the `autoFocus` prop is not
   // enough for this, because the TextInput does not remount on a card change).
@@ -492,6 +492,7 @@ export function usePcicSession() {
     sourceLang,
     strictAccents,
     dockLift,
+    kbHeight,
     dockH,
     setDockH,
     languagePair,
