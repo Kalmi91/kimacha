@@ -68,6 +68,7 @@ export default function MockExamScreen() {
   const [result, setResult] = useState<MockResult | null>(null);
   const [leaving, setLeaving] = useState(false);
   const closingRef = useRef(false);
+  const [closeError, setCloseError] = useState(false);
 
   // --- Loading: direction, level words, learned words (for the glossary), saved exam.
   useEffect(() => {
@@ -136,17 +137,25 @@ export default function MockExamScreen() {
     stopSpeaking();
     setLeaving(false);
     if (byClock) setTimedOut(true);
+    setCloseError(false);
     const nextDone = [...done, paper.id];
     setDone(nextDone);
-    if (paperIdx + 1 >= exam.papers.length) {
-      await finish(answers, exam);
-    } else {
-      await saveMockSession(getDb(), target, level, { seed: exam.seed, sig: mockExamSignature(exam), done: nextDone, answers });
-      setPaperIdx(paperIdx + 1);
-      setTaskIdx(0);
-      setPhase('paperIntro');
+    // A failing save leaves the paper open and shows an error with a retry button; the flag is released either way.
+    try {
+      if (paperIdx + 1 >= exam.papers.length) {
+        await finish(answers, exam);
+      } else {
+        await saveMockSession(getDb(), target, level, { seed: exam.seed, sig: mockExamSignature(exam), done: nextDone, answers });
+        setPaperIdx(paperIdx + 1);
+        setTaskIdx(0);
+        setPhase('paperIntro');
+      }
+    } catch {
+      setDone(done);
+      setCloseError(true);
+    } finally {
+      closingRef.current = false;
     }
-    closingRef.current = false;
   };
 
   // An expiring clock closes the paper from the latest state (the effect calls the rendered closePaper).
@@ -250,6 +259,16 @@ export default function MockExamScreen() {
         <ExamButton testID="mock-back" label={s.exit} onPress={() => router.back()} />
       </View>,
       phase === 'empty' ? 'empty' : 'unavailable',
+    );
+  }
+
+  if (closeError) {
+    return shell(
+      <View style={styles.body}>
+        {card(<Text testID="mock-close-error" style={[styles.line, { color: colors.warning }]}>{t().backup.errorTitle}</Text>)}
+        <ExamButton testID="mock-close-retry" label={s.tryAgain} onPress={() => void closePaper(timedOut)} />
+      </View>,
+      'close-error',
     );
   }
 
