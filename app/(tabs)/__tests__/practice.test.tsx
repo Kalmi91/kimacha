@@ -17,6 +17,7 @@ jest.mock('expo-router', () => ({
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
+jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
 jest.mock('@/lib/practice/halfStep', () => {
   const actual = jest.requireActual('@/lib/practice/halfStep');
   return { ...actual, recordPracticeResult: jest.fn(actual.recordPracticeResult) };
@@ -29,6 +30,7 @@ import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
+import { parsePracticeRound } from '@/lib/practice/practiceRound';
 import { speak } from '@/lib/speech';
 import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -86,6 +88,7 @@ const afterPause = async () => {
 beforeEach(async () => {
   jest.useFakeTimers();
   await getDb().resetPcicCards();
+  await getDb().setPracticeRound(null);
   await getDb().setStrictAccents(false);
   __resetBetaForTest();
   await getDb().setBetaFlag('xpV2', false);
@@ -225,6 +228,7 @@ describe('Practice tab', () => {
     off.unmount();
 
     await getDb().setStrictAccents(true);
+    await getDb().setPracticeRound(null); // the first mount's answered round would be resumed
     mockRecord.mockClear();
     const on = await mount();
     await answer(on, 'tu');
@@ -281,5 +285,202 @@ describe('Practice tab', () => {
     expect(mockRecord).toHaveBeenLastCalledWith('o33', 'wrongTyped');
     expect(await getDb().getDailyXpTenths(TODAY)).toBe(0);
     view.unmount();
+  });
+});
+
+describe('Practice tab: feedback button', () => {
+  it('the floating feedback button is on the tab (round, empty state and finished screen) and sends the tab id', async () => {
+    await getDb().upsertPcicCard(sm2NewCard('o33'));
+    const empty = await mount();
+    expect(empty.getByText('💬')).toBeTruthy();
+    empty.unmount();
+
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    const view = await mount();
+    expect(view.getByLabelText('Feedback')).toBeTruthy();
+
+    global.fetch = jest.fn().mockResolvedValue({ ok: true } as never);
+    fireEvent.press(view.getByText('💬'));
+    fireEvent.changeText(view.getByPlaceholderText('Share your thoughts...'), 'nice');
+    await act(async () => {
+      fireEvent.press(view.getByText('Send'));
+    });
+    const url = (global.fetch as jest.Mock).mock.calls[0][0] as string;
+    const params = new URLSearchParams(url.split('?')[1]);
+    expect(params.get('currentCard')).toContain('practice-tab');
+    expect(params.get('languagePair')).toBe('en-es');
+    // @ts-expect-error test-only cleanup of a global set above
+    delete global.fetch;
+
+    await answer(view, 'Voy');
+    await afterPause();
+    expect(view.getByText('Round done')).toBeTruthy();
+    expect(view.getByLabelText('Feedback')).toBeTruthy();
+    view.unmount();
+  });
+});
+
+describe('Practice tab: the word source', () => {
+  it('due words first, then the ones learned in the last 7 days; a hand-known and an old not-due word stay out', async () => {
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01', { known: true, introducedAt: addDays(TODAY, -2) })); // hand-known
+    await getDb().upsertPcicCard(learned('o47', addDays(TODAY, 30), { introducedAt: addDays(TODAY, -8) })); // 8 days ago, not due
+    await getDb().upsertPcicCard(learned('o23', addDays(TODAY, 30), { introducedAt: addDays(TODAY, -3) })); // 3 days ago, not due
+    await getDb().upsertPcicCard(learned('o4', '2000-01-01')); // due
+    const view = await mount();
+    expect(view.getByText('1/2')).toBeTruthy();
+    expect(view.getByText('You are fine.')).toBeTruthy(); // the due word first
+    await answer(view, 'Tú');
+    await afterPause();
+    expect(view.getByText('I want a house.')).toBeTruthy(); // then the freshly learned one
+    await answer(view, 'Quiero');
+    expect(mockRecord.mock.calls.map((c) => c[0])).toEqual(['o4', 'o23']);
+    view.unmount();
+  });
+});
+
+describe('Practice tab: the round survives leaving the tab and the app', () => {
+  const three = async () => {
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    await getDb().upsertPcicCard(learned('o47', '2000-01-02'));
+    await getDb().upsertPcicCard(learned('o23', '2000-01-03'));
+  };
+  const saved = async () => parsePracticeRound(await getDb().getPracticeRound());
+
+  it('a started round is saved at once: the task order (card ids), index 0, no result yet', async () => {
+    await three();
+    const view = await mount();
+    expect(await saved()).toEqual({ v: 1, date: TODAY, target: 'es', ids: ['o33', 'o47', 'o23'], index: 0, results: [null, null, null] });
+    view.unmount();
+  });
+
+  it('halfway through and re-mounted: the same index and the same order, even if a fresh round would be ordered differently', async () => {
+    await three();
+    const first = await mount();
+    await answer(first, 'Voy');
+    await afterPause();
+    expect(first.getByText('2/3')).toBeTruthy();
+    first.unmount();
+
+    // a fresh round would now start with o23 (the longest overdue)
+    await getDb().upsertPcicCard(learned('o23', '1999-01-01'));
+    const second = await mount();
+    expect(second.getByText('2/3')).toBeTruthy();
+    expect(second.getByText('I talk with my mother.')).toBeTruthy();
+    expect(second.getByText('✓ Check')).toBeTruthy();
+    await answer(second, 'Hablo');
+    await afterPause();
+    expect(second.getByText('I want a house.')).toBeTruthy();
+    second.unmount();
+  });
+
+  it('the right count of the round is kept: the score at the end covers the answers before the break', async () => {
+    await three();
+    const first = await mount();
+    await answer(first, 'Voy');
+    await afterPause();
+    await answer(first, 'zzz');
+    fireEvent.press(first.getByText('Next →'));
+    await flush();
+    first.unmount();
+    const second = await mount();
+    expect(second.getByText('3/3')).toBeTruthy();
+    await answer(second, 'Quiero');
+    await afterPause();
+    expect(second.getByText('2 of 3 right')).toBeTruthy();
+    second.unmount();
+  });
+
+  it('a task answered right before the break is not asked again and gives no second half or XP', async () => {
+    await setBeta('xpV2', true);
+    await three();
+    const first = await mount();
+    await answer(first, 'Voy'); // leaves before the short pause ends
+    expect(mockRecord).toHaveBeenCalledTimes(1);
+    expect(await getDb().getDailyXpTenths(TODAY)).toBe(10);
+    first.unmount();
+
+    const second = await mount();
+    expect(second.getByText('2/3')).toBeTruthy();
+    expect(second.getByText('I talk with my mother.')).toBeTruthy();
+    expect(mockRecord).toHaveBeenCalledTimes(1);
+    expect(await getDb().getDailyXpTenths(TODAY)).toBe(10);
+    expect((await getDb().getPcicCard('o33'))).toMatchObject({ halfSteps: 1 });
+    second.unmount();
+  });
+
+  it('a task answered wrong before the break comes back in its answered state: no second wrong, Next moves on', async () => {
+    await three();
+    const first = await mount();
+    await answer(first, 'vas');
+    expect(mockRecord).toHaveBeenCalledTimes(1);
+    first.unmount();
+
+    const second = await mount();
+    expect(second.getByText('1/3')).toBeTruthy();
+    expect(second.getByText('Correct: Voy')).toBeTruthy();
+    expect(second.queryByText('✓ Check')).toBeNull();
+    fireEvent.press(second.getByText('Next →'));
+    await flush();
+    expect(second.getByText('2/3')).toBeTruthy();
+    expect(mockRecord).toHaveBeenCalledTimes(1);
+    expect((await getDb().getPcicCard('o33'))).toMatchObject({ wrongStreak: 1 });
+    second.unmount();
+  });
+
+  it('a new day starts a new round: the saved one is replaced', async () => {
+    await three();
+    const first = await mount();
+    await answer(first, 'Voy');
+    await afterPause();
+    first.unmount();
+    const old = (await saved())!;
+    await getDb().setPracticeRound(JSON.stringify({ ...old, date: '2000-01-01' }));
+
+    const second = await mount();
+    expect(second.getByText('1/3')).toBeTruthy();
+    expect(await saved()).toMatchObject({ date: TODAY, index: 0, results: [null, null, null] });
+    second.unmount();
+  });
+
+  it('the round ends: the saved round is deleted, and coming back starts a new one', async () => {
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    const first = await mount();
+    expect(await saved()).not.toBeNull();
+    await answer(first, 'Voy');
+    await afterPause();
+    expect(first.getByText('Round done')).toBeTruthy();
+    expect(await getDb().getPracticeRound()).toBeNull();
+    first.unmount();
+
+    const second = await mount();
+    expect(second.getByText('1/1')).toBeTruthy();
+    expect(await saved()).toMatchObject({ index: 0, results: [null] });
+    second.unmount();
+  });
+
+  it('the app dies right after the last right answer: it comes back on the finished screen, and the saved round is gone', async () => {
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    const first = await mount();
+    await answer(first, 'Voy');
+    first.unmount();
+    expect(await saved()).toMatchObject({ index: 0, results: ['right'] });
+
+    const second = await mount();
+    expect(second.getByText('Round done')).toBeTruthy();
+    expect(second.getByText('1 of 1 right')).toBeTruthy();
+    expect(await getDb().getPracticeRound()).toBeNull();
+    second.unmount();
+  });
+
+  it('a broken saved value, another direction or a word that is gone: a new round', async () => {
+    await getDb().upsertPcicCard(learned('o33', '2000-01-01'));
+    const other = { v: 1, date: TODAY, target: 'en', ids: ['o33'], index: 0, results: [null] };
+    const gone = { v: 1, date: TODAY, target: 'es', ids: ['o33', 'o9999'], index: 1, results: ['right', null] };
+    for (const raw of ['{broken', JSON.stringify(other), JSON.stringify(gone)]) {
+      await getDb().setPracticeRound(raw);
+      const view = await mount();
+      expect(view.getByText('1/1')).toBeTruthy();
+      view.unmount();
+    }
   });
 });

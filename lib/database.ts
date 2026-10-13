@@ -436,6 +436,19 @@ class SQLiteDB implements DB {
     await db.runAsync('UPDATE user_meta SET beta_flags = ? WHERE id = 1', [JSON.stringify(next)]);
   }
 
+  // The unfinished Practice-tab round as one JSON string (lib/practice/practiceRound.ts parses it),
+  // app-wide like the beta flags, so in user_meta.practice_round; null = none.
+  async getPracticeRound(): Promise<string | null> {
+    const db = await this.open();
+    const row = await db.getFirstAsync<any>('SELECT practice_round FROM user_meta WHERE id = 1');
+    return typeof row?.practice_round === 'string' ? row.practice_round : null;
+  }
+
+  async setPracticeRound(json: string | null): Promise<void> {
+    const db = await this.open();
+    await db.runAsync('UPDATE user_meta SET practice_round = ? WHERE id = 1', [json]);
+  }
+
   // `levelPrefix` (e.g. "a1") no longer gives the LIKE pattern
   // (since the difficulty re-leveling, an id's prefix is not necessarily its real level,
   // see matchesLevel in lib/pcicLevels.ts), it is the name of the level to clear; the
