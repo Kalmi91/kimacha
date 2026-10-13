@@ -67,7 +67,7 @@ describe('TypedSentenceCard (type-it)', () => {
     fireEvent.press(getByText('✓ Check'));
     expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
     fireEvent.press(getByText(/Next/));
-    expect(onResult).toHaveBeenCalledWith(true);
+    expect(onResult).toHaveBeenCalledWith(true, 'el libro y la mesa');
   });
 
   it('a wrong answer shows the correct sentence and can be retried by editing', () => {
@@ -105,7 +105,7 @@ describe('TypedSentenceCard (type-it)', () => {
     fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'como en casa');
     fireEvent.press(getByText('✓ Check'));
     fireEvent.press(getByText(/Next/));
-    expect(onResult).toHaveBeenCalledWith(true);
+    expect(onResult).toHaveBeenCalledWith(true, 'como en casa');
   });
 
   // Check is not a button inside the card but the docked bar (DockedAction) above the keyboard, as
@@ -175,7 +175,7 @@ describe('Didn\'t know / Knew it on the sentence cards', () => {
     expect(r.queryByText('Wrong')).toBeNull();
     expect(r.getByText('El libro y la mesa.')).toBeTruthy();
     fireEvent.press(r.getByText(/Next/));
-    expect(onResult).toHaveBeenCalledWith(true);
+    expect(onResult).toHaveBeenCalledWith(true, 'el gato');
   });
 
   it('type-it: after a right answer "Didn\'t know" rewrites it to wrong', () => {
@@ -187,7 +187,7 @@ describe('Didn\'t know / Knew it on the sentence cards', () => {
     fireEvent.press(r.getByText("Didn't know"));
     expect(r.getByText('Wrong')).toBeTruthy();
     fireEvent.press(r.getByText(/Next/));
-    expect(onResult).toHaveBeenCalledWith(false);
+    expect(onResult).toHaveBeenCalledWith(false, 'el libro y la mesa');
   });
 
   it('the buttons are opt-in: without the prop (e.g. the grammar ordering task) they are absent', () => {

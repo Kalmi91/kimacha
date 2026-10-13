@@ -16,6 +16,7 @@ jest.mock('expo-router', () => ({
     mockFocus = cb;
     useEffect(cb, []);
   },
+  useLocalSearchParams: () => ({}),
 }));
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
@@ -31,13 +32,15 @@ jest.mock('@/data/pcic', () => {
     mk(2, 'la mesa', 'the table', 'La mesa y el libro.', 'The table and the book.'),
     mk(3, 'el gato', 'the cat', 'El gato.', 'The cat.'),
     mk(4, 'el perro', 'the dog', 'El perro y la mesa.', 'The dog and the table.'),
+    mk(5, 'la casa', 'the house', 'La casa y el gato.', 'The house and the cat.'),
+    mk(6, 'el pan', 'the bread', 'Un pan y una casa.', 'A bread and a house.'),
   ];
   return {
     PCIC_LEVELS: ['A1'],
     PCIC_VIEW_LEVELS: ['A1'],
     pcicItemsForLevel: () => ITEMS,
     findPcicItem: (id: string) => ITEMS.find((i) => i.id === id),
-    levelOfItem: () => undefined,
+    levelOfItem: () => 'A1',
     setPcicTarget: () => {},
   };
 });
@@ -71,6 +74,8 @@ const SENT: Record<string, { tiles: string[]; typed: string }> = {
   'The book and the table.': { tiles: ['el', 'libro', 'y', 'la', 'mesa'], typed: 'el libro y la mesa' },
   'The table and the book.': { tiles: ['la', 'mesa', 'y', 'el', 'libro'], typed: 'la mesa y el libro' },
   'The dog and the table.': { tiles: ['el', 'perro', 'y', 'la', 'mesa'], typed: 'el perro y la mesa' },
+  'The house and the cat.': { tiles: ['la', 'casa', 'y', 'el', 'gato'], typed: 'la casa y el gato' },
+  'A bread and a house.': { tiles: ['un', 'pan', 'y', 'una', 'casa'], typed: 'un pan y una casa' },
 };
 
 type R = ReturnType<typeof render>;
@@ -112,25 +117,25 @@ beforeEach(async () => {
   await getDb().setBetaFlag('xpV2', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
-  for (const n of [1, 2, 3, 4]) await getDb().upsertPcicCard(learned(n));
+  for (const n of [1, 2, 3, 4, 5, 6]) await getDb().upsertPcicCard(learned(n));
 });
 
 describe('Sentences tab keeps its round across blur and focus', () => {
   it('2 of 5 steps done: after blur and focus the same sentence, the same order and the same counter', async () => {
     const r = render(<SentencesScreen />);
     await flush();
-    expect(await buildCurrent(r)).toBe('The cat.');
     expect(await buildCurrent(r)).toBe('The book and the table.');
+    expect(await buildCurrent(r)).toBe('The table and the book.');
     expect(progress(r)).toBe('2 / 5');
     const before = current(r);
-    expect(before).toBe('The table and the book.');
+    expect(before).toBe('The house and the cat.');
 
     await refocus();
 
     expect(progress(r)).toBe('2 / 5');
     expect(current(r)).toBe(before);
-    expect(await buildCurrent(r)).toBe('The table and the book.');
-    expect(await buildCurrent(r)).toBe('The dog and the table.');
+    expect(await buildCurrent(r)).toBe('The house and the cat.');
+    expect(await buildCurrent(r)).toBe('A bread and a house.');
     expect(progress(r)).toBe('4 / 5');
   });
 
