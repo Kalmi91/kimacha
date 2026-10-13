@@ -12,7 +12,7 @@
 // A topic with no file yet is shown as planned-but-not-written; the screen
 // never pretends an empty lesson exists.
 
-import { getGrammarTopic, getGrammarTopics, grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
+import { getGrammarTopic, getGrammarTopicIds, grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import type { Level } from '@/data/words';
 import { EN_SYLLABUS, EN_UNITS } from './syllabusEn';
 
@@ -897,7 +897,5 @@ export function lessonCoverage(lang: string): { written: number; planned: number
  */
 export function orphanLessons(lang: string): string[] {
   const ids = new Set(syllabusOf(lang).map((t) => t.id));
-  return getGrammarTopics(lang)
-    .map((t) => t.topic)
-    .filter((id) => !ids.has(id));
+  return getGrammarTopicIds(lang).filter((id) => !ids.has(id));
 }
