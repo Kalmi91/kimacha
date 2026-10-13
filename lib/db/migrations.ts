@@ -1,10 +1,14 @@
 import * as SQLite from 'expo-sqlite';
 
-// the schema creation + every ALTER/CREATE migration
+// the schema creation + every migration
 // (formerly SQLiteDB.open(), lib/database.ts),
-// moved out here by responsibility. The class calls it at startup; the SQL order
-// and every migration step are unchanged, only the location and the `this` references
-// (`this.db` -> `db` parameter, `this.activePair` -> local variable) changed.
+// moved out here by responsibility. The class calls it at startup.
+//
+// Versioned: PRAGMA user_version says how many MIGRATIONS entries the file already has,
+// only the newer ones run, each in ONE transaction together with its version bump, so a
+// failing step rolls back completely (schema + data) and the next start retries it on the
+// untouched file. A new schema change = a new entry at the end of MIGRATIONS, never an
+// edit of an old one.
 
 // Migration: SRS rows of the retired PCIC / Spanish word-list decks ("a1-<hash>" ... "b2-<hash>",
 // "w<n>") match no card of the current decks (o<n> / e<n> ids), they would only linger in
@@ -25,66 +29,37 @@ export async function dropLegacyPcicRows(db: SQLite.SQLiteDatabase) {
   }
 }
 
+async function hasColumn(db: SQLite.SQLiteDatabase, table: string, column: string): Promise<boolean> {
+  const row = await db.getFirstAsync<any>(`SELECT 1 AS present FROM pragma_table_info('${table}') WHERE name = ?`, [column]);
+  return !!row;
+}
+
+// Adds the column only if the table lacks it; any other failure propagates (no catch-all).
+// table / column / ddl are code constants, never user input.
+async function addColumnIfMissing(db: SQLite.SQLiteDatabase, table: string, column: string, ddl: string) {
+  if (await hasColumn(db, table, column)) return;
+  await db.execAsync(`ALTER TABLE ${table} ADD COLUMN ${column} ${ddl}`);
+}
+
 // Migration: daily_xp.xp_tenths (XP in integer tenths so 0.2 XP steps add up exactly).
 // Rows an older build wrote hold whole XP in `xp`: converted once (x10); rows already in
 // tenths are left alone, so a re-run changes nothing.
 export async function migrateDailyXpTenths(db: SQLite.SQLiteDatabase) {
-  try {
-    await db.execAsync('ALTER TABLE daily_xp ADD COLUMN xp_tenths INTEGER');
-  } catch {}
+  await addColumnIfMissing(db, 'daily_xp', 'xp_tenths', 'INTEGER');
   await db.runAsync('UPDATE daily_xp SET xp_tenths = xp * 10 WHERE xp_tenths IS NULL');
 }
 
-// Creates every table (if missing), runs each column/table migration, ensures
-// the singleton user_meta row, resolves the active language pair from
-// onboarding, and returns it so the caller (SQLiteDB.open()) can set
-// this.activePair.
-export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> {
-  let activePair = 'es-hu';
-  await db.execAsync(`
-    CREATE TABLE IF NOT EXISTS cards (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      word_id INTEGER NOT NULL,
-      type TEXT NOT NULL DEFAULT 'word',
-      pair TEXT NOT NULL DEFAULT 'es-hu',
-      due TEXT NOT NULL,
-      stability REAL NOT NULL DEFAULT 0,
-      difficulty REAL NOT NULL DEFAULT 0,
-      elapsed_days INTEGER NOT NULL DEFAULT 0,
-      scheduled_days INTEGER NOT NULL DEFAULT 0,
-      learning_steps INTEGER NOT NULL DEFAULT 0,
-      reps INTEGER NOT NULL DEFAULT 0,
-      lapses INTEGER NOT NULL DEFAULT 0,
-      state INTEGER NOT NULL DEFAULT 0,
-      last_review TEXT,
-      buried INTEGER NOT NULL DEFAULT 0,
-      -- FB210: mikor járta végig a szó a létrát (a gépelős lapot is), hogy a
-      -- napi új-szó keret a MEGTANULT szavakat számolhassa, ne az elkezdetteket.
-      learned_at TEXT,
-      -- UTEMEZO 11. szakasz: hány lapot (0-3) válaszolt helyesen a szó, és
-      -- hogy éppen kézben van-e (lásd lib/lap.ts fejléce).
-      lap INTEGER NOT NULL DEFAULT 0,
-      in_hand INTEGER NOT NULL DEFAULT 0,
-      -- UTEMEZO 2.2: mikor jött fel először a szó 1. lapja (ekkor fogy a
-      -- napi keret fekete száma, nem a megtanuláskor).
-      started_at TEXT,
-      UNIQUE(word_id, type, pair)
-    );
+// The whole live schema as of v1: every column an ALTER ever added is part of its CREATE.
+// The retired FSRS tables (cards, card_attempts, spelling_list, pcic_spelling_list) are not
+// here: nothing reads or writes them, a new install never gets them, an existing file keeps
+// them as they are. Every statement is IF NOT EXISTS, so the catch-up path of an existing
+// file runs the same script and only the tables it lacks get created.
+const SCHEMA_V1 = `
     CREATE TABLE IF NOT EXISTS streak (
       id INTEGER PRIMARY KEY CHECK (id = 1),
       current_count INTEGER NOT NULL DEFAULT 0,
       last_date TEXT,
       longest_count INTEGER NOT NULL DEFAULT 0
-    );
-    INSERT OR IGNORE INTO streak (id, current_count, longest_count) VALUES (1, 0, 0);
-    CREATE TABLE IF NOT EXISTS card_attempts (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      word_id INTEGER NOT NULL,
-      type TEXT NOT NULL,
-      pair TEXT,
-      correct INTEGER NOT NULL,
-      response_time_ms INTEGER NOT NULL,
-      timestamp TEXT NOT NULL
     );
     CREATE TABLE IF NOT EXISTS onboarding (
       id INTEGER PRIMARY KEY CHECK (id = 1),
@@ -107,7 +82,12 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       status_bar_tint INTEGER,
       grammar_palette TEXT,
       skin TEXT,
-      skin_mix TEXT
+      skin_mix TEXT,
+      beta_flags TEXT,
+      -- the old singleton PCIC level (moved to learn_settings.pcic_level); kept so a backup
+      -- exported by an older build, which carries the column, still restores.
+      pcic_level TEXT,
+      practice_round TEXT
     );
     CREATE TABLE IF NOT EXISTS learn_settings (
       pair TEXT PRIMARY KEY,
@@ -129,15 +109,8 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       again_delay_sec INTEGER,
       -- PLAN-ketiranyu 4. lépés javítás: a PCIC szint (A1-B2) párhoz kötve,
       -- hogy en-es és es-en külön szintet őrizzen (a user_meta szingliton
-      -- oszlopból ide költözött, lásd a lenti ALTER-migráció régi DB-khez).
+      -- oszlopból ide költözött, lásd a catch-up migrációt régi DB-khez).
       pcic_level TEXT
-    );
-    CREATE TABLE IF NOT EXISTS spelling_list (
-      pair TEXT NOT NULL,
-      word_id INTEGER NOT NULL,
-      step INTEGER NOT NULL DEFAULT 0,
-      due TEXT NOT NULL,
-      PRIMARY KEY (pair, word_id)
     );
     CREATE TABLE IF NOT EXISTS usage_minutes (
       date TEXT PRIMARY KEY,
@@ -145,7 +118,8 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
     );
     CREATE TABLE IF NOT EXISTS daily_xp (
       date TEXT PRIMARY KEY,
-      xp INTEGER NOT NULL DEFAULT 0
+      xp INTEGER NOT NULL DEFAULT 0,
+      xp_tenths INTEGER
     );
     CREATE TABLE IF NOT EXISTS game_progress (
       pair TEXT NOT NULL,
@@ -166,12 +140,10 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       due TEXT NOT NULL DEFAULT '',
       last_review TEXT,
       introduced_at TEXT,
-      known INTEGER NOT NULL DEFAULT 0
-    );
-    CREATE TABLE IF NOT EXISTS pcic_spelling_list (
-      item_id TEXT PRIMARY KEY,
-      step INTEGER NOT NULL DEFAULT 0,
-      due TEXT NOT NULL
+      known INTEGER NOT NULL DEFAULT 0,
+      -- practice-tab half-step counter + wrong-typed streak
+      half_steps INTEGER DEFAULT 0,
+      wrong_streak INTEGER DEFAULT 0
     );
     -- PLAN-hibaim.md 2. lépés: a betöltött "Hibáim" kötegek (a validált JSON,
     -- teljes egészében) és a hozzájuk tartozó SM-2 haladás, a pcic_cards
@@ -194,125 +166,60 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
       introduced_at TEXT,
       known INTEGER NOT NULL DEFAULT 0
     );
-  `);
-  // Migration: add random_topics column (DBs created before the random-topic toggle).
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN random_topics INTEGER');
-  } catch {}
-  // Migration: add strict_accents column (DBs created before the difficulty switches).
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN strict_accents INTEGER');
-  } catch {}
-  // Migration: add requeue_level column (DBs created before the difficulty dial).
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN requeue_level TEXT');
-  } catch {}
-  // Migration: add article_picker column (DBs created before the article chips).
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN article_picker INTEGER');
-  } catch {}
-  // Migration: add feedback_btn_side column (DBs created before the draggable feedback button).
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN feedback_btn_side TEXT');
-  } catch {}
-  // Migration: add weekly_goal_minutes column (DBs created before the weekly study goal).
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN weekly_goal_minutes INTEGER');
-  } catch {}
-  // Migration: last_open_date column (DBs created before the daily greeting).
-  try {
-    await db.execAsync('ALTER TABLE user_meta ADD COLUMN last_open_date TEXT');
-  } catch {}
-  // Migration: status-bar tint index (DBs created before the blue strip).
-  try {
-    await db.execAsync('ALTER TABLE user_meta ADD COLUMN status_bar_tint INTEGER');
-  } catch {}
-  // Migration: app-wide color palette id (DBs created before the neon UI).
-  try {
-    await db.execAsync('ALTER TABLE user_meta ADD COLUMN grammar_palette TEXT');
-  } catch {}
-  // Migration: chosen theme + "My mix" JSON (DBs created before the theme engine).
-  try {
-    await db.execAsync('ALTER TABLE user_meta ADD COLUMN skin TEXT');
-  } catch {}
-  try {
-    await db.execAsync('ALTER TABLE user_meta ADD COLUMN skin_mix TEXT');
-  } catch {}
-  // Migration: daily new-word budget columns. daily_new_limit is the
-  // standing setting; new_bonus/new_bonus_date carry the "+5 new words" taps,
-  // which only count while new_bonus_date is still today.
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN daily_new_limit INTEGER');
-  } catch {}
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN new_bonus INTEGER');
-  } catch {}
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN new_bonus_date TEXT');
-  } catch {}
-  // hand_cap (P) and gap_laps (R) columns (DBs created before the
-  // difficulty window, which replaces the requeue_level dial).
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN hand_cap INTEGER');
-  } catch {}
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN gap_laps INTEGER');
-  } catch {}
-  // repair_gap, the separate, short gap of a missed card.
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN repair_gap INTEGER');
-  } catch {}
-  // Migration: add again_delay_sec column (DBs created before the PCIC
-  // "missed word comes back after N seconds" setting).
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN again_delay_sec INTEGER');
-  } catch {}
-  // Migration: pcic_cards.known column (DBs created before "Don't learn this").
-  try {
-    await db.execAsync('ALTER TABLE pcic_cards ADD COLUMN known INTEGER');
-  } catch {}
-  await migrateDailyXpTenths(db);
-  // Migration: practice-tab half-step counter + wrong-typed streak on the PCIC card
-  // (DBs created before the Practice tab; existing rows read as 0).
-  try {
-    await db.execAsync('ALTER TABLE pcic_cards ADD COLUMN half_steps INTEGER DEFAULT 0');
-  } catch {}
-  try {
-    await db.execAsync('ALTER TABLE pcic_cards ADD COLUMN wrong_streak INTEGER DEFAULT 0');
-  } catch {}
-  // Migration: beta feature switches as a JSON object (DBs created before the Beta settings section).
-  try {
-    await db.execAsync('ALTER TABLE user_meta ADD COLUMN beta_flags TEXT');
-  } catch {}
-  // Migration: pcic_level column (DBs created before the A1-B2 level picker).
-  try {
-    await db.execAsync('ALTER TABLE user_meta ADD COLUMN pcic_level TEXT');
-  } catch {}
-  // Migration: the unfinished Practice-tab round as a JSON string (DBs created before it was saved).
-  try {
-    await db.execAsync('ALTER TABLE user_meta ADD COLUMN practice_round TEXT');
-  } catch {}
-  const meta = await db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
-  if (!meta) {
-    // user_id is NOT NULL but nothing reads it (the analytics that sent it are gone),
-    // so a new install gets an empty value, not a persistent random identifier.
-    await db.runAsync('INSERT INTO user_meta (id, user_id, first_use_date) VALUES (1, ?, ?)', ['', new Date().toISOString()]);
-  }
+`;
 
-  // Resolve the active pair from onboarding before running migrations.
+// The columns the old ALTER TABLE migrations added over time (table, column, DDL). An existing
+// unversioned file gets exactly the ones it lacks, in this order.
+const LATE_COLUMNS: ReadonlyArray<readonly [string, string, string]> = [
+  ['learn_settings', 'random_topics', 'INTEGER'],
+  ['learn_settings', 'strict_accents', 'INTEGER'],
+  ['learn_settings', 'requeue_level', 'TEXT'],
+  ['learn_settings', 'article_picker', 'INTEGER'],
+  ['learn_settings', 'feedback_btn_side', 'TEXT'],
+  ['learn_settings', 'weekly_goal_minutes', 'INTEGER'],
+  ['user_meta', 'last_open_date', 'TEXT'],
+  ['user_meta', 'status_bar_tint', 'INTEGER'],
+  ['user_meta', 'grammar_palette', 'TEXT'],
+  ['user_meta', 'skin', 'TEXT'],
+  ['user_meta', 'skin_mix', 'TEXT'],
+  ['learn_settings', 'daily_new_limit', 'INTEGER'],
+  ['learn_settings', 'new_bonus', 'INTEGER'],
+  ['learn_settings', 'new_bonus_date', 'TEXT'],
+  ['learn_settings', 'hand_cap', 'INTEGER'],
+  ['learn_settings', 'gap_laps', 'INTEGER'],
+  ['learn_settings', 'repair_gap', 'INTEGER'],
+  ['learn_settings', 'again_delay_sec', 'INTEGER'],
+  ['pcic_cards', 'known', 'INTEGER'],
+  ['pcic_cards', 'half_steps', 'INTEGER DEFAULT 0'],
+  ['pcic_cards', 'wrong_streak', 'INTEGER DEFAULT 0'],
+  ['user_meta', 'beta_flags', 'TEXT'],
+  ['user_meta', 'pcic_level', 'TEXT'],
+  ['user_meta', 'practice_round', 'TEXT'],
+  ['learn_settings', 'pcic_level', 'TEXT'],
+];
+
+// The active language pair from onboarding (default es-hu before onboarding is done).
+async function readActivePair(db: SQLite.SQLiteDatabase): Promise<string> {
   const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
-  if (ob) activePair = `${ob.source}-${ob.target}`;
+  return ob ? `${ob.source}-${ob.target}` : 'es-hu';
+}
 
-  // Migration: pcic_level moves from the
-  // user_meta singleton column into the per-pair row of learn_settings,
-  // so that the two directions (en-es / es-en) keep separate levels
-  // from each other. The old value always belonged to the en-es pair (the only
-  // pair that existed until then); COALESCE only fills it in if the
-  // learn_settings side has nothing yet (it does not overwrite a level chosen
-  // later), so the migration is safe to run on every startup.
-  try {
-    await db.execAsync('ALTER TABLE learn_settings ADD COLUMN pcic_level TEXT');
-  } catch {}
+// An existing file from before PRAGMA user_version (user_version 0, the app's tables are
+// there): the old startup catch-up steps, run once. Nothing existing is deleted; the retired
+// FSRS tables are left exactly as they are and no longer migrated.
+async function catchUpUnversionedDb(db: SQLite.SQLiteDatabase) {
+  // A table a very old file lacks gets created, an existing one is not touched.
+  await db.execAsync(SCHEMA_V1);
+  for (const [table, column, ddl] of LATE_COLUMNS) {
+    await addColumnIfMissing(db, table, column, ddl);
+  }
+  await migrateDailyXpTenths(db);
+  const activePair = await readActivePair(db);
+
+  // pcic_level moved from the user_meta singleton column into the per-pair row of
+  // learn_settings, so the two directions (en-es / es-en) keep separate levels. The old
+  // value always belonged to the en-es pair (the only pair that existed until then);
+  // COALESCE only fills it in if the learn_settings side has nothing yet.
   const oldMeta = await db.getFirstAsync<any>('SELECT pcic_level FROM user_meta WHERE id = 1');
   if (oldMeta?.pcic_level) {
     await db.runAsync(
@@ -322,96 +229,12 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
     );
   }
 
-  // Migration: add buried column (DBs created before the bury feature).
-  const buriedCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'buried'");
-  if (!buriedCol) {
-    await db.execAsync('ALTER TABLE cards ADD COLUMN buried INTEGER NOT NULL DEFAULT 0');
-  }
-  // Migration: add learned_at (the daily new-word budget counts learned
-  // words). Cards that already finished the ladder are stamped with a date in
-  // the PAST, not today: they were learned on some earlier day, and dating them
-  // today would eat a whole day's budget at once on the first launch.
-  const learnedAtCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'learned_at'");
-  if (!learnedAtCol) {
-    await db.execAsync('ALTER TABLE cards ADD COLUMN learned_at TEXT');
-    await db.runAsync(
-      // COALESCE wrote TODAY's review date, so on the first launch after the
-      // update today's limit was used up immediately ("it says 0").
-      // The old cards ALWAYS go into the past, as the comment above promises.
-      // The literal 3 here is a historical migration value: the
-      // LEARNED_PASSES constant is gone, this is the last place where the old
-      // reps−lapses derivation occurs.
-      `UPDATE cards SET learned_at = ?
-         WHERE type = 'word' AND reps - lapses >= 3 AND learned_at IS NULL`,
-      [new Date(0).toISOString()]
-    );
-  }
-  // Migration: per-pair cards. Rebuild with UNIQUE(word_id,type,pair); existing
-  // rows are tagged with the pair that was active when they were created.
-  const cardsPairCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'pair'");
-  if (!cardsPairCol) {
+  // Per-pair user_level (old singleton id=1 -> keyed by pair). Only entered while user_level
+  // still has the old shape, i.e. the old table still holds the data, so a leftover
+  // user_level_new can only be a stale copy of an interrupted earlier attempt.
+  if (!(await hasColumn(db, 'user_level', 'pair'))) {
     await db.execAsync(`
-      CREATE TABLE cards_new (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        word_id INTEGER NOT NULL,
-        type TEXT NOT NULL DEFAULT 'word',
-        pair TEXT NOT NULL DEFAULT 'es-hu',
-        due TEXT NOT NULL,
-        stability REAL NOT NULL DEFAULT 0,
-        difficulty REAL NOT NULL DEFAULT 0,
-        elapsed_days INTEGER NOT NULL DEFAULT 0,
-        scheduled_days INTEGER NOT NULL DEFAULT 0,
-        learning_steps INTEGER NOT NULL DEFAULT 0,
-        reps INTEGER NOT NULL DEFAULT 0,
-        lapses INTEGER NOT NULL DEFAULT 0,
-        state INTEGER NOT NULL DEFAULT 0,
-        last_review TEXT,
-        buried INTEGER NOT NULL DEFAULT 0,
-        UNIQUE(word_id, type, pair)
-      );
-      INSERT INTO cards_new (word_id, type, pair, due, stability, difficulty, elapsed_days, scheduled_days, learning_steps, reps, lapses, state, last_review, buried)
-        SELECT word_id, type, '${activePair}', due, stability, difficulty, elapsed_days, scheduled_days, learning_steps, reps, lapses, state, last_review, buried FROM cards;
-      DROP TABLE cards;
-      ALTER TABLE cards_new RENAME TO cards;
-    `);
-  }
-  // Migration: deliberately placed AFTER the pair-rebuild: the
-  // rebuild copies the old (lap-less) table, this block adds the
-  // columns and backfills them. The lap state used to be derived from the reps−lapses
-  // difference (lib/wordPhase.ts), this is the last place
-  // where that derivation occurs: a one-off backfill for rows created
-  // before the spec, after which the `lap`/`in_hand` fields are the source of truth.
-  const lapCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'lap'");
-  if (!lapCol) {
-    await db.execAsync(`
-      ALTER TABLE cards ADD COLUMN lap INTEGER NOT NULL DEFAULT 0;
-      ALTER TABLE cards ADD COLUMN in_hand INTEGER NOT NULL DEFAULT 0;
-      UPDATE cards SET lap = MIN(3, MAX(0, reps - lapses)) WHERE type = 'word';
-      UPDATE cards SET in_hand = 1 WHERE type = 'word' AND buried = 0 AND reps > 0 AND lap < 3;
-    `);
-  }
-  // Migration: one definition of "known". The tree
-  // tile and the topic completion used to look at the FSRS Review state (state >= 2), the
-  // Stats card at the lap column above (lap >= 3 OR buried); that is how the
-  // level could read 928/931 while a topic read 0/10. From now on both look
-  // at the lap column (lib/topicMastery.ts), but the reps-lapses backfill above does not
-  // find a word that FSRS already considers Review, because it may have entered Review
-  // before the typing (3rd) lap. Idempotent (the WHERE is empty from the second
-  // run), it runs on every startup.
-  // A pure-JS mirror of the condition + its test: lib/lap.ts needsReviewLapBackfill.
-  await db.runAsync(
-    "UPDATE cards SET lap = 3 WHERE type = 'word' AND state >= 2 AND lap < 3"
-  );
-  // Migration: started_at column (DBs created before the daily
-  // limit began to be spent when the 1st lap comes up, not when the word is learned).
-  const startedAtCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('cards') WHERE name = 'started_at'");
-  if (!startedAtCol) {
-    await db.execAsync('ALTER TABLE cards ADD COLUMN started_at TEXT');
-  }
-  // Migration: per-pair user_level (old singleton id=1 → keyed by pair).
-  const levelPairCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('user_level') WHERE name = 'pair'");
-  if (!levelPairCol) {
-    await db.execAsync(`
+      DROP TABLE IF EXISTS user_level_new;
       CREATE TABLE user_level_new (
         pair TEXT PRIMARY KEY,
         level TEXT NOT NULL DEFAULT 'A0',
@@ -419,28 +242,67 @@ export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> 
         mistakes_in_window INTEGER NOT NULL DEFAULT 0,
         fail_streak INTEGER NOT NULL DEFAULT 0
       );
-      INSERT INTO user_level_new (pair, level, correct_streak, mistakes_in_window, fail_streak)
-        SELECT '${activePair}', level, correct_streak, mistakes_in_window, fail_streak FROM user_level WHERE id = 1;
+    `);
+    await db.runAsync(
+      `INSERT INTO user_level_new (pair, level, correct_streak, mistakes_in_window, fail_streak)
+         SELECT ?, level, correct_streak, mistakes_in_window, fail_streak FROM user_level WHERE id = 1`,
+      [activePair]
+    );
+    await db.execAsync(`
       DROP TABLE user_level;
       ALTER TABLE user_level_new RENAME TO user_level;
     `);
   }
-  // Migration: per-pair attempt history. Without it the daily new-word
-  // counter was shared by every language pair, so a day spent on one course
-  // left the other with a zero budget and an empty queue.
-  const attemptsPairCol = await db.getFirstAsync<any>("SELECT * FROM pragma_table_info('card_attempts') WHERE name = 'pair'");
-  if (!attemptsPairCol) {
-    await db.execAsync('ALTER TABLE card_attempts ADD COLUMN pair TEXT');
-    // Existing rows predate the column: a word that only ever had a card in one
-    // pair is tagged with it, anything ambiguous falls back to the active pair.
-    await db.runAsync(
-      `UPDATE card_attempts SET pair = COALESCE(
-         (SELECT MIN(c.pair) FROM cards c WHERE c.word_id = card_attempts.word_id AND c.type = card_attempts.type),
-         ?
-       ) WHERE pair IS NULL`,
-      [activePair]
-    );
-  }
   await dropLegacyPcicRows(db);
-  return activePair;
+}
+
+// v1: the schema as of the day versioning started. A new install (none of the app's tables
+// yet) gets the whole schema in one go; an existing unversioned file is caught up.
+async function migrateToV1(db: SQLite.SQLiteDatabase) {
+  const existing = await db.getFirstAsync<any>(
+    "SELECT 1 AS present FROM sqlite_master WHERE type = 'table' AND name IN ('pcic_cards', 'user_meta')"
+  );
+  if (existing) {
+    await catchUpUnversionedDb(db);
+  } else {
+    await db.execAsync(SCHEMA_V1);
+  }
+}
+
+export interface Migration {
+  version: number;
+  up: (db: SQLite.SQLiteDatabase) => Promise<void>;
+}
+
+export const MIGRATIONS: readonly Migration[] = [{ version: 1, up: migrateToV1 }];
+
+export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1].version;
+
+// Runs every migration newer than PRAGMA user_version, in order, each in one transaction
+// with its version bump (PRAGMA user_version is transactional: a rollback restores it too).
+export async function applyMigrations(db: SQLite.SQLiteDatabase, migrations: readonly Migration[]) {
+  const row = await db.getFirstAsync<{ user_version: number }>('PRAGMA user_version');
+  const current = row?.user_version ?? 0;
+  for (const m of migrations) {
+    if (m.version <= current) continue;
+    await db.withTransactionAsync(async () => {
+      await m.up(db);
+      await db.execAsync(`PRAGMA user_version = ${m.version}`);
+    });
+  }
+}
+
+// Brings the file to the latest schema, makes sure the singleton rows exist (every start:
+// a restored backup can carry an empty table), and returns the active language pair from
+// onboarding so the caller (SQLiteDB.open()) can set this.activePair.
+export async function runMigrations(db: SQLite.SQLiteDatabase): Promise<string> {
+  await applyMigrations(db, MIGRATIONS);
+  await db.runAsync('INSERT OR IGNORE INTO streak (id, current_count, longest_count) VALUES (1, 0, 0)');
+  const meta = await db.getFirstAsync<any>('SELECT id FROM user_meta WHERE id = 1');
+  if (!meta) {
+    // user_id is NOT NULL but nothing reads it (the analytics that sent it are gone),
+    // so a new install gets an empty value, not a persistent random identifier.
+    await db.runAsync('INSERT INTO user_meta (id, user_id, first_use_date) VALUES (1, ?, ?)', ['', new Date().toISOString()]);
+  }
+  return readActivePair(db);
 }
