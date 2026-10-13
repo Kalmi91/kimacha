@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 
@@ -88,16 +88,27 @@ export default function SentencesScreen() {
   // still due would bring the same sentence straight back.
   const doneKeys = useRef(new Set<string>());
   const busy = useRef(false);
+  // The round on screen, for the focus effect (its state is stale in the callback).
+  const roundRef = useRef<SentenceRound | null>(null);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const { dockLift } = useDockLift();
 
-  const load = useCallback(async () => {
+  // `fresh`: a new round even if one is on screen (the "more" button).
+  const load = useCallback(async (fresh = false) => {
     const db = getDb();
     const onboarding = await db.getOnboarding();
     const dir = (onboarding?.target as PcicTarget) ?? 'es';
     // Must come before the corpus is read (data/pcic.ts: the loaded deck follows the target).
     setPcicTarget(dir);
     const today = localDateString();
+    // A round on screen (running or finished) survives leaving the tab; a new day, another direction or the
+    // "more" button replaces it.
+    const shown = roundRef.current;
+    if (!fresh && shown && shown.entries.length > 0 && shown.day === today && shown.target === dir) {
+      setStrictAccents(await db.getStrictAccents());
+      setLoading(false);
+      return;
+    }
     // A round that was left (other tab, app closed) continues where it stopped, the same day and direction.
     const saved = await loadSentenceRound(db);
     let next: SentenceRound;
@@ -130,10 +141,14 @@ export default function SentencesScreen() {
 
   useFocusEffect(
     useCallback(() => {
-      setLoading(true);
+      if (!roundRef.current) setLoading(true);
       void load();
     }, [load]),
   );
+
+  useEffect(() => {
+    roundRef.current = round;
+  }, [round]);
 
   const current = round ? currentEntry(round) : undefined;
   const { done, total } = round && round.entries.length > 0 ? roundProgress(round) : { done: 0, total: 0 };
@@ -247,7 +262,7 @@ export default function SentencesScreen() {
           {s.sentenceTab.roundDone(round?.entries.length ?? 0)}
         </Text>
         {g.brutal ? (
-          <BrutalButton testID="sentences-more" label={s.sentenceTab.more} fill="a" onPress={() => { setLoading(true); void load(); }} style={styles.moreBtn} />
+          <BrutalButton testID="sentences-more" label={s.sentenceTab.more} fill="a" onPress={() => { setLoading(true); void load(true); }} style={styles.moreBtn} />
         ) : (
           <Pressable
             testID="sentences-more"
@@ -255,7 +270,7 @@ export default function SentencesScreen() {
             style={[styles.moreBtn, styles.moreBtnClassic, { backgroundColor: colors.accent }]}
             onPress={() => {
               setLoading(true);
-              void load();
+              void load(true);
             }}
           >
             <Text style={[styles.moreBtnText, { color: colors.onTint }]}>{s.sentenceTab.more}</Text>
