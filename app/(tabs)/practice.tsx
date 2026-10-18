@@ -70,7 +70,9 @@ export default function PracticeScreen() {
     // A round on screen (running or finished) survives leaving the tab; a new day, another direction or the
     // "new reading" button replaces it. Without it the finished screen would be thrown away.
     if (!fresh && shownTarget.current === dir && shownDate.current === today) return;
-    const saved = fresh ? null : await loadPracticeRound().catch(() => null);
+    // the last saved round, also when it is replaced: its words go to the end of the new one (FB511)
+    const stored = await loadPracticeRound().catch(() => null);
+    const saved = fresh ? null : stored;
     const resumed = restorePracticeRound(
       saved,
       today,
@@ -93,6 +95,8 @@ export default function PracticeScreen() {
         tenses: resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()),
         findItem: findPcicItem,
         today,
+        // the button or a new day replaces a round of this direction; a broken round of today is just dropped
+        avoid: stored && stored.target === dir && (fresh || stored.date !== today) ? new Set(stored.ids) : undefined,
       });
       at = 0;
       done = next ? next.questions.map(() => null) : [];

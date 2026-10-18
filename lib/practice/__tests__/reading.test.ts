@@ -125,6 +125,51 @@ describe('pickReadingWords', () => {
     const words = pickReadingWords(d, known(d));
     expect(words.map((w) => w.itemId)).not.toContain('o20');
   });
+
+  describe('avoid (the previous round, FB511)', () => {
+    // ten more nouns, each with its own sentence "El <noun> es grande." (grande, ser: learned, not due)
+    const NOUNS = ['sol', 'mar', 'río', 'pan', 'vino', 'tren', 'bus', 'avión', 'barco', 'lago'];
+    const extra = NOUNS.map((n, i) => item(`o${21 + i}`, `el ${n}`, n, 'noun', `El ${n} es grande.`, `The ${n} is big.`));
+    const items = [...ITEMS, ...extra];
+    const extraInfo = (id: string): GapSourceInfo | undefined => {
+      const noun = NOUNS[Number(id.slice(1)) - 21];
+      return noun ? { lemma: noun, sentenceLemmas: ['el', noun, 'ser', 'grande'] } : INFO[id];
+    };
+    // the first `count` extra nouns are due, the oldest first (o21 the longest overdue)
+    const cardsOf = (count: number) => [
+      CARDS.find((c) => c.itemId === 'o11')!,
+      CARDS.find((c) => c.itemId === 'o14')!,
+      ...extra.slice(0, count).map((it, n) => learned(it.id, `2026-10-${String(n + 1).padStart(2, '0')}`)),
+    ];
+    const depsOf = (count: number, avoid?: ReadonlySet<string>) =>
+      deps({ cards: cardsOf(count), findItem: (id) => items.find((i) => i.id === id), info: extraInfo, avoid });
+    const pick = (d: ReadingDeps) => pickReadingWords(d, known(d)).map((w) => w.itemId);
+
+    it('without it the same five words come every time (the bug)', () => {
+      expect(pick(depsOf(10))).toEqual(['o21', 'o22', 'o23', 'o24', 'o25']);
+    });
+
+    it('ten due words, the previous round had five: the new round is the other five', () => {
+      const avoid = new Set(['o21', 'o22', 'o23', 'o24', 'o25']);
+      expect(pick(depsOf(10, avoid))).toEqual(['o26', 'o27', 'o28', 'o29', 'o30']);
+    });
+
+    it('six candidates: the one new word comes first, the rest is made up of the previous round', () => {
+      const avoid = new Set(['o21', 'o22', 'o23', 'o24', 'o25']);
+      expect(pick(depsOf(6, avoid))).toEqual(['o26', 'o21', 'o22', 'o23', 'o24']);
+    });
+
+    it('only the previous words exist: they are used again, the empty state does not come more often', () => {
+      const avoid = new Set(['o21', 'o22', 'o23', 'o24', 'o25']);
+      expect(pick(depsOf(5, avoid))).toEqual(['o21', 'o22', 'o23', 'o24', 'o25']);
+      expect(buildReadingSet(depsOf(5, avoid))).not.toBeNull();
+    });
+
+    it('an empty or unrelated avoid set changes nothing', () => {
+      expect(pick(depsOf(10, new Set()))).toEqual(['o21', 'o22', 'o23', 'o24', 'o25']);
+      expect(pick(depsOf(10, new Set(['o99'])))).toEqual(['o21', 'o22', 'o23', 'o24', 'o25']);
+    });
+  });
 });
 
 describe('buildReadingSet', () => {
