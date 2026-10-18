@@ -345,6 +345,32 @@ describe('Practice tab: the sentences step', () => {
     expect(await saved()).toMatchObject({ step: 0, picks: [null, null, null, null, null] });
     view.unmount();
   });
+
+  it('"New reading" and a new day use other due words than the round they replace (FB511)', async () => {
+    // forty words are due (not only five), the oldest first; reading a text gives no progress, so the cards stay
+    setPcicTarget('es');
+    for (const [n, it] of pcicItemsForLevel('A1').slice(0, 100).entries()) {
+      const due = `2000-${String(1 + Math.floor(n / 28)).padStart(2, '0')}-${String(1 + (n % 28)).padStart(2, '0')}`;
+      await getDb().upsertPcicCard(learned(it.id, n < 40 ? due : '2099-01-01'));
+    }
+    const view = await mount();
+    const first = (await saved())!.ids;
+    await toQuestions(view);
+    await finishQuestions(view);
+    await press(view, 'practice-again');
+    const second = (await saved())!.ids;
+    expect(second).toHaveLength(5);
+    expect(second.filter((id) => first.includes(id))).toEqual([]);
+    view.unmount();
+
+    // the next day: the saved round is of an earlier day, the new text still avoids its words
+    await getDb().setPracticeRound(JSON.stringify({ ...(await saved())!, date: '2000-01-01' }));
+    const nextDay = await mount();
+    const third = (await saved())!;
+    expect(third.date).toBe(TODAY);
+    expect(third.ids.filter((id) => second.includes(id))).toEqual([]);
+    nextDay.unmount();
+  });
 });
 
 describe('Practice tab: the round survives leaving the tab and the app', () => {
