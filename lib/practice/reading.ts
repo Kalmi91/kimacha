@@ -57,6 +57,8 @@ export interface ReadingDeps {
   findItem: (id: string) => PcicItem | undefined;
   today: string;
   info?: (itemId: string) => GapSourceInfo | undefined;
+  /** Card ids of the round this one replaces: they go to the end of the candidates (kept, not dropped), so a new round differs. */
+  avoid?: ReadonlySet<string>;
   /** For tests: a deterministic [0, 1) source. */
   random?: () => number;
 }
@@ -91,7 +93,12 @@ function shuffled<T>(list: readonly T[], random: () => number): T[] {
 export function pickReadingWords(deps: ReadingDeps, known: ReadonlySet<string>): ReadingWord[] {
   const seen = new Set<string>();
   const out: ReadingWord[] = [];
-  for (const card of practiceCandidates(deps.cards, deps.today)) {
+  // The cards do not change between two rounds (a reading gives no progress), so without this the same words
+  // would come again: the previous round's words go last, and only fill up when there are too few other ones.
+  const candidates = practiceCandidates(deps.cards, deps.today);
+  const avoid = deps.avoid;
+  const ordered = avoid && avoid.size > 0 ? [...candidates.filter((c) => !avoid.has(c.itemId)), ...candidates.filter((c) => avoid.has(c.itemId))] : candidates;
+  for (const card of ordered) {
     const item = deps.findItem(card.itemId);
     const word = item ? readingWordFor(item, deps.target, deps.info) : null;
     if (!word || !isSentenceKnownIn(word.sentence, deps.target, known)) continue;
