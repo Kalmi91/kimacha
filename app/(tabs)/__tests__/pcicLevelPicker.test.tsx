@@ -45,10 +45,12 @@ describe('PCIC tab: level picker', () => {
   });
 
   it('the header shows the active level, the sheet also offers the other level', async () => {
-    const { getByText } = render(<PcicScreen />);
+    const { getByText, queryByText } = render(<PcicScreen />);
     await flush();
 
     expect(getByText('B1 ▾')).toBeTruthy();
+    // The 🗑️ progress reset is not in the Learn header (it lives in Settings: settingsReset.test.tsx).
+    expect(queryByText('🗑️')).toBeNull();
     // The English prompt of the B1 item is shown by default.
     expect(getByText('life')).toBeTruthy();
 
