@@ -55,3 +55,30 @@ describe('screen contract', () => {
     },
   );
 });
+
+// The FeedbackButton's language-pair label has one format, "en→es" (lib/languagePair.ts pairOf):
+// no hyphenated "en-es" and no bare "-" literal next to a languagePair (a Feedback list could not
+// be grouped by direction when the same direction showed up under several spellings).
+function sourceFiles(dir: string): string[] {
+  return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) return entry.name === '__tests__' ? [] : sourceFiles(full);
+    return /\.tsx?$/.test(entry.name) ? [full] : [];
+  });
+}
+
+describe('language pair label', () => {
+  const files = [APP_DIR, path.join(ROOT, 'components'), path.join(ROOT, 'lib', 'learn')].flatMap(sourceFiles);
+  const OFF_FORMAT = /languagePair\b[^\n]*(['"`])(?:[a-z]{2}-[a-z]{2}|-)\1/;
+
+  it('scans source files', () => {
+    expect(files.length).toBeGreaterThan(20);
+  });
+
+  it('has no hyphenated or bare "-" pair literal', () => {
+    const offenders = files
+      .filter((f) => OFF_FORMAT.test(fs.readFileSync(f, 'utf8')))
+      .map((f) => path.relative(ROOT, f).split(path.sep).join('/'));
+    expect(offenders).toEqual([]);
+  });
+});

@@ -18,6 +18,7 @@ import { findPcicItem, setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { t } from '@/lib/i18n';
+import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { countLearningToday } from '@/lib/learningDay';
 import { resolvedTensesFromLessons } from '@/lib/knownSentence';
@@ -176,7 +177,7 @@ export default function PracticeScreen() {
       <FeedbackButton
         placement="header"
         level="-"
-        languagePair={target === 'es' ? 'en-es' : 'es-en'}
+        languagePair={pairOf(target)}
         currentCard={inQuestions ? `practice:q${step}` : 'practice-reading'}
       />
     </View>

@@ -5,6 +5,7 @@ import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import { getDb } from '@/lib/database';
 import { getBeta, useBeta } from '@/lib/beta';
+import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { addXp, getXp, wholeXp, xpForCard, type DailyXp } from '@/lib/dailyXp';
@@ -236,7 +237,7 @@ export function usePcicSession() {
 
   // The FeedbackButton's pair label with the active direction
   // (it used to be hard-coded to "es-en", although the actual behavior was en-es).
-  const languagePair = target === 'es' ? 'en-es' : 'es-en';
+  const languagePair = pairOf(target);
 
   // The prompt is the source-language field and the answer is the
   // target-language one; in en-es this is the old order (prompt en, answer es), in es-en
