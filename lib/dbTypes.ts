@@ -27,7 +27,7 @@ export interface DB {
   getSkinMix(): Promise<SkinMix | null>;
   setSkinMix(mix: SkinMix): Promise<void>;
   // the daily streak write is back (the Learn tab took
-  // it away, the PCIC grading is the only caller from now on, see app/(tabs)/index.tsx).
+  // it away; the PCIC grading calls it, and every other answered task through lib/learningDay.ts).
   updateStreak(): Promise<void>;
   getStrictAccents(): Promise<boolean>;
   setStrictAccents(v: boolean): Promise<void>;
