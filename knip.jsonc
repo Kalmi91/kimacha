@@ -1,0 +1,13 @@
+{
+  // `npm run dead`: files and exports that nothing references. Test files count as references.
+  "$schema": "https://unpkg.com/knip@5/schema-jsonc.json",
+  // Expo loads the config plugins by the name in app.json, Jest loads jest.setup.js through setupFiles,
+  // the scripts are run by hand.
+  "entry": ["plugins/*.js", "jest.setup.js", "scripts/*.{mjs,js}"],
+  // An export that its own file still uses is not dead code.
+  "ignoreExportsUsedInFile": true,
+  "ignoreIssues": {
+    // The design-token catalogue: motion, shadow and the Colors re-export are the tokens new code takes.
+    "constants/Theme.ts": ["exports", "types"]
+  }
+}
