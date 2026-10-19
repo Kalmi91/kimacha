@@ -5,7 +5,7 @@ import {
   isConjugatedForm,
   normalizedPrompt,
   promptSenses,
-} from '@/lib/promptOverlap';
+} from '@/lib/testing/promptOverlap';
 
 describe('promptSenses / bareSense', () => {
   it('splits on " / ", lowercases and strips the article', () => {
