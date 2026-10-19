@@ -44,11 +44,21 @@ class SQLiteDB implements DB {
   // scoped to this pair, so each language you study keeps its own progress.
   private activePair = 'es-hu';
 
+  // One shared promise that includes the migration: every caller waits for it, and
+  // this.db is set only once it is done (a failed open clears it, so the next call retries).
+  private opening: Promise<SQLite.SQLiteDatabase> | null = null;
+
   private async open() {
     if (this.db) return this.db;
-    this.db = await SQLite.openDatabaseAsync('kimacha.db');
-    this.activePair = await runMigrations(this.db);
-    return this.db;
+    this.opening ??= (async () => {
+      const db = await SQLite.openDatabaseAsync('kimacha.db');
+      this.activePair = await runMigrations(db);
+      this.db = db;
+      return db;
+    })().finally(() => {
+      this.opening = null;
+    });
+    return this.opening;
   }
 
   async getStreak() {
