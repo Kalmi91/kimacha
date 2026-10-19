@@ -86,14 +86,24 @@ describe('grammar lesson screen: table-deck button', () => {
   });
   // the word deck is built only from the table's words;
   // where that stays below the threshold, there is no deck entry (and no crash).
-  // A later change restores this for articulos-genero: the earlier deck built from all the app's
-  // nouns is gone, the nouns only appear in the el / la task, and the deck is again the lesson's own words.
-  it('articulos-genero (table words below the threshold) gets no word-deck entry', async () => {
-    mockTopicId = 'articulos-genero';
+  it('hay-estar (table words below the threshold) gets no word-deck entry', async () => {
+    mockTopicId = 'hay-estar';
     const view = render(<GrammarLessonScreen />);
     await flush();
 
     expect(screen.queryByTestId('grammar-start-worddeck')).toBeFalsy();
+
+    view.unmount();
+  });
+
+  // The deck of articulos-genero is the lesson's own table nouns (with their article, "la casa"),
+  // not the earlier deck built from all the app's nouns; it has no conjugation table deck.
+  it('articulos-genero (its article nouns reach the threshold) gets a word-deck entry, no table deck', async () => {
+    mockTopicId = 'articulos-genero';
+    const view = render(<GrammarLessonScreen />);
+    await flush();
+
+    expect(screen.getByTestId('grammar-start-worddeck')).toBeTruthy();
     expect(screen.queryByTestId('grammar-start-tabledeck')).toBeFalsy();
 
     view.unmount();

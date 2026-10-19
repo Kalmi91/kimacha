@@ -97,9 +97,9 @@ describe('the articulos-genero lesson', () => {
     expect(round).toHaveLength(sn.items.filter((i) => isArticleSetItem(i as never)).length);
   });
 
-  it("no noun deck, the lesson deck is the lesson's own words (below the threshold), and no table deck either", () => {
+  it("no app-wide noun deck, the lesson deck is the lesson's own table words, and no table deck either", () => {
     const cards = wordCellsForLesson(lesson, 'es');
-    expect(cards.length).toBeLessThan(WORD_DECK_MIN_CARDS);
+    expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
     expect(cards.some((c) => c.id.startsWith('noun::'))).toBe(false);
     expect(tableCellsForLesson(lesson)).toHaveLength(0);
   });
