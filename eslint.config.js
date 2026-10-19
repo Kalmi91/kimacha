@@ -20,4 +20,10 @@ module.exports = [
       'react-hooks/exhaustive-deps': 'off',
     },
   },
+  {
+    // jest.setup.js runs inside Jest, which injects `jest`; the Expo base config knows no Jest globals,
+    // so `eslint .` (what `rtk lint` runs for `npm run lint`) flagged it with no-undef.
+    files: ['jest.setup.js'],
+    languageOptions: { globals: { jest: 'readonly' } },
+  },
 ];

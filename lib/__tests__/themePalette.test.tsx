@@ -5,6 +5,7 @@
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, render, screen } from '@testing-library/react-native';
+import { useEffect } from 'react';
 import { Text, View } from 'react-native';
 import * as RN from 'react-native';
 
@@ -19,8 +20,13 @@ let ctx: ReturnType<typeof useTheme>;
 let gc: ReturnType<typeof useGrammarColors>;
 
 function Probe() {
-  ctx = useTheme();
-  gc = useGrammarColors();
+  const theme = useTheme();
+  const colors = useGrammarColors();
+  // Captured in an effect, not during render (react-hooks/globals); the tests read after flush().
+  useEffect(() => {
+    ctx = theme;
+    gc = colors;
+  });
   return <Text>probe</Text>;
 }
 
