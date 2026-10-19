@@ -354,6 +354,7 @@ export default {
     send: 'Send',
     cancel: 'Cancel',
     thanks: 'Thank you!',
+    errorTitle: 'Could not send. Please try again.',
   },
   usage: {
     plusOneMinute: '+1 minute wooo!',

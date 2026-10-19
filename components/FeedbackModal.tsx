@@ -190,7 +190,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
               autoFocus
             />
 
-            {sendError && <Text style={styles.sendError}>{s.backup.errorTitle}</Text>}
+            {sendError && <Text style={styles.sendError}>{s.feedback.errorTitle}</Text>}
 
             {g.brutal ? (
               <View style={styles.modalButtons}>

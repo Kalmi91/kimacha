@@ -25,14 +25,14 @@ describe('FeedbackModal send errors', () => {
   it('fetch rejects: the text stays, an error shows, no thank-you', async () => {
     const { getByDisplayValue, getByText, queryByText } = await sendWith(jest.fn().mockRejectedValue(new Error('offline')));
     expect(getByDisplayValue('Great app!')).toBeTruthy();
-    expect(getByText('Error')).toBeTruthy();
+    expect(getByText('Could not send. Please try again.')).toBeTruthy();
     expect(queryByText('Thank you!')).toBeNull();
   });
 
   it('fetch answers 500: the text stays, an error shows, no thank-you', async () => {
     const { getByDisplayValue, getByText, queryByText } = await sendWith(jest.fn().mockResolvedValue({ ok: false, status: 500 }));
     expect(getByDisplayValue('Great app!')).toBeTruthy();
-    expect(getByText('Error')).toBeTruthy();
+    expect(getByText('Could not send. Please try again.')).toBeTruthy();
     expect(queryByText('Thank you!')).toBeNull();
   });
 
@@ -40,6 +40,6 @@ describe('FeedbackModal send errors', () => {
     const { queryByDisplayValue, getByText, queryByText } = await sendWith(jest.fn().mockResolvedValue({ ok: true, status: 200 }));
     expect(getByText('Thank you!')).toBeTruthy();
     expect(queryByDisplayValue('Great app!')).toBeNull();
-    expect(queryByText('Error')).toBeNull();
+    expect(queryByText('Could not send. Please try again.')).toBeNull();
   });
 });
