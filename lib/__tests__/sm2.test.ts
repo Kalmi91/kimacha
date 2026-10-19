@@ -1,6 +1,6 @@
 // Pure functions of the SM-2 (Anki-style) scheduler.
 
-import { sm2NewCard, sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, DEFAULT_NEW_LIMIT, type Sm2Card } from '../sm2';
+import { sm2NewCard, sm2Review, sm2PreviewDays, pickSm2Session, sm2MarkKnown, addDays, KNOWN_INTERVAL_DAYS, MAX_INTERVAL_DAYS, DEFAULT_NEW_LIMIT, type Sm2Card } from '../sm2';
 
 const TODAY = '2026-09-18';
 const TOMORROW = addDays(TODAY, 1);
@@ -114,6 +114,30 @@ describe('sm2Review, review state', () => {
     const next = sm2Review(reviewCard({ reps: 7 }), 'good', TODAY);
     expect(next.reps).toBe(8);
     expect(next.lastReview).toBe(TODAY);
+  });
+
+  it('40 "good" in a row: the interval stays a finite number, ease >= 1.3, due is a valid date', () => {
+    let card = reviewCard({ interval: 1, due: TODAY });
+    let today = TODAY;
+    for (let n = 0; n < 40; n++) {
+      card = sm2Review(card, 'good', today);
+      today = card.due;
+      expect(Number.isFinite(card.interval)).toBe(true);
+      expect(card.interval).toBeLessThanOrEqual(MAX_INTERVAL_DAYS);
+      expect(card.ease).toBeGreaterThanOrEqual(1.3);
+      expect(card.due).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+      expect(Number.isNaN(new Date(card.due).getTime())).toBe(false);
+    }
+    expect(card.interval).toBe(MAX_INTERVAL_DAYS);
+  });
+
+  it('hard and easy are capped too, and a stored interval above the cap comes back down to it', () => {
+    for (const grade of ['hard', 'easy'] as const) {
+      expect(sm2Review(reviewCard({ interval: MAX_INTERVAL_DAYS }), grade, TODAY).interval).toBe(MAX_INTERVAL_DAYS);
+    }
+    const next = sm2Review(reviewCard({ interval: 5_000_000 }), 'good', TODAY);
+    expect(next.interval).toBe(MAX_INTERVAL_DAYS);
+    expect(next.due).toBe(addDays(TODAY, MAX_INTERVAL_DAYS));
   });
 });
 

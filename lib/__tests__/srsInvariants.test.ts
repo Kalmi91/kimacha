@@ -4,14 +4,12 @@
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { getDb } from '@/lib/database';
-import { addDays, sm2MarkKnown, sm2NewCard, sm2Review, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import { addDays, MAX_INTERVAL_DAYS, sm2MarkKnown, sm2NewCard, sm2Review, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import { recordPracticeResult, type PracticeResult } from '@/lib/practice/halfStep';
 
 const STEPS = 200;
 const SEEDS = [1, 7, 42, 2026, 123456];
 const START = '2026-10-01';
-// A learner does not live for millennia: past 10 years the simulated learner fails the card once.
-const MAX_SANE_INTERVAL = 3650;
 const GRADES: Sm2Grade[] = ['again', 'hard', 'good', 'easy'];
 const RESULTS: PracticeResult[] = ['correct', 'correct', 'wrongTyped', 'wrongOther'];
 
@@ -62,10 +60,11 @@ describe('sm2Review invariants (200 random grades)', () => {
         const reps0 = card.reps;
         for (let n = 1; n <= STEPS; n++) {
           today = nextDay(rnd, today, card.due);
-          const grade = card.interval > MAX_SANE_INTERVAL ? 'again' : pick(rnd, GRADES);
+          const grade = pick(rnd, GRADES);
           card = sm2Review(card, grade, today);
           if (card.state === 'review') graduated = true;
           expect(card.ease).toBeGreaterThanOrEqual(1.3);
+          expect(card.interval).toBeLessThanOrEqual(MAX_INTERVAL_DAYS);
           expect(card.due >= today).toBe(true);
           if (graduated) expect(card.interval).toBeGreaterThanOrEqual(1);
           expect(card.reps).toBe(reps0 + n);
@@ -91,11 +90,12 @@ describe('recordPracticeResult invariants (200 random results, memory db)', () =
       for (let n = 0; n < STEPS; n++) {
         today = nextDay(rnd, today, before.due);
         const notDue = before.due > today;
-        const result = before.interval > MAX_SANE_INTERVAL ? 'wrongTyped' : pick(rnd, RESULTS);
+        const result = pick(rnd, RESULTS);
         const outcome = await recordPracticeResult('p1', result, today);
         const after = (await db.getPcicCard('p1'))!;
         expect(outcome).not.toBeNull();
         expect(after.ease).toBeGreaterThanOrEqual(1.3);
+        expect(after.interval).toBeLessThanOrEqual(MAX_INTERVAL_DAYS);
         expect(after.due >= today).toBe(true);
         expect(after.interval).toBeGreaterThanOrEqual(1);
         const stepped = outcome!.srs === 'forward' && !notDue;
