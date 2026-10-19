@@ -20,12 +20,10 @@ updates:
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
       - dependency-name: "jest-expo"
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      # react-native bundles its own renderer that pins the react version (#135: react 19.2.8 vs renderer 19.2.3, "Incompatible React versions"); raise these only together with Expo SDK / react-native.
       - dependency-name: "react"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
       - dependency-name: "react-dom"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
       - dependency-name: "react-test-renderer"
-        update-types: ["version-update:semver-major", "version-update:semver-minor"]
       - dependency-name: "react-native"
         update-types: ["version-update:semver-major", "version-update:semver-minor"]
       - dependency-name: "react-native-*"
