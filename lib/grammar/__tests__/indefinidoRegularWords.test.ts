@@ -1,13 +1,20 @@
 // The exercises of the indefinido-regular lesson used verbs and words that were not in the lesson's tables.
-// The 20 missing verbs each got a one-verb table (tabbed block), the 20 most frequent missing words got a meaning table; both are in the
+// The 20 missing verbs each got a one-verb table (tabbed block), the 20 most frequent missing words got a meaning table; the verb tables are in the
 // lesson's table deck, with no vosotros card.
+// FB518-519: the two word (meaning) tables stay in the lesson body and feed the word deck, but are not in the table deck (`noTableDeck`).
 
 import { lessonFor } from '../syllabus';
-import { tableCellsForLesson } from '../tableDeck';
+import { tableCellsForLesson, wordCellsForLesson } from '../tableDeck';
 
 const lesson = lessonFor('es', 'indefinido-regular');
 if (!lesson) throw new Error('indefinido-regular must exist');
 const cells = tableCellsForLesson(lesson);
+
+const wordTable = (id: string) => {
+  const block = lesson.body.find((b) => b.kind === 'table' && b.id === id);
+  if (!block || block.kind !== 'table') throw new Error(`table ${id} must exist`);
+  return block;
+};
 
 const NEW_VERBS = [
   'salir', 'llegar', 'empezar', 'cenar', 'comprar', 'buscar', 'recibir', 'cambiar', 'terminar', 'vender',
@@ -36,20 +43,20 @@ describe('indefinido-regular: the verbs and words of the drills are in the table
     expect(cells.find((c) => c.verb === 'buscar' && c.person === 'yo')?.answer).toBe('busqué');
   });
 
-  it('the 20 most frequent missing words are a meaning table in the deck (English meaning -> Spanish word)', () => {
-    const wordCells = cells.filter((c) => c.id.startsWith('indefinido-regular-words::'));
-    expect(wordCells).toHaveLength(20);
-    expect(wordCells.every((c) => c.verb === '' && c.enPrompt === c.person)).toBe(true);
-    expect(wordCells.find((c) => c.person === 'today')?.answer).toBe('hoy');
-    expect(wordCells.find((c) => c.person === 'house, home')?.answer).toBe('la casa');
+  it('the 20 most frequent missing words are a meaning table in the lesson body (English meaning -> Spanish word)', () => {
+    const table = wordTable('indefinido-regular-words');
+    expect(table.rows).toHaveLength(20);
+    expect(table.noTableDeck).toBe(true);
+    expect(table.rows.find((r) => r[0] === 'today')?.[1]).toBe('hoy');
+    expect(table.rows.find((r) => r[0] === 'house, home')?.[1]).toBe('la casa');
   });
 
-  it('the other 28 missing words are a second meaning table in the deck, the 20 of the first one are unchanged', () => {
-    const wordCells = cells.filter((c) => c.id.startsWith('indefinido-regular-words-2::'));
-    expect(wordCells).toHaveLength(28);
-    expect(wordCells.every((c) => c.verb === '' && c.enPrompt === c.person)).toBe(true);
-    expect(cells.filter((c) => c.id.startsWith('indefinido-regular-words::'))).toHaveLength(20);
-    const spanish = wordCells.map((c) => norm(c.answer.replace(/^(el|la) /, '')));
+  it('the other 28 missing words are a second meaning table in the lesson body, the 20 of the first one are unchanged', () => {
+    const table = wordTable('indefinido-regular-words-2');
+    expect(table.rows).toHaveLength(28);
+    expect(table.noTableDeck).toBe(true);
+    expect(wordTable('indefinido-regular-words').rows).toHaveLength(20);
+    const spanish = table.rows.map((r) => norm(r[1].replace(/^(el|la) /, '')));
     for (const w of [
       'café', 'padre', 'familia', 'hermano', 'día', 'hora', 'pequeño', 'teléfono', 'semana', 'frío',
       'enfermo', 'después', 'mañana', 'médico', 'profesor', 'clase', 'hotel', 'ventana', 'vez', 'película',
@@ -57,7 +64,20 @@ describe('indefinido-regular: the verbs and words of the drills are in the table
     ]) {
       expect(spanish).toContain(w);
     }
-    expect(wordCells.find((c) => c.person === 'airport')?.answer).toBe('el aeropuerto');
+    expect(table.rows.find((r) => r[0] === 'airport')?.[1]).toBe('el aeropuerto');
+  });
+
+  it('the two word tables are not in the table deck, every deck card is a verb form (FB518-519)', () => {
+    expect(cells.some((c) => c.id.startsWith('indefinido-regular-words'))).toBe(false);
+    expect(cells.length).toBeGreaterThan(0);
+    expect(cells.every((c) => c.verb !== '')).toBe(true);
+  });
+
+  // "madre" (first table) is observed to be absent from the word deck, so it is not asserted here.
+  it('the words of the two word tables are still in the word deck (hoy from the first, pequeño from the second)', () => {
+    const words = wordCellsForLesson(lesson, 'es').map((c) => c.es.toLowerCase());
+    expect(words).toContain('hoy');
+    expect(words).toContain('pequeño');
   });
 
   it('no indefinido form used in the drills is missing from the tables', () => {

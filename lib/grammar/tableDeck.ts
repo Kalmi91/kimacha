@@ -98,6 +98,8 @@ export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined)
   const seen = new Set<string>();
   for (const block of lesson.body) {
     if (block.kind !== 'table') continue;
+    // the block opts out of the table deck (its words live in the word deck instead).
+    if (block.noTableDeck) continue;
     // a person table (Persona -> ir a + infinitivo, Sujeto -> pronoun)
     // gives cell cards the same way as a conjugation table; the "verb" here is the column header.
     if (isConjugationTable(block.header, block.rows) || isPersonTable(block.header, block.rows)) {

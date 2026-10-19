@@ -93,6 +93,8 @@ export type LessonBlock =
       // `rows` minus the person column), for the table-deck's "translate the
       // English sentence" mode; a table without it keeps the person·verb prompt.
       enPrompt?: string[][];
+      // the table stays in the lesson reference and the word deck, but gives no table-deck cards (FB518-519).
+      noTableDeck?: boolean;
     }
   | { kind: 'usage'; title?: Lang4; points: { text: Lang4; examples: ExamplePair[] }[] }
   | {
