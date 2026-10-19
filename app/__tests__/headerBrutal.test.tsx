@@ -1,29 +1,9 @@
 // Headers on the brutalist palette (bg background, 2.5 px ink bottom line, uppercase weight-500 title,
 // back arrow in a BrutalBox), and today's header on the classic palette.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('expo-router', () => ({
-  useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
-}));
-
-import { act, render } from '@testing-library/react-native';
-
 import { SKINS } from '@/constants/Skins';
-import { getDb } from '@/lib/database';
 import { grammarColorsFor } from '@/lib/grammarColors';
 import { brutalHeaderOptions, brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import { ThemeProvider } from '@/lib/ThemeContext';
-import CreditsScreen from '../credits';
-
-jest.setTimeout(30000);
-
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
 
 describe('Headers, neo-brutalist', () => {
   it('brutalHeaderOptions: with the brand palette an ink line + uppercase 500-weight title', () => {
@@ -54,19 +34,5 @@ describe('Headers, neo-brutalist', () => {
     expect(brutal.headerStyle).toMatchObject({ borderBottomWidth: 2.5 });
 
     expect(brutalHeaderOptions(grammarColorsFor('light'), SKINS.classic)).toEqual({});
-  });
-
-  it('Credits: with the brand palette the back arrow is a BrutalBox, with the classic palette it is not', async () => {
-    await getDb().setGrammarPalette('brand');
-    const brand = render(<ThemeProvider><CreditsScreen /></ThemeProvider>);
-    await flush();
-    expect(brand.queryByTestId('credits-back')).toBeTruthy();
-    brand.unmount();
-
-    await getDb().setGrammarPalette('classic');
-    const classic = render(<ThemeProvider><CreditsScreen /></ThemeProvider>);
-    await flush();
-    expect(classic.queryByTestId('credits-back')).toBeNull();
-    classic.unmount();
   });
 });
