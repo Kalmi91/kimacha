@@ -11,6 +11,7 @@ import { BrutalBackButton, BrutalButton, Sticker, SegmentBar, brutalInputStyle, 
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
+import { useSessionProgress } from '@/lib/useSessionProgress';
 import type { Level } from '@/data/words';
 import { charDiff } from '@/lib/charDiff';
 import { strictAnswerMatch } from '@/lib/answerMatch';
@@ -78,6 +79,7 @@ export default function TableDeckScreen() {
   const diff = useDiffStyles();
   const s = t();
   const router = useRouter();
+  const { persistRow } = useSessionProgress();
   const { topic: topicId } = useLocalSearchParams<{ topic: string }>();
 
   const [loading, setLoading] = useState(true);
@@ -161,7 +163,7 @@ export default function TableDeckScreen() {
   useLoadOnMount(load);
 
   const persist = (next: DeckState) => {
-    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, progressKeyFor(String(topicId)), 'progress', next).catch(() => {});
+    persistRow(GRAMMAR_PROGRESS_KEY, progressKeyFor(String(topicId)), 'progress', next);
   };
 
   const entry = syllabusTopic(String(topicId), learnedLang);

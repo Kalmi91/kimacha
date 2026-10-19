@@ -15,6 +15,7 @@ import { speechLang } from '@/lib/languages';
 import type { RoundStats } from '@/components/grammar/GrammarDrill';
 import { useDockSlot } from '@/components/learn/DockSlot';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
+import { useSessionProgress } from '@/lib/useSessionProgress';
 import { clearDrillResume, drillToResume, loadDrillResume, saveDrillResume } from '@/lib/drillResume';
 import { localDateString } from '@/lib/usageStats';
 
@@ -33,6 +34,7 @@ export function useGrammarTopic() {
   const [learnedLang, setLearnedLang] = useState('es');
   const [contentLang, setContentLang] = useState('en');
   const [level, setLevel] = useState<Level>('A1');
+  const { persistRow } = useSessionProgress();
   const [lesson, setLesson] = useState<GrammarTopicData | null>(null);
   const [phase, setPhase] = useState<Phase>('lesson');
   const [score, setScore] = useState<{ correct: number; total: number } | null>(null);
@@ -148,7 +150,7 @@ export function useGrammarTopic() {
   // writing the lesson's progress rows: local state + durable (game_progress).
   const saveRow = (itemId: string, state: string, data: unknown) => {
     setProgressRows((prev) => [...prev.filter((r) => r.itemId !== itemId), { itemId, state, data }]);
-    getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, itemId, state, data).catch(() => {});
+    persistRow(GRAMMAR_PROGRESS_KEY, itemId, state, data);
   };
   // The lesson %: the average over ALL existing kinds, a kind not yet started counts as 0 (null: nothing done yet).
   // Provisional kinds do not pull the lesson % down (scoredKinds).
@@ -164,9 +166,7 @@ export function useGrammarTopic() {
     // doneGrammarTopicProgress: a kind only counts as done that way).
     const pct = total ? Math.round((correct / total) * 100) : 0;
     if (pct >= 80) {
-      getDb()
-        .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}`, 'done', { correct, total })
-        .catch(() => {});
+      persistRow(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:${drillKind}`, 'done', { correct, total });
     }
     // finished round: the better result overwrites the old one (a weaker one does not lower it),
     // and the abandoned round is deleted. A kind's % is its best round's result.
@@ -179,9 +179,7 @@ export function useGrammarTopic() {
       const updated = { ...transformSeen };
       for (const id of roundItemIds) updated[id] = (updated[id] ?? 0) + 1;
       setTransformSeen(updated);
-      getDb()
-        .setGameProgress(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:transform:seen`, 'seen', updated)
-        .catch(() => {});
+      persistRow(GRAMMAR_PROGRESS_KEY, `${String(topicId)}:transform:seen`, 'seen', updated);
     }
   };
 
