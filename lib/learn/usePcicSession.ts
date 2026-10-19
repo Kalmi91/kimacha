@@ -119,6 +119,8 @@ export function usePcicSession() {
   // effect below), not only on first mount (the `autoFocus` prop is not
   // enough for this, because the TextInput does not remount on a card change).
   const inputRef = useRef<TextInput>(null);
+  // In-flight guard of handleGrade: a double tap must not grade the same card twice.
+  const gradingRef = useRef(false);
   // The input field REMOUNTS on every new card
   // (the TextInput `key` contains this counter). Reason: after Check the field
   // became `editable={false}`, then editable again after Next, on the same
@@ -370,6 +372,16 @@ export function usePcicSession() {
   };
 
   const handleGrade = async (g: Sm2Grade) => {
+    if (gradingRef.current) return;
+    gradingRef.current = true;
+    try {
+      await gradeOnce(g);
+    } finally {
+      gradingRef.current = false;
+    }
+  };
+
+  const gradeOnce = async (g: Sm2Grade) => {
     const wasNew = current?.state === 'new';
     const next = await commitGrade(g);
     if (!next) return;
