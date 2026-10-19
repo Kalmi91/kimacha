@@ -802,8 +802,6 @@ interface GrammarTopicProgress {
   total: number;
 }
 
-const GRAMMAR_KINDS: GrammarKind[] = ['choice', 'match', 'form', 'transform'];
-
 /**
  * The lesson's tasks can be started separately by kind, so the
  * game_progress itemId is a `${topicId}:${kind}` row (app/grammar/[topic]
@@ -839,7 +837,7 @@ export function doneGrammarTopicProgress(
   for (const [topicId, kinds] of perKind) {
     if (result.has(topicId)) continue; // the old row already means every kind is done
     const lesson = lessonFor(lang, topicId);
-    const required = lesson ? GRAMMAR_KINDS.filter((k) => grammarKindCounts(lesson)[k] > 0) : [];
+    const required = lesson ? lessonButtonKinds(lesson) : [];
     if (required.length === 0 || !required.every((k) => kinds.has(k))) continue;
     let correct = 0;
     let total = 0;
@@ -855,8 +853,8 @@ export function doneGrammarTopicProgress(
 
 /**
  * The existing task kinds of the lesson in the order of the lesson page's buttons
- * (including "why", unlike the "done" condition above): the lesson's % is
- * the average of these, a kind not yet started counts as 0.
+ * (the "done" condition above requires all of them, including the trial
+ * kinds): the lesson's % is the average of these, a kind not yet started counts as 0.
  */
 const LESSON_KIND_ORDER: readonly GrammarKind[] = ['choice', 'article', 'match', 'form', 'why', 'transform', 'spot', 'order', 'dictation'];
 
