@@ -12,6 +12,34 @@ module.exports = [
     rules: { 'no-empty': ['error', { allowEmptyCatch: false }] },
   },
   {
+    // File size ceiling: past 600 lines a file gets split (hook / view / styles) instead of growing.
+    files: ['**/*.{ts,tsx}'],
+    ignores: ['**/__tests__/**'],
+    rules: { 'max-lines': ['error', 600] },
+  },
+  {
+    // The files that were already over the ceiling when it was added are capped at their size then:
+    // they can only shrink. Lower a cap when its file gets smaller, never raise one.
+    files: ['lib/grammar/syllabus.ts'],
+    rules: { 'max-lines': ['error', 901] },
+  },
+  {
+    files: ['lib/i18n/en.ts'],
+    rules: { 'max-lines': ['error', 753] },
+  },
+  {
+    files: ['app/(tabs)/settings.tsx'],
+    rules: { 'max-lines': ['error', 743] },
+  },
+  {
+    files: ['lib/i18n/es.ts'],
+    rules: { 'max-lines': ['error', 694] },
+  },
+  {
+    files: ['components/grammar/GrammarDrill.tsx'],
+    rules: { 'max-lines': ['error', 627] },
+  },
+  {
     // Test files: jest.mock() calls are hoisted above imports by design, and a
     // module mock is a require() by definition, so the import-order and
     // no-require rules would flag every playthrough test for doing the only
