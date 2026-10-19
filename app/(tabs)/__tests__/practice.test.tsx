@@ -507,7 +507,7 @@ describe('Practice tab: feedback button', () => {
       const url = (global.fetch as jest.Mock).mock.calls[0][0] as string;
       const params = new URLSearchParams(url.split('?')[1]);
       expect(params.get('currentCard')).toContain(expected);
-      expect(params.get('languagePair')).toBe('en-es');
+      expect(params.get('languagePair')).toBe('en→es');
       // @ts-expect-error test-only cleanup of a global set above
       delete global.fetch;
     };

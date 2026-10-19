@@ -7,6 +7,7 @@ import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
 import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { t } from '@/lib/i18n';
+import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { hasVoiceFor, loadVoices, stop as stopSpeaking } from '@/lib/speech';
 import { useTheme } from '@/lib/ThemeContext';
@@ -237,7 +238,7 @@ export default function MockExamScreen() {
 
   // The 💬 button is on every part of the mock exam; `part` tells the Feedback sheet
   // exactly which part it is about (mock-exam:<level>:<part>).
-  const pair = `${target === 'es' ? 'en' : 'es'}→${target}`;
+  const pair = pairOf(target);
   const shell = (children: ReactNode, part?: string) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}

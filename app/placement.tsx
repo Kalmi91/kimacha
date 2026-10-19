@@ -7,6 +7,7 @@ import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
 import { getPcicTarget, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { t } from '@/lib/i18n';
+import { pairOf } from '@/lib/languagePair';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { levelProgress } from '@/lib/pcicLevels';
@@ -140,7 +141,7 @@ export default function PlacementScreen() {
   // The 💬 button is on every part of the placement test; `part` tells the Feedback sheet
   // exactly which part it is about (placement:<part>).
   const fbTarget = run?.target ?? getPcicTarget();
-  const pair = `${fbTarget === 'es' ? 'en' : 'es'}→${fbTarget}`;
+  const pair = pairOf(fbTarget);
   const shell = (children: ReactNode, part: string) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}

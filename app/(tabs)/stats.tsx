@@ -9,6 +9,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { getDb } from '@/lib/database';
 import { useBeta } from '@/lib/beta';
 import { t } from '@/lib/i18n';
+import { pairOf } from '@/lib/languagePair';
 import { languages } from '@/lib/languages';
 import {
   weeklyGoalProgress,
@@ -357,7 +358,7 @@ export default function StatsScreen() {
       </ScrollView>
 
       {/* the 💬 button goes into the navigator's header (right end), not over the list. */}
-      <FeedbackButton placement="header" level="-" languagePair="-" currentCard="stats-tab" />
+      <FeedbackButton placement="header" level="-" languagePair={pairOf(targetLang === 'en' ? 'en' : 'es')} currentCard="stats-tab" />
     </View>
   );
 }
