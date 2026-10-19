@@ -19,6 +19,7 @@ import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/sy
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
+import { countLearningToday } from '@/lib/learningDay';
 import { resolvedTensesFromLessons } from '@/lib/knownSentence';
 import { nearMissDistractors } from '@/lib/distractors';
 import { dropOrphanCards } from '@/lib/pcicSession';
@@ -181,6 +182,7 @@ export default function SentencesScreen() {
       // A build credits nothing: right = the sentence is done, wrong = it goes to the end of the round.
       const next = answerBuild(round, correct);
       await keepRound(next);
+      await countLearningToday();
       setRound(next);
       setSeq((n) => n + 1);
     } finally {
@@ -198,6 +200,7 @@ export default function SentencesScreen() {
       const next = answerType(round);
       await keepRound(next);
       await recordTypedWords(verdicts, xpV2);
+      await countLearningToday();
       for (const e of roundSentences(round)) doneKeys.current.add(sentenceKey(e));
       setRound(next);
       setSeq((n) => n + 1);
