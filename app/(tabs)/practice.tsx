@@ -103,7 +103,9 @@ export default function PracticeScreen() {
       at = 0;
       done = next ? next.questions.map(() => null) : [];
       // a new round is saved at once; no round (too few words) clears an old value.
-      void savePracticeRound(next ? newPracticeRound(next, dir, today) : null).catch(() => {});
+      void savePracticeRound(next ? newPracticeRound(next, dir, today) : null).catch(() => {
+        // the round on screen keeps its own state; a failed save only loses the resume point
+      });
     }
     setRoundDate(today);
     shownDate.current = today;
@@ -132,7 +134,9 @@ export default function PracticeScreen() {
   const persist = (at: number, done: (number | null)[]) => {
     if (!set) return;
     const round: PracticeRound = { v: 2, date: roundDate, target, ids: set.words.map((w) => w.itemId), qs: set.questions, step: at, picks: done };
-    void savePracticeRound(round).catch(() => {});
+    void savePracticeRound(round).catch(() => {
+      // the round on screen keeps its own state; a failed save only loses the resume point
+    });
   };
   const goTo = (at: number) => {
     stopSpeaking();

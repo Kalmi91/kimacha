@@ -12,7 +12,9 @@ export function useSessionProgress() {
   const persistRow = useCallback((gameId: string, itemId: string, state: string, data?: unknown) => {
     getDb()
       .setGameProgress(gameId, itemId, state, data)
-      .catch(() => {});
+      .catch(() => {
+        // see the comment above
+      });
   }, []);
   return { persistRow };
 }

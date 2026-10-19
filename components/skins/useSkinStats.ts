@@ -15,7 +15,9 @@ function usePolled(load: () => Promise<number>): number {
         .then((v) => {
           if (alive) setValue(v);
         })
-        .catch(() => {});
+        .catch(() => {
+          // a failed read keeps the last value; the next poll tries again
+        });
     };
     run();
     const timer = setInterval(run, REFRESH_MS);

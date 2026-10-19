@@ -157,7 +157,9 @@ export function useGrammarTopic() {
     void countLearningToday()
       .then(() => getDb().getStreak())
       .then((row) => setStreak(row?.current_count ?? 0))
-      .catch(() => {});
+      .catch(() => {
+        // a failed write or read leaves the streak shown as it was
+      });
   };
   // The lesson %: the average over ALL existing kinds, a kind not yet started counts as 0 (null: nothing done yet).
   // Provisional kinds do not pull the lesson % down (scoredKinds).
