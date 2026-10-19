@@ -87,5 +87,4 @@ const KText = forwardRef<ComponentRef<typeof RNText>, KTextProps>(function KText
   );
 });
 
-export default KText;
 export { KText, KText as Text };
