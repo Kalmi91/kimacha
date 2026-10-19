@@ -12,6 +12,10 @@ jest.mock('@/lib/speech', () => ({
 const mockBack = jest.fn();
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: mockBack, push: jest.fn() }),
+  useFocusEffect: (cb: () => void) => {
+    const { useEffect } = require('react');
+    useEffect(cb, []);
+  },
 }));
 
 jest.mock('react-native-safe-area-context', () => ({

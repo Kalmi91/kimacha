@@ -1,14 +1,13 @@
 import { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, View, Pressable, ActivityIndicator } from 'react-native';
 import { Text } from '@/components/KText';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
-import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { localDateString } from '@/lib/usageStats';
 import { hasLesson, syllabusTopic } from '@/lib/grammar/syllabus';
 import type { MistakesBatch } from '@/lib/mistakes/format';
@@ -58,7 +57,12 @@ export default function MistakesReportScreen() {
     setLoading(false);
   }, []);
 
-  useLoadOnMount(load);
+  // Reload every time the screen gains focus: coming back from the deck shows the new due number.
+  useFocusEffect(
+    useCallback(() => {
+      void load();
+    }, [load]),
+  );
 
   const header = (
     <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
