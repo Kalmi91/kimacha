@@ -213,6 +213,8 @@ async function launchChrome() {
       '--hide-scrollbars',
       '--mute-audio',
       '--force-device-scale-factor=1',
+      // The CI runner (ubuntu) has no usable Chrome sandbox for an unprivileged user.
+      ...(process.env.CI ? ['--no-sandbox'] : []),
       '--disable-background-timer-throttling',
       '--disable-renderer-backgrounding',
       '--disable-backgrounding-occluded-windows',
