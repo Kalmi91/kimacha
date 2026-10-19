@@ -60,7 +60,7 @@ import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { clearSentenceRound, loadSentenceRound, saveSentenceRound } from '@/lib/sentenceRound';
-import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
+import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
@@ -678,5 +678,35 @@ describe('the feedback button', () => {
     await typeCurrent(r);
     expect(r.getByText('Round done: 5 sentences')).toBeTruthy();
     expect(r.getByLabelText('Feedback')).toBeTruthy();
+  });
+});
+
+describe('the daily streak', () => {
+  const YESTERDAY = addDays(localDateString(), -1);
+  beforeEach(() => (getDb() as any).__setStreakForTest({ current_count: 4, last_date: YESTERDAY, longest_count: 4 }));
+
+  it('a built sentence counts the day (opening the tab does not); the typing and a second round the same day add nothing', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(await getDb().getStreak()).toEqual({ current_count: 4, last_date: YESTERDAY, longest_count: 4 });
+    await buildCurrent(r);
+    expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: localDateString(), longest_count: 5 });
+    for (let i = 0; i < 3; i++) await buildCurrent(r);
+    await typeCurrent(r);
+    fireEvent.press(r.getByTestId('sentences-more'));
+    await flush();
+    await typeCurrent(r);
+    expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: localDateString(), longest_count: 5 });
+  });
+
+  it('a typed sentence counts the day on its own (a round that is only the typing)', async () => {
+    await learnWords([3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(current(r)).toBe(TYPED);
+    expect(await getDb().getStreak()).toEqual({ current_count: 4, last_date: YESTERDAY, longest_count: 4 });
+    await typeCurrent(r);
+    expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: localDateString(), longest_count: 5 });
   });
 });

@@ -19,6 +19,7 @@ import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
+import { countLearningToday } from '@/lib/learningDay';
 import { resolvedTensesFromLessons } from '@/lib/knownSentence';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import {
@@ -142,6 +143,7 @@ export default function PracticeScreen() {
     const next = picks.map((p, i) => (i === step - 1 ? index : p));
     setPicks(next);
     persist(step, next);
+    void countLearningToday();
   };
   const readAloud = () => {
     if (!set) return;

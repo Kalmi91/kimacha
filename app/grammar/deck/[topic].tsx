@@ -12,6 +12,7 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { useSessionProgress } from '@/lib/useSessionProgress';
+import { countLearningToday } from '@/lib/learningDay';
 import type { Level } from '@/data/words';
 import { charDiff } from '@/lib/charDiff';
 import { strictAnswerMatch } from '@/lib/answerMatch';
@@ -190,6 +191,7 @@ export default function TableDeckScreen() {
     const next = answerCell(deck, current.id, checked.correct, nowMs, againDelaySec * 1000);
     setDeck(next);
     persist(next);
+    void countLearningToday();
     setTyped('');
     setChecked(null);
     setNow(nowMs);

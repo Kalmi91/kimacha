@@ -32,7 +32,7 @@ import { setLanguage } from '@/lib/i18n';
 import { parsePracticeRound } from '@/lib/practice/practiceRound';
 import { readingWordFor, resolveSet, type ResolvedQuestion } from '@/lib/practice/reading';
 import { speak } from '@/lib/speech';
-import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
+import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import PracticeScreen from '../practice';
@@ -527,6 +527,30 @@ describe('Practice tab: feedback button', () => {
     }
     expect(view.getByText('Questions done')).toBeTruthy();
     expect(view.getByLabelText('Feedback')).toBeTruthy();
+    view.unmount();
+  });
+});
+
+describe('Practice tab: the daily streak', () => {
+  const YESTERDAY = addDays(TODAY, -1);
+  beforeEach(() => (getDb() as any).__setStreakForTest({ current_count: 4, last_date: YESTERDAY, longest_count: 4 }));
+
+  it('the first answered question counts the day (reading the text does not); a second round the same day adds nothing', async () => {
+    await learnWords();
+    const view = await mount();
+    await toQuestions(view);
+    expect(await getDb().getStreak()).toEqual({ current_count: 4, last_date: YESTERDAY, longest_count: 4 });
+    await answer(view, 1);
+    expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: TODAY, longest_count: 5 });
+    await next(view);
+    for (let n = 2; n <= 5; n++) {
+      await answer(view, n);
+      await next(view);
+    }
+    await press(view, 'practice-again');
+    await toQuestions(view);
+    await answer(view, 1);
+    expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: TODAY, longest_count: 5 });
     view.unmount();
   });
 });
