@@ -321,6 +321,7 @@ const es: Strings = {
     send: 'Enviar',
     cancel: 'Cancelar',
     thanks: '¡Gracias!',
+    errorTitle: 'No se pudo enviar. Inténtalo de nuevo.',
   },
   // Kimacha Play: single en-es pair. This is no longer a
   // full UI translation, the hu/es/de translation files were cut. This file
