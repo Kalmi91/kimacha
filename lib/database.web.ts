@@ -92,6 +92,11 @@ class MemoryDB implements DB {
     this.userLevels.set(this.activePair, { level, correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 });
   }
 
+  // The streak row for a test (default: no streak yet). Not on the DB interface, same pattern as __setLevelForTest.
+  __setStreakForTest(streak: { current_count: number; last_date: string | null; longest_count: number } = { current_count: 0, last_date: null, longest_count: 0 }): void {
+    this.streak = streak;
+  }
+
   private meta = { userId: '', firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
 
   // first open of the day (memory mirror; a web reload counts as a new day).

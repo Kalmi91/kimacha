@@ -12,6 +12,7 @@ import { betterBest, kindBestKey, kindProgressFromRows, kindRunKey, lessonScore 
 import { speakSequence, stopSpeaking } from '@/lib/speech';
 import { splitByMarkers } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
+import { countLearningToday } from '@/lib/learningDay';
 import type { RoundStats } from '@/components/grammar/GrammarDrill';
 import { useDockSlot } from '@/components/learn/DockSlot';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -151,6 +152,12 @@ export function useGrammarTopic() {
   const saveRow = (itemId: string, state: string, data: unknown) => {
     setProgressRows((prev) => [...prev.filter((r) => r.itemId !== itemId), { itemId, state, data }]);
     persistRow(GRAMMAR_PROGRESS_KEY, itemId, state, data);
+    // Every row saved here comes from an answered task (a drill step, a finished round, a lesson test), so it counts
+    // for the daily streak; the round-end screen shows the streak, so it is read again after the write.
+    void countLearningToday()
+      .then(() => getDb().getStreak())
+      .then((row) => setStreak(row?.current_count ?? 0))
+      .catch(() => {});
   };
   // The lesson %: the average over ALL existing kinds, a kind not yet started counts as 0 (null: nothing done yet).
   // Provisional kinds do not pull the lesson % down (scoredKinds).
