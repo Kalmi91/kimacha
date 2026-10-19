@@ -36,6 +36,9 @@ const GRADUATE_INTERVAL_DAYS = 1;
 const EASY_LEARNING_INTERVAL_DAYS = 4;
 export const DEFAULT_NEW_LIMIT = 20;
 export const KNOWN_INTERVAL_DAYS = 60;
+// ceiling of the review interval (10 years): without it 'good' multiplies the interval
+// without bound and, after ~20 in a row, `due` becomes an invalid date (NaN).
+export const MAX_INTERVAL_DAYS = 3650;
 
 export function addDays(ymd: string, n: number): string {
   const [y, m, d] = ymd.split('-').map(Number);
@@ -123,20 +126,20 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
       next.due = today;
       break;
     case 'hard': {
-      const interval = Math.max(card.interval + 1, Math.round(card.interval * 1.2));
+      const interval = Math.min(MAX_INTERVAL_DAYS, Math.max(card.interval + 1, Math.round(card.interval * 1.2)));
       next.interval = interval;
       next.ease = Math.max(EASE_FLOOR, card.ease - 0.15);
       next.due = addDays(today, interval);
       break;
     }
     case 'good': {
-      const interval = Math.max(card.interval + 1, Math.round(card.interval * card.ease));
+      const interval = Math.min(MAX_INTERVAL_DAYS, Math.max(card.interval + 1, Math.round(card.interval * card.ease)));
       next.interval = interval;
       next.due = addDays(today, interval);
       break;
     }
     case 'easy': {
-      const interval = Math.max(card.interval + 1, Math.round(card.interval * card.ease * 1.3));
+      const interval = Math.min(MAX_INTERVAL_DAYS, Math.max(card.interval + 1, Math.round(card.interval * card.ease * 1.3)));
       next.interval = interval;
       next.ease = Math.max(EASE_FLOOR, card.ease + 0.15);
       next.due = addDays(today, interval);
