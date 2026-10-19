@@ -12,6 +12,19 @@ module.exports = [
     rules: { 'no-empty': ['error', { allowEmptyCatch: false }] },
   },
   {
+    // Colors come from the theme tokens (constants/Colors.ts: `colors.successFill`, `colors.card` ...), not from a hex
+    // literal in a screen or component. The literals that were already there are counted in eslint-suppressions.json:
+    // that count can only go down (`npx eslint . --prune-suppressions` after removing one).
+    files: ['app/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}'],
+    ignores: ['**/__tests__/**'],
+    rules: {
+      'no-restricted-syntax': [
+        'error',
+        { selector: 'Literal[value=/^#[0-9a-fA-F]{3,8}$/]', message: 'Take the color from the theme tokens (constants/Colors.ts), not a hex literal.' },
+      ],
+    },
+  },
+  {
     // File size ceiling: past 600 lines a file gets split (hook / view / styles) instead of growing.
     files: ['**/*.{ts,tsx}'],
     ignores: ['**/__tests__/**'],

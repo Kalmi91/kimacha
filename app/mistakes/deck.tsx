@@ -238,8 +238,8 @@ export default function MistakesDeckScreen() {
                     style={({ pressed }) => [
                       styles.gradeBtn,
                       {
-                        backgroundColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : gr === 'good' ? '#38BDF8' : '#1D4ED8',
-                        borderColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
+                        backgroundColor: pressed ? (gr === 'good' ? colors.successFill : '#EF4444') : gr === 'good' ? '#38BDF8' : '#1D4ED8',
+                        borderColor: pressed ? (gr === 'good' ? colors.successFill : '#EF4444') : isPre ? colors.text : 'transparent',
                         borderWidth: isPre ? 3 : 1,
                       },
                     ]}
@@ -258,7 +258,7 @@ export default function MistakesDeckScreen() {
         label={checked ? s.pcic.next(s.pcic[nextGrade]) : `✓ ${s.card.check}`}
         onPress={checked ? () => handleGrade(nextGrade) : handleCheck}
         tone={checked ? 'next' : 'check'}
-        color={checked ? '#22C55E' : undefined}
+        color={checked ? colors.successFill : undefined}
         bottom={dockLift}
         colors={colors}
         onHeight={setDockH}

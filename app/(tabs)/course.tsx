@@ -305,12 +305,12 @@ export default function GrammarSyllabusScreen() {
                         const badgeColor =
                           badgePct !== null
                             ? badgePct >= 80
-                              ? '#22C55E'
+                              ? colors.successFill
                               : badgePct >= 50
                                 ? colors.warningFill
                                 : colors.tabIconDefault
                             : p?.state === 'done'
-                              ? '#22C55E'
+                              ? colors.successFill
                               : colors.tabIconDefault;
                         return (
                           <Pressable
@@ -324,7 +324,7 @@ export default function GrammarSyllabusScreen() {
                                 backgroundColor: colors.card,
                                 opacity: !written2 ? 0.45 : 1,
                               },
-                              p?.state === 'done' ? { borderLeftWidth: 4, borderLeftColor: '#22C55E' } : null,
+                              p?.state === 'done' ? { borderLeftWidth: 4, borderLeftColor: colors.successFill } : null,
                             ]}
                           >
                             <View style={{ flex: 1 }}>

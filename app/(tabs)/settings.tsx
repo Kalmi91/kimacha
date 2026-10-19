@@ -420,7 +420,7 @@ export default function SettingsScreen() {
         <Text style={[styles.wordsOnlyLabel, { color: colors.text }, stepLabel]}>{s.settings.weeklyGoal}</Text>
         <View style={styles.goalStepper}>
           <StepBtn label="−" accessibilityLabel={s.a11y.weeklyGoal.down} onPress={() => handleWeeklyGoalChange(-WEEKLY_GOAL_STEP_MINUTES)} />
-          <Text style={[styles.goalValue, { color: goalReached ? '#22C55E' : colors.text }]}>
+          <Text style={[styles.goalValue, { color: goalReached ? colors.successFill : colors.text }]}>
             {s.settings.weeklyGoalHours(String(Math.round(weeklyGoal / 60)))}
             {goalReached ? ` ${s.settings.weeklyGoalDoneTag}` : ''}
           </Text>

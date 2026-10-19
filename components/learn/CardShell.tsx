@@ -51,7 +51,7 @@ function CardBody({ compact, chip, chipTone = 'neutral', onPress, colors, childr
     >
       {chip && (
         <View style={[styles.lapChip, { backgroundColor: colors.background }]}>
-          <Text style={[styles.lapChipText, { color: chipTone === 'new' ? legibleOn('#22C55E', colors.background) : colors.tabIconDefault }]}>
+          <Text style={[styles.lapChipText, { color: chipTone === 'new' ? legibleOn(colors.successFill, colors.background) : colors.tabIconDefault }]}>
             {chip}
           </Text>
         </View>

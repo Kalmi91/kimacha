@@ -256,7 +256,7 @@ export default function TableDeckScreen() {
     <SegmentBar testID="tabledeck-segments" filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalBar} />
   ) : (
     <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-      <View style={[styles.progressFill, { backgroundColor: '#22C55E', width: `${pct}%` }]} />
+      <View style={[styles.progressFill, { backgroundColor: colors.successFill, width: `${pct}%` }]} />
     </View>
   );
 
