@@ -1,3 +1,5 @@
+const PER_FILE = { statements: 95, branches: 90, functions: 95, lines: 95 };
+
 // jest-expo wires the RN/Expo transform, module mappers and jsdom-free RN env.
 module.exports = {
   preset: 'jest-expo',
@@ -19,5 +21,14 @@ module.exports = {
   // 84.4 functions, 89.5 lines), so `test:ci` fails when coverage regresses.
   coverageThreshold: {
     global: { statements: 86, branches: 82, functions: 82, lines: 87 },
+    // Per file for the modules whose bugs corrupt a learner's data, so an untested new branch there
+    // cannot hide in the global average. Measured 2026-10-19 (statements/branches/functions/lines):
+    // sm2 97/92/100/97, usageStats 100/93/100/100, dailyXp 100/96/100/100, learningDay 100/100/100/100,
+    // db/migrations 100/100/100/100. These files are not part of the global figures above.
+    './lib/sm2.ts': PER_FILE,
+    './lib/dailyXp.ts': PER_FILE,
+    './lib/usageStats.ts': PER_FILE,
+    './lib/learningDay.ts': PER_FILE,
+    './lib/db/migrations.ts': PER_FILE,
   },
 };
