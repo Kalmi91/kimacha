@@ -101,7 +101,7 @@ describe('OnboardingScreen: language and level step', () => {
     // B1 = en/b1.json, so it is offered in the es→en direction too.
     expect(getByText('B1')).toBeTruthy();
     // A1 = en a0+a1, A2 = en a2, the "no words yet" row does not appear.
-    expect(queryByText('Todavía no hay palabras.')).toBeNull();
+    expect(queryByText('Todavía no hay palabras aquí')).toBeNull();
     // es→en B2 and C1 are empty, the "0 items = we do not offer it" filter skips them.
     expect(queryByText('B2')).toBeNull();
     expect(queryByText('C1')).toBeNull();
