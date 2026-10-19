@@ -133,12 +133,11 @@ describe('wordCellsForLesson Spanish direction (en→es, hu→es) unchanged', ()
   // the Spanish word deck is built only from the table's words,
   // so instead of the earlier fixed samples (ser-estar 30 cards, glossary::boda...) the
   // invariant: none of the cards is a glossary-only word, and the counts are below the threshold.
-  it('the deck of ser-estar, gustar, articulos-genero no longer contains glossary-only words', () => {
+  it('the deck of ser-estar, gustar no longer contains glossary-only words', () => {
     const cards = wordCellsForLesson(lessonFor('es', 'ser-estar'));
     expect(cards.some((c) => c.id === 'glossary::boda' || c.id === 'glossary::fiesta')).toBe(false);
     expect(cards.length).toBeLessThan(WORD_DECK_MIN_CARDS);
     expect(wordCellsForLesson(lessonFor('es', 'gustar')).length).toBeLessThan(WORD_DECK_MIN_CARDS);
-    expect(wordCellsForLesson(lessonFor('es', 'articulos-genero')).length).toBeLessThan(WORD_DECK_MIN_CARDS);
   });
 });
 

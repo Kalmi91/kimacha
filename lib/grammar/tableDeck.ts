@@ -288,10 +288,14 @@ const PCIC_LEVEL_CEILING: Record<Level, PcicLevel> = {
 const pcicIndexCache = new Map<Level, Map<string, { es: string; en: string }>>();
 
 // An index keyed on a single dictionary form (id, es, en), cumulative from A1 up to the
-// lesson's level, with single-token (space-free) entries only: a word taken from a
+// lesson's level, with single-token (space-free) entries only, plus the article + noun
+// entries ("la madre"), which are indexed on the bare noun ("madre") because a table cell
+// holds the bare word; the card keeps the article form. A word taken from a
 // sentence can match exactly only another one-word PCIC form, the PCIC 'sentence'
-// entries and multi-word expressions are not a source here (the author can put
+// entries and other multi-word expressions are not a source here (the author can put
 // those in the glossary if needed).
+const ARTICLE_NOUN = /^(?:el|la|los|las) (\S+)$/i;
+
 function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
   const cached = pcicIndexCache.get(level);
   if (cached) return cached;
@@ -301,8 +305,9 @@ function pcicWordIndex(level: Level): Map<string, { es: string; en: string }> {
     for (const item of pcicItemsForLevel(PCIC_LEVELS[i])) {
       if (item.kind === 'sentence') continue;
       const main = item.es.split(' / ')[0]; // for a slash answer the main form is the dictionary word
-      if (main.includes(' ')) continue;
-      const key = normalizeWordToken(main);
+      const bare = main.includes(' ') ? ARTICLE_NOUN.exec(main)?.[1] : main;
+      if (!bare) continue;
+      const key = normalizeWordToken(bare);
       if (!key || index.has(key)) continue;
       index.set(key, { es: main, en: item.en });
     }

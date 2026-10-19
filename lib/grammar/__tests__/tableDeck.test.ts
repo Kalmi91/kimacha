@@ -359,17 +359,26 @@ describe('wordCellsForLesson (only the table words)', () => {
       const cards = wordCellsForLesson(lesson);
       expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
       for (const c of cards) {
-        expect(tokens.has(normalizeWordToken(c.es))).toBe(true);
+        // an article noun card ("el tiempo") is a table word through its bare noun ("tiempo")
+        expect(tokens.has(normalizeWordToken(c.es.replace(/^(?:el|la|los|las) /i, '')))).toBe(true);
       }
     }
   });
 
-  // (articulos-genero again consists of the lesson's own words, as before; the nouns are only in the el / la exercise)
-  it('articulos-genero and its peers lost the deck: they stay below the threshold, no entry (clases-de-palabras regained it with words moved to the lesson level)', () => {
-    for (const id of ['articulos-genero', 'sustantivo-numero', 'hay-estar', 'pronombres-od']) {
+  // (articulos-genero and sustantivo-numero got a deck once the PCIC article nouns ("la madre") were indexed on the bare noun)
+  it('hay-estar and pronombres-od stay below the threshold, no entry (clases-de-palabras regained it with words moved to the lesson level)', () => {
+    for (const id of ['hay-estar', 'pronombres-od']) {
       expect(wordCellsForLesson(lessonFor('es', id)).length).toBeLessThan(WORD_DECK_MIN_CARDS);
     }
     expect(wordCellsForLesson(lessonFor('es', 'clases-de-palabras')).length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
+  });
+
+  it('articulos-genero and sustantivo-numero: the article nouns of their tables give a word deck, with the article on the card', () => {
+    for (const id of ['articulos-genero', 'sustantivo-numero']) {
+      const cards = wordCellsForLesson(lessonFor('es', id));
+      expect(cards.length).toBeGreaterThanOrEqual(WORD_DECK_MIN_CARDS);
+      expect(cards.some((c) => /^(?:el|la|los|las) /i.test(c.es))).toBe(true);
+    }
   });
 
   it('no word deck even on bad input', () => {
