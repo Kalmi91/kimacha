@@ -2,17 +2,12 @@
 // (LessonBody) renders, and reading aloud goes through a single play<->stop button,
 // not through the real engine of lib/speech, which is mocked out here.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
   usePathname: () => '/grammar',
@@ -28,14 +23,9 @@ import { act, fireEvent, render, screen, within } from '@testing-library/react-n
 import { getDb } from '@/lib/database.web';
 import { speakSequence } from '@/lib/speech';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 describe('grammar course, V2 pilot lesson (ser-estar)', () => {
   beforeEach(async () => {

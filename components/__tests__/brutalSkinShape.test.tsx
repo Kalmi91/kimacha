@@ -2,9 +2,8 @@
 // take the border width / style / colour, the corner and the shadow from the active theme's `shape`;
 // the Neo-brutal theme's current values (themePalette.test.tsx) are unchanged.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { act, render, screen } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import { Text, View } from 'react-native';
 import * as RN from 'react-native';
 
@@ -13,14 +12,9 @@ import type { SkinId } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { grammarColorsFor } from '@/lib/grammarColors';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async () => {
-  for (let i = 0; i < 4; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 const flat = (id: string) => RN.StyleSheet.flatten(screen.getByTestId(id).props.style);
 

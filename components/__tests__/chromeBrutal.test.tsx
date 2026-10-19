@@ -1,7 +1,6 @@
 // StatusBarStrip, UsageToast and MistakesEntry on the brutalist palette
 // (SegmentBar / ink line / BrutalBox, corner 0), today's look on the classic palette.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
 jest.mock('expo-status-bar', () => ({ StatusBar: () => null }));
 jest.mock('@/lib/usageTimer', () => {
@@ -30,16 +29,11 @@ import { ThemeProvider } from '@/lib/ThemeContext';
 import StatusBarStrip from '../StatusBarStrip';
 import UsageToast from '../UsageToast';
 import MistakesEntry from '../learn/MistakesEntry';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 const wrap = (ui: React.ReactElement) => <ThemeProvider>{ui}</ThemeProvider>;
 

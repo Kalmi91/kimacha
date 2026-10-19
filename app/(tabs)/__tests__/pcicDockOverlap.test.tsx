@@ -3,19 +3,9 @@
 // above the tab bar, and a scroller that only had bottom padding let the card show through under / below the bar,
 // over "Next". The scroller's viewport has to end at the bar's top edge. Mock pattern: pcicCardShell.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
-jest.mock('expo-router', () => ({
-  useFocusEffect: (cb: () => void) => {
-    const { useEffect } = require('react');
-    useEffect(cb, []);
-  },
-}));
+jest.mock('expo-router', () => require('@/test-utils/mocks').focusEffectRouterMock());
 
 const NAV_BAR = 48;
 jest.mock('react-native-safe-area-context', () => ({
@@ -47,14 +37,9 @@ import { DeviceEventEmitter, KeyboardAvoidingView, ScrollView, StyleSheet, TextI
 import { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { getDb } from '@/lib/database';
 import PcicScreen from '../index';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 const DOCK_H = DOCK_RESERVE;
 

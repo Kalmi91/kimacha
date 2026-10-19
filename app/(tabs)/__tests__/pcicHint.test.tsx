@@ -2,19 +2,9 @@
 // part highlighted, without the asterisks) and the "also: b · c" row after Check (learn-also, for a
 // slash-separated answer). Mock pattern: app/(tabs)/__tests__/pcicNote.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
-jest.mock('expo-router', () => ({
-  useFocusEffect: (cb: () => void) => {
-    const { useEffect } = require('react');
-    useEffect(cb, []);
-  },
-}));
+jest.mock('expo-router', () => require('@/test-utils/mocks').focusEffectRouterMock());
 
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
@@ -35,20 +25,15 @@ jest.mock('@/data/pcic', () => {
   };
 });
 
-import { act, fireEvent, render, within } from '@testing-library/react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
 import { StyleSheet, TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import PcicScreen from '../index';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 // Text of the nested Text elements in one string (the children can be elements too).
 const textOf = (node: unknown): string => {

@@ -1,7 +1,6 @@
 // Invariants of the SRS scheduler under long seeded-random grade sequences: sm2Review and
 // recordPracticeResult (memory db). Deterministic: mulberry32 with fixed seeds.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { getDb } from '@/lib/database';
 import { addDays, MAX_INTERVAL_DAYS, sm2MarkKnown, sm2NewCard, sm2Review, type Sm2Card, type Sm2Grade } from '@/lib/sm2';

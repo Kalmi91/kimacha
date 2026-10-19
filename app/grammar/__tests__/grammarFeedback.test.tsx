@@ -4,17 +4,12 @@
 // empty), and the page of a not-yet-written lesson. On a type-in question the 💬 sits above the docked Check bar
 // (bottomOffset). Pattern: app/__tests__/examFeedback.test.tsx + lessonTest.test.tsx + tableDeck.play.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
@@ -39,7 +34,7 @@ jest.mock('@/components/FeedbackModal', () => {
   };
 });
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import { getDb } from '@/lib/database.web';
@@ -50,19 +45,14 @@ import { tableCellsForLesson } from '@/lib/grammar/tableDeck';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import GrammarLessonScreen from '../[topic]';
 import TableDeckScreen from '../deck/[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(60000);
 
 const TOPIC = 'presente-regular';
 const NOW = 1700000000000;
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 const press = async (testID: string) => {
   fireEvent.press(screen.getByTestId(testID));
   await flush();

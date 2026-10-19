@@ -2,7 +2,6 @@
 // wrong-words / review-again (with and without a written lesson) / doubtful
 // sections. Mock pattern: app/(tabs)/__tests__/pcicCardShell.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 const mockPush = jest.fn();
 const mockBack = jest.fn();
@@ -14,20 +13,15 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-import { act, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import sample from '@/lib/mistakes/__fixtures__/sample.json';
 import MistakesReportScreen from '../index';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 describe('Report (app/mistakes/index.tsx)', () => {
   it('no batch loaded -> empty state text, no "Practice" button', async () => {

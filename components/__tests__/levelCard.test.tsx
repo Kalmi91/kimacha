@@ -2,25 +2,19 @@
 // level A1-C1 and the progress toward the next one, in the UI language (EN / ES), with accessibility labels.
 // Mock pattern: statsBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { act, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import type { ProgressLevel } from '@/lib/progressLevel';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import LevelCard from '../stats/LevelCard';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 const renderCard = async (progress: ProgressLevel) => {
   const view = render(

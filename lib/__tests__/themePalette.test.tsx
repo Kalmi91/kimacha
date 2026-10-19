@@ -2,7 +2,6 @@
 // the default is brand, the choice is persistent (db), the mode (paper / ink)
 // follows the Auto / Light / Dark setting, and classic gives today's colors.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, render, screen } from '@testing-library/react-native';
 import { useEffect } from 'react';
@@ -15,6 +14,7 @@ import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/gra
 import { getDb } from '@/lib/database';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { makeFlush } from '@/test-utils/flush';
 
 let ctx: ReturnType<typeof useTheme>;
 let gc: ReturnType<typeof useGrammarColors>;
@@ -30,13 +30,7 @@ function Probe() {
   return <Text>probe</Text>;
 }
 
-const flush = async () => {
-  for (let i = 0; i < 4; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 describe('palette infrastructure', () => {
   let scheme: jest.SpyInstance;

@@ -3,7 +3,6 @@
 // bar, locked = dashed box. The classic palette is today's look.
 // Mock pattern: course.play.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
@@ -18,7 +17,7 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { StyleSheet } from 'react-native';
 
 import { PALETTE_FILLS } from '@/constants/GrammarPalettes';
@@ -26,14 +25,9 @@ import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 const style = (id: string) => StyleSheet.flatten(screen.getByTestId(id).props.style);
 

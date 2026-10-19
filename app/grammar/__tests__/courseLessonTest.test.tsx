@@ -2,7 +2,6 @@
 // gets a "Test passed" mark next to the %; a failed or not-attempted one does not.
 // Mock pattern: courseBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
@@ -17,7 +16,7 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-import { act, render, screen } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import { getDb } from '@/lib/database.web';
@@ -25,14 +24,9 @@ import { t } from '@/lib/i18n';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { lessonTestKey, mergeLessonTestResult } from '@/lib/grammar/lessonTest';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 describe.each(['brand', 'classic'] as const)('course list: "Test passed" mark (%s palette)', (palette) => {
   beforeEach(async () => {

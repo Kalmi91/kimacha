@@ -1,17 +1,12 @@
 // the lesson page gives a separate button per kind, only for
 // the kinds the lesson actually has items for.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 // jest.mock factories may only touch variables prefixed with "mock".
 let mockTopicId = 'ser-estar';
@@ -39,7 +34,7 @@ jest.mock('@/lib/games/content', () => {
   };
 });
 
-import { act, fireEvent, render, screen, within } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
@@ -48,14 +43,9 @@ import { buildGrammarRound } from '@/lib/games/grammarChoice';
 import { isTransformItem } from '@/lib/games/content';
 import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 describe('grammar lesson screen: per-kind drill buttons', () => {
   beforeEach(async () => {

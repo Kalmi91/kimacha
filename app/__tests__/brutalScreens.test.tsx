@@ -5,7 +5,6 @@
 // the default state, as they did in their own files. Mock pattern: settingsPalette.test.tsx,
 // onboarding.test.tsx, credits.test.tsx, tableDeck.play.test.tsx, lessonV2.play.test.tsx, FeedbackModal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
 jest.mock('expo-symbols', () => ({ SymbolView: () => null }));
 jest.mock('expo-file-system', () => ({ File: jest.fn(), Paths: { cache: '' } }));
@@ -16,11 +15,7 @@ jest.mock('expo-speech', () => ({
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('expo-router', () => {
   const React = require('react');
   // The tab bar test renders only the tabBarIcons.
@@ -53,7 +48,7 @@ jest.mock('expo-router', () => {
   };
 });
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { StyleSheet } from 'react-native';
 
 import FeedbackButton from '@/components/FeedbackModal';
@@ -71,16 +66,11 @@ import GrammarLessonScreen from '@/app/grammar/[topic]';
 import TableDeckScreen from '@/app/grammar/deck/[topic]';
 import MistakesReportScreen from '@/app/mistakes/index';
 import OnboardingScreen from '@/app/onboarding';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 type Step = {
   has?: string[]; // testID present, exactly one

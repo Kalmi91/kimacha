@@ -6,7 +6,6 @@
 // level choice). Mock pattern: app/(tabs)/__tests__/pcicSpeak.test.tsx.
 // The language choice step was added before "Get started".
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 const mockReplace = jest.fn();
 const mockPush = jest.fn();

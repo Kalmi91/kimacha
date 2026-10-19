@@ -2,12 +2,11 @@
 // graffiti themes: the slots draw the decoration around the base content (testIDs: decor- = pure decoration,
 // skin- = an element wrapping content / showing real data), plain View/Text, no SVG.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import fs from 'fs';
 import path from 'path';
 
-import { act, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import * as RN from 'react-native';
 import { Text } from 'react-native';
 
@@ -19,16 +18,11 @@ import { Text as KText } from '@/components/KText';
 import { SKINS, type SkinId } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async () => {
-  for (let i = 0; i < 6; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 const flat = (style: unknown) => RN.StyleSheet.flatten(style as RN.StyleProp<RN.ViewStyle & RN.TextStyle>);
 

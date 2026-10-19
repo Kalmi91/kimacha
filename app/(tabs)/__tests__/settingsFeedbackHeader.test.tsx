@@ -1,7 +1,6 @@
 // The 💬 button is in the navigator's header (right end), not floating over the Settings list: no row or toggle can sit
 // under it, and the list scroller keeps the whole screen height. Mock pattern: settingsReset.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
@@ -14,23 +13,18 @@ jest.mock('expo-sharing', () => ({}));
 jest.mock('expo-document-picker', () => ({}));
 
 import { ScrollView, StyleSheet } from 'react-native';
-import { act, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
 import { setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { FeedbackHeaderProvider } from '@/lib/feedbackHeader';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import SettingsScreen from '../settings';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async () => {
-  for (let i = 0; i < 8; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('Settings: the 💬 button is in the header', () => {
   beforeEach(async () => {

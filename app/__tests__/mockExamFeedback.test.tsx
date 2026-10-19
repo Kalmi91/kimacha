@@ -2,7 +2,6 @@
 // card id says which part it is (mock-exam:<level>:<part>).
 // Mock pattern: mockExam.test.tsx; the FeedbackModal here only prints the `currentCard` it receives.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ level: 'A1' }),
@@ -69,23 +68,18 @@ jest.mock('@/lib/exam/mock/build', () => ({
 }));
 const mockExamRef: { current: MockExam } = { current: exam() };
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { MOCK_EXAM_PROGRESS_KEY } from '@/lib/exam/mock/session';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import MockExamScreen from '../mock-exam';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(60000);
 
-const flush = async (times = 10) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(10);
 
 describe('Mock exam: feedback button on every part', () => {
   beforeEach(async () => {

@@ -9,6 +9,8 @@ import { validateBackupPayload } from '../backup';
 
 let mockDriver: SqlJsDriver;
 jest.mock('expo-sqlite', () => ({ openDatabaseAsync: async () => mockDriver }));
+// jest.setup.js maps the database to the sql.js one; this test is about the native layer.
+jest.unmock('../database');
 
 const DEAD_TABLES = ['cards', 'card_attempts', 'spelling_list', 'pcic_spelling_list'];
 const LIVE_TABLES = [

@@ -4,17 +4,12 @@
 // app/grammar/__tests__/lessonV2.play.test.tsx and
 // app/(tabs)/__tests__/pcicCardShell.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
@@ -25,21 +20,16 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'ser-estar' }),
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY, lessonFor } from '@/lib/grammar/syllabus';
 import { tableCellsForLesson } from '@/lib/grammar/tableDeck';
 import { hashString, shuffleArray } from '@/lib/shuffle';
 import TableDeckScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 const cells = tableCellsForLesson(lessonFor('es', 'ser-estar')!);
 

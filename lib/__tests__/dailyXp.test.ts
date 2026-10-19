@@ -1,7 +1,6 @@
 // Daily XP (first slice): points per grade, the per-day total (midnight reset),
 // the undo, and the one-time daily goal event. Memory db.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { getDb } from '../database.web';
 import {

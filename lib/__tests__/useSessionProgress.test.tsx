@@ -1,6 +1,5 @@
 // The one path for a screen's game_progress row writes: the row goes to the DB as given, a failed save does not throw.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { renderHook } from '@testing-library/react-native';
 

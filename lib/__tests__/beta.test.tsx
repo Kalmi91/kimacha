@@ -1,7 +1,6 @@
 // Beta switches (lib/beta.ts): all off by default, saved in the DB, the hook follows setBeta, and they
 // ride along in the backup (an old backup without them loads with every switch off).
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, renderHook } from '@testing-library/react-native';
 

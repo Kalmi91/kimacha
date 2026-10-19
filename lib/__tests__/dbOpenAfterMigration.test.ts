@@ -24,6 +24,8 @@ const mockFakeDb = {
 };
 
 jest.mock('expo-sqlite', () => ({ openDatabaseAsync: () => mockOpenDatabase() }));
+// jest.setup.js maps the database to the sql.js one; this test is about the native layer.
+jest.unmock('../database');
 jest.mock('../db/migrations', () => ({ runMigrations: () => mockRunMigrations() }));
 
 import type { getDb as GetDb } from '../database';

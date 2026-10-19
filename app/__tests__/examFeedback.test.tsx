@@ -2,7 +2,6 @@
 // card id says which part it is (exam:<level>:<part>); on a typing question the 💬
 // sits above the docked Check bar (bottomOffset). Pattern: mockExamFeedback.test.tsx + exam.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ level: 'A1' }),
@@ -25,23 +24,18 @@ const mockExam = [
 ];
 jest.mock('@/lib/exam/builder', () => ({ buildExam: () => mockExam }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { EXAM_PROGRESS_KEY } from '@/lib/exam/result';
 import { seedA1ExamState } from '@/lib/exam/devSeed';
 import ExamScreen from '../exam';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('Level exam: feedback button on every part', () => {
   beforeEach(async () => {

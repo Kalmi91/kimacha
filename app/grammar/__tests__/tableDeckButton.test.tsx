@@ -2,17 +2,12 @@
 // lesson actually has a conjugation table (lib/grammar/tableDeck.ts already
 // excludes reference GridTables and legacy schema-1 lessons).
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 let mockTopicId = 'ser-estar';
 const mockPush = jest.fn();
@@ -26,18 +21,13 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: mockTopicId }),
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 describe('grammar lesson screen: table-deck button', () => {
   beforeEach(async () => {
