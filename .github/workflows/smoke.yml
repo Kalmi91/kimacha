@@ -7,7 +7,12 @@ name: Smoke
 on:
   push:
     branches: [main]
+  # A pull request that only touches documentation cannot break the bundle.
   pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'LICENSE'
 
 permissions:
   contents: read
