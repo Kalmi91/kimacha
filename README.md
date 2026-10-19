@@ -105,7 +105,7 @@ All workflows are in `.github/workflows/`. Superseded runs on the same ref are c
 
 | Workflow | Trigger | What it does |
 | --- | --- | --- |
-| `ci.yml` | push to `main`, pull request | typecheck and lint in one job, Jest with coverage in another |
+| `ci.yml` | push to `main`, pull request | typecheck and lint in one job, the data audits in another, Jest in a third (with coverage only on push to `main`) |
 | `smoke.yml` | push to `main`, pull request | bundles the app for Android with Metro, so a broken import or data file fails the check; also bundles the Play flavour and fails if the feedback endpoint is in it |
 | `hygiene.yml` | push to `main`, pull request | no agent working documents, no file both tracked and ignored, Conventional Commits, no AI attribution lines, release tags exist |
 | `android.yml` | manual | `expo prebuild`, then a debug APK with Gradle |

@@ -68,11 +68,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Coverage and its threshold (jest.config.js) are measured on main only;
+      # a pull request runs the plain suite, which is faster.
       - name: Run tests
+        if: github.event_name == 'pull_request'
+        run: npx jest --ci --maxWorkers=2
+
+      - name: Run tests with coverage
+        if: github.event_name != 'pull_request'
         run: npm run test:ci
 
       - name: Upload coverage
-        if: always()
+        if: always() && github.event_name != 'pull_request'
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
           name: coverage
