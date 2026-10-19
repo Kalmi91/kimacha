@@ -263,7 +263,7 @@ export default function PcicCardView({
             <Text style={styles.tileNumber}>{sessionAnswered}</Text>
             <Text style={styles.tileLabel}>{s.pcic.tileAnswered}</Text>
           </View>
-          <View style={[styles.tile, { backgroundColor: '#22C55E' }]}>
+          <View style={[styles.tile, { backgroundColor: colors.successFill }]}>
             <Text style={styles.tileNumber}>{sessionNew}</Text>
             <Text style={styles.tileLabel}>{s.pcic.tileNew}</Text>
           </View>
@@ -539,7 +539,7 @@ export default function PcicCardView({
         label={grade && nextGrade ? s.pcic.next(s.pcic[nextGrade]) : `✓ ${s.card.check}`}
         onPress={grade && nextGrade ? () => handleGrade(nextGrade) : handleCheck}
         tone={grade ? 'next' : 'check'}
-        color={grade ? '#22C55E' : undefined}
+        color={grade ? colors.successFill : undefined}
         bottom={dockLift}
         colors={colors}
         onHeight={setDockH}

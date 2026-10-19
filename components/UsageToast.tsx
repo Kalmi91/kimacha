@@ -147,7 +147,7 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
       testID="usage-toast-pill"
       style={[
         styles.pill,
-        { backgroundColor: isMilestone ? legibleOn('#22C55E', '#FFFFFF') : colors.tint, opacity, transform: [{ translateY }] },
+        { backgroundColor: isMilestone ? legibleOn(colors.successFill, '#FFFFFF') : colors.tint, opacity, transform: [{ translateY }] },
         isMilestone && styles.milestonePill,
       ]}
     >

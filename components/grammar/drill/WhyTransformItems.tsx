@@ -183,8 +183,8 @@ export function WhyDrillItem({
           let bg = colors.card;
           let border = colors.tabIconDefault;
           if (answered && isRightAnswer) {
-            bg = '#22C55E22';
-            border = '#22C55E';
+            bg = colors.successFill + '22';
+            border = colors.successFill;
           } else if (answered && isPicked && !isRightAnswer) {
             bg = '#EF444422';
             border = '#EF4444';
@@ -256,7 +256,7 @@ export function TransformDrillItem({
     speak(item.answer, speechLang('es'));
   };
 
-  const inputBorder = result === 'ok' ? '#22C55E' : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
+  const inputBorder = result === 'ok' ? colors.successFill : result === 'bad' ? '#EF4444' : colors.tabIconDefault;
 
   // Check (and then Next) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
@@ -375,7 +375,7 @@ export function TransformDrillItem({
           style={[
             styles.transformResultBox,
             result === 'ok'
-              ? { backgroundColor: '#22C55E22', borderColor: '#22C55E' }
+              ? { backgroundColor: colors.successFill + '22', borderColor: colors.successFill }
               : { backgroundColor: '#EF444422', borderColor: '#EF4444' },
           ]}
         >

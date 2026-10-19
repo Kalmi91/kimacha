@@ -208,7 +208,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
                 <Text style={styles.modalBtnText}>{s.feedback.cancel}</Text>
               </Pressable>
               <Pressable
-                style={({ pressed }) => [styles.modalBtn, { backgroundColor: (pressed || sending) ? '#22C55E' : colors.tint, opacity: text.trim() ? 1 : 0.4 }]}
+                style={({ pressed }) => [styles.modalBtn, { backgroundColor: (pressed || sending) ? colors.successFill : colors.tint, opacity: text.trim() ? 1 : 0.4 }]}
                 onPress={handleSend}
                 disabled={!text.trim() || sending}
               >
