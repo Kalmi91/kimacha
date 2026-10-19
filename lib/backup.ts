@@ -71,7 +71,7 @@ interface ColumnSpec {
   type: ColumnType;
   nullable: boolean;
 }
-const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
+export const TABLE_COLUMNS: Record<BackupTable, Record<string, ColumnSpec>> = {
   game_progress: {
     pair: { type: 'string', nullable: false },
     game_id: { type: 'string', nullable: false },
