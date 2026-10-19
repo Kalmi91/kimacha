@@ -87,19 +87,13 @@ describe('Brutal components: the shape comes from the theme', () => {
     expect(flat('btn')).toMatchObject({ borderTopLeftRadius: 14, borderBottomRightRadius: 4 });
   });
 
-  it('kalocsai: dashed border in the a color, 10 px corner', async () => {
-    await renderWithSkin('kalocsai', <BrutalBox testID="box"><Text>x</Text></BrutalBox>);
-    expect(flat('box')).toMatchObject({ borderStyle: 'dashed', borderColor: '#E2231A', borderRadius: 10, borderWidth: 2 });
-  });
-
-  it('zen: 0 px border; konnyu: border-color 1 px border, 12 px corner', async () => {
-    await renderWithSkin('zen', <BrutalBox testID="box"><Text>x</Text></BrutalBox>);
-    expect(flat('box').borderWidth).toBe(0);
-  });
-
-  it('konnyu: border-color 1 px border, 12 px corner', async () => {
-    await renderWithSkin('konnyu', <BrutalBox testID="box"><Text>x</Text></BrutalBox>);
-    expect(flat('box')).toMatchObject({ borderWidth: 1, borderColor: '#E8DFC8', borderRadius: 12 });
+  it.each([
+    ['kalocsai: dashed border in the a color, 10 px corner', 'kalocsai', { borderStyle: 'dashed', borderColor: '#E2231A', borderRadius: 10, borderWidth: 2 }],
+    ['zen: 0 px border', 'zen', { borderWidth: 0 }],
+    ['konnyu: border-color 1 px border, 12 px corner', 'konnyu', { borderWidth: 1, borderColor: '#E8DFC8', borderRadius: 12 }],
+  ] as [string, SkinId, object][])('%s', async (_name, skin, shape) => {
+    await renderWithSkin(skin, <BrutalBox testID="box"><Text>x</Text></BrutalBox>);
+    expect(flat('box')).toMatchObject(shape);
   });
 
   it("the sticker and the segment take the theme's border (at most 2 px), the scaled offset is proportional", async () => {
