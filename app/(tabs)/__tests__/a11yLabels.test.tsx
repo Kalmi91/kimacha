@@ -2,7 +2,6 @@
 // settings rows carry a role and a localized label (EN + ES). Mock pattern: settingsBrutal.test.tsx,
 // tabBarBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-symbols', () => ({ SymbolView: () => null }));
 jest.mock('expo-router', () => {
   const React = require('react');
@@ -32,23 +31,18 @@ jest.mock('expo-file-system', () => ({ File: jest.fn(), Paths: { cache: '' } }))
 jest.mock('expo-sharing', () => ({}));
 jest.mock('expo-document-picker', () => ({}));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import TabLayout from '../_layout';
 import SettingsScreen from '../settings';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async () => {
-  for (let i = 0; i < 6; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 describe('a11y: tab bar (the tab labels are hidden, so each tab needs its own name)', () => {
   afterEach(() => setLanguage('en'));

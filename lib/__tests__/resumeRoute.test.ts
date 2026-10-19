@@ -1,6 +1,5 @@
 // the app saves the last resumable place and returns to it on a cold start.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { getDb } from '@/lib/database';
 import { hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';

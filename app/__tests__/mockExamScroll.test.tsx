@@ -4,7 +4,6 @@
 // under the finger: the task was "skipped", and became "No answer" in the review. The fix: every task gets its own
 // (remounted) scroller, so it always starts from the top. Mock pattern: mockExam.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ level: 'A1' }),
@@ -48,7 +47,7 @@ jest.mock('@/lib/exam/mock/build', () => ({
   buildMockExam: (input: { seed: number }) => ({ ...mockExam, seed: input.seed }),
 }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { ScrollView } from 'react-native';
 
 import { setPcicTarget } from '@/data/pcic';
@@ -56,16 +55,11 @@ import { getDb } from '@/lib/database';
 import { MOCK_EXAM_PROGRESS_KEY } from '@/lib/exam/mock/session';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import MockExamScreen from '../mock-exam';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(60000);
 
-const flush = async (times = 10) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(10);
 
 type Screen = ReturnType<typeof render>;
 

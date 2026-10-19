@@ -3,7 +3,6 @@
 // not an official one), the button leads to the /mock-exam screen, below it the latest result
 // or the sign of an abandoned exam. Mock pattern: statsBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockPush = jest.fn();
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: mockPush, navigate: jest.fn(), back: jest.fn() }),
@@ -13,22 +12,17 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { MOCK_EXAM_PROGRESS_KEY } from '@/lib/exam/mock/session';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import StatsScreen from '../stats';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 const renderStats = async () => {
   const view = render(

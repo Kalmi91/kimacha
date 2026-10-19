@@ -3,17 +3,12 @@
 // starting the drill does not, a second round the same day adds nothing, and the round-end screen shows the new count.
 // Mock pattern: roundEndBrutal.test.tsx, answering: kindPercent.play.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn(), replace: jest.fn() }),
   usePathname: () => '/grammar',
@@ -24,7 +19,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'ser-estar' }),
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
@@ -32,14 +27,9 @@ import { addDays } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 // ser-estar's form items minus the 2 vosotros ones, in authored order (a round of 10; form items are not shuffled).
 const FORM_ANSWERS = ['soy', 'estoy', 'eres', 'estás', 'es', 'está', 'somos', 'estamos', 'son', 'están'];

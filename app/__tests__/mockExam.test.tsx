@@ -5,7 +5,6 @@
 // resuming an abandoned exam (saved per paper), an expiring clock, glossary for an unknown word.
 // Mock pattern: app/__tests__/exam.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 const mockBack = jest.fn();
 let mockLevel = 'A1';
@@ -115,16 +114,11 @@ import { speak } from '@/lib/speech';
 import { sm2NewCard } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import MockExamScreen from '../mock-exam';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(60000);
 
-const flush = async (times = 10) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(10);
 
 type Screen = ReturnType<typeof render>;
 

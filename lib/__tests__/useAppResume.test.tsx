@@ -1,7 +1,6 @@
 // On a cold start it navigates to the saved place (only after finished onboarding), then saves every resumable switch;
 // the home screen does not overwrite the save before the restore has run.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 const mockReplace = jest.fn();
 const mockPush = jest.fn();
@@ -11,22 +10,17 @@ jest.mock('expo-router', () => ({
   usePathname: () => mockPathname,
 }));
 
-import { act, renderHook } from '@testing-library/react-native';
+import { renderHook } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
 import { loadResumePath, saveResumePath, RESUME_GAME_ID } from '../resumeRoute';
 import { useAppResume } from '../useAppResume';
+import { makeFlush } from '@/test-utils/flush';
 
 const lessonId = syllabusForLevel('A1', 'es').find((t) => hasLesson('es', t.id))!.id;
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('useAppResume', () => {
   beforeEach(async () => {

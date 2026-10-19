@@ -1,12 +1,11 @@
 // the decorations of the 4 starter themes (deco, szocreal, csillampony, ukiyoe): the slots draw
 // the decoration around the base content, with plain View/Text, no SVG and no new native dependency.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import fs from 'fs';
 import path from 'path';
 
-import { act, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import * as RN from 'react-native';
 import { Text } from 'react-native';
 
@@ -16,16 +15,11 @@ import { SkinBackdrop, SkinCardFrame, SkinHeader, SkinWord } from '@/components/
 import { SKINS, type SkinId } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async () => {
-  for (let i = 0; i < 6; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 const flat = (style: unknown) => RN.StyleSheet.flatten(style as RN.StyleProp<RN.ViewStyle & RN.TextStyle>);
 

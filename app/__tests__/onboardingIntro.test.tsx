@@ -1,12 +1,11 @@
 // The new steps of the onboarding. Order: language -> welcome -> intro ("How it works")
 // -> theme (5 recommended) -> level. The intro has no Skip button, the first (encouraging) point and the closing line are visible.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
   router: { replace: jest.fn() },
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import * as RN from 'react-native';
 
 import { ONBOARDING_SKINS } from '@/constants/Skins';
@@ -14,16 +13,11 @@ import { getDb } from '@/lib/database';
 import { setLanguage, t } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import OnboardingScreen from '../onboarding';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 async function toIntro(lang: 'English' | 'Español' = 'English') {
   render(<ThemeProvider><OnboardingScreen /></ThemeProvider>);

@@ -3,17 +3,12 @@
 // The Check button of the grammar drill's type-in items (conjugation, rewriting) is the same as on the word card: a bar
 // docked to the bottom of the screen (learn-dock, at the keyboard's top edge), and after Check the Next appears in the same place.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 // jest.mock factories may only touch variables prefixed with "mock".
 let mockTopicId = 'ser-estar';
@@ -35,14 +30,9 @@ import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { speechLang } from '@/lib/languages';
 import { speak } from '@/lib/speech';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 async function openKind(topic: string, kind: string) {
   mockTopicId = topic;

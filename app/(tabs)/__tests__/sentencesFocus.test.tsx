@@ -2,7 +2,6 @@
 // same counter, and a finished round stays on its done screen. Mock pattern: sentencesTab.test.tsx, with a
 // useFocusEffect that can be fired again.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
   speak: jest.fn(),
   speakSequence: jest.fn(),
@@ -54,16 +53,11 @@ import { clearSentenceRound } from '@/lib/sentenceRound';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { localDateString } from '@/lib/usageStats';
 import SentencesScreen from '../sentences';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 12) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(12);
 
 const learned = (n: number): Sm2Card => ({
   ...sm2NewCard(`a1-w${n}`), state: 'review', interval: 3, reps: 2, due: '2099-01-01', lastReview: '2026-10-09', introducedAt: '2026-10-09',

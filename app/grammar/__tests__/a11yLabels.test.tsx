@@ -1,7 +1,6 @@
 // Accessibility: the ← of the lesson page and of the table-practice screen, and the 🔊 next to the
 // lesson examples, are named buttons. Mock pattern: lessonBrutal.test.tsx, tableDeckBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
@@ -27,23 +26,18 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'ser-estar' }),
 }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import TableDeckScreen from '../deck/[topic]';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('a11y: grammar lesson page and table practice', () => {
   beforeEach(async () => {

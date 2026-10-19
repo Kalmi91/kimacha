@@ -2,19 +2,9 @@
 // opens), but does not reopen after the reveal. Mock pattern:
 // app/(tabs)/__tests__/pcicSpeak.test.tsx (the same effect drives both).
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
-jest.mock('expo-router', () => ({
-  useFocusEffect: (cb: () => void) => {
-    const { useEffect } = require('react');
-    useEffect(cb, []);
-  },
-}));
+jest.mock('expo-router', () => require('@/test-utils/mocks').focusEffectRouterMock());
 
 // useDockLift (the PCIC docked bar) now calls useSafeAreaInsets, which
 // throws without a SafeAreaProvider; its size does not matter here, it just must not throw.
@@ -32,19 +22,14 @@ jest.mock('@/data/pcic', () => ({
   setPcicTarget: () => {},
 }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { TextInput } from 'react-native';
 
 import { getDb } from '@/lib/database';
 import PcicScreen from '../index';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 describe('PCIC tab: field focus', () => {
   let focusSpy: jest.SpyInstance;

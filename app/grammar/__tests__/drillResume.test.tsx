@@ -2,17 +2,12 @@
 // practice (the round continues from the saved run); on leaving the lesson the save is deleted.
 // Mock pattern: drillButtons.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 let mockTopicId = 'ser-estar';
 jest.mock('expo-router', () => ({
@@ -25,21 +20,16 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: mockTopicId }),
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { clearDrillResume, loadDrillResume, saveDrillResume } from '@/lib/drillResume';
 import { RESUME_GAME_ID } from '@/lib/resumeRoute';
 import { localDateString } from '@/lib/usageStats';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('grammar lesson screen: an exercise open at close resumes on reopening', () => {
   const today = localDateString();

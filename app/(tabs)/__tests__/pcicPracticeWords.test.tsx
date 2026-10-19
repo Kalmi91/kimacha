@@ -3,12 +3,7 @@
 // no word at all once the daily budget was used up (on the active level the sheet just closed and the "done for today"
 // screen stayed). Now it serves all the missing new words with one tap ("all at once"). Runs against the real words-open corpus. Mock pattern: pcicExamRow.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 jest.mock('expo-router', () => ({
   router: { push: jest.fn() },
@@ -22,7 +17,7 @@ jest.mock('react-native-safe-area-context', () => ({
   useSafeAreaInsets: () => ({ top: 0, left: 0, right: 0, bottom: 0 }),
 }));
 
-import { act, fireEvent, render, within } from '@testing-library/react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
@@ -31,16 +26,11 @@ import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { sm2NewCard, sm2Review } from '@/lib/sm2';
 import { localDateString } from '@/lib/usageStats';
 import PcicScreen from '../index';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('Learn tab: the exam row "Practice words" button draws from the missing words', () => {
   const today = localDateString();

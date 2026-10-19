@@ -2,7 +2,6 @@
 // the back box) carry a role and a localized label (EN + ES). Mock pattern: speakButton.test.tsx,
 // FeedbackModal.test.tsx, grammarDrillBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
 const mockSpeak = jest.fn();
 jest.mock('@/lib/speech', () => ({
@@ -11,7 +10,7 @@ jest.mock('@/lib/speech', () => ({
   stopSpeaking: jest.fn(),
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { StyleSheet } from 'react-native';
 
 import lessonJson from '@/data/games/grammar/es/presente-irregular.json';
@@ -25,18 +24,13 @@ import GrammarDrill from '../grammar/GrammarDrill';
 import { BrutalBackButton, BrutalSwitch } from '../grammar/Brutal';
 import SpeakButton from '../SpeakButton';
 import StatusBarStrip from '../StatusBarStrip';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
 const lesson = lessonJson as unknown as LessonV2;
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 describe('a11y: icon-only controls', () => {
   beforeEach(() => mockSpeak.mockClear());

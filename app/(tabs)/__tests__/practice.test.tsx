@@ -2,12 +2,7 @@
 // Sentences tab. Mock pattern: pcicSpeak.test.tsx (db, router, speech, safe area). The real corpus is used: the
 // learner knows the first 100 words of A1 and the presente, so the sentences of the due words below are known.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 const mockPush = jest.fn();
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
@@ -36,6 +31,7 @@ import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import PracticeScreen from '../practice';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(60000);
 
@@ -75,13 +71,7 @@ const seeded = (seed: number) => {
   };
 };
 
-const flush = async () => {
-  for (let i = 0; i < 10; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(10);
 
 const mount = async () => {
   const view = render(<ThemeProvider><PracticeScreen /></ThemeProvider>);

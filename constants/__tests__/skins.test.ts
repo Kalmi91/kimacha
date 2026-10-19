@@ -1,7 +1,6 @@
 // the theme engine data: contrast gate (every theme × each of its modes), names (en + es),
 // groups, onboarding list, Colors keys, match with today's classic / brutal values.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import Colors from '../Colors';
 import { BASE, PALETTE_FILLS, type FillPaletteId } from '../GrammarPalettes';

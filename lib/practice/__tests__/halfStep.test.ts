@@ -1,7 +1,6 @@
 // The practice-mode half-step logic (spec HAROM-JATEK.md 5.1): the pure counter rules and the DB
 // function that moves the word on the SRS ladder. Memory db, the pattern of lib/__tests__/pcicDb.test.ts.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { getDb } from '@/lib/database';
 import { sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';

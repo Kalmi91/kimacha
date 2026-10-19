@@ -1,14 +1,14 @@
 // User feedback: "the words should be in English here too, so I know what they mean when I guessed": for an el / la item the noun's
 // meaning (tr) appears on its own after the answer (in the translation row behind the F button), and is closed again on the next item;
 // for a plain choice item the translation still opens only on the F button.
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
 import type { GrammarTopicData } from '@/lib/games/content';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
 const four = (s: string) => ({ en: s, es: s });
 
@@ -54,13 +54,7 @@ const plainGapTopic: GrammarTopicData = {
   ],
 };
 
-const flush = async () => {
-  for (let i = 0; i < 3; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 const drill = (topic: GrammarTopicData, contentLang = 'en') => (
   <ThemeProvider>

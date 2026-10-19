@@ -2,7 +2,6 @@
 // pressing Back, the "Practice my mistakes (N due)" button shows the new number, not the old one.
 // Mock pattern: app/(tabs)/__tests__/practiceFocus.test.tsx (a useFocusEffect that can be fired again).
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 let mockFocus: (() => void) | null = null;
 jest.mock('expo-router', () => ({
@@ -23,14 +22,9 @@ import sample from '@/lib/mistakes/__fixtures__/sample.json';
 import { sm2NewCard } from '@/lib/sm2';
 import { localDateString } from '@/lib/usageStats';
 import MistakesReportScreen from '../index';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 // The tab loses focus and gets it back: the focus effect runs again.
 const refocus = async () => {

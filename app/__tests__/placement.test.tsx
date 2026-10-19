@@ -2,7 +2,6 @@
 // question builder here returns simple, known questions (their content is covered by lib/exam/__tests__), the
 // ladder and the saving are done by the real modules. Mock pattern: app/__tests__/exam.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 const mockBack = jest.fn();
 const mockReplace = jest.fn();
@@ -20,20 +19,15 @@ jest.mock('@/lib/exam/placementQuestions', () => ({
       : { kind: 'word', level: input.level, itemId: `o${100 + input.used.size}`, word: 'la ventana', options: ['the window', 'the door', 'the wall', 'the roof'], correctIndex: 0 },
 }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import PlacementScreen from '../placement';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 type Screen = ReturnType<typeof render>;
 
