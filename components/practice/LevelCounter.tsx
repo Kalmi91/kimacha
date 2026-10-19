@@ -44,7 +44,9 @@ export default function LevelCounter({ refreshKey = 0 }: { refreshKey?: number }
       const level = await db.getPcicLevel();
       const next = levelCounts(await db.getPcicCards(), level, pcicItemsForLevel(level).length, localDateString());
       if (alive) setCounts(next);
-    })().catch(() => {});
+    })().catch(() => {
+      // a failed read leaves the counts as they were
+    });
     return () => {
       alive = false;
     };

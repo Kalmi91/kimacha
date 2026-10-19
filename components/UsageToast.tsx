@@ -63,7 +63,9 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
           setGreeting(stringsFor(learnedLang.current).usage.dailyGreeting);
         }
       })
-      .catch(() => {});
+      .catch(() => {
+        // a failed read or claim means no greeting this time
+      });
   }, []);
 
   useEffect(() => {

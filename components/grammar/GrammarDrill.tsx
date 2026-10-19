@@ -200,7 +200,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const hasTransform = kinds.includes('transform') || kinds.includes('dictation');
   useEffect(() => {
     if (!hasTransform) return;
-    getDb().getStrictAccents().then(setStrictAccents).catch(() => {});
+    getDb().getStrictAccents().then(setStrictAccents).catch(() => {
+      // a failed read leaves the accent setting at its default (off)
+    });
   }, [hasTransform]);
 
   // from this the parent knows which item the learner

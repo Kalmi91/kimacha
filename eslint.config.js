@@ -8,6 +8,10 @@ module.exports = [
     ignores: ['dist/*', 'android/*', '.expo/*', 'scripts/*'],
   },
   {
+    // An empty catch block hides the failure: a swallowed error needs a line that says why that is fine.
+    rules: { 'no-empty': ['error', { allowEmptyCatch: false }] },
+  },
+  {
     // Test files: jest.mock() calls are hoisted above imports by design, and a
     // module mock is a require() by definition, so the import-order and
     // no-require rules would flag every playthrough test for doing the only
