@@ -118,7 +118,7 @@ export default function OnboardingScreen() {
                 onPress={() => handleSelectLevel(lvl)}
               />
               {target === 'en' && total === 0 && (
-                <Text style={[styles.noWordsYet, { color: colors.tabIconDefault }]}>Todavía no hay palabras.</Text>
+                <Text style={[styles.noWordsYet, { color: colors.tabIconDefault }]}>{s.wordList.empty}</Text>
               )}
             </View>
           );
