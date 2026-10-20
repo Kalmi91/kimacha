@@ -1,4 +1,4 @@
-"""Tests of scripts/grammar-debt-fix.py: parsing, validation and writing, no Gemini call, no network.
+"""Tests of scripts/manual/grammar-debt-fix.py: parsing, validation and writing, no Gemini call, no network.
 
 Run from the repo root:  python -m unittest scripts/test_grammar_debt_fix.py -v
 """
@@ -12,7 +12,7 @@ import unittest.mock
 from pathlib import Path
 
 SCRIPTS = Path(__file__).resolve().parent
-_spec = importlib.util.spec_from_file_location("grammar_debt_fix", SCRIPTS / "grammar-debt-fix.py")
+_spec = importlib.util.spec_from_file_location("grammar_debt_fix", SCRIPTS / "manual" / "grammar-debt-fix.py")
 fix = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(fix)
 

@@ -432,6 +432,16 @@ export default {
     words: (known: number, needed: number, total: number, pct: number) => `Words learned: ${known} / ${needed} (${pct}% of ${total})`,
     grammar: (done: number, total: number) => `Grammar topics done: ${done} / ${total}`,
   },
+  // the row under a level with no words yet (the es→en A1 until the English word list is ready):
+  // the onboarding level step and the level picker sheet.
+  wordList: {
+    empty: 'No words here yet',
+  },
+  // the router's 404 screen (app/+not-found.tsx).
+  notFound: {
+    title: 'This page does not exist',
+    back: 'Back to start',
+  },
   // the PCIC tab (English -> Spanish typing, Anki buttons).
   pcic: {
     // the four separate labels of the BadgeRow chip line.
