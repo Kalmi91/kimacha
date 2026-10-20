@@ -1,16 +1,12 @@
-import { BACKUP_SCHEMA_VERSION, getAppVersion, type BackupPayload } from './backup';
-import { FORCED_PAIR, needsPairCorrection } from './languages';
-import { localDateString, summarizeUsage, DEFAULT_WEEKLY_GOAL_MINUTES, DEFAULT_DAILY_NEW_LIMIT, type UsageStats } from './usageStats';
-import { addDays, type Sm2Card } from './sm2';
-import { pcicItemsForLevel, type PcicLevel } from '@/data/pcic';
-import { DEFAULT_AGAIN_DELAY_SEC } from './pcicSession';
+import type { BackupPayload } from './backup';
+import type { Sm2Card } from './sm2';
 import type { MistakeBatchRow } from './mistakes/deck';
-import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } from '@/constants/GrammarPalettes';
-import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
-import { readExamResults, writeExamResult } from './exam/result';
-import type { ExamResult, ExamResults } from './exam/types';
-import type { DB } from './dbTypes';
+import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId } from '@/constants/GrammarPalettes';
+import { isSkinSelection, parseSkinMix } from '@/constants/Skins';
 import { parseBetaFlagMap } from './betaFlags';
+import { DbCore, decodeGameData, encodeGameData } from './db/core';
+import type { DbStore, MetaColumn, SettingColumn, StreakRow } from './db/store';
+import type { DB } from './dbTypes';
 
 // pcic_cards / mistake_cards row <-> Sm2Card, the same shapes the SQLite side stores.
 const sm2ToRow = (c: Sm2Card) => ({
@@ -49,39 +45,265 @@ const rowToPcic = (r: any): Sm2Card => ({
   ...(r.wrong_streak ? { wrongStreak: r.wrong_streak } : null),
 });
 
-class MemoryDB implements DB {
-  private streak = { current_count: 0, last_date: null as string | null, longest_count: 0 };
-  // Active language pair (e.g. "es-hu"); scopes cards + level so each pair keeps its own progress.
-  private activePair = 'es-hu';
+// The memory half of the DB (web and tests): the same columns as the SQLite tables, held in Maps.
+// The rules are in lib/db/core.ts. It does not survive a reload, a known limitation of the web build.
+class MemoryStore implements DbStore {
+  streak: StreakRow = { current_count: 0, last_date: null, longest_count: 0 };
+  private onboarding: { source: string; target: string } | null = null;
+  userLevels: Map<string, any> = new Map();
 
-  async getStreak() {
+  // user_meta singleton. The export leaves out status_bar_tint and last_open_date (a web reload counts
+  // as a new day), and the restore leaves them alone.
+  private meta: Record<MetaColumn, unknown> = {
+    last_open_date: null,
+    status_bar_tint: 0,
+    grammar_palette: DEFAULT_GRAMMAR_PALETTE,
+    skin: null,
+    skin_mix: null,
+    beta_flags: null,
+    practice_round: null,
+  };
+  private userMeta = { userId: '', firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
+
+  // learn_settings rows by pair. Play Store trim: getWordsOnly/setWordsOnly and getRandomTopics/
+  // setRandomTopics are gone (no caller since the Learn/Topics tabs left), but words_only /
+  // random_topics values of an imported old backup still round-trip through exportTables.
+  private settings: Map<string, Record<string, unknown>> = new Map();
+
+  private usageMinutes: Map<string, number> = new Map();
+  // integer tenths of an XP (10 = 1 XP); not part of the backup
+  private dailyXp: Map<string, number> = new Map();
+  // `${pair}:${gameId}` -> itemId -> progress
+  private gameProgress: Map<string, Map<string, { state: string; data: unknown }>> = new Map();
+
+  // Session-scoped Maps, not tied to a pair (the PCIC tab only works with es→en items).
+  private pcicCards: Map<string, Sm2Card> = new Map();
+  private mistakeBatches: Map<string, { json: string; importedAt: string }> = new Map();
+  private mistakeCards: Map<string, Sm2Card> = new Map();
+
+  private gameKey(pair: string, gameId: string) {
+    return `${pair}:${gameId}`;
+  }
+
+  async open() {
+    return null;
+  }
+
+  async readStreak() {
     return { ...this.streak };
   }
 
-  // brought back, called by the PCIC grading (mirrors the
-  // native SQLiteDB.updateStreak).
-  async updateStreak() {
-    const today = localDateString();
-    if (this.streak.last_date === today) return;
-    const yesterday = addDays(today, -1);
-    const newCount = this.streak.last_date === yesterday ? this.streak.current_count + 1 : 1;
-    this.streak = { current_count: newCount, last_date: today, longest_count: Math.max(newCount, this.streak.longest_count) };
+  async writeStreak(streak: StreakRow) {
+    this.streak = { current_count: streak.current_count, last_date: streak.last_date, longest_count: streak.longest_count };
   }
 
-  private onboarding: { source: string; target: string } | null = null;
-  private userLevels: Map<string, any> = new Map();
-
-  async getOnboarding() {
+  async readOnboarding() {
     return this.onboarding;
   }
 
-  async setOnboarding(source: string, target: string) {
+  async writeOnboarding(source: string, target: string) {
     this.onboarding = { source, target };
-    this.activePair = `${source}-${target}`;
   }
 
-  async getLevel() {
-    return { ...(this.userLevels.get(this.activePair) ?? { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 }) };
+  async readLevel(pair: string) {
+    return { ...(this.userLevels.get(pair) ?? { level: 'A0', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 }) };
+  }
+
+  async readMeta(column: MetaColumn) {
+    return this.meta[column];
+  }
+
+  async writeMeta(column: MetaColumn, value: unknown) {
+    this.meta[column] = value;
+  }
+
+  async readSettings(pair: string) {
+    return this.settings.get(pair) ?? null;
+  }
+
+  async writeSettings(pair: string, values: Partial<Record<SettingColumn, unknown>>) {
+    this.settings.set(pair, { ...this.settings.get(pair), ...values });
+  }
+
+  async addUsageMinute(date: string) {
+    const total = (this.usageMinutes.get(date) ?? 0) + 1;
+    this.usageMinutes.set(date, total);
+    return total;
+  }
+
+  async readUsage() {
+    return [...this.usageMinutes.entries()].map(([date, minutes]) => ({ date, minutes }));
+  }
+
+  async readUsageMinutes(date: string) {
+    return this.usageMinutes.get(date) ?? 0;
+  }
+
+  async countPcicIntroducedOn(date: string) {
+    return [...this.pcicCards.values()].filter(c => c.introducedAt === date).length;
+  }
+
+  async readDailyXpTenths(date: string) {
+    return this.dailyXp.get(date) ?? 0;
+  }
+
+  async addDailyXpTenths(date: string, delta: number) {
+    this.dailyXp.set(date, Math.max(0, (this.dailyXp.get(date) ?? 0) + delta));
+  }
+
+  async readGameProgress(pair: string, gameId: string) {
+    const items = this.gameProgress.get(this.gameKey(pair, gameId)) ?? new Map();
+    return [...items.entries()].map(([itemId, v]) => ({ itemId, state: v.state, data: v.data }));
+  }
+
+  async writeGameProgress(pair: string, gameId: string, itemId: string, state: string, data: unknown) {
+    const key = this.gameKey(pair, gameId);
+    let items = this.gameProgress.get(key);
+    if (!items) {
+      items = new Map();
+      this.gameProgress.set(key, items);
+    }
+    items.set(itemId, { state, data });
+  }
+
+  async deleteGameProgress(pair: string, gameId: string) {
+    this.gameProgress.delete(this.gameKey(pair, gameId));
+  }
+
+  async readPcicCards() {
+    return [...this.pcicCards.values()].map(c => ({ ...c }));
+  }
+
+  async readPcicCard(itemId: string) {
+    const c = this.pcicCards.get(itemId);
+    return c ? { ...c, halfSteps: c.halfSteps ?? 0, wrongStreak: c.wrongStreak ?? 0 } : null;
+  }
+
+  async writePcicCard(card: Sm2Card) {
+    this.pcicCards.set(card.itemId, { ...card });
+  }
+
+  async deletePcicCards(itemIds?: string[]) {
+    if (!itemIds) {
+      this.pcicCards.clear();
+      return;
+    }
+    for (const id of itemIds) this.pcicCards.delete(id);
+  }
+
+  async writeMistakeBatch(batchId: string, json: string, importedAt: string) {
+    this.mistakeBatches.set(batchId, { json, importedAt });
+  }
+
+  async readMistakeBatches(): Promise<MistakeBatchRow[]> {
+    return [...this.mistakeBatches.entries()]
+      .map(([batchId, v]) => ({ batchId, json: v.json, importedAt: v.importedAt }))
+      .sort((a, b) => (a.importedAt < b.importedAt ? 1 : a.importedAt > b.importedAt ? -1 : 0));
+  }
+
+  async readMistakeCards() {
+    return [...this.mistakeCards.values()].map((c) => ({ ...c }));
+  }
+
+  async writeMistakeCard(card: Sm2Card) {
+    this.mistakeCards.set(card.itemId, { ...card });
+  }
+
+  // Memory state is serialized into the same table-row shapes as the SQLite implementation, so a
+  // backup made on one platform restores on the other.
+  async exportTables(): Promise<BackupPayload['tables']> {
+    const learn_settings = [...this.settings]
+      .filter(([, s]) => s.words_only !== undefined || s.random_topics !== undefined || s.feedback_btn_side !== undefined)
+      .map(([pair, s]) => ({
+        pair,
+        words_only: s.words_only !== undefined ? (s.words_only ? 1 : 0) : null,
+        random_topics: s.random_topics !== undefined ? (s.random_topics ? 1 : 0) : null,
+        feedback_btn_side: s.feedback_btn_side ?? null,
+      }));
+    return {
+      game_progress: [...this.gameProgress].flatMap(([key, items]) => {
+        const sep = key.lastIndexOf(':');
+        const pair = key.slice(0, sep), game_id = key.slice(sep + 1);
+        return [...items].map(([item_id, v]) => ({
+          pair, game_id, item_id, state: v.state,
+          data_json: encodeGameData(v.data),
+        }));
+      }),
+      learn_settings,
+      onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
+      streak: [{ id: 1, ...this.streak }],
+      user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
+      user_meta: [{
+        id: 1,
+        first_use_date: this.userMeta.firstUseDate,
+        last_sync_date: this.userMeta.lastSyncDate,
+        grammar_palette: this.meta.grammar_palette,
+        skin: this.meta.skin,
+        skin_mix: this.meta.skin_mix,
+        beta_flags: this.meta.beta_flags,
+        practice_round: this.meta.practice_round,
+      }],
+      pcic_cards: [...this.pcicCards.values()].map(pcicToRow),
+      mistake_batches: [...this.mistakeBatches].map(([batch_id, v]) => ({ batch_id, json: v.json, imported_at: v.importedAt })),
+      mistake_cards: [...this.mistakeCards.values()].map(sm2ToRow),
+      usage_minutes: [...this.usageMinutes].map(([date, minutes]) => ({ date, minutes })),
+    };
+  }
+
+  // Replaces the whole in-memory state from the payload (not atomic: a malformed table
+  // leaves the earlier ones already replaced).
+  async importTables(t: BackupPayload['tables']) {
+    // Re-keyed by `${pair}:${game_id}` directly (not via writeGameProgress, which is handed
+    // the CURRENT active pair, a restore can carry rows for several pairs at once).
+    const gameProgress: typeof this.gameProgress = new Map();
+    for (const row of t.game_progress) {
+      const key = this.gameKey(row.pair, row.game_id);
+      let items = gameProgress.get(key);
+      if (!items) {
+        items = new Map();
+        gameProgress.set(key, items);
+      }
+      items.set(row.item_id, { state: row.state, data: decodeGameData(row.data_json) });
+    }
+    this.gameProgress = gameProgress;
+    // Only these three columns come from the backup; the other settings stay as they are.
+    for (const s of this.settings.values()) {
+      delete s.words_only;
+      delete s.random_topics;
+      delete s.feedback_btn_side;
+    }
+    for (const row of t.learn_settings) {
+      const s = this.settings.get(row.pair) ?? {};
+      if (row.words_only != null) s.words_only = row.words_only === 1 ? 1 : 0;
+      if (row.random_topics != null) s.random_topics = row.random_topics === 1 ? 1 : 0;
+      if (row.feedback_btn_side != null) s.feedback_btn_side = row.feedback_btn_side;
+      this.settings.set(row.pair, s);
+    }
+    const ob = t.onboarding[0];
+    this.onboarding = ob ? { source: ob.source, target: ob.target } : null;
+    const st = t.streak[0];
+    if (st) this.streak = { current_count: st.current_count, last_date: st.last_date, longest_count: st.longest_count };
+    this.userLevels = new Map(t.user_level.map((r: any) => [r.pair, { level: r.level, correct_streak: r.correct_streak, mistakes_in_window: r.mistakes_in_window, fail_streak: r.fail_streak }]));
+    const um = t.user_meta[0];
+    if (um) this.userMeta = { userId: um.user_id, firstUseDate: um.first_use_date, lastSyncDate: um.last_sync_date };
+    this.meta.grammar_palette = isGrammarPaletteId(um?.grammar_palette) ? um.grammar_palette : DEFAULT_GRAMMAR_PALETTE;
+    this.meta.skin = isSkinSelection(um?.skin) ? um.skin : null;
+    const skinMix = parseSkinMix(um?.skin_mix);
+    this.meta.skin_mix = skinMix ? JSON.stringify(skinMix) : null;
+    const betaFlags = parseBetaFlagMap(um?.beta_flags);
+    this.meta.beta_flags = Object.keys(betaFlags).length ? JSON.stringify(betaFlags) : null;
+    this.meta.practice_round = typeof um?.practice_round === 'string' ? um.practice_round : null;
+    // A v1 file has no pcic_cards / mistake_* / usage_minutes: keep the local ones.
+    if (t.pcic_cards) this.pcicCards = new Map(t.pcic_cards.map((r: any) => [r.item_id, rowToPcic(r)]));
+    if (t.mistake_batches) this.mistakeBatches = new Map(t.mistake_batches.map((r: any) => [r.batch_id, { json: r.json, importedAt: r.imported_at }]));
+    if (t.mistake_cards) this.mistakeCards = new Map(t.mistake_cards.map((r: any) => [r.item_id, rowToSm2(r)]));
+    if (t.usage_minutes) this.usageMinutes = new Map(t.usage_minutes.map((r: any) => [r.date, r.minutes]));
+  }
+}
+
+class MemoryDB extends DbCore {
+  constructor(private readonly mem = new MemoryStore()) {
+    super(mem);
   }
 
   // Play Store trim: updateLevel (the only public setter) had no app-code
@@ -89,398 +311,12 @@ class MemoryDB implements DB {
   // use this instead. Not on the DB interface, same pattern as the old
   // __setRequeueLevelForTest.
   __setLevelForTest(level: string): void {
-    this.userLevels.set(this.activePair, { level, correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 });
+    this.mem.userLevels.set(this.activePair, { level, correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 });
   }
 
   // The streak row for a test (default: no streak yet). Not on the DB interface, same pattern as __setLevelForTest.
   __setStreakForTest(streak: { current_count: number; last_date: string | null; longest_count: number } = { current_count: 0, last_date: null, longest_count: 0 }): void {
-    this.streak = streak;
-  }
-
-  private meta = { userId: '', firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
-
-  // first open of the day (memory mirror; a web reload counts as a new day).
-  private lastOpenDate: string | null = null;
-
-  async claimDailyGreeting(): Promise<boolean> {
-    const today = localDateString();
-    if (this.lastOpenDate === today) return false;
-    this.lastOpenDate = today;
-    return true;
-  }
-
-  // status-bar tint index (memory mirror, like every other web setting).
-  private statusBarTint = 0;
-
-  async getStatusBarTint(): Promise<number> { return this.statusBarTint; }
-  async setStatusBarTint(index: number): Promise<void> { this.statusBarTint = index; }
-
-  // app-wide color palette (memory mirror of user_meta.grammar_palette).
-  private grammarPalette: GrammarPaletteId = DEFAULT_GRAMMAR_PALETTE;
-
-  async getGrammarPalette(): Promise<GrammarPaletteId> { return this.grammarPalette; }
-  async setGrammarPalette(id: GrammarPaletteId): Promise<void> { this.grammarPalette = id; }
-
-  // chosen theme + My mix (memory mirror of user_meta.skin / skin_mix).
-  private skin: SkinSelection | null = null;
-  private skinMix: SkinMix | null = null;
-
-  async getSkin(): Promise<SkinSelection | null> { return this.skin; }
-  async setSkin(id: SkinSelection | null): Promise<void> { this.skin = id; }
-  async getSkinMix(): Promise<SkinMix | null> { return this.skinMix; }
-  async setSkinMix(mix: SkinMix): Promise<void> { this.skinMix = mix; }
-
-  // Play Store trim: getWordsOnly/setWordsOnly and getRandomTopics/
-  // setRandomTopics are gone (no caller since the Learn/Topics tabs left),
-  // but the maps stay so an imported old backup's learn_settings.words_only /
-  // .random_topics values still round-trip through exportAll unchanged.
-  private wordsOnlyMap: Map<string, boolean> = new Map();
-  private randomTopicsMap: Map<string, boolean> = new Map();
-
-  // difficulty switch, per pair (mirrors the SQLite side).
-  private strictAccentsMap: Map<string, boolean> = new Map();
-
-  async getStrictAccents(): Promise<boolean> {
-    return this.strictAccentsMap.get(this.activePair) ?? false;
-  }
-
-  async setStrictAccents(v: boolean): Promise<void> {
-    this.strictAccentsMap.set(this.activePair, v);
-  }
-
-  // memory mirror of the SQLite again_delay_sec column.
-  private againDelaySecMap: Map<string, number> = new Map();
-
-  async getAgainDelaySec(): Promise<number> {
-    return this.againDelaySecMap.get(this.activePair) ?? DEFAULT_AGAIN_DELAY_SEC;
-  }
-
-  async setAgainDelaySec(sec: number): Promise<void> {
-    this.againDelaySecMap.set(this.activePair, sec);
-  }
-
-  // article button row switch, per pair (mirror of the SQLite side). On by default.
-  private articlePickerMap: Map<string, boolean> = new Map();
-
-  async getArticlePicker(): Promise<boolean> {
-    return this.articlePickerMap.get(this.activePair) ?? true;
-  }
-
-  async setArticlePicker(v: boolean): Promise<void> {
-    this.articlePickerMap.set(this.activePair, v);
-  }
-
-  // weekly study goal in minutes, per pair (mirrors the SQLite side).
-  private weeklyGoalMap: Map<string, number> = new Map();
-
-  async getWeeklyGoalMinutes(): Promise<number> {
-    return this.weeklyGoalMap.get(this.activePair) ?? DEFAULT_WEEKLY_GOAL_MINUTES;
-  }
-
-  async setWeeklyGoalMinutes(minutes: number): Promise<void> {
-    this.weeklyGoalMap.set(this.activePair, minutes);
-  }
-
-  private feedbackBtnSideMap: Map<string, 'left' | 'right'> = new Map();
-
-  async getFeedbackBtnSide(): Promise<'left' | 'right'> {
-    return this.feedbackBtnSideMap.get(this.activePair) ?? 'right';
-  }
-
-  async setFeedbackBtnSide(side: 'left' | 'right'): Promise<void> {
-    this.feedbackBtnSideMap.set(this.activePair, side);
-  }
-
-  // daily new-word budget (memory mirror of the SQLite columns).
-  private dailyNewLimitMap: Map<string, number> = new Map();
-
-  async getDailyNewLimit(): Promise<number> {
-    return this.dailyNewLimitMap.get(this.activePair) ?? DEFAULT_DAILY_NEW_LIMIT;
-  }
-
-  async setDailyNewLimit(limit: number): Promise<void> {
-    this.dailyNewLimitMap.set(this.activePair, limit);
-  }
-
-  // memory mirror of the SQLite new_bonus/new_bonus_date columns.
-  private pcicNewBonusMap: Map<string, { bonus: number; date: string }> = new Map();
-
-  async getPcicNewBonus(today: string): Promise<number> {
-    const entry = this.pcicNewBonusMap.get(this.activePair);
-    return entry && entry.date === today ? entry.bonus : 0;
-  }
-
-  async setPcicNewBonus(bonus: number, today: string): Promise<void> {
-    this.pcicNewBonusMap.set(this.activePair, { bonus, date: today });
-  }
-
-  // Usage-timer feature: one entry per local calendar day, app-wide (not
-  // scoped to a language pair, unlike cards/level). Web doesn't survive
-  // reload, same known limitation as the other in-memory maps above.
-  private usageMinutes: Map<string, number> = new Map();
-
-  async addUsageMinute(): Promise<number> {
-    const date = localDateString();
-    const total = (this.usageMinutes.get(date) ?? 0) + 1;
-    this.usageMinutes.set(date, total);
-    return total;
-  }
-
-  async getUsageStats(): Promise<UsageStats> {
-    const rows = [...this.usageMinutes.entries()].map(([date, minutes]) => ({ date, minutes }));
-    return summarizeUsage(rows);
-  }
-
-  // one local calendar day's totals, for the midnight celebration. `words` =
-  // PCIC words first introduced that day (same rule as the native DB).
-  async getDayStats(date: string): Promise<{ minutes: number; words: number }> {
-    const words = [...this.pcicCards.values()].filter(c => c.introducedAt === date).length;
-    return { minutes: this.usageMinutes.get(date) ?? 0, words };
-  }
-
-  // Daily XP: one entry per local calendar day, app-wide, in memory like
-  // usageMinutes above; not part of the backup.
-  private dailyXp: Map<string, number> = new Map();
-
-  // The map holds integer tenths of an XP (10 = 1 XP).
-  async getDailyXpTenths(date: string): Promise<number> {
-    return this.dailyXp.get(date) ?? 0;
-  }
-
-  async addDailyXpTenths(date: string, delta: number): Promise<number> {
-    const total = Math.max(0, (this.dailyXp.get(date) ?? 0) + delta);
-    this.dailyXp.set(date, total);
-    return total;
-  }
-
-  // Game tab tables, scoped to the active pair like every
-  // other per-pair setting/state in this interface.
-  private gameProgressMap: Map<string, Map<string, { state: string; data: unknown }>> = new Map();
-
-  private gameKey(gameId: string) {
-    return `${this.activePair}:${gameId}`;
-  }
-
-  private gameProgressFor(gameId: string) {
-    const key = this.gameKey(gameId);
-    let m = this.gameProgressMap.get(key);
-    if (!m) {
-      m = new Map();
-      this.gameProgressMap.set(key, m);
-    }
-    return m;
-  }
-
-  async getGameProgress(gameId: string) {
-    return [...this.gameProgressFor(gameId).entries()].map(([itemId, v]) => ({ itemId, state: v.state, data: v.data }));
-  }
-
-  async setGameProgress(gameId: string, itemId: string, state: string, data?: unknown) {
-    this.gameProgressFor(gameId).set(itemId, { state, data });
-  }
-
-  async resetGameProgress(gameId: string) {
-    this.gameProgressMap.delete(this.gameKey(gameId));
-  }
-
-  // the level exam result, see lib/exam/result.ts.
-  async getExamResults(): Promise<ExamResults> {
-    return readExamResults(this);
-  }
-
-  async saveExamResult(level: string, pct: number, passed: boolean, date: string): Promise<ExamResult> {
-    return writeExamResult(this, level, pct, passed, date);
-  }
-
-  // PCIC tab, SM-2, independent of the FSRS `cards`. Not
-  // tied to a pair (the tab only works with es→en items), a session-scoped
-  // Map, like the other web-only state in this file.
-  private pcicCards: Map<string, Sm2Card> = new Map();
-
-  async getPcicCards(): Promise<Sm2Card[]> {
-    return [...this.pcicCards.values()].map(c => ({ ...c }));
-  }
-
-  async upsertPcicCard(card: Sm2Card): Promise<void> {
-    this.pcicCards.set(card.itemId, { ...card });
-  }
-
-  async getPcicCard(itemId: string): Promise<Sm2Card | null> {
-    const c = this.pcicCards.get(itemId);
-    return c ? { ...c, halfSteps: c.halfSteps ?? 0, wrongStreak: c.wrongStreak ?? 0 } : null;
-  }
-
-  // beta switches (memory mirror of user_meta.beta_flags).
-  private betaFlags: Record<string, boolean> = {};
-
-  async getBetaFlags(): Promise<Record<string, boolean>> {
-    return { ...this.betaFlags };
-  }
-
-  async setBetaFlag(flag: string, on: boolean): Promise<void> {
-    this.betaFlags = { ...this.betaFlags, [flag]: on };
-  }
-
-  // the unfinished Practice-tab round (memory mirror of user_meta.practice_round).
-  private practiceRound: string | null = null;
-
-  async getPracticeRound(): Promise<string | null> {
-    return this.practiceRound;
-  }
-
-  async setPracticeRound(json: string | null): Promise<void> {
-    this.practiceRound = json;
-  }
-
-  // see the resetPcicCards comment in lib/database.ts - the
-  // real id list is fetched from the loaded corpus, not from the id prefix.
-  async resetPcicCards(levelPrefix?: string): Promise<void> {
-    if (!levelPrefix) {
-      this.pcicCards.clear();
-      return;
-    }
-    const ids = new Set(pcicItemsForLevel(levelPrefix.toUpperCase() as PcicLevel).map((i) => i.id));
-    for (const id of [...this.pcicCards.keys()]) {
-      if (ids.has(id)) this.pcicCards.delete(id);
-    }
-  }
-
-  // session-scoped Maps, like pcicCards/pcicLevel
-  // above, with the same signature as the native (SQLite) implementation.
-  private mistakeBatches: Map<string, { json: string; importedAt: string }> = new Map();
-  private mistakeCards: Map<string, Sm2Card> = new Map();
-
-  async saveMistakeBatch(batchId: string, json: string, importedAt: string): Promise<void> {
-    this.mistakeBatches.set(batchId, { json, importedAt });
-  }
-
-  async getMistakeBatches(): Promise<MistakeBatchRow[]> {
-    return [...this.mistakeBatches.entries()]
-      .map(([batchId, v]) => ({ batchId, json: v.json, importedAt: v.importedAt }))
-      .sort((a, b) => (a.importedAt < b.importedAt ? 1 : a.importedAt > b.importedAt ? -1 : 0));
-  }
-
-  async getMistakeCards(): Promise<Sm2Card[]> {
-    return [...this.mistakeCards.values()].map((c) => ({ ...c }));
-  }
-
-  async upsertMistakeCard(card: Sm2Card): Promise<void> {
-    this.mistakeCards.set(card.itemId, { ...card });
-  }
-
-  // the selected PCIC level.
-  // A per-pair Map (like articlePickerMap), so that on a direction switch
-  // both pairs keep their own level; default B1 for en-es (existing
-  // "b1-..." progress), A1 for every es→en pair (that is the
-  // only level with content).
-  private pcicLevelMap: Map<string, PcicLevel> = new Map();
-
-  async getPcicLevel(): Promise<PcicLevel> {
-    return this.pcicLevelMap.get(this.activePair) ?? (this.activePair.endsWith('-en') ? 'A1' : 'B1');
-  }
-
-  async hasPcicLevel(): Promise<boolean> {
-    return this.pcicLevelMap.has(this.activePair);
-  }
-
-  async setPcicLevel(level: PcicLevel): Promise<void> {
-    this.pcicLevelMap.set(this.activePair, level);
-  }
-
-  // Q0: full learning-state backup. Memory state is serialized into the same
-  // table-row shapes as the SQLite implementation, so a backup made on one
-  // platform restores on the other.
-  async exportAll(): Promise<BackupPayload> {
-    const settingsPairs = new Set<string>([
-      ...this.wordsOnlyMap.keys(),
-      ...this.randomTopicsMap.keys(),
-      ...this.feedbackBtnSideMap.keys(),
-    ]);
-    const learn_settings = [...settingsPairs].map(pair => ({
-      pair,
-      words_only: this.wordsOnlyMap.has(pair) ? (this.wordsOnlyMap.get(pair) ? 1 : 0) : null,
-      random_topics: this.randomTopicsMap.has(pair) ? (this.randomTopicsMap.get(pair) ? 1 : 0) : null,
-      feedback_btn_side: this.feedbackBtnSideMap.get(pair) ?? null,
-    }));
-    return {
-      schemaVersion: BACKUP_SCHEMA_VERSION,
-      exportedAt: new Date().toISOString(),
-      appVersion: getAppVersion(),
-      tables: {
-        game_progress: [...this.gameProgressMap].flatMap(([key, items]) => {
-          const sep = key.lastIndexOf(':');
-          const pair = key.slice(0, sep), game_id = key.slice(sep + 1);
-          return [...items].map(([item_id, v]) => ({
-            pair, game_id, item_id, state: v.state,
-            data_json: v.data !== undefined ? JSON.stringify(v.data) : null,
-          }));
-        }),
-        learn_settings,
-        onboarding: this.onboarding ? [{ id: 1, ...this.onboarding }] : [],
-        streak: [{ id: 1, ...this.streak }],
-        user_level: [...this.userLevels].map(([pair, l]) => ({ pair, ...l })),
-        user_meta: [{ id: 1, user_id: '', first_use_date: this.meta.firstUseDate, last_sync_date: this.meta.lastSyncDate, grammar_palette: this.grammarPalette, skin: this.skin, skin_mix: this.skinMix ? JSON.stringify(this.skinMix) : null, beta_flags: Object.keys(this.betaFlags).length ? JSON.stringify(this.betaFlags) : null, practice_round: this.practiceRound }],
-        pcic_cards: [...this.pcicCards.values()].map(pcicToRow),
-        mistake_batches: [...this.mistakeBatches].map(([batch_id, v]) => ({ batch_id, json: v.json, imported_at: v.importedAt })),
-        mistake_cards: [...this.mistakeCards.values()].map(sm2ToRow),
-        usage_minutes: [...this.usageMinutes].map(([date, minutes]) => ({ date, minutes })),
-      },
-    };
-  }
-
-  // Q0: restore, replaces the whole in-memory state from the payload.
-  async importAll(payload: BackupPayload): Promise<void> {
-    const t = payload.tables;
-    // Re-keyed by `${pair}:${game_id}` directly (not via gameProgressFor,
-    // which keys off the CURRENT activePair, a restore can carry rows for
-    // several pairs at once).
-    this.gameProgressMap = new Map(
-      Object.entries(
-        (t.game_progress as any[]).reduce((acc: Record<string, [string, { state: string; data: unknown }][]>, row) => {
-          const key = `${row.pair}:${row.game_id}`;
-          let data: unknown;
-          if (row.data_json) {
-            try {
-              data = JSON.parse(row.data_json);
-            } catch {
-              data = undefined;
-            }
-          }
-          (acc[key] ??= []).push([row.item_id, { state: row.state, data }]);
-          return acc;
-        }, {})
-      ).map(([key, entries]) => [key, new Map(entries)])
-    );
-    this.wordsOnlyMap = new Map();
-    this.randomTopicsMap = new Map();
-    this.feedbackBtnSideMap = new Map();
-    for (const row of t.learn_settings) {
-      if (row.words_only != null) this.wordsOnlyMap.set(row.pair, row.words_only === 1);
-      if (row.random_topics != null) this.randomTopicsMap.set(row.pair, row.random_topics === 1);
-      if (row.feedback_btn_side != null) this.feedbackBtnSideMap.set(row.pair, row.feedback_btn_side);
-    }
-    const ob = t.onboarding[0];
-    // Corrected to the single supported pair if the backup carries an older
-    // one (same rule as the app/_layout.tsx startup check).
-    this.onboarding = ob
-      ? (needsPairCorrection(ob) ? { ...FORCED_PAIR } : { source: ob.source, target: ob.target })
-      : null;
-    if (this.onboarding) this.activePair = `${this.onboarding.source}-${this.onboarding.target}`;
-    const st = t.streak[0];
-    if (st) this.streak = { current_count: st.current_count, last_date: st.last_date, longest_count: st.longest_count };
-    this.userLevels = new Map(t.user_level.map((r: any) => [r.pair, { level: r.level, correct_streak: r.correct_streak, mistakes_in_window: r.mistakes_in_window, fail_streak: r.fail_streak }]));
-    const um = t.user_meta[0];
-    if (um) this.meta = { userId: um.user_id, firstUseDate: um.first_use_date, lastSyncDate: um.last_sync_date };
-    this.grammarPalette = isGrammarPaletteId(um?.grammar_palette) ? um.grammar_palette : DEFAULT_GRAMMAR_PALETTE;
-    this.skin = isSkinSelection(um?.skin) ? um.skin : null;
-    this.skinMix = parseSkinMix(um?.skin_mix);
-    this.betaFlags = parseBetaFlagMap(um?.beta_flags);
-    this.practiceRound = typeof um?.practice_round === 'string' ? um.practice_round : null;
-    // A v1 file has no pcic_cards / mistake_* / usage_minutes: keep the local ones.
-    if (t.pcic_cards) this.pcicCards = new Map(t.pcic_cards.map((r: any) => [r.item_id, rowToPcic(r)]));
-    if (t.mistake_batches) this.mistakeBatches = new Map(t.mistake_batches.map((r: any) => [r.batch_id, { json: r.json, importedAt: r.imported_at }]));
-    if (t.mistake_cards) this.mistakeCards = new Map(t.mistake_cards.map((r: any) => [r.item_id, rowToSm2(r)]));
-    if (t.usage_minutes) this.usageMinutes = new Map(t.usage_minutes.map((r: any) => [r.date, r.minutes]));
+    this.mem.streak = streak;
   }
 }
 
