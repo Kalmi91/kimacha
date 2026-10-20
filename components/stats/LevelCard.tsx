@@ -4,7 +4,8 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
 import { fontSize, fontWeight, lineHeight, radius, spacing } from '@/constants/Theme';
-import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import { Card, Sticker } from '@/components/grammar/Brutal';
+import { ProgressBar } from '@/components/grammar/Themed';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { LEVEL_WORDS_PCT, type ProgressLevel } from '@/lib/progressLevel';
@@ -28,7 +29,6 @@ type MeterProps = {
 function Meter({ testID, label, now, max }: MeterProps) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const g = useGrammarColors();
   const pct = max > 0 ? Math.min(100, Math.round((now / max) * 100)) : 0;
   return (
     <View
@@ -40,13 +40,15 @@ function Meter({ testID, label, now, max }: MeterProps) {
       style={styles.meter}
     >
       <Text style={[styles.meterLabel, { color: colors.text }]}>{label}</Text>
-      {g.brutal ? (
-        <SegmentBar testID={`${testID}-bar`} filled={segmentsFilled(pct, 8)} segments={8} />
-      ) : (
-        <View style={[styles.track, { backgroundColor: colors.background }]}>
-          <View testID={`${testID}-fill`} style={[styles.fill, { backgroundColor: colors.tint, width: `${pct}%` }]} />
-        </View>
-      )}
+      <ProgressBar
+        testID={`${testID}-bar`}
+        pct={pct}
+        trackStyle={styles.track}
+        trackColor={colors.background}
+        fillStyle={styles.fill}
+        fillColor={colors.tint}
+        fillProps={{ testID: `${testID}-fill` }}
+      />
     </View>
   );
 }
