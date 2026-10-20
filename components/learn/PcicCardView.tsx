@@ -1,6 +1,6 @@
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, themedInkEdgeStyle, themedInputStyle } from '@/components/grammar/Themed';
+import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar } from '@/components/grammar/Themed';
 import { speak } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -26,7 +26,7 @@ import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
-import { BrutalBox, BrutalButton, SegmentBar, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
+import { BrutalBox, BrutalButton, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import FitText from '@/components/FitText';
 import DoneBadge from '@/components/DoneBadge';
@@ -278,13 +278,7 @@ export default function PcicCardView({
           <Text style={[styles.introducedLabel, { color: colors.tabIconDefault }]}>
             {s.pcic.introduced(introducedCount, newOrder.length)}
           </Text>
-          {g.brutal ? (
-            <SegmentBar filled={segmentsFilled(introducedPct, 8)} segments={8} />
-          ) : (
-            <View style={[styles.introducedTrack, { backgroundColor: colors.card }]}>
-              <View style={[styles.introducedFill, { backgroundColor: '#38BDF8', width: `${introducedPct}%` }]} />
-            </View>
-          )}
+          <ProgressBar pct={introducedPct} trackStyle={styles.introducedTrack} trackColor={colors.card} fillStyle={styles.introducedFill} fillColor="#38BDF8" />
         </View>
         {newOrder.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
           // +5 / +10 / +15 new words, in one row (the +10 testID is unchanged: learn-more-new).
@@ -363,13 +357,16 @@ export default function PcicCardView({
         onClose={() => setLevelSheetOpen(false)}
       />
 
-      {g.brutal ? (
-        <SegmentBar testID="learn-progress" filled={segmentsFilled(barPct, 8)} segments={8} style={styles.brutalProgress} />
-      ) : (
-        <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-          <View testID="learn-progress-fill" style={[styles.progressFill, { backgroundColor: colors.tint, width: `${barPct}%` }]} />
-        </View>
-      )}
+      <ProgressBar
+        testID="learn-progress"
+        pct={barPct}
+        brutalStyle={styles.brutalProgress}
+        trackStyle={styles.progressTrack}
+        trackColor={colors.card}
+        fillStyle={styles.progressFill}
+        fillColor={colors.tint}
+        fillProps={{ testID: 'learn-progress-fill' }}
+      />
 
       <ScrollView
         style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}

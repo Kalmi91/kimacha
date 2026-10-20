@@ -1,7 +1,7 @@
-import { Pressable, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
+import { Pressable, View, type StyleProp, type TextStyle, type ViewProps, type ViewStyle } from 'react-native';
 import { Text, type KTextProps } from '@/components/KText';
 
-import { BrutalBackButton, BrutalButton, brutalInputStyle, type BrutalFill } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalButton, SegmentBar, brutalInputStyle, segmentsFilled, type BrutalFill } from '@/components/grammar/Brutal';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
@@ -110,5 +110,45 @@ export function ActionButton({
     <Pressable testID={testID} accessibilityRole={classicRole ?? undefined} style={classicStyle} onPress={onPress}>
       <Text style={classicTextStyle}>{label}</Text>
     </Pressable>
+  );
+}
+
+// A progress bar: the segmented bar on the brutalist palette (`filled` of `segments` blocks, by default
+// from `pct`), a track + fill on classic. `testID` goes on the segmented bar; `trackProps` / `fillProps`
+// carry the classic track's / fill's own testID and accessibility props; `fillWidth` overrides the
+// fill's width in percent (default `pct`).
+export function ProgressBar({
+  pct,
+  filled,
+  segments = 8,
+  testID,
+  brutalStyle,
+  trackStyle,
+  trackColor,
+  fillStyle,
+  fillColor,
+  fillWidth,
+  trackProps,
+  fillProps,
+}: {
+  pct: number;
+  filled?: number;
+  segments?: number;
+  testID?: string;
+  brutalStyle?: StyleProp<ViewStyle>;
+  trackStyle?: StyleProp<ViewStyle>;
+  trackColor: string;
+  fillStyle?: StyleProp<ViewStyle>;
+  fillColor: string;
+  fillWidth?: number;
+  trackProps?: ViewProps;
+  fillProps?: ViewProps;
+}) {
+  const g = useGrammarColors();
+  if (g.brutal) return <SegmentBar testID={testID} filled={filled ?? segmentsFilled(pct, segments)} segments={segments} style={brutalStyle} />;
+  return (
+    <View {...trackProps} style={[trackStyle, { backgroundColor: trackColor }]}>
+      <View {...fillProps} style={[fillStyle, { backgroundColor: fillColor, width: `${fillWidth ?? pct}%` }]} />
+    </View>
   );
 }

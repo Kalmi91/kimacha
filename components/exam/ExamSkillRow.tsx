@@ -2,8 +2,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
-import { SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
-import { useGrammarColors } from '@/lib/grammarColors';
+import { ProgressBar } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import type { SkillResult } from '@/lib/exam/skills';
 
@@ -19,7 +18,6 @@ type Props = {
 
 export default function ExamSkillRow({ result, label, colors }: Props) {
   const s = t();
-  const g = useGrammarColors();
   const { skill, correct, total, pct, weak } = result;
   const tone = weak ? colors.danger : colors.success;
 
@@ -34,13 +32,7 @@ export default function ExamSkillRow({ result, label, colors }: Props) {
           {weak ? s.exam.skillWeak : s.exam.skillStrong}
         </Text>
       </View>
-      {g.brutal ? (
-        <SegmentBar filled={segmentsFilled(pct, 8)} segments={8} />
-      ) : (
-        <View style={[styles.track, { backgroundColor: colors.border }]}>
-          <View style={[styles.fill, { backgroundColor: tone, width: `${pct}%` }]} />
-        </View>
-      )}
+      <ProgressBar pct={pct} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={tone} />
     </View>
   );
 }

@@ -7,8 +7,8 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import { BrutalButton, Sticker, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
-import { themedInputStyle, BackButton } from '@/components/grammar/Themed';
+import { BrutalButton, Sticker } from '@/components/grammar/Brutal';
+import { themedInputStyle, BackButton, ProgressBar } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -242,12 +242,8 @@ export default function TableDeckScreen() {
 
   const pct = items.length > 0 ? (doneCount(deck) / items.length) * 100 : 0;
 
-  const progressBar = g.brutal ? (
-    <SegmentBar testID="tabledeck-segments" filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalBar} />
-  ) : (
-    <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-      <View style={[styles.progressFill, { backgroundColor: colors.successFill, width: `${pct}%` }]} />
-    </View>
+  const progressBar = (
+    <ProgressBar testID="tabledeck-segments" pct={pct} brutalStyle={styles.brutalBar} trackStyle={styles.progressTrack} trackColor={colors.card} fillStyle={styles.progressFill} fillColor={colors.successFill} />
   );
 
   if (complete) {

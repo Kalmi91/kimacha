@@ -14,10 +14,10 @@ import {
   type LessonTestQuestion,
   type LessonTestResult,
 } from '@/lib/grammar/lessonTest';
-import { useGrammarColors } from '@/lib/grammarColors';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
-import { Card, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
+import { ProgressBar } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import ExamButton from '@/components/exam/ExamButton';
 import ExamChoiceCard from '@/components/exam/ExamChoiceCard';
@@ -114,7 +114,6 @@ export default function LessonTest({
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const g = useGrammarColors();
   const s = t();
   // the Check / Next bar of a typed question docks above the keyboard (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
@@ -277,13 +276,7 @@ export default function LessonTest({
         </Text>
         <View style={styles.closeSpacer} />
       </View>
-      {g.brutal ? (
-        <SegmentBar testID="lesson-test-progress" filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalProgress} />
-      ) : (
-        <View style={[styles.track, { backgroundColor: colors.border }]}>
-          <View style={[styles.fill, { backgroundColor: colors.tint, width: `${pct}%` }]} />
-        </View>
-      )}
+      <ProgressBar testID="lesson-test-progress" pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
       <DockSlotProvider host={dock}>
         {questions[index] && (
           <QuestionView key={`${topicId}:${index}:${questions[index].id}`} q={questions[index]} learnedLang={learnedLang} strictAccents={strictAccents} onDone={answered} />
