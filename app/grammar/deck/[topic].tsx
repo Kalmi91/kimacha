@@ -7,8 +7,8 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import { BrutalButton, Sticker } from '@/components/grammar/Brutal';
-import { themedInputStyle, BackButton, ProgressBar } from '@/components/grammar/Themed';
+import { Sticker } from '@/components/grammar/Brutal';
+import { themedInputStyle, BackButton, ProgressBar, ActionButton } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -254,22 +254,28 @@ export default function TableDeckScreen() {
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
-          {g.brutal ? (
-            <BrutalButton testID="tabledeck-start-again" fill="a" label={s.tableDeck.startAgain} onPress={handleStartAgain} style={styles.brutalBtn} />
-          ) : (
-          <Pressable testID="tabledeck-start-again" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={handleStartAgain}>
-            <Text style={styles.btnTextOnTint}>{s.tableDeck.startAgain}</Text>
-          </Pressable>
-          )}
+          <ActionButton
+            testID="tabledeck-start-again"
+            fill="a"
+            label={s.tableDeck.startAgain}
+            onPress={handleStartAgain}
+            brutalStyle={styles.brutalBtn}
+            classicStyle={[styles.btn, { backgroundColor: colors.tint }]}
+            classicTextStyle={styles.btnTextOnTint}
+            classicRole={null}
+          />
           {/* same pill shape/size as "Start again" (outline instead
               of filled), so the two options read as equally-weighted choices. */}
-          {g.brutal ? (
-            <BrutalButton testID="tabledeck-harder" fill="paper" label={s.tableDeck.harder} onPress={handleHarder} style={styles.brutalBtn} />
-          ) : (
-          <Pressable testID="tabledeck-harder" style={[styles.btn, styles.btnOutline, { borderColor: colors.tint }]} onPress={handleHarder}>
-            <Text style={[styles.btnTextOnTint, { color: colors.tint }]}>{s.tableDeck.harder}</Text>
-          </Pressable>
-          )}
+          <ActionButton
+            testID="tabledeck-harder"
+            fill="paper"
+            label={s.tableDeck.harder}
+            onPress={handleHarder}
+            brutalStyle={styles.brutalBtn}
+            classicStyle={[styles.btn, styles.btnOutline, { borderColor: colors.tint }]}
+            classicTextStyle={[styles.btnTextOnTint, { color: colors.tint }]}
+            classicRole={null}
+          />
           <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.tableDeck.backToLesson}</Text>
           </Pressable>
