@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
-import { router, useFocusEffect } from 'expo-router';
+import { router } from 'expo-router';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
@@ -33,6 +33,7 @@ import {
 import { buildReadingSet, readingWordFor, type ReadingSet } from '@/lib/practice/reading';
 import { speak, stopSpeaking } from '@/lib/speech';
 import { localDateString } from '@/lib/usageStats';
+import { useScreenLoad } from '@/lib/useScreenLoad';
 
 // Beta tab (Settings -> Beta -> Practice tab), spec HAROM-JATEK.md 5: a short text of five sentences with a due
 // word each (highlighted, read aloud on request), five questions about it, then a button to the Sentences tab
@@ -118,12 +119,7 @@ export default function PracticeScreen() {
   }, []);
 
   // Leaving the tab stops the read-aloud (the tab stays mounted).
-  useFocusEffect(
-    useCallback(() => {
-      void load();
-      return () => stopSpeaking();
-    }, [load]),
-  );
+  useScreenLoad(load, { onBlur: stopSpeaking });
 
   const count = set?.questions.length ?? 0;
   const inQuestions = !!set && step >= 1 && step <= count;
