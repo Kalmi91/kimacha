@@ -102,20 +102,29 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
         // a share-sheet error ends like a dismissed sheet: there is no server answer to wait for, the form closes as after a send
       }
     } else {
-      const params = new URLSearchParams({
+      const payload = {
         timestamp: new Date().toISOString(),
         level,
         languagePair,
         currentCard: `${build} · ${currentCard}`,
         feedbackText: text.trim(),
         appVersion: build,
-      });
+      };
 
       // Offline or a non-2xx answer: keep the typed text and show an error
       // instead of the thank-you toast (the text would be lost otherwise).
+      // POST body, not the query string: the free text stays out of the URL
+      // (length limit, server logs). `text/plain` JSON is the Apps Script
+      // `doPost(e)` way: it is a CORS-safelisted type, so no preflight (the
+      // web build) that the script could not answer.
       let failed = false;
       try {
-        const res = await fetch(`${FEEDBACK_URL}?${params.toString()}`);
+        // FEEDBACK_URL is null only in the Play flavor, which never gets here.
+        const res = await fetch(FEEDBACK_URL ?? '', {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify(payload),
+        });
         if (!res.ok) failed = true;
       } catch {
         failed = true;
