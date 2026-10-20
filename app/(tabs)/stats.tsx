@@ -27,7 +27,7 @@ import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { countKnown, countGraduated, countLearned } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import MockExamCard from '@/components/exam/MockExamCard';
@@ -358,7 +358,7 @@ export default function StatsScreen() {
       </ScrollView>
 
       {/* the 💬 button goes into the navigator's header (right end), not over the list. */}
-      <FeedbackButton placement="header" level="-" languagePair={pairOf(targetLang === 'en' ? 'en' : 'es')} currentCard="stats-tab" />
+      <ScreenFeedback placement="header" level="-" languagePair={pairOf(targetLang === 'en' ? 'en' : 'es')} currentCard="stats-tab" />
     </View>
   );
 }

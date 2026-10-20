@@ -25,7 +25,7 @@ import {
 import { lessonBadgePercent, lessonScoresByTopic } from '@/lib/grammar/lessonScore';
 import { lessonTestPassedTopics } from '@/lib/grammar/lessonTest';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 
@@ -122,7 +122,7 @@ export default function GrammarSyllabusScreen() {
               <Text variant="title" style={[styles.brutalTitle, narrow && styles.brutalTitleNarrow, { color: g.ink }]}>{s.tabs.grammar}</Text>
               <View style={styles.brutalHeaderRight}>
                 <Sticker testID="grammar-streak" label={`🔥 ${streak}`} fill="b" rotate={6} />
-                <FeedbackButton placement="inline" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
+                <ScreenFeedback placement="inline" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
               </View>
             </View>
           </SkinHeader>
@@ -372,7 +372,7 @@ export default function GrammarSyllabusScreen() {
         <Text style={[styles.footNote, { color: colors.tabIconDefault }]}>{s.grammar.footNote}</Text>
       </ScrollView>
 
-      <FeedbackButton placement="header" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
+      <ScreenFeedback placement="header" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
     </View>
   );
 }

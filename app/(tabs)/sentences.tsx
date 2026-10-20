@@ -5,7 +5,7 @@ import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import EasySentenceCard from '@/components/EasySentenceCard';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { BrutalButton, SegmentBar } from '@/components/grammar/Brutal';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -212,7 +212,7 @@ export default function SentencesScreen() {
   };
 
   const feedback = (
-    <FeedbackButton
+    <ScreenFeedback
       placement="header"
       level="-"
       languagePair={pairOf(target)}

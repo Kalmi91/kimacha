@@ -14,7 +14,7 @@ import type { MistakesBatch } from '@/lib/mistakes/format';
 import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
 import { BrutalBackButton, BrutalButton, Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import type { Level } from '@/data/words';
 
 // one row per loaded batch (newest
@@ -93,7 +93,7 @@ export default function MistakesReportScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
         <Text style={[styles.emptyText, { color: colors.tabIconDefault }]}>{s.mistakes.empty}</Text>
-        <FeedbackButton level={level} languagePair="en→es" currentCard="mistakes:report:empty" />
+        <ScreenFeedback level={level} languagePair="en→es" currentCard="mistakes:report:empty" />
       </View>
     );
   }
@@ -190,7 +190,7 @@ export default function MistakesReportScreen() {
           );
         })}
       </ScrollView>
-      <FeedbackButton level={level} languagePair="en→es" currentCard="mistakes:report" />
+      <ScreenFeedback level={level} languagePair="en→es" currentCard="mistakes:report" />
     </View>
   );
 }

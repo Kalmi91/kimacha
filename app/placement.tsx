@@ -14,7 +14,7 @@ import { levelProgress } from '@/lib/pcicLevels';
 import type { Sm2Card } from '@/lib/sm2';
 import { Card } from '@/components/grammar/Brutal';
 import LevelRow from '@/components/LevelRow';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ExamButton from '@/components/exam/ExamButton';
 import PlacementQuestionCard from '@/components/exam/PlacementQuestionCard';
@@ -145,7 +145,7 @@ export default function PlacementScreen() {
   const shell = (children: ReactNode, part: string) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
-      <FeedbackButton level={run?.placement.current ?? 'A1'} languagePair={pair} currentCard={`placement:${part}`} />
+      <ScreenFeedback level={run?.placement.current ?? 'A1'} languagePair={pair} currentCard={`placement:${part}`} />
     </View>
   );
 
