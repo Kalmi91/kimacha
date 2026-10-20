@@ -4,7 +4,6 @@
 // the correct answer is shown; on a pass the button goes to the next level (no automatic switch); on a fail
 // score + retry; the result is saved. Mock pattern: app/__tests__/onboarding.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 const mockBack = jest.fn();
 const mockPush = jest.fn();
@@ -43,7 +42,7 @@ const mockExam = [
 const mockBuildExam = jest.fn(() => mockExam);
 jest.mock('@/lib/exam/builder', () => ({ buildExam: (...args: unknown[]) => mockBuildExam(...(args as [])) }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
@@ -52,16 +51,11 @@ import { EXAM_PROGRESS_KEY } from '@/lib/exam/result';
 import { seedA1ExamState, seedExamState } from '@/lib/exam/devSeed';
 import { localDateString } from '@/lib/usageStats';
 import ExamScreen from '../exam';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 type Screen = ReturnType<typeof render>;
 

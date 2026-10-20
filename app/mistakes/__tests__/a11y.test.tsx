@@ -1,7 +1,6 @@
 // Accessibility: the ← of the report and the deck, and the 🔊 of the revealed answer, are named
 // buttons. Mock pattern: deck.test.tsx, brutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockSpeak = jest.fn();
 jest.mock('@/lib/speech', () => ({
   speak: (...args: unknown[]) => mockSpeak(...args),
@@ -23,7 +22,7 @@ jest.mock('react-native-safe-area-context', () => ({
 }));
 
 import { TextInput } from 'react-native';
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
@@ -32,16 +31,11 @@ import { validateMistakesPayload } from '@/lib/mistakes/format';
 import sample from '@/lib/mistakes/__fixtures__/sample.json';
 import MistakesDeckScreen from '../deck';
 import MistakesReportScreen from '../index';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 describe('a11y: mistakes screens', () => {
   beforeAll(async () => {

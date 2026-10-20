@@ -1,7 +1,6 @@
 // A failing save of the level exam's result does not trap the learner: after the last answer an error with a
 // retry button shows, and the retry saves the result and shows it. Pattern: examFeedback.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ level: 'A1' }),
@@ -24,23 +23,18 @@ const mockExam = [
 ];
 jest.mock('@/lib/exam/builder', () => ({ buildExam: () => mockExam }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { EXAM_PROGRESS_KEY } from '@/lib/exam/result';
 import { seedA1ExamState } from '@/lib/exam/devSeed';
 import ExamScreen from '../exam';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('Level exam: a failing save of the result', () => {
   beforeEach(async () => {

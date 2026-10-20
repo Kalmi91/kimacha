@@ -1,24 +1,18 @@
 // BrutalSwitch: on the brutalist palette an ink-bordered rectangular track (role switch + checked
 // state), on the classic palette today's Switch. The same value / onValueChange API.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { Switch } from 'react-native';
 
 import { BrutalSwitch } from '@/components/grammar/Brutal';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 describe('BrutalSwitch', () => {
   it('with the brand palette switch role + checked state, tapping gives the opposite value', async () => {

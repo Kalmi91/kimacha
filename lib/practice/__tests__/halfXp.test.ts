@@ -1,6 +1,5 @@
 // recordCorrectHalf (lib/practice/halfXp.ts): the XP of a correct practice answer, memory db.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { getDb } from '@/lib/database';
 import { __resetForTests } from '@/lib/dailyXp';

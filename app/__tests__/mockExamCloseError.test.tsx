@@ -1,7 +1,6 @@
 // A failing save when a paper is closed does not trap the learner: the paper stays open, an error with a retry
 // button shows, and the retry moves on (the closing flag is released, not stuck).
 // Mock pattern: mockExamFeedback.test.tsx.
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ level: 'A1' }),
@@ -68,23 +67,18 @@ jest.mock('@/lib/exam/mock/build', () => ({
 }));
 const mockExamRef: { current: MockExam } = { current: exam() };
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { MOCK_EXAM_PROGRESS_KEY } from '@/lib/exam/mock/session';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import MockExamScreen from '../mock-exam';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(60000);
 
-const flush = async (times = 10) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(10);
 
 
 describe('Mock exam: a failing save when a paper is closed', () => {

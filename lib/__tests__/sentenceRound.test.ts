@@ -2,7 +2,6 @@
 // a wrong build sends the sentence to the end, the saved round round-trips (with its focus) and an unusable one, or one
 // saved by the older version (typed sentence picked from the builds), reads as nothing and so starts a fresh round.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { getDb } from '@/lib/database';
 import {

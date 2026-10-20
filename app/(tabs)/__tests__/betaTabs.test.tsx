@@ -1,7 +1,6 @@
 // The Beta section of Settings (four switches, EN + ES, all off by default) and the two beta tabs of the
 // tab bar (hidden while their switch is off, the existing tabs unchanged). Mock pattern: a11yLabels.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-symbols', () => ({ SymbolView: () => null }));
 jest.mock('expo-router', () => {
   const React = require('react');
@@ -43,16 +42,11 @@ import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import TabLayout from '../_layout';
 import SettingsScreen from '../settings';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async () => {
-  for (let i = 0; i < 6; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 beforeEach(async () => {
   __resetBetaForTest();

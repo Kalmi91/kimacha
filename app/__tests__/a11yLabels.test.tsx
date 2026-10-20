@@ -1,7 +1,6 @@
 // Accessibility: the icon-only back arrow of the sub-screens and the onboarding controls
 // carry a role and a localized label (EN + ES). Mock pattern: themes.test.tsx, onboarding.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockBack = jest.fn();
 const mockReplace = jest.fn();
 jest.mock('expo-router', () => ({
@@ -9,7 +8,7 @@ jest.mock('expo-router', () => ({
   router: { replace: (...args: unknown[]) => mockReplace(...args), push: jest.fn() },
 }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { ONBOARDING_SKINS } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
@@ -19,16 +18,11 @@ import CreditsScreen from '../credits';
 import OnboardingScreen from '../onboarding';
 import ThemeMixScreen from '../theme-mix';
 import ThemesScreen from '../themes';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async () => {
-  for (let i = 0; i < 6; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 describe('a11y: back arrow of the sub-screens', () => {
   afterEach(() => setLanguage('en'));

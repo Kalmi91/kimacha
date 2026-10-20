@@ -53,6 +53,7 @@
     "gen:content": "node scripts/gen-content-index.mjs",
     "audit:data": "node scripts/words-open-check.mjs && node scripts/validate-en-track.mjs && node scripts/audit-corpus-en.mjs && node scripts/audit-games.mjs",
     "gate": "npm run typecheck:ci && npm run lint && npm run test:ci && npm run audit:data",
+    "check-keystore": "node scripts/check-keystore.mjs",
     "ui:overlap": "node scripts/ui-overlap.mjs"
   },
   "license": "UNLICENSED",

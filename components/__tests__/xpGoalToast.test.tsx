@@ -1,7 +1,6 @@
 // The daily XP goal pill (lib/dailyXp.ts -> UsageToast): "Daily goal reached! 50 XP" in the UI
 // language when the day's XP first reaches the goal, nothing before it. Mock pattern: chromeBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
 jest.mock('@/lib/usageTimer', () => ({
   onActiveMinute: () => () => {},
@@ -15,16 +14,11 @@ import { DAILY_XP_GOAL, __resetForTests, addXp } from '@/lib/dailyXp';
 import { setLanguage } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import UsageToast from '../UsageToast';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 const wrap = (ui: React.ReactElement) => <ThemeProvider>{ui}</ThemeProvider>;
 

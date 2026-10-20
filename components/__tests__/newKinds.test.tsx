@@ -8,7 +8,6 @@ jest.mock('@/lib/speech', () => ({
 jest.mock('@/lib/ThemeContext', () => ({
   useTheme: () => ({ theme: 'brand-light' }),
 }));
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 

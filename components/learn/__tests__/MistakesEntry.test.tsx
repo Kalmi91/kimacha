@@ -1,23 +1,17 @@
 // PCIC entry point: stays hidden without a loaded batch,
 // and shows the due count when there is a batch.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({ router: { push: jest.fn() } }));
 
-import { act, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 import Colors from '@/constants/Colors';
 import { getDb } from '@/lib/database';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import sample from '@/lib/mistakes/__fixtures__/sample.json';
 import MistakesEntry from '../MistakesEntry';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 describe('MistakesEntry (PCIC entry)', () => {
   it('no batch loaded -> renders nothing', async () => {

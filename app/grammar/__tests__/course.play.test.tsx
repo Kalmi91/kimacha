@@ -2,7 +2,6 @@
 // lesson, read the rule, drill it, see the score, and find the topic ticked off
 // when you come back.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
@@ -35,7 +34,7 @@ jest.mock('@/lib/games/content', () => {
   };
 });
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { setLanguage } from '@/lib/i18n';
@@ -44,14 +43,9 @@ import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice'
 import { hashString } from '@/lib/shuffle';
 import GrammarLessonScreen from '../[topic]';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 describe('grammar course', () => {
   beforeEach(async () => {

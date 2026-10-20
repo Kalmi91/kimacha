@@ -3,17 +3,12 @@
 // saving the result, the "Test passed" mark, failing does not lock anything.
 // Mock pattern: roundEndBrutal.test.tsx / drillButtons.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 const mockReplace = jest.fn();
 const mockBack = jest.fn();
 jest.mock('expo-router', () => ({
@@ -26,7 +21,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'presente-regular' }),
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 import { StyleSheet } from 'react-native';
 
 import { PALETTE_FILLS } from '@/constants/GrammarPalettes';
@@ -36,19 +31,14 @@ import { kindBestKey } from '@/lib/grammar/lessonScore';
 import { buildLessonTest, lessonTestKey, mergeLessonTestResult, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(60000);
 
 const TOPIC = 'presente-regular';
 const NOW = 1700000000000;
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 const press = async (testID: string) => {
   fireEvent.press(screen.getByTestId(testID));
   await flush();

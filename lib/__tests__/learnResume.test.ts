@@ -1,6 +1,5 @@
 // Card-level resume: a snapshot of the Learn round: save, read back, apply onto the rebuilt queue.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { getDb } from '@/lib/database';
 import { RESUME_GAME_ID } from '../resumeRoute';

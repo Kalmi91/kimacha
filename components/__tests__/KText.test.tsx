@@ -1,23 +1,17 @@
 // KText applies the theme's font (title / word / body), size, letter spacing, line height and
 // casing; the Classic theme (and the Neo-brutal body) is today's behaviour.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { act, render, screen } from '@testing-library/react-native';
+import { render, screen } from '@testing-library/react-native';
 import * as RN from 'react-native';
 
 import { KText, Text } from '@/components/KText';
 import type { SkinId } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async () => {
-  for (let i = 0; i < 4; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 async function renderWithSkin(skin: SkinId, ui: React.ReactElement) {
   await getDb().setSkin(skin);

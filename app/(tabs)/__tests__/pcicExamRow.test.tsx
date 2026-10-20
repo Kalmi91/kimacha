@@ -3,12 +3,7 @@
 // leads to the exam (when open), to practicing the words, or to the grammar lessons. It runs against the real
 // words-open corpus (data/pcic is not mocked). Mock pattern: pcicLevelPicker.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 const mockPush = jest.fn();
 jest.mock('expo-router', () => ({
@@ -31,16 +26,11 @@ import { seedA1ExamState, seedExamState, a1SeedCards } from '@/lib/exam/devSeed'
 import { EXAM_PROGRESS_KEY } from '@/lib/exam/result';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import PcicScreen from '../index';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 // The sheet closes, and navigation only proceeds after the exit animation (SHEET_CLOSE_MS).
 const afterSheetClose = async () => {
