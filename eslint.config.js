@@ -33,18 +33,6 @@ module.exports = [
   {
     // The files that were already over the ceiling when it was added are capped at their size then:
     // they can only shrink. Lower a cap when its file gets smaller, never raise one.
-    files: ['lib/grammar/syllabus.ts'],
-    rules: { 'max-lines': ['error', 901] },
-  },
-  {
-    files: ['lib/i18n/en.ts'],
-    rules: { 'max-lines': ['error', 753] },
-  },
-  {
-    files: ['lib/i18n/es.ts'],
-    rules: { 'max-lines': ['error', 694] },
-  },
-  {
     files: ['components/grammar/GrammarDrill.tsx'],
     rules: { 'max-lines': ['error', 627] },
   },

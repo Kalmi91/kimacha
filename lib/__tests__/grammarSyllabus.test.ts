@@ -4,8 +4,8 @@
 jest.mock('../database', () => jest.requireActual('../database.web'));
 
 import {
-  GRAMMAR_SYLLABUS,
-  GRAMMAR_UNITS,
+  getGrammarSyllabus,
+  getGrammarUnits,
   SYLLABUS_LEVELS,
   hasLesson,
   lessonCoverage,
@@ -16,6 +16,9 @@ import {
   topicsForUnit,
   unitsForLevel,
 } from '../grammar/syllabus';
+
+const GRAMMAR_SYLLABUS = getGrammarSyllabus();
+const GRAMMAR_UNITS = getGrammarUnits();
 
 describe('grammar syllabus map', () => {
   it('covers every level from A1 to C1', () => {

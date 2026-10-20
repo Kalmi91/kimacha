@@ -50,7 +50,7 @@ The product rules are in [docs/NORTH-STAR.md](../docs/NORTH-STAR.md). The ones t
   `data/words/en/`, grammar lessons in `data/games/grammar/<lang>/`. The `.ts` files next to them
   only wire the data up. After editing the Spanish word list run `node scripts/words-open-check.mjs`.
 - **Never regenerate a word list wholesale.** Word data cannot be reviewed by eye: add and edit entries.
-- **Strings exist in English and Spanish** (`lib/i18n/en.ts`, `lib/i18n/es.ts`). Spanish content uses
+- **Strings exist in English and Spanish** (`lib/i18n/en/`, `lib/i18n/es/`, one file per namespace). Spanish content uses
   Mexican usage. The vocabulary ceiling is C1.
 
 ## Releases
