@@ -1,66 +1,26 @@
-import { useState, useCallback, type ReactNode } from 'react';
-import { StyleSheet, View, Pressable, Alert, Platform, ScrollView, Modal } from 'react-native';
+import { type ReactNode } from 'react';
+import { StyleSheet, View, Pressable, ScrollView, Modal } from 'react-native';
 import { Text } from '@/components/KText';
-import { useRouter, useFocusEffect } from 'expo-router';
-import { File, Paths } from 'expo-file-system';
-import * as Sharing from 'expo-sharing';
-import * as DocumentPicker from 'expo-document-picker';
+import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
-import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
-import { type Level } from '@/data/words';
-import { getDb } from '@/lib/database';
-import { setPcicTarget, pcicItemsForLevel, PCIC_LEVELS, type PcicTarget, type PcicLevel } from '@/data/pcic';
-import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
-import { validateBackupPayload } from '@/lib/backup';
-import { validateMistakesPayload } from '@/lib/mistakes/format';
-import { seedExamState } from '@/lib/exam/devSeed';
-import {
-  DEFAULT_WEEKLY_GOAL_MINUTES,
-  MIN_WEEKLY_GOAL_MINUTES,
-  MAX_WEEKLY_GOAL_MINUTES,
-  WEEKLY_GOAL_STEP_MINUTES,
-  DEFAULT_DAILY_NEW_LIMIT,
-  MIN_DAILY_NEW_LIMIT,
-  MAX_DAILY_NEW_LIMIT,
-  DAILY_NEW_LIMIT_STEP,
-  localDateString,
-} from '@/lib/usageStats';
-import {
-  DEFAULT_AGAIN_DELAY_SEC,
-  MIN_AGAIN_DELAY_SEC,
-  MAX_AGAIN_DELAY_SEC,
-  AGAIN_DELAY_STEP_SEC,
-} from '@/lib/pcicSession';
+import { t } from '@/lib/i18n';
+import { WEEKLY_GOAL_STEP_MINUTES, DAILY_NEW_LIMIT_STEP } from '@/lib/usageStats';
+import { AGAIN_DELAY_STEP_SEC } from '@/lib/pcicSession';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { BrutalBox, BrutalSwitch } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import ThemeSwatch from '@/components/skins/ThemeSwatch';
 // version line in Settings, the same tag the feedback rows carry.
 import { appBuildTag } from '@/lib/appBuild';
-import { loadVoices, hasVoiceFor } from '@/lib/speech';
 import { languages } from '@/lib/languages';
-import { clearLearnResume } from '@/lib/learnResume';
 import { useBeta, setBeta, BETA_FLAGS, type BetaFlag } from '@/lib/beta';
+import { useSettingsScreen } from '@/lib/settings/useSettingsScreen';
 
 const appVersionLabel = appBuildTag();
-
-// The resettable decks (the levels that have
-// progress) and whether there is any grammar progress. The active direction's words count.
-async function loadResettable(): Promise<{ levels: PcicLevel[]; grammar: boolean }> {
-  const db = getDb();
-  const onboarding = await db.getOnboarding();
-  if (onboarding) setPcicTarget(onboarding.target as PcicTarget);
-  const [cards, grammarRows] = await Promise.all([db.getPcicCards(), db.getGameProgress(GRAMMAR_PROGRESS_KEY)]);
-  const ids = new Set(cards.map((c) => c.itemId));
-  return {
-    levels: PCIC_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).some((i) => ids.has(i.id))),
-    grammar: grammarRows.length > 0,
-  };
-}
 
 // The settings row: BrutalBox on the brutalist palette, today's card row on the classic palette.
 function Row({ onPress, children }: { onPress?: () => void; children: ReactNode }) {
@@ -124,267 +84,16 @@ export default function SettingsScreen() {
   const g = useGrammarColors();
   const s = t();
   const router = useRouter();
-  const [level, setLevel] = useState<Level>('A0');
-  const [direction, setDirection] = useState<[string, string]>(['en', 'es']);
-  // The row of the learning-direction switch and its
-  // small sheet.
-  const [directionSheetOpen, setDirectionSheetOpen] = useState(false);
-  // weekly study goal in minutes (UI shows whole hours).
-  const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
-  // daily budget of brand-new words entering the queue.
-  const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
-  // The return time of the PCIC "again" card.
-  const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
-  // difficulty switches. Accents are the first one: off = the beginner
-  // grader forgives a missing á/é/ñ, on = it counts as a mistake.
-  const [strictAccents, setStrictAccents] = useState(false);
-  // Article button row on the typing Spanish noun card. On by default, because
-  // the developer asked for it; the switch is the way back if it turns out not to work well in practice.
-  const [articlePicker, setArticlePicker] = useState(true);
-  // User feedback: "there should be a text that congratulates me for reaching the
-  // weekly limit, which is the goal, something huge. and at the goal it should also write
-  // 'done' in green". The goal stepper never said whether the goal was met, so the
-  // rolling 7-day total is read here too.
-  const [weekMinutes, setWeekMinutes] = useState(0);
-  // languages of this course the phone has no TTS voice for. Without the
-  // hint the learner only hears a wrong-language reading (or now, silence) and
-  // has no idea it is a missing system voice, not the app.
-  const [missingVoices, setMissingVoices] = useState<string[]>([]);
-  // The reset rows: one deck row for every level that has
-  // progress, and one grammar row if there is grammar progress.
-  const [resetLevels, setResetLevels] = useState<PcicLevel[]>([]);
-  const [hasGrammarProgress, setHasGrammarProgress] = useState(false);
-  // The reset rows in a collapsible section, closed by default.
-  const [resetOpen, setResetOpen] = useState(false);
-  // State of the __DEV__-only exam control (see below).
-  const [examSeeded, setExamSeeded] = useState(false);
-
-  useFocusEffect(
-    useCallback(() => {
-      const db = getDb();
-      db.getStrictAccents().then(setStrictAccents);
-      db.getWeeklyGoalMinutes().then(setWeeklyGoal);
-      db.getUsageStats().then(u => setWeekMinutes(u.thisWeek));
-      db.getDailyNewLimit().then(setDailyNewLimit);
-      db.getAgainDelaySec().then(setAgainDelaySec);
-      db.getOnboarding().then(async o => {
-        if (!o) return;
-        setDirection([o.source, o.target]);
-        await loadVoices();
-        setMissingVoices([o.source, o.target].filter(code => !hasVoiceFor(code)));
-      });
-      db.getLevel().then(l => setLevel(l.level as Level));
-      db.getArticlePicker().then(setArticlePicker);
-      loadResettable().then(({ levels, grammar }) => {
-        setResetLevels(levels);
-        setHasGrammarProgress(grammar);
-      });
-    }, [])
-  );
-
-  // the Learn screen reads the flag when it builds a queue.
-  const handleStrictAccentsToggle = async (v: boolean) => {
-    setStrictAccents(v);
-    await getDb().setStrictAccents(v);
-  };
-
-  // The same loading point as for the other learning settings.
-  const handleArticlePickerToggle = async (v: boolean) => {
-    setArticlePicker(v);
-    await getDb().setArticlePicker(v);
-  };
-
-  // Direction switch:
-  // no confirmation question, because it can be switched back and the progress is not lost (the
-  // two directions live with separate id spaces/pairs and a separate pair-level level,
-  // lib/database.ts getPcicLevel/hasPcicLevel). If the new direction does not yet have an
-  // explicitly chosen level, the main tab (app/(tabs)/index.tsx load())
-  // opens the level picker sheet by itself, no separate handling is needed here.
-  const handleSelectDirection = async (source: 'en' | 'es', target: PcicTarget) => {
-    setDirectionSheetOpen(false);
-    if (source === direction[0] && target === direction[1]) return;
-    const db = getDb();
-    await db.setOnboarding(source, target);
-    setLanguage(source);
-    // A full remount of the tree (including the tab labels) is needed only here, on a
-    // FINALIZED switch; the onboarding trial switch does not call it.
-    notifyLanguageChange();
-    setPcicTarget(target);
-    setDirection([source, target]);
-    router.replace('/(tabs)');
-  };
+  const {
+    level, direction, directionSheetOpen, setDirectionSheetOpen, weeklyGoal, dailyNewLimit, againDelaySec,
+    strictAccents, articlePicker, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
+    setResetOpen, examSeeded, handleStrictAccentsToggle, handleArticlePickerToggle, handleSelectDirection,
+    handleWeeklyGoalChange, handleDailyNewLimitChange, handleAgainDelayChange, handleBackup, handleRestore,
+    handleResetDeck, handleResetGrammar, handleSeedExamA1, handleLoadMistakes,
+  } = useSettingsScreen();
 
   // the language's own name for the hint ("Magyar"), not its code.
   const voiceName = (code: string) => languages.find(l => l.code === code)?.name ?? code;
-
-  // reached is "this rolling week's minutes are at or over the goal",
-  // the same rule the Stats tab's goal card uses (lib/usageStats.ts).
-  const goalReached = weeklyGoal > 0 && weekMinutes >= weeklyGoal;
-
-  // ± one hour per tap, clamped to the 1..35 h/week range.
-  const handleWeeklyGoalChange = async (deltaMinutes: number) => {
-    const next = Math.min(
-      MAX_WEEKLY_GOAL_MINUTES,
-      Math.max(MIN_WEEKLY_GOAL_MINUTES, weeklyGoal + deltaMinutes)
-    );
-    if (next === weeklyGoal) return;
-    setWeeklyGoal(next);
-    await getDb().setWeeklyGoalMinutes(next);
-  };
-
-  // ± five new words per tap, clamped to the 5..100 a day range.
-  const handleDailyNewLimitChange = async (delta: number) => {
-    const next = Math.min(
-      MAX_DAILY_NEW_LIMIT,
-      Math.max(MIN_DAILY_NEW_LIMIT, dailyNewLimit + delta)
-    );
-    if (next === dailyNewLimit) return;
-    setDailyNewLimit(next);
-    await getDb().setDailyNewLimit(next);
-  };
-
-  // ± 15 s per tap, clamped to the 15..300 s range.
-  const handleAgainDelayChange = async (delta: number) => {
-    const next = Math.min(
-      MAX_AGAIN_DELAY_SEC,
-      Math.max(MIN_AGAIN_DELAY_SEC, againDelaySec + delta)
-    );
-    if (next === againDelaySec) return;
-    setAgainDelaySec(next);
-    await getDb().setAgainDelaySec(next);
-  };
-
-  // RN-web Alert is a no-op, so web falls back to the browser dialogs.
-  const notify = (title: string, message?: string) => {
-    if (Platform.OS === 'web') window.alert(message ? `${title}\n${message}` : title);
-    else Alert.alert(title, message);
-  };
-
-  // Export the whole learning state to a JSON file. Native hands it to the
-  // Android/iOS share sheet (user saves it to Drive, email, anywhere); web
-  // downloads it as a file.
-  const handleBackup = async () => {
-    try {
-      const payload = await getDb().exportAll();
-      const json = JSON.stringify(payload);
-      const name = `kimacha-backup-${new Date().toISOString().replace(/[:.]/g, '-')}.json`;
-      if (Platform.OS === 'web') {
-        const blob = new Blob([json], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = name;
-        a.click();
-        URL.revokeObjectURL(url);
-        return;
-      }
-      const file = new File(Paths.cache, name);
-      file.create();
-      file.write(json);
-      await Sharing.shareAsync(file.uri, { mimeType: 'application/json', dialogTitle: s.backup.backup });
-    } catch {
-      notify(s.backup.errorTitle, s.backup.exportError);
-    }
-  };
-
-  // Pick a backup JSON, validate it, then (after an explicit confirm,
-  // this overwrites all progress) import it in one transaction and reload.
-  const handleRestore = async () => {
-    try {
-      const res = await DocumentPicker.getDocumentAsync({ type: 'application/json', copyToCacheDirectory: true });
-      if (res.canceled || !res.assets?.length) return;
-      const asset = res.assets[0];
-      const json = Platform.OS === 'web' && asset.file
-        ? await asset.file.text()
-        : await new File(asset.uri).text();
-      const payload = validateBackupPayload(JSON.parse(json));
-      const doImport = async () => {
-        try {
-          await getDb().importAll(payload);
-          notify(s.backup.doneTitle);
-          router.navigate('/');
-        } catch {
-          notify(s.backup.errorTitle, s.backup.importError);
-        }
-      };
-      if (Platform.OS === 'web') {
-        if (window.confirm(`${s.backup.confirmTitle}\n${s.backup.confirmMessage}`)) await doImport();
-      } else {
-        Alert.alert(s.backup.confirmTitle, s.backup.confirmMessage, [
-          { text: s.feedback.cancel, style: 'cancel' },
-          { text: s.backup.confirmYes, style: 'destructive', onPress: doImport },
-        ]);
-      }
-    } catch {
-      notify(s.backup.errorTitle, s.backup.importError);
-    }
-  };
-
-  // Progress reset moved here from the Learn header,
-  // per deck (per level) and separately for grammar; all with confirmation. The Learn and the
-  // Course tab reload on focus, the rows here refresh immediately.
-  const confirmReset = (title: string, message: string, doReset: () => Promise<void>) => {
-    const run = async () => {
-      await doReset();
-      const r = await loadResettable();
-      setResetLevels(r.levels);
-      setHasGrammarProgress(r.grammar);
-    };
-    if (Platform.OS === 'web') {
-      if (window.confirm(`${title}\n${message}`)) run();
-    } else {
-      Alert.alert(title, message, [
-        { text: s.feedback.cancel, style: 'cancel' },
-        { text: s.pcic.resetConfirmYes, style: 'destructive', onPress: run },
-      ]);
-    }
-  };
-  const handleResetDeck = (lvl: PcicLevel) =>
-    confirmReset(s.pcic.resetConfirmTitle, s.pcic.resetConfirmLevel(lvl), async () => {
-      await getDb().resetPcicCards(lvl.toLowerCase());
-      // The saved Learn-round snapshot is no longer valid after the progress was reset.
-      await clearLearnResume(getDb());
-    });
-  const handleResetGrammar = () =>
-    confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, () => getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY));
-
-  // Row visible only in __DEV__; it sets the exam
-  // state (A1-B2: 85% of the level's cards graduated + the written lessons done) so that the exam can be clicked through.
-  const handleSeedExamA1 = async () => {
-    const db = getDb();
-    const onboarding = await db.getOnboarding();
-    const target = (onboarding?.target as PcicTarget | undefined) ?? 'es';
-    setPcicTarget(target);
-    await seedExamState(db, target, localDateString());
-    setExamSeeded(true);
-  };
-
-  // pick a kimacha-hibaim JSON (the /hibaim skill's
-  // output), validate it with the app's own rules (lib/mistakes/format.ts),
-  // save it (loading the same batchId again replaces its content, card
-  // progress survives) and open the report.
-  const handleLoadMistakes = async () => {
-    try {
-      const res = await DocumentPicker.getDocumentAsync({ type: 'application/json', copyToCacheDirectory: true });
-      if (res.canceled || !res.assets?.length) return;
-      const asset = res.assets[0];
-      const json = Platform.OS === 'web' && asset.file
-        ? await asset.file.text()
-        : await new File(asset.uri).text();
-      const result = validateMistakesPayload(JSON.parse(json));
-      if (!result.ok) {
-        notify(s.backup.errorTitle, result.error);
-        return;
-      }
-      const { batch } = result;
-      await getDb().saveMistakeBatch(batch.batchId, JSON.stringify(batch), new Date().toISOString());
-      const drillCount = batch.patterns.reduce((n, p) => n + p.drills.length, 0);
-      notify(s.mistakes.loaded(batch.sentences.length, batch.words.length, drillCount));
-      router.navigate('/mistakes');
-    } catch {
-      notify(s.backup.errorTitle, s.backup.importError);
-    }
-  };
 
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>

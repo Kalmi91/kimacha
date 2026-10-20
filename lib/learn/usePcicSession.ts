@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TextInput } from 'react-native';
-import { router, useFocusEffect } from 'expo-router';
+import { router } from 'expo-router';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import { getDb } from '@/lib/database';
@@ -23,6 +23,7 @@ import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSenten
 import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCardData } from '@/lib/sentenceCards';
 import { EXAM_LEVELS } from '@/lib/exam/types';
 import { examStatusFor, examUnlock, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
+import { useScreenLoad } from '@/lib/useScreenLoad';
 
 // How long the level picker sheet takes to close (the RN-web Modal's 250 ms exit animation, which starts about 100 ms late, plus a margin).
 const SHEET_CLOSE_MS = 500;
@@ -202,12 +203,8 @@ export function usePcicSession() {
     // as broken memoization.
   }, [setTypedAnswer]);
 
-  useFocusEffect(
-    useCallback(() => {
-      setLoading(true);
-      load();
-    }, [load])
-  );
+  // A refocus with the deck already on screen refreshes it without the spinner.
+  useScreenLoad(load, { hasData: !loading, setLoading });
 
   // Tapping in the level picker sheet immediately gives the deck of the chosen level
   // (the sheet closes first, so the switch does not look frozen).

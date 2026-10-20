@@ -12,6 +12,7 @@ import { speechLang } from '@/lib/languages';
 import { hasVoiceFor, loadVoices, stop as stopSpeaking } from '@/lib/speech';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
+import { useSingleFlight } from '@/lib/useSingleFlight';
 import { Card } from '@/components/grammar/Brutal';
 import ExamButton from '@/components/exam/ExamButton';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -68,7 +69,7 @@ export default function MockExamScreen() {
   const [timedOut, setTimedOut] = useState(false);
   const [result, setResult] = useState<MockResult | null>(null);
   const [leaving, setLeaving] = useState(false);
-  const closingRef = useRef(false);
+  const runOnce = useSingleFlight();
   const [closeError, setCloseError] = useState(false);
 
   // --- Loading: direction, level words, learned words (for the glossary), saved exam.
@@ -133,30 +134,29 @@ export default function MockExamScreen() {
 
   // Closing a paper (the learner finished it, or the clock ran out): its answers are saved, then the next one follows.
   const closePaper = async (byClock: boolean) => {
-    if (!exam || !paper || closingRef.current) return;
-    closingRef.current = true;
-    stopSpeaking();
-    setLeaving(false);
-    if (byClock) setTimedOut(true);
-    setCloseError(false);
-    const nextDone = [...done, paper.id];
-    setDone(nextDone);
-    // A failing save leaves the paper open and shows an error with a retry button; the flag is released either way.
-    try {
-      if (paperIdx + 1 >= exam.papers.length) {
-        await finish(answers, exam);
-      } else {
-        await saveMockSession(getDb(), target, level, { seed: exam.seed, sig: mockExamSignature(exam), done: nextDone, answers });
-        setPaperIdx(paperIdx + 1);
-        setTaskIdx(0);
-        setPhase('paperIntro');
+    if (!exam || !paper) return;
+    // A failing save leaves the paper open and shows an error with a retry button; the guard is released either way.
+    await runOnce(async () => {
+      stopSpeaking();
+      setLeaving(false);
+      if (byClock) setTimedOut(true);
+      setCloseError(false);
+      const nextDone = [...done, paper.id];
+      setDone(nextDone);
+      try {
+        if (paperIdx + 1 >= exam.papers.length) {
+          await finish(answers, exam);
+        } else {
+          await saveMockSession(getDb(), target, level, { seed: exam.seed, sig: mockExamSignature(exam), done: nextDone, answers });
+          setPaperIdx(paperIdx + 1);
+          setTaskIdx(0);
+          setPhase('paperIntro');
+        }
+      } catch {
+        setDone(done);
+        setCloseError(true);
       }
-    } catch {
-      setDone(done);
-      setCloseError(true);
-    } finally {
-      closingRef.current = false;
-    }
+    });
   };
 
   // An expiring clock closes the paper from the latest state (the effect calls the rendered closePaper).
