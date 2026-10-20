@@ -69,19 +69,25 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
       .then(p => {
         if (alive) setPalette(p);
       })
-      .catch(() => {});
+      .catch(() => {
+        // a failed read keeps the default palette
+      });
     getDb()
       .getSkin()
       .then(s => {
         if (alive) setChosenSkin(s);
       })
-      .catch(() => {});
+      .catch(() => {
+        // a failed read keeps the default skin
+      });
     getDb()
       .getSkinMix()
       .then(m => {
         if (alive && m) setMix(m);
       })
-      .catch(() => {});
+      .catch(() => {
+        // a failed read keeps the default skin mix
+      });
     return () => {
       alive = false;
     };
@@ -89,17 +95,23 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   const setGrammarPalette = (p: GrammarPaletteId) => {
     setPalette(p);
-    getDb().setGrammarPalette(p).catch(() => {});
+    getDb().setGrammarPalette(p).catch(() => {
+      // the choice is already applied; a failed write only means it is not remembered
+    });
   };
 
   const setSkin = (s: SkinSelection) => {
     setChosenSkin(s);
-    getDb().setSkin(s).catch(() => {});
+    getDb().setSkin(s).catch(() => {
+      // the choice is already applied; a failed write only means it is not remembered
+    });
   };
 
   const setSkinMix = (m: SkinMix) => {
     setMix(m);
-    getDb().setSkinMix(m).catch(() => {});
+    getDb().setSkinMix(m).catch(() => {
+      // the choice is already applied; a failed write only means it is not remembered
+    });
   };
 
   return (

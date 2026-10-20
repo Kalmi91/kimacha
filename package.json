@@ -36,6 +36,7 @@
     "firebase-tools": "^15.32.1",
     "jest": "^29.7.0",
     "jest-expo": "~56.0.5",
+    "knip": "^5.88.1",
     "react-test-renderer": "19.2.3",
     "sql.js": "^1.14.2",
     "typescript": "~6.0.3"
@@ -54,7 +55,8 @@
     "audit:data": "node scripts/words-open-check.mjs && node scripts/validate-en-track.mjs && node scripts/audit-corpus-en.mjs && node scripts/audit-games.mjs",
     "gate": "npm run typecheck:ci && npm run lint && npm run test:ci && npm run audit:data",
     "check-keystore": "node scripts/check-keystore.mjs",
-    "ui:overlap": "node scripts/ui-overlap.mjs"
+    "ui:overlap": "node scripts/ui-overlap.mjs",
+    "dead": "knip --include files,exports,types"
   },
   "license": "UNLICENSED",
   "repository": {

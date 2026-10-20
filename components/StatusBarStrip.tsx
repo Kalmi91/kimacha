@@ -22,13 +22,17 @@ export default function StatusBarStrip() {
   const g = useGrammarColors();
 
   useEffect(() => {
-    getDb().getStatusBarTint().then(setTint).catch(() => {});
+    getDb().getStatusBarTint().then(setTint).catch(() => {
+      // a failed read leaves the tint at its default
+    });
   }, []);
 
   const cycle = () => {
     const next = nextTintIndex(tint);
     setTint(next);
-    getDb().setStatusBarTint(next).catch(() => {});
+    getDb().setStatusBarTint(next).catch(() => {
+      // the new tint is already on screen; a failed write only means it is not remembered
+    });
   };
 
   if (BAND_HEIGHT === 0) return null;

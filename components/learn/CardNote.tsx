@@ -39,7 +39,9 @@ export default function CardNote({ note, image, colors }: Props) {
             accessibilityHint={t().pcic.photoCreditHint}
             hitSlop={8}
             onPress={() => {
-              Linking.openURL(image.sourceUrl).catch(() => {});
+              Linking.openURL(image.sourceUrl).catch(() => {
+                // when no app can open the link, the credit line stays as it is
+              });
             }}
           >
             <Text style={[styles.credit, { color: linkColor }]}>{t().pcic.photoCredit(image.author, image.license, image.cropped)}</Text>

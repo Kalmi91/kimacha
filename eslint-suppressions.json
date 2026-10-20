@@ -1,0 +1,167 @@
+{
+  "app/(tabs)/course.tsx": {
+    "no-restricted-syntax": {
+      "count": 5
+    }
+  },
+  "app/(tabs)/settings.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "app/(tabs)/stats.tsx": {
+    "no-restricted-syntax": {
+      "count": 5
+    }
+  },
+  "app/+not-found.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "app/grammar/deck/[topic].tsx": {
+    "no-restricted-syntax": {
+      "count": 3
+    }
+  },
+  "app/mistakes/deck.tsx": {
+    "no-restricted-syntax": {
+      "count": 6
+    }
+  },
+  "app/mistakes/index.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "app/onboarding.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/EasySentenceCard.tsx": {
+    "no-restricted-syntax": {
+      "count": 6
+    }
+  },
+  "components/FeedbackModal.tsx": {
+    "no-restricted-syntax": {
+      "count": 4
+    }
+  },
+  "components/LevelRow.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/OnboardingSteps.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/ResultBadge.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/UsageToast.tsx": {
+    "no-restricted-syntax": {
+      "count": 3
+    }
+  },
+  "components/grammar/Brutal.tsx": {
+    "no-restricted-syntax": {
+      "count": 2
+    }
+  },
+  "components/grammar/GrammarDrill.styles.ts": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/grammar/GrammarDrill.tsx": {
+    "no-restricted-syntax": {
+      "count": 5
+    }
+  },
+  "components/grammar/GrammarTopic.styles.ts": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/grammar/drill/MatchFormItems.tsx": {
+    "no-restricted-syntax": {
+      "count": 4
+    }
+  },
+  "components/grammar/drill/WhyTransformItems.tsx": {
+    "no-restricted-syntax": {
+      "count": 6
+    }
+  },
+  "components/learn/BadgeRow.tsx": {
+    "no-restricted-syntax": {
+      "count": 2
+    }
+  },
+  "components/learn/CardShell.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/learn/DockedAction.tsx": {
+    "no-restricted-syntax": {
+      "count": 4
+    }
+  },
+  "components/learn/PcicCardView.tsx": {
+    "no-restricted-syntax": {
+      "count": 4
+    }
+  },
+  "components/learn/PcicRevealedAnswer.tsx": {
+    "no-restricted-syntax": {
+      "count": 7
+    }
+  },
+  "components/learn/SentenceGradeRow.tsx": {
+    "no-restricted-syntax": {
+      "count": 6
+    }
+  },
+  "components/learn/pcicStyles.ts": {
+    "no-restricted-syntax": {
+      "count": 5
+    }
+  },
+  "components/skins/csillampony.tsx": {
+    "no-restricted-syntax": {
+      "count": 6
+    }
+  },
+  "components/skins/loteria.tsx": {
+    "no-restricted-syntax": {
+      "count": 5
+    }
+  },
+  "components/skins/retro95.tsx": {
+    "no-restricted-syntax": {
+      "count": 2
+    }
+  },
+  "components/skins/ukiyoe.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/skins/y2k.tsx": {
+    "no-restricted-syntax": {
+      "count": 1
+    }
+  },
+  "components/stats/LevelCard.tsx": {
+    "no-restricted-syntax": {
+      "count": 3
+    }
+  }
+}
