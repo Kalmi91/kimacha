@@ -13,7 +13,6 @@ import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { LESSON_TEST_PASS_PCT, lessonTestSize, lessonTestUnlocked, type LessonTestResult } from '@/lib/grammar/lessonTest';
 import type { Phase, ProgressRow } from '@/lib/grammar/useGrammarTopic';
 import type { RoundStats } from '@/components/grammar/GrammarDrill';
-import FeedbackButton from '@/components/FeedbackModal';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
 
@@ -23,7 +22,6 @@ interface Props {
   topicId: string;
   learnedLang: string;
   contentLang: string;
-  level: string;
   lesson: GrammarTopicData;
   progressRows: ProgressRow[];
   roundStats: RoundStats | null;
@@ -43,7 +41,6 @@ export default function GrammarRoundEnd({
   topicId,
   learnedLang,
   contentLang,
-  level,
   lesson,
   progressRows,
   roundStats,
@@ -213,8 +210,6 @@ export default function GrammarRoundEnd({
             <Text style={[styles.ghostBtnText, { color: g.mu }]}>{s.grammar.backToSyllabus}</Text>
           </Pressable>
         </ScrollView>
-        {/* the 💬 is there on the task-end / result page too. */}
-        <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:done`} />
       </View>
     );
   }
@@ -289,7 +284,6 @@ export default function GrammarRoundEnd({
           <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.grammar.backToSyllabus}</Text>
         </Pressable>
       </View>
-      <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:done`} />
     </View>
   );
 }

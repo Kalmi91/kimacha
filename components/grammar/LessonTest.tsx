@@ -26,7 +26,7 @@ import ExamTilesCard from '@/components/exam/ExamTilesCard';
 import ExamTypeCard from '@/components/exam/ExamTypeCard';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 
 // the end-of-lesson test screen of a grammar lesson. There is no intro
 // (under the lesson's done-page button it says "10 questions, pass 80%"): questions (no lives;
@@ -189,7 +189,7 @@ export default function LessonTest({
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
       {part ? (
-        <FeedbackButton
+        <ScreenFeedback
           level={level}
           languagePair={`${contentLang}→${learnedLang}`}
           currentCard={`grammar:${topicId}:lessontest:${part}`}
