@@ -9,6 +9,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { LEVELS, type Level } from '@/data/words';
 import {
   doneGrammarTopicProgress,
@@ -52,6 +53,7 @@ export default function GrammarSyllabusScreen() {
   // a phone's width: the neo-brutalist header (title + streak sticker + 💬) gets a smaller title there, a wide theme font would push the 💬 out.
   const narrow = useWindowDimensions().width < 400;
   const s = t();
+  const { refresh } = useLearner();
   const router = useRouter();
 
   const [learnedLang, setLearnedLang] = useState('es');
@@ -70,8 +72,7 @@ export default function GrammarSyllabusScreen() {
 
   const load = useCallback(async () => {
     const db = getDb();
-    const onboarding = await db.getOnboarding();
-    const target = onboarding?.target ?? 'es';
+    const { target } = await refresh(['direction']);
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
     // stored source language.
@@ -94,7 +95,7 @@ export default function GrammarSyllabusScreen() {
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);
-  }, []);
+  }, [refresh]);
 
   useFocusEffect(
     useCallback(() => {

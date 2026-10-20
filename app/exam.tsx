@@ -5,7 +5,8 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
-import { PCIC_LEVELS, findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { useLearner } from '@/lib/learner';
+import { PCIC_LEVELS, findPcicItem, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress, syllabusTopic } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
 import { t } from '@/lib/i18n';
@@ -105,6 +106,7 @@ export default function ExamScreen() {
   const dock = useDockSlot(colors);
   const router = useRouter();
   const params = useLocalSearchParams<{ level?: string }>();
+  const { refresh, setLevel: saveLevel } = useLearner();
   const level: PcicLevel = EXAM_LEVELS.find((l) => l === params.level) ?? EXAM_LEVELS[0];
 
   const [phase, setPhase] = useState<Phase>('loading');
@@ -135,13 +137,11 @@ export default function ExamScreen() {
     let alive = true;
     (async () => {
       const db = getDb();
-      const onboarding = await db.getOnboarding();
-      const target: PcicTarget = (onboarding?.target as PcicTarget | undefined) ?? 'es';
-      setPcicTarget(target);
-      const [cards, grammarRows, strictAccents] = await Promise.all([
+      const { target } = await refresh(['direction']);
+      const [cards, grammarRows, { strictAccents }] = await Promise.all([
         db.getPcicCards(),
         db.getGameProgress(GRAMMAR_PROGRESS_KEY),
-        db.getStrictAccents(),
+        refresh(['strictAccents']),
       ]);
       if (!alive) return;
       const doneTopics = [...doneGrammarTopicProgress(target, grammarRows).keys()];
@@ -164,7 +164,7 @@ export default function ExamScreen() {
     return () => {
       alive = false;
     };
-  }, [level, make]);
+  }, [level, make, refresh]);
 
   const start = () => {
     setIndex(0);
@@ -208,7 +208,7 @@ export default function ExamScreen() {
   const nextLevel = PCIC_LEVELS[levelIdx + 1];
   const goNext = async () => {
     if (!nextLevel) return;
-    await getDb().setPcicLevel(nextLevel);
+    await saveLevel(nextLevel);
     router.back();
   };
 
@@ -216,7 +216,7 @@ export default function ExamScreen() {
 
   // At a weak word (or reading) point, back to the learn tab, on the current level's deck.
   const practiceWords = async () => {
-    await getDb().setPcicLevel(level);
+    await saveLevel(level);
     router.back();
   };
 

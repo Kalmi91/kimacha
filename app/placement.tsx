@@ -5,7 +5,8 @@ import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
-import { getPcicTarget, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { useLearner } from '@/lib/learner';
 import { t } from '@/lib/i18n';
 import { pairOf } from '@/lib/languagePair';
 import { useTheme } from '@/lib/ThemeContext';
@@ -81,9 +82,10 @@ export default function PlacementScreen() {
   const colors = Colors[theme];
   const s = t();
   const router = useRouter();
+  const learner = useLearner();
 
   // Starts on the first render (the level data is an already-loaded module, in the web preview too, without a seed).
-  const [run, setRun] = useState<Run | null>(() => startRun(getPcicTarget(), Date.now()));
+  const [run, setRun] = useState<Run | null>(() => startRun(learner.target, Date.now()));
   const [leaving, setLeaving] = useState(false);
   const [known, setKnown] = useState(0);
   const [cards, setCards] = useState<Sm2Card[]>([]);
@@ -120,27 +122,26 @@ export default function PlacementScreen() {
   const again = () => {
     setChoosing(false);
     setKnown(0);
-    setRun(startRun(getPcicTarget(), Date.now()));
+    setRun(startRun(learner.target, Date.now()));
   };
 
   // Saves the suggested or manually chosen level. In onboarding (no saved direction yet)
   // it also records the direction and moves on to the tabs; coming from the level-picker sheet it steps back to the learner tab.
   const chooseLevel = async (level: PcicLevel) => {
-    const db = getDb();
-    if (!(await db.getOnboarding())) {
-      const target = getPcicTarget();
-      await db.setOnboarding(target === 'es' ? 'en' : 'es', target);
-      await db.setPcicLevel(level);
+    const { onboarded, target } = await learner.refresh(['direction']);
+    if (!onboarded) {
+      await learner.setOnboarding(target === 'es' ? 'en' : 'es', target);
+      await learner.setLevel(level);
       router.replace('/(tabs)');
       return;
     }
-    await db.setPcicLevel(level);
+    await learner.setLevel(level);
     router.back();
   };
 
   // The 💬 button is on every part of the placement test; `part` tells the Feedback sheet
   // exactly which part it is about (placement:<part>).
-  const fbTarget = run?.target ?? getPcicTarget();
+  const fbTarget = run?.target ?? learner.target;
   const pair = pairOf(fbTarget);
   const shell = (children: ReactNode, part: string) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>

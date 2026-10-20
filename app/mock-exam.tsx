@@ -5,7 +5,8 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
-import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { useLearner } from '@/lib/learner';
+import { PCIC_LEVELS, pcicItemsForLevel, type PcicTarget } from '@/data/pcic';
 import { t } from '@/lib/i18n';
 import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
@@ -70,6 +71,7 @@ export default function MockExamScreen() {
   const [result, setResult] = useState<MockResult | null>(null);
   const [leaving, setLeaving] = useState(false);
   const runOnce = useSingleFlight();
+  const { refresh } = useLearner();
   const [closeError, setCloseError] = useState(false);
 
   // --- Loading: direction, level words, learned words (for the glossary), saved exam.
@@ -77,9 +79,7 @@ export default function MockExamScreen() {
     let alive = true;
     (async () => {
       const db = getDb();
-      const onboarding = await db.getOnboarding();
-      const tgt: PcicTarget = (onboarding?.target as PcicTarget | undefined) ?? 'es';
-      setPcicTarget(tgt);
+      const { target: tgt } = await refresh(['direction']);
       const lvl = params.level ?? '';
       if (!mockAvailable(tgt, lvl)) {
         if (alive) setPhase('unavailable');
@@ -108,7 +108,7 @@ export default function MockExamScreen() {
       alive = false;
       stopSpeaking();
     };
-  }, [params.level]);
+  }, [params.level, refresh]);
 
   const glossaryIndex = useMemo(() => buildGlossaryIndex(pcicItemsForLevel(level), target), [level, target]);
   const paper = exam?.papers[paperIdx];

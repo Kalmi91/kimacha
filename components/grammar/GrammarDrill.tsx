@@ -6,7 +6,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { t } from '@/lib/i18n';
 import { normalizeWordToken } from '@/data/words';
-import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import {
   cumulativeCorpusWordIds,
   isDictationItem,
@@ -195,15 +195,15 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   };
   // the Settings accent-strictness switch, fetched once, only if the
   // round has a transform item (the other branches don't need it).
-  const [strictAccents, setStrictAccents] = useState(false);
+  const { strictAccents, refresh } = useLearner();
   // dictation uses the accent setting too.
   const hasTransform = kinds.includes('transform') || kinds.includes('dictation');
   useEffect(() => {
     if (!hasTransform) return;
-    getDb().getStrictAccents().then(setStrictAccents).catch(() => {
+    refresh(['strictAccents']).catch(() => {
       // a failed read leaves the accent setting at its default (off)
     });
-  }, [hasTransform]);
+  }, [hasTransform, refresh]);
 
   // from this the parent knows which item the learner
   // complained about, to put it in the feedback context.

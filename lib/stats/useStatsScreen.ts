@@ -1,5 +1,6 @@
 import { useCallback, useState } from 'react';
 import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { useBeta } from '@/lib/beta';
 import {
   weeklyGoalProgress,
@@ -62,6 +63,7 @@ export function useStatsScreen() {
 
   // beta: levels, the level card (Settings -> Beta); off = no card and no level data read.
   const showLevels = useBeta('levels');
+  const { refresh } = useLearner();
 
   // Refresh every time the tab gains focus so numbers stay current across app-wide activity.
   const load = useCallback(() => {
@@ -70,10 +72,10 @@ export function useStatsScreen() {
       db.getUsageStats().then(setUsage),
       db.getStreak().then(r => setStreak(r.current_count)),
       db.getWeeklyGoalMinutes().then(setWeeklyGoal),
-      db.getOnboarding().then(ob => {
-        setTargetLang(ob?.target ?? 'es');
-        setSourceLang(ob?.source ?? 'en');
-        const mockTarget: MockTarget = ob?.target === 'en' ? 'en' : 'es';
+      refresh(['direction']).then(ob => {
+        setTargetLang(ob.target);
+        setSourceLang(ob.source ?? 'en');
+        const mockTarget: MockTarget = ob.target === 'en' ? 'en' : 'es';
         setMockLevels(MOCK_LEVELS[mockTarget]);
         setMockOfficial(mockTarget === 'es');
         return Promise.all([
@@ -83,7 +85,7 @@ export function useStatsScreen() {
       }),
       // All PCIC computation comes from a single getPcicCards()
       // call (as on the PCIC tab); the filtering/aggregation is in pure functions.
-      db.getPcicLevel().then(async lvl => {
+      refresh(['level']).then(async ({ level: lvl }) => {
         setPcicLevel(lvl);
         const cards = await db.getPcicCards();
         const today = localDateString();
@@ -102,7 +104,7 @@ export function useStatsScreen() {
         setSchedule(buildSchedulePreview(dueDates, new Date()));
       }),
     ]);
-  }, [showLevels]);
+  }, [showLevels, refresh]);
   useScreenLoad(load);
 
   const maxMinutes = Math.max(1, ...usage.last7Days.map(d => d.minutes));
