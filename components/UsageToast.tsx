@@ -44,6 +44,9 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   const [opacity] = useState(() => new Animated.Value(0));
   const [translateY] = useState(() => new Animated.Value(-16));
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Which toast is up. A fade-out's end callback hides the toast only if it is still its own: a new
+  // toast resets the animated values, which ends the old fade-out early, and that callback must not hide it.
+  const toastSeq = useRef(0);
   // language being learned, for the milestone text. Read once on mount,
   // it only changes on the onboarding screen (before this toast can fire).
   const learnedLang = useRef<string>('es');
@@ -71,6 +74,7 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   useEffect(() => {
     const show = (text: string, milestone: boolean, visibleMs?: number) => {
       if (hideTimer.current) clearTimeout(hideTimer.current);
+      const seq = ++toastSeq.current;
       setMessage(text);
       setIsMilestone(milestone);
       setVisible(true);
@@ -84,7 +88,9 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
         Animated.parallel([
           Animated.timing(opacity, { toValue: 0, duration: ANIM_MS, useNativeDriver: true }),
           Animated.timing(translateY, { toValue: -16, duration: ANIM_MS, useNativeDriver: true }),
-        ]).start(() => setVisible(false));
+        ]).start(() => {
+          if (toastSeq.current === seq) setVisible(false);
+        });
       }, visibleMs ?? (milestone ? MILESTONE_VISIBLE_MS : VISIBLE_MS));
     };
 
