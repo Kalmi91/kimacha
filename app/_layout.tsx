@@ -23,6 +23,7 @@ import { applyWebTestParams, getWebTestParams } from '@/lib/webTestHooks';
 import { useAppResume } from '@/lib/useAppResume';
 import UsageToast from '@/components/UsageToast';
 import StatusBarStrip from '@/components/StatusBarStrip';
+import { ScreenFeedbackFrame } from '@/lib/screenFeedback';
 
 export { ErrorBoundary } from 'expo-router';
 
@@ -127,7 +128,11 @@ function RootLayoutNav() {
         }}
       >
         <StatusBarStrip />
-        <Stack screenOptions={brutalHeaderOptions(g, skin)}>
+        {/* the one 💬 button of the stack screens (exam, placement, grammar, mistakes...): a screen only names its card (lib/screenFeedback.tsx). */}
+        <Stack
+          screenOptions={brutalHeaderOptions(g, skin)}
+          screenLayout={({ children }) => <ScreenFeedbackFrame>{children}</ScreenFeedbackFrame>}
+        >
           <Stack.Screen name="onboarding" options={{ headerShown: false }} />
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="credits" options={{ headerShown: false }} />

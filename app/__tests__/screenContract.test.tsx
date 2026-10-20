@@ -1,7 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 
-// Every route screen must offer the feedback button. Exempt: no learning content.
+// Every route screen must name its feedback card (<ScreenFeedback />); the one button is drawn by the screen frame in the
+// root stack's and the tab navigator's screenLayout (lib/screenFeedback.tsx). Exempt: no learning content.
 const EXEMPT = [
   '+not-found.tsx', // error
   'credits.tsx', // legal
@@ -22,11 +23,11 @@ function collectRoutes(dir: string): string[] {
   });
 }
 
-// A route passes when it renders the button itself or through a component it imports directly
+// A route passes when it renders <ScreenFeedback /> itself or through a component it imports directly
 // (a screen split into a view file, like the Learn tab, keeps the contract through the view).
-function rendersFeedbackButton(file: string, depth = 0): boolean {
+function namesFeedbackCard(file: string, depth = 0): boolean {
   const src = fs.readFileSync(file, 'utf8');
-  if (src.includes('<FeedbackButton')) return true;
+  if (src.includes('<ScreenFeedback')) return true;
   if (depth >= 1) return false;
   const specs = [...src.matchAll(/from '([^']+)'/g)].map((m) => m[1]);
   return specs.some((spec) => {
@@ -37,7 +38,7 @@ function rendersFeedbackButton(file: string, depth = 0): boolean {
         : null;
     if (!base) return false;
     const candidate = [`${base}.tsx`, path.join(base, 'index.tsx')].find((c) => fs.existsSync(c));
-    return candidate ? rendersFeedbackButton(candidate, depth + 1) : false;
+    return candidate ? namesFeedbackCard(candidate, depth + 1) : false;
   });
 }
 
@@ -49,11 +50,29 @@ describe('screen contract', () => {
   });
 
   it.each(routes.map((f) => [path.relative(APP_DIR, f).split(path.sep).join('/'), f]))(
-    '%s renders a FeedbackButton',
+    '%s names its feedback card',
     (_name, file) => {
-      expect(rendersFeedbackButton(file)).toBe(true);
+      expect(namesFeedbackCard(file)).toBe(true);
     },
   );
+
+  // The button is mounted by the frame, never by a screen: a hand-mounted <FeedbackButton /> is a copy that can drift.
+  it('no screen or component mounts a FeedbackButton by hand', () => {
+    const sources = [APP_DIR, path.join(ROOT, 'components')].flatMap(function walk(dir: string): string[] {
+      return fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
+        const full = path.join(dir, entry.name);
+        if (entry.isDirectory()) return entry.name === '__tests__' ? [] : walk(full);
+        return /\.tsx$/.test(entry.name) && entry.name !== 'FeedbackModal.tsx' ? [full] : [];
+      });
+    });
+    expect(sources.filter((f) => fs.readFileSync(f, 'utf8').includes('<FeedbackButton'))).toEqual([]);
+  });
+
+  it('the root stack and the tab navigator both wrap their screens in the feedback frame', () => {
+    for (const layout of [path.join(APP_DIR, '_layout.tsx'), path.join(APP_DIR, '(tabs)', '_layout.tsx')]) {
+      expect(fs.readFileSync(layout, 'utf8')).toContain('<ScreenFeedbackFrame>');
+    }
+  });
 });
 
 // The FeedbackButton's language-pair label has one format, "en→es" (lib/languagePair.ts pairOf):

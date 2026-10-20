@@ -35,7 +35,7 @@ import {
   MAX_AGAIN_DELAY_SEC,
   AGAIN_DELAY_STEP_SEC,
 } from '@/lib/pcicSession';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import { BrutalBox, BrutalSwitch } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import ThemeSwatch from '@/components/skins/ThemeSwatch';
@@ -553,7 +553,7 @@ export default function SettingsScreen() {
       )}
       </ScrollView>
 
-      <FeedbackButton placement="header" level={level} languagePair={direction.join('→')} currentCard="settings-tab" />
+      <ScreenFeedback placement="header" level={level} languagePair={direction.join('→')} currentCard="settings-tab" />
 
       {/* small sheet with the two directions, the
           current one ticked, modeled on LevelPickerSheet (components/LevelPickerSheet.tsx). */}

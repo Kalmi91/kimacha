@@ -15,7 +15,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { localDateString } from '@/lib/usageStats';
 import { Card, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import ExamButton from '@/components/exam/ExamButton';
 import ExamChoiceCard from '@/components/exam/ExamChoiceCard';
 import ExamMatchCard from '@/components/exam/ExamMatchCard';
@@ -226,7 +226,7 @@ export default function ExamScreen() {
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
-      {part ? <FeedbackButton level={level} languagePair={pair} currentCard={`exam:${level}:${part}`} bottomOffset={bottomOffset} /> : null}
+      {part ? <ScreenFeedback level={level} languagePair={pair} currentCard={`exam:${level}:${part}`} bottomOffset={bottomOffset} /> : null}
     </View>
   );
 

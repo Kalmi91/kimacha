@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Pressable, ScrollView, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { useRouter } from 'expo-router';
@@ -22,7 +23,7 @@ import GrammarDrill from '@/components/grammar/GrammarDrill';
 import GrammarRoundEnd from '@/components/grammar/GrammarRoundEnd';
 import LessonBody from '@/components/grammar/LessonBody';
 import LessonTest from '@/components/grammar/LessonTest';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { BrutalBox, Card, Sticker } from '@/components/grammar/Brutal';
@@ -37,7 +38,36 @@ import { styles } from '@/components/grammar/GrammarTopic.styles';
 // of the course is the other order: understand, then check.
 
 
+// The lesson's one 💬 button sits outside the phase switch below: the card id is `grammar:<topic>:<phase>`.
+// The test phase is the exception, its card carries the question's part and lives in LessonTest.
 export default function GrammarLessonScreen() {
+  const topic = useGrammarTopic();
+  const { topicId, level, contentLang, learnedLang, lesson, phase, score, drillItemId, dock } = topic;
+  const feedbackPhase = !lesson
+    ? 'soon'
+    : phase === 'test'
+      ? null
+      : phase === 'drill'
+        ? `drill${drillItemId ? `:${drillItemId}` : ''}`
+        : phase === 'done' && score
+          ? 'done'
+          : 'lesson';
+  return (
+    <>
+      <GrammarLessonPhases topic={topic} />
+      {feedbackPhase ? (
+        <ScreenFeedback
+          level={level}
+          languagePair={`${contentLang}→${learnedLang}`}
+          currentCard={`grammar:${topicId}:${feedbackPhase}`}
+          bottomOffset={lesson && phase === 'drill' ? dock.bottomOffset : undefined}
+        />
+      ) : null}
+    </>
+  );
+}
+
+function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTopic> }) {
   const {
     colors,
     topicId,
@@ -51,7 +81,6 @@ export default function GrammarLessonScreen() {
     setScore,
     drillKind,
     setDrillKind,
-    drillItemId,
     setDrillItemId,
     dock,
     scrollRef,
@@ -66,7 +95,9 @@ export default function GrammarLessonScreen() {
     saveRow,
     lessonScoreOf,
     finish,
-  } = useGrammarTopic();
+  } = topic;
+  // a stable array: GrammarDrill's round memo and its onItemChange effect depend on `kinds`.
+  const drillKinds = useMemo(() => [drillKind], [drillKind]);
   const g = useGrammarColors();
   const s = t();
   const router = useRouter();
@@ -86,8 +117,6 @@ export default function GrammarLessonScreen() {
           <View style={{ width: 24 }} />
         </View>
         <Text style={[styles.empty, { color: colors.tabIconDefault }]}>{s.grammar.soonLong}</Text>
-        {/* the 💬 is there on the not-yet-written lesson's page too. */}
-        <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:soon`} />
       </View>
     );
   }
@@ -226,7 +255,7 @@ export default function GrammarLessonScreen() {
             learnedLang={learnedLang}
             contentLang={contentLang}
             onFinish={finish}
-            kinds={[drillKind]}
+            kinds={drillKinds}
             transformSeen={transformSeen}
             onItemChange={setDrillItemId}
             onRoundStats={setRoundStats}
@@ -238,12 +267,6 @@ export default function GrammarLessonScreen() {
           />
         </DockSlotProvider>
         {dock.node}
-        <FeedbackButton
-          level={level}
-          languagePair={`${contentLang}→${learnedLang}`}
-          currentCard={`grammar:${topicId}:drill${drillItemId ? `:${drillItemId}` : ''}`}
-          bottomOffset={dock.bottomOffset}
-        />
       </View>
     );
   }
@@ -255,7 +278,6 @@ export default function GrammarLessonScreen() {
         topicId={String(topicId)}
         learnedLang={learnedLang}
         contentLang={contentLang}
-        level={level}
         lesson={lesson}
         progressRows={progressRows}
         roundStats={roundStats}
@@ -390,7 +412,6 @@ export default function GrammarLessonScreen() {
           )
         ) : null}
       </ScrollView>
-      <FeedbackButton level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard={`grammar:${topicId}:lesson`} />
     </View>
   );
 }
