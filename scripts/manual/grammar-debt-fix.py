@@ -16,11 +16,11 @@ Run it from YOUR OWN terminal, never from an agent session (LLM text in a sessio
 in your shell). From the repo root, PowerShell:
 
     Get-Content "$env:USERPROFILE\\.config\\personal-auto\\gemini.env" | ForEach-Object { if ($_ -match '^\\s*(?:export\\s+)?GEMINI_API_KEY\\s*=\\s*(.+?)\\s*$') { $env:GEMINI_API_KEY = $Matches[1].Trim('"').Trim("'") } }
-    python scripts/grammar-debt-fix.py --dry-run                       # no API call, no write: plan + checks
-    python scripts/grammar-debt-fix.py --only match --limit 6          # first small batch, read the diff
-    python scripts/grammar-debt-fix.py --only match                    # all Spanish match items (resumable)
-    python scripts/grammar-debt-fix.py --only match-en
-    python scripts/grammar-debt-fix.py --only vosotros
+    python scripts/manual/grammar-debt-fix.py --dry-run                       # no API call, no write: plan + checks
+    python scripts/manual/grammar-debt-fix.py --only match --limit 6          # first small batch, read the diff
+    python scripts/manual/grammar-debt-fix.py --only match                    # all Spanish match items (resumable)
+    python scripts/manual/grammar-debt-fix.py --only match-en
+    python scripts/manual/grammar-debt-fix.py --only vosotros
 
 What it does
   * Work list = the three debt lists. An item that is fixed is written to its lesson file (only that item's
@@ -48,7 +48,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 GRAMMAR = ROOT / "data" / "games" / "grammar"
 SCRIPTS = ROOT / "scripts"
 LANGS = ("en", "es")

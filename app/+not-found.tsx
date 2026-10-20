@@ -6,26 +6,28 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalButton } from '@/components/grammar/Brutal';
+import { t } from '@/lib/i18n';
 
 export default function NotFoundScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const s = t();
 
   return (
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>This screen doesn&apos;t exist.</Text>
+        <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.notFound.title}</Text>
 
         {g.brutal ? (
           // main button on the brutalist palette; the Link asChild provides the navigation.
           <Link href="/" asChild>
-            <BrutalButton testID="not-found-home" fill="a" label="Go to home screen!" onPress={() => {}} style={styles.brutalLink} />
+            <BrutalButton testID="not-found-home" fill="a" label={s.notFound.back} onPress={() => {}} style={styles.brutalLink} />
           </Link>
         ) : (
         <Link href="/" style={styles.link}>
-          <Text style={styles.linkText}>Go to home screen!</Text>
+          <Text style={styles.linkText}>{s.notFound.back}</Text>
         </Link>
         )}
       </View>

@@ -402,6 +402,13 @@ const es: Strings = {
     words: (known: number, needed: number, total: number, pct: number) => `Palabras aprendidas: ${known} / ${needed} (${pct}% de ${total})`,
     grammar: (done: number, total: number) => `Temas de gramática hechos: ${done} / ${total}`,
   },
+  wordList: {
+    empty: 'Todavía no hay palabras aquí',
+  },
+  notFound: {
+    title: 'Esta página no existe',
+    back: 'Volver al inicio',
+  },
   pcic: {
     badgeTotal: (n: number) => `${n} palabras`,
     badgeDue: (n: number) => `pendientes ${n}`,
