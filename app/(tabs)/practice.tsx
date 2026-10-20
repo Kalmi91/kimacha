@@ -14,8 +14,9 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import ResultBadge from '@/components/ResultBadge';
 import SpeakButton from '@/components/SpeakButton';
 import LevelCounter from '@/components/practice/LevelCounter';
-import { findPcicItem, setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { findPcicItem, type PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { t } from '@/lib/i18n';
 import { pairOf } from '@/lib/languagePair';
@@ -46,6 +47,7 @@ export default function PracticeScreen() {
   const colors = Colors[theme];
   const g = useGrammarColors();
   const s = t();
+  const { refresh } = useLearner();
   const { dockLift } = useDockLift();
   const [dockH, setDockH] = useState(DOCK_RESERVE);
 
@@ -66,9 +68,7 @@ export default function PracticeScreen() {
   const load = useCallback(async (fresh = false) => {
     const db = getDb();
     // The deck of the active direction has to be set before findPcicItem (same as the Learn tab).
-    const onboarding = await db.getOnboarding();
-    const dir = (onboarding?.target as PcicTarget) ?? 'es';
-    setPcicTarget(dir);
+    const { target: dir } = await refresh(['direction']);
     const today = localDateString();
     // A round on screen (running or finished) survives leaving the tab; a new day, another direction or the
     // "new reading" button replaces it. Without it the finished screen would be thrown away.
@@ -116,7 +116,7 @@ export default function PracticeScreen() {
     setStep(at);
     setPicks(done);
     setLoaded(true);
-  }, []);
+  }, [refresh]);
 
   // Leaving the tab stops the read-aloud (the tab stays mounted).
   useScreenLoad(load, { onBlur: stopSpeaking });

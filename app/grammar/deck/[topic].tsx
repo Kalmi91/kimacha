@@ -10,6 +10,7 @@ import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { BrutalBackButton, BrutalButton, Sticker, SegmentBar, brutalInputStyle, segmentsFilled } from '@/components/grammar/Brutal';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { useSessionProgress } from '@/lib/useSessionProgress';
 import { countLearningToday } from '@/lib/learningDay';
@@ -20,7 +21,6 @@ import { speak } from '@/lib/speech';
 import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
-import { DEFAULT_AGAIN_DELAY_SEC } from '@/lib/pcicSession';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, syllabusTopic } from '@/lib/grammar/syllabus';
 import {
   answerCell,
@@ -87,10 +87,9 @@ export default function TableDeckScreen() {
   const [loading, setLoading] = useState(true);
   const [learnedLang, setLearnedLang] = useState('es');
   const [level, setLevel] = useState<Level>('A1');
-  const [strictAccents, setStrictAccents] = useState(false);
   // one setting, two places, see the head of
   // lib/grammar/tableDeck.ts.
-  const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
+  const { strictAccents, againDelaySec, refresh } = useLearner();
   const [mode, setMode] = useState<DeckMode>('table');
   const [items, setItems] = useState<DeckItem[]>([]);
   const [deck, setDeck] = useState<DeckState>({ cells: [], resetCount: 0, shuffled: false });
@@ -116,8 +115,7 @@ export default function TableDeckScreen() {
   const load = useCallback(async () => {
     const db = getDb();
     const id = String(topicId);
-    const onboarding = await db.getOnboarding();
-    const target = onboarding?.target ?? 'es';
+    const { target } = await refresh(['direction']);
     setLearnedLang(target);
     const lesson = lessonFor(target, id);
     const tableCells = tableCellsForLesson(lesson);
@@ -139,15 +137,12 @@ export default function TableDeckScreen() {
           wordCellsForLesson(lesson, target).map((c) =>
             target === 'en' ? { id: c.id, answer: c.en, promptBig: c.es } : { id: c.id, answer: c.es, promptBig: c.en }
           );
-    const strict = await db.getStrictAccents();
-    const delaySec = await db.getAgainDelaySec();
+    await refresh(['strictAccents', 'againDelaySec']);
     const levelData = await db.getLevel();
     const rows = await db.getGameProgress(GRAMMAR_PROGRESS_KEY);
     const saved = rows.find((r) => r.itemId === progressKeyFor(id));
     const persisted = saved?.data as DeckState | undefined;
     setLevel((levelData.level as Level) ?? 'A1');
-    setStrictAccents(strict);
-    setAgainDelaySec(delaySec);
     setMode(deckMode);
     setItems(itemList);
     setDeck(mergeDeckState(itemList, id, persisted));
@@ -160,7 +155,7 @@ export default function TableDeckScreen() {
     // below makes it "reactive"; see the identical note
     // in app/(tabs)/index.tsx's own `load`). It is stable, so nothing
     // changes at runtime, but leaving it out counts as broken memoization.
-  }, [topicId, setTyped]);
+  }, [topicId, setTyped, refresh]);
 
   useLoadOnMount(load);
 

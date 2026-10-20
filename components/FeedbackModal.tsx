@@ -7,7 +7,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
 import CheckMark from '@/components/CheckMark';
 import { t } from '@/lib/i18n';
-import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { feedbackBuildTag } from '@/lib/appBuild';
 import { IS_PLAY_BUILD, FEEDBACK_URL } from '@/lib/buildFlavor';
 import { FeedbackHeaderContext } from '@/lib/feedbackHeader';
@@ -56,12 +56,12 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
   const [sending, setSending] = useState(false);
   const [showThanks, setShowThanks] = useState(false);
   const [sendError, setSendError] = useState(false);
-  const [side, setSide] = useState<'left' | 'right'>('right');
+  const { feedbackBtnSide: side, refresh, setFeedbackBtnSide } = useLearner();
 
   useEffect(() => {
     if (!draggable) return;
-    getDb().getFeedbackBtnSide().then(setSide);
-  }, [draggable]);
+    void refresh(['feedbackBtnSide']);
+  }, [draggable, refresh]);
 
   // Lazy useState rather than useRef().current: the responder must survive
   // re-renders, but reading a ref during render is not allowed.
@@ -74,8 +74,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
         const screenWidth = Dimensions.get('window').width;
         const releasedX = evt.nativeEvent.pageX;
         const newSide: 'left' | 'right' = releasedX < screenWidth / 2 ? 'left' : 'right';
-        setSide(newSide);
-        getDb().setFeedbackBtnSide(newSide);
+        void setFeedbackBtnSide(newSide);
       },
     })
   );

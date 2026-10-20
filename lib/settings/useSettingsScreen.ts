@@ -7,7 +7,8 @@ import * as DocumentPicker from 'expo-document-picker';
 import { t, setLanguage, notifyLanguageChange } from '@/lib/i18n';
 import { type Level } from '@/data/words';
 import { getDb } from '@/lib/database';
-import { setPcicTarget, pcicItemsForLevel, PCIC_LEVELS, type PcicTarget, type PcicLevel } from '@/data/pcic';
+import { pcicItemsForLevel, PCIC_LEVELS, type PcicTarget, type PcicLevel } from '@/data/pcic';
+import { useLearner, type LearnerActions } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { validateBackupPayload } from '@/lib/backup';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
@@ -22,7 +23,6 @@ import {
   localDateString,
 } from '@/lib/usageStats';
 import {
-  DEFAULT_AGAIN_DELAY_SEC,
   MIN_AGAIN_DELAY_SEC,
   MAX_AGAIN_DELAY_SEC,
 } from '@/lib/pcicSession';
@@ -32,10 +32,9 @@ import { useScreenLoad } from '@/lib/useScreenLoad';
 
 // The resettable decks (the levels that have
 // progress) and whether there is any grammar progress. The active direction's words count.
-async function loadResettable(): Promise<{ levels: PcicLevel[]; grammar: boolean }> {
+async function loadResettable(refresh: LearnerActions['refresh']): Promise<{ levels: PcicLevel[]; grammar: boolean }> {
   const db = getDb();
-  const onboarding = await db.getOnboarding();
-  if (onboarding) setPcicTarget(onboarding.target as PcicTarget);
+  await refresh(['direction']);
   const [cards, grammarRows] = await Promise.all([db.getPcicCards(), db.getGameProgress(GRAMMAR_PROGRESS_KEY)]);
   const ids = new Set(cards.map((c) => c.itemId));
   return {
@@ -51,7 +50,10 @@ export function useSettingsScreen() {
   const s = t();
   const router = useRouter();
   const [level, setLevel] = useState<Level>('A0');
-  const [direction, setDirection] = useState<[string, string]>(['en', 'es']);
+  // The learner's settings live in the store (lib/learner.tsx); this screen reads and writes them through it.
+  const learner = useLearner();
+  const { refresh, strictAccents, articlePicker, againDelaySec } = learner;
+  const direction: [string, string] = [learner.source ?? 'en', learner.target];
   // The row of the learning-direction switch and its
   // small sheet.
   const [directionSheetOpen, setDirectionSheetOpen] = useState(false);
@@ -59,14 +61,10 @@ export function useSettingsScreen() {
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
   // daily budget of brand-new words entering the queue.
   const [dailyNewLimit, setDailyNewLimit] = useState(DEFAULT_DAILY_NEW_LIMIT);
-  // The return time of the PCIC "again" card.
-  const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
-  // difficulty switches. Accents are the first one: off = the beginner
-  // grader forgives a missing á/é/ñ, on = it counts as a mistake.
-  const [strictAccents, setStrictAccents] = useState(false);
-  // Article button row on the typing Spanish noun card. On by default, because
-  // the developer asked for it; the switch is the way back if it turns out not to work well in practice.
-  const [articlePicker, setArticlePicker] = useState(true);
+  // The return time of the PCIC "again" card (againDelaySec), the difficulty switches (strictAccents: off = the
+  // beginner grader forgives a missing á/é/ñ, on = it counts as a mistake) and the article button row on the typing
+  // Spanish noun card (articlePicker, on by default because the developer asked for it; the switch is the way back
+  // if it turns out not to work well in practice) come from the store above.
   // User feedback: "there should be a text that congratulates me for reaching the
   // weekly limit, which is the goal, something huge. and at the goal it should also write
   // 'done' in green". The goal stepper never said whether the goal was met, so the
@@ -89,37 +87,34 @@ export function useSettingsScreen() {
   const load = useCallback(() => {
     const db = getDb();
     return Promise.all([
-      db.getStrictAccents().then(setStrictAccents),
+      refresh(['strictAccents']),
       db.getWeeklyGoalMinutes().then(setWeeklyGoal),
       db.getUsageStats().then(u => setWeekMinutes(u.thisWeek)),
       db.getDailyNewLimit().then(setDailyNewLimit),
-      db.getAgainDelaySec().then(setAgainDelaySec),
-      db.getOnboarding().then(async o => {
-        if (!o) return;
-        setDirection([o.source, o.target]);
+      refresh(['againDelaySec']),
+      refresh(['direction']).then(async o => {
+        if (!o.onboarded) return;
         await loadVoices();
-        setMissingVoices([o.source, o.target].filter(code => !hasVoiceFor(code)));
+        setMissingVoices([o.source!, o.target].filter(code => !hasVoiceFor(code)));
       }),
       db.getLevel().then(l => setLevel(l.level as Level)),
-      db.getArticlePicker().then(setArticlePicker),
-      loadResettable().then(({ levels, grammar }) => {
+      refresh(['articlePicker']),
+      loadResettable(refresh).then(({ levels, grammar }) => {
         setResetLevels(levels);
         setHasGrammarProgress(grammar);
       }),
     ]);
-  }, []);
+  }, [refresh]);
   useScreenLoad(load);
 
   // the Learn screen reads the flag when it builds a queue.
   const handleStrictAccentsToggle = async (v: boolean) => {
-    setStrictAccents(v);
-    await getDb().setStrictAccents(v);
+    await learner.setStrictAccents(v);
   };
 
   // The same loading point as for the other learning settings.
   const handleArticlePickerToggle = async (v: boolean) => {
-    setArticlePicker(v);
-    await getDb().setArticlePicker(v);
+    await learner.setArticlePicker(v);
   };
 
   // Direction switch:
@@ -131,14 +126,11 @@ export function useSettingsScreen() {
   const handleSelectDirection = async (source: 'en' | 'es', target: PcicTarget) => {
     setDirectionSheetOpen(false);
     if (source === direction[0] && target === direction[1]) return;
-    const db = getDb();
-    await db.setOnboarding(source, target);
+    await learner.setOnboarding(source, target);
     setLanguage(source);
     // A full remount of the tree (including the tab labels) is needed only here, on a
     // FINALIZED switch; the onboarding trial switch does not call it.
     notifyLanguageChange();
-    setPcicTarget(target);
-    setDirection([source, target]);
     router.replace('/(tabs)');
   };
 
@@ -175,8 +167,7 @@ export function useSettingsScreen() {
       Math.max(MIN_AGAIN_DELAY_SEC, againDelaySec + delta)
     );
     if (next === againDelaySec) return;
-    setAgainDelaySec(next);
-    await getDb().setAgainDelaySec(next);
+    await learner.setAgainDelaySec(next);
   };
 
   // RN-web Alert is a no-op, so web falls back to the browser dialogs.
@@ -251,7 +242,7 @@ export function useSettingsScreen() {
   const confirmReset = (title: string, message: string, doReset: () => Promise<void>) => {
     const run = async () => {
       await doReset();
-      const r = await loadResettable();
+      const r = await loadResettable(refresh);
       setResetLevels(r.levels);
       setHasGrammarProgress(r.grammar);
     };
@@ -277,9 +268,7 @@ export function useSettingsScreen() {
   // state (A1-B2: 85% of the level's cards graduated + the written lessons done) so that the exam can be clicked through.
   const handleSeedExamA1 = async () => {
     const db = getDb();
-    const onboarding = await db.getOnboarding();
-    const target = (onboarding?.target as PcicTarget | undefined) ?? 'es';
-    setPcicTarget(target);
+    const { target } = await refresh(['direction']);
     await seedExamState(db, target, localDateString());
     setExamSeeded(true);
   };
