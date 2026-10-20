@@ -4,9 +4,8 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
 import { fontSize, fontWeight, lineHeight, radius, spacing } from '@/constants/Theme';
-import { Card, Sticker } from '@/components/grammar/Brutal';
-import { ProgressBar } from '@/components/grammar/Themed';
-import { useGrammarColors } from '@/lib/grammarColors';
+import { Card } from '@/components/grammar/Brutal';
+import { ProgressBar, Badge } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { LEVEL_WORDS_PCT, type ProgressLevel } from '@/lib/progressLevel';
 import { useTheme } from '@/lib/ThemeContext';
@@ -56,7 +55,6 @@ function Meter({ testID, label, now, max }: MeterProps) {
 export default function LevelCard({ progress }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const g = useGrammarColors();
   const s = t().levelCard;
   const { level, next } = progress;
   // Not even A1 cleared: the badge says 0 and the headline "Heading for A1".
@@ -66,13 +64,14 @@ export default function LevelCard({ progress }: Props) {
     <Card testID="level-card" classicStyle={styles.card} boxStyle={styles.brutalCard} style={styles.outer}>
       <Text style={[styles.title, { color: colors.textMuted }]}>{s.title}</Text>
       <View style={styles.head}>
-        {g.brutal ? (
-          <Sticker testID="level-card-badge" label={badge} fill="a" rotate={-4} textStyle={styles.stickerText} />
-        ) : (
-          <View testID="level-card-badge" style={[styles.badge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}>
-            <Text style={styles.badgeText}>{badge}</Text>
-          </View>
-        )}
+        <Badge
+          testID="level-card-badge"
+          label={badge}
+          rotate={-4}
+          brutalTextStyle={styles.stickerText}
+          classicStyle={[styles.badge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}
+          classicTextStyle={styles.badgeText}
+        />
         <Text testID="level-card-headline" style={[styles.headline, { color: colors.text }]}>
           {headline}
         </Text>

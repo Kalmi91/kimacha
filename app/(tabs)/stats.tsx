@@ -1,6 +1,6 @@
 import { StyleSheet, View, Pressable, ScrollView } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, ProgressBar } from '@/components/grammar/Themed';
+import { TitleText, ProgressBar, Badge } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
@@ -11,7 +11,7 @@ import { pairOf } from '@/lib/languagePair';
 import { languages } from '@/lib/languages';
 import { daysUntil, type ScheduleBucketKey } from '@/lib/schedulePreview';
 import ScreenFeedback from '@/lib/screenFeedback';
-import { Card, Sticker } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import MockExamCard from '@/components/exam/MockExamCard';
 import LevelCard from '@/components/stats/LevelCard';
@@ -79,13 +79,13 @@ export default function StatsScreen() {
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.progress.wordsKnown}</Text>
       <Card classicStyle={styles.levelCard} style={styles.gapBottom}>
         <View style={styles.levelCardHead}>
-          {g.brutal ? (
-            <Sticker label={pcicLevel} fill="a" rotate={-4} textStyle={styles.brutalBadgeText} />
-          ) : (
-          <View style={[styles.levelBadge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}>
-            <Text style={styles.levelBadgeText}>{pcicLevel}</Text>
-          </View>
-          )}
+          <Badge
+            label={pcicLevel}
+            rotate={-4}
+            brutalTextStyle={styles.brutalBadgeText}
+            classicStyle={[styles.levelBadge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}
+            classicTextStyle={styles.levelBadgeText}
+          />
           <Text style={[styles.levelCardValue, { color: colors.text }]}>
             {s.header.levelProgress(levelKnown, levelTotal)}
           </Text>

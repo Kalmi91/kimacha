@@ -7,8 +7,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import { Sticker } from '@/components/grammar/Brutal';
-import { themedInputStyle, BackButton, ProgressBar, ActionButton } from '@/components/grammar/Themed';
+import { themedInputStyle, BackButton, ProgressBar, ActionButton, Badge } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -222,13 +221,12 @@ export default function TableDeckScreen() {
       <FitText variant="title" base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {lessonTitle}
       </FitText>
-      {g.brutal ? (
-        <Sticker label={s.tableDeck.progress(doneCount(deck), items.length)} fill="a" rotate={4} />
-      ) : (
-      <View style={[styles.progressChip, { backgroundColor: colors.tint }]}>
-        <Text style={styles.progressChipText}>{s.tableDeck.progress(doneCount(deck), items.length)}</Text>
-      </View>
-      )}
+      <Badge
+        label={s.tableDeck.progress(doneCount(deck), items.length)}
+        rotate={4}
+        classicStyle={[styles.progressChip, { backgroundColor: colors.tint }]}
+        classicTextStyle={styles.progressChipText}
+      />
     </View>
   );
 
