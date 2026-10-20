@@ -1,6 +1,6 @@
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar } from '@/components/grammar/Themed';
+import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
 import { speak } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -26,7 +26,7 @@ import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
-import { BrutalBox, BrutalButton, textOnFill } from '@/components/grammar/Brutal';
+import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import FitText from '@/components/FitText';
 import DoneBadge from '@/components/DoneBadge';
@@ -287,12 +287,17 @@ export default function PcicCardView({
             <View style={styles.moreNewRow}>
               {PCIC_NEW_BONUS_STEPS.map((n) => {
                 const testID = n === PCIC_NEW_BONUS_STEP ? 'learn-more-new' : `learn-more-new-${n}`;
-                return g.brutal ? (
-                  <BrutalButton key={n} testID={testID} accessibilityLabel={s.pcic.moreNew(n)} label={s.pcic.moreNewShort(n)} onPress={() => handleMoreNew(n)} style={styles.moreNewBtn} />
-                ) : (
-                  <Pressable key={n} testID={testID} accessibilityRole="button" accessibilityLabel={s.pcic.moreNew(n)} style={[styles.checkBtn, styles.moreNewBtn, { backgroundColor: '#38BDF8' }]} onPress={() => handleMoreNew(n)}>
-                    <Text style={styles.checkBtnText}>{s.pcic.moreNewShort(n)}</Text>
-                  </Pressable>
+                return (
+                  <ActionButton
+                    key={n}
+                    testID={testID}
+                    accessibilityLabel={s.pcic.moreNew(n)}
+                    label={s.pcic.moreNewShort(n)}
+                    onPress={() => handleMoreNew(n)}
+                    brutalStyle={styles.moreNewBtn}
+                    classicStyle={[styles.checkBtn, styles.moreNewBtn, { backgroundColor: '#38BDF8' }]}
+                    classicTextStyle={styles.checkBtnText}
+                  />
                 );
               })}
             </View>
