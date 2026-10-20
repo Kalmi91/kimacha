@@ -1,10 +1,10 @@
 import { useState, type ReactNode } from 'react';
-import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, BackButton } from '@/components/grammar/Themed';
+import { TitleText, BackButton, ActionButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
-import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
+import { BrutalBox } from '@/components/grammar/Brutal';
 import Choice from '@/components/skins/Choice';
 import { COLOR_CHOICES, SKIN_ORDER, decorChoices, shapeKey, uniqueShapeChoices } from '@/components/skins/mixChoices';
 import { SkinBackdrop, SkinCardFrame, SkinHeader, SkinWord } from '@/components/skins/Slots';
@@ -194,13 +194,16 @@ export default function ThemeMixScreen() {
         </Section>
 
         <View style={styles.saveRow}>
-          {g.brutal ? (
-            <BrutalButton testID="mix-save" fill="a" onPress={save} label={s.settings.themes.mixSave} style={styles.flex1} />
-          ) : (
-            <Pressable testID="mix-save" onPress={save} style={[styles.savePlain, { backgroundColor: g.a }]}>
-              <Text style={[styles.savePlainText, { color: g.onA }]}>{s.settings.themes.mixSave}</Text>
-            </Pressable>
-          )}
+          <ActionButton
+            testID="mix-save"
+            fill="a"
+            onPress={save}
+            label={s.settings.themes.mixSave}
+            brutalStyle={styles.flex1}
+            classicStyle={[styles.savePlain, { backgroundColor: g.a }]}
+            classicTextStyle={[styles.savePlainText, { color: g.onA }]}
+            classicRole={null}
+          />
         </View>
       </ScrollView>
     </View>

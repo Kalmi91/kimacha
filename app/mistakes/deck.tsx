@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, themedInputStyle, BackButton } from '@/components/grammar/Themed';
+import { TitleText, themedInputStyle, BackButton, ActionButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -22,7 +22,7 @@ import { cardsForBatches, pickMistakeSession, suggestedMistakeGrade, type Mistak
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
-import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
+import { BrutalBox } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -134,13 +134,15 @@ export default function MistakesDeckScreen() {
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.mistakes.allDone}</Text>
-          {g.brutal ? (
-            <BrutalButton fill="a" label={s.mistakes.title} onPress={() => router.back()} style={styles.brutalDone} />
-          ) : (
-          <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={() => router.back()}>
-            <Text style={styles.btnTextOnTint}>{s.mistakes.title}</Text>
-          </Pressable>
-          )}
+          <ActionButton
+            fill="a"
+            label={s.mistakes.title}
+            onPress={() => router.back()}
+            brutalStyle={styles.brutalDone}
+            classicStyle={[styles.btn, { backgroundColor: colors.tint }]}
+            classicTextStyle={styles.btnTextOnTint}
+            classicRole={null}
+          />
         </View>
         <ScreenFeedback level={level} languagePair="en→es" currentCard="mistakes:deck:done" />
       </View>

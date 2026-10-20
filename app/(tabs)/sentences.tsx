@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 
 import { Text } from '@/components/KText';
@@ -7,7 +7,8 @@ import Colors from '@/constants/Colors';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ScreenFeedback from '@/lib/screenFeedback';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
-import { BrutalButton, SegmentBar } from '@/components/grammar/Brutal';
+import { SegmentBar } from '@/components/grammar/Brutal';
+import { ActionButton } from '@/components/grammar/Themed';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import LevelCounter from '@/components/practice/LevelCounter';
@@ -270,21 +271,15 @@ export default function SentencesScreen() {
         <Text testID="sentences-round-done" style={[styles.hint, { color: colors.text }]}>
           {s.sentenceTab.roundDone(round ? roundSentences(round).length : 0)}
         </Text>
-        {g.brutal ? (
-          <BrutalButton testID="sentences-more" label={s.sentenceTab.more} fill="a" onPress={() => { setLoading(true); void load(true); }} style={styles.moreBtn} />
-        ) : (
-          <Pressable
-            testID="sentences-more"
-            accessibilityRole="button"
-            style={[styles.moreBtn, styles.moreBtnClassic, { backgroundColor: colors.accent }]}
-            onPress={() => {
-              setLoading(true);
-              void load(true);
-            }}
-          >
-            <Text style={[styles.moreBtnText, { color: colors.onTint }]}>{s.sentenceTab.more}</Text>
-          </Pressable>
-        )}
+        <ActionButton
+          testID="sentences-more"
+          label={s.sentenceTab.more}
+          fill="a"
+          onPress={() => { setLoading(true); void load(true); }}
+          brutalStyle={styles.moreBtn}
+          classicStyle={[styles.moreBtn, styles.moreBtnClassic, { backgroundColor: colors.accent }]}
+          classicTextStyle={[styles.moreBtnText, { color: colors.onTint }]}
+        />
         {feedback}
       </View>
     );
