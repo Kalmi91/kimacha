@@ -8,6 +8,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import { t, stringsFor } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { onActiveMinute, onUsageMilestone, onDayRollover } from '@/lib/usageTimer';
 import { DAILY_XP_GOAL, onDailyGoalReached } from '@/lib/dailyXp';
 import { pickDayRolloverMessage } from '@/lib/dayRollover';
@@ -32,6 +33,7 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const { refresh } = useLearner();
   const [visible, setVisible] = useState(false);
   // The toast lives in the root layout, so it mounts BEFORE onboarding picks the
   // native language: reading t() once would freeze the pill in the device locale
@@ -56,9 +58,9 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
 
   useEffect(() => {
     const db = getDb();
-    db.getOnboarding()
-      .then(async ob => {
-        if (ob?.target) learnedLang.current = ob.target;
+    refresh(['direction'])
+      .then(async learner => {
+        if (learner.onboarded) learnedLang.current = learner.target;
         if (await db.claimDailyGreeting()) {
           setGreeting(stringsFor(learnedLang.current).usage.dailyGreeting);
         }
@@ -66,7 +68,7 @@ export default function UsageToast({ hidden = false }: { hidden?: boolean }) {
       .catch(() => {
         // a failed read or claim means no greeting this time
       });
-  }, []);
+  }, [refresh]);
 
   useEffect(() => {
     const show = (text: string, milestone: boolean, visibleMs?: number) => {

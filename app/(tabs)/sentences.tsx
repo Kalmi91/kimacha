@@ -12,9 +12,10 @@ import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import LevelCounter from '@/components/practice/LevelCounter';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
-import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, type PcicTarget } from '@/data/pcic';
 import { useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -93,7 +94,7 @@ export default function SentencesScreen() {
 
   const [loading, setLoading] = useState(true);
   const [target, setTarget] = useState<PcicTarget>('es');
-  const [strictAccents, setStrictAccents] = useState(false);
+  const { strictAccents, refresh } = useLearner();
   // The round on screen (lib/sentenceRound.ts): its sentences, what is left to build, what was built right, the typing.
   // null = no sentence to offer.
   const [round, setRound] = useState<SentenceRound | null>(null);
@@ -113,16 +114,14 @@ export default function SentencesScreen() {
   // `fresh`: a new round even if one is on screen (the "more" button).
   const load = useCallback(async (fresh = false) => {
     const db = getDb();
-    const onboarding = await db.getOnboarding();
-    const dir = (onboarding?.target as PcicTarget) ?? 'es';
-    // Must come before the corpus is read (data/pcic.ts: the loaded deck follows the target).
-    setPcicTarget(dir);
+    // The learner store sets the deck's direction before the corpus is read (data/pcic.ts: the loaded deck follows the target).
+    const { target: dir } = await refresh(['direction']);
     const today = localDateString();
     // A round on screen (running or finished) survives leaving the tab; a new day, another direction, another focus
     // or the "more" button replaces it.
     const shown = roundRef.current;
     if (!fresh && shown && shown.day === today && shown.target === dir && shown.focus === focusKey) {
-      setStrictAccents(await db.getStrictAccents());
+      await refresh(['strictAccents']);
       setLoading(false);
       return;
     }
@@ -152,11 +151,11 @@ export default function SentencesScreen() {
       else await clearSentenceRound(db);
     }
     setTarget(dir);
-    setStrictAccents(await db.getStrictAccents());
+    await refresh(['strictAccents']);
     setRound(next);
     setSeq((n) => n + 1);
     setLoading(false);
-  }, [focusKey]);
+  }, [focusKey, refresh]);
 
   useScreenLoad(load, { hasData: round !== null, setLoading });
 

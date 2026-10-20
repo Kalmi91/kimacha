@@ -4,16 +4,17 @@ import { router } from 'expo-router';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { getBeta, useBeta } from '@/lib/beta';
 import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { addXp, getXp, wholeXp, xpForCard, type DailyXp } from '@/lib/dailyXp';
-import { pcicItemsForLevel, findPcicItem, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { pcicItemsForLevel, findPcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { gradePcicAnswer, gradeSentenceAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, DEFAULT_AGAIN_DELAY_SEC, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -79,10 +80,10 @@ export function usePcicSession() {
   const [examLevels, setExamLevels] = useState<ExamLevelStatus[]>([]);
   // The Settings accent-strictness switch also applies to PCIC
   // typing (the strictAccents param of gradePcicAnswer).
-  const [strictAccents, setStrictAccents] = useState(false);
   // The stepper of the Settings "Missed word comes back
   // after"; it supplies the returnAt of the "again" branch of requeueAfterGrade.
-  const [againDelaySec, setAgainDelaySec] = useState(DEFAULT_AGAIN_DELAY_SEC);
+  // Both come from the learner store (load() refreshes them).
+  const { strictAccents, againDelaySec, refresh, setLevel: saveLevel } = useLearner();
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   // Number of cards already finished today when the "+N new words" expansion happens; the bar measures the new batch relative to this.
@@ -145,27 +146,31 @@ export function usePcicSession() {
     const db = getDb();
     const day = localDateString();
     // The target language of the active pair decides which direction's
-    // deck is built (data/pcic.ts setPcicTarget); it must come BEFORE the
+    // deck is built (the learner store calls data/pcic.ts setPcicTarget); it must come BEFORE the
     // pcicItemsForLevel call, otherwise the words of the old direction would come.
-    const onboarding = await db.getOnboarding();
-    const dir = (onboarding?.target as PcicTarget) ?? 'es';
-    setPcicTarget(dir);
+    const { target: dir } = await refresh(['direction']);
     setTarget(dir);
     // If the active pair does not yet have an explicitly chosen level (Settings
     // direction switch to a direction that was not onboarded earlier; a fresh onboarding
     // always makes the user choose, so it never gets here unchosen), the level picker sheet
     // opens by itself, the same sheet as when tapping the header chip.
-    if (!overrideLevel && !(await db.hasPcicLevel())) setLevelSheetOpen(true);
-    const lvl = overrideLevel ?? (await db.getPcicLevel());
+    let lvl: PcicLevel;
+    if (overrideLevel) {
+      lvl = overrideLevel;
+    } else {
+      const chosen = await refresh(['hasLevel', 'level']);
+      if (!chosen.hasLevel) setLevelSheetOpen(true);
+      lvl = chosen.level;
+    }
     const newOrder = pcicItemsForLevel(lvl).map((i) => i.id);
     const rawCards = await db.getPcicCards();
     // Skips the orphaned SRS rows of the old PCIC corpus (item ids that
     // no longer exist in the loaded corpus) before the
     // session is built from them.
     const cards = dropOrphanCards(cardsForLevel(rawCards, lvl), (id) => findPcicItem(id) !== undefined);
-    const strict = await db.getStrictAccents();
+    await refresh(['strictAccents']);
     const newLimit = await db.getDailyNewLimit();
-    const delaySec = await db.getAgainDelaySec();
+    await refresh(['againDelaySec']);
     const bonus = await db.getPcicNewBonus(day);
     // The tenses unlocked by completed grammar lessons
     // (the tense gate exists only for Spanish as the target language).
@@ -182,9 +187,7 @@ export function usePcicSession() {
     setExamLevels(
       EXAM_LEVELS.filter((l) => levelHasLesson(l, dir)).map((l) => examStatusFor(l, dir, rawCards, examGrammarRows, examResults[l])),
     );
-    setStrictAccents(strict);
     setDailyNewLimit(newLimit);
-    setAgainDelaySec(delaySec);
     setToday(day);
     setDailyXp(await getXp(day));
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
@@ -206,7 +209,7 @@ export function usePcicSession() {
     // dependency of this async callback; it
     // is stable, so nothing changes at runtime, but an empty array here counts
     // as broken memoization.
-  }, [setTypedAnswer]);
+  }, [setTypedAnswer, refresh]);
 
   // A refocus with the deck already on screen refreshes it without the spinner.
   useScreenLoad(load, { hasData: !loading, setLoading });
@@ -216,7 +219,7 @@ export function usePcicSession() {
   const handleSelectLevel = async (lvl: PcicLevel) => {
     setLevelSheetOpen(false);
     if (lvl === level) return;
-    await getDb().setPcicLevel(lvl);
+    await saveLevel(lvl);
     setLoading(true);
     await load(lvl);
   };
@@ -478,7 +481,7 @@ export function usePcicSession() {
     setLevelSheetOpen(false);
     const db = getDb();
     await db.setPcicNewBonus(nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step), today);
-    if (lvl !== level) await db.setPcicLevel(lvl);
+    if (lvl !== level) await saveLevel(lvl);
     const levelCards = lvl === level ? [...allCards.values()] : cardsForLevel(allLevelCards, lvl);
     setLoading(true);
     await load(lvl);

@@ -11,8 +11,8 @@ import { isDarkTheme } from '@/constants/Colors';
 import { FONT_FILES } from '@/constants/Fonts';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage, subscribeLanguage } from '@/lib/i18n';
-import { setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { FORCED_PAIR, needsPairCorrection } from '@/lib/languages';
+import { LearnerProvider, LearnerStore } from '@/lib/learner';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
@@ -35,6 +35,8 @@ export default function RootLayout() {
     ...FONT_FILES,
   });
   const [onboardingDone, setOnboardingDone] = useState<boolean | null>(null);
+  // The learner's settings (direction, level, switches); the startup check below fills the direction in.
+  const [learner] = useState(() => new LearnerStore());
   // The Settings direction-switch row calls setLanguage(), which bumps a version number here; the number is the key of <RootLayoutNav> below,
   // so on a switch the whole navigation tree (including the tab labels) is re-rendered
   // fresh, not just the focused screen.
@@ -55,25 +57,22 @@ export default function RootLayout() {
       // Web test hook (scripts/ui-overlap.mjs): only from web URL parameters, null on native.
       const testParams = getWebTestParams();
       if (testParams) await applyWebTestParams(db, testParams);
-      let result = await db.getOnboarding();
+      // Reading the direction also sets the PCIC tab's active direction to the stored
+      // target, not always en-es (the store calls data/pcic.ts setPcicTarget).
+      let result = await learner.refresh(['direction']);
       // Kimacha Play: single en-es pair. An install that
       // still has an older pair (hu-es, es-hu, hu-en, ...) is corrected to
       // en-es here, silently, at startup; its old DB rows stay, they are just
       // no longer the active pair.
-      if (result && needsPairCorrection(result)) {
-        await db.setOnboarding(FORCED_PAIR.source, FORCED_PAIR.target);
-        result = await db.getOnboarding();
+      if (result.onboarded && needsPairCorrection({ source: result.source!, target: result.target })) {
+        await learner.setOnboarding(FORCED_PAIR.source, FORCED_PAIR.target);
+        result = await learner.refresh(['direction']);
       }
-      if (result) {
-        setLanguage(result.source);
-        // So the PCIC tab's active direction also starts with the stored
-        // target, not always with en-es (data/pcic.ts activeTarget).
-        setPcicTarget(result.target as PcicTarget);
-      }
-      setOnboardingDone(!!result);
+      if (result.onboarded) setLanguage(result.source!);
+      setOnboardingDone(result.onboarded);
     }
     if (loaded) check();
-  }, [loaded]);
+  }, [loaded, learner]);
 
   useEffect(() => {
     if (loaded && onboardingDone !== null) {
@@ -89,9 +88,11 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider>
-      <RootLayoutNav key={langVersion} />
-    </ThemeProvider>
+    <LearnerProvider store={learner}>
+      <ThemeProvider>
+        <RootLayoutNav key={langVersion} />
+      </ThemeProvider>
+    </LearnerProvider>
   );
 }
 

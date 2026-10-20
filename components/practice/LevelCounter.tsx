@@ -4,9 +4,10 @@ import { useFocusEffect } from 'expo-router';
 
 import BadgeRow from '@/components/learn/BadgeRow';
 import Colors from '@/constants/Colors';
-import { pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
+import { pcicItemsForLevel } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { t } from '@/lib/i18n';
+import { useLearner } from '@/lib/learner';
 import { levelCounts, type LevelCounts } from '@/lib/levelCounter';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
@@ -19,6 +20,7 @@ export default function LevelCounter({ refreshKey = 0 }: { refreshKey?: number }
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t();
+  const { refresh } = useLearner();
   const [counts, setCounts] = useState<LevelCounts | null>(null);
   const [focusSeq, setFocusSeq] = useState(0);
   const mounted = useRef(false);
@@ -38,10 +40,8 @@ export default function LevelCounter({ refreshKey = 0 }: { refreshKey?: number }
     let alive = true;
     void (async () => {
       const db = getDb();
-      // The target decides which direction's deck is loaded (data/pcic.ts setPcicTarget), before the level's items are read.
-      const dir = ((await db.getOnboarding())?.target as PcicTarget) ?? 'es';
-      setPcicTarget(dir);
-      const level = await db.getPcicLevel();
+      // The store sets the direction's deck before the level's items are read.
+      const { level } = await refresh(['direction', 'level']);
       const next = levelCounts(await db.getPcicCards(), level, pcicItemsForLevel(level).length, localDateString());
       if (alive) setCounts(next);
     })().catch(() => {
@@ -50,7 +50,7 @@ export default function LevelCounter({ refreshKey = 0 }: { refreshKey?: number }
     return () => {
       alive = false;
     };
-  }, [refreshKey, focusSeq]);
+  }, [refreshKey, focusSeq, refresh]);
 
   if (!counts) return null;
   return (
