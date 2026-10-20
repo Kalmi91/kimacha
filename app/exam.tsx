@@ -12,9 +12,9 @@ import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSenten
 import { t } from '@/lib/i18n';
 import { pairOf } from '@/lib/languagePair';
 import { useTheme } from '@/lib/ThemeContext';
-import { useGrammarColors } from '@/lib/grammarColors';
 import { localDateString } from '@/lib/usageStats';
-import { Card, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
+import { ProgressBar } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import ScreenFeedback from '@/lib/screenFeedback';
 import ExamButton from '@/components/exam/ExamButton';
@@ -100,7 +100,6 @@ function ExamItemView({ item, source, onDone }: { item: ExamItem; source: Source
 export default function ExamScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const g = useGrammarColors();
   const s = t();
   // The typing question's Check / Next bar docks above the keyboard (components/learn/DockSlot.tsx).
   const dock = useDockSlot(colors);
@@ -365,13 +364,7 @@ export default function ExamScreen() {
         </Text>
         <View style={styles.closeSpacer} />
       </View>
-      {g.brutal ? (
-        <SegmentBar testID="exam-progress" filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalProgress} />
-      ) : (
-        <View style={[styles.track, { backgroundColor: colors.border }]}>
-          <View style={[styles.fill, { backgroundColor: colors.tint, width: `${pct}%` }]} />
-        </View>
-      )}
+      <ProgressBar testID="exam-progress" pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
       <DockSlotProvider host={dock}>
         {source && exam[index] && <ExamItemView key={index} item={exam[index]} source={source} onDone={answered} />}
       </DockSlotProvider>

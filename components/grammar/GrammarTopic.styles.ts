@@ -43,7 +43,6 @@ export const styles = StyleSheet.create({
   btnTextOnTint: { color: '#FFFFFF' },
   // neo-brutalist buttons, title (uppercase, weight 500).
   // The last button also scrolls clear of the chat button (FAB).
-  brutalPad: { paddingBottom: 130 },
   brutalBack: { paddingVertical: 4, paddingHorizontal: 10 },
   brutalTitle: { fontWeight: '500', textTransform: 'uppercase' },
   brutalBtnWrap: { marginTop: 10, alignSelf: 'stretch' },

@@ -5,7 +5,8 @@ import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalBox, BrutalButton, Card } from '@/components/grammar/Brutal';
+import { BrutalBox, Card } from '@/components/grammar/Brutal';
+import { ActionButton } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
@@ -136,27 +137,26 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
       {result && gradeButtons && <SentenceGradeRow colors={colors} result={result} onOverride={(ok) => setResult(ok ? 'correct' : 'wrong')} />}
 
-      {g.brutal ? (
-        !result ? (
-          <BrutalButton label={s.card.check} onPress={handleCheck} disabled={!canCheck} style={styles.brutalBtn} />
-        ) : (
-          <BrutalButton label={`${s.card.next} →`} fill="a" onPress={() => onResult(result === 'correct')} style={styles.brutalBtn} />
-        )
-      ) : !result ? (
-        <Pressable
-          style={[styles.checkBtn, styles.checkBtnPrimary, { backgroundColor: colors.accent, opacity: canCheck ? 1 : 0.4 }]}
+      {!result ? (
+        <ActionButton
+          label={s.card.check}
           onPress={handleCheck}
           disabled={!canCheck}
-        >
-          <Text style={styles.checkBtnText}>{s.card.check}</Text>
-        </Pressable>
+          brutalStyle={styles.brutalBtn}
+          classicStyle={[styles.checkBtn, styles.checkBtnPrimary, { backgroundColor: colors.accent, opacity: canCheck ? 1 : 0.4 }]}
+          classicTextStyle={styles.checkBtnText}
+          classicRole={null}
+        />
       ) : (
-        <Pressable
-          style={[styles.checkBtn, { backgroundColor: result === 'correct' ? colors.successFill : colors.danger }]}
+        <ActionButton
+          label={`${s.card.next} →`}
+          fill="a"
           onPress={() => onResult(result === 'correct')}
-        >
-          <Text style={styles.checkBtnText}>{s.card.next} →</Text>
-        </Pressable>
+          brutalStyle={styles.brutalBtn}
+          classicStyle={[styles.checkBtn, { backgroundColor: result === 'correct' ? colors.successFill : colors.danger }]}
+          classicTextStyle={styles.checkBtnText}
+          classicRole={null}
+        />
       )}
     </Card>
   );

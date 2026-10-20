@@ -48,7 +48,6 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   brutalLevelChip: { paddingHorizontal: 10, paddingVertical: 3 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalTile: { flex: 1 },
   brutalTileBox: { paddingVertical: 12, alignItems: 'center' },
   // the three "+N new words" buttons in one row.
@@ -59,7 +58,6 @@ export const styles = StyleSheet.create({
   brutalProgress: { marginBottom: 16 },
   brutalArticle: { minWidth: 48, paddingVertical: 6, paddingHorizontal: 10, alignItems: 'center' },
   brutalDim: { opacity: 0.6 },
-  brutalPos: { borderWidth: 2, borderRadius: 0 },
   headerIcons: {
     flexDirection: 'row',
     alignItems: 'center',

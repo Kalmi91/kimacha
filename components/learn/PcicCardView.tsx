@@ -1,5 +1,6 @@
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText, themedInkEdgeStyle, themedInputStyle, ProgressBar, ActionButton } from '@/components/grammar/Themed';
 import { speak } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -25,7 +26,7 @@ import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
-import { BrutalBox, BrutalButton, SegmentBar, brutalInputStyle, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
+import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import FitText from '@/components/FitText';
 import DoneBadge from '@/components/DoneBadge';
@@ -246,7 +247,7 @@ export default function PcicCardView({
         <View style={styles.doneHeader}>
           {/* drawn badge (check mark + confetti) instead of the 🎉 emoji, in the neo-brutalist style. */}
           <DoneBadge />
-          <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.pcic.doneTitle}</Text>
+          <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</TitleText>
         </View>
         {g.brutal ? (
           <View style={styles.tilesRow}>
@@ -277,13 +278,7 @@ export default function PcicCardView({
           <Text style={[styles.introducedLabel, { color: colors.tabIconDefault }]}>
             {s.pcic.introduced(introducedCount, newOrder.length)}
           </Text>
-          {g.brutal ? (
-            <SegmentBar filled={segmentsFilled(introducedPct, 8)} segments={8} />
-          ) : (
-            <View style={[styles.introducedTrack, { backgroundColor: colors.card }]}>
-              <View style={[styles.introducedFill, { backgroundColor: '#38BDF8', width: `${introducedPct}%` }]} />
-            </View>
-          )}
+          <ProgressBar pct={introducedPct} trackStyle={styles.introducedTrack} trackColor={colors.card} fillStyle={styles.introducedFill} fillColor="#38BDF8" />
         </View>
         {newOrder.some((id) => !allCards.has(id) || allCards.get(id)!.state === 'new') && (
           // +5 / +10 / +15 new words, in one row (the +10 testID is unchanged: learn-more-new).
@@ -292,12 +287,17 @@ export default function PcicCardView({
             <View style={styles.moreNewRow}>
               {PCIC_NEW_BONUS_STEPS.map((n) => {
                 const testID = n === PCIC_NEW_BONUS_STEP ? 'learn-more-new' : `learn-more-new-${n}`;
-                return g.brutal ? (
-                  <BrutalButton key={n} testID={testID} accessibilityLabel={s.pcic.moreNew(n)} label={s.pcic.moreNewShort(n)} onPress={() => handleMoreNew(n)} style={styles.moreNewBtn} />
-                ) : (
-                  <Pressable key={n} testID={testID} accessibilityRole="button" accessibilityLabel={s.pcic.moreNew(n)} style={[styles.checkBtn, styles.moreNewBtn, { backgroundColor: '#38BDF8' }]} onPress={() => handleMoreNew(n)}>
-                    <Text style={styles.checkBtnText}>{s.pcic.moreNewShort(n)}</Text>
-                  </Pressable>
+                return (
+                  <ActionButton
+                    key={n}
+                    testID={testID}
+                    accessibilityLabel={s.pcic.moreNew(n)}
+                    label={s.pcic.moreNewShort(n)}
+                    onPress={() => handleMoreNew(n)}
+                    brutalStyle={styles.moreNewBtn}
+                    classicStyle={[styles.checkBtn, styles.moreNewBtn, { backgroundColor: '#38BDF8' }]}
+                    classicTextStyle={styles.checkBtnText}
+                  />
                 );
               })}
             </View>
@@ -362,13 +362,16 @@ export default function PcicCardView({
         onClose={() => setLevelSheetOpen(false)}
       />
 
-      {g.brutal ? (
-        <SegmentBar testID="learn-progress" filled={segmentsFilled(barPct, 8)} segments={8} style={styles.brutalProgress} />
-      ) : (
-        <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-          <View testID="learn-progress-fill" style={[styles.progressFill, { backgroundColor: colors.tint, width: `${barPct}%` }]} />
-        </View>
-      )}
+      <ProgressBar
+        testID="learn-progress"
+        pct={barPct}
+        brutalStyle={styles.brutalProgress}
+        trackStyle={styles.progressTrack}
+        trackColor={colors.card}
+        fillStyle={styles.progressFill}
+        fillColor={colors.tint}
+        fillProps={{ testID: 'learn-progress-fill' }}
+      />
 
       <ScrollView
         style={[styles.cardScroll, { marginBottom: dockInsets.marginBottom }]}
@@ -419,7 +422,7 @@ export default function PcicCardView({
               prompt that repeats three times. */}
           <View style={styles.sectionRow}>
             {pos && (
-              <View style={[styles.posChip, { backgroundColor: colors.background }, g.brutal && [styles.brutalPos, { borderColor: g.ink }]]}>
+              <View style={[styles.posChip, { backgroundColor: colors.background }, themedInkEdgeStyle(g)]}>
                 <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>
                   {pos.gender ? `${s.pos[pos.pos]} · ${pos.gender}` : s.pos[pos.pos]}
                 </Text>
@@ -498,7 +501,7 @@ export default function PcicCardView({
           <TextInput
             key={`pcic-in-${current.itemId}-${cardSeq}`}
             ref={inputRef}
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typedAnswer}
             onChangeText={setTypedAnswer}
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}

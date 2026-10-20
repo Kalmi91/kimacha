@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState, type ReactNode } from 'react';
 import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard, Share, Platform } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
 import CheckMark from '@/components/CheckMark';
 import { t } from '@/lib/i18n';
 import { useLearner } from '@/lib/learner';
@@ -177,10 +178,10 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
             closes that). */}
         <Pressable style={styles.overlay} onPress={() => Keyboard.dismiss()}>
           <ModalBox>
-            <Text variant="title" style={[styles.modalTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.feedback.button}</Text>
+            <TitleText variant="title" style={[styles.modalTitle, { color: colors.text }]}>{s.feedback.button}</TitleText>
 
             <TextInput
-              style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
+              style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
               placeholder={s.feedback.placeholder}
               placeholderTextColor={colors.tabIconDefault}
               value={text}
@@ -304,7 +305,6 @@ const styles = StyleSheet.create({
   brutalModalOuter: {},
   brutalModal: { padding: 24 },
   brutalModalBtn: { flex: 1 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   fabText: {
     fontSize: 24,
   },

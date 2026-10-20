@@ -4,8 +4,8 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
 import { fontSize, fontWeight, lineHeight, radius, spacing } from '@/constants/Theme';
-import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
-import { useGrammarColors } from '@/lib/grammarColors';
+import { Card } from '@/components/grammar/Brutal';
+import { ProgressBar, Badge } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { LEVEL_WORDS_PCT, type ProgressLevel } from '@/lib/progressLevel';
 import { useTheme } from '@/lib/ThemeContext';
@@ -28,7 +28,6 @@ type MeterProps = {
 function Meter({ testID, label, now, max }: MeterProps) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const g = useGrammarColors();
   const pct = max > 0 ? Math.min(100, Math.round((now / max) * 100)) : 0;
   return (
     <View
@@ -40,13 +39,15 @@ function Meter({ testID, label, now, max }: MeterProps) {
       style={styles.meter}
     >
       <Text style={[styles.meterLabel, { color: colors.text }]}>{label}</Text>
-      {g.brutal ? (
-        <SegmentBar testID={`${testID}-bar`} filled={segmentsFilled(pct, 8)} segments={8} />
-      ) : (
-        <View style={[styles.track, { backgroundColor: colors.background }]}>
-          <View testID={`${testID}-fill`} style={[styles.fill, { backgroundColor: colors.tint, width: `${pct}%` }]} />
-        </View>
-      )}
+      <ProgressBar
+        testID={`${testID}-bar`}
+        pct={pct}
+        trackStyle={styles.track}
+        trackColor={colors.background}
+        fillStyle={styles.fill}
+        fillColor={colors.tint}
+        fillProps={{ testID: `${testID}-fill` }}
+      />
     </View>
   );
 }
@@ -54,7 +55,6 @@ function Meter({ testID, label, now, max }: MeterProps) {
 export default function LevelCard({ progress }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const g = useGrammarColors();
   const s = t().levelCard;
   const { level, next } = progress;
   // Not even A1 cleared: the badge says 0 and the headline "Heading for A1".
@@ -64,13 +64,14 @@ export default function LevelCard({ progress }: Props) {
     <Card testID="level-card" classicStyle={styles.card} boxStyle={styles.brutalCard} style={styles.outer}>
       <Text style={[styles.title, { color: colors.textMuted }]}>{s.title}</Text>
       <View style={styles.head}>
-        {g.brutal ? (
-          <Sticker testID="level-card-badge" label={badge} fill="a" rotate={-4} textStyle={styles.stickerText} />
-        ) : (
-          <View testID="level-card-badge" style={[styles.badge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}>
-            <Text style={styles.badgeText}>{badge}</Text>
-          </View>
-        )}
+        <Badge
+          testID="level-card-badge"
+          label={badge}
+          rotate={-4}
+          brutalTextStyle={styles.stickerText}
+          classicStyle={[styles.badge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}
+          classicTextStyle={styles.badgeText}
+        />
         <Text testID="level-card-headline" style={[styles.headline, { color: colors.text }]}>
           {headline}
         </Text>

@@ -31,7 +31,7 @@ import { pickTransformRound, TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transfor
 import { buildGlossMap } from '@/lib/games/gloss';
 import { hashString } from '@/lib/shuffle';
 import GlossText from '@/components/games/GlossText';
-import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
+import { BrutalBox, SegmentBar, Sticker, inkButtonText, segmentsFilled, textOnFill, mutedColor, themedDockPad } from '@/components/grammar/Brutal';
 import ResultBadge from '@/components/ResultBadge';
 import { DictationDrillItem, OrderDrillItem, SpotDrillItem } from '@/components/grammar/NewKinds';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
@@ -114,7 +114,7 @@ function ChoiceTranslation({
   return (
     <View style={styles.choiceTrRow}>
       {show ? (
-        <Text testID="choice-translation" style={[styles.transformTranslation, styles.choiceTrText, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>
+        <Text testID="choice-translation" style={[styles.transformTranslation, styles.choiceTrText, { color: mutedColor(g, colors.tabIconDefault) }]}>
           {text}
         </Text>
       ) : (
@@ -289,7 +289,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
 
   if (!isChoiceRoundItem(roundItem)) {
     return (
-      <ScrollView contentContainerStyle={[styles.body, g.brutal && styles.brutalBodyPad]} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
         {header}
         {isMatchItem(roundItem.item) ? (
           <MatchDrillItem key={roundItem.item.id} item={roundItem.item} learnedLang={learnedLang} colors={colors} s={s} onDone={completeItem} />
@@ -406,7 +406,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
     const blankFill = answered ? (isCorrect ? g.a : g.ink) : g.b;
     const blankColor = answered ? (isCorrect ? g.onA : g.bg) : g.onB;
     return (
-      <ScrollView contentContainerStyle={[styles.body, g.brutal && styles.brutalBodyPad]} keyboardShouldPersistTaps="handled">
+      <ScrollView contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
         {header}
         {badgeTense ? <TenseBadge tense={badgeTense} colors={colors} /> : null}
 
@@ -517,7 +517,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   }
 
   return (
-    <ScrollView contentContainerStyle={[styles.body, g.brutal && styles.brutalBodyPad]} keyboardShouldPersistTaps="handled">
+    <ScrollView contentContainerStyle={[styles.body, themedDockPad(g)]} keyboardShouldPersistTaps="handled">
       <Text testID="grammar-drill-progress" style={[styles.progress, { color: colors.tabIconDefault }]}>
         {s.games.grammarChoice.progress(index + 1, round.length)}
       </Text>

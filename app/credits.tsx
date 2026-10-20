@@ -1,13 +1,14 @@
 import type { ReactNode } from 'react';
 import { StyleSheet, View, Pressable, ScrollView, Linking } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText, accentColor, BackButton, themedLinkStyle } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
-import { BrutalBackButton, Card } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { FONT_LICENSES } from '@/constants/Fonts';
 
@@ -28,23 +29,15 @@ export default function CreditsScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
-  const linkColor = g.brutal ? g.ink : colors.tint;
+  const linkColor = accentColor(g, colors.tint);
   const s = t();
   const router = useRouter();
 
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
-        {g.brutal ? (
-          <View style={styles.exitBtn}>
-            <BrutalBackButton testID="credits-back" onPress={() => router.back()} />
-          </View>
-        ) : (
-        <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
-          <Text style={[styles.exitIcon, { color: colors.text }]}>←</Text>
-        </Pressable>
-        )}
-        <Text variant="title" style={[styles.title, styles.titleInRow, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.credits.title}</Text>
+        <BackButton testID="credits-back" onPress={() => router.back()} wrapStyle={styles.exitBtn} pressStyle={styles.exitBtn} arrowStyle={[styles.exitIcon, { color: colors.text }]} />
+        <TitleText variant="title" style={[styles.title, styles.titleInRow, { color: colors.text }]}>{s.credits.title}</TitleText>
         <View style={styles.exitBtn} />
       </View>
 
@@ -52,13 +45,13 @@ export default function CreditsScreen() {
         <Wrap>
         <Text style={[styles.body, { color: colors.text }]}>{s.credits.cefrjBody}</Text>
         <Pressable onPress={() => Linking.openURL(s.credits.cefrjUrl)}>
-          <Text style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>{s.credits.cefrjLabel}</Text>
+          <Text style={[styles.link, { color: linkColor }, themedLinkStyle(g)]}>{s.credits.cefrjLabel}</Text>
         </Pressable>
 
         <Text style={[styles.body, styles.bodySpaced, { color: colors.text }]}>{s.credits.fontsBody}</Text>
         {FONT_CREDITS.map((font) => (
           <Pressable key={font.url} onPress={() => Linking.openURL(font.url)}>
-            <Text testID="credits-font" style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>
+            <Text testID="credits-font" style={[styles.link, { color: linkColor }, themedLinkStyle(g)]}>
               {font.family} · {font.license}
             </Text>
           </Pressable>
@@ -66,7 +59,7 @@ export default function CreditsScreen() {
 
         <Text style={[styles.body, styles.bodySpaced, { color: colors.text }]}>{s.credits.photosBody}</Text>
         <Pressable onPress={() => Linking.openURL(s.credits.privacyUrl)}>
-          <Text testID="credits-privacy" style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>{s.credits.privacyLabel}</Text>
+          <Text testID="credits-privacy" style={[styles.link, { color: linkColor }, themedLinkStyle(g)]}>{s.credits.privacyLabel}</Text>
         </Pressable>
         </Wrap>
       </ScrollView>
@@ -115,8 +108,6 @@ const styles = StyleSheet.create({
   bodySpaced: {
     marginTop: 8,
   },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
-  brutalLink: { fontWeight: '500', textDecorationLine: 'underline' },
   link: {
     fontSize: 15,
     fontWeight: '600',

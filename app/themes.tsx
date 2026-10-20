@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText, BackButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
-import { BrutalBackButton, BrutalBox } from '@/components/grammar/Brutal';
+import { BrutalBox } from '@/components/grammar/Brutal';
 import Choice from '@/components/skins/Choice';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import ThemeSwatch from '@/components/skins/ThemeSwatch';
@@ -81,16 +82,8 @@ export default function ThemesScreen() {
     <View style={[styles.screen, { backgroundColor: g.bg }]}>
       <SkinBackdrop />
       <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
-        {g.brutal ? (
-          <View style={styles.exitBtn}>
-            <BrutalBackButton testID="themes-back" onPress={() => router.back()} />
-          </View>
-        ) : (
-          <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
-            <Text style={[styles.exitIcon, { color: g.ink }]}>←</Text>
-          </Pressable>
-        )}
-        <Text style={[styles.title, { color: g.ink }, g.brutal && styles.brutalTitle]}>{s.settings.themes.title}</Text>
+        <BackButton testID="themes-back" onPress={() => router.back()} wrapStyle={styles.exitBtn} pressStyle={styles.exitBtn} arrowStyle={[styles.exitIcon, { color: g.ink }]} />
+        <TitleText style={[styles.title, { color: g.ink }]}>{s.settings.themes.title}</TitleText>
         <View style={styles.exitBtn} />
       </View>
 
@@ -176,7 +169,6 @@ const styles = StyleSheet.create({
   exitBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   exitIcon: { fontSize: 26, fontWeight: '700' },
   title: { flex: 1, fontSize: 22, fontWeight: '700', textAlign: 'center' },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   container: { padding: 20, paddingBottom: 48 },
   mixOuter: { marginBottom: 16 },
   mixBox: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 14, paddingHorizontal: 16 },

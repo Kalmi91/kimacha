@@ -1,9 +1,10 @@
 import { useState, type ReactNode } from 'react';
-import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText, BackButton, ActionButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
-import { BrutalBackButton, BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
+import { BrutalBox } from '@/components/grammar/Brutal';
 import Choice from '@/components/skins/Choice';
 import { COLOR_CHOICES, SKIN_ORDER, decorChoices, shapeKey, uniqueShapeChoices } from '@/components/skins/mixChoices';
 import { SkinBackdrop, SkinCardFrame, SkinHeader, SkinWord } from '@/components/skins/Slots';
@@ -113,16 +114,8 @@ export default function ThemeMixScreen() {
     <View style={[styles.screen, { backgroundColor: g.bg }]}>
       <SkinBackdrop />
       <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
-        {g.brutal ? (
-          <View style={styles.exitBtn}>
-            <BrutalBackButton testID="mix-back" onPress={() => router.back()} />
-          </View>
-        ) : (
-          <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
-            <Text style={[styles.exitIcon, { color: g.ink }]}>←</Text>
-          </Pressable>
-        )}
-        <Text style={[styles.title, { color: g.ink }, g.brutal && styles.brutalTitle]}>{s.settings.themes.mixTitle}</Text>
+        <BackButton testID="mix-back" onPress={() => router.back()} wrapStyle={styles.exitBtn} pressStyle={styles.exitBtn} arrowStyle={[styles.exitIcon, { color: g.ink }]} />
+        <TitleText style={[styles.title, { color: g.ink }]}>{s.settings.themes.mixTitle}</TitleText>
         <View style={styles.exitBtn} />
       </View>
 
@@ -201,13 +194,16 @@ export default function ThemeMixScreen() {
         </Section>
 
         <View style={styles.saveRow}>
-          {g.brutal ? (
-            <BrutalButton testID="mix-save" fill="a" onPress={save} label={s.settings.themes.mixSave} style={styles.flex1} />
-          ) : (
-            <Pressable testID="mix-save" onPress={save} style={[styles.savePlain, { backgroundColor: g.a }]}>
-              <Text style={[styles.savePlainText, { color: g.onA }]}>{s.settings.themes.mixSave}</Text>
-            </Pressable>
-          )}
+          <ActionButton
+            testID="mix-save"
+            fill="a"
+            onPress={save}
+            label={s.settings.themes.mixSave}
+            brutalStyle={styles.flex1}
+            classicStyle={[styles.savePlain, { backgroundColor: g.a }]}
+            classicTextStyle={[styles.savePlainText, { color: g.onA }]}
+            classicRole={null}
+          />
         </View>
       </ScrollView>
     </View>
@@ -220,7 +216,6 @@ const styles = StyleSheet.create({
   exitBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   exitIcon: { fontSize: 26, fontWeight: '700' },
   title: { flex: 1, fontSize: 22, fontWeight: '700', textAlign: 'center' },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   container: { padding: 20, paddingBottom: 48 },
   preview: { padding: 16, marginBottom: 20, overflow: 'hidden' },
   previewCard: { padding: 18, alignItems: 'center', gap: 14 },

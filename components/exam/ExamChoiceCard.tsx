@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { Card } from '@/components/grammar/Brutal';
+import { themedEdgeStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -55,7 +56,7 @@ export default function ExamChoiceCard({ heading, text, options, correctIndex, o
               onPress={() => choose(i)}
               style={[
                 styles.option,
-                g.brutal && styles.brutalEdge,
+                themedEdgeStyle(g),
                 { backgroundColor: colors.card, borderColor: colors.border },
                 right && { backgroundColor: colors.successFill, borderColor: colors.successFill },
                 wrong && { backgroundColor: colors.danger, borderColor: colors.danger },
@@ -89,6 +90,5 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.md,
     justifyContent: 'center',
   },
-  brutalEdge: { borderRadius: 0, borderWidth: 2 },
   optionText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
 });

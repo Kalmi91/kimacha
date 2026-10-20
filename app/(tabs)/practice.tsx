@@ -8,6 +8,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import { Card } from '@/components/grammar/Brutal';
+import { themedEdgeStyle } from '@/components/grammar/Themed';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -280,7 +281,7 @@ export default function PracticeScreen() {
                 onPress={() => choose(i)}
                 style={[
                   styles.option,
-                  g.brutal && styles.brutalEdge,
+                  themedEdgeStyle(g),
                   { backgroundColor: colors.card, borderColor: colors.border },
                   right && { backgroundColor: colors.successFill, borderColor: colors.successFill },
                   chosenWrong && { backgroundColor: colors.danger, borderColor: colors.danger },
@@ -328,7 +329,6 @@ const styles = StyleSheet.create({
   question: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center', lineHeight: lineHeight.xl },
   options: { gap: spacing.sm },
   option: { minHeight: tapTarget, borderRadius: radius.md, borderWidth: 1, paddingHorizontal: spacing.lg, paddingVertical: spacing.md, justifyContent: 'center' },
-  brutalEdge: { borderRadius: 0, borderWidth: 2 },
   optionText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   feedback: { gap: spacing.sm },
   explanation: { fontSize: fontSize.md },

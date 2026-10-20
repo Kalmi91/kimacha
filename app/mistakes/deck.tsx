@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText, themedInputStyle, BackButton, ActionButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -21,7 +22,7 @@ import { cardsForBatches, pickMistakeSession, suggestedMistakeGrade, type Mistak
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
-import { BrutalBackButton, BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import { BrutalBox } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -118,18 +119,10 @@ export default function MistakesDeckScreen() {
 
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
-      {g.brutal ? (
-        <View style={styles.back}>
-          <BrutalBackButton testID="mistakes-deck-back" onPress={() => router.back()} />
-        </View>
-      ) : (
-      <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
-        <Text style={[styles.back, { color: colors.text }]}>←</Text>
-      </Pressable>
-      )}
-      <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
+      <BackButton testID="mistakes-deck-back" onPress={() => router.back()} wrapStyle={styles.back} arrowStyle={[styles.back, { color: colors.text }]} />
+      <TitleText variant="title" style={[styles.title, { color: colors.text }]} numberOfLines={1}>
         {s.mistakes.title}
-      </Text>
+      </TitleText>
       <View style={styles.backSpacer} />
     </View>
   );
@@ -141,13 +134,15 @@ export default function MistakesDeckScreen() {
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.mistakes.allDone}</Text>
-          {g.brutal ? (
-            <BrutalButton fill="a" label={s.mistakes.title} onPress={() => router.back()} style={styles.brutalDone} />
-          ) : (
-          <Pressable style={[styles.btn, { backgroundColor: colors.tint }]} onPress={() => router.back()}>
-            <Text style={styles.btnTextOnTint}>{s.mistakes.title}</Text>
-          </Pressable>
-          )}
+          <ActionButton
+            fill="a"
+            label={s.mistakes.title}
+            onPress={() => router.back()}
+            brutalStyle={styles.brutalDone}
+            classicStyle={[styles.btn, { backgroundColor: colors.tint }]}
+            classicTextStyle={styles.btnTextOnTint}
+            classicRole={null}
+          />
         </View>
         <ScreenFeedback level={level} languagePair="en→es" currentCard="mistakes:deck:done" />
       </View>
@@ -173,7 +168,7 @@ export default function MistakesDeckScreen() {
           )}
 
           <TextInput
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? () => handleGrade(nextGrade) : handleCheck}
@@ -275,7 +270,6 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   back: { fontSize: 22, width: 32 },
   backSpacer: { width: 32 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalGrade: { flex: 1 },
   brutalGradeBox: { paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
   brutalDone: { alignSelf: 'stretch', marginTop: 10 },

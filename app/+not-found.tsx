@@ -1,6 +1,7 @@
 import { Link, Stack } from 'expo-router';
 import { StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
@@ -18,7 +19,7 @@ export default function NotFoundScreen() {
     <>
       <Stack.Screen options={{ title: 'Oops!' }} />
       <View style={[styles.container, { backgroundColor: colors.background }]}>
-        <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.notFound.title}</Text>
+        <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{s.notFound.title}</TitleText>
 
         {g.brutal ? (
           // main button on the brutalist palette; the Link asChild provides the navigation.
@@ -46,7 +47,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalLink: { marginTop: 15 },
   link: {
     marginTop: 15,

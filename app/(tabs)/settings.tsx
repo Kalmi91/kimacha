@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { StyleSheet, View, Pressable, ScrollView, Modal } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText, themedSheetStyle } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
@@ -101,7 +102,7 @@ export default function SettingsScreen() {
       {/* the page grew past one screen (the version line at its bottom was
           unreachable), so the settings list scrolls. The modal stays outside, pinned to the screen. */}
       <ScrollView contentContainerStyle={styles.container}>
-      <Text style={[styles.sectionTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.tabs.settings}</Text>
+      <TitleText style={[styles.sectionTitle, { color: colors.text }]}>{s.tabs.settings}</TitleText>
 
       <Text style={[styles.sectionHint, { color: colors.textMuted, marginBottom: 8 }]}>{s.settings.themes.title}</Text>
       <Row onPress={() => router.push('/themes')}>
@@ -268,8 +269,8 @@ export default function SettingsScreen() {
           current one ticked, modeled on LevelPickerSheet (components/LevelPickerSheet.tsx). */}
       <Modal visible={directionSheetOpen} transparent animationType="slide" onRequestClose={() => setDirectionSheetOpen(false)}>
         <Pressable style={styles.sheetOverlay} onPress={() => setDirectionSheetOpen(false)}>
-          <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
-            <Text style={[styles.sheetTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.settings.chooseDirection}</Text>
+          <Pressable style={[styles.sheet, { backgroundColor: colors.card }, themedSheetStyle(g)]} onPress={() => {}}>
+            <TitleText style={[styles.sheetTitle, { color: colors.text }]}>{s.settings.chooseDirection}</TitleText>
             {(
               [
                 ['en', 'es'],
@@ -361,14 +362,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   // brutalist shapes.
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalRowOuter: { marginTop: 12 },
   // flexWrap + rowGap: if a theme with a wide font makes the stepper too wide, it wraps below the label.
   brutalRow: { flexDirection: 'row', flexWrap: 'wrap', rowGap: 8, alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 14 },
   brutalStepOuter: { width: 38 },
   brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalOptionText: { fontWeight: '500', textTransform: 'uppercase' },
-  brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
   brutalSheetOptionOuter: { marginBottom: 10 },
   brutalSheetOption: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 16 },
   sectionTitle: {

@@ -3,7 +3,8 @@ import { Text } from '@/components/KText';
 
 import Colors from '@/constants/Colors';
 import { ONBOARDING_SKINS, SKINS, legibleOn, resolveMode, type SkinId } from '@/constants/Skins';
-import { BrutalButton, radiusStyle, roleColor } from '@/components/grammar/Brutal';
+import { radiusStyle, roleColor } from '@/components/grammar/Brutal';
+import { ActionButton } from '@/components/grammar/Themed';
 import { useGrammarColors, grammarColorsFor } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { themeKeyFor } from '@/lib/skinTheme';
@@ -16,12 +17,15 @@ import { useTheme } from '@/lib/ThemeContext';
 
 function StartButton({ testID, label, onPress }: { testID: string; label: string; onPress: () => void }) {
   const { theme } = useTheme();
-  const g = useGrammarColors();
-  if (g.brutal) return <BrutalButton testID={testID} label={label} onPress={onPress} style={styles.brutalBtn} />;
   return (
-    <Pressable testID={testID} accessibilityRole="button" style={[styles.startBtn, { backgroundColor: Colors[theme].tint }]} onPress={onPress}>
-      <Text style={[styles.startBtnText, { color: Colors[theme].onTint }]}>{label}</Text>
-    </Pressable>
+    <ActionButton
+      testID={testID}
+      label={label}
+      onPress={onPress}
+      brutalStyle={styles.brutalBtn}
+      classicStyle={[styles.startBtn, { backgroundColor: Colors[theme].tint }]}
+      classicTextStyle={[styles.startBtnText, { color: Colors[theme].onTint }]}
+    />
   );
 }
 
