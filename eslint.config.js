@@ -41,10 +41,6 @@ module.exports = [
     rules: { 'max-lines': ['error', 753] },
   },
   {
-    files: ['app/(tabs)/settings.tsx'],
-    rules: { 'max-lines': ['error', 743] },
-  },
-  {
     files: ['lib/i18n/es.ts'],
     rules: { 'max-lines': ['error', 694] },
   },

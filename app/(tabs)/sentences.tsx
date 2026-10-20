@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
-import { useFocusEffect, useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams } from 'expo-router';
 
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -44,6 +44,8 @@ import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordTypedWords, sentenceKey,
 import { gradeTypedWords } from '@/lib/sentenceTyping';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
+import { useScreenLoad } from '@/lib/useScreenLoad';
+import { useSingleFlight } from '@/lib/useSingleFlight';
 
 // Beta tab (Settings -> Beta -> Sentences tab), spec HAROM-JATEK.md 3. A round = 4 sentences built from word tiles
 // (near-miss decoys; a build credits nothing), then ONE other, shorter sentence typed (lib/sentencePick.ts picks both,
@@ -102,7 +104,7 @@ export default function SentencesScreen() {
   // Sentences of the finished rounds since the app opened: left out of the next rounds, or a word that is still due
   // would bring the same sentences straight back.
   const doneKeys = useRef(new Set<string>());
-  const busy = useRef(false);
+  const runOnce = useSingleFlight();
   // The round on screen, for the focus effect (its state is stale in the callback).
   const roundRef = useRef<SentenceRound | null>(null);
   const [dockH, setDockH] = useState(DOCK_RESERVE);
@@ -156,12 +158,7 @@ export default function SentencesScreen() {
     setLoading(false);
   }, [focusKey]);
 
-  useFocusEffect(
-    useCallback(() => {
-      if (!roundRef.current) setLoading(true);
-      void load();
-    }, [load]),
-  );
+  useScreenLoad(load, { hasData: round !== null, setLoading });
 
   useEffect(() => {
     roundRef.current = round;
@@ -177,24 +174,20 @@ export default function SentencesScreen() {
   };
 
   const onBuildResult = async (correct: boolean) => {
-    if (busy.current || !round) return;
-    busy.current = true;
-    try {
+    if (!round) return;
+    await runOnce(async () => {
       // A build credits nothing: right = the sentence is done, wrong = it goes to the end of the round.
       const next = answerBuild(round, correct);
       await keepRound(next);
       await countLearningToday();
       setRound(next);
       setSeq((n) => n + 1);
-    } finally {
-      busy.current = false;
-    }
+    });
   };
 
   const onTypeResult = async (correct: boolean, typed: string) => {
-    if (busy.current || !round) return;
-    busy.current = true;
-    try {
+    if (!round) return;
+    await runOnce(async () => {
       // The typing ends the round and credits word by word. "Knew it" on a sentence the check marked wrong makes every word right.
       let verdicts = gradeTypedWords(typed, round.typed, target, strictAccents);
       if (correct && verdicts.some((v) => !v.right)) verdicts = verdicts.map((v) => ({ ...v, right: true }));
@@ -206,9 +199,7 @@ export default function SentencesScreen() {
       setRound(next);
       setSeq((n) => n + 1);
       setCreditSeq((n) => n + 1);
-    } finally {
-      busy.current = false;
-    }
+    });
   };
 
   const feedback = (
