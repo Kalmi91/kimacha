@@ -3,7 +3,8 @@ import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
-import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
+import { themedInputStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import { compareDictation, type DictationResult, type DictationWord } from '@/lib/exam/dictation';
@@ -84,7 +85,7 @@ export default function ExamSpeakCard({ prompt, expected, mode, targetLang, stri
           style={[
             styles.input,
             { color: colors.text, borderColor: missed ? colors.danger : colors.border },
-            g.brutal && brutalInputStyle(g),
+            themedInputStyle(g),
           ]}
           placeholder={s.exam.speakPlaceholder}
           placeholderTextColor={colors.textMuted}

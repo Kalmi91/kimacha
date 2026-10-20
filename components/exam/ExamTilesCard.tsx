@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { Card } from '@/components/grammar/Brutal';
+import { themedEdgeStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import { sentenceBuildMatch } from '@/lib/answerMatch';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -51,13 +52,13 @@ export default function ExamTilesCard({ prompt, answerTokens, sentence, distract
       <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
         <Text style={[styles.label, { color: colors.textMuted }]}>{s.exam.buildSentence}</Text>
         <Text style={[styles.prompt, { color: colors.text }]}>{prompt}</Text>
-        <View testID="exam-placed" style={[styles.placed, g.brutal && styles.brutalEdge, { borderColor: missed ? colors.danger : colors.border }]}>
+        <View testID="exam-placed" style={[styles.placed, themedEdgeStyle(g), { borderColor: missed ? colors.danger : colors.border }]}>
           {placed.map((i, pos) => (
             <Pressable
               key={`${i}-${pos}`}
               accessibilityRole="button"
               onPress={() => remove(pos)}
-              style={[styles.chip, g.brutal && styles.brutalEdge, { backgroundColor: colors.tint, borderColor: colors.tint }]}
+              style={[styles.chip, themedEdgeStyle(g), { backgroundColor: colors.tint, borderColor: colors.tint }]}
             >
               <Text style={[styles.chipText, { color: colors.onTint }]}>{bank[i]}</Text>
             </Pressable>
@@ -66,7 +67,7 @@ export default function ExamTilesCard({ prompt, answerTokens, sentence, distract
         <View style={styles.bank}>
           {bank.map((word, i) =>
             placed.includes(i) ? (
-              <View key={i} style={[styles.chip, styles.slot, g.brutal && styles.brutalEdge, { borderColor: colors.border }]}>
+              <View key={i} style={[styles.chip, styles.slot, themedEdgeStyle(g), { borderColor: colors.border }]}>
                 <Text style={[styles.chipText, styles.hidden]}>{word}</Text>
               </View>
             ) : (
@@ -74,7 +75,7 @@ export default function ExamTilesCard({ prompt, answerTokens, sentence, distract
                 key={i}
                 accessibilityRole="button"
                 onPress={() => add(i)}
-                style={[styles.chip, g.brutal && styles.brutalEdge, { backgroundColor: colors.card, borderColor: colors.border }]}
+                style={[styles.chip, themedEdgeStyle(g), { backgroundColor: colors.card, borderColor: colors.border }]}
               >
                 <Text style={[styles.chipText, { color: colors.text }]}>{word}</Text>
               </Pressable>
@@ -124,7 +125,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   slot: { borderStyle: 'dashed' },
-  brutalEdge: { borderRadius: 0, borderWidth: 2 },
   chipText: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   hidden: { opacity: 0 },
   reveal: { gap: spacing.xs },

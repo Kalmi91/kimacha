@@ -58,7 +58,6 @@ export const styles = StyleSheet.create({
   brutalProgress: { marginBottom: 16 },
   brutalArticle: { minWidth: 48, paddingVertical: 6, paddingHorizontal: 10, alignItems: 'center' },
   brutalDim: { opacity: 0.6 },
-  brutalPos: { borderWidth: 2, borderRadius: 0 },
   headerIcons: {
     flexDirection: 'row',
     alignItems: 'center',

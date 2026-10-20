@@ -5,7 +5,8 @@ import { speak, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
+import { themedInputStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
@@ -103,7 +104,7 @@ export default function TypedSentenceCard({
             style={[
               styles.input,
               { color: colors.text, borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault },
-              g.brutal && brutalInputStyle(g),
+              themedInputStyle(g),
               g.brutal && result && { borderColor: result === 'correct' ? colors.successFill : colors.danger },
             ]}
             placeholder={s.card.typeSentence}

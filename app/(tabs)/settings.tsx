@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 import { StyleSheet, View, Pressable, ScrollView, Modal } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText } from '@/components/grammar/Themed';
+import { TitleText, themedSheetStyle } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
@@ -269,7 +269,7 @@ export default function SettingsScreen() {
           current one ticked, modeled on LevelPickerSheet (components/LevelPickerSheet.tsx). */}
       <Modal visible={directionSheetOpen} transparent animationType="slide" onRequestClose={() => setDirectionSheetOpen(false)}>
         <Pressable style={styles.sheetOverlay} onPress={() => setDirectionSheetOpen(false)}>
-          <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
+          <Pressable style={[styles.sheet, { backgroundColor: colors.card }, themedSheetStyle(g)]} onPress={() => {}}>
             <TitleText style={[styles.sheetTitle, { color: colors.text }]}>{s.settings.chooseDirection}</TitleText>
             {(
               [
@@ -368,7 +368,6 @@ const styles = StyleSheet.create({
   brutalStepOuter: { width: 38 },
   brutalStep: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalOptionText: { fontWeight: '500', textTransform: 'uppercase' },
-  brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
   brutalSheetOptionOuter: { marginBottom: 10 },
   brutalSheetOption: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingVertical: 12, paddingHorizontal: 16 },
   sectionTitle: {

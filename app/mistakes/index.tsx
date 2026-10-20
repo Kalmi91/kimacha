@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, View, Pressable, ActivityIndicator } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText } from '@/components/grammar/Themed';
+import { TitleText, themedInkEdgeStyle } from '@/components/grammar/Themed';
 import { useFocusEffect, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -154,7 +154,7 @@ export default function MistakesReportScreen() {
                         hasLesson('es', lessonId) ? (
                           <Pressable
                             key={lessonId}
-                            style={[styles.lessonBtn, { borderColor: colors.tint }, g.brutal && { borderColor: g.ink, borderWidth: 2, borderRadius: 0 }]}
+                            style={[styles.lessonBtn, { borderColor: colors.tint }, themedInkEdgeStyle(g)]}
                             onPress={() => router.push(`/grammar/${lessonId}` as never)}
                           >
                             <Text style={[styles.lessonBtnText, { color: colors.tint }]}>
