@@ -3,7 +3,7 @@ import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollVie
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
-import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { examPassed } from '@/lib/exam/score';
 import { t } from '@/lib/i18n';
 import type { GrammarTopicData } from '@/lib/games/content';
@@ -132,7 +132,9 @@ export default function LessonTest({
     return { questions: qs, used: new Set([...used, ...qs.map((q) => q.id)]), missed };
   };
 
-  const [strictAccents, setStrictAccents] = useState<boolean | null>(null);
+  const { strictAccents, refresh } = useLearner();
+  // the question view waits for the accent setting to be read (a failed read keeps the stored value).
+  const [strictReady, setStrictReady] = useState(false);
   const [phase, setPhase] = useState<Phase>('running');
   const [dealt, setDealt] = useState(() => deal(new Set(previous?.missed ?? []), new Set()));
   const questions = dealt.questions;
@@ -142,14 +144,13 @@ export default function LessonTest({
 
   useEffect(() => {
     let alive = true;
-    getDb()
-      .getStrictAccents()
-      .then((v) => alive && setStrictAccents(v))
-      .catch(() => alive && setStrictAccents(false));
+    refresh(['strictAccents'])
+      .catch(() => {})
+      .then(() => alive && setStrictReady(true));
     return () => {
       alive = false;
     };
-  }, []);
+  }, [refresh]);
 
   const finish = (all: Answered[]) => {
     const correct = all.filter((a) => a.correct).length;
@@ -260,7 +261,7 @@ export default function LessonTest({
     );
   }
 
-  if (strictAccents === null || questions.length === 0) {
+  if (!strictReady || questions.length === 0) {
     return shell(<ActivityIndicator style={styles.centered} color={colors.tint} />);
   }
 

@@ -5,6 +5,7 @@ import { useLocalSearchParams } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import type { Level } from '@/data/words';
 import { grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/lib/games/content';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, scoredKinds } from '@/lib/grammar/syllabus';
@@ -31,6 +32,7 @@ export function useGrammarTopic() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const { topic: topicId } = useLocalSearchParams<{ topic: string }>();
+  const { refresh } = useLearner();
 
   const [learnedLang, setLearnedLang] = useState('es');
   const [contentLang, setContentLang] = useState('en');
@@ -69,8 +71,7 @@ export function useGrammarTopic() {
 
   const load = useCallback(async () => {
     const db = getDb();
-    const onboarding = await db.getOnboarding();
-    const target = onboarding?.target ?? 'es';
+    const { target } = await refresh(['direction']);
     setLearnedLang(target);
     // Kimacha Play: UI always English, regardless of the
     // stored source language.
@@ -101,7 +102,7 @@ export function useGrammarTopic() {
       setProgressRows([]);
     }
     setDrillResumeReady(true);
-  }, [topicId]);
+  }, [topicId, refresh]);
 
   useLoadOnMount(load);
 

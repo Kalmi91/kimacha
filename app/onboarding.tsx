@@ -6,9 +6,9 @@ import { router } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { getDb } from '@/lib/database';
+import { useLearner } from '@/lib/learner';
 import { t, setLanguage } from '@/lib/i18n';
-import { PCIC_VIEW_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
 import PlacementEntry from '@/components/exam/PlacementEntry';
 import { BrutalButton } from '@/components/grammar/Brutal';
@@ -30,6 +30,7 @@ export default function OnboardingScreen() {
   const [step, setStep] = useState<'language' | 'welcome' | 'intro' | 'theme' | 'level'>('language');
   const [source, setSource] = useState<'en' | 'es'>('en');
   const [target, setTarget] = useState<PcicTarget>('es');
+  const { previewTarget, setOnboarding, setLevel } = useLearner();
 
   // "English" -> en→es (today's app, every label in English);
   // "Español" -> es→en (every label in Spanish). The UI language and the active PCIC
@@ -39,14 +40,13 @@ export default function OnboardingScreen() {
     setSource(chosenSource);
     setTarget(chosenTarget);
     setLanguage(chosenSource);
-    setPcicTarget(chosenTarget);
+    previewTarget(chosenTarget);
     setStep('welcome');
   };
 
   const handleSelectLevel = async (level: PcicLevel) => {
-    const db = getDb();
-    await db.setOnboarding(source, target);
-    await db.setPcicLevel(level);
+    await setOnboarding(source, target);
+    await setLevel(level);
     router.replace('/(tabs)');
   };
 
