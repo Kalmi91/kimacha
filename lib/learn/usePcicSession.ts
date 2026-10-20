@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TextInput } from 'react-native';
-import { router, useFocusEffect } from 'expo-router';
+import { router } from 'expo-router';
 import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import { getDb } from '@/lib/database';
@@ -23,6 +23,7 @@ import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSenten
 import { INITIAL_CADENCE, nextSentenceStep, type CadenceState, type SentenceCardData } from '@/lib/sentenceCards';
 import { EXAM_LEVELS } from '@/lib/exam/types';
 import { examStatusFor, examUnlock, levelHasLesson, type ExamLevelStatus } from '@/lib/exam/unlock';
+import { useScreenLoad } from '@/lib/useScreenLoad';
 
 // How long the level picker sheet takes to close (the RN-web Modal's 250 ms exit animation, which starts about 100 ms late, plus a margin).
 const SHEET_CLOSE_MS = 500;
@@ -60,6 +61,10 @@ export function usePcicSession() {
   const xpV2 = useBeta('xpV2');
 
   const [loading, setLoading] = useState(true);
+  // Counts the finished loads (the first one, a refocus, a level switch): the read-aloud + input-focus effect
+  // below depends on it, so coming back to the tab reads the prompt again and refocuses the field, even though a
+  // refocus no longer flips `loading`.
+  const [loadSeq, setLoadSeq] = useState(0);
   const [today, setToday] = useState('');
   const [level, setLevel] = useState<PcicLevel>('B1');
   // The target language of the active pair (onboarding.target);
@@ -196,18 +201,15 @@ export function usePcicSession() {
     setSentenceCard(null);
     setPcicBonus(bonus);
     setLoading(false);
+    setLoadSeq((n) => n + 1);
     // setTypedAnswer is listed because the React Compiler infers it as a
     // dependency of this async callback; it
     // is stable, so nothing changes at runtime, but an empty array here counts
     // as broken memoization.
   }, [setTypedAnswer]);
 
-  useFocusEffect(
-    useCallback(() => {
-      setLoading(true);
-      load();
-    }, [load])
-  );
+  // A refocus with the deck already on screen refreshes it without the spinner.
+  useScreenLoad(load, { hasData: !loading, setLoading });
 
   // Tapping in the level picker sheet immediately gives the deck of the chosen level
   // (the sheet closes first, so the switch does not look frozen).
@@ -264,7 +266,7 @@ export function usePcicSession() {
     // (e.g. the word + example sentence chain after Check) should stop (same pattern).
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current?.itemId, loading, sentenceOpen]);
+  }, [current?.itemId, loading, sentenceOpen, loadSeq]);
 
   // Card-level resume: after every queue / batch change it saves a snapshot (lib/learnResume.ts).
   useEffect(() => {
