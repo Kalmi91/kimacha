@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState, type ReactNode } from 'react';
 import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions, Keyboard, Share, Platform } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -177,7 +178,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
             closes that). */}
         <Pressable style={styles.overlay} onPress={() => Keyboard.dismiss()}>
           <ModalBox>
-            <Text variant="title" style={[styles.modalTitle, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.feedback.button}</Text>
+            <TitleText variant="title" style={[styles.modalTitle, { color: colors.text }]}>{s.feedback.button}</TitleText>
 
             <TextInput
               style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
@@ -304,7 +305,6 @@ const styles = StyleSheet.create({
   brutalModalOuter: {},
   brutalModal: { padding: 24 },
   brutalModalBtn: { flex: 1 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   fabText: {
     fontSize: 24,
   },

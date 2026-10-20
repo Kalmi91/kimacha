@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, View, Pressable, ActivityIndicator } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 import { useFocusEffect, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -75,7 +76,7 @@ export default function MistakesReportScreen() {
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
-      <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.mistakes.title}</Text>
+      <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{s.mistakes.title}</TitleText>
       <View style={styles.backSpacer} />
     </View>
   );
@@ -201,7 +202,6 @@ const styles = StyleSheet.create({
   headerRow: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   back: { fontSize: 22, width: 32 },
   backSpacer: { width: 32 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   title: { flex: 1, textAlign: 'center', fontSize: 17, fontWeight: '700' },
   emptyText: { fontSize: 15, textAlign: 'center', marginTop: 24 },
   body: { paddingBottom: 40, gap: 14 },

@@ -1,5 +1,6 @@
 import { StyleSheet, View, Pressable, ScrollView } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
@@ -71,7 +72,7 @@ export default function StatsScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <SkinBackdrop />
       <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
-        <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
+        <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{s.stats.title}</TitleText>
 
       {/* badge of the PCIC level + known/total (interval
           >= 21 days), below it the known count of the other 3 PCIC levels. */}
@@ -298,7 +299,6 @@ const styles = StyleSheet.create({
   scheduleOuter: { marginBottom: 12 },
   goalBox: { padding: 16, gap: 10 },
   brutalContent: { paddingBottom: 32 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalValue: { fontWeight: '500' },
   brutalBadgeText: { fontSize: 14 },
   tileValue: {

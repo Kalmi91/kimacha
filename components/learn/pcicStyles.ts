@@ -48,7 +48,6 @@ export const styles = StyleSheet.create({
     color: '#FFFFFF',
   },
   brutalLevelChip: { paddingHorizontal: 10, paddingVertical: 3 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalTile: { flex: 1 },
   brutalTileBox: { paddingVertical: 12, alignItems: 'center' },
   // the three "+N new words" buttons in one row.

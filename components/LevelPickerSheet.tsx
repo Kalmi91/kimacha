@@ -1,5 +1,6 @@
 import { Modal, Pressable, ScrollView, View, StyleSheet } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 
 import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
@@ -61,7 +62,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
         {/* The sheet content swallows the tap with its own Pressable so that the
             empty area between the rows does not close the sheet (as the overlay would). */}
         <Pressable style={[styles.sheet, { backgroundColor: colors.card }, g.brutal && [styles.brutalSheet, { borderColor: g.ink }]]} onPress={() => {}}>
-          <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{title}</Text>
+          <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{title}</TitleText>
           {/* five levels + four exam rows do not fit on a short phone, so the rows are scrollable
               (the title stays on top, the sheet is at most 90% of the screen). */}
           <ScrollView showsVerticalScrollIndicator={false}>
@@ -118,7 +119,6 @@ const styles = StyleSheet.create({
   },
   // brutalist sheet: corner 0, 2.5 px ink line on top.
   brutalSheet: { borderTopLeftRadius: 0, borderTopRightRadius: 0, borderTopWidth: 2.5 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   title: {
     fontSize: 18,
     fontWeight: '700',

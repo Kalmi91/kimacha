@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { StyleSheet, View, Pressable, ScrollView, Linking } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -44,7 +45,7 @@ export default function CreditsScreen() {
           <Text style={[styles.exitIcon, { color: colors.text }]}>←</Text>
         </Pressable>
         )}
-        <Text variant="title" style={[styles.title, styles.titleInRow, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.credits.title}</Text>
+        <TitleText variant="title" style={[styles.title, styles.titleInRow, { color: colors.text }]}>{s.credits.title}</TitleText>
         <View style={styles.exitBtn} />
       </View>
 
@@ -115,7 +116,6 @@ const styles = StyleSheet.create({
   bodySpaced: {
     marginTop: 8,
   },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalLink: { fontWeight: '500', textDecorationLine: 'underline' },
   link: {
     fontSize: 15,
