@@ -37,14 +37,6 @@ module.exports = [
     rules: { 'max-lines': ['error', 901] },
   },
   {
-    files: ['lib/i18n/en.ts'],
-    rules: { 'max-lines': ['error', 753] },
-  },
-  {
-    files: ['lib/i18n/es.ts'],
-    rules: { 'max-lines': ['error', 694] },
-  },
-  {
     files: ['components/grammar/GrammarDrill.tsx'],
     rules: { 'max-lines': ['error', 627] },
   },

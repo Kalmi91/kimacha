@@ -1,0 +1,144 @@
+import type en from '../en/settings';
+
+const es: typeof en = {
+  settings: {
+    themeAuto: 'Automático',
+    themeLight: 'Claro',
+    themeDark: 'Oscuro',
+    paletteElectric: 'Azul eléctrico',
+    paletteLime: 'Lima + rosa',
+    paletteBrand: 'Kimacha',
+    paletteCyan: 'Cian + violeta',
+    paletteOrange: 'Naranja + turquesa',
+    // the theme grid (app/themes.tsx), My mix (app/theme-mix.tsx) and the theme decor texts.
+    themes: {
+      title: 'Temas',
+      oneLook: 'Este tema tiene un solo estilo.',
+      posterSlogan: 'APRENDER, APRENDER, APRENDER',
+      sample: 'the car',
+      know: 'Lo sé',
+      // the theme decor texts (senior, retro95, y2k, gamer).
+      readAloud: 'Escuchar',
+      retroTitle: 'kimacha.exe',
+      newWord: 'palabra nueva',
+      gamerLevel: 'LVL',
+      mixTitle: 'Mi mezcla',
+      mixColors: 'Colores',
+      mixFont: 'Letra',
+      mixShape: 'Forma',
+      mixDecor: 'Adorno',
+      mixNone: 'Ninguno',
+      mixSave: 'Usar esta mezcla',
+      shockWorker: 'Trabajador ejemplar',
+      dailyPlan: 'Plan diario',
+    },
+    weeklyGoal: 'Objetivo semanal de estudio',
+    weeklyGoalHours: (h: string) => `${h} horas / semana`,
+    weeklyGoalDoneTag: '✓ LISTO',
+    missingVoice: (langs: string) => `⚠️ No hay voz instalada para: ${langs}. Descárgala en los ajustes de texto a voz del teléfono; hasta entonces la app se queda en silencio en ese idioma.`,
+    dailyNewLimit: 'Palabras nuevas al día',
+    dailyNewLimitWords: (n: string) => `${n} palabras / día`,
+    beta: {
+      title: 'Beta',
+      practiceTab: 'Pestaña Práctica',
+      sentenceTab: 'Pestaña Frases',
+      xpV2: 'Nuevos valores de XP',
+      levels: 'Niveles A1-C1',
+    },
+    strictAccents: 'Los acentos cuentan',
+    strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
+    articlePicker: 'Botones de artículo',
+    articlePickerHint: 'En las tarjetas de sustantivos en español eliges el/la/los/las en vez de escribirlo. ⊘ significa sin artículo.',
+    missedWordDelay: 'La palabra que fallas regresa en',
+    missedWordDelaySeconds: (n: string) => `${n} s`,
+    learningDirection: 'Dirección de aprendizaje',
+    chooseDirection: 'Elige la dirección de aprendizaje',
+    directionEnEs: 'Inglés → español',
+    directionEsEn: 'Español → inglés',
+    credits: 'Créditos',
+    // the row that resets the grammar progress, and its confirmation.
+    resetGrammar: '🗑️ Reiniciar progreso de gramática',
+    resetGrammarTitle: 'Reiniciar progreso de gramática',
+    resetGrammarMessage: 'Esto borra todo el progreso de lecciones y práctica de gramática. ¿Estás seguro?',
+    // the restart rows in a collapsible section.
+    resetSection: '🗑️ Reiniciar progreso',
+    // the __DEV__-only exam control (visible only in a development build).
+    devSeedExamA1: 'DEV: preparar el estado del examen (A1-B2)',
+    devSeedExamA1Done: 'DEV: estado del examen listo (A1-B2), abre la hoja de niveles',
+  },
+  // theme (skin) names and group names for the Settings theme grid.
+  skins: {
+    names: {
+      brutal: 'Neobrutal',
+      deco: 'Art déco',
+      loteria: 'Lotería',
+      senior: 'Senior',
+      konnyu: 'Lectura fácil',
+      retro95: 'Retro 95',
+      y2k: 'Y2K',
+      kawaii: 'Kawaii',
+      gamer: 'Gamer',
+      botanikus: 'Botánico',
+      zen: 'Zen',
+      diszlexia: 'Fuente para dislexia',
+      szocreal: 'Realismo socialista',
+      plakat: 'Cartel',
+      csillampony: 'Pony brillante',
+      bauhaus: 'Bauhaus',
+      popart: 'Pop art',
+      szecesszio: 'Art nouveau',
+      kalocsai: 'Bordado de Kalocsa',
+      memphis: 'Memphis',
+      kodex: 'Códice',
+      graffiti: 'Graffiti',
+      ukiyoe: 'Ukiyo-e',
+      classic: 'Clásico',
+      mix: 'Mi mezcla',
+    },
+    groups: {
+      ajanlott: 'Recomendados',
+      muveszet: 'Corrientes artísticas',
+      kultura: 'Cultura',
+      hangulat: 'Ambiente',
+      olvasas: 'Lectura fácil',
+    },
+  },
+  backup: {
+    backup: 'Copia de seguridad',
+    restore: 'Restaurar',
+    confirmTitle: 'Restaurar',
+    confirmMessage: 'Esto sobrescribe tu progreso actual con el contenido de la copia de seguridad. ¿Estás seguro?',
+    confirmYes: 'Restaurar ahora',
+    doneTitle: '¡Restaurado!',
+    errorTitle: 'Error',
+    exportError: 'No se pudo crear la copia de seguridad.',
+    importError: 'Archivo de copia de seguridad inválido o dañado. Tus datos no cambiaron.',
+  },
+  credits: {
+    title: 'Créditos',
+    cefrjBody:
+      'Lista de palabras de inglés B1: The CEFR-J Wordlist Version 1.5, compilada por Yukio Tono, ' +
+      'Universidad de Estudios Extranjeros de Tokio (cefr-j.org). Se usa según sus términos para ' +
+      'investigación y uso comercial, con atribución.',
+    cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',
+    cefrjUrl: 'https://github.com/openlanguageprofiles/olp-en-cefrj',
+    fontsBody:
+      'Tipografías de los temas de la app. Todas son de código abierto: SIL Open Font License 1.1, ' +
+      'salvo Permanent Marker (Apache License 2.0).',
+    photosBody:
+      'Las fotos de algunas tarjetas provienen de Wikimedia Commons. Cada foto lleva su crédito ' +
+      'en la tarjeta, con autor y licencia.',
+    privacyLabel: 'Política de privacidad',
+    privacyUrl: 'https://kalmi91.github.io/kimacha/privacy-policy.html',
+  },
+  feedback: {
+    button: 'Comentarios',
+    placeholder: 'Comparte tu opinión...',
+    send: 'Enviar',
+    cancel: 'Cancelar',
+    thanks: '¡Gracias!',
+    errorTitle: 'No se pudo enviar. Inténtalo de nuevo.',
+  },
+};
+
+export default es;
