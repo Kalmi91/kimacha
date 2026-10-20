@@ -255,7 +255,7 @@ export default function StatsScreen() {
           <View
             style={[
               styles.goalFill,
-              { backgroundColor: goal.behind ? colors.tint : '#22C55E', width: `${Math.round(goal.pct * 100)}%` },
+              { backgroundColor: goal.behind ? colors.tint : colors.successFill, width: `${Math.round(goal.pct * 100)}%` },
             ]}
           />
         </View>

@@ -98,7 +98,9 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
       // share sheet sends the text wherever they pick (most often e-mail).
       try {
         await Share.share({ message: `${build} · ${currentCard}\n\n${text.trim()}` });
-      } catch {}
+      } catch {
+        // a share-sheet error ends like a dismissed sheet: there is no server answer to wait for, the form closes as after a send
+      }
     } else {
       const params = new URLSearchParams({
         timestamp: new Date().toISOString(),
@@ -206,7 +208,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
                 <Text style={styles.modalBtnText}>{s.feedback.cancel}</Text>
               </Pressable>
               <Pressable
-                style={({ pressed }) => [styles.modalBtn, { backgroundColor: (pressed || sending) ? '#22C55E' : colors.tint, opacity: text.trim() ? 1 : 0.4 }]}
+                style={({ pressed }) => [styles.modalBtn, { backgroundColor: (pressed || sending) ? colors.successFill : colors.tint, opacity: text.trim() ? 1 : 0.4 }]}
                 onPress={handleSend}
                 disabled={!text.trim() || sending}
               >

@@ -453,7 +453,9 @@ export function usePcicSession() {
     const next = nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step);
     setPcicBonus(next);
     setBatchBase({ day: today, level, n: countFinishedToday(activeCards, queue, today) });
-    getDb().setPcicNewBonus(next, today).catch(() => {});
+    getDb().setPcicNewBonus(next, today).catch(() => {
+      // the bonus is already in state; a failed write only means it is not remembered
+    });
     setQueue(
       pickSm2Session(
         activeCards,

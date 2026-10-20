@@ -54,7 +54,9 @@ export function loadBeta(): Promise<void> {
         emit();
       }
     })
-    .catch(() => {});
+    .catch(() => {
+      // a DB error leaves every flag at its default (see above)
+    });
   return loading;
 }
 

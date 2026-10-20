@@ -82,14 +82,18 @@ function tick() {
           emitMilestone({ scope: 'daily', minutes: todayMinutes });
         }
       })
-      .catch(() => {});
+      .catch(() => {
+        // a failed write skips the daily milestone check of this minute
+      });
     if (SESSION_MILESTONES.includes(sessionMinutes)) {
       emitMilestone({ scope: 'session', minutes: sessionMinutes });
     }
     for (const listener of listeners) {
       try {
         listener();
-      } catch {}
+      } catch {
+        // a failing listener must not stop the others or the tick
+      }
     }
   }
 }
@@ -98,7 +102,9 @@ function emitMilestone(milestone: UsageMilestone) {
   for (const listener of milestoneListeners) {
     try {
       listener(milestone);
-    } catch {}
+    } catch {
+      // a failing listener must not stop the others or the tick
+    }
   }
 }
 
@@ -121,10 +127,14 @@ function checkDayRollover() {
       for (const listener of dayRolloverListeners) {
         try {
           listener({ date: finished, minutes, words });
-        } catch {}
+        } catch {
+          // a failing listener must not stop the others or the tick
+        }
       }
     })
-    .catch(() => {});
+    .catch(() => {
+      // a failed read skips the day-rollover message
+    });
 }
 
 // Backgrounding stops the tick loop (no point polling while suspended); it

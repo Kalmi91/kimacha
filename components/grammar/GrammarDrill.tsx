@@ -200,7 +200,9 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
   const hasTransform = kinds.includes('transform') || kinds.includes('dictation');
   useEffect(() => {
     if (!hasTransform) return;
-    getDb().getStrictAccents().then(setStrictAccents).catch(() => {});
+    getDb().getStrictAccents().then(setStrictAccents).catch(() => {
+      // a failed read leaves the accent setting at its default (off)
+    });
   }, [hasTransform]);
 
   // from this the parent knows which item the learner
@@ -536,7 +538,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
                 const wordIndex = wordIndexByToken[i];
                 const isRightAnswer = wordIndex === current.correctIndex;
                 const isPicked = selected === wordIndex;
-                const color = answered && isRightAnswer ? '#22C55E' : answered && isPicked ? '#EF4444' : colors.tint;
+                const color = answered && isRightAnswer ? colors.successFill : answered && isPicked ? '#EF4444' : colors.tint;
                 return (
                   <Text
                     key={`w${i}`}
@@ -555,7 +557,7 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
         <View style={[styles.sentenceCard, { backgroundColor: colors.card }]}>
           <Text style={[styles.sentence, { color: colors.text }]}>
             {before}
-            <Text style={{ color: answered ? (isCorrect ? '#22C55E' : '#EF4444') : colors.tint, fontWeight: '700' }}>
+            <Text style={{ color: answered ? (isCorrect ? colors.successFill : '#EF4444') : colors.tint, fontWeight: '700' }}>
               {answered ? pickedText : '____'}
             </Text>
             {after}
@@ -573,8 +575,8 @@ export default function GrammarDrill({ topic, learnedLang, contentLang, onFinish
           let bg = colors.card;
           let border = colors.tabIconDefault;
           if (answered && isRightAnswer) {
-            bg = '#22C55E22';
-            border = '#22C55E';
+            bg = colors.successFill + '22';
+            border = colors.successFill;
           } else if (answered && isPicked && !isRightAnswer) {
             bg = '#EF444422';
             border = '#EF4444';

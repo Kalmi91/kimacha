@@ -65,8 +65,8 @@ export default function SentenceGradeRow({
             style={({ pressed }) => [
               styles.gradeBtn,
               {
-                backgroundColor: legibleOn(pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : gr === 'good' ? '#38BDF8' : '#1D4ED8', '#FFFFFF'),
-                borderColor: pressed ? (gr === 'good' ? '#22C55E' : '#EF4444') : isPre ? colors.text : 'transparent',
+                backgroundColor: legibleOn(pressed ? (gr === 'good' ? colors.successFill : '#EF4444') : gr === 'good' ? '#38BDF8' : '#1D4ED8', '#FFFFFF'),
+                borderColor: pressed ? (gr === 'good' ? colors.successFill : '#EF4444') : isPre ? colors.text : 'transparent',
                 borderWidth: isPre ? 3 : 1,
               },
             ]}

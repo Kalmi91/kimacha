@@ -144,8 +144,8 @@ export function MatchDrillItem({
             const isMatched = matched.has(li);
             const isSelected = selectedLeft === li;
             const isWrong = wrongPair?.left === li;
-            const bg = isMatched ? '#22C55E22' : isWrong ? '#EF444422' : isSelected ? colors.tint + '22' : colors.card;
-            const border = isMatched ? '#22C55E' : isWrong ? '#EF4444' : isSelected ? colors.tint : colors.tabIconDefault;
+            const bg = isMatched ? colors.successFill + '22' : isWrong ? '#EF444422' : isSelected ? colors.tint + '22' : colors.card;
+            const border = isMatched ? colors.successFill : isWrong ? '#EF4444' : isSelected ? colors.tint : colors.tabIconDefault;
             return (
               <Pressable
                 key={li}
@@ -163,8 +163,8 @@ export function MatchDrillItem({
           {rightOrder.map((pairId, pos) => {
             const isMatched = matched.has(pairId);
             const isWrong = wrongPair?.right === pos;
-            const bg = isMatched ? '#22C55E22' : isWrong ? '#EF444422' : colors.card;
-            const border = isMatched ? '#22C55E' : isWrong ? '#EF4444' : colors.tabIconDefault;
+            const bg = isMatched ? colors.successFill + '22' : isWrong ? '#EF444422' : colors.card;
+            const border = isMatched ? colors.successFill : isWrong ? '#EF4444' : colors.tabIconDefault;
             return (
               <Pressable
                 key={pos}

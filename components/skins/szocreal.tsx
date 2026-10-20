@@ -26,7 +26,9 @@ function useDailyPlanPercent(): number {
         .then(([usage, goal]) => {
           if (alive) setPct(dailyPlanPercent(usage.today, goal));
         })
-        .catch(() => {});
+        .catch(() => {
+          // a failed read keeps the last percent; the next poll tries again
+        });
     };
     load();
     const timer = setInterval(load, REFRESH_MS);
