@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { ScrollView, StyleSheet, View, Pressable, ActivityIndicator } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, themedInkEdgeStyle, BackButton } from '@/components/grammar/Themed';
+import { TitleText, themedInkEdgeStyle, BackButton, ActionButton } from '@/components/grammar/Themed';
 import { useFocusEffect, useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -13,7 +13,7 @@ import { localDateString } from '@/lib/usageStats';
 import { hasLesson, syllabusTopic } from '@/lib/grammar/syllabus';
 import type { MistakesBatch } from '@/lib/mistakes/format';
 import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
-import { BrutalButton, Card } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import ScreenFeedback from '@/lib/screenFeedback';
 import type { Level } from '@/data/words';
@@ -95,22 +95,15 @@ export default function MistakesReportScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       {header}
       <ScrollView contentContainerStyle={styles.body}>
-        {g.brutal ? (
-          <BrutalButton
-            testID="mistakes-practice-btn"
-            fill="a"
-            label={s.mistakes.practice(dueCount)}
-            onPress={() => router.push('/mistakes/deck' as never)}
-          />
-        ) : (
-        <Pressable
+        <ActionButton
           testID="mistakes-practice-btn"
-          style={[styles.practiceBtn, { backgroundColor: colors.tint }]}
+          fill="a"
+          label={s.mistakes.practice(dueCount)}
           onPress={() => router.push('/mistakes/deck' as never)}
-        >
-          <Text style={styles.practiceBtnText}>{s.mistakes.practice(dueCount)}</Text>
-        </Pressable>
-        )}
+          classicStyle={[styles.practiceBtn, { backgroundColor: colors.tint }]}
+          classicTextStyle={styles.practiceBtnText}
+          classicRole={null}
+        />
 
         {batches.map((batch) => {
           const doubtfulSentences = batch.sentences.filter((sn) => sn.doubtful);

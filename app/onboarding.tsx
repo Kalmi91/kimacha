@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, View, Pressable } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { router } from 'expo-router';
 
@@ -11,7 +11,7 @@ import { t, setLanguage } from '@/lib/i18n';
 import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import LevelRow from '@/components/LevelRow';
 import PlacementEntry from '@/components/exam/PlacementEntry';
-import { BrutalButton } from '@/components/grammar/Brutal';
+import { ActionButton } from '@/components/grammar/Themed';
 import { OnboardingIntro, OnboardingThemeStep } from '@/components/OnboardingSteps';
 
 // Onboarding asks for the direction again, like the old (non-Kimacha Play) branch, but
@@ -57,21 +57,10 @@ export default function OnboardingScreen() {
           <Text variant="title" style={welcomeStyle}>
             Which language do you speak? / ¿Qué idioma hablas?
           </Text>
-          {g.brutal ? (
-            <View style={styles.langButtonGroup}>
-              <BrutalButton testID="onboarding-lang-en" fill="a" label="English" onPress={() => handleChooseLanguage('en')} style={styles.brutalBtn} />
-              <BrutalButton testID="onboarding-lang-es" fill="b" label="Español" onPress={() => handleChooseLanguage('es')} style={styles.brutalBtn} />
-            </View>
-          ) : (
           <View style={styles.langButtonGroup}>
-            <Pressable accessibilityRole="button" style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('en')}>
-              <Text style={[styles.startBtnText, { color: colors.onTint }]}>English</Text>
-            </Pressable>
-            <Pressable accessibilityRole="button" style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => handleChooseLanguage('es')}>
-              <Text style={[styles.startBtnText, { color: colors.onTint }]}>Español</Text>
-            </Pressable>
+            <ActionButton brutalTestID="onboarding-lang-en" fill="a" label="English" onPress={() => handleChooseLanguage('en')} brutalStyle={styles.brutalBtn} classicStyle={[styles.startBtn, { backgroundColor: colors.tint }]} classicTextStyle={[styles.startBtnText, { color: colors.onTint }]} />
+            <ActionButton brutalTestID="onboarding-lang-es" fill="b" label="Español" onPress={() => handleChooseLanguage('es')} brutalStyle={styles.brutalBtn} classicStyle={[styles.startBtn, { backgroundColor: colors.tint }]} classicTextStyle={[styles.startBtnText, { color: colors.onTint }]} />
           </View>
-          )}
         </View>
       </View>
     );
@@ -133,13 +122,7 @@ export default function OnboardingScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <View style={styles.content}>
         <Text variant="title" style={welcomeStyle}>{s.onboarding.welcome}</Text>
-        {g.brutal ? (
-          <BrutalButton testID="onboarding-start" label={s.onboarding.start} onPress={() => setStep('intro')} style={styles.brutalBtn} />
-        ) : (
-        <Pressable accessibilityRole="button" style={[styles.startBtn, { backgroundColor: colors.tint }]} onPress={() => setStep('intro')}>
-          <Text style={[styles.startBtnText, { color: colors.onTint }]}>{s.onboarding.start}</Text>
-        </Pressable>
-        )}
+        <ActionButton brutalTestID="onboarding-start" label={s.onboarding.start} onPress={() => setStep('intro')} brutalStyle={styles.brutalBtn} classicStyle={[styles.startBtn, { backgroundColor: colors.tint }]} classicTextStyle={[styles.startBtnText, { color: colors.onTint }]} />
       </View>
     </View>
   );

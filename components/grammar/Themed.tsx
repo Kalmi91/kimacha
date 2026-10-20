@@ -1,7 +1,7 @@
 import { Pressable, View, type StyleProp, type TextStyle, type ViewStyle } from 'react-native';
 import { Text, type KTextProps } from '@/components/KText';
 
-import { BrutalBackButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalButton, brutalInputStyle, type BrutalFill } from '@/components/grammar/Brutal';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
@@ -76,6 +76,39 @@ export function BackButton({
   return (
     <Pressable accessibilityRole="button" accessibilityLabel={t().a11y.back} onPress={onPress} hitSlop={12} style={pressStyle}>
       <Text style={arrowStyle}>←</Text>
+    </Pressable>
+  );
+}
+
+// The main push button: a BrutalButton on the brutalist palette, a plain Pressable with the caller's
+// classic look otherwise. `testID` goes on both, `brutalTestID` on the brutalist button only;
+// `classicRole` null = the classic Pressable has no accessibilityRole (as before).
+export function ActionButton({
+  label,
+  onPress,
+  fill,
+  testID,
+  brutalTestID,
+  brutalStyle,
+  classicStyle,
+  classicTextStyle,
+  classicRole = 'button',
+}: {
+  label: string;
+  onPress: () => void;
+  fill?: BrutalFill;
+  testID?: string;
+  brutalTestID?: string;
+  brutalStyle?: StyleProp<ViewStyle>;
+  classicStyle?: StyleProp<ViewStyle>;
+  classicTextStyle?: StyleProp<TextStyle>;
+  classicRole?: 'button' | null;
+}) {
+  const g = useGrammarColors();
+  if (g.brutal) return <BrutalButton testID={testID ?? brutalTestID} label={label} onPress={onPress} fill={fill} style={brutalStyle} />;
+  return (
+    <Pressable testID={testID} accessibilityRole={classicRole ?? undefined} style={classicStyle} onPress={onPress}>
+      <Text style={classicTextStyle}>{label}</Text>
     </Pressable>
   );
 }
