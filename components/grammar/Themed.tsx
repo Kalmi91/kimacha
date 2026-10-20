@@ -1,7 +1,7 @@
 import { Pressable, View, type StyleProp, type TextStyle, type ViewProps, type ViewStyle } from 'react-native';
 import { Text, type KTextProps } from '@/components/KText';
 
-import { BrutalBackButton, BrutalButton, SegmentBar, brutalInputStyle, segmentsFilled, type BrutalFill } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalButton, SegmentBar, Sticker, brutalInputStyle, segmentsFilled, type BrutalFill } from '@/components/grammar/Brutal';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
@@ -153,6 +153,32 @@ export function ProgressBar({
   return (
     <View {...trackProps} style={[trackStyle, { backgroundColor: trackColor }]}>
       <View {...fillProps} style={[fillStyle, { backgroundColor: fillColor, width: `${fillWidth ?? pct}%` }]} />
+    </View>
+  );
+}
+
+// A small label badge (level, progress): a rotated Sticker on the brutalist palette, the caller's
+// classic chip (a View + Text) otherwise. `testID` goes on both looks.
+export function Badge({
+  label,
+  rotate,
+  testID,
+  brutalTextStyle,
+  classicStyle,
+  classicTextStyle,
+}: {
+  label: string;
+  rotate: number;
+  testID?: string;
+  brutalTextStyle?: StyleProp<TextStyle>;
+  classicStyle?: StyleProp<ViewStyle>;
+  classicTextStyle?: StyleProp<TextStyle>;
+}) {
+  const g = useGrammarColors();
+  if (g.brutal) return <Sticker testID={testID} label={label} fill="a" rotate={rotate} textStyle={brutalTextStyle} />;
+  return (
+    <View testID={testID} style={classicStyle}>
+      <Text style={classicTextStyle}>{label}</Text>
     </View>
   );
 }
