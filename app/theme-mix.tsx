@@ -1,10 +1,10 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText } from '@/components/grammar/Themed';
+import { TitleText, BackButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
-import { BrutalBackButton, BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
+import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
 import Choice from '@/components/skins/Choice';
 import { COLOR_CHOICES, SKIN_ORDER, decorChoices, shapeKey, uniqueShapeChoices } from '@/components/skins/mixChoices';
 import { SkinBackdrop, SkinCardFrame, SkinHeader, SkinWord } from '@/components/skins/Slots';
@@ -114,15 +114,7 @@ export default function ThemeMixScreen() {
     <View style={[styles.screen, { backgroundColor: g.bg }]}>
       <SkinBackdrop />
       <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
-        {g.brutal ? (
-          <View style={styles.exitBtn}>
-            <BrutalBackButton testID="mix-back" onPress={() => router.back()} />
-          </View>
-        ) : (
-          <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
-            <Text style={[styles.exitIcon, { color: g.ink }]}>←</Text>
-          </Pressable>
-        )}
+        <BackButton testID="mix-back" onPress={() => router.back()} wrapStyle={styles.exitBtn} pressStyle={styles.exitBtn} arrowStyle={[styles.exitIcon, { color: g.ink }]} />
         <TitleText style={[styles.title, { color: g.ink }]}>{s.settings.themes.mixTitle}</TitleText>
         <View style={styles.exitBtn} />
       </View>

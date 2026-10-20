@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
+import { TitleText, themedInputStyle, BackButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -22,7 +22,7 @@ import { cardsForBatches, pickMistakeSession, suggestedMistakeGrade, type Mistak
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
-import { BrutalBackButton, BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
+import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -119,15 +119,7 @@ export default function MistakesDeckScreen() {
 
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
-      {g.brutal ? (
-        <View style={styles.back}>
-          <BrutalBackButton testID="mistakes-deck-back" onPress={() => router.back()} />
-        </View>
-      ) : (
-      <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
-        <Text style={[styles.back, { color: colors.text }]}>←</Text>
-      </Pressable>
-      )}
+      <BackButton testID="mistakes-deck-back" onPress={() => router.back()} wrapStyle={styles.back} arrowStyle={[styles.back, { color: colors.text }]} />
       <TitleText variant="title" style={[styles.title, { color: colors.text }]} numberOfLines={1}>
         {s.mistakes.title}
       </TitleText>
