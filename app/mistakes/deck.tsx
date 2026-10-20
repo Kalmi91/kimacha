@@ -24,7 +24,7 @@ import { useDockLift } from '@/components/learn/useDockLift';
 import { BrutalBackButton, BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import type { Level } from '@/data/words';
 
 // the PCIC card surface (CardShell,
@@ -149,7 +149,7 @@ export default function MistakesDeckScreen() {
           </Pressable>
           )}
         </View>
-        <FeedbackButton level={level} languagePair="en→es" currentCard="mistakes:deck:done" />
+        <ScreenFeedback level={level} languagePair="en→es" currentCard="mistakes:deck:done" />
       </View>
     );
   }
@@ -264,7 +264,7 @@ export default function MistakesDeckScreen() {
         onHeight={setDockH}
       />
 
-      <FeedbackButton level={level} languagePair="en→es" currentCard={`mistakes:deck:${currentCard.cardId}`} bottomOffset={dockH + dockLift} />
+      <ScreenFeedback level={level} languagePair="en→es" currentCard={`mistakes:deck:${currentCard.cardId}`} bottomOffset={dockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }

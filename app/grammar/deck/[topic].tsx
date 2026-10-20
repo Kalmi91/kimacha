@@ -33,7 +33,7 @@ import {
   wordCellsForLesson,
   type DeckState,
 } from '@/lib/grammar/tableDeck';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { isInfinitive } from '@/lib/grammar/tableShape';
@@ -288,7 +288,7 @@ export default function TableDeckScreen() {
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.tableDeck.backToLesson}</Text>
           </Pressable>
         </View>
-        <FeedbackButton level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck`} />
+        <ScreenFeedback level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck`} />
       </View>
     );
   }
@@ -300,7 +300,7 @@ export default function TableDeckScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
         {/* the 💬 is there on the empty deck's page too. */}
-        <FeedbackButton level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck:empty`} />
+        <ScreenFeedback level={level} languagePair={deckPair} currentCard={`grammar:${topicId}:tabledeck:empty`} />
       </View>
     );
   }
@@ -393,7 +393,7 @@ export default function TableDeckScreen() {
         onHeight={setDockH}
       />
 
-      <FeedbackButton
+      <ScreenFeedback
         level={level}
         languagePair={deckPair}
         currentCard={`grammar:${topicId}:tabledeck:${current.id}`}

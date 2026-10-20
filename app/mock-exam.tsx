@@ -14,7 +14,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { Card } from '@/components/grammar/Brutal';
 import ExamButton from '@/components/exam/ExamButton';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import MockTaskCard from '@/components/exam/MockTaskCard';
 import { MockResultView, MockReviewView } from '@/components/exam/MockResultView';
@@ -242,7 +242,7 @@ export default function MockExamScreen() {
   const shell = (children: ReactNode, part?: string) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
-      {part ? <FeedbackButton level={level} languagePair={pair} currentCard={`mock-exam:${level}:${part}`} /> : null}
+      {part ? <ScreenFeedback level={level} languagePair={pair} currentCard={`mock-exam:${level}:${part}`} /> : null}
     </View>
   );
   const card = (children: ReactNode) => (

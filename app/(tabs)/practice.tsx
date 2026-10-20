@@ -10,7 +10,7 @@ import { SkinBackdrop } from '@/components/skins/Slots';
 import { Card } from '@/components/grammar/Brutal';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import ResultBadge from '@/components/ResultBadge';
 import SpeakButton from '@/components/SpeakButton';
 import LevelCounter from '@/components/practice/LevelCounter';
@@ -178,7 +178,7 @@ export default function PracticeScreen() {
       {header}
       {children}
       {dock}
-      <FeedbackButton
+      <ScreenFeedback
         placement="header"
         level="-"
         languagePair={pairOf(target)}

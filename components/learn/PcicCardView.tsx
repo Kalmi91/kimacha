@@ -13,7 +13,7 @@ import { ARTICLE_OPTIONS, articlePickerApplies, articleRowAppliesForPos, type Ar
 import { LEARNING_STEPS } from '@/lib/sm2';
 import { PCIC_NEW_BONUS_STEP, PCIC_NEW_BONUS_STEPS, countFinishedToday, dayProgressPercent, finishedInBatch } from '@/lib/pcicSession';
 import { posOf } from '@/lib/pcicPos';
-import FeedbackButton from '@/components/FeedbackModal';
+import ScreenFeedback from '@/lib/screenFeedback';
 import SpeakButton from '@/components/SpeakButton';
 import BadgeRow from '@/components/learn/BadgeRow';
 import CardShell from '@/components/learn/CardShell';
@@ -137,7 +137,7 @@ export default function PcicCardView({
             <Text style={styles.resetIcon}>↶</Text>
           </Pressable>
         )}
-        <FeedbackButton placement="inline" level={level} languagePair={languagePair} currentCard={feedbackCard} />
+        <ScreenFeedback placement="inline" level={level} languagePair={languagePair} currentCard={feedbackCard} />
       </View>
     </View>
     {/* fix: the old fifth BadgeRow chip (what today's introduction consists of
