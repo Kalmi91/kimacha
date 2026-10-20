@@ -7,7 +7,8 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import { BrutalBackButton, BrutalButton, Sticker, SegmentBar, brutalInputStyle, segmentsFilled } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalButton, Sticker, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
+import { themedInputStyle } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -344,7 +345,7 @@ export default function TableDeckScreen() {
           <TextInput
             key={`deck-in-${current.id}-${cellSeq}`}
             testID="tabledeck-input"
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? handleNext : handleCheck}

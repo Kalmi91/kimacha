@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { Card } from '@/components/grammar/Brutal';
+import { themedEdgeStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
@@ -73,7 +74,7 @@ export default function ExamMatchCard({ pairs, onDone }: Props) {
             onPress={() => pickLeft(i)}
             style={[
               styles.row,
-              g.brutal && styles.brutalEdge,
+              themedEdgeStyle(g),
               { backgroundColor: colors.card, borderColor: selected === i && !missed ? colors.tint : colors.border },
               selected === i && !missed && styles.rowSelected,
             ]}
@@ -94,7 +95,7 @@ export default function ExamMatchCard({ pairs, onDone }: Props) {
                   testID={`exam-right-${rightIdx}`}
                   accessibilityRole="button"
                   onPress={() => pickRight(rightIdx)}
-                  style={[styles.chip, g.brutal && styles.brutalEdge, { backgroundColor: colors.card, borderColor: colors.border }]}
+                  style={[styles.chip, themedEdgeStyle(g), { backgroundColor: colors.card, borderColor: colors.border }]}
                 >
                   <Text style={[styles.chipText, { color: colors.text }]}>{pairs[rightIdx].right}</Text>
                 </Pressable>
@@ -139,7 +140,6 @@ const styles = StyleSheet.create({
     gap: spacing.sm,
   },
   rowSelected: { borderWidth: 2 },
-  brutalEdge: { borderRadius: 0, borderWidth: 2 },
   word: { fontSize: fontSize.md, fontWeight: fontWeight.semibold, flexShrink: 1 },
   partner: { fontSize: fontSize.md, flexShrink: 1, textAlign: 'right' },
   pool: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, justifyContent: 'center' },

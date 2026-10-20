@@ -1,6 +1,6 @@
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText } from '@/components/grammar/Themed';
+import { TitleText, themedInkEdgeStyle, themedInputStyle } from '@/components/grammar/Themed';
 import { speak } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -26,7 +26,7 @@ import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
-import { BrutalBox, BrutalButton, SegmentBar, brutalInputStyle, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
+import { BrutalBox, BrutalButton, SegmentBar, segmentsFilled, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import FitText from '@/components/FitText';
 import DoneBadge from '@/components/DoneBadge';
@@ -420,7 +420,7 @@ export default function PcicCardView({
               prompt that repeats three times. */}
           <View style={styles.sectionRow}>
             {pos && (
-              <View style={[styles.posChip, { backgroundColor: colors.background }, g.brutal && [styles.brutalPos, { borderColor: g.ink }]]}>
+              <View style={[styles.posChip, { backgroundColor: colors.background }, themedInkEdgeStyle(g)]}>
                 <Text style={[styles.posChipText, { color: colors.tabIconDefault }]}>
                   {pos.gender ? `${s.pos[pos.pos]} · ${pos.gender}` : s.pos[pos.pos]}
                 </Text>
@@ -499,7 +499,7 @@ export default function PcicCardView({
           <TextInput
             key={`pcic-in-${current.itemId}-${cardSeq}`}
             ref={inputRef}
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typedAnswer}
             onChangeText={setTypedAnswer}
             onSubmitEditing={grade ? () => nextGrade && handleGrade(nextGrade) : handleCheck}

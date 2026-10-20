@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText } from '@/components/grammar/Themed';
+import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -22,7 +22,7 @@ import { cardsForBatches, pickMistakeSession, suggestedMistakeGrade, type Mistak
 import CardShell from '@/components/learn/CardShell';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
-import { BrutalBackButton, BrutalBox, BrutalButton, brutalInputStyle } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useDiffStyles } from '@/lib/useDiffStyles';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -174,7 +174,7 @@ export default function MistakesDeckScreen() {
           )}
 
           <TextInput
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? () => handleGrade(nextGrade) : handleCheck}

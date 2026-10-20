@@ -6,6 +6,7 @@ import Colors, { isDarkTheme } from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { Card } from '@/components/grammar/Brutal';
+import { accentColor, themedInkEdgeStyle } from '@/components/grammar/Themed';
 import { speak } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
@@ -104,7 +105,7 @@ function ConjugationTable({ header, rows, contentLang, colors, isDark }: {
                     style={[
                       styles.chip,
                       { backgroundColor: colors.card, borderColor: colors.tabIconDefault + '55' },
-                      g.brutal && { borderRadius: 0, borderWidth: 2, borderColor: g.ink },
+                      themedInkEdgeStyle(g),
                     ]}
                   >
                     {split ? (
@@ -143,7 +144,7 @@ function GridTable({ header, rows, contentLang, colors, scroll }: {
       style={[
         styles.grid,
         { borderColor: colors.tabIconDefault + '55' },
-        g.brutal && { borderWidth: 2, borderColor: g.ink, borderRadius: 0 },
+        themedInkEdgeStyle(g),
       ]}
     >
       <View style={[styles.gridRow, { backgroundColor: g.brutal ? g.a : colors.tint + '22' }]}>
@@ -189,7 +190,7 @@ function CompactVerbTable({ header, rows, colors, isDark }: {
         style={[
           styles.compactCell,
           { backgroundColor: colors.card, borderColor: colors.tabIconDefault + '55' },
-          g.brutal && { borderRadius: 0, borderWidth: 2, borderColor: g.ink },
+          themedInkEdgeStyle(g),
         ]}
       >
         <Text style={[styles.compactPerson, { color: colors.tabIconDefault }]} numberOfLines={1}>{row[0]}</Text>
@@ -235,7 +236,7 @@ function TableTabs({ tables, contentLang, colors, isDark, titleColor }: {
               style={[
                 styles.tab,
                 { backgroundColor: on ? g.a : colors.card, borderColor: colors.tabIconDefault + '55' },
-                g.brutal && { borderRadius: 0, borderWidth: 2, borderColor: g.ink },
+                themedInkEdgeStyle(g),
               ]}
             >
               <Text style={[styles.tabText, { color: on ? g.onA : colors.text }]}>{tb.header[1].es}</Text>
@@ -258,7 +259,7 @@ export default function LessonBody({ blocks, contentLang, learnedLang }: Props) 
   const g = useGrammarColors();
   // on the brutalist palette the headings are ink-coloured (the lime / cyan fill
   // is unreadable as text on paper).
-  const titleColor = g.brutal ? g.ink : colors.tint;
+  const titleColor = accentColor(g, colors.tint);
 
   return (
     <View style={styles.body}>

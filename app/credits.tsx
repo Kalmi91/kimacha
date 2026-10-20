@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { StyleSheet, View, Pressable, ScrollView, Linking } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText } from '@/components/grammar/Themed';
+import { TitleText, accentColor } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -29,7 +29,7 @@ export default function CreditsScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
-  const linkColor = g.brutal ? g.ink : colors.tint;
+  const linkColor = accentColor(g, colors.tint);
   const s = t();
   const router = useRouter();
 

@@ -27,6 +27,7 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
 import { BrutalBox, Card, Sticker } from '@/components/grammar/Brutal';
+import { accentColor, themedDockPad } from '@/components/grammar/Themed';
 import { DockSlotProvider } from '@/components/learn/DockSlot';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
 
@@ -189,7 +190,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
     </View>
   );
   // the title color on the brutalist palette is ink (the filled a / b colors are unreadable as text on paper).
-  const accentText = g.brutal ? g.ink : colors.tint;
+  const accentText = accentColor(g, colors.tint);
 
   // main button: on the brutalist palette the filled box, on classic today's button.
   const lessonButton = (testID: string, label: string, onPress: () => void, filled: boolean, first: boolean) =>
@@ -299,7 +300,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
       {header}
       <ScrollView
         ref={scrollRef}
-        contentContainerStyle={[styles.body, g.brutal && styles.brutalPad]}
+        contentContainerStyle={[styles.body, themedDockPad(g)]}
         onScroll={(e) => setScrollY(String(topicId), e.nativeEvent.contentOffset.y)}
         scrollEventThrottle={100}
         onContentSizeChange={() => scrollRef.current?.scrollTo({ y: getScrollY(String(topicId)), animated: false })}
