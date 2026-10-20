@@ -1,0 +1,70 @@
+export default {
+  progress: {
+    wordsKnown: 'Words known',
+  },
+  usage: {
+    plusOneMinute: '+1 minute wooo!',
+    milestoneSession: '🔥 Wow, {min} minutes in one go!',
+    milestoneDaily: '🎉 {min} minutes today, you are doing great!',
+    // past the first hour, every quarter of an hour, random line.
+    milestoneLong: [
+      '🔥 {hours} hours today! This is not studying any more, this is training.',
+      '💪 {min} minutes in the bag. The language cannot run away now.',
+      '🚀 Another quarter hour, another stretch won: {min} minutes and counting.',
+      '🧠 {min} minutes in one day. Your brain is wiring something new right now.',
+      '⚡ {hours} hours! At this pace it is weeks, not years.',
+      '🏔️ {min} minutes and still climbing. That is the whole difference.',
+      '🌊 {min} minutes straight. Today the words come to you.',
+      '🎯 {hours} hours in today. Whoever puts that in, takes it out.',
+    ],
+    dailyGreeting: '👋 Hi! Let\'s start today\'s practice!',
+    dailyGoalReached: (goal: number) => `Daily goal reached! ${goal} XP`,
+    // midnight rollover, the finished day's stats plus a celebration.
+    // Picked at random, so the lines come back around over time.
+    dayRollover: [
+      '🌙 Midnight! Yesterday: {words} words, {min} minutes. People who study at midnight are not doing it for fun.',
+      '✨ Day closed with {words} words and {min} minutes. The city sleeps, you dream in Spanish.',
+      '🕛 The clock turned! {min} minutes, {words} words, a whole day of work. Beautiful.',
+      '🚀 A new day starts, the old one ended with {words} words and {min} minutes. That is a habit, not luck.',
+      '🏆 {min} minutes, {words} words, and still here at midnight. That is persistence.',
+      '🌟 Yesterday is done: {words} words, {min} minutes. Every word is a brick, and you built again.',
+    ],
+  },
+  stats: {
+    title: 'Usage stats',
+    today: 'Today',
+    thisWeek: 'This week',
+    allTime: 'All-time total',
+    bestDay: 'Best day',
+    daysActive: 'Days active',
+    minutes: (n: number) => `${n} min`,
+    last7Days: 'Last 7 days',
+    weeklyGoal: 'Weekly goal',
+    goalProgress: (done: string, goal: string) => `${done} / ${goal} hours`,
+    goalBehind: (left: string) => `⚠️ ${left} hours left to your goal`,
+    goalReached: '🏆 Weekly goal reached!',
+    noData: 'No usage yet, go learn something!',
+    learningProgress: 'Learning progress',
+    reviewsToday: 'Reviews today',
+    // "known" = interval >= 21 days, "graduated" =
+    // passed the learning steps (lib/pcicStats.ts).
+    known21: 'Known (21+ days)',
+    graduatedLabel: 'Learning → graduated',
+    knownAtLevel: (level: string, known: number) => `${level} ${known}`,
+    // how many words are put away for how long, and when they come back
+    schedule: 'Schedule',
+    scheduleDueNow: 'Waiting now',
+    scheduleWaiting: (n: number) => `${n} words put away`,
+    scheduleToday: 'Later today',
+    scheduleTomorrow: 'Tomorrow',
+    scheduleDays2to3: 'In 2-3 days',
+    scheduleDays4to7: 'In 4-7 days',
+    scheduleLater: 'In over a week',
+    scheduleWords: (n: number) => `${n} words`,
+    scheduleNext: (when: string) => `Next refresh: ${when}`,
+    scheduleNextToday: (time: string) => `today ${time}`,
+    scheduleNextTomorrow: (time: string) => `tomorrow ${time}`,
+    scheduleNextDays: (days: number) => `in ${days} ${days === 1 ? 'day' : 'days'}`,
+    scheduleEmpty: 'Nothing put away yet, learn a few words!',
+  },
+};
