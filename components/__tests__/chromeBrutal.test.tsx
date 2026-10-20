@@ -43,6 +43,15 @@ const wrap = (ui: React.ReactElement) => <ThemeProvider>{ui}</ThemeProvider>;
 // default, for a loaded machine).
 const SETTLE = { timeout: 5000 };
 
+// The toast hides itself on a real timer (2 s, a milestone 4 s, then a 250 ms fade): a greeting toast that the
+// first mount claims can run out while a loaded machine is still inside flush(), and its fade-out then hides the
+// toast the test fires next (nothing is left to find). With a frozen clock no timer or animation frame runs until
+// the test advances it, so what is on screen depends only on the events the test fires.
+const freezeClock = () => jest.useFakeTimers({ doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] });
+afterEach(() => {
+  jest.useRealTimers();
+});
+
 describe('Header elements, neo-brutalist', () => {
   it('StatusBarStrip: with the brand palette a bottom ink line, with the classic palette none', async () => {
     await getDb().setGrammarPalette('brand');
@@ -63,6 +72,7 @@ describe('Header elements, neo-brutalist', () => {
   });
 
   it('UsageToast: with the brand palette a BrutalBox (corner 0), with the classic palette a pill', async () => {
+    freezeClock();
     const { __fireMinute } = jest.requireMock('@/lib/usageTimer');
     await getDb().setGrammarPalette('brand');
     const brand = render(wrap(<UsageToast />));
@@ -82,6 +92,7 @@ describe('Header elements, neo-brutalist', () => {
   });
 
   it('UsageToast: does not draw while hidden (onboarding), the classic pill has its own identifier', async () => {
+    freezeClock();
     const { __fireMinute } = jest.requireMock('@/lib/usageTimer');
     await getDb().setGrammarPalette('brand');
     const hiddenBrand = render(wrap(<UsageToast hidden />));
