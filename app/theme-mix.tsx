@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import { BrutalBackButton, BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
@@ -122,7 +123,7 @@ export default function ThemeMixScreen() {
             <Text style={[styles.exitIcon, { color: g.ink }]}>←</Text>
           </Pressable>
         )}
-        <Text style={[styles.title, { color: g.ink }, g.brutal && styles.brutalTitle]}>{s.settings.themes.mixTitle}</Text>
+        <TitleText style={[styles.title, { color: g.ink }]}>{s.settings.themes.mixTitle}</TitleText>
         <View style={styles.exitBtn} />
       </View>
 
@@ -220,7 +221,6 @@ const styles = StyleSheet.create({
   exitBtn: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center' },
   exitIcon: { fontSize: 26, fontWeight: '700' },
   title: { flex: 1, fontSize: 22, fontWeight: '700', textAlign: 'center' },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   container: { padding: 20, paddingBottom: 48 },
   preview: { padding: 16, marginBottom: 20, overflow: 'hidden' },
   previewCard: { padding: 18, alignItems: 'center', gap: 14 },

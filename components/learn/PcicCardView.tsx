@@ -1,5 +1,6 @@
 import { View, Pressable, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator, Keyboard } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 import { speak } from '@/lib/speech';
 
 import Colors from '@/constants/Colors';
@@ -246,7 +247,7 @@ export default function PcicCardView({
         <View style={styles.doneHeader}>
           {/* drawn badge (check mark + confetti) instead of the 🎉 emoji, in the neo-brutalist style. */}
           <DoneBadge />
-          <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.pcic.doneTitle}</Text>
+          <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{s.pcic.doneTitle}</TitleText>
         </View>
         {g.brutal ? (
           <View style={styles.tilesRow}>

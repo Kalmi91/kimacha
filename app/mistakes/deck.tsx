@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react';
 import { ActivityIndicator, Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, TextInput, View } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -127,9 +128,9 @@ export default function MistakesDeckScreen() {
         <Text style={[styles.back, { color: colors.text }]}>←</Text>
       </Pressable>
       )}
-      <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]} numberOfLines={1}>
+      <TitleText variant="title" style={[styles.title, { color: colors.text }]} numberOfLines={1}>
         {s.mistakes.title}
-      </Text>
+      </TitleText>
       <View style={styles.backSpacer} />
     </View>
   );
@@ -275,7 +276,6 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', marginBottom: 12 },
   back: { fontSize: 22, width: 32 },
   backSpacer: { width: 32 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalGrade: { flex: 1 },
   brutalGradeBox: { paddingVertical: 8, alignItems: 'center', justifyContent: 'center' },
   brutalDone: { alignSelf: 'stretch', marginTop: 10 },
