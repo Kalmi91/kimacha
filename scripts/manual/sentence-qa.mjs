@@ -3,9 +3,9 @@
 // Scans card sentences for the SAME problem classes the user flagged by hand, so
 // the rest of the corpus can be swept for repeats instead of waiting for reports.
 //
-// Usage:  node scripts/sentence-qa.mjs [level ...]
+// Usage:  node scripts/manual/sentence-qa.mjs [level ...]
 //   default levels: a0 a1 a2  (the range an A1 learner actually reaches)
-//   e.g.  node scripts/sentence-qa.mjs a0 a1 a2 b1 b2
+//   e.g.  node scripts/manual/sentence-qa.mjs a0 a1 a2 b1 b2
 //
 // Every check is a HEURISTIC, output is a review list, not an auto-fix. A hit is
 // "look at this card", not "this is definitely wrong". Tune the curated lists as
@@ -15,7 +15,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const levels = process.argv.slice(2).length ? process.argv.slice(2) : ['a0', 'a1', 'a2'];
 
 // ── Class NUM: EN↔ES number divergence (trousers, fruit, vegetables)

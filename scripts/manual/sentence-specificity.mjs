@@ -11,7 +11,7 @@
 // teach. That is checkable without understanding the sentence: blank the target
 // word out and see whether the remaining frame is shared with other cards.
 //
-// Usage:  node scripts/sentence-specificity.mjs [level ...] [--branch=es|en]
+// Usage:  node scripts/manual/sentence-specificity.mjs [level ...] [--branch=es|en]
 //   default levels: a0 a1 a2      (the range a learner actually reaches today)
 //   --branch picks the word set: es = the open Spanish deck, data/words-open (default),
 //   en = the English-target track under data/words/en/.
@@ -23,7 +23,7 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
-const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const args = process.argv.slice(2);
 const branchArg = args.find(a => a.startsWith('--branch='));
 const branch = branchArg ? branchArg.split('=')[1] : 'es';
