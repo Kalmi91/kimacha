@@ -61,6 +61,10 @@ export function usePcicSession() {
   const xpV2 = useBeta('xpV2');
 
   const [loading, setLoading] = useState(true);
+  // Counts the finished loads (the first one, a refocus, a level switch): the read-aloud + input-focus effect
+  // below depends on it, so coming back to the tab reads the prompt again and refocuses the field, even though a
+  // refocus no longer flips `loading`.
+  const [loadSeq, setLoadSeq] = useState(0);
   const [today, setToday] = useState('');
   const [level, setLevel] = useState<PcicLevel>('B1');
   // The target language of the active pair (onboarding.target);
@@ -197,6 +201,7 @@ export function usePcicSession() {
     setSentenceCard(null);
     setPcicBonus(bonus);
     setLoading(false);
+    setLoadSeq((n) => n + 1);
     // setTypedAnswer is listed because the React Compiler infers it as a
     // dependency of this async callback; it
     // is stable, so nothing changes at runtime, but an empty array here counts
@@ -261,7 +266,7 @@ export function usePcicSession() {
     // (e.g. the word + example sentence chain after Check) should stop (same pattern).
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current?.itemId, loading, sentenceOpen]);
+  }, [current?.itemId, loading, sentenceOpen, loadSeq]);
 
   // Card-level resume: after every queue / batch change it saves a snapshot (lib/learnResume.ts).
   useEffect(() => {
