@@ -7,7 +7,7 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import { BrutalBackButton, BrutalButton, Sticker, SegmentBar, brutalInputStyle, segmentsFilled } from '@/components/grammar/Brutal';
+import { themedInputStyle, BackButton, ProgressBar, ActionButton, Badge } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -217,23 +217,16 @@ export default function TableDeckScreen() {
   // on the brutalist palette a back box, uppercase title, the progress sticker.
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
-      {g.brutal ? (
-        <BrutalBackButton testID="tabledeck-back" onPress={() => router.back()} />
-      ) : (
-      <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
-        <Text style={[styles.back, { color: colors.text }]}>←</Text>
-      </Pressable>
-      )}
+      <BackButton testID="tabledeck-back" onPress={() => router.back()} arrowStyle={[styles.back, { color: colors.text }]} />
       <FitText variant="title" base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {lessonTitle}
       </FitText>
-      {g.brutal ? (
-        <Sticker label={s.tableDeck.progress(doneCount(deck), items.length)} fill="a" rotate={4} />
-      ) : (
-      <View style={[styles.progressChip, { backgroundColor: colors.tint }]}>
-        <Text style={styles.progressChipText}>{s.tableDeck.progress(doneCount(deck), items.length)}</Text>
-      </View>
-      )}
+      <Badge
+        label={s.tableDeck.progress(doneCount(deck), items.length)}
+        rotate={4}
+        classicStyle={[styles.progressChip, { backgroundColor: colors.tint }]}
+        classicTextStyle={styles.progressChipText}
+      />
     </View>
   );
 
@@ -247,12 +240,8 @@ export default function TableDeckScreen() {
 
   const pct = items.length > 0 ? (doneCount(deck) / items.length) * 100 : 0;
 
-  const progressBar = g.brutal ? (
-    <SegmentBar testID="tabledeck-segments" filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalBar} />
-  ) : (
-    <View style={[styles.progressTrack, { backgroundColor: colors.card }]}>
-      <View style={[styles.progressFill, { backgroundColor: colors.successFill, width: `${pct}%` }]} />
-    </View>
+  const progressBar = (
+    <ProgressBar testID="tabledeck-segments" pct={pct} brutalStyle={styles.brutalBar} trackStyle={styles.progressTrack} trackColor={colors.card} fillStyle={styles.progressFill} fillColor={colors.successFill} />
   );
 
   if (complete) {
@@ -263,22 +252,28 @@ export default function TableDeckScreen() {
         <View style={styles.doneBody}>
           <Text style={styles.doneEmoji}>🎉</Text>
           <Text variant="title" style={[styles.doneTitle, { color: colors.text }]}>{s.tableDeck.completeTitle(items.length)}</Text>
-          {g.brutal ? (
-            <BrutalButton testID="tabledeck-start-again" fill="a" label={s.tableDeck.startAgain} onPress={handleStartAgain} style={styles.brutalBtn} />
-          ) : (
-          <Pressable testID="tabledeck-start-again" style={[styles.btn, { backgroundColor: colors.tint }]} onPress={handleStartAgain}>
-            <Text style={styles.btnTextOnTint}>{s.tableDeck.startAgain}</Text>
-          </Pressable>
-          )}
+          <ActionButton
+            testID="tabledeck-start-again"
+            fill="a"
+            label={s.tableDeck.startAgain}
+            onPress={handleStartAgain}
+            brutalStyle={styles.brutalBtn}
+            classicStyle={[styles.btn, { backgroundColor: colors.tint }]}
+            classicTextStyle={styles.btnTextOnTint}
+            classicRole={null}
+          />
           {/* same pill shape/size as "Start again" (outline instead
               of filled), so the two options read as equally-weighted choices. */}
-          {g.brutal ? (
-            <BrutalButton testID="tabledeck-harder" fill="paper" label={s.tableDeck.harder} onPress={handleHarder} style={styles.brutalBtn} />
-          ) : (
-          <Pressable testID="tabledeck-harder" style={[styles.btn, styles.btnOutline, { borderColor: colors.tint }]} onPress={handleHarder}>
-            <Text style={[styles.btnTextOnTint, { color: colors.tint }]}>{s.tableDeck.harder}</Text>
-          </Pressable>
-          )}
+          <ActionButton
+            testID="tabledeck-harder"
+            fill="paper"
+            label={s.tableDeck.harder}
+            onPress={handleHarder}
+            brutalStyle={styles.brutalBtn}
+            classicStyle={[styles.btn, styles.btnOutline, { borderColor: colors.tint }]}
+            classicTextStyle={[styles.btnTextOnTint, { color: colors.tint }]}
+            classicRole={null}
+          />
           <Pressable style={styles.ghostBtn} onPress={() => router.back()}>
             <Text style={[styles.ghostBtnText, { color: colors.tabIconDefault }]}>{s.tableDeck.backToLesson}</Text>
           </Pressable>
@@ -344,7 +339,7 @@ export default function TableDeckScreen() {
           <TextInput
             key={`deck-in-${current.id}-${cellSeq}`}
             testID="tabledeck-input"
-            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, g.brutal && brutalInputStyle(g)]}
+            style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
             value={typed}
             onChangeText={setTyped}
             onSubmitEditing={checked ? handleNext : handleCheck}

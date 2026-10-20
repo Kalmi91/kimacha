@@ -3,7 +3,8 @@ import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
-import { Card, brutalInputStyle } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
+import { themedInputStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import { answerInputProps } from '@/lib/inputProps';
 import { useDockedAction } from '@/components/learn/DockSlot';
@@ -79,7 +80,7 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
           style={[
             styles.input,
             { color: colors.text, borderColor: missed ? colors.danger : colors.border },
-            g.brutal && brutalInputStyle(g),
+            themedInputStyle(g),
           ]}
           placeholder={sentence ? s.card.typeSentence : s.card.typeIn(targetLang)}
           placeholderTextColor={colors.textMuted}

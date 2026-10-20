@@ -15,7 +15,6 @@ export const styles = StyleSheet.create({
   brutalOptionText: { fontSize: 17, fontWeight: '500', flexShrink: 1, textAlign: 'center' },
   brutalFeedback: { padding: 16, gap: 8 },
   // The last item also rolls out from under the chat button (FAB).
-  brutalBodyPad: { paddingBottom: 130 },
   brutalClose: { width: 34, height: 34, alignItems: 'center', justifyContent: 'center' },
   brutalCloseText: { fontSize: 16, fontWeight: '500' },
   brutalDim: { opacity: 0.55 },

@@ -1,5 +1,6 @@
 import { StyleSheet, View, Pressable, ScrollView } from 'react-native';
 import { Text } from '@/components/KText';
+import { TitleText, ProgressBar, Badge } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 import Colors from '@/constants/Colors';
 import { legibleOn } from '@/constants/Skins';
@@ -10,7 +11,7 @@ import { pairOf } from '@/lib/languagePair';
 import { languages } from '@/lib/languages';
 import { daysUntil, type ScheduleBucketKey } from '@/lib/schedulePreview';
 import ScreenFeedback from '@/lib/screenFeedback';
-import { Card, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import MockExamCard from '@/components/exam/MockExamCard';
 import LevelCard from '@/components/stats/LevelCard';
@@ -71,20 +72,20 @@ export default function StatsScreen() {
     <View style={[styles.container, { backgroundColor: colors.background }]}>
       <SkinBackdrop />
       <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
-        <Text variant="title" style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>{s.stats.title}</Text>
+        <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{s.stats.title}</TitleText>
 
       {/* badge of the PCIC level + known/total (interval
           >= 21 days), below it the known count of the other 3 PCIC levels. */}
       <Text style={[styles.sectionLabel, { color: colors.tabIconDefault }]}>{s.progress.wordsKnown}</Text>
       <Card classicStyle={styles.levelCard} style={styles.gapBottom}>
         <View style={styles.levelCardHead}>
-          {g.brutal ? (
-            <Sticker label={pcicLevel} fill="a" rotate={-4} textStyle={styles.brutalBadgeText} />
-          ) : (
-          <View style={[styles.levelBadge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}>
-            <Text style={styles.levelBadgeText}>{pcicLevel}</Text>
-          </View>
-          )}
+          <Badge
+            label={pcicLevel}
+            rotate={-4}
+            brutalTextStyle={styles.brutalBadgeText}
+            classicStyle={[styles.levelBadge, { backgroundColor: legibleOn('#38BDF8', '#FFFFFF') }]}
+            classicTextStyle={styles.levelBadgeText}
+          />
           <Text style={[styles.levelCardValue, { color: colors.text }]}>
             {s.header.levelProgress(levelKnown, levelTotal)}
           </Text>
@@ -148,18 +149,15 @@ export default function StatsScreen() {
         <Text style={[styles.goalValue, { color: colors.text }, g.brutal && styles.brutalValue]}>
           {s.stats.goalProgress(hours(usage.thisWeek), hours(weeklyGoal))}
         </Text>
-        {g.brutal ? (
-          <SegmentBar testID="stats-goal-bar" filled={segmentsFilled(goal.pct * 100, 8)} segments={8} />
-        ) : (
-        <View style={[styles.goalTrack, { backgroundColor: colors.background }]}>
-          <View
-            style={[
-              styles.goalFill,
-              { backgroundColor: goal.behind ? colors.tint : colors.successFill, width: `${Math.round(goal.pct * 100)}%` },
-            ]}
-          />
-        </View>
-        )}
+        <ProgressBar
+          testID="stats-goal-bar"
+          pct={goal.pct * 100}
+          fillWidth={Math.round(goal.pct * 100)}
+          trackStyle={styles.goalTrack}
+          trackColor={colors.background}
+          fillStyle={styles.goalFill}
+          fillColor={goal.behind ? colors.tint : colors.successFill}
+        />
         {/* a reached goal is the celebration, not a footnote, so it gets
             the trophy and the big type. */}
         {goal.behind ? (
@@ -298,7 +296,6 @@ const styles = StyleSheet.create({
   scheduleOuter: { marginBottom: 12 },
   goalBox: { padding: 16, gap: 10 },
   brutalContent: { paddingBottom: 32 },
-  brutalTitle: { textTransform: 'uppercase', fontWeight: '500' },
   brutalValue: { fontWeight: '500' },
   brutalBadgeText: { fontSize: 14 },
   tileValue: {

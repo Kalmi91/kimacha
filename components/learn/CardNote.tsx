@@ -1,5 +1,6 @@
 import { Image, Linking, Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
+import { accentColor } from '@/components/grammar/Themed';
 
 import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -21,7 +22,7 @@ type Props = {
 export default function CardNote({ note, image, colors }: Props) {
   const g = useGrammarColors();
   if (!note && !image) return null;
-  const linkColor = g.brutal ? g.ink : colors.tint;
+  const linkColor = accentColor(g, colors.tint);
   return (
     <View style={styles.wrap}>
       {image && (

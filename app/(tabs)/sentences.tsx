@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollView, StyleSheet, View } from 'react-native';
+import { ActivityIndicator, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 
 import { Text } from '@/components/KText';
@@ -7,7 +7,7 @@ import Colors from '@/constants/Colors';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ScreenFeedback from '@/lib/screenFeedback';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
-import { BrutalButton, SegmentBar } from '@/components/grammar/Brutal';
+import { ActionButton, ProgressBar } from '@/components/grammar/Themed';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import LevelCounter from '@/components/practice/LevelCounter';
@@ -17,7 +17,6 @@ import { useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
-import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
@@ -83,7 +82,6 @@ function BuildStep({ entry, target, onResult }: { entry: SentenceEntry; target: 
 export default function SentencesScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const g = useGrammarColors();
   const s = t();
   // beta: xpV2, each word's half of a typed sentence earns XP; off = no XP, the old behavior.
   const xpV2 = useBeta('xpV2');
@@ -221,21 +219,26 @@ export default function SentencesScreen() {
           </Text>
         )}
       </View>
-      {total > 0 &&
-        (g.brutal ? (
-          // One block per step, so the bar and the "4 / 5" next to it count the same steps.
-          <SegmentBar testID="sentences-progress" filled={done} segments={total} style={styles.brutalProgress} />
-        ) : (
-          <View
-            testID="sentences-progress"
-            accessibilityRole="progressbar"
-            accessibilityLabel={s.sentenceTab.progressA11y(done, total)}
-            accessibilityValue={{ min: 0, max: total, now: done }}
-            style={[styles.progressTrack, { backgroundColor: colors.card }]}
-          >
-            <View style={[styles.progressFill, { backgroundColor: colors.tint, width: `${(done / total) * 100}%` }]} />
-          </View>
-        ))}
+      {total > 0 && (
+        // One block per step, so the bar and the "4 / 5" next to it count the same steps.
+        <ProgressBar
+          testID="sentences-progress"
+          pct={(done / total) * 100}
+          filled={done}
+          segments={total}
+          brutalStyle={styles.brutalProgress}
+          trackStyle={styles.progressTrack}
+          trackColor={colors.card}
+          fillStyle={styles.progressFill}
+          fillColor={colors.tint}
+          trackProps={{
+            testID: 'sentences-progress',
+            accessibilityRole: 'progressbar',
+            accessibilityLabel: s.sentenceTab.progressA11y(done, total),
+            accessibilityValue: { min: 0, max: total, now: done },
+          }}
+        />
+      )}
     </SkinHeader>
   );
 
@@ -270,21 +273,15 @@ export default function SentencesScreen() {
         <Text testID="sentences-round-done" style={[styles.hint, { color: colors.text }]}>
           {s.sentenceTab.roundDone(round ? roundSentences(round).length : 0)}
         </Text>
-        {g.brutal ? (
-          <BrutalButton testID="sentences-more" label={s.sentenceTab.more} fill="a" onPress={() => { setLoading(true); void load(true); }} style={styles.moreBtn} />
-        ) : (
-          <Pressable
-            testID="sentences-more"
-            accessibilityRole="button"
-            style={[styles.moreBtn, styles.moreBtnClassic, { backgroundColor: colors.accent }]}
-            onPress={() => {
-              setLoading(true);
-              void load(true);
-            }}
-          >
-            <Text style={[styles.moreBtnText, { color: colors.onTint }]}>{s.sentenceTab.more}</Text>
-          </Pressable>
-        )}
+        <ActionButton
+          testID="sentences-more"
+          label={s.sentenceTab.more}
+          fill="a"
+          onPress={() => { setLoading(true); void load(true); }}
+          brutalStyle={styles.moreBtn}
+          classicStyle={[styles.moreBtn, styles.moreBtnClassic, { backgroundColor: colors.accent }]}
+          classicTextStyle={[styles.moreBtnText, { color: colors.onTint }]}
+        />
         {feedback}
       </View>
     );
