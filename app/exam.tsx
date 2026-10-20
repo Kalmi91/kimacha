@@ -9,6 +9,7 @@ import { PCIC_LEVELS, findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicL
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress, syllabusTopic } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
 import { t } from '@/lib/i18n';
+import { pairOf } from '@/lib/languagePair';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { localDateString } from '@/lib/usageStats';
@@ -221,7 +222,7 @@ export default function ExamScreen() {
 
   // The 💬 is on every part of the level exam; the `part` tells the Feedback sheet exactly
   // which part it is (exam:<level>:<part>). On a typing question the 💬 sits above the docked bar.
-  const pair = `${source?.target === 'en' ? 'es' : 'en'}→${source?.target ?? 'es'}`;
+  const pair = pairOf(source?.target === 'en' ? 'en' : 'es');
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}

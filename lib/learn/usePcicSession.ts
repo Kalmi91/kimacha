@@ -5,6 +5,7 @@ import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import { getDb } from '@/lib/database';
 import { getBeta, useBeta } from '@/lib/beta';
+import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { addXp, getXp, wholeXp, xpForCard, type DailyXp } from '@/lib/dailyXp';
@@ -119,6 +120,8 @@ export function usePcicSession() {
   // effect below), not only on first mount (the `autoFocus` prop is not
   // enough for this, because the TextInput does not remount on a card change).
   const inputRef = useRef<TextInput>(null);
+  // In-flight guard of handleGrade: a double tap must not grade the same card twice.
+  const gradingRef = useRef(false);
   // The input field REMOUNTS on every new card
   // (the TextInput `key` contains this counter). Reason: after Check the field
   // became `editable={false}`, then editable again after Next, on the same
@@ -234,7 +237,7 @@ export function usePcicSession() {
 
   // The FeedbackButton's pair label with the active direction
   // (it used to be hard-coded to "es-en", although the actual behavior was en-es).
-  const languagePair = target === 'es' ? 'en-es' : 'es-en';
+  const languagePair = pairOf(target);
 
   // The prompt is the source-language field and the answer is the
   // target-language one; in en-es this is the old order (prompt en, answer es), in es-en
@@ -370,6 +373,16 @@ export function usePcicSession() {
   };
 
   const handleGrade = async (g: Sm2Grade) => {
+    if (gradingRef.current) return;
+    gradingRef.current = true;
+    try {
+      await gradeOnce(g);
+    } finally {
+      gradingRef.current = false;
+    }
+  };
+
+  const gradeOnce = async (g: Sm2Grade) => {
     const wasNew = current?.state === 'new';
     const next = await commitGrade(g);
     if (!next) return;

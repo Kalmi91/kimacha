@@ -17,6 +17,7 @@ import type { Level } from '@/data/words';
 import { charDiff } from '@/lib/charDiff';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { speak } from '@/lib/speech';
+import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
 import { DEFAULT_AGAIN_DELAY_SEC } from '@/lib/pcicSession';
@@ -172,7 +173,7 @@ export default function TableDeckScreen() {
   const lessonTitle = entry?.title[learnedLang === 'en' ? 'es' : 'en'] ?? entry?.title.en ?? String(topicId);
 
   // The FeedbackButton's pair label with the active direction (en→es or es→en).
-  const deckPair = learnedLang === 'en' ? 'es→en' : 'en→es';
+  const deckPair = pairOf(learnedLang === 'en' ? 'en' : 'es');
 
   const currentId = nextCellId(deck, now);
   const current = currentId ? items.find((c) => c.id === currentId) : undefined;
