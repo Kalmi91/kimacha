@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { StyleSheet, View, Pressable, ScrollView, Linking } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, accentColor, BackButton } from '@/components/grammar/Themed';
+import { TitleText, accentColor, BackButton, themedLinkStyle } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
@@ -45,13 +45,13 @@ export default function CreditsScreen() {
         <Wrap>
         <Text style={[styles.body, { color: colors.text }]}>{s.credits.cefrjBody}</Text>
         <Pressable onPress={() => Linking.openURL(s.credits.cefrjUrl)}>
-          <Text style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>{s.credits.cefrjLabel}</Text>
+          <Text style={[styles.link, { color: linkColor }, themedLinkStyle(g)]}>{s.credits.cefrjLabel}</Text>
         </Pressable>
 
         <Text style={[styles.body, styles.bodySpaced, { color: colors.text }]}>{s.credits.fontsBody}</Text>
         {FONT_CREDITS.map((font) => (
           <Pressable key={font.url} onPress={() => Linking.openURL(font.url)}>
-            <Text testID="credits-font" style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>
+            <Text testID="credits-font" style={[styles.link, { color: linkColor }, themedLinkStyle(g)]}>
               {font.family} · {font.license}
             </Text>
           </Pressable>
@@ -59,7 +59,7 @@ export default function CreditsScreen() {
 
         <Text style={[styles.body, styles.bodySpaced, { color: colors.text }]}>{s.credits.photosBody}</Text>
         <Pressable onPress={() => Linking.openURL(s.credits.privacyUrl)}>
-          <Text testID="credits-privacy" style={[styles.link, { color: linkColor }, g.brutal && styles.brutalLink]}>{s.credits.privacyLabel}</Text>
+          <Text testID="credits-privacy" style={[styles.link, { color: linkColor }, themedLinkStyle(g)]}>{s.credits.privacyLabel}</Text>
         </Pressable>
         </Wrap>
       </ScrollView>
@@ -108,7 +108,6 @@ const styles = StyleSheet.create({
   bodySpaced: {
     marginTop: 8,
   },
-  brutalLink: { fontWeight: '500', textDecorationLine: 'underline' },
   link: {
     fontSize: 15,
     fontWeight: '600',

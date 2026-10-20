@@ -26,8 +26,8 @@ import LessonTest from '@/components/grammar/LessonTest';
 import ScreenFeedback from '@/lib/screenFeedback';
 import FitText from '@/components/FitText';
 import SpeakButton from '@/components/SpeakButton';
-import { BrutalBox, Card, Sticker } from '@/components/grammar/Brutal';
-import { accentColor, themedDockPad } from '@/components/grammar/Themed';
+import { BrutalBox, Card, Sticker, themedDockPad } from '@/components/grammar/Brutal';
+import { accentColor } from '@/components/grammar/Themed';
 import { DockSlotProvider } from '@/components/learn/DockSlot';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
 

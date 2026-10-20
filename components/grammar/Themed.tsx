@@ -39,11 +39,11 @@ export function themedInkEdgeStyle(g: GrammarColors): ViewStyle | null {
   return g.brutal ? { borderRadius: 0, borderWidth: 2, borderColor: g.ink } : null;
 }
 
-const DOCK_PAD_BRUTAL: ViewStyle = { paddingBottom: 130 };
+const LINK_BRUTAL: TextStyle = { fontWeight: '500', textDecorationLine: 'underline' };
 
-// The scroll content's bottom padding that clears the docked action button on the brutalist palette.
-export function themedDockPad(g: GrammarColors): ViewStyle | null {
-  return g.brutal ? DOCK_PAD_BRUTAL : null;
+// A text link: weight 500 and underlined on the brutalist palette, the caller's style otherwise.
+export function themedLinkStyle(g: GrammarColors): TextStyle | null {
+  return g.brutal ? LINK_BRUTAL : null;
 }
 
 // The accent text colour (links, titles): ink on the brutalist palette, the classic accent otherwise.

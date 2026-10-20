@@ -13,7 +13,7 @@ import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
 import { LESSON_TEST_PASS_PCT, lessonTestSize, lessonTestUnlocked, type LessonTestResult } from '@/lib/grammar/lessonTest';
 import type { Phase, ProgressRow } from '@/lib/grammar/useGrammarTopic';
 import type { RoundStats } from '@/components/grammar/GrammarDrill';
-import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
+import { BrutalBox, SegmentBar, Sticker, segmentsFilled, mutedColor } from '@/components/grammar/Brutal';
 import { styles } from '@/components/grammar/GrammarTopic.styles';
 
 // The round-end ("done") screen of a grammar lesson: score, stats, next steps.
@@ -100,7 +100,7 @@ export default function GrammarRoundEnd({
             <Text style={[styles.btnText, testReady ? styles.btnTextOnTint : { color: colors.tabIconDefault }]}>{s.lessonTest.take}</Text>
           </Pressable>
         )}
-        <Text testID="grammar-lessontest-note" style={[styles.lessonTestNote, { color: g.brutal ? g.mu : colors.tabIconDefault }]}>
+        <Text testID="grammar-lessontest-note" style={[styles.lessonTestNote, { color: mutedColor(g, colors.tabIconDefault) }]}>
           {!testReady
             ? s.lessonTest.finishFirst
             : lessonTestResult?.passed

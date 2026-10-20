@@ -320,6 +320,18 @@ export function brutalInputStyle(g: GrammarColors): TextStyle {
   return { borderWidth: 2.5, borderColor: g.ink, borderRadius: 0, backgroundColor: g.extra.field ?? g.paper, color: g.ink };
 }
 
+const DOCK_PAD_BRUTAL: ViewStyle = { paddingBottom: 130 };
+
+// The scroll content's bottom padding that clears the docked action button on the brutalist palette.
+export function themedDockPad(g: GrammarColors): ViewStyle | null {
+  return g.brutal ? DOCK_PAD_BRUTAL : null;
+}
+
+// The secondary text colour: the theme's `mu` on the brutalist palette, the classic muted colour otherwise.
+export function mutedColor(g: GrammarColors, classic: string): string {
+  return g.brutal ? g.mu : classic;
+}
+
 // switch. On the brutalist palette a rectangular track (2.5 px ink border, corner 0), a square
 // ink knob, when on the track has the `a` fill; on the classic palette today's Switch.
 export function BrutalSwitch({
