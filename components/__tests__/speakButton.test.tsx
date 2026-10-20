@@ -2,24 +2,18 @@
 // (ink border, BrutalBox), on the classic palette today's plain button.
 // Mock pattern: feedbackBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { StyleSheet } from 'react-native';
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import SpeakButton from '../SpeakButton';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 6) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 describe('SpeakButton', () => {
   it('with the brand palette a box (2.5 px ink border), tapping calls, ⏹ while speaking', async () => {

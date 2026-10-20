@@ -7,11 +7,7 @@ import ExamTypeCard from '@/components/exam/ExamTypeCard';
 import { DictationDrillItem } from '@/components/grammar/NewKinds';
 import { DockSlotProvider, useDockSlot } from '../DockSlot';
 
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 // the Check / Next button of the typed cards (exam, lesson test) is a bar docked above the keyboard
 // (DockSlot), like on the word card; without a host (standalone render) the old inline button stays.

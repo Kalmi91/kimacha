@@ -2,7 +2,6 @@
 // (alternating assemble and type-in), practice only: it writes no SRS.
 // Mock pattern: app/(tabs)/__tests__/pcicDirection.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
   speak: jest.fn(),
   speakSequence: jest.fn(),

@@ -3,7 +3,6 @@
 // level data; on it shows the card.
 // Mock pattern: statsMockExam.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
@@ -12,22 +11,17 @@ jest.mock('expo-router', () => ({
   },
 }));
 
-import { act, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
 import { __resetBetaForTest, setBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import StatsScreen from '../stats';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('Stats tab: level card switch', () => {
   beforeEach(async () => {

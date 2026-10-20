@@ -2,17 +2,12 @@
 // 3 small boxes, "practice this" with the wrong sentence, topic progress in segments,
 // no XP. Mock pattern: lessonV2.play.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn(), replace: jest.fn() }),
   usePathname: () => '/grammar',
@@ -23,7 +18,7 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'ser-estar' }),
 }));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { lessonFor } from '@/lib/grammar/syllabus';
@@ -32,14 +27,9 @@ import { hashString } from '@/lib/shuffle';
 import { isMarkItem } from '@/lib/games/content';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 4) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 describe('round end, neo-brutalist', () => {
   const now = 1700000000000;

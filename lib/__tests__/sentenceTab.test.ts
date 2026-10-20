@@ -1,7 +1,6 @@
 // Sentences tab queue: the learned-words gate, due words first, fewer words first, wrong goes to the end,
 // and one half per learned word for a right sentence.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import type { PcicItem } from '@/data/pcic';
 import { getDb } from '@/lib/database';

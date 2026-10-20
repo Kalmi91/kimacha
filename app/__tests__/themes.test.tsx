@@ -1,7 +1,6 @@
 // The Themes screen (app/themes.tsx): the grid shows 24 themes + the My mix entry,
 // by group in the spec's order; tapping saves immediately; a single-mode theme has no mode selector.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockPush = jest.fn();
 const mockBack = jest.fn();
 jest.mock('expo-router', () => ({
@@ -9,13 +8,14 @@ jest.mock('expo-router', () => ({
 }));
 
 import { useEffect } from 'react';
-import { act, fireEvent, render, within } from '@testing-library/react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
 import * as RN from 'react-native';
 
 import { SKIN_GROUPS } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import ThemesScreen from '../themes';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
@@ -28,13 +28,7 @@ function Probe() {
   return null;
 }
 
-const flush = async () => {
-  for (let i = 0; i < 6; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 const idsOf = (nodes: { props: { testID?: string } }[], prefix: string) =>
   nodes.map((n) => (n.props.testID as string).slice(prefix.length));

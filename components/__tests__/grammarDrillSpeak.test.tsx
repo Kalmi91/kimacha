@@ -1,11 +1,7 @@
 // the correct sentence is spoken in the grammar items too, after a right and a wrong answer
 // alike (the sentence-card test: sentenceCards.test.tsx).
 
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 import { fireEvent, render, screen } from '@testing-library/react-native';
 

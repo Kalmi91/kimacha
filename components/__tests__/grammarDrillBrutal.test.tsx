@@ -1,9 +1,8 @@
 // the neo-brutalist drill (screen 2): segmented progress, combo sticker
 // (in memory only, resets on a mistake, shown from x2), 2x2 answer grid, the
 // correct one = the fill + a check mark, a feedback box with the b fill, "next →" button.
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { act, fireEvent, render, screen, within } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
 import { StyleSheet, View } from 'react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
@@ -14,16 +13,11 @@ import { buildGrammarRound, isChoiceRoundItem } from '@/lib/games/grammarChoice'
 import { getDb } from '@/lib/database';
 import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
 const lesson = lessonJson as unknown as LessonV2;
 
-const flush = async () => {
-  for (let i = 0; i < 3; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 describe('GrammarDrill, neo-brutalist', () => {
   const now = 1700000000000;

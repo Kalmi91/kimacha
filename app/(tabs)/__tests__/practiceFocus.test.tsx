@@ -2,12 +2,7 @@
 // already given, and a finished round stays on its "Questions done" screen.
 // Mock pattern: practice.test.tsx, with a useFocusEffect that can be fired again.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 let mockFocus: (() => void) | null = null;
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {
@@ -36,6 +31,7 @@ import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import PracticeScreen from '../practice';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(60000);
 
@@ -70,13 +66,7 @@ const seeded = (seed: number) => {
   };
 };
 
-const flush = async () => {
-  for (let i = 0; i < 10; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(10);
 
 const mount = async () => {
   const view = render(<ThemeProvider><PracticeScreen /></ThemeProvider>);

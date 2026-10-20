@@ -1,14 +1,14 @@
 // User feedback: "put a sentence translation here too": the translation of the sentence of a choice (gap) and a marking
 // (mark) item is behind the F button, just like for the rewrite item; if the item has
 // no `tr` (scripts/grammar-translate.py has not run yet), there is no button. Fixture with a hand-written `tr`.
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
-import { act, fireEvent, render, screen } from '@testing-library/react-native';
+import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import GrammarDrill from '../grammar/GrammarDrill';
 import type { GrammarTopicData } from '@/lib/games/content';
 import { getDb } from '@/lib/database';
 import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
 
 const four = (s: string) => ({ en: s, es: s });
 
@@ -58,13 +58,7 @@ const markWithTr: GrammarTopicData = {
   ],
 };
 
-const flush = async () => {
-  for (let i = 0; i < 3; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 const drill = (topic: GrammarTopicData, contentLang = 'en') => (
   <ThemeProvider>

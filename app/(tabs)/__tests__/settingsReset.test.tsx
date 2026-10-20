@@ -2,7 +2,6 @@
 // from the Learn header): one row for every deck (level) that has progress, and one
 // row for grammar; all with confirmation. Mock pattern: settingsBrutal.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
@@ -24,16 +23,11 @@ import { buildLearnResume, loadLearnResume, saveLearnResume } from '@/lib/learnR
 import { sm2NewCard } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import SettingsScreen from '../settings';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async () => {
-  for (let i = 0; i < 8; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 // the reset rows are in a collapsible section, which has to be opened first.
 const openReset = (r: { getByText: (t: string) => unknown }) => fireEvent.press(r.getByText('🗑️ Restart progress') as never);

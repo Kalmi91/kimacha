@@ -5,7 +5,6 @@
 // parameter puts the sentences with those words first, the level counter on top drops as words are credited, and the
 // feedback button is on the screen. Mock pattern: pcicSentenceCard.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('@/lib/speech', () => ({
   speak: jest.fn(),
   speakSequence: jest.fn(),
@@ -65,18 +64,13 @@ import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
 import SentencesScreen from '../sentences';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
 const mockRecord = recordPracticeResult as jest.Mock;
 
-const flush = async (times = 14) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(14);
 
 const learned = (n: number, due = '2099-01-01'): Sm2Card => ({
   ...sm2NewCard(`a1-w${n}`), state: 'review', interval: 3, reps: 2, due, lastReview: '2026-10-09', introducedAt: '2026-10-09',

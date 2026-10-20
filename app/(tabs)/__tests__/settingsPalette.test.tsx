@@ -2,7 +2,6 @@
 // into the db. The palette chips are on the Themes screen instead of Settings
 // (app/themes.tsx), the assertions are the same. Mock pattern: pcicLevelPicker.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
@@ -15,11 +14,12 @@ jest.mock('expo-sharing', () => ({}));
 jest.mock('expo-document-picker', () => ({}));
 
 import { useEffect } from 'react';
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import ThemesScreen from '../../themes';
+import { makeFlush } from '@/test-utils/flush';
 
 let ctx: ReturnType<typeof useTheme>;
 function Probe() {
@@ -30,13 +30,7 @@ function Probe() {
   return null;
 }
 
-const flush = async () => {
-  for (let i = 0; i < 4; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 describe('Themes screen: color picker', () => {
   it('6 options, the choice switches the context and persists', async () => {

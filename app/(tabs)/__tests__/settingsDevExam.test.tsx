@@ -3,7 +3,6 @@
 // done) so the exam can be clicked through in the web preview. It does not appear in a
 // release build (`__DEV__ === false`). Mock pattern: settingsReset.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: jest.fn() }),
   useFocusEffect: (cb: () => void) => {
@@ -15,7 +14,7 @@ jest.mock('expo-file-system', () => ({ File: jest.fn(), Paths: { cache: '' } }))
 jest.mock('expo-sharing', () => ({}));
 jest.mock('expo-document-picker', () => ({}));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import { setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
@@ -23,16 +22,11 @@ import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { examStatusFor } from '@/lib/exam/unlock';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import SettingsScreen from '../settings';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async () => {
-  for (let i = 0; i < 8; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 const g = globalThis as unknown as { __DEV__: boolean };
 const originalDev = g.__DEV__;

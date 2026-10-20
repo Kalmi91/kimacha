@@ -1,7 +1,6 @@
 // The feedback button is on every part of the placement test, and the
 // card id says which part it is (placement:<part>). Pattern: placement.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), replace: jest.fn(), push: jest.fn() }),
@@ -26,19 +25,14 @@ jest.mock('@/lib/exam/placementQuestions', () => ({
       : { kind: 'word', level: input.level, itemId: `o${100 + input.used.size}`, word: 'la ventana', options: ['the window', 'the door', 'the wall', 'the roof'], correctIndex: 0 },
 }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 
 import PlacementScreen from '../placement';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 8) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(8);
 
 describe('Placement test: feedback button on every part', () => {
   it('word question, grammar question, exit, result: all with their own identifier', async () => {

@@ -1,13 +1,7 @@
 // The level counter (Sentences and Practice tabs): the Words tab header's level and word count ("A2" + "230 words"),
 // plus the words of the level still due; it reads again when `refreshKey` changes, so it drops as words are credited.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('expo-router', () => ({
-  useFocusEffect: (cb: () => void) => {
-    const { useEffect } = require('react');
-    useEffect(cb, []);
-  },
-}));
+jest.mock('expo-router', () => require('@/test-utils/mocks').focusEffectRouterMock());
 jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['A1', 'A2'],
   pcicItemsForLevel: (level: string) => Array.from({ length: level === 'A2' ? 230 : 120 }, (_, i) => ({ id: `${level.toLowerCase()}-w${i}` })),
@@ -15,23 +9,18 @@ jest.mock('@/data/pcic', () => ({
   setPcicTarget: () => {},
 }));
 
-import { act, render } from '@testing-library/react-native';
+import { render } from '@testing-library/react-native';
 
 import LevelCounter from '@/components/practice/LevelCounter';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { levelCounts } from '@/lib/levelCounter';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
-const flush = async (times = 12) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(12);
 
 const TODAY = '2026-10-12';
 const review = (id: string, due: string, extra: Partial<Sm2Card> = {}): Sm2Card => ({

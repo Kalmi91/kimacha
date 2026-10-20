@@ -1,0 +1,50 @@
+name: UI overlap (nightly)
+
+# The web-build UI check (scripts/ui-overlap.mjs: clipped text, overlaps, overflow, contrast per
+# theme x mode x route x viewport) is slow, so it is not a gate on every pull request. It runs
+# every night on main, and by hand from the Actions tab.
+
+on:
+  schedule:
+    - cron: '0 7 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ui-overlap
+  cancel-in-progress: true
+
+jobs:
+  overlap:
+    name: UI overlap check
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      # Chrome is preinstalled on the runner image; the script looks for it by this variable.
+      CHROME_PATH: /usr/bin/google-chrome
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262  # v4.4.0
+
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020  # v4.4.0
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Builds the web export, then drives headless Chrome. Exit 1 = findings, 2 = the check itself failed.
+      - name: Run the UI overlap check
+        run: npm run ui:overlap
+
+      - name: Upload the report and the screenshots of failing combinations
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+        with:
+          name: ui-overlap
+          path: |
+            ui-overlap-report.json
+            ui-shots/
+          if-no-files-found: ignore

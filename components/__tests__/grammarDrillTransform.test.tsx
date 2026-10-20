@@ -1,7 +1,6 @@
 // sentence-transformation drill in the lesson drill. The pattern for `kinds={['transform']}`
 // comes from grammarDrillWhy.test.tsx.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 

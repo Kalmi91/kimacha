@@ -2,17 +2,12 @@
 // English (the sentences are in English and read aloud in English), the explanation and
 // the translation are shown in Spanish to the Spanish-native learner.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 jest.mock('expo-speech', () => ({
   speak: jest.fn(),
   stop: jest.fn(),
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
   usePathname: () => '/grammar',
@@ -23,20 +18,15 @@ jest.mock('expo-router', () => ({
   useLocalSearchParams: () => ({ topic: 'to_be' }),
 }));
 
-import { act, fireEvent, render, screen, within } from '@testing-library/react-native';
+import { fireEvent, render, screen, within } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
 import { speakSequence } from '@/lib/speech';
 import { hasLesson, lessonFor } from '@/lib/grammar/syllabus';
 import GrammarLessonScreen from '../[topic]';
+import { makeFlush } from '@/test-utils/flush';
 
-const flush = async (times = 3) => {
-  for (let i = 0; i < times; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(3);
 
 describe('to_be lesson, es→en direction', () => {
   beforeEach(async () => {

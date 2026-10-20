@@ -1,14 +1,13 @@
 // The My mix screen (app/theme-mix.tsx): four chip rows, a live preview with the
 // draft, saving (setSkinMix + setSkin('mix')) and reloading.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 const mockBack = jest.fn();
 jest.mock('expo-router', () => ({
   useRouter: () => ({ push: jest.fn(), navigate: jest.fn(), back: mockBack }),
 }));
 
 import { useEffect } from 'react';
-import { act, fireEvent, render, within } from '@testing-library/react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
 import * as RN from 'react-native';
 
 import { COLOR_CHOICES, SKIN_ORDER, decorChoices, uniqueShapeChoices } from '@/components/skins/mixChoices';
@@ -16,6 +15,7 @@ import { DEFAULT_SKIN_MIX, SKINS } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import ThemeMixScreen from '../theme-mix';
+import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
@@ -28,13 +28,7 @@ function Probe() {
   return null;
 }
 
-const flush = async () => {
-  for (let i = 0; i < 6; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(6);
 
 async function mount() {
   const view = render(

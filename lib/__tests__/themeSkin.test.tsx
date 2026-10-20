@@ -2,7 +2,6 @@
 // migrating an old user (skin NULL: classic → classic, brand → brutal),
 // the mode lock of a single-mode theme, and the no-op defaults of useSkin() and the decor frame.
 
-jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
 
 import { useEffect } from 'react';
 import { act, render, screen } from '@testing-library/react-native';
@@ -16,6 +15,7 @@ import { SKIN_DECOR, decorFor } from '@/components/skins';
 import { getDb } from '@/lib/database';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 import { useSkin } from '@/lib/useSkin';
+import { makeFlush } from '@/test-utils/flush';
 
 let ctx: ReturnType<typeof useTheme>;
 let sk: ReturnType<typeof useSkin>;
@@ -30,13 +30,7 @@ function Probe() {
   return <Text>probe</Text>;
 }
 
-const flush = async () => {
-  for (let i = 0; i < 4; i++) {
-    await act(async () => {
-      await Promise.resolve();
-    });
-  }
-};
+const flush = makeFlush(4);
 
 describe('theme engine through the context', () => {
   let scheme: jest.SpyInstance;
