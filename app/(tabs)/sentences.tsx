@@ -18,6 +18,7 @@ import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
+import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { countLearningToday } from '@/lib/learningDay';
 import { resolvedTensesFromLessons } from '@/lib/knownSentence';
@@ -214,7 +215,7 @@ export default function SentencesScreen() {
     <FeedbackButton
       placement="header"
       level="-"
-      languagePair={target === 'es' ? 'en-es' : 'es-en'}
+      languagePair={pairOf(target)}
       currentCard={current ? `sentences:${current.itemId}` : 'sentences-tab'}
     />
   );
