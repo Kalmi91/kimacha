@@ -38,7 +38,7 @@ The app has four tabs.
   (`lib/knownSentence.ts`). A sentence also stays inside the grammar its level has unlocked
   (`lib/grammar/tenseGate.ts`).
 - **Grammar course.** Lessons live in `data/games/grammar/<lang>/`, one JSON file per topic, in the
-  order of the syllabus (`lib/grammar/syllabus.ts`).
+  order of the syllabus (`data/grammar/syllabus.json`, read by `lib/grammar/syllabus.ts`).
 - **Level exams.** A level exam (words, grammar, reading) unlocks when enough words of that level are
   learned and one grammar lesson of the level is done (`lib/exam/unlock.ts`). There are no lives: a
   missed question shows the right answer.

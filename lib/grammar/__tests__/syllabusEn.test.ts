@@ -3,8 +3,8 @@
 
 import { createHash } from 'crypto';
 import {
-  GRAMMAR_SYLLABUS,
-  GRAMMAR_UNITS,
+  getGrammarSyllabus,
+  getGrammarUnits,
   SYLLABUS_LEVELS,
   hasLesson,
   lessonCoverage,
@@ -16,6 +16,9 @@ import {
   topicsForUnit,
   unitsForLevel,
 } from '../syllabus';
+
+const GRAMMAR_SYLLABUS = getGrammarSyllabus();
+const GRAMMAR_UNITS = getGrammarUnits();
 
 // The B1 and B2 lessons written so far, in syllabus order (B2 grows lesson by lesson).
 const C1_WRITTEN: string[] = ['negative_inversion', 'cleft_sentences', 'conditional_inversion', 'subjunctive_hypothetical', 'verb_patterns_advanced', 'participle_clauses', 'reduced_relative', 'nominalization', 'hedging_language', 'discourse_markers', 'ellipsis_substitution', 'phrasal_verbs_c1'];
