@@ -1,14 +1,14 @@
 import type { ReactNode } from 'react';
 import { StyleSheet, View, Pressable, ScrollView, Linking } from 'react-native';
 import { Text } from '@/components/KText';
-import { TitleText, accentColor } from '@/components/grammar/Themed';
+import { TitleText, accentColor, BackButton } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
-import { BrutalBackButton, Card } from '@/components/grammar/Brutal';
+import { Card } from '@/components/grammar/Brutal';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { FONT_LICENSES } from '@/constants/Fonts';
 
@@ -36,15 +36,7 @@ export default function CreditsScreen() {
   return (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       <View style={[styles.headerRow, brutalHeaderRowStyle(g)]}>
-        {g.brutal ? (
-          <View style={styles.exitBtn}>
-            <BrutalBackButton testID="credits-back" onPress={() => router.back()} />
-          </View>
-        ) : (
-        <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12} style={styles.exitBtn}>
-          <Text style={[styles.exitIcon, { color: colors.text }]}>←</Text>
-        </Pressable>
-        )}
+        <BackButton testID="credits-back" onPress={() => router.back()} wrapStyle={styles.exitBtn} pressStyle={styles.exitBtn} arrowStyle={[styles.exitIcon, { color: colors.text }]} />
         <TitleText variant="title" style={[styles.title, styles.titleInRow, { color: colors.text }]}>{s.credits.title}</TitleText>
         <View style={styles.exitBtn} />
       </View>

@@ -7,8 +7,8 @@ import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
-import { BrutalBackButton, BrutalButton, Sticker, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
-import { themedInputStyle } from '@/components/grammar/Themed';
+import { BrutalButton, Sticker, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
+import { themedInputStyle, BackButton } from '@/components/grammar/Themed';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -218,13 +218,7 @@ export default function TableDeckScreen() {
   // on the brutalist palette a back box, uppercase title, the progress sticker.
   const header = (
     <View style={[styles.header, brutalHeaderRowStyle(g)]}>
-      {g.brutal ? (
-        <BrutalBackButton testID="tabledeck-back" onPress={() => router.back()} />
-      ) : (
-      <Pressable accessibilityRole="button" accessibilityLabel={s.a11y.back} onPress={() => router.back()} hitSlop={12}>
-        <Text style={[styles.back, { color: colors.text }]}>←</Text>
-      </Pressable>
-      )}
+      <BackButton testID="tabledeck-back" onPress={() => router.back()} arrowStyle={[styles.back, { color: colors.text }]} />
       <FitText variant="title" base={17} maxLines={2} reserve={g.brutal ? 190 : 150} caps={g.brutal} style={[styles.title, { color: colors.text }, g.brutal && styles.brutalTitle]}>
         {lessonTitle}
       </FitText>
