@@ -2,8 +2,10 @@
 // "yo"; the Spanish infinitive appears on the hint button (see 91f9e4b, and
 // app/grammar/deck/[topic].tsx). Parity test: no table card without an enPrompt.
 
-import { GRAMMAR_SYLLABUS, lessonFor } from '../syllabus';
+import { getGrammarSyllabus, lessonFor } from '../syllabus';
 import { tableCellsForLesson } from '../tableDeck';
+
+const GRAMMAR_SYLLABUS = getGrammarSyllabus();
 
 // Reference tables (pronoun / possessive): the card prompt is "yo · <column label>" (e.g.
 // "yo · Masculino singular"), complete, not the bare person, and there is no verb form that could
