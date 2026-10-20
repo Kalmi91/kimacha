@@ -87,6 +87,7 @@ export function ActionButton({
   label,
   onPress,
   fill,
+  disabled,
   testID,
   brutalTestID,
   brutalStyle,
@@ -97,6 +98,7 @@ export function ActionButton({
   label: string;
   onPress: () => void;
   fill?: BrutalFill;
+  disabled?: boolean;
   testID?: string;
   brutalTestID?: string;
   brutalStyle?: StyleProp<ViewStyle>;
@@ -105,9 +107,9 @@ export function ActionButton({
   classicRole?: 'button' | null;
 }) {
   const g = useGrammarColors();
-  if (g.brutal) return <BrutalButton testID={testID ?? brutalTestID} label={label} onPress={onPress} fill={fill} style={brutalStyle} />;
+  if (g.brutal) return <BrutalButton testID={testID ?? brutalTestID} label={label} onPress={onPress} fill={fill} disabled={disabled} style={brutalStyle} />;
   return (
-    <Pressable testID={testID} accessibilityRole={classicRole ?? undefined} style={classicStyle} onPress={onPress}>
+    <Pressable testID={testID} accessibilityRole={classicRole ?? undefined} disabled={disabled} style={classicStyle} onPress={onPress}>
       <Text style={classicTextStyle}>{label}</Text>
     </Pressable>
   );
