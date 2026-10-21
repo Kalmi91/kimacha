@@ -23,6 +23,7 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'quien-a-quien', load: () => require('@/data/games/grammar/es/quien-a-quien.json') },
   { id: 'interrogativos', load: () => require('@/data/games/grammar/es/interrogativos.json') },
   { id: 'negacion', load: () => require('@/data/games/grammar/es/negacion.json') },
+  { id: 'conectores-basicos', load: () => require('@/data/games/grammar/es/conectores-basicos.json') },
   { id: 'gustar', load: () => require('@/data/games/grammar/es/gustar.json') },
   { id: 'ir-a-infinitivo', load: () => require('@/data/games/grammar/es/ir-a-infinitivo.json') },
   { id: 'muy-mucho', load: () => require('@/data/games/grammar/es/muy-mucho.json') },

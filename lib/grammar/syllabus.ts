@@ -65,6 +65,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   demostrativos: 'exam',
   interrogativos: 'core',
   negacion: 'core',
+  'conectores-basicos': 'core',
   gustar: 'core-plus',
   'ir-a-infinitivo': 'core-plus',
   'perifrasis-modales': 'core-plus',
