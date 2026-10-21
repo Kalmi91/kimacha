@@ -1708,6 +1708,7 @@
     "lemma": "camisa",
     "es": "la camisa",
     "en": "shirt",
+    "hint_en": "A *shirt* has buttons and a collar",
     "sentence_es": "Mi padre tiene una camisa nueva.",
     "sentence_en": "My father has a new shirt.",
     "sentence_lemmas": ["mi", "padre", "tener", "un", "camisa", "nuevo"]
@@ -4367,6 +4368,7 @@
     "lemma": "chamarra",
     "es": "la chamarra",
     "en": "jacket",
+    "hint_en": "Put on a *jacket*, it is cold outside",
     "sentence_es": "Hace frío y necesito una chamarra.",
     "sentence_en": "It is cold and I need a jacket.",
     "sentence_lemmas": ["hacer", "frío", "y", "necesitar", "un", "chamarra"]
