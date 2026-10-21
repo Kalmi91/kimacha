@@ -662,10 +662,9 @@ describe('the feedback button', () => {
     });
     jest.useRealTimers();
     expect(global.fetch).toHaveBeenCalledTimes(1);
-    const url = decodeURIComponent((global.fetch as jest.Mock).mock.calls[0][0] as string);
-    expect(url).toContain('currentCard=');
-    expect(url).toContain(`sentences:${BUILD_IDS[0]}`);
-    expect(url).toContain('languagePair=en→es');
+    const body = JSON.parse((global.fetch as jest.Mock).mock.calls[0][1].body as string);
+    expect(body.currentCard).toContain(`sentences:${BUILD_IDS[0]}`);
+    expect(body.languagePair).toBe('en→es');
 
     for (let i = 0; i < 4; i++) await buildCurrent(r);
     expect(r.getByLabelText('Feedback')).toBeTruthy(); // the typing step

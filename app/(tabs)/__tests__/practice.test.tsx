@@ -494,10 +494,9 @@ describe('Practice tab: feedback button', () => {
       await act(async () => {
         fireEvent.press(view.getByText('Send'));
       });
-      const url = (global.fetch as jest.Mock).mock.calls[0][0] as string;
-      const params = new URLSearchParams(url.split('?')[1]);
-      expect(params.get('currentCard')).toContain(expected);
-      expect(params.get('languagePair')).toBe('en→es');
+      const body = JSON.parse((global.fetch as jest.Mock).mock.calls[0][1].body as string);
+      expect(body.currentCard).toContain(expected);
+      expect(body.languagePair).toBe('en→es');
       // @ts-expect-error test-only cleanup of a global set above
       delete global.fetch;
     };
