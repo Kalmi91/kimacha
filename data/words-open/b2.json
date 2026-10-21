@@ -8710,7 +8710,7 @@
     "es": "el adeudo",
     "en": "outstanding debt (MX)",
     "sentence_es": "Tengo un adeudo con el banco desde enero.",
-    "sentence_en": "I have an outstanding debt with the bank since January.",
+    "sentence_en": "I have had an outstanding debt with the bank since January.",
     "sentence_lemmas": ["tener", "un", "adeudo", "con", "el", "banco", "desde", "enero"]
   },
   {
@@ -9029,7 +9029,7 @@
     "es": "el flete",
     "en": "moving or freight service (MX)",
     "sentence_es": "El flete de los muebles costó mil pesos.",
-    "sentence_en": "The moving truck for the furniture cost a thousand pesos.",
+    "sentence_en": "The moving service for the furniture cost a thousand pesos.",
     "sentence_lemmas": ["el", "flete", "de", "el", "mueble", "costar", "mil", "peso"]
   },
   {
@@ -9049,10 +9049,10 @@
     "pos": "adj",
     "lemma": "ausente",
     "es": "ausente",
-    "en": "absent, not at home",
-    "sentence_es": "Dejaron un aviso porque yo estaba ausente.",
-    "sentence_en": "They left a notice because I was not home.",
-    "sentence_lemmas": ["dejar", "un", "aviso", "porque", "yo", "estar", "ausente"]
+    "en": "absent",
+    "sentence_es": "Mi jefe estuvo ausente toda la semana.",
+    "sentence_en": "My boss was absent all week.",
+    "sentence_lemmas": ["mi", "jefe", "estar", "ausente", "todo", "el", "semana"]
   },
   {
     "order": 4560,

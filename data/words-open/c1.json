@@ -2951,9 +2951,9 @@
     "lemma": "perito",
     "es": "el perito",
     "en": "expert appraiser (insurance, courts)",
-    "sentence_es": "Después del choque, el perito del seguro revisó el carro.",
-    "sentence_en": "After the crash, the insurance appraiser inspected the car.",
-    "sentence_lemmas": ["después", "de", "choque", "el", "perito", "de", "seguro", "revisar", "el", "carro"]
+    "sentence_es": "Después del choque, el perito revisó el carro.",
+    "sentence_en": "After the crash, the appraiser inspected the car.",
+    "sentence_lemmas": ["después", "de", "choque", "el", "perito", "revisar", "el", "carro"]
   },
   {
     "order": 4593,
@@ -3083,8 +3083,8 @@
     "lemma": "depurar",
     "es": "depurar",
     "en": "to debug, to clean up (data)",
-    "sentence_es": "Pasé toda la tarde depurando el código.",
-    "sentence_en": "I spent the whole afternoon debugging the code.",
-    "sentence_lemmas": ["pasar", "todo", "el", "tarde", "depurar", "el", "código"]
+    "sentence_es": "Pasé todo el día depurando el código.",
+    "sentence_en": "I spent the whole day debugging the code.",
+    "sentence_lemmas": ["pasar", "todo", "el", "día", "depurar", "el", "código"]
   }
 ]
