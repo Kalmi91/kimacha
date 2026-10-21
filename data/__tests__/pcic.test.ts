@@ -27,11 +27,11 @@ describe('data/pcic.ts: direction-aware corpus', () => {
 
   // the 5 levels, from the words-open
   // a1/a2/b1/b2/c1.json, order = the file's order field, id = o<order>.
-  it('en→es: A1/A2/B1/B2/C1 = 512-1371-1537-763-259 words-open cards (601 = tocar), o<order> id, unique id', () => {
+  it('en→es: A1/A2/B1/B2/C1 = 512-1377-1583-823-267 words-open cards (601 = tocar), o<order> id, unique id', () => {
     const levels = (['A1', 'A2', 'B1', 'B2', 'C1'] as const).map((l) => pcicItemsForLevel(l));
-    expect(levels.map((items) => items.length)).toEqual([512, 1371, 1537, 763, 259]);
+    expect(levels.map((items) => items.length)).toEqual([512, 1377, 1583, 823, 267]);
     const all = levels.flat();
-    expect(new Set(all.map((item) => item.id)).size).toBe(4442);
+    expect(new Set(all.map((item) => item.id)).size).toBe(4562);
     expect(all.every((item) => item.id === `o${item.order}`)).toBe(true);
     expect(levels[0][0]).toMatchObject({ id: 'o1', es: 'yo', en: 'I', kind: 'word', pos: 'pron', exampleEs: undefined, exampleEn: undefined });
     expect(levelOfItem('o150')).toBe('A1');

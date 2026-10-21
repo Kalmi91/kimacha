@@ -2855,5 +2855,93 @@
     "sentence_es": "Hay un centenar de personas en la plaza.",
     "sentence_en": "There are about a hundred people in the square.",
     "sentence_lemmas": ["haber", "un", "centenar", "de", "persona", "en", "el", "plaza"]
+  },
+  {
+    "order": 4457,
+    "level": "C1",
+    "pos": "noun",
+    "lemma": "prórroga",
+    "es": "la prórroga",
+    "en": "extension (of a deadline)",
+    "sentence_es": "Nos dieron una prórroga porque faltaban papeles.",
+    "sentence_en": "They gave us an extension because some papers were missing.",
+    "sentence_lemmas": ["nos", "dar", "un", "prórroga", "porque", "faltar", "papel"]
+  },
+  {
+    "order": 4469,
+    "level": "C1",
+    "pos": "noun",
+    "lemma": "citatorio",
+    "es": "el citatorio",
+    "en": "summons (MX)",
+    "sentence_es": "Me llegó un citatorio para el lunes por la mañana.",
+    "sentence_en": "I received a summons for Monday morning.",
+    "sentence_lemmas": ["me", "llegar", "un", "citatorio", "para", "el", "lunes", "por", "el", "mañana"]
+  },
+  {
+    "order": 4477,
+    "level": "C1",
+    "pos": "verb",
+    "lemma": "regularizar",
+    "es": "regularizar",
+    "en": "to regularize (legal status)",
+    "sentence_es": "Necesitan regularizar su situación antes de diciembre.",
+    "sentence_en": "They need to regularize their status before December.",
+    "sentence_lemmas": ["necesitar", "regularizar", "su", "situación", "antes", "de", "diciembre"]
+  },
+  {
+    "order": 4481,
+    "level": "C1",
+    "pos": "adj",
+    "lemma": "biométrico",
+    "es": "biométrico",
+    "en": "biometric",
+    "sentence_es": "Mañana me toman los datos biométricos.",
+    "sentence_en": "Tomorrow they are taking my biometric data.",
+    "sentence_lemmas": ["mañana", "me", "tomar", "el", "dato", "biométrico"]
+  },
+  {
+    "order": 4485,
+    "level": "C1",
+    "pos": "noun",
+    "lemma": "testamento",
+    "es": "el testamento",
+    "en": "last will and testament",
+    "sentence_es": "Mi abuelo dejó un testamento en la notaría.",
+    "sentence_en": "My grandfather left a will at the notary's office.",
+    "sentence_lemmas": ["mi", "abuelo", "dejar", "un", "testamento", "en", "el", "notaría"]
+  },
+  {
+    "order": 4497,
+    "level": "C1",
+    "pos": "noun",
+    "lemma": "finiquito",
+    "es": "el finiquito",
+    "en": "final settlement pay (MX)",
+    "sentence_es": "Me pagaron el finiquito el último día de trabajo.",
+    "sentence_en": "They paid me my final settlement on my last day of work.",
+    "sentence_lemmas": ["me", "pagar", "el", "finiquito", "el", "último", "día", "de", "trabajo"]
+  },
+  {
+    "order": 4508,
+    "level": "C1",
+    "pos": "noun",
+    "lemma": "fiador",
+    "es": "el fiador",
+    "en": "rental co-signer",
+    "sentence_es": "Para rentar el departamento necesito un fiador.",
+    "sentence_en": "To rent the apartment I need a co-signer.",
+    "sentence_lemmas": ["para", "rentar", "el", "departamento", "necesitar", "un", "fiador"]
+  },
+  {
+    "order": 4546,
+    "level": "C1",
+    "pos": "adj",
+    "lemma": "ambulante",
+    "es": "ambulante",
+    "en": "itinerant, roaming",
+    "sentence_es": "El vendedor ambulante pasa por mi calle todos los días.",
+    "sentence_en": "The street vendor goes down my street every day.",
+    "sentence_lemmas": ["el", "vendedor", "ambulante", "pasar", "por", "mi", "calle", "todo", "el", "día"]
   }
 ]
