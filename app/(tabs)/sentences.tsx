@@ -40,6 +40,7 @@ import {
   startRound,
   type SentenceRound,
 } from '@/lib/sentenceRound';
+import { buildStepKind, type BuildStepKind } from '@/lib/sentenceSteps';
 import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordTypedWords, sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { gradeTypedWords } from '@/lib/sentenceTyping';
 import { useTheme } from '@/lib/ThemeContext';
@@ -57,7 +58,8 @@ import { useSingleFlight } from '@/lib/useSingleFlight';
 // former sentence cards.
 
 // The tile step; the decoys are picked once when the step mounts (a retry remounts it: key).
-function BuildStep({ entry, target, onResult }: { entry: SentenceEntry; target: PcicTarget; onResult: (correct: boolean) => void }) {
+// `kind` (lib/sentenceSteps.ts): a listening step hides the prompt behind a 🔊 button until the build is right.
+function BuildStep({ entry, target, kind, onResult }: { entry: SentenceEntry; target: PcicTarget; kind: BuildStepKind; onResult: (correct: boolean) => void }) {
   const [step] = useState(() => {
     const targetWords = tileWords(entry.target);
     const level = levelOfItem(entry.itemId);
@@ -75,6 +77,7 @@ function BuildStep({ entry, target, onResult }: { entry: SentenceEntry; target: 
       sourceSpeechLocale={speechLang(target === 'es' ? 'en' : 'es')}
       onResult={onResult}
       gradeButtons
+      listening={kind === 'listening'}
     />
   );
 }
@@ -85,6 +88,8 @@ export default function SentencesScreen() {
   const s = t();
   // beta: xpV2, each word's half of a typed sentence earns XP; off = no XP, the old behavior.
   const xpV2 = useBeta('xpV2');
+  // beta: sentenceListening, every second build is heard instead of read (lib/sentenceSteps.ts); off = all builds as before.
+  const listeningBeta = useBeta('sentenceListening');
   // `focus` = card ids (comma separated): the sentences with those words come first (the Practice tab sends them here).
   const { focus } = useLocalSearchParams<{ focus?: string | string[] }>();
   const focusIds = (Array.isArray(focus) ? focus.join(',') : focus ?? '').split(',').map((id) => id.trim()).filter(Boolean);
@@ -163,6 +168,8 @@ export default function SentencesScreen() {
 
   const current = round ? currentEntry(round) : undefined;
   const { done, total } = round ? roundProgress(round) : { done: 0, total: 0 };
+  // The kind of the build on screen (the typing step has none).
+  const buildKind: BuildStepKind = round && current && round.phase === 'build' ? buildStepKind(round, current.itemId, { listening: listeningBeta }) : 'normal';
 
   // The new state is saved BEFORE the words are credited: a kill in between loses a credit, it never pays one twice.
   const keepRound = async (next: SentenceRound) => {
@@ -296,7 +303,7 @@ export default function SentencesScreen() {
       <SkinBackdrop />
       {header}
       <Text testID="sentences-step" style={[styles.stepText, { color: colors.tabIconDefault }]}>
-        {round.phase === 'build' ? s.sentenceTab.stepBuild(buildNumber(round), round.entries.length) : s.sentenceTab.stepType}
+        {round.phase === 'build' ? (buildKind === 'listening' ? s.sentenceTab.stepListen : s.sentenceTab.stepBuild)(buildNumber(round), round.entries.length) : s.sentenceTab.stepType}
       </Text>
       {round.phase === 'build' ? (
         <ScrollView
@@ -305,7 +312,7 @@ export default function SentencesScreen() {
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
-          <BuildStep key={`build-${current.itemId}-${seq}`} entry={current} target={target} onResult={(correct) => void onBuildResult(correct)} />
+          <BuildStep key={`build-${current.itemId}-${seq}-${buildKind}`} entry={current} target={target} kind={buildKind} onResult={(correct) => void onBuildResult(correct)} />
         </ScrollView>
       ) : (
         // The typing card has its own scroller + the docked Check bar above the keyboard (no outer ScrollView).

@@ -92,11 +92,11 @@ describe('tab bar: the two beta tabs', () => {
 });
 
 describe('Settings: Beta section', () => {
-  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1', practiceDictation: 'Dictation game', practiceScramble: 'Letter scramble game', practiceMatch: 'Quick match game', practiceOpposites: 'Opposites game' } as const;
-  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1', practiceDictation: 'Juego de dictado', practiceScramble: 'Juego de letras revueltas', practiceMatch: 'Juego de parejas rápidas', practiceOpposites: 'Juego de opuestos' } as const;
+  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1', practiceDictation: 'Dictation game', practiceScramble: 'Letter scramble game', practiceMatch: 'Quick match game', practiceOpposites: 'Opposites game', sentenceListening: 'Sentences: listening builds' } as const;
+  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1', practiceDictation: 'Juego de dictado', practiceScramble: 'Juego de letras revueltas', practiceMatch: 'Juego de parejas rápidas', practiceOpposites: 'Juego de opuestos', sentenceListening: 'Frases: construir al escuchar' } as const;
 
   describe.each(['classic', 'brand'] as const)('palette %s', (palette) => {
-    it('eight named switches, all off; a toggle saves the flag', async () => {
+    it('every switch is named and set off; a toggle saves the flag', async () => {
       await getDb().setGrammarPalette(palette);
       const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
       await flush();

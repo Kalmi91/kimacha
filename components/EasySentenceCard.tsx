@@ -24,9 +24,12 @@ interface Props {
   sourceSpeechLocale?: string;
   // The word card's "Didn't know" / "Knew it" button row after Check (overrides the displayed grade).
   gradeButtons?: boolean;
+  // Listening step (Sentences tab, beta sentenceListening): a big 🔊 button replaces the prompt sentence, which is
+  // heard when the card opens (the same auto-read) and shown only once the build is right.
+  listening?: boolean;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, listening = false }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -83,9 +86,31 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
   const canCheck = placed.length > 0;
 
+  // The prompt sentence in one place (the listening step shows it after a right build).
+  const sourceLine = <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>;
+  const replay = () => {
+    if (!sourceSpeechLocale) return;
+    stopSpeech();
+    speakIn(sourceSentence, sourceSpeechLocale);
+  };
+
   return (
     <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-      <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
+      {listening && (
+        <>
+          {g.brutal ? (
+            <BrutalBox testID="sentence-listen-play" accessibilityLabel={s.sentenceTab.listenPlay} fill="a" offset={3} onPress={replay} boxStyle={styles.listenBrutal}>
+              <Text style={styles.listenIcon}>🔊</Text>
+            </BrutalBox>
+          ) : (
+            <Pressable testID="sentence-listen-play" accessibilityRole="button" accessibilityLabel={s.sentenceTab.listenPlay} style={[styles.listenBtn, { backgroundColor: colors.accent }]} onPress={replay}>
+              <Text style={styles.listenIcon}>🔊</Text>
+            </Pressable>
+          )}
+          {!result && <Text style={[styles.listenHint, { color: colors.tabIconDefault }]}>{s.sentenceTab.listenHint}</Text>}
+        </>
+      )}
+      {(!listening || result === 'correct') && sourceLine}
 
       <View style={[styles.placedArea, { borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault, borderStyle: result === 'correct' ? 'solid' : 'dashed' }, g.brutal && styles.brutalPlaced]}>
         {placed.length === 0 ? (
@@ -170,6 +195,10 @@ const styles = StyleSheet.create({
   brutalSlot: { borderRadius: 0, borderWidth: 2.5, paddingHorizontal: 12, paddingVertical: 6, marginRight: 2, marginBottom: 2 },
   brutalBtn: { alignSelf: 'stretch' },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
+  listenBtn: { width: 96, height: 96, borderRadius: 48, alignItems: 'center', justifyContent: 'center' },
+  listenBrutal: { width: 96, height: 96, alignItems: 'center', justifyContent: 'center' },
+  listenIcon: { fontSize: 44 },
+  listenHint: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   placedArea: { borderWidth: 2, borderStyle: 'dashed', borderRadius: 12, padding: 12, minHeight: 50, width: '100%', justifyContent: 'center', alignItems: 'center' },
   placeholder: { fontSize: 16 },
   wordRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8, justifyContent: 'center' },

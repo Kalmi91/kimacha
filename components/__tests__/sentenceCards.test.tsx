@@ -239,3 +239,48 @@ describe('the task sentence is read aloud on open', () => {
     expect(speech.speak).not.toHaveBeenCalled();
   });
 });
+
+describe('EasySentenceCard listening step (beta sentenceListening)', () => {
+  const props = {
+    sourceSentence: 'The book and the table.',
+    targetWords: ['el', 'libro', 'y', 'la', 'mesa'],
+    trapWords: ['los'],
+    speechLocale: 'es-MX',
+    sourceSpeechLocale: 'en-US',
+    listening: true,
+  };
+
+  it('hides the prompt behind a 🔊 button, reads it on open, and the button reads it again', () => {
+    const { queryByText, getByTestId } = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    expect(queryByText('The book and the table.')).toBeNull();
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+    speech.speak.mockClear();
+    fireEvent.press(getByTestId('sentence-listen-play'));
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+  });
+
+  it('a right build shows the prompt sentence', () => {
+    const onResult = jest.fn();
+    const { getByText, getAllByText, queryByText } = render(<EasySentenceCard {...props} onResult={onResult} />);
+    for (const w of props.targetWords) fireEvent.press(getAllByText(w)[0]);
+    expect(queryByText('The book and the table.')).toBeNull();
+    fireEvent.press(getByText('Check'));
+    expect(getByText('The book and the table.')).toBeTruthy();
+    fireEvent.press(getByText(/Next/));
+    expect(onResult).toHaveBeenCalledWith(true);
+  });
+
+  it('a wrong build shows the correct Spanish sentence but still not the prompt', () => {
+    const { getByText, getAllByText, queryByText } = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    fireEvent.press(getAllByText('mesa')[0]);
+    fireEvent.press(getByText('Check'));
+    expect(getByText('el libro y la mesa')).toBeTruthy();
+    expect(queryByText('The book and the table.')).toBeNull();
+  });
+
+  it('without the listening prop the card is unchanged: prompt shown, no 🔊 button', () => {
+    const { getByText, queryByTestId } = render(<EasySentenceCard {...props} listening={false} onResult={jest.fn()} />);
+    expect(getByText('The book and the table.')).toBeTruthy();
+    expect(queryByTestId('sentence-listen-play')).toBeNull();
+  });
+});
