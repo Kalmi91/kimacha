@@ -12,8 +12,8 @@ const lessons: { name: string; lesson: LessonV2 }[] = fs
   .map((f) => ({ name: f.replace('.json', ''), lesson: JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8')) as LessonV2 }));
 
 describe('reading Spanish lessons aloud', () => {
-  it('all 79 Spanish lessons are present', () => {
-    expect(lessons).toHaveLength(79);
+  it('all 82 Spanish lessons are present', () => {
+    expect(lessons).toHaveLength(82);
   });
 
   it.each(lessons.map((l) => [l.name, l.lesson] as const))('%s: no marked Spanish section, text exists in both languages', (_name, lesson) => {

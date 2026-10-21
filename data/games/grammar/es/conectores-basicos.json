@@ -1,0 +1,1280 @@
+{
+  "schema": 2,
+  "topic": "conectores-basicos",
+  "level": "A1",
+  "title": {
+    "en": "And, or, but, because, so",
+    "es": "Conectores básicos: y, o, pero, porque"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A connector joins two ideas into one sentence. Spanish needs only a few small words for this: y (and), o (or), pero (but), porque (because), and for a result por eso, así que and entonces (so). They never change with the person or the number, so there is little to memorize. What needs attention is two spelling changes (y becomes e, o becomes u) and not mixing up porque, which is followed by the reason, with por eso, which comes after the reason. The question ¿por qué? is in the lesson «Question words».",
+        "es": "Un conector une dos ideas en una sola frase. El español necesita pocas palabras pequeñas para esto: y, o, pero, porque, y para un resultado por eso, así que y entonces. No cambian con la persona ni con el número, así que hay poco que memorizar. Lo que pide atención son dos cambios de escritura (y pasa a e, o pasa a u) y no confundir porque, que va seguido de la razón, con por eso, que va después de la razón. La pregunta ¿por qué? está en la lección «Interrogativos»."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What each word does",
+        "es": "Qué hace cada palabra"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Y (and) adds one idea to another: two things, two people, two actions. In a list it goes only before the last item: pan, queso y fruta. After a «no» use ni instead (No como carne ni pescado); see the lesson «Negation: no, nada, nunca, nadie».",
+            "es": "Y suma una idea a otra: dos cosas, dos personas, dos acciones. En una lista va solo antes del último elemento: pan, queso y fruta. Después de un «no» se usa ni (No como carne ni pescado); mira la lección «Negación: no, nada, nunca, nadie»."
+          },
+          "examples": [
+            {
+              "es": "Mi hermano trabaja y estudia.",
+              "tr": {
+                "en": "My brother works and studies.",
+                "es": "Mi hermano trabaja y estudia."
+              }
+            },
+            {
+              "es": "En la mesa hay pan, queso y fruta.",
+              "tr": {
+                "en": "On the table there is bread, cheese and fruit.",
+                "es": "En la mesa hay pan, queso y fruta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "O (or) gives a choice between two or more things. In a question it asks the other person to pick one: ¿Té o café? In a list it also goes before the last item.",
+            "es": "O ofrece una elección entre dos o más cosas. En una pregunta pide a la otra persona que elija: ¿Té o café? En una lista también va antes del último elemento."
+          },
+          "examples": [
+            {
+              "es": "¿Quieres té o café?",
+              "tr": {
+                "en": "Do you want tea or coffee?",
+                "es": "¿Quieres té o café?"
+              }
+            },
+            {
+              "es": "El domingo comemos en casa o en un restaurante.",
+              "tr": {
+                "en": "On Sunday we eat at home or in a restaurant.",
+                "es": "El domingo comemos en casa o en un restaurante."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Pero (but) sets two ideas against each other: the second one goes against what the first one makes you expect, or limits it. A comma goes before pero.",
+            "es": "Pero opone dos ideas: la segunda va contra lo que esperas de la primera, o la limita. Antes de pero va una coma."
+          },
+          "examples": [
+            {
+              "es": "El café es caro, pero muy bueno.",
+              "tr": {
+                "en": "The coffee is expensive, but very good.",
+                "es": "El café es caro, pero muy bueno."
+              }
+            },
+            {
+              "es": "Tengo hambre, pero no hay comida.",
+              "tr": {
+                "en": "I am hungry, but there is no food.",
+                "es": "Tengo hambre, pero no hay comida."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Porque (because) gives the reason. The result comes first and the reason after it, usually with no comma: No voy al parque porque llueve. It is one word with no accent; the question ¿por qué? is two words with an accent.",
+            "es": "Porque da la razón. Primero va el resultado y después la razón, normalmente sin coma: No voy al parque porque llueve. Es una sola palabra y sin acento; la pregunta ¿por qué? son dos palabras con acento."
+          },
+          "examples": [
+            {
+              "es": "Estoy cansado porque trabajo mucho.",
+              "tr": {
+                "en": "I am tired because I work a lot.",
+                "es": "Estoy cansado porque trabajo mucho."
+              }
+            },
+            {
+              "es": "Mi amigo no viene porque está enfermo.",
+              "tr": {
+                "en": "My friend is not coming because he is sick.",
+                "es": "Mi amigo no viene porque está enfermo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Por eso (that is why) gives the result. The reason comes first, then a comma, and por eso introduces what follows from it: Estoy enfermo, por eso no trabajo hoy. The word eso points back at the whole reason.",
+            "es": "Por eso da el resultado. Primero va la razón, luego una coma, y por eso introduce lo que sale de ella: Estoy enfermo, por eso no trabajo hoy. La palabra eso señala toda la razón anterior."
+          },
+          "examples": [
+            {
+              "es": "Estoy enfermo, por eso no trabajo hoy.",
+              "tr": {
+                "en": "I am sick, that is why I am not working today.",
+                "es": "Estoy enfermo, por eso no trabajo hoy."
+              }
+            },
+            {
+              "es": "No tengo tiempo, por eso no voy.",
+              "tr": {
+                "en": "I have no time, that is why I am not going.",
+                "es": "No tengo tiempo, por eso no voy."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Así que (so) also introduces a result. It is very common in speech and works like por eso: the reason first, then a comma, then así que and the result.",
+            "es": "Así que también introduce un resultado. Se usa mucho al hablar y funciona como por eso: primero la razón, luego una coma, luego así que y el resultado."
+          },
+          "examples": [
+            {
+              "es": "Es tarde, así que voy a casa.",
+              "tr": {
+                "en": "It is late, so I am going home.",
+                "es": "Es tarde, así que voy a casa."
+              }
+            },
+            {
+              "es": "Tengo frío, así que cierro la ventana.",
+              "tr": {
+                "en": "I am cold, so I close the window.",
+                "es": "Tengo frío, así que cierro la ventana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Entonces (so, then) draws a conclusion, mostly in conversation: it reacts to what someone has just said, or it opens a question. In Mexico it is used all the time: ¿Entonces vienes o no?",
+            "es": "Entonces saca una conclusión, sobre todo al conversar: reacciona a lo que alguien acaba de decir, o abre una pregunta. En México se usa todo el tiempo: ¿Entonces vienes o no?"
+          },
+          "examples": [
+            {
+              "es": "¿Entonces vienes o no?",
+              "tr": {
+                "en": "So, are you coming or not?",
+                "es": "¿Entonces vienes o no?"
+              }
+            },
+            {
+              "es": "Mi hermano no viene. Entonces voy solo.",
+              "tr": {
+                "en": "My brother is not coming. So I am going alone.",
+                "es": "Mi hermano no viene. Entonces voy solo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "conectores-basicos",
+      "title": {
+        "en": "The connectors at a glance",
+        "es": "Los conectores de un vistazo"
+      },
+      "header": [
+        {
+          "en": "Meaning",
+          "es": "Significado"
+        },
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "and",
+          "y",
+          "Mi hermano trabaja y estudia."
+        ],
+        [
+          "and, before i- / hi-",
+          "e",
+          "Padre e hijo viven aquí."
+        ],
+        [
+          "or",
+          "o",
+          "¿Quieres té o café?"
+        ],
+        [
+          "or, before o- / ho-",
+          "u",
+          "Somos siete u ocho."
+        ],
+        [
+          "but",
+          "pero",
+          "El café es caro, pero bueno."
+        ],
+        [
+          "because",
+          "porque",
+          "Duermo porque estoy cansado."
+        ],
+        [
+          "that is why",
+          "por eso",
+          "Estoy cansado, por eso duermo."
+        ],
+        [
+          "so (result)",
+          "así que",
+          "Es tarde, así que voy a casa."
+        ],
+        [
+          "so, then (in talk)",
+          "entonces",
+          "¿Entonces vienes o no?"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Two spelling changes",
+        "es": "Dos cambios de escritura"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Y becomes e before a word that starts with the vowel sound i (written i- or hi-), so that the two sounds do not run together: padre e hijo, amable e inteligente, español e italiano.",
+            "es": "Y se vuelve e delante de una palabra que empieza con el sonido de vocal i (escrita i- o hi-), para que los dos sonidos no se junten: padre e hijo, amable e inteligente, español e italiano."
+          },
+          "examples": [
+            {
+              "es": "Padre e hijo viven aquí.",
+              "tr": {
+                "en": "Father and son live here.",
+                "es": "Padre e hijo viven aquí."
+              }
+            },
+            {
+              "es": "Es una ciudad grande e interesante.",
+              "tr": {
+                "en": "It is a big and interesting city.",
+                "es": "Es una ciudad grande e interesante."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The exception is hie-: «hielo» is written with hi-, but it sounds like «yelo», which starts with a consonant. So «and» stays y: agua y hielo. Listen to the sound, not to the spelling.",
+            "es": "La excepción es hie-: «hielo» se escribe con hi-, pero suena como «yelo», que empieza con una consonante. Por eso «y» se queda: agua y hielo. Escucha el sonido, no la escritura."
+          },
+          "examples": [
+            {
+              "es": "Hay agua y hielo en el vaso.",
+              "tr": {
+                "en": "There is water and ice in the glass.",
+                "es": "Hay agua y hielo en el vaso."
+              }
+            },
+            {
+              "es": "En invierno hay nieve y hielo.",
+              "tr": {
+                "en": "In winter there is snow and ice.",
+                "es": "En invierno hay nieve y hielo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "O becomes u before a word that starts with the vowel sound o (written o- or ho-): siete u ocho, mujer u hombre, septiembre u octubre. It is the same idea as y and e.",
+            "es": "O se vuelve u delante de una palabra que empieza con el sonido de vocal o (escrita o- u ho-): siete u ocho, mujer u hombre, septiembre u octubre. Es la misma idea que con y y e."
+          },
+          "examples": [
+            {
+              "es": "Somos siete u ocho.",
+              "tr": {
+                "en": "There are seven or eight of us.",
+                "es": "Somos siete u ocho."
+              }
+            },
+            {
+              "es": "Mujeres u hombres, todos son bienvenidos.",
+              "tr": {
+                "en": "Women or men, everyone is welcome.",
+                "es": "Mujeres u hombres, todos son bienvenidos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fácil de confundir"
+      },
+      "pairs": [
+        {
+          "a": "porque",
+          "b": "por eso",
+          "note": {
+            "en": "The same two facts in opposite order. The reason comes after porque and before por eso. Ask yourself which half you said first: the reason first means por eso, the result first means porque.",
+            "es": "Los mismos dos hechos en orden contrario. La razón va después de porque y antes de por eso. Pregúntate qué mitad dijiste primero: primero la razón, por eso; primero el resultado, porque."
+          },
+          "examples": [
+            {
+              "es": "Duermo porque estoy cansado.",
+              "tr": {
+                "en": "I sleep because I am tired.",
+                "es": "Duermo porque estoy cansado."
+              }
+            },
+            {
+              "es": "Estoy cansado, por eso duermo.",
+              "tr": {
+                "en": "I am tired, that is why I sleep.",
+                "es": "Estoy cansado, por eso duermo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "y",
+          "b": "pero",
+          "note": {
+            "en": "Y adds, pero opposes. With y the second idea goes the same way as the first; with pero it goes against it and brings a small surprise. A comma goes before pero.",
+            "es": "Y suma, pero opone. Con y la segunda idea va en la misma dirección que la primera; con pero va en contra y trae una pequeña sorpresa. Antes de pero va una coma."
+          },
+          "examples": [
+            {
+              "es": "El café es barato y bueno.",
+              "tr": {
+                "en": "The coffee is cheap and good.",
+                "es": "El café es barato y bueno."
+              }
+            },
+            {
+              "es": "El café es barato, pero malo.",
+              "tr": {
+                "en": "The coffee is cheap, but bad.",
+                "es": "El café es barato, pero malo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "así que",
+          "b": "entonces",
+          "note": {
+            "en": "Both introduce a result. Así que ties the reason and the result together inside one sentence. Entonces reacts to what someone has just said, and it often opens a question.",
+            "es": "Los dos introducen un resultado. Así que une la razón y el resultado dentro de una misma frase. Entonces reacciona a lo que alguien acaba de decir y muchas veces abre una pregunta."
+          },
+          "examples": [
+            {
+              "es": "No hay clase, así que voy a casa.",
+              "tr": {
+                "en": "There is no class, so I am going home.",
+                "es": "No hay clase, así que voy a casa."
+              }
+            },
+            {
+              "es": "¿No hay clase? Entonces voy a casa.",
+              "tr": {
+                "en": "No class? Then I am going home.",
+                "es": "¿No hay clase? Entonces voy a casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "conectores-basicos-frases",
+      "title": {
+        "en": "Examples: from the sentence to the connector",
+        "es": "Ejemplos: de la frase al conector"
+      },
+      "header": [
+        {
+          "en": "sentence",
+          "es": "frase"
+        },
+        {
+          "en": "connector",
+          "es": "conector"
+        }
+      ],
+      "rows": [
+        [
+          "Ana ___ yo somos amigos.",
+          "y"
+        ],
+        [
+          "Padre ___ hijo juegan fútbol en el parque.",
+          "e"
+        ],
+        [
+          "Es una ciudad grande ___ importante.",
+          "e"
+        ],
+        [
+          "¿Hoy es lunes ___ martes?",
+          "o"
+        ],
+        [
+          "Hay diez ___ once personas en la sala.",
+          "u"
+        ],
+        [
+          "¿Estamos en septiembre ___ octubre?",
+          "u"
+        ],
+        [
+          "Bailo bien, ___ canto mal.",
+          "pero"
+        ],
+        [
+          "Mi hermano duerme mucho, ___ siempre está cansado.",
+          "pero"
+        ],
+        [
+          "No llamo a mi mamá ___ es muy tarde.",
+          "porque"
+        ],
+        [
+          "Hoy es domingo, ___ no trabajo.",
+          "por eso"
+        ],
+        [
+          "El metro está cerrado, ___ camino al banco.",
+          "así que"
+        ],
+        [
+          "La tienda está cerrada, ¿___ vamos al súper?",
+          "entonces"
+        ]
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Before you write y or o, listen to the next word: the sound i after y gives e, and the sound o after o gives u. «Hielo» sounds like «yelo», so it keeps the y.",
+        "es": "Antes de escribir «y» o «o», escucha la palabra que sigue: el sonido i después de «y» da e, y el sonido o después de «o» da u. «Hielo» suena como «yelo», por eso se queda con y."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A connector joins two ideas into one sentence. The word for and adds one idea to another, and the word for or gives a choice. The word for but sets two ideas against each other, and a comma goes before it. The word for because gives the reason, and it comes after the result. To give the result, use the phrase for that is why, or the phrase for so; both come after the reason. In conversation, the word for then reacts to what someone has just said. Two of these words change their spelling: and becomes the letter e before the sound i, and or becomes the letter u before the sound o. Listen to the sound, not to the letters.",
+    "es": "Un conector une dos ideas en una frase. Y suma una idea a otra, y o ofrece una elección. Pero opone dos ideas, y antes de pero va una coma. Porque da la razón, y va después del resultado. Para dar el resultado se usa por eso o así que, que van después de la razón. En una conversación, entonces reacciona a lo que alguien acaba de decir. Dos de estas palabras cambian de escritura: y se vuelve e delante del sonido i, y o se vuelve u delante del sonido o. Escucha el sonido, no las letras."
+  },
+  "glossary": [
+    {
+      "word": "entonces",
+      "gloss": {
+        "en": "so, then (in conversation)",
+        "es": "en ese caso, por lo tanto"
+      }
+    },
+    {
+      "word": "así que",
+      "gloss": {
+        "en": "so (introduces the result)",
+        "es": "de modo que, por eso"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "cb-01",
+      "sentence": "Mi madre ___ mi padre trabajan en un banco.",
+      "options": [
+        "y",
+        "e"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Y is the normal «and». It changes to e only before a word that starts with the sound i, and «mi» starts with m, so it stays y: mi madre y mi padre.",
+        "es": "Y es la «y» de siempre. Solo cambia a e delante de una palabra que empieza con el sonido i, y «mi» empieza con m, por eso se queda y: mi madre y mi padre."
+      },
+      "wrong": {
+        "e": {
+          "en": "e: the form of «and» before the sound i (padre e hijo). It does not fit here, because «mi» starts with m, not with i. Correct: Mi madre y mi padre trabajan en un banco.",
+          "es": "e: la forma de «y» delante del sonido i (padre e hijo). Aquí no encaja, porque «mi» empieza con m, no con i. Correcto: Mi madre y mi padre trabajan en un banco."
+        }
+      },
+      "examples": [
+        "Mi hermano y yo vivimos aquí.",
+        "Veo un perro y un gato en la calle."
+      ],
+      "tr": {
+        "en": "My mother and my father work in a bank.",
+        "es": "Mi madre y mi padre trabajan en un banco."
+      }
+    },
+    {
+      "id": "cb-02",
+      "sentence": "Mi abuela es amable ___ inteligente.",
+      "options": [
+        "y",
+        "e"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "«Inteligente» starts with the sound i, so «and» becomes e: amable e inteligente. Y + i would run together.",
+        "es": "«Inteligente» empieza con el sonido i, por eso «y» se vuelve e: amable e inteligente. Y + i sonarían pegadas."
+      },
+      "wrong": {
+        "y": {
+          "en": "y: the usual «and». It does not fit here, because «inteligente» starts with the vowel sound i, and before that sound «and» is written e. Correct: Mi abuela es amable e inteligente.",
+          "es": "y: la «y» de siempre. Aquí no encaja, porque «inteligente» empieza con el sonido de vocal i, y delante de ese sonido «y» se escribe e. Correcto: Mi abuela es amable e inteligente."
+        }
+      },
+      "examples": [
+        "Es un libro largo e interesante.",
+        "Hablo español e italiano."
+      ],
+      "tr": {
+        "en": "My grandmother is kind and intelligent.",
+        "es": "Mi abuela es amable e inteligente."
+      }
+    },
+    {
+      "id": "cb-03",
+      "sentence": "Quiero agua ___ hielo, por favor.",
+      "options": [
+        "e",
+        "y"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "«Hielo» is written with hi-, but it sounds like «yelo»: it starts with a consonant, not with the vowel i. So «and» stays y: agua y hielo. The change to e is only for the vowel sound i, as in hijo.",
+        "es": "«Hielo» se escribe con hi-, pero suena como «yelo»: empieza con una consonante, no con la vocal i. Por eso «y» se queda: agua y hielo. El cambio a e es solo para el sonido de vocal i, como en hijo."
+      },
+      "wrong": {
+        "e": {
+          "en": "e: the form of «and» before the vowel sound i (hijo, inteligente). It does not fit here, because «hielo» starts with the consonant sound of «yelo». Correct: Quiero agua y hielo, por favor.",
+          "es": "e: la forma de «y» delante del sonido de vocal i (hijo, inteligente). Aquí no encaja, porque «hielo» empieza con el sonido consonante de «yelo». Correcto: Quiero agua y hielo, por favor."
+        }
+      },
+      "examples": [
+        "En la montaña hay nieve y hielo.",
+        "Necesito jugo y hielo."
+      ],
+      "tr": {
+        "en": "I want water and ice, please.",
+        "es": "Quiero agua y hielo, por favor."
+      }
+    },
+    {
+      "id": "cb-04",
+      "sentence": "¿Vamos a la playa ___ al parque?",
+      "options": [
+        "pero",
+        "u",
+        "o"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "O (or) offers a choice between two places. It changes to u only before the sound o, and «al parque» starts with a, so it stays o.",
+        "es": "O ofrece una elección entre dos lugares. Solo cambia a u delante del sonido o, y «al parque» empieza con a, por eso se queda o."
+      },
+      "wrong": {
+        "u": {
+          "en": "u: the form of «or» before the sound o (siete u ocho). It does not fit here, because «al» starts with a. Correct: ¿Vamos a la playa o al parque?",
+          "es": "u: la forma de «o» delante del sonido o (siete u ocho). Aquí no encaja, porque «al» empieza con a. Correcto: ¿Vamos a la playa o al parque?"
+        },
+        "pero": {
+          "en": "pero: «but», it sets two ideas against each other. It does not fit here, because the question offers two places to choose from, and «but» would put them against each other. Correct: ¿Vamos a la playa o al parque?",
+          "es": "pero: opone dos ideas. Aquí no encaja, porque la pregunta ofrece dos lugares para elegir, y pero los pondría uno contra otro. Correcto: ¿Vamos a la playa o al parque?"
+        }
+      },
+      "examples": [
+        "¿Quieres pollo o pescado?",
+        "Leo un libro o veo la tele."
+      ],
+      "tr": {
+        "en": "Shall we go to the beach or to the park?",
+        "es": "¿Vamos a la playa o al parque?"
+      }
+    },
+    {
+      "id": "cb-05",
+      "sentence": "Somos siete ___ ocho en la oficina.",
+      "options": [
+        "u",
+        "o"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "«Ocho» starts with the sound o, so «or» becomes u: siete u ocho. O + o would run together.",
+        "es": "«Ocho» empieza con el sonido o, por eso «o» se vuelve u: siete u ocho. O + o sonarían pegadas."
+      },
+      "wrong": {
+        "o": {
+          "en": "o: the usual «or». It does not fit here, because «ocho» starts with the sound o, and before that sound «or» is written u. Correct: Somos siete u ocho en la oficina.",
+          "es": "o: la «o» de siempre. Aquí no encaja, porque «ocho» empieza con el sonido o, y delante de ese sonido «o» se escribe u. Correcto: Somos siete u ocho en la oficina."
+        }
+      },
+      "examples": [
+        "Mi tío llega en verano u otoño.",
+        "¿Tu médico es mujer u hombre?"
+      ],
+      "tr": {
+        "en": "There are seven or eight of us in the office.",
+        "es": "Somos siete u ocho en la oficina."
+      }
+    },
+    {
+      "id": "cb-06",
+      "sentence": "Quiero ir al cine, ___ no tengo dinero.",
+      "options": [
+        "porque",
+        "pero",
+        "por eso"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The second idea goes against the first: I want to go, but I cannot pay. That is what pero (but) is for, and a comma goes before it.",
+        "es": "La segunda idea va contra la primera: quiero ir, pero no puedo pagar. Para eso sirve pero, y antes de pero va una coma."
+      },
+      "wrong": {
+        "porque": {
+          "en": "porque: «because». It does not fit here, because it would say that you want to go to the cinema BECAUSE you have no money, which is not the idea. Correct: Quiero ir al cine, pero no tengo dinero.",
+          "es": "porque: da la razón. Aquí no encaja, porque diría que quieres ir al cine PORQUE no tienes dinero, y esa no es la idea. Correcto: Quiero ir al cine, pero no tengo dinero."
+        },
+        "por eso": {
+          "en": "por eso: «that is why». It does not fit here, because it would say that wanting to go is the reason why you have no money. Correct: Quiero ir al cine, pero no tengo dinero.",
+          "es": "por eso: da el resultado. Aquí no encaja, porque diría que querer ir es la razón de tu falta de dinero. Correcto: Quiero ir al cine, pero no tengo dinero."
+        }
+      },
+      "examples": [
+        "La casa es pequeña, pero muy bonita.",
+        "Hablo español, pero no muy bien."
+      ],
+      "tr": {
+        "en": "I want to go to the cinema, but I have no money.",
+        "es": "Quiero ir al cine, pero no tengo dinero."
+      }
+    },
+    {
+      "id": "cb-07",
+      "sentence": "Mi perro es grande, ___ no come mucho.",
+      "options": [
+        "por eso",
+        "porque",
+        "pero"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A big dog that does not eat much is a surprise: the second idea goes against what the first one makes you expect. That is pero (but).",
+        "es": "Un perro grande que no come mucho es una sorpresa: la segunda idea va contra lo que esperas de la primera. Eso es pero."
+      },
+      "wrong": {
+        "porque": {
+          "en": "porque: «because». It does not fit here, because it would say that the dog is big BECAUSE it does not eat much, which makes no sense as a reason. Correct: Mi perro es grande, pero no come mucho.",
+          "es": "porque: da la razón. Aquí no encaja, porque diría que el perro es grande PORQUE no come mucho, y esa razón no tiene sentido. Correcto: Mi perro es grande, pero no come mucho."
+        },
+        "por eso": {
+          "en": "por eso: «that is why». It does not fit here, because it would say that being big is the reason why the dog does not eat much, which makes no sense. Correct: Mi perro es grande, pero no come mucho.",
+          "es": "por eso: da el resultado. Aquí no encaja, porque diría que ser grande es la razón por la que el perro no come mucho, y no tiene sentido. Correcto: Mi perro es grande, pero no come mucho."
+        }
+      },
+      "examples": [
+        "Hace sol, pero hace frío.",
+        "El examen es largo, pero fácil."
+      ],
+      "tr": {
+        "en": "My dog is big, but he does not eat much.",
+        "es": "Mi perro es grande, pero no come mucho."
+      }
+    },
+    {
+      "id": "cb-08",
+      "sentence": "No voy al trabajo ___ estoy enfermo.",
+      "options": [
+        "porque",
+        "por eso",
+        "pero"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The second half gives the reason for the first: I am not going BECAUSE I am sick. The reason comes after porque, with no comma before it.",
+        "es": "La segunda mitad da la razón de la primera: no voy PORQUE estoy enfermo. La razón va después de porque, sin coma antes."
+      },
+      "wrong": {
+        "por eso": {
+          "en": "por eso: «that is why». It does not fit here, because the reason would have to come before it: «No voy al trabajo, por eso estoy enfermo» says that not going to work makes you sick. Correct: No voy al trabajo porque estoy enfermo.",
+          "es": "por eso: da el resultado. Aquí no encaja, porque la razón tendría que ir antes: «No voy al trabajo, por eso estoy enfermo» diría que no ir al trabajo te enferma. Correcto: No voy al trabajo porque estoy enfermo."
+        },
+        "pero": {
+          "en": "pero: «but». It does not fit here, because being sick does not go against staying home; it explains it. Correct: No voy al trabajo porque estoy enfermo.",
+          "es": "pero: opone dos ideas. Aquí no encaja, porque estar enfermo no va contra quedarse en casa, sino que lo explica. Correcto: No voy al trabajo porque estoy enfermo."
+        }
+      },
+      "examples": [
+        "Mi hijo duerme porque está cansado.",
+        "Estoy en casa porque llueve."
+      ],
+      "tr": {
+        "en": "I am not going to work because I am sick.",
+        "es": "No voy al trabajo porque estoy enfermo."
+      }
+    },
+    {
+      "id": "cb-09",
+      "sentence": "¿Por qué no comes? ___ no tengo hambre.",
+      "options": [
+        "Por qué",
+        "Por eso",
+        "Porque"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "An answer to ¿por qué? gives the reason, and the reason starts with porque: one word, no accent. The question is the two-word, accented ¿por qué?, from the lesson «Question words».",
+        "es": "La respuesta a ¿por qué? da la razón, y la razón empieza con porque: una palabra, sin acento. La pregunta es ¿por qué?, dos palabras con acento, de la lección «Interrogativos»."
+      },
+      "wrong": {
+        "Por qué": {
+          "en": "Por qué: two words with an accent, the question «why?». It does not fit here, because it asks, and this part has to answer. Correct: ¿Por qué no comes? Porque no tengo hambre.",
+          "es": "Por qué: dos palabras con acento, la pregunta. Aquí no encaja, porque pregunta, y esta parte tiene que responder. Correcto: ¿Por qué no comes? Porque no tengo hambre."
+        },
+        "Por eso": {
+          "en": "Por eso: «that is why». It does not fit here, because it gives a result after a reason that was already said, and nobody has given a reason yet. Correct: ¿Por qué no comes? Porque no tengo hambre.",
+          "es": "Por eso: da un resultado después de una razón ya dicha. Aquí no encaja, porque nadie ha dado todavía una razón. Correcto: ¿Por qué no comes? Porque no tengo hambre."
+        }
+      },
+      "examples": [
+        "¿Por qué estudias español? Porque viajo a México.",
+        "¿Por qué no hablas? Porque estoy nervioso."
+      ],
+      "tr": {
+        "en": "Why are you not eating? Because I am not hungry.",
+        "es": "¿Por qué no comes? Porque no tengo hambre."
+      }
+    },
+    {
+      "id": "cb-10",
+      "sentence": "Hace calor, ___ bebo un refresco.",
+      "options": [
+        "porque",
+        "por eso",
+        "pero"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The first half is the reason (it is hot) and the second half is the result (I drink a soda). The result starts with por eso, after a comma.",
+        "es": "La primera mitad es la razón (hace calor) y la segunda es el resultado (bebo un refresco). El resultado empieza con por eso, después de una coma."
+      },
+      "wrong": {
+        "porque": {
+          "en": "porque: «because». It does not fit here, because it would say that it is hot BECAUSE you drink a soda, the wrong way round. Correct: Hace calor, por eso bebo un refresco.",
+          "es": "porque: da la razón. Aquí no encaja, porque diría que hace calor PORQUE bebes un refresco, y es al revés. Correcto: Hace calor, por eso bebo un refresco."
+        },
+        "pero": {
+          "en": "pero: «but». It does not fit here, because drinking a soda does not go against the heat; it follows from it. Correct: Hace calor, por eso bebo un refresco.",
+          "es": "pero: opone dos ideas. Aquí no encaja, porque beber un refresco no va contra el calor, sino que viene de él. Correcto: Hace calor, por eso bebo un refresco."
+        }
+      },
+      "examples": [
+        "Mañana es lunes, por eso duermo temprano.",
+        "Llueve, por eso llevo paraguas."
+      ],
+      "tr": {
+        "en": "It is hot, that is why I drink a soda.",
+        "es": "Hace calor, por eso bebo un refresco."
+      }
+    },
+    {
+      "id": "cb-11",
+      "sentence": "Tengo sed, ___ bebo agua.",
+      "options": [
+        "pero",
+        "porque",
+        "así que"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Así que (so) joins the reason and the result in one sentence: I am thirsty, so I drink water. The reason comes first, then a comma.",
+        "es": "Así que une la razón y el resultado en una frase: tengo sed, así que bebo agua. Primero va la razón, luego una coma."
+      },
+      "wrong": {
+        "pero": {
+          "en": "pero: «but». It does not fit here, because drinking water does not go against being thirsty; it is the result. Correct: Tengo sed, así que bebo agua.",
+          "es": "pero: opone dos ideas. Aquí no encaja, porque beber agua no va contra tener sed, sino que es el resultado. Correcto: Tengo sed, así que bebo agua."
+        },
+        "porque": {
+          "en": "porque: «because». It does not fit here, because it would say that you are thirsty BECAUSE you drink water, the wrong way round. Correct: Tengo sed, así que bebo agua.",
+          "es": "porque: da la razón. Aquí no encaja, porque diría que tienes sed PORQUE bebes agua, y es al revés. Correcto: Tengo sed, así que bebo agua."
+        }
+      },
+      "examples": [
+        "No hay pan, así que como tortillas.",
+        "Mi mamá llega mañana, así que limpio la casa."
+      ],
+      "tr": {
+        "en": "I am thirsty, so I drink water.",
+        "es": "Tengo sed, así que bebo agua."
+      }
+    },
+    {
+      "id": "cb-12",
+      "sentence": "¿No hay leche? ___ tomo café.",
+      "options": [
+        "Entonces",
+        "Porque",
+        "Pero"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Entonces (so, then) reacts to what was just said: there is no milk, so I have coffee. It is very common in everyday Mexican speech.",
+        "es": "Entonces reacciona a lo que acaban de decir: no hay leche, entonces tomo café. Se usa mucho en el habla diaria de México."
+      },
+      "wrong": {
+        "Porque": {
+          "en": "Porque: «because». It does not fit here, because the second part is not a reason for the missing milk but what you decide to do about it. Correct: ¿No hay leche? Entonces tomo café.",
+          "es": "Porque: da la razón. Aquí no encaja, porque la segunda parte no es la razón de que falte la leche, sino lo que decides hacer. Correcto: ¿No hay leche? Entonces tomo café."
+        },
+        "Pero": {
+          "en": "Pero: «but». It does not fit here, because taking coffee does not go against the missing milk; it is your answer to it. Correct: ¿No hay leche? Entonces tomo café.",
+          "es": "Pero: opone dos ideas. Aquí no encaja, porque tomar café no va contra la falta de leche, sino que es tu respuesta. Correcto: ¿No hay leche? Entonces tomo café."
+        }
+      },
+      "examples": [
+        "Es sábado. Entonces no hay clase.",
+        "No hay agua. Entonces compro un refresco."
+      ],
+      "tr": {
+        "en": "Is there no milk? Then I will have coffee.",
+        "es": "¿No hay leche? Entonces tomo café."
+      }
+    },
+    {
+      "kind": "match",
+      "id": "cb-match-01",
+      "pairs": [
+        {
+          "es": "pero",
+          "en": "but"
+        },
+        {
+          "es": "porque",
+          "en": "because"
+        },
+        {
+          "es": "por eso",
+          "en": "that is why"
+        },
+        {
+          "es": "así que",
+          "en": "so (result)"
+        },
+        {
+          "es": "e",
+          "en": "and, before i-"
+        },
+        {
+          "es": "u",
+          "en": "or, before o-"
+        }
+      ]
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-01",
+      "verb": "conector",
+      "person": "Ana ___ yo somos amigos.",
+      "answer": "y",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-02",
+      "verb": "conector",
+      "person": "Padre ___ hijo juegan fútbol en el parque.",
+      "answer": "e",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-03",
+      "verb": "conector",
+      "person": "Es una ciudad grande ___ importante.",
+      "answer": "e",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-04",
+      "verb": "conector",
+      "person": "¿Hoy es lunes ___ martes?",
+      "answer": "o",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-05",
+      "verb": "conector",
+      "person": "Hay diez ___ once personas en la sala.",
+      "answer": "u",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-06",
+      "verb": "conector",
+      "person": "¿Estamos en septiembre ___ octubre?",
+      "answer": "u",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-07",
+      "verb": "conector",
+      "person": "Bailo bien, ___ canto mal.",
+      "answer": "pero",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-08",
+      "verb": "conector",
+      "person": "Mi hermano duerme mucho, ___ siempre está cansado.",
+      "answer": "pero",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-09",
+      "verb": "conector",
+      "person": "No llamo a mi mamá ___ es muy tarde.",
+      "answer": "porque",
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-10",
+      "verb": "conector",
+      "person": "Hoy es domingo, ___ no trabajo.",
+      "answer": "por eso",
+      "accept": [
+        "así que",
+        "asi que",
+        "entonces"
+      ],
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-11",
+      "verb": "conector",
+      "person": "El metro está cerrado, ___ camino al banco.",
+      "answer": "así que",
+      "accept": [
+        "asi que",
+        "por eso",
+        "entonces"
+      ],
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "form",
+      "id": "cb-form-12",
+      "verb": "conector",
+      "person": "La tienda está cerrada, ¿___ vamos al súper?",
+      "answer": "entonces",
+      "accept": [
+        "así que",
+        "asi que"
+      ],
+      "table": "conectores-basicos-frases"
+    },
+    {
+      "kind": "why",
+      "id": "cb-why-01",
+      "es": "Mi prima es joven e inteligente.",
+      "target": "e",
+      "tr": {
+        "en": "My cousin is young and intelligent.",
+        "es": "Mi prima es joven e inteligente."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "and, before any other sound: it stays y",
+            "es": "«y» delante de cualquier otro sonido: se queda y"
+          },
+          "wrong": {
+            "en": "this would be the normal «and» (mi madre y mi padre), but «inteligente» starts with the sound i, so y becomes e",
+            "es": "esto sería la «y» de siempre (mi madre y mi padre), pero «inteligente» empieza con el sonido i, por eso y se vuelve e"
+          }
+        },
+        {
+          "text": {
+            "en": "and, before the sound i: y becomes e",
+            "es": "«y» delante del sonido i: y se vuelve e"
+          }
+        },
+        {
+          "text": {
+            "en": "or, before the sound o: o becomes u",
+            "es": "«o» delante del sonido o: o se vuelve u"
+          },
+          "wrong": {
+            "en": "this is about «or» before the sound o (siete u ocho); the word here is e, a form of «and»",
+            "es": "esto es de «o» delante del sonido o (siete u ocho); la palabra de aquí es e, una forma de «y»"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cb-why-02",
+      "es": "Esperamos seis u ocho minutos.",
+      "target": "u",
+      "tr": {
+        "en": "We wait six or eight minutes.",
+        "es": "Esperamos seis u ocho minutos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "or, before the sound o: o becomes u",
+            "es": "«o» delante del sonido o: o se vuelve u"
+          }
+        },
+        {
+          "text": {
+            "en": "and, before the sound i: y becomes e",
+            "es": "«y» delante del sonido i: y se vuelve e"
+          },
+          "wrong": {
+            "en": "this is about «and» before the sound i (padre e hijo); the word here is u, a form of «or»",
+            "es": "esto es de «y» delante del sonido i (padre e hijo); la palabra de aquí es u, una forma de «o»"
+          }
+        },
+        {
+          "text": {
+            "en": "or, before any other sound: it stays o",
+            "es": "«o» delante de cualquier otro sonido: se queda o"
+          },
+          "wrong": {
+            "en": "this would be the normal «or» (té o café), but «ocho» starts with the sound o, so o becomes u",
+            "es": "esto sería la «o» de siempre (té o café), pero «ocho» empieza con el sonido o, por eso o se vuelve u"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "cb-why-03",
+      "es": "Estudio mucho, pero el examen es difícil.",
+      "target": "pero",
+      "tr": {
+        "en": "I study a lot, but the exam is hard.",
+        "es": "Estudio mucho, pero el examen es difícil."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the reason, after the result: porque (because)",
+            "es": "la razón, después del resultado: porque"
+          },
+          "wrong": {
+            "en": "this would be porque, and the second half would have to be the reason for studying a lot; here it goes against the first half",
+            "es": "esto sería porque, y la segunda mitad tendría que ser la razón de estudiar mucho; aquí va contra la primera mitad"
+          }
+        },
+        {
+          "text": {
+            "en": "the result, after the reason: por eso (that is why)",
+            "es": "el resultado, después de la razón: por eso"
+          },
+          "wrong": {
+            "en": "this would be por eso, and the second half would be the result of studying a lot; here the exam is hard in spite of it",
+            "es": "esto sería por eso, y la segunda mitad sería el resultado de estudiar mucho; aquí el examen es difícil a pesar de eso"
+          }
+        },
+        {
+          "text": {
+            "en": "two ideas that clash: pero (but)",
+            "es": "dos ideas que chocan: pero"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "cb-why-04",
+      "es": "Llego tarde porque el metro es lento.",
+      "target": "porque",
+      "tr": {
+        "en": "I arrive late because the metro is slow.",
+        "es": "Llego tarde porque el metro es lento."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the result, after the reason: por eso (that is why)",
+            "es": "el resultado, después de la razón: por eso"
+          },
+          "wrong": {
+            "en": "this would be por eso, which comes after the reason; here the reason (the metro is slow) comes after the connector",
+            "es": "esto sería por eso, que va después de la razón; aquí la razón (el metro es lento) va después del conector"
+          }
+        },
+        {
+          "text": {
+            "en": "the reason, after the result: porque (because)",
+            "es": "la razón, después del resultado: porque"
+          }
+        },
+        {
+          "text": {
+            "en": "a choice between two things: o (or)",
+            "es": "una elección entre dos cosas: o"
+          },
+          "wrong": {
+            "en": "this would be o, a choice between two things; there is no choice here, only a reason",
+            "es": "esto sería o, una elección entre dos cosas; aquí no hay elección, solo una razón"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cb-why-05",
+      "es": "Mañana hay examen, por eso estudio hoy.",
+      "target": "por eso",
+      "tr": {
+        "en": "Tomorrow there is an exam, that is why I study today.",
+        "es": "Mañana hay examen, por eso estudio hoy."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the result, after the reason: por eso (that is why)",
+            "es": "el resultado, después de la razón: por eso"
+          }
+        },
+        {
+          "text": {
+            "en": "the reason, after the result: porque (because)",
+            "es": "la razón, después del resultado: porque"
+          },
+          "wrong": {
+            "en": "this would be porque, with the reason after it; here the reason (there is an exam tomorrow) comes before the connector",
+            "es": "esto sería porque, con la razón después; aquí la razón (mañana hay examen) va antes del conector"
+          }
+        },
+        {
+          "text": {
+            "en": "two ideas that clash: pero (but)",
+            "es": "dos ideas que chocan: pero"
+          },
+          "wrong": {
+            "en": "this would be pero; studying today does not clash with the exam, it follows from it",
+            "es": "esto sería pero; estudiar hoy no choca con el examen, sino que viene de él"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "cb-why-06",
+      "es": "Mi amigo está enfermo, así que llamo al médico.",
+      "target": "así que",
+      "tr": {
+        "en": "My friend is sick, so I call the doctor.",
+        "es": "Mi amigo está enfermo, así que llamo al médico."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a conclusion in conversation: entonces (so, then)",
+            "es": "una conclusión en la conversación: entonces"
+          },
+          "wrong": {
+            "en": "this would be entonces, which reacts to what another person has just said; here así que ties the result to the reason in one sentence",
+            "es": "esto sería entonces, que reacciona a lo que otra persona acaba de decir; aquí así que une el resultado a la razón en una frase"
+          }
+        },
+        {
+          "text": {
+            "en": "the result in the same sentence: así que (so)",
+            "es": "el resultado en la misma frase: así que"
+          }
+        },
+        {
+          "text": {
+            "en": "the reason, after the result: porque (because)",
+            "es": "la razón, después del resultado: porque"
+          },
+          "wrong": {
+            "en": "this would be porque, with the reason after it; here the reason (my friend is sick) comes first",
+            "es": "esto sería porque, con la razón después; aquí la razón (mi amigo está enfermo) va primero"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "cb-why-07",
+      "es": "¿Tu mamá no está? Entonces llamo más tarde.",
+      "target": "Entonces",
+      "tr": {
+        "en": "Is your mom not there? Then I will call later.",
+        "es": "¿Tu mamá no está? Entonces llamo más tarde."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "a conclusion in conversation: entonces (so, then)",
+            "es": "una conclusión en la conversación: entonces"
+          }
+        },
+        {
+          "text": {
+            "en": "the result in the same sentence: así que (so)",
+            "es": "el resultado en la misma frase: así que"
+          },
+          "wrong": {
+            "en": "this would be así que, which joins the reason and the result inside one sentence; here the question and the answer are two sentences",
+            "es": "esto sería así que, que une la razón y el resultado dentro de una frase; aquí la pregunta y la respuesta son dos frases"
+          }
+        },
+        {
+          "text": {
+            "en": "a choice between two things: o (or)",
+            "es": "una elección entre dos cosas: o"
+          },
+          "wrong": {
+            "en": "this would be o, a choice between two things; there is no choice here",
+            "es": "esto sería o, una elección entre dos cosas; aquí no hay elección"
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
