@@ -356,8 +356,8 @@
           "a": "y",
           "b": "pero",
           "note": {
-            "en": "Y adds, pero opposes. With y the second idea goes the same way as the first; with pero it goes against it, so pero takes a comma and brings a small surprise.",
-            "es": "Y suma, pero opone. Con y la segunda idea va en la misma dirección que la primera; con pero va en contra, por eso pero lleva coma y trae una pequeña sorpresa."
+            "en": "Y adds, pero opposes. With y the second idea goes the same way as the first; with pero it goes against it and brings a small surprise. A comma goes before pero.",
+            "es": "Y suma, pero opone. Con y la segunda idea va en la misma dirección que la primera; con pero va en contra y trae una pequeña sorpresa. Antes de pero va una coma."
           },
           "examples": [
             {
@@ -461,7 +461,7 @@
           "por eso"
         ],
         [
-          "No tengo carro, ___ camino al banco.",
+          "El metro está cerrado, ___ camino al banco.",
           "así que"
         ],
         [
@@ -686,8 +686,8 @@
       },
       "wrong": {
         "porque": {
-          "en": "porque: «because». It does not fit here, because it would say that the dog is big BECAUSE it does not eat much, which is the wrong way round. Correct: Mi perro es grande, pero no come mucho.",
-          "es": "porque: da la razón. Aquí no encaja, porque diría que el perro es grande PORQUE no come mucho, y es al revés. Correcto: Mi perro es grande, pero no come mucho."
+          "en": "porque: «because». It does not fit here, because it would say that the dog is big BECAUSE it does not eat much, which makes no sense as a reason. Correct: Mi perro es grande, pero no come mucho.",
+          "es": "porque: da la razón. Aquí no encaja, porque diría que el perro es grande PORQUE no come mucho, y esa razón no tiene sentido. Correcto: Mi perro es grande, pero no come mucho."
         },
         "por eso": {
           "en": "por eso: «that is why». It does not fit here, because it would say that being big is the reason why the dog does not eat much, which makes no sense. Correct: Mi perro es grande, pero no come mucho.",
@@ -824,7 +824,7 @@
       },
       "examples": [
         "No hay pan, así que como tortillas.",
-        "Mi mamá llega hoy, así que limpio la casa."
+        "Mi mamá llega mañana, así que limpio la casa."
       ],
       "tr": {
         "en": "I am thirsty, so I drink water.",
@@ -855,7 +855,7 @@
         }
       },
       "examples": [
-        "Hoy es sábado. Entonces no hay clase.",
+        "Es sábado. Entonces no hay clase.",
         "No hay agua. Entonces compro un refresco."
       ],
       "tr": {
@@ -982,7 +982,7 @@
       "kind": "form",
       "id": "cb-form-11",
       "verb": "conector",
-      "person": "No tengo carro, ___ camino al banco.",
+      "person": "El metro está cerrado, ___ camino al banco.",
       "answer": "así que",
       "accept": [
         "asi que",
@@ -997,6 +997,10 @@
       "verb": "conector",
       "person": "La tienda está cerrada, ¿___ vamos al súper?",
       "answer": "entonces",
+      "accept": [
+        "así que",
+        "asi que"
+      ],
       "table": "conectores-basicos-frases"
     },
     {
