@@ -52,8 +52,19 @@ describe('FeedbackModal (FeedbackButton)', () => {
     });
 
     await waitFor(() => expect(global.fetch).toHaveBeenCalledTimes(1));
-    const url = (global.fetch as jest.Mock).mock.calls[0][0] as string;
-    expect(url.startsWith('https://example.test/feedback?')).toBe(true);
+    const [url, init] = (global.fetch as jest.Mock).mock.calls[0] as [string, RequestInit];
+    // POST: the text is in the body, the URL carries nothing of it.
+    expect(url).toBe('https://example.test/feedback');
+    expect(url).not.toContain('?');
+    expect(url).not.toContain('Great');
+    expect(init.method).toBe('POST');
+    expect((init.headers as Record<string, string>)['Content-Type']).toMatch(/^text\/plain/);
+    const body = JSON.parse(init.body as string);
+    expect(body.feedbackText).toBe('Great app!');
+    expect(body.level).toBe('B1');
+    expect(body.languagePair).toBe('es-en');
+    expect(body.currentCard).toContain('pcic:x1');
+    expect(typeof body.appVersion).toBe('string');
     expect(shareSpy).not.toHaveBeenCalled();
   });
 

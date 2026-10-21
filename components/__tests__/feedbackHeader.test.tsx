@@ -60,10 +60,10 @@ describe('FeedbackButton placement', () => {
       fireEvent.press(header.getByText('Send'));
     });
     await waitFor(() => expect(global.fetch).toHaveBeenCalledTimes(1));
-    const params = new URL((global.fetch as jest.Mock).mock.calls[0][0] as string).searchParams;
-    expect(params.get('currentCard')).toMatch(/ · sentences:o724$/);
-    expect(params.get('languagePair')).toBe('en-es');
-    expect(params.get('level')).toBe('A2');
+    const body = JSON.parse((global.fetch as jest.Mock).mock.calls[0][1].body as string);
+    expect(body.currentCard).toMatch(/ · sentences:o724$/);
+    expect(body.languagePair).toBe('en-es');
+    expect(body.level).toBe('A2');
   });
 
   it('header: the context follows the screen (a new card sets the header again) and leaving the screen clears it', async () => {
@@ -77,7 +77,7 @@ describe('FeedbackButton placement', () => {
       fireEvent.press(header.getByText('Send'));
     });
     await waitFor(() => expect(global.fetch).toHaveBeenCalledTimes(1));
-    expect(new URL((global.fetch as jest.Mock).mock.calls[0][0] as string).searchParams.get('currentCard')).toMatch(/ · practice:q2$/);
+    expect(JSON.parse((global.fetch as jest.Mock).mock.calls[0][1].body as string).currentCard).toMatch(/ · practice:q2$/);
 
     mockSetOptions.mockClear();
     screen.unmount();
