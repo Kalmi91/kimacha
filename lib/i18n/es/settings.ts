@@ -48,6 +48,7 @@ const es: typeof en = {
       practiceScramble: 'Juego de letras revueltas',
       practiceMatch: 'Juego de parejas rápidas',
       practiceOpposites: 'Juego de opuestos',
+      sentenceListening: 'Frases: construir al escuchar',
     },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',

@@ -63,12 +63,14 @@ import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
+import { speak } from '@/lib/speech';
 import SentencesScreen from '../sentences';
 import { makeFlush } from '@/test-utils/flush';
 
 jest.setTimeout(30000);
 
 const mockRecord = recordPracticeResult as jest.Mock;
+const mockSpeak = speak as jest.Mock;
 
 const flush = makeFlush(14);
 
@@ -142,6 +144,8 @@ beforeEach(async () => {
   await clearSentenceRound(getDb());
   __resetBetaForTest();
   await getDb().setBetaFlag('xpV2', false);
+  // the listening builds (beta sentenceListening, on by default) have their own describe below; every other test runs with it off
+  await getDb().setBetaFlag('sentenceListening', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
   mockRecord.mockClear();
@@ -701,5 +705,103 @@ describe('the daily streak', () => {
     expect(await getDb().getStreak()).toEqual({ current_count: 4, last_date: YESTERDAY, longest_count: 4 });
     await typeCurrent(r);
     expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: localDateString(), longest_count: 5 });
+  });
+});
+
+describe('listening builds (beta sentenceListening, BRIEF-B1)', () => {
+  beforeEach(async () => {
+    await getDb().setBetaFlag('sentenceListening', true);
+    __resetBetaForTest();
+    mockSpeak.mockClear();
+  });
+  const play = (r: R) => r.queryByTestId('sentence-listen-play');
+  // Builds the sentence BUILD_ORDER[i] right from its tiles and moves on (the prompt may be hidden, so no current()).
+  const buildKnown = async (r: R, i: number) => {
+    build(r, SENT[BUILD_ORDER[i]].tiles);
+    check(r);
+    next(r);
+    await flush();
+  };
+
+  it('the 2nd and 4th build are heard (🔊 button, prompt hidden, read aloud); the 1st, the 3rd and the typing show the prompt', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    for (let i = 0; i < 4; i++) {
+      const listening = i % 2 === 1;
+      expect(stepText(r)).toBe(listening ? `Listen and build the sentence ${i + 1} of 4` : `Build the sentence ${i + 1} of 4`);
+      expect(play(r) !== null).toBe(listening);
+      expect(r.queryByText(BUILD_ORDER[i]) !== null).toBe(!listening);
+      if (listening) expect(mockSpeak).toHaveBeenCalledWith(BUILD_ORDER[i], expect.any(String)); // read when the step opens
+      await buildKnown(r, i);
+    }
+    expect(stepText(r)).toBe('Last step: type this sentence');
+    expect(current(r)).toBe(TYPED);
+    expect(play(r)).toBeNull();
+    expect(r.getByPlaceholderText('Type the sentence')).toBeTruthy();
+  });
+
+  it('the prompt appears after a right build; the 🔊 button reads it again', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    await buildKnown(r, 0);
+    mockSpeak.mockClear();
+    fireEvent.press(play(r)!);
+    expect(mockSpeak).toHaveBeenCalledWith(BUILD_ORDER[1], expect.any(String));
+    build(r, SENT[BUILD_ORDER[1]].tiles);
+    expect(r.queryByText(BUILD_ORDER[1])).toBeNull();
+    check(r);
+    expect(r.getByText(BUILD_ORDER[1])).toBeTruthy();
+    expect(r.getByText('Correct!')).toBeTruthy();
+  });
+
+  it('a wrong listening build: no credit, the prompt stays hidden, the sentence comes back as a listening one', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    await buildKnown(r, 0);
+    build(r, SENT[BUILD_ORDER[1]].tiles.slice(0, 1));
+    check(r);
+    expect(r.queryByText(BUILD_ORDER[1])).toBeNull();
+    next(r);
+    await flush();
+    expect(mockRecord).not.toHaveBeenCalled();
+    expect(play(r)).toBeNull(); // the 3rd: normal
+    await buildKnown(r, 2);
+    expect(play(r)).not.toBeNull(); // the 4th: listening
+    await buildKnown(r, 3);
+    // the 2nd sentence is back, at the end of the queue, and is still heard
+    expect(play(r)).not.toBeNull();
+    expect(r.queryByText(BUILD_ORDER[1])).toBeNull();
+    expect(stepText(r)).toMatch(/^Listen and build the sentence/);
+  });
+
+  it('switch off: all four builds show the prompt, no 🔊 button (the old behavior)', async () => {
+    await getDb().setBetaFlag('sentenceListening', false);
+    __resetBetaForTest();
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    for (let i = 0; i < 4; i++) {
+      expect(stepText(r)).toBe(`Build the sentence ${i + 1} of 4`);
+      expect(play(r)).toBeNull();
+      expect(r.getByText(BUILD_ORDER[i])).toBeTruthy();
+      await buildKnown(r, i);
+    }
+  });
+
+  it('Spanish UI: the step label and the button label', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    await buildKnown(r, 0);
+    r.unmount();
+    setLanguage('es');
+    const es = render(<SentencesScreen />); // the saved round continues on the 2nd build
+    await flush();
+    expect(stepText(es)).toBe('Escucha y construye la frase 2 de 4');
+    expect(es.getByLabelText('Reproducir la frase')).toBeTruthy();
+    expect(es.getByText('Escucha y construye la frase')).toBeTruthy();
   });
 });

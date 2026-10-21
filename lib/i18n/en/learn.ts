@@ -204,6 +204,10 @@ export default {
     progressA11y: (done: number, total: number) => `Steps done: ${done} of ${total}`,
     stepBuild: (n: number, total: number) => `Build the sentence ${n} of ${total}`,
     stepType: 'Last step: type this sentence',
+    // Listening build (beta sentenceListening): the prompt is heard, not shown, until the build is right.
+    stepListen: (n: number, total: number) => `Listen and build the sentence ${n} of ${total}`,
+    listenHint: 'Listen, then build the sentence',
+    listenPlay: 'Play the sentence',
     empty: 'Learn more words to unlock sentences',
     roundDone: (n: number) => (n === 1 ? 'Round done: 1 sentence' : `Round done: ${n} sentences`),
     more: 'More sentences',
