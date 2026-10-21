@@ -29,6 +29,9 @@ export interface Sm2Card {
 // from the learning state straight to review (interval =
 // GRADUATE_INTERVAL_DAYS); "again" still goes back to the end of the round
 // (see pickSm2Session), and graduates from there the same way with one good answer.
+// A lapse ("again" on a review card) does not throw the card back to 1 day: it keeps
+// its interval minus one day (an 8-day card comes back after 7, then 6, … down to 1),
+// and the relearned card graduates to that interval.
 export const LEARNING_STEPS = 1;
 const EASE_FLOOR = 1.3;
 const DEFAULT_EASE = 2.5;
@@ -93,8 +96,8 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
         if (step >= LEARNING_STEPS) {
           next.state = 'review';
           next.step = 0;
-          next.interval = GRADUATE_INTERVAL_DAYS;
-          next.due = addDays(today, GRADUATE_INTERVAL_DAYS);
+          next.interval = Math.max(GRADUATE_INTERVAL_DAYS, card.interval);
+          next.due = addDays(today, next.interval);
         } else {
           next.state = 'learning';
           next.step = step;
@@ -105,8 +108,8 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
       case 'easy':
         next.state = 'review';
         next.step = 0;
-        next.interval = EASY_LEARNING_INTERVAL_DAYS;
-        next.due = addDays(today, EASY_LEARNING_INTERVAL_DAYS);
+        next.interval = Math.max(EASY_LEARNING_INTERVAL_DAYS, card.interval);
+        next.due = addDays(today, next.interval);
         break;
     }
     if (card.state === 'new') {
@@ -121,6 +124,7 @@ export function sm2Review(card: Sm2Card, grade: Sm2Grade, today: string): Sm2Car
       next.lapses = card.lapses + 1;
       next.ease = Math.max(EASE_FLOOR, card.ease - 0.2);
       next.known = false;
+      next.interval = Math.max(GRADUATE_INTERVAL_DAYS, card.interval - 1);
       next.state = 'learning';
       next.step = 0;
       next.due = today;
