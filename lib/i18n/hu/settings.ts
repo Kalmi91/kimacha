@@ -1,0 +1,144 @@
+import type en from '../en/settings';
+
+const hu: typeof en = {
+  settings: {
+    themeAuto: 'Automatikus',
+    themeLight: 'Világos',
+    themeDark: 'Sötét',
+    paletteElectric: 'Elektromos kék',
+    paletteLime: 'Lime + rózsaszín',
+    paletteBrand: 'Kimacha',
+    paletteCyan: 'Cián + ibolya',
+    paletteOrange: 'Narancs + türkiz',
+    // the theme grid (app/themes.tsx), My mix (app/theme-mix.tsx) and the theme decor texts.
+    themes: {
+      title: 'Témák',
+      oneLook: 'Ennek a témának egyetlen kinézete van.',
+      posterSlogan: 'TANULJ, TANULJ, TANULJ!',
+      sample: 'el carro',
+      know: 'Tudom',
+      // the theme decor texts (senior, retro95, y2k, gamer).
+      readAloud: 'Felolvasás',
+      retroTitle: 'kimacha.exe',
+      newWord: 'új szó',
+      gamerLevel: 'LVL',
+      mixTitle: 'Saját mix',
+      mixColors: 'Színek',
+      mixFont: 'Betűtípus',
+      mixShape: 'Forma',
+      mixDecor: 'Díszítés',
+      mixNone: 'Nincs',
+      mixSave: 'Ennek a mixnek a használata',
+      shockWorker: 'Élmunkás',
+      dailyPlan: 'Napi terv',
+    },
+    weeklyGoal: 'Heti tanulási cél',
+    weeklyGoalHours: (h: string) => `${h} óra / hét`,
+    weeklyGoalDoneTag: '✓ KÉSZ',
+    missingVoice: (langs: string) => `⚠️ Nincs telepítve hang ehhez: ${langs}. Töltsd le a telefon szövegfelolvasó (TTS) beállításaiban; addig az app ezen a nyelven néma marad.`,
+    dailyNewLimit: 'Napi új szavak',
+    dailyNewLimitWords: (n: string) => `${n} szó / nap`,
+    beta: {
+      title: 'Béta',
+      practiceTab: 'Gyakorlás fül',
+      sentenceTab: 'Mondatok fül',
+      xpV2: 'Új XP-értékek',
+      levels: 'A1-C1 szintek',
+    },
+    strictAccents: 'Az ékezetek számítanak',
+    strictAccentsHint: 'A hiányzó ékezet (á, é, ñ) hibának számít gépeléskor.',
+    articlePicker: 'Névelő-gombok',
+    articlePickerHint: 'A spanyol főnévkártyákon az el/la/los/las közül választasz, nem kell beírnod. A ⊘ azt jelenti: nincs névelő.',
+    missedWordDelay: 'Az elrontott szó ennyi idő múlva jön vissza',
+    missedWordDelaySeconds: (n: string) => `${n} mp`,
+    learningDirection: 'Tanulási irány',
+    chooseDirection: 'Válaszd ki a tanulási irányt',
+    directionEnEs: 'Angol → spanyol',
+    directionEsEn: 'Spanyol → angol',
+    credits: 'Források és licencek',
+    // the row that resets the grammar progress, and its confirmation.
+    resetGrammar: '🗑️ Nyelvtani haladás törlése',
+    resetGrammarTitle: 'Nyelvtani haladás törlése',
+    resetGrammarMessage: 'Ez törli az összes nyelvtani lecke és gyakorlás haladását. Biztos vagy benne?',
+    // the restart rows in a collapsible section.
+    resetSection: '🗑️ Haladás törlése',
+    // the __DEV__-only exam control (visible only in a development build).
+    devSeedExamA1: 'DEV: vizsgaállapot beállítása (A1-B2)',
+    devSeedExamA1Done: 'DEV: a vizsgaállapot beállítva (A1-B2), nyisd meg a szintválasztót',
+  },
+  // theme (skin) names and group names for the Settings theme grid.
+  skins: {
+    names: {
+      brutal: 'Neobrutalista',
+      deco: 'Art deco',
+      loteria: 'Lotería',
+      senior: 'Senior',
+      konnyu: 'Könnyű olvasás',
+      retro95: 'Retro 95',
+      y2k: 'Y2K',
+      kawaii: 'Kawaii',
+      gamer: 'Gamer',
+      botanikus: 'Botanikus',
+      zen: 'Zen',
+      diszlexia: 'Diszlexia-betűtípus',
+      szocreal: 'Szocreál',
+      plakat: 'Plakát',
+      csillampony: 'Csillámpóni',
+      bauhaus: 'Bauhaus',
+      popart: 'Pop-art',
+      szecesszio: 'Szecesszió',
+      kalocsai: 'Kalocsai',
+      memphis: 'Memphis',
+      kodex: 'Kódex',
+      graffiti: 'Graffiti',
+      ukiyoe: 'Ukiyo-e',
+      classic: 'Klasszikus',
+      mix: 'Saját mix',
+    },
+    groups: {
+      ajanlott: 'Ajánlott',
+      muveszet: 'Művészeti irányzatok',
+      kultura: 'Kultúra',
+      hangulat: 'Hangulat',
+      olvasas: 'Könnyű olvasás',
+    },
+  },
+  backup: {
+    backup: 'Biztonsági mentés',
+    restore: 'Visszaállítás',
+    confirmTitle: 'Visszaállítás',
+    confirmMessage: 'Ez felülírja a jelenlegi haladásod a mentés tartalmával. Biztos vagy benne?',
+    confirmYes: 'Visszaállítom',
+    doneTitle: 'Visszaállítva!',
+    errorTitle: 'Hiba',
+    exportError: 'A mentést nem sikerült létrehozni.',
+    importError: 'Érvénytelen vagy sérült mentésfájl. Az adataid nem változtak.',
+  },
+  credits: {
+    title: 'Források és licencek',
+    cefrjBody:
+      'Angol B1 szólista: The CEFR-J Wordlist Version 1.5, összeállította Yukio Tono, Tokiói ' +
+      'Idegennyelvi Egyetem (cefr-j.org). A feltételei szerint, forrásmegjelöléssel használjuk ' +
+      'kutatási és kereskedelmi célra.',
+    cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',
+    cefrjUrl: 'https://github.com/openlanguageprofiles/olp-en-cefrj',
+    fontsBody:
+      'Az app témáiban használt betűtípusok. Mind nyílt forráskódú: SIL Open Font License 1.1, ' +
+      'kivéve a Permanent Marker (Apache License 2.0).',
+    photosBody:
+      'Egyes kártyák fotói a Wikimedia Commonsról származnak. Minden fotó szerzője és licence ' +
+      'fel van tüntetve a kártyán.',
+    privacyLabel: 'Adatvédelmi irányelvek',
+    privacyUrl: 'https://kalmi91.github.io/kimacha/privacy-policy.html',
+  },
+  feedback: {
+    button: 'Visszajelzés',
+    placeholder: 'Írd le a véleményed...',
+    send: 'Küldés',
+    cancel: 'Mégse',
+    thanks: 'Köszönjük!',
+    errorTitle: 'Nem sikerült elküldeni. Próbáld újra.',
+  },
+};
+
+export default hu;
