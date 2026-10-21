@@ -1,6 +1,7 @@
 // the level picker sheet, with the real data/pcic (not mocked), also offers B2 for the en→es
-// direction, with 763 items, and C1 with 259; for es→en both are empty, so the "0 items = don't offer it" filter
-// leaves them out.
+// direction, with every B2 card of data/words-open, and C1 with every C1 card; for es→en both are empty, so the
+// "0 items = don't offer it" filter leaves them out. The counts come from the data files, so a new batch of words
+// does not need a test edit (the exact totals are pinned in data/__tests__/openWords.test.ts).
 
 import { fireEvent, render } from '@testing-library/react-native';
 
@@ -8,6 +9,9 @@ import Colors from '@/constants/Colors';
 import { setPcicTarget } from '@/data/pcic';
 import { sm2NewCard } from '@/lib/sm2';
 import LevelPickerSheet from '../LevelPickerSheet';
+
+const B2_COUNT = (require('@/data/words-open/b2.json') as unknown[]).length;
+const C1_COUNT = (require('@/data/words-open/c1.json') as unknown[]).length;
 
 const renderSheet = (target: 'es' | 'en', onSelect = jest.fn(), cards = [sm2NewCard('o451')]) =>
   render(
@@ -36,12 +40,12 @@ describe('LevelPickerSheet: B2 (words-open)', () => {
     expect(onSelect).toHaveBeenCalledWith('B2');
   });
 
-  it('en→es: the B2 row measures progress against 763 items (the o451 card belonging to B2 is "introduced")', () => {
+  it('en→es: the B2 row measures progress against every B2 item (the o451 card belonging to B2 is "introduced")', () => {
     setPcicTarget('es');
     const introduced = { ...sm2NewCard('o451'), state: 'learning' as const };
     const { getByText } = renderSheet('es', jest.fn(), [introduced]);
 
-    expect(getByText('1 / 763 introduced')).toBeTruthy();
+    expect(getByText(`1 / ${B2_COUNT} introduced`)).toBeTruthy();
   });
 
   it('es→en: B2 is empty, we do not offer it', () => {
@@ -66,12 +70,12 @@ describe('LevelPickerSheet: C1 (words-open)', () => {
     expect(onSelect).toHaveBeenCalledWith('C1');
   });
 
-  it('en→es: the C1 row measures progress against 259 items (the o1357 card belonging to C1 is "introduced")', () => {
+  it('en→es: the C1 row measures progress against every C1 item (the o1357 card belonging to C1 is "introduced")', () => {
     setPcicTarget('es');
     const introduced = { ...sm2NewCard('o1357'), state: 'learning' as const };
     const { getByText } = renderSheet('es', jest.fn(), [introduced]);
 
-    expect(getByText('1 / 259 introduced')).toBeTruthy();
+    expect(getByText(`1 / ${C1_COUNT} introduced`)).toBeTruthy();
   });
 
   it('es→en: C1 is empty, we do not offer it', () => {
