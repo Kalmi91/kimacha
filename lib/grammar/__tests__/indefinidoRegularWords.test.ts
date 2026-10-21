@@ -73,11 +73,17 @@ describe('indefinido-regular: the verbs and words of the drills are in the table
     expect(cells.every((c) => c.verb !== '')).toBe(true);
   });
 
-  // "madre" (first table) is observed to be absent from the word deck, so it is not asserted here.
   it('the words of the two word tables are still in the word deck (hoy from the first, pequeño from the second)', () => {
     const words = wordCellsForLesson(lesson, 'es').map((c) => c.es.toLowerCase());
     expect(words).toContain('hoy');
     expect(words).toContain('pequeño');
+  });
+
+  // The PCIC stores the nouns with their article ("la madre"); the table cells hold the bare noun.
+  it('the article nouns of the word tables are in the word deck with their article (la madre, el aeropuerto)', () => {
+    const words = wordCellsForLesson(lesson, 'es').map((c) => c.es.toLowerCase());
+    expect(words).toContain('la madre');
+    expect(words).toContain('el aeropuerto');
   });
 
   it('no indefinido form used in the drills is missing from the tables', () => {
