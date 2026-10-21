@@ -79,18 +79,37 @@ describe('sm2Review, review state', () => {
     expect(next.ease).toBeCloseTo(2.65);
   });
 
-  it('again: lapse, ease - 0.20, learning step 0, then good -> interval 1 (LEARNING_STEPS=1)', () => {
-    const lapsed = sm2Review(reviewCard({ ease: 2.5, lapses: 0 }), 'again', TODAY);
+  it('again: lapse, ease - 0.20, learning step 0, then good -> interval - 1 day (LEARNING_STEPS=1)', () => {
+    const lapsed = sm2Review(reviewCard({ ease: 2.5, lapses: 0, interval: 8 }), 'again', TODAY);
     expect(lapsed.state).toBe('learning');
     expect(lapsed.step).toBe(0);
     expect(lapsed.lapses).toBe(1);
     expect(lapsed.ease).toBeCloseTo(2.3);
     expect(lapsed.due).toBe(TODAY);
+    expect(lapsed.interval).toBe(7);
 
     const g1 = sm2Review(lapsed, 'good', TODAY);
     expect(g1.state).toBe('review');
-    expect(g1.interval).toBe(1);
-    expect(g1.due).toBe(TOMORROW);
+    expect(g1.interval).toBe(7);
+    expect(g1.due).toBe(addDays(TODAY, 7));
+  });
+
+  it('every new lapse takes one more day off: 8 -> 7 -> 6, never below 1 day', () => {
+    let card = reviewCard({ interval: 8 });
+    const intervals: number[] = [];
+    for (let i = 0; i < 9; i++) {
+      card = sm2Review(sm2Review(card, 'again', TODAY), 'good', TODAY);
+      intervals.push(card.interval);
+    }
+    expect(intervals).toEqual([7, 6, 5, 4, 3, 2, 1, 1, 1]);
+    expect(card.due).toBe(TOMORROW);
+  });
+
+  it('easy after a lapse graduates to at least the shortened interval', () => {
+    const lapsed = sm2Review(reviewCard({ interval: 10 }), 'again', TODAY);
+    expect(sm2Review(lapsed, 'easy', TODAY).interval).toBe(9);
+    const short = sm2Review(reviewCard({ interval: 2 }), 'again', TODAY);
+    expect(sm2Review(short, 'easy', TODAY).interval).toBe(4);
   });
 
   it('ease floor 1.3, repeated again does not go below it either', () => {
