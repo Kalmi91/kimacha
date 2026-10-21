@@ -45,6 +45,7 @@ export default {
       sentenceTab: 'Sentences tab',
       xpV2: 'New XP values',
       levels: 'Levels A1-C1',
+      practiceDictation: 'Dictation game',
     },
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',

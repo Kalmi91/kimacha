@@ -155,6 +155,23 @@ export default {
     questionsDone: 'Questions done',
     practiceSentences: 'Practice these words in sentences',
     newReading: 'New reading',
+    // the mode chips on top of the tab (components/practice/modes.ts): Reading plus every game that is switched on.
+    modesLabel: 'Practice mode',
+    modeReading: 'Reading',
+    modeDictation: 'Dictation',
+    // shared by the games (lib/practice/useGameRound.ts, components/practice/GameFrame.tsx)
+    game: {
+      emptyTitle: 'Learn a few more words, then there will be something to practice here',
+      progressLabel: (n: number, total: number) => `Word ${n} of ${total}`,
+      roundDone: 'Round done',
+      score: (n: number, total: number) => `${n} of ${total} right first time`,
+      newRound: 'New round',
+    },
+    dictation: {
+      listen: 'Listen',
+      listenAgain: 'Listen again',
+      means: (meaning: string) => `Means: ${meaning}`,
+    },
   },
   // Sentences tab (beta): header progress (steps: every build plus the one typing), the build and the typing step, empty and round-done states.
   sentenceTab: {

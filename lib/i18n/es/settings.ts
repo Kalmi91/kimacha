@@ -44,6 +44,7 @@ const es: typeof en = {
       sentenceTab: 'Pestaña Frases',
       xpV2: 'Nuevos valores de XP',
       levels: 'Niveles A1-C1',
+      practiceDictation: 'Juego de dictado',
     },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
