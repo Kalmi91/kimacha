@@ -1,0 +1,1367 @@
+{
+  "schema": 2,
+  "topic": "tu-usted",
+  "level": "A1",
+  "title": {
+    "en": "Tú, usted, ustedes: who you are talking to",
+    "es": "Tú, usted y ustedes"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In Spanish the verb ending already shows who is acting, so the subject pronouns (yo, tú, él, ella, usted, nosotros / nosotras, ustedes, ellos / ellas) are usually left out; the lesson «Present: regular verbs» shows the endings. What you do have to choose is how to say «you»: tú or usted for one person, and in Mexico always ustedes for several. Usted sounds polite and takes the same verb form as él / ella; ustedes is just the plural and takes the same form as ellos / ellas.",
+        "es": "En español la terminación del verbo ya dice quién actúa, por eso los pronombres sujeto (yo, tú, él, ella, usted, nosotros / nosotras, ustedes, ellos / ellas) casi siempre se omiten; la lección «Presente: verbos regulares» muestra las terminaciones. Lo que sí hay que elegir es cómo dirigirse a alguien: tú o usted para una persona y, en México, siempre ustedes para varias. Usted suena cortés y lleva la misma forma del verbo que él / ella; ustedes es solo el plural y lleva la misma forma que ellos / ellas."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "The pronouns",
+        "es": "Los pronombres"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "One person: yo (I), tú (you, informal), usted (you, formal), él (he) and ella (she). Tú and usted both address a single person; what changes is the level of respect, see below.",
+            "es": "Una persona: yo, tú (de confianza), usted (formal), él y ella. Tú y usted se dirigen a una sola persona; lo que cambia es el grado de respeto, como se explica más abajo."
+          },
+          "examples": [
+            {
+              "es": "Yo soy Ana, ¿y tú?",
+              "tr": {
+                "en": "I am Ana, and you?",
+                "es": "Yo soy Ana, ¿y tú?"
+              }
+            },
+            {
+              "es": "Él es mi padre y ella es mi madre.",
+              "tr": {
+                "en": "He is my father and she is my mother.",
+                "es": "Él es mi padre y ella es mi madre."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Several people: nosotros / nosotras (we), ustedes (you all) and ellos / ellas (they). Nosotros and ellos are for men or a mixed group; nosotras and ellas only for a group of women.",
+            "es": "Varias personas: nosotros / nosotras, ustedes y ellos / ellas. Nosotros y ellos son para hombres o para un grupo mixto; nosotras y ellas, solo para un grupo de mujeres."
+          },
+          "examples": [
+            {
+              "es": "Luis y yo somos amigos. Nosotros trabajamos juntos.",
+              "tr": {
+                "en": "Luis and I are friends. We work together.",
+                "es": "Luis y yo somos amigos. Nosotros trabajamos juntos."
+              }
+            },
+            {
+              "es": "Ana y Rosa son hermanas. Ellas viven en Puebla.",
+              "tr": {
+                "en": "Ana and Rosa are sisters. They live in Puebla.",
+                "es": "Ana y Rosa son hermanas. Ellas viven en Puebla."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "tu-usted-formas",
+      "title": {
+        "en": "Subject pronouns with hablar, ser, tener and querer",
+        "es": "Pronombres sujeto con hablar, ser, tener y querer"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "hablar",
+          "es": "hablar"
+        },
+        {
+          "en": "ser",
+          "es": "ser"
+        },
+        {
+          "en": "tener",
+          "es": "tener"
+        },
+        {
+          "en": "querer",
+          "es": "querer"
+        }
+      ],
+      "rows": [
+        [
+          "yo",
+          "hablo",
+          "soy",
+          "tengo",
+          "quiero"
+        ],
+        [
+          "tú",
+          "hablas",
+          "eres",
+          "tienes",
+          "quieres"
+        ],
+        [
+          "usted",
+          "habla",
+          "es",
+          "tiene",
+          "quiere"
+        ],
+        [
+          "él/ella",
+          "habla",
+          "es",
+          "tiene",
+          "quiere"
+        ],
+        [
+          "nosotros/nosotras",
+          "hablamos",
+          "somos",
+          "tenemos",
+          "queremos"
+        ],
+        [
+          "ustedes",
+          "hablan",
+          "son",
+          "tienen",
+          "quieren"
+        ],
+        [
+          "ellos/ellas",
+          "hablan",
+          "son",
+          "tienen",
+          "quieren"
+        ]
+      ],
+      "enPrompt": [
+        [
+          "I speak",
+          "I am",
+          "I have",
+          "I want"
+        ],
+        [
+          "you speak (informal)",
+          "you are (informal)",
+          "you have (informal)",
+          "you want (informal)"
+        ],
+        [
+          "you speak (formal)",
+          "you are (formal)",
+          "you have (formal)",
+          "you want (formal)"
+        ],
+        [
+          "he/she speaks",
+          "he/she is",
+          "he/she has",
+          "he/she wants"
+        ],
+        [
+          "we speak",
+          "we are",
+          "we have",
+          "we want"
+        ],
+        [
+          "you all speak",
+          "you all are",
+          "you all have",
+          "you all want"
+        ],
+        [
+          "they speak",
+          "they are",
+          "they have",
+          "they want"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Do you say the pronoun?",
+        "es": "¿Se dice el pronombre?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Usually not: «Trabajo en un banco» is enough, and «Yo trabajo en un banco» already sounds like a contrast or a stress.",
+            "es": "Casi nunca: basta con «Trabajo en un banco», y «Yo trabajo en un banco» ya suena a contraste o a énfasis."
+          },
+          "examples": [
+            {
+              "es": "Trabajo en un banco.",
+              "tr": {
+                "en": "I work at a bank.",
+                "es": "Trabajo en un banco."
+              }
+            },
+            {
+              "es": "¿Hablas español?",
+              "tr": {
+                "en": "Do you speak Spanish?",
+                "es": "¿Hablas español?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "To contrast two people or to stress who: «Yo leo y tú escribes». Also to pass a question on: «¿Y tú?»",
+            "es": "Para contrastar a dos personas o para dar énfasis: «Yo leo y tú escribes». También para devolver una pregunta: «¿Y tú?»"
+          },
+          "examples": [
+            {
+              "es": "Yo leo y tú escribes.",
+              "tr": {
+                "en": "I read and you write.",
+                "es": "Yo leo y tú escribes."
+              }
+            },
+            {
+              "es": "Estoy bien, gracias. ¿Y tú?",
+              "tr": {
+                "en": "I am fine, thank you. And you?",
+                "es": "Estoy bien, gracias. ¿Y tú?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "To make clear who is meant when the verb fits several people: habla can be he, she or you (formal), so usted is often said, also to sound polite.",
+            "es": "Para aclarar quién es cuando el verbo sirve para varias personas: «habla» puede ser él, ella o usted, por eso usted se dice a menudo, también por cortesía."
+          },
+          "examples": [
+            {
+              "es": "¿Usted habla español?",
+              "tr": {
+                "en": "Do you speak Spanish? (formal)",
+                "es": "¿Usted habla español?"
+              }
+            },
+            {
+              "es": "Ella habla francés y él habla italiano.",
+              "tr": {
+                "en": "She speaks French and he speaks Italian.",
+                "es": "Ella habla francés y él habla italiano."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Tú or usted?",
+        "es": "¿Tú o usted?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Tú: friends, family, classmates and colleagues, children and young people. The verb ends in -s: «¿Cómo estás?»",
+            "es": "Tú: amigos, familia, compañeros de clase y de trabajo, niños y jóvenes. El verbo acaba en -s: «¿Cómo estás?»"
+          },
+          "examples": [
+            {
+              "es": "Hola, Luis. ¿Cómo estás?",
+              "tr": {
+                "en": "Hi, Luis. How are you?",
+                "es": "Hola, Luis. ¿Cómo estás?"
+              }
+            },
+            {
+              "es": "¿Quieres comer con nosotros?",
+              "tr": {
+                "en": "Do you want to eat with us?",
+                "es": "¿Quieres comer con nosotros?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Usted: strangers, older people, shop and restaurant staff, doctors, offices and officials. The verb is the third person singular, the same as for él / ella: «¿Cómo está usted?»",
+            "es": "Usted: desconocidos, personas mayores, el personal de tiendas y restaurantes, médicos, oficinas y funcionarios. El verbo va en la tercera persona del singular, igual que con él / ella: «¿Cómo está usted?»"
+          },
+          "examples": [
+            {
+              "es": "Buenos días, señora. ¿Cómo está usted?",
+              "tr": {
+                "en": "Good morning, madam. How are you?",
+                "es": "Buenos días, señora. ¿Cómo está usted?"
+              }
+            },
+            {
+              "es": "¿De dónde es usted?",
+              "tr": {
+                "en": "Where are you from? (formal)",
+                "es": "¿De dónde es usted?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "When in doubt with an adult you do not know, start with usted: it is polite, and the other person can invite you to use tú.",
+            "es": "Si dudas con un adulto que no conoces, empieza con usted: es cortés, y la otra persona puede invitarte a usar tú."
+          },
+          "examples": [
+            {
+              "es": "Mucho gusto. ¿Cómo se llama usted?",
+              "tr": {
+                "en": "Nice to meet you. What is your name? (formal)",
+                "es": "Mucho gusto. ¿Cómo se llama usted?"
+              }
+            },
+            {
+              "es": "Mucho gusto. ¿Y tú, cómo te llamas?",
+              "tr": {
+                "en": "Nice to meet you. And you, what is your name? (informal)",
+                "es": "Mucho gusto. ¿Y tú, cómo te llamas?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Ustedes: every plural «you»",
+        "es": "Ustedes: todo «tú» en plural"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Ustedes is the plural of both tú and usted: friends, family or strangers, in a formal or an informal setting. The verb is the third person plural, the same as for ellos / ellas.",
+            "es": "Ustedes es el plural de tú y de usted: amigos, familia o desconocidos, en un ambiente formal o informal. El verbo va en la tercera persona del plural, igual que con ellos / ellas."
+          },
+          "examples": [
+            {
+              "es": "¿Ustedes quieren café?",
+              "tr": {
+                "en": "Do you all want coffee?",
+                "es": "¿Ustedes quieren café?"
+              }
+            },
+            {
+              "es": "Ustedes son muy amables.",
+              "tr": {
+                "en": "You are very kind.",
+                "es": "Ustedes son muy amables."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "There is no vosotros in Mexico. It is the plural of tú in Spain, with its own verb forms such as habláis or tenéis; in Mexico ustedes does that job.",
+            "es": "En México no existe vosotros. Es el plural de tú en España, con formas propias del verbo como habláis o tenéis; en México ustedes hace ese trabajo."
+          },
+          "examples": [
+            {
+              "es": "Amigos, ¿ustedes vienen mañana?",
+              "tr": {
+                "en": "Friends, are you all coming tomorrow?",
+                "es": "Amigos, ¿ustedes vienen mañana?"
+              }
+            },
+            {
+              "es": "Niños, ¿ustedes quieren jugar?",
+              "tr": {
+                "en": "Kids, do you want to play?",
+                "es": "Niños, ¿ustedes quieren jugar?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Similar, yet different",
+        "es": "Parecido, pero distinto"
+      },
+      "pairs": [
+        {
+          "a": "tú hablas",
+          "b": "usted habla",
+          "note": {
+            "en": "The same question at two levels of respect: tú takes the ending -s, usted takes the third person. Do not mix them: not «tú habla» and not «usted hablas».",
+            "es": "La misma pregunta con dos grados de respeto: tú lleva la terminación -s y usted, la tercera persona. No se mezclan: ni «tú habla» ni «usted hablas»."
+          },
+          "examples": [
+            {
+              "es": "¿Hablas español?",
+              "tr": {
+                "en": "Do you speak Spanish? (to a friend)",
+                "es": "¿Hablas español?"
+              }
+            },
+            {
+              "es": "¿Habla usted español?",
+              "tr": {
+                "en": "Do you speak Spanish? (to a stranger)",
+                "es": "¿Habla usted español?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "usted habla",
+          "b": "ustedes hablan",
+          "note": {
+            "en": "One person or several: usted takes habla, ustedes takes hablan. Ustedes is the only plural «you», for friends and for strangers.",
+            "es": "Una persona o varias: usted lleva habla y ustedes lleva hablan. Ustedes es el único plural de «tú», para amigos y para desconocidos."
+          },
+          "examples": [
+            {
+              "es": "¿Usted habla francés?",
+              "tr": {
+                "en": "Do you speak French? (one person, formal)",
+                "es": "¿Usted habla francés?"
+              }
+            },
+            {
+              "es": "¿Ustedes hablan francés?",
+              "tr": {
+                "en": "Do you all speak French?",
+                "es": "¿Ustedes hablan francés?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "ellos",
+          "b": "ellas",
+          "note": {
+            "en": "Ellos is for men or a mixed group; ellas only when everyone is a woman. Nosotros and nosotras work the same way.",
+            "es": "Ellos es para hombres o un grupo mixto; ellas, solo cuando todas son mujeres. Nosotros y nosotras funcionan igual."
+          },
+          "examples": [
+            {
+              "es": "Mis padres llegan hoy; ellos vienen en tren.",
+              "tr": {
+                "en": "My parents arrive today; they come by train.",
+                "es": "Mis padres llegan hoy; ellos vienen en tren."
+              }
+            },
+            {
+              "es": "Mis hermanas llegan hoy; ellas vienen en tren.",
+              "tr": {
+                "en": "My sisters arrive today; they come by train.",
+                "es": "Mis hermanas llegan hoy; ellas vienen en tren."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Calling someone: señor, señora, joven",
+        "es": "Llamar a alguien: señor, señora, joven"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Señor (sir, Mr.) and señora (madam, Mrs.) are the polite words for a man and a woman, with or without a surname: señor López, señora Díaz. They go with usted.",
+            "es": "Señor y señora son las palabras corteses para un hombre y una mujer, con apellido o sin él: señor López, señora Díaz. Van con usted."
+          },
+          "examples": [
+            {
+              "es": "Buenas tardes, señora Díaz.",
+              "tr": {
+                "en": "Good afternoon, Mrs. Díaz.",
+                "es": "Buenas tardes, señora Díaz."
+              }
+            },
+            {
+              "es": "Señor López, ¿usted trabaja aquí?",
+              "tr": {
+                "en": "Mr. López, do you work here?",
+                "es": "Señor López, ¿usted trabaja aquí?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Joven is a friendly way to call a young person whose name you do not know, for example a waiter or someone working in a shop. It goes with usted too.",
+            "es": "Joven es una forma amable de llamar a una persona joven cuyo nombre no conoces, por ejemplo a un mesero o a alguien que trabaja en una tienda. También va con usted."
+          },
+          "examples": [
+            {
+              "es": "Joven, la cuenta, por favor.",
+              "tr": {
+                "en": "Excuse me, the bill, please.",
+                "es": "Joven, la cuenta, por favor."
+              }
+            },
+            {
+              "es": "Joven, ¿me puede ayudar?",
+              "tr": {
+                "en": "Excuse me, can you help me?",
+                "es": "Joven, ¿me puede ayudar?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With usted the other little words are third person too: su (your), le (to you), lo / la (you). They have their own lessons: «Possessives: mi, tu, su, nuestro», «Direct object: me, te, lo, la, nos, los, las» and «Indirect object: me, te, le, nos, les».",
+            "es": "Con usted las palabras pequeñas también van en tercera persona: su (de usted), le (a usted), lo / la (a usted). Tienen sus propias lecciones: «Posesivos: mi, tu, su, nuestro», «Objeto directo: me, te, lo, la, nos, los, las» y «Objeto indirecto: me, te, le, nos, les»."
+          },
+          "examples": [
+            {
+              "es": "Señor, ¿es su carro?",
+              "tr": {
+                "en": "Sir, is this your car?",
+                "es": "Señor, ¿es su carro?"
+              }
+            },
+            {
+              "es": "Señora, ¿le doy un café?",
+              "tr": {
+                "en": "Madam, shall I give you a coffee?",
+                "es": "Señora, ¿le doy un café?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "The classic slip is mixing the pronoun with the wrong ending: tú tienes, but usted tiene; not «tú tiene» or «usted tienes». Usted always takes the same form as él / ella.",
+        "es": "El error clásico es mezclar el pronombre con la terminación equivocada: tú tienes, pero usted tiene; no «tú tiene» ni «usted tienes». Usted lleva siempre la misma forma que él / ella."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Spanish the verb ending already shows who is acting, so the subject pronoun is usually left out. It is said only to contrast two people, to stress who, or to make clear who is meant. What you do have to choose is the word for you. For one friend, a relative or a classmate use the informal word, and its verb ends in s. For a stranger, an older person, a shop, a restaurant or an office use the formal word, and its verb is the same as for he and she. For several people there is only one word in Mexico, for friends and strangers alike, and its verb is the same as for they. The plural you of Spain is not used in Mexico. To call a stranger politely, say sir or madam, or, for a young person, the word that simply means young.",
+    "es": "En español la terminación del verbo ya dice quién actúa, por eso el pronombre sujeto casi siempre se omite. Solo se dice para contrastar a dos personas, para dar énfasis o para aclarar quién es. Lo que sí hay que elegir es cómo dirigirse a alguien. Con un amigo, un familiar o un compañero se usa tú, y el verbo acaba en s. Con un desconocido, una persona mayor, en una tienda, un restaurante o una oficina se usa usted, y el verbo es el mismo que con él y ella. Para varias personas, en México solo existe ustedes, con amigos y con desconocidos, y el verbo es el mismo que con ellos y ellas. El vosotros de España no se usa en México. Para llamar con respeto a alguien que no conoces, se dice señor, señora o, a una persona joven, joven."
+  },
+  "glossary": [
+    {
+      "word": "señor",
+      "gloss": {
+        "en": "sir, Mr.",
+        "es": "el señor"
+      }
+    },
+    {
+      "word": "señora",
+      "gloss": {
+        "en": "madam, Mrs.",
+        "es": "la señora"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "tu-01",
+      "sentence": "Y ___, Luis, ¿quieres un café?",
+      "options": [
+        "tú",
+        "usted",
+        "ustedes"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "«quieres» ends in -s: it is the tú form. Luis is a friend called by his first name, so the pronoun is tú.",
+        "es": "«quieres» acaba en -s: es la forma de tú. Luis es un amigo al que se llama por su nombre, así que el pronombre es tú."
+      },
+      "wrong": {
+        "usted": {
+          "en": "usted: the formal «you». It does not fit here, because usted takes the third person (quiere), not quieres, and a friend called by his first name gets tú. With usted it would be: Y usted, señor, ¿quiere un café?",
+          "es": "usted: el «tú» formal. Aquí no encaja, porque usted lleva la tercera persona (quiere), no quieres, y a un amigo al que se llama por su nombre se le dice tú. Con usted sería: Y usted, señor, ¿quiere un café?"
+        },
+        "ustedes": {
+          "en": "ustedes: the plural «you». It does not fit here, because Luis is one person, and ustedes needs quieren. With ustedes it would be: Y ustedes, Luis y Marco, ¿quieren un café?",
+          "es": "ustedes: el plural de «tú». Aquí no encaja, porque Luis es una sola persona y ustedes necesita quieren. Con ustedes sería: Y ustedes, Luis y Marco, ¿quieren un café?"
+        }
+      },
+      "examples": [
+        "Hola, Sofía. ¿Cómo estás?",
+        "Juegas muy bien fútbol, Carlos."
+      ],
+      "tr": {
+        "en": "And you, Luis, do you want a coffee?",
+        "es": "Y tú, Luis, ¿quieres un café?"
+      }
+    },
+    {
+      "id": "tu-02",
+      "sentence": "Buenos días. ¿___ trabaja aquí?",
+      "options": [
+        "Usted",
+        "Tú",
+        "Ustedes"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "«trabaja» is the third person singular, the form that goes with usted. A stranger greeted with Buenos días gets the polite «you»: usted.",
+        "es": "«trabaja» es la tercera persona del singular, la forma que va con usted. A un desconocido al que se saluda con Buenos días se le habla de usted."
+      },
+      "wrong": {
+        "Tú": {
+          "en": "Tú: the informal «you». It does not fit here, because tú needs trabajas, and a stranger gets usted. With tú it would be: Hola, Diego. ¿Tú trabajas aquí?",
+          "es": "Tú: el «tú» de confianza. Aquí no encaja, porque tú necesita trabajas, y a un desconocido se le habla de usted. Con tú sería: Hola, Diego. ¿Tú trabajas aquí?"
+        },
+        "Ustedes": {
+          "en": "ustedes: the plural «you». It does not fit here, because trabaja is singular, and ustedes needs trabajan. With ustedes it would be: Buenos días. ¿Ustedes trabajan aquí?",
+          "es": "ustedes: el plural de «tú». Aquí no encaja, porque trabaja es singular y ustedes necesita trabajan. Con ustedes sería: Buenos días. ¿Ustedes trabajan aquí?"
+        }
+      },
+      "examples": [
+        "¿Cómo se llama usted?",
+        "Usted siempre llega temprano."
+      ],
+      "tr": {
+        "en": "Good morning. Do you work here?",
+        "es": "Buenos días. ¿Usted trabaja aquí?"
+      }
+    },
+    {
+      "id": "tu-03",
+      "sentence": "Marco y Lucía, ¿___ hablan francés?",
+      "options": [
+        "ustedes",
+        "usted",
+        "tú"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Marco and Lucía are two people being spoken to, so «you» is plural: ustedes, with the third person plural hablan.",
+        "es": "Marco y Lucía son dos personas a las que se les habla, así que «tú» va en plural: ustedes, con la tercera persona del plural hablan."
+      },
+      "wrong": {
+        "usted": {
+          "en": "usted: the formal singular «you». It does not fit here, because there are two people and usted needs habla. With usted it would be about one person: Buenos días, señor. ¿Usted habla francés?",
+          "es": "usted: el «tú» formal en singular. Aquí no encaja, porque son dos personas y usted necesita habla. Con usted sería para una sola persona: Buenos días, señor. ¿Usted habla francés?"
+        },
+        "tú": {
+          "en": "tú: the informal singular «you». It does not fit here, because there are two people and tú needs hablas. With tú it would be about one person: Hola, Lucía. ¿Tú hablas francés?",
+          "es": "tú: el «tú» de confianza en singular. Aquí no encaja, porque son dos personas y tú necesita hablas. Con tú sería para una sola persona: Hola, Lucía. ¿Tú hablas francés?"
+        }
+      },
+      "examples": [
+        "Papás, ¿ustedes necesitan algo?",
+        "¡Qué amables son ustedes!"
+      ],
+      "tr": {
+        "en": "Marco and Lucía, do you speak French?",
+        "es": "Marco y Lucía, ¿ustedes hablan francés?"
+      }
+    },
+    {
+      "id": "tu-04",
+      "sentence": "¿___ quieren más sopa, abuelos?",
+      "options": [
+        "Ustedes",
+        "Usted",
+        "Tú"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Abuelos are two people, so «you» is plural: ustedes, with quieren. Ustedes is right for relatives too, not only for strangers.",
+        "es": "Los abuelos son dos personas, así que «tú» va en plural: ustedes, con quieren. Ustedes también vale para la familia, no solo para desconocidos."
+      },
+      "wrong": {
+        "Usted": {
+          "en": "Usted: the formal singular «you». It does not fit here, because there are two people and usted needs quiere. With usted it would be: Señora, ¿usted quiere más sopa?",
+          "es": "Usted: el «tú» formal en singular. Aquí no encaja, porque son dos personas y usted necesita quiere. Con usted sería: Señora, ¿usted quiere más sopa?"
+        },
+        "Tú": {
+          "en": "Tú: the informal singular «you». It does not fit here, because there are two people and tú needs quieres. With tú it would be: Abuela, ¿tú quieres más sopa?",
+          "es": "Tú: el «tú» de confianza en singular. Aquí no encaja, porque son dos personas y tú necesita quieres. Con tú sería: Abuela, ¿tú quieres más sopa?"
+        }
+      },
+      "examples": [
+        "¿Toman ustedes té, amigos?",
+        "Ustedes no necesitan nada."
+      ],
+      "tr": {
+        "en": "Grandma and Grandpa, do you want more soup?",
+        "es": "¿Ustedes quieren más sopa, abuelos?"
+      }
+    },
+    {
+      "id": "tu-05",
+      "sentence": "Buenas tardes, señora. ¿Cómo ___ usted?",
+      "options": [
+        "está",
+        "estás",
+        "están"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "usted takes the third person singular: está, the same form as for él and ella.",
+        "es": "usted lleva la tercera persona del singular: está, la misma forma que con él y ella."
+      },
+      "wrong": {
+        "estás": {
+          "en": "estás: the tú form. It does not fit here, because the sentence says usted, which takes está. With estás it would be: Buenas tardes, Rosa. ¿Cómo estás?",
+          "es": "estás: la forma de tú. Aquí no encaja, porque la frase dice usted, que lleva está. Con estás sería: Buenas tardes, Rosa. ¿Cómo estás?"
+        },
+        "están": {
+          "en": "están: the plural form. It does not fit here, because usted is one person; están goes with ustedes. With están it would be: Buenas tardes, señores. ¿Cómo están ustedes?",
+          "es": "están: la forma del plural. Aquí no encaja, porque usted es una sola persona; están va con ustedes. Con están sería: Buenas tardes, señores. ¿Cómo están ustedes?"
+        }
+      },
+      "examples": [
+        "¿Está usted en casa, señora?",
+        "Usted tiene un carro nuevo, señor."
+      ],
+      "tr": {
+        "en": "Good afternoon, madam. How are you?",
+        "es": "Buenas tardes, señora. ¿Cómo está usted?"
+      }
+    },
+    {
+      "id": "tu-06",
+      "sentence": "Tú ___ mi nombre, ¿verdad?",
+      "options": [
+        "sabes",
+        "sabe",
+        "saben"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "tú takes the form that ends in -s: sabes. Sabe goes with usted, él and ella.",
+        "es": "tú lleva la forma que acaba en -s: sabes. Sabe va con usted, él y ella."
+      },
+      "wrong": {
+        "sabe": {
+          "en": "sabe: the form for usted, él and ella. It does not fit here, because the sentence says tú, which needs sabes. With sabe it would be: Usted sabe mi nombre, ¿verdad?",
+          "es": "sabe: la forma de usted, él y ella. Aquí no encaja, porque la frase dice tú, que necesita sabes. Con sabe sería: Usted sabe mi nombre, ¿verdad?"
+        },
+        "saben": {
+          "en": "saben: the plural form. It does not fit here, because tú is one person; saben goes with ustedes and ellos. With saben it would be: Ustedes saben mi nombre, ¿verdad?",
+          "es": "saben: la forma del plural. Aquí no encaja, porque tú es una sola persona; saben va con ustedes y ellos. Con saben sería: Ustedes saben mi nombre, ¿verdad?"
+        }
+      },
+      "examples": [
+        "¿Tú sabes dónde está el baño?",
+        "¡Tú cantas muy bien, Elena!"
+      ],
+      "tr": {
+        "en": "You know my name, right?",
+        "es": "Tú sabes mi nombre, ¿verdad?"
+      }
+    },
+    {
+      "id": "tu-07",
+      "sentence": "¿Ustedes ___ aquí cerca?",
+      "options": [
+        "viven",
+        "vive",
+        "vives"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ustedes takes the third person plural: viven.",
+        "es": "ustedes lleva la tercera persona del plural: viven."
+      },
+      "wrong": {
+        "vive": {
+          "en": "vive: the third person singular. It does not fit here, because ustedes is plural; vive goes with usted, él and ella. With vive it would be: ¿Usted vive aquí cerca?",
+          "es": "vive: la tercera persona del singular. Aquí no encaja, porque ustedes es plural; vive va con usted, él y ella. Con vive sería: ¿Usted vive aquí cerca?"
+        },
+        "vives": {
+          "en": "vives: the tú form. It does not fit here, because ustedes is plural; vives goes with tú. With vives it would be: ¿Tú vives aquí cerca?",
+          "es": "vives: la forma de tú. Aquí no encaja, porque ustedes es plural; vives va con tú. Con vives sería: ¿Tú vives aquí cerca?"
+        }
+      },
+      "examples": [
+        "Ustedes no trabajan hoy, ¿verdad?",
+        "Ustedes cocinan muy bien."
+      ],
+      "tr": {
+        "en": "Do you all live near here?",
+        "es": "¿Ustedes viven aquí cerca?"
+      }
+    },
+    {
+      "id": "tu-08",
+      "sentence": "¿Cuándo ___ usted a la oficina?",
+      "options": [
+        "viene",
+        "vienes",
+        "vienen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "usted takes the third person singular: viene (venir changes e to ie, like tiene and quiere).",
+        "es": "usted lleva la tercera persona del singular: viene (venir cambia e por ie, como tiene y quiere)."
+      },
+      "wrong": {
+        "vienes": {
+          "en": "vienes: the tú form. It does not fit here, because the sentence says usted, which takes viene. With vienes it would be: Luis, ¿cuándo vienes a la oficina?",
+          "es": "vienes: la forma de tú. Aquí no encaja, porque la frase dice usted, que lleva viene. Con vienes sería: Luis, ¿cuándo vienes a la oficina?"
+        },
+        "vienen": {
+          "en": "vienen: the plural form. It does not fit here, because usted is one person; vienen goes with ustedes. With vienen it would be: ¿Cuándo vienen ustedes a la oficina?",
+          "es": "vienen: la forma del plural. Aquí no encaja, porque usted es una sola persona; vienen va con ustedes. Con vienen sería: ¿Cuándo vienen ustedes a la oficina?"
+        }
+      },
+      "examples": [
+        "¿Cuántos años tiene usted?",
+        "Usted habla muy rápido, señor."
+      ],
+      "tr": {
+        "en": "When are you coming to the office?",
+        "es": "¿Cuándo viene usted a la oficina?"
+      }
+    },
+    {
+      "id": "tu-09",
+      "sentence": "Laura come carne, pero ___ como pescado.",
+      "options": [
+        "yo",
+        "tú",
+        "nosotros"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "como ends in -o: it is the yo form. Here the pronoun is said to contrast Laura (meat) with me (fish).",
+        "es": "como acaba en -o: es la forma de yo. Aquí se dice el pronombre para contrastar a Laura (carne) conmigo (pescado)."
+      },
+      "wrong": {
+        "tú": {
+          "en": "tú: the informal «you». It does not fit here, because como is the yo form, and tú needs comes. With tú it would be: Laura come carne, pero tú comes pescado.",
+          "es": "tú: el «tú» de confianza. Aquí no encaja, porque como es la forma de yo, y tú necesita comes. Con tú sería: Laura come carne, pero tú comes pescado."
+        },
+        "nosotros": {
+          "en": "nosotros: we. It does not fit here, because como is the yo form, and nosotros needs comemos. With nosotros it would be: Laura come carne, pero nosotros comemos pescado.",
+          "es": "nosotros: yo y otras personas. Aquí no encaja, porque como es la forma de yo, y nosotros necesita comemos. Con nosotros sería: Laura come carne, pero nosotros comemos pescado."
+        }
+      },
+      "examples": [
+        "Yo tomo leche y tú tomas agua.",
+        "Ella baila y él canta."
+      ],
+      "tr": {
+        "en": "Laura eats meat, but I eat fish.",
+        "es": "Laura come carne, pero yo como pescado."
+      }
+    },
+    {
+      "id": "tu-10",
+      "sentence": "Diego y Rosa son hermanos. ___ estudian en la misma escuela.",
+      "options": [
+        "Ellos",
+        "Ellas",
+        "Nosotros"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Diego is a man and Rosa a woman: a mixed group takes the masculine plural, ellos. The verb estudian is the third person plural.",
+        "es": "Diego es un hombre y Rosa una mujer: un grupo mixto lleva el plural masculino, ellos. El verbo estudian es la tercera persona del plural."
+      },
+      "wrong": {
+        "Ellas": {
+          "en": "Ellas: they (all women). It does not fit here, because Diego is a man, and ellas is only for groups of women. With ellas it would be: María y Rosa son hermanas. Ellas estudian en la misma escuela.",
+          "es": "Ellas: un grupo de mujeres. Aquí no encaja, porque Diego es un hombre, y ellas es solo para grupos de mujeres. Con ellas sería: María y Rosa son hermanas. Ellas estudian en la misma escuela."
+        },
+        "Nosotros": {
+          "en": "Nosotros: we. It does not fit here, because estudian is the third person plural, and nosotros needs estudiamos. With nosotros it would be: Diego y yo somos hermanos. Nosotros estudiamos en la misma escuela.",
+          "es": "Nosotros: yo y otras personas. Aquí no encaja, porque estudian es la tercera persona del plural, y nosotros necesita estudiamos. Con nosotros sería: Diego y yo somos hermanos. Nosotros estudiamos en la misma escuela."
+        }
+      },
+      "examples": [
+        "¿Y tus tíos? Ellos viajan hoy.",
+        "Mis padres, ellos cocinan los domingos."
+      ],
+      "tr": {
+        "en": "Diego and Rosa are brother and sister. They study at the same school.",
+        "es": "Diego y Rosa son hermanos. Ellos estudian en la misma escuela."
+      }
+    },
+    {
+      "id": "tu-11",
+      "sentence": "Mi madre y mi tía llegan hoy. ___ vienen en autobús.",
+      "options": [
+        "Ellas",
+        "Ellos",
+        "Nosotras"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mi madre y mi tía are two women: a group of women takes ellas. The verb vienen is the third person plural.",
+        "es": "Mi madre y mi tía son dos mujeres: un grupo de mujeres lleva ellas. El verbo vienen es la tercera persona del plural."
+      },
+      "wrong": {
+        "Ellos": {
+          "en": "Ellos: they (men or a mixed group). It does not fit here, because both are women. With ellos the group would include a man: Mi madre y mi padre llegan hoy. Ellos vienen en autobús.",
+          "es": "Ellos: hombres o un grupo mixto. Aquí no encaja, porque las dos son mujeres. Con ellos el grupo incluiría a un hombre: Mi madre y mi padre llegan hoy. Ellos vienen en autobús."
+        },
+        "Nosotras": {
+          "en": "Nosotras: we (all women). It does not fit here, because vienen is the third person plural, and nosotras needs venimos. With nosotras it would be: Mi madre y yo llegamos hoy. Nosotras venimos en autobús.",
+          "es": "Nosotras: yo y otras mujeres. Aquí no encaja, porque vienen es la tercera persona del plural, y nosotras necesita venimos. Con nosotras sería: Mi madre y yo llegamos hoy. Nosotras venimos en autobús."
+        }
+      },
+      "examples": [
+        "¿Y tus primas? Ellas llegan mañana.",
+        "Mis hermanas, ellas estudian juntas."
+      ],
+      "tr": {
+        "en": "My mother and my aunt arrive today. They come by bus.",
+        "es": "Mi madre y mi tía llegan hoy. Ellas vienen en autobús."
+      }
+    },
+    {
+      "id": "tu-12",
+      "sentence": "Ellos viven en Puebla, pero ___ vivimos en la ciudad.",
+      "options": [
+        "nosotros",
+        "tú",
+        "ustedes"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "vivimos ends in -mos: it is the we form. The pronoun is said here to contrast them (Puebla) with us (the city).",
+        "es": "vivimos acaba en -mos: es la forma de nosotros. Aquí se dice el pronombre para contrastar a ellos (Puebla) con nosotros (la ciudad)."
+      },
+      "wrong": {
+        "tú": {
+          "en": "tú: the informal «you». It does not fit here, because vivimos is the we form, and tú needs vives. With tú it would be: Ellos viven en Puebla, pero tú vives en la ciudad.",
+          "es": "tú: el «tú» de confianza. Aquí no encaja, porque vivimos es la forma de nosotros, y tú necesita vives. Con tú sería: Ellos viven en Puebla, pero tú vives en la ciudad."
+        },
+        "ustedes": {
+          "en": "ustedes: you all. It does not fit here, because vivimos is the we form, and ustedes needs viven. With ustedes it would be: Ellos viven en Puebla, pero ustedes viven en la ciudad.",
+          "es": "ustedes: varias personas a las que se habla. Aquí no encaja, porque vivimos es la forma de nosotros, y ustedes necesita viven. Con ustedes sería: Ellos viven en Puebla, pero ustedes viven en la ciudad."
+        }
+      },
+      "examples": [
+        "Mi hermano y yo trabajamos en un banco.",
+        "Luis y yo cantamos juntos."
+      ],
+      "tr": {
+        "en": "They live in Puebla, but we live in the city.",
+        "es": "Ellos viven en Puebla, pero nosotros vivimos en la ciudad."
+      }
+    },
+    {
+      "kind": "match",
+      "id": "tu-match-01",
+      "pairs": [
+        {
+          "es": "tú",
+          "en": "you, informal"
+        },
+        {
+          "es": "usted",
+          "en": "you, formal"
+        },
+        {
+          "es": "ustedes",
+          "en": "you all"
+        },
+        {
+          "es": "nosotras",
+          "en": "we, all women"
+        },
+        {
+          "es": "ellos",
+          "en": "they, men or mixed"
+        },
+        {
+          "es": "ellas",
+          "en": "they, all women"
+        }
+      ]
+    },
+    {
+      "id": "tu-form-01",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "usted",
+      "answer": "habla",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-02",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "tú",
+      "answer": "hablas",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-03",
+      "kind": "form",
+      "verb": "hablar",
+      "person": "ustedes",
+      "answer": "hablan",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-04",
+      "kind": "form",
+      "verb": "ser",
+      "person": "usted",
+      "answer": "es",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-05",
+      "kind": "form",
+      "verb": "ser",
+      "person": "ustedes",
+      "answer": "son",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-06",
+      "kind": "form",
+      "verb": "ser",
+      "person": "nosotros/nosotras",
+      "answer": "somos",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-07",
+      "kind": "form",
+      "verb": "tener",
+      "person": "usted",
+      "answer": "tiene",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-08",
+      "kind": "form",
+      "verb": "tener",
+      "person": "tú",
+      "answer": "tienes",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-09",
+      "kind": "form",
+      "verb": "tener",
+      "person": "ustedes",
+      "answer": "tienen",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-10",
+      "kind": "form",
+      "verb": "querer",
+      "person": "usted",
+      "answer": "quiere",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-11",
+      "kind": "form",
+      "verb": "querer",
+      "person": "ustedes",
+      "answer": "quieren",
+      "table": "tu-usted-formas"
+    },
+    {
+      "id": "tu-form-12",
+      "kind": "form",
+      "verb": "querer",
+      "person": "yo",
+      "answer": "quiero",
+      "table": "tu-usted-formas"
+    },
+    {
+      "kind": "why",
+      "id": "tu-why-01",
+      "es": "Hablo español.",
+      "target": "Hablo",
+      "tr": {
+        "en": "I speak Spanish.",
+        "es": "Hablo español."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "pronoun said on purpose: to contrast two people or to stress who",
+            "es": "pronombre dicho a propósito: para contrastar a dos personas o dar énfasis"
+          },
+          "wrong": {
+            "en": "this would explain a pronoun said on purpose, but the sentence has none: the ending -o already says «yo»",
+            "es": "esto explicaría un pronombre dicho a propósito, pero la frase no lleva ninguno: la terminación -o ya dice «yo»"
+          }
+        },
+        {
+          "text": {
+            "en": "no pronoun: the verb ending already says who is acting",
+            "es": "sin pronombre: la terminación del verbo ya dice quién actúa"
+          }
+        },
+        {
+          "text": {
+            "en": "tú: a friend, relative or someone your age; the verb ends in -s",
+            "es": "tú: un amigo, un familiar o alguien de tu edad; el verbo acaba en -s"
+          },
+          "wrong": {
+            "en": "this would be about talking to a friend, but «Hablo» is the «I» form: -o goes with yo, and tú would be «hablas»",
+            "es": "esto hablaría de un amigo al que se le habla, pero «Hablo» es la forma de «yo»: -o va con yo, y tú sería «hablas»"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "tu-why-02",
+      "es": "Yo leo el libro y tú escribes una carta.",
+      "target": "tú",
+      "tr": {
+        "en": "I read the book and you write a letter.",
+        "es": "Yo leo el libro y tú escribes una carta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "pronoun said on purpose: to contrast two people or to stress who",
+            "es": "pronombre dicho a propósito: para contrastar a dos personas o dar énfasis"
+          }
+        },
+        {
+          "text": {
+            "en": "no pronoun: the verb ending already says who is acting",
+            "es": "sin pronombre: la terminación del verbo ya dice quién actúa"
+          },
+          "wrong": {
+            "en": "this would leave the pronouns out, which is the normal way, but here «yo» and «tú» are said on purpose to contrast the two people",
+            "es": "esto dejaría fuera los pronombres, que es lo normal, pero aquí se dicen «yo» y «tú» a propósito para contrastar a las dos personas"
+          }
+        },
+        {
+          "text": {
+            "en": "pronoun said to make clear who: habla can be he, she or you (formal)",
+            "es": "pronombre dicho para aclarar quién es: habla puede ser él, ella o usted"
+          },
+          "wrong": {
+            "en": "this would be needed if the verb fitted several people, but «leo» and «escribes» can only be «yo» and «tú»: the pronouns are there to contrast",
+            "es": "esto haría falta si el verbo sirviera para varias personas, pero «leo» y «escribes» solo pueden ser «yo» y «tú»: los pronombres están para contrastar"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "tu-why-03",
+      "es": "¿Usted vende pan?",
+      "target": "Usted",
+      "tr": {
+        "en": "Do you sell bread?",
+        "es": "¿Usted vende pan?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "tú: a friend, relative or someone your age; the verb ends in -s",
+            "es": "tú: un amigo, un familiar o alguien de tu edad; el verbo acaba en -s"
+          },
+          "wrong": {
+            "en": "this would be for a friend, with «vendes»; a stranger in a shop gets usted, with «vende»",
+            "es": "esto sería para un amigo, con «vendes»; a un desconocido en una tienda se le habla de usted, con «vende»"
+          }
+        },
+        {
+          "text": {
+            "en": "ustedes: every plural «you»; third person plural verb",
+            "es": "ustedes: todo «tú» en plural; verbo en tercera persona del plural"
+          },
+          "wrong": {
+            "en": "this would be for several people, with «venden»; here the question is for one person",
+            "es": "esto sería para varias personas, con «venden»; aquí la pregunta es para una sola persona"
+          }
+        },
+        {
+          "text": {
+            "en": "usted: a stranger, an older person or service; third person singular verb",
+            "es": "usted: un desconocido, una persona mayor o un servicio; verbo en tercera persona del singular"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "tu-why-04",
+      "es": "Javier, ¿tienes tiempo hoy?",
+      "target": "tienes",
+      "tr": {
+        "en": "Javier, do you have time today?",
+        "es": "Javier, ¿tienes tiempo hoy?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "usted: a stranger, an older person or service; third person singular verb",
+            "es": "usted: un desconocido, una persona mayor o un servicio; verbo en tercera persona del singular"
+          },
+          "wrong": {
+            "en": "this would need «tiene», the third person; «tienes» ends in -s, so it is the tú form",
+            "es": "esto necesitaría «tiene», la tercera persona; «tienes» acaba en -s, así que es la forma de tú"
+          }
+        },
+        {
+          "text": {
+            "en": "ustedes: every plural «you»; third person plural verb",
+            "es": "ustedes: todo «tú» en plural; verbo en tercera persona del plural"
+          },
+          "wrong": {
+            "en": "this would need «tienen», the plural; Javier is one person",
+            "es": "esto necesitaría «tienen», el plural; Javier es una sola persona"
+          }
+        },
+        {
+          "text": {
+            "en": "tú: a friend, relative or someone your age; the verb ends in -s",
+            "es": "tú: un amigo, un familiar o alguien de tu edad; el verbo acaba en -s"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "tu-why-05",
+      "es": "Niños, ¿juegan en el parque?",
+      "target": "juegan",
+      "tr": {
+        "en": "Kids, are you playing in the park?",
+        "es": "Niños, ¿juegan en el parque?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "tú: a friend, relative or someone your age; the verb ends in -s",
+            "es": "tú: un amigo, un familiar o alguien de tu edad; el verbo acaba en -s"
+          },
+          "wrong": {
+            "en": "this would need «juegas»; «Niños» are several children, not one friend",
+            "es": "esto necesitaría «juegas»; «Niños» son varios, no un solo amigo"
+          }
+        },
+        {
+          "text": {
+            "en": "ustedes: every plural «you»; third person plural verb",
+            "es": "ustedes: todo «tú» en plural; verbo en tercera persona del plural"
+          }
+        },
+        {
+          "text": {
+            "en": "usted: a stranger, an older person or service; third person singular verb",
+            "es": "usted: un desconocido, una persona mayor o un servicio; verbo en tercera persona del singular"
+          },
+          "wrong": {
+            "en": "this would need «juega»; usted is one person, and here several children are spoken to",
+            "es": "esto necesitaría «juega»; usted es una sola persona, y aquí se habla a varios niños"
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "tu-why-06",
+      "es": "Joven, la cuenta, por favor.",
+      "target": "Joven",
+      "tr": {
+        "en": "Excuse me, the bill, please.",
+        "es": "Joven, la cuenta, por favor."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "señor, señora, joven: a polite way to call someone you do not know",
+            "es": "señor, señora, joven: una forma cortés de llamar a alguien que no conoces"
+          }
+        },
+        {
+          "text": {
+            "en": "pronoun said on purpose: to contrast two people or to stress who",
+            "es": "pronombre dicho a propósito: para contrastar a dos personas o dar énfasis"
+          },
+          "wrong": {
+            "en": "this would be about contrasting two people with pronouns, but «Joven» is not a pronoun: it is a polite way to call a young person you do not know",
+            "es": "esto hablaría de contrastar a dos personas con pronombres, pero «Joven» no es un pronombre: es una forma cortés de llamar a una persona joven que no conoces"
+          }
+        },
+        {
+          "text": {
+            "en": "pronoun said to make clear who: habla can be he, she or you (formal)",
+            "es": "pronombre dicho para aclarar quién es: habla puede ser él, ella o usted"
+          },
+          "wrong": {
+            "en": "this would be about making clear who a verb means, but there is no verb here: «Joven» just calls the waiter politely",
+            "es": "esto hablaría de aclarar a quién se refiere un verbo, pero aquí no hay verbo: «Joven» solo llama al mesero con cortesía"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "tu-why-07",
+      "es": "Ellas son mis primas.",
+      "target": "Ellas",
+      "tr": {
+        "en": "They are my cousins.",
+        "es": "Ellas son mis primas."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ustedes: every plural «you»; third person plural verb",
+            "es": "ustedes: todo «tú» en plural; verbo en tercera persona del plural"
+          },
+          "wrong": {
+            "en": "this would be «you all», spoken TO the cousins, but here they are talked ABOUT: «Ellas» is «they»",
+            "es": "esto sería «ustedes», dicho A las primas, pero aquí se habla DE ellas: «Ellas» es de tercera persona"
+          }
+        },
+        {
+          "text": {
+            "en": "no pronoun: the verb ending already says who is acting",
+            "es": "sin pronombre: la terminación del verbo ya dice quién actúa"
+          },
+          "wrong": {
+            "en": "this would leave the pronoun out, but «Ellas» is said here, and the question is why it is feminine",
+            "es": "esto dejaría fuera el pronombre, pero aquí se dice «Ellas», y la pregunta es por qué es femenino"
+          }
+        },
+        {
+          "text": {
+            "en": "ellas: a group of women only (ellos is for men or a mixed group)",
+            "es": "ellas: solo un grupo de mujeres (ellos es para hombres o un grupo mixto)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

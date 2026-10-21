@@ -76,6 +76,13 @@
       "blurb": { "en": "Must, can, want: two verbs in a row, the second one unconjugated.", "es": "Tengo que, puedo, quiero: dos verbos seguidos, el segundo en infinitivo." }
     },
     {
+      "id": "tener-expresiones",
+      "level": "A1",
+      "unit": "a1-presente",
+      "title": { "en": "Tener: hunger, cold, age and more", "es": "Expresiones con tener" },
+      "blurb": { "en": "Tener hambre, sed, frío, sueño, miedo, prisa, razón, X años: where English uses to be.", "es": "Tener hambre, sed, frío, sueño, miedo, prisa, razón, X años: donde el inglés usa to be." }
+    },
+    {
       "id": "ser-estar",
       "level": "A1",
       "unit": "a1-ser-estar",
@@ -88,6 +95,13 @@
       "unit": "a1-ser-estar",
       "title": { "en": "Hay or está?", "es": "¿Hay o está?" },
       "blurb": { "en": "Something exists, or where a known thing is.", "es": "Algo existe, o dónde está algo conocido." }
+    },
+    {
+      "id": "tu-usted",
+      "level": "A1",
+      "unit": "a1-pronombres",
+      "title": { "en": "Tú, usted, ustedes: who you are talking to", "es": "Tú, usted y ustedes" },
+      "blurb": { "en": "Subject pronouns, when to say tú or usted in Mexico, and why ustedes is the only plural you.", "es": "Los pronombres sujeto, cuándo usar tú o usted en México y por qué ustedes es el único plural." }
     },
     {
       "id": "posesivos",
@@ -137,6 +151,13 @@
       "unit": "a1-frase",
       "title": { "en": "Negation: no, nada, nunca, nadie", "es": "Negación: no, nada, nunca, nadie" },
       "blurb": { "en": "Spanish uses a double negative, and that is correct.", "es": "El español usa doble negación y es correcto." }
+    },
+    {
+      "id": "conectores-basicos",
+      "level": "A1",
+      "unit": "a1-frase",
+      "title": { "en": "And, or, but, because, so", "es": "Conectores básicos: y, o, pero, porque" },
+      "blurb": { "en": "Linking two ideas: y/e, o/u, pero, porque, por eso, entonces.", "es": "Unir dos ideas: y/e, o/u, pero, porque, por eso, entonces." }
     },
     {
       "id": "gustar",
