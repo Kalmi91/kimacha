@@ -12,6 +12,7 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'presente-irregular', load: () => require('@/data/games/grammar/es/presente-irregular.json') },
   { id: 'verbos-diptongo', load: () => require('@/data/games/grammar/es/verbos-diptongo.json') },
   { id: 'perifrasis-modales', load: () => require('@/data/games/grammar/es/perifrasis-modales.json') },
+  { id: 'tener-expresiones', load: () => require('@/data/games/grammar/es/tener-expresiones.json') },
   { id: 'ser-estar', load: () => require('@/data/games/grammar/es/ser-estar.json') },
   { id: 'hay-estar', load: () => require('@/data/games/grammar/es/hay-estar.json') },
   { id: 'tu-usted', load: () => require('@/data/games/grammar/es/tu-usted.json') },

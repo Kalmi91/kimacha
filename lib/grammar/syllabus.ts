@@ -68,6 +68,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   gustar: 'core-plus',
   'ir-a-infinitivo': 'core-plus',
   'perifrasis-modales': 'core-plus',
+  'tener-expresiones': 'core',
   'pronombres-od': 'core-plus',
   'pronombres-oi': 'core-plus',
   'quien-a-quien': 'core-plus',
