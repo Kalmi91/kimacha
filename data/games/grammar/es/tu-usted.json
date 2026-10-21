@@ -10,8 +10,8 @@
     {
       "kind": "text",
       "text": {
-        "en": "In Spanish the verb ending already shows who is acting, so the subject pronouns (yo, tú, él, ella, usted, nosotros / nosotras, ustedes, ellos / ellas) are usually left out; the lesson «Present: regular verbs» shows the endings. What you do have to choose is how to say «you»: tú or usted for one person, and in Mexico always ustedes for several. Usted and ustedes sound polite, but they take the same verb forms as él / ella and ellos / ellas.",
-        "es": "En español la terminación del verbo ya dice quién actúa, por eso los pronombres sujeto (yo, tú, él, ella, usted, nosotros / nosotras, ustedes, ellos / ellas) casi siempre se omiten; la lección «Presente: verbos regulares» muestra las terminaciones. Lo que sí hay que elegir es cómo dirigirse a alguien: tú o usted para una persona y, en México, siempre ustedes para varias. Usted y ustedes suenan corteses, pero llevan las mismas formas del verbo que él / ella y ellos / ellas."
+        "en": "In Spanish the verb ending already shows who is acting, so the subject pronouns (yo, tú, él, ella, usted, nosotros / nosotras, ustedes, ellos / ellas) are usually left out; the lesson «Present: regular verbs» shows the endings. What you do have to choose is how to say «you»: tú or usted for one person, and in Mexico always ustedes for several. Usted sounds polite and takes the same verb form as él / ella; ustedes is just the plural and takes the same form as ellos / ellas.",
+        "es": "En español la terminación del verbo ya dice quién actúa, por eso los pronombres sujeto (yo, tú, él, ella, usted, nosotros / nosotras, ustedes, ellos / ellas) casi siempre se omiten; la lección «Presente: verbos regulares» muestra las terminaciones. Lo que sí hay que elegir es cómo dirigirse a alguien: tú o usted para una persona y, en México, siempre ustedes para varias. Usted suena cortés y lleva la misma forma del verbo que él / ella; ustedes es solo el plural y lleva la misma forma que ellos / ellas."
       }
     },
     {
@@ -541,10 +541,10 @@
               }
             },
             {
-              "es": "Señora, ¿le traigo la cuenta?",
+              "es": "Señora, ¿le doy un café?",
               "tr": {
-                "en": "Madam, shall I bring you the bill?",
-                "es": "Señora, ¿le traigo la cuenta?"
+                "en": "Madam, shall I give you a coffee?",
+                "es": "Señora, ¿le doy un café?"
               }
             }
           ]
@@ -659,8 +659,8 @@
       },
       "wrong": {
         "usted": {
-          "en": "usted: the formal singular «you». It does not fit here, because there are two people and usted needs habla. With usted it would be about one person: Hola, Marco. ¿Usted habla francés?",
-          "es": "usted: el «tú» formal en singular. Aquí no encaja, porque son dos personas y usted necesita habla. Con usted sería para una sola persona: Hola, Marco. ¿Usted habla francés?"
+          "en": "usted: the formal singular «you». It does not fit here, because there are two people and usted needs habla. With usted it would be about one person: Buenos días, señor. ¿Usted habla francés?",
+          "es": "usted: el «tú» formal en singular. Aquí no encaja, porque son dos personas y usted necesita habla. Con usted sería para una sola persona: Buenos días, señor. ¿Usted habla francés?"
         },
         "tú": {
           "en": "tú: the informal singular «you». It does not fit here, because there are two people and tú needs hablas. With tú it would be about one person: Hola, Lucía. ¿Tú hablas francés?",
@@ -691,8 +691,8 @@
       },
       "wrong": {
         "Usted": {
-          "en": "Usted: the formal singular «you». It does not fit here, because there are two people and usted needs quiere. With usted it would be: Abuela, ¿usted quiere más sopa?",
-          "es": "Usted: el «tú» formal en singular. Aquí no encaja, porque son dos personas y usted necesita quiere. Con usted sería: Abuela, ¿usted quiere más sopa?"
+          "en": "Usted: the formal singular «you». It does not fit here, because there are two people and usted needs quiere. With usted it would be: Señora, ¿usted quiere más sopa?",
+          "es": "Usted: el «tú» formal en singular. Aquí no encaja, porque son dos personas y usted necesita quiere. Con usted sería: Señora, ¿usted quiere más sopa?"
         },
         "Tú": {
           "en": "Tú: the informal singular «you». It does not fit here, because there are two people and tú needs quieres. With tú it would be: Abuela, ¿tú quieres más sopa?",
@@ -1233,8 +1233,8 @@
             "es": "ustedes: todo «tú» en plural; verbo en tercera persona del plural"
           },
           "wrong": {
-            "en": "this would need «tienen», the plural; Ana is one person",
-            "es": "esto necesitaría «tienen», el plural; Ana es una sola persona"
+            "en": "this would need «tienen», the plural; Javier is one person",
+            "es": "esto necesitaría «tienen», el plural; Javier es una sola persona"
           }
         },
         {
