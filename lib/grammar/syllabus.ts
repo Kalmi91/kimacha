@@ -60,6 +60,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'verbos-diptongo': 'core-plus',
   'ser-estar': 'core-plus',
   'hay-estar': 'core-plus',
+  'tu-usted': 'core',
   posesivos: 'core',
   demostrativos: 'exam',
   interrogativos: 'core',
