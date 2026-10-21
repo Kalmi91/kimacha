@@ -14,6 +14,7 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'perifrasis-modales', load: () => require('@/data/games/grammar/es/perifrasis-modales.json') },
   { id: 'ser-estar', load: () => require('@/data/games/grammar/es/ser-estar.json') },
   { id: 'hay-estar', load: () => require('@/data/games/grammar/es/hay-estar.json') },
+  { id: 'tu-usted', load: () => require('@/data/games/grammar/es/tu-usted.json') },
   { id: 'posesivos', load: () => require('@/data/games/grammar/es/posesivos.json') },
   { id: 'demostrativos', load: () => require('@/data/games/grammar/es/demostrativos.json') },
   { id: 'pronombres-od', load: () => require('@/data/games/grammar/es/pronombres-od.json') },
