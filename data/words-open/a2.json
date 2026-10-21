@@ -15239,5 +15239,27 @@
     "sentence_es": "Necesito una estampilla para esta carta.",
     "sentence_en": "I need a stamp for this letter.",
     "sentence_lemmas": ["necesitar", "un", "estampilla", "para", "este", "carta"]
+  },
+  {
+    "order": 4651,
+    "level": "A2",
+    "pos": "noun",
+    "lemma": "arroba",
+    "es": "la arroba",
+    "en": "at sign (@)",
+    "sentence_es": "En el correo falta la arroba.",
+    "sentence_en": "The at sign is missing in the email address.",
+    "sentence_lemmas": ["en", "el", "correo", "faltar", "el", "arroba"]
+  },
+  {
+    "order": 4652,
+    "level": "A2",
+    "pos": "verb",
+    "lemma": "deletrear",
+    "es": "deletrear",
+    "en": "to spell out",
+    "sentence_es": "¿Puede deletrear su apellido, por favor?",
+    "sentence_en": "Can you spell out your last name, please?",
+    "sentence_lemmas": ["poder", "deletrear", "su", "apellido", "por", "favor"]
   }
 ]

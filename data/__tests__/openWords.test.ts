@@ -2,14 +2,14 @@
 import { getOpenWordsForLevel, getOpenWordsUpToLevel, getOpenWords, openLevelOf } from '../openWords';
 
 describe('data/openWords.ts', () => {
-  it('4562 cards, unique id (= order), A1-C1 512-1377-1583-823-267', () => {
-    expect(getOpenWords()).toHaveLength(4562);
-    expect(new Set(getOpenWords().map((w) => w.id)).size).toBe(4562);
+  it('4682 cards, unique id (= order), A1-C1 512-1379-1619-892-280', () => {
+    expect(getOpenWords()).toHaveLength(4682);
+    expect(new Set(getOpenWords().map((w) => w.id)).size).toBe(4682);
     expect(getOpenWordsForLevel('A1')).toHaveLength(512);
-    expect(getOpenWordsForLevel('A2')).toHaveLength(1377);
-    expect(getOpenWordsForLevel('B1')).toHaveLength(1583);
-    expect(getOpenWordsForLevel('B2')).toHaveLength(823);
-    expect(getOpenWordsForLevel('C1')).toHaveLength(267);
+    expect(getOpenWordsForLevel('A2')).toHaveLength(1379);
+    expect(getOpenWordsForLevel('B1')).toHaveLength(1619);
+    expect(getOpenWordsForLevel('B2')).toHaveLength(892);
+    expect(getOpenWordsForLevel('C1')).toHaveLength(280);
     expect(getOpenWordsForLevel('A0')).toEqual([]);
   });
 
@@ -34,9 +34,9 @@ describe('data/openWords.ts', () => {
     expect(openLevelOf('C2')).toBe('C1');
     expect(openLevelOf('B1')).toBe('B1');
     expect(getOpenWordsUpToLevel('A0')).toHaveLength(512);
-    expect(getOpenWordsUpToLevel('A2')).toHaveLength(1889);
-    expect(getOpenWordsUpToLevel('B2')).toHaveLength(4295);
-    expect(getOpenWordsUpToLevel('C1')).toHaveLength(4562);
-    expect(getOpenWordsUpToLevel('C2')).toHaveLength(4562);
+    expect(getOpenWordsUpToLevel('A2')).toHaveLength(1891);
+    expect(getOpenWordsUpToLevel('B2')).toHaveLength(4402);
+    expect(getOpenWordsUpToLevel('C1')).toHaveLength(4682);
+    expect(getOpenWordsUpToLevel('C2')).toHaveLength(4682);
   });
 });
