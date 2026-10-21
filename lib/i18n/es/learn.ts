@@ -130,6 +130,21 @@ const es: typeof en = {
     questionsDone: 'Preguntas terminadas',
     practiceSentences: 'Practica estas palabras en frases',
     newReading: 'Otra lectura',
+    modesLabel: 'Modo de práctica',
+    modeReading: 'Lectura',
+    modeDictation: 'Dictado',
+    game: {
+      emptyTitle: 'Aprende unas palabras más y aquí habrá algo para practicar',
+      progressLabel: (n: number, total: number) => `Palabra ${n} de ${total}`,
+      roundDone: 'Ronda terminada',
+      score: (n: number, total: number) => `${n} de ${total} bien a la primera`,
+      newRound: 'Otra ronda',
+    },
+    dictation: {
+      listen: 'Escuchar',
+      listenAgain: 'Escuchar otra vez',
+      means: (meaning: string) => `Significa: ${meaning}`,
+    },
   },
   // Pestaña Frases (beta): progreso (pasos: cada construcción más la única escritura), el paso de construir y el de escribir, estados vacío y ronda terminada.
   sentenceTab: {
