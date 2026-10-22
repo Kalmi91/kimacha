@@ -31,6 +31,11 @@ export interface SentenceRound {
   /** The sentence to type: not one of `entries`, shorter than them (lib/sentencePick.ts). */
   typed: SentenceEntry;
   phase: RoundPhase;
+  /**
+   * The learned cards whose word was looked at with the tap-a-word hint (lib/sentenceHint.ts, beta sentenceHint) in this
+   * round: they get no half and no XP at the typing. Absent = none (also in rounds saved before the hint).
+   */
+  hinted?: string[];
 }
 
 /** A fresh round: every build still to do, then the typing (straight to the typing when there is nothing to build). */
@@ -72,6 +77,12 @@ export function answerBuild(round: SentenceRound, correct: boolean): SentenceRou
   return { ...round, queue, rated: round.rated.includes(id) ? round.rated : [...round.rated, id], phase: queue.length === 0 ? 'type' : 'build' };
 }
 
+/** Cards whose word was looked at with a hint: added to the round's `hinted` (the same round back when nothing is new). */
+export function addHinted(round: SentenceRound, ids: readonly string[]): SentenceRound {
+  const fresh = ids.filter((id) => !round.hinted?.includes(id));
+  return fresh.length === 0 ? round : { ...round, hinted: [...(round.hinted ?? []), ...new Set(fresh)] };
+}
+
 /** The typing was answered: the round is over, right or wrong. */
 export function answerType(round: SentenceRound): SentenceRound {
   return round.phase === 'type' ? { ...round, phase: 'done' } : round;
@@ -92,7 +103,10 @@ function parseEntry(raw: unknown): SentenceEntry | null {
   if (!isStrings(e.dueIds) || typeof e.staleness !== 'string' || !Array.isArray(e.slots)) return null;
   const slots = e.slots.every((s) => typeof s === 'object' && s !== null && typeof s.id === 'string' && isStrings(s.words));
   if (!slots) return null;
-  return { itemId: e.itemId, source: e.source, target: e.target, wordCount: e.wordCount, wordIds: e.wordIds, due: e.due, dueIds: e.dueIds, staleness: e.staleness, slots: e.slots };
+  // Optional (rounds saved before the mistake step have none); present but malformed = not a usable round.
+  if (e.mistake !== undefined && (typeof e.mistake !== 'object' || e.mistake === null || typeof e.mistake.wrong !== 'string')) return null;
+  const mistake = e.mistake ? { mistake: { wrong: e.mistake.wrong } } : {};
+  return { itemId: e.itemId, source: e.source, target: e.target, wordCount: e.wordCount, wordIds: e.wordIds, due: e.due, dueIds: e.dueIds, staleness: e.staleness, slots: e.slots, ...mistake };
 }
 
 /**
@@ -113,7 +127,8 @@ export function parseSentenceRound(raw: unknown): SentenceRound | null {
   if (!typed || !isStrings(r.queue) || !isStrings(r.rated)) return null;
   const ids = new Set(entries.map((e) => e.itemId));
   if (![...r.queue, ...r.rated].every((id) => ids.has(id))) return null;
-  const base = { day: r.day, target: r.target, focus: typeof r.focus === 'string' ? r.focus : '', entries, queue: r.queue, rated: r.rated, typed };
+  const hinted = isStrings(r.hinted) && r.hinted.length > 0 ? { hinted: r.hinted } : {};
+  const base = { day: r.day, target: r.target, focus: typeof r.focus === 'string' ? r.focus : '', entries, queue: r.queue, rated: r.rated, typed, ...hinted };
   if (r.phase === 'build' && r.queue.length > 0) return { ...base, phase: 'build' };
   if (r.phase === 'type' && r.queue.length === 0) return { ...base, phase: 'type' };
   return null;
