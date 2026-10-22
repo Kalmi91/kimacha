@@ -2,5 +2,202 @@
   "target": "es",
   "level": "B1",
   "paper": "listening",
-  "forms": []
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Va a escuchar seis mensajes. Escuchará cada mensaje dos veces. Después de cada mensaje, elija la opción correcta.",
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "f", "text": "Hola, Gabriel, te habla Mariana, de la agencia de viajes. Te llamo para avisarte que ya llegaron tus boletos de avión y están listos para recogerse. Puedes pasar por ellos cualquier día de lunes a viernes, antes de las seis de la tarde. No olvides traer una identificación oficial. Si tienes dudas, llámame a este número." }
+              ],
+              "questions": [
+                { "stem": "¿Para qué llama Mariana a Gabriel?", "options": ["Para informarle de un cambio en su vuelo.", "Para ofrecerle un viaje más barato.", "Para avisarle que sus boletos ya llegaron."], "correct": 2 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "n", "text": "¿Cansado de preparar la comida todos los días? En Sabor Casero te lo ponemos fácil. Elige tu menú de la semana en nuestra página de internet y lo llevamos a tu casa, listo para calentar. Si haces tu primer pedido este mes, el envío es gratis. Sabor Casero, la comida de casa sin cocinar." }
+              ],
+              "questions": [
+                { "stem": "¿Qué ventaja tiene quien haga su primer pedido este mes?", "options": ["No paga el envío.", "Recibe un descuento en el menú.", "Obtiene una bebida de regalo."], "correct": 0 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "n", "text": "Atención, pasajeros con destino a Puebla. Por una falla técnica, el autobús de las cuatro de la tarde saldrá con cuarenta minutos de retraso. Les pedimos esperar en la sala número tres. Quienes ya compraron su boleto no necesitan hacer ningún trámite. Les ofrecemos una disculpa por las molestias." }
+              ],
+              "questions": [
+                { "stem": "¿Qué se pide a los pasajeros?", "options": ["Que cambien su boleto en la taquilla.", "Que suban a otro autobús más temprano.", "Que esperen en una sala determinada."], "correct": 2 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Oye, Pedro, soy Luis. Mira, el sábado ya no podemos ir a la comida con tus papás, porque mi hermana llega de viaje ese día y tengo que ir por ella al aeropuerto. ¿Qué te parece si vamos el domingo? Si no puedes, dime y buscamos otra fecha. Háblame cuando oigas este mensaje. Un abrazo." }
+              ],
+              "questions": [
+                { "stem": "¿Por qué Luis no puede ir a la comida el sábado?", "options": ["Porque tiene que trabajar ese día.", "Porque debe ir por su hermana al aeropuerto.", "Porque se siente enfermo desde ayer."], "correct": 1 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Buenas tardes, estimados clientes. Les recordamos que hoy, por el aniversario de la tienda, todos los artículos de la sección de ropa deportiva tienen veinte por ciento de descuento. La promoción termina a las ocho de la noche. Además, a quienes compren más de mil pesos les regalamos una mochila. Pueden pagar en efectivo o con tarjeta." }
+              ],
+              "questions": [
+                { "stem": "¿Qué reciben las personas que gastan más de mil pesos?", "options": ["Una mochila de regalo.", "Un cupón para su próxima compra.", "Un descuento todavía mayor."], "correct": 0 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Buenos días, le habla del consultorio del doctor Ramírez. Su cita de mañana a las diez se tiene que cambiar, porque el doctor va a estar en un congreso. Le podemos dar cita el jueves a la misma hora o el viernes a las cuatro de la tarde. Por favor, llame hoy antes de las cinco para confirmar cuál prefiere." }
+              ],
+              "questions": [
+                { "stem": "¿Qué tiene que hacer la persona que recibe el mensaje?", "options": ["Ir mañana al consultorio a la hora de siempre.", "Llamar hoy para elegir una nueva fecha.", "Esperar la llamada del consultorio."], "correct": 1 }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Va a escuchar a una persona que cuenta una experiencia. Escuchará la grabación dos veces. Elija la opción correcta para cada pregunta.",
+          "audio": [
+            { "speaker": "m", "text": "Hola a todos. Hoy quiero contarles cómo cambió mi vida un sábado cualquiera, hace dos años. Yo vivía en un departamento pequeño, trabajaba mucho en una oficina y casi no salía los fines de semana. Un día, mi vecina Elena me preguntó si quería acompañarla a un refugio de perros en las afueras de la ciudad. Le dije que sí, sobre todo para no quedarme solo en casa." },
+            { "speaker": "m", "text": "Cuando llegamos, el lugar me sorprendió. Había más de cincuenta perros, casi todos rescatados de la calle, y solo cuatro personas para cuidarlos. Esa mañana nos pidieron ayudar a limpiar las jaulas y a repartir la comida. Al principio no me gustó mucho, porque olía fuerte y hacía calor. Pero cuando terminamos, una perra pequeña y flaca, llamada Canela, se sentó a mi lado y no se movió en toda la tarde. Ese día me di cuenta de que quería volver." },
+            { "speaker": "m", "text": "Desde entonces voy todos los sábados. Poco a poco aprendí muchas cosas. Aprendí a bañar a los perros sin que se escapen y a reconocer cuando alguno está asustado. También aprendí algo sobre mí: que soy más paciente de lo que pensaba. En la oficina me enojaba por cualquier cosa, y ahora mis compañeros dicen que estoy mucho más tranquilo." },
+            { "speaker": "m", "text": "Claro que no todo es fácil. A veces llegan animales en muy mal estado, y es difícil verlos así. Hace unos meses recibimos a un perro que tenía una pata rota y llevaba semanas sin comer. Estuvimos varios días muy preocupados. Por suerte, la veterinaria lo operó, y hoy corre por el patio como si nada hubiera pasado. Momentos así valen todo el esfuerzo." },
+            { "speaker": "m", "text": "Otra cosa que me gusta del refugio son las personas. Allí conocí a Rodrigo, un estudiante que viene después de sus clases, y a doña Chela, que a sus setenta años cocina arroz para todos los voluntarios. Con ellos organizo cada mes una venta de pasteles para juntar dinero. Con lo que ganamos compramos comida y vacunas para los perros." },
+            { "speaker": "m", "text": "Y qué pasó con Canela, se preguntarán. Pues la adopté hace un año. Al principio pensé que mi departamento era demasiado chico, pero ella se acostumbró enseguida. Ahora me espera todas las tardes en la puerta y me acompaña a caminar al parque. Mi mamá, que nunca quiso tener mascotas, ya le compra galletas cada vez que viene a visitarme." },
+            { "speaker": "m", "text": "Si alguna vez tienen un poco de tiempo libre, les recomiendo visitar un refugio. No hace falta saber nada de animales, solo ganas de ayudar. Yo fui por casualidad, para no estar solo, y terminé encontrando mucho más de lo que buscaba. Gracias por escucharme." }
+          ],
+          "questions": [
+            { "stem": "¿Por qué fue el hablante por primera vez al refugio?", "options": ["Porque quería adoptar un perro de raza pequeña.", "Porque una vecina lo invitó y no quería estar solo.", "Porque su empresa lo mandó como voluntario a ayudar."], "correct": 1 },
+            { "stem": "¿Cómo se sintió el primer día en el refugio?", "options": ["Se sintió cómodo desde el primer momento.", "Decidió que no iba a regresar porque había mucho trabajo.", "Tuvo dudas al principio, pero al final quiso volver."], "correct": 2 },
+            { "stem": "¿Qué descubrió sobre sí mismo?", "options": ["Que tiene más paciencia de la que creía.", "Que prefiere trabajar con animales y no con personas.", "Que se enoja menos en el refugio que en su casa."], "correct": 0 },
+            { "stem": "¿Qué pasó con el perro que tenía la pata rota?", "options": ["Fue adoptado por una de las voluntarias.", "Se recuperó después de una operación.", "Todavía no puede caminar bien."], "correct": 1 },
+            { "stem": "¿Para qué sirve el dinero de la venta de pasteles?", "options": ["Para construir más jaulas.", "Para pagar el sueldo de la veterinaria.", "Para comprar comida y vacunas."], "correct": 2 },
+            { "stem": "¿Cómo trata hoy la mamá del hablante a Canela?", "options": ["Bien, aunque antes no quería mascotas.", "Con desconfianza, porque no le gustan los perros.", "Con indiferencia, porque casi no la ve."], "correct": 0 }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Va a escuchar seis noticias de un noticiero. Escuchará el noticiero dos veces. Elija la opción correcta para cada noticia.",
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "f", "text": "Las autoridades de la ciudad anunciaron que la avenida principal del centro estará cerrada al tráfico este fin de semana por trabajos de repavimentación. Los carros serán desviados por las calles laterales, y el transporte público cambiará sus rutas desde el viernes por la noche. Se recomienda a los conductores salir con más tiempo de lo normal y consultar el mapa de desvíos en la página de internet del gobierno." }
+              ],
+              "questions": [
+                { "stem": "¿Qué se recomienda a los conductores?", "options": ["Dejar el carro en casa todo el fin de semana.", "Salir con más tiempo y revisar los desvíos.", "Usar únicamente las calles laterales."], "correct": 1 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "El servicio meteorológico informó que mañana habrá lluvias fuertes en la costa del Pacífico, con vientos de hasta sesenta kilómetros por hora. Se pide a los pescadores no salir al mar y a los turistas evitar las playas durante la tarde. En el resto del país el clima será caluroso, con temperaturas cercanas a los treinta y cinco grados al mediodía." }
+              ],
+              "questions": [
+                { "stem": "¿Qué se pide a los turistas de la costa?", "options": ["Que eviten las playas por la tarde.", "Que cancelen su viaje de inmediato.", "Que lleven ropa de abrigo."], "correct": 0 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Este viernes comienza el Festival Internacional de Cine de la ciudad, que durante diez días presentará más de cien películas de treinta países. Muchas funciones serán gratuitas y se realizarán en parques y plazas. Los boletos para las salas principales ya están a la venta y cuestan entre sesenta y ochenta pesos." }
+              ],
+              "questions": [
+                { "stem": "¿Qué se dice de las funciones en los parques?", "options": ["Que se paga al entrar.", "Que son solamente para niños.", "Que no cuestan nada."], "correct": 2 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "El equipo de básquetbol de la universidad ganó anoche el campeonato regional después de vencer por tres puntos al equipo visitante. El partido se decidió en los últimos segundos con un tiro de la capitana, Valeria Montes. Los jugadores regresarán hoy a la ciudad, y la comunidad universitaria prepara una fiesta de bienvenida en el estadio." }
+              ],
+              "questions": [
+                { "stem": "¿Cómo se decidió el partido?", "options": ["En un tiempo extra muy largo.", "Con un tiro en los últimos segundos.", "Por una falta del equipo visitante."], "correct": 1 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "A partir del lunes comenzará una campaña de vacunación contra la gripe en los centros de salud de la ciudad. La vacuna es gratuita y está dirigida principalmente a personas mayores de sesenta años, mujeres embarazadas y niños menores de cinco años. Las autoridades piden llevar una identificación y la cartilla de vacunación." }
+              ],
+              "questions": [
+                { "stem": "¿A quiénes está dirigida principalmente la campaña?", "options": ["A todos los trabajadores de los centros de salud.", "A los estudiantes de secundaria y preparatoria.", "A personas mayores, embarazadas y niños pequeños."], "correct": 2 }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "El precio del jitomate bajó esta semana casi un veinte por ciento en los mercados de la capital, gracias a que aumentó la cosecha en el norte del país. Los comerciantes esperan que el precio se mantenga estable durante el mes. En cambio, el aguacate sigue caro, y no se espera que baje hasta después de las fiestas de fin de año." }
+              ],
+              "questions": [
+                { "stem": "¿Qué se dice del precio del aguacate?", "options": ["Seguirá alto durante un tiempo.", "Bajó la semana pasada.", "Subió por la cosecha del norte."], "correct": 0 }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "match_pool",
+          "instruction": "Va a escuchar a seis personas. Escuchará las grabaciones dos veces. Relacione cada persona con la frase que mejor corresponde. Hay más frases de las necesarias y cada frase se puede usar solo una vez.",
+          "prompts": [
+            { "id": "1", "audio": [{ "speaker": "f", "text": "Este año por fin vamos a tomar vacaciones largas. Mi esposo y yo ya compramos los boletos de avión para ir a Oaxaca. Vamos a pasar diez días allá: primero en la ciudad y después en la costa. Queremos probar toda la comida típica, visitar los mercados y, si nos alcanza el tiempo, tomar un curso de cocina. Hace mucho que no descansamos como se debe." }] },
+            { "id": "2", "audio": [{ "speaker": "m", "text": "No vas a creer lo que me pasó esta mañana. Iba en el camión, hablando por mi celular, y cuando bajé me di cuenta de que ya no lo tenía en la bolsa. Regresé corriendo a la parada, pero el camión ya se había ido. Fui a la estación de policía a poner un reporte, y ahora tengo que comprar uno nuevo." }] },
+            { "id": "3", "audio": [{ "speaker": "f", "text": "¡Mamá, ya salieron los resultados! Fíjate que aprobé el examen de manejo a la primera. Estaba muy nerviosa, sobre todo por el estacionamiento en reversa, pero al final todo salió bien. Ahora solo me falta recoger la licencia en la oficina de tránsito. En cuanto la tenga, te invito a comer para celebrar, tú escoges el lugar." }] },
+            { "id": "4", "audio": [{ "speaker": "m", "text": "Oye, tienes que probar el restaurante nuevo que abrieron en el centro, se llama El Fogón. Hacen unos tacos de cochinita buenísimos y los precios no son altos. Fui el viernes con mi hermano y pedimos de todo. El servicio es rápido y el mesero fue muy amable. Eso sí, ve temprano, porque a las nueve ya no hay mesas libres." }] },
+            { "id": "5", "audio": [{ "speaker": "f", "text": "Hola, Rodrigo, te llamo para invitarte a mi cumpleaños. Lo voy a celebrar el próximo sábado en mi casa, a partir de las ocho de la noche. Va a haber tacos, música y juegos de mesa, y mis papás van a preparar su famoso pastel de chocolate. Vienen casi todos los del grupo de la universidad. Avísame si puedes venir, para saber cuántos somos." }] },
+            { "id": "6", "audio": [{ "speaker": "m", "text": "Mira, ya no aguanto más a los vecinos de arriba. Todas las noches ponen música a todo volumen hasta la madrugada, y ayer apenas pude dormir tres horas. Ya les toqué la puerta dos veces y me prometieron que iban a bajarle, pero no cumplen. Mañana voy a hablar con el administrador del edificio para ver si él puede hacer algo, porque esto ya es demasiado." }] }
+          ],
+          "options": [
+            { "id": "a", "text": "Explica cómo llegar a un lugar." },
+            { "id": "b", "text": "Se queja del ruido que hacen unos vecinos." },
+            { "id": "c", "text": "Cuenta que perdió su celular." },
+            { "id": "d", "text": "Está feliz porque aprobó un examen." },
+            { "id": "e", "text": "Pide perdón porque llegó tarde a una cita." },
+            { "id": "f", "text": "Recomienda un lugar para comer." },
+            { "id": "g", "text": "Habla de sus planes para unas vacaciones." },
+            { "id": "h", "text": "Cuenta cómo le fue en una entrevista de trabajo." },
+            { "id": "i", "text": "Invita a un amigo a una fiesta." }
+          ],
+          "answer": { "1": "g", "2": "c", "3": "d", "4": "f", "5": "i", "6": "b" },
+          "unique": true
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Va a escuchar una conversación entre un hombre y una mujer. Escuchará la conversación dos veces. Indique de quién se dice cada frase: del hombre, de la mujer o de ninguno de los dos.",
+          "audio": [
+            { "speaker": "f", "text": "Diego, ya revisé los folletos del hotel de la costa. Mira, tiene alberca y el desayuno está incluido." },
+            { "speaker": "m", "text": "Qué bien, Marta. Pero me preocupa el camino. Son como seis horas en carro y no quiero manejar todo el tiempo." },
+            { "speaker": "f", "text": "No te preocupes, yo manejo la mitad. Además, podemos salir el viernes temprano para no agarrar tráfico." },
+            { "speaker": "m", "text": "Es que el viernes tengo que estar en la oficina hasta las dos de la tarde. Salir temprano es imposible." },
+            { "speaker": "f", "text": "Entonces salimos después de comer y llegamos de noche. No pasa nada." },
+            { "speaker": "m", "text": "No, prefiero llegar de día, para ver el mar desde que lleguemos. Mejor salimos el sábado a las seis de la mañana." },
+            { "speaker": "f", "text": "Uf, qué horror. Me choca madrugar. Pero está bien, con una condición: tú pones la música en el camino." },
+            { "speaker": "m", "text": "Trato hecho. Oye, y ¿ya reservaste?" },
+            { "speaker": "f", "text": "Todavía no. Quería preguntarte primero. También vi una renta más barata, un departamento con cocina, y un lugar para acampar, pero me choca dormir en el suelo." },
+            { "speaker": "m", "text": "Yo tampoco soy de tienda de campaña. Y el departamento no, porque en vacaciones no quiero cocinar ni lavar trastes." },
+            { "speaker": "f", "text": "Ni yo. Entonces reservo dos noches en el hotel, ¿te parece?" },
+            { "speaker": "m", "text": "Mejor tres. Si vamos hasta allá, vale la pena quedarnos más tiempo." },
+            { "speaker": "f", "text": "Está bien, pero entonces tú pagas el desayuno de la última mañana." },
+            { "speaker": "m", "text": "Eso lo arreglamos allá. Mejor confirma la reservación esta noche, por favor." },
+            { "speaker": "f", "text": "Ahorita mismo la confirmo. Voy a llamar al hotel. Oye, no olvides tu traje de baño y tus lentes de sol." },
+            { "speaker": "m", "text": "Ya están en la maleta. Solo me falta comprar bloqueador solar." },
+            { "speaker": "f", "text": "Yo ya compré uno para los dos. Entonces nos vemos el sábado a las seis, ¿verdad?" },
+            { "speaker": "m", "text": "Puntual, te lo prometo." }
+          ],
+          "questions": [
+            { "stem": "Ya consultó información sobre el hotel.", "options": ["hombre", "mujer", "ninguno"], "correct": 1 },
+            { "stem": "Tiene que trabajar el viernes por la mañana y parte de la tarde.", "options": ["hombre", "mujer", "ninguno"], "correct": 0 },
+            { "stem": "Le molesta levantarse temprano.", "options": ["hombre", "mujer", "ninguno"], "correct": 1 },
+            { "stem": "Quiere acampar durante el viaje.", "options": ["hombre", "mujer", "ninguno"], "correct": 2 },
+            { "stem": "Prefiere cocinar durante las vacaciones.", "options": ["hombre", "mujer", "ninguno"], "correct": 2 },
+            { "stem": "Propone quedarse tres noches en el hotel.", "options": ["hombre", "mujer", "ninguno"], "correct": 0 }
+          ]
+        }
+      ]
+    }
+  ]
 }

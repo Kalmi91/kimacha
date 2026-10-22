@@ -2,5 +2,77 @@
   "target": "es",
   "level": "C1",
   "paper": "writing",
-  "forms": []
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Escuchará una conferencia dos veces. Tome notas y, a continuación, escriba el texto que se le pide.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "Artículo para el boletín de la asociación de vecinos",
+              "prompt": "Usted asistió a esta conferencia y la asociación de vecinos de su colonia le pide un artículo para su boletín. Escriba un texto en el que resuma las ideas principales de la conferencia, valore la propuesta de la ciudad esponja y exponga su opinión sobre cómo podría aplicarse en su barrio.",
+              "audio": [
+                { "speaker": "m", "text": "Buenas tardes y bienvenidos a esta sesión del ciclo sobre ciudades y agua. Quiero comenzar con una paradoja que muchos de ustedes conocen de primera mano. En la temporada de lluvias, calles enteras de nuestras ciudades se inundan en cuestión de minutos. Pocos meses después, en la temporada seca, esas mismas colonias reciben el agua por turnos, en pipas o a través de tandeos. Inundaciones y escasez no son problemas opuestos. Son dos caras de una misma manera de construir la ciudad." },
+                { "speaker": "m", "text": "¿Cómo llegamos aquí? Durante décadas, la ingeniería urbana tuvo una idea muy sencilla: la lluvia es un estorbo y hay que sacarla cuanto antes. Así se cubrieron de concreto y asfalto los suelos que antes absorbían el agua, se entubaron ríos y arroyos, y se construyeron enormes drenajes para expulsar la lluvia de la ciudad. El resultado es que cada gota que cae sobre un techo o una calle corre hacia el drenaje en lugar de filtrarse al subsuelo. Además, como esa agua se mezcla con las aguas residuales, ya no se puede aprovechar. Y como no recarga los acuíferos, se extrae del subsuelo más agua de la que vuelve a entrar, y el terreno se hunde poco a poco." },
+                { "speaker": "m", "text": "Frente a esto ha surgido en los últimos tiempos una idea que se conoce como ciudad esponja. El principio es lo contrario del anterior: en lugar de expulsar la lluvia, la ciudad debe absorberla, retenerla y aprovecharla, igual que una esponja. En la práctica, esto significa varias cosas. Primero, sustituir una parte de los pavimentos tradicionales por superficies permeables que dejan pasar el agua. Segundo, crear jardines de lluvia y humedales urbanos, que son zonas hundidas con plantas capaces de retener el agua y filtrarla poco a poco. Tercero, cubrir azoteas con vegetación, que reduce el escurrimiento y refresca los edificios. Y cuarto, instalar sistemas de captación para guardar el agua de lluvia en casas, escuelas y oficinas y usarla para riego, limpieza o sanitarios." },
+                { "speaker": "m", "text": "En un barrio piloto donde se aplicaron varias de estas medidas a la vez, el seguimiento que hicimos mostró que, durante las tormentas fuertes, la cantidad de agua que llegó al drenaje se redujo casi a la mitad. Conviene, sin embargo, ser prudentes. Una ciudad esponja no elimina las inundaciones graves, que dependen de lluvias extremas, y tampoco resuelve por sí sola el abasto de agua potable. Lo que hace es amortiguar los picos de lluvia, recargar parcialmente los acuíferos y reducir la dependencia de fuentes lejanas. Es una pieza de la solución, no la solución completa." },
+                { "speaker": "m", "text": "Entonces, ¿por qué no se hace en todas partes? Veo tres obstáculos principales. El primero es el costo inicial. Un pavimento permeable o una azotea verde cuestan más que sus equivalentes convencionales, y los beneficios, como el ahorro en daños por inundación, llegan más tarde y no los percibe quien paga. El segundo es normativo y de coordinación: en una misma calle intervienen el municipio, la empresa de agua, los propietarios y los vecinos, y cada uno tiene reglas y presupuestos distintos. El tercero, que a menudo se olvida, es el mantenimiento. Un jardín de lluvia abandonado se llena de basura y se convierte en un foco de mosquitos, y entonces la comunidad concluye, con razón, que la idea no funcionó." },
+                { "speaker": "m", "text": "Lo que he aprendido en estos proyectos es que la tecnología es la parte fácil. Lo difícil es cambiar costumbres. Muchas personas asocian el agua de lluvia con la suciedad o con un riesgo, y están acostumbradas a pensar que el agua es un asunto exclusivo del gobierno. Los proyectos que han funcionado son los que involucraron desde el principio a los vecinos, con talleres, con responsables de cuidar cada jardín y con beneficios visibles, como calles más frescas o recibos de agua más bajos." },
+                { "speaker": "m", "text": "Para terminar, me gustaría proponer tres ideas concretas para nuestra ciudad. Primera: que toda obra pública nueva incluya, por norma, una solución para retener el agua de lluvia. Segunda: empezar con proyectos piloto en barrios con problemas de inundación, medir los resultados con claridad y publicarlos. Y tercera: crear un fondo para el mantenimiento, porque una obra sin cuidado se echa a perder. Si logramos que la lluvia deje de ser un problema que expulsamos y se convierta en un recurso que aprovechamos, habremos dado un paso importante hacia una ciudad más resistente. Muchas gracias." }
+              ],
+              "minWords": 220,
+              "maxWords": 250,
+              "points": [
+                { "id": "paradoja", "label": "Presenta la paradoja de las inundaciones y la escasez de agua", "keywords": ["inundacion", "escasez", "falta de agua", "sequia", "paradoja", "temporada de lluvias"] },
+                { "id": "causas", "label": "Explica el origen: suelos cubiertos y drenajes que expulsan la lluvia", "keywords": ["concreto", "asfalto", "pavimento", "impermeab", "drenaje", "acuifero", "subsuelo", "hunde"] },
+                { "id": "esponja", "label": "Describe la ciudad esponja y sus medidas", "keywords": ["esponja", "permeable", "jardin", "azotea", "humedal", "captacion", "absorb", "retener"] },
+                { "id": "obstaculos", "label": "Menciona los obstáculos: costo, coordinación o mantenimiento", "keywords": ["costo", "coste", "mantenimiento", "coordinacion", "normativ", "presupuesto", "costumbre", "inversion"] },
+                { "id": "opinion", "label": "Valora la propuesta y opina sobre su aplicación en su barrio", "keywords": ["en mi opinion", "considero", "me parece", "creo que", "opino", "a mi juicio", "en mi barrio", "en mi colonia", "propongo", "vecinos"] }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Elija una de las dos opciones y escriba el texto que se le pide.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "Opción A: Artículo a partir de un gráfico",
+              "prompt": "Escriba un artículo para una revista de divulgación en el que describa los datos principales del gráfico, interprete las tendencias que observa y valore sus posibles consecuencias para la ciudad.",
+              "input": "GRÁFICO. Medio de transporte que usan las personas para ir al trabajo en una ciudad mediana (porcentaje de las personas encuestadas; muestra de 4 000 personas).\n\nAutomóvil particular: en 2014, 38 %; en 2024, 41 %.\nTransporte público: en 2014, 44 %; en 2024, 31 %.\nBicicleta: en 2014, 3 %; en 2024, 9 %.\nA pie: en 2014, 13 %; en 2024, 11 %.\nTrabajo desde casa: en 2014, 2 %; en 2024, 8 %.\n\nNota de la encuesta: el tiempo medio de traslado pasó de 41 a 52 minutos. El 63 % de las personas que dejaron de usar el transporte público lo atribuye a su poca puntualidad.",
+              "minWords": 180,
+              "maxWords": 220,
+              "points": [
+                { "id": "general", "label": "Describe la tendencia principal: baja el transporte público y sube el automóvil", "keywords": ["transporte publico", "automovil", "carro", "disminu", "descenso", "aument", "sube", "baja", "porcentaje"] },
+                { "id": "secundarias", "label": "Menciona otros cambios: bicicleta, trabajo desde casa o caminar", "keywords": ["bicicleta", "desde casa", "teletrabajo", "trabajo remoto", "a pie", "caminar"] },
+                { "id": "causas", "label": "Interpreta las causas: puntualidad y tiempo de traslado", "keywords": ["puntualidad", "tiempo de traslado", "minutos", "se debe", "debido a", "a causa de", "razon", "explica"] },
+                { "id": "consecuencias", "label": "Valora las consecuencias para la ciudad", "keywords": ["trafico", "congestion", "contaminacion", "consecuencia", "en consecuencia", "por lo tanto", "futuro", "politica", "inversion", "transporte colectivo"] }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Opción B: Carta formal",
+              "prompt": "Escriba una carta formal a la titular de la Dirección de Cultura en la que exprese su desacuerdo con las medidas anunciadas, argumente su postura y proponga alternativas.",
+              "input": "AVISO A LA CIUDADANÍA. La Dirección de Cultura del municipio informa que, a partir del primero de marzo y por ajustes presupuestales, la Biblioteca Pública Central reducirá su horario: abrirá de lunes a viernes de 9:00 a 14:00 horas y permanecerá cerrada los sábados. Asimismo, quedará suspendido el servicio de préstamo de libros a domicilio, que seguirá disponible únicamente para consulta en sala. Las actividades de fomento a la lectura para niños y adultos mayores se reprogramarán en fechas por definir. Se agradece la comprensión de los usuarios. Las observaciones podrán dirigirse por escrito a la titular de la Dirección de Cultura, licenciada Verónica Salas, hasta el 15 de febrero.",
+              "minWords": 180,
+              "maxWords": 220,
+              "points": [
+                { "id": "formal", "label": "Se dirige a la destinataria de manera formal y explica el motivo de la carta", "keywords": ["estimada", "distinguida", "me dirijo", "le escribo", "por medio de la presente", "con motivo", "licenciada"] },
+                { "id": "desacuerdo", "label": "Expresa su desacuerdo con las medidas", "keywords": ["desacuerdo", "no estoy de acuerdo", "rechazo", "lamento", "preocupa", "inaceptable", "perjudic", "me opongo"] },
+                { "id": "argumentos", "label": "Argumenta a quiénes afecta la reducción", "keywords": ["estudiantes", "personas mayores", "adultos mayores", "familias", "acceso", "sabado", "prestamo", "derecho", "trabajan"] },
+                { "id": "alternativas", "label": "Propone alternativas", "keywords": ["propongo", "sugiero", "alternativa", "voluntarios", "convenio", "donativos", "patrocin", "horario", "turnos"] },
+                { "id": "cierre", "label": "Cierra pidiendo una respuesta o una reunión", "keywords": ["solicito", "agradezco", "a la espera", "respuesta", "reunion", "en espera", "atentamente"] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

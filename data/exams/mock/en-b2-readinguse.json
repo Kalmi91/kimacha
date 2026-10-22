@@ -2,5 +2,246 @@
   "target": "en",
   "level": "B2",
   "paper": "readinguse",
-  "forms": []
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "kind": "cloze",
+          "skill": "use",
+          "instruction": "Read the text below and decide which answer (A, B, C or D) best fits each gap.",
+          "title": "The Return of the Night Train",
+          "text": "For years, night trains in Europe seemed to be {{1}} for extinction. Budget airlines offered cheap flights, and high-speed rail made daytime journeys so quick that few people wanted to spend a whole night on board. Some countries even {{2}} out their sleeper services altogether. Recently, however, travelers who are worried about their carbon {{3}} have started to look for greener ways to get around, and several companies have decided to {{4}} new overnight routes between major cities. Tickets can be expensive, and delays are not unheard of. Even so, supporters argue that a sleeper train saves the price of a hotel room and lets passengers wake up in the heart of a new city, {{5}} than in an airport far from the action. Rail managers say that the speed at which demand has grown took them by {{6}}, and they are now adding extra cars to {{7}} up with it. As one of them {{8}} it, the night train is no longer a thing of the past but a very real part of the future.",
+          "gaps": [
+            { "options": ["marching", "heading", "pushing", "running"], "correct": 1 },
+            { "options": ["faded", "dried", "ran", "phased"], "correct": 3 },
+            { "options": ["footprint", "trace", "mark", "step"], "correct": 0 },
+            { "options": ["lift", "found", "launch", "issue"], "correct": 2 },
+            { "options": ["instead", "later", "sooner", "rather"], "correct": 3 },
+            { "options": ["shock", "surprise", "wonder", "chance"], "correct": 1 },
+            { "options": ["pull", "run", "keep", "hold"], "correct": 2 },
+            { "options": ["set", "gave", "made", "put"], "correct": 3 }
+          ]
+        },
+        {
+          "kind": "cloze",
+          "skill": "use",
+          "instruction": "Read the text below and think of the word which best fits each gap. Use only one word in each gap.",
+          "title": "Libraries That Lend Almost Anything",
+          "text": "In many cities, a library is no longer just a place {{1}} you borrow books. Some now lend almost anything, from garden tools to musical instruments, and members can keep an item for {{2}} few weeks free of charge. The idea is simple: most people use a drill or a ladder only once or twice a year, so it makes little sense for everyone {{3}} own one. By sharing, neighbors save money and reduce waste. Volunteers, many {{4}} whom are retired engineers, repair broken items {{5}} that they can be lent out again. Not only {{6}} these libraries bring people together, but they also teach useful skills. Last year, a woman {{7}} had never held a hammer before took part in a workshop and built a bookshelf for her daughter. She said she would never have tried it if it {{8}} not been for the friendly advice of the staff.",
+          "gaps": [
+            { "answers": ["where"] },
+            { "answers": ["a"] },
+            { "answers": ["to"] },
+            { "answers": ["of"] },
+            { "answers": ["so"] },
+            { "answers": ["do"] },
+            { "answers": ["who", "that"] },
+            { "answers": ["had"] }
+          ]
+        },
+        {
+          "kind": "cloze",
+          "skill": "use",
+          "instruction": "Read the text below. For each gap, use the word given in capitals to form a word that fits in the gap.",
+          "title": "Why We Still Love Markets",
+          "text": "Open-air markets have been part of city life for centuries, and despite the rapid {{1}} of supermarkets, they remain a favorite weekend destination. Many shoppers say that fresh fruit and vegetables taste {{2}} better when they come straight from the farm. Stall owners are usually {{3}} about their products and happy to explain where they were grown, which gives customers a feeling of {{4}} that a large store can rarely match. Of course, markets have their disadvantages. They are often {{5}} with tourists on Saturday mornings, and some critics point out that the quality of the produce can be {{6}}, especially late in the day, when the best items have already gone. Even so, most visitors agree that the {{7}} atmosphere, with its colors, smells and conversations, is part of the attraction. Local councils now recognize the {{8}} of keeping these traditional markets alive, and several have given them money for repairs and advertising.",
+          "gaps": [
+            { "stem": "GROW", "answers": ["growth"] },
+            { "stem": "NOTICE", "answers": ["noticeably"] },
+            { "stem": "ENTHUSIASM", "answers": ["enthusiastic"] },
+            { "stem": "RELY", "answers": ["reliability"] },
+            { "stem": "CROWD", "answers": ["crowded"] },
+            { "stem": "PREDICT", "answers": ["unpredictable"] },
+            { "stem": "LIVE", "answers": ["lively"] },
+            { "stem": "IMPORTANT", "answers": ["importance"] }
+          ]
+        },
+        {
+          "kind": "transform",
+          "skill": "use",
+          "marks": 2,
+          "instruction": "For each question, complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Do not change the word given. You must use between two and five words, including the word given.",
+          "items": [
+            {
+              "first": "I regret not studying harder for the test.",
+              "key": "WISH",
+              "before": "I",
+              "after": "harder for the test.",
+              "answers": ["wish I had studied", "wish I'd studied"]
+            },
+            {
+              "first": "It is possible that Maria forgot about the meeting.",
+              "key": "MAY",
+              "before": "Maria",
+              "after": "about the meeting.",
+              "answers": ["may have forgotten", "may well have forgotten"]
+            },
+            {
+              "first": "My parents did not allow me to go to the concert.",
+              "key": "LET",
+              "before": "My parents",
+              "after": "to the concert.",
+              "answers": ["did not let me go", "didn't let me go", "would not let me go", "wouldn't let me go"]
+            },
+            {
+              "first": "Jack started working here three years ago.",
+              "key": "BEEN",
+              "before": "Jack",
+              "after": "here for three years.",
+              "answers": ["has been working", "'s been working"]
+            },
+            {
+              "first": "'Why don't we take the earlier train?' Sam said.",
+              "key": "SUGGESTED",
+              "before": "Sam",
+              "after": "the earlier train.",
+              "answers": ["suggested taking", "suggested we take", "suggested that we take", "suggested we should take", "suggested that we should take"]
+            },
+            {
+              "first": "If you do not hurry, you will miss the bus.",
+              "key": "UNLESS",
+              "before": "You will miss the bus",
+              "after": "hurry.",
+              "answers": ["unless you"]
+            }
+          ]
+        },
+        {
+          "kind": "passage_mc",
+          "skill": "reading",
+          "marks": 2,
+          "instruction": "Read the text and choose the answer (A, B, C or D) which you think fits best according to the text.",
+          "title": "Learning to Sail at Forty",
+          "text": "I had never planned to take up sailing. The idea came from my neighbor, Hannah, who mentioned one morning over the fence that her club needed beginners to fill a boat for the fall course. I laughed and said that the only water I trusted was the kind that came out of a tap. She did not argue. She just looked at me, the way you look at someone who has already made a decision without knowing it, and said that the first lesson was on Saturday.\n\nOn Saturday I turned up, mostly because I could not think of a polite way of not going. The instructor was a quiet man called Tomas, who looked about sixty and had hands like worn rope. He did not give a speech. Hannah, who had been sailing for years, whispered that he began every course this way. He handed each of us a life jacket, pointed at a small white boat, and told us to walk around it and say what we noticed. I noticed nothing except that it was smaller than I had hoped. The others, all younger than me, noticed ropes, a mast, a rudder. I felt the old classroom panic of being the only one who had not done the reading.\n\n'Don't worry,' Tomas said, when I confessed this at the end of the morning. 'The wind does not care what you have read.' It sounded like a joke, but he did not smile, and it took me weeks to understand that he meant it. Sailing, he explained, is a conversation with something that never repeats itself. You can learn the words, but you cannot rehearse what will be said.\n\nMy worst moment came in the fourth week. A gust caught the sail while I was busy congratulating myself on a neat turn, and the boat tipped slowly, almost politely, until I found myself sitting in the lake with my boots full of water. The water was colder than I had expected, and the shore seemed suddenly much farther away from down there. For a second no one moved. Then Hannah, from the next boat, began to laugh, and I realized, to my surprise, that I was laughing too. Tomas swam over, righted the boat with one calm movement and asked me what had gone wrong. 'I stopped paying attention,' I said. He nodded as if I had passed an exam.\n\nThat was the day I stopped apologizing. Until then, I had treated every mistake as proof that I was too old, too cautious and too used to a life in which the ground stays where you put it. After the lake, I started to see mistakes as information. The boat was not judging me; it was simply responding. This sounds obvious written down, but I had spent twenty years in an office where every error was recorded, discussed and, sooner or later, remembered at my annual review.\n\nBy December I could sail across the lake and back without help, and I no longer felt the need to explain myself to anyone, including Tomas. On the last evening, he gave me a small brass compass, the kind that costs very little and lasts forever. 'You will not need it on the lake,' he said. 'But one day you will want to go somewhere else.' He shook my hand, which he had never done before. I have it on my desk now, next to the computer. I do not look at it often, but I know exactly where it is, and I think that is the point.",
+          "questions": [
+            {
+              "stem": "Why did the narrator go to the first lesson?",
+              "options": [
+                "She had been curious about sailing for a long time.",
+                "She found it hard to refuse her neighbor politely.",
+                "She wanted to prove that she was not afraid of water.",
+                "She had already paid for the whole course."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "What does 'the old classroom panic' suggest about the narrator?",
+              "options": [
+                "She was worried about arriving late.",
+                "She disliked the other learners.",
+                "She found the instructor intimidating.",
+                "She felt less prepared than the rest of the group."
+              ],
+              "correct": 3
+            },
+            {
+              "stem": "What did Tomas mean when he said that the wind does not care what you have read?",
+              "options": [
+                "Preparation alone cannot teach you to cope with changing conditions.",
+                "The narrator should have studied the weather more carefully.",
+                "He was trying to cheer the narrator up with a joke.",
+                "He thought the narrator was not working hard enough."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "How did the narrator react when the boat tipped over?",
+              "options": [
+                "She was angry with Hannah for laughing.",
+                "She was frightened by the cold water.",
+                "She was surprised to find that she was amused.",
+                "She was disappointed by her lack of skill."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "What effect did the accident have on the narrator?",
+              "options": [
+                "She became more careful when the wind was strong.",
+                "She stopped treating mistakes as a sign of failure.",
+                "She began to dislike her job in the office.",
+                "She decided to take part in races."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "What does the narrator mean by 'I think that is the point'?",
+              "options": [
+                "She ought to look at the compass more often.",
+                "The compass matters because it cost so little.",
+                "She no longer needs anything to guide her.",
+                "The compass is important as a reminder, not as a tool."
+              ],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "kind": "gapped_text",
+          "skill": "reading",
+          "marks": 2,
+          "instruction": "Six sentences have been removed from the article. Choose from the sentences (A to G) the one which fits each gap. There is one extra sentence which you do not need to use.",
+          "title": "The Bakery That Refused to Close",
+          "text": "When the last baker in Tarnley announced that he was retiring, most residents assumed that the shop on Main Street would simply become another empty window. {{1}} Within a week, however, a group of neighbors had called a meeting in the town hall, and by the end of the evening more than sixty people had promised to help.\n\nThe plan was ambitious. Rather than looking for a new owner, the group decided to run the bakery themselves, as a community project. {{2}} Each member would put in a small amount of money and agree to work a few hours a month in exchange for a vote on how the shop was run.\n\nMoney was the first obstacle. The ovens needed repairs costing almost four thousand dollars, and the bank was not interested in lending to a group of volunteers with no experience. In the end, the money came from the residents themselves. A local farmer donated flour for the first month, and a retired teacher organized a sponsored walk that raised nearly two thousand dollars in a single Sunday.\n\nNot everyone was convinced. Marian Cole, who has lived in the town for forty years, admits that she expected the idea to collapse within a month. {{3}} 'I changed my mind on the first morning, when I smelled the bread and saw the line outside the door,' she says.\n\nThe opening day had been a nervous one. Volunteers had printed posters, painted a sign above the door and baked two hundred loaves, and nobody could say whether anyone would buy them. By ten o'clock every loaf was gone, and someone had to be sent to ask the farmer for more flour.\n\nRunning a bakery turned out to be harder than anyone had imagined. The volunteers had to learn everything from scratch, from mixing dough at four in the morning to keeping the accounts. {{4}} Fortunately, the retired baker, Henry Lund, offered to stay on for six months as a teacher, and it is largely thanks to him that the first loaves came out of the oven on time.\n\nThe daily routine is demanding. The first shift starts at four, when the ovens are lit and the dough is shaped, and the doors open at seven. By nine, most of the bread has sold, and the volunteers turn to the cakes and pastries, which have become a specialty. On Saturdays, the line often stretches past the bank next door.\n\nTwo years on, the bakery employs three full-time workers and still relies on around forty volunteers. {{5}} A local school now visits every month, and the children are allowed to shape their own rolls, which are then baked and sold on Fridays. Several volunteers say that the work has changed their own lives, too. One man, who had been lonely since his wife died, now describes Tuesday mornings as the best part of his week.\n\nThe shop's budget remains tight, and the committee is careful about every expense. {{6}} 'We are not trying to get rich,' says treasurer Dev Patel. 'We are trying to keep a town alive.'",
+          "fragments": [
+            { "id": "A", "text": "She had seen similar projects begin with enthusiasm and end in arguments about money." },
+            { "id": "B", "text": "Its success has also had effects that nobody predicted." },
+            { "id": "C", "text": "The nearest bakery was eleven miles away, and nobody wanted to drive that far for a loaf of bread." },
+            { "id": "D", "text": "Profits, when there are any, go back into the business or are used to lower the price of bread for seniors." },
+            { "id": "E", "text": "Early attempts were far from perfect, and several batches of rolls came out as hard as stones." },
+            { "id": "F", "text": "Under this arrangement, the shop would belong to everyone in the town who wished to take part." },
+            { "id": "G", "text": "It took more than a year for the committee to find a suitable building for the project." }
+          ],
+          "answer": { "1": "C", "2": "F", "3": "A", "4": "E", "5": "B", "6": "D" }
+        },
+        {
+          "kind": "match_pool",
+          "skill": "reading",
+          "instruction": "Read the article about five people who have moved to a new city. For each question, choose the correct person (A, B, C, D or E). The people may be chosen more than once.",
+          "prompts": [
+            { "id": "p1", "text": "chose where to live mainly with children in mind" },
+            { "id": "p2", "text": "can go for days without much conversation" },
+            { "id": "p3", "text": "found the local people friendlier than predicted" },
+            { "id": "p4", "text": "found housing more expensive than planned" },
+            { "id": "p5", "text": "took up a creative activity as a way of meeting people" },
+            { "id": "p6", "text": "regrets not having visited the city before moving there" },
+            { "id": "p7", "text": "finds the weather difficult to live with" },
+            { "id": "p8", "text": "is making friends only slowly" },
+            { "id": "p9", "text": "came back to a place that turned out to have changed" },
+            { "id": "p10", "text": "no longer owns a car" }
+          ],
+          "options": [
+            {
+              "id": "A",
+              "title": "Anita",
+              "text": "When my company offered me a transfer to Chicago, I said yes before I had even looked at an apartment, which turned out to be a mistake. Rents were far higher than I had budgeted for, and for six months I lived in a tiny studio above a laundromat. On the plus side, my commute is a ten-minute train ride, and I sold my car without a second thought. Work is also where I have made most of my friends, partly because everyone there is new to the city. I still call my sister every night, though. I never imagined that I would miss hearing someone talk about nothing in particular so much."
+            },
+            {
+              "id": "B",
+              "title": "Ben",
+              "text": "I moved here because my girlfriend was accepted into a program at the university, and I had never seen the city before the moving truck arrived. If I had spent even one weekend here first, I would have picked a different neighborhood. Ours is lovely but incredibly noisy at night, and I am a light sleeper. I work from home as a translator, so days can pass without my speaking to anyone except the woman at the bakery. My girlfriend says I should find a coworking space, and she is probably right. For now, I take long walks every afternoon, mainly to remind myself that other people exist."
+            },
+            {
+              "id": "C",
+              "title": "Carla",
+              "text": "I grew up here, left for ten years and came back last spring, so I assumed that settling in would be easy. It was not. The city had changed more than I realized: my favorite cafés had closed, and many of my old friends had moved away. What helped was joining a choir. Within a month I had a reason to leave the house on Tuesday nights and a group of people who knew nothing about my past. I would advise anyone returning to a hometown to treat it like a new place. Expecting everything to be the same only makes the disappointment worse."
+            },
+            {
+              "id": "D",
+              "title": "Dmitri",
+              "text": "People warned me that the locals would be cold and distant, but my experience has been exactly the opposite. On my first day, a neighbor knocked on my door with a plate of cookies and a list of the best restaurants nearby, and within a month I had been invited to two barbecues and a birthday party. What I find harder is the weather. Winters here are long, gray and wet, and I get homesick for the mountains where I grew up. I fly home twice a year, but it is expensive, so I am saving up to build a small cabin there for vacations."
+            },
+            {
+              "id": "E",
+              "title": "Elena",
+              "text": "My husband and I moved with our two young children, so our priorities were schools and parks rather than restaurants or nightlife. We spent weeks visiting schools, and I think that was time well spent, because both children are happy now, which makes everything else easier. Making friends has been slower. The other parents already have their own circles, and I sometimes feel like a guest at someone else's party. Still, I am patient. I go to every school event, and I have started helping in the library, and gradually people have begun to say hello."
+            }
+          ],
+          "answer": { "p1": "E", "p2": "B", "p3": "D", "p4": "A", "p5": "C", "p6": "B", "p7": "D", "p8": "E", "p9": "C", "p10": "A" },
+          "unique": false
+        }
+      ]
+    }
+  ]
 }
