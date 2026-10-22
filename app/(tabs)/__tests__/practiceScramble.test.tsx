@@ -30,7 +30,7 @@ import { ThemeProvider } from '@/lib/ThemeContext';
 import PracticeScreen from '../practice';
 import { makeFlush } from '@/test-utils/flush';
 
-jest.setTimeout(120000);
+jest.setTimeout(60000);
 
 const mockSpeak = speak as jest.Mock;
 const flush = makeFlush(20);

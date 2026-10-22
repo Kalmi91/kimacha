@@ -31,8 +31,8 @@ export interface UseGameRound<S> {
   target: PcicTarget;
   /** The Settings "Accents count" switch. */
   strictAccents: boolean;
-  /** Replaces the mode's state and saves the round. */
-  update: (next: S) => void;
+  /** Replaces the mode's state (or maps the latest one) and saves the round; `persist` false keeps it in memory only (a clock tick). */
+  update: (next: S | ((prev: S) => S), persist?: boolean) => void;
   /** A new round of other words, even if one is on screen. */
   newRound: () => void;
 }
@@ -62,6 +62,8 @@ export function useGameRound<S>(logic: GameLogic<S>): UseGameRound<S> {
         cards,
         today,
         findItem: findPcicItem,
+        size: logic.size,
+        min: logic.minWords,
         usable: logic.usable ? (item) => logic.usable!(item, dir) : undefined,
         avoid: stored && stored.target === dir && (fresh || stored.date !== today) ? new Set(stored.ids) : undefined,
       });
@@ -81,12 +83,14 @@ export function useGameRound<S>(logic: GameLogic<S>): UseGameRound<S> {
   useScreenLoad(load, { onBlur: stopSpeaking });
   useEffect(() => () => stopSpeaking(), []);
 
-  const update = useCallback((state: S) => {
+  const update = useCallback((change: S | ((prev: S) => S), persist = true) => {
     const on = current.current;
     if (!on) return;
+    const state = typeof change === 'function' ? (change as (prev: S) => S)(on.state) : change;
     const next = { ...on, state };
     current.current = next;
     setRound(next);
+    if (!persist) return;
     void saveGame(logic.mode, toSaved(logic.mode, next)).catch(() => {
       // the round on screen keeps its own state; a failed save only loses the resume point
     });

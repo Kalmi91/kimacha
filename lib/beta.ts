@@ -11,9 +11,9 @@ import { useEffect, useMemo, useSyncExternalStore } from 'react';
 
 import { getDb } from '@/lib/database';
 
-export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble';
+export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble' | 'practiceMatch';
 
-export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble'];
+export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch'];
 
 export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   practiceTab: false,
@@ -23,6 +23,7 @@ export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   // the Practice tab games are on from the start (Kálmán, 2026-10-21); the switch hides one.
   practiceDictation: true,
   practiceScramble: true,
+  practiceMatch: true,
 };
 
 let flags: Record<BetaFlag, boolean> = { ...BETA_DEFAULTS };

@@ -160,6 +160,7 @@ export default {
     modeReading: 'Reading',
     modeDictation: 'Dictation',
     modeScramble: 'Scramble',
+    modeMatch: 'Match',
     // shared by the games (lib/practice/useGameRound.ts, components/practice/GameFrame.tsx)
     game: {
       emptyTitle: 'Learn a few more words, then there will be something to practice here',
@@ -167,6 +168,14 @@ export default {
       roundDone: 'Round done',
       score: (n: number, total: number) => `${n} of ${total} right first time`,
       newRound: 'New round',
+    },
+    match: {
+      boardLabel: (n: number, total: number) => `Table ${n} of ${total}`,
+      timeLeft: (sec: number) => `${sec} s left`,
+      timeUp: 'Time is up',
+      allFound: 'All pairs found',
+      result: (found: number, total: number, sec: number) => `${found} of ${total} pairs, ${sec} s`,
+      best: (sec: number) => `Best time: ${sec} s`,
     },
     scramble: {
       emptySlot: 'Empty place',
