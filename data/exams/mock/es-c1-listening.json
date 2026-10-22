@@ -93,7 +93,7 @@
                 },
                 {
                   "speaker": "m",
-                  "text": "Porque Lucía acaba de conseguir el contrato fijo en la universidad. Si nos vamos, ella tendría que empezar de cero, y además mis papás viven a diez minutos de nuestro departamento."
+                  "text": "Porque Lucía acaba de conseguir una plaza de planta en la universidad. Si nos vamos, ella tendría que empezar de cero, y además mis papás viven a diez minutos de nuestro departamento."
                 },
                 {
                   "speaker": "f",
@@ -133,7 +133,7 @@
                   "stem": "¿Por qué duda Andrés de aceptar la oferta?",
                   "options": [
                     "Cree que el nuevo puesto tiene menos responsabilidad que el actual.",
-                    "Le preocupa cómo afectaría el cambio a su esposa y a sus padres.",
+                    "Le preocupa cómo afectaría el cambio a su pareja y a sus padres.",
                     "Desconfía de la solidez de la empresa que le hace la oferta."
                   ],
                   "correct": 1
@@ -368,17 +368,17 @@
                 {
                   "stem": "¿Qué problema tiene el expediente de Karen?",
                   "options": [
-                    "Falta el comprobante del pago de derechos.",
-                    "El documento del servicio social ya ha perdido su vigencia.",
-                    "Un documento carece de uno de los sellos necesarios."
+                    "Falta el comprobante del pago de los derechos de examen de titulación.",
+                    "El documento del servicio social ya ha perdido su vigencia por haber sido emitido hace tres semanas.",
+                    "A uno de los documentos le falta la validación de una de las oficinas."
                   ],
                   "correct": 2
                 },
                 {
                   "stem": "¿Qué pasará si Karen no regresa antes de las cuatro?",
                   "options": [
-                    "Recibirá una prórroga automática de una semana para completar su expediente.",
-                    "Deberá esperar al siguiente periodo, salvo que se acepte una excepción pedida por su asesor.",
+                    "Recibirá una prórroga automática de una semana para completar los documentos que le faltan.",
+                    "Esperará al siguiente periodo, salvo que se acepte una excepción que pida su asesor.",
                     "Perderá la fecha provisional, pero podrá registrarse sin problema al día siguiente."
                   ],
                   "correct": 1
@@ -422,15 +422,15 @@
             },
             {
               "speaker": "f",
-              "text": "Es un riesgo real, y es la crítica que más me preocupa. Si solo los empleos mejor pagados y más cualificados consiguen trabajar menos, la medida aumenta la desigualdad en lugar de reducirla. Por eso defiendo que cualquier política pública vaya acompañada de incentivos para los sectores difíciles, no solo para los que lo tienen fácil."
+              "text": "Es un riesgo real, y es la crítica que más me preocupa. Si solo los empleos mejor pagados y más calificados consiguen trabajar menos, la medida aumenta la desigualdad en lugar de reducirla. Por eso defiendo que cualquier política pública vaya acompañada de incentivos para los sectores difíciles, no solo para los que lo tienen fácil."
             },
             {
               "speaker": "m",
-              "text": "Hay quien opina que en México el problema no es trabajar cinco días, sino que se trabajan demasiadas horas por semana. Cuarenta y ocho horas es lo habitual, ¿no?"
+              "text": "Hay quien opina que en México el problema no es trabajar cinco días, sino que se trabajan demasiadas horas por semana."
             },
             {
               "speaker": "f",
-              "text": "Es un dato que conviene matizar. La jornada legal es de cuarenta y ocho horas semanales, y se discute precisamente una reducción gradual. Pero mucha gente no está en la economía formal, de modo que ninguna ley le llega. Es decir, estamos discutiendo cuántos días trabajar mientras millones de personas no tienen vacaciones pagadas ni seguridad social."
+              "text": "Es un dato que conviene matizar. Una cosa son las horas que fija la ley y otra las que se trabajan de verdad. Además, mucha gente no está en la economía formal, de modo que ninguna ley le llega. Es decir, estamos discutiendo cuántos días trabajar mientras millones de personas no tienen vacaciones pagadas ni seguridad social."
             },
             {
               "speaker": "m",
@@ -501,9 +501,9 @@
             {
               "stem": "Según la doctora Garza, los resultados favorables de los experimentos",
               "options": [
-                "demuestran que la medida es aplicable a cualquier sector económico.",
-                "deben tomarse con cautela porque proceden de un tipo concreto de empresas voluntarias.",
-                "se explican sobre todo por la eliminación de las reuniones de trabajo."
+                "demuestran que la medida funciona bien en las empresas de servicios de cualquier tamaño.",
+                "deben tomarse con cautela, porque proceden de empresas que se ofrecieron voluntariamente.",
+                "se explican, sobre todo, por la eliminación de las reuniones de trabajo."
               ],
               "correct": 1
             },
@@ -519,36 +519,36 @@
             {
               "stem": "¿Qué es lo que más preocupa a la doctora?",
               "options": [
-                "Que la productividad baje en el sector de los servicios.",
-                "Que las empresas pequeñas no puedan asumir los costos.",
-                "Que solo se beneficien los empleos mejor pagados y crezca la desigualdad."
+                "Que la productividad de las empresas de servicios disminuya al reducir los días de trabajo.",
+                "Que las empresas pequeñas no puedan asumir los costos de reducir la jornada.",
+                "Que la medida solo llegue a los empleos mejor pagados y aumente la desigualdad."
               ],
               "correct": 2
             },
             {
               "stem": "Al hablar de la economía informal, la doctora quiere señalar que",
               "options": [
-                "la reducción de la jornada legal beneficiará a millones de trabajadores informales.",
+                "la reducción de la jornada beneficiará también a la mayoría de los trabajadores informales.",
                 "la discusión sobre los cuatro días olvida a quienes no tienen derechos laborales básicos.",
-                "la ley actual debería aplicarse con más rigor en todos los sectores."
+                "la ley actual debería aplicarse con más rigor en todos los sectores económicos del país."
               ],
               "correct": 1
             },
             {
               "stem": "¿Cómo valora la doctora el argumento de las empresas pequeñas?",
               "options": [
-                "Le concede parte de razón, pero observa que se repite ante cualquier mejora laboral.",
-                "Lo rechaza por completo porque los temores nunca se han cumplido.",
-                "Lo acepta y propone que esas empresas queden fuera de la medida."
+                "Le concede parte de razón, pero señala que se repite ante cualquier mejora laboral.",
+                "Lo rechaza, porque en su experiencia los temores casi nunca se cumplen.",
+                "Lo acepta y propone que esas empresas queden exentas de cualquier cambio de jornada."
               ],
               "correct": 0
             },
             {
               "stem": "Para evitar efectos negativos, la doctora propone sobre todo",
               "options": [
-                "aprobar enseguida una ley que reduzca la semana laboral a cuatro días.",
-                "reducir las horas de trabajo sin cambiar lo que se exige a los empleados.",
-                "probar antes la medida con muestras amplias y vigilar que no se trabaje con más intensidad."
+                "aprobar cuanto antes una ley que reduzca la semana laboral a cuatro días en todo el país.",
+                "reducir las horas de trabajo sin modificar los objetivos que se exigen a los empleados.",
+                "probar antes la medida en muestras amplias y vigilar que menos horas no suponga más intensidad."
               ],
               "correct": 2
             }
@@ -594,7 +594,7 @@
                 },
                 {
                   "speaker": "f",
-                  "text": "Hombre, la llamaste por el nombre de tu ex frente a todos. Seguro ya le cayó el veinte de lo que dijiste."
+                  "text": "Pues la llamaste por el nombre de tu ex frente a todos. Seguro ya le cayó el veinte de lo que dijiste."
                 },
                 {
                   "speaker": "m",
@@ -625,7 +625,7 @@
                 },
                 {
                   "speaker": "f",
-                  "text": "Siempre lo hace todo a última hora y le sale bien. Ya ni modo."
+                  "text": "Siempre lo hace todo a última hora y le sale bien. Así es Julián."
                 }
               ],
               "questions": [
@@ -706,7 +706,7 @@
                 },
                 {
                   "speaker": "m",
-                  "text": "Dice una cosa en la primera página y lo contrario en la última."
+                  "text": "No sé qué le pasó, pero lo mandó sin revisar. Ni Ramiro supo explicármelo cuando le pregunté."
                 }
               ],
               "questions": [
@@ -729,7 +729,7 @@
                 },
                 {
                   "speaker": "m",
-                  "text": "Era para aprobar el presupuesto, pero el director se fue por las ramas. Habló de sus vacaciones, de su hijo, y no resolvimos nada."
+                  "text": "Era para aprobar el presupuesto, pero el director se fue por las ramas otra vez y salimos igual que como entramos."
                 },
                 {
                   "speaker": "f",
@@ -751,25 +751,25 @@
             {
               "audio": [
                 {
+                  "speaker": "f",
+                  "text": "¿Qué onda con tu vecino? Te vi hablando con él en la entrada."
+                },
+                {
                   "speaker": "m",
-                  "text": "Me inscribí otra vez al gimnasio, pero a la tercera semana ya quería tirar la toalla."
+                  "text": "Nada, otra vez me anduvo dando lata con el estacionamiento. Dice que mi carro le estorba, y ni lo uso entre semana."
                 },
                 {
                   "speaker": "f",
-                  "text": "No lo hagas. Los primeros días son los más duros. Mejor cambia de horario y ve en las mañanas."
-                },
-                {
-                  "speaker": "m",
-                  "text": "Lo voy a intentar un mes más."
+                  "text": "Pues habla con el administrador, porque así no se puede."
                 }
               ],
               "questions": [
                 {
-                  "stem": "¿Qué quería hacer el hombre a la tercera semana?",
+                  "stem": "¿Qué quiere decir el hombre con «me anduvo dando lata»?",
                   "options": [
-                    "Cambiarse a otro gimnasio.",
-                    "Pedir un descuento en la mensualidad.",
-                    "Rendirse y dejar de ir."
+                    "Que el vecino le ofreció ayuda con el estacionamiento.",
+                    "Que el vecino le pidió prestado el carro.",
+                    "Que el vecino lo estuvo molestando con el mismo asunto."
                   ],
                   "correct": 2
                 }
@@ -779,24 +779,24 @@
               "audio": [
                 {
                   "speaker": "f",
-                  "text": "¿Cómo te fue en el examen de manejo?"
+                  "text": "¿Ya tienes todo para el viaje de mañana?"
                 },
                 {
                   "speaker": "m",
-                  "text": "Pan comido. Estacioné en batería a la primera y el examinador ni siquiera me preguntó nada más. Salí de ahí en diez minutos."
+                  "text": "Todo. Las maletas, los boletos impresos y hasta el cargador del celular. Ya estoy al tiro."
                 },
                 {
                   "speaker": "f",
-                  "text": "¡Qué envidia! Yo lo reprobé dos veces."
+                  "text": "Qué envidia. Yo todavía no saco ni la ropa del clóset, y salimos a las seis."
                 }
               ],
               "questions": [
                 {
-                  "stem": "¿Qué quiere decir el hombre con «pan comido»?",
+                  "stem": "¿Qué quiere decir el hombre con «ya estoy al tiro»?",
                   "options": [
-                    "Que el examen le resultó muy fácil.",
-                    "Que le dieron algo de comer durante la prueba.",
-                    "Que lo aprobó después de muchos intentos."
+                    "Que ya está listo para el viaje.",
+                    "Que ya salió rumbo al aeropuerto.",
+                    "Que está nervioso por viajar."
                   ],
                   "correct": 0
                 }
@@ -814,16 +814,16 @@
                 },
                 {
                   "speaker": "f",
-                  "text": "Los vio, me aparece la palomita azul. Me ignoró y ya."
+                  "text": "Sí los vio, me aparece la palomita azul. Así es Memo cuando no quiere comprometerse."
                 }
               ],
               "questions": [
                 {
-                  "stem": "¿Qué le pasó a la mujer con Memo?",
+                  "stem": "¿Qué quiere decir la mujer con «me dio el avión»?",
                   "options": [
-                    "Memo le canceló la invitación al concierto.",
-                    "Memo no quiso responderle.",
-                    "Memo le pidió que lo llamara por teléfono."
+                    "Que Memo le contestó que estaba de viaje.",
+                    "Que Memo no le hizo caso a propósito.",
+                    "Que Memo le propuso otro plan."
                   ],
                   "correct": 1
                 }
