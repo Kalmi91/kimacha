@@ -286,7 +286,7 @@ export default function MockExamScreen() {
                 {p.placeholder ? s.paperLineSoon(p.name, p.minutes) : s.paperLine(p.name, p.minutes, p.tasks.length, p.points)}
               </Text>
             ))}
-            <Text style={[styles.line, { color: colors.text }]}>{rule.kind === 'groups' ? s.passRule(rule.groups[0].needed, rule.groups[0].of) : rule.kind === 'total' ? s.passRuleTotal(rule.needed, rule.of) : s.passRuleAverage(rule.passPct)}</Text>
+            <Text style={[styles.line, { color: colors.text }]}>{rule.kind === 'groups' ? s.passRule(rule.groups[0].needed, rule.groups[0].of) : rule.kind === 'total' ? s.passRuleTotal(rule.needed, rule.of) : rule.kind === 'scale' ? s.passRuleScale(rule.needed) : s.passRuleAverage(rule.passPct)}</Text>
             <Text style={[styles.note, { color: colors.textMuted }]}>{s.shortNote}</Text>
           </>,
         )}

@@ -13,9 +13,11 @@
 import type { PcicItem } from '@/data/pcic';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
 import { mockInstruction, MOCK_WRITING, type MockInstructionKind } from './author';
+import { authoredFormCount, authoredTasks } from './authored';
 import { getMockBlueprint } from './blueprint';
 import {
   DEFAULT_PLAYS,
+  type AuthoredPaperFile,
   type MockExam,
   type MockGapMcTask,
   type MockLevel,
@@ -35,6 +37,8 @@ interface MockBuildInput {
   /** The level's cards (`pcicItemsForLevel`, those of the active direction). */
   items: PcicItem[];
   seed: number;
+  /** The authored paper files of B1-C1 (default: the registry data/exams/mock; tests inject their own). */
+  authored?: AuthoredPaperFile[];
 }
 
 interface Sentence {
@@ -102,6 +106,19 @@ const AUTHORED_PREFIX = /^(TAREA|PART) \d+\.\s*/;
 export function buildMockExam(input: MockBuildInput): MockExam {
   const { target, level, items, seed } = input;
   const bp = getMockBlueprint(target, level);
+  if (bp.plan === 'authored') {
+    // B1-C1: the tasks are written, not built from the words; the seed picks one form (lib/exam/mock/authored.ts).
+    const formCount = authoredFormCount(target, level, bp.papers.filter((p) => !p.placeholder).map((p) => p.id), input.authored);
+    const papers: MockPaper[] = bp.papers.map((spec) => ({
+      id: spec.id,
+      name: spec.name,
+      minutes: spec.minutes,
+      points: spec.skills.length * 25,
+      placeholder: !!spec.placeholder,
+      tasks: spec.placeholder ? [] : authoredTasks(target, level, spec.id, seed, formCount, input.authored),
+    }));
+    return { target, level, seed, official: bp.official, papers, skillNames: bp.skillNames, rule: bp.rule };
+  }
   const c = bp.counts;
   const key = `${target}:${level}:${seed}`;
   const rank = (part: string) => hashString(`${key}:${part}`);
@@ -300,7 +317,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     task: { ...w, id: '', skill: 'writing', instruction: w.instruction.replace(AUTHORED_PREFIX, '') } as MockTask,
   }));
 
-  const drafts: Record<MockSkill, (Draft | null)[]> = { reading: [], writing, listening: [], speaking: [] };
+  const drafts: Record<MockSkill, (Draft | null)[]> = { reading: [], writing, listening: [], speaking: [], use: [] };
   if (bp.plan === 'es-official') {
     drafts.reading = [readMc(), matchDraft('match', c.readMatch, 'rm'), trueFalse(), gapMc()];
     drafts.listening = [

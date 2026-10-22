@@ -5,7 +5,7 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import type { GlossaryEntry } from '@/lib/exam/mock/glossary';
 import { countWords } from '@/lib/exam/mock/score';
-import { DEFAULT_PLAYS, type MockTarget, type MockTask, type MockTaskAnswer } from '@/lib/exam/mock/types';
+import { DEFAULT_PLAYS, isAuthoredKindTask, type MockTarget, type MockTask, type MockTaskAnswer } from '@/lib/exam/mock/types';
 import { answerInputProps } from '@/lib/inputProps';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
@@ -47,6 +47,20 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
       stopSpeaking();
     };
   }, []);
+
+  // The authored B1-C1 kinds have no screen yet (the next slice): the card only says so, so that the exam does not crash.
+  if (isAuthoredKindTask(task)) {
+    return (
+      <View style={styles.wrap}>
+        <Text testID="mock-instruction" style={[styles.instruction, { color: colors.tint }]}>
+          {task.instruction}
+        </Text>
+        <Text testID="mock-task-not-shown" style={[styles.hint, { color: colors.textMuted }]}>
+          {s.taskNotShown}
+        </Text>
+      </View>
+    );
+  }
 
   const audioLines = 'audio' in task && task.audio ? task.audio : [];
   const isListening = audioLines.length > 0;

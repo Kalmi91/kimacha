@@ -94,6 +94,8 @@ const es: typeof en = {
     passRuleTotal: (needed: number, of: number) => `Para aprobar: al menos ${needed} de ${of} puntos en total. Una destreza puede compensar a otra.`,
     passRuleAverage: (pct: number) =>
       `Para aprobar: un promedio de alrededor del ${pct}% entre las destrezas. Este puntaje mínimo es una estimación, el examen real no publica uno.`,
+    passRuleScale: (needed: number) =>
+      `Para aprobar: un promedio de alrededor de ${needed} puntos en la escala del examen. Este puntaje mínimo es una estimación, el examen real no publica uno.`,
     shortNote: 'Más corto que el examen real, los puntos se escalan. El reloj es el real.',
     unavailableBody: 'Todavía no hay examen de práctica para este nivel.',
     emptyBody: 'Todavía no hay material suficiente para este examen de práctica.',
@@ -123,6 +125,7 @@ const es: typeof en = {
     wordCount: (n: number, min: number) => `${n} / mín. ${min}`,
     glossaryShow: (n: number) => `Palabras que aún no has aprendido (${n})`,
     glossaryHide: 'Ocultar lista de palabras',
+    taskNotShown: 'Este tipo de tarea todavía no se muestra.',
     hint: {
       read_mc: 'Lee cada texto corto y elige qué significa.',
       match: 'Relaciona cada oración con su significado. Sobra un significado.',
