@@ -7,19 +7,24 @@
 //   loadBeta()          reads the flags from the DB once; useBeta calls it, so the tab layout loads it at startup
 //   setBeta(flag, on)   saves + notifies
 
-import { useEffect, useSyncExternalStore } from 'react';
+import { useEffect, useMemo, useSyncExternalStore } from 'react';
 
 import { getDb } from '@/lib/database';
 
-export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels';
+export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble' | 'practiceMatch' | 'practiceOpposites';
 
-export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels'];
+export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites'];
 
 export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   practiceTab: false,
   sentenceTab: false,
   xpV2: false,
   levels: false,
+  // the Practice tab games are on from the start (Kálmán, 2026-10-21); the switch hides one.
+  practiceDictation: true,
+  practiceScramble: true,
+  practiceMatch: true,
+  practiceOpposites: true,
 };
 
 let flags: Record<BetaFlag, boolean> = { ...BETA_DEFAULTS };
@@ -73,6 +78,19 @@ export function useBeta(flag: BetaFlag): boolean {
     void loadBeta();
   }, []);
   return useSyncExternalStore(subscribe, () => flags[flag], () => BETA_DEFAULTS[flag]);
+}
+
+// Which of `list` are on right now, in the order of `list`; re-renders when one changes (the Practice tab's mode chips).
+export function useBetaEnabled(list: readonly BetaFlag[]): BetaFlag[] {
+  useEffect(() => {
+    void loadBeta();
+  }, []);
+  const key = useSyncExternalStore(
+    subscribe,
+    () => list.filter((f) => flags[f]).join(','),
+    () => list.filter((f) => BETA_DEFAULTS[f]).join(','),
+  );
+  return useMemo(() => (key ? (key.split(',') as BetaFlag[]) : []), [key]);
 }
 
 // Test helper (same pattern as __setLevelForTest in database.web.ts): forget the cache so the next load re-reads the DB.

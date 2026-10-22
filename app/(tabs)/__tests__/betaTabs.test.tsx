@@ -92,11 +92,11 @@ describe('tab bar: the two beta tabs', () => {
 });
 
 describe('Settings: Beta section', () => {
-  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1' } as const;
-  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1' } as const;
+  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1', practiceDictation: 'Dictation game', practiceScramble: 'Letter scramble game', practiceMatch: 'Quick match game', practiceOpposites: 'Opposites game' } as const;
+  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1', practiceDictation: 'Juego de dictado', practiceScramble: 'Juego de letras revueltas', practiceMatch: 'Juego de parejas rápidas', practiceOpposites: 'Juego de opuestos' } as const;
 
   describe.each(['classic', 'brand'] as const)('palette %s', (palette) => {
-    it('four named switches, all off; a toggle saves the flag', async () => {
+    it('eight named switches, all off; a toggle saves the flag', async () => {
       await getDb().setGrammarPalette(palette);
       const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
       await flush();
@@ -126,7 +126,7 @@ describe('Settings: Beta section', () => {
     });
   });
 
-  it('Spanish UI: the four switch labels are Spanish', async () => {
+  it('Spanish UI: the switch labels are Spanish', async () => {
     await getDb().setGrammarPalette('classic');
     setLanguage('es');
     const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
