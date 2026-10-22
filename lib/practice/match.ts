@@ -41,9 +41,9 @@ export interface MatchState {
 
 const firstForm = (text: string) => (pcicAlternatives(text)[0] ?? text).trim();
 
-/** What a card shows: the Spanish word with its article, and the English meaning. */
+/** What a card shows: the Spanish word with its article, and the English meaning as written (its notes in brackets too). */
 export function matchCard(item: PcicItem): { es: string; en: string } {
-  return { es: firstForm(item.es), en: firstForm(item.en) };
+  return { es: firstForm(item.es), en: item.en.trim() };
 }
 
 /** A word needs both texts. */

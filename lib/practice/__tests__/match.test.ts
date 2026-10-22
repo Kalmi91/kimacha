@@ -46,6 +46,8 @@ describe('the tables', () => {
   it('fewer words give smaller tables; a card shows the Spanish with its article and the English', () => {
     expect(buildBoards(items.slice(0, 7)).map((b) => b.length)).toEqual([5, 2]);
     expect(matchCard(word('x', 'el carro / el coche', 'car'))).toEqual({ es: 'el carro', en: 'car' });
+    // the English keeps its note in brackets: "to like be pleasing" on the emulator was wrong
+    expect(matchCard(word('y', 'gustar', 'to like (be pleasing)')).en).toBe('to like (be pleasing)');
   });
 
   it('both columns hold the same cards, shuffled the same way every time, not in table order', () => {
