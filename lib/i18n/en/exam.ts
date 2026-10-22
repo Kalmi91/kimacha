@@ -100,6 +100,8 @@ export default {
     passRuleTotal: (needed: number, of: number) => `To pass: at least ${needed} of ${of} points in total. One skill can make up for another.`,
     passRuleAverage: (pct: number) =>
       `To pass: an average of about ${pct}% across the skills. This pass line is an estimate, the real exam does not publish one.`,
+    passRuleScale: (needed: number) =>
+      `To pass: an average of about ${needed} points on the exam scale. This pass line is an estimate, the real exam does not publish one.`,
     shortNote: 'Shorter than the real exam, points are scaled. The clock is the real one.',
     unavailableBody: 'There is no practice exam for this level yet.',
     emptyBody: 'There is not enough material for this practice exam yet.',
@@ -129,6 +131,7 @@ export default {
     wordCount: (n: number, min: number) => `${n} / min ${min}`,
     glossaryShow: (n: number) => `Words you have not learned yet (${n})`,
     glossaryHide: 'Hide word list',
+    taskNotShown: 'This task type is not shown yet.',
     hint: {
       read_mc: 'Read each short text and choose what it means.',
       match: 'Match each sentence with its meaning. There is one meaning too many.',

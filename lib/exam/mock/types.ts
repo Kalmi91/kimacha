@@ -11,8 +11,11 @@ import type { PcicLevel, PcicTarget } from '@/data/pcic';
 import { foldedTokens } from './writing';
 
 export type MockTarget = PcicTarget;
-export type MockLevel = Extract<PcicLevel, 'A1' | 'A2'>;
-export type MockSkill = 'reading' | 'writing' | 'listening' | 'speaking';
+export type MockLevel = PcicLevel;
+/** `use` = Use of English: its own skill in the English B2 / C1 exams (the examiner scores it apart from reading). */
+export type MockSkill = 'reading' | 'writing' | 'listening' | 'speaking' | 'use';
+/** The skill names in the target language; `use` is there only in the exams that have a Use of English part. */
+export type MockSkillNames = Record<Exclude<MockSkill, 'use'>, string> & Partial<Record<'use', string>>;
 
 export interface MockChoice {
   options: string[];
@@ -29,6 +32,11 @@ interface MockTaskBase {
 /** How many times recorded tasks can be played (default: twice; the first part of English A1: once). */
 interface MockPlays {
   plays?: number;
+}
+
+/** Marks per item (default 1): the weight of the task's items in the skill's raw score. */
+interface MockMarks {
+  marks?: number;
 }
 
 export interface MockMatchTask extends MockTaskBase, MockPlays {
@@ -108,6 +116,108 @@ export interface MockShortMessageTask extends MockTaskBase {
   points: { id: string; label: string; keywords: string[] }[];
 }
 
+// --- The authored kinds of B1-C1 (data/exams/mock/*.json, schema: lib/exam/mock/authored.ts). The answer key of the
+// learner (MockTaskAnswer): passage_mc / clips_mc / cloze / transform: the item index (clips_mc: counted across the clips,
+// cloze: gap index = `{{n}}` minus one) -> the chosen option index or the typed text; match_pool: prompt id -> option id;
+// gapped_text: gap number ("1".) -> fragment id; pick_statements: statement index -> true; essay: `choice` = choice id, `text`.
+
+/** A recorded line; the speaker gives the pitch of the voice (m: deep, f: high, n: neutral). */
+export interface MockAudioLine {
+  speaker?: 'm' | 'f' | 'n';
+  text: string;
+}
+
+export interface MockMcQuestion {
+  stem: string;
+  options: string[];
+  correct: number;
+}
+
+/** A text (`text`: read) or a recording (`audio`: heard) with multiple-choice questions. */
+export interface MockPassageMcTask extends MockTaskBase, MockPlays, MockMarks {
+  kind: 'passage_mc';
+  title?: string;
+  text?: string;
+  audio?: MockAudioLine[];
+  questions: MockMcQuestion[];
+}
+
+/** Several short texts or recordings, each with its own questions. */
+export interface MockClipsMcTask extends MockTaskBase, MockPlays, MockMarks {
+  kind: 'clips_mc';
+  clips: { text?: string; audio?: MockAudioLine[]; questions: MockMcQuestion[] }[];
+}
+
+/** Prompts matched to a pool of options; `unique`: every option can be used once at most. */
+export interface MockMatchPoolTask extends MockTaskBase, MockPlays, MockMarks {
+  kind: 'match_pool';
+  prompts: { id: string; text?: string; audio?: MockAudioLine[] }[];
+  options: { id: string; title?: string; text: string }[];
+  answer: Record<string, string>;
+  unique: boolean;
+}
+
+/** A text with `{{1}}`..`{{n}}` gaps and fragments (gaps + extra) to put back; the answer maps the gap number to a fragment id. */
+export interface MockGappedTextTask extends MockTaskBase, MockPlays, MockMarks {
+  kind: 'gapped_text';
+  title?: string;
+  text: string;
+  fragments: { id: string; text: string }[];
+  answer: Record<string, string>;
+}
+
+/** A text with `{{n}}` gaps: gaps[i] is `{{i+1}}`, a multiple-choice gap or an open one (`answers`: the accepted words, `stem`: the word to transform). */
+export interface MockClozeTask extends MockTaskBase, MockPlays, MockMarks {
+  kind: 'cloze';
+  title?: string;
+  text: string;
+  audio?: MockAudioLine[];
+  gaps: ({ options: string[]; correct: number } | { answers: string[]; stem?: string })[];
+}
+
+/** Statements to pick: `pick` of them are right (`correct` = their indices). */
+export interface MockPickStatementsTask extends MockTaskBase, MockPlays, MockMarks {
+  kind: 'pick_statements';
+  text?: string;
+  audio?: MockAudioLine[];
+  statements: string[];
+  correct: number[];
+  pick: number;
+}
+
+/** Key word transformation: `first` + `key`, then `before ___ after`; `answers` are all the accepted fillings of the gap. */
+export interface MockTransformTask extends MockTaskBase, MockPlays, MockMarks {
+  kind: 'transform';
+  items: { first: string; key: string; before: string; after: string; answers: string[] }[];
+}
+
+/** An extended writing task: 1 choice = compulsory, 2-3 = pick one. `input` is the written, `audio` the heard prompt. */
+export interface MockEssayTask extends MockTaskBase, MockPlays, MockMarks {
+  kind: 'essay';
+  choices: {
+    id: string;
+    title: string;
+    prompt: string;
+    input?: string;
+    audio?: MockAudioLine[];
+    minWords: number;
+    maxWords: number;
+    /** One content point = one mark, matched by keywords like the short message. */
+    points: { id: string; label: string; keywords: string[] }[];
+  }[];
+}
+
+/** The kinds that come from the authored files. */
+export type MockAuthoredKindTask =
+  | MockPassageMcTask
+  | MockClipsMcTask
+  | MockMatchPoolTask
+  | MockGappedTextTask
+  | MockClozeTask
+  | MockPickStatementsTask
+  | MockTransformTask
+  | MockEssayTask;
+
 export type MockTask =
   | MockMatchTask
   | MockReadMcTask
@@ -117,7 +227,14 @@ export type MockTask =
   | MockDictationTask
   | MockListenTask
   | MockFormFillTask
-  | MockShortMessageTask;
+  | MockShortMessageTask
+  | MockAuthoredKindTask;
+
+const AUTHORED_KINDS: readonly string[] = ['passage_mc', 'clips_mc', 'match_pool', 'gapped_text', 'cloze', 'pick_statements', 'transform', 'essay'];
+
+export function isAuthoredKindTask(task: MockTask): task is MockAuthoredKindTask {
+  return AUTHORED_KINDS.includes(task.kind);
+}
 
 export interface MockPaper {
   /** Stable id (the save records it): in Spanish the skill name, in English `written` / `readingwriting` / `listening` / `speaking`. */
@@ -143,12 +260,16 @@ export interface MockGroup {
  * - groups: a threshold per group (the official Spanish A1 / A2: reading + writing, listening + speaking, all 30 / 50);
  * - total: a single total-score threshold, no per-skill minimum, the skills compensate each other (English A1);
  * - average: the equal-weight average of the four skills against a percentage threshold; the examiner does not
- *   publish the threshold, so it is an approximate value (English A2, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT).
+ *   publish the threshold, so it is an approximate value (English A2, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT);
+ * - scale: per skill the raw score is converted to a scale score along `anchors` ([raw, scale] pairs of the examiner's
+ *   practice conversion, linear in between), the average of the scale scores is compared with `needed` (English B1 / B2 / C1).
+ *   `officialMax` is the skill's maximum raw score on the real paper; the speaking has no entry (placeholder).
  */
 export type MockRule =
   | { kind: 'groups'; groups: MockGroup[] }
   | { kind: 'total'; needed: number; of: number }
-  | { kind: 'average'; passPct: number; approximate: true };
+  | { kind: 'average'; passPct: number; approximate: true }
+  | { kind: 'scale'; needed: number; approximate: true; skills: Partial<Record<MockSkill, { officialMax: number; anchors: [raw: number, scale: number][] }>> };
 
 export interface MockExam {
   target: MockTarget;
@@ -158,9 +279,23 @@ export interface MockExam {
   official: boolean;
   papers: MockPaper[];
   /** The names of the skills in the target language (for the bands of the result sheet). */
-  skillNames: Record<MockSkill, string>;
+  skillNames: MockSkillNames;
   rule: MockRule;
 }
+
+/** A paper's authored content file (data/exams/mock/<target>-<level>-<paper>.json): one or more forms, the seed picks one. */
+export interface AuthoredPaperFile {
+  target: MockTarget;
+  level: Extract<MockLevel, 'B1' | 'B2' | 'C1'>;
+  /** The blueprint paper id (lib/exam/mock/blueprint.ts). */
+  paper: string;
+  forms: { id: string; tasks: AuthoredTask[] }[];
+}
+
+type DistributiveOmit<T, K extends PropertyKey> = T extends unknown ? Omit<T, K> : never;
+
+/** A task as written in the files: a Mock task without the id (the builder numbers them). */
+export type AuthoredTask = DistributiveOmit<MockAuthoredKindTask, 'id' | 'skill'> & { skill: Exclude<MockSkill, 'speaking'> };
 
 /** What the learner gave for a task: the key is the item index or the prompt/field id. */
 export type MockTaskAnswer = Record<string, string | number | boolean | null>;
@@ -191,5 +326,26 @@ export function mockTaskItemCount(task: MockTask): number {
       return task.fields.length;
     case 'short_message':
       return task.points.length + 1; // content points + reaching the word count
+    case 'passage_mc':
+      return task.questions.length;
+    case 'clips_mc':
+      return task.clips.reduce((n, c) => n + c.questions.length, 0);
+    case 'match_pool':
+      return task.prompts.length;
+    case 'gapped_text':
+      return Object.keys(task.answer).length;
+    case 'cloze':
+      return task.gaps.length;
+    case 'pick_statements':
+      return task.pick;
+    case 'transform':
+      return task.items.length;
+    case 'essay':
+      return Math.max(0, ...task.choices.map((c) => c.points.length)) + 1; // content points + reaching the word count
   }
+}
+
+/** The raw marks of a task: its items x the marks per item (default 1). */
+export function mockTaskMarks(task: MockTask): number {
+  return mockTaskItemCount(task) * ('marks' in task && typeof task.marks === 'number' ? task.marks : 1);
 }

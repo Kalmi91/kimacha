@@ -15,7 +15,7 @@ import { mockTaskItemCount, type MockAnswers, type MockExam, type MockRule, type
 
 afterAll(() => setPcicTarget('es'));
 
-const SKILL_NAMES: Record<MockSkill, string> = { reading: 'Reading', writing: 'Writing', listening: 'Listening', speaking: 'Speaking' };
+const SKILL_NAMES: Record<MockSkill, string> = { reading: 'Reading', writing: 'Writing', listening: 'Listening', speaking: 'Speaking', use: 'Use of English' };
 const GROUPS: MockRule = {
   kind: 'groups',
   groups: [
