@@ -2,5 +2,282 @@
   "target": "en",
   "level": "C1",
   "paper": "readinguse",
-  "forms": []
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "kind": "cloze",
+          "skill": "use",
+          "instruction": "Read the text below and decide which answer best fits each gap.",
+          "title": "The repair revival",
+          "text": "For decades, the household appliance was designed to be replaced rather than repaired. A broken toaster or a worn-out pair of boots was simply {{1}} and a new one bought, often for less than the cost of fixing the old. But attitudes are now {{2}} a shift. Community repair cafés, where volunteers help neighbors mend everything from lamps to laptops, have {{3}} up in towns across the country, and many report waiting lists that stretch for weeks. Their organizers say the appeal goes well {{4}} saving money. Visitors speak of the satisfaction of understanding how an object works, and some leave determined to {{5}} that knowledge to other broken things at home. Manufacturers, meanwhile, are under growing {{6}} from legislators to supply spare parts and publish repair manuals. Critics argue that the movement is too small to {{7}} a dent in the mountain of electronic waste. Its supporters reply that the real aim is not tonnage but a change of mindset, one that treats possessions as resources to be {{8}} rather than used up.",
+          "gaps": [
+            { "options": ["dismissed", "dispatched", "discarded", "disposed"], "correct": 2 },
+            { "options": ["undergoing", "obtaining", "enjoying", "enduring"], "correct": 0 },
+            { "options": ["drawn", "built", "broken", "sprung"], "correct": 3 },
+            { "options": ["outside", "beyond", "across", "over"], "correct": 1 },
+            { "options": ["apply", "convey", "attach", "offer"], "correct": 0 },
+            { "options": ["force", "strain", "tension", "pressure"], "correct": 3 },
+            { "options": ["take", "make", "give", "bring"], "correct": 1 },
+            { "options": ["concealed", "contained", "conserved", "consumed"], "correct": 2 }
+          ]
+        },
+        {
+          "kind": "cloze",
+          "skill": "use",
+          "instruction": "Read the text below and think of the word which best fits each gap. Use only one word in each gap.",
+          "title": "Trees in the city",
+          "text": "Few people notice the trees that line their streets until one of them is felled. Yet urban foresters have long argued that a single mature tree is worth far {{1}} than the shade it casts. It cools the surrounding air, absorbs rainwater that would otherwise overwhelm the drains, and filters fine dust out {{2}} the atmosphere. {{3}} these benefits, many cities lost a large share of their trees during the last century, usually {{4}} the pretext of widening roads. Today the trend is being reversed, with some places having gone {{5}} far as to appoint an officer whose sole job is to look after the canopy. The challenge, however, is not simply to plant saplings. Young trees need years of care, and {{6}} they are watered regularly in their first summers, a great many will die. Planners now accept that the real question is not how many trees a city can plant, but how many it can afford to keep, and for {{7}} long. Only when that is understood {{8}} urban forests have a real chance of surviving.",
+          "gaps": [
+            { "answers": ["more"] },
+            { "answers": ["of"] },
+            { "answers": ["despite", "notwithstanding"] },
+            { "answers": ["under"] },
+            { "answers": ["as", "so"] },
+            { "answers": ["unless"] },
+            { "answers": ["how"] },
+            { "answers": ["will", "can"] }
+          ]
+        },
+        {
+          "kind": "cloze",
+          "skill": "use",
+          "instruction": "Read the text below. For each gap, use the word in capitals to form a word that fits the text.",
+          "title": "The audiobook boom",
+          "text": "Once dismissed as a lazy {{1}} to reading, audiobooks now account for a {{2}} share of the publishing market. Their rise is partly {{3}} to technology: almost everyone carries a phone capable of storing dozens of titles, and subscription services that charge a modest monthly fee have made it easy to experiment without risking much money. But the format owes just as much to a change in {{4}} habits. Commuters, joggers and parents with sleepless babies all report that listening has {{5}} transformed time that was previously wasted. Publishers, once {{6}} to bear the cost of hiring professional narrators, have discovered that a gifted voice can make an ordinary text {{7}} and an excellent one unforgettable. Some authors insist, however, that the experience is {{8}} different from reading, since the narrator's interpretation inevitably replaces the listener's own. Others take a more relaxed view, pointing out that readers have always imagined characters differently, and that a good performance may simply give an old story a second life.",
+          "gaps": [
+            { "stem": "ALTERNATE", "answers": ["alternative"] },
+            { "stem": "SUBSTANCE", "answers": ["substantial"] },
+            { "stem": "ATTRIBUTE", "answers": ["attributable"] },
+            { "stem": "CONSUME", "answers": ["consumer", "consumers'", "consumption"] },
+            { "stem": "DRAMA", "answers": ["dramatically"] },
+            { "stem": "RELUCTANCE", "answers": ["reluctant"] },
+            { "stem": "TOLERATE", "answers": ["tolerable"] },
+            { "stem": "FUNDAMENTAL", "answers": ["fundamentally"] }
+          ]
+        },
+        {
+          "kind": "transform",
+          "skill": "use",
+          "marks": 2,
+          "instruction": "Complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Do not change the word given. You must use between three and six words, including the word given.",
+          "items": [
+            {
+              "first": "We would never have finished on time without Maria's help.",
+              "key": "FOR",
+              "before": "",
+              "after": "Maria's help, we would never have finished on time.",
+              "answers": ["had it not been for", "if it had not been for", "if it hadn't been for"]
+            },
+            {
+              "first": "People say that the author wrote the novel in less than a month.",
+              "key": "SAID",
+              "before": "The author",
+              "after": "written the novel in less than a month.",
+              "answers": ["is said to have"]
+            },
+            {
+              "first": "The speaker had barely finished when the audience began to leave.",
+              "key": "SOONER",
+              "before": "No",
+              "after": "finished than the audience began to leave.",
+              "answers": ["sooner had the speaker"]
+            },
+            {
+              "first": "I think it is very unlikely that the committee will approve the plan.",
+              "key": "CHANCE",
+              "before": "There is",
+              "after": "the committee approving the plan.",
+              "answers": ["little chance of", "not much chance of", "very little chance of", "hardly any chance of", "a slim chance of", "a very slim chance of"]
+            },
+            {
+              "first": "I would prefer you not to mention the matter to anyone.",
+              "key": "RATHER",
+              "before": "I",
+              "after": "mention the matter to anyone.",
+              "answers": ["would rather you did not", "would rather you didn't", "would rather you not"]
+            },
+            {
+              "first": "The film became far more popular than anyone had expected.",
+              "key": "BEYOND",
+              "before": "The film's popularity",
+              "after": "anyone's expectations.",
+              "answers": ["went far beyond", "went well beyond", "went way beyond", "was far beyond", "was well beyond"]
+            }
+          ]
+        },
+        {
+          "kind": "passage_mc",
+          "skill": "reading",
+          "marks": 2,
+          "instruction": "Read the article and choose the answer (A, B, C or D) which fits best according to the text.",
+          "title": "Lost and found",
+          "text": "My father never admitted that we were lost. On family drives, he would slow the car, glance at the folded map on my mother's knees, and announce that he was taking “a more interesting route”. It was years before I understood that this was his polite way of saying that the map, the road signs and his own judgment had failed him at once. What I remember is not the arguments but the odd freedom of those afternoons, when nobody knew exactly where we were, and the only thing to do was to look out of the window.\n\nI thought of those drives recently, standing at an intersection in my own city with a dead phone, unable to say which way led home. I had lived there for eleven years. The realization was less embarrassing than unsettling. Somewhere along the way I had stopped building a mental picture of the place, because a voice in my pocket had been quietly doing the work for me. Researchers who study spatial memory are not surprised. Scans of professional taxi drivers, who spend years memorizing a city's streets, show that the part of the brain involved in forming mental maps grows with use. It seems plausible that it also shrinks with disuse, though the evidence for that is thinner than the headlines suggest.\n\nIt would be easy to turn all this into a lament for a lost world, and I distrust such laments. Navigation apps have given independence to people who once avoided unfamiliar places altogether: the nervous driver, the visitor who does not speak the language, the elderly relative who would otherwise stay at home. Nobody sensible wants to go back to unfolding a map in a rainstorm. My complaint is narrower. It is that the convenience arrives bundled with a way of paying attention, or rather of not paying it, that we never actually agreed to.\n\nA geographer friend of mine goes further. He points out that people have always differed enormously in their sense of direction, that some are born with an unerring feel for where they are while others have never had one, and that apps have exposed this difference rather than created it. He may be right. But I notice that he does not use an app himself, and when I asked him why, he said only that he liked knowing where he was.\n\nSo I ran a small experiment. For a week I left the phone in a drawer and found my way around by landmarks and by asking people, which turned out to be the harder skill. The first journeys were clumsy. I arrived late and flustered, twice by roads I would never have chosen. But by the fourth day something shifted. I began to notice things: a mural on the side of a pharmacy, a street where the sidewalk tilted toward a bakery, the particular slope that told me I was close to the river. These had been there all along, of course. They had simply never been needed.\n\nWhat the experiment did not do was make me nostalgic for getting lost. Being lost, for most people, is unpleasant and occasionally dangerous, and anyone who says otherwise has usually been lost only in places with good cell coverage. The point is subtler. A journey that has been optimized to the minute treats the space between two places as a cost to be reduced, whereas the old, inefficient journey made that space part of the experience. The question is whether we can have the benefits of the first without surrendering all the attention that the second demanded.\n\nI have settled for a modest rule. I plan the route myself, I form a rough picture of it, and I turn to the phone only when the picture has failed. It is slower. Last month it made me late for a meeting. But I have also, for the first time in years, been able to give a stranger directions without apologizing, and I find I would not trade that for a perfectly timed arrival.",
+          "questions": [
+            {
+              "stem": "What does the writer suggest about her father's “more interesting route”?",
+              "options": [
+                "He chose it on purpose to make the journey more entertaining for the family.",
+                "He used the phrase to avoid admitting that he did not know where they were.",
+                "He had been advised to take it by someone who knew the area well.",
+                "He later regretted describing it in such a misleading way to the children."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "What does the writer find unsettling about being lost at the intersection?",
+              "options": [
+                "Her phone had given her misleading directions for the first time since she bought it.",
+                "She had forgotten a city that she had once known extremely well.",
+                "She felt embarrassed about having to ask a stranger which way to go.",
+                "She had let her phone do the mental work of learning her surroundings."
+              ],
+              "correct": 3
+            },
+            {
+              "stem": "What is the writer's main objection to navigation apps?",
+              "options": [
+                "They have changed the way people pay attention, and nobody consciously agreed to that.",
+                "They discourage nervous or elderly people from traveling independently.",
+                "They are less reliable than the paper maps which they have replaced.",
+                "They spoil journeys by always suggesting routes that are far too fast."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "What does the writer say about the landmarks she began to notice during her experiment?",
+              "options": [
+                "They had been added to the neighborhood since she last walked there.",
+                "They turned out to be more reliable than the advice of passers-by.",
+                "They had always been present, but she had never had a reason to rely on them.",
+                "They became noticeable once she stopped worrying about arriving late."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "What does the writer mean by saying that an optimized journey treats the space between two places as “a cost to be reduced”?",
+              "options": [
+                "Planning a route in advance is more expensive than following an app.",
+                "Time spent between destinations is seen as something to minimize, not to experience.",
+                "Shorter routes are always more stressful for the traveler.",
+                "Older journeys were safer because people paid closer attention to the road."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "How does the writer feel about the rule she has adopted?",
+              "options": [
+                "Disappointed that it has caused problems in her working life.",
+                "Convinced that it is a more efficient way to travel than using an app.",
+                "Satisfied that it has given her a practical ability that she values.",
+                "Uncertain whether she will be able to keep it up."
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "kind": "match_pool",
+          "skill": "reading",
+          "marks": 2,
+          "instruction": "Read the four reviews of a book called The Empty Hour, which argues that boredom is good for us. For each question, choose the reviewer (A, B, C or D).",
+          "prompts": [
+            { "id": "1", "text": "Which reviewer has a different opinion from the other three about how convincing the evidence in the book is?" },
+            { "id": "2", "text": "Which reviewer shares reviewer B's view that the author's advice is difficult for ordinary families to follow?" },
+            { "id": "3", "text": "Which reviewer is the only one to criticize the way the book is written?" },
+            { "id": "4", "text": "Which reviewer doubts the author's explanation of why people are rarely bored today?" }
+          ],
+          "options": [
+            {
+              "id": "A",
+              "title": "A: a primary school teacher",
+              "text": "I read Ashdown's book with a pencil in my hand, which is usually a sign that I am enjoying myself. Her central claim, that children who are never allowed to be bored never learn to entertain their own minds, matched everything I have seen in twenty years of teaching. Better still, her advice is not abstract. After the first chapter I tried her “empty hour” with my own class, an unstructured stretch on Friday afternoons, and within a month the parents were asking what we had done to the children. They were calmer, and oddly more inventive. I wish I could say that the book was as tidy as the idea. It is not. The same argument returns in chapter after chapter in slightly different clothes, and a good editor would have removed a third of it. The research she cites is mostly anecdote too, but I confess I did not mind, since my own classroom had already persuaded me."
+            },
+            {
+              "id": "B",
+              "title": "B: a psychologist",
+              "text": "As someone who studies attention for a living, I wanted to like this book more than I did. Ashdown is right that constant stimulation leaves little room for reflection, and her warmth toward her readers is real. But the studies she relies on are chosen with care to suit her thesis, and the ones that complicate it, including several I have contributed to, are passed over in silence. Her explanation for why boredom has vanished is similarly neat: she blames the smartphone and very little else, as though people had been serenely idle before it was invented. Nor does the remedy survive contact with ordinary life. Her suggestion that readers set aside an unstructured hour each day assumes a degree of control over time that most parents, and most employees, simply do not have. It is a pleasant fantasy, and I suspect that is why the book will be popular."
+            },
+            {
+              "id": "C",
+              "title": "C: a journalist",
+              "text": "I expected a gentle self-help book and found something sharper. Ashdown writes like a reporter, which is to say she shows her working: each of her claims about boredom and creativity is traced back to a named study, and she is candid about the one or two places where the findings are mixed. I checked a dozen of the references and could find nothing misrepresented. That care gives the book an authority that rivals in the genre lack. It is also, to my surprise, very funny. A chapter on the history of the waiting room should be unreadable and is instead the best thing I have read this year. The advice at the end is modest, a few minutes of doing nothing at a time, but modesty is rather the point, and I have found it far easier to follow than I expected. If there is a complaint, it is that Ashdown leaves out the loneliness that many people feel in empty time."
+            },
+            {
+              "id": "D",
+              "title": "D: a novelist",
+              "text": "There is a lovely idea at the center of The Empty Hour, and Ashdown has the prose to carry it. Her sentences are clean and patient, and she is particularly good at describing the texture of idle time: the light moving across a kitchen floor, the mind drifting from one trivial memory to the next. Where the book is less secure is in its arguments. Much of what passes for proof is assertion delivered with confidence, and a reader who goes looking for the studies behind the claims will find fewer than the footnotes promise. I also found the practical advice rather unreal. It seems to be addressed to people with a flexible schedule and a spare room, not to the families I know, who are lucky to eat a meal together. I finished the book charmed and unconvinced. Perhaps that is what a work of persuasion written like literature deserves."
+            }
+          ],
+          "answer": { "1": "C", "2": "D", "3": "A", "4": "B" },
+          "unique": false
+        },
+        {
+          "kind": "gapped_text",
+          "skill": "reading",
+          "marks": 2,
+          "instruction": "Six paragraphs have been removed from the article. Choose from the paragraphs (A to G) the one which fits each gap. There is one extra paragraph which you do not need to use.",
+          "title": "The listener",
+          "text": "On a calm morning off the coast of a small island, Dr. Leah Okonkwo lowers a hydrophone into the water and puts on her headphones. To an untrained ear, the sound is a continuous crackle, like bacon frying in a distant kitchen. To her, it is a medical report. “Healthy reef,” she says after a minute. “Lots of shrimp, and some parrotfish feeding.” She has been listening to reefs for fifteen years, and she can now tell within seconds whether a stretch of coral is thriving or dying. It is a skill she never planned to acquire. Her original ambition, as a student, was to become a conventional marine biologist who spent her days counting fish, and she assumed that a life with a notebook and a boat would be quiet enough to suit her.\n\n{{1}}\n\nWhat she had stumbled on was, she later realized, an entirely unmapped territory. Biologists had long known that reefs were noisy, but the noise had been treated as a curiosity rather than as a measurement. Okonkwo's recordings suggested that it could be used as one: a reef bleached by warm water, she found, falls quiet within a season, long before the damage shows up clearly to a diver's eye. Nobody, as far as she could discover, had ever compared the sound of a living reef with that of a dying one in any systematic way.\n\n{{2}}\n\nThat speed transformed the argument. Within three years her team had recorders on reefs in four countries, and conservation groups were using the results to decide where to spend their limited funds. But the project that brought her wider attention was a stranger one. Having shown that dead reefs fall silent, she began to wonder whether the silence might itself be part of the problem, and she spent several months reading everything she could find about how young fish behave in open water.\n\n{{3}}\n\nTo test the idea, her team placed underwater speakers on patches of dead coral and played recordings of a thriving reef for six weeks. Nearby they left similar patches in silence. The results were more dramatic than anyone had predicted: the patches with sound attracted far more fish, and a wider variety of species. Okonkwo remains careful about the claim. Sound will not bring a reef back to life on its own, she stresses, since the corals themselves still have to survive, and no recording can protect them from the heat.\n\n{{4}}\n\nThose precautions reflect a temperament that colleagues describe as cautious to the point of stubbornness. She will not publish a result until it has been reproduced in at least two locations, and she keeps a notebook of the experiments that failed, which she calls her “museum of mistakes”. Younger researchers in her laboratory are encouraged to add to it, and anyone who works with her for long learns that “probably” is a word she distrusts. “If you only record your successes,” she tells them, “you learn nothing about how you might be wrong.”\n\n{{5}}\n\nThat reaction is what keeps her going when the data are discouraging, and lately they often have been. Marine heat waves have struck several of her study sites, and two of the quietest reefs she has recorded were, only a few years ago, among the loudest. She admits that there are days when listening feels like attending a funeral. “But a doctor who stops reading the chart because the news is bad,” she says, “is no use to anyone.”\n\n{{6}}\n\nIt is a small result, and she is the first to say so. Yet as the boat turns back toward the harbor and she lifts the hydrophone out of the water, she looks content. By evening, the software will have turned the morning's crackle into a single number on a map. “A reef that can be heard is a reef that can still be saved,” she says. “That is all I am asking people to do: listen before it is too late.”",
+          "fragments": [
+            { "id": "A", "text": "Critics have raised a different objection, which is that broadcasting artificial sound underwater may do harm of its own. Okonkwo takes the worry seriously, and her team now measure the effect of the speakers on resident animals before any experiment begins. So far, she says, they have seen no sign of distress, though she would like to see the work repeated by others." },
+            { "id": "B", "text": "Convincing her colleagues was another matter. Many regarded the idea as an expensive way of listening to shrimp, and her first grant application was turned down twice. The breakthrough came when she showed that software could analyze a single recording in minutes, whereas a diver's survey of the same reef took days." },
+            { "id": "C", "text": "She has also begun to hear signs of hope. At one site, where local fishermen agreed to stop using explosives, the sound has slowly returned over the last four years. The crackle is thinner than it once was, but it is unmistakably there." },
+            { "id": "D", "text": "She is equally careful when talking to the public. She regularly takes recordings into schools, where children are asked to guess whether a reef is alive or dead from the sound alone. Most get it right within seconds, and many are visibly shaken by how bleak a dead reef sounds." },
+            { "id": "E", "text": "That plan changed during her first research trip, when a faulty camera forced her team to rely on sound recordings instead of video. The tapes were meant to be a stopgap, but when she played them back in the evening, the difference between two reefs only a few miles apart was so striking that she could not stop listening." },
+            { "id": "F", "text": "Her interest in sound goes back to childhood, when her grandfather, a radio engineer, taught her to recognize birds by their calls long before she could name them on sight." },
+            { "id": "G", "text": "The reasoning went as follows. Young fish, drifting in the open ocean, find their way to a reef partly by following its sounds. If the reef has gone quiet, they may swim straight past it, and without new arrivals even a recovering reef cannot rebuild its population." }
+          ],
+          "answer": { "1": "E", "2": "B", "3": "G", "4": "A", "5": "D", "6": "C" }
+        },
+        {
+          "kind": "match_pool",
+          "skill": "reading",
+          "instruction": "Read the article about five people who changed careers in their forties. For each question, choose from the people (A to E). The people may be chosen more than once.",
+          "prompts": [
+            { "id": "1", "text": "a relative's initial doubts about the decision" },
+            { "id": "2", "text": "pleasure in making something solid by the end of the working day" },
+            { "id": "3", "text": "regret about not having changed careers sooner" },
+            { "id": "4", "text": "the difficulty of the period of retraining" },
+            { "id": "5", "text": "recognition that the old job was damaging the person's health" },
+            { "id": "6", "text": "the way a fall in income was dealt with" },
+            { "id": "7", "text": "advice to try out the new work before leaving the old one" },
+            { "id": "8", "text": "surprise at how useful earlier skills turned out to be" },
+            { "id": "9", "text": "discomfort at taking instructions from much younger people" },
+            { "id": "10", "text": "relief at no longer being expected to respond outside working hours" }
+          ],
+          "options": [
+            {
+              "id": "A",
+              "title": "A: Dana, a former lawyer who now works as a potter",
+              "text": "For fifteen years my work existed mostly as paper, and I rarely saw what became of it. These days I throw pots in a shared studio, and the difference is hard to describe. A bowl that was a lump of clay at breakfast sits on the shelf by dinner, and I can pick it up, turn it over and judge it with my own hands. That is the part I would not give up for any title or office. People ask me for advice a lot, and I always say the same thing: take an evening class in whatever tempts you, and keep your job for at least a year while you find out whether you still love it when it gets frustrating. I did, and it saved me from a rash decision."
+            },
+            {
+              "id": "B",
+              "title": "B: Tom, a former bank manager who now teaches in a primary school",
+              "text": "I knew teaching would be demanding, but I had underestimated how much I would have to unlearn. After twenty years of managing people and budgets, I left the bank and spent two years retraining full time, and I found it far harder than anything I had done professionally. I could not seem to memorize the new methods, my essays came back covered in comments, and there were weeks when I wondered whether I had simply grown too old to learn. Then came my placement. My mentor was twenty-seven, and for the first term I found myself taking instructions from someone younger than my own daughter. I had to remind myself, quite often, that she had a great deal to teach me, and gradually I stopped minding."
+            },
+            {
+              "id": "C",
+              "title": "C: Priya, a former newspaper journalist who now works as a user researcher",
+              "text": "When I left the newsroom, I assumed that two decades of writing and interviewing would count for nothing in the technology industry. I could not have been more wrong. The ability to make a stranger talk openly for forty minutes turned out to be exactly what my team lacked, and colleagues who had spent years designing products were astonished at what I could draw out of users. The other thing I notice is how quiet the evenings are. In journalism, a breaking story meant a call at any hour. Now my phone stays silent after six, and I do not feel guilty about it, a relief I still notice every day. If I regret anything, it is that I stayed in the old job for ten years after I first knew I wanted out, mostly because I was afraid. I should have gone much sooner."
+            },
+            {
+              "id": "D",
+              "title": "D: Sam, a former restaurant chef who now works as a nurse",
+              "text": "Restaurant kitchens are wonderful places when you are twenty-five. At forty, after fourteen hours on my feet, I started having chest pains, and a doctor looked at my blood pressure and then at me and asked how long I thought I could carry on. That was the moment I stopped telling myself it was just a busy period. I had been proud for years of how much I could take, and it had not occurred to me that the job might be quietly wearing me down. Nursing is hardly gentle work, but the shifts are regular, and I eat lunch sitting down. For the first time in my adult life I sleep properly, and my doctor says my numbers are now those of a much younger man."
+            },
+            {
+              "id": "E",
+              "title": "E: Elena, a former civil engineer who now keeps bees and sells honey",
+              "text": "Everyone assumed I was having a crisis. My father, who had been immensely proud of my career, refused to speak about the hives for the first year and would only ask, each Sunday, when I was going to “come to my senses”. He has since become my best customer, which tells you something. The practical side was less dramatic than I had feared, though only because we planned for it. Our income roughly halved, so we sold one of our two cars, rented out a spare room and kept a spreadsheet that my husband updated every Friday. It was not comfortable, but it was manageable, and by the third year the business was paying for itself. I would tell anyone that the arithmetic, not the courage, is the real work."
+            }
+          ],
+          "answer": { "1": "E", "2": "A", "3": "C", "4": "B", "5": "D", "6": "E", "7": "A", "8": "C", "9": "B", "10": "C" },
+          "unique": false
+        }
+      ]
+    }
+  ]
 }

@@ -2,5 +2,279 @@
   "target": "en",
   "level": "B2",
   "paper": "listening",
-  "forms": []
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "kind": "clips_mc",
+          "skill": "listening",
+          "instruction": "You will hear people talking in eight different situations. For each question, choose the correct answer (A, B or C).",
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "f", "text": "How do you think the presentation went?" },
+                { "speaker": "m", "text": "Honestly, I thought the slides were fine, but I rushed the ending. I only had two minutes left." },
+                { "speaker": "f", "text": "I didn't think it was rushed. What bothered me was the very beginning. You spent so long explaining the background that half the room looked bored." },
+                { "speaker": "m", "text": "Really? I thought they needed that to follow the numbers." },
+                { "speaker": "f", "text": "Some of them did, maybe. But next time, start with the result and explain afterwards." },
+                { "speaker": "m", "text": "That's a good idea. I'll try it on Friday." }
+              ],
+              "questions": [
+                {
+                  "stem": "What does the woman criticize about the presentation?",
+                  "options": ["the way it ended", "the length of the introduction", "the quality of the slides"],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Hello, this is Marta Silva calling about the table I ordered last month. The shop told me it would arrive on the fourth, and then on the eleventh, and today is the twenty-second. I'm not angry, but I've now taken two days off work to wait at home, and I can't do that again. Could you please call me back and tell me exactly when it will be delivered? If it can't come before the end of the week, I would rather have my money back. Thank you." }
+              ],
+              "questions": [
+                {
+                  "stem": "Why is the woman calling?",
+                  "options": ["to complain about the quality of a product", "to cancel an order immediately", "to find out when a delivery will arrive"],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "So what did you think of the new place on Elm Street?" },
+                { "speaker": "f", "text": "The food was lovely. I had the fish, and it was cooked perfectly. But we waited almost an hour for it." },
+                { "speaker": "m", "text": "An hour? We had the opposite problem. Our starters came out in about five minutes, and I'm sure they'd been sitting under a lamp. Everything was lukewarm." },
+                { "speaker": "f", "text": "That's awful. Did you say anything?" },
+                { "speaker": "m", "text": "I did, and the waiter was very polite, but it didn't change much. I doubt I'll go back, even though the prices were reasonable." }
+              ],
+              "questions": [
+                {
+                  "stem": "What did the man dislike about the restaurant?",
+                  "options": ["the temperature of the food", "the high prices", "the slow service"],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "When I started running six months ago, I could barely manage ten minutes without stopping, and I felt silly. I assumed everyone in the park was staring at me. They weren't, of course. They were all too busy with their own struggles. Anyway, last week I ran for forty minutes without a break. I'm still slow, and my friends laugh when I tell them my times, but I don't care. For the first time in my life, I'm doing something just because I enjoy it, not because I'm good at it." }
+              ],
+              "questions": [
+                {
+                  "stem": "How does the man feel about his running?",
+                  "options": ["proud of how fast he has become", "embarrassed by his friends' reaction", "satisfied that he is doing it for pleasure"],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Did you see that the deadline for the history essay has moved to Thursday?" },
+                { "speaker": "m", "text": "Yes, but I'm not sure that helps me. I've only got the introduction done." },
+                { "speaker": "f", "text": "Same here. Do you want to ask for an extension? Professor Lane is usually reasonable if you ask early." },
+                { "speaker": "m", "text": "I'd rather not. She said last week that she doesn't accept late work. Let's go to the library tonight and divide the reading. If we each take two books, we should manage." },
+                { "speaker": "f", "text": "Fine. I'll bring snacks." }
+              ],
+              "questions": [
+                {
+                  "stem": "What do the students decide to do?",
+                  "options": ["ask for more time", "work together that evening", "choose a different topic"],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "I'm not sure whether I made the right decision. The salary at the new company is better, and my boss seems nice, but I spend almost two hours a day on the train now. My old job was only a fifteen-minute walk. I keep telling myself that I can read or answer emails on the way, but really I just stare out of the window. If things don't improve by Christmas, I might ask if I can work from home on Fridays." }
+              ],
+              "questions": [
+                {
+                  "stem": "What is the woman's main worry about her new job?",
+                  "options": ["the amount of travel it involves", "her relationship with her boss", "the money she earns"],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Excuse me, is this the right platform for the train to Dunmore?" },
+                { "speaker": "f", "text": "It was, but they changed it about ten minutes ago. It's leaving from platform six now, over the bridge." },
+                { "speaker": "m", "text": "Six? The board still says platform two." },
+                { "speaker": "f", "text": "I know, it's confusing. The announcement said there was a fault with the signals, so everything's been moved. If you hurry, you'll make it. It leaves in four minutes." },
+                { "speaker": "m", "text": "Thank you so much. I'd never have found out." }
+              ],
+              "questions": [
+                {
+                  "stem": "What is the situation?",
+                  "options": ["The train has been canceled.", "The platform has been changed.", "The man has the wrong ticket."],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "n", "text": "And now a reminder about our summer competition. All you have to do is send us a photograph of your favorite spot in the city, and tell us in one sentence why you love it. The photographs don't need to be professional. Last year's winner used an old phone. Entries should be sent to our website before the end of the month, and the winner will receive two tickets to the open-air concert in August. Don't forget to include your name and your phone number, so we can contact you." }
+              ],
+              "questions": [
+                {
+                  "stem": "What must listeners do to enter the competition?",
+                  "options": ["take a photograph with a professional camera", "write a short story about the city", "describe their chosen place in a sentence"],
+                  "correct": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "cloze",
+          "skill": "listening",
+          "instruction": "You will hear a woman giving a talk about a bird rescue center. For each question, complete the sentence with a word or short phrase.",
+          "title": "Coastal Bird Rescue Center",
+          "text": "The center was founded in {{1}}.\nIt was started by a group of local {{2}}.\nMost injured birds are brought in after being caught in {{3}}.\nThe most common patient is the {{4}}.\nVolunteers must first complete {{5}} before handling the birds.\nThe birds are fed a special diet of {{6}}.\nThe center's yearly budget depends mainly on {{7}}.\nOn Saturdays, visitors can take a {{8}} through the center.\nA new {{9}} was built last year for birds recovering from oil spills.\nFor the early morning shift, volunteers should bring {{10}}.",
+          "audio": [
+            { "speaker": "f", "text": "Good evening, everyone, and thank you for coming. My name is Joanna, and I have been a volunteer at the Coastal Bird Rescue Center for nine years. Tonight I would like to tell you what we do, and I hope to persuade some of you to join us." },
+            { "speaker": "f", "text": "Let me start with some history. People often assume that the center is much older than it is, because the stone building looks so ancient. The building itself dates from the nineteen fifties, but the center only opened in nineteen eighty-eight." },
+            { "speaker": "f", "text": "The idea came from a handful of local fishermen. They kept finding injured birds on their boats and on the beach, and they didn't know whom to call, so they decided to look after the birds themselves. A vet and a teacher joined them later, and together they raised enough money to buy the first cages." },
+            { "speaker": "f", "text": "Today we treat about two thousand birds a year. So what happens to them before they reach us? Many people imagine that oil is the main problem, and it used to be. Nowadays, most of our patients have become tangled in old fishing line, and some have swallowed hooks. Fishing nets cause far fewer injuries than you might think." },
+            { "speaker": "f", "text": "The bird we see most often is the herring gull. We also look after puffins and cormorants, but the herring gulls arrive almost every day. They are clever, noisy and not at all grateful, which makes them rather difficult patients. I am very fond of them anyway." },
+            { "speaker": "f", "text": "Now, about volunteering. You don't need any experience, but everyone must complete a day of safety training before touching a single bird. It covers how to hold the birds, how to protect yourself from beaks and claws, and how to keep everything clean. After that, you spend your first month working beside an experienced volunteer." },
+            { "speaker": "f", "text": "People always ask what the birds eat. Mostly it is chopped sardines, which we buy fresh from the harbor every Monday. The younger birds also get vitamins, and the smallest ones are sometimes fed by hand, but sardines make up most of the diet. I can promise you that the smell in the kitchen is not pleasant." },
+            { "speaker": "f", "text": "Money is the next question. The council gives us a small grant, but it covers only the rent. Everything else comes from donations, mostly small ones from people who live nearby. Last year we also tried selling postcards, but that didn't raise very much." },
+            { "speaker": "f", "text": "If you would like to see the center before you decide, come on a Saturday. At eleven o'clock, one of the volunteers takes visitors on a guided tour. It lasts about forty minutes, and you will see the cages, the kitchen and the recovery room." },
+            { "speaker": "f", "text": "The biggest change in recent years is the new pool. Last spring we built it in the garden for birds that have been rescued from oil spills. Before that, we only had a plastic tub, which was far too small. Now the birds can recover their strength and relearn how to swim before we release them." },
+            { "speaker": "f", "text": "Finally, a practical tip. The early morning shift starts at six, and even in summer it can be very cold on the coast. Please bring warm clothes, and something waterproof if you can. Gloves are provided, so you don't need to bring those." },
+            { "speaker": "f", "text": "If any of this sounds interesting, there are sign-up sheets at the back of the room. Thank you very much for listening." }
+          ],
+          "gaps": [
+            { "answers": ["1988", "nineteen eighty-eight", "nineteen eighty eight"] },
+            { "answers": ["fishermen"] },
+            { "answers": ["fishing line", "fishing lines"] },
+            { "answers": ["herring gull", "herring gulls"] },
+            { "answers": ["safety training"] },
+            { "answers": ["sardines", "chopped sardines", "fresh sardines"] },
+            { "answers": ["donations", "donation"] },
+            { "answers": ["guided tour", "tour"] },
+            { "answers": ["pool", "swimming pool"] },
+            { "answers": ["warm clothes", "warm clothing"] }
+          ]
+        },
+        {
+          "kind": "match_pool",
+          "skill": "listening",
+          "instruction": "You will hear five people talking about a hobby they have taken up. For each speaker, choose from the list (A to H) what the person says. Use each letter only once. There are three extra letters which you do not need to use.",
+          "prompts": [
+            {
+              "id": "s1",
+              "audio": [
+                { "speaker": "f", "text": "It all started as a joke, really. A friend of mine said I would never make a bowl that didn't leak, and I can't resist a challenge. So I booked a six-week course at the community center, mostly to prove her wrong. My first bowl was a disaster, and she still has a photo of it on her fridge. I haven't met many new people there, because we all concentrate so hard, but I've kept going. By now I've made six bowls, and every one of them holds water." }
+              ]
+            },
+            {
+              "id": "s2",
+              "audio": [
+                { "speaker": "m", "text": "I'd wanted to try climbing for years, but whenever I walked past the gym, I saw people who looked like athletes, and I just kept walking. It took me about a year to go inside. The first time, I hid in the corner of the beginners' area until a girl of about twelve offered me a tip. After that, it got easier. Now I go twice a week. The shoes weren't cheap, but they've lasted well, so I think it's good value." }
+              ]
+            },
+            {
+              "id": "s3",
+              "audio": [
+                { "speaker": "f", "text": "I work in a call center, so by six o'clock my head is full of other people's problems. When I get home, I go straight out to the back yard and start pulling up weeds. Honestly, I don't care much about the vegetables. What I like is that for an hour or so I'm not thinking about anything at all, apart from whether the tomatoes need more water. My neighbor says I should join the local gardening club, but I'd rather keep this time to myself." }
+              ]
+            },
+            {
+              "id": "s4",
+              "audio": [
+                { "speaker": "m", "text": "I bought a guitar on impulse two years ago, and it sat in the corner of my bedroom for months. In the end, I started following online lessons, expecting to give up after a week. Instead, I found I could play simple songs within a month, and now I'm in a band with two friends. I'm not saying we're any good, but I'm certainly a lot better than I ever thought I'd be. My sister says I play better than my teacher, which isn't true." }
+              ]
+            },
+            {
+              "id": "s5",
+              "audio": [
+                { "speaker": "f", "text": "I used to run every morning when I was in college, but when I started working long hours, I gave it up completely. For almost five years I didn't run at all. Then last spring, I found my old sneakers at the back of a cupboard, and on a whim I put them on. I managed about two hundred meters before I had to stop. These days, I'm up to ten kilometers, and I've signed up for a race in the fall." }
+              ]
+            }
+          ],
+          "options": [
+            { "id": "A", "text": "I wanted to meet new people." },
+            { "id": "B", "text": "I wanted to prove a friend wrong." },
+            { "id": "C", "text": "I had given it up completely for several years." },
+            { "id": "D", "text": "I was nervous about starting for a long time." },
+            { "id": "E", "text": "I found it was much more costly than I had expected." },
+            { "id": "F", "text": "It helps me stop thinking about my job." },
+            { "id": "G", "text": "I saw a program about it and decided to try." },
+            { "id": "H", "text": "I turned out to be better at it than I expected." }
+          ],
+          "answer": { "s1": "B", "s2": "D", "s3": "F", "s4": "H", "s5": "C" },
+          "unique": true
+        },
+        {
+          "kind": "passage_mc",
+          "skill": "listening",
+          "instruction": "You will hear an interview with a man who owns a restaurant. For each question, choose the correct answer (A, B or C).",
+          "audio": [
+            { "speaker": "f", "text": "Welcome to the program. With me today is Marcus Hale, who runs a restaurant that throws away almost nothing. Marcus, how did that start?" },
+            { "speaker": "m", "text": "Thanks for having me. Honestly, it began with embarrassment. About six years ago I was running a very ordinary restaurant, and one evening, after a quiet Tuesday, I carried out nine bags of trash. Nine bags! I looked at them and thought, I paid for every bit of that food." },
+            { "speaker": "f", "text": "So it was the cost that bothered you." },
+            { "speaker": "m", "text": "Partly, yes, but it was more than money. I grew up on a farm, and my grandmother would never have thrown away a single potato. I felt that I had let her down a little." },
+            { "speaker": "f", "text": "How did you begin to change things?" },
+            { "speaker": "m", "text": "The first step was simply measuring. For a month, my staff weighed everything we threw away and wrote the numbers on a board in the kitchen. People think you need a clever system, but the board did most of the work. Nobody likes seeing their mistakes on a wall." },
+            { "speaker": "f", "text": "And did the menu change?" },
+            { "speaker": "m", "text": "Completely. Instead of deciding what to cook and then ordering ingredients, we now look at what we have and at what our suppliers cannot sell. Vegetables that are the wrong shape, for example, or fish that is too small for the stores. The chefs found that restrictive at first, and now they say it makes them more creative." },
+            { "speaker": "f", "text": "How did your customers react?" },
+            { "speaker": "m", "text": "Not well, at first. We lost a few regulars who wanted their usual steak. But the surprise was that younger people started coming specially because of what we were doing. Some of them even bring their own containers for leftovers now." },
+            { "speaker": "f", "text": "Isn't it more expensive to run a kitchen this way?" },
+            { "speaker": "m", "text": "Surprisingly, no. Our food bills fell by almost a third in the first year, because we buy what we need and nothing more. The savings paid for a second oven." },
+            { "speaker": "f", "text": "It sounds as though everything went smoothly." },
+            { "speaker": "m", "text": "Not at all. The hardest time was the first winter. Our deliveries were unpredictable, and twice we had to close because we simply didn't have enough to cook. I nearly gave up. What kept me going was the team. They told me they would rather work somewhere they believed in than somewhere easy." },
+            { "speaker": "f", "text": "What advice would you give to other restaurant owners?" },
+            { "speaker": "m", "text": "Start small. Choose one thing, like bread, and make sure that nothing is wasted. Don't try to turn your whole kitchen upside down on a Monday morning. And be honest with your customers about why you are doing it, because people can tell when it's just advertising." },
+            { "speaker": "f", "text": "And how do your suppliers feel about all this?" },
+            { "speaker": "m", "text": "They were suspicious at first, because nobody had ever asked them for their ugly vegetables. Now several of them phone me before they sell anything to anyone else. I think they enjoy being part of something that makes sense." },
+            { "speaker": "f", "text": "Finally, are you worried that this might be a fashion that will pass?" },
+            { "speaker": "m", "text": "A little, I suppose. But the problem of waste isn't going away, so I hope that cooking carefully will be normal in ten years. Then nobody will need to write about restaurants like mine, and that would please me very much." },
+            { "speaker": "f", "text": "Marcus Hale, thank you very much." },
+            { "speaker": "m", "text": "My pleasure." }
+          ],
+          "questions": [
+            {
+              "stem": "What first made Marcus think about food waste?",
+              "options": ["a complaint from a customer", "the amount of trash he saw", "a conversation with his grandmother"],
+              "correct": 1
+            },
+            {
+              "stem": "Why did the waste bother him so much?",
+              "options": ["It was costing the restaurant too much money.", "It made his staff unhappy.", "It went against the values he grew up with."],
+              "correct": 2
+            },
+            {
+              "stem": "What was important about the first step he took?",
+              "options": ["Everyone could see how much was being thrown away.", "A computer system recorded the waste.", "A specialist adviser organized the work."],
+              "correct": 0
+            },
+            {
+              "stem": "How did the chefs feel about the new way of planning the menu?",
+              "options": ["They were enthusiastic from the start.", "They were doubtful at first but later felt positive.", "They remained unhappy about it."],
+              "correct": 1
+            },
+            {
+              "stem": "What surprised Marcus about the customers?",
+              "options": ["Regular customers asked for bigger portions.", "Many customers complained about higher prices.", "Some younger people came because of the policy."],
+              "correct": 2
+            },
+            {
+              "stem": "What kept Marcus going during the first winter?",
+              "options": ["the attitude of his team", "financial help from his family", "the promise of future profits"],
+              "correct": 0
+            },
+            {
+              "stem": "How does Marcus feel about the future?",
+              "options": ["He is afraid that people will lose interest.", "He hopes that it will become normal practice.", "He plans to open more restaurants."],
+              "correct": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
