@@ -76,7 +76,7 @@
           ],
           "questions": [
             { "stem": "¿Por qué fue el hablante por primera vez al refugio?", "options": ["Porque quería adoptar un perro de raza pequeña.", "Porque una vecina lo invitó y no quería estar solo.", "Porque su empresa lo mandó como voluntario a ayudar."], "correct": 1 },
-            { "stem": "¿Cómo se sintió el primer día en el refugio?", "options": ["Se sintió cómodo desde el primer momento.", "Decidió que no iba a regresar porque había mucho trabajo.", "Tuvo dudas al principio, pero al final quiso volver."], "correct": 2 },
+            { "stem": "¿Cómo se sintió el primer día en el refugio?", "options": ["Se sintió cómodo desde el primer momento.", "Decidió que no iba a regresar porque el trabajo era demasiado pesado.", "Al principio no le gustó mucho, pero al final quiso volver."], "correct": 2 },
             { "stem": "¿Qué descubrió sobre sí mismo?", "options": ["Que tiene más paciencia de la que creía.", "Que prefiere trabajar con animales y no con personas.", "Que se enoja menos en el refugio que en su casa."], "correct": 0 },
             { "stem": "¿Qué pasó con el perro que tenía la pata rota?", "options": ["Fue adoptado por una de las voluntarias.", "Se recuperó después de una operación.", "Todavía no puede caminar bien."], "correct": 1 },
             { "stem": "¿Para qué sirve el dinero de la venta de pasteles?", "options": ["Para construir más jaulas.", "Para pagar el sueldo de la veterinaria.", "Para comprar comida y vacunas."], "correct": 2 },
@@ -106,7 +106,7 @@
             },
             {
               "audio": [
-                { "speaker": "f", "text": "Este viernes comienza el Festival Internacional de Cine de la ciudad, que durante diez días presentará más de cien películas de treinta países. Muchas funciones serán gratuitas y se realizarán en parques y plazas. Los boletos para las salas principales ya están a la venta y cuestan entre sesenta y ochenta pesos." }
+                { "speaker": "f", "text": "Este viernes comienza el Festival Internacional de Cine de la ciudad, que durante diez días presentará más de cien películas de treinta países. Las funciones en parques y plazas serán gratuitas. Los boletos para las salas principales ya están a la venta y cuestan entre sesenta y ochenta pesos." }
               ],
               "questions": [
                 { "stem": "¿Qué se dice de las funciones en los parques?", "options": ["Que se paga al entrar.", "Que son solamente para niños.", "Que no cuestan nada."], "correct": 2 }
@@ -144,21 +144,21 @@
           "instruction": "Va a escuchar a seis personas. Escuchará las grabaciones dos veces. Relacione cada persona con la frase que mejor corresponde. Hay más frases de las necesarias y cada frase se puede usar solo una vez.",
           "prompts": [
             { "id": "1", "audio": [{ "speaker": "f", "text": "Este año por fin vamos a tomar vacaciones largas. Mi esposo y yo ya compramos los boletos de avión para ir a Oaxaca. Vamos a pasar diez días allá: primero en la ciudad y después en la costa. Queremos probar toda la comida típica, visitar los mercados y, si nos alcanza el tiempo, tomar un curso de cocina. Hace mucho que no descansamos como se debe." }] },
-            { "id": "2", "audio": [{ "speaker": "m", "text": "No vas a creer lo que me pasó esta mañana. Iba en el camión, hablando por mi celular, y cuando bajé me di cuenta de que ya no lo tenía en la bolsa. Regresé corriendo a la parada, pero el camión ya se había ido. Fui a la estación de policía a poner un reporte, y ahora tengo que comprar uno nuevo." }] },
+            { "id": "2", "audio": [{ "speaker": "m", "text": "No vas a creer lo que me pasó esta mañana. Iba en el camión, hablando por mi celular, y cuando bajé me di cuenta de que ya no lo tenía en la bolsa. Regresé corriendo a la parada, pero el camión ya se había ido. Fui al Ministerio Público a levantar una denuncia, y ahora tengo que comprar uno nuevo." }] },
             { "id": "3", "audio": [{ "speaker": "f", "text": "¡Mamá, ya salieron los resultados! Fíjate que aprobé el examen de manejo a la primera. Estaba muy nerviosa, sobre todo por el estacionamiento en reversa, pero al final todo salió bien. Ahora solo me falta recoger la licencia en la oficina de tránsito. En cuanto la tenga, te invito a comer para celebrar, tú escoges el lugar." }] },
             { "id": "4", "audio": [{ "speaker": "m", "text": "Oye, tienes que probar el restaurante nuevo que abrieron en el centro, se llama El Fogón. Hacen unos tacos de cochinita buenísimos y los precios no son altos. Fui el viernes con mi hermano y pedimos de todo. El servicio es rápido y el mesero fue muy amable. Eso sí, ve temprano, porque a las nueve ya no hay mesas libres." }] },
             { "id": "5", "audio": [{ "speaker": "f", "text": "Hola, Rodrigo, te llamo para invitarte a mi cumpleaños. Lo voy a celebrar el próximo sábado en mi casa, a partir de las ocho de la noche. Va a haber tacos, música y juegos de mesa, y mis papás van a preparar su famoso pastel de chocolate. Vienen casi todos los del grupo de la universidad. Avísame si puedes venir, para saber cuántos somos." }] },
             { "id": "6", "audio": [{ "speaker": "m", "text": "Mira, ya no aguanto más a los vecinos de arriba. Todas las noches ponen música a todo volumen hasta la madrugada, y ayer apenas pude dormir tres horas. Ya les toqué la puerta dos veces y me prometieron que iban a bajarle, pero no cumplen. Mañana voy a hablar con el administrador del edificio para ver si él puede hacer algo, porque esto ya es demasiado." }] }
           ],
           "options": [
-            { "id": "a", "text": "Explica cómo llegar a un lugar." },
+            { "id": "a", "text": "Cuenta que compró un celular nuevo." },
             { "id": "b", "text": "Se queja del ruido que hacen unos vecinos." },
             { "id": "c", "text": "Cuenta que perdió su celular." },
             { "id": "d", "text": "Está feliz porque aprobó un examen." },
-            { "id": "e", "text": "Pide perdón porque llegó tarde a una cita." },
+            { "id": "e", "text": "Habla de un examen que reprobó." },
             { "id": "f", "text": "Recomienda un lugar para comer." },
             { "id": "g", "text": "Habla de sus planes para unas vacaciones." },
-            { "id": "h", "text": "Cuenta cómo le fue en una entrevista de trabajo." },
+            { "id": "h", "text": "Recomienda un lugar para pasar las vacaciones." },
             { "id": "i", "text": "Invita a un amigo a una fiesta." }
           ],
           "answer": { "1": "g", "2": "c", "3": "d", "4": "f", "5": "i", "6": "b" },
@@ -178,7 +178,7 @@
             { "speaker": "f", "text": "Uf, qué horror. Me choca madrugar. Pero está bien, con una condición: tú pones la música en el camino." },
             { "speaker": "m", "text": "Trato hecho. Oye, y ¿ya reservaste?" },
             { "speaker": "f", "text": "Todavía no. Quería preguntarte primero. También vi una renta más barata, un departamento con cocina, y un lugar para acampar, pero me choca dormir en el suelo." },
-            { "speaker": "m", "text": "Yo tampoco soy de tienda de campaña. Y el departamento no, porque en vacaciones no quiero cocinar ni lavar trastes." },
+            { "speaker": "m", "text": "Yo tampoco soy de dormir en casa de campaña. Y el departamento no, porque en vacaciones no quiero cocinar ni lavar trastes." },
             { "speaker": "f", "text": "Ni yo. Entonces reservo dos noches en el hotel, ¿te parece?" },
             { "speaker": "m", "text": "Mejor tres. Si vamos hasta allá, vale la pena quedarnos más tiempo." },
             { "speaker": "f", "text": "Está bien, pero entonces tú pagas el desayuno de la última mañana." },

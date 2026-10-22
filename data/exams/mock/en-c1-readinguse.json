@@ -9,7 +9,7 @@
         {
           "kind": "cloze",
           "skill": "use",
-          "instruction": "Read the text below and decide which answer best fits each gap.",
+          "instruction": "Choose the option that fits each gap in the passage below.",
           "title": "The repair revival",
           "text": "For decades, the household appliance was designed to be replaced rather than repaired. A broken toaster or a worn-out pair of boots was simply {{1}} and a new one bought, often for less than the cost of fixing the old. But attitudes are now {{2}} a shift. Community repair cafés, where volunteers help neighbors mend everything from lamps to laptops, have {{3}} up in towns across the country, and many report waiting lists that stretch for weeks. Their organizers say the appeal goes well {{4}} saving money. Visitors speak of the satisfaction of understanding how an object works, and some leave determined to {{5}} that knowledge to other broken things at home. Manufacturers, meanwhile, are under growing {{6}} from legislators to supply spare parts and publish repair manuals. Critics argue that the movement is too small to {{7}} a dent in the mountain of electronic waste. Its supporters reply that the real aim is not tonnage but a change of mindset, one that treats possessions as resources to be {{8}} rather than used up.",
           "gaps": [
@@ -26,30 +26,30 @@
         {
           "kind": "cloze",
           "skill": "use",
-          "instruction": "Read the text below and think of the word which best fits each gap. Use only one word in each gap.",
+          "instruction": "Fill every gap in the passage below with a single word.",
           "title": "Trees in the city",
           "text": "Few people notice the trees that line their streets until one of them is felled. Yet urban foresters have long argued that a single mature tree is worth far {{1}} than the shade it casts. It cools the surrounding air, absorbs rainwater that would otherwise overwhelm the drains, and filters fine dust out {{2}} the atmosphere. {{3}} these benefits, many cities lost a large share of their trees during the last century, usually {{4}} the pretext of widening roads. Today the trend is being reversed, with some places having gone {{5}} far as to appoint an officer whose sole job is to look after the canopy. The challenge, however, is not simply to plant saplings. Young trees need years of care, and {{6}} they are watered regularly in their first summers, a great many will die. Planners now accept that the real question is not how many trees a city can plant, but how many it can afford to keep, and for {{7}} long. Only when that is understood {{8}} urban forests have a real chance of surviving.",
           "gaps": [
             { "answers": ["more"] },
             { "answers": ["of"] },
             { "answers": ["despite", "notwithstanding"] },
-            { "answers": ["under"] },
+            { "answers": ["under", "on"] },
             { "answers": ["as", "so"] },
             { "answers": ["unless"] },
             { "answers": ["how"] },
-            { "answers": ["will", "can"] }
+            { "answers": ["will", "can", "do"] }
           ]
         },
         {
           "kind": "cloze",
           "skill": "use",
-          "instruction": "Read the text below. For each gap, use the word in capitals to form a word that fits the text.",
+          "instruction": "Each gap comes with a word in capitals. Change that word so that the new word fits the passage.",
           "title": "The audiobook boom",
           "text": "Once dismissed as a lazy {{1}} to reading, audiobooks now account for a {{2}} share of the publishing market. Their rise is partly {{3}} to technology: almost everyone carries a phone capable of storing dozens of titles, and subscription services that charge a modest monthly fee have made it easy to experiment without risking much money. But the format owes just as much to a change in {{4}} habits. Commuters, joggers and parents with sleepless babies all report that listening has {{5}} transformed time that was previously wasted. Publishers, once {{6}} to bear the cost of hiring professional narrators, have discovered that a gifted voice can make an ordinary text {{7}} and an excellent one unforgettable. Some authors insist, however, that the experience is {{8}} different from reading, since the narrator's interpretation inevitably replaces the listener's own. Others take a more relaxed view, pointing out that readers have always imagined characters differently, and that a good performance may simply give an old story a second life.",
           "gaps": [
             { "stem": "ALTERNATE", "answers": ["alternative"] },
             { "stem": "SUBSTANCE", "answers": ["substantial"] },
-            { "stem": "ATTRIBUTE", "answers": ["attributable"] },
+            { "stem": "ATTRIBUTE", "answers": ["attributable", "attributed"] },
             { "stem": "CONSUME", "answers": ["consumer", "consumers'", "consumption"] },
             { "stem": "DRAMA", "answers": ["dramatically"] },
             { "stem": "RELUCTANCE", "answers": ["reluctant"] },
@@ -61,7 +61,7 @@
           "kind": "transform",
           "skill": "use",
           "marks": 2,
-          "instruction": "Complete the second sentence so that it has a similar meaning to the first sentence, using the word given. Do not change the word given. You must use between three and six words, including the word given.",
+          "instruction": "Finish the second sentence so that it means the same as the first one. Use the word given and do not change it. Write between three and six words, including the word given.",
           "items": [
             {
               "first": "We would never have finished on time without Maria's help.",
@@ -89,21 +89,21 @@
               "key": "CHANCE",
               "before": "There is",
               "after": "the committee approving the plan.",
-              "answers": ["little chance of", "not much chance of", "very little chance of", "hardly any chance of", "a slim chance of", "a very slim chance of"]
+              "answers": ["little chance of", "not much chance of", "very little chance of", "hardly any chance of", "a slim chance of", "a very slim chance of", "hardly a chance of", "scarcely any chance of", "next to no chance of", "a remote chance of", "a very remote chance of", "not much of a chance of", "a very small chance of"]
             },
             {
               "first": "I would prefer you not to mention the matter to anyone.",
               "key": "RATHER",
               "before": "I",
               "after": "mention the matter to anyone.",
-              "answers": ["would rather you did not", "would rather you didn't", "would rather you not"]
+              "answers": ["would rather you did not", "would rather you didn't", "would rather you not", "would rather that you did not", "would rather that you didn't", "would much rather you did not", "would much rather you didn't", "would much rather you not"]
             },
             {
               "first": "The film became far more popular than anyone had expected.",
               "key": "BEYOND",
               "before": "The film's popularity",
               "after": "anyone's expectations.",
-              "answers": ["went far beyond", "went well beyond", "went way beyond", "was far beyond", "was well beyond"]
+              "answers": ["went far beyond", "went well beyond", "went way beyond", "was far beyond", "was well beyond", "was way beyond", "went even beyond", "grew far beyond", "grew well beyond", "grew way beyond", "rose far beyond", "soared far beyond"]
             }
           ]
         },
@@ -111,7 +111,7 @@
           "kind": "passage_mc",
           "skill": "reading",
           "marks": 2,
-          "instruction": "Read the article and choose the answer (A, B, C or D) which fits best according to the text.",
+          "instruction": "Read the article. For each question, pick the option, A to D, that the text supports best.",
           "title": "Lost and found",
           "text": "My father never admitted that we were lost. On family drives, he would slow the car, glance at the folded map on my mother's knees, and announce that he was taking “a more interesting route”. It was years before I understood that this was his polite way of saying that the map, the road signs and his own judgment had failed him at once. What I remember is not the arguments but the odd freedom of those afternoons, when nobody knew exactly where we were, and the only thing to do was to look out of the window.\n\nI thought of those drives recently, standing at an intersection in my own city with a dead phone, unable to say which way led home. I had lived there for eleven years. The realization was less embarrassing than unsettling. Somewhere along the way I had stopped building a mental picture of the place, because a voice in my pocket had been quietly doing the work for me. Researchers who study spatial memory are not surprised. Scans of professional taxi drivers, who spend years memorizing a city's streets, show that the part of the brain involved in forming mental maps grows with use. It seems plausible that it also shrinks with disuse, though the evidence for that is thinner than the headlines suggest.\n\nIt would be easy to turn all this into a lament for a lost world, and I distrust such laments. Navigation apps have given independence to people who once avoided unfamiliar places altogether: the nervous driver, the visitor who does not speak the language, the elderly relative who would otherwise stay at home. Nobody sensible wants to go back to unfolding a map in a rainstorm. My complaint is narrower. It is that the convenience arrives bundled with a way of paying attention, or rather of not paying it, that we never actually agreed to.\n\nA geographer friend of mine goes further. He points out that people have always differed enormously in their sense of direction, that some are born with an unerring feel for where they are while others have never had one, and that apps have exposed this difference rather than created it. He may be right. But I notice that he does not use an app himself, and when I asked him why, he said only that he liked knowing where he was.\n\nSo I ran a small experiment. For a week I left the phone in a drawer and found my way around by landmarks and by asking people, which turned out to be the harder skill. The first journeys were clumsy. I arrived late and flustered, twice by roads I would never have chosen. But by the fourth day something shifted. I began to notice things: a mural on the side of a pharmacy, a street where the sidewalk tilted toward a bakery, the particular slope that told me I was close to the river. These had been there all along, of course. They had simply never been needed.\n\nWhat the experiment did not do was make me nostalgic for getting lost. Being lost, for most people, is unpleasant and occasionally dangerous, and anyone who says otherwise has usually been lost only in places with good cell coverage. The point is subtler. A journey that has been optimized to the minute treats the space between two places as a cost to be reduced, whereas the old, inefficient journey made that space part of the experience. The question is whether we can have the benefits of the first without surrendering all the attention that the second demanded.\n\nI have settled for a modest rule. I plan the route myself, I form a rough picture of it, and I turn to the phone only when the picture has failed. It is slower. Last month it made me late for a meeting. But I have also, for the first time in years, been able to give a stranger directions without apologizing, and I find I would not trade that for a perfectly timed arrival.",
           "questions": [
@@ -138,7 +138,7 @@
             {
               "stem": "What is the writer's main objection to navigation apps?",
               "options": [
-                "They have changed the way people pay attention, and nobody consciously agreed to that.",
+                "They have quietly changed how much attention people give to their surroundings, without anyone having chosen that.",
                 "They discourage nervous or elderly people from traveling independently.",
                 "They are less reliable than the paper maps which they have replaced.",
                 "They spoil journeys by always suggesting routes that are far too fast."
@@ -181,7 +181,7 @@
           "kind": "match_pool",
           "skill": "reading",
           "marks": 2,
-          "instruction": "Read the four reviews of a book called The Empty Hour, which argues that boredom is good for us. For each question, choose the reviewer (A, B, C or D).",
+          "instruction": "Four people review a book called The Empty Hour, which argues that boredom is good for us. Decide which reviewer, A to D, each question describes.",
           "prompts": [
             { "id": "1", "text": "Which reviewer has a different opinion from the other three about how convincing the evidence in the book is?" },
             { "id": "2", "text": "Which reviewer shares reviewer B's view that the author's advice is difficult for ordinary families to follow?" },
@@ -217,11 +217,11 @@
           "kind": "gapped_text",
           "skill": "reading",
           "marks": 2,
-          "instruction": "Six paragraphs have been removed from the article. Choose from the paragraphs (A to G) the one which fits each gap. There is one extra paragraph which you do not need to use.",
+          "instruction": "Six paragraphs are missing from the article below. Put the right paragraph, A to G, into each gap. One of the seven paragraphs does not belong anywhere.",
           "title": "The listener",
           "text": "On a calm morning off the coast of a small island, Dr. Leah Okonkwo lowers a hydrophone into the water and puts on her headphones. To an untrained ear, the sound is a continuous crackle, like bacon frying in a distant kitchen. To her, it is a medical report. “Healthy reef,” she says after a minute. “Lots of shrimp, and some parrotfish feeding.” She has been listening to reefs for fifteen years, and she can now tell within seconds whether a stretch of coral is thriving or dying. It is a skill she never planned to acquire. Her original ambition, as a student, was to become a conventional marine biologist who spent her days counting fish, and she assumed that a life with a notebook and a boat would be quiet enough to suit her.\n\n{{1}}\n\nWhat she had stumbled on was, she later realized, an entirely unmapped territory. Biologists had long known that reefs were noisy, but the noise had been treated as a curiosity rather than as a measurement. Okonkwo's recordings suggested that it could be used as one: a reef bleached by warm water, she found, falls quiet within a season, long before the damage shows up clearly to a diver's eye. Nobody, as far as she could discover, had ever compared the sound of a living reef with that of a dying one in any systematic way.\n\n{{2}}\n\nThat speed transformed the argument. Within three years her team had recorders on reefs in four countries, and conservation groups were using the results to decide where to spend their limited funds. But the project that brought her wider attention was a stranger one. Having shown that dead reefs fall silent, she began to wonder whether the silence might itself be part of the problem, and she spent several months reading everything she could find about how young fish behave in open water.\n\n{{3}}\n\nTo test the idea, her team placed underwater speakers on patches of dead coral and played recordings of a thriving reef for six weeks. Nearby they left similar patches in silence. The results were more dramatic than anyone had predicted: the patches with sound attracted far more fish, and a wider variety of species. Okonkwo remains careful about the claim. Sound will not bring a reef back to life on its own, she stresses, since the corals themselves still have to survive, and no recording can protect them from the heat.\n\n{{4}}\n\nThose precautions reflect a temperament that colleagues describe as cautious to the point of stubbornness. She will not publish a result until it has been reproduced in at least two locations, and she keeps a notebook of the experiments that failed, which she calls her “museum of mistakes”. Younger researchers in her laboratory are encouraged to add to it, and anyone who works with her for long learns that “probably” is a word she distrusts. “If you only record your successes,” she tells them, “you learn nothing about how you might be wrong.”\n\n{{5}}\n\nThat reaction is what keeps her going when the data are discouraging, and lately they often have been. Marine heat waves have struck several of her study sites, and two of the quietest reefs she has recorded were, only a few years ago, among the loudest. She admits that there are days when listening feels like attending a funeral. “But a doctor who stops reading the chart because the news is bad,” she says, “is no use to anyone.”\n\n{{6}}\n\nIt is a small result, and she is the first to say so. Yet as the boat turns back toward the harbor and she lifts the hydrophone out of the water, she looks content. By evening, the software will have turned the morning's crackle into a single number on a map. “A reef that can be heard is a reef that can still be saved,” she says. “That is all I am asking people to do: listen before it is too late.”",
           "fragments": [
-            { "id": "A", "text": "Critics have raised a different objection, which is that broadcasting artificial sound underwater may do harm of its own. Okonkwo takes the worry seriously, and her team now measure the effect of the speakers on resident animals before any experiment begins. So far, she says, they have seen no sign of distress, though she would like to see the work repeated by others." },
+            { "id": "A", "text": "Critics have raised an objection of their own, which is that broadcasting artificial sound underwater may do harm. Okonkwo takes the worry seriously, and her team now measure the effect of the speakers on resident animals before any experiment begins. So far, she says, they have seen no sign of distress, though she would like to see the work repeated by others." },
             { "id": "B", "text": "Convincing her colleagues was another matter. Many regarded the idea as an expensive way of listening to shrimp, and her first grant application was turned down twice. The breakthrough came when she showed that software could analyze a single recording in minutes, whereas a diver's survey of the same reef took days." },
             { "id": "C", "text": "She has also begun to hear signs of hope. At one site, where local fishermen agreed to stop using explosives, the sound has slowly returned over the last four years. The crackle is thinner than it once was, but it is unmistakably there." },
             { "id": "D", "text": "She is equally careful when talking to the public. She regularly takes recordings into schools, where children are asked to guess whether a reef is alive or dead from the sound alone. Most get it right within seconds, and many are visibly shaken by how bleak a dead reef sounds." },
@@ -234,7 +234,7 @@
         {
           "kind": "match_pool",
           "skill": "reading",
-          "instruction": "Read the article about five people who changed careers in their forties. For each question, choose from the people (A to E). The people may be chosen more than once.",
+          "instruction": "Five people describe changing careers in their forties. Match each statement to the person it applies to, A to E. One person can match more than one statement.",
           "prompts": [
             { "id": "1", "text": "a relative's initial doubts about the decision" },
             { "id": "2", "text": "pleasure in making something solid by the end of the working day" },

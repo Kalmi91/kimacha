@@ -9,11 +9,11 @@
         {
           "kind": "clips_mc",
           "skill": "listening",
-          "instruction": "You will hear three different extracts. For each question, choose the answer (A, B or C) which fits best according to what you hear.",
+          "instruction": "Listen to three short extracts. For each question, pick the option, A to C, that best matches what is said.",
           "clips": [
             {
               "audio": [
-                { "speaker": "f", "text": "So the rollout's officially cancelled, then. After all that training." },
+                { "speaker": "f", "text": "So the rollout's officially canceled, then. After all that training." },
                 { "speaker": "m", "text": "Yes, the director told me this morning. Apparently the software did everything we asked it to. It's just that nobody used it." },
                 { "speaker": "f", "text": "I'm not surprised, to be honest. It took six clicks to log a two-minute task. By the end of the first week, people were back on their old spreadsheets, copying the figures across at the end of the day." },
                 { "speaker": "m", "text": "That's what I told the vendor. They kept saying the problem was resistance to change." },
@@ -109,9 +109,9 @@
         {
           "kind": "cloze",
           "skill": "listening",
-          "instruction": "You will hear a talk about a museum project. For each gap, write a word or short phrase (one to three words) to complete the notes.",
+          "instruction": "Listen to a talk about a museum project and complete the notes. Write one to three words in each gap.",
           "title": "Talk: The weather diaries project",
-          "text": "The collection\n• Just over {{1}} handwritten diaries from the nineteenth century\n• The oldest diary was kept by a village {{2}}\n\nThe project\n• Within a month, {{3}} volunteers had signed up\n• Volunteers type out the entries and mark anything unusual\n• One diary from the eighteen thirties describes a hazy summer; the writer's {{4}} failed that year\n\nWhy scientists are interested\n• Few diarists had thermometers, so the most useful details are the {{5}} of ordinary events, such as the first frost\n\nProblems\n• One woman wrote only on fine days, so her diary reads like a long {{6}}\n\nNext steps\n• A searchable website opens in {{7}}\n• Volunteer sessions are held every {{8}} evening in the reading room",
+          "text": "The collection\n• Just over {{1}} handwritten diaries from the nineteenth century\n• The oldest diary was kept by a village {{2}}\n\nThe project\n• Within a month, {{3}} volunteers had signed up\n• Volunteers type out the entries and mark anything unusual\n• One diary from the eighteen thirties describes a hazy summer; the writer's {{4}} failed that year\n\nWhy scientists are interested\n• Few diarists had thermometers, so the most useful details are the {{5}} of ordinary events, such as the first frost\n\nProblems\n• One woman wrote only on fine days, so her diary reads like a long {{6}}\n\nNext steps\n• A searchable website opens in {{7}}\n• Volunteer sessions are held every Thursday evening in the reading room\n• Volunteers need no previous {{8}}",
           "audio": [
             { "speaker": "f", "text": "Good evening, everyone, and thank you for coming. My name is Rosa Delgado, I look after the archive here at the museum, and tonight I would like to tell you about a project that began almost by accident. It concerns a shelf of old notebooks that most visitors never see: our collection of weather diaries." },
             { "speaker": "f", "text": "Let me begin by explaining what they are. They are handwritten journals, kept by ordinary people over the course of the nineteenth century, and each daily entry is often only a line or two. Rain until noon. Frost in the orchard. Wind from the north. We hold just over three hundred of them, and until recently nobody had read more than a handful. The oldest was kept by a village schoolteacher called Edmund Hale, who recorded the weather every single morning for thirty-one years." },
@@ -127,16 +127,16 @@
             { "answers": ["schoolteacher", "school teacher", "teacher"] },
             { "answers": ["ninety", "90"] },
             { "answers": ["harvest", "crop", "crops"] },
-            { "answers": ["dates"] },
+            { "answers": ["dates", "date"] },
             { "answers": ["vacation", "holiday"] },
             { "answers": ["March"] },
-            { "answers": ["Thursday"] }
+            { "answers": ["experience"] }
           ]
         },
         {
           "kind": "passage_mc",
           "skill": "listening",
-          "instruction": "You will hear an interview with a conductor. For each question, choose the answer (A, B, C or D) which fits best according to what you hear.",
+          "instruction": "Listen to an interview with a conductor. For each question, pick the option, A to D, that best matches what is said.",
           "audio": [
             { "speaker": "f", "text": "Welcome back to The Arts Hour. My guest this afternoon is Martin Gale, who has conducted the Riverside Community Orchestra for twenty years. It is a group in which the youngest player is fifteen and the oldest is eighty-one. Martin, welcome to the program." },
             { "speaker": "m", "text": "Thank you. It's a pleasure to be here." },
@@ -225,7 +225,7 @@
         {
           "kind": "match_pool",
           "skill": "listening",
-          "instruction": "You will hear five short extracts in which people talk about giving a speech. For Task One, choose from the list (A to H) the kind of speech each speaker gave.",
+          "instruction": "Five people each talk about a speech they gave. In Task One, match each speaker to the kind of speech, A to H.",
           "prompts": [
             {
               "id": "1",
@@ -279,7 +279,7 @@
         {
           "kind": "match_pool",
           "skill": "listening",
-          "instruction": "For Task Two, choose from the list (A to H) how each speaker felt afterwards.",
+          "instruction": "In Task Two, match each speaker to the way they felt afterwards, A to H.",
           "prompts": [
             {
               "id": "1",
