@@ -2,5 +2,103 @@
   "target": "en",
   "level": "B1",
   "paper": "writing",
-  "forms": []
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Read the e-mail from your friend and the notes you made. Then write your reply.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "E-mail to a friend",
+              "prompt": "Your friend Jamie is coming to visit you next weekend. Write an e-mail to Jamie. Answer the questions in the e-mail and use all four of your notes. Write about 100 words.",
+              "input": "From: Jamie\nSubject: Next weekend\n\nHi! I'm so excited about coming to see you next weekend. Is there anything special you would like to do on Saturday? I'd love to cook dinner for you one evening. What kind of food do you enjoy? Also, I'm arriving at the central station on Friday evening. How do I get to your apartment from there? Write soon!\n\nJamie\n\nYour notes:\n- Say how you feel about the visit.\n- Suggest an idea for Saturday.\n- Tell Jamie what food you like.\n- Explain how to get from the station to your apartment.",
+              "minWords": 80,
+              "maxWords": 120,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Says how the writer feels about the visit",
+                  "keywords": ["happy", "glad", "excited", "looking forward", "can't wait", "cannot wait", "thrilled", "pleased"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Suggests an idea for Saturday",
+                  "keywords": ["suggest", "we could", "let's", "how about", "why don't we", "what about", "would you like to", "i think we should"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Tells Jamie what food the writer likes",
+                  "keywords": ["my favorite", "i love", "i enjoy", "i like eating", "pasta", "pizza", "vegetarian", "delicious"]
+                },
+                {
+                  "id": "p4",
+                  "label": "Explains how to get from the station to the apartment",
+                  "keywords": ["get off", "take the bus", "take the train", "turn left", "turn right", "go straight", "bus number", "walk down"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Choose one of the two tasks and write your answer.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "Article",
+              "prompt": "You see this announcement in an English-language magazine.\n\nARTICLES WANTED: My favorite place to relax\nWhere do you go to relax? What do you do there? Why is it special for you?\n\nWrite your article in about 100 words.",
+              "minWords": 80,
+              "maxWords": 120,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Says where the writer goes to relax",
+                  "keywords": ["park", "beach", "home", "room", "garden", "library", "river", "lake"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Says what the writer does there",
+                  "keywords": ["reading", "i read", "walk", "listen", "music", "swim", "watch", "sit on"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Explains why the place is special",
+                  "keywords": ["quiet", "peaceful", "calm", "because", "i feel", "makes me", "happy", "away from"]
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Story",
+              "prompt": "Your English teacher has asked you to write a story. Your story must begin with this sentence:\n\nWhen Maria opened the door, she could not believe what she saw.\n\nWrite your story in about 100 words.",
+              "minWords": 80,
+              "maxWords": 120,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Describes what Maria saw behind the door",
+                  "keywords": ["there was", "there were", "was standing", "was full of", "in front of her", "behind the door", "surprise", "inside"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Tells what Maria did or felt next",
+                  "keywords": ["then", "next", "suddenly", "decided", "said", "shouted", "smiled", "felt"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Gives the story an ending",
+                  "keywords": ["finally", "in the end", "at last", "happy", "laughed", "from that day", "after that", "since then"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
