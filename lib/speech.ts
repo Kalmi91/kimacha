@@ -196,12 +196,15 @@ export function watchAppStateForSpeech(): () => void {
 // A new speech (or a `stop()`) invalidates the previous chain.
 let speakingRun = 0;
 
-interface SpeechRunSegment {
+export interface SpeechRunSegment {
   text: string;
   locale: string;
+  /** Voice pitch of the segment (1 = the engine's own); the practice exam gives each speaker a different one. */
+  pitch?: number;
 }
 
-export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void): void {
+// `onStopped` fires when a segment in flight is cut off by a stop() or by the next speech (not at the natural end).
+export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, onStopped?: () => void): void {
   Speech.stop();
   speakingRun += 1;
   const run = speakingRun;
@@ -226,8 +229,9 @@ export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void):
     Speech.speak(padForAndroid(segment.text), {
       language: speechTag(segment.locale),
       ...(voice ? { voice } : {}),
+      ...(segment.pitch !== undefined ? { pitch: segment.pitch } : {}),
       onDone: () => next(index + 1),
-      onStopped: () => {},
+      onStopped: () => onStopped?.(),
       onError: () => next(index + 1),
     });
   };

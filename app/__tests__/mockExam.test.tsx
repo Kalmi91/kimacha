@@ -441,8 +441,8 @@ describe('Mock exam: es→en direction (international sample, UI in Spanish)', (
   });
   afterEach(() => setLanguage('en'));
 
-  it('on an unavailable level (B1) there is no mock exam, the button leads on', async () => {
-    mockLevel = 'B1';
+  it('on an unavailable level (C2: the exam has none) there is no mock exam, the button leads on', async () => {
+    mockLevel = 'C2';
     const s = await mount();
     expect(s.getByText('Todavía no hay examen de práctica para este nivel.')).toBeTruthy();
     await press(s, 'mock-back');
