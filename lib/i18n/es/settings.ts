@@ -50,6 +50,7 @@ const es: typeof en = {
       practiceOpposites: 'Juego de opuestos',
       sentenceListening: 'Frases: construir al escuchar',
       sentenceMistakes: 'Frases: de mis errores',
+      sentenceHint: 'Frases: pistas al tocar una palabra',
     },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',

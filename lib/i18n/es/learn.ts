@@ -181,6 +181,8 @@ const es: typeof en = {
     listenHint: 'Escucha y construye la frase',
     listenPlay: 'Reproducir la frase',
     fromMistakes: 'De tus errores',
+    hintUsed: 'pista usada',
+    hintA11y: 'Mostrar la palabra en español',
     empty: 'Aprende más palabras para desbloquear frases',
     roundDone: (n: number) => (n === 1 ? 'Ronda terminada: 1 frase' : `Ronda terminada: ${n} frases`),
     more: 'Más frases',

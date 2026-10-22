@@ -5,6 +5,7 @@
 
 import { getDb } from '@/lib/database';
 import {
+  addHinted,
   answerBuild,
   answerType,
   buildNumber,
@@ -203,6 +204,24 @@ describe('the saved round', () => {
     for (const bad of [{ wrong: 5 }, 'frase mal', null]) {
       expect(parseSentenceRound(JSON.parse(JSON.stringify({ ...withMistake, entries: [ENTRIES[0], { ...mistake, mistake: bad }] })))).toBeNull();
     }
+  });
+
+  it('the cards whose word was looked at with a hint (BRIEF-B3) are added once, kept in the saved round, and a broken value is ignored', async () => {
+    const r = fresh();
+    expect(r.hinted).toBeUndefined();
+    expect(addHinted(r, [])).toBe(r); // nothing to add: the same round back
+    const one = addHinted(r, ['w-a', 'w-a']);
+    expect(one.hinted).toEqual(['w-a']);
+    expect(addHinted(one, ['w-a'])).toBe(one);
+    const two = addHinted(one, ['w-b', 'w-a']);
+    expect(two.hinted).toEqual(['w-a', 'w-b']);
+    expect(r.hinted).toBeUndefined(); // the first round was not changed
+    await saveSentenceRound(getDb(), two);
+    expect((await loadSentenceRound(getDb()))?.hinted).toEqual(['w-a', 'w-b']);
+    expect(answerBuild(two, true).hinted).toEqual(['w-a', 'w-b']); // the hints stay while the round goes on
+    // a round saved without them, or with something that is not a list of ids, has none
+    expect(parseSentenceRound(JSON.parse(JSON.stringify(r)))?.hinted).toBeUndefined();
+    expect(parseSentenceRound(JSON.parse(JSON.stringify({ ...r, hinted: [1, 2] })))?.hinted).toBeUndefined();
   });
 
   it('a round saved by the older version (the typed sentence was one of the built ones) starts again without an error', async () => {

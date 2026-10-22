@@ -11,6 +11,8 @@ import ResultBadge from '@/components/ResultBadge';
 import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
 import { sentenceBuildMatch } from '@/lib/answerMatch';
+import HintedSentence from '@/components/HintedSentence';
+import type { HintPiece } from '@/lib/sentenceHint';
 
 interface Props {
   sourceSentence: string;
@@ -27,9 +29,13 @@ interface Props {
   // Listening step (Sentences tab, beta sentenceListening): a big 🔊 button replaces the prompt sentence, which is
   // heard when the card opens (the same auto-read) and shown only once the build is right.
   listening?: boolean;
+  // Tap-a-word hints on the prompt sentence (Sentences tab, beta sentenceHint): the marked words, and what to do with the cards a
+  // looked-at word belongs to. On a listening step the prompt (and so the hints) only appears after a right build.
+  sourceHints?: HintPiece[] | null;
+  onSourceHint?: (ids: string[]) => void;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, listening = false }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, listening = false, sourceHints, onSourceHint }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -87,7 +93,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const canCheck = placed.length > 0;
 
   // The prompt sentence in one place (the listening step shows it after a right build).
-  const sourceLine = <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>;
+  const sourceLine = <HintedSentence text={sourceSentence} pieces={sourceHints} onHint={onSourceHint} style={[styles.sourceText, { color: colors.text }]} />;
   const replay = () => {
     if (!sourceSpeechLocale) return;
     stopSpeech();
