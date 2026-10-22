@@ -62,6 +62,7 @@ export function useGameRound<S>(logic: GameLogic<S>): UseGameRound<S> {
         cards,
         today,
         findItem: findPcicItem,
+        usable: logic.usable ? (item) => logic.usable!(item, dir) : undefined,
         avoid: stored && stored.target === dir && (fresh || stored.date !== today) ? new Set(stored.ids) : undefined,
       });
       next = items.length > 0 ? startGame(logic, items, today, dir) : null;

@@ -112,6 +112,7 @@ describe('Practice tab: the mode chips', () => {
   it('with the game switched off only Reading is left and the chip row is gone', async () => {
     await learnWords();
     await getDb().setBetaFlag('practiceDictation', false);
+    await getDb().setBetaFlag('practiceScramble', false);
     const view = await mount();
     expect(view.queryByTestId('practice-modes')).toBeNull();
     expect(view.getByTestId('practice-screen')).toBeTruthy();

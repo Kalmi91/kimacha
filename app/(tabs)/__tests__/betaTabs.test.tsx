@@ -92,11 +92,11 @@ describe('tab bar: the two beta tabs', () => {
 });
 
 describe('Settings: Beta section', () => {
-  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1', practiceDictation: 'Dictation game' } as const;
-  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1', practiceDictation: 'Juego de dictado' } as const;
+  const EN = { practiceTab: 'Practice tab', sentenceTab: 'Sentences tab', xpV2: 'New XP values', levels: 'Levels A1-C1', practiceDictation: 'Dictation game', practiceScramble: 'Letter scramble game' } as const;
+  const ES = { practiceTab: 'Pestaña Práctica', sentenceTab: 'Pestaña Frases', xpV2: 'Nuevos valores de XP', levels: 'Niveles A1-C1', practiceDictation: 'Juego de dictado', practiceScramble: 'Juego de letras revueltas' } as const;
 
   describe.each(['classic', 'brand'] as const)('palette %s', (palette) => {
-    it('five named switches, all off; a toggle saves the flag', async () => {
+    it('six named switches, all off; a toggle saves the flag', async () => {
       await getDb().setGrammarPalette(palette);
       const view = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
       await flush();
