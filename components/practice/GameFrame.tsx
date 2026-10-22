@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -47,6 +47,13 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
   const { dockLift, kbHeight } = useDockLift();
   const [dockH, setDockH] = useState(DOCK_RESERVE);
   const insets = dockScrollInsets(dockH, dockLift, kbHeight > 0);
+  const scroll = useRef<ScrollView>(null);
+  // A new dock action (e.g. Next after an answer) scrolls to the end, so the feedback under the options is not left
+  // behind the dock (emulator 2026-10-22: "The opposite: …" half hidden under Next).
+  const dockId = dock?.testID;
+  useEffect(() => {
+    if (dockId) scroll.current?.scrollToEnd({ animated: true });
+  }, [dockId]);
   return (
     <KeyboardAvoidingView
       testID={testID}
@@ -67,6 +74,7 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
         <View style={styles.center}>{children}</View>
       ) : (
         <ScrollView
+          ref={scroll}
           style={[styles.scroll, { marginBottom: insets.marginBottom }]}
           contentContainerStyle={{ paddingBottom: insets.paddingBottom }}
           keyboardShouldPersistTaps="handled"
