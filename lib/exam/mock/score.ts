@@ -25,6 +25,16 @@ const SKILL_POINTS = 25;
 
 const SKILL_ORDER: MockSkill[] = ['reading', 'use', 'writing', 'listening', 'speaking'];
 
+/**
+ * Whether a content-point keyword occurs in the kept words. The keyword must start at a word start ("gracia" still finds
+ * "gracias", but "sit" no longer finds "visit"); a keyword made only of punctuation (a question mark) runs on the raw text,
+ * because punctuation drops out of the words.
+ */
+function keywordHit(kw: string, words: string, raw: string): boolean {
+  const k = fold(kw);
+  return /[a-z0-9]/.test(k) ? ` ${words}`.includes(` ${k}`) : raw.includes(k);
+}
+
 interface MockItemResult {
   /** What the task asked (the target-language text or the statement). */
   label: string;
@@ -220,7 +230,7 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       const raw = fold(text);
       for (const p of task.points) {
         // A keyword made only of punctuation (a question mark) runs on the raw text, because punctuation drops out of the words.
-        const ok = enough && p.keywords.some((kw) => (/[a-z0-9]/.test(fold(kw)) ? a.text : raw).includes(fold(kw)));
+        const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw));
         items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok });
       }
       items.push({ label: `≥ ${task.minWords}`, given: String(a.valid ? a.words : 0), expected: String(task.minWords), ok: a.valid && a.words >= task.minWords });
@@ -290,7 +300,7 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       const enough = a.valid && a.words >= Math.ceil(choice.minWords / 2);
       const raw = fold(text);
       for (const p of choice.points) {
-        const ok = enough && p.keywords.some((kw) => (/[a-z0-9]/.test(fold(kw)) ? a.text : raw).includes(fold(kw)));
+        const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw));
         items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok });
       }
       // min <= words <= max x 1.2 (integer arithmetic: words x 5 <= max x 6)

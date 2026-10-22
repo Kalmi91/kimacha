@@ -294,6 +294,23 @@ describe('scoreMockTask: per item', () => {
     expect(scoreMockTask(t, {}).correct).toBe(0);
   });
 
+  it('writing: a keyword must start a word ("sit" is not in "visit", "gracia" is in "gracias")', () => {
+    const t: MockTask = {
+      id: 'w',
+      skill: 'writing',
+      kind: 'short_message',
+      instruction: '',
+      prompt: '',
+      minWords: 3,
+      points: [
+        { id: 'a', label: 'a', keywords: ['sit'] },
+        { id: 'b', label: 'b', keywords: ['gracia'] },
+      ],
+    };
+    const r = scoreMockTask(t, { text: 'I will visit you and say gracias' });
+    expect(r.items.map((i) => i.ok)).toEqual([false, true, true]);
+  });
+
   it('form: filled in, and a number in a number field; true/false and matching per the key', () => {
     const form: MockTask = {
       id: 'f',
