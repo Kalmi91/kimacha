@@ -15,6 +15,8 @@ import { t } from '@/lib/i18n';
 import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { stripSentencePunct } from '@/lib/sentenceCards';
 import { answerInputProps } from '@/lib/inputProps';
+import HintedSentence from '@/components/HintedSentence';
+import type { HintPiece } from '@/lib/sentenceHint';
 
 interface Props {
   sourceSentence: string;
@@ -38,6 +40,9 @@ interface Props {
   onDockHeight?: (h: number) => void;
   // The word card's "Didn't know" / "Knew it" button row after Check (overrides the displayed grade).
   gradeButtons?: boolean;
+  // Tap-a-word hints on the prompt sentence (Sentences tab, beta sentenceHint); see EasySentenceCard.
+  sourceHints?: HintPiece[] | null;
+  onSourceHint?: (ids: string[]) => void;
 }
 
 export default function TypedSentenceCard({
@@ -52,6 +57,8 @@ export default function TypedSentenceCard({
   dockH = DOCK_RESERVE,
   onDockHeight,
   gradeButtons = false,
+  sourceHints,
+  onSourceHint,
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -98,7 +105,7 @@ export default function TypedSentenceCard({
         keyboardDismissMode="on-drag"
       >
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-          <Text style={[styles.sourceText, { color: colors.text }]}>{sourceSentence}</Text>
+          <HintedSentence text={sourceSentence} pieces={sourceHints} onHint={onSourceHint} style={[styles.sourceText, { color: colors.text }]} />
 
           <TextInput
             style={[

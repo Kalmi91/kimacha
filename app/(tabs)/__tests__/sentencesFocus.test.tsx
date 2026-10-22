@@ -109,6 +109,8 @@ beforeEach(async () => {
   await clearSentenceRound(getDb());
   __resetBetaForTest();
   await getDb().setBetaFlag('xpV2', false);
+  // these tests read the prompt on every build; the listening builds (beta sentenceListening, on by default) hide it
+  await getDb().setBetaFlag('sentenceListening', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
   for (const n of [1, 2, 3, 4, 5, 6]) await getDb().upsertPcicCard(learned(n));

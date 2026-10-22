@@ -204,6 +204,15 @@ export default {
     progressA11y: (done: number, total: number) => `Steps done: ${done} of ${total}`,
     stepBuild: (n: number, total: number) => `Build the sentence ${n} of ${total}`,
     stepType: 'Last step: type this sentence',
+    // Listening build (beta sentenceListening): the prompt is heard, not shown, until the build is right.
+    stepListen: (n: number, total: number) => `Listen and build the sentence ${n} of ${total}`,
+    listenHint: 'Listen, then build the sentence',
+    listenPlay: 'Play the sentence',
+    // Mistake build (beta sentenceMistakes): a sentence from the learner's own "My mistakes" list.
+    fromMistakes: 'From your mistakes',
+    // Tap-a-word hint (beta sentenceHint): a tapped English word shows its Spanish form; that word earns no credit this round.
+    hintUsed: 'hint used',
+    hintA11y: 'Show the Spanish word',
     empty: 'Learn more words to unlock sentences',
     roundDone: (n: number) => (n === 1 ? 'Round done: 1 sentence' : `Round done: ${n} sentences`),
     more: 'More sentences',

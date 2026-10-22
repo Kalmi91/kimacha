@@ -20,6 +20,8 @@ import { TextInput } from 'react-native';
 import { getDb } from '@/lib/database';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import sample from '@/lib/mistakes/__fixtures__/sample.json';
+import { sm2NewCard, sm2Review } from '@/lib/sm2';
+import { localDateString } from '@/lib/usageStats';
 import MistakesDeckScreen from '../deck';
 import { makeFlush } from '@/test-utils/flush';
 
@@ -72,5 +74,21 @@ describe('Deck (app/mistakes/deck.tsx)', () => {
 
     // It goes back to the end of the queue (due === today), the next card comes: s2.
     expect(getByText('✓ Check')).toBeTruthy();
+  });
+
+  it('Knew it saves the card through the shared grading step (lib/mistakes/grade.ts, which the Sentences tab also uses)', async () => {
+    await seedBatch();
+    const id = `${sample.batchId}:s:s1`;
+    await getDb().upsertMistakeCard(sm2NewCard(id)); // earlier tests of this file graded it
+    const { getByText, UNSAFE_getByType } = render(<MistakesDeckScreen />);
+    await flush();
+
+    fireEvent.changeText(UNSAFE_getByType(TextInput), 'No tengo tomate.');
+    fireEvent.press(getByText('✓ Check'));
+    await flush();
+    fireEvent.press(getByText('Knew it'));
+    await flush();
+
+    expect((await getDb().getMistakeCards()).find((c) => c.itemId === id)).toEqual(sm2Review(sm2NewCard(id), 'good', localDateString()));
   });
 });

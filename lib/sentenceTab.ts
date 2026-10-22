@@ -35,6 +35,12 @@ export interface SentenceEntry {
   staleness: string;
   /** Per learned card, the words of the sentence it owns (lowercase tokens): what the typed answer is matched on. */
   slots: Array<{ id: string; words: string[] }>;
+  /**
+   * Set on a sentence from the learner's own mistakes (lib/sentenceMistakes.ts, beta sentenceMistakes): `itemId` is then
+   * the mistake card's id, `source` its English, `target` the right Spanish, `wrong` the faulty sentence they wrote.
+   * Such an entry owns no learned words (`wordIds` empty). Saved with the round, so it stays a mistake step on reload.
+   */
+  mistake?: { wrong: string };
 }
 
 export interface SentenceQueueDeps {
