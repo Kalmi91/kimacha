@@ -20,9 +20,11 @@ type Props = {
   onReview: () => void;
   onRetry: () => void;
   onExit: () => void;
+  /** The exam is at the official length (B1 and up), so the "shorter, scaled" note does not apply. */
+  fullLength?: boolean;
 };
 
-export function MockResultView({ result, timedOut, onReview, onRetry, onExit }: Props) {
+export function MockResultView({ result, timedOut, onReview, onRetry, onExit, fullLength }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
@@ -67,7 +69,7 @@ export function MockResultView({ result, timedOut, onReview, onRetry, onExit }: 
             </Text>
           </>
         )}
-        <Text style={[styles.note, { color: colors.textMuted }]}>{s.shortNote}</Text>
+        <Text style={[styles.note, { color: colors.textMuted }]}>{fullLength ? s.fullNote : s.shortNote}</Text>
       </Card>
       <ExamButton testID="mock-review" label={s.checkAnswers} onPress={onReview} />
       <ExamButton testID="mock-retry" secondary label={s.tryAgain} onPress={onRetry} />

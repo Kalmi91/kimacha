@@ -283,6 +283,11 @@ export function mockAvailable(target: MockTarget, level: string, authored?: Auth
   return authoredFormCount(target, level as MockLevel, papers.map((p) => p.id), authored) > 0;
 }
 
+/** B1 and up are written at the official length (authored texts); A1 / A2 are a shorter set built from the level's words. */
+export function mockIsFullLength(level: MockLevel): boolean {
+  return level !== 'A1' && level !== 'A2';
+}
+
 const ES_ORDER: PaperSkill[] = ['reading', 'writing', 'listening', 'speaking'];
 
 export function getMockBlueprint(target: MockTarget, level: MockLevel): MockBlueprint {

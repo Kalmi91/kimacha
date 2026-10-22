@@ -100,6 +100,8 @@ describe('Mock exam: English B1 (authored papers, scale rule)', () => {
     expect(s.getByText('Listening: 30 min, 5 tasks')).toBeTruthy();
     expect(s.getByText('Speaking: 12 min, microphone part coming soon')).toBeTruthy();
     expect(s.getByText(s_.passRuleScale(140))).toBeTruthy();
+    expect(s.getByText(s_.fullNote)).toBeTruthy();
+    expect(s.queryByText(s_.shortNote)).toBeNull();
     expect(s.getByTestId('fb-card').props.children).toBe('mock-exam:B1:intro');
     await press(s, 'mock-begin');
 
