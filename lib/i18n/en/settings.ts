@@ -48,6 +48,7 @@ export default {
       practiceDictation: 'Dictation game',
       practiceScramble: 'Letter scramble game',
       practiceMatch: 'Quick match game',
+      practiceOpposites: 'Opposites game',
     },
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',

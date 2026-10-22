@@ -135,6 +135,7 @@ const es: typeof en = {
     modeDictation: 'Dictado',
     modeScramble: 'Letras',
     modeMatch: 'Parejas',
+    modeOpposites: 'Opuestos',
     game: {
       emptyTitle: 'Aprende unas palabras más y aquí habrá algo para practicar',
       progressLabel: (n: number, total: number) => `Palabra ${n} de ${total}`,
@@ -149,6 +150,12 @@ const es: typeof en = {
       allFound: 'Todas las parejas',
       result: (found: number, total: number, sec: number) => `${found} de ${total} parejas, ${sec} s`,
       best: (sec: number) => `Mejor tiempo: ${sec} s`,
+    },
+    opposites: {
+      prompt: '¿Cuál es el opuesto?',
+      empty: 'Aprende más palabras para desbloquear los opuestos',
+      answer: (word: string) => `El opuesto: ${word}`,
+      listen: 'Escuchar',
     },
     scramble: {
       emptySlot: 'Lugar vacío',
