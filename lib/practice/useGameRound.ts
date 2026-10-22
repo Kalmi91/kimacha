@@ -10,6 +10,7 @@ import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import {
+  learnedCardIds,
   loadSavedGame,
   pickGameWords,
   resumeGame,
@@ -64,10 +65,10 @@ export function useGameRound<S>(logic: GameLogic<S>): UseGameRound<S> {
         findItem: findPcicItem,
         size: logic.size,
         min: logic.minWords,
-        usable: logic.usable ? (item) => logic.usable!(item, dir) : undefined,
+        usable: logic.usable ? (item, learned) => logic.usable!(item, dir, learned) : undefined,
         avoid: stored && stored.target === dir && (fresh || stored.date !== today) ? new Set(stored.ids) : undefined,
       });
-      next = items.length > 0 ? startGame(logic, items, today, dir) : null;
+      next = items.length > 0 ? startGame(logic, items, today, dir, learnedCardIds(cards)) : null;
       // a new round is saved at once; no round (too few words) clears an old value.
       void saveGame(logic.mode, next ? toSaved(logic.mode, next) : null).catch(() => {
         // the round on screen keeps its own state; a failed save only loses the resume point

@@ -32,8 +32,15 @@ export interface GameWordsDeps {
   size?: number;
   /** Fewer words than this make no round (default GAME_MIN_WORDS). */
   min?: number;
-  /** Words the game cannot use (e.g. a letter game needs two different letters) are left out. */
-  usable?: (item: PcicItem) => boolean;
+  /** Words the game cannot use (e.g. a letter game needs two different letters) are left out; `learned` = learnedCardIds(cards). */
+  usable?: (item: PcicItem, learned: ReadonlySet<string>) => boolean;
+}
+
+/** The ids of the cards that count as learned (the same rule as practiceCandidates): not new, and not marked known by hand. */
+export function learnedCardIds(cards: Iterable<Sm2Card>): Set<string> {
+  const ids = new Set<string>();
+  for (const c of cards) if (c.state !== 'new' && !c.known) ids.add(c.itemId);
+  return ids;
 }
 
 /**
@@ -43,9 +50,10 @@ export interface GameWordsDeps {
  */
 export function pickGameWords({ cards, today, findItem, avoid, size = GAME_ROUND_SIZE, min = GAME_MIN_WORDS, usable }: GameWordsDeps): PcicItem[] {
   const items: PcicItem[] = [];
+  const learned = usable ? learnedCardIds(cards) : new Set<string>();
   for (const card of practiceCandidates(cards, today)) {
     const item = findItem(card.itemId);
-    if (item && (!usable || usable(item))) items.push(item);
+    if (item && (!usable || usable(item, learned))) items.push(item);
   }
   const fresh = items.filter((i) => !avoid?.has(i.id));
   const stale = items.filter((i) => avoid?.has(i.id));
@@ -81,15 +89,15 @@ export interface SavedGame {
 export interface GameLogic<S> {
   /** Save key part and testID prefix of the mode. */
   mode: string;
-  /** The state of a fresh round over these card ids (round order); the words and the direction are there for a game that sorts them. */
-  start: (ids: string[], ctx: { items: PcicItem[]; target: PcicTarget }) => S;
+  /** The state of a fresh round over these card ids (round order); the words and the direction are there for a game that sorts them, `learned` (card ids) for one that needs other learned words. */
+  start: (ids: string[], ctx: { items: PcicItem[]; target: PcicTarget; learned: ReadonlySet<string> }) => S;
   /** A saved state back, or null when it is broken or does not fit the words (= the round is not resumed). */
   parse: (raw: unknown, ids: string[], ctx: { items: PcicItem[]; target: PcicTarget }) => S | null;
   /** Words in a round (default GAME_ROUND_SIZE) and the fewest that make one (default GAME_MIN_WORDS). */
   size?: number;
   minWords?: number;
   /** Words this game can use; the others are left out of its rounds. Omitted: every learned word. */
-  usable?: (item: PcicItem, target: PcicTarget) => boolean;
+  usable?: (item: PcicItem, target: PcicTarget, learned: ReadonlySet<string>) => boolean;
 }
 
 /** A round on screen: its words (round order) and the mode's state. */
@@ -101,9 +109,15 @@ export interface GameRound<S> {
   state: S;
 }
 
-export function startGame<S>(logic: GameLogic<S>, items: PcicItem[], date: string, target: PcicTarget): GameRound<S> {
+export function startGame<S>(
+  logic: GameLogic<S>,
+  items: PcicItem[],
+  date: string,
+  target: PcicTarget,
+  learned: ReadonlySet<string> = new Set(),
+): GameRound<S> {
   const ids = items.map((i) => i.id);
-  return { date, target, ids, items, state: logic.start(ids, { items, target }) };
+  return { date, target, ids, items, state: logic.start(ids, { items, target, learned }) };
 }
 
 /** The saved round as the screen resumes it, or null when a new one has to be built: nothing saved, another day or direction, a card that is gone, a state that does not fit. */

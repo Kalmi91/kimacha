@@ -11,9 +11,9 @@ import { useEffect, useMemo, useSyncExternalStore } from 'react';
 
 import { getDb } from '@/lib/database';
 
-export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble' | 'practiceMatch';
+export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble' | 'practiceMatch' | 'practiceOpposites';
 
-export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch'];
+export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites'];
 
 export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   practiceTab: false,
@@ -24,6 +24,7 @@ export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   practiceDictation: true,
   practiceScramble: true,
   practiceMatch: true,
+  practiceOpposites: true,
 };
 
 let flags: Record<BetaFlag, boolean> = { ...BETA_DEFAULTS };

@@ -92,13 +92,13 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
   );
 }
 
-/** Too few learned words for a round (the same idea as the reading round's empty state). */
-export function GameEmpty({ mode, target }: { mode: string; target: PcicTarget }) {
+/** Too few learned words for a round (the same idea as the reading round's empty state); `text` replaces the shared sentence. */
+export function GameEmpty({ mode, target, text }: { mode: string; target: PcicTarget; text?: string }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   return (
     <GameFrame testID={`${mode}-screen`} target={target} currentCard={`practice-${mode}`} centered>
-      <Text testID={`${mode}-empty`} style={[styles.emptyText, { color: colors.text }]}>{t().practiceTab.game.emptyTitle}</Text>
+      <Text testID={`${mode}-empty`} style={[styles.emptyText, { color: colors.text }]}>{text ?? t().practiceTab.game.emptyTitle}</Text>
     </GameFrame>
   );
 }

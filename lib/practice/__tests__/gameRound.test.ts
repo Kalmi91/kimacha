@@ -71,6 +71,23 @@ describe('pickGameWords', () => {
     const cards = [due('w0', 1), due('w1', 2)];
     expect(pickGameWords({ cards, today: TODAY, findItem: lookup(ids) })).toEqual([]);
   });
+
+  it('usable is told the learned cards (not new, not known), also the ones that are not words of the round', () => {
+    const cards = [due('w0', 1), due('w1', 2), learned('w2'), { ...sm2NewCard('w3') }, { ...due('w4', 5), known: true }];
+    let seen: ReadonlySet<string> = new Set();
+    const words = pickGameWords({
+      cards,
+      today: TODAY,
+      findItem: lookup(ids),
+      min: 1,
+      usable: (_item, learnedIds) => {
+        seen = learnedIds;
+        return true;
+      },
+    });
+    expect(words.map((w) => w.id)).toEqual(['w1', 'w0']);
+    expect([...seen].sort()).toEqual(['w0', 'w1', 'w2']);
+  });
 });
 
 describe('credit', () => {
@@ -124,6 +141,15 @@ describe('the saved round', () => {
   };
   const findItem = lookup(['a', 'b', 'c']);
   const round = startGame(logic, ['a', 'b', 'c'].map((id) => item(id)), '2026-10-21', 'es');
+
+  it('start gets the learned card ids of the round (none by default)', () => {
+    const seen: ReadonlySet<string>[] = [];
+    const spy: GameLogic<S> = { ...logic, start: (ids, ctx) => (seen.push(ctx.learned), { n: ids.length }) };
+    startGame(spy, [item('a')], '2026-10-21', 'es', new Set(['a', 'z']));
+    startGame(spy, [item('a')], '2026-10-21', 'es');
+    expect([...seen[0]]).toEqual(['a', 'z']);
+    expect(seen[1].size).toBe(0);
+  });
 
   it('is saved under its mode and read back; another mode finds nothing', async () => {
     await saveGame('demo', toSaved('demo', round, { n: 7 }));

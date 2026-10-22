@@ -161,6 +161,7 @@ export default {
     modeDictation: 'Dictation',
     modeScramble: 'Scramble',
     modeMatch: 'Match',
+    modeOpposites: 'Opposites',
     // shared by the games (lib/practice/useGameRound.ts, components/practice/GameFrame.tsx)
     game: {
       emptyTitle: 'Learn a few more words, then there will be something to practice here',
@@ -176,6 +177,12 @@ export default {
       allFound: 'All pairs found',
       result: (found: number, total: number, sec: number) => `${found} of ${total} pairs, ${sec} s`,
       best: (sec: number) => `Best time: ${sec} s`,
+    },
+    opposites: {
+      prompt: 'What is the opposite?',
+      empty: 'Learn more words to unlock opposites',
+      answer: (word: string) => `The opposite: ${word}`,
+      listen: 'Listen',
     },
     scramble: {
       emptySlot: 'Empty place',

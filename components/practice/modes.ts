@@ -9,11 +9,13 @@ import { useCallback, useState, type ComponentType } from 'react';
 
 import DictationGame from '@/components/practice/DictationGame';
 import MatchGame from '@/components/practice/MatchGame';
+import OppositesGame from '@/components/practice/OppositesGame';
 import ScrambleGame from '@/components/practice/ScrambleGame';
 import { useBetaEnabled, type BetaFlag } from '@/lib/beta';
 import type { t } from '@/lib/i18n';
 import { DICTATION_MODE } from '@/lib/practice/dictation';
 import { MATCH_MODE } from '@/lib/practice/match';
+import { OPPOSITES_MODE } from '@/lib/practice/opposites';
 import { SCRAMBLE_MODE } from '@/lib/practice/scramble';
 import { loadPracticeMode, resolvePracticeMode, savePracticeMode } from '@/lib/practice/practiceMode';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
@@ -32,6 +34,7 @@ export const PRACTICE_MODES: readonly PracticeMode[] = [
   { id: DICTATION_MODE, flag: 'practiceDictation', title: (s) => s.practiceTab.modeDictation, Component: DictationGame },
   { id: SCRAMBLE_MODE, flag: 'practiceScramble', title: (s) => s.practiceTab.modeScramble, Component: ScrambleGame },
   { id: MATCH_MODE, flag: 'practiceMatch', title: (s) => s.practiceTab.modeMatch, Component: MatchGame },
+  { id: OPPOSITES_MODE, flag: 'practiceOpposites', title: (s) => s.practiceTab.modeOpposites, Component: OppositesGame },
 ];
 
 const MODE_FLAGS = PRACTICE_MODES.map((m) => m.flag);
