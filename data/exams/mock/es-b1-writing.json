@@ -19,10 +19,10 @@
               "minWords": 100,
               "maxWords": 120,
               "points": [
-                { "id": "p1", "label": "Propone un día y un lugar para cenar", "keywords": ["cenar", "cena", "restaurante", "viernes", "sabado", "jueves", "noche", "reservar"] },
-                { "id": "p2", "label": "Recomienda un hotel o una zona de la ciudad", "keywords": ["hotel", "hospedaje", "zona", "centro", "cerca", "recomiendo", "barato", "economico"] },
-                { "id": "p3", "label": "Dice qué ropa llevar según el clima", "keywords": ["ropa", "abrigo", "chamarra", "sueter", "frio", "calor", "paraguas", "lluvia"] },
-                { "id": "p4", "label": "Cuenta una novedad personal", "keywords": ["trabajo", "familia", "novedad", "nuevo", "mudanza", "estoy", "pareja", "viaje"] }
+                { "id": "p1", "label": "Propone un día y un lugar para cenar", "keywords": ["martes", "miercoles", "jueves", "viernes", "sabado", "restaurante", "te invito", "nos vemos en"] },
+                { "id": "p2", "label": "Recomienda un hotel o una zona de la ciudad", "keywords": ["te recomiendo", "hotel", "hospeda", "colonia", "zona", "barrio", "barato", "economico"] },
+                { "id": "p3", "label": "Dice qué ropa llevar según el clima", "keywords": ["abrigo", "chamarra", "sueter", "paraguas", "clima", "temperatura", "lleva ropa", "trae ropa"] },
+                { "id": "p4", "label": "Cuenta una novedad personal", "keywords": ["me mude", "empece", "consegui", "acabo de", "me case", "tengo novi", "me ascendieron", "estoy estudiando"] }
               ]
             }
           ]
@@ -40,10 +40,10 @@
               "minWords": 130,
               "maxWords": 150,
               "points": [
-                { "id": "p1", "label": "Dice adónde fue y con quién", "keywords": ["fui", "viaje", "ciudad", "playa", "con mi", "amigos", "familia", "pareja"] },
-                { "id": "p2", "label": "Cuenta qué hizo allí", "keywords": ["visite", "conoci", "comimos", "caminamos", "nadamos", "museo", "paseo", "fotos"] },
-                { "id": "p3", "label": "Explica por qué fue especial", "keywords": ["especial", "recuerdo", "inolvidable", "porque", "feliz", "aprendi", "emocion", "unico"] },
-                { "id": "p4", "label": "Dice si volvería", "keywords": ["volveria", "volver", "regresar", "regresaria", "otra vez", "algun dia", "quisiera", "me gustaria"] }
+                { "id": "p1", "label": "Dice adónde fue y con quién", "keywords": ["fuimos a", "fui a", "viaje a", "con mi", "acompan", "con un amigo", "con una amiga", "con unos"] },
+                { "id": "p2", "label": "Cuenta qué hizo allí", "keywords": ["visit", "conoc", "camin", "recorr", "hicimos", "probamos", "paseamos", "compramos"] },
+                { "id": "p3", "label": "Explica por qué fue especial", "keywords": ["inolvidable", "unico", "nunca olvidare", "me encanto", "lo mejor", "increible", "maravill", "aprendi"] },
+                { "id": "p4", "label": "Dice si volvería", "keywords": ["volver", "regresar", "otra vez", "algun dia", "sin duda", "me gustaria", "quisiera", "con gusto"] }
               ]
             },
             {
@@ -54,10 +54,10 @@
               "minWords": 130,
               "maxWords": 150,
               "points": [
-                { "id": "p1", "label": "Presenta a la persona", "keywords": ["se llama", "mi abuela", "mi madre", "mi padre", "amigo", "maestro", "hermano", "tia"] },
-                { "id": "p2", "label": "Describe cómo es", "keywords": ["es", "alta", "bajo", "amable", "simpatico", "carinoso", "generoso", "paciente"] },
-                { "id": "p3", "label": "Cuenta una situación en la que le ayudó o le enseñó algo", "keywords": ["ayudo", "enseno", "aprendi", "consejo", "cuando", "gracias", "apoyo", "momento"] },
-                { "id": "p4", "label": "Explica por qué es importante", "keywords": ["importante", "admiro", "quiero", "agradezco", "ejemplo", "modelo", "especial", "siempre"] }
+                { "id": "p1", "label": "Presenta a la persona", "keywords": ["se llama", "mi abuel", "mi mam", "mi pap", "mi madre", "mi padre", "mi tia", "mi amig"] },
+                { "id": "p2", "label": "Describe cómo es", "keywords": ["es muy", "tiene el pelo", "ojos", "amable", "simpatic", "carino", "generos", "pacient"] },
+                { "id": "p3", "label": "Cuenta una situación en la que le ayudó o le enseñó algo", "keywords": ["me ayud", "me ensen", "me dio un consejo", "me aconsej", "aprendi a", "gracias a el", "una vez", "me apoy"] },
+                { "id": "p4", "label": "Explica por qué es importante", "keywords": ["admiro", "agradezco", "es un ejemplo", "es un modelo", "por eso lo quiero", "por eso la quiero", "es importante para mi", "significa mucho"] }
               ]
             }
           ]

@@ -18,6 +18,7 @@
 //       words exactly the official ones)
 //   M6  es norm: no vosotros / Spain-only words (blacklist below)
 //   M7  no em dash anywhere
+//   M8  writing keywords: no single word under 4 letters (they match as a word start)
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -406,6 +407,14 @@ const KINDS = {
         if (!c.points.every((p) => isObj(p) && isStr(p.id) && isStr(p.label)) || !unique(c.points.map((p) => p.id))) err(`${at}: every point needs a unique id and a label`);
         c.points.forEach((p, k) => {
           if (isObj(p) && (!Array.isArray(p.keywords) || p.keywords.length === 0 || !p.keywords.every(isStr))) err(`${at}.points[${k}]: keywords must be a non-empty list of non-empty strings`);
+          // M8: the keyword matches as a word start (lib/exam/mock/score.ts keywordHit), so a short single word ("es", "bus",
+          // "hi") starts many unrelated words and gives the point for free. Phrases and punctuation-only keywords are fine.
+          if (isObj(p) && Array.isArray(p.keywords)) {
+            for (const kw of p.keywords.filter(isStr)) {
+              const letters = kw.trim().replace(/[^\p{L}\p{N}]/gu, '');
+              if (!/\s/.test(kw.trim()) && letters.length > 0 && letters.length < 4) err(`M8: ${at}.points[${k}]: keyword "${kw}" is a single word under 4 letters (use a longer word or a phrase)`);
+            }
+          }
         });
       }
       if (!s) return;
