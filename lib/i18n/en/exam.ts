@@ -103,6 +103,7 @@ export default {
     passRuleScale: (needed: number) =>
       `To pass: an average of about ${needed} points on the exam scale. This pass line is an estimate, the real exam does not publish one.`,
     shortNote: 'Shorter than the real exam, points are scaled. The clock is the real one.',
+    fullNote: 'As long as the real exam. The clock is the real one.',
     unavailableBody: 'There is no practice exam for this level yet.',
     emptyBody: 'There is not enough material for this practice exam yet.',
     begin: 'Begin',

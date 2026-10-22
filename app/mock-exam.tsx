@@ -20,7 +20,7 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import MockTaskCard from '@/components/exam/MockTaskCard';
 import { MockResultView, MockReviewView } from '@/components/exam/MockResultView';
-import { mockAvailable, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
+import { mockAvailable, mockIsFullLength, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
 import { buildMockExam, mockExamSignature } from '@/lib/exam/mock/build';
 import { buildGlossaryIndex, mockGlossary } from '@/lib/exam/mock/glossary';
 import { buildLexicon } from '@/lib/exam/mock/writing';
@@ -291,7 +291,7 @@ export default function MockExamScreen() {
               </Text>
             ))}
             <Text style={[styles.line, { color: colors.text }]}>{rule.kind === 'groups' ? s.passRule(rule.groups[0].needed, rule.groups[0].of) : rule.kind === 'total' ? s.passRuleTotal(rule.needed, rule.of) : rule.kind === 'scale' ? s.passRuleScale(rule.needed) : s.passRuleAverage(rule.passPct)}</Text>
-            <Text style={[styles.note, { color: colors.textMuted }]}>{s.shortNote}</Text>
+            <Text style={[styles.note, { color: colors.textMuted }]}>{mockIsFullLength(level) ? s.fullNote : s.shortNote}</Text>
           </>,
         )}
         {saved ? (
@@ -350,7 +350,7 @@ export default function MockExamScreen() {
   }
 
   if (phase === 'result' && result) {
-    return shell(<MockResultView result={result} timedOut={timedOut} onReview={() => setPhase('review')} onRetry={retry} onExit={() => router.back()} />, 'result');
+    return shell(<MockResultView result={result} timedOut={timedOut} fullLength={mockIsFullLength(level)} onReview={() => setPhase('review')} onRetry={retry} onExit={() => router.back()} />, 'result');
   }
 
   if (phase === 'review' && result) {

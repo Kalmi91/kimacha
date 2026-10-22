@@ -97,6 +97,7 @@ const es: typeof en = {
     passRuleScale: (needed: number) =>
       `Para aprobar: un promedio de alrededor de ${needed} puntos en la escala del examen. Este puntaje mínimo es una estimación, el examen real no publica uno.`,
     shortNote: 'Más corto que el examen real, los puntos se escalan. El reloj es el real.',
+    fullNote: 'Tan largo como el examen real. El reloj es el real.',
     unavailableBody: 'Todavía no hay examen de práctica para este nivel.',
     emptyBody: 'Todavía no hay material suficiente para este examen de práctica.',
     begin: 'Empezar',
