@@ -152,7 +152,7 @@ const EXPECTED_FILES = Object.keys(SPEC).map((name) => `${name}.json`);
 
 // es norm (PLAN "Norma (es)"): Mexican usage, no vosotros, no Spain-only words. Patterns as in the plan.
 const ES_BLACKLIST = [/vosotr/i, /\bcoche/i, /\bordenador/i, /\bzumo\b/i, /\bmóvil\b/i, /\bos\b/i];
-const EM_DASH = ', ';
+const EM_DASH = /[\u2014\u2013]/;
 
 const TOLERANCE = 0.15;
 const SKILLS = ['reading', 'use', 'listening', 'writing'];
@@ -458,7 +458,7 @@ function checkData(data, { strict }) {
 
   // M6, M7: the text norms hold for every string of the file, forms or not.
   for (const [at, text] of strings(data)) {
-    if (text.includes(EM_DASH)) errors.push(`M7: ${at}: em dash (use a comma, a colon or a new sentence)`);
+    if (EM_DASH.test(text)) errors.push(`M7: ${at}: em dash (use a comma, a colon or a new sentence)`);
     if (data.target === 'es') for (const re of ES_BLACKLIST) if (re.test(text)) errors.push(`M6: ${at}: "${text.match(re)[0]}" is not Mexican usage (${re})`);
   }
 

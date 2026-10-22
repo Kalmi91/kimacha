@@ -149,8 +149,8 @@ describe('the rules, each with a bad fixture', () => {
     for (const [word, pattern] of words) fails(broken('es-b1-reading', (d) => (tasks(d)[1].text += ` ${word}`)), pattern);
     // the plain words that are only look-alikes do not trigger it
     expect(broken('es-b1-reading', (d) => (tasks(d)[1].text = cut(tasks(d)[1].text, 420) + ' los pozos del automóvil')).out).not.toMatch(/M6/);
-    fails(broken('es-b1-reading', (d) => (tasks(d)[1].text += ' una cosa, otra cosa')), /M7: .* em dash/);
-    fails(broken('en-b2-readinguse', (d) => (tasks(d)[4].text += ' a thing, another')), /M7: .* em dash/);
+    fails(broken('es-b1-reading', (d) => (tasks(d)[1].text += ' una cosa '+'\u2014'+' otra cosa')), /M7: .* em dash/);
+    fails(broken('en-b2-readinguse', (d) => (tasks(d)[4].text += ' a thing '+'\u2013'+' another')), /M7: .* em dash/);
     // the English files are not held to the Spanish norm
     expect(broken('en-b2-readinguse', (d) => (tasks(d)[4].text += ' coche zumo')).out).not.toMatch(/M6/);
   });
