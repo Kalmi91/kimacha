@@ -44,7 +44,7 @@
               "audio": [
                 { "speaker": "m", "text": "So what did you think of the new place on Elm Street?" },
                 { "speaker": "f", "text": "The food was lovely. I had the fish, and it was cooked perfectly. But we waited almost an hour for it." },
-                { "speaker": "m", "text": "An hour? We had the opposite problem. Our starters came out in about five minutes, and I'm sure they'd been sitting under a lamp. Everything was lukewarm." },
+                { "speaker": "m", "text": "An hour? We had the opposite problem. Our appetizers came out in about five minutes, and I'm sure they'd been sitting under a lamp. Everything was lukewarm." },
                 { "speaker": "f", "text": "That's awful. Did you say anything?" },
                 { "speaker": "m", "text": "I did, and the waiter was very polite, but it didn't change much. I doubt I'll go back, even though the prices were reasonable." }
               ],
@@ -114,12 +114,12 @@
             },
             {
               "audio": [
-                { "speaker": "n", "text": "And now a reminder about our summer competition. All you have to do is send us a photograph of your favorite spot in the city, and tell us in one sentence why you love it. The photographs don't need to be professional. Last year's winner used an old phone. Entries should be sent to our website before the end of the month, and the winner will receive two tickets to the open-air concert in August. Don't forget to include your name and your phone number, so we can contact you." }
+                { "speaker": "n", "text": "And now a reminder about our summer competition. All you have to do is send us a photograph of your favorite spot in the city, and tell us in one sentence why you love it. The photographs don't need to be professional. Last year's winner used an old phone. Entries should be submitted through our website before the end of the month, and the winner will receive two tickets to the open-air concert in August. Don't forget to include your name and your phone number, so we can contact you." }
               ],
               "questions": [
                 {
                   "stem": "What must listeners do to enter the competition?",
-                  "options": ["take a photograph with a professional camera", "write a short story about the city", "describe their chosen place in a sentence"],
+                  "options": ["take a photograph with a professional camera", "write a short story about the city", "explain in one sentence why they like a place"],
                   "correct": 2
                 }
               ]
@@ -140,20 +140,20 @@
             { "speaker": "f", "text": "The bird we see most often is the herring gull. We also look after puffins and cormorants, but the herring gulls arrive almost every day. They are clever, noisy and not at all grateful, which makes them rather difficult patients. I am very fond of them anyway." },
             { "speaker": "f", "text": "Now, about volunteering. You don't need any experience, but everyone must complete a day of safety training before touching a single bird. It covers how to hold the birds, how to protect yourself from beaks and claws, and how to keep everything clean. After that, you spend your first month working beside an experienced volunteer." },
             { "speaker": "f", "text": "People always ask what the birds eat. Mostly it is chopped sardines, which we buy fresh from the harbor every Monday. The younger birds also get vitamins, and the smallest ones are sometimes fed by hand, but sardines make up most of the diet. I can promise you that the smell in the kitchen is not pleasant." },
-            { "speaker": "f", "text": "Money is the next question. The council gives us a small grant, but it covers only the rent. Everything else comes from donations, mostly small ones from people who live nearby. Last year we also tried selling postcards, but that didn't raise very much." },
+            { "speaker": "f", "text": "Money is the next question. The city council gives us a small grant, but it covers only the rent. Everything else comes from donations, mostly small ones from people who live nearby. Last year we also tried selling postcards, but that didn't raise very much." },
             { "speaker": "f", "text": "If you would like to see the center before you decide, come on a Saturday. At eleven o'clock, one of the volunteers takes visitors on a guided tour. It lasts about forty minutes, and you will see the cages, the kitchen and the recovery room." },
             { "speaker": "f", "text": "The biggest change in recent years is the new pool. Last spring we built it in the garden for birds that have been rescued from oil spills. Before that, we only had a plastic tub, which was far too small. Now the birds can recover their strength and relearn how to swim before we release them." },
-            { "speaker": "f", "text": "Finally, a practical tip. The early morning shift starts at six, and even in summer it can be very cold on the coast. Please bring warm clothes, and something waterproof if you can. Gloves are provided, so you don't need to bring those." },
+            { "speaker": "f", "text": "Finally, a practical tip. The early morning shift starts at six, and even in summer it can be very cold on the coast. Please bring warm clothes. Gloves are provided, so you don't need to bring those." },
             { "speaker": "f", "text": "If any of this sounds interesting, there are sign-up sheets at the back of the room. Thank you very much for listening." }
           ],
           "gaps": [
             { "answers": ["1988", "nineteen eighty-eight", "nineteen eighty eight"] },
             { "answers": ["fishermen"] },
-            { "answers": ["fishing line", "fishing lines"] },
-            { "answers": ["herring gull", "herring gulls"] },
-            { "answers": ["safety training"] },
+            { "answers": ["fishing line", "fishing lines", "old fishing line", "old fishing lines"] },
+            { "answers": ["herring gull", "herring gulls", "gull", "gulls"] },
+            { "answers": ["safety training", "a day of safety training", "one day of safety training"] },
             { "answers": ["sardines", "chopped sardines", "fresh sardines"] },
-            { "answers": ["donations", "donation"] },
+            { "answers": ["donations", "donation", "small donations"] },
             { "answers": ["guided tour", "tour"] },
             { "answers": ["pool", "swimming pool"] },
             { "answers": ["warm clothes", "warm clothing"] }
@@ -222,7 +222,7 @@
             { "speaker": "f", "text": "And did the menu change?" },
             { "speaker": "m", "text": "Completely. Instead of deciding what to cook and then ordering ingredients, we now look at what we have and at what our suppliers cannot sell. Vegetables that are the wrong shape, for example, or fish that is too small for the stores. The chefs found that restrictive at first, and now they say it makes them more creative." },
             { "speaker": "f", "text": "How did your customers react?" },
-            { "speaker": "m", "text": "Not well, at first. We lost a few regulars who wanted their usual steak. But the surprise was that younger people started coming specially because of what we were doing. Some of them even bring their own containers for leftovers now." },
+            { "speaker": "m", "text": "Not well, at first. We lost a few regulars who wanted their usual steak. But the surprise was that younger people started coming specifically because of what we were doing. Some of them even bring their own containers for leftovers now." },
             { "speaker": "f", "text": "Isn't it more expensive to run a kitchen this way?" },
             { "speaker": "m", "text": "Surprisingly, no. Our food bills fell by almost a third in the first year, because we buy what we need and nothing more. The savings paid for a second oven." },
             { "speaker": "f", "text": "It sounds as though everything went smoothly." },
@@ -232,7 +232,7 @@
             { "speaker": "f", "text": "And how do your suppliers feel about all this?" },
             { "speaker": "m", "text": "They were suspicious at first, because nobody had ever asked them for their ugly vegetables. Now several of them phone me before they sell anything to anyone else. I think they enjoy being part of something that makes sense." },
             { "speaker": "f", "text": "Finally, are you worried that this might be a fashion that will pass?" },
-            { "speaker": "m", "text": "A little, I suppose. But the problem of waste isn't going away, so I hope that cooking carefully will be normal in ten years. Then nobody will need to write about restaurants like mine, and that would please me very much." },
+            { "speaker": "m", "text": "Not really. The problem of waste isn't going away, so I hope that cooking carefully will be normal in ten years. Then nobody will need to write about restaurants like mine, and that would please me very much." },
             { "speaker": "f", "text": "Marcus Hale, thank you very much." },
             { "speaker": "m", "text": "My pleasure." }
           ],
@@ -243,7 +243,7 @@
               "correct": 1
             },
             {
-              "stem": "Why did the waste bother him so much?",
+              "stem": "What was the main reason the waste bothered him?",
               "options": ["It was costing the restaurant too much money.", "It made his staff unhappy.", "It went against the values he grew up with."],
               "correct": 2
             },

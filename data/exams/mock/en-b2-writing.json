@@ -14,15 +14,15 @@
             {
               "id": "e1",
               "title": "Essay",
-              "input": "Your class has been talking about transport in cities. Now your teacher has asked you to write an essay.\n\nSome people say that cars should be banned from city centers. To what extent do you agree?\n\nNotes. Write about:\n1. air quality and noise\n2. access for shoppers and workers\n3. (your own idea)",
+              "input": "Your class has been talking about transportation in cities. Now your teacher has asked you to write an essay.\n\nSome people say that cars should be banned from city centers. To what extent do you agree?\n\nNotes. Write about:\n1. air quality and noise\n2. access for shoppers and workers\n3. (your own idea)",
               "prompt": "Write your essay in 140-190 words. Use all the notes and give reasons for your point of view.",
               "minWords": 140,
               "maxWords": 190,
               "points": [
-                { "id": "air", "label": "Air quality and noise", "keywords": ["air", "pollution", "noise", "noisy", "traffic", "fumes", "health", "emissions"] },
-                { "id": "access", "label": "Access for shoppers and workers", "keywords": ["shop", "shoppers", "customers", "workers", "business", "access", "delivery", "disabled"] },
-                { "id": "idea", "label": "Own idea, for example an alternative way to travel", "keywords": ["bus", "tram", "bike", "bicycle", "cycling", "walk", "pedestrian", "parking"] },
-                { "id": "opinion", "label": "A clear opinion", "keywords": ["agree", "believe", "opinion", "think", "conclusion", "overall", "personally", "view"] }
+                { "id": "air", "label": "Air quality and noise", "keywords": ["clean air", "air quality", "air pollution", "pollution", "noise", "noisy", "fumes", "emissions"] },
+                { "id": "access", "label": "Access for shoppers and workers", "keywords": ["shop", "customer", "worker", "commut", "business", "deliver", "disabled", "elderly"] },
+                { "id": "idea", "label": "Own idea, for example an alternative way to travel", "keywords": ["public transport", "buses", "bicycle", "bike", "pedestrian", "electric", "alternative", "tourist"] },
+                { "id": "opinion", "label": "A clear opinion", "keywords": ["agree", "disagree", "believe", "opinion", "think", "conclusion", "personally", "in my view"] }
               ]
             }
           ]
@@ -40,10 +40,10 @@
               "minWords": 140,
               "maxWords": 190,
               "points": [
-                { "id": "place", "label": "Describes the place", "keywords": ["park", "garden", "beach", "lake", "forest", "mountain", "library", "room"] },
-                { "id": "activity", "label": "Says what the writer does there", "keywords": ["read", "walk", "swim", "listen", "music", "sit", "draw", "cook"] },
-                { "id": "why", "label": "Explains why the place is important", "keywords": ["relax", "calm", "peace", "quiet", "stress", "escape", "busy", "happy"] },
-                { "id": "advice", "label": "Encourages readers to find their own place", "keywords": ["recommend", "should", "try", "visit", "everyone", "anyone", "find", "imagine"] }
+                { "id": "place", "label": "Describes the place", "keywords": ["park", "garden", "beach", "lake", "forest", "mountain", "river", "bedroom"] },
+                { "id": "activity", "label": "Says what the writer does there", "keywords": ["walk", "swim", "listen", "music", "paint", "cook", "reading", "i read"] },
+                { "id": "why", "label": "Explains why the place is important", "keywords": ["calm", "peace", "quiet", "stress", "escape", "worries", "forget", "feel better"] },
+                { "id": "advice", "label": "Encourages readers to find their own place", "keywords": ["recommend", "you should", "you need", "try to", "everyone", "anyone", "find your own", "why not"] }
               ]
             },
             {
@@ -55,9 +55,9 @@
               "maxWords": 190,
               "points": [
                 { "id": "pack", "label": "Says what Sam should pack", "keywords": ["pack", "bring", "clothes", "coat", "jacket", "umbrella", "shoes", "weather"] },
-                { "id": "plans", "label": "Suggests things to do", "keywords": ["museum", "restaurant", "walk", "tour", "concert", "market", "visit", "see"] },
-                { "id": "know", "label": "Gives useful information about the town", "keywords": ["know", "remember", "careful", "advice", "bus", "train", "tip", "important"] },
-                { "id": "tone", "label": "Friendly greeting and ending", "keywords": ["dear", "hi", "hello", "forward", "soon", "wishes", "regards", "cheers"] }
+                { "id": "plans", "label": "Suggests things to do", "keywords": ["museum", "restaurant", "walk", "concert", "market", "sightseeing", "explore", "picnic"] },
+                { "id": "know", "label": "Gives useful information about the town", "keywords": ["remember", "careful", "advice", "tips", "important", "keep in mind", "watch out", "ticket"] },
+                { "id": "tone", "label": "Friendly greeting and ending", "keywords": ["dear", "hi there", "hello", "looking forward", "see you", "best wishes", "regards", "cheers"] }
               ]
             },
             {
@@ -68,10 +68,10 @@
               "minWords": 140,
               "maxWords": 190,
               "points": [
-                { "id": "about", "label": "Says what it was about", "keywords": ["story", "plot", "about", "main", "character", "band", "singer", "film"] },
-                { "id": "liked", "label": "Says what the writer liked", "keywords": ["enjoyed", "loved", "liked", "great", "excellent", "funny", "moving", "beautiful"] },
-                { "id": "disliked", "label": "Mentions something negative", "keywords": ["however", "unfortunately", "boring", "slow", "disappointing", "weakness", "wish", "criticism"] },
-                { "id": "recommend", "label": "Gives a recommendation", "keywords": ["recommend", "worth", "should", "must", "definitely", "anyone", "everyone", "watch"] }
+                { "id": "about", "label": "Says what it was about", "keywords": ["story", "plot", "tells", "follows", "set in", "based on", "stars", "character"] },
+                { "id": "liked", "label": "Says what the writer liked", "keywords": ["enjoyed", "loved", "liked", "great", "excellent", "funny", "impressive", "beautiful"] },
+                { "id": "disliked", "label": "Mentions something negative", "keywords": ["however", "unfortunately", "boring", "slow", "disappointing", "weakness", "downside", "criticism"] },
+                { "id": "recommend", "label": "Gives a recommendation", "keywords": ["recommend", "worth", "should", "must see", "definitely", "anyone", "everyone", "highly"] }
               ]
             }
           ]
