@@ -27,6 +27,7 @@ import { dropOrphanCards } from '@/lib/pcicSession';
 import { tileWords } from '@/lib/sentenceCards';
 import { pickRound } from '@/lib/sentencePick';
 import {
+  addHinted,
   answerBuild,
   answerType,
   buildNumber,
@@ -40,6 +41,7 @@ import {
   startRound,
   type SentenceRound,
 } from '@/lib/sentenceRound';
+import { hintPieces, type HintPiece } from '@/lib/sentenceHint';
 import { mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '@/lib/sentenceMistakes';
 import { buildStepKind, type BuildStepKind } from '@/lib/sentenceSteps';
 import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordTypedWords, sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
@@ -60,8 +62,9 @@ import { useSingleFlight } from '@/lib/useSingleFlight';
 
 // The tile step; the decoys are picked once when the step mounts (a retry remounts it: key).
 // `kind` (lib/sentenceSteps.ts): a listening step hides the prompt behind a 🔊 button until the build is right; a mistake
-// step is a sentence from the learner's own mistakes (its decoys come from the faulty sentence).
-function BuildStep({ entry, target, kind, onResult }: { entry: SentenceEntry; target: PcicTarget; kind: BuildStepKind; onResult: (correct: boolean) => void }) {
+// step is a sentence from the learner's own mistakes (its decoys come from the faulty sentence). `hints`: the tappable words of
+// the English prompt (lib/sentenceHint.ts); a looked-at word reports its cards through `onHint`.
+function BuildStep({ entry, target, kind, hints, onHint, onResult }: { entry: SentenceEntry; target: PcicTarget; kind: BuildStepKind; hints: HintPiece[] | null; onHint: (ids: string[]) => void; onResult: (correct: boolean) => void }) {
   const [step] = useState(() => {
     const targetWords = tileWords(entry.target);
     const level = levelOfItem(entry.itemId);
@@ -82,6 +85,8 @@ function BuildStep({ entry, target, kind, onResult }: { entry: SentenceEntry; ta
       onResult={onResult}
       gradeButtons
       listening={kind === 'listening'}
+      sourceHints={hints}
+      onSourceHint={onHint}
     />
   );
 }
@@ -96,6 +101,8 @@ export default function SentencesScreen() {
   const listeningBeta = useBeta('sentenceListening');
   // beta: sentenceMistakes, one build is a sentence from "My mistakes", credited to that deck (lib/sentenceMistakes.ts).
   const mistakesBeta = useBeta('sentenceMistakes');
+  // beta: sentenceHint, the English prompt's words can be tapped for the Spanish form; a looked-at word earns no credit this round.
+  const hintBeta = useBeta('sentenceHint');
   // `focus` = card ids (comma separated): the sentences with those words come first (the Practice tab sends them here).
   const { focus } = useLocalSearchParams<{ focus?: string | string[] }>();
   const focusIds = (Array.isArray(focus) ? focus.join(',') : focus ?? '').split(',').map((id) => id.trim()).filter(Boolean);
@@ -181,6 +188,8 @@ export default function SentencesScreen() {
 
   const current = round ? currentEntry(round) : undefined;
   const { done, total } = round ? roundProgress(round) : { done: 0, total: 0 };
+  // The tappable words of the prompt on screen (Spanish direction only; on a listening step the card shows them after a right build).
+  const hints = hintBeta && target === 'es' && current ? hintPieces(current) : null;
   // The kind of the build on screen (the typing step has none).
   const buildKind: BuildStepKind = round && current && round.phase === 'build' ? buildStepKind(round, current.itemId, { listening: listeningBeta, mistakes: mistakesBeta }) : 'normal';
 
@@ -188,6 +197,17 @@ export default function SentencesScreen() {
   const keepRound = async (next: SentenceRound) => {
     if (next.phase === 'done') await clearSentenceRound(getDb());
     else await saveSentenceRound(getDb(), next);
+  };
+
+  // A word was looked at: its cards earn no half and no XP in this round (kept with the round, so a restart does not forget it).
+  const onHint = (ids: string[]) => {
+    const shown = roundRef.current ?? round;
+    if (!shown) return;
+    const next = addHinted(shown, ids);
+    if (next === shown) return;
+    roundRef.current = next;
+    setRound(next);
+    void saveSentenceRound(getDb(), next);
   };
 
   const onBuildResult = async (correct: boolean) => {
@@ -210,6 +230,9 @@ export default function SentencesScreen() {
       // The typing ends the round and credits word by word. "Knew it" on a sentence the check marked wrong makes every word right.
       let verdicts = gradeTypedWords(typed, round.typed, target, strictAccents);
       if (correct && verdicts.some((v) => !v.right)) verdicts = verdicts.map((v) => ({ ...v, right: true }));
+      // A word that was looked at with a hint this round earns nothing (neither a half nor a step back).
+      const hinted = new Set((roundRef.current ?? round).hinted ?? []);
+      if (hinted.size > 0) verdicts = verdicts.filter((v) => !hinted.has(v.id));
       const next = answerType(round);
       await keepRound(next);
       await recordTypedWords(verdicts, xpV2);
@@ -332,7 +355,7 @@ export default function SentencesScreen() {
           keyboardShouldPersistTaps="handled"
           keyboardDismissMode="on-drag"
         >
-          <BuildStep key={`build-${current.itemId}-${seq}-${buildKind}`} entry={current} target={target} kind={buildKind} onResult={(correct) => void onBuildResult(correct)} />
+          <BuildStep key={`build-${current.itemId}-${seq}-${buildKind}`} entry={current} target={target} kind={buildKind} hints={hints} onHint={onHint} onResult={(correct) => void onBuildResult(correct)} />
         </ScrollView>
       ) : (
         // The typing card has its own scroller + the docked Check bar above the keyboard (no outer ScrollView).
@@ -349,6 +372,8 @@ export default function SentencesScreen() {
           dockH={dockH}
           onDockHeight={setDockH}
           gradeButtons
+          sourceHints={hints}
+          onSourceHint={onHint}
         />
       )}
       {feedback}

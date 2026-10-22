@@ -51,6 +51,7 @@ export default {
       practiceOpposites: 'Opposites game',
       sentenceListening: 'Sentences: listening builds',
       sentenceMistakes: 'Sentences: from my mistakes',
+      sentenceHint: 'Sentences: tap-a-word hints',
     },
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',

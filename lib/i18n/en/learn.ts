@@ -210,6 +210,9 @@ export default {
     listenPlay: 'Play the sentence',
     // Mistake build (beta sentenceMistakes): a sentence from the learner's own "My mistakes" list.
     fromMistakes: 'From your mistakes',
+    // Tap-a-word hint (beta sentenceHint): a tapped English word shows its Spanish form; that word earns no credit this round.
+    hintUsed: 'hint used',
+    hintA11y: 'Show the Spanish word',
     empty: 'Learn more words to unlock sentences',
     roundDone: (n: number) => (n === 1 ? 'Round done: 1 sentence' : `Round done: ${n} sentences`),
     more: 'More sentences',

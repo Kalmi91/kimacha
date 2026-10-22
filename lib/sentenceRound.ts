@@ -31,6 +31,11 @@ export interface SentenceRound {
   /** The sentence to type: not one of `entries`, shorter than them (lib/sentencePick.ts). */
   typed: SentenceEntry;
   phase: RoundPhase;
+  /**
+   * The learned cards whose word was looked at with the tap-a-word hint (lib/sentenceHint.ts, beta sentenceHint) in this
+   * round: they get no half and no XP at the typing. Absent = none (also in rounds saved before the hint).
+   */
+  hinted?: string[];
 }
 
 /** A fresh round: every build still to do, then the typing (straight to the typing when there is nothing to build). */
@@ -70,6 +75,12 @@ export function answerBuild(round: SentenceRound, correct: boolean): SentenceRou
   if (!correct) return { ...round, queue: [...round.queue.slice(1), id] };
   const queue = round.queue.slice(1);
   return { ...round, queue, rated: round.rated.includes(id) ? round.rated : [...round.rated, id], phase: queue.length === 0 ? 'type' : 'build' };
+}
+
+/** Cards whose word was looked at with a hint: added to the round's `hinted` (the same round back when nothing is new). */
+export function addHinted(round: SentenceRound, ids: readonly string[]): SentenceRound {
+  const fresh = ids.filter((id) => !round.hinted?.includes(id));
+  return fresh.length === 0 ? round : { ...round, hinted: [...(round.hinted ?? []), ...new Set(fresh)] };
 }
 
 /** The typing was answered: the round is over, right or wrong. */
@@ -116,7 +127,8 @@ export function parseSentenceRound(raw: unknown): SentenceRound | null {
   if (!typed || !isStrings(r.queue) || !isStrings(r.rated)) return null;
   const ids = new Set(entries.map((e) => e.itemId));
   if (![...r.queue, ...r.rated].every((id) => ids.has(id))) return null;
-  const base = { day: r.day, target: r.target, focus: typeof r.focus === 'string' ? r.focus : '', entries, queue: r.queue, rated: r.rated, typed };
+  const hinted = isStrings(r.hinted) && r.hinted.length > 0 ? { hinted: r.hinted } : {};
+  const base = { day: r.day, target: r.target, focus: typeof r.focus === 'string' ? r.focus : '', entries, queue: r.queue, rated: r.rated, typed, ...hinted };
   if (r.phase === 'build' && r.queue.length > 0) return { ...base, phase: 'build' };
   if (r.phase === 'type' && r.queue.length === 0) return { ...base, phase: 'type' };
   return null;
