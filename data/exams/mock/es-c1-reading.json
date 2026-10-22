@@ -25,9 +25,9 @@
             {
               "stem": "Un alumno entrega su documentación cuando el plazo ya ha vencido. Su solicitud solo se considerará si",
               "options": [
-                "el retraso se debió a una falla comprobable del portal que se reportó por escrito antes del cierre.",
-                "la entrega se hace en persona, en la oficina de la Coordinación, en un máximo de tres días.",
-                "el comité no ha terminado todavía de revisar el resto de los expedientes."
+                "el retraso se debió a un error demostrable de la plataforma, avisado por escrito a la Coordinación antes de que cerrara la recepción.",
+                "la entrega se hace en persona, en la oficina de la Coordinación, en un máximo de tres días hábiles después del cierre.",
+                "el comité no ha concluido aún la revisión de los demás expedientes y todavía puede incorporar uno más."
               ],
               "correct": 0
             },
@@ -52,9 +52,9 @@
             {
               "stem": "Las asignaturas que un alumno cursa en el extranjero sin autorización previa",
               "options": [
-                "obligan a la Universidad a reconocerlas si el tutor lo solicita al regreso del alumno.",
-                "no se anotan en el historial académico bajo ninguna circunstancia.",
-                "figuran en el historial como créditos adicionales que no modifican el promedio."
+                "obligan a la Universidad a reconocerlas como parte del plan si el tutor lo solicita al regreso del alumno.",
+                "no se anotan en el historial académico, porque la Universidad solo registra lo que autorizó antes.",
+                "figuran en el historial solo como créditos extra y no se toman en cuenta para calcular el promedio."
               ],
               "correct": 2
             },
@@ -76,15 +76,43 @@
           "title": "La última función",
           "text": "Cuando Rodolfo Ibarra heredó el cine Aurora, el edificio ya tenía las butacas rotas, las cortinas desteñidas y una cartelera que nadie se molestaba en renovar. Su padre lo había administrado durante cuatro décadas con una mezcla de terquedad y cariño, pero en los últimos meses apenas acudía una docena de espectadores por tarde, casi todos jubilados que conocían la sala desde su inauguración. {{1}} Rodolfo rechazó la oferta, sin embargo, y decidió conservar el cine.\n\nEl Aurora se había inaugurado en una época en que ir al cine era un acontecimiento social: la gente se vestía para la ocasión, los muchachos se citaban en la taquilla y los vendedores ambulantes de la acera de enfrente hacían su mejor jornada de la semana. Pero aquello pertenecía a otro tiempo. Ahora la calle se llenaba de talleres mecánicos y puestos de ropa usada, y a nadie parecía importarle que el letrero luminoso hubiera perdido dos letras y dijera, de noche, AUR RA.\n\nNo tenía un plan, solo la convicción de que un barrio sin cine pierde algo difícil de nombrar. {{2}} Decidió entonces dedicarse a lo único que sabía hacer: elegir con cuidado las películas, limpiar el proyector cada mañana y esperar a que alguien se animara a entrar. Su esposa, Carmen, que llevaba las cuentas en una libreta de pasta dura, le advirtió más de una vez que los números no cuadraban, pero nunca le pidió que cerrara.\n\nDurante casi un año la espera fue en vano: las tardes pasaban entre el zumbido del proyector y el olor a palomitas recalentadas del vestíbulo. La idea llegó una tarde de lluvia, cuando una maestra de la escuela vecina le pidió prestada la sala para proyectar un documental a sus alumnos. {{3}} Así nació el ciclo de los jueves, con funciones a precio simbólico para escuelas, talleres y grupos de la tercera edad.\n\n{{4}} Por eso Rodolfo empezó a rentar la sala los fines de semana, cuando el ciclo no ocupaba la cartelera: para festejos familiares, para los ensayos de una compañía de teatro aficionado, incluso para la presentación de un libro de poemas que una vecina había publicado a su costa. El proyector, entretanto, seguía encendiéndose cada noche para quien quisiera entrar, aunque a veces no entrara nadie.\n\nNo todos aplaudieron. Algunos vecinos veían con recelo aquel ir y venir de gente extraña, y una señora que vivía justo enfrente llegó a presentar una queja por el ruido de los ensayos. Rodolfo la escuchó con paciencia, le regaló dos entradas para la siguiente función y, a partir de ese día, la señora se convirtió en su espectadora más puntual y en su crítica más severa.\n\nLa verdadera sorpresa llegó con un cambio de formato. Una noche de sábado Rodolfo anunció una función de cine mudo con música en vivo, y un joven pianista que daba clases en la preparatoria improvisó la banda sonora durante dos horas sin levantar la vista del teclado. {{5}} Desde entonces, las funciones con músico se repiten cada mes, y los boletos suelen agotarse con varios días de anticipación.\n\nHoy el Aurora no es un negocio próspero, pero sí un lugar vivo. {{6}} Rodolfo la observa desde la cabina de proyección y sonríe sin decir nada. Cuando alguien le pregunta si no se arrepiente de haber rechazado aquella oferta, responde que el terreno valdría más sin el cine, pero que el barrio valdría mucho menos. Carmen, que ya no usa la libreta sino una hoja de cálculo, asegura que las cuentas siguen sin cuadrar, aunque ahora, al menos, se equivocan menos.",
           "fragments": [
-            { "id": "a", "text": "Las cuentas de los primeros meses le dejaron claro que no podía competir con los complejos de salas múltiples que habían abierto en el centro comercial." },
-            { "id": "b", "text": "Ahora, cada sábado, la sala se llena de estudiantes, jubilados y parejas que descubrieron el lugar por casualidad." },
-            { "id": "c", "text": "El ciclo llenaba la sala, pero a precios tan bajos los boletos apenas alcanzaban para pagar la luz y el sueldo de la taquillera." },
-            { "id": "d", "text": "Una cadena de estacionamientos, que llevaba tiempo observando el terreno, le hizo una oferta por una suma que él jamás había imaginado." },
-            { "id": "e", "text": "Ese mismo invierno decidió pintar la fachada de azul y reemplazar el letrero luminoso por uno nuevo, aunque nadie se lo había pedido." },
-            { "id": "f", "text": "Rodolfo no les cobró nada y, al terminar la función, los chicos se quedaron media hora preguntándole cómo funcionaba el proyector." },
-            { "id": "g", "text": "Esa noche se vendieron ciento ochenta boletos, y varios espectadores aseguraron no recordar la sala tan llena desde los tiempos de su padre." }
+            {
+              "id": "a",
+              "text": "Las cuentas de los primeros meses le dejaron claro que no podía competir con los complejos de salas múltiples que habían abierto en el centro comercial."
+            },
+            {
+              "id": "b",
+              "text": "Ahora, cada sábado, la sala se llena de estudiantes, jubilados y parejas que descubrieron el lugar por casualidad."
+            },
+            {
+              "id": "c",
+              "text": "El ciclo llenaba la sala, pero a precios tan bajos los boletos apenas alcanzaban para pagar la luz y el sueldo de la taquillera."
+            },
+            {
+              "id": "d",
+              "text": "Una cadena de estacionamientos, que llevaba tiempo observando el terreno, quiso comprarlo por una suma que él jamás había imaginado."
+            },
+            {
+              "id": "e",
+              "text": "Ese mismo invierno decidió pintar la fachada de azul y reemplazar el letrero luminoso por uno nuevo, aunque nadie se lo había pedido."
+            },
+            {
+              "id": "f",
+              "text": "Rodolfo no les cobró nada y, al terminar la función, los chicos se quedaron media hora preguntándole cómo funcionaba el proyector."
+            },
+            {
+              "id": "g",
+              "text": "Esa noche se vendieron ciento ochenta boletos, y varios espectadores aseguraron no recordar la sala tan llena desde los tiempos de su padre."
+            }
           ],
-          "answer": { "1": "d", "2": "a", "3": "f", "4": "c", "5": "g", "6": "b" }
+          "answer": {
+            "1": "d",
+            "2": "a",
+            "3": "f",
+            "4": "c",
+            "5": "g",
+            "6": "b"
+          }
         },
         {
           "skill": "reading",
@@ -96,18 +124,18 @@
             {
               "stem": "Con la anécdota inicial, el autor pretende",
               "options": [
-                "demostrar que los propietarios tratan con crueldad a sus inquilinos.",
-                "mostrar un problema que afecta a personas concretas sin que haya un responsable evidente.",
-                "criticar la actitud pasiva de su amiga ante el aviso del casero."
+                "denunciar que los propietarios aprovechan los vacíos legales para subir las rentas sin límite.",
+                "mostrar un problema que afecta a personas concretas sin que haya un culpable evidente.",
+                "criticar la actitud pasiva de su amiga ante el aviso que le dio el casero."
               ],
               "correct": 1
             },
             {
               "stem": "El autor piensa que culpar a los turistas y a los extranjeros",
               "options": [
-                "carece de fundamento, porque los visitantes no influyen en el precio de las viviendas.",
-                "es el único camino para que los fondos de inversión rindan cuentas.",
-                "ofrece una explicación parcial y, además, enfrenta a vecinos y visitantes en provecho de terceros."
+                "resulta injusto, porque la mayoría de los visitantes respeta las normas de convivencia.",
+                "es la única vía para que los fondos de inversión rindan cuentas ante la ciudad.",
+                "ofrece una explicación parcial y enfrenta a vecinos y visitantes en beneficio de terceros."
               ],
               "correct": 2
             },
@@ -133,8 +161,8 @@
               "stem": "Sobre la propuesta de reservar un porcentaje de vivienda de larga duración, el autor opina que",
               "options": [
                 "es modesta, pero tiene la ventaja de que se puede comprobar si se cumple.",
-                "resolvería el problema por completo si se aplicara en toda la ciudad.",
-                "resulta tan inviable como prohibir por completo los alquileres de corta estancia."
+                "resolvería el problema en buena medida si se aplicara en toda la ciudad.",
+                "resulta tan inviable como prohibir por completo la renta de departamentos por estancias cortas."
               ],
               "correct": 0
             },
@@ -154,14 +182,38 @@
           "kind": "match_pool",
           "instruction": "Lea los resúmenes de seis actividades de un congreso y las ocho afirmaciones siguientes. Relacione cada afirmación con la actividad a la que corresponde. Hay actividades que corresponden a más de una afirmación.",
           "prompts": [
-            { "id": "1", "text": "La ponente sostiene que, cuando una variedad de cultivo desaparece, también se pierden las palabras que servían para nombrarla." },
-            { "id": "2", "text": "Al terminar la actividad, cada asistente recibirá un libro en cuya elaboración habrá participado." },
-            { "id": "3", "text": "Según el autor, combinar tradiciones culinarias no es una cuestión de moda, sino de necesidad." },
-            { "id": "4", "text": "La investigación se basa en documentos que se redactaron con fines administrativos y no con la intención de describir la alimentación." },
-            { "id": "5", "text": "Uno de los participantes duda de que los nuevos hábitos alimentarios vayan a extenderse con rapidez." },
-            { "id": "6", "text": "Gran parte del material de estudio procede de testimonios orales de personas de edad avanzada." },
-            { "id": "7", "text": "Esta intervención analiza el lenguaje con que se vendían ciertos productos en un medio de comunicación que hoy casi nadie usa para informarse." },
-            { "id": "8", "text": "Los asistentes podrán probar platillos preparados por quien da la charla." }
+            {
+              "id": "1",
+              "text": "La ponente sostiene que, cuando una variedad de cultivo desaparece, también se pierden las palabras que servían para nombrarla."
+            },
+            {
+              "id": "2",
+              "text": "Al terminar la actividad, cada asistente recibirá un libro en cuya elaboración habrá participado."
+            },
+            {
+              "id": "3",
+              "text": "Según el autor, combinar tradiciones culinarias no es una cuestión de moda, sino de necesidad."
+            },
+            {
+              "id": "4",
+              "text": "La investigación se basa en documentos que se redactaron con fines administrativos y no con la intención de describir la alimentación."
+            },
+            {
+              "id": "5",
+              "text": "Uno de los participantes duda de que los nuevos hábitos alimentarios vayan a extenderse con rapidez."
+            },
+            {
+              "id": "6",
+              "text": "Gran parte del material de estudio procede de testimonios orales de personas de edad avanzada."
+            },
+            {
+              "id": "7",
+              "text": "Esta intervención analiza el lenguaje con que se anunciaban ciertos productos en un medio sonoro de mediados del siglo pasado."
+            },
+            {
+              "id": "8",
+              "text": "Los asistentes podrán probar platillos preparados por quien da la charla."
+            }
           ],
           "options": [
             {
@@ -195,7 +247,16 @@
               "text": "En esta mesa redonda, cuatro especialistas debaten si los insectos, las algas y otras fuentes alternativas de proteína ocuparán un lugar estable en la dieta cotidiana. El moderador adelanta que la conversación evitará tanto el entusiasmo fácil como el rechazo reflejo. Una nutrióloga presentará datos sobre el valor nutricional de estos alimentos y una productora explicará por qué la oferta sigue siendo escasa y cara. Un sociólogo, por su parte, se muestra escéptico ante los pronósticos de un cambio rápido, pues recuerda que los hábitos alimentarios se modifican con más lentitud de lo que prevén los informes. Las encuestas indican que los jóvenes están más abiertos que sus padres, pero eso, advierte, no garantiza que lo lleven a la práctica."
             }
           ],
-          "answer": { "1": "A", "2": "D", "3": "B", "4": "C", "5": "F", "6": "A", "7": "E", "8": "B" },
+          "answer": {
+            "1": "A",
+            "2": "D",
+            "3": "B",
+            "4": "C",
+            "5": "F",
+            "6": "A",
+            "7": "E",
+            "8": "B"
+          },
           "unique": false
         },
         {
@@ -203,22 +264,120 @@
           "kind": "cloze",
           "instruction": "Lea el siguiente texto y complete los espacios. Seleccione la opción correcta para cada uno.",
           "title": "El sueño y la memoria",
-          "text": "Durante buena parte del siglo pasado, el sueño se consideró un estado de simple inactividad, un paréntesis {{1}} el cual el cerebro descansaba de las exigencias de la vigilia. {{2}}, las investigaciones de las últimas décadas han puesto de manifiesto que, mientras dormimos, el cerebro lleva a cabo una intensa labor de reorganización. Los registros de actividad eléctrica mostraron que, lejos de apagarse, el cerebro atraviesa durante la noche etapas muy distintas, cada una con su propio ritmo y su propia función.\n\nUno de los hallazgos más {{3}} es que la memoria no se fija de golpe en el momento de aprender, sino que {{4}} un proceso gradual denominado consolidación. En la práctica, esto significa que lo aprendido durante el día queda en una especie de borrador que el cerebro revisa, corrige y archiva por la noche. Los recuerdos recientes, {{5}} almacenamiento inicial es frágil, se transfieren poco a poco a regiones de la corteza cerebral, donde adquieren un carácter más estable. Esto ayuda a entender por qué repasar un tema antes de dormir puede resultar más útil que hacerlo con prisas en la madrugada. Este traslado ocurre {{6}} todo durante las fases de sueño profundo, {{7}} se registran ondas lentas y sincronizadas.\n\nAlgunos experimentos {{8}} que quienes duermen después de aprender una tarea la recuerdan mejor que quienes permanecen despiertos durante el mismo intervalo. {{9}}, estos efectos varían según la naturaleza del material: la información de tipo procedimental, como aprender una secuencia de movimientos, parece beneficiarse más del descanso nocturno que la mera memorización de listas. Los autores subrayan, no obstante, que se trata de tendencias medias y que cada persona responde de manera distinta.\n\nEstos resultados no deben interpretarse como una invitación a sacrificar la vigilia: {{10}} ya habían advertido los propios investigadores, el aprendizaje requiere ambas fases. Por otra parte, la privación crónica de sueño, cada vez más frecuente en las grandes ciudades, repercute {{11}} la atención y dificulta la regulación de las emociones. Los especialistas recomiendan, {{12}}, mantener horarios regulares, evitar las pantallas antes de acostarse y {{13}} el consumo de cafeína en las horas previas. Dormir bien, en suma, no es un lujo, {{14}} una condición indispensable para aprender y recordar. Conviene recordar, además, que las siestas breves pueden aportar un descanso complementario, siempre que no se prolonguen tanto como para alterar el sueño de la noche.",
+          "text": "Durante buena parte del siglo pasado, el sueño se consideró un estado de simple inactividad, un paréntesis {{1}} el cual el cerebro descansaba de las exigencias de la vigilia. {{2}}, las investigaciones de las últimas décadas han puesto de manifiesto que, mientras dormimos, el cerebro lleva a cabo una intensa labor de reorganización. Los registros de actividad eléctrica mostraron que, lejos de apagarse, el cerebro pasa durante la noche por etapas muy distintas, cada una con su propio ritmo y su propia función.\n\nUno de los hallazgos más llamativos es que la memoria no se fija de golpe en el momento de aprender, sino que {{3}} un proceso gradual denominado consolidación. En la práctica, esto significa que lo aprendido durante el día queda en una especie de borrador que el cerebro revisa, corrige y archiva por la noche. Los recuerdos recientes, {{4}} almacenamiento inicial es frágil, se transfieren poco a poco a regiones de la corteza cerebral, donde adquieren un carácter más estable. Esto ayuda a entender por qué repasar un tema antes de dormir puede resultar más útil que hacerlo con prisas en la madrugada. Este traslado ocurre {{5}} todo durante las fases de sueño profundo, {{6}} se registran ondas lentas y sincronizadas.\n\nSegún algunos experimentos, es probable que quienes duermen después de aprender una tarea la {{7}} mejor que quienes permanecen despiertos durante el mismo intervalo. {{8}}, estos efectos varían según la naturaleza del material: la información de tipo procedimental, como aprender una secuencia de movimientos, parece beneficiarse más del descanso nocturno que la mera memorización de listas. Los autores de esos estudios subrayan, no obstante, que se trata de tendencias medias y que cada persona {{9}} de manera distinta.\n\nEstos resultados no deben interpretarse como una invitación a sacrificar la vigilia: {{10}} ya habían advertido los propios investigadores, el aprendizaje requiere ambas fases. Por otra parte, la privación crónica de sueño, cada vez más frecuente en las grandes ciudades, repercute en la atención y dificulta la regulación de las emociones. Los especialistas recomiendan, {{11}}, mantener horarios regulares, evitar las pantallas antes de acostarse y {{12}} el consumo de cafeína en las horas previas. Conviene recordar, además, que las siestas breves pueden aportar un descanso complementario, siempre que no se {{13}} tanto como para alterar el sueño de la noche. Dormir bien, en suma, dista de {{14}} un lujo: es una condición indispensable para aprender y recordar.",
           "gaps": [
-            { "options": ["durante", "hacia", "sobre"], "correct": 0 },
-            { "options": ["Por consiguiente", "Es decir", "Sin embargo"], "correct": 2 },
-            { "options": ["llamativo", "llamativos", "llamativas"], "correct": 1 },
-            { "options": ["traspasa", "atraviesa", "recorta"], "correct": 1 },
-            { "options": ["cuyos", "cuya", "cuyo"], "correct": 2 },
-            { "options": ["sobre", "bajo", "tras"], "correct": 0 },
-            { "options": ["las que", "con que", "en las que"], "correct": 2 },
-            { "options": ["sugieran", "sugieren", "sugiriendo"], "correct": 1 },
-            { "options": ["Ahora bien", "Por ende", "De ahí que"], "correct": 0 },
-            { "options": ["con tal de que", "mientras que", "tal como"], "correct": 2 },
-            { "options": ["en", "con", "por"], "correct": 0 },
-            { "options": ["por si acaso", "en consecuencia", "en cambio"], "correct": 1 },
-            { "options": ["moderando", "moderarse", "moderar"], "correct": 2 },
-            { "options": ["pero", "sino", "si no"], "correct": 1 }
+            {
+              "options": [
+                "durante",
+                "hacia",
+                "sobre"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "Por consiguiente",
+                "Es decir",
+                "Sin embargo"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "interrumpe",
+                "atraviesa",
+                "sustituye"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "cuyos",
+                "cuya",
+                "cuyo"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "sobre",
+                "bajo",
+                "tras"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "las que",
+                "con que",
+                "en las que"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "recuerdan",
+                "recuerden",
+                "recordarán"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "Por ende",
+                "Ahora bien",
+                "De ahí que"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "responda",
+                "respondiera",
+                "responde"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "con tal de que",
+                "mientras que",
+                "tal como"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "a lo sumo",
+                "en consecuencia",
+                "en cambio"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "moderar",
+                "demorar",
+                "medrar"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "prolonguen",
+                "prolongan",
+                "prolongarán"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "ser",
+                "es",
+                "siendo"
+              ],
+              "correct": 0
+            }
           ]
         }
       ]
