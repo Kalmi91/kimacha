@@ -155,6 +155,48 @@ export default {
     questionsDone: 'Questions done',
     practiceSentences: 'Practice these words in sentences',
     newReading: 'New reading',
+    // the mode chips on top of the tab (components/practice/modes.ts): Reading plus every game that is switched on.
+    modesLabel: 'Practice mode',
+    modeReading: 'Reading',
+    modeDictation: 'Dictation',
+    modeScramble: 'Scramble',
+    modeMatch: 'Match',
+    modeOpposites: 'Opposites',
+    // shared by the games (lib/practice/useGameRound.ts, components/practice/GameFrame.tsx)
+    game: {
+      emptyTitle: 'Learn a few more words, then there will be something to practice here',
+      progressLabel: (n: number, total: number) => `Word ${n} of ${total}`,
+      roundDone: 'Round done',
+      score: (n: number, total: number) => `${n} of ${total} right first time`,
+      newRound: 'New round',
+    },
+    match: {
+      boardLabel: (n: number, total: number) => `Table ${n} of ${total}`,
+      timeLeft: (sec: number) => `${sec} s left`,
+      timeUp: 'Time is up',
+      allFound: 'All pairs found',
+      result: (found: number, total: number, sec: number) => `${found} of ${total} pairs, ${sec} s`,
+      best: (sec: number) => `Best time: ${sec} s`,
+    },
+    opposites: {
+      prompt: 'What is the opposite?',
+      empty: 'Learn more words to unlock opposites',
+      answer: (word: string) => `The opposite: ${word}`,
+      listen: 'Listen',
+    },
+    scramble: {
+      emptySlot: 'Empty place',
+      mistakes: (n: number) => `Mistakes: ${n}`,
+      skip: 'Skip',
+      solution: 'Solution',
+      noHalf: (n: number) => (n === 1 ? '1 mistake, no half this time' : `${n} mistakes, no half this time`),
+      listen: 'Listen',
+    },
+    dictation: {
+      listen: 'Listen',
+      listenAgain: 'Listen again',
+      means: (meaning: string) => `Means: ${meaning}`,
+    },
   },
   // Sentences tab (beta): header progress (steps: every build plus the one typing), the build and the typing step, empty and round-done states.
   sentenceTab: {

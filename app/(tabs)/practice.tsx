@@ -15,6 +15,8 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import ResultBadge from '@/components/ResultBadge';
 import SpeakButton from '@/components/SpeakButton';
 import LevelCounter from '@/components/practice/LevelCounter';
+import ModeChips from '@/components/practice/ModeChips';
+import { usePracticeMode } from '@/components/practice/modes';
 import { findPcicItem, type PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -25,6 +27,7 @@ import { speechLang } from '@/lib/languages';
 import { countLearningToday } from '@/lib/learningDay';
 import { resolvedTensesFromLessons } from '@/lib/knownSentence';
 import { dropOrphanCards } from '@/lib/pcicSession';
+import { READING_MODE } from '@/lib/practice/practiceMode';
 import {
   loadPracticeRound,
   newPracticeRound,
@@ -42,8 +45,9 @@ import { useScreenLoad } from '@/lib/useScreenLoad';
 // for the same words (lib/practice/reading.ts builds the round). The questions give no half and no XP: the
 // repetition comes from the sentences. The unfinished round is saved after every step
 // (lib/practice/practiceRound.ts) and resumed on the same day.
+// On top sit the mode chips (components/practice/modes.ts): this round is the "Reading" mode, the other modes are the games.
 
-export default function PracticeScreen() {
+function ReadingMode() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -304,6 +308,29 @@ export default function PracticeScreen() {
       </View>,
     ),
     answered ? dockAction('practice-action', `${s.card.next} →`, () => goTo(step + 1)) : undefined,
+  );
+}
+
+// The tab: Reading or one of the switched-on games; the chip row only shows while at least one game is on.
+export default function PracticeScreen() {
+  const { theme } = useTheme();
+  const colors = Colors[theme];
+  const s = t();
+  const modes = usePracticeMode();
+  const body = { backgroundColor: colors.background };
+  if (!modes.ready) return <View style={[styles.screen, body]} />;
+  const Game = modes.active?.Component;
+  return (
+    <View style={[styles.screen, body]}>
+      {modes.enabled.length > 0 && (
+        <ModeChips
+          chips={[{ id: READING_MODE, title: s.practiceTab.modeReading }, ...modes.enabled.map((m) => ({ id: m.id, title: m.title(s) }))]}
+          activeId={modes.activeId}
+          onSelect={modes.select}
+        />
+      )}
+      {Game ? <Game /> : <ReadingMode />}
+    </View>
   );
 }
 

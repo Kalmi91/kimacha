@@ -1,4 +1,5 @@
-import { View, type ColorValue } from 'react-native';
+import type { ComponentProps } from 'react';
+import { Pressable, StyleSheet, View, type ColorValue } from 'react-native';
 import { Text } from '@/components/KText';
 import { Tabs } from 'expo-router';
 import { SymbolView, type SymbolViewProps } from 'expo-symbols';
@@ -13,6 +14,9 @@ import { t } from '@/lib/i18n';
 import { useBeta } from '@/lib/beta';
 import { FeedbackHeaderProvider } from '@/lib/feedbackHeader';
 import { ScreenFeedbackFrame } from '@/lib/screenFeedback';
+
+type TabOptions = Exclude<NonNullable<ComponentProps<typeof Tabs.Screen>['options']>, (...args: never[]) => unknown>;
+type TabButtonProps = Parameters<NonNullable<TabOptions['tabBarButton']>>[0];
 
 export default function TabLayout() {
   const { theme, grammarPalette } = useTheme();
@@ -38,6 +42,20 @@ export default function TabLayout() {
       </View>
     );
   };
+
+  // The bar's own button with ONE icon. React Navigation draws every icon twice and fades between them (opacity 1 <-> 0);
+  // Fabric flattens and rebuilds those wrappers on each tab switch, and a switch during a busy render crashed the app
+  // ("Unable to find viewState for tag", emulator 2026-10-22: 3 of 8 switches, 0 of 12 without the wrappers).
+  // React Navigation calls it as a function (button(props)), so it is not a component of its own.
+  const tabButton = (name: SymbolViewProps['name']) =>
+    function TabBarButton({ children: _drawnTwice, style, href: _href, ref: _ref, ...rest }: TabButtonProps) {
+      const focused = rest['aria-selected'] === true;
+      return (
+        <Pressable {...rest} style={style}>
+          <View style={styles.iconSlot}>{tabIcon(name, focused ? colors.tint : colors.tabIconDefault, focused)}</View>
+        </Pressable>
+      );
+    };
 
   return (
     <Tabs
@@ -101,7 +119,7 @@ export default function TabLayout() {
           tabBarAccessibilityLabel: s.tabs.pcic,
           // Draws its own header, as before.
           headerShown: false,
-          tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'list.bullet', android: 'list', web: 'list' }, color, focused),
+          tabBarButton: tabButton({ ios: 'list.bullet', android: 'list', web: 'list' }),
         }}
       />
       <Tabs.Screen
@@ -111,7 +129,7 @@ export default function TabLayout() {
           tabBarAccessibilityLabel: s.tabs.grammar,
           // the brutalist course list draws its own header (title + streak sticker).
           headerShown: grammarPalette === 'classic',
-          tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'book.fill', android: 'book', web: 'book' }, color, focused),
+          tabBarButton: tabButton({ ios: 'book.fill', android: 'book', web: 'book' }),
         }}
       />
       <Tabs.Screen
@@ -119,8 +137,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.practice,
           tabBarAccessibilityLabel: s.tabs.practice,
-          href: showPractice ? undefined : null,
-          tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }, color, focused),
+          ...(showPractice ? { tabBarButton: tabButton({ ios: 'dumbbell.fill', android: 'fitness_center', web: 'fitness_center' }) } : { href: null }),
         }}
       />
       <Tabs.Screen
@@ -128,8 +145,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.sentences,
           tabBarAccessibilityLabel: s.tabs.sentences,
-          href: showSentences ? undefined : null,
-          tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'text.bubble.fill', android: 'chat', web: 'chat' }, color, focused),
+          ...(showSentences ? { tabBarButton: tabButton({ ios: 'text.bubble.fill', android: 'chat', web: 'chat' }) } : { href: null }),
         }}
       />
       <Tabs.Screen
@@ -137,7 +153,7 @@ export default function TabLayout() {
         options={{
           title: s.tabs.stats,
           tabBarAccessibilityLabel: s.tabs.stats,
-          tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'chart.bar.fill', android: 'bar_chart', web: 'bar_chart' }, color, focused),
+          tabBarButton: tabButton({ ios: 'chart.bar.fill', android: 'bar_chart', web: 'bar_chart' }),
         }}
       />
       <Tabs.Screen
@@ -145,9 +161,14 @@ export default function TabLayout() {
         options={{
           title: s.tabs.settings,
           tabBarAccessibilityLabel: s.tabs.settings,
-          tabBarIcon: ({ color, focused }) => tabIcon({ ios: 'gearshape.fill', android: 'settings', web: 'settings' }, color, focused),
+          tabBarButton: tabButton({ ios: 'gearshape.fill', android: 'settings', web: 'settings' }),
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  // the place React Navigation gives the icon (uikit variant, 31 x 28), so the icon sits where it did before
+  iconSlot: { width: 31, height: 28, alignItems: 'center', justifyContent: 'center' },
+});

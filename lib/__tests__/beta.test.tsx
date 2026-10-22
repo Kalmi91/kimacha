@@ -5,7 +5,7 @@
 import { act, renderHook } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database';
-import { BETA_DEFAULTS, BETA_FLAGS, __resetBetaForTest, getBeta, loadBeta, setBeta, useBeta } from '../beta';
+import { BETA_DEFAULTS, BETA_FLAGS, __resetBetaForTest, getBeta, loadBeta, setBeta, useBeta, useBetaEnabled } from '../beta';
 import { parseBetaFlagMap } from '../betaFlags';
 import { validateBackupPayload } from '../backup';
 
@@ -19,12 +19,20 @@ beforeEach(async () => {
 });
 
 describe('beta defaults', () => {
-  it('has the four flags, every one off', () => {
-    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels']);
+  it('has the eight flags: the old four off, the Practice tab games on', () => {
+    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites']);
     for (const f of BETA_FLAGS) {
-      expect(BETA_DEFAULTS[f]).toBe(false);
-      expect(getBeta(f)).toBe(false);
+      const on = f === 'practiceDictation' || f === 'practiceScramble' || f === 'practiceMatch' || f === 'practiceOpposites';
+      expect(BETA_DEFAULTS[f]).toBe(on);
+      expect(getBeta(f)).toBe(on);
     }
+  });
+
+  it('a game switched off is read back off, a never-saved one is on', async () => {
+    await getDb().setBetaFlag('practiceDictation', false);
+    __resetBetaForTest();
+    await loadBeta();
+    expect(getBeta('practiceDictation')).toBe(false);
   });
 
   it('a db with nothing stored loads as all off', async () => {
@@ -64,6 +72,17 @@ describe('useBeta', () => {
     expect(result.current).toBe(true);
     await act(async () => { await setBeta('sentenceTab', false); });
     expect(result.current).toBe(false);
+  });
+
+  it('useBetaEnabled lists the flags that are on, in the order asked, and follows setBeta', async () => {
+    const { result } = renderHook(() => useBetaEnabled(['levels', 'practiceDictation', 'xpV2']));
+    await flush();
+    expect(result.current).toEqual([]);
+    await act(async () => { await setBeta('xpV2', true); });
+    await act(async () => { await setBeta('practiceDictation', true); });
+    expect(result.current).toEqual(['practiceDictation', 'xpV2']);
+    await act(async () => { await setBeta('practiceDictation', false); });
+    expect(result.current).toEqual(['xpV2']);
   });
 
   it('shows a flag that was saved before the hook mounted', async () => {

@@ -18,14 +18,14 @@ jest.mock('expo-speech', () => ({
 jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('expo-router', () => {
   const React = require('react');
-  // The tab bar test renders only the tabBarIcons.
+  // The tab bar test renders only the bar's own buttons (tabBarButton, one icon each; app/(tabs)/_layout.tsx).
   const Tabs = ({ children }: { children: React.ReactNode }) =>
     React.createElement(
       React.Fragment,
       null,
       React.Children.map(children, (c: React.ReactElement<any>) =>
-        c.props.options.tabBarIcon
-          ? c.props.options.tabBarIcon({ color: '#000', focused: c.props.name === 'index' })
+        c.props.options.tabBarButton
+          ? c.props.options.tabBarButton({ children: null, 'aria-selected': c.props.name === 'index' })
           : null
       )
     );
