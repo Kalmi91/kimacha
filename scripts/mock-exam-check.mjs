@@ -151,7 +151,8 @@ const SPEC = {
 const EXPECTED_FILES = Object.keys(SPEC).map((name) => `${name}.json`);
 
 // es norm (PLAN "Norma (es)"): Mexican usage, no vosotros, no Spain-only words. Patterns as in the plan.
-const ES_BLACKLIST = [/vosotr/i, /\bcoche/i, /\bordenador/i, /\bzumo\b/i, /\bmóvil\b/i, /\bos\b/i];
+// JS \b treats accented letters as non-word characters ("años" would hit `os`), so the edges are Unicode-aware.
+const ES_BLACKLIST = [/vosotr/iu, /(?<!\p{L})coche/iu, /(?<!\p{L})ordenador/iu, /(?<!\p{L})zumo(?!\p{L})/iu, /(?<!\p{L})móvil(?!\p{L})/iu, /(?<!\p{L})os(?!\p{L})/iu];
 const EM_DASH = /[\u2014\u2013]/;
 
 const TOLERANCE = 0.15;
