@@ -19,10 +19,10 @@ beforeEach(async () => {
 });
 
 describe('beta defaults', () => {
-  it('has the five flags: the old four off, the Practice tab games on', () => {
-    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation']);
+  it('has the six flags: the old four off, the Practice tab games on', () => {
+    expect([...BETA_FLAGS]).toEqual(['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble']);
     for (const f of BETA_FLAGS) {
-      const on = f === 'practiceDictation';
+      const on = f === 'practiceDictation' || f === 'practiceScramble';
       expect(BETA_DEFAULTS[f]).toBe(on);
       expect(getBeta(f)).toBe(on);
     }

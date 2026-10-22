@@ -133,12 +133,21 @@ const es: typeof en = {
     modesLabel: 'Modo de práctica',
     modeReading: 'Lectura',
     modeDictation: 'Dictado',
+    modeScramble: 'Letras',
     game: {
       emptyTitle: 'Aprende unas palabras más y aquí habrá algo para practicar',
       progressLabel: (n: number, total: number) => `Palabra ${n} de ${total}`,
       roundDone: 'Ronda terminada',
       score: (n: number, total: number) => `${n} de ${total} bien a la primera`,
       newRound: 'Otra ronda',
+    },
+    scramble: {
+      emptySlot: 'Lugar vacío',
+      mistakes: (n: number) => `Errores: ${n}`,
+      skip: 'Omitir',
+      solution: 'Solución',
+      noHalf: (n: number) => (n === 1 ? '1 error, sin mitad esta vez' : `${n} errores, sin mitad esta vez`),
+      listen: 'Escuchar',
     },
     dictation: {
       listen: 'Escuchar',

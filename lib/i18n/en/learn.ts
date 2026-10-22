@@ -159,6 +159,7 @@ export default {
     modesLabel: 'Practice mode',
     modeReading: 'Reading',
     modeDictation: 'Dictation',
+    modeScramble: 'Scramble',
     // shared by the games (lib/practice/useGameRound.ts, components/practice/GameFrame.tsx)
     game: {
       emptyTitle: 'Learn a few more words, then there will be something to practice here',
@@ -166,6 +167,14 @@ export default {
       roundDone: 'Round done',
       score: (n: number, total: number) => `${n} of ${total} right first time`,
       newRound: 'New round',
+    },
+    scramble: {
+      emptySlot: 'Empty place',
+      mistakes: (n: number) => `Mistakes: ${n}`,
+      skip: 'Skip',
+      solution: 'Solution',
+      noHalf: (n: number) => (n === 1 ? '1 mistake, no half this time' : `${n} mistakes, no half this time`),
+      listen: 'Listen',
     },
     dictation: {
       listen: 'Listen',

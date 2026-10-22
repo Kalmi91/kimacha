@@ -30,6 +30,8 @@ export interface GameWordsDeps {
   /** Card ids of the round this one replaces: they go to the end of the candidates (kept, not dropped), so a new round differs. */
   avoid?: ReadonlySet<string>;
   size?: number;
+  /** Words the game cannot use (e.g. a letter game needs two different letters) are left out. */
+  usable?: (item: PcicItem) => boolean;
 }
 
 /**
@@ -37,11 +39,11 @@ export interface GameWordsDeps {
  * in the last days (lib/practice/gapFill.ts practiceCandidates). Never a word without a card, never an unknown word.
  * Fewer than GAME_MIN_WORDS words: [] (= no round).
  */
-export function pickGameWords({ cards, today, findItem, avoid, size = GAME_ROUND_SIZE }: GameWordsDeps): PcicItem[] {
+export function pickGameWords({ cards, today, findItem, avoid, size = GAME_ROUND_SIZE, usable }: GameWordsDeps): PcicItem[] {
   const items: PcicItem[] = [];
   for (const card of practiceCandidates(cards, today)) {
     const item = findItem(card.itemId);
-    if (item) items.push(item);
+    if (item && (!usable || usable(item))) items.push(item);
   }
   const fresh = items.filter((i) => !avoid?.has(i.id));
   const stale = items.filter((i) => avoid?.has(i.id));
@@ -79,8 +81,10 @@ export interface GameLogic<S> {
   mode: string;
   /** The state of a fresh round over these card ids (round order). */
   start: (ids: string[]) => S;
-  /** A saved state back, or null when it is broken or does not fit the ids (= the round is not resumed). */
-  parse: (raw: unknown, ids: string[]) => S | null;
+  /** A saved state back, or null when it is broken or does not fit the words (= the round is not resumed). */
+  parse: (raw: unknown, ids: string[], ctx: { items: PcicItem[]; target: PcicTarget }) => S | null;
+  /** Words this game can use; the others are left out of its rounds. Omitted: every learned word. */
+  usable?: (item: PcicItem, target: PcicTarget) => boolean;
 }
 
 /** A round on screen: its words (round order) and the mode's state. */
@@ -113,7 +117,7 @@ export function resumeGame<S>(
     items.push(item);
   }
   if (items.length < GAME_MIN_WORDS) return null;
-  const state = logic.parse(saved.state, saved.ids);
+  const state = logic.parse(saved.state, saved.ids, { items, target });
   return state === null ? null : { date: saved.date, target, ids: saved.ids, items, state };
 }
 

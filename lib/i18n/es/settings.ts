@@ -45,6 +45,7 @@ const es: typeof en = {
       xpV2: 'Nuevos valores de XP',
       levels: 'Niveles A1-C1',
       practiceDictation: 'Juego de dictado',
+      practiceScramble: 'Juego de letras revueltas',
     },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
