@@ -59,7 +59,9 @@ import { __resetForTests as resetDailyXp } from '@/lib/dailyXp';
 import { getDb } from '@/lib/database';
 import { setLanguage } from '@/lib/i18n';
 import { clearSentenceRound, loadSentenceRound, saveSentenceRound } from '@/lib/sentenceRound';
-import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
+import { addDays, sm2NewCard, sm2Review, type Sm2Card } from '@/lib/sm2';
+import sample from '@/lib/mistakes/__fixtures__/sample.json';
+import { validateMistakesPayload, type MistakesBatch } from '@/lib/mistakes/format';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
@@ -803,5 +805,154 @@ describe('listening builds (beta sentenceListening, BRIEF-B1)', () => {
     expect(stepText(es)).toBe('Escucha y construye la frase 2 de 4');
     expect(es.getByLabelText('Reproducir la frase')).toBeTruthy();
     expect(es.getByText('Escucha y construye la frase')).toBeTruthy();
+  });
+});
+
+describe('mistake step (beta sentenceMistakes, BRIEF-B2)', () => {
+  const checked = validateMistakesPayload(sample);
+  if (!checked.ok) throw new Error(checked.error);
+  const BATCH: MistakesBatch = checked.batch;
+  const S1 = `${BATCH.batchId}:s:s1`; // "I don't have tomato." -> "No tengo tomate.", wrong "Pero no tienes tomate."
+  const S2 = `${BATCH.batchId}:s:s2`; // "That's fine." -> "Eso está bien.", wrong "Eso es bien."
+  const MISTAKE_EN = "I don't have tomato.";
+  const seedBatch = (b: MistakesBatch = BATCH) => getDb().saveMistakeBatch(b.batchId, JSON.stringify(b), '2026-10-20T10:00:00.000Z');
+  const savedCard = async (id: string) => (await getDb().getMistakeCards()).find((c) => c.itemId === id);
+  const label = (r: R) => r.queryByTestId('sentences-mistake-label');
+  // Builds the tiles on screen right (or only the first one) and moves on.
+  const buildTiles = async (r: R, tiles: string[], right = true) => {
+    build(r, right ? tiles : tiles.slice(0, 1));
+    check(r);
+    next(r);
+    await flush();
+  };
+  const TILES_S1 = ['no', 'tengo', 'tomate'];
+
+  beforeEach(async () => {
+    await getDb().setBetaFlag('sentenceMistakes', true);
+    await getDb().upsertMistakeCard(sm2NewCard(S1));
+    await getDb().upsertMistakeCard(sm2NewCard(S2));
+    __resetBetaForTest();
+  });
+  afterEach(async () => {
+    await seedBatch({ ...BATCH, sentences: [] }); // there is no delete: an empty list is "no mistake sentence"
+  });
+
+  it('the 3rd build is a sentence from the list (label, English prompt, the faulty words as decoys); a right build = "Knew it" in the mistake deck, nothing for the corpus cards', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await seedBatch();
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(progress(r)).toBe('0 / 5'); // still 4 builds + the typing
+    expect(label(r)).toBeNull();
+    expect(await buildCurrent(r)).toBe(BUILD_ORDER[0]);
+    expect(await buildCurrent(r)).toBe(BUILD_ORDER[1]);
+    expect(stepText(r)).toBe('Build the sentence 3 of 4');
+    expect(r.getByTestId('sentences-mistake-label').props.children).toBe('From your mistakes');
+    expect(r.getByText(MISTAKE_EN)).toBeTruthy();
+    for (const en of Object.keys(SENT)) expect(r.queryByText(en)).toBeNull(); // not a corpus sentence (BUILD_ORDER[2] was replaced)
+    for (const w of [...TILES_S1, 'pero', 'tienes']) expect(r.getAllByText(w).length).toBeGreaterThan(0);
+    await buildTiles(r, TILES_S1);
+    expect(await savedCard(S1)).toEqual(sm2Review(sm2NewCard(S1), 'good', localDateString()));
+    expect(await savedCard(S2)).toEqual(sm2NewCard(S2));
+    expect(mockRecord).not.toHaveBeenCalled();
+    expect(label(r)).toBeNull();
+    expect(await buildCurrent(r)).toBe(BUILD_ORDER[3]);
+    expect(stepText(r)).toBe('Last step: type this sentence');
+    expect(current(r)).toBe(TYPED);
+    expect(await savedCard(S1)).toEqual(sm2Review(sm2NewCard(S1), 'good', localDateString())); // nothing more happened to it
+  });
+
+  it('a wrong mistake build is "Didn\'t know" and the sentence goes to the end of the round, where it can be built right', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await seedBatch();
+    const r = render(<SentencesScreen />);
+    await flush();
+    await buildCurrent(r);
+    await buildCurrent(r);
+    await buildTiles(r, TILES_S1, false);
+    const again = sm2Review(sm2NewCard(S1), 'again', localDateString());
+    expect(await savedCard(S1)).toEqual(again);
+    expect(progress(r)).toBe('2 / 5');
+    expect(await buildCurrent(r)).toBe(BUILD_ORDER[3]); // the 4th is next, the mistake sentence waits at the end
+    expect(label(r)).not.toBeNull();
+    expect(r.getByText(MISTAKE_EN)).toBeTruthy();
+    expect(r.queryByPlaceholderText('Type the sentence')).toBeNull();
+    await buildTiles(r, TILES_S1);
+    expect(await savedCard(S1)).toEqual(sm2Review(again, 'good', localDateString()));
+    expect(current(r)).toBe(TYPED);
+    expect(mockRecord).not.toHaveBeenCalled();
+  });
+
+  it('a round that was left continues on the same mistake step (saved with the round)', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await seedBatch();
+    const first = render(<SentencesScreen />);
+    await flush();
+    await buildCurrent(first);
+    await buildCurrent(first);
+    first.unmount();
+    // the list changes in between: the saved round still holds the sentence
+    await seedBatch({ ...BATCH, sentences: [] });
+    const again = render(<SentencesScreen />);
+    await flush();
+    expect(stepText(again)).toBe('Build the sentence 3 of 4');
+    expect(again.getByTestId('sentences-mistake-label')).toBeTruthy();
+    expect(again.getByText(MISTAKE_EN)).toBeTruthy();
+    expect(again.getAllByText('tienes').length).toBeGreaterThan(0);
+    expect((await loadSentenceRound(getDb()))?.entries[2].mistake).toEqual({ wrong: 'Pero no tienes tomate.' });
+    await buildTiles(again, TILES_S1);
+    expect(await savedCard(S1)).toEqual(sm2Review(sm2NewCard(S1), 'good', localDateString()));
+  });
+
+  it('a due sentence is chosen before one not seen yet', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await seedBatch();
+    await getDb().upsertMistakeCard({ ...sm2NewCard(S2), state: 'learning', due: '2026-10-01', introducedAt: '2026-10-01', lastReview: '2026-10-01' });
+    const r = render(<SentencesScreen />);
+    await flush();
+    await buildCurrent(r);
+    await buildCurrent(r);
+    expect(r.getByText("That's fine.")).toBeTruthy();
+    expect(r.queryByText(MISTAKE_EN)).toBeNull();
+    expect(r.getAllByText('es').length).toBeGreaterThan(0); // the faulty "Eso es bien."
+  });
+
+  it('no list loaded, a list with only a doubtful sentence, or the switch off: the round is today\'s, nothing touches the mistake deck', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const playRound = async () => {
+      const r = render(<SentencesScreen />);
+      await flush();
+      for (let i = 0; i < 4; i++) {
+        expect(stepText(r)).toBe(`Build the sentence ${i + 1} of 4`);
+        expect(label(r)).toBeNull();
+        expect(await buildCurrent(r)).toBe(BUILD_ORDER[i]);
+      }
+      r.unmount();
+      await clearSentenceRound(getDb());
+    };
+    await playRound(); // no list
+    await seedBatch({ ...BATCH, sentences: BATCH.sentences.filter((s) => s.doubtful) });
+    await playRound(); // only a doubtful sentence
+    await seedBatch();
+    await getDb().setBetaFlag('sentenceMistakes', false);
+    __resetBetaForTest();
+    await playRound(); // switch off
+    expect(await savedCard(S1)).toEqual(sm2NewCard(S1));
+    expect(await savedCard(S2)).toEqual(sm2NewCard(S2));
+  });
+
+  it('Spanish UI: the label', async () => {
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    await seedBatch();
+    const first = render(<SentencesScreen />);
+    await flush();
+    await buildCurrent(first);
+    await buildCurrent(first);
+    first.unmount();
+    setLanguage('es');
+    const es = render(<SentencesScreen />);
+    await flush();
+    expect(es.getByTestId('sentences-mistake-label').props.children).toBe('De tus errores');
+    expect(es.getByText(MISTAKE_EN)).toBeTruthy();
   });
 });

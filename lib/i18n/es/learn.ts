@@ -180,6 +180,7 @@ const es: typeof en = {
     stepListen: (n: number, total: number) => `Escucha y construye la frase ${n} de ${total}`,
     listenHint: 'Escucha y construye la frase',
     listenPlay: 'Reproducir la frase',
+    fromMistakes: 'De tus errores',
     empty: 'Aprende más palabras para desbloquear frases',
     roundDone: (n: number) => (n === 1 ? 'Ronda terminada: 1 frase' : `Ronda terminada: ${n} frases`),
     more: 'Más frases',

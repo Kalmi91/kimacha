@@ -208,6 +208,8 @@ export default {
     stepListen: (n: number, total: number) => `Listen and build the sentence ${n} of ${total}`,
     listenHint: 'Listen, then build the sentence',
     listenPlay: 'Play the sentence',
+    // Mistake build (beta sentenceMistakes): a sentence from the learner's own "My mistakes" list.
+    fromMistakes: 'From your mistakes',
     empty: 'Learn more words to unlock sentences',
     roundDone: (n: number) => (n === 1 ? 'Round done: 1 sentence' : `Round done: ${n} sentences`),
     more: 'More sentences',

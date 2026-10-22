@@ -16,7 +16,8 @@ import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
 import { requeueAfterGrade } from '@/lib/pcicSession';
-import { sm2Review, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
+import type { Sm2Card, Sm2Grade } from '@/lib/sm2';
+import { gradeMistakeCard } from '@/lib/mistakes/grade';
 import type { MistakesBatch } from '@/lib/mistakes/format';
 import { cardsForBatches, pickMistakeSession, suggestedMistakeGrade, type MistakeCard } from '@/lib/mistakes/deck';
 import CardShell from '@/components/learn/CardShell';
@@ -102,8 +103,7 @@ export default function MistakesDeckScreen() {
 
   const handleGrade = async (grade: Sm2Grade) => {
     if (!current) return;
-    const next = sm2Review(current, grade, today);
-    await getDb().upsertMistakeCard(next);
+    const next = await gradeMistakeCard(current, grade, today);
     setQueue((prev) => requeueAfterGrade(prev, next, today));
     setTyped('');
     setChecked(false);

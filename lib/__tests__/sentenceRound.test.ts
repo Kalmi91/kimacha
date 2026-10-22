@@ -192,6 +192,19 @@ describe('the saved round', () => {
     }
   });
 
+  it('a mistake sentence (BRIEF-B2) stays a mistake sentence through save and load; a malformed one makes the round unusable', async () => {
+    const mistake = { ...entry('m'), wordIds: [], dueIds: [], slots: [], mistake: { wrong: 'frase mal' } };
+    const withMistake = fresh([ENTRIES[0], ENTRIES[1], mistake, ENTRIES[3]]);
+    await saveSentenceRound(getDb(), withMistake);
+    const loaded = await loadSentenceRound(getDb());
+    expect(loaded).toEqual(withMistake);
+    expect(loaded?.entries[2].mistake).toEqual({ wrong: 'frase mal' });
+    expect(loaded?.entries[0].mistake).toBeUndefined(); // a corpus sentence has none
+    for (const bad of [{ wrong: 5 }, 'frase mal', null]) {
+      expect(parseSentenceRound(JSON.parse(JSON.stringify({ ...withMistake, entries: [ENTRIES[0], { ...mistake, mistake: bad }] })))).toBeNull();
+    }
+  });
+
   it('a round saved by the older version (the typed sentence was one of the built ones) starts again without an error', async () => {
     const { typed: _typed, focus: _focus, ...rest } = fresh();
     const old = { ...rest, typeId: 'b', entries: ENTRIES.map(({ dueIds: _d, staleness: _s, slots: _sl, ...e }) => e) };

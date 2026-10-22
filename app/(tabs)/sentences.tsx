@@ -13,7 +13,7 @@ import { useDockLift } from '@/components/learn/useDockLift';
 import LevelCounter from '@/components/practice/LevelCounter';
 import { SkinBackdrop, SkinHeader } from '@/components/skins/Slots';
 import { PCIC_LEVELS, findPcicItem, levelOfItem, pcicItemsForLevel, type PcicTarget } from '@/data/pcic';
-import { useBeta } from '@/lib/beta';
+import { getBeta, loadBeta, useBeta } from '@/lib/beta';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
@@ -40,6 +40,7 @@ import {
   startRound,
   type SentenceRound,
 } from '@/lib/sentenceRound';
+import { mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '@/lib/sentenceMistakes';
 import { buildStepKind, type BuildStepKind } from '@/lib/sentenceSteps';
 import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordTypedWords, sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { gradeTypedWords } from '@/lib/sentenceTyping';
@@ -58,7 +59,8 @@ import { useSingleFlight } from '@/lib/useSingleFlight';
 // former sentence cards.
 
 // The tile step; the decoys are picked once when the step mounts (a retry remounts it: key).
-// `kind` (lib/sentenceSteps.ts): a listening step hides the prompt behind a 🔊 button until the build is right.
+// `kind` (lib/sentenceSteps.ts): a listening step hides the prompt behind a 🔊 button until the build is right; a mistake
+// step is a sentence from the learner's own mistakes (its decoys come from the faulty sentence).
 function BuildStep({ entry, target, kind, onResult }: { entry: SentenceEntry; target: PcicTarget; kind: BuildStepKind; onResult: (correct: boolean) => void }) {
   const [step] = useState(() => {
     const targetWords = tileWords(entry.target);
@@ -66,7 +68,9 @@ function BuildStep({ entry, target, kind, onResult }: { entry: SentenceEntry; ta
     const vocab = (level ? pcicItemsForLevel(level) : PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l))).map((i) =>
       (target === 'es' ? i.es : i.en).split(' / ')[0],
     );
-    return { targetWords, trapWords: nearMissDistractors(targetWords, vocab, target) };
+    // A mistake step's decoys are the words of the faulty sentence the learner wrote (lib/sentenceMistakes.ts).
+    const trapWords = kind === 'mistake' && entry.mistake ? mistakeTrapWords(targetWords, entry.mistake.wrong, vocab, target) : nearMissDistractors(targetWords, vocab, target);
+    return { targetWords, trapWords };
   });
   return (
     <EasySentenceCard
@@ -90,6 +94,8 @@ export default function SentencesScreen() {
   const xpV2 = useBeta('xpV2');
   // beta: sentenceListening, every second build is heard instead of read (lib/sentenceSteps.ts); off = all builds as before.
   const listeningBeta = useBeta('sentenceListening');
+  // beta: sentenceMistakes, one build is a sentence from "My mistakes", credited to that deck (lib/sentenceMistakes.ts).
+  const mistakesBeta = useBeta('sentenceMistakes');
   // `focus` = card ids (comma separated): the sentences with those words come first (the Practice tab sends them here).
   const { focus } = useLocalSearchParams<{ focus?: string | string[] }>();
   const focusIds = (Array.isArray(focus) ? focus.join(',') : focus ?? '').split(',').map((id) => id.trim()).filter(Boolean);
@@ -148,7 +154,14 @@ export default function SentencesScreen() {
         focus: new Set(focusKey.split(',').filter(Boolean)),
       });
       const pick = pickRound(queue, dir, SENTENCE_ROUND_SIZE);
-      next = pick.typed ? startRound(pick.builds, pick.typed, today, dir, focusKey) : null;
+      // beta sentenceMistakes: one build is a sentence from the learner's mistake list (Spanish direction only; none = today's round).
+      let builds = pick.builds;
+      await loadBeta();
+      if (pick.typed && dir === 'es' && getBeta('sentenceMistakes')) {
+        const skip = new Set([...doneKeys.current, ...[...pick.builds, pick.typed].map((e) => sentenceKey(e))]);
+        builds = withMistakeStep(pick.builds, await pickMistakeEntry(today, skip));
+      }
+      next = pick.typed ? startRound(builds, pick.typed, today, dir, focusKey) : null;
       // Saved at once (when there is a round): leaving before the first answer brings back the same sentences.
       if (next) await saveSentenceRound(db, next);
       else await clearSentenceRound(db);
@@ -169,7 +182,7 @@ export default function SentencesScreen() {
   const current = round ? currentEntry(round) : undefined;
   const { done, total } = round ? roundProgress(round) : { done: 0, total: 0 };
   // The kind of the build on screen (the typing step has none).
-  const buildKind: BuildStepKind = round && current && round.phase === 'build' ? buildStepKind(round, current.itemId, { listening: listeningBeta }) : 'normal';
+  const buildKind: BuildStepKind = round && current && round.phase === 'build' ? buildStepKind(round, current.itemId, { listening: listeningBeta, mistakes: mistakesBeta }) : 'normal';
 
   // The new state is saved BEFORE the words are credited: a kill in between loses a credit, it never pays one twice.
   const keepRound = async (next: SentenceRound) => {
@@ -180,9 +193,11 @@ export default function SentencesScreen() {
   const onBuildResult = async (correct: boolean) => {
     if (!round) return;
     await runOnce(async () => {
-      // A build credits nothing: right = the sentence is done, wrong = it goes to the end of the round.
+      // A corpus build credits nothing: right = the sentence is done, wrong = it goes to the end of the round.
       const next = answerBuild(round, correct);
       await keepRound(next);
+      // A mistake build is credited to the mistake deck, as its Knew it / Didn't know: right = knew it, wrong = didn't know.
+      if (buildKind === 'mistake' && current) await recordMistakeBuild(current.itemId, correct, localDateString());
       await countLearningToday();
       setRound(next);
       setSeq((n) => n + 1);
@@ -305,6 +320,11 @@ export default function SentencesScreen() {
       <Text testID="sentences-step" style={[styles.stepText, { color: colors.tabIconDefault }]}>
         {round.phase === 'build' ? (buildKind === 'listening' ? s.sentenceTab.stepListen : s.sentenceTab.stepBuild)(buildNumber(round), round.entries.length) : s.sentenceTab.stepType}
       </Text>
+      {round.phase === 'build' && buildKind === 'mistake' && (
+        <Text testID="sentences-mistake-label" style={[styles.mistakeLabel, { color: colors.text }]}>
+          {s.sentenceTab.fromMistakes}
+        </Text>
+      )}
       {round.phase === 'build' ? (
         <ScrollView
           style={styles.cardScroll}
@@ -345,6 +365,7 @@ const styles = StyleSheet.create({
   progressFill: { height: '100%', borderRadius: 3 },
   brutalProgress: { marginBottom: 16 },
   stepText: { fontSize: 14, fontWeight: '600', textAlign: 'center', marginBottom: 8 },
+  mistakeLabel: { fontSize: 13, fontWeight: '700', textAlign: 'center', marginBottom: 8 },
   hint: { fontSize: 16, fontWeight: '500', marginTop: 12 },
   cardScroll: { flex: 1 },
   moreBtn: { alignSelf: 'stretch', marginTop: 24 },

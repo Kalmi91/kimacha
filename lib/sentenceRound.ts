@@ -92,7 +92,10 @@ function parseEntry(raw: unknown): SentenceEntry | null {
   if (!isStrings(e.dueIds) || typeof e.staleness !== 'string' || !Array.isArray(e.slots)) return null;
   const slots = e.slots.every((s) => typeof s === 'object' && s !== null && typeof s.id === 'string' && isStrings(s.words));
   if (!slots) return null;
-  return { itemId: e.itemId, source: e.source, target: e.target, wordCount: e.wordCount, wordIds: e.wordIds, due: e.due, dueIds: e.dueIds, staleness: e.staleness, slots: e.slots };
+  // Optional (rounds saved before the mistake step have none); present but malformed = not a usable round.
+  if (e.mistake !== undefined && (typeof e.mistake !== 'object' || e.mistake === null || typeof e.mistake.wrong !== 'string')) return null;
+  const mistake = e.mistake ? { mistake: { wrong: e.mistake.wrong } } : {};
+  return { itemId: e.itemId, source: e.source, target: e.target, wordCount: e.wordCount, wordIds: e.wordIds, due: e.due, dueIds: e.dueIds, staleness: e.staleness, slots: e.slots, ...mistake };
 }
 
 /**
