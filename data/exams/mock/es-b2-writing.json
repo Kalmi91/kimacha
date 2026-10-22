@@ -14,7 +14,7 @@
             {
               "id": "a",
               "title": "Correo electrónico a la coordinación de la feria",
-              "prompt": "Usted ha escuchado en la radio el anuncio de una convocatoria y quiere participar. Escriba un correo electrónico a la coordinación de la feria, de 150 a 180 palabras, en el que: preséntese y explique por qué le interesa participar; pida más información sobre las actividades y la organización de los turnos; ofrezca su ayuda en una tarea concreta, según sus habilidades.",
+              "prompt": "Usted ha escuchado en la radio el anuncio de una convocatoria y quiere participar. Escriba un correo electrónico a la coordinación de la feria, de 150 a 180 palabras, en el que se presente y explique por qué le interesa participar, pida más información sobre las actividades y la organización de los turnos, ofrezca su ayuda en una tarea concreta, de acuerdo con sus habilidades, y se despida facilitando un dato de contacto.",
               "audio": [
                 { "speaker": "m", "text": "Atención, vecinos de la colonia y de toda la zona. La Casa de la Cultura abre hoy la convocatoria para participar como voluntarios en la tercera Feria del Libro Usado. Se celebrará el primer fin de semana de noviembre, en el parque central." },
                 { "speaker": "m", "text": "La feria reúne cada vez a más familias, y este año esperamos recibir a más de dos mil visitantes en dos días. Para lograrlo necesitamos treinta voluntarios que quieran colaborar en distintas tareas. Algunos ayudarán a recibir y acomodar los libros donados. Otros guiarán a los visitantes y responderán sus preguntas. También buscamos personas que puedan coordinar los talleres de lectura para niños, que se realizarán el sábado por la tarde." },
@@ -24,7 +24,7 @@
               "minWords": 150,
               "maxWords": 180,
               "points": [
-                { "id": "presentacion", "label": "Se presenta y explica por qué le interesa participar", "keywords": ["me llamo", "interes", "motiv", "voluntari", "participar", "quisiera participar", "me gustaria", "me encanta"] },
+                { "id": "presentacion", "label": "Se presenta y explica por qué le interesa participar", "keywords": ["me llamo", "mi nombre es", "me presento", "soy estudiante", "trabajo como", "estudi", "interes", "motiv"] },
                 { "id": "informacion", "label": "Pide más información sobre actividades y turnos", "keywords": ["turno", "horario", "informacion", "quisiera saber", "me gustaria saber", "actividades", "cuantas horas", "detalles"] },
                 { "id": "ayuda", "label": "Ofrece ayuda en una tarea concreta", "keywords": ["puedo", "ofrezco", "ayudar", "colaborar", "taller", "coordinar", "acomodar", "guiar"] },
                 { "id": "cierre", "label": "Se despide y facilita un contacto", "keywords": ["atentamente", "saludos", "gracias", "agradezco", "quedo", "contacto", "telefono", "espero"] }
@@ -45,21 +45,21 @@
               "minWords": 150,
               "maxWords": 180,
               "points": [
-                { "id": "publico", "label": "Describe el descenso del transporte público", "keywords": ["transporte publico", "disminu", "descen", "baj", "reduc", "menos", "caida", "perdio"] },
+                { "id": "publico", "label": "Describe el descenso del transporte público", "keywords": ["transporte publico", "disminu", "descen", "redujo", "reduccion", "caida", "perdio", "cayo"] },
                 { "id": "bicicleta", "label": "Destaca el aumento de la bicicleta", "keywords": ["bicicleta", "ciclista", "ciclovia", "triplic", "aument", "crecio", "crece", "mayor uso"] },
-                { "id": "carro", "label": "Compara los datos del carro o la motocicleta", "keywords": ["carro", "automovil", "motocicleta", "moto", "particular", "vehiculo", "porcentaje", "por ciento"] },
-                { "id": "causas", "label": "Explica posibles causas de los cambios", "keywords": ["debido", "porque", "causa", "razon", "se debe", "gracias a", "precio", "trabajo desde casa"] }
+                { "id": "carro", "label": "Compara los datos del carro o la motocicleta", "keywords": ["carro", "automovil", "motocicleta", "motos", "vehiculo", "uso del carro"] },
+                { "id": "causas", "label": "Explica posibles causas de los cambios", "keywords": ["debido a", "se debe", "gracias a", "razon", "causa", "precio", "boleto", "desde casa"] }
               ]
             },
             {
               "id": "b",
               "title": "B. Reseña para un blog de cine",
-              "prompt": "Usted acaba de ver la película y decide publicar una reseña en un blog de cine. Escriba un texto de 150 a 180 palabras en el que resuma brevemente el argumento sin revelar el final, exprese su opinión personal y diga a quién recomendaría la película y por qué.",
+              "prompt": "Usted acaba de ver la película y decide publicar una reseña en un blog de cine. Escriba un texto de 150 a 180 palabras en el que resuma brevemente el argumento sin revelar el contenido de las cartas, exprese su opinión personal y diga a quién recomendaría la película y por qué.",
               "input": "Cartelera. «La casa de los almendros». Drama, ciento seis minutos. Dirección: Beatriz Montenegro. Reparto: Ximena Robles y Aurelio Campos.\n\nSinopsis. Tras la muerte de su padre, Camila, una ingeniera que vive en Guadalajara, regresa a la casa familiar en un pueblo de Michoacán con la intención de venderla. Allí la espera Eliseo, el jardinero que cuidó de la propiedad durante décadas y que se niega a aceptar que todo termine. Poco a poco, entre discusiones sobre los trámites y recuerdos de la infancia, Camila descubre que su padre dejó cartas dirigidas a ella y a su hermano, escondidas entre los libros de la biblioteca. Cada carta revela un secreto distinto y la obliga a replantearse lo que creía saber de su familia.\n\nLa película, rodada con luz natural y casi sin música, se apoya en las actuaciones de sus dos protagonistas y en un guion que prefiere los silencios a las explicaciones. Algunos críticos la han considerado lenta, mientras que otros la defienden como un retrato sincero del duelo y de la herencia afectiva. En el festival donde se estrenó, el público la aplaudió de pie durante varios minutos. La directora, que debuta con este largometraje, filmó en el pueblo donde creció su propia familia.\n\nEstreno: este viernes en salas de toda la república.",
               "minWords": 150,
               "maxWords": 180,
               "points": [
-                { "id": "argumento", "label": "Resume el argumento sin revelar el final", "keywords": ["argumento", "trata", "cuenta", "historia", "protagonista", "camila", "relata", "pelicula"] },
+                { "id": "argumento", "label": "Resume el argumento sin revelar el final", "keywords": ["argumento", "trata de", "cuenta la", "historia", "protagonista", "camila", "cartas", "jardinero"] },
                 { "id": "opinion", "label": "Expresa su opinión personal", "keywords": ["opino", "creo", "pienso", "me parecio", "me gusto", "me encanto", "en mi opinion", "considero"] },
                 { "id": "valoracion", "label": "Valora aspectos concretos (actuaciones, ritmo, imagen)", "keywords": ["actuacion", "actores", "ritmo", "fotografia", "guion", "musica", "lenta", "silencios"] },
                 { "id": "recomendacion", "label": "Recomienda la película a un público concreto", "keywords": ["recomiendo", "recomendaria", "aconsejo", "vale la pena", "publico", "quienes", "personas que", "a quien"] }

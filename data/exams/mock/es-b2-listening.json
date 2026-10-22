@@ -23,7 +23,7 @@
                   "options": [
                     "Porque así llega a tiempo a una comida familiar.",
                     "Porque el boleto del jueves es más barato.",
-                    "Porque prefiere salir de viaje por la noche."
+                    "Porque el autobús del jueves es directo."
                   ],
                   "correct": 0
                 }
@@ -40,9 +40,9 @@
                 {
                   "stem": "¿Qué acuerdan los dos amigos?",
                   "options": [
-                    "Que él manejará el carro de ella durante el viaje.",
-                    "Que viajarán juntos en autobús hasta la ciudad.",
-                    "Que ella lo llevará y él pagará la gasolina."
+                    "Que él manejará el carro de ella durante todo el viaje.",
+                    "Que irán juntos en autobús hasta el salón de fiestas.",
+                    "Que irán en el carro de ella y él cubrirá la gasolina."
                   ],
                   "correct": 2
                 }
@@ -50,7 +50,7 @@
             },
             {
               "audio": [
-                { "speaker": "m", "text": "Buenos días, licenciada. Le llamo por lo del departamento. El plomero dice que la fuga viene de la tubería del vecino." },
+                { "speaker": "m", "text": "Buenos días, licenciada. Le hablo por lo del departamento. El plomero dice que la fuga viene de la tubería del vecino." },
                 { "speaker": "f", "text": "Entonces la reparación no me toca a mí. ¿Y quién paga el agua desperdiciada?" },
                 { "speaker": "m", "text": "Eso lo decide el administrador. Hable con él mañana temprano." },
                 { "speaker": "f", "text": "De acuerdo, pero mándeme por escrito lo que me acaba de decir." }
@@ -71,7 +71,7 @@
               "audio": [
                 { "speaker": "f", "text": "Ricardo, ¿cómo vas con el informe? Lo necesito el jueves para la junta con los clientes." },
                 { "speaker": "m", "text": "Va avanzado, pero me faltan los datos de ventas de Monterrey." },
-                { "speaker": "f", "text": "Insiste hoy, por favor. Si el miércoles no los tienes, presentamos el informe sin esa parte y lo completamos después." },
+                { "speaker": "f", "text": "Insiste hoy con Monterrey, por favor. Si el miércoles no los tienes, presentamos el informe sin esa parte y lo completamos después." },
                 { "speaker": "m", "text": "Me parece bien. Así no corremos riesgos." }
               ],
               "questions": [
@@ -89,7 +89,7 @@
             {
               "audio": [
                 { "speaker": "f", "text": "Consultorio del doctor Salas, buenas tardes." },
-                { "speaker": "m", "text": "Buenas tardes. Quisiera cambiar mi cita del martes. Ese día me surgió una junta de trabajo que no puedo cancelar." },
+                { "speaker": "m", "text": "Buenas tardes. Quisiera cambiar mi cita del martes. Ese día me surgió una junta de trabajo que no puedo cancelar. ¿Habría lugar el miércoles?" },
                 { "speaker": "f", "text": "El doctor no atiende los miércoles, pero el jueves tengo un espacio a las cinco y media." },
                 { "speaker": "m", "text": "El jueves me conviene. ¿Debo llevar los estudios que me pidieron?" },
                 { "speaker": "f", "text": "Sí, todos." }
@@ -161,7 +161,7 @@
           "kind": "passage_mc",
           "instruction": "Va a escuchar una entrevista de radio. Seleccione la opción correcta para cada pregunta (1 a 6).",
           "audio": [
-            { "speaker": "f", "text": "Bienvenidos a Voces de la Ciudad. Hoy conversamos con Andrés Beltrán, traductor literario con dos décadas de experiencia en el oficio. Andrés, muchos piensan que los traductores están por desaparecer. ¿Es así?" },
+            { "speaker": "f", "text": "Bienvenidos a Voces de la Colonia. Hoy conversamos con Andrés Beltrán, traductor literario con dos décadas de experiencia en el oficio. Andrés, muchos piensan que los traductores están por desaparecer. ¿Es así?" },
             { "speaker": "m", "text": "Es una pregunta que me hacen todo el tiempo. Mi respuesta es que cierto tipo de traducción sí está cambiando, pero otro no. Los manuales, las instrucciones o los correos comerciales se traducen hoy con programas que funcionan sorprendentemente bien. Eso ya ocurrió y no tiene vuelta atrás." },
             { "speaker": "f", "text": "¿Y la traducción literaria?" },
             { "speaker": "m", "text": "Ahí el panorama es distinto. Una novela no es solo información: tiene humor, silencios, juegos de palabras. Los programas pueden dar una versión correcta, pero rara vez una versión que suene viva. El texto queda plano, como una fotografía sin color." },
@@ -218,9 +218,9 @@
             {
               "stem": "¿Por qué le preocupa la práctica de revisar textos hechos por programas?",
               "options": [
-                "Porque las editoriales ya no publican traducciones literarias.",
-                "Porque los lectores prefieren los textos hechos por programas.",
-                "Porque se paga menos y a veces el trabajo resulta más largo."
+                "Porque las editoriales ya no quieren publicar traducciones literarias.",
+                "Porque los lectores prefieren cada vez más los textos hechos por programas.",
+                "Porque degrada el oficio y a veces lleva más tiempo que traducir desde cero."
               ],
               "correct": 2
             },
@@ -267,7 +267,7 @@
             {
               "id": "5",
               "audio": [
-                { "speaker": "f", "text": "Antes de entrar a la sala, les pido que apaguen sus celulares y que no tomen fotografías con luz. Las piezas que van a ver son extremadamente frágiles y la luz las deteriora. Recorreremos la sala en orden cronológico y, al final, podrán hacer preguntas. La visita dura cuarenta minutos, así que por favor no se separen del grupo." }
+                { "speaker": "f", "text": "Antes de entrar a la sala, les pido que apaguen sus celulares y que no usen flash al tomar fotografías. Las piezas que van a ver son extremadamente frágiles y el flash las deteriora. Recorreremos la sala en orden cronológico y, al final, podrán hacer preguntas. La visita dura cuarenta minutos, así que por favor no se separen del grupo." }
               ]
             },
             {
@@ -288,7 +288,7 @@
             { "id": "e", "text": "Anuncia su renuncia a un puesto." },
             { "id": "f", "text": "Pide dinero para continuar una investigación." },
             { "id": "g", "text": "Da instrucciones antes de una visita guiada." },
-            { "id": "h", "text": "Se queja de la actitud de un compañero de trabajo." },
+            { "id": "h", "text": "Cuenta cómo resolvió un malentendido con un compañero de trabajo." },
             { "id": "i", "text": "Explica por qué cambió de área en su empresa." }
           ],
           "answer": { "1": "c", "2": "f", "3": "i", "4": "d", "5": "g", "6": "a" },
@@ -299,7 +299,7 @@
           "kind": "passage_mc",
           "instruction": "Va a escuchar una charla sobre un proyecto comunitario. Seleccione la opción correcta para cada pregunta (1 a 6).",
           "audio": [
-            { "speaker": "f", "text": "Buenas tardes a todos, y gracias por venir. Soy arquitecta y vivo en la colonia desde hace mucho tiempo, así que conocía bien los techos de los edificios. Les voy a contar cómo nació el proyecto Azoteas Verdes, y también qué fue lo que no salió como esperábamos." },
+            { "speaker": "f", "text": "Buenas tardes a todos, y gracias por venir. Soy arquitecta y vivo en la colonia desde hace mucho tiempo, así que conocía bien los techos de los edificios. Les voy a contar cómo nació el proyecto Cosecha en Azotea, y también qué fue lo que no salió como esperábamos." },
             { "speaker": "f", "text": "Todo empezó cuando mi vecina Elena me mostró las macetas que tenía en su azotea. Tenía jitomates, chiles y hasta un pequeño limonero, y me dijo que con eso había dejado de comprar verduras casi todo el verano." },
             { "speaker": "f", "text": "Pensé que si una persona lograba eso en veinte metros cuadrados, muchas familias podrían hacer lo mismo. Así que pedimos permiso a la administración del edificio y construimos los primeros cajones de siembra con tablas recicladas." },
             { "speaker": "f", "text": "Al principio participaron solo cinco familias. Hoy somos más de cuarenta, repartidas en seis edificios de la colonia. Cada azotea tiene sus propias reglas y se organiza como mejor le conviene." },
