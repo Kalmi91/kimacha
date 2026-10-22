@@ -46,6 +46,7 @@ const es: typeof en = {
       levels: 'Niveles A1-C1',
       practiceDictation: 'Juego de dictado',
       practiceScramble: 'Juego de letras revueltas',
+      practiceMatch: 'Juego de parejas rápidas',
     },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',

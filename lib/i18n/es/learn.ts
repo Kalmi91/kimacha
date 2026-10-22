@@ -134,12 +134,21 @@ const es: typeof en = {
     modeReading: 'Lectura',
     modeDictation: 'Dictado',
     modeScramble: 'Letras',
+    modeMatch: 'Parejas',
     game: {
       emptyTitle: 'Aprende unas palabras más y aquí habrá algo para practicar',
       progressLabel: (n: number, total: number) => `Palabra ${n} de ${total}`,
       roundDone: 'Ronda terminada',
       score: (n: number, total: number) => `${n} de ${total} bien a la primera`,
       newRound: 'Otra ronda',
+    },
+    match: {
+      boardLabel: (n: number, total: number) => `Tabla ${n} de ${total}`,
+      timeLeft: (sec: number) => `${sec} s restantes`,
+      timeUp: 'Se acabó el tiempo',
+      allFound: 'Todas las parejas',
+      result: (found: number, total: number, sec: number) => `${found} de ${total} parejas, ${sec} s`,
+      best: (sec: number) => `Mejor tiempo: ${sec} s`,
     },
     scramble: {
       emptySlot: 'Lugar vacío',

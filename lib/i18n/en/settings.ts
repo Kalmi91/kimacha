@@ -47,6 +47,7 @@ export default {
       levels: 'Levels A1-C1',
       practiceDictation: 'Dictation game',
       practiceScramble: 'Letter scramble game',
+      practiceMatch: 'Quick match game',
     },
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',

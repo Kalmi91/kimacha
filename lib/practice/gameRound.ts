@@ -30,6 +30,8 @@ export interface GameWordsDeps {
   /** Card ids of the round this one replaces: they go to the end of the candidates (kept, not dropped), so a new round differs. */
   avoid?: ReadonlySet<string>;
   size?: number;
+  /** Fewer words than this make no round (default GAME_MIN_WORDS). */
+  min?: number;
   /** Words the game cannot use (e.g. a letter game needs two different letters) are left out. */
   usable?: (item: PcicItem) => boolean;
 }
@@ -39,7 +41,7 @@ export interface GameWordsDeps {
  * in the last days (lib/practice/gapFill.ts practiceCandidates). Never a word without a card, never an unknown word.
  * Fewer than GAME_MIN_WORDS words: [] (= no round).
  */
-export function pickGameWords({ cards, today, findItem, avoid, size = GAME_ROUND_SIZE, usable }: GameWordsDeps): PcicItem[] {
+export function pickGameWords({ cards, today, findItem, avoid, size = GAME_ROUND_SIZE, min = GAME_MIN_WORDS, usable }: GameWordsDeps): PcicItem[] {
   const items: PcicItem[] = [];
   for (const card of practiceCandidates(cards, today)) {
     const item = findItem(card.itemId);
@@ -48,7 +50,7 @@ export function pickGameWords({ cards, today, findItem, avoid, size = GAME_ROUND
   const fresh = items.filter((i) => !avoid?.has(i.id));
   const stale = items.filter((i) => avoid?.has(i.id));
   const picked = [...fresh, ...stale].slice(0, size);
-  return picked.length >= GAME_MIN_WORDS ? picked : [];
+  return picked.length >= min ? picked : [];
 }
 
 /** A right answer: one half (with its XP under the xpV2 switch), and the day counts for the streak. */
@@ -79,10 +81,13 @@ export interface SavedGame {
 export interface GameLogic<S> {
   /** Save key part and testID prefix of the mode. */
   mode: string;
-  /** The state of a fresh round over these card ids (round order). */
-  start: (ids: string[]) => S;
+  /** The state of a fresh round over these card ids (round order); the words and the direction are there for a game that sorts them. */
+  start: (ids: string[], ctx: { items: PcicItem[]; target: PcicTarget }) => S;
   /** A saved state back, or null when it is broken or does not fit the words (= the round is not resumed). */
   parse: (raw: unknown, ids: string[], ctx: { items: PcicItem[]; target: PcicTarget }) => S | null;
+  /** Words in a round (default GAME_ROUND_SIZE) and the fewest that make one (default GAME_MIN_WORDS). */
+  size?: number;
+  minWords?: number;
   /** Words this game can use; the others are left out of its rounds. Omitted: every learned word. */
   usable?: (item: PcicItem, target: PcicTarget) => boolean;
 }
@@ -98,7 +103,7 @@ export interface GameRound<S> {
 
 export function startGame<S>(logic: GameLogic<S>, items: PcicItem[], date: string, target: PcicTarget): GameRound<S> {
   const ids = items.map((i) => i.id);
-  return { date, target, ids, items, state: logic.start(ids) };
+  return { date, target, ids, items, state: logic.start(ids, { items, target }) };
 }
 
 /** The saved round as the screen resumes it, or null when a new one has to be built: nothing saved, another day or direction, a card that is gone, a state that does not fit. */
@@ -116,7 +121,7 @@ export function resumeGame<S>(
     if (!item) return null;
     items.push(item);
   }
-  if (items.length < GAME_MIN_WORDS) return null;
+  if (items.length < (logic.minWords ?? GAME_MIN_WORDS)) return null;
   const state = logic.parse(saved.state, saved.ids, { items, target });
   return state === null ? null : { date: saved.date, target, ids: saved.ids, items, state };
 }
