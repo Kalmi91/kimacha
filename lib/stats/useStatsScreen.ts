@@ -13,7 +13,7 @@ import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel } from '@/data/pcic
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { countKnown, countGraduated, countLearned } from '@/lib/pcicStats';
 import { countDoneToday } from '@/lib/pcicSession';
-import { MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
+import { mockAvailable, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
 import { readMockOverview, type MockOverview } from '@/lib/exam/mock/session';
 import type { MockLevel, MockTarget } from '@/lib/exam/mock/types';
 import type { ProgressLevel } from '@/lib/progressLevel';
@@ -33,6 +33,9 @@ const EMPTY_STATS: UsageStats = {
 };
 
 // The Stats tab's state and its focus-time load. The screen (app/(tabs)/stats.tsx) renders it.
+// The practice-exam levels that have content: a level whose papers are not written yet is not offered (it would be a dead end).
+const availableMockLevels = (target: MockTarget): readonly MockLevel[] => MOCK_LEVELS[target].filter((level) => mockAvailable(target, level));
+
 export function useStatsScreen() {
   const [usage, setUsage] = useState<UsageStats>(EMPTY_STATS);
   const [streak, setStreak] = useState(0);
@@ -53,7 +56,7 @@ export function useStatsScreen() {
   const [targetLang, setTargetLang] = useState('es');
   const [sourceLang, setSourceLang] = useState('en');
   // The mock exam card's levels (direction-dependent) and the saved results.
-  const [mockLevels, setMockLevels] = useState<readonly MockLevel[]>(MOCK_LEVELS.es);
+  const [mockLevels, setMockLevels] = useState<readonly MockLevel[]>(() => availableMockLevels('es'));
   const [mockOverview, setMockOverview] = useState<MockOverview>({});
   const [mockOfficial, setMockOfficial] = useState(true);
   // The learner's level A1-C1 (lib/progressLevel.ts); read only while the card is shown.
@@ -76,7 +79,7 @@ export function useStatsScreen() {
         setTargetLang(ob.target);
         setSourceLang(ob.source ?? 'en');
         const mockTarget: MockTarget = ob.target === 'en' ? 'en' : 'es';
-        setMockLevels(MOCK_LEVELS[mockTarget]);
+        setMockLevels(availableMockLevels(mockTarget));
         setMockOfficial(mockTarget === 'es');
         return Promise.all([
           readMockOverview(db, mockTarget, MOCK_LEVELS[mockTarget]).then(setMockOverview),
