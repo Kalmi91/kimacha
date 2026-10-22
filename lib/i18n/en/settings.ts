@@ -50,6 +50,7 @@ export default {
       practiceMatch: 'Quick match game',
       practiceOpposites: 'Opposites game',
       sentenceListening: 'Sentences: listening builds',
+      sentenceMistakes: 'Sentences: from my mistakes',
     },
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',

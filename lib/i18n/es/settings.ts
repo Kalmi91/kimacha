@@ -49,6 +49,7 @@ const es: typeof en = {
       practiceMatch: 'Juego de parejas rápidas',
       practiceOpposites: 'Juego de opuestos',
       sentenceListening: 'Frases: construir al escuchar',
+      sentenceMistakes: 'Frases: de mis errores',
     },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
