@@ -18,6 +18,7 @@ import GappedTextTask from './mock/GappedTextTask';
 import MatchPoolTask from './mock/MatchPoolTask';
 import PassageMcTask from './mock/PassageMcTask';
 import PickStatementsTask from './mock/PickStatementsTask';
+import SpeakingTask from './mock/SpeakingTask';
 import TransformTask from './mock/TransformTask';
 
 // one mock-exam task on screen. The structure of the old (4afeb8c^) components/exam/ExamTaskCard.tsx:
@@ -35,9 +36,18 @@ type Props = {
   /** False if the device has no voice for the learned language: then the text is shown. */
   canSpeak: boolean;
   glossary: GlossaryEntry[];
+  /** Speaking only: the choice id of the task this one `follows` (the screen resolves it from the answers). */
+  inheritedChoice?: string;
+  /** Speaking only: true while the preparation time runs, so the paper's clock stands still. */
+  onHoldClock?: (hold: boolean) => void;
+  /** Speaking only: the screen's next-task action (the last step of the task calls it) and whether this is the paper's last task. */
+  onNextTask?: () => void;
+  lastTask?: boolean;
+  /** Speaking only: scroll the screen's scroller so that this y (from the top of the card) is at the top of the visible area. */
+  onScrollTo?: (y: number) => void;
 };
 
-export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak, glossary }: Props) {
+export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak, glossary, inheritedChoice, onHoldClock, onNextTask, lastTask, onScrollTo }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
@@ -76,6 +86,8 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
         return <TransformTask task={task} {...props} />;
       case 'essay':
         return <EssayTask task={task} {...props} />;
+      case 'speaking':
+        return <SpeakingTask task={task} {...props} inheritedChoice={inheritedChoice} onHoldClock={onHoldClock} onNextTask={onNextTask} lastTask={lastTask} onScrollTo={onScrollTo} />;
     }
   }
 

@@ -119,7 +119,8 @@ export interface MockShortMessageTask extends MockTaskBase {
 // --- The authored kinds of B1-C1 (data/exams/mock/*.json, schema: lib/exam/mock/authored.ts). The answer key of the
 // learner (MockTaskAnswer): passage_mc / clips_mc / cloze / transform: the item index (clips_mc: counted across the clips,
 // cloze: gap index = `{{n}}` minus one) -> the chosen option index or the typed text; match_pool: prompt id -> option id;
-// gapped_text: gap number ("1".) -> fragment id; pick_statements: statement index -> true; essay: `choice` = choice id, `text`.
+// gapped_text: gap number ("1".) -> fragment id; pick_statements: statement index -> true; essay: `choice` = choice id, `text`;
+// speaking: `choice` = choice id, `<turn id>` = the text of the turn, `notes` = the preparation notes (not scored).
 
 /** A recorded line; the speaker gives the pitch of the voice (m: deep, f: high, n: neutral). */
 export interface MockAudioLine {
@@ -207,6 +208,51 @@ export interface MockEssayTask extends MockTaskBase, MockPlays, MockMarks {
   }[];
 }
 
+/** One examiner turn of a speaking task and what a good answer contains. */
+export interface MockSpeakingTurn {
+  /** 't1', 't2', ...: unique within the choice (the answer key of the learner's text). */
+  id: string;
+  /** What the examiner says: shown and read aloud (target language, neutral voice). */
+  ask: string;
+  /** From this many words on the word-count mark is given. */
+  minWords: number;
+  /** Content points, one mark each, matched by keywords like the essay; may be empty (then only the word count counts). */
+  points: { id: string; label: string; keywords: string[] }[];
+  /** A model answer for the review: it reaches `minWords` and gets EVERY point (checked by scripts/mock-exam-check.mjs). */
+  model: string;
+}
+
+export interface MockSpeakingChoice {
+  /** 'a', 'b', 'c'. */
+  id: string;
+  title: string;
+  /** The task sheet: the situation, what to talk about (target language). */
+  prompt: string;
+  /** The guiding points on the sheet. */
+  bullets?: string[];
+  /** A written stimulus: an article, a survey, proposals, the options of a decision. */
+  input?: string;
+  /** Photo keys (data/exams/mock/photos.json): one to describe, two to compare, three if two are to be picked. */
+  photos?: string[];
+  turns: MockSpeakingTurn[];
+}
+
+/**
+ * An individual speaking task: the app plays the examiner turn by turn, the learner answers in writing (typed or dictated with
+ * the keyboard's microphone), the answers are scored by keywords + word count per turn (lib/exam/mock/score.ts).
+ * The learner's answer: `choice` = the picked choice id, `<turn id>` = the text of the turn, `notes` = the preparation notes (not scored).
+ */
+export interface MockSpeakingTask extends MockTaskBase, MockMarks {
+  kind: 'speaking';
+  /** Preparation time in seconds (none/0: no preparation); it can be skipped, the paper's clock stands still meanwhile. */
+  prepSeconds?: number;
+  /** The recommended speaking time in minutes, e.g. [2, 3] (the sheet shows it). */
+  talkMinutes: [number, number];
+  /** The 1-based ordinal of an earlier task of the paper whose choice this one continues (the same choice ids, no picker). */
+  follows?: number;
+  choices: MockSpeakingChoice[];
+}
+
 /** The kinds that come from the authored files. */
 export type MockAuthoredKindTask =
   | MockPassageMcTask
@@ -216,7 +262,8 @@ export type MockAuthoredKindTask =
   | MockClozeTask
   | MockPickStatementsTask
   | MockTransformTask
-  | MockEssayTask;
+  | MockEssayTask
+  | MockSpeakingTask;
 
 export type MockTask =
   | MockMatchTask
@@ -230,7 +277,7 @@ export type MockTask =
   | MockShortMessageTask
   | MockAuthoredKindTask;
 
-const AUTHORED_KINDS: readonly string[] = ['passage_mc', 'clips_mc', 'match_pool', 'gapped_text', 'cloze', 'pick_statements', 'transform', 'essay'];
+const AUTHORED_KINDS: readonly string[] = ['passage_mc', 'clips_mc', 'match_pool', 'gapped_text', 'cloze', 'pick_statements', 'transform', 'essay', 'speaking'];
 
 export function isAuthoredKindTask(task: MockTask): task is MockAuthoredKindTask {
   return AUTHORED_KINDS.includes(task.kind);
@@ -244,7 +291,7 @@ export interface MockPaper {
   minutes: number;
   /** The total points of the skills in the paper (25 per skill). */
   points: number;
-  /** Speaking is a placeholder in this slice: it has no task and does not count. */
+  /** Reserve: a speaking paper with no task (its file is missing or empty) is a placeholder and does not count; one with tasks is scored like the others. */
   placeholder: boolean;
   tasks: MockTask[];
 }
@@ -263,7 +310,7 @@ export interface MockGroup {
  *   publish the threshold, so it is an approximate value (English A2, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT);
  * - scale: per skill the raw score is converted to a scale score along `anchors` ([raw, scale] pairs of the examiner's
  *   practice conversion, linear in between), the average of the scale scores is compared with `needed` (English B1 / B2 / C1).
- *   `officialMax` is the skill's maximum raw score on the real paper; the speaking has no entry (placeholder).
+ *   `officialMax` is the skill's maximum raw score on the real paper; the speaking has an entry too (it counts once it has a task).
  */
 export type MockRule =
   | { kind: 'groups'; groups: MockGroup[] }
@@ -286,7 +333,8 @@ export interface MockExam {
 /** A paper's authored content file (data/exams/mock/<target>-<level>-<paper>.json): one or more forms, the seed picks one. */
 export interface AuthoredPaperFile {
   target: MockTarget;
-  level: Extract<MockLevel, 'B1' | 'B2' | 'C1'>;
+  /** B1-C1: every paper; A1 / A2: only the speaking paper (the rest is built from the words). */
+  level: MockLevel;
   /** The blueprint paper id (lib/exam/mock/blueprint.ts). */
   paper: string;
   forms: { id: string; tasks: AuthoredTask[] }[];
@@ -294,8 +342,10 @@ export interface AuthoredPaperFile {
 
 type DistributiveOmit<T, K extends PropertyKey> = T extends unknown ? Omit<T, K> : never;
 
-/** A task as written in the files: a Mock task without the id (the builder numbers them). */
-export type AuthoredTask = DistributiveOmit<MockAuthoredKindTask, 'id' | 'skill'> & { skill: Exclude<MockSkill, 'speaking'> };
+/** A task as written in the files: a Mock task without the id (the builder numbers them); a speaking task has the skill `speaking`, the others any other. */
+export type AuthoredTask =
+  | (DistributiveOmit<Exclude<MockAuthoredKindTask, MockSpeakingTask>, 'id' | 'skill'> & { skill: Exclude<MockSkill, 'speaking'> })
+  | (Omit<MockSpeakingTask, 'id' | 'skill'> & { skill: 'speaking' });
 
 /** What the learner gave for a task: the key is the item index or the prompt/field id. */
 export type MockTaskAnswer = Record<string, string | number | boolean | null>;
@@ -342,6 +392,9 @@ export function mockTaskItemCount(task: MockTask): number {
       return task.items.length;
     case 'essay':
       return Math.max(0, ...task.choices.map((c) => c.points.length)) + 1; // content points + reaching the word count
+    case 'speaking':
+      // Per turn: the content points + reaching the word count; the longest choice (the picked one is scored).
+      return Math.max(0, ...task.choices.map((c) => c.turns.reduce((n, t) => n + t.points.length + 1, 0)));
   }
 }
 

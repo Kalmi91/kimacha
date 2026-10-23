@@ -2,11 +2,11 @@
 // (4afeb8c^) lib/exam/score.ts: per item, then PER SKILL scaled to the skill's 25 points
 // (the phone exam is shorter than the real one), then by the exam's pass rule
 // (lib/exam/mock/types.ts MockRule):
-//  - groups (Spanish): 30 / 50 per group, with a placeholder speaking the 2nd group = listening x2;
-//  - total (English A1): total out of 100, no per-skill minimum; the missing speaking is made up from the
+//  - groups (Spanish): 30 / 50 per group, with a placeholder speaking (no task) the 2nd group = listening x2;
+//  - total (English A1): total out of 100, no per-skill minimum; a missing (placeholder) speaking is made up from the
 //    ratio of the other three skills (sum / counted maximum x 100), flagged "provisional";
 //  - average (English A2): the percentage average of the counted skills against a threshold (approximate
-//    value, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT), the missing speaking is left out here too;
+//    value, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT), a missing speaking is left out here too;
 //  - scale (English B1 / B2 / C1): per skill the hit ratio x the real paper's maximum is a raw score, which is turned into a
 //    scale score along the rule's anchors; the average of the counted skills against the needed scale score.
 //    An item can weigh more than one mark (`marks` of the task): the hit ratio of a skill is weighed by the marks.
@@ -14,8 +14,11 @@
 // Writing part: there is no self-assessment, the old keyword-based content scoring stays (one content
 // point is one mark, plus one mark for reaching the word count), but only for meaningful text: pasted
 // task text, nonsense or repeated words and too short a text get no points, and the form
-// fields are asked for a value matching their kind (lib/exam/mock/writing.ts). The old self-assessment of
-// speaking is not here.
+// fields are asked for a value matching their kind (lib/exam/mock/writing.ts).
+//
+// Speaking part (a task of the speaking paper): the same keyword scoring per examiner turn on the learner's written / dictated
+// answer (content points + one word-count mark per turn). It measures content and amount only, not pronunciation or fluency.
+// There is no self-assessment of speaking; a speaking paper without a task is a placeholder and is not counted ("provisional").
 
 import { assessMessage, checkField, countWords, fold, foldedTokens } from './writing';
 import { mockTaskMarks, type MockAnswers, type MockExam, type MockSkill, type MockTask, type MockTaskAnswer } from './types';
@@ -28,11 +31,28 @@ const SKILL_ORDER: MockSkill[] = ['reading', 'use', 'writing', 'listening', 'spe
 /**
  * Whether a content-point keyword occurs in the kept words. The keyword must start at a word start ("gracia" still finds
  * "gracias", but "sit" no longer finds "visit"); a keyword made only of punctuation (a question mark) runs on the raw text,
- * because punctuation drops out of the words.
+ * because punctuation drops out of the words. English contractions match their full form both ways ("i'm" = "i am",
+ * "don't" = "do not"); "'s" stays as it is (is / has / possessive).
  */
 function keywordHit(kw: string, words: string, raw: string): boolean {
-  const k = fold(kw);
-  return /[a-z0-9]/.test(k) ? ` ${words}`.includes(` ${k}`) : raw.includes(k);
+  const k = expandContractions(fold(kw));
+  return /[a-z0-9]/.test(k) ? ` ${expandContractions(words)}`.includes(` ${k}`) : raw.includes(k);
+}
+
+const CONTRACTIONS: [RegExp, string][] = [
+  [/\bwon't\b/g, 'will not'],
+  [/\bcan't\b/g, 'can not'],
+  [/\bcannot\b/g, 'can not'],
+  [/n't\b/g, ' not'],
+  [/'m\b/g, ' am'],
+  [/'re\b/g, ' are'],
+  [/'ve\b/g, ' have'],
+  [/'ll\b/g, ' will'],
+  [/'d\b/g, ' would'],
+];
+
+function expandContractions(text: string): string {
+  return CONTRACTIONS.reduce((s, [re, full]) => s.replace(re, full), text);
 }
 
 interface MockItemResult {
@@ -45,6 +65,12 @@ interface MockItemResult {
   skill?: MockSkill;
   /** How many marks the item is worth (default 1; the `marks` of the task). */
   marks?: number;
+  /** Speaking: the examiner's question of the turn the item belongs to (the review groups the items by it). */
+  group?: string;
+  /** Speaking: the model answer of that turn. */
+  model?: string;
+  /** Speaking: what the learner said (typed or dictated) in that turn, for the review. */
+  answer?: string;
 }
 
 interface MockTaskResult {
@@ -69,7 +95,7 @@ export interface MockSkillResult {
   /** The raw hits scaled to the skill's points (0 for a skill that is not counted). */
   points: number;
   maxPoints: number;
-  /** False for the placeholder skill (speaking): it is not part of the scoring. */
+  /** False for a skill with no task (the speaking placeholder): it is not part of the scoring. */
   included: boolean;
   /** The scale score of the skill (only under a scale rule, for a counted skill). */
   scale?: number;
@@ -170,7 +196,21 @@ function dictationItems(expectedText: string, typed: string): MockItemResult[] {
   return items;
 }
 
-export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: MockScoreContext = {}): MockTaskResult {
+/**
+ * The choice id a speaking task inherits from the task it `follows` (that task's own pick, else the one it follows in turn), or
+ * undefined (no follow, or nothing picked: the scoring falls back to the first choice). Only an earlier task can be followed.
+ */
+export function followedChoice(tasks: MockTask[], index: number, answers: MockAnswers): string | undefined {
+  const task = tasks[index];
+  if (task?.kind !== 'speaking' || task.follows === undefined || task.follows - 1 >= index) return undefined;
+  const followed = tasks[task.follows - 1];
+  if (followed?.kind !== 'speaking') return undefined;
+  const own = answers[followed.id]?.choice;
+  return typeof own === 'string' ? own : followedChoice(tasks, task.follows - 1, answers);
+}
+
+/** `inheritedChoice`: for a speaking task that follows another, the choice id of the followed task (scoreMockExam resolves it). */
+export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: MockScoreContext = {}, inheritedChoice?: string): MockTaskResult {
   const items: MockItemResult[] = [];
   switch (task.kind) {
     case 'match':
@@ -308,6 +348,25 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       items.push({ label: `${choice.minWords}-${choice.maxWords}`, given: String(a.valid ? a.words : 0), expected: `${choice.minWords}-${choice.maxWords}`, ok: inRange });
       break;
     }
+    case 'speaking': {
+      // The chosen sheet: its own pick, else the followed task's, else the first. Per turn as the short message: content points by
+      // keyword + one word-count mark, only for meaningful text; the question and the sheet are the reference for pasted text.
+      const choice = task.choices.find((c) => c.id === answer.choice) ?? task.choices.find((c) => c.id === inheritedChoice) ?? task.choices[0];
+      if (!choice) break;
+      for (const turn of choice.turns) {
+        const text = String(answer[turn.id] ?? '');
+        const a = assessMessage(text, [task.instruction, choice.prompt, ...(choice.bullets ?? []), choice.input ?? '', turn.ask], ctx.lexicon);
+        const enough = a.valid && a.words >= Math.ceil(turn.minWords / 2);
+        const raw = fold(text);
+        const review = { group: turn.ask, model: turn.model, answer: text };
+        for (const p of turn.points) {
+          const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw));
+          items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok, ...review });
+        }
+        items.push({ label: `≥ ${turn.minWords}`, given: String(a.valid ? a.words : 0), expected: String(turn.minWords), ok: a.valid && a.words >= turn.minWords, ...review });
+      }
+      break;
+    }
   }
   const marks = 'marks' in task ? task.marks : undefined;
   if (marks && marks !== 1) for (const item of items) item.marks = marks;
@@ -325,7 +384,7 @@ export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockSco
   const papers: MockPaperResult[] = exam.papers.map((paper) => ({
     id: paper.id,
     name: paper.name,
-    tasks: paper.tasks.map((task) => scoreMockTask(task, answers[task.id], ctx)),
+    tasks: paper.tasks.map((task, i) => scoreMockTask(task, answers[task.id], ctx, followedChoice(paper.tasks, i, answers))),
   }));
 
   // Per skill: the tasks' items (the words of a dictation count into two skills).
@@ -347,7 +406,7 @@ export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockSco
   // Use of English is a skill only in the exams that have such a task.
   const skills: MockSkillResult[] = SKILL_ORDER.filter((skill) => skill !== 'use' || hasTasks.has('use')).map((skill) => {
     const { correct, total } = tally.get(skill) ?? { correct: 0, total: 0 };
-    // A placeholder skill (no task: speaking today) is not counted; one with a task or an item always is.
+    // A placeholder skill (no task: the speaking while its file is empty) is not counted; one with a task or an item always is.
     const included = hasTasks.has(skill) || tally.has(skill);
     const points = included && total > 0 ? Math.round((correct / total) * SKILL_POINTS) : 0;
     return { skill, name: exam.skillNames[skill] ?? skill, correct, total, points, maxPoints: SKILL_POINTS, included };

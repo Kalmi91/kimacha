@@ -1,0 +1,205 @@
+{
+  "target": "en",
+  "level": "A1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Look at the picture. Answer the examiner's questions about it.",
+          "talkMinutes": [2, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Two people at work",
+              "prompt": "Look at the picture of two people at work. The examiner will ask you some questions about it.",
+              "photos": ["en-a1-1"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Where are they?",
+                  "minWords": 5,
+                  "points": [
+                    { "id": "p1", "label": "Says where the people are", "keywords": ["kitchen", "restaurant", "canteen", "cafeteria", "at work", "factory", "inside", "big room"] }
+                  ],
+                  "model": "I think they are in a big kitchen."
+                },
+                {
+                  "id": "t2",
+                  "ask": "What are they doing?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Says what the people are doing", "keywords": ["cook", "prepar", "making", "make", "stir", "cleaning", "washing", "working", "cutting", "chopping"] }
+                  ],
+                  "model": "They are cooking food in the kitchen."
+                },
+                {
+                  "id": "t3",
+                  "ask": "What are they wearing?",
+                  "minWords": 5,
+                  "points": [
+                    { "id": "p1", "label": "Names their clothes", "keywords": ["hairnet", "hair net", "uniform", "apron", "cloth", "glove", "coat", "shirt", "jacket", "wear white", "wearing white", "wearing a white"] }
+                  ],
+                  "model": "They wear white clothes and a hairnet."
+                },
+                {
+                  "id": "t4",
+                  "ask": "What things can you see?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Names things in the kitchen", "keywords": ["pots", "big pot", "pans", "big pan", "stove", "oven", "tray", "spoon", "ladle", "big lid", "shelf", "rack"] }
+                  ],
+                  "model": "I can see big pots and a stove."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "In the city",
+              "prompt": "Look at the picture of a place in a city. The examiner will ask you some questions about it.",
+              "photos": ["en-a1-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Where are the people?",
+                  "minWords": 5,
+                  "points": [
+                    { "id": "p1", "label": "Says where the people are", "keywords": ["street", "cafe", "restaurant", "outside", "terrace", "square", "sidewalk", "in a city", "in the city", "big city", "in a town", "in the town"] }
+                  ],
+                  "model": "I think they are in a street cafe."
+                },
+                {
+                  "id": "t2",
+                  "ask": "What are the people doing?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Says what the people are doing", "keywords": ["sitting", "they sit", "people sit", "sit at", "drink", "eating", "talk", "walk", "chat", "standing", "having lunch", "have lunch"] }
+                  ],
+                  "model": "They are sitting at tables and they talk."
+                },
+                {
+                  "id": "t3",
+                  "ask": "What is the weather like?",
+                  "minWords": 5,
+                  "points": [
+                    { "id": "p1", "label": "Says what the weather is like", "keywords": ["sunny", "warm", "blue sky", "nice day", "nice weather", "beautiful day", "good weather", "no clouds", "is hot", "very hot", "summer", "bright"] }
+                  ],
+                  "model": "It is a sunny and warm day."
+                },
+                {
+                  "id": "t4",
+                  "ask": "What else can you see?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Names other things in the picture", "keywords": ["bike", "bicycle", "building", "flower", "lamp", "sign", "chair", "table", "window", "balcony", "bush", "plant"] }
+                  ],
+                  "model": "I can see bikes, a lamp and some flowers."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Read the card. Then take part in a role play with the examiner.",
+          "prepSeconds": 15,
+          "talkMinutes": [1, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "At the cafe",
+              "prompt": "You are in a cafe. The examiner is the waiter. Talk to the waiter.",
+              "bullets": ["Say what you want to drink.", "Say what you want to eat.", "Ask how much it is.", "Pay and say thank you."],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Hello! What would you like to drink?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Asks for a drink", "keywords": ["coffee", "juice", "water", "soda", "milk", "lemonade", "cola", "latte", "some tea", "tea please", "cup of tea", "hot chocolate"] }
+                  ],
+                  "model": "Hello. I would like a coffee, please."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Would you like something to eat?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Asks for some food", "keywords": ["sandwich", "cake", "salad", "pizza", "bread", "cookie", "soup", "burger", "fries", "muffin", "cheese", "pancake"] }
+                  ],
+                  "model": "Yes, please. I would like a sandwich."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Is that all for you?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Asks about the price", "keywords": ["how much", "price", "cost", "to pay", "can i pay", "the check", "dollars", "total", "bill", "expensive"] }
+                  ],
+                  "model": "Yes, that is all. How much is it?"
+                },
+                {
+                  "id": "t4",
+                  "ask": "That is eight dollars, please.",
+                  "minWords": 5,
+                  "points": [
+                    { "id": "p1", "label": "Pays and says thank you", "keywords": ["thank", "here you are", "here is", "here's", "here you go", "here are", "here it is", "keep the change"] }
+                  ],
+                  "model": "Here you are. Thank you very much."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "At the bus station",
+              "prompt": "You are at a bus station. The examiner is the ticket seller. Talk to the ticket seller.",
+              "bullets": ["Say hello and ask for a bus ticket.", "Say where you want to go.", "Ask what time the bus leaves.", "Pay and say thank you."],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Good afternoon. How can I help you?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Asks for a ticket", "keywords": ["ticket", "one way", "round trip", "bus pass"] }
+                  ],
+                  "model": "Hello. I would like a ticket, please."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Where would you like to go?",
+                  "minWords": 5,
+                  "points": [
+                    { "id": "p1", "label": "Says where to go", "keywords": ["airport", "center", "downtown", "museum", "park", "hotel", "go to", "going to", "ticket to", "tickets to", "bus to", "travel to"] }
+                  ],
+                  "model": "I want to go to the airport, please."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Okay. Anything else I can do for you?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Asks what time the bus leaves", "keywords": ["what time", "when does", "when is", "when will", "when do", "next bus", "bus leave", "it leave", "buses leave", "timetable", "schedule", "departure"] }
+                  ],
+                  "model": "Yes, what time does the bus leave?"
+                },
+                {
+                  "id": "t4",
+                  "ask": "The bus leaves at ten. That is nine dollars, please.",
+                  "minWords": 5,
+                  "points": [
+                    { "id": "p1", "label": "Pays and says thank you", "keywords": ["thank", "here you are", "here is", "here's", "here you go", "here are", "here it is", "keep the change"] }
+                  ],
+                  "model": "Thank you very much. Here you are."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

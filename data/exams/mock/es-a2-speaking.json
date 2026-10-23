@@ -1,0 +1,273 @@
+{
+  "target": "es",
+  "level": "A2",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Hable sobre uno de los dos temas. Siga los puntos de la hoja.",
+          "prepSeconds": 360,
+          "talkMinutes": [
+            2,
+            3
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Unas vacaciones",
+              "prompt": "Usted va a hablar de unas vacaciones o de un viaje que hizo hace poco tiempo. Cuente lo siguiente.",
+              "bullets": ["adónde fue y con quién", "cómo viajó y cuánto tiempo estuvo", "qué hizo allí", "qué fue lo mejor del viaje"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede empezar.",
+                  "minWords": 50,
+                  "points": [
+                    { "id": "p1", "label": "Dice adónde fue y con quién", "keywords": ["fui a", "fuimos a", "viaje a", "viajamos a", "estuve en", "estuvimos en", "vacaciones en", "pase mis vacaciones", "fui de vacaciones", "fuimos de vacaciones", "playa"] },
+                    { "id": "p2", "label": "Dice cómo viajó y cuánto tiempo estuvo", "keywords": ["avion", "autobus", "camion", "carro", "tren", "viajamos en", "viaje en", "fuimos en", "una semana", "semanas", "noches", "dos dias"] },
+                    { "id": "p3", "label": "Cuenta qué hizo en ese lugar", "keywords": ["visit", "conoc", "camin", "pase", "nadamos", "nade", "comimos", "descans", "compr", "bail", "fotos", "hicimos"] },
+                    { "id": "p4", "label": "Dice qué fue lo mejor del viaje", "keywords": ["lo mejor", "lo mas interesante", "me gusto", "me gustaron", "me encanto", "me encantaron", "divertid", "bonit", "recuerdo", "inolvidable"] }
+                  ],
+                  "model": "El mes pasado fui a Oaxaca de vacaciones con mi esposo y con mis padres. Viajamos en autobús y estuvimos allá una semana. Visitamos el centro de la ciudad, conocimos un mercado muy grande y comimos tlayudas todos los días. También caminamos por las montañas cerca del pueblo. Lo mejor del viaje fue la comida, me gustó mucho. Fue un viaje muy bonito y quiero regresar el próximo año."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Una persona importante",
+              "prompt": "Usted va a hablar de una persona importante en su vida: un amigo, un familiar o su pareja. Cuente lo siguiente.",
+              "bullets": ["quién es y cómo se conocieron", "cómo es: su aspecto y su carácter", "qué hacen juntos", "por qué es importante para usted"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Adelante, le escucho.",
+                  "minWords": 50,
+                  "points": [
+                    { "id": "p1", "label": "Dice quién es y cómo se conocieron", "keywords": ["mi amig", "mejor amig", "un amig", "una amig", "mi herman", "mi mam", "mi pap", "mi espos", "mi parej", "mi novi", "nos conoc", "se llama"] },
+                    { "id": "p2", "label": "Describe cómo es", "keywords": ["alto", "alta", "delgad", "guap", "cabello", "el pelo", "ojos", "simpatic", "amable", "divertid", "alegre", "inteligent"] },
+                    { "id": "p3", "label": "Cuenta qué hacen juntos", "keywords": ["junt", "salimos", "platicamos", "charlamos", "hablamos", "jugamos", "cocinamos", "comemos", "paseamos", "bailamos", "estudiamos", "hacemos"] },
+                    { "id": "p4", "label": "Explica por qué es importante para él o ella", "keywords": ["es muy importante", "me ayud", "me apoy", "confio", "la quiero", "lo quiero", "quiero mucho", "me escucha", "me entiende", "me cuida", "me da consejos", "me hace feliz"] }
+                  ],
+                  "model": "Voy a hablar de mi mejor amiga, Laura. Nos conocimos hace diez años en la escuela, y desde entonces somos muy cercanas. Ella es alta y delgada, tiene el cabello largo y negro, y siempre lleva lentes. Es muy simpática y divertida, y también es muy amable con todos. Los fines de semana salimos juntas a caminar, platicamos mucho y cocinamos en mi casa. Es importante para mí porque siempre me ayuda cuando tengo problemas."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Describa la fotografía del tema que elija y conteste a las preguntas del entrevistador.",
+          "prepSeconds": 360,
+          "talkMinutes": [
+            2,
+            3
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Una comida en familia",
+              "prompt": "Observe la fotografía y descríbala con sus palabras. Después, el entrevistador le hará dos preguntas.",
+              "bullets": ["quiénes aparecen y dónde están", "qué están haciendo", "qué hay sobre la mesa"],
+              "photos": ["es-a2-1"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Por favor, describa la fotografía.",
+                  "minWords": 40,
+                  "points": [
+                    { "id": "p1", "label": "Dice quiénes son y dónde están", "keywords": ["familia", "senora", "hombre", "mujer", "nino", "nina", "comedor", "casa"] },
+                    { "id": "p2", "label": "Dice qué están haciendo", "keywords": ["comen", "comiendo", "almuerz", "cenan", "sonri", "sirv", "pasan", "hablan", "platican", "conversan", "comparten", "disfrut"] },
+                    { "id": "p3", "label": "Dice qué hay sobre la mesa", "keywords": ["arroz", "ensalada", "olla", "plato", "vaso", "jarra", "mantel", "verdura", "frijol", "caldo", "guis", "agua"] }
+                  ],
+                  "model": "En la fotografía veo a una familia en el comedor de una casa. Hay cinco personas: una señora mayor, un hombre con bigote, una mujer, una niña y un niño. Todos están sentados alrededor de la mesa y sonríen. Están comiendo. En la mesa hay un mantel blanco, una olla con verduras, un plato de arroz, ensaladas, vasos y una jarra de agua. Parece un día feliz."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Con quién come usted normalmente?",
+                  "minWords": 10,
+                  "points": [
+                    { "id": "p1", "label": "Dice con quién come normalmente", "keywords": ["con mi", "mi famil", "mis pad", "mis papa", "mis ami", "con amig", "mis hij", "mi espos", "mi parej", "mis herman", "mis compan", "como sol"] }
+                  ],
+                  "model": "Normalmente como con mi familia, con mi esposo y mis hijos. Los domingos también comemos con mis padres en su casa."
+                },
+                {
+                  "id": "t3",
+                  "ask": "¿Cuál es su comida favorita y por qué?",
+                  "minWords": 10,
+                  "points": [
+                    { "id": "p1", "label": "Nombra su comida favorita", "keywords": ["taco", "pizza", "pollo", "pasta", "mole", "enchilad", "pozole", "sopa", "tamal", "hamburg", "carne", "ensalada"] }
+                  ],
+                  "model": "Mi comida favorita son los tacos de pollo. Me gustan mucho porque son muy ricos y los puedo comer con salsa verde."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Un día en el tianguis",
+              "prompt": "Observe la fotografía y descríbala con sus palabras. Después, el entrevistador le hará dos preguntas.",
+              "bullets": ["qué lugar es y quién está allí", "qué hacen las personas", "qué se vende en los puestos"],
+              "photos": ["es-a2-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Por favor, describa la fotografía.",
+                  "minWords": 40,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué lugar es y quién está", "keywords": ["tianguis", "mercado", "gente", "persona", "vendedor", "cliente", "puesto", "hombre", "mujer", "senor", "senora", "calle"] },
+                    { "id": "p2", "label": "Dice qué hacen las personas", "keywords": ["camina", "vende", "vendiendo", "compra", "pagan", "atienden", "ofrecen", "platican", "hablan", "cargan", "busca", "mira"] },
+                    { "id": "p3", "label": "Dice qué se vende", "keywords": ["fruta", "verdura", "platano", "papaya", "melon", "banana", "coles", "repollo", "limon", "cebolla", "lechuga"] }
+                  ],
+                  "model": "En la fotografía veo un tianguis, es decir, un mercado al aire libre con muchos puestos. Arriba hay lonas blancas y azules para dar sombra. A la izquierda hay un puesto de fruta con plátanos, papayas y melones, y a la derecha hay verduras, como coles. Mucha gente camina por el pasillo y los vendedores están detrás de los puestos. Es de día."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Dónde compra usted normalmente su comida?",
+                  "minWords": 10,
+                  "points": [
+                    { "id": "p1", "label": "Dice dónde compra su comida", "keywords": ["super", "mercado", "tianguis", "tienda", "tiendita", "carniceria", "fruteria", "panaderia", "abarrotes", "aplicacion", "en linea", "internet"] }
+                  ],
+                  "model": "Normalmente compro la comida en el supermercado que está cerca de mi casa, pero los sábados voy al tianguis."
+                },
+                {
+                  "id": "t3",
+                  "ask": "¿Qué compró usted la semana pasada?",
+                  "minWords": 10,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué compró", "keywords": ["compre", "compramos", "lleve", "llevamos", "fruta", "verdura", "leche", "carne", "pollo", "huevo", "queso", "tortilla"] }
+                  ],
+                  "model": "La semana pasada compré fruta, verdura y pan en el tianguis de mi barrio, con mi hermana."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Hable con el entrevistador, que representa a otra persona, en la situación relacionada con la fotografía de la tarea anterior.",
+          "talkMinutes": [
+            3,
+            4
+          ],
+          "follows": 2,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Comer en un restaurante",
+              "prompt": "Usted llega a un restaurante para comer con su familia. El entrevistador es el mesero. Hable con él y resuelva cada situación.",
+              "bullets": ["pedir una mesa", "pedir las bebidas", "pedir la comida", "reaccionar ante un problema", "pedir la cuenta"],
+              "photos": ["es-a2-1"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Buenas tardes, bienvenidos. ¿Cuántos son?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Dice cuántos son y pide una mesa", "keywords": ["somos", "mesa", "personas", "reserva", "para dos", "para tres", "para cuatro", "para cinco", "para seis", "para siete", "para ocho", "lugar para"] }
+                  ],
+                  "model": "Buenas tardes. Somos cinco: mis padres, mi hermana, mi esposo y yo. ¿Tiene una mesa cerca de la ventana?"
+                },
+                {
+                  "id": "t2",
+                  "ask": "Por aquí, por favor. ¿Qué desean tomar?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Pide las bebidas", "keywords": ["agua", "jugo", "refresco", "cerveza", "limonada", "cafe", "coca", "vino", "naranjada", "horchata", "te caliente", "te helado"] }
+                  ],
+                  "model": "Para mí, un agua de jamaica sin mucha azúcar. Para mi esposo, una cerveza, y para los demás, jugo de naranja, por favor."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Aquí tiene el menú del día. ¿Qué van a pedir?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Pide la comida", "keywords": ["quiero el", "quiero la", "quiero un", "quisiera", "queremos", "me gustaria", "me da", "me trae", "voy a pedir", "sopa", "pollo", "pescado"] }
+                  ],
+                  "model": "Yo quiero el pollo con arroz, por favor. Mi esposo va a pedir la sopa de verduras y mis padres quieren pescado."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Disculpe, hoy la cocina va un poco lenta y la comida tardará treinta minutos. ¿Le parece bien?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Reacciona ante el retraso", "keywords": ["no hay problema", "no importa", "no pasa nada", "esta bien", "de acuerdo", "perfecto", "mucho tiempo", "esper", "hambre", "rapido", "prisa", "demasiado"] }
+                  ],
+                  "model": "No hay problema, podemos esperar. Mientras tanto, ¿nos puede traer unas tortillas y salsa, por favor?"
+                },
+                {
+                  "id": "t5",
+                  "ask": "¿Desean algo más? Tenemos postres y café.",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Pide la cuenta", "keywords": ["cuenta", "cuanto es", "cuanto cuest", "cuanto le debo", "cuanto sale", "pagar", "pagamos", "pague", "cobr", "tarjeta", "efectivo"] }
+                  ],
+                  "model": "No, gracias, nada más. Todo estuvo delicioso. ¿Nos trae la cuenta, por favor? Queremos pagar con tarjeta."
+                }
+              ],
+              "input": "Menú del día: sopa de verduras, pollo con arroz, pescado frito."
+            },
+            {
+              "id": "b",
+              "title": "Comprar en el tianguis",
+              "prompt": "Usted está en un tianguis y quiere comprar fruta. El entrevistador es el vendedor de un puesto. Hable con él y resuelva cada situación.",
+              "bullets": ["decir qué necesita", "decir la cantidad", "pedir algo más o preguntar un precio", "reaccionar ante el precio", "pagar y despedirse"],
+              "photos": ["es-a2-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Buenos días, pase. ¿Qué le puedo ofrecer?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué quiere comprar", "keywords": ["quiero comprar", "quisiera", "necesito", "deme", "me da", "me gustaria", "me regala", "me pone", "platano", "papaya", "mango", "manzana"] }
+                  ],
+                  "model": "Buenos días. Quiero comprar fruta para toda la semana. Necesito plátanos y una papaya, por favor."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Los plátanos están muy buenos hoy. ¿Cuánto necesita?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Dice la cantidad", "keywords": ["kilo", "medio", "docena", "pieza", "bolsa", "racimo", "unos", "tres", "cuatro", "seis", "me da dos", "quiero dos"] }
+                  ],
+                  "model": "Me da dos kilos de plátanos, por favor. Los quiero para preparar un licuado con leche y avena para mis hijos."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Muy bien. Aquí tiene. ¿Quiere llevar algo más?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Pide algo más, pregunta un precio o dice que es todo", "keywords": ["tambien quiero", "tambien necesito", "nada mas", "es todo", "quiero un", "quisiera", "cuanto", "precio", "a como", "otro", "deme", "me da"] }
+                  ],
+                  "model": "Sí, también quiero una papaya mediana. ¿Cuánto cuesta cada una? No sé si me alcanza el dinero."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Todo es ciento veinte pesos. ¿Le parece bien?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Reacciona ante el precio", "keywords": ["esta bien", "de acuerdo", "perfecto", "caro", "barato", "descuento", "rebaj", "baja", "deja en", "ultimo precio", "mejor precio", "es mucho"] }
+                  ],
+                  "model": "Es un poco caro para mí, pero está bien. ¿Me puede hacer un descuento, por favor?"
+                },
+                {
+                  "id": "t5",
+                  "ask": "Muy bien, hoy le dejo todo en cien pesos. Su bolsa está lista.",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Paga y se despide", "keywords": ["tenga", "aqui tiene", "aqui esta", "pago", "pague", "billete", "dinero", "hasta luego", "hasta pronto", "nos vemos", "que le vaya", "adios"] }
+                  ],
+                  "model": "Tenga, aquí está el dinero. Muchas gracias por todo. Que tenga un buen día, hasta luego."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

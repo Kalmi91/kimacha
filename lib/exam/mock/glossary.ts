@@ -95,6 +95,9 @@ export function mockTaskTexts(task: MockTask): string[] {
       return task.items.flatMap((it) => [it.first, it.key, it.before, it.after]);
     case 'essay':
       return task.choices.flatMap((c) => [c.title, c.prompt, c.input ?? '']).filter(Boolean);
+    case 'speaking':
+      // The sheet and the examiner's questions are on screen (the model answers and the keywords are not).
+      return task.choices.flatMap((c) => [c.title, c.prompt, ...(c.bullets ?? []), c.input ?? '', ...c.turns.map((t) => t.ask)]).filter(Boolean);
   }
 }
 

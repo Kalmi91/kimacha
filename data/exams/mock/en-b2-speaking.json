@@ -1,0 +1,178 @@
+{
+  "target": "en",
+  "level": "B2",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "kind": "speaking",
+          "skill": "speaking",
+          "instruction": "Answer the examiner's questions about yourself.",
+          "talkMinutes": [2, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Interview",
+              "prompt": "The examiner asks you three short questions about yourself: your daily routine, your free time and your travel plans. Answer each one in a few sentences.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Let's start with your routine. What does a typical weekday look like for you?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "routine", "label": "Describes a typical weekday", "keywords": ["wake up", "get up", "morning", "afternoon", "evening", "breakfast", "lunch", "dinner", "commut", "go to work", "go to bed", "get home"] }
+                  ],
+                  "model": "On a normal weekday I usually get up around seven, have a quick breakfast and head to the office. I work until about five, then I go to the gym or cook dinner. In the evening I like to relax and watch something before bed."
+                },
+                {
+                  "id": "t2",
+                  "ask": "What do you like doing in your free time, and why?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "freetime", "label": "Names an activity and gives a reason", "keywords": ["relax", "friends", "hobby", "love to", "i enjoy", "makes me", "play", "watch", "cook", "reading", "music", "sport"] }
+                  ],
+                  "model": "I'm really into cooking, especially trying recipes from other countries. I do it because it helps me switch off after a busy week, and it's a nice way to see my friends when we all eat together."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Where would you most like to travel in the next few years, and what attracts you to that place?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "trip", "label": "Names a place and says what attracts the speaker", "keywords": ["culture", "history", "food", "nature", "beautiful", "always wanted", "dream", "beach", "mountain", "city", "cities", "explore"] }
+                  ],
+                  "model": "I'd really like to visit Japan next year. I've always been fascinated by the culture there, and I'd love to try the food and see the old temples. It also looks beautiful, especially in the spring."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "skill": "speaking",
+          "instruction": "Compare the two photographs and answer the examiner's questions.",
+          "talkMinutes": [1, 1],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Getting to work",
+              "prompt": "The photographs show people on their way to work in two different ways. Compare the photographs and answer the questions below.",
+              "bullets": [
+                "What is similar and what is different in the two situations?",
+                "Why might these people have chosen to travel to work in these ways?",
+                "How might each of them be feeling?"
+              ],
+              "photos": ["en-b2-1", "en-b2-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Here are two photographs of people on their way to work. Please compare the photographs, and say why you think they have chosen to get to work in these ways, and how they might be feeling.",
+                  "minWords": 65,
+                  "points": [
+                    { "id": "bus", "label": "Describes the crowded bus and its passengers", "keywords": ["crowd", "packed", "stand", "pole", "holding on", "squeez", "tram", "streetcar", "passenger", "public transport", "commuter", "no space"] },
+                    { "id": "bike", "label": "Describes the man on the bicycle", "keywords": ["bike", "bicycle", "cycl", "white suit", "light suit", "white jacket", "light jacket", "linen", "pedal", "pannier", "handlebar", "shop window"] },
+                    { "id": "reasons", "label": "Gives reasons for the way each person travels", "keywords": ["cheap", "faster", "traffic", "exercise", "fresh air", "avoid", "no car", "save money", "save time", "healthy"] },
+                    { "id": "feelings", "label": "Says how the people might be feeling", "keywords": ["stress", "uncomfortable", "annoy", "relaxed", "tired", "calm", "enjoy", "frustrat", "bored", "happy", "impatient", "confident"] }
+                  ],
+                  "model": "Well, in the first photo the people are standing very close together on a crowded bus or streetcar, and most of them are holding on to the poles. In the second photo, a man in a light suit is riding his bike past a shop. I suppose the passengers don't have a car, or they want to avoid the traffic, whereas the cyclist probably gets some exercise and fresh air. The people on the bus look a bit tired and uncomfortable, but the man on the bike seems relaxed."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Which of these two journeys would you prefer to make every day?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "prefer", "label": "Chooses one journey and gives a reason", "keywords": ["by bike", "by bicycle", "cycling", "by bus", "rather", "choose", "pick", "healthier", "faster", "cheaper", "less stress", "exercise"] }
+                  ],
+                  "model": "I'd pick the bike, because I could avoid the crowds and get some exercise on the way to work."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "skill": "speaking",
+          "instruction": "Talk about each idea on the sheet, then make a decision.",
+          "talkMinutes": [3, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "A better workplace",
+              "prompt": "A company wants to look after its staff. Read the question and the five ideas below. First talk about how each idea could help, then decide which two are the most useful.",
+              "input": "How could a company help its employees to be healthier and happier at work?\n\n- flexible working hours\n- working from home two days a week\n- a quiet room for short breaks\n- free fitness classes\n- team lunches once a month",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Look at the ideas on your sheet. Please talk about how each idea could help employees to be healthier and happier at work.",
+                  "minWords": 60,
+                  "points": [
+                    { "id": "hours", "label": "Flexible hours and working from home", "keywords": ["flexible", "from home", "commut", "schedule", "families", "family time", "own time", "save time", "balance", "rush hour", "kids", "children"] },
+                    { "id": "rest", "label": "Quiet room and fitness classes", "keywords": ["relax", "quiet", "recharge", "exercise", "fitness", "sport", "breaks", "energy", "short break", "take a break"] },
+                    { "id": "team", "label": "Team lunches", "keywords": ["colleague", "team", "lunch", "atmosphere", "get to know", "bond", "social", "get together"] }
+                  ],
+                  "model": "Flexible hours and working from home would let people avoid long commutes and fit work around their families, so they'd feel less rushed. A quiet room is a good place to relax and recharge for ten minutes, and fitness classes give people exercise and more energy. Team lunches are nice because colleagues get to know each other better, and the atmosphere in the office becomes friendlier. Overall, I think each idea helps in a different way."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Now please decide which two of these ideas would be the most useful for the employees, and tell me why.",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "choice", "label": "Names the idea(s) chosen", "keywords": ["flexible", "from home", "quiet room", "fitness", "exercise", "classes", "lunch", "team"] },
+                    { "id": "reason", "label": "Gives a reason for the choice", "keywords": ["so that", "that way", "which means", "helps", "improve", "reduce", "benefit", "stress", "energy", "productive", "healthy", "happier"] }
+                  ],
+                  "model": "I'd choose flexible working hours and the fitness classes, because people are much happier when they can control their own schedule, and regular exercise is important for staying healthy. So I think these two would make the biggest difference."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "speaking",
+          "skill": "speaking",
+          "instruction": "Answer the examiner's questions about working life.",
+          "talkMinutes": [4, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Working life",
+              "prompt": "The examiner now asks you about working life in general. Give your opinion and support it with reasons or examples.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Some people say that employees should be free to choose where and when they work. What do you think?",
+                  "minWords": 22,
+                  "points": [
+                    { "id": "opinion", "label": "Gives an opinion with a reason", "keywords": ["trust", "freedom", "productive", "motivat", "responsib", "i believe", "from home", "i disagree", "in my opinion", "good idea", "flexib", "independen"] },
+                    { "id": "limit", "label": "Sees another side or a limit", "keywords": ["however", "on the other hand", "depends", "not every", "some jobs", "although", "even though", "except", "teamwork", "downside", "disadvantage", "drawback"] }
+                  ],
+                  "model": "I believe it's a good idea, because people are usually more productive when they feel trusted. On the other hand, it depends on the job, since some teams need to be in the same place at the same time."
+                },
+                {
+                  "id": "t2",
+                  "ask": "How important is it to have a job you really enjoy, even if the pay is lower?",
+                  "minWords": 22,
+                  "points": [
+                    { "id": "satisfaction", "label": "Says how much job satisfaction matters", "keywords": ["very important", "really important", "extremely important", "more important", "essential", "worth", "happy", "happiness", "satisf", "meaningful", "fulfilling", "motivated"] },
+                    { "id": "money", "label": "Considers money and living costs", "keywords": ["salary", "money", "bills", "afford", "rent", "income", "living", "paid"] }
+                  ],
+                  "model": "For me it's very important, because you spend most of your day at the job and I'd rather feel motivated than bored. Of course, you still need enough money to pay the bills and afford a decent place to live, so I wouldn't accept a really tiny salary."
+                },
+                {
+                  "id": "t3",
+                  "ask": "How do you think technology will change the way people work in the next twenty years?",
+                  "minWords": 22,
+                  "points": [
+                    { "id": "change", "label": "Predicts a change brought by technology", "keywords": ["automat", "robot", "artificial intelligence", "machines", "replace", "digital", "software", "online", "computer", "internet", "remote", "virtual"] },
+                    { "id": "effect", "label": "Says what it means for people", "keywords": ["jobs", "skills", "retrain", "unemployment", "opportunit", "learn", "easier", "efficient", "adapt", "studying", "training"] }
+                  ],
+                  "model": "I think a lot of routine tasks will be automated, so machines and artificial intelligence will probably replace people in some jobs. That could be a problem, but it could also create new opportunities for those who learn new skills."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
