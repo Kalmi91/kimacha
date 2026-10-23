@@ -43,8 +43,8 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
   const check = () => {
     const ok = [answer, ...(accept ?? [])].some((target) => {
       const grade = sentence
-        ? gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(target), strictAccents)
-        : gradePcicAnswer(typed, target, strictAccents);
+        ? gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(target), strictAccents, targetLang)
+        : gradePcicAnswer(typed, target, strictAccents, targetLang);
       return suggestedGrade(grade) === 'good';
     });
     if (ok) onDone(true);

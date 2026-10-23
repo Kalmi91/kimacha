@@ -6,6 +6,7 @@ import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ScreenFeedback from '@/lib/screenFeedback';
+import { wordIn } from '@/lib/pcicItemText';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { ActionButton, ProgressBar } from '@/components/grammar/Themed';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -18,7 +19,7 @@ import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
 import { t } from '@/lib/i18n';
-import { pairOf } from '@/lib/languagePair';
+import { activeSourceFor, pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { countLearningToday } from '@/lib/learningDay';
 import { resolvedTensesFromLessons } from '@/lib/knownSentence';
@@ -71,7 +72,7 @@ function BuildStep({ entry, target, step, hints, onHint, onResult }: { entry: Se
     const targetWords = tileWords(chunk ? chunk.target : entry.target);
     const level = levelOfItem(entry.itemId);
     const vocab = (level ? pcicItemsForLevel(level) : PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l))).map((i) =>
-      (target === 'es' ? i.es : i.en).split(' / ')[0],
+      (wordIn(i, target) ?? '').split(' / ')[0],
     );
     // A mistake step's decoys are the words of the faulty sentence the learner wrote (lib/sentenceMistakes.ts).
     const trapWords = step.kind === 'mistake' && entry.mistake ? mistakeTrapWords(targetWords, entry.mistake.wrong, vocab, target) : nearMissDistractors(targetWords, vocab, target);
@@ -83,7 +84,7 @@ function BuildStep({ entry, target, step, hints, onHint, onResult }: { entry: Se
       targetWords={tiles.targetWords}
       trapWords={tiles.trapWords}
       speechLocale={speechLang(target)}
-      sourceSpeechLocale={speechLang(target === 'es' ? 'en' : 'es')}
+      sourceSpeechLocale={speechLang(activeSourceFor(target))}
       onResult={onResult}
       gradeButtons
       sourceHints={hints}
@@ -360,8 +361,9 @@ export default function SentencesScreen() {
           sourceSentence={current.source}
           targetSentence={current.target}
           strictAccents={strictAccents}
+          lang={target}
           speechLocale={speechLang(target)}
-          sourceSpeechLocale={speechLang(target === 'es' ? 'en' : 'es')}
+          sourceSpeechLocale={speechLang(activeSourceFor(target))}
           onResult={(correct, typed) => void onStepResult(correct, typed)}
           dockLift={dockLift}
           keyboardOpen={kbHeight > 0}

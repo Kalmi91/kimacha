@@ -7,7 +7,7 @@ import { legibleOn } from '@/constants/Skins';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
-import { pairOf } from '@/lib/languagePair';
+import { pairOf, type Lang } from '@/lib/languagePair';
 import { languages } from '@/lib/languages';
 import { daysUntil, type ScheduleBucketKey } from '@/lib/schedulePreview';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -103,12 +103,14 @@ export default function StatsScreen() {
 
       {showLevels && progressLevel && <LevelCard progress={progressLevel} />}
 
-      <MockExamCard
-        levels={mockLevels}
-        overview={mockOverview}
-        official={mockOfficial}
-        onStart={level => router.push({ pathname: '/mock-exam', params: { level } })}
-      />
+      {mockLevels.length > 0 && (
+        <MockExamCard
+          levels={mockLevels}
+          overview={mockOverview}
+          official={mockOfficial}
+          onStart={level => router.push({ pathname: '/mock-exam', params: { level } })}
+        />
+      )}
 
       <View style={styles.tileRow}>
         <Card style={styles.tile} classicStyle={styles.tileClassic} boxStyle={styles.tileBox}>
@@ -256,7 +258,7 @@ export default function StatsScreen() {
       </ScrollView>
 
       {/* the 💬 button goes into the navigator's header (right end), not over the list. */}
-      <ScreenFeedback placement="header" level="-" languagePair={pairOf(targetLang === 'en' ? 'en' : 'es')} currentCard="stats-tab" />
+      <ScreenFeedback placement="header" level="-" languagePair={pairOf(targetLang as Lang, sourceLang)} currentCard="stats-tab" />
     </View>
   );
 }

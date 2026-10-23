@@ -60,8 +60,6 @@ const es: typeof en = {
     missedWordDelaySeconds: (n: string) => `${n} s`,
     learningDirection: 'Dirección de aprendizaje',
     chooseDirection: 'Elige la dirección de aprendizaje',
-    directionEnEs: 'Inglés → español',
-    directionEsEn: 'Español → inglés',
     credits: 'Créditos',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reiniciar progreso de gramática',

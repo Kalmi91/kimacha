@@ -198,10 +198,10 @@ const LATE_COLUMNS: ReadonlyArray<readonly [string, string, string]> = [
   ['learn_settings', 'pcic_level', 'TEXT'],
 ];
 
-// The active language pair from onboarding (default es-hu before onboarding is done).
+// The active language pair from onboarding (default en-es before onboarding is done).
 async function readActivePair(db: SQLite.SQLiteDatabase): Promise<string> {
   const ob = await db.getFirstAsync<any>('SELECT source, target FROM onboarding WHERE id = 1');
-  return ob ? `${ob.source}-${ob.target}` : 'es-hu';
+  return ob ? `${ob.source}-${ob.target}` : 'en-es';
 }
 
 // An existing file from before PRAGMA user_version (user_version 0, the app's tables are

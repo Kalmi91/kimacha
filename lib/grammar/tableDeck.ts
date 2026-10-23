@@ -361,6 +361,8 @@ export function wordCellsForLesson(
   if (!lesson) return [];
   // the lesson itself asks for no word deck (lesson-level switch-off).
   if (lesson.noWordDeck) return [];
+  // there is no Hungarian grammar course yet, so no lesson has a word deck for the hu target.
+  if (learnedLang === 'hu') return [];
   // in the es→en direction the deck is built from the English vocabulary.
   if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);
   const cards: WordDeckCard[] = [];

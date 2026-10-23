@@ -15,6 +15,8 @@ import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
 import openC1 from '@/data/words-open/c1.json';
 import { addDays, type Sm2Card } from '@/lib/sm2';
+import { activeSourceFor } from '@/lib/languagePair';
+import { exampleIn, wordIn } from '@/lib/pcicItemText';
 
 /** A word counts as freshly learned (Words tab) when it was first asked within this many days. */
 export const PRACTICE_RECENT_DAYS = 7;
@@ -91,13 +93,14 @@ export function gapTaskFor(
   target: PcicTarget,
   info: (itemId: string) => GapSourceInfo | undefined = openGapInfo,
 ): GapTask | null {
-  const sentence = (target === 'es' ? item.exampleEs : item.exampleEn)?.trim();
-  const translation = (target === 'es' ? item.exampleEn : item.exampleEs)?.trim();
+  const source = activeSourceFor(target);
+  const sentence = exampleIn(item, target)?.trim();
+  const translation = exampleIn(item, source)?.trim();
   if (!sentence || !translation) return null;
   const known = info(item.id);
   const gap = target === 'es'
     ? (known ? gapByLemma(sentence, known) : null)
-    : gapByWord(sentence, item.en.replace(/^to\s+/i, ''));
+    : gapByWord(sentence, (wordIn(item, target) ?? '').replace(/^to\s+/i, ''));
   if (!gap) return null;
   return {
     itemId: item.id,
@@ -105,7 +108,7 @@ export function gapTaskFor(
     after: gap.after,
     answer: gap.answer,
     translation,
-    meaning: target === 'es' ? item.en : item.es,
+    meaning: wordIn(item, source) ?? '',
   };
 }
 

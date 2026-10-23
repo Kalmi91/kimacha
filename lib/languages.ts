@@ -10,6 +10,7 @@ interface Language {
 export const languages: Language[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'es', name: 'Español', flag: '🇪🇸' },
+  { code: 'hu', name: 'Magyar', flag: '🇭🇺' },
 ];
 
 // the second direction, es→en (the learner
@@ -19,7 +20,21 @@ export const languages: Language[] = [
 export const supportedPairs: [string, string][] = [
   ['en', 'es'],
   ['es', 'en'],
+  ['es', 'hu'],
+  ['en', 'hu'],
+  ['hu', 'es'],
+  ['hu', 'en'],
 ];
+
+// "🇬🇧 English → 🇪🇸 Español", the label of a pair in the direction pickers: the native language
+// names, so it needs no i18n key per pair.
+export function pairLabel(source: string, target: string): string {
+  const show = (code: string) => {
+    const lang = languages.find((l) => l.code === code);
+    return lang ? `${lang.flag} ${lang.name}` : code;
+  };
+  return `${show(source)} → ${show(target)}`;
+}
 
 // Play Store release: the pair onboarding is forced to whenever
 // it drifts from the single supported pair, whether at startup (an older
@@ -43,6 +58,7 @@ const SPEECH_LOCALE: Record<string, string> = {
   // voice it has, see voiceIdFor in lib/speech.ts.
   es: 'es-MX',
   en: 'en-US',
+  hu: 'hu-HU',
 };
 
 export function speechLang(code: string): string {

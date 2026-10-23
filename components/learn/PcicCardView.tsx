@@ -209,6 +209,7 @@ export default function PcicCardView({
             sourceSentence={sentenceCard.source}
             targetSentence={sentenceCard.target}
             strictAccents={strictAccents}
+            lang={target}
             speechLocale={speechLang(target)}
             sourceSpeechLocale={speechLang(sourceLang)}
             onResult={() => setSentenceCard(null)}
@@ -523,6 +524,7 @@ export default function PcicCardView({
               currentItem={currentItem}
               today={today}
               target={target}
+              sourceLang={sourceLang}
               onGrade={handleGrade}
             />
           )}

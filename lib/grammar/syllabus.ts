@@ -189,18 +189,22 @@ export const SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 export const GRAMMAR_PROGRESS_KEY = 'grammar-course';
 
 // Language key: 'es' (default) = the Spanish syllabus (data/grammar/syllabus.json), byte-for-byte unchanged;
-// 'en' = the English syllabus from the English topic tree (lib/grammar/syllabusEn.ts).
+// 'en' = the English syllabus from the English topic tree (lib/grammar/syllabusEn.ts);
+// 'hu' = no Hungarian grammar course yet: an empty syllabus (the course tab says it is coming).
 const EN_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 function syllabusOf(lang: string): SyllabusTopic[] {
+  if (lang === 'hu') return [];
   return lang === 'en' ? EN_SYLLABUS : getGrammarSyllabus();
 }
 
 function unitsOf(lang: string): SyllabusUnit[] {
+  if (lang === 'hu') return [];
   return lang === 'en' ? EN_UNITS : getGrammarUnits();
 }
 
 export function syllabusLevels(lang = 'es'): Level[] {
+  if (lang === 'hu') return [];
   return lang === 'en' ? EN_SYLLABUS_LEVELS : SYLLABUS_LEVELS;
 }
 

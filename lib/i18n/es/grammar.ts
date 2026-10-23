@@ -8,6 +8,7 @@ const es: typeof en = {
       `${done}/${topics} hechas · ${written} lecciones disponibles`,
     yourLevel: 'estás aquí',
     soon: 'próximamente',
+    courseComingSoon: 'El curso de gramática de húngaro llegará pronto.',
     coreTag: 'base',
     corePlusTag: 'base+',
     started: 'empezado',

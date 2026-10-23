@@ -18,6 +18,12 @@ function normalize(s: string): string {
   return s.trim().toLowerCase().replace(IGNORED_PUNCT, ' ').replace(/\s+/g, ' ').trim();
 }
 
+const IGNORED_PUNCT_HU = /[?!.,;:…]/g;
+
+function normalizeHu(s: string): string {
+  return s.trim().toLowerCase().replace(IGNORED_PUNCT_HU, ' ').replace(/\s+/g, ' ').trim();
+}
+
 function foldAccents(s: string): string {
   return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
@@ -87,21 +93,27 @@ function isAccentOnlyDiff(a: string, b: string): boolean {
 // `target` (formerly `es`) is the correct form in the TARGET
 // language, in either direction; the normalization (accents, case, "/" and
 // parenthesis alternatives) is language-independent and works for English too.
-export function gradePcicAnswer(typed: string, target: string, strictAccents = false): PcicGrade {
+//
+// `lang` is the language of `target`. Hungarian accents are phonemic (kor/kór, öt/őt), so for 'hu' an
+// accent-only difference is always wrong, whatever the Settings switch says, and the Spanish ¿ ¡ marks
+// are not Hungarian punctuation. Other languages keep their behaviour.
+export function gradePcicAnswer(typed: string, target: string, strictAccents = false, lang?: string): PcicGrade {
+  const hu = lang === 'hu';
+  const norm = hu ? normalizeHu : normalize;
   const alternatives = pcicAlternatives(target);
-  const typedNorm = stripTrailingPunct(normalize(typed));
+  const typedNorm = stripTrailingPunct(norm(typed));
 
   for (const alt of alternatives) {
-    if (stripTrailingPunct(normalize(alt)) === typedNorm) {
+    if (stripTrailingPunct(norm(alt)) === typedNorm) {
       return { match: 'exact', best: alt };
     }
   }
 
   let best = alternatives[0];
-  let bestNorm = stripTrailingPunct(normalize(best));
+  let bestNorm = stripTrailingPunct(norm(best));
   let bestDist = Infinity;
   for (const alt of alternatives) {
-    const altNorm = stripTrailingPunct(normalize(alt));
+    const altNorm = stripTrailingPunct(norm(alt));
     const dist = levenshtein(typedNorm, altNorm);
     if (dist < bestDist) {
       bestDist = dist;
@@ -115,7 +127,7 @@ export function gradePcicAnswer(typed: string, target: string, strictAccents = f
       // The strict-accents switch in Settings decides.
       // OFF: an accent-only difference counts as 100%. ON: a real error, like any
       // other letter difference.
-      return strictAccents ? { match: 'wrong', best } : { match: 'near', best, accentOnly: true };
+      return strictAccents || hu ? { match: 'wrong', best } : { match: 'near', best, accentOnly: true };
     }
     if (isWordFinalDiff(typedNorm, bestNorm)) return { match: 'wrong', best };
     return { match: 'near', best };
@@ -157,10 +169,11 @@ const GRADE_RANK: Record<PcicGrade['match'], number> = { exact: 2, near: 1, wron
  * pronoun. The better grade counts; `best` is the correct form shown (the full
  * sentence stays).
  */
-export function gradeSentenceAnswer(typed: string, target: string, strictAccents = false): PcicGrade {
-  const full = gradePcicAnswer(typed, target, strictAccents);
-  const short = withoutLeadingSubjectPronoun(target);
+export function gradeSentenceAnswer(typed: string, target: string, strictAccents = false, lang?: string): PcicGrade {
+  const full = gradePcicAnswer(typed, target, strictAccents, lang);
+  // The dropped subject pronoun is a Spanish rule (Hungarian has its own pro-drop; not modelled here).
+  const short = lang === 'hu' ? null : withoutLeadingSubjectPronoun(target);
   if (!short) return full;
-  const alt = gradePcicAnswer(typed, short, strictAccents);
+  const alt = gradePcicAnswer(typed, short, strictAccents, lang);
   return GRADE_RANK[alt.match] > GRADE_RANK[full.match] ? { ...alt, best: target } : full;
 }

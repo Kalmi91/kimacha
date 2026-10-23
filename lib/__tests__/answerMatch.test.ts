@@ -218,3 +218,29 @@ describe('indefinido-10-verbos transform accept lists', () => {
     expect(candidates.some((c) => strictAnswerMatch('Ustedes miraron la película tarde.', c))).toBe(true);
   });
 });
+
+describe('strictAnswerMatch, Hungarian answers (lang "hu")', () => {
+  // Hungarian accents are phonemic (kor / kór: age / disease; öt / őt: five / him), so they are never forgiven,
+  // neither by default nor with strict accents off.
+  it('never forgives a missing accent: kor is not kór', () => {
+    expect(strictAnswerMatch('kor', 'kór', { lang: 'hu' })).toBe(false);
+    expect(strictAnswerMatch('kor', 'kór', { lang: 'hu', strictAccents: false })).toBe(false);
+    expect(strictAnswerMatch('őt', 'öt', { lang: 'hu' })).toBe(false);
+  });
+
+  it('keeps case and punctuation forgiven, and accepts the accented spelling', () => {
+    expect(strictAnswerMatch('Kór', 'kór', { lang: 'hu' })).toBe(true);
+    expect(strictAnswerMatch('Szia!', 'szia', { lang: 'hu' })).toBe(true);
+    expect(strictAnswerMatch('köszönöm.', 'Köszönöm', { lang: 'hu' })).toBe(true);
+  });
+
+  it('does not swap Spanish articles in a Hungarian answer', () => {
+    expect(strictAnswerMatch('la ház', 'el ház', { lang: 'hu', eitherArticle: true })).toBe(false);
+  });
+
+  it('Spanish answers are unchanged: accents are forgiven unless strict', () => {
+    expect(strictAnswerMatch('como estas', '¿Cómo estás?', { lang: 'es' })).toBe(true);
+    expect(strictAnswerMatch('como estas', '¿Cómo estás?', { lang: 'es', strictAccents: true })).toBe(false);
+    expect(strictAnswerMatch('la guardia', 'el guardia', { lang: 'es', eitherArticle: true })).toBe(true);
+  });
+});

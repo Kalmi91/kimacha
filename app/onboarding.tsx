@@ -9,16 +9,17 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { useLearner } from '@/lib/learner';
 import { t, setLanguage } from '@/lib/i18n';
 import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { languages, supportedPairs } from '@/lib/languages';
 import LevelRow from '@/components/LevelRow';
 import PlacementEntry from '@/components/exam/PlacementEntry';
 import { ActionButton } from '@/components/grammar/Themed';
 import { OnboardingIntro, OnboardingThemeStep } from '@/components/OnboardingSteps';
 
-// Onboarding asks for the direction again, like the old (non-Kimacha Play) branch, but
-// only for the two supported pairs (lib/languages.ts supportedPairs): learning Spanish
-// from English (en→es), or English from Spanish (es→en). The choice also decides the UI
-// language (setLanguage to the source language), so the "Welcome" and the level-picker
-// steps already appear in it. An existing installation never sees this screen
+// Onboarding asks for the direction in two steps, only for the supported pairs
+// (lib/languages.ts supportedPairs): "I speak" (the source: English, Español, Magyar), then "I learn"
+// (the targets that pair list allows for that source, two each). The first choice also decides the UI
+// language (setLanguage to the source language), so the second step, the "Welcome" and the level-picker
+// steps already appear in it (a source without UI strings yet falls back to English). An existing installation never sees this screen
 // (app/_layout.tsx decides based on getOnboarding()), so the picker does not show up there.
 export default function OnboardingScreen() {
   const { theme } = useTheme();
@@ -27,20 +28,25 @@ export default function OnboardingScreen() {
   // on the brutalist palette a large, uppercase, ink-coloured title.
   const welcomeStyle = [styles.welcome, { color: colors.tint }, g.brutal && [styles.brutalWelcome, { color: g.ink }]];
   const s = t();
-  const [step, setStep] = useState<'language' | 'welcome' | 'intro' | 'theme' | 'level'>('language');
-  const [source, setSource] = useState<'en' | 'es'>('en');
+  const [step, setStep] = useState<'language' | 'target' | 'welcome' | 'intro' | 'theme' | 'level'>('language');
+  const [source, setSource] = useState<string>('en');
   const [target, setTarget] = useState<PcicTarget>('es');
   const { previewTarget, setOnboarding, setLevel } = useLearner();
 
-  // "English" -> en→es (today's app, every label in English);
-  // "Español" -> es→en (every label in Spanish). The UI language and the active PCIC
-  // direction switch immediately, so the Welcome screen already comes up in the right language.
-  const handleChooseLanguage = (chosenSource: 'en' | 'es') => {
-    const chosenTarget: PcicTarget = chosenSource === 'en' ? 'es' : 'en';
+  // The targets the supported pairs allow for the chosen source.
+  const targetsOf = (src: string) => supportedPairs.filter(([from]) => from === src).map(([, to]) => to);
+
+  // Step 1, "I speak": the UI language switches immediately, so the next step already comes up in it.
+  const handleChooseLanguage = (chosenSource: string) => {
     setSource(chosenSource);
-    setTarget(chosenTarget);
     setLanguage(chosenSource);
-    previewTarget(chosenTarget);
+    setStep('target');
+  };
+
+  // Step 2, "I learn": the active PCIC direction switches here, so the level step reads the right deck.
+  const handleChooseTarget = (chosenTarget: PcicTarget) => {
+    setTarget(chosenTarget);
+    previewTarget(chosenTarget, source);
     setStep('welcome');
   };
 
@@ -58,8 +64,24 @@ export default function OnboardingScreen() {
             Which language do you speak? / ¿Qué idioma hablas?
           </Text>
           <View style={styles.langButtonGroup}>
-            <ActionButton brutalTestID="onboarding-lang-en" fill="a" label="English" onPress={() => handleChooseLanguage('en')} brutalStyle={styles.brutalBtn} classicStyle={[styles.startBtn, { backgroundColor: colors.tint }]} classicTextStyle={[styles.startBtnText, { color: colors.onTint }]} />
-            <ActionButton brutalTestID="onboarding-lang-es" fill="b" label="Español" onPress={() => handleChooseLanguage('es')} brutalStyle={styles.brutalBtn} classicStyle={[styles.startBtn, { backgroundColor: colors.tint }]} classicTextStyle={[styles.startBtnText, { color: colors.onTint }]} />
+            {languages.map((lang, i) => (
+              <ActionButton key={lang.code} brutalTestID={`onboarding-lang-${lang.code}`} fill={i % 2 === 0 ? 'a' : 'b'} label={lang.name} onPress={() => handleChooseLanguage(lang.code)} brutalStyle={styles.brutalBtn} classicStyle={[styles.startBtn, { backgroundColor: colors.tint }]} classicTextStyle={[styles.startBtnText, { color: colors.onTint }]} />
+            ))}
+          </View>
+        </View>
+      </View>
+    );
+  }
+
+  if (step === 'target') {
+    return (
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <View style={styles.content}>
+          <Text variant="title" style={welcomeStyle}>{s.onboarding.learnTitle}</Text>
+          <View style={styles.langButtonGroup}>
+            {targetsOf(source).map((code, i) => (
+              <ActionButton key={code} brutalTestID={`onboarding-target-${code}`} fill={i % 2 === 0 ? 'a' : 'b'} label={languages.find((l) => l.code === code)?.name ?? code} onPress={() => handleChooseTarget(code as PcicTarget)} brutalStyle={styles.brutalBtn} classicStyle={[styles.startBtn, { backgroundColor: colors.tint }]} classicTextStyle={[styles.startBtnText, { color: colors.onTint }]} />
+            ))}
           </View>
         </View>
       </View>
@@ -81,7 +103,10 @@ export default function OnboardingScreen() {
     // case a sentence under the row says so. In en-es the selectable view levels
     // (A1/A2/B1/B2/C1), not the raw PCIC_LEVELS.
     // es-en also has A1 + A2 data, the same filter applies to both directions.
-    const levels: PcicLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
+    const offered: PcicLevel[] = PCIC_VIEW_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).length > 0);
+    // A deck with no card at all yet (a Hungarian-source pair before its gloss is filled) still offers A1,
+    // so the onboarding can finish.
+    const levels: PcicLevel[] = offered.length > 0 ? offered : ['A1'];
     // The labels are in the UI language (they used to be hardcoded in English).
     const levelLabels: Record<PcicLevel, string> = {
       A1: s.pcic.levelBeginner,
@@ -106,7 +131,7 @@ export default function OnboardingScreen() {
                 colors={colors}
                 onPress={() => handleSelectLevel(lvl)}
               />
-              {target === 'en' && total === 0 && (
+              {total === 0 && (
                 <Text style={[styles.noWordsYet, { color: colors.tabIconDefault }]}>{s.wordList.empty}</Text>
               )}
             </View>

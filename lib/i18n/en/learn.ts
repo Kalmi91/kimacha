@@ -10,7 +10,7 @@ export default {
     next: 'Next',
     typeSentence: 'Type the sentence',
     // the grey placeholder of the answer input field, with the name of the target language.
-    typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : 'Type in English'),
+    typeIn: (lang: string): string => (lang === 'es' ? 'Type in Spanish' : lang === 'hu' ? 'Type in Hungarian' : 'Type in English'),
   },
   done: {
     // Play cut: the Learn tab (Done screen) is gone, this

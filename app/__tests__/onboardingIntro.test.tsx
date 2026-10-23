@@ -23,6 +23,8 @@ async function toIntro(lang: 'English' | 'Español' = 'English') {
   render(<ThemeProvider><OnboardingScreen /></ThemeProvider>);
   await flush();
   fireEvent.press(screen.getByText(lang));
+  // the "I learn" step: the other one of the two original languages.
+  fireEvent.press(screen.getByText(lang === 'English' ? 'Español' : 'English'));
   fireEvent.press(screen.getByTestId('onboarding-start'));
 }
 

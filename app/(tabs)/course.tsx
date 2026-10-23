@@ -10,6 +10,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
+import { sourceFor } from '@/lib/languagePair';
 import { LEVELS, type Level } from '@/data/words';
 import {
   doneGrammarTopicProgress,
@@ -72,12 +73,11 @@ export default function GrammarSyllabusScreen() {
 
   const load = useCallback(async () => {
     const db = getDb();
-    const { target } = await refresh(['direction']);
+    const { target, source } = await refresh(['direction']);
     setLearnedLang(target);
-    // Kimacha Play: UI always English, regardless of the
-    // stored source language.
-    // es→en: a learner whose native language is Spanish gets the explanation in Spanish.
-    setContentLang(target === 'en' ? 'es' : 'en');
+    // The explanation language is the learner's own (the pair's source), not the language being learned:
+    // en→es English, es→en Spanish. A source without lesson text yet (hu) falls back to English per field.
+    setContentLang(sourceFor(target, source));
 
     const levelData = await db.getLevel();
     const lvl = (levelData.level as Level) ?? 'A1';
@@ -105,6 +105,16 @@ export default function GrammarSyllabusScreen() {
 
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
+
+  // No Hungarian grammar course yet: an empty state instead of the Spanish course.
+  if (learnedLang === 'hu') {
+    return (
+      <View testID="grammar-coming-soon" style={[styles.container, { backgroundColor: g.brutal ? g.bg : colors.background }]}>
+        <SkinBackdrop />
+        <Text style={[styles.comingSoon, { color: g.brutal ? g.ink : colors.text }]}>{s.grammar.courseComingSoon}</Text>
+      </View>
+    );
+  }
 
   // Neo-brutalist:
   // the classic palette renders today's look below.
@@ -379,6 +389,7 @@ export default function GrammarSyllabusScreen() {
 }
 
 const styles = StyleSheet.create({
+  comingSoon: { fontSize: 16, textAlign: 'center', paddingHorizontal: 24 },
   container: { flex: 1 },
   subtitle: { fontSize: 13, textAlign: 'center', marginTop: 2, marginBottom: 8 },
   body: { padding: 14, paddingBottom: 24, gap: 10 },

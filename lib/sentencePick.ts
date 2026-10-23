@@ -23,6 +23,11 @@ const FUNCTION_WORDS: Record<PcicTarget, ReadonlySet<string>> = {
     'does', 'did', "don't", "doesn't", "isn't", "aren't", 'not', 'no', 'with', 'for', 'from', 'by', 'this', 'that',
     'these', 'those', 'there', 'here', 'can', 'will', 'have', 'has', 'had',
   ]),
+  hu: new Set([
+    'a', 'az', 'egy', 'és', 'is', 'de', 'vagy', 'hogy', 'nem', 'én', 'te', 'ő', 'mi', 'ti', 'ők', 'van', 'vagyok',
+    'vagy', 'vagyunk', 'vagytok', 'vannak', 'volt', 'itt', 'ott', 'meg', 'el', 'ki', 'be', 'fel', 'le', 'már', 'még',
+    'nagyon', 'ez', 'az', 'ezt', 'azt',
+  ]),
 };
 
 const startOf = (e: SentenceEntry): string => (tileWords(e.target)[0] ?? '').toLowerCase();

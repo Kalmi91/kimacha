@@ -10,7 +10,7 @@ import { PCIC_LEVELS, findPcicItem, pcicItemsForLevel, type PcicLevel, type Pcic
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress, syllabusTopic } from '@/lib/grammar/syllabus';
 import { resolvedTensesFromLessons, type ResolvedTense } from '@/lib/knownSentence';
 import { t } from '@/lib/i18n';
-import { pairOf } from '@/lib/languagePair';
+import { pairOf, sourceFor } from '@/lib/languagePair';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { Card } from '@/components/grammar/Brutal';
@@ -221,7 +221,7 @@ export default function ExamScreen() {
 
   // The 💬 is on every part of the level exam; the `part` tells the Feedback sheet exactly
   // which part it is (exam:<level>:<part>). On a typing question the 💬 sits above the docked bar.
-  const pair = pairOf(source?.target === 'en' ? 'en' : 'es');
+  const pair = pairOf(source?.target ?? 'es');
   const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
@@ -288,7 +288,7 @@ export default function ExamScreen() {
     // lessons; word, reading: back to the learn tab at this level).
     const skills = skillResults(score);
     const isWeak = (skill: ExamItem['skill']) => skills.some((r) => r.skill === skill && r.weak);
-    const contentLang = source?.target === 'en' ? 'es' : 'en';
+    const contentLang = sourceFor(source?.target ?? 'es');
     const lessonLinks = isWeak('grammar') ? weakLessons(results) : [];
     const skillLabels: Record<ExamItem['skill'], string> = {
       words: s.exam.skillWords,

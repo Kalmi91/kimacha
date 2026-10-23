@@ -10,7 +10,9 @@ import type { Level } from '@/data/words';
 import type { GrammarGapItem, GrammarMarkItem } from '../games/content';
 
 // (the name is historical: the app has two content languages now, English and Spanish)
-export type Lang4 = Record<'en' | 'es', string>;
+// A lesson field is written in English and Spanish; a Hungarian text may follow (optional), and every display falls
+// back to English with `field[lang] ?? field.en`.
+export type Lang4 = Record<'en' | 'es', string> & { hu?: string };
 
 // The tenses of the tense drill (8 + the 4 added later). The order here is the
 // source of TENSE_IDS, do not swap it.

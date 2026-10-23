@@ -81,7 +81,19 @@ const ALTERNATE_READINGS: Record<string, (text: string) => string[]> = {
   de: germanReadings,
 };
 
+// Hungarian accents are phonemic (kor/kór, öt/őt: different words), so they are never forgiven, whatever the
+// Settings switch says. Case and punctuation stay forgiven; ¿ and ¡ are Spanish marks and are not stripped.
+function normalizeHungarian(text: string): string[] {
+  return text
+    .toLowerCase()
+    .normalize('NFC')
+    .replace(/[.,!?;:"'()]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
 function normalizedForms(text: string, opts: MatchOptions): string[][] {
+  if (opts.lang === 'hu') return [normalizeHungarian(text)];
   const readings = opts.lang ? ALTERNATE_READINGS[opts.lang] : undefined;
   if (readings && !opts.strictAccents) {
     return readings(text).map((reading) => normalizeWords(reading, false));
@@ -159,7 +171,8 @@ function answerCandidates(correct: string): string[] {
 export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
   const answerForms = normalizedForms(answer, opts);
   const candidates = answerCandidates(correct);
-  if (opts.eitherArticle) {
+  // The Spanish article swap (el/la) is for Spanish answers only.
+  if (opts.eitherArticle && opts.lang !== 'hu') {
     for (const c of [...candidates]) {
       const swapped = withSwappedArticle(c);
       if (swapped) candidates.push(swapped);

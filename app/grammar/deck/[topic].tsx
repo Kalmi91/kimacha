@@ -18,7 +18,7 @@ import type { Level } from '@/data/words';
 import { charDiff } from '@/lib/charDiff';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { speak } from '@/lib/speech';
-import { pairOf } from '@/lib/languagePair';
+import { activeSourceFor, pairOf, type Lang } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
 import { GRAMMAR_PROGRESS_KEY, lessonFor, syllabusTopic } from '@/lib/grammar/syllabus';
@@ -164,11 +164,11 @@ export default function TableDeckScreen() {
   };
 
   const entry = syllabusTopic(String(topicId), learnedLang);
-  // in es→en (Spanish UI) the title is in the UI language, not always English.
-  const lessonTitle = entry?.title[learnedLang === 'en' ? 'es' : 'en'] ?? entry?.title.en ?? String(topicId);
+  // the title is in the learner's own language (the pair's source), English where a title has no text in it.
+  const lessonTitle = entry?.title[activeSourceFor(learnedLang as Lang)] ?? entry?.title.en ?? String(topicId);
 
   // The FeedbackButton's pair label with the active direction (en→es or es→en).
-  const deckPair = pairOf(learnedLang === 'en' ? 'en' : 'es');
+  const deckPair = pairOf(learnedLang as Lang);
 
   const currentId = nextCellId(deck, now);
   const current = currentId ? items.find((c) => c.id === currentId) : undefined;

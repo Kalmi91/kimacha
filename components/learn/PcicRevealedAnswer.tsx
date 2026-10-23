@@ -8,6 +8,8 @@ import { charDiff } from '@/lib/charDiff';
 import { speechLang } from '@/lib/languages';
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { pcicAlternatives, type PcicGrade } from '@/lib/pcicMatch';
+import { sourceFor, type Lang } from '@/lib/languagePair';
+import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import { sm2PreviewDays, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
 import ResultBadge from '@/components/ResultBadge';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -35,6 +37,7 @@ export default function PcicRevealedAnswer({
   currentItem,
   today,
   target,
+  sourceLang,
   onGrade,
 }: {
   colors: (typeof Colors)['light'];
@@ -48,6 +51,8 @@ export default function PcicRevealedAnswer({
   // which direction is active, so the reveal (read-aloud,
   // example sentence, meaning list) shows the target language, not always Spanish.
   target: PcicTarget;
+  // the prompt language (the example sentence's translation is shown in it); defaults to the target's usual counterpart.
+  sourceLang?: Lang;
   onGrade: (g: Sm2Grade) => void;
 }) {
   // The old button row's interval preview per grade (lib/sm2.ts
@@ -61,8 +66,8 @@ export default function PcicRevealedAnswer({
   const previews = Object.fromEntries(
     GRADES.map((g) => [g, previewDays[g] === 0 ? s.pcic.intervalToday : s.pcic.intervalDays(previewDays[g])])
   ) as Record<Sm2Grade, string>;
-  const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
-  const exampleGloss = target === 'es' ? currentItem?.exampleEn : currentItem?.exampleEs;
+  const example = currentItem ? exampleIn(currentItem, target) : undefined;
+  const exampleGloss = currentItem ? exampleIn(currentItem, sourceLang ?? sourceFor(target)) : undefined;
 
   // if the typed answer exactly matches the target letter for letter and accent
   // (ignoring case and edge whitespace), the green echo is left out, the
@@ -71,7 +76,7 @@ export default function PcicRevealedAnswer({
 
   // if the answer has several alternatives (e.g. "el carro /
   // el coche"), the others are shown under the displayed correct form, so the learner knows which else is right.
-  const alsoAlternatives = pcicAlternatives(target === 'es' ? currentItem.es : currentItem.en).filter(
+  const alsoAlternatives = pcicAlternatives(wordIn(currentItem, target) ?? '').filter(
     (alt) => alt !== grade.best
   );
   // on an empty / wrong answer, the other accepted forms are shown next to the displayed form

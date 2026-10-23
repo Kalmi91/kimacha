@@ -8,7 +8,7 @@ const es: typeof en = {
     next: 'Siguiente',
     typeSentence: 'Escribe la oración',
     // the grey placeholder of the answer input field, with the name of the target language.
-    typeIn: (lang: string): string => (lang === 'es' ? 'Escribe en español' : 'Escribe en inglés'),
+    typeIn: (lang: string): string => (lang === 'es' ? 'Escribe en español' : lang === 'hu' ? 'Escribe en húngaro' : 'Escribe en inglés'),
   },
   done: {
     streak: 'días seguidos',
