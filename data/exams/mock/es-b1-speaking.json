@@ -92,8 +92,8 @@
                   "ask": "¿Qué es lo que más le gusta del lugar donde vive ahora? ¿Por qué?",
                   "minWords": 20,
                   "points": [
-                    { "id": "p1", "label": "Dice qué le gusta de su lugar", "keywords": ["me encanta", "lo mejor", "me gusta que", "me gusta mucho", "la gente", "vecinos", "tranquil", "seguro", "amables", "el parque"] },
-                    { "id": "p2", "label": "Da una razón", "keywords": ["porque", "ya que", "puesto que", "gracias a", "por eso", "es que", "debido a", "asi puedo"] }
+                    { "id": "p1", "label": "Dice qué le gusta de su lugar", "keywords": ["me encanta", "lo mejor", "me gusta que", "me gusta el", "me gusta la", "la gente", "vecinos", "tranquil", "seguro", "amables", "el parque"] },
+                    { "id": "p2", "label": "Da una razón", "keywords": ["ya que", "puesto que", "gracias a", "por eso", "es que", "debido a", "asi puedo", "porque puedo", "porque tengo", "porque aqui", "cerca de", "relaj"] }
                   ],
                   "model": "Lo que más me gusta es que mi colonia es muy tranquila y tiene un parque cerca de mi casa. Me encanta caminar ahí por las tardes, porque así puedo relajarme después del trabajo."
                 },
@@ -103,7 +103,7 @@
                   "minWords": 20,
                   "points": [
                     { "id": "p1", "label": "Da su opinión", "keywords": ["creo que es", "creo que los", "creo que no", "pienso que", "en mi opinion", "me parece que", "estoy de acuerdo", "es normal", "es natural", "tiene sentido", "es comprensible"] },
-                    { "id": "p2", "label": "Explica una razón o una consecuencia", "keywords": ["porque", "ya que", "oportunidades", "universidad", "no hay trabajo", "falta de", "se quedan", "mejor sueldo"] }
+                    { "id": "p2", "label": "Explica una razón o una consecuencia", "keywords": ["ya que", "mas trabajo", "futuro", "oportunidades", "universidad", "no hay trabajo", "falta de", "se quedan", "mejor sueldo"] }
                   ],
                   "model": "Creo que es normal, porque en los pueblos casi no hay universidades ni buenos trabajos. Los jóvenes necesitan oportunidades, aunque me parece triste que los pueblos se queden sin gente."
                 },
@@ -113,7 +113,7 @@
                   "minWords": 20,
                   "points": [
                     { "id": "p1", "label": "Dice qué decidiría", "keywords": ["aceptaria", "iria", "me quedaria", "no iria", "lo pensaria", "diria que si", "diria que no", "rechazaria", "me iria", "me mudaria", "lo tomaria", "hablaria con"] },
-                    { "id": "p2", "label": "Da un motivo", "keywords": ["porque", "ya que", "mi familia", "extranaria", "oportunidad", "sueldo", "visitar", "experiencia"] }
+                    { "id": "p2", "label": "Da un motivo", "keywords": ["ya que", "carrera", "dinero", "mi familia", "extranaria", "oportunidad", "sueldo", "visitar", "experiencia"] }
                   ],
                   "model": "Creo que aceptaría el trabajo, porque es una buena oportunidad para mi carrera. Extrañaría mucho a mi familia, pero podría visitarla en vacaciones y hablar con ella todos los días."
                 },
@@ -159,7 +159,7 @@
                   "minWords": 20,
                   "points": [
                     { "id": "p1", "label": "Da su opinión", "keywords": ["estoy de acuerdo", "no estoy de acuerdo", "muy de acuerdo", "creo que es", "creo que los", "creo que no", "pienso que", "me parece que", "tienen razon", "depende de", "es buena idea", "es mala idea"] },
-                    { "id": "p2", "label": "Explica por qué", "keywords": ["porque", "ya que", "estudi", "dormir", "duerm", "tarea", "peligro", "internet", "madurez", "adiccion"] }
+                    { "id": "p2", "label": "Explica por qué", "keywords": ["ya que", "controlar", "concentr", "estudi", "dormir", "duerm", "tarea", "peligro", "internet", "madurez", "adiccion"] }
                   ],
                   "model": "Sí, estoy de acuerdo, porque los niños todavía no saben controlar el tiempo. Si usan el celular demasiado, no hacen la tarea y duermen poco, y además en internet hay cosas peligrosas."
                 },
@@ -169,7 +169,7 @@
                   "minWords": 20,
                   "points": [
                     { "id": "p1", "label": "Dice qué haría", "keywords": ["si lo haria", "no lo haria", "dejaria", "llevaria", "apagaria", "desconect", "no podria", "me quedaria"] },
-                    { "id": "p2", "label": "Da una razón", "keywords": ["porque", "emergencia", "descans", "relaj", "fotos", "mapa", "familia", "trabajo"] }
+                    { "id": "p2", "label": "Da una razón", "keywords": ["estres", "llamar", "emergencia", "descans", "relaj", "fotos", "mapa", "familia", "trabajo"] }
                   ],
                   "model": "Yo me lo llevaría, pero lo apagaría casi todo el día, porque necesito descansar del trabajo. Solo lo usaría para tomar fotos o para llamar si hay una emergencia."
                 },

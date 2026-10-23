@@ -72,7 +72,7 @@
                   "points": [
                     { "id": "bus", "label": "Describes the crowded bus and its passengers", "keywords": ["crowd", "packed", "stand", "pole", "holding on", "squeez", "tram", "streetcar", "passenger", "public transport", "commuter", "no space"] },
                     { "id": "bike", "label": "Describes the man on the bicycle", "keywords": ["bike", "bicycle", "cycl", "white suit", "light suit", "white jacket", "light jacket", "linen", "pedal", "pannier", "handlebar", "shop window"] },
-                    { "id": "reasons", "label": "Gives reasons for the way each person travels", "keywords": ["because", "since", "cheap", "faster", "traffic", "exercise", "fresh air", "avoid"] },
+                    { "id": "reasons", "label": "Gives reasons for the way each person travels", "keywords": ["cheap", "faster", "traffic", "exercise", "fresh air", "avoid", "no car", "save money", "save time", "healthy"] },
                     { "id": "feelings", "label": "Says how the people might be feeling", "keywords": ["stress", "uncomfortable", "annoy", "relaxed", "tired", "calm", "enjoy", "frustrat", "bored", "happy", "impatient", "confident"] }
                   ],
                   "model": "Well, in the first photo the people are standing very close together on a crowded bus or streetcar, and most of them are holding on to the poles. In the second photo, a man in a light suit is riding his bike past a shop. I suppose the passengers don't have a car, or they want to avoid the traffic, whereas the cyclist probably gets some exercise and fresh air. The people on the bus look a bit tired and uncomfortable, but the man on the bike seems relaxed."
@@ -119,7 +119,7 @@
                   "minWords": 25,
                   "points": [
                     { "id": "choice", "label": "Names the idea(s) chosen", "keywords": ["flexible", "from home", "quiet room", "fitness", "exercise", "classes", "lunch", "team"] },
-                    { "id": "reason", "label": "Gives a reason for the choice", "keywords": ["because", "since", "so that", "that way", "which means", "otherwise", "helps", "improve", "reduce", "benefit"] }
+                    { "id": "reason", "label": "Gives a reason for the choice", "keywords": ["so that", "that way", "which means", "helps", "improve", "reduce", "benefit", "stress", "energy", "productive", "healthy", "happier"] }
                   ],
                   "model": "I'd choose flexible working hours and the fitness classes, because people are much happier when they can control their own schedule, and regular exercise is important for staying healthy. So I think these two would make the biggest difference."
                 }
@@ -143,7 +143,7 @@
                   "ask": "Some people say that employees should be free to choose where and when they work. What do you think?",
                   "minWords": 22,
                   "points": [
-                    { "id": "opinion", "label": "Gives an opinion with a reason", "keywords": ["trust", "freedom", "productive", "motivat", "responsib", "i believe", "i agree", "i disagree", "in my opinion", "good idea", "flexib", "independen"] },
+                    { "id": "opinion", "label": "Gives an opinion with a reason", "keywords": ["trust", "freedom", "productive", "motivat", "responsib", "i believe", "from home", "i disagree", "in my opinion", "good idea", "flexib", "independen"] },
                     { "id": "limit", "label": "Sees another side or a limit", "keywords": ["however", "on the other hand", "depends", "not every", "some jobs", "although", "even though", "except", "teamwork", "downside", "disadvantage", "drawback"] }
                   ],
                   "model": "I believe it's a good idea, because people are usually more productive when they feel trusted. On the other hand, it depends on the job, since some teams need to be in the same place at the same time."
