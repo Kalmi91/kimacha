@@ -11,7 +11,7 @@ import { grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/li
 import { GRAMMAR_PROGRESS_KEY, lessonFor, scoredKinds } from '@/lib/grammar/syllabus';
 import { betterBest, kindBestKey, kindProgressFromRows, kindRunKey, lessonScore } from '@/lib/grammar/lessonScore';
 import { speakSequence, stopSpeaking } from '@/lib/speech';
-import { splitByMarkers } from '@/lib/mixedSpeech';
+import { lessonSpeechSegments } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
 import { sourceFor } from '@/lib/languagePair';
 import { countLearningToday } from '@/lib/learningDay';
@@ -139,8 +139,7 @@ export function useGrammarTopic() {
       setSpeaking(false);
       return;
     }
-    const text = lesson!.speak[contentLang as 'en' | 'es'] ?? lesson!.speak.en;
-    const segments = splitByMarkers(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
+    const segments = lessonSpeechSegments(lesson!.speak, contentLang, learnedLang).map((seg) => ({
       text: seg.text,
       locale: speechLang(seg.lang),
     }));

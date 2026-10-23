@@ -1,4 +1,4 @@
-import { splitByMarkers } from '@/lib/mixedSpeech';
+import { lessonSpeechSegments, splitByMarkers } from '@/lib/mixedSpeech';
 
 const hu = { learnedLang: 'es', nativeLang: 'hu' };
 
@@ -40,6 +40,31 @@ describe('splitByMarkers', () => {
     expect(segments).toEqual([
       { text: 'Azt mondja:', lang: 'hu' },
       { text: 'Soy profesor de verdad.', lang: 'hu' },
+    ]);
+  });
+});
+
+describe('lessonSpeechSegments', () => {
+  const speak = { en: 'Say «I am a teacher» like this.', es: 'Dilo «I am a teacher» así.', hu: 'Így mondd: «I am a teacher»' };
+
+  it('reads the Hungarian text with the Hungarian voice and the marked sections with the learned language', () => {
+    expect(lessonSpeechSegments(speak, 'hu', 'en')).toEqual([
+      { text: 'Így mondd:', lang: 'hu' },
+      { text: 'I am a teacher', lang: 'en' },
+    ]);
+  });
+
+  it('keeps the en and es sources as they were', () => {
+    expect(lessonSpeechSegments(speak, 'es', 'en')[0]).toEqual({ text: 'Dilo', lang: 'es' });
+    expect(lessonSpeechSegments(speak, 'en', 'es')[0]).toEqual({ text: 'Say', lang: 'en' });
+  });
+
+  it('a lesson without Hungarian text falls back to the English text and the English voice', () => {
+    const noHu = { en: speak.en, es: speak.es };
+    expect(lessonSpeechSegments(noHu, 'hu', 'es')).toEqual([
+      { text: 'Say', lang: 'en' },
+      { text: 'I am a teacher', lang: 'es' },
+      { text: 'like this.', lang: 'en' },
     ]);
   });
 });
