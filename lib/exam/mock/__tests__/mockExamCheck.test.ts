@@ -477,6 +477,13 @@ describe('speaking papers (S1-S7)', () => {
     fails(broke((d) => (turnOf(d, 0).model = `Que opina de la pregunta 1 ${WORDS.slice(0, 3).join(' ')}`)), /S4: .*turns\[0\]: the model answer has/);
   });
 
+  it('S8: a keyword must not echo the question (repeating the question earns no point)', () => {
+    // "opina" is a word of the question "Que opina de la pregunta 1?"; "opinion" is not, and a phrase only counts as a whole
+    fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['opina', 'jardin', 'pueblo', 'casa'])), /S8: .*points\[0\]: keyword "opina" is in the question itself/);
+    expect(broke((d) => (turnOf(d, 0).points[0].keywords = ['opinion', 'jardin', 'pueblo', 'casa'])).status).toBe(0);
+    expect(broke((d) => (turnOf(d, 0).points[0].keywords = ['opina que', 'jardin', 'pueblo', 'casa'])).status).toBe(0);
+  });
+
   it('S5: every photo key is in the registry and has its file', () => {
     fails(broke((d) => (choiceOf(d, 2).photos = ['nope'])), /S5: choices\[0\]: photo "nope" is not in photos.json/);
     fails(broke((d) => (choiceOf(d, 2).photos = ['ph3'])), /S5: choices\[0\]: photo "ph3" has no photo file \(ph3.jpg \/ ph3.jpg\)/);

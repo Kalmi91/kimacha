@@ -34,6 +34,7 @@
 //   S5  every photo key is in photos.json and its file exists
 //   S6  choices, prepSeconds, talkMinutes, follows, turns per task and photos per choice are those of the SPEC table
 //   S7  word budget: the minWords of the turns (longest choice per task) add up to at most 20 x the paper's minutes
+//   S8  no keyword echoes the examiner's question (it would match a word of `ask`): repeating the question must not earn a point
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -606,7 +607,13 @@ const KINDS = {
           turn.points.forEach((p, m) => {
             if (!isObj(p)) return;
             if (!Array.isArray(p.keywords) || p.keywords.length < 4 || p.keywords.length > 8 || !p.keywords.every(isStr)) bad(`S3: ${tat}.points[${m}]: keywords must be a list of 4-8 non-empty strings`);
-            else checkM8(p.keywords, err, `${tat}.points[${m}]`);
+            else {
+              checkM8(p.keywords, err, `${tat}.points[${m}]`);
+              if (isStr(turn.ask)) {
+                const askWords = foldedTokens(turn.ask).join(' ');
+                for (const kw of p.keywords.filter((kw) => keywordHit(kw, askWords, fold(turn.ask)))) err(`S8: ${tat}.points[${m}]: keyword "${kw}" is in the question itself`);
+              }
+            }
           });
         }
         if (!sound) return;
