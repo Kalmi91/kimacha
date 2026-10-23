@@ -17,43 +17,53 @@ export const OPTION_HINTS: Record<string, Lang4> = {
   'profession, identity (ser)': {
     en: `name, job, character · ${traits}`,
     es: `nombre, profesión, carácter · ${traits}`,
+    hu: `név, foglalkozás, jellem · ${traits}`,
   },
   'origin (ser)': {
     en: 'country, city, nationality · Soy de México, es mexicana',
     es: 'país, ciudad, nacionalidad · Soy de México, es mexicana',
+    hu: 'ország, város, nemzetiség · Soy de México, es mexicana',
   },
   'time, date (ser)': {
     en: 'hour, day, date · Son las tres, es lunes',
     es: 'hora, día, fecha · Son las tres, es lunes',
+    hu: 'óra, nap, dátum · Son las tres, es lunes',
   },
   'location (estar)': {
     en: 'where someone or something is · Estoy en casa, está en la mesa',
     es: 'dónde está alguien o algo · Estoy en casa, está en la mesa',
+    hu: 'hol van valaki vagy valami · Estoy en casa, está en la mesa',
   },
   'temporary state (estar)': {
     en: 'mood, health, right now · Estoy cansado, está enfermo',
     es: 'ánimo, salud, ahora mismo · Estoy cansado, está enfermo',
+    hu: 'hangulat, egészség, éppen most · Estoy cansado, está enfermo',
   },
   'result of a change (estar)': {
     en: 'what is left after an action · La puerta está abierta',
     es: 'lo que queda tras una acción · La puerta está abierta',
+    hu: 'ami egy cselekvés után marad · La puerta está abierta',
   },
   // --- English lesson (to-be), the examples in English ---
   'identity, profession (ser meaning)': {
     en: 'name, job, character · I am Ana, she is a doctor, he is kind',
     es: 'nombre, profesión, carácter · I am Ana, she is a doctor, he is kind',
+    hu: 'név, foglalkozás, jellem · I am Ana, she is a doctor, he is kind',
   },
   'origin, identity (ser meaning)': {
     en: 'country, city, nationality · I am from Mexico, she is Mexican',
     es: 'país, ciudad, nacionalidad · I am from Mexico, she is Mexican',
+    hu: 'ország, város, nemzetiség · I am from Mexico, she is Mexican',
   },
   'location (estar meaning)': {
     en: 'where someone or something is · I am at home, the book is on the table',
     es: 'dónde está alguien o algo · I am at home, the book is on the table',
+    hu: 'hol van valaki vagy valami · I am at home, the book is on the table',
   },
   'temporary state (estar meaning)': {
     en: 'mood, health, right now · I am tired, she is ill',
     es: 'ánimo, salud, ahora mismo · I am tired, she is ill',
+    hu: 'hangulat, egészség, éppen most · I am tired, she is ill',
   },
 };
 

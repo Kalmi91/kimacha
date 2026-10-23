@@ -5,7 +5,7 @@ import verbosReflexivos from '@/data/games/grammar/es/verbos-reflexivos.json';
 import interrogativos from '@/data/games/grammar/es/interrogativos.json';
 import sustantivoNumero from '@/data/games/grammar/es/sustantivo-numero.json';
 import type { LessonV2 } from '../grammar/lessonTypes';
-import { isConjugationTable, isMeaningTable, splitStemEnding, verbClassOf, verbColumnColor } from '../grammar/tableShape';
+import { isConjugationTable, isMeaningTable, personGloss, splitStemEnding, verbClassOf, verbColumnColor } from '../grammar/tableShape';
 
 function tableBlock(lesson: unknown, id: string) {
   const body = (lesson as LessonV2).body;
@@ -118,5 +118,14 @@ describe('isMeaningTable', () => {
   it('is false for a reference table with a different header (sustantivo-numero: "Singular")', () => {
     const block = tableBlock(sustantivoNumero, 'plural');
     expect(isMeaningTable(block.header, block.rows)).toBe(false);
+  });
+});
+
+describe('personGloss', () => {
+  it('glosses a person in the learner language (hu, en) and is empty for an unknown label', () => {
+    expect(personGloss('yo', 'hu')).toBe('én');
+    expect(personGloss('Tú', 'en')).toBe('you');
+    expect(personGloss('ellos/ellas', 'hu')).toBe('ők');
+    expect(personGloss('no person', 'hu')).toBe('');
   });
 });
