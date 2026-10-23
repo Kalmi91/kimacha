@@ -9,7 +9,7 @@
         {
           "kind": "clips_mc",
           "skill": "listening",
-          "instruction": "You will hear people talking in eight different situations. For each question, choose the correct answer (A, B or C).",
+          "instruction": "Eight short recordings follow, each in a different situation. After each one, choose the best answer (A, B or C).",
           "clips": [
             {
               "audio": [
@@ -129,7 +129,7 @@
         {
           "kind": "cloze",
           "skill": "listening",
-          "instruction": "You will hear a woman giving a talk about a bird rescue center. For each question, complete the sentence with a word or short phrase.",
+          "instruction": "A woman gives a talk about a bird rescue center. Complete each sentence in the notes with a word or a short phrase from the recording.",
           "title": "Coastal Bird Rescue Center",
           "text": "The center was founded in {{1}}.\nIt was started by a group of local {{2}}.\nMost injured birds are brought in after being caught in {{3}}.\nThe most common patient is the {{4}}.\nVolunteers must first complete {{5}} before handling the birds.\nThe birds are fed a special diet of {{6}}.\nThe center's yearly budget depends mainly on {{7}}.\nOn Saturdays, visitors can take a {{8}} through the center.\nA new {{9}} was built last year for birds recovering from oil spills.\nFor the early morning shift, volunteers should bring {{10}}.",
           "audio": [
@@ -162,7 +162,7 @@
         {
           "kind": "match_pool",
           "skill": "listening",
-          "instruction": "You will hear five people talking about a hobby they have taken up. For each speaker, choose from the list (A to H) what the person says. Use each letter only once. There are three extra letters which you do not need to use.",
+          "instruction": "Five people describe a hobby they have taken up. Match each speaker with the statement (A to H) that reflects what the speaker says. Every statement can be used once at most, and three of them do not match anybody.",
           "prompts": [
             {
               "id": "s1",
@@ -211,7 +211,7 @@
         {
           "kind": "passage_mc",
           "skill": "listening",
-          "instruction": "You will hear an interview with a man who owns a restaurant. For each question, choose the correct answer (A, B or C).",
+          "instruction": "In this interview, a restaurant owner talks about his work. Answer each question by choosing A, B or C.",
           "audio": [
             { "speaker": "f", "text": "Welcome to the program. With me today is Marcus Hale, who runs a restaurant that throws away almost nothing. Marcus, how did that start?" },
             { "speaker": "m", "text": "Thanks for having me. Honestly, it began with embarrassment. About six years ago I was running a very ordinary restaurant, and one evening, after a quiet Tuesday, I carried out nine bags of trash. Nine bags! I looked at them and thought, I paid for every bit of that food." },

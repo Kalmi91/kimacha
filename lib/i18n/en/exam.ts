@@ -101,7 +101,7 @@ export default {
     passRuleAverage: (pct: number) =>
       `To pass: an average of about ${pct}% across the skills. This pass line is an estimate, the real exam does not publish one.`,
     passRuleScale: (needed: number) =>
-      `To pass: an average of about ${needed} points on the exam scale. This pass line is an estimate, the real exam does not publish one.`,
+      `To pass: an average of at least ${needed} points on the exam scale. Your scale score here is an estimate from your raw points.`,
     shortNote: 'Shorter than the real exam, points are scaled. The clock is the real one.',
     fullNote: 'As long as the real exam. The clock is the real one.',
     unavailableBody: 'There is no practice exam for this level yet.',
@@ -205,7 +205,7 @@ export default {
     mockBandScale: (name: string, scale: number, points: number, max: number) => `${name}: about ${scale} on the exam scale (${points} / ${max})`,
     mockScaleLine: (avg: number, needed: number, passed: boolean, provisional: boolean) =>
       `Average on the exam scale: about ${avg}, needed about ${needed} (estimate), ${passed ? 'passed' : 'not passed'}${provisional ? ' (provisional)' : ''}`,
-    mockScaleNote: 'Approximate: the scale scores come from a practice conversion of your raw scores. The real exam does not publish a pass mark.',
+    mockScaleNote: 'Approximate: the scale scores come from a practice conversion of your raw scores; the real exam does not publish its conversion.',
     mockPaperLine: (name: string, minutes: number, tasks: number) => `${name}: ${minutes} min, ${tasks} ${tasks === 1 ? 'task' : 'tasks'}`,
     mockPaperMeta: (minutes: number, tasks: number) => `${minutes} min, ${tasks} ${tasks === 1 ? 'task' : 'tasks'}`,
   },

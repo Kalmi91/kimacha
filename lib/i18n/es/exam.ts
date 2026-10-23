@@ -95,7 +95,7 @@ const es: typeof en = {
     passRuleAverage: (pct: number) =>
       `Para aprobar: un promedio de alrededor del ${pct}% entre las destrezas. Este puntaje mínimo es una estimación, el examen real no publica uno.`,
     passRuleScale: (needed: number) =>
-      `Para aprobar: un promedio de alrededor de ${needed} puntos en la escala del examen. Este puntaje mínimo es una estimación, el examen real no publica uno.`,
+      `Para aprobar: un promedio de al menos ${needed} puntos en la escala del examen. Tu puntaje en la escala aquí es una estimación a partir de tus puntos.`,
     shortNote: 'Más corto que el examen real, los puntos se escalan. El reloj es el real.',
     fullNote: 'Tan largo como el examen real. El reloj es el real.',
     unavailableBody: 'Todavía no hay examen de práctica para este nivel.',
@@ -199,7 +199,7 @@ const es: typeof en = {
     mockBandScale: (name: string, scale: number, points: number, max: number) => `${name}: unos ${scale} en la escala del examen (${points} / ${max})`,
     mockScaleLine: (avg: number, needed: number, passed: boolean, provisional: boolean) =>
       `Promedio en la escala del examen: unos ${avg}, mínimo aproximado ${needed} (estimación), ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
-    mockScaleNote: 'Aproximado: los puntos de la escala salen de una conversión de práctica de tus puntos brutos. El examen real no publica una nota mínima.',
+    mockScaleNote: 'Aproximado: los puntos de la escala salen de una conversión de práctica de tus puntos brutos; el examen real no publica su conversión.',
     mockPaperLine: (name: string, minutes: number, tasks: number) => `${name}: ${minutes} min, ${tasks} ${tasks === 1 ? 'tarea' : 'tareas'}`,
     mockPaperMeta: (minutes: number, tasks: number) => `${minutes} min, ${tasks} ${tasks === 1 ? 'tarea' : 'tareas'}`,
   },

@@ -9,7 +9,7 @@
         {
           "skill": "listening",
           "kind": "clips_mc",
-          "instruction": "You will hear seven short recordings. For each question, choose the correct answer.",
+          "instruction": "Listen to seven short recordings. Each has one question with three possible answers; pick the right one.",
           "clips": [
             {
               "audio": [
@@ -114,7 +114,7 @@
         {
           "skill": "listening",
           "kind": "clips_mc",
-          "instruction": "You will hear six short conversations. For each question, choose the correct answer.",
+          "instruction": "Listen to six short conversations. After each one, pick the best answer to the question.",
           "clips": [
             {
               "audio": [
@@ -215,7 +215,7 @@
         {
           "skill": "listening",
           "kind": "cloze",
-          "instruction": "You will hear a radio presenter talking about a summer festival. For each question, write ONE, TWO or THREE words in the gap.",
+          "instruction": "A radio presenter talks about a summer festival. Listen and fill each gap in the notes with one, two or three words.",
           "title": "Riverside Festival",
           "audio": [
             { "speaker": "f", "text": "Good morning, everyone, and welcome to Community Voice. I'm Karen Mills, and today I'd like to tell you about the biggest event of the summer in our town, the Riverside Festival. This year, it takes place from the fourteenth to the sixteenth of August, so mark your calendars. As always, everything happens in Harper Park, right next to the old stone bridge." },
@@ -239,7 +239,7 @@
         {
           "skill": "listening",
           "kind": "passage_mc",
-          "instruction": "You will hear an interview with a baker called Laura. For each question, choose the correct answer.",
+          "instruction": "Listen to a radio interview with Laura, who runs a bakery. Pick the best answer to each question.",
           "audio": [
             { "speaker": "m", "text": "Welcome to the program, Laura. Three years ago, you worked in a bank, and today you have your own bakery. That's quite a change. What made you leave your job?" },
             { "speaker": "f", "text": "Well, the money was good, but I wasn't happy. I sat in front of a computer all day, and I never saw anything that I had made with my own hands. I had always loved baking at home, especially with my grandmother, so slowly I started to dream about it. Of course, my family was worried. My father kept asking me if I was sure." },

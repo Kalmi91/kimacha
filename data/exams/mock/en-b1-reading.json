@@ -9,7 +9,7 @@
         {
           "skill": "reading",
           "kind": "clips_mc",
-          "instruction": "Read the five short texts and choose the correct answer for each question.",
+          "instruction": "Each of these five short texts has one question. Pick the best answer to it.",
           "clips": [
             {
               "text": "NOTICE TO STUDENTS. The study rooms on the second floor are closed this week while workers put in new carpet. Please use the quiet reading area on the ground floor instead. The rooms will open again next Monday.",
@@ -86,7 +86,7 @@
         {
           "skill": "reading",
           "kind": "match_pool",
-          "instruction": "Read the descriptions of five people and the information about eight activities. Choose the best activity for each person. Each activity can be used only once.",
+          "instruction": "Five people are looking for an activity, and eight activities are described. Find the one that suits each person best. No activity suits more than one person.",
           "prompts": [
             {
               "id": "1",
@@ -163,7 +163,7 @@
         {
           "skill": "reading",
           "kind": "passage_mc",
-          "instruction": "Read the article and choose the correct answer for each question.",
+          "instruction": "After reading the article, answer each question by picking the best option.",
           "title": "Why I started cycling to work",
           "text": "Two years ago, I lived about eight miles from my office, and I drove there every day. The trip took forty minutes in the morning and almost an hour in the evening because of the heavy traffic. When I got home, I was always tired and bad-tempered, and I had no energy for anything except watching TV. My doctor told me I needed more exercise, but I always answered that I was too busy.\n\nThe change started with a small accident. My car broke down one Monday, and the repair shop said it would need a week to fix it. The bus would have taken ninety minutes, so my neighbor Carlos offered me his old bike. On the first day, I was terrible. My legs hurt, I got lost twice, and I arrived at work late and red in the face. My colleagues laughed, and I promised myself that I would never do it again.\n\nThe next morning, something strange happened. I woke up and wanted to try again. By Wednesday, I had found a quiet route along the river, and I started to enjoy the fresh air and the silence. The ride took only fifty minutes, which wasn't much longer than driving. When my car was ready, I decided to leave it in the garage for one more week. That week became a month, and the month became a year.\n\nCycling has changed more than my fitness. I sleep better, I spend less money on gas and parking, and I notice things I never saw from the car, like the bakery with the best bread in town. My husband says I look younger, too. In winter, the mornings are cold and dark, and sometimes I arrive wet after the rain. I still drive when I have to carry heavy things or when the weather is terrible.\n\nMany people tell me they would like to do the same, but they are afraid of the traffic or think they are not fit enough. My advice is simple: don't wait for the perfect moment, and don't try to be fast. Start with one day a week and choose a quiet road. You will probably be surprised by how quickly your body gets used to it.",
           "questions": [
@@ -222,7 +222,7 @@
         {
           "skill": "reading",
           "kind": "gapped_text",
-          "instruction": "Five sentences have been removed from the article. Choose the correct sentence for each gap. There are three extra sentences that you do not need.",
+          "instruction": "Five sentences are missing from the article. Put the right sentence into each gap. Three of the sentences listed do not belong anywhere.",
           "title": "The garden on Maple Street",
           "text": "Ten years ago, the empty lot at the end of Maple Street was just a place where people left old furniture and bags of garbage. Neighbors complained about the smell, and children were told never to play there. Today, it is the most popular spot in the neighborhood, and you can see why on any Saturday morning. {{1}} It all started with a retired teacher named Rosa Alvarez, who lives in the house across the street.\n\nRosa was tired of looking at the mess from her window. One spring, she bought some seeds and a small shovel and began to clean a corner of the lot. It was hard work, because the ground was full of stones, broken glass and old tires. At first, the neighbors thought she was a little crazy. {{2}} This encouraged her, and soon a young father brought his two children to help, followed by a group of students from the nearby school.\n\nThe city gave the group permission to use the land, and a local store gave them tools, wood and several cans of paint. {{3}} They built tables, a small shed and a long fence painted in bright colors. The children made signs for each plant so that visitors could learn their names. On Sunday afternoons, the garden also became a place for birthday parties and music, and the old furniture from the lot was turned into benches.\n\nNot everything went well, of course. In the second summer, there was no rain for six weeks, and most of the tomatoes died, along with the beans and half of the flowers. {{4}} Rosa answered by organizing a schedule, so that each volunteer visited the garden on a different day with a bucket of water. The city later helped them to install a large water tank, and the following year the plants were stronger than ever.\n\nToday, the garden produces enough vegetables to give away to families who need them. {{5}} Rosa says she never imagined that a few seeds could change so much. \"People used to walk quickly past this place,\" she says. \"Now they stop and say hello.\" She is seventy-three, but she still arrives first every morning, with a cup of tea and her old shovel.",
           "fragments": [
@@ -246,7 +246,7 @@
         {
           "skill": "reading",
           "kind": "cloze",
-          "instruction": "Read the e-mail and choose the correct word for each gap.",
+          "instruction": "In this e-mail, each gap needs one word. Pick the word that fits best.",
           "title": "Greetings from Lisbon",
           "text": "Hi Sam,\n\nGreetings from Lisbon! We have been here {{1}} Sunday, and I already love this city. The weather has been perfect, so we have {{2}} most of our days outside. Yesterday we rode an old yellow tram up a steep hill and had lunch in a tiny restaurant {{3}} has only five tables. The owner recommended a fish dish, and it was the best meal I have ever {{4}}. In the afternoon, we {{5}} the castle and enjoyed the view of the river. Tomorrow we are planning a day trip to the beach, if it doesn't rain. The people here are friendly, too. I hope everything is fine at home, and please say hello to your parents for me. I'll send you some photos {{6}} I get back.\n\nSee you soon,\n\nNora",
           "gaps": [
@@ -261,7 +261,7 @@
         {
           "skill": "reading",
           "kind": "cloze",
-          "instruction": "Read the story and write ONE word in each gap.",
+          "instruction": "Complete the story by writing a single word in every gap.",
           "title": "A busy morning",
           "text": "Last Tuesday was a strange day. I woke up late {{1}} my alarm clock did not ring. I ran to the bus stop, but the bus {{2}} already left. It was raining, and I did not have an umbrella. So I walked to work, and I was so tired {{3}} I could hardly speak when I arrived. My boss was waiting for me. \"Where have you been?\" she asked. I told her the story, and she started to laugh. \"Don't worry,\" she said, \"it happens {{4}} everyone.\" At lunchtime, I went to the café across the street, but there was hardly {{5}} left to eat except one sandwich. I bought it, and {{6}} the end it turned out to be the best sandwich I have ever had.",
           "gaps": [
