@@ -41,7 +41,7 @@ export class DbCore implements DB {
   // Waits for the store and returns the active pair. The first completed open hands over the pair
   // the migration found; anything that sets activePair itself calls this first, so that
   // hand-over can never overwrite its value later.
-  private async ready(): Promise<string> {
+  protected async ready(): Promise<string> {
     const migrated = await this.store.open();
     if (!this.pairLoaded) {
       this.pairLoaded = true;
