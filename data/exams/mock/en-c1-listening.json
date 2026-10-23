@@ -1,0 +1,336 @@
+{
+  "target": "en",
+  "level": "C1",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "kind": "clips_mc",
+          "skill": "listening",
+          "instruction": "Listen to three short extracts. For each question, pick the option, A to C, that best matches what is said.",
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "f", "text": "So the rollout's officially canceled, then. After all that training." },
+                { "speaker": "m", "text": "Yes, the director told me this morning. Apparently the software did everything we asked it to. It's just that nobody used it." },
+                { "speaker": "f", "text": "I'm not surprised, to be honest. It took six clicks to log a two-minute task. By the end of the first week, people were back on their old spreadsheets, copying the figures across at the end of the day." },
+                { "speaker": "m", "text": "That's what I told the vendor. They kept saying the problem was resistance to change." },
+                { "speaker": "f", "text": "It's always resistance to change, isn't it? Never the product." },
+                { "speaker": "m", "text": "Well, I'll admit the training didn't help. We had one long session, and by the end half the room was checking their phones." },
+                { "speaker": "f", "text": "Still, I feel a bit sorry for Hannah. She spent months choosing it, and she was so sure it would work." },
+                { "speaker": "m", "text": "She's been remarkably relaxed about it, actually. She says she learned more about how our teams really work from this failure than she would have from a success. She's already writing a list of what to look for next time." },
+                { "speaker": "f", "text": "Good for her." }
+              ],
+              "questions": [
+                {
+                  "stem": "What does the man say about the new software?",
+                  "options": [
+                    "It lacked several features that staff had asked for.",
+                    "It could do the job, but staff would not use it.",
+                    "It was too expensive for the company to keep."
+                  ],
+                  "correct": 1
+                },
+                {
+                  "stem": "What does the man say about Hannah's reaction?",
+                  "options": [
+                    "She is angry with the company that supplied the software.",
+                    "She is determined to show that the software would have worked.",
+                    "She regards the experience as a useful one."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "People assume the hardest part of opening a bakery is the early mornings. It isn't. I've always been an early riser, and honestly, I rather liked the quiet at four o'clock, when it's just you and the dough." },
+                { "speaker": "f", "text": "What caught me off guard was the arithmetic. In the first year I made far too much of everything, because I couldn't bear to run out and disappoint a customer. So I'd throw away a third of what I baked, and that was money in the trash." },
+                { "speaker": "f", "text": "It was an accountant friend who showed me the numbers. She didn't tell me what to do. She just laid them out on the table, and I could see it for myself. Now I bake less, and I sell out by noon. Strangely, the customers seem to love it. They arrive earlier, they chat in the line, and the bread has become something they plan their morning around." },
+                { "speaker": "f", "text": "I only wish I'd had the nerve to try it months sooner." }
+              ],
+              "questions": [
+                {
+                  "stem": "What did she find most difficult about opening the bakery?",
+                  "options": [
+                    "Judging how much bread to bake.",
+                    "Getting up at such an early hour.",
+                    "Finding customers in a new neighborhood."
+                  ],
+                  "correct": 0
+                },
+                {
+                  "stem": "How does she feel about her decision to bake less?",
+                  "options": [
+                    "She is worried that regular customers may complain.",
+                    "She is sorry she did not make the change sooner.",
+                    "She doubts that it will continue to work."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "So what did you make of the exhibition?" },
+                { "speaker": "f", "text": "I wasn't sure at first. All those enormous black and white portraits, and not a single caption. I kept wanting someone to tell me who they were." },
+                { "speaker": "m", "text": "That was the point, wasn't it? The photographer said in the interview that names would just make us stop looking." },
+                { "speaker": "f", "text": "Maybe. But I'm not convinced it works. You end up looking at the faces the way you'd look at paintings, and that felt rather cold to me, given that they were all real people with real histories." },
+                { "speaker": "m", "text": "Well, I found it did the opposite. Because I didn't know their stories, I kept inventing them. I spent about ten minutes in front of one old man with the most extraordinary hands." },
+                { "speaker": "f", "text": "The hands, yes. That one got me too, I admit. And the room at the end, with the recordings." },
+                { "speaker": "m", "text": "I thought that was a mistake, actually. After all that silence, hearing them talk about themselves spoiled it a little." },
+                { "speaker": "f", "text": "Oh, I'd say it was the only place I felt anything. I'd happily have swapped the portraits for more of that." }
+              ],
+              "questions": [
+                {
+                  "stem": "What does the woman think about the lack of captions?",
+                  "options": [
+                    "It spoiled her enjoyment of the whole exhibition.",
+                    "It encourages people to look at the photographs more closely.",
+                    "It makes the people in the pictures seem remote."
+                  ],
+                  "correct": 2
+                },
+                {
+                  "stem": "What is the man's opinion of the recordings in the last room?",
+                  "options": [
+                    "He feels they weaken the effect of the exhibition.",
+                    "He thinks they should have been used throughout.",
+                    "He would have liked them to be longer."
+                  ],
+                  "correct": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "cloze",
+          "skill": "listening",
+          "instruction": "Listen to a talk about a museum project and complete the notes. Write one to three words in each gap.",
+          "title": "Talk: The weather diaries project",
+          "text": "The collection\n• Just over {{1}} handwritten diaries from the nineteenth century\n• The oldest diary was kept by a village {{2}}\n\nThe project\n• Within a month, {{3}} volunteers had signed up\n• Volunteers type out the entries and mark anything unusual\n• One diary from the eighteen thirties describes a hazy summer; the writer's {{4}} failed that year\n\nWhy scientists are interested\n• Few diarists had thermometers, so the most useful details are the {{5}} of ordinary events, such as the first frost\n\nProblems\n• One woman wrote only on fine days, so her diary reads like a long {{6}}\n\nNext steps\n• A searchable website opens in {{7}}\n• Volunteer sessions are held every Thursday evening in the reading room\n• Volunteers need no previous {{8}}",
+          "audio": [
+            { "speaker": "f", "text": "Good evening, everyone, and thank you for coming. My name is Rosa Delgado, I look after the archive here at the museum, and tonight I would like to tell you about a project that began almost by accident. It concerns a shelf of old notebooks that most visitors never see: our collection of weather diaries." },
+            { "speaker": "f", "text": "Let me begin by explaining what they are. They are handwritten journals, kept by ordinary people over the course of the nineteenth century, and each daily entry is often only a line or two. Rain until noon. Frost in the orchard. Wind from the north. We hold just over three hundred of them, and until recently nobody had read more than a handful. The oldest was kept by a village schoolteacher called Edmund Hale, who recorded the weather every single morning for thirty-one years." },
+            { "speaker": "f", "text": "When we began the project, the first obstacle was simply reading them. The handwriting is often cramped, the ink has faded to the color of weak tea, and some diarists used abbreviations of their own invention. So we asked for volunteers, and I was astonished by the response. Within a month we had ninety people signed up, ranging from retired engineers to teenagers who had never held a fountain pen." },
+            { "speaker": "f", "text": "Each volunteer takes a diary, types out the entries, and marks anything unusual. And there has been plenty that is unusual. In one diary from the eighteen thirties, the writer describes a summer in which the sun looked strangely red and the sky stayed hazy for weeks. A scientist from the university told us this was almost certainly dust from a volcanic eruption on the other side of the world. The diarist, of course, knew nothing about that. He simply noted that his harvest had failed that year." },
+            { "speaker": "f", "text": "This is what excites the climate scientists. Instruments only go back so far, and before that we have almost nothing that was measured. The diaries give researchers something to compare with their computer models. Few diarists owned a thermometer, so the temperatures are not what matters. What matters are the dates of ordinary events: the first frost, the day the river froze, the week the swallows arrived. A note like that can be checked and compared, year after year." },
+            { "speaker": "f", "text": "Of course, the diaries are not perfect. Diarists had their own habits and moods. One woman, for instance, wrote only on days when the weather was fine, so her notebook reads like a long vacation. Another gave up entirely every winter, which is rather inconvenient for anyone interested in the cold." },
+            { "speaker": "f", "text": "Our next step is to publish the results online, so that anyone can search them. The website will open in March, and we are planning a small launch event." },
+            { "speaker": "f", "text": "If you would like to help, we meet every Thursday evening in the reading room, and you do not need any experience. We will show you everything. Thank you very much for listening." }
+          ],
+          "gaps": [
+            { "answers": ["three hundred", "300"] },
+            { "answers": ["schoolteacher", "school teacher", "teacher"] },
+            { "answers": ["ninety", "90"] },
+            { "answers": ["harvest", "crop", "crops"] },
+            { "answers": ["dates", "date"] },
+            { "answers": ["vacation", "holiday"] },
+            { "answers": ["March"] },
+            { "answers": ["experience"] }
+          ]
+        },
+        {
+          "kind": "passage_mc",
+          "skill": "listening",
+          "instruction": "Listen to an interview with a conductor. For each question, pick the option, A to D, that best matches what is said.",
+          "audio": [
+            { "speaker": "f", "text": "Welcome back to The Arts Hour. My guest this afternoon is Martin Gale, who has conducted the Riverside Community Orchestra for twenty years. It is a group in which the youngest player is fifteen and the oldest is eighty-one. Martin, welcome to the program." },
+            { "speaker": "m", "text": "Thank you. It's a pleasure to be here." },
+            { "speaker": "f", "text": "You trained as a professional conductor, and you worked abroad with some very fine orchestras. So why did you end up with a group of amateurs?" },
+            { "speaker": "m", "text": "I'd love to say it was a noble decision, but honestly it wasn't. I'd had a difficult few years. I'd become very good at producing a flawless sound, and I'd stopped enjoying the music. A friend asked me to help out with a local group, and I said yes mainly because I thought it would be a restful change. I assumed I'd stay a few months." },
+            { "speaker": "f", "text": "And that was twenty years ago." },
+            { "speaker": "m", "text": "It was. What changed my mind was the first rehearsal. The players were, to put it kindly, uneven. But they were listening to each other with a concentration I hadn't seen in professionals for years. They were so afraid of making mistakes that they paid attention to everything." },
+            { "speaker": "f", "text": "Doesn't that kind of fear get in the way of making good music?" },
+            { "speaker": "m", "text": "Often it does, yes. But I've come to see a wrong note differently. In a professional orchestra, a wrong note is a failure. In my orchestra, it's information. It tells me exactly where a player is worried, and then we can deal with that, rather than just asking them to try harder." },
+            { "speaker": "f", "text": "Your new book, The Wrong Notes, is partly about that. But it also includes a rather alarming story about a concert." },
+            { "speaker": "m", "text": "Yes, the night of the storm. About ten minutes into the second half, the power failed, and the hall went completely dark. I thought the evening was over. But a cellist at the back simply carried on playing from memory. Then the others joined in, one by one, and we finished the piece without a single light or a single page of music." },
+            { "speaker": "f", "text": "Weren't you frightened?" },
+            { "speaker": "m", "text": "Only for the first few seconds. After that I was mostly curious to see what would happen." },
+            { "speaker": "f", "text": "And the audience?" },
+            { "speaker": "m", "text": "They were wonderful. When we finished, some of them switched on their phones and held them up so that we could see our way off the stage. We got our best review ever that week, and I'm fairly sure it wasn't because of the playing. It was because everybody there had felt something go wrong, and then watched it turn into something better." },
+            { "speaker": "f", "text": "That sounds like the sort of thing that's hard to plan." },
+            { "speaker": "m", "text": "Impossible to plan. And that was what I learned from writing the book. I had always believed that my job was to control what happened. Putting it all on paper, I realized that the best moments of twenty years were the ones I had no control over." },
+            { "speaker": "f", "text": "So what happens next? Do you see yourself still doing this in another twenty years?" },
+            { "speaker": "m", "text": "Probably not, and I'm fine with that. I've no interest in making the orchestra bigger or taking it on tour. What I'd really like is for it to carry on without me. There's a young violist, Imani, who has started leading some of the rehearsals, and I try to say as little as possible while she's doing it. It is a strange thing to look forward to, being quietly unnecessary." },
+            { "speaker": "f", "text": "Martin Gale, thank you very much." },
+            { "speaker": "m", "text": "Thank you." }
+          ],
+          "questions": [
+            {
+              "stem": "Why did Martin first agree to work with the community orchestra?",
+              "options": [
+                "He wanted to try out his ideas about amateur music.",
+                "He saw it as a way of resting from professional pressure.",
+                "He could not find work with a professional orchestra.",
+                "He felt he ought to support a friend who was in difficulty."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "What impressed Martin at the first rehearsal?",
+              "options": [
+                "How skillfully the players handled difficult passages.",
+                "How enthusiastic the players were about new music.",
+                "How quickly the players responded to his instructions.",
+                "How closely the players listened to one another."
+              ],
+              "correct": 3
+            },
+            {
+              "stem": "What does Martin mean when he says that a wrong note is “information”?",
+              "options": [
+                "It shows him what a player is worried about.",
+                "It tells him how the whole orchestra could improve.",
+                "It proves that a player has not practiced enough.",
+                "It reveals that the music chosen is too difficult."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "What does Martin say about the audience on the night of the storm?",
+              "options": [
+                "They helped the players to finish the piece in the dark.",
+                "They left early because of the storm.",
+                "They responded warmly to the way the players dealt with the problem.",
+                "They criticized the players for continuing without lights."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "What did Martin learn from writing his book?",
+              "options": [
+                "That he had been right to value a perfect sound.",
+                "That the most memorable moments were ones he had not controlled.",
+                "That amateur players are harder to control than professionals.",
+                "That he should have written the book earlier."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "What is Martin's hope for the orchestra's future?",
+              "options": [
+                "That it will grow larger and perform abroad.",
+                "That it will find a professional conductor to replace him.",
+                "That it will attract more young players.",
+                "That it will be able to continue without him."
+              ],
+              "correct": 3
+            }
+          ]
+        },
+        {
+          "kind": "match_pool",
+          "skill": "listening",
+          "instruction": "Five people each talk about a speech they gave. In Task One, match each speaker to the kind of speech, A to H.",
+          "prompts": [
+            {
+              "id": "1",
+              "audio": [
+                { "speaker": "f", "text": "My brother asked me to give the toast at his wedding, and I spent weeks writing it. I wanted it to be funny, so I told a story about the time he got us both lost on a camping trip, and everybody laughed, which was lovely." },
+                { "speaker": "f", "text": "But as I sat down, I noticed that the bride's grandmother wasn't smiling, and I couldn't stop thinking about it all evening. Had my joke upset her? I still don't know. Nobody mentioned it, but I did apologize to her at breakfast, just in case." }
+              ]
+            },
+            {
+              "id": "2",
+              "audio": [
+                { "speaker": "m", "text": "I had twenty minutes to persuade a panel of investors to back my company, and I'd rehearsed so often that I could have done it in my sleep. The numbers were good, the demonstration worked first time, and I even managed a joke or two." },
+                { "speaker": "m", "text": "What I hadn't prepared for was the silence. Four people sat there with their arms folded, and nobody so much as nodded. Afterwards, one of them thanked me and asked where I'd parked. I'd thought it went well, so I drove home feeling flat. They invested a month later, which only confused me more." }
+              ]
+            },
+            {
+              "id": "3",
+              "audio": [
+                { "speaker": "n", "text": "There was a plan to close our local swimming pool, and a neighbor persuaded me to speak at the council meeting. I'm normally the person who hides at the back of a room, so I assumed that my voice would shake and my mind would go blank." },
+                { "speaker": "n", "text": "I rehearsed in the car, in the shower, even in front of the dog. But when my name was called, something odd happened. I walked up, looked at the council members and simply started talking, quite steadily. I remember thinking, who is this person? Honestly, I was more amazed than anyone." }
+              ]
+            },
+            {
+              "id": "4",
+              "audio": [
+                { "speaker": "f", "text": "My grandfather had asked me years earlier to speak at his funeral, and when the day came, I wasn't sure I could keep my promise. I wrote four pages, and I read them so many times that the paper went soft." },
+                { "speaker": "f", "text": "In the church I kept my eyes on the page and just carried on, one sentence after another. I didn't cry until I sat down. Afterwards, people kept hugging me and saying it was beautiful, but the only thing I could feel was how glad I was that it was finished, and that I hadn't let him down." }
+              ]
+            },
+            {
+              "id": "5",
+              "audio": [
+                { "speaker": "m", "text": "When they announced my name for the volunteer of the year award, I had nothing prepared, because I truly hadn't expected to win. So I stood up and said whatever came into my head, thanked the committee, thanked my family, and sat down to loud applause." },
+                { "speaker": "m", "text": "It was only in the car that I realized I'd forgotten to mention Carla, who had organized the whole program with me for six years. I felt my face go hot. I called her that night to apologize, and she laughed it off, but I still wince whenever someone shows me the photographs." }
+              ]
+            }
+          ],
+          "options": [
+            { "id": "A", "text": "a farewell speech for a colleague who was retiring" },
+            { "id": "B", "text": "a toast at a family wedding" },
+            { "id": "C", "text": "a speech at a funeral" },
+            { "id": "D", "text": "a presentation to potential investors" },
+            { "id": "E", "text": "a speech at a school graduation" },
+            { "id": "F", "text": "an acceptance speech for an award" },
+            { "id": "G", "text": "an address at a public meeting" },
+            { "id": "H", "text": "a training session for new employees" }
+          ],
+          "answer": { "1": "B", "2": "D", "3": "G", "4": "C", "5": "F" },
+          "unique": true
+        },
+        {
+          "kind": "match_pool",
+          "skill": "listening",
+          "instruction": "In Task Two, match each speaker to the way they felt afterwards, A to H.",
+          "prompts": [
+            {
+              "id": "1",
+              "audio": [
+                { "speaker": "f", "text": "My brother asked me to give the toast at his wedding, and I spent weeks writing it. I wanted it to be funny, so I told a story about the time he got us both lost on a camping trip, and everybody laughed, which was lovely." },
+                { "speaker": "f", "text": "But as I sat down, I noticed that the bride's grandmother wasn't smiling, and I couldn't stop thinking about it all evening. Had my joke upset her? I still don't know. Nobody mentioned it, but I did apologize to her at breakfast, just in case." }
+              ]
+            },
+            {
+              "id": "2",
+              "audio": [
+                { "speaker": "m", "text": "I had twenty minutes to persuade a panel of investors to back my company, and I'd rehearsed so often that I could have done it in my sleep. The numbers were good, the demonstration worked first time, and I even managed a joke or two." },
+                { "speaker": "m", "text": "What I hadn't prepared for was the silence. Four people sat there with their arms folded, and nobody so much as nodded. Afterwards, one of them thanked me and asked where I'd parked. I'd thought it went well, so I drove home feeling flat. They invested a month later, which only confused me more." }
+              ]
+            },
+            {
+              "id": "3",
+              "audio": [
+                { "speaker": "n", "text": "There was a plan to close our local swimming pool, and a neighbor persuaded me to speak at the council meeting. I'm normally the person who hides at the back of a room, so I assumed that my voice would shake and my mind would go blank." },
+                { "speaker": "n", "text": "I rehearsed in the car, in the shower, even in front of the dog. But when my name was called, something odd happened. I walked up, looked at the council members and simply started talking, quite steadily. I remember thinking, who is this person? Honestly, I was more amazed than anyone." }
+              ]
+            },
+            {
+              "id": "4",
+              "audio": [
+                { "speaker": "f", "text": "My grandfather had asked me years earlier to speak at his funeral, and when the day came, I wasn't sure I could keep my promise. I wrote four pages, and I read them so many times that the paper went soft." },
+                { "speaker": "f", "text": "In the church I kept my eyes on the page and just carried on, one sentence after another. I didn't cry until I sat down. Afterwards, people kept hugging me and saying it was beautiful, but the only thing I could feel was how glad I was that it was finished, and that I hadn't let him down." }
+              ]
+            },
+            {
+              "id": "5",
+              "audio": [
+                { "speaker": "m", "text": "When they announced my name for the volunteer of the year award, I had nothing prepared, because I truly hadn't expected to win. So I stood up and said whatever came into my head, thanked the committee, thanked my family, and sat down to loud applause." },
+                { "speaker": "m", "text": "It was only in the car that I realized I'd forgotten to mention Carla, who had organized the whole program with me for six years. I felt my face go hot. I called her that night to apologize, and she laughed it off, but I still wince whenever someone shows me the photographs." }
+              ]
+            }
+          ],
+          "options": [
+            { "id": "A", "text": "relieved that the speech was over" },
+            { "id": "B", "text": "embarrassed by a mistake" },
+            { "id": "C", "text": "proud of how the speech was received" },
+            { "id": "D", "text": "surprised at their own calm" },
+            { "id": "E", "text": "disappointed by the audience's reaction" },
+            { "id": "F", "text": "worried that they had upset someone" },
+            { "id": "G", "text": "amused by something unexpected that happened" },
+            { "id": "H", "text": "encouraged to speak in public again" }
+          ],
+          "answer": { "1": "F", "2": "E", "3": "D", "4": "A", "5": "B" },
+          "unique": true
+        }
+      ]
+    }
+  ]
+}

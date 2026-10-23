@@ -1,0 +1,80 @@
+{
+  "target": "en",
+  "level": "C1",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "kind": "essay",
+          "skill": "writing",
+          "instruction": "Write an essay based on the notes below, in 220-260 words.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "Essay",
+              "prompt": "In your class you have attended a talk on reducing traffic in city centers. You have made the notes below. Write an essay for your tutor that discusses two of the methods in your notes and says which of the two would work better, with reasons. You can draw on the opinions heard in the discussion, but put them in your own words as far as you can.",
+              "input": "Notes from the talk: Moving through the city\n\nWays to reduce traffic in city centers:\n• charging drivers to enter the center\n• investing in cheap, frequent public transport\n• closing central streets to cars\n\nSome opinions expressed in the discussion:\n“Charges simply punish people who have no alternative.”\n“Nobody will leave the car at home if the bus is unreliable.”\n“Shops will lose customers if cars are banned.”",
+              "minWords": 220,
+              "maxWords": 260,
+              "points": [
+                { "id": "p1", "label": "discusses charging drivers", "keywords": ["charge", "congestion", "toll", "entry fee", "congestion fee", "fees", "road pricing", "pricing"] },
+                { "id": "p2", "label": "discusses public transport", "keywords": ["public transport", "public transit", "bus service", "bus network", "bus routes", "buses", "tram", "trains", "subway", "rail"] },
+                { "id": "p3", "label": "discusses closing streets to cars", "keywords": ["car free", "traffic free", "no cars", "closing streets", "closing central", "closure of", "pedestrian", "cycling", "restricting cars", "banning cars"] },
+                { "id": "p4", "label": "says which method is more effective", "keywords": ["more effective", "most effective", "i believe", "in my opinion", "in my view", "more successful", "more promising", "better option", "better solution", "preferable"] },
+                { "id": "p5", "label": "draws a conclusion", "keywords": ["in conclusion", "to conclude", "to sum up", "all things considered", "on balance", "ultimately", "overall", "in the long term"] }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "essay",
+          "skill": "writing",
+          "instruction": "Pick one of the three tasks. Write 220-260 words in a style that suits it.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "Letter",
+              "prompt": "An international magazine is running a series called “The Skill That Changed My Life”. Readers are invited to write a letter describing a skill they learned as an adult. In your letter to the editor, explain how you learned the skill, what made it difficult, and what difference it has made to your daily life or career.",
+              "minWords": 220,
+              "maxWords": 260,
+              "points": [
+                { "id": "a1", "label": "says how the skill was learned", "keywords": ["took a course", "online course", "evening class", "enrolled", "signed up", "taught myself", "lessons", "tutor", "teacher"] },
+                { "id": "a2", "label": "describes the difficulties", "keywords": ["difficult", "challenge", "challenging", "struggled", "frustrat", "mistakes", "patience", "hardest"] },
+                { "id": "a3", "label": "explains the difference it made", "keywords": ["made a difference", "has helped me", "thanks to", "now i can", "confidence", "opportunity", "opportunities", "promotion"] },
+                { "id": "a4", "label": "uses an appropriate letter format", "keywords": ["dear", "yours sincerely", "yours faithfully", "kind regards", "best wishes", "sincerely", "faithfully", "editor"] }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Proposal",
+              "prompt": "The manager of the company you work for wants to improve the health of staff, most of whom spend the working day at a desk. You have been asked to write a proposal for the manager. In your proposal, describe the main health problems among desk-based staff, suggest two or three realistic measures the company could introduce, and explain what benefits the company could expect.",
+              "minWords": 220,
+              "maxWords": 260,
+              "points": [
+                { "id": "b1", "label": "describes the health problems", "keywords": ["sitting", "sedentary", "back pain", "eye strain", "stress", "fatigue", "screens", "posture"] },
+                { "id": "b2", "label": "suggests realistic measures", "keywords": ["exercise", "fitness", "gym membership", "breaks", "standing desk", "walking", "stretching", "ergonomic"] },
+                { "id": "b3", "label": "explains the benefits for the company", "keywords": ["productivity", "absence", "sick leave", "morale", "retention", "motivation", "costs", "engagement"] },
+                { "id": "b4", "label": "deals with practical details", "keywords": ["budget", "per month", "half an hour", "for six months", "trial period", "pilot", "implement", "schedule"] }
+              ]
+            },
+            {
+              "id": "c",
+              "title": "Report",
+              "prompt": "A town council is deciding whether to keep the public library open for longer hours. A residents' group has asked you to write a report for the council. In your report, assess what the library offers at the moment, describe the main problems for the people who use it, and recommend what the council should do.",
+              "minWords": 220,
+              "maxWords": 260,
+              "points": [
+                { "id": "c1", "label": "assesses what the library offers", "keywords": ["borrow", "computer", "internet", "events", "children", "study space", "reading room", "program"] },
+                { "id": "c2", "label": "describes the problems for users", "keywords": ["opening hours", "crowded", "outdated", "noise", "noisy", "funding", "long lines", "waiting"] },
+                { "id": "c3", "label": "makes recommendations", "keywords": ["we recommend", "i recommend", "council should", "suggest", "extend", "longer hours", "evening", "weekend", "volunteers"] },
+                { "id": "c4", "label": "gives a conclusion", "keywords": ["conclusion", "to conclude", "overall", "in summary", "to sum up", "all things considered", "worthwhile"] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

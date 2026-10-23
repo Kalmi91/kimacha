@@ -265,3 +265,27 @@ describe('headless browser on web', () => {
     });
   });
 });
+
+describe('speakSequence: pitch and the stop callback', () => {
+  it('passes the pitch of a segment on to the engine, and sends none for a segment without one', async () => {
+    await withVoices(['es-MX']);
+    speakSequence([{ text: 'hola', locale: 'es-MX', pitch: 1.15 }]);
+    expect((mocked.speak as jest.Mock).mock.calls[0][1]).toMatchObject({ pitch: 1.15 });
+    (mocked.speak as jest.Mock).mockClear();
+    speakSequence([{ text: 'hola', locale: 'es-MX' }]);
+    expect((mocked.speak as jest.Mock).mock.calls[0][1]).not.toHaveProperty('pitch');
+  });
+
+  it('a segment that is cut off reports it through onStopped; the natural end goes through onEnd', async () => {
+    await withVoices(['es-MX']);
+    const onEnd = jest.fn();
+    const onStopped = jest.fn();
+    speakSequence([{ text: 'hola', locale: 'es-MX' }], onEnd, onStopped);
+    const options = (mocked.speak as jest.Mock).mock.calls[0][1];
+    options.onStopped();
+    expect(onStopped).toHaveBeenCalledTimes(1);
+    expect(onEnd).not.toHaveBeenCalled();
+    options.onDone();
+    expect(onEnd).toHaveBeenCalledTimes(1);
+  });
+});

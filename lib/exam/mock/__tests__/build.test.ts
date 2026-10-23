@@ -70,10 +70,10 @@ describe('blueprint: exam shape per direction and per level', () => {
   });
 
   it('A1 and A2 are available in both directions', () => {
-    expect(MOCK_LEVELS.es).toEqual(['A1', 'A2']);
-    expect(MOCK_LEVELS.en).toEqual(['A1', 'A2']);
+    expect(MOCK_LEVELS.es).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
+    expect(MOCK_LEVELS.en).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
     expect(mockAvailable('en', 'A1')).toBe(true);
-    expect(mockAvailable('en', 'B1')).toBe(false);
+    expect(mockAvailable('en', 'B1', [])).toBe(false);
   });
 });
 
@@ -181,7 +181,7 @@ describe('buildMockExam: es A1 (an English speaker learns Spanish)', () => {
   });
 
   it('a sentence is the host in only one place within a task set (no repeated listening/reading sentence)', () => {
-    const heard = paper(e, 'listening').tasks.flatMap((t) => ('audio' in t && t.audio ? t.audio : []));
+    const heard = paper(e, 'listening').tasks.flatMap((t) => ('audio' in t && t.audio ? (t.audio as string[]) : []));
     expect(new Set(heard).size).toBe(heard.length);
   });
 });
@@ -256,7 +256,7 @@ describe('buildMockExam: es→en A1 (a Spanish speaker learns English, internati
 
   it('it is built from the English items of the level, and a sentence appears in only one place', () => {
     const sentences = new Set(items.map((i) => i.exampleEn?.trim()));
-    const heard = written.tasks.flatMap((t) => ('audio' in t && t.audio ? t.audio : []));
+    const heard = written.tasks.flatMap((t) => ('audio' in t && t.audio ? (t.audio as string[]) : []));
     for (const line of heard) expect(sentences.has(line)).toBe(true);
     expect(new Set(heard).size).toBe(heard.length);
     const msg = written.tasks.filter((t) => t.kind === 'short_message');
@@ -302,7 +302,7 @@ describe('buildMockExam: es→en A2 (a Spanish speaker learns English, internati
     const match = rw.tasks.find((t) => t.kind === 'match');
     if (match?.kind !== 'match') throw new Error('nincs match');
     for (const p of match.prompts) expect(sentences.has(p.text)).toBe(true);
-    const heard = listening.tasks.flatMap((t) => ('audio' in t && t.audio ? t.audio : []));
+    const heard = listening.tasks.flatMap((t) => ('audio' in t && t.audio ? (t.audio as string[]) : []));
     for (const line of heard) expect(sentences.has(line)).toBe(true);
   });
 

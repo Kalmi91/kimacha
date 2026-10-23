@@ -14,10 +14,23 @@
 //    8-10 minutes in pairs (according to the research an individual format is the realistic one). Four skills with equal
 //    weight, the average counts; the examiner does not publish the threshold, so it is an approximate value (AVERAGE_PASS_PCT).
 //
+// B1, B2 and C1 (both directions) are authored papers (data/exams/mock/*.json, lib/exam/mock/authored.ts) with the
+// paper order, minutes and task counts of PLAN-vizsga-b1c1.md. The es direction keeps the 30 / 50 groups; the en
+// direction averages scale scores (anchors from the research of 2026-10-22: pass 140 / 160 / 180; the speaking is a
+// placeholder and is left out).
+//
 // The phone task set is shorter than the real one, so the raw hits of a skill are
 // scaled to its 25 points (lib/exam/mock/score.ts). The UI never prints a trademarked name.
 
-import type { MockLevel, MockRule, MockSkill, MockTarget } from './types';
+import { authoredFormCount } from './authored';
+import type { AuthoredPaperFile, MockLevel, MockRule, MockSkill, MockSkillNames, MockTarget } from './types';
+
+/** The levels whose tasks are generated from the level's words. */
+type WordLevel = Extract<MockLevel, 'A1' | 'A2'>;
+/** The levels whose tasks are authored (data/exams/mock). */
+type AuthoredLevel = Exclude<MockLevel, WordLevel>;
+/** The four skills that have their own paper in the Spanish direction (`use` is a skill inside a paper). */
+type PaperSkill = Exclude<MockSkill, 'use'>;
 
 /**
  * Open question (2026-10-01): the English A2 pass threshold in percent. The examiner does not publish a
@@ -58,8 +71,8 @@ interface MockPaperSpec {
   placeholder?: boolean;
 }
 
-/** Which task allocation belongs to the exam (lib/exam/mock/build.ts). */
-type MockPlan = 'es-official' | 'en-a1' | 'en-a2';
+/** Which task allocation belongs to the exam (lib/exam/mock/build.ts); 'authored': the tasks come from the files (lib/exam/mock/authored.ts). */
+type MockPlan = 'es-official' | 'en-a1' | 'en-a2' | 'authored';
 
 interface MockBlueprint {
   plan: MockPlan;
@@ -67,14 +80,14 @@ interface MockBlueprint {
   official: boolean;
   papers: MockPaperSpec[];
   /** The names of the skills in the target language. */
-  skillNames: Record<MockSkill, string>;
+  skillNames: MockSkillNames;
   rule: MockRule;
   counts: MockCounts;
 }
 
 const NO_EXTRA = { readGapType: 0, listenFill: 0, dictationSentences: 0 } as const;
 
-const ES_COUNTS: Record<MockLevel, MockCounts> = {
+const ES_COUNTS: Record<WordLevel, MockCounts> = {
   A1: {
     maxWords: 8,
     readPassages: 3,
@@ -140,24 +153,116 @@ const EN_A2_COUNTS: MockCounts = {
 };
 
 // es direction: the paper names are in Spanish.
-const ES_NAMES: Record<MockSkill, string> = {
+const ES_NAMES: MockSkillNames = {
   reading: 'Comprensión de lectura',
   writing: 'Expresión e interacción escritas',
   listening: 'Comprensión auditiva',
   speaking: 'Expresión e interacción orales',
 };
 
-const EN_NAMES: Record<MockSkill, string> = {
+// The C1 papers carry the use of the language / the mediation in their names.
+const ES_C1_NAMES: MockSkillNames = {
+  reading: 'Comprensión de lectura y uso de la lengua',
+  writing: 'Expresión, mediación e interacción escritas',
+  listening: 'Comprensión auditiva y uso de la lengua',
+  speaking: 'Expresión, mediación e interacción orales',
+};
+
+const EN_NAMES: MockSkillNames = {
   reading: 'Reading',
   writing: 'Writing',
   listening: 'Listening',
   speaking: 'Speaking',
 };
 
+// B2 and C1 score the Use of English apart from the reading.
+const EN_USE_NAMES: MockSkillNames = { ...EN_NAMES, use: 'Use of English' };
+
 // The minutes of the old blueprint.ts: es A1 45 / 25 / 25 / 10, es A2 60 / 45 / 40 / 12.
-const ES_MINUTES: Record<MockLevel, Record<MockSkill, number>> = {
+const ES_MINUTES: Record<WordLevel, Record<PaperSkill, number>> = {
   A1: { reading: 45, writing: 25, listening: 25, speaking: 10 },
   A2: { reading: 60, writing: 45, listening: 40, speaking: 12 },
+};
+
+// es B1-C1: the paper order is reading, listening, writing, speaking.
+const ES_AUTHORED_MINUTES: Record<AuthoredLevel, Record<PaperSkill, number>> = {
+  B1: { reading: 70, listening: 40, writing: 60, speaking: 15 },
+  B2: { reading: 70, listening: 40, writing: 80, speaking: 20 },
+  C1: { reading: 90, listening: 50, writing: 80, speaking: 20 },
+};
+const ES_AUTHORED_ORDER: PaperSkill[] = ['reading', 'listening', 'writing', 'speaking'];
+
+// en B1-C1: raw score -> scale score anchors per component (research 2026-10-22, point 5: the examiner's practice conversion
+// of 2023-11; the four columns are the minimum, the next step, the pass and the level above). The speaking has no entry (placeholder).
+const EN_SCALE: Record<AuthoredLevel, Extract<MockRule, { kind: 'scale' }>> = {
+  B1: {
+    kind: 'scale',
+    needed: 140,
+    approximate: true,
+    skills: {
+      reading: { officialMax: 32, anchors: [[5, 102], [13, 120], [23, 140], [29, 160]] },
+      writing: { officialMax: 40, anchors: [[10, 102], [16, 120], [24, 140], [34, 160]] },
+      listening: { officialMax: 25, anchors: [[5, 102], [11, 120], [18, 140], [23, 160]] },
+    },
+  },
+  B2: {
+    kind: 'scale',
+    needed: 160,
+    approximate: true,
+    skills: {
+      reading: { officialMax: 42, anchors: [[10, 122], [16, 140], [24, 160], [37, 180]] },
+      use: { officialMax: 28, anchors: [[7, 122], [11, 140], [18, 160], [24, 180]] },
+      writing: { officialMax: 40, anchors: [[10, 122], [16, 140], [24, 160], [34, 180]] },
+      listening: { officialMax: 30, anchors: [[8, 122], [12, 140], [18, 160], [27, 180]] },
+    },
+  },
+  C1: {
+    kind: 'scale',
+    needed: 180,
+    approximate: true,
+    skills: {
+      reading: { officialMax: 50, anchors: [[17, 142], [23, 160], [32, 180], [43, 200]] },
+      use: { officialMax: 28, anchors: [[8, 142], [11, 160], [16, 180], [23, 200]] },
+      writing: { officialMax: 40, anchors: [[10, 142], [16, 160], [24, 180], [34, 200]] },
+      listening: { officialMax: 30, anchors: [[11, 142], [13, 160], [18, 180], [26, 200]] },
+    },
+  },
+};
+
+const EN_AUTHORED_PAPERS: Record<AuthoredLevel, MockPaperSpec[]> = {
+  B1: [
+    { id: 'reading', name: 'Reading', minutes: 45, skills: ['reading'] },
+    { id: 'writing', name: 'Writing', minutes: 45, skills: ['writing'] },
+    { id: 'listening', name: 'Listening', minutes: 30, skills: ['listening'] },
+    { id: 'speaking', name: 'Speaking', minutes: 12, skills: ['speaking'], placeholder: true },
+  ],
+  B2: [
+    { id: 'readinguse', name: 'Reading and Use of English', minutes: 75, skills: ['reading', 'use'] },
+    { id: 'writing', name: 'Writing', minutes: 80, skills: ['writing'] },
+    { id: 'listening', name: 'Listening', minutes: 40, skills: ['listening'] },
+    { id: 'speaking', name: 'Speaking', minutes: 14, skills: ['speaking'], placeholder: true },
+  ],
+  C1: [
+    { id: 'readinguse', name: 'Reading and Use of English', minutes: 90, skills: ['reading', 'use'] },
+    { id: 'writing', name: 'Writing', minutes: 90, skills: ['writing'] },
+    { id: 'listening', name: 'Listening', minutes: 40, skills: ['listening'] },
+    { id: 'speaking', name: 'Speaking', minutes: 15, skills: ['speaking'], placeholder: true },
+  ],
+};
+
+// The authored papers are not generated: the generator's counts do not apply.
+const AUTHORED_COUNTS: MockCounts = {
+  maxWords: 0,
+  readPassages: 0,
+  readMatch: 0,
+  readTrueFalse: 0,
+  readTextSentences: 0,
+  readTrue: 0,
+  readGaps: 0,
+  listenMc: 0,
+  listenMatch: 0,
+  listenDialogue: 0,
+  ...NO_EXTRA,
 };
 
 const ES_GROUPS = [
@@ -166,17 +271,53 @@ const ES_GROUPS = [
 ];
 
 export const MOCK_LEVELS: Record<MockTarget, readonly MockLevel[]> = {
-  es: ['A1', 'A2'],
-  en: ['A1', 'A2'],
+  es: ['A1', 'A2', 'B1', 'B2', 'C1'],
+  en: ['A1', 'A2', 'B1', 'B2', 'C1'],
 };
 
-export function mockAvailable(target: MockTarget, level: string): level is MockLevel {
-  return (MOCK_LEVELS[target] as readonly string[]).includes(level);
+/** A1 / A2 are always available; B1 and up only when every non-placeholder paper has at least one authored form. */
+export function mockAvailable(target: MockTarget, level: string, authored?: AuthoredPaperFile[]): level is MockLevel {
+  if (!(MOCK_LEVELS[target] as readonly string[]).includes(level)) return false;
+  if (level === 'A1' || level === 'A2') return true;
+  const papers = getMockBlueprint(target, level as MockLevel).papers.filter((p) => !p.placeholder);
+  return authoredFormCount(target, level as MockLevel, papers.map((p) => p.id), authored) > 0;
 }
 
-const ES_ORDER: MockSkill[] = ['reading', 'writing', 'listening', 'speaking'];
+/** B1 and up are written at the official length (authored texts); A1 / A2 are a shorter set built from the level's words. */
+export function mockIsFullLength(level: MockLevel): boolean {
+  return level !== 'A1' && level !== 'A2';
+}
+
+const ES_ORDER: PaperSkill[] = ['reading', 'writing', 'listening', 'speaking'];
 
 export function getMockBlueprint(target: MockTarget, level: MockLevel): MockBlueprint {
+  if (level !== 'A1' && level !== 'A2') {
+    if (target === 'es') {
+      const names = level === 'C1' ? ES_C1_NAMES : ES_NAMES;
+      return {
+        plan: 'authored',
+        official: true,
+        papers: ES_AUTHORED_ORDER.map((skill) => ({
+          id: skill,
+          name: names[skill],
+          minutes: ES_AUTHORED_MINUTES[level][skill],
+          skills: [skill],
+          placeholder: skill === 'speaking',
+        })),
+        skillNames: names,
+        rule: { kind: 'groups', groups: ES_GROUPS },
+        counts: AUTHORED_COUNTS,
+      };
+    }
+    return {
+      plan: 'authored',
+      official: false,
+      papers: EN_AUTHORED_PAPERS[level],
+      skillNames: level === 'B1' ? EN_NAMES : EN_USE_NAMES,
+      rule: EN_SCALE[level],
+      counts: AUTHORED_COUNTS,
+    };
+  }
   if (target === 'es') {
     return {
       plan: 'es-official',

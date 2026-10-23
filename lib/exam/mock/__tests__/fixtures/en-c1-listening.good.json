@@ -1,0 +1,571 @@
+{
+  "target": "en",
+  "level": "C1",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "instruction": "Read the text and answer.",
+          "kind": "clips_mc",
+          "clips": [
+            {
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                },
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Question 1",
+                  "options": [
+                    "Option 1a",
+                    "Option 1b",
+                    "Option 1c"
+                  ],
+                  "correct": 0
+                },
+                {
+                  "stem": "Question 2",
+                  "options": [
+                    "Option 2a",
+                    "Option 2b",
+                    "Option 2c"
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                },
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Question 2",
+                  "options": [
+                    "Option 2a",
+                    "Option 2b",
+                    "Option 2c"
+                  ],
+                  "correct": 1
+                },
+                {
+                  "stem": "Question 3",
+                  "options": [
+                    "Option 3a",
+                    "Option 3b",
+                    "Option 3c"
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                },
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Question 3",
+                  "options": [
+                    "Option 3a",
+                    "Option 3b",
+                    "Option 3c"
+                  ],
+                  "correct": 2
+                },
+                {
+                  "stem": "Question 4",
+                  "options": [
+                    "Option 4a",
+                    "Option 4b",
+                    "Option 4c"
+                  ],
+                  "correct": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "instruction": "Read the text and answer.",
+          "kind": "cloze",
+          "text": "house large time friend {{1}} city family morning {{2}} street often always because {{3}} also talked went {{4}} place day house large {{5}} friend work city {{6}} morning book street often {{7}} because when also {{8}} went have place day",
+          "audio": [
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            }
+          ],
+          "gaps": [
+            {
+              "answers": [
+                "house0"
+              ]
+            },
+            {
+              "answers": [
+                "large0"
+              ]
+            },
+            {
+              "answers": [
+                "time0"
+              ]
+            },
+            {
+              "answers": [
+                "friend0"
+              ]
+            },
+            {
+              "answers": [
+                "work0"
+              ]
+            },
+            {
+              "answers": [
+                "city0"
+              ]
+            },
+            {
+              "answers": [
+                "family0"
+              ]
+            },
+            {
+              "answers": [
+                "morning0"
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "instruction": "Read the text and answer.",
+          "kind": "passage_mc",
+          "audio": [
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+            }
+          ],
+          "questions": [
+            {
+              "stem": "Question 1",
+              "options": [
+                "Option 1a",
+                "Option 1b",
+                "Option 1c",
+                "Option 1d"
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Question 2",
+              "options": [
+                "Option 2a",
+                "Option 2b",
+                "Option 2c",
+                "Option 2d"
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Question 3",
+              "options": [
+                "Option 3a",
+                "Option 3b",
+                "Option 3c",
+                "Option 3d"
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Question 4",
+              "options": [
+                "Option 4a",
+                "Option 4b",
+                "Option 4c",
+                "Option 4d"
+              ],
+              "correct": 3
+            },
+            {
+              "stem": "Question 5",
+              "options": [
+                "Option 5a",
+                "Option 5b",
+                "Option 5c",
+                "Option 5d"
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Question 6",
+              "options": [
+                "Option 6a",
+                "Option 6b",
+                "Option 6c",
+                "Option 6d"
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "instruction": "Read the text and answer.",
+          "kind": "match_pool",
+          "prompts": [
+            {
+              "id": "p1",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            },
+            {
+              "id": "p2",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            },
+            {
+              "id": "p3",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            },
+            {
+              "id": "p4",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            },
+            {
+              "id": "p5",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day house large time friend work city family morning book street"
+            },
+            {
+              "id": "b",
+              "text": "often always because when also talked went have place day house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "id": "c",
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day house large time friend work city family morning book street"
+            },
+            {
+              "id": "d",
+              "text": "often always because when also talked went have place day house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "id": "e",
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day house large time friend work city family morning book street"
+            },
+            {
+              "id": "f",
+              "text": "often always because when also talked went have place day house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "id": "g",
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day house large time friend work city family morning book street"
+            },
+            {
+              "id": "h",
+              "text": "often always because when also talked went have place day house large time friend work city family morning book street often always because when also talked went have place day"
+            }
+          ],
+          "answer": {
+            "p1": "a",
+            "p2": "b",
+            "p3": "c",
+            "p4": "d",
+            "p5": "e"
+          },
+          "unique": true
+        },
+        {
+          "skill": "listening",
+          "instruction": "Read the text and answer.",
+          "kind": "match_pool",
+          "prompts": [
+            {
+              "id": "p1",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            },
+            {
+              "id": "p2",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            },
+            {
+              "id": "p3",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            },
+            {
+              "id": "p4",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            },
+            {
+              "id": "p5",
+              "audio": [
+                {
+                  "text": "house large time friend work city family morning book street often always because when also talked went have place day"
+                }
+              ]
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day house large time friend work city family morning book street"
+            },
+            {
+              "id": "b",
+              "text": "often always because when also talked went have place day house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "id": "c",
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day house large time friend work city family morning book street"
+            },
+            {
+              "id": "d",
+              "text": "often always because when also talked went have place day house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "id": "e",
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day house large time friend work city family morning book street"
+            },
+            {
+              "id": "f",
+              "text": "often always because when also talked went have place day house large time friend work city family morning book street often always because when also talked went have place day"
+            },
+            {
+              "id": "g",
+              "text": "house large time friend work city family morning book street often always because when also talked went have place day house large time friend work city family morning book street"
+            },
+            {
+              "id": "h",
+              "text": "often always because when also talked went have place day house large time friend work city family morning book street often always because when also talked went have place day"
+            }
+          ],
+          "answer": {
+            "p1": "a",
+            "p2": "b",
+            "p3": "c",
+            "p4": "d",
+            "p5": "e"
+          },
+          "unique": true
+        }
+      ]
+    }
+  ]
+}

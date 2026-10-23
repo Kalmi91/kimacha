@@ -1,0 +1,279 @@
+{
+  "target": "en",
+  "level": "B1",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "kind": "clips_mc",
+          "instruction": "Each of these five short texts has one question. Pick the best answer to it.",
+          "clips": [
+            {
+              "text": "NOTICE TO STUDENTS. The study rooms on the second floor are closed this week while workers put in new carpet. Please use the quiet reading area on the ground floor instead. The rooms will open again next Monday.",
+              "questions": [
+                {
+                  "stem": "What should students do this week?",
+                  "options": [
+                    "Ask the staff to open a study room for them.",
+                    "Study downstairs in a quiet part of the building.",
+                    "Come back to the second floor on Friday."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "text": "Hi Dan, my bus broke down, so I'm going to be late. Could you buy the tickets and wait for me inside the movie theater? The movie starts at 7:30, and I should be there by 7:15. Sorry! Mia",
+              "questions": [
+                {
+                  "stem": "Why is Mia writing to Dan?",
+                  "options": [
+                    "She wants him to take care of the tickets and be there when she arrives.",
+                    "She has decided not to see the movie.",
+                    "She needs him to meet her at the bus stop."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "text": "FREE DELIVERY on all orders over twenty dollars! Order cakes, bread or sandwiches on our website before noon, and we will bring them to your door the same day. For special orders, please call the shop.",
+              "questions": [
+                {
+                  "stem": "What does this advertisement tell customers?",
+                  "options": [
+                    "All orders must be made by telephone.",
+                    "Delivery costs extra for large orders.",
+                    "Orders placed in the morning can arrive that day."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "text": "Dear team, Thursday's meeting has moved from the small room to the main conference room because more people are coming. It will still start at 2 p.m. Please bring your laptops and any questions about the new schedule. Laura",
+              "questions": [
+                {
+                  "stem": "Why has the meeting room changed?",
+                  "options": [
+                    "The small room is being repaired.",
+                    "More people than expected will attend.",
+                    "The meeting will start earlier."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "text": "BEACH CAFÉ: Summer opening hours. Open Wednesday to Monday, 9 a.m. to 6 p.m. Closed on Tuesdays for cleaning. Try our new strawberry ice cream, only three dollars!",
+              "questions": [
+                {
+                  "stem": "What does the notice say about the café's opening hours?",
+                  "options": [
+                    "It is closed one day each week.",
+                    "It is open every day in summer.",
+                    "It stays open until late in the evening."
+                  ],
+                  "correct": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Five people are looking for an activity, and eight activities are described. Find the one that suits each person best. No activity suits more than one person.",
+          "prompts": [
+            {
+              "id": "1",
+              "text": "Ana works until six every weekday. She has never cooked before and would like to learn how to make simple dinners."
+            },
+            {
+              "id": "2",
+              "text": "Tom and his friends want to spend a Saturday on the water. None of them has tried it before, and nobody owns any equipment."
+            },
+            {
+              "id": "3",
+              "text": "Lucy loves taking pictures, but she only has a smartphone. She wants to learn how to take better photos with it."
+            },
+            {
+              "id": "4",
+              "text": "Ben plays the guitar and writes his own songs. He would like to perform in front of an audience for the first time."
+            },
+            {
+              "id": "5",
+              "text": "Carla has two children, aged four and six. She is looking for a cheap activity for Saturday morning."
+            }
+          ],
+          "options": [
+            {
+              "id": "A",
+              "title": "Open Mic Night",
+              "text": "Every second Friday at the Blue Door Café, anyone can sing, play an instrument or read a poem for five minutes. The audience is friendly, and beginners are very welcome. Sign up at the door before eight o'clock. Bring your own guitar, but there is a piano if you need one."
+            },
+            {
+              "id": "B",
+              "title": "Pro Camera Workshop",
+              "text": "Learn to use a professional camera in this three-day workshop. You will practice with different lenses and lighting. You must bring your own digital camera, because the studio has none to lend. Phones cannot be used in this course. Places are limited to eight students, and the fee is ninety dollars."
+            },
+            {
+              "id": "C",
+              "title": "Lakeside Kayak Days",
+              "text": "Join our Saturday kayak trips on Lake Elm. We provide the boats, life jackets and a guide, so you do not need any experience or equipment. Groups of five or more get a ten percent discount. Please bring a towel and dry clothes, and be at the boathouse by nine."
+            },
+            {
+              "id": "D",
+              "title": "Little Explorers",
+              "text": "Saturday mornings at the City Museum are for young children. Kids aged three to seven enjoy stories, drawing and games for one hour. Entry is free for children, and adults pay only two dollars. There is a small café next door where parents can wait."
+            },
+            {
+              "id": "E",
+              "title": "Cook Easy",
+              "text": "Learn to prepare delicious dinners in six weeks. Classes begin at seven in the evening, so you can come straight from work. We supply all the ingredients, and no cooking experience is necessary. Each class has only eight people, so book early."
+            },
+            {
+              "id": "F",
+              "title": "Climb Zone",
+              "text": "Our indoor climbing wall is open every day until ten at night. Equipment rental costs five dollars. All beginners must take a safety lesson before they climb. Lessons are on Saturdays at nine. Children under ten are not allowed on the wall."
+            },
+            {
+              "id": "G",
+              "title": "Phone Photo Walks",
+              "text": "Discover how to take better pictures with the camera in your phone. We meet in Central Park on Sunday afternoons for a relaxed walk. A professional photographer shows you simple tricks about light and angles. You do not need an expensive camera, just your phone and a little curiosity."
+            },
+            {
+              "id": "H",
+              "title": "Chef's Saturday",
+              "text": "An advanced cooking course for people who already cook well. Classes take place on Saturday mornings in the kitchen of the Grand Hotel. You will make complicated dishes such as soufflés and sauces. Please bring your own knives. Students should have at least two years of cooking experience."
+            }
+          ],
+          "answer": {
+            "1": "E",
+            "2": "C",
+            "3": "G",
+            "4": "A",
+            "5": "D"
+          },
+          "unique": true
+        },
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "After reading the article, answer each question by picking the best option.",
+          "title": "Why I started cycling to work",
+          "text": "Two years ago, I lived about eight miles from my office, and I drove there every day. The trip took forty minutes in the morning and almost an hour in the evening because of the heavy traffic. When I got home, I was always tired and bad-tempered, and I had no energy for anything except watching TV. My doctor told me I needed more exercise, but I always answered that I was too busy.\n\nThe change started with a small accident. My car broke down one Monday, and the repair shop said it would need a week to fix it. The bus would have taken ninety minutes, so my neighbor Carlos offered me his old bike. On the first day, I was terrible. My legs hurt, I got lost twice, and I arrived at work late and red in the face. My colleagues laughed, and I promised myself that I would never do it again.\n\nThe next morning, something strange happened. I woke up and wanted to try again. By Wednesday, I had found a quiet route along the river, and I started to enjoy the fresh air and the silence. The ride took only fifty minutes, which wasn't much longer than driving. When my car was ready, I decided to leave it in the garage for one more week. That week became a month, and the month became a year.\n\nCycling has changed more than my fitness. I sleep better, I spend less money on gas and parking, and I notice things I never saw from the car, like the bakery with the best bread in town. My husband says I look younger, too. In winter, the mornings are cold and dark, and sometimes I arrive wet after the rain. I still drive when I have to carry heavy things or when the weather is terrible.\n\nMany people tell me they would like to do the same, but they are afraid of the traffic or think they are not fit enough. My advice is simple: don't wait for the perfect moment, and don't try to be fast. Start with one day a week and choose a quiet road. You will probably be surprised by how quickly your body gets used to it.",
+          "questions": [
+            {
+              "stem": "Why did the writer first ride a bike to work?",
+              "options": [
+                "Her car was in the repair shop.",
+                "Her doctor had told her to.",
+                "She wanted to save money.",
+                "Her colleagues suggested it."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "How did the writer feel after her first ride?",
+              "options": [
+                "Proud of how fast she had been.",
+                "Angry with her neighbor.",
+                "Worried about the cost of repairs.",
+                "Ready to give up cycling."
+              ],
+              "correct": 3
+            },
+            {
+              "stem": "What does the writer say about the route along the river?",
+              "options": [
+                "It was shorter than driving.",
+                "It was the way her neighbor went to work.",
+                "It helped her start to enjoy cycling.",
+                "It was busy with other cyclists."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "What does the writer mean by \"That week became a month, and the month became a year\"?",
+              "options": [
+                "She kept cycling much longer than she planned.",
+                "The repair of her car took a very long time.",
+                "She slowly lost interest in cycling.",
+                "She forgot about her old bike."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "What advice does the writer give to people who want to start cycling?",
+              "options": [
+                "Buy a good bike first.",
+                "Begin slowly on a quiet road.",
+                "Wait until the weather is good.",
+                "Ride every day to get fit quickly."
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "gapped_text",
+          "instruction": "Five sentences are missing from the article. Put the right sentence into each gap. Three of the sentences listed do not belong anywhere.",
+          "title": "The garden on Maple Street",
+          "text": "Ten years ago, the empty lot at the end of Maple Street was just a place where people left old furniture and bags of garbage. Neighbors complained about the smell, and children were told never to play there. Today, it is the most popular spot in the neighborhood, and you can see why on any Saturday morning. {{1}} It all started with a retired teacher named Rosa Alvarez, who lives in the house across the street.\n\nRosa was tired of looking at the mess from her window. One spring, she bought some seeds and a small shovel and began to clean a corner of the lot. It was hard work, because the ground was full of stones, broken glass and old tires. At first, the neighbors thought she was a little crazy. {{2}} This encouraged her, and soon a young father brought his two children to help, followed by a group of students from the nearby school.\n\nThe city gave the group permission to use the land, and a local store gave them tools, wood and several cans of paint. {{3}} They built tables, a small shed and a long fence painted in bright colors. The children made signs for each plant so that visitors could learn their names. On Sunday afternoons, the garden also became a place for birthday parties and music, and the old furniture from the lot was turned into benches.\n\nNot everything went well, of course. In the second summer, there was no rain for six weeks, and most of the tomatoes died, along with the beans and half of the flowers. {{4}} Rosa answered by organizing a schedule, so that each volunteer visited the garden on a different day with a bucket of water. The city later helped them to install a large water tank, and the following year the plants were stronger than ever.\n\nToday, the garden produces enough vegetables to give away to families who need them. {{5}} Rosa says she never imagined that a few seeds could change so much. \"People used to walk quickly past this place,\" she says. \"Now they stop and say hello.\" She is seventy-three, but she still arrives first every morning, with a cup of tea and her old shovel.",
+          "fragments": [
+            { "id": "A", "text": "Many volunteers felt discouraged, and some stopped coming." },
+            { "id": "B", "text": "By the end of the summer, more than twenty volunteers were coming every weekend." },
+            { "id": "C", "text": "The garden closed after only one month because nobody came." },
+            { "id": "D", "text": "More than fifty people arrive early to plant vegetables, drink coffee and talk." },
+            { "id": "E", "text": "That morning, it was already so hot that nobody wanted to work." },
+            { "id": "F", "text": "Last year, they also started a weekly cooking class for teenagers." },
+            { "id": "G", "text": "After a few weeks, however, people began to stop and ask what she was growing." },
+            { "id": "H", "text": "Rosa's old shovel still hangs on the wall of the shed." }
+          ],
+          "answer": {
+            "1": "D",
+            "2": "G",
+            "3": "B",
+            "4": "A",
+            "5": "F"
+          }
+        },
+        {
+          "skill": "reading",
+          "kind": "cloze",
+          "instruction": "In this e-mail, each gap needs one word. Pick the word that fits best.",
+          "title": "Greetings from Lisbon",
+          "text": "Hi Sam,\n\nGreetings from Lisbon! We have been here {{1}} Sunday, and I already love this city. The weather has been perfect, so we have {{2}} most of our days outside. Yesterday we rode an old yellow tram up a steep hill and had lunch in a tiny restaurant {{3}} has only five tables. The owner recommended a fish dish, and it was the best meal I have ever {{4}}. In the afternoon, we {{5}} the castle and enjoyed the view of the river. Tomorrow we are planning a day trip to the beach, if it doesn't rain. The people here are friendly, too. I hope everything is fine at home, and please say hello to your parents for me. I'll send you some photos {{6}} I get back.\n\nSee you soon,\n\nNora",
+          "gaps": [
+            { "options": ["since", "for", "from", "during"], "correct": 0 },
+            { "options": ["made", "got", "spent", "taken"], "correct": 2 },
+            { "options": ["who", "that", "what", "where"], "correct": 1 },
+            { "options": ["eat", "ate", "eating", "eaten"], "correct": 3 },
+            { "options": ["attended", "arrived", "visited", "joined"], "correct": 2 },
+            { "options": ["when", "until", "while", "unless"], "correct": 0 }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "cloze",
+          "instruction": "Complete the story by writing a single word in every gap.",
+          "title": "A busy morning",
+          "text": "Last Tuesday was a strange day. I woke up late {{1}} my alarm clock did not ring. I ran to the bus stop, but the bus {{2}} already left. It was raining, and I did not have an umbrella. So I walked to work, and I was so tired {{3}} I could hardly speak when I arrived. My boss was waiting for me. \"Where have you been?\" she asked. I told her the story, and she started to laugh. \"Don't worry,\" she said, \"it happens {{4}} everyone.\" At lunchtime, I went to the café across the street, but there was hardly {{5}} left to eat except one sandwich. I bought it, and {{6}} the end it turned out to be the best sandwich I have ever had.",
+          "gaps": [
+            { "answers": ["because", "as", "since"] },
+            { "answers": ["had"] },
+            { "answers": ["that"] },
+            { "answers": ["to"] },
+            { "answers": ["anything", "any"] },
+            { "answers": ["in"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

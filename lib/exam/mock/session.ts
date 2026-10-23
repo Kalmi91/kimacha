@@ -82,7 +82,9 @@ function lastFromResult(result: MockResult, date: string): MockLast {
         ? result.rule.groups.map((g) => ({ points: g.points, needed: g.needed, of: g.of }))
         : result.rule.kind === 'total'
           ? [{ points: result.rule.points, needed: result.rule.needed, of: result.rule.of }]
-          : [{ points: result.rule.pct, needed: result.rule.passPct, of: 100 }],
+          : result.rule.kind === 'scale'
+            ? [{ points: result.rule.points, needed: result.rule.needed, of: 0 }] // a scale score has no fixed maximum here
+            : [{ points: result.rule.pct, needed: result.rule.passPct, of: 100 }],
   };
 }
 

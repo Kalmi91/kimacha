@@ -20,7 +20,7 @@ import ScreenFeedback from '@/lib/screenFeedback';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import MockTaskCard from '@/components/exam/MockTaskCard';
 import { MockResultView, MockReviewView } from '@/components/exam/MockResultView';
-import { mockAvailable, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
+import { mockAvailable, mockIsFullLength, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
 import { buildMockExam, mockExamSignature } from '@/lib/exam/mock/build';
 import { buildGlossaryIndex, mockGlossary } from '@/lib/exam/mock/glossary';
 import { buildLexicon } from '@/lib/exam/mock/writing';
@@ -283,11 +283,15 @@ export default function MockExamScreen() {
             <Text style={[styles.line, { color: colors.textMuted }]}>{exam.official ? s.modelNote(level) : s.modelNoteIntl(level)}</Text>
             {exam.papers.map((p) => (
               <Text key={p.id} testID={`mock-paper-${p.id}`} style={[styles.line, { color: colors.text }]}>
-                {p.placeholder ? s.paperLineSoon(p.name, p.minutes) : s.paperLine(p.name, p.minutes, p.tasks.length, p.points)}
+                {p.placeholder
+                  ? s.paperLineSoon(p.name, p.minutes)
+                  : rule.kind === 'scale'
+                    ? s.mockPaperLine(p.name, p.minutes, p.tasks.length)
+                    : s.paperLine(p.name, p.minutes, p.tasks.length, p.points)}
               </Text>
             ))}
-            <Text style={[styles.line, { color: colors.text }]}>{rule.kind === 'groups' ? s.passRule(rule.groups[0].needed, rule.groups[0].of) : rule.kind === 'total' ? s.passRuleTotal(rule.needed, rule.of) : s.passRuleAverage(rule.passPct)}</Text>
-            <Text style={[styles.note, { color: colors.textMuted }]}>{s.shortNote}</Text>
+            <Text style={[styles.line, { color: colors.text }]}>{rule.kind === 'groups' ? s.passRule(rule.groups[0].needed, rule.groups[0].of) : rule.kind === 'total' ? s.passRuleTotal(rule.needed, rule.of) : rule.kind === 'scale' ? s.passRuleScale(rule.needed) : s.passRuleAverage(rule.passPct)}</Text>
+            <Text style={[styles.note, { color: colors.textMuted }]}>{mockIsFullLength(level) ? s.fullNote : s.shortNote}</Text>
           </>,
         )}
         {saved ? (
@@ -312,7 +316,11 @@ export default function MockExamScreen() {
             <Text style={[styles.note, { color: colors.tint }]}>{s.paperOf(paperIdx + 1, exam.papers.length)}</Text>
             <Text style={[styles.title, { color: colors.text }]}>{paper.name}</Text>
             <Text style={[styles.line, { color: colors.textMuted }]}>
-              {paper.placeholder ? s.paperLineSoon(paper.name, paper.minutes) : s.paperMeta(paper.minutes, paper.tasks.length, paper.points)}
+              {paper.placeholder
+                ? s.paperLineSoon(paper.name, paper.minutes)
+                : exam.rule.kind === 'scale'
+                  ? s.mockPaperMeta(paper.minutes, paper.tasks.length)
+                  : s.paperMeta(paper.minutes, paper.tasks.length, paper.points)}
             </Text>
             {paper.tasks.some((tk) => tk.skill === 'listening') && !canSpeak && <Text style={[styles.note, { color: colors.warning }]}>{s.noVoice}</Text>}
             {timedOut && <Text style={[styles.note, { color: colors.warning }]}>{s.timeUp}</Text>}
@@ -342,7 +350,7 @@ export default function MockExamScreen() {
   }
 
   if (phase === 'result' && result) {
-    return shell(<MockResultView result={result} timedOut={timedOut} onReview={() => setPhase('review')} onRetry={retry} onExit={() => router.back()} />, 'result');
+    return shell(<MockResultView result={result} timedOut={timedOut} fullLength={mockIsFullLength(level)} onReview={() => setPhase('review')} onRetry={retry} onExit={() => router.back()} />, 'result');
   }
 
   if (phase === 'review' && result) {

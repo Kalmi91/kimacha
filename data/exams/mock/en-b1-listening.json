@@ -1,0 +1,297 @@
+{
+  "target": "en",
+  "level": "B1",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Listen to seven short recordings. Each has one question with three possible answers; pick the right one.",
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "f", "text": "Excuse me, is this the right platform for the train to Boston?" },
+                { "speaker": "m", "text": "No, that train left a few minutes ago. The next one to Boston leaves from platform four at ten past six." },
+                { "speaker": "f", "text": "Platform four, ten past six. Thank you." },
+                { "speaker": "m", "text": "You're welcome. You'd better hurry, though. It's already five past." }
+              ],
+              "questions": [
+                {
+                  "stem": "Which platform does the woman need?",
+                  "options": ["Platform two", "Platform four", "Platform six"],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Hi Tom, it's Nina. I'm calling about dinner on Saturday. I'm afraid I can't make it at seven, because I have to work late. Could we meet at eight thirty instead? The restaurant is the same, the Italian place on Green Street. Call me back when you can. Bye." }
+              ],
+              "questions": [
+                {
+                  "stem": "Why is Nina calling Tom?",
+                  "options": ["To change the time of their dinner", "To cancel their dinner", "To suggest a different restaurant"],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Hello, can I help you?" },
+                { "speaker": "f", "text": "Yes, I bought this jacket yesterday, but it's too small. Can I change it for a bigger size?" },
+                { "speaker": "m", "text": "Of course. Do you have the receipt?" },
+                { "speaker": "f", "text": "Yes, here it is." },
+                { "speaker": "m", "text": "Thank you. Let me check if we have the large size in blue." }
+              ],
+              "questions": [
+                {
+                  "stem": "What does the woman want to do?",
+                  "options": ["Get her money back", "Buy a second jacket", "Exchange the jacket for a bigger one"],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "And now the weather. This morning will be cloudy, with some light rain in the north. By lunchtime, the clouds will clear, and the afternoon will be warm and sunny, with temperatures around seventy-five degrees. But don't leave your umbrella at home, because heavy rain is expected tomorrow." }
+              ],
+              "questions": [
+                {
+                  "stem": "What will the weather be like this afternoon?",
+                  "options": ["Warm and sunny", "Rainy and cold", "Cloudy and cool"],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Dad, can you pick me up from soccer practice today?" },
+                { "speaker": "m", "text": "I'm sorry, honey. I have a meeting until six. Why don't you ask Daniel Brown? He lives near the sports center." },
+                { "speaker": "f", "text": "I could do that. Or I could take the bus." },
+                { "speaker": "m", "text": "It gets dark early now. I'd rather you didn't go home alone." },
+                { "speaker": "f", "text": "Okay, I'll call him." }
+              ],
+              "questions": [
+                {
+                  "stem": "What will the girl do?",
+                  "options": ["Wait for her father at the sports center", "Take the bus home", "Ask someone she knows to take her home"],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Attention, please. The art museum will close in fifteen minutes. Please make your way to the main entrance. The gift shop is still open, but the café has already closed. Tomorrow, the museum opens at nine, and entry is free for visitors under eighteen." }
+              ],
+              "questions": [
+                {
+                  "stem": "What can visitors still do?",
+                  "options": ["Have a coffee in the café", "Buy something in the gift shop", "Look at the paintings for an hour"],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Did you enjoy the concert last night?" },
+                { "speaker": "f", "text": "The music was great, but I couldn't see anything. We were at the back, and a tall man stood in front of me the whole time." },
+                { "speaker": "m", "text": "That's too bad. Where did you sit?" },
+                { "speaker": "f", "text": "In the last row. Next time, I'll buy tickets earlier." }
+              ],
+              "questions": [
+                {
+                  "stem": "What was the woman's problem at the concert?",
+                  "options": ["She could not see the performers", "The music was too loud", "She arrived late"],
+                  "correct": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Listen to six short conversations. After each one, pick the best answer to the question.",
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "m", "text": "Sandra, could you do me a favor? I have to take my daughter to the dentist on Thursday afternoon." },
+                { "speaker": "f", "text": "You want me to work your shift?" },
+                { "speaker": "m", "text": "If you can. I'll work on Saturday morning for you in return." },
+                { "speaker": "f", "text": "That's fine. I'm busy on Thursday evening, but the afternoon is free." },
+                { "speaker": "m", "text": "Great, thanks! I'll tell the manager." }
+              ],
+              "questions": [
+                {
+                  "stem": "What will Sandra do?",
+                  "options": ["Speak to the manager", "Take the man's daughter to the dentist", "Work in the man's place on Thursday"],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Wow, Ben, this apartment is so bright! I love all these windows." },
+                { "speaker": "m", "text": "Thanks. The kitchen is small, though, and the bathroom needs painting." },
+                { "speaker": "f", "text": "Those are easy to fix. And you're close to the subway." },
+                { "speaker": "m", "text": "Yes, but honestly, the best thing is the balcony. In the evenings, I sit there and watch the sunset." },
+                { "speaker": "f", "text": "I'd do the same." }
+              ],
+              "questions": [
+                {
+                  "stem": "What does Ben like best about his apartment?",
+                  "options": ["The big windows", "The balcony", "The location"],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Excuse me, I ordered the chicken soup, but this is vegetable soup." },
+                { "speaker": "f", "text": "Oh, I'm so sorry. Let me check. Yes, the kitchen made a mistake. I'll bring you the chicken soup right away." },
+                { "speaker": "m", "text": "Thank you. Could I also have some more bread?" },
+                { "speaker": "f", "text": "Of course. And the dessert is on us today." }
+              ],
+              "questions": [
+                {
+                  "stem": "What problem does the man have?",
+                  "options": ["He received the wrong dish", "His soup is cold", "He has waited too long for dessert"],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "How did your math test go, Luis?" },
+                { "speaker": "m", "text": "Not bad, I think. The first part was easy, but I ran out of time on the last two questions." },
+                { "speaker": "f", "text": "That happens to me, too. Are you worried?" },
+                { "speaker": "m", "text": "A little, but I studied a lot, so I think I passed." }
+              ],
+              "questions": [
+                {
+                  "stem": "How does Luis feel about his test?",
+                  "options": ["Angry about the questions", "Sure that he failed", "Fairly hopeful"],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Hello, I think I left my bag on your bus this morning. It's a black bag with a red scarf inside." },
+                { "speaker": "m", "text": "Which bus was it?" },
+                { "speaker": "f", "text": "The number twelve, the one that leaves the station at eight fifteen." },
+                { "speaker": "m", "text": "Let me check. Yes, a driver found a black bag on the number twelve. You can pick it up at the main office until five o'clock." },
+                { "speaker": "f", "text": "Great! I'll come this afternoon." }
+              ],
+              "questions": [
+                {
+                  "stem": "Where can the woman get her bag?",
+                  "options": ["At the station café", "At the main office", "On the number twelve bus"],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Should we have Emma's birthday party at my house?" },
+                { "speaker": "f", "text": "I think it's too small. We're inviting thirty people." },
+                { "speaker": "m", "text": "What about the park by the river? There's plenty of space, and we can have a barbecue." },
+                { "speaker": "f", "text": "That's a nice idea, if the weather is good." },
+                { "speaker": "m", "text": "Right. I'll check the forecast tonight." }
+              ],
+              "questions": [
+                {
+                  "stem": "Why do they prefer the park to the man's house?",
+                  "options": ["It is big enough for all the guests", "It is closer to where most of the guests live", "It costs less than a restaurant"],
+                  "correct": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "cloze",
+          "instruction": "A radio presenter talks about a summer festival. Listen and fill each gap in the notes with one, two or three words.",
+          "title": "Riverside Festival",
+          "audio": [
+            { "speaker": "f", "text": "Good morning, everyone, and welcome to Community Voice. I'm Karen Mills, and today I'd like to tell you about the biggest event of the summer in our town, the Riverside Festival. This year, it takes place from the fourteenth to the sixteenth of August, so mark your calendars. As always, everything happens in Harper Park, right next to the old stone bridge." },
+            { "speaker": "f", "text": "Let me start with the music, because that's what most people come for. On Friday evening, a local band called The Night Owls will open the festival with their famous rock songs. On Saturday, there's a concert for families in the afternoon, and then a jazz singer from New Orleans will perform at nine o'clock. The best part is that every concert is free. You only pay if you want to sit in the front section, and those tickets cost eight dollars." },
+            { "speaker": "f", "text": "For children, there is a special area with games, face painting and a small farm. A man called Peter will bring rabbits, ducks and even a baby goat, and the children can touch and feed them. In the same area, a magician does a show every hour." },
+            { "speaker": "f", "text": "Of course, you'll be hungry after all that fun, and there will be about thirty food stands this year. They sell everything from pizza and tacos to fresh fruit. My personal favorite is the fish soup, which is made by a family from the coast. If you're coming with a large group, you can reserve a picnic table on the festival website. It costs only five dollars, and you can keep the table all day." },
+            { "speaker": "f", "text": "Parking can be a problem, because the park only has space for about two hundred cars. So I recommend that you leave your car at home and take the free bus. It leaves every fifteen minutes from the train station. If you prefer to cycle, there is a safe bike parking area near the entrance." },
+            { "speaker": "f", "text": "Finally, a few tips. Bring a hat and sunscreen, because there's not much shade in the park. Also, bring a plastic bottle for water, because glass bottles are not allowed. And if it rains, don't worry. The main stage has a roof, and the festival will go on." },
+            { "speaker": "f", "text": "That's all for today. See you at the festival, and thanks for listening!" }
+          ],
+          "text": "Place: Harper Park, next to the old stone {{1}}\n\nBand on Friday evening: The Night {{2}}\n\nPrice of tickets for the front section: {{3}} dollars\n\nChildren's area animals: rabbits, ducks and a baby {{4}}\n\nThe free bus leaves from the {{5}}\n\nWhat to bring: a hat, sunscreen and a {{6}} bottle",
+          "gaps": [
+            { "answers": ["bridge"] },
+            { "answers": ["owls"] },
+            { "answers": ["eight", "8"] },
+            { "answers": ["goat"] },
+            { "answers": ["train station", "the train station", "railway station", "the railway station", "station", "the station"] },
+            { "answers": ["plastic"] }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Listen to a radio interview with Laura, who runs a bakery. Pick the best answer to each question.",
+          "audio": [
+            { "speaker": "m", "text": "Welcome to the program, Laura. Three years ago, you worked in a bank, and today you have your own bakery. That's quite a change. What made you leave your job?" },
+            { "speaker": "f", "text": "Well, the money was good, but I wasn't happy. I sat in front of a computer all day, and I never saw anything that I had made with my own hands. I had always loved baking at home, especially with my grandmother, so slowly I started to dream about it. Of course, my family was worried. My father kept asking me if I was sure." },
+            { "speaker": "m", "text": "But it must have been a big risk. What was the hardest part of opening the shop?" },
+            { "speaker": "f", "text": "Honestly, it wasn't the baking. I knew how to do that. The hardest part was learning about everything else, like paying taxes, ordering flour and finding good staff. In the first year, I worked twelve hours a day, six days a week, and after a few months I almost gave up. The first winter was especially cold, and some mornings only five or six people came into the shop." },
+            { "speaker": "m", "text": "So what kept you going?" },
+            { "speaker": "f", "text": "My customers. A lady who lives next door came every single morning, and she told me my bread was the best she had ever tried. That gave me a lot of confidence." },
+            { "speaker": "m", "text": "Did you change anything about your recipes over time?" },
+            { "speaker": "f", "text": "A little. At the beginning, I tried to copy the fancy cakes from magazines, but they took a long time to make, and nobody really wanted them. Now I make fewer things, but I make them better." },
+            { "speaker": "m", "text": "And what do people like to buy most?" },
+            { "speaker": "f", "text": "Everyone expects it to be the cakes, but actually it's the plain whole-wheat bread. I use my grandmother's recipe, and it takes two days to make. People line up outside before we open, and sometimes it's sold out by ten o'clock." },
+            { "speaker": "m", "text": "That sounds like a good problem to have." },
+            { "speaker": "f", "text": "In a way, yes. But it makes me sad when someone arrives at noon and there's nothing left. I'd like to bake more, but my oven is too small, and I can't afford a bigger one yet." },
+            { "speaker": "m", "text": "And what are your plans for the future?" },
+            { "speaker": "f", "text": "I'm not planning to open more shops, if that's what you mean. I prefer to keep it small and personal. What I really want to do is start a weekend class where children can learn to make bread. I think it's important for young people to know where their food comes from." },
+            { "speaker": "m", "text": "That's a wonderful idea. Thank you so much for coming, Laura, and good luck." },
+            { "speaker": "f", "text": "Thank you. It was a pleasure, and please visit the bakery when you have time. I promise to keep a loaf for you." }
+          ],
+          "questions": [
+            {
+              "stem": "Why did Laura leave her job at the bank?",
+              "options": ["She did not earn enough money.", "She wanted to make something with her own hands.", "Her grandmother asked her to."],
+              "correct": 1
+            },
+            {
+              "stem": "What was the hardest part of opening the bakery?",
+              "options": ["Learning how to bake", "Finding customers", "Dealing with the business tasks"],
+              "correct": 2
+            },
+            {
+              "stem": "What kept Laura going when she almost gave up?",
+              "options": ["Kind words from a customer", "Help from her family", "The money she had saved"],
+              "correct": 0
+            },
+            {
+              "stem": "What do customers buy most in the bakery?",
+              "options": ["Cakes", "Whole-wheat bread", "Sandwiches"],
+              "correct": 1
+            },
+            {
+              "stem": "What makes Laura sad?",
+              "options": ["Some customers come too late and find no bread.", "Her best customer has moved to another town.", "Her oven often breaks down."],
+              "correct": 0
+            },
+            {
+              "stem": "What does Laura want to do in the future?",
+              "options": ["Open a second bakery", "Sell her bakery", "Teach children to make bread"],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

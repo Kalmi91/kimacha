@@ -5,12 +5,20 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, lineHeight, radius, spacing, tapTarget } from '@/constants/Theme';
 import type { GlossaryEntry } from '@/lib/exam/mock/glossary';
 import { countWords } from '@/lib/exam/mock/score';
-import { DEFAULT_PLAYS, type MockTarget, type MockTask, type MockTaskAnswer } from '@/lib/exam/mock/types';
+import { DEFAULT_PLAYS, isAuthoredKindTask, type MockTarget, type MockTask, type MockTaskAnswer } from '@/lib/exam/mock/types';
 import { answerInputProps } from '@/lib/inputProps';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
 import { speak, stop as stopSpeaking } from '@/lib/speech';
 import { useTheme } from '@/lib/ThemeContext';
+import ClipsMcTask from './mock/ClipsMcTask';
+import ClozeTask from './mock/ClozeTask';
+import EssayTask from './mock/EssayTask';
+import GappedTextTask from './mock/GappedTextTask';
+import MatchPoolTask from './mock/MatchPoolTask';
+import PassageMcTask from './mock/PassageMcTask';
+import PickStatementsTask from './mock/PickStatementsTask';
+import TransformTask from './mock/TransformTask';
 
 // one mock-exam task on screen. The structure of the old (4afeb8c^) components/exam/ExamTaskCard.tsx:
 // the instruction in the TARGET language, as on a real paper (a short help in the interface
@@ -47,6 +55,29 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
       stopSpeaking();
     };
   }, []);
+
+  // The authored B1-C1 kinds have a component of their own each (components/exam/mock); this card only hands the task over.
+  if (isAuthoredKindTask(task)) {
+    const props = { answer, onAnswer, target, canSpeak, glossary };
+    switch (task.kind) {
+      case 'passage_mc':
+        return <PassageMcTask task={task} {...props} />;
+      case 'clips_mc':
+        return <ClipsMcTask task={task} {...props} />;
+      case 'match_pool':
+        return <MatchPoolTask task={task} {...props} />;
+      case 'gapped_text':
+        return <GappedTextTask task={task} {...props} />;
+      case 'cloze':
+        return <ClozeTask task={task} {...props} />;
+      case 'pick_statements':
+        return <PickStatementsTask task={task} {...props} />;
+      case 'transform':
+        return <TransformTask task={task} {...props} />;
+      case 'essay':
+        return <EssayTask task={task} {...props} />;
+    }
+  }
 
   const audioLines = 'audio' in task && task.audio ? task.audio : [];
   const isListening = audioLines.length > 0;

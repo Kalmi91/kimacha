@@ -20,9 +20,11 @@ type Props = {
   onReview: () => void;
   onRetry: () => void;
   onExit: () => void;
+  /** The exam is at the official length (B1 and up), so the "shorter, scaled" note does not apply. */
+  fullLength?: boolean;
 };
 
-export function MockResultView({ result, timedOut, onReview, onRetry, onExit }: Props) {
+export function MockResultView({ result, timedOut, onReview, onRetry, onExit, fullLength }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
@@ -38,7 +40,7 @@ export function MockResultView({ result, timedOut, onReview, onRetry, onExit }: 
         {timedOut && <Text style={[styles.note, { color: colors.warning }]}>{s.timeUp}</Text>}
         {result.skills.map((p) => (
           <Text key={p.skill} testID={`mock-band-${p.skill}`} style={[styles.line, { color: p.included ? colors.text : colors.textMuted }]}>
-            {p.included ? s.bandLine(p.name, p.points, p.maxPoints) : s.bandNotIncluded(p.name)}
+            {!p.included ? s.bandNotIncluded(p.name) : p.scale !== undefined ? s.mockBandScale(p.name, p.scale, p.points, p.maxPoints) : s.bandLine(p.name, p.points, p.maxPoints)}
           </Text>
         ))}
         {result.rule.kind === 'groups' &&
@@ -57,7 +59,17 @@ export function MockResultView({ result, timedOut, onReview, onRetry, onExit }: 
             {s.averageLine(result.rule.pct, result.rule.passPct, result.rule.passed, result.rule.provisional)}
           </Text>
         )}
-        <Text style={[styles.note, { color: colors.textMuted }]}>{s.shortNote}</Text>
+        {result.rule.kind === 'scale' && (
+          <>
+            <Text testID="mock-scale" style={[styles.line, { color: result.rule.passed ? colors.success : colors.danger }]}>
+              {s.mockScaleLine(result.rule.points, result.rule.needed, result.rule.passed, result.rule.provisional)}
+            </Text>
+            <Text testID="mock-scale-note" style={[styles.note, { color: colors.textMuted }]}>
+              {s.mockScaleNote}
+            </Text>
+          </>
+        )}
+        <Text style={[styles.note, { color: colors.textMuted }]}>{fullLength ? s.fullNote : s.shortNote}</Text>
       </Card>
       <ExamButton testID="mock-review" label={s.checkAnswers} onPress={onReview} />
       <ExamButton testID="mock-retry" secondary label={s.tryAgain} onPress={onRetry} />
@@ -84,7 +96,7 @@ export function MockReviewView({ result, onBack }: { result: MockResult; onBack:
                 {task.items.map((it, ii) => (
                   <View key={ii} testID={`mock-review-${task.taskId}-${ii}`} style={styles.item}>
                     <Text style={[styles.line, { color: colors.text }]}>
-                      {it.ok ? '✓' : '✗'} {it.label}
+                      {it.ok ? '✓' : '✗'} {it.skill === undefined && /^\d+$/.test(it.label) ? s.mockGapLabel(Number(it.label)) : it.label}
                     </Text>
                     <Text style={[styles.small, { color: it.ok ? colors.success : colors.danger }]}>
                       {s.yourAnswer}: {it.given || s.noAnswer}

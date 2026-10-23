@@ -1,0 +1,837 @@
+{
+  "target": "es",
+  "level": "C1",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "pick_statements",
+          "instruction": "Escuchará una conferencia dos veces. Seleccione las seis afirmaciones que corresponden al contenido de lo que escucha.",
+          "audio": [
+            {
+              "speaker": "f",
+              "text": "Buenas tardes a todas y a todos, y muchas gracias por la invitación. Les voy a hablar de un proyecto que me ocupó casi catorce meses: la restauración del mural de la escuela primaria de San Miguel Tlaxcalpan, en el estado de Puebla. Les contaré no solo lo que hicimos, sino también las dudas que tuvimos."
+            },
+            {
+              "speaker": "f",
+              "text": "El mural mide más de nueve metros de largo y cubre la pared del auditorio. Lo pintó, a mediados del siglo pasado, un artista de la región, poco conocido fuera de su estado, que trabajó casi sin ayudantes. La escena representa una cosecha comunitaria, con unas treinta figuras de tamaño casi natural. Cuando llegamos, la humedad había hecho un daño considerable: manchas blanquecinas en la parte baja y pintura desprendida en varios puntos."
+            },
+            {
+              "speaker": "f",
+              "text": "Lo primero que hicimos fue documentar. Fotografiamos cada palmo del muro con luz rasante, que permite ver grietas y abultamientos que a simple vista no se notan, y levantamos un mapa de daños. En esa etapa descubrimos algo que cambió el rumbo del trabajo: una restauración anterior, hecha unas cuatro décadas atrás, había cubierto toda la superficie con un barniz sintético. Aquel barniz, que en su momento pareció una buena protección, se había vuelto amarillento y opaco, y encerraba la humedad en lugar de dejarla salir."
+            },
+            {
+              "speaker": "f",
+              "text": "Aquí empezó el primer gran debate del equipo. Unos defendían quitar el barniz por completo; otros temían que al hacerlo se arrastrara también la pintura original, que estaba muy debilitada. Decidimos no apostar nada a ciegas. Escogimos un rincón poco visible, detrás del escenario, y probamos allí distintos disolventes durante tres meses. Con esas pruebas elegimos un gel suave que se aplicaba por zonas pequeñas. Debo decir que no logramos eliminar el barniz en todo el mural: en las zonas más frágiles lo dejamos, porque el riesgo era mayor que el beneficio."
+            },
+            {
+              "speaker": "f",
+              "text": "La segunda sorpresa llegó cuando limpiábamos el extremo derecho. Debajo de una capa de pintura marrón, claramente posterior, apareció el contorno de una figura: una mujer con un niño en brazos, pintada por la misma mano que el resto de la escena. Nadie en el pueblo recordaba haberla visto. No sabemos quién ordenó taparla, ni cuándo, ni por qué. Hay versiones para todos los gustos, desde que un director de la escuela consideró inapropiada la imagen hasta que alguien quiso aprovechar la pintura sobrante. Preferimos no inventar una explicación. Recuperamos la figura con mucho cuidado, y hoy se puede ver de nuevo."
+            },
+            {
+              "speaker": "f",
+              "text": "Otro punto delicado fue qué hacer con las partes perdidas. Hay quien piensa que un buen restaurador es el que consigue que no se note su trabajo. Yo no estoy de acuerdo, al menos en este tipo de obras. Nosotros aplicamos el criterio de la reintegración visible: donde faltaba pintura, rellenamos con pequeñas líneas verticales de color, de modo que desde lejos la imagen se lee completa, pero a unos cuantos pasos se distingue enseguida qué es original y qué es intervención nuestra. Así, cualquier restaurador del futuro podrá deshacer nuestro trabajo sin dañar el de la persona que pintó."
+            },
+            {
+              "speaker": "f",
+              "text": "Algo muy importante fue la participación de la comunidad. Abrimos el taller a los vecinos un día a la semana. Los alumnos de la escuela no tocaron la pintura, desde luego, pero nos ayudaron a llevar una bitácora con dibujos y fotografías de cada avance. Las personas mayores del pueblo fueron todavía más valiosas: un par de señoras de más de ochenta nos contaron quiénes habían servido de modelo para las figuras, y gracias a ellas pudimos poner nombre a varios rostros."
+            },
+            {
+              "speaker": "f",
+              "text": "Ahora, la parte menos romántica: el dinero y el tiempo. El proyecto se planeó para ocho meses y duró catorce. Una parte de los fondos la aportó el municipio, pero el resto se reunió con una campaña de donativos entre los habitantes y los emigrantes del pueblo que viven en el extranjero. Lo más conmovedor fue ver llegar transferencias pequeñas, de veinte o treinta dólares, acompañadas de mensajes de gente que había estudiado en esa escuela."
+            },
+            {
+              "speaker": "f",
+              "text": "Para terminar, tres ideas. La primera: restaurar es, en buena medida, saber escuchar, tanto a la obra como a quienes viven con ella. La segunda: los errores bienintencionados del pasado, como aquel barniz, nos recuerdan que conviene intervenir lo menos posible y dejar abierta la puerta a que otros corrijan. Y la tercera: una obra restaurada no queda terminada, sino bajo cuidado. Muchas gracias por su atención, y con gusto atiendo sus preguntas."
+            }
+          ],
+          "statements": [
+            "El autor del mural era un artista de renombre internacional.",
+            "En una restauración anterior se había aplicado un barniz que, con el tiempo, perjudicó la obra.",
+            "El barniz se eliminó por completo en toda la superficie del mural.",
+            "Bajo una capa de pintura posterior apareció una figura que los vecinos no conocían.",
+            "El equipo probó los disolventes en una zona poco visible antes de intervenir en el conjunto.",
+            "Las zonas perdidas se rellenaron con colores idénticos a los originales para que no se notara la intervención.",
+            "Se sabe con certeza que la figura oculta fue cubierta por orden de un director de la escuela.",
+            "Quien se acerca al mural puede distinguir las partes restauradas de las originales.",
+            "Los alumnos de la escuela participaron directamente en la limpieza de la pintura.",
+            "Algunas personas mayores del pueblo ayudaron a identificar a quienes sirvieron de modelo para los personajes.",
+            "El proyecto se prolongó bastante más de lo que se había calculado al principio.",
+            "Todo el financiamiento del proyecto procedió de fondos municipales."
+          ],
+          "correct": [
+            1,
+            3,
+            4,
+            7,
+            9,
+            10
+          ],
+          "pick": 6
+        },
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Escuchará cuatro conversaciones, cada una dos veces. Para cada conversación, responda a las preguntas. Seleccione la opción correcta.",
+          "clips": [
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Andrés, qué gusto verte. Oye, me dijo Lucía que te hicieron una oferta en Monterrey. ¿Es cierta la noticia?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Sí, pero no sé qué hacer. Me ofrecen casi el doble de lo que gano ahora, y el puesto es de coordinador, no de analista."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Pues felicidades. ¿Y por qué tienes esa cara? Cualquiera estaría feliz."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Porque Lucía acaba de conseguir una plaza de planta en la universidad. Si nos vamos, ella tendría que empezar de cero, y además mis papás viven a diez minutos de nuestro departamento."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Mira, yo pasé por algo parecido cuando me ofrecieron irme a Querétaro. Acepté sin pensarlo mucho, y a los ocho meses ya estaba arrepentida. No por el trabajo, que era buenísimo, sino porque pasaba los fines de semana sola, esperando el lunes para tener con quién hablar."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Entonces me recomiendas que no vaya."
+                },
+                {
+                  "speaker": "f",
+                  "text": "No dije eso. Te cuento mi experiencia, nada más. Lo que sí te recomiendo es que no decidas por el sueldo. Pregúntate cuánto vale para ti la vida que tienes aquí. ¿Has hablado con tu jefe?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Todavía no. Me daba pena parecer desleal."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Desleal sería aceptar y avisar con dos días de anticipación. Hablar con franqueza no es deslealtad."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Tienes razón. Además podría proponerle a la empresa de Monterrey empezar con tres meses de prueba, viajando entre semana. Si no funciona, todos quedamos tranquilos."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Esa es la idea. Y de paso Lucía puede ir a conocer la ciudad antes de decidir."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Se lo voy a proponer esta noche. Gracias, Marisol, de verdad. Me quitaste un peso de encima."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Por qué duda Andrés de aceptar la oferta?",
+                  "options": [
+                    "Cree que el nuevo puesto tiene menos responsabilidad que el actual.",
+                    "Le preocupa cómo afectaría el cambio a su pareja y a sus padres.",
+                    "Desconfía de la solidez de la empresa que le hace la oferta."
+                  ],
+                  "correct": 1
+                },
+                {
+                  "stem": "¿Qué piensa hacer Andrés al final de la conversación?",
+                  "options": [
+                    "Rechazar la oferta para no arrepentirse como Marisol.",
+                    "Pedir un aumento de sueldo a su jefe actual.",
+                    "Proponer un periodo de prueba en la empresa de Monterrey."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Buenos días, bienvenida. ¿En qué puedo ayudarla?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Buenos días. Vengo a levantar una aclaración. En mi estado de cuenta aparece un cargo de cuatro mil ochocientos pesos en una tienda de electrónicos de Guadalajara, y yo nunca he estado en Guadalajara."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Entiendo. ¿Tiene usted la tarjeta en su poder?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Sí, la traigo conmigo. Hasta anoche la tenía en la cartera, y no se la presté a nadie."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Entonces lo más probable es que hayan copiado los datos. Le voy a pedir una identificación y el estado de cuenta, y vamos a abrir un caso."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Aquí tiene. Oiga, ¿y mientras tanto tengo que pagar ese cargo? Mi fecha límite es el viernes."
+                },
+                {
+                  "speaker": "m",
+                  "text": "No tendrá que pagarlo mientras dure la investigación. El sistema le hará un abono provisional por la misma cantidad en un máximo de cuarenta y ocho horas, y no se le cobrarán intereses sobre ese monto. Si el banco resuelve que el cargo fue legítimo, se le revertirá el abono."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Perfecto. ¿Y cuánto tarda la investigación?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Hasta quince días hábiles. Le recomiendo, además, que cancelemos esta tarjeta y le emitamos otra con número distinto. Mientras la actual siga activa, el riesgo continúa."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Es que tengo varios pagos domiciliados: el gimnasio, la renta de una bodega y dos suscripciones. Si cancelo la tarjeta, se me van a rechazar todos."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Es comprensible. La nueva tarjeta llega a su domicilio en cinco días hábiles. Le sugiero avisar a esos comercios el nuevo número en cuanto la reciba. La cancelación se puede programar para esa fecha, así no queda desprotegida ni se interrumpen sus pagos."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Eso me parece razonable. ¿Y puedo bloquear la tarjeta de modo que mientras tanto solo funcione en cajeros?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Sí, desde la aplicación puede limitarla. Se lo dejo configurado ahorita mismo si me permite su celular."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Claro, aquí está. Muchas gracias."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué ocurrirá con el cargo mientras se investiga el caso?",
+                  "options": [
+                    "Se le abonará a la clienta de forma provisional y no pagará intereses por esa cantidad.",
+                    "La clienta tendrá que pagarlo y el banco se lo devolverá si la investigación le da la razón.",
+                    "El banco lo cancelará de manera definitiva en un máximo de cuarenta y ocho horas."
+                  ],
+                  "correct": 0
+                },
+                {
+                  "stem": "¿Qué acuerdan sobre la tarjeta actual?",
+                  "options": [
+                    "Se cancelará de inmediato y la clienta pagará con efectivo hasta que llegue la nueva.",
+                    "Seguirá funcionando sin ninguna restricción hasta que termine la investigación.",
+                    "Se limitará su uso por ahora y se cancelará cuando llegue la tarjeta nueva."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Gerardo, ya reservé el salón del restaurante para el sábado quince. Nada más falta que me confirmes cuántos van a ir de tu lado."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Espera. ¿Reservaste el salón sin preguntarme? Habíamos quedado en que lo íbamos a pensar."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Lo pensé. Mamá cumple setenta, y una cosa así se celebra como se debe. Ya hablé con Tere y con los tíos, y todos dijeron que sí."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Pues yo tengo mis dudas. Mamá odia ser el centro de atención. Acuérdate de la fiesta sorpresa de los sesenta."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Esta vez será distinto, algo más tranquilo."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Dani, un salón con cincuenta invitados no es tranquilo. Y no es cuestión de dinero. Es que no le preguntamos a ella. La última vez que le mencioné el cumpleaños, me dijo que lo único que quería era comer en casa con la familia y que alguien le arreglara el jardín."
+                },
+                {
+                  "speaker": "f",
+                  "text": "¿Eso te dijo? A mí me dijo que no hiciéramos nada. Y tú sabes que cuando dice que no hagamos nada, es que sí quiere algo."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Eso es lo que dices tú para justificar lo que ya decidiste. A mí me pareció que lo decía en serio."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Bueno, quizá tengas razón en parte. Pero no voy a dejar pasar los setenta con un pastel y ya."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Nadie propuso solo un pastel. Podemos hacer una comida en su casa, invitar a los más cercanos, unas veinte personas, y contratar a alguien que le dé una mano con el jardín esa misma semana. Eso sí le va a encantar."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Sigo creyendo que se merece algo más grande. Aunque tal vez tengas razón: una tarde en su casa, donde se sienta cómoda, vale más que un salón lleno de gente."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Y el depósito del salón, ¿se puede recuperar?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Creo que sí, si aviso con una semana de anticipación. Déjame llamar y vemos."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué le reprocha principalmente Gerardo a su hermana?",
+                  "options": [
+                    "Que haya decidido sin consultar ni a él ni a su madre.",
+                    "Que quiera gastar más dinero del que la familia puede pagar.",
+                    "Que organice la fiesta para quedar bien con los tíos."
+                  ],
+                  "correct": 0
+                },
+                {
+                  "stem": "Al final de la conversación, Daniela",
+                  "options": [
+                    "mantiene su plan original sin hacer ningún cambio.",
+                    "empieza a aceptar la idea de una celebración más sencilla.",
+                    "decide pedirle a su madre que elija entre las dos propuestas."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Buenas tardes. Vengo a registrar mi examen de titulación, pero me dijeron en la ventanilla de enfrente que aquí revisan los expedientes."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Así es. A ver, déjeme su carpeta. ¿Nombre?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Karen Villalobos, de Ingeniería Industrial."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Muy bien, Karen. Veo que trae el acta de nacimiento, la constancia de no adeudo y el comprobante del pago de derechos. Pero aquí falta la carta de liberación del servicio social."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Sí la tengo, aquí está. Me la dieron hace tres semanas."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Ya la vi, pero está firmada solo por su coordinador de carrera. Necesita también el sello de la Dirección de Servicio Social. Sin ese sello, no podemos aceptarla."
+                },
+                {
+                  "speaker": "f",
+                  "text": "No me dijeron nada de eso cuando la recogí. ¿Y dónde está esa oficina?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "En el edificio B, planta baja, pero cierra a las dos. Son las doce y media, así que si va ahorita todavía alcanza."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Es que mi fecha límite para registrar es hoy a las cuatro. Si no, tengo que esperar al siguiente periodo."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Entiendo la urgencia. Mire, haga esto: vaya a Servicio Social con la carta, pida que se la sellen y regrese. Yo le dejo su expediente apartado con todo lo demás ya revisado y le reservo la fecha provisional. Si regresa antes de las cuatro con el sello, queda registrada hoy."
+                },
+                {
+                  "speaker": "f",
+                  "text": "¿Y si la oficina tarda más de lo previsto?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "En ese caso no le puedo ofrecer una prórroga, porque el reglamento no la contempla. Lo único que podría hacerse es que su asesor mande un oficio a la jefatura explicando el caso, y que ellos decidan si aceptan el registro fuera de tiempo, pero no es seguro."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Entonces mejor corro. Muchas gracias, y perdone la prisa."
+                },
+                {
+                  "speaker": "m",
+                  "text": "No se preocupe. Y para otra vez, revise todas las firmas antes de entregar."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué problema tiene el expediente de Karen?",
+                  "options": [
+                    "Falta el comprobante del pago de los derechos de examen de titulación.",
+                    "El documento del servicio social ya ha perdido su vigencia por haber sido emitido hace tres semanas.",
+                    "A uno de los documentos le falta la validación de una de las oficinas."
+                  ],
+                  "correct": 2
+                },
+                {
+                  "stem": "¿Qué pasará si Karen no regresa antes de las cuatro?",
+                  "options": [
+                    "Recibirá una prórroga automática de una semana para completar los documentos que le faltan.",
+                    "Esperará al siguiente periodo, salvo que se acepte una excepción que pida su asesor.",
+                    "Perderá la fecha provisional, pero podrá registrarse sin problema al día siguiente."
+                  ],
+                  "correct": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Escuchará una entrevista dos veces. Responda a las preguntas. Seleccione la opción correcta.",
+          "audio": [
+            {
+              "speaker": "m",
+              "text": "Bienvenidos a Voces de la Ciudad. Hoy nos acompaña la doctora Elena Garza, economista laboral e investigadora en un instituto de políticas públicas. Doctora, gracias por estar aquí."
+            },
+            {
+              "speaker": "f",
+              "text": "Gracias a ti por la invitación, Luis."
+            },
+            {
+              "speaker": "m",
+              "text": "Se habla mucho de la semana laboral de cuatro días. Algunas empresas ya la probaron, y usted ha estudiado esas pruebas. ¿Funciona o es una moda?"
+            },
+            {
+              "speaker": "f",
+              "text": "Mi respuesta honesta es que depende de qué entendamos por funcionar. Hay experimentos en varios países que mostraron que la productividad se mantiene o incluso mejora en ciertas actividades, y que el agotamiento baja de manera notable. Pero esos resultados vienen, sobre todo, de empresas pequeñas y medianas de servicios, que además se ofrecieron voluntariamente. Eso introduce un sesgo importante: se apuntan quienes ya creen que va a salir bien."
+            },
+            {
+              "speaker": "m",
+              "text": "O sea que los datos no se pueden generalizar."
+            },
+            {
+              "speaker": "f",
+              "text": "No directamente. Una oficina de diseño o una consultora puede reorganizar sus tareas, eliminar reuniones y concentrar el trabajo en menos días. Un hospital, una fábrica con turnos o un supermercado no tienen esa flexibilidad. Allí reducir el horario significa contratar más gente o aceptar un servicio peor, y ambas cosas cuestan."
+            },
+            {
+              "speaker": "m",
+              "text": "Entonces, ¿esto sería un privilegio de unos cuantos trabajadores?"
+            },
+            {
+              "speaker": "f",
+              "text": "Es un riesgo real, y es la crítica que más me preocupa. Si solo los empleos mejor pagados y más calificados consiguen trabajar menos, la medida aumenta la desigualdad en lugar de reducirla. Por eso defiendo que cualquier política pública vaya acompañada de incentivos para los sectores difíciles, no solo para los que lo tienen fácil."
+            },
+            {
+              "speaker": "m",
+              "text": "Hay quien opina que en México el problema no es trabajar cinco días, sino que se trabajan demasiadas horas por semana."
+            },
+            {
+              "speaker": "f",
+              "text": "Es un dato que conviene matizar. Una cosa son las horas que fija la ley y otra las que se trabajan de verdad. Además, mucha gente no está en la economía formal, de modo que ninguna ley le llega. Es decir, estamos discutiendo cuántos días trabajar mientras millones de personas no tienen vacaciones pagadas ni seguridad social."
+            },
+            {
+              "speaker": "m",
+              "text": "Doctora, eso suena casi a que el debate es un lujo."
+            },
+            {
+              "speaker": "f",
+              "text": "No lo diría tan fuerte. Creo que el debate es útil porque obliga a preguntarse para qué queremos la productividad. Si ganamos eficiencia con tecnología, ¿ese tiempo ganado lo convertimos en más producción o en más tiempo libre? Esa es una decisión política, no técnica. Lo que me parece problemático es que se discuta como si fuera un truco de recursos humanos."
+            },
+            {
+              "speaker": "m",
+              "text": "Pero los trabajadores que participaron en esas pruebas parecían encantados. ¿Eso no cuenta?"
+            },
+            {
+              "speaker": "f",
+              "text": "Cuenta, y mucho, porque el bienestar importa por sí mismo. En esas pruebas disminuyeron el estrés y el cansancio, y la gente dijo dormir mejor y dedicar más tiempo a la familia. Pero cuidado con una trampa: que una medida guste no demuestra que sea sostenible. Para eso necesitamos seguir a las empresas durante bastante tiempo, y la mayoría de los estudios solo cubre unos meses."
+            },
+            {
+              "speaker": "m",
+              "text": "Hablemos del lado de los empresarios. Muchos argumentan que reducir días sería insostenible para las empresas pequeñas."
+            },
+            {
+              "speaker": "f",
+              "text": "Tienen parte de razón. Una microempresa con tres empleados no puede cerrar un día entero sin perder clientes. Pero me llama la atención que se use el mismo argumento cada vez que se propone una mejora laboral, desde las vacaciones hasta el seguro. Y en muchos casos los temores no se cumplieron. Lo que sí hace falta es una transición larga, con apoyos fiscales para las empresas que lo necesiten."
+            },
+            {
+              "speaker": "m",
+              "text": "¿Y qué papel juegan los sindicatos en esto?"
+            },
+            {
+              "speaker": "f",
+              "text": "Fundamental, aunque casi nunca se les menciona. Una reducción de jornada que se impone desde arriba suele traducirse en más presión. En cambio, cuando los trabajadores participan en el diseño, deciden qué tareas eliminar y cómo repartir los días libres, la medida es mucho más aceptada y los resultados son mejores. Es la diferencia entre recibir un regalo y construir un acuerdo."
+            },
+            {
+              "speaker": "m",
+              "text": "Y la inteligencia artificial, ¿cambia algo?"
+            },
+            {
+              "speaker": "f",
+              "text": "Cambia la conversación, pero no resuelve el fondo. Si una máquina permite hacer en cuatro días lo que antes tomaba cinco, alguien tiene que decidir quién se queda con esa ganancia. Sin reglas, lo normal es que se la quede quien tiene más poder de negociación."
+            },
+            {
+              "speaker": "m",
+              "text": "Ya para terminar, si usted tuviera que diseñar la política, ¿por dónde empezaría?"
+            },
+            {
+              "speaker": "f",
+              "text": "Empezaría por medir. Antes de decretar nada, financiaría pruebas con muestras amplias y variadas, incluyendo sectores como la salud y la manufactura, y publicaría los resultados completos, también los malos. Después, una reducción gradual de horas, no necesariamente de días, con flexibilidad para que cada centro de trabajo escoja cómo organizarla. Y, sobre todo, una inspección que garantice que el tiempo liberado no se compensa con exigir lo mismo en menos horas, porque eso no es descanso, es intensificación."
+            },
+            {
+              "speaker": "m",
+              "text": "Una última duda. ¿Usted trabajaría cuatro días?"
+            },
+            {
+              "speaker": "f",
+              "text": "Con gusto, si me lo permitieran. Aunque, siendo sincera, creo que me pasaría el quinto día escribiendo artículos sobre el tema."
+            },
+            {
+              "speaker": "m",
+              "text": "Esperemos que esa sea la única consecuencia. Doctora Elena Garza, muchas gracias."
+            },
+            {
+              "speaker": "f",
+              "text": "A ti, Luis."
+            }
+          ],
+          "questions": [
+            {
+              "stem": "Según la doctora Garza, los resultados favorables de los experimentos",
+              "options": [
+                "demuestran que la medida funciona bien en las empresas de servicios de cualquier tamaño.",
+                "deben tomarse con cautela, porque proceden de empresas que se ofrecieron voluntariamente.",
+                "se explican, sobre todo, por la eliminación de las reuniones de trabajo."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "¿Por qué sería difícil aplicar la medida en un hospital o en un supermercado?",
+              "options": [
+                "Porque implicaría contratar más personal o aceptar un peor servicio.",
+                "Porque sus empleados prefieren cobrar horas extra.",
+                "Porque la productividad de esas actividades no se puede medir."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "¿Qué es lo que más preocupa a la doctora?",
+              "options": [
+                "Que la productividad de las empresas de servicios disminuya al reducir los días de trabajo.",
+                "Que las empresas pequeñas no puedan asumir los costos de reducir la jornada.",
+                "Que la medida solo llegue a los empleos mejor pagados y aumente la desigualdad."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Al hablar de la economía informal, la doctora quiere señalar que",
+              "options": [
+                "la reducción de la jornada beneficiará también a la mayoría de los trabajadores informales.",
+                "la discusión sobre los cuatro días olvida a quienes no tienen derechos laborales básicos.",
+                "la ley actual debería aplicarse con más rigor en todos los sectores económicos del país."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "¿Cómo valora la doctora el argumento de las empresas pequeñas?",
+              "options": [
+                "Le concede parte de razón, pero señala que se repite ante cualquier mejora laboral.",
+                "Lo rechaza, porque en su experiencia los temores casi nunca se cumplen.",
+                "Lo acepta y propone que esas empresas queden exentas de cualquier cambio de jornada."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Para evitar efectos negativos, la doctora propone sobre todo",
+              "options": [
+                "aprobar cuanto antes una ley que reduzca la semana laboral a cuatro días en todo el país.",
+                "reducir las horas de trabajo sin modificar los objetivos que se exigen a los empleados.",
+                "probar antes la medida en muestras amplias y vigilar que menos horas no suponga más intensidad."
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Escuchará diez conversaciones breves, cada una dos veces. Para cada conversación, responda a la pregunta. Seleccione la opción correcta.",
+          "clips": [
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "¿Y qué te dijo tu jefe de la propuesta que le llevaste?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Nada concreto. Que lo iba a pensar, que luego lo veíamos, que no me preocupara. Otra vez me dio atole con el dedo."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Pues ya llevas tres meses esperando. Pídele una fecha."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué quiere decir el hombre con «me dio atole con el dedo»?",
+                  "options": [
+                    "Que su jefe lo invitó a comer sin darle ninguna respuesta.",
+                    "Que su jefe lo entretuvo con promesas vagas sin comprometerse.",
+                    "Que su jefe rechazó la propuesta de manera tajante."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Oye, ¿por qué Sofía no me contesta los mensajes desde la fiesta?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Pues la llamaste por el nombre de tu ex frente a todos. Seguro ya le cayó el veinte de lo que dijiste."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Ay, no. Ahora entiendo por qué se fue tan callada."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué quiere decir la mujer con «ya le cayó el veinte»?",
+                  "options": [
+                    "Que Sofía ya se dio cuenta de lo que pasó.",
+                    "Que Sofía ya pagó la cuenta de la fiesta.",
+                    "Que Sofía decidió perdonar al hombre."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Mañana entrega el reporte Julián y todavía no lo empieza, ¿verdad?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Dice que lo termina esta noche. Si no se pone las pilas, mañana lo van a regañar."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Siempre lo hace todo a última hora y le sale bien. Así es Julián."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Según el hombre, ¿qué debería hacer Julián?",
+                  "options": [
+                    "Pedir ayuda a un compañero de la oficina.",
+                    "Entregar el reporte con un día de retraso.",
+                    "Esforzarse y trabajar con más empeño."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Le pedí a la recepcionista que me recomendara un restaurante y resulta que era la dueña. ¡Qué oso!"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Ay, no. ¿Y qué te dijo?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Se rio y me regaló el postre, pero me quedé mudo un buen rato."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué quiere decir el hombre con «qué oso»?",
+                  "options": [
+                    "Qué mala suerte.",
+                    "Qué vergüenza.",
+                    "Qué casualidad."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "¿Cuánto te cobraron por arreglar el carro?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Un ojo de la cara. Y todavía me dijeron que era el precio de temporada."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Pues ya sabes, para la próxima compara en dos o tres talleres antes de decidir."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué significa «un ojo de la cara» en esta conversación?",
+                  "options": [
+                    "Muchísimo dinero.",
+                    "Una cantidad razonable, aunque inesperada.",
+                    "Un precio que incluía una garantía."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Leí el informe que mandó Ramiro y no lo entendí. Las conclusiones no tienen ni pies ni cabeza."
+                },
+                {
+                  "speaker": "f",
+                  "text": "¿Qué no se entiende? A mí me pareció bastante claro."
+                },
+                {
+                  "speaker": "m",
+                  "text": "No sé qué le pasó, pero lo mandó sin revisar. Ni Ramiro supo explicármelo cuando le pregunté."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué critica el hombre del informe?",
+                  "options": [
+                    "Que es demasiado extenso.",
+                    "Que se entregó fuera de fecha.",
+                    "Que carece de coherencia."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "¿Para qué era la junta de ayer? Me dijeron que duró tres horas."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Era para aprobar el presupuesto, pero el director se fue por las ramas otra vez y salimos igual que como entramos."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Típico. Hay que mandarle la agenda por escrito."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué hizo el director durante la junta?",
+                  "options": [
+                    "Aprobó el presupuesto sin consultar a los demás.",
+                    "Divagó en lugar de tratar el tema previsto.",
+                    "Canceló la reunión a la mitad."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "¿Qué onda con tu vecino? Te vi hablando con él en la entrada."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Nada, otra vez me anduvo dando lata con el estacionamiento. Dice que mi carro le estorba, y ni lo uso entre semana."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Pues habla con el administrador, porque así no se puede."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué quiere decir el hombre con «me anduvo dando lata»?",
+                  "options": [
+                    "Que el vecino le ofreció ayuda con el estacionamiento.",
+                    "Que el vecino le pidió prestado el carro.",
+                    "Que el vecino lo estuvo molestando con el mismo asunto."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "¿Ya tienes todo para el viaje de mañana?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Todo. Las maletas, los boletos impresos y hasta el cargador del celular. Ya estoy al tiro."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Qué envidia. Yo todavía no saco ni la ropa del clóset, y salimos a las seis."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué quiere decir el hombre con «ya estoy al tiro»?",
+                  "options": [
+                    "Que ya está listo para el viaje.",
+                    "Que ya salió rumbo al aeropuerto.",
+                    "Que está nervioso por viajar."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Le escribí a Memo tres veces para ver si íbamos al concierto, y nada. Me dio el avión."
+                },
+                {
+                  "speaker": "m",
+                  "text": "A lo mejor no ha visto los mensajes. Háblale por teléfono."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Sí los vio, me aparece la palomita azul. Así es Memo cuando no quiere comprometerse."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué quiere decir la mujer con «me dio el avión»?",
+                  "options": [
+                    "Que Memo le contestó que estaba de viaje.",
+                    "Que Memo no le hizo caso a propósito.",
+                    "Que Memo le propuso otro plan."
+                  ],
+                  "correct": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
