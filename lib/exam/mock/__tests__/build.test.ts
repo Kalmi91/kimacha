@@ -13,7 +13,9 @@ afterAll(() => setPcicTarget('es'));
 function exam(target: MockTarget, level: MockLevel, seed = 1) {
   setPcicTarget(target);
   const items = pcicItemsForLevel(level);
-  return { items, exam: buildMockExam({ target, level, items, seed }) };
+  // No authored files: A1 / A2 are made of the words, and the speaking paper stays the placeholder reserve (the real speaking
+  // files change as the content is written; they are covered by authored.test.ts and data/__tests__/mockExams.test.ts).
+  return { items, exam: buildMockExam({ target, level, items, seed, authored: [] }) };
 }
 
 const paper = (e: MockExam, id: string) => e.papers.find((p) => p.id === id)!;

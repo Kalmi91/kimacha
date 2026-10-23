@@ -242,7 +242,8 @@ describe('authored builder: the seed picks a form', () => {
   it('A1 / A2 speaking: the paper comes from its file, the rest is built from the words as before; without a file it is a placeholder', () => {
     const written = (e: MockExam) => JSON.stringify(e.papers.filter((p) => p.id !== 'speaking'));
     for (const [target, level, minutes] of [['es', 'A1', 10], ['es', 'A2', 12], ['en', 'A1', 3.5], ['en', 'A2', 9]] as const) {
-      const plain = buildMockExam({ target, level, items: [], seed: 3 });
+      // `authored: []` = no file (the registry holds the real speaking files, which change as the content is written)
+      const plain = buildMockExam({ target, level, items: [], seed: 3, authored: [] });
       const withFile = buildMockExam({ target, level, items: [], seed: 3, authored: [speakingFile(target, level, 2), speakingFile(target, level === 'A1' ? 'A2' : 'A1', 2)] });
       expect(plain.papers.find((p) => p.id === 'speaking')).toMatchObject({ placeholder: true, tasks: [] });
       const speaking = withFile.papers.find((p) => p.id === 'speaking')!;
@@ -265,7 +266,7 @@ describe('authored builder: the seed picks a form', () => {
   it('A1 / A2 are built the old way, whatever files are injected', () => {
     setPcicTarget('es');
     const items = pcicItemsForLevel('A1');
-    const plain = buildMockExam({ target: 'es', level: 'A1', items, seed: 3 });
+    const plain = buildMockExam({ target: 'es', level: 'A1', items, seed: 3, authored: [] });
     const injected = buildMockExam({ target: 'es', level: 'A1', items, seed: 3, authored: allFiles('es', 'B1', 2) });
     expect(JSON.stringify(injected)).toBe(JSON.stringify(plain));
   });
