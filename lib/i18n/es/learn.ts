@@ -171,14 +171,16 @@ const es: typeof en = {
       means: (meaning: string) => `Significa: ${meaning}`,
     },
   },
-  // Pestaña Frases (beta): progreso (pasos: cada construcción más la única escritura), el paso de construir y el de escribir, estados vacío y ronda terminada.
+  // Pestaña Frases (beta): progreso (pasos: cada parte, escucha, construcción y escritura de las frases de la ronda), las etiquetas de los pasos, estados vacío y ronda terminada.
   sentenceTab: {
     progress: (done: number, total: number) => `${done} / ${total}`,
     progressA11y: (done: number, total: number) => `Pasos hechos: ${done} de ${total}`,
-    stepBuild: (n: number, total: number) => `Construye la frase ${n} de ${total}`,
-    stepType: 'Último paso: escribe esta frase',
-    stepListen: (n: number, total: number) => `Escucha y construye la frase ${n} de ${total}`,
-    listenHint: 'Escucha y construye la frase',
+    sentenceOf: (n: number, total: number) => `Frase ${n} de ${total}`,
+    stepChunk: (part: number, parts: number) => `Construye la parte ${part} de ${parts}`,
+    stepBuildWhole: 'Construye la frase entera',
+    stepTypeWhole: 'Escribe la frase entera',
+    stepListenType: 'Escucha y escribe lo que oyes',
+    listenTypeHint: 'Escucha y escribe la frase',
     listenPlay: 'Reproducir la frase',
     fromMistakes: 'De tus errores',
     hintUsed: 'pista usada',

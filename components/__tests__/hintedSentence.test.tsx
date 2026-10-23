@@ -66,21 +66,26 @@ describe('the sentence cards with hints', () => {
     expect(onSourceHint).toHaveBeenCalledWith(['a1-w1']);
   });
 
-  it('EasySentenceCard, listening step: no prompt and so no hints until the build is right', () => {
-    const { queryByTestId, getByTestId, getAllByText, getByText } = render(<EasySentenceCard {...build} listening onResult={jest.fn()} />);
+  it('TypedSentenceCard, listening step: no prompt and so no hints until the answer is checked', () => {
+    const { queryByTestId, getByTestId, getByText, getByPlaceholderText } = render(
+      <TypedSentenceCard sourceSentence={SENTENCE} targetSentence="El libro y la mesa." sourceHints={PIECES} listening onResult={jest.fn()} />,
+    );
     expect(queryByTestId('sentence-hint-1')).toBeNull();
-    for (const w of build.targetWords) fireEvent.press(getAllByText(w)[0]);
-    fireEvent.press(getByText('Check'));
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
+    fireEvent.press(getByText('✓ Check'));
     expect(getByTestId('sentence-hint-1')).toBeTruthy();
     fireEvent.press(getByTestId('sentence-hint-1'));
     expect(getByTestId('sentence-hint-bubble')).toBeTruthy();
   });
 
-  it('EasySentenceCard, listening step, wrong build: the prompt stays hidden, still no hints', () => {
-    const { queryByTestId, getAllByText, getByText } = render(<EasySentenceCard {...build} listening onResult={jest.fn()} />);
-    fireEvent.press(getAllByText('mesa')[0]);
-    fireEvent.press(getByText('Check'));
+  it('TypedSentenceCard, listening step, wrong answer: the prompt and its hints show after the check as well', () => {
+    const { queryByTestId, getByTestId, getByText, getByPlaceholderText } = render(
+      <TypedSentenceCard sourceSentence={SENTENCE} targetSentence="El libro y la mesa." sourceHints={PIECES} listening onResult={jest.fn()} />,
+    );
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el gato');
     expect(queryByTestId('sentence-hint-1')).toBeNull();
+    fireEvent.press(getByText('✓ Check'));
+    expect(getByTestId('sentence-hint-1')).toBeTruthy();
   });
 
   it('TypedSentenceCard: tappable words on the prompt, the tap goes to onSourceHint', () => {

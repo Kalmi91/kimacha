@@ -198,15 +198,18 @@ export default {
       means: (meaning: string) => `Means: ${meaning}`,
     },
   },
-  // Sentences tab (beta): header progress (steps: every build plus the one typing), the build and the typing step, empty and round-done states.
+  // Sentences tab (beta): header progress (steps: every part, listening, build and typing step of the round's sentences), the step labels, empty and round-done states.
   sentenceTab: {
     progress: (done: number, total: number) => `${done} / ${total}`,
     progressA11y: (done: number, total: number) => `Steps done: ${done} of ${total}`,
-    stepBuild: (n: number, total: number) => `Build the sentence ${n} of ${total}`,
-    stepType: 'Last step: type this sentence',
-    // Listening build (beta sentenceListening): the prompt is heard, not shown, until the build is right.
-    stepListen: (n: number, total: number) => `Listen and build the sentence ${n} of ${total}`,
-    listenHint: 'Listen, then build the sentence',
+    // Step label: the sentence and the step ("Sentence 2 of 5 · Build the whole sentence").
+    sentenceOf: (n: number, total: number) => `Sentence ${n} of ${total}`,
+    stepChunk: (part: number, parts: number) => `Build part ${part} of ${parts}`,
+    stepBuildWhole: 'Build the whole sentence',
+    stepTypeWhole: 'Type the whole sentence',
+    // Listen-and-type step (beta sentenceListening): the sentence is heard, not shown, until it is checked.
+    stepListenType: 'Listen and type what you hear',
+    listenTypeHint: 'Listen, then type the sentence',
     listenPlay: 'Play the sentence',
     // Mistake build (beta sentenceMistakes): a sentence from the learner's own "My mistakes" list.
     fromMistakes: 'From your mistakes',
