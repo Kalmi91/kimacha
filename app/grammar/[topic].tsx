@@ -113,7 +113,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
             <Text style={[styles.back, { color: colors.text }]}>←</Text>
           </Pressable>
           <FitText variant="title" base={17} maxLines={2} reserve={100} style={[styles.title, { color: colors.text }]}>
-            {entry?.title[contentLang] ?? String(topicId)}
+            {entry?.title[contentLang] ?? entry?.title.en ?? String(topicId)}
           </FitText>
           <View style={{ width: 24 }} />
         </View>

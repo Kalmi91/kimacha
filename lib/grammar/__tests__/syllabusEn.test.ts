@@ -126,7 +126,9 @@ describe('Spanish grammar syllabus (default lang) is unchanged', () => {
     expect(lessonCoverage('es').planned).toBe(GRAMMAR_SYLLABUS.length);
     expect(syllabusTopic('presente-regular')?.level).toBe('A1');
     expect(syllabusTopic('to_be')).toBeUndefined();
-    const fingerprint = createHash('sha1').update(JSON.stringify([GRAMMAR_UNITS, GRAMMAR_SYLLABUS])).digest('hex');
+    // The Hungarian `hu` titles / blurbs are an addition on top (huSyllabus.test.ts); the en / es text is what is fingerprinted.
+    const withoutHu = JSON.stringify([GRAMMAR_UNITS, GRAMMAR_SYLLABUS], (key, value) => (key === 'hu' ? undefined : value));
+    const fingerprint = createHash('sha1').update(withoutHu).digest('hex');
     expect({ units: GRAMMAR_UNITS.length, topics: GRAMMAR_SYLLABUS.length, fingerprint }).toEqual({
       units: 17,
       topics: 82,
