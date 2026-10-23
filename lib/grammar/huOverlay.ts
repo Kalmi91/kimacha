@@ -49,6 +49,27 @@ export function lang4Keys(lesson: unknown): string[] {
   return keys;
 }
 
+/** A syllabus unit or topic title (a plain string) or title + blurb, by id (data/games/grammar-hu/syllabus.json). */
+export type HuTitles = Readonly<Record<string, string | { title: string; blurb?: string }>>;
+
+/** The syllabus units or topics with `hu` laid over `title` (and `blurb`, where the topic has one); an id without an entry stays as it is. */
+export function withHuTitles<T extends { id: string; title: Record<string, string>; blurb?: Record<string, string> }>(
+  entries: T[],
+  titles: HuTitles,
+): T[] {
+  return entries.map((e) => {
+    const hu = titles[e.id];
+    if (hu === undefined) return e;
+    const title = typeof hu === 'string' ? hu : hu.title;
+    const blurb = typeof hu === 'string' ? undefined : hu.blurb;
+    return {
+      ...e,
+      title: { ...e.title, hu: title },
+      ...(blurb !== undefined && e.blurb ? { blurb: { ...e.blurb, hu: blurb } } : {}),
+    };
+  });
+}
+
 /** The lesson registry with the Hungarian overlay applied inside each `load()` (lessons without a sidecar stay as they are). */
 export function withHuIndex(
   index: GrammarIndexEntry[],
