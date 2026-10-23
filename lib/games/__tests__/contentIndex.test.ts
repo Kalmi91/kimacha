@@ -4,6 +4,7 @@ import { getGrammarTopic, getGrammarTopicIds, getGrammarTopics } from '../conten
 import { EN_GRAMMAR_INDEX } from '../content/en.index';
 import { ES_GRAMMAR_INDEX } from '../content/es.index';
 import { withArticleNouns } from '@/lib/grammar/nounArticles';
+import { withHu } from '@/lib/grammar/huOverlay';
 
 const INDEXES = { es: ES_GRAMMAR_INDEX, en: EN_GRAMMAR_INDEX };
 const DATA = join(__dirname, '..', '..', '..', 'data', 'games', 'grammar');
@@ -26,13 +27,14 @@ describe.each(['es', 'en'] as const)('lazy grammar registry (%s)', (lang) => {
     expect(getGrammarTopicIds(lang)).toEqual(ids);
   });
 
-  it('returns the same lesson as the JSON itself (article nouns added where they belong)', () => {
-    for (const { json } of files) {
+  it('returns the lesson JSON with its Hungarian sidecar laid over it (article nouns added where they belong)', () => {
+    for (const { file, json } of files) {
       const lesson = getGrammarTopic(lang, json.topic);
+      const withSidecar = withHu(json, require(`@/data/games/grammar-hu/${lang}/${file}.json`));
       if (lang === 'es' && json.topic === 'articulos-genero') {
-        expect(lesson).toEqual(withArticleNouns(json as never));
+        expect(lesson).toEqual(withArticleNouns(withSidecar as never));
       } else {
-        expect(lesson).toBe(json);
+        expect(lesson).toEqual(withSidecar);
       }
     }
   });
