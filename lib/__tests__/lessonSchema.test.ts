@@ -61,6 +61,12 @@ describe('TENSE_NAMES', () => {
       }
     }
   });
+
+  it('has a Hungarian name for every tense (hu→es and hu→en learners)', () => {
+    for (const tense of TENSE_IDS) {
+      expect(TENSE_NAMES[tense].hu?.trim()).toBeTruthy();
+    }
+  });
 });
 
 describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {

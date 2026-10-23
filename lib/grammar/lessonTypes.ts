@@ -48,26 +48,29 @@ export const TENSE_IDS: readonly TenseId[] = [
 // The tense name shown on the badge; `es` is the Spanish grammatical term, the others
 // are the everyday name (as in the syllabus topic titles).
 export const TENSE_NAMES: Record<TenseId, Lang4> = {
-  presente: { en: 'present tense', es: 'Presente' },
-  indefinido: { en: 'preterite', es: 'Pretérito perfecto simple' },
-  imperfecto: { en: 'imperfect', es: 'Pretérito imperfecto' },
-  perfecto: { en: 'present perfect', es: 'Pretérito perfecto compuesto' },
-  'futuro-simple': { en: 'simple future', es: 'Futuro simple' },
-  'ir-a': { en: '"ir a" future', es: 'Ir a + infinitivo' },
-  condicional: { en: 'conditional', es: 'Condicional simple' },
+  presente: { en: 'present tense', es: 'Presente', hu: 'jelen idő' },
+  indefinido: { en: 'preterite', es: 'Pretérito perfecto simple', hu: 'befejezett múlt' },
+  imperfecto: { en: 'imperfect', es: 'Pretérito imperfecto', hu: 'folyamatos múlt' },
+  perfecto: { en: 'present perfect', es: 'Pretérito perfecto compuesto', hu: 'összetett múlt' },
+  'futuro-simple': { en: 'simple future', es: 'Futuro simple', hu: 'egyszerű jövő idő' },
+  'ir-a': { en: '"ir a" future', es: 'Ir a + infinitivo', hu: '„ir a” jövő idő' },
+  condicional: { en: 'conditional', es: 'Condicional simple', hu: 'feltételes mód' },
   'subjuntivo-presente': {
     en: 'present subjunctive',
     es: 'Presente de subjuntivo',
+    hu: 'jelen idejű kötőmód',
   },
-  'imperativo-negativo': { en: 'negative imperative', es: 'Imperativo negativo' },
-  pluscuamperfecto: { en: 'past perfect', es: 'Pretérito pluscuamperfecto' },
+  'imperativo-negativo': { en: 'negative imperative', es: 'Imperativo negativo', hu: 'tagadó felszólító mód' },
+  pluscuamperfecto: { en: 'past perfect', es: 'Pretérito pluscuamperfecto', hu: 'régmúlt' },
   'subjuntivo-perfecto': {
     en: 'present perfect subjunctive',
     es: 'Pretérito perfecto de subjuntivo',
+    hu: 'összetett múlt idejű kötőmód',
   },
   'futuro-condicional-perfecto': {
     en: 'future perfect and conditional perfect',
     es: 'Futuro perfecto y condicional perfecto',
+    hu: 'befejezett jövő idő és feltételes múlt',
   },
 };
 
