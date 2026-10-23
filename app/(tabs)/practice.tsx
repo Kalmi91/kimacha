@@ -105,6 +105,7 @@ function ReadingMode() {
         today,
         // the button or a new day replaces a round of this direction; a broken round of today is just dropped
         avoid: stored && stored.target === dir && (fresh || stored.date !== today) ? new Set(stored.ids) : undefined,
+        avoidStory: stored && stored.target === dir && (fresh || stored.date !== today) ? stored.story : undefined,
       });
       at = 0;
       done = next ? next.questions.map(() => null) : [];
@@ -134,7 +135,7 @@ function ReadingMode() {
 
   const persist = (at: number, done: (number | null)[]) => {
     if (!set) return;
-    const round: PracticeRound = { v: 2, date: roundDate, target, ids: set.words.map((w) => w.itemId), qs: set.questions, step: at, picks: done };
+    const round: PracticeRound = { v: 2, date: roundDate, target, ids: set.words.map((w) => w.itemId), qs: set.questions, step: at, picks: done, story: set.storyId };
     void savePracticeRound(round).catch(() => {
       // the round on screen keeps its own state; a failed save only loses the resume point
     });

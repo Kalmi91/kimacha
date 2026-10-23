@@ -6,12 +6,16 @@
 // ids = the words of the text (card ids, in reading order), qs = the questions (lib/practice/reading.ts, ids
 // only: the sentences come from the corpus), step = where the round is (0 the text, 1..n question n, n+1 the
 // "practice these words in sentences" step), picks = the option chosen per question (null = not answered yet).
+// A round whose text is a story (lib/practice/stories.ts) also has "story":"a1-piac": the sentences come from that story
+// (gone from the data, or its cards no longer the ids: not resumed) and a question {"kind":"storyfalse","index":0} is the
+// story's false statement 0.
 // It is only resumed on the same local day and in the same direction; an older format (v1, the missing-word
 // round) is not resumed, a new round starts. Pure logic plus two thin DB wrappers.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { resolveSet, type ReadingQuestion, type ReadingSet, type ReadingWord } from '@/lib/practice/reading';
+import { STORIES, storyWords } from '@/lib/practice/stories';
 
 export interface PracticeRound {
   v: 2;
@@ -22,6 +26,8 @@ export interface PracticeRound {
   qs: ReadingQuestion[];
   step: number;
   picks: (number | null)[];
+  /** The id of the story the text is (lib/practice/stories.ts); absent for a text of example sentences. */
+  story?: string;
 }
 
 /** A round read back for the screen. */
@@ -32,7 +38,8 @@ export interface ResumedRound {
 }
 
 export function newPracticeRound(set: ReadingSet, target: PcicTarget, date: string): PracticeRound {
-  return { v: 2, date, target, ids: set.words.map((w) => w.itemId), qs: set.questions, step: 0, picks: set.questions.map(() => null) };
+  const round: PracticeRound = { v: 2, date, target, ids: set.words.map((w) => w.itemId), qs: set.questions, step: 0, picks: set.questions.map(() => null) };
+  return set.storyId ? { ...round, story: set.storyId } : round;
 }
 
 const isId = (x: unknown): x is string => typeof x === 'string' && x !== '';
@@ -40,6 +47,7 @@ const isId = (x: unknown): x is string => typeof x === 'string' && x !== '';
 function validQuestion(q: any): q is ReadingQuestion {
   if (!q || typeof q !== 'object') return false;
   if (q.kind === 'truefalse') return isId(q.sourceId);
+  if (q.kind === 'storyfalse') return Number.isInteger(q.index) && q.index >= 0;
   if (q.kind !== 'meaning') return false;
   return isId(q.itemId) && Array.isArray(q.options) && q.options.length >= 2 && q.options.every(isId) && q.options.includes(q.itemId);
 }
@@ -66,7 +74,9 @@ export function parsePracticeRound(raw: unknown): PracticeRound | null {
     return Number.isInteger(pick) && (pick as number) >= 0 && (pick as number) < limit;
   });
   if (!picksFit) return null;
-  return { v: 2, date: p.date, target: p.target, ids: p.ids, qs: p.qs, step: p.step, picks: p.picks };
+  if (p.story !== undefined && !isId(p.story)) return null;
+  const round: PracticeRound = { v: 2, date: p.date, target: p.target, ids: p.ids, qs: p.qs, step: p.step, picks: p.picks };
+  return p.story === undefined ? round : { ...round, story: p.story };
 }
 
 // The saved round as the screen resumes it, or null when a new one has to be built: nothing saved, another
@@ -80,13 +90,21 @@ export function restorePracticeRound(
   findItem: (id: string) => PcicItem | undefined,
 ): ResumedRound | null {
   if (!saved || saved.date !== today || saved.target !== target) return null;
-  const words: ReadingWord[] = [];
-  for (const id of saved.ids) {
-    const word = wordFor(id);
-    if (!word) return null;
-    words.push(word);
+  let words: ReadingWord[] = [];
+  // a story round: the text is the story (gone from the data, or its cards no longer the saved ids: start over)
+  const story = saved.story ? STORIES.find((s) => s.id === saved.story) : undefined;
+  if (saved.story) {
+    const fromStory = story ? storyWords(story, findItem) : null;
+    if (!fromStory || fromStory.length !== saved.ids.length || fromStory.some((w, i) => w.itemId !== saved.ids[i])) return null;
+    words = fromStory;
+  } else {
+    for (const id of saved.ids) {
+      const word = wordFor(id);
+      if (!word) return null;
+      words.push(word);
+    }
   }
-  const set = resolveSet(words, saved.qs, findItem, target);
+  const set = resolveSet(words, saved.qs, findItem, target, story);
   return set ? { set, step: saved.step, picks: saved.picks } : null;
 }
 

@@ -26,6 +26,7 @@ import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { setLanguage } from '@/lib/i18n';
 import { parsePracticeRound } from '@/lib/practice/practiceRound';
 import { readingWordFor, resolveSet, type ResolvedQuestion } from '@/lib/practice/reading';
+import { STORIES } from '@/lib/practice/stories';
 import { speak } from '@/lib/speech';
 import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -540,6 +541,45 @@ describe('Practice tab: the daily streak', () => {
     await toQuestions(view);
     await answer(view, 1);
     expect(await getDb().getStreak()).toEqual({ current_count: 5, last_date: TODAY, longest_count: 5 });
+    view.unmount();
+  });
+});
+
+describe('Practice tab: stories (FB526)', () => {
+  // the first 150 A1 cards are learned and due: the first story is fully known and ties with the others on due words
+  const learnFirst150 = async () => {
+    setPcicTarget('es');
+    for (const it of pcicItemsForLevel('A1').slice(0, 150)) await getDb().upsertPcicCard(learned(it.id, '2000-01-01'));
+  };
+  const forms = (view: View) => [0, 1, 2, 3, 4].map((i) => view.getByTestId(`practice-word-${i}`).props.children);
+
+  it('the text is a story: its words highlighted, the round saved with the story id at every step and resumed', async () => {
+    await learnFirst150();
+    const view = await mount();
+    expect((await saved())!.story).toBe(STORIES[0].id);
+    expect(forms(view)).toEqual(STORIES[0].sentences.map((s) => s.form));
+    await toQuestions(view);
+    await press(view, 'practice-option-0');
+    expect(await saved()).toMatchObject({ story: STORIES[0].id, step: 1, picks: [0, null, null, null, null] });
+    view.unmount();
+
+    const second = await mount();
+    expect(second.getByText('1/5')).toBeTruthy();
+    expect((await saved())!.story).toBe(STORIES[0].id);
+    second.unmount();
+  });
+
+  it('"New reading" reads the next story, not the one just read', async () => {
+    await learnFirst150();
+    const view = await mount();
+    await toQuestions(view);
+    for (let n = 1; n <= 5; n++) {
+      await press(view, 'practice-option-0');
+      await next(view);
+    }
+    await press(view, 'practice-again');
+    expect((await saved())!.story).toBe(STORIES[1].id);
+    expect(forms(view)).toEqual(STORIES[1].sentences.map((s) => s.form));
     view.unmount();
   });
 });
