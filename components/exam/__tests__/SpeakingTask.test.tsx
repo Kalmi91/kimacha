@@ -197,7 +197,8 @@ describe('the examiner turns', () => {
     expect(view.getByTestId('mock-speaking-words').props.children).toBe('5 words, aim for at least 8');
     fireEvent.changeText(view.getByTestId('mock-speaking-answer'), 'I went to the beach with my family');
     expect(sink.current.t1).toBe('I went to the beach with my family');
-    expect(view.getByTestId('mock-speaking-hint').props.children).toBe("Speak with your keyboard's microphone, or type.");
+    // the hint names the learned language, because the keyboard's microphone listens in the keyboard's language
+    expect(view.getByTestId('mock-speaking-hint').props.children).toBe("Speak with your keyboard's microphone, or type. Set the keyboard to English so it understands you.");
   });
 
   it('the answer field keeps the keyboard microphone: no input restrictions of the written answers', () => {
