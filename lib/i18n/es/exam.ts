@@ -198,7 +198,7 @@ const es: typeof en = {
     mockWordsIn: 'Dentro del rango de palabras',
     mockBandScale: (name: string, scale: number, points: number, max: number) => `${name}: unos ${scale} en la escala del examen (${points} / ${max})`,
     mockScaleLine: (avg: number, needed: number, passed: boolean, provisional: boolean) =>
-      `Promedio en la escala del examen: unos ${avg}, mínimo aproximado ${needed} (estimación), ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
+      `Promedio en la escala del examen: unos ${avg} (estimación), mínimo ${needed}, ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
     mockScaleNote: 'Aproximado: los puntos de la escala salen de una conversión de práctica de tus puntos brutos; el examen real no publica su conversión.',
     mockPaperLine: (name: string, minutes: number, tasks: number) => `${name}: ${minutes} min, ${tasks} ${tasks === 1 ? 'tarea' : 'tareas'}`,
     mockPaperMeta: (minutes: number, tasks: number) => `${minutes} min, ${tasks} ${tasks === 1 ? 'tarea' : 'tareas'}`,
