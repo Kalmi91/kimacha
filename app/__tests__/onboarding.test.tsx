@@ -29,11 +29,65 @@ describe('OnboardingScreen: language and level step', () => {
     expect(getByText('Which language do you speak? / ¿Qué idioma hablas?')).toBeTruthy();
     expect(getByText('English')).toBeTruthy();
     expect(getByText('Español')).toBeTruthy();
+    expect(getByText('Magyar')).toBeTruthy();
+  });
+
+  it('after the "I speak" step comes "I learn", with the targets the supported pairs allow for that source', () => {
+    const en = render(<OnboardingScreen />);
+    fireEvent.press(en.getByText('English'));
+    expect(en.getByText('Which language do you want to learn?')).toBeTruthy();
+    expect(en.getByText('Español')).toBeTruthy();
+    expect(en.getByText('Magyar')).toBeTruthy();
+    expect(en.queryByText('English')).toBeNull();
+    en.unmount();
+
+    const es = render(<OnboardingScreen />);
+    fireEvent.press(es.getByText('Español'));
+    expect(es.getByText('¿Qué idioma quieres aprender?')).toBeTruthy();
+    expect(es.getByText('English')).toBeTruthy();
+    expect(es.getByText('Magyar')).toBeTruthy();
+    expect(es.queryByText('Español')).toBeNull();
+    es.unmount();
+
+    const hu = render(<OnboardingScreen />);
+    fireEvent.press(hu.getByText('Magyar'));
+    // no Hungarian UI strings yet: the English ones stay.
+    expect(hu.getByText('Which language do you want to learn?')).toBeTruthy();
+    expect(hu.getByText('English')).toBeTruthy();
+    expect(hu.getByText('Español')).toBeTruthy();
+    expect(hu.queryByText('Magyar')).toBeNull();
+  });
+
+  it('every one of the six supported pairs saves as chosen', async () => {
+    const pairs: [string, string, string, string][] = [
+      ['English', 'Español', 'en', 'es'],
+      ['English', 'Magyar', 'en', 'hu'],
+      ['Español', 'English', 'es', 'en'],
+      ['Español', 'Magyar', 'es', 'hu'],
+      ['Magyar', 'English', 'hu', 'en'],
+      ['Magyar', 'Español', 'hu', 'es'],
+    ];
+    for (const [speak, learn, source, target] of pairs) {
+      const view = render(<OnboardingScreen />);
+      fireEvent.press(view.getByText(speak));
+      fireEvent.press(view.getByText(learn));
+      // welcome -> intro -> theme -> level (A1 is always offered, even on an empty deck)
+      fireEvent.press(view.getByText(view.queryByText('Get started') ? 'Get started' : 'Empezar'));
+      fireEvent.press(view.getByText(view.queryByText("Let's start") ? "Let's start" : 'Empecemos'));
+      fireEvent.press(view.getByText(view.queryByText('Continue') ? 'Continue' : 'Continuar'));
+      await act(async () => {
+        fireEvent.press(view.getByText('A1'));
+        await Promise.resolve();
+      });
+      expect(await getDb().getOnboarding()).toEqual({ source, target });
+      view.unmount();
+    }
   });
 
   it('"English" -> en→es: greeting, then the level picker after "Get started"', () => {
     const { getByText, queryByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
+    fireEvent.press(getByText('Español'));
 
     expect(queryByText('Choose level')).toBeNull();
     fireEvent.press(getByText('Get started'));
@@ -56,6 +110,7 @@ describe('OnboardingScreen: language and level step', () => {
   it('choosing the en→es level saves the onboarding + the PCIC level, and navigates to the tabs', async () => {
     const { getByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
+    fireEvent.press(getByText('Español'));
     fireEvent.press(getByText('Get started'));
     fireEvent.press(getByText("Let's start"));
     fireEvent.press(getByText('Continue'));
@@ -74,6 +129,7 @@ describe('OnboardingScreen: language and level step', () => {
   it('on the level step, under the rows there is the placement-test entry, and it leads to the placement screen', () => {
     const { getByText, getByTestId } = render(<OnboardingScreen />);
     fireEvent.press(getByText('English'));
+    fireEvent.press(getByText('Español'));
     fireEvent.press(getByText('Get started'));
     fireEvent.press(getByText("Let's start"));
     fireEvent.press(getByText('Continue'));
@@ -88,6 +144,7 @@ describe('OnboardingScreen: language and level step', () => {
   it('"Español" -> es→en: Spanish greeting, the level picker offers A1, A2 and B1', () => {
     const { getByText, queryByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('Español'));
+    fireEvent.press(getByText('English'));
 
     expect(getByText('Empezar')).toBeTruthy();
     fireEvent.press(getByText('Empezar'));
@@ -110,6 +167,7 @@ describe('OnboardingScreen: language and level step', () => {
   it('choosing es→en A1 saves "es"/"en", always with level A1', async () => {
     const { getByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('Español'));
+    fireEvent.press(getByText('English'));
     fireEvent.press(getByText('Empezar'));
     fireEvent.press(getByText('Empecemos'));
     fireEvent.press(getByText('Continuar'));

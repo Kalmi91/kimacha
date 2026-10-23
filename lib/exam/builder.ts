@@ -12,6 +12,8 @@ import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { nearMissDistractors } from '@/lib/distractors';
 import { isSentenceKnown, type ResolvedTense } from '@/lib/knownSentence';
 import { learnedEntries, tileWords } from '@/lib/sentenceCards';
+import { activeSourceFor } from '@/lib/languagePair';
+import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
 import type { Sm2Card } from '@/lib/sm2';
 import type { GapSource } from './grammarItems';
@@ -66,8 +68,9 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
     learnedCards.map((c) => byId.get(c.itemId)!),
     hashString(`words:${seed}`),
   );
-  const promptOf = (it: PcicItem) => (target === 'es' ? it.en : it.es);
-  const answerOf = (it: PcicItem) => (target === 'es' ? it.es : it.en);
+  const source = activeSourceFor(target);
+  const promptOf = (it: PcicItem) => wordIn(it, source) ?? '';
+  const answerOf = (it: PcicItem) => wordIn(it, target) ?? '';
 
   // Sentence pool: only example sentences whose every word is learned or free.
   const ctx = {
@@ -76,8 +79,8 @@ export function buildExam(input: ExamBuildInput): ExamItem[] {
   };
   const pool: SentencePair[] = [];
   for (const it of learned) {
-    const src = (target === 'es' ? it.exampleEn : it.exampleEs)?.trim();
-    const tgt = (target === 'es' ? it.exampleEs : it.exampleEn)?.trim();
+    const src = exampleIn(it, source)?.trim();
+    const tgt = exampleIn(it, target)?.trim();
     if (!src || !tgt) continue;
     const n = wordCount(tgt);
     if (n < MIN_SENTENCE_WORDS || n > MAX_SENTENCE_WORDS) continue;

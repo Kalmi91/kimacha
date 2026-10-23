@@ -140,7 +140,8 @@ const ROWS: Row[] = [
     palette: 'brand',
     ui: <OnboardingScreen />,
     steps: [
-      { has: ['onboarding-lang-es'], press: 'onboarding-lang-en' },
+      { has: ['onboarding-lang-es', 'onboarding-lang-hu'], press: 'onboarding-lang-en' },
+      { has: ['onboarding-target-es', 'onboarding-target-hu'], press: 'onboarding-target-es' },
       { has: ['onboarding-start'], press: 'onboarding-start' },
       // intro + theme step before the level.
       { press: 'onboarding-intro-start' },

@@ -1,10 +1,10 @@
-import { needsPairCorrection, FORCED_PAIR, speechLang, supportedPairs, languages } from '../languages';
+import { needsPairCorrection, FORCED_PAIR, speechLang, supportedPairs, languages, pairLabel } from '../languages';
 import { getOpenWordsForLevel } from '@/data/openWords';
 
 describe('languages', () => {
-  // Kimacha Play: single en-es pair.
-  it('lists exactly en and es', () => {
-    expect(languages.map(l => l.code)).toEqual(['en', 'es']);
+  // en, es and the Hungarian language added for the four hu pairs.
+  it('lists exactly en, es and hu', () => {
+    expect(languages.map(l => l.code)).toEqual(['en', 'es', 'hu']);
   });
 
   describe('supportedPairs', () => {
@@ -12,9 +12,9 @@ describe('languages', () => {
       expect(supportedPairs.every(([s, t]) => s !== t)).toBe(true);
     });
 
-    // the second direction, es→en, was added.
-    it('lists the en-es and es-en pairs', () => {
-      expect(supportedPairs).toEqual([['en', 'es'], ['es', 'en']]);
+    // the second direction, es→en, then the four Hungarian pairs.
+    it('lists the six pairs between en, es and hu', () => {
+      expect(supportedPairs).toEqual([['en', 'es'], ['es', 'en'], ['es', 'hu'], ['en', 'hu'], ['hu', 'es'], ['hu', 'en']]);
     });
 
     it('has no duplicate entry', () => {
@@ -23,7 +23,7 @@ describe('languages', () => {
     });
 
     it('never offers a direction with no vocabulary behind it', () => {
-      const backed = new Set(['en', 'es']);
+      const backed = new Set(['en', 'es', 'hu']);
       for (const [source, target] of supportedPairs) {
         expect(backed.has(target)).toBe(true);
         expect(getOpenWordsForLevel('A1').length).toBeGreaterThan(0);
@@ -40,8 +40,8 @@ describe('languages', () => {
       expect(FORCED_PAIR).toEqual({ source: 'en', target: 'es' });
     });
 
-    it('an outdated pair (e.g. the old hu-es branch) needs repair', () => {
-      expect(needsPairCorrection({ source: 'hu', target: 'es' })).toBe(true);
+    it('an outdated pair (a language with no pair, e.g. pt-es) needs repair', () => {
+      expect(needsPairCorrection({ source: 'pt', target: 'es' })).toBe(true);
     });
 
     it('a pair made with itself or an unknown target needs repair', () => {
@@ -56,6 +56,19 @@ describe('languages', () => {
     it('the new es-en pair needs no repair either', () => {
       expect(needsPairCorrection({ source: 'es', target: 'en' })).toBe(false);
     });
+
+    it('none of the four Hungarian pairs needs repair', () => {
+      for (const [source, target] of [['es', 'hu'], ['en', 'hu'], ['hu', 'es'], ['hu', 'en']]) {
+        expect(needsPairCorrection({ source, target })).toBe(false);
+      }
+    });
+  });
+
+  describe('pairLabel', () => {
+    it('is the flags and the native names, no per-pair translation key', () => {
+      expect(pairLabel('en', 'es')).toBe('🇬🇧 English → 🇪🇸 Español');
+      expect(pairLabel('hu', 'en')).toBe('🇭🇺 Magyar → 🇬🇧 English');
+    });
   });
 
   describe('speechLang', () => {
@@ -67,6 +80,10 @@ describe('languages', () => {
     // Mexican and not Castilian (no "th" for c/z).
     it('speaks Mexican Spanish, not Castilian', () => {
       expect(speechLang('es')).toBe('es-MX');
+    });
+
+    it('speaks Hungarian with the hu-HU locale', () => {
+      expect(speechLang('hu')).toBe('hu-HU');
     });
 
     it('falls back to the bare code when unknown', () => {

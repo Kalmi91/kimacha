@@ -123,10 +123,10 @@ export function useSettingsScreen() {
   // lib/database.ts getPcicLevel/hasPcicLevel). If the new direction does not yet have an
   // explicitly chosen level, the main tab (app/(tabs)/index.tsx load())
   // opens the level picker sheet by itself, no separate handling is needed here.
-  const handleSelectDirection = async (source: 'en' | 'es', target: PcicTarget) => {
+  const handleSelectDirection = async (source: string, target: string) => {
     setDirectionSheetOpen(false);
     if (source === direction[0] && target === direction[1]) return;
-    await learner.setOnboarding(source, target);
+    await learner.setOnboarding(source, target as PcicTarget);
     setLanguage(source);
     // A full remount of the tree (including the tab labels) is needed only here, on a
     // FINALIZED switch; the onboarding trial switch does not call it.

@@ -157,3 +157,22 @@ describe('gradeSentenceAnswer: subject pronoun', () => {
     expect(gradeSentenceAnswer('bebo en casa', 'Yo como en casa').match).toBe('wrong');
   });
 });
+
+describe('gradePcicAnswer, Hungarian answers (lang "hu")', () => {
+  it('kor is wrong for kór, even with strict accents off; the accented spelling is exact, case is forgiven', () => {
+    expect(gradePcicAnswer('kor', 'kór', false, 'hu').match).toBe('wrong');
+    expect(gradePcicAnswer('Kór', 'kór', false, 'hu').match).toBe('exact');
+    expect(gradePcicAnswer('őt', 'öt', false, 'hu').match).toBe('wrong');
+  });
+
+  it('Spanish: a missing accent is still near (accent only) when strict accents are off', () => {
+    const g = gradePcicAnswer('cafe', 'café', false, 'es');
+    expect(g.match).toBe('near');
+    expect(g.accentOnly).toBe(true);
+    expect(gradePcicAnswer('cafe', 'café', true, 'es').match).toBe('wrong');
+  });
+
+  it('a Hungarian sentence keeps its subject pronoun: only Spanish may drop it', () => {
+    expect(gradeSentenceAnswer('eszem otthon', 'Én eszem otthon', false, 'hu').match).not.toBe('exact');
+  });
+});

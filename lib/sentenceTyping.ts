@@ -22,7 +22,8 @@ function variants(entry: SentenceEntry, target: PcicTarget): string[][] {
   const out: string[][] = [];
   for (const alt of pcicAlternatives(entry.target)) {
     out.push(sentenceTokens(alt, target));
-    const short = withoutLeadingSubjectPronoun(alt);
+    // dropping the subject pronoun is a Spanish rule
+    const short = target === 'hu' ? null : withoutLeadingSubjectPronoun(alt);
     if (short) out.push(sentenceTokens(short, target));
   }
   return out.filter((v) => v.length > 0);
@@ -59,7 +60,7 @@ function matchedPositions(typed: readonly string[], variant: readonly string[], 
  */
 export function gradeTypedWords(typed: string, entry: SentenceEntry, target: PcicTarget, strictAccents = false): WordVerdict[] {
   const typedWords = sentenceTokens(typed, target);
-  const same = (a: string, b: string) => suggestedGrade(gradePcicAnswer(a, b, strictAccents)) === 'good';
+  const same = (a: string, b: string) => suggestedGrade(gradePcicAnswer(a, b, strictAccents, target)) === 'good';
   let best: { variant: string[]; matched: Set<number> } | null = null;
   let bestCost = Infinity;
   for (const variant of variants(entry, target)) {

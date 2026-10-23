@@ -7,6 +7,8 @@ import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { nearMissDistractors } from '@/lib/distractors';
 import { isLearnedCard, isSentenceKnown, type LearnedEntry, type ResolvedTense } from '@/lib/knownSentence';
 import { posOf } from '@/lib/pcicPos';
+import { activeSourceFor } from '@/lib/languagePair';
+import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import type { Sm2Card } from '@/lib/sm2';
 
 /** After this many NEW words comes a sentence card (review cards do not count). */
@@ -62,7 +64,7 @@ export function learnedEntryOf(
   const item = findItem(card.itemId);
   if (!item) return null;
   return {
-    text: target === 'es' ? item.es : item.en,
+    text: wordIn(item, target) ?? '',
     pos: item.pos ?? (target === 'es' ? posOf(item)?.pos : undefined),
   };
 }
@@ -87,8 +89,8 @@ export function tileWords(sentence: string): string[] {
 }
 
 export function sentencePair(item: PcicItem, target: PcicTarget): { source: string; target: string } | null {
-  const targetSentence = (target === 'es' ? item.exampleEs : item.exampleEn)?.trim();
-  const sourceSentence = (target === 'es' ? item.exampleEn : item.exampleEs)?.trim();
+  const targetSentence = exampleIn(item, target)?.trim();
+  const sourceSentence = exampleIn(item, activeSourceFor(target))?.trim();
   if (!targetSentence || !sourceSentence) return null;
   return { source: sourceSentence, target: targetSentence };
 }

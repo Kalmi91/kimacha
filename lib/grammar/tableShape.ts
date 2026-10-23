@@ -34,9 +34,9 @@ function normalizePerson(label: string): string {
 
 // A faint gloss next to the person, in the learner's language (contentLang). '' for an unknown
 // label (no gloss line), we do not guess.
-export function personGloss(label: string, contentLang: 'en' | 'es'): string {
+export function personGloss(label: string, contentLang: 'en' | 'es' | 'hu'): string {
   const entry = PERSON_GLOSS[normalizePerson(label)];
-  return entry ? entry[contentLang] : '';
+  return entry ? (entry[contentLang] ?? entry.en) : '';
 }
 
 function isPersonLabel(label: string): boolean {

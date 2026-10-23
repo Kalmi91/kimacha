@@ -288,7 +288,7 @@ describe('migrateDailyXpTenths (real SQLite)', () => {
 describe('a new install (real SQLite)', () => {
   it('gets the latest schema in one go: the same columns as a caught-up file, no dead tables', async () => {
     const fresh = await openSqlJsDb();
-    expect(await runMigrations(fresh as any)).toBe('es-hu');
+    expect(await runMigrations(fresh as any)).toBe('en-es');
     expect(await userVersion(fresh)).toBe(LATEST_SCHEMA_VERSION);
     expect(await tableNames(fresh)).toEqual(LIVE_TABLES);
 

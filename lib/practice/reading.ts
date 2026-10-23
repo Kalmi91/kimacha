@@ -18,6 +18,8 @@
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { isSentenceKnownIn, knownTokens, type ResolvedTense } from '@/lib/knownSentence';
 import { learnedEntries, learnedEntryOf, sentencePair } from '@/lib/sentenceCards';
+import { activeSourceFor } from '@/lib/languagePair';
+import { wordIn } from '@/lib/pcicItemText';
 import type { Sm2Card } from '@/lib/sm2';
 import { gapTaskFor, practiceCandidates, type GapSourceInfo, type GapTask } from './gapFill';
 import { pickStory, type Story } from './stories';
@@ -78,7 +80,7 @@ const same = (a: string, b: string) => a.trim().toLowerCase() === b.trim().toLow
 
 /** The meaning shown for a word: the source-language side of the card. */
 export function meaningOf(item: PcicItem, target: PcicTarget): string {
-  return (target === 'es' ? item.en : item.es).trim();
+  return (wordIn(item, activeSourceFor(target)) ?? '').trim();
 }
 
 /** The reading entry of one word, or null when it has no usable example sentence. */

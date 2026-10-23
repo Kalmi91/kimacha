@@ -64,8 +64,6 @@ export default {
     // sheet (Settings, above the Backup row).
     learningDirection: 'Learning direction',
     chooseDirection: 'Choose learning direction',
-    directionEnEs: 'English → Spanish',
-    directionEsEn: 'Spanish → English',
     credits: 'Credits',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reset grammar progress',

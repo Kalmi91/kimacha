@@ -31,9 +31,9 @@ export function decodeGameData(json: string | null | undefined): unknown {
 // The one implementation of the DB interface, written once over a DbStore (lib/db/store.ts):
 // the store does the platform part (SQL on device, Maps on web), this class holds the rules.
 export class DbCore implements DB {
-  // Active language pair (e.g. "es-hu"). All learning progress (cards + level) is
+  // Active language pair (e.g. "en-es"). All learning progress (cards + level) is
   // scoped to this pair, so each language you study keeps its own progress.
-  protected activePair = 'es-hu';
+  protected activePair = 'en-es';
   private pairLoaded = false;
 
   constructor(protected readonly store: DbStore) {}
@@ -150,9 +150,9 @@ export class DbCore implements DB {
     const row = await this.store.readSettings(pair, ['pcic_level']);
     // A level name chosen in an older build and since removed (e.g. "A1+") falls back to the default.
     if (row?.pcic_level && (PCIC_LEVELS as string[]).includes(row.pcic_level)) return row.pcic_level as PcicLevel;
-    // for es→en only A1 has content (for now); every other pair falls back to
-    // the old B1 default (because of the existing "b1-..." progress).
-    return pair.endsWith('-en') ? 'A1' : DEFAULT_PCIC_LEVEL;
+    // for es→en only A1 has content (for now), and the Hungarian target has only A1 content;
+    // every other pair falls back to the old B1 default (because of the existing "b1-..." progress).
+    return pair.endsWith('-en') || pair.endsWith('-hu') ? 'A1' : DEFAULT_PCIC_LEVEL;
   }
 
   // Whether the active pair ALREADY has an explicitly chosen level (the

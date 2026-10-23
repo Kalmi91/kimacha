@@ -121,12 +121,13 @@ describe('wordCellsForLesson es→en direction', () => {
   });
 });
 
-describe('wordCellsForLesson Spanish direction (en→es, hu→es) unchanged', () => {
+describe('wordCellsForLesson Spanish direction (en→es) unchanged', () => {
   it('the default and the explicit "es" give the same, and the cards come from PCIC / the glossary: the question is English, the answer Spanish', () => {
     for (const id of ['ser-estar', 'gustar', 'clases-de-palabras']) {
       const lesson = lessonFor('es', id);
       expect(wordCellsForLesson(lesson)).toEqual(wordCellsForLesson(lesson, 'es'));
-      expect(wordCellsForLesson(lesson)).toEqual(wordCellsForLesson(lesson, 'hu'));
+      // the Hungarian target has no lessons, hence no word deck
+      expect(wordCellsForLesson(lesson, 'hu')).toEqual([]);
     }
   });
 

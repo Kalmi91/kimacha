@@ -78,6 +78,14 @@ export function useStatsScreen() {
       refresh(['direction']).then(ob => {
         setTargetLang(ob.target);
         setSourceLang(ob.source ?? 'en');
+        // Target hu has no practice exam (no mock card) and no level card.
+        if (ob.target === 'hu') {
+          setMockLevels([]);
+          setMockOfficial(false);
+          setMockOverview({});
+          setProgressLevel(null);
+          return undefined;
+        }
         const mockTarget: MockTarget = ob.target === 'en' ? 'en' : 'es';
         setMockLevels(availableMockLevels(mockTarget));
         setMockOfficial(mockTarget === 'es');

@@ -3,6 +3,7 @@ import {
   isSentenceKnown,
   knownTokens,
   resolvedTensesFromLessons,
+  sentenceTokens,
   unknownTokens,
   type ResolvedTense,
 } from '../knownSentence';
@@ -210,5 +211,17 @@ describe('resolvedTensesFromLessons', () => {
 
   it('does not unlock a tense from a lesson that only shares a prefix (indefinidos)', () => {
     expect(resolvedTensesFromLessons(['indefinidos']).size).toBe(0);
+  });
+});
+
+describe('knownSentence, Hungarian', () => {
+  it('keeps the Hungarian letters inside a token (ő ű ö ü á é í ó ú)', () => {
+    expect(sentenceTokens('Az őszi főzőkanál nagyon szűk, és kék.', 'hu')).toEqual(['az', 'őszi', 'főzőkanál', 'nagyon', 'szűk', 'és', 'kék']);
+  });
+
+  it('a sentence is known when every token is a learned form or a free word', () => {
+    const ctx = { learned: ['a fű', 'zöld'] };
+    expect(isSentenceKnown('A fű zöld.', 'hu', ctx)).toBe(true);
+    expect(unknownTokens('A fű kék.', 'hu', ctx)).toEqual(['kék']);
   });
 });

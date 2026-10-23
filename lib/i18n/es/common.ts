@@ -4,6 +4,7 @@ const es: typeof en = {
   onboarding: {
     welcome: '¡Bienvenido a Kimacha! Gracias por usar la app, significa mucho.',
     start: 'Empezar',
+    learnTitle: '¿Qué idioma quieres aprender?',
   },
   intro: {
     title: 'Así funciona',

@@ -4,6 +4,7 @@ export default {
     // Kimacha Play: single en-es pair, no more language
     // picker here, just a way to start the course.
     start: 'Get started',
+    learnTitle: 'Which language do you want to learn?',
   },
   // the intro step after the welcome, and the theme step after it.
   intro: {
