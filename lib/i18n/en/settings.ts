@@ -110,6 +110,9 @@ export default {
       hangulat: 'Mood',
       olvasas: 'Easy reading',
     },
+    // the bubble behind the Ukiyo-e theme's red card seal (語).
+    ukiyoeSealMeaning: 'Japanese "go": language, word',
+    ukiyoeSealNote: 'Ukiyo-e woodblock prints often carry a red seal. This one is the seal of the Ukiyo-e theme.',
   },
   backup: {
     backup: 'Backup',
