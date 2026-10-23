@@ -15,7 +15,7 @@ import { tileWords } from '@/lib/sentenceCards';
 import { sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 
-/** The place of the mistake sentence among the round's builds (the 3rd): the 1st stays plain, the 2nd and 4th may be heard. */
+/** The place of the mistake sentence among the round's sentences (the 3rd). */
 const MISTAKE_PLACE = 2;
 /** Decoy tiles of a mistake step, like the corpus builds. */
 const TRAP_COUNT = 3;
@@ -55,14 +55,13 @@ export function mistakeEntry(card: MistakeCard): SentenceEntry {
 }
 
 /**
- * The builds of a round with the mistake sentence in: it takes the 3rd build's place; a shorter round keeps all its builds and
- * gets the mistake sentence at the end. No mistake sentence = the builds as they are.
+ * The sentences of a round with the mistake sentence in: it is inserted at the 3rd place (the corpus sentences all stay);
+ * a shorter round gets it at the end. No mistake sentence = the sentences as they are.
  */
-export function withMistakeStep(builds: readonly SentenceEntry[], mistake: SentenceEntry | null): SentenceEntry[] {
-  if (!mistake) return [...builds];
-  const out = [...builds];
-  if (out.length > MISTAKE_PLACE) out[MISTAKE_PLACE] = mistake;
-  else out.push(mistake);
+export function withMistakeStep(sentences: readonly SentenceEntry[], mistake: SentenceEntry | null): SentenceEntry[] {
+  if (!mistake) return [...sentences];
+  const out = [...sentences];
+  out.splice(Math.min(MISTAKE_PLACE, out.length), 0, mistake);
   return out;
 }
 

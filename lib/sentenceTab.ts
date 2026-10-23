@@ -10,11 +10,12 @@ import { isSentenceKnownIn, knownTokens, sentenceTokens, type ResolvedTense } fr
 import { recordCorrectHalf } from '@/lib/practice/halfXp';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
 import { learnedEntryOf, sentencePair, tileWords } from '@/lib/sentenceCards';
+import { chunksFor, type SentenceChunk } from '@/lib/sentenceChunks';
 import type { WordVerdict } from '@/lib/sentenceTyping';
 import type { Sm2Card } from '@/lib/sm2';
 
-/** How many sentences one round builds; then one other, shorter sentence is typed (lib/sentencePick.ts, lib/sentenceRound.ts). */
-export const SENTENCE_ROUND_SIZE = 4;
+/** How many sentences one round has; every one of them gets the whole step list (lib/sentencePick.ts, lib/sentenceSteps.ts). */
+export const SENTENCE_ROUND_SIZE = 5;
 
 export interface SentenceEntry {
   /** The item whose example sentence this is. */
@@ -35,6 +36,8 @@ export interface SentenceEntry {
   staleness: string;
   /** Per learned card, the words of the sentence it owns (lowercase tokens): what the typed answer is matched on. */
   slots: Array<{ id: string; words: string[] }>;
+  /** The sentence split into parts to build one by one before the whole (data/sentences/chunks.json); absent = no split. */
+  chunks?: SentenceChunk[];
   /**
    * Set on a sentence from the learner's own mistakes (lib/sentenceMistakes.ts, beta sentenceMistakes): `itemId` is then
    * the mistake card's id, `source` its English, `target` the right Spanish, `wrong` the faulty sentence they wrote.
@@ -112,6 +115,7 @@ export function buildSentenceQueue({ target, cards, tenses, items, findItem, tod
     }
     const wordIds = [...owned.keys()];
     const due = wordIds.filter((id) => dueIds.has(id));
+    const chunks = chunksFor(item.id, target, pair.target);
     out.push({
       itemId: item.id,
       source: pair.source,
@@ -122,6 +126,7 @@ export function buildSentenceQueue({ target, cards, tenses, items, findItem, tod
       dueIds: due,
       staleness: wordIds.map((id) => lastReviews.get(id) ?? '').sort()[0] ?? '',
       slots: [...owned].map(([id, words]) => ({ id, words })),
+      ...(chunks ? { chunks } : {}),
     });
   }
   const focusHits = (e: SentenceEntry) => (focus ? e.wordIds.filter((id) => focus.has(id)).length : 0);
