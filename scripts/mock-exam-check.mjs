@@ -36,6 +36,7 @@
 //   S6  choices, prepSeconds, talkMinutes, follows, turns per task and photos per choice are those of the SPEC table
 //   S7  word budget: the minWords of the turns (longest choice per task) add up to at most 20 x the paper's minutes
 //   S8  no keyword echoes the examiner's question (it would match a word of `ask`): repeating the question must not earn a point
+//   S9  (warning) a keyword that matches content-free filler ("pues claro", "I think so", "because") would give a point without content
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -717,6 +718,36 @@ function speakingWords(form) {
   }, 0);
 }
 
+// S9: content-free filler (what a learner says to fill time, with no answer in it). A keyword that matches it would give a point
+// without content, so it is reported as a warning (it may still be right, e.g. "gracias" for a turn that asks for thanks).
+const FILLER = {
+  es: 'Pues bueno, claro que sí, mucho, poco, más de eso, me gusta, no me gusta, porque sí, gracias, de nada, entonces, de acuerdo, está bien, depende, creo que sí, a las cinco de la tarde, buenas tardes, la verdad, siempre, nunca, a veces, es todo, nada más, quiero, donde sea, aquí, allí, muy bien, también, tal vez, por ejemplo, otra cosa, me parece bien, es importante, no sé',
+  en: "Well, yes, of course, I think so, because, I like it, I don't know, I go, I will, I would, the best, thank you, yes please, okay, maybe, sometimes, always, never, very good, that's all, I want, here, there, a lot, a little, both, similar, usually, for example, it is important, I agree, really nice",
+};
+
+/** S9: "task n choices[i].turns[k].points[m]: keyword ..." for every keyword that matches the content-free filler of the language. */
+function genericKeywords(form, target) {
+  const filler = FILLER[target];
+  if (!filler || !Array.isArray(form.tasks)) return [];
+  const words = foldedTokens(filler).join(' ');
+  const raw = fold(filler);
+  const out = [];
+  form.tasks.forEach((task, ti) => {
+    if (!isObj(task) || !Array.isArray(task.choices)) return;
+    task.choices.forEach((c, ci) => {
+      if (!isObj(c) || !Array.isArray(c.turns)) return;
+      c.turns.forEach((turn, k) => {
+        if (!isObj(turn) || !Array.isArray(turn.points)) return;
+        turn.points.forEach((p, m) => {
+          if (!isObj(p) || !Array.isArray(p.keywords)) return;
+          for (const kw of p.keywords.filter((kw) => isStr(kw) && keywordHit(kw, words, raw))) out.push(`task ${ti + 1} choices[${ci}].turns[${k}].points[${m}]: keyword "${kw}" matches content-free filler`);
+        });
+      });
+    });
+  });
+  return out;
+}
+
 /** Checks a parsed file; returns { errors, warnings } (lists of messages). `strict`: an empty forms list is an error (not in a speaking file). `photos`: the S5 lookup. */
 function checkData(data, { strict, photos = registryPhotos }) {
   const errors = [];
@@ -772,6 +803,7 @@ function checkData(data, { strict, photos = registryPhotos }) {
       const words = speakingWords(form);
       const budget = WORDS_PER_MINUTE * SPEAKING_MINUTES[key.slice(0, 5)];
       if (words > budget) errors.push(`S7: form ${fid}: the turns' minWords add up to ${words}, the ${SPEAKING_MINUTES[key.slice(0, 5)]} minute paper allows ${budget} (${WORDS_PER_MINUTE} words a minute)`);
+      for (const w of genericKeywords(form, data.target)) warnings.push(`S9: form ${fid} ${w}`);
     }
   });
   if (!unique(formIds)) errors.push('M2: form ids are not unique');

@@ -486,6 +486,14 @@ describe('speaking papers (S1-S7)', () => {
     expect(broke((d) => (turnOf(d, 0).points[0].keywords = ['opina que', 'jardin', 'pueblo', 'casa'])).status).toBe(0);
   });
 
+  it('S9: a keyword that matches content-free filler ("porque", "creo que") is a warning, not an error', () => {
+    const r = broke((d) => (turnOf(d, 0).points[0].keywords = ['porque', 'creo que', 'pueblo', 'casa']));
+    expect(r.status).toBe(0);
+    expect(r.out).toMatch(/WARN .*S9: form f1 task 1 choices\[0\]\.turns\[0\]\.points\[0\]: keyword "porque" matches content-free filler/);
+    expect(r.out).toMatch(/keyword "creo que" matches content-free filler/);
+    expect(r.out).not.toMatch(/keyword "pueblo"/);
+  });
+
   it('S5: every photo key is in the registry and has its file', () => {
     fails(broke((d) => (choiceOf(d, 2).photos = ['nope'])), /S5: choices\[0\]: photo "nope" is not in photos.json/);
     fails(broke((d) => (choiceOf(d, 2).photos = ['ph3'])), /S5: choices\[0\]: photo "ph3" has no photo file \(ph3.jpg \/ ph3.jpg\)/);
