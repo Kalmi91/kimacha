@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import Colors from '@/constants/Colors';
@@ -11,8 +12,9 @@ import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
 
 // the mock exam's result sheet (verdict, per-paper bars, per-group rows, abbreviation note) and the
-// review (per item the question, your answer, the correct answer). The oral part is "not counted"
-// in this slice.
+// review (per item the question, your answer, the correct answer; a speaking task per turn: the examiner's question, what you
+// said, the marks, the word count and the model answer). The speaking band counts once the paper has a task, with one sentence
+// under it on what the scoring measures; a paper with no speaking task stays "not included".
 
 type Props = {
   result: MockResult;
@@ -39,9 +41,16 @@ export function MockResultView({ result, timedOut, onReview, onRetry, onExit, fu
         )}
         {timedOut && <Text style={[styles.note, { color: colors.warning }]}>{s.timeUp}</Text>}
         {result.skills.map((p) => (
-          <Text key={p.skill} testID={`mock-band-${p.skill}`} style={[styles.line, { color: p.included ? colors.text : colors.textMuted }]}>
-            {!p.included ? s.bandNotIncluded(p.name) : p.scale !== undefined ? s.mockBandScale(p.name, p.scale, p.points, p.maxPoints) : s.bandLine(p.name, p.points, p.maxPoints)}
-          </Text>
+          <Fragment key={p.skill}>
+            <Text testID={`mock-band-${p.skill}`} style={[styles.line, { color: p.included ? colors.text : colors.textMuted }]}>
+              {!p.included ? s.bandNotIncluded(p.name) : p.scale !== undefined ? s.mockBandScale(p.name, p.scale, p.points, p.maxPoints) : s.bandLine(p.name, p.points, p.maxPoints)}
+            </Text>
+            {p.skill === 'speaking' && p.included && (
+              <Text testID="mock-speaking-note" style={[styles.note, { color: colors.textMuted }]}>
+                {s.speakingScoreNote}
+              </Text>
+            )}
+          </Fragment>
         ))}
         {result.rule.kind === 'groups' &&
           result.rule.groups.map((g, i) => (
@@ -78,6 +87,65 @@ export function MockResultView({ result, timedOut, onReview, onRetry, onExit, fu
   );
 }
 
+type ReviewItem = MockResult['papers'][number]['tasks'][number]['items'][number];
+
+/** Only a speaking task's items carry the examiner's question (`group`): the review shows those per turn. */
+const hasTurns = (items: ReviewItem[]) => items.some((it) => it.group !== undefined);
+
+/** The items of a speaking task, cut into its turns: the engine gives a turn's points and then its word-count item (label "≥ n"). */
+function turnsOf(items: ReviewItem[]): ReviewItem[][] {
+  const turns: ReviewItem[][] = [];
+  for (const it of items) {
+    const cur = turns[turns.length - 1];
+    if (cur && cur[0].group === it.group && !cur[cur.length - 1].label.startsWith('≥')) cur.push(it);
+    else turns.push([it]);
+  }
+  return turns;
+}
+
+function SpeakingReview({ taskId, items }: { taskId: string; items: ReviewItem[] }) {
+  const { theme } = useTheme();
+  const colors = Colors[theme];
+  const s = t().mockExam;
+  const turns = turnsOf(items);
+  return (
+    <>
+      {turns.map((turn, ti) => {
+        const words = turn[turn.length - 1].label.startsWith('≥') ? turn[turn.length - 1] : undefined;
+        const points = words ? turn.slice(0, -1) : turn;
+        const first = turn[0];
+        return (
+          <View key={ti} testID={`mock-review-${taskId}-turn-${ti}`} style={[styles.turn, { borderColor: colors.border }]}>
+            <Text style={[styles.small, { color: colors.textMuted }]}>{s.speakQuestionOf(ti + 1, turns.length)}</Text>
+            <Text testID={`mock-review-${taskId}-turn-${ti}-ask`} style={[styles.line, { color: colors.text, fontWeight: fontWeight.semibold }]}>
+              {first.group}
+            </Text>
+            <Text testID={`mock-review-${taskId}-turn-${ti}-answer`} style={[styles.small, { color: colors.text }]}>
+              {s.yourAnswer}: {first.answer?.trim() || s.noAnswer}
+            </Text>
+            {points.map((p, pi) => (
+              <Text key={pi} testID={`mock-review-${taskId}-turn-${ti}-point-${pi}`} style={[styles.small, { color: p.ok ? colors.success : colors.danger }]}>
+                {p.ok ? '✓' : '✗'} {p.label}
+              </Text>
+            ))}
+            {words && (
+              <Text testID={`mock-review-${taskId}-turn-${ti}-words`} style={[styles.small, { color: words.ok ? colors.success : colors.danger }]}>
+                {s.speakReviewWords(Number(words.given), Number(words.expected), words.ok)}
+              </Text>
+            )}
+            {first.model ? (
+              <View testID={`mock-review-${taskId}-turn-${ti}-model`} style={[styles.model, { backgroundColor: colors.card, borderColor: colors.border }]}>
+                <Text style={[styles.small, { color: colors.textMuted }]}>{s.speakReviewModel}</Text>
+                <Text style={[styles.line, { color: colors.text }]}>{first.model}</Text>
+              </View>
+            ) : null}
+          </View>
+        );
+      })}
+    </>
+  );
+}
+
 export function MockReviewView({ result, onBack }: { result: MockResult; onBack: () => void }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -93,21 +161,25 @@ export function MockReviewView({ result, onBack }: { result: MockResult; onBack:
             {p.tasks.map((task, ti) => (
               <View key={task.taskId} style={[styles.task, { backgroundColor: colors.card, borderColor: colors.border }]}>
                 <Text style={[styles.small, { color: colors.textMuted }]}>{s.taskOf(ti + 1, p.tasks.length)}</Text>
-                {task.items.map((it, ii) => (
-                  <View key={ii} testID={`mock-review-${task.taskId}-${ii}`} style={styles.item}>
-                    <Text style={[styles.line, { color: colors.text }]}>
-                      {it.ok ? '✓' : '✗'} {it.skill === undefined && /^\d+$/.test(it.label) ? s.mockGapLabel(Number(it.label)) : it.label}
-                    </Text>
-                    <Text style={[styles.small, { color: it.ok ? colors.success : colors.danger }]}>
-                      {s.yourAnswer}: {it.given || s.noAnswer}
-                    </Text>
-                    {!it.ok && (
-                      <Text style={[styles.small, { color: colors.text }]}>
-                        {s.correctAnswer}: {it.expected}
+                {hasTurns(task.items) ? (
+                  <SpeakingReview taskId={task.taskId} items={task.items} />
+                ) : (
+                  task.items.map((it, ii) => (
+                    <View key={ii} testID={`mock-review-${task.taskId}-${ii}`} style={styles.item}>
+                      <Text style={[styles.line, { color: colors.text }]}>
+                        {it.ok ? '✓' : '✗'} {it.skill === undefined && /^\d+$/.test(it.label) ? s.mockGapLabel(Number(it.label)) : it.label}
                       </Text>
-                    )}
-                  </View>
-                ))}
+                      <Text style={[styles.small, { color: it.ok ? colors.success : colors.danger }]}>
+                        {s.yourAnswer}: {it.given || s.noAnswer}
+                      </Text>
+                      {!it.ok && (
+                        <Text style={[styles.small, { color: colors.text }]}>
+                          {s.correctAnswer}: {it.expected}
+                        </Text>
+                      )}
+                    </View>
+                  ))
+                )}
               </View>
             ))}
           </View>
@@ -125,6 +197,8 @@ const styles = StyleSheet.create({
   line: { fontSize: fontSize.md, lineHeight: lineHeight.md },
   note: { fontSize: fontSize.sm, lineHeight: lineHeight.sm, textAlign: 'center' },
   small: { fontSize: fontSize.sm, lineHeight: lineHeight.sm },
+  turn: { borderTopWidth: 1, paddingTop: spacing.sm, gap: spacing.xs },
+  model: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.xs },
   paper: { gap: spacing.sm },
   paperName: { fontSize: fontSize.lg, fontWeight: fontWeight.bold },
   task: { borderWidth: 1, borderRadius: radius.md, padding: spacing.md, gap: spacing.sm },

@@ -83,7 +83,9 @@ describe('per-part save and resume', () => {
     await saveMockSession(store, 'es', 'A1', { seed: e.seed, sig: mockExamSignature(e), done: ['reading', 'writing'], answers: {} });
     await clearMockSession(store, 'es', 'A1');
     const last = await saveMockLast(store, 'es', 'A1', scoreMockExam(e, {}), '2026-10-01');
-    expect(last).toMatchObject({ passed: false, provisional: true, date: '2026-10-01' });
+    // provisional = the speaking paper has no task (its file is empty); with tasks it counts, so the result is final
+    const spoken = e.papers.find((p) => p.id === 'speaking')!.tasks.length > 0;
+    expect(last).toMatchObject({ passed: false, provisional: !spoken, date: '2026-10-01' });
     const overview = await readMockOverview(store, 'es', ['A1']);
     expect(overview.A1?.session).toBeUndefined();
     expect(overview.A1?.last).toEqual(last);

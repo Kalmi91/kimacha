@@ -1,6 +1,7 @@
 // The practice exam's authored B1-C1 papers: the files in data/exams/mock (registry: data/exams/mock/index.ts, schema:
 // AuthoredPaperFile in lib/exam/mock/types.ts) become Mock tasks. One form is picked by the seed and it is the same
-// form in every paper of the exam, so the form count is the minimum over the papers. Pure module: the files can be injected (tests).
+// form in every paper of the exam, so the form count is the minimum over the papers (the speaking paper of every level, A1 / A2
+// included, is the exception: lib/exam/mock/build.ts gives it a form count of its own). Pure module: the files can be injected (tests).
 
 import { MOCK_AUTHORED } from '@/data/exams/mock';
 import type { AuthoredPaperFile, MockLevel, MockTarget, MockTask } from './types';

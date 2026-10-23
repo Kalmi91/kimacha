@@ -1,0 +1,237 @@
+{
+  "target": "en",
+  "level": "C1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "The examiner will ask you some questions about yourself. Give full answers.",
+          "talkMinutes": [2, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Interview",
+              "prompt": "The examiner asks you about your everyday life and about what you hope to achieve in the future.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Let's begin with your everyday life. What does a typical weekday look like for you?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Describes the course of an ordinary day",
+                      "keywords": ["lunch", "routine", "every day", "morning", "evening", "after work", "commut", "get up", "got up", "wake up", "normally", "breakfast"]
+                    }
+                  ],
+                  "model": "On a typical weekday I get up early, commute to the office, and spend most of the day in meetings. The best part is the evening, when I finally have time to cook properly."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Looking further ahead, is there something you would love to learn or achieve in the next few years? Tell me about it.",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Names a hope, goal or plan for the future",
+                      "keywords": ["hope", "plan to", "planning", "my plan", "goal", "ambiti", "dream", "eventually", "one day", "someday", "intend", "want to"]
+                    }
+                  ],
+                  "model": "Honestly, I'd love to learn to play the cello properly. I've always dreamed of it, so my plan is to find a teacher next year and practice every single day."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "You will see three photographs. Compare two of them and answer the examiner's questions.",
+          "talkMinutes": [1, 1],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Time spent on an activity",
+              "prompt": "The photographs show people spending time on an activity. Choose two of them and compare them. You have about one minute.",
+              "bullets": [
+                "What are the people doing in each photograph?",
+                "How are the two situations similar or different?",
+                "Why might the people have decided to spend their time this way?",
+                "What might they find hardest about it?"
+              ],
+              "photos": ["en-c1-1", "en-c1-2", "en-c1-3"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Please compare two of the photographs. Why might these people have decided to spend their time this way, and what could they find hardest about it?",
+                  "minWords": 80,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Describes what the people in the chosen photographs are doing",
+                      "keywords": ["piano", "pianist", "clay", "potter", "wheel", "laptop", "computer", "typing", "keyboard", "vase", "class", "workshop"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Compares the two situations",
+                      "keywords": ["whereas", "in contrast", "unlike", "differ", "compared to", "as opposed to", "on the other hand", "by comparison", "in common", "the same as", "while in", "while the"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Speculates about why the people might do this",
+                      "keywords": ["hobb", "passion", "career", "earn", "relax", "enjoy", "creativ", "satisf", "learn", "unwind", "livelihood", "profession"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Says what the people might find hardest",
+                      "keywords": ["patien", "concentrat", "mistake", "frustrat", "demand", "challeng", "discipline", "practic", "difficult", "tiring", "exhausting", "motivation"]
+                    }
+                  ],
+                  "model": "Well, in the first photograph two men are sitting at pianos in a cozy room, whereas in the second a potter is shaping a tall clay jar on a wheel, completely on his own. Perhaps the pianists simply enjoy music, or it could be a passion they hope to turn into a career. The potter might be keeping a family craft alive, or maybe he just finds it relaxing. Either way, both of them probably need endless patience, because one small mistake can spoil hours of careful practice."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Which of these three activities would you most like to try yourself, and why?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Chooses an activity and gives a reason",
+                      "keywords": ["piano", "clay", "potter", "wheel", "laptop", "computer", "keyboard", "i'd go for", "i'd pick", "i'd choose", "i'd rather", "i'd try"]
+                    }
+                  ],
+                  "model": "I'd go for the pottery, because there's something fascinating about shaping an object with your own hands, and I've always wanted to try it."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Look at the ideas on the sheet and discuss them. Then reach a decision.",
+          "talkMinutes": [3, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Bringing a town together",
+              "prompt": "Many residents of a small town say they hardly know their neighbors anymore. The town council has put forward five ideas to bring people closer together. Discuss the ideas, then decide which two the council should go for first.",
+              "input": "Central question: How could each of these ideas bring the residents closer together?\n\n• a weekly street market\n• a neighborhood volunteer program\n• free creative workshops at the library\n• an online platform for local news and events\n• closing the main street to cars on weekends",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Let's discuss the council's proposals. How might each of them change the way local people relate to each other, and what could go wrong?",
+                  "minWords": 70,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Discusses the ideas that use public space (market, closed street)",
+                      "keywords": ["market", "stalls", "street", "pedestrian", "traffic", "face to face", "in person", "meet"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Discusses the ideas built on shared activity (volunteering, workshops)",
+                      "keywords": ["volunteer", "workshop", "creative", "shared goal", "working together", "side by side", "classes", "teamwork"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Weighs up advantages and drawbacks",
+                      "keywords": ["advantage", "drawback", "downside", "disadvantage", "benefit", "cost", "expensive", "risk", "unrealistic", "problem", "issue", "funding"]
+                    }
+                  ],
+                  "model": "Well, I think the market and shutting the main road to traffic work in a similar way, because both give people a relaxed excuse to meet face to face. Volunteering is probably more powerful, though, since working toward a shared goal builds real friendships, and creative workshops could do the same. The online platform is handy for finding out about events, but screens often keep people apart. The main drawback is cost, and nothing works if residents simply don't show up."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Now you need to reach a decision. Which two of these ideas should the council go for first, and why?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Names the two ideas they would choose",
+                      "keywords": ["market", "volunteer", "workshop", "online", "platform", "street", "library", "i'd go", "i'd choose", "i'd recommend", "i'd pick", "priority"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Gives a reason for the choice",
+                      "keywords": ["cost", "cheap", "budget", "affordable", "impact", "long term", "face to face", "trust", "friendship", "relationship", "get people", "bring people"]
+                    }
+                  ],
+                  "model": "I'd go with the volunteer program and the creative workshops, because they get people working side by side, which builds lasting relationships, and both cost far less than reorganizing a whole street."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "The examiner will ask you some more general questions on a related theme. Give reasons and examples.",
+          "talkMinutes": [5, 5],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Community life",
+              "prompt": "The examiner asks you some more general questions about life in a community, the theme of the previous task.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Some people argue that technology has made communities weaker. How far do you agree?",
+                  "minWords": 23,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "States how far they agree",
+                      "keywords": ["i agree with", "i agree that", "i disagree", "partly", "up to a point", "to some extent", "not entirely", "in my view", "don't agree", "to a certain", "somewhat", "completely agree"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Supports the view with a reason or an example",
+                      "keywords": ["online", "messag", "screen", "social media", "group chat", "in touch", "phone", "internet", "smartphone", "video call", "face to face", "isolat"]
+                    }
+                  ],
+                  "model": "I agree up to a point. Messaging apps help families stay in touch, but screens also pull us away from our neighbors, so, for example, people rarely chat in the stairwell anymore."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Why do you think some people never get involved in their local community, even when they have the chance?",
+                  "minWords": 23,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Gives a reason why people stay out of community life",
+                      "keywords": ["busy", "apath", "can't be bothered", "commut", "exhausted", "tired", "no interest", "not interested", "no time", "indifferen", "lazy", "selfish"]
+                    }
+                  ],
+                  "model": "Mostly because they are too busy and exhausted after a long commute, I think. Some also assume that nobody else cares, so they can't be bothered to make the effort."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Finally, what could be done to make life less lonely for older people, and who should take the lead?",
+                  "minWords": 23,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Suggests a concrete measure for older people",
+                      "keywords": ["community cent", "day cent", "day care", "meeting place", "clubs", "events", "visit", "volunteer", "befriend", "activities", "lunch", "companion"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Says who should take responsibility",
+                      "keywords": ["council", "government", "authorit", "charit", "famil", "neighbors", "neighbours", "a neighbor", "their neighbor", "ourselves", "responsib", "each of us"]
+                    }
+                  ],
+                  "model": "I think local councils could fund day centers and weekly clubs where older people meet over lunch, but responsibility shouldn't rest on them alone, because neighbors and families can easily drop by too."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -214,6 +214,174 @@ describe('essay', () => {
   });
 });
 
+describe('speaking', () => {
+  const turnsA = [
+    {
+      id: 't1',
+      ask: 'Where did you go last summer?',
+      minWords: 10,
+      points: [{ id: 'p1', label: 'place', keywords: ['bamo'] }, { id: 'p2', label: 'time', keywords: ['nothere', 'zuli'] }],
+      model: 'I went to bamo in zuli',
+    },
+    { id: 't2', ask: 'Did you like it?', minWords: 4, points: [], model: 'Yes I did' },
+  ];
+  const choices = [
+    { id: 'a', title: 'A', prompt: 'Talk about your best holiday.', bullets: ['where you went'], input: 'A short note from a friend.', turns: turnsA },
+    { id: 'b', title: 'B', prompt: 'Talk about your job.', turns: [{ id: 't1', ask: 'What do you do for a living?', minWords: 5, points: [{ id: 'q1', label: 'job', keywords: ['kemo'] }], model: 'I am a kemo' }] },
+  ];
+  const sp = (id: string, extra: Partial<Extract<MockTask, { kind: 'speaking' }>> = {}): MockTask => ({ ...base(id, 'speaking'), kind: 'speaking', talkMinutes: [2, 3], choices, ...extra });
+  const speaking = sp('speaking-1');
+  const text = (n: number, ...keywords: string[]) => [...keywords, ...distinctWords(n - keywords.length, 100)].join(' ');
+  const good = { choice: 'a', t1: text(12, 'bamo', 'zuli'), t2: text(5) };
+
+  it('items: per turn the content points + one word-count mark; counts follow the longest choice', () => {
+    expect(mockTaskItemCount(speaking)).toBe(4);
+    expect(mockTaskMarks(speaking)).toBe(4);
+    expect(mockTaskMarks(sp('m', { marks: 2 }))).toBe(8);
+    expect(mockTaskItemCount(sp('one', { choices: [choices[1]] }))).toBe(2);
+  });
+
+  it('a good answer gets every point and the word-count mark of every turn', () => {
+    const r = run(speaking, good);
+    expect(r.items.map((i) => i.label)).toEqual(['place', 'time', '≥ 10', '≥ 4']);
+    expect(r.items.every((i) => i.ok)).toBe(true);
+    expect(r).toMatchObject({ taskId: 'speaking-1', skill: 'speaking', correct: 4, total: 4 });
+  });
+
+  it('every item carries the question of its turn (group) and the model answer, for the review', () => {
+    const r = run(speaking, good);
+    expect(r.items.map((i) => i.group)).toEqual(['Where did you go last summer?', 'Where did you go last summer?', 'Where did you go last summer?', 'Did you like it?']);
+    expect(r.items.map((i) => i.model)).toEqual(['I went to bamo in zuli', 'I went to bamo in zuli', 'I went to bamo in zuli', 'Yes I did']);
+  });
+
+  it('the points are given by keyword per turn; the word count needs the turn minimum', () => {
+    expect(flags(speaking, { ...good, t1: text(12, 'bamo') })).toEqual([true, false, true, true]);
+    expect(flags(speaking, { ...good, t1: text(12, 'zuli') })).toEqual([false, true, true, true]);
+    const at = (n: number) => flags(speaking, { ...good, t1: text(n, 'bamo', 'zuli') })[2];
+    expect(at(9)).toBe(false);
+    expect(at(10)).toBe(true);
+  });
+
+  it('a content point needs at least half of the turn minimum, the word-count mark all of it', () => {
+    expect(flags(speaking, { ...good, t1: text(4, 'bamo', 'zuli') }).slice(0, 3)).toEqual([false, false, false]);
+    expect(flags(speaking, { ...good, t1: text(5, 'bamo', 'zuli') }).slice(0, 3)).toEqual([true, true, false]);
+  });
+
+  it('short, senseless, repeated or pasted answers earn nothing', () => {
+    expect(run(speaking, { choice: 'a', t1: 'bamo zuli', t2: 'ok' }).correct).toBe(0);
+    expect(run(speaking, { choice: 'a', t1: 'qwer asdf zxcv qwer asdf zxcv qwer asdf zxcv qwer asdf zxcv bamo zuli' }).correct).toBe(0);
+    expect(run(speaking, { choice: 'a', t1: Array(14).fill('bamo').join(' ') }).correct).toBe(0);
+    expect(flags(speaking, { choice: 'a', t1: 'Where did you go last summer? bamo zuli' }).slice(0, 3)).toEqual([false, false, false]);
+    expect(flags(speaking, { choice: 'a', t2: 'Talk about your best holiday where you went' })[3]).toBe(false);
+  });
+
+  it('with a dictionary the text must be mostly known words', () => {
+    expect(scoreMockTask(speaking, good, { lexicon: new Set(['hello']) }).correct).toBe(0);
+  });
+
+  it('nothing said: nothing earned, but the chosen choice still sets the total', () => {
+    expect(run(speaking)).toMatchObject({ correct: 0, total: 4 });
+    expect(run(speaking, { choice: 'b' })).toMatchObject({ correct: 0, total: 2 });
+  });
+
+  it('the picked choice is scored; with no (or an unknown) pick the first', () => {
+    expect(run(speaking, { choice: 'b', t1: text(6, 'kemo') })).toMatchObject({ correct: 2, total: 2 });
+    expect(run(speaking, { choice: 'z', t1: text(12, 'bamo', 'zuli') })).toMatchObject({ correct: 3, total: 4 });
+    expect(run(speaking, { t1: text(12, 'bamo', 'zuli') }).items).toHaveLength(4);
+  });
+
+  it('the preparation notes are not scored', () => {
+    expect(run(speaking, { choice: 'a', notes: text(30, 'bamo', 'zuli') }).correct).toBe(0);
+  });
+
+  it('follows: a task without a pick of its own takes the choice of the followed task; its own pick wins', () => {
+    const second = sp('speaking-2', { follows: 1 });
+    expect(scoreMockTask(second, { t1: text(6, 'kemo') }, {}, 'b')).toMatchObject({ correct: 2, total: 2 });
+    expect(scoreMockTask(second, { choice: 'a', t1: text(12, 'bamo', 'zuli') }, {}, 'b')).toMatchObject({ total: 4 });
+    expect(scoreMockTask(second, {}, {}, 'zzz').items).toHaveLength(4);
+  });
+
+  it('scoreMockExam resolves follows: the choice picked in task 1 scores task 2 (also through a chain), the first without a pick', () => {
+    const tasks = [sp('speaking-1'), sp('speaking-2', { follows: 1 }), sp('speaking-3', { follows: 2 })];
+    const exam = speakingExam('en', 'B1', [], tasks);
+    const items = (answers: MockAnswers) => scoreMockExam(exam, answers).papers[1].tasks.map((t) => t.items.length);
+    expect(items({ 'speaking-1': { choice: 'b' } })).toEqual([2, 2, 2]);
+    expect(items({ 'speaking-1': { choice: 'a' } })).toEqual([4, 4, 4]);
+    expect(items({})).toEqual([4, 4, 4]);
+    // task 2 picks for itself (a task that follows may still carry its own choice), task 3 follows that
+    expect(items({ 'speaking-1': { choice: 'a' }, 'speaking-2': { choice: 'b' } })).toEqual([4, 2, 2]);
+    const r = scoreMockExam(exam, { 'speaking-1': { choice: 'b' }, 'speaking-2': { t1: text(6, 'kemo') } });
+    expect(r.papers[1].tasks.map((t) => t.correct)).toEqual([0, 2, 0]);
+  });
+
+  it('only an earlier task can be followed', () => {
+    const exam = speakingExam('en', 'B1', [], [sp('speaking-1', { follows: 2 }), sp('speaking-2', { follows: 2 })]);
+    const r = scoreMockExam(exam, { 'speaking-2': { choice: 'b' } });
+    expect(r.papers[1].tasks.map((t) => t.items.length)).toEqual([4, 2]);
+  });
+
+  describe('in the exam: the speaking counts once it has a task', () => {
+    const others = [mcTask('reading', 'reading', 4), mcTask('writing', 'writing', 4), mcTask('listening', 'listening', 4)];
+    const allRight = { reading: hits(4), writing: hits(4), listening: hits(4) };
+
+    it('es groups: the speaking is a skill of its own in group 2 (not provisional); silence fails the group the placeholder would double', () => {
+      const placeholder = scoreMockExam(speakingExam('es', 'B1', others, []), allRight);
+      expect(placeholder.provisional).toBe(true);
+      expect(placeholder.rule).toMatchObject({ kind: 'groups', groups: [{ points: 50, passed: true }, { points: 50, provisional: true, passed: true }] });
+      const silent = scoreMockExam(speakingExam('es', 'B1', others, [speaking]), allRight);
+      expect(silent.provisional).toBe(false);
+      expect(silent.skills.find((s) => s.skill === 'speaking')).toMatchObject({ included: true, correct: 0, total: 4, points: 0 });
+      expect(silent.rule).toMatchObject({ kind: 'groups', groups: [{ points: 50, passed: true }, { points: 25, provisional: false, passed: false }] });
+      expect(silent.passed).toBe(false);
+      const spoken = scoreMockExam(speakingExam('es', 'B1', others, [speaking]), { ...allRight, 'speaking-1': good });
+      expect(spoken.rule).toMatchObject({ groups: [{ points: 50 }, { points: 50, passed: true }] });
+      expect(spoken.passed).toBe(true);
+    });
+
+    it('en A1 total: the four skills count, not provisional', () => {
+      const r = scoreMockExam(speakingExam('en', 'A1', others, [speaking]), { ...allRight, 'speaking-1': good });
+      expect(r.provisional).toBe(false);
+      expect(r.rule).toMatchObject({ kind: 'total', points: 100, passed: true, provisional: false });
+      expect(r.totalMax).toBe(100);
+    });
+
+    it('en A2 average: the speaking is in the average', () => {
+      const r = scoreMockExam(speakingExam('en', 'A2', others, [speaking]), allRight);
+      expect(r.provisional).toBe(false);
+      expect(r.rule).toMatchObject({ kind: 'average', pct: 75, provisional: false });
+    });
+
+    it('en B1-C1 scale: the speaking has its anchors, 30 of 30 raw is 167 on B1, nothing said is 77; not provisional', () => {
+      const perfect = scoreMockExam(speakingExam('en', 'B1', others, [speaking]), { ...allRight, 'speaking-1': good });
+      expect(perfect.provisional).toBe(false);
+      expect(perfect.skills.find((s) => s.skill === 'speaking')).toMatchObject({ included: true, scale: 167 });
+      const none = scoreMockExam(speakingExam('en', 'B1', others, [speaking]), allRight);
+      expect(none.skills.find((s) => s.skill === 'speaking')?.scale).toBe(77);
+      expect(none.rule).toMatchObject({ kind: 'scale', provisional: false });
+      for (const level of ['B2', 'C1'] as const) {
+        expect(scoreMockExam(speakingExam('en', level, others, [speaking]), {}).skills.find((s) => s.skill === 'speaking')).toMatchObject({ included: true });
+      }
+    });
+  });
+});
+
+/** An exam of the level's blueprint rule: the written tasks in one paper, the given tasks in the speaking paper (a placeholder when there are none). */
+function speakingExam(target: 'es' | 'en', level: 'A1' | 'A2' | 'B1' | 'B2' | 'C1', tasks: MockTask[], speakingTasks: MockTask[]): MockExam {
+  const bp = getMockBlueprint(target, level);
+  return {
+    target,
+    level,
+    seed: 1,
+    official: bp.official,
+    skillNames: bp.skillNames,
+    rule: bp.rule,
+    papers: [
+      { id: 'all', name: 'All', minutes: 60, points: 75, placeholder: false, tasks },
+      { id: 'speaking', name: 'Speaking', minutes: 10, points: 25, placeholder: speakingTasks.length === 0, tasks: speakingTasks },
+    ],
+  };
+}
+
 // ---------------------------------------------------------------- scale rule
 
 function examOf(level: 'B1' | 'B2' | 'C1', tasks: MockTask[]): MockExam {
@@ -232,11 +400,12 @@ function examOf(level: 'B1' | 'B2' | 'C1', tasks: MockTask[]): MockExam {
   };
 }
 
-/** An exam with one task per scored skill of the level's rule, with as many questions as the real paper has marks. */
-function scaleExam(level: 'B1' | 'B2' | 'C1'): MockExam {
+/** An exam with one task per scored skill of the level's rule, with as many questions as the real paper has marks (the speaking only on request: without a task it is the placeholder). */
+function scaleExam(level: 'B1' | 'B2' | 'C1', withSpeaking = false): MockExam {
   const rule = getMockBlueprint('en', level).rule;
   if (rule.kind !== 'scale') throw new Error('not a scale rule');
-  return examOf(level, (Object.entries(rule.skills) as [MockSkill, { officialMax: number }][]).map(([skill, c]) => mcTask(skill, skill, c.officialMax)));
+  const skills = (Object.entries(rule.skills) as [MockSkill, { officialMax: number }][]).filter(([skill]) => withSpeaking || skill !== 'speaking');
+  return examOf(level, skills.map(([skill, c]) => mcTask(skill, skill, c.officialMax)));
 }
 const answersFor = (raw: Partial<Record<MockSkill, number>>): MockAnswers => Object.fromEntries(Object.entries(raw).map(([skill, k]) => [skill, hits(k!)]));
 const scaleOf = (exam: MockExam, raw: Partial<Record<MockSkill, number>>) => scoreMockExam(exam, answersFor(raw));
@@ -265,7 +434,7 @@ describe('scaleScore: linear between the anchors, the end segments continue outs
 describe('scale rule (English B1 / B2 / C1)', () => {
   it('on every anchor of every level the skill gets exactly the anchor scale score', () => {
     for (const level of ['B1', 'B2', 'C1'] as const) {
-      const exam = scaleExam(level);
+      const exam = scaleExam(level, true);
       const rule = getMockBlueprint('en', level).rule;
       if (rule.kind !== 'scale') throw new Error('not a scale rule');
       for (const [skill, conv] of Object.entries(rule.skills) as [MockSkill, NonNullable<(typeof rule.skills)[MockSkill]>][]) {

@@ -15,12 +15,15 @@ const FILES = [
   ...['b1', 'b2', 'c1'].flatMap((level) => ['reading', 'listening', 'writing'].map((paper) => `es-${level}-${paper}.json`)),
   ...['reading', 'writing', 'listening'].map((paper) => `en-b1-${paper}.json`),
   ...['b2', 'c1'].flatMap((level) => ['readinguse', 'writing', 'listening'].map((paper) => `en-${level}-${paper}.json`)),
+  // the speaking paper of every level (A1-C1), both directions
+  ...['es', 'en'].flatMap((target) => ['a1', 'a2', 'b1', 'b2', 'c1'].map((level) => `${target}-${level}-speaking.json`)),
 ];
 
 describe('data/exams/mock', () => {
-  it('has the 18 paper files, one per direction, level and paper', () => {
-    expect(FILES).toHaveLength(18);
-    expect(fs.readdirSync(DIR).filter((n) => n.endsWith('.json')).sort()).toEqual([...FILES].sort());
+  it('has the 28 paper files (18 B1-C1 papers + 10 speaking papers), one per direction, level and paper', () => {
+    expect(FILES).toHaveLength(28);
+    // photos.json is the photo registry of the speaking papers (S5), not a paper file
+    expect(fs.readdirSync(DIR).filter((n) => n.endsWith('.json') && n !== 'photos.json').sort()).toEqual([...FILES].sort());
   });
 
   it('the registry lists exactly those files', () => {
