@@ -249,6 +249,12 @@ describe('real task sets: they pass with every right answer', () => {
         if (t.kind === 'match' || t.kind === 'listen_match') Object.assign(a, t.answer);
         if (t.kind === 'form_fill') for (const f of t.fields) a[f.id] = GOOD_FORM[f.check ?? 'word'];
         if (t.kind === 'short_message') a.text = `${t.points.map((x) => x.keywords[0]).join(' ')} ${DISTINCT_WORDS.slice(0, t.minWords).join(' ')}`;
+        if (t.kind === 'speaking') {
+          // the first sheet of every task, the model answer of each of its turns
+          const c = t.choices[0];
+          a.choice = c.id;
+          for (const turn of c.turns) a[turn.id] = turn.model;
+        }
         all[t.id] = a;
       }
     }
@@ -265,9 +271,12 @@ describe('real task sets: they pass with every right answer', () => {
       setPcicTarget(target);
       const e = buildMockExam({ target, level, items: pcicItemsForLevel(level), seed: 11 });
       const r = scoreMockExam(e, solve(e));
-      expect(r.skills.filter((s) => s.included).map((s) => s.points)).toEqual([25, 25, 25]);
+      // The speaking paper comes from its file: with tasks it is a skill like the others (the model answers get everything),
+      // while its file is empty it is the placeholder (not included, provisional). Either way the other skills are full.
+      const spoken = e.papers.find((p) => p.id === 'speaking')!.tasks.length > 0;
+      expect(r.skills.filter((s) => s.included).map((s) => s.points)).toEqual(spoken ? [25, 25, 25, 25] : [25, 25, 25]);
       expect(r.passed).toBe(true);
-      expect(r.provisional).toBe(true);
+      expect(r.provisional).toBe(!spoken);
     });
   }
 });
@@ -309,6 +318,24 @@ describe('scoreMockTask: per item', () => {
     };
     const r = scoreMockTask(t, { text: 'I will visit you and say gracias' });
     expect(r.items.map((i) => i.ok)).toEqual([false, true, true]);
+  });
+
+  it('writing: an English contraction matches its full form both ways ("i\'m" = "i am", "don\'t" = "do not")', () => {
+    const t: MockTask = {
+      id: 'w',
+      skill: 'writing',
+      kind: 'short_message',
+      instruction: '',
+      prompt: '',
+      minWords: 3,
+      points: [
+        { id: 'a', label: 'a', keywords: ['i am going to'] },
+        { id: 'b', label: 'b', keywords: ["don't agree"] },
+        { id: 'c', label: 'c', keywords: ["i'd like"] },
+      ],
+    };
+    const r = scoreMockTask(t, { text: "I'm going to say that I do not agree, and I would like more time" });
+    expect(r.items.map((i) => i.ok)).toEqual([true, true, true, true]);
   });
 
   it('form: filled in, and a number in a number field; true/false and matching per the key', () => {
