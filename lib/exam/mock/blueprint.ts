@@ -16,8 +16,13 @@
 //
 // B1, B2 and C1 (both directions) are authored papers (data/exams/mock/*.json, lib/exam/mock/authored.ts) with the
 // paper order, minutes and task counts of PLAN-vizsga-b1c1.md. The es direction keeps the 30 / 50 groups; the en
-// direction averages scale scores (anchors from the research of 2026-10-22: pass 140 / 160 / 180; the speaking is a
-// placeholder and is left out).
+// direction averages scale scores (anchors from the research of 2026-10-22: pass 140 / 160 / 180, the speaking has its
+// own anchors).
+//
+// The speaking paper (every level, both directions) comes from the file data/exams/mock/<target>-<level>-speaking.json
+// (PLAN-vizsga-szobeli.md). While that file has no form the paper stays a placeholder (reserve): no task, not counted.
+// ⚠ The Spanish A1 / A2 oral structure (3 tareas, the minutes below) is from a search summary: the official guide was not
+// available on 2026-10-22.
 //
 // The phone task set is shorter than the real one, so the raw hits of a skill are
 // scaled to its 25 points (lib/exam/mock/score.ts). The UI never prints a trademarked name.
@@ -68,6 +73,7 @@ interface MockPaperSpec {
   name: string;
   minutes: number;
   skills: MockSkill[];
+  /** The speaking paper: its tasks come from the speaking file; with no task the built paper is a placeholder (reserve). */
   placeholder?: boolean;
 }
 
@@ -178,7 +184,8 @@ const EN_NAMES: MockSkillNames = {
 // B2 and C1 score the Use of English apart from the reading.
 const EN_USE_NAMES: MockSkillNames = { ...EN_NAMES, use: 'Use of English' };
 
-// The minutes of the old blueprint.ts: es A1 45 / 25 / 25 / 10, es A2 60 / 45 / 40 / 12.
+// The minutes of the old blueprint.ts: es A1 45 / 25 / 25 / 10, es A2 60 / 45 / 40 / 12 (⚠ the speaking minutes 10 / 12: the
+// DELE A1 / A2 oral structure is from a search summary, the guide was not available on 2026-10-22).
 const ES_MINUTES: Record<WordLevel, Record<PaperSkill, number>> = {
   A1: { reading: 45, writing: 25, listening: 25, speaking: 10 },
   A2: { reading: 60, writing: 45, listening: 40, speaking: 12 },
@@ -193,7 +200,8 @@ const ES_AUTHORED_MINUTES: Record<AuthoredLevel, Record<PaperSkill, number>> = {
 const ES_AUTHORED_ORDER: PaperSkill[] = ['reading', 'listening', 'writing', 'speaking'];
 
 // en B1-C1: raw score -> scale score anchors per component (research 2026-10-22, point 5: the examiner's practice conversion
-// of 2023-11; the four columns are the minimum, the next step, the pass and the level above). The speaking has no entry (placeholder).
+// of 2023-11; the four columns are the minimum, the next step, the pass and the level above). The speaking has an entry too: it
+// counts only once the speaking file has a task (the placeholder paper is left out).
 const EN_SCALE: Record<AuthoredLevel, Extract<MockRule, { kind: 'scale' }>> = {
   B1: {
     kind: 'scale',
@@ -203,6 +211,7 @@ const EN_SCALE: Record<AuthoredLevel, Extract<MockRule, { kind: 'scale' }>> = {
       reading: { officialMax: 32, anchors: [[5, 102], [13, 120], [23, 140], [29, 160]] },
       writing: { officialMax: 40, anchors: [[10, 102], [16, 120], [24, 140], [34, 160]] },
       listening: { officialMax: 25, anchors: [[5, 102], [11, 120], [18, 140], [23, 160]] },
+      speaking: { officialMax: 30, anchors: [[7, 102], [12, 120], [18, 140], [27, 160]] },
     },
   },
   B2: {
@@ -214,6 +223,7 @@ const EN_SCALE: Record<AuthoredLevel, Extract<MockRule, { kind: 'scale' }>> = {
       use: { officialMax: 28, anchors: [[7, 122], [11, 140], [18, 160], [24, 180]] },
       writing: { officialMax: 40, anchors: [[10, 122], [16, 140], [24, 160], [34, 180]] },
       listening: { officialMax: 30, anchors: [[8, 122], [12, 140], [18, 160], [27, 180]] },
+      speaking: { officialMax: 60, anchors: [[14, 122], [24, 140], [36, 160], [54, 180]] },
     },
   },
   C1: {
@@ -225,6 +235,7 @@ const EN_SCALE: Record<AuthoredLevel, Extract<MockRule, { kind: 'scale' }>> = {
       use: { officialMax: 28, anchors: [[8, 142], [11, 160], [16, 180], [23, 200]] },
       writing: { officialMax: 40, anchors: [[10, 142], [16, 160], [24, 180], [34, 200]] },
       listening: { officialMax: 30, anchors: [[11, 142], [13, 160], [18, 180], [26, 200]] },
+      speaking: { officialMax: 75, anchors: [[17, 142], [30, 160], [45, 180], [66, 200]] },
     },
   },
 };
@@ -275,7 +286,7 @@ export const MOCK_LEVELS: Record<MockTarget, readonly MockLevel[]> = {
   en: ['A1', 'A2', 'B1', 'B2', 'C1'],
 };
 
-/** A1 / A2 are always available; B1 and up only when every non-placeholder paper has at least one authored form. */
+/** A1 / A2 are always available; B1 and up only when every non-placeholder paper has at least one authored form (the speaking is not required: with an empty file it stays a placeholder). */
 export function mockAvailable(target: MockTarget, level: string, authored?: AuthoredPaperFile[]): level is MockLevel {
   if (!(MOCK_LEVELS[target] as readonly string[]).includes(level)) return false;
   if (level === 'A1' || level === 'A2') return true;

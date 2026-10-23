@@ -321,3 +321,253 @@ describe('the answer key: --blind and --grade', () => {
     expect(run('--blind', path.join(FIXTURES, 'es-c1-listening.good.json')).status).toBe(1);
   });
 });
+
+// ---------------------------------------------------------------- speaking papers (S1-S7)
+
+/** One task of a speaking file in the shape of the script's SPEC table: choices, prep seconds, talk minutes, turns per choice, photos per choice. */
+type Row = { choices: number; prep?: number; talk: [number, number]; turns: number; follows?: number; photos?: string[][] };
+const WORDS = 'casa mesa libro tiempo amigo ciudad trabajo familia verano musica cocina parque viaje estudio'.split(' ');
+const ES_B1: Row[] = [
+  { choices: 2, prep: 900, talk: [2, 3], turns: 1 },
+  { choices: 2, talk: [3, 4], turns: 5, follows: 1 },
+  { choices: 2, talk: [2, 3], turns: 2, photos: [['ph1'], ['ph2']] },
+  { choices: 2, talk: [2, 3], turns: 4, follows: 3, photos: [['ph1'], ['ph2']] },
+];
+const EN_B2: Row[] = [
+  { choices: 1, talk: [2, 2], turns: 3 },
+  { choices: 1, talk: [1, 1], turns: 2, photos: [['ph1', 'ph2']] },
+  { choices: 1, talk: [3, 4], turns: 2 },
+  { choices: 1, talk: [4, 4], turns: 3 },
+];
+
+/** A speaking file of the given rows: every turn has two content points, and a model answer that gets both. */
+function speakingData(target: 'es' | 'en', level: string, rows: Row[], minWords = 10): Json {
+  return {
+    target,
+    level,
+    paper: 'speaking',
+    forms: [
+      {
+        id: 'f1',
+        tasks: rows.map((r, ti) => ({
+          kind: 'speaking',
+          skill: 'speaking',
+          instruction: `Hable del tema numero ${ti + 1} con tranquilidad.`,
+          ...(r.prep ? { prepSeconds: r.prep } : {}),
+          talkMinutes: r.talk,
+          ...(r.follows ? { follows: r.follows } : {}),
+          choices: Array.from({ length: r.choices }, (_, ci) => ({
+            id: 'abc'[ci],
+            title: `Tema ${ci + 1}`,
+            prompt: `Describa la situacion ${ti + 1}${'abc'[ci]} con detalle.`,
+            ...(r.photos ? { photos: r.photos[ci] } : {}),
+            turns: Array.from({ length: r.turns }, (_, k) => ({
+              id: `t${k + 1}`,
+              ask: `Que opina de la pregunta ${k + 1}?`,
+              minWords,
+              points: [
+                { id: 'p1', label: 'primero', keywords: ['casa', 'jardin', 'pueblo', 'barrio'] },
+                { id: 'p2', label: 'segundo', keywords: ['libro', 'novela', 'revista', 'cuento'] },
+              ],
+              model: WORDS.join(' '),
+            })),
+          })),
+        })),
+      },
+    ],
+  };
+}
+
+describe('speaking papers (S1-S7)', () => {
+  let registry: string;
+  beforeAll(() => {
+    // a photo registry with two photo files, and one entry whose file is missing
+    const dir = path.join(tmp, 'photos');
+    fs.mkdirSync(dir);
+    for (const key of ['ph1', 'ph2']) fs.writeFileSync(path.join(dir, `${key}.jpg`), 'jpg');
+    registry = path.join(dir, 'photos.json');
+    fs.writeFileSync(registry, JSON.stringify({ ph1: { file: 'ph1.jpg' }, ph2: { file: 'ph2.jpg' }, ph3: { file: 'ph3.jpg' } }));
+  });
+
+  const esB1 = () => speakingData('es', 'B1', ES_B1);
+  const enB2 = () => speakingData('en', 'B2', EN_B2);
+  const check = (data: Json, ...flags: string[]) => run('--photos', registry, ...flags, write(data));
+  const broke = (change: (d: Json) => void, make: () => Json = esB1) => {
+    const data = make();
+    change(data);
+    return check(data);
+  };
+  const choiceOf = (d: Json, task: number, c = 0): Json => tasks(d)[task].choices[c];
+  const turnOf = (d: Json, task: number, k = 0): Json => choiceOf(d, task).turns[k];
+  const fails = (r: ReturnType<typeof run>, pattern: RegExp) => {
+    expect(r.out).toMatch(pattern);
+    expect(r.status).toBe(1);
+    expect(r.last).toMatch(/^mock-exam-check: FAIL/);
+  };
+
+  it('a complete paper passes, also with --strict (es B1 with follows + photos, en B2 with two photos)', () => {
+    for (const make of [esB1, enB2]) {
+      for (const flags of [[], ['--strict']]) {
+        const r = check(make(), ...flags);
+        expect(r.out).not.toMatch(/ERROR/);
+        expect(r.status).toBe(0);
+        expect(r.last).toBe('mock-exam-check: OK (1 files, 0 errors, 0 warnings)');
+      }
+    }
+  });
+
+  it('an empty speaking file is only a warning, also with --strict (the app keeps its placeholder)', () => {
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1']) {
+      const r = run('--strict', write({ target: 'en', level, paper: 'speaking', forms: [] }));
+      expect(r.status).toBe(0);
+      expect(r.out).toMatch(/WARN .*forms is empty: not written yet/);
+      expect(r.last).toBe('mock-exam-check: OK (1 files, 0 errors, 1 warnings)');
+    }
+  });
+
+  it('S1: a speaking file holds speaking tasks only, and a speaking task is nowhere else', () => {
+    fails(broke((d) => (tasks(d)[0].kind = 'essay')), /S1: a speaking file holds kind "speaking" tasks only, not "essay"/);
+    fails(broke((d) => (tasks(d)[0].skill = 'writing')), /S1: skill "writing", a speaking file holds skill "speaking" tasks only/);
+    // a speaking task in another paper's file
+    const misplaced = good('es-b2-writing');
+    tasks(misplaced)[0].skill = 'speaking';
+    fails(run(write(misplaced)), /S1: a speaking task belongs in a \*-speaking.json file/);
+    const asKind = good('es-b2-writing');
+    tasks(asKind)[0].kind = 'speaking';
+    fails(run(write(asKind)), /S1: a speaking task belongs in a \*-speaking.json file/);
+  });
+
+  it('S2: 1-3 choices with unique ids; follows is an earlier speaking task with the same choice ids', () => {
+    fails(broke((d) => (choiceOf(d, 0).id = 'b')), /S2: choice ids must be unique non-empty strings/);
+    fails(broke((d) => tasks(d)[0].choices.push({ ...choiceOf(d, 0), id: 'c' }, { ...choiceOf(d, 0), id: 'd' })), /S2: choices must be a list of 1-3 choices/);
+    fails(broke((d) => (tasks(d)[1].follows = 2)), /S2: follows \(2\) must be the ordinal of an earlier task \(1\.\.1\)/);
+    fails(broke((d) => (tasks(d)[0].follows = 1)), /S2: follows \(1\) must be the ordinal of an earlier task/);
+    fails(broke((d) => (choiceOf(d, 1, 1).id = 'c')), /S2: follows 1: the choice ids \(a, c\) differ from the followed task's \(a, b\)/);
+    fails(broke((d) => (tasks(d)[3].follows = 3.5)), /S2: follows \(3.5\)/);
+  });
+
+  it('S3: turns need an id, ask, model, minWords and 0-4 points of 4-8 keywords; M8 holds for the keywords', () => {
+    fails(broke((d) => (choiceOf(d, 0).turns = [])), /S3: choices\[0\]: turns must be a non-empty list/);
+    fails(broke((d) => (choiceOf(d, 1).turns[1].id = 't1')), /S3: choices\[0\]: turn ids must be unique/);
+    fails(broke((d) => (turnOf(d, 0).ask = ' ')), /S3: .*turns\[0\]: ask and model must be non-empty strings/);
+    fails(broke((d) => delete turnOf(d, 0).model), /S3: .*ask and model must be non-empty strings/);
+    fails(broke((d) => (turnOf(d, 0).minWords = 0)), /S3: .*minWords must be a positive integer/);
+    fails(broke((d) => (turnOf(d, 0).points = Array.from({ length: 5 }, (_, i) => ({ id: `p${i}`, label: 'x', keywords: ['casa', 'jardin', 'pueblo', 'barrio'] })))), /S3: .*points must be a list of 0-4 content points/);
+    fails(broke((d) => (turnOf(d, 0).points[1].id = 'p1')), /S3: .*every point needs a unique id and a label/);
+    fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['casa', 'jardin', 'pueblo'])), /S3: .*points\[0\]: keywords must be a list of 4-8 non-empty strings/);
+    fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['casa', 'jardin', 'pueblo', 'barrio', 'campo', 'playa', 'calle', 'plaza', 'cerro'])), /S3: .*keywords must be a list of 4-8/);
+    fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['casa', 'jardin', 'pueblo', 'es'])), /M8: .*points\[0\]: keyword "es" is a single word under 4 letters/);
+    // no points at all is fine: only the word count counts
+    expect(broke((d) => (turnOf(d, 0).points = [])).status).toBe(0);
+  });
+
+  it('S4: the model answer reaches minWords and gets every point, scored like the app (folded words, keyword at a word start)', () => {
+    fails(broke((d) => (turnOf(d, 0).model = 'casa libro')), /S4: .*turns\[0\]: the model answer has 2 meaningful words, minWords is 10/);
+    fails(broke((d) => (turnOf(d, 0).model = WORDS.filter((w) => w !== 'casa').join(' '))), /S4: .*turns\[0\]\.points\[0\] "p1": the model answer gets no point here/);
+    // a keyword matches at a word start ("tiemp" finds "tiempo"), not inside a word ("iempo" does not)
+    expect(broke((d) => (turnOf(d, 0).points[0].keywords = ['tiemp', 'jardin', 'pueblo', 'barrio'])).status).toBe(0);
+    fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['iempo', 'jardin', 'pueblo', 'barrio'])), /S4: .*points\[0\] "p1"/);
+    // case and accents do not matter
+    const accented = broke((d) => {
+      turnOf(d, 0).model = WORDS.join(' ').replace('musica', `M${String.fromCharCode(0xda)}SICA`);
+      turnOf(d, 0).points[0].keywords = ['musica', 'jardin', 'pueblo', 'barrio'];
+    });
+    expect(accented.status).toBe(0);
+    // the pasted question does not count as words: a model that repeats the task text loses them
+    fails(broke((d) => (turnOf(d, 0).model = `Que opina de la pregunta 1 ${WORDS.slice(0, 3).join(' ')}`)), /S4: .*turns\[0\]: the model answer has/);
+  });
+
+  it('S5: every photo key is in the registry and has its file', () => {
+    fails(broke((d) => (choiceOf(d, 2).photos = ['nope'])), /S5: choices\[0\]: photo "nope" is not in photos.json/);
+    fails(broke((d) => (choiceOf(d, 2).photos = ['ph3'])), /S5: choices\[0\]: photo "ph3" has no photo file \(ph3.jpg \/ ph3.jpg\)/);
+    fails(broke((d) => (choiceOf(d, 2).photos = [])), /photos must be a non-empty list of unique photo keys/);
+    const noRegistry = run('--photos', path.join(tmp, 'nowhere', 'photos.json'), write(esB1()));
+    fails(noRegistry, /S5: .*cannot be checked: photos.json does not exist yet/);
+  });
+
+  it('S6: choices, prepSeconds, talkMinutes, follows, turns and photos are those of the format table', () => {
+    fails(broke((d) => (tasks(d)[0].prepSeconds = 600)), /S6: prepSeconds 600, the format wants 900/);
+    fails(broke((d) => delete tasks(d)[0].prepSeconds), /S6: prepSeconds 0, the format wants 900/);
+    fails(broke((d) => (tasks(d)[1].talkMinutes = [2, 3])), /S6: talkMinutes \[2,3\], the format wants \[3,4\]/);
+    fails(broke((d) => tasks(d)[0].choices.pop()), /S6: 1 choices, the format wants 2/);
+    fails(broke((d) => choiceOf(d, 1).turns.pop()), /S6: choices\[0\]: 4 turns, the format wants 5/);
+    fails(broke((d) => delete choiceOf(d, 2).photos), /S6: choices\[0\]: 0 photos, the format wants 1/);
+    fails(broke((d) => (choiceOf(d, 3, 1).photos = ['ph1'])), /S6: choices\[1\]: the photos must be those of the same choice of task 3/);
+    fails(broke((d) => delete tasks(d)[1].follows), /S6: follows nothing, the format wants 1/);
+    fails(broke((d) => tasks(d).pop()), /M2: form f1: 3 tasks, the es-b1-speaking format has 4/);
+    fails(broke((d) => (choiceOf(d, 0).photos = ['ph1']), enB2), /S6: choices\[0\]: 1 photos, the format wants 0/);
+    fails(broke((d) => (choiceOf(d, 1).photos = ['ph1']), enB2), /S6: choices\[0\]: 1 photos, the format wants 2/);
+  });
+
+  it('S7: the minWords of the turns (longest choice per task) fit the paper: 20 words a minute', () => {
+    // es B1: 15 minutes -> 300 words; 12 turns of 10 words per choice = 120 words fine, 30 words a turn = 360 words too many
+    fails(check(speakingData('es', 'B1', ES_B1, 30)), /S7: form f1: the turns' minWords add up to 360, the 15 minute paper allows 300/);
+    // en B2: 14 minutes -> 280 words; 10 turns
+    fails(check(speakingData('en', 'B2', EN_B2, 29)), /S7: form f1: the turns' minWords add up to 290, the 14 minute paper allows 280/);
+    // the longest choice counts, not the sum of the choices (2 choices of 10 turns of 10 words = 120, not 240)
+    expect(check(esB1()).out).not.toMatch(/S7/);
+  });
+
+  it('M6 / M7 hold for the speaking fields (ask, model, prompt, bullets, input)', () => {
+    fails(broke((d) => (turnOf(d, 0).ask = 'Que opina del coche?')), /M6: forms\[0\]\.tasks\[0\]\.choices\[0\]\.turns\[0\]\.ask: "coche" is not Mexican usage/);
+    fails(broke((d) => (choiceOf(d, 0).bullets = [`una raya ${String.fromCharCode(0x2014)} aqui`])), /M7: forms\[0\]\.tasks\[0\]\.choices\[0\]\.bullets\[0\]: em dash/);
+    fails(broke((d) => (choiceOf(d, 0).input = 'Vosotros decis')), /M6: .*input: "Vosotr" is not Mexican usage/);
+    fails(broke((d) => (turnOf(d, 0).model = `${WORDS.join(' ')} ${String.fromCharCode(0x2013)}`)), /M7: .*model: em dash/);
+  });
+
+  it('--blind leaves out the points and the model answers of a speaking paper, nothing else', () => {
+    const full = write(esB1());
+    const out = path.join(tmp, 'speaking.blind.json');
+    const r = run('--blind', full, out);
+    expect(r.status).toBe(0);
+    expect(r.last).toBe(`blind: ${out} written without points / model`);
+    const text = fs.readFileSync(out, 'utf8');
+    expect(text).not.toMatch(/"(points|model)"\s*:/);
+    const strip = (v: Json): Json => (Array.isArray(v) ? v.map(strip) : v && typeof v === 'object' ? Object.fromEntries(Object.entries(v).filter(([k]) => !['points', 'model'].includes(k)).map(([k, x]) => [k, strip(x)])) : v);
+    expect(JSON.parse(text)).toEqual(strip(esB1()));
+  });
+
+  describe('--grade: the answers are scored like the app and the points that came are listed per turn', () => {
+    const answersOf = (d: Json, choice = 'a'): Json[] => tasks(d).map((t: Json) => ({ choice, ...Object.fromEntries(t.choices[0].turns.map((turn: Json) => [turn.id, turn.model])) }));
+
+    it('the model answers get everything: no deviation, one TURN line per turn', () => {
+      const key = write(esB1());
+      const r = run('--grade', key, write(answersOf(esB1())));
+      expect(r.status).toBe(0);
+      expect(r.lines.filter((l) => l.startsWith('TURN'))).toHaveLength(12);
+      expect(r.out).toMatch(/TURN forms\[0\]\.tasks\[0\]\.t1 \(choice a\): got p1, got p2, got 14\/10 words/);
+      expect(r.last).toBe('grade: 36/36 keyed items agree, 0 deviations');
+      // the same answers keyed by the form id
+      expect(run('--grade', key, write({ f1: answersOf(esB1()) })).status).toBe(0);
+    });
+
+    it('a missing point, a short answer and a missing answer are deviations (exit 1)', () => {
+      const given = answersOf(esB1());
+      given[0].t1 = WORDS.filter((w) => w !== 'casa').join(' ');
+      given[1].t2 = 'casa libro';
+      delete given[1].t3;
+      const r = run('--grade', write(esB1()), write(given));
+      expect(r.status).toBe(1);
+      expect(r.out).toMatch(/TURN forms\[0\]\.tasks\[0\]\.t1 \(choice a\): MISSED p1, got p2, got 13\/10 words/);
+      expect(r.out).toMatch(/DEVIATION forms\[0\]\.tasks\[0\]\.t1\.p1: "primero" not given, keywords \["casa"/);
+      expect(r.out).toMatch(/DEVIATION forms\[0\]\.tasks\[1\]\.t2\.words: 2 meaningful words, minWords 10/);
+      expect(r.out).toMatch(/TURN forms\[0\]\.tasks\[1\]\.t3 \(choice a\): MISSED p1, MISSED p2, MISSED 0\/10 words/);
+      expect(r.last).toMatch(/^grade: \d+\/36 keyed items agree, 7 deviations$/);
+    });
+
+    it("the choice follows the app: the pick, else the followed task's pick, else the first", () => {
+      const key = esB1();
+      // choice b of tasks 1 and 2 asks for another word
+      for (const task of [0, 1]) choiceOf(key, task, 1).turns[0].points[0].keywords = ['jardin', 'pueblo', 'barrio', 'campo'];
+      const given = answersOf(esB1(), 'b');
+      delete given[1].choice; // task 2 follows task 1 and inherits its pick
+      const r = run('--grade', write(key), write(given));
+      expect(r.out).toMatch(/TURN forms\[0\]\.tasks\[0\]\.t1 \(choice b\): MISSED p1/);
+      expect(r.out).toMatch(/TURN forms\[0\]\.tasks\[1\]\.t1 \(choice b\): MISSED p1/);
+      const noPick = answersOf(esB1(), 'b');
+      delete noPick[0].choice;
+      delete noPick[1].choice;
+      expect(run('--grade', write(key), write(noPick)).out).toMatch(/TURN forms\[0\]\.tasks\[1\]\.t1 \(choice a\): got p1/);
+    });
+  });
+});

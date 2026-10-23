@@ -76,6 +76,8 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
         return <TransformTask task={task} {...props} />;
       case 'essay':
         return <EssayTask task={task} {...props} />;
+      case 'speaking':
+        return null; // stub: the speaking UI (components/exam/mock/SpeakingTask.tsx) is filled in by the UI step
     }
   }
 

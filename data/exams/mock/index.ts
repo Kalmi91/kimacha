@@ -1,5 +1,6 @@
-// The authored B1-C1 practice-exam papers: the content lives in the JSON files (one per direction, level and paper),
-// this module only wires them up (lib/exam/mock/authored.ts picks a form). An empty `forms` list = not written yet.
+// The authored practice-exam papers (B1-C1, and the speaking paper of every level): the content lives in the JSON files (one
+// per direction, level and paper), this module only wires them up (lib/exam/mock/authored.ts picks a form). An empty `forms`
+// list = not written yet.
 
 import type { AuthoredPaperFile } from '@/lib/exam/mock/types';
 import esB1Reading from './es-b1-reading.json';
@@ -20,6 +21,16 @@ import enB2Listening from './en-b2-listening.json';
 import enC1Readinguse from './en-c1-readinguse.json';
 import enC1Writing from './en-c1-writing.json';
 import enC1Listening from './en-c1-listening.json';
+import esA1Speaking from './es-a1-speaking.json';
+import esA2Speaking from './es-a2-speaking.json';
+import esB1Speaking from './es-b1-speaking.json';
+import esB2Speaking from './es-b2-speaking.json';
+import esC1Speaking from './es-c1-speaking.json';
+import enA1Speaking from './en-a1-speaking.json';
+import enA2Speaking from './en-a2-speaking.json';
+import enB1Speaking from './en-b1-speaking.json';
+import enB2Speaking from './en-b2-speaking.json';
+import enC1Speaking from './en-c1-speaking.json';
 
 export const MOCK_AUTHORED = [
   esB1Reading,
@@ -40,4 +51,14 @@ export const MOCK_AUTHORED = [
   enC1Readinguse,
   enC1Writing,
   enC1Listening,
+  esA1Speaking,
+  esA2Speaking,
+  esB1Speaking,
+  esB2Speaking,
+  esC1Speaking,
+  enA1Speaking,
+  enA2Speaking,
+  enB1Speaking,
+  enB2Speaking,
+  enC1Speaking,
 ] as unknown as AuthoredPaperFile[];
