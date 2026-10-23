@@ -1,4 +1,4 @@
-import { findPcicItem, setPcicTarget, type PcicItem } from '@/data/pcic';
+import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
 import type { ResolvedTense } from '@/lib/knownSentence';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import type { GapSourceInfo } from '../gapFill';
@@ -10,7 +10,9 @@ import {
   readingWordFor,
   resolveSet,
   type ReadingDeps,
+  type ReadingQuestion,
 } from '../reading';
+import { STORIES, storyWords } from '../stories';
 import { knownTokens } from '@/lib/knownSentence';
 import { learnedEntries } from '@/lib/sentenceCards';
 
@@ -313,5 +315,81 @@ describe('the real words-open data', () => {
 
   it('a real word yields its sentence with the word as written in it', () => {
     expect(readingWordFor(findPcicItem('o33')!, 'es')).toMatchObject({ before: '', answer: 'Voy', sentence: 'Voy con ella.' });
+  });
+});
+
+describe('story rounds (FB526)', () => {
+  beforeAll(() => setPcicTarget('es'));
+
+  // a learner who has learned every A1 card and the present tense; every card is due, so the stories tie on due words
+  const storyDeps = (over: Partial<ReadingDeps> = {}): ReadingDeps => ({
+    target: 'es',
+    cards: pcicItemsForLevel('A1').map((it) => learned(it.id, TODAY)),
+    tenses: TENSES,
+    findItem: findPcicItem,
+    today: TODAY,
+    random: seeded(5),
+    ...over,
+  });
+  const first = STORIES[0];
+
+  it('the text is the first story the learner fully knows: its five sentences in order, five questions', () => {
+    const set = buildReadingSet(storyDeps())!;
+    expect(set.storyId).toBe(first.id);
+    expect(set.words.map((w) => w.sentence)).toEqual(first.sentences.map((s) => s.es));
+    expect(set.questions).toHaveLength(5);
+    expect(set.resolved).toHaveLength(5);
+  });
+
+  it('the false statement is the story own false_en, the true one a translation of the story', () => {
+    for (let seed = 1; seed <= 20; seed++) {
+      const set = buildReadingSet(storyDeps({ random: seeded(seed) }))!;
+      expect(set.questions.filter((q) => q.kind === 'storyfalse')).toEqual([{ kind: 'storyfalse', index: 0 }]);
+      const statements = set.resolved.filter((r) => r.kind === 'truefalse');
+      expect(statements.map((r) => r.truth).sort()).toEqual([false, true]);
+      expect(statements.find((r) => !r.truth)).toMatchObject({ statement: first.false_en[0], correct: 1 });
+      expect(first.sentences.map((s) => s.en)).toContain((statements.find((r) => r.truth) as { statement: string }).statement);
+    }
+  });
+
+  it('the false statements come in order, each once; when they run out the statement is a true one', () => {
+    const d = storyDeps({ random: seeded(2) });
+    const k = known(d);
+    // ten words give five true/false slots: two false statements
+    const words = [...storyWords(first, findPcicItem)!, ...storyWords(STORIES[1], findPcicItem)!];
+    const indexes = (qs: ReadingQuestion[]) => qs.flatMap((q) => (q.kind === 'storyfalse' ? [q.index] : []));
+    expect(indexes(buildQuestions(words, d, k, first))).toEqual([0, 1]);
+    const one = buildQuestions(words, d, k, { ...first, false_en: ['only one'] });
+    expect(indexes(one)).toEqual([0]);
+    expect(one.filter((q) => q.kind === 'truefalse')).toHaveLength(4);
+    const none = buildQuestions(words.slice(0, 5), d, k, { ...first, false_en: [] });
+    expect(indexes(none)).toEqual([]);
+    expect(none.filter((q) => q.kind === 'truefalse').every((q) => q.kind === 'truefalse' && words.some((w) => w.itemId === q.sourceId))).toBe(true);
+  });
+
+  it('the story of the previous round goes last', () => {
+    expect(buildReadingSet(storyDeps({ avoidStory: first.id }))!.storyId).toBe(STORIES[1].id);
+    expect(buildReadingSet(storyDeps({ avoidStory: 'gone' }))!.storyId).toBe(first.id);
+  });
+
+  it('resolveSet: a story false statement is false whatever the card, a statement of the text is its translation', () => {
+    const words = storyWords(first, findPcicItem)!;
+    const qs: ReadingQuestion[] = [
+      { kind: 'storyfalse', index: 1 },
+      { kind: 'truefalse', sourceId: words[2].itemId },
+    ];
+    const set = resolveSet(words, qs, findPcicItem, 'es', first)!;
+    expect(set.storyId).toBe(first.id);
+    expect(set.resolved[0]).toEqual({ kind: 'truefalse', statement: first.false_en[1], truth: false, correct: 1 });
+    expect(set.resolved[1]).toEqual({ kind: 'truefalse', statement: words[2].translation, truth: true, correct: 0 });
+    // a bad index, or a story false statement without its story
+    expect(resolveSet(words, [{ kind: 'storyfalse', index: 2 }], findPcicItem, 'es', first)).toBeNull();
+    expect(resolveSet(words, [{ kind: 'storyfalse', index: 0 }], findPcicItem, 'es')).toBeNull();
+  });
+
+  it('without a story fitting the learner the text is the old one: no storyId', () => {
+    const set = buildReadingSet(deps({ random: seeded(1) }))!;
+    expect(set.storyId).toBeUndefined();
+    expect('storyId' in set).toBe(false);
   });
 });

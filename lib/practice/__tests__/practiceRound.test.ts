@@ -1,6 +1,7 @@
-import type { PcicItem } from '@/data/pcic';
+import { findPcicItem, type PcicItem } from '@/data/pcic';
 import type { ReadingQuestion, ReadingSet, ReadingWord } from '../reading';
 import { resolveSet } from '../reading';
+import { STORIES, storyWords } from '../stories';
 import { newPracticeRound, parsePracticeRound, restorePracticeRound, type PracticeRound } from '../practiceRound';
 
 const TODAY = '2026-10-12';
@@ -109,5 +110,62 @@ describe('restorePracticeRound', () => {
   it('a saved word that has no sentence any more, or a question card that is gone: null', () => {
     expect(restorePracticeRound(round({ ids: ['a', 'gone', 'c'] }), TODAY, 'es', wordFor, findItem)).toBeNull();
     expect(restorePracticeRound(round({ qs: [{ kind: 'truefalse', sourceId: 'zzz' }, QS[1], QS[2]] }), TODAY, 'es', wordFor, findItem)).toBeNull();
+  });
+});
+
+describe('story rounds (FB526)', () => {
+  const story = STORIES[0];
+  const sWords = storyWords(story, findPcicItem)!;
+  const sIds = sWords.map((w) => w.itemId);
+  const sQs: ReadingQuestion[] = [
+    { kind: 'meaning', itemId: sIds[0], options: [sIds[1], sIds[0], sIds[2]] },
+    { kind: 'storyfalse', index: 0 },
+    { kind: 'truefalse', sourceId: sIds[3] },
+  ];
+  const sSet = (): ReadingSet => resolveSet(sWords, sQs, findPcicItem, 'es', story)!;
+  const sRound = (over: Partial<PracticeRound> = {}): PracticeRound => ({ ...newPracticeRound(sSet(), 'es', TODAY), step: 2, picks: [1, null, null], ...over });
+  // the words of a story come from the story, not from the corpus sentences
+  const noWord = () => null;
+
+  it('the saved round of a story has the story id, a round of sentences has none', () => {
+    expect(newPracticeRound(sSet(), 'es', TODAY)).toEqual({ v: 2, date: TODAY, target: 'es', ids: sIds, qs: sQs, step: 0, picks: [null, null, null], story: story.id });
+    expect('story' in newPracticeRound(set(), 'es', TODAY)).toBe(false);
+  });
+
+  it('parse reads back what JSON.stringify wrote: the story id and the story false statement', () => {
+    expect(parsePracticeRound(JSON.stringify(sRound()))).toEqual(sRound());
+    expect('story' in parsePracticeRound(JSON.stringify(round()))!).toBe(false);
+  });
+
+  it('a story id that is not a text, or a story false statement without a whole index, gives null', () => {
+    expect(parsePracticeRound(JSON.stringify(sRound({ story: '' })))).toBeNull();
+    expect(parsePracticeRound(JSON.stringify({ ...sRound(), story: 3 }))).toBeNull();
+    const bad = (q: unknown) => parsePracticeRound(JSON.stringify({ ...sRound(), qs: [sQs[0], q, sQs[2]] }));
+    expect(bad({ kind: 'storyfalse', index: -1 })).toBeNull();
+    expect(bad({ kind: 'storyfalse', index: 1.5 })).toBeNull();
+    expect(bad({ kind: 'storyfalse' })).toBeNull();
+    expect(bad({ kind: 'storyfalse', index: 1 })).not.toBeNull();
+  });
+
+  it('restore: the story text, the questions, the step and the picks come back, also through JSON', () => {
+    const saved = parsePracticeRound(JSON.stringify(sRound()))!;
+    const resumed = restorePracticeRound(saved, TODAY, 'es', noWord, findPcicItem)!;
+    expect(resumed.set.storyId).toBe(story.id);
+    expect(resumed.set.words).toEqual(sWords);
+    expect(resumed.set.questions).toEqual(sQs);
+    expect(resumed.set.resolved[1]).toEqual({ kind: 'truefalse', statement: story.false_en[0], truth: false, correct: 1 });
+    expect(resumed.set.resolved[2]).toEqual({ kind: 'truefalse', statement: sWords[3].translation, truth: true, correct: 0 });
+    expect(resumed.step).toBe(2);
+    expect(resumed.picks).toEqual([1, null, null]);
+  });
+
+  it('a story that is gone from the data, or saved ids that are not its cards: null (a new round)', () => {
+    expect(restorePracticeRound(sRound({ story: 'gone' }), TODAY, 'es', noWord, findPcicItem)).toBeNull();
+    expect(restorePracticeRound(sRound({ ids: [...sIds].reverse() }), TODAY, 'es', noWord, findPcicItem)).toBeNull();
+    expect(restorePracticeRound(sRound({ ids: sIds.slice(0, 4) }), TODAY, 'es', noWord, findPcicItem)).toBeNull();
+    // a story false statement of a round that has no story
+    expect(restorePracticeRound(round({ qs: [QS[0], { kind: 'storyfalse', index: 0 }, QS[2]] }), TODAY, 'es', wordFor, findItem)).toBeNull();
+    // the story does not resolve in another day or direction either
+    expect(restorePracticeRound(sRound({ date: '2026-10-11' }), TODAY, 'es', noWord, findPcicItem)).toBeNull();
   });
 });
