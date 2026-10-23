@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { View } from 'react-native';
+import { Platform, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Stack, ThemeProvider as NavThemeProvider, DarkTheme, DefaultTheme, router, useSegments } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
@@ -21,6 +21,7 @@ import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTim
 import { watchAppStateForSpeech } from '@/lib/speech';
 import { applyWebTestParams, getWebTestParams } from '@/lib/webTestHooks';
 import { useAppResume } from '@/lib/useAppResume';
+import CloudGate from '@/components/cloud/CloudGate';
 import UsageToast from '@/components/UsageToast';
 import StatusBarStrip from '@/components/StatusBarStrip';
 import { ScreenFeedbackFrame } from '@/lib/screenFeedback';
@@ -30,7 +31,7 @@ export { ErrorBoundary } from 'expo-router';
 SplashScreen.preventAutoHideAsync();
 initI18n();
 
-export default function RootLayout() {
+function RootLayout() {
   const [loaded, error] = useFonts({
     ...FONT_FILES,
   });
@@ -95,6 +96,18 @@ export default function RootLayout() {
     </LearnerProvider>
   );
 }
+
+// Web only: the cloud sign-in gate sits above the whole tree, so the tree (and its DB start-up) mounts only after the
+// saved progress is loaded. On native the default export is RootLayout itself: no new render branch, no new hook.
+function WebRoot() {
+  return (
+    <CloudGate>
+      <RootLayout />
+    </CloudGate>
+  );
+}
+
+export default Platform.OS === 'web' ? WebRoot : RootLayout;
 
 function RootLayoutNav() {
   const { theme } = useTheme();
