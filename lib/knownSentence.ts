@@ -54,7 +54,16 @@ const UNMODELED_STRUCTURES: ReadonlySet<Structure> = new Set<Structure>([
   'imperativo',
 ]);
 
-const ES_INFINITIVE = /^[a-záéíóúñü]+(ar|er|ir)$/;
+// `ir` is the one infinitive without a letter before the ending.
+const ES_INFINITIVE = /^(?:[a-záéíóúñü]+(?:ar|er|ir)|ir)$/;
+
+// Stem-changing verbs that `conjugate` refuses on purpose (it only teaches forms it is sure of).
+// Their presente is short and exact, so the gate lists it here, for the presente only.
+const STEM_CHANGE_PRESENTE: Record<string, string[]> = {
+  pedir: ['pido', 'pides', 'pide', 'pedimos', 'piden'],
+  jugar: ['juego', 'juegas', 'juega', 'jugamos', 'juegan'],
+  llover: ['llueve'], // impersonal: no other person
+};
 const ACCENT_ADD: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú' };
 
 /**
@@ -143,6 +152,9 @@ function addSpanish(known: Set<string>, entry: LearnedEntry, tenses: ReadonlySet
     for (const tense of TENSES) {
       if (!tenses.has(tense)) continue;
       for (const f of conjugate(text, tense) ?? []) known.add(f.form);
+    }
+    if (tenses.has('presente')) {
+      for (const form of STEM_CHANGE_PRESENTE[text] ?? []) known.add(form);
     }
     if (tenses.has('subjuntivo_imperfecto')) {
       for (const form of subjuntivoImperfecto(text) ?? []) known.add(form);
