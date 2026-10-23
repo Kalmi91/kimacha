@@ -7,5 +7,8 @@
 
 import type { LanguageContentBundle } from '../content';
 import { EN_GRAMMAR_INDEX } from './en.index';
+import { EN_GRAMMAR_HU } from './en.hu.index';
+import { withHuIndex } from '@/lib/grammar/huOverlay';
 
-export const enContent: LanguageContentBundle = { grammarIndex: EN_GRAMMAR_INDEX };
+// The Hungarian sidecars (en.hu.index.ts, data/games/grammar-hu/en) are laid over each lesson as it loads.
+export const enContent: LanguageContentBundle = { grammarIndex: withHuIndex(EN_GRAMMAR_INDEX, EN_GRAMMAR_HU) };
