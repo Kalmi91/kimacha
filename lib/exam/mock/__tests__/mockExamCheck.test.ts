@@ -446,7 +446,7 @@ describe('speaking papers (S1-S7)', () => {
     fails(broke((d) => (tasks(d)[3].follows = 3.5)), /S2: follows \(3.5\)/);
   });
 
-  it('S3: turns need an id, ask, model, minWords and 0-4 points of 4-8 keywords; M8 holds for the keywords', () => {
+  it('S3: turns need an id, ask, model, minWords and 0-4 points of 4-12 keywords; M8 holds for the keywords', () => {
     fails(broke((d) => (choiceOf(d, 0).turns = [])), /S3: choices\[0\]: turns must be a non-empty list/);
     fails(broke((d) => (choiceOf(d, 1).turns[1].id = 't1')), /S3: choices\[0\]: turn ids must be unique/);
     fails(broke((d) => (turnOf(d, 0).ask = ' ')), /S3: .*turns\[0\]: ask and model must be non-empty strings/);
@@ -454,8 +454,10 @@ describe('speaking papers (S1-S7)', () => {
     fails(broke((d) => (turnOf(d, 0).minWords = 0)), /S3: .*minWords must be a positive integer/);
     fails(broke((d) => (turnOf(d, 0).points = Array.from({ length: 5 }, (_, i) => ({ id: `p${i}`, label: 'x', keywords: ['casa', 'jardin', 'pueblo', 'barrio'] })))), /S3: .*points must be a list of 0-4 content points/);
     fails(broke((d) => (turnOf(d, 0).points[1].id = 'p1')), /S3: .*every point needs a unique id and a label/);
-    fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['casa', 'jardin', 'pueblo'])), /S3: .*points\[0\]: keywords must be a list of 4-8 non-empty strings/);
-    fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['casa', 'jardin', 'pueblo', 'barrio', 'campo', 'playa', 'calle', 'plaza', 'cerro'])), /S3: .*keywords must be a list of 4-8/);
+    fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['casa', 'jardin', 'pueblo'])), /S3: .*points\[0\]: keywords must be a list of 4-12 non-empty strings/);
+    const thirteen = ['casa', 'jardin', 'pueblo', 'barrio', 'campo', 'playa', 'calle', 'plaza', 'cerro', 'monte', 'lago', 'bosque', 'isla'];
+    fails(broke((d) => (turnOf(d, 0).points[0].keywords = thirteen)), /S3: .*keywords must be a list of 4-12/);
+    expect(broke((d) => (turnOf(d, 0).points[0].keywords = thirteen.slice(0, 12))).status).toBe(0);
     fails(broke((d) => (turnOf(d, 0).points[0].keywords = ['casa', 'jardin', 'pueblo', 'es'])), /M8: .*points\[0\]: keyword "es" is a single word under 4 letters/);
     // no points at all is fine: only the word count counts
     expect(broke((d) => (turnOf(d, 0).points = [])).status).toBe(0);
