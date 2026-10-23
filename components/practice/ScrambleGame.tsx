@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Animated, Pressable, StyleSheet, View } from 'react-native';
+import { Animated, Pressable, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing, tapTarget } from '@/constants/Theme';
@@ -16,6 +16,7 @@ import { useGameRound } from '@/lib/practice/useGameRound';
 import { countLearningToday } from '@/lib/learningDay';
 import {
   SCRAMBLE_MODE,
+  cellsPerRow,
   currentWordId,
   nextScramble,
   scrambleDone,
@@ -26,6 +27,7 @@ import {
   scrambleWord,
   seedOf,
   skipScramble,
+  splitRows,
   tapTile,
   type ScrambleOutcome,
 } from '@/lib/practice/scramble';
@@ -38,6 +40,8 @@ import { useTheme } from '@/lib/ThemeContext';
 // solution. The word is read aloud when it is done. Round, saving and summary are the shared ones (see DictationGame.tsx).
 
 const SHAKE_MS = 60;
+// The row width the places and the tiles can use: the screen minus the box margin, the card padding and a slack for the card border / shadow.
+const SIDE_SPACE = 2 * (spacing.xl + spacing.xl) + spacing.lg;
 
 function Tile({ letter, index, shakeSeq, onPress }: { letter: string; index: number; shakeSeq: number; onPress: () => void }) {
   const { theme } = useTheme();
@@ -74,6 +78,7 @@ export default function ScrambleGame() {
   const g = useGrammarColors();
   const s = t();
   const game = useGameRound(scrambleLogic);
+  const { width: screenWidth } = useWindowDimensions();
   // The last wrong tile and a counter, so the same tile shakes again on the next mistake.
   const [shake, setShake] = useState({ tile: -1, seq: 0 });
   // Bumps after every credited answer: the level counter reads the due words again.
@@ -101,6 +106,14 @@ export default function ScrambleGame() {
   }
 
   const tiles = scrambleTiles(word.letters, seedOf(item.id));
+  // Balanced rows over the whole tile list (a used tile leaves its gap), so a single tile is never left alone in the last row.
+  const tileRows = splitRows(tiles.map((_, i) => i), cellsPerRow(screenWidth - SIDE_SPACE, tapTarget, spacing.sm));
+  // The same for the places of a single word (the article counts as one cell, -1); a phrase with spaces wraps as before.
+  const wholeWord = word.chars.every((c) => c.slot !== null);
+  const placeRows = splitRows(
+    [...(word.article !== '' ? [-1] : []), ...word.chars.map((_, i) => i)],
+    cellsPerRow(screenWidth - SIDE_SPACE, tapTarget, spacing.xs),
+  );
   const solved = state.finished === 'skipped';
   const say = () => {
     stopSpeaking();
@@ -137,6 +150,28 @@ export default function ScrambleGame() {
     game.update(nextScramble(state));
   };
 
+  const article = word.article !== '' && <Text testID="scramble-article" style={[styles.article, { color: colors.textMuted }]}>{word.article}</Text>;
+  const place = (c: (typeof word.chars)[number], i: number) => {
+    if (c.slot === null) {
+      return c.ch.trim() === '' ? <View key={i} style={styles.gap} /> : <Text key={i} style={[styles.article, { color: colors.textMuted }]}>{c.ch}</Text>;
+    }
+    const filled = c.slot < state.used.length || solved;
+    return (
+      <View
+        key={i}
+        testID={`scramble-slot-${c.slot}`}
+        accessibilityLabel={filled ? c.ch : s.practiceTab.scramble.emptySlot}
+        style={[
+          styles.slot,
+          themedEdgeStyle(g),
+          { borderColor: filled ? (solved ? colors.danger : colors.successFill) : colors.tabIconDefault },
+        ]}
+      >
+        <Text style={[styles.slotText, { color: colors.text }]}>{filled ? c.ch : ''}</Text>
+      </View>
+    );
+  };
+
   const position = scramblePosition(state, round.items.length);
   return (
     <GameFrame
@@ -150,38 +185,33 @@ export default function ScrambleGame() {
       <View style={styles.box}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Text testID="scramble-meaning" style={[styles.meaning, { color: colors.text }]}>{word.meaning}</Text>
-          <View testID="scramble-places" style={styles.places}>
-            {word.article !== '' && <Text testID="scramble-article" style={[styles.article, { color: colors.textMuted }]}>{word.article}</Text>}
-            {word.chars.map((c, i) => {
-              if (c.slot === null) {
-                return c.ch.trim() === '' ? <View key={i} style={styles.gap} /> : <Text key={i} style={[styles.article, { color: colors.textMuted }]}>{c.ch}</Text>;
-              }
-              const filled = c.slot < state.used.length || solved;
-              return (
-                <View
-                  key={i}
-                  testID={`scramble-slot-${c.slot}`}
-                  accessibilityLabel={filled ? c.ch : s.practiceTab.scramble.emptySlot}
-                  style={[
-                    styles.slot,
-                    themedEdgeStyle(g),
-                    { borderColor: filled ? (solved ? colors.danger : colors.successFill) : colors.tabIconDefault },
-                  ]}
-                >
-                  <Text style={[styles.slotText, { color: colors.text }]}>{filled ? c.ch : ''}</Text>
+          {wholeWord ? (
+            <View testID="scramble-places" style={styles.placeRows}>
+              {placeRows.map((row, r) => (
+                <View key={r} style={styles.places}>
+                  {row.map((i) => (i === -1 ? <View key={i}>{article}</View> : place(word.chars[i], i)))}
                 </View>
-              );
-            })}
-          </View>
+              ))}
+            </View>
+          ) : (
+            <View testID="scramble-places" style={styles.places}>
+              {article}
+              {word.chars.map(place)}
+            </View>
+          )}
           {!state.finished && (
-            <View testID="scramble-tiles" style={styles.tiles}>
-              {tiles.map((letter, i) =>
-                state.used.includes(i) ? (
-                  <View key={i} style={styles.tileGap} />
-                ) : (
-                  <Tile key={i} letter={letter} index={i} shakeSeq={shake.tile === i ? shake.seq : 0} onPress={() => tap(i)} />
-                ),
-              )}
+            <View testID="scramble-tiles" style={styles.tileRows}>
+              {tileRows.map((row, r) => (
+                <View key={r} style={styles.tiles}>
+                  {row.map((i) =>
+                    state.used.includes(i) ? (
+                      <View key={i} style={styles.tileGap} />
+                    ) : (
+                      <Tile key={i} letter={tiles[i]} index={i} shakeSeq={shake.tile === i ? shake.seq : 0} onPress={() => tap(i)} />
+                    ),
+                  )}
+                </View>
+              ))}
             </View>
           )}
           <Text testID="scramble-mistakes" style={[styles.mistakes, { color: colors.textMuted }]}>{s.practiceTab.scramble.mistakes(state.mistakes)}</Text>
@@ -215,11 +245,13 @@ const styles = StyleSheet.create({
   card: { borderRadius: radius.lg, padding: spacing.xl, gap: spacing.lg, alignItems: 'center' },
   brutalCard: { padding: spacing.xl, gap: spacing.lg, alignItems: 'center' },
   meaning: { fontSize: fontSize.xl, fontWeight: fontWeight.bold, textAlign: 'center' },
+  placeRows: { alignItems: 'center', gap: spacing.xs },
   places: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: spacing.xs },
   article: { fontSize: fontSize.xl, fontWeight: fontWeight.semibold, marginRight: spacing.xs },
   gap: { width: spacing.md },
   slot: { minWidth: tapTarget, height: tapTarget, borderRadius: radius.sm, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
   slotText: { fontSize: fontSize.xl, fontWeight: fontWeight.bold },
+  tileRows: { alignItems: 'center', gap: spacing.sm },
   tiles: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: spacing.sm },
   tile: { minWidth: tapTarget, height: tapTarget, borderRadius: radius.md, borderWidth: 1, alignItems: 'center', justifyContent: 'center' },
   tileGap: { minWidth: tapTarget, height: tapTarget },

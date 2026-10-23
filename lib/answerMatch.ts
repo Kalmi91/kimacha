@@ -104,6 +104,30 @@ export function sentenceBuildMatch(built: string[], target: string[]): boolean {
   return built.every((w, i) => stripEdges(w) === stripEdges(target[i]));
 }
 
+// Per placed tile: true if it is NOT part of the longest common subsequence of the placed and the
+// target words (same stripEdges comparison as sentenceBuildMatch). A trap word or a tile put in the
+// wrong place is flagged; a dropped or an inserted word does not shift the blame onto the tiles after
+// it, and of two swapped words only one is flagged.
+export function sentenceBuildMisplaced(built: string[], target: string[]): boolean[] {
+  const a = built.map(stripEdges);
+  const b = target.map(stripEdges);
+  // dp[i][j] = LCS length of a[i:] and b[j:].
+  const dp: number[][] = Array.from({ length: a.length + 1 }, () => new Array(b.length + 1).fill(0));
+  for (let i = a.length - 1; i >= 0; i--) {
+    for (let j = b.length - 1; j >= 0; j--) {
+      dp[i][j] = a[i] === b[j] ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1]);
+    }
+  }
+  const out = a.map(() => true);
+  let i = 0, j = 0;
+  while (i < a.length && j < b.length) {
+    if (a[i] === b[j]) { out[i] = false; i++; j++; }
+    else if (dp[i + 1][j] >= dp[i][j + 1]) i++;
+    else j++;
+  }
+  return out;
+}
+
 // BUG-001: a parenthetical in the solution is a disambiguating gloss, not part
 // of the answer ("van (ő)", "óra (idő)", "ver (veremos)"). The normalisation
 // above turns "(" and ")" into spaces, so the gloss used to become a REQUIRED
