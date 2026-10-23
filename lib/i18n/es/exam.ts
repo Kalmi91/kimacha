@@ -142,7 +142,7 @@ const es: typeof en = {
     },
     speakingTitle: 'Expresión oral: la parte con micrófono llega pronto',
     speakingBody: 'Esta parte aún no cuenta en tu puntuación. El grupo 2 es provisional: tus puntos de comprensión auditiva cuentan doble.',
-    speakingBodyScaled: 'Esta parte aún no cuenta en tu puntuación. Tu resultado es provisional y usa tus otras tres destrezas.',
+    speakingBodyScaled: 'Esta parte aún no cuenta en tu puntuación. Tu resultado es provisional y usa tus otras destrezas.',
     continue: 'Continuar',
     timeUp: 'Se acabó el tiempo. Las preguntas sin responder valen 0.',
     leaveTitle: 'Salir del examen',

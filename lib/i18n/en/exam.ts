@@ -148,7 +148,7 @@ export default {
     },
     speakingTitle: 'Speaking: microphone part coming soon',
     speakingBody: 'This part is not in your score yet. Group 2 is provisional: your listening points count double.',
-    speakingBodyScaled: 'This part is not in your score yet. Your result is provisional and uses your other three skills.',
+    speakingBodyScaled: 'This part is not in your score yet. Your result is provisional and uses your other skills.',
     continue: 'Continue',
     timeUp: 'Time is up. Unanswered questions score 0.',
     leaveTitle: 'Leave the exam',
