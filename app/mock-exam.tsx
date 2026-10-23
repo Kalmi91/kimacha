@@ -18,13 +18,14 @@ import { Card } from '@/components/grammar/Brutal';
 import ExamButton from '@/components/exam/ExamButton';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import MockTaskCard from '@/components/exam/MockTaskCard';
 import { MockResultView, MockReviewView } from '@/components/exam/MockResultView';
 import { mockAvailable, mockIsFullLength, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
 import { buildMockExam, mockExamSignature } from '@/lib/exam/mock/build';
 import { buildGlossaryIndex, mockGlossary } from '@/lib/exam/mock/glossary';
 import { buildLexicon } from '@/lib/exam/mock/writing';
-import { scoreMockExam, type MockResult } from '@/lib/exam/mock/score';
+import { followedChoice, scoreMockExam, type MockResult } from '@/lib/exam/mock/score';
 import {
   CLOCK_WARNING_SECONDS,
   clearMockSession,
@@ -39,8 +40,9 @@ import type { MockAnswers, MockExam, MockLevel, MockTaskAnswer } from '@/lib/exa
 import { isExamLearned } from '@/lib/exam/unlock';
 
 // The mock-exam screen, laid out like the official exam. Intro -> per paper: paper intro, clock,
-// tasks (no immediate feedback) -> result (per group: 30 / 50) -> review. The oral part is a
-// placeholder in this slice. Saved per paper: the answers of a finished paper are kept, an
+// tasks (no immediate feedback) -> result (per group: 30 / 50) -> review. The oral part is a paper of
+// speaking tasks like the others (the placeholder phase is the reserve for an empty file; a speaking task's
+// preparation time stops the clock). Saved per paper: the answers of a finished paper are kept, an
 // abandoned paper restarts from the beginning. State: lib/exam/mock/session.ts, task set: lib/exam/mock/build.ts.
 
 type Phase = 'loading' | 'unavailable' | 'empty' | 'intro' | 'paperIntro' | 'task' | 'speaking' | 'result' | 'review';
@@ -49,6 +51,8 @@ export default function MockExamScreen() {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
+  // The speaking task's primary button docks above the keyboard (components/learn/DockSlot.tsx); the other kinds keep their inline button.
+  const dock = useDockSlot(colors);
   const router = useRouter();
   const params = useLocalSearchParams<{ level?: string }>();
 
@@ -67,6 +71,10 @@ export default function MockExamScreen() {
   const [done, setDone] = useState<string[]>([]);
   const [startedAt, setStartedAt] = useState(0);
   const [now, setNow] = useState(0);
+  // While a speaking task is in its preparation time the clock stands still: `pausedAt` is when it stopped, and the time it stood
+  // still is cut out of the clock (startedAt moves on) when the preparation ends.
+  const [pausedAt, setPausedAt] = useState<number | null>(null);
+  const pausedAtRef = useRef<number | null>(null);
   const [timedOut, setTimedOut] = useState(false);
   const [result, setResult] = useState<MockResult | null>(null);
   const [leaving, setLeaving] = useState(false);
@@ -113,14 +121,30 @@ export default function MockExamScreen() {
   const glossaryIndex = useMemo(() => buildGlossaryIndex(pcicItemsForLevel(level), target), [level, target]);
   const paper = exam?.papers[paperIdx];
   const task = paper?.tasks[taskIdx];
-  const left = paper ? secondsLeft(startedAt, paper.minutes, now) : 0;
+  const left = paper ? secondsLeft(startedAt, paper.minutes, pausedAt ?? now) : 0;
 
   // --- Clock: runs per paper; computed from a timestamp, the per-second tick only refreshes the screen.
   useEffect(() => {
-    if (phase !== 'task') return;
+    if (phase !== 'task' || pausedAt !== null) return;
     const id = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(id);
-  }, [phase, paperIdx]);
+  }, [phase, paperIdx, pausedAt]);
+
+  const holdClock = (hold: boolean) => {
+    if (hold) {
+      if (pausedAtRef.current !== null) return;
+      pausedAtRef.current = Date.now();
+      setPausedAt(pausedAtRef.current);
+      return;
+    }
+    const since = pausedAtRef.current;
+    if (since === null) return;
+    const resumed = Date.now();
+    pausedAtRef.current = null;
+    setStartedAt((t0) => t0 + (resumed - since));
+    setNow(resumed);
+    setPausedAt(null);
+  };
 
   const finish = async (all: MockAnswers, ex: MockExam) => {
     const res = scoreMockExam(ex, all, { lexicon });
@@ -179,6 +203,8 @@ export default function MockExamScreen() {
       return;
     }
     const t0 = Date.now();
+    pausedAtRef.current = null;
+    setPausedAt(null);
     setStartedAt(t0);
     setNow(t0);
     setTaskIdx(0);
@@ -239,10 +265,10 @@ export default function MockExamScreen() {
   // The 💬 button is on every part of the mock exam; `part` tells the Feedback sheet
   // exactly which part it is about (mock-exam:<level>:<part>).
   const pair = pairOf(target);
-  const shell = (children: ReactNode, part?: string) => (
+  const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
-      {part ? <ScreenFeedback level={level} languagePair={pair} currentCard={`mock-exam:${level}:${part}`} /> : null}
+      {part ? <ScreenFeedback level={level} languagePair={pair} currentCard={`mock-exam:${level}:${part}`} bottomOffset={bottomOffset} /> : null}
     </View>
   );
   const card = (children: ReactNode) => (
@@ -393,20 +419,29 @@ export default function MockExamScreen() {
         </Text>
         {/* the scroller also remounts per task (key), otherwise the new task opens at the previous scroll
             position: its top slides out of view and the "Next task" button stays in the same place under the finger. */}
-        <ScrollView key={task.id} contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag">
-          <MockTaskCard
-            key={task.id}
-            task={task}
-            answer={answers[task.id] ?? {}}
-            onAnswer={(key, value) => onAnswer(task.id, key, value)}
-            target={target}
-            canSpeak={canSpeak}
-            glossary={mockGlossary(task, glossaryIndex, learned)}
-          />
-          <ExamButton testID="mock-next-task" label={last ? s.finishPaper : s.nextTask} onPress={nextTask} />
-        </ScrollView>
+        <DockSlotProvider host={dock}>
+          <ScrollView key={task.id} contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag">
+            <MockTaskCard
+              key={task.id}
+              task={task}
+              answer={answers[task.id] ?? {}}
+              onAnswer={(key, value) => onAnswer(task.id, key, value)}
+              target={target}
+              canSpeak={canSpeak}
+              glossary={mockGlossary(task, glossaryIndex, learned)}
+              inheritedChoice={followedChoice(paper.tasks, taskIdx, answers)}
+              onHoldClock={holdClock}
+              onNextTask={nextTask}
+              lastTask={last}
+            />
+            {/* a speaking task has its own primary button (it follows the step of the task and docks above the keyboard) */}
+            {task.kind !== 'speaking' && <ExamButton testID="mock-next-task" label={last ? s.finishPaper : s.nextTask} onPress={nextTask} />}
+          </ScrollView>
+        </DockSlotProvider>
+        {dock.node}
       </KeyboardAvoidingView>,
       `${paper.id}:${task.id}`,
+      dock.bottomOffset,
     );
   }
 
