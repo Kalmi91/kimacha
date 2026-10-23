@@ -1,1 +1,294 @@
-{ "target": "en", "level": "B1", "paper": "speaking", "forms": [] }
+{
+  "target": "en",
+  "level": "B1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "The examiner will ask you some questions about your life and your plans. Give full answers and add some details.",
+          "talkMinutes": [2, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Interview about you",
+              "prompt": "Imagine you are meeting the examiner for the first time. The examiner asks about your home, your daily routine, your free time and your plans.",
+              "bullets": [
+                "Where you live",
+                "A typical weekday",
+                "Your free time",
+                "Something you are looking forward to"
+              ],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Good morning. Where do you live, and what is your area like?",
+                  "minWords": 12,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Says where they live or describes the area",
+                      "keywords": ["i live", "apartment", "house", "neighborhood", "quiet area", "busy area", "quiet street", "busy street", "downtown", "village", "small town", "suburb"]
+                    }
+                  ],
+                  "model": "I live in a small apartment near the city center. It's a busy neighborhood with lots of shops, but it's quiet at night."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Tell me about a typical weekday. What do you usually do?",
+                  "minWords": 12,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Describes what they do during a weekday",
+                      "keywords": ["i get up", "i wake up", "i start", "i finish", "i work", "i go to work", "i go to school", "breakfast", "lunch", "in the morning", "in the afternoon", "in the evening"]
+                    }
+                  ],
+                  "model": "I get up at seven, and then I take the bus to work. In the afternoon I have meetings, and in the evening I cook dinner and watch a TV show."
+                },
+                {
+                  "id": "t3",
+                  "ask": "What do you enjoy doing when you have free time?",
+                  "minWords": 12,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Says what they do in their free time",
+                      "keywords": ["i like to", "i love", "i enjoy", "i play", "i watch", "i read", "i cook", "i meet", "i go out", "i go for", "hobby", "watching"]
+                    }
+                  ],
+                  "model": "I love cooking, and I also go running twice a week. At the weekend I usually meet my friends and we watch movies or play board games."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Is there anything special you are looking forward to in the next few months?",
+                  "minWords": 12,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Talks about a plan or something coming up",
+                      "keywords": ["i'm going to", "i'm planning", "i hope", "i can't wait", "vacation", "trip", "wedding", "birthday", "next summer"]
+                    }
+                  ],
+                  "model": "Yes, I'm going to visit my cousin in Canada in the spring. I have never been there, so I'm really excited about the trip."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Look at the photograph and describe it. You should speak for about one minute.",
+          "talkMinutes": [1, 1],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Working in a garden",
+              "prompt": "Look at the photograph of three people outdoors. Describe it as if you were telling a friend who cannot see it.",
+              "bullets": [
+                "Where the people are and what the place looks like",
+                "What the people are doing and what they are wearing",
+                "What you think about this kind of activity"
+              ],
+              "photos": ["en-b1-1"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Here is your photograph. Please tell me about it.",
+                  "minWords": 50,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Describes the place and the weather",
+                      "keywords": ["flower", "path", "tree", "house", "sunny", "summer", "wood chips", "plants"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Says what the people are doing or wearing",
+                      "keywords": ["bending", "leaning", "weeds", "picking", "pulling", "taking care", "gardening", "planting", "watering", "bent", "shirt", "jeans"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Gives an opinion about the activity",
+                      "keywords": ["i think it", "i think this", "i think gardening", "i like gardening", "gardening is", "i would like to try", "i would not like", "i would not enjoy", "relaxing", "peaceful", "healthy", "exercise"]
+                    }
+                  ],
+                  "model": "This photo shows three people working in a garden on a sunny day. I think it's summer because everything is green and there are lots of pink and red flowers. There's a path with wood chips, and I can see some trees and houses in the background. All three people are bending over the flower bed, maybe pulling weeds. The man on the right is wearing a blue shirt and jeans. I think gardening looks relaxing, and I would like to try it because it's good to spend time outside."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Studying by the windows",
+              "prompt": "Look at the photograph of some people indoors. Describe it as if you were telling a friend who cannot see it.",
+              "bullets": [
+                "Where the people are and what you can see around them",
+                "What the people are doing and what they are wearing",
+                "Whether you would like to spend time in a place like this"
+              ],
+              "photos": ["en-b1-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Here is your photograph. Please tell me about it.",
+                  "minWords": 50,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Describes the place and the season",
+                      "keywords": ["desk", "window", "tree", "carpet", "coats", "cold", "winter", "long table"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Says what the people are doing or have with them",
+                      "keywords": ["laptop", "typing", "notebook", "phone", "hoodie", "sitting", "writing", "students", "sweater", "backpack", "bottle", "jacket"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Gives an opinion about the place",
+                      "keywords": ["i think it", "i think this", "i would study", "i would like to study", "i would not like", "i would not study", "i prefer", "quiet", "comfortable", "useful", "concentrate", "distract"]
+                    }
+                  ],
+                  "model": "In this photo, a group of students are studying in a library. They are sitting in a long row at a wooden desk next to a big window, and I can see a bare tree outside, so I think it's cold because some of them have coats on the chairs. Most of them are typing on laptops, and one girl is looking at her phone. I think it's a good place to study because it's quiet, but I would find it hard to concentrate with so many people next to me."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Read the situation and the five ideas. The examiner will talk with you about them and then ask you to make a decision.",
+          "talkMinutes": [3, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Helping an older neighbor",
+              "prompt": "You and your friends want to help an older neighbor. Talk about the ideas with the examiner, and then decide which one would be best.",
+              "bullets": [
+                "How each idea could help your neighbor",
+                "What problems each idea might have",
+                "Which idea you would choose"
+              ],
+              "input": "Your neighbor, Mr. Hall, is 80 years old. He has broken his leg and cannot walk far for six weeks. You and your friends want to help him. Here are five ideas.\n\n- Cook him a hot meal twice a week\n- Do his grocery shopping every Saturday\n- Visit him in the evenings to chat\n- Clean his apartment once a week\n- Show him how to order food and groceries on his phone",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Let's talk about the five ideas. How could each one help him, and what might be difficult about it?",
+                  "minWords": 45,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Talks about at least one of the ideas",
+                      "keywords": ["cook", "meal", "grocer", "shopping", "visit", "chat", "clean", "phone"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Explains how an idea could help him",
+                      "keywords": ["because he", "because his", "because it", "because mr", "since he", "so he can", "so that he", "he can", "useful", "helpful", "easier", "good idea"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Mentions a possible problem",
+                      "keywords": ["problem", "tiring", "expensive", "takes time", "takes a lot", "too much", "hard work", "hard to", "busy", "money", "time consuming", "not always"]
+                    }
+                  ],
+                  "model": "Well, I think all of the ideas are good. If we cook for him twice a week, he can eat well without standing in the kitchen. Doing his grocery shopping is useful too, because he cannot walk to the store. However, cleaning his apartment takes a lot of time, and visiting him in the evenings might be tiring for us, although he would enjoy the company. Teaching him to order food on his phone is a good idea, but it may be hard for an older man."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Now, which of the five ideas would you choose, and why?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Chooses one idea",
+                      "keywords": ["i would choose", "i would pick", "i would go with", "i choose", "i pick", "i will choose", "i will pick", "the best idea", "my choice"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Gives a reason for the choice",
+                      "keywords": ["because he", "because his", "because it", "because mr", "since he", "so he", "that way", "that's why", "that is why", "most useful", "helps him", "he needs"]
+                    }
+                  ],
+                  "model": "I would choose the grocery shopping. He cannot walk far at the moment, so he needs food at home, and that is the most useful help because it is a real problem for him. The other ideas are nice, but this one solves the main problem."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "The examiner will now ask you some more questions on the same subject. Give your opinions and explain your reasons.",
+          "talkMinutes": [3, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Discussion: helping other people",
+              "prompt": "The examiner would now like to hear your own views and experiences of helping other people, especially older people.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "How well do you know the people who live near you?",
+                  "minWords": 18,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Says how well they know the people around them",
+                      "keywords": ["i know my", "i know them", "i know a few", "i know some", "i don't know my", "i don't know them", "next door", "say hello", "friendly", "not very well", "never talk", "my neighbors"]
+                    }
+                  ],
+                  "model": "I know a few of them. The woman next door is very friendly, and we often say hello on the stairs, but I don't really know the other people in my building."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Have you ever helped someone who needed it? What did you do?",
+                  "minWords": 18,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Describes a time they helped someone",
+                      "keywords": ["i helped", "carried", "bought", "cooked", "cleaned", "drove", "brought", "fixed", "delivered", "took her", "took him", "gave her"]
+                    }
+                  ],
+                  "model": "Yes, last year I helped my grandmother after her operation. I went to her house every day, I did her shopping and I took her to the doctor."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Some people say that young people today do not care about older people. What do you think?",
+                  "minWords": 18,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Gives an opinion about young people and older people",
+                      "keywords": ["i agree", "i disagree", "i don't agree", "in my opinion", "i don't think", "not true", "most young", "many young", "young people are", "respect"]
+                    }
+                  ],
+                  "model": "I disagree with that. In my experience, many young people respect older people and help them, for example by carrying their bags or giving up a seat on the bus."
+                },
+                {
+                  "id": "t4",
+                  "ask": "What could your town or city do to make life easier for older people?",
+                  "minWords": 18,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Suggests something a town or city could do",
+                      "keywords": ["transport", "bench", "elevator", "ramps", "volunteer", "community", "buses", "sidewalk", "hospital", "discount", "activities", "clinic"]
+                    }
+                  ],
+                  "model": "I think it could build more benches and ramps, and offer cheap public transport. A community center with free classes would also help older people to meet others."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

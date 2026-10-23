@@ -1,1 +1,918 @@
-{ "target": "es", "level": "C1", "paper": "speaking", "forms": [] }
+{
+  "target": "es",
+  "level": "C1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Elija una de las dos opciones. Lea el artículo y prepare, durante veinte minutos, una exposición oral. Puede tomar notas.",
+          "prepSeconds": 1200,
+          "talkMinutes": [
+            3,
+            5
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Opción A: Comprar sin decir una palabra",
+              "prompt": "Lea este artículo de opinión. Después, prepare una exposición oral para un programa de radio universitaria sobre la vida en la ciudad: transmita las ideas del autor con sus propias palabras, valórelas y exponga su opinión.",
+              "bullets": [
+                "Resuma la tesis del autor y los argumentos con que la apoya.",
+                "Explique qué consecuencias señala para el barrio y para el comercio pequeño.",
+                "Presente las propuestas del autor y valore si le parecen convincentes.",
+                "Exprese y justifique su opinión personal sobre el tema."
+              ],
+              "input": "COMPRAR SIN DECIR UNA PALABRA\n\nHace unas semanas hice un experimento sin proponérmelo: pasé siete días comprando todo lo necesario sin hablar con nadie. El lunes pedí el súper por una aplicación; el martes pagué en una caja de autocobro, donde una voz grabada me dio las gracias; el miércoles recogí un paquete en un casillero automático; el jueves, por pereza, encargué la comida a un restaurante que ni siquiera tiene comedor. Al llegar el domingo me di cuenta de que no había intercambiado ni un «buenos días» con ningún vendedor. Lo más curioso es que no lo había extrañado hasta ese momento.\n\nQue quede claro que esta comodidad no es culpa de nadie. Las aplicaciones ahorran tiempo, las cajas de autocobro acortan las filas y la entrega a domicilio es una bendición para quien cuida a un familiar enfermo, para quien tiene dos trabajos o para quien no puede cargar bolsas pesadas. Negarlo sería deshonesto. Mi tesis es otra: cada vez que quitamos una conversación del proceso de compra, quitamos también algo que no aparece en el ticket y que, sin embargo, tenía valor.\n\nPensemos en lo que ocurre en un tianguis o en un mercado de barrio. Cuando una persona pregunta cuáles son los jitomates más maduros para una salsa, recibe una recomendación, pero también una pequeña dosis de confianza. La vendedora recuerda que la semana pasada el cliente se llevó mangos y le pregunta si le gustaron. Si el precio parece alto, se regatea con buen humor, y de ese regateo sale a veces un descuento y casi siempre una sonrisa. Los sociólogos llaman «lazos débiles» a estas relaciones breves y sin intimidad que, sin embargo, hacen que una colonia se parezca más a una comunidad que a un conjunto de edificios. Gracias a ellos alguien nota que el señor de siempre dejó de pasar por su pan, o que una vecina necesita ayuda con las bolsas.\n\nA esto se suma una dimensión económica que casi nunca se menciona cuando se habla de comodidad. Un puesto del tianguis o una tienda de abarrotes es, en la mayoría de los casos, un negocio familiar. El dinero que se gasta ahí circula por la misma colonia: la verdulera compra sus zapatos en la zapatería de la calle de al lado y el dueño de la tienda inscribe a sus hijos en la escuela del barrio. En cambio, buena parte de lo que pagamos a una gran plataforma se va a otra parte, y la comisión que esta cobra suele ser tan alta que muchos negocios pequeños aceptan trabajar con ella solo porque no les queda alternativa.\n\nTambién conviene preguntarse qué aprendemos al comprar. Un niño que acompaña a su mamá al mercado aprende los nombres de las frutas de temporada, a esperar su turno, a pedir con cortesía y a revisar el cambio. Frente a una pantalla, ese niño aprende a pulsar un botón. No hay nada malo en pulsar botones; lo preocupante es que acabe siendo lo único que se practica.\n\nLos defensores de la comodidad responden que nadie obliga a renunciar al trato humano y que quien quiera conversar puede hacerlo. El argumento es válido solo a medias. Las costumbres colectivas dependen de que haya suficiente gente que las practique: si cada vez menos personas van al mercado, los puestos cierran, los horarios se acortan y lo que era una elección se convierte en una rareza. Pasa igual con el cine de barrio o con la librería de la esquina: nadie decidió que desaparecieran, pero entre todos fuimos dejando de ir.\n\n¿Significa esto que debamos volver al pasado? Ni mucho menos. Quien escribe estas líneas pide el súper por internet cuando está enfermo y agradece el autocobro cuando tiene prisa. Lo que propongo es una especie de higiene de consumo, con tres medidas sencillas. La primera es personal: reservar una parte de las compras, aunque sea la fruta y la verdura, para el comercio de proximidad. La segunda corresponde a las ciudades: proteger los mercados y los tianguis con horarios razonables, accesibilidad para las personas mayores y pagos con tarjeta o transferencia, para que la modernización no sea una excusa para abandonarlos. La tercera es de las empresas: que las plataformas de entrega incorporen de verdad al comercio pequeño, con comisiones justas y con la posibilidad de que el cliente sepa a quién le está comprando.\n\nQuizá el mayor riesgo de esta forma de vivir sea que se parece tanto a la eficiencia que cuesta verla como una pérdida. Nadie extraña lo que nunca se contabilizó. Pero una sociedad también se construye con esas conversaciones mínimas, con el «¿cómo amaneció?» y el «¿qué le damos, joven?» que nunca figuran en una factura. La próxima vez que tenga prisa, le propongo un ejercicio modesto: compre una sola cosa en un puesto del barrio y diga, al menos, buenos días. Es probable que la compra tarde tres minutos más y que usted gane algo que no sabe cómo medir.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede comenzar su exposición.",
+                  "minWords": 130,
+                  "points": [
+                    {
+                      "id": "tesis",
+                      "label": "Resume la tesis del autor: comprar sin conversar es una pérdida para la comunidad",
+                      "keywords": [
+                        "conversacion",
+                        "trato humano",
+                        "vinculo",
+                        "lazos",
+                        "comunidad",
+                        "relaciones",
+                        "hablar con",
+                        "contacto"
+                      ]
+                    },
+                    {
+                      "id": "argumentos",
+                      "label": "Explica los argumentos y ejemplos del texto: tianguis, economía del barrio, aprendizaje de los niños",
+                      "keywords": [
+                        "tianguis",
+                        "mercado",
+                        "negocios",
+                        "economia",
+                        "comision",
+                        "plataforma",
+                        "abarrotes",
+                        "cobran",
+                        "regate",
+                        "verdulera"
+                      ]
+                    },
+                    {
+                      "id": "propuestas",
+                      "label": "Presenta las propuestas del autor para equilibrar comodidad y comercio local",
+                      "keywords": [
+                        "propone",
+                        "proponer",
+                        "medidas",
+                        "proteger",
+                        "proximidad",
+                        "reservar",
+                        "incorporar",
+                        "plataformas de entrega",
+                        "sugiere",
+                        "plantea"
+                      ]
+                    },
+                    {
+                      "id": "opinion",
+                      "label": "Valora el texto y expresa y justifica su opinión personal",
+                      "keywords": [
+                        "en mi opinion",
+                        "creo que",
+                        "me parece",
+                        "considero",
+                        "opino",
+                        "estoy de acuerdo",
+                        "punto de vista",
+                        "personalmente"
+                      ]
+                    }
+                  ],
+                  "model": "Voy a resumir el artículo y después daré mi opinión. El autor sostiene que comprar sin hablar con nadie, con aplicaciones, cajas de autocobro y entregas a domicilio, nos quita unas conversaciones breves que crean vínculos y hacen que una colonia funcione como una comunidad. Para apoyarlo menciona varios argumentos: en el tianguis hay confianza y recomendaciones, el dinero del comercio pequeño se queda en el barrio, mientras que las plataformas cobran comisiones muy altas, y los niños aprenden a pedir con cortesía. Al final propone tres medidas: que cada quien compre la fruta en el mercado, que las ciudades protejan los tianguis y que las plataformas incluyan de verdad a los negocios pequeños. En mi opinión, el autor tiene razón en lo esencial, aunque me parece que exagera un poco, porque la comodidad ayuda mucho a las personas mayores y a quienes trabajan todo el día. Personalmente, creo que lo mejor es combinar las dos formas de comprar."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Opción B: Aprender de memoria con el celular a mano",
+              "prompt": "Lea este artículo de opinión. Después, prepare una exposición oral para un foro de profesores y estudiantes sobre educación: transmita las ideas del autor con sus propias palabras, valórelas y exponga su opinión.",
+              "bullets": [
+                "Resuma la tesis del autor y los argumentos con que la apoya.",
+                "Explique qué relación establece entre memoria, pensamiento crítico y aprendizaje de idiomas.",
+                "Presente las propuestas del autor y valore si le parecen convincentes.",
+                "Exprese y justifique su opinión personal sobre el tema."
+              ],
+              "input": "APRENDER DE MEMORIA EN LA ERA DEL BUSCADOR\n\nPregunte a cualquiera de sus conocidos cuántos números de teléfono se sabe de memoria. La mayoría recordará el suyo, quizá el de su mamá y poco más. Hace unas décadas, muchas personas se sabían una docena o más. No hemos perdido inteligencia: hemos transferido la tarea a un aparato que la hace mejor que nosotros. Hasta ahí, nada que lamentar. El problema empieza cuando esa lógica, perfectamente razonable para los teléfonos, se extiende a todo lo demás y alguien afirma, con aire de modernidad, que memorizar ya no sirve para nada porque «todo está en el celular».\n\nLa idea tiene un atractivo evidente. Si cualquier dato está a tres segundos de distancia, ¿para qué llenar la cabeza de los estudiantes con fechas, fórmulas o listas de vocabulario? Mejor, se dice, enseñarles a buscar, a evaluar fuentes y a pensar de forma crítica. Esas habilidades son imprescindibles y ningún sistema educativo serio debería descuidarlas. Nadie discute que un buen buscador es una herramienta extraordinaria, y quien lo niega suena tan anticuado como quien lamentaba la llegada de la calculadora. Pero el razonamiento esconde una trampa: supone que se puede pensar críticamente sobre un tema del que no se sabe nada.\n\nConsideremos un ejemplo cotidiano. Una persona lee en internet que cierto alimento «cura» una enfermedad. Para dudar de esa afirmación necesita saber algo previo: cómo funciona más o menos el cuerpo, qué es una prueba científica, por qué una anécdota no demuestra nada. Si no tiene esos conocimientos en la cabeza, el buscador solo le devolverá más afirmaciones que tampoco podrá valorar. Es decir, para evaluar información hace falta información ya incorporada. La pericia, en cualquier campo, consiste precisamente en tener tantos datos tan bien asimilados que uno ya no los consulta, sino que los usa para entender lo nuevo.\n\nLo mismo ocurre con los idiomas. Quien aprende una lengua puede abrir el diccionario cada vez que desconoce una palabra, pero así nunca llegará a conversar, porque la conversación no espera. Las palabras y las expresiones tienen que estar disponibles en la memoria, listas para salir en el momento en que se necesitan. Los músicos lo saben: nadie toca una pieza leyendo cada nota con el dedo, y la pianista que ha memorizado una obra puede dedicar toda su atención a la interpretación. Memorizar no es lo contrario de comprender; es lo que libera la atención para comprender más a fondo.\n\nDicho esto, sería injusto defender la memorización mecánica de la escuela de otros tiempos, en la que se recitaban de corrido los ríos de un país o los reyes de una dinastía sin que nadie supiera para qué. Ese aprendizaje tenía un defecto real: separaba el dato de su sentido, y lo que se aprende sin sentido se olvida en cuanto pasa el examen. La buena memoria no se logra repitiendo a gritos, sino conectando lo nuevo con lo que ya se sabe, usando lo aprendido en situaciones reales y repasándolo a intervalos, justo antes de olvidarlo. Esos principios llevan décadas estudiados por la psicología y rara vez se aplican en las aulas.\n\nHay además un argumento del que se habla poco y que a mí me parece decisivo: la dependencia. Quien delega todo en el celular queda a merced de la batería, de la señal y, sobre todo, de lo que el algoritmo decida mostrarle primero. El conocimiento propio es una forma de independencia. Permite verificar y contradecir, y también disfrutar: un paseo por una ciudad cambia cuando se conoce su historia, y una película se entiende mejor cuando se reconocen sus referencias. Quien conoce su idioma, su historia y los fundamentos de su oficio no necesita que un aparato le diga qué pensar: lo consulta para ampliar lo que ya sabe. Es difícil disfrutar de una conversación sobre un tema que uno buscó hace diez minutos.\n\n¿Qué hacer, entonces? Propongo tres cosas. Primero, en la escuela, distinguir lo que conviene saber de memoria, es decir, un núcleo de conocimientos básicos de cada materia, de lo que basta con saber consultar. Segundo, enseñar técnicas de estudio respaldadas por la investigación, como el repaso espaciado y la autoevaluación, en lugar de dejar que cada estudiante descubra solo que subrayar con el marcatextos rara vez basta. Tercero, en casa y en el trabajo, aceptar que el esfuerzo de recordar no es un castigo, sino un entrenamiento, como caminar o hacer ejercicio.\n\nQuizá el mejor resumen sea una paradoja: cuanto más fácil resulta buscar cualquier cosa, más valioso es saber algo. Un buscador responde preguntas, pero no sabe cuáles hay que hacer, y esa tarea, por ahora, sigue siendo nuestra. Si dejamos de ejercitarla, no nos quedará más remedio que preguntarle a una máquina incluso qué preguntar.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede comenzar su exposición.",
+                  "minWords": 130,
+                  "points": [
+                    {
+                      "id": "tesis",
+                      "label": "Resume la tesis del autor: memorizar sigue siendo necesario aunque todo esté en el celular",
+                      "keywords": [
+                        "memorizar",
+                        "memorizacion",
+                        "recordar",
+                        "buscador",
+                        "celular",
+                        "conocimientos",
+                        "saber algo",
+                        "en la cabeza"
+                      ]
+                    },
+                    {
+                      "id": "argumentos",
+                      "label": "Explica los argumentos del texto: pensamiento crítico, idiomas, dependencia",
+                      "keywords": [
+                        "pensar de forma critica",
+                        "pensamiento critico",
+                        "pensar criticamente",
+                        "evaluar",
+                        "idioma",
+                        "dependencia",
+                        "independencia",
+                        "algoritmo"
+                      ]
+                    },
+                    {
+                      "id": "propuestas",
+                      "label": "Presenta las propuestas del autor para la escuela y el estudio",
+                      "keywords": [
+                        "propone",
+                        "proponer",
+                        "tecnicas de estudio",
+                        "repaso",
+                        "espaciado",
+                        "nucleo",
+                        "autoevaluacion",
+                        "escuela",
+                        "sugiere",
+                        "plantea"
+                      ]
+                    },
+                    {
+                      "id": "opinion",
+                      "label": "Valora el texto y expresa y justifica su opinión personal",
+                      "keywords": [
+                        "en mi opinion",
+                        "creo que",
+                        "me parece",
+                        "considero",
+                        "opino",
+                        "estoy de acuerdo",
+                        "punto de vista",
+                        "personalmente"
+                      ]
+                    }
+                  ],
+                  "model": "El artículo defiende que memorizar sigue siendo importante aunque hoy todo esté en el celular. El autor empieza con el ejemplo de los números de teléfono, que ya casi nadie recuerda, y explica que esa lógica no sirve para todo, porque para pensar de forma crítica hace falta saber algo del tema; si no, no podemos evaluar lo que encontramos en el buscador. Añade que con los idiomas pasa lo mismo, ya que una conversación no espera al diccionario, y que quien deja todo en manos del celular depende de que haya batería y señal, y de lo que muestre el algoritmo. Reconoce que la memorización mecánica de antes tenía un defecto real, porque desligaba la información de su significado, y propone tres cosas: una base de conocimientos fundamentales, técnicas de estudio con base científica, por ejemplo repasar a intervalos, y aceptar que recordar cuesta esfuerzo. Yo estoy de acuerdo en gran parte, pero creo que también habría que enseñar a buscar bien. En mi opinión, las dos cosas se complementan."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "El examinador le hará preguntas sobre el tema de su exposición. Responda con argumentos y ejemplos.",
+          "talkMinutes": [
+            4,
+            6
+          ],
+          "follows": 1,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Opción A: Comprar sin decir una palabra",
+              "prompt": "El examinador le hará algunas preguntas sobre el comercio de barrio y las compras sin contacto humano, el tema del artículo en el que ha basado su exposición.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Gracias por su exposición. ¿Qué lugar ocupan en su vida diaria los tianguis, los mercados y las tiendas de barrio? ¿Y cuándo prefiere comprar en el supermercado o por internet?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "habito",
+                      "label": "Describe su costumbre de compra en el comercio de barrio",
+                      "keywords": [
+                        "suelo",
+                        "compro",
+                        "frecuento",
+                        "voy al",
+                        "voy a la",
+                        "cerca de",
+                        "cada semana",
+                        "los sabados",
+                        "fines de semana",
+                        "casi todos los"
+                      ]
+                    },
+                    {
+                      "id": "alternativa",
+                      "label": "Explica cuándo prefiere el supermercado o internet",
+                      "keywords": [
+                        "pido",
+                        "pedir",
+                        "en linea",
+                        "aplicacion",
+                        "a domicilio",
+                        "prisa",
+                        "cuando tengo",
+                        "lluvia",
+                        "clima",
+                        "entrega",
+                        "no tengo tiempo",
+                        "me lo llevan"
+                      ]
+                    }
+                  ],
+                  "model": "En mi caso, suelo comprar la fruta y la verdura en el tianguis que se pone cerca de mi casa los sábados, porque me gusta hablar con los vendedores y todo está más fresco. En cambio, cuando ando con prisa o el clima está feo, prefiero pedir el súper por internet y que me lo lleven a domicilio."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Hay quien opina que a los jóvenes solo les importan el precio y la comodidad, y que los mercados tradicionales no tienen futuro. ¿Qué le parece esa idea?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "postura",
+                      "label": "Toma postura y la matiza",
+                      "keywords": [
+                        "estoy de acuerdo",
+                        "en parte",
+                        "no del todo",
+                        "discrepo",
+                        "comparto",
+                        "tienen razon",
+                        "exagera",
+                        "es cierto",
+                        "es verdad",
+                        "no es asi",
+                        "simplista",
+                        "demasiado simple"
+                      ]
+                    },
+                    {
+                      "id": "razon",
+                      "label": "Argumenta con precio, tiempo, calidad o tradición",
+                      "keywords": [
+                        "caro",
+                        "barato",
+                        "tiempo",
+                        "calidad",
+                        "ahorrar",
+                        "cuesta",
+                        "pagar",
+                        "fresco",
+                        "descuento",
+                        "oferta",
+                        "costumbre"
+                      ]
+                    }
+                  ],
+                  "model": "Me parece que es una visión demasiado simple. En parte tienen razón, porque muchos jóvenes andan con poco tiempo y comparan lo que cuesta cada cosa en el celular, pero no todo se reduce a eso: también valoran la calidad de los productos y la tradición, y por eso los tianguis siguen llenos los fines de semana."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Imagine que dentro de diez años casi no queden mercados en su ciudad. ¿Qué consecuencias tendría para los vecinos y para los negocios pequeños?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "sociales",
+                      "label": "Señala consecuencias sociales para los vecinos",
+                      "keywords": [
+                        "comunidad",
+                        "convivencia",
+                        "aislamiento",
+                        "soledad",
+                        "relaciones",
+                        "trato",
+                        "perder",
+                        "encuentro",
+                        "identidad",
+                        "tejido social",
+                        "se conocen",
+                        "amistades"
+                      ]
+                    },
+                    {
+                      "id": "economicas",
+                      "label": "Señala consecuencias económicas para los negocios",
+                      "keywords": [
+                        "empleo",
+                        "economia",
+                        "ingresos",
+                        "familias",
+                        "cerrar",
+                        "quiebra",
+                        "desempleo",
+                        "ganancias",
+                        "sustento",
+                        "competir"
+                      ]
+                    }
+                  ],
+                  "model": "Creo que sería una pérdida grande. Los vecinos tendrían menos oportunidades de convivir y la comunidad se volvería más fría y solitaria. Además, muchas familias que viven de un puesto o de una tiendita perderían sus ingresos, porque los negocios pequeños no podrían competir con las grandes plataformas y tendrían que cerrar."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Para terminar, ¿qué medida concreta propondría usted a las autoridades de su ciudad para proteger el comercio de barrio sin renunciar a las ventajas de la tecnología?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "medida",
+                      "label": "Propone una medida concreta",
+                      "keywords": [
+                        "propongo",
+                        "apoy",
+                        "subsidios",
+                        "incentivos",
+                        "horarios",
+                        "campana",
+                        "capacitar",
+                        "capacitacion",
+                        "impulsaria",
+                        "fomentaria",
+                        "promoveria",
+                        "ayudas"
+                      ]
+                    },
+                    {
+                      "id": "tecnologia",
+                      "label": "La une a una herramienta tecnológica",
+                      "keywords": [
+                        "pagos",
+                        "tarjeta",
+                        "aplicacion",
+                        "plataforma",
+                        "digital",
+                        "internet",
+                        "pagina",
+                        "entrega"
+                      ]
+                    }
+                  ],
+                  "model": "Propondría que el municipio apoye a los mercados con una aplicación propia, donde los vecinos puedan pedir a domicilio y pagar con tarjeta sin comisiones abusivas. También daría capacitación a los locatarios y ampliaría los horarios, para que comprar ahí sea tan cómodo como hacerlo desde el celular."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Opción B: Aprender de memoria con el celular a mano",
+              "prompt": "El examinador le hará algunas preguntas sobre la memoria y el aprendizaje en la era de internet, el tema del artículo en el que ha basado su exposición.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Gracias por su exposición. ¿Cómo estudia usted y cómo recuerda lo que necesita saber? ¿Qué papel tiene el celular en ese proceso?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "metodo",
+                      "label": "Describe su método de estudio",
+                      "keywords": [
+                        "estudio",
+                        "repaso",
+                        "repito",
+                        "apunto",
+                        "anoto",
+                        "subrayo",
+                        "resumen",
+                        "tarjetas"
+                      ]
+                    },
+                    {
+                      "id": "celular",
+                      "label": "Explica el papel del celular en su aprendizaje",
+                      "keywords": [
+                        "aplicacion",
+                        "recordatorio",
+                        "agenda",
+                        "buscador",
+                        "internet",
+                        "traductor",
+                        "notas",
+                        "alarma",
+                        "calendario",
+                        "consulto",
+                        "busco",
+                        "buscar"
+                      ]
+                    }
+                  ],
+                  "model": "Yo estudio haciendo resúmenes a mano y repaso varias veces durante la semana, porque así me quedan mejor las cosas. El celular me ayuda mucho: uso una aplicación de tarjetas para el vocabulario y pongo recordatorios para no olvidar los repasos, pero trato de no buscar todo en internet de inmediato."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Algunos profesores afirman que lo importante es enseñar a pensar y no a memorizar. ¿Cree usted que ambas cosas se pueden separar?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "postura",
+                      "label": "Toma postura sobre si memoria y pensamiento se pueden separar",
+                      "keywords": [
+                        "van de la mano",
+                        "se complementan",
+                        "complementari",
+                        "estan relacionad",
+                        "estan ligad",
+                        "no se pueden",
+                        "si se pueden",
+                        "por separado",
+                        "imposible",
+                        "dependen una de otra"
+                      ]
+                    },
+                    {
+                      "id": "ejemplo",
+                      "label": "Lo ilustra con un ejemplo de aprendizaje",
+                      "keywords": [
+                        "ejemplo",
+                        "pongamos",
+                        "como cuando",
+                        "idioma",
+                        "lengua",
+                        "vocabulario",
+                        "matematicas",
+                        "medicina",
+                        "musica",
+                        "programar"
+                      ]
+                    }
+                  ],
+                  "model": "Pienso que no se pueden separar, porque las dos cosas van de la mano. Por ejemplo, en matemáticas nadie resuelve problemas complejos si no sabe de memoria las tablas y las fórmulas básicas, y con un idioma pasa igual: sin vocabulario en la cabeza no se puede razonar ni conversar."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Piense ahora en el aprendizaje de un idioma. ¿Qué se puede dejar al diccionario o al traductor y qué conviene tener siempre en la cabeza?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "delegar",
+                      "label": "Indica lo que se puede consultar",
+                      "keywords": [
+                        "palabras raras",
+                        "terminos tecnicos",
+                        "tecnicismos",
+                        "vocabulario especializado",
+                        "palabras poco frecuentes",
+                        "consultar",
+                        "buscar",
+                        "dudas"
+                      ]
+                    },
+                    {
+                      "id": "memorizar",
+                      "label": "Indica lo que conviene saber de memoria",
+                      "keywords": [
+                        "expresiones",
+                        "frases",
+                        "vocabulario basico",
+                        "gramatica",
+                        "conversar",
+                        "fluidez",
+                        "palabras frecuentes",
+                        "de memoria"
+                      ]
+                    }
+                  ],
+                  "model": "Yo dejaría al diccionario las palabras poco frecuentes y los términos técnicos, que se pueden consultar cuando hacen falta. En cambio, el vocabulario básico, las expresiones y las estructuras más comunes conviene tenerlos en la cabeza, porque si no, es imposible conversar con fluidez. Un traductor puede ayudar, pero no sustituye saber las palabras."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Para terminar, ¿qué cambiaría usted en las escuelas para que los estudiantes aprendan mejor sin renunciar a la tecnología, y qué ganarían ellos con ese cambio?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "cambio",
+                      "label": "Propone un cambio concreto en la escuela",
+                      "keywords": [
+                        "propondria",
+                        "propongo",
+                        "incluir",
+                        "incorporar",
+                        "ensenar",
+                        "tecnicas",
+                        "proyectos",
+                        "practica",
+                        "reforzaria",
+                        "eliminaria",
+                        "dedicaria",
+                        "introduciria"
+                      ]
+                    },
+                    {
+                      "id": "beneficio",
+                      "label": "Explica el beneficio para los estudiantes",
+                      "keywords": [
+                        "permitiria",
+                        "mejoraria",
+                        "beneficio",
+                        "beneficia",
+                        "motivacion",
+                        "comprender",
+                        "sentido",
+                        "autonomia",
+                        "ventaja",
+                        "aprenderian",
+                        "de esa manera",
+                        "de este modo"
+                      ]
+                    }
+                  ],
+                  "model": "Propondría enseñar desde pequeños técnicas de estudio, como repasar a intervalos y hacerse preguntas, y combinar el celular con ejercicios en papel. Así los estudiantes ganarían autonomía y entenderían el sentido de lo que aprenden, en lugar de memorizar solo para el examen. Además, el celular serviría para practicar, pero no para sustituir el esfuerzo de recordar."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Elija una de las dos situaciones y negocie con el examinador hasta llegar a un acuerdo.",
+          "talkMinutes": [
+            4,
+            6
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Opción A: El parque de la colonia",
+              "prompt": "Usted y el examinador forman parte del comité de vecinos de su colonia. Hay dinero para una sola de las cuatro propuestas para renovar el parque. Como se trata de una conversación informal entre vecinos, ambos se tutean. Negocien hasta ponerse de acuerdo.",
+              "bullets": [
+                "Elija la propuesta que le parece mejor y justifique su elección.",
+                "Responda con argumentos a las objeciones del examinador.",
+                "Acepte ceder en algo o proponga una combinación.",
+                "Lleguen a un acuerdo y decidan qué hacer primero."
+              ],
+              "input": "SITUACIÓN. La alcaldía ha concedido a la colonia un presupuesto para renovar el parque central, pero alcanza solo para una de las siguientes propuestas.\n\nPROPUESTAS\n1. Huerto comunitario con composta, donde los vecinos cultivan verduras y plantas aromáticas y aprenden a reciclar los residuos orgánicos.\n2. Cancha de usos múltiples con techo, para jugar futbol, basquetbol y voleibol aunque llueva.\n3. Biblioteca al aire libre con mesas, sombra y acceso gratuito a internet, abierta desde la mañana hasta el anochecer.\n4. Alumbrado nuevo y cámaras de vigilancia en todos los andadores, para que el parque sea más seguro por la noche.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Tenemos presupuesto para una sola de las cuatro propuestas. A ver, ¿cuál te parece mejor y por qué?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "eleccion",
+                      "label": "Elige una propuesta",
+                      "keywords": [
+                        "elijo",
+                        "prefiero",
+                        "me quedo con",
+                        "elegiria",
+                        "escogeria",
+                        "me parece mejor",
+                        "huerto",
+                        "cancha",
+                        "biblioteca",
+                        "alumbrado",
+                        "composta",
+                        "vigilancia"
+                      ]
+                    },
+                    {
+                      "id": "razon",
+                      "label": "Justifica su elección",
+                      "keywords": [
+                        "beneficia",
+                        "ventaja",
+                        "sirve para",
+                        "util",
+                        "ayudaria",
+                        "debido a",
+                        "gracias a",
+                        "por eso",
+                        "permite",
+                        "mas barat",
+                        "mas segur",
+                        "hace falta"
+                      ]
+                    }
+                  ],
+                  "model": "Yo elegiría la biblioteca al aire libre, porque beneficia a gente de todas las edades y en la colonia casi no hay lugares tranquilos donde estudiar o conectarse a internet. Además, sería más barata que la cancha y no necesitaría tanto mantenimiento."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Entiendo tu idea, pero me preocupa que cueste más de lo previsto y que no beneficie a suficientes vecinos. ¿Qué me dices?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "reconoce",
+                      "label": "Reconoce la objeción y la rebate",
+                      "keywords": [
+                        "tienes razon",
+                        "tienes algo de razon",
+                        "es cierto",
+                        "es verdad",
+                        "buen punto",
+                        "comprendo",
+                        "puede ser",
+                        "sin embargo",
+                        "aun asi",
+                        "no obstante",
+                        "claro que"
+                      ]
+                    },
+                    {
+                      "id": "solucion",
+                      "label": "Ofrece una solución concreta",
+                      "keywords": [
+                        "voluntarios",
+                        "donaciones",
+                        "fondos",
+                        "patrocin",
+                        "presupuesto",
+                        "cotizacion",
+                        "encuesta",
+                        "consulta",
+                        "difund",
+                        "promov",
+                        "actividades",
+                        "talleres"
+                      ]
+                    }
+                  ],
+                  "model": "Es cierto que el costo es un riesgo, pero podemos pedir cotizaciones a varias empresas y hacer una consulta entre los vecinos para asegurarnos de que les sirva. Además, un grupo de voluntarios podría encargarse del mantenimiento y así gastaríamos menos."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Quizá ninguno de los dos tiene toda la razón. ¿Aceptarías una versión reducida que combine dos propuestas, o ceder en algo? ¿Qué pedirías a cambio?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "combina",
+                      "label": "Propone combinar o ceder en algo",
+                      "keywords": [
+                        "combina",
+                        "mezclar",
+                        "unir",
+                        "juntar",
+                        "por fases",
+                        "por etapas",
+                        "la mitad",
+                        "a medias",
+                        "un poco de cada",
+                        "cederia",
+                        "cedo en",
+                        "las dos"
+                      ]
+                    },
+                    {
+                      "id": "condicion",
+                      "label": "Pone una condición",
+                      "keywords": [
+                        "siempre que",
+                        "siempre y cuando",
+                        "con la condicion",
+                        "a condicion",
+                        "con tal de",
+                        "exigiria",
+                        "pido que",
+                        "mi condicion",
+                        "solo si",
+                        "lo unico que"
+                      ]
+                    }
+                  ],
+                  "model": "Podemos mezclar tu idea y la mía: hacer primero la parte más barata y dejar el resto para el año siguiente. Aceptaría ceder en mi propuesta siempre y cuando se garantice el mantenimiento y se incluya una zona con sombra para los niños y las personas mayores."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Perfecto, ya casi tenemos un acuerdo. ¿Puedes resumir qué vamos a hacer y cuál sería el primer paso?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "resumen",
+                      "label": "Resume el acuerdo",
+                      "keywords": [
+                        "quedamos",
+                        "acordamos",
+                        "decidimos",
+                        "resumiendo",
+                        "en resumen",
+                        "en conclusion",
+                        "el acuerdo es",
+                        "hemos acordado",
+                        "nos quedamos con",
+                        "optamos por",
+                        "la decision es"
+                      ]
+                    },
+                    {
+                      "id": "pasos",
+                      "label": "Propone el primer paso",
+                      "keywords": [
+                        "lo primero",
+                        "para empezar",
+                        "proxima semana",
+                        "reunion",
+                        "convocar",
+                        "presentar",
+                        "fecha",
+                        "empezar",
+                        "avisar",
+                        "hablar con"
+                      ]
+                    }
+                  ],
+                  "model": "Entonces quedamos así: vamos a hacer la biblioteca al aire libre con una pequeña zona de sombra. Lo primero será convocar una reunión con los vecinos la próxima semana y presentar el presupuesto para que todos lo conozcan antes de empezar."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Opción B: Un cartel contra el plástico",
+              "prompt": "Usted y el examinador forman parte de la comisión estudiantil de su universidad. Solo se puede imprimir uno de los cuatro diseños de cartel para una campaña contra el plástico desechable. Como son compañeros, se tutean. Negocien hasta ponerse de acuerdo.",
+              "bullets": [
+                "Elija el diseño que le parece mejor y justifique su elección.",
+                "Responda con argumentos a las objeciones del examinador.",
+                "Acepte ceder en algo o proponga una combinación.",
+                "Lleguen a un acuerdo y decidan qué hacer primero."
+              ],
+              "input": "SITUACIÓN. La comisión estudiantil tiene presupuesto para imprimir un solo cartel de su campaña contra el plástico desechable, que se pegará en la cafetería y en los pasillos de la universidad.\n\nDISEÑOS\n1. Fotografía de una playa cubierta de botellas y envases, con el lema «Esto también es tuyo».\n2. Dibujo humorístico de una botella con cara triste, con el lema «Dame una segunda vida».\n3. Gráfica sencilla que compara lo que se gasta en un año en botellas desechables con lo que cuesta una botella reutilizable.\n4. Código QR que lleva a un reto de treinta días sin plástico desechable, con premios para quienes lo completen.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Solo podemos imprimir un cartel para la campaña. A ver, ¿cuál de los cuatro diseños te parece mejor y por qué?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "eleccion",
+                      "label": "Elige un diseño",
+                      "keywords": [
+                        "elijo",
+                        "prefiero",
+                        "me quedo con",
+                        "elegiria",
+                        "escogeria",
+                        "me parece mejor",
+                        "playa",
+                        "botella",
+                        "dibujo",
+                        "fotografia",
+                        "grafica",
+                        "codigo"
+                      ]
+                    },
+                    {
+                      "id": "razon",
+                      "label": "Justifica su elección",
+                      "keywords": [
+                        "llama la atencion",
+                        "ventaja",
+                        "convence",
+                        "impacto",
+                        "recuerda",
+                        "debido a",
+                        "gracias a",
+                        "por eso",
+                        "mas barat",
+                        "visible",
+                        "original",
+                        "efectiv"
+                      ]
+                    }
+                  ],
+                  "model": "Yo elegiría el cartel con el dibujo humorístico, porque llama la atención y se recuerda fácilmente. La gente suele ignorar las fotos tristes y los datos, pero una botella con cara de pena y un lema simpático nos hace sonreír y pensar."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Entiendo tu elección, pero me da la impresión de que mucha gente ni siquiera lo va a ver, o que no le va a hacer caso. ¿Qué me dices?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "reconoce",
+                      "label": "Reconoce la objeción y la rebate",
+                      "keywords": [
+                        "tienes razon",
+                        "tienes algo de razon",
+                        "es cierto",
+                        "es verdad",
+                        "buen punto",
+                        "comprendo",
+                        "puede ser",
+                        "sin embargo",
+                        "aun asi",
+                        "no obstante",
+                        "claro que"
+                      ]
+                    },
+                    {
+                      "id": "solucion",
+                      "label": "Ofrece una solución concreta",
+                      "keywords": [
+                        "colocar",
+                        "ponerlo",
+                        "ubicar",
+                        "entrada",
+                        "pasillos",
+                        "cafeteria",
+                        "redes sociales",
+                        "difundir",
+                        "compartir",
+                        "visible",
+                        "llamativ",
+                        "grande"
+                      ]
+                    }
+                  ],
+                  "model": "Es cierto que puede pasar desapercibido, pero podemos colocarlo en la entrada y en los pasillos más transitados, y difundirlo también en las redes sociales de la universidad para que llegue a más estudiantes."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Quizá ninguno de los dos tiene toda la razón. ¿Aceptarías combinar dos diseños o ceder en algo? ¿Qué pedirías a cambio?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "combina",
+                      "label": "Propone combinar o ceder en algo",
+                      "keywords": [
+                        "fusionar",
+                        "mezclar",
+                        "unir",
+                        "juntar",
+                        "anadir",
+                        "agregar",
+                        "incluir",
+                        "sumar",
+                        "a medias",
+                        "la mitad",
+                        "cederia",
+                        "cedo en"
+                      ]
+                    },
+                    {
+                      "id": "condicion",
+                      "label": "Pone una condición",
+                      "keywords": [
+                        "siempre que",
+                        "siempre y cuando",
+                        "con la condicion",
+                        "a condicion",
+                        "con tal de",
+                        "exigiria",
+                        "pido que",
+                        "mi condicion",
+                        "solo si",
+                        "lo unico que"
+                      ]
+                    }
+                  ],
+                  "model": "Podríamos fusionar los dos: usar mi dibujo y añadir un código QR que lleve al reto de treinta días. Aceptaría ceder en el lema siempre que el cartel siga siendo divertido y se vea claramente desde lejos."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Perfecto, ya casi tenemos un acuerdo. ¿Puedes resumir qué diseño vamos a imprimir y cuál sería el primer paso?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "resumen",
+                      "label": "Resume el acuerdo",
+                      "keywords": [
+                        "quedamos",
+                        "acordamos",
+                        "decidimos",
+                        "resumiendo",
+                        "en resumen",
+                        "en conclusion",
+                        "el acuerdo es",
+                        "hemos acordado",
+                        "nos quedamos con",
+                        "optamos por",
+                        "la decision es"
+                      ]
+                    },
+                    {
+                      "id": "pasos",
+                      "label": "Propone el primer paso",
+                      "keywords": [
+                        "lo primero",
+                        "para empezar",
+                        "proxima semana",
+                        "reunion",
+                        "contactar",
+                        "presentar",
+                        "fecha",
+                        "empezar",
+                        "avisar",
+                        "hablar con"
+                      ]
+                    }
+                  ],
+                  "model": "Entonces quedamos en imprimir el dibujo humorístico con el código QR en una esquina. Lo primero es hablar con la comisión de comunicación para presentar el diseño y fijar la fecha de impresión antes del lunes."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

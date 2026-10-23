@@ -1,1 +1,202 @@
-{ "target": "es", "level": "A1", "paper": "speaking", "forms": [] }
+{
+  "target": "es",
+  "level": "A1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Preséntese a la persona que le examina. Hable de los puntos que se indican en la tarea.",
+          "talkMinutes": [1, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Presentación personal",
+              "prompt": "Usted va a conocer a la persona que le examina. Preséntese y cuéntele quién es.",
+              "bullets": ["su nombre", "su nacionalidad", "su edad", "dónde vive", "su trabajo o sus estudios", "los idiomas que habla", "su familia"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Buenos días. Cuando quiera, puede empezar.",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "p1", "label": "Dice su nombre o su nacionalidad", "keywords": ["me llamo", "mi nombre", "mi apellido", "soy de", "nacionalidad", "soy mexican", "soy hungar", "soy colombian", "soy american", "soy espanol", "soy argentin", "soy brasil"] },
+                    { "id": "p2", "label": "Dice su edad o dónde vive", "keywords": ["anos", "mi edad", "de edad", "cumplo", "vivo", "vivimos", "mi casa", "mi departamento", "tengo veint", "tengo trein", "tengo cuarent"] },
+                    { "id": "p3", "label": "Habla de su trabajo o de sus estudios", "keywords": ["trabaj", "estudi", "profesion", "universidad", "escuela", "oficina", "empresa", "soy ingenier", "soy maestr", "soy medic", "soy abogad", "soy program"] },
+                    { "id": "p4", "label": "Habla de los idiomas que habla o de su familia", "keywords": ["hablo", "idioma", "familia", "hermano", "hermana", "mis padres", "mi mama", "mis papas", "mi papa", "mis hijos", "mi hijo", "mi hija"] }
+                  ],
+                  "model": "Me llamo Ana Kovács y soy de Hungría. Tengo veintiocho años y vivo en la Ciudad de México, en un departamento pequeño. Trabajo en una oficina y estudio español por las tardes. Hablo húngaro, inglés y un poco de español. Tengo una hermana y mis padres viven en Budapest."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Elija uno de los dos temas y prepare una exposición de dos o tres minutos. Puede tomar notas durante la preparación.",
+          "prepSeconds": 600,
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Mi casa y mi barrio",
+              "prompt": "Hable de su casa y del lugar donde vive.",
+              "bullets": ["cómo es su casa o su departamento", "cuántas habitaciones tiene", "con quién vive", "qué hay cerca de su casa", "qué le gusta de su barrio"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Ahora hable de su casa y de su barrio. Cuando quiera, puede empezar.",
+                  "minWords": 35,
+                  "points": [
+                    { "id": "p1", "label": "Describe su casa o su departamento", "keywords": ["mi casa", "mi departamento", "un departamento", "una casa", "es grande", "es pequen", "es bonit", "es comod", "es amplio", "es nuev", "es viej", "es chic"] },
+                    { "id": "p2", "label": "Dice qué habitaciones tiene", "keywords": ["recamara", "cuarto", "habitacion", "sala", "cocina", "bano", "comedor", "jardin", "dormitorio", "patio", "terraza"] },
+                    { "id": "p3", "label": "Dice con quién vive", "keywords": ["vivo con", "vivo solo", "vivo sola", "vivimos", "mis padres", "mi familia", "con mi", "comparto", "mi esposo", "mi esposa", "mi novi", "mis hermanos"] },
+                    { "id": "p4", "label": "Habla de su barrio o de lo que hay cerca", "keywords": ["mi barrio", "el barrio", "colonia", "cerca", "parque", "tienda", "metro", "me gusta que", "supermercado", "mercado", "farmacia", "restaurante"] }
+                  ],
+                  "model": "Mi departamento es pequeño, pero muy bonito. Tiene dos recámaras, una cocina, una sala y un baño. Vivo con mi esposo y con mi gato. Mi colonia es tranquila y hay un parque y un supermercado cerca. Me gusta mucho porque tengo el metro a cinco minutos."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Un día normal",
+              "prompt": "Hable de un día normal de su vida, de la mañana a la noche.",
+              "bullets": ["a qué hora se levanta", "qué desayuna", "dónde trabaja o estudia", "qué hace por la tarde", "qué hace por la noche"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Ahora hable de un día normal. Cuando quiera, puede empezar.",
+                  "minWords": 35,
+                  "points": [
+                    { "id": "p1", "label": "Dice a qué hora se levanta", "keywords": ["levanto", "despierto", "me paro", "temprano", "madrug", "las cinco", "las seis", "las siete", "las ocho", "las nueve", "las diez"] },
+                    { "id": "p2", "label": "Dice qué desayuna o qué come", "keywords": ["desayuno", "almuerzo", "comida", "cafe", "fruta", "huevo", "como a", "como en", "como con", "leche", "cereal", "pan dulce"] },
+                    { "id": "p3", "label": "Dice dónde trabaja o estudia", "keywords": ["trabajo", "estudio", "oficina", "escuela", "universidad", "empresa", "clases", "companeros"] },
+                    { "id": "p4", "label": "Cuenta qué hace por la tarde o por la noche", "keywords": ["la tarde", "la noche", "ceno", "cena", "regreso", "llego a", "me acuesto", "duermo", "television", "veo series", "hago ejercicio", "descans"] }
+                  ],
+                  "model": "Me levanto a las siete y desayuno café con pan. Trabajo en una oficina del centro y como a las dos con mis compañeros. En la tarde regreso a mi casa y hago ejercicio un rato. En la noche ceno, veo una serie y me acuesto a las once."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Conteste a las preguntas de la persona que le examina sobre el tema que ha elegido. Al final, haga usted dos preguntas a la persona que le examina.",
+          "talkMinutes": [3, 4],
+          "follows": 2,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Mi casa y mi barrio",
+              "prompt": "Ahora conteste a las preguntas sobre su casa y su barrio. Al final, usted hace dos preguntas.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "¿Qué muebles hay en su sala?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Nombra muebles de la sala", "keywords": ["sillon", "sofa", "mesa", "silla", "television", "televisor", "librero", "lampara", "la tele", "una tele", "pantalla", "alfombra"] }
+                  ],
+                  "model": "En mi sala hay un sillón, una mesa y una televisión."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Cómo va usted de su casa al trabajo o a la escuela?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Dice cómo se desplaza", "keywords": ["metro", "auto", "camion", "bici", "camin", "carro", "taxi", "a pie", "tren", "pesero", "uber", "voy en"] }
+                  ],
+                  "model": "Voy al trabajo en el metro y a veces camino un poco."
+                },
+                {
+                  "id": "t3",
+                  "ask": "¿Qué le gusta hacer en su casa?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué le gusta hacer en casa", "keywords": ["cocin", "leer", "dormir", "descans", "musica", "ver series", "ver la tele", "ver pelicula", "veo series", "veo la tele", "veo pelicula", "juego"] }
+                  ],
+                  "model": "Me gusta cocinar, leer un libro y ver series en la noche."
+                },
+                {
+                  "id": "t4",
+                  "ask": "¿Le gusta su barrio? ¿Por qué?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Dice si le gusta su barrio y por qué", "keywords": ["me gusta", "porque es", "porque hay", "porque tiene", "porque esta", "tranquil", "bonit", "segur", "ruido", "limpi", "comod"] }
+                  ],
+                  "model": "Sí, me gusta porque es tranquilo y tiene muchos parques."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Ahora usted me hace dos preguntas a mí, por favor.",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Hace preguntas a la persona que le examina", "keywords": ["?", "donde", "cuanto", "cuando", "cual", "quien", "como se", "como esta", "que hace", "le gusta", "tiene usted"] }
+                  ],
+                  "model": "¿Dónde vive usted? ¿Y cuántas personas viven en su casa?"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Un día normal",
+              "prompt": "Ahora conteste a las preguntas sobre su día. Al final, usted hace dos preguntas.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "¿A qué hora se levanta usted los domingos?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Dice a qué hora se levanta el domingo", "keywords": ["levanto", "despierto", "me paro", "mas tarde", "temprano", "las seis", "las siete", "las ocho", "las nueve", "las diez", "las once", "mediodia"] }
+                  ],
+                  "model": "Los domingos me levanto más tarde, a las nueve."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Qué come usted normalmente al mediodía?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué come al mediodía", "keywords": ["como", "almuerzo", "comida", "arroz", "pollo", "carne", "tacos", "pasta", "ensalada", "sopa", "frijoles", "pescado"] }
+                  ],
+                  "model": "Normalmente como arroz, frijoles y un poco de pollo."
+                },
+                {
+                  "id": "t3",
+                  "ask": "¿Cómo va usted al trabajo o a la escuela?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Dice cómo se desplaza", "keywords": ["metro", "auto", "camion", "bici", "camin", "carro", "taxi", "a pie", "tren", "pesero", "uber", "voy en"] }
+                  ],
+                  "model": "Voy al trabajo en el metro y a veces camino un poco."
+                },
+                {
+                  "id": "t4",
+                  "ask": "¿Qué hace usted los fines de semana?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué hace el fin de semana", "keywords": ["salgo", "salimos", "descans", "amigos", "familia", "pase", "juego", "hago", "voy a", "limpio", "cocino", "pelicula"] }
+                  ],
+                  "model": "Los fines de semana salgo con mis amigos y a veces voy al cine."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Ahora usted me hace dos preguntas a mí, por favor.",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Hace preguntas a la persona que le examina", "keywords": ["?", "donde", "cuanto", "cuando", "cual", "quien", "como se", "como esta", "que hace", "le gusta", "tiene usted"] }
+                  ],
+                  "model": "¿Dónde trabaja usted? ¿Y a qué hora regresa a su casa?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
