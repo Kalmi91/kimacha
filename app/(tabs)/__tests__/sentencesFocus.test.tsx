@@ -74,6 +74,7 @@ const SENT: Record<string, { tiles: string[]; typed: string }> = {
 
 type R = ReturnType<typeof render>;
 const progress = (r: R) => String(r.getByTestId('sentences-progress-text').props.children);
+const stepText = (r: R) => String(r.getByTestId('sentences-step').props.children);
 const current = (r: R) => {
   const shown = Object.keys(SENT).filter((en) => r.queryByText(en) !== null);
   expect(shown).toHaveLength(1);
@@ -95,6 +96,12 @@ const typeCurrent = async (r: R) => {
   await flush();
   return en;
 };
+// One sentence of the round: its build, then its typing.
+const playSentence = async (r: R) => {
+  const en = await buildCurrent(r);
+  expect(await typeCurrent(r)).toBe(en);
+  return en;
+};
 // The tab loses focus and gets it back: the focus effect runs again.
 const refocus = async () => {
   await act(async () => {
@@ -109,7 +116,7 @@ beforeEach(async () => {
   await clearSentenceRound(getDb());
   __resetBetaForTest();
   await getDb().setBetaFlag('xpV2', false);
-  // these tests read the prompt on every build; the listening builds (beta sentenceListening, on by default) hide it
+  // these tests read the prompt on every step; the listen-and-type step (beta sentenceListening, on by default) hides it
   await getDb().setBetaFlag('sentenceListening', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
@@ -117,29 +124,30 @@ beforeEach(async () => {
 });
 
 describe('Sentences tab keeps its round across blur and focus', () => {
-  it('2 of 5 steps done: after blur and focus the same sentence, the same order and the same counter', async () => {
+  it('3 of 10 steps done: after blur and focus the same sentence, the same step and the same counter', async () => {
     const r = render(<SentencesScreen />);
     await flush();
-    expect(await buildCurrent(r)).toBe('The book and the table.');
-    expect(await buildCurrent(r)).toBe('The table and the book.');
-    expect(progress(r)).toBe('2 / 5');
-    const before = current(r);
-    expect(before).toBe('The house and the cat.');
+    const first = await playSentence(r);
+    const second = await buildCurrent(r);
+    expect(second).not.toBe(first);
+    expect(progress(r)).toBe('3 / 10');
+    const label = stepText(r);
+    expect(label).toBe('Sentence 2 of 5 · Type the whole sentence');
 
     await refocus();
 
-    expect(progress(r)).toBe('2 / 5');
-    expect(current(r)).toBe(before);
-    expect(await buildCurrent(r)).toBe('The house and the cat.');
-    expect(await buildCurrent(r)).toBe('A bread and a house.');
-    expect(progress(r)).toBe('4 / 5');
+    expect(progress(r)).toBe('3 / 10');
+    expect(stepText(r)).toBe(label);
+    expect(current(r)).toBe(second);
+    expect(await typeCurrent(r)).toBe(second);
+    expect(await playSentence(r)).not.toBe(second);
+    expect(progress(r)).toBe('6 / 10');
   });
 
   it('a finished round stays on its done screen after blur and focus', async () => {
     const r = render(<SentencesScreen />);
     await flush();
-    for (let i = 0; i < 4; i++) await buildCurrent(r);
-    await typeCurrent(r);
+    for (let i = 0; i < 5; i++) await playSentence(r);
     expect(r.getByTestId('sentences-round-done')).toBeTruthy();
 
     await refocus();

@@ -49,7 +49,7 @@ export default {
       practiceScramble: 'Letter scramble game',
       practiceMatch: 'Quick match game',
       practiceOpposites: 'Opposites game',
-      sentenceListening: 'Sentences: listening builds',
+      sentenceListening: 'Sentences: listen and type step',
       sentenceMistakes: 'Sentences: from my mistakes',
       sentenceHint: 'Sentences: tap-a-word hints',
     },

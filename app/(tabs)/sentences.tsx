@@ -25,25 +25,25 @@ import { resolvedTensesFromLessons } from '@/lib/knownSentence';
 import { nearMissDistractors } from '@/lib/distractors';
 import { dropOrphanCards } from '@/lib/pcicSession';
 import { tileWords } from '@/lib/sentenceCards';
-import { pickRound } from '@/lib/sentencePick';
+import { pickSentences } from '@/lib/sentencePick';
 import {
   addHinted,
-  answerBuild,
-  answerType,
-  buildNumber,
+  answerStep,
   clearSentenceRound,
   currentEntry,
+  currentStep,
   isRoundFor,
   loadSentenceRound,
   roundProgress,
   roundSentences,
   saveSentenceRound,
+  sentenceNumber,
   startRound,
   type SentenceRound,
 } from '@/lib/sentenceRound';
 import { hintPieces, type HintPiece } from '@/lib/sentenceHint';
 import { mistakeTrapWords, pickMistakeEntry, recordMistakeBuild, withMistakeStep } from '@/lib/sentenceMistakes';
-import { buildStepKind, type BuildStepKind } from '@/lib/sentenceSteps';
+import type { RoundStep } from '@/lib/sentenceSteps';
 import { SENTENCE_ROUND_SIZE, buildSentenceQueue, recordTypedWords, sentenceKey, type SentenceEntry } from '@/lib/sentenceTab';
 import { gradeTypedWords } from '@/lib/sentenceTyping';
 import { useTheme } from '@/lib/ThemeContext';
@@ -51,44 +51,53 @@ import { localDateString } from '@/lib/usageStats';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 import { useSingleFlight } from '@/lib/useSingleFlight';
 
-// Beta tab (Settings -> Beta -> Sentences tab), spec HAROM-JATEK.md 3. A round = 4 sentences built from word tiles
-// (near-miss decoys; a build credits nothing), then ONE other, shorter sentence typed (lib/sentencePick.ts picks both,
-// lib/sentenceRound.ts: the round's state and its save). The typing credits word by word (lib/sentenceTyping.ts,
-// lib/sentenceTab.ts recordTypedWords): a learned word typed right gets one half even if the rest is wrong, a due word
-// typed wrong counts as a wrong typed answer. A wrong build sends the sentence to the end of the round. The round is
-// saved on every step, so leaving the tab or the app and coming back continues it (same day). The `focus` route
-// parameter (card ids, comma separated) puts the sentences with those words first. The cards are the Words tab's
-// former sentence cards.
+// Beta tab (Settings -> Beta -> Sentences tab), spec HAROM-JATEK.md 3, FB524. A round = 5 sentences (lib/sentencePick.ts picks
+// them); each runs through its steps in order (lib/sentenceSteps.ts): the parts of a split sentence built from tiles (the
+// English part into the Spanish part), the Spanish sentence heard and typed, the whole sentence built, the whole sentence typed
+// from the English. Only the last, typing step credits (lib/sentenceTyping.ts, lib/sentenceTab.ts recordTypedWords): a learned
+// word typed right gets one half even if the rest is wrong, a due word typed wrong counts as a wrong typed answer. A wrong step
+// goes to the end of the round (the typing step is done either way). lib/sentenceRound.ts holds the round's state and its
+// save: it is saved on every step, so leaving the tab or the app and coming back continues it (same day). The `focus` route
+// parameter (card ids, comma separated) puts the sentences with those words first. The cards are the Words tab's former
+// sentence cards.
 
-// The tile step; the decoys are picked once when the step mounts (a retry remounts it: key).
-// `kind` (lib/sentenceSteps.ts): a listening step hides the prompt behind a 🔊 button until the build is right; a mistake
-// step is a sentence from the learner's own mistakes (its decoys come from the faulty sentence). `hints`: the tappable words of
-// the English prompt (lib/sentenceHint.ts); a looked-at word reports its cards through `onHint`.
-function BuildStep({ entry, target, kind, hints, onHint, onResult }: { entry: SentenceEntry; target: PcicTarget; kind: BuildStepKind; hints: HintPiece[] | null; onHint: (ids: string[]) => void; onResult: (correct: boolean) => void }) {
-  const [step] = useState(() => {
-    const targetWords = tileWords(entry.target);
+// The tile step: a part of a sentence or the whole one. The decoys are picked once when the step mounts (a retry remounts it:
+// key). A mistake step is a sentence from the learner's own mistakes (its decoys come from the faulty sentence). `hints`: the
+// tappable words of the English prompt (lib/sentenceHint.ts); a looked-at word reports its cards through `onHint`.
+function BuildStep({ entry, target, step, hints, onHint, onResult }: { entry: SentenceEntry; target: PcicTarget; step: RoundStep; hints: HintPiece[] | null; onHint: (ids: string[]) => void; onResult: (correct: boolean) => void }) {
+  const [tiles] = useState(() => {
+    // A part step builds one part (its English is the prompt); every other step builds the whole sentence.
+    const chunk = step.kind === 'chunk' && step.chunk !== undefined ? entry.chunks?.[step.chunk] : undefined;
+    const targetWords = tileWords(chunk ? chunk.target : entry.target);
     const level = levelOfItem(entry.itemId);
     const vocab = (level ? pcicItemsForLevel(level) : PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l))).map((i) =>
       (target === 'es' ? i.es : i.en).split(' / ')[0],
     );
     // A mistake step's decoys are the words of the faulty sentence the learner wrote (lib/sentenceMistakes.ts).
-    const trapWords = kind === 'mistake' && entry.mistake ? mistakeTrapWords(targetWords, entry.mistake.wrong, vocab, target) : nearMissDistractors(targetWords, vocab, target);
-    return { targetWords, trapWords };
+    const trapWords = step.kind === 'mistake' && entry.mistake ? mistakeTrapWords(targetWords, entry.mistake.wrong, vocab, target) : nearMissDistractors(targetWords, vocab, target);
+    return { source: chunk ? chunk.source : entry.source, targetWords, trapWords };
   });
   return (
     <EasySentenceCard
-      sourceSentence={entry.source}
-      targetWords={step.targetWords}
-      trapWords={step.trapWords}
+      sourceSentence={tiles.source}
+      targetWords={tiles.targetWords}
+      trapWords={tiles.trapWords}
       speechLocale={speechLang(target)}
       sourceSpeechLocale={speechLang(target === 'es' ? 'en' : 'es')}
       onResult={onResult}
       gradeButtons
-      listening={kind === 'listening'}
       sourceHints={hints}
       onSourceHint={onHint}
     />
   );
+}
+
+// The label of a step ("Build part 1 of 2"): the screen adds the sentence's place in front of it.
+function stepLabel(step: RoundStep, entry: SentenceEntry, s: ReturnType<typeof t>): string {
+  if (step.kind === 'chunk') return s.sentenceTab.stepChunk((step.chunk ?? 0) + 1, entry.chunks?.length ?? 1);
+  if (step.kind === 'listen') return s.sentenceTab.stepListenType;
+  if (step.kind === 'type') return s.sentenceTab.stepTypeWhole;
+  return s.sentenceTab.stepBuildWhole;
 }
 
 export default function SentencesScreen() {
@@ -97,8 +106,6 @@ export default function SentencesScreen() {
   const s = t();
   // beta: xpV2, each word's half of a typed sentence earns XP; off = no XP, the old behavior.
   const xpV2 = useBeta('xpV2');
-  // beta: sentenceListening, every second build is heard instead of read (lib/sentenceSteps.ts); off = all builds as before.
-  const listeningBeta = useBeta('sentenceListening');
   // beta: sentenceMistakes, one build is a sentence from "My mistakes", credited to that deck (lib/sentenceMistakes.ts).
   const mistakesBeta = useBeta('sentenceMistakes');
   // beta: sentenceHint, the English prompt's words can be tapped for the Spanish form; a looked-at word earns no credit this round.
@@ -111,7 +118,7 @@ export default function SentencesScreen() {
   const [loading, setLoading] = useState(true);
   const [target, setTarget] = useState<PcicTarget>('es');
   const { strictAccents, refresh } = useLearner();
-  // The round on screen (lib/sentenceRound.ts): its sentences, what is left to build, what was built right, the typing.
+  // The round on screen (lib/sentenceRound.ts): its sentences, its steps, what is left to do and what is done.
   // null = no sentence to offer.
   const [round, setRound] = useState<SentenceRound | null>(null);
   // Bumps on every finished step, so a sentence that comes back gets fresh tiles and an empty input.
@@ -146,7 +153,10 @@ export default function SentencesScreen() {
     let next: SentenceRound | null;
     if (isRoundFor(saved, today, dir, focusKey)) {
       next = saved;
-      for (const e of saved.entries) if (saved.rated.includes(e.itemId)) doneKeys.current.add(sentenceKey(e));
+      // A sentence with every step done is done, even if the round goes on.
+      for (const e of saved.entries) {
+        if (saved.steps.filter((st) => st.itemId === e.itemId).every((st) => saved.done.includes(st.id))) doneKeys.current.add(sentenceKey(e));
+      }
     } else {
       const cards = dropOrphanCards(await db.getPcicCards(), (id) => findPcicItem(id) !== undefined);
       const grammarRows = dir === 'es' ? await db.getGameProgress(GRAMMAR_PROGRESS_KEY) : [];
@@ -160,15 +170,16 @@ export default function SentencesScreen() {
         done: doneKeys.current,
         focus: new Set(focusKey.split(',').filter(Boolean)),
       });
-      const pick = pickRound(queue, dir, SENTENCE_ROUND_SIZE);
-      // beta sentenceMistakes: one build is a sentence from the learner's mistake list (Spanish direction only; none = today's round).
-      let builds = pick.builds;
+      const picked = pickSentences(queue, dir, SENTENCE_ROUND_SIZE);
+      // beta sentenceMistakes: one sentence is from the learner's mistake list (Spanish direction only; none = the round as picked).
+      let entries = picked;
       await loadBeta();
-      if (pick.typed && dir === 'es' && getBeta('sentenceMistakes')) {
-        const skip = new Set([...doneKeys.current, ...[...pick.builds, pick.typed].map((e) => sentenceKey(e))]);
-        builds = withMistakeStep(pick.builds, await pickMistakeEntry(today, skip));
+      if (picked.length > 0 && dir === 'es' && getBeta('sentenceMistakes')) {
+        const skip = new Set([...doneKeys.current, ...picked.map((e) => sentenceKey(e))]);
+        entries = withMistakeStep(picked, await pickMistakeEntry(today, skip));
       }
-      next = pick.typed ? startRound(builds, pick.typed, today, dir, focusKey) : null;
+      // beta sentenceListening: each sentence gets its listen-and-type step.
+      next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { listening: getBeta('sentenceListening') }) : null;
       // Saved at once (when there is a round): leaving before the first answer brings back the same sentences.
       if (next) await saveSentenceRound(db, next);
       else await clearSentenceRound(db);
@@ -186,12 +197,11 @@ export default function SentencesScreen() {
     roundRef.current = round;
   }, [round]);
 
+  const step = round ? currentStep(round) : undefined;
   const current = round ? currentEntry(round) : undefined;
   const { done, total } = round ? roundProgress(round) : { done: 0, total: 0 };
-  // The tappable words of the prompt on screen (Spanish direction only; on a listening step the card shows them after a right build).
-  const hints = hintBeta && target === 'es' && current ? hintPieces(current) : null;
-  // The kind of the build on screen (the typing step has none).
-  const buildKind: BuildStepKind = round && current && round.phase === 'build' ? buildStepKind(round, current.itemId, { listening: listeningBeta, mistakes: mistakesBeta }) : 'normal';
+  // The tappable words of the prompt on screen (Spanish direction only; a part of a sentence and the listening step have none).
+  const hints = hintBeta && target === 'es' && current && step && step.kind !== 'chunk' && step.kind !== 'listen' ? hintPieces(current) : null;
 
   // The new state is saved BEFORE the words are credited: a kill in between loses a credit, it never pays one twice.
   const keepRound = async (next: SentenceRound) => {
@@ -210,37 +220,32 @@ export default function SentencesScreen() {
     void saveSentenceRound(getDb(), next);
   };
 
-  const onBuildResult = async (correct: boolean) => {
+  // The step on screen was answered. Only the typing step credits words; a mistake step is credited to the mistake deck.
+  const onStepResult = async (correct: boolean, typed = '') => {
     if (!round) return;
+    const stepNow = currentStep(round);
+    const entry = currentEntry(round);
+    if (!stepNow || !entry) return;
     await runOnce(async () => {
-      // A corpus build credits nothing: right = the sentence is done, wrong = it goes to the end of the round.
-      const next = answerBuild(round, correct);
+      const next = answerStep(round, correct);
       await keepRound(next);
-      // A mistake build is credited to the mistake deck, as its Knew it / Didn't know: right = knew it, wrong = didn't know.
-      if (buildKind === 'mistake' && current) await recordMistakeBuild(current.itemId, correct, localDateString());
+      if (stepNow.kind === 'type') {
+        // Credits word by word. "Knew it" on a sentence the check marked wrong makes every word right.
+        let verdicts = gradeTypedWords(typed, entry, target, strictAccents);
+        if (correct && verdicts.some((v) => !v.right)) verdicts = verdicts.map((v) => ({ ...v, right: true }));
+        // A word that was looked at with a hint this round earns nothing (neither a half nor a step back).
+        const hinted = new Set((roundRef.current ?? round).hinted ?? []);
+        if (hinted.size > 0) verdicts = verdicts.filter((v) => !hinted.has(v.id));
+        await recordTypedWords(verdicts, xpV2);
+      } else if (stepNow.kind === 'mistake' && mistakesBeta) {
+        // Credited to the mistake deck, as its Knew it / Didn't know: right = knew it, wrong = didn't know.
+        await recordMistakeBuild(entry.itemId, correct, localDateString());
+      }
       await countLearningToday();
+      if (next.phase === 'done') for (const e of roundSentences(round)) doneKeys.current.add(sentenceKey(e));
       setRound(next);
       setSeq((n) => n + 1);
-    });
-  };
-
-  const onTypeResult = async (correct: boolean, typed: string) => {
-    if (!round) return;
-    await runOnce(async () => {
-      // The typing ends the round and credits word by word. "Knew it" on a sentence the check marked wrong makes every word right.
-      let verdicts = gradeTypedWords(typed, round.typed, target, strictAccents);
-      if (correct && verdicts.some((v) => !v.right)) verdicts = verdicts.map((v) => ({ ...v, right: true }));
-      // A word that was looked at with a hint this round earns nothing (neither a half nor a step back).
-      const hinted = new Set((roundRef.current ?? round).hinted ?? []);
-      if (hinted.size > 0) verdicts = verdicts.filter((v) => !hinted.has(v.id));
-      const next = answerType(round);
-      await keepRound(next);
-      await recordTypedWords(verdicts, xpV2);
-      await countLearningToday();
-      for (const e of roundSentences(round)) doneKeys.current.add(sentenceKey(e));
-      setRound(next);
-      setSeq((n) => n + 1);
-      setCreditSeq((n) => n + 1);
+      if (stepNow.kind === 'type') setCreditSeq((n) => n + 1);
     });
   };
 
@@ -265,12 +270,12 @@ export default function SentencesScreen() {
         )}
       </View>
       {total > 0 && (
-        // One block per step, so the bar and the "4 / 5" next to it count the same steps.
+        // One block per step while the round is short, so the bar and the "4 / 5" next to it count the same steps.
         <ProgressBar
           testID="sentences-progress"
           pct={(done / total) * 100}
-          filled={done}
-          segments={total}
+          filled={total <= 12 ? done : undefined}
+          segments={total <= 12 ? total : undefined}
           brutalStyle={styles.brutalProgress}
           trackStyle={styles.progressTrack}
           trackColor={colors.card}
@@ -309,8 +314,8 @@ export default function SentencesScreen() {
     );
   }
 
-  // The round is over: every sentence in it was built right and the picked one typed right.
-  if (!round || !current) {
+  // The round is over: every step of it is done.
+  if (!round || !current || !step) {
     return (
       <View testID="sentences-screen" style={[styles.container, { backgroundColor: colors.background }]}>
         <SkinBackdrop />
@@ -341,32 +346,23 @@ export default function SentencesScreen() {
       <SkinBackdrop />
       {header}
       <Text testID="sentences-step" style={[styles.stepText, { color: colors.tabIconDefault }]}>
-        {round.phase === 'build' ? (buildKind === 'listening' ? s.sentenceTab.stepListen : s.sentenceTab.stepBuild)(buildNumber(round), round.entries.length) : s.sentenceTab.stepType}
+        {`${s.sentenceTab.sentenceOf(sentenceNumber(round), round.entries.length)} · ${stepLabel(step, current, s)}`}
       </Text>
-      {round.phase === 'build' && buildKind === 'mistake' && (
+      {step.kind === 'mistake' && (
         <Text testID="sentences-mistake-label" style={[styles.mistakeLabel, { color: colors.text }]}>
           {s.sentenceTab.fromMistakes}
         </Text>
       )}
-      {round.phase === 'build' ? (
-        <ScrollView
-          style={styles.cardScroll}
-          contentContainerStyle={{ paddingBottom: 24 }}
-          keyboardShouldPersistTaps="handled"
-          keyboardDismissMode="on-drag"
-        >
-          <BuildStep key={`build-${current.itemId}-${seq}-${buildKind}`} entry={current} target={target} kind={buildKind} hints={hints} onHint={onHint} onResult={(correct) => void onBuildResult(correct)} />
-        </ScrollView>
-      ) : (
-        // The typing card has its own scroller + the docked Check bar above the keyboard (no outer ScrollView).
+      {step.kind === 'listen' || step.kind === 'type' ? (
+        // The typing cards have their own scroller + the docked Check bar above the keyboard (no outer ScrollView).
         <TypedSentenceCard
-          key={`type-${current.itemId}-${seq}`}
+          key={`${step.id}-${seq}`}
           sourceSentence={current.source}
           targetSentence={current.target}
           strictAccents={strictAccents}
           speechLocale={speechLang(target)}
           sourceSpeechLocale={speechLang(target === 'es' ? 'en' : 'es')}
-          onResult={(correct, typed) => void onTypeResult(correct, typed)}
+          onResult={(correct, typed) => void onStepResult(correct, typed)}
           dockLift={dockLift}
           keyboardOpen={kbHeight > 0}
           dockH={dockH}
@@ -374,7 +370,17 @@ export default function SentencesScreen() {
           gradeButtons
           sourceHints={hints}
           onSourceHint={onHint}
+          listening={step.kind === 'listen'}
         />
+      ) : (
+        <ScrollView
+          style={styles.cardScroll}
+          contentContainerStyle={{ paddingBottom: 24 }}
+          keyboardShouldPersistTaps="handled"
+          keyboardDismissMode="on-drag"
+        >
+          <BuildStep key={`${step.id}-${seq}`} entry={current} target={target} step={step} hints={hints} onHint={onHint} onResult={(correct) => void onStepResult(correct)} />
+        </ScrollView>
       )}
       {feedback}
     </KeyboardAvoidingView>

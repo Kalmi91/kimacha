@@ -60,11 +60,11 @@ describe('mistakeEntry + withMistakeStep', () => {
     });
   });
 
-  it('four builds: the mistake sentence takes the 3rd place, the others stay in order', () => {
-    expect(withMistakeStep([1, 2, 3, 4].map(entry), m).map((e) => e.itemId)).toEqual(['a1-w1', 'a1-w2', S1, 'a1-w4']);
+  it('five sentences: the mistake sentence is inserted at the 3rd place, every corpus sentence stays in order', () => {
+    expect(withMistakeStep([1, 2, 3, 4, 5].map(entry), m).map((e) => e.itemId)).toEqual(['a1-w1', 'a1-w2', S1, 'a1-w3', 'a1-w4', 'a1-w5']);
   });
 
-  it('a shorter round keeps every build and gets the mistake sentence at the end; none = unchanged', () => {
+  it('a shorter round keeps every sentence and gets the mistake sentence at the end; none = unchanged', () => {
     expect(withMistakeStep([1, 2].map(entry), m).map((e) => e.itemId)).toEqual(['a1-w1', 'a1-w2', S1]);
     expect(withMistakeStep([], m).map((e) => e.itemId)).toEqual([S1]);
     expect(withMistakeStep([1, 2, 3].map(entry), null).map((e) => e.itemId)).toEqual(['a1-w1', 'a1-w2', 'a1-w3']);

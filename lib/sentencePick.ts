@@ -1,5 +1,5 @@
-// Which sentences make up one round of the Sentences tab (Kálmán 2026-10-12): the builds (tiles, no credit) and the ONE
-// typed sentence, a different and shorter one (the only step that credits words, lib/sentenceTyping.ts).
+// Which sentences make up one round of the Sentences tab (Kálmán 2026-10-12, FB524): SENTENCE_ROUND_SIZE sentences, each
+// played through the whole step list (lib/sentenceSteps.ts; only its typing step credits words, lib/sentenceTyping.ts).
 // The queue (lib/sentenceTab.ts buildSentenceQueue) is already in priority order: most due words first, then the least
 // fresh review. Variety (FB504) is applied on top of that order, and gives way when the pool is too small for it.
 
@@ -24,13 +24,6 @@ const FUNCTION_WORDS: Record<PcicTarget, ReadonlySet<string>> = {
     'these', 'those', 'there', 'here', 'can', 'will', 'have', 'has', 'had',
   ]),
 };
-
-export interface RoundPick {
-  /** The sentences to build, in play order. */
-  builds: SentenceEntry[];
-  /** The sentence to type; null only when there is no sentence at all. */
-  typed: SentenceEntry | null;
-}
 
 const startOf = (e: SentenceEntry): string => (tileWords(e.target)[0] ?? '').toLowerCase();
 
@@ -59,26 +52,13 @@ function fill(chosen: SentenceEntry[], candidates: readonly SentenceEntry[], cou
 }
 
 /**
- * One round from a priority-ordered queue. The typed sentence is picked FIRST: the highest-priority sentence (most due
- * words) that still leaves `size` strictly longer ones to build, so it is shorter than every build; if there is no
- * such sentence, the shortest one (most due words among equals). Then `size` builds follow in priority order among
- * the longer sentences, variety counted with the typed sentence included. With no more than `size` sentences in all,
- * the shortest one is typed and the rest are built.
+ * The sentences of one round from a priority-ordered queue: the highest-priority ones, variety applied on top (at most
+ * half of them share their first word, a content word in at most 2); a pool too small for the rules gives way to them.
+ * The result keeps the queue's order.
  */
-export function pickRound(queue: readonly SentenceEntry[], target: PcicTarget, size: number): RoundPick {
-  if (queue.length === 0) return { builds: [], typed: null };
-  const byWords = (a: SentenceEntry, b: SentenceEntry) => a.wordCount - b.wordCount || b.dueIds.length - a.dueIds.length;
-  if (queue.length <= size) {
-    const typed = [...queue].sort(byWords)[0];
-    return { builds: queue.filter((e) => e !== typed), typed };
-  }
-  const longerThan = (e: SentenceEntry) => queue.filter((o) => o.wordCount > e.wordCount);
-  const typed = queue.find((e) => longerThan(e).length >= size) ?? [...queue].sort(byWords)[0];
-  const longer = longerThan(typed);
-  const candidates = longer.length >= size ? longer : queue.filter((e) => e !== typed);
-  // At most half of the round's sentences (the builds and the typed one) may share their first word.
-  const maxSame = Math.max(1, Math.floor((size + 1) / 2));
-  const chosen = [typed];
-  fill(chosen, candidates, size + 1, target, maxSame);
-  return { builds: queue.filter((e) => e !== typed && chosen.includes(e)), typed };
+export function pickSentences(queue: readonly SentenceEntry[], target: PcicTarget, count: number): SentenceEntry[] {
+  const maxSame = Math.max(1, Math.floor(count / 2));
+  const chosen: SentenceEntry[] = [];
+  fill(chosen, queue, count, target, maxSame);
+  return queue.filter((e) => chosen.includes(e));
 }
