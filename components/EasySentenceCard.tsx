@@ -10,7 +10,8 @@ import { ActionButton } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
-import { sentenceBuildMatch } from '@/lib/answerMatch';
+import { sentenceBuildMatch, sentenceBuildMisplaced } from '@/lib/answerMatch';
+import { useDiffStyles } from '@/lib/useDiffStyles';
 import HintedSentence from '@/components/HintedSentence';
 import type { HintPiece } from '@/lib/sentenceHint';
 
@@ -39,6 +40,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const diff = useDiffStyles();
   const s = t();
 
   // Word bank shuffled once. Positions never change — clicking a word leaves a
@@ -92,6 +94,13 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
 
   const canCheck = placed.length > 0;
 
+  // Where the build went wrong: while the correct sentence is shown, the tiles outside the longest
+  // common run with the target (trap word / wrong place) are red; colour + strikethrough.
+  const misplaced = result && (result === 'wrong' || missed) ? sentenceBuildMisplaced(placed.map((i) => bank[i]), targetWords) : null;
+  const bad = (pos: number) => !!misplaced?.[pos];
+  const badBox = { backgroundColor: diff.wrong.backgroundColor };
+  const badText = { color: diff.wrong.color, textDecorationLine: 'line-through' as const };
+
   // The prompt sentence in one place (the listening step shows it after a right build).
   const sourceLine = <HintedSentence text={sourceSentence} pieces={sourceHints} onHint={onSourceHint} style={[styles.sourceText, { color: colors.text }]} />;
   const replay = () => {
@@ -125,12 +134,12 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
           <View style={styles.wordRow}>
             {placed.map((bankIdx, pos) => (
               g.brutal ? (
-                <BrutalBox key={`placed-${bankIdx}-${pos}`} fill="b" offset={2} boxStyle={styles.brutalChip} onPress={() => removeWord(pos)}>
-                  <Text style={[styles.chipText, { color: g.onB }]}>{bank[bankIdx]}</Text>
+                <BrutalBox key={`placed-${bankIdx}-${pos}`} testID={bad(pos) ? 'sentence-tile-wrong' : undefined} fill="b" offset={2} boxStyle={[styles.brutalChip, bad(pos) && badBox]} onPress={() => removeWord(pos)}>
+                  <Text style={[styles.chipText, { color: g.onB }, bad(pos) && badText]}>{bank[bankIdx]}</Text>
                 </BrutalBox>
               ) : (
-              <Pressable key={`placed-${bankIdx}-${pos}`} style={[styles.wordChip, styles.placedChip]} onPress={() => removeWord(pos)}>
-                <Text style={styles.chipText}>{bank[bankIdx]}</Text>
+              <Pressable key={`placed-${bankIdx}-${pos}`} testID={bad(pos) ? 'sentence-tile-wrong' : undefined} style={[styles.wordChip, styles.placedChip, bad(pos) && badBox]} onPress={() => removeWord(pos)}>
+                <Text style={[styles.chipText, bad(pos) && badText]}>{bank[bankIdx]}</Text>
               </Pressable>
               )
             ))}

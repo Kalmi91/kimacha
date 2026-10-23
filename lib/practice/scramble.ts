@@ -119,6 +119,26 @@ export function scrambleTiles(letters: string[], seed: number): string[] {
   return [...letters];
 }
 
+/** How many cells of `cell` width fit one row of `width` with `gap` between them (at least 1). */
+export function cellsPerRow(width: number, cell: number, gap: number): number {
+  return Math.max(1, Math.floor((width + gap) / (cell + gap)));
+}
+
+/** Row lengths for `count` cells, at most `perRow` in a row: as few rows as possible, filled evenly (longer rows first), so no lone cell is left in the last row. */
+export function balancedRows(count: number, perRow: number): number[] {
+  if (count <= 0) return [];
+  const rows = Math.ceil(count / Math.max(1, perRow));
+  const base = Math.floor(count / rows);
+  const extra = count % rows;
+  return Array.from({ length: rows }, (_, r) => base + (r < extra ? 1 : 0));
+}
+
+/** `items` cut, in order, into the rows of balancedRows(items.length, perRow). */
+export function splitRows<T>(items: T[], perRow: number): T[][] {
+  let start = 0;
+  return balancedRows(items.length, perRow).map((n) => items.slice(start, (start += n)));
+}
+
 export function currentWordId(state: ScrambleState): string | undefined {
   return state.queue[0];
 }

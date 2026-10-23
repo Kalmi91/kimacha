@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, TextInput, Keyboard } from 'react-native';
+import { ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
@@ -12,7 +12,9 @@ import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
 import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
-import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
+import { gradeSentenceAnswer, suggestedGrade, withoutLeadingSubjectPronoun } from '@/lib/pcicMatch';
+import { charDiff } from '@/lib/charDiff';
+import { useDiffStyles } from '@/lib/useDiffStyles';
 import { stripSentencePunct } from '@/lib/sentenceCards';
 import { answerInputProps } from '@/lib/inputProps';
 import HintedSentence from '@/components/HintedSentence';
@@ -45,6 +47,37 @@ interface Props {
   onSourceHint?: (ids: string[]) => void;
 }
 
+type Seg = { text: string; kind: 'ok' | 'wrong' | 'missing' };
+
+// consecutive characters of the same kind become one segment (fewer nodes, one testID per mark).
+function segments(chars: ReturnType<typeof charDiff>): Seg[] {
+  const out: Seg[] = [];
+  for (const d of chars) {
+    const kind = d.missing ? 'missing' : d.wrong ? 'wrong' : 'ok';
+    const last = out[out.length - 1];
+    if (last && last.kind === kind) last.text += d.ch;
+    else out.push({ text: d.ch, kind });
+  }
+  return out;
+}
+
+// Where a wrong answer differs: `typed` = the learner's answer (wrong letters, and the dropped ones as
+// `missing`), `correct` = the correct sentence (kind 'wrong' = the part the answer lacks). Case is always
+// forgiven; accents follow the card's check (strictAccents). The subject pronoun is optional, so an
+// answer without it is compared to the sentence without it and the pronoun is never flagged.
+function sentenceDiff(typed: string, target: string, strictAccents: boolean) {
+  const fold = { case: true, accents: !strictAccents };
+  const short = withoutLeadingSubjectPronoun(target);
+  const flaws = (ref: string) => charDiff(typed, ref, fold).filter((d) => d.wrong).length;
+  const ref = short !== null && flaws(short) < flaws(target) ? short : target;
+  const full = target.trim();
+  const head = ref === target ? '' : full.slice(0, full.length - ref.length);
+  return {
+    typed: segments(charDiff(typed, ref, fold)),
+    correct: segments([...[...head].map((ch) => ({ ch, wrong: false })), ...charDiff(ref, typed, fold).filter((d) => !d.missing)]),
+  };
+}
+
 export default function TypedSentenceCard({
   sourceSentence,
   targetSentence,
@@ -63,6 +96,7 @@ export default function TypedSentenceCard({
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const diff = useDiffStyles();
   const s = t();
 
   const [typed, setTyped] = useState('');
@@ -92,6 +126,11 @@ export default function TypedSentenceCard({
   };
 
   const dockInsets = dockScrollInsets(dockH, dockLift, keyboardOpen);
+
+  // The correct sentence is shown after a miss; with something typed, it comes with the answer
+  // marked up so the learner sees WHERE the mistake is (an empty answer has nothing to compare).
+  const showCorrect = !!result && (result === 'wrong' || missed);
+  const cmp = showCorrect && typed.trim().length > 0 ? sentenceDiff(typed, targetSentence, strictAccents) : null;
 
   // The input and the feedback stay in the scrollable card; Check / Next is
   // a bar docked to the bottom of the screen (a direct child of the parent's KeyboardAvoidingView,
@@ -129,7 +168,23 @@ export default function TypedSentenceCard({
             {...answerInputProps}
           />
 
-          {result && (result === 'wrong' || missed) && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
+          {showCorrect && !cmp && <Text style={[styles.correctLine, { color: colors.success }]}>{targetSentence}</Text>}
+          {cmp && (
+            <View style={styles.compare}>
+              <Text style={[styles.compareLabel, { color: colors.tabIconDefault }]}>{s.grammar.yourAnswer}</Text>
+              <Text testID="sentence-diff-typed" style={[styles.correctLine, { color: colors.text }]}>
+                {cmp.typed.map((sg, i) => (
+                  <Text key={i} testID={sg.kind === 'ok' ? undefined : `sentence-diff-${sg.kind}`} style={sg.kind === 'ok' ? undefined : diff[sg.kind]}>{sg.text}</Text>
+                ))}
+              </Text>
+              <Text style={[styles.compareLabel, { color: colors.tabIconDefault }]}>{s.grammar.correctAnswer}</Text>
+              <Text testID="sentence-diff-correct" style={[styles.correctLine, { color: colors.success }]}>
+                {cmp.correct.map((sg, i) => (
+                  <Text key={i} testID={sg.kind === 'ok' ? undefined : 'sentence-diff-correct-mark'} style={sg.kind === 'ok' ? undefined : diff.missing}>{sg.text}</Text>
+                ))}
+              </Text>
+            </View>
+          )}
 
           {/* the same correct / wrong indicator on every card (colour + shape + ✓/✗ + text). */}
           {result && <ResultBadge correct={result === 'correct'} label={result === 'correct' ? s.card.correct : s.card.wrong} align="center" />}
@@ -158,4 +213,6 @@ const styles = StyleSheet.create({
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
+  compare: { alignItems: 'center', gap: 2 },
+  compareLabel: { fontSize: 11, fontWeight: '700', textTransform: 'uppercase', marginTop: 4 },
 });

@@ -2,6 +2,8 @@
 
 import type { PcicItem } from '@/data/pcic';
 import {
+  balancedRows,
+  cellsPerRow,
   isScrambleUsable,
   nextScramble,
   parseScramble,
@@ -12,6 +14,7 @@ import {
   scrambleWord,
   seedOf,
   skipScramble,
+  splitRows,
   startScramble,
   tapTile,
   type ScrambleState,
@@ -69,6 +72,48 @@ describe('scrambleTiles', () => {
   });
   it('different words are shuffled differently', () => {
     expect(seedOf('o19')).not.toBe(seedOf('o20'));
+  });
+});
+
+describe('balancedRows', () => {
+  it('splits evenly, longer rows first, never a lone cell in the last row', () => {
+    expect(balancedRows(7, 6)).toEqual([4, 3]);
+    expect(balancedRows(8, 6)).toEqual([4, 4]);
+    expect(balancedRows(13, 6)).toEqual([5, 4, 4]);
+    expect(balancedRows(5, 6)).toEqual([5]);
+    expect(balancedRows(6, 6)).toEqual([6]);
+    expect(balancedRows(0, 6)).toEqual([]);
+  });
+  it('rows add up to the count, differ by at most one and fit perRow', () => {
+    for (let perRow = 1; perRow <= 8; perRow++) {
+      for (let count = 1; count <= 40; count++) {
+        const rows = balancedRows(count, perRow);
+        expect(rows.reduce((a, b) => a + b, 0)).toBe(count);
+        expect(rows.length).toBe(Math.ceil(count / perRow));
+        expect(Math.max(...rows) - Math.min(...rows)).toBeLessThanOrEqual(1);
+        expect(Math.max(...rows)).toBeLessThanOrEqual(perRow);
+        if (perRow >= 3 && count > perRow) expect(rows[rows.length - 1]).toBeGreaterThan(1);
+      }
+    }
+  });
+  it('a perRow below 1 is one cell per row', () => {
+    expect(balancedRows(3, 0)).toEqual([1, 1, 1]);
+  });
+});
+
+describe('splitRows', () => {
+  it('cuts the items in order into the balanced rows', () => {
+    expect(splitRows([0, 1, 2, 3, 4, 5, 6], 6)).toEqual([[0, 1, 2, 3], [4, 5, 6]]);
+    expect(splitRows([], 6)).toEqual([]);
+  });
+});
+
+describe('cellsPerRow', () => {
+  it('counts the cells and the gaps between them, at least one', () => {
+    expect(cellsPerRow(304, 44, 8)).toBe(6);
+    expect(cellsPerRow(303, 44, 8)).toBe(5);
+    expect(cellsPerRow(10, 44, 8)).toBe(1);
+    expect(cellsPerRow(-20, 44, 8)).toBe(1);
   });
 });
 

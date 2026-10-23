@@ -1,5 +1,5 @@
 // behaviour of the assemble and the type-in sentence cards.
-import { fireEvent, render } from '@testing-library/react-native';
+import { fireEvent, render, within } from '@testing-library/react-native';
 import EasySentenceCard from '../EasySentenceCard';
 import TypedSentenceCard from '../TypedSentenceCard';
 
@@ -42,6 +42,47 @@ describe('EasySentenceCard (build-the-sentence)', () => {
     expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(false);
+  });
+
+  // FB525: a wrong build marks the tiles that are not the target word at their place (trap word, wrong spot).
+  it('a wrong build marks the wrong tile red; a right build marks none', () => {
+    const wrong = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    for (const w of ['el', 'libro', 'los', 'la', 'mesa']) fireEvent.press(wrong.getAllByText(w)[0]);
+    expect(wrong.queryAllByTestId('sentence-tile-wrong')).toHaveLength(0);
+    fireEvent.press(wrong.getByText('Check'));
+    const marked = wrong.getAllByTestId('sentence-tile-wrong');
+    expect(marked).toHaveLength(1);
+    expect(within(marked[0]).getByText('los')).toBeTruthy();
+    const right = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    for (const w of props.targetWords) fireEvent.press(right.getAllByText(w)[0]);
+    fireEvent.press(right.getByText('Check'));
+    expect(right.queryAllByTestId('sentence-tile-wrong')).toHaveLength(0);
+  });
+
+  // The marking is the longest common subsequence with the target, so one slip marks one tile.
+  const buildAndCheck = (words: string[]) => {
+    const r = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    for (const w of words) fireEvent.press(r.getAllByText(w)[0]);
+    fireEvent.press(r.getByText('Check'));
+    return r;
+  };
+
+  it('an inserted trap word at the start marks only that tile, not the rest of the row', () => {
+    const r = buildAndCheck(['los', 'el', 'libro', 'y', 'la', 'mesa']);
+    const marked = r.getAllByTestId('sentence-tile-wrong');
+    expect(marked).toHaveLength(1);
+    expect(within(marked[0]).getByText('los')).toBeTruthy();
+  });
+
+  it('a dropped word marks no placed tile', () => {
+    const r = buildAndCheck(['el', 'libro', 'la', 'mesa']);
+    expect(r.getByText('el libro y la mesa')).toBeTruthy();
+    expect(r.queryAllByTestId('sentence-tile-wrong')).toHaveLength(0);
+  });
+
+  it('two swapped words mark exactly one tile', () => {
+    const r = buildAndCheck(['libro', 'el', 'y', 'la', 'mesa']);
+    expect(r.getAllByTestId('sentence-tile-wrong')).toHaveLength(1);
   });
 
   it('tapping a placed tile returns it to the bank', () => {
@@ -96,16 +137,62 @@ describe('TypedSentenceCard (type-it)', () => {
     expect(on.getByText('Está en casa.')).toBeTruthy();
   });
 
+  // FB525: a wrong answer marks WHERE it is wrong, in the answer and in the correct sentence.
+  const marks = (r: ReturnType<typeof render>, id: string) =>
+    r.queryAllByTestId(id).map((e) => String(e.props.children)).join('');
+  const typeAndCheck = (r: ReturnType<typeof render>, answer: string) => {
+    fireEvent.changeText(r.getByPlaceholderText('Type the sentence'), answer);
+    fireEvent.press(r.getByText('✓ Check'));
+  };
+
+  it('a wrong answer marks the wrong and the dropped part in the answer and in the correct sentence', () => {
+    const r = render(<TypedSentenceCard {...props} onResult={jest.fn()} />);
+    typeAndCheck(r, 'el libru y la mesa');
+    expect(marks(r, 'sentence-diff-wrong')).toBe('u');
+    expect(marks(r, 'sentence-diff-missing')).toBe('o');
+    expect(marks(r, 'sentence-diff-correct-mark')).toBe('o');
+    expect(r.getByText('El libro y la mesa.')).toBeTruthy();
+    const dropped = render(<TypedSentenceCard {...props} onResult={jest.fn()} />);
+    typeAndCheck(dropped, 'el libro la mesa');
+    expect(marks(dropped, 'sentence-diff-missing').trim()).toBe('y');
+    expect(marks(dropped, 'sentence-diff-correct-mark').trim()).toBe('y');
+  });
+
+  it('a right answer has no marks', () => {
+    const r = render(<TypedSentenceCard {...props} onResult={jest.fn()} />);
+    typeAndCheck(r, 'el libro y la mesa');
+    for (const id of ['sentence-diff-wrong', 'sentence-diff-missing', 'sentence-diff-correct-mark']) {
+      expect(r.queryAllByTestId(id)).toHaveLength(0);
+    }
+  });
+
+  it('the accent mark follows the strict-accents switch', () => {
+    const r = render(<TypedSentenceCard sourceSentence="It is at home." targetSentence="Está en casa." onResult={jest.fn()} strictAccents />);
+    typeAndCheck(r, 'esta en casa');
+    expect(marks(r, 'sentence-diff-wrong')).toBe('a');
+    expect(marks(r, 'sentence-diff-correct-mark')).toBe('á');
+  });
+
+  it('a wrong answer without the pronoun never flags the optional pronoun', () => {
+    const r = render(<TypedSentenceCard sourceSentence="I eat at home." targetSentence="Yo como en casa." onResult={jest.fn()} />);
+    typeAndCheck(r, 'como en cama');
+    expect(marks(r, 'sentence-diff-wrong')).toBe('m');
+    expect(marks(r, 'sentence-diff-correct-mark')).toBe('s');
+    expect(r.getByText('Yo como en casa.')).toBeTruthy();
+  });
+
   // a sentence without the pronoun is fine too.
   it('accepts the sentence without the leading subject pronoun', () => {
     const onResult = jest.fn();
-    const { getByText, getByPlaceholderText } = render(
+    const { getByText, getByPlaceholderText, queryAllByTestId } = render(
       <TypedSentenceCard sourceSentence="I eat at home." targetSentence="Yo como en casa." speechLocale="es-MX" onResult={onResult} />
     );
     fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'como en casa');
     fireEvent.press(getByText('✓ Check'));
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(true, 'como en casa');
+    // a right answer without the pronoun has no marks (and no correct-sentence block).
+    expect(queryAllByTestId('sentence-diff-typed')).toHaveLength(0);
   });
 
   // Check is not a button inside the card but the docked bar (DockedAction) above the keyboard, as
