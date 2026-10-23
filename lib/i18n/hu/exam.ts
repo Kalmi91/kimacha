@@ -50,7 +50,7 @@ const hu: typeof en = {
     skillPracticeSentences: 'Gyakorolj mondatokat',
     introSpeaking: (n: number) => `Beszéd: ${n} kérdés`,
     skillSpeaking: 'Beszéd',
-    speakTranslate: (lang: string): string => (lang === 'es' ? 'Mondd spanyolul' : 'Mondd angolul'),
+    speakTranslate: (lang: string): string => (lang === 'es' ? 'Mondd spanyolul' : lang === 'hu' ? 'Mondd magyarul' : 'Mondd angolul'),
     speakRepeat: 'Olvasd fel hangosan',
     speakHint: 'Koppints a billentyűzeten a mikrofonra, és mondd el a mondatot. A szavaid megjelennek a mezőben.',
     speakPlaceholder: 'Itt jelennek meg a kimondott szavaid',

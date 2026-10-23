@@ -51,8 +51,8 @@ describe('OnboardingScreen: language and level step', () => {
 
     const hu = render(<OnboardingScreen />);
     fireEvent.press(hu.getByText('Magyar'));
-    // no Hungarian UI strings yet: the English ones stay.
-    expect(hu.getByText('Which language do you want to learn?')).toBeTruthy();
+    // the interface switches to Hungarian right away (live preview)
+    expect(hu.getByText('Milyen nyelvet szeretnél tanulni?')).toBeTruthy();
     expect(hu.getByText('English')).toBeTruthy();
     expect(hu.getByText('Español')).toBeTruthy();
     expect(hu.queryByText('Magyar')).toBeNull();
@@ -72,9 +72,11 @@ describe('OnboardingScreen: language and level step', () => {
       fireEvent.press(view.getByText(speak));
       fireEvent.press(view.getByText(learn));
       // welcome -> intro -> theme -> level (A1 is always offered, even on an empty deck)
-      fireEvent.press(view.getByText(view.queryByText('Get started') ? 'Get started' : 'Empezar'));
-      fireEvent.press(view.getByText(view.queryByText("Let's start") ? "Let's start" : 'Empecemos'));
-      fireEvent.press(view.getByText(view.queryByText('Continue') ? 'Continue' : 'Continuar'));
+      // the buttons are in the chosen native language: English, Spanish or Hungarian
+      const press = (...labels: string[]) => fireEvent.press(view.getByText(labels.find((l) => view.queryByText(l)) ?? labels[0]));
+      press('Get started', 'Empezar', 'Kezdjük');
+      press("Let's start", 'Empecemos', 'Kezdjük');
+      press('Continue', 'Continuar', 'Tovább');
       await act(async () => {
         fireEvent.press(view.getByText('A1'));
         await Promise.resolve();

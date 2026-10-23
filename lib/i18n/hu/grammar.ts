@@ -8,6 +8,7 @@ const hu: typeof en = {
       `${done}/${topics} kész · ${written} lecke elérhető`,
     yourLevel: 'itt tartasz',
     soon: 'hamarosan',
+    courseComingSoon: 'A magyar nyelvtan-kurzus hamarosan érkezik.',
     coreTag: 'alap',
     corePlusTag: 'alap+',
     started: 'elkezdve',
