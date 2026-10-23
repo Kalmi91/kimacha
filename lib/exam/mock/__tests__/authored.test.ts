@@ -26,6 +26,24 @@ function paperFile(target: MockTarget, level: Upper, paper: string, forms: numbe
   };
 }
 
+const speakingTask = (instruction: string): AuthoredTask => ({
+  kind: 'speaking',
+  skill: 'speaking',
+  instruction,
+  talkMinutes: [2, 3],
+  choices: [{ id: 'a', title: 'Topic', prompt: 'Talk about it.', turns: [{ id: 't1', ask: 'What do you see?', minWords: 5, points: [], model: 'I see a house.' }] }],
+});
+
+/** A speaking paper file of any level: `forms` forms with two speaking tasks each. */
+function speakingFile(target: MockTarget, level: MockLevel, forms: number): AuthoredPaperFile {
+  return {
+    target,
+    level,
+    paper: 'speaking',
+    forms: Array.from({ length: forms }, (_, f) => ({ id: `f${f + 1}`, tasks: [1, 2].map((i) => speakingTask(`form ${f + 1} task ${i}`)) })),
+  };
+}
+
 const PAPERS: Record<string, string[]> = {
   'es-B1': ['reading', 'listening', 'writing'],
   'es-B2': ['reading', 'listening', 'writing'],
@@ -82,7 +100,8 @@ describe('blueprint: B1, B2 and C1 in both directions', () => {
     expect(bp.official).toBe(false);
     expect(bp.rule).toMatchObject({ kind: 'scale', needed: 140, approximate: true });
     if (bp.rule.kind !== 'scale') throw new Error('not a scale rule');
-    expect(Object.keys(bp.rule.skills).sort()).toEqual(['listening', 'reading', 'writing']);
+    expect(Object.keys(bp.rule.skills).sort()).toEqual(['listening', 'reading', 'speaking', 'writing']);
+    expect(bp.rule.skills.speaking).toEqual({ officialMax: 30, anchors: [[7, 102], [12, 120], [18, 140], [27, 160]] });
     expect(bp.skillNames.use).toBeUndefined();
   });
 
@@ -94,7 +113,10 @@ describe('blueprint: B1, B2 and C1 in both directions', () => {
       expect(bp.skillNames.use).toBe('Use of English');
       expect(bp.rule).toMatchObject({ kind: 'scale', needed });
       if (bp.rule.kind !== 'scale') throw new Error('not a scale rule');
-      expect(Object.keys(bp.rule.skills).sort()).toEqual(['listening', 'reading', 'use', 'writing']);
+      expect(Object.keys(bp.rule.skills).sort()).toEqual(['listening', 'reading', 'speaking', 'use', 'writing']);
+      expect(bp.rule.skills.speaking).toEqual(
+        level === 'B2' ? { officialMax: 60, anchors: [[14, 122], [24, 140], [36, 160], [54, 180]] } : { officialMax: 75, anchors: [[17, 142], [30, 160], [45, 180], [66, 200]] },
+      );
       for (const conv of Object.values(bp.rule.skills)) {
         expect(conv!.anchors).toHaveLength(4);
         expect(conv!.anchors.every(([raw], i, all) => i === 0 || raw > all[i - 1][0])).toBe(true);
@@ -139,7 +161,7 @@ describe('mockAvailable: B1 and up only with an authored form in every non-place
     expect(mockAvailable('es', 'C2', [])).toBe(false);
   });
 
-  it('the shipped registry is wired in (18 files, none written yet or all well-formed)', () => {
+  it('the shipped registry is wired in (28 files, none written yet or all well-formed)', () => {
     expect(typeof mockAvailable('es', 'B1')).toBe('boolean');
   });
 });
@@ -195,6 +217,45 @@ describe('authored builder: the seed picks a form', () => {
     expect(build('es', 'C1', 0, allFiles('es', 'C1', 1)).official).toBe(true);
   });
 
+  it('B1-C1 speaking: its tasks come from the speaking file with a form count of its own; no longer a placeholder', () => {
+    // 3 speaking forms against 1 form in the other papers: 4 % 3 = form 2 for the speaking, form 1 elsewhere
+    const e = build('es', 'B1', 4, [...allFiles('es', 'B1', 1), speakingFile('es', 'B1', 3)]);
+    const speaking = e.papers.find((p) => p.id === 'speaking')!;
+    expect(speaking).toMatchObject({ placeholder: false, minutes: 15, points: 25 });
+    expect(speaking.tasks.map((t) => [t.id, t.skill, t.instruction])).toEqual([
+      ['speaking-1', 'speaking', 'TAREA 1. form 2 task 1'],
+      ['speaking-2', 'speaking', 'TAREA 2. form 2 task 2'],
+    ]);
+    expect(e.papers.filter((p) => p.id !== 'speaking').every((p) => (p.tasks[0] as { instruction: string }).instruction.includes('form 1'))).toBe(true);
+    expect(build('en', 'C1', 0, [...allFiles('en', 'C1', 1), speakingFile('en', 'C1', 1)]).papers[3].tasks[0].instruction).toBe('PART 1. form 1 task 1');
+  });
+
+  it('an empty or missing speaking file keeps the placeholder (reserve): no task, and the level stays available', () => {
+    for (const speaking of [[], [speakingFile('es', 'B1', 0)]]) {
+      const files = [...allFiles('es', 'B1', 1), ...speaking];
+      const sp = build('es', 'B1', 0, files).papers.find((p) => p.id === 'speaking')!;
+      expect(sp).toMatchObject({ placeholder: true, tasks: [] });
+      expect(mockAvailable('es', 'B1', files)).toBe(true);
+    }
+  });
+
+  it('A1 / A2 speaking: the paper comes from its file, the rest is built from the words as before; without a file it is a placeholder', () => {
+    const written = (e: MockExam) => JSON.stringify(e.papers.filter((p) => p.id !== 'speaking'));
+    for (const [target, level, minutes] of [['es', 'A1', 10], ['es', 'A2', 12], ['en', 'A1', 3.5], ['en', 'A2', 9]] as const) {
+      const plain = buildMockExam({ target, level, items: [], seed: 3 });
+      const withFile = buildMockExam({ target, level, items: [], seed: 3, authored: [speakingFile(target, level, 2), speakingFile(target, level === 'A1' ? 'A2' : 'A1', 2)] });
+      expect(plain.papers.find((p) => p.id === 'speaking')).toMatchObject({ placeholder: true, tasks: [] });
+      const speaking = withFile.papers.find((p) => p.id === 'speaking')!;
+      // 3 % 2 = form 2; the file of the other A level is not used
+      expect(speaking).toMatchObject({ placeholder: false, minutes });
+      expect(speaking.tasks.map((t) => [t.id, t.instruction])).toEqual([
+        ['speaking-1', `${target === 'es' ? 'TAREA' : 'PART'} 1. form 2 task 1`],
+        ['speaking-2', `${target === 'es' ? 'TAREA' : 'PART'} 2. form 2 task 2`],
+      ]);
+      expect(written(withFile)).toBe(written(plain));
+    }
+  });
+
   it('with a paper that has no form the exam is empty (the screen shows the level as unavailable before this)', () => {
     const e = build('es', 'B1', 0, [paperFile('es', 'B1', 'reading', 1)]);
     expect(e.papers.map((p) => p.tasks.length)).toEqual([0, 0, 0, 0]);
@@ -220,6 +281,13 @@ describe('glossary texts of the authored kinds: only what is visible on screen',
     { kind: 'pick_statements', skill: 'listening', instruction: 'i', audio: [{ text: 'heard' }], statements: ['statement one', 'statement two'], correct: [0], pick: 1 },
     { kind: 'transform', skill: 'use', instruction: 'i', items: [{ first: 'first sentence', key: 'KEY', before: 'before', after: 'after', answers: ['x'] }] },
     { kind: 'essay', skill: 'writing', instruction: 'i', choices: [{ id: 'a', title: 'Essay title', prompt: 'Essay prompt', input: 'Essay input', minWords: 10, maxWords: 20, points: [{ id: 'p', label: 'l', keywords: ['k'] }] }] },
+    {
+      kind: 'speaking',
+      skill: 'speaking',
+      instruction: 'i',
+      talkMinutes: [1, 2],
+      choices: [{ id: 'a', title: 'Sheet title', prompt: 'Sheet prompt', bullets: ['bullet one'], input: 'Sheet input', photos: ['ph1'], turns: [{ id: 't1', ask: 'Examiner asks', minWords: 5, points: [{ id: 'p', label: 'l', keywords: ['kkkk'] }], model: 'Model answer text' }] }],
+    },
   ];
   const texts = tasks.map((t) => mockTaskTexts({ ...t, id: 'x' } as never));
 
@@ -238,5 +306,9 @@ describe('glossary texts of the authored kinds: only what is visible on screen',
   it('transform and essay show their prompts', () => {
     expect(texts[6]).toEqual(['first sentence', 'KEY', 'before', 'after']);
     expect(texts[7]).toEqual(['Essay title', 'Essay prompt', 'Essay input']);
+  });
+
+  it('speaking: the sheet and the examiner questions, never the model answer or the keywords', () => {
+    expect(texts[8]).toEqual(['Sheet title', 'Sheet prompt', 'bullet one', 'Sheet input', 'Examiner asks']);
   });
 });

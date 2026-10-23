@@ -6,7 +6,8 @@
 // gives the same exam (part-by-part saving can resume from it).
 //
 // The task allocation comes from the blueprint `plan` (lib/exam/mock/blueprint.ts): the official Spanish
-// shape, English A1 and English A2 each ask for different tasks and paper layouts.
+// shape, English A1 and English A2 each ask for different tasks and paper layouts. The speaking paper of every level is
+// authored (data/exams/mock/<target>-<level>-speaking.json) and picks its own form; with no task it is a placeholder.
 //
 // Pure module: no database, no loaded corpus, the caller supplies the data.
 
@@ -106,17 +107,16 @@ const AUTHORED_PREFIX = /^(TAREA|PART) \d+\.\s*/;
 export function buildMockExam(input: MockBuildInput): MockExam {
   const { target, level, items, seed } = input;
   const bp = getMockBlueprint(target, level);
+  // The speaking paper (every level) is always authored: its own form count (`seed % n`), independent of the other papers';
+  // no file or an empty one = no task = the paper stays a placeholder (reserve).
+  const speakingTasks = (id: string): MockTask[] => authoredTasks(target, level, id, seed, authoredFormCount(target, level, [id], input.authored), input.authored);
   if (bp.plan === 'authored') {
     // B1-C1: the tasks are written, not built from the words; the seed picks one form (lib/exam/mock/authored.ts).
     const formCount = authoredFormCount(target, level, bp.papers.filter((p) => !p.placeholder).map((p) => p.id), input.authored);
-    const papers: MockPaper[] = bp.papers.map((spec) => ({
-      id: spec.id,
-      name: spec.name,
-      minutes: spec.minutes,
-      points: spec.skills.length * 25,
-      placeholder: !!spec.placeholder,
-      tasks: spec.placeholder ? [] : authoredTasks(target, level, spec.id, seed, formCount, input.authored),
-    }));
+    const papers: MockPaper[] = bp.papers.map((spec) => {
+      const tasks = spec.placeholder ? speakingTasks(spec.id) : authoredTasks(target, level, spec.id, seed, formCount, input.authored);
+      return { id: spec.id, name: spec.name, minutes: spec.minutes, points: spec.skills.length * 25, placeholder: !!spec.placeholder && tasks.length === 0, tasks };
+    });
     return { target, level, seed, official: bp.official, papers, skillNames: bp.skillNames, rule: bp.rule };
   }
   const c = bp.counts;
@@ -341,7 +341,8 @@ export function buildMockExam(input: MockBuildInput): MockExam {
 
   // --- Papers: the tasks of the paper's skills one after another, a task's number is its position within the paper.
   const papers: MockPaper[] = bp.papers.map((spec) => {
-    const tasks: MockTask[] = [];
+    // The speaking paper is not built from the words (drafts.speaking stays empty): its tasks are the speaking file's.
+    const tasks: MockTask[] = spec.placeholder ? speakingTasks(spec.id) : [];
     for (const skill of spec.skills) {
       for (const d of drafts[skill]) {
         if (!d) continue;
@@ -351,7 +352,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
         tasks.push({ ...d.task, id: `${spec.id}-${n}`, instruction } as MockTask);
       }
     }
-    return { id: spec.id, name: spec.name, minutes: spec.minutes, points: spec.skills.length * 25, placeholder: !!spec.placeholder, tasks };
+    return { id: spec.id, name: spec.name, minutes: spec.minutes, points: spec.skills.length * 25, placeholder: !!spec.placeholder && tasks.length === 0, tasks };
   });
 
   return { target, level, seed, official: bp.official, papers, skillNames: bp.skillNames, rule: bp.rule };

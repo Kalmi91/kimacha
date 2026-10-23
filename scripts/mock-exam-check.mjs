@@ -1,13 +1,20 @@
-// Gate for the authored B1-C1 practice-exam papers (data/exams/mock/<target>-<level>-<paper>.json), the content of
-// lib/exam/mock/authored.ts. The schema is AuthoredPaperFile in lib/exam/mock/types.ts; the task order, counts and text
-// lengths per paper are PLAN-vizsga-b1c1.md "Feladatrend" (the SPEC tables below).
+// Gate for the authored B1-C1 practice-exam papers and the speaking papers of every level (data/exams/mock/<target>-<level>-<paper>.json),
+// the content of lib/exam/mock/authored.ts. The schema is AuthoredPaperFile in lib/exam/mock/types.ts; the task order, counts and text
+// lengths per paper are PLAN-vizsga-b1c1.md "Feladatrend" (the SPEC tables below), those of the speaking papers
+// PLAN-vizsga-szobeli.md "Szintenkénti feladatrend".
 //
 // Usage:
-//   node scripts/mock-exam-check.mjs [--strict] [file ...]   check the given files (default: all 18 under data/exams/mock);
-//                                                             a `*` in a path is expanded here (PowerShell does not)
-//   node scripts/mock-exam-check.mjs --blind <file> <out>      write a copy without the answer key (correct / answer / answers)
-//   node scripts/mock-exam-check.mjs --grade <file> <answers>  compare a filled-in copy of the blind export with the key
-// An empty `forms` list is a warning ("not written yet"), an error with --strict. The last line is the summary, exit 1 on errors.
+//   node scripts/mock-exam-check.mjs [--strict] [--photos <registry.json>] [file ...]
+//                                                             check the given files (default: all 28 under data/exams/mock);
+//                                                             a `*` in a path is expanded here (PowerShell does not);
+//                                                             --photos replaces data/exams/mock/photos.json (S5; its photo files then sit next to it)
+//   node scripts/mock-exam-check.mjs --blind <file> <out>      write a copy without the answer key (correct / answer / answers;
+//                                                             speaking: the content points and the model answers)
+//   node scripts/mock-exam-check.mjs --grade <file> <answers>  compare a filled-in copy of the blind export with the key (speaking: the
+//                                                             answers file has `{ choice, <turn id>: text }` per task, as an array of the first
+//                                                             form's tasks or `{ <form id>: [...] }`; it lists the content points each turn got)
+// An empty `forms` list is a warning ("not written yet"), an error with --strict, except in a speaking file (the app keeps its
+// placeholder then): a warning always. The last line is the summary, exit 1 on errors.
 //
 // Rules (every violation is an error):
 //   M1  file shape: target / level / paper / forms; in the default run all 18 files exist and their header matches the name
@@ -18,7 +25,15 @@
 //       words exactly the official ones)
 //   M6  es norm: no vosotros / Spain-only words (blacklist below)
 //   M7  no em dash anywhere
-//   M8  writing keywords: no single word under 4 letters (they match as a word start)
+//   M8  writing / speaking keywords: no single word under 4 letters (they match as a word start)
+// Speaking papers (every rule is an error):
+//   S1  a *-speaking.json holds speaking tasks only (kind and skill `speaking`); a speaking task is nowhere else
+//   S2  1-3 choices with unique ids; `follows` is the ordinal of an earlier speaking task with the same choice ids
+//   S3  turns: at least one, unique ids; ask / model non-empty; minWords > 0; 0-4 content points per turn, 4-8 keywords per point
+//   S4  the model answer reaches minWords and gets EVERY point (same scoring as lib/exam/mock/score.ts: folded words, keyword at a word start)
+//   S5  every photo key is in photos.json and its file exists
+//   S6  choices, prepSeconds, talkMinutes, follows, turns per task and photos per choice are those of the SPEC table
+//   S7  word budget: the minWords of the turns (longest choice per task) add up to at most 20 x the paper's minutes
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -40,6 +55,9 @@ const pick = (skill, words, statements, pickCount) => ({ kind: 'pick_statements'
 const transform = (skill, items, marks) => ({ kind: 'transform', skill, items, marks });
 // `input`: 'text' (a written prompt is needed) or 'audio' (a heard one); `inputWords` the band, `inputMaxWords` an upper limit.
 const essay = (choices, minWords, maxWords, extra = {}) => ({ kind: 'essay', skill: 'writing', choices, minWords, maxWords, ...extra });
+// Speaking (PLAN-vizsga-szobeli.md "Szintenkénti feladatrend"): `choices`, `prep` (prepSeconds), `talk` (talkMinutes), `turns` (examiner turns
+// per choice), `photos` per choice (0 = none), `follows` (ordinal of the task whose choice it continues), `samePhotos` (the photos are the followed choice's).
+const speaking = (choices, prep, talk, turns, extra = {}) => ({ kind: 'speaking', skill: 'speaking', choices, prep, talk, turns, photos: 0, ...extra });
 
 const MWF = { speakers: ['m', 'f'], fixedOptions: ['hombre', 'mujer', 'ninguno'] };
 
@@ -147,7 +165,65 @@ const SPEC = {
     // The same five recordings as the previous task (two tasks on one set of monologues).
     pool('listening', 5, 8, true, { promptMedia: 'audio', sameAudioAs: 4 }),
   ],
+  // es speaking: the DELE-like individual oral (⚠ A1 / A2: from a search summary, the guide was not available on 2026-10-22).
+  'es-a1-speaking': [
+    speaking(1, 0, [1, 2], 1),
+    speaking(2, 600, [2, 3], 1),
+    speaking(2, 0, [3, 4], 5, { follows: 2 }),
+  ],
+  'es-a2-speaking': [
+    speaking(2, 360, [2, 3], 1),
+    speaking(2, 360, [2, 3], 3, { photos: 1 }),
+    speaking(2, 0, [3, 4], 5, { follows: 2, photos: 1, samePhotos: true }),
+  ],
+  'es-b1-speaking': [
+    speaking(2, 900, [2, 3], 1),
+    speaking(2, 0, [3, 4], 5, { follows: 1 }),
+    speaking(2, 0, [2, 3], 2, { photos: 1 }),
+    speaking(2, 0, [2, 3], 4, { follows: 3, photos: 1, samePhotos: true }),
+  ],
+  'es-b2-speaking': [
+    speaking(2, 600, [6, 7], 3),
+    speaking(2, 600, [5, 6], 3, { photos: 1 }),
+    speaking(2, 0, [3, 4], 4),
+  ],
+  'es-c1-speaking': [
+    speaking(2, 1200, [3, 5], 1),
+    speaking(2, 0, [4, 6], 4, { follows: 1 }),
+    speaking(2, 0, [4, 6], 4),
+  ],
+  // en speaking: Cambridge-like; the paired parts are led by the examiner (the app) for one learner.
+  'en-a1-speaking': [
+    speaking(2, 0, [2, 2], 4, { photos: 1 }),
+    speaking(2, 15, [1, 2], 4),
+  ],
+  'en-a2-speaking': [
+    speaking(1, 0, [3, 4], 5),
+    speaking(1, 0, [5, 6], 5),
+  ],
+  'en-b1-speaking': [
+    speaking(1, 0, [2, 2], 4),
+    speaking(2, 0, [1, 1], 1, { photos: 1 }),
+    speaking(1, 0, [3, 4], 2),
+    speaking(1, 0, [3, 3], 4),
+  ],
+  'en-b2-speaking': [
+    speaking(1, 0, [2, 2], 3),
+    speaking(1, 0, [1, 1], 2, { photos: 2 }),
+    speaking(1, 0, [3, 4], 2),
+    speaking(1, 0, [4, 4], 3),
+  ],
+  'en-c1-speaking': [
+    speaking(1, 0, [2, 2], 2),
+    speaking(1, 0, [1, 1], 2, { photos: 3 }),
+    speaking(1, 0, [3, 4], 2),
+    speaking(1, 0, [5, 5], 3),
+  ],
 };
+
+// S7: the minutes of the speaking papers (lib/exam/mock/blueprint.ts) and the words a learner can type / dictate per minute.
+const SPEAKING_MINUTES = { 'es-a1': 10, 'es-a2': 12, 'es-b1': 15, 'es-b2': 20, 'es-c1': 20, 'en-a1': 3.5, 'en-a2': 9, 'en-b1': 12, 'en-b2': 14, 'en-c1': 15 };
+const WORDS_PER_MINUTE = 20;
 
 const EXPECTED_FILES = Object.keys(SPEC).map((name) => `${name}.json`);
 
@@ -157,8 +233,13 @@ const ES_BLACKLIST = [/vosotr/iu, /(?<!\p{L})coche/iu, /(?<!\p{L})ordenador/iu, 
 const EM_DASH = /[\u2014\u2013]/;
 
 const TOLERANCE = 0.15;
-const SKILLS = ['reading', 'use', 'listening', 'writing'];
+const SKILLS = ['reading', 'use', 'listening', 'writing', 'speaking'];
 const SPEAKERS = ['m', 'f', 'n'];
+const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
+
+// S5: the photo registry (PLAN-vizsga-szobeli.md "Fotók") and the folder of the photo files.
+const PHOTOS_JSON = path.join(DIR, 'photos.json');
+const PHOTO_DIR = path.join(ROOT, 'assets', 'exam-photos');
 
 // ---------------------------------------------------------------- helpers
 
@@ -172,6 +253,51 @@ const audioWords = (lines) => (Array.isArray(lines) ? lines.reduce((n, l) => n +
 const unique = (list) => new Set(list).size === list.length;
 const markersOf = (text) => [...text.matchAll(/\{\{(\d+)\}\}/g)].map((m) => Number(m[1]));
 const loose = (s) => String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
+
+const sameJson = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+
+// Mirrors of the app's scoring of a written / dictated text, so that S4 and --grade give the points the app gives: fold, foldedTokens,
+// isNonsenseToken and assessMessage (without the dictionary) of lib/exam/mock/writing.ts, keywordHit of lib/exam/mock/score.ts. Keep them in step.
+const fold = (text) => text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[‘’]/g, "'").replace(/\s+/g, ' ').trim();
+const foldedTokens = (text) => fold(text).replace(/[^a-z'\s]/g, ' ').split(/\s+/).map((t) => t.replace(/^'+|'+$/g, '')).filter(Boolean);
+const COPY_RUN = 5;
+const MIN_DISTINCT_RATIO = 0.5;
+const KEY_RUNS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'].flatMap((row) => {
+  const out = [];
+  for (let i = 0; i + 4 <= row.length; i++) {
+    const run = row.slice(i, i + 4);
+    out.push(run, [...run].reverse().join(''));
+  }
+  return out;
+});
+const isNonsenseToken = (tok) => (tok.length >= 3 && !/[aeiouy]/.test(tok)) || /([a-z])\1{3,}/.test(tok) || /[^aeiouy']{6,}/.test(tok) || KEY_RUNS.some((run) => tok.includes(run));
+
+function assessText(text, reference) {
+  const tokens = foldedTokens(text);
+  const ref = foldedTokens(reference.join(' '));
+  const refRuns = new Set();
+  for (let i = 0; i + COPY_RUN <= ref.length; i++) refRuns.add(ref.slice(i, i + COPY_RUN).join(' '));
+  const copied = new Array(tokens.length).fill(false);
+  for (let i = 0; i + COPY_RUN <= tokens.length; i++) {
+    if (refRuns.has(tokens.slice(i, i + COPY_RUN).join(' '))) for (let k = i; k < i + COPY_RUN; k++) copied[k] = true;
+  }
+  const kept = tokens.filter((tok, i) => !copied[i] && !isNonsenseToken(tok));
+  const distinctOk = kept.length < 6 || new Set(kept).size / kept.length >= MIN_DISTINCT_RATIO;
+  return { words: kept.length, valid: kept.length > 0 && distinctOk, text: kept.join(' ') };
+}
+
+function keywordHit(kw, words, raw) {
+  const k = fold(kw);
+  return /[a-z0-9]/.test(k) ? ` ${words}`.includes(` ${k}`) : raw.includes(k);
+}
+
+/** One speaking turn scored like lib/exam/mock/score.ts: { words, hits (per content point), countOk (the word-count mark) }. */
+function scoreTurn(task, choice, turn, text) {
+  const a = assessText(text, [task.instruction, choice.prompt, ...(choice.bullets ?? []), choice.input ?? '', turn.ask]);
+  const enough = a.valid && a.words >= Math.ceil(turn.minWords / 2);
+  const raw = fold(text);
+  return { words: a.valid ? a.words : 0, hits: turn.points.map((p) => enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw))), countOk: a.valid && a.words >= turn.minWords };
+}
 
 /** All string values of a value, with their JSON path. */
 function* strings(value, at = '') {
@@ -224,6 +350,15 @@ function checkMarkers(text, err, at, gaps) {
 
 function checkBand(n, band, err, at, what) {
   if (band && !inBand(n, band)) err(`${at}: ${what} is ${n} words, the format wants ${bandText(band)}`);
+}
+
+// M8: the keyword matches as a word start (lib/exam/mock/score.ts keywordHit), so a short single word ("es", "bus",
+// "hi") starts many unrelated words and gives the point for free. Phrases and punctuation-only keywords are fine.
+function checkM8(keywords, err, at) {
+  for (const kw of keywords.filter(isStr)) {
+    const letters = kw.trim().replace(/[^\p{L}\p{N}]/gu, '');
+    if (!/\s/.test(kw.trim()) && letters.length > 0 && letters.length < 4) err(`M8: ${at}: keyword "${kw}" is a single word under 4 letters (use a longer word or a phrase)`);
+  }
 }
 
 const KINDS = {
@@ -407,14 +542,7 @@ const KINDS = {
         if (!c.points.every((p) => isObj(p) && isStr(p.id) && isStr(p.label)) || !unique(c.points.map((p) => p.id))) err(`${at}: every point needs a unique id and a label`);
         c.points.forEach((p, k) => {
           if (isObj(p) && (!Array.isArray(p.keywords) || p.keywords.length === 0 || !p.keywords.every(isStr))) err(`${at}.points[${k}]: keywords must be a non-empty list of non-empty strings`);
-          // M8: the keyword matches as a word start (lib/exam/mock/score.ts keywordHit), so a short single word ("es", "bus",
-          // "hi") starts many unrelated words and gives the point for free. Phrases and punctuation-only keywords are fine.
-          if (isObj(p) && Array.isArray(p.keywords)) {
-            for (const kw of p.keywords.filter(isStr)) {
-              const letters = kw.trim().replace(/[^\p{L}\p{N}]/gu, '');
-              if (!/\s/.test(kw.trim()) && letters.length > 0 && letters.length < 4) err(`M8: ${at}.points[${k}]: keyword "${kw}" is a single word under 4 letters (use a longer word or a phrase)`);
-            }
-          }
+          if (isObj(p) && Array.isArray(p.keywords)) checkM8(p.keywords, err, `${at}.points[${k}]`);
         });
       }
       if (!s) return;
@@ -426,12 +554,94 @@ const KINDS = {
     });
     if (s && t.choices.length !== s.choices) err(`${t.choices.length} choices, the format wants ${s.choices}`);
   },
+  // `ctx`: { tasks (the form's), index (of this task), photos (S5 lookup) }.
+  speaking(t, s, err, ctx) {
+    if (t.prepSeconds !== undefined && (!isInt(t.prepSeconds) || t.prepSeconds < 0)) err('prepSeconds must be a non-negative integer (seconds)');
+    if (!Array.isArray(t.talkMinutes) || t.talkMinutes.length !== 2 || !t.talkMinutes.every((n) => typeof n === 'number' && n > 0) || t.talkMinutes[0] > t.talkMinutes[1]) err('talkMinutes must be [min, max] minutes with 0 < min <= max');
+    if (!Array.isArray(t.choices) || t.choices.length < 1 || t.choices.length > 3) return err('S2: choices must be a list of 1-3 choices');
+    const ids = t.choices.map((c) => c && c.id);
+    if (!ids.every(isStr) || !unique(ids)) err('S2: choice ids must be unique non-empty strings');
+    let followed = null; // the task whose choice this one continues (S2, S6)
+    if (t.follows !== undefined) {
+      const own = ctx.index + 1;
+      if (!isInt(t.follows) || t.follows < 1 || t.follows >= own) err(`S2: follows (${t.follows}) must be the ordinal of an earlier task (1..${own - 1})`);
+      else if (!isObj(ctx.tasks[t.follows - 1]) || ctx.tasks[t.follows - 1].kind !== 'speaking' || !Array.isArray(ctx.tasks[t.follows - 1].choices)) err(`S2: follows ${t.follows} is not a speaking task`);
+      else {
+        followed = ctx.tasks[t.follows - 1];
+        const otherIds = followed.choices.map((c) => c && c.id);
+        if (!sameJson([...otherIds].sort(), [...ids].sort())) err(`S2: follows ${t.follows}: the choice ids (${ids.join(', ')}) differ from the followed task's (${otherIds.join(', ')})`);
+      }
+    }
+    t.choices.forEach((c, i) => {
+      const at = `choices[${i}]`;
+      if (!isObj(c)) return err(`${at}: not an object`);
+      if (!isStr(c.title) || !isStr(c.prompt)) err(`${at}: title and prompt must be non-empty strings`);
+      if (c.bullets !== undefined && (!Array.isArray(c.bullets) || c.bullets.length === 0 || !c.bullets.every(isStr))) err(`${at}: bullets must be a non-empty list of non-empty strings`);
+      if (c.input !== undefined && !isStr(c.input)) err(`${at}: input must be a non-empty string`);
+      if (c.photos !== undefined) {
+        if (!Array.isArray(c.photos) || c.photos.length === 0 || !c.photos.every(isStr) || !unique(c.photos)) err(`${at}: photos must be a non-empty list of unique photo keys`);
+        else {
+          for (const key of c.photos) {
+            const problem = ctx.photos(key);
+            if (problem) err(`S5: ${at}: photo "${key}" ${problem}`);
+          }
+        }
+      }
+      if (!Array.isArray(c.turns) || c.turns.length === 0) return err(`S3: ${at}: turns must be a non-empty list`);
+      const turnIds = c.turns.map((x) => x && x.id);
+      if (!turnIds.every(isStr) || !unique(turnIds)) err(`S3: ${at}: turn ids must be unique non-empty strings`);
+      c.turns.forEach((turn, k) => {
+        const tat = `${at}.turns[${k}]`;
+        if (!isObj(turn)) return err(`S3: ${tat}: not an object`);
+        let sound = true; // the turn is well-formed enough to be scored (S4)
+        const bad = (msg) => {
+          err(msg);
+          sound = false;
+        };
+        if (!isStr(turn.ask) || !isStr(turn.model)) bad(`S3: ${tat}: ask and model must be non-empty strings`);
+        if (!isInt(turn.minWords) || turn.minWords < 1) bad(`S3: ${tat}: minWords must be a positive integer`);
+        if (!Array.isArray(turn.points) || turn.points.length > 4) bad(`S3: ${tat}: points must be a list of 0-4 content points`);
+        else {
+          if (!turn.points.every((p) => isObj(p) && isStr(p.id) && isStr(p.label)) || !unique(turn.points.map((p) => p && p.id))) bad(`S3: ${tat}: every point needs a unique id and a label`);
+          turn.points.forEach((p, m) => {
+            if (!isObj(p)) return;
+            if (!Array.isArray(p.keywords) || p.keywords.length < 4 || p.keywords.length > 8 || !p.keywords.every(isStr)) bad(`S3: ${tat}.points[${m}]: keywords must be a list of 4-8 non-empty strings`);
+            else checkM8(p.keywords, err, `${tat}.points[${m}]`);
+          });
+        }
+        if (!sound) return;
+        const r = scoreTurn(t, c, turn, turn.model);
+        if (!r.countOk) err(`S4: ${tat}: the model answer has ${r.words} meaningful words, minWords is ${turn.minWords}`);
+        r.hits.forEach((hit, m) => {
+          if (!hit) err(`S4: ${tat}.points[${m}] "${turn.points[m].id}": the model answer gets no point here (none of its keywords is in it)`);
+        });
+      });
+      if (!s) return;
+      if (c.turns.length !== s.turns) err(`S6: ${at}: ${c.turns.length} turns, the format wants ${s.turns}`);
+      if ((Array.isArray(c.photos) ? c.photos.length : 0) !== s.photos) err(`S6: ${at}: ${Array.isArray(c.photos) ? c.photos.length : 0} photos, the format wants ${s.photos}`);
+      if (s.samePhotos && followed) {
+        const other = Array.isArray(followed.choices) ? followed.choices.find((x) => isObj(x) && x.id === c.id) : null;
+        if (!other || !sameJson(other.photos, c.photos)) err(`S6: ${at}: the photos must be those of the same choice of task ${t.follows}`);
+      }
+    });
+    if (!s) return;
+    if (t.choices.length !== s.choices) err(`S6: ${t.choices.length} choices, the format wants ${s.choices}`);
+    if ((t.prepSeconds ?? 0) !== s.prep) err(`S6: prepSeconds ${t.prepSeconds ?? 0}, the format wants ${s.prep}`);
+    if (!sameJson(t.talkMinutes, s.talk)) err(`S6: talkMinutes ${JSON.stringify(t.talkMinutes)}, the format wants ${JSON.stringify(s.talk)}`);
+    if (t.follows !== s.follows) err(`S6: follows ${t.follows ?? 'nothing'}, the format wants ${s.follows ?? 'nothing'}`);
+  },
 };
 
-function checkTask(t, spec, err) {
+/** `ctx`: { speakingFile, tasks (the form's), index (of the task), photos (S5 lookup) }. */
+function checkTask(t, spec, err, ctx) {
   if (!isObj(t)) return err('not an object');
   if (!isStr(t.instruction)) err('instruction must be a non-empty string');
   if (!SKILLS.includes(t.skill)) err(`skill "${t.skill}" must be one of ${SKILLS.join(', ')}`);
+  // S1: a speaking file holds speaking tasks only, and a speaking task is nowhere else.
+  if (ctx.speakingFile) {
+    if (t.kind !== 'speaking') return err(`S1: a speaking file holds kind "speaking" tasks only, not "${t.kind}"`);
+    if (t.skill !== 'speaking') err(`S1: skill "${t.skill}", a speaking file holds skill "speaking" tasks only`);
+  } else if (t.kind === 'speaking' || t.skill === 'speaking') return err('S1: a speaking task belongs in a *-speaking.json file');
   if (t.marks !== undefined && (!isInt(t.marks) || t.marks < 1)) err('marks must be a positive integer');
   if (t.plays !== undefined && (!isInt(t.plays) || t.plays < 1)) err('plays must be a positive integer');
   const check = KINDS[t.kind];
@@ -443,18 +653,55 @@ function checkTask(t, spec, err) {
     if (t.skill !== spec.skill) err(`skill "${t.skill}", the format wants "${spec.skill}"`);
     if ((t.marks ?? 1) !== (spec.marks ?? 1)) err(`marks ${t.marks ?? 1}, the format wants ${spec.marks ?? 1}`);
   }
-  check(t, s, err);
+  check(t, s, err, ctx);
 }
 
 // ---------------------------------------------------------------- one file
 
-/** Checks a parsed file; returns { errors, warnings } (lists of messages). `strict`: an empty forms list is an error. */
-function checkData(data, { strict }) {
+let defaultPhotos = null;
+/** The S5 lookup of the real registry, read once and only when a photo is checked. */
+const registryPhotos = (key) => (defaultPhotos ??= photoLookup())(key);
+
+/**
+ * S5: key -> a problem text (or null when the photo is fine) from the photo registry (photos.json: { <key>: { file, ... } }); the file is
+ * looked up in `assetsDir` (and from the repo root, for a path-like `file`), by its `file` name or as `<key>.jpg`.
+ */
+function photoLookup(registryFile = PHOTOS_JSON, assetsDir = PHOTO_DIR) {
+  let registry = null;
+  if (fs.existsSync(registryFile)) {
+    try {
+      registry = JSON.parse(fs.readFileSync(registryFile, 'utf8'));
+    } catch {
+      registry = undefined;
+    }
+  }
+  return (key) => {
+    if (registry === null) return `cannot be checked: ${path.basename(registryFile)} does not exist yet`;
+    if (!isObj(registry)) return `cannot be checked: ${path.basename(registryFile)} is not a JSON object`;
+    const entry = registry[key];
+    if (entry === undefined) return `is not in ${path.basename(registryFile)}`;
+    const names = [isObj(entry) && isStr(entry.file) ? entry.file : null, `${key}.jpg`].filter(Boolean);
+    const found = names.some((n) => [path.join(assetsDir, n), path.join(ROOT, n)].some((p) => fs.existsSync(p)));
+    return found ? null : `has no photo file (${names.join(' / ')}) in ${path.relative(ROOT, assetsDir) || assetsDir}`;
+  };
+}
+
+/** S7: the words of a speaking form: per task the longest choice's turns' minWords, added up. */
+function speakingWords(form) {
+  return form.tasks.reduce((n, task) => {
+    if (!isObj(task) || !Array.isArray(task.choices)) return n;
+    const perChoice = task.choices.map((c) => (isObj(c) && Array.isArray(c.turns) ? c.turns.reduce((m, turn) => m + (isObj(turn) && isInt(turn.minWords) ? turn.minWords : 0), 0) : 0));
+    return n + Math.max(0, ...perChoice);
+  }, 0);
+}
+
+/** Checks a parsed file; returns { errors, warnings } (lists of messages). `strict`: an empty forms list is an error (not in a speaking file). `photos`: the S5 lookup. */
+function checkData(data, { strict, photos = registryPhotos }) {
   const errors = [];
   const warnings = [];
   if (!isObj(data)) return { errors: ['M1: the file must be an object { target, level, paper, forms }'], warnings };
   if (!['es', 'en'].includes(data.target)) errors.push(`M1: target "${data.target}" must be es or en`);
-  if (!['B1', 'B2', 'C1'].includes(data.level)) errors.push(`M1: level "${data.level}" must be B1, B2 or C1`);
+  if (!LEVELS.includes(data.level)) errors.push(`M1: level "${data.level}" must be ${LEVELS.join(', ')}`);
   if (!isStr(data.paper)) errors.push('M1: paper must be a non-empty string');
   if (!Array.isArray(data.forms)) errors.push('M1: forms must be a list');
   if (errors.length) return { errors, warnings };
@@ -472,8 +719,11 @@ function checkData(data, { strict }) {
     if (data.target === 'es') for (const re of ES_BLACKLIST) if (re.test(text)) errors.push(`M6: ${at}: "${text.match(re)[0]}" is not Mexican usage (${re})`);
   }
 
+  // A speaking file is written after the engine; the app keeps its placeholder while it is empty, so it is only a warning, also with --strict.
+  const speakingFile = data.paper === 'speaking';
   if (data.forms.length === 0) {
-    (strict ? errors : warnings).push('forms is empty: not written yet');
+    if (speakingFile) warnings.push('forms is empty: not written yet (speaking placeholder, only a warning also with --strict)');
+    else (strict ? errors : warnings).push('forms is empty: not written yet');
     return { errors, warnings };
   }
 
@@ -488,7 +738,7 @@ function checkData(data, { strict }) {
     form.tasks.forEach((task, ti) => {
       const s = ti < spec.length ? spec[ti] : null;
       const kind = isObj(task) ? task.kind : '?';
-      checkTask(task, s, (msg) => errors.push(`M3: form ${fid} task ${ti + 1} (${kind}): ${msg}`));
+      checkTask(task, s, (msg) => errors.push(`M3: form ${fid} task ${ti + 1} (${kind}): ${msg}`), { speakingFile, tasks: form.tasks, index: ti, photos });
       if (s && s.sameAudioAs && isObj(task) && Array.isArray(task.prompts)) {
         const other = form.tasks[s.sameAudioAs - 1];
         const a = JSON.stringify(task.prompts.map((p) => p && p.audio));
@@ -496,6 +746,11 @@ function checkData(data, { strict }) {
         if (a !== b) errors.push(`M3: form ${fid} task ${ti + 1} (${kind}): the recordings must be the same as in task ${s.sameAudioAs}`);
       }
     });
+    if (speakingFile) {
+      const words = speakingWords(form);
+      const budget = WORDS_PER_MINUTE * SPEAKING_MINUTES[key.slice(0, 5)];
+      if (words > budget) errors.push(`S7: form ${fid}: the turns' minWords add up to ${words}, the ${SPEAKING_MINUTES[key.slice(0, 5)]} minute paper allows ${budget} (${WORDS_PER_MINUTE} words a minute)`);
+    }
   });
   if (!unique(formIds)) errors.push('M2: form ids are not unique');
   return { errors, warnings };
@@ -504,16 +759,16 @@ function checkData(data, { strict }) {
 // ---------------------------------------------------------------- blind export and grading
 
 const KEY_FIELDS = ['correct', 'answer', 'answers'];
+// A speaking paper has no such key: what gives the answer away is the content points (keywords) and the model answers.
+const SPEAKING_KEY_FIELDS = ['points', 'model'];
 
-function stripKey(value) {
-  if (Array.isArray(value)) return value.map(stripKey);
+function stripKey(value, fields = KEY_FIELDS) {
+  if (Array.isArray(value)) return value.map((v) => stripKey(v, fields));
   if (!isObj(value)) return value;
   const out = {};
-  for (const [k, v] of Object.entries(value)) if (!KEY_FIELDS.includes(k)) out[k] = stripKey(v);
+  for (const [k, v] of Object.entries(value)) if (!fields.includes(k)) out[k] = stripKey(v, fields);
   return out;
 }
-
-const sameJson = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 /** Compares the keyed fields of `key` with the reviewer's `given` copy; returns { total, deviations }. */
 function grade(key, given) {
@@ -546,6 +801,52 @@ function grade(key, given) {
   return { total, deviations };
 }
 
+/**
+ * Speaking: scores the reviewer's answers like the app does (choice: own pick, else the followed task's, else the first) and lists, per
+ * turn, which content points came. The keyed items are the content points and the word-count mark of every turn; a missing one is a
+ * deviation (a good blind answer should get it: widen the keywords or justify). `given`: the first form's tasks as an array, or
+ * `{ <form id>: [...] }`; a task's answer is `{ choice, <turn id>: text }` (an object keyed by the task's ordinal also does).
+ */
+function gradeSpeaking(key, given) {
+  let total = 0;
+  const deviations = [];
+  const lines = [];
+  (Array.isArray(key.forms) ? key.forms : []).forEach((form, fi) => {
+    const list = Array.isArray(given) ? (fi === 0 ? given : undefined) : isObj(given) ? given[form.id] : undefined;
+    const answerOf = (ti) => {
+      const a = Array.isArray(list) ? list[ti] : isObj(list) ? (list[String(ti + 1)] ?? list[`speaking-${ti + 1}`]) : undefined;
+      return isObj(a) ? a : {};
+    };
+    const tasks = Array.isArray(form.tasks) ? form.tasks : [];
+    // The choice a task continues (score.ts followedChoice).
+    const followedChoice = (ti) => {
+      const t = tasks[ti];
+      if (!isObj(t) || t.follows === undefined || t.follows - 1 >= ti || !isObj(tasks[t.follows - 1])) return undefined;
+      const own = answerOf(t.follows - 1).choice;
+      return typeof own === 'string' ? own : followedChoice(t.follows - 1);
+    };
+    tasks.forEach((task, ti) => {
+      if (!isObj(task) || !Array.isArray(task.choices)) return;
+      const ans = answerOf(ti);
+      const inherited = followedChoice(ti);
+      const choice = task.choices.find((c) => c.id === ans.choice) ?? task.choices.find((c) => c.id === inherited) ?? task.choices[0];
+      if (!isObj(choice) || !Array.isArray(choice.turns)) return;
+      for (const turn of choice.turns) {
+        const at = `forms[${fi}].tasks[${ti}].${turn.id}`;
+        const r = scoreTurn(task, choice, turn, String(ans[turn.id] ?? ''));
+        total += turn.points.length + 1;
+        const marks = turn.points.map((p, m) => `${r.hits[m] ? 'got' : 'MISSED'} ${p.id}`);
+        lines.push(`TURN ${at} (choice ${choice.id}): ${[...marks, `${r.countOk ? 'got' : 'MISSED'} ${r.words}/${turn.minWords} words`].join(', ')}`);
+        turn.points.forEach((p, m) => {
+          if (!r.hits[m]) deviations.push(`${at}.${p.id}: "${p.label}" not given, keywords ${JSON.stringify(p.keywords)}`);
+        });
+        if (!r.countOk) deviations.push(`${at}.words: ${r.words} meaningful words, minWords ${turn.minWords}`);
+      }
+    });
+  });
+  return { total, deviations, lines };
+}
+
 // ---------------------------------------------------------------- CLI
 
 function expand(arg) {
@@ -567,24 +868,31 @@ function readJson(file) {
 
 function main(argv) {
   let strict = false;
+  let photos;
   const files = [];
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === '--strict') strict = true;
-    else if (a === '--blind') {
+    else if (a === '--photos') {
+      const registry = argv[++i];
+      if (!registry) return fail('usage: --photos <registry.json>');
+      photos = photoLookup(registry, path.dirname(registry));
+    } else if (a === '--blind') {
       const [file, out] = [argv[i + 1], argv[i + 2]];
       if (!file || !out) return fail('usage: --blind <file> <out>');
       const r = readJson(file);
       if (r.error) return fail(r.error);
-      fs.writeFileSync(out, `${JSON.stringify(stripKey(r.data), null, 2)}\n`);
-      console.log(`blind: ${out} written without correct / answer / answers`);
+      const speakingFile = isObj(r.data) && r.data.paper === 'speaking';
+      fs.writeFileSync(out, `${JSON.stringify(stripKey(r.data, speakingFile ? SPEAKING_KEY_FIELDS : KEY_FIELDS), null, 2)}\n`);
+      console.log(`blind: ${out} written without ${(speakingFile ? SPEAKING_KEY_FIELDS : KEY_FIELDS).join(' / ')}`);
       return 0;
     } else if (a === '--grade') {
       const [file, answers] = [argv[i + 1], argv[i + 2]];
       if (!file || !answers) return fail('usage: --grade <file> <answers>');
       const [k, g] = [readJson(file), readJson(answers)];
       if (k.error || g.error) return fail(k.error || g.error);
-      const { total, deviations } = grade(k.data, g.data);
+      const { total, deviations, lines = [] } = isObj(k.data) && k.data.paper === 'speaking' ? gradeSpeaking(k.data, g.data) : grade(k.data, g.data);
+      for (const l of lines) console.log(l);
       for (const d of deviations) console.log(`DEVIATION ${d}`);
       console.log(`grade: ${total - deviations.length}/${total} keyed items agree, ${deviations.length} deviations`);
       return deviations.length ? 1 : 0;
@@ -604,7 +912,7 @@ function main(argv) {
       errorCount++;
       continue;
     }
-    const { errors, warnings } = checkData(r.data, { strict });
+    const { errors, warnings } = checkData(r.data, { strict, photos });
     if (defaultRun && isObj(r.data) && `${r.data.target}-${String(r.data.level).toLowerCase()}-${r.data.paper}.json` !== path.basename(file)) {
       errors.unshift(`M1: the header (${r.data.target} ${r.data.level} ${r.data.paper}) does not match the file name`);
     }
