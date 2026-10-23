@@ -4,7 +4,7 @@
 // The speech is mocked (nothing sounds), the photo register is replaced by one known key.
 
 import { useState } from 'react';
-import { Linking } from 'react-native';
+import { DeviceEventEmitter, Linking, StyleSheet } from 'react-native';
 import { act, fireEvent, render } from '@testing-library/react-native';
 
 import { authoredTasks } from '@/lib/exam/mock/authored';
@@ -24,7 +24,7 @@ const tasks = authoredTasks('en', 'B1', 'speaking', 0, 1, [speakingFile('en', 'B
 const holiday = tasks[0]; // two choices, 90 s of preparation
 const followUp = tasks[1]; // follows the first, no preparation
 
-type Opts = { canSpeak?: boolean; inheritedChoice?: string; lastTask?: boolean; start?: MockTaskAnswer };
+type Opts = { canSpeak?: boolean; inheritedChoice?: string; lastTask?: boolean; start?: MockTaskAnswer; onScrollTo?: (y: number) => void };
 
 function Harness({ task, opts, onGive, onHold, onNext }: { task: MockTask; opts: Opts; onGive: (key: string, value: string | number | boolean | null) => void; onHold: (h: boolean) => void; onNext: () => void }) {
   const [answer, setAnswer] = useState<MockTaskAnswer>(opts.start ?? {});
@@ -38,6 +38,7 @@ function Harness({ task, opts, onGive, onHold, onNext }: { task: MockTask; opts:
         glossary={[]}
         inheritedChoice={opts.inheritedChoice}
         lastTask={opts.lastTask}
+        onScrollTo={opts.onScrollTo}
         onHoldClock={onHold}
         onNextTask={onNext}
         onAnswer={(key, value) => {
@@ -170,9 +171,9 @@ describe('the preparation time', () => {
 });
 
 describe('the examiner turns', () => {
-  const toTurns = (opts: Opts = {}) => {
+  const toTurns = (opts: Opts = {}, choice = 'a') => {
     const r = show(holiday, opts);
-    r.press('mock-speaking-choice-a');
+    r.press(`mock-speaking-choice-${choice}`);
     r.press('mock-speaking-primary');
     r.press('mock-speaking-primary');
     return r;
@@ -235,15 +236,95 @@ describe('the examiner turns', () => {
     expect(view.getByText('Finish paper')).toBeTruthy();
   });
 
-  it('the task sheet and the notes are one tap away, collapsed by default', () => {
+  it('a choice with a written stimulus has its sheet open by default (it can be collapsed); the notes are collapsed', () => {
     const { view, press } = toTurns();
-    expect(view.queryByTestId('mock-speaking-sheet')).toBeNull();
+    expect(view.getByTestId('mock-speaking-sheet')).toBeTruthy();
+    expect(view.getByTestId('mock-speaking-input')).toBeTruthy();
+    expect(view.getByText('Hide the task sheet')).toBeTruthy();
+    expect(view.queryByTestId('mock-speaking-notes')).toBeNull();
+    expect(view.getByText('Show my notes')).toBeTruthy();
     press('mock-speaking-sheet-toggle');
-    expect(view.getByTestId('mock-speaking-prompt')).toBeTruthy();
-    expect(view.getByTestId('mock-speaking-photo-en-b1-1')).toBeTruthy();
+    expect(view.queryByTestId('mock-speaking-sheet')).toBeNull();
+    expect(view.getByText('Show the task sheet')).toBeTruthy();
+    press('mock-speaking-notes-toggle');
     expect(view.getByTestId('mock-speaking-notes')).toBeTruthy();
-    press('mock-speaking-sheet-toggle');
+    press('mock-speaking-notes-toggle');
+    expect(view.queryByTestId('mock-speaking-notes')).toBeNull();
+  });
+
+  it('a choice without a written stimulus has its sheet collapsed by default, one tap opens it', () => {
+    const { view, press } = toTurns({}, 'b');
     expect(view.queryByTestId('mock-speaking-sheet')).toBeNull();
+    expect(view.getByText('Show the task sheet')).toBeTruthy();
+    press('mock-speaking-sheet-toggle');
+    expect(view.getByTestId('mock-speaking-prompt').props.children).toBe('Talk about your work or your studies.');
+  });
+
+  it('the photos of the choice are on the turn screen all the time, once, with the credit line, whether the sheet is open or not', () => {
+    const { view, press } = toTurns();
+    expect(view.getAllByTestId('mock-speaking-photo-en-b1-1')).toHaveLength(1);
+    expect(view.getByText('Photo: A. Author, CC BY 4.0, Wikimedia Commons')).toBeTruthy();
+    press('mock-speaking-sheet-toggle');
+    expect(view.getAllByTestId('mock-speaking-photo-en-b1-1')).toHaveLength(1);
+    press('mock-speaking-primary');
+    expect(view.getAllByTestId('mock-speaking-photo-en-b1-1')).toHaveLength(1);
+  });
+
+  it('a photo task with no written stimulus shows the photo with the sheet collapsed, above the examiner question', () => {
+    const photoOnly = { ...holiday, choices: [{ ...(holiday.kind === 'speaking' ? holiday.choices[0] : null), input: undefined }] } as MockTask;
+    const { view } = show(photoOnly);
+    fireEvent.press(view.getByTestId('mock-speaking-primary'));
+    fireEvent.press(view.getByTestId('mock-speaking-primary'));
+    expect(view.queryByTestId('mock-speaking-sheet')).toBeNull();
+    expect(view.getByTestId('mock-speaking-photo-en-b1-1')).toBeTruthy();
+    const order = JSON.stringify(view.toJSON());
+    expect(order.indexOf('mock-speaking-photo-en-b1-1')).toBeLessThan(order.indexOf('mock-speaking-ask'));
+  });
+
+  it('the answer field is a window of 4 to 7 lines; with a photo or a stimulus to look at it does not open the keyboard by itself, without it does', () => {
+    const withStimulus = toTurns();
+    const flat = StyleSheet.flatten(withStimulus.view.getByTestId('mock-speaking-answer').props.style);
+    expect(flat.minHeight).toBeGreaterThanOrEqual(4 * 22);
+    expect(flat.maxHeight).toBeGreaterThan(flat.minHeight);
+    expect(withStimulus.view.getByTestId('mock-speaking-answer').props.autoFocus).toBe(false);
+    withStimulus.view.unmount();
+    const plain = toTurns({}, 'b');
+    expect(plain.view.getByTestId('mock-speaking-answer').props.autoFocus).toBe(true);
+  });
+
+  it('with the keyboard up the screen scroller is brought to the question and the field: when the keyboard comes up under the focused field, when the field is tapped with the keyboard up, and for the next question', () => {
+    const onScrollTo = jest.fn();
+    const { view, press } = toTurns({ onScrollTo });
+    fireEvent(view.getByTestId('mock-speaking-turn'), 'layout', { nativeEvent: { layout: { x: 0, y: 420, width: 300, height: 400 } } });
+    const field = view.getByTestId('mock-speaking-answer');
+    fireEvent(field, 'focus');
+    expect(onScrollTo).not.toHaveBeenCalled(); // the keyboard is not up yet: the scroller has not shrunk
+    act(() => {
+      DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height: 300 } });
+    });
+    expect(onScrollTo).not.toHaveBeenCalled(); // a short wait: the viewport shrinks first
+    act(() => {
+      jest.advanceTimersByTime(150);
+    });
+    expect(onScrollTo).toHaveBeenCalledTimes(1);
+    expect(onScrollTo).toHaveBeenLastCalledWith(420);
+    // the next question, the field still focused and the keyboard still up
+    press('mock-speaking-primary');
+    act(() => {
+      jest.advanceTimersByTime(150);
+    });
+    expect(onScrollTo).toHaveBeenCalledTimes(2);
+    // tapping the field again with the keyboard up
+    fireEvent(field, 'blur');
+    fireEvent(field, 'focus');
+    expect(onScrollTo).toHaveBeenCalledTimes(3);
+    // the keyboard goes away: nothing more to bring into view
+    act(() => {
+      DeviceEventEmitter.emit('keyboardDidHide', {});
+    });
+    fireEvent(field, 'blur');
+    fireEvent(field, 'focus');
+    expect(onScrollTo).toHaveBeenCalledTimes(3);
   });
 
   it('without a voice for the language the question stays on the screen, nothing is spoken and there is no replay button', () => {
