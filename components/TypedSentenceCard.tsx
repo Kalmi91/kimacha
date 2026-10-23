@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { Card } from '@/components/grammar/Brutal';
+import { BrutalBox, Card } from '@/components/grammar/Brutal';
 import { themedInputStyle } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import DockedAction, { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -45,6 +45,9 @@ interface Props {
   // Tap-a-word hints on the prompt sentence (Sentences tab, beta sentenceHint); see EasySentenceCard.
   sourceHints?: HintPiece[] | null;
   onSourceHint?: (ids: string[]) => void;
+  // Listen-and-type step (Sentences tab, beta sentenceListening): the TARGET sentence is heard when the card opens and a big
+  // 🔊 button replaces the prompt sentence, which (with its hints) is shown only once the answer is checked.
+  listening?: boolean;
 }
 
 type Seg = { text: string; kind: 'ok' | 'wrong' | 'missing' };
@@ -92,6 +95,7 @@ export default function TypedSentenceCard({
   gradeButtons = false,
   sourceHints,
   onSourceHint,
+  listening = false,
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -105,9 +109,17 @@ export default function TypedSentenceCard({
   const [missed, setMissed] = useState(false);
 
   useEffect(() => {
-    if (sourceSpeechLocale) speak(sourceSentence, sourceSpeechLocale);
+    if (listening) {
+      if (speechLocale) speak(targetSentence, speechLocale);
+    } else if (sourceSpeechLocale) speak(sourceSentence, sourceSpeechLocale);
     return () => stopSpeech();
-  }, [sourceSentence, sourceSpeechLocale]);
+  }, [listening, sourceSentence, sourceSpeechLocale, targetSentence, speechLocale]);
+
+  const replay = () => {
+    if (!speechLocale) return;
+    stopSpeech();
+    speak(targetSentence, speechLocale);
+  };
 
   const handleCheck = () => {
     Keyboard.dismiss();
@@ -131,6 +143,8 @@ export default function TypedSentenceCard({
   // marked up so the learner sees WHERE the mistake is (an empty answer has nothing to compare).
   const showCorrect = !!result && (result === 'wrong' || missed);
   const cmp = showCorrect && typed.trim().length > 0 ? sentenceDiff(typed, targetSentence, strictAccents) : null;
+  // A listening step shows the prompt once the answer was checked (it stays after an edit that clears the verdict).
+  const revealed = !listening || !!result || missed;
 
   // The input and the feedback stay in the scrollable card; Check / Next is
   // a bar docked to the bottom of the screen (a direct child of the parent's KeyboardAvoidingView,
@@ -144,7 +158,21 @@ export default function TypedSentenceCard({
         keyboardDismissMode="on-drag"
       >
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
-          <HintedSentence text={sourceSentence} pieces={sourceHints} onHint={onSourceHint} style={[styles.sourceText, { color: colors.text }]} />
+          {listening && (
+            <>
+              {g.brutal ? (
+                <BrutalBox testID="sentence-listen-play" accessibilityLabel={s.sentenceTab.listenPlay} fill="a" offset={3} onPress={replay} boxStyle={styles.listenBrutal}>
+                  <Text style={styles.listenIcon}>🔊</Text>
+                </BrutalBox>
+              ) : (
+                <Pressable testID="sentence-listen-play" accessibilityRole="button" accessibilityLabel={s.sentenceTab.listenPlay} style={[styles.listenBtn, { backgroundColor: colors.accent }]} onPress={replay}>
+                  <Text style={styles.listenIcon}>🔊</Text>
+                </Pressable>
+              )}
+              {!result && <Text style={[styles.listenHint, { color: colors.tabIconDefault }]}>{s.sentenceTab.listenTypeHint}</Text>}
+            </>
+          )}
+          {revealed && <HintedSentence text={sourceSentence} pieces={sourceHints} onHint={onSourceHint} style={[styles.sourceText, { color: colors.text }]} />}
 
           <TextInput
             style={[
@@ -211,6 +239,10 @@ const styles = StyleSheet.create({
   brutalCard: { padding: 24, alignItems: 'center', minHeight: 280, gap: 16 },
   scroll: { flex: 1 },
   sourceText: { fontSize: 20, fontWeight: '700', textAlign: 'center' },
+  listenBtn: { width: 96, height: 96, borderRadius: 48, alignItems: 'center', justifyContent: 'center' },
+  listenBrutal: { width: 96, height: 96, alignItems: 'center', justifyContent: 'center' },
+  listenIcon: { fontSize: 44 },
+  listenHint: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   input: { width: '100%', borderWidth: 2, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 10, fontSize: 16 },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   compare: { alignItems: 'center', gap: 2 },

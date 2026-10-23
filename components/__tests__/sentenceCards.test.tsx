@@ -327,47 +327,60 @@ describe('the task sentence is read aloud on open', () => {
   });
 });
 
-describe('EasySentenceCard listening step (beta sentenceListening)', () => {
+describe('EasySentenceCard has no listening mode any more (the listen-and-type step is the typed card)', () => {
+  it('the prompt is always shown and there is no 🔊 button', () => {
+    const { getByText, queryByTestId } = render(
+      <EasySentenceCard sourceSentence="The book and the table." targetWords={['el', 'libro', 'y', 'la', 'mesa']} trapWords={['los']} speechLocale="es-MX" sourceSpeechLocale="en-US" onResult={jest.fn()} />,
+    );
+    expect(getByText('The book and the table.')).toBeTruthy();
+    expect(queryByTestId('sentence-listen-play')).toBeNull();
+  });
+});
+
+describe('TypedSentenceCard listening step (beta sentenceListening, FB524)', () => {
   const props = {
     sourceSentence: 'The book and the table.',
-    targetWords: ['el', 'libro', 'y', 'la', 'mesa'],
-    trapWords: ['los'],
+    targetSentence: 'El libro y la mesa.',
     speechLocale: 'es-MX',
     sourceSpeechLocale: 'en-US',
     listening: true,
   };
 
-  it('hides the prompt behind a 🔊 button, reads it on open, and the button reads it again', () => {
-    const { queryByText, getByTestId } = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+  it('reads the TARGET sentence on open (not the prompt), hides the prompt behind a 🔊 button, and the button reads the target again', () => {
+    const { queryByText, getByText, getByTestId } = render(<TypedSentenceCard {...props} onResult={jest.fn()} />);
+    expect(speech.speak).toHaveBeenCalledTimes(1);
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
     expect(queryByText('The book and the table.')).toBeNull();
-    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+    expect(getByText('Listen, then type the sentence')).toBeTruthy();
     speech.speak.mockClear();
     fireEvent.press(getByTestId('sentence-listen-play'));
-    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
   });
 
-  it('a right build shows the prompt sentence', () => {
+  it('a right answer shows the prompt sentence', () => {
     const onResult = jest.fn();
-    const { getByText, getAllByText, queryByText } = render(<EasySentenceCard {...props} onResult={onResult} />);
-    for (const w of props.targetWords) fireEvent.press(getAllByText(w)[0]);
+    const { getByText, getByPlaceholderText, queryByText } = render(<TypedSentenceCard {...props} onResult={onResult} />);
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
     expect(queryByText('The book and the table.')).toBeNull();
-    fireEvent.press(getByText('Check'));
+    fireEvent.press(getByText('✓ Check'));
     expect(getByText('The book and the table.')).toBeTruthy();
     fireEvent.press(getByText(/Next/));
-    expect(onResult).toHaveBeenCalledWith(true);
+    expect(onResult).toHaveBeenCalledWith(true, 'el libro y la mesa');
   });
 
-  it('a wrong build shows the correct Spanish sentence but still not the prompt', () => {
-    const { getByText, getAllByText, queryByText } = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
-    fireEvent.press(getAllByText('mesa')[0]);
-    fireEvent.press(getByText('Check'));
-    expect(getByText('el libro y la mesa')).toBeTruthy();
-    expect(queryByText('The book and the table.')).toBeNull();
+  it('a wrong answer shows the correct sentence and the prompt too, and the prompt stays after an edit', () => {
+    const { getByText, getByPlaceholderText, queryByText } = render(<TypedSentenceCard {...props} onResult={jest.fn()} />);
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el gato');
+    fireEvent.press(getByText('✓ Check'));
+    expect(getByText('The book and the table.')).toBeTruthy();
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el libro');
+    expect(queryByText('The book and the table.')).not.toBeNull();
   });
 
-  it('without the listening prop the card is unchanged: prompt shown, no 🔊 button', () => {
-    const { getByText, queryByTestId } = render(<EasySentenceCard {...props} listening={false} onResult={jest.fn()} />);
+  it('without the listening prop the card is unchanged: prompt shown and read, no 🔊 button', () => {
+    const { getByText, queryByTestId } = render(<TypedSentenceCard {...props} listening={false} onResult={jest.fn()} />);
     expect(getByText('The book and the table.')).toBeTruthy();
     expect(queryByTestId('sentence-listen-play')).toBeNull();
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
   });
 });
