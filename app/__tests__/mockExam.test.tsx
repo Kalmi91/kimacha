@@ -477,7 +477,7 @@ describe('Mock exam: es→en direction (international sample, UI in Spanish)', (
     expect(s.getByText('Prueba 2 de 2')).toBeTruthy();
     await press(s, 'mock-start-paper');
     expect(s.getByText('Expresión oral: la parte con micrófono llega pronto')).toBeTruthy();
-    expect(s.getByText('Esta parte aún no cuenta en tu puntuación. Tu resultado es provisional y usa tus otras tres destrezas.')).toBeTruthy();
+    expect(s.getByText('Esta parte aún no cuenta en tu puntuación. Tu resultado es provisional y usa tus otras destrezas.')).toBeTruthy();
     await press(s, 'mock-speaking-continue');
 
     expect(s.getByText('Aprobado')).toBeTruthy();
