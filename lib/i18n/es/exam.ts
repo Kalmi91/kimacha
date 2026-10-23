@@ -218,7 +218,8 @@ const es: typeof en = {
     speakReplay: 'Escuchar otra vez',
     speakNoVoice: 'No hay una voz de este idioma instalada en este dispositivo. Lee la pregunta del examinador en la pantalla.',
     speakAnswerPlaceholder: 'Tu respuesta',
-    speakAnswerHint: 'Habla con el micrófono del teclado o escribe.',
+    speakAnswerHint: (lang: string) =>
+      `Habla con el micrófono del teclado o escribe. Pon el teclado en ${lang === 'es' ? 'español' : 'inglés'} para que te entienda.`,
     speakWords: (n: number, min: number) => `${n} ${n === 1 ? 'palabra' : 'palabras'}, intenta llegar al menos a ${min}`,
     speakNextQuestion: 'Siguiente pregunta',
     speakPrevQuestion: 'Pregunta anterior',

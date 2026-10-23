@@ -275,7 +275,7 @@ export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak,
                 style={[styles.input, local.answer, { color: colors.text, borderColor: colors.border, backgroundColor: colors.card }]}
               />
               <Text testID="mock-speaking-hint" style={[styles.small, { color: colors.textMuted }]}>
-                {s.speakAnswerHint}
+                {s.speakAnswerHint(target)}
               </Text>
               <Text testID="mock-speaking-words" style={[styles.small, { color: countWords(textOf(turn.id)) >= turn.minWords ? colors.success : colors.textMuted }]}>
                 {s.speakWords(countWords(textOf(turn.id)), turn.minWords)}
