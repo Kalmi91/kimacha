@@ -29,7 +29,8 @@
 // Speaking papers (every rule is an error):
 //   S1  a *-speaking.json holds speaking tasks only (kind and skill `speaking`); a speaking task is nowhere else
 //   S2  1-3 choices with unique ids; `follows` is the ordinal of an earlier speaking task with the same choice ids
-//   S3  turns: at least one, unique ids; ask / model non-empty; minWords > 0; 0-4 content points per turn, 4-8 keywords per point
+//   S3  turns: at least one, unique ids; ask / model non-empty; minWords > 0; 0-4 content points per turn, 4-12 keywords per point
+//       (an open question, "what did you do", needs room for the many verbs a good answer may use)
 //   S4  the model answer reaches minWords and gets EVERY point (same scoring as lib/exam/mock/score.ts: folded words, keyword at a word start)
 //   S5  every photo key is in photos.json and its file exists
 //   S6  choices, prepSeconds, talkMinutes, follows, turns per task and photos per choice are those of the SPEC table
@@ -606,7 +607,7 @@ const KINDS = {
           if (!turn.points.every((p) => isObj(p) && isStr(p.id) && isStr(p.label)) || !unique(turn.points.map((p) => p && p.id))) bad(`S3: ${tat}: every point needs a unique id and a label`);
           turn.points.forEach((p, m) => {
             if (!isObj(p)) return;
-            if (!Array.isArray(p.keywords) || p.keywords.length < 4 || p.keywords.length > 8 || !p.keywords.every(isStr)) bad(`S3: ${tat}.points[${m}]: keywords must be a list of 4-8 non-empty strings`);
+            if (!Array.isArray(p.keywords) || p.keywords.length < 4 || p.keywords.length > 12 || !p.keywords.every(isStr)) bad(`S3: ${tat}.points[${m}]: keywords must be a list of 4-12 non-empty strings`);
             else {
               checkM8(p.keywords, err, `${tat}.points[${m}]`);
               if (isStr(turn.ask)) {
