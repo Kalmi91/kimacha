@@ -9,7 +9,7 @@
         {
           "skill": "writing",
           "kind": "essay",
-          "instruction": "Read the e-mail from your friend and the notes you made. Then write your reply.",
+          "instruction": "Your friend has sent you an e-mail, and you have jotted down some notes. Use them to write your answer.",
           "choices": [
             {
               "id": "a",
@@ -46,7 +46,7 @@
         {
           "skill": "writing",
           "kind": "essay",
-          "instruction": "Choose one of the two tasks and write your answer.",
+          "instruction": "Pick either of the two tasks and write about it.",
           "choices": [
             {
               "id": "a",

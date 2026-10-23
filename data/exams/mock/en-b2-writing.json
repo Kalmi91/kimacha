@@ -9,7 +9,7 @@
         {
           "kind": "essay",
           "skill": "writing",
-          "instruction": "In this task you must write an essay. Use all the notes and give reasons for your point of view.",
+          "instruction": "Write an essay on the topic below. Cover all the notes and support your opinion with reasons.",
           "choices": [
             {
               "id": "e1",
@@ -30,7 +30,7 @@
         {
           "kind": "essay",
           "skill": "writing",
-          "instruction": "Choose one of the tasks below and write your answer.",
+          "instruction": "Pick one of the three tasks below and write your text for it.",
           "choices": [
             {
               "id": "article",
