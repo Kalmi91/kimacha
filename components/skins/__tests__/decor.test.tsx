@@ -5,7 +5,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import * as RN from 'react-native';
 import { Text } from 'react-native';
 
@@ -14,6 +14,7 @@ import { RAINBOW } from '@/components/skins/csillampony';
 import { SkinBackdrop, SkinCardFrame, SkinHeader, SkinWord } from '@/components/skins/Slots';
 import { SKINS, type SkinId } from '@/constants/Skins';
 import { getDb } from '@/lib/database';
+import { t } from '@/lib/i18n';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { makeFlush } from '@/test-utils/flush';
 
@@ -127,6 +128,17 @@ describe('decor of the 4 starter themes', () => {
     expect(flat(view.getByTestId('decor-ukiyoe-seal').props.style)).toMatchObject({
       backgroundColor: SKINS.ukiyoe.colors.light?.extra?.seal,
     });
+    view.unmount();
+  });
+
+  it('ukiyoe: a tap on the seal explains the sign, a tap outside closes it', async () => {
+    const view = await mountSkin('ukiyoe');
+    expect(view.queryByText(t().skins.ukiyoeSealNote)).toBeNull();
+    fireEvent.press(view.getByTestId('decor-ukiyoe-seal'));
+    expect(view.getByText(t().skins.ukiyoeSealMeaning)).toBeTruthy();
+    expect(view.getByText(t().skins.ukiyoeSealNote)).toBeTruthy();
+    fireEvent.press(view.getByTestId('decor-ukiyoe-seal-overlay'));
+    expect(view.queryByText(t().skins.ukiyoeSealNote)).toBeNull();
     view.unmount();
   });
 
