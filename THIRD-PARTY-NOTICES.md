@@ -49,6 +49,30 @@ to 480 px; where listed, they were also cropped to 4:3.
 | o2791 | `o2791.jpg` | Kimberly Vardeman | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Champurrado.jpg) | resized to 480 px |
 | o2828 | `o2828.jpg` | Dahyana Yasada R. R. | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Antojitos_Mexicanos.jpg) | resized to 480 px |
 
+## Exam photos: Wikimedia Commons
+
+15 photos in `assets/exam-photos/` are shown in the speaking part of the mock exams. Author, licence and
+source of each are recorded in `data/exams/mock/photos.json` and shown with the photo. The files were
+resized to 640 px.
+
+| Photo | File | Author | Licence | Source | Modified |
+| --- | --- | --- | --- | --- | --- |
+| es-a2-1 | `es-a2-1.jpg` | National Cancer Institute | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Family_eating_meal.jpg) | resized to 640 px |
+| es-a2-2 | `es-a2-2.jpg` | Álvaro de la Paz Franco | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Tianguis_metepequense.jpg) | resized to 640 px |
+| es-b1-1 | `es-b1-1.jpg` | Jenny Andersson / News Oresund | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Oresundstag_Kopenhamnsflygplats_20180811_N8B0061_(35754591253).jpg) | resized to 640 px |
+| es-b1-2 | `es-b1-2.jpg` | Vuemobi Media | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Outdoor_Yoga_At_the_Park.jpg) | resized to 640 px |
+| es-b2-1 | `es-b2-1.jpg` | Maytretrunghoa | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Going_to_the_World.jpg) | resized to 640 px |
+| es-b2-2 | `es-b2-2.jpg` | Claude Boucher | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Demenagement_quebec1.jpg) | resized to 640 px |
+| en-a1-1 | `en-a1-1.jpg` | Depersonas cocinando con sentido | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Carmen_cocina_las_lentejas_ecol%C3%B3gicas.jpg) | resized to 640 px |
+| en-a1-2 | `en-a1-2.jpg` | Smiley.toerist | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Reykjavik_2017_08.jpg) | resized to 640 px |
+| en-b1-1 | `en-b1-1.jpg` | USDA Natural Resources Conservation Service | Public domain | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:NRCSIL99001(17928)(NRCS_Photo_Gallery).jpg) | resized to 640 px |
+| en-b1-2 | `en-b1-2.jpg` | Raysonho @ Open Grid Scheduler / Scalable Grid Engine | [CC0](https://creativecommons.org/publicdomain/zero/1.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:EJPrattLibraryUniversityOfToronto.jpg) | resized to 640 px |
+| en-b2-1 | `en-b2-1.jpg` | Tina Li from Hamilton, Canada | [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Crowded_streetcar_during_Caribana,_2009.jpg) | resized to 640 px |
+| en-b2-2 | `en-b2-2.jpg` | trec_lit (Flickr) | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Ciclista_ant%C3%ADpodas.jpg) | resized to 640 px |
+| en-c1-1 | `en-c1-1.jpg` | Victor Gomez Ruiz | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:West_Kensington_Music_Team.jpg) | resized to 640 px |
+| en-c1-2 | `en-c1-2.jpg` | Punya | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A5%81%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A5%87_01.JPG) | resized to 640 px |
+| en-c1-3 | `en-c1-3.jpg` | Kippelboy | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Viquimarat%C3%B3_Matar%C3%B3_setembre_2012_(2).JPG) | resized to 640 px |
+
 ## Fonts
 
 The fonts in `assets/fonts/` are bundled so the app themes look the same on every device. The copyright
