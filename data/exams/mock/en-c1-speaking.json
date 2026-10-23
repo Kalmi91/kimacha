@@ -25,7 +25,7 @@
                     {
                       "id": "p1",
                       "label": "Describes the course of an ordinary day",
-                      "keywords": ["usually", "routine", "every day", "morning", "evening", "after work", "commut", "get up", "got up", "wake up", "normally", "breakfast"]
+                      "keywords": ["lunch", "routine", "every day", "morning", "evening", "after work", "commut", "get up", "got up", "wake up", "normally", "breakfast"]
                     }
                   ],
                   "model": "On a typical weekday I get up early, commute to the office, and spend most of the day in meetings. The best part is the evening, when I finally have time to cook properly."
@@ -73,7 +73,7 @@
                     {
                       "id": "p1",
                       "label": "Describes what the people in the chosen photographs are doing",
-                      "keywords": ["piano", "pianist", "clay", "potter", "wheel", "laptop", "computer", "typing", "keyboard", "vase", "course", "workshop"]
+                      "keywords": ["piano", "pianist", "clay", "potter", "wheel", "laptop", "computer", "typing", "keyboard", "vase", "class", "workshop"]
                     },
                     {
                       "id": "p2",
@@ -186,7 +186,7 @@
                     {
                       "id": "p1",
                       "label": "States how far they agree",
-                      "keywords": ["i agree", "i disagree", "partly", "up to a point", "to some extent", "not entirely", "in my view", "i'd say", "don't agree", "to a certain", "somewhat", "completely agree"]
+                      "keywords": ["i agree with", "i agree that", "i disagree", "partly", "up to a point", "to some extent", "not entirely", "in my view", "don't agree", "to a certain", "somewhat", "completely agree"]
                     },
                     {
                       "id": "p2",

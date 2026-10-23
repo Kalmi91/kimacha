@@ -69,7 +69,7 @@
                     {
                       "id": "p1",
                       "label": "Says what they prefer and gives a reason",
-                      "keywords": ["because", "since", "that's why", "more fun", "more relaxing", "i like", "enjoy", "love"]
+                      "keywords": ["since", "that's why", "more fun", "more relaxing", "relax", "tired", "quiet", "meet people", "enjoy", "love"]
                     }
                   ],
                   "model": "I prefer to go out with my friends because it's more fun than staying at home alone."
@@ -92,7 +92,7 @@
                     {
                       "id": "p3",
                       "label": "Says how the weekend was",
-                      "keywords": ["nice", "great", "good", "enjoy", "love", "happy", "was fun", "boring"]
+                      "keywords": ["great", "enjoy", "love", "happy", "was fun", "boring", "relaxing", "wonderful", "amazing", "tiring"]
                     }
                   ],
                   "model": "Last weekend was really nice. On Saturday I went to the beach with my family. We swam in the sea and ate fish for lunch. On Sunday I met my friends in a café and we watched a movie. I enjoyed it a lot because I was very relaxed."

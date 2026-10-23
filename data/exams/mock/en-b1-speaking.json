@@ -114,7 +114,7 @@
                     {
                       "id": "p3",
                       "label": "Gives an opinion about the activity",
-                      "keywords": ["i think it", "i think this", "i think gardening", "i like gardening", "gardening is", "i would like to try", "i would not like", "i would not enjoy", "relaxing", "peaceful", "healthy", "exercise"]
+                      "keywords": ["i think gardening", "i like gardening", "gardening is", "i would like to try", "i would not like", "i would not enjoy", "relaxing", "peaceful", "healthy", "exercise", "hobby", "fresh air"]
                     }
                   ],
                   "model": "This photo shows three people working in a garden on a sunny day. I think it's summer because everything is green and there are lots of pink and red flowers. There's a path with wood chips, and I can see some trees and houses in the background. All three people are bending over the flower bed, maybe pulling weeds. The man on the right is wearing a blue shirt and jeans. I think gardening looks relaxing, and I would like to try it because it's good to spend time outside."
@@ -150,7 +150,7 @@
                     {
                       "id": "p3",
                       "label": "Gives an opinion about the place",
-                      "keywords": ["i think it", "i think this", "i would study", "i would like to study", "i would not like", "i would not study", "i prefer", "quiet", "comfortable", "useful", "concentrate", "distract"]
+                      "keywords": ["good place", "noisy", "i would study", "i would like to study", "i would not like", "i would not study", "i prefer", "quiet", "comfortable", "useful", "concentrate", "distract"]
                     }
                   ],
                   "model": "In this photo, a group of students are studying in a library. They are sitting in a long row at a wooden desk next to a big window, and I can see a bare tree outside, so I think it's cold because some of them have coats on the chairs. Most of them are typing on laptops, and one girl is looking at her phone. I think it's a good place to study because it's quiet, but I would find it hard to concentrate with so many people next to me."
@@ -266,7 +266,7 @@
                     {
                       "id": "p1",
                       "label": "Gives an opinion about young people and older people",
-                      "keywords": ["i agree", "i disagree", "i don't agree", "in my opinion", "i don't think", "not true", "most young", "many young", "young people are", "respect"]
+                      "keywords": ["i agree that", "i disagree", "i don't agree", "in my opinion", "i don't think", "not true", "most young", "many young", "young people are", "young people don't", "respect"]
                     }
                   ],
                   "model": "I disagree with that. In my experience, many young people respect older people and help them, for example by carrying their bags or giving up a seat on the bus."

@@ -72,10 +72,10 @@
                   "ask": "Ahora hable de un día normal. Cuando quiera, puede empezar.",
                   "minWords": 35,
                   "points": [
-                    { "id": "p1", "label": "Dice a qué hora se levanta", "keywords": ["levanto", "despierto", "me paro", "temprano", "madrug", "las cinco", "las seis", "las siete", "las ocho", "las nueve", "las diez"] },
+                    { "id": "p1", "label": "Dice a qué hora se levanta", "keywords": ["levanto", "despierto", "me paro", "temprano", "madrug", "las cuatro", "las seis", "las siete", "las ocho", "las nueve", "las diez"] },
                     { "id": "p2", "label": "Dice qué desayuna o qué come", "keywords": ["desayuno", "almuerzo", "comida", "cafe", "fruta", "huevo", "como a", "como en", "como con", "leche", "cereal", "pan dulce"] },
                     { "id": "p3", "label": "Dice dónde trabaja o estudia", "keywords": ["trabajo", "estudio", "oficina", "escuela", "universidad", "empresa", "clases", "companeros"] },
-                    { "id": "p4", "label": "Cuenta qué hace por la tarde o por la noche", "keywords": ["la tarde", "la noche", "ceno", "cena", "regreso", "llego a", "me acuesto", "duermo", "television", "veo series", "hago ejercicio", "descans"] }
+                    { "id": "p4", "label": "Cuenta qué hace por la tarde o por la noche", "keywords": ["salgo", "juego", "ceno", "cena", "regreso", "llego a", "me acuesto", "duermo", "television", "veo series", "hago ejercicio", "descans"] }
                   ],
                   "model": "Me levanto a las siete y desayuno café con pan. Trabajo en una oficina del centro y como a las dos con mis compañeros. En la tarde regreso a mi casa y hago ejercicio un rato. En la noche ceno, veo una serie y me acuesto a las once."
                 }
@@ -127,7 +127,7 @@
                   "ask": "¿Le gusta su barrio? ¿Por qué?",
                   "minWords": 6,
                   "points": [
-                    { "id": "p1", "label": "Dice si le gusta su barrio y por qué", "keywords": ["me gusta", "porque es", "porque hay", "porque tiene", "porque esta", "tranquil", "bonit", "segur", "ruido", "limpi", "comod"] }
+                    { "id": "p1", "label": "Dice si le gusta su barrio y por qué", "keywords": ["vecinos", "parque", "porque es", "porque hay", "porque tiene", "porque esta", "tranquil", "bonit", "segur", "ruido", "limpi", "comod"] }
                   ],
                   "model": "Sí, me gusta porque es tranquilo y tiene muchos parques."
                 },
@@ -136,7 +136,7 @@
                   "ask": "Ahora usted me hace dos preguntas a mí, por favor.",
                   "minWords": 6,
                   "points": [
-                    { "id": "p1", "label": "Hace preguntas a la persona que le examina", "keywords": ["?", "donde", "cuanto", "cuando", "cual", "quien", "como se", "como esta", "que hace", "le gusta", "tiene usted"] }
+                    { "id": "p1", "label": "Hace preguntas a la persona que le examina", "keywords": ["?", "donde vive", "donde trabaja", "cuanto", "cuando", "cual", "quien", "como se", "como esta", "que hace", "le gusta", "tiene usted"] }
                   ],
                   "model": "¿Dónde vive usted? ¿Y cuántas personas viven en su casa?"
                 }
@@ -188,7 +188,7 @@
                   "ask": "Ahora usted me hace dos preguntas a mí, por favor.",
                   "minWords": 6,
                   "points": [
-                    { "id": "p1", "label": "Hace preguntas a la persona que le examina", "keywords": ["?", "donde", "cuanto", "cuando", "cual", "quien", "como se", "como esta", "que hace", "le gusta", "tiene usted"] }
+                    { "id": "p1", "label": "Hace preguntas a la persona que le examina", "keywords": ["?", "donde vive", "donde trabaja", "cuanto", "cuando", "cual", "quien", "como se", "como esta", "que hace", "le gusta", "tiene usted"] }
                   ],
                   "model": "¿Dónde trabaja usted? ¿Y a qué hora regresa a su casa?"
                 }

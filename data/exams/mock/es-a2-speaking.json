@@ -186,7 +186,7 @@
                   "ask": "Aquí tiene el menú del día. ¿Qué van a pedir?",
                   "minWords": 12,
                   "points": [
-                    { "id": "p1", "label": "Pide la comida", "keywords": ["quiero", "quisiera", "queremos", "me gustaria", "me da", "me trae", "voy a pedir", "vamos a pedir", "sopa", "pollo", "pescado", "arroz"] }
+                    { "id": "p1", "label": "Pide la comida", "keywords": ["quiero el", "quiero la", "quiero un", "quisiera", "queremos", "me gustaria", "me da", "me trae", "voy a pedir", "sopa", "pollo", "pescado"] }
                   ],
                   "model": "Yo quiero el pollo con arroz, por favor. Mi esposo va a pedir la sopa de verduras y mis padres quieren pescado."
                 },
@@ -223,7 +223,7 @@
                   "ask": "Buenos días, pase. ¿Qué le puedo ofrecer?",
                   "minWords": 12,
                   "points": [
-                    { "id": "p1", "label": "Dice qué quiere comprar", "keywords": ["quiero", "quisiera", "necesito", "deme", "me da", "me gustaria", "me regala", "me pone", "me llevo", "tiene", "platano", "papaya"] }
+                    { "id": "p1", "label": "Dice qué quiere comprar", "keywords": ["quiero comprar", "quisiera", "necesito", "deme", "me da", "me gustaria", "me regala", "me pone", "platano", "papaya", "mango", "manzana"] }
                   ],
                   "model": "Buenos días. Quiero comprar fruta para toda la semana. Necesito plátanos y una papaya, por favor."
                 },
@@ -241,7 +241,7 @@
                   "ask": "Muy bien. Aquí tiene. ¿Quiere llevar algo más?",
                   "minWords": 12,
                   "points": [
-                    { "id": "p1", "label": "Pide algo más, pregunta un precio o dice que es todo", "keywords": ["tambien", "ademas", "nada mas", "es todo", "quiero", "quisiera", "cuanto", "precio", "a como", "otro", "deme", "me da"] }
+                    { "id": "p1", "label": "Pide algo más, pregunta un precio o dice que es todo", "keywords": ["tambien quiero", "tambien necesito", "nada mas", "es todo", "quiero un", "quisiera", "cuanto", "precio", "a como", "otro", "deme", "me da"] }
                   ],
                   "model": "Sí, también quiero una papaya mediana. ¿Cuánto cuesta cada una? No sé si me alcanza el dinero."
                 },
