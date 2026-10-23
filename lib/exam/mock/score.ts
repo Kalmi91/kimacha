@@ -31,11 +31,28 @@ const SKILL_ORDER: MockSkill[] = ['reading', 'use', 'writing', 'listening', 'spe
 /**
  * Whether a content-point keyword occurs in the kept words. The keyword must start at a word start ("gracia" still finds
  * "gracias", but "sit" no longer finds "visit"); a keyword made only of punctuation (a question mark) runs on the raw text,
- * because punctuation drops out of the words.
+ * because punctuation drops out of the words. English contractions match their full form both ways ("i'm" = "i am",
+ * "don't" = "do not"); "'s" stays as it is (is / has / possessive).
  */
 function keywordHit(kw: string, words: string, raw: string): boolean {
-  const k = fold(kw);
-  return /[a-z0-9]/.test(k) ? ` ${words}`.includes(` ${k}`) : raw.includes(k);
+  const k = expandContractions(fold(kw));
+  return /[a-z0-9]/.test(k) ? ` ${expandContractions(words)}`.includes(` ${k}`) : raw.includes(k);
+}
+
+const CONTRACTIONS: [RegExp, string][] = [
+  [/\bwon't\b/g, 'will not'],
+  [/\bcan't\b/g, 'can not'],
+  [/\bcannot\b/g, 'can not'],
+  [/n't\b/g, ' not'],
+  [/'m\b/g, ' am'],
+  [/'re\b/g, ' are'],
+  [/'ve\b/g, ' have'],
+  [/'ll\b/g, ' will'],
+  [/'d\b/g, ' would'],
+];
+
+function expandContractions(text: string): string {
+  return CONTRACTIONS.reduce((s, [re, full]) => s.replace(re, full), text);
 }
 
 interface MockItemResult {
@@ -52,6 +69,8 @@ interface MockItemResult {
   group?: string;
   /** Speaking: the model answer of that turn. */
   model?: string;
+  /** Speaking: what the learner said (typed or dictated) in that turn, for the review. */
+  answer?: string;
 }
 
 interface MockTaskResult {
@@ -181,7 +200,7 @@ function dictationItems(expectedText: string, typed: string): MockItemResult[] {
  * The choice id a speaking task inherits from the task it `follows` (that task's own pick, else the one it follows in turn), or
  * undefined (no follow, or nothing picked: the scoring falls back to the first choice). Only an earlier task can be followed.
  */
-function followedChoice(tasks: MockTask[], index: number, answers: MockAnswers): string | undefined {
+export function followedChoice(tasks: MockTask[], index: number, answers: MockAnswers): string | undefined {
   const task = tasks[index];
   if (task?.kind !== 'speaking' || task.follows === undefined || task.follows - 1 >= index) return undefined;
   const followed = tasks[task.follows - 1];
@@ -339,7 +358,7 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
         const a = assessMessage(text, [task.instruction, choice.prompt, ...(choice.bullets ?? []), choice.input ?? '', turn.ask], ctx.lexicon);
         const enough = a.valid && a.words >= Math.ceil(turn.minWords / 2);
         const raw = fold(text);
-        const review = { group: turn.ask, model: turn.model };
+        const review = { group: turn.ask, model: turn.model, answer: text };
         for (const p of turn.points) {
           const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw));
           items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok, ...review });

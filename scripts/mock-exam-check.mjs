@@ -288,9 +288,23 @@ function assessText(text, reference) {
   return { words: kept.length, valid: kept.length > 0 && distinctOk, text: kept.join(' ') };
 }
 
+// English contractions match their full form both ways ("i'm" = "i am", "don't" = "do not"), as in score.ts.
+const CONTRACTIONS = [
+  [/\bwon't\b/g, 'will not'],
+  [/\bcan't\b/g, 'can not'],
+  [/\bcannot\b/g, 'can not'],
+  [/n't\b/g, ' not'],
+  [/'m\b/g, ' am'],
+  [/'re\b/g, ' are'],
+  [/'ve\b/g, ' have'],
+  [/'ll\b/g, ' will'],
+  [/'d\b/g, ' would'],
+];
+const expandContractions = (text) => CONTRACTIONS.reduce((s, [re, full]) => s.replace(re, full), text);
+
 function keywordHit(kw, words, raw) {
-  const k = fold(kw);
-  return /[a-z0-9]/.test(k) ? ` ${words}`.includes(` ${k}`) : raw.includes(k);
+  const k = expandContractions(fold(kw));
+  return /[a-z0-9]/.test(k) ? ` ${expandContractions(words)}`.includes(` ${k}`) : raw.includes(k);
 }
 
 /** One speaking turn scored like lib/exam/mock/score.ts: { words, hits (per content point), countOk (the word-count mark) }. */
