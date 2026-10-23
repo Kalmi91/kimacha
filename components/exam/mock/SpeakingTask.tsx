@@ -65,9 +65,10 @@ export default function SpeakingTask({ task, answer, onAnswer, target, canSpeak,
     const open = turns.findIndex((tn) => textOf(tn.id).trim() === '');
     return answeredAny ? (open === -1 ? turns.length - 1 : open) : 0;
   });
-  // The sheet next to the turns: open by default when the choice has a written stimulus to talk about; a tap on the toggle decides.
+  // The sheet next to the turns: open by default when the choice has a written stimulus to talk about, or when the task is one
+  // long turn (a monologue) whose guide points are what the learner talks through; a tap on the toggle decides.
   const [sheetToggled, setSheetToggled] = useState<boolean | null>(null);
-  const sheetOpen = sheetToggled ?? !!choice?.input;
+  const sheetOpen = sheetToggled ?? (!!choice?.input || (turns.length === 1 && !!choice?.bullets?.length));
   const [notesOpen, setNotesOpen] = useState(false);
   const turn = turns[Math.min(turnIdx, Math.max(0, turns.length - 1))];
 

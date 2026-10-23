@@ -282,6 +282,16 @@ describe('the examiner turns', () => {
     expect(order.indexOf('mock-speaking-photo-en-b1-1')).toBeLessThan(order.indexOf('mock-speaking-ask'));
   });
 
+  it('a monologue (one turn) with guide points has its sheet open by default: the points are what the learner talks through', () => {
+    const base = holiday.kind === 'speaking' ? holiday.choices[0] : null;
+    const monologue = { ...holiday, choices: [{ ...base, input: undefined, photos: undefined, turns: base ? [base.turns[0]] : [] }] } as MockTask;
+    const { view } = show(monologue);
+    fireEvent.press(view.getByTestId('mock-speaking-primary'));
+    fireEvent.press(view.getByTestId('mock-speaking-primary'));
+    expect(view.getByTestId('mock-speaking-sheet')).toBeTruthy();
+    expect(view.getByText('Hide the task sheet')).toBeTruthy();
+  });
+
   it('the answer field is a window of 4 to 7 lines; with a photo or a stimulus to look at it does not open the keyboard by itself, without it does', () => {
     const withStimulus = toTurns();
     const flat = StyleSheet.flatten(withStimulus.view.getByTestId('mock-speaking-answer').props.style);
