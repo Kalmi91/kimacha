@@ -166,7 +166,7 @@ describe('Mock exam: English B1 (authored papers, scale rule)', () => {
     expect(s.getByTestId('mock-band-reading').props.children).toMatch(/^Reading: about \d+ on the exam scale \(\d+ \/ 25\)$/);
     expect(s.getByTestId('mock-band-listening').props.children).toMatch(/on the exam scale/);
     expect(s.getByTestId('mock-band-speaking').props.children).toBe('Speaking: not included');
-    expect(s.getByTestId('mock-scale').props.children).toMatch(/^Average on the exam scale: about \d+, needed about 140 \(estimate\), (passed|not passed) \(provisional\)$/);
+    expect(s.getByTestId('mock-scale').props.children).toMatch(/^Average on the exam scale: about \d+ \(estimate\), needed 140, (passed|not passed) \(provisional\)$/);
     expect(s.getByTestId('mock-scale-note').props.children).toBe(s_.mockScaleNote);
     const overview = await readMockOverview(getDb(), 'en', ['B1']);
     expect(overview.B1?.last).toMatchObject({ provisional: true });

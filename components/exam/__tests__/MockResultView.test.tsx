@@ -29,7 +29,7 @@ describe('MockResultView: scale rule', () => {
     }
     expect(view.getByTestId('mock-band-use').props.children).toMatch(/^Use of English/);
     expect(view.getByTestId('mock-band-speaking').props.children).toMatch(/not included$/);
-    expect(view.getByTestId('mock-scale').props.children).toMatch(/needed about 160 \(estimate\)/);
+    expect(view.getByTestId('mock-scale').props.children).toMatch(/about \d+ \(estimate\), needed 160/);
     expect(view.getByTestId('mock-scale-note').props.children).toMatch(/^Approximate/);
     expect(view.queryByTestId('mock-group-1')).toBeNull();
   });
