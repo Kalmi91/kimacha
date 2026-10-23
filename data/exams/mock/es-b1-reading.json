@@ -1,0 +1,107 @@
+{
+  "target": "es",
+  "level": "B1",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Lea las descripciones de seis personas y los diez anuncios. Elija para cada persona el anuncio que mejor corresponde. Hay más anuncios de los necesarios y cada anuncio se puede usar solo una vez.",
+          "prompts": [
+            { "id": "1", "text": "Marina trabaja por las mañanas y solo tiene tiempo libre por la tarde. Quiere aprender a tocar un instrumento desde cero y no puede gastar mucho dinero." },
+            { "id": "2", "text": "Don Ernesto está jubilado y le gusta caminar al aire libre. Ya no maneja y busca una actividad en la naturaleza a la que pueda ir sin carro." },
+            { "id": "3", "text": "Sofía acaba de llegar a la ciudad para estudiar en la universidad. Necesita un lugar barato donde vivir y que tenga internet incluido en el precio." },
+            { "id": "4", "text": "La familia Ortega tiene dos hijos pequeños y busca un departamento con dos cuartos de dormir, cerca del transporte público, para mudarse el próximo mes." },
+            { "id": "5", "text": "A Julián le encanta leer y quiere comprar varios libros para regalar a sus sobrinos, pero tiene poco dinero y prefiere buscar precios bajos." },
+            { "id": "6", "text": "Carmen tiene sesenta años y nunca aprendió a usar una computadora. Le gustaría poder ver a sus nietos, que viven en otro país, y conversar con ellos en la pantalla." }
+          ],
+          "options": [
+            { "id": "a", "title": "Taller de cerámica", "text": "Si te gusta trabajar con las manos, este taller es para ti. Se imparte los sábados de diez a una de la tarde en el Centro Cultural Jacarandas. Los materiales están incluidos en el precio. No necesitas experiencia. Los grupos son pequeños y el maestro atiende a cada persona. Inscripciones en la recepción del centro." },
+            { "id": "b", "title": "Excursiones de domingo", "text": "El club Pasos Libres organiza caminatas fáciles por los bosques cercanos a la ciudad, pensadas para adultos mayores. Un autobús sale a las ocho de la mañana desde la plaza principal y regresa por la tarde. El precio incluye transporte, refrigerio y guía. Los lugares son limitados, así que se recomienda reservar con anticipación." },
+            { "id": "c", "title": "Computación sin miedo", "text": "Curso para personas que se inician en la computación. En diez sesiones aprenderás a encender el equipo, escribir un mensaje, mandar correos y hacer videollamadas con tu familia. Las clases son los martes y jueves de cinco a siete de la tarde. Cada alumno trabaja con su propia computadora. Cupo máximo de doce personas." },
+            { "id": "d", "title": "Se renta cuarto", "text": "Se renta cuarto amueblado con baño propio a diez minutos de la universidad, en una casa tranquila con jardín. Precio: 3,200 pesos al mes, con internet y agua incluidos. Ideal para estudiantes. Se pide un mes de depósito y no se aceptan mascotas. Interesados, escribir al celular que aparece en el portón." },
+            { "id": "e", "title": "Carrera 10K de la ciudad", "text": "El próximo domingo se realizará la tradicional carrera de diez kilómetros por el centro histórico. Pueden participar corredores mayores de dieciséis años. La inscripción cuesta 250 pesos y se hace únicamente por internet. Todos los participantes reciben una playera y una medalla al llegar a la meta." },
+            { "id": "f", "title": "Clases de guitarra", "text": "Aprende guitarra desde cero con maestros profesionales. Ofrecemos grupos para principiantes de lunes a viernes, en horario de cuatro de la tarde a ocho de la noche. La mensualidad es de 350 pesos e incluye el uso de guitarras de la escuela durante la clase. La primera clase es gratis." },
+            { "id": "g", "title": "Piano para niños", "text": "La Academia Armonía abre su nuevo grupo de piano para niños de cuatro a diez años. Las clases son los sábados por la mañana y duran una hora. Los padres pueden observar la primera sesión. Se necesita traer un teclado para practicar en casa. Los lugares se asignan por orden de inscripción." },
+            { "id": "h", "title": "Feria del libro usado", "text": "Este sábado, en el parque Las Palmas, se instala la feria del libro usado. Habrá más de cuarenta puestos con novelas, cuentos infantiles y libros de cocina desde veinte pesos. También habrá cuentacuentos para niños a las doce del día. La entrada es libre y la feria cierra a las seis de la tarde." },
+            { "id": "i", "title": "Departamento en renta", "text": "Se renta departamento de dos recámaras, sala-comedor, cocina integral y dos baños, en un tercer piso con elevador. Está a cinco minutos caminando de la estación del metro. Incluye lugar de estacionamiento. La renta es de 9,500 pesos mensuales; se pide un mes de depósito y un aval." },
+            { "id": "j", "title": "Cine al aire libre", "text": "Todos los viernes de octubre proyectamos películas mexicanas clásicas en la explanada del museo. La función empieza a las siete y media de la tarde y la entrada es gratuita. Recomendamos llevar una cobija o una silla plegable. En caso de lluvia, la función se suspende y se reprograma para la semana siguiente." }
+          ],
+          "answer": { "1": "f", "2": "b", "3": "d", "4": "i", "5": "h", "6": "c" },
+          "unique": true
+        },
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Lea el texto y conteste a las preguntas. Elija la opción correcta para cada pregunta.",
+          "title": "Un huerto en la azotea",
+          "text": "En muchas ciudades de México, los edificios altos y las calles llenas de carros dejan poco espacio para las plantas. Por eso, cada vez más vecinos convierten sus azoteas en pequeños huertos, donde cultivan verduras, hierbas y flores. La idea no es nueva, pero en los últimos años se volvió muy popular entre las familias jóvenes.\n\nUno de los primeros huertos de este tipo en la colonia Escandón lo empezó hace tres años una maestra jubilada, Teresa Landa. Todo comenzó con cuatro macetas de albahaca y jitomate. Hoy el huerto ocupa toda la azotea del edificio y participan en él quince familias. Cada domingo por la mañana se reúnen para regar, quitar la hierba mala y repartir la cosecha.\n\nPara empezar no se necesita mucho dinero. Basta con tener un espacio donde dé el sol durante al menos seis horas al día y conseguir recipientes. Muchos vecinos usan cajas de madera, llantas viejas o botes de plástico que antes iban a la basura. También sirven los frascos de vidrio o las latas, siempre que tengan agujeros en el fondo. Lo más importante es la tierra: debe ser suelta y estar mezclada con composta, que se prepara en casa con restos de fruta y verdura.\n\nLos expertos recomiendan comenzar con plantas fáciles de cuidar, como el cilantro, el rábano o la lechuga, porque crecen rápido y casi no necesitan atención especial. Más adelante, cuando ya se tiene práctica, se puede probar con chiles o fresas. Un error frecuente de los principiantes es regar demasiado: las raíces se pudren si el agua no tiene salida.\n\nAdemás de producir alimentos frescos, los huertos tienen otras ventajas. Bajan la temperatura de los edificios en verano, porque las plantas dan sombra y retienen humedad. También mejoran la convivencia: muchos vecinos que antes ni se saludaban ahora comparten recetas y herramientas. Teresa asegura que lo mejor del proyecto no son las verduras, sino las conversaciones que se dan mientras trabajan.\n\nHay, sin embargo, algunas dificultades. En época de lluvias, el peso del agua puede dañar el techo si no se revisa la estructura antes de instalar el huerto. Por eso, los especialistas aconsejan consultar siempre con un arquitecto o un ingeniero y pedir permiso a la administración del edificio.\n\nLos organizadores del proyecto de la colonia Escandón ofrecen ahora talleres gratuitos para quien quiera empezar su propio huerto. Las personas interesadas solo deben llevar un envase vacío y muchas ganas de aprender. Los talleres se realizan el primer sábado de cada mes, en la azotea del edificio.",
+          "questions": [
+            { "stem": "Según el texto, los vecinos hacen huertos en las azoteas porque...", "options": ["los parques de la ciudad están cerrados al público.", "en la ciudad hay poco espacio para las plantas.", "las verduras del mercado cuestan demasiado para las familias."], "correct": 1 },
+            { "stem": "Sobre el huerto de Teresa Landa, el texto dice que...", "options": ["empezó con pocas plantas y creció con los años.", "ocupó toda la azotea desde el primer día.", "lo organiza el gobierno de la ciudad desde hace diez años."], "correct": 0 },
+            { "stem": "Según el texto, para empezar un huerto en casa basta con...", "options": ["un jardín grande y herramientas profesionales.", "mucho dinero para comprar macetas nuevas y plantas ya crecidas.", "un lugar con sol y recipientes reutilizables."], "correct": 2 },
+            { "stem": "Los expertos aconsejan a los principiantes...", "options": ["empezar con plantas grandes que dan fruta, como el limón o el mango.", "elegir plantas que crecen rápido y necesitan pocos cuidados.", "regar las plantas todos los días con mucha agua."], "correct": 1 },
+            { "stem": "Teresa piensa que lo mejor del proyecto es...", "options": ["la cosecha de verduras frescas cada semana.", "el ahorro de dinero en la compra de comida.", "la convivencia y las conversaciones entre vecinos."], "correct": 2 },
+            { "stem": "Antes de instalar un huerto en una azotea, hay que...", "options": ["consultar a un especialista y pedir permiso.", "esperar a que termine la época de lluvias.", "juntar a diez vecinos que paguen los gastos."], "correct": 0 }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Lea los tres textos y las seis frases. Indique en qué texto se dice lo que expresa cada frase. Puede elegir un mismo texto más de una vez.",
+          "prompts": [
+            { "id": "1", "text": "Después de terminar su horario, todavía tenía trabajo pendiente en su casa." },
+            { "id": "2", "text": "Hoy en día se dedica a lo mismo que hacía cuando empezó a trabajar." },
+            { "id": "3", "text": "Tenía contacto diario con personas que venían de otros países." },
+            { "id": "4", "text": "Gracias a su trabajo conoció a una persona que sigue siendo su amiga." },
+            { "id": "5", "text": "Le pasó algo vergonzoso durante su primera jornada." },
+            { "id": "6", "text": "Al comienzo no recibía dinero por lo que hacía." }
+          ],
+          "options": [
+            { "id": "a", "title": "Alejandro, 24 años", "text": "Mi primer trabajo fue de mesero en un restaurante de pescado en la playa, el verano después de la preparatoria. Atendía sobre todo a turistas de otros países, y con ellos practiqué mi inglés. Trabajaba seis días a la semana, de las doce del día a la medianoche. Mi primer día fue un desastre: se me cayó una charola con seis vasos delante de todo el comedor. Mi jefe no se enojó, solo me dio una escoba y se rio. Ganaba poco, pero las propinas me daban casi el doble del sueldo. En septiembre dejé el restaurante para entrar a la universidad, y desde entonces regreso a la playa solo de vacaciones." },
+            { "id": "b", "title": "Berenice, 33 años", "text": "A los veintidós años empecé a dar clases de inglés en una academia de idiomas. Mis alumnos eran adultos, casi todos mayores que yo, y al principio no sabía cómo corregirlos. Las clases terminaban a las nueve de la noche, y después me quedaba en casa preparando la clase del día siguiente hasta muy tarde. Con el tiempo se me quitaron los nervios. Una alumna, la señora Pilar, me invitó un día a comer a su casa y desde entonces somos amigas. Trabajé ahí seis años. Hoy ya no doy clases, sino que trabajo en una empresa de tecnología, pero extraño a mis alumnos." },
+            { "id": "c", "title": "Carlos, 45 años", "text": "Empecé a trabajar a los quince años en la carpintería de mi tío Raúl, durante las vacaciones de la escuela. Mis papás pensaban que era solo un pasatiempo de verano. Al principio solo barría el aserrín y llevaba las tablas de un lado a otro, pero poco a poco me dejó usar las herramientas. No me pagaba un sueldo; a cambio me enseñaba, y para mí eso valía más. Aprendí a medir, a cortar y a lijar la madera con paciencia. Cuando mi tío se jubiló, me quedé con el taller. Hoy tengo cuatro empleados y fabrico muebles por pedido. Sigo usando la regla que él me regaló." }
+          ],
+          "answer": { "1": "b", "2": "c", "3": "a", "4": "b", "5": "a", "6": "c" },
+          "unique": false
+        },
+        {
+          "skill": "reading",
+          "kind": "gapped_text",
+          "instruction": "Lea el texto, al que le faltan seis fragmentos. Complete cada hueco con el fragmento adecuado. Sobran dos fragmentos.",
+          "title": "De la oficina a la panadería",
+          "text": "Ricardo Salas trabajó quince años en un banco de Guadalajara. Llegaba a la oficina a las ocho de la mañana y salía a las siete de la noche, así que casi nunca veía a sus hijos despiertos entre semana. Vivía en un departamento pequeño en las afueras y gastaba casi dos horas al día en el camión. Los domingos, cansado, apenas tenía ganas de salir a pasear. {{1}} Un viernes de marzo, su jefe lo llamó y le explicó que la sucursal cerraría a fin de mes.\n\nEsa noche, Ricardo le contó todo a su esposa, Lupita, y ella le hizo una pregunta sencilla: «¿Qué es lo que más disfrutas hacer?». {{2}} Después recordó los domingos de su infancia, cuando ayudaba a su abuela a preparar pan en una cocina pequeña. Entonces tuvieron la idea: con el dinero de la liquidación abrirían una panadería. Lupita trabajaba medio tiempo en una escuela y estaba segura de que el plan podía funcionar. Los dos hicieron cuentas en la mesa de la cocina hasta casi la medianoche.\n\nLos primeros meses fueron difíciles. Ricardo no sabía casi nada del oficio, así que se inscribió en un curso nocturno. Pasó muchas noches leyendo libros de cocina y viendo videos de panaderos de todo el país, y practicó cada tarde en su cocina. {{3}} Aun así, su familia y sus vecinos probaban todo y le decían con sinceridad qué opinaban. Con sus consejos, mejoró poco a poco las recetas.\n\nCon ayuda de su cuñado, Ricardo compró un horno usado, pintó las paredes de amarillo y colgó un letrero con el nombre «El Horno Amarillo». La panadería abrió en octubre, en una esquina cercana a una escuela primaria. {{4}} Poco a poco, sin embargo, los padres de familia empezaron a pasar a comprar pan de camino a casa, y algunos clientes volvían todos los días. A los tres meses, Ricardo contrató a su primer empleado.\n\nHoy, tres años después, la panadería tiene seis empleados y vende más de trescientos panes al día. Muchos de sus clientes son los mismos padres de familia de los primeros meses. Además, prepara pasteles por encargo para cumpleaños y bodas. {{5}} Por eso asegura que no volvería a trabajar en un banco, ni siquiera con un sueldo mucho mayor.\n\nCuando le preguntan cuál es la mayor diferencia entre su vida anterior y la actual, no habla de dinero. {{6}} Los sábados, además, cierra más temprano para ir al parque con sus hijos. Dice que nunca imaginó que perder un empleo fuera lo mejor que le podía pasar.",
+          "fragments": [
+            { "id": "a", "text": "Ricardo se quedó callado un buen rato, porque nadie le había hecho esa pregunta en muchos años." },
+            { "id": "b", "text": "Habla del tiempo: ahora desayuna, come y cena con su familia casi todos los días." },
+            { "id": "c", "text": "Durante la primera semana entraron muy pocas personas y Ricardo llegó a dudar de su decisión." },
+            { "id": "d", "text": "Ese mismo día, el banco le ofreció un puesto mejor en otra ciudad." },
+            { "id": "e", "text": "Muchas veces pensó en dejar ese ritmo de vida, pero le daba miedo perder un sueldo seguro." },
+            { "id": "f", "text": "Desde el primer día hubo una fila larga de clientes en la puerta." },
+            { "id": "g", "text": "Al principio, casi todos sus panes salían duros o demasiado quemados." },
+            { "id": "h", "text": "Lo que más lo enorgullece es que muchos clientes viajan desde otros barrios solo para comprar su pan de nuez." }
+          ],
+          "answer": { "1": "e", "2": "a", "3": "g", "4": "c", "5": "h", "6": "b" }
+        },
+        {
+          "skill": "reading",
+          "kind": "cloze",
+          "instruction": "Lea la carta y complete los huecos. Elija en cada caso la opción correcta.",
+          "title": "Una carta a una amiga",
+          "text": "Querida Ana:\n\n¿Cómo estás? Te escribo desde mi nuevo departamento. Me mudé hace dos semanas y todavía {{1}} muchas cajas sin abrir. Aún me falta comprar un sillón y una mesa para el comedor. Es un lugar muy tranquilo y mi recámara {{2}} un balcón pequeño, donde por las mañanas me tomo un café. Está cerca de un parque y hay una tienda en la esquina donde compro casi todo. Ayer {{3}} a conocer a los vecinos y me parecieron muy amables. La señora del tercer piso me regaló un pastel y me dijo que, si necesito algo, {{4}} con ella sin pena. Lo único malo es que mi trabajo me queda lejos, así que tengo que levantarme una hora {{5}} temprano que antes. Aun así no me quejo, porque ahora gano más dinero. Cuando tengas tiempo, ven a visitarme: me encantaría que {{6}} un fin de semana conmigo. Escríbeme pronto y cuéntame cómo va todo en tu trabajo nuevo.\n\nUn abrazo,\nLucía",
+          "gaps": [
+            { "options": ["hago", "soy", "tengo"], "correct": 2 },
+            { "options": ["está", "tiene", "hay"], "correct": 1 },
+            { "options": ["fui", "iré", "voy"], "correct": 0 },
+            { "options": ["hablo", "hablaba", "hable"], "correct": 2 },
+            { "options": ["más", "muy", "tan"], "correct": 0 },
+            { "options": ["pasas", "pasaras", "pasarás"], "correct": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

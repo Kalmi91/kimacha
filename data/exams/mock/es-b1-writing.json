@@ -1,0 +1,68 @@
+{
+  "target": "es",
+  "level": "B1",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Lea el correo de su amigo y escriba una respuesta de entre 100 y 120 palabras. Trate todos los puntos que se indican en la tarea.",
+          "choices": [
+            {
+              "id": "t1",
+              "title": "Responder al correo de un amigo",
+              "prompt": "Un amigo suyo, Fernando, le escribe este correo. Escríbale una respuesta de entre 100 y 120 palabras. En su respuesta debe: aceptar la cena y proponer un día y un lugar; recomendarle un hotel o una zona de la ciudad; decirle qué ropa debe llevar según el clima; y contarle alguna novedad de su vida.",
+              "input": "Hola, ¿cómo estás? Te escribo porque el mes que viene voy a pasar una semana en tu ciudad por trabajo y me encantaría verte. Llego el lunes por la noche y me voy el domingo siguiente. ¿Podemos cenar juntos algún día? Además, necesito encontrar un hotel cómodo y no muy caro, cerca del centro. ¿Conoces alguno? Y otra cosa: ¿qué ropa debo llevar? No sé si hace frío en esa época. ¡Cuéntame también cómo van tus cosas! Un abrazo, Fernando",
+              "minWords": 100,
+              "maxWords": 120,
+              "points": [
+                { "id": "p1", "label": "Propone un día y un lugar para cenar", "keywords": ["martes", "miercoles", "jueves", "viernes", "sabado", "restaurante", "te invito", "nos vemos en"] },
+                { "id": "p2", "label": "Recomienda un hotel o una zona de la ciudad", "keywords": ["te recomiendo", "hotel", "hospeda", "colonia", "zona", "barrio", "barato", "economico"] },
+                { "id": "p3", "label": "Dice qué ropa llevar según el clima", "keywords": ["abrigo", "chamarra", "sueter", "paraguas", "clima", "temperatura", "lleva ropa", "trae ropa"] },
+                { "id": "p4", "label": "Cuenta una novedad personal", "keywords": ["me mude", "empece", "consegui", "acabo de", "me case", "tengo novi", "me ascendieron", "estoy estudiando"] }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Elija una de las dos opciones y escriba un texto de entre 130 y 150 palabras. Trate todos los puntos que se indican en la tarea.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "Mi mejor viaje",
+              "prompt": "Escriba un texto de entre 130 y 150 palabras para el blog. En su texto debe: decir adónde fue y con quién; contar qué hizo allí; explicar por qué fue un viaje especial; y decir si volvería a ese lugar.",
+              "input": "El blog de viajes de nuestra universidad busca textos de los lectores. Si tiene una historia de un viaje especial, cuéntenosla. Queremos saber adónde fue, con quién, qué hizo y por qué lo recuerda tanto. Los mejores textos se publicarán en el próximo número.",
+              "minWords": 130,
+              "maxWords": 150,
+              "points": [
+                { "id": "p1", "label": "Dice adónde fue y con quién", "keywords": ["fuimos a", "fui a", "viaje a", "con mi", "acompan", "con un amigo", "con una amiga", "con unos"] },
+                { "id": "p2", "label": "Cuenta qué hizo allí", "keywords": ["visit", "conoc", "camin", "recorr", "hicimos", "probamos", "paseamos", "compramos"] },
+                { "id": "p3", "label": "Explica por qué fue especial", "keywords": ["inolvidable", "unico", "nunca olvidare", "me encanto", "lo mejor", "increible", "maravill", "aprendi"] },
+                { "id": "p4", "label": "Dice si volvería", "keywords": ["volver", "regresar", "otra vez", "algun dia", "sin duda", "me gustaria", "quisiera", "con gusto"] }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Una persona importante",
+              "prompt": "Escriba un texto de entre 130 y 150 palabras para la revista. En su texto debe: presentar a la persona; describir cómo es; contar una situación en la que le ayudó o le enseñó algo; y decir por qué es importante para usted.",
+              "input": "La revista de nuestro barrio prepara una sección sobre personas que influyeron en la vida de los vecinos. Si quiere participar, escríbanos sobre alguien importante para usted: quién es, cómo es y qué le enseñó. Publicaremos algunos textos en el próximo número.",
+              "minWords": 130,
+              "maxWords": 150,
+              "points": [
+                { "id": "p1", "label": "Presenta a la persona", "keywords": ["se llama", "mi abuel", "mi mam", "mi pap", "mi madre", "mi padre", "mi tia", "mi amig"] },
+                { "id": "p2", "label": "Describe cómo es", "keywords": ["es muy", "tiene el pelo", "ojos", "amable", "simpatic", "carino", "generos", "pacient"] },
+                { "id": "p3", "label": "Cuenta una situación en la que le ayudó o le enseñó algo", "keywords": ["me ayud", "me ensen", "me dio un consejo", "me aconsej", "aprendi a", "gracias a el", "una vez", "me apoy"] },
+                { "id": "p4", "label": "Explica por qué es importante", "keywords": ["admiro", "agradezco", "es un ejemplo", "es un modelo", "por eso lo quiero", "por eso la quiero", "es importante para mi", "significa mucho"] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

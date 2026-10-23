@@ -48,6 +48,9 @@ export function buildGlossaryIndex(items: PcicItem[], target: MockTarget): Gloss
   return { singles, phrases, target };
 }
 
+/** The `{{n}}` gap marker of the authored texts. */
+const GAP_MARK = /\{\{\d+\}\}/g;
+
 /** The target-language texts of the task that are visible ON SCREEN (not the read-aloud lines, nor the instruction: for the instruction the UI gives a source-language translation). */
 export function mockTaskTexts(task: MockTask): string[] {
   switch (task.kind) {
@@ -71,6 +74,27 @@ export function mockTaskTexts(task: MockTask): string[] {
       return [task.context, ...task.fields.map((f) => f.label)];
     case 'short_message':
       return [task.prompt];
+    // The authored kinds (B1-C1): the visible text only, the recordings are not shown.
+    case 'passage_mc':
+      return [task.title ?? '', task.text ?? '', ...task.questions.flatMap((q) => [q.stem, ...q.options])].filter(Boolean);
+    case 'clips_mc':
+      return task.clips.flatMap((c) => [c.text ?? '', ...c.questions.flatMap((q) => [q.stem, ...q.options])]).filter(Boolean);
+    case 'match_pool':
+      return [...task.prompts.map((p) => p.text ?? ''), ...task.options.flatMap((o) => [o.title ?? '', o.text])].filter(Boolean);
+    case 'gapped_text':
+      return [task.title ?? '', task.text.replace(GAP_MARK, ' '), ...task.fragments.map((f) => f.text)].filter(Boolean);
+    case 'cloze':
+      return [
+        task.title ?? '',
+        task.text.replace(GAP_MARK, ' '),
+        ...task.gaps.flatMap((g) => ('options' in g ? g.options : g.stem ? [g.stem] : [])),
+      ].filter(Boolean);
+    case 'pick_statements':
+      return [task.text ?? '', ...task.statements].filter(Boolean);
+    case 'transform':
+      return task.items.flatMap((it) => [it.first, it.key, it.before, it.after]);
+    case 'essay':
+      return task.choices.flatMap((c) => [c.title, c.prompt, c.input ?? '']).filter(Boolean);
   }
 }
 

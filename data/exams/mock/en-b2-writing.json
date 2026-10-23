@@ -1,0 +1,82 @@
+{
+  "target": "en",
+  "level": "B2",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "kind": "essay",
+          "skill": "writing",
+          "instruction": "Write an essay on the topic below. Cover all the notes and support your opinion with reasons.",
+          "choices": [
+            {
+              "id": "e1",
+              "title": "Essay",
+              "input": "Your class has been talking about transportation in cities. Now your teacher has asked you to write an essay.\n\nSome people say that cars should be banned from city centers. To what extent do you agree?\n\nNotes. Write about:\n1. air quality and noise\n2. access for shoppers and workers\n3. (your own idea)",
+              "prompt": "Write your essay in 140-190 words. Use all the notes and give reasons for your point of view.",
+              "minWords": 140,
+              "maxWords": 190,
+              "points": [
+                { "id": "air", "label": "Air quality and noise", "keywords": ["clean air", "air quality", "air pollution", "pollution", "noise", "noisy", "fumes", "emissions"] },
+                { "id": "access", "label": "Access for shoppers and workers", "keywords": ["shop", "customer", "worker", "commut", "business", "deliver", "disabled", "elderly"] },
+                { "id": "idea", "label": "Own idea, for example an alternative way to travel", "keywords": ["public transport", "buses", "bicycle", "bike", "pedestrian", "electric", "alternative", "tourist"] },
+                { "id": "opinion", "label": "A clear opinion", "keywords": ["agree", "disagree", "believe", "opinion", "think", "conclusion", "personally", "in my view"] }
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "essay",
+          "skill": "writing",
+          "instruction": "Pick one of the three tasks below and write your text for it.",
+          "choices": [
+            {
+              "id": "article",
+              "title": "Article",
+              "input": "You see this announcement in an English-language magazine for young people.\n\nArticles wanted: A place where I relax. Tell us about a place that helps you relax, what you do there and why it is important to you. The best articles will be published next month.",
+              "prompt": "Write your article in 140-190 words.",
+              "minWords": 140,
+              "maxWords": 190,
+              "points": [
+                { "id": "place", "label": "Describes the place", "keywords": ["park", "garden", "beach", "lake", "forest", "mountain", "river", "bedroom"] },
+                { "id": "activity", "label": "Says what the writer does there", "keywords": ["walk", "swim", "listen", "music", "paint", "cook", "reading", "i read"] },
+                { "id": "why", "label": "Explains why the place is important", "keywords": ["calm", "peace", "quiet", "stress", "escape", "worries", "forget", "feel better"] },
+                { "id": "advice", "label": "Encourages readers to find their own place", "keywords": ["recommend", "you should", "you need", "try to", "everyone", "anyone", "find your own", "why not"] }
+              ]
+            },
+            {
+              "id": "email",
+              "title": "Email",
+              "input": "You have received an email from your English-speaking friend Sam, who is coming to stay with you for a weekend.\n\nI can't wait to visit! What should I pack? What would you like us to do while I'm there? And is there anything I should know about your town before I arrive?",
+              "prompt": "Write your email to Sam in 140-190 words.",
+              "minWords": 140,
+              "maxWords": 190,
+              "points": [
+                { "id": "pack", "label": "Says what Sam should pack", "keywords": ["pack", "bring", "clothes", "coat", "jacket", "umbrella", "shoes", "weather"] },
+                { "id": "plans", "label": "Suggests things to do", "keywords": ["museum", "restaurant", "walk", "concert", "market", "sightseeing", "explore", "picnic"] },
+                { "id": "know", "label": "Gives useful information about the town", "keywords": ["remember", "careful", "advice", "tips", "important", "keep in mind", "watch out", "ticket"] },
+                { "id": "tone", "label": "Friendly greeting and ending", "keywords": ["dear", "hi there", "hello", "looking forward", "see you", "best wishes", "regards", "cheers"] }
+              ]
+            },
+            {
+              "id": "review",
+              "title": "Review",
+              "input": "Your local library is collecting reviews on its website.\n\nTell us about a film, a book or a concert that you enjoyed recently. Say what it was about, what you liked and disliked about it, and whether you would recommend it to other people.",
+              "prompt": "Write your review in 140-190 words.",
+              "minWords": 140,
+              "maxWords": 190,
+              "points": [
+                { "id": "about", "label": "Says what it was about", "keywords": ["story", "plot", "tells", "follows", "set in", "based on", "stars", "character"] },
+                { "id": "liked", "label": "Says what the writer liked", "keywords": ["enjoyed", "loved", "liked", "great", "excellent", "funny", "impressive", "beautiful"] },
+                { "id": "disliked", "label": "Mentions something negative", "keywords": ["however", "unfortunately", "boring", "slow", "disappointing", "weakness", "downside", "criticism"] },
+                { "id": "recommend", "label": "Gives a recommendation", "keywords": ["recommend", "worth", "should", "must see", "definitely", "anyone", "everyone", "highly"] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

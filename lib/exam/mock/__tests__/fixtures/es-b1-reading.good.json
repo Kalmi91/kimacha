@@ -1,0 +1,314 @@
+{
+  "target": "es",
+  "level": "B1",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "instruction": "Lea el texto y conteste.",
+          "kind": "match_pool",
+          "prompts": [
+            {
+              "id": "p1",
+              "text": "casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo"
+            },
+            {
+              "id": "p2",
+              "text": "ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle"
+            },
+            {
+              "id": "p3",
+              "text": "mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también"
+            },
+            {
+              "id": "p4",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día"
+            },
+            {
+              "id": "p5",
+              "text": "casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo"
+            },
+            {
+              "id": "p6",
+              "text": "ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día"
+            },
+            {
+              "id": "b",
+              "text": "casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle"
+            },
+            {
+              "id": "c",
+              "text": "mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día"
+            },
+            {
+              "id": "d",
+              "text": "casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle"
+            },
+            {
+              "id": "e",
+              "text": "mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día"
+            },
+            {
+              "id": "f",
+              "text": "casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle"
+            },
+            {
+              "id": "g",
+              "text": "mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día"
+            },
+            {
+              "id": "h",
+              "text": "casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle"
+            },
+            {
+              "id": "i",
+              "text": "mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día"
+            },
+            {
+              "id": "j",
+              "text": "casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle"
+            }
+          ],
+          "answer": {
+            "p1": "a",
+            "p2": "b",
+            "p3": "c",
+            "p4": "d",
+            "p5": "e",
+            "p6": "f"
+          },
+          "unique": true
+        },
+        {
+          "skill": "reading",
+          "instruction": "Lea el texto y conteste.",
+          "kind": "passage_mc",
+          "text": "mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también",
+          "questions": [
+            {
+              "stem": "Pregunta 1",
+              "options": [
+                "Opción 1a",
+                "Opción 1b",
+                "Opción 1c"
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Pregunta 2",
+              "options": [
+                "Opción 2a",
+                "Opción 2b",
+                "Opción 2c"
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Pregunta 3",
+              "options": [
+                "Opción 3a",
+                "Opción 3b",
+                "Opción 3c"
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Pregunta 4",
+              "options": [
+                "Opción 4a",
+                "Opción 4b",
+                "Opción 4c"
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Pregunta 5",
+              "options": [
+                "Opción 5a",
+                "Opción 5b",
+                "Opción 5c"
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Pregunta 6",
+              "options": [
+                "Opción 6a",
+                "Opción 6b",
+                "Opción 6c"
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "instruction": "Lea el texto y conteste.",
+          "kind": "match_pool",
+          "prompts": [
+            {
+              "id": "p1",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también"
+            },
+            {
+              "id": "p2",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también"
+            },
+            {
+              "id": "p3",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también"
+            },
+            {
+              "id": "p4",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también"
+            },
+            {
+              "id": "p5",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también"
+            },
+            {
+              "id": "p6",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también"
+            }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo"
+            },
+            {
+              "id": "b",
+              "text": "ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también"
+            },
+            {
+              "id": "c",
+              "text": "hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo"
+            }
+          ],
+          "answer": {
+            "p1": "a",
+            "p2": "b",
+            "p3": "c",
+            "p4": "a",
+            "p5": "b",
+            "p6": "c"
+          },
+          "unique": false
+        },
+        {
+          "skill": "reading",
+          "instruction": "Lea el texto y conteste.",
+          "kind": "gapped_text",
+          "text": "grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa {{1}} tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande {{2}} amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo {{3}} trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo {{4}} trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo {{5}} ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo {{6}} familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad",
+          "fragments": [
+            {
+              "id": "f1",
+              "text": "ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos"
+            },
+            {
+              "id": "f2",
+              "text": "tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro"
+            },
+            {
+              "id": "f3",
+              "text": "calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa"
+            },
+            {
+              "id": "f4",
+              "text": "grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque"
+            },
+            {
+              "id": "f5",
+              "text": "cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo"
+            },
+            {
+              "id": "f6",
+              "text": "ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos"
+            },
+            {
+              "id": "f7",
+              "text": "tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro"
+            },
+            {
+              "id": "f8",
+              "text": "calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa"
+            }
+          ],
+          "answer": {
+            "1": "f6",
+            "2": "f5",
+            "3": "f4",
+            "4": "f3",
+            "5": "f2",
+            "6": "f1"
+          }
+        },
+        {
+          "skill": "reading",
+          "instruction": "Lea el texto y conteste.",
+          "kind": "cloze",
+          "text": "familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho {{1}} porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos {{2}} tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa {{3}} tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad {{4}} mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho {{5}} porque cuando también hablamos vamos tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos {{6}} tenemos lugar día casa grande tiempo amigo trabajo ciudad familia mañana libro calle mucho siempre porque cuando también hablamos vamos tenemos lugar día casa",
+          "gaps": [
+            {
+              "options": [
+                "casa0",
+                "grande1",
+                "tiempo2"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "grande0",
+                "tiempo1",
+                "amigo2"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "tiempo0",
+                "amigo1",
+                "trabajo2"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "amigo0",
+                "trabajo1",
+                "ciudad2"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "trabajo0",
+                "ciudad1",
+                "familia2"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "ciudad0",
+                "familia1",
+                "mañana2"
+              ],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

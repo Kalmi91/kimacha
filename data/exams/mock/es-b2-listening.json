@@ -1,0 +1,373 @@
+{
+  "target": "es",
+  "level": "B2",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Va a escuchar seis conversaciones breves. Las escuchará dos veces. Seleccione la opción correcta para cada una (1 a 6).",
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "f", "text": "Buenas tardes. Quisiera comprar un boleto de autobús a Oaxaca para el viernes por la noche." },
+                { "speaker": "m", "text": "Para el viernes ya no hay lugares. Tengo uno el jueves a las diez de la noche o uno el sábado a las seis de la mañana." },
+                { "speaker": "f", "text": "Entonces el del jueves. El del sábado llegaría muy tarde y tengo una comida familiar a mediodía." }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Por qué elige la mujer el boleto del jueves?",
+                  "options": [
+                    "Porque así llega a tiempo a una comida familiar.",
+                    "Porque el boleto del jueves es más barato.",
+                    "Porque el autobús del jueves es directo."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Oye, Memo, ¿ya decidiste si vas a la boda de Karla?" },
+                { "speaker": "m", "text": "Todavía no sé. Me cae muy bien, pero el salón está en Cuernavaca y yo no tengo carro." },
+                { "speaker": "f", "text": "Yo voy en el mío, pero salgo muy temprano. Si no te molesta madrugar, te llevo." },
+                { "speaker": "m", "text": "¿De verdad? Entonces cuenta conmigo. Yo pago la gasolina." }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué acuerdan los dos amigos?",
+                  "options": [
+                    "Que él manejará el carro de ella durante todo el viaje.",
+                    "Que irán juntos en autobús hasta el salón de fiestas.",
+                    "Que irán en el carro de ella y él cubrirá la gasolina."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Buenos días, licenciada. Le hablo por lo del departamento. El plomero dice que la fuga viene de la tubería del vecino." },
+                { "speaker": "f", "text": "Entonces la reparación no me toca a mí. ¿Y quién paga el agua desperdiciada?" },
+                { "speaker": "m", "text": "Eso lo decide el administrador. Hable con él mañana temprano." },
+                { "speaker": "f", "text": "De acuerdo, pero mándeme por escrito lo que me acaba de decir." }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué solicita la mujer al final de la conversación?",
+                  "options": [
+                    "Que el plomero vuelva a revisar la tubería.",
+                    "Que le confirmen por escrito lo que le explicaron.",
+                    "Que el vecino hable directamente con el administrador."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Ricardo, ¿cómo vas con el informe? Lo necesito el jueves para la junta con los clientes." },
+                { "speaker": "m", "text": "Va avanzado, pero me faltan los datos de ventas de Monterrey." },
+                { "speaker": "f", "text": "Insiste hoy con Monterrey, por favor. Si el miércoles no los tienes, presentamos el informe sin esa parte y lo completamos después." },
+                { "speaker": "m", "text": "Me parece bien. Así no corremos riesgos." }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué propone la jefa si faltan los datos el miércoles?",
+                  "options": [
+                    "Cancelar la junta hasta tener todos los datos.",
+                    "Pedir a otra persona que se encargue de preparar los datos.",
+                    "Entregar una versión parcial y completarla después."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Consultorio del doctor Salas, buenas tardes." },
+                { "speaker": "m", "text": "Buenas tardes. Quisiera cambiar mi cita del martes. Ese día me surgió una junta de trabajo que no puedo cancelar. ¿Habría lugar el miércoles?" },
+                { "speaker": "f", "text": "El doctor no atiende los miércoles, pero el jueves tengo un espacio a las cinco y media." },
+                { "speaker": "m", "text": "El jueves me conviene. ¿Debo llevar los estudios que me pidieron?" },
+                { "speaker": "f", "text": "Sí, todos." }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Por qué quiere cambiar su cita el hombre?",
+                  "options": [
+                    "Porque tiene un compromiso laboral ese día.",
+                    "Porque el doctor no atiende los martes.",
+                    "Porque todavía no tiene los estudios."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Mateo, llevas dos horas frente a la computadora. ¿Ya terminaste el trabajo de historia?" },
+                { "speaker": "m", "text": "Casi, mamá. Es que la página que encontré tiene demasiada información y no sé qué poner." },
+                { "speaker": "f", "text": "Eso les pasa a todos. Lee primero las preguntas del maestro y después subraya solo lo que las responde." },
+                { "speaker": "m", "text": "Ah, no lo había pensado. Voy a intentarlo así." }
+              ],
+              "questions": [
+                {
+                  "stem": "¿Qué dificultad tiene el hijo?",
+                  "options": [
+                    "No logra conectarse a internet.",
+                    "No sabe qué información seleccionar.",
+                    "No entiende las preguntas del maestro."
+                  ],
+                  "correct": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Va a escuchar una conversación entre un hombre y una mujer. Indique a quién corresponde cada afirmación (1 a 6): al hombre, a la mujer o a ninguno de los dos.",
+          "audio": [
+            { "speaker": "m", "text": "Marta, hablé con el abogado y dice que lo mejor es esperar un año antes de decidir qué hacemos con la casa de la abuela. Yo no estoy tan seguro." },
+            { "speaker": "f", "text": "¿Esperar un año? Para entonces la casa estará peor. El techo de la recámara de atrás ya tiene humedad." },
+            { "speaker": "m", "text": "Por eso mismo creo que deberíamos venderla. Mantenerla cuesta más de lo que parece, entre impuestos, luz y reparaciones." },
+            { "speaker": "f", "text": "Jorge, es la casa donde crecimos. Me duele pensar que alguien más viva ahí. Venderla me parecería como borrar a la abuela." },
+            { "speaker": "m", "text": "Te entiendo, pero seamos realistas. ¿Tú te mudarías allá? Yo no podría, mi trabajo está en la capital." },
+            { "speaker": "f", "text": "Yo tampoco. Mi vida está en Monterrey y no pienso cambiarla." },
+            { "speaker": "m", "text": "Entonces, ¿quién va a cuidar la casa?" },
+            { "speaker": "f", "text": "Yo puedo ir un fin de semana al mes y encargarme de todo: pagar las cuentas, vigilar al jardinero, revisar el techo." },
+            { "speaker": "m", "text": "Eso suena bien en teoría, pero en tres meses te vas a cansar. ¿Y si la rentamos? Hay muchos estudiantes en Puebla que buscan departamento cerca del centro." },
+            { "speaker": "f", "text": "Rentarla a desconocidos me da miedo. Pero lo pensaría si firmáramos un contrato bien claro." },
+            { "speaker": "m", "text": "Con un contrato y un depósito no veo el problema. Además, con la renta pagaríamos las reparaciones y todavía nos sobraría algo." },
+            { "speaker": "f", "text": "Está bien. Antes, eso sí, quiero hablar con mi tía Rosa. Ella vivió ahí toda su vida y tiene derecho a opinar." },
+            { "speaker": "m", "text": "Me parece justo. Llámala tú, con ella te entiendes mejor." },
+            { "speaker": "f", "text": "Lo haré esta noche. Y no te preocupes, no vamos a pelearnos por esto." }
+          ],
+          "questions": [
+            { "stem": "Está de acuerdo con esperar un año para tomar una decisión.", "options": ["hombre", "mujer", "ninguno"], "correct": 2 },
+            { "stem": "Opina que conservar la casa resulta demasiado caro.", "options": ["hombre", "mujer", "ninguno"], "correct": 0 },
+            { "stem": "Rechaza vender la casa por motivos sentimentales.", "options": ["hombre", "mujer", "ninguno"], "correct": 1 },
+            { "stem": "Contempla la posibilidad de mudarse a la casa de la abuela.", "options": ["hombre", "mujer", "ninguno"], "correct": 2 },
+            { "stem": "Propone rentar la casa a estudiantes.", "options": ["hombre", "mujer", "ninguno"], "correct": 0 },
+            { "stem": "Quiere consultar a otro familiar antes de decidir.", "options": ["hombre", "mujer", "ninguno"], "correct": 1 }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Va a escuchar una entrevista de radio. Seleccione la opción correcta para cada pregunta (1 a 6).",
+          "audio": [
+            { "speaker": "f", "text": "Bienvenidos a Voces de la Colonia. Hoy conversamos con Andrés Beltrán, traductor literario con dos décadas de experiencia en el oficio. Andrés, muchos piensan que los traductores están por desaparecer. ¿Es así?" },
+            { "speaker": "m", "text": "Es una pregunta que me hacen todo el tiempo. Mi respuesta es que cierto tipo de traducción sí está cambiando, pero otro no. Los manuales, las instrucciones o los correos comerciales se traducen hoy con programas que funcionan sorprendentemente bien. Eso ya ocurrió y no tiene vuelta atrás." },
+            { "speaker": "f", "text": "¿Y la traducción literaria?" },
+            { "speaker": "m", "text": "Ahí el panorama es distinto. Una novela no es solo información: tiene humor, silencios, juegos de palabras. Los programas pueden dar una versión correcta, pero rara vez una versión que suene viva. El texto queda plano, como una fotografía sin color." },
+            { "speaker": "f", "text": "Pero los programas mejoran cada día. ¿No podrían alcanzar algún día a un traductor humano?" },
+            { "speaker": "m", "text": "Pueden acercarse más, sin duda. Pero traducir bien exige entender por qué el autor eligió una palabra y no otra, y eso depende de la experiencia y de la sensibilidad. Un programa no sabe lo que es crecer en un pueblo ni perder a un amigo, y sin eso muchas frases se vuelven huecas." },
+            { "speaker": "f", "text": "Entonces, ¿su trabajo no ha cambiado?" },
+            { "speaker": "m", "text": "Claro que ha cambiado. Antes pasaba horas buscando una palabra en el diccionario. Ahora pruebo varias alternativas en minutos. Pero esa rapidez tiene un riesgo: la tentación de aceptar la primera solución razonable. Y la primera solución casi nunca es la mejor." },
+            { "speaker": "f", "text": "¿Qué consejo daría a los jóvenes que quieren dedicarse a esto?" },
+            { "speaker": "m", "text": "Que lean mucho, y no solo en el idioma que traducen. Un buen traductor es, antes que nada, un buen escritor en su propia lengua. Además, que aprendan a trabajar con las herramientas y no contra ellas. Quien las ignore se quedará sin clientes, y quien confíe ciegamente en ellas, sin criterio." },
+            { "speaker": "f", "text": "Hay editoriales que ya piden revisar textos hechos por programas, y pagan menos por ese trabajo. ¿Qué opina?" },
+            { "speaker": "m", "text": "Me preocupa, porque es una forma de degradar el oficio. Revisar un mal texto a veces lleva más tiempo que traducirlo desde cero. Pero también creo que los lectores terminarán notando la diferencia, y que la calidad volverá a valorarse." },
+            { "speaker": "f", "text": "¿Es usted optimista, entonces?" },
+            { "speaker": "m", "text": "Digamos que soy prudente. Las máquinas harán cada vez más tareas, pero alguien tendrá que decidir qué merece traducirse y cómo. Por ejemplo, ningún programa decide por sí solo qué libro vale la pena traducir. Esa decisión sigue siendo humana, y espero que siga siéndolo." },
+            { "speaker": "f", "text": "Muchas gracias, Andrés, por esta conversación." },
+            { "speaker": "m", "text": "Gracias a ustedes." }
+          ],
+          "questions": [
+            {
+              "stem": "¿Qué opina Andrés sobre la traducción de manuales y correos comerciales?",
+              "options": [
+                "Que los programas todavía no logran traducirlos bien.",
+                "Que el uso de programas para esos textos es irreversible.",
+                "Que seguirán necesitando mucha revisión de personas expertas."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "¿Por qué la traducción literaria es diferente, según el entrevistado?",
+              "options": [
+                "Porque exige conocimientos técnicos muy especializados.",
+                "Porque los lectores de novelas son mucho más exigentes.",
+                "Porque contiene matices que los programas casi no reproducen."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "¿Qué riesgo tiene la rapidez con que se puede traducir hoy?",
+              "options": [
+                "Aceptar demasiado pronto una solución mediocre.",
+                "Cometer más errores de ortografía y de gramática.",
+                "Depender demasiado de un diccionario en línea."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "¿Qué consejo da a los jóvenes traductores?",
+              "options": [
+                "Que eviten las herramientas automáticas para no perder su estilo.",
+                "Que dominen su propia lengua y aprendan a usar las herramientas.",
+                "Que se especialicen únicamente en textos técnicos."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "¿Por qué le preocupa la práctica de revisar textos hechos por programas?",
+              "options": [
+                "Porque las editoriales ya no quieren publicar traducciones literarias.",
+                "Porque los lectores prefieren cada vez más los textos hechos por programas.",
+                "Porque degrada el oficio y a veces lleva más tiempo que traducir desde cero."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "¿Cómo se muestra el entrevistado ante el futuro de su profesión?",
+              "options": [
+                "Prudente, porque cree que ciertas decisiones seguirán siendo humanas.",
+                "Pesimista, porque cree que los traductores acabarán desapareciendo.",
+                "Entusiasta, porque confía plenamente en el avance de la tecnología."
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "match_pool",
+          "instruction": "Va a escuchar seis breves intervenciones (1 a 6). Relacione cada una con el enunciado que le corresponde (a a i). Hay tres enunciados que no debe utilizar.",
+          "prompts": [
+            {
+              "id": "1",
+              "audio": [
+                { "speaker": "f", "text": "Buenos días a todos. Les recuerdo que la entrega del ensayo final cambió: ya no será el quince de diciembre sino el ocho, porque la facultad cierra antes por las vacaciones. Quien necesite una prórroga debe solicitarla por escrito esta misma semana y explicar el motivo. Después de esa fecha no habrá excepciones, así que organicen bien su tiempo." }
+              ]
+            },
+            {
+              "id": "2",
+              "audio": [
+                { "speaker": "m", "text": "Nuestro proyecto estudia cómo se contaminan los canales de Xochimilco con residuos agrícolas. En el primer semestre tomamos muestras en veinte puntos distintos. Los resultados preliminares son preocupantes, pero todavía faltan muchos análisis de laboratorio. Por eso solicitamos un apoyo económico adicional para contratar a dos técnicos y comprar equipo de medición." }
+              ]
+            },
+            {
+              "id": "3",
+              "audio": [
+                { "speaker": "f", "text": "Después de una década en el área de ventas, pedí cambiarme a capacitación. Me gustaba vender, pero me di cuenta de que lo que más disfrutaba era enseñar a los nuevos compañeros. Mi jefe me apoyó, aunque me advirtió que el sueldo base es menor. Para mí eso es secundario. Ahora llego a casa mucho más contenta." }
+              ]
+            },
+            {
+              "id": "4",
+              "audio": [
+                { "speaker": "m", "text": "Mi práctica profesional en la empresa de logística fue más dura de lo que imaginaba. Los primeros días no entendía ni los términos que usaban y cometí errores con los inventarios. Pero mi tutora fue muy paciente y me explicó todo con calma. Al terminar el mes, ya podía coordinar yo solo un pequeño pedido." }
+              ]
+            },
+            {
+              "id": "5",
+              "audio": [
+                { "speaker": "f", "text": "Antes de entrar a la sala, les pido que apaguen sus celulares y que no usen flash al tomar fotografías. Las piezas que van a ver son extremadamente frágiles y el flash las deteriora. Recorreremos la sala en orden cronológico y, al final, podrán hacer preguntas. La visita dura cuarenta minutos, así que por favor no se separen del grupo." }
+              ]
+            },
+            {
+              "id": "6",
+              "audio": [
+                { "speaker": "m", "text": "¿Ya viste que el sistema nuevo no guarda los cambios automáticamente?" },
+                { "speaker": "f", "text": "Sí, el viernes perdí media hora de trabajo. Le escribí a soporte técnico y me dijeron que es un problema conocido." },
+                { "speaker": "m", "text": "Entonces tendremos que guardar manualmente hasta que lo arreglen." },
+                { "speaker": "f", "text": "Yo ya le puse una nota pegada al monitor para acordarme." }
+              ]
+            }
+          ],
+          "options": [
+            { "id": "a", "text": "Comenta un problema con un programa de computadora." },
+            { "id": "b", "text": "Presenta los resultados finales de un estudio." },
+            { "id": "c", "text": "Informa de un cambio en la fecha límite de un trabajo." },
+            { "id": "d", "text": "Cuenta lo que aprendió durante unas prácticas." },
+            { "id": "e", "text": "Anuncia su renuncia a un puesto." },
+            { "id": "f", "text": "Pide dinero para continuar una investigación." },
+            { "id": "g", "text": "Da instrucciones antes de una visita guiada." },
+            { "id": "h", "text": "Cuenta cómo resolvió un malentendido con un compañero de trabajo." },
+            { "id": "i", "text": "Explica por qué cambió de área en su empresa." }
+          ],
+          "answer": { "1": "c", "2": "f", "3": "i", "4": "d", "5": "g", "6": "a" },
+          "unique": true
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Va a escuchar una charla sobre un proyecto comunitario. Seleccione la opción correcta para cada pregunta (1 a 6).",
+          "audio": [
+            { "speaker": "f", "text": "Buenas tardes a todos, y gracias por venir. Soy arquitecta y vivo en la colonia desde hace mucho tiempo, así que conocía bien los techos de los edificios. Les voy a contar cómo nació el proyecto Cosecha en Azotea, y también qué fue lo que no salió como esperábamos." },
+            { "speaker": "f", "text": "Todo empezó cuando mi vecina Elena me mostró las macetas que tenía en su azotea. Tenía jitomates, chiles y hasta un pequeño limonero, y me dijo que con eso había dejado de comprar verduras casi todo el verano." },
+            { "speaker": "f", "text": "Pensé que si una persona lograba eso en veinte metros cuadrados, muchas familias podrían hacer lo mismo. Así que pedimos permiso a la administración del edificio y construimos los primeros cajones de siembra con tablas recicladas." },
+            { "speaker": "f", "text": "Al principio participaron solo cinco familias. Hoy somos más de cuarenta, repartidas en seis edificios de la colonia. Cada azotea tiene sus propias reglas y se organiza como mejor le conviene." },
+            { "speaker": "f", "text": "También tuvimos que aprender a organizarnos. Hicimos un calendario de riego, un grupo de mensajes para avisar de cualquier problema y una reunión mensual en la que cada edificio cuenta cómo le fue. Nada de esto estaba en el plan inicial, pero sin esa organización el proyecto no habría sobrevivido." },
+            { "speaker": "f", "text": "Lo que más nos sorprendió no fue la cosecha, que es modesta, sino el efecto en la convivencia. Vecinos que apenas se saludaban ahora se prestan herramientas, intercambian semillas y se avisan cuando va a llover para recoger las macetas." },
+            { "speaker": "f", "text": "Por supuesto, hubo problemas. El primero fue el peso. Algunos techos no soportan la tierra mojada, y tuvimos que contratar a un ingeniero para revisar cada edificio. Descubrimos que dos azoteas no eran seguras, y las descartamos. Fue una decisión difícil, porque las familias ya estaban entusiasmadas." },
+            { "speaker": "f", "text": "El segundo problema fue el agua. En la temporada seca, regar cuesta mucho. Instalamos recolectores de lluvia, pero solo funcionan bien durante unos meses. Por eso ahora estamos probando plantas que necesitan poca agua, como el nopal o diversas hierbas aromáticas." },
+            { "speaker": "f", "text": "Y el tercero, quizá el más importante, fue mantener el interés. Algunas familias se cansaron a los pocos meses. Aprendimos que el proyecto no puede depender de un grupo pequeño de personas entusiastas. Ahora rotamos las responsabilidades cada mes, y eso ha ayudado bastante." },
+            { "speaker": "f", "text": "Si tuviera que dar un consejo a quien quiera empezar algo parecido, sería este. No empiecen con una gran idea, sino con una pequeña rutina. Un huerto grande se abandona rápido, pero uno pequeño, que se riega todos los días, termina creciendo solo. Nosotros, de hecho, empezamos con tres macetas. Muchas gracias." }
+          ],
+          "questions": [
+            {
+              "stem": "¿Qué la motivó a iniciar el proyecto?",
+              "options": [
+                "Un curso sobre agricultura urbana.",
+                "Lo que vio en la azotea de una vecina.",
+                "Un programa del gobierno de la ciudad."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "¿Qué fue lo que más sorprendió a los participantes?",
+              "options": [
+                "La cantidad de verduras que lograron cosechar.",
+                "El apoyo que recibieron de la administración.",
+                "El cambio en la relación entre los vecinos."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "¿Por qué descartaron dos azoteas?",
+              "options": [
+                "Porque los techos no resistían el peso.",
+                "Porque los dueños no dieron su permiso.",
+                "Porque no recibían suficiente luz solar."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "¿Cómo enfrentan el problema del agua?",
+              "options": [
+                "Compran agua en pipas durante casi todo el año para regar.",
+                "Recolectan lluvia y prueban plantas que requieren poco riego.",
+                "Reducen el número de azoteas que participan en el proyecto."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "¿Qué hicieron para mantener el interés de las familias?",
+              "options": [
+                "Rotan las tareas por turnos cada mes.",
+                "Pagan a un encargado para cuidar los cultivos.",
+                "Organizan concursos entre los edificios."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "¿Qué consejo da al final?",
+              "options": [
+                "Empezar con un proyecto grande para atraer atención.",
+                "Esperar a la temporada de lluvias para sembrar.",
+                "Comenzar con una rutina pequeña y constante."
+              ],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
