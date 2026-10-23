@@ -8,7 +8,7 @@ const hu: typeof en = {
     next: 'Tovább',
     typeSentence: 'Írd be a mondatot',
     // the grey placeholder of the answer input field, with the name of the target language.
-    typeIn: (lang: string): string => (lang === 'es' ? 'Írd be spanyolul' : 'Írd be angolul'),
+    typeIn: (lang: string): string => (lang === 'es' ? 'Írd be spanyolul' : lang === 'hu' ? 'Írd be magyarul' : 'Írd be angolul'),
   },
   done: {
     streak: 'nap egymás után',

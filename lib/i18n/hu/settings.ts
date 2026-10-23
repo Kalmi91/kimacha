@@ -53,8 +53,6 @@ const hu: typeof en = {
     missedWordDelaySeconds: (n: string) => `${n} mp`,
     learningDirection: 'Tanulási irány',
     chooseDirection: 'Válaszd ki a tanulási irányt',
-    directionEnEs: 'Angol → spanyol',
-    directionEsEn: 'Spanyol → angol',
     credits: 'Források és licencek',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Nyelvtani haladás törlése',

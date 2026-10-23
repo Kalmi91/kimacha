@@ -4,6 +4,7 @@ const hu: typeof en = {
   onboarding: {
     welcome: 'Üdv a Kimachában! Köszönöm, hogy használod az appot, sokat jelent.',
     start: 'Kezdjük',
+    learnTitle: 'Milyen nyelvet szeretnél tanulni?',
   },
   intro: {
     title: 'Így működik',
