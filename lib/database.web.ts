@@ -7,6 +7,7 @@ import { parseBetaFlagMap } from './betaFlags';
 import { DbCore, decodeGameData, encodeGameData } from './db/core';
 import type { DbStore, MetaColumn, SettingColumn, StreakRow } from './db/store';
 import type { DB } from './dbTypes';
+import { FORCED_PAIR, needsPairCorrection } from './languages';
 
 // pcic_cards / mistake_cards row <-> Sm2Card, the same shapes the SQLite side stores.
 const sm2ToRow = (c: Sm2Card) => ({
@@ -45,9 +46,23 @@ const rowToPcic = (r: any): Sm2Card => ({
   ...(r.wrong_streak ? { wrongStreak: r.wrong_streak } : null),
 });
 
+const WEB_STATE_VERSION = 1;
+
+const isObject = (x: unknown): x is Record<string, any> => !!x && typeof x === 'object' && !Array.isArray(x);
+
+// A Map written as an [key, value][] array (serializeState); anything else is a broken state.
+function entriesOf(x: unknown): [string, any][] {
+  if (!Array.isArray(x) || !x.every((e) => Array.isArray(e) && e.length === 2 && typeof e[0] === 'string')) {
+    throw new Error('Not a Kimacha web state');
+  }
+  return x as [string, any][];
+}
+
 // The memory half of the DB (web and tests): the same columns as the SQLite tables, held in Maps.
-// The rules are in lib/db/core.ts. It does not survive a reload, a known limitation of the web build.
-class MemoryStore implements DbStore {
+// The rules are in lib/db/core.ts. It does not survive a reload, a known limitation of the web build
+// (the web cloud save, lib/cloud/sync.ts, carries it through serializeState / restoreState below).
+// Exported for the tests of that state (lib/__tests__/webState.test.ts).
+export class MemoryStore implements DbStore {
   streak: StreakRow = { current_count: 0, last_date: null, longest_count: 0 };
   private onboarding: { source: string; target: string } | null = null;
   userLevels: Map<string, any> = new Map();
@@ -299,9 +314,63 @@ class MemoryStore implements DbStore {
     if (t.mistake_cards) this.mistakeCards = new Map(t.mistake_cards.map((r: any) => [r.item_id, rowToSm2(r)]));
     if (t.usage_minutes) this.usageMinutes = new Map(t.usage_minutes.map((r: any) => [r.date, r.minutes]));
   }
+
+  // EVERY field of this class, for the web cloud save. exportTables/importTables are the backup format (the native
+  // backup uses it) and leave things out on purpose (most learn_settings columns, daily XP, last_open_date,
+  // status_bar_tint); this leaves out nothing. The guard test in lib/__tests__/webState.test.ts fails when a
+  // field is added to the class and not listed here. Maps are written as [key, value][] arrays.
+  serializeState(): string {
+    return JSON.stringify({
+      v: WEB_STATE_VERSION,
+      streak: this.streak,
+      onboarding: this.onboarding,
+      userLevels: [...this.userLevels],
+      meta: this.meta,
+      userMeta: this.userMeta,
+      settings: [...this.settings],
+      usageMinutes: [...this.usageMinutes],
+      dailyXp: [...this.dailyXp],
+      gameProgress: [...this.gameProgress].map(([key, items]) => [key, [...items]]),
+      pcicCards: [...this.pcicCards],
+      mistakeBatches: [...this.mistakeBatches],
+      mistakeCards: [...this.mistakeCards],
+    });
+  }
+
+  // Replaces every field from serializeState() output. Throws, and changes nothing, when the string is not one
+  // (all the parts are built before the first assignment). A field missing from the string takes its fresh default.
+  restoreState(raw: string): void {
+    const s = JSON.parse(raw);
+    if (!isObject(s) || s.v !== WEB_STATE_VERSION) throw new Error('Not a Kimacha web state');
+    if (!isObject(s.streak) || !isObject(s.meta) || !isObject(s.userMeta) || (s.onboarding != null && !isObject(s.onboarding))) {
+      throw new Error('Not a Kimacha web state');
+    }
+    const fresh = new MemoryStore();
+    const userLevels = new Map(entriesOf(s.userLevels));
+    const settings = new Map(entriesOf(s.settings));
+    const usageMinutes = new Map(entriesOf(s.usageMinutes));
+    const dailyXp = new Map(entriesOf(s.dailyXp));
+    const gameProgress = new Map(entriesOf(s.gameProgress).map(([key, items]): [string, Map<string, { state: string; data: unknown }>] => [key, new Map(entriesOf(items))]));
+    const pcicCards = new Map<string, Sm2Card>(entriesOf(s.pcicCards));
+    const mistakeBatches = new Map<string, { json: string; importedAt: string }>(entriesOf(s.mistakeBatches));
+    const mistakeCards = new Map<string, Sm2Card>(entriesOf(s.mistakeCards));
+    this.streak = { ...fresh.streak, ...s.streak };
+    this.onboarding = s.onboarding ?? null;
+    this.userLevels = userLevels;
+    this.meta = { ...fresh.meta, ...s.meta };
+    this.userMeta = { ...fresh.userMeta, ...s.userMeta };
+    this.settings = settings;
+    this.usageMinutes = usageMinutes;
+    this.dailyXp = dailyXp;
+    this.gameProgress = gameProgress;
+    this.pcicCards = pcicCards;
+    this.mistakeBatches = mistakeBatches;
+    this.mistakeCards = mistakeCards;
+  }
 }
 
-class MemoryDB extends DbCore {
+// Exported for the tests of the web state (lib/__tests__/webState.test.ts); the app goes through getDb().
+export class MemoryDB extends DbCore {
   constructor(private readonly mem = new MemoryStore()) {
     super(mem);
   }
@@ -318,10 +387,41 @@ class MemoryDB extends DbCore {
   __setStreakForTest(streak: { current_count: number; last_date: string | null; longest_count: number } = { current_count: 0, last_date: null, longest_count: 0 }): void {
     this.mem.streak = streak;
   }
+
+  // The whole memory state as one string (MemoryStore.serializeState), for the web cloud save.
+  async exportState(): Promise<string> {
+    await this.ready();
+    return this.mem.serializeState();
+  }
+
+  // Restores exportState(). The active pair follows the restored onboarding, the same rule as DbCore.importAll.
+  async importState(raw: string): Promise<void> {
+    await this.ready();
+    this.mem.restoreState(raw);
+    const ob = await this.mem.readOnboarding();
+    if (ob && needsPairCorrection(ob)) {
+      await this.setOnboarding(FORCED_PAIR.source, FORCED_PAIR.target);
+    } else if (ob) {
+      this.activePair = `${ob.source}-${ob.target}`;
+    }
+  }
 }
 
-let instance: DB;
-export function getDb(): DB {
+let instance: MemoryDB | undefined;
+function memoryDb(): MemoryDB {
   if (!instance) instance = new MemoryDB();
   return instance;
+}
+
+export function getDb(): DB {
+  return memoryDb();
+}
+
+// The web cloud save (lib/cloud/sync.ts) works on the getDb() singleton's whole state, not on the backup format.
+export function exportWebState(): Promise<string> {
+  return memoryDb().exportState();
+}
+
+export function importWebState(raw: string): Promise<void> {
+  return memoryDb().importState(raw);
 }
