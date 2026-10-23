@@ -1,15 +1,18 @@
-import type { ReactNode } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { useState, type ReactNode } from 'react';
+import { Modal, Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import { HalfDisc } from '@/components/skins/parts';
 import type { SkinDecor } from '@/components/skins/types';
+import Colors from '@/constants/Colors';
 import { useGrammarColors } from '@/lib/grammarColors';
+import { t } from '@/lib/i18n';
+import { useTheme } from '@/lib/ThemeContext';
 import { useSkin } from '@/lib/useSkin';
 
 // Ukiyo-e: a wave at the bottom of the card (two rows of semicircles, in the theme's `wave` color), a red
 // seal ("語") in the card's top right corner. The `seal` / `wave` color is the theme's extra color; with other
-// colors (My mix) color a is the fallback.
+// colors (My mix) color a is the fallback. A tap on the seal opens a bubble that says what the sign means.
 
 const RADIUS = 11;
 const BACK_LIFT = 5;
@@ -39,17 +42,33 @@ function Wave({ color, inset }: { color: string; inset: number }) {
 function UkiyoeCardFrame({ children }: { children: ReactNode }) {
   const g = useGrammarColors();
   const { shape } = useSkin().skin;
+  const { theme } = useTheme();
+  const colors = Colors[theme];
+  const [open, setOpen] = useState(false);
+  const sealColor = g.extra.seal ?? g.a;
   return (
     <View testID="skin-ukiyoe-frame">
       {children}
       <Wave color={g.extra.wave ?? g.a} inset={shape.borderWidth} />
-      <View
+      <Pressable
         testID="decor-ukiyoe-seal"
-        pointerEvents="none"
-        style={[styles.seal, { top: shape.borderWidth + 5, right: shape.borderWidth + 5, backgroundColor: g.extra.seal ?? g.a }]}
+        accessibilityRole="button"
+        accessibilityLabel={t().skins.ukiyoeSealMeaning}
+        hitSlop={8}
+        onPress={() => setOpen(true)}
+        style={[styles.seal, { top: shape.borderWidth + 5, right: shape.borderWidth + 5, backgroundColor: sealColor }]}
       >
         <Text style={styles.sealText}>語</Text>
-      </View>
+      </Pressable>
+      <Modal visible={open} transparent animationType="fade" onRequestClose={() => setOpen(false)}>
+        <Pressable testID="decor-ukiyoe-seal-overlay" style={styles.overlay} onPress={() => setOpen(false)}>
+          <View testID="decor-ukiyoe-seal-bubble" style={[styles.bubble, { backgroundColor: colors.card }]}>
+            <Text style={[styles.bubbleSign, { color: sealColor }]}>語</Text>
+            <Text style={[styles.bubbleMeaning, { color: colors.text }]}>{t().skins.ukiyoeSealMeaning}</Text>
+            <Text style={[styles.bubbleNote, { color: colors.tabIconDefault }]}>{t().skins.ukiyoeSealNote}</Text>
+          </View>
+        </Pressable>
+      </Modal>
     </View>
   );
 }
@@ -66,6 +85,11 @@ const styles = StyleSheet.create({
     transform: [{ rotate: '-4deg' }],
   },
   sealText: { color: '#FFFFFF', fontSize: 15, lineHeight: 18 },
+  overlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'flex-end' },
+  bubble: { padding: 24, borderTopLeftRadius: 20, borderTopRightRadius: 20, alignItems: 'center', gap: 8 },
+  bubbleSign: { fontSize: 40, lineHeight: 48 },
+  bubbleMeaning: { fontSize: 18, fontWeight: '700', textAlign: 'center' },
+  bubbleNote: { fontSize: 15, textAlign: 'center' },
 });
 
 export const ukiyoeDecor: SkinDecor = {
