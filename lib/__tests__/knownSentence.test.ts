@@ -73,6 +73,39 @@ describe('isSentenceKnown (Spanish)', () => {
     expect(isSentenceKnown('Tengo el libro.', 'es', { learned })).toBe(false);
   });
 
+  it.each([
+    ['ir', 'la tienda', 'Voy a la tienda.'],
+    ['pedir', 'el agua', 'Pido agua.'],
+    ['jugar', 'el parque', 'Juego en el parque.'],
+    ['llover', 'hoy', 'Hoy llueve.'],
+  ])('opens the presente of %s once it is learned and the presente is unlocked', (verb, noun, sentence) => {
+    const tenses = resolvedTensesFromLessons(['presente-regular', 'presente-irregular']);
+    expect(isSentenceKnown(sentence, 'es', { learned: [verb, noun], tenses })).toBe(true);
+    expect(isSentenceKnown(sentence, 'es', { learned: [noun], tenses })).toBe(false);
+    expect(isSentenceKnown(sentence, 'es', { learned: [verb, noun] })).toBe(false);
+  });
+
+  it('gives ir and the stem-changing verbs exactly their presente forms', () => {
+    const tenses = resolvedTensesFromLessons(['presente-regular']);
+    const tokens = (verb: string) => knownTokens('es', { learned: [{ text: verb, pos: 'verb' }], tenses });
+    for (const f of ['voy', 'vas', 'va', 'vamos', 'van']) expect(tokens('ir').has(f)).toBe(true);
+    for (const f of ['pido', 'pides', 'pide', 'pedimos', 'piden']) expect(tokens('pedir').has(f)).toBe(true);
+    for (const f of ['juego', 'juegas', 'juega', 'jugamos', 'juegan']) expect(tokens('jugar').has(f)).toBe(true);
+    expect(tokens('llover').has('llueve')).toBe(true);
+    // not loosened: no wrong stem variants, no other persons of the impersonal llover, no other tenses
+    for (const f of ['pedo', 'jugo', 'piedo', 'fui', 'iba', 'pidió', 'jugué']) {
+      expect([tokens('ir'), tokens('pedir'), tokens('jugar')].some((t) => t.has(f))).toBe(false);
+    }
+    expect(tokens('llover').has('llueven')).toBe(false);
+  });
+
+  it('keeps the other tenses of ir behind their lessons', () => {
+    const learned = ['ir', 'la tienda'];
+    expect(isSentenceKnown('Fui a la tienda.', 'es', { learned, tenses: PRESENTE })).toBe(false);
+    const both = resolvedTensesFromLessons(['presente-irregular', 'indefinido-regular']);
+    expect(isSentenceKnown('Fui a la tienda.', 'es', { learned, tenses: both })).toBe(true);
+  });
+
   it('does not conjugate a verb that is not learned', () => {
     const ctx = { learned: ['el libro'], tenses: PRESENTE };
     expect(isSentenceKnown('Tengo el libro.', 'es', ctx)).toBe(false);
