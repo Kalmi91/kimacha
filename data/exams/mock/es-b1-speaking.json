@@ -1,1 +1,375 @@
-{ "target": "es", "level": "B1", "paper": "speaking", "forms": [] }
+{
+  "target": "es",
+  "level": "B1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Elija uno de los dos temas, prepare una presentación breve con ayuda de los puntos de la hoja y exponga el tema durante dos o tres minutos.",
+          "prepSeconds": 900,
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "La vida en la ciudad y en el pueblo",
+              "prompt": "Usted va a hablar sobre la vida en una ciudad grande y la vida en un pueblo. Puede tomar notas durante la preparación y apoyarse en los puntos de esta hoja.",
+              "bullets": [
+                "Dónde vive usted y cómo es ese lugar",
+                "Qué ventajas tiene vivir en una ciudad grande",
+                "Qué ventajas tiene vivir en un pueblo",
+                "Dónde le gustaría vivir en el futuro y por qué"
+              ],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede empezar.",
+                  "minWords": 70,
+                  "points": [
+                    { "id": "p1", "label": "Dice dónde vive y cómo es el lugar", "keywords": ["vivo en", "vivo", "mi colonia", "mi barrio", "mi departamento", "mi casa", "mi ciudad", "mi pueblo", "es una ciudad", "es un pueblo"] },
+                    { "id": "p2", "label": "Dice una ventaja de vivir en una ciudad grande", "keywords": ["oportunidad", "mas trabajo", "empleo", "transporte", "hospitales", "universidad", "museos", "restaurantes", "actividades", "cines", "servicios", "mas opciones"] },
+                    { "id": "p3", "label": "Dice una ventaja de vivir en un pueblo", "keywords": ["tranquil", "calma", "natural", "aire limpio", "aire fresco", "aire puro", "menos ruido", "barat", "se conocen", "nos conocemos", "seguro", "campo"] },
+                    { "id": "p4", "label": "Dice dónde le gustaría vivir en el futuro y por qué", "keywords": ["me gustaria", "algun dia", "me mudare", "mudarme", "me mudaria", "quisiera vivir", "quiero vivir", "viviria", "pienso vivir", "prefiero vivir", "mas adelante", "voy a vivir"] }
+                  ],
+                  "model": "Vivo en un departamento pequeño en el centro de una ciudad grande, cerca de mi trabajo. Mi colonia es ruidosa, pero tiene muchas tiendas y parques. En la ciudad hay más oportunidades de empleo, buen transporte público y muchas actividades, por ejemplo cines y museos. En un pueblo, en cambio, la vida es más tranquila, el aire es más limpio y las casas son más baratas. En el futuro me gustaría mudarme a un pueblo cerca de la naturaleza, porque quiero descansar del ruido y tener un jardín."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "El celular en la vida diaria",
+              "prompt": "Usted va a hablar sobre el uso del celular en la vida diaria. Puede tomar notas durante la preparación y apoyarse en los puntos de esta hoja.",
+              "bullets": [
+                "Para qué usa usted el celular en un día normal",
+                "Qué ventajas tiene tenerlo siempre a la mano",
+                "Qué problemas puede causar usarlo demasiado",
+                "Cómo cree que serán los celulares dentro de diez años"
+              ],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede empezar.",
+                  "minWords": 70,
+                  "points": [
+                    { "id": "p1", "label": "Dice para qué usa el celular", "keywords": ["lo uso", "uso el celular", "uso mi celular", "mensajes", "llamadas", "escucho musica", "tomo fotos", "reviso", "redes sociales", "aplicaciones", "correo", "videos"] },
+                    { "id": "p2", "label": "Dice una ventaja de tener el celular siempre a la mano", "keywords": ["es util", "muy util", "utiles", "comunic", "comod", "rapid", "informacion", "contacto", "pagar", "pago", "mapa", "facil"] },
+                    { "id": "p3", "label": "Dice un problema de usarlo demasiado", "keywords": ["adiccion", "adicto", "demasiado tiempo", "demasiadas horas", "distra", "duerm", "dormir", "dependenc", "dependemos", "ansiedad", "estres"] },
+                    { "id": "p4", "label": "Dice cómo imagina los celulares del futuro", "keywords": ["en el futuro", "seran mas", "seran muy", "tendran", "van a ser", "van a tener", "me imagino", "inteligencia artificial", "mas inteligentes", "habra"] }
+                  ],
+                  "model": "Uso el celular todo el día: lo uso para mandar mensajes, hacer llamadas, escuchar música y tomar fotos. También reviso mi correo y busco información en internet. Tiene muchas ventajas, porque es muy cómodo y me permite comunicarme rápido con mi familia aunque estén lejos. Pero también hay problemas: mucha gente pasa demasiadas horas frente a la pantalla, se distrae y duerme mal. Creo que dentro de diez años los celulares serán más inteligentes y tendrán inteligencia artificial, y me imagino que reemplazarán a la computadora."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Converse con el entrevistador sobre el tema de su presentación. Responda a cada pregunta con detalle.",
+          "talkMinutes": [3, 4],
+          "follows": 1,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Conversación sobre la ciudad y el pueblo",
+              "prompt": "Ahora el entrevistador le hará algunas preguntas sobre la vida en la ciudad y en el pueblo. Dé ejemplos y explique sus razones.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "¿Ha vivido en algún otro lugar antes? Cuénteme cómo fue, o cómo es vivir siempre en el mismo lugar.",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Dice dónde ha vivido", "keywords": ["naci en", "creci en", "me mude", "estuve en", "vivi en", "vivia en", "hace anos", "cuando era", "siempre he vivido", "nunca he vivido", "no he vivido", "pase un"] },
+                    { "id": "p2", "label": "Dice cómo fue o cómo es esa experiencia", "keywords": ["me gusto", "me senti", "me siento", "dificil", "extrane", "extrana", "aprendi", "acostumbr", "comod", "bonit", "fue una experiencia", "fue muy"] }
+                  ],
+                  "model": "Sí, hace unos años viví en una ciudad en el norte durante dos años, porque me mudé por trabajo. Al principio fue difícil y extrañaba a mi familia, pero después me acostumbré y aprendí mucho."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Qué es lo que más le gusta del lugar donde vive ahora? ¿Por qué?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué le gusta de su lugar", "keywords": ["me encanta", "lo mejor", "me gusta que", "me gusta mucho", "la gente", "vecinos", "tranquil", "seguro", "amables", "el parque"] },
+                    { "id": "p2", "label": "Da una razón", "keywords": ["porque", "ya que", "puesto que", "gracias a", "por eso", "es que", "debido a", "asi puedo"] }
+                  ],
+                  "model": "Lo que más me gusta es que mi colonia es muy tranquila y tiene un parque cerca de mi casa. Me encanta caminar ahí por las tardes, porque así puedo relajarme después del trabajo."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Mucha gente joven se va del pueblo a la ciudad para estudiar o trabajar. ¿Qué opina usted de esto?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Da su opinión", "keywords": ["creo que es", "creo que los", "creo que no", "pienso que", "en mi opinion", "me parece que", "estoy de acuerdo", "es normal", "es natural", "tiene sentido", "es comprensible"] },
+                    { "id": "p2", "label": "Explica una razón o una consecuencia", "keywords": ["porque", "ya que", "oportunidades", "universidad", "no hay trabajo", "falta de", "se quedan", "mejor sueldo"] }
+                  ],
+                  "model": "Creo que es normal, porque en los pueblos casi no hay universidades ni buenos trabajos. Los jóvenes necesitan oportunidades, aunque me parece triste que los pueblos se queden sin gente."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Imagine que le ofrecen un buen trabajo en una ciudad lejos de su familia. ¿Qué haría usted?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué decidiría", "keywords": ["aceptaria", "iria", "me quedaria", "no iria", "lo pensaria", "diria que si", "diria que no", "rechazaria", "me iria", "me mudaria", "lo tomaria", "hablaria con"] },
+                    { "id": "p2", "label": "Da un motivo", "keywords": ["porque", "ya que", "mi familia", "extranaria", "oportunidad", "sueldo", "visitar", "experiencia"] }
+                  ],
+                  "model": "Creo que aceptaría el trabajo, porque es una buena oportunidad para mi carrera. Extrañaría mucho a mi familia, pero podría visitarla en vacaciones y hablar con ella todos los días."
+                },
+                {
+                  "id": "t5",
+                  "ask": "¿Cómo cree que serán las ciudades dentro de veinte años? Dígame qué cambios espera.",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Dice cómo imagina las ciudades del futuro", "keywords": ["habra", "tendran", "van a tener", "van a ser", "seran mas", "mas contaminacion", "menos contaminacion", "carros electricos", "tecnologia", "mas verdes", "espero que", "autos electricos"] }
+                  ],
+                  "model": "Creo que habrá más tecnología y más carros eléctricos, y las ciudades serán más verdes. Espero que haya menos contaminación y que el transporte público sea mucho mejor que ahora."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Conversación sobre el celular",
+              "prompt": "Ahora el entrevistador le hará algunas preguntas sobre el celular en la vida diaria. Dé ejemplos y explique sus razones.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "¿Cuánto tiempo pasa usted al día con el celular? ¿Cree que es demasiado?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Dice cuánto usa el celular", "keywords": ["horas", "una hora", "minutos", "todo el dia", "todo el tiempo", "mas de una", "mas de dos", "mas de tres", "menos de una", "menos de dos", "aproximadamente"] },
+                    { "id": "p2", "label": "Da su opinión sobre si es mucho", "keywords": ["creo que es", "creo que no", "si creo", "no creo que", "si es demasiado", "no es demasiado", "es mucho", "no es mucho", "exagero", "deberia usarlo menos", "no me preocupa", "pierdo"] }
+                  ],
+                  "model": "Lo uso unas cuatro horas al día, casi siempre para el trabajo y para hablar con mis amigos. Creo que sí es mucho, y debería usarlo menos, sobre todo por la noche antes de dormir."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Recuerda cómo hablaba con sus amigos antes de tener celular? ¿Qué es diferente ahora?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Dice cómo se comunicaba antes", "keywords": ["cartas", "telefono fijo", "llamaba", "nos veiamos", "nos reuniamos", "en persona", "hablabamos", "platicabamos", "quedabamos", "cabina", "de la casa"] },
+                    { "id": "p2", "label": "Dice qué es distinto hoy", "keywords": ["mas facil", "mas rapido", "ya no", "en cualquier momento", "instantane", "todo el tiempo", "al instante", "videollamada", "por mensajes", "hablamos menos", "nos vemos menos", "todo es mas"] }
+                  ],
+                  "model": "Antes llamaba por teléfono fijo desde mi casa o nos veíamos en el parque. Hoy todo es más rápido y más fácil, porque puedo hablar con ellos en cualquier momento, aunque ya no nos vemos tanto."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Muchos padres limitan el celular de sus hijos. ¿Está de acuerdo con esto? ¿Por qué?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Da su opinión", "keywords": ["estoy de acuerdo", "no estoy de acuerdo", "muy de acuerdo", "creo que es", "creo que los", "creo que no", "pienso que", "me parece que", "tienen razon", "depende de", "es buena idea", "es mala idea"] },
+                    { "id": "p2", "label": "Explica por qué", "keywords": ["porque", "ya que", "estudi", "dormir", "duerm", "tarea", "peligro", "internet", "madurez", "adiccion"] }
+                  ],
+                  "model": "Sí, estoy de acuerdo, porque los niños todavía no saben controlar el tiempo. Si usan el celular demasiado, no hacen la tarea y duermen poco, y además en internet hay cosas peligrosas."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Algunas personas dejan el celular en casa durante las vacaciones. ¿Usted lo haría? Explíqueme por qué.",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué haría", "keywords": ["si lo haria", "no lo haria", "dejaria", "llevaria", "apagaria", "desconect", "no podria", "me quedaria"] },
+                    { "id": "p2", "label": "Da una razón", "keywords": ["porque", "emergencia", "descans", "relaj", "fotos", "mapa", "familia", "trabajo"] }
+                  ],
+                  "model": "Yo me lo llevaría, pero lo apagaría casi todo el día, porque necesito descansar del trabajo. Solo lo usaría para tomar fotos o para llamar si hay una emergencia."
+                },
+                {
+                  "id": "t5",
+                  "ask": "¿Qué consejo le daría a una persona que usa el celular demasiadas horas al día?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Da un consejo", "keywords": ["le diria", "le recomend", "le sugier", "le aconsej", "mi consejo", "deberia", "tiene que", "tendria que", "que ponga", "que apague", "que use", "salir con"] }
+                  ],
+                  "model": "Le diría que debería poner un límite de tiempo y apagar el celular por la noche. También le aconsejaría salir con sus amigos o hacer deporte, para no pasar tantas horas frente a la pantalla."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Elija una de las dos fotografías y descríbala. Después conteste una pregunta del entrevistador. Esta tarea no se prepara.",
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Viajeros en una estación",
+              "prompt": "En la fotografía aparecen personas en una estación de tren. Descríbala y conteste después una pregunta del entrevistador.",
+              "bullets": [
+                "Dónde están las personas y cómo es el lugar",
+                "Quiénes son, qué hacen y qué llevan",
+                "Qué detalles le llaman la atención y qué cree que pasa"
+              ],
+              "photos": ["es-b1-1"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Describa la fotografía que eligió. Cuando quiera, puede empezar.",
+                  "minWords": 45,
+                  "points": [
+                    { "id": "p1", "label": "Describe el lugar", "keywords": ["estacion", "anden", "plataforma", "tren", "vagon", "puerta", "reloj", "letrero", "senal", "techo", "aeropuerto", "metro"] },
+                    { "id": "p2", "label": "Dice quiénes son y qué hacen", "keywords": ["maleta", "mochila", "camina", "jala", "arrastra", "pasajeros", "viajeros", "van hacia", "suben", "esperan", "bolsa"] },
+                    { "id": "p3", "label": "Menciona detalles de la ropa o da una impresión", "keywords": ["camisa", "playera", "camiseta", "short", "vestido", "pantalon", "azul", "naranja", "gris", "rojo", "roja", "parece que"] }
+                  ],
+                  "model": "En la foto se ve una estación de tren con mucha gente en el andén. A la izquierda hay un tren con una puerta abierta. Los pasajeros caminan con maletas y mochilas, y un hombre con camisa azul jala una maleta negra. Una señora lleva una bolsa en el hombro. Parece que algunos van a subir al tren."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Y usted, ¿cómo prefiere hacer un viaje largo? Cuénteme por qué.",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Dice cómo prefiere viajar", "keywords": ["prefiero viajar", "prefiero ir", "me gusta viajar", "me gusta ir", "viajar en", "ir en", "avion", "en tren", "autobus", "carro", "camion", "mas comodo"] }
+                  ],
+                  "model": "Prefiero viajar en avión, porque es más rápido, aunque a veces también me gusta ir en tren y ver el paisaje."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Un grupo en el parque",
+              "prompt": "En la fotografía aparece un grupo de personas en un parque. Descríbala y conteste después una pregunta del entrevistador.",
+              "bullets": [
+                "Dónde están las personas y cómo es el lugar",
+                "Quiénes son, qué hacen y qué llevan",
+                "Qué detalles le llaman la atención y qué cree que pasa"
+              ],
+              "photos": ["es-b1-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Describa la fotografía que eligió. Cuando quiera, puede empezar.",
+                  "minWords": 45,
+                  "points": [
+                    { "id": "p1", "label": "Describe el lugar", "keywords": ["parque", "pasto", "cesped", "arbol", "cielo", "cancha", "voleibol", "al fondo", "arena", "soleado", "buen tiempo", "campo"] },
+                    { "id": "p2", "label": "Dice quiénes son y qué hacen", "keywords": ["yoga", "postura", "estiran", "estirami", "practican", "ejercicio", "gimnasia", "brazo", "rodilla", "meditan", "deporte", "clase"] },
+                    { "id": "p3", "label": "Menciona detalles de la ropa o de los objetos", "keywords": ["tapete", "toalla", "botella", "short", "mallas", "leggings", "sin camisa", "gorra", "playera", "camiseta", "pantalon", "licra"] }
+                  ],
+                  "model": "En la foto hay un grupo de personas que hacen yoga en un parque. Casi todos están en una postura parecida, con una rodilla doblada y un brazo hacia arriba. Hay pasto, árboles al fondo y un cielo azul, así que hace buen tiempo. Algunos hombres no llevan camisa, y en el suelo se ven tapetes, toallas y botellas de agua."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Usted practica alguna actividad física? Cuénteme con qué frecuencia y dónde.",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué hace, con qué frecuencia o dónde", "keywords": ["corro", "correr", "camino", "caminar", "nado", "juego", "gimnasio", "veces por semana", "veces a la semana", "hago ejercicio", "hago deporte", "no hago"] }
+                  ],
+                  "model": "Sí, voy al gimnasio dos veces a la semana y los domingos juego futbol con unos amigos en un parque cerca de mi casa."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Imagine la situación que se describe en la hoja y converse con el entrevistador, que hace el papel de otra persona.",
+          "talkMinutes": [2, 3],
+          "follows": 3,
+          "choices": [
+            {
+              "id": "a",
+              "title": "En la estación: cambiar un boleto",
+              "prompt": "Usted está en la estación de tren con una maleta y un boleto para dentro de una hora. Quiere cambiarlo por uno para más tarde y habla con un empleado de la estación. El entrevistador hace el papel del empleado.",
+              "bullets": [
+                "Explicar qué quiere y por qué",
+                "Decir a qué hora prefiere salir",
+                "Reaccionar al precio del cambio",
+                "Preguntar algo más sobre el viaje y despedirse"
+              ],
+              "photos": ["es-b1-1"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Buenas tardes. Dígame, ¿en qué le puedo ayudar?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Explica que quiere cambiar su boleto", "keywords": ["cambiar", "mi boleto", "el boleto", "un boleto", "otro horario", "otro tren", "mas tarde", "cambio de"] }
+                  ],
+                  "model": "Buenas tardes. Quisiera cambiar mi boleto, por favor. Mi tren sale en una hora, pero prefiero viajar más tarde porque mi amigo todavía no llega."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Claro que sí. ¿A qué hora le gustaría salir?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Dice a qué hora quiere salir", "keywords": ["las seis", "las siete", "las ocho", "las nueve", "las diez", "por la tarde", "en la tarde", "por la noche", "en la noche", "despues de las", "lo antes posible", "en dos horas"] }
+                  ],
+                  "model": "Me gustaría salir a las siete de la noche, si hay un tren a esa hora. Si no, cualquier tren después de las seis me sirve."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Muy bien. El cambio cuesta cien pesos más. ¿Le parece bien?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Reacciona al precio del cambio", "keywords": ["acepto", "no hay problema", "lo pago", "pago", "tarjeta", "efectivo", "caro", "barato", "precio", "me parece justo", "esta bien pagar"] }
+                  ],
+                  "model": "Sí, está bien, no hay problema. Prefiero pagar con tarjeta, si es posible, porque no traigo mucho efectivo."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Perfecto. Su nuevo tren sale del andén cuatro. ¿Necesita algo más?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Pregunta otra cosa o agradece y se despide", "keywords": ["muchas gracias", "gracias por", "muy amable", "una pregunta", "donde puedo", "donde esta", "donde hay", "a que hora", "cuanto tiempo", "hasta luego", "buen dia", "tambien quisiera"] }
+                  ],
+                  "model": "Sí, una pregunta más: ¿dónde puedo esperar con mi maleta? Muchas gracias por su ayuda, es usted muy amable."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "En el parque: unirse a un grupo",
+              "prompt": "Usted pasa por un parque y ve a un grupo que practica yoga. Le interesa unirse y habla con la organizadora del grupo. El entrevistador hace el papel de la organizadora.",
+              "bullets": [
+                "Mostrar interés y pedir información",
+                "Decir qué días puede asistir",
+                "Hablar de su experiencia con este ejercicio",
+                "Decidir si se apunta"
+              ],
+              "photos": ["es-b1-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Hola, buenas tardes. Veo que se acercó a nuestro grupo. ¿En qué puedo ayudarle?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Muestra interés y pide información", "keywords": ["me interesa", "me gustaria", "quiero unirme", "quisiera unirme", "quisiera saber", "apuntarme", "participar", "informacion", "como funciona", "cuanto cuesta"] }
+                  ],
+                  "model": "Hola, buenas tardes. Me gustaría unirme al grupo, porque me interesa mucho. ¿Podría darme información sobre las clases, por favor?"
+                },
+                {
+                  "id": "t2",
+                  "ask": "Nos reunimos varias veces por semana. ¿Qué días le quedarían mejor?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Dice qué días o a qué hora puede asistir", "keywords": ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo", "por la tarde", "en la tarde", "la manana", "la noche", "fines de semana"] }
+                  ],
+                  "model": "Me quedan mejor los martes y los jueves por la tarde, después del trabajo. Los sábados también puedo venir, si la clase es temprano."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Muy bien. Le recomiendo traer un tapete y una botella de agua. ¿Ha practicado yoga alguna vez?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Habla de su experiencia previa", "keywords": ["nunca he", "nunca hice", "primera vez", "principiante", "he practicado", "he hecho", "hice yoga", "practico", "de vez en cuando", "empece", "hace unos anos", "hace anos"] }
+                  ],
+                  "model": "Nunca he hecho yoga, pero hace unos meses empecé a hacer estiramientos en mi casa. Soy principiante, así que espero que las clases no sean muy difíciles."
+                },
+                {
+                  "id": "t4",
+                  "ask": "La clase cuesta ciento cincuenta pesos al mes. ¿Quiere apuntarse hoy mismo?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Decide si se apunta", "keywords": ["me apunto", "apuntarme", "me inscribo", "inscribirme", "acepto", "lo pienso", "lo pensare", "pensarlo", "prefiero esperar", "mejor no", "voy a probar", "voy a pensar"] }
+                  ],
+                  "model": "Me parece un buen precio, así que me apunto hoy mismo. ¿Puedo pagar ahora con tarjeta o tengo que traer efectivo mañana?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

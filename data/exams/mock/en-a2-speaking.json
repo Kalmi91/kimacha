@@ -1,1 +1,194 @@
-{ "target": "en", "level": "A2", "paper": "speaking", "forms": [] }
+{
+  "target": "en",
+  "level": "A2",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "The examiner will ask you some questions about you and your free time. Answer each question clearly and give some details.",
+          "talkMinutes": [3, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Interview about you and your weekends",
+              "prompt": "Imagine you are meeting the examiner for the first time. The examiner asks about your home, your daily life and a recent weekend.",
+              "bullets": [
+                "Where you live and what you do",
+                "What you like doing on the weekend",
+                "Something you did recently"
+              ],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Good morning. Where do you live, and who do you live with?",
+                  "minWords": 8,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Says where they live or who they live with",
+                      "keywords": ["live in", "live at", "live on", "apartment", "house", "alone", "with my", "roommate"]
+                    }
+                  ],
+                  "model": "I live in a small apartment in the city center with my sister."
+                },
+                {
+                  "id": "t2",
+                  "ask": "What do you do? Do you work or study?",
+                  "minWords": 8,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Says what they do: work or study",
+                      "keywords": ["work in", "work at", "work as", "work for", "student", "studying", "i'm a", "school"]
+                    }
+                  ],
+                  "model": "I work in a small bookstore near my apartment. I'm a sales clerk, and I like my job."
+                },
+                {
+                  "id": "t3",
+                  "ask": "What do you usually do on the weekend?",
+                  "minWords": 8,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Names something they usually do on the weekend",
+                      "keywords": ["play", "watch", "visit", "relax", "cook", "sleep", "shop", "friend"]
+                    }
+                  ],
+                  "model": "On Saturdays I usually play soccer with my friends, and on Sundays I visit my grandmother."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Do you prefer to stay at home or go out with friends? Why?",
+                  "minWords": 8,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Says what they prefer and gives a reason",
+                      "keywords": ["because", "since", "that's why", "more fun", "more relaxing", "i like", "enjoy", "love"]
+                    }
+                  ],
+                  "model": "I prefer to go out with my friends because it's more fun than staying at home alone."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Now, tell me something about last weekend. What did you do, who was with you, and how was it?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Says what they did last weekend",
+                      "keywords": ["went", "stayed", "i ate", "i saw", "visit", "watch", "play", "cook"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Says who they were with",
+                      "keywords": ["with my", "with a", "friend", "family", "parents", "my mom", "my dad", "by myself"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Says how the weekend was",
+                      "keywords": ["nice", "great", "good", "enjoy", "love", "happy", "was fun", "boring"]
+                    }
+                  ],
+                  "model": "Last weekend was really nice. On Saturday I went to the beach with my family. We swam in the sea and ate fish for lunch. On Sunday I met my friends in a café and we watched a movie. I enjoyed it a lot because I was very relaxed."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Look at the five ways of getting around a city. The examiner will talk with you about them. Give your opinion and say why.",
+          "talkMinutes": [5, 6],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Discussion: getting around the city",
+              "prompt": "Here are five ways of getting around a city. The examiner asks you five questions about them. Answer each one with your own ideas and experience.",
+              "bullets": [
+                "Which way you use most",
+                "Cost, speed and comfort",
+                "A time you used one of them",
+                "An idea for your city"
+              ],
+              "input": "Getting around a city\n\n1. Walking\n2. The bus\n3. A bicycle\n4. A taxi\n5. The subway",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Look at the five ways to travel in a city. Which one do you use most often, and why?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Names the way they use most",
+                      "keywords": ["walk", "bike", "bicycle", "taxi", "subway", "the bus", "by bus", "a bus"]
+                    }
+                  ],
+                  "model": "I use the bus most often, because it goes directly from my house to my office and it is not expensive."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Which of these ways is the cheapest? Why do you think so?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Talks about the cost of the ways to travel",
+                      "keywords": ["is cheap", "cheaper", "expensive", "money", "price", "cost", "free", "i pay"]
+                    }
+                  ],
+                  "model": "I think walking is the cheapest, because you don't pay anything. A bike is cheap too, but a taxi costs a lot of money."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Which way is the fastest, and which one is the most comfortable?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Talks about speed or comfort",
+                      "keywords": ["quick", "slow", "traffic", "minutes", "is fast", "is comfortable", "comfy", "relax"]
+                    }
+                  ],
+                  "model": "The subway is the fastest, because there is no traffic. For me the most comfortable is a taxi, because I can sit and relax."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Tell me about the last time you traveled across a city. Where did you go?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Tells about a past trip in a city",
+                      "keywords": ["went", "took", "walked", "visited", "last week", "last month", "last night", "yesterday"]
+                    }
+                  ],
+                  "model": "Last week I went to the museum with my brother. We took the subway because the museum is far from my house, and it was quick."
+                },
+                {
+                  "id": "t5",
+                  "ask": "What could your city do to make traveling easier? Give me one idea.",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Gives an idea to improve travel in the city",
+                      "keywords": ["city should", "they should", "more bus", "more subway", "more train", "more bike", "bike lane", "cheaper"]
+                    }
+                  ],
+                  "model": "I think the city should build more bike lanes, so people can ride safely. It would also be good to have cheaper tickets for the bus."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,319 @@
-{ "target": "es", "level": "B2", "paper": "speaking", "forms": [] }
+{
+  "target": "es",
+  "level": "B2",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Elija una de las dos situaciones. Dispone de diez minutos para preparar una exposición y, a continuación, conversará con el entrevistador sobre el tema.",
+          "prepSeconds": 600,
+          "talkMinutes": [6, 7],
+          "choices": [
+            {
+              "id": "a",
+              "title": "El parque abandonado de la colonia",
+              "prompt": "Usted forma parte de la asociación de vecinos de su colonia. El parque cercano está cada vez más sucio y descuidado, y la asociación tiene que decidir qué hacer. Prepare una exposición en la que valore las propuestas del documento.",
+              "bullets": [
+                "Explique el problema y sus posibles causas.",
+                "Comente las ventajas y los inconvenientes de al menos tres propuestas.",
+                "Elija la propuesta que le parezca mejor y justifique su elección.",
+                "Añada una medida complementaria o diga qué ocurriría si no se actúa."
+              ],
+              "input": "Propuestas presentadas por los vecinos:\n1. Cobrar una cuota mensual a cada familia para pagar a un jardinero.\n2. Organizar jornadas de limpieza voluntarias un sábado al mes.\n3. Mejorar el alumbrado y poner cámaras de vigilancia.\n4. Pedir a la alcaldía que se encargue del mantenimiento.\n5. Permitir un puesto de café dentro del parque, a cambio de que sus dueños mantengan limpia la zona.\n6. Cerrar el parque con rejas por la noche.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede empezar su exposición.",
+                  "minWords": 100,
+                  "points": [
+                    { "id": "problema", "label": "Explica el problema y sus causas", "keywords": ["basura", "abandon", "vandal", "deterior", "falta de", "se debe", "por culpa", "provoc", "debido a", "a causa de", "grafiti", "suciedad"] },
+                    { "id": "valoracion", "label": "Comenta ventajas e inconvenientes de varias propuestas", "keywords": ["ventaja", "desventaja", "inconveniente", "por un lado", "por otro lado", "sin embargo", "en cambio", "a favor", "en contra", "lo malo", "lo bueno", "problema es que"] },
+                    { "id": "eleccion", "label": "Elige una propuesta y justifica su elección", "keywords": ["prefiero", "elijo", "elegiria", "escogeria", "optaria", "me quedo con", "la mejor opcion", "la mejor propuesta", "la mejor solucion", "mas eficaz", "mas conveniente", "me inclino por"] },
+                    { "id": "complemento", "label": "Añade una medida complementaria o prevé las consecuencias de no actuar", "keywords": ["empeor", "seguiria", "seguira", "si no se hace", "si no hacemos", "si no actuamos", "complement", "habria que", "anadir", "a largo plazo", "mas adelante", "medida extra"] }
+                  ],
+                  "model": "Bueno, el problema es que el parque tiene cada vez más basura y da la impresión de estar abandonado. Yo creo que las causas son la falta de mantenimiento y algunos jóvenes que hacen vandalismo. Sobre las propuestas, la cuota mensual tiene la ventaja de asegurar dinero, pero el inconveniente es que no todos pueden pagarla. Por un lado, las jornadas de limpieza unen a los vecinos; por otro lado, la gente se cansa pronto. Yo elegiría que la alcaldía se ocupe, porque es lo más eficaz y es su obligación. Además, habría que juntar firmas para presionar. Si no se hace nada, el parque seguirá empeorando y a largo plazo nadie querrá ir."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Hay quienes piensan que cuidar un espacio público es tarea de las autoridades y no de los vecinos. ¿Qué opina usted?",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "responsabilidad", "label": "Toma postura sobre quién debe encargarse", "keywords": ["responsab", "entre todos", "colabor", "particip", "impuestos", "comunidad", "obligacion", "compart"] },
+                    { "id": "razon", "label": "Aporta una razón o un ejemplo", "keywords": ["orgullo", "pertenencia", "se siente suyo", "cuida mejor", "cuidan mejor", "cuidarian", "pagamos", "si cada", "tirar basura"] }
+                  ],
+                  "model": "Yo creo que es una responsabilidad compartida. Las autoridades deben ofrecer el servicio, pero si cada quien colabora, la gente siente más orgullo por su colonia y cuida mejor lo que es de todos, por ejemplo evitando tirar basura."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Imagine que la asociación logra reunir el dinero necesario. ¿Cómo convencería usted a los vecinos de que participen en el proyecto?",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "forma", "label": "Propone una forma concreta de informar o invitar", "keywords": ["reunion", "carteles", "redes sociales", "volantes", "invitar", "informar", "puerta a puerta", "transparen", "mensaje", "folleto", "convocar", "anunci"] },
+                    { "id": "beneficios", "label": "Muestra los beneficios o los resultados", "keywords": ["beneficio", "resultados", "demostrar", "mostrar", "seguridad", "plusvalia", "nino", "familia"] }
+                  ],
+                  "model": "Primero haría una reunión en el parque y pondría carteles en las calles para invitar a todos. Después les mostraría los resultados con fotos y les explicaría los beneficios, por ejemplo más seguridad para los niños y las familias."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Menos plástico en la oficina",
+              "prompt": "Usted trabaja en una empresa mediana en la que cada día se tiran decenas de botellas y vasos desechables. La dirección quiere reducir los residuos y pide la opinión de los empleados. Prepare una exposición en la que valore las propuestas del documento.",
+              "bullets": [
+                "Describa el problema y explique por qué conviene resolverlo.",
+                "Comente las ventajas y los inconvenientes de al menos tres propuestas.",
+                "Elija la propuesta que considere más eficaz y justifique su elección.",
+                "Añada una medida complementaria o diga qué ocurriría si no se actúa."
+              ],
+              "input": "Propuestas de la dirección:\n1. Prohibir las botellas de plástico y regalar un termo a cada empleado.\n2. Instalar un bebedero con agua purificada en cada piso.\n3. Cobrar una pequeña cantidad por cada vaso desechable de la cafetería.\n4. Hacer una campaña con carteles y pláticas sobre el consumo responsable.\n5. Dar un premio mensual al área que genere menos basura.\n6. Colocar contenedores de colores para separar los residuos.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede empezar su exposición.",
+                  "minWords": 100,
+                  "points": [
+                    { "id": "problema", "label": "Describe el problema y explica por qué conviene resolverlo", "keywords": ["contamin", "medio ambiente", "planeta", "impacto", "ecolog", "sostenib", "degrad", "gasto"] },
+                    { "id": "valoracion", "label": "Comenta ventajas e inconvenientes de varias propuestas", "keywords": ["ventaja", "desventaja", "inconveniente", "por un lado", "por otro lado", "sin embargo", "en cambio", "a favor", "en contra", "lo malo", "lo bueno", "problema es que"] },
+                    { "id": "eleccion", "label": "Elige una propuesta y justifica su elección", "keywords": ["prefiero", "elijo", "elegiria", "escogeria", "optaria", "me quedo con", "la mejor opcion", "la mejor propuesta", "la mejor solucion", "mas eficaz", "mas conveniente", "me inclino por"] },
+                    { "id": "complemento", "label": "Añade una medida complementaria o prevé las consecuencias de no actuar", "keywords": ["empeor", "seguiria", "seguira", "si no se hace", "si no hacemos", "si no actuamos", "complement", "habria que", "anadir", "a largo plazo", "multa", "medida extra"] }
+                  ],
+                  "model": "Mire, en mi empresa se usan muchísimas botellas y vasos de un solo uso, y eso contamina y además cuesta dinero. Conviene resolverlo por el impacto en el medio ambiente, porque el plástico tarda siglos en degradarse. Los termos tienen la ventaja de que duran años, pero hay gente que los olvida en casa. Los bebederos son cómodos, aunque instalarlos sale caro. Por otro lado, cobrar los vasos puede molestar a los empleados. Yo optaría por los bebederos, porque es lo más eficaz y no obliga a nadie. Además, habría que explicar bien el cambio con una campaña. Si no se hace nada, la basura seguirá creciendo y a largo plazo saldrá más caro."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Algunas empresas castigan con multas a quienes desperdician recursos. ¿Le parece una buena forma de cambiar los hábitos?",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "valoracion", "label": "Valora las multas y da una razón", "keywords": ["incentiv", "premi", "motivar", "obligar", "rechazo", "resentimiento", "educar", "convencer", "miedo", "injust"] },
+                    { "id": "largoplazo", "label": "Habla de la conciencia o del efecto a largo plazo", "keywords": ["conciencia", "concient", "costumbre", "a la larga", "largo plazo", "con el tiempo", "cultura", "mentalidad", "sensibiliz", "convicci", "duradero", "permanente"] }
+                  ],
+                  "model": "Creo que las multas no son lo mejor, porque la gente puede sentir rechazo. Prefiero motivar a los empleados con premios, y educar poco a poco, porque con el tiempo se crea una conciencia y una costumbre."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Piense en su propia casa. ¿Qué podría hacer usted para producir menos basura todos los días?",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "acciones", "label": "Menciona acciones concretas en casa", "keywords": ["recicl", "separar", "bolsas de tela", "reutiliz", "composta", "a granel", "desperdici", "envases"] }
+                  ],
+                  "model": "En casa podría separar la basura y reciclar el plástico y el papel. También llevaría bolsas de tela al mercado, compraría a granel y haría composta con los restos de comida para desperdiciar menos."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Elija una de las dos fotografías. Dispone de diez minutos para preparar una descripción de la situación y, a continuación, conversará con el entrevistador sobre el tema.",
+          "prepSeconds": 600,
+          "talkMinutes": [5, 6],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Una reunión de trabajo",
+              "prompt": "Observe la fotografía, en la que un grupo de personas participa en una reunión de trabajo en una sala pequeña. Prepare una descripción de la situación y de lo que usted imagina sobre ella.",
+              "bullets": [
+                "Describa lo que ve: dónde están y qué hace cada persona.",
+                "Imagine de qué trata la reunión y qué ha ocurrido antes.",
+                "Suponga qué piensan o sienten las personas en este momento.",
+                "Cuente una experiencia propia parecida."
+              ],
+              "input": "Imagine que usted trabaja en esta empresa y que acaba de entrar en la sala. Piense qué se está discutiendo, qué decisión tiene que tomar el equipo y cómo se siente cada persona.",
+              "photos": ["es-b2-1"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede comenzar su descripción.",
+                  "minWords": 80,
+                  "points": [
+                    { "id": "descripcion", "label": "Describe lo que se ve en la fotografía", "keywords": ["pantalla", "proyector", "grafica", "laptop", "computadora", "mesa", "cubrebocas", "sentad"] },
+                    { "id": "tema", "label": "Imagina el tema de la reunión y lo que ocurrió antes", "keywords": ["ventas", "resultados", "producto", "presupuesto", "lanzamiento", "estrategia", "proyecto", "clientes"] },
+                    { "id": "sentimientos", "label": "Supone qué piensan o sienten las personas", "keywords": ["preocupad", "cansad", "aburrid", "atent", "interesad", "concentrad", "nervios", "motivad"] },
+                    { "id": "experiencia", "label": "Cuenta una experiencia propia parecida", "keywords": ["una vez en", "una vez me", "una vez estuve", "una vez tuve", "me paso", "recuerdo que", "me acuerdo", "hace anos", "el ano pasado", "en mi anterior trabajo", "en mi ultimo trabajo", "en otra empresa"] }
+                  ],
+                  "model": "En la foto veo a cinco personas en una sala chica, casi todas con cubrebocas. Un hombre está de pie junto a la pantalla y señala una gráfica de barras que sale del proyector, mientras los demás están sentados alrededor de la mesa. Una chica escribe en su laptop. Imagino que están revisando las ventas de un producto, quizás para preparar un lanzamiento, y que antes hubo una junta con los clientes. Creo que están atentos, aunque algunos parecen cansados o preocupados por los resultados. Me recuerda una vez en mi trabajo en que tuvimos una junta parecida y salimos con muchas tareas pendientes."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Cree que las reuniones presenciales son siempre necesarias? ¿Por qué?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "postura", "label": "Valora la necesidad de reunirse en persona y da un argumento", "keywords": ["videollamada", "videoconferencia", "a distancia", "por correo", "perdida de tiempo", "contacto", "comunicacion", "ahorr", "online", "por escrito", "telefon"] },
+                    { "id": "matiz", "label": "Matiza según el tipo de tema", "keywords": ["segun el", "segun la", "decisiones", "temas importantes", "temas delicados", "cosas sencillas", "en algunos casos", "casos sencillos", "asuntos"] }
+                  ],
+                  "model": "Pues no siempre. Muchas cosas se pueden resolver por videollamada o por correo y así no se pierde tiempo, pero depende del tema: para decisiones importantes prefiero el contacto cara a cara con todo el equipo."
+                },
+                {
+                  "id": "t3",
+                  "ask": "¿Cómo cree que cambiará el trabajo en equipo dentro de diez años?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "futuro", "label": "Plantea una hipótesis sobre el futuro", "keywords": ["inteligencia artificial", "robot", "tecnolog", "automatiz", "remoto", "virtual", "a distancia", "digital", "teletrabajo", "home office"] },
+                    { "id": "consecuencia", "label": "Señala una consecuencia positiva o negativa", "keywords": ["flexibilidad", "riesgo", "peligro", "contacto humano", "empleos", "soledad", "productividad", "tiempo libre"] }
+                  ],
+                  "model": "Seguramente habrá más tecnología, por ejemplo inteligencia artificial que haga las tareas repetitivas, y más gente trabajando a distancia. Eso puede dar más flexibilidad, pero también el riesgo de perder el contacto humano."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Una mudanza",
+              "prompt": "Observe la fotografía, en la que varias personas cargan y descargan cosas en la calle, frente a un edificio. Prepare una descripción de la situación y de lo que usted imagina sobre ella.",
+              "bullets": [
+                "Describa lo que ve: dónde están y qué hace cada persona.",
+                "Imagine por qué se cambian de casa y cómo ha sido la mañana.",
+                "Suponga qué sienten las personas en este momento.",
+                "Cuente alguna mudanza que haya vivido usted o alguien cercano."
+              ],
+              "input": "Imagine que la persona que se muda es un amigo suyo y que usted ha ido a ayudarle. Piense por qué se cambia de casa, cómo ha sido la mañana y qué sienten las personas.",
+              "photos": ["es-b2-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Cuando quiera, puede comenzar su descripción.",
+                  "minWords": 80,
+                  "points": [
+                    { "id": "descripcion", "label": "Describe lo que se ve en la fotografía", "keywords": ["camioneta", "cajas", "banqueta", "pasto", "bolsas", "carga", "levant", "mueble"] },
+                    { "id": "motivo", "label": "Imagina por qué se mudan y cómo ha sido la mañana", "keywords": ["nuevo trabajo", "por trabajo", "por su trabajo", "otra ciudad", "mas grande", "mas barato", "renta", "casarse", "se casan", "departamento", "estudiar", "pareja"] },
+                    { "id": "sentimientos", "label": "Supone cómo se sienten las personas", "keywords": ["cansad", "contento", "contenta", "emocionad", "nervios", "estres", "agobiad", "ilusion", "nostalgi", "felic", "alegr"] },
+                    { "id": "experiencia", "label": "Cuenta una mudanza propia o cercana", "keywords": ["me mude", "me cambie", "recuerdo que", "me acuerdo", "cuando yo", "la ultima vez", "el ano pasado", "hace anos", "me ayudaron", "ayude a", "una vez me", "una vez estuve"] }
+                  ],
+                  "model": "Veo a cinco personas en la banqueta y sobre el pasto, frente a un edificio. Hay muchísimas cajas de cartón y bolsas negras, y una camioneta blanca con la puerta de atrás abierta. Un señor levanta un mueble de madera mientras una señora carga una caja. Imagino que su amigo se muda a otra ciudad por un nuevo trabajo y que desde temprano están moviendo todo. Seguramente están cansados, pero contentos y con algo de estrés. Yo recuerdo que el año pasado me mudé y mis primos me ayudaron; terminamos agotados, pero fue divertido."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Ha participado usted alguna vez en una mudanza? Cuénteme cómo fue.",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "relato", "label": "Cuenta una experiencia concreta", "keywords": ["me mude", "ayud", "familia", "amigos", "herman", "padres", "primos", "tardamos", "terminamos", "subimos", "nunca he", "ninguna"] },
+                    { "id": "balance", "label": "Valora cómo fue la experiencia", "keywords": ["cans", "agotad", "estres", "divertid", "desastre", "complicad", "rompimos", "pesad", "reimos", "dificil", "caos", "dolor"] }
+                  ],
+                  "model": "Sí, hace dos años me mudé de departamento y mis amigos me ayudaron. Tardamos casi todo el día y terminamos agotados, aunque fue muy divertido porque pedimos pizza y platicamos mucho mientras cargábamos las cajas."
+                },
+                {
+                  "id": "t3",
+                  "ask": "En su opinión, ¿qué es lo más difícil de cambiarse de casa? Explique por qué.",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "dificultad", "label": "Señala algo difícil de una mudanza", "keywords": ["empacar", "tirar", "dinero", "caro", "despedirse", "acostumbr", "papeleo", "recuerdos", "cargar", "pesad", "mueble"] },
+                    { "id": "motivo", "label": "Explica el motivo, práctico o emocional", "keywords": ["emocion", "estres", "organiz", "nostalg", "extran", "cansancio", "incertidumbre", "adaptar"] }
+                  ],
+                  "model": "Para mí lo más complicado es despedirse del barrio y acostumbrarse a uno nuevo, porque uno extraña a los vecinos. Además, hay que organizar todo y gastar dinero, y eso genera mucho estrés."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Elija una de las dos encuestas. Lea los resultados y converse con el entrevistador sobre el tema. No hay tiempo de preparación.",
+          "talkMinutes": [3, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Encuesta sobre el trabajo a distancia",
+              "prompt": "Lea los resultados de una encuesta sobre cómo prefieren trabajar los empleados de oficina. Después, converse con el entrevistador sobre el tema.",
+              "input": "Encuesta sobre el modo de trabajo preferido. Participaron 1200 empleados de oficina de la Ciudad de México.\nPrefiere trabajar desde casa tres días o más a la semana: 46 %\nPrefiere ir a la oficina todos los días: 31 %\nPrefiere un horario flexible según la tarea: 23 %\nEntre quienes trabajan desde casa, el 58 % dice que rinde más y el 37 % dice que se siente aislado.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Mire los datos de la encuesta. ¿Hay algún resultado que le sorprenda? Dígame por qué.",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "dato", "label": "Señala un dato concreto", "keywords": ["mitad", "por ciento", "porcentaje", "aislad", "rinde", "flexible", "mayoria", "minoria"] },
+                    { "id": "expectativa", "label": "Explica por qué le sorprende o por qué lo esperaba", "keywords": ["esperaba", "imaginaba", "pensaba que", "crei que", "creia que", "pense que", "no me extrana", "me llama la atencion", "habia pensado", "mas de lo"] }
+                  ],
+                  "model": "Me llama la atención que casi la mitad prefiera quedarse en casa. Yo esperaba un porcentaje menor, porque pensaba que a la mayoría le gusta ir a la oficina para ver a sus compañeros."
+                },
+                {
+                  "id": "t2",
+                  "ask": "¿Por qué cree que algunas personas se sienten solas cuando trabajan desde casa?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "contacto", "label": "Menciona la falta de contacto con otras personas", "keywords": ["contacto", "companer", "conviv", "platic", "charl", "amigos", "socializ", "soledad"] },
+                    { "id": "rutina", "label": "Menciona la falta de rutina o de límites entre trabajo y vida privada", "keywords": ["rutina", "limites", "sin limite", "horario", "descans", "encerrad", "desconectar", "separar", "separacion", "mezcl", "jornada", "vida privada"] }
+                  ],
+                  "model": "Yo creo que por la falta de contacto: en la oficina uno platica con los compañeros y convive, y en casa no. Además se pierde la rutina, y como no hay un horario claro, uno nunca descansa de verdad."
+                },
+                {
+                  "id": "t3",
+                  "ask": "¿Qué ventajas y qué problemas puede tener una empresa cuando sus empleados casi no van a la oficina?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "ventaja", "label": "Señala una ventaja para la empresa", "keywords": ["ahorr", "renta", "gastos", "costos", "contratar", "talento", "productiv"] },
+                    { "id": "problema", "label": "Señala un problema para la empresa", "keywords": ["comunicacion", "supervis", "control", "coordin", "confianza", "cultura", "lealtad", "identidad"] }
+                  ],
+                  "model": "Una ventaja es el ahorro, porque pagan menos renta y menos gastos de mantenimiento. El problema es que cuesta más coordinar a todos y mantener la comunicación y la cultura de la empresa."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Si pudiera elegir, ¿cómo organizaría usted su semana de trabajo ideal? ¿Qué cambiaría en su vida diaria?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "semana", "label": "Describe su semana ideal", "keywords": ["hibrido", "dos dias", "tres dias", "alternar", "flexible", "mitad", "dias en casa", "por semana", "lunes", "viernes", "cuatro dias"] },
+                    { "id": "efecto", "label": "Explica qué cambiaría en su vida diaria", "keywords": ["ahorraria", "tiempo libre", "trafico", "transporte", "dormir", "familia", "ejercicio", "descansar"] }
+                  ],
+                  "model": "Elegiría un esquema híbrido, dos días en casa y tres en la oficina. Así ahorraría tiempo en el tráfico, podría hacer ejercicio y pasar más tiempo con mi familia, pero sin perder el contacto con la gente."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Encuesta sobre el transporte diario",
+              "prompt": "Lea los resultados de una encuesta sobre cómo llegan las personas a su trabajo o a su escuela. Después, converse con el entrevistador sobre el tema.",
+              "input": "Encuesta sobre el transporte diario. Participaron 2000 habitantes de una gran ciudad.\nTransporte público (metro, camión, tren): 38 %\nCarro propio: 27 %\nBicicleta o a pie: 15 %\nMotocicleta: 12 %\nTaxi o aplicación de transporte: 8 %\nEl 64 % tarda más de cuarenta minutos en llegar a su destino.\nEl 41 % cambiaría de medio de transporte si fuera más barato o más rápido.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Observe los resultados. ¿Qué medio de transporte usa usted normalmente y por qué?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "medio", "label": "Dice qué medio usa", "keywords": ["metro", "camion", "tren", "bici", "carro", "pesero", "autobus", "caminando", "a pie", "moto", "taxi", "aplicacion"] },
+                    { "id": "razon", "label": "Explica por qué lo usa", "keywords": ["rapido", "barato", "economico", "comodo", "practico", "seguridad", "cerca", "trafico", "ahorr", "puntual", "evito", "no tengo que"] }
+                  ],
+                  "model": "Normalmente voy en metro porque es lo más rápido en mi ciudad, sale barato y me deja cerca del trabajo. A veces uso el carro de mi pareja, pero el tráfico es terrible."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Más de la mitad de los encuestados tarda más de cuarenta minutos en llegar. ¿Qué consecuencias puede tener esto en la vida de una persona?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "salud", "label": "Señala consecuencias para la salud o el ánimo", "keywords": ["cansad", "cansanc", "estres", "agotad", "salud", "sueno", "mal humor", "ansiedad", "desgaste"] },
+                    { "id": "tiempo", "label": "Señala consecuencias para el tiempo libre o el rendimiento", "keywords": ["familia", "tiempo libre", "rendimiento", "puntual", "descans", "hobbies", "amigos", "productiv"] }
+                  ],
+                  "model": "Pues que uno llega cansado y con mucho estrés, y eso afecta la salud. Además se pierde tiempo libre que podría pasar con la familia o descansando, y el rendimiento en el trabajo baja."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Muchos cambiarían de transporte si fuera más barato o más rápido. ¿Qué medidas debería tomar el gobierno y qué lograría con ellas?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "medida", "label": "Propone una medida concreta", "keywords": ["ciclovia", "carril", "subsid", "tarifa", "frecuencia", "mas lineas", "estacionamiento", "peaje"] },
+                    { "id": "beneficio", "label": "Explica qué se lograría con ella", "keywords": ["contamin", "trafico", "congestion", "menos carros", "aire", "ahorr", "ruido", "usaria", "disminu", "menos tiempo"] }
+                  ],
+                  "model": "Yo construiría más líneas de metro y carriles exclusivos para el camión, además de bajar la tarifa para estudiantes. Así habría menos carros en la calle, menos tráfico y menos contaminación en el aire. Eso se paga con los impuestos y es una buena inversión."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Imagine que dentro de veinte años casi nadie tiene carro propio. ¿Cómo sería la ciudad y qué inconvenientes traería ese cambio?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "escenario", "label": "Describe cómo sería la ciudad", "keywords": ["mas verde", "menos ruido", "contaminacion", "silenciosa", "peatones", "bicicletas", "parques", "aire limpio"] },
+                    { "id": "problemas", "label": "Señala un posible problema o una desventaja", "keywords": ["libertad", "dependeria", "autonom", "colaps", "empleos", "desventaja", "problema", "dificultad", "riesgo", "peligro"] }
+                  ],
+                  "model": "Creo que sería más tranquila y más verde, con menos ruido, más peatones y más bicicletas. Eso sí, la gente dependería mucho del transporte público, y si éste colapsa, tendría problemas para moverse."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
