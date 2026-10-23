@@ -35,7 +35,10 @@ jest.mock('@/data/exams/mock', () => {
   return { MOCK_AUTHORED: [...fixturePapers('en', 'B1'), speakingFile('en', 'B1')] };
 });
 
+import { DeviceEventEmitter, StyleSheet } from 'react-native';
 import { act, fireEvent, render } from '@testing-library/react-native';
+
+import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 
 import { setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
@@ -77,6 +80,16 @@ const advance = async (ms: number) => {
     jest.advanceTimersByTime(ms);
   });
 };
+
+const keyboard = async (height: number | null) => {
+  await act(async () => {
+    if (height === null) DeviceEventEmitter.emit('keyboardDidHide', {});
+    else DeviceEventEmitter.emit('keyboardDidShow', { endCoordinates: { height } });
+  });
+};
+
+const scroller = (screen: Screen) => screen.getByTestId('mock-scroll');
+const bottomOf = (screen: Screen) => StyleSheet.flatten(scroller(screen).props.style).marginBottom;
 
 const clock = (screen: Screen) => [screen.getByTestId('mock-clock').props.children].flat().join('');
 
@@ -133,6 +146,36 @@ describe('Mock exam: a speaking paper with tasks', () => {
     expect(s.getByTestId('mock-speaking-primary')).toBeTruthy();
     expect(s.queryByTestId('mock-next-task')).toBeNull();
     expect(s.queryByTestId('mock-speaking-continue')).toBeNull();
+    s.unmount();
+  });
+
+  it('the scroller ends above the docked bar, and above the keyboard once it is up, so the typed text is never behind either', async () => {
+    const s = await mount();
+    await walkToSpeaking(s);
+    expect(bottomOf(s)).toBe(DOCK_RESERVE);
+    await press(s, 'mock-speaking-choice-b');
+    await press(s, 'mock-speaking-primary');
+    await press(s, 'mock-speaking-primary');
+    await keyboard(300);
+    expect(bottomOf(s)).toBe(DOCK_RESERVE + 300);
+    // a speaking task keeps the keyboard up while the learner scrolls to the photo or the sheet
+    expect(scroller(s).props.keyboardDismissMode).toBe('none');
+    await keyboard(null);
+    expect(bottomOf(s)).toBe(DOCK_RESERVE);
+    s.unmount();
+  });
+
+  it('the other typed tasks (the essay has no docked bar) get the same: the scroller ends above the keyboard, and only then', async () => {
+    const s = await mount();
+    await press(s, 'mock-begin');
+    for (let k = 0; k < 14 && !s.queryByTestId('mock-essay-text'); k++) await press(s, s.queryByTestId('mock-start-paper') ? 'mock-start-paper' : 'mock-next-task');
+    expect(s.getByTestId('mock-essay-text')).toBeTruthy();
+    expect(bottomOf(s)).toBe(0);
+    expect(scroller(s).props.keyboardDismissMode).toBe('on-drag');
+    await keyboard(300);
+    expect(bottomOf(s)).toBe(300);
+    await keyboard(null);
+    expect(bottomOf(s)).toBe(0);
     s.unmount();
   });
 

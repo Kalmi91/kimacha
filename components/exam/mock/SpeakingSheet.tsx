@@ -11,32 +11,16 @@ import { mockStyles as styles } from './mockStyles';
 
 // The task sheet of a speaking choice: the title, the prompt, the guiding points, the written stimulus (a long one scrolls),
 // the photo(s) with the credit line (author, licence; a tap opens the Commons page, as on the word cards) and the recommended
-// speaking time. The same sheet is shown while the learner prepares and, collapsed, next to the examiner's questions.
+// speaking time. The same sheet is shown while the learner prepares and next to the examiner's questions (there the photos are
+// shown on their own, always, so the sheet leaves them out: `photos={false}`).
 
-type Props = {
-  choice: MockSpeakingChoice;
-  talkMinutes: [number, number];
-};
-
-export default function SpeakingSheet({ choice, talkMinutes }: Props) {
+/** The photos of a choice, one under the other at full width, each with its credit line; a key with no photo in the register is skipped. */
+export function SpeakingPhotos({ keys }: { keys: string[] }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
-  const s = t().mockExam;
   return (
-    <View testID="mock-speaking-sheet" style={styles.wrap}>
-      <Text testID="mock-speaking-title" style={[styles.question, { color: colors.tint }]}>
-        {choice.title}
-      </Text>
-      <Text testID="mock-speaking-prompt" style={[styles.body, { color: colors.text }]}>
-        {choice.prompt}
-      </Text>
-      {choice.bullets?.map((b, i) => (
-        <Text key={i} testID={`mock-speaking-bullet-${i}`} style={[styles.body, { color: colors.text }]}>
-          {'•'} {b}
-        </Text>
-      ))}
-      {choice.input ? <MockTextBox testID="mock-speaking-input" text={choice.input} scroll /> : null}
-      {choice.photos?.map((key) => {
+    <>
+      {keys.map((key) => {
         const photo = examPhoto(key);
         if (!photo) return null;
         return (
@@ -64,6 +48,36 @@ export default function SpeakingSheet({ choice, talkMinutes }: Props) {
           </View>
         );
       })}
+    </>
+  );
+}
+
+type Props = {
+  choice: MockSpeakingChoice;
+  talkMinutes: [number, number];
+  /** Show the photos in the sheet (default); false when the screen shows them on their own. */
+  photos?: boolean;
+};
+
+export default function SpeakingSheet({ choice, talkMinutes, photos = true }: Props) {
+  const { theme } = useTheme();
+  const colors = Colors[theme];
+  const s = t().mockExam;
+  return (
+    <View testID="mock-speaking-sheet" style={styles.wrap}>
+      <Text testID="mock-speaking-title" style={[styles.question, { color: colors.tint }]}>
+        {choice.title}
+      </Text>
+      <Text testID="mock-speaking-prompt" style={[styles.body, { color: colors.text }]}>
+        {choice.prompt}
+      </Text>
+      {choice.bullets?.map((b, i) => (
+        <Text key={i} testID={`mock-speaking-bullet-${i}`} style={[styles.body, { color: colors.text }]}>
+          {'•'} {b}
+        </Text>
+      ))}
+      {choice.input ? <MockTextBox testID="mock-speaking-input" text={choice.input} scroll /> : null}
+      {photos && choice.photos?.length ? <SpeakingPhotos keys={choice.photos} /> : null}
       <Text testID="mock-speaking-talktime" style={[styles.small, { color: colors.textMuted }]}>
         {s.speakTalkTime(talkMinutes[0], talkMinutes[1])}
       </Text>

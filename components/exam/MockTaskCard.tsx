@@ -43,9 +43,11 @@ type Props = {
   /** Speaking only: the screen's next-task action (the last step of the task calls it) and whether this is the paper's last task. */
   onNextTask?: () => void;
   lastTask?: boolean;
+  /** Speaking only: scroll the screen's scroller so that this y (from the top of the card) is at the top of the visible area. */
+  onScrollTo?: (y: number) => void;
 };
 
-export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak, glossary, inheritedChoice, onHoldClock, onNextTask, lastTask }: Props) {
+export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak, glossary, inheritedChoice, onHoldClock, onNextTask, lastTask, onScrollTo }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const s = t().mockExam;
@@ -85,7 +87,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
       case 'essay':
         return <EssayTask task={task} {...props} />;
       case 'speaking':
-        return <SpeakingTask task={task} {...props} inheritedChoice={inheritedChoice} onHoldClock={onHoldClock} onNextTask={onNextTask} lastTask={lastTask} />;
+        return <SpeakingTask task={task} {...props} inheritedChoice={inheritedChoice} onHoldClock={onHoldClock} onNextTask={onNextTask} lastTask={lastTask} onScrollTo={onScrollTo} />;
     }
   }
 

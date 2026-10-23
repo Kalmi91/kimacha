@@ -19,6 +19,7 @@ import ExamButton from '@/components/exam/ExamButton';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
+import { useDockLift } from '@/components/learn/useDockLift';
 import MockTaskCard from '@/components/exam/MockTaskCard';
 import { MockResultView, MockReviewView } from '@/components/exam/MockResultView';
 import { mockAvailable, mockIsFullLength, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
@@ -53,6 +54,10 @@ export default function MockExamScreen() {
   const s = t().mockExam;
   // The speaking task's primary button docks above the keyboard (components/learn/DockSlot.tsx); the other kinds keep their inline button.
   const dock = useDockSlot(colors);
+  // The Android window does not resize for the keyboard (edge-to-edge), so the scroller would run on under it: what is typed would sit
+  // behind the keyboard or the docked bar, and the system would not scroll to it. It ends above the docked bar, or above the keyboard.
+  const { dockLift, kbHeight } = useDockLift();
+  const scrollRef = useRef<ScrollView>(null);
   const router = useRouter();
   const params = useLocalSearchParams<{ level?: string }>();
 
@@ -418,9 +423,18 @@ export default function MockExamScreen() {
           {s.taskOf(taskIdx + 1, paper.tasks.length)}
         </Text>
         {/* the scroller also remounts per task (key), otherwise the new task opens at the previous scroll
-            position: its top slides out of view and the "Next task" button stays in the same place under the finger. */}
+            position: its top slides out of view and the "Next task" button stays in the same place under the finger.
+            A speaking task keeps the keyboard up while the learner scrolls to its photo or sheet. */}
         <DockSlotProvider host={dock}>
-          <ScrollView key={task.id} contentContainerStyle={styles.body} keyboardShouldPersistTaps="handled" keyboardDismissMode="on-drag">
+          <ScrollView
+            ref={scrollRef}
+            key={task.id}
+            testID="mock-scroll"
+            style={{ marginBottom: dock.bottomOffset ?? (kbHeight > 0 ? dockLift : 0) }}
+            contentContainerStyle={styles.body}
+            keyboardShouldPersistTaps="handled"
+            keyboardDismissMode={task.kind === 'speaking' ? 'none' : 'on-drag'}
+          >
             <MockTaskCard
               key={task.id}
               task={task}
@@ -433,6 +447,7 @@ export default function MockExamScreen() {
               onHoldClock={holdClock}
               onNextTask={nextTask}
               lastTask={last}
+              onScrollTo={(y) => scrollRef.current?.scrollTo({ y: Math.max(0, y + spacing.lg - spacing.sm), animated: true })}
             />
             {/* a speaking task has its own primary button (it follows the step of the task and docks above the keyboard) */}
             {task.kind !== 'speaking' && <ExamButton testID="mock-next-task" label={last ? s.finishPaper : s.nextTask} onPress={nextTask} />}
