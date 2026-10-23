@@ -10,12 +10,17 @@
 // Questions: "what does X mean in the text" (the right meaning + two meanings of other known words, the same
 // part of speech where possible) and true/false (an English statement: the translation of one of the text's
 // sentences = true, the translation of another known sentence that is not in the text = false).
+//
+// Stories (FB526, lib/practice/stories.ts): in the Spanish direction the text is first a ready-made five-sentence story the
+// learner fully knows (the one with the most due words); its false statements come from the story's own `false_en`, in order,
+// each once (then a true one). Without such a story, or in the English direction, the text is built as above.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { isSentenceKnownIn, knownTokens, type ResolvedTense } from '@/lib/knownSentence';
 import { learnedEntries, learnedEntryOf, sentencePair } from '@/lib/sentenceCards';
 import type { Sm2Card } from '@/lib/sm2';
 import { gapTaskFor, practiceCandidates, type GapSourceInfo, type GapTask } from './gapFill';
+import { pickStory, type Story } from './stories';
 
 /** The text holds this many sentences (and the round this many questions: one per sentence). */
 export const READING_WORDS = 5;
@@ -34,7 +39,9 @@ export type ReadingQuestion =
   /** `options` = card ids in display order, `itemId` is the word asked (the right option). */
   | { kind: 'meaning'; itemId: string; options: string[] }
   /** The statement is the source-language sentence of card `sourceId`; true when that card is one of the text's words. */
-  | { kind: 'truefalse'; sourceId: string };
+  | { kind: 'truefalse'; sourceId: string }
+  /** A false statement of the round's story: `index` into `story.false_en`. */
+  | { kind: 'storyfalse'; index: number };
 
 export type ResolvedQuestion =
   /** `word` as written in the text; `options` are meanings. */
@@ -46,6 +53,8 @@ export interface ReadingSet {
   words: ReadingWord[];
   questions: ReadingQuestion[];
   resolved: ResolvedQuestion[];
+  /** The story the text is (lib/practice/stories.ts), absent for a text of example sentences. */
+  storyId?: string;
 }
 
 export interface ReadingDeps {
@@ -59,6 +68,8 @@ export interface ReadingDeps {
   info?: (itemId: string) => GapSourceInfo | undefined;
   /** Card ids of the round this one replaces: they go to the end of the candidates (kept, not dropped), so a new round differs. */
   avoid?: ReadonlySet<string>;
+  /** The story of the round this one replaces: it goes last among the stories, so a new round differs. */
+  avoidStory?: string;
   /** For tests: a deterministic [0, 1) source. */
   random?: () => number;
 }
@@ -138,9 +149,10 @@ function meaningOptions(word: ReadingWord, pool: PcicItem[], words: ReadingWord[
 /**
  * One question per word: meaning and true/false alternate (meaning, true/false, meaning, ...), the words in a
  * random order, and the true/false ones are half true, half false. A meaning question without enough other
- * known words, or a false statement without another known sentence, falls back to a true statement.
+ * known words, or a false statement without another known sentence, falls back to a true statement. With a story the
+ * false statements are the story's own `false_en`, in order, each once (then a true statement).
  */
-export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: ReadonlySet<string>): ReadingQuestion[] {
+export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: ReadonlySet<string>, story?: Story): ReadingQuestion[] {
   const random = deps.random ?? Math.random;
   const pool = learnedEntryItems(deps);
   const inText = new Set(words.map((w) => w.itemId));
@@ -149,7 +161,7 @@ export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: R
 
   // other known sentences that are not in the text (each statement once), in random order
   const falseSeen = new Set<string>();
-  const falsePool = shuffled(pool, random).filter((item) => {
+  const falsePool = story ? [] : shuffled(pool, random).filter((item) => {
     if (inText.has(item.id)) return false;
     const pair = sentencePair(item, deps.target);
     if (!pair || sentencesInText.has(pair.target.trim().toLowerCase())) return false;
@@ -164,14 +176,19 @@ export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: R
   // at least one true and one false statement when there are two or more
   const truths = shuffled(Array.from({ length: slots }, (_, i) => i % 2 === 0), random);
   let nextTruth = 0;
+  let nextStoryFalse = 0;
 
   return shuffled(words, random).map((word, i): ReadingQuestion => {
     if (kinds[i] === 'meaning') {
       const options = meaningOptions(word, pool, words, deps, random);
       if (options) return { kind: 'meaning', itemId: word.itemId, options };
     } else if (!truths[nextTruth++]) {
-      const fake = falsePool.shift();
-      if (fake) return { kind: 'truefalse', sourceId: fake.id };
+      if (story) {
+        if (nextStoryFalse < story.false_en.length) return { kind: 'storyfalse', index: nextStoryFalse++ };
+      } else {
+        const fake = falsePool.shift();
+        if (fake) return { kind: 'truefalse', sourceId: fake.id };
+      }
     }
     return { kind: 'truefalse', sourceId: word.itemId };
   });
@@ -189,7 +206,13 @@ function learnedEntryItems(deps: ReadingDeps): PcicItem[] {
 }
 
 /** The texts of the questions, or null when a card of the round is gone from the corpus (a saved round then starts over). */
-export function resolveSet(words: ReadingWord[], questions: ReadingQuestion[], findItem: (id: string) => PcicItem | undefined, target: PcicTarget): ReadingSet | null {
+export function resolveSet(
+  words: ReadingWord[],
+  questions: ReadingQuestion[],
+  findItem: (id: string) => PcicItem | undefined,
+  target: PcicTarget,
+  story?: Story,
+): ReadingSet | null {
   const resolved: ResolvedQuestion[] = [];
   for (const q of questions) {
     if (q.kind === 'meaning') {
@@ -198,20 +221,34 @@ export function resolveSet(words: ReadingWord[], questions: ReadingQuestion[], f
       const correct = q.options.indexOf(q.itemId);
       if (!word || correct === -1 || items.some((it) => !it)) return null;
       resolved.push({ kind: 'meaning', word: word.answer, options: items.map((it) => meaningOf(it!, target)), correct });
+    } else if (q.kind === 'storyfalse') {
+      const statement = story?.false_en[q.index];
+      if (!statement) return null;
+      resolved.push({ kind: 'truefalse', statement, truth: false, correct: 1 });
     } else {
+      // a statement of the text is the translation of that word's sentence (the same as the card's own sentence pair)
+      const inText = words.find((w) => w.itemId === q.sourceId);
+      if (inText) {
+        resolved.push({ kind: 'truefalse', statement: inText.translation, truth: true, correct: 0 });
+        continue;
+      }
       const item = findItem(q.sourceId);
       const pair = item ? sentencePair(item, target) : null;
       if (!pair) return null;
-      const truth = words.some((w) => w.itemId === q.sourceId);
-      resolved.push({ kind: 'truefalse', statement: pair.source, truth, correct: truth ? 0 : 1 });
+      resolved.push({ kind: 'truefalse', statement: pair.source, truth: false, correct: 1 });
     }
   }
-  return { words, questions, resolved };
+  return story ? { words, questions, resolved, storyId: story.id } : { words, questions, resolved };
 }
 
 /** The whole round, or null when fewer than READING_MIN_WORDS sentences can be made (the empty state). */
 export function buildReadingSet(deps: ReadingDeps): ReadingSet | null {
   const known = knownTokens(deps.target, { learned: learnedEntries(deps.cards, deps.target, deps.findItem), tenses: deps.tenses });
+  const picked = pickStory(deps, known);
+  if (picked) {
+    const set = resolveSet(picked.words, buildQuestions(picked.words, deps, known, picked.story), deps.findItem, deps.target, picked.story);
+    if (set) return set;
+  }
   const words = pickReadingWords(deps, known);
   if (words.length < READING_MIN_WORDS) return null;
   return resolveSet(words, buildQuestions(words, deps, known), deps.findItem, deps.target);
