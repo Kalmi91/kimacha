@@ -21,8 +21,6 @@ export default {
   },
   onboardingTheme: {
     title: 'Pick a look',
-    // The sample word on each row: the learned language's word, so it shows the font.
-    sampleWord: 'el carro',
     know: 'I know',
     later: 'Later you can pick from 24 in Settings.',
     next: 'Continue',

@@ -15,7 +15,6 @@ const hu: typeof en = {
       title: 'Témák',
       oneLook: 'Ennek a témának egyetlen kinézete van.',
       posterSlogan: 'TANULJ, TANULJ, TANULJ!',
-      sample: 'el carro',
       know: 'Tudom',
       // the theme decor texts (senior, retro95, y2k, gamer).
       readAloud: 'Felolvasás',

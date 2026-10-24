@@ -20,7 +20,6 @@ const hu: typeof en = {
   },
   onboardingTheme: {
     title: 'Válassz egy stílust',
-    sampleWord: 'el carro',
     know: 'Tudom',
     later: 'Később 24 közül választhatsz a Beállításokban.',
     next: 'Tovább',
