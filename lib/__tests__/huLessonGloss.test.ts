@@ -6,7 +6,7 @@ import { buildGlossMap, resolveGloss } from '@/lib/games/gloss';
 
 // The worked examples of the Hungarian course lessons (data/games/grammar/hu) get their word glosses the way the
 // es and en lessons do, from the course's own deck: for es / en that is words-open, for hu the Hungarian deck
-// (data/words/hu, A0 + A1), besides the glossary the lesson carries itself.
+// (data/words/hu, A0 - C1), besides the glossary the lesson carries itself.
 describe('word lookup in the Hungarian course', () => {
   it('finds a headword, with and without the article the sentence dropped', () => {
     expect(findWordByText('Szia!', 'hu', 'hu')?.es).toBe('hola (informal)');
@@ -21,9 +21,21 @@ describe('word lookup in the Hungarian course', () => {
     expect(findWordByText('magyarul', 'hu', 'hu')).toBeUndefined();
   });
 
-  it('every card of the Hungarian deck is found by its own headword', () => {
-    const missing = getHuWords().filter((w) => !findWordByText(w.hu as string, 'hu', 'hu'));
-    expect(missing.map((w) => w.hu)).toEqual([]);
+  it('every card of the Hungarian deck is found by its own headword (each alternative of a "x / y" one)', () => {
+    const missing = getHuWords().flatMap((w) =>
+      (w.hu as string).split(' / ').filter((alt) => !findWordByText(alt, 'hu', 'hu')),
+    );
+    expect(missing).toEqual([]);
+  });
+
+  it('finds the words of every level A0-C1, an alternative of a "x / y" headword too', () => {
+    expect(new Set(getHuWords().map((w) => w.level))).toEqual(new Set(['A0', 'A1', 'A2', 'B1', 'B2', 'C1']));
+    // 21600 (B1): "kínál / felajánl" = ofrecer / to offer
+    const offer = findWordByText('felajánl', 'hu', 'hu');
+    expect(offer?.id).toBe(21600);
+    expect(offer?.level).toBe('B1');
+    expect(findWordByText('felajánl', 'hu', 'hu')?.es).toBe('ofrecer');
+    expect(findWordByText('kínál', 'hu', 'hu')?.en).toBe('to offer');
   });
 
   it('does not touch the words-open lookup of the other branches', () => {
@@ -53,8 +65,20 @@ describe('resolveGloss in a Hungarian lesson', () => {
     const card = findWordByText('kutya', 'hu', 'hu')!;
     expect(known.has(card.id)).toBe(true);
     expect(resolveGloss('kutya', { learnedLang: 'hu', nativeLang: 'es', knownWordIds: known })?.isNew).toBe(false);
-    expect(known.size).toBe(getHuWords().length);
+    expect(known.size).toBe(getHuWords().filter((w) => w.level === 'A0' || w.level === 'A1').length);
     expect(cumulativeCorpusWordIds('A1', 'es').has(card.id)).toBe(false);
+  });
+
+  it('a B1 word is new at A1 and known from B1 on', () => {
+    const offer = findWordByText('felajánl', 'hu', 'hu')!;
+    const atA1 = cumulativeCorpusWordIds('A1', 'hu');
+    const atB1 = cumulativeCorpusWordIds('B1', 'hu');
+    expect(atA1.has(offer.id)).toBe(false);
+    expect(atB1.has(offer.id)).toBe(true);
+    expect(resolveGloss('felajánl', { learnedLang: 'hu', nativeLang: 'en', knownWordIds: atA1 })?.native).toBe('to offer');
+    expect(resolveGloss('felajánl', { learnedLang: 'hu', nativeLang: 'en', knownWordIds: atA1 })?.isNew).toBe(true);
+    expect(resolveGloss('felajánl', { learnedLang: 'hu', nativeLang: 'en', knownWordIds: atB1 })?.isNew).toBe(false);
+    expect(atB1.size).toBe(getHuWords().filter((w) => ['A0', 'A1', 'A2', 'B1'].includes(w.level as string)).length);
   });
 });
 
