@@ -10,6 +10,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
+import { sourceFor } from '@/lib/languagePair';
 import { LEVELS, type Level } from '@/data/words';
 import {
   doneGrammarTopicProgress,
@@ -72,17 +73,17 @@ export default function GrammarSyllabusScreen() {
 
   const load = useCallback(async () => {
     const db = getDb();
-    const { target } = await refresh(['direction']);
+    const { target, source } = await refresh(['direction']);
     setLearnedLang(target);
-    // Kimacha Play: UI always English, regardless of the
-    // stored source language.
-    // es→en: a learner whose native language is Spanish gets the explanation in Spanish.
-    setContentLang(target === 'en' ? 'es' : 'en');
+    // The explanation language is the learner's own (the pair's source), not the language being learned:
+    // en→es English, es→en Spanish. A source without lesson text yet (hu) falls back to English per field.
+    setContentLang(sourceFor(target, source));
 
     const levelData = await db.getLevel();
     const lvl = (levelData.level as Level) ?? 'A1';
     setLevel(lvl);
-    setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' ? lvl : 'A1'));
+    // The Hungarian course stops at A2: a higher level opens on A1, not on an empty list.
+    setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' && (target !== 'hu' || syllabusLevels(target).includes(lvl)) ? lvl : 'A1'));
 
     // A topic is only "done" if there is a finished row for every
     // kind that exists in its lesson (doneGrammarTopicProgress, lib/grammar/syllabus.ts).

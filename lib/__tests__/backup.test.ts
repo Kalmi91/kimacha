@@ -6,7 +6,7 @@ describe('backup export/import round-trip (memory db)', () => {
   const db = getDb();
 
   it('exports every table and restores an identical state', async () => {
-    await db.setOnboarding('hu', 'en');
+    await db.setOnboarding('pt', 'en');
     // Play cut: the cards/card_attempts/user_level writers
     // (ensureCard, updateCard, recordAttempt, updateLevel) are gone, no
     // app-code caller; __setLevelForTest replaces updateLevel for fixtures.
@@ -28,7 +28,7 @@ describe('backup export/import round-trip (memory db)', () => {
     for (const table of BACKUP_TABLES) {
       expect(Array.isArray(payload.tables[table])).toBe(true);
     }
-    expect(payload.tables.onboarding[0]).toMatchObject({ source: 'hu', target: 'en' });
+    expect(payload.tables.onboarding[0]).toMatchObject({ source: 'pt', target: 'en' });
     expect(payload.tables.game_progress).toHaveLength(1);
     expect(payload.tables.pcic_cards).toHaveLength(2);
     expect(payload.tables.pcic_cards.find((r: any) => r.item_id === 'b1-0001')).toMatchObject({ state: 'review', interval: 4, known: 1, introduced_at: '2026-10-07' });
@@ -50,7 +50,7 @@ describe('backup export/import round-trip (memory db)', () => {
     const roundTrip = await db.exportAll();
     // Play cut: restore forces the active pair to the single
     // supported one (en-es), so the onboarding row differs from the backup's
-    // own hu-en; every other table round-trips byte for byte.
+    // own pt-en; every other table round-trips byte for byte.
     expect(roundTrip.tables).toEqual({ ...payload.tables, onboarding: [{ id: 1, source: 'en', target: 'es' }] });
     expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
     expect(await db.getGrammarPalette()).toBe('lime');
@@ -59,9 +59,9 @@ describe('backup export/import round-trip (memory db)', () => {
     expect((await db.getMistakeBatches()).map(b => b.batchId)).toEqual(['2026-09-23-claude']);
     expect((await db.getDayStats(payload.tables.usage_minutes[0].date)).minutes).toBe(1);
 
-    // The hu-en rows themselves are untouched, just no longer active: switching
+    // The pt-en rows themselves are untouched, just no longer active: switching
     // back to that pair (not a restore, just a normal pair switch) reaches them.
-    await db.setOnboarding('hu', 'en');
+    await db.setOnboarding('pt', 'en');
     expect((await db.getLevel()).level).toBe('A1');
     expect(await db.getFeedbackBtnSide()).toBe('left');
     expect(await db.getGameProgress('grammar')).toEqual([{ itemId: 'ser-estar:done', state: 'done', data: { correct: 3, total: 3 } }]);
@@ -130,11 +130,11 @@ describe('backup export/import round-trip (memory db)', () => {
 
   // Play cut: the exact scenario the step's own
   // acceptance check names, an older-schema backup whose onboarding/active
-  // pair is hu-es restores onto en-es, not onto the pair it was saved with.
+  // pair is pt-es restores onto en-es, not onto the pair it was saved with.
   it('forces the active pair to en-es when the backup carries an older pair', async () => {
-    await db.setOnboarding('hu', 'es');
+    await db.setOnboarding('pt', 'es');
     const payload = await db.exportAll();
-    expect(payload.tables.onboarding[0]).toMatchObject({ source: 'hu', target: 'es' });
+    expect(payload.tables.onboarding[0]).toMatchObject({ source: 'pt', target: 'es' });
 
     await db.importAll(payload);
     expect(await db.getOnboarding()).toEqual({ source: 'en', target: 'es' });

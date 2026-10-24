@@ -152,7 +152,7 @@ export function parseSavedGame(raw: unknown, mode: string): SavedGame | null {
   if (typeof raw !== 'object' || raw === null) return null;
   const r = raw as Partial<SavedGame>;
   if (r.v !== 1 || r.mode !== mode || typeof r.date !== 'string') return null;
-  if (r.target !== 'es' && r.target !== 'en') return null;
+  if (r.target !== 'es' && r.target !== 'en' && r.target !== 'hu') return null;
   if (!Array.isArray(r.ids) || r.ids.length === 0 || !r.ids.every(isId) || r.state === undefined) return null;
   return { v: 1, mode, date: r.date, target: r.target, ids: r.ids, state: r.state };
 }

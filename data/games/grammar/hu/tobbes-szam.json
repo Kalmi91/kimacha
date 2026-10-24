@@ -1,0 +1,1245 @@
+{
+  "schema": 2,
+  "topic": "tobbes-szam",
+  "level": "A1",
+  "title": {
+    "en": "Plural: -k (házak, almák)",
+    "es": "Plural: -k (házak, almák)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian makes the plural with one ending: -k. After a vowel it is just -k (autó → autók). After a consonant a linking vowel goes in first: -ok, -ak, -ek or -ök, chosen by vowel harmony (barát → barátok, gyerek → gyerekek). A final -a or -e gets longer before the -k (alma → almák, körte → körték). The big surprise: after a number or a quantity word the noun stays singular: két alma (two apples), sok ember (many people).",
+        "es": "El húngaro forma el plural con una sola terminación: -k. Después de vocal es solo -k (autó → autók). Después de consonante entra primero una vocal de enlace: -ok, -ak, -ek u -ök, según la armonía vocálica (barát → barátok, gyerek → gyerekek). Una -a o -e final se alarga antes de la -k (alma → almák, körte → körték). La gran sorpresa: después de un número o de una palabra de cantidad el sustantivo se queda en singular: két alma (dos manzanas), sok ember (mucha gente)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "plural-vowel",
+      "title": {
+        "en": "After a vowel: just -k (a → á, e → é)",
+        "es": "Después de vocal: solo -k (a → á, e → é)"
+      },
+      "header": [
+        {
+          "en": "Singular",
+          "es": "Singular"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "autó",
+          "autók"
+        ],
+        [
+          "nő",
+          "nők"
+        ],
+        [
+          "mozi",
+          "mozik"
+        ],
+        [
+          "cipő",
+          "cipők"
+        ],
+        [
+          "fiú",
+          "fiúk"
+        ],
+        [
+          "alma",
+          "almák"
+        ],
+        [
+          "kutya",
+          "kutyák"
+        ],
+        [
+          "szoba",
+          "szobák"
+        ],
+        [
+          "körte",
+          "körték"
+        ],
+        [
+          "cseresznye",
+          "cseresznyék"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "plural-back",
+      "title": {
+        "en": "After a consonant, back vowels: -ok (a few words take -ak)",
+        "es": "Después de consonante, vocales posteriores: -ok (unas pocas palabras llevan -ak)"
+      },
+      "header": [
+        {
+          "en": "Singular",
+          "es": "Singular"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "barát",
+          "barátok"
+        ],
+        [
+          "asztal",
+          "asztalok"
+        ],
+        [
+          "ablak",
+          "ablakok"
+        ],
+        [
+          "virág",
+          "virágok"
+        ],
+        [
+          "bolt",
+          "boltok"
+        ],
+        [
+          "város",
+          "városok"
+        ],
+        [
+          "nap",
+          "napok"
+        ],
+        [
+          "tanár",
+          "tanárok"
+        ],
+        [
+          "lány",
+          "lányok"
+        ],
+        [
+          "ház",
+          "házak"
+        ],
+        [
+          "hal",
+          "halak"
+        ],
+        [
+          "fal",
+          "falak"
+        ],
+        [
+          "toll",
+          "tollak"
+        ],
+        [
+          "láb",
+          "lábak"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "plural-front",
+      "title": {
+        "en": "After a consonant, front vowels: -ek (ö, ő, ü, ű: usually -ök)",
+        "es": "Después de consonante, vocales anteriores: -ek (ö, ő, ü, ű: normalmente -ök)"
+      },
+      "header": [
+        {
+          "en": "Singular",
+          "es": "Singular"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "gyerek",
+          "gyerekek"
+        ],
+        [
+          "kert",
+          "kertek"
+        ],
+        [
+          "szék",
+          "székek"
+        ],
+        [
+          "ing",
+          "ingek"
+        ],
+        [
+          "ünnep",
+          "ünnepek"
+        ],
+        [
+          "főnök",
+          "főnökök"
+        ],
+        [
+          "bőr",
+          "bőrök"
+        ],
+        [
+          "gyümölcs",
+          "gyümölcsök"
+        ],
+        [
+          "könyv",
+          "könyvek"
+        ],
+        [
+          "fül",
+          "fülek"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which plural ending?",
+        "es": "¿Qué terminación de plural?"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "After a vowel: just add -k. A final -a becomes -á- and a final -e becomes -é-. A few words are special and are learned one by one: férfi → férfiak.",
+            "es": "Después de vocal: solo agrega -k. Una -a final pasa a -á- y una -e final pasa a -é-. Unas pocas palabras son especiales y se aprenden una por una: férfi → férfiak."
+          },
+          "examples": [
+            {
+              "es": "Az autók az utcán vannak.",
+              "tr": {
+                "en": "The cars are in the street.",
+                "es": "Los autos están en la calle."
+              }
+            },
+            {
+              "es": "Az almák az asztalon vannak.",
+              "tr": {
+                "en": "The apples are on the table.",
+                "es": "Las manzanas están en la mesa."
+              }
+            },
+            {
+              "es": "A körték a boltban vannak.",
+              "tr": {
+                "en": "The pears are in the shop.",
+                "es": "Las peras están en la tienda."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a consonant, a word with back vowels (a, á, o, ó, u, ú) takes -ok. A few common words take -ak instead: ház, hal, fal, toll, láb. No rule tells you which: learn the plural together with the word.",
+            "es": "Después de consonante, una palabra con vocales posteriores (a, á, o, ó, u, ú) lleva -ok. Unas pocas palabras comunes llevan -ak: ház, hal, fal, toll, láb. Ninguna regla dice cuáles: aprende el plural junto con la palabra."
+          },
+          "examples": [
+            {
+              "es": "A barátok otthon vannak.",
+              "tr": {
+                "en": "The friends are at home.",
+                "es": "Los amigos están en casa."
+              }
+            },
+            {
+              "es": "Az ablakok nyitva vannak.",
+              "tr": {
+                "en": "The windows are open.",
+                "es": "Las ventanas están abiertas."
+              }
+            },
+            {
+              "es": "A házak a városban vannak.",
+              "tr": {
+                "en": "The houses are in the city.",
+                "es": "Las casas están en la ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a consonant, a word with front vowels (e, é, i, í) takes -ek.",
+            "es": "Después de consonante, una palabra con vocales anteriores (e, é, i, í) lleva -ek."
+          },
+          "examples": [
+            {
+              "es": "A gyerekek a szobában vannak.",
+              "tr": {
+                "en": "The children are in the room.",
+                "es": "Los niños están en la habitación."
+              }
+            },
+            {
+              "es": "A székek a konyhában vannak.",
+              "tr": {
+                "en": "The chairs are in the kitchen.",
+                "es": "Las sillas están en la cocina."
+              }
+            },
+            {
+              "es": "Az ingek a szekrényben vannak.",
+              "tr": {
+                "en": "The shirts are in the wardrobe.",
+                "es": "Las camisas están en el ropero."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A word whose last vowel is ö, ő, ü or ű usually takes -ök. Two common exceptions to learn: könyv → könyvek, fül → fülek.",
+            "es": "Una palabra cuya última vocal es ö, ő, ü o ű normalmente lleva -ök. Dos excepciones comunes que debes aprender: könyv → könyvek, fül → fülek."
+          },
+          "examples": [
+            {
+              "es": "A főnökök az irodában vannak.",
+              "tr": {
+                "en": "The bosses are in the office.",
+                "es": "Los jefes están en la oficina."
+              }
+            },
+            {
+              "es": "A gyümölcsök a konyhában vannak.",
+              "tr": {
+                "en": "The fruits are in the kitchen.",
+                "es": "Las frutas están en la cocina."
+              }
+            },
+            {
+              "es": "A könyvek az asztalon vannak.",
+              "tr": {
+                "en": "The books are on the table.",
+                "es": "Los libros están en la mesa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Numbers and quantity words: singular",
+        "es": "Números y palabras de cantidad: singular"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After a number the noun stays singular, because the number already says \"more than one\". English adds a plural here (two apples); Hungarian does not. kettő (two) becomes két before a noun.",
+            "es": "Después de un número el sustantivo se queda en singular, porque el número ya dice «más de uno». El español agrega un plural aquí (dos manzanas); el húngaro no. kettő (dos) pasa a két antes de un sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Két alma van az asztalon.",
+              "tr": {
+                "en": "There are two apples on the table.",
+                "es": "Hay dos manzanas en la mesa."
+              }
+            },
+            {
+              "es": "Három gyerek van a szobában.",
+              "tr": {
+                "en": "There are three children in the room.",
+                "es": "Hay tres niños en la habitación."
+              }
+            },
+            {
+              "es": "Négy autó van az utcán.",
+              "tr": {
+                "en": "There are four cars in the street.",
+                "es": "Hay cuatro autos en la calle."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The same after quantity words: sok (many), kevés (few), néhány (some, a few), hány (how many?) and minden (every). The noun stays singular.",
+            "es": "Lo mismo después de palabras de cantidad: sok (mucho, muchos), kevés (poco, pocos), néhány (algunos), hány (¿cuántos?) y minden (cada, todos). El sustantivo se queda en singular."
+          },
+          "examples": [
+            {
+              "es": "Sok ember van a boltban.",
+              "tr": {
+                "en": "There are many people in the shop.",
+                "es": "Hay mucha gente en la tienda."
+              }
+            },
+            {
+              "es": "Néhány virág van a kertben.",
+              "tr": {
+                "en": "There are a few flowers in the garden.",
+                "es": "Hay algunas flores en el jardín."
+              }
+            },
+            {
+              "es": "Hány szék van a szobában?",
+              "tr": {
+                "en": "How many chairs are in the room?",
+                "es": "¿Cuántas sillas hay en la habitación?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Without a number or quantity word, a group of things is plural. The article stays singular: a gyerekek.",
+            "es": "Sin número ni palabra de cantidad, un grupo de cosas va en plural. El artículo se queda en singular: a gyerekek."
+          },
+          "examples": [
+            {
+              "es": "A gyerekek a szobában vannak.",
+              "tr": {
+                "en": "The children are in the room.",
+                "es": "Los niños están en la habitación."
+              }
+            },
+            {
+              "es": "Hol vannak a kulcsok?",
+              "tr": {
+                "en": "Where are the keys?",
+                "es": "¿Dónde están las llaves?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Number or no number?",
+        "es": "¿Con número o sin número?"
+      },
+      "pairs": [
+        {
+          "a": "két alma",
+          "b": "az almák",
+          "note": {
+            "en": "With a number: singular. Without one: plural -k.",
+            "es": "Con número: singular. Sin número: plural -k."
+          },
+          "examples": [
+            {
+              "es": "Három gyerek van a szobában.",
+              "tr": {
+                "en": "There are three children in the room.",
+                "es": "Hay tres niños en la habitación."
+              }
+            },
+            {
+              "es": "A gyerekek a szobában vannak.",
+              "tr": {
+                "en": "The children are in the room.",
+                "es": "Los niños están en la habitación."
+              }
+            }
+          ]
+        },
+        {
+          "a": "almák",
+          "b": "házak",
+          "note": {
+            "en": "Vowel at the end: the -a gets long (alma → almák). Consonant at the end: a linking vowel appears (ház → házak).",
+            "es": "Vocal al final: la -a se alarga (alma → almák). Consonante al final: aparece una vocal de enlace (ház → házak)."
+          },
+          "examples": [
+            {
+              "es": "Az almák az asztalon vannak.",
+              "tr": {
+                "en": "The apples are on the table.",
+                "es": "Las manzanas están en la mesa."
+              }
+            },
+            {
+              "es": "A házak a városban vannak.",
+              "tr": {
+                "en": "The houses are in the city.",
+                "es": "Las casas están en la ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "a": "barátok",
+          "b": "gyerekek",
+          "note": {
+            "en": "Back-vowel word: -ok. Front-vowel word: -ek. This is the same vowel harmony as in -ban / -ben.",
+            "es": "Palabra con vocales posteriores: -ok. Palabra con vocales anteriores: -ek. Es la misma armonía vocálica que en -ban / -ben."
+          },
+          "examples": [
+            {
+              "es": "A barátok otthon vannak.",
+              "tr": {
+                "en": "The friends are at home.",
+                "es": "Los amigos están en casa."
+              }
+            },
+            {
+              "es": "A gyerekek otthon vannak.",
+              "tr": {
+                "en": "The children are at home.",
+                "es": "Los niños están en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: do not put the plural after a number. \"Two apples\" is két alma, never két almák. In English the number does not stop the plural; in Hungarian it does. A few words also change inside when the ending comes: madár → madarak, kenyér → kenyerek. Learn such words together with their plural.",
+        "es": "Trampa clásica: no pongas el plural después de un número. «Dos manzanas» es két alma, nunca két almák. En español el número no impide el plural; en húngaro sí. Unas pocas palabras también cambian por dentro al llegar la terminación: madár → madarak, kenyér → kenyerek. Aprende esas palabras junto con su plural."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The Hungarian plural is the ending k. After a vowel it is just k: «autó», «autók». After a consonant a linking vowel comes first: «barát», «barátok», «gyerek», «gyerekek». A final a or e gets longer before the k: «alma», «almák», «körte», «körték». After a number or a word like many, the noun stays singular: «két alma», «sok ember», «három ház». So do not put the plural after a number.",
+    "es": "El plural húngaro es la terminación k. Después de vocal es solo k: «autó», «autók». Después de consonante va primero una vocal de enlace: «barát», «barátok», «gyerek», «gyerekek». Una a o una e final se alarga antes de la k: «alma», «almák», «körte», «körték». Después de un número o de una palabra como muchos, el sustantivo se queda en singular: «két alma», «sok ember», «három ház». Por eso no pongas el plural después de un número."
+  },
+  "glossary": [
+    {
+      "word": "két",
+      "gloss": {
+        "en": "two (before a noun)",
+        "es": "dos (antes de un sustantivo)"
+      }
+    },
+    {
+      "word": "sok",
+      "gloss": {
+        "en": "many, much",
+        "es": "mucho, muchos"
+      }
+    },
+    {
+      "word": "kevés",
+      "gloss": {
+        "en": "few, little",
+        "es": "poco, pocos"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "tobbes-szam-c01",
+      "sentence": "Az ___ az utcán vannak.",
+      "options": [
+        "autó",
+        "autók",
+        "autóak"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "autó ends in a vowel, so the plural is just -k: autók. Vannak is plural too.",
+        "es": "autó termina en vocal, así que el plural es solo -k: autók. Vannak también es plural."
+      },
+      "wrong": {
+        "autó": {
+          "en": "autó is singular. With it the sentence would be Az autó az utcán van: one car, and van instead of vannak.",
+          "es": "autó es singular. Con eso la frase sería Az autó az utcán van: un solo auto, y van en lugar de vannak."
+        },
+        "autóak": {
+          "en": "This form does not exist: -ak is a linking-vowel ending for words that end in a consonant. After a vowel only -k is added.",
+          "es": "Esta forma no existe: -ak es una terminación con vocal de enlace para palabras que acaban en consonante. Después de vocal solo se agrega -k."
+        }
+      },
+      "examples": [
+        "A cipők otthon vannak.",
+        "A fiúk a kertben vannak."
+      ],
+      "tr": {
+        "en": "The cars are in the street.",
+        "es": "Los autos están en la calle."
+      }
+    },
+    {
+      "id": "tobbes-szam-f01",
+      "kind": "form",
+      "verb": "autó",
+      "person": "többes szám",
+      "answer": "autók",
+      "table": "plural-vowel"
+    },
+    {
+      "id": "tobbes-szam-c02",
+      "sentence": "Az ___ az asztalon vannak.",
+      "options": [
+        "alma",
+        "almák",
+        "almak"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "alma ends in -a. Before the plural -k the a gets long: alma → almák.",
+        "es": "alma termina en -a. Antes de la -k del plural la a se alarga: alma → almák."
+      },
+      "wrong": {
+        "alma": {
+          "en": "alma is singular: Az alma az asztalon van means one apple, and it takes van, not vannak.",
+          "es": "alma es singular: Az alma az asztalon van significa una sola manzana, y lleva van, no vannak."
+        },
+        "almak": {
+          "en": "This form does not exist: the final -a must become a long á before the -k (almák), with the accent.",
+          "es": "Esta forma no existe: la -a final debe pasar a una á larga antes de la -k (almák), con acento."
+        }
+      },
+      "examples": [
+        "A kutyák a kertben vannak.",
+        "A szobák nagyok."
+      ],
+      "tr": {
+        "en": "The apples are on the table.",
+        "es": "Las manzanas están en la mesa."
+      }
+    },
+    {
+      "id": "tobbes-szam-f02",
+      "kind": "form",
+      "verb": "nő",
+      "person": "többes szám",
+      "answer": "nők",
+      "table": "plural-vowel"
+    },
+    {
+      "id": "tobbes-szam-c03",
+      "sentence": "A ___ otthon vannak.",
+      "options": [
+        "barátok",
+        "barátek",
+        "barátk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "barát ends in a consonant and has back vowels, so it takes the linking vowel o: barát + ok.",
+        "es": "barát termina en consonante y tiene vocales posteriores, así que lleva la vocal de enlace o: barát + ok."
+      },
+      "wrong": {
+        "barátek": {
+          "en": "-ek is the ending for front-vowel words, like gyerek → gyerekek. barát has the back vowels a and á.",
+          "es": "-ek es la terminación de palabras con vocales anteriores, como gyerek → gyerekek. barát tiene las vocales posteriores a y á."
+        },
+        "barátk": {
+          "en": "This form does not exist: after a consonant the plural needs a linking vowel between the word and the -k.",
+          "es": "Esta forma no existe: después de consonante el plural necesita una vocal de enlace entre la palabra y la -k."
+        }
+      },
+      "examples": [
+        "Az ablakok nyitva vannak.",
+        "A tanárok az iskolában vannak."
+      ],
+      "tr": {
+        "en": "The friends are at home.",
+        "es": "Los amigos están en casa."
+      }
+    },
+    {
+      "id": "tobbes-szam-f03",
+      "kind": "form",
+      "verb": "kutya",
+      "person": "többes szám",
+      "answer": "kutyák",
+      "table": "plural-vowel"
+    },
+    {
+      "id": "tobbes-szam-w01",
+      "kind": "why",
+      "es": "Három gyerek van a szobában.",
+      "target": "gyerek",
+      "tr": {
+        "en": "There are three children in the room.",
+        "es": "Hay tres niños en la habitación."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After a number the noun stays singular",
+            "es": "Después de un número el sustantivo se queda en singular"
+          }
+        },
+        {
+          "text": {
+            "en": "Several children: the plural -ek is added",
+            "es": "Varios niños: se agrega el plural -ek"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Három gyerekek van; the number already says \"three\", so the plural -ek is not added.",
+            "es": "Con esta regla la frase sería Három gyerekek van; el número ya dice «tres», así que no se agrega el plural -ek."
+          }
+        },
+        {
+          "text": {
+            "en": "Nouns with back vowels take -ok",
+            "es": "Los sustantivos con vocales posteriores llevan -ok"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Három gyerekok; gyerek has front vowels, and after a number there is no plural ending at all.",
+            "es": "Con esta regla la frase sería Három gyerekok; gyerek tiene vocales anteriores, y después de un número no hay terminación de plural."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "tobbes-szam-c04",
+      "sentence": "A ___ a szobában vannak.",
+      "options": [
+        "gyerekek",
+        "gyerekok",
+        "gyerek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "gyerek has front vowels (e), so the linking vowel is e: gyerek + ek.",
+        "es": "gyerek tiene vocales anteriores (e), así que la vocal de enlace es e: gyerek + ek."
+      },
+      "wrong": {
+        "gyerekok": {
+          "en": "-ok is for back-vowel words like barát → barátok. gyerek has only the front vowel e.",
+          "es": "-ok es para palabras con vocales posteriores como barát → barátok. gyerek solo tiene la vocal anterior e."
+        },
+        "gyerek": {
+          "en": "gyerek is singular: A gyerek a szobában van would mean one child, with van instead of vannak.",
+          "es": "gyerek es singular: A gyerek a szobában van significaría un solo niño, con van en lugar de vannak."
+        }
+      },
+      "examples": [
+        "A székek a konyhában vannak.",
+        "Az ingek a szekrényben vannak."
+      ],
+      "tr": {
+        "en": "The children are in the room.",
+        "es": "Los niños están en la habitación."
+      }
+    },
+    {
+      "id": "tobbes-szam-f04",
+      "kind": "form",
+      "verb": "cseresznye",
+      "person": "többes szám",
+      "answer": "cseresznyék",
+      "table": "plural-vowel"
+    },
+    {
+      "id": "tobbes-szam-c05",
+      "sentence": "A ___ a városban vannak.",
+      "options": [
+        "házak",
+        "házok",
+        "házek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ház is one of the few back-vowel words that take -ak: házak. Learn it together with the word.",
+        "es": "ház es una de las pocas palabras con vocales posteriores que llevan -ak: házak. Apréndela junto con la palabra."
+      },
+      "wrong": {
+        "házok": {
+          "en": "-ok is the usual ending for back-vowel words (barát → barátok), but ház is an exception and takes -ak.",
+          "es": "-ok es la terminación normal de las palabras con vocales posteriores (barát → barátok), pero ház es una excepción y lleva -ak."
+        },
+        "házek": {
+          "en": "-ek is for front-vowel words; ház has the back vowel á, so it can never take -ek.",
+          "es": "-ek es para palabras con vocales anteriores; ház tiene la vocal posterior á, así que nunca lleva -ek."
+        }
+      },
+      "examples": [
+        "A halak a vízben vannak.",
+        "A falak nagyok."
+      ],
+      "tr": {
+        "en": "The houses are in the city.",
+        "es": "Las casas están en la ciudad."
+      }
+    },
+    {
+      "id": "tobbes-szam-f05",
+      "kind": "form",
+      "verb": "barát",
+      "person": "többes szám",
+      "answer": "barátok",
+      "table": "plural-back"
+    },
+    {
+      "id": "tobbes-szam-c06",
+      "sentence": "A ___ az irodában vannak.",
+      "options": [
+        "főnökök",
+        "főnökek",
+        "főnökak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "főnök has ö as its last vowel (front rounded), so the plural is -ök: főnökök.",
+        "es": "főnök tiene ö como última vocal (anterior redondeada), así que el plural es -ök: főnökök."
+      },
+      "wrong": {
+        "főnökek": {
+          "en": "-ek is for words with e, é, i, í. When the last vowel is ö, ő, ü or ű, the ending is usually -ök.",
+          "es": "-ek es para palabras con e, é, i, í. Cuando la última vocal es ö, ő, ü o ű, la terminación normalmente es -ök."
+        },
+        "főnökak": {
+          "en": "-ak is for back-vowel words like házak. főnök is a front word, so it cannot take -ak.",
+          "es": "-ak es para palabras con vocales posteriores como házak. főnök es una palabra anterior, así que no puede llevar -ak."
+        }
+      },
+      "examples": [
+        "A gyümölcsök a konyhában vannak.",
+        "A főnökök otthon vannak."
+      ],
+      "tr": {
+        "en": "The bosses are in the office.",
+        "es": "Los jefes están en la oficina."
+      }
+    },
+    {
+      "id": "tobbes-szam-f06",
+      "kind": "form",
+      "verb": "asztal",
+      "person": "többes szám",
+      "answer": "asztalok",
+      "table": "plural-back"
+    },
+    {
+      "id": "tobbes-szam-w02",
+      "kind": "why",
+      "es": "A kutyák a kertben vannak.",
+      "target": "kutyák",
+      "tr": {
+        "en": "The dogs are in the garden.",
+        "es": "Los perros están en el jardín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The final -a gets long before -k: kutya → kutyák",
+            "es": "La -a final se alarga antes de -k: kutya → kutyák"
+          }
+        },
+        {
+          "text": {
+            "en": "After a consonant a linking vowel is added: -ok",
+            "es": "Después de consonante se agrega una vocal de enlace: -ok"
+          },
+          "wrong": {
+            "en": "With this rule the form would be kutyaok; kutya ends in a vowel, so only -k is added and the a becomes á.",
+            "es": "Con esta regla la forma sería kutyaok; kutya termina en vocal, así que solo se agrega -k y la a pasa a á."
+          }
+        },
+        {
+          "text": {
+            "en": "After a number the noun stays singular",
+            "es": "Después de un número el sustantivo se queda en singular"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about one dog (Egy kutya a kertben van); here there is no number, so the plural is needed.",
+            "es": "Con esta regla la frase hablaría de un solo perro (Egy kutya a kertben van); aquí no hay número, así que hace falta el plural."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "tobbes-szam-c07",
+      "sentence": "Két ___ van az asztalon.",
+      "options": [
+        "könyv",
+        "könyvek",
+        "könyvök"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After a number the noun stays singular: két könyv. The number already says \"more than one\".",
+        "es": "Después de un número el sustantivo se queda en singular: két könyv. El número ya dice «más de uno»."
+      },
+      "wrong": {
+        "könyvek": {
+          "en": "This is the plural form. Két könyvek would repeat the plural after a number, which Hungarian never does.",
+          "es": "Esta es la forma de plural. Két könyvek repetiría el plural después de un número, y el húngaro nunca lo hace."
+        },
+        "könyvök": {
+          "en": "This form does not exist (the plural is könyvek), and after két the noun stays singular anyway.",
+          "es": "Esta forma no existe (el plural es könyvek), y después de két el sustantivo se queda en singular de todos modos."
+        }
+      },
+      "examples": [
+        "Három gyerek van a szobában.",
+        "Négy autó van az utcán."
+      ],
+      "tr": {
+        "en": "There are two books on the table.",
+        "es": "Hay dos libros en la mesa."
+      }
+    },
+    {
+      "id": "tobbes-szam-f07",
+      "kind": "form",
+      "verb": "ház",
+      "person": "többes szám",
+      "answer": "házak",
+      "table": "plural-back"
+    },
+    {
+      "id": "tobbes-szam-c08",
+      "sentence": "Sok ___ van a parkban.",
+      "options": [
+        "ember",
+        "emberek",
+        "emberök"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sok (many) is a quantity word, so the noun stays singular: sok ember.",
+        "es": "sok (mucho, muchos) es una palabra de cantidad, así que el sustantivo se queda en singular: sok ember."
+      },
+      "wrong": {
+        "emberek": {
+          "en": "This is the plural of ember. Sok emberek would put a plural after a quantity word; Hungarian says sok ember.",
+          "es": "Esta es la forma plural de ember. Sok emberek pondría un plural después de una palabra de cantidad; el húngaro dice sok ember."
+        },
+        "emberök": {
+          "en": "This form does not exist: ember has front vowels (plural emberek), and after sok the noun is singular anyway.",
+          "es": "Esta forma no existe: ember tiene vocales anteriores (plural emberek), y después de sok el sustantivo es singular de todos modos."
+        }
+      },
+      "examples": [
+        "Sok gyerek van a boltban.",
+        "Néhány barát van itt."
+      ],
+      "tr": {
+        "en": "There are many people in the park.",
+        "es": "Hay mucha gente en el parque."
+      }
+    },
+    {
+      "id": "tobbes-szam-f08",
+      "kind": "form",
+      "verb": "gyerek",
+      "person": "többes szám",
+      "answer": "gyerekek",
+      "table": "plural-front"
+    },
+    {
+      "id": "tobbes-szam-c09",
+      "sentence": "Hány ___ van a szobában?",
+      "options": [
+        "szék",
+        "székek",
+        "székök"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "hány (how many?) is a quantity word, so the noun stays singular: hány szék.",
+        "es": "hány (¿cuántos?) es una palabra de cantidad, así que el sustantivo se queda en singular: hány szék."
+      },
+      "wrong": {
+        "székek": {
+          "en": "This is the plural of szék. Hány székek would put a plural after \"how many\", which Hungarian does not do.",
+          "es": "Esta es la forma plural de szék. Hány székek pondría un plural después de «cuántos», y el húngaro no lo hace."
+        },
+        "székök": {
+          "en": "This form does not exist: szék has front vowels (plural székek), and after hány the noun stays singular anyway.",
+          "es": "Esta forma no existe: szék tiene vocales anteriores (plural székek), y después de hány el sustantivo se queda en singular de todos modos."
+        }
+      },
+      "examples": [
+        "Hány gyerek van a kertben?",
+        "Hány könyv van az asztalon?"
+      ],
+      "tr": {
+        "en": "How many chairs are in the room?",
+        "es": "¿Cuántas sillas hay en la habitación?"
+      }
+    },
+    {
+      "id": "tobbes-szam-f09",
+      "kind": "form",
+      "verb": "szék",
+      "person": "többes szám",
+      "answer": "székek",
+      "table": "plural-front"
+    },
+    {
+      "id": "tobbes-szam-w03",
+      "kind": "why",
+      "es": "A barátok otthon vannak.",
+      "target": "barátok",
+      "tr": {
+        "en": "The friends are at home.",
+        "es": "Los amigos están en casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Consonant at the end, back vowels: linking vowel o plus k",
+            "es": "Consonante al final y vocales posteriores: vocal de enlace o más k"
+          }
+        },
+        {
+          "text": {
+            "en": "Front vowels: the plural is -ek",
+            "es": "Vocales anteriores: el plural es -ek"
+          },
+          "wrong": {
+            "en": "With this rule the form would be barátek; barát has the back vowels a and á, so the linking vowel is o.",
+            "es": "Con esta regla la forma sería barátek; barát tiene las vocales posteriores a y á, así que la vocal de enlace es o."
+          }
+        },
+        {
+          "text": {
+            "en": "After a vowel only -k is added",
+            "es": "Después de vocal solo se agrega -k"
+          },
+          "wrong": {
+            "en": "With this rule the form would be baráték; barát ends in the consonant t, so a linking vowel is needed before the k.",
+            "es": "Con esta regla la forma sería baráték; barát termina en la consonante t, así que hace falta una vocal de enlace antes de la k."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "tobbes-szam-c10",
+      "sentence": "Néhány ___ van a kertben.",
+      "options": [
+        "virág",
+        "virágok",
+        "virágak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "néhány (some, a few) is a quantity word, so the noun stays singular: néhány virág.",
+        "es": "néhány (algunos) es una palabra de cantidad, así que el sustantivo se queda en singular: néhány virág."
+      },
+      "wrong": {
+        "virágok": {
+          "en": "This is the plural of virág. Néhány virágok would put a plural after \"a few\"; Hungarian says néhány virág.",
+          "es": "Esta es la forma plural de virág. Néhány virágok pondría un plural después de «algunos»; el húngaro dice néhány virág."
+        },
+        "virágak": {
+          "en": "This form does not exist (the plural is virágok), and after néhány the noun stays singular anyway.",
+          "es": "Esta forma no existe (el plural es virágok), y después de néhány el sustantivo se queda en singular de todos modos."
+        }
+      },
+      "examples": [
+        "Sok virág van a kertben.",
+        "Két kutya van a kertben."
+      ],
+      "tr": {
+        "en": "There are a few flowers in the garden.",
+        "es": "Hay algunas flores en el jardín."
+      }
+    },
+    {
+      "id": "tobbes-szam-f10",
+      "kind": "form",
+      "verb": "főnök",
+      "person": "többes szám",
+      "answer": "főnökök",
+      "table": "plural-front"
+    },
+    {
+      "id": "tobbes-szam-c11",
+      "sentence": "A ___ a kertben vannak.",
+      "options": [
+        "macskák",
+        "macska",
+        "macskok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "macska ends in -a, so the a gets long and only -k is added: macskák.",
+        "es": "macska termina en -a, así que la a se alarga y solo se agrega -k: macskák."
+      },
+      "wrong": {
+        "macska": {
+          "en": "macska is singular: A macska a kertben van would mean one cat, with van instead of vannak.",
+          "es": "macska es singular: A macska a kertben van significaría un solo gato, con van en lugar de vannak."
+        },
+        "macskok": {
+          "en": "This form does not exist: after a final -a no linking vowel is added; the a becomes á and then comes -k.",
+          "es": "Esta forma no existe: después de una -a final no se agrega vocal de enlace; la a pasa a á y luego viene la -k."
+        }
+      },
+      "examples": [
+        "A kutyák az utcán vannak.",
+        "Az almák a boltban vannak."
+      ],
+      "tr": {
+        "en": "The cats are in the garden.",
+        "es": "Los gatos están en el jardín."
+      }
+    },
+    {
+      "id": "tobbes-szam-f11",
+      "kind": "form",
+      "verb": "szoba",
+      "person": "többes szám",
+      "answer": "szobák",
+      "table": "plural-vowel"
+    },
+    {
+      "id": "tobbes-szam-c12",
+      "sentence": "A ___ a boltban vannak.",
+      "options": [
+        "körték",
+        "körte",
+        "körtek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "körte ends in -e, so the e gets long and only -k is added: körték.",
+        "es": "körte termina en -e, así que la e se alarga y solo se agrega -k: körték."
+      },
+      "wrong": {
+        "körte": {
+          "en": "körte is singular: A körte a boltban van would mean one pear, with van instead of vannak.",
+          "es": "körte es singular: A körte a boltban van significaría una sola pera, con van en lugar de vannak."
+        },
+        "körtek": {
+          "en": "This form does not exist: the final -e must become a long é before the -k (körték), with the accent.",
+          "es": "Esta forma no existe: la -e final debe pasar a una é larga antes de la -k (körték), con acento."
+        }
+      },
+      "examples": [
+        "A cseresznyék finomak.",
+        "A körték az asztalon vannak."
+      ],
+      "tr": {
+        "en": "The pears are in the shop.",
+        "es": "Las peras están en la tienda."
+      }
+    },
+    {
+      "id": "tobbes-szam-f12",
+      "kind": "form",
+      "verb": "tanár",
+      "person": "többes szám",
+      "answer": "tanárok",
+      "table": "plural-back"
+    },
+    {
+      "id": "tobbes-szam-c13",
+      "sentence": "A gyerekek a szobában ___.",
+      "options": [
+        "vannak",
+        "van",
+        "vagyunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekek is plural (\"they\"), so the verb is vannak.",
+        "es": "A gyerekek es plural («ellos»), así que el verbo es vannak."
+      },
+      "wrong": {
+        "van": {
+          "en": "van is for one subject: A gyerek a szobában van is one child. With the plural a gyerekek you need vannak.",
+          "es": "van es para un solo sujeto: A gyerek a szobában van es un niño. Con el plural a gyerekek hace falta vannak."
+        },
+        "vagyunk": {
+          "en": "vagyunk is \"we are\": the sentence would mix \"the children\" with \"we\" and talk about the speaker too.",
+          "es": "vagyunk es «nosotros estamos»: la frase mezclaría «los niños» con «nosotros» y hablaría también del hablante."
+        }
+      },
+      "examples": [
+        "A kulcsok az asztalon vannak.",
+        "Hol vannak a kutyák?"
+      ],
+      "tr": {
+        "en": "The children are in the room.",
+        "es": "Los niños están en la habitación."
+      }
+    },
+    {
+      "id": "tobbes-szam-c14",
+      "sentence": "A ___ a boltban vannak.",
+      "options": [
+        "férfiak",
+        "férfik",
+        "férfiek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "férfi ends in a vowel but is a special word: its plural is férfiak. Learn it as a word.",
+        "es": "férfi termina en vocal pero es una palabra especial: su plural es férfiak. Apréndela como palabra."
+      },
+      "wrong": {
+        "férfik": {
+          "en": "Only -k is the regular plural after a vowel (taxi → taxik), but férfi is an exception and takes -ak.",
+          "es": "Solo -k es el plural regular después de vocal (taxi → taxik), pero férfi es una excepción y lleva -ak."
+        },
+        "férfiek": {
+          "en": "-ek is the ending after a consonant in front-vowel words (gyerek → gyerekek); férfi ends in a vowel and takes -ak.",
+          "es": "-ek es la terminación después de consonante en palabras con vocales anteriores (gyerek → gyerekek); férfi acaba en vocal y lleva -ak."
+        }
+      },
+      "examples": [
+        "A nők otthon vannak.",
+        "A fiúk a kertben vannak."
+      ],
+      "tr": {
+        "en": "The men are in the shop.",
+        "es": "Los hombres están en la tienda."
+      }
+    },
+    {
+      "id": "tobbes-szam-w04",
+      "kind": "why",
+      "es": "Sok ember van a boltban.",
+      "target": "ember",
+      "tr": {
+        "en": "There are many people in the shop.",
+        "es": "Hay mucha gente en la tienda."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After sok (many) the noun stays singular",
+            "es": "Después de sok (mucho, muchos) el sustantivo se queda en singular"
+          }
+        },
+        {
+          "text": {
+            "en": "Several people: the plural -ek is added",
+            "es": "Varias personas: se agrega el plural -ek"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Sok emberek van; sok already means \"many\", so the noun does not take the plural.",
+            "es": "Con esta regla la frase sería Sok emberek van; sok ya significa «muchos», así que el sustantivo no lleva plural."
+          }
+        },
+        {
+          "text": {
+            "en": "Nouns with back vowels take -ok",
+            "es": "Los sustantivos con vocales posteriores llevan -ok"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Sok emberok; ember has front vowels, and after sok there is no plural ending at all.",
+            "es": "Con esta regla la frase sería Sok emberok; ember tiene vocales anteriores, y después de sok no hay terminación de plural."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

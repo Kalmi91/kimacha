@@ -10,7 +10,8 @@
 import type { PcicLevel, PcicTarget } from '@/data/pcic';
 import { foldedTokens } from './writing';
 
-export type MockTarget = PcicTarget;
+// The practice exam has Spanish and English papers only; target hu has no exam (its entry points are hidden).
+export type MockTarget = Exclude<PcicTarget, 'hu'>;
 export type MockLevel = PcicLevel;
 /** `use` = Use of English: its own skill in the English B2 / C1 exams (the examiner scores it apart from reading). */
 export type MockSkill = 'reading' | 'writing' | 'listening' | 'speaking' | 'use';

@@ -1,0 +1,1434 @@
+{
+  "schema": 2,
+  "topic": "birtokos-szemelyjelek",
+  "level": "A1",
+  "title": {
+    "en": "My, your, his: házam, házad, háza",
+    "es": "Mi, tu, su: házam, házad, háza"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has no separate words for 'my', 'your', 'his'. The ending goes on the thing you own: ház = house, házam = my house, házad = your house, háza = his, her or its house. The ending shows the owner, so the pronoun is only added for emphasis (az én házam = MY house). One noun, six endings, one for each person: házam, házad, háza, házunk, házatok, házuk.",
+        "es": "El húngaro no tiene palabras sueltas para «mi», «tu», «su». La terminación se pega a la cosa que posees: ház = casa, házam = mi casa, házad = tu casa, háza = su casa (de él o de ella). La terminación marca al dueño, así que el pronombre solo se añade para dar énfasis (az én házam = MI casa). Un sustantivo, seis terminaciones, una por persona: házam, házad, háza, házunk, házatok, házuk."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "birtok-ragok",
+      "noTableDeck": true,
+      "title": {
+        "en": "The possessive endings",
+        "es": "Las terminaciones posesivas"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Dueño"
+        },
+        {
+          "en": "After a consonant, back vowels",
+          "es": "Tras consonante, vocales posteriores"
+        },
+        {
+          "en": "After a consonant, front vowels",
+          "es": "Tras consonante, vocales anteriores"
+        },
+        {
+          "en": "After a vowel",
+          "es": "Tras vocal"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "-am / -om",
+          "-em / -öm",
+          "-m"
+        ],
+        [
+          "te",
+          "-ad / -od",
+          "-ed / -öd",
+          "-d"
+        ],
+        [
+          "ő",
+          "-a / -ja",
+          "-e / -je",
+          "-ja / -je"
+        ],
+        [
+          "mi",
+          "-unk",
+          "-ünk",
+          "-nk"
+        ],
+        [
+          "ti",
+          "-atok / -otok",
+          "-etek / -ötök",
+          "-tok / -tek / -tök"
+        ],
+        [
+          "ők",
+          "-uk / -juk",
+          "-ük / -jük",
+          "-juk / -jük"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "birtok-massalhangzo",
+      "title": {
+        "en": "Nouns ending in a consonant",
+        "es": "Sustantivos terminados en consonante"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Dueño"
+        },
+        {
+          "en": "ház (house)",
+          "es": "ház (casa)"
+        },
+        {
+          "en": "kulcs (key)",
+          "es": "kulcs (llave)"
+        },
+        {
+          "en": "könyv (book)",
+          "es": "könyv (libro)"
+        },
+        {
+          "en": "főnök (boss)",
+          "es": "főnök (jefe)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "házam",
+          "kulcsom",
+          "könyvem",
+          "főnököm"
+        ],
+        [
+          "te",
+          "házad",
+          "kulcsod",
+          "könyved",
+          "főnököd"
+        ],
+        [
+          "ő",
+          "háza",
+          "kulcsa",
+          "könyve",
+          "főnöke"
+        ],
+        [
+          "mi",
+          "házunk",
+          "kulcsunk",
+          "könyvünk",
+          "főnökünk"
+        ],
+        [
+          "ti",
+          "házatok",
+          "kulcsotok",
+          "könyvetek",
+          "főnökötök"
+        ],
+        [
+          "ők",
+          "házuk",
+          "kulcsuk",
+          "könyvük",
+          "főnökük"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "birtok-magan",
+      "title": {
+        "en": "Nouns ending in a vowel",
+        "es": "Sustantivos terminados en vocal"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Dueño"
+        },
+        {
+          "en": "autó (car)",
+          "es": "autó (coche)"
+        },
+        {
+          "en": "kutya (dog)",
+          "es": "kutya (perro)"
+        },
+        {
+          "en": "cipő (shoe)",
+          "es": "cipő (zapato)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "autóm",
+          "kutyám",
+          "cipőm"
+        ],
+        [
+          "te",
+          "autód",
+          "kutyád",
+          "cipőd"
+        ],
+        [
+          "ő",
+          "autója",
+          "kutyája",
+          "cipője"
+        ],
+        [
+          "mi",
+          "autónk",
+          "kutyánk",
+          "cipőnk"
+        ],
+        [
+          "ti",
+          "autótok",
+          "kutyátok",
+          "cipőtök"
+        ],
+        [
+          "ők",
+          "autójuk",
+          "kutyájuk",
+          "cipőjük"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "birtok-harmadik",
+      "title": {
+        "en": "His, her, their: -a/-e or -ja/-je?",
+        "es": "De él, de ella, de ellos: ¿-a/-e o -ja/-je?"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "ő (his, her)",
+          "es": "ő (de él, de ella)"
+        },
+        {
+          "en": "ők (their)",
+          "es": "ők (de ellos)"
+        }
+      ],
+      "rows": [
+        [
+          "ház",
+          "háza",
+          "házuk"
+        ],
+        [
+          "kulcs",
+          "kulcsa",
+          "kulcsuk"
+        ],
+        [
+          "orvos",
+          "orvosa",
+          "orvosuk"
+        ],
+        [
+          "tanár",
+          "tanára",
+          "tanáruk"
+        ],
+        [
+          "könyv",
+          "könyve",
+          "könyvük"
+        ],
+        [
+          "főnök",
+          "főnöke",
+          "főnökük"
+        ],
+        [
+          "barát",
+          "barátja",
+          "barátjuk"
+        ],
+        [
+          "telefon",
+          "telefonja",
+          "telefonjuk"
+        ],
+        [
+          "kert",
+          "kertje",
+          "kertjük"
+        ],
+        [
+          "család",
+          "családja",
+          "családjuk"
+        ],
+        [
+          "autó",
+          "autója",
+          "autójuk"
+        ],
+        [
+          "kutya",
+          "kutyája",
+          "kutyájuk"
+        ],
+        [
+          "apa",
+          "apja",
+          "apjuk"
+        ],
+        [
+          "anya",
+          "anyja",
+          "anyjuk"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Building the form",
+        "es": "Cómo se forma"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "After a consonant you need a linking vowel: ház + am = házam. It is the same vowel as in the accusative -t: házat → házam, kulcsot → kulcsom, könyvet → könyvem, főnököt → főnököm.",
+            "es": "Tras consonante hace falta una vocal de enlace: ház + am = házam. Es la misma vocal que en el acusativo -t: házat → házam, kulcsot → kulcsom, könyvet → könyvem, főnököt → főnököm."
+          },
+          "examples": [
+            {
+              "es": "A házam nagy.",
+              "tr": {
+                "en": "My house is big.",
+                "es": "Mi casa es grande."
+              }
+            },
+            {
+              "es": "A kulcsom itt van.",
+              "tr": {
+                "en": "My key is here.",
+                "es": "Mi llave está aquí."
+              }
+            },
+            {
+              "es": "A könyvem új.",
+              "tr": {
+                "en": "My book is new.",
+                "es": "Mi libro es nuevo."
+              }
+            },
+            {
+              "es": "A főnököm kedves.",
+              "tr": {
+                "en": "My boss is kind.",
+                "es": "Mi jefe es amable."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a vowel there is no linking vowel: autó + m = autóm. A final -a or -e lengthens to á or é: kutya → kutyám, kutyád, kutyánk, kutyátok.",
+            "es": "Tras vocal no hay vocal de enlace: autó + m = autóm. Una -a o -e final se alarga a á o é: kutya → kutyám, kutyád, kutyánk, kutyátok."
+          },
+          "examples": [
+            {
+              "es": "Az autóm gyors.",
+              "tr": {
+                "en": "My car is fast.",
+                "es": "Mi coche es rápido."
+              }
+            },
+            {
+              "es": "A kutyám kicsi.",
+              "tr": {
+                "en": "My dog is small.",
+                "es": "Mi perro es pequeño."
+              }
+            },
+            {
+              "es": "A cipőm új.",
+              "tr": {
+                "en": "My shoe is new.",
+                "es": "Mi zapato es nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Vowel harmony: back words take a, o, u (házam, kulcsom, házunk); front words take e, ö, ü (könyvem, főnököm, könyvünk).",
+            "es": "Armonía vocálica: las palabras posteriores llevan a, o, u (házam, kulcsom, házunk); las anteriores llevan e, ö, ü (könyvem, főnököm, könyvünk)."
+          },
+          "examples": [
+            {
+              "es": "A házunk új.",
+              "tr": {
+                "en": "Our house is new.",
+                "es": "Nuestra casa es nueva."
+              }
+            },
+            {
+              "es": "A könyvünk új.",
+              "tr": {
+                "en": "Our book is new.",
+                "es": "Nuestro libro es nuevo."
+              }
+            },
+            {
+              "es": "A kulcsunk otthon van.",
+              "tr": {
+                "en": "Our key is at home.",
+                "es": "Nuestra llave está en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Who is the owner?",
+        "es": "¿Quién es el dueño?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "én, te: one owner, I or you. The pronoun can be dropped; az én házam stresses it.",
+            "es": "én, te: un dueño, yo o tú. El pronombre se puede omitir; az én házam lo enfatiza."
+          },
+          "examples": [
+            {
+              "es": "A házam nagy.",
+              "tr": {
+                "en": "My house is big.",
+                "es": "Mi casa es grande."
+              }
+            },
+            {
+              "es": "Az én házam kicsi, a te házad nagy.",
+              "tr": {
+                "en": "My house is small, your house is big.",
+                "es": "Mi casa es pequeña, tu casa es grande."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ő: he or she, no gender. háza = his house and her house. The polite Ön takes the 3rd person too.",
+            "es": "ő: él o ella, sin género. háza = su casa de él y su casa de ella. El Ön de cortesía también usa la 3.ª persona."
+          },
+          "examples": [
+            {
+              "es": "Péter itt lakik. Ez a háza.",
+              "tr": {
+                "en": "Péter lives here. This is his house.",
+                "es": "Péter vive aquí. Esta es su casa."
+              }
+            },
+            {
+              "es": "Kati itt lakik. Ez a háza.",
+              "tr": {
+                "en": "Kati lives here. This is her house.",
+                "es": "Kati vive aquí. Esta es su casa."
+              }
+            },
+            {
+              "es": "Ön itt lakik. Ez az Ön háza.",
+              "tr": {
+                "en": "You (polite) live here. This is your house.",
+                "es": "Usted vive aquí. Esta es su casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mi, ti, ők: several owners. házunk = our, házatok = your (you all), házuk = their.",
+            "es": "mi, ti, ők: varios dueños. házunk = nuestra, házatok = de ustedes, házuk = de ellos."
+          },
+          "examples": [
+            {
+              "es": "A házunk új.",
+              "tr": {
+                "en": "Our house is new.",
+                "es": "Nuestra casa es nueva."
+              }
+            },
+            {
+              "es": "A ti házatok nagy?",
+              "tr": {
+                "en": "Is your (plural) house big?",
+                "es": "¿Es grande la casa de ustedes?"
+              }
+            },
+            {
+              "es": "A házuk régi.",
+              "tr": {
+                "en": "Their house is old.",
+                "es": "La casa de ellos es vieja."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "3rd person: -a/-e or -ja/-je?",
+        "es": "3.ª persona: ¿-a/-e o -ja/-je?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After a vowel it is always -ja/-je: autója, kutyája, cipője.",
+            "es": "Tras vocal siempre es -ja/-je: autója, kutyája, cipője."
+          },
+          "examples": [
+            {
+              "es": "Az autója új.",
+              "tr": {
+                "en": "His (her) car is new.",
+                "es": "Su coche es nuevo."
+              }
+            },
+            {
+              "es": "A kutyája kicsi.",
+              "tr": {
+                "en": "His (her) dog is small.",
+                "es": "Su perro es pequeño."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After many consonants it is -a/-e: háza, kulcsa, orvosa, tanára, könyve, főnöke.",
+            "es": "Tras muchas consonantes es -a/-e: háza, kulcsa, orvosa, tanára, könyve, főnöke."
+          },
+          "examples": [
+            {
+              "es": "Az orvosa kedves.",
+              "tr": {
+                "en": "His (her) doctor is kind.",
+                "es": "Su médico es amable."
+              }
+            },
+            {
+              "es": "A tanára magyar.",
+              "tr": {
+                "en": "His (her) teacher is Hungarian.",
+                "es": "Su profesor es húngaro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Many other words take -ja/-je: barátja, telefonja, kertje, családja. There is no perfect rule: learn the ő form together with the noun.",
+            "es": "Muchas otras palabras llevan -ja/-je: barátja, telefonja, kertje, családja. No hay una regla perfecta: aprende la forma de ő junto con el sustantivo."
+          },
+          "examples": [
+            {
+              "es": "A barátja magyar.",
+              "tr": {
+                "en": "His (her) friend is Hungarian.",
+                "es": "Su amigo es húngaro."
+              }
+            },
+            {
+              "es": "A családja otthon van.",
+              "tr": {
+                "en": "His (her) family is at home.",
+                "es": "Su familia está en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Irregular family words: apa → apám, apád, apja; anya → anyám, anyád, anyja.",
+            "es": "Palabras de familia irregulares: apa → apám, apád, apja; anya → anyám, anyád, anyja."
+          },
+          "examples": [
+            {
+              "es": "Az apja orvos.",
+              "tr": {
+                "en": "His (her) father is a doctor.",
+                "es": "Su papá es médico."
+              }
+            },
+            {
+              "es": "Az anyja tanár.",
+              "tr": {
+                "en": "His (her) mother is a teacher.",
+                "es": "Su mamá es profesora."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "One owner or several?",
+        "es": "¿Un dueño o varios?"
+      },
+      "pairs": [
+        {
+          "a": "A házam nagy.",
+          "b": "A házunk nagy.",
+          "note": {
+            "en": "-am: one owner (I). -unk: several owners (we).",
+            "es": "-am: un dueño (yo). -unk: varios dueños (nosotros)."
+          },
+          "examples": [
+            {
+              "es": "Az autóm új.",
+              "tr": {
+                "en": "My car is new.",
+                "es": "Mi coche es nuevo."
+              }
+            },
+            {
+              "es": "Az autónk új.",
+              "tr": {
+                "en": "Our car is new.",
+                "es": "Nuestro coche es nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "A háza nagy.",
+          "b": "A házuk nagy.",
+          "note": {
+            "en": "háza: one owner (he or she). házuk: several owners (they).",
+            "es": "háza: un dueño (él o ella). házuk: varios dueños (ellos)."
+          },
+          "examples": [
+            {
+              "es": "A kutyája kicsi.",
+              "tr": {
+                "en": "His (her) dog is small.",
+                "es": "Su perro es pequeño."
+              }
+            },
+            {
+              "es": "A kutyájuk kicsi.",
+              "tr": {
+                "en": "Their dog is small.",
+                "es": "El perro de ellos es pequeño."
+              }
+            }
+          ]
+        },
+        {
+          "a": "A házad nagy.",
+          "b": "A házatok nagy.",
+          "note": {
+            "en": "házad: you, one person. házatok: you, several people.",
+            "es": "házad: tú, una persona. házatok: ustedes, varias personas."
+          },
+          "examples": [
+            {
+              "es": "A kutyád kicsi.",
+              "tr": {
+                "en": "Your dog is small.",
+                "es": "Tu perro es pequeño."
+              }
+            },
+            {
+              "es": "A kutyátok kicsi.",
+              "tr": {
+                "en": "Your (plural) dog is small.",
+                "es": "El perro de ustedes es pequeño."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: 'my' is not a word. Say a házam, never az én ház. English 'his' and 'her' are both háza; Spanish 'su' can be háza (his, her), házuk (their) or házatok (your, plural). These endings are for ONE thing owned; several things (házaim) take other endings, not in this lesson.",
+        "es": "Trampa clásica: «mi» no es una palabra aparte. Se dice a házam, nunca az én ház. El «su» del español puede ser háza (de él, de ella), házuk (de ellos) o házatok (de ustedes). Estas terminaciones son para UNA cosa; varias cosas (házaim) llevan otras terminaciones, que no vemos en esta lección."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, the ending shows the owner, not a separate word. The word «ház» means house. «Házam» is my house, «házad» is your house, and «háza» is his or her house. Then «házunk» is our house, «házatok» is the house of you all, and «házuk» is their house. After a vowel the endings are shorter: «autóm», «autód», «autója». And a final a becomes á: «kutya», «kutyám».",
+    "es": "En húngaro, la terminación muestra al dueño, no una palabra aparte. La palabra «ház» significa casa. «Házam» es mi casa, «házad» es tu casa, y «háza» es su casa, de él o de ella. Luego «házunk» es nuestra casa, «házatok» es la casa de ustedes, y «házuk» es la casa de ellos. Después de una vocal las terminaciones son más cortas: «autóm», «autód», «autója». Y una a final se alarga a á: «kutya», «kutyám»."
+  },
+  "items": [
+    {
+      "id": "birtokos-szemelyjelek-c01",
+      "sentence": "Én itt lakom. Ez a ___.",
+      "options": [
+        "házam",
+        "házad",
+        "háza"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Én is 'I', the speaker lives here, so it is my house: ház + am = házam.",
+        "es": "Én es «yo», quien habla vive aquí, así que es mi casa: ház + am = házam."
+      },
+      "wrong": {
+        "házad": {
+          "en": "házad would mean 'your house' (the person spoken to); here the speaker himself lives there.",
+          "es": "házad significaría «tu casa» (de quien escucha); aquí el que habla vive ahí."
+        },
+        "háza": {
+          "en": "háza would mean 'his or her house'; the speaker says Én itt lakom, so it is his own house.",
+          "es": "háza significaría «su casa de él o de ella»; el que habla dice Én itt lakom, así que es su propia casa."
+        }
+      },
+      "examples": [
+        "A házam nagy.",
+        "A kulcsom itt van."
+      ],
+      "tr": {
+        "en": "I live here. This is my house.",
+        "es": "Yo vivo aquí. Esta es mi casa."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f01",
+      "kind": "form",
+      "verb": "ház",
+      "person": "én",
+      "answer": "házam",
+      "accept": [
+        "a házam"
+      ],
+      "table": "birtok-massalhangzo"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c02",
+      "sentence": "A te ___ kicsi.",
+      "options": [
+        "kutyád",
+        "kutyad",
+        "kutyája"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A te means 'your' (one person): kutya + d, and the final a becomes á: kutyád.",
+        "es": "A te significa «tu» (una persona): kutya + d, y la a final se alarga a á: kutyád."
+      },
+      "wrong": {
+        "kutyad": {
+          "en": "Not a real form: the final -a of kutya lengthens to á before the ending: kutyád.",
+          "es": "No es una forma real: la -a final de kutya se alarga a á antes de la terminación: kutyád."
+        },
+        "kutyája": {
+          "en": "kutyája means 'his or her dog'; A te points to you, so it must be -d.",
+          "es": "kutyája significa «su perro de él o de ella»; A te apunta a ti, así que debe ser -d."
+        }
+      },
+      "examples": [
+        "A kutyád kedves.",
+        "Hol van a kutyád?"
+      ],
+      "tr": {
+        "en": "Your dog is small.",
+        "es": "Tu perro es pequeño."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f02",
+      "kind": "form",
+      "verb": "kulcs",
+      "person": "én",
+      "answer": "kulcsom",
+      "accept": [
+        "a kulcsom"
+      ],
+      "table": "birtok-massalhangzo"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c03",
+      "sentence": "Anna itt lakik. Ez a ___.",
+      "options": [
+        "háza",
+        "házuk",
+        "házam"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is one person (she), so it is her house: ház + a = háza.",
+        "es": "Anna es una sola persona (ella), así que es su casa: ház + a = háza."
+      },
+      "wrong": {
+        "házuk": {
+          "en": "házuk is 'their house' (several owners); only Anna is mentioned.",
+          "es": "házuk es «la casa de ellos» (varios dueños); solo se menciona a Anna."
+        },
+        "házam": {
+          "en": "házam is 'my house'; the house belongs to Anna, not to the speaker.",
+          "es": "házam es «mi casa»; la casa es de Anna, no de quien habla."
+        }
+      },
+      "examples": [
+        "Péter itt lakik. Ez a háza.",
+        "A kulcsa itt van."
+      ],
+      "tr": {
+        "en": "Anna lives here. This is her house.",
+        "es": "Anna vive aquí. Esta es su casa."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f03",
+      "kind": "form",
+      "verb": "könyv",
+      "person": "te",
+      "answer": "könyved",
+      "accept": [
+        "a könyved"
+      ],
+      "table": "birtok-massalhangzo"
+    },
+    {
+      "id": "birtokos-szemelyjelek-w01",
+      "kind": "why",
+      "es": "A házam nagy.",
+      "target": "házam",
+      "tr": {
+        "en": "My house is big.",
+        "es": "Mi casa es grande."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "1st person singular (my): -am/-om/-em/-öm",
+            "es": "1.ª persona singular (mi): -am/-om/-em/-öm"
+          }
+        },
+        {
+          "text": {
+            "en": "2nd person singular (your): -ad/-od/-ed/-öd",
+            "es": "2.ª persona singular (tu): -ad/-od/-ed/-öd"
+          },
+          "wrong": {
+            "en": "With this rule the form would be házad, 'your house'; -am is the ending for 'my'.",
+            "es": "Con esta regla la forma sería házad, «tu casa»; -am es la terminación de «mi»."
+          }
+        },
+        {
+          "text": {
+            "en": "1st person plural (our): -unk/-ünk",
+            "es": "1.ª persona plural (nuestro): -unk/-ünk"
+          },
+          "wrong": {
+            "en": "With this rule the form would be házunk, 'our house'.",
+            "es": "Con esta regla la forma sería házunk, «nuestra casa»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "birtokos-szemelyjelek-c04",
+      "sentence": "A mi ___ új.",
+      "options": [
+        "autónk",
+        "autóm",
+        "autója"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A mi means 'our', and after a vowel the ending is just -nk: autónk.",
+        "es": "A mi significa «nuestro», y tras vocal la terminación es solo -nk: autónk."
+      },
+      "wrong": {
+        "autóm": {
+          "en": "autóm means 'my car'; A mi says 'our', so more than one owner.",
+          "es": "autóm significa «mi coche»; A mi dice «nuestro», o sea varios dueños."
+        },
+        "autója": {
+          "en": "autója means 'his or her car'; A mi points to 'we'.",
+          "es": "autója significa «su coche de él o de ella»; A mi apunta a «nosotros»."
+        }
+      },
+      "examples": [
+        "A mi házunk nagy.",
+        "Az autónk gyors."
+      ],
+      "tr": {
+        "en": "Our car is new.",
+        "es": "Nuestro coche es nuevo."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f04",
+      "kind": "form",
+      "verb": "autó",
+      "person": "én",
+      "answer": "autóm",
+      "accept": [
+        "az autóm"
+      ],
+      "table": "birtok-magan"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c05",
+      "sentence": "A ti ___ nagy?",
+      "options": [
+        "házatok",
+        "házunk",
+        "házuk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A ti is 'your' for several people: ház + atok = házatok.",
+        "es": "A ti es «de ustedes» (varias personas): ház + atok = házatok."
+      },
+      "wrong": {
+        "házunk": {
+          "en": "házunk means 'our house'; ti is 'you all', not 'we'.",
+          "es": "házunk significa «nuestra casa»; ti es «ustedes», no «nosotros»."
+        },
+        "házuk": {
+          "en": "házuk means 'their house'; ti is 'you all', not 'they'.",
+          "es": "házuk significa «la casa de ellos»; ti es «ustedes», no «ellos»."
+        }
+      },
+      "examples": [
+        "A ti autótok új?",
+        "A kulcsotok itt van?"
+      ],
+      "tr": {
+        "en": "Is your (plural) house big?",
+        "es": "¿Es grande la casa de ustedes?"
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f05",
+      "kind": "form",
+      "verb": "kutya",
+      "person": "te",
+      "answer": "kutyád",
+      "accept": [
+        "a kutyád"
+      ],
+      "table": "birtok-magan"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c06",
+      "sentence": "Anna és Péter itt laknak. Ez a ___.",
+      "options": [
+        "házuk",
+        "háza",
+        "házunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Two people (they): ház + uk = házuk.",
+        "es": "Dos personas (ellos): ház + uk = házuk."
+      },
+      "wrong": {
+        "háza": {
+          "en": "háza means 'his or her house': one owner, but here there are two.",
+          "es": "háza significa «su casa de él o de ella»: un dueño, pero aquí hay dos."
+        },
+        "házunk": {
+          "en": "házunk means 'our house'; the speaker would live there too, but the owners are Anna and Péter.",
+          "es": "házunk significa «nuestra casa»; el que habla también viviría ahí, pero los dueños son Anna y Péter."
+        }
+      },
+      "examples": [
+        "A kutyájuk kicsi.",
+        "A kulcsuk itt van."
+      ],
+      "tr": {
+        "en": "Anna and Péter live here. This is their house.",
+        "es": "Anna y Péter viven aquí. Esta es la casa de ellos."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f06",
+      "kind": "form",
+      "verb": "főnök",
+      "person": "ti",
+      "answer": "főnökötök",
+      "accept": [
+        "a főnökötök"
+      ],
+      "table": "birtok-massalhangzo"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c07",
+      "sentence": "Péter magyar. A ___ kedves.",
+      "options": [
+        "főnöke",
+        "főnököm",
+        "főnökük"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The boss of one person (Péter): főnök + e = főnöke.",
+        "es": "El jefe de una sola persona (Péter): főnök + e = főnöke."
+      },
+      "wrong": {
+        "főnököm": {
+          "en": "főnököm means 'my boss'; the sentence is about Péter's boss.",
+          "es": "főnököm significa «mi jefe»; la frase habla del jefe de Péter."
+        },
+        "főnökük": {
+          "en": "főnökük means 'their boss'; Péter is one person.",
+          "es": "főnökük significa «el jefe de ellos»; Péter es una sola persona."
+        }
+      },
+      "examples": [
+        "Az orvosa kedves.",
+        "A tanára kedves."
+      ],
+      "tr": {
+        "en": "Péter is Hungarian. His boss is kind.",
+        "es": "Péter es húngaro. Su jefe es amable."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f07",
+      "kind": "form",
+      "verb": "ház",
+      "person": "ti",
+      "answer": "házatok",
+      "accept": [
+        "a házatok"
+      ],
+      "table": "birtok-massalhangzo"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c08",
+      "sentence": "Az én ___ kedves.",
+      "options": [
+        "főnököm",
+        "főnökem",
+        "főnöke"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "főnök takes the linking vowel ö (like főnököt): főnök + öm = főnököm.",
+        "es": "főnök lleva la vocal de enlace ö (como főnököt): főnök + öm = főnököm."
+      },
+      "wrong": {
+        "főnökem": {
+          "en": "Not a real form: főnök has the linking vowel ö (főnököt), so the ending is -öm, not -em.",
+          "es": "No es una forma real: főnök lleva la vocal de enlace ö (főnököt), así que la terminación es -öm, no -em."
+        },
+        "főnöke": {
+          "en": "főnöke means 'his or her boss'; Az én says 'my'.",
+          "es": "főnöke significa «su jefe de él o de ella»; Az én dice «mi»."
+        }
+      },
+      "examples": [
+        "A főnököd kedves?",
+        "A főnökünk magyar."
+      ],
+      "tr": {
+        "en": "My boss is kind.",
+        "es": "Mi jefe es amable."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f08",
+      "kind": "form",
+      "verb": "cipő",
+      "person": "mi",
+      "answer": "cipőnk",
+      "accept": [
+        "a cipőnk"
+      ],
+      "table": "birtok-magan"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c09",
+      "sentence": "A te ___ itt van.",
+      "options": [
+        "kulcsod",
+        "kulcsad",
+        "kulcsa"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kulcs takes the linking vowel o (kulcsot), so the 'your' form is kulcsod.",
+        "es": "kulcs lleva la vocal de enlace o (kulcsot), así que la forma de «tu» es kulcsod."
+      },
+      "wrong": {
+        "kulcsad": {
+          "en": "Not a real form: kulcs takes the linking vowel o (kulcsot), so it is kulcsod.",
+          "es": "No es una forma real: kulcs lleva la vocal de enlace o (kulcsot), así que es kulcsod."
+        },
+        "kulcsa": {
+          "en": "kulcsa means 'his or her key'; A te means 'your'.",
+          "es": "kulcsa significa «su llave de él o de ella»; A te significa «tu»."
+        }
+      },
+      "examples": [
+        "A kulcsom itt van.",
+        "A kulcsunk otthon van."
+      ],
+      "tr": {
+        "en": "Your key is here.",
+        "es": "Tu llave está aquí."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f09",
+      "kind": "form",
+      "verb": "barát",
+      "person": "ő",
+      "answer": "barátja",
+      "accept": [
+        "a barátja"
+      ],
+      "table": "birtok-harmadik"
+    },
+    {
+      "id": "birtokos-szemelyjelek-w02",
+      "kind": "why",
+      "es": "Az autója új.",
+      "target": "autója",
+      "tr": {
+        "en": "His (her) car is new.",
+        "es": "Su coche es nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After a consonant the 3rd person is -a/-e",
+            "es": "Tras consonante la 3.ª persona es -a/-e"
+          },
+          "wrong": {
+            "en": "With this rule the form would be autóa; autó ends in a vowel, so the 3rd person needs -ja.",
+            "es": "Con esta regla la forma sería autóa; autó termina en vocal, así que la 3.ª persona necesita -ja."
+          }
+        },
+        {
+          "text": {
+            "en": "After a vowel the 3rd person is -ja/-je",
+            "es": "Tras vocal la 3.ª persona es -ja/-je"
+          }
+        },
+        {
+          "text": {
+            "en": "1st person after a vowel: -m",
+            "es": "1.ª persona tras vocal: -m"
+          },
+          "wrong": {
+            "en": "With this rule the form would be autóm, 'my car'; -ja is the 3rd person.",
+            "es": "Con esta regla la forma sería autóm, «mi coche»; -ja es la 3.ª persona."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "birtokos-szemelyjelek-c10",
+      "sentence": "Kati itt van, és a ___ is itt van.",
+      "options": [
+        "barátja",
+        "baráta",
+        "barátom"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Her friend: barát + ja = barátja (barát is one of the words that take -ja).",
+        "es": "Su amigo (de ella): barát + ja = barátja (barát es una de las palabras que llevan -ja)."
+      },
+      "wrong": {
+        "baráta": {
+          "en": "Not a real form: barát takes -ja in the 3rd person: barátja.",
+          "es": "No es una forma real: barát lleva -ja en la 3.ª persona: barátja."
+        },
+        "barátom": {
+          "en": "barátom means 'my friend'; the sentence is about Kati's friend.",
+          "es": "barátom significa «mi amigo»; la frase habla del amigo de Kati."
+        }
+      },
+      "examples": [
+        "A barátja magyar.",
+        "A barátunk otthon van."
+      ],
+      "tr": {
+        "en": "Kati is here, and her friend is here too.",
+        "es": "Kati está aquí, y su amigo también está aquí."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f10",
+      "kind": "form",
+      "verb": "kutya",
+      "person": "ők",
+      "answer": "kutyájuk",
+      "accept": [
+        "a kutyájuk"
+      ],
+      "table": "birtok-magan"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c11",
+      "sentence": "Anna otthon van. A ___ is otthon van.",
+      "options": [
+        "kutyája",
+        "kutyám",
+        "kutyájuk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna's dog: after a vowel the 3rd person is -ja: kutya + ja = kutyája.",
+        "es": "El perro de Anna: tras vocal la 3.ª persona es -ja: kutya + ja = kutyája."
+      },
+      "wrong": {
+        "kutyám": {
+          "en": "kutyám means 'my dog'; the sentence is about Anna.",
+          "es": "kutyám significa «mi perro»; la frase habla de Anna."
+        },
+        "kutyájuk": {
+          "en": "kutyájuk means 'their dog'; Anna is one person.",
+          "es": "kutyájuk significa «el perro de ellos»; Anna es una sola persona."
+        }
+      },
+      "examples": [
+        "A kutyája kicsi.",
+        "Az autója új."
+      ],
+      "tr": {
+        "en": "Anna is at home. Her dog is at home too.",
+        "es": "Anna está en casa. Su perro también está en casa."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f11",
+      "kind": "form",
+      "verb": "apa",
+      "person": "ő",
+      "answer": "apja",
+      "accept": [
+        "az apja"
+      ],
+      "table": "birtok-harmadik"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c12",
+      "sentence": "A ti ___ új?",
+      "options": [
+        "autótok",
+        "autónk",
+        "autójuk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ti (you all) after a vowel: autó + tok = autótok.",
+        "es": "ti (ustedes) tras vocal: autó + tok = autótok."
+      },
+      "wrong": {
+        "autónk": {
+          "en": "autónk means 'our car'; ti means 'you all', not 'we'.",
+          "es": "autónk significa «nuestro coche»; ti significa «ustedes», no «nosotros»."
+        },
+        "autójuk": {
+          "en": "autójuk means 'their car'; ti means 'you all', not 'they'.",
+          "es": "autójuk significa «el coche de ellos»; ti significa «ustedes», no «ellos»."
+        }
+      },
+      "examples": [
+        "A kutyátok kicsi?",
+        "A cipőtök új?"
+      ],
+      "tr": {
+        "en": "Is your (plural) car new?",
+        "es": "¿Es nuevo el coche de ustedes?"
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-f12",
+      "kind": "form",
+      "verb": "ház",
+      "person": "mi",
+      "answer": "házunk",
+      "accept": [
+        "a házunk"
+      ],
+      "table": "birtok-massalhangzo"
+    },
+    {
+      "id": "birtokos-szemelyjelek-c13",
+      "sentence": "Kati itt van. Az ___ orvos.",
+      "options": [
+        "apja",
+        "apája",
+        "apám"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "apa is irregular in the 3rd person: apja (and anya → anyja).",
+        "es": "apa es irregular en la 3.ª persona: apja (y anya → anyja)."
+      },
+      "wrong": {
+        "apája": {
+          "en": "Not a real form: apa has the irregular 3rd person apja.",
+          "es": "No es una forma real: apa tiene la 3.ª persona irregular apja."
+        },
+        "apám": {
+          "en": "apám means 'my father'; the sentence is about Kati's father.",
+          "es": "apám significa «mi papá»; la frase habla del papá de Kati."
+        }
+      },
+      "examples": [
+        "Az anyja tanár.",
+        "Az apám orvos."
+      ],
+      "tr": {
+        "en": "Kati is here. Her father is a doctor.",
+        "es": "Kati está aquí. Su papá es médico."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-w03",
+      "kind": "why",
+      "es": "A kutyám kicsi.",
+      "target": "kutyám",
+      "tr": {
+        "en": "My dog is small.",
+        "es": "Mi perro es pequeño."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "3rd person after a vowel: -ja",
+            "es": "3.ª persona tras vocal: -ja"
+          },
+          "wrong": {
+            "en": "With this rule the form would be kutyája, 'his or her dog'.",
+            "es": "Con esta regla la forma sería kutyája, «su perro de él o de ella»."
+          }
+        },
+        {
+          "text": {
+            "en": "-m with a short a",
+            "es": "-m con a corta"
+          },
+          "wrong": {
+            "en": "With this rule the form would be kutyam; a final a always lengthens to á before an ending: kutyám.",
+            "es": "Con esta regla la forma sería kutyam; una a final siempre se alarga a á antes de una terminación: kutyám."
+          }
+        },
+        {
+          "text": {
+            "en": "1st person after a vowel: -m, and the final a becomes á",
+            "es": "1.ª persona tras vocal: -m, y la a final se alarga a á"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "birtokos-szemelyjelek-c14",
+      "sentence": "Az én ___ új.",
+      "options": [
+        "telefonom",
+        "telefonem",
+        "telefonja"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "telefon has back vowels (o), so the ending is -om: telefonom.",
+        "es": "telefon tiene vocales posteriores (o), así que la terminación es -om: telefonom."
+      },
+      "wrong": {
+        "telefonem": {
+          "en": "Not a real form: telefon has back vowels, so the ending is -om.",
+          "es": "No es una forma real: telefon tiene vocales posteriores, así que la terminación es -om."
+        },
+        "telefonja": {
+          "en": "telefonja means 'his or her phone'; Az én says 'my'.",
+          "es": "telefonja significa «su teléfono de él o de ella»; Az én dice «mi»."
+        }
+      },
+      "examples": [
+        "A telefonod új?",
+        "A telefonja régi."
+      ],
+      "tr": {
+        "en": "My phone is new.",
+        "es": "Mi teléfono es nuevo."
+      }
+    },
+    {
+      "id": "birtokos-szemelyjelek-w04",
+      "kind": "why",
+      "es": "A főnököm kedves.",
+      "target": "főnököm",
+      "tr": {
+        "en": "My boss is kind.",
+        "es": "Mi jefe es amable."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Linking vowel ö, like the accusative főnököt: főnök + öm",
+            "es": "Vocal de enlace ö, como el acusativo főnököt: főnök + öm"
+          }
+        },
+        {
+          "text": {
+            "en": "Linking vowel e: főnök + em",
+            "es": "Vocal de enlace e: főnök + em"
+          },
+          "wrong": {
+            "en": "With this rule the form would be főnökem; főnök takes ö (főnököt), unlike könyv (könyvet, könyvem).",
+            "es": "Con esta regla la forma sería főnökem; főnök lleva ö (főnököt), a diferencia de könyv (könyvet, könyvem)."
+          }
+        },
+        {
+          "text": {
+            "en": "No linking vowel: főnök + m",
+            "es": "Sin vocal de enlace: főnök + m"
+          },
+          "wrong": {
+            "en": "With this rule the form would be főnökm; after a consonant a linking vowel is needed.",
+            "es": "Con esta regla la forma sería főnökm; tras consonante hace falta una vocal de enlace."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

@@ -8,7 +8,7 @@ import { getDb } from '@/lib/database';
 import { pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { useLearner } from '@/lib/learner';
 import { t } from '@/lib/i18n';
-import { pairOf } from '@/lib/languagePair';
+import { activeSourceFor, pairOf } from '@/lib/languagePair';
 import { useTheme } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
 import { levelProgress } from '@/lib/pcicLevels';
@@ -130,7 +130,7 @@ export default function PlacementScreen() {
   const chooseLevel = async (level: PcicLevel) => {
     const { onboarded, target } = await learner.refresh(['direction']);
     if (!onboarded) {
-      await learner.setOnboarding(target === 'es' ? 'en' : 'es', target);
+      await learner.setOnboarding(activeSourceFor(target), target);
       await learner.setLevel(level);
       router.replace('/(tabs)');
       return;
@@ -142,7 +142,7 @@ export default function PlacementScreen() {
   // The 💬 button is on every part of the placement test; `part` tells the Feedback sheet
   // exactly which part it is about (placement:<part>).
   const fbTarget = run?.target ?? learner.target;
-  const pair = pairOf(fbTarget);
+  const pair = pairOf(fbTarget, learner.source ?? activeSourceFor(fbTarget));
   const shell = (children: ReactNode, part: string) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}

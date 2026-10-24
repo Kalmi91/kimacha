@@ -31,6 +31,13 @@ describe('optionHint', () => {
     expect(OPTION_HINTS['profession, identity (ser)'].en).toContain('Soy Ana, es médico');
   });
 
+  it('every hint has a Hungarian row with the same examples', () => {
+    for (const hint of Object.values(OPTION_HINTS)) {
+      expect(hint.hu).toContain('·');
+      expect(hint.hu?.split('·')[1]).toBe(hint.es.split('·')[1]);
+    }
+  });
+
   it('gives no example row for an unknown option', () => {
     expect(optionHint({ en: 'no such rule', es: 'x' }, 'en')).toBeUndefined();
   });

@@ -126,11 +126,26 @@ describe('Spanish grammar syllabus (default lang) is unchanged', () => {
     expect(lessonCoverage('es').planned).toBe(GRAMMAR_SYLLABUS.length);
     expect(syllabusTopic('presente-regular')?.level).toBe('A1');
     expect(syllabusTopic('to_be')).toBeUndefined();
-    const fingerprint = createHash('sha1').update(JSON.stringify([GRAMMAR_UNITS, GRAMMAR_SYLLABUS])).digest('hex');
+    // The Hungarian `hu` titles / blurbs are an addition on top (huSyllabus.test.ts); the en / es text is what is fingerprinted.
+    const withoutHu = JSON.stringify([GRAMMAR_UNITS, GRAMMAR_SYLLABUS], (key, value) => (key === 'hu' ? undefined : value));
+    const fingerprint = createHash('sha1').update(withoutHu).digest('hex');
     expect({ units: GRAMMAR_UNITS.length, topics: GRAMMAR_SYLLABUS.length, fingerprint }).toEqual({
       units: 17,
       topics: 82,
       fingerprint: 'e9ac241646217247bdeb6075ecfafc2198172b17',
     });
+  });
+});
+
+describe('Hungarian grammar syllabus (lang = hu) keeps its size and content fingerprint', () => {
+  it('has 10 units and 40 topics, A1 and A2, and the other syllabi are not touched by it', () => {
+    expect(syllabusLevels('hu')).toEqual(['A1', 'A2']);
+    const units = syllabusLevels('hu').flatMap((l) => unitsForLevel(l, 'hu'));
+    const topics = syllabusLevels('hu').flatMap((l) => syllabusForLevel(l, 'hu'));
+    const fingerprint = createHash('sha1').update(JSON.stringify([units, topics])).digest('hex');
+    expect({ units: units.length, topics: topics.length, fingerprint }).toEqual({ units: 10, topics: 40, fingerprint: '5390978c6ba472475e9ffa48b4545beb7cc9ec2e' });
+    expect(syllabusTopic('lenni-van')).toBeUndefined();
+    expect(syllabusTopic('lenni-van', 'en')).toBeUndefined();
+    expect(syllabusTopic('lenni-van', 'hu')?.level).toBe('A1');
   });
 });

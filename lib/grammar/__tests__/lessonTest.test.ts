@@ -91,7 +91,7 @@ describe('the test questions', () => {
   });
 
   it('there is no trial and no dictation item in the test', () => {
-    for (const [lang, content] of [['es', 'en'], ['en', 'es']] as const) {
+    for (const [lang, content] of [['es', 'en'], ['en', 'es'], ['hu', 'en'], ['hu', 'es']] as const) {
       for (const l of getGrammarTopics(lang)) {
         const byId = new Map((l.items as GrammarItem[]).map((it) => [it.id, it]));
         for (const q of buildLessonTest(l, { seed: 1, learnedLang: lang, contentLang: content })) {
@@ -122,8 +122,8 @@ describe('the test questions', () => {
     }
   };
 
-  it('a valid test comes together for every written lesson (es and en direction)', () => {
-    for (const [lang, content] of [['es', 'en'], ['en', 'es']] as const) {
+  it('a valid test comes together for every written lesson (es, en and hu direction)', () => {
+    for (const [lang, content] of [['es', 'en'], ['en', 'es'], ['hu', 'en'], ['hu', 'es']] as const) {
       const lessons = getGrammarTopics(lang);
       expect(lessons.length).toBeGreaterThan(0);
       for (const l of lessons) {

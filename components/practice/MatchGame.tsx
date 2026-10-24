@@ -102,7 +102,7 @@ export default function MatchGame() {
 
   const total = matchTotal(state);
   const board = currentBoard(state);
-  const cardOf = (id: string) => matchCard(round.items.find((i) => i.id === id)!);
+  const cardOf = (id: string) => matchCard(round.items.find((i) => i.id === id)!, target);
 
   if (state.over || board < 0) {
     const allFound = state.over === 'all';

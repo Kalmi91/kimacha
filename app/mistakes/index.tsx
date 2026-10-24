@@ -11,6 +11,7 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { localDateString } from '@/lib/usageStats';
 import { hasLesson, syllabusTopic } from '@/lib/grammar/syllabus';
+import { activeSourceFor } from '@/lib/languagePair';
 import type { MistakesBatch } from '@/lib/mistakes/format';
 import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
 import { Card } from '@/components/grammar/Brutal';
@@ -22,6 +23,12 @@ import type { Level } from '@/data/words';
 // first, from getMistakeBatches()), a wrong-words list, the grammar patterns
 // to review (linking to an existing lesson when there is one), and the
 // doubtful (uncertain-correction) sentences the deck leaves out.
+
+// The lesson's title in the learner's own language (the source of the active pair), English where that has none.
+function lessonTitle(lessonId: string): string {
+  const title = syllabusTopic(lessonId)?.title;
+  return title?.[activeSourceFor('es')] ?? title?.en ?? lessonId;
+}
 
 export default function MistakesReportScreen() {
   const { theme } = useTheme();
@@ -143,7 +150,7 @@ export default function MistakesReportScreen() {
                             onPress={() => router.push(`/grammar/${lessonId}` as never)}
                           >
                             <Text style={[styles.lessonBtnText, { color: colors.tint }]}>
-                              {syllabusTopic(lessonId)?.title.en ?? lessonId}
+                              {lessonTitle(lessonId)}
                             </Text>
                           </Pressable>
                         ) : (

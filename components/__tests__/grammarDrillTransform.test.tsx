@@ -87,7 +87,7 @@ describe('GrammarDrill: transform item', () => {
 
   it('accepts a missing-accent answer loosely, rejects it under strict accents', async () => {
     const db = getDb();
-    await db.setOnboarding('hu', 'es');
+    await db.setOnboarding('en', 'es');
 
     await db.setStrictAccents(false);
     const loose = render(<GrammarDrill topic={lesson} learnedLang="es" contentLang="en" onFinish={jest.fn()} kinds={['transform']} />);

@@ -1,0 +1,793 @@
+{
+  "schema": 2,
+  "topic": "hangrend",
+  "level": "A1",
+  "title": { "en": "Vowel harmony: -ban or -ben?", "es": "Armonía vocálica: ¿-ban o -ben?" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian glues short endings to the end of a word: ház (house) becomes házban (in the house). Many endings come in two or three shapes, and the vowels of the word choose the shape. This is called vowel harmony. The vowels fall into three groups. Back: a á o ó u ú (ház → házban). Front, unrounded: e é i í (kert → kertben). Front, rounded: ö ő ü ű (fül → fülben). A two-shape ending only asks 'back or front?' (-ban/-ben). A three-shape ending splits the front group too: -hoz for back words, -hez for front words, -höz for rounded front words. English does something small like this without anyone noticing: the plural -s is said differently in cats, dogs and boxes.",
+        "es": "El húngaro pega terminaciones cortas al final de la palabra: ház (casa) pasa a házban (en la casa). Muchas terminaciones tienen dos o tres formas, y las vocales de la palabra eligen cuál. Esto se llama armonía vocálica. Las vocales forman tres grupos. Posteriores: a á o ó u ú (ház → házban). Anteriores no redondeadas: e é i í (kert → kertben). Anteriores redondeadas: ö ő ü ű (fül → fülben). Una terminación de dos formas solo pregunta «¿posterior o anterior?» (-ban/-ben). Una de tres formas divide también el grupo anterior: -hoz para palabras posteriores, -hez para anteriores y -höz para anteriores redondeadas. El español hace algo parecido en pequeño: el plural es -s tras vocal y -es tras consonante (casas, papeles)."
+      }
+    },
+    {
+      "kind": "text",
+      "text": {
+        "en": "For now you only need to choose the right vowel; each ending gets its own lesson later. The meanings in short: -ban/-ben in, -ba/-be into, -ból/-ből out of, -on/-en/-ön on, -ra/-re onto, -hoz/-hez/-höz to, -nál/-nél at (someone's place), -tól/-től from (someone). Verbs have harmony too: olvasok, keresek, főzök (I read, I look for, I cook).",
+        "es": "Por ahora solo necesitas elegir la vocal correcta; cada terminación tiene su propia lección más adelante. Los significados, en breve: -ban/-ben en, -ba/-be hacia dentro, -ból/-ből desde dentro, -on/-en/-ön sobre, -ra/-re hacia encima, -hoz/-hez/-höz a, -nál/-nél en casa de, -tól/-től de (una persona). Los verbos también tienen armonía: olvasok, keresek, főzök (leo, busco, cocino)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "vowel-groups",
+      "noTableDeck": true,
+      "title": { "en": "Three vowel groups", "es": "Tres grupos de vocales" },
+      "header": [
+        { "en": "Back", "es": "Posteriores" },
+        { "en": "Front, unrounded", "es": "Anteriores, no redondeadas" },
+        { "en": "Front, rounded", "es": "Anteriores, redondeadas" }
+      ],
+      "rows": [
+        ["a á o ó u ú", "e é i í", "ö ő ü ű"],
+        ["ház, tanár, bolt", "kert, szék, ember", "fül, főnök, sör"],
+        ["házban, boltban", "kertben, székben", "fülben, sörben"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ending-two",
+      "title": { "en": "Two-shape endings: back or front", "es": "Terminaciones de dos formas: posterior o anterior" },
+      "header": [
+        { "en": "Ending", "es": "Terminación" },
+        { "en": "ház", "es": "ház" },
+        { "en": "kert", "es": "kert" },
+        { "en": "fül", "es": "fül" }
+      ],
+      "rows": [
+        ["-ban/-ben", "házban", "kertben", "fülben"],
+        ["-ba/-be", "házba", "kertbe", "fülbe"],
+        ["-ból/-ből", "házból", "kertből", "fülből"],
+        ["-ra/-re", "házra", "kertre", "fülre"],
+        ["-nál/-nél", "háznál", "kertnél", "fülnél"],
+        ["-tól/-től", "háztól", "kerttől", "fültől"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ending-three",
+      "title": { "en": "Three-shape endings: back, front, rounded", "es": "Terminaciones de tres formas: posterior, anterior, redondeada" },
+      "header": [
+        { "en": "Ending", "es": "Terminación" },
+        { "en": "ház", "es": "ház" },
+        { "en": "kert", "es": "kert" },
+        { "en": "fül", "es": "fül" }
+      ],
+      "rows": [
+        ["-on/-en/-ön", "házon", "kerten", "fülön"],
+        ["-hoz/-hez/-höz", "házhoz", "kerthez", "fülhöz"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Which shape do I take?", "es": "¿Qué forma tomo?" },
+      "items": [
+        {
+          "text": {
+            "en": "All vowels back (a á o ó u ú): take the back shape: -ban, -on, -hoz, -ra, -nál.",
+            "es": "Todas las vocales posteriores (a á o ó u ú): toma la forma posterior: -ban, -on, -hoz, -ra, -nál."
+          },
+          "examples": [
+            { "es": "Gábor a boltban van.", "tr": { "en": "Gábor is in the shop.", "es": "Gábor está en la tienda." } },
+            { "es": "A toll az asztalon van.", "tr": { "en": "The pen is on the table.", "es": "El bolígrafo está en la mesa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Only e é i í: take the front shape: -ben, -en, -hez, -re, -nél.",
+            "es": "Solo e é i í: toma la forma anterior: -ben, -en, -hez, -re, -nél."
+          },
+          "examples": [
+            { "es": "Kati az étteremben van.", "tr": { "en": "Kati is in the restaurant.", "es": "Kati está en el restaurante." } },
+            { "es": "A könyv a széken van.", "tr": { "en": "The book is on the chair.", "es": "El libro está en la silla." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "With ö ő ü ű as the LAST vowel: a two-shape ending uses the front shape (-ben), a three-shape ending uses the rounded shape (-ön, -höz). If an unrounded e or é comes after the ö or ü, the word takes -hez (ünnep → ünnephez).",
+            "es": "Con ö ő ü ű como ÚLTIMA vocal: una terminación de dos formas usa la forma anterior (-ben), una de tres formas usa la redondeada (-ön, -höz). Si después de la ö o la ü viene una e o é no redondeada, la palabra toma -hez (ünnep → ünnephez)."
+          },
+          "examples": [
+            { "es": "A sör a hűtőben van.", "tr": { "en": "The beer is in the fridge.", "es": "La cerveza está en el refrigerador." } },
+            { "es": "Kati a tükörhöz megy.", "tr": { "en": "Kati goes to the mirror.", "es": "Kati va al espejo." } },
+            { "es": "A gyerek a szőlőhöz megy.", "tr": { "en": "The child goes to the grapes.", "es": "El niño va a las uvas." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Mixed words (front and back vowels together): the LAST vowel decides. könyvtár ends in á, so it is a back word: könyvtárban, not könyvtárben.",
+            "es": "Palabras mixtas (vocales anteriores y posteriores juntas): decide la ÚLTIMA vocal. könyvtár termina en á, así que es una palabra posterior: könyvtárban, no könyvtárben."
+          },
+          "examples": [
+            { "es": "Gábor a könyvtárban van.", "tr": { "en": "Gábor is in the library.", "es": "Gábor está en la biblioteca." } },
+            { "es": "Anna a pénztárnál van.", "tr": { "en": "Anna is at the cash desk.", "es": "Anna está en la caja." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "The vowels i, í and é do not count after a back vowel: the back vowel decides. papír → papíron, taxi → taxiban, kávé → kávéban.",
+            "es": "Las vocales i, í y é no cuentan después de una vocal posterior: decide la posterior. papír → papíron, taxi → taxiban, kávé → kávéban."
+          },
+          "examples": [
+            { "es": "A név a papíron van.", "tr": { "en": "The name is on the paper.", "es": "El nombre está en el papel." } },
+            { "es": "Lupita a moziban van.", "tr": { "en": "Lupita is at the cinema.", "es": "Lupita está en el cine." } },
+            { "es": "A cukor a kávéban van.", "tr": { "en": "The sugar is in the coffee.", "es": "El azúcar está en el café." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "But the vowel e after a back vowel counts as front: Budapest → Budapesten.",
+            "es": "Pero la vocal e después de una vocal posterior cuenta como anterior: Budapest → Budapesten."
+          },
+          "examples": [
+            { "es": "Anna Budapesten lakik.", "tr": { "en": "Anna lives in Budapest.", "es": "Anna vive en Budapest." } },
+            { "es": "Gábor Budapestre megy.", "tr": { "en": "Gábor goes to Budapest.", "es": "Gábor va a Budapest." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs follow the same harmony: I = -ok / -ek / -ök, we = -unk / -ünk, you (all) = -tok / -tek / -tök.",
+            "es": "Los verbos siguen la misma armonía: yo = -ok / -ek / -ök, nosotros = -unk / -ünk, ustedes = -tok / -tek / -tök."
+          },
+          "examples": [
+            { "es": "Sétálok a parkban.", "tr": { "en": "I walk in the park.", "es": "Camino en el parque." } },
+            { "es": "Veszek egy sört.", "tr": { "en": "I buy a beer.", "es": "Compro una cerveza." } },
+            { "es": "Öntözök a kertben.", "tr": { "en": "I water in the garden.", "es": "Riego en el jardín." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "verb-endings",
+      "title": { "en": "Verb endings: I, we, you (all)", "es": "Terminaciones del verbo: yo, nosotros, ustedes" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "olvas", "es": "olvas" },
+        { "en": "keres", "es": "keres" },
+        { "en": "főz", "es": "főz" }
+      ],
+      "rows": [
+        ["én", "olvasok", "keresek", "főzök"],
+        ["mi", "olvasunk", "keresünk", "főzünk"],
+        ["ti", "olvastok", "kerestek", "főztök"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "mixed-words",
+      "title": { "en": "Mixed words", "es": "Palabras mixtas" },
+      "header": [
+        { "en": "Ending", "es": "Terminación" },
+        { "en": "papír", "es": "papír" },
+        { "en": "tányér", "es": "tányér" },
+        { "en": "Budapest", "es": "Budapest" }
+      ],
+      "rows": [
+        ["-on/-en/-ön", "papíron", "tányéron", "Budapesten"],
+        ["-ra/-re", "papírra", "tányérra", "Budapestre"],
+        ["-hoz/-hez/-höz", "papírhoz", "tányérhoz", "Budapesthez"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Which shape?", "es": "¿Qué forma?" },
+      "pairs": [
+        {
+          "a": "Péterhez",
+          "b": "főnökhöz",
+          "note": {
+            "en": "Both words have front vowels. -hez is for words whose last vowel is an unrounded e, é, i, í; -höz needs a rounded ö, ő, ü, ű as the last vowel.",
+            "es": "Las dos palabras tienen vocales anteriores. -hez es para palabras cuya última vocal es una e, é, i, í no redondeada; -höz necesita una ö, ő, ü, ű redondeada como última vocal."
+          },
+          "examples": [
+            { "es": "Lupita Péterhez megy.", "tr": { "en": "Lupita goes to Péter.", "es": "Lupita va con Péter." } },
+            { "es": "Lupita a főnökhöz megy.", "tr": { "en": "Lupita goes to the boss.", "es": "Lupita va con el jefe." } }
+          ]
+        },
+        {
+          "a": "házban",
+          "b": "kertben",
+          "note": {
+            "en": "Same ending, two shapes: á is a back vowel, e is a front vowel.",
+            "es": "La misma terminación, dos formas: á es una vocal posterior, e es una vocal anterior."
+          },
+          "examples": [
+            { "es": "Gábor a boltban van.", "tr": { "en": "Gábor is in the shop.", "es": "Gábor está en la tienda." } },
+            { "es": "Kati az étteremben van.", "tr": { "en": "Kati is in the restaurant.", "es": "Kati está en el restaurante." } }
+          ]
+        },
+        {
+          "a": "papíron",
+          "b": "Budapesten",
+          "note": {
+            "en": "The í of papír is neutral, so the back vowel a decides: papíron. The e of Budapest counts as front: Budapesten.",
+            "es": "La í de papír es neutra, así que decide la vocal posterior a: papíron. La e de Budapest cuenta como anterior: Budapesten."
+          },
+          "examples": [
+            { "es": "A név a papíron van.", "tr": { "en": "The name is on the paper.", "es": "El nombre está en el papel." } },
+            { "es": "Anna Budapesten lakik.", "tr": { "en": "Anna lives in Budapest.", "es": "Anna vive en Budapest." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: choosing the shape by the first vowel, or by what feels right in English. Look at the LAST vowel of the word first. papír → papíron (the í is neutral, so the a decides), but Budapest → Budapesten (the e counts as front).",
+        "es": "Trampa clásica: elegir la forma por la primera vocal, o por lo que suena bien en español. Mira primero la ÚLTIMA vocal de la palabra. papír → papíron (la í es neutra, así que decide la a), pero Budapest → Budapesten (la e cuenta como anterior)."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Two small things. A final -a or -e becomes long before an ending: szoba → szobában, fürdőszoba → fürdőszobában (you will meet this again with the plural and the accusative). And a few short words with only i or í take back endings: híd → hídon, not híden.",
+        "es": "Dos detalles. Una -a o una -e final se alarga antes de una terminación: szoba → szobában, fürdőszoba → fürdőszobában (lo volverás a ver con el plural y el acusativo). Y unas pocas palabras cortas con solo i o í toman terminaciones posteriores: híd → hídon, no híden."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian endings change to match the vowels of the word. This is called vowel harmony. A word with back vowels like «ház» takes «házban», and a word with front vowels like «kert» takes «kertben». Endings with three shapes also have a form for «ö», «ő», «ü» and «ű»: «házhoz», «kerthez», «fülhöz». In a mixed word the last vowel decides, so «könyvtár» takes «könyvtárban». The vowels «i», «í» and «é» do not change a back word: «papír», «papíron». But the vowel «e» does: «Budapest», «Budapesten».",
+    "es": "Las terminaciones del húngaro cambian para ajustarse a las vocales de la palabra. Eso se llama armonía vocálica. Una palabra con vocales posteriores como «ház» toma «házban», y una palabra con vocales anteriores como «kert» toma «kertben». Las terminaciones de tres formas tienen además una forma para «ö», «ő», «ü» y «ű»: «házhoz», «kerthez», «fülhöz». En una palabra mixta decide la última vocal, por eso «könyvtár» toma «könyvtárban». Las vocales «i», «í» y «é» no cambian una palabra posterior: «papír», «papíron». Pero la vocal «e» sí: «Budapest», «Budapesten»."
+  },
+  "items": [
+    {
+      "id": "hangrend-c01",
+      "sentence": "Anna a ___ van.",
+      "options": ["házban", "házben", "házba"],
+      "correct": 0,
+      "why": {
+        "en": "ház has the back vowel á, so the ending takes the back shape: -ban.",
+        "es": "ház tiene la vocal posterior á, así que la terminación toma la forma posterior: -ban."
+      },
+      "wrong": {
+        "házben": {
+          "en": "házben mixes a back word with the front shape -ben; -ben is for words like kert (kertben).",
+          "es": "házben mezcla una palabra posterior con la forma anterior -ben; -ben es para palabras como kert (kertben)."
+        },
+        "házba": {
+          "en": "házba has the right back shape but it is another ending: -ba means 'into' (movement), as in Anna a házba megy; with van the place is -ban.",
+          "es": "házba tiene la forma posterior correcta, pero es otra terminación: -ba significa «hacia dentro» (movimiento), como en Anna a házba megy; con van el lugar lleva -ban."
+        }
+      },
+      "examples": ["Gábor a boltban van.", "Diego az autóban van."],
+      "tr": { "en": "Anna is in the house.", "es": "Anna está en la casa." }
+    },
+    {
+      "id": "hangrend-f01",
+      "kind": "form",
+      "verb": "ház",
+      "person": "-ban/-ben",
+      "answer": "házban",
+      "table": "ending-two"
+    },
+    {
+      "id": "hangrend-c02",
+      "sentence": "Péter a ___ van.",
+      "options": ["kertben", "kertban", "kertbe"],
+      "correct": 0,
+      "why": {
+        "en": "kert has only the front vowel e, so the ending takes the front shape: -ben.",
+        "es": "kert tiene solo la vocal anterior e, así que la terminación toma la forma anterior: -ben."
+      },
+      "wrong": {
+        "kertban": {
+          "en": "kertban mixes a front word with the back shape -ban; -ban is for words like ház (házban).",
+          "es": "kertban mezcla una palabra anterior con la forma posterior -ban; -ban es para palabras como ház (házban)."
+        },
+        "kertbe": {
+          "en": "kertbe has the right front shape but it is another ending: -be means 'into' (movement), as in Péter a kertbe megy.",
+          "es": "kertbe tiene la forma anterior correcta, pero es otra terminación: -be significa «hacia dentro» (movimiento), como en Péter a kertbe megy."
+        }
+      },
+      "examples": ["Kati az étteremben van.", "A tej a hűtőben van."],
+      "tr": { "en": "Péter is in the garden.", "es": "Péter está en el jardín." }
+    },
+    {
+      "id": "hangrend-f02",
+      "kind": "form",
+      "verb": "kert",
+      "person": "-ban/-ben",
+      "answer": "kertben",
+      "table": "ending-two"
+    },
+    {
+      "id": "hangrend-c03",
+      "sentence": "Kati ___ lakik.",
+      "options": ["Szegeden", "Szegedon", "Szegedön"],
+      "correct": 0,
+      "why": {
+        "en": "Szeged has only the front vowel e, so the three-shape ending -on/-en/-ön takes the front shape: -en.",
+        "es": "Szeged tiene solo la vocal anterior e, así que la terminación de tres formas -on/-en/-ön toma la forma anterior: -en."
+      },
+      "wrong": {
+        "Szegedon": {
+          "en": "Szegedon uses the back shape -on, which is for words like ház (házon); Szeged has only e.",
+          "es": "Szegedon usa la forma posterior -on, que es para palabras como ház (házon); Szeged tiene solo e."
+        },
+        "Szegedön": {
+          "en": "Szegedön uses the rounded shape -ön, which needs ö, ő, ü or ű as the last vowel (fülön); Szeged ends in e.",
+          "es": "Szegedön usa la forma redondeada -ön, que necesita ö, ő, ü o ű como última vocal (fülön); Szeged termina en e."
+        }
+      },
+      "examples": ["A könyv a széken van.", "Péter Budapesten lakik."],
+      "tr": { "en": "Kati lives in Szeged.", "es": "Kati vive en Szeged." }
+    },
+    {
+      "id": "hangrend-f03",
+      "kind": "form",
+      "verb": "fül",
+      "person": "-ban/-ben",
+      "answer": "fülben",
+      "table": "ending-two"
+    },
+    {
+      "id": "hangrend-w01",
+      "kind": "why",
+      "es": "Anna a házban van.",
+      "target": "házban",
+      "tr": { "en": "Anna is in the house.", "es": "Anna está en la casa." },
+      "options": [
+        {
+          "text": {
+            "en": "Only back vowels (á): the back shape -ban",
+            "es": "Solo vocales posteriores (á): la forma posterior -ban"
+          }
+        },
+        {
+          "text": {
+            "en": "Places always take -ben",
+            "es": "Los lugares siempre llevan -ben"
+          },
+          "wrong": {
+            "en": "With this rule the form would be házben; but the shape depends on the vowels of the word, not on its meaning.",
+            "es": "Con esta regla la forma sería házben; pero la forma depende de las vocales de la palabra, no de su significado."
+          }
+        },
+        {
+          "text": {
+            "en": "The first letter of the word decides the shape",
+            "es": "La primera letra de la palabra decide la forma"
+          },
+          "wrong": {
+            "en": "With this rule the consonant h would decide; but only vowels choose the shape, and here it is the á.",
+            "es": "Con esta regla decidiría la consonante h; pero solo las vocales eligen la forma, y aquí es la á."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hangrend-c04",
+      "sentence": "A könyv az ___ van.",
+      "options": ["asztalon", "asztalen", "asztalön"],
+      "correct": 0,
+      "why": {
+        "en": "asztal has only back vowels, so the three-shape ending takes the back shape: -on.",
+        "es": "asztal tiene solo vocales posteriores, así que la terminación de tres formas toma la forma posterior: -on."
+      },
+      "wrong": {
+        "asztalen": {
+          "en": "asztalen uses the front shape -en, which is for words like kert (kerten).",
+          "es": "asztalen usa la forma anterior -en, que es para palabras como kert (kerten)."
+        },
+        "asztalön": {
+          "en": "asztalön uses the rounded shape -ön, which is for words like fül (fülön); asztal has only a.",
+          "es": "asztalön usa la forma redondeada -ön, que es para palabras como fül (fülön); asztal tiene solo a."
+        }
+      },
+      "examples": ["A pohár az asztalon van.", "A kulcs az ablakon van."],
+      "tr": { "en": "The book is on the table.", "es": "El libro está en la mesa." }
+    },
+    {
+      "id": "hangrend-f04",
+      "kind": "form",
+      "verb": "kert",
+      "person": "-ból/-ből",
+      "answer": "kertből",
+      "table": "ending-two"
+    },
+    {
+      "id": "hangrend-c05",
+      "sentence": "Anna a ___ megy.",
+      "options": ["főnökhöz", "főnökhoz", "főnökhez"],
+      "correct": 0,
+      "why": {
+        "en": "The last vowel of főnök is the rounded ö, so the three-shape ending takes the rounded shape: -höz.",
+        "es": "La última vocal de főnök es la ö redondeada, así que la terminación de tres formas toma la forma redondeada: -höz."
+      },
+      "wrong": {
+        "főnökhoz": {
+          "en": "főnökhoz uses the back shape -hoz, which is for words like orvos (orvoshoz); főnök has no back vowel.",
+          "es": "főnökhoz usa la forma posterior -hoz, que es para palabras como orvos (orvoshoz); főnök no tiene vocal posterior."
+        },
+        "főnökhez": {
+          "en": "főnökhez uses the unrounded front shape -hez (Péterhez), but the last vowel of főnök is a rounded ö, so it needs -höz.",
+          "es": "főnökhez usa la forma anterior no redondeada -hez (Péterhez), pero la última vocal de főnök es una ö redondeada, así que necesita -höz."
+        }
+      },
+      "examples": ["Kati a tükörhöz megy.", "A gyerek a szőlőhöz megy."],
+      "tr": { "en": "Anna goes to the boss.", "es": "Anna va con el jefe." }
+    },
+    {
+      "id": "hangrend-f05",
+      "kind": "form",
+      "verb": "ház",
+      "person": "-on/-en/-ön",
+      "answer": "házon",
+      "table": "ending-three"
+    },
+    {
+      "id": "hangrend-c06",
+      "sentence": "Péter az ___ megy.",
+      "options": ["orvoshoz", "orvoshez", "orvoshöz"],
+      "correct": 0,
+      "why": {
+        "en": "orvos has only back vowels (o), so the ending takes the back shape: -hoz.",
+        "es": "orvos tiene solo vocales posteriores (o), así que la terminación toma la forma posterior: -hoz."
+      },
+      "wrong": {
+        "orvoshez": {
+          "en": "orvoshez uses the front shape -hez (Péterhez), which is for words with e, é, i, í.",
+          "es": "orvoshez usa la forma anterior -hez (Péterhez), que es para palabras con e, é, i, í."
+        },
+        "orvoshöz": {
+          "en": "orvoshöz uses the rounded shape -höz (főnökhöz), which needs ö, ő, ü or ű.",
+          "es": "orvoshöz usa la forma redondeada -höz (főnökhöz), que necesita ö, ő, ü o ű."
+        }
+      },
+      "examples": ["Anna a tanárhoz megy.", "Kati a bankhoz megy."],
+      "tr": { "en": "Péter goes to the doctor.", "es": "Péter va con el médico." }
+    },
+    {
+      "id": "hangrend-f06",
+      "kind": "form",
+      "verb": "kert",
+      "person": "-hoz/-hez/-höz",
+      "answer": "kerthez",
+      "table": "ending-three"
+    },
+    {
+      "id": "hangrend-c07",
+      "sentence": "Gábor ___ megy.",
+      "options": ["Péterhez", "Péterhoz", "Péterhöz"],
+      "correct": 0,
+      "why": {
+        "en": "Péter has the front vowels é and e, and the last one is unrounded, so the ending is -hez.",
+        "es": "Péter tiene las vocales anteriores é y e, y la última no es redondeada, así que la terminación es -hez."
+      },
+      "wrong": {
+        "Péterhoz": {
+          "en": "Péterhoz uses the back shape -hoz (orvoshoz); Péter has no back vowel.",
+          "es": "Péterhoz usa la forma posterior -hoz (orvoshoz); Péter no tiene vocal posterior."
+        },
+        "Péterhöz": {
+          "en": "Péterhöz uses -höz, which needs a rounded ö, ő, ü or ű as the last vowel; the last vowel of Péter is e.",
+          "es": "Péterhöz usa -höz, que necesita una ö, ő, ü o ű redondeada como última vocal; la última vocal de Péter es e."
+        }
+      },
+      "examples": ["Kati a székhez megy.", "Anna a szekrényhez megy."],
+      "tr": { "en": "Gábor goes to Péter.", "es": "Gábor va con Péter." }
+    },
+    {
+      "id": "hangrend-w02",
+      "kind": "why",
+      "es": "Gábor a főnökhöz megy.",
+      "target": "főnökhöz",
+      "tr": { "en": "Gábor goes to the boss.", "es": "Gábor va con el jefe." },
+      "options": [
+        {
+          "text": {
+            "en": "Back vowels: the shape -hoz",
+            "es": "Vocales posteriores: la forma -hoz"
+          },
+          "wrong": {
+            "en": "With this rule the form would be főnökhoz; but főnök has no back vowel (ő, ö).",
+            "es": "Con esta regla la forma sería főnökhoz; pero főnök no tiene vocal posterior (ő, ö)."
+          }
+        },
+        {
+          "text": {
+            "en": "Front vowels, the last one rounded (ö): the shape -höz",
+            "es": "Vocales anteriores, la última redondeada (ö): la forma -höz"
+          }
+        },
+        {
+          "text": {
+            "en": "Front vowels, the last one unrounded: the shape -hez",
+            "es": "Vocales anteriores, la última no redondeada: la forma -hez"
+          },
+          "wrong": {
+            "en": "With this rule the form would be főnökhez; but the last vowel of főnök is the rounded ö, which asks for -höz.",
+            "es": "Con esta regla la forma sería főnökhez; pero la última vocal de főnök es la ö redondeada, que pide -höz."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "hangrend-f07",
+      "kind": "form",
+      "verb": "fül",
+      "person": "-hoz/-hez/-höz",
+      "answer": "fülhöz",
+      "table": "ending-three"
+    },
+    {
+      "id": "hangrend-c08",
+      "sentence": "___ egy könyvet.",
+      "options": ["Olvasok", "Olvasek", "Olvasök"],
+      "correct": 0,
+      "why": {
+        "en": "olvas has only back vowels (o, a), so the I-ending takes the back shape: -ok.",
+        "es": "olvas tiene solo vocales posteriores (o, a), así que la terminación de «yo» toma la forma posterior: -ok."
+      },
+      "wrong": {
+        "Olvasek": {
+          "en": "Olvasek uses -ek (keresek), which is for verbs with e, é, i, í; olvas has only back vowels.",
+          "es": "Olvasek usa -ek (keresek), que es para verbos con e, é, i, í; olvas tiene solo vocales posteriores."
+        },
+        "Olvasök": {
+          "en": "Olvasök uses -ök (főzök), which needs an ö, ő, ü or ű in the verb; olvas has none.",
+          "es": "Olvasök usa -ök (főzök), que necesita una ö, ő, ü o ű en el verbo; olvas no tiene ninguna."
+        }
+      },
+      "examples": ["Hallgatok zenét.", "Sétálok a parkban."],
+      "tr": { "en": "I am reading a book.", "es": "Estoy leyendo un libro." }
+    },
+    {
+      "id": "hangrend-f08",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "én",
+      "answer": "olvasok",
+      "table": "verb-endings"
+    },
+    {
+      "id": "hangrend-c09",
+      "sentence": "___ egy kulcsot.",
+      "options": ["Keresek", "Keresok", "Keresök"],
+      "correct": 0,
+      "why": {
+        "en": "keres has only the unrounded front vowel e, so the I-ending takes the front shape: -ek.",
+        "es": "keres tiene solo la vocal anterior no redondeada e, así que la terminación de «yo» toma la forma anterior: -ek."
+      },
+      "wrong": {
+        "Keresok": {
+          "en": "Keresok uses -ok (olvasok), which is for verbs with back vowels; keres has only e.",
+          "es": "Keresok usa -ok (olvasok), que es para verbos con vocales posteriores; keres tiene solo e."
+        },
+        "Keresök": {
+          "en": "Keresök uses -ök (főzök), which needs an ö, ő, ü or ű in the verb; keres has only e.",
+          "es": "Keresök usa -ök (főzök), que necesita una ö, ő, ü o ű en el verbo; keres tiene solo e."
+        }
+      },
+      "examples": ["Kérek egy kávét.", "Veszek egy sört."],
+      "tr": { "en": "I am looking for a key.", "es": "Estoy buscando una llave." }
+    },
+    {
+      "id": "hangrend-c10",
+      "sentence": "___ egy levest.",
+      "options": ["Főzök", "Főzok", "Főzek"],
+      "correct": 0,
+      "why": {
+        "en": "főz has the rounded vowel ő, so the I-ending takes the rounded shape: -ök.",
+        "es": "főz tiene la vocal redondeada ő, así que la terminación de «yo» toma la forma redondeada: -ök."
+      },
+      "wrong": {
+        "Főzok": {
+          "en": "Főzok uses -ok (olvasok), which is for verbs with back vowels; főz has the front vowel ő.",
+          "es": "Főzok usa -ok (olvasok), que es para verbos con vocales posteriores; főz tiene la vocal anterior ő."
+        },
+        "Főzek": {
+          "en": "Főzek uses -ek (keresek), but the rounded ő of főz asks for -ök.",
+          "es": "Főzek usa -ek (keresek), pero la ő redondeada de főz pide -ök."
+        }
+      },
+      "examples": ["Sütök egy tortát.", "Öntözök a kertben."],
+      "tr": { "en": "I am cooking a soup.", "es": "Estoy cocinando una sopa." }
+    },
+    {
+      "id": "hangrend-f09",
+      "kind": "form",
+      "verb": "főz",
+      "person": "ti",
+      "answer": "főztök",
+      "table": "verb-endings"
+    },
+    {
+      "id": "hangrend-c11",
+      "sentence": "Kati ___ lakik.",
+      "options": ["Budapesten", "Budapeston", "Budapestön"],
+      "correct": 0,
+      "why": {
+        "en": "Budapest has the back vowels u and a, but its last vowel is e, so the ending takes the front shape: -en.",
+        "es": "Budapest tiene las vocales posteriores u y a, pero su última vocal es e, así que la terminación toma la forma anterior: -en."
+      },
+      "wrong": {
+        "Budapeston": {
+          "en": "Budapeston follows the first vowels u and a; but in this word the last vowel e decides: -en.",
+          "es": "Budapeston sigue las primeras vocales u y a; pero en esta palabra decide la última vocal e: -en."
+        },
+        "Budapestön": {
+          "en": "Budapestön uses -ön, which needs ö, ő, ü or ű as the last vowel; Budapest ends in e.",
+          "es": "Budapestön usa -ön, que necesita ö, ő, ü o ű como última vocal; Budapest termina en e."
+        }
+      },
+      "examples": ["Anna Szegeden lakik.", "Gábor Budapestre megy."],
+      "tr": { "en": "Kati lives in Budapest.", "es": "Kati vive en Budapest." }
+    },
+    {
+      "id": "hangrend-f10",
+      "kind": "form",
+      "verb": "keres",
+      "person": "mi",
+      "answer": "keresünk",
+      "table": "verb-endings"
+    },
+    {
+      "id": "hangrend-w03",
+      "kind": "why",
+      "es": "Kati Budapesten lakik.",
+      "target": "Budapesten",
+      "tr": { "en": "Kati lives in Budapest.", "es": "Kati vive en Budapest." },
+      "options": [
+        {
+          "text": {
+            "en": "All the vowels are back (u, a): the shape -on",
+            "es": "Todas las vocales son posteriores (u, a): la forma -on"
+          },
+          "wrong": {
+            "en": "With this rule the form would be Budapeston; but the last vowel, e, is front.",
+            "es": "Con esta regla la forma sería Budapeston; pero la última vocal, e, es anterior."
+          }
+        },
+        {
+          "text": {
+            "en": "Cities always take -en, whatever the vowels",
+            "es": "Las ciudades siempre llevan -en, sean cuales sean las vocales"
+          },
+          "wrong": {
+            "en": "With this rule the vowels would not matter; but they do: házon (back), kerten (front), fülön (rounded).",
+            "es": "Con esta regla las vocales no importarían; pero sí importan: házon (posterior), kerten (anterior), fülön (redondeada)."
+          }
+        },
+        {
+          "text": {
+            "en": "Mixed word: the last vowel e is front, so the shape -en",
+            "es": "Palabra mixta: la última vocal e es anterior, así que la forma -en"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "hangrend-c12",
+      "sentence": "A sajt a ___ van.",
+      "options": ["tányéron", "tányéren", "tányérön"],
+      "correct": 0,
+      "why": {
+        "en": "tányér has a back á and the neutral é; the back vowel decides, so the ending is -on.",
+        "es": "tányér tiene una á posterior y la é neutra; decide la vocal posterior, así que la terminación es -on."
+      },
+      "wrong": {
+        "tányéren": {
+          "en": "tányéren follows the last vowel é; but é is neutral after a back vowel, so the á decides: -on.",
+          "es": "tányéren sigue la última vocal é; pero é es neutra después de una vocal posterior, así que decide la á: -on."
+        },
+        "tányérön": {
+          "en": "tányérön uses -ön, which needs ö, ő, ü or ű; tányér has none.",
+          "es": "tányérön usa -ön, que necesita ö, ő, ü o ű; tányér no tiene ninguna."
+        }
+      },
+      "examples": ["A név a papíron van.", "A pohár az asztalon van."],
+      "tr": { "en": "The cheese is on the plate.", "es": "El queso está en el plato." }
+    },
+    {
+      "id": "hangrend-f11",
+      "kind": "form",
+      "verb": "papír",
+      "person": "-on/-en/-ön",
+      "answer": "papíron",
+      "table": "mixed-words"
+    },
+    {
+      "id": "hangrend-c13",
+      "sentence": "Péter a ___ van.",
+      "options": ["könyvesboltban", "könyvesboltben", "könyvesboltba"],
+      "correct": 0,
+      "why": {
+        "en": "A mixed word: its last vowel o is back, so the ending takes the back shape: -ban.",
+        "es": "Una palabra mixta: su última vocal o es posterior, así que la terminación toma la forma posterior: -ban."
+      },
+      "wrong": {
+        "könyvesboltben": {
+          "en": "könyvesboltben follows the first vowels ö and e; but in a mixed word the last vowel decides, and that is o.",
+          "es": "könyvesboltben sigue las primeras vocales ö y e; pero en una palabra mixta decide la última vocal, y esa es o."
+        },
+        "könyvesboltba": {
+          "en": "könyvesboltba has the right back shape but it is another ending: -ba means 'into' (movement).",
+          "es": "könyvesboltba tiene la forma posterior correcta, pero es otra terminación: -ba significa «hacia dentro» (movimiento)."
+        }
+      },
+      "examples": ["Gábor a könyvtárban van.", "Anna a pénztárnál van."],
+      "tr": { "en": "Péter is in the bookshop.", "es": "Péter está en la librería." }
+    },
+    {
+      "id": "hangrend-w04",
+      "kind": "why",
+      "es": "Gábor a fürdőszobában van.",
+      "target": "fürdőszobában",
+      "tr": { "en": "Gábor is in the bathroom.", "es": "Gábor está en el baño." },
+      "options": [
+        {
+          "text": {
+            "en": "The last vowel a is back, so -ban; the final a becomes á",
+            "es": "La última vocal a es posterior, así que -ban; la a final se alarga a á"
+          }
+        },
+        {
+          "text": {
+            "en": "The first vowel ü decides: front, so -ben",
+            "es": "Decide la primera vocal ü: anterior, así que -ben"
+          },
+          "wrong": {
+            "en": "With this rule the form would be fürdőszobaben; but in a mixed word the last vowel decides, and that is a.",
+            "es": "Con esta regla la forma sería fürdőszobaben; pero en una palabra mixta decide la última vocal, y esa es a."
+          }
+        },
+        {
+          "text": {
+            "en": "The last vowel a is back, so -ban; the final a stays short",
+            "es": "La última vocal a es posterior, así que -ban; la a final se queda corta"
+          },
+          "wrong": {
+            "en": "With this rule the form would be fürdőszobaban; but a final a becomes long before an ending: á.",
+            "es": "Con esta regla la forma sería fürdőszobaban; pero una a final se alarga antes de una terminación: á."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hangrend-c14",
+      "sentence": "Gábor ___ van.",
+      "options": ["Péternél", "Péternál", "Péterben"],
+      "correct": 0,
+      "why": {
+        "en": "Péter has only front vowels, and 'at someone's place' is -nál/-nél: the front shape -nél.",
+        "es": "Péter tiene solo vocales anteriores, y «en casa de alguien» es -nál/-nél: la forma anterior -nél."
+      },
+      "wrong": {
+        "Péternál": {
+          "en": "Péternál uses the back shape -nál (tanárnál); Péter has only front vowels.",
+          "es": "Péternál usa la forma posterior -nál (tanárnál); Péter tiene solo vocales anteriores."
+        },
+        "Péterben": {
+          "en": "Péterben has the right front shape but it is another ending: -ben means 'inside' something; for a person's place use -nél.",
+          "es": "Péterben tiene la forma anterior correcta, pero es otra terminación: -ben significa «dentro de» algo; para la casa de una persona se usa -nél."
+        }
+      },
+      "examples": ["Anna a tanárnál van.", "Kati az orvosnál van."],
+      "tr": { "en": "Gábor is at Péter's place.", "es": "Gábor está en casa de Péter." }
+    },
+    {
+      "id": "hangrend-f12",
+      "kind": "form",
+      "verb": "Budapest",
+      "person": "-hoz/-hez/-höz",
+      "answer": "Budapesthez",
+      "table": "mixed-words"
+    }
+  ]
+}

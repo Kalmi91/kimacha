@@ -6,7 +6,8 @@ import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { getBeta, useBeta } from '@/lib/beta';
-import { pairOf } from '@/lib/languagePair';
+import { pairOf, sourceFor, type Lang } from '@/lib/languagePair';
+import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import { speechLang } from '@/lib/languages';
 import { localDateString, DEFAULT_DAILY_NEW_LIMIT } from '@/lib/usageStats';
 import { addXp, getXp, wholeXp, xpForCard, type DailyXp } from '@/lib/dailyXp';
@@ -72,6 +73,8 @@ export function usePcicSession() {
   // it decides the card's prompt/answer direction, the TTS locale and how the
   // article button row / posOf appear.
   const [target, setTarget] = useState<PcicTarget>('es');
+  // The native language of the active pair: the prompt side of the card (en for en-es, es for es-en, ...).
+  const [sourceLang, setSourceLang] = useState<Lang>('en');
   // The level picker sheet: the N/total progress it shows
   // needs the cards of ALL four levels, not just the active one.
   const [levelSheetOpen, setLevelSheetOpen] = useState(false);
@@ -148,8 +151,9 @@ export function usePcicSession() {
     // The target language of the active pair decides which direction's
     // deck is built (the learner store calls data/pcic.ts setPcicTarget); it must come BEFORE the
     // pcicItemsForLevel call, otherwise the words of the old direction would come.
-    const { target: dir } = await refresh(['direction']);
+    const { target: dir, source: src } = await refresh(['direction']);
     setTarget(dir);
+    setSourceLang(sourceFor(dir, src));
     // If the active pair does not yet have an explicitly chosen level (Settings
     // direction switch to a direction that was not onboarded earlier; a fresh onboarding
     // always makes the user choose, so it never gets here unchosen), the level picker sheet
@@ -242,15 +246,13 @@ export function usePcicSession() {
 
   // The FeedbackButton's pair label with the active direction
   // (it used to be hard-coded to "es-en", although the actual behavior was en-es).
-  const languagePair = pairOf(target);
+  const languagePair = pairOf(target, sourceLang);
 
   // The prompt is the source-language field and the answer is the
   // target-language one; in en-es this is the old order (prompt en, answer es), in es-en
   // the reverse. `sourceLang` is the language of the prompt/read-aloud, `target` that of the answer.
-  const sourceLang = target === 'es' ? 'en' : 'es';
-
-  const promptSource = target === 'es' ? currentItem?.en : currentItem?.es;
-  const answerText = target === 'es' ? currentItem?.es : currentItem?.en;
+  const promptSource = currentItem ? wordIn(currentItem, sourceLang) : undefined;
+  const answerText = currentItem ? wordIn(currentItem, target) : undefined;
 
   // Reading the prompt aloud AND focusing the input field when a
   // NEW card comes on screen (the keyboard opens). It should run only on a
@@ -343,7 +345,7 @@ export function usePcicSession() {
   // is also spoken automatically in a chain, if the item has one (exampleEs/exampleEn).
   // Both are spoken in the target language, not always Spanish.
   const speakRevealed = (best: string) => {
-    const example = target === 'es' ? currentItem?.exampleEs : currentItem?.exampleEn;
+    const example = currentItem ? exampleIn(currentItem, target) : undefined;
     if (example) {
       speakSequence([
         { text: best, locale: speechLang(target) },
@@ -361,7 +363,7 @@ export function usePcicSession() {
       // An empty submission also reveals the correct form and
       // reads it aloud, but does not grade automatically; the tap decides, as with
       // any reveal.
-      const g = gradePcicAnswer('', answerText, strictAccents);
+      const g = gradePcicAnswer('', answerText, strictAccents, target);
       const revealed: PcicGrade = { ...g, match: 'wrong', accentOnly: undefined };
       setGrade(revealed);
       if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best));
@@ -370,7 +372,7 @@ export function usePcicSession() {
     }
     // On reveal the correct target-language form is always spoken.
     // For a sentence item, an answer without the pronoun is also accepted.
-    const g = (currentItem.kind === 'sentence' ? gradeSentenceAnswer : gradePcicAnswer)(answer, answerText, strictAccents);
+    const g = (currentItem.kind === 'sentence' ? gradeSentenceAnswer : gradePcicAnswer)(answer, answerText, strictAccents, target);
     setTypedAnswer(answer);
     setGrade(g);
     if (g.match !== 'exact') setArticlePick(articleOf(g.best));
@@ -405,7 +407,7 @@ export function usePcicSession() {
       cards: cardsById.values(),
       tenses,
       findItem: findPcicItem,
-      vocab: () => pcicItemsForLevel(level).map((i) => (target === 'es' ? i.es : i.en)),
+      vocab: () => pcicItemsForLevel(level).map((i) => wordIn(i, target) ?? ''),
     });
     setCadence(step.state);
     setSentenceCard(step.card);

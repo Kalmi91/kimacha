@@ -6,6 +6,8 @@
 
 import { PCIC_LEVELS, pcicItemsForLevel, type PcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { hasLesson, syllabusForLevel } from '@/lib/grammar/syllabus';
+import { activeSourceFor } from '@/lib/languagePair';
+import { wordIn } from '@/lib/pcicItemText';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
 import { gapSourcesForLevel, type GapSource } from './grammarItems';
 
@@ -71,8 +73,8 @@ interface WordSides {
 }
 
 function sidesOf(item: PcicItem, target: PcicTarget): WordSides | undefined {
-  const word = (target === 'es' ? item.es : item.en)?.split(' / ')[0]?.trim();
-  const meaning = (target === 'es' ? item.en : item.es)?.trim();
+  const word = wordIn(item, target)?.split(' / ')[0]?.trim();
+  const meaning = wordIn(item, activeSourceFor(target))?.trim();
   return word && meaning ? { word, meaning } : undefined;
 }
 

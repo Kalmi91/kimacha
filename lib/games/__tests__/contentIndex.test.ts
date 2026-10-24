@@ -3,19 +3,21 @@ import { join } from 'path';
 import { getGrammarTopic, getGrammarTopicIds, getGrammarTopics } from '../content';
 import { EN_GRAMMAR_INDEX } from '../content/en.index';
 import { ES_GRAMMAR_INDEX } from '../content/es.index';
+import { HU_GRAMMAR_INDEX } from '../content/hu.index';
 import { withArticleNouns } from '@/lib/grammar/nounArticles';
+import { withHu } from '@/lib/grammar/huOverlay';
 
-const INDEXES = { es: ES_GRAMMAR_INDEX, en: EN_GRAMMAR_INDEX };
+const INDEXES = { es: ES_GRAMMAR_INDEX, en: EN_GRAMMAR_INDEX, hu: HU_GRAMMAR_INDEX };
 const DATA = join(__dirname, '..', '..', '..', 'data', 'games', 'grammar');
 
 // file name -> the JSON's own `topic` id, read straight from the data folder
-function filesOf(lang: 'es' | 'en'): { file: string; json: { topic: string } }[] {
+function filesOf(lang: 'es' | 'en' | 'hu'): { file: string; json: { topic: string } }[] {
   return readdirSync(join(DATA, lang))
     .filter((f) => f.endsWith('.json'))
     .map((f) => ({ file: f.slice(0, -5), json: require(`@/data/games/grammar/${lang}/${f}`) }));
 }
 
-describe.each(['es', 'en'] as const)('lazy grammar registry (%s)', (lang) => {
+describe.each(['es', 'en', 'hu'] as const)('lazy grammar registry (%s)', (lang) => {
   const index = INDEXES[lang];
   const files = filesOf(lang);
 
@@ -26,13 +28,18 @@ describe.each(['es', 'en'] as const)('lazy grammar registry (%s)', (lang) => {
     expect(getGrammarTopicIds(lang)).toEqual(ids);
   });
 
-  it('returns the same lesson as the JSON itself (article nouns added where they belong)', () => {
-    for (const { json } of files) {
+  it('returns the lesson JSON with its Hungarian sidecar laid over it (article nouns added where they belong; the hu course has no sidecar)', () => {
+    for (const { file, json } of files) {
       const lesson = getGrammarTopic(lang, json.topic);
+      if (lang === 'hu') {
+        expect(lesson).toEqual(json);
+        continue;
+      }
+      const withSidecar = withHu(json, require(`@/data/games/grammar-hu/${lang}/${file}.json`));
       if (lang === 'es' && json.topic === 'articulos-genero') {
-        expect(lesson).toEqual(withArticleNouns(json as never));
+        expect(lesson).toEqual(withArticleNouns(withSidecar as never));
       } else {
-        expect(lesson).toBe(json);
+        expect(lesson).toEqual(withSidecar);
       }
     }
   });

@@ -23,6 +23,8 @@ async function toIntro(lang: 'English' | 'Español' = 'English') {
   render(<ThemeProvider><OnboardingScreen /></ThemeProvider>);
   await flush();
   fireEvent.press(screen.getByText(lang));
+  // the "I learn" step: the other one of the two original languages.
+  fireEvent.press(screen.getByText(lang === 'English' ? 'Español' : 'English'));
   fireEvent.press(screen.getByTestId('onboarding-start'));
 }
 
@@ -102,6 +104,19 @@ describe('Onboarding: intro + theme step', () => {
     expect(screen.getAllByText('the car')).toHaveLength(5);
     expect(screen.getAllByText('Lo sé')).toHaveLength(5);
     expect(screen.getByText('Después puedes elegir entre 24 en Ajustes.')).toBeTruthy();
+  });
+
+  it('the sample word is in the learned language: "az autó" when learning Hungarian, "the car" on hu→en', async () => {
+    for (const [speak, learn, word] of [['English', 'Magyar', 'az autó'], ['Magyar', 'English', 'the car'], ['Magyar', 'Español', 'el carro']]) {
+      const view = render(<ThemeProvider><OnboardingScreen /></ThemeProvider>);
+      await flush();
+      fireEvent.press(view.getByText(speak));
+      fireEvent.press(view.getByText(learn));
+      fireEvent.press(view.getByTestId('onboarding-start'));
+      fireEvent.press(view.getByTestId('onboarding-intro-start'));
+      expect(view.getAllByText(word)).toHaveLength(5);
+      view.unmount();
+    }
   });
 
   it('every row is drawn with its own theme font and background', async () => {

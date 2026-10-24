@@ -1,0 +1,678 @@
+{
+  "schema": 2,
+  "topic": "felszolito-mod",
+  "level": "A2",
+  "title": { "en": "Commands and requests: menj, gyere, egyél", "es": "Órdenes y peticiones: menj, gyere, egyél" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "To tell someone to do something, Hungarian puts a j between the verb stem and the ending: vár (he waits) becomes Várj! (Wait!). The same form is used for orders, requests, advice and invitations, and also for 'let's' (Menjünk! = Let's go!). There are separate forms for te (one friend), ti (several friends), Ön (one person you are formal with) and mi (let's). Politeness comes from extra words: Kérlek (to a friend), Kérem (formal), Tessék.",
+        "es": "Para pedirle a alguien que haga algo, el húngaro pone una j entre la raíz del verbo y la terminación: vár (él espera) pasa a Várj! (¡Espera!). La misma forma sirve para órdenes, peticiones, consejos e invitaciones, y también para «vamos a...» (Menjünk! = ¡Vamos!). Hay formas distintas para te (un amigo), ti (varios amigos), Ön (una persona a la que tratas de usted) y mi (vamos a...). La cortesía viene de palabras extra: Kérlek (a un amigo), Kérem (formal), Tessék."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "imp-forms",
+      "title": { "en": "The imperative: regular verbs", "es": "El imperativo: verbos regulares" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "várni (to wait)", "es": "várni (esperar)" },
+        { "en": "kérni (to ask for)", "es": "kérni (pedir)" }
+      ],
+      "rows": [
+        ["te", "várj", "kérj"],
+        ["ő / Ön", "várjon", "kérjen"],
+        ["mi", "várjunk", "kérjünk"],
+        ["ti", "várjatok", "kérjetek"],
+        ["ők / Önök", "várjanak", "kérjenek"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Who are you talking to?", "es": "¿A quién le hablas?" },
+      "items": [
+        {
+          "text": {
+            "en": "To a friend or a child (te): the short form, Várj! To several people you are informal with (ti): Várjatok!",
+            "es": "A un amigo o a un niño (te): la forma corta, Várj! A varias personas con las que tienes confianza (ti): Várjatok! (En México, el plural informal es ustedes.)"
+          },
+          "examples": [
+            { "es": "Gyere ide!", "tr": { "en": "Come here!", "es": "¡Ven aquí!" } },
+            { "es": "Anna, várj!", "tr": { "en": "Anna, wait!", "es": "¡Anna, espera!" } },
+            { "es": "Gyerekek, üljetek le!", "tr": { "en": "Children, sit down!", "es": "¡Niños, siéntense!" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "To one person you are formal with (Ön): the 3rd person form, Várjon! To several formal people (Önök): Várjanak!",
+            "es": "A una persona con la que eres formal (Ön): la forma de 3.ª persona, Várjon! A varias personas formales (Önök): Várjanak! Es el imperativo de usted (espere, esperen)."
+          },
+          "examples": [
+            { "es": "Kérem, várjon!", "tr": { "en": "Please wait.", "es": "Espere, por favor." } },
+            { "es": "Jöjjön be!", "tr": { "en": "Come in.", "es": "Pase." } },
+            { "es": "Üljenek le, kérem!", "tr": { "en": "Please sit down (all of you).", "es": "Siéntense, por favor." } }
+          ]
+        },
+        {
+          "text": { "en": "mi: a suggestion for you and me, 'let's ...'.", "es": "mi: una propuesta para ti y para mí, «vamos a...»." },
+          "examples": [
+            { "es": "Menjünk haza!", "tr": { "en": "Let's go home.", "es": "Vámonos a casa." } },
+            { "es": "Igyunk egy kávét!", "tr": { "en": "Let's have a coffee.", "es": "Tomemos un café." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imp-irregular",
+      "title": { "en": "Irregular verbs: menni, jönni, enni, inni", "es": "Verbos irregulares: menni, jönni, enni, inni" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "menni (to go)", "es": "menni (ir)" },
+        { "en": "jönni (to come)", "es": "jönni (venir)" },
+        { "en": "enni (to eat)", "es": "enni (comer)" },
+        { "en": "inni (to drink)", "es": "inni (beber)" }
+      ],
+      "rows": [
+        ["te", "menj", "gyere", "egyél", "igyál"],
+        ["ő / Ön", "menjen", "jöjjön", "egyen", "igyon"],
+        ["mi", "menjünk", "jöjjünk", "együnk", "igyunk"],
+        ["ti", "menjetek", "gyertek", "egyetek", "igyatok"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imp-assimilation",
+      "title": { "en": "The j changes after s, z and t", "es": "La j cambia después de s, z y t" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "olvasni (to read)", "es": "olvasni (leer)" },
+        { "en": "hozni (to bring)", "es": "hozni (traer)" },
+        { "en": "segíteni (to help)", "es": "segíteni (ayudar)" },
+        { "en": "sietni (to hurry)", "es": "sietni (apresurarse)" }
+      ],
+      "rows": [
+        ["te", "olvass", "hozz", "segíts", "siess"],
+        ["ő / Ön", "olvasson", "hozzon", "segítsen", "siessen"],
+        ["mi", "olvassunk", "hozzunk", "segítsünk", "siessünk"],
+        ["ti", "olvassatok", "hozzatok", "segítsetek", "siessetek"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "What happens to the j?", "es": "¿Qué pasa con la j?" },
+      "items": [
+        {
+          "text": {
+            "en": "The stem ends in s, sz or z: the j joins it and the sound is doubled: olvas + j = olvass, néz + j = nézz, hoz + j = hozz.",
+            "es": "La raíz termina en s, sz o z: la j se une a ella y el sonido se duplica: olvas + j = olvass, néz + j = nézz, hoz + j = hozz."
+          },
+          "examples": [
+            { "es": "Olvass egy könyvet!", "tr": { "en": "Read a book!", "es": "¡Lee un libro!" } },
+            { "es": "Nézz ide!", "tr": { "en": "Look here!", "es": "¡Mira aquí!" } },
+            { "es": "Hozz egy sört!", "tr": { "en": "Bring a beer!", "es": "¡Trae una cerveza!" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "The stem ends in t: after a short vowel the result is ss (siet + j = siess); after a long vowel or a consonant it is ts (segít + j = segíts). Exception: lát (to see) gives láss!, not láts.",
+            "es": "La raíz termina en t: después de una vocal corta el resultado es ss (siet + j = siess); después de una vocal larga o una consonante es ts (segít + j = segíts). Excepción: lát («ver») da láss!, no láts."
+          },
+          "examples": [
+            { "es": "Siess haza!", "tr": { "en": "Hurry home!", "es": "¡Apúrate a casa!" } },
+            { "es": "Segíts!", "tr": { "en": "Help!", "es": "¡Ayúdame!" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Any other ending: the j simply stays: vár + j = várj, kér + j = kérj, ír + j = írj, figyel + j = figyelj.",
+            "es": "Cualquier otra terminación: la j simplemente se queda: vár + j = várj, kér + j = kérj, ír + j = írj, figyel + j = figyelj."
+          },
+          "examples": [
+            { "es": "Írj egy levelet!", "tr": { "en": "Write a letter!", "es": "¡Escribe una carta!" } },
+            { "es": "Figyelj!", "tr": { "en": "Pay attention!", "es": "¡Pon atención!" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imp-definite",
+      "title": { "en": "With a definite object (a/az + noun, a name, ezt/azt)", "es": "Con objeto definido (a/az + sustantivo, un nombre, ezt/azt)" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "nézni (to look at)", "es": "nézni (mirar)" },
+        { "en": "olvasni (to read)", "es": "olvasni (leer)" }
+      ],
+      "rows": [
+        ["te + a/az", "nézd", "olvasd"],
+        ["ő / Ön + a/az", "nézze", "olvassa"],
+        ["mi + a/az", "nézzük", "olvassuk"],
+        ["ti + a/az", "nézzétek", "olvassátok"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "What do you use it for?", "es": "¿Para qué se usa?" },
+      "points": [
+        {
+          "text": {
+            "en": "Orders and instructions. With a prefix verb, the prefix comes AFTER the verb in a command: Ülj le! (not Le ülj).",
+            "es": "Órdenes e instrucciones. Con un verbo con prefijo, el prefijo va DESPUÉS del verbo en la orden: Ülj le! (no Le ülj). En español es una sola palabra (siéntate); en húngaro son dos."
+          },
+          "examples": [
+            { "es": "Ülj le!", "tr": { "en": "Sit down!", "es": "¡Siéntate!" } },
+            { "es": "Gyere be!", "tr": { "en": "Come in!", "es": "¡Pasa!" } },
+            { "es": "Nézd meg a térképet!", "tr": { "en": "Check the map!", "es": "¡Mira el mapa!" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Politeness: add Kérlek (to a friend), Kérem (formal) or Legyen szíves (be so kind, formal). Tessék means 'here you are' when you hand something over and 'go ahead' when you invite someone.",
+            "es": "Cortesía: añade Kérlek (a un amigo), Kérem (formal) o Legyen szíves (tenga la bondad, formal). Tessék significa «aquí tiene» cuando entregas algo y «adelante» cuando invitas a alguien."
+          },
+          "examples": [
+            { "es": "Kérlek, segíts!", "tr": { "en": "Please help me.", "es": "Por favor, ayúdame." } },
+            {
+              "es": "Legyen szíves, várjon egy percet!",
+              "tr": { "en": "Be so kind as to wait a minute.", "es": "Tenga la bondad de esperar un minuto." }
+            },
+            { "es": "Tessék, üljön le!", "tr": { "en": "Please, sit down.", "es": "Adelante, siéntese." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "'Don't ...!' is ne + the imperative. Never use nem for a command. The prefix still follows the verb: Ne menj el!",
+            "es": "«¡No...!» es ne + imperativo. Nunca uses nem para una orden. El prefijo sigue detrás del verbo: Ne menj el!"
+          },
+          "examples": [
+            { "es": "Ne siess!", "tr": { "en": "Don't hurry!", "es": "¡No te apresures!" } },
+            { "es": "Ne menj el!", "tr": { "en": "Don't leave!", "es": "¡No te vayas!" } },
+            { "es": "Ne hívd Annát!", "tr": { "en": "Don't call Anna!", "es": "¡No llames a Anna!" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a request or 'it is important' + hogy (that), the same j form appears: Kérem, hogy várjon. English says 'that you wait' or just 'please wait'; Spanish uses the subjunctive (que espere).",
+            "es": "Después de una petición o de «es importante» + hogy (que), aparece la misma forma con j: Kérem, hogy várjon. Es el subjuntivo del español (que espere)."
+          },
+          "examples": [
+            { "es": "Kérem, hogy várjon egy percet.", "tr": { "en": "I ask that you wait a minute.", "es": "Le pido que espere un minuto." } },
+            { "es": "Fontos, hogy pihenj.", "tr": { "en": "It is important that you rest.", "es": "Es importante que descanses." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Three pairs people mix up", "es": "Tres pares que se confunden" },
+      "pairs": [
+        {
+          "a": "Olvass egy könyvet!",
+          "b": "Olvasd el a levelet!",
+          "note": {
+            "en": "No object or an indefinite one (egy könyv): the j form. A definite object (a levél): the d form.",
+            "es": "Sin objeto o con uno indefinido (egy könyv): la forma con j. Con un objeto definido (a levél): la forma con d."
+          },
+          "examples": [
+            { "es": "Kérj egy kávét!", "tr": { "en": "Order a coffee!", "es": "¡Pide un café!" } },
+            { "es": "Kérd a számlát!", "tr": { "en": "Ask for the bill!", "es": "¡Pide la cuenta!" } }
+          ]
+        },
+        {
+          "a": "Nem megyek.",
+          "b": "Ne menj!",
+          "note": {
+            "en": "nem denies a statement; ne forbids: it goes with the imperative.",
+            "es": "nem niega una afirmación; ne prohíbe: va con el imperativo."
+          },
+          "examples": [
+            { "es": "Nem sietek.", "tr": { "en": "I am not in a hurry.", "es": "No tengo prisa." } },
+            { "es": "Ne siess!", "tr": { "en": "Don't hurry!", "es": "¡No te apresures!" } }
+          ]
+        },
+        {
+          "a": "Ülj le!",
+          "b": "Üljön le!",
+          "note": { "en": "te for a friend, Ön for someone you are formal with.", "es": "te para un amigo, Ön para alguien a quien tratas de usted." },
+          "examples": [
+            { "es": "Várj!", "tr": { "en": "Wait! (to a friend)", "es": "¡Espera! (a un amigo)" } },
+            { "es": "Várjon!", "tr": { "en": "Wait! (formal)", "es": "¡Espere! (formal)" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) The present tense is not an order: Mész is 'you go', the command is Menj! (2) For 'don't' use ne, never nem: Ne menj! (3) The prefix stays after the verb: Gyere be!, not Be gyere! (4) A definite object changes the ending: Nézd meg a térképet!",
+        "es": "Trampas clásicas: (1) El presente no es una orden: Mész es «vas», la orden es Menj! (2) Para «no» usa ne, nunca nem: Ne menj! (3) El prefijo se queda detrás del verbo: Gyere be!, no Be gyere! (4) Un objeto definido cambia la terminación: Nézd meg a térképet!"
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, a command uses the verb stem plus a j. The verb «várni», to wait, gives «Várj!» to a friend, «Várjatok!» to a group, and «Kérem, várjon!» to someone you are formal with. Some verbs are irregular: «menni» gives «Menj!», «jönni» gives «Gyere!», and «enni» gives «Egyél!» After the sounds s, z and t, the j merges: «Olvass!», «Hozz!», «Siess!» For a definite object the ending is d: «Nézd meg a térképet!» And to say don't, use «ne»: «Ne menj el!»",
+    "es": "En húngaro, una orden usa la raíz del verbo más una j. El verbo «várni», esperar, da «Várj!» a un amigo, «Várjatok!» a un grupo, y «Kérem, várjon!» a alguien a quien tratas de usted. Algunos verbos son irregulares: «menni» da «Menj!», «jönni» da «Gyere!» y «enni» da «Egyél!» Después de los sonidos s, z y t, la j se funde: «Olvass!», «Hozz!», «Siess!» Con un objeto definido, la terminación es d: «Nézd meg a térképet!» Y para decir no lo hagas, usa «ne»: «Ne menj el!»"
+  },
+  "glossary": [
+    { "word": "hoz", "gloss": { "en": "to bring", "es": "traer" } },
+    { "word": "be", "gloss": { "en": "in (verb prefix: jön be = come in)", "es": "adentro (prefijo: jön be = entrar)" } },
+    { "word": "el", "gloss": { "en": "away, through (verb prefix: megy el = leave)", "es": "fuera, hasta el final (prefijo: megy el = irse)" } }
+  ],
+  "items": [
+    {
+      "id": "felszolito-mod-c01",
+      "sentence": "Péter, ___ ide!",
+      "options": ["jössz", "gyere", "jöjjön"],
+      "correct": 1,
+      "why": {
+        "en": "Péter is a friend, so the te form is needed: jönni gives the irregular gyere.",
+        "es": "Péter es un amigo, así que hace falta la forma te: jönni da la forma irregular gyere."
+      },
+      "wrong": {
+        "jössz": {
+          "en": "jössz is the plain present, 'you are coming': with it the sentence would be a statement, not an order.",
+          "es": "jössz es el presente normal, «vienes»: con él la frase sería una afirmación, no una orden."
+        },
+        "jöjjön": {
+          "en": "jöjjön is the polite Ön form (or 'let him come'): it is for someone you are formal with, not for a friend.",
+          "es": "jöjjön es la forma de cortesía Ön (o «que venga»): es para alguien a quien tratas de usted, no para un amigo."
+        }
+      },
+      "examples": ["Gyere haza!", "Gyere vissza!"],
+      "tr": { "en": "Péter, come here!", "es": "¡Péter, ven aquí!" }
+    },
+    { "id": "felszolito-mod-f01", "kind": "form", "verb": "várni", "person": "te", "answer": "várj", "table": "imp-forms" },
+    {
+      "id": "felszolito-mod-c02",
+      "sentence": "Kérem, ___ be!",
+      "options": ["jöjjön", "gyere", "jön"],
+      "correct": 0,
+      "why": {
+        "en": "Kérem is a polite request to someone you are formal with (Ön), so the 3rd person imperative jöjjön is used.",
+        "es": "Kérem es una petición cortés a alguien a quien tratas de usted (Ön), por eso se usa el imperativo de 3.ª persona jöjjön."
+      },
+      "wrong": {
+        "gyere": {
+          "en": "gyere is the te form for a friend or a child; after the polite kérem it would mix two levels of formality.",
+          "es": "gyere es la forma te para un amigo o un niño; después del formal kérem mezclaría dos niveles de formalidad."
+        },
+        "jön": {
+          "en": "jön is the plain present, 'he/she comes': a statement, not a request.",
+          "es": "jön es el presente normal, «él viene»: una afirmación, no una petición."
+        }
+      },
+      "examples": ["Jöjjön ide!", "Kérem, jöjjön vissza!"],
+      "tr": { "en": "Please, come in!", "es": "¡Por favor, pase!" }
+    },
+    { "id": "felszolito-mod-f02", "kind": "form", "verb": "kérni", "person": "ti", "answer": "kérjetek", "table": "imp-forms" },
+    {
+      "id": "felszolito-mod-c03",
+      "sentence": "Anna, ne ___ el!",
+      "options": ["mész", "menjen", "menj"],
+      "correct": 2,
+      "why": {
+        "en": "ne ('don't') is followed by the imperative; Anna is a friend, so the te form: menj.",
+        "es": "ne («no») va seguido del imperativo; Anna es una amiga, así que la forma te: menj."
+      },
+      "wrong": {
+        "mész": {
+          "en": "mész is the plain present, 'you go': it is for statements and questions, not for commands after ne.",
+          "es": "mész es el presente normal, «vas»: sirve para afirmaciones y preguntas, no para órdenes después de ne."
+        },
+        "menjen": {
+          "en": "menjen is the Ön form or 'let her go'; Anna is a friend, so it would sound stiff and odd.",
+          "es": "menjen es la forma Ön o «que se vaya ella»; Anna es una amiga, así que sonaría rígido y raro."
+        }
+      },
+      "examples": ["Ne menj haza!", "Ne várj!"],
+      "tr": { "en": "Anna, don't leave!", "es": "¡Anna, no te vayas!" }
+    },
+    { "id": "felszolito-mod-f03", "kind": "form", "verb": "várni", "person": "ő / Ön", "answer": "várjon", "table": "imp-forms" },
+    {
+      "id": "felszolito-mod-c04",
+      "sentence": "Gábor, ___ még egy kis levest!",
+      "options": ["eszel", "egyél", "egyen"],
+      "correct": 1,
+      "why": {
+        "en": "Gábor is a friend, so the te form is needed: enni has the irregular imperative egyél.",
+        "es": "Gábor es un amigo, así que hace falta la forma te: enni tiene el imperativo irregular egyél."
+      },
+      "wrong": {
+        "eszel": {
+          "en": "eszel is the plain present, 'you eat': the sentence would state or ask what Gábor does, not invite him.",
+          "es": "eszel es el presente normal, «comes»: la frase afirmaría o preguntaría lo que hace Gábor, no lo invitaría."
+        },
+        "egyen": {
+          "en": "egyen is the Ön form or 'let him eat': it is for someone you are formal with.",
+          "es": "egyen es la forma Ön o «que coma él»: es para alguien a quien tratas de usted."
+        }
+      },
+      "examples": ["Egyél egy almát!", "Igyál egy teát!"],
+      "tr": { "en": "Gábor, have some more soup!", "es": "¡Gábor, come un poco más de sopa!" }
+    },
+    { "id": "felszolito-mod-f04", "kind": "form", "verb": "menni", "person": "te", "answer": "menj", "table": "imp-irregular" },
+    {
+      "id": "felszolito-mod-w01",
+      "kind": "why",
+      "es": "Ne menj el!",
+      "target": "Ne",
+      "tr": { "en": "Don't leave!", "es": "¡No te vayas!" },
+      "options": [
+        {
+          "text": { "en": "A plain negative statement with nem", "es": "Una afirmación negativa normal con nem" },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem megyek el (I am not leaving): a statement, not an order.",
+            "es": "Con esta regla la frase sería Nem megyek el (no me voy): una afirmación, no una orden."
+          }
+        },
+        { "text": { "en": "'Don't' + command: ne goes before the imperative", "es": "«No» + orden: ne va delante del imperativo" } },
+        {
+          "text": { "en": "A suggestion for both of us: the mi form", "es": "Una propuesta para los dos: la forma mi" },
+          "wrong": {
+            "en": "With this rule the sentence would be Menjünk el! (Let's leave!); Ne menj el! speaks to one person.",
+            "es": "Con esta regla la frase sería Menjünk el! (¡Vámonos!); Ne menj el! se dirige a una sola persona."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "felszolito-mod-c05",
+      "sentence": "Gyerekek, ___ le!",
+      "options": ["ülj", "üljenek", "üljetek"],
+      "correct": 2,
+      "why": {
+        "en": "Gyerekek are several children you are talking to (ti), so the ending is -jetek: üljetek.",
+        "es": "Gyerekek son varios niños a los que les hablas (ti), por eso la terminación es -jetek: üljetek."
+      },
+      "wrong": {
+        "ülj": { "en": "ülj is for one person (te); here there are several children.", "es": "ülj es para una sola persona (te); aquí son varios niños." },
+        "üljenek": {
+          "en": "üljenek is for several people you are formal with (Önök) or 'let them sit': not for children you talk to directly.",
+          "es": "üljenek es para varias personas a las que tratas de usted (Önök) o «que se sienten»: no para niños a los que les hablas directamente."
+        }
+      },
+      "examples": ["Üljetek ide!", "Gyerekek, várjatok!"],
+      "tr": { "en": "Children, sit down!", "es": "¡Niños, siéntense!" }
+    },
+    {
+      "id": "felszolito-mod-f05",
+      "kind": "form",
+      "verb": "jönni",
+      "person": "te",
+      "answer": "gyere",
+      "accept": ["jöjj"],
+      "table": "imp-irregular"
+    },
+    {
+      "id": "felszolito-mod-c06",
+      "sentence": "Gábor, ___ meg a térképet!",
+      "options": ["nézd", "nézz", "nézzen"],
+      "correct": 0,
+      "why": {
+        "en": "a térképet is a definite object (a + noun), so the verb takes the definite ending: nézd.",
+        "es": "a térképet es un objeto definido (a + sustantivo), por eso el verbo lleva la terminación definida: nézd."
+      },
+      "wrong": {
+        "nézz": {
+          "en": "nézz is for no object or an indefinite one (Nézz ide!, Nézz egy térképet!); with a definite object it does not fit.",
+          "es": "nézz es para cuando no hay objeto o es indefinido (Nézz ide!, Nézz egy térképet!); con un objeto definido no encaja."
+        },
+        "nézzen": {
+          "en": "nézzen is the Ön form (indefinite) or 'let him look'; Gábor is a friend.",
+          "es": "nézzen es la forma Ön (indefinida) o «que mire él»; Gábor es un amigo."
+        }
+      },
+      "examples": ["Nézd meg!", "Olvasd el a levelet!"],
+      "tr": { "en": "Gábor, check the map!", "es": "¡Gábor, mira el mapa!" }
+    },
+    { "id": "felszolito-mod-f06", "kind": "form", "verb": "enni", "person": "te", "answer": "egyél", "table": "imp-irregular" },
+    {
+      "id": "felszolito-mod-c07",
+      "sentence": "Gyere, ___ moziba!",
+      "options": ["menjek", "menjünk", "menjetek"],
+      "correct": 1,
+      "why": {
+        "en": "You invite one person and include yourself: 'let's go' is the mi form, menjünk.",
+        "es": "Invitas a una persona y te incluyes: «vamos» es la forma mi, menjünk."
+      },
+      "wrong": {
+        "menjek": {
+          "en": "menjek is the én form, 'shall I go?': it leaves the other person out.",
+          "es": "menjek es la forma én, «¿voy yo?»: deja fuera a la otra persona."
+        },
+        "menjetek": {
+          "en": "menjetek is for several people you address (ti), but gyere speaks to one person.",
+          "es": "menjetek es para varias personas a las que les hablas (ti), pero gyere se dirige a una sola persona."
+        }
+      },
+      "examples": ["Menjünk haza!", "Igyunk egy kávét!"],
+      "tr": { "en": "Come on, let's go to the cinema!", "es": "¡Ven, vamos al cine!" }
+    },
+    { "id": "felszolito-mod-f07", "kind": "form", "verb": "menni", "person": "mi", "answer": "menjünk", "table": "imp-irregular" },
+    {
+      "id": "felszolito-mod-c08",
+      "sentence": "Ne ___, van időnk!",
+      "options": ["siets", "sietj", "siess"],
+      "correct": 2,
+      "why": {
+        "en": "siet ends in t after a short vowel (e): t + j becomes ss, so siess.",
+        "es": "siet termina en t después de una vocal corta (e): t + j se vuelve ss, por eso siess."
+      },
+      "wrong": {
+        "siets": {
+          "en": "siets follows the pattern of segít (segíts), but that is for t after a long vowel or a consonant; after a short e it is ss.",
+          "es": "siets sigue el modelo de segít (segíts), pero ese es para t después de vocal larga o consonante; después de una e corta es ss."
+        },
+        "sietj": {
+          "en": "sietj keeps the j apart; after t the j always merges (ss or ts).",
+          "es": "sietj deja la j aparte; después de t la j siempre se funde (ss o ts)."
+        }
+      },
+      "examples": ["Siess haza!", "Gyerekek, siessetek!"],
+      "tr": { "en": "Don't hurry, we have time!", "es": "¡No te apresures, tenemos tiempo!" }
+    },
+    { "id": "felszolito-mod-f08", "kind": "form", "verb": "inni", "person": "ti", "answer": "igyatok", "table": "imp-irregular" },
+    {
+      "id": "felszolito-mod-w02",
+      "kind": "why",
+      "es": "Kérem, jöjjön be!",
+      "target": "jöjjön",
+      "tr": { "en": "Please, come in!", "es": "¡Por favor, pase!" },
+      "options": [
+        {
+          "text": { "en": "Informal te form: the short imperative", "es": "Forma informal te: el imperativo corto" },
+          "wrong": {
+            "en": "With this rule the sentence would be Gyere be! (said to a friend).",
+            "es": "Con esta regla la frase sería Gyere be! (dicho a un amigo)."
+          }
+        },
+        {
+          "text": { "en": "A statement: he or she comes in", "es": "Una afirmación: él o ella entra" },
+          "wrong": {
+            "en": "With this rule the sentence would be Bejön (he/she comes in): a plain present, not a request.",
+            "es": "Con esta regla la frase sería Bejön (entra): un presente normal, no una petición."
+          }
+        },
+        { "text": { "en": "Polite Ön form: the 3rd person imperative", "es": "Forma de cortesía Ön: el imperativo de 3.ª persona" } }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "felszolito-mod-c09",
+      "sentence": "Péter, ___ egy könyvet!",
+      "options": ["olvass", "olvasj", "olvas"],
+      "correct": 0,
+      "why": { "en": "olvas ends in s: s + j merges into ss, so olvass.", "es": "olvas termina en s: s + j se funde en ss, por eso olvass." },
+      "wrong": {
+        "olvasj": { "en": "olvasj leaves the j apart; after s the j joins it: olvass.", "es": "olvasj deja la j aparte; después de s la j se une: olvass." },
+        "olvas": {
+          "en": "olvas is the plain present, 'he/she reads': a statement, not an order.",
+          "es": "olvas es el presente normal, «él lee»: una afirmación, no una orden."
+        }
+      },
+      "examples": ["Olvass egy levelet!", "Nézz ide!"],
+      "tr": { "en": "Péter, read a book!", "es": "¡Péter, lee un libro!" }
+    },
+    { "id": "felszolito-mod-f09", "kind": "form", "verb": "olvasni", "person": "te", "answer": "olvass", "table": "imp-assimilation" },
+    {
+      "id": "felszolito-mod-c10",
+      "sentence": "___ egy kávét, kérlek!",
+      "options": ["Hozj", "Hoz", "Hozz"],
+      "correct": 2,
+      "why": { "en": "hoz ends in z: z + j merges into zz, so hozz.", "es": "hoz termina en z: z + j se funde en zz, por eso hozz." },
+      "wrong": {
+        "Hozj": { "en": "Hozj leaves the j apart; after z the j joins it: hozz.", "es": "Hozj deja la j aparte; después de z la j se une: hozz." },
+        "Hoz": {
+          "en": "Hoz is the plain present, 'he/she brings': a statement, not an order.",
+          "es": "Hoz es el presente normal, «él trae»: una afirmación, no una orden."
+        }
+      },
+      "examples": ["Hozz egy teát!", "Hozz vizet!"],
+      "tr": { "en": "Bring a coffee, please!", "es": "¡Trae un café, por favor!" }
+    },
+    { "id": "felszolito-mod-f10", "kind": "form", "verb": "hozni", "person": "te", "answer": "hozz", "table": "imp-assimilation" },
+    {
+      "id": "felszolito-mod-c11",
+      "sentence": "Kérem, ___ le!",
+      "options": ["ülj", "üljön", "ülök"],
+      "correct": 1,
+      "why": {
+        "en": "kérem asks politely (Ön), so the 3rd person imperative: üljön.",
+        "es": "kérem pide con cortesía (Ön), por eso el imperativo de 3.ª persona: üljön."
+      },
+      "wrong": {
+        "ülj": {
+          "en": "ülj is the te form for a friend; after the formal kérem it is the wrong level.",
+          "es": "ülj es la forma te para un amigo; después del formal kérem es el nivel equivocado."
+        },
+        "ülök": {
+          "en": "ülök is 'I sit' (én, present): the speaker would be talking about himself.",
+          "es": "ülök es «yo me siento» (én, presente): el hablante hablaría de sí mismo."
+        }
+      },
+      "examples": ["Üljön ide!", "Kérem, üljenek le!"],
+      "tr": { "en": "Please sit down!", "es": "¡Siéntese, por favor!" }
+    },
+    { "id": "felszolito-mod-f11", "kind": "form", "verb": "nézni", "person": "te + a/az", "answer": "nézd", "table": "imp-definite" },
+    {
+      "id": "felszolito-mod-w03",
+      "kind": "why",
+      "es": "Olvass egy könyvet!",
+      "target": "Olvass",
+      "tr": { "en": "Read a book!", "es": "¡Lee un libro!" },
+      "options": [
+        { "text": { "en": "Imperative: olvas + j, and the s merges (ss)", "es": "Imperativo: olvas + j, y la s se funde (ss)" } },
+        {
+          "text": { "en": "Present tense: you read", "es": "Presente: tú lees" },
+          "wrong": {
+            "en": "With this rule the sentence would be Olvasol egy könyvet (you read a book): a statement.",
+            "es": "Con esta regla la frase sería Olvasol egy könyvet (lees un libro): una afirmación."
+          }
+        },
+        {
+          "text": { "en": "Definite object: the -d ending", "es": "Objeto definido: la terminación -d" },
+          "wrong": {
+            "en": "With this rule the sentence would be Olvasd a könyvet; egy könyvet is indefinite (egy), so there is no -d.",
+            "es": "Con esta regla la frase sería Olvasd a könyvet; egy könyvet es indefinido (egy), así que no lleva -d."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "felszolito-mod-c12",
+      "sentence": "___, itt a számla.",
+      "options": ["Tessék", "Köszönöm", "Elnézést"],
+      "correct": 0,
+      "why": {
+        "en": "Tessék means 'here you are': you say it when you hand something over.",
+        "es": "Tessék significa «aquí tiene»: se dice al entregar algo."
+      },
+      "wrong": {
+        "Köszönöm": {
+          "en": "köszönöm is 'thank you': you say it when you receive something, not when you hand it over.",
+          "es": "köszönöm es «gracias»: se dice al recibir algo, no al entregarlo."
+        },
+        "Elnézést": {
+          "en": "elnézést is 'excuse me': it is for getting attention or apologising.",
+          "es": "elnézést es «disculpe»: sirve para llamar la atención o pedir perdón."
+        }
+      },
+      "examples": ["Tessék, a kulcs.", "Tessék, üljön le!"],
+      "tr": { "en": "Here you are, here is the bill.", "es": "Aquí tiene, aquí está la cuenta." }
+    },
+    { "id": "felszolito-mod-f12", "kind": "form", "verb": "olvasni", "person": "mi + a/az", "answer": "olvassuk", "table": "imp-definite" },
+    {
+      "id": "felszolito-mod-c13",
+      "sentence": "Anna, segíts, ___!",
+      "options": ["kérem", "kérnek", "kérlek"],
+      "correct": 2,
+      "why": {
+        "en": "Anna is a friend, so the informal 'please' is kérlek (I ask you).",
+        "es": "Anna es una amiga, así que el «por favor» informal es kérlek («te pido»)."
+      },
+      "wrong": {
+        "kérem": {
+          "en": "kérem is the formal 'please', for someone you address as Ön.",
+          "es": "kérem es el «por favor» formal, para alguien a quien tratas de usted."
+        },
+        "kérnek": {
+          "en": "kérnek is 'they ask' (3rd person plural): the sentence would be about other people.",
+          "es": "kérnek es «ellos piden» (3.ª persona plural): la frase hablaría de otras personas."
+        }
+      },
+      "examples": ["Kérlek, várj!", "Kérlek, gyere!"],
+      "tr": { "en": "Anna, help me, please!", "es": "¡Anna, ayúdame, por favor!" }
+    },
+    {
+      "id": "felszolito-mod-c14",
+      "sentence": "Kérem, hogy ___ egy percet.",
+      "options": ["vár", "várjon", "várni"],
+      "correct": 1,
+      "why": {
+        "en": "After kérem, hogy the same j form is used: várjon (the person you address as Ön).",
+        "es": "Después de kérem, hogy se usa la misma forma con j: várjon (la persona a la que tratas de usted)."
+      },
+      "wrong": {
+        "vár": {
+          "en": "vár is the plain present, 'he/she waits': after kérem, hogy it would state a fact instead of asking.",
+          "es": "vár es el presente normal, «él espera»: después de kérem, hogy afirmaría un hecho en vez de pedir."
+        },
+        "várni": {
+          "en": "várni is the infinitive, 'to wait': after hogy a conjugated verb is needed.",
+          "es": "várni es el infinitivo, «esperar»: después de hogy hace falta un verbo conjugado."
+        }
+      },
+      "examples": ["Fontos, hogy pihenj.", "Kérem, hogy üljön le."],
+      "tr": { "en": "I ask that you wait a minute.", "es": "Le pido que espere un minuto." }
+    },
+    {
+      "id": "felszolito-mod-w04",
+      "kind": "why",
+      "es": "Nézd meg a térképet!",
+      "target": "Nézd",
+      "tr": { "en": "Check the map!", "es": "¡Mira el mapa!" },
+      "options": [
+        {
+          "text": { "en": "No object or an indefinite one: the -j form", "es": "Sin objeto o con uno indefinido: la forma con -j" },
+          "wrong": {
+            "en": "With this rule the verb would be nézz, as in Nézz egy térképet! (look at a map, any map).",
+            "es": "Con esta regla el verbo sería nézz, como en Nézz egy térképet! (mira un mapa, cualquiera)."
+          }
+        },
+        {
+          "text": { "en": "Polite Ön form: -jen / -je", "es": "Forma de cortesía Ön: -jen / -je" },
+          "wrong": {
+            "en": "With this rule the sentence would be Nézze meg a térképet! (said to someone you are formal with).",
+            "es": "Con esta regla la frase sería Nézze meg a térképet! (dicho a alguien a quien tratas de usted)."
+          }
+        },
+        { "text": { "en": "The object (a térképet) is definite: the -d form", "es": "El objeto (a térképet) es definido: la forma con -d" } }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

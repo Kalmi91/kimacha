@@ -4,6 +4,7 @@ const es: typeof en = {
   onboarding: {
     welcome: '¡Bienvenido a Kimacha! Gracias por usar la app, significa mucho.',
     start: 'Empezar',
+    learnTitle: '¿Qué idioma quieres aprender?',
   },
   intro: {
     title: 'Así funciona',
@@ -19,7 +20,6 @@ const es: typeof en = {
   },
   onboardingTheme: {
     title: 'Elige un estilo',
-    sampleWord: 'the car',
     know: 'Lo sé',
     later: 'Después puedes elegir entre 24 en Ajustes.',
     next: 'Continuar',

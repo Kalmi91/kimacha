@@ -1,0 +1,605 @@
+{
+  "schema": 2,
+  "topic": "ul-ul-kent",
+  "level": "A2",
+  "title": { "en": "Languages and 'as': -ul/-ül, -ként", "es": "Idiomas y «como»: -ul/-ül, -ként" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "To say 'in Hungarian' you do not use a little word like 'in': you add an ending to the language name. magyar = Hungarian, magyarul = in Hungarian. So 'Do you speak Hungarian?' is Beszélsz magyarul? The same ending, -ul/-ül, also makes 'how' words: jól (well), rosszul (badly). A second ending, -ként, means 'as': tanárként = as a teacher. Both are glued to the end of the word.",
+        "es": "Para decir «en húngaro» no se usa una palabrita como «en»: se añade una terminación al nombre del idioma. magyar = húngaro, magyarul = en húngaro. Así que «¿Hablas húngaro?» es Beszélsz magyarul? La misma terminación, -ul/-ül, forma también palabras de «cómo»: jól (bien), rosszul (mal). Una segunda terminación, -ként, significa «como»: tanárként = como profesor. Las dos se pegan al final de la palabra."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ul-forms",
+      "title": { "en": "Language names and 'how' words: word + -ul/-ül", "es": "Idiomas y palabras de «cómo»: palabra + -ul/-ül" },
+      "header": [
+        { "en": "Word", "es": "Palabra" },
+        { "en": "With -ul/-ül", "es": "Con -ul/-ül" }
+      ],
+      "rows": [
+        ["magyar", "magyarul"],
+        ["angol", "angolul"],
+        ["spanyol", "spanyolul"],
+        ["német", "németül"],
+        ["rossz", "rosszul"],
+        ["jó", "jól"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Which ending: -ul or -ül?", "es": "¿Qué terminación: -ul o -ül?" },
+      "items": [
+        {
+          "text": {
+            "en": "Words with back vowels (a, á, o, ó, u, ú) take -ul: magyar → magyarul, angol → angolul, spanyol → spanyolul, rossz → rosszul. It is the same vowel harmony as in -ban/-ben.",
+            "es": "Las palabras con vocales posteriores (a, á, o, ó, u, ú) llevan -ul: magyar → magyarul, angol → angolul, spanyol → spanyolul, rossz → rosszul. Es la misma armonía vocálica que en -ban/-ben."
+          },
+          "examples": [
+            { "es": "Beszélek magyarul.", "tr": { "en": "I speak Hungarian.", "es": "Hablo húngaro." } },
+            { "es": "Diego spanyolul ír.", "tr": { "en": "Diego writes in Spanish.", "es": "Diego escribe en español." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Words with front vowels (e, é, i, í, ö, ő, ü, ű) take -ül: német → németül. The word egyedül (alone) has the same ending.",
+            "es": "Las palabras con vocales anteriores (e, é, i, í, ö, ő, ü, ű) llevan -ül: német → németül. La palabra egyedül (solo) tiene la misma terminación."
+          },
+          "examples": [
+            { "es": "Anna németül tanul.", "tr": { "en": "Anna is learning German.", "es": "Anna aprende alemán." } },
+            { "es": "Egyedül vagyok otthon.", "tr": { "en": "I am home alone.", "es": "Estoy solo en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "jó (good) is irregular: its 'how' word is jól, not jóul. rossz is regular: rosszul.",
+            "es": "jó (bueno) es irregular: su palabra de «cómo» es jól, no jóul. rossz es regular: rosszul."
+          },
+          "examples": [
+            { "es": "Péter jól beszél angolul.", "tr": { "en": "Péter speaks English well.", "es": "Péter habla bien inglés." } },
+            { "es": "Rosszul beszélek angolul.", "tr": { "en": "I speak English badly.", "es": "Hablo mal inglés." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "What the endings are for", "es": "Para qué sirven las terminaciones" },
+      "points": [
+        {
+          "text": {
+            "en": "Languages: after beszél (speak), tud (know a language), ért (understand), tanul (learn), ír (write) and olvas (read) the language takes -ul/-ül. There is no word for 'in'.",
+            "es": "Idiomas: después de beszél (hablar), tud (saber un idioma), ért (entender), tanul (aprender), ír (escribir) y olvas (leer) el idioma lleva -ul/-ül. No hay palabra para «en»."
+          },
+          "examples": [
+            { "es": "Tudsz spanyolul?", "tr": { "en": "Do you know Spanish?", "es": "¿Sabes español?" } },
+            { "es": "Magyarul tanulok.", "tr": { "en": "I am learning Hungarian.", "es": "Aprendo húngaro." } },
+            { "es": "Nem értek angolul.", "tr": { "en": "I don't understand English.", "es": "No entiendo inglés." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "jól (well) and rosszul (badly) say HOW. They also work with lenni for how you feel: Jól vagyok. Rosszul vagyok.",
+            "es": "jól (bien) y rosszul (mal) dicen CÓMO. También funcionan con lenni para cómo te sientes: Jól vagyok. Rosszul vagyok."
+          },
+          "examples": [
+            { "es": "Anna jól beszél magyarul.", "tr": { "en": "Anna speaks Hungarian well.", "es": "Anna habla bien húngaro." } },
+            { "es": "Köszönöm, jól vagyok.", "tr": { "en": "Thank you, I am well.", "es": "Gracias, estoy bien." } },
+            { "es": "Rosszul vagyok.", "tr": { "en": "I feel unwell.", "es": "Me siento mal." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Most other adjectives make their 'how' word with -an/-en instead: szép → szépen, gyors → gyorsan. Here only jól and rosszul are the ones to learn with -ul.",
+            "es": "La mayoría de los demás adjetivos forman su palabra de «cómo» con -an/-en: szép → szépen, gyors → gyorsan. Aquí solo jól y rosszul se aprenden con -ul."
+          },
+          "examples": [
+            { "es": "Kati szépen beszél magyarul.", "tr": { "en": "Kati speaks Hungarian beautifully.", "es": "Kati habla húngaro muy bonito." } },
+            { "es": "Péter gyorsan olvas.", "tr": { "en": "Péter reads fast.", "es": "Péter lee rápido." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ként means 'as' and names the role someone has or plays. There is no word for 'a': tanárként = as a teacher. It never changes with vowel harmony.",
+            "es": "-ként significa «como» y nombra el papel que alguien tiene o juega. No hay palabra para «un/una»: tanárként = como profesor. Nunca cambia por la armonía vocálica."
+          },
+          "examples": [
+            { "es": "Anna tanárként dolgozik.", "tr": { "en": "Anna works as a teacher.", "es": "Anna trabaja como profesora." } },
+            {
+              "es": "Lupita turistaként jön Budapestre.",
+              "tr": { "en": "Lupita comes to Budapest as a tourist.", "es": "Lupita viene a Budapest como turista." }
+            },
+            { "es": "Barátként segítek.", "tr": { "en": "I help as a friend.", "es": "Ayudo como amigo." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kent-forms",
+      "title": { "en": "Noun + -ként: the ending never changes", "es": "Sustantivo + -ként: la terminación nunca cambia" },
+      "header": [
+        { "en": "Word", "es": "Palabra" },
+        { "en": "With -ként", "es": "Con -ként" }
+      ],
+      "rows": [
+        ["tanár", "tanárként"],
+        ["orvos", "orvosként"],
+        ["diák", "diákként"],
+        ["barát", "barátként"],
+        ["turista", "turistaként"],
+        ["kolléga", "kollégaként"],
+        ["vendég", "vendégként"],
+        ["főnök", "főnökként"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Without or with the ending", "es": "Sin o con la terminación" },
+      "pairs": [
+        {
+          "a": "Péter magyar.",
+          "b": "Péter magyarul beszél.",
+          "note": {
+            "en": "magyar says what Péter is. magyarul says in which language he speaks.",
+            "es": "magyar dice qué es Péter. magyarul dice en qué idioma habla."
+          },
+          "examples": [
+            {
+              "es": "Kati magyar, de spanyolul is beszél.",
+              "tr": { "en": "Kati is Hungarian, but she also speaks Spanish.", "es": "Kati es húngara, pero también habla español." }
+            },
+            { "es": "Ez a könyv magyar.", "tr": { "en": "This book is Hungarian.", "es": "Este libro es húngaro." } },
+            { "es": "Ezt a könyvet magyarul olvasom.", "tr": { "en": "I read this book in Hungarian.", "es": "Leo este libro en húngaro." } }
+          ]
+        },
+        {
+          "a": "Anna tanár.",
+          "b": "Anna tanárként dolgozik.",
+          "note": {
+            "en": "tanár says what Anna is. tanárként says in which role she works.",
+            "es": "tanár dice qué es Anna. tanárként dice en qué papel trabaja."
+          },
+          "examples": [
+            { "es": "Gábor orvos.", "tr": { "en": "Gábor is a doctor.", "es": "Gábor es médico." } },
+            {
+              "es": "Gábor orvosként dolgozik a kórházban.",
+              "tr": { "en": "Gábor works as a doctor in the hospital.", "es": "Gábor trabaja como médico en el hospital." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: 'in Hungarian' is magyarul, never magyarban (-ban/-ben is for being inside something, like a házban, not for languages). Do not say Beszélek magyar either: after beszél the language takes -ul. 'Well' is jól, not jóul. And 'as a teacher' is tanárként, with no word for 'as' or 'a'. Languages and nationalities are written with a small letter: magyar, spanyol.",
+        "es": "Trampa clásica: «en húngaro» es magyarul, nunca magyarban (-ban/-ben es para estar dentro de algo, como a házban, no para idiomas). Tampoco digas Beszélek magyar: después de beszél el idioma lleva -ul. «Bien» es jól, no jóul. Y «como profesor» es tanárként, sin palabra para «como» ni para «un». Los idiomas y las nacionalidades se escriben con minúscula: magyar, spanyol."
+      }
+    }
+  ],
+  "speak": {
+    "en": "To say 'in Hungarian', Hungarian adds an ending to the language name: «magyar» becomes «magyarul». «Beszélsz magyarul?» means: do you speak Hungarian? Words with back vowels get one ending, as in «angolul» and «spanyolul». Words with front vowels get another, as in «németül». Well is «jól», and badly is «rosszul». A different ending means as: «Anna tanárként dolgozik» is: Anna works as a teacher. This ending never changes.",
+    "es": "Para decir 'en húngaro', el húngaro añade una terminación al nombre del idioma: «magyar» se convierte en «magyarul». «Beszélsz magyarul?» significa: ¿hablas húngaro? Las palabras con vocales posteriores llevan una terminación, como en «angolul» y «spanyolul». Las palabras con vocales anteriores llevan otra, como en «németül». Bien se dice «jól», y mal se dice «rosszul». Otra terminación significa como: «Anna tanárként dolgozik» quiere decir: Anna trabaja como profesora. Esta terminación nunca cambia."
+  },
+  "glossary": [
+    { "word": "angol", "gloss": { "en": "English", "es": "inglés" } },
+    { "word": "spanyol", "gloss": { "en": "Spanish", "es": "español" } },
+    { "word": "német", "gloss": { "en": "German", "es": "alemán" } }
+  ],
+  "items": [
+    {
+      "id": "ul-ul-kent-c01",
+      "sentence": "Beszélsz ___?",
+      "options": ["magyar", "magyarul", "magyarban"],
+      "correct": 1,
+      "why": {
+        "en": "Beszél takes the language with -ul: magyarul means 'in Hungarian', so Beszélsz magyarul? is 'Do you speak Hungarian?'.",
+        "es": "Con beszél el idioma lleva -ul: magyarul significa «en húngaro», así que Beszélsz magyarul? es «¿Hablas húngaro?»."
+      },
+      "wrong": {
+        "magyar": {
+          "en": "With magyar the sentence would put the bare nationality word after the verb, as in English 'speak Hungarian'. magyar alone says what someone is (Kati magyar), not the language you speak in.",
+          "es": "Con magyar la frase pondría la palabra de nacionalidad sola después del verbo, como en «hablar húngaro». magyar a secas dice qué es alguien (Kati magyar), no en qué idioma hablas."
+        },
+        "magyarban": {
+          "en": "magyarban would mean 'inside the Hungarian (thing)', like a place. -ban/-ben is for places (a házban), not for languages.",
+          "es": "magyarban significaría «dentro de lo húngaro», como un lugar. -ban/-ben es para lugares (a házban), no para idiomas."
+        }
+      },
+      "examples": ["Beszélek magyarul.", "Nem beszélek magyarul."],
+      "tr": { "en": "Do you speak Hungarian?", "es": "¿Hablas húngaro?" }
+    },
+    { "id": "ul-ul-kent-f01", "kind": "form", "verb": "magyar", "person": "-ul/-ül", "answer": "magyarul", "table": "ul-forms" },
+    {
+      "id": "ul-ul-kent-c02",
+      "sentence": "Lupita ___ beszél, de magyarul is tanul.",
+      "options": ["spanyolül", "spanyol", "spanyolul"],
+      "correct": 2,
+      "why": {
+        "en": "spanyol has back vowels (a, o), so the ending is -ul: spanyolul, 'in Spanish'.",
+        "es": "spanyol tiene vocales posteriores (a, o), así que la terminación es -ul: spanyolul, «en español»."
+      },
+      "wrong": {
+        "spanyolül": {
+          "en": "-ül is for front-vowel words like német. spanyol has back vowels, so -ül would break the vowel harmony.",
+          "es": "-ül es para palabras con vocales anteriores como német. spanyol tiene vocales posteriores, así que -ül rompería la armonía vocálica."
+        },
+        "spanyol": {
+          "en": "With spanyol the sentence would read 'Lupita Spanish speaks'. spanyol alone is the nationality (a Spanish person), not 'in Spanish'.",
+          "es": "Con spanyol la frase diría «Lupita español habla». spanyol a secas es la nacionalidad (una persona española), no «en español»."
+        }
+      },
+      "examples": ["Diego spanyolul ír.", "Spanyolul beszélünk."],
+      "tr": { "en": "Lupita speaks Spanish, but she is learning Hungarian too.", "es": "Lupita habla español, pero también aprende húngaro." }
+    },
+    { "id": "ul-ul-kent-f02", "kind": "form", "verb": "német", "person": "-ul/-ül", "answer": "németül", "table": "ul-forms" },
+    {
+      "id": "ul-ul-kent-c03",
+      "sentence": "Péter ___ beszél angolul.",
+      "options": ["jól", "jó", "jóul"],
+      "correct": 0,
+      "why": {
+        "en": "'Well' is jól: jó (good) plus -l, an irregular form and not jóul.",
+        "es": "«Bien» es jól: jó (bueno) más -l, una forma irregular y no jóul."
+      },
+      "wrong": {
+        "jó": {
+          "en": "jó is the adjective 'good' for nouns (jó tanár). With jó the sentence would say 'Péter good speaks English'; to say how he speaks you need jól.",
+          "es": "jó es el adjetivo «bueno» para sustantivos (jó tanár). Con jó la frase diría «Péter bueno habla inglés»; para decir cómo habla hace falta jól."
+        },
+        "jóul": {
+          "en": "jóul does not exist: jó is irregular and its 'how' form is jól.",
+          "es": "jóul no existe: jó es irregular y su forma de «cómo» es jól."
+        }
+      },
+      "examples": ["Anna jól beszél magyarul.", "Jól vagyok."],
+      "tr": { "en": "Péter speaks English well.", "es": "Péter habla bien inglés." }
+    },
+    { "id": "ul-ul-kent-f03", "kind": "form", "verb": "angol", "person": "-ul/-ül", "answer": "angolul", "table": "ul-forms" },
+    {
+      "id": "ul-ul-kent-w01",
+      "kind": "why",
+      "es": "Beszélek magyarul.",
+      "target": "magyarul",
+      "tr": { "en": "I speak Hungarian.", "es": "Hablo húngaro." },
+      "options": [
+        { "text": { "en": "-ul on a language name: 'in Hungarian'", "es": "-ul en el nombre de un idioma: «en húngaro»" } },
+        {
+          "text": { "en": "-ként: 'as a Hungarian'", "es": "-ként: «como húngaro»" },
+          "wrong": {
+            "en": "With this rule the word would be magyarként. To speak in a language you use -ul/-ül.",
+            "es": "Con esta regla la palabra sería magyarként. Para hablar en un idioma se usa -ul/-ül."
+          }
+        },
+        {
+          "text": { "en": "-ban: 'in' a place", "es": "-ban: «en» un lugar" },
+          "wrong": {
+            "en": "With this rule the word would be magyarban. -ban/-ben is for places (a házban), never for languages.",
+            "es": "Con esta regla la palabra sería magyarban. -ban/-ben es para lugares (a házban), nunca para idiomas."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ul-ul-kent-c04",
+      "sentence": "Nem tudok dolgozni, mert ___ vagyok.",
+      "options": ["rossz", "rosszul", "jól"],
+      "correct": 1,
+      "why": {
+        "en": "rosszul vagyok means 'I feel unwell': the 'how' word of rossz ends in -ul.",
+        "es": "rosszul vagyok significa «me siento mal»: la palabra de «cómo» de rossz lleva -ul."
+      },
+      "wrong": {
+        "rossz": {
+          "en": "rossz vagyok would mean 'I am bad' (a bad person, bad at something), not that you feel ill.",
+          "es": "rossz vagyok significaría «soy malo» (una mala persona, malo en algo), no que te sientes enfermo."
+        },
+        "jól": {
+          "en": "With jól the sentence would say 'I cannot work because I feel well', which makes no sense.",
+          "es": "Con jól la frase diría «no puedo trabajar porque me siento bien», lo que no tiene sentido."
+        }
+      },
+      "examples": ["Rosszul vagyok.", "Kati rosszul van."],
+      "tr": { "en": "I can't work because I feel unwell.", "es": "No puedo trabajar porque me siento mal." }
+    },
+    { "id": "ul-ul-kent-f04", "kind": "form", "verb": "spanyol", "person": "-ul/-ül", "answer": "spanyolul", "table": "ul-forms" },
+    {
+      "id": "ul-ul-kent-c05",
+      "sentence": "Tudsz ___?",
+      "options": ["spanyolt", "spanyol", "spanyolul"],
+      "correct": 2,
+      "why": {
+        "en": "Knowing a language is expressed with -ul: Tudsz spanyolul? asks about the language.",
+        "es": "Saber un idioma se expresa con -ul: Tudsz spanyolul? pregunta por el idioma."
+      },
+      "wrong": {
+        "spanyolt": {
+          "en": "spanyolt is the -t object form, 'a Spaniard' (a person). It does not ask whether you know the language.",
+          "es": "spanyolt es la forma de objeto con -t, «a un español» (una persona). No pregunta si sabes el idioma."
+        },
+        "spanyol": {
+          "en": "spanyol alone is 'Spanish' (the nationality or the adjective); 'Tudsz spanyol?' is not how to ask about the language.",
+          "es": "spanyol a secas es «español» (la nacionalidad o el adjetivo); «Tudsz spanyol?» no es la forma de preguntar por el idioma."
+        }
+      },
+      "examples": ["Tudsz angolul?", "Nem tudok magyarul."],
+      "tr": { "en": "Do you know Spanish?", "es": "¿Sabes español?" }
+    },
+    { "id": "ul-ul-kent-f05", "kind": "form", "verb": "rossz", "person": "-ul/-ül", "answer": "rosszul", "table": "ul-forms" },
+    {
+      "id": "ul-ul-kent-c06",
+      "sentence": "Anna ___ dolgozik az iskolában.",
+      "options": ["tanárként", "tanár", "tanárul"],
+      "correct": 0,
+      "why": {
+        "en": "'Works as a teacher' is tanárként: -ként means 'as' and needs no word for 'a'.",
+        "es": "«Trabaja como profesora» es tanárként: -ként significa «como» y no necesita palabra para «una»."
+      },
+      "wrong": {
+        "tanár": {
+          "en": "With tanár the sentence would be 'Anna teacher works', which is not a sentence. tanár alone says what Anna is (Anna tanár) and cannot stand before another verb.",
+          "es": "Con tanár la frase sería «Anna profesora trabaja», que no es una frase. tanár a secas dice qué es Anna (Anna tanár) y no puede ir delante de otro verbo."
+        },
+        "tanárul": {
+          "en": "-ul/-ül is for languages and words like jól and rosszul. tanárul is not the form for 'as a teacher'.",
+          "es": "-ul/-ül es para idiomas y palabras como jól y rosszul. tanárul no es la forma de «como profesora»."
+        }
+      },
+      "examples": ["Gábor orvosként dolgozik.", "Lupita főnökként dolgozik."],
+      "tr": { "en": "Anna works as a teacher at the school.", "es": "Anna trabaja como profesora en la escuela." }
+    },
+    { "id": "ul-ul-kent-f06", "kind": "form", "verb": "jó", "person": "-ul/-ül", "answer": "jól", "table": "ul-forms" },
+    {
+      "id": "ul-ul-kent-w02",
+      "kind": "why",
+      "es": "Anna tanárként dolgozik.",
+      "target": "tanárként",
+      "tr": { "en": "Anna works as a teacher.", "es": "Anna trabaja como profesora." },
+      "options": [
+        {
+          "text": { "en": "-ul/-ül: how, or in which language", "es": "-ul/-ül: cómo, o en qué idioma" },
+          "wrong": {
+            "en": "With this rule the word would be tanárul. -ul/-ül is for languages and how-words (magyarul, jól), not for roles.",
+            "es": "Con esta regla la palabra sería tanárul. -ul/-ül es para idiomas y palabras de «cómo» (magyarul, jól), no para papeles."
+          }
+        },
+        { "text": { "en": "-ként: the role, 'as a teacher'", "es": "-ként: el papel, «como profesora»" } },
+        {
+          "text": { "en": "No ending: what Anna is", "es": "Sin terminación: qué es Anna" },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna tanár ('Anna is a teacher'). With dolgozik the role needs -ként.",
+            "es": "Con esta regla la frase sería Anna tanár («Anna es profesora»). Con dolgozik el papel necesita -ként."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ul-ul-kent-c07",
+      "sentence": "Kati ___ Debrecenben lakik.",
+      "options": ["diákként", "diák", "diákul"],
+      "correct": 0,
+      "why": {
+        "en": "'As a student' is diákként: the ending -ként says in which role Kati lives in Debrecen.",
+        "es": "«Como estudiante» es diákként: la terminación -ként dice en qué papel vive Kati en Debrecen."
+      },
+      "wrong": {
+        "diák": {
+          "en": "diák alone is 'a student' (Kati diák). Before lakik the sentence would read 'Kati student lives in Debrecen'.",
+          "es": "diák a secas es «un estudiante» (Kati diák). Delante de lakik la frase diría «Kati estudiante vive en Debrecen»."
+        },
+        "diákul": { "en": "-ul/-ül does not mean 'as'. 'As a student' is diákként.", "es": "-ul/-ül no significa «como». «Como estudiante» es diákként." }
+      },
+      "examples": ["Diákként olcsó a jegy.", "Gábor diákként Szegeden lakik."],
+      "tr": { "en": "Kati lives in Debrecen as a student.", "es": "Kati vive en Debrecen como estudiante." }
+    },
+    { "id": "ul-ul-kent-f07", "kind": "form", "verb": "tanár", "person": "-ként", "answer": "tanárként", "table": "kent-forms" },
+    {
+      "id": "ul-ul-kent-c08",
+      "sentence": "Magyarul tanulok, nem ___.",
+      "options": ["angol", "angolul", "angolként"],
+      "correct": 1,
+      "why": { "en": "Both parts say in which language: magyarul ... nem angolul.", "es": "Las dos partes dicen en qué idioma: magyarul ... nem angolul." },
+      "wrong": {
+        "angol": {
+          "en": "angol alone is 'English' (the adjective or a person). Here you need 'in English': angolul.",
+          "es": "angol a secas es «inglés» (el adjetivo o una persona). Aquí hace falta «en inglés»: angolul."
+        },
+        "angolként": {
+          "en": "angolként would mean 'as an Englishman'. The sentence compares languages, not roles.",
+          "es": "angolként significaría «como inglés». La frase compara idiomas, no papeles."
+        }
+      },
+      "examples": ["Angolul beszélek.", "Nem tudok angolul."],
+      "tr": { "en": "I am learning Hungarian, not English.", "es": "Aprendo húngaro, no inglés." }
+    },
+    { "id": "ul-ul-kent-f08", "kind": "form", "verb": "orvos", "person": "-ként", "answer": "orvosként", "table": "kent-forms" },
+    {
+      "id": "ul-ul-kent-c09",
+      "sentence": "Anna ___ tanul.",
+      "options": ["németül", "németul", "német"],
+      "correct": 0,
+      "why": {
+        "en": "német has front vowels (e, é), so the ending is -ül: németül, 'in German'.",
+        "es": "német tiene vocales anteriores (e, é), así que la terminación es -ül: németül, «en alemán»."
+      },
+      "wrong": {
+        "németul": {
+          "en": "-ul is for back-vowel words (magyarul). német has front vowels, so it takes -ül.",
+          "es": "-ul es para palabras con vocales posteriores (magyarul). német tiene vocales anteriores, así que lleva -ül."
+        },
+        "német": {
+          "en": "With német the sentence would read 'Anna German learns'. német is the nationality, not 'in German'.",
+          "es": "Con német la frase diría «Anna alemán aprende». német es la nacionalidad, no «en alemán»."
+        }
+      },
+      "examples": ["Gábor németül beszél.", "Nem tudok németül."],
+      "tr": { "en": "Anna is learning German.", "es": "Anna aprende alemán." }
+    },
+    { "id": "ul-ul-kent-f09", "kind": "form", "verb": "diák", "person": "-ként", "answer": "diákként", "table": "kent-forms" },
+    {
+      "id": "ul-ul-kent-w03",
+      "kind": "why",
+      "es": "Péter jól beszél angolul.",
+      "target": "jól",
+      "tr": { "en": "Péter speaks English well.", "es": "Péter habla bien inglés." },
+      "options": [
+        {
+          "text": { "en": "jó + -ul, as in magyarul", "es": "jó + -ul, como en magyarul" },
+          "wrong": {
+            "en": "With this rule the word would be jóul, which does not exist. jó is irregular.",
+            "es": "Con esta regla la palabra sería jóul, que no existe. jó es irregular."
+          }
+        },
+        {
+          "text": { "en": "The adjective jó (good), unchanged", "es": "El adjetivo jó (bueno), sin cambios" },
+          "wrong": {
+            "en": "With this rule the sentence would use jó, as in jó tanár. Here the word tells HOW he speaks, so it needs the 'how' form.",
+            "es": "Con esta regla la frase usaría jó, como en jó tanár. Aquí la palabra dice CÓMO habla, así que necesita la forma de «cómo»."
+          }
+        },
+        { "text": { "en": "The irregular 'how' form of jó: jól", "es": "La forma irregular de «cómo» de jó: jól" } }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "ul-ul-kent-c10",
+      "sentence": "Anna ___, de Mexikóvárosban lakik.",
+      "options": ["magyar", "magyarul", "magyarként"],
+      "correct": 0,
+      "why": {
+        "en": "Here we say what Anna is (Hungarian): magyar, with no ending and no verb for is.",
+        "es": "Aquí decimos qué es Anna (húngara): magyar, sin terminación y sin verbo para «es»."
+      },
+      "wrong": {
+        "magyarul": {
+          "en": "magyarul is 'in Hungarian' and needs an action like beszél. 'Anna in Hungarian, but she lives in Mexikóváros' says nothing about who Anna is.",
+          "es": "magyarul es «en húngaro» y necesita una acción como beszél. «Anna en húngaro, pero vive en Mexikóváros» no dice quién es Anna."
+        },
+        "magyarként": {
+          "en": "magyarként would mean 'as a Hungarian'. The sentence would not state that Anna is Hungarian.",
+          "es": "magyarként significaría «como húngara». La frase no diría que Anna es húngara."
+        }
+      },
+      "examples": ["Péter magyar.", "Kati magyar, de spanyolul beszél."],
+      "tr": { "en": "Anna is Hungarian, but she lives in Mexico City.", "es": "Anna es húngara, pero vive en la Ciudad de México." }
+    },
+    { "id": "ul-ul-kent-f10", "kind": "form", "verb": "turista", "person": "-ként", "answer": "turistaként", "table": "kent-forms" },
+    {
+      "id": "ul-ul-kent-c11",
+      "sentence": "Lupita ___ jön Budapestre.",
+      "options": ["turista", "turistaként", "turistaul"],
+      "correct": 1,
+      "why": {
+        "en": "'Comes as a tourist' is turistaként: -ként names the role in which Lupita comes.",
+        "es": "«Viene como turista» es turistaként: -ként nombra el papel en el que viene Lupita."
+      },
+      "wrong": {
+        "turista": {
+          "en": "turista alone is 'a tourist'. 'Lupita turista jön Budapestre' would glue two statements together (is a tourist, comes).",
+          "es": "turista a secas es «un turista». «Lupita turista jön Budapestre» pegaría dos afirmaciones (es turista, viene)."
+        },
+        "turistaul": {
+          "en": "-ul/-ül is not the 'as' ending. 'As a tourist' is turistaként.",
+          "es": "-ul/-ül no es la terminación de «como». «Como turista» es turistaként."
+        }
+      },
+      "examples": ["Turistaként jövök.", "Péter vendégként jön."],
+      "tr": { "en": "Lupita is coming to Budapest as a tourist.", "es": "Lupita viene a Budapest como turista." }
+    },
+    { "id": "ul-ul-kent-f11", "kind": "form", "verb": "kolléga", "person": "-ként", "answer": "kollégaként", "table": "kent-forms" },
+    {
+      "id": "ul-ul-kent-c12",
+      "sentence": "Gábor ___ ír magyarul.",
+      "options": ["rosszal", "rossz", "rosszul"],
+      "correct": 2,
+      "why": { "en": "How Gábor writes: rosszul, the 'how' word of rossz.", "es": "Cómo escribe Gábor: rosszul, la palabra de «cómo» de rossz." },
+      "wrong": {
+        "rosszal": {
+          "en": "rosszal is rossz + -val/-vel ('with something bad'). The sentence would mean 'Gábor writes in Hungarian with something bad'.",
+          "es": "rosszal es rossz + -val/-vel («con algo malo»). La frase significaría «Gábor escribe en húngaro con algo malo»."
+        },
+        "rossz": {
+          "en": "rossz is the adjective 'bad' for nouns (rossz kávé). It does not say how someone writes.",
+          "es": "rossz es el adjetivo «malo» para sustantivos (rossz kávé). No dice cómo escribe alguien."
+        }
+      },
+      "examples": ["Kati rosszul olvas.", "Rosszul beszélek angolul."],
+      "tr": { "en": "Gábor writes Hungarian badly.", "es": "Gábor escribe mal en húngaro." }
+    },
+    { "id": "ul-ul-kent-f12", "kind": "form", "verb": "vendég", "person": "-ként", "answer": "vendégként", "table": "kent-forms" },
+    {
+      "id": "ul-ul-kent-w04",
+      "kind": "why",
+      "es": "Gábor orvosként dolgozik.",
+      "target": "orvosként",
+      "tr": { "en": "Gábor works as a doctor.", "es": "Gábor trabaja como médico." },
+      "options": [
+        { "text": { "en": "-ként is always the same: no vowel harmony", "es": "-ként es siempre igual: sin armonía vocálica" } },
+        {
+          "text": { "en": "-ként after back vowels, -kent after front vowels", "es": "-ként tras vocales posteriores, -kent tras anteriores" },
+          "wrong": {
+            "en": "With this rule front-vowel words would get a different ending, but there is no -kent: it is tanárként, diákként, főnökként, always -ként.",
+            "es": "Con esta regla las palabras con vocales anteriores tendrían otra terminación, pero no existe -kent: es tanárként, diákként, főnökként, siempre -ként."
+          }
+        },
+        {
+          "text": { "en": "-ul after back vowels, -ül after front vowels", "es": "-ul tras vocales posteriores, -ül tras anteriores" },
+          "wrong": {
+            "en": "With this rule the word would be orvosul. That pair belongs to the ending -ul/-ül, not to -ként.",
+            "es": "Con esta regla la palabra sería orvosul. Ese par pertenece a la terminación -ul/-ül, no a -ként."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ul-ul-kent-c13",
+      "sentence": "___ segítek, nem főnökként.",
+      "options": ["Baráttal", "Barát", "Barátként"],
+      "correct": 2,
+      "why": {
+        "en": "Both parts name a role: barátként ... nem főnökként, 'as a friend, not as a boss'.",
+        "es": "Las dos partes nombran un papel: barátként ... nem főnökként, «como amigo, no como jefe»."
+      },
+      "wrong": {
+        "Baráttal": {
+          "en": "Baráttal is barát + -val ('with a friend'). The sentence would mean 'I help with a friend, not as a boss'.",
+          "es": "Baráttal es barát + -val («con un amigo»). La frase significaría «ayudo con un amigo, no como jefe»."
+        },
+        "Barát": {
+          "en": "Barát alone is 'a friend'. 'Barát segítek' is not a sentence and does not say in which role you help.",
+          "es": "Barát a secas es «un amigo». «Barát segítek» no es una frase y no dice en qué papel ayudas."
+        }
+      },
+      "examples": ["Kollégaként segítek.", "Turistaként vagyok itt."],
+      "tr": { "en": "I help as a friend, not as a boss.", "es": "Ayudo como amigo, no como jefe." }
+    },
+    {
+      "id": "ul-ul-kent-c14",
+      "sentence": "Ez egy ___ könyv.",
+      "options": ["magyarul", "magyar", "magyarként"],
+      "correct": 1,
+      "why": {
+        "en": "Before a noun the language word describes it and stays magyar: egy magyar könyv.",
+        "es": "Delante de un sustantivo la palabra del idioma lo describe y se queda magyar: egy magyar könyv."
+      },
+      "wrong": {
+        "magyarul": {
+          "en": "With magyarul the sentence would read 'This is an in-Hungarian book'. magyarul is for what you do (beszélek magyarul), not for describing a noun.",
+          "es": "Con magyarul la frase diría «Este es un libro en-húngaro». magyarul es para lo que haces (beszélek magyarul), no para describir un sustantivo."
+        },
+        "magyarként": {
+          "en": "magyarként means 'as a Hungarian'. It does not describe a book.",
+          "es": "magyarként significa «como húngaro». No describe un libro."
+        }
+      },
+      "examples": ["Ez egy angol könyv.", "Ez egy magyar étterem."],
+      "tr": { "en": "This is a Hungarian book.", "es": "Este es un libro húngaro." }
+    }
+  ]
+}

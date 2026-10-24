@@ -45,7 +45,7 @@ describe('doneGrammarTopicProgress, all nine task kinds', () => {
     return (Object.keys(counts) as GrammarKind[]).filter((k) => counts[k] > 0);
   }
 
-  const lessons = (['es', 'en'] as const).flatMap((lang) =>
+  const lessons = (['es', 'en', 'hu'] as const).flatMap((lang) =>
     getGrammarTopicIds(lang).map((id) => ({ lang, id, kinds: kindsOf(getGrammarTopic(lang, id)!) }))
   );
 

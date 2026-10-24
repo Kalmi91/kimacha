@@ -1,0 +1,864 @@
+{
+  "schema": 2,
+  "topic": "hat-het",
+  "level": "A2",
+  "title": { "en": "Can and may: -hat / -het", "es": "Poder y permiso: -hat / -het" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "-hat / -het is the Hungarian 'can' and 'may'. It goes on the verb, before the personal ending: Bejöhetek? = May I come in? Segíthetek? = Can I help? One suffix covers permission ('you may') and possibility ('it can happen'). Use -hat after back vowels (várhat) and -het after front vowels (kérhet). After that, the new word conjugates like any other verb.",
+        "es": "-hat / -het es el «poder» del húngaro. Se pega al verbo, antes de la terminación de persona: Bejöhetek? = ¿Puedo pasar? Segíthetek? = ¿Puedo ayudar? Un solo sufijo sirve para el permiso («puedes») y para la posibilidad («puede pasar»). Se usa -hat con vocales posteriores (várhat) y -het con vocales anteriores (kérhet). Después, la palabra nueva se conjuga como cualquier otro verbo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "hat-het-stems",
+      "noTableDeck": true,
+      "title": { "en": "Verb + -hat / -het (he, she, it)", "es": "Verbo + -hat / -het (él, ella)" },
+      "header": [
+        { "en": "Verb", "es": "Verbo" },
+        { "en": "With -hat / -het", "es": "Con -hat / -het" }
+      ],
+      "rows": [
+        ["vár", "várhat"],
+        ["lát", "láthat"],
+        ["kinyit", "kinyithat"],
+        ["kér", "kérhet"],
+        ["néz", "nézhet"],
+        ["segít", "segíthet"],
+        ["fizet", "fizethet"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "-hat or -het?", "es": "¿-hat o -het?" },
+      "items": [
+        {
+          "text": {
+            "en": "Verbs with back vowels (a, á, o, ó, u, ú) take -hat.",
+            "es": "Los verbos con vocales posteriores (a, á, o, ó, u, ú) llevan -hat."
+          },
+          "examples": [
+            { "es": "Itt várhatsz.", "tr": { "en": "You can wait here.", "es": "Aquí puedes esperar." } },
+            { "es": "Anna itt dolgozhat.", "tr": { "en": "Anna may work here.", "es": "Anna puede trabajar aquí." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs with front vowels (e, é, ö, ő, ü, ű) take -het, and so do most verbs with only i, í, e, é.",
+            "es": "Los verbos con vocales anteriores (e, é, ö, ő, ü, ű) llevan -het, y también la mayoría de los verbos con solo i, í, e, é."
+          },
+          "examples": [
+            { "es": "Beszélhetek Annával?", "tr": { "en": "May I speak with Anna?", "es": "¿Puedo hablar con Anna?" } },
+            { "es": "Fizethetek kártyával?", "tr": { "en": "May I pay by card?", "es": "¿Puedo pagar con tarjeta?" } },
+            { "es": "Segíthetek?", "tr": { "en": "Can I help?", "es": "¿Puedo ayudar?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few common verbs with only i, í still take -hat: nyit, hív, ír.",
+            "es": "Unos pocos verbos comunes con solo i, í llevan igualmente -hat: nyit, hív, ír."
+          },
+          "examples": [
+            { "es": "Hívhatok egy taxit?", "tr": { "en": "May I call a taxi?", "es": "¿Puedo llamar un taxi?" } },
+            { "es": "Írhatok egy üzenetet?", "tr": { "en": "May I write a message?", "es": "¿Puedo escribir un mensaje?" } },
+            { "es": "Kinyithatom az ablakot?", "tr": { "en": "May I open the window?", "es": "¿Puedo abrir la ventana?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hat-het-conj",
+      "title": { "en": "Regular verbs: all persons", "es": "Verbos regulares: todas las personas" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "vár (to wait)", "es": "vár (esperar)" },
+        { "en": "kér (to ask for)", "es": "kér (pedir)" }
+      ],
+      "rows": [
+        ["én", "várhatok", "kérhetek"],
+        ["te", "várhatsz", "kérhetsz"],
+        ["ő", "várhat", "kérhet"],
+        ["mi", "várhatunk", "kérhetünk"],
+        ["ti", "várhattok", "kérhettek"],
+        ["ők", "várhatnak", "kérhetnek"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "What -hat / -het is used for", "es": "Para qué sirve -hat / -het" },
+      "points": [
+        {
+          "text": {
+            "en": "Asking permission: an I-form question. English says 'May I...?', Spanish «¿Puedo...?».",
+            "es": "Pedir permiso: una pregunta con la forma de yo. El inglés dice 'May I...?', el español «¿Puedo...?»."
+          },
+          "examples": [
+            { "es": "Bejöhetek?", "tr": { "en": "May I come in?", "es": "¿Puedo pasar?" } },
+            { "es": "Leülhetek ide?", "tr": { "en": "May I sit here?", "es": "¿Puedo sentarme aquí?" } },
+            { "es": "Megkérdezhetem, hol van a posta?", "tr": { "en": "May I ask where the post office is?", "es": "¿Puedo preguntar dónde está la oficina de correos?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Offering help and asking politely: where English says 'May I...?' and Spanish «¿Podría...?», Hungarian uses -hat / -het.",
+            "es": "Ofrecer ayuda y pedir con cortesía: donde el inglés dice 'May I...?' y el español «¿Podría...?», el húngaro usa -hat / -het."
+          },
+          "examples": [
+            { "es": "Miben segíthetek?", "tr": { "en": "How can I help?", "es": "¿En qué puedo ayudar?" } },
+            { "es": "Kérhetek egy kávét?", "tr": { "en": "May I have a coffee?", "es": "¿Podría pedir un café?" } },
+            { "es": "Kérhetem a számlát?", "tr": { "en": "May I have the bill?", "es": "¿Podría pedir la cuenta?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Giving or refusing permission: the te-form.",
+            "es": "Dar o negar permiso: la forma de te."
+          },
+          "examples": [
+            { "es": "Bejöhetsz.", "tr": { "en": "You can come in.", "es": "Puedes pasar." } },
+            { "es": "Ide ülhetsz.", "tr": { "en": "You can sit here.", "es": "Puedes sentarte aquí." } },
+            { "es": "Nem mehetsz iskolába.", "tr": { "en": "You can't go to school.", "es": "No puedes ir a la escuela." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Possibility: what the situation allows or does not allow. Nem goes right before the verb.",
+            "es": "Posibilidad: lo que la situación permite o no permite. Nem va justo antes del verbo."
+          },
+          "examples": [
+            { "es": "Holnap nem jöhetek, dolgozom.", "tr": { "en": "I can't come tomorrow, I'm working.", "es": "Mañana no puedo venir, estoy trabajando." } },
+            { "es": "Mikor jöhetek az orvoshoz?", "tr": { "en": "When can I come to the doctor?", "es": "¿Cuándo puedo ir al médico?" } },
+            { "es": "Ma nem dolgozhatok, beteg vagyok.", "tr": { "en": "I can't work today, I'm sick.", "es": "Hoy no puedo trabajar, estoy enfermo." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Rules for everybody: lehet or szabad + the infinitive (-ni). No person ending, no subject.",
+            "es": "Reglas para todos: lehet o szabad + el infinitivo (-ni). Sin terminación de persona y sin sujeto."
+          },
+          "examples": [
+            { "es": "Itt lehet parkolni.", "tr": { "en": "You can park here.", "es": "Aquí se puede estacionar." } },
+            { "es": "Itt nem szabad parkolni.", "tr": { "en": "Parking is not allowed here.", "es": "Aquí no está permitido estacionar." } },
+            { "es": "Lehet itt kártyával fizetni?", "tr": { "en": "Can you pay by card here?", "es": "¿Se puede pagar con tarjeta aquí?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "A few verbs change their stem", "es": "Algunos verbos cambian la raíz" },
+      "items": [
+        {
+          "text": {
+            "en": "megy → mehet, jön → jöhet: the end of the stem (gy, n) drops before -het.",
+            "es": "megy → mehet, jön → jöhet: el final de la raíz (gy, n) desaparece antes de -het."
+          },
+          "examples": [
+            { "es": "Haza mehetsz.", "tr": { "en": "You can go home.", "es": "Puedes irte a casa." } },
+            { "es": "Holnap én is jöhetek.", "tr": { "en": "I can come tomorrow too.", "es": "Mañana yo también puedo venir." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "eszik → ehet, iszik → ihat, vesz → vehet: the stem is cut short as well.",
+            "es": "eszik → ehet, iszik → ihat, vesz → vehet: la raíz también se acorta."
+          },
+          "examples": [
+            { "es": "Mit ehetek?", "tr": { "en": "What can I eat?", "es": "¿Qué puedo comer?" } },
+            { "es": "Vizet ihatsz.", "tr": { "en": "You can drink water.", "es": "Puedes beber agua." } },
+            { "es": "Hol vehetek jegyet?", "tr": { "en": "Where can I buy a ticket?", "es": "¿Dónde puedo comprar un boleto?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ik verbs lose the -ik and normally take the plain endings: dolgozik → dolgozhatok, lakik → lakhat. (The formal -ik form dolgozhatom exists too, but dolgozhatok is the usual one.)",
+            "es": "Los verbos en -ik pierden el -ik y normalmente llevan las terminaciones simples: dolgozik → dolgozhatok, lakik → lakhat. (La forma formal en -ik, dolgozhatom, también existe, pero dolgozhatok es la habitual.)"
+          },
+          "examples": [
+            { "es": "Itt dolgozhatok?", "tr": { "en": "May I work here?", "es": "¿Puedo trabajar aquí?" } },
+            { "es": "Itt lakhatsz.", "tr": { "en": "You can live here.", "es": "Puedes vivir aquí." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hat-het-irreg",
+      "title": { "en": "Verbs with a shortened stem", "es": "Verbos con la raíz acortada" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "megy (to go)", "es": "megy (ir)" },
+        { "en": "jön (to come)", "es": "jön (venir)" },
+        { "en": "eszik (to eat)", "es": "eszik (comer)" },
+        { "en": "iszik (to drink)", "es": "iszik (beber)" }
+      ],
+      "rows": [
+        ["én", "mehetek", "jöhetek", "ehetek", "ihatok"],
+        ["te", "mehetsz", "jöhetsz", "ehetsz", "ihatsz"],
+        ["ő", "mehet", "jöhet", "ehet", "ihat"],
+        ["mi", "mehetünk", "jöhetünk", "ehetünk", "ihatunk"],
+        ["ti", "mehettek", "jöhettek", "ehettek", "ihattok"],
+        ["ők", "mehetnek", "jöhetnek", "ehetnek", "ihatnak"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Two sets of endings: indefinite and definite", "es": "Dos juegos de terminaciones: indefinida y definida" },
+      "items": [
+        {
+          "text": {
+            "en": "Verbs with -hat / -het follow the usual rule: no object or an indefinite one (egy kávét) → -ek / -ok; a definite object (a számlát) → -em / -om.",
+            "es": "Los verbos con -hat / -het siguen la regla de siempre: sin objeto o con uno indefinido (egy kávét) → -ek / -ok; con un objeto determinado (a számlát) → -em / -om."
+          },
+          "examples": [
+            { "es": "Kérhetek egy kávét?", "tr": { "en": "May I have a coffee?", "es": "¿Podría pedir un café?" } },
+            { "es": "Kérhetem a számlát?", "tr": { "en": "May I have the bill?", "es": "¿Podría pedir la cuenta?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Definite I-form: -om after -hat (back vowels), -em after -het (front vowels).",
+            "es": "Forma definida de yo: -om después de -hat (vocales posteriores), -em después de -het (vocales anteriores)."
+          },
+          "examples": [
+            { "es": "Bezárhatom az ajtót?", "tr": { "en": "May I close the door?", "es": "¿Puedo cerrar la puerta?" } },
+            { "es": "Kérhetem az étlapot?", "tr": { "en": "May I have the menu?", "es": "¿Podría pedir el menú?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hat-het-def",
+      "title": { "en": "kérhet: indefinite and definite", "es": "kérhet: indefinida y definida" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "egy kávét (indefinite)", "es": "egy kávét (indefinida)" },
+        { "en": "a számlát (definite)", "es": "a számlát (definida)" }
+      ],
+      "rows": [
+        ["én", "kérhetek", "kérhetem"],
+        ["te", "kérhetsz", "kérheted"],
+        ["ő", "kérhet", "kérheti"],
+        ["mi", "kérhetünk", "kérhetjük"],
+        ["ti", "kérhettek", "kérhetitek"],
+        ["ők", "kérhetnek", "kérhetik"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Three look-alikes", "es": "Tres parecidos" },
+      "pairs": [
+        {
+          "a": "Tudok úszni.",
+          "b": "Úszhatok itt?",
+          "note": {
+            "en": "tud: you know how to do it, it is your skill. -hat / -het: the situation or someone else allows it.",
+            "es": "tud: sabes hacerlo, es tu habilidad. -hat / -het: la situación o alguien más lo permite."
+          },
+          "examples": [
+            { "es": "Anna tud úszni.", "tr": { "en": "Anna can swim (she knows how).", "es": "Anna sabe nadar." } },
+            { "es": "Anna itt úszhat.", "tr": { "en": "Anna may swim here.", "es": "Anna puede nadar aquí." } }
+          ]
+        },
+        {
+          "a": "Itt nem lehet parkolni.",
+          "b": "Itt nem szabad parkolni.",
+          "note": {
+            "en": "nem lehet: it can't be done (impossible or not allowed). nem szabad: you must not (a rule forbids it).",
+            "es": "nem lehet: no se puede (imposible o no permitido). nem szabad: está prohibido (una regla lo prohíbe)."
+          },
+          "examples": [
+            { "es": "Ma nem lehet bejönni, mert a bolt zárva van.", "tr": { "en": "You can't go in today, because the shop is closed.", "es": "Hoy no se puede entrar, porque la tienda está cerrada." } },
+            { "es": "A parkban nem szabad kerékpározni.", "tr": { "en": "In the park you must not ride a bike.", "es": "En el parque no se permite andar en bicicleta." } }
+          ]
+        },
+        {
+          "a": "Kérek egy kávét.",
+          "b": "Kérhetek egy kávét?",
+          "note": {
+            "en": "Kérek: 'I'd like' (a plain request). Kérhetek...? asks permission and sounds softer.",
+            "es": "Kérek: «quiero / deme» (una petición directa). Kérhetek...? pide permiso y suena más suave."
+          },
+          "examples": [
+            { "es": "Kérem a számlát.", "tr": { "en": "The bill, please.", "es": "La cuenta, por favor." } },
+            { "es": "Kérhetem a számlát?", "tr": { "en": "May I have the bill?", "es": "¿Podría pedir la cuenta?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: English 'can' and Spanish «poder» make you reach for tudok every time. Tudok is only for skills and knowing how (Tudok úszni). To ask 'May I...?' or say 'You can...', put -hat / -het on the verb: Bejöhetek? Be tudok jönni? would ask whether you manage to get in. And nem stays right before the verb: Nem jöhetek.",
+        "es": "Trampa clásica: «poder» te empuja a decir tudok siempre. Tudok es solo para habilidades y para saber hacer algo (Tudok úszni). Para «¿Puedo...?» o «Puedes...», pon -hat / -het en el verbo: Bejöhetek? Be tudok jönni? preguntaría si logras entrar. Y nem va justo antes del verbo: Nem jöhetek."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian you add «hat» or «het» to a verb to say can or may. After back vowels it is «hat»: «várhatok», «láthatok». After front vowels it is «het»: «kérhetek», «segíthetek». This is how you ask for permission: «Bejöhetek?», «Leülhetek?». Some verbs shorten their stem: «mehetek», «jöhetek», «ehetek», «ihatok». For rules that apply to everybody, use «lehet» with an infinitive: «Itt lehet parkolni.» Use «tudok» only for skills: «Tudok úszni.»",
+    "es": "En húngaro añades «hat» o «het» al verbo para decir poder. Después de vocales posteriores es «hat»: «várhatok», «láthatok». Después de vocales anteriores es «het»: «kérhetek», «segíthetek». Así se pide permiso: «Bejöhetek?», «Leülhetek?». Algunos verbos acortan la raíz: «mehetek», «jöhetek», «ehetek», «ihatok». Para reglas que valen para todos se usa «lehet» con un infinitivo: «Itt lehet parkolni.» Usa «tudok» solo para habilidades: «Tudok úszni.»"
+  },
+  "glossary": [
+    { "word": "parkol", "gloss": { "en": "to park", "es": "estacionar" } },
+    { "word": "bejön", "gloss": { "en": "to come in", "es": "pasar, entrar" } },
+    { "word": "leül", "gloss": { "en": "to sit down", "es": "sentarse" } },
+    { "word": "megkérdez", "gloss": { "en": "to ask (a question)", "es": "preguntar" } }
+  ],
+  "items": [
+    {
+      "id": "hat-het-c01",
+      "sentence": "___ az ablakot?",
+      "options": ["Kinyithatok", "Kinyithatom", "Kinyithatnak"],
+      "correct": 1,
+      "why": {
+        "en": "Az ablakot is definite (the window), so the definite I-form is needed: Kinyithatom.",
+        "es": "Az ablakot es determinado (la ventana), por eso hace falta la forma definida de yo: Kinyithatom."
+      },
+      "wrong": {
+        "Kinyithatok": {
+          "en": "Kinyithatok is the indefinite I-form: it goes with an unspecified object (egy ablakot, 'a window'), not with az ablakot.",
+          "es": "Kinyithatok es la forma indefinida de yo: va con un objeto no específico (egy ablakot, «una ventana»), no con az ablakot."
+        },
+        "Kinyithatnak": {
+          "en": "Kinyithatnak is for ők (they): the sentence would ask whether THEY may open a window.",
+          "es": "Kinyithatnak es para ők (ellos): la frase preguntaría si ELLOS pueden abrir una ventana."
+        }
+      },
+      "examples": ["Bezárhatom az ajtót?", "Kinyithatom a kaput?"],
+      "tr": { "en": "May I open the window?", "es": "¿Puedo abrir la ventana?" }
+    },
+    {
+      "id": "hat-het-f01",
+      "kind": "form",
+      "verb": "vár",
+      "person": "ő + -hat/-het",
+      "answer": "várhat",
+      "table": "hat-het-stems"
+    },
+    {
+      "id": "hat-het-c02",
+      "sentence": "Bocsánat, ___ egy kávét?",
+      "options": ["kérhetem", "kérhetek", "kérhetnek"],
+      "correct": 1,
+      "why": {
+        "en": "Egy kávét is indefinite ('a coffee') and the speaker asks for himself or herself, so the indefinite I-form: Kérhetek.",
+        "es": "Egy kávét es indefinido («un café») y quien habla pide para sí, así que la forma indefinida de yo: Kérhetek."
+      },
+      "wrong": {
+        "kérhetem": {
+          "en": "Kérhetem is the definite I-form: it fits a specific thing (a kávét, 'the coffee'), not egy kávét.",
+          "es": "Kérhetem es la forma definida de yo: encaja con algo concreto (a kávét, «el café»), no con egy kávét."
+        },
+        "kérhetnek": {
+          "en": "Kérhetnek is for ők (they): the sentence would ask whether THEY may order a coffee.",
+          "es": "Kérhetnek es para ők (ellos): la frase preguntaría si ELLOS pueden pedir un café."
+        }
+      },
+      "examples": ["Kérhetek egy sört?", "Kérhetek egy teát?"],
+      "tr": { "en": "Excuse me, may I have a coffee?", "es": "Perdón, ¿puedo pedir un café?" }
+    },
+    {
+      "id": "hat-het-f02",
+      "kind": "form",
+      "verb": "kér",
+      "person": "ő + -hat/-het",
+      "answer": "kérhet",
+      "table": "hat-het-stems"
+    },
+    {
+      "id": "hat-het-c03",
+      "sentence": "A gyerekek itt ___.",
+      "options": ["játszhatnak", "játszhat", "játszhatsz"],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekek is plural (ők), so the verb takes the plural ending -nak: játszhatnak.",
+        "es": "A gyerekek es plural (ők), por eso el verbo lleva la terminación de plural -nak: játszhatnak."
+      },
+      "wrong": {
+        "játszhat": {
+          "en": "játszhat is for one person (he, she): with a gyerekek (the children) you need the plural.",
+          "es": "játszhat es para una persona (él, ella): con a gyerekek (los niños) hace falta el plural."
+        },
+        "játszhatsz": {
+          "en": "játszhatsz is for te (you): the sentence would be addressed to one person, 'You can play here'.",
+          "es": "játszhatsz es para te (tú): la frase se dirigiría a una persona, «Puedes jugar aquí»."
+        }
+      },
+      "examples": ["A gyerekek a kertben játszhatnak.", "Kati és Gábor itt játszhatnak."],
+      "tr": { "en": "The children may play here.", "es": "Los niños pueden jugar aquí." }
+    },
+    {
+      "id": "hat-het-f03",
+      "kind": "form",
+      "verb": "segít",
+      "person": "ő + -hat/-het",
+      "answer": "segíthet",
+      "table": "hat-het-stems"
+    },
+    {
+      "id": "hat-het-w01",
+      "kind": "why",
+      "es": "Segíthetek?",
+      "target": "Segíthetek",
+      "tr": { "en": "Can I help?", "es": "¿Puedo ayudar?" },
+      "options": [
+        {
+          "text": {
+            "en": "-het on the verb: a polite offer, 'May I help?'",
+            "es": "-het en el verbo: una oferta cortés, «¿Puedo ayudar?»"
+          }
+        },
+        {
+          "text": {
+            "en": "Plain present: 'I help'",
+            "es": "Presente simple: «ayudo»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Segítek ('I help'): a statement, not an offer or a question.",
+            "es": "Con esta regla la frase sería Segítek («ayudo»): una afirmación, no una oferta ni una pregunta."
+          }
+        },
+        {
+          "text": {
+            "en": "tud + infinitive: 'I know how to help'",
+            "es": "tud + infinitivo: «sé ayudar»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Tudok segíteni ('I am able to help'): a statement about ability, not a polite offer.",
+            "es": "Con esta regla la frase sería Tudok segíteni («puedo, soy capaz de ayudar»): una afirmación sobre la capacidad, no una oferta cortés."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hat-het-c04",
+      "sentence": "Ti is ___ holnap.",
+      "options": ["jöhetnek", "jöhettek", "jöhetünk"],
+      "correct": 1,
+      "why": {
+        "en": "Ti is 'you (all)', so the ti-form ending -tek: jöhettek (jön becomes jö- before -het).",
+        "es": "Ti es «ustedes», por eso la terminación de ti, -tek: jöhettek (jön se convierte en jö- antes de -het)."
+      },
+      "wrong": {
+        "jöhetnek": {
+          "en": "jöhetnek is for ők (they): the sentence would say that THEY may come tomorrow too.",
+          "es": "jöhetnek es para ők (ellos): la frase diría que ELLOS también pueden venir mañana."
+        },
+        "jöhetünk": {
+          "en": "jöhetünk is for mi (we): the speaker would be including himself or herself.",
+          "es": "jöhetünk es para mi (nosotros): quien habla se incluiría a sí mismo."
+        }
+      },
+      "examples": ["Ti is itt várhattok.", "Ti is mehettek haza."],
+      "tr": { "en": "You can come tomorrow too.", "es": "Ustedes también pueden venir mañana." }
+    },
+    {
+      "id": "hat-het-f04",
+      "kind": "form",
+      "verb": "kinyit",
+      "person": "ő + -hat/-het",
+      "answer": "kinyithat",
+      "table": "hat-het-stems"
+    },
+    {
+      "id": "hat-het-c05",
+      "sentence": "Mit ___ a beteg ember? Levest vagy húst?",
+      "options": ["ihat", "ehet", "vehet"],
+      "correct": 1,
+      "why": {
+        "en": "Soup and meat are eaten: eszik is cut to eh- before -het, so ehet.",
+        "es": "La sopa y la carne se comen: eszik se acorta a eh- antes de -het, por eso ehet."
+      },
+      "wrong": {
+        "ihat": {
+          "en": "ihat comes from iszik (to drink): the sentence would ask what the patient may drink, but levest and húst are eaten.",
+          "es": "ihat viene de iszik (beber): la frase preguntaría qué puede beber el enfermo, pero levest y húst se comen."
+        },
+        "vehet": {
+          "en": "vehet comes from vesz (to buy): the sentence would ask what the patient may buy.",
+          "es": "vehet viene de vesz (comprar): la frase preguntaría qué puede comprar el enfermo."
+        }
+      },
+      "examples": ["Mit ehetek?", "Mit ihatok?"],
+      "tr": { "en": "What may the sick person eat? Soup or meat?", "es": "¿Qué puede comer el enfermo? ¿Sopa o carne?" }
+    },
+    {
+      "id": "hat-het-f05",
+      "kind": "form",
+      "verb": "vár",
+      "person": "mi",
+      "answer": "várhatunk",
+      "table": "hat-het-conj"
+    },
+    {
+      "id": "hat-het-c06",
+      "sentence": "Beteg vagy, ma nem ___ iskolába.",
+      "options": ["mehetsz", "mész", "mehetek"],
+      "correct": 0,
+      "why": {
+        "en": "The subject is te (beteg vagy) and the idea is 'can't': megy takes the short stem me- before -het, so mehetsz.",
+        "es": "El sujeto es te (beteg vagy) y la idea es «no puedes»: megy toma la raíz corta me- antes de -het, por eso mehetsz."
+      },
+      "wrong": {
+        "mész": {
+          "en": "mész is plain 'you go': the sentence would only say you are not going to school today, with no idea of 'can' or 'may'.",
+          "es": "mész es simplemente «tú vas»: la frase solo diría que hoy no vas a la escuela, sin la idea de «poder»."
+        },
+        "mehetek": {
+          "en": "mehetek is the I-form, 'I can't go', but the subject of this sentence is te (beteg vagy).",
+          "es": "mehetek es la forma de yo, «no puedo ir», pero el sujeto de esta frase es te (beteg vagy)."
+        }
+      },
+      "examples": ["Haza mehetsz.", "Holnap mehetsz iskolába."],
+      "tr": { "en": "You're sick, you can't go to school today.", "es": "Estás enfermo, hoy no puedes ir a la escuela." }
+    },
+    {
+      "id": "hat-het-w02",
+      "kind": "why",
+      "es": "Itt lehet parkolni.",
+      "target": "lehet parkolni",
+      "tr": { "en": "You can park here.", "es": "Aquí se puede estacionar." },
+      "options": [
+        {
+          "text": {
+            "en": "lehet + -ni: what is possible or allowed for anybody, no subject",
+            "es": "lehet + -ni: lo que es posible o permitido para cualquiera, sin sujeto"
+          }
+        },
+        {
+          "text": {
+            "en": "-hat on the verb: one particular person may",
+            "es": "-hat en el verbo: una persona concreta puede"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Itt parkolhatok or Itt parkolhatsz: a particular person (I, you) is meant.",
+            "es": "Con esta regla la frase sería Itt parkolhatok o Itt parkolhatsz: se referiría a una persona concreta (yo, tú)."
+          }
+        },
+        {
+          "text": {
+            "en": "kell + -ni: someone must",
+            "es": "kell + -ni: alguien debe"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Itt kell parkolni: 'you have to park here'.",
+            "es": "Con esta regla la frase sería Itt kell parkolni: «aquí hay que estacionar»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hat-het-f06",
+      "kind": "form",
+      "verb": "kér",
+      "person": "ti",
+      "answer": "kérhettek",
+      "table": "hat-het-conj"
+    },
+    {
+      "id": "hat-het-c07",
+      "sentence": "Tudok úszni, de itt nem ___.",
+      "options": ["úszhatok", "úszom", "úszhatsz"],
+      "correct": 0,
+      "why": {
+        "en": "Tudok úszni says 'I know how to'. The 'but' part is about permission or the place: nem úszhatok, 'I may not (here)'.",
+        "es": "Tudok úszni dice «sé hacerlo». La parte con «pero» habla del permiso o del lugar: nem úszhatok, «no puedo (aquí)»."
+      },
+      "wrong": {
+        "úszom": {
+          "en": "úszom is plain 'I swim': the sentence would say 'I can swim, but I don't swim here', a statement about habit, not about permission.",
+          "es": "úszom es simplemente «nado»: la frase diría «sé nadar, pero aquí no nado», una afirmación sobre un hábito, no sobre el permiso."
+        },
+        "úszhatsz": {
+          "en": "úszhatsz is the te-form: 'you may not swim here', but the first half of the sentence is about I (tudok).",
+          "es": "úszhatsz es la forma de te: «tú no puedes nadar aquí», pero la primera mitad de la frase habla de yo (tudok)."
+        }
+      },
+      "examples": ["Itt úszhatsz.", "A tóban nem úszhatsz."],
+      "tr": { "en": "I can swim, but I'm not allowed to here.", "es": "Sé nadar, pero aquí no puedo." }
+    },
+    {
+      "id": "hat-het-f07",
+      "kind": "form",
+      "verb": "megy",
+      "person": "ő",
+      "answer": "mehet",
+      "table": "hat-het-irreg"
+    },
+    {
+      "id": "hat-het-c08",
+      "sentence": "Itt nem ___ parkolni.",
+      "options": ["lehet", "kell", "tud"],
+      "correct": 0,
+      "why": {
+        "en": "Lehet + an infinitive says what is possible or allowed for anybody: Itt nem lehet parkolni = you can't park here.",
+        "es": "Lehet + un infinitivo dice lo que es posible o permitido para cualquiera: Itt nem lehet parkolni = aquí no se puede estacionar."
+      },
+      "wrong": {
+        "kell": {
+          "en": "Itt nem kell parkolni would mean 'you don't have to park here': there is no need.",
+          "es": "Itt nem kell parkolni significaría «aquí no hace falta estacionar»: no es necesario."
+        },
+        "tud": {
+          "en": "Itt nem tud parkolni would mean that he or she is unable to park here, a skill or ability of one person.",
+          "es": "Itt nem tud parkolni significaría que él o ella no sabe, no logra estacionar aquí: una habilidad de una persona."
+        }
+      },
+      "examples": ["Itt lehet parkolni.", "Itt nem szabad parkolni."],
+      "tr": { "en": "You can't park here.", "es": "Aquí no se puede estacionar." }
+    },
+    {
+      "id": "hat-het-c09",
+      "sentence": "___ itt kártyával fizetni?",
+      "options": ["Lehet", "Kell", "Akarsz"],
+      "correct": 0,
+      "why": {
+        "en": "A general question about what is possible: Lehet itt kártyával fizetni? = Can you pay by card here?",
+        "es": "Una pregunta general sobre lo que es posible: Lehet itt kártyával fizetni? = ¿Se puede pagar con tarjeta aquí?"
+      },
+      "wrong": {
+        "Kell": {
+          "en": "Kell itt kártyával fizetni? would ask 'Do you have to pay by card here?'",
+          "es": "Kell itt kártyával fizetni? preguntaría «¿Hay que pagar con tarjeta aquí?»"
+        },
+        "Akarsz": {
+          "en": "Akarsz itt kártyával fizetni? would ask one person 'Do you want to pay by card here?'",
+          "es": "Akarsz itt kártyával fizetni? le preguntaría a una persona «¿Quieres pagar con tarjeta aquí?»"
+        }
+      },
+      "examples": ["Lehet itt jegyet venni?", "Lehet itt enni?"],
+      "tr": { "en": "Can you pay by card here?", "es": "¿Se puede pagar con tarjeta aquí?" }
+    },
+    {
+      "id": "hat-het-f08",
+      "kind": "form",
+      "verb": "jön",
+      "person": "én",
+      "answer": "jöhetek",
+      "table": "hat-het-irreg"
+    },
+    {
+      "id": "hat-het-c10",
+      "sentence": "___, hogy holnap esik az eső.",
+      "options": ["Lehet", "Jó", "Rossz"],
+      "correct": 0,
+      "why": {
+        "en": "Lehet, hogy... = maybe, it is possible that... The clause after hogy stays in the normal present (esik).",
+        "es": "Lehet, hogy... = quizá, es posible que... La oración después de hogy queda en presente normal (esik)."
+      },
+      "wrong": {
+        "Jó": {
+          "en": "Jó, hogy holnap esik az eső would mean 'It's good that it rains tomorrow'.",
+          "es": "Jó, hogy holnap esik az eső significaría «Qué bueno que mañana llueve»."
+        },
+        "Rossz": {
+          "en": "Rossz, hogy holnap esik az eső would mean 'It's bad that it rains tomorrow'.",
+          "es": "Rossz, hogy holnap esik az eső significaría «Qué malo que mañana llueve»."
+        }
+      },
+      "examples": ["Lehet, hogy Péter nem jön.", "Lehet, hogy Anna otthon van."],
+      "tr": { "en": "Maybe it will rain tomorrow.", "es": "Puede que mañana llueva." }
+    },
+    {
+      "id": "hat-het-w03",
+      "kind": "why",
+      "es": "Kérhetem a számlát?",
+      "target": "Kérhetem",
+      "tr": { "en": "May I have the bill?", "es": "¿Podría pedir la cuenta?" },
+      "options": [
+        {
+          "text": {
+            "en": "Definite ending -em: the object a számlát is a specific thing",
+            "es": "Terminación definida -em: el objeto a számlát es algo concreto"
+          }
+        },
+        {
+          "text": {
+            "en": "Indefinite ending -ek: the I-form always ends in -ek",
+            "es": "Terminación indefinida -ek: la forma de yo siempre acaba en -ek"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Kérhetek egy számlát ('a bill'): -ek goes with an unspecified object.",
+            "es": "Con esta regla la frase sería Kérhetek egy számlát («una cuenta»): -ek va con un objeto no específico."
+          }
+        },
+        {
+          "text": {
+            "en": "Ending -i: somebody else is asking",
+            "es": "Terminación -i: otra persona está pidiendo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Kérheti a számlát: 'he or she may ask for the bill'.",
+            "es": "Con esta regla la frase sería Kérheti a számlát: «él o ella puede pedir la cuenta»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hat-het-f09",
+      "kind": "form",
+      "verb": "iszik",
+      "person": "én",
+      "answer": "ihatok",
+      "accept": [
+        "ihatom"
+      ],
+      "table": "hat-het-irreg"
+    },
+    {
+      "id": "hat-het-c11",
+      "sentence": "Itt ___?",
+      "options": ["dolgozhatok", "dolgozhatnak", "dolgozom"],
+      "correct": 0,
+      "why": {
+        "en": "Dolgozik loses its -ik before -hat and takes the normal I-form: Dolgozhatok. There is no object, so no definite -om.",
+        "es": "Dolgozik pierde el -ik antes de -hat y toma la forma normal de yo: Dolgozhatok. No hay objeto, así que no se usa el -om definido."
+      },
+      "wrong": {
+        "dolgozhatnak": {
+          "en": "Dolgozhatnak is for ők (they): the sentence would ask whether THEY may work here.",
+          "es": "Dolgozhatnak es para ők (ellos): la frase preguntaría si ELLOS pueden trabajar aquí."
+        },
+        "dolgozom": {
+          "en": "Dolgozom is plain 'I work': the sentence would be a question about whether you work here, not about permission.",
+          "es": "Dolgozom es simplemente «trabajo»: la frase preguntaría si trabajas aquí, no si tienes permiso."
+        }
+      },
+      "examples": ["Itt lakhatsz.", "Ma nem dolgozhatok."],
+      "tr": { "en": "May I work here?", "es": "¿Puedo trabajar aquí?" }
+    },
+    {
+      "id": "hat-het-f10",
+      "kind": "form",
+      "verb": "eszik",
+      "person": "mi",
+      "answer": "ehetünk",
+      "table": "hat-het-irreg"
+    },
+    {
+      "id": "hat-het-c12",
+      "sentence": "Most nem ___, dolgozom.",
+      "options": ["beszélhetek", "beszélek", "beszélhetsz"],
+      "correct": 0,
+      "why": {
+        "en": "Dolgozom shows the speaker is I, and the idea is 'I can't talk now': nem beszélhetek.",
+        "es": "Dolgozom muestra que quien habla es yo, y la idea es «ahora no puedo hablar»: nem beszélhetek."
+      },
+      "wrong": {
+        "beszélek": {
+          "en": "beszélek is plain 'I speak': Most nem beszélek would only say 'I am not speaking now', with no idea of 'can't'.",
+          "es": "beszélek es simplemente «hablo»: Most nem beszélek solo diría «ahora no hablo», sin la idea de «no puedo»."
+        },
+        "beszélhetsz": {
+          "en": "beszélhetsz is the te-form: 'you can't talk now', but dolgozom shows the speaker is I.",
+          "es": "beszélhetsz es la forma de te: «tú no puedes hablar ahora», pero dolgozom muestra que quien habla es yo."
+        }
+      },
+      "examples": ["Most nem várhatok.", "Ma nem dolgozhatok."],
+      "tr": { "en": "I can't talk now, I'm working.", "es": "Ahora no puedo hablar, estoy trabajando." }
+    },
+    {
+      "id": "hat-het-f11",
+      "kind": "form",
+      "verb": "kér",
+      "person": "én (a számlát)",
+      "answer": "kérhetem",
+      "table": "hat-het-def"
+    },
+    {
+      "id": "hat-het-c13",
+      "sentence": "Anna jól ___ főzni.",
+      "options": ["tud", "akar", "fog"],
+      "correct": 0,
+      "why": {
+        "en": "Tud + infinitive is for a skill: Anna knows how to cook, and she does it well.",
+        "es": "Tud + infinitivo es para una habilidad: Anna sabe cocinar, y lo hace bien."
+      },
+      "wrong": {
+        "akar": {
+          "en": "Anna jól akar főzni would mean 'Anna wants to cook well'.",
+          "es": "Anna jól akar főzni significaría «Anna quiere cocinar bien»."
+        },
+        "fog": {
+          "en": "Anna jól fog főzni would mean 'Anna will cook well', a prediction about the future.",
+          "es": "Anna jól fog főzni significaría «Anna va a cocinar bien», una predicción sobre el futuro."
+        }
+      },
+      "examples": ["Péter tud úszni.", "Kati tud magyarul."],
+      "tr": { "en": "Anna can cook well (she knows how).", "es": "Anna sabe cocinar bien." }
+    },
+    {
+      "id": "hat-het-w04",
+      "kind": "why",
+      "es": "Mehetsz haza.",
+      "target": "Mehetsz",
+      "tr": { "en": "You can go home.", "es": "Puedes irte a casa." },
+      "options": [
+        {
+          "text": {
+            "en": "Short stem: megy → me- + -het + -sz",
+            "es": "Raíz corta: megy → me- + -het + -sz"
+          }
+        },
+        {
+          "text": {
+            "en": "Regular stem: the whole verb megy + -het",
+            "es": "Raíz regular: el verbo entero megy + -het"
+          },
+          "wrong": {
+            "en": "With this rule the form would be megyhetsz, which Hungarian does not use: megy loses its -gy before -het.",
+            "es": "Con esta regla la forma sería megyhetsz, que el húngaro no usa: megy pierde el -gy antes de -het."
+          }
+        },
+        {
+          "text": {
+            "en": "Plain present of megy: 'you go'",
+            "es": "Presente simple de megy: «tú vas»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mész haza: 'you are going home', with no idea of 'may'.",
+            "es": "Con esta regla la frase sería Mész haza: «te vas a casa», sin la idea de «puedes»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hat-het-f12",
+      "kind": "form",
+      "verb": "kér",
+      "person": "ők (a számlát)",
+      "answer": "kérhetik",
+      "table": "hat-het-def"
+    },
+    {
+      "id": "hat-het-c14",
+      "sentence": "___ bejönni?",
+      "options": ["Szabad", "Kell", "Fog"],
+      "correct": 0,
+      "why": {
+        "en": "Szabad + infinitive asks whether something is allowed: Szabad bejönni? = May one come in?",
+        "es": "Szabad + infinitivo pregunta si algo está permitido: Szabad bejönni? = ¿Se puede pasar?"
+      },
+      "wrong": {
+        "Kell": {
+          "en": "Kell bejönni? would ask 'Do you have to come in?'",
+          "es": "Kell bejönni? preguntaría «¿Hay que entrar?»"
+        },
+        "Fog": {
+          "en": "Fog bejönni? would ask 'Is he or she going to come in?'",
+          "es": "Fog bejönni? preguntaría «¿Va a entrar él o ella?»"
+        }
+      },
+      "examples": ["Szabad itt enni?", "Itt nem szabad enni."],
+      "tr": { "en": "May one come in?", "es": "¿Se puede pasar?" }
+    }
+  ]
+}

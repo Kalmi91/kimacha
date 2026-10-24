@@ -67,7 +67,11 @@ describe('a11y: onboarding controls', () => {
     await flush();
     expect(view.getByRole('button', { name: 'English' })).toBeTruthy();
     expect(view.getByRole('button', { name: 'Español' })).toBeTruthy();
+    expect(view.getByRole('button', { name: 'Magyar' })).toBeTruthy();
     fireEvent.press(view.getByRole('button', { name: 'English' }));
+    // the "I learn" step has named buttons too
+    expect(view.getByRole('button', { name: 'Magyar' })).toBeTruthy();
+    fireEvent.press(view.getByRole('button', { name: 'Español' }));
     fireEvent.press(view.getByRole('button', { name: 'Get started' }));
     fireEvent.press(view.getByRole('button', { name: "Let's start" }));
     // theme step: every tile is a button whose name is the theme's name, not the sample text.

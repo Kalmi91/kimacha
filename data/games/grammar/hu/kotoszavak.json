@@ -1,0 +1,722 @@
+{
+  "schema": 2,
+  "topic": "kotoszavak",
+  "level": "A2",
+  "title": { "en": "Link words: és, de, vagy, mert, hogy, ha", "es": "Conectores: és, de, vagy, mert, hogy, ha" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian joins sentences with small link words: és (and), de (but), vagy (or), mert (because), ezért (so), hogy (that), ha (if), amikor (when) and pedig (whereas). They work almost like their English counterparts. The big difference is the comma: a clause that starts with mert, hogy, ha or amikor is always set off by a comma, and de, ezért and pedig also join clauses after a comma. English often has no comma there (I know Anna is at home); Hungarian always has one: Tudom, hogy Anna otthon van. Between two words, és and vagy take no comma.",
+        "es": "El húngaro une las oraciones con palabras pequeñas: és (y), de (pero), vagy (o), mert (porque), ezért (por eso), hogy (que), ha (si), amikor (cuando) y pedig (en cambio). Funcionan casi igual que en español. La gran diferencia es la coma: una oración que empieza con mert, hogy, ha o amikor siempre va separada por una coma, y de, ezért y pedig también unen oraciones después de una coma. En español «Sé que Anna está en casa» no lleva coma; en húngaro siempre: Tudom, hogy Anna otthon van. Entre dos palabras, és y vagy no llevan coma."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "connectors",
+      "noTableDeck": true,
+      "title": {
+        "en": "Link words: and, or, but, because, so, that, if, when, whereas",
+        "es": "Conectores: y, o, pero, porque, por eso, que, si, cuando, en cambio"
+      },
+      "header": [
+        { "en": "Word", "es": "Palabra" },
+        { "en": "In a sentence", "es": "En una frase" },
+        { "en": "Comma before?", "es": "¿Coma antes?" }
+      ],
+      "rows": [
+        ["és", "Kenyeret és sajtot veszek.", "-"],
+        ["vagy", "Kávét vagy teát kérsz?", "-"],
+        ["de", "Fáradt vagyok, de dolgozom.", ","],
+        ["mert", "Otthon maradok, mert beteg vagyok.", ","],
+        ["ezért", "Beteg vagyok, ezért otthon maradok.", ","],
+        ["hogy", "Tudom, hogy Anna otthon van.", ","],
+        ["ha", "Otthon maradok, ha esik az eső.", ","],
+        ["amikor", "Olvasok, amikor otthon vagyok.", ","],
+        ["pedig", "Anna otthon van, Péter pedig dolgozik.", ","]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "What each link word does", "es": "Qué hace cada conector" },
+      "points": [
+        {
+          "text": {
+            "en": "és (and) and vagy (or) join two words or two short parts. No comma before them. Careful: vagy also means 'you are' (te vagy); the rest of the sentence tells you which one it is.",
+            "es": "és (y) y vagy (o) unen dos palabras o dos partes cortas. Sin coma. Ojo: vagy también significa «tú eres/estás» (te vagy); el resto de la frase te dice cuál es."
+          },
+          "examples": [
+            { "es": "Kenyeret és sajtot veszek.", "tr": { "en": "I am buying bread and cheese.", "es": "Compro pan y queso." } },
+            { "es": "Kávét vagy teát kérsz?", "tr": { "en": "Do you want coffee or tea?", "es": "¿Quieres café o té?" } },
+            { "es": "Mész vagy maradsz?", "tr": { "en": "Are you going or staying?", "es": "¿Te vas o te quedas?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "de (but) shows a contrast and always follows a comma. pedig (whereas) also contrasts two parts, but it sits after the first word of its part: Anna otthon van, Péter pedig dolgozik.",
+            "es": "de (pero) marca un contraste y siempre va después de una coma. pedig (en cambio) también contrasta dos partes, pero va después de la primera palabra de su parte: Anna otthon van, Péter pedig dolgozik."
+          },
+          "examples": [
+            { "es": "Fáradt vagyok, de dolgozom.", "tr": { "en": "I am tired, but I am working.", "es": "Estoy cansado, pero trabajo." } },
+            { "es": "Szeretem a kávét, de a teát nem szeretem.", "tr": { "en": "I like coffee, but I do not like tea.", "es": "Me gusta el café, pero no me gusta el té." } },
+            { "es": "Péter itt van, Anna pedig otthon van.", "tr": { "en": "Péter is here, whereas Anna is at home.", "es": "Péter está aquí, en cambio Anna está en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "mert (because) brings the reason and follows the main clause. ezért (so, for this reason) brings the result. Both come after a comma.",
+            "es": "mert (porque) trae la razón y va después de la oración principal. ezért (por eso) trae el resultado. Los dos van después de una coma."
+          },
+          "examples": [
+            { "es": "Otthon maradok, mert beteg vagyok.", "tr": { "en": "I am staying home because I am sick.", "es": "Me quedo en casa porque estoy enfermo." } },
+            { "es": "Beteg vagyok, ezért otthon maradok.", "tr": { "en": "I am sick, so I am staying home.", "es": "Estoy enfermo, por eso me quedo en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "hogy (that) introduces what someone knows, sees, hopes or feels. English can drop 'that' (I know she is home); in Hungarian keep hogy (only casual speech drops it, mostly after remélem or gondolom), and there is always a comma before it.",
+            "es": "hogy (que) introduce lo que alguien sabe, ve, espera o siente. Como en español, el «que» se conserva (solo el habla informal lo omite, sobre todo tras remélem o gondolom), pero el húngaro siempre pone coma antes de hogy y el español no."
+          },
+          "examples": [
+            { "es": "Tudom, hogy Anna otthon van.", "tr": { "en": "I know that Anna is at home.", "es": "Sé que Anna está en casa." } },
+            { "es": "Remélem, hogy holnap jó idő lesz.", "tr": { "en": "I hope that the weather will be good tomorrow.", "es": "Espero que mañana haga buen tiempo." } },
+            { "es": "Örülök, hogy itt vagy.", "tr": { "en": "I am glad that you are here.", "es": "Me alegra que estés aquí." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "ha (if) gives a condition; amikor (when) gives a time. If the ha or amikor clause comes first, the comma goes after it.",
+            "es": "ha (si) da una condición; amikor (cuando) da un momento. Si la oración con ha o amikor va primero, la coma va después de ella."
+          },
+          "examples": [
+            { "es": "Ha holnap esik, otthon maradok.", "tr": { "en": "If it rains tomorrow, I am staying home.", "es": "Si mañana llueve, me quedo en casa." } },
+            { "es": "Otthon maradok, ha esik az eső.", "tr": { "en": "I stay home if it rains.", "es": "Me quedo en casa si llueve." } },
+            { "es": "Amikor otthon vagyok, olvasok.", "tr": { "en": "When I am at home, I read.", "es": "Cuando estoy en casa, leo." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "cause-result",
+      "noTableDeck": true,
+      "title": { "en": "The same two facts: reason and result", "es": "Los mismos dos hechos: razón y resultado" },
+      "header": [
+        { "en": "mert: the reason comes second", "es": "mert: la razón va después" },
+        { "en": "ezért: the result comes second", "es": "ezért: el resultado va después" }
+      ],
+      "rows": [
+        ["Otthon maradok, mert beteg vagyok.", "Beteg vagyok, ezért otthon maradok."],
+        ["Nem eszem, mert nem vagyok éhes.", "Nem vagyok éhes, ezért nem eszem."],
+        ["Taxival megyek, mert a busz lassú.", "A busz lassú, ezért taxival megyek."],
+        ["Korán kelek, mert dolgozom.", "Dolgozom, ezért korán kelek."]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Words that are easy to mix up", "es": "Palabras fáciles de confundir" },
+      "pairs": [
+        {
+          "a": "mert",
+          "b": "ezért",
+          "note": {
+            "en": "mert introduces the reason, ezért introduces the result: the same two facts, told in a different order.",
+            "es": "mert introduce la razón, ezért introduce el resultado: los mismos dos hechos, contados en otro orden."
+          },
+          "examples": [
+            { "es": "Nem eszem, mert nem vagyok éhes.", "tr": { "en": "I am not eating because I am not hungry.", "es": "No como porque no tengo hambre." } },
+            { "es": "Nem vagyok éhes, ezért nem eszem.", "tr": { "en": "I am not hungry, so I am not eating.", "es": "No tengo hambre, por eso no como." } }
+          ]
+        },
+        {
+          "a": "ha",
+          "b": "amikor",
+          "note": {
+            "en": "ha is 'if': something may or may not happen. amikor is 'when': a time that is known or already happened.",
+            "es": "ha es «si»: algo puede pasar o no. amikor es «cuando»: un momento conocido o que ya pasó."
+          },
+          "examples": [
+            { "es": "Ha holnap esik, otthon maradok.", "tr": { "en": "If it rains tomorrow, I am staying home.", "es": "Si mañana llueve, me quedo en casa." } },
+            { "es": "Tegnap, amikor dolgoztam, levelet kaptam.", "tr": { "en": "Yesterday, when I was working, I got a letter.", "es": "Ayer, cuando estaba trabajando, recibí una carta." } }
+          ]
+        },
+        {
+          "a": "és",
+          "b": "de",
+          "note": {
+            "en": "és just adds one thing to another; de sets two things against each other.",
+            "es": "és solo suma una cosa a otra; de pone dos cosas una contra otra."
+          },
+          "examples": [
+            { "es": "Kati és Péter magyarok.", "tr": { "en": "Kati and Péter are Hungarian.", "es": "Kati y Péter son húngaros." } },
+            { "es": "Kati magyar, de Péter külföldi.", "tr": { "en": "Kati is Hungarian, but Péter is a foreigner.", "es": "Kati es húngara, pero Péter es extranjero." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) English can drop 'that' (I know she is home); in Hungarian keep hogy: Tudom, hogy otthon van (only casual speech drops it, mostly after remélem or gondolom). (2) Do not forget the comma before mert, hogy, ha, amikor and de. (3) vagy means both 'or' and 'you are': Itt vagy vagy otthon? = Are you here or at home? And in Hogy vagy? (how are you) the word hogy is a different one: at the start of a question it means 'how'.",
+        "es": "Trampas clásicas: (1) como en español, el «que» no se quita: Tudom, hogy otthon van (Sé que está en casa); solo el habla informal lo omite, sobre todo tras remélem o gondolom. Pero el español no pone coma ahí y el húngaro siempre. (2) No olvides la coma antes de mert, hogy, ha, amikor y de. (3) vagy significa «o» y «tú eres/estás»: Itt vagy vagy otthon? = ¿Estás aquí o en casa? Y en Hogy vagy? (¿cómo estás?) la palabra hogy es otra: al principio de una pregunta significa «cómo»."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian joins sentences with small link words. «És» means and, «de» means but, and «vagy» means or. «Mert» means because: «Otthon maradok, mert beteg vagyok.» «Ezért» means so: «Beteg vagyok, ezért otthon maradok.» The word «hogy» means that: «Tudom, hogy Anna otthon van.» And «ha» means if: «Ha esik az eső, otthon maradok.» Before «mert» and «hogy» there is always a comma.",
+    "es": "El húngaro une las oraciones con palabras pequeñas. «És» significa y, «de» significa pero, y «vagy» significa o. «Mert» significa porque: «Otthon maradok, mert beteg vagyok.» «Ezért» significa por eso: «Beteg vagyok, ezért otthon maradok.» La palabra «hogy» significa que: «Tudom, hogy Anna otthon van.» Y «ha» significa si: «Ha esik az eső, otthon maradok.» Antes de «mert» y «hogy» siempre hay una coma."
+  },
+  "glossary": [
+    { "word": "pedig", "gloss": { "en": "whereas, while", "es": "en cambio, mientras que" } }
+  ],
+  "items": [
+    {
+      "id": "kotoszavak-c01",
+      "sentence": "Kenyeret ___ sajtot veszek.",
+      "options": ["és", "de", "mert"],
+      "correct": 0,
+      "why": {
+        "en": "Bread and cheese are two things you buy: és adds one to the other.",
+        "es": "El pan y el queso son dos cosas que compras: és suma una a la otra."
+      },
+      "wrong": {
+        "de": {
+          "en": "With de the sentence would mean 'bread but cheese', as if the two were opposites.",
+          "es": "Con de la frase significaría «pan pero queso», como si fueran opuestos."
+        },
+        "mert": {
+          "en": "With mert the sentence would mean 'bread because cheese': mert gives a reason, not a second item.",
+          "es": "Con mert la frase significaría «pan porque queso»: mert da una razón, no un segundo elemento."
+        }
+      },
+      "examples": ["Anna és Péter otthon vannak.", "Teát és kávét kérek."],
+      "tr": { "en": "I am buying bread and cheese.", "es": "Compro pan y queso." }
+    },
+    {
+      "id": "kotoszavak-f01",
+      "kind": "form",
+      "verb": "és / vagy",
+      "person": "Anna ___ Péter otthon vannak.",
+      "answer": "és",
+      "table": "connectors"
+    },
+    {
+      "id": "kotoszavak-c02",
+      "sentence": "Kávét ___ teát kérsz?",
+      "options": ["vagy", "és", "hogy"],
+      "correct": 0,
+      "why": {
+        "en": "The question offers a choice between two drinks: vagy is 'or'.",
+        "es": "La pregunta ofrece elegir entre dos bebidas: vagy es «o»."
+      },
+      "wrong": {
+        "és": {
+          "en": "With és the question would offer both: 'Do you want coffee and tea?'",
+          "es": "Con és la pregunta ofrecería las dos: «¿Quieres café y té?»"
+        },
+        "hogy": {
+          "en": "hogy is 'that' and starts a clause (Tudom, hogy ...); it cannot choose between two nouns.",
+          "es": "hogy es «que» y abre una oración (Tudom, hogy ...); no sirve para elegir entre dos sustantivos."
+        }
+      },
+      "examples": ["Sört vagy bort iszol?", "Hideg vagy meleg vizet kérsz?"],
+      "tr": { "en": "Do you want coffee or tea?", "es": "¿Quieres café o té?" }
+    },
+    {
+      "id": "kotoszavak-f02",
+      "kind": "form",
+      "verb": "vagy / és",
+      "person": "Hideg ___ meleg vizet kérsz?",
+      "answer": "vagy",
+      "table": "connectors"
+    },
+    {
+      "id": "kotoszavak-c03",
+      "sentence": "Fáradt vagyok, ___ dolgozom.",
+      "options": ["de", "mert", "és"],
+      "correct": 0,
+      "why": {
+        "en": "Being tired and working do not fit together, so de (but) marks the contrast, after a comma.",
+        "es": "Estar cansado y trabajar no van juntos, así que de (pero) marca el contraste, después de una coma."
+      },
+      "wrong": {
+        "mert": {
+          "en": "With mert the sentence would mean 'I am tired because I am working': a reason, not a contrast.",
+          "es": "Con mert la frase significaría «estoy cansado porque trabajo»: una razón, no un contraste."
+        },
+        "és": {
+          "en": "With és the sentence would only list two facts, 'I am tired and I am working', with no contrast.",
+          "es": "Con és la frase solo enumeraría dos hechos, «estoy cansado y trabajo», sin contraste."
+        }
+      },
+      "examples": ["Meleg van, de nem úszom.", "Szeretem a kávét, de a teát nem szeretem."],
+      "tr": { "en": "I am tired, but I am working.", "es": "Estoy cansado, pero trabajo." }
+    },
+    {
+      "id": "kotoszavak-f03",
+      "kind": "form",
+      "verb": "de / mert",
+      "person": "Meleg van, ___ nem úszom.",
+      "answer": "de",
+      "table": "connectors"
+    },
+    {
+      "id": "kotoszavak-w01",
+      "kind": "why",
+      "es": "Otthon maradok, mert beteg vagyok.",
+      "target": "mert",
+      "tr": { "en": "I am staying home because I am sick.", "es": "Me quedo en casa porque estoy enfermo." },
+      "options": [
+        {
+          "text": {
+            "en": "A reason: mert follows the main clause, after a comma",
+            "es": "Una razón: mert va después de la oración principal, tras una coma"
+          }
+        },
+        {
+          "text": {
+            "en": "A result: what follows is the consequence",
+            "es": "Un resultado: lo que sigue es la consecuencia"
+          },
+          "wrong": {
+            "en": "With this rule the word would be ezért: Beteg vagyok, ezért otthon maradok. Here being sick is the reason, not the result.",
+            "es": "Con esta regla la palabra sería ezért: Beteg vagyok, ezért otthon maradok. Aquí estar enfermo es la razón, no el resultado."
+          }
+        },
+        {
+          "text": {
+            "en": "What someone knows or hopes: the word follows a verb like tudom",
+            "es": "Lo que alguien sabe o espera: la palabra va después de un verbo como tudom"
+          },
+          "wrong": {
+            "en": "With this rule the word would be hogy (Tudom, hogy ...); mert does not follow a verb of knowing, it gives a reason.",
+            "es": "Con esta regla la palabra sería hogy (Tudom, hogy ...); mert no va después de un verbo de saber, da una razón."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "kotoszavak-c04",
+      "sentence": "Otthon maradok, ___ beteg vagyok.",
+      "options": ["mert", "ezért", "hogy"],
+      "correct": 0,
+      "why": {
+        "en": "Being sick is the reason for staying home, and mert introduces the reason.",
+        "es": "Estar enfermo es la razón para quedarse en casa, y mert introduce la razón."
+      },
+      "wrong": {
+        "ezért": {
+          "en": "With ezért the sentence would mean 'I stay home, so I am sick': the result and the reason swapped.",
+          "es": "Con ezért la frase significaría «me quedo en casa, por eso estoy enfermo»: el resultado y la razón cambiados."
+        },
+        "hogy": {
+          "en": "hogy is 'that': 'I stay home that I am sick' gives no reason; hogy follows words like tudom or remélem.",
+          "es": "hogy es «que»: «me quedo en casa que estoy enfermo» no da ninguna razón; hogy va después de palabras como tudom o remélem."
+        }
+      },
+      "examples": ["Nem eszem, mert nem vagyok éhes.", "Nem megyek az étterembe, mert zárva van."],
+      "tr": { "en": "I am staying home because I am sick.", "es": "Me quedo en casa porque estoy enfermo." }
+    },
+    {
+      "id": "kotoszavak-f04",
+      "kind": "form",
+      "verb": "mert / ezért",
+      "person": "Éhes vagyok, ___ eszem.",
+      "answer": "ezért",
+      "table": "cause-result"
+    },
+    {
+      "id": "kotoszavak-c05",
+      "sentence": "Beteg vagyok, ___ otthon maradok.",
+      "options": ["ezért", "mert", "de"],
+      "correct": 0,
+      "why": {
+        "en": "Being sick is the cause and staying home the result; ezért introduces the result (so).",
+        "es": "Estar enfermo es la causa y quedarse en casa el resultado; ezért introduce el resultado (por eso)."
+      },
+      "wrong": {
+        "mert": {
+          "en": "With mert the sentence would mean 'I am sick because I stay home': the reason and the result swapped.",
+          "es": "Con mert la frase significaría «estoy enfermo porque me quedo en casa»: la razón y el resultado cambiados."
+        },
+        "de": {
+          "en": "With de the sentence would mean 'I am sick, but I stay home': a contrast, not a result.",
+          "es": "Con de la frase significaría «estoy enfermo, pero me quedo en casa»: un contraste, no un resultado."
+        }
+      },
+      "examples": ["Éhes vagyok, ezért eszem.", "Hideg van, ezért kabátot veszek."],
+      "tr": { "en": "I am sick, so I am staying home.", "es": "Estoy enfermo, por eso me quedo en casa." }
+    },
+    {
+      "id": "kotoszavak-f05",
+      "kind": "form",
+      "verb": "mert / ezért",
+      "person": "Eszem, ___ éhes vagyok.",
+      "answer": "mert",
+      "table": "cause-result"
+    },
+    {
+      "id": "kotoszavak-c06",
+      "sentence": "Tudom, ___ Anna otthon van.",
+      "options": ["hogy", "mert", "ha"],
+      "correct": 0,
+      "why": {
+        "en": "After tudom (I know) comes what you know, and hogy (that) introduces it, with a comma.",
+        "es": "Después de tudom (sé) viene lo que sabes, y hogy (que) lo introduce, con una coma."
+      },
+      "wrong": {
+        "mert": {
+          "en": "With mert the sentence would mean 'I know, because Anna is at home': a reason for knowing, not what you know.",
+          "es": "Con mert la frase significaría «lo sé porque Anna está en casa»: una razón para saberlo, no lo que sabes."
+        },
+        "ha": {
+          "en": "With ha the sentence would mean 'I know, if Anna is at home': a condition.",
+          "es": "Con ha la frase significaría «lo sé, si Anna está en casa»: una condición."
+        }
+      },
+      "examples": ["Látom, hogy fáradt vagy.", "Örülök, hogy itt vagy."],
+      "tr": { "en": "I know that Anna is at home.", "es": "Sé que Anna está en casa." }
+    },
+    {
+      "id": "kotoszavak-f06",
+      "kind": "form",
+      "verb": "hogy / de",
+      "person": "Tudom, ___ Kati magyar.",
+      "answer": "hogy",
+      "table": "connectors"
+    },
+    {
+      "id": "kotoszavak-w02",
+      "kind": "why",
+      "es": "Tudom, hogy Anna otthon van.",
+      "target": "hogy",
+      "tr": { "en": "I know that Anna is at home.", "es": "Sé que Anna está en casa." },
+      "options": [
+        {
+          "text": {
+            "en": "A reason: the clause says why",
+            "es": "Una razón: la oración dice por qué"
+          },
+          "wrong": {
+            "en": "With this rule the word would be mert: Anna otthon van, mert ... Here the clause says what I know, so it is hogy.",
+            "es": "Con esta regla la palabra sería mert: Anna otthon van, mert ... Aquí la oración dice lo que sé, así que es hogy."
+          }
+        },
+        {
+          "text": {
+            "en": "What someone knows: hogy introduces it, is normally kept, and has a comma before it",
+            "es": "Lo que alguien sabe: hogy lo introduce, normalmente se conserva y lleva coma antes"
+          }
+        },
+        {
+          "text": {
+            "en": "A condition: the clause says if",
+            "es": "Una condición: la oración dice si"
+          },
+          "wrong": {
+            "en": "With this rule the word would be ha: Tudom, ha ... would mean 'I know, if ...'. Here Anna being at home is a fact I know.",
+            "es": "Con esta regla la palabra sería ha: Tudom, ha ... significaría «lo sé, si ...». Aquí que Anna esté en casa es un hecho que sé."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "kotoszavak-c07",
+      "sentence": "___ holnap esik, otthon maradok.",
+      "options": ["Ha", "Hogy", "Mert"],
+      "correct": 0,
+      "why": {
+        "en": "A condition ('if it rains tomorrow') starts with ha; the comma comes after the ha clause.",
+        "es": "Una condición («si mañana llueve») empieza con ha; la coma va después de la oración con ha."
+      },
+      "wrong": {
+        "Hogy": {
+          "en": "hogy cannot open a condition; at the start of a sentence hogy means 'how' (Hogy vagy?).",
+          "es": "hogy no puede abrir una condición; al principio de una frase hogy significa «cómo» (Hogy vagy?)."
+        },
+        "Mert": {
+          "en": "mert gives a reason after the main clause (Otthon maradok, mert esik); it does not open a sentence like this.",
+          "es": "mert da una razón después de la oración principal (Otthon maradok, mert esik); no abre una frase así."
+        }
+      },
+      "examples": ["Ha meleg van, úszom.", "Ha beteg vagy, orvoshoz mész."],
+      "tr": { "en": "If it rains tomorrow, I am staying home.", "es": "Si mañana llueve, me quedo en casa." }
+    },
+    {
+      "id": "kotoszavak-f07",
+      "kind": "form",
+      "verb": "ha / hogy",
+      "person": "___ meleg van, úszom.",
+      "answer": "Ha",
+      "table": "connectors"
+    },
+    {
+      "id": "kotoszavak-c08",
+      "sentence": "Anna otthon van, Péter ___ dolgozik.",
+      "options": ["pedig", "ezért", "mert"],
+      "correct": 0,
+      "why": {
+        "en": "pedig contrasts the two parts and sits after the first word of its part: Péter pedig dolgozik.",
+        "es": "pedig contrasta las dos partes y va después de la primera palabra de su parte: Péter pedig dolgozik."
+      },
+      "wrong": {
+        "ezért": {
+          "en": "With ezért the sentence would mean 'Anna is at home, so Péter works': a result, not a contrast.",
+          "es": "Con ezért la frase significaría «Anna está en casa, por eso Péter trabaja»: un resultado, no un contraste."
+        },
+        "mert": {
+          "en": "mert starts its clause (..., mert Péter dolgozik); it cannot sit after Péter in this position.",
+          "es": "mert abre su oración (..., mert Péter dolgozik); no puede ir después de Péter en esta posición."
+        }
+      },
+      "examples": ["Én kávét kérek, te pedig teát kérsz.", "Kati magyar, Péter pedig külföldi."],
+      "tr": { "en": "Anna is at home, whereas Péter is working.", "es": "Anna está en casa, en cambio Péter trabaja." }
+    },
+    {
+      "id": "kotoszavak-f08",
+      "kind": "form",
+      "verb": "amikor / hogy",
+      "person": "___ tegnap Budapesten voltam, vettem egy könyvet.",
+      "answer": "Amikor",
+      "table": "connectors"
+    },
+    {
+      "id": "kotoszavak-c09",
+      "sentence": "Szeretem a kávét, ___ a teát nem szeretem.",
+      "options": ["de", "vagy", "ezért"],
+      "correct": 0,
+      "why": {
+        "en": "The two halves contrast: I like coffee, I do not like tea. de marks it.",
+        "es": "Las dos mitades contrastan: me gusta el café, no me gusta el té. de lo marca."
+      },
+      "wrong": {
+        "vagy": {
+          "en": "With vagy the sentence would offer a choice, 'I like coffee or I do not like tea', which is not what you mean.",
+          "es": "Con vagy la frase ofrecería una opción, «me gusta el café o no me gusta el té», que no es lo que quieres decir."
+        },
+        "ezért": {
+          "en": "With ezért the sentence would mean 'I like coffee, so I do not like tea', which makes no sense.",
+          "es": "Con ezért la frase significaría «me gusta el café, por eso no me gusta el té», que no tiene sentido."
+        }
+      },
+      "examples": ["Kati magyar, de Péter külföldi.", "Kenyeret veszek, de sajtot nem veszek."],
+      "tr": { "en": "I like coffee, but I do not like tea.", "es": "Me gusta el café, pero no me gusta el té." }
+    },
+    {
+      "id": "kotoszavak-f09",
+      "kind": "form",
+      "verb": "pedig / de",
+      "person": "Péter itt van, Anna ___ otthon van.",
+      "answer": "pedig",
+      "table": "connectors"
+    },
+    {
+      "id": "kotoszavak-w03",
+      "kind": "why",
+      "es": "Fáradt vagyok, de dolgozom.",
+      "target": "de",
+      "tr": { "en": "I am tired, but I am working.", "es": "Estoy cansado, pero trabajo." },
+      "options": [
+        {
+          "text": {
+            "en": "A result: so",
+            "es": "Un resultado: por eso"
+          },
+          "wrong": {
+            "en": "With this rule the word would be ezért: Fáradt vagyok, ezért pihenek. Here working is not the result of being tired.",
+            "es": "Con esta regla la palabra sería ezért: Fáradt vagyok, ezért pihenek. Aquí trabajar no es el resultado de estar cansado."
+          }
+        },
+        {
+          "text": {
+            "en": "A condition: if",
+            "es": "Una condición: si"
+          },
+          "wrong": {
+            "en": "With this rule the word would be ha: Fáradt vagyok, ha dolgozom would mean 'I am tired when I work'.",
+            "es": "Con esta regla la palabra sería ha: Fáradt vagyok, ha dolgozom significaría «estoy cansado cuando trabajo»."
+          }
+        },
+        {
+          "text": {
+            "en": "A contrast: two things that do not fit together, with a comma before de",
+            "es": "Un contraste: dos cosas que no van juntas, con una coma antes de de"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "kotoszavak-c10",
+      "sentence": "Remélem, ___ holnap jó idő lesz.",
+      "options": ["hogy", "ha", "amikor"],
+      "correct": 0,
+      "why": {
+        "en": "What you hope comes after hogy: 'I hope that the weather will be good tomorrow'.",
+        "es": "Lo que esperas viene después de hogy: «espero que mañana haga buen tiempo»."
+      },
+      "wrong": {
+        "ha": {
+          "en": "With ha the sentence would mean 'I hope, if the weather is good tomorrow': a condition instead of what you hope.",
+          "es": "Con ha la frase significaría «espero, si mañana hace buen tiempo»: una condición en lugar de lo que esperas."
+        },
+        "amikor": {
+          "en": "With amikor the sentence would mean 'I hope, when the weather is good tomorrow': a time instead of what you hope.",
+          "es": "Con amikor la frase significaría «espero, cuando mañana haga buen tiempo»: un momento en lugar de lo que esperas."
+        }
+      },
+      "examples": ["Tudom, hogy Anna otthon van.", "Látom, hogy fáradt vagy."],
+      "tr": { "en": "I hope that the weather will be good tomorrow.", "es": "Espero que mañana haga buen tiempo." }
+    },
+    {
+      "id": "kotoszavak-f10",
+      "kind": "form",
+      "verb": "hogy / ezért",
+      "person": "Örülök, ___ itt vagy.",
+      "answer": "hogy",
+      "table": "connectors"
+    },
+    {
+      "id": "kotoszavak-c11",
+      "sentence": "Tegnap, ___ dolgoztam, levelet kaptam.",
+      "options": ["amikor", "ha", "hogy"],
+      "correct": 0,
+      "why": {
+        "en": "Yesterday is a fixed time that already happened: amikor means 'when', with commas around the clause.",
+        "es": "Ayer es un momento fijo que ya pasó: amikor significa «cuando», con comas alrededor de la oración."
+      },
+      "wrong": {
+        "ha": {
+          "en": "With ha the sentence would turn a past fact into a condition ('if I worked'); for a fixed time use amikor.",
+          "es": "Con ha la frase convertiría un hecho pasado en una condición («si trabajé»); para un momento fijo se usa amikor."
+        },
+        "hogy": {
+          "en": "hogy is 'that': 'Yesterday, that I worked' does not give a time.",
+          "es": "hogy es «que»: «ayer, que trabajé» no da un momento."
+        }
+      },
+      "examples": ["Amikor otthon vagyok, olvasok.", "Olvasok, amikor otthon vagyok."],
+      "tr": { "en": "Yesterday, when I was working, I got a letter.", "es": "Ayer, cuando estaba trabajando, recibí una carta." }
+    },
+    {
+      "id": "kotoszavak-f11",
+      "kind": "form",
+      "verb": "ezért / de",
+      "person": "Hideg van, ___ kabátot veszek.",
+      "answer": "ezért",
+      "table": "cause-result"
+    },
+    {
+      "id": "kotoszavak-c12",
+      "sentence": "Mész ___ maradsz?",
+      "options": ["vagy", "és", "de"],
+      "correct": 0,
+      "why": {
+        "en": "The question offers two choices, going or staying: vagy is 'or', with no comma before it.",
+        "es": "La pregunta ofrece dos opciones, irte o quedarte: vagy es «o», sin coma antes."
+      },
+      "wrong": {
+        "és": {
+          "en": "With és the sentence would mean 'You go and you stay': both at once.",
+          "es": "Con és la frase significaría «te vas y te quedas»: las dos cosas a la vez."
+        },
+        "de": {
+          "en": "de means 'but' and would need a comma: 'You go, but you stay' is a contrast, not a question about two choices.",
+          "es": "de significa «pero» y necesitaría una coma: «te vas, pero te quedas» es un contraste, no una pregunta con dos opciones."
+        }
+      },
+      "examples": ["Itt vagy vagy otthon?", "Sört vagy bort iszol?"],
+      "tr": { "en": "Are you going or staying?", "es": "¿Te vas o te quedas?" }
+    },
+    {
+      "id": "kotoszavak-f12",
+      "kind": "form",
+      "verb": "mert / hogy",
+      "person": "Nem megyek az étterembe, ___ zárva van.",
+      "answer": "mert",
+      "table": "cause-result"
+    },
+    {
+      "id": "kotoszavak-w04",
+      "kind": "why",
+      "es": "Ha esik az eső, otthon maradok.",
+      "target": "Ha",
+      "tr": { "en": "If it rains, I am staying home.", "es": "Si llueve, me quedo en casa." },
+      "options": [
+        {
+          "text": {
+            "en": "A reason: the word would be mert",
+            "es": "Una razón: la palabra sería mert"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Otthon maradok, mert esik az eső: mert follows the main clause and states a fact.",
+            "es": "Con esta regla la frase sería Otthon maradok, mert esik az eső: mert va después de la oración principal y expresa un hecho."
+          }
+        },
+        {
+          "text": {
+            "en": "A condition: the ha clause comes first, so the comma goes after it",
+            "es": "Una condición: la oración con ha va primero, así que la coma va después de ella"
+          }
+        },
+        {
+          "text": {
+            "en": "A fixed time: the word would be amikor",
+            "es": "Un momento fijo: la palabra sería amikor"
+          },
+          "wrong": {
+            "en": "With this rule the word would be amikor, for a known time (Tegnap, amikor dolgoztam, ...); here the rain is a possibility, so ha.",
+            "es": "Con esta regla la palabra sería amikor, para un momento conocido (Tegnap, amikor dolgoztam, ...); aquí la lluvia es una posibilidad, así que ha."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "kotoszavak-c13",
+      "sentence": "Otthon maradok, ___ esik az eső.",
+      "options": ["ha", "hogy", "de"],
+      "correct": 0,
+      "why": {
+        "en": "The rain is the condition for staying home: ha (if), after a comma.",
+        "es": "La lluvia es la condición para quedarse en casa: ha (si), después de una coma."
+      },
+      "wrong": {
+        "hogy": {
+          "en": "hogy is 'that': 'I stay home that it rains' has no meaning.",
+          "es": "hogy es «que»: «me quedo en casa que llueve» no tiene sentido."
+        },
+        "de": {
+          "en": "With de the sentence would mean 'I stay home, but it rains': a contrast.",
+          "es": "Con de la frase significaría «me quedo en casa, pero llueve»: un contraste."
+        }
+      },
+      "examples": ["Ha esik az eső, otthon maradok.", "Ha meleg van, úszom."],
+      "tr": { "en": "I stay at home if it rains.", "es": "Me quedo en casa si llueve." }
+    },
+    {
+      "id": "kotoszavak-c14",
+      "sentence": "Látom, ___ fáradt vagy.",
+      "options": ["hogy", "de", "ezért"],
+      "correct": 0,
+      "why": {
+        "en": "What you see comes after hogy: 'I see that you are tired'.",
+        "es": "Lo que ves viene después de hogy: «veo que estás cansado»."
+      },
+      "wrong": {
+        "de": {
+          "en": "With de the sentence would mean 'I see, but you are tired': a contrast.",
+          "es": "Con de la frase significaría «veo, pero estás cansado»: un contraste."
+        },
+        "ezért": {
+          "en": "With ezért the sentence would mean 'I see, so you are tired': a result.",
+          "es": "Con ezért la frase significaría «veo, por eso estás cansado»: un resultado."
+        }
+      },
+      "examples": ["Tudom, hogy Anna otthon van.", "Remélem, hogy holnap jó idő lesz."],
+      "tr": { "en": "I see that you are tired.", "es": "Veo que estás cansado." }
+    }
+  ]
+}

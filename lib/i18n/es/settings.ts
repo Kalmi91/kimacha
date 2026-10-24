@@ -15,7 +15,6 @@ const es: typeof en = {
       title: 'Temas',
       oneLook: 'Este tema tiene un solo estilo.',
       posterSlogan: 'APRENDER, APRENDER, APRENDER',
-      sample: 'the car',
       know: 'Lo sé',
       // the theme decor texts (senior, retro95, y2k, gamer).
       readAloud: 'Escuchar',
@@ -60,8 +59,6 @@ const es: typeof en = {
     missedWordDelaySeconds: (n: string) => `${n} s`,
     learningDirection: 'Dirección de aprendizaje',
     chooseDirection: 'Elige la dirección de aprendizaje',
-    directionEnEs: 'Inglés → español',
-    directionEsEn: 'Español → inglés',
     credits: 'Créditos',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reiniciar progreso de gramática',

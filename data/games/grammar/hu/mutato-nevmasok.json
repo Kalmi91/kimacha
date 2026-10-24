@@ -1,0 +1,1288 @@
+{
+  "schema": 2,
+  "topic": "mutato-nevmasok",
+  "level": "A2",
+  "title": {
+    "en": "this and that: ez, az, itt, ide",
+    "es": "Esto y eso: ez, az, itt, ide"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has two pointing words: ez (this, near the speaker) and az (that, away from the speaker). Before a noun they always come with the article: ez a ház (this house), az a ház (that house). The plural is ezek and azok, and then the noun is plural too: ezek a házak. The big difference from English: ez and az take the SAME case ending as the noun. English 'in this house' has one 'in'; Hungarian says ebben a házban, with -ban on both words.",
+        "es": "El húngaro tiene dos palabras para señalar: ez (este, cerca de quien habla) y az (ese o aquel, lejos de quien habla). Delante de un sustantivo siempre llevan artículo: ez a ház (esta casa), az a ház (esa casa). El plural es ezek y azok, y entonces el sustantivo también va en plural: ezek a házak. La gran diferencia con el español: ez y az llevan LA MISMA terminación de caso que el sustantivo. «En esta casa» tiene un solo «en»; el húngaro dice ebben a házban, con -ban en las dos palabras."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ez-az-forms",
+      "title": {
+        "en": "ez and az with endings",
+        "es": "ez y az con terminaciones"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "ez",
+          "es": "ez"
+        },
+        {
+          "en": "az",
+          "es": "az"
+        }
+      ],
+      "rows": [
+        [
+          "többes szám",
+          "ezek",
+          "azok"
+        ],
+        [
+          "-t",
+          "ezt",
+          "azt"
+        ],
+        [
+          "-ban/-ben",
+          "ebben",
+          "abban"
+        ],
+        [
+          "-ba/-be",
+          "ebbe",
+          "abba"
+        ],
+        [
+          "-ból/-ből",
+          "ebből",
+          "abból"
+        ],
+        [
+          "-on/-en/-ön",
+          "ezen",
+          "azon"
+        ],
+        [
+          "-ra/-re",
+          "erre",
+          "arra"
+        ],
+        [
+          "-ról/-ről",
+          "erről",
+          "arról"
+        ],
+        [
+          "-hoz/-hez/-höz",
+          "ehhez",
+          "ahhoz"
+        ],
+        [
+          "-nál/-nél",
+          "ennél",
+          "annál"
+        ],
+        [
+          "-val/-vel",
+          "ezzel",
+          "azzal"
+        ],
+        [
+          "-nak/-nek",
+          "ennek",
+          "annak"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "ez and az with a noun",
+        "es": "ez y az con un sustantivo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "ez / az + a (az before a vowel) + noun. Near: ez. Far: az. The article is always there.",
+            "es": "ez / az + a (az ante vocal) + sustantivo. Cerca: ez. Lejos: az. El artículo siempre está."
+          },
+          "examples": [
+            {
+              "es": "Ez a ház nagy.",
+              "tr": {
+                "en": "This house is big.",
+                "es": "Esta casa es grande."
+              }
+            },
+            {
+              "es": "Az a kutya kicsi.",
+              "tr": {
+                "en": "That dog is small.",
+                "es": "Ese perro es pequeño."
+              }
+            },
+            {
+              "es": "Ez az autó új.",
+              "tr": {
+                "en": "This car is new.",
+                "es": "Este auto es nuevo."
+              }
+            },
+            {
+              "es": "Az az iskola régi.",
+              "tr": {
+                "en": "That school is old.",
+                "es": "Esa escuela es vieja."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ezek / azok + a + plural noun. Both words are plural.",
+            "es": "ezek / azok + a + sustantivo en plural. Las dos palabras van en plural."
+          },
+          "examples": [
+            {
+              "es": "Ezek a könyvek drágák.",
+              "tr": {
+                "en": "These books are expensive.",
+                "es": "Estos libros son caros."
+              }
+            },
+            {
+              "es": "Azok a házak szépek.",
+              "tr": {
+                "en": "Those houses are beautiful.",
+                "es": "Esas casas son bonitas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ez / az can also stand alone, with no noun: 'this one', 'that one'.",
+            "es": "ez / az también pueden ir solos, sin sustantivo: «este», «ese»."
+          },
+          "examples": [
+            {
+              "es": "Mi ez?",
+              "tr": {
+                "en": "What is this?",
+                "es": "¿Qué es esto?"
+              }
+            },
+            {
+              "es": "Ez egy kutya.",
+              "tr": {
+                "en": "This is a dog.",
+                "es": "Esto es un perro."
+              }
+            },
+            {
+              "es": "Ezt kérem.",
+              "tr": {
+                "en": "I would like this one.",
+                "es": "Quiero este."
+              }
+            },
+            {
+              "es": "Azt látom.",
+              "tr": {
+                "en": "I see that.",
+                "es": "Veo eso."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The ending goes on both words",
+        "es": "La terminación va en las dos palabras"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Where (-ban/-ben): ebben a házban, abban a boltban.",
+            "es": "Dónde (-ban/-ben): ebben a házban, abban a boltban."
+          },
+          "examples": [
+            {
+              "es": "Ebben a boltban dolgozom.",
+              "tr": {
+                "en": "I work in this shop.",
+                "es": "Trabajo en esta tienda."
+              }
+            },
+            {
+              "es": "Ebben az étteremben eszem.",
+              "tr": {
+                "en": "I eat in this restaurant.",
+                "es": "Como en este restaurante."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Where to (-ba/-be): ebbe a boltba, abba az iskolába.",
+            "es": "Hacia dónde (-ba/-be): ebbe a boltba, abba az iskolába."
+          },
+          "examples": [
+            {
+              "es": "Abba az iskolába megyek.",
+              "tr": {
+                "en": "I am going to that school.",
+                "es": "Voy a esa escuela."
+              }
+            },
+            {
+              "es": "Abba az étterembe megyünk.",
+              "tr": {
+                "en": "We are going to that restaurant.",
+                "es": "Vamos a ese restaurante."
+              }
+            },
+            {
+              "es": "Ebbe a városba utazom.",
+              "tr": {
+                "en": "I am traveling to this city.",
+                "es": "Viajo a esta ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The object (-t): ezt a könyvet, azt a kutyát. A definite object like this takes the definite verb form (olvasom, látom, veszem).",
+            "es": "El objeto (-t): ezt a könyvet, azt a kutyát. Un objeto determinado como este lleva el verbo en la forma definida (olvasom, látom, veszem)."
+          },
+          "examples": [
+            {
+              "es": "Ezt a kenyeret veszem.",
+              "tr": {
+                "en": "I am buying this bread.",
+                "es": "Compro este pan."
+              }
+            },
+            {
+              "es": "Azt a kulcsot keresem.",
+              "tr": {
+                "en": "I am looking for that key.",
+                "es": "Busco esa llave."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Every other ending works the same way: ezen az asztalon, ennek a gyereknek, azzal a lánnyal.",
+            "es": "Cualquier otra terminación funciona igual: ezen az asztalon, ennek a gyereknek, azzal a lánnyal."
+          },
+          "examples": [
+            {
+              "es": "Ezen az asztalon van a kulcs.",
+              "tr": {
+                "en": "The key is on this table.",
+                "es": "La llave está sobre esta mesa."
+              }
+            },
+            {
+              "es": "Ennek a gyereknek adok egy könyvet.",
+              "tr": {
+                "en": "I give a book to this child.",
+                "es": "Le doy un libro a este niño."
+              }
+            },
+            {
+              "es": "Azzal a lánnyal beszélek.",
+              "tr": {
+                "en": "I am talking with that girl.",
+                "es": "Hablo con esa chica."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "place-words",
+      "noTableDeck": true,
+      "title": {
+        "en": "Here and there",
+        "es": "Aquí y allí"
+      },
+      "header": [
+        {
+          "en": "Question",
+          "es": "Pregunta"
+        },
+        {
+          "en": "near (ez)",
+          "es": "cerca (ez)"
+        },
+        {
+          "en": "far (az)",
+          "es": "lejos (az)"
+        }
+      ],
+      "rows": [
+        [
+          "hol?",
+          "itt",
+          "ott"
+        ],
+        [
+          "hova?",
+          "ide",
+          "oda"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "itt, ott, ide, oda",
+        "es": "itt, ott, ide, oda"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "hol? (where, at rest): itt (here), ott (there). They go with van, lakik, dolgozik.",
+            "es": "hol? (dónde, en reposo): itt (aquí), ott (allí). Se usan con van, lakik, dolgozik."
+          },
+          "examples": [
+            {
+              "es": "Itt lakom.",
+              "tr": {
+                "en": "I live here.",
+                "es": "Vivo aquí."
+              }
+            },
+            {
+              "es": "Ott van a bolt.",
+              "tr": {
+                "en": "The shop is over there.",
+                "es": "La tienda está allí."
+              }
+            },
+            {
+              "es": "Ott dolgozom.",
+              "tr": {
+                "en": "I work there.",
+                "es": "Trabajo allí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "hova? (to where, movement): ide (to here), oda (to there). They go with megy, jön. English and Spanish use one word for both ('here', «aquí»); Hungarian separates position (itt) from movement (ide).",
+            "es": "hova? (hacia dónde, movimiento): ide (hacia aquí), oda (hacia allí). Se usan con megy, jön. El español usa una sola palabra para las dos cosas («aquí»); el húngaro separa la posición (itt) del movimiento (ide)."
+          },
+          "examples": [
+            {
+              "es": "Kati ide jön.",
+              "tr": {
+                "en": "Kati is coming here.",
+                "es": "Kati viene aquí."
+              }
+            },
+            {
+              "es": "Péter oda megy.",
+              "tr": {
+                "en": "Péter is going there.",
+                "es": "Péter va allí."
+              }
+            },
+            {
+              "es": "Minden nap ide jövök.",
+              "tr": {
+                "en": "I come here every day.",
+                "es": "Vengo aquí todos los días."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "ilyen and olyan",
+        "es": "ilyen y olyan"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "ilyen is 'of this kind' (near), olyan is 'of that kind' (far). Before a noun they never change: no plural, no ending, no article. The noun carries the ending.",
+            "es": "ilyen es «de este tipo» (cerca), olyan es «de ese tipo» (lejos). Delante de un sustantivo nunca cambian: sin plural, sin terminación, sin artículo. El sustantivo lleva la terminación."
+          },
+          "examples": [
+            {
+              "es": "Ilyen kutyám van.",
+              "tr": {
+                "en": "I have a dog like this.",
+                "es": "Tengo un perro como este."
+              }
+            },
+            {
+              "es": "Olyan házban lakom.",
+              "tr": {
+                "en": "I live in a house like that.",
+                "es": "Vivo en una casa como esa."
+              }
+            },
+            {
+              "es": "Ilyen könyvet keresek.",
+              "tr": {
+                "en": "I am looking for a book like this.",
+                "es": "Busco un libro como este."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Before an adjective, olyan means 'so': olyan nagy (so big).",
+            "es": "Delante de un adjetivo, olyan significa «tan»: olyan nagy (tan grande)."
+          },
+          "examples": [
+            {
+              "es": "Olyan nagy a ház!",
+              "tr": {
+                "en": "The house is so big!",
+                "es": "¡La casa es tan grande!"
+              }
+            },
+            {
+              "es": "Olyan drága ez az autó!",
+              "tr": {
+                "en": "This car is so expensive!",
+                "es": "¡Este auto es tan caro!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Az autó új.",
+          "b": "Az az autó új.",
+          "note": {
+            "en": "One az is 'the'. With two az in a row, the first is 'that' and the second is 'the' (az before a vowel).",
+            "es": "Un az es «el». Con dos az seguidos, el primero es «ese» y el segundo es «el» (az ante vocal)."
+          },
+          "examples": [
+            {
+              "es": "Az iskola régi.",
+              "tr": {
+                "en": "The school is old.",
+                "es": "La escuela es vieja."
+              }
+            },
+            {
+              "es": "Az az iskola régi.",
+              "tr": {
+                "en": "That school is old.",
+                "es": "Esa escuela es vieja."
+              }
+            }
+          ]
+        },
+        {
+          "a": "ez a ház",
+          "b": "ezek a házak",
+          "note": {
+            "en": "In the plural both words are plural.",
+            "es": "En plural las dos palabras van en plural."
+          },
+          "examples": [
+            {
+              "es": "Ez a ház nagy.",
+              "tr": {
+                "en": "This house is big.",
+                "es": "Esta casa es grande."
+              }
+            },
+            {
+              "es": "Ezek a házak nagyok.",
+              "tr": {
+                "en": "These houses are big.",
+                "es": "Estas casas son grandes."
+              }
+            }
+          ]
+        },
+        {
+          "a": "ebben a házban",
+          "b": "ebbe a házba",
+          "note": {
+            "en": "-ban is 'where' (in), -ba is 'where to' (into). The ending is the same on both words.",
+            "es": "-ban es «dónde» (en), -ba es «hacia dónde» (a, dentro de). La terminación es la misma en las dos palabras."
+          },
+          "examples": [
+            {
+              "es": "Ebben a házban lakom.",
+              "tr": {
+                "en": "I live in this house.",
+                "es": "Vivo en esta casa."
+              }
+            },
+            {
+              "es": "Ebbe a házba költözöm.",
+              "tr": {
+                "en": "I am moving into this house.",
+                "es": "Me mudo a esta casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) keep the article: ez a ház, never ez ház. (2) Put the ending on both words: ebben a házban, never ez a házban. (3) Plural on both: ezek a házak, never ezek a ház.",
+        "es": "Trampas clásicas: (1) conserva el artículo: ez a ház, nunca ez ház. (2) Pon la terminación en las dos palabras: ebben a házban, nunca ez a házban. (3) Plural en las dos: ezek a házak, nunca ezek a ház."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, «ez» means this and «az» means that. Before a noun they come with the article: «ez a ház», «az az autó». The plural is «ezek a házak» and «azok a házak». The ending goes on both words: «ebben a házban», «abba az iskolába», «azt a könyvet». For place, «itt» and «ott» say where, but «ide» and «oda» say where to: «Itt lakom», «Oda megyek». And «ilyen» and «olyan» mean this kind and that kind.",
+    "es": "En húngaro, «ez» significa este y «az» significa ese o aquel. Delante de un sustantivo llevan artículo: «ez a ház», «az az autó». El plural es «ezek a házak» y «azok a házak». La terminación va en las dos palabras: «ebben a házban», «abba az iskolába», «azt a könyvet». Para el lugar, «itt» y «ott» dicen dónde, pero «ide» y «oda» dicen hacia dónde: «Itt lakom», «Oda megyek». Y «ilyen» y «olyan» significan de este tipo y de ese tipo."
+  },
+  "glossary": [
+    {
+      "word": "ilyen",
+      "gloss": {
+        "en": "of this kind, like this",
+        "es": "de este tipo, como este"
+      }
+    },
+    {
+      "word": "olyan",
+      "gloss": {
+        "en": "of that kind, like that, so",
+        "es": "de ese tipo, como ese, tan"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "mutato-nevmasok-c01",
+      "sentence": "___ a könyv drága.",
+      "options": [
+        "Ezek",
+        "Ez",
+        "Ezt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "a könyv is one book, near the speaker: Ez a könyv drága.",
+        "es": "a könyv es un solo libro, cerca de quien habla: Ez a könyv drága."
+      },
+      "wrong": {
+        "Ezek": {
+          "en": "Ezek is plural, 'these'; it needs a plural noun (Ezek a könyvek drágák).",
+          "es": "Ezek es plural, «estos»; necesita un sustantivo en plural (Ezek a könyvek drágák)."
+        },
+        "Ezt": {
+          "en": "Ezt is the object form: 'Ezt a könyvet veszem' (I buy this book). Here the book is the subject.",
+          "es": "Ezt es la forma del objeto: «Ezt a könyvet veszem» (compro este libro). Aquí el libro es el sujeto."
+        }
+      },
+      "examples": [
+        "Ez a ház nagy.",
+        "Ez az autó gyors."
+      ],
+      "tr": {
+        "en": "This book is expensive.",
+        "es": "Este libro es caro."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f01",
+      "kind": "form",
+      "verb": "ez",
+      "person": "többes szám",
+      "answer": "ezek",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c02",
+      "sentence": "___ a gyerekek ott vannak.",
+      "options": [
+        "Az",
+        "Azt",
+        "Azok"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "a gyerekek is plural, so the pointing word is plural too: Azok a gyerekek.",
+        "es": "a gyerekek es plural, así que la palabra que señala también va en plural: Azok a gyerekek."
+      },
+      "wrong": {
+        "Az": {
+          "en": "Az goes with one child: Az a gyerek ott van. Here gyerekek is plural.",
+          "es": "Az va con un solo niño: Az a gyerek ott van. Aquí gyerekek es plural."
+        },
+        "Azt": {
+          "en": "Azt is the object form ('Azt a gyereket látom'); here the children are the subject.",
+          "es": "Azt es la forma del objeto («Azt a gyereket látom»); aquí los niños son el sujeto."
+        }
+      },
+      "examples": [
+        "Azok a házak szépek.",
+        "Azok a könyvek drágák."
+      ],
+      "tr": {
+        "en": "Those children are there.",
+        "es": "Esos niños están allí."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f02",
+      "kind": "form",
+      "verb": "az",
+      "person": "többes szám",
+      "answer": "azok",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c03",
+      "sentence": "Ebben a ___ lakom.",
+      "options": [
+        "házba",
+        "házban",
+        "ház"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ebben already has -ban (in), and the noun gets the same ending: Ebben a házban.",
+        "es": "ebben ya lleva -ban (en), y el sustantivo recibe la misma terminación: Ebben a házban."
+      },
+      "wrong": {
+        "házba": {
+          "en": "házba is 'into the house' (where to); it does not match ebben, which is 'in'.",
+          "es": "házba es «al interior de la casa» (hacia dónde); no coincide con ebben, que es «en»."
+        },
+        "ház": {
+          "en": "The bare noun has no ending; both words must carry -ban: ebben a házban.",
+          "es": "El sustantivo simple no tiene terminación; las dos palabras deben llevar -ban: ebben a házban."
+        }
+      },
+      "examples": [
+        "Ebben a szobában alszom.",
+        "Abban a városban dolgozom."
+      ],
+      "tr": {
+        "en": "I live in this house.",
+        "es": "Vivo en esta casa."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f03",
+      "kind": "form",
+      "verb": "ez",
+      "person": "-t",
+      "answer": "ezt",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-w01",
+      "kind": "why",
+      "es": "Ebben a házban lakom.",
+      "target": "Ebben",
+      "tr": {
+        "en": "I live in this house.",
+        "es": "Vivo en esta casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ez takes the noun's ending -ban, and z turns into b: ez + ban = ebben",
+            "es": "ez toma la terminación -ban del sustantivo, y la z pasa a b: ez + ban = ebben"
+          }
+        },
+        {
+          "text": {
+            "en": "ez stays ez and only the noun gets the ending",
+            "es": "ez queda ez y solo el sustantivo recibe la terminación"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ez a házban lakom, which is wrong: both words carry -ban.",
+            "es": "Con esta regla la frase sería Ez a házban lakom, que es incorrecta: las dos palabras llevan -ban."
+          }
+        },
+        {
+          "text": {
+            "en": "ebben is the plural of ez",
+            "es": "ebben es el plural de ez"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about 'these' (ezek). Ebben means 'in this'.",
+            "es": "Con esta regla la frase hablaría de «estos» (ezek). Ebben significa «en este»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "mutato-nevmasok-c04",
+      "sentence": "___ az iskolában tanulok.",
+      "options": [
+        "Az",
+        "Abban",
+        "Azt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "iskolában has -ban, so the pointing word takes -ban too: az + ban = abban.",
+        "es": "iskolában lleva -ban, así que la palabra que señala también lo lleva: az + ban = abban."
+      },
+      "wrong": {
+        "Az": {
+          "en": "Plain az has no ending; it would not match iskolában. Both words need -ban: abban.",
+          "es": "az simple no tiene terminación; no coincidiría con iskolában. Las dos palabras necesitan -ban: abban."
+        },
+        "Azt": {
+          "en": "Azt is the object form ('Azt az iskolát látom'); here the school is a place (-ban).",
+          "es": "Azt es la forma del objeto («Azt az iskolát látom»); aquí la escuela es un lugar (-ban)."
+        }
+      },
+      "examples": [
+        "Ebben az iskolában tanulok.",
+        "Abban az autóban alszik a kutya."
+      ],
+      "tr": {
+        "en": "I study in that school.",
+        "es": "Estudio en esa escuela."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f04",
+      "kind": "form",
+      "verb": "az",
+      "person": "-t",
+      "answer": "azt",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c05",
+      "sentence": "Ezt a ___ látom.",
+      "options": [
+        "házat",
+        "házban",
+        "ház"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ezt has the object ending -t, and the noun gets it too: ház + at = házat.",
+        "es": "ezt lleva la terminación de objeto -t, y el sustantivo también: ház + at = házat."
+      },
+      "wrong": {
+        "házban": {
+          "en": "házban is 'in the house' (-ban); ezt marks an object, so the noun needs -t.",
+          "es": "házban es «en la casa» (-ban); ezt marca un objeto, así que el sustantivo necesita -t."
+        },
+        "ház": {
+          "en": "The bare noun has no -t; both words must carry the object ending: ezt a házat.",
+          "es": "El sustantivo simple no lleva -t; las dos palabras deben llevar la terminación de objeto: ezt a házat."
+        }
+      },
+      "examples": [
+        "Azt a kutyát látom.",
+        "Ezt a kenyeret veszem."
+      ],
+      "tr": {
+        "en": "I see this house.",
+        "es": "Veo esta casa."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f05",
+      "kind": "form",
+      "verb": "ez",
+      "person": "-ban/-ben",
+      "answer": "ebben",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c06",
+      "sentence": "Azt a ___ olvasom.",
+      "options": [
+        "könyvet",
+        "könyv",
+        "könyvben"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "azt marks the object, so the noun takes -t too: könyv + et = könyvet.",
+        "es": "azt marca el objeto, así que el sustantivo también recibe -t: könyv + et = könyvet."
+      },
+      "wrong": {
+        "könyv": {
+          "en": "The bare noun has no -t; azt a könyvet needs the ending on both words.",
+          "es": "El sustantivo simple no lleva -t; azt a könyvet necesita la terminación en las dos palabras."
+        },
+        "könyvben": {
+          "en": "könyvben is 'in the book'; the sentence says I am reading the book itself.",
+          "es": "könyvben es «en el libro»; la frase dice que leo el libro mismo."
+        }
+      },
+      "examples": [
+        "Ezt a levelet írom.",
+        "Azt a kulcsot keresem."
+      ],
+      "tr": {
+        "en": "I am reading that book.",
+        "es": "Estoy leyendo ese libro."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f06",
+      "kind": "form",
+      "verb": "az",
+      "person": "-ba/-be",
+      "answer": "abba",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-w02",
+      "kind": "why",
+      "es": "Azt a könyvet olvasom.",
+      "target": "Azt a könyvet",
+      "tr": {
+        "en": "I am reading that book.",
+        "es": "Estoy leyendo ese libro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "only the noun gets -t; az stays az",
+            "es": "solo el sustantivo recibe -t; az queda az"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Az a könyvet olvasom; the pointing word takes -t too: azt.",
+            "es": "Con esta regla la frase sería Az a könyvet olvasom; la palabra que señala también recibe -t: azt."
+          }
+        },
+        {
+          "text": {
+            "en": "both words take the object ending -t, and the verb is the definite olvasom",
+            "es": "las dos palabras reciben la terminación de objeto -t, y el verbo va en la forma definida olvasom"
+          }
+        },
+        {
+          "text": {
+            "en": "azt a könyvet is the subject",
+            "es": "azt a könyvet es el sujeto"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Az a könyv drága, with no -t. Here -t marks the thing I read.",
+            "es": "Con esta regla la frase sería Az a könyv drága, sin -t. Aquí -t marca lo que leo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "mutato-nevmasok-c07",
+      "sentence": "___ a boltba megyek.",
+      "options": [
+        "Ebben",
+        "Ebbe",
+        "Ezt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "boltba has -ba (into), so the pointing word takes -ba too: ez + ba = ebbe.",
+        "es": "boltba lleva -ba (hacia), así que la palabra que señala también: ez + ba = ebbe."
+      },
+      "wrong": {
+        "Ebben": {
+          "en": "Ebben is 'in this' (where, -ban): ebben a boltban. With megyek you need 'to where', -ba.",
+          "es": "Ebben es «en este» (dónde, -ban): ebben a boltban. Con megyek necesitas «hacia dónde», -ba."
+        },
+        "Ezt": {
+          "en": "Ezt is the object form; boltba is not an object but a direction.",
+          "es": "Ezt es la forma del objeto; boltba no es un objeto sino una dirección."
+        }
+      },
+      "examples": [
+        "Abba az étterembe megyünk.",
+        "Ebbe a városba utazom."
+      ],
+      "tr": {
+        "en": "I am going into this shop.",
+        "es": "Voy a esta tienda."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f07",
+      "kind": "form",
+      "verb": "ez",
+      "person": "-ra/-re",
+      "answer": "erre",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c08",
+      "sentence": "___ az asztalra teszem a könyvet.",
+      "options": [
+        "Azon",
+        "Arra",
+        "Azt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "asztalra has -ra (onto), so the pointing word takes -ra too: az + ra = arra.",
+        "es": "asztalra lleva -ra (sobre, hacia), así que la palabra que señala también: az + ra = arra."
+      },
+      "wrong": {
+        "Azon": {
+          "en": "Azon is 'on that' at rest (azon az asztalon van); with teszem (I put) you need 'onto', -ra.",
+          "es": "Azon es «sobre ese» en reposo (azon az asztalon van); con teszem (pongo) necesitas «sobre», -ra."
+        },
+        "Azt": {
+          "en": "Azt is the object form; here the object is a könyvet, and the table has -ra.",
+          "es": "Azt es la forma del objeto; aquí el objeto es a könyvet, y la mesa lleva -ra."
+        }
+      },
+      "examples": [
+        "Ezen az asztalon van a kulcs.",
+        "Erre a székre teszem a táskát."
+      ],
+      "tr": {
+        "en": "I put the book on that table.",
+        "es": "Pongo el libro sobre esa mesa."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f08",
+      "kind": "form",
+      "verb": "az",
+      "person": "-hoz/-hez/-höz",
+      "answer": "ahhoz",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c09",
+      "sentence": "___ az orvoshoz megyek.",
+      "options": [
+        "Ahhoz",
+        "Annál",
+        "Azt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "orvoshoz has -hoz (to someone), so the pointing word takes it too: az + hoz = ahhoz.",
+        "es": "orvoshoz lleva -hoz (hacia alguien), así que la palabra que señala también: az + hoz = ahhoz."
+      },
+      "wrong": {
+        "Annál": {
+          "en": "Annál is 'at that one's place' (-nál); megyek needs 'to', -hoz.",
+          "es": "Annál es «en casa de ese» (-nál); megyek necesita «hacia», -hoz."
+        },
+        "Azt": {
+          "en": "Azt is the object form; orvoshoz is not an object.",
+          "es": "Azt es la forma del objeto; orvoshoz no es un objeto."
+        }
+      },
+      "examples": [
+        "Ehhez az orvoshoz megyek.",
+        "Ahhoz a lányhoz megyek."
+      ],
+      "tr": {
+        "en": "I am going to that doctor.",
+        "es": "Voy con ese médico."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-w03",
+      "kind": "why",
+      "es": "Az az autó új.",
+      "target": "Az az",
+      "tr": {
+        "en": "That car is new.",
+        "es": "Ese auto es nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "both az are the article 'the'",
+            "es": "los dos az son el artículo «el»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would mean 'the the car'; Hungarian has one article. The first az is 'that'.",
+            "es": "Con esta regla la frase diría «el el auto»; el húngaro tiene un solo artículo. El primer az es «ese»."
+          }
+        },
+        {
+          "text": {
+            "en": "a mistake: it should be one az",
+            "es": "un error: debería ser un solo az"
+          },
+          "wrong": {
+            "en": "With one az (Az autó új) the sentence means 'The car is new'; 'that car' needs az az.",
+            "es": "Con un solo az (Az autó új) la frase significa «El auto es nuevo»; «ese auto» necesita az az."
+          }
+        },
+        {
+          "text": {
+            "en": "the first az is 'that', the second is the article 'the' before a vowel",
+            "es": "el primer az es «ese», el segundo es el artículo «el» ante vocal"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "mutato-nevmasok-f09",
+      "kind": "form",
+      "verb": "ez",
+      "person": "-val/-vel",
+      "answer": "ezzel",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c10",
+      "sentence": "Ez a kutya kicsi, ___ a kutya nagy.",
+      "options": [
+        "az",
+        "ezek",
+        "azt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Near is ez, far is az: ez a kutya (this dog), az a kutya (that dog).",
+        "es": "Cerca es ez, lejos es az: ez a kutya (este perro), az a kutya (ese perro)."
+      },
+      "wrong": {
+        "ezek": {
+          "en": "ezek is the plural 'these'; here it is one dog, and it is far away.",
+          "es": "ezek es el plural «estos»; aquí es un solo perro, y está lejos."
+        },
+        "azt": {
+          "en": "azt is the object form ('Azt a kutyát látom'); here the dog is the subject.",
+          "es": "azt es la forma del objeto («Azt a kutyát látom»); aquí el perro es el sujeto."
+        }
+      },
+      "examples": [
+        "Ez a ház új, az a ház régi.",
+        "Ez a bolt drága, az a bolt olcsó."
+      ],
+      "tr": {
+        "en": "This dog is small, that dog is big.",
+        "es": "Este perro es pequeño, ese perro es grande."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f10",
+      "kind": "form",
+      "verb": "az",
+      "person": "-nál/-nél",
+      "answer": "annál",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c11",
+      "sentence": "Itt van a bolt, ___ van a bank.",
+      "options": [
+        "oda",
+        "ott",
+        "ide"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The bank is in a place, not reached by moving: hol? is answered by ott (there).",
+        "es": "El banco está en un lugar, no se llega a él moviéndose: hol? se contesta con ott (allí)."
+      },
+      "wrong": {
+        "oda": {
+          "en": "oda is for movement to a far place (Oda megyek); here nobody moves.",
+          "es": "oda es para el movimiento hacia un lugar lejano (Oda megyek); aquí nadie se mueve."
+        },
+        "ide": {
+          "en": "ide is for movement to a near place (Ide jövök); here nobody moves.",
+          "es": "ide es para el movimiento hacia un lugar cercano (Ide jövök); aquí nadie se mueve."
+        }
+      },
+      "examples": [
+        "Itt lakom, ott dolgozom.",
+        "Ott van a park."
+      ],
+      "tr": {
+        "en": "Here is the shop, there is the bank.",
+        "es": "Aquí está la tienda, allí está el banco."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-f11",
+      "kind": "form",
+      "verb": "ez",
+      "person": "-ból/-ből",
+      "answer": "ebből",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c12",
+      "sentence": "Holnap ___ megyek.",
+      "options": [
+        "ott",
+        "ide",
+        "oda"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "megyek is movement to a far place: hova? is answered by oda (to there).",
+        "es": "megyek es movimiento hacia un lugar lejano: hova? se contesta con oda (hacia allí)."
+      },
+      "wrong": {
+        "ott": {
+          "en": "ott is 'there' at rest (hol?): Ott vagyok. It does not go with a movement verb.",
+          "es": "ott es «allí» en reposo (hol?): Ott vagyok. No va con un verbo de movimiento."
+        },
+        "ide": {
+          "en": "ide is 'to here', a near place; the sentence would mean 'Tomorrow I am going here'.",
+          "es": "ide es «hacia aquí», un lugar cercano; la frase diría «mañana voy aquí»."
+        }
+      },
+      "examples": [
+        "Minden nap ide jövök.",
+        "Péter oda megy."
+      ],
+      "tr": {
+        "en": "Tomorrow I am going there.",
+        "es": "Mañana voy allí."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-w04",
+      "kind": "why",
+      "es": "Holnap oda megyek.",
+      "target": "oda",
+      "tr": {
+        "en": "Tomorrow I am going there.",
+        "es": "Mañana voy allí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "oda is for movement to a far place (hova?)",
+            "es": "oda es para el movimiento hacia un lugar lejano (hova?)"
+          }
+        },
+        {
+          "text": {
+            "en": "oda is for a place where you stay (hol?)",
+            "es": "oda es para un lugar donde te quedas (hol?)"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Holnap ott vagyok, 'Tomorrow I will be there'; oda goes with movement.",
+            "es": "Con esta regla la frase sería Holnap ott vagyok, «mañana estaré allí»; oda va con movimiento."
+          }
+        },
+        {
+          "text": {
+            "en": "oda is for a place near the speaker",
+            "es": "oda es para un lugar cerca de quien habla"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Holnap ide megyek, 'I am going here'; oda is for a far place.",
+            "es": "Con esta regla la frase sería Holnap ide megyek, «voy aquí»; oda es para un lugar lejano."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "mutato-nevmasok-f12",
+      "kind": "form",
+      "verb": "az",
+      "person": "-nak/-nek",
+      "answer": "annak",
+      "table": "ez-az-forms"
+    },
+    {
+      "id": "mutato-nevmasok-c13",
+      "sentence": "Ez egy jó autó. ___ autót szeretnék.",
+      "options": [
+        "Ilyen",
+        "Olyan",
+        "Ezt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The car is near ('Ez'), and the wish is for a car of this kind: ilyen.",
+        "es": "El auto está cerca («Ez»), y el deseo es un auto de este tipo: ilyen."
+      },
+      "wrong": {
+        "Olyan": {
+          "en": "Olyan is 'of that kind' (far, not here); the car is right here.",
+          "es": "Olyan es «de ese tipo» (lejos, no aquí); el auto está aquí."
+        },
+        "Ezt": {
+          "en": "Ezt points to one particular car (Ezt az autót szeretném), not to a kind of car.",
+          "es": "Ezt señala un auto en particular (Ezt az autót szeretném), no un tipo de auto."
+        }
+      },
+      "examples": [
+        "Ilyen kutyám van.",
+        "Ilyen könyvet keresek."
+      ],
+      "tr": {
+        "en": "This is a good car. I would like a car like this.",
+        "es": "Este es un buen auto. Quisiera un auto como este."
+      }
+    },
+    {
+      "id": "mutato-nevmasok-c14",
+      "sentence": "Ott van egy kutya. Nekem is ___ kutyám van.",
+      "options": [
+        "ilyen",
+        "olyan",
+        "ez"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The dog is over there (ott), so the kind is that one: olyan.",
+        "es": "El perro está allí (ott), así que el tipo es ese: olyan."
+      },
+      "wrong": {
+        "ilyen": {
+          "en": "ilyen is 'of this kind' (near); the dog is far.",
+          "es": "ilyen es «de este tipo» (cerca); el perro está lejos."
+        },
+        "ez": {
+          "en": "ez points to one thing (ez a kutya); it does not mean 'of a kind'. For a kind you need ilyen or olyan.",
+          "es": "ez señala una cosa (ez a kutya); no significa «de un tipo». Para un tipo necesitas ilyen u olyan."
+        }
+      },
+      "examples": [
+        "Olyan házban lakom.",
+        "Olyan autót keresek."
+      ],
+      "tr": {
+        "en": "There is a dog over there. I also have a dog like that.",
+        "es": "Allí hay un perro. Yo también tengo un perro como ese."
+      }
+    }
+  ]
+}

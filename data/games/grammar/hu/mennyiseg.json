@@ -1,0 +1,1225 @@
+{
+  "schema": 2,
+  "topic": "mennyiseg",
+  "level": "A2",
+  "title": {
+    "en": "Quantity: sok, kevés, néhány, minden, -szor",
+    "es": "Cantidad: sok, kevés, néhány, minden, -szor"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Quantity words are followed by a SINGULAR noun: sok gyerek (many children), kevés idő (little time), néhány könyv (a few books), minden nap (every day). English and Spanish use the plural here, Hungarian does not (the same rule as after numbers: három könyv). To say how many TIMES, add -szor / -szer / -ször to the number: háromszor = three times. The question is hányszor?",
+        "es": "Las palabras de cantidad llevan un sustantivo en SINGULAR: sok gyerek (muchos niños), kevés idő (poco tiempo), néhány könyv (unos libros), minden nap (cada día). El español y el inglés usan el plural aquí; el húngaro no (es la misma regla que después de un número: három könyv). Para decir cuántas VECES, se añade -szor / -szer / -ször al número: háromszor = tres veces. La pregunta es hányszor?"
+      }
+    },
+    {
+      "kind": "table",
+      "id": "quantity-words",
+      "title": {
+        "en": "Quantity word + singular noun",
+        "es": "Palabra de cantidad + sustantivo en singular"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "With a noun",
+          "es": "Con un sustantivo"
+        }
+      ],
+      "rows": [
+        [
+          "sok",
+          "sok gyerek"
+        ],
+        [
+          "kevés",
+          "kevés idő"
+        ],
+        [
+          "néhány",
+          "néhány könyv"
+        ],
+        [
+          "minden",
+          "minden nap"
+        ],
+        [
+          "hány",
+          "hány ember"
+        ],
+        [
+          "mennyi",
+          "mennyi víz"
+        ],
+        [
+          "három",
+          "három alma"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What each word says",
+        "es": "Qué dice cada palabra"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "sok = a lot of, many. kevés = little, few (not enough). Both take a SINGULAR noun, for things you count and for things you do not: sok gyerek (many children), sok víz (a lot of water). English and Spanish use the plural for the countable ones (many children, muchos niños); Hungarian does not.",
+            "es": "sok = mucho(s). kevés = poco(s), no suficiente. Los dos llevan un sustantivo en SINGULAR, tanto para lo que se cuenta como para lo que no: sok gyerek (muchos niños), sok víz (mucha agua). El español usa el plural para lo contable (muchos niños); el húngaro no."
+          },
+          "examples": [
+            {
+              "es": "Sok gyerek van a parkban.",
+              "tr": {
+                "en": "There are many children in the park.",
+                "es": "Hay muchos niños en el parque."
+              }
+            },
+            {
+              "es": "A boltban kevés ember van.",
+              "tr": {
+                "en": "There are few people in the shop.",
+                "es": "Hay pocas personas en la tienda."
+              }
+            },
+            {
+              "es": "Sok autó van az utcán.",
+              "tr": {
+                "en": "There are many cars on the street.",
+                "es": "Hay muchos coches en la calle."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "néhány = a few, some (a small number you can count). Singular noun again, and only for countable things: néhány könyv (a few books), néhány nap (a few days).",
+            "es": "néhány = algunos, unos pocos (una cantidad pequeña que se puede contar). Otra vez sustantivo en singular, y solo para cosas contables: néhány könyv (unos libros), néhány nap (unos días)."
+          },
+          "examples": [
+            {
+              "es": "Az asztalon néhány könyv van.",
+              "tr": {
+                "en": "There are a few books on the table.",
+                "es": "Hay unos libros sobre la mesa."
+              }
+            },
+            {
+              "es": "Néhány napig itt vagyok.",
+              "tr": {
+                "en": "I'm here for a few days.",
+                "es": "Estoy aquí unos días."
+              }
+            },
+            {
+              "es": "Néhány barátom jön.",
+              "tr": {
+                "en": "A few of my friends are coming.",
+                "es": "Vienen algunos de mis amigos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "minden + singular noun = every, each: minden nap (every day), minden gyerek (every child). The verb is singular too. Without a noun there are mindenki (everyone) and mindenhol (everywhere).",
+            "es": "minden + sustantivo en singular = cada, todo(s): minden nap (cada día), minden gyerek (cada niño, todos los niños). El verbo también va en singular. Sin sustantivo existen mindenki (todos) y mindenhol (en todas partes)."
+          },
+          "examples": [
+            {
+              "es": "Minden nap dolgozom.",
+              "tr": {
+                "en": "I work every day.",
+                "es": "Trabajo todos los días."
+              }
+            },
+            {
+              "es": "Minden gyerek játszik.",
+              "tr": {
+                "en": "Every child is playing.",
+                "es": "Todos los niños están jugando."
+              }
+            },
+            {
+              "es": "Mindenki otthon van.",
+              "tr": {
+                "en": "Everyone is at home.",
+                "es": "Todos están en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Case endings go on the noun, not on the quantity word, and the noun stays singular: sok könyvet olvasok (object ending -t).",
+            "es": "Las terminaciones de caso van en el sustantivo, no en la palabra de cantidad, y el sustantivo sigue en singular: sok könyvet olvasok (terminación de objeto -t)."
+          },
+          "examples": [
+            {
+              "es": "Sok kávét iszom.",
+              "tr": {
+                "en": "I drink a lot of coffee.",
+                "es": "Bebo mucho café."
+              }
+            },
+            {
+              "es": "Kevés vizet iszom.",
+              "tr": {
+                "en": "I drink little water.",
+                "es": "Bebo poca agua."
+              }
+            },
+            {
+              "es": "Néhány almát kérek.",
+              "tr": {
+                "en": "I'd like a few apples.",
+                "es": "Quiero unas manzanas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "number + -szor / -szer / -ször = that many times. The ending follows vowel harmony: back vowels -szor (háromszor), front unrounded vowels -szer (négyszer, tízszer), rounded ö/ő -ször (ötször). Two is special: kettő → kétszer. After húsz both sz stay in the written word: húsz + szor = húszszor.",
+            "es": "número + -szor / -szer / -ször = esa cantidad de veces. La terminación sigue la armonía vocálica: vocales posteriores -szor (háromszor), anteriores no redondeadas -szer (négyszer, tízszer), redondeadas ö/ő -ször (ötször). El dos es especial: kettő → kétszer. Después de húsz se quedan las dos sz en la escritura: húsz + szor = húszszor."
+          },
+          "examples": [
+            {
+              "es": "Egy héten kétszer úszom.",
+              "tr": {
+                "en": "I swim twice a week.",
+                "es": "Nado dos veces por semana."
+              }
+            },
+            {
+              "es": "Háromszor voltam Szegeden.",
+              "tr": {
+                "en": "I have been to Szeged three times.",
+                "es": "He estado en Szeged tres veces."
+              }
+            },
+            {
+              "es": "Minden hónapban egyszer megyek Budapestre.",
+              "tr": {
+                "en": "Once a month I go to Budapest.",
+                "es": "Una vez al mes voy a Budapest."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "hány + noun asks how many things; hányszor asks how many times. Answer with a number, or a number + -szor.",
+            "es": "hány + sustantivo pregunta cuántas cosas; hányszor pregunta cuántas veces. Responde con un número, o con un número + -szor."
+          },
+          "examples": [
+            {
+              "es": "Hányszor úszol egy héten? Kétszer.",
+              "tr": {
+                "en": "How many times do you swim a week? Twice.",
+                "es": "¿Cuántas veces nadas a la semana? Dos veces."
+              }
+            },
+            {
+              "es": "Hányszor voltál Szegeden? Háromszor.",
+              "tr": {
+                "en": "How many times have you been to Szeged? Three times.",
+                "es": "¿Cuántas veces has estado en Szeged? Tres veces."
+              }
+            },
+            {
+              "es": "Hány ember van a boltban? Négy.",
+              "tr": {
+                "en": "How many people are in the shop? Four.",
+                "es": "¿Cuántas personas hay en la tienda? Cuatro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "szor-forms",
+      "title": {
+        "en": "How many times? (-szor/-szer/-ször)",
+        "es": "¿Cuántas veces? (-szor/-szer/-ször)"
+      },
+      "header": [
+        {
+          "en": "Number",
+          "es": "Número"
+        },
+        {
+          "en": "times",
+          "es": "veces"
+        }
+      ],
+      "rows": [
+        [
+          "egy",
+          "egyszer"
+        ],
+        [
+          "kettő",
+          "kétszer"
+        ],
+        [
+          "három",
+          "háromszor"
+        ],
+        [
+          "négy",
+          "négyszer"
+        ],
+        [
+          "öt",
+          "ötször"
+        ],
+        [
+          "hat",
+          "hatszor"
+        ],
+        [
+          "nyolc",
+          "nyolcszor"
+        ],
+        [
+          "tíz",
+          "tízszer"
+        ],
+        [
+          "húsz",
+          "húszszor"
+        ],
+        [
+          "száz",
+          "százszor"
+        ],
+        [
+          "tizenkettő",
+          "tizenkétszer"
+        ],
+        [
+          "hány",
+          "hányszor"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "acc-after-quantity",
+      "title": {
+        "en": "Quantity word + noun + object ending -t",
+        "es": "Palabra de cantidad + sustantivo + terminación de objeto -t"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "with -t",
+          "es": "con -t"
+        },
+        {
+          "en": "In a phrase",
+          "es": "En una frase"
+        }
+      ],
+      "rows": [
+        [
+          "könyv",
+          "könyvet",
+          "sok könyvet"
+        ],
+        [
+          "kávé",
+          "kávét",
+          "sok kávét"
+        ],
+        [
+          "víz",
+          "vizet",
+          "kevés vizet"
+        ],
+        [
+          "kenyér",
+          "kenyeret",
+          "kevés kenyeret"
+        ],
+        [
+          "alma",
+          "almát",
+          "néhány almát"
+        ],
+        [
+          "sör",
+          "sört",
+          "sok sört"
+        ],
+        [
+          "tej",
+          "tejet",
+          "kevés tejet"
+        ],
+        [
+          "levél",
+          "levelet",
+          "néhány levelet"
+        ],
+        [
+          "barát",
+          "barátot",
+          "sok barátot"
+        ],
+        [
+          "pénz",
+          "pénzt",
+          "sok pénzt"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Sok gyerek van a parkban.",
+          "b": "Minden gyerek a parkban van.",
+          "note": {
+            "en": "sok = many, but not all. minden = every single one. Both take a singular noun.",
+            "es": "sok = muchos, pero no todos. minden = cada uno, todos. Los dos llevan un sustantivo en singular."
+          },
+          "examples": [
+            {
+              "es": "Sok ember dolgozik.",
+              "tr": {
+                "en": "Many people are working.",
+                "es": "Mucha gente trabaja."
+              }
+            },
+            {
+              "es": "Minden ember dolgozik.",
+              "tr": {
+                "en": "Every person is working.",
+                "es": "Todas las personas trabajan."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Kevés ember jön.",
+          "b": "Néhány ember jön.",
+          "note": {
+            "en": "kevés = few, not enough. néhány = a few, some (neutral). kevés also works with things you do not count (kevés idő); néhány only with things you count.",
+            "es": "kevés = pocos, no suficientes. néhány = algunos (neutro). kevés también va con lo que no se cuenta (kevés idő); néhány solo con lo que se cuenta."
+          },
+          "examples": [
+            {
+              "es": "Kevés idő van.",
+              "tr": {
+                "en": "There is little time.",
+                "es": "Hay poco tiempo."
+              }
+            },
+            {
+              "es": "Néhány percig várok.",
+              "tr": {
+                "en": "I'm waiting for a few minutes.",
+                "es": "Espero unos minutos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Hány gyerek van a parkban?",
+          "b": "Mennyi víz van a pohárban?",
+          "note": {
+            "en": "hány = how many (things you count). mennyi = how much (an amount). Both are followed by a singular noun.",
+            "es": "hány = cuántos (cosas que se cuentan). mennyi = cuánto (una cantidad). Los dos van seguidos de un sustantivo en singular."
+          },
+          "examples": [
+            {
+              "es": "Hány kávét kérsz?",
+              "tr": {
+                "en": "How many coffees do you want?",
+                "es": "¿Cuántos cafés quieres?"
+              }
+            },
+            {
+              "es": "Mennyi kávét iszol?",
+              "tr": {
+                "en": "How much coffee do you drink?",
+                "es": "¿Cuánto café bebes?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Három almát eszem.",
+          "b": "Háromszor eszem.",
+          "note": {
+            "en": "number + noun counts things (three apples). number + -szor counts times (three times).",
+            "es": "número + sustantivo cuenta cosas (tres manzanas). número + -szor cuenta veces (tres veces)."
+          },
+          "examples": [
+            {
+              "es": "Két könyvet olvasok.",
+              "tr": {
+                "en": "I'm reading two books.",
+                "es": "Leo dos libros."
+              }
+            },
+            {
+              "es": "Kétszer olvasom a könyvet.",
+              "tr": {
+                "en": "I read the book twice.",
+                "es": "Leo el libro dos veces."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: do not copy the English or Spanish plural. Say sok gyerek, kevés ember, három könyv, never sok gyerekek. Second trap: 'twice' is kétszer (never kettőszer), and the ending changes with the vowels: háromszor, négyszer, ötször.",
+        "es": "Trampa clásica: no copies el plural del español ni del inglés. Se dice sok gyerek, kevés ember, három könyv, nunca sok gyerekek. Segunda trampa: «dos veces» es kétszer (nunca kettőszer), y la terminación cambia con las vocales: háromszor, négyszer, ötször."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, the words for quantity are followed by a singular noun. «Sok gyerek» means many children, «kevés idő» means little time, «néhány könyv» means a few books and «minden nap» means every day. Never say «sok gyerekek». To say how many times, add «szor», «szer» or «ször» to the number: «háromszor», «négyszer», «ötször». Two is special: «kétszer». The question is «hányszor». For example: «Egy héten kétszer úszom».",
+    "es": "En húngaro, después de las palabras de cantidad el sustantivo va en singular. «Sok gyerek» significa muchos niños, «kevés idő» poco tiempo, «néhány könyv» unos libros y «minden nap» cada día. Nunca se dice «sok gyerekek». Para decir cuántas veces, se añade «szor», «szer» o «ször» al número: «háromszor», «négyszer», «ötször». El dos es especial: «kétszer». La pregunta es «hányszor». Por ejemplo: «Egy héten kétszer úszom»."
+  },
+  "glossary": [
+    {
+      "word": "sok",
+      "gloss": {
+        "en": "a lot of, many",
+        "es": "mucho, muchos"
+      }
+    },
+    {
+      "word": "kevés",
+      "gloss": {
+        "en": "little, few",
+        "es": "poco, pocos"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "mennyiseg-c01",
+      "sentence": "Sok ___ van a parkban.",
+      "options": [
+        "gyerekek",
+        "gyerek",
+        "gyereket"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After sok the noun stays singular, as after a number: sok gyerek (many children).",
+        "es": "Después de sok el sustantivo se queda en singular, como después de un número: sok gyerek (muchos niños)."
+      },
+      "wrong": {
+        "gyerekek": {
+          "en": "gyerekek is the plural, used without a quantity word (A gyerekek a parkban vannak = the children are in the park); after sok it stays singular.",
+          "es": "gyerekek es el plural, que se usa sin palabra de cantidad (A gyerekek a parkban vannak = los niños están en el parque); después de sok se queda en singular."
+        },
+        "gyereket": {
+          "en": "gyereket has the object ending -t (Látom a gyereket = I see the child); here gyerek is not an object.",
+          "es": "gyereket lleva la terminación de objeto -t (Látom a gyereket = veo al niño); aquí gyerek no es un objeto."
+        }
+      },
+      "examples": [
+        "Sok ember van a boltban.",
+        "Sok autó van az utcán."
+      ],
+      "tr": {
+        "en": "There are many children in the park.",
+        "es": "Hay muchos niños en el parque."
+      }
+    },
+    {
+      "id": "mennyiseg-f01",
+      "kind": "form",
+      "verb": "öt",
+      "person": "-szor/-szer/-ször",
+      "answer": "ötször",
+      "table": "szor-forms"
+    },
+    {
+      "id": "mennyiseg-c02",
+      "sentence": "A boltban kevés ___ van.",
+      "options": [
+        "ember",
+        "embert",
+        "emberek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kevés also takes a singular noun: kevés ember (few people).",
+        "es": "kevés también lleva un sustantivo en singular: kevés ember (pocas personas)."
+      },
+      "wrong": {
+        "embert": {
+          "en": "embert is the object form (-t); here ember is the subject of van, so no -t.",
+          "es": "embert es la forma de objeto (-t); aquí ember es el sujeto de van, así que no lleva -t."
+        },
+        "emberek": {
+          "en": "emberek is the plural (people in general); after kevés it must be singular.",
+          "es": "emberek es el plural (las personas en general); después de kevés tiene que ser singular."
+        }
+      },
+      "examples": [
+        "Kevés idő van.",
+        "Kevés gyerek van a parkban."
+      ],
+      "tr": {
+        "en": "There are few people in the shop.",
+        "es": "Hay pocas personas en la tienda."
+      }
+    },
+    {
+      "id": "mennyiseg-f02",
+      "kind": "form",
+      "verb": "három",
+      "person": "-szor/-szer/-ször",
+      "answer": "háromszor",
+      "table": "szor-forms"
+    },
+    {
+      "id": "mennyiseg-c03",
+      "sentence": "Az asztalon néhány ___ van.",
+      "options": [
+        "könyvek",
+        "könyv",
+        "könyveket"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "néhány (a few) takes a singular noun: néhány könyv (a few books).",
+        "es": "néhány (unos pocos) lleva un sustantivo en singular: néhány könyv (unos libros)."
+      },
+      "wrong": {
+        "könyvek": {
+          "en": "könyvek is the plural; after néhány the noun stays singular, as after sok or a number.",
+          "es": "könyvek es el plural; después de néhány el sustantivo se queda en singular, igual que después de sok o de un número."
+        },
+        "könyveket": {
+          "en": "könyveket is the plural object (-eket); here the books are not an object, and the noun must stay singular.",
+          "es": "könyveket es el plural de objeto (-eket); aquí los libros no son un objeto y el sustantivo debe quedar en singular."
+        }
+      },
+      "examples": [
+        "Néhány barátom jön.",
+        "Néhány napig itt vagyok."
+      ],
+      "tr": {
+        "en": "There are a few books on the table.",
+        "es": "Hay unos libros sobre la mesa."
+      }
+    },
+    {
+      "id": "mennyiseg-f03",
+      "kind": "form",
+      "verb": "könyv",
+      "person": "-t (tárgyrag)",
+      "answer": "könyvet",
+      "table": "acc-after-quantity"
+    },
+    {
+      "id": "mennyiseg-w01",
+      "kind": "why",
+      "es": "Sok gyerek van a parkban.",
+      "target": "gyerek",
+      "tr": {
+        "en": "There are many children in the park.",
+        "es": "Hay muchos niños en el parque."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A plural subject takes -k: gyerekek",
+            "es": "Un sujeto plural lleva -k: gyerekek"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Sok gyerekek vannak a parkban; but after a quantity word the noun stays singular.",
+            "es": "Con esta regla la frase sería Sok gyerekek vannak a parkban; pero después de una palabra de cantidad el sustantivo se queda en singular."
+          }
+        },
+        {
+          "text": {
+            "en": "The noun is the object, so it takes -t: gyereket",
+            "es": "El sustantivo es el objeto, así que lleva -t: gyereket"
+          },
+          "wrong": {
+            "en": "With this rule the noun would be gyereket (as in Látom a gyereket); here gyerek is the subject of van, not an object.",
+            "es": "Con esta regla el sustantivo sería gyereket (como en Látom a gyereket); aquí gyerek es el sujeto de van, no un objeto."
+          }
+        },
+        {
+          "text": {
+            "en": "After sok (like after a number) the noun stays singular",
+            "es": "Después de sok (como después de un número) el sustantivo se queda en singular"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "mennyiseg-c04",
+      "sentence": "Minden ___ dolgozom.",
+      "options": [
+        "napok",
+        "nap",
+        "napot"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "minden + a singular noun means 'every': minden nap (every day).",
+        "es": "minden + un sustantivo en singular significa «cada»: minden nap (cada día)."
+      },
+      "wrong": {
+        "napok": {
+          "en": "napok is the plural (the days); after minden the noun stays singular: minden nap = every day.",
+          "es": "napok es el plural (los días); después de minden el sustantivo se queda en singular: minden nap = cada día."
+        },
+        "napot": {
+          "en": "napot has the object ending -t; here minden nap tells when I work, it is not what I work on.",
+          "es": "napot lleva la terminación de objeto -t; aquí minden nap dice cuándo trabajo, no es el objeto."
+        }
+      },
+      "examples": [
+        "Minden gyerek játszik.",
+        "Minden héten úszom."
+      ],
+      "tr": {
+        "en": "I work every day.",
+        "es": "Trabajo todos los días."
+      }
+    },
+    {
+      "id": "mennyiseg-f04",
+      "kind": "form",
+      "verb": "négy",
+      "person": "-szor/-szer/-ször",
+      "answer": "négyszer",
+      "table": "szor-forms"
+    },
+    {
+      "id": "mennyiseg-c05",
+      "sentence": "Sok ___ iszom.",
+      "options": [
+        "kávé",
+        "kávék",
+        "kávét"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "kávé is the object of iszom, so it takes -t; after sok it stays singular: sok kávét.",
+        "es": "kávé es el objeto de iszom, así que lleva -t; después de sok se queda en singular: sok kávét."
+      },
+      "wrong": {
+        "kávé": {
+          "en": "Without -t the word is the plain dictionary form; as the object of iszom it needs -t (kávét).",
+          "es": "Sin -t la palabra está en su forma básica; como objeto de iszom necesita -t (kávét)."
+        },
+        "kávék": {
+          "en": "kávék is the plural (several coffees); after sok the noun stays singular.",
+          "es": "kávék es el plural (varios cafés); después de sok el sustantivo se queda en singular."
+        }
+      },
+      "examples": [
+        "Sok könyvet olvasok.",
+        "Kevés vizet iszom."
+      ],
+      "tr": {
+        "en": "I drink a lot of coffee.",
+        "es": "Bebo mucho café."
+      }
+    },
+    {
+      "id": "mennyiseg-f05",
+      "kind": "form",
+      "verb": "kettő",
+      "person": "-szor/-szer/-ször",
+      "answer": "kétszer",
+      "table": "szor-forms"
+    },
+    {
+      "id": "mennyiseg-c06",
+      "sentence": "Néhány ___ kérek.",
+      "options": [
+        "almát",
+        "almák",
+        "alma"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The object takes -t and the noun stays singular after néhány: néhány almát.",
+        "es": "El objeto lleva -t y el sustantivo se queda en singular después de néhány: néhány almát."
+      },
+      "wrong": {
+        "almák": {
+          "en": "almák is the plural (apples); after néhány the noun stays singular.",
+          "es": "almák es el plural (manzanas); después de néhány el sustantivo se queda en singular."
+        },
+        "alma": {
+          "en": "alma is the form without the object ending; the object of kérek needs -t.",
+          "es": "alma es la forma sin la terminación de objeto; el objeto de kérek necesita -t."
+        }
+      },
+      "examples": [
+        "Kevés kenyeret kérek.",
+        "Sok vizet kérek."
+      ],
+      "tr": {
+        "en": "I'd like a few apples.",
+        "es": "Quiero unas manzanas."
+      }
+    },
+    {
+      "id": "mennyiseg-f06",
+      "kind": "form",
+      "verb": "kávé",
+      "person": "-t (tárgyrag)",
+      "answer": "kávét",
+      "table": "acc-after-quantity"
+    },
+    {
+      "id": "mennyiseg-w02",
+      "kind": "why",
+      "es": "Egy héten kétszer úszom.",
+      "target": "kétszer",
+      "tr": {
+        "en": "I swim twice a week.",
+        "es": "Nado dos veces por semana."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "két + noun: two things",
+            "es": "két + sustantivo: dos cosas"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would count things (két könyv = two books); kétszer counts how many times.",
+            "es": "Con esta regla la frase contaría cosas (két könyv = dos libros); kétszer cuenta cuántas veces."
+          }
+        },
+        {
+          "text": {
+            "en": "number + -szor/-szer/-ször: how many times (kettő becomes két-)",
+            "es": "número + -szor/-szer/-ször: cuántas veces (kettő se convierte en két-)"
+          }
+        },
+        {
+          "text": {
+            "en": "number + noun + -ig: for how long",
+            "es": "número + sustantivo + -ig: durante cuánto tiempo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Két hétig úszom (I swim for two weeks); here kétszer counts times.",
+            "es": "Con esta regla la frase sería Két hétig úszom (nado durante dos semanas); aquí kétszer cuenta veces."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "mennyiseg-c07",
+      "sentence": "Anna ___ hívott.",
+      "options": [
+        "két",
+        "kettőszer",
+        "kétszer"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "'Twice' is kétszer: kettő shortens to két- before -szer.",
+        "es": "«Dos veces» es kétszer: kettő se acorta a két- antes de -szer."
+      },
+      "wrong": {
+        "két": {
+          "en": "két means 'two' before a noun (két könyv = two books); it cannot stand alone to say 'twice'.",
+          "es": "két significa «dos» antes de un sustantivo (két könyv = dos libros); no puede ir solo para decir «dos veces»."
+        },
+        "kettőszer": {
+          "en": "kettőszer does not exist: kettő loses its ending and becomes két- (kétszer).",
+          "es": "kettőszer no existe: kettő pierde su final y se convierte en két- (kétszer)."
+        }
+      },
+      "examples": [
+        "Kétszer olvasom a könyvet.",
+        "Kétszer kettő négy."
+      ],
+      "tr": {
+        "en": "Anna called twice.",
+        "es": "Anna llamó dos veces."
+      }
+    },
+    {
+      "id": "mennyiseg-f07",
+      "kind": "form",
+      "verb": "hat",
+      "person": "-szor/-szer/-ször",
+      "answer": "hatszor",
+      "table": "szor-forms"
+    },
+    {
+      "id": "mennyiseg-c08",
+      "sentence": "Hányszor hívtál? ___.",
+      "options": [
+        "Ötször",
+        "Ötszor",
+        "Ötszer"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ö is a front rounded vowel, so the ending is -ször: ötször (five times).",
+        "es": "ö es una vocal anterior redondeada, por eso la terminación es -ször: ötször (cinco veces)."
+      },
+      "wrong": {
+        "Ötszor": {
+          "en": "-szor is for words with back vowels (háromszor, hatszor); öt has ö, so it needs -ször.",
+          "es": "-szor es para palabras con vocales posteriores (háromszor, hatszor); öt tiene ö, así que necesita -ször."
+        },
+        "Ötszer": {
+          "en": "-szer is for front unrounded vowels (négyszer, egyszer); öt has the rounded ö, so it needs -ször.",
+          "es": "-szer es para vocales anteriores no redondeadas (négyszer, egyszer); öt tiene la ö redondeada, así que necesita -ször."
+        }
+      },
+      "examples": [
+        "Hatszor hívtam Annát.",
+        "Nyolcszor voltam Szegeden."
+      ],
+      "tr": {
+        "en": "How many times did you call? Five times.",
+        "es": "¿Cuántas veces llamaste? Cinco veces."
+      }
+    },
+    {
+      "id": "mennyiseg-f08",
+      "kind": "form",
+      "verb": "tíz",
+      "person": "-szor/-szer/-ször",
+      "answer": "tízszer",
+      "table": "szor-forms"
+    },
+    {
+      "id": "mennyiseg-c09",
+      "sentence": "___ voltam Szegeden.",
+      "options": [
+        "Háromszer",
+        "Három",
+        "Háromszor"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "három has back vowels (á, o), so the ending is -szor: háromszor (three times).",
+        "es": "három tiene vocales posteriores (á, o), así que la terminación es -szor: háromszor (tres veces)."
+      },
+      "wrong": {
+        "Háromszer": {
+          "en": "-szer is for front vowels (négyszer, egyszer); három has back vowels, so it takes -szor.",
+          "es": "-szer es para vocales anteriores (négyszer, egyszer); három tiene vocales posteriores, así que lleva -szor."
+        },
+        "Három": {
+          "en": "Három alone is just the number three; it needs a noun (három könyv) or -szor to say 'three times'.",
+          "es": "Három solo es el número tres; necesita un sustantivo (három könyv) o -szor para decir «tres veces»."
+        }
+      },
+      "examples": [
+        "Kétszer voltam Debrecenben.",
+        "Egyszer voltam Mexikóvárosban."
+      ],
+      "tr": {
+        "en": "I have been to Szeged three times.",
+        "es": "He estado en Szeged tres veces."
+      }
+    },
+    {
+      "id": "mennyiseg-f09",
+      "kind": "form",
+      "verb": "víz",
+      "person": "-t (tárgyrag)",
+      "answer": "vizet",
+      "table": "acc-after-quantity"
+    },
+    {
+      "id": "mennyiseg-w03",
+      "kind": "why",
+      "es": "Minden gyerek játszik a kertben.",
+      "target": "Minden gyerek",
+      "tr": {
+        "en": "Every child is playing in the garden.",
+        "es": "Todos los niños están jugando en el jardín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "minden + a singular noun: 'every', the verb is singular too",
+            "es": "minden + un sustantivo en singular: «cada», el verbo también va en singular"
+          }
+        },
+        {
+          "text": {
+            "en": "sok + a singular noun: 'many'",
+            "es": "sok + un sustantivo en singular: «muchos»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Sok gyerek játszik a kertben (many children, not all of them); minden means every single one.",
+            "es": "Con esta regla la frase sería Sok gyerek játszik a kertben (muchos niños, no todos); minden significa cada uno."
+          }
+        },
+        {
+          "text": {
+            "en": "A plural subject: the children, with a plural verb",
+            "es": "Un sujeto plural: los niños, con un verbo en plural"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A gyerekek játszanak a kertben (the children are playing); after minden the noun stays singular.",
+            "es": "Con esta regla la frase sería A gyerekek játszanak a kertben (los niños están jugando); después de minden el sustantivo se queda en singular."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "mennyiseg-c10",
+      "sentence": "Egy hónapban ___ megyek moziba.",
+      "options": [
+        "négyszor",
+        "négyször",
+        "négyszer"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "négy has a front unrounded vowel (é), so the ending is -szer: négyszer (four times).",
+        "es": "négy tiene una vocal anterior no redondeada (é), así que la terminación es -szer: négyszer (cuatro veces)."
+      },
+      "wrong": {
+        "négyszor": {
+          "en": "-szor is for back vowels (háromszor); négy has é, so it takes -szer.",
+          "es": "-szor es para vocales posteriores (háromszor); négy tiene é, así que lleva -szer."
+        },
+        "négyször": {
+          "en": "-ször is only for the rounded ö or ő (ötször); négy has an unrounded é, so it takes -szer.",
+          "es": "-ször es solo para las redondeadas ö o ő (ötször); négy tiene una é no redondeada, así que lleva -szer."
+        }
+      },
+      "examples": [
+        "Egy héten hatszor dolgozom.",
+        "Egy évben kétszer megyek Budapestre."
+      ],
+      "tr": {
+        "en": "I go to the cinema four times a month.",
+        "es": "Voy al cine cuatro veces al mes."
+      }
+    },
+    {
+      "id": "mennyiseg-f10",
+      "kind": "form",
+      "verb": "húsz",
+      "person": "-szor/-szer/-ször",
+      "answer": "húszszor",
+      "table": "szor-forms"
+    },
+    {
+      "id": "mennyiseg-c11",
+      "sentence": "___ ember van a boltban? Négy.",
+      "options": [
+        "Hányszor",
+        "Mennyi",
+        "Hány"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Négy is a number of people, so the question is Hány ember? (how many people).",
+        "es": "Négy es un número de personas, así que la pregunta es Hány ember? (cuántas personas)."
+      },
+      "wrong": {
+        "Hányszor": {
+          "en": "Hányszor asks how many times; it expects an answer like Négyszer.",
+          "es": "Hányszor pregunta cuántas veces; espera una respuesta como Négyszer."
+        },
+        "Mennyi": {
+          "en": "Mennyi asks how much of something you do not count (mennyi víz); people are counted, so hány.",
+          "es": "Mennyi pregunta cuánto de algo que no se cuenta (mennyi víz); las personas se cuentan, así que hány."
+        }
+      },
+      "examples": [
+        "Hány gyerek van a parkban?",
+        "Hány könyvet olvasol?"
+      ],
+      "tr": {
+        "en": "How many people are in the shop? Four.",
+        "es": "¿Cuántas personas hay en la tienda? Cuatro."
+      }
+    },
+    {
+      "id": "mennyiseg-f11",
+      "kind": "form",
+      "verb": "kenyér",
+      "person": "-t (tárgyrag)",
+      "answer": "kenyeret",
+      "table": "acc-after-quantity"
+    },
+    {
+      "id": "mennyiseg-c12",
+      "sentence": "Mennyi ___ van a pohárban?",
+      "options": [
+        "vizet",
+        "víz",
+        "vizek"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Mennyi (how much) also takes a singular noun, and víz is the subject of van, so no ending: Mennyi víz van a pohárban?",
+        "es": "Mennyi (cuánto) también lleva un sustantivo en singular, y víz es el sujeto de van, por eso sin terminación: Mennyi víz van a pohárban?"
+      },
+      "wrong": {
+        "vizet": {
+          "en": "vizet is the object form (-et); here víz is the subject of van, so no object ending.",
+          "es": "vizet es la forma de objeto (-et); aquí víz es el sujeto de van, así que no lleva terminación de objeto."
+        },
+        "vizek": {
+          "en": "vizek is the plural (waters); mennyi asks about an amount, so the noun stays singular.",
+          "es": "vizek es el plural (aguas); mennyi pregunta por una cantidad, así que el sustantivo queda en singular."
+        }
+      },
+      "examples": [
+        "Mennyi idő van?",
+        "Mennyi pénz van a bankban?"
+      ],
+      "tr": {
+        "en": "How much water is in the glass?",
+        "es": "¿Cuánta agua hay en el vaso?"
+      }
+    },
+    {
+      "id": "mennyiseg-f12",
+      "kind": "form",
+      "verb": "tizenkettő",
+      "person": "-szor/-szer/-ször",
+      "answer": "tizenkétszer",
+      "table": "szor-forms"
+    },
+    {
+      "id": "mennyiseg-w04",
+      "kind": "why",
+      "es": "Hányszor voltál Szegeden?",
+      "target": "Hányszor",
+      "tr": {
+        "en": "How many times have you been to Szeged?",
+        "es": "¿Cuántas veces has estado en Szeged?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "hány + noun: how many things",
+            "es": "hány + sustantivo: cuántas cosas"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Hány könyvet olvasol? and would ask how many things; Hányszor asks how many times.",
+            "es": "Con esta regla la frase sería Hány könyvet olvasol? y preguntaría cuántas cosas; Hányszor pregunta cuántas veces."
+          }
+        },
+        {
+          "text": {
+            "en": "hány + -szor: how many times",
+            "es": "hány + -szor: cuántas veces"
+          }
+        },
+        {
+          "text": {
+            "en": "mennyi: how much of something",
+            "es": "mennyi: cuánto de algo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mennyi vizet iszol? and would ask for an amount; here -szor asks how often.",
+            "es": "Con esta regla la frase sería Mennyi vizet iszol? y preguntaría por una cantidad; aquí -szor pregunta con qué frecuencia."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "mennyiseg-c13",
+      "sentence": "___ olvasod a könyvet? Kétszer.",
+      "options": [
+        "Hányszor",
+        "Hány",
+        "Mennyi"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kétszer is 'twice', so the question is Hányszor? (how many times).",
+        "es": "Kétszer es «dos veces», así que la pregunta es Hányszor? (cuántas veces)."
+      },
+      "wrong": {
+        "Hány": {
+          "en": "Hány asks how many things and needs a noun (Hány könyvet olvasol?); it does not ask how often.",
+          "es": "Hány pregunta cuántas cosas y necesita un sustantivo (Hány könyvet olvasol?); no pregunta con qué frecuencia."
+        },
+        "Mennyi": {
+          "en": "Mennyi asks how much of something (Mennyi vizet iszol?), not how often.",
+          "es": "Mennyi pregunta cuánto de algo (Mennyi vizet iszol?), no con qué frecuencia."
+        }
+      },
+      "examples": [
+        "Hányszor hívtad Annát?",
+        "Hányszor úszol egy héten?"
+      ],
+      "tr": {
+        "en": "How many times do you read the book? Twice.",
+        "es": "¿Cuántas veces lees el libro? Dos veces."
+      }
+    },
+    {
+      "id": "mennyiseg-c14",
+      "sentence": "___ hónapban egyszer megyek Budapestre.",
+      "options": [
+        "Mindenki",
+        "Mindenhol",
+        "Minden"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "minden + a singular noun means 'every': minden hónapban (every month).",
+        "es": "minden + un sustantivo en singular significa «cada»: minden hónapban (cada mes)."
+      },
+      "wrong": {
+        "Mindenki": {
+          "en": "Mindenki means 'everyone' and stands alone (Mindenki otthon van); it does not go before a noun.",
+          "es": "Mindenki significa «todos» y va solo (Mindenki otthon van); no va delante de un sustantivo."
+        },
+        "Mindenhol": {
+          "en": "Mindenhol means 'everywhere' (Mindenhol esik az eső); it is a place word, not 'every'.",
+          "es": "Mindenhol significa «en todas partes» (Mindenhol esik az eső); es una palabra de lugar, no «cada»."
+        }
+      },
+      "examples": [
+        "Minden héten úszom.",
+        "Minden nap sétálok."
+      ],
+      "tr": {
+        "en": "Once every month I go to Budapest.",
+        "es": "Una vez al mes voy a Budapest."
+      }
+    }
+  ]
+}

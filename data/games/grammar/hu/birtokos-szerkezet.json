@@ -1,0 +1,765 @@
+{
+  "schema": 2,
+  "topic": "birtokos-szerkezet",
+  "level": "A1",
+  "title": { "en": "Possession: Anna háza", "es": "Posesión: Anna háza" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "To say 'Anna's house', Hungarian puts the owner first, with no ending, and the thing owned second, with an ending: Anna háza. It is the 3rd person ending (his, her, its): ház + a = háza. There is no 's and no 'of' (Spanish de): the second word carries the whole meaning. The article, if there is one, stands before the owner only: a fiú anyja (the boy's mother).",
+        "es": "Para decir «la casa de Anna», el húngaro pone primero al dueño, sin terminación, y después la cosa poseída, con terminación: Anna háza. Es la terminación de 3.ª persona (su): ház + a = háza. No hay «de» ni 's: la segunda palabra lleva todo el sentido. El artículo, si lo hay, va solo delante del dueño: a fiú anyja (la madre del chico)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "poss-endings",
+      "title": { "en": "The thing owned: its 3rd person ending", "es": "La cosa poseída: su terminación de 3.ª persona" },
+      "header": [
+        { "en": "Word", "es": "Palabra" },
+        { "en": "his, her, its", "es": "su (de él, ella)" }
+      ],
+      "rows": [
+        ["ház", "háza"],
+        ["könyv", "könyve"],
+        ["autó", "autója"],
+        ["szoba", "szobája"],
+        ["kutya", "kutyája"],
+        ["bicikli", "biciklije"],
+        ["lány", "lánya"],
+        ["anya", "anyja"],
+        ["barát", "barátja"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Building the phrase", "es": "Cómo se arma la frase" },
+      "items": [
+        {
+          "text": {
+            "en": "Owner first, in the plain form. A name needs no article and no ending.",
+            "es": "Primero el dueño, en forma simple. Un nombre no necesita artículo ni terminación."
+          },
+          "examples": [
+            { "es": "Ez Anna háza.", "tr": { "en": "This is Anna's house.", "es": "Ésta es la casa de Anna." } },
+            { "es": "Péter autója piros.", "tr": { "en": "Péter's car is red.", "es": "El coche de Péter es rojo." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "The thing owned gets the ending. After a vowel it is -ja/-je (autója, szobája, biciklije; final a, e become á, é). After a consonant it is mostly -a/-e (háza, könyve, lánya); some words take -ja/-je anyway (barátja) and a few are irregular (anya becomes anyja): learn them with the word.",
+            "es": "La cosa poseída recibe la terminación. Después de vocal es -ja/-je (autója, szobája, biciklije; la a, e final pasa a á, é). Después de consonante suele ser -a/-e (háza, könyve, lánya); algunas palabras llevan -ja/-je igualmente (barátja) y unas pocas son irregulares (anya pasa a anyja): apréndelas con la palabra."
+          },
+          "examples": [
+            { "es": "Ez Kati szobája.", "tr": { "en": "This is Kati's room.", "es": "Éste es el cuarto de Kati." } },
+            { "es": "Ez Gábor könyve.", "tr": { "en": "This is Gábor's book.", "es": "Éste es el libro de Gábor." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "The article stands before the owner only (a before a consonant, az before a vowel), never before the thing owned.",
+            "es": "El artículo va solo delante del dueño (a ante consonante, az ante vocal), nunca delante de la cosa poseída."
+          },
+          "examples": [
+            { "es": "A fiú anyja tanár.", "tr": { "en": "The boy's mother is a teacher.", "es": "La madre del chico es profesora." } },
+            { "es": "A tanár könyve új.", "tr": { "en": "The teacher's book is new.", "es": "El libro del profesor es nuevo." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "poss-phrases",
+      "title": { "en": "Owner + thing owned", "es": "Dueño + cosa poseída" },
+      "header": [
+        { "en": "Owner", "es": "Dueño" },
+        { "en": "ház (house)", "es": "ház (casa)" },
+        { "en": "autó (car)", "es": "autó (coche)" },
+        { "en": "kutya (dog)", "es": "kutya (perro)" }
+      ],
+      "rows": [
+        ["Anna", "Anna háza", "Anna autója", "Anna kutyája"],
+        ["Péter", "Péter háza", "Péter autója", "Péter kutyája"],
+        ["a fiú", "a fiú háza", "a fiú autója", "a fiú kutyája"],
+        ["a tanár", "a tanár háza", "a tanár autója", "a tanár kutyája"],
+        ["a barátom", "a barátom háza", "a barátom autója", "a barátom kutyája"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Other kinds of owner", "es": "Otros tipos de dueño" },
+      "points": [
+        {
+          "text": {
+            "en": "The owner can have its own ending (my, your). The thing owned still takes the 3rd person ending: it belongs to the friend, not to me.",
+            "es": "El dueño puede llevar su propia terminación (mi, tu). La cosa poseída sigue con la terminación de 3.ª persona: es del amigo, no mía."
+          },
+          "examples": [
+            { "es": "A barátom autója piros.", "tr": { "en": "My friend's car is red.", "es": "El coche de mi amigo es rojo." } },
+            { "es": "Az apám kutyája nagy.", "tr": { "en": "My father's dog is big.", "es": "El perro de mi padre es grande." } },
+            { "es": "A nagymamám háza szép.", "tr": { "en": "My grandmother's house is pretty.", "es": "La casa de mi abuela es bonita." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A plural owner changes nothing: the thing owned stays in the 3rd person singular.",
+            "es": "Un dueño en plural no cambia nada: la cosa poseída queda en 3.ª persona del singular."
+          },
+          "examples": [
+            { "es": "A gyerekek szobája nagy.", "tr": { "en": "The children's room is big.", "es": "El cuarto de los niños es grande." } },
+            { "es": "A lányok kutyája kicsi.", "tr": { "en": "The girls' dog is small.", "es": "El perro de las chicas es pequeño." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Things can be owners too: the same pattern says 'of'.",
+            "es": "Las cosas también pueden ser dueños: el mismo patrón dice «de»."
+          },
+          "examples": [
+            { "es": "A ház ablaka nagy.", "tr": { "en": "The window of the house is big.", "es": "La ventana de la casa es grande." } },
+            { "es": "A város központja szép.", "tr": { "en": "The centre of the city is pretty.", "es": "El centro de la ciudad es bonito." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nak-long",
+      "title": { "en": "The longer form: -nak/-nek + a/az", "es": "La forma larga: -nak/-nek + a/az" },
+      "header": [
+        { "en": "Short form", "es": "Forma corta" },
+        { "en": "Longer form", "es": "Forma larga" }
+      ],
+      "rows": [
+        ["Anna háza", "Annának a háza"],
+        ["Péter autója", "Péternek az autója"],
+        ["a fiú anyja", "a fiúnak az anyja"],
+        ["a tanár könyve", "a tanárnak a könyve"],
+        ["a barátom kutyája", "a barátomnak a kutyája"],
+        ["a gyerekek szobája", "a gyerekeknek a szobája"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "When to use the longer form", "es": "Cuándo usar la forma larga" },
+      "points": [
+        {
+          "text": {
+            "en": "Same meaning as the short form, a little more careful or stressed, and handy when the owner is a long phrase. The owner takes -nak/-nek and the thing owned gets its own a/az.",
+            "es": "Mismo significado que la forma corta, algo más cuidado o enfático, y útil cuando el dueño es una frase larga. El dueño lleva -nak/-nek y la cosa poseída recibe su propio a/az."
+          },
+          "examples": [
+            { "es": "Annának a kutyája nagy.", "tr": { "en": "Anna's dog is big.", "es": "El perro de Anna es grande." } },
+            { "es": "A főnöknek a telefonja új.", "tr": { "en": "The boss's phone is new.", "es": "El teléfono del jefe es nuevo." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "The question 'whose?' uses it: Kinek a ...-ja? (kinek = whose, literally 'to whom').",
+            "es": "La pregunta «¿de quién?» lo usa: Kinek a ...-ja? (kinek = de quién, literalmente «a quién»)."
+          },
+          "examples": [
+            { "es": "Kinek a kutyája ez?", "tr": { "en": "Whose dog is this?", "es": "¿De quién es este perro?" } },
+            { "es": "Kinek az autója ez?", "tr": { "en": "Whose car is this?", "es": "¿De quién es este coche?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Its, or has it?", "es": "¿«Su», o lo tiene?" },
+      "pairs": [
+        {
+          "a": "Anna háza nagy.",
+          "b": "Annának van háza.",
+          "note": {
+            "en": "Anna háza: the house that belongs to Anna, no van. Annának van háza: Anna HAS a house, with -nak and van (previous lesson).",
+            "es": "Anna háza: la casa que pertenece a Anna, sin van. Annának van háza: Anna TIENE casa, con -nak y van (lección anterior)."
+          },
+          "examples": [
+            { "es": "Péter autója piros.", "tr": { "en": "Péter's car is red.", "es": "El coche de Péter es rojo." } },
+            { "es": "Péternek van autója.", "tr": { "en": "Péter has a car.", "es": "Péter tiene coche." } }
+          ]
+        },
+        {
+          "a": "Anna háza",
+          "b": "Annának a háza",
+          "note": {
+            "en": "Same meaning. The short form is the everyday one; the longer form adds -nak and a second a/az.",
+            "es": "Mismo significado. La forma corta es la de todos los días; la larga añade -nak y un segundo a/az."
+          },
+          "examples": [
+            { "es": "A tanár könyve új.", "tr": { "en": "The teacher's book is new.", "es": "El libro del profesor es nuevo." } },
+            { "es": "A tanárnak a könyve új.", "tr": { "en": "The teacher's book is new.", "es": "El libro del profesor es nuevo." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: the order is the reverse of Spanish, and the owner gets no ending. 'The book of the teacher' is a tanár könyve, never a könyv a tanár. In the short form the owner stays bare (Anna háza, not Annának háza); the ending -nak/-nek comes only in the longer form, together with the second a/az: Annának a háza.",
+        "es": "Trampa clásica: el orden es el inverso del español, y el dueño no lleva terminación. «El libro del profesor» es a tanár könyve, nunca a könyv a tanár. En la forma corta el dueño queda sin terminación (Anna háza, no Annának háza); la terminación -nak/-nek aparece solo en la forma larga, junto con el segundo a/az: Annának a háza."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian the owner comes first, with no ending, and the thing owned comes second, with the ending of the third person. «Anna háza» is Anna's house, «a fiú anyja» is the boy's mother, «a barátom autója» is my friend's car. The article stands only before the owner. In the longer form the owner takes the ending «nak» or «nek», and the thing owned gets its own article: «Annának a háza», «a tanárnak a könyve». The same longer form is used in the question «Kinek a kutyája ez?»",
+    "es": "En húngaro el dueño va primero, sin terminación, y la cosa poseída va después, con la terminación de la tercera persona. «Anna háza» es la casa de Anna, «a fiú anyja» es la madre del chico, «a barátom autója» es el coche de mi amigo. El artículo va solo delante del dueño. En la forma larga el dueño lleva la terminación «nak» o «nek», y la cosa poseída recibe su propio artículo: «Annának a háza», «a tanárnak a könyve». La misma forma larga se usa en la pregunta «Kinek a kutyája ez?»"
+  },
+  "items": [
+    {
+      "id": "birtokos-szerkezet-c01",
+      "sentence": "Ez ___ háza.",
+      "options": ["Anna", "Annának", "Annát"],
+      "correct": 0,
+      "why": {
+        "en": "The owner comes first and stays in the plain form: Anna háza.",
+        "es": "El dueño va primero y queda en forma simple: Anna háza."
+      },
+      "wrong": {
+        "Annának": {
+          "en": "Annának is the 'has' form (Annának van háza); in the short possessive phrase the owner has no ending.",
+          "es": "Annának es la forma de «tener» (Annának van háza); en la frase posesiva corta el dueño no lleva terminación."
+        },
+        "Annát": {
+          "en": "Annát is the object form (-t), as in 'I see Anna'; an owner is not marked like that.",
+          "es": "Annát es la forma del objeto (-t), como en «veo a Anna»; un dueño no se marca así."
+        }
+      },
+      "examples": ["Ez Péter autója.", "Ez Kati szobája."],
+      "tr": { "en": "This is Anna's house.", "es": "Ésta es la casa de Anna." }
+    },
+    {
+      "id": "birtokos-szerkezet-f01",
+      "kind": "form",
+      "verb": "ház",
+      "person": "Anna",
+      "answer": "Anna háza",
+      "accept": ["Annának a háza"],
+      "table": "poss-phrases"
+    },
+    {
+      "id": "birtokos-szerkezet-c02",
+      "sentence": "A fiú ___ tanár.",
+      "options": ["anyja", "anyám", "anya"],
+      "correct": 0,
+      "why": {
+        "en": "The mother belongs to the boy, so anya takes the 3rd person ending: anyja (an irregular word).",
+        "es": "La madre pertenece al chico, así que anya lleva la terminación de 3.ª persona: anyja (una palabra irregular)."
+      },
+      "wrong": {
+        "anyám": {
+          "en": "anyám is 'my mother': it would link the mother to me, not to the boy.",
+          "es": "anyám es «mi madre»: ligaría a la madre conmigo, no con el chico."
+        },
+        "anya": {
+          "en": "Without an ending nothing links the mother to the boy: A fiú anya would be two unrelated words.",
+          "es": "Sin terminación nada liga a la madre con el chico: A fiú anya serían dos palabras sin relación."
+        }
+      },
+      "examples": ["A lány apja orvos.", "Kati anyja tanár."],
+      "tr": { "en": "The boy's mother is a teacher.", "es": "La madre del chico es profesora." }
+    },
+    {
+      "id": "birtokos-szerkezet-f02",
+      "kind": "form",
+      "verb": "autó",
+      "person": "Péter",
+      "answer": "Péter autója",
+      "accept": ["Péternek az autója"],
+      "table": "poss-phrases"
+    },
+    {
+      "id": "birtokos-szerkezet-c03",
+      "sentence": "A barátom ___ piros.",
+      "options": ["autója", "autóm", "autó"],
+      "correct": 0,
+      "why": {
+        "en": "The owner is a barátom (my friend); the car belongs to him, so it takes the 3rd person ending: autója.",
+        "es": "El dueño es a barátom (mi amigo); el coche es de él, así que lleva la terminación de 3.ª persona: autója."
+      },
+      "wrong": {
+        "autóm": {
+          "en": "autóm is 'my car': the car would be mine, not the friend's.",
+          "es": "autóm es «mi coche»: el coche sería mío, no del amigo."
+        },
+        "autó": {
+          "en": "autó alone is just 'a car': nothing says it belongs to the friend.",
+          "es": "autó solo es «un coche»: nada dice que sea del amigo."
+        }
+      },
+      "examples": ["Az apám autója új.", "A barátom kutyája nagy."],
+      "tr": { "en": "My friend's car is red.", "es": "El coche de mi amigo es rojo." }
+    },
+    {
+      "id": "birtokos-szerkezet-f03",
+      "kind": "form",
+      "verb": "kutya",
+      "person": "a fiú",
+      "answer": "a fiú kutyája",
+      "accept": ["a fiúnak a kutyája"],
+      "table": "poss-phrases"
+    },
+    {
+      "id": "birtokos-szerkezet-c04",
+      "sentence": "Kinek a ___ ez?",
+      "options": ["kutyája", "kutyám", "kutya"],
+      "correct": 0,
+      "why": {
+        "en": "The question asks about an unknown owner, so the noun takes the 3rd person ending: Kinek a kutyája?",
+        "es": "La pregunta es por un dueño desconocido, así que el sustantivo lleva la terminación de 3.ª persona: Kinek a kutyája?"
+      },
+      "wrong": {
+        "kutyám": {
+          "en": "kutyám is 'my dog': the question would not make sense, since I know my own dog.",
+          "es": "kutyám es «mi perro»: la pregunta no tendría sentido, porque yo conozco a mi perro."
+        },
+        "kutya": {
+          "en": "Without an ending nothing links the dog to the owner kinek asks about.",
+          "es": "Sin terminación nada liga al perro con el dueño por el que pregunta kinek."
+        }
+      },
+      "examples": ["Kinek az autója ez?", "Kinek a könyve ez?"],
+      "tr": { "en": "Whose dog is this?", "es": "¿De quién es este perro?" }
+    },
+    {
+      "id": "birtokos-szerkezet-f04",
+      "kind": "form",
+      "verb": "könyv",
+      "person": "ő",
+      "answer": "könyve",
+      "table": "poss-endings"
+    },
+    {
+      "id": "birtokos-szerkezet-w01",
+      "kind": "why",
+      "es": "Anna háza nagy.",
+      "target": "háza",
+      "tr": { "en": "Anna's house is big.", "es": "La casa de Anna es grande." },
+      "options": [
+        {
+          "text": {
+            "en": "háza = ház + the 3rd person ending: it belongs to Anna, who stays bare",
+            "es": "háza = ház + la terminación de 3.ª persona: es de Anna, que queda sin terminación"
+          }
+        },
+        {
+          "text": {
+            "en": "-a makes the plural: several houses",
+            "es": "-a marca el plural: varias casas"
+          },
+          "wrong": {
+            "en": "With this rule it would be házak: the plural is -k. The -a in háza means 'her'.",
+            "es": "Con esta regla sería házak: el plural es -k. La -a de háza significa «su»."
+          }
+        },
+        {
+          "text": {
+            "en": "-a marks the object, like -t",
+            "es": "-a marca el objeto, como -t"
+          },
+          "wrong": {
+            "en": "With this rule it would be házat (object ending -t); here -a only links the house to Anna.",
+            "es": "Con esta regla sería házat (terminación del objeto -t); aquí -a solo liga la casa con Anna."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "birtokos-szerkezet-c05",
+      "sentence": "A tanárnak a ___ új.",
+      "options": ["könyve", "könyv", "könyvem"],
+      "correct": 0,
+      "why": {
+        "en": "After the owner (a tanárnak) the thing owned takes the 3rd person ending: a könyve.",
+        "es": "Después del dueño (a tanárnak) la cosa poseída lleva la terminación de 3.ª persona: a könyve."
+      },
+      "wrong": {
+        "könyv": {
+          "en": "könyv has no ending, so it would not belong to the teacher.",
+          "es": "könyv no lleva terminación, así que no sería del profesor."
+        },
+        "könyvem": {
+          "en": "könyvem is 'my book': the book would be mine, not the teacher's.",
+          "es": "könyvem es «mi libro»: el libro sería mío, no del profesor."
+        }
+      },
+      "examples": ["Annának a kutyája nagy.", "A főnöknek a telefonja új."],
+      "tr": { "en": "The teacher's book is new.", "es": "El libro del profesor es nuevo." }
+    },
+    {
+      "id": "birtokos-szerkezet-f05",
+      "kind": "form",
+      "verb": "szoba",
+      "person": "ő",
+      "answer": "szobája",
+      "table": "poss-endings"
+    },
+    {
+      "id": "birtokos-szerkezet-c06",
+      "sentence": "Péternek ___ autója piros.",
+      "options": ["az", "a", "egy"],
+      "correct": 0,
+      "why": {
+        "en": "autója starts with a vowel, so the article is az.",
+        "es": "autója empieza con vocal, así que el artículo es az."
+      },
+      "wrong": {
+        "a": {
+          "en": "a is the article before a consonant (Annának a kutyája); before a vowel it becomes az.",
+          "es": "a es el artículo ante consonante (Annának a kutyája); ante vocal pasa a ser az."
+        },
+        "egy": {
+          "en": "egy is 'a, an' for something not yet known; the longer form points at a known car, so it needs a/az.",
+          "es": "egy es «un, una» para algo que aún no se conoce; la forma larga señala un coche conocido, así que necesita a/az."
+        }
+      },
+      "examples": ["Annának a kutyája nagy.", "A fiúnak az anyja tanár."],
+      "tr": { "en": "Péter's car is red.", "es": "El coche de Péter es rojo." }
+    },
+    {
+      "id": "birtokos-szerkezet-f06",
+      "kind": "form",
+      "verb": "Anna háza",
+      "person": "-nak/-nek a",
+      "answer": "Annának a háza",
+      "table": "nak-long"
+    },
+    {
+      "id": "birtokos-szerkezet-c07",
+      "sentence": "A gyerekek ___ nagy.",
+      "options": ["szobája", "szobák", "szobám"],
+      "correct": 0,
+      "why": {
+        "en": "A plural owner changes nothing: the room is one room and takes the 3rd person singular ending, szobája.",
+        "es": "Un dueño en plural no cambia nada: es un solo cuarto y lleva la terminación de 3.ª persona del singular, szobája."
+      },
+      "wrong": {
+        "szobák": {
+          "en": "szobák is 'rooms' (plural): the sentence would be about several rooms, with nothing linking them to the children.",
+          "es": "szobák es «cuartos» (plural): la frase hablaría de varios cuartos, sin nada que los ligue a los niños."
+        },
+        "szobám": {
+          "en": "szobám is 'my room': the room would be mine, not the children's.",
+          "es": "szobám es «mi cuarto»: el cuarto sería mío, no de los niños."
+        }
+      },
+      "examples": ["A lányok kutyája kicsi.", "A tanárok könyve új."],
+      "tr": { "en": "The children's room is big.", "es": "El cuarto de los niños es grande." }
+    },
+    {
+      "id": "birtokos-szerkezet-f07",
+      "kind": "form",
+      "verb": "a tanár könyve",
+      "person": "-nak/-nek a",
+      "answer": "a tanárnak a könyve",
+      "table": "nak-long"
+    },
+    {
+      "id": "birtokos-szerkezet-c08",
+      "sentence": "Péter Anna ___.",
+      "options": ["fia", "fiú", "fiam"],
+      "correct": 0,
+      "why": {
+        "en": "Anna is the bare owner, and fiú changes irregularly to fia: Anna fia (Anna's son).",
+        "es": "Anna es la dueña sin terminación, y fiú cambia de forma irregular a fia: Anna fia (el hijo de Anna)."
+      },
+      "wrong": {
+        "fiú": {
+          "en": "fiú is the plain word 'boy': Péter Anna fiú would be three words in a row with no link.",
+          "es": "fiú es la palabra simple «chico»: Péter Anna fiú serían tres palabras seguidas sin ligazón."
+        },
+        "fiam": {
+          "en": "fiam is 'my son': the sentence would say that Péter is my son, not Anna's.",
+          "es": "fiam es «mi hijo»: la frase diría que Péter es mi hijo, no el de Anna."
+        }
+      },
+      "examples": ["Gábor Kati férje.", "Diego Lupita férje."],
+      "tr": { "en": "Péter is Anna's son.", "es": "Péter es el hijo de Anna." }
+    },
+    {
+      "id": "birtokos-szerkezet-f08",
+      "kind": "form",
+      "verb": "ház",
+      "person": "a tanár",
+      "answer": "a tanár háza",
+      "accept": ["a tanárnak a háza"],
+      "table": "poss-phrases"
+    },
+    {
+      "id": "birtokos-szerkezet-w02",
+      "kind": "why",
+      "es": "Annának a kutyája nagy.",
+      "target": "Annának",
+      "tr": { "en": "Anna's dog is big.", "es": "El perro de Anna es grande." },
+      "options": [
+        {
+          "text": {
+            "en": "-nak means 'in': Anna is a place",
+            "es": "-nak significa «en»: Anna es un lugar"
+          },
+          "wrong": {
+            "en": "With this rule it would be about a place; 'in' is -ban/-ben (a házban). Here -nak marks the owner in the longer pattern.",
+            "es": "Con esta regla se hablaría de un lugar; «en» es -ban/-ben (a házban). Aquí -nak marca al dueño en el patrón largo."
+          }
+        },
+        {
+          "text": {
+            "en": "The longer pattern: the owner takes -nak and the thing owned gets its own a",
+            "es": "El patrón largo: el dueño lleva -nak y la cosa poseída recibe su propio a"
+          }
+        },
+        {
+          "text": {
+            "en": "-nak says Anna has a dog (van)",
+            "es": "-nak dice que Anna tiene un perro (van)"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Annának van kutyája; there is no van here, it only says whose dog it is.",
+            "es": "Con esta regla la frase sería Annának van kutyája; aquí no hay van, solo se dice de quién es el perro."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "birtokos-szerkezet-c09",
+      "sentence": "Ez az ___ autója.",
+      "options": ["apám", "apád", "apja"],
+      "correct": 0,
+      "why": {
+        "en": "The owner can carry its own ending: apám is 'my father', and the car takes the 3rd person ending (autója).",
+        "es": "El dueño puede llevar su propia terminación: apám es «mi padre», y el coche lleva la de 3.ª persona (autója)."
+      },
+      "wrong": {
+        "apád": {
+          "en": "apád is 'your father': the sentence would say it is your father's car.",
+          "es": "apád es «tu padre»: la frase diría que es el coche de tu padre."
+        },
+        "apja": {
+          "en": "apja is 'his or her father': the sentence would say it is someone else's father's car.",
+          "es": "apja es «su padre (de él o ella)»: la frase diría que es el coche del padre de otra persona."
+        }
+      },
+      "examples": ["Az apám kutyája nagy.", "A barátom autója piros."],
+      "tr": { "en": "This is my father's car.", "es": "Éste es el coche de mi padre." }
+    },
+    {
+      "id": "birtokos-szerkezet-f09",
+      "kind": "form",
+      "verb": "Péter autója",
+      "person": "-nak/-nek a",
+      "answer": "Péternek az autója",
+      "table": "nak-long"
+    },
+    {
+      "id": "birtokos-szerkezet-c10",
+      "sentence": "Anna ___ nagy.",
+      "options": ["szobája", "szobaja", "szoba"],
+      "correct": 0,
+      "why": {
+        "en": "Anna is the bare owner. Before the ending the final -a of szoba becomes -á: szobája.",
+        "es": "Anna es la dueña sin terminación. Ante la terminación la -a final de szoba pasa a -á: szobája."
+      },
+      "wrong": {
+        "szobaja": {
+          "en": "This is spelled with a short a; before an ending a final a (or e) becomes long: á (é).",
+          "es": "Esto se escribe con a corta; ante una terminación la a (o e) final pasa a larga: á (é)."
+        },
+        "szoba": {
+          "en": "Without an ending nothing links the room to Anna.",
+          "es": "Sin terminación nada liga el cuarto con Anna."
+        }
+      },
+      "examples": ["Ez Kati szobája.", "Péter biciklije új."],
+      "tr": { "en": "Anna's room is big.", "es": "El cuarto de Anna es grande." }
+    },
+    {
+      "id": "birtokos-szerkezet-f10",
+      "kind": "form",
+      "verb": "bicikli",
+      "person": "ő",
+      "answer": "biciklije",
+      "table": "poss-endings"
+    },
+    {
+      "id": "birtokos-szerkezet-c11",
+      "sentence": "___ a kutyája nagy.",
+      "options": ["Annának", "Anna", "Annát"],
+      "correct": 0,
+      "why": {
+        "en": "With an a before the thing owned, the owner takes -nak: Annának a kutyája.",
+        "es": "Con un a delante de la cosa poseída, el dueño lleva -nak: Annának a kutyája."
+      },
+      "wrong": {
+        "Anna": {
+          "en": "The short form has no a: Anna kutyája. With a before the dog, the owner needs -nak.",
+          "es": "La forma corta no lleva a: Anna kutyája. Con a delante del perro, el dueño necesita -nak."
+        },
+        "Annát": {
+          "en": "Annát is the object form (-t), as in 'I see Anna'; it does not mark an owner.",
+          "es": "Annát es la forma del objeto (-t), como en «veo a Anna»; no marca a un dueño."
+        }
+      },
+      "examples": ["A lánynak a kutyája kicsi.", "Péternek az autója piros."],
+      "tr": { "en": "Anna's dog is big.", "es": "El perro de Anna es grande." }
+    },
+    {
+      "id": "birtokos-szerkezet-f11",
+      "kind": "form",
+      "verb": "autó",
+      "person": "a barátom",
+      "answer": "a barátom autója",
+      "accept": ["a barátomnak az autója"],
+      "table": "poss-phrases"
+    },
+    {
+      "id": "birtokos-szerkezet-c12",
+      "sentence": "A ___ a telefonja új.",
+      "options": ["főnöknek", "főnöknak", "főnök"],
+      "correct": 0,
+      "why": {
+        "en": "főnök has front vowels (ő, ö), so the owner ending is -nek: a főnöknek a telefonja.",
+        "es": "főnök tiene vocales anteriores (ő, ö), así que la terminación del dueño es -nek: a főnöknek a telefonja."
+      },
+      "wrong": {
+        "főnöknak": {
+          "en": "-nak is the form for back-vowel words (a tanárnak); főnök needs -nek.",
+          "es": "-nak es la forma para palabras con vocales posteriores (a tanárnak); főnök necesita -nek."
+        },
+        "főnök": {
+          "en": "The short form has no a: a főnök telefonja. With a before the phone, the owner needs -nek.",
+          "es": "La forma corta no lleva a: a főnök telefonja. Con a delante del teléfono, el dueño necesita -nek."
+        }
+      },
+      "examples": ["A tanárnak a könyve új.", "A gyereknek a kutyája nagy."],
+      "tr": { "en": "The boss's phone is new.", "es": "El teléfono del jefe es nuevo." }
+    },
+    {
+      "id": "birtokos-szerkezet-f12",
+      "kind": "form",
+      "verb": "a fiú anyja",
+      "person": "-nak/-nek a",
+      "answer": "a fiúnak az anyja",
+      "table": "nak-long"
+    },
+    {
+      "id": "birtokos-szerkezet-w03",
+      "kind": "why",
+      "es": "A barátom autója piros.",
+      "target": "autója",
+      "tr": { "en": "My friend's car is red.", "es": "El coche de mi amigo es rojo." },
+      "options": [
+        {
+          "text": {
+            "en": "-ja means 'my': the car is mine",
+            "es": "-ja significa «mi»: el coche es mío"
+          },
+          "wrong": {
+            "en": "With this rule it would be autóm. The 'my' ending is already on barátom; autója belongs to the friend.",
+            "es": "Con esta regla sería autóm. La terminación «mi» ya está en barátom; autója es del amigo."
+          }
+        },
+        {
+          "text": {
+            "en": "-ja marks the plural",
+            "es": "-ja marca el plural"
+          },
+          "wrong": {
+            "en": "With this rule it would be autók: the plural is -k. The -ja means 'his or her'.",
+            "es": "Con esta regla sería autók: el plural es -k. La -ja significa «su (de él o ella)»."
+          }
+        },
+        {
+          "text": {
+            "en": "The owner (a barátom) has its own ending; the car keeps the 3rd person -ja",
+            "es": "El dueño (a barátom) lleva su propia terminación; el coche conserva la -ja de 3.ª persona"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "birtokos-szerkezet-c13",
+      "sentence": "A ház ___ nagy.",
+      "options": ["ablaka", "ablak", "ablakom"],
+      "correct": 0,
+      "why": {
+        "en": "Things can be owners too: the window belongs to the house, so ablak takes the 3rd person ending: ablaka.",
+        "es": "Las cosas también pueden ser dueños: la ventana es de la casa, así que ablak lleva la terminación de 3.ª persona: ablaka."
+      },
+      "wrong": {
+        "ablak": {
+          "en": "Without an ending the sentence would not say whose window it is.",
+          "es": "Sin terminación la frase no diría de quién es la ventana."
+        },
+        "ablakom": {
+          "en": "ablakom is 'my window': it would be my window, not the house's.",
+          "es": "ablakom es «mi ventana»: sería mi ventana, no la de la casa."
+        }
+      },
+      "examples": ["A város központja szép.", "A bolt ablaka kicsi."],
+      "tr": { "en": "The window of the house is big.", "es": "La ventana de la casa es grande." }
+    },
+    {
+      "id": "birtokos-szerkezet-c14",
+      "sentence": "Kati Gábor ___.",
+      "options": ["felesége", "feleségem", "feleség"],
+      "correct": 0,
+      "why": {
+        "en": "Gábor is the bare owner, and the wife takes the 3rd person ending: felesége.",
+        "es": "Gábor es el dueño sin terminación, y la esposa lleva la terminación de 3.ª persona: felesége."
+      },
+      "wrong": {
+        "feleségem": {
+          "en": "feleségem is 'my wife': the sentence would say that Kati is my wife.",
+          "es": "feleségem es «mi esposa»: la frase diría que Kati es mi esposa."
+        },
+        "feleség": {
+          "en": "Without an ending nothing links the wife to Gábor: Kati Gábor feleség has no link.",
+          "es": "Sin terminación nada liga a la esposa con Gábor: Kati Gábor feleség no tiene ligazón."
+        }
+      },
+      "examples": ["Gábor Kati férje.", "Diego Lupita férje."],
+      "tr": { "en": "Kati is Gábor's wife.", "es": "Kati es la esposa de Gábor." }
+    },
+    {
+      "id": "birtokos-szerkezet-w04",
+      "kind": "why",
+      "es": "Kinek az autója ez?",
+      "target": "az",
+      "tr": { "en": "Whose car is this?", "es": "¿De quién es este coche?" },
+      "options": [
+        {
+          "text": {
+            "en": "az is 'that', pointing at something",
+            "es": "az es «aquel», señala algo"
+          },
+          "wrong": {
+            "en": "With this rule it would be a pointing word (az a ház = that house); here az is the plain article.",
+            "es": "Con esta regla sería una palabra que señala (az a ház = aquella casa); aquí az es el artículo simple."
+          }
+        },
+        {
+          "text": {
+            "en": "az is the article before a vowel (a before a consonant)",
+            "es": "az es el artículo ante vocal (a ante consonante)"
+          }
+        },
+        {
+          "text": {
+            "en": "az is a form of the verb 'to be'",
+            "es": "az es una forma del verbo «ser»"
+          },
+          "wrong": {
+            "en": "With this rule az would be a verb, but the verb forms are van and vagyok; this sentence has no verb at all.",
+            "es": "Con esta regla az sería un verbo, pero las formas del verbo son van y vagyok; esta frase no tiene ningún verbo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
