@@ -1,30 +1,31 @@
-import type { PcicItem } from '@/data/pcic';
+import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicTarget } from '@/data/pcic';
 import { knownTokens, type ResolvedTense } from '@/lib/knownSentence';
+import { setActiveSource, type Lang } from '@/lib/languagePair';
 import { learnedEntries } from '@/lib/sentenceCards';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
-import type { ReadingDeps } from '../reading';
-import { pickStory, storyWords, type Story } from '../stories';
+import { buildQuestions, buildReadingSet, resolveSet, type ReadingDeps } from '../reading';
+import { falseIn, pickStory, storiesFor, storyWords, type Story, type StorySentence } from '../stories';
 
 const TODAY = '2026-10-23';
 const TENSES: ReadonlySet<ResolvedTense> = new Set<ResolvedTense>(['presente']);
 
-const item = (id: string, es: string, en: string, pos: PcicItem['pos']): PcicItem => ({ id, es, en, kind: 'word', section: '', order: 0, pos });
+const item = (id: string, es: string, en: string, pos: PcicItem['pos'], hu?: string): PcicItem => ({ id, es, en, hu, kind: 'word', section: '', order: 0, pos });
 const ITEMS: PcicItem[] = [
-  item('o1', 'la casa', 'house', 'noun'),
-  item('o2', 'el perro', 'dog', 'noun'),
-  item('o3', 'el gato', 'cat', 'noun'),
-  item('o4', 'el libro', 'book', 'noun'),
-  item('o5', 'la mesa', 'table', 'noun'),
-  item('o6', 'grande', 'big', 'adj'),
-  item('o7', 'pequeño', 'small', 'adj'),
-  item('o8', 'ser', 'to be', 'verb'),
+  item('o1', 'la casa', 'house', 'noun', 'ház'),
+  item('o2', 'el perro', 'dog', 'noun', 'kutya'),
+  item('o3', 'el gato', 'cat', 'noun', 'macska'),
+  item('o4', 'el libro', 'book', 'noun', 'könyv'),
+  item('o5', 'la mesa', 'table', 'noun', 'asztal'),
+  item('o6', 'grande', 'big', 'adj', 'nagy'),
+  item('o7', 'pequeño', 'small', 'adj', 'kicsi'),
+  item('o8', 'ser', 'to be', 'verb', 'lenni'),
   item('o9', 'el coche', 'car', 'noun'),
   item('o10', 'la flor', 'flower', 'noun'),
 ];
 const findItem = (id: string) => ITEMS.find((i) => i.id === id);
 
-const sentence = (es: string, en: string, word: string, form: string) => ({ es, en, word, form });
-const story = (id: string, sentences: ReturnType<typeof sentence>[]): Story => ({ id, level: 'A1', sentences, false_en: ['x', 'y'] });
+const sentence = (es: string, en: string, word: string, form: string): StorySentence => ({ es, en, word, form });
+const story = (id: string, sentences: StorySentence[]): Story => ({ id, level: 'A1', sentences, false_en: ['x', 'y'] });
 
 // A: casa, perro, gato, libro, mesa. B: grande, pequeño, ser, libro, mesa. C: a sentence with the unknown word "roja".
 const A = story('a', [
@@ -152,12 +153,157 @@ describe('pickStory', () => {
     expect(pick({ ...d, avoidStory: 'zzz' }, [A, B])).toBe('a');
   });
 
-  it('the English direction has no stories', () => {
-    const d = deps(deckOf(['o1', 'o2', 'o3', 'o4', 'o5']), { target: 'en' });
-    expect(pickStory(d, new Set(['la', 'casa', 'es', 'grande']), [A, B])).toBeNull();
+  it('a story with no text in the target language (here Hungarian) is left out', () => {
+    const d = deps(deckOf(['o1', 'o2', 'o3', 'o4', 'o5']), { target: 'hu' });
+    expect(pickStory(d, new Set(['a', 'ház', 'nagy', 'lenni']), [A, B])).toBeNull();
   });
 
   it('nothing learned: no story', () => {
     expect(pick(deps([]), [A, B])).toBeNull();
+  });
+});
+
+// The pairs other than en→es (FB526 for every pair): the text is the target-language field, the translation and the
+// true/false statements are the field of the learner's language (the active source, lib/languagePair.ts).
+const tr = (texts: Partial<Record<Lang, string>>, word: string, form: string): StorySentence => ({ ...texts, word, form });
+
+// target es, translations in three languages (a hu→es learner reads the Hungarian ones)
+const AH: Story = {
+  id: 'ah',
+  level: 'A1',
+  sentences: [
+    tr({ es: 'La casa es grande.', en: 'The house is big.', hu: 'A ház nagy.' }, 'o1', 'casa'),
+    tr({ es: 'El perro es pequeño.', en: 'The dog is small.', hu: 'A kutya kicsi.' }, 'o2', 'perro'),
+    tr({ es: 'El gato es grande.', en: 'The cat is big.', hu: 'A macska nagy.' }, 'o3', 'gato'),
+    tr({ es: 'El libro es pequeño.', en: 'The book is small.', hu: 'A könyv kicsi.' }, 'o4', 'libro'),
+    tr({ es: 'La mesa es grande.', en: 'The table is big.', hu: 'Az asztal nagy.' }, 'o5', 'mesa'),
+  ],
+  false_en: ['The house is small.', 'The dog is big.'],
+  false_hu: ['A ház kicsi.', 'A kutya nagy.'],
+};
+// target hu (an es→hu or en→hu learner), target en (an es→en or hu→en learner)
+const HU_T: Story = {
+  id: 'hu-t',
+  level: 'A1',
+  sentences: [
+    tr({ hu: 'A ház nagy.', es: 'La casa es grande.', en: 'The house is big.' }, 'o1', 'ház'),
+    tr({ hu: 'A kutya kicsi.', es: 'El perro es pequeño.', en: 'The dog is small.' }, 'o2', 'kutya'),
+    tr({ hu: 'A macska nagy.', es: 'El gato es grande.', en: 'The cat is big.' }, 'o3', 'macska'),
+    tr({ hu: 'A könyv kicsi.', es: 'El libro es pequeño.', en: 'The book is small.' }, 'o4', 'könyv'),
+    tr({ hu: 'Az asztal nagy.', es: 'La mesa es grande.', en: 'The table is big.' }, 'o5', 'asztal'),
+  ],
+  false_es: ['La casa es pequeña.', 'El perro es grande.'],
+  false_en: ['The house is small.', 'The dog is big.'],
+};
+const EN_T: Story = {
+  id: 'en-t',
+  level: 'A1',
+  sentences: [
+    tr({ en: 'The house is big.', es: 'La casa es grande.', hu: 'A ház nagy.' }, 'o1', 'house'),
+    tr({ en: 'The dog is small.', es: 'El perro es pequeño.', hu: 'A kutya kicsi.' }, 'o2', 'dog'),
+    tr({ en: 'The cat is big.', es: 'El gato es grande.', hu: 'A macska nagy.' }, 'o3', 'cat'),
+    tr({ en: 'The book is small.', es: 'El libro es pequeño.', hu: 'A könyv kicsi.' }, 'o4', 'book'),
+    tr({ en: 'The table is big.', es: 'La mesa es grande.', hu: 'Az asztal nagy.' }, 'o5', 'table'),
+  ],
+  false_es: ['La casa es pequeña.', 'El perro es grande.'],
+  false_hu: ['A ház kicsi.', 'A kutya nagy.'],
+};
+
+describe('a story in the language of each pair', () => {
+  afterEach(() => setActiveSource(null));
+
+  const all = deckOf([]);
+  const pickIn = (target: PcicTarget, source: Lang, s: Story) => {
+    setActiveSource(source);
+    const d = deps(all, { target });
+    return pickStory(d, knownOf(d), [s]);
+  };
+  const statementsOf = (target: PcicTarget, s: Story) => {
+    const d = deps(all, { target, random: () => 0.5 });
+    const words = storyWords(s, findItem, target)!;
+    const qs = buildQuestions(words, d, knownOf(d), s);
+    return resolveSet(words, qs, findItem, target, s)!.resolved.filter((r) => r.kind === 'truefalse');
+  };
+
+  it('hu→es: the Hungarian translations, meanings and false statements', () => {
+    setActiveSource('hu');
+    const words = storyWords(AH, findItem)!;
+    expect(words[0]).toEqual({
+      itemId: 'o1', before: 'La ', answer: 'casa', after: ' es grande.', translation: 'A ház nagy.', meaning: 'ház', sentence: 'La casa es grande.',
+    });
+    expect(words.map((w) => w.translation)).toEqual(AH.sentences.map((s) => s.hu));
+    const statements = statementsOf('es', AH);
+    expect(statements.map((r) => r.truth).sort()).toEqual([false, true]);
+    expect(AH.false_hu).toContain((statements.find((r) => !r.truth) as { statement: string }).statement);
+    expect(AH.sentences.map((s) => s.hu)).toContain((statements.find((r) => r.truth) as { statement: string }).statement);
+  });
+
+  it('en→es keeps the English ones, with the same story', () => {
+    setActiveSource('en');
+    expect(storyWords(AH, findItem)!.map((w) => w.translation)).toEqual(AH.sentences.map((s) => s.en));
+    const wrong = statementsOf('es', AH).find((r) => !r.truth) as { statement: string };
+    expect(AH.false_en).toContain(wrong.statement);
+  });
+
+  it('a story without the translation of the learner language is left out (hu→es with only es and en texts)', () => {
+    expect(pickIn('es', 'hu', A)).toBeNull();
+    expect(storyWords(A, findItem)).toBeNull();
+    expect(falseIn(A, 'hu')).toEqual([]);
+    // the same story is read by an English-speaking learner
+    setActiveSource('en');
+    expect(storyWords(A, findItem)!).toHaveLength(5);
+  });
+
+  it.each<[Lang]>([['es'], ['en']])('%s→hu: a Hungarian story with the translation of the learner language', (source) => {
+    const picked = pickIn('hu', source, HU_T)!;
+    expect(picked.story).toBe(HU_T);
+    expect(picked.words.map((w) => w.sentence)).toEqual(HU_T.sentences.map((s) => s.hu));
+    expect(picked.words.map((w) => w.translation)).toEqual(HU_T.sentences.map((s) => s[source]));
+    expect(picked.words[0]).toMatchObject({ before: 'A ', answer: 'ház', after: ' nagy.' });
+    // the meaning of the card is in the learner language
+    expect(picked.words[0].meaning).toBe(source === 'es' ? 'la casa' : 'house');
+    setActiveSource(source);
+    const wrong = statementsOf('hu', HU_T).find((r) => !r.truth) as { statement: string };
+    expect(falseIn(HU_T, source)).toContain(wrong.statement);
+  });
+
+  it.each<[Lang]>([['es'], ['hu']])('%s→en: an English story with the translation of the learner language', (source) => {
+    const picked = pickIn('en', source, EN_T)!;
+    expect(picked.story).toBe(EN_T);
+    expect(picked.words.map((w) => w.sentence)).toEqual(EN_T.sentences.map((s) => s.en));
+    expect(picked.words.map((w) => w.translation)).toEqual(EN_T.sentences.map((s) => s[source]));
+    expect(picked.words[1]).toMatchObject({ before: 'The ', answer: 'dog', after: ' is small.' });
+    setActiveSource(source);
+    const wrong = statementsOf('en', EN_T).find((r) => !r.truth) as { statement: string };
+    expect(falseIn(EN_T, source)).toContain(wrong.statement);
+  });
+
+  it('a Hungarian or English story is left out when its words are not all learned', () => {
+    setActiveSource('es');
+    const some = deps(deckOf([]).filter((c) => c.itemId !== 'o5'), { target: 'hu' });
+    expect(pickStory(some, knownOf(some), [HU_T])).toBeNull();
+    const english = deps(deckOf([]).filter((c) => c.itemId !== 'o5'), { target: 'en' });
+    expect(pickStory(english, knownOf(english), [EN_T])).toBeNull();
+  });
+});
+
+// The shipped files, whole pipeline: a learner who knows the whole A1 deck of each of the six pairs gets a story of the file of
+// the target, written in the target language, translated and questioned in the language of the learner.
+describe('the stories of the six pairs', () => {
+  afterEach(() => setPcicTarget('es'));
+
+  const PAIRS: [Lang, PcicTarget][] = [['en', 'es'], ['hu', 'es'], ['es', 'en'], ['hu', 'en'], ['es', 'hu'], ['en', 'hu']];
+  it.each(PAIRS)('%s→%s', (source, target) => {
+    setPcicTarget(target, source);
+    const cards = pcicItemsForLevel('A1').map((i) => learned(i.id));
+    const set = buildReadingSet({ target, cards, tenses: TENSES, findItem: findPcicItem, today: TODAY, random: () => 0.5 })!;
+    const story = storiesFor(target).find((s) => s.id === set.storyId)!;
+    expect(story).toBeDefined();
+    expect(set.words.map((w) => w.sentence)).toEqual(story.sentences.map((s) => s[target]));
+    const translations = story.sentences.map((s) => s[source]);
+    expect(set.words.map((w) => w.translation)).toEqual(translations);
+    const statements = set.resolved.filter((r) => r.kind === 'truefalse').map((r) => (r as { statement: string }).statement);
+    expect(statements.length).toBeGreaterThan(0);
+    for (const statement of statements) expect([...translations, ...falseIn(story, source)]).toContain(statement);
   });
 });

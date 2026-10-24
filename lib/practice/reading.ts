@@ -11,9 +11,9 @@
 // part of speech where possible) and true/false (an English statement: the translation of one of the text's
 // sentences = true, the translation of another known sentence that is not in the text = false).
 //
-// Stories (FB526, lib/practice/stories.ts): in the Spanish direction the text is first a ready-made five-sentence story the
-// learner fully knows (the one with the most due words); its false statements come from the story's own `false_en`, in order,
-// each once (then a true one). Without such a story, or in the English direction, the text is built as above.
+// Stories (FB526, lib/practice/stories.ts): the text is first a ready-made five-sentence story the learner fully knows
+// (the one with the most due words); its false statements come from the story's own `false_<source language>`, in order,
+// each once (then a true one). Without such a story the text is built as above.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { isSentenceKnownIn, knownTokens, type ResolvedTense } from '@/lib/knownSentence';
@@ -22,7 +22,7 @@ import { activeSourceFor } from '@/lib/languagePair';
 import { wordIn } from '@/lib/pcicItemText';
 import type { Sm2Card } from '@/lib/sm2';
 import { gapTaskFor, practiceCandidates, type GapSourceInfo, type GapTask } from './gapFill';
-import { pickStory, type Story } from './stories';
+import { falseIn, pickStory, type Story } from './stories';
 
 /** The text holds this many sentences (and the round this many questions: one per sentence). */
 export const READING_WORDS = 5;
@@ -42,7 +42,7 @@ export type ReadingQuestion =
   | { kind: 'meaning'; itemId: string; options: string[] }
   /** The statement is the source-language sentence of card `sourceId`; true when that card is one of the text's words. */
   | { kind: 'truefalse'; sourceId: string }
-  /** A false statement of the round's story: `index` into `story.false_en`. */
+  /** A false statement of the round's story: `index` into its false statements in the learner's language (`story.false_en` ...). */
   | { kind: 'storyfalse'; index: number };
 
 export type ResolvedQuestion =
@@ -152,7 +152,7 @@ function meaningOptions(word: ReadingWord, pool: PcicItem[], words: ReadingWord[
  * One question per word: meaning and true/false alternate (meaning, true/false, meaning, ...), the words in a
  * random order, and the true/false ones are half true, half false. A meaning question without enough other
  * known words, or a false statement without another known sentence, falls back to a true statement. With a story the
- * false statements are the story's own `false_en`, in order, each once (then a true statement).
+ * false statements are the story's own `false_<source language>`, in order, each once (then a true statement).
  */
 export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: ReadonlySet<string>, story?: Story): ReadingQuestion[] {
   const random = deps.random ?? Math.random;
@@ -179,6 +179,7 @@ export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: R
   const truths = shuffled(Array.from({ length: slots }, (_, i) => i % 2 === 0), random);
   let nextTruth = 0;
   let nextStoryFalse = 0;
+  const storyFalse = story ? falseIn(story, activeSourceFor(deps.target)) : [];
 
   return shuffled(words, random).map((word, i): ReadingQuestion => {
     if (kinds[i] === 'meaning') {
@@ -186,7 +187,7 @@ export function buildQuestions(words: ReadingWord[], deps: ReadingDeps, known: R
       if (options) return { kind: 'meaning', itemId: word.itemId, options };
     } else if (!truths[nextTruth++]) {
       if (story) {
-        if (nextStoryFalse < story.false_en.length) return { kind: 'storyfalse', index: nextStoryFalse++ };
+        if (nextStoryFalse < storyFalse.length) return { kind: 'storyfalse', index: nextStoryFalse++ };
       } else {
         const fake = falsePool.shift();
         if (fake) return { kind: 'truefalse', sourceId: fake.id };
@@ -224,7 +225,7 @@ export function resolveSet(
       if (!word || correct === -1 || items.some((it) => !it)) return null;
       resolved.push({ kind: 'meaning', word: word.answer, options: items.map((it) => meaningOf(it!, target)), correct });
     } else if (q.kind === 'storyfalse') {
-      const statement = story?.false_en[q.index];
+      const statement = story ? falseIn(story, activeSourceFor(target))[q.index] : undefined;
       if (!statement) return null;
       resolved.push({ kind: 'truefalse', statement, truth: false, correct: 1 });
     } else {
