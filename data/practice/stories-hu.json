@@ -1,0 +1,15 @@
+[
+  {
+    "id": "a1-reggel",
+    "level": "A1",
+    "sentences": [
+      { "hu": "Reggel otthon vagyok.", "es": "Por la mañana estoy en casa.", "en": "In the morning I am at home.", "word": "h6288", "form": "otthon" },
+      { "hu": "A testvér a szobában van.", "es": "El hermano está en la habitación.", "en": "The sibling is in the room.", "word": "h6281", "form": "szobában" },
+      { "hu": "Kenyeret eszem.", "es": "Como pan.", "en": "I eat bread.", "word": "h6250", "form": "Kenyeret" },
+      { "hu": "Tejet iszom.", "es": "Bebo leche.", "en": "I drink milk.", "word": "h6257", "form": "Tejet" },
+      { "hu": "Boldog vagyok.", "es": "Estoy feliz.", "en": "I am happy.", "word": "h6580", "form": "Boldog" }
+    ],
+    "false_es": ["Por la mañana estoy en la escuela.", "Como pescado."],
+    "false_en": ["In the morning I am at school.", "I eat fish."]
+  }
+]

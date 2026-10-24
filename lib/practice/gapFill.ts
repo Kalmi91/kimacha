@@ -57,7 +57,7 @@ export function openGapInfo(itemId: string): GapSourceInfo | undefined {
   return openInfo.get(itemId);
 }
 
-const WORD = /[A-Za-zÁÉÍÓÚÜÑáéíóúüñ]+/g;
+const WORD = /[A-Za-zÁÉÍÓÖŐÚÜŰÑáéíóöőúüűñ]+/g;
 
 interface Gap {
   before: string;

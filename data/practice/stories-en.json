@@ -1,0 +1,15 @@
+[
+  {
+    "id": "a1-breakfast",
+    "level": "A1",
+    "sentences": [
+      { "en": "It is morning and I am in the kitchen.", "es": "Es de mañana y estoy en la cocina.", "hu": "Reggel van, és a konyhában vagyok.", "word": "e5108", "form": "kitchen" },
+      { "en": "My mother makes coffee and bread.", "es": "Mi madre hace café y pan.", "hu": "Anyám kávét és kenyeret készít.", "word": "e5060", "form": "coffee" },
+      { "en": "I eat bread with milk.", "es": "Yo como pan con leche.", "hu": "Kenyeret eszem tejjel.", "word": "e5054", "form": "milk" },
+      { "en": "My brother is hungry and wants an egg.", "es": "Mi hermano tiene hambre y quiere un huevo.", "hu": "A bátyám éhes, és egy tojást szeretne.", "word": "e5867", "form": "hungry" },
+      { "en": "Now we are all happy.", "es": "Ahora todos estamos felices.", "hu": "Most mindannyian boldogok vagyunk.", "word": "e5859", "form": "happy" }
+    ],
+    "false_es": ["Mi padre hace café y pan.", "Es de noche y estoy en la cocina."],
+    "false_hu": ["Apám kávét és kenyeret készít.", "Éjszaka van, és a konyhában vagyok."]
+  }
+]
