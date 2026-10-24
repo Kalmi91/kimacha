@@ -736,7 +736,7 @@ function auditMatchItem(item, itemPath, lang = 'es', debtKey = '') {
 // is deliberately a different form, this pattern does not touch it.
 const FORM_PILOT_TRIO_TYPO = /\bél\s*\/\s*ella\s*\/\s*usted\b|\bellos\s*\/\s*ellas\s*\/\s*ustedes\b/i;
 
-function auditFormItem(item, itemPath, topic, tableIds) {
+function auditFormItem(item, itemPath, topic, tableIds, lang = 'es') {
   if (!item.person) p1.push({ path: itemPath, issue: 'form item missing person' });
   else if (FORM_PILOT_TRIO_TYPO.test(item.person) && !['él/ella/usted', 'ellos/ellas/ustedes'].includes(item.person)) {
     p1.push({ path: itemPath, issue: `form item person "${item.person}" must use the pilot label with no spaces around "/"` });
@@ -751,6 +751,8 @@ function auditFormItem(item, itemPath, topic, tableIds) {
     p1.push({ path: itemPath, issue: `form item references unknown table "${item.table}"` });
     return;
   }
+  // hu: the table is a hint (suffix patterns), person is the slot ("-ban/-ben"), not a conjugation row/column to look up.
+  if (lang === 'hu') return;
   const table = topic.body.find((b) => b.kind === 'table' && b.id === item.table);
   // Multi-verb table (header: Person | hablar | comer | vivir): the verb's column is given by the
   // `es` cell of the header; for a single-verb table (Person | ser) the second column.
@@ -776,7 +778,12 @@ function auditWhyItem(item, itemPath, lang = 'es') {
     p1.push({ path: itemPath, issue: `why item correctIndex ${item.correctIndex} out of range` });
   }
   if (!item.es) p1.push({ path: itemPath, issue: 'why item missing es' });
-  if (item.es && item.tr?.[lang] !== item.es) p1.push({ path: itemPath, issue: `why item tr.${lang} must equal es` });
+  // hu: tr holds the English and Spanish translations of the Hungarian sentence, so there is no tr.hu to equal es.
+  if (lang !== 'hu') {
+    if (item.es && item.tr?.[lang] !== item.es) p1.push({ path: itemPath, issue: `why item tr.${lang} must equal es` });
+  } else {
+    checkLangs(item.tr, `${itemPath} tr`);
+  }
 
   // the `target` names what the
   // question refers to; its absence is P2, an existing target that is not found in the sentence is P1.
@@ -938,8 +945,11 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
   const tableIds = isV2 ? tableIdsOf(topic) : null;
 
   const isEn = lang === 'en';
-  const taughtSet = isEn ? cumulativeTaughtEn(topic.level ?? 'C1') : cumulativeTaught(topic.level ?? 'C1');
-  const extra = glossaryTokenSet(topic.glossary, lang);
+  // Hungarian (target hu): only the language-neutral schema checks run. The word gate (known words, glossary) is
+  // C:AIai-workspacekimachahu-kurzuscheck.cjs; the Spanish tokenizer, vosotros and the tense gate do not apply.
+  const isHu = lang === 'hu';
+  const taughtSet = isHu ? new Set() : isEn ? cumulativeTaughtEn(topic.level ?? 'C1') : cumulativeTaught(topic.level ?? 'C1');
+  const extra = isHu ? new Set() : glossaryTokenSet(topic.glossary, lang);
   const norm = isEn ? normalizeEn : normalize;
   const toks = isEn ? tokenizeEn : tokenize;
 
@@ -951,7 +961,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
 
     // the `tense` field may also appear on choice/form/why items (for the badge);
     // where it is present, the same from/to check runs as on the transform item.
-    if (item.kind !== 'transform' && item.tense) auditTenseField(item.tense, itemPath);
+    if (!isHu && item.kind !== 'transform' && item.tense) auditTenseField(item.tense, itemPath);
     auditVosotros(item, itemPath, lang, `${filePath}#${item.id}`);
 
     // match/form get their own checker, the gap/mark branch below it
@@ -961,7 +971,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
       continue;
     }
     if (item.kind === 'form') {
-      auditFormItem(item, itemPath, topic, tableIds ?? new Set());
+      auditFormItem(item, itemPath, topic, tableIds ?? new Set(), lang);
       continue;
     }
     if (item.kind === 'why') {
@@ -969,12 +979,14 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
       continue;
     }
     if (item.kind === 'transform') {
-      auditTransformItem(item, itemPath, topic);
+      if (isHu) p1.push({ path: itemPath, issue: 'transform items (Spanish tense gate, wordIds) are not part of the hu course' });
+      else auditTransformItem(item, itemPath, topic);
       continue;
     }
     // error spotting / word order / dictation, temporary ("trial") items.
     if (item.kind === 'spot' || item.kind === 'order' || item.kind === 'dictation') {
       auditNewKindItem(item, itemPath, topic, (text) => {
+        if (isHu) return;
         for (const tok of toks(text)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
       });
       continue;
@@ -1018,7 +1030,7 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
         const correctText = item.options[item.correct];
         const correctNorm = norm(correctText ?? '');
         const restOfSentence = (item.sentence ?? '').replace('___', '');
-        if (correctText && !OBJECT_PRONOUN_WORDS.has(correctNorm) && toks(restOfSentence).includes(correctNorm)) {
+        if (!isHu && correctText && !OBJECT_PRONOUN_WORDS.has(correctNorm) && toks(restOfSentence).includes(correctNorm)) {
           p1.push({ path: itemPath, issue: `self-revealing: correct answer "${correctText}" appears literally in the prompt` });
         }
       }
@@ -1040,14 +1052,16 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
       checkLangs(item.wrong[key], `${itemPath} wrong[${key}]`);
     }
 
-    for (const tok of toks((item.sentence ?? '').replace('___', ''))) {
-      auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
-    }
-    for (const opt of item.options ?? []) {
-      for (const tok of toks(opt)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
+    if (!isHu) {
+      for (const tok of toks((item.sentence ?? '').replace('___', ''))) {
+        auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
+      }
+      for (const opt of item.options ?? []) {
+        for (const tok of toks(opt)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
+      }
     }
     for (const ex of item.examples ?? []) {
-      for (const tok of toks(ex)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
+      if (!isHu) for (const tok of toks(ex)) auditGrammarWord(tok, taughtSet, extra, itemPath, lang);
       checkLength(ex, topic.level, itemPath);
     }
     checkLength(item.sentence ?? '', topic.level, itemPath);
@@ -1057,7 +1071,8 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
     if (item.tr !== undefined) {
       checkLangs(item.tr, `${itemPath} tr`);
       const filled = isMark ? item.sentence : (item.sentence ?? '').replace('___', item.options?.[item.correct] ?? '');
-      if (normFilled(filled) !== normFilled(item.tr?.[lang])) {
+      // hu: tr holds the English and Spanish translations of the Hungarian sentence (no hu side to compare).
+      if (!isHu && normFilled(filled) !== normFilled(item.tr?.[lang])) {
         p1.push({ path: itemPath, issue: `tr.${lang} must equal the (filled) sentence` });
       }
     }

@@ -3,7 +3,7 @@
  * gen-content-index.mjs, writes the lazy grammar-lesson registry of each language lane:
  *   lib/games/content/<lang>.index.ts   from   data/games/grammar/<lang>/*.json
  *   lib/games/content/<lang>.hu.index.ts   topic id -> lazy Hungarian sidecar data/games/grammar-hu/<lang>/<file>.json
- *                                          (only for lessons that have one)
+ *                                          (only for lessons that have one; the hu lane has none)
  *
  * Every entry is `{ id, load: () => require('<static path>') }`, so Metro still
  * bundles the JSON but nothing is parsed until the lesson is first asked for.
@@ -22,7 +22,7 @@ import { fileURLToPath } from 'url';
 import { basename, dirname, join } from 'path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const LANGS = ['es', 'en'];
+const LANGS = ['es', 'en', 'hu'];
 const huDir = join(root, 'data', 'games', 'grammar-hu');
 const check = process.argv.includes('--check');
 
@@ -78,10 +78,10 @@ for (const lang of LANGS) {
   const previous = existsSync(out) ? readFileSync(out, 'utf8') : '';
   const huPrevious = existsSync(huOut) ? readFileSync(huOut, 'utf8') : '';
   const next = render(lang, join(root, 'data', 'games', 'grammar', lang), previous);
-  for (const [file, content, before] of [
-    [out, next.index, previous],
-    [huOut, next.hu, huPrevious],
-  ]) {
+  // The Hungarian course (target hu) has no Hungarian sidecar: only the lesson registry.
+  const outputs = [[out, next.index, previous]];
+  if (lang !== 'hu') outputs.push([huOut, next.hu, huPrevious]);
+  for (const [file, content, before] of outputs) {
     const name = basename(file);
     if (check) {
       if (content !== before) {

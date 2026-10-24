@@ -1,0 +1,680 @@
+{
+  "schema": 2,
+  "topic": "jovo-ido",
+  "level": "A2",
+  "title": { "en": "The future: Holnap megyek, fogok, leszek", "es": "El futuro: Holnap megyek, fogok, leszek" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has no 'will' ending. There are three everyday ways to talk about the future. (1) The plain present tense with a time word, just like English 'I'm going tomorrow': Holnap moziba megyek. (2) fog + infinitive for a prediction or a firm plan: Holnap esni fog. (3) lesz for 'will be, will become': Holnap otthon leszek.",
+        "es": "El húngaro no tiene una terminación de futuro. Hay tres formas cotidianas de hablar del futuro. (1) El presente con una palabra de tiempo, igual que en español «mañana voy»: Holnap moziba megyek. (2) fog + infinitivo para una predicción o un plan firme: Holnap esni fog. (3) lesz para «será, estará, llegará a ser»: Holnap otthon leszek."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "lesz-forms",
+      "title": { "en": "lenni: now and later", "es": "lenni: ahora y después" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "lenni (now)", "es": "lenni (ahora)" },
+        { "en": "lenni (will be)", "es": "lenni (será)" }
+      ],
+      "rows": [
+        ["én", "vagyok", "leszek"],
+        ["te", "vagy", "leszel"],
+        ["ő", "van", "lesz"],
+        ["mi", "vagyunk", "leszünk"],
+        ["ti", "vagytok", "lesztek"],
+        ["ők", "vannak", "lesznek"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "fog-forms",
+      "title": { "en": "fog: the helper for the future", "es": "fog: el auxiliar del futuro" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "fog + infinitive", "es": "fog + infinitivo" },
+        { "en": "fog + definite object", "es": "fog + objeto definido" }
+      ],
+      "rows": [
+        ["én", "fogok", "fogom"],
+        ["te", "fogsz", "fogod"],
+        ["ő", "fog", "fogja"],
+        ["mi", "fogunk", "fogjuk"],
+        ["ti", "fogtok", "fogjátok"],
+        ["ők", "fognak", "fogják"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Three ways to talk about the future", "es": "Tres formas de hablar del futuro" },
+      "points": [
+        {
+          "text": {
+            "en": "Present tense + a future time word is the most common way to say what you will do. The time word does the work: holnap (tomorrow), holnapután (the day after tomorrow), jövő héten (next week), jövőre (next year).",
+            "es": "El presente con una palabra de tiempo futuro es la forma más común de decir lo que harás. La palabra de tiempo hace el trabajo: holnap (mañana), holnapután (pasado mañana), jövő héten (la semana próxima), jövőre (el año próximo)."
+          },
+          "examples": [
+            {
+              "es": "Holnap moziba megyek.",
+              "tr": { "en": "Tomorrow I'm going to the cinema.", "es": "Mañana voy al cine." }
+            },
+            {
+              "es": "Holnapután az étterembe megyünk.",
+              "tr": {
+                "en": "The day after tomorrow we're going to the restaurant.",
+                "es": "Pasado mañana vamos al restaurante."
+              }
+            },
+            {
+              "es": "Jövő héten Szegedre utazom.",
+              "tr": { "en": "Next week I'm travelling to Szeged.", "es": "La semana próxima viajo a Szeged." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "fog + infinitive says what will happen: predictions, the weather, firm plans. fog is conjugated, the main verb stays an infinitive (-ni). In a plain statement the infinitive comes first.",
+            "es": "fog + infinitivo dice lo que va a pasar: predicciones, el clima, planes firmes. fog se conjuga y el verbo principal queda en infinitivo (-ni). En una afirmación simple el infinitivo va primero."
+          },
+          "examples": [
+            { "es": "Holnap esni fog.", "tr": { "en": "It will rain tomorrow.", "es": "Mañana va a llover." } },
+            { "es": "Tanulni fogok.", "tr": { "en": "I will study.", "es": "Voy a estudiar." } },
+            {
+              "es": "Mi holnap dolgozni fogunk.",
+              "tr": { "en": "We will work tomorrow.", "es": "Mañana vamos a trabajar." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After nem or a question word, fog moves in front of the infinitive.",
+            "es": "Después de nem o de una palabra interrogativa, fog va delante del infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Holnap nem fogok dolgozni.",
+              "tr": { "en": "I won't work tomorrow.", "es": "Mañana no voy a trabajar." }
+            },
+            { "es": "Mikor fogsz tanulni?", "tr": { "en": "When will you study?", "es": "¿Cuándo vas a estudiar?" } },
+            {
+              "es": "Hova fogtok menni?",
+              "tr": { "en": "Where will you (all) go?", "es": "¿A dónde van a ir ustedes?" }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a definite object (a name, a/az + noun) fog takes the definite endings: fogom, fogod, fogja... It is the same rule as in the present tense.",
+            "es": "Con un objeto definido (un nombre, a/az + sustantivo) fog toma las terminaciones definidas: fogom, fogod, fogja... Es la misma regla que en el presente."
+          },
+          "examples": [
+            {
+              "es": "Holnap látni fogom Annát.",
+              "tr": { "en": "I will see Anna tomorrow.", "es": "Mañana voy a ver a Anna." }
+            },
+            {
+              "es": "Főzni fogom a vacsorát.",
+              "tr": { "en": "I will cook the dinner.", "es": "Voy a cocinar la cena." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "lesz means will be or will become. For \"be\" use lesz: it is the normal form (fog lenni exists, but it is much less usual). The 3rd person is NOT dropped: in the present Anna orvos, in the future Anna orvos lesz.",
+            "es": "lesz significa «será, estará» o «llegará a ser». Para «ser, estar» usa lesz: es la forma normal (fog lenni existe, pero se usa mucho menos). La 3.ª persona NO se omite: en presente Anna orvos, en futuro Anna orvos lesz."
+          },
+          "examples": [
+            {
+              "es": "Holnap otthon leszek.",
+              "tr": { "en": "I will be at home tomorrow.", "es": "Mañana estaré en casa." }
+            },
+            {
+              "es": "Jövőre Anna orvos lesz.",
+              "tr": { "en": "Next year Anna will be a doctor.", "es": "El año próximo Anna será médica." }
+            },
+            { "es": "Hamarosan nyár lesz.", "tr": { "en": "Soon it will be summer.", "es": "Pronto será verano." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Now, later, and the word order", "es": "Ahora, después y el orden de las palabras" },
+      "pairs": [
+        {
+          "a": "Most tanulok.",
+          "b": "Holnap tanulok.",
+          "note": {
+            "en": "The same present tense: the time word decides between now and later.",
+            "es": "El mismo presente: la palabra de tiempo decide entre ahora y después."
+          },
+          "examples": [
+            { "es": "Most dolgozom.", "tr": { "en": "I'm working now.", "es": "Ahora trabajo." } },
+            { "es": "Holnap dolgozom.", "tr": { "en": "I'm working tomorrow.", "es": "Mañana trabajo." } }
+          ]
+        },
+        {
+          "a": "Anna orvos.",
+          "b": "Anna orvos lesz.",
+          "note": {
+            "en": "No verb means the present; lesz means will be or will become, also in the 3rd person.",
+            "es": "Sin verbo es presente; lesz significa «será» o «llegará a ser», también en 3.ª persona."
+          },
+          "examples": [
+            { "es": "A ház nagy.", "tr": { "en": "The house is big.", "es": "La casa es grande." } },
+            { "es": "A ház nagy lesz.", "tr": { "en": "The house will be big.", "es": "La casa será grande." } }
+          ]
+        },
+        {
+          "a": "Dolgozni fogok.",
+          "b": "Nem fogok dolgozni.",
+          "note": {
+            "en": "In a plain statement the infinitive comes first; after nem, fog comes first.",
+            "es": "En una afirmación simple el infinitivo va primero; después de nem, va primero fog."
+          },
+          "examples": [
+            { "es": "Tanulni fogok.", "tr": { "en": "I will study.", "es": "Voy a estudiar." } },
+            { "es": "Nem fogok tanulni.", "tr": { "en": "I won't study.", "es": "No voy a estudiar." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Conjugate only fog: tanulni fogok, never fogok tanulok. The main verb stays -ni. (2) There is no word 'will': Holnap moziba megyek already means 'I will go'. (3) For being or becoming say leszek; fogok lenni exists but is much less usual. (4) With lesz the 3rd person stays: Hideg lesz, Anna orvos lesz.",
+        "es": "Trampas clásicas: (1) Conjuga solo fog: tanulni fogok, nunca fogok tanulok. El verbo principal queda en -ni. (2) No hay una palabra «will»: Holnap moziba megyek ya significa «voy a ir». (3) Para «ser, estar» o «llegar a ser» di leszek; fogok lenni existe, pero se usa mucho menos. (4) Con lesz la 3.ª persona se queda: Hideg lesz, Anna orvos lesz."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has no future ending. The most common way is the present tense with a time word: «Holnap moziba megyek». For a prediction or a firm plan, use «fog» and an infinitive: «Tanulni fogok», «Holnap esni fog». The helper is conjugated: «fogok», «fogsz», «fog», «fogunk», «fogtok», «fognak». After «nem» it moves to the front: «Nem fogok dolgozni». For being somewhere or becoming something, use «lesz»: «Holnap otthon leszek», «Anna orvos lesz».",
+    "es": "El húngaro no tiene terminación de futuro. La forma más común es el presente con una palabra de tiempo: «Holnap moziba megyek». Para una predicción o un plan firme se usa «fog» con un infinitivo: «Tanulni fogok», «Holnap esni fog». El auxiliar se conjuga: «fogok», «fogsz», «fog», «fogunk», «fogtok», «fognak». Después de «nem» pasa al frente: «Nem fogok dolgozni». Para estar en un lugar o llegar a ser algo se usa «lesz»: «Holnap otthon leszek», «Anna orvos lesz»."
+  },
+  "items": [
+    {
+      "id": "jovo-ido-c01",
+      "sentence": "Holnap moziba ___.",
+      "options": ["megyek", "mentem", "voltam"],
+      "correct": 0,
+      "why": {
+        "en": "Holnap means tomorrow, and a plan is said with the present tense plus the time word: megyek.",
+        "es": "Holnap significa mañana, y un plan se dice con el presente más la palabra de tiempo: megyek."
+      },
+      "wrong": {
+        "mentem": {
+          "en": "mentem is the past, 'I went'; it fits tegnap (yesterday), not holnap.",
+          "es": "mentem es el pasado, «fui»; encaja con tegnap (ayer), no con holnap."
+        },
+        "voltam": {
+          "en": "voltam is the past of lenni, 'I was'; it also belongs to yesterday, not to a plan.",
+          "es": "voltam es el pasado de lenni, «estuve»; también pertenece a ayer, no a un plan."
+        }
+      },
+      "examples": ["Holnap a boltba megyek.", "Jövő héten Szegedre megyek."],
+      "tr": { "en": "I'm going to the cinema tomorrow.", "es": "Mañana voy al cine." }
+    },
+    { "id": "jovo-ido-f01", "kind": "form", "verb": "lenni", "person": "én", "answer": "leszek", "table": "lesz-forms" },
+    {
+      "id": "jovo-ido-c02",
+      "sentence": "Holnap otthon ___.",
+      "options": ["leszek", "voltam", "leszel"],
+      "correct": 0,
+      "why": {
+        "en": "Holnap is tomorrow, so you need the future of lenni: leszek (I will be).",
+        "es": "Holnap es mañana, así que hace falta el futuro de lenni: leszek (estaré)."
+      },
+      "wrong": {
+        "voltam": {
+          "en": "voltam is the past, 'I was at home'; it goes with tegnap.",
+          "es": "voltam es el pasado, «estuve en casa»; va con tegnap."
+        },
+        "leszel": {
+          "en": "leszel means 'you will be'; the sentence would be said to someone else (te).",
+          "es": "leszel significa «estarás»; la frase se diría a otra persona (te)."
+        }
+      },
+      "examples": ["Jövőre Budapesten leszek.", "Holnap a moziban leszek."],
+      "tr": { "en": "I will be at home tomorrow.", "es": "Mañana estaré en casa." }
+    },
+    { "id": "jovo-ido-f02", "kind": "form", "verb": "lenni", "person": "te", "answer": "leszel", "table": "lesz-forms" },
+    {
+      "id": "jovo-ido-c03",
+      "sentence": "Jövőre Anna orvos ___.",
+      "options": ["lesz", "van", "volt"],
+      "correct": 0,
+      "why": {
+        "en": "Lesz means will be or will become, and in the future the 3rd person is not dropped.",
+        "es": "Lesz significa «será» o «llegará a ser», y en futuro la 3.ª persona no se omite."
+      },
+      "wrong": {
+        "van": {
+          "en": "van is not used after a noun in the present: Anna orvos already means Anna is a doctor now.",
+          "es": "van no se usa después de un sustantivo en presente: Anna orvos ya significa que Anna es médica ahora."
+        },
+        "volt": {
+          "en": "volt is the past, 'was': Anna orvos volt means she used to be a doctor.",
+          "es": "volt es el pasado, «era»: Anna orvos volt significa que antes era médica."
+        }
+      },
+      "examples": ["Gábor tanár lesz.", "A vacsora finom lesz."],
+      "tr": { "en": "Next year Anna will be a doctor.", "es": "El año próximo Anna será médica." }
+    },
+    { "id": "jovo-ido-f03", "kind": "form", "verb": "lenni", "person": "ő", "answer": "lesz", "table": "lesz-forms" },
+    {
+      "id": "jovo-ido-c04",
+      "sentence": "Holnap esni ___.",
+      "options": ["fog", "fogok", "fognak"],
+      "correct": 0,
+      "why": {
+        "en": "Rain has no person, so fog is in the 3rd person singular. The infinitive esni comes first.",
+        "es": "La lluvia no tiene persona, así que fog va en 3.ª persona del singular. El infinitivo esni va primero."
+      },
+      "wrong": {
+        "fogok": {
+          "en": "fogok is for 'I' (én); rain is not a person, so it needs fog.",
+          "es": "fogok es para «yo» (én); la lluvia no es una persona, así que necesita fog."
+        },
+        "fognak": {
+          "en": "fognak is plural, 'they will'; here it is one rain.",
+          "es": "fognak es plural, «ellos van a»; aquí es una sola lluvia."
+        }
+      },
+      "examples": ["Hamarosan esni fog.", "Jövő héten esni fog."],
+      "tr": { "en": "It will rain tomorrow.", "es": "Mañana va a llover." }
+    },
+    { "id": "jovo-ido-f04", "kind": "form", "verb": "fog", "person": "én", "answer": "fogok", "table": "fog-forms" },
+    {
+      "id": "jovo-ido-w01",
+      "kind": "why",
+      "es": "Holnap moziba megyek.",
+      "target": "megyek",
+      "tr": { "en": "I'm going to the cinema tomorrow.", "es": "Mañana voy al cine." },
+      "options": [
+        {
+          "text": {
+            "en": "Present tense + holnap: the usual way to talk about a plan",
+            "es": "Presente + holnap: la forma habitual de hablar de un plan"
+          }
+        },
+        {
+          "text": {
+            "en": "fog + infinitive: the only way to make the future",
+            "es": "fog + infinitivo: la única forma de hacer el futuro"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Moziba menni fogok; it is possible, but everyday plans use the present tense with a time word.",
+            "es": "Con esta regla la frase sería Moziba menni fogok; es posible, pero los planes cotidianos usan el presente con una palabra de tiempo."
+          }
+        },
+        {
+          "text": { "en": "Past tense: the verb ends in -em", "es": "Pasado: el verbo termina en -em" },
+          "wrong": {
+            "en": "With this rule the sentence would be Mentem; holnap points to the future, so it is not the past.",
+            "es": "Con esta regla la frase sería Mentem; holnap apunta al futuro, así que no es el pasado."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "jovo-ido-c05",
+      "sentence": "Mi holnap dolgozni ___.",
+      "options": ["fogunk", "fogok", "fognak"],
+      "correct": 0,
+      "why": {
+        "en": "Mi is we, so fog takes the ending -unk: fogunk.",
+        "es": "Mi es nosotros, así que fog toma la terminación -unk: fogunk."
+      },
+      "wrong": {
+        "fogok": {
+          "en": "fogok is 'I will'; with mi (we) the verb would not match.",
+          "es": "fogok es «yo voy a»; con mi (nosotros) el verbo no concordaría."
+        },
+        "fognak": {
+          "en": "fognak is 'they will'; the subject here is mi (we).",
+          "es": "fognak es «ellos van a»; el sujeto aquí es mi (nosotros)."
+        }
+      },
+      "examples": ["Mi menni fogunk.", "Mi tanulni fogunk."],
+      "tr": { "en": "We will work tomorrow.", "es": "Mañana vamos a trabajar." }
+    },
+    { "id": "jovo-ido-f05", "kind": "form", "verb": "fog", "person": "mi", "answer": "fogunk", "table": "fog-forms" },
+    {
+      "id": "jovo-ido-c06",
+      "sentence": "Anna és Péter holnap tanulni ___.",
+      "options": ["fognak", "fog", "fogtok"],
+      "correct": 0,
+      "why": {
+        "en": "Anna és Péter = ők (they), so fog becomes fognak.",
+        "es": "Anna és Péter = ők (ellos), así que fog pasa a fognak."
+      },
+      "wrong": {
+        "fog": {
+          "en": "fog is for one person, 'he or she will'; Anna és Péter are two.",
+          "es": "fog es para una sola persona, «él o ella va a»; Anna és Péter son dos."
+        },
+        "fogtok": {
+          "en": "fogtok is 'you (all) will'; here Anna és Péter are 'they', not 'you'.",
+          "es": "fogtok es «ustedes van a»; aquí Anna és Péter son «ellos», no «ustedes»."
+        }
+      },
+      "examples": ["Ők menni fognak.", "Kati és Gábor dolgozni fognak."],
+      "tr": { "en": "Anna and Péter will study tomorrow.", "es": "Anna y Péter van a estudiar mañana." }
+    },
+    { "id": "jovo-ido-f06", "kind": "form", "verb": "fog", "person": "ők", "answer": "fognak", "table": "fog-forms" },
+    {
+      "id": "jovo-ido-c07",
+      "sentence": "Ti holnap pihenni ___.",
+      "options": ["fogtok", "fogsz", "fognak"],
+      "correct": 0,
+      "why": { "en": "Ti is you (all), so the form is fogtok.", "es": "Ti es ustedes, así que la forma es fogtok." },
+      "wrong": {
+        "fogsz": {
+          "en": "fogsz is 'you will' for one person (te); ti means several.",
+          "es": "fogsz es «tú vas a» para una persona (te); ti son varios."
+        },
+        "fognak": {
+          "en": "fognak is 'they will'; the subject here is ti (you all).",
+          "es": "fognak es «ellos van a»; el sujeto aquí es ti (ustedes)."
+        }
+      },
+      "examples": ["Ti menni fogtok.", "Ti tanulni fogtok."],
+      "tr": { "en": "You (all) will rest tomorrow.", "es": "Ustedes van a descansar mañana." }
+    },
+    {
+      "id": "jovo-ido-c08",
+      "sentence": "Holnap nem ___.",
+      "options": ["fogok dolgozni", "dolgozni fogok", "dolgozok fogok"],
+      "correct": 0,
+      "why": {
+        "en": "After nem, fog goes first and the infinitive follows: nem fogok dolgozni.",
+        "es": "Después de nem, fog va primero y el infinitivo después: nem fogok dolgozni."
+      },
+      "wrong": {
+        "dolgozni fogok": {
+          "en": "This order is for plain statements, as in Holnap dolgozni fogok. After nem, fog comes right after it.",
+          "es": "Este orden es para afirmaciones simples, como en Holnap dolgozni fogok. Después de nem, fog va justo detrás."
+        },
+        "dolgozok fogok": {
+          "en": "Both verbs are conjugated here; the main verb must stay an infinitive: fogok dolgozni.",
+          "es": "Aquí los dos verbos están conjugados; el verbo principal debe quedar en infinitivo: fogok dolgozni."
+        }
+      },
+      "examples": ["Nem fogok tanulni.", "Péter nem fog dolgozni."],
+      "tr": { "en": "I won't work tomorrow.", "es": "Mañana no voy a trabajar." }
+    },
+    {
+      "id": "jovo-ido-w02",
+      "kind": "why",
+      "es": "Tanulni fogok.",
+      "target": "fogok",
+      "tr": { "en": "I will study.", "es": "Voy a estudiar." },
+      "options": [
+        {
+          "text": { "en": "lesz is used for every future", "es": "lesz se usa para todo futuro" },
+          "wrong": {
+            "en": "With this rule the sentence would be Tanulni leszek, which is not Hungarian; lesz is for being and becoming.",
+            "es": "Con esta regla la frase sería Tanulni leszek, que no es húngaro; lesz es para ser, estar y llegar a ser."
+          }
+        },
+        {
+          "text": {
+            "en": "fog + infinitive: fog carries the person (fogok = I will), the main verb stays -ni",
+            "es": "fog + infinitivo: fog lleva la persona (fogok = yo voy a), el verbo principal queda en -ni"
+          }
+        },
+        {
+          "text": {
+            "en": "Definite object: fog takes the definite ending",
+            "es": "Objeto definido: fog toma la terminación definida"
+          },
+          "wrong": {
+            "en": "With this rule it would be fogom; Tanulni fogok has no definite object.",
+            "es": "Con esta regla sería fogom; Tanulni fogok no tiene un objeto definido."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "jovo-ido-f07",
+      "kind": "form",
+      "verb": "fog",
+      "person": "én (a könyvet)",
+      "answer": "fogom",
+      "table": "fog-forms"
+    },
+    {
+      "id": "jovo-ido-c09",
+      "sentence": "Mikor ___?",
+      "options": ["fogsz tanulni", "tanulni fogsz", "tanulsz fogsz"],
+      "correct": 0,
+      "why": {
+        "en": "After a question word, fog goes first and the infinitive follows: Mikor fogsz tanulni?",
+        "es": "Después de una palabra interrogativa, fog va primero y el infinitivo después: Mikor fogsz tanulni?"
+      },
+      "wrong": {
+        "tanulni fogsz": {
+          "en": "This order is for plain statements, as in Holnap tanulni fogsz. After mikor, fog moves to the front.",
+          "es": "Este orden es para afirmaciones simples, como en Holnap tanulni fogsz. Después de mikor, fog pasa al frente."
+        },
+        "tanulsz fogsz": {
+          "en": "Both verbs are conjugated here; the main verb must stay an infinitive: fogsz tanulni.",
+          "es": "Aquí los dos verbos están conjugados; el verbo principal debe quedar en infinitivo: fogsz tanulni."
+        }
+      },
+      "examples": ["Mikor fogsz dolgozni?", "Hova fogtok menni?"],
+      "tr": { "en": "When will you study?", "es": "¿Cuándo vas a estudiar?" }
+    },
+    {
+      "id": "jovo-ido-f08",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "mi",
+      "answer": "leszünk",
+      "table": "lesz-forms"
+    },
+    {
+      "id": "jovo-ido-c10",
+      "sentence": "Péter és Kati holnap látni ___ Annát.",
+      "options": ["fogják", "fognak", "fogjuk"],
+      "correct": 0,
+      "why": {
+        "en": "Annát is a name, so the object is definite. For ők (they) the definite form is fogják.",
+        "es": "Annát es un nombre, así que el objeto es definido. Para ők (ellos) la forma definida es fogják."
+      },
+      "wrong": {
+        "fognak": {
+          "en": "fognak is the indefinite form, for things like látni fognak egy filmet (they will see a film).",
+          "es": "fognak es la forma indefinida, para casos como látni fognak egy filmet (van a ver una película)."
+        },
+        "fogjuk": {
+          "en": "fogjuk is 'we will' with a definite object; the subject here is Péter és Kati.",
+          "es": "fogjuk es «nosotros vamos a» con un objeto definido; el sujeto aquí es Péter és Kati."
+        }
+      },
+      "examples": ["Látni fogom Annát.", "Főzni fogjuk a vacsorát."],
+      "tr": { "en": "Péter and Kati will see Anna tomorrow.", "es": "Péter y Kati van a ver a Anna mañana." }
+    },
+    {
+      "id": "jovo-ido-c11",
+      "sentence": "___ Péter Debrecenben lesz.",
+      "options": ["Jövő héten", "Tegnap", "Múlt héten"],
+      "correct": 0,
+      "why": {
+        "en": "Lesz is future, so the time word must look forward: jövő héten (next week).",
+        "es": "Lesz es futuro, así que la palabra de tiempo debe mirar hacia adelante: jövő héten (la semana próxima)."
+      },
+      "wrong": {
+        "Tegnap": {
+          "en": "Tegnap means yesterday; with it the verb would be the past, 'Péter was in Debrecen'.",
+          "es": "Tegnap significa ayer; con ello el verbo iría en pasado, «Péter estuvo en Debrecen»."
+        },
+        "Múlt héten": {
+          "en": "Múlt héten means last week; with it the verb would be volt (was).",
+          "es": "Múlt héten significa la semana pasada; con ello el verbo sería volt (estuvo)."
+        }
+      },
+      "examples": ["Jövőre Szegeden leszek.", "Holnapután otthon leszünk."],
+      "tr": { "en": "Next week Péter will be in Debrecen.", "es": "La semana próxima Péter estará en Debrecen." }
+    },
+    {
+      "id": "jovo-ido-w03",
+      "kind": "why",
+      "es": "Jövőre Anna orvos lesz.",
+      "target": "lesz",
+      "tr": { "en": "Next year Anna will be a doctor.", "es": "El año próximo Anna será médica." },
+      "options": [
+        {
+          "text": {
+            "en": "A noun in the 3rd person: the verb is left out",
+            "es": "Un sustantivo en 3.ª persona: se omite el verbo"
+          },
+          "wrong": {
+            "en": "That rule is only for the present (Anna orvos). In the future the verb comes back: lesz.",
+            "es": "Esa regla es solo para el presente (Anna orvos). En futuro el verbo vuelve: lesz."
+          }
+        },
+        {
+          "text": {
+            "en": "Future of lenni: lesz (will be, will become), also in the 3rd person",
+            "es": "Futuro de lenni: lesz (será, llegará a ser), también en 3.ª persona"
+          }
+        },
+        {
+          "text": { "en": "fog + infinitive is the only future", "es": "fog + infinitivo es el único futuro" },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna orvos fog lenni, which is much less usual; for being or becoming Hungarian normally uses lesz.",
+            "es": "Con esta regla la frase sería Anna orvos fog lenni, que se usa mucho menos; para ser o llegar a ser el húngaro normalmente usa lesz."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "jovo-ido-f09",
+      "kind": "form",
+      "verb": "fog",
+      "person": "te (a vacsorát)",
+      "answer": "fogod",
+      "table": "fog-forms"
+    },
+    {
+      "id": "jovo-ido-c12",
+      "sentence": "Jövő héten Szegedre ___.",
+      "options": ["utazom", "utaztam", "fogok"],
+      "correct": 0,
+      "why": {
+        "en": "Jövő héten means next week: the present tense with a time word is enough, utazom.",
+        "es": "Jövő héten significa la semana próxima: basta el presente con una palabra de tiempo, utazom."
+      },
+      "wrong": {
+        "utaztam": {
+          "en": "utaztam is the past, 'I travelled'; it goes with múlt héten.",
+          "es": "utaztam es el pasado, «viajé»; va con múlt héten."
+        },
+        "fogok": {
+          "en": "fogok needs an infinitive next to it: utazni fogok. Alone it says nothing.",
+          "es": "fogok necesita un infinitivo a su lado: utazni fogok. Solo no dice nada."
+        }
+      },
+      "examples": ["Holnap Szegedre utazom.", "Jövőre Budapestre utazunk."],
+      "tr": { "en": "I'm travelling to Szeged next week.", "es": "La semana próxima viajo a Szeged." }
+    },
+    { "id": "jovo-ido-f10", "kind": "form", "verb": "fog", "person": "ti", "answer": "fogtok", "table": "fog-forms" },
+    {
+      "id": "jovo-ido-c13",
+      "sentence": "Holnap hideg ___.",
+      "options": ["lesz", "van", "lesznek"],
+      "correct": 0,
+      "why": {
+        "en": "For tomorrow, the weather uses lesz (will be). The 3rd person is not dropped.",
+        "es": "Para mañana, el clima usa lesz (será). La 3.ª persona no se omite."
+      },
+      "wrong": {
+        "van": {
+          "en": "van is the present: Ma hideg van means 'It is cold today'. For tomorrow you need lesz.",
+          "es": "van es el presente: Ma hideg van significa «hoy hace frío». Para mañana hace falta lesz."
+        },
+        "lesznek": {
+          "en": "lesznek is plural, 'they will be'; the weather is one thing, so lesz.",
+          "es": "lesznek es plural, «ellos serán»; el clima es una sola cosa, así que lesz."
+        }
+      },
+      "examples": ["Hamarosan nyár lesz.", "Holnap meleg lesz."],
+      "tr": { "en": "It will be cold tomorrow.", "es": "Mañana hará frío." }
+    },
+    {
+      "id": "jovo-ido-f11",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "ők",
+      "answer": "lesznek",
+      "table": "lesz-forms"
+    },
+    {
+      "id": "jovo-ido-c14",
+      "sentence": "Te holnap tanulni ___?",
+      "options": ["fogsz", "fogok", "fog"],
+      "correct": 0,
+      "why": {
+        "en": "Te is you (one person), so the form is fogsz.",
+        "es": "Te es tú (una persona), así que la forma es fogsz."
+      },
+      "wrong": {
+        "fogok": {
+          "en": "fogok is 'I will'; the question is addressed to te (you).",
+          "es": "fogok es «yo voy a»; la pregunta se dirige a te (tú)."
+        },
+        "fog": {
+          "en": "fog is 'he or she will'; with te the form is fogsz.",
+          "es": "fog es «él o ella va a»; con te la forma es fogsz."
+        }
+      },
+      "examples": ["Te is dolgozni fogsz?", "Te menni fogsz?"],
+      "tr": { "en": "Will you study tomorrow?", "es": "¿Vas a estudiar mañana?" }
+    },
+    {
+      "id": "jovo-ido-w04",
+      "kind": "why",
+      "es": "Látni fogom Annát.",
+      "target": "fogom",
+      "tr": { "en": "I will see Anna.", "es": "Voy a ver a Anna." },
+      "options": [
+        {
+          "text": {
+            "en": "Annát is a definite object: fog takes the definite ending",
+            "es": "Annát es un objeto definido: fog toma la terminación definida"
+          }
+        },
+        {
+          "text": { "en": "Annát is the subject: fog agrees with Anna", "es": "Annát es el sujeto: fog concuerda con Anna" },
+          "wrong": {
+            "en": "Annát is the object (-t). The subject is I (én, left out), and fog agrees with it; the definite ending comes from the object.",
+            "es": "Annát es el objeto (-t). El sujeto es yo (én, omitido), y fog concuerda con él; la terminación definida viene del objeto."
+          }
+        },
+        {
+          "text": { "en": "Future of lenni: lesz", "es": "Futuro de lenni: lesz" },
+          "wrong": {
+            "en": "With this rule the sentence would use lesz; here the verb is látni (to see) with the helper fog.",
+            "es": "Con esta regla la frase usaría lesz; aquí el verbo es látni (ver) con el auxiliar fog."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "jovo-ido-f12",
+      "kind": "form",
+      "verb": "fog",
+      "person": "ők (a vacsorát)",
+      "answer": "fogják",
+      "table": "fog-forms"
+    }
+  ]
+}

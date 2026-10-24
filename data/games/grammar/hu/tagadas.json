@@ -1,0 +1,805 @@
+{
+  "schema": 2,
+  "topic": "tagadas",
+  "level": "A1",
+  "title": { "en": "Saying no: nem, nincs, senki, semmi", "es": "Negar: nem, nincs, senki, semmi" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "To say no, put nem right before the verb: Dolgozom → Nem dolgozom. There is no 'do not' and nothing else changes. With he, she, it and they, place and existence use one fused word: nincs (= nem van) and nincsenek (= nem vannak): Anna nincs otthon. The negative words senki (nobody), semmi (nothing), sehol (nowhere) and soha (never) are used together with a negative verb, as in Spanish: Senki nem jön.",
+        "es": "Para decir no, pon nem justo delante del verbo: Dolgozom → Nem dolgozom. No hay «no hacer» y no cambia nada más. Con él, ella y ellos, el lugar y la existencia usan una palabra fusionada: nincs (= nem van) y nincsenek (= nem vannak): Anna nincs otthon. Las palabras negativas senki (nadie), semmi (nada), sehol (en ninguna parte) y soha (nunca) se usan junto con un verbo negativo, como en español: Senki nem jön."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "neg-dolgozik",
+      "title": { "en": "nem + verb: nem dolgozik", "es": "nem + verbo: nem dolgozik" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "nem dolgozik (does not work)", "es": "nem dolgozik (no trabaja)" }
+      ],
+      "rows": [
+        ["én", "nem dolgozom"],
+        ["te", "nem dolgozol"],
+        ["ő", "nem dolgozik"],
+        ["mi", "nem dolgozunk"],
+        ["ti", "nem dolgoztok"],
+        ["ők", "nem dolgoznak"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "nem goes before the verb", "es": "nem va delante del verbo" },
+      "items": [
+        {
+          "text": {
+            "en": "nem stands directly before the verb, and the verb keeps its normal form. With a question word, nem comes after it.",
+            "es": "nem va justo delante del verbo, y el verbo mantiene su forma normal. Con una palabra interrogativa, nem va después de ella."
+          },
+          "examples": [
+            { "es": "Nem dolgozom.", "tr": { "en": "I do not work.", "es": "No trabajo." } },
+            { "es": "Anna nem beszél angolul.", "tr": { "en": "Anna does not speak English.", "es": "Anna no habla inglés." } },
+            { "es": "Miért nem jössz?", "tr": { "en": "Why aren't you coming?", "es": "¿Por qué no vienes?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Some phrases you already know are negations too.",
+            "es": "Algunas frases que ya conoces también son negaciones."
+          },
+          "examples": [
+            { "es": "Nem értem.", "tr": { "en": "I don't understand.", "es": "No entiendo." } },
+            { "es": "Nem tudom.", "tr": { "en": "I don't know.", "es": "No sé." } },
+            { "es": "Nem beszélek magyarul.", "tr": { "en": "I don't speak Hungarian.", "es": "No hablo húngaro." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "neg-lenni",
+      "title": { "en": "lenni in the negative", "es": "lenni en negativo" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "nem lenni (not to be)", "es": "nem lenni (no ser, no estar)" }
+      ],
+      "rows": [
+        ["én", "nem vagyok"],
+        ["te", "nem vagy"],
+        ["ő", "nincs"],
+        ["mi", "nem vagyunk"],
+        ["ti", "nem vagytok"],
+        ["ők", "nincsenek"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "nem or nincs?", "es": "¿nem o nincs?" },
+      "points": [
+        {
+          "text": {
+            "en": "I, you, we, you all: nem + the usual form of lenni (vagyok, vagy, vagyunk, vagytok).",
+            "es": "Yo, tú, nosotros, ustedes: nem + la forma normal de lenni (vagyok, vagy, vagyunk, vagytok)."
+          },
+          "examples": [
+            { "es": "Nem vagyok otthon.", "tr": { "en": "I am not at home.", "es": "No estoy en casa." } },
+            { "es": "Nem vagy fáradt?", "tr": { "en": "Aren't you tired?", "es": "¿No estás cansado?" } },
+            { "es": "Nem vagyunk itt.", "tr": { "en": "We are not here.", "es": "No estamos aquí." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "He, she, it, they + a place, or 'there is no ...': nem van and nem vannak fuse into nincs and nincsenek.",
+            "es": "Él, ella, ellos + un lugar, o «no hay ...»: nem van y nem vannak se funden en nincs y nincsenek."
+          },
+          "examples": [
+            { "es": "Anna nincs otthon.", "tr": { "en": "Anna is not at home.", "es": "Anna no está en casa." } },
+            { "es": "A gyerekek nincsenek a szobában.", "tr": { "en": "The children are not in the room.", "es": "Los niños no están en el cuarto." } },
+            { "es": "Nincs tej a hűtőben.", "tr": { "en": "There is no milk in the fridge.", "es": "No hay leche en el refrigerador." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "He, she, it + a noun or adjective (van is dropped in the positive): only nem.",
+            "es": "Él, ella + un sustantivo o adjetivo (en afirmativo se omite van): solo nem."
+          },
+          "examples": [
+            { "es": "Anna nem tanár.", "tr": { "en": "Anna is not a teacher.", "es": "Anna no es profesora." } },
+            { "es": "A ház nem nagy.", "tr": { "en": "The house is not big.", "es": "La casa no es grande." } },
+            { "es": "Péter nem fáradt.", "tr": { "en": "Péter is not tired.", "es": "Péter no está cansado." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "nem can also stand right before one word to deny just that word; the correction follows after hanem (but rather).",
+            "es": "nem también puede ir justo delante de una sola palabra para negar solo esa palabra; la corrección va después de hanem (sino)."
+          },
+          "examples": [
+            { "es": "Nem Péter jön, hanem Anna.", "tr": { "en": "It is not Péter who is coming, but Anna.", "es": "No viene Péter, sino Anna." } },
+            { "es": "Nem otthon vagyok, hanem a boltban.", "tr": { "en": "I am not at home, but in the shop.", "es": "No estoy en casa, sino en la tienda." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "neg-words",
+      "title": { "en": "Negative words: se- + question word (soha is the odd one out)", "es": "Palabras negativas: se- + palabra interrogativa (soha es la excepción)" },
+      "header": [
+        { "en": "Question word", "es": "Palabra interrogativa" },
+        { "en": "Negative word (tagadószó)", "es": "Palabra negativa (tagadószó)" },
+        { "en": "Example", "es": "Ejemplo" }
+      ],
+      "rows": [
+        ["ki", "senki", "Senki nem jön."],
+        ["mi", "semmi", "Nincs semmi a pohárban."],
+        ["hol", "sehol", "Sehol nincs bolt."],
+        ["hova", "sehova", "Sehova nem megyek."],
+        ["mikor", "soha", "Soha nem érkezem későn."]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Negative words, sem and sincs", "es": "Palabras negativas, sem y sincs" },
+      "points": [
+        {
+          "text": {
+            "en": "senki (nobody), semmi (nothing), sehol (nowhere), sehova (to nowhere) and soha (never) always go with a negative verb: nem + verb, or nincs. The double negative is correct in Hungarian (unlike English). The negative word can stand before nem or after the verb.",
+            "es": "senki (nadie), semmi (nada), sehol (en ninguna parte), sehova (a ninguna parte) y soha (nunca) siempre van con un verbo negativo: nem + verbo, o nincs. Como en español, la doble negación es correcta. La palabra negativa puede ir antes de nem o después del verbo."
+          },
+          "examples": [
+            { "es": "Senki nem jön.", "tr": { "en": "Nobody is coming.", "es": "No viene nadie." } },
+            { "es": "Nem jön senki.", "tr": { "en": "Nobody is coming.", "es": "No viene nadie." } },
+            { "es": "Nincs senki otthon.", "tr": { "en": "There is nobody at home.", "es": "No hay nadie en casa." } },
+            { "es": "Soha nem dolgozom vasárnap.", "tr": { "en": "I never work on Sunday.", "es": "Nunca trabajo el domingo." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "sem means 'not either' and replaces is ('also'); the verb is not negated again. se ... se means 'neither ... nor' and the verb is negative; a common order starts with nincs.",
+            "es": "sem significa «tampoco» y sustituye a is («también»); el verbo no se vuelve a negar. se ... se significa «ni ... ni» y el verbo es negativo; un orden frecuente empieza con nincs."
+          },
+          "examples": [
+            { "es": "Péter sem jön.", "tr": { "en": "Péter isn't coming either.", "es": "Péter tampoco viene." } },
+            { "es": "Én sem tudom.", "tr": { "en": "I don't know either.", "es": "Yo tampoco sé." } },
+            { "es": "Nincs se víz, se tej a hűtőben.", "tr": { "en": "There is neither water nor milk in the fridge.", "es": "No hay ni agua ni leche en el refrigerador." } },
+            { "es": "Nincs bolt se itt, se ott.", "tr": { "en": "There is no shop either here or there.", "es": "No hay tienda ni aquí ni allá." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "With van and vannak, sem fuses into one word, just like nem: nem van → nincs, sem van → sincs, sem vannak → sincsenek.",
+            "es": "Con van y vannak, sem se funde en una sola palabra, igual que nem: nem van → nincs, sem van → sincs, sem vannak → sincsenek."
+          },
+          "examples": [
+            { "es": "Anna sincs otthon.", "tr": { "en": "Anna is not at home either.", "es": "Anna tampoco está en casa." } },
+            { "es": "Ők sincsenek itt.", "tr": { "en": "They are not here either.", "es": "Ellos tampoco están aquí." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "neg-fusion",
+      "title": { "en": "nem and sem fuse with van", "es": "nem y sem se funden con van" },
+      "header": [
+        { "en": "Two words → one word", "es": "Dos palabras → una palabra" }
+      ],
+      "rows": [
+        ["nem van → nincs"],
+        ["nem vannak → nincsenek"],
+        ["sem van → sincs"],
+        ["sem vannak → sincsenek"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Easily confused", "es": "Se confunden fácilmente" },
+      "pairs": [
+        {
+          "a": "Nem vagyok otthon.",
+          "b": "Anna nincs otthon.",
+          "note": {
+            "en": "With I, you, we, you all the verb stays after nem; with he, she, it, they it fuses into nincs, nincsenek.",
+            "es": "Con yo, tú, nosotros, ustedes el verbo se queda después de nem; con él, ella, ellos se funde en nincs, nincsenek."
+          },
+          "examples": [
+            { "es": "Nem vagy otthon.", "tr": { "en": "You are not at home.", "es": "No estás en casa." } },
+            { "es": "A gyerekek nincsenek otthon.", "tr": { "en": "The children are not at home.", "es": "Los niños no están en casa." } }
+          ]
+        },
+        {
+          "a": "Anna nem tanár.",
+          "b": "Anna nincs otthon.",
+          "note": {
+            "en": "What someone is (noun, adjective): nem. Where someone is, or whether something exists: nincs.",
+            "es": "Qué es alguien (sustantivo, adjetivo): nem. Dónde está alguien, o si algo existe: nincs."
+          },
+          "examples": [
+            { "es": "A ház nem nagy.", "tr": { "en": "The house is not big.", "es": "La casa no es grande." } },
+            { "es": "A ház nincs a városban.", "tr": { "en": "The house is not in the city.", "es": "La casa no está en la ciudad." } }
+          ]
+        },
+        {
+          "a": "Anna is otthon van.",
+          "b": "Anna sincs otthon.",
+          "note": {
+            "en": "is = also (positive); sem = not either (negative), and together with van it becomes sincs.",
+            "es": "is = también (afirmativo); sem = tampoco (negativo), y junto con van se convierte en sincs."
+          },
+          "examples": [
+            { "es": "Én is otthon vagyok.", "tr": { "en": "I am at home too.", "es": "Yo también estoy en casa." } },
+            { "es": "Én sem vagyok otthon.", "tr": { "en": "I am not at home either.", "es": "Yo tampoco estoy en casa." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: for he, she, it, they + a place, nem and sem fuse with van: nem van → nincs (Anna nincs otthon), sem van → sincs (Anna sincs otthon). And a negative word needs a negative verb: Senki nem jön, never Senki jön. English would call that a double negative, but in Hungarian it is the rule.",
+        "es": "Trampas clásicas: para él, ella, ellos + un lugar, nem y sem se funden con van: nem van → nincs (Anna nincs otthon), sem van → sincs (Anna sincs otthon). Y una palabra negativa necesita un verbo negativo, como en español («no viene nadie»): Senki nem jön, nunca Senki jön."
+      }
+    }
+  ],
+  "speak": {
+    "en": "To say no, Hungarian puts «nem» right before the verb: «Nem dolgozom.» For he, she, it and they, with a place, 'is not' is one word, «nincs», and in the plural «nincsenek»: «Anna nincs otthon.» The negative words «senki», nobody, «semmi», nothing, «sehol», nowhere, and «soha», never, always go with a negative verb: «Senki nem jön.» And «sem» means not either: «Péter sem jön.» Together with «van», «sem» gives «sincs»: «Anna sincs otthon», Anna is not at home either.",
+    "es": "Para decir no, el húngaro pone «nem» justo delante del verbo: «Nem dolgozom.» Para él, ella y ellos, con un lugar, el no estar se dice con una sola palabra: «nincs», y en plural «nincsenek»: «Anna nincs otthon.» Las palabras negativas «senki», nadie, «semmi», nada, «sehol», en ninguna parte, y «soha», nunca, siempre van con un verbo negativo: «Senki nem jön.» Y «sem» significa tampoco: «Péter sem jön.» Junto con «van», «sem» da «sincs»: «Anna sincs otthon», Anna tampoco está en casa."
+  },
+  "glossary": [
+    { "word": "hanem", "gloss": { "en": "but rather (after a negation)", "es": "sino (después de una negación)" } },
+    { "word": "sehova", "gloss": { "en": "to nowhere, nowhere (direction)", "es": "a ninguna parte" } }
+  ],
+  "items": [
+    {
+      "id": "tagadas-c01",
+      "sentence": "Anna ___ otthon.",
+      "options": ["nem vagyok", "nincs", "nincsenek"],
+      "correct": 1,
+      "why": {
+        "en": "Anna is 3rd person and otthon is a place, so nem van fuses into nincs.",
+        "es": "Anna es 3.ª persona y otthon es un lugar, por eso nem van se funde en nincs."
+      },
+      "wrong": {
+        "nem vagyok": {
+          "en": "nem vagyok means 'I am not'; the subject is Anna, so this would talk about the speaker.",
+          "es": "nem vagyok significa «yo no estoy»; el sujeto es Anna, así que hablaría del hablante."
+        },
+        "nincsenek": {
+          "en": "nincsenek is the plural ('they are not'); Anna is one person.",
+          "es": "nincsenek es el plural («ellos no están»); Anna es una sola persona."
+        }
+      },
+      "examples": ["Gábor nincs itt.", "Kati nincs a boltban."],
+      "tr": { "en": "Anna is not at home.", "es": "Anna no está en casa." }
+    },
+    {
+      "id": "tagadas-f01",
+      "kind": "form",
+      "verb": "nem lenni",
+      "person": "én",
+      "answer": "nem vagyok",
+      "table": "neg-lenni"
+    },
+    {
+      "id": "tagadas-c02",
+      "sentence": "___ vagyok otthon.",
+      "options": ["Nincs", "Sem", "Nem"],
+      "correct": 2,
+      "why": {
+        "en": "With én (I) the verb vagyok stays, and nem goes right before it.",
+        "es": "Con én (yo) el verbo vagyok se queda, y nem va justo delante."
+      },
+      "wrong": {
+        "Nincs": {
+          "en": "nincs is only for he, she, it and already contains the verb van; it cannot stand before vagyok.",
+          "es": "nincs es solo para él, ella y ya contiene el verbo van; no puede ir delante de vagyok."
+        },
+        "Sem": {
+          "en": "sem means 'not either' and follows the word it refers to (Én sem vagyok otthon); at the start of the sentence it does not work.",
+          "es": "sem significa «tampoco» y va después de la palabra a la que se refiere (Én sem vagyok otthon); al inicio de la frase no funciona."
+        }
+      },
+      "examples": ["Nem vagy otthon.", "Nem vagyunk itt."],
+      "tr": { "en": "I am not at home.", "es": "No estoy en casa." }
+    },
+    {
+      "id": "tagadas-f02",
+      "kind": "form",
+      "verb": "nem lenni",
+      "person": "ő",
+      "answer": "nincs",
+      "table": "neg-lenni"
+    },
+    {
+      "id": "tagadas-c03",
+      "sentence": "Anna ___ tanár.",
+      "options": ["nem", "nincs", "sem"],
+      "correct": 0,
+      "why": {
+        "en": "tanár says what Anna is (a noun), and van is dropped, so you only need nem.",
+        "es": "tanár dice qué es Anna (un sustantivo), y van se omite, por eso solo hace falta nem."
+      },
+      "wrong": {
+        "nincs": {
+          "en": "nincs means 'is not (somewhere)' or 'there is no'; it is not used with a noun like tanár to say what someone is.",
+          "es": "nincs significa «no está (en un lugar)» o «no hay»; no se usa con un sustantivo como tanár para decir qué es alguien."
+        },
+        "sem": {
+          "en": "With sem the sentence would mean 'Anna is not a teacher either'.",
+          "es": "Con sem la frase significaría «Anna tampoco es profesora»."
+        }
+      },
+      "examples": ["A ház nem nagy.", "Péter nem diák."],
+      "tr": { "en": "Anna is not a teacher.", "es": "Anna no es profesora." }
+    },
+    {
+      "id": "tagadas-f03",
+      "kind": "form",
+      "verb": "nem lenni",
+      "person": "mi",
+      "answer": "nem vagyunk",
+      "table": "neg-lenni"
+    },
+    {
+      "id": "tagadas-w01",
+      "kind": "why",
+      "es": "Anna nincs otthon.",
+      "target": "nincs",
+      "tr": { "en": "Anna is not at home.", "es": "Anna no está en casa." },
+      "options": [
+        {
+          "text": {
+            "en": "3rd person + a place: nem van fuses into nincs",
+            "es": "3.ª persona + un lugar: nem van se funde en nincs"
+          }
+        },
+        {
+          "text": {
+            "en": "1st or 2nd person: nem + the usual verb form",
+            "es": "1.ª o 2.ª persona: nem + la forma normal del verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem vagyok otthon (I am not at home); Anna is 3rd person.",
+            "es": "Con esta regla la frase sería Nem vagyok otthon (no estoy en casa); Anna es 3.ª persona."
+          }
+        },
+        {
+          "text": {
+            "en": "A noun says what Anna is: only nem",
+            "es": "Un sustantivo dice qué es Anna: solo nem"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna nem otthon, which is wrong: nem alone is for nouns and adjectives (Anna nem tanár), not for a place.",
+            "es": "Con esta regla la frase sería Anna nem otthon, que es incorrecta: nem solo es para sustantivos y adjetivos (Anna nem tanár), no para un lugar."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "tagadas-c04",
+      "sentence": "A gyerekek ___ a szobában.",
+      "options": ["nem vagyunk", "nincs", "nincsenek"],
+      "correct": 2,
+      "why": {
+        "en": "A gyerekek are 'they' and a szobában is a place, so nem vannak fuses into nincsenek.",
+        "es": "A gyerekek son «ellos» y a szobában es un lugar, por eso nem vannak se funde en nincsenek."
+      },
+      "wrong": {
+        "nem vagyunk": {
+          "en": "nem vagyunk means 'we are not'; the children are 'they'.",
+          "es": "nem vagyunk significa «nosotros no estamos»; los niños son «ellos»."
+        },
+        "nincs": {
+          "en": "nincs is singular (he, she, it); a gyerekek is plural.",
+          "es": "nincs es singular (él, ella); a gyerekek es plural."
+        }
+      },
+      "examples": ["Anna és Péter nincsenek otthon.", "A gyerekek nincsenek itt."],
+      "tr": { "en": "The children are not in the room.", "es": "Los niños no están en el cuarto." }
+    },
+    {
+      "id": "tagadas-f04",
+      "kind": "form",
+      "verb": "nem lenni",
+      "person": "ők",
+      "answer": "nincsenek",
+      "table": "neg-lenni"
+    },
+    {
+      "id": "tagadas-c05",
+      "sentence": "___ tej a hűtőben.",
+      "options": ["Nincsenek", "Nincs", "Nem"],
+      "correct": 1,
+      "why": {
+        "en": "You say that something is not there: nincs (= nem van). tej is one thing, so the singular.",
+        "es": "Dices que algo no está: nincs (= nem van). tej es una sola cosa, por eso el singular."
+      },
+      "wrong": {
+        "Nincsenek": {
+          "en": "nincsenek is the plural ('there are no ...'); tej (milk) is singular.",
+          "es": "nincsenek es el plural («no hay varios ...»); tej (leche) es singular."
+        },
+        "Nem": {
+          "en": "nem alone denies what something is (Ez nem tej); it does not say that something is missing.",
+          "es": "nem solo niega qué es algo (Ez nem tej); no dice que algo falta."
+        }
+      },
+      "examples": ["Nincs víz a pohárban.", "Nincs idő."],
+      "tr": { "en": "There is no milk in the fridge.", "es": "No hay leche en el refrigerador." }
+    },
+    {
+      "id": "tagadas-f05",
+      "kind": "form",
+      "verb": "nem dolgozik",
+      "person": "én",
+      "answer": "nem dolgozom",
+      "accept": ["nem dolgozok"],
+      "table": "neg-dolgozik"
+    },
+    {
+      "id": "tagadas-c06",
+      "sentence": "Péter ___ ma.",
+      "options": ["dolgozik nem", "nem dolgozik", "nincs dolgozik"],
+      "correct": 1,
+      "why": {
+        "en": "nem stands directly before the verb, and the verb keeps its normal form.",
+        "es": "nem va justo delante del verbo, y el verbo mantiene su forma normal."
+      },
+      "wrong": {
+        "dolgozik nem": {
+          "en": "This puts nem after the verb; in Hungarian nem comes first.",
+          "es": "Esto pone nem después del verbo; en húngaro nem va primero."
+        },
+        "nincs dolgozik": {
+          "en": "nincs already contains the verb van and does not combine with another verb.",
+          "es": "nincs ya contiene el verbo van y no se combina con otro verbo."
+        }
+      },
+      "examples": ["Anna nem dolgozik.", "Nem tanulok ma."],
+      "tr": { "en": "Péter does not work today.", "es": "Péter no trabaja hoy." }
+    },
+    {
+      "id": "tagadas-f06",
+      "kind": "form",
+      "verb": "nem dolgozik",
+      "person": "te",
+      "answer": "nem dolgozol",
+      "table": "neg-dolgozik"
+    },
+    {
+      "id": "tagadas-c07",
+      "sentence": "___ nem jön.",
+      "options": ["Semmi", "Sehol", "Senki"],
+      "correct": 2,
+      "why": {
+        "en": "The one who comes is a person, so you need senki (nobody); the verb still has nem.",
+        "es": "Quien viene es una persona, por eso hace falta senki (nadie); el verbo sigue llevando nem."
+      },
+      "wrong": {
+        "Semmi": {
+          "en": "semmi means 'nothing': Semmi nem jön would mean that no thing comes, not a person.",
+          "es": "semmi significa «nada»: Semmi nem jön significaría que ninguna cosa viene, no una persona."
+        },
+        "Sehol": {
+          "en": "sehol means 'nowhere', a place, and cannot be the one who comes.",
+          "es": "sehol significa «en ninguna parte», un lugar, y no puede ser quien viene."
+        }
+      },
+      "examples": ["Senki nincs otthon.", "Senki nem beszél angolul."],
+      "tr": { "en": "Nobody is coming.", "es": "No viene nadie." }
+    },
+    {
+      "id": "tagadas-f07",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "sem van",
+      "answer": "sincs",
+      "table": "neg-fusion"
+    },
+    {
+      "id": "tagadas-w02",
+      "kind": "why",
+      "es": "Anna nem tanár.",
+      "target": "nem",
+      "tr": { "en": "Anna is not a teacher.", "es": "Anna no es profesora." },
+      "options": [
+        {
+          "text": {
+            "en": "3rd person + a place: nincs",
+            "es": "3.ª persona + un lugar: nincs"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna nincs tanár; nincs is for place or existence, but tanár says what Anna is.",
+            "es": "Con esta regla la frase sería Anna nincs tanár; nincs es para lugar o existencia, pero tanár dice qué es Anna."
+          }
+        },
+        {
+          "text": {
+            "en": "A noun says what Anna is (van is dropped): only nem",
+            "es": "Un sustantivo dice qué es Anna (se omite van): solo nem"
+          }
+        },
+        {
+          "text": {
+            "en": "A negative word is in the sentence, so nem is needed",
+            "es": "Hay una palabra negativa en la frase, por eso hace falta nem"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would contain senki, semmi or soha; there is no negative word in it.",
+            "es": "Con esta regla la frase llevaría senki, semmi o soha; no hay ninguna palabra negativa en ella."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "tagadas-c08",
+      "sentence": "Nincs ___ otthon.",
+      "options": ["senki", "semmi", "sehol"],
+      "correct": 0,
+      "why": {
+        "en": "A person is meant (nobody), so senki; nincs already carries the negation.",
+        "es": "Se habla de una persona (nadie), por eso senki; nincs ya lleva la negación."
+      },
+      "wrong": {
+        "semmi": {
+          "en": "semmi means 'nothing': Nincs semmi otthon would mean there is nothing at home.",
+          "es": "semmi significa «nada»: Nincs semmi otthon significaría que no hay nada en casa."
+        },
+        "sehol": {
+          "en": "sehol means 'nowhere'; it does not fit with otthon, which is already a place.",
+          "es": "sehol significa «en ninguna parte»; no encaja con otthon, que ya es un lugar."
+        }
+      },
+      "examples": ["Nincs senki a szobában.", "Nincs senki itt."],
+      "tr": { "en": "There is nobody at home.", "es": "No hay nadie en casa." }
+    },
+    {
+      "id": "tagadas-f08",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "sem vannak",
+      "answer": "sincsenek",
+      "table": "neg-fusion"
+    },
+    {
+      "id": "tagadas-c09",
+      "sentence": "Nincs ___ a pohárban.",
+      "options": ["senki", "sehol", "semmi"],
+      "correct": 2,
+      "why": {
+        "en": "A glass holds things, so the word is semmi (nothing).",
+        "es": "Un vaso contiene cosas, por eso la palabra es semmi (nada)."
+      },
+      "wrong": {
+        "senki": {
+          "en": "senki means 'nobody'; Nincs senki a pohárban would say there is nobody in the glass.",
+          "es": "senki significa «nadie»; Nincs senki a pohárban diría que no hay nadie en el vaso."
+        },
+        "sehol": {
+          "en": "sehol means 'nowhere', a place; the place is already named (a pohárban).",
+          "es": "sehol significa «en ninguna parte», un lugar; el lugar ya está dicho (a pohárban)."
+        }
+      },
+      "examples": ["Nincs semmi a szobában.", "Semmi nincs a hűtőben."],
+      "tr": { "en": "There is nothing in the glass.", "es": "No hay nada en el vaso." }
+    },
+    {
+      "id": "tagadas-f09",
+      "kind": "form",
+      "verb": "tagadószó",
+      "person": "ki",
+      "answer": "senki",
+      "table": "neg-words"
+    },
+    {
+      "id": "tagadas-c10",
+      "sentence": "___ nem megyek ma.",
+      "options": ["Sehol", "Sehova", "Senki"],
+      "correct": 1,
+      "why": {
+        "en": "megyek means 'I go', a movement with a destination, so the word is sehova (to nowhere).",
+        "es": "megyek significa «voy», un movimiento con destino, por eso la palabra es sehova (a ninguna parte)."
+      },
+      "wrong": {
+        "Sehol": {
+          "en": "sehol means 'nowhere' for a place where you stay (Sehol nem vagyok); with megyek you need the direction word.",
+          "es": "sehol significa «en ninguna parte» para un lugar donde te quedas (Sehol nem vagyok); con megyek hace falta la palabra de dirección."
+        },
+        "Senki": {
+          "en": "senki is a person (nobody); the subject here is I (megyek), so it does not fit.",
+          "es": "senki es una persona (nadie); el sujeto aquí es yo (megyek), así que no encaja."
+        }
+      },
+      "examples": ["Nem megyek sehova.", "Sehova nem utazom."],
+      "tr": { "en": "I am not going anywhere today.", "es": "Hoy no voy a ninguna parte." }
+    },
+    {
+      "id": "tagadas-f10",
+      "kind": "form",
+      "verb": "tagadószó",
+      "person": "mi",
+      "answer": "semmi",
+      "table": "neg-words"
+    },
+    {
+      "id": "tagadas-w03",
+      "kind": "why",
+      "es": "Senki nem jön.",
+      "target": "nem",
+      "tr": { "en": "Nobody is coming.", "es": "No viene nadie." },
+      "options": [
+        {
+          "text": {
+            "en": "senki already negates, so nem is not needed",
+            "es": "senki ya niega, por eso nem no hace falta"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Senki jön, which is wrong: Hungarian needs nem as well.",
+            "es": "Con esta regla la frase sería Senki jön, que es incorrecta: el húngaro necesita también nem."
+          }
+        },
+        {
+          "text": {
+            "en": "Two negatives cancel out: nem makes it positive",
+            "es": "Dos negaciones se anulan: nem lo vuelve afirmativo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would mean 'somebody comes', as in English logic; in Hungarian the two negatives add up and it means nobody comes.",
+            "es": "Con esta regla la frase significaría «alguien viene», como en la lógica del inglés; en húngaro las dos negaciones se suman y significa que nadie viene."
+          }
+        },
+        {
+          "text": {
+            "en": "A negative word goes together with nem: the double negative is normal",
+            "es": "Una palabra negativa va junto con nem: la doble negación es normal"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "tagadas-c11",
+      "sentence": "Soha ___ dolgozom vasárnap.",
+      "options": ["ne", "nem", "nincs"],
+      "correct": 1,
+      "why": {
+        "en": "soha is a negative word, so the verb still needs nem: Soha nem dolgozom.",
+        "es": "soha es una palabra negativa, por eso el verbo sigue necesitando nem: Soha nem dolgozom."
+      },
+      "wrong": {
+        "ne": {
+          "en": "ne is for commands (Ne siess!, don't hurry), not for statements.",
+          "es": "ne es para órdenes (Ne siess!, no te apresures), no para afirmaciones."
+        },
+        "nincs": {
+          "en": "nincs means 'there is no' or 'is not (there)'; it does not stand before another verb.",
+          "es": "nincs significa «no hay» o «no está»; no va delante de otro verbo."
+        }
+      },
+      "examples": ["Soha nem érkezem későn.", "Soha nem vagyok fáradt."],
+      "tr": { "en": "I never work on Sunday.", "es": "Nunca trabajo el domingo." }
+    },
+    {
+      "id": "tagadas-f11",
+      "kind": "form",
+      "verb": "tagadószó",
+      "person": "hol",
+      "answer": "sehol",
+      "table": "neg-words"
+    },
+    {
+      "id": "tagadas-c12",
+      "sentence": "Péter nem jön. Gábor ___ jön.",
+      "options": ["is", "nem", "sem"],
+      "correct": 2,
+      "why": {
+        "en": "'Not ... either' is sem, and then the verb is not negated again.",
+        "es": "«Tampoco» es sem, y entonces el verbo no se vuelve a negar."
+      },
+      "wrong": {
+        "is": {
+          "en": "is means 'also': Gábor is jön says that Gábor is coming too.",
+          "es": "is significa «también»: Gábor is jön dice que Gábor también viene."
+        },
+        "nem": {
+          "en": "With nem the sentence would only say that Gábor is not coming, without the 'either' that links him to Péter.",
+          "es": "Con nem la frase solo diría que Gábor no viene, sin el «tampoco» que lo une a Péter."
+        }
+      },
+      "examples": ["Én sem tudom.", "Anna sem dolgozik."],
+      "tr": { "en": "Péter is not coming. Gábor is not coming either.", "es": "Péter no viene. Gábor tampoco viene." }
+    },
+    {
+      "id": "tagadas-f12",
+      "kind": "form",
+      "verb": "tagadószó",
+      "person": "mikor",
+      "answer": "soha",
+      "table": "neg-words"
+    },
+    {
+      "id": "tagadas-c13",
+      "sentence": "Nincs se víz, ___ tej a hűtőben.",
+      "options": ["és", "se", "is"],
+      "correct": 1,
+      "why": {
+        "en": "'Neither ... nor' needs se twice: se víz, se tej.",
+        "es": "«Ni ... ni» necesita se dos veces: se víz, se tej."
+      },
+      "wrong": {
+        "és": {
+          "en": "és means 'and'; it would break the pair, because the second part needs se too.",
+          "es": "és significa «y»; rompería el par, porque la segunda parte también necesita se."
+        },
+        "is": {
+          "en": "is means 'also' in a positive pair (víz is, tej is = both); it is not negative.",
+          "es": "is significa «también» en un par afirmativo (víz is, tej is = ambos); no es negativo."
+        }
+      },
+      "examples": ["Nincs bolt se itt, se ott.", "Nincs se kutya, se macska."],
+      "tr": { "en": "There is neither water nor milk in the fridge.", "es": "No hay ni agua ni leche en el refrigerador." }
+    },
+    {
+      "id": "tagadas-c14",
+      "sentence": "Péter nincs otthon. Anna ___ otthon.",
+      "options": ["is van", "sincs", "nincs"],
+      "correct": 1,
+      "why": {
+        "en": "'Not ... either' with van is one word: sem + van = sincs (like nem van = nincs).",
+        "es": "«Tampoco» con van es una sola palabra: sem + van = sincs (como nem van = nincs)."
+      },
+      "wrong": {
+        "is van": {
+          "en": "Anna is van otthon says that Anna is at home too (positive).",
+          "es": "Anna is van otthon dice que Anna también está en casa (afirmativo)."
+        },
+        "nincs": {
+          "en": "With nincs the sentence would only say that Anna is not at home, without the 'either' that links her to Péter.",
+          "es": "Con nincs la frase solo diría que Anna no está en casa, sin el «tampoco» que la une a Péter."
+        }
+      },
+      "examples": ["Ők sincsenek itt.", "Gábor sincs itt."],
+      "tr": { "en": "Péter is not at home. Anna is not at home either.", "es": "Péter no está en casa. Anna tampoco está en casa." }
+    },
+    {
+      "id": "tagadas-w04",
+      "kind": "why",
+      "es": "Péter sem jön.",
+      "target": "sem",
+      "tr": { "en": "Péter isn't coming either.", "es": "Péter tampoco viene." },
+      "options": [
+        {
+          "text": {
+            "en": "sem means 'not either' and replaces is in a negative sentence",
+            "es": "sem significa «tampoco» y sustituye a is en una frase negativa"
+          }
+        },
+        {
+          "text": {
+            "en": "sem means 'nobody'",
+            "es": "sem significa «nadie»"
+          },
+          "wrong": {
+            "en": "With this rule the word would be senki (Senki nem jön); sem is not a word for a person.",
+            "es": "Con esta regla la palabra sería senki (Senki nem jön); sem no es una palabra para una persona."
+          }
+        },
+        {
+          "text": {
+            "en": "sem means 'never'",
+            "es": "sem significa «nunca»"
+          },
+          "wrong": {
+            "en": "With this rule the word would be soha (Soha nem jön); sem is not about time.",
+            "es": "Con esta regla la palabra sería soha (Soha nem jön); sem no es de tiempo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

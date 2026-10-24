@@ -136,3 +136,16 @@ describe('Spanish grammar syllabus (default lang) is unchanged', () => {
     });
   });
 });
+
+describe('Hungarian grammar syllabus (lang = hu) keeps its size and content fingerprint', () => {
+  it('has 10 units and 40 topics, A1 and A2, and the other syllabi are not touched by it', () => {
+    expect(syllabusLevels('hu')).toEqual(['A1', 'A2']);
+    const units = syllabusLevels('hu').flatMap((l) => unitsForLevel(l, 'hu'));
+    const topics = syllabusLevels('hu').flatMap((l) => syllabusForLevel(l, 'hu'));
+    const fingerprint = createHash('sha1').update(JSON.stringify([units, topics])).digest('hex');
+    expect({ units: units.length, topics: topics.length, fingerprint }).toEqual({ units: 10, topics: 40, fingerprint: '5390978c6ba472475e9ffa48b4545beb7cc9ec2e' });
+    expect(syllabusTopic('lenni-van')).toBeUndefined();
+    expect(syllabusTopic('lenni-van', 'en')).toBeUndefined();
+    expect(syllabusTopic('lenni-van', 'hu')?.level).toBe('A1');
+  });
+});

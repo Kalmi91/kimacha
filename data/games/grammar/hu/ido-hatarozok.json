@@ -1,0 +1,1333 @@
+{
+  "schema": 2,
+  "topic": "ido-hatarozok",
+  "level": "A2",
+  "title": {
+    "en": "Time: -kor, -ig, óta, múlva, ezelőtt",
+    "es": "Tiempo: -kor, -ig, óta, múlva, ezelőtt"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In English the time word comes first: at five, until Friday, since Monday, in two weeks, two weeks ago. Hungarian puts a small ending or word AFTER the time: ötkor, péntekig, hétfő óta, két hét múlva, két héttel ezelőtt. Three questions ask for them: mikor? (when), meddig? (until when, for how long) and mióta? (since when).",
+        "es": "En español la palabra de tiempo va antes: a las cinco, hasta el viernes, desde el lunes, dentro de dos semanas, hace dos semanas. El húngaro pone una terminación o una palabrita DESPUÉS del tiempo: ötkor, péntekig, hétfő óta, két hét múlva, két héttel ezelőtt. Tres preguntas los piden: mikor? (cuándo), meddig? (hasta cuándo, durante cuánto tiempo) y mióta? (desde cuándo)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "time-markers",
+      "title": {
+        "en": "The five markers",
+        "es": "Los cinco marcadores"
+      },
+      "header": [
+        {
+          "en": "Ending or word",
+          "es": "Terminación o palabra"
+        },
+        {
+          "en": "Question",
+          "es": "Pregunta"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "-kor",
+          "Mikor?",
+          "ötkor"
+        ],
+        [
+          "-ig",
+          "Meddig?",
+          "ötig"
+        ],
+        [
+          "óta",
+          "Mióta?",
+          "hétfő óta"
+        ],
+        [
+          "múlva",
+          "Mikor?",
+          "öt perc múlva"
+        ],
+        [
+          "ezelőtt",
+          "Mikor?",
+          "öt perccel ezelőtt"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What each marker says",
+        "es": "Qué dice cada marcador"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "-kor = at a clock time or at an event. It goes straight onto the number or the event word and never changes (no vowel harmony): ötkor, karácsonykor. Hány órakor? = at what time?",
+            "es": "-kor = a una hora o en una fiesta. Se pega directo al número o a la palabra del evento y nunca cambia (sin armonía vocálica): ötkor, karácsonykor. Hány órakor? = ¿a qué hora?"
+          },
+          "examples": [
+            {
+              "es": "Nyolckor kezdek dolgozni.",
+              "tr": {
+                "en": "I start work at eight.",
+                "es": "Empiezo a trabajar a las ocho."
+              }
+            },
+            {
+              "es": "Karácsonykor a családdal vagyunk.",
+              "tr": {
+                "en": "At Christmas we are with the family.",
+                "es": "En Navidad estamos con la familia."
+              }
+            },
+            {
+              "es": "Hány órakor jössz?",
+              "tr": {
+                "en": "At what time are you coming?",
+                "es": "¿A qué hora vienes?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ig = until a point (ötig, péntekig) or for a length of time (két hétig). It never changes either, but a final -a gets long: szerda → szerdáig. After a number the noun stays singular. 'From ... to ...' is -tól/-től ... -ig.",
+            "es": "-ig = hasta un punto (ötig, péntekig) o durante un periodo (két hétig). Tampoco cambia, pero una -a final se alarga: szerda → szerdáig. Después de un número el sustantivo se queda en singular. «De ... a ...» es -tól/-től ... -ig."
+          },
+          "examples": [
+            {
+              "es": "Ötig dolgozom.",
+              "tr": {
+                "en": "I work until five.",
+                "es": "Trabajo hasta las cinco."
+              }
+            },
+            {
+              "es": "Két hétig Szegeden vagyok.",
+              "tr": {
+                "en": "I'm in Szeged for two weeks.",
+                "es": "Estoy en Szeged durante dos semanas."
+              }
+            },
+            {
+              "es": "Hétfőtől péntekig dolgozom.",
+              "tr": {
+                "en": "I work from Monday to Friday.",
+                "es": "Trabajo de lunes a viernes."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "óta = since. It names the starting point (a day, a year, an hour) of something that is still going on, so the verb stays in the PRESENT: 2020 óta lakom itt = I have lived here since 2020. English needs 'have lived'; Hungarian just uses the present, like Spanish (vivo aquí desde 2020).",
+            "es": "óta = desde. Nombra el punto de inicio (un día, un año, una hora) de algo que sigue ahora, así que el verbo va en PRESENTE: 2020 óta lakom itt = vivo aquí desde 2020. Igual que en español; el inglés, en cambio, necesita «have lived»."
+          },
+          "examples": [
+            {
+              "es": "Hétfő óta beteg vagyok.",
+              "tr": {
+                "en": "I have been ill since Monday.",
+                "es": "Estoy enfermo desde el lunes."
+              }
+            },
+            {
+              "es": "2020 óta Budapesten lakom.",
+              "tr": {
+                "en": "I have lived in Budapest since 2020.",
+                "es": "Vivo en Budapest desde 2020."
+              }
+            },
+            {
+              "es": "Reggel óta dolgozom.",
+              "tr": {
+                "en": "I have been working since this morning.",
+                "es": "Trabajo desde la mañana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "múlva = in ..., counted forward from now. Use the plain noun, singular after a number: két hét múlva, öt perc múlva. The verb is present or future (leszek).",
+            "es": "múlva = dentro de ..., contado hacia adelante desde ahora. Usa el sustantivo sin terminación, en singular tras un número: két hét múlva, öt perc múlva. El verbo va en presente o futuro (leszek)."
+          },
+          "examples": [
+            {
+              "es": "Öt perc múlva jövök.",
+              "tr": {
+                "en": "I'm coming in five minutes.",
+                "es": "Vengo dentro de cinco minutos."
+              }
+            },
+            {
+              "es": "Két hét múlva Szegeden leszek.",
+              "tr": {
+                "en": "In two weeks I'll be in Szeged.",
+                "es": "Dentro de dos semanas estaré en Szeged."
+              }
+            },
+            {
+              "es": "Három nap múlva Debrecenbe megyek.",
+              "tr": {
+                "en": "In three days I'm going to Debrecen.",
+                "es": "Dentro de tres días voy a Debrecen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ezelőtt = ago, counted backward from now. The time word takes -val/-vel, then comes ezelőtt, and the verb is in the past: két évvel ezelőtt. English 'ago' also comes after the time (two years ago); Spanish hace comes BEFORE it, but ezelőtt always comes AFTER.",
+            "es": "ezelőtt = hace, contado hacia atrás desde ahora. La palabra de tiempo lleva -val/-vel, después va ezelőtt, y el verbo va en pasado: két évvel ezelőtt. Ojo: «hace» va ANTES de la hora en español, pero ezelőtt va siempre DESPUÉS."
+          },
+          "examples": [
+            {
+              "es": "Két évvel ezelőtt Szegeden laktam.",
+              "tr": {
+                "en": "Two years ago I lived in Szeged.",
+                "es": "Hace dos años vivía en Szeged."
+              }
+            },
+            {
+              "es": "Három nappal ezelőtt Debrecenben voltam.",
+              "tr": {
+                "en": "Three days ago I was in Debrecen.",
+                "es": "Hace tres días estuve en Debrecen."
+              }
+            },
+            {
+              "es": "Öt perccel ezelőtt még itt volt Anna.",
+              "tr": {
+                "en": "Five minutes ago Anna was still here.",
+                "es": "Hace cinco minutos Anna todavía estaba aquí."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kor-times",
+      "title": {
+        "en": "At what time? (-kor)",
+        "es": "¿A qué hora? (-kor)"
+      },
+      "header": [
+        {
+          "en": "Number",
+          "es": "Número"
+        },
+        {
+          "en": "at (-kor)",
+          "es": "a las (-kor)"
+        }
+      ],
+      "rows": [
+        [
+          "egy",
+          "egykor"
+        ],
+        [
+          "kettő",
+          "kettőkor"
+        ],
+        [
+          "három",
+          "háromkor"
+        ],
+        [
+          "négy",
+          "négykor"
+        ],
+        [
+          "öt",
+          "ötkor"
+        ],
+        [
+          "hat",
+          "hatkor"
+        ],
+        [
+          "nyolc",
+          "nyolckor"
+        ],
+        [
+          "kilenc",
+          "kilenckor"
+        ],
+        [
+          "tíz",
+          "tízkor"
+        ],
+        [
+          "tizenegy",
+          "tizenegykor"
+        ],
+        [
+          "tizenkettő",
+          "tizenkettőkor"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ig-forms",
+      "title": {
+        "en": "Until (-ig)",
+        "es": "Hasta (-ig)"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "until (-ig)",
+          "es": "hasta (-ig)"
+        }
+      ],
+      "rows": [
+        [
+          "öt",
+          "ötig"
+        ],
+        [
+          "tíz",
+          "tízig"
+        ],
+        [
+          "hétfő",
+          "hétfőig"
+        ],
+        [
+          "kedd",
+          "keddig"
+        ],
+        [
+          "szerda",
+          "szerdáig"
+        ],
+        [
+          "péntek",
+          "péntekig"
+        ],
+        [
+          "vasárnap",
+          "vasárnapig"
+        ],
+        [
+          "június",
+          "júniusig"
+        ],
+        [
+          "december",
+          "decemberig"
+        ],
+        [
+          "reggel",
+          "reggelig"
+        ],
+        [
+          "holnap",
+          "holnapig"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ago-forms",
+      "title": {
+        "en": "Ago: -val/-vel + ezelőtt",
+        "es": "Hace: -val/-vel + ezelőtt"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "with -val/-vel",
+          "es": "con -val/-vel"
+        },
+        {
+          "en": "In a phrase",
+          "es": "En una frase"
+        }
+      ],
+      "rows": [
+        [
+          "év",
+          "évvel",
+          "két évvel ezelőtt"
+        ],
+        [
+          "hét",
+          "héttel",
+          "két héttel ezelőtt"
+        ],
+        [
+          "nap",
+          "nappal",
+          "három nappal ezelőtt"
+        ],
+        [
+          "hónap",
+          "hónappal",
+          "két hónappal ezelőtt"
+        ],
+        [
+          "perc",
+          "perccel",
+          "öt perccel ezelőtt"
+        ],
+        [
+          "óra",
+          "órával",
+          "egy órával ezelőtt"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which question, which answer?",
+        "es": "¿Qué pregunta, qué respuesta?"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "mikor? = when. The answer is a moment: -kor, ma / holnap / tegnap, or a múlva / ezelőtt phrase.",
+            "es": "mikor? = cuándo. La respuesta es un momento: -kor, ma / holnap / tegnap, o una frase con múlva / ezelőtt."
+          },
+          "examples": [
+            {
+              "es": "Mikor jössz haza? Ötkor.",
+              "tr": {
+                "en": "When are you coming home? At five.",
+                "es": "¿Cuándo vienes a casa? A las cinco."
+              }
+            },
+            {
+              "es": "Mikor érkezel? Öt perc múlva.",
+              "tr": {
+                "en": "When do you arrive? In five minutes.",
+                "es": "¿Cuándo llegas? Dentro de cinco minutos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "meddig? = until when, or for how long. The answer ends in -ig.",
+            "es": "meddig? = hasta cuándo, o durante cuánto tiempo. La respuesta termina en -ig."
+          },
+          "examples": [
+            {
+              "es": "Meddig dolgozol ma? Ötig.",
+              "tr": {
+                "en": "Until when are you working today? Until five.",
+                "es": "¿Hasta cuándo trabajas hoy? Hasta las cinco."
+              }
+            },
+            {
+              "es": "Meddig vagy szabadságon? Két hétig.",
+              "tr": {
+                "en": "How long are you on leave? For two weeks.",
+                "es": "¿Cuánto tiempo estás de vacaciones? Dos semanas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mióta? = since when. The answer is a starting point + óta, and the verb is in the present.",
+            "es": "mióta? = desde cuándo. La respuesta es un punto de inicio + óta, y el verbo va en presente."
+          },
+          "examples": [
+            {
+              "es": "Mióta laksz Budapesten? 2020 óta.",
+              "tr": {
+                "en": "Since when have you lived in Budapest? Since 2020.",
+                "es": "¿Desde cuándo vives en Budapest? Desde 2020."
+              }
+            },
+            {
+              "es": "Mióta vagy beteg? Hétfő óta.",
+              "tr": {
+                "en": "Since when have you been ill? Since Monday.",
+                "es": "¿Desde cuándo estás enfermo? Desde el lunes."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Péntekig itt vagyok.",
+          "b": "Hétfő óta itt vagyok.",
+          "note": {
+            "en": "-ig looks ahead to an end point (until Friday). óta looks back to a starting point (since Monday).",
+            "es": "-ig mira hacia delante, a un punto final (hasta el viernes). óta mira hacia atrás, a un punto de inicio (desde el lunes)."
+          },
+          "examples": [
+            {
+              "es": "Holnapig itt vagyok.",
+              "tr": {
+                "en": "I'm here until tomorrow.",
+                "es": "Estoy aquí hasta mañana."
+              }
+            },
+            {
+              "es": "Tegnap óta itt vagyok.",
+              "tr": {
+                "en": "I've been here since yesterday.",
+                "es": "Estoy aquí desde ayer."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Két hét múlva Szegeden leszek.",
+          "b": "Két héttel ezelőtt Szegeden voltam.",
+          "note": {
+            "en": "múlva looks to the future (in two weeks, with leszek). ezelőtt looks to the past (two weeks ago, with voltam).",
+            "es": "múlva mira al futuro (dentro de dos semanas, con leszek). ezelőtt mira al pasado (hace dos semanas, con voltam)."
+          },
+          "examples": [
+            {
+              "es": "Öt perc múlva otthon leszek.",
+              "tr": {
+                "en": "I'll be at home in five minutes.",
+                "es": "Estaré en casa dentro de cinco minutos."
+              }
+            },
+            {
+              "es": "Öt perccel ezelőtt még otthon voltam.",
+              "tr": {
+                "en": "Five minutes ago I was still at home.",
+                "es": "Hace cinco minutos todavía estaba en casa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Három nap múlva Debrecenbe megyek.",
+          "b": "Három napig Debrecenben vagyok.",
+          "note": {
+            "en": "múlva says when something happens (in three days). -ig says how long it lasts (for three days).",
+            "es": "múlva dice cuándo pasa algo (dentro de tres días). -ig dice cuánto dura (durante tres días)."
+          },
+          "examples": [
+            {
+              "es": "Két hónap múlva Budapesten leszek.",
+              "tr": {
+                "en": "In two months I'll be in Budapest.",
+                "es": "Dentro de dos meses estaré en Budapest."
+              }
+            },
+            {
+              "es": "Két hónapig Budapesten leszek.",
+              "tr": {
+                "en": "I'll be in Budapest for two months.",
+                "es": "Estaré en Budapest durante dos meses."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Mikor jössz?",
+          "b": "Meddig maradsz?",
+          "note": {
+            "en": "mikor? asks for a moment (ötkor). meddig? asks for an end point or a length (ötig, két hétig).",
+            "es": "mikor? pide un momento (ötkor). meddig? pide un punto final o una duración (ötig, két hétig)."
+          },
+          "examples": [
+            {
+              "es": "Ötkor jövök.",
+              "tr": {
+                "en": "I'm coming at five.",
+                "es": "Vengo a las cinco."
+              }
+            },
+            {
+              "es": "Ötig maradok.",
+              "tr": {
+                "en": "I'm staying until five.",
+                "es": "Me quedo hasta las cinco."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: with óta Hungarian uses the PRESENT, not a past tense: Hétfő óta beteg vagyok (never 'beteg voltam'). Do not mix up the two 'in' words either: két hét múlva = in two weeks' time, két hétig = for two weeks. And after a number the noun stays singular: két hét, never két hetek.",
+        "es": "Trampa clásica: con óta el húngaro usa el PRESENTE, no un pasado: Hétfő óta beteg vagyok (nunca «beteg voltam»). Y no confundas «dentro de» con «durante»: két hét múlva = dentro de dos semanas, két hétig = durante dos semanas. Después de un número el sustantivo se queda en singular: két hét, nunca két hetek."
+      }
+    }
+  ],
+  "speak": {
+    "en": "To say when something happens, Hungarian puts a small ending or word after the time. «Nyolckor» means at eight, «péntekig» means until Friday, and «hétfő óta» means since Monday. With «óta» the verb stays in the present: «Hétfő óta beteg vagyok». For the future you use «múlva»: «Két hét múlva Szegeden leszek». For the past you use «ezelőtt»: «Két héttel ezelőtt Szegeden voltam». The three questions are «mikor», «meddig» and «mióta».",
+    "es": "Para decir cuándo pasa algo, el húngaro pone una terminación o una palabrita después de la hora. «Nyolckor» significa a las ocho, «péntekig» significa hasta el viernes y «hétfő óta» significa desde el lunes. Con «óta» el verbo se queda en presente: «Hétfő óta beteg vagyok». Para el futuro se usa «múlva»: «Két hét múlva Szegeden leszek». Para el pasado se usa «ezelőtt»: «Két héttel ezelőtt Szegeden voltam». Las tres preguntas son «mikor», «meddig» y «mióta»."
+  },
+  "glossary": [
+    {
+      "word": "óta",
+      "gloss": {
+        "en": "since",
+        "es": "desde"
+      }
+    },
+    {
+      "word": "múlva",
+      "gloss": {
+        "en": "in (time counted from now)",
+        "es": "dentro de (tiempo contado desde ahora)"
+      }
+    },
+    {
+      "word": "ezelőtt",
+      "gloss": {
+        "en": "ago",
+        "es": "hace"
+      }
+    },
+    {
+      "word": "meddig",
+      "gloss": {
+        "en": "until when, how long",
+        "es": "hasta cuándo, cuánto tiempo"
+      }
+    },
+    {
+      "word": "mióta",
+      "gloss": {
+        "en": "since when",
+        "es": "desde cuándo"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ido-hatarozok-c01",
+      "sentence": "Mikor kelsz? ___ kelek.",
+      "options": [
+        "Hatkor",
+        "Hatig",
+        "Hat óta"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mikor asks for a moment, and with a clock time you add -kor: Hatkor kelek (I get up at six).",
+        "es": "Mikor pide un momento, y con una hora se añade -kor: Hatkor kelek (me levanto a las seis)."
+      },
+      "wrong": {
+        "Hatig": {
+          "en": "With Hatig the answer would mean 'until six': -ig answers Meddig? (until when), but getting up happens at one moment.",
+          "es": "Con Hatig la respuesta significaría «hasta las seis»: -ig responde a Meddig? (hasta cuándo), pero levantarse ocurre en un solo momento."
+        },
+        "Hat óta": {
+          "en": "With Hat óta the answer would mean 'since six': óta answers Mióta? (since when) and describes something that is still going on.",
+          "es": "Con Hat óta la respuesta significaría «desde las seis»: óta responde a Mióta? (desde cuándo) y describe algo que sigue ahora."
+        }
+      },
+      "examples": [
+        "Ötkor jövök.",
+        "Háromkor ott vagyok."
+      ],
+      "tr": {
+        "en": "When do you get up? I get up at six.",
+        "es": "¿Cuándo te levantas? Me levanto a las seis."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f01",
+      "kind": "form",
+      "verb": "öt",
+      "person": "-kor",
+      "answer": "ötkor",
+      "table": "kor-times"
+    },
+    {
+      "id": "ido-hatarozok-c02",
+      "sentence": "Hány ___ van a vacsora? Nyolckor.",
+      "options": [
+        "óráig",
+        "órakor",
+        "óra múlva"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Hány órakor? means 'at what time?': hour + -kor. The answer Nyolckor uses the same ending.",
+        "es": "Hány órakor? significa «¿a qué hora?»: hora + -kor. La respuesta Nyolckor usa la misma terminación."
+      },
+      "wrong": {
+        "óráig": {
+          "en": "Hány óráig? asks 'until what time?', and the answer would be Nyolcig, not Nyolckor.",
+          "es": "Hány óráig? pregunta «¿hasta qué hora?», y la respuesta sería Nyolcig, no Nyolckor."
+        },
+        "óra múlva": {
+          "en": "Hány óra múlva? asks 'in how many hours?' and expects an answer like Két óra múlva.",
+          "es": "Hány óra múlva? pregunta «¿dentro de cuántas horas?» y espera una respuesta como Két óra múlva."
+        }
+      },
+      "examples": [
+        "Hány órakor kezdesz dolgozni?",
+        "Hány órakor jössz?"
+      ],
+      "tr": {
+        "en": "At what time is dinner? At eight.",
+        "es": "¿A qué hora es la cena? A las ocho."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f02",
+      "kind": "form",
+      "verb": "péntek",
+      "person": "-ig",
+      "answer": "péntekig",
+      "table": "ig-forms"
+    },
+    {
+      "id": "ido-hatarozok-c03",
+      "sentence": "Mikor van együtt a család? ___.",
+      "options": [
+        "Karácsony óta",
+        "Karácsonyig",
+        "Karácsonykor"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Mikor? asks for the moment, and with an event word you add -kor: Karácsonykor (at Christmas).",
+        "es": "Mikor? pide el momento, y con el nombre de una fiesta se añade -kor: Karácsonykor (en Navidad)."
+      },
+      "wrong": {
+        "Karácsony óta": {
+          "en": "Karácsony óta would mean 'since Christmas', a starting point in the past (it answers Mióta?).",
+          "es": "Karácsony óta significaría «desde Navidad», un punto de inicio en el pasado (responde a Mióta?)."
+        },
+        "Karácsonyig": {
+          "en": "Karácsonyig would mean 'until Christmas' (it answers Meddig?), not the moment when the family is together.",
+          "es": "Karácsonyig significaría «hasta Navidad» (responde a Meddig?), no el momento en que la familia está junta."
+        }
+      },
+      "examples": [
+        "Húsvétkor a nagymamánál vagyunk.",
+        "Vacsorakor mindig együtt vagyunk."
+      ],
+      "tr": {
+        "en": "When is the family together? At Christmas.",
+        "es": "¿Cuándo está junta la familia? En Navidad."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f03",
+      "kind": "form",
+      "verb": "perc",
+      "person": "-val/-vel",
+      "answer": "perccel",
+      "table": "ago-forms"
+    },
+    {
+      "id": "ido-hatarozok-w01",
+      "kind": "why",
+      "es": "Péntekig itt vagyok.",
+      "target": "Péntekig",
+      "tr": {
+        "en": "I am here until Friday.",
+        "es": "Estoy aquí hasta el viernes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "óta: a starting point in the past, 'since Friday'",
+            "es": "óta: un punto de inicio en el pasado, «desde el viernes»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Péntek óta itt vagyok (I have been here since Friday); the ending in Péntekig points to the end, not the start.",
+            "es": "Con esta regla la frase sería Péntek óta itt vagyok (estoy aquí desde el viernes); la terminación de Péntekig apunta al final, no al inicio."
+          }
+        },
+        {
+          "text": {
+            "en": "-ig: an end point ahead, 'until Friday'",
+            "es": "-ig: un punto final por delante, «hasta el viernes»"
+          }
+        },
+        {
+          "text": {
+            "en": "-kor: a single moment, like 'at five'",
+            "es": "-kor: un solo momento, como «a las cinco»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would name one moment, like Ötkor itt vagyok (I'm here at five); -ig gives the end of a stretch of time.",
+            "es": "Con esta regla la frase nombraría un solo momento, como Ötkor itt vagyok (estoy aquí a las cinco); -ig da el final de un periodo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ido-hatarozok-c04",
+      "sentence": "Meddig dolgozol ma? ___ dolgozom.",
+      "options": [
+        "Ötkor",
+        "Öt óta",
+        "Ötig"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Meddig asks until when, so the answer takes -ig: Ötig dolgozom (I work until five).",
+        "es": "Meddig pregunta hasta cuándo, así que la respuesta lleva -ig: Ötig dolgozom (trabajo hasta las cinco)."
+      },
+      "wrong": {
+        "Ötkor": {
+          "en": "Ötkor dolgozom would mean 'I work at five' (one moment, it answers Mikor?), not until when.",
+          "es": "Ötkor dolgozom significaría «trabajo a las cinco» (un momento, responde a Mikor?), no hasta cuándo."
+        },
+        "Öt óta": {
+          "en": "Öt óta dolgozom would mean 'I have been working since five' (it answers Mióta?).",
+          "es": "Öt óta dolgozom significaría «trabajo desde las cinco» (responde a Mióta?)."
+        }
+      },
+      "examples": [
+        "Péntekig dolgozom.",
+        "Hatig itt vagyok."
+      ],
+      "tr": {
+        "en": "Until when are you working today? I'm working until five.",
+        "es": "¿Hasta cuándo trabajas hoy? Trabajo hasta las cinco."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f04",
+      "kind": "form",
+      "verb": "nyolc",
+      "person": "-kor",
+      "answer": "nyolckor",
+      "table": "kor-times"
+    },
+    {
+      "id": "ido-hatarozok-c05",
+      "sentence": "Meddig maradsz Budapesten? ___.",
+      "options": [
+        "Két hónap múlva",
+        "Júniusig",
+        "Június óta"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Meddig? asks until when, so the answer is -ig on the month: Júniusig (until June).",
+        "es": "Meddig? pregunta hasta cuándo, así que la respuesta lleva -ig en el mes: Júniusig (hasta junio)."
+      },
+      "wrong": {
+        "Két hónap múlva": {
+          "en": "Két hónap múlva means 'in two months' (when something starts or happens); for 'for two months' you say Két hónapig.",
+          "es": "Két hónap múlva significa «dentro de dos meses» (cuándo empieza o pasa algo); para «durante dos meses» se dice Két hónapig."
+        },
+        "Június óta": {
+          "en": "Június óta would mean 'since June', a starting point in the past, so you would already be there.",
+          "es": "Június óta significaría «desde junio», un punto de inicio en el pasado, es decir, que ya estarías allí."
+        }
+      },
+      "examples": [
+        "Péntekig maradok.",
+        "Két hétig maradok."
+      ],
+      "tr": {
+        "en": "Until when are you staying in Budapest? Until June.",
+        "es": "¿Hasta cuándo te quedas en Budapest? Hasta junio."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f05",
+      "kind": "form",
+      "verb": "szerda",
+      "person": "-ig",
+      "answer": "szerdáig",
+      "table": "ig-forms"
+    },
+    {
+      "id": "ido-hatarozok-c06",
+      "sentence": "Meddig vagy szabadságon? Három ___.",
+      "options": [
+        "nap múlva",
+        "nappal ezelőtt",
+        "napig"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Meddig? asks how long, so the answer is number + noun + -ig: Három napig (for three days).",
+        "es": "Meddig? pregunta cuánto tiempo, así que la respuesta es número + sustantivo + -ig: Három napig (durante tres días)."
+      },
+      "wrong": {
+        "nap múlva": {
+          "en": "Három nap múlva would mean 'in three days': the leave would start later instead of lasting three days.",
+          "es": "Három nap múlva significaría «dentro de tres días»: las vacaciones empezarían más tarde, en vez de durar tres días."
+        },
+        "nappal ezelőtt": {
+          "en": "Három nappal ezelőtt would mean 'three days ago', a point in the past.",
+          "es": "Három nappal ezelőtt significaría «hace tres días», un punto en el pasado."
+        }
+      },
+      "examples": [
+        "Két hétig Szegeden vagyok.",
+        "Öt percig várok."
+      ],
+      "tr": {
+        "en": "How long are you on leave? For three days.",
+        "es": "¿Cuánto tiempo estás de vacaciones? Tres días."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f06",
+      "kind": "form",
+      "verb": "hét",
+      "person": "-val/-vel",
+      "answer": "héttel",
+      "table": "ago-forms"
+    },
+    {
+      "id": "ido-hatarozok-w02",
+      "kind": "why",
+      "es": "2020 óta Budapesten lakom.",
+      "target": "óta",
+      "tr": {
+        "en": "I have lived in Budapest since 2020.",
+        "es": "Vivo en Budapest desde 2020."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "óta: a starting point in the past that still holds, so the verb stays in the present",
+            "es": "óta: un punto de inicio en el pasado que sigue vigente, por eso el verbo va en presente"
+          }
+        },
+        {
+          "text": {
+            "en": "óta: an amount of time counted ahead from now",
+            "es": "óta: una cantidad de tiempo contada hacia adelante desde ahora"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Két év múlva Budapesten lakom (in two years I live in Budapest); 2020 is a point on the calendar, not an amount counted from now.",
+            "es": "Con esta regla la frase sería Két év múlva Budapesten lakom (dentro de dos años vivo en Budapest); 2020 es un punto del calendario, no una cantidad contada desde ahora."
+          }
+        },
+        {
+          "text": {
+            "en": "óta: the end of a period, 'until'",
+            "es": "óta: el final de un periodo, «hasta»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be 2020-ig Budapesten lakom (I live in Budapest until 2020); óta looks back to the start.",
+            "es": "Con esta regla la frase sería 2020-ig Budapesten lakom (vivo en Budapest hasta 2020); óta mira atrás, al inicio."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ido-hatarozok-c07",
+      "sentence": "Mióta vagy beteg? ___ beteg vagyok.",
+      "options": [
+        "Hétfőig",
+        "Hétfő múlva",
+        "Hétfő óta"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Mióta asks since when, and the answer is a starting point + óta: Hétfő óta (since Monday). The verb stays in the present.",
+        "es": "Mióta pregunta desde cuándo, y la respuesta es un punto de inicio + óta: Hétfő óta (desde el lunes). El verbo se queda en presente."
+      },
+      "wrong": {
+        "Hétfőig": {
+          "en": "Hétfőig would mean 'until Monday' and look ahead to an end; it answers Meddig?, not Mióta?.",
+          "es": "Hétfőig significaría «hasta el lunes» y miraría hacia un final; responde a Meddig?, no a Mióta?."
+        },
+        "Hétfő múlva": {
+          "en": "múlva needs an amount of time (két nap múlva = in two days); it does not go with a day name.",
+          "es": "múlva necesita una cantidad de tiempo (két nap múlva = dentro de dos días); no va con el nombre de un día."
+        }
+      },
+      "examples": [
+        "Reggel óta dolgozom.",
+        "Hétfő óta nem alszom jól."
+      ],
+      "tr": {
+        "en": "Since when have you been ill? I have been ill since Monday.",
+        "es": "¿Desde cuándo estás enfermo? Estoy enfermo desde el lunes."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f07",
+      "kind": "form",
+      "verb": "hat",
+      "person": "-kor",
+      "answer": "hatkor",
+      "table": "kor-times"
+    },
+    {
+      "id": "ido-hatarozok-c08",
+      "sentence": "Mióta laksz Szegeden? Március ___ lakom itt.",
+      "options": [
+        "múlva",
+        "óta",
+        "ezelőtt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Mióta asks since when, so the answer is a starting point + óta: Március óta. The verb lakom stays in the present.",
+        "es": "Mióta pregunta desde cuándo, así que la respuesta es un punto de inicio + óta: Március óta. El verbo lakom se queda en presente."
+      },
+      "wrong": {
+        "múlva": {
+          "en": "múlva means 'in ...' counted from now and needs an amount of time (két hónap múlva); it does not go with a month name.",
+          "es": "múlva significa «dentro de ...» contado desde ahora y necesita una cantidad de tiempo (két hónap múlva); no va con el nombre de un mes."
+        },
+        "ezelőtt": {
+          "en": "ezelőtt means 'ago' and goes with an amount of time plus -val/-vel (két hónappal ezelőtt); it does not follow a month name.",
+          "es": "ezelőtt significa «hace» y va con una cantidad de tiempo más -val/-vel (két hónappal ezelőtt); no sigue al nombre de un mes."
+        }
+      },
+      "examples": [
+        "Május óta dolgozom itt.",
+        "Tegnap óta esik az eső."
+      ],
+      "tr": {
+        "en": "Since when have you lived in Szeged? I have lived here since March.",
+        "es": "¿Desde cuándo vives en Szeged? Vivo aquí desde marzo."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f08",
+      "kind": "form",
+      "verb": "június",
+      "person": "-ig",
+      "answer": "júniusig",
+      "table": "ig-forms"
+    },
+    {
+      "id": "ido-hatarozok-c09",
+      "sentence": "Két hét ___ Szegeden leszek.",
+      "options": [
+        "óta",
+        "ezelőtt",
+        "múlva"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "leszek is the future, and an amount of time counted from now takes múlva: Két hét múlva (in two weeks).",
+        "es": "leszek es futuro, y una cantidad de tiempo contada desde ahora lleva múlva: Két hét múlva (dentro de dos semanas)."
+      },
+      "wrong": {
+        "óta": {
+          "en": "óta follows a starting point and goes with the present (Hétfő óta Szegeden vagyok); it does not fit leszek.",
+          "es": "óta sigue a un punto de inicio y va con el presente (Hétfő óta Szegeden vagyok); no encaja con leszek."
+        },
+        "ezelőtt": {
+          "en": "ezelőtt means 'ago' and needs the past and -val/-vel: Két héttel ezelőtt Szegeden voltam.",
+          "es": "ezelőtt significa «hace» y necesita pasado y -val/-vel: Két héttel ezelőtt Szegeden voltam."
+        }
+      },
+      "examples": [
+        "Öt perc múlva jövök.",
+        "Három nap múlva Debrecenbe megyek."
+      ],
+      "tr": {
+        "en": "In two weeks I'll be in Szeged.",
+        "es": "Dentro de dos semanas estaré en Szeged."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f09",
+      "kind": "form",
+      "verb": "nap",
+      "person": "-val/-vel",
+      "answer": "nappal",
+      "table": "ago-forms"
+    },
+    {
+      "id": "ido-hatarozok-w03",
+      "kind": "why",
+      "es": "Két hét múlva Szegeden leszek.",
+      "target": "múlva",
+      "tr": {
+        "en": "In two weeks I'll be in Szeged.",
+        "es": "Dentro de dos semanas estaré en Szeged."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "múlva: a time in the past, 'two weeks ago'",
+            "es": "múlva: un tiempo en el pasado, «hace dos semanas»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Két héttel ezelőtt Szegeden voltam; leszek and múlva both point to the future.",
+            "es": "Con esta regla la frase sería Két héttel ezelőtt Szegeden voltam; leszek y múlva apuntan los dos al futuro."
+          }
+        },
+        {
+          "text": {
+            "en": "múlva: how long it lasts, 'for two weeks'",
+            "es": "múlva: cuánto dura, «durante dos semanas»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Két hétig Szegeden leszek (I will be in Szeged for two weeks); múlva says when, not how long.",
+            "es": "Con esta regla la frase sería Két hétig Szegeden leszek (estaré en Szeged durante dos semanas); múlva dice cuándo, no cuánto dura."
+          }
+        },
+        {
+          "text": {
+            "en": "múlva: a time counted ahead from now; the noun stays singular (két hét)",
+            "es": "múlva: un tiempo contado hacia adelante desde ahora; el sustantivo queda en singular (két hét)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "ido-hatarozok-c10",
+      "sentence": "Öt perccel ___ még itt volt Anna.",
+      "options": [
+        "múlva",
+        "ezelőtt",
+        "óta"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "perccel (-vel) plus the past volt is 'ago': Öt perccel ezelőtt (five minutes ago).",
+        "es": "perccel (-vel) más el pasado volt es «hace»: Öt perccel ezelőtt (hace cinco minutos)."
+      },
+      "wrong": {
+        "múlva": {
+          "en": "múlva takes the plain noun (öt perc múlva) and looks to the future; it does not go with perccel or volt.",
+          "es": "múlva lleva el sustantivo sin terminación (öt perc múlva) y mira al futuro; no va con perccel ni con volt."
+        },
+        "óta": {
+          "en": "óta follows a starting point (hétfő óta) and goes with the present; it does not take perccel.",
+          "es": "óta sigue a un punto de inicio (hétfő óta) y va con el presente; no admite perccel."
+        }
+      },
+      "examples": [
+        "Két évvel ezelőtt Szegeden laktam.",
+        "Három nappal ezelőtt Debrecenben voltam."
+      ],
+      "tr": {
+        "en": "Five minutes ago Anna was still here.",
+        "es": "Hace cinco minutos Anna todavía estaba aquí."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f10",
+      "kind": "form",
+      "verb": "tizenkettő",
+      "person": "-kor",
+      "answer": "tizenkettőkor",
+      "table": "kor-times"
+    },
+    {
+      "id": "ido-hatarozok-c11",
+      "sentence": "Mikor érkeztél? ___.",
+      "options": [
+        "Öt percig",
+        "Öt perc múlva",
+        "Öt perccel ezelőtt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "érkeztél is the past, so 'five minutes ago' is Öt perccel ezelőtt.",
+        "es": "érkeztél es pasado, así que «hace cinco minutos» es Öt perccel ezelőtt."
+      },
+      "wrong": {
+        "Öt percig": {
+          "en": "Öt percig means 'for five minutes' (how long), not when you arrived.",
+          "es": "Öt percig significa «durante cinco minutos» (cuánto tiempo), no cuándo llegaste."
+        },
+        "Öt perc múlva": {
+          "en": "Öt perc múlva means 'in five minutes' and looks to the future; it does not fit a past arrival.",
+          "es": "Öt perc múlva significa «dentro de cinco minutos» y mira al futuro; no encaja con una llegada en el pasado."
+        }
+      },
+      "examples": [
+        "Egy órával ezelőtt érkeztem.",
+        "Két héttel ezelőtt Budapesten voltam."
+      ],
+      "tr": {
+        "en": "When did you arrive? Five minutes ago.",
+        "es": "¿Cuándo llegaste? Hace cinco minutos."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f11",
+      "kind": "form",
+      "verb": "hétfő",
+      "person": "-ig",
+      "answer": "hétfőig",
+      "table": "ig-forms"
+    },
+    {
+      "id": "ido-hatarozok-c12",
+      "sentence": "___ vagy itt? Péntekig.",
+      "options": [
+        "Mióta",
+        "Meddig",
+        "Mikor"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Péntekig is an end point (until Friday), so the question is Meddig? (until when).",
+        "es": "Péntekig es un punto final (hasta el viernes), así que la pregunta es Meddig? (hasta cuándo)."
+      },
+      "wrong": {
+        "Mióta": {
+          "en": "Mióta vagy itt? asks 'since when' and expects an answer like Hétfő óta.",
+          "es": "Mióta vagy itt? pregunta «desde cuándo» y espera una respuesta como Hétfő óta."
+        },
+        "Mikor": {
+          "en": "Mikor vagy itt? asks 'when' (at what moment) and expects an answer like Ötkor.",
+          "es": "Mikor vagy itt? pregunta «cuándo» (en qué momento) y espera una respuesta como Ötkor."
+        }
+      },
+      "examples": [
+        "Meddig maradsz?",
+        "Meddig dolgozol ma?"
+      ],
+      "tr": {
+        "en": "Until when are you here? Until Friday.",
+        "es": "¿Hasta cuándo estás aquí? Hasta el viernes."
+      }
+    },
+    {
+      "id": "ido-hatarozok-f12",
+      "kind": "form",
+      "verb": "óra",
+      "person": "-val/-vel",
+      "answer": "órával",
+      "table": "ago-forms"
+    },
+    {
+      "id": "ido-hatarozok-w04",
+      "kind": "why",
+      "es": "Öt perccel ezelőtt még itt volt Anna.",
+      "target": "ezelőtt",
+      "tr": {
+        "en": "Five minutes ago Anna was still here.",
+        "es": "Hace cinco minutos Anna todavía estaba aquí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ezelőtt: 'from now', with a verb in the future",
+            "es": "ezelőtt: «dentro de», con un verbo en futuro"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Öt perc múlva itt lesz Anna (Anna will be here in five minutes); volt is the past.",
+            "es": "Con esta regla la frase sería Öt perc múlva itt lesz Anna (Anna estará aquí dentro de cinco minutos); volt es pasado."
+          }
+        },
+        {
+          "text": {
+            "en": "ezelőtt: 'ago', with -val/-vel on the time word and a verb in the past",
+            "es": "ezelőtt: «hace», con -val/-vel en la palabra de tiempo y un verbo en pasado"
+          }
+        },
+        {
+          "text": {
+            "en": "ezelőtt: 'since', for a state that is still true",
+            "es": "ezelőtt: «desde», para un estado que sigue siendo cierto"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use óta, like Hétfő óta itt van Anna (Anna has been here since Monday).",
+            "es": "Con esta regla la frase usaría óta, como Hétfő óta itt van Anna (Anna está aquí desde el lunes)."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ido-hatarozok-c13",
+      "sentence": "___ jössz haza? Öt perc múlva.",
+      "options": [
+        "Meddig",
+        "Mikor",
+        "Mióta"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Öt perc múlva says when something will happen, so the question is Mikor?.",
+        "es": "Öt perc múlva dice cuándo pasará algo, así que la pregunta es Mikor?."
+      },
+      "wrong": {
+        "Meddig": {
+          "en": "Meddig jössz haza? would ask 'until when', and the answer would end in -ig.",
+          "es": "Meddig jössz haza? preguntaría «hasta cuándo», y la respuesta terminaría en -ig."
+        },
+        "Mióta": {
+          "en": "Mióta jössz haza? would ask 'since when', and the answer would use óta.",
+          "es": "Mióta jössz haza? preguntaría «desde cuándo», y la respuesta usaría óta."
+        }
+      },
+      "examples": [
+        "Mikor érkezel?",
+        "Mikor kezdesz dolgozni?"
+      ],
+      "tr": {
+        "en": "When are you coming home? In five minutes.",
+        "es": "¿Cuándo vienes a casa? Dentro de cinco minutos."
+      }
+    },
+    {
+      "id": "ido-hatarozok-c14",
+      "sentence": "Hétfőtől ___ dolgozom.",
+      "options": [
+        "péntek óta",
+        "péntek múlva",
+        "péntekig"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Hétfőtől means 'from Monday', and the end of the stretch takes -ig: péntekig. Hétfőtől péntekig = Monday to Friday.",
+        "es": "Hétfőtől significa «desde el lunes», y el final del periodo lleva -ig: péntekig. Hétfőtől péntekig = de lunes a viernes."
+      },
+      "wrong": {
+        "péntek óta": {
+          "en": "péntek óta would mean 'since Friday', a starting point, which does not fit after 'from Monday'.",
+          "es": "péntek óta significaría «desde el viernes», un punto de inicio, que no encaja después de «desde el lunes»."
+        },
+        "péntek múlva": {
+          "en": "múlva needs an amount of time (két nap múlva), not a day name.",
+          "es": "múlva necesita una cantidad de tiempo (két nap múlva), no el nombre de un día."
+        }
+      },
+      "examples": [
+        "Nyolctól ötig dolgozom.",
+        "Hétfőtől csütörtökig itt vagyok."
+      ],
+      "tr": {
+        "en": "I work from Monday to Friday.",
+        "es": "Trabajo de lunes a viernes."
+      }
+    }
+  ]
+}

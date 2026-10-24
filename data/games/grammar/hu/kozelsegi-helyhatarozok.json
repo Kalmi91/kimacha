@@ -1,0 +1,1251 @@
+{
+  "schema": 2,
+  "topic": "kozelsegi-helyhatarozok",
+  "level": "A1",
+  "title": {
+    "en": "Near someone: -nál, -hoz, -tól",
+    "es": "Cerca de alguien: -nál, -hoz, -tól"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has three short endings for a person (or a point) where you are, where you are going, or where you come from: -nál/-nél (at someone's place, with someone), -hoz/-hez/-höz (to someone) and -tól/-től (from someone). English needs three little phrases ('at the doctor's', 'to Anna', 'from my friend'); Hungarian just glues the ending onto the word: az orvosnál, Annához, a baráttól. Each ending has two or three shapes, chosen by the vowels of the word (vowel harmony).",
+        "es": "El húngaro tiene tres terminaciones cortas para una persona (o un punto): donde estás, a donde vas y de donde vienes: -nál/-nél (en casa de alguien, con alguien), -hoz/-hez/-höz (a, hacia alguien) y -tól/-től (de alguien). Donde el español dice «con el médico», «a casa de Anna» o «de mi amigo», el húngaro pega la terminación a la palabra: az orvosnál, Annához, a baráttól. Cada terminación tiene dos o tres formas, según las vocales de la palabra (armonía vocálica)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "kozelsegi-ragok",
+      "title": {
+        "en": "The three nearness endings",
+        "es": "Las tres terminaciones de cercanía"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "at (-nál/-nél)",
+          "es": "en casa de, con (-nál/-nél)"
+        },
+        {
+          "en": "to (-hoz/-hez/-höz)",
+          "es": "a, hacia (-hoz/-hez/-höz)"
+        },
+        {
+          "en": "from (-tól/-től)",
+          "es": "de (-tól/-től)"
+        }
+      ],
+      "rows": [
+        [
+          "Anna",
+          "Annánál",
+          "Annához",
+          "Annától"
+        ],
+        [
+          "Péter",
+          "Péternél",
+          "Péterhez",
+          "Pétertől"
+        ],
+        [
+          "Gábor",
+          "Gábornál",
+          "Gáborhoz",
+          "Gábortól"
+        ],
+        [
+          "Kati",
+          "Katinál",
+          "Katihoz",
+          "Katitól"
+        ],
+        [
+          "Lupita",
+          "Lupitánál",
+          "Lupitához",
+          "Lupitától"
+        ],
+        [
+          "orvos",
+          "orvosnál",
+          "orvoshoz",
+          "orvostól"
+        ],
+        [
+          "tanár",
+          "tanárnál",
+          "tanárhoz",
+          "tanártól"
+        ],
+        [
+          "barát",
+          "barátnál",
+          "baráthoz",
+          "baráttól"
+        ],
+        [
+          "testvér",
+          "testvérnél",
+          "testvérhez",
+          "testvértől"
+        ],
+        [
+          "főnök",
+          "főnöknél",
+          "főnökhöz",
+          "főnöktől"
+        ],
+        [
+          "fodrász",
+          "fodrásznál",
+          "fodrászhoz",
+          "fodrásztól"
+        ],
+        [
+          "kolléga",
+          "kollégánál",
+          "kollégához",
+          "kollégától"
+        ],
+        [
+          "nagymama",
+          "nagymamánál",
+          "nagymamához",
+          "nagymamától"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kozelsegi-hangrend",
+      "noTableDeck": true,
+      "title": {
+        "en": "Which shape? Look at the vowels",
+        "es": "Qué forma: mira las vocales"
+      },
+      "header": [
+        {
+          "en": "Vowels of the word",
+          "es": "Vocales de la palabra"
+        },
+        {
+          "en": "at",
+          "es": "en casa de, con"
+        },
+        {
+          "en": "to",
+          "es": "a, hacia"
+        },
+        {
+          "en": "from",
+          "es": "de"
+        }
+      ],
+      "rows": [
+        [
+          "a á o ó u ú",
+          "-nál",
+          "-hoz",
+          "-tól"
+        ],
+        [
+          "e é i í",
+          "-nél",
+          "-hez",
+          "-től"
+        ],
+        [
+          "ö ő ü ű",
+          "-nél",
+          "-höz",
+          "-től"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Choosing the shape",
+        "es": "Cómo elegir la forma"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Back vowels (a, á, o, ó, u, ú): -nál, -hoz, -tól.",
+            "es": "Vocales posteriores (a, á, o, ó, u, ú): -nál, -hoz, -tól."
+          },
+          "examples": [
+            {
+              "es": "Az orvosnál vagyok.",
+              "tr": {
+                "en": "I am at the doctor's.",
+                "es": "Estoy con el médico."
+              }
+            },
+            {
+              "es": "Gáborhoz megyek.",
+              "tr": {
+                "en": "I am going to Gábor's.",
+                "es": "Voy a casa de Gábor."
+              }
+            },
+            {
+              "es": "A baráttól jövök.",
+              "tr": {
+                "en": "I am coming from my friend's.",
+                "es": "Vengo de casa del amigo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Front vowels (e, é, i, í): -nél, -hez, -től.",
+            "es": "Vocales anteriores (e, é, i, í): -nél, -hez, -től."
+          },
+          "examples": [
+            {
+              "es": "Péternél lakom.",
+              "tr": {
+                "en": "I live at Péter's.",
+                "es": "Vivo en casa de Péter."
+              }
+            },
+            {
+              "es": "A testvérhez megyek.",
+              "tr": {
+                "en": "I am going to my brother's (or sister's).",
+                "es": "Voy a casa de mi hermano."
+              }
+            },
+            {
+              "es": "Pétertől kapok levelet.",
+              "tr": {
+                "en": "I get a letter from Péter.",
+                "es": "Recibo una carta de Péter."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Front rounded vowels (ö, ő, ü, ű): -nél, -höz, -től. Only the middle ending differs from the e-words: -hez becomes -höz.",
+            "es": "Vocales anteriores redondeadas (ö, ő, ü, ű): -nél, -höz, -től. Solo cambia la del medio: -hez se vuelve -höz."
+          },
+          "examples": [
+            {
+              "es": "A főnöknél vagyok.",
+              "tr": {
+                "en": "I am at the boss's.",
+                "es": "Estoy con el jefe."
+              }
+            },
+            {
+              "es": "A főnökhöz megyek.",
+              "tr": {
+                "en": "I am going to the boss.",
+                "es": "Voy a ver al jefe."
+              }
+            },
+            {
+              "es": "A főnöktől jövök.",
+              "tr": {
+                "en": "I am coming from the boss.",
+                "es": "Vengo de con el jefe."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A final -a or -e of the word lengthens to á or é before the ending: Anna, Annánál, Annához, Annától; kolléga, kollégánál.",
+            "es": "Una -a o -e final de la palabra se alarga a á o é antes de la terminación: Anna, Annánál, Annához, Annától; kolléga, kollégánál."
+          },
+          "examples": [
+            {
+              "es": "Lupitától kapok ajándékot.",
+              "tr": {
+                "en": "I get a gift from Lupita.",
+                "es": "Recibo un regalo de Lupita."
+              }
+            },
+            {
+              "es": "A kollégánál vagyok.",
+              "tr": {
+                "en": "I am at my colleague's.",
+                "es": "Estoy con el colega."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The spelling follows the sounds: barát + tól = baráttól (two t), orvos + nál = orvosnál, fodrász + hoz = fodrászhoz.",
+            "es": "La ortografía sigue los sonidos: barát + tól = baráttól (dos t), orvos + nál = orvosnál, fodrász + hoz = fodrászhoz."
+          },
+          "examples": [
+            {
+              "es": "A baráttól kapok ajándékot.",
+              "tr": {
+                "en": "I get a gift from the friend.",
+                "es": "Recibo un regalo del amigo."
+              }
+            },
+            {
+              "es": "A fodrásznál vagyok.",
+              "tr": {
+                "en": "I am at the hairdresser's.",
+                "es": "Estoy con el peluquero."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "At, to, from: when to use which",
+        "es": "En casa de, a, de: cuándo usar cada una"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "-nál/-nél: you are at someone's place or at a point (station, bank). Typical verbs: van, lakik, dolgozik.",
+            "es": "-nál/-nél: estás en casa de alguien o en un punto (estación, banco). Verbos típicos: van, lakik, dolgozik."
+          },
+          "examples": [
+            {
+              "es": "Péternél lakom.",
+              "tr": {
+                "en": "I live at Péter's.",
+                "es": "Vivo en casa de Péter."
+              }
+            },
+            {
+              "es": "Anna a banknál dolgozik.",
+              "tr": {
+                "en": "Anna works at the bank.",
+                "es": "Anna trabaja en el banco."
+              }
+            },
+            {
+              "es": "Az állomásnál találkozunk.",
+              "tr": {
+                "en": "We'll meet at the station.",
+                "es": "Nos vemos en la estación."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-hoz/-hez/-höz: you go to someone (megy, jön). It also goes with közel (near).",
+            "es": "-hoz/-hez/-höz: vas hacia alguien (megy, jön). También va con közel (cerca)."
+          },
+          "examples": [
+            {
+              "es": "Az orvoshoz megyek.",
+              "tr": {
+                "en": "I am going to the doctor.",
+                "es": "Voy a ver al médico."
+              }
+            },
+            {
+              "es": "Péterhez megyek.",
+              "tr": {
+                "en": "I am going to Péter's.",
+                "es": "Voy a casa de Péter."
+              }
+            },
+            {
+              "es": "Közel lakom a parkhoz.",
+              "tr": {
+                "en": "I live close to the park.",
+                "es": "Vivo cerca del parque."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-tól/-től: you come from someone, you get something from someone. It also goes with messze (far).",
+            "es": "-tól/-től: vienes de alguien, recibes algo de alguien. También va con messze (lejos)."
+          },
+          "examples": [
+            {
+              "es": "Annától kapok levelet.",
+              "tr": {
+                "en": "I get a letter from Anna.",
+                "es": "Recibo una carta de Anna."
+              }
+            },
+            {
+              "es": "A fodrásztól jövök.",
+              "tr": {
+                "en": "I am coming from the hairdresser's.",
+                "es": "Vengo del peluquero."
+              }
+            },
+            {
+              "es": "Messze lakom a várostól.",
+              "tr": {
+                "en": "I live far from the town.",
+                "es": "Vivo lejos de la ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Questions: Kinél? (at whose place), Kihez? (to whom), Kitől? (from whom). The ending of the question word is the ending of the answer.",
+            "es": "Preguntas: Kinél? (en casa de quién), Kihez? (a quién), Kitől? (de quién). La terminación de la pregunta es la de la respuesta."
+          },
+          "examples": [
+            {
+              "es": "Kinél vagy? Péternél.",
+              "tr": {
+                "en": "Whose place are you at? At Péter's.",
+                "es": "¿Con quién estás? Con Péter."
+              }
+            },
+            {
+              "es": "Kihez mész? A fodrászhoz.",
+              "tr": {
+                "en": "Who are you going to? To the hairdresser's.",
+                "es": "¿A quién vas a ver? Al peluquero."
+              }
+            },
+            {
+              "es": "Kitől kapsz levelet? Annától.",
+              "tr": {
+                "en": "Who do you get a letter from? From Anna.",
+                "es": "¿De quién recibes una carta? De Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Person or building? To or from?",
+        "es": "¿Persona o edificio? ¿A o de?"
+      },
+      "pairs": [
+        {
+          "a": "Az orvosnál vagyok.",
+          "b": "A kórházban vagyok.",
+          "note": {
+            "en": "A person takes -nál/-nél (at their place). A building or room takes -ban/-ben (inside).",
+            "es": "Una persona lleva -nál/-nél (en su casa o con ella). Un edificio o cuarto lleva -ban/-ben (dentro)."
+          },
+          "examples": [
+            {
+              "es": "A fodrásznál vagyok.",
+              "tr": {
+                "en": "I am at the hairdresser's.",
+                "es": "Estoy con el peluquero."
+              }
+            },
+            {
+              "es": "Az étteremben vagyok.",
+              "tr": {
+                "en": "I am in the restaurant.",
+                "es": "Estoy en el restaurante."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Az orvoshoz megyek.",
+          "b": "Az orvostól jövök.",
+          "note": {
+            "en": "Same word, opposite direction: -hoz = toward the doctor, -tól = away from the doctor.",
+            "es": "La misma palabra, dirección opuesta: -hoz = hacia el médico, -tól = desde el médico."
+          },
+          "examples": [
+            {
+              "es": "Annához megyek.",
+              "tr": {
+                "en": "I am going to Anna's.",
+                "es": "Voy a casa de Anna."
+              }
+            },
+            {
+              "es": "Annától jövök.",
+              "tr": {
+                "en": "I am coming from Anna's.",
+                "es": "Vengo de casa de Anna."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Közel lakom a parkhoz.",
+          "b": "Messze lakom a parktól.",
+          "note": {
+            "en": "közel (near) takes -hoz, messze (far) takes -tól.",
+            "es": "közel (cerca) lleva -hoz, messze (lejos) lleva -tól."
+          },
+          "examples": [
+            {
+              "es": "Közel lakunk a városhoz.",
+              "tr": {
+                "en": "We live close to the town.",
+                "es": "Vivimos cerca de la ciudad."
+              }
+            },
+            {
+              "es": "Messze lakunk a várostól.",
+              "tr": {
+                "en": "We live far from the town.",
+                "es": "Vivimos lejos de la ciudad."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: do not use -ban for people. 'At the doctor's' is az orvosnál, never az orvosban (that would be 'inside the doctor'). Keep -ban/-ben for rooms, buildings and cities (a kórházban). Watch the spelling too: barát + tól = baráttól, and the final -a of Anna becomes á.",
+        "es": "Trampa clásica: no uses -ban con personas. «Con el médico» o «en casa del médico» es az orvosnál, nunca az orvosban (sería «dentro del médico»). Deja -ban/-ben para cuartos, edificios y ciudades (a kórházban). Cuidado con la ortografía: barát + tól = baráttól, y la -a final de Anna se alarga a á."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has three endings for people. First, «nál» or «nél» means at someone's place: «Az orvosnál vagyok». Second, «hoz», «hez» or «höz» means to someone: «Az orvoshoz megyek». Third, «tól» or «től» means from someone: «Annától kapok levelet». The vowels of the word decide the shape: «Gábornál», «Péternél», «a főnöknél». For people never use «ban»: it is for rooms and buildings, like «a kórházban».",
+    "es": "El húngaro tiene tres terminaciones para personas. Primero, «nál» o «nél» significa en casa de alguien o con alguien: «Az orvosnál vagyok». Segundo, «hoz», «hez» o «höz» significa hacia alguien: «Az orvoshoz megyek». Tercero, «tól» o «től» significa de alguien: «Annától kapok levelet». Las vocales de la palabra deciden la forma: «Gábornál», «Péternél», «a főnöknél». Con personas no uses «ban»: es para cuartos y edificios, como «a kórházban»."
+  },
+  "items": [
+    {
+      "id": "kozelsegi-helyhatarozok-c01",
+      "sentence": "Most ___ vagyok.",
+      "options": [
+        "az orvosnál",
+        "az orvoshoz",
+        "az orvostól"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "vagyok says you are somewhere, and a person's place takes -nál: az orvosnál (at the doctor's).",
+        "es": "vagyok dice que estás en un lugar, y el lugar de una persona lleva -nál: az orvosnál (con el médico)."
+      },
+      "wrong": {
+        "az orvoshoz": {
+          "en": "This form means 'to the doctor' and goes with a movement verb (Az orvoshoz megyek); vagyok says you are already there.",
+          "es": "Esta forma significa «hacia el médico» y va con un verbo de movimiento (Az orvoshoz megyek); vagyok dice que ya estás ahí."
+        },
+        "az orvostól": {
+          "en": "This form is for 'from the doctor' and goes with jövök (I am coming); it does not say where you are.",
+          "es": "Esta forma es para «desde el médico» y va con jövök (vengo); no dice dónde estás."
+        }
+      },
+      "examples": [
+        "A fodrásznál vagyok.",
+        "Péternél vagyok."
+      ],
+      "tr": {
+        "en": "Right now I'm at the doctor's.",
+        "es": "Ahora estoy con el médico."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f01",
+      "kind": "form",
+      "verb": "Anna",
+      "person": "-nál/-nél",
+      "answer": "Annánál",
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c02",
+      "sentence": "Holnap ___ megyek.",
+      "options": [
+        "Annához",
+        "Annánál",
+        "Annától"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "megyek is a movement verb, so you need 'to': Annához.",
+        "es": "megyek es un verbo de movimiento, así que necesitas «a, hacia»: Annához."
+      },
+      "wrong": {
+        "Annánál": {
+          "en": "This form is 'at Anna's' (Annánál vagyok): where you stay, not where you go.",
+          "es": "Esta forma es «en casa de Anna» (Annánál vagyok): dónde estás, no a dónde vas."
+        },
+        "Annától": {
+          "en": "This form is 'from Anna': the sentence would say you leave Anna, but here Anna is the goal.",
+          "es": "Esta forma es «de Anna»: la frase diría que sales de con Anna, pero aquí Anna es el destino."
+        }
+      },
+      "examples": [
+        "Péterhez megyek.",
+        "Holnap a főnökhöz megyek."
+      ],
+      "tr": {
+        "en": "Tomorrow I'm going to Anna's.",
+        "es": "Mañana voy a casa de Anna."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f02",
+      "kind": "form",
+      "verb": "orvos",
+      "person": "-hoz/-hez/-höz",
+      "answer": "orvoshoz",
+      "accept": [
+        "az orvoshoz"
+      ],
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c03",
+      "sentence": "Honnan jössz? A ___.",
+      "options": [
+        "fodrásztól",
+        "fodrászhoz",
+        "fodrásznál"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Honnan asks 'from where', and from a person is -tól: a fodrásztól.",
+        "es": "Honnan pregunta «de dónde», y «de una persona» es -tól: a fodrásztól."
+      },
+      "wrong": {
+        "fodrászhoz": {
+          "en": "This form means 'to the hairdresser' and answers where you are going, not where you come from.",
+          "es": "Esta forma significa «hacia el peluquero» y responde a dónde vas, no de dónde vienes."
+        },
+        "fodrásznál": {
+          "en": "This form means 'at the hairdresser's' and answers where you are, not where you come from.",
+          "es": "Esta forma significa «con el peluquero» y responde dónde estás, no de dónde vienes."
+        }
+      },
+      "examples": [
+        "Az orvostól jövök.",
+        "Annától jövök."
+      ],
+      "tr": {
+        "en": "Where are you coming from? From the hairdresser's.",
+        "es": "¿De dónde vienes? Del peluquero."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f03",
+      "kind": "form",
+      "verb": "barát",
+      "person": "-tól/-től",
+      "answer": "baráttól",
+      "accept": [
+        "a baráttól"
+      ],
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-w01",
+      "kind": "why",
+      "es": "Az orvosnál vagyok.",
+      "target": "orvosnál",
+      "tr": {
+        "en": "I'm at the doctor's.",
+        "es": "Estoy con el médico."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A person's place: -nál/-nél (not -ban)",
+            "es": "El lugar de una persona: -nál/-nél (no -ban)"
+          }
+        },
+        {
+          "text": {
+            "en": "A building or room: -ban/-ben",
+            "es": "Un edificio o cuarto: -ban/-ben"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Az orvosban vagyok, 'inside the doctor'; an orvos is a person, not a room.",
+            "es": "Con esta regla la frase sería Az orvosban vagyok, «dentro del médico»; un orvos es una persona, no un cuarto."
+          }
+        },
+        {
+          "text": {
+            "en": "A movement toward someone: -hoz/-hez/-höz",
+            "es": "Un movimiento hacia alguien: -hoz/-hez/-höz"
+          },
+          "wrong": {
+            "en": "With this rule you would be going to the doctor: Az orvoshoz megyek; here vagyok says you are already there.",
+            "es": "Con esta regla irías al médico: Az orvoshoz megyek; aquí vagyok dice que ya estás ahí."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c04",
+      "sentence": "Diego ___ lakik.",
+      "options": [
+        "Péternél",
+        "Péternál",
+        "Pétertől"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "lakik means 'lives', so -nál/-nél; Péter has the front vowels e and é, so -nél.",
+        "es": "lakik significa «vive», así que -nál/-nél; Péter tiene las vocales anteriores e y é, por eso -nél."
+      },
+      "wrong": {
+        "Péternál": {
+          "en": "Not a real form: Péter has front vowels (e, é), so the ending is -nél, not -nál.",
+          "es": "No es una forma real: Péter tiene vocales anteriores (e, é), así que la terminación es -nél, no -nál."
+        },
+        "Pétertől": {
+          "en": "This form means 'from Péter' (Pétertől jövök); it does not say where Diego lives.",
+          "es": "Esta forma significa «de Péter» (Pétertől jövök); no dice dónde vive Diego."
+        }
+      },
+      "examples": [
+        "Katinál lakom.",
+        "A nagymamánál lakunk."
+      ],
+      "tr": {
+        "en": "Diego lives at Péter's.",
+        "es": "Diego vive en casa de Péter."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f04",
+      "kind": "form",
+      "verb": "Péter",
+      "person": "-nál/-nél",
+      "answer": "Péternél",
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c05",
+      "sentence": "Messze lakom a ___.",
+      "options": [
+        "várostól",
+        "városnál",
+        "városhoz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "messze (far) goes with 'from': messze lakom a várostól, I live far from the town.",
+        "es": "messze (lejos) va con «de»: messze lakom a várostól, vivo lejos de la ciudad."
+      },
+      "wrong": {
+        "városnál": {
+          "en": "This form means 'at the town', which does not fit messze (far).",
+          "es": "Esta forma significa «en la ciudad», lo cual no encaja con messze (lejos)."
+        },
+        "városhoz": {
+          "en": "This form goes with közel: Közel lakom a városhoz means 'I live close to the town'.",
+          "es": "Esta forma va con közel: Közel lakom a városhoz significa «vivo cerca de la ciudad»."
+        }
+      },
+      "examples": [
+        "Messze lakunk a parktól.",
+        "A bank messze van a szállodától."
+      ],
+      "tr": {
+        "en": "I live far from the town.",
+        "es": "Vivo lejos de la ciudad."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f05",
+      "kind": "form",
+      "verb": "főnök",
+      "person": "-hoz/-hez/-höz",
+      "answer": "főnökhöz",
+      "accept": [
+        "a főnökhöz"
+      ],
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c06",
+      "sentence": "Közel lakunk a ___.",
+      "options": [
+        "parkhoz",
+        "parktól",
+        "parknál"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "közel (near) goes with -hoz: közel a parkhoz.",
+        "es": "közel (cerca) va con -hoz: közel a parkhoz."
+      },
+      "wrong": {
+        "parktól": {
+          "en": "This form means far from the park (Messze lakunk a parktól): the opposite of közel.",
+          "es": "Esta forma significa lejos del parque (Messze lakunk a parktól): lo opuesto de közel."
+        },
+        "parknál": {
+          "en": "This form means 'at the park' (A parknál találkozunk); with közel you need -hoz.",
+          "es": "Esta forma significa «en el parque» (A parknál találkozunk); con közel hace falta -hoz."
+        }
+      },
+      "examples": [
+        "Közel lakom a városhoz.",
+        "A bolt közel van a szállodához."
+      ],
+      "tr": {
+        "en": "We live close to the park.",
+        "es": "Vivimos cerca del parque."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f06",
+      "kind": "form",
+      "verb": "tanár",
+      "person": "-tól/-től",
+      "answer": "tanártól",
+      "accept": [
+        "a tanártól"
+      ],
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-w02",
+      "kind": "why",
+      "es": "A fodrászhoz megyek.",
+      "target": "fodrászhoz",
+      "tr": {
+        "en": "I'm going to the hairdresser's.",
+        "es": "Voy a ver al peluquero."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Being at a person's place: -nál/-nél",
+            "es": "Estar en casa de alguien: -nál/-nél"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A fodrásznál vagyok, 'I am at the hairdresser's'; here megyek says you are on your way there.",
+            "es": "Con esta regla la frase sería A fodrásznál vagyok, «estoy con el peluquero»; aquí megyek dice que vas de camino."
+          }
+        },
+        {
+          "text": {
+            "en": "Going to a person: -hoz/-hez/-höz",
+            "es": "Ir hacia una persona: -hoz/-hez/-höz"
+          }
+        },
+        {
+          "text": {
+            "en": "Coming from a person: -tól/-től",
+            "es": "Venir de una persona: -tól/-től"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A fodrásztól jövök, 'I am coming from the hairdresser's'.",
+            "es": "Con esta regla la frase sería A fodrásztól jövök, «vengo del peluquero»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c07",
+      "sentence": "Levelet kapok a ___.",
+      "options": [
+        "baráttól",
+        "barától",
+        "baráthoz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kapok means 'I receive', and you receive from someone: -tól; barát + tól = baráttól (two t).",
+        "es": "kapok significa «recibo», y se recibe de alguien: -tól; barát + tól = baráttól (dos t)."
+      },
+      "wrong": {
+        "barától": {
+          "en": "Not a real form: the word ends in t and the ending starts with t, so you write two t: baráttól.",
+          "es": "No es una forma real: la palabra termina en t y la terminación empieza con t, así que se escriben dos t: baráttól."
+        },
+        "baráthoz": {
+          "en": "This form means 'to the friend' (A baráthoz megyek) and goes with a movement verb, not with receiving; the letter comes from the friend.",
+          "es": "Esta forma significa «hacia el amigo» (A baráthoz megyek) y va con un verbo de movimiento, no con recibir; la carta viene del amigo."
+        }
+      },
+      "examples": [
+        "Annától kapok levelet.",
+        "A főnöktől kapok ajándékot."
+      ],
+      "tr": {
+        "en": "I get a letter from the friend.",
+        "es": "Recibo una carta del amigo."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f07",
+      "kind": "form",
+      "verb": "Lupita",
+      "person": "-hoz/-hez/-höz",
+      "answer": "Lupitához",
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c08",
+      "sentence": "Péter a ___ megy.",
+      "options": [
+        "főnökhöz",
+        "főnökhoz",
+        "főnöktől"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "megy needs 'to'; főnök has the vowels ö and ö, so the ending is -höz: főnökhöz.",
+        "es": "megy necesita «a, hacia»; főnök tiene las vocales ö y ö, así que la terminación es -höz: főnökhöz."
+      },
+      "wrong": {
+        "főnökhoz": {
+          "en": "Not a real form: with ö in the word the ending is -höz, not -hoz.",
+          "es": "No es una forma real: con ö en la palabra la terminación es -höz, no -hoz."
+        },
+        "főnöktől": {
+          "en": "This form means 'from the boss' (A főnöktől jön); Péter is going toward him.",
+          "es": "Esta forma significa «de con el jefe» (A főnöktől jön); Péter va hacia él."
+        }
+      },
+      "examples": [
+        "A tanárhoz megyek.",
+        "A testvérhez megyek."
+      ],
+      "tr": {
+        "en": "Péter is going to the boss.",
+        "es": "Péter va a ver al jefe."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f08",
+      "kind": "form",
+      "verb": "fodrász",
+      "person": "-nál/-nél",
+      "answer": "fodrásznál",
+      "accept": [
+        "a fodrásznál"
+      ],
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c09",
+      "sentence": "Lupita ___ van.",
+      "options": [
+        "Annánál",
+        "Annanál",
+        "Annához"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "van says where Lupita is, so -nál; the final a of Anna becomes á: Annánál.",
+        "es": "van dice dónde está Lupita, así que -nál; la a final de Anna se alarga a á: Annánál."
+      },
+      "wrong": {
+        "Annanál": {
+          "en": "Not a real form: the final a of Anna lengthens to á before the ending.",
+          "es": "No es una forma real: la a final de Anna se alarga a á antes de la terminación."
+        },
+        "Annához": {
+          "en": "This form means 'to Anna' (Lupita Annához megy); with van it does not fit.",
+          "es": "Esta forma significa «hacia Anna» (Lupita Annához megy); con van no encaja."
+        }
+      },
+      "examples": [
+        "Gábor a nagymamánál van.",
+        "Kati a kollégánál van."
+      ],
+      "tr": {
+        "en": "Lupita is at Anna's.",
+        "es": "Lupita está en casa de Anna."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f09",
+      "kind": "form",
+      "verb": "testvér",
+      "person": "-tól/-től",
+      "answer": "testvértől",
+      "accept": [
+        "a testvértől"
+      ],
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-w03",
+      "kind": "why",
+      "es": "Péter a főnöktől kap levelet.",
+      "target": "főnöktől",
+      "tr": {
+        "en": "Péter gets a letter from the boss.",
+        "es": "Péter recibe una carta del jefe."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Going to a person: -hoz/-hez/-höz",
+            "es": "Ir hacia una persona: -hoz/-hez/-höz"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Péter a főnökhöz megy, 'Péter goes to the boss'; here the letter comes from the boss.",
+            "es": "Con esta regla la frase sería Péter a főnökhöz megy, «Péter va con el jefe»; aquí la carta viene del jefe."
+          }
+        },
+        {
+          "text": {
+            "en": "Being at a person's place: -nál/-nél",
+            "es": "Estar en casa de alguien: -nál/-nél"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Péter a főnöknél kap levelet, 'Péter gets a letter at the boss's place'; the letter does not come from there but from the boss.",
+            "es": "Con esta regla la frase sería Péter a főnöknél kap levelet, «Péter recibe una carta en casa del jefe»; la carta no viene de ahí sino del jefe."
+          }
+        },
+        {
+          "text": {
+            "en": "From a person: -tól/-től (ö is a front vowel, so -től)",
+            "es": "De una persona: -tól/-től (ö es vocal anterior, así que -től)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c10",
+      "sentence": "___ kapok ajándékot.",
+      "options": [
+        "Gábortól",
+        "Gáborhoz",
+        "Gábortől"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You receive a gift from Gábor: -tól (Gábor has back vowels).",
+        "es": "Recibes un regalo de Gábor: -tól (Gábor tiene vocales posteriores)."
+      },
+      "wrong": {
+        "Gáborhoz": {
+          "en": "This form means 'to Gábor' and goes with a movement (Gáborhoz megyek), not with receiving.",
+          "es": "Esta forma significa «hacia Gábor» y va con un movimiento (Gáborhoz megyek), no con recibir."
+        },
+        "Gábortől": {
+          "en": "Not a real form: Gábor has back vowels (á, o), so the ending is -tól, not -től.",
+          "es": "No es una forma real: Gábor tiene vocales posteriores (á, o), así que la terminación es -tól, no -től."
+        }
+      },
+      "examples": [
+        "Katitól kapok ajándékot.",
+        "A nagymamától kapok levelet."
+      ],
+      "tr": {
+        "en": "I get a gift from Gábor.",
+        "es": "Recibo un regalo de Gábor."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f10",
+      "kind": "form",
+      "verb": "Kati",
+      "person": "-nál/-nél",
+      "answer": "Katinál",
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c11",
+      "sentence": "Ő nincs a kórházban, az ___ van.",
+      "options": [
+        "orvosnál",
+        "orvosban",
+        "orvoshoz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A person takes -nál, a building takes -ban: a kórházban but az orvosnál.",
+        "es": "Una persona lleva -nál, un edificio lleva -ban: a kórházban pero az orvosnál."
+      },
+      "wrong": {
+        "orvosban": {
+          "en": "This form means 'inside the doctor': -ban is for rooms, buildings and cities, not for people.",
+          "es": "Esta forma significa «dentro del médico»: -ban es para cuartos, edificios y ciudades, no para personas."
+        },
+        "orvoshoz": {
+          "en": "This form means 'to the doctor' (Az orvoshoz megy); van says where someone is.",
+          "es": "Esta forma significa «hacia el médico» (Az orvoshoz megy); van dice dónde está alguien."
+        }
+      },
+      "examples": [
+        "Péter nincs otthon, Katinál van.",
+        "A fiú nincs az iskolában, a tanárnál van."
+      ],
+      "tr": {
+        "en": "He isn't in the hospital, he's at the doctor's.",
+        "es": "Él no está en el hospital, está con el médico."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f11",
+      "kind": "form",
+      "verb": "Gábor",
+      "person": "-hoz/-hez/-höz",
+      "answer": "Gáborhoz",
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c12",
+      "sentence": "___ kapsz levelet? Annától.",
+      "options": [
+        "Kitől",
+        "Kinél",
+        "Kihez"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The answer is Annától ('from Anna'), so the question word needs the same ending: Kitől?",
+        "es": "La respuesta es Annától («de Anna»), así que la palabra interrogativa lleva la misma terminación: Kitől?"
+      },
+      "wrong": {
+        "Kinél": {
+          "en": "Kinél asks 'at whose place' and expects Annánál.",
+          "es": "Kinél pregunta «en casa de quién» y espera Annánál."
+        },
+        "Kihez": {
+          "en": "Kihez asks 'to whom' and expects Annához.",
+          "es": "Kihez pregunta «a quién» y espera Annához."
+        }
+      },
+      "examples": [
+        "Kitől jössz?",
+        "Kitől kapsz ajándékot?"
+      ],
+      "tr": {
+        "en": "Who do you get a letter from? From Anna.",
+        "es": "¿De quién recibes una carta? De Anna."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c13",
+      "sentence": "___ mész? A fodrászhoz.",
+      "options": [
+        "Kihez",
+        "Kinél",
+        "Kitől"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The answer is a fodrászhoz ('to the hairdresser'), so Kihez?; mész means you are going.",
+        "es": "La respuesta es a fodrászhoz («hacia el peluquero»), así que Kihez?; mész significa que vas."
+      },
+      "wrong": {
+        "Kinél": {
+          "en": "Kinél asks 'at whose place' and expects A fodrásznál.",
+          "es": "Kinél pregunta «en casa de quién» y espera A fodrásznál."
+        },
+        "Kitől": {
+          "en": "Kitől asks 'from whom' and expects A fodrásztól.",
+          "es": "Kitől pregunta «de quién» y espera A fodrásztól."
+        }
+      },
+      "examples": [
+        "Kihez mész?",
+        "Kihez megy Anna?"
+      ],
+      "tr": {
+        "en": "Who are you going to? To the hairdresser's.",
+        "es": "¿A quién vas a ver? Al peluquero."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-f12",
+      "kind": "form",
+      "verb": "nagymama",
+      "person": "-tól/-től",
+      "answer": "nagymamától",
+      "accept": [
+        "a nagymamától"
+      ],
+      "table": "kozelsegi-ragok"
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-c14",
+      "sentence": "Holnap a ___ megyek.",
+      "options": [
+        "kollégához",
+        "kolléghoz",
+        "kollégától"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kolléga ends in a back vowel (a), so -hoz, and the final a becomes á: kollégához.",
+        "es": "kolléga termina en vocal posterior (a), así que -hoz, y la a final se alarga a á: kollégához."
+      },
+      "wrong": {
+        "kolléghoz": {
+          "en": "Not a real form: the final a does not disappear, it becomes á.",
+          "es": "No es una forma real: la a final no desaparece, se alarga a á."
+        },
+        "kollégától": {
+          "en": "This form means 'from the colleague' (A kollégától jövök): the opposite direction.",
+          "es": "Esta forma significa «de con el colega» (A kollégától jövök): la dirección opuesta."
+        }
+      },
+      "examples": [
+        "A kollégánál vagyok.",
+        "Gábor a kollégától jön."
+      ],
+      "tr": {
+        "en": "Tomorrow I'm going to my colleague's.",
+        "es": "Mañana voy a ver al colega."
+      }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok-w04",
+      "kind": "why",
+      "es": "Kati a kollégánál van.",
+      "target": "kollégánál",
+      "tr": {
+        "en": "Kati is at her colleague's.",
+        "es": "Kati está con el colega."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-nál, and the final a of kolléga lengthens to á",
+            "es": "-nál, y la a final de kolléga se alarga a á"
+          }
+        },
+        {
+          "text": {
+            "en": "-nél, because of the é in kolléga",
+            "es": "-nél, por la é de kolléga"
+          },
+          "wrong": {
+            "en": "With this rule the ending would be -nél; but the word ends in a back vowel (a), so it is -nál.",
+            "es": "Con esta regla la terminación sería -nél; pero la palabra termina en vocal posterior (a), así que es -nál."
+          }
+        },
+        {
+          "text": {
+            "en": "-hoz, going to a person",
+            "es": "-hoz, ir hacia una persona"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Kati a kollégához megy; van says she is already there.",
+            "es": "Con esta regla la frase sería Kati a kollégához megy; van dice que ya está ahí."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

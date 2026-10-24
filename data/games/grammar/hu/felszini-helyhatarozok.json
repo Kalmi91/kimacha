@@ -1,0 +1,632 @@
+{
+  "schema": 2,
+  "topic": "felszini-helyhatarozok",
+  "level": "A1",
+  "title": { "en": "On and at places: -on/-en/-ön, -ra/-re, -ról/-ről", "es": "En lugares abiertos y superficies: -on/-en/-ön, -ra/-re, -ról/-ről" },
+  "body": [
+    {
+      "kind": "text",
+      "text": { "en": "In the last lesson you learned the 'inside' endings. Hungarian has a second set for places where you are ON or AT something: surfaces (asztal, szék), open places (utca, tér, piac), public transport (busz, vonat) and many cities. The three endings again answer three questions: hol? -on/-en/-ön, hova? -ra/-re, honnan? -ról/-ről. So az utca (the street) becomes az utcán (on the street), az utcára (onto the street) and az utcáról (from the street). English also chooses between 'in', 'on' and 'at' (in the house, on the bus, at the station), but Hungarian makes its own choices, so you learn them place by place.", "es": "En la lección anterior viste las terminaciones de «dentro». El húngaro tiene un segundo juego para lugares donde estás SOBRE algo o EN un lugar abierto: superficies (asztal, szék), lugares abiertos (utca, tér, piac), transporte público (busz, vonat) y muchas ciudades. Las tres terminaciones contestan otra vez tres preguntas: hol? -on/-en/-ön, hova? -ra/-re, honnan? -ról/-ről. Así, az utca (la calle) pasa a az utcán (en la calle), az utcára (a la calle) y az utcáról (de la calle). El español usa «en» para todo; el húngaro separa los dos juegos: a házban (en la casa), pero az utcán (en la calle)." }
+    },
+    {
+      "kind": "table",
+      "id": "felszini-szavak",
+      "title": { "en": "The surface endings on common places", "es": "Las terminaciones de superficie en lugares comunes" },
+      "header": [
+        { "en": "Word", "es": "Palabra" },
+        { "en": "hol? (on, at): -on/-en/-ön", "es": "hol? (en, sobre): -on/-en/-ön" },
+        { "en": "hova? (onto, to): -ra/-re", "es": "hova? (a, sobre): -ra/-re" },
+        { "en": "honnan? (from): -ról/-ről", "es": "honnan? (de): -ról/-ről" }
+      ],
+      "rows": [
+        ["asztal", "asztalon", "asztalra", "asztalról"],
+        ["szék", "széken", "székre", "székről"],
+        ["föld", "földön", "földre", "földről"],
+        ["ágy", "ágyon", "ágyra", "ágyról"],
+        ["utca", "utcán", "utcára", "utcáról"],
+        ["tér", "téren", "térre", "térről"],
+        ["piac", "piacon", "piacra", "piacról"],
+        ["állomás", "állomáson", "állomásra", "állomásról"],
+        ["repülőtér", "repülőtéren", "repülőtérre", "repülőtérről"],
+        ["busz", "buszon", "buszra", "buszról"],
+        ["vonat", "vonaton", "vonatra", "vonatról"],
+        ["villamos", "villamoson", "villamosra", "villamosról"],
+        ["metró", "metrón", "metróra", "metróról"],
+        ["posta", "postán", "postára", "postáról"],
+        ["egyetem", "egyetemen", "egyetemre", "egyetemről"],
+        ["erkély", "erkélyen", "erkélyre", "erkélyről"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Which places take the surface endings?", "es": "¿Qué lugares llevan las terminaciones de superficie?" },
+      "items": [
+        {
+          "text": { "en": "Surfaces: things you put something on, or lie on: asztal, szék, ágy, föld.", "es": "Superficies: cosas sobre las que pones algo o te acuestas: asztal, szék, ágy, föld." },
+          "examples": [
+            { "es": "A kulcs az asztalon van.", "tr": { "en": "The key is on the table.", "es": "La llave está sobre la mesa." } },
+            { "es": "A táska a széken van.", "tr": { "en": "The bag is on the chair.", "es": "La bolsa está en la silla." } },
+            { "es": "A táska az ágyon van.", "tr": { "en": "The bag is on the bed.", "es": "La bolsa está en la cama." } }
+          ]
+        },
+        {
+          "text": { "en": "Streets, squares and open places: utca, tér, piac, állomás, repülőtér, híd, terasz, erkély.", "es": "Calles, plazas y lugares abiertos: utca, tér, piac, állomás, repülőtér, híd, terasz, erkély." },
+          "examples": [
+            { "es": "Az utcán sétálok.", "tr": { "en": "I walk along the street.", "es": "Camino por la calle." } },
+            { "es": "A piacon dolgozom.", "tr": { "en": "I work at the market.", "es": "Trabajo en el mercado." } },
+            { "es": "A repülőtéren vagyok.", "tr": { "en": "I am at the airport.", "es": "Estoy en el aeropuerto." } }
+          ]
+        },
+        {
+          "text": { "en": "Public transport: you are ON it: busz, vonat, villamos, metró.", "es": "Transporte público: vas SOBRE él: busz, vonat, villamos, metró." },
+          "examples": [
+            { "es": "A buszon vagyok.", "tr": { "en": "I am on the bus.", "es": "Estoy en el autobús." } },
+            { "es": "A vonaton vagyok.", "tr": { "en": "I am on the train.", "es": "Estoy en el tren." } },
+            { "es": "A villamoson vagyok.", "tr": { "en": "I am on the tram.", "es": "Estoy en el tranvía." } }
+          ]
+        },
+        {
+          "text": { "en": "A few buildings have to be learned together with their ending: posta, egyetem.", "es": "Unos pocos edificios hay que aprenderlos junto con su terminación: posta, egyetem." },
+          "examples": [
+            { "es": "A postán dolgozom.", "tr": { "en": "I work at the post office.", "es": "Trabajo en la oficina de correos." } },
+            { "es": "Az egyetemen tanulok.", "tr": { "en": "I study at the university.", "es": "Estudio en la universidad." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Which vowel: -on, -en or -ön?", "es": "¿Qué vocal: -on, -en u -ön?" },
+      "items": [
+        {
+          "text": { "en": "Back vowels (a á o ó u ú): -on, -ra, -ról.", "es": "Vocales posteriores (a á o ó u ú): -on, -ra, -ról." },
+          "examples": [
+            { "es": "A piacon vagyok.", "tr": { "en": "I am at the market.", "es": "Estoy en el mercado." } },
+            { "es": "Az állomáson várok.", "tr": { "en": "I am waiting at the station.", "es": "Espero en la estación." } },
+            { "es": "A vonaton vagyok.", "tr": { "en": "I am on the train.", "es": "Estoy en el tren." } }
+          ]
+        },
+        {
+          "text": { "en": "Front vowels without rounding (e é i í): -en, -re, -ről. (A few words with only i, í or é take the back endings anyway: híd → hídon, hídra, hídról.)", "es": "Vocales anteriores sin redondeo (e é i í): -en, -re, -ről. (Unas pocas palabras con solo i, í o é llevan igualmente las terminaciones posteriores: híd → hídon, hídra, hídról.)" },
+          "examples": [
+            { "es": "A téren sétálok.", "tr": { "en": "I walk in the square.", "es": "Camino en la plaza." } },
+            { "es": "Az egyetemen tanulok.", "tr": { "en": "I study at the university.", "es": "Estudio en la universidad." } },
+            { "es": "A táska a széken van.", "tr": { "en": "The bag is on the chair.", "es": "La bolsa está en la silla." } }
+          ]
+        },
+        {
+          "text": { "en": "Rounded front vowel last (ö ő ü ű): -ön, but still -re and -ről.", "es": "Última vocal anterior redondeada (ö ő ü ű): -ön, pero siguen -re y -ről." },
+          "examples": [
+            { "es": "A labda a földön van.", "tr": { "en": "The ball is on the ground.", "es": "La pelota está en el suelo." } },
+            { "es": "A földön alszom.", "tr": { "en": "I sleep on the ground.", "es": "Duermo en el suelo." } }
+          ]
+        },
+        {
+          "text": { "en": "After a vowel the ending is only -n, and a final a or e gets longer: utca → utcán, posta → postán, metró → metrón, tető → tetőn.", "es": "Después de una vocal la terminación es solo -n, y una a o e final se alarga: utca → utcán, posta → postán, metró → metrón, tető → tetőn." },
+          "examples": [
+            { "es": "Az utcán sétálok.", "tr": { "en": "I walk along the street.", "es": "Camino por la calle." } },
+            { "es": "A postán dolgozom.", "tr": { "en": "I work at the post office.", "es": "Trabajo en la oficina de correos." } },
+            { "es": "A metrón vagyok.", "tr": { "en": "I am on the metro.", "es": "Estoy en el metro." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "hol? hova? honnan?", "es": "hol? hova? honnan?" },
+      "points": [
+        {
+          "text": { "en": "hol? (where?) asks where you are or what you do there. Use -on/-en/-ön with vagyok, van, lakom, dolgozom, várok, sétálok.", "es": "hol? (¿dónde?) pregunta dónde estás o qué haces ahí. Usa -on/-en/-ön con vagyok, van, lakom, dolgozom, várok, sétálok." },
+          "examples": [
+            { "es": "Az állomáson várok.", "tr": { "en": "I am waiting at the station.", "es": "Espero en la estación." } },
+            { "es": "A piacon dolgozom.", "tr": { "en": "I work at the market.", "es": "Trabajo en el mercado." } },
+            { "es": "Budapesten lakom.", "tr": { "en": "I live in Budapest.", "es": "Vivo en Budapest." } }
+          ]
+        },
+        {
+          "text": { "en": "hova? (where to?) asks where you are heading. Use -ra/-re with megyek (I go), érkezem (I arrive), költözöm (I move).", "es": "hova? (¿adónde?) pregunta hacia dónde vas. Usa -ra/-re con megyek (voy), érkezem (llego), költözöm (me mudo)." },
+          "examples": [
+            { "es": "A piacra megyek.", "tr": { "en": "I am going to the market.", "es": "Voy al mercado." } },
+            { "es": "Az állomásra érkezem.", "tr": { "en": "I am arriving at the station.", "es": "Llego a la estación." } },
+            { "es": "Szegedre költözöm.", "tr": { "en": "I am moving to Szeged.", "es": "Me mudo a Szeged." } }
+          ]
+        },
+        {
+          "text": { "en": "honnan? (where from?) asks which place you come from. Use -ról/-ről with jövök (I come) and leszállok (I get off).", "es": "honnan? (¿de dónde?) pregunta de qué lugar vienes. Usa -ról/-ről con jövök (vengo) y leszállok (me bajo)." },
+          "examples": [
+            { "es": "A postáról jövök.", "tr": { "en": "I am coming from the post office.", "es": "Vengo de la oficina de correos." } },
+            { "es": "Leszállok a buszról.", "tr": { "en": "I get off the bus.", "es": "Me bajo del autobús." } },
+            { "es": "Budapestről jövök.", "tr": { "en": "I come from Budapest.", "es": "Vengo de Budapest." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "varos-nevek",
+      "title": { "en": "Cities and countries", "es": "Ciudades y países" },
+      "header": [
+        { "en": "Place", "es": "Lugar" },
+        { "en": "hol? (in, at)", "es": "hol? (en)" },
+        { "en": "hova? (to)", "es": "hova? (a)" },
+        { "en": "honnan? (from)", "es": "honnan? (de)" }
+      ],
+      "rows": [
+        ["Budapest", "Budapesten", "Budapestre", "Budapestről"],
+        ["Szeged", "Szegeden", "Szegedre", "Szegedről"],
+        ["Debrecen", "Debrecenben", "Debrecenbe", "Debrecenből"],
+        ["Győr", "Győrben", "Győrbe", "Győrből"],
+        ["Magyarország", "Magyarországon", "Magyarországra", "Magyarországról"],
+        ["Mexikó", "Mexikóban", "Mexikóba", "Mexikóból"],
+        ["Mexikóváros", "Mexikóvárosban", "Mexikóvárosba", "Mexikóvárosból"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Cities and countries", "es": "Ciudades y países" },
+      "items": [
+        {
+          "text": { "en": "Most Hungarian cities take the surface endings: Budapesten, Szegeden.", "es": "La mayoría de las ciudades húngaras llevan las terminaciones de superficie: Budapesten, Szegeden." },
+          "examples": [
+            { "es": "Budapesten lakom.", "tr": { "en": "I live in Budapest.", "es": "Vivo en Budapest." } },
+            { "es": "Szegeden dolgozom.", "tr": { "en": "I work in Szeged.", "es": "Trabajo en Szeged." } }
+          ]
+        },
+        {
+          "text": { "en": "A few cities take the inside endings instead: Debrecenben, Győrben. Learn them one by one.", "es": "Unas pocas ciudades llevan las terminaciones de «dentro»: Debrecenben, Győrben. Apréndelas una por una." },
+          "examples": [
+            { "es": "Debrecenben lakom.", "tr": { "en": "I live in Debrecen.", "es": "Vivo en Debrecen." } },
+            { "es": "Győrben dolgozom.", "tr": { "en": "I work in Győr.", "es": "Trabajo en Győr." } }
+          ]
+        },
+        {
+          "text": { "en": "Countries usually take -ban/-ben: Mexikóban. The big exception is Magyarország: Magyarországon. A city name ending in város takes -ban: Mexikóvárosban.", "es": "Los países suelen llevar -ban/-ben: Mexikóban. La gran excepción es Magyarország: Magyarországon. Un nombre de ciudad que termina en város lleva -ban: Mexikóvárosban." },
+          "examples": [
+            { "es": "Magyarországon lakom.", "tr": { "en": "I live in Hungary.", "es": "Vivo en Hungría." } },
+            { "es": "Mexikóban lakom.", "tr": { "en": "I live in Mexico.", "es": "Vivo en México." } },
+            { "es": "Lupita Mexikóvárosban lakik.", "tr": { "en": "Lupita lives in Mexico City.", "es": "Lupita vive en la Ciudad de México." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Stay or go, on or in", "es": "Quedarse o ir, sobre o dentro" },
+      "pairs": [
+        {
+          "a": "A piacon vagyok.",
+          "b": "A piacra megyek.",
+          "note": { "en": "The final n means you stay (-on/-en/-ön). -ra/-re means you move towards the place.", "es": "La n final significa que te quedas (-on/-en/-ön). -ra/-re significa que te mueves hacia el lugar." },
+          "examples": [
+            { "es": "Az állomáson vagyok.", "tr": { "en": "I am at the station.", "es": "Estoy en la estación." } },
+            { "es": "Az állomásra megyek.", "tr": { "en": "I am going to the station.", "es": "Voy a la estación." } },
+            { "es": "A teraszon vagyok.", "tr": { "en": "I am on the terrace.", "es": "Estoy en la terraza." } },
+            { "es": "A teraszra megyek.", "tr": { "en": "I am going out to the terrace.", "es": "Salgo a la terraza." } }
+          ]
+        },
+        {
+          "a": "A buszon vagyok.",
+          "b": "Az autóban vagyok.",
+          "note": { "en": "You are ON public transport (surface ending), but IN a car or a taxi (inside ending).", "es": "Vas SOBRE el transporte público (terminación de superficie), pero DENTRO de un coche o un taxi (terminación de «dentro»)." },
+          "examples": [
+            { "es": "A vonaton vagyok.", "tr": { "en": "I am on the train.", "es": "Estoy en el tren." } },
+            { "es": "A taxiban vagyok.", "tr": { "en": "I am in the taxi.", "es": "Estoy en el taxi." } }
+          ]
+        },
+        {
+          "a": "Budapesten lakom.",
+          "b": "Debrecenben lakom.",
+          "note": { "en": "Most cities take the surface ending, a few take the inside ending.", "es": "La mayoría de las ciudades llevan la terminación de superficie, unas pocas llevan la de «dentro»." },
+          "examples": [
+            { "es": "Szegeden lakom.", "tr": { "en": "I live in Szeged.", "es": "Vivo en Szeged." } },
+            { "es": "Győrben lakom.", "tr": { "en": "I live in Győr.", "es": "Vivo en Győr." } }
+          ]
+        },
+        {
+          "a": "Magyarországon lakom.",
+          "b": "Mexikóban lakom.",
+          "note": { "en": "Hungary is the exception: it takes -on, while most countries take -ban/-ben.", "es": "Hungría es la excepción: lleva -on, mientras que la mayoría de los países llevan -ban/-ben." },
+          "examples": [
+            { "es": "Magyarországra költözöm.", "tr": { "en": "I am moving to Hungary.", "es": "Me mudo a Hungría." } },
+            { "es": "Mexikóba költözöm.", "tr": { "en": "I am moving to Mexico.", "es": "Me mudo a México." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": { "en": "Classic trap: English and Spanish use one small word for most of these places (in the street, en la calle, en la casa), but Hungarian makes you choose: a closed room is a házban, an open place, a surface or public transport is az utcán, a buszon. When you meet a new place word, learn it together with its ending (a piacon, a postán, az egyetemen). And remember the city and country exceptions: Budapesten, but Debrecenben; Magyarországon, but Mexikóban.", "es": "Trampa clásica: el inglés y el español usan una sola palabrita para casi todos estos lugares (in the street, en la calle, en la casa), pero el húngaro te obliga a elegir: un cuarto cerrado es a házban; un lugar abierto, una superficie o el transporte público es az utcán, a buszon. Cuando conozcas una palabra de lugar nueva, apréndela junto con su terminación (a piacon, a postán, az egyetemen). Y recuerda las excepciones de ciudades y países: Budapesten, pero Debrecenben; Magyarországon, pero Mexikóban." }
+    }
+  ],
+  "speak": { "en": "Hungarian has a second set of place endings, for surfaces, open places, public transport and many cities. Use «on», «en» or «ön» to say where you are: «az asztalon», «a téren», «a földön». Use «ra» or «re» to say where you are going: «a piacra», «a térre». Use «ról» or «ről» to say where you come from: «a piacról», «a térről». For cities, say «Budapesten» or «Szegeden», but «Debrecenben», and the country is «Magyarországon». Listen to the three together: «A piacon vagyok. A piacra megyek. A piacról jövök.»", "es": "El húngaro tiene un segundo juego de terminaciones de lugar, para superficies, lugares abiertos, transporte público y muchas ciudades. Usa «on», «en» u «ön» para decir dónde estás: «az asztalon», «a téren», «a földön». Usa «ra» o «re» para decir adónde vas: «a piacra», «a térre». Usa «ról» o «ről» para decir de dónde vienes: «a piacról», «a térről». Para las ciudades, di «Budapesten» o «Szegeden», pero «Debrecenben», y el país es «Magyarországon». Escucha las tres juntas: «A piacon vagyok. A piacra megyek. A piacról jövök.»" },
+  "glossary": [
+    {
+      "word": "Budapest",
+      "gloss": { "en": "Budapest (capital of Hungary)", "es": "Budapest (capital de Hungría)" }
+    },
+    {
+      "word": "Szeged",
+      "gloss": { "en": "Szeged (city in southern Hungary)", "es": "Szeged (ciudad del sur de Hungría)" }
+    },
+    {
+      "word": "Debrecen",
+      "gloss": { "en": "Debrecen (city in eastern Hungary)", "es": "Debrecen (ciudad del este de Hungría)" }
+    },
+    {
+      "word": "Győr",
+      "gloss": { "en": "Győr (city in northwestern Hungary)", "es": "Győr (ciudad del noroeste de Hungría)" }
+    },
+    {
+      "word": "Mexikó",
+      "gloss": { "en": "Mexico", "es": "México" }
+    },
+    {
+      "word": "Mexikóváros",
+      "gloss": { "en": "Mexico City", "es": "Ciudad de México" }
+    }
+  ],
+  "items": [
+    {
+      "id": "felszini-helyhatarozok-c01",
+      "sentence": "Hol vagy? Az ___ vagyok.",
+      "options": ["állomáson", "állomásra", "állomásról"],
+      "correct": 0,
+      "why": { "en": "Hol? asks where you are, so -on: állomás has back vowels (á, o), so állomáson.", "es": "Hol? pregunta dónde estás, así que -on: állomás tiene vocales posteriores (á, o), por eso állomáson." },
+      "wrong": {
+        "állomásra": { "en": "állomásra would mean 'to the station' (Az állomásra megyek); with vagyok you are already there.", "es": "állomásra significaría «a la estación» (Az állomásra megyek); con vagyok ya estás ahí." },
+        "állomásról": { "en": "állomásról would mean 'from the station' (Az állomásról jövök).", "es": "állomásról significaría «de la estación» (Az állomásról jövök)." }
+      },
+      "examples": ["A piacon vagyok.", "A téren vagyok."],
+      "tr": { "en": "Where are you? I am at the station.", "es": "¿Dónde estás? Estoy en la estación." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f01",
+      "kind": "form",
+      "verb": "asztal",
+      "person": "-on/-en/-ön",
+      "answer": "asztalon",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-c02",
+      "sentence": "Hova mész? A ___ megyek.",
+      "options": ["piacon", "piacra", "piacról"],
+      "correct": 1,
+      "why": { "en": "Hova? asks where to, so -ra: piac has back vowels (i is neutral, a decides), so piacra.", "es": "Hova? pregunta adónde, así que -ra: piac tiene vocales posteriores (la i es neutra, decide la a), por eso piacra." },
+      "wrong": {
+        "piacon": { "en": "piacon would mean 'at the market' (A piacon vagyok); here you are going there.", "es": "piacon significaría «en el mercado» (A piacon vagyok); aquí vas hacia allá." },
+        "piacról": { "en": "piacról would mean 'from the market' (A piacról jövök).", "es": "piacról significaría «del mercado» (A piacról jövök)." }
+      },
+      "examples": ["Az állomásra megyek.", "A térre megyek."],
+      "tr": { "en": "Where are you going? I am going to the market.", "es": "¿Adónde vas? Voy al mercado." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f02",
+      "kind": "form",
+      "verb": "szék",
+      "person": "-ra/-re",
+      "answer": "székre",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-c03",
+      "sentence": "Honnan jössz? A ___ jövök.",
+      "options": ["postára", "postán", "postáról"],
+      "correct": 2,
+      "why": { "en": "Honnan? asks where you come from, so -ról. Posta ends in a vowel, and its a gets longer: postáról.", "es": "Honnan? pregunta de dónde vienes, así que -ról. Posta termina en vocal, y su a se alarga: postáról." },
+      "wrong": {
+        "postára": { "en": "postára would mean 'to the post office' (A postára megyek).", "es": "postára significaría «a la oficina de correos» (A postára megyek)." },
+        "postán": { "en": "postán would mean 'at the post office' (A postán dolgozom), not where you come from.", "es": "postán significaría «en la oficina de correos» (A postán dolgozom), no de dónde vienes." }
+      },
+      "examples": ["A piacról jövök.", "Az egyetemről jövök."],
+      "tr": { "en": "Where are you coming from? I am coming from the post office.", "es": "¿De dónde vienes? Vengo de la oficina de correos." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f03",
+      "kind": "form",
+      "verb": "piac",
+      "person": "-ról/-ről",
+      "answer": "piacról",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-w01",
+      "kind": "why",
+      "es": "A kulcs az asztalon van.",
+      "target": "asztalon",
+      "tr": { "en": "The key is on the table.", "es": "La llave está sobre la mesa." },
+      "options": [
+        {
+          "text": { "en": "Inside a closed place: -ban", "es": "Dentro de un lugar cerrado: -ban" },
+          "wrong": { "en": "With this rule the word would be asztalban ('inside the table'); the key lies on the surface, so -on.", "es": "Con esta regla la palabra sería asztalban («dentro de la mesa»); la llave está sobre la superficie, así que -on." }
+        },
+        {
+          "text": { "en": "A surface, where something is: -on (back-vowel word)", "es": "Una superficie, dónde está algo: -on (palabra con vocales posteriores)" }
+        },
+        {
+          "text": { "en": "Moving onto it: -ra", "es": "Moverse hacia ella: -ra" },
+          "wrong": { "en": "With this rule the word would be asztalra ('onto the table'); van says where the key is, so -on.", "es": "Con esta regla la palabra sería asztalra («sobre la mesa», con movimiento); van dice dónde está la llave, así que -on." }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "felszini-helyhatarozok-c04",
+      "sentence": "A kulcs a ___ van.",
+      "options": ["széken", "székon", "székön"],
+      "correct": 0,
+      "why": { "en": "Szék has é (a front vowel without rounding), so the ending is -en: széken.", "es": "Szék tiene é (vocal anterior sin redondeo), por eso la terminación es -en: széken." },
+      "wrong": {
+        "székon": { "en": "székon uses -on, which is for back-vowel words (asztalon); szék has é, so széken.", "es": "székon usa -on, que es para palabras con vocales posteriores (asztalon); szék tiene é, así que széken." },
+        "székön": { "en": "székön uses -ön, which is for words whose last vowel is ö, ő, ü or ű (földön); szék has é, so széken.", "es": "székön usa -ön, que es para palabras cuya última vocal es ö, ő, ü o ű (földön); szék tiene é, así que széken." }
+      },
+      "examples": ["A táska a széken van.", "A téren vagyok."],
+      "tr": { "en": "The key is on the chair.", "es": "La llave está en la silla." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f04",
+      "kind": "form",
+      "verb": "utca",
+      "person": "-on/-en/-ön",
+      "answer": "utcán",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-c05",
+      "sentence": "A kulcs az ___ van.",
+      "options": ["asztalen", "asztalon", "asztalön"],
+      "correct": 1,
+      "why": { "en": "Asztal has a (a back vowel), so the ending is -on: asztalon.", "es": "Asztal tiene a (vocal posterior), por eso la terminación es -on: asztalon." },
+      "wrong": {
+        "asztalen": { "en": "asztalen uses -en, which is for front-vowel words (széken); asztal has a back vowel, so asztalon.", "es": "asztalen usa -en, que es para palabras con vocales anteriores (széken); asztal tiene una vocal posterior, así que asztalon." },
+        "asztalön": { "en": "asztalön uses -ön, which is for words whose last vowel is ö, ő, ü or ű (földön); asztal has a, so asztalon.", "es": "asztalön usa -ön, que es para palabras cuya última vocal es ö, ő, ü o ű (földön); asztal tiene a, así que asztalon." }
+      },
+      "examples": ["A táska az ágyon van.", "A kulcs a polcon van."],
+      "tr": { "en": "The key is on the table.", "es": "La llave está sobre la mesa." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f05",
+      "kind": "form",
+      "verb": "állomás",
+      "person": "-ra/-re",
+      "answer": "állomásra",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-c06",
+      "sentence": "A labda a ___ van.",
+      "options": ["földon", "földen", "földön"],
+      "correct": 2,
+      "why": { "en": "Föld has ö, a rounded front vowel, so the ending is -ön: földön.", "es": "Föld tiene ö, una vocal anterior redondeada, por eso la terminación es -ön: földön." },
+      "wrong": {
+        "földon": { "en": "földon uses -on, which is for back vowels (asztalon); föld has ö, so földön.", "es": "földon usa -on, que es para vocales posteriores (asztalon); föld tiene ö, así que földön." },
+        "földen": { "en": "földen uses -en, which is for front vowels without rounding (széken); the ö in föld is rounded, so földön.", "es": "földen usa -en, que es para vocales anteriores sin redondeo (széken); la ö de föld es redondeada, así que földön." }
+      },
+      "examples": ["A földön alszom.", "A kulcs a földön van."],
+      "tr": { "en": "The ball is on the ground.", "es": "La pelota está en el suelo." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f06",
+      "kind": "form",
+      "verb": "föld",
+      "person": "-on/-en/-ön",
+      "answer": "földön",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-c07",
+      "sentence": "Az ___ sétálok.",
+      "options": ["utcán", "utcaon", "utcában"],
+      "correct": 0,
+      "why": { "en": "Utca ends in a vowel, so only -n is added and the a gets longer: utcán.", "es": "Utca termina en vocal, así que solo se añade -n y la a se alarga: utcán." },
+      "wrong": {
+        "utcaon": { "en": "utcaon adds the full -on to a word that already ends in a vowel; after a vowel only -n is added: utcán.", "es": "utcaon añade -on completo a una palabra que ya termina en vocal; después de vocal solo se añade -n: utcán." },
+        "utcában": { "en": "utcában uses the inside ending; a street is an open place, so the surface ending: utcán.", "es": "utcában usa la terminación de «dentro»; una calle es un lugar abierto, así que la terminación de superficie: utcán." }
+      },
+      "examples": ["A hídon sétálok.", "A téren sétálok."],
+      "tr": { "en": "I walk along the street.", "es": "Camino por la calle." }
+    },
+    {
+      "id": "felszini-helyhatarozok-c08",
+      "sentence": "A ___ vagyok.",
+      "options": ["buszban", "buszon", "buszra"],
+      "correct": 1,
+      "why": { "en": "Public transport takes the surface endings: you are ON the bus, so buszon.", "es": "El transporte público lleva las terminaciones de superficie: vas SOBRE el autobús, por eso buszon." },
+      "wrong": {
+        "buszban": { "en": "-ban is for closed places (a házban); for a bus, a train or a tram you say -on.", "es": "-ban es para lugares cerrados (a házban); para un autobús, un tren o un tranvía se dice -on." },
+        "buszra": { "en": "buszra means 'onto the bus' (A buszra szállok); with vagyok you are already on it.", "es": "buszra significa «al autobús» (A buszra szállok); con vagyok ya estás en él." }
+      },
+      "examples": ["A vonaton vagyok.", "A villamoson vagyok."],
+      "tr": { "en": "I am on the bus.", "es": "Estoy en el autobús." }
+    },
+    {
+      "id": "felszini-helyhatarozok-w02",
+      "kind": "why",
+      "es": "A buszon vagyok.",
+      "target": "buszon",
+      "tr": { "en": "I am on the bus.", "es": "Estoy en el autobús." },
+      "options": [
+        {
+          "text": { "en": "Public transport: you are on it, so the surface ending -on", "es": "Transporte público: vas sobre él, así que la terminación de superficie -on" }
+        },
+        {
+          "text": { "en": "Closed place: -ban", "es": "Lugar cerrado: -ban" },
+          "wrong": { "en": "With this rule the word would be buszban; for a bus, a train or a tram we say -on.", "es": "Con esta regla la palabra sería buszban; para un autobús, un tren o un tranvía se dice -on." }
+        },
+        {
+          "text": { "en": "Coming off it: -ról", "es": "Salir de él: -ról" },
+          "wrong": { "en": "With this rule the word would be buszról ('from the bus'); vagyok says where I am.", "es": "Con esta regla la palabra sería buszról («del autobús»); vagyok dice dónde estoy." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "felszini-helyhatarozok-f07",
+      "kind": "form",
+      "verb": "busz",
+      "person": "-ról/-ről",
+      "answer": "buszról",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-c09",
+      "sentence": "Az ___ vagyunk.",
+      "options": ["autón", "autóra", "autóban"],
+      "correct": 2,
+      "why": { "en": "A car is closed space around you, so it takes the inside ending: autóban (like a taxiban).", "es": "Un coche es un espacio cerrado a tu alrededor, así que lleva la terminación de «dentro»: autóban (como a taxiban)." },
+      "wrong": {
+        "autón": { "en": "autón would mean 'on (top of) the car'.", "es": "autón significaría «sobre (encima del) coche»." },
+        "autóra": { "en": "autóra would mean 'onto the car'; with vagyunk we are already somewhere.", "es": "autóra significaría «sobre el coche»; con vagyunk ya estamos en algún lugar." }
+      },
+      "examples": ["A taxiban vagyok.", "A buszon vagyok."],
+      "tr": { "en": "We are in the car.", "es": "Estamos en el coche." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f08",
+      "kind": "form",
+      "verb": "posta",
+      "person": "-ra/-re",
+      "answer": "postára",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-c10",
+      "sentence": "Anna ___ lakik.",
+      "options": ["Budapesten", "Budapestben", "Budapestre"],
+      "correct": 0,
+      "why": { "en": "Budapest follows the usual city rule: the surface ending, and e is a front vowel, so Budapesten.", "es": "Budapest sigue la regla habitual de las ciudades: la terminación de superficie, y la e es una vocal anterior, así que Budapesten." },
+      "wrong": {
+        "Budapestben": { "en": "Budapestben would use the inside ending; Budapest is not one of the few exceptions (those are like Debrecenben and Győrben).", "es": "Budapestben usaría la terminación de «dentro»; Budapest no es una de las pocas excepciones (esas son como Debrecenben y Győrben)." },
+        "Budapestre": { "en": "Budapestre would mean 'to Budapest' (Budapestre költözöm); lakik says where she lives.", "es": "Budapestre significaría «a Budapest» (Budapestre költözöm); lakik dice dónde vive." }
+      },
+      "examples": ["Szegeden lakom.", "Budapesten dolgozom."],
+      "tr": { "en": "Anna lives in Budapest.", "es": "Anna vive en Budapest." }
+    },
+    {
+      "id": "felszini-helyhatarozok-c11",
+      "sentence": "Holnap ___ megyek.",
+      "options": ["Szegeden", "Szegedre", "Szegedről"],
+      "correct": 1,
+      "why": { "en": "megyek is movement towards a place, so -re (Szeged has e, a front vowel): Szegedre.", "es": "megyek es movimiento hacia un lugar, así que -re (Szeged tiene e, una vocal anterior): Szegedre." },
+      "wrong": {
+        "Szegeden": { "en": "Szegeden means 'in Szeged' (Szegeden lakom): staying, not going.", "es": "Szegeden significa «en Szeged» (Szegeden lakom): quedarse, no ir." },
+        "Szegedről": { "en": "Szegedről means 'from Szeged' (Szegedről jövök).", "es": "Szegedről significa «de Szeged» (Szegedről jövök)." }
+      },
+      "examples": ["Budapestre megyek.", "Holnap Budapestre megyek."],
+      "tr": { "en": "Tomorrow I am going to Szeged.", "es": "Mañana voy a Szeged." }
+    },
+    {
+      "id": "felszini-helyhatarozok-w03",
+      "kind": "why",
+      "es": "Budapesten lakom.",
+      "target": "Budapesten",
+      "tr": { "en": "I live in Budapest.", "es": "Vivo en Budapest." },
+      "options": [
+        {
+          "text": { "en": "Cities take -ban/-ben: Budapestben", "es": "Las ciudades llevan -ban/-ben: Budapestben" },
+          "wrong": { "en": "With this rule the word would be Budapestben; only a few cities (Debrecenben, Győrben) take the inside ending.", "es": "Con esta regla la palabra sería Budapestben; solo unas pocas ciudades (Debrecenben, Győrben) llevan la terminación de «dentro»." }
+        },
+        {
+          "text": { "en": "Most cities take the surface ending: -en for a front-vowel word", "es": "La mayoría de las ciudades llevan la terminación de superficie: -en para una palabra con vocales anteriores" }
+        },
+        {
+          "text": { "en": "Going to the city: -re", "es": "Ir a la ciudad: -re" },
+          "wrong": { "en": "With this rule the word would be Budapestre ('to Budapest'); lakom says where I live, so -en.", "es": "Con esta regla la palabra sería Budapestre («a Budapest»); lakom dice dónde vivo, así que -en." }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "felszini-helyhatarozok-f09",
+      "kind": "form",
+      "verb": "egyetem",
+      "person": "-on/-en/-ön",
+      "answer": "egyetemen",
+      "table": "felszini-szavak"
+    },
+    {
+      "id": "felszini-helyhatarozok-c12",
+      "sentence": "Kati ___ lakik.",
+      "options": ["Debrecenen", "Debrecenbe", "Debrecenben"],
+      "correct": 2,
+      "why": { "en": "Debrecen is one of the few cities that take the inside ending: Debrecenben (like Győrben).", "es": "Debrecen es una de las pocas ciudades que llevan la terminación de «dentro»: Debrecenben (como Győrben)." },
+      "wrong": {
+        "Debrecenen": { "en": "Debrecenen follows the usual city rule, but Debrecen is an exception.", "es": "Debrecenen sigue la regla habitual de las ciudades, pero Debrecen es una excepción." },
+        "Debrecenbe": { "en": "Debrecenbe would mean 'to Debrecen' (Debrecenbe költözöm); lakik says where she lives.", "es": "Debrecenbe significaría «a Debrecen» (Debrecenbe költözöm); lakik dice dónde vive." }
+      },
+      "examples": ["Győrben lakom.", "Debrecenben dolgozom."],
+      "tr": { "en": "Kati lives in Debrecen.", "es": "Kati vive en Debrecen." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f10",
+      "kind": "form",
+      "verb": "Budapest",
+      "person": "-on/-en/-ön",
+      "answer": "Budapesten",
+      "table": "varos-nevek"
+    },
+    {
+      "id": "felszini-helyhatarozok-c13",
+      "sentence": "___ lakom.",
+      "options": ["Magyarországon", "Magyarországban", "Magyarországen"],
+      "correct": 0,
+      "why": { "en": "Magyarország is an exception among countries: it takes the surface ending -on (back vowels): Magyarországon.", "es": "Magyarország es una excepción entre los países: lleva la terminación de superficie -on (vocales posteriores): Magyarországon." },
+      "wrong": {
+        "Magyarországban": { "en": "Magyarországban uses -ban, the usual ending for countries (Mexikóban), but Magyarország is the exception.", "es": "Magyarországban usa -ban, la terminación habitual de los países (Mexikóban), pero Magyarország es la excepción." },
+        "Magyarországen": { "en": "Magyarországen uses -en, which is for front-vowel words; Magyarország has back vowels, so -on.", "es": "Magyarországen usa -en, que es para palabras con vocales anteriores; Magyarország tiene vocales posteriores, así que -on." }
+      },
+      "examples": ["Mexikóban lakom.", "Magyarországon dolgozom."],
+      "tr": { "en": "I live in Hungary.", "es": "Vivo en Hungría." }
+    },
+    {
+      "id": "felszini-helyhatarozok-f11",
+      "kind": "form",
+      "verb": "Szeged",
+      "person": "-ra/-re",
+      "answer": "Szegedre",
+      "table": "varos-nevek"
+    },
+    {
+      "id": "felszini-helyhatarozok-c14",
+      "sentence": "A repülőtérre ___.",
+      "options": ["vagyok", "érkezem", "dolgozom"],
+      "correct": 1,
+      "why": { "en": "-re shows the direction towards the airport, so you need érkezem (I arrive).", "es": "-re muestra la dirección hacia el aeropuerto, así que necesitas érkezem (llego)." },
+      "wrong": {
+        "vagyok": { "en": "vagyok goes with -en: A repülőtéren vagyok (I am at the airport).", "es": "vagyok va con -en: A repülőtéren vagyok (estoy en el aeropuerto)." },
+        "dolgozom": { "en": "dolgozom goes with -en: A repülőtéren dolgozom (I work at the airport).", "es": "dolgozom va con -en: A repülőtéren dolgozom (trabajo en el aeropuerto)." }
+      },
+      "examples": ["Az állomásra érkezem.", "Budapestre érkezem."],
+      "tr": { "en": "I am arriving at the airport.", "es": "Llego al aeropuerto." }
+    },
+    {
+      "id": "felszini-helyhatarozok-w04",
+      "kind": "why",
+      "es": "Magyarországon lakom.",
+      "target": "Magyarországon",
+      "tr": { "en": "I live in Hungary.", "es": "Vivo en Hungría." },
+      "options": [
+        {
+          "text": { "en": "Countries take -ban/-ben", "es": "Los países llevan -ban/-ben" },
+          "wrong": { "en": "With this rule the word would be Magyarországban, as in Mexikóban; Magyarország is the exception.", "es": "Con esta regla la palabra sería Magyarországban, como en Mexikóban; Magyarország es la excepción." }
+        },
+        {
+          "text": { "en": "Coming from the country: -ról", "es": "Venir del país: -ról" },
+          "wrong": { "en": "With this rule the word would be Magyarországról ('from Hungary'); lakom says where I live.", "es": "Con esta regla la palabra sería Magyarországról («de Hungría»); lakom dice dónde vivo." }
+        },
+        {
+          "text": { "en": "The exception: Magyarország takes the surface ending -on", "es": "La excepción: Magyarország lleva la terminación de superficie -on" }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "felszini-helyhatarozok-f12",
+      "kind": "form",
+      "verb": "Debrecen",
+      "person": "-ban/-ben",
+      "answer": "Debrecenben",
+      "table": "varos-nevek"
+    }
+  ]
+}

@@ -1,0 +1,1179 @@
+{
+  "schema": 2,
+  "topic": "melleknev",
+  "level": "A1",
+  "title": {
+    "en": "Adjectives: nagy, kicsi, piros",
+    "es": "Adjetivos: nagy, kicsi, piros"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian adjectives are easy in front of a noun: they never change. a nagy ház (the big house), a nagy házak (the big houses), a nagy házakban (in the big houses). The noun carries every ending. But after the noun, as the 'is / are' part of the sentence, the adjective agrees in number: A ház nagy, A házak nagyok. Ask what something is like with milyen?",
+        "es": "Los adjetivos húngaros son fáciles delante del sustantivo: nunca cambian. a nagy ház (la casa grande), a nagy házak (las casas grandes), a nagy házakban (en las casas grandes). El sustantivo carga con todas las terminaciones. Pero después del sustantivo, como la parte «es / son» de la frase, el adjetivo concuerda en número: A ház nagy, A házak nagyok. Se pregunta cómo es algo con milyen?"
+      }
+    },
+    {
+      "kind": "table",
+      "id": "melleknev-pl",
+      "noTableDeck": true,
+      "title": {
+        "en": "Adjective in the plural (after the noun)",
+        "es": "Adjetivo en plural (después del sustantivo)"
+      },
+      "header": [
+        {
+          "en": "Adjective",
+          "es": "Adjetivo"
+        },
+        {
+          "en": "Plural: A házak ...",
+          "es": "Plural: A házak ..."
+        }
+      ],
+      "rows": [
+        [
+          "nagy",
+          "nagyok"
+        ],
+        [
+          "kicsi",
+          "kicsik"
+        ],
+        [
+          "szép",
+          "szépek"
+        ],
+        [
+          "új",
+          "újak"
+        ],
+        [
+          "régi",
+          "régiek"
+        ],
+        [
+          "jó",
+          "jók"
+        ],
+        [
+          "rossz",
+          "rosszak"
+        ],
+        [
+          "drága",
+          "drágák"
+        ],
+        [
+          "olcsó",
+          "olcsók"
+        ],
+        [
+          "lassú",
+          "lassúak"
+        ],
+        [
+          "gyors",
+          "gyorsak"
+        ],
+        [
+          "rövid",
+          "rövidek"
+        ],
+        [
+          "magas",
+          "magasak"
+        ],
+        [
+          "fáradt",
+          "fáradtak"
+        ],
+        [
+          "fiatal",
+          "fiatalok"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "melleknev-szinek",
+      "noTableDeck": true,
+      "title": {
+        "en": "Colours (also adjectives)",
+        "es": "Colores (también son adjetivos)"
+      },
+      "header": [
+        {
+          "en": "Colour",
+          "es": "Color"
+        },
+        {
+          "en": "Plural: A kabátok ...",
+          "es": "Plural: A kabátok ..."
+        }
+      ],
+      "rows": [
+        [
+          "piros",
+          "pirosak"
+        ],
+        [
+          "kék",
+          "kékek"
+        ],
+        [
+          "zöld",
+          "zöldek"
+        ],
+        [
+          "sárga",
+          "sárgák"
+        ],
+        [
+          "fekete",
+          "feketék"
+        ],
+        [
+          "fehér",
+          "fehérek"
+        ],
+        [
+          "barna",
+          "barnák"
+        ],
+        [
+          "szürke",
+          "szürkék"
+        ],
+        [
+          "rózsaszín",
+          "rózsaszínek"
+        ],
+        [
+          "narancssárga",
+          "narancssárgák"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "melleknev-ellentetek",
+      "noTableDeck": true,
+      "title": {
+        "en": "Opposites",
+        "es": "Opuestos"
+      },
+      "header": [
+        {
+          "en": "Adjective",
+          "es": "Adjetivo"
+        },
+        {
+          "en": "Opposite",
+          "es": "Opuesto"
+        }
+      ],
+      "rows": [
+        [
+          "nagy",
+          "kicsi"
+        ],
+        [
+          "új",
+          "régi"
+        ],
+        [
+          "jó",
+          "rossz"
+        ],
+        [
+          "drága",
+          "olcsó"
+        ],
+        [
+          "meleg",
+          "hideg"
+        ],
+        [
+          "magas",
+          "alacsony"
+        ],
+        [
+          "hosszú",
+          "rövid"
+        ],
+        [
+          "gyors",
+          "lassú"
+        ],
+        [
+          "fiatal",
+          "öreg"
+        ],
+        [
+          "tiszta",
+          "piszkos"
+        ],
+        [
+          "nehéz",
+          "könnyű"
+        ],
+        [
+          "hangos",
+          "csendes"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How adjectives work",
+        "es": "Cómo funcionan los adjetivos"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "In front of a noun the adjective has no ending: no plural and no case (-t, -ban ...). Only the noun takes them. kicsi shortens to kis in front of a noun.",
+            "es": "Delante de un sustantivo el adjetivo no lleva terminación: ni plural ni caso (-t, -ban ...). Solo el sustantivo las toma. kicsi se acorta a kis delante de un sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Ez egy nagy ház.",
+              "tr": {
+                "en": "This is a big house.",
+                "es": "Esta es una casa grande."
+              }
+            },
+            {
+              "es": "Nagy házak vannak a városban.",
+              "tr": {
+                "en": "There are big houses in the city.",
+                "es": "Hay casas grandes en la ciudad."
+              }
+            },
+            {
+              "es": "Egy piros kabátot veszek.",
+              "tr": {
+                "en": "I am buying a red coat.",
+                "es": "Compro un abrigo rojo."
+              }
+            },
+            {
+              "es": "Ez egy kis kert.",
+              "tr": {
+                "en": "This is a small garden.",
+                "es": "Este es un jardín pequeño."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After the noun, about one thing: the bare adjective, and no van (just like Anna tanár). English needs 'is'; Hungarian does not.",
+            "es": "Después del sustantivo, sobre una sola cosa: el adjetivo solo, y sin van (igual que Anna tanár). Esto cubre tanto «ser» como «estar» + adjetivo."
+          },
+          "examples": [
+            {
+              "es": "A ház nagy.",
+              "tr": {
+                "en": "The house is big.",
+                "es": "La casa es grande."
+              }
+            },
+            {
+              "es": "A kabát piros.",
+              "tr": {
+                "en": "The coat is red.",
+                "es": "El abrigo es rojo."
+              }
+            },
+            {
+              "es": "A lakás nagyon szép.",
+              "tr": {
+                "en": "The flat is very nice.",
+                "es": "El piso es muy bonito."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a plural subject (also mi, ti, ők) the adjective takes the plural. After a consonant: -ak / -ek (a few -ok: nagyok, fiatalok). After a, e: lengthen and add -k (drága, drágák). After ó: just -k (olcsók). After ú, ű, i: -ak / -ek (lassúak, régiek), but kicsi is kicsik.",
+            "es": "Después de un sujeto plural (también mi, ti, ők) el adjetivo toma el plural. Tras consonante: -ak / -ek (unos pocos -ok: nagyok, fiatalok). Tras a, e: se alarga y se añade -k (drága, drágák). Tras ó: solo -k (olcsók). Tras ú, ű, i: -ak / -ek (lassúak, régiek), pero kicsi es kicsik."
+          },
+          "examples": [
+            {
+              "es": "A házak nagyok.",
+              "tr": {
+                "en": "The houses are big.",
+                "es": "Las casas son grandes."
+              }
+            },
+            {
+              "es": "A kabátok pirosak.",
+              "tr": {
+                "en": "The coats are red.",
+                "es": "Los abrigos son rojos."
+              }
+            },
+            {
+              "es": "Anna és Péter fáradtak.",
+              "tr": {
+                "en": "Anna and Péter are tired.",
+                "es": "Anna y Péter están cansados."
+              }
+            },
+            {
+              "es": "Fáradtak vagyunk.",
+              "tr": {
+                "en": "We are tired.",
+                "es": "Estamos cansados."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "milyen? asks what something is like. The answer is the adjective alone.",
+            "es": "milyen? pregunta cómo es algo. La respuesta es el adjetivo solo."
+          },
+          "examples": [
+            {
+              "es": "Milyen a lakás? Nagy és szép.",
+              "tr": {
+                "en": "What is the flat like? Big and nice.",
+                "es": "¿Cómo es el piso? Grande y bonito."
+              }
+            },
+            {
+              "es": "Milyen a kabát? Piros.",
+              "tr": {
+                "en": "What is the coat like? Red.",
+                "es": "¿Cómo es el abrigo? Rojo."
+              }
+            },
+            {
+              "es": "Milyen a kávé? Meleg és finom.",
+              "tr": {
+                "en": "What is the coffee like? Hot and tasty.",
+                "es": "¿Cómo es el café? Caliente y rico."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Adjectives come in pairs of opposites: learn them together. régi is usually for things, öreg for people and animals.",
+            "es": "Los adjetivos vienen en pares de opuestos: apréndelos juntos. régi se usa sobre todo para cosas, öreg para personas y animales."
+          },
+          "examples": [
+            {
+              "es": "A kávé meleg, a sör hideg.",
+              "tr": {
+                "en": "The coffee is hot, the beer is cold.",
+                "es": "El café está caliente, la cerveza está fría."
+              }
+            },
+            {
+              "es": "A bicikli lassú, az autó gyors.",
+              "tr": {
+                "en": "The bicycle is slow, the car is fast.",
+                "es": "La bicicleta es lenta, el coche es rápido."
+              }
+            },
+            {
+              "es": "Ez a ház új, az a ház régi.",
+              "tr": {
+                "en": "This house is new, that house is old.",
+                "es": "Esta casa es nueva, aquella casa es vieja."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Before or after the noun?",
+        "es": "¿Antes o después del sustantivo?"
+      },
+      "pairs": [
+        {
+          "a": "a nagy házak",
+          "b": "A házak nagyok.",
+          "note": {
+            "en": "Before the noun: no ending, the plural is on the noun. After the noun: the adjective takes the plural.",
+            "es": "Antes del sustantivo: sin terminación, el plural va en el sustantivo. Después del sustantivo: el adjetivo toma el plural."
+          },
+          "examples": [
+            {
+              "es": "Piros kabátok vannak itt.",
+              "tr": {
+                "en": "There are red coats here.",
+                "es": "Aquí hay abrigos rojos."
+              }
+            },
+            {
+              "es": "A kabátok pirosak.",
+              "tr": {
+                "en": "The coats are red.",
+                "es": "Los abrigos son rojos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Fáradt vagyok.",
+          "b": "Fáradtak vagyunk.",
+          "note": {
+            "en": "One person: the bare adjective. We, you (all), they: the plural adjective.",
+            "es": "Una persona: el adjetivo solo. Nosotros, ustedes, ellos: el adjetivo en plural."
+          },
+          "examples": [
+            {
+              "es": "Péter fáradt.",
+              "tr": {
+                "en": "Péter is tired.",
+                "es": "Péter está cansado."
+              }
+            },
+            {
+              "es": "Fáradtak vagytok?",
+              "tr": {
+                "en": "Are you (all) tired?",
+                "es": "¿Están cansados?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: English adjectives never change, so you may forget the plural in A házak nagyok. The reverse mistake is to add it in front of the noun: 'big houses' is nagy házak, never nagyok házak. The plural belongs to the noun; only the adjective AFTER the noun agrees.",
+        "es": "Trampa clásica: en español el adjetivo concuerda siempre (casas grandes), pero en húngaro delante del sustantivo no cambia: nagy házak, nunca nagyok házak. El plural va en el sustantivo; solo concuerda el adjetivo que va DESPUÉS: A házak nagyok."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian adjectives do not change in front of a noun: «nagy ház», «nagy házak», «piros kabát», «piros kabátok». After the noun they agree in number: «A ház nagy», but «A házak nagyok». «A kabát piros», but «A kabátok pirosak». To ask what something is like, say «milyen»: «Milyen a lakás?» «Nagy és szép.» Learn the opposites in pairs: «nagy» and «kicsi», «új» and «régi», «drága» and «olcsó».",
+    "es": "Los adjetivos húngaros no cambian delante del sustantivo: «nagy ház», «nagy házak», «piros kabát», «piros kabátok». Después del sustantivo concuerdan en número: «A ház nagy», pero «A házak nagyok». «A kabát piros», pero «A kabátok pirosak». Para preguntar cómo es algo, di «milyen»: «Milyen a lakás?» «Nagy és szép.» Aprende los opuestos en pares: «nagy» y «kicsi», «új» y «régi», «drága» y «olcsó»."
+  },
+  "glossary": [
+    {
+      "word": "nagyon",
+      "gloss": {
+        "en": "very",
+        "es": "muy"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "melleknev-c01",
+      "sentence": "Ez egy ___ ház.",
+      "options": [
+        "nagy",
+        "nagyok",
+        "nagyot"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In front of a noun the adjective takes no ending: nagy ház.",
+        "es": "Delante de un sustantivo el adjetivo no lleva terminación: nagy ház."
+      },
+      "wrong": {
+        "nagyok": {
+          "en": "nagyok means 'are big' for several things (A házak nagyok); in front of a noun the adjective never takes it.",
+          "es": "nagyok significa «son grandes» para varias cosas (A házak nagyok); delante de un sustantivo el adjetivo nunca lo lleva."
+        },
+        "nagyot": {
+          "en": "nagyot is the -t form of nagy, used when the big thing is the object, as in Nagyot kérek ('I ask for a big one'); it does not go in front of a noun.",
+          "es": "nagyot es la forma con -t de nagy, cuando lo grande es el objeto, como en Nagyot kérek («pido uno grande»); no va delante de un sustantivo."
+        }
+      },
+      "examples": [
+        "Ez egy kis ház.",
+        "Ez egy új autó."
+      ],
+      "tr": {
+        "en": "This is a big house.",
+        "es": "Esta es una casa grande."
+      }
+    },
+    {
+      "id": "melleknev-f01",
+      "kind": "form",
+      "verb": "nagy",
+      "person": "többes szám",
+      "answer": "nagyok",
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-c02",
+      "sentence": "A házak ___.",
+      "options": [
+        "nagyok",
+        "nagy",
+        "nagyot"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After a plural subject the adjective takes the plural: nagyok.",
+        "es": "Después de un sujeto plural el adjetivo toma el plural: nagyok."
+      },
+      "wrong": {
+        "nagy": {
+          "en": "nagy alone is for ONE house (A ház nagy); with several houses the adjective must be plural.",
+          "es": "nagy solo va con UNA casa (A ház nagy); con varias casas el adjetivo debe ir en plural."
+        },
+        "nagyot": {
+          "en": "nagyot is the -t form (Nagyot kérek, 'I ask for a big one'); it is not the 'are big' part of a sentence.",
+          "es": "nagyot es la forma con -t (Nagyot kérek, «pido uno grande»); no es la parte «son grandes» de una frase."
+        }
+      },
+      "examples": [
+        "A kabátok pirosak.",
+        "A kertek kicsik."
+      ],
+      "tr": {
+        "en": "The houses are big.",
+        "es": "Las casas son grandes."
+      }
+    },
+    {
+      "id": "melleknev-f02",
+      "kind": "form",
+      "verb": "kicsi",
+      "person": "többes szám",
+      "answer": "kicsik",
+      "accept": [
+        "kicsiek"
+      ],
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-c03",
+      "sentence": "___ kabátok vannak a boltban.",
+      "options": [
+        "Piros",
+        "Pirosak",
+        "Pirosat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In front of a noun the adjective stays bare: piros kabátok. The plural is already on the noun kabátok.",
+        "es": "Delante de un sustantivo el adjetivo queda solo: piros kabátok. El plural ya está en el sustantivo kabátok."
+      },
+      "wrong": {
+        "Pirosak": {
+          "en": "Pirosak is the plural for AFTER the noun (A kabátok pirosak); in front of kabátok the plural is not repeated.",
+          "es": "Pirosak es el plural para DESPUÉS del sustantivo (A kabátok pirosak); delante de kabátok el plural no se repite."
+        },
+        "Pirosat": {
+          "en": "Pirosat is the -t form, 'the red one' as an object (Pirosat kérek); it is not used before a noun.",
+          "es": "Pirosat es la forma con -t, «el rojo» como objeto (Pirosat kérek); no se usa delante de un sustantivo."
+        }
+      },
+      "examples": [
+        "Kék kabátok vannak itt.",
+        "Zöld sapkák vannak a boltban."
+      ],
+      "tr": {
+        "en": "There are red coats in the shop.",
+        "es": "Hay abrigos rojos en la tienda."
+      }
+    },
+    {
+      "id": "melleknev-f03",
+      "kind": "form",
+      "verb": "piros",
+      "person": "többes szám",
+      "answer": "pirosak",
+      "table": "melleknev-szinek"
+    },
+    {
+      "id": "melleknev-w01",
+      "kind": "why",
+      "es": "A házak nagyok.",
+      "target": "nagyok",
+      "tr": {
+        "en": "The houses are big.",
+        "es": "Las casas son grandes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Adjective after a plural subject: it takes the plural",
+            "es": "Adjetivo después de un sujeto plural: toma el plural"
+          }
+        },
+        {
+          "text": {
+            "en": "Adjective in front of a noun: no ending",
+            "es": "Adjetivo delante de un sustantivo: sin terminación"
+          },
+          "wrong": {
+            "en": "With this rule the word would stay nagy; but here nagyok comes after the noun as the 'are big' part, so it agrees.",
+            "es": "Con esta regla la palabra quedaría nagy; pero aquí nagyok va después del sustantivo como la parte «son grandes», así que concuerda."
+          }
+        },
+        {
+          "text": {
+            "en": "Object ending -t",
+            "es": "Terminación de objeto -t"
+          },
+          "wrong": {
+            "en": "With this rule the word would be nagyot, as in Nagyot kérek; here nothing is asked for, the houses simply are big.",
+            "es": "Con esta regla la palabra sería nagyot, como en Nagyot kérek; aquí no se pide nada, las casas simplemente son grandes."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "melleknev-c04",
+      "sentence": "A kabát ___.",
+      "options": [
+        "piros",
+        "pirosak",
+        "pirosat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "One coat, singular subject: the bare adjective, and no van: A kabát piros.",
+        "es": "Un solo abrigo, sujeto singular: el adjetivo solo, y sin van: A kabát piros."
+      },
+      "wrong": {
+        "pirosak": {
+          "en": "pirosak is for several coats (A kabátok pirosak).",
+          "es": "pirosak es para varios abrigos (A kabátok pirosak)."
+        },
+        "pirosat": {
+          "en": "pirosat is the -t form, 'the red one' as an object (Pirosat kérek).",
+          "es": "pirosat es la forma con -t, «el rojo» como objeto (Pirosat kérek)."
+        }
+      },
+      "examples": [
+        "A ház sárga.",
+        "A macska fekete."
+      ],
+      "tr": {
+        "en": "The coat is red.",
+        "es": "El abrigo es rojo."
+      }
+    },
+    {
+      "id": "melleknev-f04",
+      "kind": "form",
+      "verb": "kék",
+      "person": "többes szám",
+      "answer": "kékek",
+      "table": "melleknev-szinek"
+    },
+    {
+      "id": "melleknev-c05",
+      "sentence": "Anna és Péter ___.",
+      "options": [
+        "fáradtak",
+        "fáradt",
+        "fáradtat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna and Péter are two people: a plural subject, so the adjective takes the plural: fáradtak.",
+        "es": "Anna y Péter son dos personas: un sujeto plural, así que el adjetivo toma el plural: fáradtak."
+      },
+      "wrong": {
+        "fáradt": {
+          "en": "fáradt is for one person (Péter fáradt).",
+          "es": "fáradt es para una persona (Péter fáradt)."
+        },
+        "fáradtat": {
+          "en": "fáradtat is the -t form, 'a tired one' as an object; it is not the 'are tired' part of a sentence.",
+          "es": "fáradtat es la forma con -t, «uno cansado» como objeto; no es la parte «están cansados» de una frase."
+        }
+      },
+      "examples": [
+        "Fáradtak vagyunk.",
+        "Péter fáradt."
+      ],
+      "tr": {
+        "en": "Anna and Péter are tired.",
+        "es": "Anna y Péter están cansados."
+      }
+    },
+    {
+      "id": "melleknev-f05",
+      "kind": "form",
+      "verb": "szép",
+      "person": "többes szám",
+      "answer": "szépek",
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-c06",
+      "sentence": "Ez egy ___ kert.",
+      "options": [
+        "kis",
+        "kicsik",
+        "kicsit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In front of a noun kicsi shortens to kis, and it takes no ending: kis kert.",
+        "es": "Delante de un sustantivo kicsi se acorta a kis, y no lleva terminación: kis kert."
+      },
+      "wrong": {
+        "kicsik": {
+          "en": "kicsik is the plural for AFTER a plural noun (A kertek kicsik).",
+          "es": "kicsik es el plural para DESPUÉS de un sustantivo plural (A kertek kicsik)."
+        },
+        "kicsit": {
+          "en": "kicsit means 'a little' (Kicsit fáradt vagyok); it does not describe a noun.",
+          "es": "kicsit significa «un poco» (Kicsit fáradt vagyok); no describe un sustantivo."
+        }
+      },
+      "examples": [
+        "Ez egy kis ház.",
+        "A kis kert szép."
+      ],
+      "tr": {
+        "en": "This is a small garden.",
+        "es": "Este es un jardín pequeño."
+      }
+    },
+    {
+      "id": "melleknev-f06",
+      "kind": "form",
+      "verb": "drága",
+      "person": "többes szám",
+      "answer": "drágák",
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-c07",
+      "sentence": "A kávé meleg, a sör ___.",
+      "options": [
+        "hideg",
+        "hidegek",
+        "hideget"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "hideg (cold) is the opposite of meleg (hot). One beer: singular, no ending.",
+        "es": "hideg (frío) es el opuesto de meleg (caliente). Una cerveza: singular, sin terminación."
+      },
+      "wrong": {
+        "hidegek": {
+          "en": "hidegek is the plural; it would fit several drinks (A sörök hidegek).",
+          "es": "hidegek es el plural; iría con varias bebidas (A sörök hidegek)."
+        },
+        "hideget": {
+          "en": "hideget is the -t form (Hideget kérek, 'I would like something cold').",
+          "es": "hideget es la forma con -t (Hideget kérek, «quiero algo frío»)."
+        }
+      },
+      "examples": [
+        "A leves meleg.",
+        "A víz hideg."
+      ],
+      "tr": {
+        "en": "The coffee is hot, the beer is cold.",
+        "es": "El café está caliente, la cerveza está fría."
+      }
+    },
+    {
+      "id": "melleknev-f07",
+      "kind": "form",
+      "verb": "fekete",
+      "person": "többes szám",
+      "answer": "feketék",
+      "table": "melleknev-szinek"
+    },
+    {
+      "id": "melleknev-w02",
+      "kind": "why",
+      "es": "Nagy házak vannak a városban.",
+      "target": "Nagy",
+      "tr": {
+        "en": "There are big houses in the city.",
+        "es": "Hay casas grandes en la ciudad."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Adjective in front of a noun: no ending, the plural is on the noun",
+            "es": "Adjetivo delante de un sustantivo: sin terminación, el plural va en el sustantivo"
+          }
+        },
+        {
+          "text": {
+            "en": "The adjective copies the plural: Nagyok házak",
+            "es": "El adjetivo copia el plural: Nagyok házak"
+          },
+          "wrong": {
+            "en": "With this rule you would write Nagyok házak; Hungarian puts the plural only on the noun házak.",
+            "es": "Con esta regla escribirías Nagyok házak; el húngaro pone el plural solo en el sustantivo házak."
+          }
+        },
+        {
+          "text": {
+            "en": "Adjectives never take any ending",
+            "es": "Los adjetivos nunca llevan terminación"
+          },
+          "wrong": {
+            "en": "With this rule A házak nagy would be right; but after the noun the adjective does agree: A házak nagyok.",
+            "es": "Con esta regla A házak nagy sería correcto; pero después del sustantivo el adjetivo sí concuerda: A házak nagyok."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "melleknev-c08",
+      "sentence": "A bicikli ___, az autó gyors.",
+      "options": [
+        "lassú",
+        "lassúak",
+        "lassút"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "lassú (slow) is the opposite of gyors (fast). One bicycle: singular, no ending.",
+        "es": "lassú (lento) es el opuesto de gyors (rápido). Una bicicleta: singular, sin terminación."
+      },
+      "wrong": {
+        "lassúak": {
+          "en": "lassúak is the plural; it would fit several bicycles (A biciklik lassúak).",
+          "es": "lassúak es el plural; iría con varias bicicletas (A biciklik lassúak)."
+        },
+        "lassút": {
+          "en": "lassút is the -t form (Lassút kérek, 'I ask for a slow one').",
+          "es": "lassút es la forma con -t (Lassút kérek, «pido uno lento»)."
+        }
+      },
+      "examples": [
+        "A busz lassú.",
+        "A repülő gyors."
+      ],
+      "tr": {
+        "en": "The bicycle is slow, the car is fast.",
+        "es": "La bicicleta es lenta, el coche es rápido."
+      }
+    },
+    {
+      "id": "melleknev-f08",
+      "kind": "form",
+      "verb": "új",
+      "person": "többes szám",
+      "answer": "újak",
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-c09",
+      "sentence": "A kutya fekete, a macskák ___.",
+      "options": [
+        "fehérek",
+        "fehér",
+        "fehéret"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A plural subject (macskák) needs the plural adjective after it: fehérek.",
+        "es": "Un sujeto plural (macskák) necesita el adjetivo en plural después: fehérek."
+      },
+      "wrong": {
+        "fehér": {
+          "en": "fehér is for ONE cat (A macska fehér); here there are several cats.",
+          "es": "fehér es para UN gato (A macska fehér); aquí hay varios gatos."
+        },
+        "fehéret": {
+          "en": "fehéret is the -t form (Fehéret kérek, 'I ask for a white one').",
+          "es": "fehéret es la forma con -t (Fehéret kérek, «pido uno blanco»)."
+        }
+      },
+      "examples": [
+        "A macskák feketék.",
+        "A kutyák barnák."
+      ],
+      "tr": {
+        "en": "The dog is black, the cats are white.",
+        "es": "El perro es negro, los gatos son blancos."
+      }
+    },
+    {
+      "id": "melleknev-f09",
+      "kind": "form",
+      "verb": "jó",
+      "person": "többes szám",
+      "answer": "jók",
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-c10",
+      "sentence": "Ti ___ vagytok.",
+      "options": [
+        "magasak",
+        "magas",
+        "magasat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ti is plural (you all), so the adjective takes the plural too: magasak.",
+        "es": "ti es plural (ustedes), así que el adjetivo también va en plural: magasak."
+      },
+      "wrong": {
+        "magas": {
+          "en": "magas is for one person (Te magas vagy).",
+          "es": "magas es para una persona (Te magas vagy)."
+        },
+        "magasat": {
+          "en": "magasat is the -t form, 'a tall one' as an object; it is not the 'are tall' part of a sentence.",
+          "es": "magasat es la forma con -t, «uno alto» como objeto; no es la parte «son altos» de una frase."
+        }
+      },
+      "examples": [
+        "Magasak vagytok.",
+        "Mi alacsonyak vagyunk."
+      ],
+      "tr": {
+        "en": "You (all) are tall.",
+        "es": "Ustedes son altos."
+      }
+    },
+    {
+      "id": "melleknev-f10",
+      "kind": "form",
+      "verb": "lassú",
+      "person": "többes szám",
+      "answer": "lassúak",
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-w03",
+      "kind": "why",
+      "es": "Egy piros kabátot veszek.",
+      "target": "piros",
+      "tr": {
+        "en": "I am buying a red coat.",
+        "es": "Compro un abrigo rojo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Adjective in front of a noun: no -t, the noun kabátot carries it",
+            "es": "Adjetivo delante de un sustantivo: sin -t, lo lleva el sustantivo kabátot"
+          }
+        },
+        {
+          "text": {
+            "en": "The object ending -t goes on every word: pirosat",
+            "es": "La terminación de objeto -t va en cada palabra: pirosat"
+          },
+          "wrong": {
+            "en": "With this rule you would write Egy pirosat kabátot; the -t sits only on the noun.",
+            "es": "Con esta regla escribirías Egy pirosat kabátot; la -t va solo en el sustantivo."
+          }
+        },
+        {
+          "text": {
+            "en": "Plural adjective: pirosak",
+            "es": "Adjetivo en plural: pirosak"
+          },
+          "wrong": {
+            "en": "pirosak is for AFTER a plural noun (A kabátok pirosak); here it is one coat, and the adjective stands in front.",
+            "es": "pirosak es para DESPUÉS de un sustantivo plural (A kabátok pirosak); aquí es un solo abrigo y el adjetivo va delante."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "melleknev-c11",
+      "sentence": "Ez a ház új, az a ház ___.",
+      "options": [
+        "régi",
+        "régiek",
+        "régit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "régi (old) is the opposite of új (new). One house: singular, no ending.",
+        "es": "régi (viejo) es el opuesto de új (nuevo). Una casa: singular, sin terminación."
+      },
+      "wrong": {
+        "régiek": {
+          "en": "régiek is the plural; it would fit several houses (A házak régiek).",
+          "es": "régiek es el plural; iría con varias casas (A házak régiek)."
+        },
+        "régit": {
+          "en": "régit is the -t form (Régit kérek, 'I ask for an old one').",
+          "es": "régit es la forma con -t (Régit kérek, «pido uno viejo»)."
+        }
+      },
+      "examples": [
+        "A kabát régi.",
+        "Az autó új."
+      ],
+      "tr": {
+        "en": "This house is new, that house is old.",
+        "es": "Esta casa es nueva, aquella casa es vieja."
+      }
+    },
+    {
+      "id": "melleknev-f11",
+      "kind": "form",
+      "verb": "régi",
+      "person": "többes szám",
+      "answer": "régiek",
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-c12",
+      "sentence": "Milyen házak ezek? Ezek ___ házak.",
+      "options": [
+        "drága",
+        "drágák",
+        "drágát"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In front of the noun házak the adjective stays bare, even after ezek (these): drága házak.",
+        "es": "Delante del sustantivo házak el adjetivo queda solo, incluso después de ezek (éstas): drága házak."
+      },
+      "wrong": {
+        "drágák": {
+          "en": "drágák is for AFTER a plural noun (Ezek a házak drágák); here the adjective stands in front of házak.",
+          "es": "drágák es para DESPUÉS de un sustantivo plural (Ezek a házak drágák); aquí el adjetivo va delante de házak."
+        },
+        "drágát": {
+          "en": "drágát is the -t form (Drágát kérek, 'I ask for an expensive one'); it does not go before a noun.",
+          "es": "drágát es la forma con -t (Drágát kérek, «pido uno caro»); no va delante de un sustantivo."
+        }
+      },
+      "examples": [
+        "Ezek nagy házak.",
+        "Ezek szép kabátok."
+      ],
+      "tr": {
+        "en": "What kind of houses are these? These are expensive houses.",
+        "es": "¿Qué tipo de casas son éstas? Éstas son casas caras."
+      }
+    },
+    {
+      "id": "melleknev-f12",
+      "kind": "form",
+      "verb": "olcsó",
+      "person": "többes szám",
+      "answer": "olcsók",
+      "table": "melleknev-pl"
+    },
+    {
+      "id": "melleknev-c13",
+      "sentence": "A kertek ___.",
+      "options": [
+        "kicsik",
+        "kicsi",
+        "kicsit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A plural subject: the adjective after it takes the plural: kicsik.",
+        "es": "Un sujeto plural: el adjetivo después toma el plural: kicsik."
+      },
+      "wrong": {
+        "kicsi": {
+          "en": "kicsi is for ONE garden (A kert kicsi); here there are several.",
+          "es": "kicsi es para UN jardín (A kert kicsi); aquí hay varios."
+        },
+        "kicsit": {
+          "en": "kicsit means 'a little' (Kicsit fáradt vagyok); it is not the 'are small' part of a sentence.",
+          "es": "kicsit significa «un poco» (Kicsit fáradt vagyok); no es la parte «son pequeños» de una frase."
+        }
+      },
+      "examples": [
+        "A lakások kicsik.",
+        "A házak kicsik."
+      ],
+      "tr": {
+        "en": "The gardens are small.",
+        "es": "Los jardines son pequeños."
+      }
+    },
+    {
+      "id": "melleknev-w04",
+      "kind": "why",
+      "es": "Fáradtak vagyunk.",
+      "target": "Fáradtak",
+      "tr": {
+        "en": "We are tired.",
+        "es": "Estamos cansados."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Adjective with mi (we): plural subject, so the plural -ak",
+            "es": "Adjetivo con mi (nosotros): sujeto plural, así que el plural -ak"
+          }
+        },
+        {
+          "text": {
+            "en": "Singular adjective: Fáradt vagyunk",
+            "es": "Adjetivo en singular: Fáradt vagyunk"
+          },
+          "wrong": {
+            "en": "With this rule the adjective would be fáradt, as in Fáradt vagyok (I am tired); mi is plural, so the adjective is plural too.",
+            "es": "Con esta regla el adjetivo sería fáradt, como en Fáradt vagyok (estoy cansado); mi es plural, así que el adjetivo también es plural."
+          }
+        },
+        {
+          "text": {
+            "en": "Adjective in front of a noun: no ending",
+            "es": "Adjetivo delante de un sustantivo: sin terminación"
+          },
+          "wrong": {
+            "en": "There is no noun here; the adjective is the 'are tired' part of the sentence, so it agrees with mi.",
+            "es": "Aquí no hay sustantivo; el adjetivo es la parte «estamos cansados» de la frase, así que concuerda con mi."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "melleknev-c14",
+      "sentence": "Egy ___ autót veszek.",
+      "options": [
+        "új",
+        "újat",
+        "újak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In front of autót the adjective stays bare; the -t belongs only to the noun: új autót.",
+        "es": "Delante de autót el adjetivo queda solo; la -t es solo del sustantivo: új autót."
+      },
+      "wrong": {
+        "újat": {
+          "en": "újat is the -t form of új alone, 'a new one' (Újat veszek); with the noun autót the adjective stays bare.",
+          "es": "újat es la forma con -t de új solo, «uno nuevo» (Újat veszek); con el sustantivo autót el adjetivo queda solo."
+        },
+        "újak": {
+          "en": "újak is the plural for AFTER a plural noun (Az autók újak); here it is one car and the adjective stands in front.",
+          "es": "újak es el plural para DESPUÉS de un sustantivo plural (Az autók újak); aquí es un solo coche y el adjetivo va delante."
+        }
+      },
+      "examples": [
+        "Egy piros kabátot veszek.",
+        "Egy szép sapkát veszek."
+      ],
+      "tr": {
+        "en": "I am buying a new car.",
+        "es": "Compro un coche nuevo."
+      }
+    }
+  ]
+}

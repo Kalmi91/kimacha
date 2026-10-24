@@ -1,0 +1,1265 @@
+{
+  "schema": 2,
+  "topic": "igekotok",
+  "level": "A2",
+  "title": {
+    "en": "Verb prefixes: be-, ki-, meg-, el-...",
+    "es": "Prefijos verbales: be-, ki-, meg-, el-..."
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Many Hungarian verbs start with a small word called an igekötő (verb prefix), written together with the verb: megy (go) becomes bemegy (go in), kimegy (go out), elmegy (go away). The prefix does two jobs. It shows DIRECTION: be- in, ki- out, fel- up, le- down, át- across, el- away, vissza- back, haza- home. And it can show that an action is COMPLETED: eszem = I eat, megeszem = I eat it all up. English does this with little words after the verb (go in, eat up); Spanish uses other verbs (entrar, salir, subir) or the 'se' of comerse. In this lesson the prefix stands right in front of the verb: Anna bemegy a boltba. In the next lesson you will see when it jumps behind the verb.",
+        "es": "Muchos verbos húngaros empiezan con una palabrita llamada igekötő (prefijo verbal), escrita junto al verbo: megy (ir) se vuelve bemegy (entrar), kimegy (salir), elmegy (irse). El prefijo hace dos cosas. Indica DIRECCIÓN: be- dentro, ki- fuera, fel- arriba, le- abajo, át- a través, el- lejos, vissza- de vuelta, haza- a casa. Y puede indicar que una acción está TERMINADA: eszem = como, megeszem = me lo como todo. El español usa otros verbos (entrar, salir, subir) o el «se» de comerse; el inglés usa palabritas tras el verbo (go in, eat up). En esta lección el prefijo va justo delante del verbo: Anna bemegy a boltba. En la lección siguiente verás cuándo salta detrás del verbo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "megy-prefix",
+      "noTableDeck": true,
+      "title": {
+        "en": "megy (go) with the direction prefixes",
+        "es": "megy (ir) con los prefijos de dirección"
+      },
+      "header": [
+        {
+          "en": "Prefix",
+          "es": "Prefijo"
+        },
+        {
+          "en": "én (I)",
+          "es": "én (yo)"
+        },
+        {
+          "en": "ő (he, she)",
+          "es": "ő (él, ella)"
+        }
+      ],
+      "rows": [
+        [
+          "be-",
+          "bemegyek",
+          "bemegy"
+        ],
+        [
+          "ki-",
+          "kimegyek",
+          "kimegy"
+        ],
+        [
+          "fel-",
+          "felmegyek",
+          "felmegy"
+        ],
+        [
+          "le-",
+          "lemegyek",
+          "lemegy"
+        ],
+        [
+          "át-",
+          "átmegyek",
+          "átmegy"
+        ],
+        [
+          "el-",
+          "elmegyek",
+          "elmegy"
+        ],
+        [
+          "vissza-",
+          "visszamegyek",
+          "visszamegy"
+        ],
+        [
+          "haza-",
+          "hazamegyek",
+          "hazamegy"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "What the direction prefixes mean",
+        "es": "Qué significan los prefijos de dirección"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "be- (in) and ki- (out) are opposites, like go in and go out.",
+            "es": "be- (dentro) y ki- (fuera) son opuestos, como entrar y salir."
+          },
+          "examples": [
+            {
+              "es": "Anna bemegy a boltba.",
+              "tr": {
+                "en": "Anna goes into the shop.",
+                "es": "Anna entra en la tienda."
+              }
+            },
+            {
+              "es": "Péter kimegy a kertbe.",
+              "tr": {
+                "en": "Péter goes out into the garden.",
+                "es": "Péter sale al jardín."
+              }
+            },
+            {
+              "es": "Kati bemegy a szobába.",
+              "tr": {
+                "en": "Kati goes into the room.",
+                "es": "Kati entra en la habitación."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "fel- (up) and le- (down) are opposites too: stairs, hills, cellars.",
+            "es": "fel- (arriba) y le- (abajo) también son opuestos: escaleras, colinas, sótanos."
+          },
+          "examples": [
+            {
+              "es": "Felmegyünk a hegyre.",
+              "tr": {
+                "en": "We go up the mountain.",
+                "es": "Subimos a la montaña."
+              }
+            },
+            {
+              "es": "Lemegyek a pincébe.",
+              "tr": {
+                "en": "I go down to the cellar.",
+                "es": "Bajo al sótano."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "át- means across or over: you cross a bridge or a road.",
+            "es": "át- significa a través o al otro lado: cruzas un puente o una calle."
+          },
+          "examples": [
+            {
+              "es": "Átmegyünk a hídon.",
+              "tr": {
+                "en": "We cross the bridge.",
+                "es": "Cruzamos el puente."
+              }
+            },
+            {
+              "es": "Átmegyek az úton.",
+              "tr": {
+                "en": "I cross the road.",
+                "es": "Cruzo la calle."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "el- means away from here, off somewhere. vissza- means back to where you were. haza- means home.",
+            "es": "el- significa lejos de aquí, hacia otro sitio. vissza- significa de vuelta al lugar donde estabas. haza- significa a casa."
+          },
+          "examples": [
+            {
+              "es": "Gábor elmegy.",
+              "tr": {
+                "en": "Gábor leaves.",
+                "es": "Gábor se va."
+              }
+            },
+            {
+              "es": "Visszamegyek a szállodába.",
+              "tr": {
+                "en": "I go back to the hotel.",
+                "es": "Vuelvo al hotel."
+              }
+            },
+            {
+              "es": "Anna hazamegy.",
+              "tr": {
+                "en": "Anna goes home.",
+                "es": "Anna se va a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Many verbs only exist with their prefix, and it is not always the literal direction. Learn them as one word: kinyit (open), bezár (close), felkel (get up), leszáll (get off), átszáll (change, transfer).",
+            "es": "Muchos verbos solo existen con su prefijo, y no siempre es la dirección literal. Aprende cada uno como una sola palabra: kinyit (abrir), bezár (cerrar), felkel (levantarse), leszáll (bajarse), átszáll (hacer transbordo)."
+          },
+          "examples": [
+            {
+              "es": "Kinyitom az ajtót.",
+              "tr": {
+                "en": "I open the door.",
+                "es": "Abro la puerta."
+              }
+            },
+            {
+              "es": "Bezárom az ablakot.",
+              "tr": {
+                "en": "I close the window.",
+                "es": "Cierro la ventana."
+              }
+            },
+            {
+              "es": "Anna korán felkel.",
+              "tr": {
+                "en": "Anna gets up early.",
+                "es": "Anna se levanta temprano."
+              }
+            },
+            {
+              "es": "Leszállok a buszról.",
+              "tr": {
+                "en": "I get off the bus.",
+                "es": "Me bajo del autobús."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "prefix-pairs",
+      "noTableDeck": true,
+      "title": {
+        "en": "The same verb without and with a prefix",
+        "es": "El mismo verbo sin y con prefijo"
+      },
+      "header": [
+        {
+          "en": "Without prefix (én)",
+          "es": "Sin prefijo (én)"
+        },
+        {
+          "en": "With prefix (én)",
+          "es": "Con prefijo (én)"
+        }
+      ],
+      "rows": [
+        [
+          "eszem",
+          "megeszem"
+        ],
+        [
+          "iszom",
+          "megiszom"
+        ],
+        [
+          "olvasom",
+          "elolvasom"
+        ],
+        [
+          "nézem",
+          "megnézem"
+        ],
+        [
+          "kelek",
+          "felkelek"
+        ],
+        [
+          "keresek",
+          "kikeresek"
+        ],
+        [
+          "adok",
+          "eladok"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Prefixes that finish an action",
+        "es": "Prefijos que terminan una acción"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Without a prefix the verb names an activity: it is going on, repeated or unfinished. With meg- the action is done all the way: the soup is gone, the series is seen. English says eat up, drink up; Spanish says comerse, tomarse.",
+            "es": "Sin prefijo el verbo nombra una actividad: está en curso, se repite o no está terminada. Con meg- la acción se completa del todo: la sopa se acaba, la serie se ve. El español lo dice con «se»: comerse, tomarse, beberse."
+          },
+          "examples": [
+            {
+              "es": "Eszem a levest.",
+              "tr": {
+                "en": "I am eating the soup.",
+                "es": "Estoy comiendo la sopa."
+              }
+            },
+            {
+              "es": "Megeszem a levest.",
+              "tr": {
+                "en": "I eat up the soup.",
+                "es": "Me como la sopa."
+              }
+            },
+            {
+              "es": "Megiszom a kávét.",
+              "tr": {
+                "en": "I drink up the coffee.",
+                "es": "Me tomo el café."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In the present tense a prefixed verb often looks ahead (\"I will do it and finish it\"). In the past tense it says the thing is done.",
+            "es": "En presente, un verbo con prefijo suele mirar hacia adelante («lo haré y lo terminaré»). En pasado dice que la cosa ya está hecha."
+          },
+          "examples": [
+            {
+              "es": "Holnap megnézem a sorozatot.",
+              "tr": {
+                "en": "Tomorrow I will watch the series.",
+                "es": "Mañana veo la serie."
+              }
+            },
+            {
+              "es": "Megittam a kávét.",
+              "tr": {
+                "en": "I drank up the coffee.",
+                "es": "Me tomé el café."
+              }
+            },
+            {
+              "es": "Anna megette a tortát.",
+              "tr": {
+                "en": "Anna ate up the cake.",
+                "es": "Anna se comió el pastel."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The prefix is not always meg-. Many verbs take another one: elolvas (read through), kikeres (look up), elad (sell). Learn each verb with its prefix.",
+            "es": "El prefijo no siempre es meg-. Muchos verbos llevan otro: elolvas (leer completo), kikeres (buscar en una lista o diccionario), elad (vender). Aprende cada verbo con su prefijo."
+          },
+          "examples": [
+            {
+              "es": "Elolvasom a levelet.",
+              "tr": {
+                "en": "I read the letter through.",
+                "es": "Leo la carta completa."
+              }
+            },
+            {
+              "es": "Kikeresem a szót a szótárban.",
+              "tr": {
+                "en": "I look the word up in the dictionary.",
+                "es": "Busco la palabra en el diccionario."
+              }
+            },
+            {
+              "es": "Eladom az autót.",
+              "tr": {
+                "en": "I sell the car.",
+                "es": "Vendo el auto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The verb is conjugated exactly as without a prefix; the prefix just sits in front. eszem, eszed, eszi becomes megeszem, megeszed, megeszi.",
+            "es": "El verbo se conjuga igual que sin prefijo; el prefijo solo se pone delante. eszem, eszed, eszi se vuelve megeszem, megeszed, megeszi."
+          },
+          "examples": [
+            {
+              "es": "Megeszed a levest?",
+              "tr": {
+                "en": "Are you going to eat up the soup?",
+                "es": "¿Te vas a comer la sopa?"
+              }
+            },
+            {
+              "es": "Anna megeszi a tortát.",
+              "tr": {
+                "en": "Anna eats up the cake.",
+                "es": "Anna se come el pastel."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Eszem a levest.",
+          "b": "Megeszem a levest.",
+          "note": {
+            "en": "No prefix: the activity. With meg-: it gets finished, nothing is left.",
+            "es": "Sin prefijo: la actividad. Con meg-: se termina, no queda nada."
+          },
+          "examples": [
+            {
+              "es": "Iszom a teát.",
+              "tr": {
+                "en": "I am drinking the tea.",
+                "es": "Estoy tomando el té."
+              }
+            },
+            {
+              "es": "Megiszom a teát.",
+              "tr": {
+                "en": "I drink up the tea.",
+                "es": "Me tomo el té."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Kimegyek a szobából.",
+          "b": "Elmegyek.",
+          "note": {
+            "en": "ki- = out of a place you are in; el- = away from here, off to somewhere.",
+            "es": "ki- = fuera de un lugar donde estás; el- = lejos de aquí, a otro sitio."
+          },
+          "examples": [
+            {
+              "es": "Péter kimegy az utcára.",
+              "tr": {
+                "en": "Péter goes out into the street.",
+                "es": "Péter sale a la calle."
+              }
+            },
+            {
+              "es": "Anna elmegy a piacra.",
+              "tr": {
+                "en": "Anna goes off to the market.",
+                "es": "Anna se va al mercado."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Felmegyek.",
+          "b": "Lemegyek.",
+          "note": {
+            "en": "fel- = up, le- = down. A hill goes up, a cellar goes down.",
+            "es": "fel- = arriba, le- = abajo. Una colina sube, un sótano baja."
+          },
+          "examples": [
+            {
+              "es": "Péter felmegy a hegyre.",
+              "tr": {
+                "en": "Péter goes up the mountain.",
+                "es": "Péter sube a la montaña."
+              }
+            },
+            {
+              "es": "Péter lemegy a pincébe.",
+              "tr": {
+                "en": "Péter goes down to the cellar.",
+                "es": "Péter baja al sótano."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) The prefix belongs to the verb, so look words up WITH their prefix (kinyit, elad, felkel); the right prefix cannot be guessed from English: read through is elolvas. (2) meg- is not a universal finish button: many verbs take another prefix (elolvas, kinyit, befejez). (3) Here the prefix is glued in front of the verb; in the next lesson it sometimes jumps behind it (Nem megyek el).",
+        "es": "Trampas clásicas: (1) El prefijo pertenece al verbo, así que aprende las palabras CON su prefijo (kinyit, elad, felkel); el prefijo correcto no se adivina por el español: leer completo es elolvas. (2) meg- no es un botón universal de «terminar»: muchos verbos llevan otro prefijo (elolvas, kinyit, befejez). (3) Aquí el prefijo va pegado delante del verbo; en la lección siguiente a veces salta detrás (Nem megyek el)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, a small prefix in front of the verb can change the direction or finish the action. «Megy» means go, but «bemegy» means go in, «kimegy» go out, «felmegy» go up, «lemegy» go down, and «elmegy» go away. With «haza» and «vissza» you get «hazamegy», go home, and «visszamegy», go back. The prefix «meg» often shows that something is finished: «eszem a levest» means I am eating the soup, but «megeszem a levest» means I eat it all up. Learn each verb together with its prefix: «kinyit», «bezár», «felkel».",
+    "es": "En húngaro, un pequeño prefijo delante del verbo puede cambiar la dirección o terminar la acción. «Megy» significa ir, pero «bemegy» significa entrar, «kimegy» salir, «felmegy» subir, «lemegy» bajar y «elmegy» irse. Con «haza» y «vissza» se forman «hazamegy», irse a casa, y «visszamegy», volver. El prefijo «meg» suele indicar que algo se termina: «eszem a levest» significa estoy comiendo la sopa, pero «megeszem a levest» significa me la como toda. Aprende cada verbo junto con su prefijo: «kinyit», «bezár», «felkel»."
+  },
+  "glossary": [
+    {
+      "word": "bemegy",
+      "gloss": {
+        "en": "go in, enter",
+        "es": "entrar"
+      }
+    },
+    {
+      "word": "kimegy",
+      "gloss": {
+        "en": "go out, leave a place",
+        "es": "salir"
+      }
+    },
+    {
+      "word": "felmegy",
+      "gloss": {
+        "en": "go up",
+        "es": "subir"
+      }
+    },
+    {
+      "word": "lemegy",
+      "gloss": {
+        "en": "go down",
+        "es": "bajar"
+      }
+    },
+    {
+      "word": "átmegy",
+      "gloss": {
+        "en": "cross, go over",
+        "es": "cruzar, pasar al otro lado"
+      }
+    },
+    {
+      "word": "elmegy",
+      "gloss": {
+        "en": "go away, leave",
+        "es": "irse, marcharse"
+      }
+    },
+    {
+      "word": "megeszik",
+      "gloss": {
+        "en": "eat up",
+        "es": "comerse"
+      }
+    },
+    {
+      "word": "megiszik",
+      "gloss": {
+        "en": "drink up",
+        "es": "tomarse, beberse"
+      }
+    },
+    {
+      "word": "megnéz",
+      "gloss": {
+        "en": "watch, have a look at",
+        "es": "ver, mirar"
+      }
+    },
+    {
+      "word": "elolvas",
+      "gloss": {
+        "en": "read through",
+        "es": "leer completo"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "igekotok-c01",
+      "sentence": "Kati a boltban van. Most ___ az utcára.",
+      "options": [
+        "kimegy",
+        "bemegy",
+        "felmegy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kati is inside the shop and the street is outside, so she goes out: ki- (out) + megy = kimegy.",
+        "es": "Kati está dentro de la tienda y la calle queda afuera, así que sale: ki- (fuera) + megy = kimegy."
+      },
+      "wrong": {
+        "bemegy": {
+          "en": "With bemegy the sentence would mean 'Kati goes in'; but she is already inside the shop.",
+          "es": "Con bemegy la frase significaría «Kati entra»; pero ella ya está dentro de la tienda."
+        },
+        "felmegy": {
+          "en": "With felmegy the sentence would mean 'Kati goes up' (stairs, a hill); nothing here goes upward.",
+          "es": "Con felmegy la frase significaría «Kati sube» (escaleras, una colina); aquí nada sube."
+        }
+      },
+      "examples": [
+        "Péter kimegy a kertbe.",
+        "Anna kimegy az utcára."
+      ],
+      "tr": {
+        "en": "Kati is in the shop. Now she goes out into the street.",
+        "es": "Kati está en la tienda. Ahora sale a la calle."
+      }
+    },
+    {
+      "id": "igekotok-f01",
+      "kind": "form",
+      "verb": "megyek",
+      "person": "be-",
+      "answer": "bemegyek",
+      "table": "megy-prefix"
+    },
+    {
+      "id": "igekotok-c02",
+      "sentence": "A kulcs a pincében van. Péter ___ a pincébe.",
+      "options": [
+        "lemegy",
+        "felmegy",
+        "kimegy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A cellar is below the house, so Péter goes down: le- (down) + megy = lemegy.",
+        "es": "Un sótano está debajo de la casa, así que Péter baja: le- (abajo) + megy = lemegy."
+      },
+      "wrong": {
+        "felmegy": {
+          "en": "With felmegy the sentence would mean 'Péter goes up' into the cellar; but a cellar is down, not up.",
+          "es": "Con felmegy la frase significaría «Péter sube» al sótano; pero un sótano está abajo, no arriba."
+        },
+        "kimegy": {
+          "en": "With kimegy the sentence would mean 'Péter goes out' of a place; here he goes down.",
+          "es": "Con kimegy la frase significaría «Péter sale» de un lugar; aquí él baja."
+        }
+      },
+      "examples": [
+        "Lemegyek a pincébe.",
+        "Gábor lemegy a lépcsőn."
+      ],
+      "tr": {
+        "en": "The key is in the cellar. Péter goes down to the cellar.",
+        "es": "La llave está en el sótano. Péter baja al sótano."
+      }
+    },
+    {
+      "id": "igekotok-f02",
+      "kind": "form",
+      "verb": "megy",
+      "person": "ki-",
+      "answer": "kimegy",
+      "table": "megy-prefix"
+    },
+    {
+      "id": "igekotok-c03",
+      "sentence": "___ a hídon, és ott van a park.",
+      "options": [
+        "Átmegyünk",
+        "Felmegyünk",
+        "Kimegyünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You cross a bridge to get to the other side, and át- means across: átmegyünk.",
+        "es": "Cruzas un puente para llegar al otro lado, y át- significa a través: átmegyünk."
+      },
+      "wrong": {
+        "Felmegyünk": {
+          "en": "With Felmegyünk the sentence would mean 'We go up the bridge'; it does not say that we get across.",
+          "es": "Con Felmegyünk la frase significaría «Subimos por el puente»; no dice que lleguemos al otro lado."
+        },
+        "Kimegyünk": {
+          "en": "With Kimegyünk the sentence would mean 'We go out' of a place; a bridge is crossed, not left.",
+          "es": "Con Kimegyünk la frase significaría «Salimos» de un lugar; un puente se cruza, no se sale de él."
+        }
+      },
+      "examples": [
+        "Átmegyek az úton.",
+        "Gábor átmegy a hídon."
+      ],
+      "tr": {
+        "en": "We cross the bridge, and the park is there.",
+        "es": "Cruzamos el puente y ahí está el parque."
+      }
+    },
+    {
+      "id": "igekotok-f03",
+      "kind": "form",
+      "verb": "megyek",
+      "person": "fel-",
+      "answer": "felmegyek",
+      "table": "megy-prefix"
+    },
+    {
+      "id": "igekotok-w01",
+      "kind": "why",
+      "es": "Anna hazamegy.",
+      "target": "hazamegy",
+      "tr": {
+        "en": "Anna goes home.",
+        "es": "Anna se va a casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "haza- shows direction: Anna goes home",
+            "es": "haza- indica dirección: Anna va a casa"
+          }
+        },
+        {
+          "text": {
+            "en": "meg- shows the action is completed",
+            "es": "meg- indica que la acción se completa"
+          },
+          "wrong": {
+            "en": "With this rule the verb would be a completion verb like megeszik; hazamegy has a direction prefix.",
+            "es": "Con esta regla el verbo sería de acción completada como megeszik; hazamegy lleva un prefijo de dirección."
+          }
+        },
+        {
+          "text": {
+            "en": "el- shows direction: away",
+            "es": "el- indica dirección: lejos"
+          },
+          "wrong": {
+            "en": "With this rule the verb would be elmegy (goes away); hazamegy says where Anna goes: home.",
+            "es": "Con esta regla el verbo sería elmegy (se va lejos); hazamegy dice adónde va Anna: a casa."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igekotok-c04",
+      "sentence": "Anna fáradt, ezért ___.",
+      "options": [
+        "hazamegy",
+        "átmegy",
+        "kimegy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A tired person goes home: haza- (home) + megy = hazamegy.",
+        "es": "Una persona cansada se va a casa: haza- (a casa) + megy = hazamegy."
+      },
+      "wrong": {
+        "átmegy": {
+          "en": "With átmegy the sentence would mean 'Anna crosses over' (a road, a bridge); that does not follow from being tired.",
+          "es": "Con átmegy la frase significaría «Anna cruza» (una calle, un puente); eso no se sigue de estar cansada."
+        },
+        "kimegy": {
+          "en": "With kimegy the sentence would mean 'Anna goes out'; being tired points to going home.",
+          "es": "Con kimegy la frase significaría «Anna sale»; estar cansada apunta a irse a casa."
+        }
+      },
+      "examples": [
+        "Péter hazamegy.",
+        "Hazamegyek."
+      ],
+      "tr": {
+        "en": "Anna is tired, so she goes home.",
+        "es": "Anna está cansada, por eso se va a casa."
+      }
+    },
+    {
+      "id": "igekotok-f04",
+      "kind": "form",
+      "verb": "megy",
+      "person": "le-",
+      "answer": "lemegy",
+      "table": "megy-prefix"
+    },
+    {
+      "id": "igekotok-c05",
+      "sentence": "A táskám a szállodában van, ezért ___.",
+      "options": [
+        "visszamegyek",
+        "felmegyek",
+        "kimegyek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Your bag is at the hotel, so you go back there: vissza- (back) + megyek = visszamegyek.",
+        "es": "Tu bolsa está en el hotel, así que vuelves allí: vissza- (de vuelta) + megyek = visszamegyek."
+      },
+      "wrong": {
+        "felmegyek": {
+          "en": "With felmegyek the sentence would mean 'I go up'; the bag being at the hotel says nothing about going up.",
+          "es": "Con felmegyek la frase significaría «subo»; que la bolsa esté en el hotel no habla de subir."
+        },
+        "kimegyek": {
+          "en": "With kimegyek the sentence would mean 'I go out'; the bag is at the hotel, so you return there.",
+          "es": "Con kimegyek la frase significaría «salgo»; la bolsa está en el hotel, así que regresas allí."
+        }
+      },
+      "examples": [
+        "Visszamegyek a boltba.",
+        "Péter visszamegy a szobába."
+      ],
+      "tr": {
+        "en": "My bag is at the hotel, so I go back.",
+        "es": "Mi bolsa está en el hotel, así que regreso."
+      }
+    },
+    {
+      "id": "igekotok-f05",
+      "kind": "form",
+      "verb": "megyek",
+      "person": "vissza-",
+      "answer": "visszamegyek",
+      "table": "megy-prefix"
+    },
+    {
+      "id": "igekotok-c06",
+      "sentence": "Viszlát! Most ___.",
+      "options": [
+        "elmegyek",
+        "bemegyek",
+        "felmegyek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After a goodbye you leave: el- (away) + megyek = elmegyek.",
+        "es": "Después de una despedida te vas: el- (lejos) + megyek = elmegyek."
+      },
+      "wrong": {
+        "bemegyek": {
+          "en": "With bemegyek the sentence would mean 'I go in'; a goodbye is about leaving, not entering.",
+          "es": "Con bemegyek la frase significaría «entro»; una despedida habla de irse, no de entrar."
+        },
+        "felmegyek": {
+          "en": "With felmegyek the sentence would mean 'I go up'; a goodbye is about leaving.",
+          "es": "Con felmegyek la frase significaría «subo»; una despedida habla de irse."
+        }
+      },
+      "examples": [
+        "Gábor elmegy.",
+        "Elmegyek a piacra."
+      ],
+      "tr": {
+        "en": "Bye! I'm leaving now.",
+        "es": "¡Adiós! Ahora me voy."
+      }
+    },
+    {
+      "id": "igekotok-f06",
+      "kind": "form",
+      "verb": "megy",
+      "person": "haza-",
+      "answer": "hazamegy",
+      "table": "megy-prefix"
+    },
+    {
+      "id": "igekotok-w02",
+      "kind": "why",
+      "es": "Péter bemegy a boltba.",
+      "target": "bemegy",
+      "tr": {
+        "en": "Péter goes into the shop.",
+        "es": "Péter entra en la tienda."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ki- shows direction: out",
+            "es": "ki- indica dirección: fuera"
+          },
+          "wrong": {
+            "en": "With this rule the verb would be kimegy (goes out); a boltba says Péter goes into the shop.",
+            "es": "Con esta regla el verbo sería kimegy (sale); a boltba dice que Péter entra en la tienda."
+          }
+        },
+        {
+          "text": {
+            "en": "meg- shows the action is completed",
+            "es": "meg- indica que la acción se completa"
+          },
+          "wrong": {
+            "en": "With this rule the verb would be a completion verb like megeszik; bemegy has a direction prefix.",
+            "es": "Con esta regla el verbo sería de acción completada como megeszik; bemegy lleva un prefijo de dirección."
+          }
+        },
+        {
+          "text": {
+            "en": "be- shows direction: in",
+            "es": "be- indica dirección: dentro"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "igekotok-c07",
+      "sentence": "A leves már nincs a tányérban: Péter ___.",
+      "options": [
+        "megette",
+        "evett",
+        "eszik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The soup is gone, so Péter ate it all: meg- shows the action is completed (megette).",
+        "es": "La sopa ya no está, así que Péter se la comió toda: meg- indica que la acción se completó (megette)."
+      },
+      "wrong": {
+        "evett": {
+          "en": "With evett the sentence would mean 'Péter ate (something)'; it does not say that the soup is gone.",
+          "es": "Con evett la frase significaría «Péter comió (algo)»; no dice que la sopa se acabó."
+        },
+        "eszik": {
+          "en": "With eszik the sentence would mean 'Péter is eating'; but the soup is already gone.",
+          "es": "Con eszik la frase significaría «Péter está comiendo»; pero la sopa ya se acabó."
+        }
+      },
+      "examples": [
+        "Anna megette a tortát.",
+        "Megettem az almát."
+      ],
+      "tr": {
+        "en": "The soup is no longer on the plate: Péter ate it up.",
+        "es": "La sopa ya no está en el plato: Péter se la comió."
+      }
+    },
+    {
+      "id": "igekotok-f07",
+      "kind": "form",
+      "verb": "eszem",
+      "person": "meg-",
+      "answer": "megeszem",
+      "accept": ["megeszek"],
+      "table": "prefix-pairs"
+    },
+    {
+      "id": "igekotok-c08",
+      "sentence": "A pohár üres: Kati ___ a vizet.",
+      "options": [
+        "megitta",
+        "ivott",
+        "iszik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The glass is empty, so Kati drank the water up: meg- + itta = megitta (a vizet is definite).",
+        "es": "El vaso está vacío, así que Kati se bebió toda el agua: meg- + itta = megitta (a vizet es determinado)."
+      },
+      "wrong": {
+        "ivott": {
+          "en": "ivott is the form for an unspecified object (Kati ivott vizet = Kati drank some water); it also does not say the glass is empty.",
+          "es": "ivott es la forma para un objeto no determinado (Kati ivott vizet = Kati bebió agua); tampoco dice que el vaso quedó vacío."
+        },
+        "iszik": {
+          "en": "With iszik the sentence would mean 'Kati is drinking'; but the glass is already empty.",
+          "es": "Con iszik la frase significaría «Kati está bebiendo»; pero el vaso ya está vacío."
+        }
+      },
+      "examples": [
+        "Megittam a kávét.",
+        "Anna megitta a teát."
+      ],
+      "tr": {
+        "en": "The glass is empty: Kati drank up the water.",
+        "es": "El vaso está vacío: Kati se bebió el agua."
+      }
+    },
+    {
+      "id": "igekotok-f08",
+      "kind": "form",
+      "verb": "iszom",
+      "person": "meg-",
+      "answer": "megiszom",
+      "accept": ["megiszok"],
+      "table": "prefix-pairs"
+    },
+    {
+      "id": "igekotok-c09",
+      "sentence": "Meleg van. ___ az ablakot.",
+      "options": [
+        "Kinyitom",
+        "Bezárom",
+        "Megnézem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "It is warm, so you open the window: ki- + nyitom = kinyitom.",
+        "es": "Hace calor, así que abres la ventana: ki- + nyitom = kinyitom."
+      },
+      "wrong": {
+        "Bezárom": {
+          "en": "With Bezárom the sentence would mean 'I close the window'; that fits cold weather, not warm.",
+          "es": "Con Bezárom la frase significaría «Cierro la ventana»; eso encaja con el frío, no con el calor."
+        },
+        "Megnézem": {
+          "en": "With Megnézem the sentence would mean 'I look at the window'; nothing gets opened.",
+          "es": "Con Megnézem la frase significaría «Miro la ventana»; no se abre nada."
+        }
+      },
+      "examples": [
+        "Kinyitom az ajtót.",
+        "Anna kinyitja az ablakot."
+      ],
+      "tr": {
+        "en": "It is warm. I open the window.",
+        "es": "Hace calor. Abro la ventana."
+      }
+    },
+    {
+      "id": "igekotok-f09",
+      "kind": "form",
+      "verb": "olvasom",
+      "person": "el-",
+      "answer": "elolvasom",
+      "table": "prefix-pairs"
+    },
+    {
+      "id": "igekotok-w03",
+      "kind": "why",
+      "es": "Holnap megnézem a sorozatot.",
+      "target": "megnézem",
+      "tr": {
+        "en": "Tomorrow I will watch the series.",
+        "es": "Mañana veo la serie."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Direction prefix: the action moves somewhere",
+            "es": "Prefijo de dirección: la acción va a algún sitio"
+          },
+          "wrong": {
+            "en": "With this rule the verb would be like bemegy or kimegy; meg- shows no direction, it shows that the action gets done.",
+            "es": "Con esta regla el verbo sería como bemegy o kimegy; meg- no indica dirección, indica que la acción se completa."
+          }
+        },
+        {
+          "text": {
+            "en": "meg- shows completion; with holnap the present tense points to the future",
+            "es": "meg- indica que se completa; con holnap el presente apunta al futuro"
+          }
+        },
+        {
+          "text": {
+            "en": "Past tense: the prefix shows it already happened",
+            "es": "Pasado: el prefijo muestra que ya ocurrió"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Megnéztem a sorozatot (past); holnap (tomorrow) points ahead.",
+            "es": "Con esta regla la frase sería Megnéztem a sorozatot (pasado); holnap (mañana) apunta hacia adelante."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "igekotok-c10",
+      "sentence": "Reggel korán ___ az ágyból.",
+      "options": [
+        "felkelek",
+        "lemegyek",
+        "átmegyek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "felkel (get up) always comes with fel-: learn it as one word.",
+        "es": "felkel (levantarse) siempre lleva fel-: se aprende como una sola palabra."
+      },
+      "wrong": {
+        "lemegyek": {
+          "en": "With lemegyek the sentence would mean 'I go down'; getting out of bed is the verb felkel.",
+          "es": "Con lemegyek la frase significaría «bajo»; levantarse de la cama es el verbo felkel."
+        },
+        "átmegyek": {
+          "en": "With átmegyek the sentence would mean 'I cross over'; getting out of bed is the verb felkel.",
+          "es": "Con átmegyek la frase significaría «cruzo»; levantarse de la cama es el verbo felkel."
+        }
+      },
+      "examples": [
+        "Anna korán felkel.",
+        "Felkelek."
+      ],
+      "tr": {
+        "en": "I get up from bed early in the morning.",
+        "es": "Por la mañana me levanto temprano de la cama."
+      }
+    },
+    {
+      "id": "igekotok-f10",
+      "kind": "form",
+      "verb": "nézem",
+      "person": "meg-",
+      "answer": "megnézem",
+      "table": "prefix-pairs"
+    },
+    {
+      "id": "igekotok-c11",
+      "sentence": "A megállónál ___ a buszról.",
+      "options": [
+        "leszállok",
+        "átszállok",
+        "felmegyek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "To get off a bus you step down: le- (down) + szállok = leszállok.",
+        "es": "Para bajarte de un autobús bajas: le- (abajo) + szállok = leszállok."
+      },
+      "wrong": {
+        "átszállok": {
+          "en": "átszállok means 'I change' to another line (Átszállok a metróra); it needs the new line, not 'off the bus'.",
+          "es": "átszállok significa «hago transbordo» a otra línea (Átszállok a metróra); necesita la nueva línea, no solo «del autobús»."
+        },
+        "felmegyek": {
+          "en": "With felmegyek the sentence would mean 'I go up'; to leave a bus you need leszállok.",
+          "es": "Con felmegyek la frase significaría «subo»; para bajarte de un autobús necesitas leszállok."
+        }
+      },
+      "examples": [
+        "Leszállok a villamosról.",
+        "Gábor leszáll a vonatról."
+      ],
+      "tr": {
+        "en": "I get off the bus at the stop.",
+        "es": "Me bajo del autobús en la parada."
+      }
+    },
+    {
+      "id": "igekotok-f11",
+      "kind": "form",
+      "verb": "kelek",
+      "person": "fel-",
+      "answer": "felkelek",
+      "table": "prefix-pairs"
+    },
+    {
+      "id": "igekotok-c12",
+      "sentence": "Fáradt vagyok, ezért ___ a munkát.",
+      "options": [
+        "befejezem",
+        "kezdem",
+        "eladom"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A tired person stops: befejez (finish) takes be-, and a munkát is definite, so befejezem.",
+        "es": "Una persona cansada termina: befejez (terminar) lleva be-, y a munkát es determinado, por eso befejezem."
+      },
+      "wrong": {
+        "kezdem": {
+          "en": "With kezdem the sentence would mean 'I start the work'; being tired fits finishing it.",
+          "es": "Con kezdem la frase significaría «empiezo el trabajo»; estar cansado encaja con terminarlo."
+        },
+        "eladom": {
+          "en": "With eladom the sentence would mean 'I sell the work'; elad is 'sell' (el- + ad), not 'finish'.",
+          "es": "Con eladom la frase significaría «vendo el trabajo»; elad es «vender» (el- + ad), no «terminar»."
+        }
+      },
+      "examples": [
+        "Befejezem a levelet.",
+        "Anna befejezi a munkát."
+      ],
+      "tr": {
+        "en": "I'm tired, so I finish the work.",
+        "es": "Estoy cansado, por eso termino el trabajo."
+      }
+    },
+    {
+      "id": "igekotok-f12",
+      "kind": "form",
+      "verb": "adok",
+      "person": "el-",
+      "answer": "eladok",
+      "table": "prefix-pairs"
+    },
+    {
+      "id": "igekotok-c13",
+      "sentence": "Te ___ a levest?",
+      "options": [
+        "megeszed",
+        "megeszem",
+        "megeszi"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Te is \"you\" and a levest is definite, so the form ends in -d: eszed becomes megeszed.",
+        "es": "Te es «tú» y a levest es determinado, por eso la forma termina en -d: eszed se vuelve megeszed."
+      },
+      "wrong": {
+        "megeszem": {
+          "en": "megeszem is 'I eat it up'; it fits én, not te.",
+          "es": "megeszem es «me lo como»; corresponde a én, no a te."
+        },
+        "megeszi": {
+          "en": "megeszi is for he or she (Anna megeszi a levest); the subject here is te.",
+          "es": "megeszi es para él o ella (Anna megeszi a levest); el sujeto aquí es te."
+        }
+      },
+      "examples": [
+        "Megiszod a teát?",
+        "Megnézed a sorozatot?"
+      ],
+      "tr": {
+        "en": "Are you going to eat up the soup?",
+        "es": "¿Te vas a comer la sopa?"
+      }
+    },
+    {
+      "id": "igekotok-w04",
+      "kind": "why",
+      "es": "Eladom az autót.",
+      "target": "Eladom",
+      "tr": {
+        "en": "I sell the car.",
+        "es": "Vendo el auto."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "el- means away: the car goes away",
+            "es": "el- significa lejos: el auto se va"
+          },
+          "wrong": {
+            "en": "With this rule the verb would be about movement, like elmegy; elad is a fixed verb that means sell.",
+            "es": "Con esta regla el verbo sería de movimiento, como elmegy; elad es un verbo fijo que significa vender."
+          }
+        },
+        {
+          "text": {
+            "en": "meg- shows the action is completed",
+            "es": "meg- indica que la acción se completa"
+          },
+          "wrong": {
+            "en": "With this rule the verb would start with meg-; elad uses el-, and it is learned together with its prefix.",
+            "es": "Con esta regla el verbo empezaría con meg-; elad usa el-, y se aprende junto con su prefijo."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix belongs to the verb: elad (sell) is learned as one word",
+            "es": "El prefijo pertenece al verbo: elad (vender) se aprende como una sola palabra"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "igekotok-c14",
+      "sentence": "Anna és Péter ___ a tortát.",
+      "options": [
+        "megeszik",
+        "megeszi",
+        "megesznek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna and Péter are \"they\" and a tortát is definite: the they-form with a definite object is eszik, so megeszik.",
+        "es": "Anna y Péter son «ellos» y a tortát es determinado: la forma de «ellos» con objeto determinado es eszik, por eso megeszik."
+      },
+      "wrong": {
+        "megeszi": {
+          "en": "megeszi is for one person (Anna megeszi a tortát); two people need the they-form.",
+          "es": "megeszi es para una persona (Anna megeszi a tortát); dos personas necesitan la forma de «ellos»."
+        },
+        "megesznek": {
+          "en": "megesznek is the they-form without a definite object (Megesznek egy tortát); a tortát is definite.",
+          "es": "megesznek es la forma de «ellos» sin objeto determinado (Megesznek egy tortát); a tortát es determinado."
+        }
+      },
+      "examples": [
+        "A gyerekek megeszik a tésztát.",
+        "Kati és Gábor megisszák a teát."
+      ],
+      "tr": {
+        "en": "Anna and Péter eat up the cake.",
+        "es": "Anna y Péter se comen el pastel."
+      }
+    }
+  ]
+}

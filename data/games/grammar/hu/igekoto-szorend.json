@@ -1,0 +1,1188 @@
+{
+  "schema": 2,
+  "topic": "igekoto-szorend",
+  "level": "A2",
+  "title": {
+    "en": "Prefix word order: Nem megyek el",
+    "es": "Orden del prefijo: Nem megyek el"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In the last lesson the prefix stood right in front of the verb: Elmegyek. But in many sentences it jumps behind the verb: Nem megyek el. Mikor mész el? The rule is simple: the prefix stays in front only when nothing special stands directly before the verb. If the place right before the verb is taken by nem, by a question word or by a stressed word, the verb moves up next to it and the prefix drops behind the verb. With an infinitive (akarok, tudok, fogok) the prefix goes in front of the helping verb: El akarok menni. English little words always stay behind the verb ('I am not going away'), so the jump behind the verb will feel familiar.",
+        "es": "En la lección anterior el prefijo estaba justo delante del verbo: Elmegyek. Pero en muchas frases salta detrás del verbo: Nem megyek el. Mikor mész el? La regla es sencilla: el prefijo se queda delante solo cuando no hay nada especial justo antes del verbo. Si el lugar justo antes del verbo lo ocupa nem, una palabra interrogativa o una palabra enfatizada, el verbo sube junto a ella y el prefijo cae detrás del verbo. Con un infinitivo (akarok, tudok, fogok) el prefijo va delante del verbo auxiliar: El akarok menni. El español no tiene esto: aquí el orden de las palabras decide dónde va el prefijo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "prefix-position",
+      "noTableDeck": true,
+      "title": {
+        "en": "One verb, three positions of the prefix",
+        "es": "Un verbo, tres posiciones del prefijo"
+      },
+      "header": [
+        {
+          "en": "Plain sentence",
+          "es": "Frase simple"
+        },
+        {
+          "en": "After nem",
+          "es": "Después de nem"
+        },
+        {
+          "en": "After a question word",
+          "es": "Después de una palabra interrogativa"
+        }
+      ],
+      "rows": [
+        [
+          "Elmegyek.",
+          "Nem megyek el.",
+          "Mikor megyek el?"
+        ],
+        [
+          "Bemegyek.",
+          "Nem megyek be.",
+          "Mikor megyek be?"
+        ],
+        [
+          "Felkelek.",
+          "Nem kelek fel.",
+          "Mikor kelek fel?"
+        ],
+        [
+          "Visszajövök.",
+          "Nem jövök vissza.",
+          "Mikor jövök vissza?"
+        ],
+        [
+          "Leszállok.",
+          "Nem szállok le.",
+          "Hol szállok le?"
+        ],
+        [
+          "Megeszem.",
+          "Nem eszem meg.",
+          "Mikor eszem meg?"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When does the prefix jump behind the verb?",
+        "es": "Cuándo salta el prefijo detrás del verbo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Plain sentence, nothing stressed: the prefix stands directly in front of the verb, written together.",
+            "es": "Frase simple, nada enfatizado: el prefijo va justo delante del verbo, escrito junto."
+          },
+          "examples": [
+            {
+              "es": "Anna elmegy.",
+              "tr": {
+                "en": "Anna leaves.",
+                "es": "Anna se va."
+              }
+            },
+            {
+              "es": "Gábor hazamegy.",
+              "tr": {
+                "en": "Gábor goes home.",
+                "es": "Gábor se va a casa."
+              }
+            },
+            {
+              "es": "Bemegyek a boltba.",
+              "tr": {
+                "en": "I go into the shop.",
+                "es": "Entro en la tienda."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After nem the verb comes right behind it, and the prefix drops behind the verb. Say Nem megyek el, not Nem elmegyek.",
+            "es": "Después de nem el verbo va justo detrás, y el prefijo cae detrás del verbo. Se dice Nem megyek el, no Nem elmegyek."
+          },
+          "examples": [
+            {
+              "es": "Nem megyek el.",
+              "tr": {
+                "en": "I am not leaving.",
+                "es": "No me voy."
+              }
+            },
+            {
+              "es": "Anna nem megy be a boltba.",
+              "tr": {
+                "en": "Anna does not go into the shop.",
+                "es": "Anna no entra en la tienda."
+              }
+            },
+            {
+              "es": "Nem eszem meg a levest.",
+              "tr": {
+                "en": "I am not going to eat up the soup.",
+                "es": "No me voy a comer la sopa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A question word stands directly before the verb, so the prefix drops behind the verb.",
+            "es": "Una palabra interrogativa va justo antes del verbo, así que el prefijo cae detrás del verbo."
+          },
+          "examples": [
+            {
+              "es": "Mikor mész el?",
+              "tr": {
+                "en": "When are you leaving?",
+                "es": "¿Cuándo te vas?"
+              }
+            },
+            {
+              "es": "Hol szállsz le?",
+              "tr": {
+                "en": "Where do you get off?",
+                "es": "¿Dónde te bajas?"
+              }
+            },
+            {
+              "es": "Ki megy be?",
+              "tr": {
+                "en": "Who goes in?",
+                "es": "¿Quién entra?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A stressed word (the one you want to single out) also stands directly before the verb, and the prefix drops behind. The stressed word carries the new or contrasting information.",
+            "es": "Una palabra enfatizada (la que quieres destacar) también va justo antes del verbo, y el prefijo cae detrás. La palabra enfatizada lleva la información nueva o contrastante."
+          },
+          "examples": [
+            {
+              "es": "Péter megy el, nem Anna.",
+              "tr": {
+                "en": "It is Péter who leaves, not Anna.",
+                "es": "Es Péter quien se va, no Anna."
+              }
+            },
+            {
+              "es": "Holnap megyek haza.",
+              "tr": {
+                "en": "It is tomorrow that I go home.",
+                "es": "Es mañana cuando me voy a casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "prefix-infinitive",
+      "noTableDeck": true,
+      "title": {
+        "en": "Prefix and infinitive",
+        "es": "Prefijo e infinitivo"
+      },
+      "header": [
+        {
+          "en": "Plain sentence: prefix before the helping verb",
+          "es": "Frase simple: prefijo delante del verbo auxiliar"
+        },
+        {
+          "en": "After nem: prefix on the infinitive",
+          "es": "Después de nem: prefijo en el infinitivo"
+        }
+      ],
+      "rows": [
+        [
+          "El akarok menni.",
+          "Nem akarok elmenni."
+        ],
+        [
+          "Be tudok menni.",
+          "Nem tudok bemenni."
+        ],
+        [
+          "Fel fogok kelni.",
+          "Nem fogok felkelni."
+        ],
+        [
+          "Haza akarok menni.",
+          "Nem akarok hazamenni."
+        ],
+        [
+          "Meg akarom enni.",
+          "Nem akarom megenni."
+        ],
+        [
+          "Ki tudom nyitni.",
+          "Nem tudom kinyitni."
+        ],
+        [
+          "Be lehet menni.",
+          "Nem lehet bemenni."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "With an infinitive (akarok, tudok, fogok, lehet, szabad)",
+        "es": "Con un infinitivo (akarok, tudok, fogok, lehet, szabad)"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "In a plain sentence the prefix goes in front of the helping verb, even though it belongs to the infinitive: El akarok menni = I want to leave.",
+            "es": "En una frase simple el prefijo va delante del verbo auxiliar, aunque pertenezca al infinitivo: El akarok menni = quiero irme."
+          },
+          "examples": [
+            {
+              "es": "El akarok menni.",
+              "tr": {
+                "en": "I want to leave.",
+                "es": "Quiero irme."
+              }
+            },
+            {
+              "es": "Be tudok menni.",
+              "tr": {
+                "en": "I can go in.",
+                "es": "Puedo entrar."
+              }
+            },
+            {
+              "es": "Fel fogok kelni.",
+              "tr": {
+                "en": "I will get up.",
+                "es": "Me voy a levantar."
+              }
+            },
+            {
+              "es": "Haza akarok menni.",
+              "tr": {
+                "en": "I want to go home.",
+                "es": "Quiero irme a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After nem the prefix goes back onto the infinitive, written together: Nem akarok elmenni. The same happens with lehet and szabad: Nem lehet bemenni.",
+            "es": "Después de nem el prefijo vuelve al infinitivo, escrito junto: Nem akarok elmenni. Lo mismo pasa con lehet y szabad: Nem lehet bemenni."
+          },
+          "examples": [
+            {
+              "es": "Nem akarok elmenni.",
+              "tr": {
+                "en": "I do not want to leave.",
+                "es": "No quiero irme."
+              }
+            },
+            {
+              "es": "Nem tudok bemenni.",
+              "tr": {
+                "en": "I cannot go in.",
+                "es": "No puedo entrar."
+              }
+            },
+            {
+              "es": "Nem lehet bemenni.",
+              "tr": {
+                "en": "One cannot go in.",
+                "es": "No se puede entrar."
+              }
+            },
+            {
+              "es": "Nem szabad kinyitni az ablakot.",
+              "tr": {
+                "en": "You must not open the window.",
+                "es": "No se debe abrir la ventana."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Plain, negative, stressed",
+        "es": "Simple, negativa, enfatizada"
+      },
+      "pairs": [
+        {
+          "a": "Elmegyek.",
+          "b": "Nem megyek el.",
+          "note": {
+            "en": "Plain: the prefix in front of the verb. With nem: the verb moves next to nem and the prefix drops behind it.",
+            "es": "Simple: el prefijo delante del verbo. Con nem: el verbo se coloca junto a nem y el prefijo cae detrás."
+          },
+          "examples": [
+            {
+              "es": "Bemegyek a boltba.",
+              "tr": {
+                "en": "I go into the shop.",
+                "es": "Entro en la tienda."
+              }
+            },
+            {
+              "es": "Nem megyek be a boltba.",
+              "tr": {
+                "en": "I do not go into the shop.",
+                "es": "No entro en la tienda."
+              }
+            }
+          ]
+        },
+        {
+          "a": "El akarok menni.",
+          "b": "Nem akarok elmenni.",
+          "note": {
+            "en": "Plain: el in front of akarok. After nem: el sticks to the infinitive.",
+            "es": "Simple: el delante de akarok. Después de nem: el se pega al infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Be tudok menni.",
+              "tr": {
+                "en": "I can go in.",
+                "es": "Puedo entrar."
+              }
+            },
+            {
+              "es": "Nem tudok bemenni.",
+              "tr": {
+                "en": "I cannot go in.",
+                "es": "No puedo entrar."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Anna elmegy.",
+          "b": "Anna megy el.",
+          "note": {
+            "en": "Plain news: Anna leaves. With the stress on Anna: it is Anna who leaves, and nobody else.",
+            "es": "Noticia simple: Anna se va. Con el énfasis en Anna: es Anna quien se va, y nadie más."
+          },
+          "examples": [
+            {
+              "es": "Gábor hazamegy.",
+              "tr": {
+                "en": "Gábor goes home.",
+                "es": "Gábor se va a casa."
+              }
+            },
+            {
+              "es": "Gábor megy haza.",
+              "tr": {
+                "en": "It is Gábor who goes home.",
+                "es": "Es Gábor quien se va a casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: after nem the prefix does not stay in front of the verb. Say Nem megyek el, not Nem elmegyek. English helps: 'I am not going away' also keeps the little word behind the verb. With an infinitive the prefix hops onto the infinitive: Nem akarok elmenni. When in doubt, ask: is something (nem, a question word, a stressed word) right before the verb? Then the prefix goes behind the verb.",
+        "es": "Trampa clásica: después de nem el prefijo no se queda delante del verbo. Se dice Nem megyek el, no Nem elmegyek. Con un infinitivo el prefijo salta al infinitivo: Nem akarok elmenni. Si dudas, pregúntate: ¿hay algo (nem, una palabra interrogativa, una palabra enfatizada) justo antes del verbo? Entonces el prefijo va detrás del verbo."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, a verb prefix like «el» or «be» normally stands right in front of the verb: «Elmegyek», «Bemegyek a boltba». But after «nem», the prefix moves behind the verb: «Nem megyek el». The same happens after a question word: «Mikor mész el?» With an infinitive, the prefix goes in front of the helping verb: «El akarok menni». After «nem» it sticks to the infinitive: «Nem akarok elmenni».",
+    "es": "En húngaro, un prefijo como «el» o «be» normalmente va justo delante del verbo: «Elmegyek», «Bemegyek a boltba». Pero después de «nem» el prefijo pasa detrás del verbo: «Nem megyek el». Lo mismo ocurre después de una palabra interrogativa: «Mikor mész el?» Con un infinitivo, el prefijo va delante del verbo auxiliar: «El akarok menni». Después de «nem» se pega al infinitivo: «Nem akarok elmenni»."
+  },
+  "glossary": [
+    {
+      "word": "elmegy",
+      "gloss": {
+        "en": "go away, leave",
+        "es": "irse, marcharse"
+      }
+    },
+    {
+      "word": "bemegy",
+      "gloss": {
+        "en": "go in, enter",
+        "es": "entrar"
+      }
+    },
+    {
+      "word": "kimegy",
+      "gloss": {
+        "en": "go out, leave a place",
+        "es": "salir"
+      }
+    },
+    {
+      "word": "megeszik",
+      "gloss": {
+        "en": "eat up",
+        "es": "comerse"
+      }
+    },
+    {
+      "word": "elolvas",
+      "gloss": {
+        "en": "read through",
+        "es": "leer completo"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "igekoto-szorend-c01",
+      "sentence": "Nem ___.",
+      "options": [
+        "megyek el",
+        "elmegyek",
+        "el megyek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After nem the verb comes right behind it and the prefix drops behind the verb: nem megyek el.",
+        "es": "Después de nem el verbo va justo detrás y el prefijo cae detrás del verbo: nem megyek el."
+      },
+      "wrong": {
+        "elmegyek": {
+          "en": "elmegyek is the form of a sentence without nem (Elmegyek = I am leaving); after nem the prefix does not stay in front.",
+          "es": "elmegyek es la forma de una frase sin nem (Elmegyek = me voy); después de nem el prefijo no se queda delante."
+        },
+        "el megyek": {
+          "en": "Writing the prefix apart in front of the verb is not used after nem; the order is nem + verb + prefix.",
+          "es": "Escribir el prefijo aparte delante del verbo no se usa después de nem; el orden es nem + verbo + prefijo."
+        }
+      },
+      "examples": [
+        "Nem megyek be.",
+        "Nem kelek fel."
+      ],
+      "tr": {
+        "en": "I am not leaving.",
+        "es": "No me voy."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f01",
+      "kind": "form",
+      "verb": "elmegyek",
+      "person": "nem",
+      "answer": "nem megyek el",
+      "accept": [
+        "nem megyek el."
+      ],
+      "table": "prefix-position"
+    },
+    {
+      "id": "igekoto-szorend-c02",
+      "sentence": "Mikor ___?",
+      "options": [
+        "mész el",
+        "elmész",
+        "el mész"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A question word stands right before the verb, so the prefix drops behind it: Mikor mész el?",
+        "es": "Una palabra interrogativa va justo antes del verbo, así que el prefijo cae detrás: Mikor mész el?"
+      },
+      "wrong": {
+        "elmész": {
+          "en": "elmész is the plain statement 'you leave'; after mikor the prefix moves behind the verb.",
+          "es": "elmész es la afirmación simple «te vas»; después de mikor el prefijo pasa detrás del verbo."
+        },
+        "el mész": {
+          "en": "el mész (prefix apart, in front of the verb) is not used after a question word; the order is mikor + verb + prefix: mész el.",
+          "es": "el mész (prefijo suelto, delante del verbo) no se usa después de una palabra interrogativa; el orden es mikor + verbo + prefijo: mész el."
+        }
+      },
+      "examples": [
+        "Mikor jössz vissza?",
+        "Hol szállsz le?"
+      ],
+      "tr": {
+        "en": "When are you leaving?",
+        "es": "¿Cuándo te vas?"
+      }
+    },
+    {
+      "id": "igekoto-szorend-f02",
+      "kind": "form",
+      "verb": "bemegyek",
+      "person": "nem",
+      "answer": "nem megyek be",
+      "accept": [
+        "nem megyek be."
+      ],
+      "table": "prefix-position"
+    },
+    {
+      "id": "igekoto-szorend-c03",
+      "sentence": "Anna ___ a boltba.",
+      "options": [
+        "bemegy",
+        "megy be",
+        "be megy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nothing is stressed in front of the verb, so the prefix stays in front: Anna bemegy a boltba.",
+        "es": "No hay nada enfatizado delante del verbo, así que el prefijo se queda delante: Anna bemegy a boltba."
+      },
+      "wrong": {
+        "megy be": {
+          "en": "megy be puts the stress on Anna ('it is Anna who goes in'); a plain statement keeps the prefix in front.",
+          "es": "megy be pone el énfasis en Anna («es Anna quien entra»); una afirmación simple mantiene el prefijo delante."
+        },
+        "be megy": {
+          "en": "be megy (prefix apart, in front of the verb) is not written like this; in a plain statement the prefix is joined to the verb: bemegy.",
+          "es": "be megy (prefijo suelto, delante del verbo) no se escribe así; en una afirmación simple el prefijo va pegado al verbo: bemegy."
+        }
+      },
+      "examples": [
+        "Péter bemegy a szobába.",
+        "Kati kimegy a kertbe."
+      ],
+      "tr": {
+        "en": "Anna goes into the shop.",
+        "es": "Anna entra en la tienda."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f03",
+      "kind": "form",
+      "verb": "felkelek",
+      "person": "nem",
+      "answer": "nem kelek fel",
+      "accept": [
+        "nem kelek fel."
+      ],
+      "table": "prefix-position"
+    },
+    {
+      "id": "igekoto-szorend-w01",
+      "kind": "why",
+      "es": "Nem megyek el.",
+      "target": "megyek",
+      "tr": {
+        "en": "I am not leaving.",
+        "es": "No me voy."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After nem the verb comes first and the prefix drops behind it",
+            "es": "Después de nem va primero el verbo y el prefijo cae detrás"
+          }
+        },
+        {
+          "text": {
+            "en": "A plain sentence: the prefix stands in front of the verb",
+            "es": "Una frase simple: el prefijo va delante del verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Elmegyek, without nem.",
+            "es": "Con esta regla la frase sería Elmegyek, sin nem."
+          }
+        },
+        {
+          "text": {
+            "en": "Infinitive: the prefix goes in front of the helping verb",
+            "es": "Infinitivo: el prefijo va delante del verbo auxiliar"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be El akarok menni; megyek is not a helping verb with an infinitive.",
+            "es": "Con esta regla la frase sería El akarok menni; megyek no es un verbo auxiliar con infinitivo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igekoto-szorend-c04",
+      "sentence": "Péter ___, nem Anna.",
+      "options": [
+        "megy el",
+        "elmegy",
+        "elmegyek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péter is the stressed word (him, not Anna), so it stands right before the verb and the prefix drops behind: Péter megy el.",
+        "es": "Péter es la palabra enfatizada (él, no Anna), así que va justo antes del verbo y el prefijo cae detrás: Péter megy el."
+      },
+      "wrong": {
+        "elmegy": {
+          "en": "elmegy is the plain statement 'Péter leaves', with no contrast to Anna.",
+          "es": "elmegy es la afirmación simple «Péter se va», sin contraste con Anna."
+        },
+        "elmegyek": {
+          "en": "elmegyek is the I-form; the subject Péter needs the he-form.",
+          "es": "elmegyek es la forma de «yo»; el sujeto Péter necesita la forma de «él»."
+        }
+      },
+      "examples": [
+        "Gábor megy haza.",
+        "Kati megy be."
+      ],
+      "tr": {
+        "en": "It is Péter who leaves, not Anna.",
+        "es": "Es Péter quien se va, no Anna."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f04",
+      "kind": "form",
+      "verb": "leszállok",
+      "person": "hol",
+      "answer": "hol szállok le",
+      "accept": [
+        "hol szállok le?"
+      ],
+      "table": "prefix-position"
+    },
+    {
+      "id": "igekoto-szorend-c05",
+      "sentence": "Nem akarok ___.",
+      "options": [
+        "elmenni",
+        "el menni",
+        "menni el"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After nem the prefix sticks to the infinitive, written together: elmenni.",
+        "es": "Después de nem el prefijo se pega al infinitivo, escrito junto: elmenni."
+      },
+      "wrong": {
+        "el menni": {
+          "en": "el menni (apart) is the pattern of a plain sentence, where el stands in front of akarok: El akarok menni.",
+          "es": "el menni (separado) es el patrón de una frase simple, donde el va delante de akarok: El akarok menni."
+        },
+        "menni el": {
+          "en": "A prefix behind the verb goes with a finite verb after nem (Nem megyek el), not with an infinitive.",
+          "es": "Un prefijo detrás del verbo va con un verbo conjugado después de nem (Nem megyek el), no con un infinitivo."
+        }
+      },
+      "examples": [
+        "Nem tudok bemenni.",
+        "Nem fogok felkelni."
+      ],
+      "tr": {
+        "en": "I do not want to leave.",
+        "es": "No quiero irme."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f05",
+      "kind": "form",
+      "verb": "visszajövök",
+      "person": "mikor",
+      "answer": "mikor jövök vissza",
+      "accept": [
+        "mikor jövök vissza?"
+      ],
+      "table": "prefix-position"
+    },
+    {
+      "id": "igekoto-szorend-c06",
+      "sentence": "___ akarok menni, mert fáradt vagyok.",
+      "options": [
+        "Haza",
+        "Át",
+        "Ki"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A tired person goes home. In a plain sentence the prefix stands in front of akarok: Haza akarok menni.",
+        "es": "Una persona cansada se va a casa. En una frase simple el prefijo va delante de akarok: Haza akarok menni."
+      },
+      "wrong": {
+        "Át": {
+          "en": "With Át the sentence would mean 'I want to cross over'; being tired points to going home.",
+          "es": "Con Át la frase significaría «quiero cruzar»; estar cansado apunta a irse a casa."
+        },
+        "Ki": {
+          "en": "With Ki the sentence would mean 'I want to go out'; being tired points to going home.",
+          "es": "Con Ki la frase significaría «quiero salir»; estar cansado apunta a irse a casa."
+        }
+      },
+      "examples": [
+        "El akarok menni.",
+        "Be akarok menni."
+      ],
+      "tr": {
+        "en": "I want to go home because I am tired.",
+        "es": "Quiero irme a casa porque estoy cansado."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f06",
+      "kind": "form",
+      "verb": "megeszem",
+      "person": "nem",
+      "answer": "nem eszem meg",
+      "accept": [
+        "nem eszem meg."
+      ],
+      "table": "prefix-position"
+    },
+    {
+      "id": "igekoto-szorend-w02",
+      "kind": "why",
+      "es": "Mikor mész el?",
+      "target": "mész",
+      "tr": {
+        "en": "When are you leaving?",
+        "es": "¿Cuándo te vas?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After nem the prefix drops behind the verb",
+            "es": "Después de nem el prefijo cae detrás del verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would have a nem: Nem mész el. There is none; the question word mikor does the job.",
+            "es": "Con esta regla la frase llevaría nem: Nem mész el. No lo hay; la palabra interrogativa mikor cumple esa función."
+          }
+        },
+        {
+          "text": {
+            "en": "A question word stands before the verb, so the prefix drops behind",
+            "es": "Una palabra interrogativa va antes del verbo, así que el prefijo cae detrás"
+          }
+        },
+        {
+          "text": {
+            "en": "A plain statement: the prefix stands in front",
+            "es": "Una afirmación simple: el prefijo va delante"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Elmész, a statement. Here mikor asks a question.",
+            "es": "Con esta regla la frase sería Elmész, una afirmación. Aquí mikor hace una pregunta."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "igekoto-szorend-c07",
+      "sentence": "Ki ___ a boltba?",
+      "options": [
+        "megy be",
+        "bemegy",
+        "be megy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ki is a question word and stands right before the verb, so the prefix drops behind: Ki megy be a boltba?",
+        "es": "Ki es una palabra interrogativa y va justo antes del verbo, así que el prefijo cae detrás: Ki megy be a boltba?"
+      },
+      "wrong": {
+        "bemegy": {
+          "en": "bemegy is the plain statement; after a question word the prefix moves behind the verb.",
+          "es": "bemegy es la afirmación simple; después de una palabra interrogativa el prefijo pasa detrás del verbo."
+        },
+        "be megy": {
+          "en": "be megy (prefix apart, in front of the verb) is not used after a question word; the order is ki + verb + prefix: megy be.",
+          "es": "be megy (prefijo suelto, delante del verbo) no se usa después de una palabra interrogativa; el orden es ki + verbo + prefijo: megy be."
+        }
+      },
+      "examples": [
+        "Ki jön vissza?",
+        "Ki megy el?"
+      ],
+      "tr": {
+        "en": "Who goes into the shop?",
+        "es": "¿Quién entra en la tienda?"
+      }
+    },
+    {
+      "id": "igekoto-szorend-f07",
+      "kind": "form",
+      "verb": "el akarok menni",
+      "person": "nem",
+      "answer": "nem akarok elmenni",
+      "accept": [
+        "nem akarok elmenni."
+      ],
+      "table": "prefix-infinitive"
+    },
+    {
+      "id": "igekoto-szorend-c08",
+      "sentence": "Nem ___ a levest.",
+      "options": [
+        "eszem meg",
+        "megeszem",
+        "meg eszem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After nem the verb comes first and the prefix behind it: nem eszem meg a levest.",
+        "es": "Después de nem va primero el verbo y el prefijo detrás: nem eszem meg a levest."
+      },
+      "wrong": {
+        "megeszem": {
+          "en": "megeszem is the plain statement 'I eat it up'; after nem the prefix moves behind the verb.",
+          "es": "megeszem es la afirmación simple «me lo como»; después de nem el prefijo pasa detrás del verbo."
+        },
+        "meg eszem": {
+          "en": "meg eszem (prefix apart, in front of the verb) is not used after nem; the order is nem + verb + prefix: eszem meg.",
+          "es": "meg eszem (prefijo suelto, delante del verbo) no se usa después de nem; el orden es nem + verbo + prefijo: eszem meg."
+        }
+      },
+      "examples": [
+        "Nem olvasom el a levelet.",
+        "Nem iszom meg a kávét."
+      ],
+      "tr": {
+        "en": "I am not going to eat up the soup.",
+        "es": "No me voy a comer la sopa."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f08",
+      "kind": "form",
+      "verb": "be tudok menni",
+      "person": "nem",
+      "answer": "nem tudok bemenni",
+      "accept": [
+        "nem tudok bemenni."
+      ],
+      "table": "prefix-infinitive"
+    },
+    {
+      "id": "igekoto-szorend-c09",
+      "sentence": "Nem tudom ___ az ajtót.",
+      "options": [
+        "kinyitni",
+        "ki nyitni",
+        "nyitni ki"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After nem the prefix sticks to the infinitive: kinyitni. (tudom is definite because az ajtót is definite.)",
+        "es": "Después de nem el prefijo se pega al infinitivo: kinyitni. (tudom es la forma determinada porque az ajtót es determinado.)"
+      },
+      "wrong": {
+        "ki nyitni": {
+          "en": "ki nyitni (apart) is the pattern of a plain sentence: Ki tudom nyitni az ajtót.",
+          "es": "ki nyitni (separado) es el patrón de una frase simple: Ki tudom nyitni az ajtót."
+        },
+        "nyitni ki": {
+          "en": "A prefix behind the infinitive is not used; after nem it joins the infinitive.",
+          "es": "Un prefijo detrás del infinitivo no se usa; después de nem se une al infinitivo."
+        }
+      },
+      "examples": [
+        "Nem akarom megenni.",
+        "Nem akarom bezárni az ajtót."
+      ],
+      "tr": {
+        "en": "I cannot open the door.",
+        "es": "No puedo abrir la puerta."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f09",
+      "kind": "form",
+      "verb": "fel fogok kelni",
+      "person": "nem",
+      "answer": "nem fogok felkelni",
+      "accept": [
+        "nem fogok felkelni."
+      ],
+      "table": "prefix-infinitive"
+    },
+    {
+      "id": "igekoto-szorend-w03",
+      "kind": "why",
+      "es": "El akarok menni.",
+      "target": "El",
+      "tr": {
+        "en": "I want to leave.",
+        "es": "Quiero irme."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After nem the prefix sticks to the infinitive",
+            "es": "Después de nem el prefijo se pega al infinitivo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem akarok elmenni; this sentence has no nem.",
+            "es": "Con esta regla la frase sería Nem akarok elmenni; esta frase no lleva nem."
+          }
+        },
+        {
+          "text": {
+            "en": "A stressed word: the prefix drops behind the verb",
+            "es": "Una palabra enfatizada: el prefijo cae detrás del verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be built like Péter megy el; nothing is stressed here.",
+            "es": "Con esta regla la frase se construiría como Péter megy el; aquí nada está enfatizado."
+          }
+        },
+        {
+          "text": {
+            "en": "An infinitive in a plain sentence: the prefix stands in front of the helping verb",
+            "es": "Un infinitivo en una frase simple: el prefijo va delante del verbo auxiliar"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "igekoto-szorend-c10",
+      "sentence": "___ tudok menni, mert nyitva van.",
+      "options": [
+        "Be",
+        "Haza",
+        "Át"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Something that is open lets you go in: be- (in). In a plain sentence the prefix stands in front of tudok: Be tudok menni.",
+        "es": "Si algo está abierto, puedes entrar: be- (dentro). En una frase simple el prefijo va delante de tudok: Be tudok menni."
+      },
+      "wrong": {
+        "Haza": {
+          "en": "With Haza the sentence would mean 'I can go home'; being open fits going in.",
+          "es": "Con Haza la frase significaría «puedo irme a casa»; estar abierto encaja con entrar."
+        },
+        "Át": {
+          "en": "With Át the sentence would mean 'I can cross over'; being open fits going in.",
+          "es": "Con Át la frase significaría «puedo cruzar»; estar abierto encaja con entrar."
+        }
+      },
+      "examples": [
+        "Be akarok menni.",
+        "Ki tudok menni."
+      ],
+      "tr": {
+        "en": "I can go in, because it is open.",
+        "es": "Puedo entrar, porque está abierto."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f10",
+      "kind": "form",
+      "verb": "haza akarok menni",
+      "person": "nem",
+      "answer": "nem akarok hazamenni",
+      "accept": [
+        "nem akarok hazamenni."
+      ],
+      "table": "prefix-infinitive"
+    },
+    {
+      "id": "igekoto-szorend-c11",
+      "sentence": "Anna meg ___ enni a levest.",
+      "options": [
+        "akarja",
+        "akarok",
+        "akarod"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is \"she\" and a levest is definite, so the helping verb is akarja; meg stands in front of it.",
+        "es": "Anna es «ella» y a levest es determinado, por eso el verbo auxiliar es akarja; meg va delante."
+      },
+      "wrong": {
+        "akarok": {
+          "en": "akarok is the I-form; the subject Anna needs the he-or-she form.",
+          "es": "akarok es la forma de «yo»; el sujeto Anna necesita la forma de «él o ella»."
+        },
+        "akarod": {
+          "en": "akarod is the you-form with a definite object; the subject here is Anna.",
+          "es": "akarod es la forma de «tú» con objeto determinado; el sujeto aquí es Anna."
+        }
+      },
+      "examples": [
+        "Meg akarom inni a teát.",
+        "Anna el akarja olvasni a levelet."
+      ],
+      "tr": {
+        "en": "Anna wants to eat up the soup.",
+        "es": "Anna quiere comerse la sopa."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f11",
+      "kind": "form",
+      "verb": "nem tudom kinyitni",
+      "person": "nem nélkül",
+      "answer": "ki tudom nyitni",
+      "accept": [
+        "ki tudom nyitni."
+      ],
+      "table": "prefix-infinitive"
+    },
+    {
+      "id": "igekoto-szorend-c12",
+      "sentence": "Anna nem ___ a könyvet.",
+      "options": [
+        "olvassa el",
+        "elolvassa",
+        "el olvassa"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After nem the verb comes first and the prefix behind it; a könyvet is definite, so olvassa.",
+        "es": "Después de nem va primero el verbo y el prefijo detrás; a könyvet es determinado, por eso olvassa."
+      },
+      "wrong": {
+        "elolvassa": {
+          "en": "elolvassa is the plain statement 'Anna reads it through'; after nem the prefix moves behind the verb.",
+          "es": "elolvassa es la afirmación simple «Anna lo lee completo»; después de nem el prefijo pasa detrás del verbo."
+        },
+        "el olvassa": {
+          "en": "el olvassa (prefix apart, in front of the verb) is not used after nem; the order is nem + verb + prefix: olvassa el.",
+          "es": "el olvassa (prefijo suelto, delante del verbo) no se usa después de nem; el orden es nem + verbo + prefijo: olvassa el."
+        }
+      },
+      "examples": [
+        "Anna nem eszi meg a tortát.",
+        "Péter nem nyitja ki az ajtót."
+      ],
+      "tr": {
+        "en": "Anna does not read the book through.",
+        "es": "Anna no lee el libro completo."
+      }
+    },
+    {
+      "id": "igekoto-szorend-f12",
+      "kind": "form",
+      "verb": "nem akarom megenni",
+      "person": "nem nélkül",
+      "answer": "meg akarom enni",
+      "accept": [
+        "meg akarom enni."
+      ],
+      "table": "prefix-infinitive"
+    },
+    {
+      "id": "igekoto-szorend-c13",
+      "sentence": "Mit ___ meg?",
+      "options": [
+        "eszel",
+        "megeszel",
+        "eszed"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mit is a question word, so the verb comes right behind it and meg drops behind the verb. Mit asks about an unspecified thing, so eszel.",
+        "es": "Mit es una palabra interrogativa, así que el verbo va justo detrás y meg cae detrás del verbo. Mit pregunta por algo no determinado, por eso eszel."
+      },
+      "wrong": {
+        "megeszel": {
+          "en": "megeszel already has the prefix, so the sentence would repeat meg; after mit the prefix goes behind the verb.",
+          "es": "megeszel ya lleva el prefijo, así que la frase repetiría meg; después de mit el prefijo va detrás del verbo."
+        },
+        "eszed": {
+          "en": "eszed is the form for a definite object (te + a levest); mit asks about an unspecified thing.",
+          "es": "eszed es la forma para un objeto determinado (te + a levest); mit pregunta por algo no determinado."
+        }
+      },
+      "examples": [
+        "Mit nézel meg?",
+        "Mit olvasol el?"
+      ],
+      "tr": {
+        "en": "What are you going to eat up?",
+        "es": "¿Qué te vas a comer?"
+      }
+    },
+    {
+      "id": "igekoto-szorend-w04",
+      "kind": "why",
+      "es": "Péter megy el.",
+      "target": "megy",
+      "tr": {
+        "en": "It is Péter who leaves.",
+        "es": "Es Péter quien se va."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A plain statement: the prefix stands in front",
+            "es": "Una afirmación simple: el prefijo va delante"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Péter elmegy, with no stress on Péter.",
+            "es": "Con esta regla la frase sería Péter elmegy, sin énfasis en Péter."
+          }
+        },
+        {
+          "text": {
+            "en": "After nem the verb comes first",
+            "es": "Después de nem va primero el verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would have a nem: Péter nem megy el. There is none.",
+            "es": "Con esta regla la frase llevaría nem: Péter nem megy el. No lo hay."
+          }
+        },
+        {
+          "text": {
+            "en": "Péter is stressed, so the prefix drops behind the verb",
+            "es": "Péter está enfatizado, así que el prefijo cae detrás del verbo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "igekoto-szorend-c14",
+      "sentence": "Én ___, nem te.",
+      "options": [
+        "megyek be",
+        "bemegyek",
+        "be megyek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Én is the stressed word (me, not you), so it stands right before the verb and the prefix drops behind: Én megyek be.",
+        "es": "Én es la palabra enfatizada (yo, no tú), así que va justo antes del verbo y el prefijo cae detrás: Én megyek be."
+      },
+      "wrong": {
+        "bemegyek": {
+          "en": "bemegyek is the plain statement 'I go in'; the contrast with te needs the stress on én and megyek be.",
+          "es": "bemegyek es la afirmación simple «entro»; el contraste con te necesita el énfasis en én y megyek be."
+        },
+        "be megyek": {
+          "en": "be megyek (prefix apart, in front of the verb) is not used after a stressed word; the stressed word is followed by the verb, then the prefix: megyek be.",
+          "es": "be megyek (prefijo suelto, delante del verbo) no se usa después de una palabra enfatizada; tras la palabra enfatizada van el verbo y luego el prefijo: megyek be."
+        }
+      },
+      "examples": [
+        "Te mész el, nem én.",
+        "Anna jön vissza, nem Péter."
+      ],
+      "tr": {
+        "en": "It is I who goes in, not you.",
+        "es": "Soy yo quien entra, no tú."
+      }
+    }
+  ]
+}

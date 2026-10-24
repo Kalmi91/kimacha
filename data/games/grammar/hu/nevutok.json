@@ -1,0 +1,1260 @@
+{
+  "schema": 2,
+  "topic": "nevutok",
+  "level": "A2",
+  "title": {
+    "en": "Postpositions: alatt, mellett, előtt",
+    "es": "Posposiciones: alatt, mellett, előtt"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has no prepositions in front of the noun. It has postpositions: small words that come AFTER the noun, while the noun stays in its plain form (no -ban, no -on). English 'under the table' is az asztal alatt, literally 'the table under'. Nine to learn now: alatt, fölött, előtt, mögött, mellett, között, után, nélkül, felé.",
+        "es": "El húngaro no pone preposiciones delante del sustantivo. Tiene posposiciones: palabras cortas que van DESPUÉS del sustantivo, y el sustantivo se queda en su forma simple (sin -ban, sin -on). «Debajo de la mesa» es az asztal alatt, literalmente «la mesa debajo». Nueve para aprender ahora: alatt, fölött, előtt, mögött, mellett, között, után, nélkül, felé."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "postp-list",
+      "noTableDeck": true,
+      "title": {
+        "en": "The nine postpositions",
+        "es": "Las nueve posposiciones"
+      },
+      "header": [
+        {
+          "en": "Postposition",
+          "es": "Posposición"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "alatt",
+          "az asztal alatt"
+        ],
+        [
+          "fölött",
+          "az asztal fölött"
+        ],
+        [
+          "előtt",
+          "a ház előtt"
+        ],
+        [
+          "mögött",
+          "a ház mögött"
+        ],
+        [
+          "mellett",
+          "a bank mellett"
+        ],
+        [
+          "között",
+          "a bank és a mozi között"
+        ],
+        [
+          "után",
+          "vacsora után"
+        ],
+        [
+          "nélkül",
+          "cukor nélkül"
+        ],
+        [
+          "felé",
+          "az állomás felé"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What they mean",
+        "es": "Qué significan"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Place words: alatt (under), fölött (above), előtt (in front of), mögött (behind), mellett (next to). With van they say where something is.",
+            "es": "Palabras de lugar: alatt (debajo de), fölött (encima de), előtt (delante de), mögött (detrás de), mellett (junto a). Con van dicen dónde está algo."
+          },
+          "examples": [
+            {
+              "es": "A kulcs az asztal alatt van.",
+              "tr": {
+                "en": "The key is under the table.",
+                "es": "La llave está debajo de la mesa."
+              }
+            },
+            {
+              "es": "A kép az ágy fölött van.",
+              "tr": {
+                "en": "The picture is above the bed.",
+                "es": "El cuadro está encima de la cama."
+              }
+            },
+            {
+              "es": "A busz az állomás előtt van.",
+              "tr": {
+                "en": "The bus is in front of the station.",
+                "es": "El autobús está delante de la estación."
+              }
+            },
+            {
+              "es": "A kert a ház mögött van.",
+              "tr": {
+                "en": "The garden is behind the house.",
+                "es": "El jardín está detrás de la casa."
+              }
+            },
+            {
+              "es": "A pad a fa mellett van.",
+              "tr": {
+                "en": "The bench is next to the tree.",
+                "es": "La banca está junto al árbol."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "között is 'between' two things or 'among' many. felé is 'toward': it shows a direction, so it goes with verbs like megy (to go).",
+            "es": "között es «entre» dos cosas o entre varias. felé es «hacia»: indica una dirección, por eso va con verbos como megy (ir)."
+          },
+          "examples": [
+            {
+              "es": "A templom a híd és a park között van.",
+              "tr": {
+                "en": "The church is between the bridge and the park.",
+                "es": "La iglesia está entre el puente y el parque."
+              }
+            },
+            {
+              "es": "Anna a gyerekek között van.",
+              "tr": {
+                "en": "Anna is among the children.",
+                "es": "Anna está entre los niños."
+              }
+            },
+            {
+              "es": "A busz a város felé megy.",
+              "tr": {
+                "en": "The bus is going toward the city.",
+                "es": "El autobús va hacia la ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "után is 'after' and nélkül is 'without'. előtt and után also work for time: munka előtt (before work), vacsora után (after dinner). A noun meant in general often has no article: cukor nélkül, vacsora után.",
+            "es": "után es «después de» y nélkül es «sin». előtt y után también sirven para el tiempo: munka előtt (antes del trabajo), vacsora után (después de la cena). Un sustantivo en sentido general suele ir sin artículo: cukor nélkül, vacsora után."
+          },
+          "examples": [
+            {
+              "es": "Munka előtt kávét iszom.",
+              "tr": {
+                "en": "Before work I drink coffee.",
+                "es": "Antes del trabajo tomo café."
+              }
+            },
+            {
+              "es": "Vacsora után olvasok.",
+              "tr": {
+                "en": "After dinner I read.",
+                "es": "Después de la cena leo."
+              }
+            },
+            {
+              "es": "Tej nélkül iszom a kávét.",
+              "tr": {
+                "en": "I drink my coffee without milk.",
+                "es": "Tomo el café sin leche."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "text",
+      "text": {
+        "en": "To say 'next to me' or 'behind you', do not put a pronoun after the postposition. The postposition itself takes the personal endings, the same ones as in házam, házad, háza, házunk, házatok, házuk: mellett + em = mellettem. The pronoun is dropped.",
+        "es": "Para decir «junto a mí» o «detrás de ti» no pones un pronombre después de la posposición. La propia posposición recibe las terminaciones personales, las mismas de házam, házad, háza, házunk, házatok, házuk: mellett + em = mellettem. El pronombre se omite."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "postp-pron-a",
+      "title": {
+        "en": "With pronouns (1)",
+        "es": "Con pronombres (1)"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "alatt",
+          "es": "alatt"
+        },
+        {
+          "en": "mellett",
+          "es": "mellett"
+        },
+        {
+          "en": "előtt",
+          "es": "előtt"
+        },
+        {
+          "en": "mögött",
+          "es": "mögött"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "alattam",
+          "mellettem",
+          "előttem",
+          "mögöttem"
+        ],
+        [
+          "te",
+          "alattad",
+          "melletted",
+          "előtted",
+          "mögötted"
+        ],
+        [
+          "ő",
+          "alatta",
+          "mellette",
+          "előtte",
+          "mögötte"
+        ],
+        [
+          "mi",
+          "alattunk",
+          "mellettünk",
+          "előttünk",
+          "mögöttünk"
+        ],
+        [
+          "ti",
+          "alattatok",
+          "mellettetek",
+          "előttetek",
+          "mögöttetek"
+        ],
+        [
+          "ők",
+          "alattuk",
+          "mellettük",
+          "előttük",
+          "mögöttük"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "postp-pron-b",
+      "title": {
+        "en": "With pronouns (2)",
+        "es": "Con pronombres (2)"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "fölött",
+          "es": "fölött"
+        },
+        {
+          "en": "között",
+          "es": "között"
+        },
+        {
+          "en": "után",
+          "es": "után"
+        },
+        {
+          "en": "nélkül",
+          "es": "nélkül"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "fölöttem",
+          "köztem",
+          "utánam",
+          "nélkülem"
+        ],
+        [
+          "te",
+          "fölötted",
+          "közted",
+          "utánad",
+          "nélküled"
+        ],
+        [
+          "ő",
+          "fölötte",
+          "közte",
+          "utána",
+          "nélküle"
+        ],
+        [
+          "mi",
+          "fölöttünk",
+          "köztünk",
+          "utánunk",
+          "nélkülünk"
+        ],
+        [
+          "ti",
+          "fölöttetek",
+          "köztetek",
+          "utánatok",
+          "nélkületek"
+        ],
+        [
+          "ők",
+          "fölöttük",
+          "köztük",
+          "utánuk",
+          "nélkülük"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Using the pronoun forms",
+        "es": "Cómo usar las formas con pronombre"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "én, te, mi, ti: the ending already says who, so you add no pronoun: mellettem, not én mellettem. The whole word means 'next to me'.",
+            "es": "én, te, mi, ti: la terminación ya dice quién es, así que no añades pronombre: mellettem, no én mellettem. La palabra entera significa «junto a mí»."
+          },
+          "examples": [
+            {
+              "es": "Kati mellettem van.",
+              "tr": {
+                "en": "Kati is next to me.",
+                "es": "Kati está junto a mí."
+              }
+            },
+            {
+              "es": "A kutya mögötted van.",
+              "tr": {
+                "en": "The dog is behind you.",
+                "es": "El perro está detrás de ti."
+              }
+            },
+            {
+              "es": "Péter előttünk megy.",
+              "tr": {
+                "en": "Péter is walking in front of us.",
+                "es": "Péter va delante de nosotros."
+              }
+            },
+            {
+              "es": "Mögöttetek vagyok.",
+              "tr": {
+                "en": "I am behind you (all).",
+                "es": "Estoy detrás de ustedes."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ő and ők: -a/-e and -uk/-ük. ő covers he, she and it, so mellette is next to him, her or it.",
+            "es": "ő y ők: -a/-e y -uk/-ük. ő es él, ella y eso, así que mellette es junto a él, ella o eso."
+          },
+          "examples": [
+            {
+              "es": "Mellette lakom.",
+              "tr": {
+                "en": "I live next to him (her, it).",
+                "es": "Vivo junto a él (ella, eso)."
+              }
+            },
+            {
+              "es": "Gábor mellettük lakik.",
+              "tr": {
+                "en": "Gábor lives next to them.",
+                "es": "Gábor vive junto a ellos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "között has short forms: köztem, közted, közte, köztünk, köztetek, köztük.",
+            "es": "között tiene formas cortas: köztem, közted, közte, köztünk, köztetek, köztük."
+          },
+          "examples": [
+            {
+              "es": "Ez köztünk marad.",
+              "tr": {
+                "en": "This stays between us.",
+                "es": "Esto queda entre nosotros."
+              }
+            },
+            {
+              "es": "A kutya köztünk van.",
+              "tr": {
+                "en": "The dog is between us.",
+                "es": "El perro está entre nosotros."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "után and nélkül take the endings in the same way: utánam, nélküled.",
+            "es": "után y nélkül reciben las terminaciones de la misma manera: utánam, nélküled."
+          },
+          "examples": [
+            {
+              "es": "Utánad megyek.",
+              "tr": {
+                "en": "I am going after you.",
+                "es": "Voy después de ti."
+              }
+            },
+            {
+              "es": "Nélkületek nem megyek moziba.",
+              "tr": {
+                "en": "I am not going to the cinema without you (all).",
+                "es": "No voy al cine sin ustedes."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Noun or pronoun? Place or time?",
+        "es": "¿Sustantivo o pronombre? ¿Lugar o tiempo?"
+      },
+      "pairs": [
+        {
+          "a": "a bank mellett",
+          "b": "mellette",
+          "note": {
+            "en": "After a noun the postposition stays plain. A pronoun replaces the noun, and the ending goes on the postposition.",
+            "es": "Después de un sustantivo la posposición queda simple. Un pronombre sustituye al sustantivo y la terminación va en la posposición."
+          },
+          "examples": [
+            {
+              "es": "A bolt a bank mellett van.",
+              "tr": {
+                "en": "The shop is next to the bank.",
+                "es": "La tienda está junto al banco."
+              }
+            },
+            {
+              "es": "A bolt mellette van.",
+              "tr": {
+                "en": "The shop is next to it.",
+                "es": "La tienda está junto a él."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a ház előtt",
+          "b": "vacsora előtt",
+          "note": {
+            "en": "előtt is 'in front of' for a place and 'before' for time. For 'after' in time use után.",
+            "es": "előtt es «delante de» para un lugar y «antes de» para el tiempo. Para «después de» en el tiempo usa után."
+          },
+          "examples": [
+            {
+              "es": "A busz az iskola előtt van.",
+              "tr": {
+                "en": "The bus is in front of the school.",
+                "es": "El autobús está delante de la escuela."
+              }
+            },
+            {
+              "es": "Vacsora előtt olvasok.",
+              "tr": {
+                "en": "Before dinner I read.",
+                "es": "Antes de la cena leo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a fa mellett",
+          "b": "a fa és a kerítés között",
+          "note": {
+            "en": "mellett is next to one thing; között needs two things (or a group).",
+            "es": "mellett es junto a una cosa; között necesita dos cosas (o un grupo)."
+          },
+          "examples": [
+            {
+              "es": "A macska az ágy mellett van.",
+              "tr": {
+                "en": "The cat is next to the bed.",
+                "es": "El gato está junto a la cama."
+              }
+            },
+            {
+              "es": "A macska az ágy és a szekrény között van.",
+              "tr": {
+                "en": "The cat is between the bed and the wardrobe.",
+                "es": "El gato está entre la cama y el armario."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the order is the reverse of English: az asztal alatt, not alatt az asztal. The noun stays plain: az asztal alatt, never az asztalon alatt. And for 'me' the ending goes on the postposition: alattam, never alatt én.",
+        "es": "Trampas clásicas: el orden es el inverso del español: az asztal alatt, no alatt az asztal. El sustantivo queda simple: az asztal alatt, nunca az asztalon alatt. Y para «yo» la terminación va en la posposición: alattam, nunca alatt én."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian uses postpositions: they come after the noun, and the noun stays plain. Under the table is «az asztal alatt», in front of the house is «a ház előtt», and next to the bank is «a bank mellett». With a pronoun, the ending goes on the postposition: «alattam», «melletted», «mögötte», «előttünk». Between has short forms like «köztünk». After work is «munka után», without sugar is «cukor nélkül», and toward the station is «az állomás felé».",
+    "es": "El húngaro usa posposiciones: van después del sustantivo, y el sustantivo se queda simple. Debajo de la mesa es «az asztal alatt», delante de la casa es «a ház előtt», y junto al banco es «a bank mellett». Con un pronombre, la terminación va en la posposición: «alattam», «melletted», «mögötte», «előttünk». Entre tiene formas cortas como «köztünk». Después del trabajo es «munka után», sin azúcar es «cukor nélkül», y hacia la estación es «az állomás felé»."
+  },
+  "glossary": [
+    {
+      "word": "után",
+      "gloss": {
+        "en": "after",
+        "es": "después de"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "nevutok-c01",
+      "sentence": "A könyv az asztal ___ van.",
+      "options": [
+        "fölött",
+        "alatt",
+        "mögött"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "alatt means under: the book is under the table.",
+        "es": "alatt significa «debajo de»: el libro está debajo de la mesa."
+      },
+      "wrong": {
+        "fölött": {
+          "en": "With fölött the sentence would mean the book is above the table.",
+          "es": "Con fölött la frase diría que el libro está encima de la mesa."
+        },
+        "mögött": {
+          "en": "With mögött the sentence would mean the book is behind the table.",
+          "es": "Con mögött la frase diría que el libro está detrás de la mesa."
+        }
+      },
+      "examples": [
+        "A macska a szék alatt van.",
+        "A táska az ágy alatt van."
+      ],
+      "tr": {
+        "en": "The book is under the table.",
+        "es": "El libro está debajo de la mesa."
+      }
+    },
+    {
+      "id": "nevutok-f01",
+      "kind": "form",
+      "verb": "alatt",
+      "person": "én",
+      "answer": "alattam",
+      "table": "postp-pron-a"
+    },
+    {
+      "id": "nevutok-c02",
+      "sentence": "Munka ___ pihenek.",
+      "options": [
+        "előtt",
+        "után",
+        "nélkül"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "után means after: I rest after work.",
+        "es": "után significa «después de»: descanso después del trabajo."
+      },
+      "wrong": {
+        "előtt": {
+          "en": "With előtt the sentence would mean 'I rest before work'.",
+          "es": "Con előtt la frase diría «descanso antes del trabajo»."
+        },
+        "nélkül": {
+          "en": "With nélkül the sentence would mean 'I rest without work'.",
+          "es": "Con nélkül la frase diría «descanso sin trabajo»."
+        }
+      },
+      "examples": [
+        "Vacsora után sétálok.",
+        "Iskola után játszom."
+      ],
+      "tr": {
+        "en": "I rest after work.",
+        "es": "Descanso después del trabajo."
+      }
+    },
+    {
+      "id": "nevutok-f02",
+      "kind": "form",
+      "verb": "mellett",
+      "person": "te",
+      "answer": "melletted",
+      "table": "postp-pron-a"
+    },
+    {
+      "id": "nevutok-c03",
+      "sentence": "A kutya a ház ___ van.",
+      "options": [
+        "mögött",
+        "előtt",
+        "között"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mögött means behind: the dog is behind the house.",
+        "es": "mögött significa «detrás de»: el perro está detrás de la casa."
+      },
+      "wrong": {
+        "előtt": {
+          "en": "With előtt the sentence would mean the dog is in front of the house.",
+          "es": "Con előtt la frase diría que el perro está delante de la casa."
+        },
+        "között": {
+          "en": "között is 'between' and needs two or more things (a ház és a kert között); it does not fit one house.",
+          "es": "között es «entre» y necesita dos o más cosas (a ház és a kert között); no encaja con una sola casa."
+        }
+      },
+      "examples": [
+        "A kert a ház mögött van.",
+        "Az autó a bolt mögött van."
+      ],
+      "tr": {
+        "en": "The dog is behind the house.",
+        "es": "El perro está detrás de la casa."
+      }
+    },
+    {
+      "id": "nevutok-f03",
+      "kind": "form",
+      "verb": "előtt",
+      "person": "ő",
+      "answer": "előtte",
+      "table": "postp-pron-a"
+    },
+    {
+      "id": "nevutok-w01",
+      "kind": "why",
+      "es": "A macska az asztal alatt van.",
+      "target": "az asztal alatt",
+      "tr": {
+        "en": "The cat is under the table.",
+        "es": "El gato está debajo de la mesa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "alatt is a preposition: it goes before the noun",
+            "es": "alatt es una preposición: va antes del sustantivo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be alatt az asztal, like English 'under the table'. Hungarian has postpositions: they come after.",
+            "es": "Con esta regla la frase sería alatt az asztal, como «debajo de la mesa». El húngaro tiene posposiciones: van después."
+          }
+        },
+        {
+          "text": {
+            "en": "alatt is a postposition: it comes after the plain noun",
+            "es": "alatt es una posposición: va después del sustantivo simple"
+          }
+        },
+        {
+          "text": {
+            "en": "the noun takes a place ending first, then alatt",
+            "es": "el sustantivo recibe primero una terminación de lugar y luego alatt"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be az asztalon alatt; the noun stays plain, without -on or -ban.",
+            "es": "Con esta regla la frase sería az asztalon alatt; el sustantivo queda simple, sin -on ni -ban."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nevutok-c04",
+      "sentence": "A bolt a bank és a mozi ___ van.",
+      "options": [
+        "mellett",
+        "felé",
+        "között"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "között means between: two things (the bank and the cinema) with the shop in the middle.",
+        "es": "között significa «entre»: dos cosas (el banco y el cine) con la tienda en medio."
+      },
+      "wrong": {
+        "mellett": {
+          "en": "With mellett the sentence would mean the shop is next to the bank and the cinema, on one side.",
+          "es": "Con mellett la frase diría que la tienda está junto al banco y al cine, a un lado."
+        },
+        "felé": {
+          "en": "felé is 'toward' and shows a direction; it does not say where the shop is.",
+          "es": "felé es «hacia» e indica una dirección; no dice dónde está la tienda."
+        }
+      },
+      "examples": [
+        "Az iskola a park és a híd között van.",
+        "A macska a szék és az ágy között van."
+      ],
+      "tr": {
+        "en": "The shop is between the bank and the cinema.",
+        "es": "La tienda está entre el banco y el cine."
+      }
+    },
+    {
+      "id": "nevutok-f04",
+      "kind": "form",
+      "verb": "mögött",
+      "person": "mi",
+      "answer": "mögöttünk",
+      "table": "postp-pron-a"
+    },
+    {
+      "id": "nevutok-c05",
+      "sentence": "Kérek egy kávét cukor ___.",
+      "options": [
+        "alatt",
+        "nélkül",
+        "után"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "nélkül means without: a coffee without sugar.",
+        "es": "nélkül significa «sin»: un café sin azúcar."
+      },
+      "wrong": {
+        "alatt": {
+          "en": "With alatt the sentence would mean a coffee 'under sugar'.",
+          "es": "Con alatt la frase diría un café «debajo del azúcar»."
+        },
+        "után": {
+          "en": "With után the sentence would mean a coffee 'after sugar'.",
+          "es": "Con után la frase diría un café «después del azúcar»."
+        }
+      },
+      "examples": [
+        "Tej nélkül iszom a teát.",
+        "Kérek egy teát tej nélkül."
+      ],
+      "tr": {
+        "en": "A coffee without sugar, please.",
+        "es": "Un café sin azúcar, por favor."
+      }
+    },
+    {
+      "id": "nevutok-f05",
+      "kind": "form",
+      "verb": "alatt",
+      "person": "ti",
+      "answer": "alattatok",
+      "table": "postp-pron-a"
+    },
+    {
+      "id": "nevutok-c06",
+      "sentence": "Anna a bolt ___ sétál.",
+      "options": [
+        "mellett",
+        "felé",
+        "mögött"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "felé means toward: Anna is walking in the direction of the shop.",
+        "es": "felé significa «hacia»: Anna camina en dirección a la tienda."
+      },
+      "wrong": {
+        "mellett": {
+          "en": "With mellett the sentence would mean Anna is walking next to (past) the shop.",
+          "es": "Con mellett la frase diría que Anna camina junto a la tienda."
+        },
+        "mögött": {
+          "en": "With mögött the sentence would mean Anna is walking behind the shop.",
+          "es": "Con mögött la frase diría que Anna camina detrás de la tienda."
+        }
+      },
+      "examples": [
+        "A gyerekek az iskola felé futnak.",
+        "Az autó a város felé megy."
+      ],
+      "tr": {
+        "en": "Anna is walking toward the shop.",
+        "es": "Anna camina hacia la tienda."
+      }
+    },
+    {
+      "id": "nevutok-f06",
+      "kind": "form",
+      "verb": "mellett",
+      "person": "ők",
+      "answer": "mellettük",
+      "table": "postp-pron-a"
+    },
+    {
+      "id": "nevutok-w02",
+      "kind": "why",
+      "es": "Mellettem van Kati.",
+      "target": "Mellettem",
+      "tr": {
+        "en": "Kati is next to me.",
+        "es": "Kati está junto a mí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the ending -em is on the postposition and stands for 'me': mellett + em",
+            "es": "la terminación -em está en la posposición y significa «yo»: mellett + em"
+          }
+        },
+        {
+          "text": {
+            "en": "mellett stays plain and a pronoun comes after it",
+            "es": "mellett queda simple y después va un pronombre"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be mellett én van Kati; Hungarian puts the ending on the postposition and drops the pronoun.",
+            "es": "Con esta regla la frase sería mellett én van Kati; el húngaro pone la terminación en la posposición y omite el pronombre."
+          }
+        },
+        {
+          "text": {
+            "en": "-em is the ending for 'them'",
+            "es": "-em es la terminación de «ellos»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about 'them' (mellettük); -em is for én, 'me'.",
+            "es": "Con esta regla la frase sería sobre «ellos» (mellettük); -em es para én, «yo»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nevutok-c07",
+      "sentence": "Kati ___ van.",
+      "options": [
+        "mellettem",
+        "melletted",
+        "mellette"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kati is next to the speaker: mellett + em = mellettem (me).",
+        "es": "Kati está junto a quien habla: mellett + em = mellettem (yo)."
+      },
+      "wrong": {
+        "melletted": {
+          "en": "melletted is for te: 'Kati is next to you'.",
+          "es": "melletted es para te: «Kati está junto a ti»."
+        },
+        "mellette": {
+          "en": "mellette is for ő: 'Kati is next to him, her or it'.",
+          "es": "mellette es para ő: «Kati está junto a él, ella o eso»."
+        }
+      },
+      "examples": [
+        "Anna mellettem lakik.",
+        "A gyerek mellettem van."
+      ],
+      "tr": {
+        "en": "Kati is next to me.",
+        "es": "Kati está junto a mí."
+      }
+    },
+    {
+      "id": "nevutok-f07",
+      "kind": "form",
+      "verb": "fölött",
+      "person": "én",
+      "answer": "fölöttem",
+      "accept": [
+        "felettem"
+      ],
+      "table": "postp-pron-b"
+    },
+    {
+      "id": "nevutok-c08",
+      "sentence": "A kutya ___ van.",
+      "options": [
+        "mögöttem",
+        "mögötte",
+        "mögötted"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The dog is behind the person spoken to: mögött + ed = mögötted (you).",
+        "es": "El perro está detrás de la persona con quien hablas: mögött + ed = mögötted (tú)."
+      },
+      "wrong": {
+        "mögöttem": {
+          "en": "mögöttem is 'behind me': the dog would be behind the speaker.",
+          "es": "mögöttem es «detrás de mí»: el perro estaría detrás de quien habla."
+        },
+        "mögötte": {
+          "en": "mögötte is 'behind him, her or it', a third person.",
+          "es": "mögötte es «detrás de él, ella o eso», una tercera persona."
+        }
+      },
+      "examples": [
+        "Kati mögötted van.",
+        "A busz mögötted van."
+      ],
+      "tr": {
+        "en": "The dog is behind you.",
+        "es": "El perro está detrás de ti."
+      }
+    },
+    {
+      "id": "nevutok-f08",
+      "kind": "form",
+      "verb": "után",
+      "person": "te",
+      "answer": "utánad",
+      "table": "postp-pron-b"
+    },
+    {
+      "id": "nevutok-c09",
+      "sentence": "A gyerekek ott vannak, a kutya ___ van.",
+      "options": [
+        "mögötte",
+        "mögöttük",
+        "mögöttünk"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The children are 'they': mögött + ük = mögöttük (behind them).",
+        "es": "Los niños son «ellos»: mögött + ük = mögöttük (detrás de ellos)."
+      },
+      "wrong": {
+        "mögötte": {
+          "en": "mögötte is for one person or thing (behind him, her, it); the children are several.",
+          "es": "mögötte es para una persona o cosa (detrás de él, ella, eso); los niños son varios."
+        },
+        "mögöttünk": {
+          "en": "mögöttünk is 'behind us': the speaker would be among the children.",
+          "es": "mögöttünk es «detrás de nosotros»: quien habla estaría entre los niños."
+        }
+      },
+      "examples": [
+        "Mögöttük lakik Kati.",
+        "A kert mögöttük van."
+      ],
+      "tr": {
+        "en": "The children are there, the dog is behind them.",
+        "es": "Los niños están allí, el perro está detrás de ellos."
+      }
+    },
+    {
+      "id": "nevutok-f09",
+      "kind": "form",
+      "verb": "nélkül",
+      "person": "mi",
+      "answer": "nélkülünk",
+      "table": "postp-pron-b"
+    },
+    {
+      "id": "nevutok-w03",
+      "kind": "why",
+      "es": "Munka után pihenek.",
+      "target": "után",
+      "tr": {
+        "en": "I rest after work.",
+        "es": "Descanso después del trabajo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "után shows a place: behind something",
+            "es": "után indica un lugar: detrás de algo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about being behind work; for a place, behind is mögött.",
+            "es": "Con esta regla la frase hablaría de estar detrás del trabajo; para un lugar, «detrás de» es mögött."
+          }
+        },
+        {
+          "text": {
+            "en": "után shows time: after an event or a moment",
+            "es": "után indica tiempo: después de un hecho o un momento"
+          }
+        },
+        {
+          "text": {
+            "en": "után shows a direction: toward something",
+            "es": "után indica una dirección: hacia algo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use felé (az állomás felé); után means 'after'.",
+            "es": "Con esta regla la frase usaría felé (az állomás felé); után significa «después de»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nevutok-c10",
+      "sentence": "___ nem megyek moziba.",
+      "options": [
+        "Nélküled",
+        "Nélkülem",
+        "Nélküle"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "nélkül + ed = nélküled: without you (te).",
+        "es": "nélkül + ed = nélküled: sin ti (te)."
+      },
+      "wrong": {
+        "Nélkülem": {
+          "en": "Nélkülem is 'without me'; the sentence would say 'Without me I am not going', which makes no sense.",
+          "es": "Nélkülem es «sin mí»; la frase diría «sin mí no voy», que no tiene sentido."
+        },
+        "Nélküle": {
+          "en": "Nélküle is 'without him, her or it'.",
+          "es": "Nélküle es «sin él, ella o eso»."
+        }
+      },
+      "examples": [
+        "Nélkületek nem megyek.",
+        "Nélküle nem dolgozom."
+      ],
+      "tr": {
+        "en": "I am not going to the cinema without you.",
+        "es": "No voy al cine sin ti."
+      }
+    },
+    {
+      "id": "nevutok-f10",
+      "kind": "form",
+      "verb": "között",
+      "person": "mi",
+      "answer": "köztünk",
+      "accept": [
+        "közöttünk"
+      ],
+      "table": "postp-pron-b"
+    },
+    {
+      "id": "nevutok-c11",
+      "sentence": "___ van a bolt.",
+      "options": [
+        "Előttünk",
+        "Előttetek",
+        "Előtte"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "előtt + ünk = előttünk: in front of us (mi).",
+        "es": "előtt + ünk = előttünk: delante de nosotros (mi)."
+      },
+      "wrong": {
+        "Előttetek": {
+          "en": "Előttetek is 'in front of you (all)'.",
+          "es": "Előttetek es «delante de ustedes»."
+        },
+        "Előtte": {
+          "en": "Előtte is 'in front of him, her or it'.",
+          "es": "Előtte es «delante de él, ella o eso»."
+        }
+      },
+      "examples": [
+        "Előttem van egy autó.",
+        "Előtted van a kapu."
+      ],
+      "tr": {
+        "en": "The shop is in front of us.",
+        "es": "La tienda está delante de nosotros."
+      }
+    },
+    {
+      "id": "nevutok-f11",
+      "kind": "form",
+      "verb": "után",
+      "person": "ő",
+      "answer": "utána",
+      "table": "postp-pron-b"
+    },
+    {
+      "id": "nevutok-c12",
+      "sentence": "Péter ___ van a kutya.",
+      "options": [
+        "mellette",
+        "mellettem",
+        "mellett"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After a noun (or a name) the postposition stays plain: Péter mellett.",
+        "es": "Después de un sustantivo (o un nombre) la posposición queda simple: Péter mellett."
+      },
+      "wrong": {
+        "mellette": {
+          "en": "mellette already means 'next to him'; it replaces the name, it does not follow it.",
+          "es": "mellette ya significa «junto a él»: sustituye al nombre, no va después de él."
+        },
+        "mellettem": {
+          "en": "mellettem is 'next to me': the dog would be next to the speaker.",
+          "es": "mellettem es «junto a mí»: el perro estaría junto a quien habla."
+        }
+      },
+      "examples": [
+        "A pad a fa mellett van.",
+        "Anna Gábor mellett van."
+      ],
+      "tr": {
+        "en": "The dog is next to Péter.",
+        "es": "El perro está junto a Péter."
+      }
+    },
+    {
+      "id": "nevutok-f12",
+      "kind": "form",
+      "verb": "nélkül",
+      "person": "ők",
+      "answer": "nélkülük",
+      "table": "postp-pron-b"
+    },
+    {
+      "id": "nevutok-w04",
+      "kind": "why",
+      "es": "A bolt a bank és a mozi között van.",
+      "target": "között",
+      "tr": {
+        "en": "The shop is between the bank and the cinema.",
+        "es": "La tienda está entre el banco y el cine."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "között is for one thing: next to it",
+            "es": "között es para una sola cosa: junto a ella"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A bolt a bank mellett van; között needs two things or a group.",
+            "es": "Con esta regla la frase sería A bolt a bank mellett van; között necesita dos cosas o un grupo."
+          }
+        },
+        {
+          "text": {
+            "en": "között is a direction: toward two things",
+            "es": "között es una dirección: hacia dos cosas"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use felé, 'toward'; között says where the shop is, not where it goes.",
+            "es": "Con esta regla la frase usaría felé, «hacia»; között dice dónde está la tienda, no hacia dónde va."
+          }
+        },
+        {
+          "text": {
+            "en": "között is for two or more things: between or among them",
+            "es": "között es para dos o más cosas: entre ellas"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "nevutok-c13",
+      "sentence": "Ott van a fa, ___ van a madár.",
+      "options": [
+        "fölött",
+        "fölötte",
+        "fölöttem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The tree is replaced by 'it': fölött + e = fölötte (above it).",
+        "es": "El árbol se sustituye por «él»: fölött + e = fölötte (encima de él)."
+      },
+      "wrong": {
+        "fölött": {
+          "en": "Plain fölött follows a noun (a fa fölött); here the tree is already replaced by 'it', so it needs fölötte.",
+          "es": "fölött simple va después de un sustantivo (a fa fölött); aquí el árbol ya está sustituido por «él», así que necesita fölötte."
+        },
+        "fölöttem": {
+          "en": "fölöttem is 'above me': the bird would be above the speaker.",
+          "es": "fölöttem es «encima de mí»: el pájaro estaría encima de quien habla."
+        }
+      },
+      "examples": [
+        "A kép az ágy fölött van.",
+        "Fölöttünk van a lámpa."
+      ],
+      "tr": {
+        "en": "There is the tree, above it is the bird.",
+        "es": "Allí está el árbol, encima de él está el pájaro."
+      }
+    },
+    {
+      "id": "nevutok-c14",
+      "sentence": "Az iskola ___ várok.",
+      "options": [
+        "után",
+        "előtt",
+        "nélkül"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "előtt means in front of: I wait in front of the school.",
+        "es": "előtt significa «delante de»: espero delante de la escuela."
+      },
+      "wrong": {
+        "után": {
+          "en": "With után the sentence would mean 'I wait after school'.",
+          "es": "Con után la frase diría «espero después de la escuela»."
+        },
+        "nélkül": {
+          "en": "With nélkül the sentence would mean 'I wait without school'.",
+          "es": "Con nélkül la frase diría «espero sin escuela»."
+        }
+      },
+      "examples": [
+        "A bolt előtt várok.",
+        "Anna a mozi előtt vár."
+      ],
+      "tr": {
+        "en": "I am waiting in front of the school.",
+        "es": "Espero delante de la escuela."
+      }
+    }
+  ]
+}
