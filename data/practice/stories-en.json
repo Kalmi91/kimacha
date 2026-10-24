@@ -11,5 +11,252 @@
     ],
     "false_es": ["Mi padre hace café y pan.", "Es de noche y estoy en la cocina."],
     "false_hu": ["Apám kávét és kenyeret készít.", "Éjszaka van, és a konyhában vagyok."]
+  },
+  {
+    "id": "a1-store",
+    "level": "A1",
+    "sentences": [
+      { "en": "I am at the store with my mother.", "es": "Estoy en la tienda con mi madre.", "hu": "A boltban vagyok az anyámmal.", "word": "e5894", "form": "store" },
+      { "en": "She wants to buy fruit.", "es": "Ella quiere comprar fruta.", "hu": "Gyümölcsöt akar venni.", "word": "e8102", "form": "buy" },
+      { "en": "I see a big cake.", "es": "Veo un pastel grande.", "hu": "Egy nagy tortát látok.", "word": "e7608", "form": "cake" },
+      { "en": "But I have no money.", "es": "Pero no tengo dinero.", "hu": "De nincs pénzem.", "word": "e5866", "form": "money" },
+      { "en": "My mother pays, and now we are happy.", "es": "Mi madre paga y ahora estamos felices.", "hu": "Anyám fizet, és most boldogok vagyunk.", "word": "e8103", "form": "pays" }
+    ],
+    "false_es": ["Estoy en la escuela con mi madre.", "Tengo mucho dinero."],
+    "false_hu": ["Az iskolában vagyok az anyámmal.", "Sok pénzem van."]
+  },
+  {
+    "id": "a1-school",
+    "level": "A1",
+    "sentences": [
+      { "en": "The girl is at school today.", "es": "La niña está en la escuela hoy.", "hu": "A kislány ma az iskolában van.", "word": "e8136", "form": "school" },
+      { "en": "Her teacher is a kind woman.", "es": "Su profesora es una mujer amable.", "hu": "A tanára kedves nő.", "word": "e5140", "form": "teacher" },
+      { "en": "The class has twenty students.", "es": "La clase tiene veinte alumnos.", "hu": "Az osztályban húsz diák van.", "word": "e8137", "form": "class" },
+      { "en": "The girl writes a letter.", "es": "La niña escribe una carta.", "hu": "A kislány levelet ír.", "word": "e8104", "form": "writes" },
+      { "en": "She is tired, but she is happy.", "es": "Está cansada, pero feliz.", "hu": "Fáradt, de boldog.", "word": "e5869", "form": "tired" }
+    ],
+    "false_es": ["La niña está en casa hoy.", "Su profesor es un hombre."],
+    "false_hu": ["A kislány ma otthon van.", "A tanára férfi."]
+  },
+  {
+    "id": "a1-dog",
+    "level": "A1",
+    "sentences": [
+      { "en": "The boy has a dog.", "es": "El niño tiene un perro.", "hu": "A fiúnak van egy kutyája.", "word": "e5018", "form": "dog" },
+      { "en": "The dog is white and small.", "es": "El perro es blanco y pequeño.", "hu": "A kutya fehér és kicsi.", "word": "e5853", "form": "small" },
+      { "en": "In the morning the boy gives it water and food.", "es": "Por la mañana el niño le da agua y comida.", "hu": "Reggel a fiú vizet és ennivalót ad neki.", "word": "e8500", "form": "gives" },
+      { "en": "The dog likes to run in the park.", "es": "Al perro le gusta correr en el parque.", "hu": "A kutya szeret futni a parkban.", "word": "e8109", "form": "run" },
+      { "en": "At night the dog sleeps on the floor.", "es": "Por la noche el perro duerme en el piso.", "hu": "Éjszaka a kutya a padlón alszik.", "word": "e5848", "form": "sleeps" }
+    ],
+    "false_es": ["El niño tiene un gato.", "El perro es grande."],
+    "false_hu": ["A fiúnak van egy macskája.", "A kutya nagy."]
+  },
+  {
+    "id": "a1-work",
+    "level": "A1",
+    "sentences": [
+      { "en": "My father works in an office.", "es": "Mi padre trabaja en una oficina.", "hu": "Apám irodában dolgozik.", "word": "e8049", "form": "office" },
+      { "en": "He goes there by train.", "es": "Va allí en tren.", "hu": "Vonattal megy oda.", "word": "e8226", "form": "train" },
+      { "en": "He has a lot of work today.", "es": "Hoy tiene mucho trabajo.", "hu": "Ma sok munkája van.", "word": "e5837", "form": "work" },
+      { "en": "At noon he eats lunch with a friend.", "es": "Al mediodía almuerza con un amigo.", "hu": "Délben egy barátjával ebédel.", "word": "e8008", "form": "lunch" },
+      { "en": "In the evening he comes home, and he is tired.", "es": "Por la noche regresa a casa y está cansado.", "hu": "Este hazajön, és fáradt.", "word": "e5886", "form": "evening" }
+    ],
+    "false_es": ["Mi padre trabaja en una escuela.", "Va allí en avión."],
+    "false_hu": ["Apám iskolában dolgozik.", "Repülővel megy oda."]
+  },
+  {
+    "id": "a1-visit",
+    "level": "A1",
+    "sentences": [
+      { "en": "My grandmother comes to our house today.", "es": "Mi abuela viene hoy a nuestra casa.", "hu": "A nagymamám ma hozzánk jön.", "word": "e5039", "form": "grandmother" },
+      { "en": "She gives me a present.", "es": "Me da un regalo.", "hu": "Egy ajándékot ad nekem.", "word": "e8522", "form": "present" },
+      { "en": "It is a pretty red hat.", "es": "Es un bonito sombrero rojo.", "hu": "Ez egy szép piros kalap.", "word": "e8220", "form": "pretty" },
+      { "en": "We eat cake and drink tea.", "es": "Comemos pastel y bebemos té.", "hu": "Tortát eszünk és teát iszunk.", "word": "e5061", "form": "tea" },
+      { "en": "Now she says goodbye and goes home.", "es": "Ahora se despide y se va a casa.", "hu": "Most elköszön, és hazamegy.", "word": "e5806", "form": "goodbye" }
+    ],
+    "false_es": ["Mi abuelo viene hoy a nuestra casa.", "Me da un perro."],
+    "false_hu": ["A nagyapám ma hozzánk jön.", "Egy kutyát ad nekem."]
+  },
+  {
+    "id": "a1-night",
+    "level": "A1",
+    "sentences": [
+      { "en": "It is night and the boy is in his bedroom.", "es": "Es de noche y el niño está en su dormitorio.", "hu": "Éjszaka van, és a fiú a hálószobájában van.", "word": "e5109", "form": "bedroom" },
+      { "en": "He takes a shower.", "es": "Se ducha.", "hu": "Zuhanyozik.", "word": "e5379", "form": "shower" },
+      { "en": "He puts on his pajamas.", "es": "Se pone el pijama.", "hu": "Felveszi a pizsamáját.", "word": "e7632", "form": "pajamas" },
+      { "en": "His mother says good night and closes the door.", "es": "Su madre dice buenas noches y cierra la puerta.", "hu": "Az anyukája jó éjszakát kíván, és becsukja az ajtót.", "word": "e5110", "form": "door" },
+      { "en": "Now the boy is in bed and he sleeps.", "es": "Ahora el niño está en la cama y duerme.", "hu": "Most a fiú az ágyban van, és alszik.", "word": "e5305", "form": "bed" }
+    ],
+    "false_es": ["Es de mañana y el niño está en la cocina.", "Su padre dice buenas noches."],
+    "false_hu": ["Reggel van, és a fiú a konyhában van.", "Az apukája jó éjszakát kíván."]
+  },
+  {
+    "id": "a1-city",
+    "level": "A1",
+    "sentences": [
+      { "en": "The woman lives in a big city.", "es": "La mujer vive en una ciudad grande.", "hu": "A nő egy nagy városban lakik.", "word": "e5833", "form": "city" },
+      { "en": "Her apartment is near the station.", "es": "Su departamento está cerca de la estación.", "hu": "A lakása az állomás közelében van.", "word": "e8039", "form": "apartment" },
+      { "en": "Every day she takes the metro to work.", "es": "Todos los días toma el metro para ir al trabajo.", "hu": "Minden nap metróval megy dolgozni.", "word": "e8229", "form": "metro" },
+      { "en": "In the city there are many people.", "es": "En la ciudad hay mucha gente.", "hu": "A városban sok ember van.", "word": "e5052", "form": "people" },
+      { "en": "But in the evening she goes to the park, and it is quiet there.", "es": "Pero por la noche va al parque y allí está tranquilo.", "hu": "De este a parkba megy, és ott csend van.", "word": "e8616", "form": "quiet" }
+    ],
+    "false_es": ["La mujer vive en un pueblo pequeño.", "Su departamento está lejos de la estación."],
+    "false_hu": ["A nő egy kis faluban lakik.", "A lakása messze van az állomástól."]
+  },
+  {
+    "id": "a1-sick",
+    "level": "A1",
+    "sentences": [
+      { "en": "The boy is ill today.", "es": "El niño está enfermo hoy.", "hu": "A fiú ma beteg.", "word": "e8046", "form": "ill" },
+      { "en": "His head hurts, and he is hot.", "es": "Le duele la cabeza y tiene calor.", "hu": "Fáj a feje, és melege van.", "word": "e5071", "form": "head" },
+      { "en": "His mother calls the doctor.", "es": "Su madre llama al médico.", "hu": "Az anyukája felhívja az orvost.", "word": "e5864", "form": "doctor" },
+      { "en": "The doctor comes in the afternoon.", "es": "El médico viene por la tarde.", "hu": "Az orvos délután jön.", "word": "e5885", "form": "afternoon" },
+      { "en": "He drinks a lot of water and rests.", "es": "Toma mucha agua y descansa.", "hu": "Sok vizet iszik, és pihen.", "word": "e7756", "form": "rests" }
+    ],
+    "false_es": ["El niño está en la escuela hoy.", "Su padre llama al médico."],
+    "false_hu": ["A fiú ma az iskolában van.", "Az apukája hívja az orvost."]
+  },
+  {
+    "id": "a1-week",
+    "level": "A1",
+    "sentences": [
+      { "en": "On Monday I go to school.", "es": "El lunes voy a la escuela.", "hu": "Hétfőn iskolába megyek.", "word": "e5157", "form": "Monday" },
+      { "en": "On Wednesday I play with my friends.", "es": "El miércoles juego con mis amigos.", "hu": "Szerdán a barátaimmal játszom.", "word": "e5159", "form": "Wednesday" },
+      { "en": "On Friday I am tired.", "es": "El viernes estoy cansado.", "hu": "Pénteken fáradt vagyok.", "word": "e5161", "form": "Friday" },
+      { "en": "On Saturday I sleep late.", "es": "El sábado duermo hasta tarde.", "hu": "Szombaton sokáig alszom.", "word": "e5162", "form": "Saturday" },
+      { "en": "On Sunday I am at home with my family.", "es": "El domingo estoy en casa con mi familia.", "hu": "Vasárnap otthon vagyok a családommal.", "word": "e5163", "form": "Sunday" }
+    ],
+    "false_es": ["El lunes estoy en casa.", "El domingo voy a la escuela."],
+    "false_hu": ["Hétfőn otthon vagyok.", "Vasárnap iskolába megyek."]
+  },
+  {
+    "id": "a1-rain",
+    "level": "A1",
+    "sentences": [
+      { "en": "Today it is rainy and cold.", "es": "Hoy está lluvioso y hace frío.", "hu": "Ma esős és hideg az idő.", "word": "e5365", "form": "rainy" },
+      { "en": "I am at home, by the window.", "es": "Estoy en casa, junto a la ventana.", "hu": "Otthon vagyok, az ablak mellett.", "word": "e5111", "form": "window" },
+      { "en": "I see the gray clouds in the sky.", "es": "Veo las nubes grises en el cielo.", "hu": "Szürke felhőket látok az égen.", "word": "e5178", "form": "clouds" },
+      { "en": "My mother makes hot soup.", "es": "Mi madre hace sopa caliente.", "hu": "Anyám forró levest készít.", "word": "e5265", "form": "soup" },
+      { "en": "Now I am warm and happy.", "es": "Ahora estoy calientito y feliz.", "hu": "Most melegem van, és boldog vagyok.", "word": "e8344", "form": "warm" }
+    ],
+    "false_es": ["Hoy está soleado y hace calor.", "Mi padre hace sopa caliente."],
+    "false_hu": ["Ma napos és meleg az idő.", "Apám forró levest készít."]
+  },
+  {
+    "id": "a1-beach",
+    "level": "A1",
+    "sentences": [
+      { "en": "We are at the beach today.", "es": "Hoy estamos en la playa.", "hu": "Ma a tengerparton vagyunk.", "word": "e7957", "form": "beach" },
+      { "en": "The sun is hot and the sky is blue.", "es": "El sol está fuerte y el cielo está azul.", "hu": "A nap forró, az ég pedig kék.", "word": "e5175", "form": "sun" },
+      { "en": "My sister swims in the sea.", "es": "Mi hermana nada en el mar.", "hu": "A nővérem a tengerben úszik.", "word": "e8110", "form": "swims" },
+      { "en": "My brother plays with the sand.", "es": "Mi hermano juega con la arena.", "hu": "A bátyám a homokkal játszik.", "word": "e8216", "form": "sand" },
+      { "en": "I drink cold juice and I am happy.", "es": "Yo tomo jugo frío y estoy feliz.", "hu": "Hideg gyümölcslevet iszom, és boldog vagyok.", "word": "e5266", "form": "juice" }
+    ],
+    "false_es": ["Hoy estamos en la montaña.", "Mi hermano nada en el mar."],
+    "false_hu": ["Ma a hegyen vagyunk.", "A bátyám a tengerben úszik."]
+  },
+  {
+    "id": "a1-restaurant",
+    "level": "A1",
+    "sentences": [
+      { "en": "The family is at a restaurant.", "es": "La familia está en un restaurante.", "hu": "A család egy étteremben van.", "word": "e5893", "form": "restaurant" },
+      { "en": "The waiter is young and kind.", "es": "El mesero es joven y amable.", "hu": "A pincér fiatal és kedves.", "word": "e5148", "form": "waiter" },
+      { "en": "The father wants fish and rice.", "es": "El padre quiere pescado y arroz.", "hu": "Az apa halat és rizst szeretne.", "word": "e5059", "form": "fish" },
+      { "en": "The mother eats a salad.", "es": "La madre come una ensalada.", "hu": "Az anya salátát eszik.", "word": "e7607", "form": "salad" },
+      { "en": "The father pays by card.", "es": "El padre paga con tarjeta.", "hu": "Az apa kártyával fizet.", "word": "e8221", "form": "card" }
+    ],
+    "false_es": ["La familia está en casa.", "El mesero es viejo."],
+    "false_hu": ["A család otthon van.", "A pincér idős."]
+  },
+  {
+    "id": "a1-park",
+    "level": "A1",
+    "sentences": [
+      { "en": "It is a sunny day and my family is in the park.", "es": "Es un día soleado y mi familia está en el parque.", "hu": "Napos idő van, és a családom a parkban van.", "word": "e5364", "form": "sunny" },
+      { "en": "There are many trees and flowers.", "es": "Hay muchos árboles y flores.", "hu": "Sok fa és virág van.", "word": "e7846", "form": "trees" },
+      { "en": "The children play a game.", "es": "Los niños juegan un juego.", "hu": "A gyerekek egy játékot játszanak.", "word": "e8518", "form": "game" },
+      { "en": "My grandfather is on a chair under a tree.", "es": "Mi abuelo está en una silla bajo un árbol.", "hu": "A nagyapám egy széken ül egy fa alatt.", "word": "e5114", "form": "chair" },
+      { "en": "We eat fruit and drink water.", "es": "Comemos fruta y bebemos agua.", "hu": "Gyümölcsöt eszünk és vizet iszunk.", "word": "e7962", "form": "fruit" }
+    ],
+    "false_es": ["Es un día lluvioso y mi familia está en el parque.", "En el parque no hay árboles."],
+    "false_hu": ["Esős nap van, és a családom a parkban van.", "A parkban nincsenek fák."]
+  },
+  {
+    "id": "a1-market",
+    "level": "A1",
+    "sentences": [
+      { "en": "My mother and I go to the market.", "es": "Mi madre y yo vamos al mercado.", "hu": "Anyámmal a piacra megyünk.", "word": "e5897", "form": "market" },
+      { "en": "Today the market is busy.", "es": "Hoy el mercado está muy concurrido.", "hu": "Ma nagy a nyüzsgés a piacon.", "word": "e8233", "form": "busy" },
+      { "en": "There are fresh tomatoes and carrots.", "es": "Hay jitomates y zanahorias frescas.", "hu": "Friss paradicsom és sárgarépa van.", "word": "e7605", "form": "tomatoes" },
+      { "en": "My mother buys cheese and bread.", "es": "Mi madre compra queso y pan.", "hu": "Anyám sajtot és kenyeret vesz.", "word": "e5056", "form": "cheese" },
+      { "en": "Now we go home, and I carry the food.", "es": "Ahora nos vamos a casa y yo llevo la comida.", "hu": "Most hazamegyünk, és én viszem az ennivalót.", "word": "e10805", "form": "carry" }
+    ],
+    "false_es": ["Mi madre y yo vamos a la escuela.", "Hoy el mercado está cerrado."],
+    "false_hu": ["Anyámmal az iskolába megyünk.", "A piac ma zárva van."]
+  },
+  {
+    "id": "a1-trip",
+    "level": "A1",
+    "sentences": [
+      { "en": "We go on a trip today.", "es": "Hoy hacemos un viaje.", "hu": "Ma utazni megyünk.", "word": "e8230", "form": "trip" },
+      { "en": "The train arrives at nine o'clock.", "es": "El tren llega a las nueve.", "hu": "A vonat kilenc órakor érkezik.", "word": "e8226", "form": "train" },
+      { "en": "From the train I see a river.", "es": "Desde el tren veo un río.", "hu": "A vonatról egy folyót látok.", "word": "e8208", "form": "river" },
+      { "en": "My brother is hungry and eats a sandwich.", "es": "Mi hermano tiene hambre y come un sándwich.", "hu": "A bátyám éhes, és szendvicset eszik.", "word": "e8323", "form": "sandwich" },
+      { "en": "In the afternoon we arrive at the hotel.", "es": "Por la tarde llegamos al hotel.", "hu": "Délután megérkezünk a szállodába.", "word": "e5891", "form": "hotel" }
+    ],
+    "false_es": ["El tren llega a las dos.", "Desde el tren veo una montaña."],
+    "false_hu": ["A vonat két órakor érkezik.", "A vonatról egy hegyet látok."]
+  },
+  {
+    "id": "a1-cinema",
+    "level": "A1",
+    "sentences": [
+      { "en": "My friend and I go to the cinema.", "es": "Mi amigo y yo vamos al cine.", "hu": "A barátommal moziba megyünk.", "word": "e8204", "form": "cinema" },
+      { "en": "The movie is at half past seven.", "es": "La película es a las siete y media.", "hu": "A film fél nyolckor van.", "word": "e8520", "form": "movie" },
+      { "en": "We are early.", "es": "Llegamos temprano.", "hu": "Korán vagyunk.", "word": "e8759", "form": "early" },
+      { "en": "My friend buys water and chocolate.", "es": "Mi amigo compra agua y chocolate.", "hu": "A barátom vizet és csokoládét vesz.", "word": "e8009", "form": "chocolate" },
+      { "en": "The film is long, but it is good.", "es": "La película es larga, pero es buena.", "hu": "A film hosszú, de jó.", "word": "e8219", "form": "long" }
+    ],
+    "false_es": ["Mi amigo y yo vamos a la escuela.", "La película es corta."],
+    "false_hu": ["A barátommal iskolába megyünk.", "A film rövid."]
+  },
+  {
+    "id": "a1-dinner",
+    "level": "A1",
+    "sentences": [
+      { "en": "It is evening and my mother cooks dinner.", "es": "Ya es de noche y mi madre prepara la cena.", "hu": "Este van, és anyám vacsorát főz.", "word": "e7612", "form": "dinner" },
+      { "en": "She uses chicken, rice and an onion.", "es": "Usa pollo, arroz y una cebolla.", "hu": "Csirkét, rizst és egy hagymát használ.", "word": "e5262", "form": "chicken" },
+      { "en": "I put the plates on the table.", "es": "Yo pongo los platos en la mesa.", "hu": "Én teszem az asztalra a tányérokat.", "word": "e7849", "form": "plates" },
+      { "en": "My father comes home, and he is hungry.", "es": "Mi padre llega a casa y tiene hambre.", "hu": "Apám hazajön, és éhes.", "word": "e7760", "form": "father" },
+      { "en": "We eat together, and the food is good.", "es": "Comemos juntos y la comida está buena.", "hu": "Együtt eszünk, és finom az étel.", "word": "e8629", "form": "together" }
+    ],
+    "false_es": ["Es de mañana y mi madre prepara el desayuno.", "Mi padre no tiene hambre."],
+    "false_hu": ["Reggel van, és anyám reggelit készít.", "Apám nem éhes."]
+  },
+  {
+    "id": "a1-garden",
+    "level": "A1",
+    "sentences": [
+      { "en": "My grandfather has a small garden.", "es": "Mi abuelo tiene un jardín pequeño.", "hu": "A nagyapámnak van egy kis kertje.", "word": "e5112", "form": "garden" },
+      { "en": "He works there every day.", "es": "Trabaja allí todos los días.", "hu": "Minden nap ott dolgozik.", "word": "e8106", "form": "works" },
+      { "en": "In the garden there are red and yellow flowers.", "es": "En el jardín hay flores rojas y amarillas.", "hu": "A kertben piros és sárga virágok vannak.", "word": "e7845", "form": "flowers" },
+      { "en": "There is a bird in the tree.", "es": "Hay un pájaro en el árbol.", "hu": "Egy madár van a fán.", "word": "e5125", "form": "bird" },
+      { "en": "After work we drink cold water in the shade.", "es": "Después del trabajo bebemos agua fría a la sombra.", "hu": "Munka után hideg vizet iszunk az árnyékban.", "word": "e8055", "form": "shade" }
+    ],
+    "false_es": ["Mi abuelo tiene un jardín grande.", "Hay un gato en el árbol."],
+    "false_hu": ["A nagyapámnak nagy kertje van.", "Egy macska van a fán."]
+  },
+  {
+    "id": "a1-birthday",
+    "level": "A1",
+    "sentences": [
+      { "en": "Today is my birthday.", "es": "Hoy es mi cumpleaños.", "hu": "Ma van a születésnapom.", "word": "e7724", "form": "birthday" },
+      { "en": "Now I am twelve years old.", "es": "Ahora tengo doce años.", "hu": "Most tizenkét éves vagyok.", "word": "e5211", "form": "twelve" },
+      { "en": "My friends come to my house.", "es": "Mis amigos vienen a mi casa.", "hu": "A barátaim hozzám jönnek.", "word": "e7847", "form": "friends" },
+      { "en": "My mother makes a big cake.", "es": "Mi madre hace un pastel grande.", "hu": "Anyám egy nagy tortát készít.", "word": "e7608", "form": "cake" },
+      { "en": "We listen to music and we dance.", "es": "Escuchamos música y bailamos.", "hu": "Zenét hallgatunk, és táncolunk.", "word": "e8519", "form": "music" }
+    ],
+    "false_es": ["Hoy es el cumpleaños de mi madre.", "Ahora tengo cinco años."],
+    "false_hu": ["Ma anyám születésnapja van.", "Most öt éves vagyok."]
   }
 ]
