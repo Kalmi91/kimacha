@@ -1,0 +1,1381 @@
+{
+  "schema": 2,
+  "topic": "ido-mellekmondat",
+  "level": "B2",
+  "title": {
+    "en": "When, before, after, while: amikor, mielőtt, miután, amíg",
+    "es": "Cuando, antes de, después de, mientras: amikor, mielőtt, miután, amíg"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A time clause says when the main action happens: Amikor hazaérek, felhívlak. The conjunction comes first, the verb is in the plain indicative, and a comma separates the two clauses. Two things differ from English and Spanish. First, for a future event Hungarian uses the plain present: no subjunctive and no need for fog (Spanish cuando llegue, English when I get home): Amikor hazaérek. Second, there is no sequence of tenses: each clause has the tense of its own event, so a story in the past stays past in both clauses: Miután megettem a vacsorát, elmentem. The time clause may come first or last: Felhívlak, amikor hazaérek.",
+        "es": "Una oración temporal dice cuándo ocurre la acción principal: Amikor hazaérek, felhívlak. La conjunción va primero, el verbo va en indicativo normal y una coma separa las dos oraciones. Hay dos diferencias con el inglés y el español. Primero, para un hecho futuro el húngaro usa el presente simple: ni subjuntivo ni necesidad de fog (en español cuando llegue): Amikor hazaérek. Segundo, no hay concordancia de tiempos: cada oración lleva el tiempo de su propio hecho, así que una historia en pasado queda en pasado en las dos oraciones: Miután megettem a vacsorát, elmentem. La oración temporal puede ir primero o al final: Felhívlak, amikor hazaérek."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "time-conj",
+      "title": {
+        "en": "Time conjunctions",
+        "es": "Conjunciones temporales"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Model sentence",
+          "es": "Frase modelo"
+        }
+      ],
+      "rows": [
+        [
+          "amikor",
+          "Amikor hazaérek, felhívlak."
+        ],
+        [
+          "mikor",
+          "Nem tudom, mikor ér haza Péter."
+        ],
+        [
+          "mielőtt",
+          "Mielőtt elmész, szólj nekem!"
+        ],
+        [
+          "miután",
+          "Miután megettem a vacsorát, elmentem."
+        ],
+        [
+          "amíg",
+          "Várj, amíg visszajövök!"
+        ],
+        [
+          "mialatt",
+          "Mialatt főztem, Anna felhívott."
+        ],
+        [
+          "mióta",
+          "Mióta itt lakom, minden nap magyarul beszélek."
+        ],
+        [
+          "mihelyt",
+          "Mihelyt megérkezik a vonat, indulunk."
+        ],
+        [
+          "valahányszor",
+          "Valahányszor Budapestre megyek, meglátogatom Annát."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "The conjunctions one by one",
+        "es": "Las conjunciones una por una"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "amikor (when) joins a time clause and works for past, present and future. mikor is the question word (Mikor jön? Nem tudom, mikor jön). In fast speech mikor is also heard as a conjunction (Mikor hazaértem, Anna már aludt), but in exams and formal speech say and write amikor.",
+            "es": "amikor (cuando) une una oración temporal y sirve para pasado, presente y futuro. mikor es la palabra interrogativa (Mikor jön? Nem tudom, mikor jön). En el habla rápida también se oye mikor como conjunción (Mikor hazaértem, Anna már aludt), pero en exámenes y en el habla formal di y escribe amikor."
+          },
+          "examples": [
+            {
+              "es": "Amikor Anna kicsi volt, sokat játszott a kertben.",
+              "tr": {
+                "en": "When Anna was little, she played in the garden a lot.",
+                "es": "Cuando Anna era pequeña, jugaba mucho en el jardín."
+              }
+            },
+            {
+              "es": "Amikor hazaértem, Anna már aludt.",
+              "tr": {
+                "en": "When I got home, Anna was already asleep.",
+                "es": "Cuando llegué a casa, Anna ya dormía."
+              }
+            },
+            {
+              "es": "Nem tudom, mikor ér haza Péter.",
+              "tr": {
+                "en": "I do not know when Péter gets home.",
+                "es": "No sé cuándo llega Péter a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mielőtt (before) takes the plain indicative. Spanish needs the subjunctive here (antes de que te vayas); Hungarian does not: Mielőtt elmész, szólj nekem! Use the real tense of the event: present for a habit or a future event, past for a past event.",
+            "es": "mielőtt (antes de) lleva el indicativo normal. El español necesita aquí el subjuntivo (antes de que te vayas); el húngaro no: Mielőtt elmész, szólj nekem! Usa el tiempo real del hecho: presente para un hábito o un hecho futuro, pasado para un hecho pasado."
+          },
+          "examples": [
+            {
+              "es": "Mielőtt elmész, szólj nekem!",
+              "tr": {
+                "en": "Before you go, tell me!",
+                "es": "Antes de que te vayas, avísame."
+              }
+            },
+            {
+              "es": "Mielőtt elindulok, mindig megnézem az időjárást.",
+              "tr": {
+                "en": "Before I set out, I always check the weather.",
+                "es": "Antes de salir, siempre reviso el clima."
+              }
+            },
+            {
+              "es": "Mielőtt elmentem, megittam egy kávét.",
+              "tr": {
+                "en": "Before I left, I drank a coffee.",
+                "es": "Antes de irme, tomé un café."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "miután (after) introduces the earlier event. Its verb is past when the main clause is past, and present when the main clause is in the future. The verb often has a prefix (meg-, ki-, be-) because the action is finished. azután, hogy means the same.",
+            "es": "miután (después de que) introduce el hecho anterior. Su verbo va en pasado cuando la principal está en pasado, y en presente cuando la principal está en futuro. El verbo suele llevar prefijo (meg-, ki-, be-) porque la acción está terminada. azután, hogy significa lo mismo."
+          },
+          "examples": [
+            {
+              "es": "Miután megettem a vacsorát, elmentem.",
+              "tr": {
+                "en": "After I had eaten dinner, I left.",
+                "es": "Después de que cené, me fui."
+              }
+            },
+            {
+              "es": "Miután kifizettem a számlát, kimentünk az étteremből.",
+              "tr": {
+                "en": "After I paid the bill, we left the restaurant.",
+                "es": "Después de que pagué la cuenta, salimos del restaurante."
+              }
+            },
+            {
+              "es": "Miután megvacsorázom, felhívlak.",
+              "tr": {
+                "en": "After I have had dinner, I will call you.",
+                "es": "Después de que cene, te llamaré."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "amíg means 'while' (both actions run together) and 'until' (the main action lasts up to the moment of the clause). After a negative main clause it means 'until' and the clause gets its own nem: Nem megyek el, amíg nem szólsz (I will not leave until you say something). The two nem do not cancel each other: Hungarian keeps the negation in both. With prefix verbs the standard order is prefix, then nem, then the verb: amíg meg nem érkezik; in speech amíg nem érkezik meg is also common.",
+            "es": "amíg significa 'mientras' (las dos acciones van juntas) y 'hasta que' (la acción principal dura hasta el momento de la oración). Después de una oración principal negativa significa 'hasta que' y la oración lleva su propio nem: Nem megyek el, amíg nem szólsz (no me iré hasta que me digas algo). Los dos nem no se anulan: el húngaro mantiene la negación en ambas. Con verbos con prefijo el orden estándar es prefijo, luego nem, luego el verbo: amíg meg nem érkezik; en el habla también es frecuente amíg nem érkezik meg."
+          },
+          "examples": [
+            {
+              "es": "Amíg dolgozom, nem tudok beszélni.",
+              "tr": {
+                "en": "While I am working, I cannot talk.",
+                "es": "Mientras trabajo, no puedo hablar."
+              }
+            },
+            {
+              "es": "Várj, amíg visszajövök!",
+              "tr": {
+                "en": "Wait until I come back!",
+                "es": "Espera hasta que regrese."
+              }
+            },
+            {
+              "es": "Nem megyek el, amíg nem szólsz.",
+              "tr": {
+                "en": "I will not leave until you say something.",
+                "es": "No me iré hasta que me digas algo."
+              }
+            },
+            {
+              "es": "Várj itt, amíg Péter meg nem érkezik!",
+              "tr": {
+                "en": "Wait here until Péter arrives!",
+                "es": "¡Espera aquí hasta que llegue Péter!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mialatt (while, during the time that) says that two actions overlap. It sounds more written than miközben, the usual spoken word. Both take the tense of the event.",
+            "es": "mialatt (mientras, durante el tiempo en que) dice que dos acciones se superponen. Suena más escrito que miközben, la palabra hablada habitual. Las dos llevan el tiempo del hecho."
+          },
+          "examples": [
+            {
+              "es": "Mialatt főztem, Anna felhívott.",
+              "tr": {
+                "en": "While I was cooking, Anna called me.",
+                "es": "Mientras cocinaba, Anna me llamó."
+              }
+            },
+            {
+              "es": "Miközben vacsoráztunk, esni kezdett az eső.",
+              "tr": {
+                "en": "While we were having dinner, it started to rain.",
+                "es": "Mientras cenábamos, empezó a llover."
+              }
+            },
+            {
+              "es": "Mialatt a gyerekek aludtak, én főztem.",
+              "tr": {
+                "en": "While the children slept, I cooked.",
+                "es": "Mientras los niños dormían, yo cocinaba."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mióta (since) looks back from now to a starting point. If the state or activity still goes on, the verb is in the present: Mióta itt lakom, ... (English since I have lived here). If the clause names a finished event, the verb is past: Mióta Péter elment Szegedre, nem láttam őt. The form amióta (Amióta itt lakom, ...) is just as common.",
+            "es": "mióta (desde que) mira desde ahora hacia un punto de partida. Si el estado o la actividad continúa, el verbo va en presente: Mióta itt lakom, ... (desde que vivo aquí). Si la oración nombra un hecho terminado, el verbo va en pasado: Mióta Péter elment Szegedre, nem láttam őt. La forma amióta (Amióta itt lakom, ...) es igual de frecuente."
+          },
+          "examples": [
+            {
+              "es": "Mióta itt lakom, minden nap magyarul beszélek.",
+              "tr": {
+                "en": "Since I have lived here, I speak Hungarian every day.",
+                "es": "Desde que vivo aquí, hablo húngaro todos los días."
+              }
+            },
+            {
+              "es": "Mióta Anna Szegeden tanul, ritkán találkozunk.",
+              "tr": {
+                "en": "Since Anna has been studying in Szeged, we rarely meet.",
+                "es": "Desde que Anna estudia en Szeged, nos vemos poco."
+              }
+            },
+            {
+              "es": "Mióta Péter elment Szegedre, nem láttam őt.",
+              "tr": {
+                "en": "Since Péter went to Szeged, I have not seen him.",
+                "es": "Desde que Péter se fue a Szeged, no lo he visto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mihelyt (as soon as) is rather bookish; in speech amint is more common. valahányszor (every time that) stresses 'each and every time'; in speech people also say amikor csak or minden alkalommal, amikor. Both take the real tense: present for a habit or the future.",
+            "es": "mihelyt (en cuanto) es más bien libresco; en el habla es más común amint. valahányszor (cada vez que) subraya 'absolutamente cada vez'; en el habla también se dice amikor csak o minden alkalommal, amikor. Las dos llevan el tiempo real: presente para un hábito o el futuro."
+          },
+          "examples": [
+            {
+              "es": "Mihelyt megérkezik a vonat, indulunk.",
+              "tr": {
+                "en": "As soon as the train arrives, we leave.",
+                "es": "En cuanto llegue el tren, salimos."
+              }
+            },
+            {
+              "es": "Mihelyt hazaérek, felhívlak.",
+              "tr": {
+                "en": "As soon as I get home, I will call you.",
+                "es": "En cuanto llegue a casa, te llamo."
+              }
+            },
+            {
+              "es": "Valahányszor Budapestre megyek, meglátogatom Annát.",
+              "tr": {
+                "en": "Every time I go to Budapest, I visit Anna.",
+                "es": "Cada vez que voy a Budapest, visito a Anna."
+              }
+            },
+            {
+              "es": "Valahányszor esik, otthon maradok.",
+              "tr": {
+                "en": "Whenever it rains, I stay at home.",
+                "es": "Cada vez que llueve, me quedo en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Tense: the clause follows the real time of its event",
+        "es": "Tiempo verbal: la oración sigue el tiempo real de su hecho"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A future event is in the present tense in the time clause. The main clause shows that it is the future (felhívlak, szólok, szólj).",
+            "es": "Un hecho futuro va en presente en la oración temporal. La principal muestra que es futuro (felhívlak, szólok, szólj)."
+          },
+          "examples": [
+            {
+              "es": "Amikor Budapestre megérkezem, felhívlak.",
+              "tr": {
+                "en": "When I arrive in Budapest, I will call you.",
+                "es": "Cuando llegue a Budapest, te llamaré."
+              }
+            },
+            {
+              "es": "Amikor megérkezem, szólok neked.",
+              "tr": {
+                "en": "When I arrive, I will let you know.",
+                "es": "Cuando llegue, te aviso."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A habit is in the present too, in both clauses. Words such as mindig and minden nap help.",
+            "es": "Un hábito también va en presente, en las dos oraciones. Palabras como mindig y minden nap ayudan."
+          },
+          "examples": [
+            {
+              "es": "Amikor esik az eső, otthon maradok.",
+              "tr": {
+                "en": "When it rains, I stay at home.",
+                "es": "Cuando llueve, me quedo en casa."
+              }
+            },
+            {
+              "es": "Amíg dolgozom, mindig zenét hallgatok.",
+              "tr": {
+                "en": "While I work, I always listen to music.",
+                "es": "Mientras trabajo, siempre escucho música."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A past event is past in both clauses. There is no sequence of tenses: the tense of one clause does not depend on the other.",
+            "es": "Un hecho pasado va en pasado en las dos oraciones. No hay concordancia de tiempos: el tiempo de una oración no depende de la otra."
+          },
+          "examples": [
+            {
+              "es": "Miután befejeztem a munkát, hazamentem.",
+              "tr": {
+                "en": "After I finished work, I went home.",
+                "es": "Después de que terminé el trabajo, me fui a casa."
+              }
+            },
+            {
+              "es": "Amikor megérkeztünk, esett az eső.",
+              "tr": {
+                "en": "When we arrived, it was raining.",
+                "es": "Cuando llegamos, llovía."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The time clause may open the sentence or follow the main clause. There is a comma either way, and the main clause keeps its normal word order.",
+            "es": "La oración temporal puede abrir la frase o ir después de la principal. Hay coma en ambos casos y la principal conserva su orden normal."
+          },
+          "examples": [
+            {
+              "es": "Amikor hazaérek, felhívlak.",
+              "tr": {
+                "en": "When I get home, I will call you.",
+                "es": "Cuando llegue a casa, te llamaré."
+              }
+            },
+            {
+              "es": "Felhívlak, amikor hazaérek.",
+              "tr": {
+                "en": "I will call you when I get home.",
+                "es": "Te llamaré cuando llegue a casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "clause-verbs",
+      "title": {
+        "en": "hazaér and megeszik in a time clause",
+        "es": "hazaér y megeszik en una oración temporal"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "hazaér: present (future or habit)",
+          "es": "hazaér: presente (futuro o hábito)"
+        },
+        {
+          "en": "hazaér: past",
+          "es": "hazaér: pasado"
+        },
+        {
+          "en": "megeszik: past, definite (a vacsorát)",
+          "es": "megeszik: pasado, definido (a vacsorát)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "hazaérek",
+          "hazaértem",
+          "megettem"
+        ],
+        [
+          "te",
+          "hazaérsz",
+          "hazaértél",
+          "megetted"
+        ],
+        [
+          "ő",
+          "hazaér",
+          "hazaért",
+          "megette"
+        ],
+        [
+          "mi",
+          "hazaérünk",
+          "hazaértünk",
+          "megettük"
+        ],
+        [
+          "ti",
+          "hazaértek",
+          "hazaértetek",
+          "megettétek"
+        ],
+        [
+          "ők",
+          "hazaérnek",
+          "hazaértek",
+          "megették"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Four pairs that get mixed up",
+        "es": "Cuatro pares que se confunden"
+      },
+      "pairs": [
+        {
+          "a": "Vacsora előtt elmegyek a postára.",
+          "b": "Mielőtt vacsorázunk, elmegyek a postára.",
+          "note": {
+            "en": "előtt and után follow a noun (vacsora előtt, vacsora után). mielőtt and miután open a clause with its own verb.",
+            "es": "előtt y után van después de un sustantivo (vacsora előtt, vacsora után). mielőtt y miután abren una oración con su propio verbo."
+          },
+          "examples": [
+            {
+              "es": "Vacsora után sétálunk egyet.",
+              "tr": {
+                "en": "After dinner we take a walk.",
+                "es": "Después de la cena damos un paseo."
+              }
+            },
+            {
+              "es": "Miután megvacsorázunk, sétálunk egyet.",
+              "tr": {
+                "en": "After we have had dinner, we take a walk.",
+                "es": "Después de que cenamos, damos un paseo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Amikor hazaérek, felhívlak.",
+          "b": "Ha hazaérek, felhívlak.",
+          "note": {
+            "en": "amikor: the event will happen, only the time is the question. ha: it may or may not happen (also: every time that).",
+            "es": "amikor: el hecho va a ocurrir, solo importa el momento. ha: puede ocurrir o no (también: cada vez que)."
+          },
+          "examples": [
+            {
+              "es": "Amikor holnap Budapestre megyek, meglátogatom Annát.",
+              "tr": {
+                "en": "When I go to Budapest tomorrow, I will visit Anna.",
+                "es": "Cuando vaya mañana a Budapest, visitaré a Anna."
+              }
+            },
+            {
+              "es": "Ha holnap esik, otthon maradunk.",
+              "tr": {
+                "en": "If it rains tomorrow, we will stay at home.",
+                "es": "Si llueve mañana, nos quedaremos en casa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Miután megettem a vacsorát, elmentem.",
+          "b": "Megettem a vacsorát, azután elmentem.",
+          "note": {
+            "en": "miután is a conjunction: its clause needs a main clause. azután (afterwards) is an adverb that begins a second main clause. In speech utána is the usual word for \"afterwards\".",
+            "es": "miután es una conjunción: su oración necesita una principal. azután (después) es un adverbio que empieza una segunda oración principal. En el habla la palabra habitual para «después» es utána."
+          },
+          "examples": [
+            {
+              "es": "Elmentünk moziba, azután vacsoráztunk.",
+              "tr": {
+                "en": "We went to the cinema, then we had dinner.",
+                "es": "Fuimos al cine y después cenamos."
+              }
+            },
+            {
+              "es": "Miután elmentünk moziba, vacsoráztunk.",
+              "tr": {
+                "en": "After we went to the cinema, we had dinner.",
+                "es": "Después de que fuimos al cine, cenamos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Amíg dolgozom, nem tudok beszélni.",
+          "b": "Várj, amíg visszajövök!",
+          "note": {
+            "en": "The same word, two meanings: amíg = while (the actions overlap) or until (the main action lasts up to the moment of the clause).",
+            "es": "La misma palabra, dos significados: amíg = mientras (las acciones se superponen) o hasta que (la acción principal dura hasta el momento de la oración)."
+          },
+          "examples": [
+            {
+              "es": "Amíg Anna főz, én takarítok.",
+              "tr": {
+                "en": "While Anna cooks, I clean.",
+                "es": "Mientras Anna cocina, yo limpio."
+              }
+            },
+            {
+              "es": "Maradj itt, amíg Péter megérkezik!",
+              "tr": {
+                "en": "Stay here until Péter arrives!",
+                "es": "Quédate aquí hasta que llegue Péter."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not reach for the subjunctive: Amikor hazaérjek is wrong, so say Amikor hazaérek (the -j form belongs after hogy, as in Azt akarom, hogy gyere). Other traps: after Nem tudom use the question word mikor, not amikor; after a negative main clause, amíg takes its own nem (Nem megyek el, amíg nem szólsz; with a prefix verb: amíg meg nem érkezik); and előtt and után go after a noun (vacsora után), mielőtt and miután before a clause (miután vacsoráztunk).",
+        "es": "No recurras al subjuntivo: Amikor hazaérjek es incorrecto, di Amikor hazaérek (la forma en -j va después de hogy, como en Azt akarom, hogy gyere). Otras trampas: después de Nem tudom usa la palabra interrogativa mikor, no amikor; después de una oración principal negativa, amíg lleva su propio nem (Nem megyek el, amíg nem szólsz; con un verbo con prefijo: amíg meg nem érkezik); y előtt y után van después de un sustantivo (vacsora után), mientras que mielőtt y miután van delante de una oración (miután vacsoráztunk)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A time clause starts with a conjunction and has an ordinary verb. For a future event use the present tense: «Amikor hazaérek, felhívlak». «Mielőtt» means before: «Mielőtt elmész, szólj nekem». «Miután» means after: «Miután megettem a vacsorát, elmentem». «Amíg» means while or until: «Várj, amíg visszajövök». Use «mióta» for since: «Mióta itt lakom, minden nap magyarul beszélek». After a noun use «előtt» and «után», for example «vacsora után».",
+    "es": "Una oración temporal empieza con una conjunción y lleva un verbo normal. Para un hecho futuro usa el presente: «Amikor hazaérek, felhívlak». «Mielőtt» significa antes de que: «Mielőtt elmész, szólj nekem». «Miután» significa después de que: «Miután megettem a vacsorát, elmentem». «Amíg» significa mientras o hasta que: «Várj, amíg visszajövök». Usa «mióta» para desde que: «Mióta itt lakom, minden nap magyarul beszélek». Después de un sustantivo usa «előtt» y «után», por ejemplo «vacsora után»."
+  },
+  "glossary": [
+    {
+      "word": "mielőtt",
+      "gloss": {
+        "en": "before (conjunction)",
+        "es": "antes de que (conjunción)"
+      }
+    },
+    {
+      "word": "miután",
+      "gloss": {
+        "en": "after (conjunction)",
+        "es": "después de que (conjunción)"
+      }
+    },
+    {
+      "word": "mialatt",
+      "gloss": {
+        "en": "while, during the time that",
+        "es": "mientras, durante el tiempo en que"
+      }
+    },
+    {
+      "word": "mióta",
+      "gloss": {
+        "en": "since (conjunction)",
+        "es": "desde que"
+      }
+    },
+    {
+      "word": "mihelyt",
+      "gloss": {
+        "en": "as soon as (written)",
+        "es": "en cuanto (escrito)"
+      }
+    },
+    {
+      "word": "valahányszor",
+      "gloss": {
+        "en": "every time that, whenever",
+        "es": "cada vez que"
+      }
+    },
+    {
+      "word": "hazaér",
+      "gloss": {
+        "en": "to get home, to arrive home (ér haza when the prefix splits off)",
+        "es": "llegar a casa (ér haza cuando el prefijo se separa)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ido-mellekmondat-c01",
+      "sentence": "Amikor ___, felhívlak.",
+      "options": [
+        "hazaérek",
+        "hazaértem",
+        "hazaérjek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The event is still in the future, and Hungarian uses the plain present for it: hazaérek. The main clause felhívlak (I will call you) already shows that it is the future.",
+        "es": "El hecho aún está en el futuro y el húngaro usa el presente simple: hazaérek. La principal felhívlak (te llamaré) ya muestra que es futuro."
+      },
+      "wrong": {
+        "hazaértem": {
+          "en": "hazaértem is past ('when I got home'), but felhívlak is future: the two clauses would not fit in time.",
+          "es": "hazaértem es pasado ('cuando llegué a casa'), pero felhívlak es futuro: las dos oraciones no encajarían en el tiempo."
+        },
+        "hazaérjek": {
+          "en": "hazaérjek is the -j form (subjunctive); a time clause with amikor takes the plain present. Spanish cuando llegue has no counterpart here.",
+          "es": "hazaérjek es la forma en -j (subjuntivo); una oración temporal con amikor lleva el presente simple. El cuando llegue del español no tiene equivalente aquí."
+        }
+      },
+      "examples": [
+        "Amikor Budapestre megérkezem, felhívlak.",
+        "Amikor megérkezem, szólok neked."
+      ],
+      "tr": {
+        "en": "When I get home, I will call you.",
+        "es": "Cuando llegue a casa, te llamaré."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f01",
+      "kind": "form",
+      "verb": "hazaér (present)",
+      "person": "én",
+      "answer": "hazaérek",
+      "table": "clause-verbs"
+    },
+    {
+      "id": "ido-mellekmondat-c02",
+      "sentence": "Mielőtt ___, mindig megiszom egy kávét.",
+      "options": [
+        "elmegyek",
+        "elmentem",
+        "elmenni"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mindig plus the present tense (megiszom) describes a habit, so the mielőtt clause is also in the present: elmegyek.",
+        "es": "mindig más el presente (megiszom) describe un hábito, así que la oración con mielőtt también va en presente: elmegyek."
+      },
+      "wrong": {
+        "elmentem": {
+          "en": "elmentem is past, but the main clause (mindig megiszom) is a present habit: the clauses would not fit in time.",
+          "es": "elmentem es pasado, pero la principal (mindig megiszom) es un hábito en presente: las oraciones no encajarían en el tiempo."
+        },
+        "elmenni": {
+          "en": "elmenni is an infinitive; a clause needs a verb with a person ending.",
+          "es": "elmenni es un infinitivo; una oración necesita un verbo con terminación de persona."
+        }
+      },
+      "examples": [
+        "Mielőtt elindulok, mindig megnézem az időjárást.",
+        "Mielőtt aludni megyek, mindig olvasok egy kicsit."
+      ],
+      "tr": {
+        "en": "Before I leave, I always have a coffee.",
+        "es": "Antes de irme, siempre tomo un café."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f02",
+      "kind": "form",
+      "verb": "megeszik (past, definite)",
+      "person": "te",
+      "answer": "megetted",
+      "table": "clause-verbs"
+    },
+    {
+      "id": "ido-mellekmondat-c03",
+      "sentence": "Miután ___ a vacsorát, elmentem.",
+      "options": [
+        "megettem",
+        "megeszem",
+        "megegyem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Both events are in the past: first I ate, then I left. meg- shows that the meal was finished.",
+        "es": "Los dos hechos son pasados: primero comí, luego me fui. meg- muestra que la comida terminó."
+      },
+      "wrong": {
+        "megeszem": {
+          "en": "megeszem is present or future, but elmentem is past: the order in time would not fit.",
+          "es": "megeszem es presente o futuro, pero elmentem es pasado: el orden en el tiempo no encajaría."
+        },
+        "megegyem": {
+          "en": "megegyem is the -j form ('let me eat it'); a time clause takes the indicative.",
+          "es": "megegyem es la forma en -j ('que me lo coma'); una oración temporal lleva el indicativo."
+        }
+      },
+      "examples": [
+        "Miután kifizettem a számlát, kimentünk az étteremből.",
+        "Miután befejeztem a munkát, hazamentem."
+      ],
+      "tr": {
+        "en": "After I had eaten dinner, I left.",
+        "es": "Después de que cené, me fui."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f03",
+      "kind": "form",
+      "verb": "hazaér (past)",
+      "person": "mi",
+      "answer": "hazaértünk",
+      "table": "clause-verbs"
+    },
+    {
+      "id": "ido-mellekmondat-c04",
+      "sentence": "Nem eszünk, amíg Péter ___ jön.",
+      "options": [
+        "nem",
+        "ne",
+        "sem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After a negative main clause, amíg means 'until' and its clause gets its own nem: amíg Péter nem jön. The two nem do not cancel out.",
+        "es": "Después de una oración principal negativa, amíg significa 'hasta que' y su oración lleva su propio nem: amíg Péter nem jön. Los dos nem no se anulan."
+      },
+      "wrong": {
+        "ne": {
+          "en": "ne negates commands and the -j form (Ne gyere!); jön here is a plain fact, so you need nem.",
+          "es": "ne niega órdenes y la forma en -j (Ne gyere!); jön aquí es un hecho simple, así que hace falta nem."
+        },
+        "sem": {
+          "en": "sem means 'neither, not even' and needs a partner (sem ... sem); it cannot replace nem here.",
+          "es": "sem significa 'ni, tampoco' y necesita una pareja (sem ... sem); no puede reemplazar a nem aquí."
+        }
+      },
+      "examples": [
+        "Nem megyek el, amíg nem szólsz.",
+        "Nem kezdjük el, amíg Anna nem jön."
+      ],
+      "tr": {
+        "en": "We are not eating until Péter comes.",
+        "es": "No comemos hasta que llegue Péter."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f04",
+      "kind": "form",
+      "verb": "hazaér (present)",
+      "person": "ők",
+      "answer": "hazaérnek",
+      "table": "clause-verbs"
+    },
+    {
+      "id": "ido-mellekmondat-c05",
+      "sentence": "Mióta Gábor Debrecenben ___, ritkán látom.",
+      "options": [
+        "dolgozik",
+        "dolgozott",
+        "fog dolgozni"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Gábor still works in Debrecen, so the clause is in the present: dolgozik (English since he has worked there).",
+        "es": "Gábor sigue trabajando en Debrecen, así que la oración va en presente: dolgozik (desde que trabaja allí)."
+      },
+      "wrong": {
+        "dolgozott": {
+          "en": "A past tense would present the work as finished, but ritkán látom (I rarely see him) is present: the work goes on.",
+          "es": "Un pasado presentaría el trabajo como terminado, pero ritkán látom (lo veo poco) es presente: el trabajo continúa."
+        },
+        "fog dolgozni": {
+          "en": "mióta looks back from now to a starting point, so a future form makes no sense.",
+          "es": "mióta mira desde ahora hacia un punto de partida, así que una forma de futuro no tiene sentido."
+        }
+      },
+      "examples": [
+        "Mióta itt lakom, minden nap magyarul beszélek.",
+        "Mióta Anna Szegeden tanul, ritkán találkozunk."
+      ],
+      "tr": {
+        "en": "Since Gábor has been working in Debrecen, I rarely see him.",
+        "es": "Desde que Gábor trabaja en Debrecen, lo veo poco."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f05",
+      "kind": "form",
+      "verb": "megeszik (past, definite)",
+      "person": "ők",
+      "answer": "megették",
+      "table": "clause-verbs"
+    },
+    {
+      "id": "ido-mellekmondat-w01",
+      "kind": "why",
+      "es": "Mielőtt elmész, szólj nekem!",
+      "target": "elmész",
+      "tr": {
+        "en": "Before you go, tell me!",
+        "es": "Antes de que te vayas, avísame."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "past tense: the going away is already over",
+            "es": "pasado: el irse ya terminó"
+          },
+          "wrong": {
+            "en": "With this rule the clause would be Mielőtt elmentél, szólj nekem (before you went), but the order szólj looks ahead.",
+            "es": "Con esta regla la oración sería Mielőtt elmentél, szólj nekem (antes de que te fuiste), pero la orden szólj mira hacia adelante."
+          }
+        },
+        {
+          "text": {
+            "en": "plain present: an ordinary verb, even though the going comes later",
+            "es": "presente simple: un verbo normal, aunque el irse venga después"
+          }
+        },
+        {
+          "text": {
+            "en": "infinitive with a person ending: you have to go",
+            "es": "infinitivo con terminación de persona: tienes que ir"
+          },
+          "wrong": {
+            "en": "With this rule the clause would be Mielőtt menned ...; that is the pattern of Neked menned kell, not a time clause.",
+            "es": "Con esta regla la oración sería Mielőtt menned ...; ese es el patrón de Neked menned kell, no una oración temporal."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ido-mellekmondat-f06",
+      "kind": "form",
+      "verb": "hazaér (past)",
+      "person": "ti",
+      "answer": "hazaértetek",
+      "table": "clause-verbs"
+    },
+    {
+      "id": "ido-mellekmondat-c06",
+      "sentence": "Nem tudom, ___ ér haza Péter.",
+      "options": [
+        "mikor",
+        "amikor",
+        "mielőtt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nem tudom introduces an indirect question, so the question word mikor stays.",
+        "es": "Nem tudom introduce una pregunta indirecta, así que se queda la palabra interrogativa mikor."
+      },
+      "wrong": {
+        "amikor": {
+          "en": "amikor joins a time clause to a main clause (Amikor Péter hazaér, szól); after Nem tudom the clause is a question, so it needs mikor.",
+          "es": "amikor une una oración temporal a una principal (Amikor Péter hazaér, szól); después de Nem tudom la oración es una pregunta, así que hace falta mikor."
+        },
+        "mielőtt": {
+          "en": "mielőtt means 'before'; the sentence does not talk about an order of events, it asks for the time.",
+          "es": "mielőtt significa 'antes de que'; la frase no habla de un orden de hechos, pregunta por la hora."
+        }
+      },
+      "examples": [
+        "Nem tudom, mikor jön a vonat.",
+        "Megkérdezem, mikor indul a vonat."
+      ],
+      "tr": {
+        "en": "I do not know when Péter gets home.",
+        "es": "No sé cuándo llega Péter a casa."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f07",
+      "kind": "form",
+      "verb": "mielőtt / miután",
+      "person": "Szólj nekem, ___ elmész!",
+      "answer": "mielőtt",
+      "table": "time-conj"
+    },
+    {
+      "id": "ido-mellekmondat-w02",
+      "kind": "why",
+      "es": "Nem megyek el, amíg nem szólsz.",
+      "target": "amíg nem",
+      "tr": {
+        "en": "I will not leave until you say something.",
+        "es": "No me iré hasta que me digas algo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the second nem undoes the first, so the sentence is positive",
+            "es": "el segundo nem anula al primero, así que la frase es positiva"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would mean 'I will leave when you speak'; in Hungarian both nem stay negative: 'I will not leave until you speak'.",
+            "es": "Con esta regla la frase significaría 'me iré cuando hables'; en húngaro los dos nem siguen siendo negativos: 'no me iré hasta que hables'."
+          }
+        },
+        {
+          "text": {
+            "en": "amíg nem means 'since ... not'",
+            "es": "amíg nem significa 'desde que ... no'"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would need mióta (Mióta nem szólsz, ...); amíg looks forward to a moment, mióta looks back.",
+            "es": "Con esta regla la frase necesitaría mióta (Mióta nem szólsz, ...); amíg mira hacia un momento futuro, mióta mira hacia atrás."
+          }
+        },
+        {
+          "text": {
+            "en": "after a negative main clause, amíg ... nem means 'until'",
+            "es": "después de una principal negativa, amíg ... nem significa 'hasta que'"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "ido-mellekmondat-f08",
+      "kind": "form",
+      "verb": "miután / mielőtt",
+      "person": "Kimentünk az étteremből, ___ kifizettem a számlát.",
+      "answer": "miután",
+      "accept": [
+        "azután, hogy"
+      ],
+      "table": "time-conj"
+    },
+    {
+      "id": "ido-mellekmondat-c07",
+      "sentence": "Vacsora ___ még elmegyek a postára.",
+      "options": [
+        "előtt",
+        "mielőtt",
+        "azelőtt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "vacsora is a noun, so the postposition előtt follows it: vacsora előtt.",
+        "es": "vacsora es un sustantivo, así que la posposición előtt va después: vacsora előtt."
+      },
+      "wrong": {
+        "mielőtt": {
+          "en": "mielőtt opens a clause with its own verb (Mielőtt vacsorázunk, ...); it cannot follow a bare noun.",
+          "es": "mielőtt abre una oración con su propio verbo (Mielőtt vacsorázunk, ...); no puede ir después de un sustantivo solo."
+        },
+        "azelőtt": {
+          "en": "azelőtt is an adverb for earlier times ('before that, formerly'); it does not follow a noun.",
+          "es": "azelőtt es un adverbio para tiempos anteriores ('antes, anteriormente'); no va después de un sustantivo."
+        }
+      },
+      "examples": [
+        "Ebéd után sétálunk egyet.",
+        "Ebéd előtt még dolgozom."
+      ],
+      "tr": {
+        "en": "Before dinner I will still go to the post office.",
+        "es": "Antes de la cena todavía voy a ir al correo."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f09",
+      "kind": "form",
+      "verb": "amíg / mióta",
+      "person": "Várj itt, ___ visszajövök!",
+      "answer": "amíg",
+      "table": "time-conj",
+      "accept": [
+        "míg"
+      ]
+    },
+    {
+      "id": "ido-mellekmondat-w03",
+      "kind": "why",
+      "es": "Miután Péter megette a vacsorát, elment.",
+      "target": "megette",
+      "tr": {
+        "en": "After Péter had eaten dinner, he left.",
+        "es": "Después de que Péter cenó, se fue."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "past with the definite ending: the object a vacsorát is definite",
+            "es": "pasado con la terminación definida: el complemento a vacsorát es definido"
+          }
+        },
+        {
+          "text": {
+            "en": "past with the indefinite ending: Péter ate something",
+            "es": "pasado con la terminación indefinida: Péter comió algo"
+          },
+          "wrong": {
+            "en": "With this rule the form would be megevett; but a vacsorát is a definite object and asks for megette.",
+            "es": "Con esta regla la forma sería megevett; pero a vacsorát es un complemento definido y pide megette."
+          }
+        },
+        {
+          "text": {
+            "en": "present with the definite ending: Péter eats it up",
+            "es": "presente con la terminación definida: Péter se lo come"
+          },
+          "wrong": {
+            "en": "With this rule the form would be megeszi; but the main clause elment is past.",
+            "es": "Con esta regla la forma sería megeszi; pero la principal elment es pasado."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ido-mellekmondat-f10",
+      "kind": "form",
+      "verb": "mióta / amíg",
+      "person": "Sokat tanulok, ___ itt lakom.",
+      "answer": "mióta",
+      "table": "time-conj",
+      "accept": [
+        "amióta"
+      ]
+    },
+    {
+      "id": "ido-mellekmondat-c08",
+      "sentence": "Elmentünk moziba, és ___ vacsoráztunk.",
+      "options": [
+        "azután",
+        "miután",
+        "mielőtt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "azután is an adverb ('afterwards'): it begins the second main clause.",
+        "es": "azután es un adverbio ('después'): empieza la segunda oración principal."
+      },
+      "wrong": {
+        "miután": {
+          "en": "miután opens a clause that needs a main clause after it (Miután vacsoráztunk, hazamentünk); here the sentence would stay unfinished.",
+          "es": "miután abre una oración que necesita una principal después (Miután vacsoráztunk, hazamentünk); aquí la frase quedaría sin terminar."
+        },
+        "mielőtt": {
+          "en": "mielőtt also opens a clause that needs a main clause, and it means 'before', the opposite order.",
+          "es": "mielőtt también abre una oración que necesita una principal, y significa 'antes de que', el orden contrario."
+        }
+      },
+      "examples": [
+        "Megettem a vacsorát, azután elmentem.",
+        "Dolgoztam, azután pihentem."
+      ],
+      "tr": {
+        "en": "We went to the cinema and afterwards we had dinner.",
+        "es": "Fuimos al cine y después cenamos."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f11",
+      "kind": "form",
+      "verb": "mialatt / mielőtt",
+      "person": "Anna felhívott, ___ én főztem.",
+      "answer": "mialatt",
+      "accept": [
+        "miközben",
+        "amíg",
+        "amikor"
+      ],
+      "table": "time-conj"
+    },
+    {
+      "id": "ido-mellekmondat-c09",
+      "sentence": "Mielőtt ___, vegyél kenyeret!",
+      "options": [
+        "hazamész",
+        "hazamentél",
+        "hazamenned"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The order vegyél points to the future, so the mielőtt clause is in the present: hazamész.",
+        "es": "La orden vegyél apunta al futuro, así que la oración con mielőtt va en presente: hazamész."
+      },
+      "wrong": {
+        "hazamentél": {
+          "en": "hazamentél is past ('before you went home'), but an order cannot refer to something that already happened.",
+          "es": "hazamentél es pasado ('antes de que fueras a casa'), pero una orden no puede referirse a algo que ya ocurrió."
+        },
+        "hazamenned": {
+          "en": "hazamenned is the infinitive with the ending for you (you have to go home), not the verb of a time clause.",
+          "es": "hazamenned es el infinitivo con la terminación de 'tú' (tienes que ir a casa), no el verbo de una oración temporal."
+        }
+      },
+      "examples": [
+        "Mielőtt elmész, szólj nekem!",
+        "Mielőtt hazamész, hívd fel Annát!"
+      ],
+      "tr": {
+        "en": "Before you go home, buy some bread!",
+        "es": "Antes de que vayas a casa, compra pan."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-f12",
+      "kind": "form",
+      "verb": "mihelyt / amíg",
+      "person": "Felhívlak, ___ hazaérek.",
+      "answer": "mihelyt",
+      "accept": [
+        "amint",
+        "amikor",
+        "ha"
+      ],
+      "table": "time-conj"
+    },
+    {
+      "id": "ido-mellekmondat-w04",
+      "kind": "why",
+      "es": "Mióta itt lakom, minden nap magyarul beszélek.",
+      "target": "lakom",
+      "tr": {
+        "en": "Since I have lived here, I speak Hungarian every day.",
+        "es": "Desde que vivo aquí, hablo húngaro todos los días."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "past tense: mióta always needs the past because it looks back",
+            "es": "pasado: mióta siempre necesita el pasado porque mira hacia atrás"
+          },
+          "wrong": {
+            "en": "With this rule the form would be laktam; but then I would no longer live here.",
+            "es": "Con esta regla la forma sería laktam; pero entonces ya no viviría aquí."
+          }
+        },
+        {
+          "text": {
+            "en": "present tense: a state that began in the past and still goes on",
+            "es": "presente: un estado que empezó en el pasado y continúa"
+          }
+        },
+        {
+          "text": {
+            "en": "future tense: the stay is still ahead",
+            "es": "futuro: la estancia aún está por venir"
+          },
+          "wrong": {
+            "en": "With this rule the form would be fogok lakni; mióta cannot look forward.",
+            "es": "Con esta regla la forma sería fogok lakni; mióta no puede mirar hacia adelante."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ido-mellekmondat-c10",
+      "sentence": "Valahányszor Anna nevet, én is ___.",
+      "options": [
+        "nevetek",
+        "nevettem",
+        "nevessek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Valahányszor Anna nevet describes a habit in the present, so the main clause is present too: nevetek.",
+        "es": "Valahányszor Anna nevet describe un hábito en presente, así que la principal también va en presente: nevetek."
+      },
+      "wrong": {
+        "nevettem": {
+          "en": "nevettem is past, but the clause is a present habit: the two parts would not fit in time.",
+          "es": "nevettem es pasado, pero la oración es un hábito en presente: las dos partes no encajarían en el tiempo."
+        },
+        "nevessek": {
+          "en": "nevessek is the -j form ('let me laugh'); a habit takes the plain present.",
+          "es": "nevessek es la forma en -j ('que me ría'); un hábito lleva el presente simple."
+        }
+      },
+      "examples": [
+        "Valahányszor esik, otthon maradok.",
+        "Valahányszor Budapestre megyek, meglátogatom Annát."
+      ],
+      "tr": {
+        "en": "Whenever Anna laughs, I laugh too.",
+        "es": "Cada vez que Anna se ríe, yo también me río."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-c11",
+      "sentence": "___ aludni mentem, megmostam a fogamat.",
+      "options": [
+        "Mielőtt",
+        "Miután",
+        "Mióta"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You brush your teeth before going to bed, so the clause with the later event takes mielőtt.",
+        "es": "Te lavas los dientes antes de irte a dormir, así que la oración con el hecho posterior lleva mielőtt."
+      },
+      "wrong": {
+        "Miután": {
+          "en": "Miután would say that I brushed my teeth after I went to bed, the opposite of the usual order.",
+          "es": "Miután diría que me lavé los dientes después de irme a dormir, lo contrario del orden habitual."
+        },
+        "Mióta": {
+          "en": "Mióta would mean 'since I went to bed', and a single action like megmostam cannot start from that point.",
+          "es": "Mióta significaría 'desde que me fui a dormir', y una acción única como megmostam no puede partir de ese punto."
+        }
+      },
+      "examples": [
+        "Mielőtt elindultam, megnéztem az időjárást.",
+        "Mielőtt kimentem, felhívtam Annát."
+      ],
+      "tr": {
+        "en": "Before I went to bed, I brushed my teeth.",
+        "es": "Antes de irme a dormir, me lavé los dientes."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-c12",
+      "sentence": "Miután Péter ___ a vacsorát, elment.",
+      "options": [
+        "megette",
+        "megevett",
+        "megeszi"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The object a vacsorát is definite, so the verb takes the definite ending: megette. Both events are in the past.",
+        "es": "El complemento a vacsorát es definido, así que el verbo lleva la terminación definida: megette. Los dos hechos son pasados."
+      },
+      "wrong": {
+        "megevett": {
+          "en": "megevett is the indefinite form (he ate something); with a definite object like a vacsorát you need the definite form megette.",
+          "es": "megevett es la forma indefinida (comió algo); con un complemento definido como a vacsorát hace falta la forma definida megette."
+        },
+        "megeszi": {
+          "en": "megeszi is present (he eats it up), but elment is past.",
+          "es": "megeszi es presente (se lo come), pero elment es pasado."
+        }
+      },
+      "examples": [
+        "Miután Anna megvette a jegyet, elment.",
+        "Miután Péter megmosta a ruhát, kiment a kertbe."
+      ],
+      "tr": {
+        "en": "After Péter had eaten dinner, he left.",
+        "es": "Después de que Péter cenó, se fue."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-c13",
+      "sentence": "Mialatt a gyerekek ___, én főztem.",
+      "options": [
+        "aludtak",
+        "alszanak",
+        "aludjanak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Both actions are in the past, and the clause has its own tense: aludtak.",
+        "es": "Las dos acciones son pasadas y la oración tiene su propio tiempo: aludtak."
+      },
+      "wrong": {
+        "alszanak": {
+          "en": "alszanak is present, but főztem is past: the clauses would not fit in time.",
+          "es": "alszanak es presente, pero főztem es pasado: las oraciones no encajarían en el tiempo."
+        },
+        "aludjanak": {
+          "en": "aludjanak is the -j form ('let them sleep'); a time clause takes the indicative.",
+          "es": "aludjanak es la forma en -j ('que duerman'); una oración temporal lleva el indicativo."
+        }
+      },
+      "examples": [
+        "Mialatt főztem, Anna felhívott.",
+        "Miközben vacsoráztunk, esni kezdett az eső."
+      ],
+      "tr": {
+        "en": "While the children were sleeping, I cooked.",
+        "es": "Mientras los niños dormían, yo cocinaba."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-c14",
+      "sentence": "Mihelyt a vonat ___, indulunk.",
+      "options": [
+        "megérkezik",
+        "megérkezett",
+        "megérkezzen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A future event is in the present tense in the time clause; indulunk (we leave) shows the moment is ahead.",
+        "es": "Un hecho futuro va en presente en la oración temporal; indulunk (salimos) muestra que el momento está por venir."
+      },
+      "wrong": {
+        "megérkezett": {
+          "en": "megérkezett is past, but indulunk looks ahead: the clauses would not fit in time.",
+          "es": "megérkezett es pasado, pero indulunk mira hacia adelante: las oraciones no encajarían en el tiempo."
+        },
+        "megérkezzen": {
+          "en": "megérkezzen is the -j form ('let it arrive'); a time clause takes the plain present.",
+          "es": "megérkezzen es la forma en -j ('que llegue'); una oración temporal lleva el presente simple."
+        }
+      },
+      "examples": [
+        "Mihelyt hazaérek, felhívlak.",
+        "Mihelyt Anna megérkezik, kezdünk."
+      ],
+      "tr": {
+        "en": "As soon as the train arrives, we leave.",
+        "es": "En cuanto llegue el tren, salimos."
+      }
+    },
+    {
+      "id": "ido-mellekmondat-c15",
+      "sentence": "Nem indulunk el, amíg Péter meg ___ érkezik.",
+      "options": [
+        "nem",
+        "ne",
+        "sem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With a prefix verb the standard order after amíg is prefix, nem, verb: amíg Péter meg nem érkezik. The two nem do not cancel out.",
+        "es": "Con un verbo con prefijo el orden estándar después de amíg es prefijo, nem, verbo: amíg Péter meg nem érkezik. Los dos nem no se anulan."
+      },
+      "wrong": {
+        "ne": {
+          "en": "ne negates commands and the -j form (Ne érkezz meg!); érkezik here is a plain fact, so you need nem.",
+          "es": "ne niega órdenes y la forma en -j (Ne érkezz meg!); érkezik aquí es un hecho simple, así que hace falta nem."
+        },
+        "sem": {
+          "en": "sem means \"not either, not even\" and goes with a word that is already negated; it is not the plain negation of the clause that nem is.",
+          "es": "sem significa «tampoco, ni siquiera» y va con una palabra ya negada; no es la negación simple de la oración como nem."
+        }
+      },
+      "examples": [
+        "Várj itt, amíg Péter meg nem érkezik!",
+        "Nem kezdünk enni, amíg Anna haza nem ér."
+      ],
+      "tr": {
+        "en": "We are not setting off until Péter arrives.",
+        "es": "No salimos hasta que llegue Péter."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1244 @@
+{
+ "schema": 2,
+ "topic": "hogy-felszolito",
+ "level": "B2",
+ "title": {
+  "en": "I want you to come: azt akarom, hogy gyere",
+  "es": "Quiero que vengas: azt akarom, hogy gyere"
+ },
+ "body": [
+  {
+   "kind": "text",
+   "text": {
+    "en": "To say what you want somebody else to do, Hungarian uses a clause with hogy (that) and a special verb form: the j-form, the same one you know from commands (Menj! Várjon!). Azt akarom, hogy gyere. = I want you to come. Kérem, hogy segítsen. = Please help (I ask that you help). Fontos, hogy minden nap tanulj. = It is important that you study every day. Azt mondta, hogy menjek. = He told me to go. English says \"I want you to come\" (you + to + verb); Spanish says quiero que vengas (que + subjunctive). Hungarian works like Spanish: a clause of its own, with its own verb form. The j-form exists for all six persons (menjek, menj, menjen, menjünk, menjetek, menjenek), not only for te and Ön. After verbs of knowing, thinking and seeing, hogy takes the ordinary indicative instead: Tudom, hogy jössz.",
+    "es": "Para decir qué quieres que haga otra persona, el húngaro usa una cláusula con hogy (que) y una forma verbal especial: la forma en -j, la misma de las órdenes (¡Menj! ¡Várjon!). Azt akarom, hogy gyere. = Quiero que vengas. Kérem, hogy segítsen. = Le pido que ayude (por favor, ayude). Fontos, hogy minden nap tanulj. = Es importante que estudies todos los días. Azt mondta, hogy menjek. = Me dijo que fuera. El inglés dice «I want you to come» (you + to + verbo); el español dice quiero que vengas (que + subjuntivo). El húngaro funciona como el español: una cláusula propia, con su propia forma verbal. La forma en -j existe para las seis personas (menjek, menj, menjen, menjünk, menjetek, menjenek), no solo para te y Ön. Después de verbos de saber, pensar y ver, hogy lleva el indicativo normal: Tudom, hogy jössz."
+   }
+  },
+  {
+   "kind": "table",
+   "id": "subj-indef",
+   "title": {
+    "en": "The j-form in all persons",
+    "es": "La forma en -j en todas las personas"
+   },
+   "header": [
+    {
+     "en": "Person",
+     "es": "Persona"
+    },
+    {
+     "en": "tanulni (to study)",
+     "es": "tanulni (estudiar)"
+    },
+    {
+     "en": "menni (to go)",
+     "es": "menni (ir)"
+    },
+    {
+     "en": "segíteni (to help)",
+     "es": "segíteni (ayudar)"
+    }
+   ],
+   "rows": [
+    [
+     "én",
+     "tanuljak",
+     "menjek",
+     "segítsek"
+    ],
+    [
+     "te",
+     "tanulj",
+     "menj",
+     "segíts"
+    ],
+    [
+     "ő / Ön",
+     "tanuljon",
+     "menjen",
+     "segítsen"
+    ],
+    [
+     "mi",
+     "tanuljunk",
+     "menjünk",
+     "segítsünk"
+    ],
+    [
+     "ti",
+     "tanuljatok",
+     "menjetek",
+     "segítsetek"
+    ],
+    [
+     "ők / Önök",
+     "tanuljanak",
+     "menjenek",
+     "segítsenek"
+    ]
+   ]
+  },
+  {
+   "kind": "table",
+   "id": "subj-irregular",
+   "title": {
+    "en": "Irregular verbs",
+    "es": "Verbos irregulares"
+   },
+   "header": [
+    {
+     "en": "Person",
+     "es": "Persona"
+    },
+    {
+     "en": "jönni (to come)",
+     "es": "jönni (venir)"
+    },
+    {
+     "en": "enni (to eat)",
+     "es": "enni (comer)"
+    },
+    {
+     "en": "lenni (to be)",
+     "es": "lenni (ser, estar)"
+    }
+   ],
+   "rows": [
+    [
+     "én",
+     "jöjjek",
+     "egyek",
+     "legyek"
+    ],
+    [
+     "te",
+     "gyere",
+     "egyél",
+     "legyél"
+    ],
+    [
+     "ő / Ön",
+     "jöjjön",
+     "egyen",
+     "legyen"
+    ],
+    [
+     "mi",
+     "jöjjünk",
+     "együnk",
+     "legyünk"
+    ],
+    [
+     "ti",
+     "gyertek",
+     "egyetek",
+     "legyetek"
+    ],
+    [
+     "ők / Önök",
+     "jöjjenek",
+     "egyenek",
+     "legyenek"
+    ]
+   ]
+  },
+  {
+   "kind": "table",
+   "id": "subj-def",
+   "title": {
+    "en": "With a definite object",
+    "es": "Con objeto definido"
+   },
+   "header": [
+    {
+     "en": "Person",
+     "es": "Persona"
+    },
+    {
+     "en": "nézni + a filmet (definite)",
+     "es": "nézni + a filmet (definido)"
+    },
+    {
+     "en": "csinálni + a leckét (definite)",
+     "es": "csinálni + a leckét (definido)"
+    }
+   ],
+   "rows": [
+    [
+     "én",
+     "nézzem",
+     "csináljam"
+    ],
+    [
+     "te",
+     "nézd",
+     "csináld"
+    ],
+    [
+     "ő / Ön",
+     "nézze",
+     "csinálja"
+    ],
+    [
+     "mi",
+     "nézzük",
+     "csináljuk"
+    ],
+    [
+     "ti",
+     "nézzétek",
+     "csináljátok"
+    ],
+    [
+     "ők / Önök",
+     "nézzék",
+     "csinálják"
+    ]
+   ]
+  },
+  {
+   "kind": "list",
+   "title": {
+    "en": "Building the j-form: what is new?",
+    "es": "Cómo se forma: ¿qué hay de nuevo?"
+   },
+   "items": [
+    {
+     "text": {
+      "en": "You know the te, Ön, mi and ti forms from commands. New here is the én form: -ek / -ak (menjek, tanuljak), and with a definite object -em / -am (nézzem, csináljam). The te form can also be longer: menj or menjél, tanulj or tanuljál. Both are correct.",
+      "es": "Ya conoces las formas te, Ön, mi y ti de las órdenes. Lo nuevo aquí es la forma de én: -ek / -ak (menjek, tanuljak) y, con objeto definido, -em / -am (nézzem, csináljam). La forma de te también puede ser más larga: menj o menjél, tanulj o tanuljál. Las dos son correctas."
+     },
+     "examples": [
+      {
+       "es": "Azt akarom, hogy menj haza.",
+       "tr": {
+        "en": "I want you to go home.",
+        "es": "Quiero que te vayas a casa."
+       }
+      },
+      {
+       "es": "Azt akarom, hogy menjél haza.",
+       "tr": {
+        "en": "I want you to go home (longer form).",
+        "es": "Quiero que te vayas a casa (forma más larga)."
+       }
+      },
+      {
+       "es": "Anna azt akarja, hogy segítsek.",
+       "tr": {
+        "en": "Anna wants me to help.",
+        "es": "Anna quiere que yo ayude."
+       }
+      }
+     ]
+    },
+    {
+     "text": {
+      "en": "The sound changes of commands stay: olvas + j = olvass, néz + j = nézz, segít + j = segíts, késik: késs.",
+      "es": "Se mantienen los cambios de sonido de las órdenes: olvas + j = olvass, néz + j = nézz, segít + j = segíts, késik: késs."
+     },
+     "examples": [
+      {
+       "es": "Azt akarom, hogy olvass minden nap.",
+       "tr": {
+        "en": "I want you to read every day.",
+        "es": "Quiero que leas todos los días."
+       }
+      },
+      {
+       "es": "Anna azt kéri, hogy ne késs el.",
+       "tr": {
+        "en": "Anna asks you not to be late.",
+        "es": "Anna te pide que no llegues tarde."
+       }
+      }
+     ]
+    },
+    {
+     "text": {
+      "en": "A definite object brings the definite j-form, exactly as in commands: csináld, nézze, olvassa.",
+      "es": "Un objeto definido pide la forma definida en -j, igual que en las órdenes: csináld, nézze, olvassa."
+     },
+     "examples": [
+      {
+       "es": "Azt akarom, hogy csináld meg a leckét.",
+       "tr": {
+        "en": "I want you to do the homework.",
+        "es": "Quiero que hagas la tarea."
+       }
+      },
+      {
+       "es": "Kérem, hogy írja alá a szerződést.",
+       "tr": {
+        "en": "Please sign the contract.",
+        "es": "Le pido que firme el contrato."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "usage",
+   "title": {
+    "en": "When does hogy take the j-form?",
+    "es": "¿Cuándo lleva hogy la forma en -j?"
+   },
+   "points": [
+    {
+     "text": {
+      "en": "After verbs of wanting, asking and advising, when the person who acts is somebody else: akar, kér, szeretne, javasol, tanácsol.",
+      "es": "Después de verbos de querer, pedir y aconsejar, cuando quien actúa es otra persona: akar, kér, szeretne, javasol, tanácsol."
+     },
+     "examples": [
+      {
+       "es": "Azt akarom, hogy gyere.",
+       "tr": {
+        "en": "I want you to come.",
+        "es": "Quiero que vengas."
+       }
+      },
+      {
+       "es": "Kérem, hogy segítsen.",
+       "tr": {
+        "en": "Please help (formal).",
+        "es": "Le pido que ayude (formal)."
+       }
+      },
+      {
+       "es": "Anna azt tanácsolja, hogy menjek orvoshoz.",
+       "tr": {
+        "en": "Anna advises me to see a doctor.",
+        "es": "Anna me aconseja que vaya al médico."
+       }
+      },
+      {
+       "es": "Javaslom, hogy menjünk moziba.",
+       "tr": {
+        "en": "I suggest that we go to the cinema.",
+        "es": "Propongo que vayamos al cine."
+       }
+      }
+     ]
+    },
+    {
+     "text": {
+      "en": "After expressions of importance and need: fontos, szükséges.",
+      "es": "Después de expresiones de importancia y necesidad: fontos, szükséges."
+     },
+     "examples": [
+      {
+       "es": "Fontos, hogy minden nap tanulj.",
+       "tr": {
+        "en": "It is important that you study every day.",
+        "es": "Es importante que estudies todos los días."
+       }
+      },
+      {
+       "es": "Szükséges, hogy mindenki időben ott legyen.",
+       "tr": {
+        "en": "It is necessary that everybody is there on time.",
+        "es": "Es necesario que todos estén allí a tiempo."
+       }
+      }
+     ]
+    },
+    {
+     "text": {
+      "en": "After mond when it means \"tell someone to do something\". The same Azt mondta, hogy ... with a plain present only reports a fact (see the pairs below).",
+      "es": "Después de mond cuando significa «decirle a alguien que haga algo». El mismo Azt mondta, hogy ... con presente simple solo informa de un hecho (mira los pares de abajo)."
+     },
+     "examples": [
+      {
+       "es": "Azt mondta, hogy menjek.",
+       "tr": {
+        "en": "He told me to go.",
+        "es": "Me dijo que fuera."
+       }
+      },
+      {
+       "es": "Az orvos azt mondta, hogy pihenjek.",
+       "tr": {
+        "en": "The doctor told me to rest.",
+        "es": "El médico me dijo que descansara."
+       }
+      },
+      {
+       "es": "A főnök azt mondta, hogy jöjjek be hamarabb.",
+       "tr": {
+        "en": "The boss told me to come in earlier.",
+        "es": "El jefe me dijo que llegara más temprano."
+       }
+      }
+     ]
+    },
+    {
+     "text": {
+      "en": "The negative of a j-form is ne, never nem. With ne the prefix goes behind the verb: ne késs el.",
+      "es": "La negación de una forma en -j es ne, nunca nem. Con ne el prefijo va detrás del verbo: ne késs el."
+     },
+     "examples": [
+      {
+       "es": "Azt akarom, hogy ne késs el.",
+       "tr": {
+        "en": "I do not want you to be late.",
+        "es": "No quiero que llegues tarde."
+       }
+      },
+      {
+       "es": "Az orvos azt mondta, hogy ne egyek sok cukrot.",
+       "tr": {
+        "en": "The doctor told me not to eat much sugar.",
+        "es": "El médico me dijo que no coma mucha azúcar."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "contrast",
+   "title": {
+    "en": "Four pairs people mix up",
+    "es": "Cuatro pares que se confunden"
+   },
+   "pairs": [
+    {
+     "a": "Azt mondta, hogy jössz.",
+     "b": "Azt mondta, hogy gyere.",
+     "note": {
+      "en": "Plain present after hogy: he reports a fact (you are coming). The j-form: he gives an order (come!). The same mond, two meanings.",
+      "es": "Presente simple después de hogy: informa de un hecho (vienes). Forma en -j: da una orden (¡ven!). El mismo mond, dos significados."
+     },
+     "examples": [
+      {
+       "es": "Anna azt mondta, hogy holnap jössz.",
+       "tr": {
+        "en": "Anna said you are coming tomorrow.",
+        "es": "Anna dijo que vienes mañana."
+       }
+      },
+      {
+       "es": "Anna azt mondta, hogy holnap gyere.",
+       "tr": {
+        "en": "Anna said you should come tomorrow.",
+        "es": "Anna dijo que vengas mañana."
+       }
+      }
+     ]
+    },
+    {
+     "a": "Tudom, hogy jössz.",
+     "b": "Azt akarom, hogy gyere.",
+     "note": {
+      "en": "Knowing, thinking, seeing and being glad state facts, so hogy takes the plain indicative: tudom, azt hiszem, látom, örülök. Spanish uses the subjunctive after feelings (me alegra que estés); Hungarian does not: Örülök, hogy itt vagy.",
+      "es": "Saber, pensar, ver y alegrarse presentan hechos, así que hogy lleva el indicativo normal: tudom, azt hiszem, látom, örülök. El español usa el subjuntivo tras los sentimientos (me alegra que estés); el húngaro no: Örülök, hogy itt vagy."
+     },
+     "examples": [
+      {
+       "es": "Azt hiszem, hogy Anna otthon van.",
+       "tr": {
+        "en": "I think Anna is at home.",
+        "es": "Creo que Anna está en casa."
+       }
+      },
+      {
+       "es": "Örülök, hogy itt vagy.",
+       "tr": {
+        "en": "I am glad you are here.",
+        "es": "Me alegra que estés aquí."
+       }
+      }
+     ]
+    },
+    {
+     "a": "Pihenni szeretnék.",
+     "b": "Szeretném, hogy Péter pihenjen.",
+     "note": {
+      "en": "Same person for both verbs: use the plain infinitive. A different person needs hogy and the j-form.",
+      "es": "La misma persona en los dos verbos: usa el infinitivo simple. Una persona distinta necesita hogy y la forma en -j."
+     },
+     "examples": [
+      {
+       "es": "Dolgozni akarok.",
+       "tr": {
+        "en": "I want to work.",
+        "es": "Quiero trabajar."
+       }
+      },
+      {
+       "es": "Nem akarom, hogy Péter sokat dolgozzon.",
+       "tr": {
+        "en": "I do not want Péter to work a lot.",
+        "es": "No quiero que Péter trabaje mucho."
+       }
+      }
+     ]
+    },
+    {
+     "a": "Szeretném, hogy segíts.",
+     "b": "Szeretném, ha segítenél.",
+     "note": {
+      "en": "Both are polite wishes. Ha + conditional is the softer, more careful version; hogy + j-form is more direct.",
+      "es": "Las dos son peticiones corteses. Ha + condicional es la versión más suave y cuidadosa; hogy + forma en -j es más directa."
+     },
+     "examples": [
+      {
+       "es": "Szeretném, hogy holnap hívj fel.",
+       "tr": {
+        "en": "I would like you to call me tomorrow.",
+        "es": "Quisiera que me llames mañana."
+       }
+      },
+      {
+       "es": "Szeretném, ha holnap felhívnál.",
+       "tr": {
+        "en": "I would like it if you called me tomorrow.",
+        "es": "Me gustaría que me llamaras mañana."
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "kind": "tip",
+   "text": {
+    "en": "Classic traps: (1) After akar, kér, fontos the verb is NOT in the present: Azt akarom, hogy gyere, never Azt akarom, hogy jössz. (2) The negative is ne, never nem: Azt akarom, hogy ne menj el. (3) English uses an infinitive for the other person (\"want you to come\"); Hungarian does not (after akar, kér, mond): the second verb is a finite j-form. Same person for both verbs: infinitive (Menni akarok). (4) The prefix: after ne it goes behind the verb (ne menj el). Without ne the neutral order is prefix + verb (hogy elmenj, hogy megcsináld); hogy menj el, hogy csináld meg also occur and sound more like a direct command. (5) Register: Kérem, hogy + the Ön form is the polite request to a stranger or an official; Kérlek, hogy + the te form is for friends; Szeretném, ha + conditional is the softest of all.",
+    "es": "Trampas clásicas: (1) Después de akar, kér, fontos el verbo NO va en presente: Azt akarom, hogy gyere, nunca Azt akarom, hogy jössz. (2) La negación es ne, nunca nem: Azt akarom, hogy ne menj el. (3) El inglés usa un infinitivo para la otra persona («want you to come»); el húngaro no lo hace (después de akar, kér, mond): el segundo verbo es una forma finita en -j. La misma persona en los dos verbos: infinitivo (Menni akarok). (4) El prefijo: después de ne va detrás del verbo (ne menj el). Sin ne el orden neutro es prefijo + verbo (hogy elmenj, hogy megcsináld); hogy menj el, hogy csináld meg también se dicen y suenan más a orden directa. (5) Registro: Kérem, hogy + la forma de Ön es la petición cortés a un desconocido o a un funcionario; Kérlek, hogy + la forma de te es para amigos; Szeretném, ha + condicional es la más suave de todas."
+   }
+  }
+ ],
+ "speak": {
+  "en": "To say what you want another person to do, use «hogy» and the j-form. Say «Azt akarom, hogy gyere». The polite request is «Kérem, hogy segítsen». For something important say «Fontos, hogy minden nap tanulj». And «Azt mondta, hogy menjek» means he told me to go. After verbs of knowing, «hogy» takes the normal form: «Tudom, hogy jössz». For a very polite wish you can also say «Szeretném, ha segítenél».",
+  "es": "Para decir qué quieres que haga otra persona, usa «hogy» y la forma en -j. Di «Azt akarom, hogy gyere». La petición cortés es «Kérem, hogy segítsen». Para algo importante di «Fontos, hogy minden nap tanulj». Y «Azt mondta, hogy menjek» significa que me dijo que fuera. Después de verbos de saber, «hogy» lleva la forma normal: «Tudom, hogy jössz». Para un deseo muy cortés también puedes decir «Szeretném, ha segítenél»."
+ },
+ "glossary": [
+  {
+   "word": "tévé",
+   "gloss": {
+    "en": "TV, television (colloquial)",
+    "es": "tele, televisión (coloquial)"
+   }
+  },
+  {
+   "word": "hamarabb",
+   "gloss": {
+    "en": "earlier, sooner",
+    "es": "más temprano, antes"
+   }
+  }
+ ],
+ "items": [
+  {
+   "id": "hogy-felszolito-c01",
+   "sentence": "Péter, Anna azt akarja, hogy holnap korán ___.",
+   "options": [
+    "gyere",
+    "jössz",
+    "jönnél"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "Akar asks for the j-form in the hogy-clause. For te, jönni gives gyere.",
+    "es": "Akar pide la forma en -j en la cláusula con hogy. Para te, jönni da gyere."
+   },
+   "wrong": {
+    "jössz": {
+     "en": "Jössz is the plain present (you are coming): a statement, as after tudom, hogy. A wish needs the j-form.",
+     "es": "Jössz es el presente simple (vienes): una afirmación, como después de tudom, hogy. Un deseo necesita la forma en -j."
+    },
+    "jönnél": {
+     "en": "Jönnél is the conditional (you would come); it belongs to Szeretném, ha jönnél, not to hogy.",
+     "es": "Jönnél es el condicional (vendrías); pertenece a Szeretném, ha jönnél, no a hogy."
+    }
+   },
+   "examples": [
+    "Azt akarom, hogy gyere el a vacsorára.",
+    "Azt akarják, hogy gyertek korán."
+   ],
+   "tr": {
+    "en": "Péter, Anna wants you to come early tomorrow.",
+    "es": "Péter, Anna quiere que vengas temprano mañana."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f01",
+   "kind": "form",
+   "verb": "tanulni",
+   "person": "én",
+   "answer": "tanuljak",
+   "table": "subj-indef"
+  },
+  {
+   "id": "hogy-felszolito-c02",
+   "sentence": "Kérem, hogy holnap hétkor ___ be az irodába.",
+   "options": [
+    "jön",
+    "jöjjön",
+    "jönne"
+   ],
+   "correct": 1,
+   "why": {
+    "en": "Kérem, hogy is followed by the j-form. The polite Ön takes the 3rd person: jöjjön.",
+    "es": "Kérem, hogy va seguido de la forma en -j. El Ön cortés usa la 3.ª persona: jöjjön."
+   },
+   "wrong": {
+    "jön": {
+     "en": "Jön is the present (he or she comes); a request needs the j-form.",
+     "es": "Jön es el presente (viene); una petición necesita la forma en -j."
+    },
+    "jönne": {
+     "en": "Jönne is the conditional (he or she would come); it does not follow Kérem, hogy.",
+     "es": "Jönne es el condicional (vendría); no va después de Kérem, hogy."
+    }
+   },
+   "examples": [
+    "Kérem, hogy üljön le.",
+    "Kérem, hogy holnap hívjon fel."
+   ],
+   "tr": {
+    "en": "Please come to the office at seven tomorrow.",
+    "es": "Le pido que venga mañana a las siete a la oficina."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f02",
+   "kind": "form",
+   "verb": "menni",
+   "person": "mi",
+   "answer": "menjünk",
+   "table": "subj-indef"
+  },
+  {
+   "id": "hogy-felszolito-c03",
+   "sentence": "Tudom, hogy Anna holnap ___.",
+   "options": [
+    "jön",
+    "jöjjön",
+    "jönne"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "Tudom introduces a fact, so hogy takes the plain indicative: jön (she is coming).",
+    "es": "Tudom introduce un hecho, así que hogy lleva el indicativo simple: jön (viene)."
+   },
+   "wrong": {
+    "jöjjön": {
+     "en": "Jöjjön is the j-form: the sentence would mean \"I know that Anna should come\", which does not fit tudom. The j-form follows wishes and requests, not knowledge.",
+     "es": "Jöjjön es la forma en -j: la frase significaría «sé que Anna debe venir», lo que no encaja con tudom. La forma en -j sigue a deseos y peticiones, no al saber."
+    },
+    "jönne": {
+     "en": "Jönne is the conditional (she would come); there is no condition in this sentence.",
+     "es": "Jönne es el condicional (vendría); en esta frase no hay ninguna condición."
+    }
+   },
+   "examples": [
+    "Tudom, hogy fáradt vagy.",
+    "Azt hiszem, hogy Péter otthon van."
+   ],
+   "tr": {
+    "en": "I know that Anna is coming tomorrow.",
+    "es": "Sé que Anna viene mañana."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f03",
+   "kind": "form",
+   "verb": "segíteni",
+   "person": "ő / Ön",
+   "answer": "segítsen",
+   "table": "subj-indef"
+  },
+  {
+   "id": "hogy-felszolito-c04",
+   "sentence": "Neked is fontos, hogy minden nap ___ egy kicsit magyarul.",
+   "options": [
+    "tanulj",
+    "tanuljak",
+    "tanulsz"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "Fontos + hogy takes the j-form; neked is points to you (te): tanulj.",
+    "es": "Fontos + hogy lleva la forma en -j; neked is apunta a ti (te): tanulj."
+   },
+   "wrong": {
+    "tanuljak": {
+     "en": "Tanuljak would be \"that I study\"; neked is points to \"you\".",
+     "es": "Tanuljak sería «que yo estudie»; neked is apunta a «tú»."
+    },
+    "tanulsz": {
+     "en": "Tanulsz is the plain present (you study), a statement; fontos, hogy asks for the j-form.",
+     "es": "Tanulsz es el presente simple (estudias), una afirmación; fontos, hogy pide la forma en -j."
+    }
+   },
+   "examples": [
+    "Fontos, hogy időben érkezz.",
+    "Fontos, hogy pihenjünk is."
+   ],
+   "tr": {
+    "en": "It is important for you too to study a little Hungarian every day.",
+    "es": "Para ti también es importante que estudies un poco de húngaro todos los días."
+   }
+  },
+  {
+   "id": "hogy-felszolito-w01",
+   "kind": "why",
+   "es": "Azt mondta, hogy menjek.",
+   "target": "menjek",
+   "tr": {
+    "en": "He told me to go.",
+    "es": "Me dijo que fuera."
+   },
+   "options": [
+    {
+     "text": {
+      "en": "Plain present: he said that I am going",
+      "es": "Presente simple: dijo que yo voy"
+     },
+     "wrong": {
+      "en": "With this rule the sentence would be Azt mondta, hogy megyek (he said that I am going), a report of a fact.",
+      "es": "Con esta regla la frase sería Azt mondta, hogy megyek (dijo que voy), un informe de un hecho."
+     }
+    },
+    {
+     "text": {
+      "en": "Conditional: he said that I would go",
+      "es": "Condicional: dijo que yo iría"
+     },
+     "wrong": {
+      "en": "With this rule the sentence would be Azt mondta, hogy mennék, which needs a condition.",
+      "es": "Con esta regla la frase sería Azt mondta, hogy mennék, que necesita una condición."
+     }
+    },
+    {
+     "text": {
+      "en": "J-form after mond: an order, he told me to go",
+      "es": "Forma en -j después de mond: una orden, me dijo que fuera"
+     }
+    }
+   ],
+   "correctIndex": 2
+  },
+  {
+   "id": "hogy-felszolito-f04",
+   "kind": "form",
+   "verb": "jönni",
+   "person": "te",
+   "answer": "gyere",
+   "accept": [
+    "jöjj",
+    "jöjjél"
+   ],
+   "table": "subj-irregular"
+  },
+  {
+   "id": "hogy-felszolito-c05",
+   "sentence": "Anna nem akarja, hogy a gyerekek sokáig tévét ___.",
+   "options": [
+    "néznek",
+    "nézzenek",
+    "nézzen"
+   ],
+   "correct": 1,
+   "why": {
+    "en": "A gyerekek is plural, so the j-form is 3rd person plural: nézzenek (tévét has no article: indefinite form).",
+    "es": "A gyerekek es plural, así que la forma en -j es la 3.ª persona del plural: nézzenek (tévét no lleva artículo: forma indefinida)."
+   },
+   "wrong": {
+    "néznek": {
+     "en": "Néznek is the plain present (they watch); after nem akarja, hogy the j-form is needed.",
+     "es": "Néznek es el presente simple (ven); después de nem akarja, hogy hace falta la forma en -j."
+    },
+    "nézzen": {
+     "en": "Nézzen is singular (he or she watches); the subject a gyerekek is plural.",
+     "es": "Nézzen es singular (ve); el sujeto a gyerekek es plural."
+    }
+   },
+   "examples": [
+    "Azt akarom, hogy a gyerekek korán aludjanak.",
+    "Nem akarom, hogy Péter sokat dolgozzon."
+   ],
+   "tr": {
+    "en": "Anna does not want the children to watch TV for a long time.",
+    "es": "Anna no quiere que los niños vean la tele por mucho tiempo."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f05",
+   "kind": "form",
+   "verb": "menni",
+   "person": "te",
+   "answer": "menj",
+   "accept": [
+    "menjél"
+   ],
+   "table": "subj-indef"
+  },
+  {
+   "id": "hogy-felszolito-c06",
+   "sentence": "Az orvos azt mondta, hogy ___ egyek sok cukrot.",
+   "options": [
+    "ne",
+    "nem",
+    "se"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "In a clause with the j-form the negative word is ne, not nem.",
+    "es": "En una cláusula con la forma en -j la palabra negativa es ne, no nem."
+   },
+   "wrong": {
+    "nem": {
+     "en": "Nem negates a plain present (Azt mondta, hogy nem eszem sokat); egyek is a j-form and needs ne.",
+     "es": "Nem niega un presente simple (Azt mondta, hogy nem eszem sokat); egyek es una forma en -j y necesita ne."
+    },
+    "se": {
+     "en": "Se means \"neither / nor\" and goes with a negative verb (Nem eszem se húst, se halat); it is not the plain negation of a j-form.",
+     "es": "Se significa «ni» y va con un verbo negativo (Nem eszem se húst, se halat); no es la negación simple de una forma en -j."
+    }
+   },
+   "examples": [
+    "Azt kérem, hogy ne késs el.",
+    "Anna azt akarja, hogy ne menjek haza."
+   ],
+   "tr": {
+    "en": "The doctor told me not to eat much sugar.",
+    "es": "El médico me dijo que no coma mucho azúcar."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f06",
+   "kind": "form",
+   "verb": "enni",
+   "person": "mi",
+   "answer": "együnk",
+   "table": "subj-irregular"
+  },
+  {
+   "id": "hogy-felszolito-c07",
+   "sentence": "Holnap korán ___ szeretnék, mert vonattal utazom.",
+   "options": [
+    "kelni",
+    "keljek",
+    "kelnem"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "Same person for both verbs (I want, I get up): the plain infinitive, kelni szeretnék. A hogy-clause needs a new person.",
+    "es": "La misma persona en los dos verbos (quiero, me levanto): el infinitivo simple, kelni szeretnék. Una cláusula con hogy necesita otra persona."
+   },
+   "wrong": {
+    "keljek": {
+     "en": "Keljek is the j-form (hogy keljek); without hogy it cannot stand next to szeretnék.",
+     "es": "Keljek es la forma en -j (hogy keljek); sin hogy no puede ir junto a szeretnék."
+    },
+    "kelnem": {
+     "en": "Kelnem is the infinitive with a personal ending, used with kell, lehet, szabad, muszáj and similar words, not with szeretnék.",
+     "es": "Kelnem es el infinitivo con terminación personal, que se usa con kell, lehet, szabad, muszáj y palabras parecidas, no con szeretnék."
+    }
+   },
+   "examples": [
+    "Haza akarok menni.",
+    "Anna pihenni szeretne."
+   ],
+   "tr": {
+    "en": "Tomorrow I would like to get up early, because I am travelling by train.",
+    "es": "Mañana quisiera levantarme temprano, porque viajo en tren."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f07",
+   "kind": "form",
+   "verb": "lenni",
+   "person": "te",
+   "answer": "legyél",
+   "table": "subj-irregular"
+  },
+  {
+   "id": "hogy-felszolito-w02",
+   "kind": "why",
+   "es": "Tudom, hogy jössz.",
+   "target": "jössz",
+   "tr": {
+    "en": "I know that you are coming.",
+    "es": "Sé que vienes."
+   },
+   "options": [
+    {
+     "text": {
+      "en": "J-form: I want you to come",
+      "es": "Forma en -j: quiero que vengas"
+     },
+     "wrong": {
+      "en": "With this rule the sentence would be Azt akarom, hogy gyere; tudom is about knowing, not wanting.",
+      "es": "Con esta regla la frase sería Azt akarom, hogy gyere; tudom trata de saber, no de querer."
+     }
+    },
+    {
+     "text": {
+      "en": "Plain present: after a verb of knowing, hogy states a fact",
+      "es": "Presente simple: después de un verbo de saber, hogy presenta un hecho"
+     }
+    },
+    {
+     "text": {
+      "en": "Conditional: you would come",
+      "es": "Condicional: vendrías"
+     },
+     "wrong": {
+      "en": "With this rule the sentence would be Tudom, hogy jönnél, which says you would come under some condition.",
+      "es": "Con esta regla la frase sería Tudom, hogy jönnél, que dice que vendrías bajo alguna condición."
+     }
+    }
+   ],
+   "correctIndex": 1
+  },
+  {
+   "id": "hogy-felszolito-f08",
+   "kind": "form",
+   "verb": "nézni + a filmet",
+   "person": "én",
+   "answer": "nézzem",
+   "table": "subj-def"
+  },
+  {
+   "id": "hogy-felszolito-c08",
+   "sentence": "Szeretném, ha holnap ___ nekem a költözésnél.",
+   "options": [
+    "segítenél",
+    "segítettél",
+    "segíts"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "Szeretném, ha ... is the soft wish pattern: ha + conditional. Segítenél = you would help.",
+    "es": "Szeretném, ha ... es el patrón del deseo suave: ha + condicional. Segítenél = ayudarías."
+   },
+   "wrong": {
+    "segítettél": {
+     "en": "Segítettél is the past (you helped); holnap points to the future, so a past form cannot stand here.",
+     "es": "Segítettél es el pasado (ayudaste); holnap apunta al futuro, así que una forma de pasado no puede ir aquí."
+    },
+    "segíts": {
+     "en": "Segíts is a command form: it works after hogy (Szeretném, hogy segíts) but not after ha.",
+     "es": "Segíts es una forma de orden: funciona después de hogy (Szeretném, hogy segíts) pero no después de ha."
+    }
+   },
+   "examples": [
+    "Szeretném, ha Péter is eljönne.",
+    "Szeretném, ha holnap felhívnál."
+   ],
+   "tr": {
+    "en": "I would like you to help me with the move tomorrow.",
+    "es": "Me gustaría que me ayudaras mañana con la mudanza."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f09",
+   "kind": "form",
+   "verb": "csinálni + a leckét",
+   "person": "te",
+   "answer": "csináld",
+   "accept": [
+    "csináljad"
+   ],
+   "table": "subj-def"
+  },
+  {
+   "id": "hogy-felszolito-c09",
+   "sentence": "A főnököm azt kéri, hogy holnap hamarabb ___ be.",
+   "options": [
+    "jövök",
+    "jöjjek",
+    "jönnék"
+   ],
+   "correct": 1,
+   "why": {
+    "en": "Kér + hogy takes the j-form; the one who must come is I: jöjjek.",
+    "es": "Kér + hogy lleva la forma en -j; quien debe venir soy yo: jöjjek."
+   },
+   "wrong": {
+    "jövök": {
+     "en": "Jövök is the plain present (I am coming): it states a plan, not a request.",
+     "es": "Jövök es el presente simple (vengo): expresa un plan, no una petición."
+    },
+    "jönnék": {
+     "en": "Jönnék is the conditional (I would come); a request after hogy needs the j-form.",
+     "es": "Jönnék es el condicional (vendría); una petición después de hogy necesita la forma en -j."
+    }
+   },
+   "examples": [
+    "A tanár azt kéri, hogy olvassak többet.",
+    "Anna azt kéri, hogy segítsek neki."
+   ],
+   "tr": {
+    "en": "My boss asks me to come in earlier tomorrow.",
+    "es": "Mi jefe me pide que mañana llegue más temprano."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f10",
+   "kind": "form",
+   "verb": "segíteni",
+   "person": "ők / Önök",
+   "answer": "segítsenek",
+   "table": "subj-indef"
+  },
+  {
+   "id": "hogy-felszolito-c10",
+   "sentence": "Gyerekek, azt szeretném, hogy ti ne ___ olyan hangosan.",
+   "options": [
+    "beszéljenek",
+    "beszéltek",
+    "beszéljetek"
+   ],
+   "correct": 2,
+   "why": {
+    "en": "Ti (you, plural) is the subject, so the j-form ends in -etek: beszéljetek.",
+    "es": "Ti (ustedes) es el sujeto, así que la forma en -j termina en -etek: beszéljetek."
+   },
+   "wrong": {
+    "beszéljenek": {
+     "en": "Beszéljenek is the form for \"they\"; the sentence has ti (you, plural), so the verb needs -etek.",
+     "es": "Beszéljenek es la forma de «ellos»; la frase tiene ti (ustedes), así que el verbo necesita -etek."
+    },
+    "beszéltek": {
+     "en": "Beszéltek is a past form (they spoke); after ne the j-form is needed.",
+     "es": "Beszéltek es un pasado (ellos hablaron); después de ne hace falta la forma en -j."
+    }
+   },
+   "examples": [
+    "Azt kérem, hogy üljetek le.",
+    "Azt akarom, hogy gyertek haza."
+   ],
+   "tr": {
+    "en": "Kids, I would like you (all) not to talk so loudly.",
+    "es": "Niños, quiero que no hablen tan fuerte."
+   }
+  },
+  {
+   "id": "hogy-felszolito-w03",
+   "kind": "why",
+   "es": "Fontos, hogy minden nap tanulj.",
+   "target": "tanulj",
+   "tr": {
+    "en": "It is important that you study every day.",
+    "es": "Es importante que estudies todos los días."
+   },
+   "options": [
+    {
+     "text": {
+      "en": "A direct command to you",
+      "es": "Una orden directa a ti"
+     },
+     "wrong": {
+      "en": "With this rule the sentence would be Tanulj minden nap! (Study every day!); here the j-form sits in a hogy-clause after fontos.",
+      "es": "Con esta regla la frase sería ¡Tanulj minden nap! (¡Estudia todos los días!); aquí la forma en -j está en una cláusula con hogy después de fontos."
+     }
+    },
+    {
+     "text": {
+      "en": "Plain present: you study every day",
+      "es": "Presente simple: estudias todos los días"
+     },
+     "wrong": {
+      "en": "With this rule the sentence would be Tanulsz minden nap, a statement; fontos, hogy asks for the j-form.",
+      "es": "Con esta regla la frase sería Tanulsz minden nap, una afirmación; fontos, hogy pide la forma en -j."
+     }
+    },
+    {
+     "text": {
+      "en": "J-form in a hogy-clause after an expression of importance",
+      "es": "Forma en -j en una cláusula con hogy después de una expresión de importancia"
+     }
+    }
+   ],
+   "correctIndex": 2
+  },
+  {
+   "id": "hogy-felszolito-c11",
+   "sentence": "Kérem, hogy ___ alá a szerződést.",
+   "options": [
+    "írja",
+    "írjon",
+    "írta"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "A szerződést is a definite object, so the Ön form is the definite j-form: írja (írja alá).",
+    "es": "A szerződést es un objeto definido, así que la forma de Ön es la forma definida en -j: írja (írja alá)."
+   },
+   "wrong": {
+    "írjon": {
+     "en": "Írjon is the indefinite j-form; it fits an indefinite object (Írjon egy levelet), not a szerződést.",
+     "es": "Írjon es la forma indefinida en -j; va con un objeto indefinido (Írjon egy levelet), no con a szerződést."
+    },
+    "írta": {
+     "en": "Írta is the past (he or she wrote it); a request needs the j-form.",
+     "es": "Írta es el pasado (lo escribió); una petición necesita la forma en -j."
+    }
+   },
+   "examples": [
+    "Kérem, hogy nézze meg a térképet.",
+    "Azt akarom, hogy olvasd el a levelet."
+   ],
+   "tr": {
+    "en": "Please sign the contract.",
+    "es": "Le pido que firme el contrato."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f11",
+   "kind": "form",
+   "verb": "lenni",
+   "person": "ti",
+   "answer": "legyetek",
+   "table": "subj-irregular"
+  },
+  {
+   "id": "hogy-felszolito-c12",
+   "sentence": "Szükséges, hogy mindenki időben ott ___.",
+   "options": [
+    "legyen",
+    "van",
+    "lenne"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "Szükséges + hogy takes the j-form; mindenki is 3rd person singular, so lenni gives legyen.",
+    "es": "Szükséges + hogy lleva la forma en -j; mindenki es 3.ª persona del singular, así que lenni da legyen."
+   },
+   "wrong": {
+    "van": {
+     "en": "Van means \"is\" (a plain fact); \"it is necessary that\" needs the j-form.",
+     "es": "Van significa «está» (un hecho simple); «es necesario que» necesita la forma en -j."
+    },
+    "lenne": {
+     "en": "Lenne is the conditional (would be); it is not used after szükséges, hogy.",
+     "es": "Lenne es el condicional (estaría); no se usa después de szükséges, hogy."
+    }
+   },
+   "examples": [
+    "Fontos, hogy türelmes legyél.",
+    "Azt kérem, hogy legyetek csendben."
+   ],
+   "tr": {
+    "en": "It is necessary for everybody to be there on time.",
+    "es": "Es necesario que todos estén allí a tiempo."
+   }
+  },
+  {
+   "id": "hogy-felszolito-f12",
+   "kind": "form",
+   "verb": "csinálni + a leckét",
+   "person": "ők / Önök",
+   "answer": "csinálják",
+   "table": "subj-def"
+  },
+  {
+   "id": "hogy-felszolito-c13",
+   "sentence": "Azt akarom, hogy ___ meg a leckét, és utána nézhetsz tévét.",
+   "options": [
+    "csináld",
+    "csinálj",
+    "csinálod"
+   ],
+   "correct": 0,
+   "why": {
+    "en": "A leckét is a definite object, so te takes the definite j-form: csináld (csináld meg).",
+    "es": "A leckét es un objeto definido, así que te lleva la forma definida en -j: csináld (csináld meg)."
+   },
+   "wrong": {
+    "csinálj": {
+     "en": "Csinálj is the indefinite form; it fits an indefinite object (Csinálj egy kávét), not a leckét.",
+     "es": "Csinálj es la forma indefinida; va con un objeto indefinido (Csinálj egy kávét), no con a leckét."
+    },
+    "csinálod": {
+     "en": "Csinálod is the plain present (you do it); after azt akarom, hogy the j-form is needed.",
+     "es": "Csinálod es el presente simple (lo haces); después de azt akarom, hogy hace falta la forma en -j."
+    }
+   },
+   "examples": [
+    "Azt akarom, hogy olvasd el a levelet.",
+    "Azt akarom, hogy hívd fel Annát."
+   ],
+   "tr": {
+    "en": "I want you to do your homework, and afterwards you can watch TV.",
+    "es": "Quiero que hagas la tarea, y después puedes ver la tele."
+   }
+  },
+  {
+   "id": "hogy-felszolito-w04",
+   "kind": "why",
+   "es": "Szeretném, ha segítenél.",
+   "target": "ha segítenél",
+   "tr": {
+    "en": "I would like you to help.",
+    "es": "Me gustaría que ayudaras."
+   },
+   "options": [
+    {
+     "text": {
+      "en": "A real condition: if you help",
+      "es": "Una condición real: si ayudas"
+     },
+     "wrong": {
+      "en": "With this rule the sentence would be Ha segítesz, ... (if you help, ...), with the plain present.",
+      "es": "Con esta regla la frase sería Ha segítesz, ... (si ayudas, ...), con el presente simple."
+     }
+    },
+    {
+     "text": {
+      "en": "A j-form after hogy",
+      "es": "Una forma en -j después de hogy"
+     },
+     "wrong": {
+      "en": "With this rule the sentence would be Szeretném, hogy segíts; that is a correct alternative, but this sentence has ha and the conditional.",
+      "es": "Con esta regla la frase sería Szeretném, hogy segíts; es una alternativa correcta, pero esta frase tiene ha y el condicional."
+     }
+    },
+    {
+     "text": {
+      "en": "A soft wish: ha + conditional",
+      "es": "Un deseo suave: ha + condicional"
+     }
+    }
+   ],
+   "correctIndex": 2
+  },
+  {
+   "id": "hogy-felszolito-c14",
+   "sentence": "Javaslom, hogy ma este ne ___, menjünk étterembe.",
+   "options": [
+    "főzünk",
+    "főzzünk",
+    "főznénk"
+   ],
+   "correct": 1,
+   "why": {
+    "en": "Javasol + hogy takes the j-form, and the negative is ne. For mi, főz gives főzzünk.",
+    "es": "Javasol + hogy lleva la forma en -j, y la negación es ne. Para mi, főz da főzzünk."
+   },
+   "wrong": {
+    "főzünk": {
+     "en": "Főzünk is the plain present (we cook); a suggestion needs the j-form.",
+     "es": "Főzünk es el presente simple (cocinamos); una sugerencia necesita la forma en -j."
+    },
+    "főznénk": {
+     "en": "Főznénk is the conditional (we would cook); after javaslom, hogy the j-form is used.",
+     "es": "Főznénk es el condicional (cocinaríamos); después de javaslom, hogy se usa la forma en -j."
+    }
+   },
+   "examples": [
+    "Javaslom, hogy menjünk moziba.",
+    "Javaslom, hogy ne várjunk tovább."
+   ],
+   "tr": {
+    "en": "I suggest that we do not cook tonight, let us go to a restaurant.",
+    "es": "Propongo que esta noche no cocinemos, vayamos a un restaurante."
+   }
+  }
+ ]
+}

@@ -1,0 +1,1857 @@
+{
+  "schema": 2,
+  "topic": "kepzok",
+  "level": "B2",
+  "title": {
+    "en": "New words from old: olvas, olvasás, olvasó",
+    "es": "Palabras nuevas de palabras viejas: olvas, olvasás, olvasó"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian builds new words by adding an ending (képző) to a word you already know, the way English adds -ing, -ness, -less, -y or -er. Once you know the ending, you can read words you have never seen: olvas (reads) → olvasás (reading), szép (beautiful) → szépség (beauty), hiba (mistake) → hibátlan (flawless), szín (colour) → színes (colourful), Budapest → budapesti (from Budapest), tanít (teaches) → tanító (primary-school teacher). Most endings follow vowel harmony (-ás / -és, -ság / -ség), and the new word is a normal noun or adjective: it takes the plural, the cases and the possessive endings. Be careful, though: the meaning is not always the sum of the parts (szabadság means freedom and also holiday), so learn each derived word as a word of its own.",
+        "es": "El húngaro forma palabras nuevas añadiendo una terminación (képző) a una palabra que ya conoces, como el español con -ción, -dad, -oso o -dor. Cuando conoces la terminación, puedes leer palabras que nunca has visto: olvas (lee) → olvasás (la lectura), szép (bonito) → szépség (la belleza), hiba (error) → hibátlan (impecable), szín (color) → színes (colorido), Budapest → budapesti (de Budapest), tanít (enseña) → tanító (maestro de primaria). La mayoría de las terminaciones siguen la armonía vocálica (-ás / -és, -ság / -ség), y la palabra nueva es un sustantivo o adjetivo normal: lleva plural, casos y terminaciones posesivas. Ojo: el significado no siempre es la suma de las partes (szabadság significa libertad y también vacaciones), así que aprende cada palabra derivada como una palabra propia."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "kepzo-as-es",
+      "title": {
+        "en": "Verb to noun: -ás / -és",
+        "es": "Verbo a sustantivo: -ás / -és"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Noun with -ás / -és",
+          "es": "Sustantivo con -ás / -és"
+        }
+      ],
+      "rows": [
+        [
+          "olvas",
+          "olvasás"
+        ],
+        [
+          "tanul",
+          "tanulás"
+        ],
+        [
+          "fizet",
+          "fizetés"
+        ],
+        [
+          "dönt",
+          "döntés"
+        ],
+        [
+          "foglal",
+          "foglalás"
+        ],
+        [
+          "keres",
+          "keresés"
+        ],
+        [
+          "fordít",
+          "fordítás"
+        ],
+        [
+          "késik",
+          "késés"
+        ],
+        [
+          "utazik",
+          "utazás"
+        ],
+        [
+          "lakik",
+          "lakás"
+        ],
+        [
+          "alszik",
+          "alvás"
+        ],
+        [
+          "tervez",
+          "tervezés"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What does -ás / -és make?",
+        "es": "¿Qué forma -ás / -és?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The action itself, like English -ing (reading, studying) or Spanish «la lectura», «el estudio»: olvasás, tanulás, utazás. The new noun takes every noun ending: utazás, utazások, utazásra. Back vowels take -ás, front vowels -és.",
+            "es": "La acción misma, como el -ing del inglés (reading, studying) o «la lectura», «el estudio»: olvasás, tanulás, utazás. El sustantivo nuevo lleva todas las terminaciones del sustantivo: utazás, utazások, utazásra. Las vocales posteriores toman -ás, las anteriores -és."
+          },
+          "examples": [
+            {
+              "es": "A tanulás nem mindig könnyű, de érdekes.",
+              "tr": {
+                "en": "Studying is not always easy, but it is interesting.",
+                "es": "Estudiar no siempre es fácil, pero es interesante."
+              }
+            },
+            {
+              "es": "Hosszú utazás után mindig pihenek.",
+              "tr": {
+                "en": "After a long trip I always rest.",
+                "es": "Después de un viaje largo siempre descanso."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A result or a thing: kérdés (question), fizetés (salary), lakás (flat). Many words in -ás / -és started as the action and became a thing.",
+            "es": "Un resultado o una cosa: kérdés (pregunta), fizetés (sueldo), lakás (departamento). Muchas palabras en -ás / -és empezaron como la acción y se volvieron una cosa."
+          },
+          "examples": [
+            {
+              "es": "Van egy kérdésem.",
+              "tr": {
+                "en": "I have a question.",
+                "es": "Tengo una pregunta."
+              }
+            },
+            {
+              "es": "Minden hónap elsején kapom a fizetésemet.",
+              "tr": {
+                "en": "I get my salary on the first of every month.",
+                "es": "Recibo mi sueldo el primero de cada mes."
+              }
+            },
+            {
+              "es": "Egy nagy, szép lakásban lakunk.",
+              "tr": {
+                "en": "We live in a big, beautiful flat.",
+                "es": "Vivimos en un departamento grande y bonito."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs in -ik lose the -ik: utazik → utazás, lakik → lakás. A few verbs use another stem: alszik → alvás (sleep), eszik → evés (eating), iszik → ivás (drinking).",
+            "es": "Los verbos en -ik pierden el -ik: utazik → utazás, lakik → lakás. Unos pocos usan otro tema: alszik → alvás (el sueño), eszik → evés (el comer), iszik → ivás (el beber)."
+          },
+          "examples": [
+            {
+              "es": "Alvás nélkül nehéz dolgozni.",
+              "tr": {
+                "en": "It is hard to work without sleep.",
+                "es": "Es difícil trabajar sin dormir."
+              }
+            },
+            {
+              "es": "Az alvás fontosabb, mint a kávé.",
+              "tr": {
+                "en": "Sleep is more important than coffee.",
+                "es": "Dormir es más importante que el café."
+              }
+            },
+            {
+              "es": "Evés előtt kezet mosunk.",
+              "tr": {
+                "en": "Before eating we wash our hands.",
+                "es": "Antes de comer nos lavamos las manos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kepzo-sag-seg",
+      "title": {
+        "en": "Word to noun: -ság / -ség",
+        "es": "Palabra a sustantivo: -ság / -ség"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Noun with -ság / -ség",
+          "es": "Sustantivo con -ság / -ség"
+        }
+      ],
+      "rows": [
+        [
+          "szabad",
+          "szabadság"
+        ],
+        [
+          "szép",
+          "szépség"
+        ],
+        [
+          "boldog",
+          "boldogság"
+        ],
+        [
+          "fáradt",
+          "fáradtság"
+        ],
+        [
+          "beteg",
+          "betegség"
+        ],
+        [
+          "fontos",
+          "fontosság"
+        ],
+        [
+          "pontos",
+          "pontosság"
+        ],
+        [
+          "magas",
+          "magasság"
+        ],
+        [
+          "barát",
+          "barátság"
+        ],
+        [
+          "rendőr",
+          "rendőrség"
+        ],
+        [
+          "új",
+          "újság"
+        ],
+        [
+          "zöld",
+          "zöldség"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What does -ság / -ség make?",
+        "es": "¿Qué forma -ság / -ség?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A quality from an adjective, like English -ness / -ty or Spanish -dad / -eza: szép → szépség (beauty), pontos → pontosság (punctuality), fáradt → fáradtság (tiredness). Back vowels take -ság, front vowels -ség.",
+            "es": "Una cualidad a partir de un adjetivo, como -ness / -ty en inglés o -dad / -eza en español: szép → szépség (belleza), pontos → pontosság (puntualidad), fáradt → fáradtság (cansancio). Las vocales posteriores toman -ság, las anteriores -ség."
+          },
+          "examples": [
+            {
+              "es": "A szépség nem minden.",
+              "tr": {
+                "en": "Beauty is not everything.",
+                "es": "La belleza no lo es todo."
+              }
+            },
+            {
+              "es": "Az egészség a legfontosabb.",
+              "tr": {
+                "en": "Health is the most important thing.",
+                "es": "La salud es lo más importante."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A group, an institution or a state of being from a noun: barát → barátság (friendship), rendőr → rendőrség (the police).",
+            "es": "Un grupo, una institución o un estado a partir de un sustantivo: barát → barátság (amistad), rendőr → rendőrség (la policía)."
+          },
+          "examples": [
+            {
+              "es": "A rendőrség a sarkon van.",
+              "tr": {
+                "en": "The police station is on the corner.",
+                "es": "La estación de policía está en la esquina."
+              }
+            },
+            {
+              "es": "Kati és Anna barátsága húsz éves.",
+              "tr": {
+                "en": "Kati and Anna's friendship is twenty years old.",
+                "es": "La amistad de Kati y Anna tiene veinte años."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Some are words of their own: szabadság means freedom and holiday, újság is a newspaper (from új, new), zöldség is vegetables (from zöld, green).",
+            "es": "Algunas son palabras propias: szabadság significa libertad y vacaciones, újság es el periódico (de új, nuevo), zöldség son las verduras (de zöld, verde)."
+          },
+          "examples": [
+            {
+              "es": "Anna két hétig szabadságon van.",
+              "tr": {
+                "en": "Anna is on holiday for two weeks.",
+                "es": "Anna está de vacaciones dos semanas."
+              }
+            },
+            {
+              "es": "Reggel újságot olvasok.",
+              "tr": {
+                "en": "In the morning I read a newspaper.",
+                "es": "Por la mañana leo el periódico."
+              }
+            },
+            {
+              "es": "A zöldség a hűtőben van.",
+              "tr": {
+                "en": "The vegetables are in the fridge.",
+                "es": "Las verduras están en el refrigerador."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kepzo-talan",
+      "title": {
+        "en": "Word to adjective: -talan / -telen (without)",
+        "es": "Palabra a adjetivo: -talan / -telen (sin)"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "With -talan / -telen",
+          "es": "Con -talan / -telen"
+        }
+      ],
+      "rows": [
+        [
+          "boldog",
+          "boldogtalan"
+        ],
+        [
+          "barátság",
+          "barátságtalan"
+        ],
+        [
+          "igazság",
+          "igazságtalan"
+        ],
+        [
+          "haszon",
+          "haszontalan"
+        ],
+        [
+          "ember",
+          "embertelen"
+        ],
+        [
+          "törvény",
+          "törvénytelen"
+        ],
+        [
+          "név",
+          "névtelen"
+        ],
+        [
+          "remény",
+          "reménytelen"
+        ],
+        [
+          "hiba",
+          "hibátlan"
+        ],
+        [
+          "szó",
+          "szótlan"
+        ],
+        [
+          "hang",
+          "hangtalan"
+        ],
+        [
+          "érték",
+          "értéktelen"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How -talan / -telen works",
+        "es": "Cómo funciona -talan / -telen"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "It means 'without', the opposite of 'having' (-s): hibás (with mistakes) / hibátlan (without), boldog (happy) / boldogtalan (unhappy), barátságos (friendly) / barátságtalan (unfriendly).",
+            "es": "Significa «sin», lo contrario de «tener» (-s): hibás (con errores) / hibátlan (sin errores), boldog (feliz) / boldogtalan (infeliz), barátságos (amable) / barátságtalan (poco amable)."
+          },
+          "examples": [
+            {
+              "es": "Sokáig boldogtalan voltam az új városban.",
+              "tr": {
+                "en": "I was unhappy in the new city for a long time.",
+                "es": "Durante mucho tiempo fui infeliz en la nueva ciudad."
+              }
+            },
+            {
+              "es": "Ez a helyzet reménytelen.",
+              "tr": {
+                "en": "This situation is hopeless.",
+                "es": "Esta situación es desesperada."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a consonant the ending is -talan with back vowels and -telen with front vowels: boldogtalan, igazságtalan; embertelen, törvénytelen.",
+            "es": "Después de una consonante la terminación es -talan con vocales posteriores y -telen con vocales anteriores: boldogtalan, igazságtalan; embertelen, törvénytelen."
+          },
+          "examples": [
+            {
+              "es": "Az új törvény igazságtalan.",
+              "tr": {
+                "en": "The new law is unfair.",
+                "es": "La nueva ley es injusta."
+              }
+            },
+            {
+              "es": "Ez a helyzet embertelen.",
+              "tr": {
+                "en": "This situation is inhuman.",
+                "es": "Esta situación es inhumana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a vowel the ending shrinks to -tlan / -tlen, and a final a / e of the base lengthens to á / é: hiba → hibátlan, szó → szótlan.",
+            "es": "Después de una vocal la terminación se reduce a -tlan / -tlen, y la a / e final de la base se alarga a á / é: hiba → hibátlan, szó → szótlan."
+          },
+          "examples": [
+            {
+              "es": "A fordításod hibátlan.",
+              "tr": {
+                "en": "Your translation is flawless.",
+                "es": "Tu traducción es impecable."
+              }
+            },
+            {
+              "es": "Péter egész este szótlan volt.",
+              "tr": {
+                "en": "Péter was silent all evening.",
+                "es": "Péter estuvo callado toda la noche."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few words add a vowel before the ending (-etlen): tehetetlen (helpless). Learn such words whole.",
+            "es": "Unas pocas palabras añaden una vocal antes de la terminación (-etlen): tehetetlen (impotente). Aprende esas palabras enteras."
+          },
+          "examples": [
+            {
+              "es": "Tehetetlen vagyok, nem tudok segíteni.",
+              "tr": {
+                "en": "I am helpless, I cannot help.",
+                "es": "Me siento impotente, no puedo ayudar."
+              }
+            },
+            {
+              "es": "Ebben a helyzetben mindenki tehetetlen.",
+              "tr": {
+                "en": "In this situation everyone is helpless.",
+                "es": "En esta situación todos se sienten impotentes."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kepzo-s",
+      "title": {
+        "en": "Word to adjective or person: -s",
+        "es": "Palabra a adjetivo o persona: -s"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "With -s",
+          "es": "Con -s"
+        }
+      ],
+      "rows": [
+        [
+          "munka",
+          "munkás"
+        ],
+        [
+          "posta",
+          "postás"
+        ],
+        [
+          "diploma",
+          "diplomás"
+        ],
+        [
+          "szerencse",
+          "szerencsés"
+        ],
+        [
+          "hiba",
+          "hibás"
+        ],
+        [
+          "szín",
+          "színes"
+        ],
+        [
+          "kedv",
+          "kedves"
+        ],
+        [
+          "hang",
+          "hangos"
+        ],
+        [
+          "csend",
+          "csendes"
+        ],
+        [
+          "eső",
+          "esős"
+        ],
+        [
+          "nap",
+          "napos"
+        ],
+        [
+          "köd",
+          "ködös"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How -s works",
+        "es": "Cómo funciona -s"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Having or full of the base: szín → színes (colourful), eső → esős (rainy), nap → napos (sunny), hang → hangos (loud).",
+            "es": "Que tiene o está lleno de la base: szín → színes (colorido), eső → esős (lluvioso), nap → napos (soleado), hang → hangos (ruidoso)."
+          },
+          "examples": [
+            {
+              "es": "Ma esős idő van, vigyél esernyőt!",
+              "tr": {
+                "en": "The weather is rainy today, take an umbrella!",
+                "es": "Hoy hace un día lluvioso, ¡lleva un paraguas!"
+              }
+            },
+            {
+              "es": "Szeretek napos időben sétálni.",
+              "tr": {
+                "en": "I like walking when the weather is sunny.",
+                "es": "Me gusta caminar cuando hace sol."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A person connected with something: munka → munkás (worker), posta → postás (mail carrier), diploma → diplomás (graduate).",
+            "es": "Una persona relacionada con algo: munka → munkás (obrero), posta → postás (cartero), diploma → diplomás (graduado)."
+          },
+          "examples": [
+            {
+              "es": "A postás minden reggel kilenckor jön.",
+              "tr": {
+                "en": "The mail carrier comes at nine every morning.",
+                "es": "El cartero viene todas las mañanas a las nueve."
+              }
+            },
+            {
+              "es": "Anna diplomás, Péter még diák.",
+              "tr": {
+                "en": "Anna has a degree, Péter is still a student.",
+                "es": "Anna ya tiene título, Péter todavía es estudiante."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a vowel the ending is just -s, and a final -a / -e lengthens: munka → munkás, szerencse → szerencsés. After a consonant a linking vowel follows harmony: -os (hangos), -es (színes), -ös (ködös). A few back-vowel words take -as instead (hajas, lyukas).",
+            "es": "Después de una vocal la terminación es solo -s, y la -a / -e final se alarga: munka → munkás, szerencse → szerencsés. Después de una consonante hay una vocal de enlace según la armonía: -os (hangos), -es (színes), -ös (ködös). Unas pocas palabras con vocales posteriores toman -as (hajas, lyukas)."
+          },
+          "examples": [
+            {
+              "es": "Szerencsés ember vagyok.",
+              "tr": {
+                "en": "I am a lucky person.",
+                "es": "Soy una persona afortunada."
+              }
+            },
+            {
+              "es": "Ma ködös az idő.",
+              "tr": {
+                "en": "It is foggy today.",
+                "es": "Hoy hay niebla."
+              }
+            },
+            {
+              "es": "Egy csendes szobát kérek.",
+              "tr": {
+                "en": "I would like a quiet room.",
+                "es": "Quisiera un cuarto tranquilo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kepzo-i",
+      "title": {
+        "en": "Place or time word to adjective: -i",
+        "es": "Palabra de lugar o tiempo a adjetivo: -i"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "With -i",
+          "es": "Con -i"
+        }
+      ],
+      "rows": [
+        [
+          "Budapest",
+          "budapesti"
+        ],
+        [
+          "Szeged",
+          "szegedi"
+        ],
+        [
+          "Debrecen",
+          "debreceni"
+        ],
+        [
+          "Mexikóváros",
+          "mexikóvárosi"
+        ],
+        [
+          "tegnap",
+          "tegnapi"
+        ],
+        [
+          "reggel",
+          "reggeli"
+        ],
+        [
+          "iskola",
+          "iskolai"
+        ],
+        [
+          "város",
+          "városi"
+        ],
+        [
+          "hétvége",
+          "hétvégi"
+        ],
+        [
+          "külföld",
+          "külföldi"
+        ],
+        [
+          "nyár",
+          "nyári"
+        ],
+        [
+          "tél",
+          "téli"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How -i works",
+        "es": "Cómo funciona -i"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "A place name becomes an adjective 'from there': Budapest → budapesti, Szeged → szegedi, Debrecen → debreceni, Mexikóváros → mexikóvárosi. Write it with a small letter.",
+            "es": "Un nombre de lugar se vuelve un adjetivo «de allí»: Budapest → budapesti, Szeged → szegedi, Debrecen → debreceni, Mexikóváros → mexikóvárosi. Se escribe con minúscula."
+          },
+          "examples": [
+            {
+              "es": "Anna debreceni, Péter pedig budapesti.",
+              "tr": {
+                "en": "Anna is from Debrecen and Péter is from Budapest.",
+                "es": "Anna es de Debrecen y Péter es de Budapest."
+              }
+            },
+            {
+              "es": "Diego mexikóvárosi, de most Budapesten él.",
+              "tr": {
+                "en": "Diego is from Mexico City, but now he lives in Budapest.",
+                "es": "Diego es de la Ciudad de México, pero ahora vive en Budapest."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A time word becomes an adjective 'of that time': tegnap → tegnapi, hétvége → hétvégi, nyár → nyári, tél → téli, reggel → reggeli.",
+            "es": "Una palabra de tiempo se vuelve un adjetivo «de ese tiempo»: tegnap → tegnapi, hétvége → hétvégi, nyár → nyári, tél → téli, reggel → reggeli."
+          },
+          "examples": [
+            {
+              "es": "A hétvégi kirándulás nagyon jó volt.",
+              "tr": {
+                "en": "The weekend trip was very good.",
+                "es": "La excursión del fin de semana estuvo muy bien."
+              }
+            },
+            {
+              "es": "A nyári szabadság két hétig tart.",
+              "tr": {
+                "en": "The summer holiday lasts two weeks.",
+                "es": "Las vacaciones de verano duran dos semanas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-i never changes (no vowel harmony) and does not lengthen a final vowel: iskola → iskolai, város → városi, külföld → külföldi. A few words ending in -e lose it: hétvége → hétvégi, este → esti.",
+            "es": "-i nunca cambia (no hay armonía vocálica) y no alarga la vocal final: iskola → iskolai, város → városi, külföld → külföldi. Unas pocas palabras terminadas en -e la pierden: hétvége → hétvégi, este → esti."
+          },
+          "examples": [
+            {
+              "es": "Az iskolai könyvtár négyig nyitva van.",
+              "tr": {
+                "en": "The school library is open until four.",
+                "es": "La biblioteca de la escuela está abierta hasta las cuatro."
+              }
+            },
+            {
+              "es": "Az esti vonattal jövünk.",
+              "tr": {
+                "en": "We are coming on the evening train.",
+                "es": "Vamos a venir en el tren de la noche."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Two small endings: -beli and -nyi",
+        "es": "Dos terminaciones pequeñas: -beli y -nyi"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "-beli means 'belonging to' a field or a place: szó → szóbeli (oral), írás → írásbeli (written), falu → falubeli (from the village). The base stays unchanged, and -beli never changes with harmony.",
+            "es": "-beli significa «propio de» un ámbito o un lugar: szó → szóbeli (oral), írás → írásbeli (escrito), falu → falubeli (del pueblo). La base no cambia, y -beli nunca cambia por la armonía."
+          },
+          "examples": [
+            {
+              "es": "Az írásbeli vizsga három órát tart, a szóbeli rövidebb.",
+              "tr": {
+                "en": "The written exam takes three hours, the oral one is shorter.",
+                "es": "El examen escrito dura tres horas; el oral es más corto."
+              }
+            },
+            {
+              "es": "A falubeli emberek mind ismerik egymást.",
+              "tr": {
+                "en": "All the people of the village know each other.",
+                "es": "Todas las personas del pueblo se conocen entre sí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-nyi means 'as much as fits in or lasts': kanál → kanálnyi (a spoonful), óra → órányi (an hour's worth), nap → napnyi (a day's worth). There is no harmony, and a final -a / -e lengthens (óra → órányi).",
+            "es": "-nyi significa «tanto como cabe o dura»: kanál → kanálnyi (una cucharada), óra → órányi (una hora de), nap → napnyi (un día de). No hay armonía, y la -a / -e final se alarga (óra → órányi)."
+          },
+          "examples": [
+            {
+              "es": "Egy kanálnyi cukor elég a teához.",
+              "tr": {
+                "en": "A spoonful of sugar is enough for the tea.",
+                "es": "Una cucharada de azúcar basta para el té."
+              }
+            },
+            {
+              "es": "Még egy órányi munkám van.",
+              "tr": {
+                "en": "I still have an hour's worth of work.",
+                "es": "Todavía tengo una hora de trabajo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kepzo-o",
+      "title": {
+        "en": "Verb to person or tool: -ó / -ő",
+        "es": "Verbo a persona o herramienta: -ó / -ő"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "With -ó / -ő",
+          "es": "Con -ó / -ő"
+        }
+      ],
+      "rows": [
+        [
+          "tanít",
+          "tanító"
+        ],
+        [
+          "vezet",
+          "vezető"
+        ],
+        [
+          "olvas",
+          "olvasó"
+        ],
+        [
+          "elad",
+          "eladó"
+        ],
+        [
+          "tanul",
+          "tanuló"
+        ],
+        [
+          "dolgozik",
+          "dolgozó"
+        ],
+        [
+          "hűt",
+          "hűtő"
+        ],
+        [
+          "tölt",
+          "töltő"
+        ],
+        [
+          "ébreszt",
+          "ébresztő"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How -ó / -ő works",
+        "es": "Cómo funciona -ó / -ő"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The person who does it: tanít → tanító (primary-school teacher), vezet → vezető (manager), elad → eladó (shop assistant), tanul → tanuló (pupil). Back vowels take -ó, front vowels -ő.",
+            "es": "La persona que lo hace: tanít → tanító (maestro de primaria), vezet → vezető (director, jefe), elad → eladó (vendedor), tanul → tanuló (alumno). Las vocales posteriores toman -ó, las anteriores -ő."
+          },
+          "examples": [
+            {
+              "es": "A vezető holnap nem lesz itt.",
+              "tr": {
+                "en": "The manager will not be here tomorrow.",
+                "es": "El jefe no estará aquí mañana."
+              }
+            },
+            {
+              "es": "A tanulók nyolckor mennek iskolába.",
+              "tr": {
+                "en": "The pupils go to school at eight.",
+                "es": "Los alumnos van a la escuela a las ocho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The tool or device that does it: hűt → hűtő (fridge), tölt → töltő (charger), ébreszt → ébresztő (alarm clock).",
+            "es": "La herramienta o aparato que lo hace: hűt → hűtő (refrigerador), tölt → töltő (cargador), ébreszt → ébresztő (despertador)."
+          },
+          "examples": [
+            {
+              "es": "A tej a hűtőben van.",
+              "tr": {
+                "en": "The milk is in the fridge.",
+                "es": "La leche está en el refrigerador."
+              }
+            },
+            {
+              "es": "Az ébresztő hatkor szól.",
+              "tr": {
+                "en": "The alarm goes off at six.",
+                "es": "El despertador suena a las seis."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "It is the same -ó / -ő as in the participle (a dolgozó ember, a working person). With no noun after it, it becomes a noun: a dolgozó (the employee).",
+            "es": "Es el mismo -ó / -ő del participio (a dolgozó ember, una persona que trabaja). Sin sustantivo detrás, se vuelve un sustantivo: a dolgozó (el empleado)."
+          },
+          "examples": [
+            {
+              "es": "A dolgozó emberek reggel korán kelnek.",
+              "tr": {
+                "en": "Working people get up early in the morning.",
+                "es": "Las personas que trabajan se levantan temprano por la mañana."
+              }
+            },
+            {
+              "es": "A dolgozók egy órakor ebédelnek.",
+              "tr": {
+                "en": "The employees have lunch at one.",
+                "es": "Los empleados comen a la una."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Same base, different meaning",
+        "es": "Misma base, distinto significado"
+      },
+      "pairs": [
+        {
+          "a": "tanító",
+          "b": "tanítás",
+          "note": {
+            "en": "-ó / -ő names the person (or tool) that does it; -ás / -és names the doing itself.",
+            "es": "-ó / -ő nombra a la persona (o la herramienta) que lo hace; -ás / -és nombra la acción misma."
+          },
+          "examples": [
+            {
+              "es": "A tanító kedves, a gyerekek szeretik.",
+              "tr": {
+                "en": "The teacher is kind, the children like him or her.",
+                "es": "El maestro es amable, a los niños les cae bien."
+              }
+            },
+            {
+              "es": "A tanítás nyolckor kezdődik.",
+              "tr": {
+                "en": "Classes start at eight.",
+                "es": "Las clases empiezan a las ocho."
+              }
+            }
+          ]
+        },
+        {
+          "a": "hibás",
+          "b": "hibátlan",
+          "note": {
+            "en": "-s means it has the thing; -tlan means it lacks it. Many words come in such pairs.",
+            "es": "-s significa que tiene la cosa; -tlan significa que le falta. Muchas palabras vienen en pares así."
+          },
+          "examples": [
+            {
+              "es": "Ez a mondat hibás.",
+              "tr": {
+                "en": "This sentence has a mistake.",
+                "es": "Esta oración tiene un error."
+              }
+            },
+            {
+              "es": "Ez a mondat hibátlan.",
+              "tr": {
+                "en": "This sentence is flawless.",
+                "es": "Esta oración no tiene ningún error."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Szeretek olvasni.",
+          "b": "Az olvasás sokat segít.",
+          "note": {
+            "en": "After szeret, akar, tud and kell Hungarian uses the infinitive (English: like reading, want to read, can read, have to read). The -ás noun is for the activity as a thing: a subject or part of a noun phrase.",
+            "es": "Después de szeret, akar, tud y kell el húngaro usa el infinitivo (español: me gusta leer, quiero leer, puedo leer, tengo que leer). El sustantivo en -ás es para la actividad como cosa: un sujeto o parte de una frase nominal."
+          },
+          "examples": [
+            {
+              "es": "Nem szeretek korán kelni.",
+              "tr": {
+                "en": "I do not like getting up early.",
+                "es": "No me gusta levantarme temprano."
+              }
+            },
+            {
+              "es": "Az olvasás sokat segít a tanulásban.",
+              "tr": {
+                "en": "Reading helps a lot with studying.",
+                "es": "Leer ayuda mucho en el estudio."
+              }
+            }
+          ]
+        },
+        {
+          "a": "szegedi",
+          "b": "Szegeden",
+          "note": {
+            "en": "-i makes an adjective ('from Szeged'); -en is a place case ('in Szeged'). Only the case answers the question hol? (where).",
+            "es": "-i forma un adjetivo («de Szeged»); -en es un caso de lugar («en Szeged»). Solo el caso responde a la pregunta hol? (dónde)."
+          },
+          "examples": [
+            {
+              "es": "Van egy szegedi barátom.",
+              "tr": {
+                "en": "I have a friend from Szeged.",
+                "es": "Tengo un amigo de Szeged."
+              }
+            },
+            {
+              "es": "A barátom Szegeden lakik.",
+              "tr": {
+                "en": "My friend lives in Szeged.",
+                "es": "Mi amigo vive en Szeged."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) A derived word is a word of its own: szabadság means freedom and holiday, lakás is a flat, újság is a newspaper. Check a dictionary before you invent a word. (2) Drop -ik before -ás / -és: utazás, not utazikás. (3) Words made from place names have a small letter: budapesti, not Budapesti. (4) After szeret, akar, tud and kell Hungarian uses the infinitive, not the -ás noun: Szeretek olvasni, not Szeretek olvasás. (5) A final -a / -e of the base lengthens before -s, -tlan and -nyi (munka → munkás, hiba → hibátlan, óra → órányi), but not before -ság / -ség or -i (tiszta → tisztaság, iskola → iskolai). (6) tanító is a primary-school teacher; tanár teaches older pupils, and it is often the everyday word for a teacher in general.",
+        "es": "Trampas clásicas: (1) Una palabra derivada es una palabra propia: szabadság significa libertad y vacaciones, lakás es un departamento, újság es un periódico. Revisa un diccionario antes de inventar una palabra. (2) Quita el -ik antes de -ás / -és: utazás, no utazikás. (3) Las palabras formadas de nombres de lugar llevan minúscula: budapesti, no Budapesti. (4) Después de szeret, akar, tud y kell el húngaro usa el infinitivo, no el sustantivo en -ás: Szeretek olvasni, no Szeretek olvasás. (5) La -a / -e final de la base se alarga ante -s, -tlan y -nyi (munka → munkás, hiba → hibátlan, óra → órányi), pero no ante -ság / -ség ni -i (tiszta → tisztaság, iskola → iskolai). (6) tanító es el maestro de primaria; tanár enseña a alumnos mayores y suele ser la palabra cotidiana para «profesor» en general."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian builds new words with endings. From «olvas» you get «olvasás», the reading. From «szép» you get «szépség», the beauty. The ending in «hibátlan» means without: «hibás» has mistakes, «hibátlan» has none. A place name becomes an adjective: «budapesti», «szegedi». The person who does something often ends in a long o or a long ö: «tanító», «vezető». Careful: after «szeretek» the verb stays an infinitive: «Szeretek olvasni».",
+    "es": "El húngaro forma palabras nuevas con terminaciones. De «olvas» sale «olvasás», la lectura. De «szép» sale «szépség», la belleza. La terminación de «hibátlan» significa sin: «hibás» tiene errores, «hibátlan» no tiene ninguno. Un nombre de lugar se convierte en adjetivo: «budapesti», «szegedi». La persona que hace algo suele terminar en o larga o en ö larga: «tanító», «vezető». Cuidado: después de «szeretek» el verbo se queda en infinitivo: «Szeretek olvasni»."
+  },
+  "items": [
+    {
+      "id": "kepzok-c01",
+      "sentence": "Az ___ Szegedre vonattal két órát tart.",
+      "options": [
+        "utazó",
+        "utazás",
+        "utazés"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "utazik loses its -ik and takes -ás: utazás, the trip (the action). The sentence says how long the trip lasts, so it needs the action noun.",
+        "es": "utazik pierde su -ik y toma -ás: utazás, el viaje (la acción). La frase dice cuánto dura el viaje, así que necesita el sustantivo de acción."
+      },
+      "wrong": {
+        "utazó": {
+          "en": "utazó is the traveller (a person); with this the sentence would say that the traveller lasts two hours.",
+          "es": "utazó es el viajero (una persona); con esto la frase diría que el viajero dura dos horas."
+        },
+        "utazés": {
+          "en": "utazés breaks vowel harmony: utazik has back vowels (u, a), so the ending is -ás, never -és.",
+          "es": "utazés rompe la armonía vocálica: utazik tiene vocales posteriores (u, a), así que la terminación es -ás, nunca -és."
+        }
+      },
+      "examples": [
+        "A nyaralás után nehéz újra dolgozni.",
+        "Az utazás nagyon hosszú volt."
+      ],
+      "tr": {
+        "en": "The trip to Szeged takes two hours by train.",
+        "es": "El viaje a Szeged dura dos horas en tren."
+      }
+    },
+    {
+      "id": "kepzok-f01",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "-ás/-és",
+      "answer": "olvasás",
+      "table": "kepzo-as-es"
+    },
+    {
+      "id": "kepzok-c02",
+      "sentence": "A ___ miatt ma korán lefekszem.",
+      "options": [
+        "fáradtság",
+        "fáradtség",
+        "fáradt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "fáradt + ság makes the noun tiredness, and miatt (because of) needs a noun. fáradt has back vowels (á, a), so the ending is -ság.",
+        "es": "fáradt + ság forma el sustantivo cansancio, y miatt (por, a causa de) necesita un sustantivo. fáradt tiene vocales posteriores (á, a), así que la terminación es -ság."
+      },
+      "wrong": {
+        "fáradtség": {
+          "en": "fáradtség breaks vowel harmony: a word with back vowels takes -ság, never -ség.",
+          "es": "fáradtség rompe la armonía vocálica: una palabra con vocales posteriores toma -ság, nunca -ség."
+        },
+        "fáradt": {
+          "en": "fáradt is the adjective 'tired'; with this the sentence would mean 'because of the tired one', not 'because of tiredness'.",
+          "es": "fáradt es el adjetivo «cansado»; con esto la frase significaría «a causa del cansado», no «a causa del cansancio»."
+        }
+      },
+      "examples": [
+        "A fáradtság miatt nem tudok sokáig dolgozni.",
+        "A betegség miatt nem mentem iskolába."
+      ],
+      "tr": {
+        "en": "I am going to bed early today because of tiredness.",
+        "es": "Hoy me acuesto temprano por el cansancio."
+      }
+    },
+    {
+      "id": "kepzok-f02",
+      "kind": "form",
+      "verb": "fizet",
+      "person": "-ás/-és",
+      "answer": "fizetés",
+      "table": "kepzo-as-es"
+    },
+    {
+      "id": "kepzok-c03",
+      "sentence": "Ez a program ___, ezért nem használom.",
+      "options": [
+        "hasznos",
+        "haszon",
+        "haszontalan"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "haszon (use, profit) + talan means without use. The clause 'so I do not use it' fits only a useless program. The base has back vowels, so the ending is -talan.",
+        "es": "haszon (utilidad, provecho) + talan significa sin utilidad. La cláusula «por eso no lo uso» solo encaja con un programa inútil. La base tiene vocales posteriores, así que la terminación es -talan."
+      },
+      "wrong": {
+        "hasznos": {
+          "en": "hasznos means useful; with this the sentence would say 'This program is useful, so I do not use it', which makes no sense.",
+          "es": "hasznos significa útil; con esto la frase diría «Este programa es útil, por eso no lo uso», lo cual no tiene sentido."
+        },
+        "haszon": {
+          "en": "haszon is the noun 'profit, benefit'; with this the sentence would say 'This program is a profit', not an adjective.",
+          "es": "haszon es el sustantivo «provecho, beneficio»; con esto la frase diría «Este programa es un provecho», no un adjetivo."
+        }
+      },
+      "examples": [
+        "Ez az információ haszontalan.",
+        "Ez a program nagyon hasznos."
+      ],
+      "tr": {
+        "en": "This program is useless, so I do not use it.",
+        "es": "Este programa es inútil, por eso no lo uso."
+      }
+    },
+    {
+      "id": "kepzok-f03",
+      "kind": "form",
+      "verb": "lakik",
+      "person": "-ás/-és",
+      "answer": "lakás",
+      "table": "kepzo-as-es"
+    },
+    {
+      "id": "kepzok-w01",
+      "kind": "why",
+      "es": "A tegnapi film nagyon hosszú volt.",
+      "target": "tegnapi",
+      "tr": {
+        "en": "Yesterday's film was very long.",
+        "es": "La película de ayer fue muy larga."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-i is the possessive ending: his or her yesterday",
+            "es": "-i es la terminación posesiva: su ayer"
+          },
+          "wrong": {
+            "en": "With this rule tegnapi would mean 'his or her yesterday'; the possessive endings are -a / -e and -ja / -je, not -i.",
+            "es": "Con esta regla tegnapi significaría «su ayer»; las terminaciones posesivas son -a / -e y -ja / -je, no -i."
+          }
+        },
+        {
+          "text": {
+            "en": "-i makes an adjective from a time word: tegnap (yesterday) → tegnapi (of yesterday)",
+            "es": "-i forma un adjetivo a partir de una palabra de tiempo: tegnap (ayer) → tegnapi (de ayer)"
+          }
+        },
+        {
+          "text": {
+            "en": "-i is a place case, like -ban / -ben: in yesterday",
+            "es": "-i es un caso de lugar, como -ban / -ben: en ayer"
+          },
+          "wrong": {
+            "en": "With this rule tegnapi would mean 'in yesterday'; the place cases are -ban / -ben, -on / -en and others, while -i builds an adjective.",
+            "es": "Con esta regla tegnapi significaría «en ayer»; los casos de lugar son -ban / -ben, -on / -en y otros, mientras que -i forma un adjetivo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "kepzok-c04",
+      "sentence": "Kérlek, ne légy ilyen ___, a baba alszik!",
+      "options": [
+        "hangos",
+        "hangtalan",
+        "hangas"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "hang (sound) + s: after a consonant the linking vowel follows vowel harmony; hang has a back vowel, so -os: hangos, loud.",
+        "es": "hang (sonido) + s: después de una consonante la vocal de enlace sigue la armonía vocálica; hang tiene una vocal posterior, así que -os: hangos, ruidoso."
+      },
+      "wrong": {
+        "hangtalan": {
+          "en": "hangtalan means soundless; with this the sentence would ask the person not to be soundless, the opposite of what you mean.",
+          "es": "hangtalan significa sin sonido; con esto la frase pediría a la persona que no sea silenciosa, lo contrario de lo que quieres decir."
+        },
+        "hangas": {
+          "en": "hangas is not a word; after hang the linking vowel is o: hangos.",
+          "es": "hangas no es una palabra; después de hang la vocal de enlace es o: hangos."
+        }
+      },
+      "examples": [
+        "Ma nagyon hangos az utca.",
+        "A szomszédok nagyon hangosak."
+      ],
+      "tr": {
+        "en": "Please do not be so loud, the baby is sleeping!",
+        "es": "Por favor, no seas tan ruidoso, ¡el bebé está durmiendo!"
+      }
+    },
+    {
+      "id": "kepzok-f04",
+      "kind": "form",
+      "verb": "pontos",
+      "person": "-ság/-ség",
+      "answer": "pontosság",
+      "table": "kepzo-sag-seg"
+    },
+    {
+      "id": "kepzok-c05",
+      "sentence": "A ___ barátom jövő héten meglátogat minket.",
+      "options": [
+        "Szegeden",
+        "szegedi",
+        "szegedig"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "-i makes an adjective from a place name: Szeged → szegedi, 'from Szeged'. It is written with a small letter and does not change with vowel harmony.",
+        "es": "-i forma un adjetivo a partir de un nombre de lugar: Szeged → szegedi, «de Szeged». Se escribe con minúscula y no cambia por la armonía vocálica."
+      },
+      "wrong": {
+        "Szegeden": {
+          "en": "Szegeden means 'in Szeged' (a place case); it cannot stand before a noun as an adjective.",
+          "es": "Szegeden significa «en Szeged» (un caso de lugar); no puede ir delante de un sustantivo como adjetivo."
+        },
+        "szegedig": {
+          "en": "szegedig means 'as far as Szeged'; with this the sentence would be about a friend 'up to Szeged'.",
+          "es": "szegedig significa «hasta Szeged»; con esto la frase hablaría de un amigo «hasta Szeged»."
+        }
+      },
+      "examples": [
+        "A debreceni vonat tíz perc múlva indul.",
+        "Szeretem a budapesti piacokat."
+      ],
+      "tr": {
+        "en": "My friend from Szeged will visit us next week.",
+        "es": "Mi amigo de Szeged nos visitará la próxima semana."
+      }
+    },
+    {
+      "id": "kepzok-f05",
+      "kind": "form",
+      "verb": "szép",
+      "person": "-ság/-ség",
+      "answer": "szépség",
+      "table": "kepzo-sag-seg"
+    },
+    {
+      "id": "kepzok-c06",
+      "sentence": "A ___ megbeszélés után nem volt időm ebédelni.",
+      "options": [
+        "tegnap",
+        "tegnapig",
+        "tegnapi"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "-i turns the time word tegnap (yesterday) into the adjective tegnapi (of yesterday), which can stand before a noun.",
+        "es": "-i convierte la palabra de tiempo tegnap (ayer) en el adjetivo tegnapi (de ayer), que puede ir delante de un sustantivo."
+      },
+      "wrong": {
+        "tegnap": {
+          "en": "tegnap is the adverb 'yesterday', used with a verb (Tegnap dolgoztam); before a noun you need tegnapi.",
+          "es": "tegnap es el adverbio «ayer», que se usa con un verbo (Tegnap dolgoztam); delante de un sustantivo hace falta tegnapi."
+        },
+        "tegnapig": {
+          "en": "tegnapig means 'until yesterday'; with this the sentence would speak of 'the until-yesterday meeting'.",
+          "es": "tegnapig significa «hasta ayer»; con esto la frase hablaría de «la reunión hasta ayer»."
+        }
+      },
+      "examples": [
+        "A tegnapi film nagyon hosszú volt.",
+        "A mai ebéd nagyon finom."
+      ],
+      "tr": {
+        "en": "After yesterday's meeting I had no time to have lunch.",
+        "es": "Después de la reunión de ayer no tuve tiempo de comer."
+      }
+    },
+    {
+      "id": "kepzok-f06",
+      "kind": "form",
+      "verb": "hiba",
+      "person": "-talan/-telen",
+      "answer": "hibátlan",
+      "table": "kepzo-talan"
+    },
+    {
+      "id": "kepzok-c07",
+      "sentence": "Az ___ azt mondta, hogy holnaptól leárazás lesz.",
+      "options": [
+        "eladás",
+        "eladó",
+        "eladni"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "elad (sells) + ó makes eladó, the person who sells: the shop assistant. Only a person can say something.",
+        "es": "elad (vende) + ó forma eladó, la persona que vende: el vendedor. Solo una persona puede decir algo."
+      },
+      "wrong": {
+        "eladás": {
+          "en": "eladás is the selling (the action, a sale); with this the sentence would say 'the sale said that ...'.",
+          "es": "eladás es la venta (la acción); con esto la frase diría «la venta dijo que ...»."
+        },
+        "eladni": {
+          "en": "eladni is the infinitive 'to sell'; it cannot be the subject of azt mondta.",
+          "es": "eladni es el infinitivo «vender»; no puede ser el sujeto de azt mondta."
+        }
+      },
+      "examples": [
+        "A boltban két eladó dolgozik.",
+        "Az eladó kedves volt."
+      ],
+      "tr": {
+        "en": "The shop assistant said there will be a sale from tomorrow.",
+        "es": "El vendedor dijo que desde mañana habrá rebajas."
+      }
+    },
+    {
+      "id": "kepzok-w02",
+      "kind": "why",
+      "es": "Ez a fordítás szinte hibátlan.",
+      "target": "hibátlan",
+      "tr": {
+        "en": "This translation is almost flawless.",
+        "es": "Esta traducción es casi impecable."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-tlan means 'full of': hibátlan = full of mistakes",
+            "es": "-tlan significa «lleno de»: hibátlan = lleno de errores"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would say that the translation is almost full of mistakes; 'full of mistakes' is hibás.",
+            "es": "Con esta regla la frase diría que la traducción está casi llena de errores; «lleno de errores» es hibás."
+          }
+        },
+        {
+          "text": {
+            "en": "-tlan is the past tense ending, like -t / -tt",
+            "es": "-tlan es la terminación del pasado, como -t / -tt"
+          },
+          "wrong": {
+            "en": "With this rule hibátlan would be a verb, 'made a mistake'; the past tense endings are -t / -tt, and here the word describes the translation.",
+            "es": "Con esta regla hibátlan sería un verbo, «cometió un error»; las terminaciones del pasado son -t / -tt, y aquí la palabra describe la traducción."
+          }
+        },
+        {
+          "text": {
+            "en": "-tlan means 'without': hiba (mistake) + tlan = without mistakes; the final a of hiba becomes á",
+            "es": "-tlan significa «sin»: hiba (error) + tlan = sin errores; la a final de hiba se convierte en á"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "kepzok-c08",
+      "sentence": "A jó ___ nagyon fontos az egészségnek.",
+      "options": [
+        "alvás",
+        "alszik",
+        "alszás"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "alszik has its own noun, alvás (v instead of sz): sleep. After 'good' and with 'is important' the sentence needs a noun.",
+        "es": "alszik tiene su propio sustantivo, alvás (v en lugar de sz): el sueño. Después de «bueno» y con «es importante» la frase necesita un sustantivo."
+      },
+      "wrong": {
+        "alszik": {
+          "en": "alszik is the verb 'he or she sleeps'; a verb cannot stand after jó as the thing that is important.",
+          "es": "alszik es el verbo «él o ella duerme»; un verbo no puede ir después de jó como la cosa que es importante."
+        },
+        "alszás": {
+          "en": "alszás does not exist: this verb has an irregular noun, alvás.",
+          "es": "alszás no existe: este verbo tiene un sustantivo irregular, alvás."
+        }
+      },
+      "examples": [
+        "Alvás nélkül nehéz dolgozni.",
+        "Az alvás fontosabb, mint a kávé."
+      ],
+      "tr": {
+        "en": "Good sleep is very important for your health.",
+        "es": "Dormir bien es muy importante para la salud."
+      }
+    },
+    {
+      "id": "kepzok-f07",
+      "kind": "form",
+      "verb": "törvény",
+      "person": "-talan/-telen",
+      "answer": "törvénytelen",
+      "table": "kepzo-talan"
+    },
+    {
+      "id": "kepzok-c09",
+      "sentence": "Holnap nem írásbeli, hanem ___ vizsgám lesz.",
+      "options": [
+        "szóban",
+        "szóbelit",
+        "szóbeli"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "szó (word, speech) + beli makes szóbeli, 'oral'. -beli makes an adjective, so it stands before the noun vizsga unchanged.",
+        "es": "szó (palabra, habla) + beli forma szóbeli, «oral». -beli forma un adjetivo, así que va delante del sustantivo vizsga sin cambios."
+      },
+      "wrong": {
+        "szóban": {
+          "en": "szóban is the adverb 'orally' (-ban); it tells how something happens, but it cannot stand before a noun as an adjective.",
+          "es": "szóban es el adverbio «oralmente» (-ban); dice cómo ocurre algo, pero no puede ir delante de un sustantivo como adjetivo."
+        },
+        "szóbelit": {
+          "en": "-t is the accusative ending; vizsgám lesz is the subject, and an adjective before a noun takes no case ending.",
+          "es": "-t es la terminación del acusativo; vizsgám lesz es el sujeto, y un adjetivo delante de un sustantivo no lleva terminación de caso."
+        }
+      },
+      "examples": [
+        "Holnap írásbeli vizsgám van.",
+        "A szóbeli vizsga rövid."
+      ],
+      "tr": {
+        "en": "Tomorrow I will have an oral exam, not a written one.",
+        "es": "Mañana tendré un examen oral, no escrito."
+      }
+    },
+    {
+      "id": "kepzok-f08",
+      "kind": "form",
+      "verb": "munka",
+      "person": "-s",
+      "answer": "munkás",
+      "table": "kepzo-s"
+    },
+    {
+      "id": "kepzok-c10",
+      "sentence": "Az igazi ___ nem a pénzről szól.",
+      "options": [
+        "boldog",
+        "boldogság",
+        "boldogtalan"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "boldog + ság makes the noun happiness. After igazi (real) a noun must follow; boldog has back vowels, so the ending is -ság.",
+        "es": "boldog + ság forma el sustantivo felicidad. Después de igazi (verdadero) tiene que venir un sustantivo; boldog tiene vocales posteriores, así que la terminación es -ság."
+      },
+      "wrong": {
+        "boldog": {
+          "en": "boldog is the adjective 'happy'; with this the sentence would say 'the real happy is not about money', with no noun.",
+          "es": "boldog es el adjetivo «feliz»; con esto la frase diría «el verdadero feliz no trata de dinero», sin ningún sustantivo."
+        },
+        "boldogtalan": {
+          "en": "boldogtalan is 'unhappy', also an adjective; with this the sentence would speak of 'the real unhappy', with no noun.",
+          "es": "boldogtalan es «infeliz», también un adjetivo; con esto la frase hablaría de «el verdadero infeliz», sin ningún sustantivo."
+        }
+      },
+      "examples": [
+        "A barátság sokat jelent nekem.",
+        "A jó barátság fontosabb, mint a pénz."
+      ],
+      "tr": {
+        "en": "Real happiness is not about money.",
+        "es": "La verdadera felicidad no se trata de dinero."
+      }
+    },
+    {
+      "id": "kepzok-f09",
+      "kind": "form",
+      "verb": "szín",
+      "person": "-s",
+      "answer": "színes",
+      "table": "kepzo-s"
+    },
+    {
+      "id": "kepzok-w03",
+      "kind": "why",
+      "es": "Ma sok színes virágot láttam a piacon.",
+      "target": "színes",
+      "tr": {
+        "en": "Today I saw a lot of colourful flowers at the market.",
+        "es": "Hoy vi muchas flores de colores en el mercado."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-es is the plural ending: colours",
+            "es": "-es es la terminación del plural: colores"
+          },
+          "wrong": {
+            "en": "With this rule színes would be a plural noun, 'colours'; the plural of szín is színek, and here the word describes the flowers.",
+            "es": "Con esta regla színes sería un sustantivo plural, «colores»; el plural de szín es színek, y aquí la palabra describe las flores."
+          }
+        },
+        {
+          "text": {
+            "en": "-s with a linking vowel chosen by harmony: szín has front vowels, so -es; the meaning is 'having colour'",
+            "es": "-s con una vocal de enlace elegida por la armonía: szín tiene vocales anteriores, así que -es; el significado es «que tiene color»"
+          }
+        },
+        {
+          "text": {
+            "en": "-es is the accusative ending: colour as an object",
+            "es": "-es es la terminación del acusativo: el color como objeto"
+          },
+          "wrong": {
+            "en": "With this rule the word would be színt (colour as an object); the accusative of szín is színt, and -es builds an adjective.",
+            "es": "Con esta regla la palabra sería színt (el color como objeto); el acusativo de szín es színt, y -es forma un adjetivo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "kepzok-c11",
+      "sentence": "A szomszédunk nagyon ___, soha nem köszön.",
+      "options": [
+        "barátságtalan",
+        "barátság",
+        "barátságos"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "barátság + talan means without friendliness: unfriendly. The second part (he never says hello) confirms it. The base has back vowels, so -talan.",
+        "es": "barátság + talan significa sin amabilidad: poco amable. La segunda parte (nunca saluda) lo confirma. La base tiene vocales posteriores, así que -talan."
+      },
+      "wrong": {
+        "barátság": {
+          "en": "barátság is the noun 'friendship'; after nagyon the sentence needs an adjective, so it would not say that the neighbour is unfriendly.",
+          "es": "barátság es el sustantivo «amistad»; después de nagyon la frase necesita un adjetivo, así que no diría que el vecino es poco amable."
+        },
+        "barátságos": {
+          "en": "barátságos means friendly; with this the sentence would say 'very friendly, never says hello', which contradicts itself.",
+          "es": "barátságos significa amable; con esto la frase diría «muy amable, nunca saluda», lo cual se contradice."
+        }
+      },
+      "examples": [
+        "A pincér ma nagyon barátságos volt.",
+        "Ez a város barátságtalan."
+      ],
+      "tr": {
+        "en": "Our neighbour is very unfriendly, he never says hello.",
+        "es": "Nuestro vecino es muy poco amable, nunca saluda."
+      }
+    },
+    {
+      "id": "kepzok-f10",
+      "kind": "form",
+      "verb": "Budapest",
+      "person": "-i",
+      "answer": "budapesti",
+      "table": "kepzo-i"
+    },
+    {
+      "id": "kepzok-c12",
+      "sentence": "A ___ már reggel hétkor elkezdte a munkát.",
+      "options": [
+        "munkában",
+        "munka",
+        "munkás"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "munka + s makes munkás, the worker; the final -a lengthens to á. Only a person can start the work.",
+        "es": "munka + s forma munkás, el obrero; la -a final se alarga a á. Solo una persona puede empezar el trabajo."
+      },
+      "wrong": {
+        "munkában": {
+          "en": "munkában means 'at work' (-ban); it cannot be the subject.",
+          "es": "munkában significa «en el trabajo» (-ban); no puede ser el sujeto."
+        },
+        "munka": {
+          "en": "munka is the work itself; with this the sentence would say 'the work started the work'.",
+          "es": "munka es el trabajo mismo; con esto la frase diría «el trabajo empezó el trabajo»."
+        }
+      },
+      "examples": [
+        "Apám munkás volt.",
+        "A munkások ebédelnek."
+      ],
+      "tr": {
+        "en": "The worker started work as early as seven in the morning.",
+        "es": "El obrero empezó a trabajar desde las siete de la mañana."
+      }
+    },
+    {
+      "id": "kepzok-f11",
+      "kind": "form",
+      "verb": "Debrecen",
+      "person": "-i",
+      "answer": "debreceni",
+      "table": "kepzo-i"
+    },
+    {
+      "id": "kepzok-c13",
+      "sentence": "Hol van a ___? Fel kell töltenem a telefont, mert alig van benne áram.",
+      "options": [
+        "töltés",
+        "töltő",
+        "töltőt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "tölt (charges) + ő makes töltő, the charger: a thing that does the action. The question Hol van ...? needs the plain noun.",
+        "es": "tölt (carga) + ő forma töltő, el cargador: una cosa que hace la acción. La pregunta Hol van ...? necesita el sustantivo sin terminación."
+      },
+      "wrong": {
+        "töltés": {
+          "en": "töltés is the action, charging; with this the sentence would ask 'where is the charging?'.",
+          "es": "töltés es la acción, la carga; con esto la frase preguntaría «¿dónde está la carga?»."
+        },
+        "töltőt": {
+          "en": "-t is the accusative; Hol van ...? takes the plain form: Hol van a töltő?",
+          "es": "-t es el acusativo; Hol van ...? lleva la forma sin terminación: Hol van a töltő?"
+        }
+      },
+      "examples": [
+        "A hűtő a konyhában van.",
+        "Az ébresztő hatkor szól."
+      ],
+      "tr": {
+        "en": "Where is the charger? I have to charge the phone because it has hardly any power left.",
+        "es": "¿Dónde está el cargador? Tengo que cargar el teléfono porque casi no tiene batería."
+      }
+    },
+    {
+      "id": "kepzok-f12",
+      "kind": "form",
+      "verb": "tanít",
+      "person": "-ó/-ő",
+      "answer": "tanító",
+      "table": "kepzo-o"
+    },
+    {
+      "id": "kepzok-c14",
+      "sentence": "Szeretek ___, ezért mindig van nálam egy könyv.",
+      "options": [
+        "olvasás",
+        "olvasni",
+        "olvasó"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After szeret, akar, tud and kell Hungarian uses the infinitive (English: like reading, want to read, can read): Szeretek olvasni. The noun olvasás is for reading as a thing.",
+        "es": "Después de szeret, akar, tud y kell el húngaro usa el infinitivo (español: me gusta leer, quiero leer, puedo leer): Szeretek olvasni. El sustantivo olvasás es para la lectura como cosa."
+      },
+      "wrong": {
+        "olvasás": {
+          "en": "olvasás is the noun 'reading'; Szeretek olvasás is not grammatical, because after szeret the verb stays an infinitive.",
+          "es": "olvasás es el sustantivo «lectura»; Szeretek olvasás no es gramatical, porque después de szeret el verbo se queda en infinitivo."
+        },
+        "olvasó": {
+          "en": "olvasó is the reader (a person); with this the sentence would say 'I like reader'.",
+          "es": "olvasó es el lector (una persona); con esto la frase diría «me gusta lector»."
+        }
+      },
+      "examples": [
+        "Szeretek este olvasni.",
+        "Tudok olvasni magyarul."
+      ],
+      "tr": {
+        "en": "I like reading, so I always have a book with me.",
+        "es": "Me gusta leer, por eso siempre llevo un libro conmigo."
+      }
+    },
+    {
+      "id": "kepzok-w04",
+      "kind": "why",
+      "es": "A munkások reggel hétkor kezdik a munkát.",
+      "target": "munkások",
+      "tr": {
+        "en": "The workers start work at seven in the morning.",
+        "es": "Los obreros empiezan a trabajar a las siete de la mañana."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "munka + s makes the worker (the final a becomes á: munkás); -ok is the plural",
+            "es": "munka + s forma el obrero (la a final se convierte en á: munkás); -ok es el plural"
+          }
+        },
+        {
+          "text": {
+            "en": "munkások is the plural of munka: jobs",
+            "es": "munkások es el plural de munka: trabajos"
+          },
+          "wrong": {
+            "en": "With this rule the plural would be munkák (jobs, works); munkások is built with -s and means the people, the workers.",
+            "es": "Con esta regla el plural sería munkák (trabajos); munkások se forma con -s y significa las personas, los obreros."
+          }
+        },
+        {
+          "text": {
+            "en": "-ok is a verb ending: I work",
+            "es": "-ok es una terminación verbal: yo trabajo"
+          },
+          "wrong": {
+            "en": "With this rule munkások would be a verb form like dolgozok (I work); here it is a noun with the plural ending, and the verb is kezdik.",
+            "es": "Con esta regla munkások sería una forma verbal como dolgozok (yo trabajo); aquí es un sustantivo con la terminación del plural, y el verbo es kezdik."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ],
+  "glossary": [
+    {
+      "word": "szín",
+      "gloss": {
+        "en": "colour",
+        "es": "color"
+      }
+    },
+    {
+      "word": "színes",
+      "gloss": {
+        "en": "colourful",
+        "es": "colorido"
+      }
+    },
+    {
+      "word": "hibátlan",
+      "gloss": {
+        "en": "flawless, without mistakes",
+        "es": "impecable, sin errores"
+      }
+    },
+    {
+      "word": "hibás",
+      "gloss": {
+        "en": "faulty, with mistakes",
+        "es": "defectuoso, con errores"
+      }
+    },
+    {
+      "word": "tanító",
+      "gloss": {
+        "en": "primary-school teacher",
+        "es": "maestro de primaria"
+      }
+    },
+    {
+      "word": "olvasó",
+      "gloss": {
+        "en": "reader",
+        "es": "lector"
+      }
+    },
+    {
+      "word": "dolgozó",
+      "gloss": {
+        "en": "working; employee",
+        "es": "que trabaja; empleado"
+      }
+    },
+    {
+      "word": "tehetetlen",
+      "gloss": {
+        "en": "helpless",
+        "es": "impotente"
+      }
+    },
+    {
+      "word": "tegnapi",
+      "gloss": {
+        "en": "of yesterday",
+        "es": "de ayer"
+      }
+    },
+    {
+      "word": "budapesti",
+      "gloss": {
+        "en": "from Budapest",
+        "es": "de Budapest"
+      }
+    }
+  ]
+}

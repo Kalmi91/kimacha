@@ -1,0 +1,1155 @@
+{
+  "schema": 2,
+  "topic": "szenvedo-szerkezetek",
+  "level": "C1",
+  "title": {
+    "en": "The car was repaired: megjavították az autót",
+    "es": "Repararon el coche: megjavították az autót"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "English says \"the car was repaired\", and Spanish says \"el coche fue reparado\" or \"se reparó el coche\". Hungarian has no passive voice: no form of the verb means \"was repaired\". When it does not matter who did something, Hungarian uses other tools. Four are everyday: (1) the 3rd person plural without a subject, Megjavították az autót (they repaired the car, so the car was repaired); (2) a verb that says the thing just undergoes it, ending in -ódik/-ődik or -ik, Az ajtó becsukódott (the door closed); (3) -ható/-hető, \"can be done\", Ez nem érthető (this cannot be understood); (4) lehet with an infinitive, Itt nem lehet dohányozni (smoking is not allowed here). If the doer does matter, it stands right before the verb: A levelet Anna írta. Only formal writing uses által, nearly always inside a participle phrase.",
+        "es": "El español dice «repararon el coche» o «se reparó el coche», y también «fue reparado». El húngaro no tiene voz pasiva: ninguna forma del verbo significa «fue reparado». Cuando no importa quién hizo algo, el húngaro usa otros recursos. Cuatro son de todos los días: (1) la 3.ª persona del plural sin sujeto, Megjavították az autót (repararon el coche, es decir, el coche fue reparado); (2) un verbo que dice que la cosa solo lo sufre, en -ódik/-ődik o -ik, Az ajtó becsukódott (la puerta se cerró); (3) -ható/-hető, «se puede hacer», Ez nem érthető (esto no se puede entender); (4) lehet con infinitivo, Itt nem lehet dohányozni (aquí no se puede fumar). Si sí importa quién lo hizo, va justo antes del verbo: A levelet Anna írta. Solo la escritura formal usa által, casi siempre dentro de una frase de participio."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ok-3pl",
+      "title": {
+        "en": "They, with no subject: the 3rd person plural",
+        "es": "Ellos, sin sujeto: la 3.ª persona del plural"
+      },
+      "header": [
+        {
+          "en": "Doer and object",
+          "es": "Autor y objeto"
+        },
+        {
+          "en": "megjavít (to repair)",
+          "es": "megjavít (reparar)"
+        },
+        {
+          "en": "megold (to solve)",
+          "es": "megold (resolver)"
+        },
+        {
+          "en": "elintéz (to settle)",
+          "es": "elintéz (resolver, tramitar)"
+        },
+        {
+          "en": "aláír (to sign)",
+          "es": "aláír (firmar)"
+        }
+      ],
+      "rows": [
+        [
+          "ők, ezt (jelen)",
+          "megjavítják",
+          "megoldják",
+          "elintézik",
+          "aláírják"
+        ],
+        [
+          "ők, ezt (múlt)",
+          "megjavították",
+          "megoldották",
+          "elintézték",
+          "aláírták"
+        ],
+        [
+          "ők, valamit (múlt)",
+          "megjavítottak",
+          "megoldottak",
+          "elintéztek",
+          "aláírtak"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ik-folyamat",
+      "title": {
+        "en": "It happens by itself: -ódik/-ődik and -ik verbs",
+        "es": "Sucede por sí solo: verbos en -ódik/-ődik y en -ik"
+      },
+      "header": [
+        {
+          "en": "Form",
+          "es": "Forma"
+        },
+        {
+          "en": "becsuk (to close)",
+          "es": "becsuk (cerrar)"
+        },
+        {
+          "en": "megold (to solve)",
+          "es": "megold (resolver)"
+        },
+        {
+          "en": "kezd (to start)",
+          "es": "kezd (empezar)"
+        },
+        {
+          "en": "kinyit (to open)",
+          "es": "kinyit (abrir)"
+        }
+      ],
+      "rows": [
+        [
+          "ő, jelen",
+          "becsukódik",
+          "megoldódik",
+          "kezdődik",
+          "kinyílik"
+        ],
+        [
+          "ő, múlt",
+          "becsukódott",
+          "megoldódott",
+          "kezdődött",
+          "kinyílt"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hato-heto",
+      "title": {
+        "en": "-ható/-hető: it can be done",
+        "es": "-ható/-hető: se puede hacer"
+      },
+      "header": [
+        {
+          "en": "Number",
+          "es": "Número"
+        },
+        {
+          "en": "olvas (to read)",
+          "es": "olvas (leer)"
+        },
+        {
+          "en": "ért (to understand)",
+          "es": "ért (entender)"
+        },
+        {
+          "en": "lát (to see)",
+          "es": "lát (ver)"
+        },
+        {
+          "en": "hall (to hear)",
+          "es": "hall (oír)"
+        }
+      ],
+      "rows": [
+        [
+          "egyes szám",
+          "olvasható",
+          "érthető",
+          "látható",
+          "hallható"
+        ],
+        [
+          "többes szám",
+          "olvashatók",
+          "érthetők",
+          "láthatók",
+          "hallhatók"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Five ways to say what happened, and who did it",
+        "es": "Cinco formas de decir qué pasó y quién lo hizo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "3rd person plural, no pronoun: somebody did it and you do not say who. Add ők only for particular people. The object decides the ending: a definite object (az autót, ezt) asks for megjavították, an indefinite one (egy autót, valamit) for megjavítottak.",
+            "es": "3.ª persona del plural, sin pronombre: alguien lo hizo y no dices quién. Añade ők solo para personas concretas. El objeto decide la terminación: un objeto determinado (az autót, ezt) pide megjavították, uno indeterminado (egy autót, valamit) pide megjavítottak."
+          },
+          "examples": [
+            {
+              "es": "Tegnap megjavították az autómat.",
+              "tr": {
+                "en": "They repaired my car yesterday (my car was repaired yesterday).",
+                "es": "Ayer repararon mi coche."
+              }
+            },
+            {
+              "es": "Itt jól fizetnek.",
+              "tr": {
+                "en": "They pay well here.",
+                "es": "Aquí pagan bien."
+              }
+            },
+            {
+              "es": "Azt mondják, hogy holnap esni fog.",
+              "tr": {
+                "en": "They say it will rain tomorrow.",
+                "es": "Dicen que mañana va a llover."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A verb in -ódik/-ődik or -ik: the thing is the subject and simply undergoes the action, with no doer in the picture. Pairs: becsuk - becsukódik, megold - megoldódik, kezd - kezdődik, kinyit - kinyílik. It takes no object.",
+            "es": "Un verbo en -ódik/-ődik o -ik: la cosa es el sujeto y simplemente sufre la acción, sin ningún autor en escena. Pares: becsuk - becsukódik, megold - megoldódik, kezd - kezdődik, kinyit - kinyílik. No lleva objeto."
+          },
+          "examples": [
+            {
+              "es": "Az ajtó hirtelen becsukódott.",
+              "tr": {
+                "en": "The door suddenly closed.",
+                "es": "La puerta se cerró de repente."
+              }
+            },
+            {
+              "es": "A találkozó három órakor kezdődik.",
+              "tr": {
+                "en": "The meeting starts at three.",
+                "es": "La reunión empieza a las tres."
+              }
+            },
+            {
+              "es": "Az ablak lassan kinyílt.",
+              "tr": {
+                "en": "The window slowly opened.",
+                "es": "La ventana se abrió lentamente."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Stem + -ható/-hető: \"can be done to it\". It is an adjective, so after a plural subject it takes the plural (érthetők). It often comes with nem, or with jól, könnyen, nehezen.",
+            "es": "Raíz + -ható/-hető: «se puede hacer con ello». Es un adjetivo, así que tras un sujeto plural lleva el plural (érthetők). Suele ir con nem, o con jól, könnyen, nehezen."
+          },
+          "examples": [
+            {
+              "es": "Ez a mondat nem érthető.",
+              "tr": {
+                "en": "This sentence is not understandable.",
+                "es": "Esta frase no se entiende."
+              }
+            },
+            {
+              "es": "A jegyek az interneten is megvásárolhatók.",
+              "tr": {
+                "en": "The tickets can also be bought on the internet.",
+                "es": "Los boletos también se pueden comprar por internet."
+              }
+            },
+            {
+              "es": "A szöveg jól olvasható.",
+              "tr": {
+                "en": "The text is easy to read.",
+                "es": "El texto se lee bien."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "lehet + infinitive: \"it is possible or allowed to...\". lehet does not agree with anything: it stays 3rd person singular (only tense or mood change it: lehetett, lehetne). The thing acted on stays in the accusative (-t), as in an active sentence. For \"has to be done\" use kell + infinitive.",
+            "es": "lehet + infinitivo: «es posible o está permitido...». lehet no concuerda con nada: se queda en 3.ª persona del singular (solo el tiempo o el modo lo cambian: lehetett, lehetne). Lo que recibe la acción sigue en acusativo (-t), como en una oración activa. Para «hay que hacerlo» usa kell + infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Itt nem lehet dohányozni.",
+              "tr": {
+                "en": "Smoking is not allowed here.",
+                "es": "Aquí no se puede fumar."
+              }
+            },
+            {
+              "es": "Ezt a szót nem lehet lefordítani.",
+              "tr": {
+                "en": "This word cannot be translated.",
+                "es": "Esta palabra no se puede traducir."
+              }
+            },
+            {
+              "es": "Ezt ma meg kell oldani.",
+              "tr": {
+                "en": "This has to be solved today.",
+                "es": "Esto hay que resolverlo hoy."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "To name the doer in everyday speech, put it right before the verb, in the nominative. The thing done stays an object, in front: A levelet Anna írta. In formal writing the doer can also follow által, almost always inside a participle phrase: a cég által elfogadott szabályok. A finite verb with által (A levelet Anna által írták) sounds like a word-for-word copy of English \"was written by\"; careful speakers avoid it.",
+            "es": "Para nombrar al autor en el habla diaria, ponlo justo antes del verbo, en nominativo. Lo hecho sigue siendo objeto, delante: A levelet Anna írta. En la escritura formal el autor también puede ir con által, casi siempre dentro de una frase de participio: a cég által elfogadott szabályok. Un verbo conjugado con által (A levelet Anna által írták) suena a copia literal del inglés «was written by»; los hablantes cuidadosos la evitan."
+          },
+          "examples": [
+            {
+              "es": "A levelet Anna írta.",
+              "tr": {
+                "en": "The letter was written by Anna.",
+                "es": "La carta la escribió Anna."
+              }
+            },
+            {
+              "es": "A szerződést a főnök írta alá.",
+              "tr": {
+                "en": "The contract was signed by the boss.",
+                "es": "El contrato lo firmó el jefe."
+              }
+            },
+            {
+              "es": "A hivatal által küldött levél szerint nem kell fizetnem.",
+              "tr": {
+                "en": "According to the letter sent by the office, I do not have to pay.",
+                "es": "Según la carta enviada por la oficina, no tengo que pagar."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Three pairs that look alike",
+        "es": "Tres pares que se parecen"
+      },
+      "pairs": [
+        {
+          "a": "Becsukták az ajtót.",
+          "b": "Az ajtó becsukódott.",
+          "note": {
+            "en": "The 3rd plural has a doer behind it: somebody closed the door. The -ódik verb has no doer in the picture: the door just closed, in the wind, by itself, by accident.",
+            "es": "La 3.ª plural tiene un autor detrás: alguien cerró la puerta. El verbo en -ódik no tiene autor en escena: la puerta simplemente se cerró, por el viento, sola, sin querer."
+          },
+          "examples": [
+            {
+              "es": "Kinyitották az ajtót, aztán bementünk.",
+              "tr": {
+                "en": "They opened the door, then we went in.",
+                "es": "Abrieron la puerta, luego entramos."
+              }
+            },
+            {
+              "es": "Az ajtó kinyílt, aztán bementünk.",
+              "tr": {
+                "en": "The door opened, then we went in.",
+                "es": "La puerta se abrió, luego entramos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ez nem érthető.",
+          "b": "Ezt nem lehet megérteni.",
+          "note": {
+            "en": "Almost the same meaning. -hető is an adjective, so it agrees (Ezek nem érthetők) and sounds a little more written. lehet + infinitive is a verb phrase, so the object stays in the accusative (Ezeket nem lehet megérteni); it is the more everyday choice.",
+            "es": "Casi el mismo significado. -hető es un adjetivo, así que concuerda (Ezek nem érthetők) y suena algo más escrito. lehet + infinitivo es una frase verbal, así que el objeto sigue en acusativo (Ezeket nem lehet megérteni); es la opción más cotidiana."
+          },
+          "examples": [
+            {
+              "es": "Ezek a mondatok nem érthetők.",
+              "tr": {
+                "en": "These sentences are not understandable.",
+                "es": "Estas frases no se entienden."
+              }
+            },
+            {
+              "es": "Ezeket a mondatokat nem lehet megérteni.",
+              "tr": {
+                "en": "These sentences cannot be understood.",
+                "es": "Estas frases no se pueden entender."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Bezárták a boltot.",
+          "b": "A bolt be van zárva.",
+          "note": {
+            "en": "The 3rd plural tells the action: somebody closed the shop. be van zárva (van + -va/-ve) tells the state: the shop is closed now.",
+            "es": "La 3.ª plural cuenta la acción: alguien cerró la tienda. be van zárva (van + -va/-ve) cuenta el estado: la tienda está cerrada ahora."
+          },
+          "examples": [
+            {
+              "es": "Hatkor bezárták a boltot.",
+              "tr": {
+                "en": "They closed the shop at six.",
+                "es": "Cerraron la tienda a las seis."
+              }
+            },
+            {
+              "es": "A bolt már be van zárva.",
+              "tr": {
+                "en": "The shop is already closed.",
+                "es": "La tienda ya está cerrada."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not build a passive with lesz or van: A levél meg lett írva is a word-for-word copy of \"the letter got written\"; you may hear it in casual speech, but careful speech and writing avoid it. Say Megírták a levelet or A levelet Anna írta. Do not add ők to the 3rd plural: Ők megjavították az autót points at particular people. And do not turn the object into a subject after lehet: Ez a szó nem lehet lefordítani is wrong; the thing stays in the accusative, Ezt a szót nem lehet lefordítani.",
+        "es": "No construyas una pasiva con lesz o van: A levél meg lett írva es una copia literal de «la carta fue escrita»; puedes oírla en el habla informal, pero el habla y la escritura cuidadas la evitan. Di Megírták a levelet o A levelet Anna írta. No añadas ők a la 3.ª plural: Ők megjavították az autót señala a personas concretas. Y tras lehet no conviertas el objeto en sujeto: Ez a szó nem lehet lefordítani es incorrecto; la cosa sigue en acusativo, Ezt a szót nem lehet lefordítani."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has no passive voice. To say what happened without naming who did it, you can use the third person plural: «Megjavították az autót». Or you can use a verb that says it happened by itself: «Az ajtó becsukódott». The endings «ható» and «hető» say that something can be done: «Ez nem érthető». With «lehet» and an infinitive you say what is possible or allowed: «Itt nem lehet dohányozni». If the doer matters, put it right before the verb: «A levelet Anna írta». In formal writing you also find «által», usually inside a participle phrase: «a cég által elfogadott szabályok».",
+    "es": "El húngaro no tiene voz pasiva. Para decir qué pasó sin nombrar a quien lo hizo, puedes usar la tercera persona del plural: «Megjavították az autót». O puedes usar un verbo que dice que ocurrió solo: «Az ajtó becsukódott». Las terminaciones «ható» y «hető» dicen que algo se puede hacer: «Ez nem érthető». Con «lehet» y un infinitivo dices qué es posible o está permitido: «Itt nem lehet dohányozni». Si importa quién lo hizo, ponlo justo antes del verbo: «A levelet Anna írta». En la escritura formal también encuentras «által», casi siempre dentro de una frase de participio: «a cég által elfogadott szabályok»."
+  },
+  "glossary": [
+    {
+      "word": "által",
+      "gloss": {
+        "en": "by (the doer); through",
+        "es": "por (el autor); a través de"
+      }
+    },
+    {
+      "word": "becsuk",
+      "gloss": {
+        "en": "to close (something)",
+        "es": "cerrar (algo)"
+      }
+    },
+    {
+      "word": "valami",
+      "gloss": {
+        "en": "something (forms: valamit, ...)",
+        "es": "algo (formas: valamit, ...)"
+      }
+    },
+    {
+      "word": "becsukódik",
+      "gloss": {
+        "en": "to close (by itself); from becsuk, to close (something)",
+        "es": "cerrarse (solo); de becsuk, cerrar (algo)"
+      }
+    },
+    {
+      "word": "kinyílik",
+      "gloss": {
+        "en": "to open (by itself); from kinyit, to open (something)",
+        "es": "abrirse (solo); de kinyit, abrir (algo)"
+      }
+    },
+    {
+      "word": "megoldódik",
+      "gloss": {
+        "en": "to get solved (by itself); from megold, to solve",
+        "es": "resolverse (solo); de megold, resolver"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "szenvedo-szerkezetek-c01",
+      "sentence": "Tegnap ___ az autómat, mert nem működött.",
+      "options": [
+        "megjavították",
+        "megjavítottak",
+        "megjavult"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Somebody repaired it and nobody is named: 3rd plural with no subject. The object az autómat is definite, so the definite ending: megjavították.",
+        "es": "Alguien lo reparó y no se nombra a nadie: 3.ª plural sin sujeto. El objeto az autómat es determinado, así que lleva la terminación determinada: megjavították."
+      },
+      "wrong": {
+        "megjavítottak": {
+          "en": "megjavítottak is the indefinite form, for an object like egy autót; az autómat is definite.",
+          "es": "megjavítottak es la forma indeterminada, para un objeto como egy autót; az autómat es determinado."
+        },
+        "megjavult": {
+          "en": "megjavult is intransitive (\"got better by itself\") and cannot take an object; it would need az autóm as the subject.",
+          "es": "megjavult es intransitivo («mejoró solo») y no admite objeto; necesitaría az autóm como sujeto."
+        }
+      },
+      "examples": [
+        "A szerződést már aláírták.",
+        "Az ügyet már elintézték."
+      ],
+      "tr": {
+        "en": "They repaired my car yesterday because it did not work.",
+        "es": "Ayer repararon mi coche porque no funcionaba."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-f01",
+      "kind": "form",
+      "verb": "megjavít",
+      "person": "ők, ezt (múlt)",
+      "answer": "megjavították",
+      "table": "ok-3pl"
+    },
+    {
+      "id": "szenvedo-szerkezetek-c02",
+      "sentence": "Nem tudom, hogyan ___ ezt magyarul.",
+      "options": [
+        "mondanak",
+        "mondják",
+        "mondok"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A general \"they\" (people, one): 3rd person plural. ezt is definite, so the definite form mondják.",
+        "es": "Un «ellos» general (la gente, uno): 3.ª persona del plural. ezt es determinado, así que lleva la forma determinada mondják."
+      },
+      "wrong": {
+        "mondanak": {
+          "en": "mondanak is the indefinite form; the object ezt is definite.",
+          "es": "mondanak es la forma indeterminada; el objeto ezt es determinado."
+        },
+        "mondok": {
+          "en": "mondok is the indefinite 1st person; with the definite object ezt it would have to be mondom, and the question is about people in general anyway.",
+          "es": "mondok es la 1.ª persona indeterminada; con el objeto determinado ezt tendría que ser mondom, y la pregunta es sobre la gente en general."
+        }
+      },
+      "examples": [
+        "Itt jól fizetnek.",
+        "Ezt a szót hogy írják?"
+      ],
+      "tr": {
+        "en": "I do not know how you say this in Hungarian.",
+        "es": "No sé cómo se dice esto en húngaro."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-f02",
+      "kind": "form",
+      "verb": "megold",
+      "person": "ők, ezt (jelen)",
+      "answer": "megoldják",
+      "table": "ok-3pl"
+    },
+    {
+      "id": "szenvedo-szerkezetek-c03",
+      "sentence": "Az utcánkban tavaly ___ egy régi házat, mert már nem lakott benne senki.",
+      "options": [
+        "lebontották",
+        "lebontani",
+        "lebontottak"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "An old house was torn down and nobody is named: 3rd plural. The object egy régi házat is indefinite, so the indefinite ending: lebontottak.",
+        "es": "Se derribó una casa vieja y no se nombra a nadie: 3.ª plural. El objeto egy régi házat es indeterminado, así que lleva la terminación indeterminada: lebontottak."
+      },
+      "wrong": {
+        "lebontották": {
+          "en": "lebontották is the definite form; it needs a definite object such as a régi házat.",
+          "es": "lebontották es la forma determinada; necesita un objeto determinado como a régi házat."
+        },
+        "lebontani": {
+          "en": "lebontani is an infinitive; it cannot be the finished verb of the sentence.",
+          "es": "lebontani es un infinitivo; no puede ser el verbo conjugado de la oración."
+        }
+      },
+      "examples": [
+        "Itt hétkor bezárnak.",
+        "Itt jól fizetnek."
+      ],
+      "tr": {
+        "en": "Last year they tore down an old house in our street because nobody lived in it anymore.",
+        "es": "El año pasado derribaron una casa vieja en nuestra calle porque ya no vivía nadie en ella."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-w01",
+      "kind": "why",
+      "es": "Megjavították az autót.",
+      "target": "Megjavították",
+      "tr": {
+        "en": "They repaired the car (the car was repaired).",
+        "es": "Repararon el coche."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "3rd person plural with no subject: somebody repaired it, you do not say who",
+            "es": "3.ª persona del plural sin sujeto: alguien lo reparó, no dices quién"
+          }
+        },
+        {
+          "text": {
+            "en": "Passive voice with a passive ending",
+            "es": "Voz pasiva con una terminación pasiva"
+          },
+          "wrong": {
+            "en": "Hungarian has no passive ending. With this rule you would expect a special suffix on the verb, but megjavították is an ordinary active 3rd plural.",
+            "es": "El húngaro no tiene terminación pasiva. Con esta regla esperarías un sufijo especial en el verbo, pero megjavították es una 3.ª plural activa normal."
+          }
+        },
+        {
+          "text": {
+            "en": "1st person plural: we repaired it",
+            "es": "1.ª persona del plural: lo reparamos nosotros"
+          },
+          "wrong": {
+            "en": "With this rule the form would be megjavítottuk; -ták/-ték marks ők.",
+            "es": "Con esta regla la forma sería megjavítottuk; -ták/-ték marca a ők."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szenvedo-szerkezetek-c04",
+      "sentence": "Amikor beléptünk, az ajtó hirtelen ___ mögöttünk.",
+      "options": [
+        "becsukták",
+        "becsukódott",
+        "becsukta"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The door is the subject and nobody is named: the -ódik verb says that it closed (by itself or by accident).",
+        "es": "La puerta es el sujeto y no se nombra a nadie: el verbo en -ódik dice que se cerró (sola o sin querer)."
+      },
+      "wrong": {
+        "becsukták": {
+          "en": "becsukták needs an object (becsukták az ajtót, they closed the door); here az ajtó is the subject.",
+          "es": "becsukták necesita un objeto (becsukták az ajtót, cerraron la puerta); aquí az ajtó es el sujeto."
+        },
+        "becsukta": {
+          "en": "becsukta also needs an object (he or she closed it); with this verb the door cannot close itself.",
+          "es": "becsukta también necesita un objeto (él o ella la cerró); con este verbo la puerta no puede cerrarse sola."
+        }
+      },
+      "examples": [
+        "Az ablak lassan kinyílt.",
+        "A vizsga nyolckor kezdődött."
+      ],
+      "tr": {
+        "en": "When we came in, the door suddenly closed behind us.",
+        "es": "Cuando entramos, la puerta se cerró de repente detrás de nosotros."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-f03",
+      "kind": "form",
+      "verb": "elintéz",
+      "person": "ők, valamit (múlt)",
+      "answer": "elintéztek",
+      "table": "ok-3pl"
+    },
+    {
+      "id": "szenvedo-szerkezetek-f04",
+      "kind": "form",
+      "verb": "aláír",
+      "person": "ők, ezt (múlt)",
+      "answer": "aláírták",
+      "table": "ok-3pl"
+    },
+    {
+      "id": "szenvedo-szerkezetek-c05",
+      "sentence": "___ az ajtót, aztán elmentek.",
+      "options": [
+        "Becsukták",
+        "Becsukódott",
+        "Becsukódtak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The door is the object (az ajtót) and the doers are not named: 3rd plural, becsukták.",
+        "es": "La puerta es el objeto (az ajtót) y no se nombra a los autores: 3.ª plural, becsukták."
+      },
+      "wrong": {
+        "Becsukódott": {
+          "en": "Becsukódott is the \"closed by itself\" verb; it cannot take an object, and the sentence has az ajtót.",
+          "es": "Becsukódott es el verbo «se cerró solo»; no admite objeto y la oración tiene az ajtót."
+        },
+        "Becsukódtak": {
+          "en": "Becsukódtak is also intransitive (and plural); it still cannot take az ajtót.",
+          "es": "Becsukódtak también es intransitivo (y plural); sigue sin admitir az ajtót."
+        }
+      },
+      "examples": [
+        "Kinyitották az ajtót, aztán bementünk.",
+        "Bezárták a boltot, aztán hazamentek."
+      ],
+      "tr": {
+        "en": "They closed the door, then they left.",
+        "es": "Cerraron la puerta, luego se fueron."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-c06",
+      "sentence": "A vizsga holnap nyolckor ___, ezért korán kell kelnem.",
+      "options": [
+        "kezdik",
+        "kezd",
+        "kezdődik"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The exam is the subject and it happens by itself: the -ődik verb kezdődik (it starts).",
+        "es": "El examen es el sujeto y ocurre por sí solo: el verbo en -ődik kezdődik (empieza)."
+      },
+      "wrong": {
+        "kezdik": {
+          "en": "kezdik means \"they start it\" and needs an object: A vizsgát nyolckor kezdik.",
+          "es": "kezdik significa «lo empiezan» y necesita un objeto: A vizsgát nyolckor kezdik."
+        },
+        "kezd": {
+          "en": "kezd means \"he or she starts (something)\"; it needs a person who starts, not the exam.",
+          "es": "kezd significa «él o ella empieza (algo)»; necesita una persona que empiece, no el examen."
+        }
+      },
+      "examples": [
+        "Az óra kilenckor kezdődik.",
+        "A találkozó három órakor kezdődik."
+      ],
+      "tr": {
+        "en": "The exam starts at eight tomorrow, so I have to get up early.",
+        "es": "El examen empieza mañana a las ocho, así que tengo que levantarme temprano."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-w02",
+      "kind": "why",
+      "es": "Az ajtó becsukódott.",
+      "target": "becsukódott",
+      "tr": {
+        "en": "The door closed.",
+        "es": "La puerta se cerró."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A verb in -ódik: the door closed, no doer in the picture",
+            "es": "Un verbo en -ódik: la puerta se cerró, sin autor en escena"
+          }
+        },
+        {
+          "text": {
+            "en": "A passive form: the door was closed by someone",
+            "es": "Una forma pasiva: la puerta fue cerrada por alguien"
+          },
+          "wrong": {
+            "en": "Hungarian has no passive form. becsukódik is a verb of its own, with az ajtó as its subject.",
+            "es": "El húngaro no tiene forma pasiva. becsukódik es un verbo propio, con az ajtó como sujeto."
+          }
+        },
+        {
+          "text": {
+            "en": "3rd person plural: they closed the door",
+            "es": "3.ª persona del plural: cerraron la puerta"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Becsukták az ajtót, with the door as an object in -t.",
+            "es": "Con esta regla la oración sería Becsukták az ajtót, con la puerta como objeto en -t."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szenvedo-szerkezetek-f05",
+      "kind": "form",
+      "verb": "becsuk",
+      "person": "ő, múlt",
+      "answer": "becsukódott",
+      "table": "ik-folyamat"
+    },
+    {
+      "id": "szenvedo-szerkezetek-c07",
+      "sentence": "Ez a mondat nem ___, mert nagyon hosszú.",
+      "options": [
+        "értő",
+        "érteni",
+        "érthető"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "-hető turns ért into \"can be understood\": nem érthető = not understandable.",
+        "es": "-hető convierte ért en «se puede entender»: nem érthető = incomprensible."
+      },
+      "wrong": {
+        "értő": {
+          "en": "értő means \"understanding\" (a person who understands); a sentence understands nothing.",
+          "es": "értő significa «que entiende» (una persona que entiende); una frase no entiende nada."
+        },
+        "érteni": {
+          "en": "érteni is an infinitive; a bare infinitive cannot be the predicate here (it would need lehet: Ezt nem lehet érteni).",
+          "es": "érteni es un infinitivo; un infinitivo solo no puede ser el predicado aquí (haría falta lehet: Ezt nem lehet érteni)."
+        }
+      },
+      "examples": [
+        "A szöveg jól olvasható.",
+        "A hang nem hallható."
+      ],
+      "tr": {
+        "en": "This sentence is not understandable because it is very long.",
+        "es": "Esta frase no se entiende porque es muy larga."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-f06",
+      "kind": "form",
+      "verb": "megold",
+      "person": "ő, jelen",
+      "answer": "megoldódik",
+      "table": "ik-folyamat"
+    },
+    {
+      "id": "szenvedo-szerkezetek-c08",
+      "sentence": "A jegyek az interneten is ___, ezért nem kell sorban állni.",
+      "options": [
+        "megvásárolhatók",
+        "megvásárolhatnak",
+        "megvásárolható"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The -ható/-hető adjective agrees with a plural subject: the jegyek are megvásárolhatók.",
+        "es": "El adjetivo -ható/-hető concuerda con un sujeto plural: los jegyek son megvásárolhatók."
+      },
+      "wrong": {
+        "megvásárolhatnak": {
+          "en": "megvásárolhatnak is a verb (\"they can buy\"); tickets do not buy anything.",
+          "es": "megvásárolhatnak es un verbo («pueden comprar»); los boletos no compran nada."
+        },
+        "megvásárolható": {
+          "en": "megvásárolható is singular; a predicate adjective must be plural after a plural subject (A házak nagyok).",
+          "es": "megvásárolható es singular; un adjetivo predicativo debe ir en plural tras un sujeto plural (A házak nagyok)."
+        }
+      },
+      "examples": [
+        "A jegy az interneten is megvásárolható.",
+        "A mondatok nem érthetők."
+      ],
+      "tr": {
+        "en": "The tickets can also be bought on the internet, so you do not have to queue.",
+        "es": "Los boletos también se pueden comprar por internet, así que no hace falta hacer fila."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-c09",
+      "sentence": "Ha közelebb mész, az ajtó magától ___.",
+      "options": [
+        "kinyitják",
+        "kinyitja",
+        "kinyílik"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The door is the subject and it simply opens by itself: kinyílik. Compare Az ajtót kinyitják (somebody opens it).",
+        "es": "La puerta es el sujeto y simplemente se abre sola: kinyílik. Compara Az ajtót kinyitják (alguien la abre)."
+      },
+      "wrong": {
+        "kinyitják": {
+          "en": "kinyitják (they open it) needs an object: Az ajtót kinyitják.",
+          "es": "kinyitják (la abren) necesita un objeto: Az ajtót kinyitják."
+        },
+        "kinyitja": {
+          "en": "kinyitja (he or she opens it) also needs an object and a person who opens.",
+          "es": "kinyitja (él o ella la abre) también necesita un objeto y una persona que abra."
+        }
+      },
+      "examples": [
+        "Az ajtó lassan kinyílt.",
+        "Az ablak hirtelen kinyílt."
+      ],
+      "tr": {
+        "en": "If you go closer, the door opens by itself.",
+        "es": "Si te acercas, la puerta se abre sola."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-w03",
+      "kind": "why",
+      "es": "Itt nem lehet dohányozni.",
+      "target": "nem lehet dohányozni",
+      "tr": {
+        "en": "Smoking is not allowed here.",
+        "es": "Aquí no se puede fumar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "lehet + infinitive: a general possibility or permission, no named person",
+            "es": "lehet + infinitivo: una posibilidad o permiso general, sin persona nombrada"
+          }
+        },
+        {
+          "text": {
+            "en": "A -ható/-hető adjective",
+            "es": "Un adjetivo en -ható/-hető"
+          },
+          "wrong": {
+            "en": "With this rule it would be an adjective such as dohányozható; here the pattern is lehet + a bare infinitive.",
+            "es": "Con esta regla sería un adjetivo como dohányozható; aquí el patrón es lehet + un infinitivo simple."
+          }
+        },
+        {
+          "text": {
+            "en": "Infinitive with a personal ending: somebody has to",
+            "es": "Infinitivo con terminación personal: alguien tiene que"
+          },
+          "wrong": {
+            "en": "With this rule the infinitive would carry an ending (dohányoznom) and a person would be named; here the infinitive is bare, so it is general.",
+            "es": "Con esta regla el infinitivo llevaría una terminación (dohányoznom) y se nombraría a una persona; aquí el infinitivo es simple, así que es general."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szenvedo-szerkezetek-f07",
+      "kind": "form",
+      "verb": "kezd",
+      "person": "ő, múlt",
+      "answer": "kezdődött",
+      "table": "ik-folyamat"
+    },
+    {
+      "id": "szenvedo-szerkezetek-f08",
+      "kind": "form",
+      "verb": "kinyit",
+      "person": "ő, jelen",
+      "answer": "kinyílik",
+      "table": "ik-folyamat"
+    },
+    {
+      "id": "szenvedo-szerkezetek-c10",
+      "sentence": "Szerintem ___ nem lehet lefordítani spanyolra.",
+      "options": [
+        "ez a szó",
+        "ezt a szót",
+        "ezzel a szóval"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With lehet + infinitive the thing stays the object of the infinitive: accusative -t, Ezt a szót nem lehet lefordítani.",
+        "es": "Con lehet + infinitivo la cosa sigue siendo objeto del infinitivo: acusativo -t, Ezt a szót nem lehet lefordítani."
+      },
+      "wrong": {
+        "ez a szó": {
+          "en": "ez a szó would be the subject of lehet; Hungarian keeps the accusative here, as in an active sentence (lefordítani ezt a szót).",
+          "es": "ez a szó sería el sujeto de lehet; el húngaro mantiene aquí el acusativo, como en una oración activa (lefordítani ezt a szót)."
+        },
+        "ezzel a szóval": {
+          "en": "ezzel a szóval means \"with this word\"; nothing is translated with a word here.",
+          "es": "ezzel a szóval significa «con esta palabra»; aquí no se traduce nada con una palabra."
+        }
+      },
+      "examples": [
+        "Ezt a mondatot nem lehet megérteni.",
+        "A jegyet az interneten is meg lehet venni."
+      ],
+      "tr": {
+        "en": "I think this word cannot be translated into Spanish.",
+        "es": "Creo que esta palabra no se puede traducir al español."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-c11",
+      "sentence": "Az autót tegnap ___ javította meg, nem a szerelő.",
+      "options": [
+        "Gábor",
+        "Gábort",
+        "Gáboré"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "To name the doer, put him or her right before the verb, in the nominative: Az autót Gábor javította meg (it was Gábor who repaired it).",
+        "es": "Para nombrar al autor, ponlo justo antes del verbo, en nominativo: Az autót Gábor javította meg (fue Gábor quien lo reparó)."
+      },
+      "wrong": {
+        "Gábort": {
+          "en": "Gábort is the accusative (the one who is repaired); the car is already the object.",
+          "es": "Gábort es el acusativo (el reparado); el coche ya es el objeto."
+        },
+        "Gáboré": {
+          "en": "Gáboré means \"Gábor's (one)\"; it does not name the person who acted.",
+          "es": "Gáboré significa «el de Gábor»; no nombra a la persona que actuó."
+        }
+      },
+      "examples": [
+        "A levelet Anna írta.",
+        "A szerződést a főnök írta alá."
+      ],
+      "tr": {
+        "en": "The car was repaired yesterday by Gábor, not by the mechanic.",
+        "es": "El coche lo reparó ayer Gábor, no el mecánico."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-f09",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "többes szám",
+      "answer": "olvashatók",
+      "table": "hato-heto"
+    },
+    {
+      "id": "szenvedo-szerkezetek-c12",
+      "sentence": "A cég által ___ szabályok szerint itt nem szabad dohányozni.",
+      "options": [
+        "elfogadó",
+        "elfogadják",
+        "elfogadott"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In formal writing the doer follows által and the participle ends the phrase: a cég által elfogadott szabályok = the rules adopted by the company.",
+        "es": "En la escritura formal el autor va con által y el participio cierra la frase: a cég által elfogadott szabályok = las reglas adoptadas por la empresa."
+      },
+      "wrong": {
+        "elfogadó": {
+          "en": "elfogadó means \"accepting\"; the rules would be the ones that accept something.",
+          "es": "elfogadó significa «que acepta»; las reglas serían las que aceptan algo."
+        },
+        "elfogadják": {
+          "en": "elfogadják is a finite verb (they accept it); it cannot stand in front of szabályok as a description.",
+          "es": "elfogadják es un verbo conjugado (lo aceptan); no puede ir delante de szabályok como descripción."
+        }
+      },
+      "examples": [
+        "A hivatal által küldött levél szerint nem kell fizetnem.",
+        "A főnök által aláírt szerződés szerint januárban kezdünk."
+      ],
+      "tr": {
+        "en": "According to the rules adopted by the company, smoking is not allowed here.",
+        "es": "Según las reglas que adoptó la empresa, aquí no está permitido fumar."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-w04",
+      "kind": "why",
+      "es": "A szerződést a főnök írta alá.",
+      "target": "a főnök",
+      "tr": {
+        "en": "The contract was signed by the boss.",
+        "es": "El contrato lo firmó el jefe."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The doer stands right before the verb: it is the stressed word, \"it was the boss who...\"",
+            "es": "El autor va justo antes del verbo: es la palabra acentuada, «fue el jefe quien...»"
+          }
+        },
+        {
+          "text": {
+            "en": "The doer follows által",
+            "es": "El autor va con által"
+          },
+          "wrong": {
+            "en": "With this rule it would be a participle phrase, a főnök által aláírt szerződés; here the sentence has a finite verb, írta alá.",
+            "es": "Con esta regla sería una frase de participio, a főnök által aláírt szerződés; aquí la oración tiene un verbo conjugado, írta alá."
+          }
+        },
+        {
+          "text": {
+            "en": "The doer is in the dative: for the boss",
+            "es": "El autor está en dativo: para el jefe"
+          },
+          "wrong": {
+            "en": "With this rule it would be a főnöknek; the dative names who receives or benefits, not who acts.",
+            "es": "Con esta regla sería a főnöknek; el dativo nombra a quien recibe o se beneficia, no a quien actúa."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szenvedo-szerkezetek-c13",
+      "sentence": "Ez a víz nem ___, ezért ne igyál belőle!",
+      "options": [
+        "ihat",
+        "iható",
+        "ivott"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "-ható/-hető says \"can be done to it\": iható = drinkable (from iszik).",
+        "es": "-ható/-hető dice «se puede hacer con ello»: iható = potable (de iszik)."
+      },
+      "wrong": {
+        "ihat": {
+          "en": "ihat is a verb (\"he or she may drink\"); the water cannot drink.",
+          "es": "ihat es un verbo («él o ella puede beber»); el agua no puede beber."
+        },
+        "ivott": {
+          "en": "ivott is the past tense of iszik (\"drank\"); water does not drink.",
+          "es": "ivott es el pasado de iszik («bebió»); el agua no bebe."
+        }
+      },
+      "examples": [
+        "A leves még nem ehető.",
+        "A kávé már iható."
+      ],
+      "tr": {
+        "en": "This water is not drinkable, so do not drink from it!",
+        "es": "Esta agua no es potable, ¡así que no bebas de ella!"
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-f10",
+      "kind": "form",
+      "verb": "ért",
+      "person": "egyes szám",
+      "answer": "érthető",
+      "table": "hato-heto"
+    },
+    {
+      "id": "szenvedo-szerkezetek-f11",
+      "kind": "form",
+      "verb": "lát",
+      "person": "többes szám",
+      "answer": "láthatók",
+      "table": "hato-heto"
+    },
+    {
+      "id": "szenvedo-szerkezetek-c14",
+      "sentence": "Itt kártyával is ___ fizetni, ha nincs nálad pénz.",
+      "options": [
+        "lehetek",
+        "lehetnek",
+        "lehet"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "lehet does not agree with anything: Itt lehet fizetni = one can pay here. No person, no ending.",
+        "es": "lehet no concuerda con nada: Itt lehet fizetni = aquí se puede pagar. Sin persona, sin terminación."
+      },
+      "wrong": {
+        "lehetek": {
+          "en": "lehetek means \"I can be\" (from lenni); it is not the impersonal \"it is possible\".",
+          "es": "lehetek significa «puedo ser» (de lenni); no es el impersonal «es posible»."
+        },
+        "lehetnek": {
+          "en": "lehetnek means \"they can be\"; the impersonal lehet stays singular.",
+          "es": "lehetnek significa «pueden ser»; el impersonal lehet queda en singular."
+        }
+      },
+      "examples": [
+        "Itt nem lehet dohányozni.",
+        "Ott nem lehet parkolni."
+      ],
+      "tr": {
+        "en": "You can pay by card here too, if you have no cash on you.",
+        "es": "Aquí también se puede pagar con tarjeta, si no traes dinero."
+      }
+    },
+    {
+      "id": "szenvedo-szerkezetek-f12",
+      "kind": "form",
+      "verb": "hall",
+      "person": "egyes szám",
+      "answer": "hallható",
+      "table": "hato-heto"
+    }
+  ]
+}

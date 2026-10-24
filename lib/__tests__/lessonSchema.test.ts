@@ -266,16 +266,16 @@ const huLessons: [string, LessonV2][] = fs
   .map((f) => [f, JSON.parse(fs.readFileSync(path.join(HU_DIR, f), 'utf8')) as LessonV2] as [string, LessonV2]);
 
 describe('Hungarian course lessons', () => {
-  it('are the 40 lessons of the course', () => {
-    expect(huLessons).toHaveLength(40);
+  it('are the 75 lessons of the course', () => {
+    expect(huLessons).toHaveLength(75);
   });
 });
 
 describe.each(huLessons)('hu/%s is a valid LessonV2', (file, lesson) => {
-  it('declares schema 2, its topic is the file name, level A1 or A2, no legacy fields', () => {
+  it('declares schema 2, its topic is the file name, level A1 to C1, no legacy fields', () => {
     expect(lesson.schema).toBe(2);
     expect(lesson.topic).toBe(file.replace(/\.json$/, ''));
-    expect(['A1', 'A2']).toContain(lesson.level);
+    expect(['A1', 'A2', 'B1', 'B2', 'C1']).toContain(lesson.level);
     expect('rule' in lesson).toBe(false);
     expect('more' in lesson).toBe(false);
     for (const lang of LANGS) expect(lesson.title[lang]).toBeTruthy();
@@ -302,10 +302,12 @@ describe.each(huLessons)('hu/%s is a valid LessonV2', (file, lesson) => {
     }
   });
 
-  it('is choice, form and why only: 14 choice, 12 form, 4 why, every id unique', () => {
+  it('is choice, form and why only: 14 choice (B1-C1: at least 14), 12 form, 4 why, every id unique', () => {
     const kinds = lesson.items.map((i) => i.kind ?? 'choice');
     expect(new Set(kinds)).toEqual(new Set(['choice', 'form', 'why']));
-    expect(kinds.filter((k) => k === 'choice')).toHaveLength(14);
+    const choices = kinds.filter((k) => k === 'choice');
+    if (['A1', 'A2'].includes(lesson.level)) expect(choices).toHaveLength(14);
+    else expect(choices.length).toBeGreaterThanOrEqual(14);
     expect(kinds.filter((k) => k === 'form')).toHaveLength(12);
     expect(kinds.filter((k) => k === 'why')).toHaveLength(4);
     const ids = lesson.items.map((i) => i.id);

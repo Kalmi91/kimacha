@@ -1,0 +1,1406 @@
+{
+  "schema": 2,
+  "topic": "befejezett-folyamatos",
+  "level": "B1",
+  "title": {
+    "en": "Done or still going: olvastam vs elolvastam",
+    "es": "Terminado o en curso: olvastam vs elolvastam"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has no continuous tense and no 'have done' tense: Olvastam can mean 'I read', 'I was reading' or 'I have read'. What it has is a small prefix in front of the verb. The bare verb names the activity: Olvastam egy könyvet (I read a book, I was reading a book; nothing is said about the end). With meg- or el- the verb names the result: Elolvastam a könyvet (I have read the book to the end). English says 'finish reading' or 'have read'; Spanish says 'terminé de leer' or switches between pretérito and imperfecto; Hungarian just adds the prefix. Three more tools complete the picture: már and még nem for 'already' and 'not yet', szokott for habits (Reggel kávét szoktam inni) and épp / éppen for 'right now' (Épp főzök).",
+        "es": "El húngaro no tiene tiempo continuo ni un tiempo para «haber hecho»: Olvastam puede ser «leí», «leía» o «he leído». Lo que sí tiene es un prefijo delante del verbo. El verbo solo nombra la actividad: Olvastam egy könyvet (leí un libro, estaba leyendo un libro; no se dice nada del final). Con meg- o el- el verbo nombra el resultado: Elolvastam a könyvet (leí el libro hasta el final). El inglés dice «finish reading» o «have read»; el español dice «terminé de leer» o alterna entre pretérito e imperfecto; el húngaro solo añade el prefijo. Tres herramientas más completan el cuadro: már y még nem para «ya» y «todavía no», szokott para costumbres (Reggel kávét szoktam inni) y épp / éppen para «ahora mismo» (Épp főzök)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "finished-forms",
+      "title": {
+        "en": "Result verbs in the past tense (definite object)",
+        "es": "Verbos de resultado en pasado (objeto determinado)"
+      },
+      "header": [
+        {
+          "en": "Form",
+          "es": "Forma"
+        },
+        {
+          "en": "olvasni (to read)",
+          "es": "olvasni (leer)"
+        },
+        {
+          "en": "enni (to eat)",
+          "es": "enni (comer)"
+        },
+        {
+          "en": "írni (to write)",
+          "es": "írni (escribir)"
+        },
+        {
+          "en": "tanulni (to learn)",
+          "es": "tanulni (aprender)"
+        }
+      ],
+      "rows": [
+        [
+          "-ni",
+          "elolvasni",
+          "megenni",
+          "megírni",
+          "megtanulni"
+        ],
+        [
+          "én",
+          "elolvastam",
+          "megettem",
+          "megírtam",
+          "megtanultam"
+        ],
+        [
+          "te",
+          "elolvastad",
+          "megetted",
+          "megírtad",
+          "megtanultad"
+        ],
+        [
+          "ő",
+          "elolvasta",
+          "megette",
+          "megírta",
+          "megtanulta"
+        ],
+        [
+          "mi",
+          "elolvastuk",
+          "megettük",
+          "megírtuk",
+          "megtanultuk"
+        ],
+        [
+          "ti",
+          "elolvastátok",
+          "megettétek",
+          "megírtátok",
+          "megtanultátok"
+        ],
+        [
+          "ők",
+          "elolvasták",
+          "megették",
+          "megírták",
+          "megtanulták"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Activity or result?",
+        "es": "¿Actividad o resultado?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A bare verb names the activity: what you did and for how long, with no claim that you reached the end.",
+            "es": "El verbo solo nombra la actividad: qué hiciste y cuánto tiempo, sin afirmar que llegaste al final."
+          },
+          "examples": [
+            {
+              "es": "Tegnap két órát olvastam.",
+              "tr": {
+                "en": "Yesterday I read for two hours.",
+                "es": "Ayer leí durante dos horas."
+              }
+            },
+            {
+              "es": "Vasárnap sokat főztem.",
+              "tr": {
+                "en": "On Sunday I cooked a lot.",
+                "es": "El domingo cociné mucho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "meg- or el- names the result: the thing is read, eaten, written, done. The object is usually definite (a könyvet, a levest, a levelet), so the verb is in the definite conjugation.",
+            "es": "meg- o el- nombra el resultado: la cosa está leída, comida, escrita, hecha. El objeto suele ser determinado (a könyvet, a levest, a levelet), así que el verbo va en la conjugación definida."
+          },
+          "examples": [
+            {
+              "es": "Elolvastam a könyvet.",
+              "tr": {
+                "en": "I have read the book (to the end).",
+                "es": "Leí el libro (hasta el final)."
+              }
+            },
+            {
+              "es": "Megettem a levest.",
+              "tr": {
+                "en": "I have eaten up the soup.",
+                "es": "Me comí toda la sopa."
+              }
+            },
+            {
+              "es": "Megírtam a levelet.",
+              "tr": {
+                "en": "I have written the letter.",
+                "es": "Escribí la carta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A prefixed verb in the present tense looks ahead: it is the result I will reach. To say 'I am doing it now', use the bare verb (and épp, see below).",
+            "es": "Un verbo con prefijo en presente mira hacia delante: es el resultado que voy a lograr. Para decir «lo estoy haciendo ahora» usa el verbo sin prefijo (y épp, más abajo)."
+          },
+          "examples": [
+            {
+              "es": "Holnap megcsinálom a házi feladatot.",
+              "tr": {
+                "en": "Tomorrow I will do my homework.",
+                "es": "Mañana hago la tarea."
+              }
+            },
+            {
+              "es": "Vasárnap megfőzöm a vacsorát.",
+              "tr": {
+                "en": "On Sunday I will cook dinner.",
+                "es": "El domingo preparo la cena."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "aspect-pairs",
+      "title": {
+        "en": "Activity and result",
+        "es": "Actividad y resultado"
+      },
+      "header": [
+        {
+          "en": "Activity",
+          "es": "Actividad"
+        },
+        {
+          "en": "Result",
+          "es": "Resultado"
+        }
+      ],
+      "rows": [
+        [
+          "olvasni",
+          "elolvasni"
+        ],
+        [
+          "enni",
+          "megenni"
+        ],
+        [
+          "inni",
+          "meginni"
+        ],
+        [
+          "írni",
+          "megírni"
+        ],
+        [
+          "csinálni",
+          "megcsinálni"
+        ],
+        [
+          "tanulni",
+          "megtanulni"
+        ],
+        [
+          "nézni",
+          "megnézni"
+        ],
+        [
+          "főzni",
+          "megfőzni"
+        ],
+        [
+          "készíteni",
+          "elkészíteni"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "már and még nem: done or not yet",
+        "es": "már y még nem: ya o todavía no"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "már + a result verb = already done.",
+            "es": "már + un verbo de resultado = ya está hecho."
+          },
+          "examples": [
+            {
+              "es": "Már megettem a levest.",
+              "tr": {
+                "en": "I have already eaten up the soup.",
+                "es": "Ya me comí toda la sopa."
+              }
+            },
+            {
+              "es": "Már elolvastam a levelet.",
+              "tr": {
+                "en": "I have already read the letter.",
+                "es": "Ya leí la carta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "még nem = not yet. After nem the prefix steps behind the verb (the rule from the A2 lesson on prefix word order): nem ettem meg.",
+            "es": "még nem = todavía no. Después de nem el prefijo pasa detrás del verbo (la regla de la lección A2 sobre el orden del prefijo): nem ettem meg."
+          },
+          "examples": [
+            {
+              "es": "Még nem ettem meg a levest.",
+              "tr": {
+                "en": "I have not eaten up the soup yet.",
+                "es": "Todavía no me he comido la sopa."
+              }
+            },
+            {
+              "es": "Még nem néztem meg a filmet.",
+              "tr": {
+                "en": "I have not seen the film yet.",
+                "es": "Todavía no he visto la película."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Without an object the bare verb is enough to talk about a meal in general: Már ettem = I have already eaten. Még nem ettem = I have not eaten yet.",
+            "es": "Sin objeto basta el verbo sin prefijo para hablar de una comida en general: Már ettem = ya comí. Még nem ettem = todavía no he comido."
+          },
+          "examples": [
+            {
+              "es": "Már ettem, köszönöm.",
+              "tr": {
+                "en": "I have already eaten, thank you.",
+                "es": "Ya comí, gracias."
+              }
+            },
+            {
+              "es": "Még nem ettem, nagyon éhes vagyok.",
+              "tr": {
+                "en": "I have not eaten yet, I am very hungry.",
+                "es": "Todavía no he comido, tengo mucha hambre."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "szokott-forms",
+      "title": {
+        "en": "szokik: usually do",
+        "es": "szokik: soler"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "szokik (usually do)",
+          "es": "szokik (soler)"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "szoktam",
+          "Reggel kávét szoktam inni."
+        ],
+        [
+          "te",
+          "szoktál",
+          "Mit szoktál enni reggelire?"
+        ],
+        [
+          "ő",
+          "szokott",
+          "Anna vasárnap sokáig szokott aludni."
+        ],
+        [
+          "mi",
+          "szoktunk",
+          "Hétvégén sokat szoktunk főzni."
+        ],
+        [
+          "ti",
+          "szoktatok",
+          "Mikor szoktatok vacsorázni?"
+        ],
+        [
+          "ők",
+          "szoktak",
+          "A szomszédok gyakran szoktak sétálni a parkban."
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "szokott + infinitive: habits",
+        "es": "szokott + infinitivo: costumbres"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "szokik changes for the person (szoktam, szoktál, szokott...) and the second verb stays an infinitive. The form looks like a past tense, but it means 'usually' now.",
+            "es": "szokik cambia con la persona (szoktam, szoktál, szokott...) y el segundo verbo se queda en infinitivo. La forma parece pasado, pero ahora significa «suelo»."
+          },
+          "examples": [
+            {
+              "es": "Reggel kávét szoktam inni.",
+              "tr": {
+                "en": "In the morning I usually drink coffee.",
+                "es": "Por la mañana suelo tomar café."
+              }
+            },
+            {
+              "es": "Hétvégén sokáig szoktunk aludni.",
+              "tr": {
+                "en": "At weekends we usually sleep late.",
+                "es": "Los fines de semana solemos dormir hasta tarde."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Negative and question: nem goes before szokott, and the question word stands right in front of it: nem szoktam, hol szoktatok.",
+            "es": "Negativo y pregunta: nem va antes de szokott y la palabra interrogativa va justo delante: nem szoktam, hol szoktatok."
+          },
+          "examples": [
+            {
+              "es": "Nem szoktam korán kelni.",
+              "tr": {
+                "en": "I do not usually get up early.",
+                "es": "No suelo levantarme temprano."
+              }
+            },
+            {
+              "es": "Hol szoktatok vacsorázni?",
+              "tr": {
+                "en": "Where do you usually have dinner?",
+                "es": "¿Dónde suelen cenar?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A habit in the past has no special form: use the plain past tense with a time word (tavaly, minden nap).",
+            "es": "Una costumbre en el pasado no tiene forma especial: usa el pasado simple con una palabra de tiempo (tavaly, minden nap)."
+          },
+          "examples": [
+            {
+              "es": "Tavaly minden nap futottam.",
+              "tr": {
+                "en": "Last year I ran every day.",
+                "es": "El año pasado corría todos los días."
+              }
+            },
+            {
+              "es": "Tavaly sokat úsztam.",
+              "tr": {
+                "en": "Last year I swam a lot.",
+                "es": "El año pasado nadaba mucho."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "épp, éppen: right now",
+        "es": "épp, éppen: ahora mismo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The present tense already means 'I am doing it'. épp or éppen only stresses that it is happening right now.",
+            "es": "El presente ya significa «lo estoy haciendo». épp o éppen solo subraya que ocurre ahora mismo."
+          },
+          "examples": [
+            {
+              "es": "Épp főzök.",
+              "tr": {
+                "en": "I am just cooking.",
+                "es": "Estoy cocinando ahora mismo."
+              }
+            },
+            {
+              "es": "Éppen olvasom a levelet.",
+              "tr": {
+                "en": "I am just reading the letter.",
+                "es": "Estoy leyendo la carta ahora mismo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With the past tense and amikor it says what you were in the middle of when something happened. Hungarian uses the plain past: there is no 'was doing' tense.",
+            "es": "Con el pasado y amikor dice qué estabas haciendo cuando ocurrió algo. El húngaro usa el pasado simple: no existe un tiempo «estaba haciendo»."
+          },
+          "examples": [
+            {
+              "es": "Épp vacsoráztunk, amikor Gábor hívott.",
+              "tr": {
+                "en": "We were having dinner when Gábor called.",
+                "es": "Estábamos cenando cuando llamó Gábor."
+              }
+            },
+            {
+              "es": "Épp aludtam, amikor Anna hívott.",
+              "tr": {
+                "en": "I was asleep when Anna called.",
+                "es": "Estaba durmiendo cuando llamó Anna."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Short answers: épp most (right now), épp indulok (I am just leaving), épp most érkeztem (I have just arrived).",
+            "es": "Respuestas cortas: épp most (ahora mismo), épp indulok (estoy saliendo), épp most érkeztem (acabo de llegar)."
+          },
+          "examples": [
+            {
+              "es": "Mit csinálsz? Épp most indulok.",
+              "tr": {
+                "en": "What are you doing? I am just leaving.",
+                "es": "¿Qué haces? Estoy saliendo ahora mismo."
+              }
+            },
+            {
+              "es": "Épp most érkeztem haza.",
+              "tr": {
+                "en": "I have just arrived home.",
+                "es": "Acabo de llegar a casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Activity or result, now or soon",
+        "es": "Actividad o resultado, ahora o pronto"
+      },
+      "pairs": [
+        {
+          "a": "Olvastam egy könyvet.",
+          "b": "Elolvastam a könyvet.",
+          "note": {
+            "en": "Without the prefix: I read (for a while, maybe not to the end). With el-: the book is done.",
+            "es": "Sin prefijo: leí (un rato, quizá no hasta el final). Con el-: el libro está terminado."
+          },
+          "examples": [
+            {
+              "es": "Tegnap sokat tanultam.",
+              "tr": {
+                "en": "Yesterday I studied a lot.",
+                "es": "Ayer estudié mucho."
+              }
+            },
+            {
+              "es": "Tegnap megtanultam az új szavakat.",
+              "tr": {
+                "en": "Yesterday I learned the new words.",
+                "es": "Ayer aprendí las palabras nuevas."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Nem ettem levest.",
+          "b": "Nem ettem meg a levest.",
+          "note": {
+            "en": "Nem ettem levest = I ate no soup (the activity is negated). Nem ettem meg a levest = that soup did not get eaten up (the result did not happen).",
+            "es": "Nem ettem levest = no comí sopa (se niega la actividad). Nem ettem meg a levest = esa sopa no se acabó (no se logró el resultado)."
+          },
+          "examples": [
+            {
+              "es": "Ma nem ettem semmit.",
+              "tr": {
+                "en": "I have not eaten anything today.",
+                "es": "Hoy no he comido nada."
+              }
+            },
+            {
+              "es": "A levest nem ettem meg, mert hideg volt.",
+              "tr": {
+                "en": "I did not eat the soup, because it was cold.",
+                "es": "No me comí la sopa, porque estaba fría."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Eszem a levest.",
+          "b": "Megeszem a levest.",
+          "note": {
+            "en": "The bare present: I am eating it. The prefixed present: I will eat it up (soon). Never use the second one for what is happening now.",
+            "es": "El presente sin prefijo: lo estoy comiendo. El presente con prefijo: me lo voy a comer (pronto). Nunca uses el segundo para lo que ocurre ahora."
+          },
+          "examples": [
+            {
+              "es": "Épp eszem a levest.",
+              "tr": {
+                "en": "I am eating the soup right now.",
+                "es": "Estoy comiendo la sopa ahora mismo."
+              }
+            },
+            {
+              "es": "Mindjárt megeszem a levest.",
+              "tr": {
+                "en": "I will eat up the soup in a moment.",
+                "es": "En un momento me como la sopa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Reggel kávét iszom.",
+          "b": "Reggel kávét szoktam inni.",
+          "note": {
+            "en": "Both describe a habit. The plain present is neutral; szoktam inni says \"usually\" and leaves room for exceptions.",
+            "es": "Ambas describen una costumbre. El presente simple es neutro; szoktam inni dice «suelo» y deja lugar a excepciones."
+          },
+          "examples": [
+            {
+              "es": "Hétköznap korán kelek.",
+              "tr": {
+                "en": "On weekdays I get up early.",
+                "es": "Entre semana me levanto temprano."
+              }
+            },
+            {
+              "es": "Hétköznap korán szoktam kelni.",
+              "tr": {
+                "en": "On weekdays I usually get up early.",
+                "es": "Entre semana suelo levantarme temprano."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "meg- or el-? There is no rule: learn the prefix together with the verb (elolvas, megír, megcsinál, elkészít). If you must guess, meg- is the more frequent one. Two traps. Do not say Megeszem a levest for 'I am eating the soup': that means 'I will eat it up'. And do not expect every prefix to mean 'finished': elmegyek is simply 'I leave' (see the A2 lesson on prefixes).",
+        "es": "meg- o el-? No hay regla: aprende el prefijo junto con el verbo (elolvas, megír, megcsinál, elkészít). Si tienes que adivinar, meg- es el más frecuente. Dos trampas. No digas Megeszem a levest para «estoy comiendo la sopa»: eso significa «me la voy a comer». Y no esperes que todo prefijo signifique «terminado»: elmegyek es simplemente «me voy» (mira la lección A2 sobre prefijos)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has no continuous or perfect tense. A bare verb names the activity: «Olvastam egy könyvet.» A verb with «meg» or «el» names the result: «Elolvastam a könyvet.» For the soup you ate up, you say «Megettem a levest.» The question is «Megetted már a levest?» and the answer is «Még nem ettem meg.» For habits use «szoktam» and an infinitive: «Reggel kávét szoktam inni.» And for right now, add «épp» or «éppen»: «Épp főzök.»",
+    "es": "El húngaro no tiene tiempo continuo ni perfecto. El verbo solo nombra la actividad: «Olvastam egy könyvet.» Un verbo con «meg» o «el» nombra el resultado: «Elolvastam a könyvet.» Para la sopa que te comiste entera, dices «Megettem a levest.» La pregunta es «Megetted már a levest?» y la respuesta es «Még nem ettem meg.» Para las costumbres usa «szoktam» y un infinitivo: «Reggel kávét szoktam inni.» Y para ahora mismo añade «épp» o «éppen»: «Épp főzök.»"
+  },
+  "glossary": [
+    {
+      "word": "elolvas",
+      "gloss": {
+        "en": "read through, read to the end",
+        "es": "leer completo"
+      }
+    },
+    {
+      "word": "megeszik",
+      "gloss": {
+        "en": "eat up",
+        "es": "comerse"
+      }
+    },
+    {
+      "word": "megiszik",
+      "gloss": {
+        "en": "drink up",
+        "es": "tomarse, beberse"
+      }
+    },
+    {
+      "word": "megír",
+      "gloss": {
+        "en": "write (and finish)",
+        "es": "escribir (y terminar)"
+      }
+    },
+    {
+      "word": "megcsinál",
+      "gloss": {
+        "en": "do, get done",
+        "es": "hacer, dejar hecho"
+      }
+    },
+    {
+      "word": "csinál",
+      "gloss": {
+        "en": "to do, to make",
+        "es": "hacer"
+      }
+    },
+    {
+      "word": "megtanul",
+      "gloss": {
+        "en": "learn, master",
+        "es": "aprender, dominar"
+      }
+    },
+    {
+      "word": "megnéz",
+      "gloss": {
+        "en": "watch, have a look at",
+        "es": "ver, mirar"
+      }
+    },
+    {
+      "word": "megfőz",
+      "gloss": {
+        "en": "cook (until it is ready)",
+        "es": "cocinar (hasta que esté listo)"
+      }
+    },
+    {
+      "word": "film",
+      "gloss": {
+        "en": "film, movie",
+        "es": "película"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "befejezett-folyamatos-c01",
+      "sentence": "Tegnap két órát ___, de még nem fejeztem be a könyvet.",
+      "options": [
+        "olvastam",
+        "elolvastam",
+        "olvasok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The sentence says the book is not finished yet, so the plain activity verb fits: olvastam = I read for two hours, with no claim that I reached the end.",
+        "es": "La frase dice que el libro todavía no está terminado, así que va el verbo de actividad: olvastam = leí durante dos horas, sin afirmar que llegué al final."
+      },
+      "wrong": {
+        "elolvastam": {
+          "en": "elolvastam is \"I read it to the end\"; it contradicts \"I have not finished the book\".",
+          "es": "elolvastam es «lo leí hasta el final»; contradice «todavía no terminé el libro»."
+        },
+        "olvasok": {
+          "en": "olvasok is present tense (\"I read, I am reading\"); the sentence is about yesterday (tegnap).",
+          "es": "olvasok es presente («leo, estoy leyendo»); la frase habla de ayer (tegnap)."
+        }
+      },
+      "examples": [
+        "Reggel két órát tanultam.",
+        "Tegnap sokat dolgoztam."
+      ],
+      "tr": {
+        "en": "Yesterday I read for two hours, but I have not finished the book yet.",
+        "es": "Ayer leí durante dos horas, pero todavía no he terminado el libro."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f01",
+      "kind": "form",
+      "verb": "olvasni",
+      "person": "én",
+      "answer": "elolvastam",
+      "table": "finished-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c02",
+      "sentence": "___ a házi feladatot, most már mehetünk moziba.",
+      "options": [
+        "Csináltam",
+        "Megcsináltam",
+        "Csinálok"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "\"Now we can go\" needs a finished result, so meg- + csináltam. The 1st person past ends in -m in both conjugations, so the definite object a házi feladatot changes nothing here.",
+        "es": "«Ahora ya podemos ir» necesita un resultado terminado, así que meg- + csináltam. El pasado de 1.ª persona termina en -m en las dos conjugaciones, así que el objeto determinado a házi feladatot no cambia nada aquí."
+      },
+      "wrong": {
+        "Csináltam": {
+          "en": "Csináltam is the plain activity (\"I was doing / I did my homework\"); it does not say that it is finished.",
+          "es": "Csináltam es la actividad sin más («estaba haciendo / hice la tarea»); no dice que esté terminada."
+        },
+        "Csinálok": {
+          "en": "Csinálok is present (\"I am doing it\"); the sentence reports that it is already done.",
+          "es": "Csinálok es presente («lo estoy haciendo»); la frase informa que ya está hecho."
+        }
+      },
+      "examples": [
+        "Megcsináltad a házi feladatot?",
+        "Anna megcsinálta a feladatot."
+      ],
+      "tr": {
+        "en": "I have done my homework, now we can go to the cinema.",
+        "es": "Ya hice la tarea, ahora ya podemos ir al cine."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f02",
+      "kind": "form",
+      "verb": "enni",
+      "person": "te",
+      "answer": "megetted",
+      "table": "finished-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c03",
+      "sentence": "Anna már ___ a vacsorát, ehetünk.",
+      "options": [
+        "főzte",
+        "megfőzött",
+        "megfőzte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "már and \"we can eat\" mean the cooking is finished: meg-. The object a vacsorát is definite, so the verb takes the definite ending -te: megfőzte.",
+        "es": "már y «podemos comer» significan que la cocina está terminada: meg-. El objeto a vacsorát es determinado, así que el verbo lleva la terminación definida -te: megfőzte."
+      },
+      "wrong": {
+        "főzte": {
+          "en": "főzte is the plain activity (\"she cooked / was cooking the dinner\"); it does not say that the dinner is ready.",
+          "es": "főzte es la actividad sin más («cocinó / estaba cocinando la cena»); no dice que la cena esté lista."
+        },
+        "megfőzött": {
+          "en": "megfőzött is the indefinite past (főzött) and goes with an indefinite object (megfőzött egy levest); a vacsorát is definite.",
+          "es": "megfőzött es el pasado indefinido (főzött) y va con un objeto indeterminado (megfőzött egy levest); a vacsorát es determinado."
+        }
+      },
+      "examples": [
+        "Gábor már megette a vacsorát.",
+        "Kati már megírta a levelet."
+      ],
+      "tr": {
+        "en": "Anna has already cooked dinner, we can eat.",
+        "es": "Anna ya preparó la cena, ya podemos comer."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-w01",
+      "kind": "why",
+      "es": "Elolvastam a könyvet.",
+      "target": "Elolvastam",
+      "tr": {
+        "en": "I have read the book (to the end).",
+        "es": "Leí el libro (hasta el final)."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Present tense: I am reading the book",
+            "es": "Presente: estoy leyendo el libro"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Olvasom a könyvet. Elolvastam ends in -tam: it is past.",
+            "es": "Con esta regla la frase sería Olvasom a könyvet. Elolvastam termina en -tam: es pasado."
+          }
+        },
+        {
+          "text": {
+            "en": "el- + olvastam: the result verb, the book is read to the end",
+            "es": "el- + olvastam: el verbo de resultado, el libro está leído hasta el final"
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix el- means \"away\", as in elmegyek",
+            "es": "El prefijo el- significa «lejos», como en elmegyek"
+          },
+          "wrong": {
+            "en": "With this meaning elolvastam would be something like \"I took the book away\". With olvas, el- only marks that the reading is done.",
+            "es": "Con este significado elolvastam sería algo como «me llevé el libro». Con olvas, el- solo marca que la lectura está terminada."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "befejezett-folyamatos-f03",
+      "kind": "form",
+      "verb": "írni",
+      "person": "ő",
+      "answer": "megírta",
+      "table": "finished-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c04",
+      "sentence": "Megetted már a levest? Még nem ___ meg, de mindjárt.",
+      "options": [
+        "megettem",
+        "ettem",
+        "eszem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After nem the prefix steps behind the verb: nem ettem meg (the A2 rule). The verb itself is the plain past: ettem.",
+        "es": "Después de nem el prefijo pasa detrás del verbo: nem ettem meg (la regla de A2). El verbo en sí es el pasado simple: ettem."
+      },
+      "wrong": {
+        "megettem": {
+          "en": "megettem keeps the prefix attached, which is the form without nem (Megettem). After nem the prefix goes behind: nem ettem meg.",
+          "es": "megettem conserva el prefijo pegado, que es la forma sin nem (Megettem). Después de nem el prefijo va detrás: nem ettem meg."
+        },
+        "eszem": {
+          "en": "eszem is present tense (\"I am not eating it yet\"); the question is about the past (megetted).",
+          "es": "eszem es presente («todavía no lo como»); la pregunta es sobre el pasado (megetted)."
+        }
+      },
+      "examples": [
+        "Még nem néztem meg a filmet.",
+        "Még nem olvastam el a levelet."
+      ],
+      "tr": {
+        "en": "Have you eaten up the soup yet? Not yet, but soon.",
+        "es": "¿Ya te comiste la sopa? Todavía no, pero ahorita."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f04",
+      "kind": "form",
+      "verb": "tanulni",
+      "person": "mi",
+      "answer": "megtanultuk",
+      "table": "finished-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c05",
+      "sentence": "Kati ___ a kávét, aztán elment dolgozni.",
+      "options": [
+        "megitta",
+        "megivott",
+        "megiszik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "iszik is irregular in the past: ivott (indefinite), itta (definite). a kávét is definite, so the form is itta: megitta. The prefix says she drank it up.",
+        "es": "iszik es irregular en pasado: ivott (indefinido), itta (definido). a kávét es determinado, así que la forma es itta: megitta. El prefijo dice que se lo tomó todo."
+      },
+      "wrong": {
+        "megivott": {
+          "en": "megivott is the indefinite past (ivott); with a definite object such as a kávét the definite form itta is needed.",
+          "es": "megivott es el pasado indefinido (ivott); con un objeto determinado como a kávét hace falta la forma definida itta."
+        },
+        "megiszik": {
+          "en": "megiszik is present (\"she will drink it up\"); the second half, aztán elment, is past.",
+          "es": "megiszik es presente («se lo va a tomar»); la segunda parte, aztán elment, es pasado."
+        }
+      },
+      "examples": [
+        "Megittam a teát.",
+        "Anna megitta a kávét."
+      ],
+      "tr": {
+        "en": "Kati drank up the coffee, then went to work.",
+        "es": "Kati se tomó el café y luego se fue a trabajar."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-w02",
+      "kind": "why",
+      "es": "Még nem ettem meg a levest.",
+      "target": "meg",
+      "tr": {
+        "en": "I have not eaten up the soup yet.",
+        "es": "Todavía no me he comido la sopa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "meg stays attached to the verb, as in megettem",
+            "es": "meg queda pegado al verbo, como en megettem"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Még nem megettem, which is wrong: after nem the prefix leaves the verb and steps behind it.",
+            "es": "Con esta regla la frase sería Még nem megettem, que es incorrecto: después de nem el prefijo deja el verbo y pasa detrás."
+          }
+        },
+        {
+          "text": {
+            "en": "meg is a free word meaning \"and\" in speech",
+            "es": "meg es una palabra suelta que en el habla significa «y»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would read like \"I have not eaten, and the soup\". Here meg is the prefix of megeszik, split off by nem.",
+            "es": "Con esta regla la frase se leería como «no he comido, y la sopa». Aquí meg es el prefijo de megeszik, separado por nem."
+          }
+        },
+        {
+          "text": {
+            "en": "meg is the prefix of megeszik; after nem it steps behind the verb: ettem meg",
+            "es": "meg es el prefijo de megeszik; después de nem pasa detrás del verbo: ettem meg"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "befejezett-folyamatos-f05",
+      "kind": "form",
+      "verb": "olvasni",
+      "person": "ők",
+      "answer": "elolvasták",
+      "table": "finished-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c06",
+      "sentence": "Mit csinálsz? Éppen ___ a vacsorát, mindjárt kész lesz.",
+      "options": [
+        "főztem",
+        "főzök",
+        "főzöm"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "éppen = right now, so the plain present of the activity: főzöm (definite, because a vacsorát is definite).",
+        "es": "éppen = ahora mismo, así que el presente simple de la actividad: főzöm (definido, porque a vacsorát es determinado)."
+      },
+      "wrong": {
+        "főztem": {
+          "en": "főztem is past (\"I cooked, I was cooking\"); the question asks about now.",
+          "es": "főztem es pasado («cociné, estaba cocinando»); la pregunta es sobre ahora."
+        },
+        "főzök": {
+          "en": "főzök is the indefinite present, for an indefinite object (főzök egy levest). A vacsorát is definite, so the verb needs főzöm.",
+          "es": "főzök es el presente indefinido, para un objeto indeterminado (főzök egy levest). A vacsorát es determinado, así que el verbo necesita főzöm."
+        }
+      },
+      "examples": [
+        "Éppen olvasom a levelet.",
+        "Épp főzök."
+      ],
+      "tr": {
+        "en": "What are you doing? I am just cooking dinner, it will be ready soon.",
+        "es": "¿Qué haces? Estoy preparando la cena en este momento, ya casi está lista."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f06",
+      "kind": "form",
+      "verb": "enni",
+      "person": "-ni",
+      "answer": "megenni",
+      "table": "finished-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c07",
+      "sentence": "Épp ___, amikor Gábor hívott.",
+      "options": [
+        "zuhanyozom",
+        "zuhanyoztam",
+        "zuhanyozz"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "épp + past tense + amikor says what you were in the middle of when something happened. Hungarian uses the plain past: zuhanyoztam. There is no \"was showering\" tense.",
+        "es": "épp + pasado + amikor dice qué estabas haciendo cuando ocurrió algo. El húngaro usa el pasado simple: zuhanyoztam. No existe un tiempo «me estaba bañando»."
+      },
+      "wrong": {
+        "zuhanyozom": {
+          "en": "zuhanyozom is present (\"I am showering now\"); the call (hívott) already happened.",
+          "es": "zuhanyozom es presente («me estoy bañando ahora»); la llamada (hívott) ya ocurrió."
+        },
+        "zuhanyozz": {
+          "en": "zuhanyozz is a command (\"take a shower!\").",
+          "es": "zuhanyozz es una orden («¡báñate!»)."
+        }
+      },
+      "examples": [
+        "Épp vacsoráztunk, amikor Anna hívott.",
+        "Épp aludtam, amikor Péter hívott."
+      ],
+      "tr": {
+        "en": "I was just taking a shower when Gábor called.",
+        "es": "Justo me estaba bañando cuando llamó Gábor."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f07",
+      "kind": "form",
+      "verb": "írni",
+      "person": "ti",
+      "answer": "megírtátok",
+      "table": "finished-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c08",
+      "sentence": "Hétvégén mi sokáig ___ aludni, mert nem kell korán kelnünk.",
+      "options": [
+        "szoktam",
+        "szoktak",
+        "szoktunk"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "szokik changes for the person and the infinitive stays: mi → szoktunk aludni, \"we usually sleep\".",
+        "es": "szokik cambia con la persona y el infinitivo se queda: mi → szoktunk aludni, «solemos dormir»."
+      },
+      "wrong": {
+        "szoktam": {
+          "en": "szoktam is \"I usually\"; the subject here is mi (we).",
+          "es": "szoktam es «yo suelo»; el sujeto aquí es mi (nosotros)."
+        },
+        "szoktak": {
+          "en": "szoktak is \"they usually\"; the subject here is mi (we).",
+          "es": "szoktak es «ellos suelen»; el sujeto aquí es mi (nosotros)."
+        }
+      },
+      "examples": [
+        "Reggel kávét szoktam inni.",
+        "Anna vasárnap sokáig szokott aludni."
+      ],
+      "tr": {
+        "en": "At weekends we usually sleep late, because we do not have to get up early.",
+        "es": "Los fines de semana solemos dormir hasta tarde, porque no tenemos que levantarnos temprano."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f08",
+      "kind": "form",
+      "verb": "szokik",
+      "person": "én",
+      "answer": "szoktam",
+      "table": "szokott-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c09",
+      "sentence": "Péter reggel nem szokott kávét ___, mert nem szereti.",
+      "options": [
+        "iszik",
+        "iszom",
+        "inni"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After szokott the second verb is an infinitive: inni. szokott already carries the person.",
+        "es": "Después de szokott el segundo verbo va en infinitivo: inni. szokott ya lleva la persona."
+      },
+      "wrong": {
+        "iszik": {
+          "en": "iszik is a finite form (\"he drinks\"); szokott already carries the person, so the second verb stays an infinitive.",
+          "es": "iszik es una forma conjugada («bebe»); szokott ya lleva la persona, así que el segundo verbo queda en infinitivo."
+        },
+        "iszom": {
+          "en": "iszom is \"I drink\"; wrong person, and a finite form after szokott.",
+          "es": "iszom es «bebo»; persona equivocada y forma conjugada después de szokott."
+        }
+      },
+      "examples": [
+        "Nem szoktam korán kelni.",
+        "A gyerekek nem szoktak kávét inni."
+      ],
+      "tr": {
+        "en": "Péter does not usually drink coffee in the morning, because he does not like it.",
+        "es": "Péter no suele tomar café por la mañana, porque no le gusta."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-w03",
+      "kind": "why",
+      "es": "Reggel kávét szoktam inni.",
+      "target": "szoktam",
+      "tr": {
+        "en": "In the morning I usually drink coffee.",
+        "es": "Por la mañana suelo tomar café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "szoktam is the én form of szokik: \"I usually\"; the infinitive inni does not change",
+            "es": "szoktam es la forma de én de szokik: «suelo»; el infinitivo inni no cambia"
+          }
+        },
+        {
+          "text": {
+            "en": "Past tense: I once drank coffee",
+            "es": "Pasado: una vez tomé café"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Reggel kávét ittam (I drank coffee this morning). szoktam looks like a past form but means \"I usually\" now.",
+            "es": "Con esta regla la frase sería Reggel kávét ittam (tomé café esta mañana). szoktam parece pasado pero ahora significa «suelo»."
+          }
+        },
+        {
+          "text": {
+            "en": "A form of kell: I have to drink coffee",
+            "es": "Una forma de kell: tengo que tomar café"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Reggel kávét kell innom. kell never changes for the person; szoktam is a form of szokik.",
+            "es": "Con esta regla la frase sería Reggel kávét kell innom. kell nunca cambia con la persona; szoktam es una forma de szokik."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "befejezett-folyamatos-f09",
+      "kind": "form",
+      "verb": "szokik",
+      "person": "te",
+      "answer": "szoktál",
+      "table": "szokott-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c10",
+      "sentence": "Anna, mit ___ enni reggelire, ha korán kell dolgoznod?",
+      "options": [
+        "szoktatok",
+        "szoktál",
+        "szoktam"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "You are speaking to Anna alone (te), so szoktál; the infinitive enni stays.",
+        "es": "Le hablas a Anna sola (te), así que szoktál; el infinitivo enni se queda."
+      },
+      "wrong": {
+        "szoktatok": {
+          "en": "szoktatok is for several people (ti); Anna is one person.",
+          "es": "szoktatok es para varias personas (ti); Anna es una sola persona."
+        },
+        "szoktam": {
+          "en": "szoktam is \"I usually\"; you are asking Anna, not talking about yourself.",
+          "es": "szoktam es «yo suelo»; le preguntas a Anna, no hablas de ti."
+        }
+      },
+      "examples": [
+        "Mit szoktál inni reggel?",
+        "Hol szoktál vacsorázni?"
+      ],
+      "tr": {
+        "en": "Anna, what do you usually eat for breakfast when you have to work early?",
+        "es": "Anna, ¿qué sueles desayunar cuando tienes que trabajar temprano?"
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f10",
+      "kind": "form",
+      "verb": "szokik",
+      "person": "ti",
+      "answer": "szoktatok",
+      "table": "szokott-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c11",
+      "sentence": "Semmi baj, holnap ___ a levelet, és megmutatom neked.",
+      "options": [
+        "megírtam",
+        "megírom",
+        "megírta"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A prefixed verb in the present tense looks ahead: megírom = I will write it (and finish it). Holnap needs this forward-looking present.",
+        "es": "Un verbo con prefijo en presente mira hacia delante: megírom = lo voy a escribir (y terminar). Holnap pide este presente con sentido de futuro."
+      },
+      "wrong": {
+        "megírtam": {
+          "en": "megírtam is past (\"I have written it\"); holnap points to the future.",
+          "es": "megírtam es pasado («lo escribí»); holnap apunta al futuro."
+        },
+        "megírta": {
+          "en": "megírta is \"he or she wrote it\"; the sentence promises something about me.",
+          "es": "megírta es «él o ella lo escribió»; la frase promete algo sobre mí."
+        }
+      },
+      "examples": [
+        "Ma este megnézem a filmet.",
+        "Holnap megírom a házi feladatot."
+      ],
+      "tr": {
+        "en": "No problem, I will write the letter tomorrow, and I will show it to you.",
+        "es": "No hay problema, mañana escribo la carta y te la muestro."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-c12",
+      "sentence": "___ már a filmet? Még nem, de szombaton megnézem.",
+      "options": [
+        "Megnézted",
+        "Megnéztél",
+        "Megnéztem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You ask the other person (te) about a specific film (a filmet), so the definite ending -d: megnézted. meg- asks \"did you get it done?\".",
+        "es": "Le preguntas a la otra persona (te) por una película concreta (a filmet), así que va la terminación definida -d: megnézted. meg- pregunta «¿ya lo hiciste?»."
+      },
+      "wrong": {
+        "Megnéztél": {
+          "en": "Megnéztél is the indefinite 2nd person; a filmet is definite, so the definite form megnézted is needed.",
+          "es": "Megnéztél es la 2.ª persona indefinida; a filmet es determinado, así que hace falta la forma definida megnézted."
+        },
+        "Megnéztem": {
+          "en": "Megnéztem is \"I watched it\"; the question is for the other person.",
+          "es": "Megnéztem es «yo la vi»; la pregunta es para la otra persona."
+        }
+      },
+      "examples": [
+        "Elolvastad már a levelet?",
+        "Megetted már a vacsorát?"
+      ],
+      "tr": {
+        "en": "Have you seen the film yet? Not yet, but I will watch it on Saturday.",
+        "es": "¿Ya viste la película? Todavía no, pero el sábado la veo."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f11",
+      "kind": "form",
+      "verb": "szokik",
+      "person": "ők",
+      "answer": "szoktak",
+      "table": "szokott-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-w04",
+      "kind": "why",
+      "es": "Épp főzök.",
+      "target": "Épp",
+      "tr": {
+        "en": "I am just cooking.",
+        "es": "Estoy cocinando ahora mismo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "épp is a prefix like meg-: it finishes the action",
+            "es": "épp es un prefijo como meg-: termina la acción"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Megfőzöm (I will cook it through). épp does not change the verb; it only stresses that it is happening now.",
+            "es": "Con esta regla la frase sería Megfőzöm (lo cocinaré completo). épp no cambia el verbo; solo subraya que ocurre ahora."
+          }
+        },
+        {
+          "text": {
+            "en": "épp stresses that it is happening right now; the verb stays in the plain present",
+            "es": "épp subraya que ocurre ahora mismo; el verbo sigue en presente simple"
+          }
+        },
+        {
+          "text": {
+            "en": "épp turns the verb into the past tense",
+            "es": "épp pone el verbo en pasado"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Épp főztem. főzök is present tense; épp only marks \"right now\".",
+            "es": "Con esta regla la frase sería Épp főztem. főzök es presente; épp solo marca «ahora mismo»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "befejezett-folyamatos-c13",
+      "sentence": "Tegnap este hétig ___ a vizsgára, aztán vacsoráztam.",
+      "options": [
+        "tanultam",
+        "megtanultam",
+        "tanulok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "\"Until seven\" names how long the activity lasted, so the plain verb: tanultam. A result verb (megtanultam) says you learned something completely, which does not fit a stretch of time.",
+        "es": "«Hasta las siete» dice cuánto duró la actividad, así que va el verbo sin prefijo: tanultam. Un verbo de resultado (megtanultam) dice que aprendiste algo por completo, lo que no encaja con un lapso de tiempo."
+      },
+      "wrong": {
+        "megtanultam": {
+          "en": "megtanultam is \"I have learned it (and know it now)\"; it does not describe a stretch of time until seven.",
+          "es": "megtanultam es «lo aprendí (y ya lo sé)»; no describe un lapso de tiempo hasta las siete."
+        },
+        "tanulok": {
+          "en": "tanulok is present; tegnap este puts the sentence in the past.",
+          "es": "tanulok es presente; tegnap este pone la frase en pasado."
+        }
+      },
+      "examples": [
+        "Reggel kilencig dolgoztam.",
+        "Este tízig olvastam."
+      ],
+      "tr": {
+        "en": "Yesterday evening I studied for the exam until seven, then I had dinner.",
+        "es": "Ayer por la tarde estudié para el examen hasta las siete y luego cené."
+      }
+    },
+    {
+      "id": "befejezett-folyamatos-f12",
+      "kind": "form",
+      "verb": "szokik",
+      "person": "mi",
+      "answer": "szoktunk",
+      "table": "szokott-forms"
+    },
+    {
+      "id": "befejezett-folyamatos-c14",
+      "sentence": "Tavaly minden nap ___ a parkban, de most már nincs időm.",
+      "options": [
+        "futok",
+        "futni",
+        "futottam"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "For past habits Hungarian uses the plain past tense with a time word (tavaly, minden nap): futottam = I ran / I used to run.",
+        "es": "Para costumbres del pasado el húngaro usa el pasado simple con una palabra de tiempo (tavaly, minden nap): futottam = corría / solía correr."
+      },
+      "wrong": {
+        "futok": {
+          "en": "futok is present (\"I run these days\"); tavaly sends the sentence into the past.",
+          "es": "futok es presente («corro ahora»); tavaly manda la frase al pasado."
+        },
+        "futni": {
+          "en": "futni is an infinitive; it needs a helper such as szeret, tud or kell.",
+          "es": "futni es un infinitivo; necesita un auxiliar como szeret, tud o kell."
+        }
+      },
+      "examples": [
+        "Tavaly sokat úsztam.",
+        "Tavaly minden szombaton sétáltunk."
+      ],
+      "tr": {
+        "en": "Last year I ran in the park every day, but now I have no time.",
+        "es": "El año pasado corría en el parque todos los días, pero ahora ya no tengo tiempo."
+      }
+    }
+  ]
+}

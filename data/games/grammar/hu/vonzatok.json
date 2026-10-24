@@ -1,0 +1,1184 @@
+{
+  "schema": 2,
+  "topic": "vonzatok",
+  "level": "B1",
+  "title": {
+    "en": "The verb decides: gondolok rá, bízom benne",
+    "es": "El verbo decide: gondolok rá, bízom benne"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In English a small word stays with the verb: think of, wait for, afraid of, trust in, and meet with nothing at all. Hungarian has no such small words. The verb itself asks for a case ending on the person it points to, and the ending often does not match your language. gondol asks for -ra/-re (Annára gondolok), vár asks for it too (Péterre várok), and so does emlékszik (emlékszem a címre). fél asks for -tól/-től (félek a kutyától), bízik asks for -ban/-ben (bízom Péterben), találkozik asks for -val/-vel (találkozom Katival). You cannot guess the ending from your language, so learn each verb together with its ending, as one unit. With ő (he, she) the ending turns into one word: rá, tőle, benne, vele.",
+        "es": "En español una palabra pequeña acompaña al verbo: pensar en, esperar a, tener miedo de, confiar en, encontrarse con. El húngaro no tiene esas palabras. El verbo mismo pide una terminación de caso en la persona a la que se refiere, y la terminación muchas veces no coincide con tu idioma. gondol pide -ra/-re (Annára gondolok), vár también lo pide (Péterre várok), y emlékszik igual (emlékszem a címre). fél pide -tól/-től (félek a kutyától), bízik pide -ban/-ben (bízom Péterben), találkozik pide -val/-vel (találkozom Katival). No puedes adivinar la terminación desde tu idioma, así que aprende cada verbo junto con su terminación, como una sola unidad. Con ő (él, ella) la terminación se vuelve una sola palabra: rá, tőle, benne, vele."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "vonzat-ragok",
+      "title": {
+        "en": "Verb, ending, and the forms with Anna, Péter and ő",
+        "es": "Verbo, terminación y formas con Anna, Péter y ő"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "Verbs",
+          "es": "Verbos"
+        },
+        {
+          "en": "with Anna",
+          "es": "con Anna"
+        },
+        {
+          "en": "with Péter",
+          "es": "con Péter"
+        },
+        {
+          "en": "he, she",
+          "es": "él, ella"
+        }
+      ],
+      "rows": [
+        [
+          "-ra/-re",
+          "gondol, vár, emlékszik",
+          "Annára",
+          "Péterre",
+          "rá"
+        ],
+        [
+          "-tól/-től",
+          "fél, kér, kérdez",
+          "Annától",
+          "Pétertől",
+          "tőle"
+        ],
+        [
+          "-ban/-ben",
+          "bízik",
+          "Annában",
+          "Péterben",
+          "benne"
+        ],
+        [
+          "-val/-vel",
+          "találkozik",
+          "Annával",
+          "Péterrel",
+          "vele"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Four endings: learn the verbs as families",
+        "es": "Cuatro terminaciones: aprende los verbos por familias"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "-ra/-re: gondol (think of), vár (wait for), emlékszik (remember), and also vigyáz (look after). Back vowels take -ra (Annára), front vowels take -re (Péterre).",
+            "es": "-ra/-re: gondol (pensar en), vár (esperar a), emlékszik (acordarse de), y también vigyáz (cuidar). Las vocales posteriores llevan -ra (Annára), las anteriores -re (Péterre)."
+          },
+          "examples": [
+            {
+              "es": "Gyakran gondolok a nagymamámra.",
+              "tr": {
+                "en": "I often think of my grandmother.",
+                "es": "Pienso seguido en mi abuela."
+              }
+            },
+            {
+              "es": "A megállónál várok Péterre.",
+              "tr": {
+                "en": "I am waiting for Péter at the stop.",
+                "es": "Espero a Péter en la parada."
+              }
+            },
+            {
+              "es": "Nem emlékszem a címre.",
+              "tr": {
+                "en": "I do not remember the address.",
+                "es": "No me acuerdo de la dirección."
+              }
+            },
+            {
+              "es": "Vigyázok a kutyára.",
+              "tr": {
+                "en": "I am looking after the dog.",
+                "es": "Estoy cuidando al perro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-tól/-től: fél (be afraid of). The person you ask also takes this ending after kér (ask for) and kérdez (ask a question).",
+            "es": "-tól/-től: fél (tener miedo de). La persona a la que le pides o preguntas también lleva esta terminación con kér (pedir) y kérdez (preguntar)."
+          },
+          "examples": [
+            {
+              "es": "Félek a kutyától.",
+              "tr": {
+                "en": "I am afraid of the dog.",
+                "es": "Le tengo miedo al perro."
+              }
+            },
+            {
+              "es": "Segítséget kérek a kollégától.",
+              "tr": {
+                "en": "I ask my colleague for help.",
+                "es": "Le pido ayuda a mi colega."
+              }
+            },
+            {
+              "es": "Megkérdezem a tanártól, mikor van a vizsga.",
+              "tr": {
+                "en": "I will ask the teacher when the exam is.",
+                "es": "Le voy a preguntar al profesor cuándo es el examen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ban/-ben: bízik (trust). English says trust in, and Hungarian says the same thing with an ending.",
+            "es": "-ban/-ben: bízik (confiar en). Es la misma idea que «en», pero con una terminación."
+          },
+          "examples": [
+            {
+              "es": "Bízom a főnökömben.",
+              "tr": {
+                "en": "I trust my boss.",
+                "es": "Confío en mi jefe."
+              }
+            },
+            {
+              "es": "Bízol Péterben?",
+              "tr": {
+                "en": "Do you trust Péter?",
+                "es": "¿Confías en Péter?"
+              }
+            },
+            {
+              "es": "A csapat Annában bízik.",
+              "tr": {
+                "en": "The team trusts Anna.",
+                "es": "El equipo confía en Anna."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-val/-vel: találkozik (meet). English has no little word here at all, Spanish has con (encontrarse con). After a consonant the v copies it: Péterrel.",
+            "es": "-val/-vel: találkozik (encontrarse con). El inglés aquí no usa ninguna palabra pequeña; el español usa con. Después de consonante la v la copia: Péterrel."
+          },
+          "examples": [
+            {
+              "es": "Ma találkozom Annával.",
+              "tr": {
+                "en": "I am meeting Anna today.",
+                "es": "Hoy me veo con Anna."
+              }
+            },
+            {
+              "es": "Holnap a főnökkel találkozom.",
+              "tr": {
+                "en": "Tomorrow I am meeting my boss.",
+                "es": "Mañana me veo con mi jefe."
+              }
+            },
+            {
+              "es": "A barátommal találkozom.",
+              "tr": {
+                "en": "I am meeting my friend.",
+                "es": "Me veo con mi amigo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kire-mire",
+      "title": {
+        "en": "Ask with the ending: who? what? he, she?",
+        "es": "Pregunta con la terminación: ¿quién? ¿qué? ¿él, ella?"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "Who? (a person)",
+          "es": "¿Quién? (una persona)"
+        },
+        {
+          "en": "What? (a thing)",
+          "es": "¿Qué? (una cosa)"
+        },
+        {
+          "en": "he, she",
+          "es": "él, ella"
+        }
+      ],
+      "rows": [
+        [
+          "-ra/-re",
+          "kire",
+          "mire",
+          "rá"
+        ],
+        [
+          "-tól/-től",
+          "kitől",
+          "mitől",
+          "tőle"
+        ],
+        [
+          "-ban/-ben",
+          "kiben",
+          "miben",
+          "benne"
+        ],
+        [
+          "-val/-vel",
+          "kivel",
+          "mivel",
+          "vele"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The question word, the pronoun, and the thing you ask for",
+        "es": "La palabra interrogativa, el pronombre y lo que pides"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The question word takes the same ending as the answer, so the question tells you the ending. For a person use ki + ending, for a thing mi + ending.",
+            "es": "La palabra interrogativa lleva la misma terminación que la respuesta, así que la pregunta te dice la terminación. Para una persona usa ki + terminación, para una cosa mi + terminación."
+          },
+          "examples": [
+            {
+              "es": "Kire vársz? Péterre.",
+              "tr": {
+                "en": "Who are you waiting for? Péter.",
+                "es": "¿A quién esperas? A Péter."
+              }
+            },
+            {
+              "es": "Mire gondolsz? A nyaralásra.",
+              "tr": {
+                "en": "What are you thinking of? Of the holiday.",
+                "es": "¿En qué piensas? En las vacaciones."
+              }
+            },
+            {
+              "es": "Kivel találkozol? Katival.",
+              "tr": {
+                "en": "Who are you meeting? Kati.",
+                "es": "¿Con quién te ves? Con Kati."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With ő the ending and the pronoun fuse into one word, and in a plain sentence it stands after the verb. These forms are for he or she; the forms for me and you come in a later lesson.",
+            "es": "Con ő la terminación y el pronombre se funden en una sola palabra, y en una frase normal va después del verbo. Estas formas son para él o ella; las formas para yo y tú llegan en una lección posterior."
+          },
+          "examples": [
+            {
+              "es": "Gondolok rá.",
+              "tr": {
+                "en": "I am thinking of him or her.",
+                "es": "Pienso en él o en ella."
+              }
+            },
+            {
+              "es": "Félek tőle.",
+              "tr": {
+                "en": "I am afraid of him or her.",
+                "es": "Le tengo miedo."
+              }
+            },
+            {
+              "es": "Bízom benne.",
+              "tr": {
+                "en": "I trust him or her.",
+                "es": "Confío en él o en ella."
+              }
+            },
+            {
+              "es": "Találkozom vele.",
+              "tr": {
+                "en": "I am meeting him or her.",
+                "es": "Me veo con él o con ella."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After kér and kérdez the thing is the object, and the person gets -tól/-től. With kérdez the person can also be a direct object (Megkérdezem a tanárt); both are correct.",
+            "es": "Después de kér y kérdez la cosa es el objeto directo, y la persona lleva -tól/-től. Con kérdez la persona también puede ser objeto directo (Megkérdezem a tanárt); las dos formas son correctas."
+          },
+          "examples": [
+            {
+              "es": "Pénzt kérek Katitól.",
+              "tr": {
+                "en": "I ask Kati for money.",
+                "es": "Le pido dinero a Kati."
+              }
+            },
+            {
+              "es": "Segítséget kért a kollégától.",
+              "tr": {
+                "en": "He or she asked a colleague for help.",
+                "es": "Le pidió ayuda a un colega."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Look-alikes: ask, ask, and meet",
+        "es": "Parecidos: preguntar, pedir y encontrarse"
+      },
+      "pairs": [
+        {
+          "a": "Segítséget kérek a tanártól.",
+          "b": "Megkérdezem a tanártól, mikor van a vizsga.",
+          "note": {
+            "en": "English ask covers two Hungarian verbs. kér asks for a thing, help or permission (Spanish pedir). kérdez asks a question (Spanish preguntar). The person takes -tól/-től with both (with kérdez the accusative also occurs: megkérdezem a tanárt).",
+            "es": "El inglés ask cubre dos verbos húngaros. kér pide una cosa, ayuda o permiso (pedir). kérdez hace una pregunta (preguntar). La persona lleva -tól/-től con los dos (con kérdez también se usa el acusativo: megkérdezem a tanárt)."
+          },
+          "examples": [
+            {
+              "es": "Kati pénzt kért Pétertől.",
+              "tr": {
+                "en": "Kati asked Péter for money.",
+                "es": "Kati le pidió dinero a Péter."
+              }
+            },
+            {
+              "es": "Kati megkérdezte Pétertől, hol lakik.",
+              "tr": {
+                "en": "Kati asked Péter where he lives.",
+                "es": "Kati le preguntó a Péter dónde vive."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Látom Annát.",
+          "b": "Találkozom Annával.",
+          "note": {
+            "en": "You see someone with the accusative (látom Annát), but you meet someone with -val/-vel. Do not say találkozom Annát.",
+            "es": "Ves a alguien con el acusativo (látom Annát), pero te encuentras con alguien con -val/-vel. No digas találkozom Annát."
+          },
+          "examples": [
+            {
+              "es": "Gyakran látom Katit a buszon.",
+              "tr": {
+                "en": "I often see Kati on the bus.",
+                "es": "Veo seguido a Kati en el autobús."
+              }
+            },
+            {
+              "es": "Holnap találkozom Katival a moziban.",
+              "tr": {
+                "en": "Tomorrow I am meeting Kati at the cinema.",
+                "es": "Mañana me veo con Kati en el cine."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Kire vársz?",
+          "b": "Mire vársz?",
+          "note": {
+            "en": "kire asks about a person (who), mire about a thing or an event (what). The ending is the same.",
+            "es": "kire pregunta por una persona (a quién), mire por una cosa o un suceso (qué). La terminación es la misma."
+          },
+          "examples": [
+            {
+              "es": "Kire vársz? A barátnőmre.",
+              "tr": {
+                "en": "Who are you waiting for? For my girlfriend.",
+                "es": "¿A quién esperas? A mi amiga."
+              }
+            },
+            {
+              "es": "Mire vársz? A buszra.",
+              "tr": {
+                "en": "What are you waiting for? For the bus.",
+                "es": "¿Qué esperas? El autobús."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not copy the little word of your language. English for and Spanish a pull you towards the wrong ending, and the ending -ért (for) is not the one for waiting: say Annára várok, never Annáért várok. Learn the verb and its ending as a pair, and when you are unsure ask the question first: Kire gondolsz? Kitől félsz? Kiben bízol? Kivel találkozol? vár can also take a direct object (várom a buszt), which is fine, but valakire vár is the pattern to learn first.",
+        "es": "No copies la palabrita de tu idioma. El for del inglés y el a del español te llevan a una terminación equivocada, y la terminación -ért (por, para) no es la de esperar: di Annára várok, nunca Annáért várok. Aprende el verbo y su terminación como un par, y si dudas haz primero la pregunta: Kire gondolsz? Kitől félsz? Kiben bízol? Kivel találkozol? vár también puede llevar objeto directo (várom a buszt), y está bien, pero valakire vár es el patrón que debes aprender primero."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian the verb decides which ending its object gets, so learn each verb together with its ending. «Gondolok Annára», «Péterre várok» and «Nem emlékszem a címre» all use the ending «ra» or «re». «Félek a kutyától» uses «tól» or «től». «Bízom a főnökömben» uses «ban» or «ben». «Holnap találkozom Katival» uses «val» or «vel». With he or she, the ending becomes one word: «Gondolok rá. Félek tőle. Bízom benne. Találkozom vele.» Last, English ask is two verbs: «kérdez» asks a question, and «kér» asks for something.",
+    "es": "En húngaro el verbo decide qué terminación lleva su complemento, así que aprende cada verbo junto con su terminación. «Gondolok Annára», «Péterre várok» y «Nem emlékszem a címre» llevan la terminación «ra» o «re». «Félek a kutyától» lleva «tól» o «től». «Bízom a főnökömben» lleva «ban» o «ben». «Holnap találkozom Katival» lleva «val» o «vel». Con él o ella, la terminación se vuelve una sola palabra: «Gondolok rá. Félek tőle. Bízom benne. Találkozom vele.» Por último, el inglés ask son dos verbos: «kérdez» hace una pregunta y «kér» pide algo."
+  },
+  "items": [
+    {
+      "id": "vonzatok-c01",
+      "sentence": "Holnap lesz Péter esküvője, ezért sokat gondolok ___.",
+      "options": [
+        "Pétertől",
+        "Péterre",
+        "Péterben"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "gondol asks for -ra/-re. Péter has the front vowel é, so the ending is -re: Péterre.",
+        "es": "gondol pide -ra/-re. Péter tiene la vocal anterior é, así que la terminación es -re: Péterre."
+      },
+      "wrong": {
+        "Pétertől": {
+          "en": "This form is for fél, kér and kérdez (be afraid of Péter, ask Péter); gondol does not take -tól/-től.",
+          "es": "Esta forma es para fél, kér y kérdez (tener miedo de Péter, preguntarle a Péter); gondol no lleva -tól/-től."
+        },
+        "Péterben": {
+          "en": "This form is for bízik (trust Péter); gondol does not take -ban/-ben.",
+          "es": "Esta forma es para bízik (confiar en Péter); gondol no lleva -ban/-ben."
+        }
+      },
+      "examples": [
+        "Sokat gondolok Annára.",
+        "Gyakran gondolok a barátomra."
+      ],
+      "tr": {
+        "en": "Péter's wedding is tomorrow, so I am thinking of him a lot.",
+        "es": "Mañana es la boda de Péter, así que pienso mucho en él."
+      }
+    },
+    {
+      "id": "vonzatok-f01",
+      "kind": "form",
+      "verb": "gondol",
+      "person": "Péter",
+      "answer": "Péterre",
+      "table": "vonzat-ragok"
+    },
+    {
+      "id": "vonzatok-c02",
+      "sentence": "Anna késik, ezért Péter vár ___ a megállóban.",
+      "options": [
+        "Annától",
+        "Annában",
+        "Annára"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "vár asks for -ra/-re: you wait for someone with this ending. Anna has back vowels, so -ra, and the final a becomes á: Annára.",
+        "es": "vár pide -ra/-re: así se espera a alguien. Anna tiene vocales posteriores, así que -ra, y la a final se alarga: Annára."
+      },
+      "wrong": {
+        "Annától": {
+          "en": "This form is for fél, kér and kérdez (be afraid of Anna, ask Anna); vár does not take -tól/-től.",
+          "es": "Esta forma es para fél, kér y kérdez (tener miedo de Anna, pedirle a Anna); vár no lleva -tól/-től."
+        },
+        "Annában": {
+          "en": "This form is for bízik (trust Anna); vár does not take -ban/-ben.",
+          "es": "Esta forma es para bízik (confiar en Anna); vár no lleva -ban/-ben."
+        }
+      },
+      "examples": [
+        "Kati a barátnőjére vár.",
+        "A megállónál várok Péterre."
+      ],
+      "tr": {
+        "en": "Anna is late, so Péter waits for Anna at the stop.",
+        "es": "Anna llega tarde, así que Péter espera a Anna en la parada."
+      }
+    },
+    {
+      "id": "vonzatok-f02",
+      "kind": "form",
+      "verb": "fél",
+      "person": "Anna",
+      "answer": "Annától",
+      "table": "vonzat-ragok"
+    },
+    {
+      "id": "vonzatok-c03",
+      "sentence": "Kati nem megy be a kertbe, mert fél a ___.",
+      "options": [
+        "kutyától",
+        "kutyára",
+        "kutyában"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "fél asks for -tól/-től: the thing you are afraid of takes it. The final a of kutya becomes á: kutyától.",
+        "es": "fél pide -tól/-től: lo que temes lleva esa terminación. La a final de kutya se alarga: kutyától."
+      },
+      "wrong": {
+        "kutyára": {
+          "en": "This form is for gondol, vár and emlékszik (think of the dog, wait for the dog); fél does not take -ra/-re.",
+          "es": "Esta forma es para gondol, vár y emlékszik (pensar en el perro, esperar al perro); fél no lleva -ra/-re."
+        },
+        "kutyában": {
+          "en": "This form is for bízik (trust the dog); fél does not take -ban/-ben.",
+          "es": "Esta forma es para bízik (confiar en el perro); fél no lleva -ban/-ben."
+        }
+      },
+      "examples": [
+        "Anna fél a pókoktól.",
+        "Nem félek a sötéttől."
+      ],
+      "tr": {
+        "en": "Kati does not go into the garden because she is afraid of the dog.",
+        "es": "Kati no entra al jardín porque le tiene miedo al perro."
+      }
+    },
+    {
+      "id": "vonzatok-w01",
+      "kind": "why",
+      "es": "Félek a kutyától.",
+      "target": "kutyától",
+      "tr": {
+        "en": "I am afraid of the dog.",
+        "es": "Le tengo miedo al perro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The verb fél asks for -tól/-től: the thing you fear takes this ending",
+            "es": "El verbo fél pide -tól/-től: lo que temes lleva esta terminación"
+          }
+        },
+        {
+          "text": {
+            "en": "-tól/-től marks the place you come from (a baráttól jövök)",
+            "es": "-tól/-től marca de dónde vienes (a baráttól jövök)"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would mean I come from the dog. Here the ending does not show movement: the verb fél asks for it.",
+            "es": "Con esta regla la frase significaría «vengo del perro». Aquí la terminación no indica movimiento: la pide el verbo fél."
+          }
+        },
+        {
+          "text": {
+            "en": "-tól/-től is the accusative: the dog is the object",
+            "es": "-tól/-től es el acusativo: el perro es el objeto directo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Félek a kutyát, but fél takes no direct object; it asks for -tól/-től.",
+            "es": "Con esta regla la frase sería Félek a kutyát, pero fél no lleva objeto directo; pide -tól/-től."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "vonzatok-f03",
+      "kind": "form",
+      "verb": "bízik",
+      "person": "ő",
+      "answer": "benne",
+      "table": "vonzat-ragok"
+    },
+    {
+      "id": "vonzatok-c04",
+      "sentence": "A csapat ___ bízik, mert ő a legjobb.",
+      "options": [
+        "Annára",
+        "Annától",
+        "Annában"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "bízik asks for -ban/-ben: you trust someone with this ending. Anna has back vowels, so -ban, and the final a becomes á: Annában.",
+        "es": "bízik pide -ban/-ben: así se confía en alguien. Anna tiene vocales posteriores, así que -ban, y la a final se alarga: Annában."
+      },
+      "wrong": {
+        "Annára": {
+          "en": "This form is for gondol, vár and emlékszik (think of Anna, wait for Anna); bízik does not take -ra/-re.",
+          "es": "Esta forma es para gondol, vár y emlékszik (pensar en Anna, esperar a Anna); bízik no lleva -ra/-re."
+        },
+        "Annától": {
+          "en": "This form is for fél, kér and kérdez (be afraid of Anna, ask Anna); bízik does not take -tól/-től.",
+          "es": "Esta forma es para fél, kér y kérdez (tener miedo de Anna, pedirle a Anna); bízik no lleva -tól/-től."
+        }
+      },
+      "examples": [
+        "Bízom a főnökömben.",
+        "Bízol Péterben?"
+      ],
+      "tr": {
+        "en": "The team trusts Anna because she is the best.",
+        "es": "El equipo confía en Anna porque ella es la mejor."
+      }
+    },
+    {
+      "id": "vonzatok-f04",
+      "kind": "form",
+      "verb": "találkozik",
+      "person": "Péter",
+      "answer": "Péterrel",
+      "table": "vonzat-ragok"
+    },
+    {
+      "id": "vonzatok-c05",
+      "sentence": "Holnap ___ találkozom a vizsga előtt.",
+      "options": [
+        "Péterrel",
+        "Péterre",
+        "Péterben"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "találkozik asks for -val/-vel. After the consonant r the v copies it: Péter + vel = Péterrel.",
+        "es": "találkozik pide -val/-vel. Después de la consonante r la v la copia: Péter + vel = Péterrel."
+      },
+      "wrong": {
+        "Péterre": {
+          "en": "This form is for gondol, vár and emlékszik (think of Péter, wait for Péter); találkozik does not take -ra/-re.",
+          "es": "Esta forma es para gondol, vár y emlékszik (pensar en Péter, esperar a Péter); találkozik no lleva -ra/-re."
+        },
+        "Péterben": {
+          "en": "This form is for bízik (trust Péter); találkozik does not take -ban/-ben.",
+          "es": "Esta forma es para bízik (confiar en Péter); találkozik no lleva -ban/-ben."
+        }
+      },
+      "examples": [
+        "Ma találkozom Annával.",
+        "Holnap Katival találkozom."
+      ],
+      "tr": {
+        "en": "Tomorrow I am meeting Péter before the exam.",
+        "es": "Mañana me veo con Péter antes del examen."
+      }
+    },
+    {
+      "id": "vonzatok-f05",
+      "kind": "form",
+      "verb": "vár",
+      "person": "ki?",
+      "answer": "kire",
+      "table": "kire-mire"
+    },
+    {
+      "id": "vonzatok-w02",
+      "kind": "why",
+      "es": "Péterre várok.",
+      "target": "Péterre",
+      "tr": {
+        "en": "I am waiting for Péter.",
+        "es": "Estoy esperando a Péter."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-re because the name ends in the consonant r",
+            "es": "-re porque el nombre termina en la consonante r"
+          },
+          "wrong": {
+            "en": "-ra/-re follows the vowel of the word (é is a front vowel, so -re), not the last consonant.",
+            "es": "-ra/-re sigue la vocal de la palabra (é es una vocal anterior, así que -re), no la última consonante."
+          }
+        },
+        {
+          "text": {
+            "en": "The verb vár asks for -ra/-re, and Péter has a front vowel, so -re",
+            "es": "El verbo vár pide -ra/-re, y Péter tiene una vocal anterior, así que -re"
+          }
+        },
+        {
+          "text": {
+            "en": "-ra/-re means onto (a székre: onto the chair)",
+            "es": "-ra/-re significa «sobre» (a székre: sobre la silla)"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about putting something on Péter. Here -re is just the ending that vár asks for.",
+            "es": "Con esta regla la frase hablaría de poner algo sobre Péter. Aquí -re es solo la terminación que pide vár."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "vonzatok-c06",
+      "sentence": "Emlékszel a ___, amikor Debrecenben laktunk?",
+      "options": [
+        "nyártól",
+        "nyárra",
+        "nyárban"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "emlékszik asks for -ra/-re: emlékszem a nyárra. Nyár has a back vowel, so -ra.",
+        "es": "emlékszik pide -ra/-re: emlékszem a nyárra. Nyár tiene vocal posterior, así que -ra."
+      },
+      "wrong": {
+        "nyártól": {
+          "en": "This form means from the summer on (a nyártól); it is not what emlékszik asks for.",
+          "es": "Esta forma significa «desde el verano» (a nyártól); no es lo que pide emlékszik."
+        },
+        "nyárban": {
+          "en": "-ban/-ben is the ending of bízik, not of emlékszik.",
+          "es": "-ban/-ben es la terminación de bízik, no de emlékszik."
+        }
+      },
+      "examples": [
+        "Nem emlékszem a címre.",
+        "Emlékszem az első napra."
+      ],
+      "tr": {
+        "en": "Do you remember the summer when we lived in Debrecen?",
+        "es": "¿Te acuerdas del verano en que vivíamos en Debrecen?"
+      }
+    },
+    {
+      "id": "vonzatok-f06",
+      "kind": "form",
+      "verb": "emlékszik",
+      "person": "ő",
+      "answer": "rá",
+      "table": "vonzat-ragok"
+    },
+    {
+      "id": "vonzatok-c07",
+      "sentence": "Kati a legjobb barátnőm, minden héten találkozom ___.",
+      "options": [
+        "vele",
+        "őt",
+        "neki"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "találkozik asks for -val/-vel, and with ő the ending fuses into vele (with her).",
+        "es": "találkozik pide -val/-vel, y con ő la terminación se funde en vele (con ella)."
+      },
+      "wrong": {
+        "őt": {
+          "en": "őt is the accusative (him, her as an object); találkozik takes no accusative.",
+          "es": "őt es el acusativo (a él, a ella como objeto directo); találkozik no lleva acusativo."
+        },
+        "neki": {
+          "en": "neki is the dative (to him, to her), as with ad, mond, segít; találkozik does not take it.",
+          "es": "neki es el dativo (a él, a ella), como con ad, mond, segít; találkozik no lo lleva."
+        }
+      },
+      "examples": [
+        "Péter a főnököm, ma találkozom vele.",
+        "Holnap találkozom vele a vizsga előtt."
+      ],
+      "tr": {
+        "en": "Kati is my best friend; I meet her every week.",
+        "es": "Kati es mi mejor amiga; me veo con ella cada semana."
+      }
+    },
+    {
+      "id": "vonzatok-f07",
+      "kind": "form",
+      "verb": "fél",
+      "person": "mi?",
+      "answer": "mitől",
+      "table": "kire-mire"
+    },
+    {
+      "id": "vonzatok-c08",
+      "sentence": "Gábor kutyája nagy és erős, ezért Lupita fél ___.",
+      "options": [
+        "rá",
+        "benne",
+        "tőle"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "fél asks for -tól/-től, and with ő (here the dog) the ending fuses into tőle.",
+        "es": "fél pide -tól/-től, y con ő (aquí el perro) la terminación se funde en tőle."
+      },
+      "wrong": {
+        "rá": {
+          "en": "rá is -ra/-re with ő, the ending of gondol, vár and emlékszik; fél does not take it.",
+          "es": "rá es -ra/-re con ő, la terminación de gondol, vár y emlékszik; fél no la lleva."
+        },
+        "benne": {
+          "en": "benne is -ban/-ben with ő, the ending of bízik; fél does not take it.",
+          "es": "benne es -ban/-ben con ő, la terminación de bízik; fél no la lleva."
+        }
+      },
+      "examples": [
+        "A főnök hangos, ezért mindenki fél tőle.",
+        "Péter nagy, de nem félek tőle."
+      ],
+      "tr": {
+        "en": "Gábor's dog is big and strong, so Lupita is afraid of it.",
+        "es": "El perro de Gábor es grande y fuerte, así que Lupita le tiene miedo."
+      }
+    },
+    {
+      "id": "vonzatok-f08",
+      "kind": "form",
+      "verb": "találkozik",
+      "person": "Anna",
+      "answer": "Annával",
+      "table": "vonzat-ragok"
+    },
+    {
+      "id": "vonzatok-w03",
+      "kind": "why",
+      "es": "Katival találkozom.",
+      "target": "Katival",
+      "tr": {
+        "en": "I am meeting Kati.",
+        "es": "Me veo con Kati."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-val/-vel means by means of (busszal): Kati is a vehicle",
+            "es": "-val/-vel significa «por medio de» (busszal): Kati es un vehículo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would say that I use Kati like a bus. After találkozik, -val/-vel means with a person.",
+            "es": "Con esta regla la frase diría que uso a Kati como un autobús. Después de találkozik, -val/-vel significa «con» una persona."
+          }
+        },
+        {
+          "text": {
+            "en": "The v always copies the last letter: Katikkal",
+            "es": "La v siempre copia la última letra: Katikkal"
+          },
+          "wrong": {
+            "en": "The v copies the last sound only after a consonant (Péterrel); Kati ends in a vowel, so the v stays.",
+            "es": "La v copia el último sonido solo después de consonante (Péterrel); Kati termina en vocal, así que la v se queda."
+          }
+        },
+        {
+          "text": {
+            "en": "találkozik asks for -val/-vel, and the v stays after the vowel i: Katival",
+            "es": "találkozik pide -val/-vel, y la v se queda después de la vocal i: Katival"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "vonzatok-c09",
+      "sentence": "Péter mindig segít, ezért bízom ___.",
+      "options": [
+        "tőle",
+        "benne",
+        "vele"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "bízik asks for -ban/-ben, and with ő the ending fuses into benne (in him).",
+        "es": "bízik pide -ban/-ben, y con ő la terminación se funde en benne (en él)."
+      },
+      "wrong": {
+        "tőle": {
+          "en": "tőle is -tól/-től with ő, the ending of fél, kér and kérdez; bízik does not take it.",
+          "es": "tőle es -tól/-től con ő, la terminación de fél, kér y kérdez; bízik no la lleva."
+        },
+        "vele": {
+          "en": "vele is -val/-vel with ő, the ending of találkozik; bízik does not take it.",
+          "es": "vele es -val/-vel con ő, la terminación de találkozik; bízik no la lleva."
+        }
+      },
+      "examples": [
+        "Anna a legjobb barátnőm, bízom benne.",
+        "A főnök jó ember, bízunk benne."
+      ],
+      "tr": {
+        "en": "Péter always helps, so I trust him.",
+        "es": "Péter siempre ayuda, así que confío en él."
+      }
+    },
+    {
+      "id": "vonzatok-f09",
+      "kind": "form",
+      "verb": "bízik",
+      "person": "ki?",
+      "answer": "kiben",
+      "table": "kire-mire"
+    },
+    {
+      "id": "vonzatok-c10",
+      "sentence": "Tavaly találkoztunk a buliban, de nem emlékszem ___.",
+      "options": [
+        "tőle",
+        "rá",
+        "vele"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "emlékszik asks for -ra/-re, and with ő the ending fuses into rá.",
+        "es": "emlékszik pide -ra/-re, y con ő la terminación se funde en rá."
+      },
+      "wrong": {
+        "tőle": {
+          "en": "tőle is -tól/-től with ő, the ending of fél, kér and kérdez; emlékszik does not take it.",
+          "es": "tőle es -tól/-től con ő, la terminación de fél, kér y kérdez; emlékszik no la lleva."
+        },
+        "vele": {
+          "en": "vele is -val/-vel with ő, the ending of találkozik; emlékszik takes -ra/-re instead.",
+          "es": "vele es -val/-vel con ő, la terminación de találkozik; emlékszik lleva -ra/-re."
+        }
+      },
+      "examples": [
+        "Emlékszel rá?",
+        "Emlékszem rá, jó barát volt."
+      ],
+      "tr": {
+        "en": "We met last year at the party, but I do not remember him or her.",
+        "es": "Nos conocimos el año pasado en la fiesta, pero no me acuerdo de él o de ella."
+      }
+    },
+    {
+      "id": "vonzatok-f10",
+      "kind": "form",
+      "verb": "találkozik",
+      "person": "ő",
+      "answer": "vele",
+      "table": "vonzat-ragok"
+    },
+    {
+      "id": "vonzatok-c11",
+      "sentence": "___ gondolsz? A nyaralásra.",
+      "options": [
+        "Kire",
+        "Mivel",
+        "Mire"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The answer ends in -ra, so the question word takes -ra too. A holiday is a thing, so it is mi + -re: mire.",
+        "es": "La respuesta termina en -ra, así que la palabra interrogativa también lleva -ra. Las vacaciones son una cosa, así que es mi + -re: mire."
+      },
+      "wrong": {
+        "Kire": {
+          "en": "Kire asks about a person (who); the answer is a holiday, not a person.",
+          "es": "Kire pregunta por una persona (a quién); la respuesta son unas vacaciones, no una persona."
+        },
+        "Mivel": {
+          "en": "Mivel is mi + -val/-vel (with what); the answer would have to end in -val/-vel.",
+          "es": "Mivel es mi + -val/-vel (con qué); la respuesta tendría que terminar en -val/-vel."
+        }
+      },
+      "examples": [
+        "Mire vársz? A buszra.",
+        "Mire emlékszel? A nyárra."
+      ],
+      "tr": {
+        "en": "What are you thinking of? Of the holiday.",
+        "es": "¿En qué piensas? En las vacaciones."
+      }
+    },
+    {
+      "id": "vonzatok-f11",
+      "kind": "form",
+      "verb": "kér",
+      "person": "Péter",
+      "answer": "Pétertől",
+      "table": "vonzat-ragok"
+    },
+    {
+      "id": "vonzatok-w04",
+      "kind": "why",
+      "es": "Bízom benne.",
+      "target": "benne",
+      "tr": {
+        "en": "I trust him or her.",
+        "es": "Confío en él o en ella."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "benne is the accusative of ő, so he or she is the object",
+            "es": "benne es el acusativo de ő, así que él o ella es el objeto directo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Bízom őt, but bízik takes no direct object.",
+            "es": "Con esta regla la frase sería Bízom őt, pero bízik no lleva objeto directo."
+          }
+        },
+        {
+          "text": {
+            "en": "bízik asks for -ban/-ben, and with ő the ending fuses into the word benne",
+            "es": "bízik pide -ban/-ben, y con ő la terminación se funde en la palabra benne"
+          }
+        },
+        {
+          "text": {
+            "en": "benne is a place word, inside it",
+            "es": "benne es una palabra de lugar, «dentro de él»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about a place, as if I stood inside him. Here benne is the ending -ban/-ben that bízik asks for, joined to ő.",
+            "es": "Con esta regla la frase hablaría de un lugar, como si yo estuviera dentro de él. Aquí benne es la terminación -ban/-ben que pide bízik, unida a ő."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "vonzatok-c12",
+      "sentence": "___ találkozol ma? Katival.",
+      "options": [
+        "Kivel",
+        "Kire",
+        "Kitől"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "találkozik asks for -val/-vel and the answer Katival has it, so the question is kivel (who with).",
+        "es": "találkozik pide -val/-vel y la respuesta Katival la tiene, así que la pregunta es kivel (con quién)."
+      },
+      "wrong": {
+        "Kire": {
+          "en": "Kire is ki + -ra/-re (for gondol, vár, emlékszik); the answer would be Katira.",
+          "es": "Kire es ki + -ra/-re (para gondol, vár, emlékszik); la respuesta sería Katira."
+        },
+        "Kitől": {
+          "en": "Kitől is ki + -tól/-től (for fél, kér, kérdez); the answer would be Katitól.",
+          "es": "Kitől es ki + -tól/-től (para fél, kér, kérdez); la respuesta sería Katitól."
+        }
+      },
+      "examples": [
+        "Kivel beszélsz?",
+        "Kivel találkozol holnap?"
+      ],
+      "tr": {
+        "en": "Who are you meeting today? Kati.",
+        "es": "¿Con quién te ves hoy? Con Kati."
+      }
+    },
+    {
+      "id": "vonzatok-f12",
+      "kind": "form",
+      "verb": "gondol",
+      "person": "mi?",
+      "answer": "mire",
+      "table": "kire-mire"
+    },
+    {
+      "id": "vonzatok-c13",
+      "sentence": "Nem értem a feladatot, ezért segítséget ___ a tanártól.",
+      "options": [
+        "kérdezek",
+        "kérek",
+        "kérsz"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "You ask for something (help), so the verb is kér. The subject is I (Nem értem), so kérek.",
+        "es": "Pides algo (ayuda), así que el verbo es kér. El sujeto es yo (Nem értem), así que kérek."
+      },
+      "wrong": {
+        "kérdezek": {
+          "en": "kérdezek means I ask a question; with segítséget (help) you need kér, to ask for.",
+          "es": "kérdezek significa «hago una pregunta»; con segítséget (ayuda) necesitas kér, pedir."
+        },
+        "kérsz": {
+          "en": "kérsz is you (singular) ask for; the sentence starts with Nem értem, so the subject is I.",
+          "es": "kérsz es «tú pides»; la frase empieza con Nem értem, así que el sujeto es yo."
+        }
+      },
+      "examples": [
+        "Pénzt kérek Pétertől.",
+        "Kati segítséget kér a kollégától."
+      ],
+      "tr": {
+        "en": "I do not understand the task, so I ask the teacher for help.",
+        "es": "No entiendo la tarea, así que le pido ayuda al profesor."
+      }
+    },
+    {
+      "id": "vonzatok-c14",
+      "sentence": "Péter késik. Már két órája várok ___, de még mindig nem jött.",
+      "options": [
+        "rá",
+        "tőle",
+        "benne"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "vár asks for -ra/-re, and with ő (Péter) the ending fuses into rá.",
+        "es": "vár pide -ra/-re, y con ő (Péter) la terminación se funde en rá."
+      },
+      "wrong": {
+        "tőle": {
+          "en": "tőle is -tól/-től with ő, the ending of fél, kér and kérdez; vár does not take it.",
+          "es": "tőle es -tól/-től con ő, la terminación de fél, kér y kérdez; vár no la lleva."
+        },
+        "benne": {
+          "en": "benne is -ban/-ben with ő, the ending of bízik; vár does not take it.",
+          "es": "benne es -ban/-ben con ő, la terminación de bízik; vár no la lleva."
+        }
+      },
+      "examples": [
+        "Várok rá a megállóban.",
+        "Kati már két órája vár rá."
+      ],
+      "tr": {
+        "en": "Péter is late. I have already been waiting for him for two hours, but he still has not come.",
+        "es": "Péter llega tarde. Ya llevo dos horas esperándolo, pero todavía no ha llegado."
+      }
+    },
+    {
+      "id": "vonzatok-c15",
+      "sentence": "Megkérdezem a ___, mikor van a vizsga.",
+      "options": [
+        "tanárra",
+        "tanárban",
+        "tanártól"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "megkérdez, like kérdez and kér, takes -tól/-től for the person you ask: a tanártól.",
+        "es": "megkérdez, igual que kérdez y kér, lleva -tól/-től para la persona a la que preguntas: a tanártól."
+      },
+      "wrong": {
+        "tanárra": {
+          "en": "This form is for gondol, vár and emlékszik (think of the teacher, wait for the teacher); the person you ask takes -tól/-től.",
+          "es": "Esta forma es para gondol, vár y emlékszik (pensar en el profesor, esperar al profesor); la persona a la que preguntas lleva -tól/-től."
+        },
+        "tanárban": {
+          "en": "This form is for bízik (trust the teacher); the person you ask takes -tól/-től.",
+          "es": "Esta forma es para bízik (confiar en el profesor); la persona a la que preguntas lleva -tól/-től."
+        }
+      },
+      "examples": [
+        "Megkérdezem Pétertől, hol lakik.",
+        "Kati megkérdezte a kollégától, mikor jön a busz."
+      ],
+      "tr": {
+        "en": "I will ask the teacher when the exam is.",
+        "es": "Le voy a preguntar al profesor cuándo es el examen."
+      }
+    }
+  ]
+}

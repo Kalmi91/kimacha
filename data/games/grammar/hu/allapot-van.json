@@ -1,0 +1,1159 @@
+{
+  "schema": 2,
+  "topic": "allapot-van",
+  "level": "B1",
+  "title": {
+    "en": "The door is locked: be van zárva",
+    "es": "La puerta está cerrada con llave: be van zárva"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "English says 'The door is locked' both for a state and for an action. Hungarian keeps them apart. For a state it uses van plus a word that ends in -va/-ve: Az ajtó be van zárva = the door is locked (it is in the locked state now). The -va/-ve word looks at the result, not at the moment of doing it: the bill is paid (ki van fizetve), the matter is sorted out (el van intézve), the table is booked (le van foglalva). You already know two of these words from shop doors: nyitva (open) and zárva (closed): A bolt nyitva van. Spanish has the same idea with estar + participle: La puerta está cerrada = Az ajtó be van zárva. To say that somebody did it, Hungarian uses an ordinary active verb: Bezárták az ajtót (they locked the door). There is no 'was locked by' form.",
+        "es": "El inglés dice «The door is locked» tanto para un estado como para una acción. El húngaro los separa. Para un estado usa van más una palabra terminada en -va/-ve: Az ajtó be van zárva = la puerta está cerrada con llave (está en estado cerrado ahora). La palabra en -va/-ve mira el resultado, no el momento de hacerlo: la cuenta está pagada (ki van fizetve), el asunto está resuelto (el van intézve), la mesa está reservada (le van foglalva). Ya conoces dos de estas palabras por las puertas de las tiendas: nyitva (abierto) y zárva (cerrado): A bolt nyitva van. El español tiene la misma idea con estar + participio: La puerta está cerrada = Az ajtó be van zárva. Para decir que alguien lo hizo, el húngaro usa un verbo activo normal: Bezárták az ajtót (cerraron la puerta con llave). No existe una forma «fue cerrada por»."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "allapot-forms",
+      "title": {
+        "en": "One state, five verbs: van, volt, nincs",
+        "es": "Un estado, cinco verbos: van, volt, nincs"
+      },
+      "header": [
+        {
+          "en": "Form",
+          "es": "Forma"
+        },
+        {
+          "en": "bezár (to lock)",
+          "es": "bezár (cerrar con llave)"
+        },
+        {
+          "en": "eltör (to break)",
+          "es": "eltör (romper)"
+        },
+        {
+          "en": "megcsinál (to do, to fix)",
+          "es": "megcsinál (hacer, arreglar)"
+        },
+        {
+          "en": "lefoglal (to book)",
+          "es": "lefoglal (reservar)"
+        },
+        {
+          "en": "elintéz (to sort out)",
+          "es": "elintéz (resolver, gestionar)"
+        }
+      ],
+      "rows": [
+        [
+          "-va/-ve",
+          "zárva",
+          "törve",
+          "csinálva",
+          "foglalva",
+          "intézve"
+        ],
+        [
+          "van",
+          "be van zárva",
+          "el van törve",
+          "meg van csinálva",
+          "le van foglalva",
+          "el van intézve"
+        ],
+        [
+          "volt",
+          "be volt zárva",
+          "el volt törve",
+          "meg volt csinálva",
+          "le volt foglalva",
+          "el volt intézve"
+        ],
+        [
+          "nincs",
+          "nincs bezárva",
+          "nincs eltörve",
+          "nincs megcsinálva",
+          "nincs lefoglalva",
+          "nincs elintézve"
+        ],
+        [
+          "nem volt",
+          "nem volt bezárva",
+          "nem volt eltörve",
+          "nem volt megcsinálva",
+          "nem volt lefoglalva",
+          "nem volt elintézve"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Building the -va/-ve word",
+        "es": "Cómo se forma la palabra en -va/-ve"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Take the verb without its prefix and add -va after back vowels (a, o, u, á, ó, ú) or -ve after front vowels (e, é, ö, ő, ü, ű): zár → zárva, foglal → foglalva, csinál → csinálva; tör → törve, küld → küldve, intéz → intézve, fizet → fizetve.",
+            "es": "Toma el verbo sin su prefijo y añade -va tras vocales posteriores (a, o, u, á, ó, ú) o -ve tras vocales anteriores (e, é, ö, ő, ü, ű): zár → zárva, foglal → foglalva, csinál → csinálva; tör → törve, küld → küldve, intéz → intézve, fizet → fizetve."
+          },
+          "examples": [
+            {
+              "es": "A bolt vasárnap zárva van.",
+              "tr": {
+                "en": "The shop is closed on Sunday.",
+                "es": "La tienda está cerrada el domingo."
+              }
+            },
+            {
+              "es": "A lába el van törve.",
+              "tr": {
+                "en": "His or her leg is broken.",
+                "es": "Tiene la pierna rota."
+              }
+            },
+            {
+              "es": "A leves már meg van főzve.",
+              "tr": {
+                "en": "The soup is already cooked.",
+                "es": "La sopa ya está cocinada."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few verbs have only i or í in the stem. They take the back ending when they conjugate with a back ending: nyit (nyitok) → nyitva, ír (írok) → írva.",
+            "es": "Unos pocos verbos tienen solo i o í en la raíz. Toman la terminación posterior si se conjugan con una terminación posterior: nyit (nyitok) → nyitva, ír (írok) → írva."
+          },
+          "examples": [
+            {
+              "es": "Az ablak nyitva van.",
+              "tr": {
+                "en": "The window is open.",
+                "es": "La ventana está abierta."
+              }
+            },
+            {
+              "es": "Ide van írva a neved.",
+              "tr": {
+                "en": "Your name is written here.",
+                "es": "Tu nombre está escrito aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Any verb with a clear result can do this, from switching and paying to sending and booking. You build the state word from the verb you already know.",
+            "es": "Cualquier verbo con un resultado claro puede hacerlo, desde encender y pagar hasta enviar y reservar. Formas la palabra de estado a partir del verbo que ya conoces."
+          },
+          "examples": [
+            {
+              "es": "A telefonom ki van kapcsolva.",
+              "tr": {
+                "en": "My phone is switched off.",
+                "es": "Mi teléfono está apagado."
+              }
+            },
+            {
+              "es": "A csomag már el van küldve.",
+              "tr": {
+                "en": "The parcel has already been sent.",
+                "es": "El paquete ya está enviado."
+              }
+            },
+            {
+              "es": "A taxi meg van rendelve.",
+              "tr": {
+                "en": "The taxi is booked.",
+                "es": "El taxi ya está pedido."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Where do the prefix, van and the negation go?",
+        "es": "¿Dónde van el prefijo, van y la negación?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "With a prefix, the prefix stands in front of van and the -va/-ve word comes last: be van zárva, el van intézve. The thing in the state is the subject, so it has no -t.",
+            "es": "Con prefijo, el prefijo va delante de van y la palabra en -va/-ve al final: be van zárva, el van intézve. La cosa en estado es el sujeto, así que no lleva -t."
+          },
+          "examples": [
+            {
+              "es": "Az ajtó be van zárva, nem tudok bemenni.",
+              "tr": {
+                "en": "The door is locked, I cannot get in.",
+                "es": "La puerta está cerrada con llave, no puedo entrar."
+              }
+            },
+            {
+              "es": "Minden el van intézve, indulhatunk.",
+              "tr": {
+                "en": "Everything is sorted out, we can set off.",
+                "es": "Todo está resuelto, podemos salir."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Without a prefix the -va/-ve word comes before van: zárva van, nyitva van. On a shop door you only write Zárva or Nyitva; in speech van is always said.",
+            "es": "Sin prefijo la palabra en -va/-ve va antes de van: zárva van, nyitva van. En la puerta de una tienda solo se escribe Zárva o Nyitva; al hablar siempre se dice van."
+          },
+          "examples": [
+            {
+              "es": "A posta ma nyitva van.",
+              "tr": {
+                "en": "The post office is open today.",
+                "es": "La oficina de correos está abierta hoy."
+              }
+            },
+            {
+              "es": "Hétfőn a múzeum zárva van.",
+              "tr": {
+                "en": "On Mondays the museum is closed.",
+                "es": "Los lunes el museo está cerrado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The negative of van is nincs (nincsenek in the plural), so there is no nem van. After nincs the prefix joins the -va/-ve word: nincs bezárva, nincs elintézve.",
+            "es": "La negación de van es nincs (nincsenek en plural), así que no existe nem van. Tras nincs el prefijo se une a la palabra en -va/-ve: nincs bezárva, nincs elintézve."
+          },
+          "examples": [
+            {
+              "es": "Az ajtó nincs bezárva, nyugodtan bemehetsz.",
+              "tr": {
+                "en": "The door is not locked, you can just go in.",
+                "es": "La puerta no está cerrada con llave, puedes entrar tranquilo."
+              }
+            },
+            {
+              "es": "A számla még nincs kifizetve.",
+              "tr": {
+                "en": "The bill is not paid yet.",
+                "es": "La cuenta todavía no está pagada."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Past and future: volt and lesz replace van, and the prefix stays apart (be volt zárva, meg lesz csinálva). The negative past is nem volt with the prefix joined: nem volt bezárva.",
+            "es": "Pasado y futuro: volt y lesz sustituyen a van, y el prefijo queda separado (be volt zárva, meg lesz csinálva). El pasado negativo es nem volt con el prefijo unido: nem volt bezárva."
+          },
+          "examples": [
+            {
+              "es": "Tegnap a bolt már hatkor zárva volt.",
+              "tr": {
+                "en": "Yesterday the shop was already closed at six.",
+                "es": "Ayer la tienda ya estaba cerrada a las seis."
+              }
+            },
+            {
+              "es": "Péntekre minden meg lesz csinálva.",
+              "tr": {
+                "en": "By Friday everything will be done.",
+                "es": "Para el viernes todo estará hecho."
+              }
+            },
+            {
+              "es": "Az ajtó nem volt bezárva.",
+              "tr": {
+                "en": "The door was not locked.",
+                "es": "La puerta no estaba cerrada con llave."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Only van changes for the person and the number: vagyok, vagy, van, vagyunk, vagytok, vannak (nincsenek in the negative). The -va/-ve word never changes and never takes a plural -k.",
+            "es": "Solo van cambia con la persona y el número: vagyok, vagy, van, vagyunk, vagytok, vannak (nincsenek en negativo). La palabra en -va/-ve nunca cambia y nunca recibe -k de plural."
+          },
+          "examples": [
+            {
+              "es": "Most nem tudok segíteni, mert el vagyok foglalva.",
+              "tr": {
+                "en": "I cannot help now because I am busy.",
+                "es": "Ahora no puedo ayudar porque estoy ocupado."
+              }
+            },
+            {
+              "es": "Hétfőn a múzeumok zárva vannak.",
+              "tr": {
+                "en": "On Mondays the museums are closed.",
+                "es": "Los lunes los museos están cerrados."
+              }
+            },
+            {
+              "es": "A számlák még nincsenek kifizetve.",
+              "tr": {
+                "en": "The bills are not paid yet.",
+                "es": "Las cuentas todavía no están pagadas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In a yes/no question the order does not change; the subject comes after the -va/-ve word.",
+            "es": "En una pregunta de sí o no el orden no cambia; el sujeto va después de la palabra en -va/-ve."
+          },
+          "examples": [
+            {
+              "es": "Ki van fizetve a számla?",
+              "tr": {
+                "en": "Is the bill paid?",
+                "es": "¿Está pagada la cuenta?"
+              }
+            },
+            {
+              "es": "Le van foglalva az asztal szombatra?",
+              "tr": {
+                "en": "Is the table booked for Saturday?",
+                "es": "¿Está reservada la mesa para el sábado?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "State, action, or both?",
+        "es": "¿Estado, acción o las dos cosas?"
+      },
+      "pairs": [
+        {
+          "a": "Az ajtó be van zárva.",
+          "b": "Bezárták az ajtót.",
+          "note": {
+            "en": "Left: a state. The door is the subject (no -t) and nobody is named. Right: an action. An active verb with the object in -t; the plural 'they' means 'people', so Hungarian needs no passive.",
+            "es": "Izquierda: un estado. La puerta es el sujeto (sin -t) y no se nombra a nadie. Derecha: una acción. Un verbo activo con el objeto en -t; el plural «ellos» significa «alguien», así que el húngaro no necesita pasiva."
+          },
+          "examples": [
+            {
+              "es": "A számla ki van fizetve.",
+              "tr": {
+                "en": "The bill is paid.",
+                "es": "La cuenta está pagada."
+              }
+            },
+            {
+              "es": "Gábor kifizette a számlát.",
+              "tr": {
+                "en": "Gábor paid the bill.",
+                "es": "Gábor pagó la cuenta."
+              }
+            }
+          ]
+        },
+        {
+          "a": "A posta zárva van.",
+          "b": "Az ajtó be van zárva.",
+          "note": {
+            "en": "zárva van is the everyday 'closed' for shops, offices and gates: a fact about opening hours. be van zárva stresses the result of locking: someone locked it and you cannot open it.",
+            "es": "zárva van es el «cerrado» de todos los días para tiendas, oficinas y portones: un hecho sobre el horario. be van zárva destaca el resultado de cerrar con llave: alguien la cerró y no puedes abrirla."
+          },
+          "examples": [
+            {
+              "es": "A hivatal délután zárva van.",
+              "tr": {
+                "en": "The office is closed in the afternoon.",
+                "es": "La oficina está cerrada por la tarde."
+              }
+            },
+            {
+              "es": "A kapu be van zárva, nem lehet bejönni.",
+              "tr": {
+                "en": "The gate is locked, nobody can come in.",
+                "es": "El portón está cerrado con llave, no se puede entrar."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Az ajtó nincs bezárva.",
+          "b": "Péter nem zárta be az ajtót.",
+          "note": {
+            "en": "Left: the negative state with nincs and the prefix joined. Right: the negative action with nem and the prefix after the verb (A2: Nem megyek el).",
+            "es": "Izquierda: el estado negativo con nincs y el prefijo unido. Derecha: la acción negativa con nem y el prefijo tras el verbo (A2: Nem megyek el)."
+          },
+          "examples": [
+            {
+              "es": "A bolt nincs bezárva.",
+              "tr": {
+                "en": "The shop is not locked.",
+                "es": "La tienda no está cerrada con llave."
+              }
+            },
+            {
+              "es": "Anna nem fizette ki a számlát.",
+              "tr": {
+                "en": "Anna did not pay the bill.",
+                "es": "Anna no pagó la cuenta."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Three habits to build. (1) Keep doing and result apart: Bezárták az ajtót (action, object with -t) but Az ajtó be van zárva (state, no -t). (2) Say nincs, never nem van, and glue the prefix to the -va/-ve word after it: nincs megcsinálva. (3) Leave the -va/-ve word alone in the plural and for every person: Az ablakok nyitva vannak, Én el vagyok foglalva. Register: signs and notes drop van (Zárva, Nyitva); spoken Hungarian keeps it.",
+        "es": "Tres hábitos que crear. (1) Separa la acción y el resultado: Bezárták az ajtót (acción, objeto con -t) pero Az ajtó be van zárva (estado, sin -t). (2) Di nincs, nunca nem van, y pega el prefijo a la palabra en -va/-ve después: nincs megcsinálva. (3) No cambies la palabra en -va/-ve en plural ni con ninguna persona: Az ablakok nyitva vannak, Én el vagyok foglalva. Registro: los letreros y las notas omiten van (Zárva, Nyitva); el húngaro hablado lo conserva."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian a state is built with «van» and a word that ends in va or ve. «Az ajtó be van zárva» means the door is locked. Two words you know from shop doors are «nyitva» and «zárva». With a prefix, the prefix stays before «van»: «meg van csinálva», «el van intézve». In the negative the prefix joins the word and you say «nincs»: «nincs bezárva», «nincs megcsinálva». For the past use «volt»: «Tegnap a bolt zárva volt». With several things «van» becomes «vannak», but the other word does not change: «Az ablakok nyitva vannak». To say that somebody did it, use an ordinary verb: «Bezárták az ajtót».",
+    "es": "En húngaro un estado se construye con «van» y una palabra que termina en va o ve. «Az ajtó be van zárva» significa que la puerta está cerrada con llave. Dos palabras que conoces de las puertas de las tiendas son «nyitva» y «zárva». Con un prefijo, el prefijo queda antes de «van»: «meg van csinálva», «el van intézve». En negativo el prefijo se une a la palabra y dices «nincs»: «nincs bezárva», «nincs megcsinálva». Para el pasado usa «volt»: «Tegnap a bolt zárva volt». Con varias cosas «van» pasa a «vannak», pero la otra palabra no cambia: «Az ablakok nyitva vannak». Para decir que alguien lo hizo, usa un verbo normal: «Bezárták az ajtót»."
+  },
+  "glossary": [
+    {
+      "word": "csinál",
+      "gloss": {
+        "en": "to do, to make, to fix",
+        "es": "hacer, arreglar"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "allapot-van-c01",
+      "sentence": "Tegnap a posta már négykor ___, ezért nem tudtam bemenni.",
+      "options": [
+        "zárva van",
+        "zárva volt",
+        "zárva lesz"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Tegnap (yesterday) is in the past, so van becomes volt: zárva volt. The -va/-ve word itself does not change.",
+        "es": "Tegnap (ayer) está en pasado, así que van pasa a volt: zárva volt. La palabra en -va/-ve no cambia."
+      },
+      "wrong": {
+        "zárva van": {
+          "en": "zárva van is present (it is closed now); with Tegnap the sentence needs the past.",
+          "es": "zárva van es presente (está cerrado ahora); con Tegnap la frase necesita el pasado."
+        },
+        "zárva lesz": {
+          "en": "zárva lesz is future (it will be closed); the sentence talks about yesterday.",
+          "es": "zárva lesz es futuro (estará cerrado); la frase habla de ayer."
+        }
+      },
+      "examples": [
+        "Tegnap a bolt zárva volt.",
+        "A posta ma nyitva van."
+      ],
+      "tr": {
+        "en": "Yesterday the post office was already closed at four, so I could not go in.",
+        "es": "Ayer la oficina de correos ya estaba cerrada a las cuatro, así que no pude entrar."
+      }
+    },
+    {
+      "id": "allapot-van-f01",
+      "kind": "form",
+      "verb": "bezár",
+      "person": "-va/-ve",
+      "answer": "zárva",
+      "accept": [
+        "bezárva"
+      ],
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c02",
+      "sentence": "Az orvos azt mondta, hogy a lábad nincs ___.",
+      "options": [
+        "eltörve",
+        "eltörva",
+        "eltört"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "tör has the front vowel ö, so it takes -ve; after nincs the prefix joins the word: eltörve.",
+        "es": "tör tiene la vocal anterior ö, así que toma -ve; tras nincs el prefijo se une a la palabra: eltörve."
+      },
+      "wrong": {
+        "eltörva": {
+          "en": "-va follows back vowels (zárva, foglalva); tör has ö, so the ending is -ve.",
+          "es": "-va va tras vocales posteriores (zárva, foglalva); tör tiene ö, así que la terminación es -ve."
+        },
+        "eltört": {
+          "en": "eltört is a past verb (it broke); after nincs you need the -va/-ve word that names the state.",
+          "es": "eltört es un verbo en pasado (se rompió); tras nincs necesitas la palabra en -va/-ve que nombra el estado."
+        }
+      },
+      "examples": [
+        "A pohár nincs eltörve.",
+        "A lába el van törve."
+      ],
+      "tr": {
+        "en": "The doctor said that your leg is not broken.",
+        "es": "El médico dijo que tu pierna no está rota."
+      }
+    },
+    {
+      "id": "allapot-van-f02",
+      "kind": "form",
+      "verb": "megcsinál",
+      "person": "van",
+      "answer": "meg van csinálva",
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c03",
+      "sentence": "Az asztal már le van ___ szombat estére.",
+      "options": [
+        "foglalve",
+        "foglalva",
+        "foglalják"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "foglal has back vowels (a, o), so it takes -va: foglalva. With van the prefix le stays in front.",
+        "es": "foglal tiene vocales posteriores (a, o), así que toma -va: foglalva. Con van el prefijo le queda delante."
+      },
+      "wrong": {
+        "foglalve": {
+          "en": "-ve is for front-vowel verbs like törve or küldve; foglal is a back-vowel verb.",
+          "es": "-ve es para verbos de vocal anterior como törve o küldve; foglal es un verbo de vocal posterior."
+        },
+        "foglalják": {
+          "en": "foglalják is a verb form (they book it), an action. After le van you need the state word foglalva.",
+          "es": "foglalják es una forma verbal (ellos la reservan), una acción. Tras le van necesitas la palabra de estado foglalva."
+        }
+      },
+      "examples": [
+        "A szoba le van foglalva.",
+        "Le van foglalva az asztal?"
+      ],
+      "tr": {
+        "en": "The table is already booked for Saturday evening.",
+        "es": "La mesa ya está reservada para el sábado por la noche."
+      }
+    },
+    {
+      "id": "allapot-van-f03",
+      "kind": "form",
+      "verb": "elintéz",
+      "person": "nincs",
+      "answer": "nincs elintézve",
+      "accept": [
+        "nincsen elintézve"
+      ],
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c04",
+      "sentence": "Miért olyan hideg van itt? Az ablakok ___.",
+      "options": [
+        "nyitvák vannak",
+        "nyitva van",
+        "nyitva vannak"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Az ablakok is plural, so van becomes vannak; the word nyitva stays unchanged.",
+        "es": "Az ablakok es plural, así que van pasa a vannak; la palabra nyitva no cambia."
+      },
+      "wrong": {
+        "nyitvák vannak": {
+          "en": "-va/-ve words never take plural -k (unlike adjectives: A házak nagyok). Only van changes.",
+          "es": "Las palabras en -va/-ve nunca reciben -k de plural (a diferencia de los adjetivos: A házak nagyok). Solo cambia van."
+        },
+        "nyitva van": {
+          "en": "van is singular, but ablakok (windows) is plural, so the verb must be vannak.",
+          "es": "van es singular, pero ablakok (ventanas) es plural, así que el verbo debe ser vannak."
+        }
+      },
+      "examples": [
+        "Hétfőn a múzeumok zárva vannak.",
+        "A boltok vasárnap zárva vannak."
+      ],
+      "tr": {
+        "en": "Why is it so cold in here? The windows are open.",
+        "es": "¿Por qué hace tanto frío aquí? Las ventanas están abiertas."
+      }
+    },
+    {
+      "id": "allapot-van-w01",
+      "kind": "why",
+      "es": "Az ajtó be van zárva.",
+      "target": "be van zárva",
+      "tr": {
+        "en": "The door is locked.",
+        "es": "La puerta está cerrada con llave."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A state: the result of locking, with van + -va/-ve",
+            "es": "Un estado: el resultado de cerrar con llave, con van + -va/-ve"
+          }
+        },
+        {
+          "text": {
+            "en": "An action happening now: someone is locking it",
+            "es": "Una acción que ocurre ahora: alguien la está cerrando"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Bezárják az ajtót (they are locking the door); here nothing is being done, the door simply is in the locked state.",
+            "es": "Con esta regla la frase sería Bezárják az ajtót (están cerrando la puerta); aquí no se hace nada, la puerta simplemente está en estado cerrado."
+          }
+        },
+        {
+          "text": {
+            "en": "The past tense: the door was locked",
+            "es": "El pasado: la puerta estaba cerrada"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Az ajtó be volt zárva; van is present, the door is locked now.",
+            "es": "Con esta regla la frase sería Az ajtó be volt zárva; van es presente, la puerta está cerrada ahora."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "allapot-van-c05",
+      "sentence": "Menj be nyugodtan, az ajtó nincs ___.",
+      "options": [
+        "bezárva",
+        "be zárva",
+        "zárva be"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With nincs the prefix joins the -va/-ve word: nincs bezárva. Only with van does the prefix stay apart (be van zárva).",
+        "es": "Con nincs el prefijo se une a la palabra en -va/-ve: nincs bezárva. Solo con van el prefijo queda separado (be van zárva)."
+      },
+      "wrong": {
+        "be zárva": {
+          "en": "Two words is the order of the positive be van zárva; after nincs the prefix is attached.",
+          "es": "Dos palabras es el orden del positivo be van zárva; tras nincs el prefijo va pegado."
+        },
+        "zárva be": {
+          "en": "The prefix never comes after the -va/-ve word; it stands before it, joined to it after nincs.",
+          "es": "El prefijo nunca va después de la palabra en -va/-ve; va delante, unido a ella tras nincs."
+        }
+      },
+      "examples": [
+        "A számla nincs kifizetve.",
+        "A csomag még nincs elküldve."
+      ],
+      "tr": {
+        "en": "Go in, the door is not locked.",
+        "es": "Pasa tranquilo, la puerta no está cerrada con llave."
+      }
+    },
+    {
+      "id": "allapot-van-f04",
+      "kind": "form",
+      "verb": "lefoglal",
+      "person": "volt",
+      "answer": "le volt foglalva",
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c06",
+      "sentence": "Tegnap a telefonom még nem volt ___, ezért nem tudtalak hívni.",
+      "options": [
+        "megjavítva",
+        "megjavítve",
+        "meg javítva"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "javít has a back vowel (a), so it takes -va; after nem volt the prefix is joined: megjavítva.",
+        "es": "javít tiene una vocal posterior (a), así que toma -va; tras nem volt el prefijo va unido: megjavítva."
+      },
+      "wrong": {
+        "megjavítve": {
+          "en": "-ve is for front-vowel verbs (törve, küldve); javít takes -va.",
+          "es": "-ve es para verbos de vocal anterior (törve, küldve); javít toma -va."
+        },
+        "meg javítva": {
+          "en": "The prefix stays apart only in the positive (meg volt javítva); after nem volt it is joined.",
+          "es": "El prefijo queda separado solo en positivo (meg volt javítva); tras nem volt va unido."
+        }
+      },
+      "examples": [
+        "A telefon már meg van javítva.",
+        "A telefonom még nincs megjavítva."
+      ],
+      "tr": {
+        "en": "Yesterday my phone was not repaired yet, so I could not call you.",
+        "es": "Ayer mi teléfono todavía no estaba arreglado, así que no pude llamarte."
+      }
+    },
+    {
+      "id": "allapot-van-f05",
+      "kind": "form",
+      "verb": "eltör",
+      "person": "-va/-ve",
+      "answer": "törve",
+      "accept": [
+        "eltörve"
+      ],
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c07",
+      "sentence": "___ a taxi, vagy még rendelnem kell?",
+      "options": [
+        "Van meg rendelve",
+        "Meg van rendelve",
+        "Rendelve meg van"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In a yes/no question the order stays: prefix, van, the -va/-ve word, then the subject: Meg van rendelve a taxi?",
+        "es": "En una pregunta de sí o no el orden se mantiene: prefijo, van, la palabra en -va/-ve y luego el sujeto: Meg van rendelve a taxi?"
+      },
+      "wrong": {
+        "Van meg rendelve": {
+          "en": "The prefix cannot come after van in a neutral sentence; it stands in front of it.",
+          "es": "El prefijo no puede ir después de van en una frase neutra; va delante."
+        },
+        "Rendelve meg van": {
+          "en": "The prefix never follows the -va/-ve word; it comes first: meg van rendelve.",
+          "es": "El prefijo nunca sigue a la palabra en -va/-ve; va primero: meg van rendelve."
+        }
+      },
+      "examples": [
+        "Ki van fizetve a számla?",
+        "Le van foglalva az asztal?"
+      ],
+      "tr": {
+        "en": "Is the taxi booked, or do I still have to order it?",
+        "es": "¿Ya está pedido el taxi o todavía tengo que pedirlo?"
+      }
+    },
+    {
+      "id": "allapot-van-w02",
+      "kind": "why",
+      "es": "A számla még nincs kifizetve.",
+      "target": "nincs kifizetve",
+      "tr": {
+        "en": "The bill is not paid yet.",
+        "es": "La cuenta todavía no está pagada."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A negative state: nincs + the prefix joined to the -va/-ve word",
+            "es": "Un estado negativo: nincs + el prefijo unido a la palabra en -va/-ve"
+          }
+        },
+        {
+          "text": {
+            "en": "A negative action: nem + a verb",
+            "es": "Una acción negativa: nem + un verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A számlát még nem fizettem ki (I have not paid the bill yet); here nobody acts, the bill is in the unpaid state.",
+            "es": "Con esta regla la frase sería A számlát még nem fizettem ki (todavía no he pagado la cuenta); aquí nadie actúa, la cuenta está en estado sin pagar."
+          }
+        },
+        {
+          "text": {
+            "en": "A positive state: the prefix stays apart before van",
+            "es": "Un estado positivo: el prefijo queda separado antes de van"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A számla ki van fizetve (the bill is paid); this sentence is negative, so it has nincs and the joined prefix.",
+            "es": "Con esta regla la frase sería A számla ki van fizetve (la cuenta está pagada); esta frase es negativa, así que lleva nincs y el prefijo unido."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "allapot-van-c08",
+      "sentence": "Gábor ___ az ablakot, ezért hideg van a szobában.",
+      "options": [
+        "kinyitotta",
+        "ki van nyitva",
+        "nyitva van"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Gábor did it: an active verb with a definite object (az ablakot, with -t). A state has no doer and no object.",
+        "es": "Lo hizo Gábor: un verbo activo con objeto definido (az ablakot, con -t). Un estado no tiene agente ni objeto."
+      },
+      "wrong": {
+        "ki van nyitva": {
+          "en": "A state sentence makes the window the subject (Az ablak ki van nyitva); here az ablakot needs a verb that acts.",
+          "es": "Una frase de estado hace de la ventana el sujeto (Az ablak ki van nyitva); aquí az ablakot necesita un verbo que actúe."
+        },
+        "nyitva van": {
+          "en": "nyitva van is a state with the window as subject; with az ablakot and Gábor the sentence needs an action.",
+          "es": "nyitva van es un estado con la ventana como sujeto; con az ablakot y Gábor la frase necesita una acción."
+        }
+      },
+      "examples": [
+        "Az ablak nyitva van.",
+        "Kinyitottam az ablakot."
+      ],
+      "tr": {
+        "en": "Gábor opened the window, so it is cold in the room.",
+        "es": "Gábor abrió la ventana, por eso hace frío en la habitación."
+      }
+    },
+    {
+      "id": "allapot-van-f06",
+      "kind": "form",
+      "verb": "bezár",
+      "person": "nem volt",
+      "answer": "nem volt bezárva",
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c09",
+      "sentence": "Bocsánat, most nem tudok segíteni, mert nagyon el ___ foglalva.",
+      "options": [
+        "van",
+        "vagyok",
+        "leszek"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The speaker says nem tudok (I), so van becomes vagyok: el vagyok foglalva. The -va/-ve word does not change for the person.",
+        "es": "El hablante dice nem tudok (yo), así que van pasa a vagyok: el vagyok foglalva. La palabra en -va/-ve no cambia con la persona."
+      },
+      "wrong": {
+        "van": {
+          "en": "el van foglalva is he, she or it; here the speaker talks about himself or herself.",
+          "es": "el van foglalva es él, ella o ello; aquí el hablante habla de sí mismo."
+        },
+        "leszek": {
+          "en": "leszek is future (I will be busy); the sentence says now: most.",
+          "es": "leszek es futuro (estaré ocupado); la frase dice ahora: most."
+        }
+      },
+      "examples": [
+        "Most el vagyok foglalva.",
+        "Anna el van foglalva."
+      ],
+      "tr": {
+        "en": "Sorry, I cannot help now because I am very busy.",
+        "es": "Perdón, ahora no puedo ayudar porque estoy muy ocupado."
+      }
+    },
+    {
+      "id": "allapot-van-f07",
+      "kind": "form",
+      "verb": "elintéz",
+      "person": "van",
+      "answer": "el van intézve",
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c10",
+      "sentence": "Ne aggódj, holnap reggelre minden meg ___ csinálva.",
+      "options": [
+        "volt",
+        "lesz",
+        "nincs"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "holnap (tomorrow) looks ahead, so the future lesz: meg lesz csinálva. The prefix stays in front.",
+        "es": "holnap (mañana) mira hacia adelante, así que va el futuro lesz: meg lesz csinálva. El prefijo queda delante."
+      },
+      "wrong": {
+        "volt": {
+          "en": "meg volt csinálva is past (it was done); the sentence looks ahead to tomorrow morning.",
+          "es": "meg volt csinálva es pasado (estaba hecho); la frase mira hacia mañana por la mañana."
+        },
+        "nincs": {
+          "en": "nincs says it is not done, and with nincs the prefix joins the word (nincs megcsinálva), so meg could not stand in front of it.",
+          "es": "nincs dice que no está hecho, y con nincs el prefijo se une a la palabra (nincs megcsinálva), así que meg no podría ir delante."
+        }
+      },
+      "examples": [
+        "Péntekre minden el lesz intézve.",
+        "A szoba le lesz foglalva."
+      ],
+      "tr": {
+        "en": "Do not worry, by tomorrow morning everything will be done.",
+        "es": "No te preocupes, para mañana por la mañana todo estará hecho."
+      }
+    },
+    {
+      "id": "allapot-van-w03",
+      "kind": "why",
+      "es": "Az ablakok nyitva vannak.",
+      "target": "nyitva vannak",
+      "tr": {
+        "en": "The windows are open.",
+        "es": "Las ventanas están abiertas."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A plural subject: van becomes vannak, the -va/-ve word stays the same",
+            "es": "Un sujeto plural: van pasa a vannak, la palabra en -va/-ve queda igual"
+          }
+        },
+        {
+          "text": {
+            "en": "A plural adjective, like nagyok in A házak nagyok",
+            "es": "Un adjetivo en plural, como nagyok en A házak nagyok"
+          },
+          "wrong": {
+            "en": "With this rule the word would be nyitvák (like nagyok); -va/-ve words never take -k.",
+            "es": "Con esta regla la palabra sería nyitvák (como nagyok); las palabras en -va/-ve nunca reciben -k."
+          }
+        },
+        {
+          "text": {
+            "en": "A singular verb: the plural is not shown on the verb",
+            "es": "Un verbo singular: el plural no se marca en el verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Az ablakok nyitva van; with a plural subject the verb must be vannak.",
+            "es": "Con esta regla la frase sería Az ablakok nyitva van; con un sujeto plural el verbo debe ser vannak."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "allapot-van-c11",
+      "sentence": "Ne aggódj, a csomag már el van ___.",
+      "options": [
+        "küldva",
+        "küldve",
+        "küldték"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "küld has the front vowel ü, so it takes -ve: küldve.",
+        "es": "küld tiene la vocal anterior ü, así que toma -ve: küldve."
+      },
+      "wrong": {
+        "küldva": {
+          "en": "-va is for back-vowel verbs (zárva, foglalva); küld has ü, so the ending is -ve.",
+          "es": "-va es para verbos de vocal posterior (zárva, foglalva); küld tiene ü, así que la terminación es -ve."
+        },
+        "küldték": {
+          "en": "küldték is an action (they sent it); after el van you need the state word küldve.",
+          "es": "küldték es una acción (ellos lo enviaron); tras el van necesitas la palabra de estado küldve."
+        }
+      },
+      "examples": [
+        "A számla ki van fizetve.",
+        "A levél el van küldve."
+      ],
+      "tr": {
+        "en": "Do not worry, the parcel has already been sent.",
+        "es": "No te preocupes, el paquete ya está enviado."
+      }
+    },
+    {
+      "id": "allapot-van-f08",
+      "kind": "form",
+      "verb": "megcsinál",
+      "person": "nincs",
+      "answer": "nincs megcsinálva",
+      "accept": [
+        "nincsen megcsinálva"
+      ],
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c12",
+      "sentence": "Nem ülhetünk le ide, mert ___ már le van foglalva.",
+      "options": [
+        "az asztalt",
+        "az asztalnak",
+        "az asztal"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In a state sentence the thing is the subject, so it stays in the plain form: az asztal. No -t.",
+        "es": "En una frase de estado la cosa es el sujeto, así que queda en forma simple: az asztal. Sin -t."
+      },
+      "wrong": {
+        "az asztalt": {
+          "en": "-t marks the object of an active verb (Lefoglaltam az asztalt). With van + -va/-ve there is no object.",
+          "es": "-t marca el objeto de un verbo activo (Lefoglaltam az asztalt). Con van + -va/-ve no hay objeto."
+        },
+        "az asztalnak": {
+          "en": "-nak would mean 'to the table' or 'for the table'; here the table is what is booked, so it is the subject.",
+          "es": "-nak significaría «a la mesa» o «para la mesa»; aquí la mesa es lo que está reservado, así que es el sujeto."
+        }
+      },
+      "examples": [
+        "A szoba már le van foglalva.",
+        "Lefoglaltam az asztalt."
+      ],
+      "tr": {
+        "en": "We cannot sit down here, because the table is already booked.",
+        "es": "No podemos sentarnos aquí, porque la mesa ya está reservada."
+      }
+    },
+    {
+      "id": "allapot-van-f09",
+      "kind": "form",
+      "verb": "lefoglal",
+      "person": "-va/-ve",
+      "answer": "foglalva",
+      "accept": [
+        "lefoglalva"
+      ],
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c13",
+      "sentence": "A boltot már hatkor ___, ezért nem tudtam tejet venni.",
+      "options": [
+        "be van zárva",
+        "bezárták",
+        "be volt zárva"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A boltot has -t: it is the object of an active verb. bezárták is the 3rd person plural (definite): they closed it.",
+        "es": "A boltot lleva -t: es el objeto de un verbo activo. bezárták es la 3.ª persona del plural (definida): ellos la cerraron."
+      },
+      "wrong": {
+        "be van zárva": {
+          "en": "A state sentence has the shop as subject (A bolt be van zárva); with the object A boltot you need a verb that acts.",
+          "es": "Una frase de estado tiene la tienda como sujeto (A bolt be van zárva); con el objeto A boltot necesitas un verbo que actúe."
+        },
+        "be volt zárva": {
+          "en": "Also a state sentence: the shop would be the subject (A bolt be volt zárva), without -t.",
+          "es": "También es una frase de estado: la tienda sería el sujeto (A bolt be volt zárva), sin -t."
+        }
+      },
+      "examples": [
+        "Bezárták az ajtót.",
+        "A bolt már be van zárva."
+      ],
+      "tr": {
+        "en": "They closed the shop already at six, so I could not buy milk.",
+        "es": "Cerraron la tienda ya a las seis, así que no pude comprar leche."
+      }
+    },
+    {
+      "id": "allapot-van-w04",
+      "kind": "why",
+      "es": "Gábor kinyitotta az ablakot.",
+      "target": "kinyitotta",
+      "tr": {
+        "en": "Gábor opened the window.",
+        "es": "Gábor abrió la ventana."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "An action: an active verb with a definite object in -t",
+            "es": "Una acción: un verbo activo con un objeto definido en -t"
+          }
+        },
+        {
+          "text": {
+            "en": "A state with van + -va/-ve: the window is open",
+            "es": "Un estado con van + -va/-ve: la ventana está abierta"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Az ablak nyitva van; there is no doer Gábor and no object with -t.",
+            "es": "Con esta regla la frase sería Az ablak nyitva van; no habría agente Gábor ni objeto con -t."
+          }
+        },
+        {
+          "text": {
+            "en": "A future state: the window will be open",
+            "es": "Un estado futuro: la ventana estará abierta"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Az ablak ki lesz nyitva; here Gábor already did it (kinyitotta is past).",
+            "es": "Con esta regla la frase sería Az ablak ki lesz nyitva; aquí Gábor ya lo hizo (kinyitotta es pasado)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "allapot-van-f10",
+      "kind": "form",
+      "verb": "eltör",
+      "person": "van",
+      "answer": "el van törve",
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-c14",
+      "sentence": "A számlák még ___ kifizetve.",
+      "options": [
+        "nincs",
+        "vannak",
+        "nincsenek"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A számlák is plural, so nincs becomes nincsenek; the prefix is joined to the -va/-ve word.",
+        "es": "A számlák es plural, así que nincs pasa a nincsenek; el prefijo va unido a la palabra en -va/-ve."
+      },
+      "wrong": {
+        "nincs": {
+          "en": "nincs is singular, but there are several bills.",
+          "es": "nincs es singular, pero hay varias cuentas."
+        },
+        "vannak": {
+          "en": "vannak is positive and would keep the prefix apart (ki vannak fizetve); here the sentence says 'not yet' and the prefix is joined.",
+          "es": "vannak es positivo y dejaría el prefijo separado (ki vannak fizetve); aquí la frase dice «todavía no» y el prefijo va unido."
+        }
+      },
+      "examples": [
+        "Az ablakok nincsenek bezárva.",
+        "A jegyek nincsenek lefoglalva."
+      ],
+      "tr": {
+        "en": "The bills are not paid yet.",
+        "es": "Las cuentas todavía no están pagadas."
+      }
+    },
+    {
+      "id": "allapot-van-f11",
+      "kind": "form",
+      "verb": "bezár",
+      "person": "volt",
+      "answer": "be volt zárva",
+      "table": "allapot-forms"
+    },
+    {
+      "id": "allapot-van-f12",
+      "kind": "form",
+      "verb": "lefoglal",
+      "person": "nincs",
+      "answer": "nincs lefoglalva",
+      "accept": [
+        "nincsen lefoglalva"
+      ],
+      "table": "allapot-forms"
+    }
+  ]
+}

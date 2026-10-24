@@ -1,0 +1,1428 @@
+{
+  "schema": 2,
+  "topic": "hat-het-idok",
+  "level": "B1",
+  "title": {
+    "en": "I was allowed to, I could: -hat/-het in the past and conditional",
+    "es": "Pude, me dejaron, podría: -hat/-het en pasado y condicional"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "You know -hat/-het in the present: Bejöhetek? (May I come in?), Nem mehetsz be. (You may not go in.) The suffix is part of the verb, so the verb behaves like any other verb: it has a past and a conditional. Past: -hat/-het + the past ending, with a double t: Tegnap nem mehettem moziba. (Yesterday I was not allowed to go to the cinema.) Conditional: -hat/-het + -na/-ne: Elmehetnék? (Could I leave?) English and Spanish use different words for these (was allowed to, could, pude, me dejaron, podría); in Hungarian only the ending changes. The verb tud has its own job (you personally manage to do something), so you also have to know when to choose tud and when -hat/-het.",
+        "es": "Ya conoces -hat/-het en presente: Bejöhetek? (¿Puedo entrar?), Nem mehetsz be. (No puedes entrar.) El sufijo forma parte del verbo, así que el verbo se comporta como cualquier otro: tiene pasado y condicional. Pasado: -hat/-het + la terminación de pasado, con t doble: Tegnap nem mehettem moziba. (Ayer no me dejaron ir al cine.) Condicional: -hat/-het + -na/-ne: Elmehetnék? (¿Podría irme?) El español usa palabras distintas para esto (pude, me dejaron, podría); en húngaro solo cambia la terminación. El verbo tud tiene su propio trabajo (tú mismo logras hacer algo), así que también hay que saber cuándo elegir tud y cuándo -hat/-het."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "hh-past",
+      "title": {
+        "en": "Past: -hat/-het + the past ending (indefinite)",
+        "es": "Pasado: -hat/-het + la terminación de pasado (indefinido)"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "mehet (menni, to go)",
+          "es": "mehet (menni, ir)"
+        },
+        {
+          "en": "várhat (várni, to wait)",
+          "es": "várhat (várni, esperar)"
+        },
+        {
+          "en": "jöhet (jönni, to come)",
+          "es": "jöhet (jönni, venir)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "mehettem",
+          "várhattam",
+          "jöhettem"
+        ],
+        [
+          "te",
+          "mehettél",
+          "várhattál",
+          "jöhettél"
+        ],
+        [
+          "ő",
+          "mehetett",
+          "várhatott",
+          "jöhetett"
+        ],
+        [
+          "mi",
+          "mehettünk",
+          "várhattunk",
+          "jöhettünk"
+        ],
+        [
+          "ti",
+          "mehettetek",
+          "várhattatok",
+          "jöhettetek"
+        ],
+        [
+          "ők",
+          "mehettek",
+          "várhattak",
+          "jöhettek"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hh-past-def",
+      "title": {
+        "en": "Past with an object: indefinite or definite",
+        "es": "Pasado con complemento: indefinido o determinado"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "kérhet + egy kávét (a coffee)",
+          "es": "kérhet + egy kávét (un café)"
+        },
+        {
+          "en": "kérhet + a számlát (the bill)",
+          "es": "kérhet + a számlát (la cuenta)"
+        },
+        {
+          "en": "láthat + egy lakást (a flat)",
+          "es": "láthat + egy lakást (un departamento)"
+        },
+        {
+          "en": "láthat + a lakást (the flat)",
+          "es": "láthat + a lakást (el departamento)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "kérhettem",
+          "kérhettem",
+          "láthattam",
+          "láthattam"
+        ],
+        [
+          "te",
+          "kérhettél",
+          "kérhetted",
+          "láthattál",
+          "láthattad"
+        ],
+        [
+          "ő",
+          "kérhetett",
+          "kérhette",
+          "láthatott",
+          "láthatta"
+        ],
+        [
+          "mi",
+          "kérhettünk",
+          "kérhettük",
+          "láthattunk",
+          "láthattuk"
+        ],
+        [
+          "ti",
+          "kérhettetek",
+          "kérhettétek",
+          "láthattatok",
+          "láthattátok"
+        ],
+        [
+          "ők",
+          "kérhettek",
+          "kérhették",
+          "láthattak",
+          "láthatták"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Past: what was allowed or possible",
+        "es": "Pasado: lo que estaba permitido o era posible"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A rule, a person or the circumstances let you (or did not let you) do something. After -hat/-het add the past -t: -hattam, -hettem, -hatott, -hetett. A reason with mert often follows.",
+            "es": "Una regla, una persona o las circunstancias te dejaron (o no te dejaron) hacer algo. Después de -hat/-het se añade la -t del pasado: -hattam, -hettem, -hatott, -hetett. Con frecuencia sigue un motivo con mert."
+          },
+          "examples": [
+            {
+              "es": "Tizenöt évesen még nem mehettem egyedül moziba.",
+              "tr": {
+                "en": "At fifteen I was not yet allowed to go to the cinema alone.",
+                "es": "A los quince años todavía no me dejaban ir solo al cine."
+              }
+            },
+            {
+              "es": "Nem mehettem el a koncertre, mert nem kaptam szabadságot.",
+              "tr": {
+                "en": "I could not go to the concert because I did not get any leave.",
+                "es": "No pude ir al concierto porque no me dieron días libres."
+              }
+            },
+            {
+              "es": "Az iskolában nem használhattuk a telefont.",
+              "tr": {
+                "en": "At school we were not allowed to use the phone.",
+                "es": "En la escuela no nos dejaban usar el teléfono."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Indefinite or definite: the ending after -hat/-het follows the usual rule. A definite object (a lakást, a nagyapámat) asks for -hatta/-hette in the 3rd person and -hattuk/-hettük in the 1st plural; without an object or with an indefinite one you use -hatott/-hetett and -hattunk/-hettünk.",
+            "es": "Indefinido o determinado: la terminación después de -hat/-het sigue la regla de siempre. Un complemento determinado (a lakást, a nagyapámat) pide -hatta/-hette en 3.ª persona y -hattuk/-hettük en 1.ª del plural; sin complemento o con uno indeterminado se usa -hatott/-hetett y -hattunk/-hettünk."
+          },
+          "examples": [
+            {
+              "es": "Péter tegnap végre megnézhette a lakást.",
+              "tr": {
+                "en": "Péter was finally able to see the flat yesterday.",
+                "es": "Péter por fin pudo ver el departamento ayer."
+              }
+            },
+            {
+              "es": "A kórházban meglátogathattuk a nagyapámat.",
+              "tr": {
+                "en": "In the hospital we were allowed to visit my grandfather.",
+                "es": "En el hospital nos dejaron visitar a mi abuelo."
+              }
+            },
+            {
+              "es": "Kati tegnap sokáig sétálhatott.",
+              "tr": {
+                "en": "Kati was able to walk for a long time yesterday.",
+                "es": "Kati pudo caminar mucho tiempo ayer."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Prefixes (and haza) stay in front of the verb in a positive sentence and step behind nem in a negative one, as with every prefix verb.",
+            "es": "Los prefijos (y haza) van delante del verbo en una frase afirmativa y pasan detrás de nem en una negativa, como con cualquier verbo con prefijo."
+          },
+          "examples": [
+            {
+              "es": "Tegnap hazamehettem, mert beteg voltam.",
+              "tr": {
+                "en": "Yesterday I was allowed to go home because I was ill.",
+                "es": "Ayer me dejaron irme a casa porque estaba enfermo."
+              }
+            },
+            {
+              "es": "Nem mehettem haza, mert még dolgoznom kellett.",
+              "tr": {
+                "en": "I could not go home because I still had to work.",
+                "es": "No pude irme a casa porque todavía tenía que trabajar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Past of lehet and szabad: lehetett and szabad volt. They never take a person ending. With nem the word volt goes right after nem: nem volt szabad.",
+            "es": "Pasado de lehet y szabad: lehetett y szabad volt. Nunca llevan terminación de persona. Con nem, la palabra volt va justo después de nem: nem volt szabad."
+          },
+          "examples": [
+            {
+              "es": "Régen még az étteremben is lehetett dohányozni.",
+              "tr": {
+                "en": "In the old days one could even smoke in the restaurant.",
+                "es": "Antes se podía fumar hasta en el restaurante."
+              }
+            },
+            {
+              "es": "Múlt héten a vizsgán nem volt szabad telefont használni.",
+              "tr": {
+                "en": "Last week it was not allowed to use a phone at the exam.",
+                "es": "La semana pasada no estaba permitido usar el teléfono en el examen."
+              }
+            },
+            {
+              "es": "Tegnap nem lehetett bemenni a múzeumba, mert zárva volt.",
+              "tr": {
+                "en": "Yesterday one could not go into the museum because it was closed.",
+                "es": "Ayer no se podía entrar al museo porque estaba cerrado."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hh-cond",
+      "title": {
+        "en": "Conditional: -hat/-het + -na/-ne (indefinite)",
+        "es": "Condicional: -hat/-het + -na/-ne (indefinido)"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "mehet (menni, to go)",
+          "es": "mehet (menni, ir)"
+        },
+        {
+          "en": "várhat (várni, to wait)",
+          "es": "várhat (várni, esperar)"
+        },
+        {
+          "en": "jöhet (jönni, to come)",
+          "es": "jöhet (jönni, venir)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "mehetnék",
+          "várhatnék",
+          "jöhetnék"
+        ],
+        [
+          "te",
+          "mehetnél",
+          "várhatnál",
+          "jöhetnél"
+        ],
+        [
+          "ő",
+          "mehetne",
+          "várhatna",
+          "jöhetne"
+        ],
+        [
+          "mi",
+          "mehetnénk",
+          "várhatnánk",
+          "jöhetnénk"
+        ],
+        [
+          "ti",
+          "mehetnétek",
+          "várhatnátok",
+          "jöhetnétek"
+        ],
+        [
+          "ők",
+          "mehetnének",
+          "várhatnának",
+          "jöhetnének"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hh-cond-def",
+      "title": {
+        "en": "Conditional with a definite object",
+        "es": "Condicional con complemento determinado"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "kérhet + a számlát (the bill)",
+          "es": "kérhet + a számlát (la cuenta)"
+        },
+        {
+          "en": "láthat + a lakást (the flat)",
+          "es": "láthat + a lakást (el departamento)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "kérhetném",
+          "láthatnám"
+        ],
+        [
+          "te",
+          "kérhetnéd",
+          "láthatnád"
+        ],
+        [
+          "ő",
+          "kérhetné",
+          "láthatná"
+        ],
+        [
+          "mi",
+          "kérhetnénk",
+          "láthatnánk"
+        ],
+        [
+          "ti",
+          "kérhetnétek",
+          "láthatnátok"
+        ],
+        [
+          "ők",
+          "kérhetnék",
+          "láthatnák"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Conditional: asking politely, suggesting, imagining",
+        "es": "Condicional: pedir con cortesía, sugerir, imaginar"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A polite question in the 1st person: Elmehetnék...? asks permission more softly than Elmehetek...? Use it with a boss, a stranger or an official; with a friend the plain present is normal.",
+            "es": "Una pregunta cortés en 1.ª persona: Elmehetnék...? pide permiso con más suavidad que Elmehetek...? Úsala con un jefe, un desconocido o un funcionario; con un amigo lo normal es el presente."
+          },
+          "examples": [
+            {
+              "es": "Elnézést, elmehetnék ma korábban?",
+              "tr": {
+                "en": "Excuse me, could I leave earlier today?",
+                "es": "Disculpe, ¿podría irme más temprano hoy?"
+              }
+            },
+            {
+              "es": "Kérhetnék egy pohár vizet?",
+              "tr": {
+                "en": "Could I have a glass of water?",
+                "es": "¿Podría pedir un vaso de agua?"
+              }
+            },
+            {
+              "es": "Megkérdezhetném, hol van a posta?",
+              "tr": {
+                "en": "Could I ask where the post office is?",
+                "es": "¿Podría preguntarle dónde está el correo?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A friendly suggestion (you could, we could) or a mild reproach, with te, ti or mi. A definite object asks for the definite endings (-nád/-néd, -ná/-né).",
+            "es": "Una sugerencia amistosa (podrías, podríamos) o un reproche suave, con te, ti o mi. Un complemento determinado pide las terminaciones determinadas (-nád/-néd, -ná/-né)."
+          },
+          "examples": [
+            {
+              "es": "Elmehetnénk a hétvégén Szegedre.",
+              "tr": {
+                "en": "We could go to Szeged at the weekend.",
+                "es": "Podríamos ir a Szeged el fin de semana."
+              }
+            },
+            {
+              "es": "Segíthetnél egy kicsit a konyhában!",
+              "tr": {
+                "en": "You could help a little in the kitchen!",
+                "es": "¡Podrías ayudar un poco en la cocina!"
+              }
+            },
+            {
+              "es": "Megkérdezhetnéd a szomszédot.",
+              "tr": {
+                "en": "You could ask the neighbour.",
+                "es": "Podrías preguntarle al vecino."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If-clauses: after ha + conditional the main clause is conditional too. Both parts of the sentence imagine something that is not real.",
+            "es": "Oraciones con ha: después de ha + condicional, la oración principal también va en condicional. Las dos partes imaginan algo que no es real."
+          },
+          "examples": [
+            {
+              "es": "Ha nem dolgoznék, elmehetnék veled.",
+              "tr": {
+                "en": "If I were not working, I could go with you.",
+                "es": "Si no estuviera trabajando, podría ir contigo."
+              }
+            },
+            {
+              "es": "Ha nem lenne beteg, elmehetne az esküvőre.",
+              "tr": {
+                "en": "If he were not ill, he could go to the wedding.",
+                "es": "Si no estuviera enfermo, podría ir a la boda."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "No person at all: Lehetne...? means 'Would it be possible to...?' It is the polite form of Lehet...? and takes the plain infinitive.",
+            "es": "Sin ninguna persona: Lehetne...? significa «¿Sería posible...?». Es la forma cortés de Lehet...? y lleva el infinitivo simple."
+          },
+          "examples": [
+            {
+              "es": "Lehetne itt parkolni?",
+              "tr": {
+                "en": "Would it be possible to park here?",
+                "es": "¿Se podría estacionar aquí?"
+              }
+            },
+            {
+              "es": "Lehetne itt kártyával fizetni?",
+              "tr": {
+                "en": "Could one pay by card here?",
+                "es": "¿Se podría pagar con tarjeta aquí?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "hh-lehet",
+      "title": {
+        "en": "lehet and szabad in other times",
+        "es": "lehet y szabad en otros tiempos"
+      },
+      "header": [
+        {
+          "en": "Time",
+          "es": "Tiempo"
+        },
+        {
+          "en": "lehet (it is possible)",
+          "es": "lehet (es posible)"
+        },
+        {
+          "en": "szabad (it is allowed)",
+          "es": "szabad (está permitido)"
+        }
+      ],
+      "rows": [
+        [
+          "most",
+          "lehet",
+          "szabad"
+        ],
+        [
+          "most + nem",
+          "nem lehet",
+          "nem szabad"
+        ],
+        [
+          "tegnap",
+          "lehetett",
+          "szabad volt"
+        ],
+        [
+          "tegnap + nem",
+          "nem lehetett",
+          "nem volt szabad"
+        ],
+        [
+          "ha",
+          "lehetne",
+          "szabad lenne"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Maybe: lehet, hogy",
+        "es": "Quizás: lehet, hogy"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Lehet, hogy + a normal clause means 'maybe'. The clause keeps its own tense: no sequence of tenses as in English or Spanish.",
+            "es": "Lehet, hogy + una oración normal significa «tal vez». La oración conserva su propio tiempo: no hay concordancia de tiempos como en inglés o español."
+          },
+          "examples": [
+            {
+              "es": "Lehet, hogy holnap esik az eső.",
+              "tr": {
+                "en": "Maybe it will rain tomorrow.",
+                "es": "Tal vez llueva mañana."
+              }
+            },
+            {
+              "es": "Lehet, hogy Kati tegnap már hazament.",
+              "tr": {
+                "en": "Maybe Kati already went home yesterday.",
+                "es": "Tal vez Kati ya se fue a casa ayer."
+              }
+            },
+            {
+              "es": "Lehet, hogy nem jön be az irodába.",
+              "tr": {
+                "en": "Maybe he is not coming into the office.",
+                "es": "Tal vez no venga a la oficina."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Nem lehet, hogy... says 'it cannot be that...' and shows surprise.",
+            "es": "Nem lehet, hogy... dice «no puede ser que...» y expresa sorpresa."
+          },
+          "examples": [
+            {
+              "es": "Nem lehet, hogy elfelejtette!",
+              "tr": {
+                "en": "It cannot be that he forgot!",
+                "es": "¡No puede ser que se le haya olvidado!"
+              }
+            },
+            {
+              "es": "Nem lehet, hogy már hat óra van!",
+              "tr": {
+                "en": "It cannot already be six o’clock!",
+                "es": "¡No puede ser que ya sean las seis!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Do not mix it up with lehet + infinitive, which is about permission or possibility (Lehet itt parkolni?). The two can meet in one sentence.",
+            "es": "No lo confundas con lehet + infinitivo, que habla de permiso o posibilidad (Lehet itt parkolni?). Las dos construcciones pueden aparecer en una misma frase."
+          },
+          "examples": [
+            {
+              "es": "Lehet itt kártyával fizetni?",
+              "tr": {
+                "en": "Can one pay by card here?",
+                "es": "¿Se puede pagar con tarjeta aquí?"
+              }
+            },
+            {
+              "es": "Lehet, hogy itt nem lehet kártyával fizetni.",
+              "tr": {
+                "en": "Maybe one cannot pay by card here.",
+                "es": "Tal vez aquí no se pueda pagar con tarjeta."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "tud or -hat/-het? Plain or polite?",
+        "es": "¿tud o -hat/-het? ¿Directo o cortés?"
+      },
+      "pairs": [
+        {
+          "a": "Nem mehetsz be.",
+          "b": "Nem tudok bemenni.",
+          "note": {
+            "en": "-hat/-het: a rule, a person or the situation allows or forbids it. tud: you personally manage or not (strength, skill, time, a locked door). With tud the verb after it is an infinitive.",
+            "es": "-hat/-het: una regla, una persona o la situación lo permite o lo prohíbe. tud: tú personalmente logras hacerlo o no (fuerza, habilidad, tiempo, una puerta cerrada con llave). Con tud el verbo que sigue va en infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Ide nem mehetsz be, ez a főnök szobája.",
+              "tr": {
+                "en": "You may not go in here, this is the boss’s room.",
+                "es": "Aquí no puedes entrar, es el cuarto del jefe."
+              }
+            },
+            {
+              "es": "Nem tudok bemenni, mert elveszítettem a kulcsot.",
+              "tr": {
+                "en": "I cannot get in because I lost the key.",
+                "es": "No puedo entrar porque perdí la llave."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Tegnap nem tudtam elmenni.",
+          "b": "Tegnap nem mehettem el.",
+          "note": {
+            "en": "Past: tudtam = I was not able to (illness, no time). mehettem = it was not allowed or not possible because of a rule or somebody's decision. Spoken Hungarian picks tud for personal reasons.",
+            "es": "Pasado: tudtam = no pude (enfermedad, falta de tiempo). mehettem = no estaba permitido o no era posible por una regla o por la decisión de alguien. El húngaro hablado elige tud para motivos personales."
+          },
+          "examples": [
+            {
+              "es": "Tegnap nem tudtam elmenni az orvoshoz, mert nem volt időm.",
+              "tr": {
+                "en": "Yesterday I could not go to the doctor because I had no time.",
+                "es": "Ayer no pude ir al médico porque no tuve tiempo."
+              }
+            },
+            {
+              "es": "Tegnap nem mehettem el az orvoshoz, mert a főnököm nem adott szabadnapot.",
+              "tr": {
+                "en": "Yesterday I could not go to the doctor because my boss gave me no day off.",
+                "es": "Ayer no pude ir al médico porque mi jefe no me dio el día libre."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Elmehetek ma korábban?",
+          "b": "Elmehetnék ma korábban?",
+          "note": {
+            "en": "Both are correct questions. -hetek is neutral (colleagues, friends, family). -hetnék is more polite and softer: a boss, a stranger, an office.",
+            "es": "Las dos son preguntas correctas. -hetek es neutral (colegas, amigos, familia). -hetnék es más cortés y suave: un jefe, un desconocido, una oficina."
+          },
+          "examples": [
+            {
+              "es": "Anna, elmehetek ma korábban?",
+              "tr": {
+                "en": "Anna, may I leave earlier today?",
+                "es": "Anna, ¿puedo irme más temprano hoy?"
+              }
+            },
+            {
+              "es": "Elnézést, főnök úr, elmehetnék ma korábban?",
+              "tr": {
+                "en": "Excuse me, sir, could I leave earlier today?",
+                "es": "Disculpe, jefe, ¿podría irme más temprano hoy?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "English 'could' and Spanish «podía / pude / podría» hide three different things. Skill in the past: Gyerekként jól tudtam úszni (tud). Permission or an outside limit in the past: Tegnap nem mehettem moziba (-hat/-het + past). A polite or imagined 'could': Elmehetnék? (-hat/-het + conditional). Watch the double t: kérhetem = I may ask for it, kérhettem = I was allowed to ask for it. And a definite object keeps the definite endings: Kérhetném a számlát? but Kérhetnék egy kávét?",
+        "es": "El inglés «could» y el español «podía / pude / podría» esconden tres cosas distintas. Habilidad en el pasado: Gyerekként jól tudtam úszni (tud). Permiso o límite externo en el pasado: Tegnap nem mehettem moziba (-hat/-het + pasado). Un «podría» cortés o imaginado: Elmehetnék? (-hat/-het + condicional). Cuidado con la t doble: kérhetem = puedo pedirlo, kérhettem = me dejaron pedirlo. Y un complemento determinado mantiene las terminaciones determinadas: Kérhetném a számlát?, pero Kérhetnék egy kávét?"
+      }
+    }
+  ],
+  "speak": {
+    "en": "Put the past ending after «-hat» or «-het» and you say what was allowed: «Tegnap nem mehettem moziba». Note the double t: «mehettem», «várhattam», «kérhettem». With a definite object the ending changes: «Péter megnézhette a lakást». For a polite question use the conditional: «Elmehetnék ma korábban?» or «Kérhetnék egy pohár vizet?». With a definite object say «Kérhetném a számlát?». For rules without a person use «lehetett» and «lehetne»: «Régen itt lehetett parkolni». To say that you personally could not manage, use «tud»: «Nem tudtam elmenni». And «Lehet, hogy esik» means maybe it is raining.",
+    "es": "Pon la terminación de pasado después de «-hat» o «-het» y dices lo que estaba permitido: «Tegnap nem mehettem moziba». Fíjate en la t doble: «mehettem», «várhattam», «kérhettem». Con un complemento determinado cambia la terminación: «Péter megnézhette a lakást». Para una pregunta cortés usa el condicional: «Elmehetnék ma korábban?» o «Kérhetnék egy pohár vizet?». Con un complemento determinado di «Kérhetném a számlát?». Para reglas sin persona usa «lehetett» y «lehetne»: «Régen itt lehetett parkolni». Para decir que tú personalmente no lograste hacerlo, usa «tud»: «Nem tudtam elmenni». Y «Lehet, hogy esik» significa tal vez está lloviendo."
+  },
+  "items": [
+    {
+      "id": "hat-het-idok-c01",
+      "sentence": "Tizenöt évesen még nem ___ egyedül moziba.",
+      "options": [
+        "mehettem",
+        "mehetek",
+        "mehetnék"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The sentence looks back to the time you were fifteen, so the past is needed: mehet + t + tem = mehettem (I was not allowed to go).",
+        "es": "La frase mira hacia atrás, a cuando tenías quince años, así que hace falta el pasado: mehet + t + tem = mehettem (no me dejaban ir)."
+      },
+      "wrong": {
+        "mehetek": {
+          "en": "mehetek is the present (I may go); with it the sentence would say that I am not allowed to go alone at this moment.",
+          "es": "mehetek es el presente (puedo ir); con ella la frase diría que ahora mismo no me dejan ir solo."
+        },
+        "mehetnék": {
+          "en": "mehetnék is the conditional (I could go); it is for an imagined situation, not for a fact from the past.",
+          "es": "mehetnék es el condicional (podría ir); sirve para una situación imaginada, no para un hecho del pasado."
+        }
+      },
+      "examples": [
+        "Tizenhat évesen már mehettem egyedül a városba.",
+        "Egyedül nem mehettem a városba."
+      ],
+      "tr": {
+        "en": "At fifteen I was not yet allowed to go to the cinema alone.",
+        "es": "A los quince años todavía no me dejaban ir solo al cine."
+      }
+    },
+    {
+      "id": "hat-het-idok-f01",
+      "kind": "form",
+      "verb": "mehet",
+      "person": "én",
+      "answer": "mehettem",
+      "table": "hh-past"
+    },
+    {
+      "id": "hat-het-idok-c02",
+      "sentence": "A gyerekek tegnap sokáig ___ a kertben.",
+      "options": [
+        "játszhattak",
+        "játszhatott",
+        "játszhatnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekek is plural and tegnap is past: játszhat + t + ak = játszhattak (they were allowed to play).",
+        "es": "A gyerekek es plural y tegnap es pasado: játszhat + t + ak = játszhattak (les dejaron jugar)."
+      },
+      "wrong": {
+        "játszhatott": {
+          "en": "játszhatott is for one person (he or she was allowed to play); a gyerekek are several children.",
+          "es": "játszhatott es para una sola persona (él o ella pudo jugar); a gyerekek son varios niños."
+        },
+        "játszhatnak": {
+          "en": "játszhatnak is the present (they may play); tegnap points to the past.",
+          "es": "játszhatnak es el presente (pueden jugar); tegnap apunta al pasado."
+        }
+      },
+      "examples": [
+        "Kati és Péter tegnap sokáig sétálhattak.",
+        "A gyerekek vasárnap a barátoknál játszhattak."
+      ],
+      "tr": {
+        "en": "The children were allowed to play in the garden for a long time yesterday.",
+        "es": "Ayer los niños pudieron jugar mucho tiempo en el jardín."
+      }
+    },
+    {
+      "id": "hat-het-idok-f02",
+      "kind": "form",
+      "verb": "várhat",
+      "person": "ti",
+      "answer": "várhattatok",
+      "table": "hh-past"
+    },
+    {
+      "id": "hat-het-idok-c03",
+      "sentence": "Péter tegnap végre ___ a lakást.",
+      "options": [
+        "megnézhette",
+        "megnézhetett",
+        "megnézhetné"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A lakást is a definite object (a + noun), so the definite ending is needed: megnéz + het + t + te = megnézhette (he was able to see it).",
+        "es": "A lakást es un complemento determinado (a + sustantivo), por eso se necesita la terminación determinada: megnéz + het + t + te = megnézhette (pudo verlo)."
+      },
+      "wrong": {
+        "megnézhetett": {
+          "en": "megnézhetett has the indefinite ending; it fits an object like egy lakást (a flat), not a lakást.",
+          "es": "megnézhetett tiene la terminación indefinida; va con un complemento como egy lakást (un departamento), no con a lakást."
+        },
+        "megnézhetné": {
+          "en": "megnézhetné is the conditional (he could see it); tegnap and végre report what really happened.",
+          "es": "megnézhetné es el condicional (podría verlo); tegnap y végre cuentan lo que de verdad pasó."
+        }
+      },
+      "examples": [
+        "Anna végre megnézhette az új irodát.",
+        "Végre megnézhettük a kertet is."
+      ],
+      "tr": {
+        "en": "Péter was finally able to see the flat yesterday.",
+        "es": "Péter por fin pudo ver el departamento ayer."
+      }
+    },
+    {
+      "id": "hat-het-idok-f03",
+      "kind": "form",
+      "verb": "jöhet",
+      "person": "ő",
+      "answer": "jöhetett",
+      "table": "hh-past"
+    },
+    {
+      "id": "hat-het-idok-c04",
+      "sentence": "Régen még az étteremben is ___ dohányozni.",
+      "options": [
+        "lehetett",
+        "lehet",
+        "lehetne"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Régen (in the old days) is past, and lehet has a past form without any person ending: lehetett.",
+        "es": "Régen (antes) es pasado, y lehet tiene una forma de pasado sin terminación de persona: lehetett."
+      },
+      "wrong": {
+        "lehet": {
+          "en": "lehet is the present; with it the sentence would say that smoking in the restaurant is allowed now.",
+          "es": "lehet es el presente; con ella la frase diría que ahora se puede fumar en el restaurante."
+        },
+        "lehetne": {
+          "en": "lehetne is the conditional (it would be possible); it is a polite question or an imagined situation, not a report about the past.",
+          "es": "lehetne es el condicional (sería posible); es una pregunta cortés o una situación imaginada, no un relato del pasado."
+        }
+      },
+      "examples": [
+        "Régen még a vonaton is lehetett dohányozni.",
+        "Régen az irodában is lehetett dohányozni."
+      ],
+      "tr": {
+        "en": "In the old days one could even smoke in the restaurant.",
+        "es": "Antes se podía fumar hasta en el restaurante."
+      }
+    },
+    {
+      "id": "hat-het-idok-f04",
+      "kind": "form",
+      "verb": "kérhet + a számlát",
+      "person": "ő",
+      "answer": "kérhette",
+      "table": "hh-past-def"
+    },
+    {
+      "id": "hat-het-idok-c05",
+      "sentence": "Múlt héten a vizsgán nem ___ telefont használni.",
+      "options": [
+        "volt szabad",
+        "szabad",
+        "lenne szabad"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Múlt héten (last week) is past, so szabad needs volt, and with nem the volt stands right after it: nem volt szabad.",
+        "es": "Múlt héten (la semana pasada) es pasado, así que szabad necesita volt, y con nem el volt va justo detrás: nem volt szabad."
+      },
+      "wrong": {
+        "szabad": {
+          "en": "nem szabad alone is the present (it is forbidden now); last week needs volt.",
+          "es": "nem szabad solo es el presente (está prohibido ahora); la semana pasada necesita volt."
+        },
+        "lenne szabad": {
+          "en": "nem lenne szabad is the conditional (it would not be allowed); the sentence reports a fact from last week.",
+          "es": "nem lenne szabad es el condicional (no estaría permitido); la frase cuenta un hecho de la semana pasada."
+        }
+      },
+      "examples": [
+        "A vizsga alatt nem volt szabad beszélni.",
+        "A kórházban nem volt szabad dohányozni."
+      ],
+      "tr": {
+        "en": "Last week it was not allowed to use a phone at the exam.",
+        "es": "La semana pasada no estaba permitido usar el teléfono en el examen."
+      }
+    },
+    {
+      "id": "hat-het-idok-f05",
+      "kind": "form",
+      "verb": "láthat + a lakást",
+      "person": "ti",
+      "answer": "láthattátok",
+      "table": "hh-past-def"
+    },
+    {
+      "id": "hat-het-idok-c06",
+      "sentence": "Ide nem ___ be, itt csak az orvosok dolgozhatnak.",
+      "options": [
+        "mehetsz",
+        "mehettél",
+        "tudsz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The reason is a rule about who may be here, in the present: nem mehetsz be (you may not go in). -hat/-het is the form for permission.",
+        "es": "El motivo es una regla sobre quién puede estar aquí, en presente: nem mehetsz be (no puedes entrar). -hat/-het es la forma del permiso."
+      },
+      "wrong": {
+        "mehettél": {
+          "en": "mehettél is the past (you were allowed to go in); the reason dolgozhatnak is in the present.",
+          "es": "mehettél es el pasado (te dejaron entrar); el motivo dolgozhatnak está en presente."
+        },
+        "tudsz": {
+          "en": "tudsz needs an infinitive (be tudsz menni = you manage to get in); with be alone it is not a sentence, and tud speaks about ability, not about a rule.",
+          "es": "tudsz necesita un infinitivo (be tudsz menni = logras entrar); con be solo no es una frase, y tud habla de capacidad, no de una regla."
+        }
+      },
+      "examples": [
+        "Ide csak az orvosok mehetnek be.",
+        "Ide nem parkolhatsz, ez a főnök helye."
+      ],
+      "tr": {
+        "en": "You may not go in here, only the doctors may work here.",
+        "es": "Aquí no puedes entrar, aquí solo pueden trabajar los médicos."
+      }
+    },
+    {
+      "id": "hat-het-idok-f06",
+      "kind": "form",
+      "verb": "mehet",
+      "person": "én",
+      "answer": "mehetnék",
+      "table": "hh-cond"
+    },
+    {
+      "id": "hat-het-idok-c07",
+      "sentence": "Tegnap nem ___ elmenni a koncertre, mert beteg voltam.",
+      "options": [
+        "tudtam",
+        "mehettem",
+        "mehetek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Being ill is something you cannot manage, not a permission: tud + infinitive, nem tudtam elmenni.",
+        "es": "Estar enfermo es algo que no logras hacer, no un permiso: tud + infinitivo, nem tudtam elmenni."
+      },
+      "wrong": {
+        "mehettem": {
+          "en": "mehettem already means \"I was allowed to go\", so it cannot be followed by another infinitive (elmenni); with it you would write Nem mehettem el.",
+          "es": "mehettem ya significa «me dejaron ir», por eso no puede ir seguido de otro infinitivo (elmenni); con ella se escribiría Nem mehettem el."
+        },
+        "mehetek": {
+          "en": "mehetek is present and cannot take elmenni either; the sentence is about yesterday.",
+          "es": "mehetek es presente y tampoco admite elmenni; la frase habla de ayer."
+        }
+      },
+      "examples": [
+        "Tegnap nem tudtam aludni.",
+        "Sajnos nem tudtam kinyitni az ajtót."
+      ],
+      "tr": {
+        "en": "Yesterday I could not go to the concert because I was ill.",
+        "es": "Ayer no pude ir al concierto porque estaba enfermo."
+      }
+    },
+    {
+      "id": "hat-het-idok-f07",
+      "kind": "form",
+      "verb": "várhat",
+      "person": "te",
+      "answer": "várhatnál",
+      "table": "hh-cond"
+    },
+    {
+      "id": "hat-het-idok-c08",
+      "sentence": "Tegnap nem ___ el a koncertre, mert a főnököm nem adott szabadnapot.",
+      "options": [
+        "mehettem",
+        "tudtam",
+        "mehetnék"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The boss did not give a day off: an outside limit, so -hat/-het + past, nem mehettem el. The prefix el steps behind nem.",
+        "es": "El jefe no dio el día libre: un límite externo, así que -hat/-het + pasado, nem mehettem el. El prefijo el pasa detrás de nem."
+      },
+      "wrong": {
+        "tudtam": {
+          "en": "tudtam needs an infinitive right after it (nem tudtam elmenni); with el on its own it is not a sentence.",
+          "es": "tudtam necesita un infinitivo justo detrás (nem tudtam elmenni); con el solo no es una frase."
+        },
+        "mehetnék": {
+          "en": "mehetnék is the conditional (I could go); the sentence reports what happened yesterday.",
+          "es": "mehetnék es el condicional (podría ir); la frase cuenta lo que pasó ayer."
+        }
+      },
+      "examples": [
+        "Nem mehettem haza, mert még dolgoznom kellett.",
+        "Szombaton nem mehettem el, mert dolgoznom kellett."
+      ],
+      "tr": {
+        "en": "I could not go to the concert yesterday because my boss did not give me a day off.",
+        "es": "Ayer no pude ir al concierto porque mi jefe no me dio el día libre."
+      }
+    },
+    {
+      "id": "hat-het-idok-f08",
+      "kind": "form",
+      "verb": "jöhet",
+      "person": "ők",
+      "answer": "jöhetnének",
+      "table": "hh-cond"
+    },
+    {
+      "id": "hat-het-idok-c09",
+      "sentence": "Ha lenne időm, ___ veled moziba.",
+      "options": [
+        "elmehetnék",
+        "elmehetek",
+        "elmehettem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ha lenne időm (if I had time) is a conditional clause, so the main clause is conditional too: elmehetnék (I could go).",
+        "es": "Ha lenne időm (si tuviera tiempo) es una oración condicional, así que la principal también va en condicional: elmehetnék (podría ir)."
+      },
+      "wrong": {
+        "elmehetek": {
+          "en": "elmehetek is the present (I may go); it states a fact, but the ha clause says I have no time.",
+          "es": "elmehetek es el presente (puedo ir); afirma un hecho, pero la oración con ha dice que no tengo tiempo."
+        },
+        "elmehettem": {
+          "en": "elmehettem is the past (I was allowed to go); the sentence imagines something that is not real now.",
+          "es": "elmehettem es el pasado (me dejaron ir); la frase imagina algo que ahora no es real."
+        }
+      },
+      "examples": [
+        "Ha nem dolgoznék, elmehetnék veled.",
+        "Ha lenne autóm, elmehetnék Debrecenbe."
+      ],
+      "tr": {
+        "en": "If I had time, I could go to the cinema with you.",
+        "es": "Si tuviera tiempo, podría ir contigo al cine."
+      }
+    },
+    {
+      "id": "hat-het-idok-f09",
+      "kind": "form",
+      "verb": "kérhet + a számlát",
+      "person": "én",
+      "answer": "kérhetném",
+      "table": "hh-cond-def"
+    },
+    {
+      "id": "hat-het-idok-c10",
+      "sentence": "___ a szerelőt, mert nem működik a mosógép.",
+      "options": [
+        "Hívhatnád",
+        "Hívhatnál",
+        "Hívhattad"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A szerelőt is a definite object and the speaker suggests something (you could call): the conditional with the definite ending, hívhatnád.",
+        "es": "A szerelőt es un complemento determinado y el hablante sugiere algo (podrías llamar): el condicional con la terminación determinada, hívhatnád."
+      },
+      "wrong": {
+        "Hívhatnál": {
+          "en": "hívhatnál has the indefinite ending; it fits hívhatnál egy szerelőt (a mechanic), not a szerelőt.",
+          "es": "hívhatnál tiene la terminación indefinida; va con hívhatnál egy szerelőt (un técnico), no con a szerelőt."
+        },
+        "Hívhattad": {
+          "en": "hívhattad is the past (you were allowed to call him); here the speaker suggests what to do now.",
+          "es": "hívhattad es el pasado (te dejaron llamarlo); aquí el hablante sugiere qué hacer ahora."
+        }
+      },
+      "examples": [
+        "Elmehetnél orvoshoz, ha fáj a fejed.",
+        "Megkérdezhetnéd a főnököt."
+      ],
+      "tr": {
+        "en": "You could call the mechanic, because the washing machine is not working.",
+        "es": "Podrías llamar al técnico, porque la lavadora no funciona."
+      }
+    },
+    {
+      "id": "hat-het-idok-f10",
+      "kind": "form",
+      "verb": "láthat + a lakást",
+      "person": "te",
+      "answer": "láthatnád",
+      "table": "hh-cond-def"
+    },
+    {
+      "id": "hat-het-idok-c11",
+      "sentence": "Ti tegnap sokáig ___ a szomszédnál?",
+      "options": [
+        "maradhattatok",
+        "maradhattak",
+        "maradhattunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ti (you, plural) asks for the 2nd person plural, and tegnap for the past: marad + hat + t + atok = maradhattatok.",
+        "es": "Ti (ustedes) pide la 2.ª persona del plural, y tegnap el pasado: marad + hat + t + atok = maradhattatok."
+      },
+      "wrong": {
+        "maradhattak": {
+          "en": "maradhattak is for ők (they); the subject here is ti.",
+          "es": "maradhattak es para ők (ellos); el sujeto aquí es ti."
+        },
+        "maradhattunk": {
+          "en": "maradhattunk is for mi (we); the subject here is ti.",
+          "es": "maradhattunk es para mi (nosotros); el sujeto aquí es ti."
+        }
+      },
+      "examples": [
+        "Mi tegnap sokáig maradhattunk a buliban.",
+        "Ők is sokáig maradhattak."
+      ],
+      "tr": {
+        "en": "Were you allowed to stay at the neighbour’s for a long time yesterday?",
+        "es": "¿Ayer los dejaron quedarse mucho tiempo con el vecino?"
+      }
+    },
+    {
+      "id": "hat-het-idok-f11",
+      "kind": "form",
+      "verb": "lehet",
+      "person": "tegnap",
+      "answer": "lehetett",
+      "table": "hh-lehet"
+    },
+    {
+      "id": "hat-het-idok-c12",
+      "sentence": "Lehet, hogy Anna tegnap már ___, mert nem volt az irodában.",
+      "options": [
+        "elment",
+        "elmegy",
+        "elmenne"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After lehet, hogy the clause has its own tense, and tegnap needs the past: elment (she left).",
+        "es": "Después de lehet, hogy la oración tiene su propio tiempo, y tegnap pide el pasado: elment (se fue)."
+      },
+      "wrong": {
+        "elmegy": {
+          "en": "elmegy is present or future; it does not fit tegnap.",
+          "es": "elmegy es presente o futuro; no encaja con tegnap."
+        },
+        "elmenne": {
+          "en": "elmenne is the conditional (she would leave); the sentence guesses about what really happened.",
+          "es": "elmenne es el condicional (se iría); la frase hace una suposición sobre lo que de verdad pasó."
+        }
+      },
+      "examples": [
+        "Lehet, hogy Péter már hazament.",
+        "Lehet, hogy holnap nem jön be."
+      ],
+      "tr": {
+        "en": "Maybe Anna already left yesterday, because she was not in the office.",
+        "es": "Tal vez Anna ya se fue ayer, porque no estaba en la oficina."
+      }
+    },
+    {
+      "id": "hat-het-idok-f12",
+      "kind": "form",
+      "verb": "szabad",
+      "person": "tegnap + nem",
+      "answer": "nem volt szabad",
+      "table": "hh-lehet"
+    },
+    {
+      "id": "hat-het-idok-c13",
+      "sentence": "Nem tudok ___, mert az ajtó zárva van.",
+      "options": [
+        "bemenni",
+        "bemehetek",
+        "bemegyek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "tud takes a plain infinitive: nem tudok bemenni (I cannot get in).",
+        "es": "tud lleva un infinitivo simple: nem tudok bemenni (no puedo entrar)."
+      },
+      "wrong": {
+        "bemehetek": {
+          "en": "bemehetek already means \"I can / may go in\"; tud and -hat/-het do not stack.",
+          "es": "bemehetek ya significa «puedo entrar»; tud y -hat/-het no se apilan."
+        },
+        "bemegyek": {
+          "en": "bemegyek is a finite form (I go in); after tud you need the infinitive.",
+          "es": "bemegyek es una forma conjugada (entro); después de tud se necesita el infinitivo."
+        }
+      },
+      "examples": [
+        "Nem tudok aludni, mert hangos a zene.",
+        "Most nem tudok beszélni, dolgozom."
+      ],
+      "tr": {
+        "en": "I cannot get in because the door is locked.",
+        "es": "No puedo entrar porque la puerta está cerrada con llave."
+      }
+    },
+    {
+      "id": "hat-het-idok-w01",
+      "kind": "why",
+      "es": "Tegnap nem mehettem moziba.",
+      "target": "mehettem",
+      "tr": {
+        "en": "I was not allowed to go to the cinema yesterday.",
+        "es": "Ayer no me dejaron ir al cine."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-hat/-het + past ending: I was not allowed to go (or could not go)",
+            "es": "-hat/-het + terminación de pasado: no me dejaron ir (o no pude ir)"
+          }
+        },
+        {
+          "text": {
+            "en": "Conditional: I would not be allowed to go",
+            "es": "Condicional: no me dejarían ir"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem mehetnék moziba (I would not be allowed to go); the conditional ends in -nék, not in -tem.",
+            "es": "Con esta regla la frase sería Nem mehetnék moziba (no me dejarían ir); el condicional termina en -nék, no en -tem."
+          }
+        },
+        {
+          "text": {
+            "en": "Present tense: I am not allowed to go",
+            "es": "Presente: no me dejan ir"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem mehetek moziba (I may not go); the double t and -tem mark the past.",
+            "es": "Con esta regla la frase sería Nem mehetek moziba (no puedo ir); la t doble y -tem marcan el pasado."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hat-het-idok-c14",
+      "sentence": "Ha nem lenne olyan sok autó, itt ___ parkolni.",
+      "options": [
+        "lehetne",
+        "lehet",
+        "lehetett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ha nem lenne (if there were not) is a conditional clause, so the result is conditional: lehetne (it would be possible).",
+        "es": "Ha nem lenne (si no hubiera) es una oración condicional, así que el resultado va en condicional: lehetne (sería posible)."
+      },
+      "wrong": {
+        "lehet": {
+          "en": "lehet is the present, but the ha clause imagines something that is not real.",
+          "es": "lehet es el presente, pero la oración con ha imagina algo que no es real."
+        },
+        "lehetett": {
+          "en": "lehetett is the past (it was possible); here we imagine, we do not report.",
+          "es": "lehetett es el pasado (era posible); aquí imaginamos, no contamos."
+        }
+      },
+      "examples": [
+        "Ha nem lenne hideg, lehetne a kertben vacsorázni.",
+        "Ha nem esne az eső, lehetne még sétálni."
+      ],
+      "tr": {
+        "en": "If there were not so many cars, one could park here.",
+        "es": "Si no hubiera tantos autos, se podría estacionar aquí."
+      }
+    },
+    {
+      "id": "hat-het-idok-w02",
+      "kind": "why",
+      "es": "Elmehetnék ma korábban?",
+      "target": "Elmehetnék",
+      "tr": {
+        "en": "Could I leave earlier today?",
+        "es": "¿Podría irme más temprano hoy?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Past: I was allowed to leave earlier",
+            "es": "Pasado: me dejaron irme más temprano"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Elmehettem ma korábban (I was allowed to leave earlier today).",
+            "es": "Con esta regla la frase sería Elmehettem ma korábban (me dejaron irme más temprano hoy)."
+          }
+        },
+        {
+          "text": {
+            "en": "Conditional: a polite way to ask permission",
+            "es": "Condicional: una manera cortés de pedir permiso"
+          }
+        },
+        {
+          "text": {
+            "en": "Definite ending: there is a definite object",
+            "es": "Terminación determinada: hay un complemento determinado"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Elmehetném; the definite -ném needs a definite object, and here there is none.",
+            "es": "Con esta regla la frase sería Elmehetném; el -ném determinado necesita un complemento determinado, y aquí no hay ninguno."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "hat-het-idok-w03",
+      "kind": "why",
+      "es": "Nem tudtam elmenni, mert beteg voltam.",
+      "target": "tudtam",
+      "tr": {
+        "en": "I could not go because I was ill.",
+        "es": "No pude ir porque estaba enfermo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-hat/-het: somebody or a rule did not allow it",
+            "es": "-hat/-het: alguien o una regla no lo permitió"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem mehettem el (I was not allowed to go).",
+            "es": "Con esta regla la frase sería Nem mehettem el (no me dejaron ir)."
+          }
+        },
+        {
+          "text": {
+            "en": "kell: I had to go",
+            "es": "kell: tenía que ir"
+          },
+          "wrong": {
+            "en": "With kell the sentence would be Nem kellett elmennem (I did not have to go), a different meaning.",
+            "es": "Con kell la frase sería Nem kellett elmennem (no tenía que ir), un significado distinto."
+          }
+        },
+        {
+          "text": {
+            "en": "tud + infinitive: I was not able to manage it",
+            "es": "tud + infinitivo: no logré hacerlo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "hat-het-idok-w04",
+      "kind": "why",
+      "es": "Lehet, hogy esik.",
+      "target": "Lehet",
+      "tr": {
+        "en": "Maybe it is raining.",
+        "es": "Tal vez esté lloviendo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "lehet, hogy = maybe; the clause after hogy is an ordinary sentence",
+            "es": "lehet, hogy = tal vez; la oración después de hogy es una frase normal"
+          }
+        },
+        {
+          "text": {
+            "en": "lehet + infinitive: it is allowed",
+            "es": "lehet + infinitivo: está permitido"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Lehet esni, which makes no sense; the pattern is for rules, such as Itt lehet parkolni.",
+            "es": "Con esta regla la frase sería Lehet esni, que no tiene sentido; ese patrón es para reglas, como Itt lehet parkolni."
+          }
+        },
+        {
+          "text": {
+            "en": "-hat/-het on the verb: it may rain",
+            "es": "-hat/-het en el verbo: puede llover"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Eshet (it may rain), a shorter construction without hogy.",
+            "es": "Con esta regla la frase sería Eshet (puede llover), una construcción más corta sin hogy."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

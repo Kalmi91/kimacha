@@ -1,0 +1,1318 @@
+{
+  "schema": 2,
+  "topic": "muvelteto",
+  "level": "B1",
+  "title": {
+    "en": "Having it done: levágatom, megjavíttatom, íratott",
+    "es": "Mandar hacer: levágatom, megjavíttatom, íratott"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "English says 'I'm having my hair cut' and Spanish says «mando arreglar el teléfono», or simply «me corté el pelo» even when a hairdresser did it. Hungarian has a special verb for this: the causative (műveltető ige). Levágatom a hajam. = I am having my hair cut (somebody else cuts it). Megjavíttatom a telefont. = I am having the phone repaired. The same verb also means 'make somebody do something': A tanár dolgozatot íratott. = The teacher had a test written (made the class write one). You build it from the base verb with -at/-et (short verbs) or -tat/-tet (longer verbs). The result is a normal verb: it takes a prefix, all tenses and both sets of personal endings.",
+        "es": "El inglés dice 'I'm having my hair cut' y el español dice «mando arreglar el teléfono», o simplemente «me corté el pelo» aunque lo haya hecho un peluquero. El húngaro tiene un verbo especial para esto: el causativo (műveltető ige). Levágatom a hajam. = me van a cortar el pelo (lo corta otra persona). Megjavíttatom a telefont. = mando arreglar el teléfono. El mismo verbo también significa «hacer que alguien haga algo»: A tanár dolgozatot íratott. = El profesor hizo escribir un examen. Se forma con el verbo base + -at/-et (verbos cortos) o -tat/-tet (verbos más largos). El resultado es un verbo normal: admite prefijo, todos los tiempos y las dos series de terminaciones personales."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "muv-igek",
+      "title": {
+        "en": "Base verb and causative verb",
+        "es": "Verbo base y verbo causativo"
+      },
+      "header": [
+        {
+          "en": "Form",
+          "es": "Forma"
+        },
+        {
+          "en": "vág (to cut)",
+          "es": "vág (cortar)"
+        },
+        {
+          "en": "ír (to write)",
+          "es": "ír (escribir)"
+        },
+        {
+          "en": "főz (to cook)",
+          "es": "főz (cocinar)"
+        },
+        {
+          "en": "javít (to repair)",
+          "es": "javít (arreglar)"
+        },
+        {
+          "en": "takarít (to clean)",
+          "es": "takarít (limpiar)"
+        },
+        {
+          "en": "épít (to build)",
+          "es": "épít (construir)"
+        }
+      ],
+      "rows": [
+        [
+          "műveltető",
+          "vágat",
+          "írat",
+          "főzet",
+          "javíttat",
+          "takaríttat",
+          "építtet"
+        ],
+        [
+          "én (jelen)",
+          "vágatok",
+          "íratok",
+          "főzetek",
+          "javíttatok",
+          "takaríttatok",
+          "építtetek"
+        ],
+        [
+          "ő (múlt)",
+          "vágatott",
+          "íratott",
+          "főzetett",
+          "javíttatott",
+          "takaríttatott",
+          "építtetett"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which ending? Syllables and vowel harmony",
+        "es": "¿Qué terminación? Sílabas y armonía vocálica"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "One-syllable verbs take -at after back vowels and -et after front vowels: vág → vágat, hoz → hozat; főz → főzet, fest → festet. The verb ír is an exception: although í is a front vowel, it takes back endings (írok, írnak), so ír → írat.",
+            "es": "Los verbos de una sílaba toman -at con vocales posteriores y -et con vocales anteriores: vág → vágat, hoz → hozat; főz → főzet, fest → festet. El verbo ír es una excepción: aunque í es una vocal anterior, toma terminaciones posteriores (írok, írnak), así que ír → írat."
+          },
+          "examples": [
+            {
+              "es": "Kati minden hónapban hajat vágat.",
+              "tr": {
+                "en": "Kati has her hair cut every month.",
+                "es": "Kati se corta el pelo cada mes."
+              }
+            },
+            {
+              "es": "Ma ebédet hozatunk az irodába.",
+              "tr": {
+                "en": "Today we are having lunch delivered to the office.",
+                "es": "Hoy pedimos que nos traigan la comida a la oficina."
+              }
+            },
+            {
+              "es": "Jövőre kifestetjük a szobát.",
+              "tr": {
+                "en": "Next year we are having the room painted.",
+                "es": "El próximo año mandaremos pintar el cuarto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Longer verbs, and verbs that already end in -t, take -tat after back vowels and -tet after front vowels. When the verb ends in t, the two t's are written together: javít + tat = javíttat, épít + tet = építtet.",
+            "es": "Los verbos más largos, y los que ya terminan en -t, toman -tat con vocales posteriores y -tet con vocales anteriores. Cuando el verbo termina en t, las dos t se escriben juntas: javít + tat = javíttat, épít + tet = építtet."
+          },
+          "examples": [
+            {
+              "es": "Holnap megjavíttatom a telefont.",
+              "tr": {
+                "en": "Tomorrow I am having the phone repaired.",
+                "es": "Mañana mando arreglar el teléfono."
+              }
+            },
+            {
+              "es": "Lefordíttatjuk a levelet.",
+              "tr": {
+                "en": "We are having the letter translated.",
+                "es": "Vamos a mandar traducir la carta."
+              }
+            },
+            {
+              "es": "Anna és Gábor házat építtetnek.",
+              "tr": {
+                "en": "Anna and Gábor are having a house built.",
+                "es": "Anna y Gábor están mandando construir una casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few causatives are everyday words with a changed stem: eszik → etet (to feed). They are conjugated like any front verb: etetem, eteted, eteti.",
+            "es": "Algunos causativos son palabras de uso diario con la raíz cambiada: eszik → etet (dar de comer). Se conjugan como cualquier verbo anterior: etetem, eteted, eteti."
+          },
+          "examples": [
+            {
+              "es": "Minden reggel én etetem a kutyát.",
+              "tr": {
+                "en": "Every morning I feed the dog.",
+                "es": "Todas las mañanas yo le doy de comer al perro."
+              }
+            },
+            {
+              "es": "Anna eteti a babát.",
+              "tr": {
+                "en": "Anna is feeding the baby.",
+                "es": "Anna le está dando de comer al bebé."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "muv-vagat",
+      "title": {
+        "en": "vágat: present and past, indefinite and definite",
+        "es": "vágat: presente y pasado, indefinido y determinado"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "vágat + hajat (present, indefinite)",
+          "es": "vágat + hajat (presente, indefinido)"
+        },
+        {
+          "en": "vágat + a hajam (present, definite)",
+          "es": "vágat + a hajam (presente, determinado)"
+        },
+        {
+          "en": "vágat + hajat, múlt (past, indefinite)",
+          "es": "vágat + hajat, múlt (pasado, indefinido)"
+        },
+        {
+          "en": "vágat + a hajam, múlt (past, definite)",
+          "es": "vágat + a hajam, múlt (pasado, determinado)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "vágatok",
+          "vágatom",
+          "vágattam",
+          "vágattam"
+        ],
+        [
+          "te",
+          "vágatsz",
+          "vágatod",
+          "vágattál",
+          "vágattad"
+        ],
+        [
+          "ő",
+          "vágat",
+          "vágatja",
+          "vágatott",
+          "vágatta"
+        ],
+        [
+          "mi",
+          "vágatunk",
+          "vágatjuk",
+          "vágattunk",
+          "vágattuk"
+        ],
+        [
+          "ti",
+          "vágattok",
+          "vágatjátok",
+          "vágattatok",
+          "vágattátok"
+        ],
+        [
+          "ők",
+          "vágatnak",
+          "vágatják",
+          "vágattak",
+          "vágatták"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "muv-epittet",
+      "title": {
+        "en": "építtet: the same with a front verb",
+        "es": "építtet: lo mismo con un verbo anterior"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "építtet + házat (present, indefinite)",
+          "es": "építtet + házat (presente, indefinido)"
+        },
+        {
+          "en": "építtet + a házat (present, definite)",
+          "es": "építtet + a házat (presente, determinado)"
+        },
+        {
+          "en": "építtet + házat, múlt (past, indefinite)",
+          "es": "építtet + házat, múlt (pasado, indefinido)"
+        },
+        {
+          "en": "építtet + a házat, múlt (past, definite)",
+          "es": "építtet + a házat, múlt (pasado, determinado)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "építtetek",
+          "építtetem",
+          "építtettem",
+          "építtettem"
+        ],
+        [
+          "te",
+          "építtetsz",
+          "építteted",
+          "építtettél",
+          "építtetted"
+        ],
+        [
+          "ő",
+          "építtet",
+          "építteti",
+          "építtetett",
+          "építtette"
+        ],
+        [
+          "mi",
+          "építtetünk",
+          "építtetjük",
+          "építtettünk",
+          "építtettük"
+        ],
+        [
+          "ti",
+          "építtettek",
+          "építtetitek",
+          "építtettetek",
+          "építtettétek"
+        ],
+        [
+          "ők",
+          "építtetnek",
+          "építtetik",
+          "építtettek",
+          "építtették"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What the causative says",
+        "es": "Qué dice el causativo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Have something done: somebody (a hairdresser, a mechanic, a firm) does the job for you. A prefix often marks the job as finished: levág → levágat, megjavít → megjavíttat.",
+            "es": "Mandar hacer algo: alguien (un peluquero, un técnico, una empresa) hace el trabajo por ti. Un prefijo suele marcar el trabajo como terminado: levág → levágat, megjavít → megjavíttat."
+          },
+          "examples": [
+            {
+              "es": "Holnap levágatom a hajam.",
+              "tr": {
+                "en": "Tomorrow I am having my hair cut.",
+                "es": "Mañana me van a cortar el pelo."
+              }
+            },
+            {
+              "es": "Tavaly megcsináltattuk a lakást.",
+              "tr": {
+                "en": "Last year we had the flat done up.",
+                "es": "El año pasado mandamos remodelar el departamento."
+              }
+            },
+            {
+              "es": "Szombaton megjavíttatom a mosógépet.",
+              "tr": {
+                "en": "On Saturday I am having the washing machine repaired.",
+                "es": "El sábado voy a mandar arreglar la lavadora."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Make somebody do something: the person who has to do the work takes -val/-vel, because the object slot belongs to the thing that is made.",
+            "es": "Hacer que alguien haga algo: la persona que tiene que hacer el trabajo lleva -val/-vel, porque el lugar del objeto lo ocupa lo que se hace."
+          },
+          "examples": [
+            {
+              "es": "A tanár dolgozatot íratott a diákokkal.",
+              "tr": {
+                "en": "The teacher made the students write a test.",
+                "es": "El profesor hizo escribir un examen a los alumnos."
+              }
+            },
+            {
+              "es": "A főnök jelentést íratott velünk.",
+              "tr": {
+                "en": "The boss had us write a report.",
+                "es": "El jefe nos hizo escribir un informe."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs with no object (vár, nevet): the person who is affected becomes the object and takes -t. Várat = keep somebody waiting, megnevettet = make somebody laugh.",
+            "es": "Verbos sin objeto (vár, nevet): la persona afectada pasa a ser el objeto y lleva -t. Várat = hacer esperar a alguien, megnevettet = hacer reír a alguien."
+          },
+          "examples": [
+            {
+              "es": "Bocsánat, hogy megvárattalak.",
+              "tr": {
+                "en": "Sorry I kept you waiting.",
+                "es": "Perdón por haberte hecho esperar."
+              }
+            },
+            {
+              "es": "Péter mindig megnevettet minket.",
+              "tr": {
+                "en": "Péter always makes us laugh.",
+                "es": "Péter siempre nos hace reír."
+              }
+            },
+            {
+              "es": "Az orvos sokáig várat minket.",
+              "tr": {
+                "en": "The doctor keeps us waiting for a long time.",
+                "es": "El médico nos hace esperar mucho tiempo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The causative is an ordinary verb. A definite object asks for the definite endings, an indefinite one for the indefinite endings, exactly like vág or ír.",
+            "es": "El causativo es un verbo normal. Un objeto determinado pide las terminaciones determinadas y uno indeterminado las indeterminadas, igual que con vág o ír."
+          },
+          "examples": [
+            {
+              "es": "Hajat vágatok.",
+              "tr": {
+                "en": "I am having my hair cut.",
+                "es": "Me corto el pelo (en la peluquería)."
+              }
+            },
+            {
+              "es": "Levágatom a hajam.",
+              "tr": {
+                "en": "I am having my hair cut.",
+                "es": "Me van a cortar el pelo."
+              }
+            },
+            {
+              "es": "Hozatjuk az ebédet.",
+              "tr": {
+                "en": "We are having the lunch delivered.",
+                "es": "Pedimos que nos traigan la comida."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After kell the infinitive takes the personal ending, as in the lesson on Nekem mennem kell: Meg kell javíttatnom a telefont. The prefix stays in front of kell.",
+            "es": "Después de kell el infinitivo lleva la terminación personal, como en la lección sobre Nekem mennem kell: Meg kell javíttatnom a telefont. El prefijo se queda delante de kell."
+          },
+          "examples": [
+            {
+              "es": "Meg kell javíttatnom a telefont.",
+              "tr": {
+                "en": "I have to have the phone repaired.",
+                "es": "Tengo que mandar arreglar el teléfono."
+              }
+            },
+            {
+              "es": "Neki is le kell vágatnia a haját.",
+              "tr": {
+                "en": "He also has to have his hair cut.",
+                "es": "Él también tiene que cortarse el pelo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Other moods work as with any verb, for example the conditional for wishes: -tatnám, -tetnék.",
+            "es": "Los otros modos funcionan como con cualquier verbo, por ejemplo el condicional para deseos: -tatnám, -tetnék."
+          },
+          "examples": [
+            {
+              "es": "Ha több pénzünk lenne, kifestetnénk a lakást.",
+              "tr": {
+                "en": "If we had more money, we would have the flat painted.",
+                "es": "Si tuviéramos más dinero, mandaríamos pintar el departamento."
+              }
+            },
+            {
+              "es": "Ha több pénzem lenne, házat építtetnék.",
+              "tr": {
+                "en": "If I had more money, I would have a house built.",
+                "es": "Si tuviera más dinero, mandaría construir una casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Do it yourself, or have it done?",
+        "es": "¿Hacerlo tú o mandarlo hacer?"
+      },
+      "pairs": [
+        {
+          "a": "Megjavítom a telefont.",
+          "b": "Megjavíttatom a telefont.",
+          "note": {
+            "en": "Without -tat I repair it myself. With -tat somebody else repairs it for me.",
+            "es": "Sin -tat lo arreglo yo mismo. Con -tat lo arregla otra persona por mí."
+          },
+          "examples": [
+            {
+              "es": "Szombaton megjavítom a mosógépet.",
+              "tr": {
+                "en": "On Saturday I will repair the washing machine myself.",
+                "es": "El sábado arreglo yo mismo la lavadora."
+              }
+            },
+            {
+              "es": "Szombaton megjavíttatom a mosógépet.",
+              "tr": {
+                "en": "On Saturday I will have the washing machine repaired.",
+                "es": "El sábado mando arreglar la lavadora."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Vártam Annát.",
+          "b": "Várattam Annát.",
+          "note": {
+            "en": "vár = to wait (for someone). várat = to keep someone waiting, on purpose or through lateness.",
+            "es": "vár = esperar (a alguien). várat = hacer esperar a alguien, a propósito o por llegar tarde."
+          },
+          "examples": [
+            {
+              "es": "Fél órát vártam Annát az étteremben.",
+              "tr": {
+                "en": "I waited for Anna in the restaurant for half an hour.",
+                "es": "Esperé a Anna media hora en el restaurante."
+              }
+            },
+            {
+              "es": "Fél órát várattam Annát az étteremben.",
+              "tr": {
+                "en": "I kept Anna waiting in the restaurant for half an hour.",
+                "es": "Hice esperar a Anna media hora en el restaurante."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Levágatom a hajam.",
+          "b": "Hajat vágatok.",
+          "note": {
+            "en": "Both mean that someone else cuts the hair. The first has a definite object (a hajam) and the definite ending -om; the second an indefinite one (hajat) and -ok.",
+            "es": "Las dos significan que otra persona corta el pelo. La primera tiene un objeto determinado (a hajam) y la terminación determinada -om; la segunda uno indeterminado (hajat) y -ok."
+          },
+          "examples": [
+            {
+              "es": "Kati minden hónapban levágatja a haját.",
+              "tr": {
+                "en": "Kati has her hair cut every month.",
+                "es": "Kati se corta el pelo cada mes."
+              }
+            },
+            {
+              "es": "Kati minden hónapban hajat vágat.",
+              "tr": {
+                "en": "Kati has her hair cut every month.",
+                "es": "Kati se corta el pelo cada mes."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Megjavítottam.",
+          "b": "Megjavíttattam.",
+          "note": {
+            "en": "Look at the spelling: -ott- is the past of the plain verb (I repaired it), -ttat- is the causative (I had it repaired). Speakers hear the difference in the long t and the extra syllable.",
+            "es": "Fíjate en la ortografía: -ott- es el pasado del verbo simple (lo arreglé), -ttat- es el causativo (mandé arreglarlo). Al hablar se oye la diferencia en la t larga y en la sílaba extra."
+          },
+          "examples": [
+            {
+              "es": "Tegnap megjavítottam a telefont.",
+              "tr": {
+                "en": "Yesterday I repaired the phone myself.",
+                "es": "Ayer arreglé yo mismo el teléfono."
+              }
+            },
+            {
+              "es": "Tegnap megjavíttattam a telefont.",
+              "tr": {
+                "en": "Yesterday I had the phone repaired.",
+                "es": "Ayer mandé arreglar el teléfono."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Spanish «me corté el pelo» and English 'I cut my hair' do not say who held the scissors; Hungarian does: levágom = I cut it, levágatom = someone cuts it for me. Mind the spelling when the base verb already ends in t: javított (he repaired it) and javíttatott (he had it repaired) look alike, but the second has -ttat-. Keep the object rule: Levágatom a hajam, but Hajat vágatok. In the past remember both t's: vágattam, megjavíttattam. The causative is neutral, fine in speech and in writing; for a service people also say simply Fodrászhoz megyek.",
+        "es": "El español «me corté el pelo» y el inglés 'I cut my hair' no dicen quién tenía las tijeras; el húngaro sí: levágom = me lo corto yo, levágatom = me lo corta otra persona. Cuidado con la ortografía cuando el verbo base ya termina en t: javított (él lo arregló) y javíttatott (él mandó arreglarlo) se parecen, pero el segundo lleva -ttat-. Mantén la regla del objeto: Levágatom a hajam, pero Hajat vágatok. En el pasado recuerda las dos t: vágattam, megjavíttattam. El causativo es neutro, sirve en el habla y por escrito; para un servicio también se dice simplemente Fodrászhoz megyek."
+      }
+    }
+  ],
+  "speak": {
+    "en": "When somebody else does the job for you, Hungarian uses a causative verb. «Levágatom a hajam» means I am having my hair cut. Short verbs add «-at» or «-et»: «vág» becomes «vágat», «ír» becomes «írat», «főz» becomes «főzet». Longer verbs add «-tat» or «-tet»: «javít» becomes «javíttat», and «épít» becomes «építtet». The new verb is a normal verb: «Megjavíttatom a telefont», «Megjavíttattam a telefont». Compare «megjavítottam», I repaired it myself, with «megjavíttattam», I had it repaired. The person who is made to do the work takes «-val» or «-vel»: «A tanár dolgozatot íratott a diákokkal».",
+    "es": "Cuando otra persona hace el trabajo por ti, el húngaro usa un verbo causativo. «Levágatom a hajam» significa que me van a cortar el pelo. Los verbos cortos añaden «-at» o «-et»: «vág» pasa a «vágat», «ír» pasa a «írat», «főz» pasa a «főzet». Los verbos más largos añaden «-tat» o «-tet»: «javít» pasa a «javíttat», y «épít» pasa a «építtet». El verbo nuevo es un verbo normal: «Megjavíttatom a telefont», «Megjavíttattam a telefont». Compara «megjavítottam», lo arreglé yo mismo, con «megjavíttattam», mandé arreglarlo. La persona a quien se hace hacer el trabajo lleva «-val» o «-vel»: «A tanár dolgozatot íratott a diákokkal»."
+  },
+  "items": [
+    {
+      "id": "muvelteto-c01",
+      "sentence": "Holnap elmegyek a fodrászhoz, mert ___ a hajam.",
+      "options": [
+        "levágatom",
+        "levágom",
+        "levágatok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "At the hairdresser somebody else cuts the hair: the causative levágat, with the definite ending -om because a hajam is definite.",
+        "es": "En la peluquería otra persona corta el pelo: el causativo levágat, con la terminación determinada -om porque a hajam es determinado."
+      },
+      "wrong": {
+        "levágom": {
+          "en": "levágom is the plain verb (I cut it myself); the hairdresser does the cutting, so the causative is needed.",
+          "es": "levágom es el verbo simple (me lo corto yo); el peluquero es quien corta, por eso se necesita el causativo."
+        },
+        "levágatok": {
+          "en": "levágatok has the indefinite ending; a hajam is a definite object and asks for -om: levágatom.",
+          "es": "levágatok tiene la terminación indefinida; a hajam es un objeto determinado y pide -om: levágatom."
+        }
+      },
+      "examples": [
+        "Kati minden hónapban levágatja a haját.",
+        "Péter is levágatta a haját."
+      ],
+      "tr": {
+        "en": "Tomorrow I am going to the hairdresser because I am having my hair cut.",
+        "es": "Mañana voy a la peluquería porque me van a cortar el pelo."
+      }
+    },
+    {
+      "id": "muvelteto-f01",
+      "kind": "form",
+      "verb": "vág",
+      "person": "műveltető",
+      "answer": "vágat",
+      "table": "muv-igek"
+    },
+    {
+      "id": "muvelteto-c02",
+      "sentence": "Meg kell ___ a telefont, mert nem működik.",
+      "options": [
+        "javíttatnom",
+        "javítatnom",
+        "javíttatnem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "javít is a longer verb, so the causative is javíttat (tt). After kell the infinitive javíttatni takes the ending for I; the verb has back vowels, so -nom.",
+        "es": "javít es un verbo largo, así que el causativo es javíttat (tt). Después de kell el infinitivo javíttatni toma la terminación de «yo»; el verbo tiene vocales posteriores, así que -nom."
+      },
+      "wrong": {
+        "javítatnom": {
+          "en": "javítatnom has only one t; a longer verb needs -tat, and the t of javít joins it: javíttat.",
+          "es": "javítatnom tiene una sola t; un verbo largo necesita -tat, y la t de javít se une a ella: javíttat."
+        },
+        "javíttatnem": {
+          "en": "javíttatnem has the front ending -nem; javít has back vowels (a), so it is -nom.",
+          "es": "javíttatnem tiene la terminación anterior -nem; javít tiene vocales posteriores (a), así que es -nom."
+        }
+      },
+      "examples": [
+        "Le kell vágatnom a hajam.",
+        "Meg kell csináltatnom a lakást."
+      ],
+      "tr": {
+        "en": "I have to have the phone repaired because it is not working.",
+        "es": "Tengo que mandar arreglar el teléfono porque no funciona."
+      }
+    },
+    {
+      "id": "muvelteto-f02",
+      "kind": "form",
+      "verb": "ír",
+      "person": "műveltető",
+      "answer": "írat",
+      "table": "muv-igek"
+    },
+    {
+      "id": "muvelteto-c03",
+      "sentence": "Jövőre ___ a lakást, mert nincs időnk festeni.",
+      "options": [
+        "kifestetjük",
+        "kifestjük",
+        "kifestatjuk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nincs időnk festeni (we have no time to paint) shows that somebody else will do the work: the causative festet. With the definite object a lakást the 1st plural of a front verb is -jük: kifestetjük.",
+        "es": "Nincs időnk festeni (no tenemos tiempo de pintar) muestra que otra persona hará el trabajo: el causativo festet. Con el objeto determinado a lakást, la 1.ª persona del plural de un verbo anterior es -jük: kifestetjük."
+      },
+      "wrong": {
+        "kifestjük": {
+          "en": "kifestjük is the plain verb (we paint it ourselves), which contradicts nincs időnk festeni.",
+          "es": "kifestjük es el verbo simple (lo pintamos nosotros), lo que contradice nincs időnk festeni."
+        },
+        "kifestatjuk": {
+          "en": "kifestatjuk has the back ending -at-; fest has a front vowel (e), so the causative is festet.",
+          "es": "kifestatjuk tiene la terminación posterior -at-; fest tiene una vocal anterior (e), así que el causativo es festet."
+        }
+      },
+      "examples": [
+        "Jövőre kifestetjük a konyhát is.",
+        "Kati kifesteti a szobát."
+      ],
+      "tr": {
+        "en": "Next year we are having the flat painted because we have no time to paint.",
+        "es": "El próximo año mandaremos pintar el departamento porque no tenemos tiempo de pintar."
+      }
+    },
+    {
+      "id": "muvelteto-f03",
+      "kind": "form",
+      "verb": "főz",
+      "person": "műveltető",
+      "answer": "főzet",
+      "table": "muv-igek"
+    },
+    {
+      "id": "muvelteto-c04",
+      "sentence": "Kati minden hónapban hajat ___ a fodrásznál.",
+      "options": [
+        "vágat",
+        "vágatok",
+        "vágatnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The subject is Kati (3rd person singular) and hajat is indefinite: vágat, with no ending.",
+        "es": "El sujeto es Kati (3.ª persona del singular) y hajat es indefinido: vágat, sin terminación."
+      },
+      "wrong": {
+        "vágatok": {
+          "en": "vágatok is for én (I); the subject here is Kati.",
+          "es": "vágatok es para én (yo); el sujeto aquí es Kati."
+        },
+        "vágatnak": {
+          "en": "vágatnak is for ők (they); Kati is one person.",
+          "es": "vágatnak es para ők (ellos); Kati es una sola persona."
+        }
+      },
+      "examples": [
+        "Anna is hajat vágat.",
+        "A gyerekek tegnap hajat vágattak."
+      ],
+      "tr": {
+        "en": "Kati has her hair cut at the hairdresser every month.",
+        "es": "Kati se corta el pelo con el peluquero cada mes."
+      }
+    },
+    {
+      "id": "muvelteto-f04",
+      "kind": "form",
+      "verb": "javít",
+      "person": "műveltető",
+      "answer": "javíttat",
+      "table": "muv-igek"
+    },
+    {
+      "id": "muvelteto-c05",
+      "sentence": "Anna tavaly ___ a lakást.",
+      "options": [
+        "megcsináltatta",
+        "megcsináltatott",
+        "megcsináltattam"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A lakást is definite and Anna is one person in the past: megcsináltat + t + a = megcsináltatta (she had it done up).",
+        "es": "A lakást es determinado y Anna es una persona en pasado: megcsináltat + t + a = megcsináltatta (mandó remodelarlo)."
+      },
+      "wrong": {
+        "megcsináltatott": {
+          "en": "megcsináltatott is the indefinite form; it would fit an object like egy lakást (a flat).",
+          "es": "megcsináltatott es la forma indefinida; iría con un objeto como egy lakást (un departamento)."
+        },
+        "megcsináltattam": {
+          "en": "megcsináltattam is for én (I); the subject here is Anna.",
+          "es": "megcsináltattam es para én (yo); el sujeto aquí es Anna."
+        }
+      },
+      "examples": [
+        "Péter tavaly megcsináltatta a konyhát.",
+        "Tavaly megcsináltattuk a fürdőszobát."
+      ],
+      "tr": {
+        "en": "Anna had the flat done up last year.",
+        "es": "Anna mandó remodelar el departamento el año pasado."
+      }
+    },
+    {
+      "id": "muvelteto-f05",
+      "kind": "form",
+      "verb": "takarít",
+      "person": "én (jelen)",
+      "answer": "takaríttatok",
+      "table": "muv-igek"
+    },
+    {
+      "id": "muvelteto-w01",
+      "kind": "why",
+      "es": "Levágatom a hajam.",
+      "target": "Levágatom",
+      "tr": {
+        "en": "I am having my hair cut.",
+        "es": "Me van a cortar el pelo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Causative levágat: somebody else cuts it for me",
+            "es": "Causativo levágat: otra persona me lo corta"
+          }
+        },
+        {
+          "text": {
+            "en": "Plain verb levág: I cut it myself",
+            "es": "Verbo simple levág: me lo corto yo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Levágom a hajam (I cut my hair myself).",
+            "es": "Con esta regla la frase sería Levágom a hajam (me corto el pelo yo mismo)."
+          }
+        },
+        {
+          "text": {
+            "en": "-hat/-het: I am allowed to cut it",
+            "es": "-hat/-het: me dejan cortarlo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Levághatom a hajam (I may cut my hair).",
+            "es": "Con esta regla la frase sería Levághatom a hajam (puedo cortarme el pelo)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "muvelteto-c06",
+      "sentence": "A főnök jelentést íratott ___.",
+      "options": [
+        "a kollégákkal",
+        "a kollégákat",
+        "a kollégák"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The people who are made to write take -val/-vel: a kollégákkal. The object slot is already taken by jelentést.",
+        "es": "Las personas a quienes se hace escribir llevan -val/-vel: a kollégákkal. El lugar del objeto ya lo ocupa jelentést."
+      },
+      "wrong": {
+        "a kollégákat": {
+          "en": "a kollégákat would be a second object; íratott already has jelentést as its object.",
+          "es": "a kollégákat sería un segundo objeto; íratott ya tiene jelentést como objeto."
+        },
+        "a kollégák": {
+          "en": "a kollégák without an ending cannot stand here; that form is for the subject of a sentence.",
+          "es": "a kollégák sin terminación no puede ir aquí; esa forma es para el sujeto de una frase."
+        }
+      },
+      "examples": [
+        "A tanár dolgozatot íratott a diákokkal.",
+        "A tanár tesztet íratott velünk."
+      ],
+      "tr": {
+        "en": "The boss had the colleagues write a report.",
+        "es": "El jefe hizo que los colegas escribieran un informe."
+      }
+    },
+    {
+      "id": "muvelteto-f06",
+      "kind": "form",
+      "verb": "ír",
+      "person": "ő (múlt)",
+      "answer": "íratott",
+      "table": "muv-igek"
+    },
+    {
+      "id": "muvelteto-c07",
+      "sentence": "Bocsánat, hogy ___!",
+      "options": [
+        "megvárattalak",
+        "megvártalak",
+        "megvárattál"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Várat means to keep somebody waiting. The speaker (I) apologises to you: the ending -lak/-lek, in the past: megvárattalak.",
+        "es": "Várat significa hacer esperar a alguien. El hablante (yo) se disculpa contigo: la terminación -lak/-lek, en pasado: megvárattalak."
+      },
+      "wrong": {
+        "megvártalak": {
+          "en": "megvártalak means \"I waited for you\"; nobody apologises for that.",
+          "es": "megvártalak significa «te esperé»; nadie se disculpa por eso."
+        },
+        "megvárattál": {
+          "en": "megvárattál means \"you kept me waiting\", which turns the apology around.",
+          "es": "megvárattál significa «tú me hiciste esperar», lo que invierte la disculpa."
+        }
+      },
+      "examples": [
+        "Sokáig várattál minket.",
+        "Az orvos sokáig várat minket."
+      ],
+      "tr": {
+        "en": "Sorry for keeping you waiting!",
+        "es": "¡Perdón por haberte hecho esperar!"
+      }
+    },
+    {
+      "id": "muvelteto-f07",
+      "kind": "form",
+      "verb": "vágat + hajat",
+      "person": "te",
+      "answer": "vágatsz",
+      "table": "muv-vagat"
+    },
+    {
+      "id": "muvelteto-w02",
+      "kind": "why",
+      "es": "Megjavíttattam a telefont.",
+      "target": "Megjavíttattam",
+      "tr": {
+        "en": "I had the phone repaired.",
+        "es": "Mandé arreglar el teléfono."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Plain past of javít: I repaired it myself",
+            "es": "Pasado simple de javít: lo arreglé yo mismo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Megjavítottam a telefont (I repaired the phone myself).",
+            "es": "Con esta regla la frase sería Megjavítottam a telefont (arreglé yo mismo el teléfono)."
+          }
+        },
+        {
+          "text": {
+            "en": "Causative javíttat in the past: somebody repaired it for me",
+            "es": "Causativo javíttat en pasado: otra persona lo arregló por mí"
+          }
+        },
+        {
+          "text": {
+            "en": "Causative in the present: I am having it repaired",
+            "es": "Causativo en presente: lo estoy mandando arreglar"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Megjavíttatom a telefont; the double t and -am mark the past.",
+            "es": "Con esta regla la frase sería Megjavíttatom a telefont; la t doble y -am marcan el pasado."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "muvelteto-c08",
+      "sentence": "Nekem is le kell ___ a hajam, olyan hosszú lett.",
+      "options": [
+        "vágatnom",
+        "vágatnod",
+        "vágatnia"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nekem (to me) names the person, so the infinitive takes the ending for I: vágatnom (back vowels: -nom).",
+        "es": "Nekem (a mí) nombra a la persona, así que el infinitivo toma la terminación de «yo»: vágatnom (vocales posteriores: -nom)."
+      },
+      "wrong": {
+        "vágatnod": {
+          "en": "vágatnod is for neked (you); the sentence starts with nekem.",
+          "es": "vágatnod es para neked (tú); la frase empieza con nekem."
+        },
+        "vágatnia": {
+          "en": "vágatnia is for neki (he or she); the sentence starts with nekem.",
+          "es": "vágatnia es para neki (él o ella); la frase empieza con nekem."
+        }
+      },
+      "examples": [
+        "Neked is le kell vágatnod a hajad.",
+        "Péternek is le kell vágatnia a haját."
+      ],
+      "tr": {
+        "en": "I have to have my hair cut too, it has grown so long.",
+        "es": "Yo también tengo que cortarme el pelo, ya me creció mucho."
+      }
+    },
+    {
+      "id": "muvelteto-f08",
+      "kind": "form",
+      "verb": "vágat + a hajam",
+      "person": "mi",
+      "answer": "vágatjuk",
+      "table": "muv-vagat"
+    },
+    {
+      "id": "muvelteto-w03",
+      "kind": "why",
+      "es": "A tanár dolgozatot íratott a diákokkal.",
+      "target": "a diákokkal",
+      "tr": {
+        "en": "The teacher made the students write a test.",
+        "es": "El profesor hizo escribir un examen a los alumnos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Companion: the teacher writes together with the students",
+            "es": "Compañía: el profesor escribe junto con los alumnos"
+          },
+          "wrong": {
+            "en": "With this rule the teacher would write the test next to the students; íratott says he made them write.",
+            "es": "Con esta regla el profesor escribiría el examen junto a los alumnos; íratott dice que los hizo escribir."
+          }
+        },
+        {
+          "text": {
+            "en": "Dative: the test is written for the students",
+            "es": "Dativo: el examen se escribe para los alumnos"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be a diákoknak, a test written for them by somebody else.",
+            "es": "Con esta regla la frase sería a diákoknak, un examen escrito para ellos por otra persona."
+          }
+        },
+        {
+          "text": {
+            "en": "-val/-vel marks the people who are made to do the work",
+            "es": "-val/-vel marca a las personas a quienes se hace hacer el trabajo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "muvelteto-c09",
+      "sentence": "Tavaly mi is házat ___.",
+      "options": [
+        "építtettünk",
+        "építtetünk",
+        "építtettem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tavaly (last year) means past, mi is 1st plural and házat is indefinite: építtet + t + ünk = építtettünk.",
+        "es": "Tavaly (el año pasado) significa pasado, mi es 1.ª persona del plural y házat es indefinido: építtet + t + ünk = építtettünk."
+      },
+      "wrong": {
+        "építtetünk": {
+          "en": "építtetünk is the present (we are having a house built); tavaly points to the past.",
+          "es": "építtetünk es el presente (estamos mandando construir una casa); tavaly apunta al pasado."
+        },
+        "építtettem": {
+          "en": "építtettem is for én (I); the subject here is mi.",
+          "es": "építtettem es para én (yo); el sujeto aquí es mi."
+        }
+      },
+      "examples": [
+        "Anna és Gábor tavaly építtettek egy házat.",
+        "Kati és Péter tavaly házat építtettek."
+      ],
+      "tr": {
+        "en": "We also had a house built last year.",
+        "es": "Nosotros también mandamos construir una casa el año pasado."
+      }
+    },
+    {
+      "id": "muvelteto-f09",
+      "kind": "form",
+      "verb": "vágat + hajat, múlt",
+      "person": "ti",
+      "answer": "vágattatok",
+      "table": "muv-vagat"
+    },
+    {
+      "id": "muvelteto-c10",
+      "sentence": "Ma nem tudunk elmenni az étterembe, ezért ebédet ___ az irodába.",
+      "options": [
+        "hozatunk",
+        "hozatjuk",
+        "hozatok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ebédet is indefinite (no article) and the subject is we (nem tudunk): hozat + unk = hozatunk.",
+        "es": "Ebédet es indefinido (sin artículo) y el sujeto es «nosotros» (nem tudunk): hozat + unk = hozatunk."
+      },
+      "wrong": {
+        "hozatjuk": {
+          "en": "hozatjuk is the definite form; it would need a definite object (az ebédet).",
+          "es": "hozatjuk es la forma determinada; necesitaría un objeto determinado (az ebédet)."
+        },
+        "hozatok": {
+          "en": "hozatok is for én (I); the sentence says nem tudunk (we cannot).",
+          "es": "hozatok es para én (yo); la frase dice nem tudunk (no podemos)."
+        }
+      },
+      "examples": [
+        "Hozatjuk az ebédet az irodába.",
+        "Péter ebédet hozat a kollégáknak."
+      ],
+      "tr": {
+        "en": "Today we cannot go to the restaurant, so we are having lunch delivered to the office.",
+        "es": "Hoy no podemos ir al restaurante, así que pedimos que nos traigan la comida a la oficina."
+      }
+    },
+    {
+      "id": "muvelteto-f10",
+      "kind": "form",
+      "verb": "vágat + a hajam, múlt",
+      "person": "ő",
+      "answer": "vágatta",
+      "table": "muv-vagat"
+    },
+    {
+      "id": "muvelteto-c11",
+      "sentence": "Anna és Gábor nagy házat ___ Szegeden.",
+      "options": [
+        "építtetnek",
+        "építtet",
+        "építtetsz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna és Gábor is plural (two people, 3rd person) and házat is indefinite: építtet + nek = építtetnek.",
+        "es": "Anna és Gábor es plural (dos personas, 3.ª persona) y házat es indefinido: építtet + nek = építtetnek."
+      },
+      "wrong": {
+        "építtet": {
+          "en": "építtet is for one person (ő); Anna és Gábor are two people.",
+          "es": "építtet es para una persona (ő); Anna és Gábor son dos personas."
+        },
+        "építtetsz": {
+          "en": "építtetsz is for te (you); the subject here is Anna és Gábor.",
+          "es": "építtetsz es para te (tú); el sujeto aquí es Anna és Gábor."
+        }
+      },
+      "examples": [
+        "Anna is házat építtet.",
+        "Ők is építtetnek egy házat."
+      ],
+      "tr": {
+        "en": "Anna and Gábor are having a big house built in Szeged.",
+        "es": "Anna y Gábor están mandando construir una casa grande en Szeged."
+      }
+    },
+    {
+      "id": "muvelteto-f11",
+      "kind": "form",
+      "verb": "építtet + házat",
+      "person": "ők",
+      "answer": "építtetnek",
+      "table": "muv-epittet"
+    },
+    {
+      "id": "muvelteto-c12",
+      "sentence": "Reggel én ___ a kutyát.",
+      "options": [
+        "etetem",
+        "etetek",
+        "etetsz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A kutyát is a definite object and the subject is én: etet is a front verb, so the definite ending is -em: etetem.",
+        "es": "A kutyát es un objeto determinado y el sujeto es én: etet es un verbo anterior, así que la terminación determinada es -em: etetem."
+      },
+      "wrong": {
+        "etetek": {
+          "en": "etetek has the indefinite ending; a definite object (a kutyát) needs etetem.",
+          "es": "etetek tiene la terminación indefinida; un objeto determinado (a kutyát) necesita etetem."
+        },
+        "etetsz": {
+          "en": "etetsz is for te (you); the subject here is én.",
+          "es": "etetsz es para te (tú); el sujeto aquí es én."
+        }
+      },
+      "examples": [
+        "Anna eteti a babát.",
+        "Este a gyerekeket is etetem."
+      ],
+      "tr": {
+        "en": "In the morning I feed the dog.",
+        "es": "Por la mañana yo le doy de comer al perro."
+      }
+    },
+    {
+      "id": "muvelteto-f12",
+      "kind": "form",
+      "verb": "építtet + a házat",
+      "person": "én",
+      "answer": "építtetem",
+      "table": "muv-epittet"
+    },
+    {
+      "id": "muvelteto-c13",
+      "sentence": "Már ___ a telefont.",
+      "options": [
+        "megjavíttattam",
+        "javíttattam meg",
+        "megjavíttatok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Már (already) points to a finished action in the past; the prefix meg- stays in front of the verb in a neutral positive sentence: megjavíttattam.",
+        "es": "Már (ya) apunta a una acción terminada en el pasado; el prefijo meg- se queda delante del verbo en una frase afirmativa neutra: megjavíttattam."
+      },
+      "wrong": {
+        "javíttattam meg": {
+          "en": "javíttattam meg puts the prefix behind the verb; that order is for negation or focus (Nem javíttattam meg).",
+          "es": "javíttattam meg pone el prefijo detrás del verbo; ese orden es para la negación o el foco (Nem javíttattam meg)."
+        },
+        "megjavíttatok": {
+          "en": "megjavíttatok is the present (I am having it repaired); Már asks for the past.",
+          "es": "megjavíttatok es el presente (lo estoy mandando arreglar); Már pide el pasado."
+        }
+      },
+      "examples": [
+        "Már megcsináltattuk a lakást.",
+        "Péter már megjavíttatta a biciklit."
+      ],
+      "tr": {
+        "en": "I have already had the phone repaired.",
+        "es": "Ya mandé arreglar el teléfono."
+      }
+    },
+    {
+      "id": "muvelteto-w04",
+      "kind": "why",
+      "es": "Anna és Gábor tavaly építtettek egy házat.",
+      "target": "építtettek",
+      "tr": {
+        "en": "Anna and Gábor had a house built last year.",
+        "es": "Anna y Gábor mandaron construir una casa el año pasado."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Plain past of épít: they built it themselves",
+            "es": "Pasado simple de épít: lo construyeron ellos mismos"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna és Gábor tavaly építettek egy házat (they built a house themselves).",
+            "es": "Con esta regla la frase sería Anna és Gábor tavaly építettek egy házat (construyeron ellos mismos una casa)."
+          }
+        },
+        {
+          "text": {
+            "en": "Causative építtet in the past: somebody built it for them",
+            "es": "Causativo építtet en pasado: otra persona la construyó para ellos"
+          }
+        },
+        {
+          "text": {
+            "en": "Causative in the present: they are having it built",
+            "es": "Causativo en presente: la están mandando construir"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna és Gábor építtetnek egy házat; tavaly asks for the past.",
+            "es": "Con esta regla la frase sería Anna és Gábor építtetnek egy házat; tavaly pide el pasado."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "muvelteto-c14",
+      "sentence": "Ha lenne pénzem, ___ a lakást.",
+      "options": [
+        "megcsináltatnám",
+        "megcsináltatom",
+        "megcsináltattam"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ha lenne pénzem (if I had money) is a conditional clause, so the main clause is conditional too, with the definite ending for I: megcsináltatnám.",
+        "es": "Ha lenne pénzem (si tuviera dinero) es una oración condicional, así que la principal también va en condicional, con la terminación determinada de «yo»: megcsináltatnám."
+      },
+      "wrong": {
+        "megcsináltatom": {
+          "en": "megcsináltatom is the present (I am having it done); the ha clause imagines something that is not real.",
+          "es": "megcsináltatom es el presente (lo estoy mandando hacer); la oración con ha imagina algo que no es real."
+        },
+        "megcsináltattam": {
+          "en": "megcsináltattam is the past (I had it done); the sentence imagines, it does not report.",
+          "es": "megcsináltattam es el pasado (lo mandé hacer); la frase imagina, no cuenta."
+        }
+      },
+      "examples": [
+        "Ha lenne pénzem, megjavíttatnám a telefont.",
+        "Ha lenne pénzünk, megcsináltatnánk a konyhát."
+      ],
+      "tr": {
+        "en": "If I had money, I would have the flat done up.",
+        "es": "Si tuviera dinero, mandaría remodelar el departamento."
+      }
+    }
+  ],
+  "glossary": [
+    {
+      "word": "csinál",
+      "gloss": {
+        "en": "to do, to make",
+        "es": "hacer"
+      }
+    },
+    {
+      "word": "műveltető",
+      "gloss": {
+        "en": "causative (grammar term)",
+        "es": "causativo (término gramatical)"
+      }
+    }
+  ]
+}
