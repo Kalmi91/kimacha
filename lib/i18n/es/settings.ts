@@ -15,7 +15,6 @@ const es: typeof en = {
       title: 'Temas',
       oneLook: 'Este tema tiene un solo estilo.',
       posterSlogan: 'APRENDER, APRENDER, APRENDER',
-      sample: 'the car',
       know: 'Lo sé',
       // the theme decor texts (senior, retro95, y2k, gamer).
       readAloud: 'Escuchar',

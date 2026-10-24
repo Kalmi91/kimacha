@@ -15,7 +15,6 @@ export default {
       title: 'Themes',
       oneLook: 'This theme has one look.',
       posterSlogan: 'LEARN, LEARN, LEARN!',
-      sample: 'el carro',
       know: 'I know',
       // the theme decor texts (senior, retro95, y2k, gamer).
       readAloud: 'Read aloud',

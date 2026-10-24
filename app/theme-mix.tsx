@@ -13,7 +13,9 @@ import { PALETTE_FILLS, type FillPaletteId } from '@/constants/GrammarPalettes';
 import { SKINS, isSkinId, resolveMode, skinColorsFor, type SkinMix, type SkinMode } from '@/constants/Skins';
 import { brutalHeaderRowStyle } from '@/lib/brutalHeader';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { currentLanguage, t } from '@/lib/i18n';
+import { getPcicTarget } from '@/data/pcic';
+import { t } from '@/lib/i18n';
+import { sampleWordFor } from '@/lib/languages';
 import { colorsSourceOf, modesOfSource, themeKeyFor } from '@/lib/skinTheme';
 import { ThemeContext, useTheme } from '@/lib/ThemeContext';
 import { useSkin } from '@/lib/useSkin';
@@ -26,6 +28,8 @@ function PreviewBody() {
   const g = useGrammarColors();
   const { skin } = useSkin();
   const sample = t().settings.themes;
+  const target = getPcicTarget();
+  const word = sampleWordFor(target);
   return (
     <View testID="mix-preview" style={[styles.preview, { backgroundColor: g.bg }]}>
       <SkinBackdrop />
@@ -34,9 +38,9 @@ function PreviewBody() {
       </SkinHeader>
       <SkinCardFrame>
         <BrutalBox boxStyle={styles.previewCard}>
-          <SkinWord word={sample.sample} lang={currentLanguage() === 'en' ? 'es' : 'en'}>
+          <SkinWord word={word} lang={target}>
             <Text testID="mix-preview-word" style={[previewTextStyle(skin, 'word', 30), { color: g.ink }]}>
-              {sample.sample}
+              {word}
             </Text>
           </SkinWord>
           <BrutalBox fill="a" kind="button" offset={2} boxStyle={styles.previewPill}>

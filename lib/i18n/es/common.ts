@@ -20,7 +20,6 @@ const es: typeof en = {
   },
   onboardingTheme: {
     title: 'Elige un estilo',
-    sampleWord: 'the car',
     know: 'Lo sé',
     later: 'Después puedes elegir entre 24 en Ajustes.',
     next: 'Continuar',

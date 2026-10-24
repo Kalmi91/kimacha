@@ -42,6 +42,14 @@ export function pairLabel(source: string, target: string): string {
 // older-schema payload, same drift). Shared so both call sites agree.
 export const FORCED_PAIR = { source: 'en', target: 'es' } as const;
 
+// The sample word of the theme previews (onboarding theme step, My mix), in the language being learned,
+// so it shows the theme's font on a real word of that language.
+const SAMPLE_WORD: Record<string, string> = { es: 'el carro', en: 'the car', hu: 'az autó' };
+
+export function sampleWordFor(target: string): string {
+  return SAMPLE_WORD[target] ?? SAMPLE_WORD.es;
+}
+
 export function needsPairCorrection(pair: { source: string; target: string }): boolean {
   return !supportedPairs.some(([s, t]) => s === pair.source && t === pair.target);
 }
