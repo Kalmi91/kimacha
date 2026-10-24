@@ -6,8 +6,10 @@
 // (a wrong pair tapped) marks both words, changes nothing else, and never sends a word back a step. Two words with the same
 // English text never share a table. The time left is part of the state, so a round that is left continues from there.
 
-import type { PcicItem } from '@/data/pcic';
+import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
+import { activeSourceFor, type Lang } from '@/lib/languagePair';
+import { wordIn } from '@/lib/pcicItemText';
 import { pcicAlternatives } from '@/lib/pcicMatch';
 import type { GameLogic } from '@/lib/practice/gameRound';
 import { scrambleTiles, seedOf } from '@/lib/practice/scramble';
@@ -41,22 +43,31 @@ export interface MatchState {
 
 const firstForm = (text: string) => (pcicAlternatives(text)[0] ?? text).trim();
 
-/** What a card shows: the Spanish word with its article, and the English meaning as written (its notes in brackets too). */
-export function matchCard(item: PcicItem): { es: string; en: string } {
-  return { es: firstForm(item.es), en: item.en.trim() };
+/** The languages of the left and right column: Spanish and English, or with Hungarian in the pair, the Hungarian on the left and the pair's other language on the right. */
+function columnLangs(target: PcicTarget): { left: Lang; right: Lang } {
+  const source = activeSourceFor(target);
+  if (target === 'hu') return { left: 'hu', right: source };
+  if (source === 'hu') return { left: 'hu', right: target };
+  return { left: 'es', right: 'en' };
+}
+
+/** What a card shows: the left word (Spanish with its article) as `es`, and the right meaning (English as written, its notes in brackets too) as `en`; the keys name the columns. */
+export function matchCard(item: PcicItem, target: PcicTarget = 'es'): { es: string; en: string } {
+  const { left, right } = columnLangs(target);
+  return { es: firstForm(wordIn(item, left) ?? ''), en: (wordIn(item, right) ?? '').trim() };
 }
 
 /** A word needs both texts. */
-export function isMatchUsable(item: PcicItem): boolean {
-  const card = matchCard(item);
+export function isMatchUsable(item: PcicItem, target: PcicTarget = 'es'): boolean {
+  const card = matchCard(item, target);
   return card.es !== '' && card.en !== '';
 }
 
 /** The tables: the words in order into the first table that has room and no word with the same English text; others are passed over. */
-export function buildBoards(items: PcicItem[]): string[][] {
+export function buildBoards(items: PcicItem[], target: PcicTarget = 'es'): string[][] {
   const boards: { ids: string[]; meanings: Set<string> }[] = [];
   for (const item of items) {
-    const meaning = matchCard(item).en.toLowerCase();
+    const meaning = matchCard(item, target).en.toLowerCase();
     let board = boards.find((b) => b.ids.length < MATCH_BOARD_SIZE && !b.meanings.has(meaning));
     if (!board && boards.length < MATCH_BOARDS) {
       board = { ids: [], meanings: new Set() };
@@ -69,10 +80,10 @@ export function buildBoards(items: PcicItem[]): string[][] {
   return boards.map((b) => b.ids);
 }
 
-export function startMatch(ids: string[], ctx: { items: PcicItem[] }): MatchState {
+export function startMatch(ids: string[], ctx: { items: PcicItem[]; target?: PcicTarget }): MatchState {
   const byId = new Map(ctx.items.map((i) => [i.id, i]));
   const items = ids.map((id) => byId.get(id)).filter((i): i is PcicItem => i !== undefined);
-  return { boards: buildBoards(items), found: [], firstTry: [], missed: [], leftMs: MATCH_ROUND_MS, over: null };
+  return { boards: buildBoards(items, ctx.target), found: [], firstTry: [], missed: [], leftMs: MATCH_ROUND_MS, over: null };
 }
 
 export function matchTotal(state: MatchState): number {

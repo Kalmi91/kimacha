@@ -7,6 +7,8 @@
 // also holds across the two askings. Score = words typed right the first time they were asked.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
+import { activeSourceFor } from '@/lib/languagePair';
+import { wordIn } from '@/lib/pcicItemText';
 import { gradePcicAnswer, pcicAlternatives, suggestedGrade } from '@/lib/pcicMatch';
 import type { GameLogic } from '@/lib/practice/gameRound';
 
@@ -75,8 +77,8 @@ export function nextDictation(state: DictationState): DictationState {
 
 /** The word in the learned language (with its article), what is read aloud, and what it means. */
 export function dictationWord(item: PcicItem, target: PcicTarget): { answer: string; say: string; meaning: string } {
-  const answer = target === 'es' ? item.es : item.en;
-  return { answer, say: pcicAlternatives(answer)[0] ?? answer, meaning: target === 'es' ? item.en : item.es };
+  const answer = wordIn(item, target) ?? '';
+  return { answer, say: pcicAlternatives(answer)[0] ?? answer, meaning: wordIn(item, activeSourceFor(target)) ?? '' };
 }
 
 /** Graded like the Words tab's typing card (accent switch included); an empty typing is never right. */
