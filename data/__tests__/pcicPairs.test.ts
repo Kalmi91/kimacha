@@ -59,11 +59,51 @@ describe('the decks of the six pairs', () => {
     }
   });
 
-  it('the Hungarian target has A1 only, no empty level to offer', () => {
+  it('the Hungarian target has all five levels, es→hu and en→hu offer every one of them', () => {
     const pcic = load(false);
-    pcic.setPcicTarget('hu', 'es');
-    expect(pcic.pcicItemsForLevel('A1').length).toBe(1203);
-    for (const level of LEVELS.slice(1)) expect(pcic.pcicItemsForLevel(level)).toEqual([]);
+    for (const source of ['es', 'en']) {
+      pcic.setPcicTarget('hu', source);
+      expect(LEVELS.map((level) => pcic.pcicItemsForLevel(level).length)).toEqual([1203, 1255, 1694, 601, 210]);
+      // the "0 items = not offered" filter of the level pickers (onboarding, LevelPickerSheet, stats)
+      expect(pcic.PCIC_VIEW_LEVELS.filter((level) => pcic.pcicItemsForLevel(level).length > 0)).toEqual(LEVELS);
+    }
+  });
+
+  it('every Hungarian card of A2-C1 has hu, es, en and a Hungarian example sentence, on its own level', () => {
+    const pcic = load(false);
+    for (const [source, target] of [['es', 'hu'], ['en', 'hu']] as const) {
+      pcic.setPcicTarget(target, source);
+      for (const level of LEVELS.slice(1)) {
+        for (const item of pcic.pcicItemsForLevel(level)) {
+          expect(item.hu?.trim()).toBeTruthy();
+          expect(item.es?.trim()).toBeTruthy();
+          expect(item.en?.trim()).toBeTruthy();
+          expect(item.exampleHu?.trim()).toBeTruthy();
+          expect(pcic.levelOfItem(item.id)).toBe(level);
+        }
+      }
+    }
+  });
+
+  it('a Hungarian headword is in the A0-A1 + A2-C1 files once only (no duplicate across the new levels)', () => {
+    const headword = (hu: string) =>
+      hu.replace(/\([^)]*\)/g, '').replace(/\s+/g, ' ').trim().toLowerCase().replace(/^(a|az|egy)\s+/, '');
+    const seen = new Set<string>();
+    // A0 + A1 are registered first (the duplicates already inside A0/A1 are not this test's business)
+    for (const file of ['a0', 'a1']) {
+      for (const card of require(`@/data/words/hu/${file}.json`) as { hu: string }[]) seen.add(headword(card.hu));
+    }
+    const ids = new Set<number>();
+    for (const file of ['a2', 'b1', 'b2', 'c1']) {
+      for (const card of require(`@/data/words/hu/${file}.json`) as { id: number; hu: string; level: string }[]) {
+        expect(card.level).toBe(file.toUpperCase());
+        expect(ids.has(card.id)).toBe(false);
+        ids.add(card.id);
+        const key = headword(card.hu);
+        expect(seen.has(key)).toBe(false);
+        seen.add(key);
+      }
+    }
   });
 
   it('every Spanish and English card has a Hungarian gloss: hu→es and hu→en are as full as en→es and es→en', () => {

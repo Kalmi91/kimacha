@@ -17,6 +17,10 @@ import enB1 from '@/data/words/en/b1.json';
 // The Hungarian target deck (h<id> id space, see itemsFromHu): A1 = a0 + a1, no higher level yet.
 import huA0 from '@/data/words/hu/a0.json';
 import huA1 from '@/data/words/hu/a1.json';
+import huA2 from '@/data/words/hu/a2.json';
+import huB1 from '@/data/words/hu/b1.json';
+import huB2 from '@/data/words/hu/b2.json';
+import huC1 from '@/data/words/hu/c1.json';
 // Hungarian glosses laid over the es and en decks (for a Hungarian-speaking learner): arrays of
 // { k, hu, sentence_hu? }, keyed by the words-open `order` / the en card `id`. They may be empty or partial.
 import glossOpenA1 from '@/data/words-open/gloss-hu/a1.json';
@@ -209,8 +213,8 @@ const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
   C1: [],
 };
 
-// the hu target deck: data/words/hu a0 + a1 (A1 only, there is no content for the higher levels
-// yet), id space h<id>. Hungarian has no Spanish-style article/`kind` split, so a card is a 'phrase'
+// the hu target deck: data/words/hu a0 + a1 = A1, a2 / b1 / b2 / c1 = the level of the same name,
+// id space h<id>. Hungarian has no Spanish-style article/`kind` split, so a card is a 'phrase'
 // when more than one word is left after dropping a leading a/az/egy.
 type HuCard = {
   id: number;
@@ -249,10 +253,10 @@ function itemsFromHu(cards: HuCard[]): PcicItem[] {
 
 const ITEMS_BY_LEVEL_HU: Record<PcicLevel, PcicItem[]> = {
   A1: itemsFromHu([...(huA0 as HuCard[]), ...(huA1 as HuCard[])]),
-  A2: [],
-  B1: [],
-  B2: [],
-  C1: [],
+  A2: itemsFromHu(huA2 as HuCard[]),
+  B1: itemsFromHu(huB1 as HuCard[]),
+  B2: itemsFromHu(huB2 as HuCard[]),
+  C1: itemsFromHu(huC1 as HuCard[]),
 };
 
 // which direction's deck is active (set by app/_layout.tsx at
