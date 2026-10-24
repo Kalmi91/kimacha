@@ -1,0 +1,1109 @@
+{
+  "schema": 2,
+  "topic": "szemelyragos-inf",
+  "level": "B1",
+  "title": {
+    "en": "I have to go: nekem mennem kell",
+    "es": "Tengo que ir: nekem mennem kell"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "You know the pattern Tudok úszni: the helper changes for the person (tudok, tudsz, tud) and the infinitive stays úszni. With kell (must, have to) and szabad (may) it is the other way round. The helper cannot change, so the person moves onto the infinitive: Nekem mennem kell (I have to go), Neked menned kell (you have to go), Neki mennie kell (he or she has to go). The person who has to do it also stands in the dative: nekem, neked, neki, Péternek. With no person at all the plain infinitive stays: Menni kell = One has to go. English and Spanish change the helper (I have to, tengo que); Hungarian changes the infinitive.",
+        "es": "Ya conoces el patrón Tudok úszni: el verbo auxiliar cambia con la persona (tudok, tudsz, tud) y el infinitivo se queda úszni. Con kell (tener que, deber) y szabad (estar permitido) es al revés. El auxiliar no puede cambiar, así que la persona pasa al infinitivo: Nekem mennem kell (tengo que ir), Neked menned kell (tienes que ir), Neki mennie kell (él o ella tiene que ir). Quien tiene que hacerlo también va en dativo: nekem, neked, neki, Péternek. Sin ninguna persona queda el infinitivo simple: Menni kell = Hay que ir. El español cambia el auxiliar (tengo que, tienes que); el húngaro cambia el infinitivo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "inf-personal",
+      "title": {
+        "en": "The infinitive with personal endings",
+        "es": "El infinitivo con terminaciones personales"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "menni (to go)",
+          "es": "menni (ir)"
+        },
+        {
+          "en": "dolgozni (to work)",
+          "es": "dolgozni (trabajar)"
+        },
+        {
+          "en": "tanulni (to study)",
+          "es": "tanulni (estudiar)"
+        },
+        {
+          "en": "jönni (to come)",
+          "es": "jönni (venir)"
+        }
+      ],
+      "rows": [
+        [
+          "nekem",
+          "mennem",
+          "dolgoznom",
+          "tanulnom",
+          "jönnöm"
+        ],
+        [
+          "neked",
+          "menned",
+          "dolgoznod",
+          "tanulnod",
+          "jönnöd"
+        ],
+        [
+          "neki",
+          "mennie",
+          "dolgoznia",
+          "tanulnia",
+          "jönnie"
+        ],
+        [
+          "nekünk",
+          "mennünk",
+          "dolgoznunk",
+          "tanulnunk",
+          "jönnünk"
+        ],
+        [
+          "nektek",
+          "mennetek",
+          "dolgoznotok",
+          "tanulnotok",
+          "jönnötök"
+        ],
+        [
+          "nekik",
+          "menniük",
+          "dolgozniuk",
+          "tanulniuk",
+          "jönniük"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which ending? Vowel harmony decides",
+        "es": "¿Qué terminación? La armonía vocálica decide"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Back vowels (a, o, u, á, ó, ú): -nom, -nod, -nia, -nunk, -notok, -niuk. Example verbs: dolgozni, tanulni.",
+            "es": "Vocales posteriores (a, o, u, á, ó, ú): -nom, -nod, -nia, -nunk, -notok, -niuk. Verbos de ejemplo: dolgozni, tanulni."
+          },
+          "examples": [
+            {
+              "es": "Holnap nekem is dolgoznom kell.",
+              "tr": {
+                "en": "I have to work tomorrow too.",
+                "es": "Mañana yo también tengo que trabajar."
+              }
+            },
+            {
+              "es": "Nektek sokat kell tanulnotok.",
+              "tr": {
+                "en": "You (plural) have to study a lot.",
+                "es": "Ustedes tienen que estudiar mucho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Front vowels without rounding (e, i, é): -nem, -ned, -nie, -nünk, -netek, -niük. Example verb: menni.",
+            "es": "Vocales anteriores sin redondear (e, i, é): -nem, -ned, -nie, -nünk, -netek, -niük. Verbo de ejemplo: menni."
+          },
+          "examples": [
+            {
+              "es": "Ma mennem kell.",
+              "tr": {
+                "en": "I have to go today.",
+                "es": "Hoy tengo que irme."
+              }
+            },
+            {
+              "es": "Nekünk is mennünk kell.",
+              "tr": {
+                "en": "We have to go too.",
+                "es": "Nosotros también tenemos que irnos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Rounded front vowels (ö, ü, ő, ű): -nöm, -nöd, -nie, -nünk, -nötök, -niük. Example verbs: jönni, főzni.",
+            "es": "Vocales anteriores redondeadas (ö, ü, ő, ű): -nöm, -nöd, -nie, -nünk, -nötök, -niük. Verbos de ejemplo: jönni, főzni."
+          },
+          "examples": [
+            {
+              "es": "Holnap nekem is jönnöm kell.",
+              "tr": {
+                "en": "I have to come tomorrow too.",
+                "es": "Mañana yo también tengo que venir."
+              }
+            },
+            {
+              "es": "Ma este neked kell főznöd.",
+              "tr": {
+                "en": "Tonight it is you who has to cook.",
+                "es": "Esta noche tienes que cocinar tú."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "kell, muszáj, szabad: who is the person?",
+        "es": "kell, muszáj, szabad: ¿quién es la persona?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "kell, muszáj and szabad do not change for the person. The person stands in the dative (nekem, neked, neki, Péternek) and on the infinitive.",
+            "es": "kell, muszáj y szabad no cambian con la persona. La persona va en dativo (nekem, neked, neki, Péternek) y en el infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Nekem holnap korán kell kelnem.",
+              "tr": {
+                "en": "I have to get up early tomorrow.",
+                "es": "Mañana tengo que levantarme temprano."
+              }
+            },
+            {
+              "es": "Nekem muszáj tanulnom.",
+              "tr": {
+                "en": "I have to study (I have no choice).",
+                "es": "Tengo que estudiar (no tengo opción)."
+              }
+            },
+            {
+              "es": "Neki nem szabad sok süteményt ennie.",
+              "tr": {
+                "en": "He or she must not eat many cakes.",
+                "es": "Él o ella no debe comer muchos pasteles."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For I and you the dative pronoun is optional, because the ending already says who; use it to contrast. For he or she name the person.",
+            "es": "Para yo y tú el pronombre en dativo es opcional, porque la terminación ya dice quién es; úsalo para contrastar. Para él o ella nombra a la persona."
+          },
+          "examples": [
+            {
+              "es": "Mennem kell.",
+              "tr": {
+                "en": "I have to go.",
+                "es": "Tengo que irme."
+              }
+            },
+            {
+              "es": "Nekem kell mennem, nem neked.",
+              "tr": {
+                "en": "It is I who has to go, not you.",
+                "es": "Soy yo quien tiene que irse, no tú."
+              }
+            },
+            {
+              "es": "Péternek dolgoznia kell.",
+              "tr": {
+                "en": "Péter has to work.",
+                "es": "Péter tiene que trabajar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Past: kell becomes kellett (no personal ending on it), the infinitive keeps its ending.",
+            "es": "Pasado: kell pasa a kellett (sin terminación personal) y el infinitivo conserva la suya."
+          },
+          "examples": [
+            {
+              "es": "Tegnap korán kellett kelnem.",
+              "tr": {
+                "en": "I had to get up early yesterday.",
+                "es": "Ayer tuve que levantarme temprano."
+              }
+            },
+            {
+              "es": "A gyerekeknek haza kellett menniük.",
+              "tr": {
+                "en": "The children had to go home.",
+                "es": "Los niños tuvieron que irse a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Prefix verbs: the prefix stays in front of kell (El kell mennem). After nem it joins the infinitive (Nem kell elmennem).",
+            "es": "Verbos con prefijo: el prefijo se queda delante de kell (El kell mennem). Tras nem se une al infinitivo (Nem kell elmennem)."
+          },
+          "examples": [
+            {
+              "es": "El kell mennem.",
+              "tr": {
+                "en": "I have to leave.",
+                "es": "Tengo que irme."
+              }
+            },
+            {
+              "es": "Fel kell hívnom Annát.",
+              "tr": {
+                "en": "I have to call Anna.",
+                "es": "Tengo que llamar a Anna."
+              }
+            },
+            {
+              "es": "Nem kell elmennem.",
+              "tr": {
+                "en": "I do not have to leave.",
+                "es": "No tengo que irme."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Person, rule, or ability?",
+        "es": "¿Persona, regla o capacidad?"
+      },
+      "pairs": [
+        {
+          "a": "Dolgoznom kell.",
+          "b": "Dolgozni kell.",
+          "note": {
+            "en": "With the ending a named person has to do it. The plain infinitive is a general rule: one has to, you have to (people in general).",
+            "es": "Con la terminación, una persona concreta tiene que hacerlo. El infinitivo simple es una regla general: hay que, uno tiene que."
+          },
+          "examples": [
+            {
+              "es": "Nekem korán kell kelnem.",
+              "tr": {
+                "en": "I have to get up early.",
+                "es": "Tengo que levantarme temprano."
+              }
+            },
+            {
+              "es": "Hétkor kezdünk, ezért korán kell kelni.",
+              "tr": {
+                "en": "We start at seven, so one has to get up early.",
+                "es": "Empezamos a las siete, así que hay que levantarse temprano."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Nem kell elmennem.",
+          "b": "Nem szabad elmennem.",
+          "note": {
+            "en": "nem kell = there is no need (I do not have to). nem szabad = it is forbidden (I must not). English \"must not\" is Hungarian nem szabad, never nem kell.",
+            "es": "nem kell = no hace falta (no tengo que). nem szabad = está prohibido (no debo). «No debes» en el sentido de prohibición es nem szabad, nunca nem kell."
+          },
+          "examples": [
+            {
+              "es": "Vasárnap nem kell dolgoznom.",
+              "tr": {
+                "en": "I do not have to work on Sunday.",
+                "es": "El domingo no tengo que trabajar."
+              }
+            },
+            {
+              "es": "Sötétben nem szabad úsznod.",
+              "tr": {
+                "en": "You must not swim in the dark.",
+                "es": "No debes nadar en la oscuridad."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Tudok úszni.",
+          "b": "Úsznom kell.",
+          "note": {
+            "en": "With tud, akar, szeret the helper changes and the infinitive stays. With kell the helper stays and the infinitive changes.",
+            "es": "Con tud, akar, szeret cambia el auxiliar y el infinitivo se queda. Con kell el auxiliar se queda y cambia el infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Ma tudok jönni.",
+              "tr": {
+                "en": "I can come today.",
+                "es": "Hoy puedo venir."
+              }
+            },
+            {
+              "es": "Ma jönnöm kell.",
+              "tr": {
+                "en": "I have to come today.",
+                "es": "Hoy tengo que venir."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Never conjugate kell: Kellek menni is not 'I have to go' (kellek means 'I am needed', as in Kellek neked?). Put the person on the infinitive: Mennem kell. And do not forget the dative of the person: Annának kell mennie, not Anna kell mennie. In fast speech you will also hear Nekem menni kell; the personal form (Nekem mennem kell) is the standard one and the safe choice for writing and exams.",
+        "es": "Nunca conjugues kell: Kellek menni no es «tengo que ir» (kellek significa «me necesitan», como en Kellek neked?). Pon la persona en el infinitivo: Mennem kell. Y no olvides el dativo de la persona: Annának kell mennie, no Anna kell mennie. En el habla rápida también oirás Nekem menni kell; la forma personal (Nekem mennem kell) es la estándar y la segura para escribir y para exámenes."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian the helper word «kell» never changes. Instead the infinitive takes the personal ending: «Nekem mennem kell», «Neked menned kell», «Neki mennie kell». The person who has to do it stands in the dative: «nekem», «neked», «neki». The verb «jönni» gives «jönnöm», and «tanulni» gives «tanulnom». With «nem kell» you say there is no need: «Nem kell sietned». With «nem szabad» you say it is forbidden: «Itt nem szabad parkolni». With no person at all, the plain infinitive stays: «Korán kell kelni».",
+    "es": "En húngaro la palabra auxiliar «kell» nunca cambia. En cambio, el infinitivo recibe la terminación personal: «Nekem mennem kell», «Neked menned kell», «Neki mennie kell». La persona que tiene que hacerlo va en dativo: «nekem», «neked», «neki». El verbo «jönni» da «jönnöm», y «tanulni» da «tanulnom». Con «nem kell» dices que no hace falta: «Nem kell sietned». Con «nem szabad» dices que está prohibido: «Itt nem szabad parkolni». Sin ninguna persona queda el infinitivo simple: «Korán kell kelni»."
+  },
+  "glossary": [
+    {
+      "word": "késő",
+      "gloss": {
+        "en": "late (adjective)",
+        "es": "tarde (adjetivo)"
+      }
+    },
+    {
+      "word": "sokáig",
+      "gloss": {
+        "en": "for a long time",
+        "es": "durante mucho tiempo"
+      }
+    },
+    {
+      "word": "parkolni",
+      "gloss": {
+        "en": "to park",
+        "es": "estacionarse"
+      }
+    },
+    {
+      "word": "szerint",
+      "gloss": {
+        "en": "according to",
+        "es": "según"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "szemelyragos-inf-c01",
+      "sentence": "Péternek holnap korán kell ___, mert hétkor kezdi a munkát.",
+      "options": [
+        "kelnie",
+        "kelnem",
+        "kelned"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péternek (to Péter) names the person, so kelni takes the 3rd person ending -ie: kelnie.",
+        "es": "Péternek (a Péter) nombra a la persona, así que kelni recibe la terminación de 3.ª persona -ie: kelnie."
+      },
+      "wrong": {
+        "kelnem": {
+          "en": "kelnem is \"I have to get up\"; the sentence is about Péter, who starts work at seven.",
+          "es": "kelnem es «yo tengo que levantarme»; la frase habla de Péter, que empieza a trabajar a las siete."
+        },
+        "kelned": {
+          "en": "kelned is \"you have to get up\"; Péternek points to a third person, not to you.",
+          "es": "kelned es «tú tienes que levantarte»; Péternek apunta a una tercera persona, no a ti."
+        }
+      },
+      "examples": [
+        "Annának korán kell kelnie.",
+        "Neki is korán kell kelnie."
+      ],
+      "tr": {
+        "en": "Péter has to get up early tomorrow because he starts work at seven.",
+        "es": "Péter tiene que levantarse temprano mañana porque empieza a trabajar a las siete."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f01",
+      "kind": "form",
+      "verb": "menni",
+      "person": "nekem",
+      "answer": "mennem",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c02",
+      "sentence": "Késő van, nekem most el ___ mennem.",
+      "options": [
+        "kell",
+        "kellek",
+        "kellem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kell never changes when it means \"must\"; the person goes on the infinitive (mennem).",
+        "es": "kell nunca cambia cuando significa «tener que»; la persona va en el infinitivo (mennem)."
+      },
+      "wrong": {
+        "kellek": {
+          "en": "kellek is a real word, but it means \"I am needed\" (Kellek neked?); for \"I have to\" kell stays as it is.",
+          "es": "kellek es una palabra real, pero significa «me necesitan» (Kellek neked?); para «tengo que» kell se queda igual."
+        },
+        "kellem": {
+          "en": "There is no such verb form: kell takes no personal ending when it means \"must\". The -m is already on mennem.",
+          "es": "No existe esa forma verbal: kell no lleva terminación personal cuando significa «tener que». La -m ya está en mennem."
+        }
+      },
+      "examples": [
+        "El kell mennem.",
+        "Haza kell mennem."
+      ],
+      "tr": {
+        "en": "It is late, I have to leave now.",
+        "es": "Es tarde, tengo que irme ya."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f02",
+      "kind": "form",
+      "verb": "dolgozni",
+      "person": "neked",
+      "answer": "dolgoznod",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c03",
+      "sentence": "Tegnap este is sokáig ___ dolgoznom.",
+      "options": [
+        "kellett",
+        "kell",
+        "kellettem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The past of kell is kellett; the person stays on the infinitive (dolgoznom).",
+        "es": "El pasado de kell es kellett; la persona se queda en el infinitivo (dolgoznom)."
+      },
+      "wrong": {
+        "kell": {
+          "en": "kell is present: with Tegnap (yesterday) the sentence needs the past kellett.",
+          "es": "kell es presente: con Tegnap (ayer) la frase necesita el pasado kellett."
+        },
+        "kellettem": {
+          "en": "kellettem is a real form, but it means \"I was needed\"; \"I had to\" is kellett, with no personal ending.",
+          "es": "kellettem es una forma real, pero significa «me necesitaban»; «tuve que» es kellett, sin terminación personal."
+        }
+      },
+      "examples": [
+        "Tegnap korán kellett kelnem.",
+        "Haza kellett mennünk."
+      ],
+      "tr": {
+        "en": "Yesterday evening, too, I had to work for a long time.",
+        "es": "Ayer por la noche también tuve que trabajar mucho tiempo."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f03",
+      "kind": "form",
+      "verb": "tanulni",
+      "person": "neki",
+      "answer": "tanulnia",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c04",
+      "sentence": "A gyerekeknek holnap iskolába kell ___.",
+      "options": [
+        "menniük",
+        "mennie",
+        "mennünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekeknek (to the children) is plural, so the infinitive takes the 3rd person plural ending: menniük.",
+        "es": "A gyerekeknek (a los niños) es plural, así que el infinitivo recibe la terminación de 3.ª persona plural: menniük."
+      },
+      "wrong": {
+        "mennie": {
+          "en": "mennie is \"he or she has to go\" (one person); the children are several.",
+          "es": "mennie es «él o ella tiene que ir» (una persona); los niños son varios."
+        },
+        "mennünk": {
+          "en": "mennünk is \"we have to go\"; the children are \"they\", not \"we\".",
+          "es": "mennünk es «nosotros tenemos que ir»; los niños son «ellos», no «nosotros»."
+        }
+      },
+      "examples": [
+        "A diákoknak sokat kell tanulniuk.",
+        "A szomszédoknak is korán kell kelniük."
+      ],
+      "tr": {
+        "en": "The children have to go to school tomorrow.",
+        "es": "Los niños tienen que ir a la escuela mañana."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f04",
+      "kind": "form",
+      "verb": "jönni",
+      "person": "nekünk",
+      "answer": "jönnünk",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c05",
+      "sentence": "Késő van, nekünk is haza kell ___.",
+      "options": [
+        "mennünk",
+        "menned",
+        "menniük"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nekünk is means \"we, too\", so the infinitive takes the 1st person plural ending: menni + -nünk.",
+        "es": "Nekünk is significa «nosotros también», así que el infinitivo recibe la terminación de 1.ª persona plural: menni + -nünk."
+      },
+      "wrong": {
+        "menned": {
+          "en": "menned is \"you have to go\"; nekünk points to \"we\".",
+          "es": "menned es «tú tienes que ir»; nekünk apunta a «nosotros»."
+        },
+        "menniük": {
+          "en": "menniük is \"they have to go\"; the dative nekünk (to us) asks for the \"we\" ending.",
+          "es": "menniük es «ellos tienen que ir»; el dativo nekünk (a nosotros) pide la terminación de «nosotros»."
+        }
+      },
+      "examples": [
+        "Haza kell mennünk.",
+        "Nekünk is korán kell kelnünk."
+      ],
+      "tr": {
+        "en": "It is late, we have to go home too.",
+        "es": "Es tarde, nosotros también tenemos que irnos a casa."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f05",
+      "kind": "form",
+      "verb": "menni",
+      "person": "nektek",
+      "answer": "mennetek",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-w01",
+      "kind": "why",
+      "es": "Dolgoznom kell.",
+      "target": "Dolgoznom",
+      "tr": {
+        "en": "I have to work.",
+        "es": "Tengo que trabajar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Infinitive with a personal ending: I am the one who has to work",
+            "es": "Infinitivo con terminación personal: soy yo quien tiene que trabajar"
+          }
+        },
+        {
+          "text": {
+            "en": "Present tense of dolgozik: I work",
+            "es": "Presente de dolgozik: yo trabajo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Dolgozom (I work); here kell asks for an infinitive: dolgoznom is dolgozni with the ending for I.",
+            "es": "Con esta regla la frase sería Dolgozom (yo trabajo); aquí kell pide un infinitivo: dolgoznom es dolgozni con la terminación de «yo»."
+          }
+        },
+        {
+          "text": {
+            "en": "Plain infinitive: a rule for everybody",
+            "es": "Infinitivo simple: una regla para todos"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Dolgozni kell (one has to work); the ending -om adds the person: I.",
+            "es": "Con esta regla la frase sería Dolgozni kell (hay que trabajar); la terminación -om añade la persona: yo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szemelyragos-inf-c06",
+      "sentence": "Sokat dolgozol, neked is ___ kell egy kicsit.",
+      "options": [
+        "pihenned",
+        "pihennem",
+        "pihennie"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Neked is means \"you, too\", so the infinitive takes the 2nd person ending: pihenni + -ed = pihenned.",
+        "es": "Neked is significa «tú también», así que el infinitivo recibe la terminación de 2.ª persona: pihenni + -ed = pihenned."
+      },
+      "wrong": {
+        "pihennem": {
+          "en": "pihennem is \"I have to rest\"; the sentence speaks to you (dolgozol, neked).",
+          "es": "pihennem es «yo tengo que descansar»; la frase se dirige a ti (dolgozol, neked)."
+        },
+        "pihennie": {
+          "en": "pihennie is \"he or she has to rest\"; the sentence speaks to you (dolgozol, neked).",
+          "es": "pihennie es «él o ella tiene que descansar»; la frase se dirige a ti (dolgozol, neked)."
+        }
+      },
+      "examples": [
+        "Neked is pihenned kell.",
+        "Nekem is pihennem kell."
+      ],
+      "tr": {
+        "en": "You work a lot, you have to rest a little too.",
+        "es": "Trabajas mucho, tú también tienes que descansar un poco."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f06",
+      "kind": "form",
+      "verb": "dolgozni",
+      "person": "nekik",
+      "answer": "dolgozniuk",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c07",
+      "sentence": "Holnap utazunk, ezért nektek is korán kell ___.",
+      "options": [
+        "kelnetek",
+        "kelnünk",
+        "kelniük"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nektek is means \"you (plural), too\", so the infinitive takes the 2nd person plural ending: kelni + -etek = kelnetek.",
+        "es": "Nektek is significa «ustedes también», así que el infinitivo recibe la terminación de 2.ª persona plural: kelni + -etek = kelnetek."
+      },
+      "wrong": {
+        "kelnünk": {
+          "en": "kelnünk is \"we have to get up\"; nektek points to \"you (plural)\".",
+          "es": "kelnünk es «nosotros tenemos que levantarnos»; nektek apunta a «ustedes»."
+        },
+        "kelniük": {
+          "en": "kelniük is \"they have to get up\"; nektek points to \"you (plural)\".",
+          "es": "kelniük es «ellos tienen que levantarse»; nektek apunta a «ustedes»."
+        }
+      },
+      "examples": [
+        "Nektek is korán kell kelnetek.",
+        "Nektek is dolgoznotok kell."
+      ],
+      "tr": {
+        "en": "We are travelling tomorrow, so you have to get up early too.",
+        "es": "Mañana viajamos, así que ustedes también tienen que levantarse temprano."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f07",
+      "kind": "form",
+      "verb": "jönni",
+      "person": "nekem",
+      "answer": "jönnöm",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-w02",
+      "kind": "why",
+      "es": "Dolgozni kell.",
+      "target": "Dolgozni",
+      "tr": {
+        "en": "One has to work.",
+        "es": "Hay que trabajar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Infinitive with a personal ending: I have to",
+            "es": "Infinitivo con terminación personal: yo tengo que"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Dolgoznom kell (I have to work); here no ending names a person.",
+            "es": "Con esta regla la frase sería Dolgoznom kell (tengo que trabajar); aquí ninguna terminación nombra a una persona."
+          }
+        },
+        {
+          "text": {
+            "en": "Future tense: I will work",
+            "es": "Futuro: yo trabajaré"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Dolgozni fogok (I will work); kell does not make a future.",
+            "es": "Con esta regla la frase sería Dolgozni fogok (trabajaré); kell no forma el futuro."
+          }
+        },
+        {
+          "text": {
+            "en": "Plain infinitive: a general rule, no person named",
+            "es": "Infinitivo simple: una regla general, sin nombrar a nadie"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "szemelyragos-inf-c08",
+      "sentence": "Holnap vizsga lesz, ezért a diákoknak ma este sokat kell ___.",
+      "options": [
+        "tanulniuk",
+        "tanulniük",
+        "tanulnunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A diákoknak (to the students) is plural (\"they\"), and tanulni has back vowels, so the ending is -niuk: tanulniuk.",
+        "es": "A diákoknak (a los estudiantes) es plural («ellos») y tanulni tiene vocales posteriores, así que la terminación es -niuk: tanulniuk."
+      },
+      "wrong": {
+        "tanulniük": {
+          "en": "Wrong vowel harmony: tanulni has back vowels (a, u), so -niuk; -niük goes with front-vowel verbs such as menni (menniük).",
+          "es": "Armonía vocálica incorrecta: tanulni tiene vocales posteriores (a, u), así que -niuk; -niük va con verbos de vocales anteriores como menni (menniük)."
+        },
+        "tanulnunk": {
+          "en": "tanulnunk is \"we have to study\"; the students are \"they\".",
+          "es": "tanulnunk es «nosotros tenemos que estudiar»; los estudiantes son «ellos»."
+        }
+      },
+      "examples": [
+        "Nekik is tanulniuk kell.",
+        "Nekik menniük kell."
+      ],
+      "tr": {
+        "en": "There will be an exam tomorrow, so the students have to study a lot this evening.",
+        "es": "Mañana habrá un examen, así que los estudiantes tienen que estudiar mucho esta noche."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f08",
+      "kind": "form",
+      "verb": "tanulni",
+      "person": "nektek",
+      "answer": "tanulnotok",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-w03",
+      "kind": "why",
+      "es": "Nem kell elmennem.",
+      "target": "Nem kell",
+      "tr": {
+        "en": "I do not have to leave.",
+        "es": "No tengo que irme."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A ban: I must not leave",
+            "es": "Una prohibición: no debo irme"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem szabad elmennem (I must not leave); nem kell only says there is no need.",
+            "es": "Con esta regla la frase sería Nem szabad elmennem (no debo irme); nem kell solo dice que no hace falta."
+          }
+        },
+        {
+          "text": {
+            "en": "No obligation: it is not necessary",
+            "es": "Sin obligación: no hace falta"
+          }
+        },
+        {
+          "text": {
+            "en": "The past: I did not have to leave",
+            "es": "El pasado: no tuve que irme"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem kellett elmennem (I did not have to leave); kell is present.",
+            "es": "Con esta regla la frase sería Nem kellett elmennem (no tuve que irme); kell es presente."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "szemelyragos-inf-c09",
+      "sentence": "Nem ___ sietned, van még időnk.",
+      "options": [
+        "kell",
+        "szabad",
+        "fog"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nem kell = there is no need; the reason is that there is still time. The person is on the infinitive (sietned).",
+        "es": "Nem kell = no hace falta; la razón es que todavía hay tiempo. La persona va en el infinitivo (sietned)."
+      },
+      "wrong": {
+        "szabad": {
+          "en": "Nem szabad sietned would be \"you must not hurry\", a ban; the second half (there is still time) gives a reason for \"no need\" instead.",
+          "es": "Nem szabad sietned sería «no debes darte prisa», una prohibición; la segunda parte (todavía hay tiempo) da una razón para «no hace falta»."
+        },
+        "fog": {
+          "en": "fog (will) takes a plain infinitive and changes itself (Nem fogok sietni); it does not combine with sietned.",
+          "es": "fog (futuro) lleva un infinitivo simple y cambia él mismo (Nem fogok sietni); no se combina con sietned."
+        }
+      },
+      "examples": [
+        "Nem kell sietnünk.",
+        "Nem kell elmenned."
+      ],
+      "tr": {
+        "en": "You do not have to hurry, we still have time.",
+        "es": "No tienes que darte prisa, todavía tenemos tiempo."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f09",
+      "kind": "form",
+      "verb": "menni",
+      "person": "neki",
+      "answer": "mennie",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c10",
+      "sentence": "Az orvos szerint neked most nem szabad ___, pihenned kell.",
+      "options": [
+        "dolgoznod",
+        "dolgoznom",
+        "dolgoznia"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The sentence is about you (neked, pihenned), so the infinitive takes the 2nd person ending: dolgozni + -od = dolgoznod.",
+        "es": "La frase habla de ti (neked, pihenned), así que el infinitivo recibe la terminación de 2.ª persona: dolgozni + -od = dolgoznod."
+      },
+      "wrong": {
+        "dolgoznom": {
+          "en": "dolgoznom is \"I must not work\"; the doctor is talking to you (neked).",
+          "es": "dolgoznom es «yo no debo trabajar»; el médico te habla a ti (neked)."
+        },
+        "dolgoznia": {
+          "en": "dolgoznia is \"he or she must not work\"; the doctor is talking to you (neked).",
+          "es": "dolgoznia es «él o ella no debe trabajar»; el médico te habla a ti (neked)."
+        }
+      },
+      "examples": [
+        "Nekem nem szabad sok süteményt ennem.",
+        "Neki sem szabad sok süteményt ennie."
+      ],
+      "tr": {
+        "en": "According to the doctor you must not work now, you have to rest.",
+        "es": "Según el médico no debes trabajar ahora, tienes que descansar."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f10",
+      "kind": "form",
+      "verb": "jönni",
+      "person": "nektek",
+      "answer": "jönnötök",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c11",
+      "sentence": "___ ma nem kell dolgoznia, mert vasárnap van.",
+      "options": [
+        "Annának",
+        "Anna",
+        "Annával"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The person who does not have to work is in the dative: Annának (to Anna). The infinitive dolgoznia agrees with her.",
+        "es": "La persona que no tiene que trabajar va en dativo: Annának (a Anna). El infinitivo dolgoznia concuerda con ella."
+      },
+      "wrong": {
+        "Anna": {
+          "en": "Without -nak there is no person who \"has to\"; the sentence needs the dative (Annának).",
+          "es": "Sin -nak no hay una persona que «tenga que»; la frase necesita el dativo (Annának)."
+        },
+        "Annával": {
+          "en": "Annával means \"with Anna\"; it does not say who has to work.",
+          "es": "Annával significa «con Anna»; no dice quién tiene que trabajar."
+        }
+      },
+      "examples": [
+        "Péternek nem kell dolgoznia.",
+        "A gyereknek nem kell korán kelnie."
+      ],
+      "tr": {
+        "en": "Anna does not have to work today because it is Sunday.",
+        "es": "Anna no tiene que trabajar hoy porque es domingo."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f11",
+      "kind": "form",
+      "verb": "tanulni",
+      "person": "nekünk",
+      "answer": "tanulnunk",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c12",
+      "sentence": "Itt lehet kártyával ___.",
+      "options": [
+        "fizetni",
+        "fizetnem",
+        "fizethetek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "lehet here means \"it is possible\" in general, with no person, so the infinitive stays plain: fizetni.",
+        "es": "lehet aquí significa «es posible» en general, sin persona, así que el infinitivo queda simple: fizetni."
+      },
+      "wrong": {
+        "fizetnem": {
+          "en": "fizetnem would be \"I\": lehet names nobody here, so the infinitive keeps no ending.",
+          "es": "fizetnem sería «yo»: lehet aquí no nombra a nadie, así que el infinitivo no lleva terminación."
+        },
+        "fizethetek": {
+          "en": "fizethetek is \"I can pay\" (-hat/-het); together with lehet it would say \"can\" twice.",
+          "es": "fizethetek es «yo puedo pagar» (-hat/-het); junto con lehet diría «poder» dos veces."
+        }
+      },
+      "examples": [
+        "A boltban lehet kártyával fizetni.",
+        "Itt lehet parkolni."
+      ],
+      "tr": {
+        "en": "You can pay by card here.",
+        "es": "Aquí se puede pagar con tarjeta."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-f12",
+      "kind": "form",
+      "verb": "dolgozni",
+      "person": "nekem",
+      "answer": "dolgoznom",
+      "table": "inf-personal"
+    },
+    {
+      "id": "szemelyragos-inf-c13",
+      "sentence": "Kérem, itt nem szabad ___.",
+      "options": [
+        "parkolni",
+        "parkolnom",
+        "parkolnod"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A request or sign speaks to everybody, so no person is named and the infinitive stays plain: parkolni.",
+        "es": "Una petición o un cartel se dirige a todos, así que no se nombra a ninguna persona y el infinitivo queda simple: parkolni."
+      },
+      "wrong": {
+        "parkolnom": {
+          "en": "parkolnom is \"I\": the sentence would say that only the speaker may not park.",
+          "es": "parkolnom es «yo»: la frase diría que solo el hablante no puede estacionarse."
+        },
+        "parkolnod": {
+          "en": "parkolnod is \"you\" (one person), not a rule for everybody.",
+          "es": "parkolnod es «tú» (una persona), no una regla para todos."
+        }
+      },
+      "examples": [
+        "Itt nem szabad úszni.",
+        "A boltban nem szabad enni."
+      ],
+      "tr": {
+        "en": "Please, you may not park here.",
+        "es": "Por favor, aquí no está permitido estacionarse."
+      }
+    },
+    {
+      "id": "szemelyragos-inf-w04",
+      "kind": "why",
+      "es": "Nekik korán kell kelniük.",
+      "target": "kelniük",
+      "tr": {
+        "en": "They have to get up early.",
+        "es": "Ellos tienen que levantarse temprano."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "3rd person plural, front vowels: -niük",
+            "es": "3.ª persona plural, vocales anteriores: -niük"
+          }
+        },
+        {
+          "text": {
+            "en": "1st person plural: kelnünk",
+            "es": "1.ª persona plural: kelnünk"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nekünk korán kell kelnünk (we have to get up early).",
+            "es": "Con esta regla la frase sería Nekünk korán kell kelnünk (tenemos que levantarnos temprano)."
+          }
+        },
+        {
+          "text": {
+            "en": "3rd person plural, back vowels: kelniuk",
+            "es": "3.ª persona plural, vocales posteriores: kelniuk"
+          },
+          "wrong": {
+            "en": "kelni has the front vowel e, so the ending is -niük; -niuk goes with back-vowel verbs such as tanulni.",
+            "es": "kelni tiene la vocal anterior e, así que la terminación es -niük; -niuk va con verbos de vocales posteriores como tanulni."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szemelyragos-inf-c14",
+      "sentence": "Holnap nekem is Budapestre kell ___.",
+      "options": [
+        "jönnöm",
+        "jönnem",
+        "jönnom"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "jönni has the rounded front vowel ö, so the 1st person ending is -nöm: jönnöm.",
+        "es": "jönni tiene la vocal anterior redondeada ö, así que la terminación de 1.ª persona es -nöm: jönnöm."
+      },
+      "wrong": {
+        "jönnem": {
+          "en": "-nem goes with e, i, é verbs such as menni (mennem); jönni has ö, so -nöm.",
+          "es": "-nem va con verbos con e, i, é como menni (mennem); jönni tiene ö, así que -nöm."
+        },
+        "jönnom": {
+          "en": "-nom goes with back-vowel verbs such as dolgozni (dolgoznom); jönni has a front vowel.",
+          "es": "-nom va con verbos de vocales posteriores como dolgozni (dolgoznom); jönni tiene una vocal anterior."
+        }
+      },
+      "examples": [
+        "Nekem is jönnöm kell.",
+        "Nektek is jönnötök kell."
+      ],
+      "tr": {
+        "en": "I have to come to Budapest tomorrow too.",
+        "es": "Mañana yo también tengo que venir a Budapest."
+      }
+    }
+  ]
+}

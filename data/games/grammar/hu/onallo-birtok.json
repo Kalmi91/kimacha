@@ -1,0 +1,1266 @@
+{
+  "schema": 2,
+  "topic": "onallo-birtok",
+  "level": "B1",
+  "title": {
+    "en": "Mine, yours, Péter's: az enyém, a tiéd, Péteré",
+    "es": "Mío, tuyo, de Péter: az enyém, a tiéd, Péteré"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "To say \"my phone\" you say a telefonom. But when everybody knows which thing you mean, you say \"mine\": A telefon az enyém. Hungarian has a word for each owner: enyém, tiéd, övé, miénk, tiétek, övék. They are nouns, so they take the article (az enyém, a tiéd) and nothing follows them: Ez az enyém, never Ez az enyém telefon. When the owner is a name or a noun, you add -é: Péteré, a tanáré (Péter's, the teacher's). English has mine, yours and 's; Spanish has el mío, el tuyo and el de Péter. Hungarian az enyém is one form for el mío and la mía.",
+        "es": "Para decir «mi teléfono» dices a telefonom. Pero cuando todos saben de qué cosa hablas, dices «el mío»: A telefon az enyém. El húngaro tiene una palabra para cada dueño: enyém, tiéd, övé, miénk, tiétek, övék. Son sustantivos, así que llevan artículo (az enyém, a tiéd) y no les sigue nada: Ez az enyém, nunca Ez az enyém telefon. Cuando el dueño es un nombre o un sustantivo, se añade -é: Péteré, a tanáré (el de Péter, el del profesor). El inglés tiene mine, yours y 's; el español tiene el mío, el tuyo y el de Péter. El húngaro az enyém es una sola forma para el mío y la mía."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "onallo-alakok",
+      "title": {
+        "en": "The independent possessives",
+        "es": "Los posesivos independientes"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Dueño"
+        },
+        {
+          "en": "Independent (mine, yours...)",
+          "es": "Independiente (mío, tuyo...)"
+        },
+        {
+          "en": "With the noun (my phone...)",
+          "es": "Con el sustantivo (mi teléfono...)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "az enyém",
+          "az én telefonom"
+        ],
+        [
+          "te",
+          "a tiéd",
+          "a te telefonod"
+        ],
+        [
+          "ő",
+          "az övé",
+          "az ő telefonja"
+        ],
+        [
+          "mi",
+          "a miénk",
+          "a mi telefonunk"
+        ],
+        [
+          "ti",
+          "a tiétek",
+          "a ti telefonotok"
+        ],
+        [
+          "ők",
+          "az övék",
+          "az ő telefonjuk"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How the independent possessives work",
+        "es": "Cómo funcionan los posesivos independientes"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "They stand alone for a thing everybody knows: the article comes first (az before a vowel, a before a consonant) and no noun follows.",
+            "es": "Van solos para una cosa que todos conocen: primero va el artículo (az ante vocal, a ante consonante) y no sigue ningún sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Ez a telefon az enyém.",
+              "tr": {
+                "en": "This phone is mine.",
+                "es": "Este teléfono es mío."
+              }
+            },
+            {
+              "es": "A kabát a tiéd?",
+              "tr": {
+                "en": "Is the coat yours?",
+                "es": "¿El abrigo es tuyo?"
+              }
+            },
+            {
+              "es": "Az enyém nagyobb, mint a tiéd.",
+              "tr": {
+                "en": "Mine is bigger than yours.",
+                "es": "El mío es más grande que el tuyo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "övé is \"his\" and \"hers\" (Hungarian has no gender), and övék is \"theirs\". The polite Ön takes -é: Öné (Önök: Önöké), not tiéd. Use tiéd and tiétek only for friends and family.",
+            "es": "övé es «de él» y «de ella» (el húngaro no tiene género), y övék es «de ellos». El Ön de cortesía lleva -é: Öné (Önök: Önöké), no tiéd. Usa tiéd y tiétek solo con amigos y familia."
+          },
+          "examples": [
+            {
+              "es": "Az autó az övé, nem az enyém.",
+              "tr": {
+                "en": "The car is his or hers, not mine.",
+                "es": "El coche es de él o de ella, no mío."
+              }
+            },
+            {
+              "es": "Bocsánat, ez a kabát az Öné?",
+              "tr": {
+                "en": "Excuse me, is this coat yours? (formal)",
+                "es": "Disculpe, ¿es este abrigo suyo? (formal)"
+              }
+            },
+            {
+              "es": "Ez a ház az Önöké?",
+              "tr": {
+                "en": "Is this house yours? (formal, plural)",
+                "es": "¿Es esta casa de ustedes? (formal)"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Question and answer: Melyik a tiéd? asks \"which one is yours?\", and the answer is again the independent form.",
+            "es": "Pregunta y respuesta: Melyik a tiéd? pregunta «¿cuál es el tuyo?», y la respuesta es de nuevo la forma independiente."
+          },
+          "examples": [
+            {
+              "es": "Melyik a tiéd? A piros az enyém.",
+              "tr": {
+                "en": "Which one is yours? The red one is mine.",
+                "es": "¿Cuál es el tuyo? El rojo es el mío."
+              }
+            },
+            {
+              "es": "Melyik a miénk? A kék a miénk.",
+              "tr": {
+                "en": "Which one is ours? The blue one is ours.",
+                "es": "¿Cuál es el nuestro? El azul es el nuestro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "onallo-e",
+      "title": {
+        "en": "The owner is a name or a noun: + -é",
+        "es": "El dueño es un nombre o un sustantivo: + -é"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Dueño"
+        },
+        {
+          "en": "Owner + -é",
+          "es": "Dueño + -é"
+        }
+      ],
+      "rows": [
+        [
+          "Péter",
+          "Péteré"
+        ],
+        [
+          "Gábor",
+          "Gáboré"
+        ],
+        [
+          "Kati",
+          "Katié"
+        ],
+        [
+          "Anna",
+          "Annáé"
+        ],
+        [
+          "Lupita",
+          "Lupitáé"
+        ],
+        [
+          "Diego",
+          "Diegóé"
+        ],
+        [
+          "a tanár",
+          "a tanáré"
+        ],
+        [
+          "a fiú",
+          "a fiúé"
+        ],
+        [
+          "a barátom",
+          "a barátomé"
+        ],
+        [
+          "a szomszédok",
+          "a szomszédoké"
+        ],
+        [
+          "Ön",
+          "Öné"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Owner + -é",
+        "es": "Dueño + -é"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A name or a noun as owner gets -é. It is the same for every word (no vowel harmony). A final -a or -e lengthens: Anna becomes Annáé, kutya becomes kutyáé.",
+            "es": "Un nombre o un sustantivo como dueño lleva -é. Es igual para todas las palabras (sin armonía vocálica). Una -a o -e final se alarga: Anna pasa a Annáé, kutya pasa a kutyáé."
+          },
+          "examples": [
+            {
+              "es": "Ez a telefon Péteré.",
+              "tr": {
+                "en": "This phone is Péter's.",
+                "es": "Este teléfono es de Péter."
+              }
+            },
+            {
+              "es": "A kutya Annáé.",
+              "tr": {
+                "en": "The dog is Anna's.",
+                "es": "El perro es de Anna."
+              }
+            },
+            {
+              "es": "A kulcs a tanáré.",
+              "tr": {
+                "en": "The key is the teacher's.",
+                "es": "La llave es del profesor."
+              }
+            },
+            {
+              "es": "A labda a kutyáé.",
+              "tr": {
+                "en": "The ball is the dog's.",
+                "es": "La pelota es del perro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A plural owner takes its plural -k first and then -é: a szomszédoké, a szüleimé. The article stays before the owner.",
+            "es": "Un dueño plural recibe primero su plural -k y después -é: a szomszédoké, a szüleimé. El artículo se queda delante del dueño."
+          },
+          "examples": [
+            {
+              "es": "Az autó a szomszédoké.",
+              "tr": {
+                "en": "The car is the neighbours'.",
+                "es": "El coche es de los vecinos."
+              }
+            },
+            {
+              "es": "A ház a szüleimé.",
+              "tr": {
+                "en": "The house is my parents'.",
+                "es": "La casa es de mis padres."
+              }
+            },
+            {
+              "es": "A kert a gyerekeké.",
+              "tr": {
+                "en": "The garden is the children's.",
+                "es": "El jardín es de los niños."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The -é word replaces a noun you have just mentioned, so you do not repeat it.",
+            "es": "La palabra con -é sustituye a un sustantivo que acabas de mencionar, para no repetirlo."
+          },
+          "examples": [
+            {
+              "es": "Az én kabátom piros, Katié kék.",
+              "tr": {
+                "en": "My coat is red, Kati's is blue.",
+                "es": "Mi abrigo es rojo, el de Kati es azul."
+              }
+            },
+            {
+              "es": "A tanár autója új, a diákoké régi.",
+              "tr": {
+                "en": "The teacher's car is new, the students' is old.",
+                "es": "El coche del profesor es nuevo, el de los alumnos es viejo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Which form, and which question?",
+        "es": "¿Qué forma y qué pregunta?"
+      },
+      "pairs": [
+        {
+          "a": "az enyém",
+          "b": "az én telefonom",
+          "note": {
+            "en": "Alone, for a known thing: az enyém. With the noun: az én telefonom. Never both: not az enyém telefon.",
+            "es": "Solo, para una cosa conocida: az enyém. Con el sustantivo: az én telefonom. Nunca los dos: no az enyém telefon."
+          },
+          "examples": [
+            {
+              "es": "Ez a telefon az enyém.",
+              "tr": {
+                "en": "This phone is mine.",
+                "es": "Este teléfono es mío."
+              }
+            },
+            {
+              "es": "Ez az én telefonom.",
+              "tr": {
+                "en": "This is my phone.",
+                "es": "Este es mi teléfono."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Péteré",
+          "b": "Péter telefonja",
+          "note": {
+            "en": "Same meaning. -é when the noun is left out; the ending -ja when the noun is there.",
+            "es": "Mismo significado. -é cuando se omite el sustantivo; la terminación -ja cuando el sustantivo está."
+          },
+          "examples": [
+            {
+              "es": "Ez a telefon Péteré.",
+              "tr": {
+                "en": "This phone is Péter's.",
+                "es": "Este teléfono es de Péter."
+              }
+            },
+            {
+              "es": "Ez Péter telefonja.",
+              "tr": {
+                "en": "This is Péter's phone.",
+                "es": "Este es el teléfono de Péter."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Kié ez?",
+          "b": "Kinek a telefonja ez?",
+          "note": {
+            "en": "Both ask \"whose?\". Kié asks for the owner alone (Az enyém. Péteré.). Kinek a telefonja asks for the phone with its owner (Ez Péter telefonja.).",
+            "es": "Ambas preguntan «¿de quién?». Kié pide solo el dueño (Az enyém. Péteré.). Kinek a telefonja pide el teléfono con su dueño (Ez Péter telefonja.)."
+          },
+          "examples": [
+            {
+              "es": "Kié ez a kulcs? Az enyém.",
+              "tr": {
+                "en": "Whose key is this? Mine.",
+                "es": "¿De quién es esta llave? Mía."
+              }
+            },
+            {
+              "es": "Kinek a kulcsa ez? Ez Anna kulcsa.",
+              "tr": {
+                "en": "Whose key is this? It is Anna's key.",
+                "es": "¿De quién es esta llave? Es la llave de Anna."
+              }
+            }
+          ]
+        },
+        {
+          "a": "az én házam",
+          "b": "a saját házam",
+          "note": {
+            "en": "az én házam stresses WHO owns it (mine, not yours). a saját házam stresses that it is your OWN (not rented, not borrowed).",
+            "es": "az én házam resalta QUIÉN es el dueño (mía, no tuya). a saját házam resalta que es PROPIA (no alquilada, no prestada)."
+          },
+          "examples": [
+            {
+              "es": "Ez az én házam, nem a tiéd.",
+              "tr": {
+                "en": "This is my house, not yours.",
+                "es": "Esta es mi casa, no la tuya."
+              }
+            },
+            {
+              "es": "Nekem már van saját házam.",
+              "tr": {
+                "en": "I already have a house of my own.",
+                "es": "Yo ya tengo una casa propia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "saját: own",
+        "es": "saját: propio"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "saját stands before the noun, and the noun still carries the ending of the owner: a saját házam, a saját autód, a saját szobája. saját itself never changes.",
+            "es": "saját va delante del sustantivo, y el sustantivo conserva la terminación del dueño: a saját házam, a saját autód, a saját szobája. saját nunca cambia."
+          },
+          "examples": [
+            {
+              "es": "A saját házam kicsi, de szép.",
+              "tr": {
+                "en": "My own house is small but nice.",
+                "es": "Mi propia casa es pequeña pero bonita."
+              }
+            },
+            {
+              "es": "Kati a saját szobájában tanul.",
+              "tr": {
+                "en": "Kati studies in her own room.",
+                "es": "Kati estudia en su propia habitación."
+              }
+            },
+            {
+              "es": "Ti a saját autótokkal jöttök?",
+              "tr": {
+                "en": "Are you coming in your own car?",
+                "es": "¿Vienen ustedes en su propio coche?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With \"to have\" the article goes: Nekem saját autóm van, Annának saját lakása van. The owner is in the dative and the noun has his or her ending.",
+            "es": "Con «tener» el artículo desaparece: Nekem saját autóm van, Annának saját lakása van. El dueño va en dativo y el sustantivo lleva su terminación."
+          },
+          "examples": [
+            {
+              "es": "Neked saját szobád van?",
+              "tr": {
+                "en": "Do you have a room of your own?",
+                "es": "¿Tienes una habitación propia?"
+              }
+            },
+            {
+              "es": "Annának saját lakása van.",
+              "tr": {
+                "en": "Anna has a flat of her own.",
+                "es": "Anna tiene un piso propio."
+              }
+            },
+            {
+              "es": "Nekünk saját házunk van.",
+              "tr": {
+                "en": "We have a house of our own.",
+                "es": "Tenemos una casa propia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Do not put a noun after the independent form: Ez az enyém, never Ez az enyém telefon; with the noun say Ez az én telefonom. (2) Keep the article: az enyém, a tiéd, az övé, a miénk (a before a consonant, az before a vowel). (3) With a name use -é, not the dative: Péteré, not Péternek (Péternek means \"to Péter\" or \"Péter has\"). (4) These words stand for ONE thing. For several things there is another form (not in this lesson). (5) To a stranger or in an official setting use Öné, not tiéd: Ez az Öné?",
+        "es": "Trampas clásicas: (1) No pongas un sustantivo tras la forma independiente: Ez az enyém, nunca Ez az enyém telefon; con el sustantivo di Ez az én telefonom. (2) Conserva el artículo: az enyém, a tiéd, az övé, a miénk (a ante consonante, az ante vocal). (3) Con un nombre usa -é, no el dativo: Péteré, no Péternek (Péternek significa «a Péter» o «Péter tiene»). (4) Estas palabras sirven para UNA cosa. Para varias cosas hay otra forma (no en esta lección). (5) A un desconocido o en un contexto oficial usa Öné, no tiéd: Ez az Öné?"
+      }
+    }
+  ],
+  "speak": {
+    "en": "To say mine, Hungarian has a word of its own: «az enyém». Then come «a tiéd», «az övé», «a miénk», «a tiétek», «az övék». No noun follows them: «A telefon az enyém». With a name you add «é»: «Péteré», «Katié», and a final «a» becomes «á»: «Annáé». To ask whose it is, say «Kié ez?» or «Kinek a telefonja ez?». And «saját» means own: «a saját házam», «Annának saját lakása van».",
+    "es": "Para decir el mío, el húngaro tiene una palabra propia: «az enyém». Después vienen «a tiéd», «az övé», «a miénk», «a tiétek», «az övék». Ningún sustantivo les sigue: «A telefon az enyém». Con un nombre se añade «é»: «Péteré», «Katié», y una «a» final se vuelve «á»: «Annáé». Para preguntar de quién es, di «Kié ez?» o «Kinek a telefonja ez?». Y «saját» significa propio: «a saját házam», «Annának saját lakása van»."
+  },
+  "glossary": [
+    {
+      "word": "enyém",
+      "gloss": {
+        "en": "mine",
+        "es": "mío"
+      }
+    },
+    {
+      "word": "tiéd",
+      "gloss": {
+        "en": "yours (one person)",
+        "es": "tuyo"
+      }
+    },
+    {
+      "word": "övé",
+      "gloss": {
+        "en": "his, hers",
+        "es": "de él, de ella"
+      }
+    },
+    {
+      "word": "tiétek",
+      "gloss": {
+        "en": "yours (several people)",
+        "es": "de ustedes"
+      }
+    },
+    {
+      "word": "kié",
+      "gloss": {
+        "en": "whose",
+        "es": "de quién"
+      }
+    },
+    {
+      "word": "Öné",
+      "gloss": {
+        "en": "yours (formal)",
+        "es": "suyo (formal)"
+      }
+    },
+    {
+      "word": "Önöké",
+      "gloss": {
+        "en": "yours (formal, plural)",
+        "es": "de ustedes (formal)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "onallo-birtok-c01",
+      "sentence": "Gábor, ez a kulcs ___? Az asztal alatt találtam.",
+      "options": [
+        "a tiéd",
+        "az enyém",
+        "az övé"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Gábor is spoken to, so \"yours\" is a tiéd (a before the consonant t).",
+        "es": "A Gábor se le habla, así que «tuyo» es a tiéd (a ante la consonante t)."
+      },
+      "wrong": {
+        "az enyém": {
+          "en": "az enyém is \"mine\"; the question to Gábor is whether the key belongs to him.",
+          "es": "az enyém es «mío»; la pregunta a Gábor es si la llave es de él."
+        },
+        "az övé": {
+          "en": "az övé is \"his\" or \"hers\", about a third person; Gábor is spoken to directly.",
+          "es": "az övé es «de él» o «de ella», sobre una tercera persona; a Gábor se le habla directamente."
+        }
+      },
+      "examples": [
+        "A telefon a tiéd?",
+        "Az a kabát a tiéd."
+      ],
+      "tr": {
+        "en": "Gábor, is this key yours? I found it under the table.",
+        "es": "Gábor, ¿es tuya esta llave? La encontré debajo de la mesa."
+      }
+    },
+    {
+      "id": "onallo-birtok-f01",
+      "kind": "form",
+      "verb": "én",
+      "person": "A telefon ___.",
+      "answer": "az enyém",
+      "table": "onallo-alakok"
+    },
+    {
+      "id": "onallo-birtok-c02",
+      "sentence": "Ezt a házat mi vettük, ezért a ház ___.",
+      "options": [
+        "a miénk",
+        "a tiétek",
+        "az övék"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mi vettük: we bought it, so the house is \"ours\": a miénk.",
+        "es": "mi vettük: lo compramos nosotros, así que la casa es «nuestra»: a miénk."
+      },
+      "wrong": {
+        "a tiétek": {
+          "en": "a tiétek is \"yours\" (you, plural); we bought the house.",
+          "es": "a tiétek es «de ustedes»; nosotros compramos la casa."
+        },
+        "az övék": {
+          "en": "az övék is \"theirs\"; the sentence says mi (we).",
+          "es": "az övék es «de ellos»; la frase dice mi (nosotros)."
+        }
+      },
+      "examples": [
+        "A kert is a miénk.",
+        "A ház nem a tiétek, hanem a miénk."
+      ],
+      "tr": {
+        "en": "We bought this house, so the house is ours.",
+        "es": "Nosotros compramos esta casa, así que la casa es nuestra."
+      }
+    },
+    {
+      "id": "onallo-birtok-f02",
+      "kind": "form",
+      "verb": "te",
+      "person": "A kabát ___.",
+      "answer": "a tiéd",
+      "table": "onallo-alakok"
+    },
+    {
+      "id": "onallo-birtok-c03",
+      "sentence": "Ez Kati táskája, ezért a táska ___.",
+      "options": [
+        "az övé",
+        "az enyém",
+        "a tiéd"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The bag is Kati's, one person: az övé (his or hers, no gender).",
+        "es": "El bolso es de Kati, una persona: az övé (de él o de ella, sin género)."
+      },
+      "wrong": {
+        "az enyém": {
+          "en": "az enyém is \"mine\"; the bag belongs to Kati, not to the speaker.",
+          "es": "az enyém es «mío»; el bolso es de Kati, no de quien habla."
+        },
+        "a tiéd": {
+          "en": "a tiéd is \"yours\"; Ez Kati táskája says the bag is Kati's.",
+          "es": "a tiéd es «tuyo»; Ez Kati táskája dice que el bolso es de Kati."
+        }
+      },
+      "examples": [
+        "Az autó az övé.",
+        "A telefon is az övé."
+      ],
+      "tr": {
+        "en": "This is Kati's bag, so the bag is hers.",
+        "es": "Este es el bolso de Kati, así que el bolso es de ella."
+      }
+    },
+    {
+      "id": "onallo-birtok-f03",
+      "kind": "form",
+      "verb": "ő",
+      "person": "Az autó ___.",
+      "answer": "az övé",
+      "table": "onallo-alakok"
+    },
+    {
+      "id": "onallo-birtok-w01",
+      "kind": "why",
+      "es": "A telefon az enyém.",
+      "target": "az enyém",
+      "tr": {
+        "en": "The phone is mine.",
+        "es": "El teléfono es mío."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Independent possessive: it stands for the phone, so no noun follows",
+            "es": "Posesivo independiente: sustituye al teléfono, así que no sigue ningún sustantivo"
+          }
+        },
+        {
+          "text": {
+            "en": "A possessive ending on a noun, like telefonom",
+            "es": "Una terminación posesiva en un sustantivo, como telefonom"
+          },
+          "wrong": {
+            "en": "With this rule the phrase would be az én telefonom (my phone), with the noun in it.",
+            "es": "Con esta regla la frase sería az én telefonom (mi teléfono), con el sustantivo dentro."
+          }
+        },
+        {
+          "text": {
+            "en": "Owner + -é, like Péteré",
+            "es": "Dueño + -é, como Péteré"
+          },
+          "wrong": {
+            "en": "With this rule the owner would be a name or a noun (Péteré); for \"I\" Hungarian has the word enyém.",
+            "es": "Con esta regla el dueño sería un nombre o un sustantivo (Péteré); para «yo» el húngaro tiene la palabra enyém."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "onallo-birtok-c04",
+      "sentence": "Péter és Kati megvették a házat, ezért a ház ___.",
+      "options": [
+        "az övék",
+        "az övé",
+        "a miénk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péter and Kati are two people, \"theirs\" is az övék.",
+        "es": "Péter y Kati son dos personas, «de ellos» es az övék."
+      },
+      "wrong": {
+        "az övé": {
+          "en": "az övé is \"his\" or \"hers\" (one person); two people own the house.",
+          "es": "az övé es «de él» o «de ella» (una persona); la casa es de dos personas."
+        },
+        "a miénk": {
+          "en": "a miénk is \"ours\"; the buyers are Péter and Kati, not we.",
+          "es": "a miénk es «nuestro»; los compradores son Péter y Kati, no nosotros."
+        }
+      },
+      "examples": [
+        "A kutya is az övék.",
+        "A lakás az övék, nem a miénk."
+      ],
+      "tr": {
+        "en": "Péter and Kati bought the house, so the house is theirs.",
+        "es": "Péter y Kati compraron la casa, así que la casa es de ellos."
+      }
+    },
+    {
+      "id": "onallo-birtok-f04",
+      "kind": "form",
+      "verb": "mi",
+      "person": "A ház ___.",
+      "answer": "a miénk",
+      "table": "onallo-alakok"
+    },
+    {
+      "id": "onallo-birtok-c05",
+      "sentence": "Anna és Péter, ez a kutya ___?",
+      "options": [
+        "a tiétek",
+        "a tiéd",
+        "az övék"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna and Péter are spoken to, two people: \"yours\" in the plural is a tiétek.",
+        "es": "Se les habla a Anna y a Péter, dos personas: «de ustedes» es a tiétek."
+      },
+      "wrong": {
+        "a tiéd": {
+          "en": "a tiéd is \"yours\" for ONE person; two people are spoken to.",
+          "es": "a tiéd es «tuyo» para UNA persona; aquí se habla a dos."
+        },
+        "az övék": {
+          "en": "az övék is \"theirs\", about people who are not in the conversation; here you speak to them.",
+          "es": "az övék es «de ellos», sobre personas que no participan; aquí les hablas a ellos."
+        }
+      },
+      "examples": [
+        "A kert a tiétek?",
+        "Ez a ház a tiétek."
+      ],
+      "tr": {
+        "en": "Anna and Péter, is this dog yours?",
+        "es": "Anna y Péter, ¿es suyo este perro?"
+      }
+    },
+    {
+      "id": "onallo-birtok-f05",
+      "kind": "form",
+      "verb": "ti",
+      "person": "A kert ___.",
+      "answer": "a tiétek",
+      "table": "onallo-alakok"
+    },
+    {
+      "id": "onallo-birtok-c06",
+      "sentence": "Ez a telefon ___ enyém, az ott a tiéd.",
+      "options": [
+        "az",
+        "a",
+        "egy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "enyém begins with a vowel, so the definite article is az.",
+        "es": "enyém empieza con vocal, así que el artículo determinado es az."
+      },
+      "wrong": {
+        "a": {
+          "en": "a stands before consonants (a tiéd, a miénk); enyém begins with a vowel.",
+          "es": "a va ante consonante (a tiéd, a miénk); enyém empieza con vocal."
+        },
+        "egy": {
+          "en": "enyém means \"the one that is mine\", a known thing, so it needs the definite article, not egy.",
+          "es": "enyém significa «el que es mío», una cosa conocida, así que necesita el artículo determinado, no egy."
+        }
+      },
+      "examples": [
+        "Az enyém nagy.",
+        "A miénk kicsi."
+      ],
+      "tr": {
+        "en": "This phone is mine, that one over there is yours.",
+        "es": "Este teléfono es mío, ese de allí es tuyo."
+      }
+    },
+    {
+      "id": "onallo-birtok-f06",
+      "kind": "form",
+      "verb": "Péter",
+      "person": "-é",
+      "answer": "Péteré",
+      "table": "onallo-e"
+    },
+    {
+      "id": "onallo-birtok-w02",
+      "kind": "why",
+      "es": "A kutya Annáé.",
+      "target": "Annáé",
+      "tr": {
+        "en": "The dog is Anna's.",
+        "es": "El perro es de Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The independent possessive of ő: övé",
+            "es": "El posesivo independiente de ő: övé"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A kutya az övé; here the owner is named, so the ending -é is used.",
+            "es": "Con esta regla la frase sería A kutya az övé; aquí el dueño está nombrado, así que se usa la terminación -é."
+          }
+        },
+        {
+          "text": {
+            "en": "Owner + -é: the final -a lengthens to -á",
+            "es": "Dueño + -é: la -a final se alarga a -á"
+          }
+        },
+        {
+          "text": {
+            "en": "The dative -nak/-nek: to Anna",
+            "es": "El dativo -nak/-nek: a Anna"
+          },
+          "wrong": {
+            "en": "With this rule the form would be Annának, which says \"to or for Anna\", not that the dog is hers.",
+            "es": "Con esta regla la forma sería Annának, que dice «a o para Anna», no que el perro es suyo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "onallo-birtok-c07",
+      "sentence": "Ez nem a te telefonod, hanem ___.",
+      "options": [
+        "az enyém",
+        "az enyém telefon",
+        "az én"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The independent form stands alone: az enyém already means \"my phone\".",
+        "es": "La forma independiente va sola: az enyém ya significa «mi teléfono»."
+      },
+      "wrong": {
+        "az enyém telefon": {
+          "en": "A noun cannot follow enyém; with the noun you say az én telefonom.",
+          "es": "Un sustantivo no puede seguir a enyém; con el sustantivo se dice az én telefonom."
+        },
+        "az én": {
+          "en": "az én needs a noun with an ending (az én telefonom); alone it is incomplete.",
+          "es": "az én necesita un sustantivo con terminación (az én telefonom); solo está incompleto."
+        }
+      },
+      "examples": [
+        "Ez nem az én kabátom, hanem a tiéd.",
+        "Ez nem a mi házunk, hanem az övék."
+      ],
+      "tr": {
+        "en": "This is not your phone, it is mine.",
+        "es": "Este no es tu teléfono, es el mío."
+      }
+    },
+    {
+      "id": "onallo-birtok-f07",
+      "kind": "form",
+      "verb": "Kati",
+      "person": "-é",
+      "answer": "Katié",
+      "table": "onallo-e"
+    },
+    {
+      "id": "onallo-birtok-c08",
+      "sentence": "Gábor itt hagyta a telefonját, ezért ez a telefon ___.",
+      "options": [
+        "Gáboré",
+        "Gábor",
+        "Gábornak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A name as owner takes -é: Gáboré, \"Gábor's\". There is no vowel harmony in -é.",
+        "es": "Un nombre como dueño lleva -é: Gáboré, «el de Gábor». -é no tiene armonía vocálica."
+      },
+      "wrong": {
+        "Gábor": {
+          "en": "The bare name would mean \"this phone is Gábor himself\"; for \"belongs to Gábor\" add -é.",
+          "es": "El nombre solo significaría «este teléfono es Gábor mismo»; para «es de Gábor» se añade -é."
+        },
+        "Gábornak": {
+          "en": "-nak/-nek is the dative (\"to\" or \"for\" Gábor, or Gábornak van ...); ownership without a noun is -é.",
+          "es": "-nak/-nek es el dativo («a» o «para» Gábor, o Gábornak van ...); la posesión sin sustantivo es -é."
+        }
+      },
+      "examples": [
+        "A kulcs Gáboré.",
+        "A táska is Gáboré."
+      ],
+      "tr": {
+        "en": "Gábor left his phone here, so this phone is Gábor's.",
+        "es": "Gábor dejó aquí su teléfono, así que este teléfono es de Gábor."
+      }
+    },
+    {
+      "id": "onallo-birtok-f08",
+      "kind": "form",
+      "verb": "Anna",
+      "person": "-é",
+      "answer": "Annáé",
+      "table": "onallo-e"
+    },
+    {
+      "id": "onallo-birtok-c09",
+      "sentence": "A kulcs Péteré, a kabát ___.",
+      "options": [
+        "Annáé",
+        "Annaé",
+        "Annának"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The final -a of Anna lengthens to -á before -é: Annáé.",
+        "es": "La -a final de Anna se alarga a -á antes de -é: Annáé."
+      },
+      "wrong": {
+        "Annaé": {
+          "en": "The final -a must lengthen to -á before the ending: Annáé.",
+          "es": "La -a final debe alargarse a -á antes de la terminación: Annáé."
+        },
+        "Annának": {
+          "en": "Annának is the dative (\"to\" or \"for\" Anna); ownership is -é.",
+          "es": "Annának es el dativo («a» o «para» Anna); la posesión es -é."
+        }
+      },
+      "examples": [
+        "A kutya Annáé.",
+        "A labda Lupitáé."
+      ],
+      "tr": {
+        "en": "The key is Péter's, the coat is Anna's.",
+        "es": "La llave es de Péter, el abrigo es de Anna."
+      }
+    },
+    {
+      "id": "onallo-birtok-f09",
+      "kind": "form",
+      "verb": "a tanár",
+      "person": "-é",
+      "answer": "a tanáré",
+      "accept": [
+        "tanáré"
+      ],
+      "table": "onallo-e"
+    },
+    {
+      "id": "onallo-birtok-w03",
+      "kind": "why",
+      "es": "Annának saját lakása van.",
+      "target": "saját",
+      "tr": {
+        "en": "Anna has a flat of her own.",
+        "es": "Anna tiene un piso propio."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "An independent possessive, like enyém",
+            "es": "Un posesivo independiente, como enyém"
+          },
+          "wrong": {
+            "en": "With this rule nothing would follow it (A lakás az övé); saját stands before a noun.",
+            "es": "Con esta regla no seguiría nada (A lakás az övé); saját va delante de un sustantivo."
+          }
+        },
+        {
+          "text": {
+            "en": "The word for \"own\": it stands before the noun, which carries the owner's ending",
+            "es": "La palabra para «propio»: va delante del sustantivo, que lleva la terminación del dueño"
+          }
+        },
+        {
+          "text": {
+            "en": "Owner + -é",
+            "es": "Dueño + -é"
+          },
+          "wrong": {
+            "en": "With this rule the word would be Annáé (Anna's); saját is a separate word that means \"own\".",
+            "es": "Con esta regla la palabra sería Annáé (el de Anna); saját es una palabra aparte que significa «propio»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "onallo-birtok-c10",
+      "sentence": "Az autó nem a gyerekeké, hanem a ___.",
+      "options": [
+        "szülőké",
+        "szülő",
+        "szülőknek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A plural owner takes -k first and then -é: szülők + é = szülőké.",
+        "es": "Un dueño plural recibe primero -k y después -é: szülők + é = szülőké."
+      },
+      "wrong": {
+        "szülő": {
+          "en": "szülő is one parent and has no -é; the contrast with a gyerekeké asks for a plural owner with -é.",
+          "es": "szülő es un solo padre o madre y no lleva -é; el contraste con a gyerekeké pide un dueño plural con -é."
+        },
+        "szülőknek": {
+          "en": "szülőknek is the dative (\"to the parents\"); ownership is -é.",
+          "es": "szülőknek es el dativo («a los padres»); la posesión es -é."
+        }
+      },
+      "examples": [
+        "A ház a szomszédoké.",
+        "A kert a gyerekeké."
+      ],
+      "tr": {
+        "en": "The car does not belong to the children but to the parents.",
+        "es": "El coche no es de los niños sino de los padres."
+      }
+    },
+    {
+      "id": "onallo-birtok-f10",
+      "kind": "form",
+      "verb": "a szomszédok",
+      "person": "-é",
+      "answer": "a szomszédoké",
+      "accept": [
+        "szomszédoké"
+      ],
+      "table": "onallo-e"
+    },
+    {
+      "id": "onallo-birtok-c11",
+      "sentence": "___ ez a táska? Itt van az asztalon.",
+      "options": [
+        "Kié",
+        "Kit",
+        "Ki"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kié = ki + é, \"whose is it?\". It asks for the owner and needs no noun after it.",
+        "es": "Kié = ki + é, «¿de quién es?». Pide al dueño y no necesita ningún sustantivo después."
+      },
+      "wrong": {
+        "Kit": {
+          "en": "Kit means \"whom\" as an object (Kit látsz?); it does not ask who owns the bag. For \"whose\" use Kié ez a táska? or Kinek a táskája ez?",
+          "es": "Kit significa «a quién» como objeto (Kit látsz?); no pregunta de quién es el bolso. Para «de quién» usa Kié ez a táska? o Kinek a táskája ez?"
+        },
+        "Ki": {
+          "en": "Ki means \"who\"; Ki ez a táska? is not a question about ownership.",
+          "es": "Ki significa «quién»; Ki ez a táska? no es una pregunta sobre la posesión."
+        }
+      },
+      "examples": [
+        "Kié ez a kulcs?",
+        "Kié az a kabát?"
+      ],
+      "tr": {
+        "en": "Whose is this bag? It is here on the table.",
+        "es": "¿De quién es este bolso? Está aquí sobre la mesa."
+      }
+    },
+    {
+      "id": "onallo-birtok-f11",
+      "kind": "form",
+      "verb": "Ön",
+      "person": "-é",
+      "answer": "Öné",
+      "accept": [
+        "öné"
+      ],
+      "table": "onallo-e"
+    },
+    {
+      "id": "onallo-birtok-c12",
+      "sentence": "Kinek a ___ ez? Nagyon szép.",
+      "options": [
+        "telefonja",
+        "telefon",
+        "telefonom"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kinek a ... asks about a possessed noun, and the noun carries the ending: telefonja (3rd person).",
+        "es": "Kinek a ... pregunta por un sustantivo poseído, y el sustantivo lleva la terminación: telefonja (3.ª persona)."
+      },
+      "wrong": {
+        "telefon": {
+          "en": "The bare noun has no ending; after Kinek a it needs the possessive ending -ja.",
+          "es": "El sustantivo sin terminación no sirve; tras Kinek a necesita la terminación posesiva -ja."
+        },
+        "telefonom": {
+          "en": "telefonom is \"my phone\"; Kinek a asks about somebody else's phone.",
+          "es": "telefonom es «mi teléfono»; Kinek a pregunta por el teléfono de otra persona."
+        }
+      },
+      "examples": [
+        "Kinek az autója ez?",
+        "Kinek a kulcsa ez?"
+      ],
+      "tr": {
+        "en": "Whose phone is this? It is very nice.",
+        "es": "¿De quién es este teléfono? Es muy bonito."
+      }
+    },
+    {
+      "id": "onallo-birtok-f12",
+      "kind": "form",
+      "verb": "ők",
+      "person": "A lakás ___.",
+      "answer": "az övék",
+      "table": "onallo-alakok"
+    },
+    {
+      "id": "onallo-birtok-w04",
+      "kind": "why",
+      "es": "Kié ez a telefon?",
+      "target": "Kié",
+      "tr": {
+        "en": "Whose phone is this?",
+        "es": "¿De quién es este teléfono?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Who? The plain question word ki",
+            "es": "¿Quién? La palabra interrogativa simple ki"
+          },
+          "wrong": {
+            "en": "With this rule the question would be Ki ez? (Who is this?); Kié adds -é: whose?",
+            "es": "Con esta regla la pregunta sería Ki ez? (¿Quién es este?); Kié añade -é: ¿de quién?"
+          }
+        },
+        {
+          "text": {
+            "en": "To whom? kinek",
+            "es": "¿A quién? kinek"
+          },
+          "wrong": {
+            "en": "With this rule the question would be Kinek adod a telefont? (To whom do you give the phone?).",
+            "es": "Con esta regla la pregunta sería Kinek adod a telefont? (¿A quién le das el teléfono?)."
+          }
+        },
+        {
+          "text": {
+            "en": "Whose? ki + the ending -é",
+            "es": "¿De quién? ki + la terminación -é"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "onallo-birtok-c13",
+      "sentence": "Nekem már van ___ lakásom.",
+      "options": [
+        "saját",
+        "enyém",
+        "magam"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "saját means \"own\" and stands before the noun, which keeps the ending of the owner: saját lakásom.",
+        "es": "saját significa «propio» y va delante del sustantivo, que conserva la terminación del dueño: saját lakásom."
+      },
+      "wrong": {
+        "enyém": {
+          "en": "enyém stands alone (A lakás az enyém); it cannot stand before a noun.",
+          "es": "enyém va solo (A lakás az enyém); no puede ir delante de un sustantivo."
+        },
+        "magam": {
+          "en": "magam is \"myself\" (Látom magam); it is not a word for \"own\" before a noun.",
+          "es": "magam es «a mí mismo» (Látom magam); no es una palabra para «propio» delante de un sustantivo."
+        }
+      },
+      "examples": [
+        "Neki saját autója van.",
+        "Nekünk saját házunk van."
+      ],
+      "tr": {
+        "en": "I already have a flat of my own.",
+        "es": "Yo ya tengo un piso propio."
+      }
+    },
+    {
+      "id": "onallo-birtok-c14",
+      "sentence": "Annának saját ___ van, és ott tanul.",
+      "options": [
+        "szobája",
+        "szobám",
+        "szobánk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The owner is Annának (3rd person), so the noun after saját has the 3rd person ending: szobája.",
+        "es": "El dueño es Annának (3.ª persona), así que el sustantivo tras saját lleva la terminación de 3.ª persona: szobája."
+      },
+      "wrong": {
+        "szobám": {
+          "en": "szobám is \"my room\"; the owner is Anna.",
+          "es": "szobám es «mi habitación»; la dueña es Anna."
+        },
+        "szobánk": {
+          "en": "szobánk is \"our room\"; the owner is Anna, one person.",
+          "es": "szobánk es «nuestra habitación»; la dueña es Anna, una persona."
+        }
+      },
+      "examples": [
+        "Neked saját szobád van?",
+        "Kati a saját szobájában tanul."
+      ],
+      "tr": {
+        "en": "Anna has a room of her own, and she studies there.",
+        "es": "Anna tiene una habitación propia y estudia allí."
+      }
+    }
+  ]
+}

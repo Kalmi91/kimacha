@@ -1,0 +1,1347 @@
+{
+  "schema": 2,
+  "topic": "hivatalos-stilus",
+  "level": "C1",
+  "title": {
+    "en": "Official writing: Tisztelt Hölgyem/Uram!",
+    "es": "Escritura oficial: Tisztelt Hölgyem/Uram!"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Official Hungarian is a style of its own: a fixed frame, set phrases, and nouns where speech would use verbs. You address the reader as Ön (often with a capital letter in a letter, as a courtesy: Ön, Önt, Önnek), with 3rd person verbs and endings. You open with a greeting such as Tisztelt Hölgyem/Uram!, give the reason with a formula (Ezúton szeretném jelezni, hogy…), make your request (Kérem, hogy…), point to what you attach (a mellékelt dokumentum) and close with Üdvözlettel or Tisztelettel. English opens with I am writing to… and Spanish with Por medio de la presente…; Hungarian uses ezúton (by this way) instead of a word-for-word I am writing to…. Between friends none of this applies: there you write Kedves Kati! and Üdv. This lesson does not repeat the Ön forms and the polite requests of the formal-register lesson; it builds the letter and the noun style on top of them.",
+        "es": "El húngaro oficial es un estilo propio: un marco fijo, fórmulas hechas y sustantivos donde el habla usaría verbos. Te diriges al lector como Ön (a menudo con mayúscula en una carta, por cortesía: Ön, Önt, Önnek), con verbos y terminaciones de 3.ª persona. Abres con un saludo como Tisztelt Hölgyem/Uram!, das el motivo con una fórmula (Ezúton szeretném jelezni, hogy…), haces tu petición (Kérem, hogy…), señalas lo que adjuntas (a mellékelt dokumentum) y cierras con Üdvözlettel o Tisztelettel. El inglés abre con I am writing to… y el español con Por medio de la presente…; el húngaro usa ezúton («por esta vía») y no traduce «escribo para» palabra por palabra. Entre amigos nada de esto vale: ahí escribes Kedves Kati! y Üdv. Esta lección no repite las formas de Ön ni las peticiones corteses de la lección de registro formal; construye la carta y el estilo nominal encima de ellas."
+      }
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "The frame of a letter",
+        "es": "El marco de una carta"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Greeting: Tisztelt Hölgyem/Uram! when you do not know who reads the letter (hölgyem and uram are hölgy and úr with the ending for \"my\": my lady, my sir). Tisztelt Ügyfelünk! goes to a customer of your company. A friend gets Kedves Kati!. In a letter the greeting ends with ! and the text starts on a new line with a capital letter.",
+            "es": "Saludo: Tisztelt Hölgyem/Uram! cuando no sabes quién leerá la carta (hölgyem y uram son hölgy y úr con la terminación de «mi»: mi señora, mi señor). Tisztelt Ügyfelünk! va dirigido a un cliente de tu empresa. A un amigo le escribes Kedves Kati!. En una carta el saludo termina con ! y el texto empieza en una línea nueva con mayúscula."
+          },
+          "examples": [
+            {
+              "es": "Tisztelt Hölgyem/Uram!",
+              "tr": {
+                "en": "Dear Sir or Madam,",
+                "es": "Estimado señor o estimada señora:"
+              }
+            },
+            {
+              "es": "Tisztelt Ügyfelünk!",
+              "tr": {
+                "en": "Dear customer,",
+                "es": "Estimado cliente:"
+              }
+            },
+            {
+              "es": "Kedves Kati!",
+              "tr": {
+                "en": "Dear Kati, (to a friend)",
+                "es": "Querida Kati: (a una amiga)"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Reason for writing: Ezúton szeretném jelezni, hogy… (I would like to let you know, by this letter, that…) or Ezúton értesítem, hogy… (I hereby inform you that…). An office or a company writes in the we-form: Tájékoztatjuk, hogy…",
+            "es": "Motivo de la carta: Ezúton szeretném jelezni, hogy… (por medio de la presente quisiera avisar que…) o Ezúton értesítem, hogy… (por la presente le informo que…). Una oficina o una empresa escribe en plural: Tájékoztatjuk, hogy…"
+          },
+          "examples": [
+            {
+              "es": "Ezúton szeretném jelezni, hogy a lakcímem megváltozott.",
+              "tr": {
+                "en": "I would like to let you know that my address has changed.",
+                "es": "Quisiera avisar que mi domicilio ha cambiado."
+              }
+            },
+            {
+              "es": "Tájékoztatjuk, hogy a hivatal pénteken zárva van.",
+              "tr": {
+                "en": "We inform you that the office is closed on Friday.",
+                "es": "Le informamos que la oficina está cerrada el viernes."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Pointing to other parts: az alábbi = the following, the one below (az alábbi címen = at the address below); a fenti = the one above; a mellékelt = enclosed. Mellékelten megküldöm… means I enclose…; in an email you often write Csatolom… (I attach…).",
+            "es": "Señalar otras partes: az alábbi = el siguiente, el de abajo (az alábbi címen = en la dirección de abajo); a fenti = el de arriba; a mellékelt = adjunto. Mellékelten megküldöm… significa adjunto…; en un correo se escribe a menudo Csatolom… (adjunto…)."
+          },
+          "examples": [
+            {
+              "es": "Az alábbi telefonszámon érhet el.",
+              "tr": {
+                "en": "You can reach me at the telephone number below.",
+                "es": "Puede localizarme en el número de teléfono de abajo."
+              }
+            },
+            {
+              "es": "Mellékelten megküldöm az igazolást.",
+              "tr": {
+                "en": "I am enclosing the certificate.",
+                "es": "Adjunto el comprobante."
+              }
+            },
+            {
+              "es": "Csatolom a kért dokumentumokat.",
+              "tr": {
+                "en": "I am attaching the documents you asked for.",
+                "es": "Adjunto los documentos que solicitó."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Closing: Szíves válaszát előre is köszönöm. (thank you in advance for your reply) or Megértését előre is köszönöm. Then Üdvözlettel, (the standard business ending) or Tisztelettel, (more formal), and your name below. Köszönettel, fits when you are thanking. Friends get Üdv.",
+            "es": "Cierre: Szíves válaszát előre is köszönöm. (le agradezco de antemano su respuesta) o Megértését előre is köszönöm. Luego Üdvözlettel, (el cierre comercial estándar) o Tisztelettel, (más formal), y tu nombre debajo. Köszönettel, va bien cuando agradeces. A los amigos, Üdv."
+          },
+          "examples": [
+            {
+              "es": "Szíves válaszát előre is köszönöm.",
+              "tr": {
+                "en": "Thank you in advance for your kind reply.",
+                "es": "Le agradezco de antemano su amable respuesta."
+              }
+            },
+            {
+              "es": "Megértését előre is köszönöm.",
+              "tr": {
+                "en": "Thank you in advance for your understanding.",
+                "es": "Le agradezco de antemano su comprensión."
+              }
+            },
+            {
+              "es": "Üdvözlettel,",
+              "tr": {
+                "en": "Regards,",
+                "es": "Saludos cordiales,"
+              }
+            },
+            {
+              "es": "Tisztelettel,",
+              "tr": {
+                "en": "Respectfully,",
+                "es": "Atentamente,"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kerelem-t",
+      "title": {
+        "en": "Your, my, our: possessive + -t",
+        "es": "Tu, mi, nuestro: posesivo + -t"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "kérelem (application)",
+          "es": "kérelem (solicitud)"
+        },
+        {
+          "en": "levél (letter)",
+          "es": "levél (carta)"
+        },
+        {
+          "en": "válasz (reply)",
+          "es": "válasz (respuesta)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "kérelmemet",
+          "levelemet",
+          "válaszomat"
+        ],
+        [
+          "Ön",
+          "kérelmét",
+          "levelét",
+          "válaszát"
+        ],
+        [
+          "mi",
+          "kérelmünket",
+          "levelünket",
+          "válaszunkat"
+        ],
+        [
+          "Önök",
+          "kérelmüket",
+          "levelüket",
+          "válaszukat"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Four ways to ask",
+        "es": "Cuatro maneras de pedir"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Kérem, hogy… + the -j form in the 3rd person, because you address Ön. A definite object asks for -ja/-je (küldje); an indefinite object, or none, asks for -jon/-jen/-jön (küldjön, jöjjön).",
+            "es": "Kérem, hogy… + la forma en -j en 3.ª persona, porque tratas de Ön. Un objeto determinado pide -ja/-je (küldje); un objeto indeterminado, o ninguno, pide -jon/-jen/-jön (küldjön, jöjjön)."
+          },
+          "examples": [
+            {
+              "es": "Kérem, hogy küldje meg a számlát.",
+              "tr": {
+                "en": "I ask you to send the bill.",
+                "es": "Le pido que envíe la factura."
+              }
+            },
+            {
+              "es": "Kérem, hogy küldjön egy új számlát.",
+              "tr": {
+                "en": "I ask you to send a new bill.",
+                "es": "Le pido que envíe una factura nueva."
+              }
+            },
+            {
+              "es": "Kérem, hogy jöjjön be a hivatalba.",
+              "tr": {
+                "en": "I ask you to come into the office.",
+                "es": "Le pido que pase a la oficina."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Kérem + a noun with a possessive ending and -t (-ását/-ését). It is shorter and more official than a hogy clause.",
+            "es": "Kérem + un sustantivo con terminación posesiva y -t (-ását/-ését). Es más corto y más oficial que una cláusula con hogy."
+          },
+          "examples": [
+            {
+              "es": "Kérem a határidő meghosszabbítását.",
+              "tr": {
+                "en": "I request the extension of the deadline.",
+                "es": "Solicito la ampliación del plazo."
+              }
+            },
+            {
+              "es": "Kérem a szerződés módosítását.",
+              "tr": {
+                "en": "I request the amendment of the contract.",
+                "es": "Solicito la modificación del contrato."
+              }
+            },
+            {
+              "es": "Kérem szíves tájékoztatását az ügy állásáról.",
+              "tr": {
+                "en": "I ask for your kind information on the status of the matter.",
+                "es": "Le pido su amable información sobre el estado del asunto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Kérem, szíveskedjen + infinitive is the most polite wish (be so kind as to). szíveskedik is an -ik verb: szíveskedjen for Ön, szíveskedjenek for Önök or an office. The second verb stays an infinitive.",
+            "es": "Kérem, szíveskedjen + infinitivo es el deseo más cortés (tenga la amabilidad de). szíveskedik es un verbo en -ik: szíveskedjen para Ön, szíveskedjenek para Önök o una oficina. El segundo verbo se queda en infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Kérem, szíveskedjen megküldeni a szerződést.",
+              "tr": {
+                "en": "Please be so kind as to send the contract.",
+                "es": "Por favor, tenga la amabilidad de enviar el contrato."
+              }
+            },
+            {
+              "es": "Szíveskedjen aláírni a mellékelt dokumentumot.",
+              "tr": {
+                "en": "Please be so kind as to sign the enclosed document.",
+                "es": "Tenga la amabilidad de firmar el documento adjunto."
+              }
+            },
+            {
+              "es": "Kérem, szíveskedjenek meghosszabbítani a határidőt.",
+              "tr": {
+                "en": "Please be so kind as to extend the deadline.",
+                "es": "Les ruego que tengan la amabilidad de ampliar el plazo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Kérem or Kérjük? One person writes Kérem. An office, a bank or a company writes Kérjük (we ask) and Tájékoztatjuk (we inform).",
+            "es": "¿Kérem o Kérjük? Una persona escribe Kérem. Una oficina, un banco o una empresa escribe Kérjük (pedimos) y Tájékoztatjuk (informamos)."
+          },
+          "examples": [
+            {
+              "es": "Kérjük, vegye figyelembe, hogy az ügyfélszolgálat hétfőn zárva van.",
+              "tr": {
+                "en": "Please note that customer service is closed on Monday.",
+                "es": "Le pedimos tener en cuenta que el servicio al cliente está cerrado el lunes."
+              }
+            },
+            {
+              "es": "Tájékoztatjuk, hogy kérelmét elbíráltuk.",
+              "tr": {
+                "en": "We inform you that we have assessed your application.",
+                "es": "Le informamos que hemos evaluado su solicitud."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "fonevesites",
+      "title": {
+        "en": "Verbs become nouns",
+        "es": "Los verbos se vuelven sustantivos"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "benyújt (submit)",
+          "es": "benyújt (presentar)"
+        },
+        {
+          "en": "kitölt (fill in)",
+          "es": "kitölt (llenar)"
+        },
+        {
+          "en": "befizet (pay in)",
+          "es": "befizet (pagar)"
+        },
+        {
+          "en": "aláír (sign)",
+          "es": "aláír (firmar)"
+        }
+      ],
+      "rows": [
+        [
+          "-ás/-és",
+          "benyújtás",
+          "kitöltés",
+          "befizetés",
+          "aláírás"
+        ],
+        [
+          "-ása/-ése",
+          "benyújtása",
+          "kitöltése",
+          "befizetése",
+          "aláírása"
+        ],
+        [
+          "-ását/-ését",
+          "benyújtását",
+          "kitöltését",
+          "befizetését",
+          "aláírását"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Nouns instead of clauses",
+        "es": "Sustantivos en lugar de oraciones"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Official style turns the action into a noun with -ás/-és. The object of the verb becomes the owner and the noun takes -a/-e: benyújtja a kérelmet becomes a kérelem benyújtása.",
+            "es": "El estilo oficial convierte la acción en un sustantivo con -ás/-és. El objeto del verbo pasa a ser el poseedor y el sustantivo lleva -a/-e: benyújtja a kérelmet se convierte en a kérelem benyújtása."
+          },
+          "examples": [
+            {
+              "es": "A szerződés aláírása kedden lesz.",
+              "tr": {
+                "en": "The signing of the contract will be on Tuesday.",
+                "es": "La firma del contrato será el martes."
+              }
+            },
+            {
+              "es": "A díj befizetése kötelező.",
+              "tr": {
+                "en": "Paying the fee is compulsory.",
+                "es": "El pago de la cuota es obligatorio."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "When that noun is itself the owner of another noun, it takes -nak/-nek: a kérelem benyújtásának határideje (the deadline for submitting the application).",
+            "es": "Cuando ese sustantivo es a su vez el poseedor de otro sustantivo, lleva -nak/-nek: a kérelem benyújtásának határideje (la fecha límite para presentar la solicitud)."
+          },
+          "examples": [
+            {
+              "es": "A kérelem benyújtásának határideje péntek.",
+              "tr": {
+                "en": "The deadline for submitting the application is Friday.",
+                "es": "La fecha límite para presentar la solicitud es el viernes."
+              }
+            },
+            {
+              "es": "A díj befizetésének határideje a hónap vége.",
+              "tr": {
+                "en": "The deadline for paying the fee is the end of the month.",
+                "es": "La fecha límite para pagar la cuota es el fin de mes."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A noun plus a postposition replaces a time clause: a kérelem benyújtása után (after you submit the application), az aláírás előtt (before signing).",
+            "es": "Un sustantivo más una posposición reemplaza una cláusula de tiempo: a kérelem benyújtása után (después de que presentes la solicitud), az aláírás előtt (antes de firmar)."
+          },
+          "examples": [
+            {
+              "es": "A kérelem benyújtása után két hétig kell várni.",
+              "tr": {
+                "en": "After submitting the application you have to wait two weeks.",
+                "es": "Después de presentar la solicitud hay que esperar dos semanas."
+              }
+            },
+            {
+              "es": "Az aláírás előtt kérem, olvassa el a szerződést.",
+              "tr": {
+                "en": "Before signing, please read the contract.",
+                "es": "Antes de firmar, por favor lea el contrato."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "koznyelv-hivatalos",
+      "title": {
+        "en": "Everyday word, official word",
+        "es": "Palabra cotidiana, palabra oficial"
+      },
+      "header": [
+        {
+          "en": "Everyday",
+          "es": "Cotidiano"
+        },
+        {
+          "en": "Official",
+          "es": "Oficial"
+        }
+      ],
+      "rows": [
+        [
+          "beadni",
+          "benyújtani"
+        ],
+        [
+          "elküldeni",
+          "megküldeni"
+        ],
+        [
+          "szólni",
+          "jelezni"
+        ],
+        [
+          "megmondani",
+          "közölni"
+        ],
+        [
+          "megkapni",
+          "kézhez venni"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Friend or office?",
+        "es": "¿Amigo u oficina?"
+      },
+      "pairs": [
+        {
+          "a": "Kedves Kati!",
+          "b": "Tisztelt Hölgyem/Uram!",
+          "note": {
+            "en": "Between friends: Kedves + first name, the te-form, and Üdv at the end. To an office: Tisztelt + the Ön-form and Tisztelettel or Üdvözlettel at the end. Do not mix the two sets.",
+            "es": "Entre amigos: Kedves + nombre, la forma de tú y Üdv al final. A una oficina: Tisztelt + la forma de Ön y Tisztelettel o Üdvözlettel al final. No mezcles los dos juegos."
+          },
+          "examples": [
+            {
+              "es": "Kedves Kati! Köszönöm a segítségedet.",
+              "tr": {
+                "en": "Dear Kati, thank you for your help.",
+                "es": "Querida Kati, gracias por tu ayuda."
+              }
+            },
+            {
+              "es": "Tisztelt Hölgyem/Uram! Köszönöm szíves segítségét.",
+              "tr": {
+                "en": "Dear Sir or Madam, thank you for your kind help.",
+                "es": "Estimado señor o estimada señora, le agradezco su amable ayuda."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Szólj, ha elkészült!",
+          "b": "Kérem, értesítsen, ha elkészült.",
+          "note": {
+            "en": "The same request. The informal one is a te-imperative with an everyday verb. The official one starts with kérem, uses the Ön form and the official verb értesít (its object is me, so the form is the indefinite értesítsen).",
+            "es": "La misma petición. La informal es un imperativo de tú con un verbo cotidiano. La oficial empieza con kérem, usa la forma de Ön y el verbo oficial értesít (su objeto soy yo, así que la forma es la indefinida értesítsen)."
+          },
+          "examples": [
+            {
+              "es": "Küldd el nekem a számlát!",
+              "tr": {
+                "en": "Send me the bill!",
+                "es": "¡Mándame la factura!"
+              }
+            },
+            {
+              "es": "Kérem, hogy küldje meg a számlát.",
+              "tr": {
+                "en": "I ask you to send the bill.",
+                "es": "Le pido que envíe la factura."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Kérem, hogy módosítsák a szerződést.",
+          "b": "Kérem a szerződés módosítását.",
+          "note": {
+            "en": "Both are polite and official. The noun version is shorter and sounds more like an office; the clause version is more personal.",
+            "es": "Ambas son corteses y oficiales. La versión con sustantivo es más corta y suena más a oficina; la versión con cláusula es más personal."
+          },
+          "examples": [
+            {
+              "es": "Kérem, hogy módosítsa a lakcímemet.",
+              "tr": {
+                "en": "I ask you to change my address.",
+                "es": "Le pido que modifique mi domicilio."
+              }
+            },
+            {
+              "es": "Kérem a lakcímem módosítását.",
+              "tr": {
+                "en": "I request the change of my address.",
+                "es": "Solicito la modificación de mi domicilio."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Three traps. First, Ön takes the 3rd person for the verb and for \"your\": Szíves válaszát, never szíves válaszodat. Second, do not translate \"I am writing to…\" word for word; open with Ezúton szeretném jelezni, hogy… or Kérem, hogy…. Third, keep the register: Kedves goes with te and Üdv, Tisztelt goes with Ön and Tisztelettel. Ön, Önt, Önnek and Önök are usually written with a capital letter in a letter, as a courtesy (a small letter is also correct; önt is also the verb \"pours\", so the capital makes the meaning clear).",
+        "es": "Tres trampas. Primera: Ön lleva la 3.ª persona en el verbo y en «su»: Szíves válaszát, nunca szíves válaszodat. Segunda: no traduzcas «le escribo para…» palabra por palabra; abre con Ezúton szeretném jelezni, hogy… o Kérem, hogy…. Tercera: mantén el registro: Kedves va con tú y Üdv, Tisztelt va con Ön y Tisztelettel. Ön, Önt, Önnek y Önök suelen escribirse con mayúscula en una carta, por cortesía (la minúscula también es correcta; önt es además el verbo «vierte», y la mayúscula aclara el sentido)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Official Hungarian has a fixed frame. To an unknown reader you write «Tisztelt Hölgyem!» for a woman and «Tisztelt Uram!» for a man. You give the reason with «Ezúton szeretném jelezni, hogy a lakcímem megváltozott.» You ask for something with «Kérem, hogy küldje meg a számlát.» or with a noun: «Kérem a határidő meghosszabbítását.» Official style likes nouns: «a kérelem benyújtása», «a szerződés aláírása». You close with «Szíves válaszát előre is köszönöm.» and then «Üdvözlettel» or «Tisztelettel». Between friends you write «Kedves Kati!» and «Üdv».",
+    "es": "El húngaro oficial tiene un marco fijo. A un lector desconocido le escribes «Tisztelt Hölgyem!» si es mujer y «Tisztelt Uram!» si es hombre. Das el motivo con «Ezúton szeretném jelezni, hogy a lakcímem megváltozott.» Pides algo con «Kérem, hogy küldje meg a számlát.» o con un sustantivo: «Kérem a határidő meghosszabbítását.» El estilo oficial prefiere los sustantivos: «a kérelem benyújtása», «a szerződés aláírása». Cierras con «Szíves válaszát előre is köszönöm.» y luego «Üdvözlettel» o «Tisztelettel». Entre amigos escribes «Kedves Kati!» y «Üdv»."
+  },
+  "glossary": [
+    {
+      "word": "tisztelt",
+      "gloss": {
+        "en": "respected, dear (in a greeting)",
+        "es": "estimado (en un saludo)"
+      }
+    },
+    {
+      "word": "ezúton",
+      "gloss": {
+        "en": "hereby, by this letter",
+        "es": "por medio de la presente"
+      }
+    },
+    {
+      "word": "benyújt",
+      "gloss": {
+        "en": "to submit, to hand in",
+        "es": "presentar, entregar (un documento)"
+      }
+    },
+    {
+      "word": "elbírál",
+      "gloss": {
+        "en": "to assess, to decide on (an application)",
+        "es": "evaluar, resolver (una solicitud)"
+      }
+    },
+    {
+      "word": "megküld",
+      "gloss": {
+        "en": "to send (official)",
+        "es": "enviar (oficial)"
+      }
+    },
+    {
+      "word": "mellékel",
+      "gloss": {
+        "en": "to enclose",
+        "es": "adjuntar"
+      }
+    },
+    {
+      "word": "alábbi",
+      "gloss": {
+        "en": "the following, the one below",
+        "es": "el siguiente, el de abajo"
+      }
+    },
+    {
+      "word": "fenti",
+      "gloss": {
+        "en": "the above",
+        "es": "el de arriba"
+      }
+    },
+    {
+      "word": "szíveskedik",
+      "gloss": {
+        "en": "to be so kind as to",
+        "es": "tener la amabilidad de"
+      }
+    },
+    {
+      "word": "kézhez",
+      "gloss": {
+        "en": "kézhez vesz: to receive",
+        "es": "kézhez vesz: recibir"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "hivatalos-stilus-c01",
+      "sentence": "___ Hölgyem/Uram! Ezúton szeretném jelezni, hogy a lakcímem megváltozott.",
+      "options": [
+        "Kedves",
+        "Tisztelt",
+        "Szia"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "To an unknown official reader the greeting is Tisztelt Hölgyem/Uram!",
+        "es": "A un lector oficial desconocido el saludo es Tisztelt Hölgyem/Uram!"
+      },
+      "wrong": {
+        "Kedves": {
+          "en": "Kedves is for people you know (Kedves Kati!); official letters use Tisztelt.",
+          "es": "Kedves es para personas que conoces (Kedves Kati!); las cartas oficiales usan Tisztelt."
+        },
+        "Szia": {
+          "en": "Szia is the informal hello between friends; it does not fit a letter to an office.",
+          "es": "Szia es el saludo informal entre amigos; no va en una carta a una oficina."
+        }
+      },
+      "examples": [
+        "Tisztelt Ügyfelünk!",
+        "Kedves Kati!"
+      ],
+      "tr": {
+        "en": "Dear Sir or Madam, I would like to let you know that my address has changed.",
+        "es": "Estimado señor o estimada señora: Quisiera avisar que mi domicilio ha cambiado."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f01",
+      "kind": "form",
+      "verb": "kérelem",
+      "person": "Ön",
+      "answer": "kérelmét",
+      "table": "kerelem-t"
+    },
+    {
+      "id": "hivatalos-stilus-c02",
+      "sentence": "Ezúton ___ jelezni, hogy a múlt hónapban elköltöztem.",
+      "options": [
+        "szeretném",
+        "szeretem",
+        "szeretnénk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "szeretném = I would like (a polite wish); with jelezni, hogy… it takes the definite form.",
+        "es": "szeretném = quisiera (un deseo cortés); con jelezni, hogy… lleva la forma definida."
+      },
+      "wrong": {
+        "szeretem": {
+          "en": "szeretem is \"I like it\"; Ezúton szeretem jelezni would say that you enjoy reporting.",
+          "es": "szeretem es «me gusta»; Ezúton szeretem jelezni diría que disfrutas avisando."
+        },
+        "szeretnénk": {
+          "en": "szeretnénk is \"we would like\"; the writer is one person (elköltöztem).",
+          "es": "szeretnénk es «quisiéramos»; quien escribe es una sola persona (elköltöztem)."
+        }
+      },
+      "examples": [
+        "Ezúton szeretném megköszönni a segítségét.",
+        "Ezúton szeretnénk tájékoztatni, hogy a hivatal zárva lesz."
+      ],
+      "tr": {
+        "en": "I would like to let you know hereby that I moved last month.",
+        "es": "Por medio de la presente quisiera avisar que me mudé el mes pasado."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f02",
+      "kind": "form",
+      "verb": "levél",
+      "person": "én",
+      "answer": "levelemet",
+      "table": "kerelem-t"
+    },
+    {
+      "id": "hivatalos-stilus-c03",
+      "sentence": "Kérem, hogy pénteken ___ meg a számlát.",
+      "options": [
+        "küldjön",
+        "küldi",
+        "küldje"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "You ask Ön with the -j form; the object a számlát is definite, so -ja/-je: küldje.",
+        "es": "A Ön se le pide algo con la forma en -j; el objeto a számlát es determinado, así que -ja/-je: küldje."
+      },
+      "wrong": {
+        "küldjön": {
+          "en": "küldjön is the indefinite -j form (Küldjön egy számlát!); with a számlát the definite küldje is needed.",
+          "es": "küldjön es la forma indefinida en -j (Küldjön egy számlát!); con a számlát hace falta la definida küldje."
+        },
+        "küldi": {
+          "en": "küldi is the plain present (he or she sends it); after Kérem, hogy the request needs the -j form.",
+          "es": "küldi es el presente simple (él o ella lo envía); después de Kérem, hogy la petición necesita la forma en -j."
+        }
+      },
+      "examples": [
+        "Kérem, hogy küldje el a levelet.",
+        "Kérem, hogy küldjön egy új számlát."
+      ],
+      "tr": {
+        "en": "I ask you to send the bill on Friday.",
+        "es": "Le pido que envíe la factura el viernes."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f03",
+      "kind": "form",
+      "verb": "válasz",
+      "person": "Ön",
+      "answer": "válaszát",
+      "table": "kerelem-t"
+    },
+    {
+      "id": "hivatalos-stilus-c04",
+      "sentence": "Szíves válaszát ___ is köszönöm.",
+      "options": [
+        "előtte",
+        "előbb",
+        "előre"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "előre is köszönöm is the fixed closing: thank you in advance.",
+        "es": "előre is köszönöm es el cierre fijo: gracias de antemano."
+      },
+      "wrong": {
+        "előtte": {
+          "en": "előtte = in front of him, her or it (the pronoun form of előtt); the phrase for \"in advance\" is előre.",
+          "es": "előtte = delante de él, ella o ello (la forma con pronombre de előtt); la expresión para «de antemano» es előre."
+        },
+        "előbb": {
+          "en": "előbb = earlier, sooner (előbb jöttem); it does not mean \"in advance\".",
+          "es": "előbb = antes, más temprano (előbb jöttem); no significa «de antemano»."
+        }
+      },
+      "examples": [
+        "Megértését előre is köszönöm.",
+        "Szíves segítségét előre is köszönöm."
+      ],
+      "tr": {
+        "en": "Thank you in advance for your kind reply.",
+        "es": "Le agradezco de antemano su amable respuesta."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f04",
+      "kind": "form",
+      "verb": "levél",
+      "person": "Ön",
+      "answer": "levelét",
+      "table": "kerelem-t"
+    },
+    {
+      "id": "hivatalos-stilus-c05",
+      "sentence": "Tisztelt Hölgyem! Ezúton szeretném megköszönni ___ a segítségét.",
+      "options": [
+        "Önnek",
+        "neked",
+        "Önt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "megköszön takes the person in the dative, and Tisztelt Hölgyem! asks for Ön: Önnek. Writers often capitalise Ön and its forms in a letter as a courtesy (a small letter is also correct); the verbs and endings stay 3rd person.",
+        "es": "megköszön lleva a la persona en dativo, y Tisztelt Hölgyem! pide Ön: Önnek. En una carta se suele escribir Ön y sus formas con mayúscula, por cortesía (la minúscula también es correcta); los verbos y las terminaciones siguen en 3.ª persona."
+      },
+      "wrong": {
+        "neked": {
+          "en": "neked is the informal \"to you\"; Tisztelt Hölgyem! asks for Ön.",
+          "es": "neked es el «a ti» informal; Tisztelt Hölgyem! pide Ön."
+        },
+        "Önt": {
+          "en": "Önt is the accusative \"you\"; megköszön takes the person in the dative (megköszönni Önnek a segítségét).",
+          "es": "Önt es el acusativo «usted»; megköszön lleva a la persona en dativo (megköszönni Önnek a segítségét)."
+        }
+      },
+      "examples": [
+        "Köszönöm Önnek a gyors választ.",
+        "Tájékoztatom Önt a változásról."
+      ],
+      "tr": {
+        "en": "Dear Madam, I would like to thank you hereby for your help.",
+        "es": "Estimada señora: Quisiera agradecerle por medio de la presente su ayuda."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f05",
+      "kind": "form",
+      "verb": "válasz",
+      "person": "mi",
+      "answer": "válaszunkat",
+      "table": "kerelem-t"
+    },
+    {
+      "id": "hivatalos-stilus-w01",
+      "kind": "why",
+      "es": "Tisztelt Hölgyem/Uram!",
+      "target": "Hölgyem",
+      "tr": {
+        "en": "Dear Sir or Madam,",
+        "es": "Estimado señor o estimada señora:"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "hölgy + -em, the ending for \"my\": the greeting means \"my lady\" and is a fixed formula (like Uram)",
+            "es": "hölgy + -em, la terminación de «mi»: el saludo significa «mi señora» y es una fórmula fija (como Uram)"
+          }
+        },
+        {
+          "text": {
+            "en": "the accusative of hölgy",
+            "es": "el acusativo de hölgy"
+          },
+          "wrong": {
+            "en": "With this rule the form would be Hölgyet; a greeting is not the object of any verb.",
+            "es": "Con esta regla la forma sería Hölgyet; un saludo no es el objeto de ningún verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "the plural of hölgy",
+            "es": "el plural de hölgy"
+          },
+          "wrong": {
+            "en": "With this rule the form would be Hölgyek (ladies); to a group you write Tisztelt Hölgyeim és Uraim!",
+            "es": "Con esta regla la forma sería Hölgyek (señoras); a un grupo se le escribe Tisztelt Hölgyeim és Uraim!"
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hivatalos-stilus-c06",
+      "sentence": "Köszönöm, a mellékelt dokumentumokat ___ vettem.",
+      "options": [
+        "kézhez",
+        "kézbe",
+        "kézzel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kézhez venni = to receive (a letter, a document); it is the usual official verb for getting something.",
+        "es": "kézhez venni = recibir (una carta, un documento); es el verbo oficial habitual para recibir algo."
+      },
+      "wrong": {
+        "kézbe": {
+          "en": "kézbe venni = to pick something up in your hand, or to take charge of it; it does not mean \"receive\".",
+          "es": "kézbe venni = tomar algo en la mano, o hacerse cargo de ello; no significa «recibir»."
+        },
+        "kézzel": {
+          "en": "kézzel = with the hand; it would say how you took them, not that you received them.",
+          "es": "kézzel = con la mano; diría cómo los tomaste, no que los recibiste."
+        }
+      },
+      "examples": [
+        "A számlát tegnap vettem kézhez.",
+        "Kézhez vette már a levelet?"
+      ],
+      "tr": {
+        "en": "Thank you, I have received the enclosed documents.",
+        "es": "Gracias, recibí los documentos adjuntos."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f06",
+      "kind": "form",
+      "verb": "kérelem",
+      "person": "Önök",
+      "answer": "kérelmüket",
+      "table": "kerelem-t"
+    },
+    {
+      "id": "hivatalos-stilus-c07",
+      "sentence": "Tisztelt Uram! Köszönöm szíves ___.",
+      "options": [
+        "segítségedet",
+        "segítségét",
+        "segítségemet"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Ön is addressed in the 3rd person: segítsége (your help, formal) + -t = segítségét.",
+        "es": "A Ön se le trata en 3.ª persona: segítsége (su ayuda, formal) + -t = segítségét."
+      },
+      "wrong": {
+        "segítségedet": {
+          "en": "segítségedet is \"your help\" in the te-form; after Tisztelt Uram! the letter uses Ön.",
+          "es": "segítségedet es «tu ayuda» de tú; después de Tisztelt Uram! la carta usa Ön."
+        },
+        "segítségemet": {
+          "en": "segítségemet is \"my help\"; you are thanking the other person for their help.",
+          "es": "segítségemet es «mi ayuda»; estás agradeciendo al otro su ayuda."
+        }
+      },
+      "examples": [
+        "Szíves válaszát várom.",
+        "Köszönöm szíves tájékoztatását."
+      ],
+      "tr": {
+        "en": "Dear Sir, thank you for your kind help.",
+        "es": "Estimado señor: le agradezco su amable ayuda."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f07",
+      "kind": "form",
+      "verb": "benyújt",
+      "person": "-ás/-és",
+      "answer": "benyújtás",
+      "table": "fonevesites"
+    },
+    {
+      "id": "hivatalos-stilus-w02",
+      "kind": "why",
+      "es": "Levelét köszönettel kézhez vettem.",
+      "target": "Levelét",
+      "tr": {
+        "en": "I received your letter with thanks.",
+        "es": "Recibí su carta con agradecimiento."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the letter of some third person, \"his or her letter\"",
+            "es": "la carta de una tercera persona, «su carta (de él o ella)»"
+          },
+          "wrong": {
+            "en": "With this rule it would be somebody else's letter; in a formal letter the 3rd person endings address the reader, so Levelét means \"your letter\".",
+            "es": "Con esta regla sería la carta de otra persona; en una carta formal las terminaciones de 3.ª persona se dirigen al lector, así que Levelét significa «su carta (de usted)»."
+          }
+        },
+        {
+          "text": {
+            "en": "Ön's letter: 3rd person possessive + -t, the object of vettem",
+            "es": "la carta de Ön: posesivo de 3.ª persona + -t, el objeto de vettem"
+          }
+        },
+        {
+          "text": {
+            "en": "your letter in the informal te-form",
+            "es": "tu carta en la forma informal de tú"
+          },
+          "wrong": {
+            "en": "With this rule the form would be Leveledet, used between friends; an official letter uses the Ön forms.",
+            "es": "Con esta regla la forma sería Leveledet, que se usa entre amigos; una carta oficial usa las formas de Ön."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "hivatalos-stilus-c08",
+      "sentence": "Beteg vagyok, ezért kérem a határidő ___.",
+      "options": [
+        "meghosszabbítása",
+        "meghosszabbítani",
+        "meghosszabbítását"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After Kérem the thing you ask for is an object: meghosszabbítás + a (its) + t = meghosszabbítását.",
+        "es": "Después de Kérem lo que pides es un objeto: meghosszabbítás + a (su) + t = meghosszabbítását."
+      },
+      "wrong": {
+        "meghosszabbítása": {
+          "en": "Without -t this is the plain \"the extension of…\"; Kérem needs an object in -t.",
+          "es": "Sin -t es el simple «la ampliación de…»; Kérem necesita un objeto en -t."
+        },
+        "meghosszabbítani": {
+          "en": "The infinitive does not fit after a határidő; to use a verb you would say Kérem, hogy hosszabbítsák meg a határidőt.",
+          "es": "El infinitivo no encaja después de a határidő; para usar un verbo dirías Kérem, hogy hosszabbítsák meg a határidőt."
+        }
+      },
+      "examples": [
+        "Kérem a szerződés módosítását.",
+        "Kérem a kérelem elbírálását."
+      ],
+      "tr": {
+        "en": "I am ill, so I request the extension of the deadline.",
+        "es": "Estoy enfermo, por eso solicito la ampliación del plazo."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f08",
+      "kind": "form",
+      "verb": "kitölt",
+      "person": "-ása/-ése",
+      "answer": "kitöltése",
+      "table": "fonevesites"
+    },
+    {
+      "id": "hivatalos-stilus-w03",
+      "kind": "why",
+      "es": "Kérjük, vegye figyelembe, hogy az ügyfélszolgálat hétfőn zárva van.",
+      "target": "Kérjük",
+      "tr": {
+        "en": "Please note that customer service is closed on Monday.",
+        "es": "Le pedimos tener en cuenta que el servicio al cliente está cerrado el lunes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "1st person plural: an office speaks in the name of many (we ask)",
+            "es": "1.ª persona del plural: una oficina habla en nombre de muchos (pedimos)"
+          }
+        },
+        {
+          "text": {
+            "en": "1st person singular: one person asks",
+            "es": "1.ª persona del singular: una persona pide"
+          },
+          "wrong": {
+            "en": "With this rule it would be Kérem, said by one writer; an office or a company uses the we-form.",
+            "es": "Con esta regla sería Kérem, dicho por una sola persona; una oficina o una empresa usa el plural."
+          }
+        },
+        {
+          "text": {
+            "en": "informal te-form",
+            "es": "forma informal de tú"
+          },
+          "wrong": {
+            "en": "With this rule it would be Kérlek, between friends; a notice to customers uses Ön and the we-form.",
+            "es": "Con esta regla sería Kérlek, entre amigos; un aviso a clientes usa Ön y el plural."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hivatalos-stilus-c09",
+      "sentence": "A díj ___ határideje a hónap vége.",
+      "options": [
+        "befizetésének",
+        "befizetése",
+        "befizetésre"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "a díj befizetése is the payment of the fee, and that noun owns határideje, so it takes -nak: befizetésének.",
+        "es": "a díj befizetése es el pago de la cuota, y ese sustantivo es dueño de határideje, así que lleva -nak: befizetésének."
+      },
+      "wrong": {
+        "befizetése": {
+          "en": "Without -nak the second noun has no owner marker; the owner takes -nak/-nek before a possessed noun.",
+          "es": "Sin -nak el segundo sustantivo no tiene la marca del poseedor; el poseedor lleva -nak/-nek delante de un sustantivo poseído."
+        },
+        "befizetésre": {
+          "en": "-ra/-re means \"onto\" or \"for\"; határideje needs its owner in -nak/-nek, not a direction.",
+          "es": "-ra/-re significa «sobre» o «para»; határideje necesita a su poseedor en -nak/-nek, no una dirección."
+        }
+      },
+      "examples": [
+        "A szerződés aláírásának helye az iroda.",
+        "A kérelem benyújtásának határideje péntek."
+      ],
+      "tr": {
+        "en": "The deadline for paying the fee is the end of the month.",
+        "es": "La fecha límite para pagar la cuota es el fin de mes."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f09",
+      "kind": "form",
+      "verb": "befizet",
+      "person": "-ását/-ését",
+      "answer": "befizetését",
+      "table": "fonevesites"
+    },
+    {
+      "id": "hivatalos-stilus-c10",
+      "sentence": "Ha kérdése van, az ___ telefonszámon érhet el.",
+      "options": [
+        "alsó",
+        "alatt",
+        "alábbi"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "az alábbi = the one below, the following (in a text).",
+        "es": "az alábbi = el de abajo, el siguiente (en un texto)."
+      },
+      "wrong": {
+        "alsó": {
+          "en": "alsó = lower, bottom (az alsó szint = the lower floor); it does not point to the text below.",
+          "es": "alsó = inferior (az alsó szint = el piso de abajo); no señala el texto de abajo."
+        },
+        "alatt": {
+          "en": "alatt is a postposition (under, during); it cannot stand before a noun like an adjective.",
+          "es": "alatt es una posposición (debajo de, durante); no puede ir delante de un sustantivo como un adjetivo."
+        }
+      },
+      "examples": [
+        "Az alábbi címen írhat nekünk.",
+        "A fenti ügyben kérem szíves tájékoztatását."
+      ],
+      "tr": {
+        "en": "If you have a question, you can reach me at the telephone number below.",
+        "es": "Si tiene alguna pregunta, puede localizarme en el número de teléfono de abajo."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f10",
+      "kind": "form",
+      "verb": "aláír",
+      "person": "-ása/-ése",
+      "answer": "aláírása",
+      "table": "fonevesites"
+    },
+    {
+      "id": "hivatalos-stilus-c11",
+      "sentence": "A kérelmemhez mellékelten ___ az igazolást.",
+      "options": [
+        "megküldöm",
+        "megküldök",
+        "megküldesz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The object az igazolást is definite, so the definite form: megküldöm (I send it).",
+        "es": "El objeto az igazolást es determinado, así que la forma definida: megküldöm (lo envío)."
+      },
+      "wrong": {
+        "megküldök": {
+          "en": "megküldök is the indefinite form, for an indefinite object (Megküldök egy igazolást).",
+          "es": "megküldök es la forma indefinida, para un objeto indeterminado (Megküldök egy igazolást)."
+        },
+        "megküldesz": {
+          "en": "megküldesz = you send; here the writer is the one who encloses the certificate.",
+          "es": "megküldesz = tú envías; aquí quien adjunta el comprobante es quien escribe."
+        }
+      },
+      "examples": [
+        "Mellékelten megküldjük a szerződést.",
+        "Csatolom a kért dokumentumokat."
+      ],
+      "tr": {
+        "en": "I am enclosing the certificate with my application.",
+        "es": "Adjunto el comprobante a mi solicitud."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f11",
+      "kind": "form",
+      "verb": "kitölt",
+      "person": "-ás/-és",
+      "answer": "kitöltés",
+      "table": "fonevesites"
+    },
+    {
+      "id": "hivatalos-stilus-c12",
+      "sentence": "Kérem, szíveskedjen holnapig ___ a mellékelt dokumentumot.",
+      "options": [
+        "aláírja",
+        "aláírni",
+        "aláír"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "szíveskedik is followed by an infinitive: szíveskedjen aláírni.",
+        "es": "szíveskedik va seguido de un infinitivo: szíveskedjen aláírni."
+      },
+      "wrong": {
+        "aláírja": {
+          "en": "aláírja is a conjugated form (he or she signs it); szíveskedik needs the infinitive.",
+          "es": "aláírja es una forma conjugada (él o ella lo firma); szíveskedik necesita el infinitivo."
+        },
+        "aláír": {
+          "en": "aláír is the 3rd person present (he or she signs); after szíveskedjen the second verb stays an infinitive.",
+          "es": "aláír es el presente de 3.ª persona (él o ella firma); después de szíveskedjen el segundo verbo se queda en infinitivo."
+        }
+      },
+      "examples": [
+        "Szíveskedjen megküldeni a számlát.",
+        "Kérjük, szíveskedjenek befizetni a díjat."
+      ],
+      "tr": {
+        "en": "Please be so kind as to sign the enclosed document by tomorrow.",
+        "es": "Tenga la amabilidad de firmar el documento adjunto antes de mañana."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-f12",
+      "kind": "form",
+      "verb": "aláír",
+      "person": "-ását/-ését",
+      "answer": "aláírását",
+      "table": "fonevesites"
+    },
+    {
+      "id": "hivatalos-stilus-w04",
+      "kind": "why",
+      "es": "A kérelem benyújtásának határideje péntek.",
+      "target": "benyújtásának",
+      "tr": {
+        "en": "The deadline for submitting the application is Friday.",
+        "es": "La fecha límite para presentar la solicitud es el viernes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "dative: the application is given to someone",
+            "es": "dativo: la solicitud se da a alguien"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about giving something to the application; here -nak/-nek marks the owner of határideje.",
+            "es": "Con esta regla la oración trataría de dar algo a la solicitud; aquí -nak/-nek marca al poseedor de határideje."
+          }
+        },
+        {
+          "text": {
+            "en": "plural: several submissions",
+            "es": "plural: varias presentaciones"
+          },
+          "wrong": {
+            "en": "With this rule the form would be benyújtások; there is no -k, and the noun is singular.",
+            "es": "Con esta regla la forma sería benyújtások; no hay -k y el sustantivo es singular."
+          }
+        },
+        {
+          "text": {
+            "en": "benyújtás (from benyújt) + -a, then -nak: it is the owner of határideje",
+            "es": "benyújtás (de benyújt) + -a, y luego -nak: es el poseedor de határideje"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "hivatalos-stilus-c13",
+      "sentence": "Tisztelt Ügyfelünk! Tájékoztatjuk, hogy kérelmét ___.",
+      "options": [
+        "elfogadtunk",
+        "elfogadnak",
+        "elfogadtuk"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The office writes in the we-form and the object kérelmét is definite: elfogadtuk (we accepted it).",
+        "es": "La oficina escribe en plural y el objeto kérelmét es determinado: elfogadtuk (lo aceptamos)."
+      },
+      "wrong": {
+        "elfogadtunk": {
+          "en": "elfogadtunk is the indefinite form (we accepted something); with kérelmét the definite -tuk is needed.",
+          "es": "elfogadtunk es la forma indefinida (aceptamos algo); con kérelmét hace falta la definida -tuk."
+        },
+        "elfogadnak": {
+          "en": "elfogadnak is present, 3rd plural, indefinite (they accept something); it fits neither the past event nor the definite object.",
+          "es": "elfogadnak es presente, 3.ª plural, indefinido (aceptan algo); no encaja ni con el hecho pasado ni con el objeto determinado."
+        }
+      },
+      "examples": [
+        "Tájékoztatjuk, hogy a szerződését módosítottuk.",
+        "Értesítjük, hogy a díjat befizették."
+      ],
+      "tr": {
+        "en": "Dear customer, we inform you that we have accepted your application.",
+        "es": "Estimado cliente: le informamos que hemos aceptado su solicitud."
+      }
+    },
+    {
+      "id": "hivatalos-stilus-c14",
+      "sentence": "Kérjük, hogy a kérelméhez ___ a hiányzó igazolást.",
+      "options": [
+        "csatoljon",
+        "csatolja",
+        "csatolod"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Ön takes the 3rd person, and a hiányzó igazolást is definite: csatolja.",
+        "es": "Ön lleva la 3.ª persona, y a hiányzó igazolást es determinado: csatolja."
+      },
+      "wrong": {
+        "csatoljon": {
+          "en": "csatoljon is the indefinite -j form; the object here is definite.",
+          "es": "csatoljon es la forma indefinida en -j; el objeto aquí es determinado."
+        },
+        "csatolod": {
+          "en": "csatolod is the te-form (you attach it); a letter to Ön uses the 3rd person.",
+          "es": "csatolod es la forma de tú (tú lo adjuntas); una carta a Ön usa la 3.ª persona."
+        }
+      },
+      "examples": [
+        "Kérem, hogy csatolja az igazolást.",
+        "Kérjük, hogy írja alá a szerződést."
+      ],
+      "tr": {
+        "en": "Please attach the missing certificate to your application.",
+        "es": "Le pedimos que adjunte a su solicitud el comprobante que falta."
+      }
+    }
+  ]
+}

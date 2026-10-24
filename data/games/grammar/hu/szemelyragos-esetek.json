@@ -1,0 +1,1239 @@
+{
+  "schema": 2,
+  "topic": "szemelyragos-esetek",
+  "level": "B1",
+  "title": {
+    "en": "About me, to you, from her: rólam, hozzád, tőle",
+    "es": "Sobre mí, hacia ti, de ella: rólam, hozzád, tőle"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In English a pronoun follows the preposition: about me, from her, to you. Hungarian has no prepositions, and the pronoun does not stand next to the case ending either. The case ending and the person melt into ONE word: ról + am = rólam (about me), tőle (from him or her), hozzád (to you). You know the idea from nekem, velem and alattam. The endings that follow are the possessive endings of házam, házad, háza, házunk, házatok, házuk: ról + am, ról + ad, ról + a, ról + unk, ról + atok, ról + uk. Hungarian has no gender, so róla means about him, about her and about it. With a name or a noun the ordinary case ending stays: Annáról beszélünk, but Rólad beszélünk.",
+        "es": "En español el pronombre sigue a la preposición: sobre mí, de ella, a ti. El húngaro no tiene preposiciones y tampoco pone el pronombre junto a la terminación de caso. La terminación de caso y la persona se funden en UNA palabra: ról + am = rólam (sobre mí), tőle (de él o de ella), hozzád (hacia ti). Conoces la idea por nekem, velem y alattam. Las terminaciones que siguen son las posesivas de házam, házad, háza, házunk, házatok, házuk: ról + am, ról + ad, ról + a, ról + unk, ról + atok, ról + uk. El húngaro no tiene género, así que róla significa sobre él, sobre ella y sobre ello. Con un nombre o un sustantivo se queda la terminación de caso normal: Annáról beszélünk, pero Rólad beszélünk."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "szr-belso-felszin",
+      "title": {
+        "en": "In, out of, on, onto, about",
+        "es": "Dentro, fuera de, sobre, hacia arriba, acerca de"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "-ban/-ben (in)",
+          "es": "-ban/-ben (en)"
+        },
+        {
+          "en": "-ból/-ből (out of)",
+          "es": "-ból/-ből (de dentro)"
+        },
+        {
+          "en": "-on/-en/-ön (on)",
+          "es": "-on/-en/-ön (sobre)"
+        },
+        {
+          "en": "-ra/-re (onto)",
+          "es": "-ra/-re (sobre, hacia)"
+        },
+        {
+          "en": "-ról/-ről (about)",
+          "es": "-ról/-ről (acerca de)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "bennem",
+          "belőlem",
+          "rajtam",
+          "rám",
+          "rólam"
+        ],
+        [
+          "te",
+          "benned",
+          "belőled",
+          "rajtad",
+          "rád",
+          "rólad"
+        ],
+        [
+          "ő",
+          "benne",
+          "belőle",
+          "rajta",
+          "rá",
+          "róla"
+        ],
+        [
+          "mi",
+          "bennünk",
+          "belőlünk",
+          "rajtunk",
+          "ránk",
+          "rólunk"
+        ],
+        [
+          "ti",
+          "bennetek",
+          "belőletek",
+          "rajtatok",
+          "rátok",
+          "rólatok"
+        ],
+        [
+          "ők",
+          "bennük",
+          "belőlük",
+          "rajtuk",
+          "rájuk",
+          "róluk"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "szr-kozel",
+      "title": {
+        "en": "At, from, to, for",
+        "es": "En casa de, de parte de, hacia, por"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "-nál/-nél (at)",
+          "es": "-nál/-nél (en casa de)"
+        },
+        {
+          "en": "-tól/-től (from)",
+          "es": "-tól/-től (de, de parte de)"
+        },
+        {
+          "en": "-hoz/-hez/-höz (to)",
+          "es": "-hoz/-hez/-höz (hacia, a casa de)"
+        },
+        {
+          "en": "-ért (for)",
+          "es": "-ért (por, para)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "nálam",
+          "tőlem",
+          "hozzám",
+          "értem"
+        ],
+        [
+          "te",
+          "nálad",
+          "tőled",
+          "hozzád",
+          "érted"
+        ],
+        [
+          "ő",
+          "nála",
+          "tőle",
+          "hozzá",
+          "érte"
+        ],
+        [
+          "mi",
+          "nálunk",
+          "tőlünk",
+          "hozzánk",
+          "értünk"
+        ],
+        [
+          "ti",
+          "nálatok",
+          "tőletek",
+          "hozzátok",
+          "értetek"
+        ],
+        [
+          "ők",
+          "náluk",
+          "tőlük",
+          "hozzájuk",
+          "értük"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Building the forms",
+        "es": "Cómo se forman"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Most cases take the possessive endings of házam, házad, háza, házunk, házatok, házuk, with the vowel that fits the stem: back (rajtam, nálad, rólunk, rólatok, náluk) or front (bennem, tőled, értünk, belőletek, bennük). Learn the 1st and 3rd person singular and the rest follows: nálam / nála, tőlem / tőle, értem / érte.",
+            "es": "La mayoría de los casos toman las terminaciones posesivas de házam, házad, háza, házunk, házatok, házuk, con la vocal que corresponde a la raíz: posterior (rajtam, nálad, rólunk, rólatok, náluk) o anterior (bennem, tőled, értünk, belőletek, bennük). Aprende la 1.ª y la 3.ª persona del singular y el resto sale solo: nálam / nála, tőlem / tőle, értem / érte."
+          },
+          "examples": [
+            {
+              "es": "Rólad beszélünk.",
+              "tr": {
+                "en": "We are talking about you.",
+                "es": "Estamos hablando de ti."
+              }
+            },
+            {
+              "es": "Tőle kaptam ezt a táskát.",
+              "tr": {
+                "en": "I got this bag from him or her.",
+                "es": "Recibí este bolso de él o de ella."
+              }
+            },
+            {
+              "es": "Nálunk mindig sok a munka.",
+              "tr": {
+                "en": "At our place there is always a lot of work.",
+                "es": "En nuestra casa siempre hay mucho trabajo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ra/-re and -hoz/-hez/-höz are special: the stems are rá- and hozzá-, with a long vowel in every form: rám, rád, rá, ránk, rátok, rájuk and hozzám, hozzád, hozzá, hozzánk, hozzátok, hozzájuk. In the 3rd person plural a j appears: rájuk, hozzájuk.",
+            "es": "-ra/-re y -hoz/-hez/-höz son especiales: las raíces son rá- y hozzá-, con vocal larga en todas las formas: rám, rád, rá, ránk, rátok, rájuk y hozzám, hozzád, hozzá, hozzánk, hozzátok, hozzájuk. En la 3.ª persona del plural aparece una j: rájuk, hozzájuk."
+          },
+          "examples": [
+            {
+              "es": "Rád várok a megállóban.",
+              "tr": {
+                "en": "I am waiting for you at the stop.",
+                "es": "Te espero en la parada."
+              }
+            },
+            {
+              "es": "Hozzájuk megyünk vacsorára.",
+              "tr": {
+                "en": "We are going to their place for dinner.",
+                "es": "Vamos a su casa a cenar."
+              }
+            },
+            {
+              "es": "Anna rám nézett.",
+              "tr": {
+                "en": "Anna looked at me.",
+                "es": "Anna me miró."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The 3rd person singular also means 'it'. Things get the same forms as people: there is no extra word.",
+            "es": "La 3.ª persona del singular también significa «ello». Las cosas reciben las mismas formas que las personas: no hay una palabra aparte."
+          },
+          "examples": [
+            {
+              "es": "Az asztal? Rajta van a kulcsod.",
+              "tr": {
+                "en": "The table? Your key is on it.",
+                "es": "¿La mesa? Tu llave está encima."
+              }
+            },
+            {
+              "es": "A buli jó volt, sokat beszéltünk róla.",
+              "tr": {
+                "en": "The party was good, we talked about it a lot.",
+                "es": "La fiesta estuvo buena, hablamos mucho de ella."
+              }
+            },
+            {
+              "es": "A hűtő üres, nincs benne semmi.",
+              "tr": {
+                "en": "The fridge is empty, there is nothing in it.",
+                "es": "El refrigerador está vacío, no hay nada dentro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Formal Ön takes the plain endings, like a noun: Önről, Önnél, Önhöz, Önre, Önben, Önért. Róla and nála would mean somebody else.",
+            "es": "El Ön formal toma las terminaciones simples, como un sustantivo: Önről, Önnél, Önhöz, Önre, Önben, Önért. Róla y nála significarían otra persona."
+          },
+          "examples": [
+            {
+              "es": "Önről már sokat hallottam.",
+              "tr": {
+                "en": "I have already heard a lot about you (formal).",
+                "es": "Ya he oído mucho sobre usted."
+              }
+            },
+            {
+              "es": "Önre várunk a hivatalban.",
+              "tr": {
+                "en": "We are waiting for you at the office (formal).",
+                "es": "Lo esperamos en la oficina."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Which case? The verb or the place decides",
+        "es": "¿Qué caso? Lo decide el verbo o el lugar"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Many verbs demand a certain case: bízik -ban/-ben, gondol -ra/-re, vár -ra/-re, fél -tól/-től. With a pronoun, that case melts into the person.",
+            "es": "Muchos verbos exigen un caso determinado: bízik -ban/-ben, gondol -ra/-re, vár -ra/-re, fél -tól/-től. Con un pronombre, ese caso se funde con la persona."
+          },
+          "examples": [
+            {
+              "es": "Benned bízom.",
+              "tr": {
+                "en": "I trust you.",
+                "es": "Confío en ti."
+              }
+            },
+            {
+              "es": "Rád gondolok minden este.",
+              "tr": {
+                "en": "I think of you every evening.",
+                "es": "Pienso en ti cada noche."
+              }
+            },
+            {
+              "es": "Tőle félek.",
+              "tr": {
+                "en": "I am afraid of him or her.",
+                "es": "Le tengo miedo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For a person as a place, the nearness cases answer three questions: hozzám (to my place), nálam (at my place), tőlem (from my place).",
+            "es": "Para una persona como lugar, los casos de cercanía responden a tres preguntas: hozzám (a mi casa), nálam (en mi casa), tőlem (desde mi casa)."
+          },
+          "examples": [
+            {
+              "es": "Holnap hozzám jössz vacsorára?",
+              "tr": {
+                "en": "Are you coming to my place for dinner tomorrow?",
+                "es": "¿Vienes mañana a mi casa a cenar?"
+              }
+            },
+            {
+              "es": "Nálam alhatsz, ha akarsz.",
+              "tr": {
+                "en": "You can sleep at my place if you want.",
+                "es": "Puedes dormir en mi casa si quieres."
+              }
+            },
+            {
+              "es": "Péter tőlem ment haza.",
+              "tr": {
+                "en": "Péter went home from my place.",
+                "es": "Péter se fue a casa desde mi casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ról/-ről means 'about', -tól/-től 'from' (who gave or said it), -ért 'for' (for the sake of, in exchange for).",
+            "es": "-ról/-ről significa «acerca de», -tól/-től «de» (quién lo dio o lo dijo), -ért «por» (por el bien de, a cambio de)."
+          },
+          "examples": [
+            {
+              "es": "Rólam beszéltek a megbeszélésen.",
+              "tr": {
+                "en": "They talked about me at the meeting.",
+                "es": "Hablaron de mí en la reunión."
+              }
+            },
+            {
+              "es": "Mennyit fizettél érte?",
+              "tr": {
+                "en": "How much did you pay for it?",
+                "es": "¿Cuánto pagaste por ello?"
+              }
+            },
+            {
+              "es": "Tőled kaptam ezt az ajándékot.",
+              "tr": {
+                "en": "I got this gift from you.",
+                "es": "Recibí este regalo de ti."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The form is an ordinary part of the sentence: before the verb it carries the stress, after the verb it is neutral.",
+            "es": "La forma es una parte normal de la frase: antes del verbo lleva el acento, después del verbo es neutra."
+          },
+          "examples": [
+            {
+              "es": "Rólad beszélünk, nem róla.",
+              "tr": {
+                "en": "We are talking about you, not about her.",
+                "es": "Hablamos de ti, no de ella."
+              }
+            },
+            {
+              "es": "Beszélünk rólad.",
+              "tr": {
+                "en": "We are talking about you.",
+                "es": "Hablamos de ti."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Pairs that get mixed up",
+        "es": "Pares que se confunden"
+      },
+      "pairs": [
+        {
+          "a": "Rólam beszélnek.",
+          "b": "Velem beszélnek.",
+          "note": {
+            "en": "róla is the topic (about me); vele is the listener (with me, to me). Spanish: de mí versus conmigo.",
+            "es": "róla es el tema (sobre mí); vele es el interlocutor (conmigo). Español: de mí frente a conmigo."
+          },
+          "examples": [
+            {
+              "es": "Kati rólam beszélt Gábornak.",
+              "tr": {
+                "en": "Kati talked about me to Gábor.",
+                "es": "Kati habló de mí con Gábor."
+              }
+            },
+            {
+              "es": "Kati velem beszélt, nem Péterrel.",
+              "tr": {
+                "en": "Kati talked to me, not to Péter.",
+                "es": "Kati habló conmigo, no con Péter."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Nálam van a kulcs.",
+          "b": "Nekem van egy kulcsom.",
+          "note": {
+            "en": "nálam: it is with me or at my place right now. nekem van: I own one, I have one in general.",
+            "es": "nálam: está conmigo o en mi casa ahora mismo. nekem van: tengo una, es mía en general."
+          },
+          "examples": [
+            {
+              "es": "Anna, nálad van a kulcsom?",
+              "tr": {
+                "en": "Anna, do you have my key?",
+                "es": "Anna, ¿tienes mi llave?"
+              }
+            },
+            {
+              "es": "Nekem két kulcsom van.",
+              "tr": {
+                "en": "I have two keys.",
+                "es": "Tengo dos llaves."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Hozzád megyek.",
+          "b": "Nálad vagyok.",
+          "note": {
+            "en": "hozzád answers 'where to?' (a movement), nálad answers 'where?' (a place). The same split as hová? and hol?.",
+            "es": "hozzád responde a «¿hacia dónde?» (un movimiento), nálad responde a «¿dónde?» (un lugar). La misma diferencia que hová? y hol?."
+          },
+          "examples": [
+            {
+              "es": "Ma este hozzátok megyünk.",
+              "tr": {
+                "en": "Tonight we are going to your place.",
+                "es": "Esta noche vamos a su casa."
+              }
+            },
+            {
+              "es": "Ma este nálatok leszünk.",
+              "tr": {
+                "en": "Tonight we will be at your place.",
+                "es": "Esta noche estaremos en su casa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Téged hívlak.",
+          "b": "Rád gondolok.",
+          "note": {
+            "en": "hív, lát, szeret take the object in -t (engem, téged, őt). gondol, vár, bízik ask for a case, so the pronoun melts with it.",
+            "es": "hív, lát, szeret llevan el objeto en -t (engem, téged, őt). gondol, vár, bízik piden un caso, así que el pronombre se funde con él."
+          },
+          "examples": [
+            {
+              "es": "Téged hívlak, nem őt.",
+              "tr": {
+                "en": "I am calling you, not him or her.",
+                "es": "Te llamo a ti, no a él ni a ella."
+              }
+            },
+            {
+              "es": "Rád gondolok, amikor ezt hallom.",
+              "tr": {
+                "en": "I think of you when I hear this.",
+                "es": "Pienso en ti cuando oigo esto."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Three traps. (1) Never write the pronoun and the ending as two words: not 'ról én' or 'benne te'; it is rólam and benned. (2) The 3rd person singular is the short form (róla, benne, rá) and also means 'it'; the 3rd plural of -ra and -hoz has a j: rájuk, hozzájuk. (3) Not every verb takes these cases: szeret, lát, hív take the object in -t, so Szeretlek and Téged látlak, never 'rám szeretlek'. Register: with Ön use Önről, Önnél, Önhöz in an office or a polite letter; with friends rólad, nálad, hozzád are the normal spoken and written forms.",
+        "es": "Tres trampas. (1) Nunca escribas el pronombre y la terminación como dos palabras: no «ról én» ni «benne te»; es rólam y benned. (2) La 3.ª persona del singular es la forma corta (róla, benne, rá) y también significa «ello»; la 3.ª del plural de -ra y -hoz lleva j: rájuk, hozzájuk. (3) No todos los verbos usan estos casos: szeret, lát, hív llevan el objeto en -t, así que Szeretlek y Téged látlak, nunca «rám szeretlek». Registro: con Ön usa Önről, Önnél, Önhöz en una oficina o en una carta formal; con amigos rólad, nálad, hozzád son las formas normales, habladas y escritas."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian the case ending and the person become one word. «Rólam» is about me, «rólad» about you, and «róla» about him, her or it. «Hozzám» is to my place, «nálam» is at my place and «tőlem» is from me. «Benned bízom» means I trust you, and «Rád várok» means I am waiting for you. The third person singular is the short form and also means it: «róla», «benne». In the plural «rájuk» and «hozzájuk» have a j. With a name you keep the ordinary ending: «Annáról beszélünk». But with a pronoun you say «Rólad beszélünk».",
+    "es": "En húngaro la terminación de caso y la persona se vuelven una sola palabra. «Rólam» es sobre mí, «rólad» sobre ti, y «róla» sobre él, ella o ello. «Hozzám» es a mi casa, «nálam» es en mi casa y «tőlem» es de mí. «Benned bízom» significa confío en ti, y «Rád várok» significa te espero. La tercera persona del singular es la forma corta y también significa ello: «róla», «benne». En plural «rájuk» y «hozzájuk» llevan una j. Con un nombre se queda la terminación normal: «Annáról beszélünk». Pero con un pronombre dices «Rólad beszélünk»."
+  },
+  "glossary": [
+    {
+      "word": "haragszik",
+      "gloss": {
+        "en": "to be angry with (ne haragudj = do not be angry)",
+        "es": "enojarse con (ne haragudj = no te enojes)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "szemelyragos-esetek-c01",
+      "sentence": "Te mindig rám gondolsz, én pedig mindig ___ gondolok.",
+      "options": [
+        "rám",
+        "rád",
+        "rá"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "gondol asks for -ra/-re. The sentence turns around: you think of me (rám), and I think of you: rá + d = rád.",
+        "es": "gondol pide -ra/-re. La frase se da la vuelta: tú piensas en mí (rám) y yo pienso en ti: rá + d = rád."
+      },
+      "wrong": {
+        "rám": {
+          "en": "rám is 'of me'; that is what you do in the first half, but the speaker thinks of you.",
+          "es": "rám es «en mí»; eso es lo que haces tú en la primera mitad, pero el hablante piensa en ti."
+        },
+        "rá": {
+          "en": "rá is 'of him or her'; the sentence is only about you and me.",
+          "es": "rá es «en él o en ella»; la frase trata solo de ti y de mí."
+        }
+      },
+      "examples": [
+        "Rád várok a megállóban.",
+        "Rátok gondolok."
+      ],
+      "tr": {
+        "en": "You always think of me, and I always think of you.",
+        "es": "Tú siempre piensas en mí y yo siempre pienso en ti."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f01",
+      "kind": "form",
+      "verb": "-ban/-ben",
+      "person": "én",
+      "answer": "bennem",
+      "table": "szr-belso-felszin"
+    },
+    {
+      "id": "szemelyragos-esetek-c02",
+      "sentence": "Kati, mindig segítesz nekem, ezért ___ bízom a legjobban.",
+      "options": [
+        "benne",
+        "benned",
+        "tőled"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "bízik takes -ban/-ben. Kati is spoken to (you), so the form is 'in you': benned.",
+        "es": "bízik lleva -ban/-ben. Se habla con Kati (tú), así que la forma es «en ti»: benned."
+      },
+      "wrong": {
+        "benne": {
+          "en": "benne is 'in him or her'; the one who always helps is Kati, who is spoken to, so 'you'.",
+          "es": "benne es «en él o en ella»; quien siempre ayuda es Kati, a quien se habla, o sea «tú»."
+        },
+        "tőled": {
+          "en": "tőled is 'from you'; bízik asks for -ban/-ben (bízik valakiben), not -tól/-től.",
+          "es": "tőled es «de ti»; bízik pide -ban/-ben (bízik valakiben), no -tól/-től."
+        }
+      },
+      "examples": [
+        "Benned bízom.",
+        "Bennük bízunk."
+      ],
+      "tr": {
+        "en": "Kati, you always help me, so I trust you the most.",
+        "es": "Kati, siempre me ayudas, por eso confío más en ti."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f02",
+      "kind": "form",
+      "verb": "-ról/-ről",
+      "person": "te",
+      "answer": "rólad",
+      "table": "szr-belso-felszin"
+    },
+    {
+      "id": "szemelyragos-esetek-c03",
+      "sentence": "Péter, holnap ___ jössz vacsorára?",
+      "options": [
+        "hozzám",
+        "nálam",
+        "tőlem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "jössz is a movement to a person's place: -hoz gives hozzám (to me, to my place).",
+        "es": "jössz es un movimiento hacia la casa de una persona: -hoz da hozzám (a mí, a mi casa)."
+      },
+      "wrong": {
+        "nálam": {
+          "en": "nálam is 'at my place', a location (Nálam vacsorázol?); jössz needs a direction.",
+          "es": "nálam es «en mi casa», un lugar (Nálam vacsorázol?); jössz necesita una dirección."
+        },
+        "tőlem": {
+          "en": "tőlem is 'from me'; the movement goes to me, not away from me.",
+          "es": "tőlem es «de mí»; el movimiento va hacia mí, no se aleja de mí."
+        }
+      },
+      "examples": [
+        "Hozzánk jöttök vacsorára?",
+        "Kati hozzám jön."
+      ],
+      "tr": {
+        "en": "Péter, are you coming to my place for dinner tomorrow?",
+        "es": "Péter, ¿vienes mañana a mi casa a cenar?"
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f03",
+      "kind": "form",
+      "verb": "-hoz/-hez/-höz",
+      "person": "én",
+      "answer": "hozzám",
+      "table": "szr-kozel"
+    },
+    {
+      "id": "szemelyragos-esetek-c04",
+      "sentence": "Ne keresd a kulcsot, ___ van, itt van a táskámban.",
+      "options": [
+        "nálam",
+        "nálad",
+        "nála"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The key is in the speaker's own bag (a táskámban), so it is with the speaker: nál + am = nálam.",
+        "es": "La llave está en el bolso del propio hablante (a táskámban), así que está con él: nál + am = nálam."
+      },
+      "wrong": {
+        "nálad": {
+          "en": "nálad is 'with you'; the key is in the speaker's bag (táskámban = my bag).",
+          "es": "nálad es «contigo»; la llave está en el bolso del hablante (táskámban = en mi bolso)."
+        },
+        "nála": {
+          "en": "nála is 'with him or her'; the bag is the speaker's own (táskámban = in my bag).",
+          "es": "nála es «con él o con ella»; el bolso es del propio hablante (táskámban = en mi bolso)."
+        }
+      },
+      "examples": [
+        "Anna, nálad van a kulcsom?",
+        "Nálunk van a kulcs."
+      ],
+      "tr": {
+        "en": "Do not look for the key, I have it, it is here in my bag.",
+        "es": "No busques la llave, la tengo yo, está aquí en mi bolso."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-w01",
+      "kind": "why",
+      "es": "Benned bízom.",
+      "target": "Benned",
+      "tr": {
+        "en": "I trust you.",
+        "es": "Confío en ti."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The case that bízik demands (-ban/-ben) melted with 'you'",
+            "es": "El caso que exige bízik (-ban/-ben) fundido con «tú»"
+          }
+        },
+        {
+          "text": {
+            "en": "The object form of 'you': téged",
+            "es": "La forma de objeto de «tú»: téged"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use téged, but bízik does not take an object in -t; it asks for -ban/-ben.",
+            "es": "Con esta regla la frase usaría téged, pero bízik no lleva objeto en -t; pide -ban/-ben."
+          }
+        },
+        {
+          "text": {
+            "en": "A place: something is inside you",
+            "es": "Un lugar: algo está dentro de ti"
+          },
+          "wrong": {
+            "en": "With this rule it would be a place sentence about something inside you; here -ban/-ben is only the case that bízik demands.",
+            "es": "Con esta regla sería una frase de lugar sobre algo dentro de ti; aquí -ban/-ben es solo el caso que exige bízik."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szemelyragos-esetek-c05",
+      "sentence": "Ezt az órát Annától kaptam, a táskát is ___ kaptam.",
+      "options": [
+        "tőlem",
+        "tőle",
+        "tőlük"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Annától (from Anna) is one person, so 'from her': tőle, the short 3rd person singular form.",
+        "es": "Annától (de Anna) es una persona, así que «de ella»: tőle, la forma corta de la 3.ª persona del singular."
+      },
+      "wrong": {
+        "tőlem": {
+          "en": "tőlem is 'from me'; the speaker got the bag from Anna, not from himself or herself.",
+          "es": "tőlem es «de mí»; el hablante recibió el bolso de Anna, no de sí mismo."
+        },
+        "tőlük": {
+          "en": "tőlük is 'from them'; Anna is one person.",
+          "es": "tőlük es «de ellos»; Anna es una sola persona."
+        }
+      },
+      "examples": [
+        "Tőled kaptam.",
+        "Tőlük kaptam ajándékot."
+      ],
+      "tr": {
+        "en": "I got this watch from Anna, and I got the bag from her too.",
+        "es": "Este reloj me lo dio Anna, y el bolso también lo recibí de ella."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f04",
+      "kind": "form",
+      "verb": "-nál/-nél",
+      "person": "ti",
+      "answer": "nálatok",
+      "table": "szr-kozel"
+    },
+    {
+      "id": "szemelyragos-esetek-c06",
+      "sentence": "Mi mindig későn érkezünk, ezért a főnök sokat beszél ___.",
+      "options": [
+        "rólunk",
+        "rólatok",
+        "róluk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mi ... érkezünk: we are the topic. ról + unk = rólunk.",
+        "es": "Mi ... érkezünk: nosotros somos el tema. ról + unk = rólunk."
+      },
+      "wrong": {
+        "rólatok": {
+          "en": "rólatok is about you (plural); the sentence says that WE arrive late.",
+          "es": "rólatok es sobre ustedes; la frase dice que NOSOTROS llegamos tarde."
+        },
+        "róluk": {
+          "en": "róluk is about them; the late ones are 'we' (mi).",
+          "es": "róluk es sobre ellos; los que llegan tarde somos «nosotros» (mi)."
+        }
+      },
+      "examples": [
+        "Rólunk beszélnek.",
+        "Rólatok kérdeztek."
+      ],
+      "tr": {
+        "en": "We always arrive late, so the boss talks about us a lot.",
+        "es": "Siempre llegamos tarde, por eso el jefe habla mucho de nosotros."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f05",
+      "kind": "form",
+      "verb": "-ra/-re",
+      "person": "ő",
+      "answer": "rá",
+      "table": "szr-belso-felszin"
+    },
+    {
+      "id": "szemelyragos-esetek-c07",
+      "sentence": "Ne gyere busszal, Anna autóval jön ___ az állomásra.",
+      "options": [
+        "értem",
+        "érted",
+        "érte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Ne gyere is said to you, so Anna comes for you: ért + ed = érted.",
+        "es": "Ne gyere se dice a ti, así que Anna viene por ti: ért + ed = érted."
+      },
+      "wrong": {
+        "értem": {
+          "en": "értem is 'for me'; the speaker tells you not to take the bus because Anna picks you up.",
+          "es": "értem es «por mí»; el hablante te dice que no tomes el autobús porque Anna te recoge."
+        },
+        "érte": {
+          "en": "érte is 'for him or her'; the speaker is talking to you.",
+          "es": "érte es «por él o por ella»; el hablante habla contigo."
+        }
+      },
+      "examples": [
+        "Értem jön az állomásra.",
+        "Mennyit fizettél érte?"
+      ],
+      "tr": {
+        "en": "Do not take the bus, Anna is coming to the station by car to pick you up.",
+        "es": "No tomes el autobús, Anna va a la estación en coche a recogerte."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-w02",
+      "kind": "why",
+      "es": "Holnap hozzám jössz vacsorára?",
+      "target": "hozzám",
+      "tr": {
+        "en": "Are you coming to my place for dinner tomorrow?",
+        "es": "¿Vienes mañana a mi casa a cenar?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-hoz + I: a direction to a person, to my place",
+            "es": "-hoz + yo: una dirección hacia una persona, a mi casa"
+          }
+        },
+        {
+          "text": {
+            "en": "-nál + I: at my place",
+            "es": "-nál + yo: en mi casa"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Holnap nálam vacsorázol? (do you have dinner at my place?); jössz asks for a direction.",
+            "es": "Con esta regla la frase sería Holnap nálam vacsorázol? (¿cenas en mi casa?); jössz pide una dirección."
+          }
+        },
+        {
+          "text": {
+            "en": "-ra + I: onto me",
+            "es": "-ra + yo: sobre mí"
+          },
+          "wrong": {
+            "en": "With this rule the form would be rám (onto me); you go to a person with -hoz.",
+            "es": "Con esta regla la forma sería rám (sobre mí); a una persona se va con -hoz."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szemelyragos-esetek-c08",
+      "sentence": "Kati beteg, ezért délután ___ megyek, és viszek neki levest.",
+      "options": [
+        "hozzá",
+        "nála",
+        "tőle"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "megyek is a movement towards Kati: -hoz gives hozzá (to her, to her place).",
+        "es": "megyek es un movimiento hacia Kati: -hoz da hozzá (a ella, a su casa)."
+      },
+      "wrong": {
+        "nála": {
+          "en": "nála is 'at her place', a location; megyek needs a direction.",
+          "es": "nála es «en su casa», un lugar; megyek necesita una dirección."
+        },
+        "tőle": {
+          "en": "tőle is 'from her'; the speaker goes to Kati, not away from her.",
+          "es": "tőle es «de ella»; el hablante va hacia Kati, no se aleja de ella."
+        }
+      },
+      "examples": [
+        "Hozzájuk megyünk vacsorára.",
+        "Ma este hozzátok megyünk."
+      ],
+      "tr": {
+        "en": "Kati is ill, so this afternoon I am going to her place and taking her some soup.",
+        "es": "Kati está enferma, así que esta tarde voy a su casa y le llevo sopa."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f06",
+      "kind": "form",
+      "verb": "-tól/-től",
+      "person": "mi",
+      "answer": "tőlünk",
+      "table": "szr-kozel"
+    },
+    {
+      "id": "szemelyragos-esetek-c09",
+      "sentence": "Nézd az asztalt: ___ van a kulcsod és a telefonod.",
+      "options": [
+        "benne",
+        "rajta",
+        "róla"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Things lie ON a table, so -on: raj + ta = rajta. The 3rd person form also stands for things.",
+        "es": "Las cosas están SOBRE una mesa, así que -on: raj + ta = rajta. La forma de 3.ª persona también vale para cosas."
+      },
+      "wrong": {
+        "benne": {
+          "en": "benne is 'inside it' (-ban/-ben); keys lie on a table, not in it.",
+          "es": "benne es «dentro de ello» (-ban/-ben); las llaves están sobre una mesa, no dentro."
+        },
+        "róla": {
+          "en": "róla is 'about it' or 'off it'; here the keys are on the table.",
+          "es": "róla es «acerca de ello» o «de encima»; aquí las llaves están sobre la mesa."
+        }
+      },
+      "examples": [
+        "Az asztal? Rajta van a kulcsod.",
+        "A hűtő üres, nincs benne semmi."
+      ],
+      "tr": {
+        "en": "Look at the table: your key and your phone are on it.",
+        "es": "Mira la mesa: tu llave y tu teléfono están encima."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f07",
+      "kind": "form",
+      "verb": "-ért",
+      "person": "te",
+      "answer": "érted",
+      "table": "szr-kozel"
+    },
+    {
+      "id": "szemelyragos-esetek-c10",
+      "sentence": "___ Mexikóvárosban csak kilenckor vacsorázunk.",
+      "options": [
+        "Nálunk",
+        "Nálatok",
+        "Hozzánk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "vacsorázunk is 'we', and Nálunk means 'at our place, where we live': nál + unk.",
+        "es": "vacsorázunk es «nosotros», y Nálunk significa «en nuestra casa, donde vivimos»: nál + unk."
+      },
+      "wrong": {
+        "Nálatok": {
+          "en": "Nálatok is 'at your place'; the verb vacsorázunk says we.",
+          "es": "Nálatok es «en la casa de ustedes»; el verbo vacsorázunk dice nosotros."
+        },
+        "Hozzánk": {
+          "en": "Hozzánk is 'to our place', a direction; the sentence says where we eat, not where somebody goes.",
+          "es": "Hozzánk es «a nuestra casa», una dirección; la frase dice dónde cenamos, no adónde va alguien."
+        }
+      },
+      "examples": [
+        "Nálunk mindig sok a munka.",
+        "Nálatok korán vacsoráztok."
+      ],
+      "tr": {
+        "en": "At our place in Mexico City we only have dinner at nine.",
+        "es": "En nuestra casa, en la Ciudad de México, solo cenamos a las nueve."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-w03",
+      "kind": "why",
+      "es": "A kulcs nála van.",
+      "target": "nála",
+      "tr": {
+        "en": "He or she has the key.",
+        "es": "Él o ella tiene la llave."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-nál + he or she: the short 3rd person singular form",
+            "es": "-nál + él o ella: la forma corta de la 3.ª persona del singular"
+          }
+        },
+        {
+          "text": {
+            "en": "-nál + I: nálam",
+            "es": "-nál + yo: nálam"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A kulcs nálam van (I have the key).",
+            "es": "Con esta regla la frase sería A kulcs nálam van (yo tengo la llave)."
+          }
+        },
+        {
+          "text": {
+            "en": "-nál + they: náluk",
+            "es": "-nál + ellos: náluk"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A kulcs náluk van (they have the key); náluk has the ending -uk.",
+            "es": "Con esta regla la frase sería A kulcs náluk van (ellos tienen la llave); náluk lleva la terminación -uk."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szemelyragos-esetek-c11",
+      "sentence": "Vegyél ebből a levesből is, én már kétszer ettem ___.",
+      "options": [
+        "benne",
+        "belőle",
+        "rajta"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "You eat out of a pot or a dish: eszik valamiből, -ból/-ből. bel + őle = belőle.",
+        "es": "Se come de una olla o de un plato: eszik valamiből, -ból/-ből. bel + őle = belőle."
+      },
+      "wrong": {
+        "benne": {
+          "en": "benne is 'in it', a state; eating from the soup needs 'out of it'.",
+          "es": "benne es «dentro de ello», un estado; comer de la sopa necesita «de ella»."
+        },
+        "rajta": {
+          "en": "rajta is 'on it'; the soup is not a surface.",
+          "es": "rajta es «encima de ello»; la sopa no es una superficie."
+        }
+      },
+      "examples": [
+        "Ettem belőle.",
+        "Kérsz belőle?"
+      ],
+      "tr": {
+        "en": "Have some of this soup too, I have already eaten from it twice.",
+        "es": "Toma también de esta sopa, yo ya comí dos veces de ella."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f08",
+      "kind": "form",
+      "verb": "-on/-en/-ön",
+      "person": "ők",
+      "answer": "rajtuk",
+      "table": "szr-belso-felszin"
+    },
+    {
+      "id": "szemelyragos-esetek-c12",
+      "sentence": "A gyerekek még nincsenek készen, ezért várnunk kell ___.",
+      "options": [
+        "ránk",
+        "rátok",
+        "rájuk"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The children are 'they'. vár asks for -ra/-re, and the 3rd person plural of rá- has a j: rájuk.",
+        "es": "Los niños son «ellos». vár pide -ra/-re, y la 3.ª persona del plural de rá- lleva j: rájuk."
+      },
+      "wrong": {
+        "ránk": {
+          "en": "ránk is 'for us'; we are the ones who wait, the children are the ones we wait for.",
+          "es": "ránk es «por nosotros»; nosotros somos quienes esperan, los niños son a quienes esperamos."
+        },
+        "rátok": {
+          "en": "rátok is 'for you' (plural); the children are 'they', not 'you'.",
+          "es": "rátok es «por ustedes»; los niños son «ellos», no «ustedes»."
+        }
+      },
+      "examples": [
+        "Rájuk várunk.",
+        "Hozzájuk megyünk."
+      ],
+      "tr": {
+        "en": "The children are not ready yet, so we have to wait for them.",
+        "es": "Los niños todavía no están listos, así que tenemos que esperarlos."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f09",
+      "kind": "form",
+      "verb": "-ból/-ből",
+      "person": "ő",
+      "answer": "belőle",
+      "table": "szr-belso-felszin"
+    },
+    {
+      "id": "szemelyragos-esetek-c13",
+      "sentence": "Bocsánat, ne haragudj ___, de eltörtem a tányért.",
+      "options": [
+        "rád",
+        "rám",
+        "rá"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "haragszik asks for -ra/-re. The speaker broke the plate (eltörtem), so: do not be angry with me: rám.",
+        "es": "haragszik pide -ra/-re. El hablante rompió el plato (eltörtem), así que: no te enojes conmigo: rám."
+      },
+      "wrong": {
+        "rád": {
+          "en": "rád would mean 'with you'; the one who broke the plate (eltörtem) is the speaker, so you should not be angry with 'me'.",
+          "es": "rád significaría «contigo»; quien rompió el plato (eltörtem) es el hablante, así que no debes enojarte con «yo»."
+        },
+        "rá": {
+          "en": "rá would mean 'with him or her'; eltörtem says that the speaker broke the plate, so the person to forgive is the speaker.",
+          "es": "rá significaría «con él o con ella»; eltörtem dice que el hablante rompió el plato, así que a quien hay que perdonar es al hablante."
+        }
+      },
+      "examples": [
+        "Rád nem haragszom.",
+        "Ne haragudj rá."
+      ],
+      "tr": {
+        "en": "Sorry, do not be angry with me, but I broke the plate.",
+        "es": "Perdón, no te enojes conmigo, pero rompí el plato."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-w04",
+      "kind": "why",
+      "es": "Annáról beszélünk.",
+      "target": "Annáról",
+      "tr": {
+        "en": "We are talking about Anna.",
+        "es": "Hablamos de Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A name takes the ordinary case ending -ról/-ről: about Anna",
+            "es": "Un nombre toma la terminación de caso normal -ról/-ről: sobre Anna"
+          }
+        },
+        {
+          "text": {
+            "en": "The pronoun form róla: about her",
+            "es": "La forma de pronombre róla: sobre ella"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Róla beszélünk; the pronoun form replaces a name that is not said, but here Anna is named.",
+            "es": "Con esta regla la frase sería Róla beszélünk; la forma de pronombre reemplaza un nombre que no se dice, pero aquí se nombra a Anna."
+          }
+        },
+        {
+          "text": {
+            "en": "-val/-vel: with Anna",
+            "es": "-val/-vel: con Anna"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Annával beszélünk (we talk to Anna); -ról/-ről means 'about'.",
+            "es": "Con esta regla la frase sería Annával beszélünk (hablamos con Anna); -ról/-ről significa «acerca de»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szemelyragos-esetek-f10",
+      "kind": "form",
+      "verb": "-ra/-re",
+      "person": "ők",
+      "answer": "rájuk",
+      "table": "szr-belso-felszin"
+    },
+    {
+      "id": "szemelyragos-esetek-c14",
+      "sentence": "Gyerekek, a tanár tegnap ___ kérdezett, mert nem voltatok az órán.",
+      "options": [
+        "rólunk",
+        "rólatok",
+        "tőletek"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "kérdez valakiről means 'to ask about someone'. The teacher asked about YOU (plural): ról + atok = rólatok.",
+        "es": "kérdez valakiről significa «preguntar por alguien». El maestro preguntó por USTEDES (plural): ról + atok = rólatok."
+      },
+      "wrong": {
+        "rólunk": {
+          "en": "rólunk is about us; nem voltatok says that 'you' were absent, so the teacher asked about you.",
+          "es": "rólunk es sobre nosotros; nem voltatok dice que «ustedes» faltaron, así que el maestro preguntó por ustedes."
+        },
+        "tőletek": {
+          "en": "tőletek is 'of you' (kérdez valakitől = to ask someone); you were not in class, so nobody could be asked.",
+          "es": "tőletek es «a ustedes» (kérdez valakitől = preguntar a alguien); no estuvieron en clase, así que no se les pudo preguntar."
+        }
+      },
+      "examples": [
+        "Rólatok kérdeztek.",
+        "Kati rólad kérdezett."
+      ],
+      "tr": {
+        "en": "Children, the teacher asked about you yesterday, because you were not in class.",
+        "es": "Niños, ayer el maestro preguntó por ustedes, porque no estuvieron en clase."
+      }
+    },
+    {
+      "id": "szemelyragos-esetek-f11",
+      "kind": "form",
+      "verb": "-hoz/-hez/-höz",
+      "person": "ők",
+      "answer": "hozzájuk",
+      "table": "szr-kozel"
+    },
+    {
+      "id": "szemelyragos-esetek-f12",
+      "kind": "form",
+      "verb": "-ban/-ben",
+      "person": "ti",
+      "answer": "bennetek",
+      "table": "szr-belso-felszin"
+    }
+  ]
+}

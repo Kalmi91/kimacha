@@ -1,5 +1,5 @@
 // The Hungarian grammar course, walked the way a learner walks it (es→hu and en→hu): the grammar tab
-// lists the 40 topics instead of a coming-soon note, a lesson opens with its explanation in the
+// lists the 75 topics (A1 to C1) instead of a coming-soon note, a lesson opens with its explanation in the
 // learner's own language, and everything Hungarian is read with the Hungarian voice.
 
 jest.mock('expo-speech', () => ({
@@ -47,14 +47,14 @@ describe.each([
     (speakSequence as jest.Mock).mockClear();
   });
 
-  it('the grammar tab lists the course, A1 with 24 topics and A2 with 16, units titled in the learner\'s language', async () => {
+  it('the grammar tab lists the course, A1 with 24 topics, A2 16, B1 17, B2 12, C1 6, units titled in the learner\'s language', async () => {
     const view = render(<GrammarSyllabusScreen />);
     await flush(4);
 
     expect(screen.queryByTestId('grammar-coming-soon')).toBeNull();
     expect(screen.queryByText(unitTitle)).toBeTruthy();
     expect(screen.getAllByTestId(/^grammar-topic-/)).toHaveLength(24);
-    expect(screen.getAllByTestId(/^grammar-level-/)).toHaveLength(2);
+    expect(screen.getAllByTestId(/^grammar-level-/)).toHaveLength(5);
 
     fireEvent.press(screen.getByTestId('grammar-level-A2'));
     await flush(1);
@@ -63,6 +63,22 @@ describe.each([
 
     fireEvent.press(screen.getByTestId('grammar-topic-mult-ido'));
     expect(mockPush).toHaveBeenCalledWith('/grammar/mult-ido');
+
+    for (const [lvl, count, first] of [['B1', 17, 'szemelyragos-inf'], ['B2', 12, 'felteteles-mult'], ['C1', 6, 'igenevi-szerkezetek']] as const) {
+      fireEvent.press(screen.getByTestId(`grammar-level-${lvl}`));
+      await flush(1);
+      expect(screen.getAllByTestId(/^grammar-topic-/)).toHaveLength(count);
+      expect(screen.queryByTestId(`grammar-topic-${first}`)).toBeTruthy();
+    }
+    view.unmount();
+  });
+
+  it('a learner at level B1 or higher opens on that level, not on A1 (no A2 clamp)', async () => {
+    (getDb() as any).__setLevelForTest('B1');
+    const view = render(<GrammarSyllabusScreen />);
+    await flush(4);
+    expect(screen.getAllByTestId(/^grammar-topic-/)).toHaveLength(17);
+    expect(screen.queryByTestId('grammar-topic-szemelyragos-inf')).toBeTruthy();
     view.unmount();
   });
 

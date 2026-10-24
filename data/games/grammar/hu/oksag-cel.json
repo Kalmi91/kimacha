@@ -1,0 +1,1392 @@
+{
+  "schema": 2,
+  "topic": "oksag-cel",
+  "level": "B2",
+  "title": {
+    "en": "Because, so, in order to: mert, ezért, azért... hogy",
+    "es": "Porque, por eso, para que: mert, ezért, azért... hogy"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "You already know mert (because), ezért (so) and hogy (that). At B2 you add the formal reason words mivel and ugyanis, the postposition miatt (because of), the result words így and tehát, and purpose: azért..., hogy with the -j form, and nehogy. It helps to put three questions to a sentence: why did it happen (reason), what follows from it (result), what is it done for (purpose)? Hungarian has its own word for each answer and they must not be mixed: mert gives a cause, ezért a consequence, hogy a goal.",
+        "es": "Ya conoces mert (porque), ezért (por eso) y hogy (que). En B2 añades las palabras formales de causa mivel y ugyanis, la posposición miatt (por, a causa de), las palabras de consecuencia így y tehát, y la finalidad: azért..., hogy con la forma -j, y nehogy. Ayuda hacerle tres preguntas a la frase: ¿por qué pasó (causa)?, ¿qué se sigue de ello (consecuencia)?, ¿para qué se hace (finalidad)? El húngaro tiene su propia palabra para cada respuesta y no se deben mezclar: mert da una causa, ezért una consecuencia, hogy una meta."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "reason-words",
+      "title": {
+        "en": "Reason, result and purpose at a glance",
+        "es": "Causa, consecuencia y finalidad de un vistazo"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "mert",
+          "Otthon maradtam, mert beteg voltam."
+        ],
+        [
+          "mivel",
+          "Mivel beteg voltam, otthon maradtam."
+        ],
+        [
+          "ugyanis",
+          "Otthon maradtam, a gyerek ugyanis beteg volt."
+        ],
+        [
+          "miatt",
+          "Az eső miatt otthon maradtam."
+        ],
+        [
+          "ezért",
+          "Beteg voltam, ezért otthon maradtam."
+        ],
+        [
+          "így",
+          "A vonat késett, így lekéstem a találkozót."
+        ],
+        [
+          "tehát",
+          "Péter nincs az irodában, tehát otthon dolgozik."
+        ],
+        [
+          "azért..., hogy",
+          "Azért tanulok, hogy megkapjam az állást."
+        ],
+        [
+          "nehogy",
+          "Siess, nehogy elkéss!"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Reason: mert, mivel, ugyanis, miatt",
+        "es": "Causa: mert, mivel, ugyanis, miatt"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "mert + a clause with its own verb is the plain reason word, used in speech and in writing. It follows the main clause, with a comma in front, and its verb is a normal indicative (never the -j form).",
+            "es": "mert + una cláusula con su propio verbo es la palabra de causa normal, en el habla y por escrito. Va después de la oración principal, con una coma delante, y su verbo está en indicativo normal (nunca en la forma -j)."
+          },
+          "examples": [
+            {
+              "es": "Otthon maradtam, mert beteg voltam.",
+              "tr": {
+                "en": "I stayed at home because I was ill.",
+                "es": "Me quedé en casa porque estaba enfermo."
+              }
+            },
+            {
+              "es": "Nem mentem moziba, mert nem volt időm.",
+              "tr": {
+                "en": "I did not go to the cinema because I had no time.",
+                "es": "No fui al cine porque no tenía tiempo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mivel (since, as) gives a reason that is already known or obvious. It usually opens the sentence and the comma comes after its clause. It is more formal and more written than mert.",
+            "es": "mivel (como, ya que) da una causa que ya se conoce o es obvia. Suele abrir la frase y la coma va después de su cláusula. Es más formal y más escrito que mert."
+          },
+          "examples": [
+            {
+              "es": "Mivel esik az eső, nem megyünk sétálni.",
+              "tr": {
+                "en": "Since it is raining, we are not going for a walk.",
+                "es": "Como llueve, no vamos a pasear."
+              }
+            },
+            {
+              "es": "Mivel az iroda zárva volt, hazamentem.",
+              "tr": {
+                "en": "As the office was closed, I went home.",
+                "es": "Como la oficina estaba cerrada, me fui a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ugyanis (you see, for) explains the sentence before it. It does not open its clause: it stands after the first word or phrase (a gyerek ugyanis beteg volt). Written and rather formal; in speech people say mert.",
+            "es": "ugyanis (es que, pues) explica la frase anterior. No abre su cláusula: va después de la primera palabra o grupo (a gyerek ugyanis beteg volt). Es escrito y bastante formal; en el habla se dice mert."
+          },
+          "examples": [
+            {
+              "es": "Otthon maradtam, a gyerek ugyanis beteg volt.",
+              "tr": {
+                "en": "I stayed at home; the child was ill, you see.",
+                "es": "Me quedé en casa; es que el niño estaba enfermo."
+              }
+            },
+            {
+              "es": "Nem jöttem el, a vonat ugyanis késett.",
+              "tr": {
+                "en": "I did not come; the train was late, you see.",
+                "es": "No vine; es que el tren se retrasó."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "miatt (because of) follows a noun in its plain form: the noun takes no ending, even in the plural (a hibák miatt). With a pronoun it takes personal endings: miattam, miattad, miatta. It often names a problem or someone's fault. A clause with a verb needs mert, not miatt.",
+            "es": "miatt (por, a causa de) va detrás de un sustantivo en su forma simple: el sustantivo no lleva terminación, ni siquiera en plural (a hibák miatt). Con un pronombre recibe terminaciones personales: miattam, miattad, miatta. A menudo nombra un problema o la culpa de alguien. Una cláusula con verbo necesita mert, no miatt."
+          },
+          "examples": [
+            {
+              "es": "Az eső miatt otthon maradtunk.",
+              "tr": {
+                "en": "Because of the rain we stayed at home.",
+                "es": "Por la lluvia nos quedamos en casa."
+              }
+            },
+            {
+              "es": "A sztrájk miatt késnek a vonatok.",
+              "tr": {
+                "en": "Because of the strike the trains are late.",
+                "es": "Por la huelga los trenes llegan tarde."
+              }
+            },
+            {
+              "es": "Miattad késtem el.",
+              "tr": {
+                "en": "I was late because of you.",
+                "es": "Llegué tarde por tu culpa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "To stress the reason, put azért in the main clause, right before the verb, and mert at the start of the reason clause. The pair answers the question Miért? (Why?).",
+            "es": "Para resaltar la causa, pon azért en la oración principal, justo antes del verbo, y mert al principio de la cláusula de causa. La pareja responde a la pregunta Miért? (¿Por qué?)."
+          },
+          "examples": [
+            {
+              "es": "Azért maradtam otthon, mert beteg voltam.",
+              "tr": {
+                "en": "I stayed at home because I was ill (that was the reason).",
+                "es": "Me quedé en casa porque estaba enfermo (esa fue la razón)."
+              }
+            },
+            {
+              "es": "Azért nem jöttem, mert nem volt időm.",
+              "tr": {
+                "en": "The reason I did not come is that I had no time.",
+                "es": "La razón por la que no vine es que no tenía tiempo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "miatt-forms",
+      "title": {
+        "en": "miatt and ért with personal endings",
+        "es": "miatt y ért con terminaciones personales"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "miatt (because of)",
+          "es": "miatt (por culpa de, a causa de)"
+        },
+        {
+          "en": "ért (for)",
+          "es": "ért (por, para)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "miattam",
+          "értem"
+        ],
+        [
+          "te",
+          "miattad",
+          "érted"
+        ],
+        [
+          "ő",
+          "miatta",
+          "érte"
+        ],
+        [
+          "mi",
+          "miattunk",
+          "értünk"
+        ],
+        [
+          "ti",
+          "miattatok",
+          "értetek"
+        ],
+        [
+          "ők",
+          "miattuk",
+          "értük"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Result: ezért, így, tehát",
+        "es": "Consecuencia: ezért, így, tehát"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "ezért (so, that is why) introduces the consequence of what you just said. The cause comes first, then a comma and ezért.",
+            "es": "ezért (por eso) introduce la consecuencia de lo que acabas de decir. Primero va la causa, luego una coma y ezért."
+          },
+          "examples": [
+            {
+              "es": "Beteg voltam, ezért otthon maradtam.",
+              "tr": {
+                "en": "I was ill, so I stayed at home.",
+                "es": "Estaba enfermo, por eso me quedé en casa."
+              }
+            },
+            {
+              "es": "Fáradt vagyok, ezért ma nem megyek az edzőterembe.",
+              "tr": {
+                "en": "I am tired, so I am not going to the gym today.",
+                "es": "Estoy cansado, por eso hoy no voy al gimnasio."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "így (so, thus) is the neutral, slightly more written result word: the second clause simply follows from the first.",
+            "es": "így (así que, de modo que) es la palabra de consecuencia neutra y algo más escrita: la segunda cláusula simplemente se sigue de la primera."
+          },
+          "examples": [
+            {
+              "es": "A vonat késett, így lekéstem a találkozót.",
+              "tr": {
+                "en": "The train was late, so I missed the meeting.",
+                "es": "El tren se retrasó, así que perdí la reunión."
+              }
+            },
+            {
+              "es": "Nem volt pénzem, így busszal mentem haza.",
+              "tr": {
+                "en": "I had no money, so I went home by bus.",
+                "es": "No tenía dinero, así que me fui a casa en autobús."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "tehát (therefore, so then) draws a conclusion from facts. It is a logical \"so\", not the cause of an event.",
+            "es": "tehát (por lo tanto, entonces) saca una conclusión a partir de hechos. Es un «así que» lógico, no la causa de un suceso."
+          },
+          "examples": [
+            {
+              "es": "Péter nincs az irodában, tehát otthon dolgozik.",
+              "tr": {
+                "en": "Péter is not in the office, so he is working at home.",
+                "es": "Péter no está en la oficina, así que trabaja en casa."
+              }
+            },
+            {
+              "es": "Anna nem veszi fel a telefont, tehát biztosan alszik.",
+              "tr": {
+                "en": "Anna is not picking up the phone, so she must be asleep.",
+                "es": "Anna no contesta el teléfono, así que seguro está dormida."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Purpose: azért..., hogy and nehogy",
+        "es": "Finalidad: azért..., hogy y nehogy"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Purpose answers \"What for?\". Put azért in the main clause and hogy + the -j form in the purpose clause. English uses \"to\" + infinitive and Spanish \"para\" + infinitive or \"para que\" + subjunctive; Hungarian does not put an infinitive after hogy; the -j form does that job. (After verbs of motion a bare infinitive is also possible: Dolgozni megyek.)",
+            "es": "La finalidad responde a «¿para qué?». Pon azért en la oración principal y hogy + la forma -j en la cláusula de finalidad. El inglés usa «to» + infinitivo y el español «para» + infinitivo o «para que» + subjuntivo; el húngaro no pone un infinitivo tras hogy; esa tarea la hace la forma -j. (Tras verbos de movimiento también es posible un infinitivo solo: Dolgozni megyek.)"
+          },
+          "examples": [
+            {
+              "es": "Azért tanulok, hogy megkapjam az állást.",
+              "tr": {
+                "en": "I study in order to get the job.",
+                "es": "Estudio para conseguir el trabajo."
+              }
+            },
+            {
+              "es": "Azért jöttem, hogy beszéljek Annával.",
+              "tr": {
+                "en": "I came to talk to Anna.",
+                "es": "Vine para hablar con Anna."
+              }
+            },
+            {
+              "es": "Anna azért tanul, hogy orvos legyen.",
+              "tr": {
+                "en": "Anna studies to become a doctor.",
+                "es": "Anna estudia para ser doctora."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The two clauses may have different subjects; the -j verb agrees with the subject of its own clause. In casual speech azért is often left out.",
+            "es": "Las dos cláusulas pueden tener sujetos distintos; el verbo en -j concuerda con el sujeto de su propia cláusula. En el habla informal a menudo se omite azért."
+          },
+          "examples": [
+            {
+              "es": "Azért hívlak, hogy segíts.",
+              "tr": {
+                "en": "I am calling you so that you help.",
+                "es": "Te llamo para que ayudes."
+              }
+            },
+            {
+              "es": "Azért írtam, hogy Péter ne várjon rám.",
+              "tr": {
+                "en": "I wrote so that Péter would not wait for me.",
+                "es": "Escribí para que Péter no me esperara."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For \"so that ... not\" use nehogy + the -j form, or hogy ne + the -j form. nehogy is one word and also works alone as a warning: Nehogy elfelejtsd! (Don't you forget!). Note the prefix: nehogy elkéssünk, but hogy ne késsünk el.",
+            "es": "Para «para que no» usa nehogy + la forma -j, o hogy ne + la forma -j. nehogy es una sola palabra y también funciona sola como advertencia: Nehogy elfelejtsd! (¡Que no se te olvide!). Fíjate en el prefijo: nehogy elkéssünk, pero hogy ne késsünk el."
+          },
+          "examples": [
+            {
+              "es": "Siess, nehogy elkéss!",
+              "tr": {
+                "en": "Hurry up, so that you are not late!",
+                "es": "¡Apúrate, para que no llegues tarde!"
+              }
+            },
+            {
+              "es": "Korán indultunk, nehogy elkéssünk.",
+              "tr": {
+                "en": "We left early so as not to be late.",
+                "es": "Salimos temprano para no llegar tarde."
+              }
+            },
+            {
+              "es": "Korán indultunk, hogy ne késsünk el.",
+              "tr": {
+                "en": "We left early so as not to be late.",
+                "es": "Salimos temprano para no llegar tarde."
+              }
+            },
+            {
+              "es": "Írd fel a címet, nehogy elfelejtsd!",
+              "tr": {
+                "en": "Write down the address so that you do not forget it!",
+                "es": "¡Anota la dirección para que no se te olvide!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "j-purpose",
+      "title": {
+        "en": "The -j form in purpose clauses",
+        "es": "La forma -j en las cláusulas de finalidad"
+      },
+      "header": [
+        {
+          "en": "Subject of the hogy-clause",
+          "es": "Sujeto de la cláusula con hogy"
+        },
+        {
+          "en": "tanulni (to study)",
+          "es": "tanulni (estudiar)"
+        },
+        {
+          "en": "sietni (to hurry)",
+          "es": "sietni (darse prisa)"
+        },
+        {
+          "en": "beszélni (to speak)",
+          "es": "beszélni (hablar)"
+        },
+        {
+          "en": "lenni (to be)",
+          "es": "lenni (ser, estar)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "tanuljak",
+          "siessek",
+          "beszéljek",
+          "legyek"
+        ],
+        [
+          "te",
+          "tanulj",
+          "siess",
+          "beszélj",
+          "légy"
+        ],
+        [
+          "ő",
+          "tanuljon",
+          "siessen",
+          "beszéljen",
+          "legyen"
+        ],
+        [
+          "mi",
+          "tanuljunk",
+          "siessünk",
+          "beszéljünk",
+          "legyünk"
+        ],
+        [
+          "ti",
+          "tanuljatok",
+          "siessetek",
+          "beszéljetek",
+          "legyetek"
+        ],
+        [
+          "ők",
+          "tanuljanak",
+          "siessenek",
+          "beszéljenek",
+          "legyenek"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Cause or goal? Noun or clause? Reason or result?",
+        "es": "¿Causa o meta? ¿Sustantivo o cláusula? ¿Causa o consecuencia?"
+      },
+      "pairs": [
+        {
+          "a": "Azért tanulok, mert vizsgám van.",
+          "b": "Azért tanulok, hogy átmenjek a vizsgán.",
+          "note": {
+            "en": "mert gives the cause (a fact, a plain verb). hogy gives the goal (a wish, the -j form). Spanish makes the same split: porque against para que.",
+            "es": "mert da la causa (un hecho, verbo simple). hogy da la meta (un deseo, forma -j). El español hace la misma división: porque frente a para que."
+          },
+          "examples": [
+            {
+              "es": "Azért tanulok, mert holnap vizsgám van.",
+              "tr": {
+                "en": "I study because I have an exam tomorrow.",
+                "es": "Estudio porque mañana tengo un examen."
+              }
+            },
+            {
+              "es": "Azért tanulok, hogy átmenjek a vizsgán.",
+              "tr": {
+                "en": "I study so that I pass the exam.",
+                "es": "Estudio para aprobar el examen."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Az eső miatt maradtam otthon.",
+          "b": "Azért maradtam otthon, mert esett az eső.",
+          "note": {
+            "en": "Same meaning, different build. miatt goes with a noun (az eső); mert goes with a whole clause that has its own verb (esett az eső).",
+            "es": "Mismo significado, distinta construcción. miatt va con un sustantivo (az eső); mert va con una cláusula completa que tiene su propio verbo (esett az eső)."
+          },
+          "examples": [
+            {
+              "es": "A hideg miatt nem megyünk a strandra.",
+              "tr": {
+                "en": "Because of the cold we are not going to the beach.",
+                "es": "Por el frío no vamos a la playa."
+              }
+            },
+            {
+              "es": "Nem megyünk a strandra, mert hideg van.",
+              "tr": {
+                "en": "We are not going to the beach because it is cold.",
+                "es": "No vamos a la playa porque hace frío."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Beteg voltam, ezért otthon maradtam.",
+          "b": "Azért maradtam otthon, mert beteg voltam.",
+          "note": {
+            "en": "The same facts in opposite order. ezért opens the clause that holds the result; mert opens the clause that holds the reason.",
+            "es": "Los mismos hechos en orden opuesto. ezért abre la cláusula que contiene la consecuencia; mert abre la cláusula que contiene la causa."
+          },
+          "examples": [
+            {
+              "es": "Késett a vonat, ezért késtem el.",
+              "tr": {
+                "en": "The train was late, that is why I was late.",
+                "es": "El tren se retrasó, por eso llegué tarde."
+              }
+            },
+            {
+              "es": "Azért késtem el, mert késett a vonat.",
+              "tr": {
+                "en": "I was late because the train was late.",
+                "es": "Llegué tarde porque el tren se retrasó."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Miattad késtem el.",
+          "b": "Érted jöttem.",
+          "note": {
+            "en": "miatt: because of someone, often their fault. ért: for someone, for their sake or to fetch them.",
+            "es": "miatt: por alguien, a menudo por su culpa. ért: para alguien, por su bien o para recogerlo."
+          },
+          "examples": [
+            {
+              "es": "Miattad nem tudtam aludni.",
+              "tr": {
+                "en": "I could not sleep because of you.",
+                "es": "No pude dormir por tu culpa."
+              }
+            },
+            {
+              "es": "Érted jöttem.",
+              "tr": {
+                "en": "I came for you.",
+                "es": "Vine por ti."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) After azért... hogy the verb is in the -j form (megkapjam); hogy megkapom would mean \"that I get it\", a fact. (2) miatt takes the plain noun (az eső miatt) and personal endings with pronouns (miattam); never az esőnek miatt. (3) mert and mivel are followed by a normal verb; the -j form belongs to hogy and nehogy only. (4) tehát is a conclusion drawn from facts, ezért a consequence; if the second clause is the cause of the first, use mert. (5) Do not mix azért... mert (reason) with azért... hogy (purpose): Spanish makes the same split with porque and para que, English with \"because\" and \"so that\". (6) mivel is more formal than mert and ugyanis is mostly written; in everyday speech mert is the usual word. (7) -ik verbs such as késik (elkésik) have two \"I\" forms in the -j form: everyday hogy ne késsek el, careful hogy ne késsem el; both are heard.",
+        "es": "Trampas clásicas: (1) Tras azért... hogy el verbo va en la forma -j (megkapjam); hogy megkapom significaría «que lo consigo», un hecho. (2) miatt lleva el sustantivo simple (az eső miatt) y terminaciones personales con pronombres (miattam); nunca az esőnek miatt. (3) mert y mivel van seguidos de un verbo normal; la forma -j es solo de hogy y nehogy. (4) tehát es una conclusión sacada de hechos, ezért una consecuencia; si la segunda cláusula es la causa de la primera, usa mert. (5) No mezcles azért... mert (causa) con azért... hogy (finalidad): el español hace la misma división con porque y para que, el inglés con «because» y «so that». (6) mivel es más formal que mert y ugyanis es sobre todo escrito; en el habla cotidiana lo normal es mert. (7) Los verbos en -ik como késik (elkésik) tienen dos formas de «yo» en la forma -j: en el habla corriente hogy ne késsek el, en estilo cuidado hogy ne késsem el; se oyen las dos."
+      }
+    }
+  ],
+  "speak": {
+    "en": "To give a reason, use «mert»: «Otthon maradtam, mert beteg voltam». Before a plain noun use «miatt»: «Az eső miatt maradtam otthon». For the result use «ezért»: «Beteg voltam, ezért otthon maradtam». For a purpose use «azért, hogy» and the subjunctive: «Azért tanulok, hogy megkapjam az állást». To say so that not, use «nehogy»: «Siess, nehogy elkéss». Remember that «tehát» draws a conclusion, that «mivel» is more formal than «mert», and that «ugyanis» is mostly written.",
+    "es": "Para dar una razón usa «mert»: «Otthon maradtam, mert beteg voltam». Ante un sustantivo simple usa «miatt»: «Az eső miatt maradtam otthon». Para la consecuencia usa «ezért»: «Beteg voltam, ezért otthon maradtam». Para una finalidad usa «azért, hogy» y el subjuntivo: «Azért tanulok, hogy megkapjam az állást». Para decir para que no, usa «nehogy»: «Siess, nehogy elkéss». Recuerda que «tehát» saca una conclusión, que «mivel» es más formal que «mert» y que «ugyanis» es sobre todo escrito."
+  },
+  "glossary": [
+    {
+      "word": "miatt",
+      "gloss": {
+        "en": "because of (after a noun)",
+        "es": "por, a causa de (tras un sustantivo)"
+      }
+    },
+    {
+      "word": "ugyanis",
+      "gloss": {
+        "en": "you see, for (explains the previous sentence)",
+        "es": "es que, pues (explica la frase anterior)"
+      }
+    },
+    {
+      "word": "nehogy",
+      "gloss": {
+        "en": "so that ... not; don't you dare",
+        "es": "para que no; que no se te ocurra"
+      }
+    },
+    {
+      "word": "azért",
+      "gloss": {
+        "en": "for that reason; partner of mert and hogy",
+        "es": "por esa razón; pareja de mert y hogy"
+      }
+    },
+    {
+      "word": "késik",
+      "gloss": {
+        "en": "to be late, to run late",
+        "es": "llegar tarde, retrasarse"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "oksag-cel-c01",
+      "sentence": "Nem mentem dolgozni, ___ beteg voltam.",
+      "options": [
+        "mert",
+        "ezért",
+        "azért"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mert introduces the reason and follows the main clause: I did not go to work because I was ill.",
+        "es": "mert introduce la causa y va después de la oración principal: no fui a trabajar porque estaba enfermo."
+      },
+      "wrong": {
+        "ezért": {
+          "en": "ezért introduces a result, so the sentence would say \"I did not go to work, so I was ill\": cause and result reversed.",
+          "es": "ezért introduce una consecuencia, así que la frase diría «no fui a trabajar, por eso estaba enfermo»: causa y consecuencia invertidas."
+        },
+        "azért": {
+          "en": "azért here would be a stray pointer word: it needs a mert or hogy clause behind it, and beteg voltam would not be linked to the first part.",
+          "es": "azért aquí sería una palabra suelta: necesita detrás una cláusula con mert o hogy, y beteg voltam quedaría sin unión con la primera parte."
+        }
+      },
+      "examples": [
+        "Otthon maradok, mert fáradt vagyok.",
+        "Nem vettem kávét, mert drága volt."
+      ],
+      "tr": {
+        "en": "I did not go to work because I was ill.",
+        "es": "No fui a trabajar porque estaba enfermo."
+      }
+    },
+    {
+      "id": "oksag-cel-f01",
+      "kind": "form",
+      "verb": "miatt",
+      "person": "én",
+      "answer": "miattam",
+      "table": "miatt-forms"
+    },
+    {
+      "id": "oksag-cel-c02",
+      "sentence": "Beteg voltam, ___ nem mentem dolgozni.",
+      "options": [
+        "ezért",
+        "hogy",
+        "mert"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ezért introduces the result: ill, so I did not go. The cause comes first.",
+        "es": "ezért introduce la consecuencia: enfermo, por eso no fui. La causa va primero."
+      },
+      "wrong": {
+        "mert": {
+          "en": "mert would say \"I was ill because I did not go to work\": reason and result reversed.",
+          "es": "mert diría «estaba enfermo porque no fui a trabajar»: causa y consecuencia invertidas."
+        },
+        "hogy": {
+          "en": "hogy would start a purpose or content clause and need a -j verb: \"I was ill so that I would not go to work\".",
+          "es": "hogy abriría una cláusula de finalidad o de contenido y necesitaría un verbo en -j: «estaba enfermo para no ir a trabajar»."
+        }
+      },
+      "examples": [
+        "Hideg van, ezért kabátot veszek fel.",
+        "Nincs pénzem, ezért nem veszek kávét."
+      ],
+      "tr": {
+        "en": "I was ill, so I did not go to work.",
+        "es": "Estaba enfermo, por eso no fui a trabajar."
+      }
+    },
+    {
+      "id": "oksag-cel-f02",
+      "kind": "form",
+      "verb": "miatt",
+      "person": "te",
+      "answer": "miattad",
+      "table": "miatt-forms"
+    },
+    {
+      "id": "oksag-cel-c03",
+      "sentence": "Az eső ___ nem mentünk sétálni.",
+      "options": [
+        "ezért",
+        "miatt",
+        "mert"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A plain noun (az eső) is followed by miatt: \"because of the rain\".",
+        "es": "Un sustantivo simple (az eső) va seguido de miatt: «por la lluvia»."
+      },
+      "wrong": {
+        "ezért": {
+          "en": "ezért is the result word; it needs the cause in a clause before it (Esett az eső, ezért...), not a bare noun.",
+          "es": "ezért es la palabra de consecuencia; necesita la causa en una cláusula antes (Esett az eső, ezért...), no un sustantivo suelto."
+        },
+        "mert": {
+          "en": "mert needs a clause with its own verb (mert esett az eső); az eső mert would not be a sentence.",
+          "es": "mert necesita una cláusula con su propio verbo (mert esett az eső); az eső mert no sería una frase."
+        }
+      },
+      "examples": [
+        "A hideg miatt otthon maradtunk.",
+        "A forgalom miatt késtem el."
+      ],
+      "tr": {
+        "en": "Because of the rain we did not go for a walk.",
+        "es": "Por la lluvia no fuimos a pasear."
+      }
+    },
+    {
+      "id": "oksag-cel-w01",
+      "kind": "why",
+      "es": "Az eső miatt otthon maradtam.",
+      "target": "miatt",
+      "tr": {
+        "en": "Because of the rain I stayed at home.",
+        "es": "Por la lluvia me quedé en casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "miatt introduces a clause, like mert",
+            "es": "miatt introduce una cláusula, como mert"
+          },
+          "wrong": {
+            "en": "With this rule you would write miatt esik az eső; but a clause with a verb needs mert: mert esik az eső.",
+            "es": "Con esta regla escribirías miatt esik az eső; pero una cláusula con verbo necesita mert: mert esik az eső."
+          }
+        },
+        {
+          "text": {
+            "en": "miatt follows a plain noun and means \"because of\"",
+            "es": "miatt va tras un sustantivo simple y significa «por, a causa de»"
+          }
+        },
+        {
+          "text": {
+            "en": "miatt is a case ending added to the noun",
+            "es": "miatt es una terminación de caso que se añade al sustantivo"
+          },
+          "wrong": {
+            "en": "With this rule the noun would change and be written together with it; but miatt is a separate word after the plain noun.",
+            "es": "Con esta regla el sustantivo cambiaría y se escribiría junto con ella; pero miatt es una palabra aparte tras el sustantivo simple."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "oksag-cel-f03",
+      "kind": "form",
+      "verb": "ért",
+      "person": "ő",
+      "answer": "érte",
+      "table": "miatt-forms"
+    },
+    {
+      "id": "oksag-cel-c04",
+      "sentence": "Bocsánat, hogy ___ kellett várnotok!",
+      "options": [
+        "miattam",
+        "értem",
+        "miatt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "\"Because of me\" is miattam: with a pronoun miatt takes a personal ending.",
+        "es": "«Por mi culpa» es miattam: con un pronombre miatt recibe una terminación personal."
+      },
+      "wrong": {
+        "értem": {
+          "en": "értem means \"for me\" (for my sake) or \"I understand\"; the sentence would not say that I caused the waiting.",
+          "es": "értem significa «por mí» (por mi bien) o «entiendo»; la frase no diría que yo causé la espera."
+        },
+        "miatt": {
+          "en": "miatt alone has no person: you need a noun before it or the ending -am.",
+          "es": "miatt solo no tiene persona: necesitas un sustantivo antes o la terminación -am."
+        }
+      },
+      "examples": [
+        "Miattunk kellett sokat várnod.",
+        "Miattad késtünk el."
+      ],
+      "tr": {
+        "en": "Sorry that you had to wait because of me!",
+        "es": "¡Perdón que tuvieran que esperar por mi culpa!"
+      }
+    },
+    {
+      "id": "oksag-cel-c05",
+      "sentence": "___ az iroda zárva volt, hazamentem.",
+      "options": [
+        "Ezért",
+        "Mivel",
+        "Ugyanis"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Mivel opens a reason clause in front of the main clause: \"As the office was closed, I went home\".",
+        "es": "Mivel abre una cláusula de causa delante de la oración principal: «Como la oficina estaba cerrada, me fui a casa»."
+      },
+      "wrong": {
+        "Ugyanis": {
+          "en": "ugyanis does not open a clause: it normally stands after the first word (Az iroda ugyanis zárva volt).",
+          "es": "ugyanis no abre una cláusula: normalmente va después de la primera palabra (Az iroda ugyanis zárva volt)."
+        },
+        "Ezért": {
+          "en": "Ezért would make the closing a result (\"that is why the office was closed\"), which does not fit the second clause.",
+          "es": "Ezért haría del cierre una consecuencia («por eso la oficina estaba cerrada»), lo que no encaja con la segunda cláusula."
+        }
+      },
+      "examples": [
+        "Mivel fáradt vagyok, hazamegyek.",
+        "Mivel esik az eső, otthon maradunk."
+      ],
+      "tr": {
+        "en": "As the office was closed, I went home.",
+        "es": "Como la oficina estaba cerrada, me fui a casa."
+      }
+    },
+    {
+      "id": "oksag-cel-f04",
+      "kind": "form",
+      "verb": "miatt",
+      "person": "ti",
+      "answer": "miattatok",
+      "table": "miatt-forms"
+    },
+    {
+      "id": "oksag-cel-c06",
+      "sentence": "Otthon maradtam, a gyerek ___ beteg volt.",
+      "options": [
+        "mivel",
+        "ugyanis",
+        "miatt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ugyanis explains the first clause and stands after the first word of its own clause: a gyerek ugyanis beteg volt.",
+        "es": "ugyanis explica la primera cláusula y va después de la primera palabra de la suya: a gyerek ugyanis beteg volt."
+      },
+      "wrong": {
+        "mivel": {
+          "en": "mivel opens its clause (Mivel a gyerek beteg volt, ...); it does not stand after the first word.",
+          "es": "mivel abre su cláusula (Mivel a gyerek beteg volt, ...); no va después de la primera palabra."
+        },
+        "miatt": {
+          "en": "miatt follows a noun and takes no verb after it: a gyerek miatt means \"because of the child\", and beteg volt would hang loose.",
+          "es": "miatt va detrás de un sustantivo y no lleva verbo después: a gyerek miatt significa «por el niño», y beteg volt quedaría suelto."
+        }
+      },
+      "examples": [
+        "Nem jöttem el, a vonat ugyanis késett.",
+        "Késtem, a forgalom ugyanis nagy volt."
+      ],
+      "tr": {
+        "en": "I stayed at home; the child was ill, you see.",
+        "es": "Me quedé en casa; es que el niño estaba enfermo."
+      }
+    },
+    {
+      "id": "oksag-cel-f05",
+      "kind": "form",
+      "verb": "ért",
+      "person": "mi",
+      "answer": "értünk",
+      "table": "miatt-forms"
+    },
+    {
+      "id": "oksag-cel-c07",
+      "sentence": "Nincs itt a kabátja, ___ már elment.",
+      "options": [
+        "tehát",
+        "hogy",
+        "ezért"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "tehát draws a conclusion from a fact: the coat is not here, so he has left.",
+        "es": "tehát saca una conclusión de un hecho: el abrigo no está aquí, así que se ha ido."
+      },
+      "wrong": {
+        "hogy": {
+          "en": "hogy opens a content or purpose clause; it does not link two statements as a conclusion.",
+          "es": "hogy abre una cláusula de contenido o de finalidad; no une dos afirmaciones como una conclusión."
+        },
+        "ezért": {
+          "en": "ezért would make the missing coat the cause of his leaving (\"that is why he left\").",
+          "es": "ezért haría de la falta del abrigo la causa de que se fuera («por eso se fue»)."
+        }
+      },
+      "examples": [
+        "Péter nincs az irodában, tehát otthon dolgozik.",
+        "Anna nem veszi fel a telefont, tehát biztosan alszik."
+      ],
+      "tr": {
+        "en": "His coat is not here, so he has already left.",
+        "es": "Su abrigo no está aquí, así que ya se fue."
+      }
+    },
+    {
+      "id": "oksag-cel-w02",
+      "kind": "why",
+      "es": "Azért tanulok, hogy megkapjam az állást.",
+      "target": "megkapjam",
+      "tr": {
+        "en": "I study so that I get the job.",
+        "es": "Estudio para conseguir el trabajo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The plain present, because it is happening now",
+            "es": "El presente simple, porque ocurre ahora"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be megkapom: \"that I get the job\", a statement instead of a goal.",
+            "es": "Con esta regla la frase sería megkapom: «que consigo el trabajo», una afirmación en lugar de una meta."
+          }
+        },
+        {
+          "text": {
+            "en": "The conditional, because the job is not certain",
+            "es": "El condicional, porque el trabajo no es seguro"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be megkapnám: \"that I would get the job\", which is not the form a purpose clause takes.",
+            "es": "Con esta regla la frase sería megkapnám: «que conseguiría el trabajo», que no es la forma que lleva una cláusula de finalidad."
+          }
+        },
+        {
+          "text": {
+            "en": "The -j form after hogy: a goal, not a fact",
+            "es": "La forma -j tras hogy: una meta, no un hecho"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "oksag-cel-f06",
+      "kind": "form",
+      "verb": "miatt",
+      "person": "ők",
+      "answer": "miattuk",
+      "table": "miatt-forms"
+    },
+    {
+      "id": "oksag-cel-c08",
+      "sentence": "Azért tanulok sokat, hogy ___ az állást.",
+      "options": [
+        "megkaptam",
+        "megkapjam",
+        "megkapom"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A purpose clause takes hogy + the -j form: megkapjam (the object az állást is definite, so the definite ending).",
+        "es": "Una cláusula de finalidad lleva hogy + la forma -j: megkapjam (el objeto az állást es definido, por eso la terminación definida)."
+      },
+      "wrong": {
+        "megkapom": {
+          "en": "megkapom is the plain present: \"that I get the job\" would state a fact instead of a goal.",
+          "es": "megkapom es el presente simple: «que consigo el trabajo» afirmaría un hecho en lugar de una meta."
+        },
+        "megkaptam": {
+          "en": "megkaptam is past: \"that I got the job\"; a purpose cannot be in the past.",
+          "es": "megkaptam es pasado: «que conseguí el trabajo»; una finalidad no puede estar en pasado."
+        }
+      },
+      "examples": [
+        "Azért spórolok, hogy nyáron Mexikóvárosba utazzak.",
+        "Azért dolgozom, hogy legyen pénzem."
+      ],
+      "tr": {
+        "en": "I study a lot so that I get the job.",
+        "es": "Estudio mucho para conseguir el trabajo."
+      }
+    },
+    {
+      "id": "oksag-cel-c09",
+      "sentence": "Siess, ___ elkéss!",
+      "options": [
+        "mert",
+        "hogy",
+        "nehogy"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nehogy + the -j form means \"so that you do not\": a warning or a negative purpose.",
+        "es": "nehogy + la forma -j significa «para que no»: una advertencia o una finalidad negativa."
+      },
+      "wrong": {
+        "mert": {
+          "en": "mert is followed by a plain indicative (mert elkésel, \"because you will be late\"); with the -j form elkéss it does not work.",
+          "es": "mert va seguido de un indicativo simple (mert elkésel, «porque llegarás tarde»); con la forma -j elkéss no funciona."
+        },
+        "hogy": {
+          "en": "hogy elkéss would mean \"so that you are late\": a purpose to be late.",
+          "es": "hogy elkéss significaría «para que llegues tarde»: la finalidad de llegar tarde."
+        }
+      },
+      "examples": [
+        "Korán indultunk, nehogy elkéssünk.",
+        "Írd fel a címet, nehogy elfelejtsd!"
+      ],
+      "tr": {
+        "en": "Hurry up, so that you are not late!",
+        "es": "¡Apúrate, para que no llegues tarde!"
+      }
+    },
+    {
+      "id": "oksag-cel-f07",
+      "kind": "form",
+      "verb": "tanulni",
+      "person": "én",
+      "answer": "tanuljak",
+      "table": "j-purpose"
+    },
+    {
+      "id": "oksag-cel-c10",
+      "sentence": "Korán indultam, hogy ne ___ el.",
+      "options": [
+        "késsek",
+        "késtem",
+        "késem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "hogy ne + the -j form says \"so as not to\": késsek (everyday form of the -ik verb késik; careful style: késsem).",
+        "es": "hogy ne + la forma -j dice «para no»: késsek (forma corriente del verbo en -ik késik; en estilo cuidado: késsem)."
+      },
+      "wrong": {
+        "késtem": {
+          "en": "késtem is past: \"that I was not late\"; a purpose has no past form.",
+          "es": "késtem es pasado: «que no llegué tarde»; una finalidad no tiene forma de pasado."
+        },
+        "késem": {
+          "en": "késem is the plain present (\"I am late\"); after hogy ne a purpose needs the -j form.",
+          "es": "késem es el presente simple («llego tarde»); tras hogy ne una finalidad necesita la forma -j."
+        }
+      },
+      "examples": [
+        "Korán keltem, hogy ne késsek el.",
+        "Korán indultunk, hogy ne késsünk el."
+      ],
+      "tr": {
+        "en": "I left early so as not to be late.",
+        "es": "Salí temprano para no llegar tarde."
+      }
+    },
+    {
+      "id": "oksag-cel-f08",
+      "kind": "form",
+      "verb": "sietni",
+      "person": "te",
+      "answer": "siess",
+      "accept": [
+        "siessél"
+      ],
+      "table": "j-purpose"
+    },
+    {
+      "id": "oksag-cel-w03",
+      "kind": "why",
+      "es": "Késtem, a vonat ugyanis késett.",
+      "target": "ugyanis",
+      "tr": {
+        "en": "I was late; the train was late, you see.",
+        "es": "Llegué tarde; es que el tren se retrasó."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ugyanis brings the result, like ezért",
+            "es": "ugyanis trae la consecuencia, como ezért"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would say Késtem, ezért a vonat késett: the train would be late because I was late.",
+            "es": "Con esta regla la frase diría Késtem, ezért a vonat késett: el tren se retrasaría porque yo me retrasé."
+          }
+        },
+        {
+          "text": {
+            "en": "ugyanis explains the first clause and stands after the first word of its own clause",
+            "es": "ugyanis explica la primera cláusula y va después de la primera palabra de la suya"
+          }
+        },
+        {
+          "text": {
+            "en": "ugyanis opens its clause, like mivel",
+            "es": "ugyanis abre su cláusula, como mivel"
+          },
+          "wrong": {
+            "en": "With this rule it would stand first: Ugyanis a vonat késett; but ugyanis normally comes after the first word, not before it.",
+            "es": "Con esta regla iría primero: Ugyanis a vonat késett; pero ugyanis normalmente va después de la primera palabra, no antes."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "oksag-cel-c11",
+      "sentence": "A vonat késett, ___ lekéstem a találkozót.",
+      "options": [
+        "így",
+        "hogy",
+        "mert"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "így gives the result: the train was late, so I missed the meeting.",
+        "es": "így da la consecuencia: el tren se retrasó, así que perdí la reunión."
+      },
+      "wrong": {
+        "mert": {
+          "en": "mert would turn it around: \"the train was late because I missed the meeting\".",
+          "es": "mert lo daría la vuelta: «el tren se retrasó porque perdí la reunión»."
+        },
+        "hogy": {
+          "en": "hogy would open a content or purpose clause; it does not link a cause with its result.",
+          "es": "hogy abriría una cláusula de contenido o de finalidad; no une una causa con su consecuencia."
+        }
+      },
+      "examples": [
+        "Nem volt pénzem, így busszal mentem haza.",
+        "Zárva volt a bolt, így nem vettem kenyeret."
+      ],
+      "tr": {
+        "en": "The train was late, so I missed the meeting.",
+        "es": "El tren se retrasó, así que perdí la reunión."
+      }
+    },
+    {
+      "id": "oksag-cel-f09",
+      "kind": "form",
+      "verb": "beszélni",
+      "person": "ő",
+      "answer": "beszéljen",
+      "table": "j-purpose"
+    },
+    {
+      "id": "oksag-cel-c12",
+      "sentence": "___ nem tudtam aludni: sokáig beszéltél telefonon.",
+      "options": [
+        "Érted",
+        "Miattam",
+        "Miattad"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "miattad = \"because of you\": you talked on the phone, so you are the reason I could not sleep.",
+        "es": "miattad = «por tu culpa»: tú hablaste por teléfono, así que tú eres la razón de que no pudiera dormir."
+      },
+      "wrong": {
+        "Érted": {
+          "en": "Érted means \"for you\" (or \"I understand you\"); the sentence would not blame you for the lost sleep.",
+          "es": "Érted significa «por ti» (o «te entiendo»); la frase no te culparía de la falta de sueño."
+        },
+        "Miattam": {
+          "en": "Miattam would put the blame on me, but it was you who talked on the phone.",
+          "es": "Miattam echaría la culpa a mí, pero fuiste tú quien habló por teléfono."
+        }
+      },
+      "examples": [
+        "Miattatok késtünk el.",
+        "Miattuk nem tudtam aludni."
+      ],
+      "tr": {
+        "en": "I could not sleep because of you: you talked on the phone for a long time.",
+        "es": "No pude dormir por tu culpa: hablaste mucho tiempo por teléfono."
+      }
+    },
+    {
+      "id": "oksag-cel-c13",
+      "sentence": "Azért jöttem, hogy ___ Annával.",
+      "options": [
+        "beszélek",
+        "beszélni",
+        "beszéljek"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A purpose clause needs hogy + the -j form: beszéljek.",
+        "es": "Una cláusula de finalidad necesita hogy + la forma -j: beszéljek."
+      },
+      "wrong": {
+        "beszélni": {
+          "en": "After hogy a Hungarian purpose clause needs the -j form, not an infinitive as in the English \"to talk\".",
+          "es": "Tras hogy una cláusula de finalidad húngara necesita la forma -j, no un infinitivo como el «hablar» del español."
+        },
+        "beszélek": {
+          "en": "beszélek is the plain present: \"that I speak with Anna\" states a fact instead of a goal.",
+          "es": "beszélek es el presente simple: «que hablo con Anna» afirma un hecho en lugar de una meta."
+        }
+      },
+      "examples": [
+        "Azért hívlak, hogy segíts.",
+        "Azért írtam, hogy Péter ne várjon rám."
+      ],
+      "tr": {
+        "en": "I came to talk to Anna.",
+        "es": "Vine para hablar con Anna."
+      }
+    },
+    {
+      "id": "oksag-cel-f10",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "te",
+      "answer": "légy",
+      "accept": [
+        "legyél"
+      ],
+      "table": "j-purpose"
+    },
+    {
+      "id": "oksag-cel-c14",
+      "sentence": "Azért késtem el, mert nagyon ___ az eső.",
+      "options": [
+        "esne",
+        "esett",
+        "essen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A reason clause with mert states a fact, so the verb stays in the plain indicative: esett.",
+        "es": "Una cláusula de causa con mert afirma un hecho, así que el verbo queda en indicativo simple: esett."
+      },
+      "wrong": {
+        "essen": {
+          "en": "essen is the -j form (purpose or order); after mert the verb states a fact.",
+          "es": "essen es la forma -j (finalidad u orden); tras mert el verbo afirma un hecho."
+        },
+        "esne": {
+          "en": "esne is the conditional: \"because the rain would fall\"; but the rain really fell.",
+          "es": "esne es el condicional: «porque la lluvia caería»; pero la lluvia realmente cayó."
+        }
+      },
+      "examples": [
+        "Azért maradtam otthon, mert esett az eső.",
+        "Azért nem mentem el, mert beteg voltam."
+      ],
+      "tr": {
+        "en": "I was late because it was raining hard.",
+        "es": "Llegué tarde porque llovía mucho."
+      }
+    },
+    {
+      "id": "oksag-cel-f11",
+      "kind": "form",
+      "verb": "tanulni",
+      "person": "ti",
+      "answer": "tanuljatok",
+      "table": "j-purpose"
+    },
+    {
+      "id": "oksag-cel-c15",
+      "sentence": "Anna azért tanul, hogy orvos ___.",
+      "options": [
+        "lesz",
+        "legyen",
+        "van"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A purpose clause takes the -j form; lenni gives legyen: \"so that she becomes a doctor\".",
+        "es": "Una cláusula de finalidad lleva la forma -j; lenni da legyen: «para que sea doctora»."
+      },
+      "wrong": {
+        "lesz": {
+          "en": "lesz is the future: \"she studies because she will be a doctor\" states a fact, not a goal.",
+          "es": "lesz es el futuro: «estudia porque será doctora» afirma un hecho, no una meta."
+        },
+        "van": {
+          "en": "van is the plain present: \"that she is a doctor\"; but she is not one yet.",
+          "es": "van es el presente simple: «que es doctora»; pero todavía no lo es."
+        }
+      },
+      "examples": [
+        "Péter azért dolgozik, hogy legyen pénze.",
+        "Kati azért spórol, hogy legyen egy lakása."
+      ],
+      "tr": {
+        "en": "Anna studies in order to become a doctor.",
+        "es": "Anna estudia para ser doctora."
+      }
+    },
+    {
+      "id": "oksag-cel-w04",
+      "kind": "why",
+      "es": "Beteg voltam, ezért otthon maradtam.",
+      "target": "ezért",
+      "tr": {
+        "en": "I was ill, so I stayed at home.",
+        "es": "Estaba enfermo, por eso me quedé en casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ezért is a reason word, like mert",
+            "es": "ezért es una palabra de causa, como mert"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would say that I was ill because I stayed at home.",
+            "es": "Con esta regla la frase diría que estaba enfermo porque me quedé en casa."
+          }
+        },
+        {
+          "text": {
+            "en": "ezért is a purpose word, like azért... hogy",
+            "es": "ezért es una palabra de finalidad, como azért... hogy"
+          },
+          "wrong": {
+            "en": "With this rule it would mean \"I was ill in order to stay at home\" and the verb would need the -j form.",
+            "es": "Con esta regla significaría «estaba enfermo para quedarme en casa» y el verbo necesitaría la forma -j."
+          }
+        },
+        {
+          "text": {
+            "en": "ezért is a result word: what follows is the consequence of the first clause",
+            "es": "ezért es una palabra de consecuencia: lo que sigue es la consecuencia de la primera cláusula"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "oksag-cel-f12",
+      "kind": "form",
+      "verb": "sietni",
+      "person": "ők",
+      "answer": "siessenek",
+      "table": "j-purpose"
+    }
+  ]
+}

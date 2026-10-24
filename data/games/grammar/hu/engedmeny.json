@@ -1,0 +1,1320 @@
+{
+  "schema": 2,
+  "topic": "engedmeny",
+  "level": "B2",
+  "title": {
+    "en": "Although it rained, we went: bár, mégis, annak ellenére",
+    "es": "Aunque llovía, fuimos: bár, mégis, annak ellenére"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Concession says: this is true, but something happens anyway. Hungarian has two tools. A subordinate clause with bár, habár, noha or annak ellenére, hogy presents the obstacle; a word in the main clause, above all mégis, shows that the result goes against it: Bár esik, mégis elmegyünk. The verb is the plain indicative. Spanish aunque + indicative (a fact) is Hungarian bár; for aunque + subjunctive (an unreal 'even if') Hungarian uses another frame (see the tip at the end). The clause can come first or last, with a comma either way: Bár esik, elmegyünk = Elmegyünk, bár esik. Four more words mean 'but' in different shades: de (plain), azonban (formal, flexible position), viszont (the other side) and ugyanakkor (at the same time).",
+        "es": "La concesión dice: esto es verdad, pero de todos modos pasa algo. El húngaro tiene dos herramientas. Una oración subordinada con bár, habár, noha o annak ellenére, hogy presenta el obstáculo; una palabra de la oración principal, sobre todo mégis, muestra que el resultado va en contra: Bár esik, mégis elmegyünk. El verbo va en indicativo normal. El «aunque + indicativo» del español (un hecho) es bár; para «aunque + subjuntivo» (un «aunque» irreal) el húngaro usa otra estructura (mira el consejo del final). La oración puede ir primero o al final, con coma en ambos casos: Bár esik, elmegyünk = Elmegyünk, bár esik. Otras cuatro palabras significan «pero» con matices distintos: de (simple), azonban (formal, posición flexible), viszont (el otro lado) y ugyanakkor (al mismo tiempo)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "engedmeny-szavak",
+      "title": {
+        "en": "Concession and contrast words",
+        "es": "Palabras de concesión y contraste"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Model sentence",
+          "es": "Frase modelo"
+        }
+      ],
+      "rows": [
+        [
+          "bár",
+          "Bár fáradt vagyok, mégis dolgozom."
+        ],
+        [
+          "habár",
+          "Habár esik az eső, elmegyünk sétálni."
+        ],
+        [
+          "noha",
+          "Noha beteg, Péter mégis dolgozik."
+        ],
+        [
+          "annak ellenére, hogy",
+          "Annak ellenére, hogy beteg volt, elment dolgozni."
+        ],
+        [
+          "ugyan ... de",
+          "Ugyan nem tudom, hol van, de megkérdezem."
+        ],
+        [
+          "mégis",
+          "Esik az eső, mégis elmegyünk."
+        ],
+        [
+          "de",
+          "Szeretnék menni, de nincs időm."
+        ],
+        [
+          "azonban",
+          "Anna otthon maradt, Péter azonban elment."
+        ],
+        [
+          "viszont",
+          "Én kávét iszom, Péter viszont teát."
+        ],
+        [
+          "ugyanakkor",
+          "A város szép, ugyanakkor drága."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "The clause: bár, habár, noha, annak ellenére, hogy, ugyan",
+        "es": "La oración subordinada: bár, habár, noha, annak ellenére, hogy, ugyan"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "bár, habár and noha all mean 'although' and take the plain indicative. bár is the everyday word, habár is the same with a little more weight, and noha sounds more formal and written. ámbár is old-fashioned: you will only read it.",
+            "es": "bár, habár y noha significan «aunque» y llevan el indicativo normal. bár es la palabra de todos los días, habár es lo mismo con un poco más de peso y noha suena más formal y escrito. ámbár es anticuado: solo lo leerás."
+          },
+          "examples": [
+            {
+              "es": "Bár Péter fáradt, még dolgozik.",
+              "tr": {
+                "en": "Although Péter is tired, he is still working.",
+                "es": "Aunque Péter está cansado, todavía trabaja."
+              }
+            },
+            {
+              "es": "Habár drága volt a telefon, megvettem.",
+              "tr": {
+                "en": "Although the phone was expensive, I bought it.",
+                "es": "Aunque el teléfono era caro, lo compré."
+              }
+            },
+            {
+              "es": "Noha Kati sokat tanult, megbukott a vizsgán.",
+              "tr": {
+                "en": "Although Kati studied a lot, she failed the exam.",
+                "es": "Aunque Kati estudió mucho, reprobó el examen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The clause can also follow the main clause. The comma then stands before bár or noha, and nothing else changes.",
+            "es": "La oración también puede ir después de la principal. La coma va entonces antes de bár o noha y nada más cambia."
+          },
+          "examples": [
+            {
+              "es": "Elmentünk sétálni, bár esett az eső.",
+              "tr": {
+                "en": "We went for a walk, although it was raining.",
+                "es": "Fuimos a caminar, aunque llovía."
+              }
+            },
+            {
+              "es": "Péter dolgozott, noha beteg volt.",
+              "tr": {
+                "en": "Péter worked, although he was sick.",
+                "es": "Péter trabajó, aunque estaba enfermo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "annak ellenére, hogy means 'in spite of the fact that' and opens a clause with its own verb. annak never changes, and the comma stands before hogy. The main clause needs no mégis.",
+            "es": "annak ellenére, hogy significa «a pesar de que» y abre una oración con su propio verbo. annak nunca cambia y la coma va antes de hogy. La oración principal no necesita mégis."
+          },
+          "examples": [
+            {
+              "es": "Annak ellenére, hogy esett az eső, elmentünk a piacra.",
+              "tr": {
+                "en": "Even though it rained, we went to the market.",
+                "es": "A pesar de que llovió, fuimos al mercado."
+              }
+            },
+            {
+              "es": "Annak ellenére, hogy Péter korán indult, elkésett.",
+              "tr": {
+                "en": "Even though Péter set out early, he was late.",
+                "es": "A pesar de que Péter salió temprano, llegó tarde."
+              }
+            },
+            {
+              "es": "Annak ellenére, hogy sok dolga volt, Anna segített nekem.",
+              "tr": {
+                "en": "Even though she had a lot to do, Anna helped me.",
+                "es": "A pesar de que tenía mucho que hacer, Anna me ayudó."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Before a noun, ellenére comes after the noun, with its article and with no ending on the noun: az eső ellenére, a hideg ellenére. For something said in the sentence before, start with ennek ellenére (in spite of this).",
+            "es": "Con un sustantivo, ellenére va después del sustantivo, con su artículo y sin ninguna terminación en el sustantivo: az eső ellenére, a hideg ellenére. Para algo dicho en la frase anterior, empieza con ennek ellenére (a pesar de esto)."
+          },
+          "examples": [
+            {
+              "es": "A hideg ellenére sokan úsztak a tengerben.",
+              "tr": {
+                "en": "In spite of the cold, many people swam in the sea.",
+                "es": "A pesar del frío, mucha gente nadó en el mar."
+              }
+            },
+            {
+              "es": "A forgalom ellenére időben megérkeztünk.",
+              "tr": {
+                "en": "In spite of the traffic we arrived on time.",
+                "es": "A pesar del tráfico llegamos a tiempo."
+              }
+            },
+            {
+              "es": "Esett az eső. Ennek ellenére elmentünk a tengerpartra.",
+              "tr": {
+                "en": "It rained. In spite of this we went to the beach.",
+                "es": "Llovió. A pesar de esto fuimos a la playa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ugyan admits a point and de gives the other side: Ugyan ..., de .... It is the concession word that really wants de in the main clause. It sounds a little lighter than bár.",
+            "es": "ugyan admite un punto y de da el otro lado: Ugyan ..., de .... Es la palabra de concesión que de verdad pide de en la oración principal. Suena un poco más ligera que bár."
+          },
+          "examples": [
+            {
+              "es": "Ugyan nem vagyok éhes, de eszem egy kis süteményt.",
+              "tr": {
+                "en": "I am not hungry, admittedly, but I will have a little cake.",
+                "es": "Es cierto que no tengo hambre, pero voy a comer un poco de pastel."
+              }
+            },
+            {
+              "es": "Ugyan sötét van, de még elmegyek a boltba.",
+              "tr": {
+                "en": "It is dark, true, but I will still go to the shop.",
+                "es": "Es cierto que está oscuro, pero todavía voy a ir a la tienda."
+              }
+            },
+            {
+              "es": "Ugyan Péter nem szereti a hideget, de szeret síelni.",
+              "tr": {
+                "en": "Péter does not like the cold, true, but he likes to ski.",
+                "es": "Es cierto que a Péter no le gusta el frío, pero le gusta esquiar."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "miatt-ellenere",
+      "title": {
+        "en": "miatt (because of) and ellenére (in spite of)",
+        "es": "miatt (a causa de) y ellenére (a pesar de)"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "because of (miatt)",
+          "es": "a causa de (miatt)"
+        },
+        {
+          "en": "in spite of (ellenére)",
+          "es": "a pesar de (ellenére)"
+        }
+      ],
+      "rows": [
+        [
+          "eső",
+          "az eső miatt",
+          "az eső ellenére"
+        ],
+        [
+          "hideg",
+          "a hideg miatt",
+          "a hideg ellenére"
+        ],
+        [
+          "hó",
+          "a hó miatt",
+          "a hó ellenére"
+        ],
+        [
+          "szél",
+          "a szél miatt",
+          "a szél ellenére"
+        ],
+        [
+          "forgalom",
+          "a forgalom miatt",
+          "a forgalom ellenére"
+        ],
+        [
+          "baleset",
+          "a baleset miatt",
+          "a baleset ellenére"
+        ],
+        [
+          "ez",
+          "emiatt",
+          "ennek ellenére"
+        ],
+        [
+          "az",
+          "amiatt",
+          "annak ellenére"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Words in the main clause: mégis, de, azonban, viszont, ugyanakkor",
+        "es": "Palabras de la oración principal: mégis, de, azonban, viszont, ugyanakkor"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "mégis (all the same, still) shows that the result is not what you would expect. It stands right before the verb, and a prefix stays on the verb.",
+            "es": "mégis (de todos modos, aun así) muestra que el resultado no es el esperado. Va justo antes del verbo y el prefijo se queda en el verbo."
+          },
+          "examples": [
+            {
+              "es": "Esik az eső, mégis elmegyünk sétálni.",
+              "tr": {
+                "en": "It is raining, but we are going for a walk all the same.",
+                "es": "Está lloviendo, pero de todos modos vamos a caminar."
+              }
+            },
+            {
+              "es": "Drága volt, mégis megvettem.",
+              "tr": {
+                "en": "It was expensive, but I bought it all the same.",
+                "es": "Era caro, pero lo compré de todos modos."
+              }
+            },
+            {
+              "es": "Péter fáradt volt, mégis elment edzeni.",
+              "tr": {
+                "en": "Péter was tired, but he went to train all the same.",
+                "es": "Péter estaba cansado, pero fue a entrenar de todos modos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "de is the plain 'but'. It opens its clause, with a comma before it, and it adds no surprise.",
+            "es": "de es el «pero» simple. Abre su oración, con una coma antes, y no añade ninguna sorpresa."
+          },
+          "examples": [
+            {
+              "es": "Szeretnék elmenni, de nincs időm.",
+              "tr": {
+                "en": "I would like to go, but I have no time.",
+                "es": "Me gustaría ir, pero no tengo tiempo."
+              }
+            },
+            {
+              "es": "A szoba kicsi, de szép.",
+              "tr": {
+                "en": "The room is small, but nice.",
+                "es": "El cuarto es pequeño, pero bonito."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "azonban (however) is formal and mostly written. It may open the clause or stand after its first word.",
+            "es": "azonban (sin embargo) es formal y sobre todo escrito. Puede abrir la oración o ir después de su primera palabra."
+          },
+          "examples": [
+            {
+              "es": "Anna otthon maradt, Péter azonban elment.",
+              "tr": {
+                "en": "Anna stayed at home, Péter however left.",
+                "es": "Anna se quedó en casa, Péter en cambio se fue."
+              }
+            },
+            {
+              "es": "A szálloda szép. A szoba azonban kicsi.",
+              "tr": {
+                "en": "The hotel is nice. The room, however, is small.",
+                "es": "El hotel es bonito. El cuarto, sin embargo, es pequeño."
+              }
+            },
+            {
+              "es": "Meghívtuk Pétert. Azonban nem jött el.",
+              "tr": {
+                "en": "We invited Péter. However, he did not come.",
+                "es": "Invitamos a Péter. Sin embargo, no vino."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "viszont (on the other hand, whereas) puts two sides next to each other: two people or two qualities. It follows the word it contrasts.",
+            "es": "viszont (en cambio) pone dos lados uno junto al otro: dos personas o dos cualidades. Va después de la palabra que contrasta."
+          },
+          "examples": [
+            {
+              "es": "Én kávét iszom, Péter viszont teát.",
+              "tr": {
+                "en": "I drink coffee, Péter drinks tea.",
+                "es": "Yo tomo café, Péter en cambio toma té."
+              }
+            },
+            {
+              "es": "A szoba kicsi, viszont tiszta.",
+              "tr": {
+                "en": "The room is small, but on the other hand it is clean.",
+                "es": "El cuarto es pequeño, pero en cambio está limpio."
+              }
+            },
+            {
+              "es": "Az étel finom, az étterem viszont drága.",
+              "tr": {
+                "en": "The food is delicious, the restaurant however is expensive.",
+                "es": "La comida es rica, el restaurante en cambio es caro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ugyanakkor (at the same time, yet) adds a second, opposite side to the same thing. It sounds rather formal.",
+            "es": "ugyanakkor (al mismo tiempo) añade un segundo lado, opuesto, a la misma cosa. Suena bastante formal."
+          },
+          "examples": [
+            {
+              "es": "A munka érdekes, ugyanakkor nehéz.",
+              "tr": {
+                "en": "The work is interesting and at the same time hard.",
+                "es": "El trabajo es interesante y al mismo tiempo difícil."
+              }
+            },
+            {
+              "es": "A város szép, ugyanakkor nagyon drága.",
+              "tr": {
+                "en": "The city is beautiful, yet very expensive.",
+                "es": "La ciudad es hermosa, pero también muy cara."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Reason, obstacle or contrast?",
+        "es": "¿Razón, obstáculo o contraste?"
+      },
+      "pairs": [
+        {
+          "a": "Az eső miatt maradtunk otthon.",
+          "b": "Az eső ellenére elmentünk.",
+          "note": {
+            "en": "miatt gives the reason: the rain made us stay. ellenére names an obstacle that did not stop us.",
+            "es": "miatt da la razón: la lluvia hizo que nos quedáramos. ellenére nombra un obstáculo que no nos detuvo."
+          },
+          "examples": [
+            {
+              "es": "A forgalom miatt elkéstem.",
+              "tr": {
+                "en": "Because of the traffic I was late.",
+                "es": "Por el tráfico llegué tarde."
+              }
+            },
+            {
+              "es": "A forgalom ellenére időben megérkeztem.",
+              "tr": {
+                "en": "In spite of the traffic I arrived on time.",
+                "es": "A pesar del tráfico llegué a tiempo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Esik, ezért otthon maradok.",
+          "b": "Esik, mégis elmegyek.",
+          "note": {
+            "en": "ezért gives the expected result (rain, so I stay in). mégis gives the unexpected one (rain, but I go).",
+            "es": "ezért da el resultado esperado (llueve, así que me quedo). mégis da el inesperado (llueve, pero voy)."
+          },
+          "examples": [
+            {
+              "es": "Péter beteg, ezért otthon marad.",
+              "tr": {
+                "en": "Péter is sick, so he stays at home.",
+                "es": "Péter está enfermo, así que se queda en casa."
+              }
+            },
+            {
+              "es": "Péter beteg, mégis elmegy dolgozni.",
+              "tr": {
+                "en": "Péter is sick, but he goes to work all the same.",
+                "es": "Péter está enfermo, pero va a trabajar de todos modos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Fáradt vagyok, de dolgozom.",
+          "b": "Fáradt vagyok, mégis dolgozom.",
+          "note": {
+            "en": "de is a neutral contrast. mégis stresses that the result is surprising. After bár, mégis is the neater partner; de also occurs there in speech.",
+            "es": "de es un contraste neutro. mégis subraya que el resultado sorprende. Con bár, mégis es el compañero más limpio; de también aparece ahí en el habla."
+          },
+          "examples": [
+            {
+              "es": "Szeretnék menni, de nincs időm.",
+              "tr": {
+                "en": "I would like to go, but I have no time.",
+                "es": "Me gustaría ir, pero no tengo tiempo."
+              }
+            },
+            {
+              "es": "Nincs időm, mégis elmegyek.",
+              "tr": {
+                "en": "I have no time, but I will go all the same.",
+                "es": "No tengo tiempo, pero voy de todos modos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Bár esik, elmegyek.",
+          "b": "Ha esik, otthon maradok.",
+          "note": {
+            "en": "bár states a fact and then goes against it. ha (if, whenever) sets a condition for what follows.",
+            "es": "bár afirma un hecho y luego va en contra de él. ha (si, cuando) pone una condición para lo que sigue."
+          },
+          "examples": [
+            {
+              "es": "Bár hideg van, úszunk.",
+              "tr": {
+                "en": "Although it is cold, we swim.",
+                "es": "Aunque hace frío, nadamos."
+              }
+            },
+            {
+              "es": "Ha hideg van, nem úszunk.",
+              "tr": {
+                "en": "If it is cold, we do not swim.",
+                "es": "Si hace frío, no nadamos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Three traps. (1) After bár, habár or noha, a de in the main clause is common in speech and not wrong (Bár fáradt vagyok, de dolgozom), but mégis is the neater link (Bár fáradt vagyok, mégis dolgozom), and you can also leave it out (Bár fáradt vagyok, dolgozom; in speech also: ..., azért dolgozom). The concession word that really calls for de is ugyan. (2) annak ellenére needs hogy before a clause (annak ellenére, hogy esik), but a noun before ellenére stays bare (az eső ellenére, not az esőnek ellenére). (3) bár states a fact. For an unreal 'even if' (Spanish aunque + subjunctive) Hungarian uses another frame, még ha ... is, which you will meet later: Még ha esik is, elmegyek.",
+        "es": "Tres trampas. (1) Después de bár, habár o noha, un de en la oración principal es frecuente en el habla y no es un error (Bár fáradt vagyok, de dolgozom), pero mégis es el enlace más limpio (Bár fáradt vagyok, mégis dolgozom), y también se puede omitir (Bár fáradt vagyok, dolgozom; en el habla también: ..., azért dolgozom). La palabra de concesión que de verdad pide de es ugyan. (2) annak ellenére necesita hogy delante de una oración (annak ellenére, hogy esik), pero un sustantivo delante de ellenére queda sin terminación (az eső ellenére, no az esőnek ellenére). (3) bár afirma un hecho. Para un «aunque» irreal (aunque + subjuntivo) el húngaro usa otra estructura, még ha ... is, que verás más adelante: Még ha esik is, elmegyek."
+      }
+    }
+  ],
+  "speak": {
+    "en": "To say 'although' in Hungarian, use «bár», «habár» or «noha» with an ordinary verb: «Bár fáradt vagyok, mégis dolgozom». The word «mégis» in the main clause means 'all the same'. For a whole clause say «annak ellenére, hogy», and before a noun say «ellenére»: «az eső ellenére». Do not mix up «az eső miatt», because of the rain, with «az eső ellenére», in spite of the rain. The words «azonban», «viszont» and «ugyanakkor» are three ways of saying 'but': «Péter viszont teát iszik». After «bár» use «mégis» or nothing; the word that really needs «de» is «ugyan»: «Ugyan fáradt vagyok, de dolgozom».",
+    "es": "Para decir 'aunque' en húngaro usa «bár», «habár» o «noha» con un verbo normal: «Bár fáradt vagyok, mégis dolgozom». La palabra «mégis» en la oración principal significa 'de todos modos'. Para una oración completa di «annak ellenére, hogy», y delante de un sustantivo di «ellenére»: «az eső ellenére». No confundas «az eső miatt», por la lluvia, con «az eső ellenére», a pesar de la lluvia. Las palabras «azonban», «viszont» y «ugyanakkor» son tres maneras de decir 'pero': «Péter viszont teát iszik». Después de «bár» usa «mégis» o nada; la palabra que de verdad necesita «de» es «ugyan»: «Ugyan fáradt vagyok, de dolgozom»."
+  },
+  "glossary": [
+    {
+      "word": "habár",
+      "gloss": {
+        "en": "although (a little more emphatic than bár)",
+        "es": "aunque (algo más enfático que bár)"
+      }
+    },
+    {
+      "word": "noha",
+      "gloss": {
+        "en": "although (formal, written)",
+        "es": "aunque (formal, escrito)"
+      }
+    },
+    {
+      "word": "mégis",
+      "gloss": {
+        "en": "all the same, still",
+        "es": "de todos modos, aun así"
+      }
+    },
+    {
+      "word": "viszont",
+      "gloss": {
+        "en": "on the other hand, whereas",
+        "es": "en cambio"
+      }
+    },
+    {
+      "word": "ugyanakkor",
+      "gloss": {
+        "en": "at the same time, yet",
+        "es": "al mismo tiempo"
+      }
+    },
+    {
+      "word": "ellenére",
+      "gloss": {
+        "en": "in spite of (after a noun)",
+        "es": "a pesar de (después de un sustantivo)"
+      }
+    },
+    {
+      "word": "ugyan",
+      "gloss": {
+        "en": "admittedly, true (goes with de)",
+        "es": "es cierto que (va con de)"
+      }
+    },
+    {
+      "word": "miatt",
+      "gloss": {
+        "en": "because of (after a noun)",
+        "es": "a causa de (después de un sustantivo)"
+      }
+    },
+    {
+      "word": "emiatt",
+      "gloss": {
+        "en": "because of this",
+        "es": "por esto"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "engedmeny-c01",
+      "sentence": "Beteg voltam, ___ elmentem dolgozni.",
+      "options": [
+        "mégis",
+        "ezért",
+        "hogy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mégis means 'all the same': going to work is the opposite of what being sick leads you to expect.",
+        "es": "mégis significa «de todos modos»: ir a trabajar es lo contrario de lo que se espera de estar enfermo."
+      },
+      "wrong": {
+        "ezért": {
+          "en": "With ezért the sentence would say that being sick was the reason for going to work. ezért gives the expected result (Beteg voltam, ezért otthon maradtam).",
+          "es": "Con ezért la frase diría que estar enfermo fue la razón para ir a trabajar. ezért da el resultado esperado (Beteg voltam, ezért otthon maradtam)."
+        },
+        "hogy": {
+          "en": "hogy opens a 'that' or purpose clause; it cannot join two main clauses like this.",
+          "es": "hogy abre una oración con «que» o de finalidad; no puede unir dos oraciones principales así."
+        }
+      },
+      "examples": [
+        "Esik az eső, mégis elmegyünk sétálni.",
+        "Anna fáradt, mégis elmegy edzeni."
+      ],
+      "tr": {
+        "en": "I was sick, but I went to work all the same.",
+        "es": "Estaba enfermo, pero fui a trabajar de todos modos."
+      }
+    },
+    {
+      "id": "engedmeny-f01",
+      "kind": "form",
+      "verb": "ellenére",
+      "person": "eső",
+      "answer": "az eső ellenére",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-c02",
+      "sentence": "Kati elment a vizsgára, ___ nagyon beteg volt.",
+      "options": [
+        "bár",
+        "mert",
+        "ezért"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bár (although) can also follow the main clause: Kati went to the exam although she was very sick.",
+        "es": "bár (aunque) también puede ir después de la principal: Kati fue al examen aunque estaba muy enferma."
+      },
+      "wrong": {
+        "mert": {
+          "en": "mert would give being sick as the reason for going to the exam, which makes no sense; being sick is an obstacle, so you need a concession word.",
+          "es": "mert daría el estar enferma como razón para ir al examen, lo cual no tiene sentido; estar enferma es un obstáculo, así que hace falta una palabra de concesión."
+        },
+        "ezért": {
+          "en": "With ezért the sentence would say that she went to the exam and that is why she was sick: cause and result upside down.",
+          "es": "Con ezért la frase diría que fue al examen y por eso estaba enferma: la causa y el resultado al revés."
+        }
+      },
+      "examples": [
+        "Elmentünk a boltba, bár zárva volt.",
+        "Péter dolgozott, noha beteg volt."
+      ],
+      "tr": {
+        "en": "Kati went to the exam, although she was very sick.",
+        "es": "Kati fue al examen, aunque estaba muy enferma."
+      }
+    },
+    {
+      "id": "engedmeny-f02",
+      "kind": "form",
+      "verb": "miatt",
+      "person": "hideg",
+      "answer": "a hideg miatt",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-c03",
+      "sentence": "Annak ellenére, ___ sötét van, még dolgozunk.",
+      "options": [
+        "hogy",
+        "mert",
+        "ha"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "annak ellenére always continues with hogy: annak ellenére, hogy = 'in spite of the fact that'.",
+        "es": "annak ellenére siempre sigue con hogy: annak ellenére, hogy = «a pesar de que»."
+      },
+      "wrong": {
+        "mert": {
+          "en": "mert gives a reason, but the phrase annak ellenére already says 'in spite of'; only hogy can follow it.",
+          "es": "mert da una razón, pero la frase annak ellenére ya dice «a pesar de»; solo hogy puede seguirla."
+        },
+        "ha": {
+          "en": "ha means 'if'. annak ellenére, ha is not a Hungarian pattern; for an unreal 'even if' Hungarian uses another frame (még ha ... is).",
+          "es": "ha significa «si». annak ellenére, ha no es una estructura del húngaro; para un «aunque» irreal el húngaro usa otra estructura (még ha ... is)."
+        }
+      },
+      "examples": [
+        "Annak ellenére, hogy esik, elmegyünk.",
+        "Annak ellenére, hogy beteg, Péter dolgozik."
+      ],
+      "tr": {
+        "en": "Even though it is dark, we are still working.",
+        "es": "A pesar de que está oscuro, todavía estamos trabajando."
+      }
+    },
+    {
+      "id": "engedmeny-f03",
+      "kind": "form",
+      "verb": "ellenére",
+      "person": "szél",
+      "answer": "a szél ellenére",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-c04",
+      "sentence": "A hideg ___ sokan úsztak a tengerben.",
+      "options": [
+        "ellenére",
+        "miatt",
+        "szerint"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After a noun, ellenére means 'in spite of': the cold did not stop people from swimming. The noun stays without an ending.",
+        "es": "Después de un sustantivo, ellenére significa «a pesar de»: el frío no impidió que la gente nadara. El sustantivo queda sin terminación."
+      },
+      "wrong": {
+        "miatt": {
+          "en": "miatt (because of) would make the cold the reason why people swam, which is the opposite of the sense.",
+          "es": "miatt (a causa de) haría del frío la razón por la que la gente nadó, que es lo contrario del sentido."
+        },
+        "szerint": {
+          "en": "szerint means 'according to'; 'according to the cold' makes no sense here.",
+          "es": "szerint significa «según»; «según el frío» no tiene sentido aquí."
+        }
+      },
+      "examples": [
+        "Az eső ellenére elmentünk a piacra.",
+        "A szél ellenére sétáltunk a tengerparton."
+      ],
+      "tr": {
+        "en": "In spite of the cold, many people swam in the sea.",
+        "es": "A pesar del frío, mucha gente nadó en el mar."
+      }
+    },
+    {
+      "id": "engedmeny-f04",
+      "kind": "form",
+      "verb": "miatt",
+      "person": "ez",
+      "answer": "emiatt",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-c05",
+      "sentence": "Az eső ___ nem mentünk ki a kertbe.",
+      "options": [
+        "miatt",
+        "ellenére",
+        "szerint"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "miatt gives the reason: the rain kept us from going out.",
+        "es": "miatt da la razón: la lluvia nos impidió salir."
+      },
+      "wrong": {
+        "ellenére": {
+          "en": "With ellenére the sentence would say that, in spite of the rain, we did not go out; but rain is exactly the reason not to go out.",
+          "es": "Con ellenére la frase diría que, a pesar de la lluvia, no salimos; pero la lluvia es justo la razón para no salir."
+        },
+        "szerint": {
+          "en": "szerint means 'according to'; 'according to the rain' makes no sense here.",
+          "es": "szerint significa «según»; «según la lluvia» no tiene sentido aquí."
+        }
+      },
+      "examples": [
+        "A forgalom miatt elkéstem.",
+        "A hó miatt nem megyünk a hegyre."
+      ],
+      "tr": {
+        "en": "Because of the rain we did not go out into the garden.",
+        "es": "Por la lluvia no salimos al jardín."
+      }
+    },
+    {
+      "id": "engedmeny-f05",
+      "kind": "form",
+      "verb": "mégis / ezért",
+      "person": "Bár fáradt vagyok, ___ dolgozom.",
+      "answer": "mégis",
+      "accept": [
+        "azért",
+        "de"
+      ],
+      "table": "engedmeny-szavak"
+    },
+    {
+      "id": "engedmeny-w01",
+      "kind": "why",
+      "es": "Annak ellenére, hogy esik, elmegyünk.",
+      "target": "ellenére",
+      "tr": {
+        "en": "In spite of the fact that it rains, we go.",
+        "es": "A pesar de que llueve, vamos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "'in spite of': the main clause happens although the obstacle is there",
+            "es": "«a pesar de»: la oración principal ocurre aunque el obstáculo esté ahí"
+          }
+        },
+        {
+          "text": {
+            "en": "'because of': the rain is the reason why we go",
+            "es": "«a causa de»: la lluvia es la razón por la que vamos"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would say that we go because it rains (Az eső miatt elmegyünk); ellenére says the opposite.",
+            "es": "Con esta regla la frase diría que vamos porque llueve (Az eső miatt elmegyünk); ellenére dice lo contrario."
+          }
+        },
+        {
+          "text": {
+            "en": "'instead of': we go in place of the rain",
+            "es": "«en lugar de»: vamos en lugar de la lluvia"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would mean that we go instead of something else (helyett); ellenére names an obstacle, not a replacement.",
+            "es": "Con esta regla la frase significaría que vamos en lugar de otra cosa (helyett); ellenére nombra un obstáculo, no un reemplazo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "engedmeny-f06",
+      "kind": "form",
+      "verb": "ellenére",
+      "person": "ez",
+      "answer": "ennek ellenére",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-c06",
+      "sentence": "Esett az eső. ___ elmentünk a tengerpartra.",
+      "options": [
+        "Ennek ellenére",
+        "Emiatt",
+        "Ezért"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ennek ellenére (in spite of this) points back to the sentence before and says that the next thing happened anyway.",
+        "es": "Ennek ellenére (a pesar de esto) apunta a la frase anterior y dice que lo siguiente ocurrió de todos modos."
+      },
+      "wrong": {
+        "Emiatt": {
+          "en": "Emiatt means 'because of this': the rain would be the reason for going to the beach, which is illogical.",
+          "es": "Emiatt significa «por esto»: la lluvia sería la razón para ir a la playa, lo cual es ilógico."
+        },
+        "Ezért": {
+          "en": "Ezért means 'that is why': again a result of the rain, but going to the beach is not what rain leads to.",
+          "es": "Ezért significa «por eso»: otra vez un resultado de la lluvia, pero ir a la playa no es lo que lleva la lluvia."
+        }
+      },
+      "examples": [
+        "Péter fáradt volt. Ennek ellenére elment edzeni.",
+        "Sötét volt. Ennek ellenére még dolgoztunk."
+      ],
+      "tr": {
+        "en": "It rained. In spite of this we went to the beach.",
+        "es": "Llovió. A pesar de esto fuimos a la playa."
+      }
+    },
+    {
+      "id": "engedmeny-f07",
+      "kind": "form",
+      "verb": "miatt",
+      "person": "forgalom",
+      "answer": "a forgalom miatt",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-w02",
+      "kind": "why",
+      "es": "Én kávét iszom, Péter viszont teát iszik.",
+      "target": "viszont",
+      "tr": {
+        "en": "I drink coffee, Péter on the other hand drinks tea.",
+        "es": "Yo tomo café, Péter en cambio toma té."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "'therefore': the result of the first half",
+            "es": "«por lo tanto»: el resultado de la primera mitad"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Én kávét iszom, Péter ezért teát iszik (so Péter drinks tea); viszont does not give a result.",
+            "es": "Con esta regla la frase sería Én kávét iszom, Péter ezért teát iszik (así que Péter toma té); viszont no da un resultado."
+          }
+        },
+        {
+          "text": {
+            "en": "'on the other hand': Péter's choice is set against mine",
+            "es": "«en cambio»: la elección de Péter se opone a la mía"
+          }
+        },
+        {
+          "text": {
+            "en": "'because': the reason for the first half",
+            "es": "«porque»: la razón de la primera mitad"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Én kávét iszom, mert Péter teát iszik; viszont gives no reason, it only contrasts.",
+            "es": "Con esta regla la frase sería Én kávét iszom, mert Péter teát iszik; viszont no da ninguna razón, solo contrasta."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "engedmeny-f08",
+      "kind": "form",
+      "verb": "ellenére",
+      "person": "az",
+      "answer": "annak ellenére",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-c07",
+      "sentence": "A szoba kicsi, ___ tiszta.",
+      "options": [
+        "viszont",
+        "mert",
+        "hogy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "viszont sets a second quality against the first: small, but on the other hand clean.",
+        "es": "viszont pone una segunda cualidad frente a la primera: pequeño, pero en cambio limpio."
+      },
+      "wrong": {
+        "mert": {
+          "en": "mert would say that the room is small because it is clean, which makes no sense.",
+          "es": "mert diría que el cuarto es pequeño porque está limpio, lo cual no tiene sentido."
+        },
+        "hogy": {
+          "en": "hogy starts a 'that' clause; it cannot join two descriptions of the room like this.",
+          "es": "hogy empieza una oración con «que»; no puede unir dos descripciones del cuarto así."
+        }
+      },
+      "examples": [
+        "Én kávét iszom, Péter viszont teát.",
+        "Az étel finom, az étterem viszont drága."
+      ],
+      "tr": {
+        "en": "The room is small, but on the other hand it is clean.",
+        "es": "El cuarto es pequeño, pero en cambio está limpio."
+      }
+    },
+    {
+      "id": "engedmeny-f09",
+      "kind": "form",
+      "verb": "de / ezért",
+      "person": "Ugyan fáradt vagyok, ___ dolgozom.",
+      "answer": "de",
+      "table": "engedmeny-szavak"
+    },
+    {
+      "id": "engedmeny-w03",
+      "kind": "why",
+      "es": "Anna otthon maradt, Péter azonban elment.",
+      "target": "azonban",
+      "tr": {
+        "en": "Anna stayed at home, Péter however left.",
+        "es": "Anna se quedó en casa, Péter en cambio se fue."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "'however': a contrast word that may stand after the first word of its clause",
+            "es": "«sin embargo»: una palabra de contraste que puede ir después de la primera palabra de su oración"
+          }
+        },
+        {
+          "text": {
+            "en": "a word that must open its clause, like de",
+            "es": "una palabra que debe abrir su oración, como de"
+          },
+          "wrong": {
+            "en": "With this rule only ..., azonban Péter elment would be allowed; but azonban, unlike de, can also stand after the first word.",
+            "es": "Con esta regla solo se permitiría ..., azonban Péter elment; pero azonban, a diferencia de de, también puede ir después de la primera palabra."
+          }
+        },
+        {
+          "text": {
+            "en": "'because': the reason why Péter left",
+            "es": "«porque»: la razón por la que Péter se fue"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna otthon maradt, mert Péter elment; azonban contrasts the two people, it gives no reason.",
+            "es": "Con esta regla la frase sería Anna otthon maradt, mert Péter elment; azonban contrasta a las dos personas, no da razón."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "engedmeny-f10",
+      "kind": "form",
+      "verb": "miatt",
+      "person": "baleset",
+      "answer": "a baleset miatt",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-c08",
+      "sentence": "A munka érdekes, ___ nehéz.",
+      "options": [
+        "ugyanakkor",
+        "ezért",
+        "hogy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ugyanakkor (at the same time) adds a second, opposite side to the same thing: interesting and at the same time hard.",
+        "es": "ugyanakkor (al mismo tiempo) añade un segundo lado, opuesto, a la misma cosa: interesante y al mismo tiempo difícil."
+      },
+      "wrong": {
+        "ezért": {
+          "en": "ezért would make the interest the reason for the difficulty; 'interesting, that is why hard' is illogical.",
+          "es": "ezért haría del interés la razón de la dificultad; «interesante, por eso difícil» es ilógico."
+        },
+        "hogy": {
+          "en": "hogy cannot link two descriptions of the same job; it introduces a 'that' clause.",
+          "es": "hogy no puede unir dos descripciones del mismo trabajo; introduce una oración con «que»."
+        }
+      },
+      "examples": [
+        "A város szép, ugyanakkor drága.",
+        "A szálloda olcsó, ugyanakkor messze van a központtól."
+      ],
+      "tr": {
+        "en": "The work is interesting and at the same time hard.",
+        "es": "El trabajo es interesante y al mismo tiempo difícil."
+      }
+    },
+    {
+      "id": "engedmeny-f11",
+      "kind": "form",
+      "verb": "ellenére",
+      "person": "forgalom",
+      "answer": "a forgalom ellenére",
+      "table": "miatt-ellenere"
+    },
+    {
+      "id": "engedmeny-c09",
+      "sentence": "Anna elment a koncertre, Péter ___ nem ment el.",
+      "options": [
+        "azonban",
+        "de",
+        "mert"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "azonban (however) can stand after the first word of the clause: Péter azonban nem ment el.",
+        "es": "azonban (sin embargo) puede ir después de la primera palabra de la oración: Péter azonban nem ment el."
+      },
+      "wrong": {
+        "de": {
+          "en": "de can only open its clause (..., de Péter nem ment el); after the subject it is impossible.",
+          "es": "de solo puede abrir su oración (..., de Péter nem ment el); después del sujeto es imposible."
+        },
+        "mert": {
+          "en": "mert also opens its clause, so it cannot stand after the subject; and it would give a reason, not a contrast.",
+          "es": "mert también abre su oración, así que no puede ir después del sujeto; y daría una razón, no un contraste."
+        }
+      },
+      "examples": [
+        "Meghívtuk Pétert. Azonban nem jött el.",
+        "A szálloda szép. A szoba azonban kicsi."
+      ],
+      "tr": {
+        "en": "Anna went to the concert, Péter however did not go.",
+        "es": "Anna fue al concierto, Péter en cambio no fue."
+      }
+    },
+    {
+      "id": "engedmeny-f12",
+      "kind": "form",
+      "verb": "viszont / ezért",
+      "person": "Én kávét iszom, Péter ___ teát.",
+      "answer": "viszont",
+      "accept": [
+        "pedig",
+        "azonban"
+      ],
+      "table": "engedmeny-szavak"
+    },
+    {
+      "id": "engedmeny-w04",
+      "kind": "why",
+      "es": "Ugyan sötét van, de még elmegyek a boltba.",
+      "target": "de",
+      "tr": {
+        "en": "It is dark, true, but I will still go to the shop.",
+        "es": "Es cierto que está oscuro, pero todavía voy a ir a la tienda."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "'so': the result of the dark",
+            "es": "«así que»: el resultado de la oscuridad"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Sötét van, ezért elmegyek a boltba; de does not give a result.",
+            "es": "Con esta regla la frase sería Sötét van, ezért elmegyek a boltba; de no da un resultado."
+          }
+        },
+        {
+          "text": {
+            "en": "'because': the reason for going",
+            "es": "«porque»: la razón de ir"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Elmegyek a boltba, mert sötét van; de gives no reason.",
+            "es": "Con esta regla la frase sería Elmegyek a boltba, mert sötét van; de no da razón."
+          }
+        },
+        {
+          "text": {
+            "en": "'but': the other side after ugyan (it is dark, true, but I still go)",
+            "es": "«pero»: el otro lado después de ugyan (es cierto que está oscuro, pero igual voy)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "engedmeny-c10",
+      "sentence": "Ugyan nem vagyok éhes, ___ eszem egy kis süteményt.",
+      "options": [
+        "de",
+        "ezért",
+        "hogy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ugyan admits a point and de gives the other side: not hungry, but I eat a little cake.",
+        "es": "ugyan admite un punto y de da el otro lado: no tengo hambre, pero como un poco de pastel."
+      },
+      "wrong": {
+        "ezért": {
+          "en": "ezért would say that not being hungry is the reason to eat cake, which is the wrong direction.",
+          "es": "ezért diría que no tener hambre es la razón para comer pastel, lo cual va en la dirección equivocada."
+        },
+        "hogy": {
+          "en": "hogy would start a 'that' clause; it does not link the two halves here.",
+          "es": "hogy empezaría una oración con «que»; no une las dos mitades aquí."
+        }
+      },
+      "examples": [
+        "Ugyan sötét van, de még elmegyek a boltba.",
+        "Ugyan Péter nem szereti a hideget, de szeret síelni."
+      ],
+      "tr": {
+        "en": "I am not hungry, admittedly, but I will have a little cake.",
+        "es": "Es cierto que no tengo hambre, pero voy a comer un poco de pastel."
+      }
+    },
+    {
+      "id": "engedmeny-c11",
+      "sentence": "Bár ma egész nap ___ az eső, elmegyünk a piacra.",
+      "options": [
+        "esik",
+        "essen",
+        "esni"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bár takes the plain indicative: esik (it rains).",
+        "es": "bár lleva el indicativo normal: esik (llueve)."
+      },
+      "wrong": {
+        "essen": {
+          "en": "essen is the -j form, used for orders and after hogy (Azt akarom, hogy ne essen). A bár clause states a fact, so it is not used.",
+          "es": "essen es la forma en -j, que se usa para órdenes y después de hogy (Azt akarom, hogy ne essen). Una oración con bár afirma un hecho, así que no se usa."
+        },
+        "esni": {
+          "en": "esni is the infinitive; a bár clause needs a verb with a person ending.",
+          "es": "esni es el infinitivo; una oración con bár necesita un verbo con terminación de persona."
+        }
+      },
+      "examples": [
+        "Bár hideg van, úszunk.",
+        "Noha Kati sokat tanult, megbukott a vizsgán."
+      ],
+      "tr": {
+        "en": "Although it rains all day today, we are going to the market.",
+        "es": "Aunque hoy llueve todo el día, vamos al mercado."
+      }
+    },
+    {
+      "id": "engedmeny-c12",
+      "sentence": "___ Kati sokat tanult, megbukott a vizsgán.",
+      "options": [
+        "Habár",
+        "Ezért",
+        "Mert"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Habár (although) presents studying a lot as the obstacle; failing is the surprising result.",
+        "es": "Habár (aunque) presenta estudiar mucho como el obstáculo; reprobar es el resultado sorprendente."
+      },
+      "wrong": {
+        "Ezért": {
+          "en": "Ezért would make studying a lot the reason for failing: it gives an expected result where the sentence needs a contrast.",
+          "es": "Ezért haría de estudiar mucho la razón de reprobar: da un resultado esperado donde la frase necesita un contraste."
+        },
+        "Mert": {
+          "en": "Mert cannot start a sentence like this; a mert clause follows the main clause and gives a reason, but here we need a contrast.",
+          "es": "Mert no puede empezar una frase así; una oración con mert sigue a la principal y da una razón, pero aquí hace falta un contraste."
+        }
+      },
+      "examples": [
+        "Habár drága volt a telefon, megvettem.",
+        "Habár fáradt, Péter még dolgozik."
+      ],
+      "tr": {
+        "en": "Although Kati studied a lot, she failed the exam.",
+        "es": "Aunque Kati estudió mucho, reprobó el examen."
+      }
+    },
+    {
+      "id": "engedmeny-c13",
+      "sentence": "Péter sokat dolgozott. ___ nagyon fáradt volt.",
+      "options": [
+        "Emiatt",
+        "Ennek ellenére",
+        "Mégis"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Emiatt (because of this) fits: working a lot is the reason for being tired.",
+        "es": "Emiatt (por esto) encaja: trabajar mucho es la razón de estar cansado."
+      },
+      "wrong": {
+        "Ennek ellenére": {
+          "en": "Ennek ellenére would say that, in spite of working a lot, he was tired; but tiredness is the expected result of work, so there is nothing to concede.",
+          "es": "Ennek ellenére diría que, a pesar de trabajar mucho, estaba cansado; pero el cansancio es el resultado esperado del trabajo, así que no hay nada que conceder."
+        },
+        "Mégis": {
+          "en": "Mégis marks a surprising result ('still'), but being tired after much work is not surprising.",
+          "es": "Mégis marca un resultado sorprendente («aun así»), pero estar cansado después de mucho trabajo no sorprende."
+        }
+      },
+      "examples": [
+        "Esik a hó. Emiatt nem megyünk a hegyre.",
+        "A szálloda messze van. Emiatt autóval megyünk."
+      ],
+      "tr": {
+        "en": "Péter worked a lot. Because of this he was very tired.",
+        "es": "Péter trabajó mucho. Por esto estaba muy cansado."
+      }
+    },
+    {
+      "id": "engedmeny-c14",
+      "sentence": "Az ___ ellenére elmentünk sétálni.",
+      "options": [
+        "eső",
+        "esőnek",
+        "esőt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ellenére follows the bare noun (with its article): az eső ellenére. The noun takes no case ending.",
+        "es": "ellenére sigue al sustantivo sin terminación (con su artículo): az eső ellenére. El sustantivo no lleva caso."
+      },
+      "wrong": {
+        "esőnek": {
+          "en": "esőnek is the dative; the dative appears only in the pronoun forms ennek ellenére and annak ellenére, never on a noun.",
+          "es": "esőnek es el dativo; el dativo solo aparece en las formas de pronombre ennek ellenére y annak ellenére, nunca en un sustantivo."
+        },
+        "esőt": {
+          "en": "esőt is the accusative; ellenére does not ask for the accusative, and the sentence would not be about the rain as an object.",
+          "es": "esőt es el acusativo; ellenére no pide acusativo, y la frase no hablaría de la lluvia como objeto."
+        }
+      },
+      "examples": [
+        "A hó ellenére a gyerekek a parkban játszottak.",
+        "A baleset ellenére Anna időben megérkezett."
+      ],
+      "tr": {
+        "en": "In spite of the rain we went for a walk.",
+        "es": "A pesar de la lluvia fuimos a caminar."
+      }
+    }
+  ]
+}

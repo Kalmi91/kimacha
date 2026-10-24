@@ -1,0 +1,1466 @@
+{
+  "schema": 2,
+  "topic": "hatarozatlan-nevmasok",
+  "level": "B1",
+  "title": {
+    "en": "Somebody, anybody, nobody: valaki, bárki, senki",
+    "es": "Alguien, cualquiera, nadie: valaki, bárki, senki"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian builds a whole family of words from the question words ki (who), mi (what), hol (where) and mikor (when). Put a prefix in front and you get four meanings: val(a)- = some- (valaki = somebody), bár- = any-at-all (bárki = anybody, whoever), minden- = every- (mindenki = everybody), se- = no- (senki = nobody). English has somebody, anybody, everybody, nobody; Spanish has alguien, cualquiera, todos, nadie. The system is the same for people, things, places and times, so once you know the four prefixes you know the whole family. One rule is stricter than in English: the se- words (senki, semmi, sehol, soha) always go with a negative verb, as in Spanish: Nem látok senkit = No veo a nadie.",
+        "es": "El húngaro forma toda una familia de palabras a partir de las palabras interrogativas ki (quién), mi (qué), hol (dónde) y mikor (cuándo). Con un prefijo delante salen cuatro significados: val(a)- = algún- (valaki = alguien), bár- = cualquier- (bárki = cualquiera, quienquiera), minden- = todo- (mindenki = todos, todo el mundo), se- = ningún- (senki = nadie). El sistema es el mismo para personas, cosas, lugares y momentos, así que con los cuatro prefijos ya conoces toda la familia. Una regla es más estricta que en inglés: las palabras con se- (senki, semmi, sehol, soha) siempre van con un verbo negativo, como en español: Nem látok senkit = No veo a nadie."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "nevmas-rendszer",
+      "title": {
+        "en": "The four families",
+        "es": "Las cuatro familias"
+      },
+      "header": [
+        {
+          "en": "Prefix",
+          "es": "Prefijo"
+        },
+        {
+          "en": "ki? (who)",
+          "es": "ki? (quién)"
+        },
+        {
+          "en": "mi? (what)",
+          "es": "mi? (qué)"
+        },
+        {
+          "en": "hol? (where)",
+          "es": "hol? (dónde)"
+        },
+        {
+          "en": "mikor? (when)",
+          "es": "mikor? (cuándo)"
+        }
+      ],
+      "rows": [
+        [
+          "val(a)-",
+          "valaki",
+          "valami",
+          "valahol",
+          "valamikor"
+        ],
+        [
+          "bár-",
+          "bárki",
+          "bármi",
+          "bárhol",
+          "bármikor"
+        ],
+        [
+          "minden-",
+          "mindenki",
+          "minden",
+          "mindenhol",
+          "mindig"
+        ],
+        [
+          "se-",
+          "senki",
+          "semmi",
+          "sehol",
+          "soha"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nevmas-irany",
+      "title": {
+        "en": "Place words: where, where to, where from",
+        "es": "Palabras de lugar: dónde, adónde, de dónde"
+      },
+      "header": [
+        {
+          "en": "Prefix",
+          "es": "Prefijo"
+        },
+        {
+          "en": "hol? (where)",
+          "es": "hol? (dónde)"
+        },
+        {
+          "en": "hova? (where to)",
+          "es": "hova? (adónde)"
+        },
+        {
+          "en": "honnan? (where from)",
+          "es": "honnan? (de dónde)"
+        }
+      ],
+      "rows": [
+        [
+          "val(a)-",
+          "valahol",
+          "valahova",
+          "valahonnan"
+        ],
+        [
+          "bár-",
+          "bárhol",
+          "bárhova",
+          "bárhonnan"
+        ],
+        [
+          "minden-",
+          "mindenhol",
+          "mindenhova",
+          "mindenhonnan"
+        ],
+        [
+          "se-",
+          "sehol",
+          "sehova",
+          "sehonnan"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "What the four prefixes mean",
+        "es": "Qué significan los cuatro prefijos"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "val(a)- = some-: there is one, but you do not say or do not know which. It also covers English \"any\" in questions and if-clauses: Van itt valaki? = Is anybody here?",
+            "es": "val(a)- = algún-: existe, pero no dices cuál o no lo sabes. También cubre el inglés «any» en preguntas y condiciones: Van itt valaki? = ¿Hay alguien aquí?"
+          },
+          "examples": [
+            {
+              "es": "Keresek valakit, aki tud angolul.",
+              "tr": {
+                "en": "I am looking for someone who speaks English.",
+                "es": "Busco a alguien que hable inglés."
+              }
+            },
+            {
+              "es": "A kulcsom valahol itt van.",
+              "tr": {
+                "en": "My key is somewhere around here.",
+                "es": "Mi llave está por aquí, en algún sitio."
+              }
+            },
+            {
+              "es": "Valamikor elmegyünk Debrecenbe.",
+              "tr": {
+                "en": "Sometime we will go to Debrecen.",
+                "es": "Algún día iremos a Debrecen."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "bár- = any-at-all, whoever, whatever: you may choose freely, it makes no difference which.",
+            "es": "bár- = cualquier-: puedes elegir libremente, da igual cuál. Equivale a cualquiera, cualquier cosa, en cualquier momento (y al inglés «whoever, whatever»)."
+          },
+          "examples": [
+            {
+              "es": "A múzeum ingyenes, bárki bemehet.",
+              "tr": {
+                "en": "The museum is free, anybody can go in.",
+                "es": "El museo es gratis, cualquiera puede entrar."
+              }
+            },
+            {
+              "es": "Bármikor hívhatsz.",
+              "tr": {
+                "en": "You can call me any time.",
+                "es": "Puedes llamarme en cualquier momento."
+              }
+            },
+            {
+              "es": "Bármit kérsz, megkapod.",
+              "tr": {
+                "en": "Whatever you ask for, you will get it.",
+                "es": "Lo que pidas, lo tendrás."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "minden- = every-, all: mindenki (everybody, grammatically singular), minden (everything), mindenhol (everywhere). The time word is irregular: mindig (always).",
+            "es": "minden- = todo-: mindenki (todos, gramaticalmente singular), minden (todo), mindenhol (en todas partes). La palabra de tiempo es irregular: mindig (siempre)."
+          },
+          "examples": [
+            {
+              "es": "Mindenki itt van, kezdhetjük.",
+              "tr": {
+                "en": "Everybody is here, we can start.",
+                "es": "Todos están aquí, podemos empezar."
+              }
+            },
+            {
+              "es": "Mindenhol sok ember van.",
+              "tr": {
+                "en": "There are many people everywhere.",
+                "es": "Hay mucha gente por todas partes."
+              }
+            },
+            {
+              "es": "Mindig korán kelek.",
+              "tr": {
+                "en": "I always get up early.",
+                "es": "Siempre me levanto temprano."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "se- = no-: senki, semmi, sehol, soha, sehogy. They always need a negative verb (nem) with them, like Spanish nadie, nada, nunca.",
+            "es": "se- = ningún-: senki, semmi, sehol, soha, sehogy. Siempre necesitan un verbo negativo (nem), como en español nadie, nada, nunca."
+          },
+          "examples": [
+            {
+              "es": "Senki nem jött el.",
+              "tr": {
+                "en": "Nobody came.",
+                "es": "No vino nadie."
+              }
+            },
+            {
+              "es": "Sehol nem találom a kulcsomat.",
+              "tr": {
+                "en": "I cannot find my key anywhere.",
+                "es": "No encuentro mi llave en ninguna parte."
+              }
+            },
+            {
+              "es": "Soha nem voltam Debrecenben.",
+              "tr": {
+                "en": "I have never been to Debrecen.",
+                "es": "Nunca he estado en Debrecen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Six rules that matter",
+        "es": "Seis reglas importantes"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The se- words need a negative verb. If the se- word comes first, the verb has nem or sem in front of it: Senki nem jött, Senki sem jött. If the verb comes first, it is negated with nem: Nem jött senki. Unlike English, the verb is always negative.",
+            "es": "Las palabras con se- necesitan un verbo negativo. Si la palabra con se- va primero, el verbo lleva delante nem o sem: Senki nem jött, Senki sem jött. Si el verbo va primero, se niega con nem: Nem jött senki. A diferencia del inglés, el verbo siempre es negativo."
+          },
+          "examples": [
+            {
+              "es": "Nem látok semmit.",
+              "tr": {
+                "en": "I do not see anything.",
+                "es": "No veo nada."
+              }
+            },
+            {
+              "es": "Senki sem tudja a választ.",
+              "tr": {
+                "en": "Nobody knows the answer.",
+                "es": "Nadie sabe la respuesta."
+              }
+            },
+            {
+              "es": "Nem jött senki az órára.",
+              "tr": {
+                "en": "Nobody came to the class.",
+                "es": "No vino nadie a la clase."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In questions and in ha-clauses (if), Hungarian uses val(a)-, where English says \"any\": Van itt valaki? Not senki there (it needs a negative verb); bárki in a question stresses \"anybody at all\". After nincs the person or thing that is missing has no -t (nincs senki, not nincs senkit): Nincs itt senki.",
+            "es": "En preguntas y en oraciones con ha (si), el húngaro usa val(a)- donde el inglés dice «any»: Van itt valaki? No senki ahí (necesita un verbo negativo); bárki en una pregunta subraya «cualquiera, sea quien sea». Después de nincs, lo que falta no lleva -t (nincs senki, no nincs senkit): Nincs itt senki."
+          },
+          "examples": [
+            {
+              "es": "Hallasz valamit?",
+              "tr": {
+                "en": "Do you hear anything?",
+                "es": "¿Oyes algo?"
+              }
+            },
+            {
+              "es": "Ha valami kell, hívj fel!",
+              "tr": {
+                "en": "If you need anything, call me!",
+                "es": "¡Si necesitas algo, llámame!"
+              }
+            },
+            {
+              "es": "Nincs itt senki.",
+              "tr": {
+                "en": "There is nobody here.",
+                "es": "Aquí no hay nadie."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Endings go on the word as on any noun (see the two tables below). These words always take the front-vowel forms, like ki and mi: valakivel, valamiről, senkinek, semmit.",
+            "es": "Las terminaciones se añaden a la palabra como a cualquier sustantivo (mira las dos tablas de abajo). Estas palabras siempre toman las formas de vocal anterior, igual que ki y mi: valakivel, valamiről, senkinek, semmit."
+          },
+          "examples": [
+            {
+              "es": "Tegnap találkoztam valakivel, aki ismer téged.",
+              "tr": {
+                "en": "Yesterday I met somebody who knows you.",
+                "es": "Ayer me encontré con alguien que te conoce."
+              }
+            },
+            {
+              "es": "Nem találkoztam senkivel.",
+              "tr": {
+                "en": "I did not meet anybody.",
+                "es": "No me encontré con nadie."
+              }
+            },
+            {
+              "es": "Szeretnék veled beszélni valamiről.",
+              "tr": {
+                "en": "I would like to talk to you about something.",
+                "es": "Quisiera hablar contigo de algo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Place words come in three forms, chosen by the verb: hol (where something is), hova (where it goes), honnan (where it comes from).",
+            "es": "Las palabras de lugar tienen tres formas, según el verbo: hol (dónde está algo), hova (adónde va), honnan (de dónde viene)."
+          },
+          "examples": [
+            {
+              "es": "Anna valahol Szegeden lakik.",
+              "tr": {
+                "en": "Anna lives somewhere in Szeged.",
+                "es": "Anna vive en algún lugar de Szeged."
+              }
+            },
+            {
+              "es": "Hétvégén elmegyünk valahova.",
+              "tr": {
+                "en": "At the weekend we are going somewhere.",
+                "es": "El fin de semana nos vamos a algún lado."
+              }
+            },
+            {
+              "es": "Valahonnan hallom a zenét.",
+              "tr": {
+                "en": "I hear the music coming from somewhere.",
+                "es": "Oigo la música desde algún lado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "valaki, valami, bárki, senki, semmi are indefinite objects, so the verb takes the indefinite form (keresek, látok), like with egy ember. A name or a/az + noun needs the definite form (keresem Annát).",
+            "es": "valaki, valami, bárki, senki, semmi son objetos indefinidos, así que el verbo toma la forma indefinida (keresek, látok), como con egy ember. Un nombre o a/az + sustantivo pide la forma definida (keresem Annát)."
+          },
+          "examples": [
+            {
+              "es": "Keresek valakit.",
+              "tr": {
+                "en": "I am looking for somebody.",
+                "es": "Busco a alguien."
+              }
+            },
+            {
+              "es": "Keresem Annát.",
+              "tr": {
+                "en": "I am looking for Anna.",
+                "es": "Busco a Anna."
+              }
+            },
+            {
+              "es": "Hallok valamit.",
+              "tr": {
+                "en": "I hear something.",
+                "es": "Oigo algo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mindenki is singular: the verb stays in the 3rd person singular, although many people are meant. Spanish \"todos están\" becomes Mindenki itt van.",
+            "es": "mindenki es singular: el verbo se queda en 3.ª persona del singular, aunque se trate de mucha gente. El español «todos están» pasa a ser Mindenki itt van."
+          },
+          "examples": [
+            {
+              "es": "Mindenki dolgozik.",
+              "tr": {
+                "en": "Everybody is working.",
+                "es": "Todos están trabajando."
+              }
+            },
+            {
+              "es": "Mindenki már itt van.",
+              "tr": {
+                "en": "Everybody is already here.",
+                "es": "Todos ya están aquí."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nevmas-ki-esetek",
+      "title": {
+        "en": "Endings on the people words",
+        "es": "Terminaciones en las palabras de personas"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "valaki (somebody)",
+          "es": "valaki (alguien)"
+        },
+        {
+          "en": "senki (nobody)",
+          "es": "senki (nadie)"
+        },
+        {
+          "en": "bárki (anybody)",
+          "es": "bárki (cualquiera)"
+        },
+        {
+          "en": "mindenki (everybody)",
+          "es": "mindenki (todos)"
+        }
+      ],
+      "rows": [
+        [
+          "-t",
+          "valakit",
+          "senkit",
+          "bárkit",
+          "mindenkit"
+        ],
+        [
+          "-nek",
+          "valakinek",
+          "senkinek",
+          "bárkinek",
+          "mindenkinek"
+        ],
+        [
+          "-val/-vel",
+          "valakivel",
+          "senkivel",
+          "bárkivel",
+          "mindenkivel"
+        ],
+        [
+          "-ról/-ről",
+          "valakiről",
+          "senkiről",
+          "bárkiről",
+          "mindenkiről"
+        ],
+        [
+          "-hoz/-hez",
+          "valakihez",
+          "senkihez",
+          "bárkihez",
+          "mindenkihez"
+        ],
+        [
+          "-tól/-től",
+          "valakitől",
+          "senkitől",
+          "bárkitől",
+          "mindenkitől"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nevmas-mi-esetek",
+      "title": {
+        "en": "Endings on the thing words",
+        "es": "Terminaciones en las palabras de cosas"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "valami (something)",
+          "es": "valami (algo)"
+        },
+        {
+          "en": "semmi (nothing)",
+          "es": "semmi (nada)"
+        },
+        {
+          "en": "bármi (anything)",
+          "es": "bármi (cualquier cosa)"
+        },
+        {
+          "en": "minden (everything)",
+          "es": "minden (todo)"
+        }
+      ],
+      "rows": [
+        [
+          "-t",
+          "valamit",
+          "semmit",
+          "bármit",
+          "mindent"
+        ],
+        [
+          "-nek",
+          "valaminek",
+          "semminek",
+          "bárminek",
+          "mindennek"
+        ],
+        [
+          "-val/-vel",
+          "valamivel",
+          "semmivel",
+          "bármivel",
+          "mindennel"
+        ],
+        [
+          "-ról/-ről",
+          "valamiről",
+          "semmiről",
+          "bármiről",
+          "mindenről"
+        ],
+        [
+          "-hoz/-hez",
+          "valamihez",
+          "semmihez",
+          "bármihez",
+          "mindenhez"
+        ],
+        [
+          "-tól/-től",
+          "valamitől",
+          "semmitől",
+          "bármitől",
+          "mindentől"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Which word do I need?",
+        "es": "¿Qué palabra necesito?"
+      },
+      "pairs": [
+        {
+          "a": "Van itt valaki?",
+          "b": "Nincs itt senki.",
+          "note": {
+            "en": "A question or an offer uses val(a)-: Van itt valaki? A negative answer uses the se- word with nincs or a negative verb. English \"anybody\" is valaki in the question and senki in the answer; Spanish alguien and nadie.",
+            "es": "Una pregunta o un ofrecimiento usa val(a)-: Van itt valaki? Una respuesta negativa usa la palabra con se- junto a nincs o a un verbo negativo. El inglés «anybody» es valaki en la pregunta y senki en la respuesta; en español alguien y nadie."
+          },
+          "examples": [
+            {
+              "es": "Van valaki a konyhában?",
+              "tr": {
+                "en": "Is there anybody in the kitchen?",
+                "es": "¿Hay alguien en la cocina?"
+              }
+            },
+            {
+              "es": "Nem, a konyhában nincs senki.",
+              "tr": {
+                "en": "No, there is nobody in the kitchen.",
+                "es": "No, en la cocina no hay nadie."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Bárki jöhet.",
+          "b": "Mindenki jön.",
+          "note": {
+            "en": "bár- says that anybody is free to do it (permission, possibility); minden- says that all of them really do it. bárki = cualquiera, mindenki = todos.",
+            "es": "bár- dice que cualquiera es libre de hacerlo (permiso, posibilidad); minden- dice que todos lo hacen de verdad. bárki = cualquiera, mindenki = todos."
+          },
+          "examples": [
+            {
+              "es": "A koncert ingyenes, bárki jöhet.",
+              "tr": {
+                "en": "The concert is free, anybody can come.",
+                "es": "El concierto es gratis, cualquiera puede venir."
+              }
+            },
+            {
+              "es": "Ma este mindenki jön.",
+              "tr": {
+                "en": "Everybody is coming tonight.",
+                "es": "Esta noche viene todo el mundo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Valamikor Mexikóba megyek.",
+          "b": "Soha nem megyek Mexikóba.",
+          "note": {
+            "en": "valamikor = sometime (it will happen, you do not know when); soha nem = never (negative, with nem); bármikor = whenever you like; mindig = always.",
+            "es": "valamikor = algún día (ocurrirá, no sabes cuándo); soha nem = nunca (negativo, con nem); bármikor = cuando quieras; mindig = siempre."
+          },
+          "examples": [
+            {
+              "es": "Valamikor Mexikóba megyek.",
+              "tr": {
+                "en": "Sometime I will go to Mexico.",
+                "es": "Algún día iré a México."
+              }
+            },
+            {
+              "es": "Soha nem megyek Mexikóba.",
+              "tr": {
+                "en": "I will never go to Mexico.",
+                "es": "Nunca iré a México."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Three traps. (1) English \"I do not see anybody\" is Nem látok senkit. Nem látok valakit exists, but it means something else (there is somebody I cannot see). Hungarian wants the se- word and nem together. (2) Do not use a se- word with a positive verb: Senki jött is wrong, Senki nem jött is right (Spanish can say Nadie vino without no; Hungarian always needs nem or sem). (3) mindenki takes a singular verb: Mindenki itt van. Register: soha nem and sosem are both everyday; sosem is the short, spoken form. In careful writing you will also see sohasem, and bárhová, valahová, sehová with á. In everyday speech and in messages bárhova, valahova, sehova are what people write; both spellings are correct.",
+        "es": "Tres trampas. (1) El inglés «I do not see anybody» es Nem látok senkit. Nem látok valakit existe, pero significa otra cosa (hay alguien a quien no veo). El húngaro quiere la palabra con se- y nem juntas. (2) No uses una palabra con se- con un verbo positivo: Senki jött es incorrecto, Senki nem jött es correcto (el español puede decir Nadie vino sin no; el húngaro siempre necesita nem o sem). (3) mindenki lleva el verbo en singular: Mindenki itt van. Registro: soha nem y sosem son de uso diario; sosem es la forma corta, hablada. En la escritura cuidada también verás sohasem, y bárhová, valahová, sehová con á. En el habla diaria y en mensajes la gente escribe bárhova, valahova, sehova; las dos ortografías son correctas."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian makes these words from the question words. «Ki» gives «valaki», «bárki», «mindenki» and «senki». «Mi» gives «valami», «bármi», «minden» and «semmi». The words with «se» need a negative verb: «Nem látok senkit». In a question Hungarian uses «valaki», not «senki»: «Van itt valaki?». The word «bárki» means anybody at all: «Bárki jöhet». And «mindenki» takes a singular verb: «Mindenki itt van».",
+    "es": "El húngaro forma estas palabras a partir de las palabras interrogativas. «Ki» da «valaki», «bárki», «mindenki» y «senki». «Mi» da «valami», «bármi», «minden» y «semmi». Las palabras con «se» necesitan un verbo negativo: «Nem látok senkit». En una pregunta el húngaro usa «valaki», no «senki»: «Van itt valaki?». La palabra «bárki» significa cualquiera: «Bárki jöhet». Y «mindenki» lleva el verbo en singular: «Mindenki itt van»."
+  },
+  "glossary": [
+    {
+      "word": "valami",
+      "gloss": {
+        "en": "something",
+        "es": "algo"
+      }
+    },
+    {
+      "word": "bármi",
+      "gloss": {
+        "en": "anything at all",
+        "es": "cualquier cosa"
+      }
+    },
+    {
+      "word": "sosem",
+      "gloss": {
+        "en": "never (short for soha nem)",
+        "es": "nunca (forma corta de soha nem)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "hatarozatlan-nevmasok-c01",
+      "sentence": "Este van, az irodában már nincs ___, mindenki hazament.",
+      "options": [
+        "sehol",
+        "senki",
+        "senkit"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After nincs the person word stays in its plain form, with no -t: nincs senki (there is nobody). nincs already carries the negation.",
+        "es": "Después de nincs la palabra de persona queda en su forma simple, sin -t: nincs senki (no hay nadie). nincs ya lleva la negación."
+      },
+      "wrong": {
+        "sehol": {
+          "en": "sehol means nowhere; here you need a person (mindenki hazament, so nobody is left).",
+          "es": "sehol significa en ninguna parte; aquí hace falta una persona (mindenki hazament, no queda nadie)."
+        },
+        "senkit": {
+          "en": "senkit is the accusative, the object form (Nem látok senkit). nincs takes no object: what is missing stays plain, nincs senki.",
+          "es": "senkit es el acusativo, la forma del objeto (Nem látok senkit). nincs no lleva objeto: lo que falta queda simple, nincs senki."
+        }
+      },
+      "examples": [
+        "Az irodában nincs senki.",
+        "Nincs itt senki."
+      ],
+      "tr": {
+        "en": "It is evening, there is nobody left in the office, everybody went home.",
+        "es": "Es de noche, ya no hay nadie en la oficina, todos se fueron a casa."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f01",
+      "kind": "form",
+      "verb": "ki?",
+      "person": "se-",
+      "answer": "senki",
+      "table": "nevmas-rendszer"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c02",
+      "sentence": "Nem ismerek itt ___, mert most költöztem ide.",
+      "options": [
+        "senkivel",
+        "senkit",
+        "senki"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ismer takes a direct object, so the se- word gets the accusative -t: senkit. The verb is negated with nem, as always with se- words.",
+        "es": "ismer lleva objeto directo, así que la palabra con se- toma el acusativo -t: senkit. El verbo se niega con nem, como siempre con las palabras con se-."
+      },
+      "wrong": {
+        "senkivel": {
+          "en": "senkivel is \"with nobody\" (Nem találkoztam senkivel). ismer wants an object, not a \"with\" phrase.",
+          "es": "senkivel es «con nadie» (Nem találkoztam senkivel). ismer pide un objeto, no un complemento con «con»."
+        },
+        "senki": {
+          "en": "senki without -t is the subject form (Senki nem jött). Here nobody is the object of ismerek, so it needs -t.",
+          "es": "senki sin -t es la forma del sujeto (Senki nem jött). Aquí nadie es el objeto de ismerek, así que necesita -t."
+        }
+      },
+      "examples": [
+        "Nem ismerek senkit Szegeden.",
+        "Senkit sem ismerek itt."
+      ],
+      "tr": {
+        "en": "I do not know anybody here because I have just moved here.",
+        "es": "No conozco a nadie aquí porque acabo de mudarme."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f02",
+      "kind": "form",
+      "verb": "mi?",
+      "person": "val(a)-",
+      "answer": "valami",
+      "table": "nevmas-rendszer"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c03",
+      "sentence": "___ sem tudja, hol van Péter.",
+      "options": [
+        "Valaki",
+        "Mindenki",
+        "Senki"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sem (\"not even, neither\") needs a negative word in front of it: Senki sem tudja = nobody knows.",
+        "es": "sem («tampoco, ni») necesita una palabra negativa delante: Senki sem tudja = nadie sabe."
+      },
+      "wrong": {
+        "Valaki": {
+          "en": "Valaki sem would be \"somebody neither\", which is not Hungarian: val(a)- words never combine with sem.",
+          "es": "Valaki sem sería «alguien tampoco», que no existe en húngaro: las palabras con val(a)- nunca se combinan con sem."
+        },
+        "Mindenki": {
+          "en": "Mindenki sem tudja is not possible either; \"not everybody knows\" is Nem mindenki tudja.",
+          "es": "Mindenki sem tudja tampoco es posible; «no todos saben» es Nem mindenki tudja."
+        }
+      },
+      "examples": [
+        "Semmit sem tudok.",
+        "Sehova sem megyek."
+      ],
+      "tr": {
+        "en": "Nobody knows where Péter is.",
+        "es": "Nadie sabe dónde está Péter."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-w01",
+      "kind": "why",
+      "es": "Nem látok senkit.",
+      "target": "senkit",
+      "tr": {
+        "en": "I do not see anybody.",
+        "es": "No veo a nadie."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "senkit already makes the sentence negative, so nem is not needed",
+            "es": "senkit ya vuelve negativa la frase, así que nem no hace falta"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Látok senkit, which is not Hungarian: the se- word always travels with nem.",
+            "es": "Con esta regla la frase sería Látok senkit, que no es húngaro: la palabra con se- siempre va con nem."
+          }
+        },
+        {
+          "text": {
+            "en": "The se- word needs a negative verb: nem and senkit together mean \"I do not see anybody\"",
+            "es": "La palabra con se- necesita un verbo negativo: nem y senkit juntos significan «no veo a nadie»"
+          }
+        },
+        {
+          "text": {
+            "en": "senkit means \"somebody\" and nem only adds emphasis",
+            "es": "senkit significa «alguien» y nem solo añade énfasis"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use valakit (Nem látok valakit = there is somebody I do not see); senkit is the \"nobody\" word.",
+            "es": "Con esta regla la frase usaría valakit (Nem látok valakit = hay alguien a quien no veo); senkit es la palabra «nadie»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f03",
+      "kind": "form",
+      "verb": "hol?",
+      "person": "minden-",
+      "answer": "mindenhol",
+      "table": "nevmas-rendszer"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c04",
+      "sentence": "Hétvégén ___ sem megyünk, otthon maradunk.",
+      "options": [
+        "sehova",
+        "sehol",
+        "sehonnan"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "megyünk expresses movement to a place, so you need the \"where to\" word: sehova (nowhere to). With sem it is the se- family.",
+        "es": "megyünk expresa movimiento hacia un lugar, así que necesitas la palabra de «adónde»: sehova (a ninguna parte). Con sem es la familia se-."
+      },
+      "wrong": {
+        "sehol": {
+          "en": "sehol is \"nowhere\" for a fixed place (Sehol sem találom). With megyünk you need the direction word.",
+          "es": "sehol es «en ninguna parte» para un lugar fijo (Sehol sem találom). Con megyünk necesitas la palabra de dirección."
+        },
+        "sehonnan": {
+          "en": "sehonnan is \"from nowhere\", the direction away from a place.",
+          "es": "sehonnan es «de ninguna parte», la dirección de salida de un lugar."
+        }
+      },
+      "examples": [
+        "Sehova nem megyünk.",
+        "Sehol sem találom."
+      ],
+      "tr": {
+        "en": "At the weekend we are not going anywhere, we are staying at home.",
+        "es": "El fin de semana no vamos a ningún lado, nos quedamos en casa."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f04",
+      "kind": "form",
+      "verb": "mikor?",
+      "person": "bár-",
+      "answer": "bármikor",
+      "table": "nevmas-rendszer"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c05",
+      "sentence": "Hívjak ___, aki tud segíteni?",
+      "options": [
+        "senkit",
+        "valakit",
+        "semmit"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In an offer or a question Hungarian uses val(a)-: valakit (somebody). Hívjak is the indefinite form, matching the indefinite valakit.",
+        "es": "En un ofrecimiento o una pregunta el húngaro usa val(a)-: valakit (a alguien). Hívjak es la forma indefinida, que va con el indefinido valakit."
+      },
+      "wrong": {
+        "senkit": {
+          "en": "senkit means \"nobody\" and needs a negative verb (Ne hívj senkit). Here you offer to call someone.",
+          "es": "senkit significa «a nadie» y necesita un verbo negativo (Ne hívj senkit). Aquí ofreces llamar a alguien."
+        },
+        "semmit": {
+          "en": "semmit is \"nothing\", a thing; you cannot call a thing, and it needs a negative verb.",
+          "es": "semmit es «nada», una cosa; no se puede llamar a una cosa, y necesita un verbo negativo."
+        }
+      },
+      "examples": [
+        "Kell segítség? Hívok valakit.",
+        "Hívjak valakit?"
+      ],
+      "tr": {
+        "en": "Shall I call somebody who can help?",
+        "es": "¿Llamo a alguien que pueda ayudar?"
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c06",
+      "sentence": "Elnézést, van itt ___ egy posta?",
+      "options": [
+        "valahova",
+        "valahonnan",
+        "valahol"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "van asks where something is, a fixed place, so you need the \"where\" word: valahol (somewhere).",
+        "es": "van pregunta dónde está algo, un lugar fijo, así que necesitas la palabra de «dónde»: valahol (en algún lugar)."
+      },
+      "wrong": {
+        "valahova": {
+          "en": "valahova means \"to somewhere\" and goes with a movement verb (Valahova megyek).",
+          "es": "valahova significa «a algún lugar» y va con un verbo de movimiento (Valahova megyek)."
+        },
+        "valahonnan": {
+          "en": "valahonnan means \"from somewhere\" (Valahonnan jön a zene).",
+          "es": "valahonnan significa «de algún lugar» (Valahonnan jön a zene)."
+        }
+      },
+      "examples": [
+        "Valahol itt van a posta.",
+        "Van valahol egy jó étterem?"
+      ],
+      "tr": {
+        "en": "Excuse me, is there a post office somewhere around here?",
+        "es": "Disculpe, ¿hay una oficina de correos por aquí?"
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f05",
+      "kind": "form",
+      "verb": "mikor?",
+      "person": "se-",
+      "answer": "soha",
+      "table": "nevmas-rendszer"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-w02",
+      "kind": "why",
+      "es": "Mindenki itt van.",
+      "target": "van",
+      "tr": {
+        "en": "Everybody is here.",
+        "es": "Todos están aquí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "mindenki is singular, so the verb is van",
+            "es": "mindenki es singular, así que el verbo es van"
+          }
+        },
+        {
+          "text": {
+            "en": "Many people are meant, so the verb has to be plural: vannak",
+            "es": "Se trata de mucha gente, así que el verbo tiene que ir en plural: vannak"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mindenki itt vannak, which Hungarian does not accept: mindenki always takes a singular verb.",
+            "es": "Con esta regla la frase sería Mindenki itt vannak, que el húngaro no acepta: mindenki siempre lleva el verbo en singular."
+          }
+        },
+        {
+          "text": {
+            "en": "After itt the verb is always van, whatever the subject",
+            "es": "Después de itt el verbo siempre es van, sea cual sea el sujeto"
+          },
+          "wrong": {
+            "en": "With this rule you would also say A gyerekek itt van; but the verb agrees with its subject, and here the subject happens to be singular.",
+            "es": "Con esta regla también dirías A gyerekek itt van; pero el verbo concuerda con su sujeto, y aquí el sujeto es singular."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c07",
+      "sentence": "___ kérsz, megkapod.",
+      "options": [
+        "Bármit",
+        "Valamit",
+        "Semmit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bár- + a question word works like \"whatever\": Bármit kérsz = whatever you ask for. kérsz is the indefinite form, matching bármit.",
+        "es": "bár- + una palabra interrogativa funciona como «lo que sea»: Bármit kérsz = lo que pidas. kérsz es la forma indefinida, que va con bármit."
+      },
+      "wrong": {
+        "Valamit": {
+          "en": "Valamit means \"something\"; as a plain statement it cannot open a \"whatever\" clause. With valami you need ha: Ha kérsz valamit, megkapod.",
+          "es": "Valamit significa «algo»; como afirmación simple no puede abrir una oración de «lo que sea». Con valami hace falta ha: Ha kérsz valamit, megkapod."
+        },
+        "Semmit": {
+          "en": "Semmit would mean \"nothing\" and needs a negative verb: Semmit sem kérsz.",
+          "es": "Semmit significaría «nada» y necesita un verbo negativo: Semmit sem kérsz."
+        }
+      },
+      "examples": [
+        "Bármit kérhetsz.",
+        "Bármit mondasz, hiszek neked."
+      ],
+      "tr": {
+        "en": "Whatever you ask for, you will get it.",
+        "es": "Lo que pidas, lo tendrás."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f06",
+      "kind": "form",
+      "verb": "hova?",
+      "person": "bár-",
+      "answer": "bárhova",
+      "table": "nevmas-irany",
+      "accept": [
+        "bárhová"
+      ]
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c08",
+      "sentence": "___ mész, én veled megyek.",
+      "options": [
+        "Sehova",
+        "Bárhova",
+        "Valahova"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "bár- + hova makes a \"wherever\" clause: Bárhova mész = wherever you go.",
+        "es": "bár- + hova forma una oración de «adondequiera»: Bárhova mész = adonde vayas."
+      },
+      "wrong": {
+        "Sehova": {
+          "en": "Sehova mész would be \"you go nowhere\" and needs nem: Sehova nem mész.",
+          "es": "Sehova mész sería «no vas a ninguna parte» y necesita nem: Sehova nem mész."
+        },
+        "Valahova": {
+          "en": "Valahova mész = \"you go somewhere\"; it cannot open a \"wherever\" clause.",
+          "es": "Valahova mész = «vas a algún lugar»; no puede abrir una oración de «adondequiera»."
+        }
+      },
+      "examples": [
+        "Bárhova mész, hívj fel.",
+        "Bárhol vagyok, hívlak."
+      ],
+      "tr": {
+        "en": "Wherever you go, I will go with you.",
+        "es": "Adonde vayas, yo voy contigo."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c09",
+      "sentence": "Mindenki már a konyhában ___, ezért olyan meleg van.",
+      "options": [
+        "vannak",
+        "vagyunk",
+        "van"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "mindenki (\"everybody\") is singular, so the verb is van, not vannak.",
+        "es": "mindenki («todos») es singular en húngaro, así que el verbo es van, no vannak (a diferencia del español «todos están»)."
+      },
+      "wrong": {
+        "vannak": {
+          "en": "vannak is plural; with mindenki the verb stays singular, even though many people are meant.",
+          "es": "vannak es plural; con mindenki el verbo queda en singular, aunque se trate de mucha gente."
+        },
+        "vagyunk": {
+          "en": "vagyunk is \"we are\"; mindenki is a third person, not \"we\".",
+          "es": "vagyunk es «somos/estamos»; mindenki es tercera persona, no «nosotros»."
+        }
+      },
+      "examples": [
+        "Mindenki itt van.",
+        "Mindenki dolgozik."
+      ],
+      "tr": {
+        "en": "Everybody is already in the kitchen, that is why it is so hot.",
+        "es": "Todos ya están en la cocina, por eso hace tanto calor."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f07",
+      "kind": "form",
+      "verb": "honnan?",
+      "person": "val(a)-",
+      "answer": "valahonnan",
+      "table": "nevmas-irany"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f08",
+      "kind": "form",
+      "verb": "hova?",
+      "person": "se-",
+      "answer": "sehova",
+      "table": "nevmas-irany",
+      "accept": [
+        "sehová"
+      ]
+    },
+    {
+      "id": "hatarozatlan-nevmasok-w03",
+      "kind": "why",
+      "es": "Bárhova mész, én veled megyek.",
+      "target": "Bárhova",
+      "tr": {
+        "en": "Wherever you go, I will go with you.",
+        "es": "Adonde vayas, yo voy contigo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "val(a)- + hova: \"to somewhere\", one unknown place",
+            "es": "val(a)- + hova: «a algún lugar», un sitio que no se conoce"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Valahova mész, which says you go to one unknown place, not \"wherever\".",
+            "es": "Con esta regla la frase sería Valahova mész, que dice que vas a un sitio desconocido, no «adondequiera»."
+          }
+        },
+        {
+          "text": {
+            "en": "minden- + hova: \"to every place\", all places",
+            "es": "minden- + hova: «a todos los lugares»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mindenhova mész, \"you go everywhere\"; Bárhova mész is a condition: no matter where.",
+            "es": "Con esta regla la frase sería Mindenhova mész, «vas a todas partes»; Bárhova mész es una condición: no importa adónde."
+          }
+        },
+        {
+          "text": {
+            "en": "bár- + hova: \"wherever\", any place you choose",
+            "es": "bár- + hova: «adondequiera», cualquier lugar que elijas"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c10",
+      "sentence": "Tegnap senki ___ jött el az órára.",
+      "options": [
+        "nem",
+        "ne",
+        "nincs"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A se- word goes with nem before a past-tense verb: Senki nem jött el = nobody came.",
+        "es": "Una palabra con se- va con nem delante de un verbo en pasado: Senki nem jött el = no vino nadie."
+      },
+      "wrong": {
+        "ne": {
+          "en": "ne is for orders and prohibitions (Senki ne jöjjön!); a plain statement about the past needs nem.",
+          "es": "ne es para órdenes y prohibiciones (Senki ne jöjjön!); una afirmación simple sobre el pasado necesita nem."
+        },
+        "nincs": {
+          "en": "nincs is the fused form of nem van; it cannot stand in front of a past-tense verb.",
+          "es": "nincs es la forma fusionada de nem van; no puede ir delante de un verbo en pasado."
+        }
+      },
+      "examples": [
+        "Senki nem hívott fel.",
+        "Senki sem jött el."
+      ],
+      "tr": {
+        "en": "Nobody came to class yesterday.",
+        "es": "Ayer no vino nadie a clase."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f09",
+      "kind": "form",
+      "verb": "valaki",
+      "person": "-val/-vel",
+      "answer": "valakivel",
+      "table": "nevmas-ki-esetek"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c11",
+      "sentence": "Anna még ___ nem volt Mexikóvárosban.",
+      "options": [
+        "sehol",
+        "soha",
+        "semmi"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "soha is the se- word for time: Anna még soha nem volt = Anna has never been there.",
+        "es": "soha es la palabra con se- para el tiempo: Anna még soha nem volt = Anna nunca ha estado allí."
+      },
+      "wrong": {
+        "sehol": {
+          "en": "sehol is \"nowhere\" (a place). The sentence is about time: never.",
+          "es": "sehol es «en ninguna parte» (un lugar). La frase habla de tiempo: nunca."
+        },
+        "semmi": {
+          "en": "semmi is \"nothing\", a thing; it does not fit with volt Mexikóvárosban.",
+          "es": "semmi es «nada», una cosa; no encaja con volt Mexikóvárosban."
+        }
+      },
+      "examples": [
+        "Soha nem késem el.",
+        "Soha nem voltam Debrecenben."
+      ],
+      "tr": {
+        "en": "Anna has never been to Mexico City.",
+        "es": "Anna nunca ha estado en la Ciudad de México."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f10",
+      "kind": "form",
+      "verb": "senki",
+      "person": "-nek",
+      "answer": "senkinek",
+      "table": "nevmas-ki-esetek"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c12",
+      "sentence": "Valamit ___ a szomszédból, azt hiszem, zene.",
+      "options": [
+        "hallom",
+        "hallod",
+        "hallok"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "valamit (\"something\") is not a specific thing, so the verb takes the indefinite form: hallok. The definite form hallom is for a known object: Hallom a zenét.",
+        "es": "valamit («algo») no es una cosa concreta, así que el verbo toma la forma indefinida: hallok. La forma definida hallom es para un objeto conocido: Hallom a zenét."
+      },
+      "wrong": {
+        "hallom": {
+          "en": "hallom is the definite form (I hear it). It goes with a specific object such as a zenét, not with valamit.",
+          "es": "hallom es la forma definida (lo oigo). Va con un objeto concreto como a zenét, no con valamit."
+        },
+        "hallod": {
+          "en": "hallod is definite and for you; azt hiszem (I think) shows that the speaker is I, so the verb is hallok.",
+          "es": "hallod es definida y para «tú»; azt hiszem (creo) muestra que habla «yo», así que el verbo es hallok."
+        }
+      },
+      "examples": [
+        "Hallok valamit.",
+        "Keresek valakit."
+      ],
+      "tr": {
+        "en": "I hear something from the neighbours, I think it is music.",
+        "es": "Oigo algo de los vecinos, creo que es música."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c13",
+      "sentence": "Tegnap találkoztam ___, aki ismer téged.",
+      "options": [
+        "valakivel",
+        "valakit",
+        "valakinek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "találkozik (\"to meet\") takes -val/-vel: találkozom valakivel.",
+        "es": "találkozik («encontrarse con») lleva -val/-vel: találkozom valakivel."
+      },
+      "wrong": {
+        "valakit": {
+          "en": "valakit is the object form; találkozik takes no object, it takes \"with\".",
+          "es": "valakit es la forma del objeto; találkozik no lleva objeto, lleva «con»."
+        },
+        "valakinek": {
+          "en": "valakinek is \"to somebody\" (Adtam valakinek egy könyvet).",
+          "es": "valakinek es «a alguien» (Adtam valakinek egy könyvet)."
+        }
+      },
+      "examples": [
+        "Nem találkoztam senkivel.",
+        "Találkoztam valakivel."
+      ],
+      "tr": {
+        "en": "Yesterday I met somebody who knows you.",
+        "es": "Ayer me encontré con alguien que te conoce."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f11",
+      "kind": "form",
+      "verb": "semmi",
+      "person": "-ról/-ről",
+      "answer": "semmiről",
+      "table": "nevmas-mi-esetek"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-w04",
+      "kind": "why",
+      "es": "Keresek valakit, aki tud angolul.",
+      "target": "Keresek",
+      "tr": {
+        "en": "I am looking for someone who speaks English.",
+        "es": "Busco a alguien que hable inglés."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Definite conjugation, because valakit ends in -t like every object",
+            "es": "Conjugación definida, porque valakit termina en -t como todo objeto"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Keresem valakit, which is wrong: -t only marks the object; the definite conjugation needs a definite object (a kulcsot, Annát).",
+            "es": "Con esta regla la frase sería Keresem valakit, que es incorrecto: -t solo marca el objeto; la conjugación definida pide un objeto definido (a kulcsot, Annát)."
+          }
+        },
+        {
+          "text": {
+            "en": "Indefinite conjugation, because valakit is an indefinite object, like egy ember",
+            "es": "Conjugación indefinida, porque valakit es un objeto indefinido, como egy ember"
+          }
+        },
+        {
+          "text": {
+            "en": "The ending -ek is the plural: they are looking",
+            "es": "La terminación -ek es plural: ellos buscan"
+          },
+          "wrong": {
+            "en": "With this rule keresek would mean \"they search\", but -ek here is the I form; the plural of the verb is keresnek.",
+            "es": "Con esta regla keresek significaría «ellos buscan», pero aquí -ek es la forma de «yo»; el plural del verbo es keresnek."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c14",
+      "sentence": "Ezt a kenyeret ___ lehet kapni, még a kis boltokban is.",
+      "options": [
+        "sehol",
+        "mindenhol",
+        "valahol"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "még ... is (\"even ...\") points to \"everywhere\": mindenhol.",
+        "es": "még ... is («incluso ...») apunta a «en todas partes»: mindenhol."
+      },
+      "wrong": {
+        "sehol": {
+          "en": "sehol would need nem: Sehol nem lehet kapni, which contradicts még a kis boltokban is.",
+          "es": "sehol necesitaría nem: Sehol nem lehet kapni, lo que contradice még a kis boltokban is."
+        },
+        "valahol": {
+          "en": "valahol is \"somewhere\"; \"even in the small shops\" says it is available all over, not at one unknown place.",
+          "es": "valahol es «en algún lugar»; «incluso en las tiendas pequeñas» dice que se encuentra por todas partes, no en un lugar desconocido."
+        }
+      },
+      "examples": [
+        "Mindenhol szép a város.",
+        "Mindenhol sok ember van."
+      ],
+      "tr": {
+        "en": "You can get this bread everywhere, even in the small shops.",
+        "es": "Este pan se encuentra en todas partes, incluso en las tiendas pequeñas."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-f12",
+      "kind": "form",
+      "verb": "minden",
+      "person": "-val/-vel",
+      "answer": "mindennel",
+      "table": "nevmas-mi-esetek"
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c15",
+      "sentence": "Ma este ___ nem akarok beszélni, nagyon fáradt vagyok.",
+      "options": [
+        "semmit",
+        "semmivel",
+        "semmiről"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "beszél takes -ról/-ről for the topic: beszél valamiről, so the negative form is semmiről.",
+        "es": "beszél lleva -ról/-ről para el tema: beszél valamiről, así que la forma negativa es semmiről."
+      },
+      "wrong": {
+        "semmit": {
+          "en": "semmit is the object form; to say what you do not want to talk about, Hungarian uses \"about\" -ról/-ről.",
+          "es": "semmit es la forma del objeto; para decir de qué no quieres hablar, el húngaro usa «sobre» -ról/-ről."
+        },
+        "semmivel": {
+          "en": "semmivel means \"with nothing\"; the topic of speaking is \"about\" -ról/-ről.",
+          "es": "semmivel significa «con nada»; el tema de lo que se habla es «sobre» -ról/-ről."
+        }
+      },
+      "examples": [
+        "Szeretnék veled beszélni valamiről.",
+        "Erről nem akarok beszélni."
+      ],
+      "tr": {
+        "en": "Tonight I do not want to talk about anything, I am very tired.",
+        "es": "Esta noche no quiero hablar de nada, estoy muy cansado."
+      }
+    },
+    {
+      "id": "hatarozatlan-nevmasok-c16",
+      "sentence": "A kocsi nem indul, de ___ ki kell mennünk a repülőtérre.",
+      "options": [
+        "valahogy",
+        "valahol",
+        "valahova"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The idea is \"somehow\": valahogy comes from hogyan (how).",
+        "es": "La idea es «de alguna manera»: valahogy viene de hogyan (cómo)."
+      },
+      "wrong": {
+        "valahol": {
+          "en": "valahol is \"somewhere\" (a place); the sentence says we must manage it somehow.",
+          "es": "valahol es «en algún lugar» (un sitio); la frase dice que tenemos que lograrlo de alguna manera."
+        },
+        "valahova": {
+          "en": "valahova is \"to somewhere\" (a direction); the destination is already named (a repülőtérre), and the sentence says we must manage it somehow.",
+          "es": "valahova es «a algún lugar» (una dirección); el destino ya está dicho (a repülőtérre), y la frase dice que tenemos que lograrlo de alguna manera."
+        }
+      },
+      "examples": [
+        "Valahogy megoldjuk.",
+        "Valahogy mindig elfelejtem a kulcsomat."
+      ],
+      "tr": {
+        "en": "The car does not start, but somehow we have to get to the airport.",
+        "es": "El coche no arranca, pero de alguna manera tenemos que llegar al aeropuerto."
+      }
+    }
+  ]
+}
