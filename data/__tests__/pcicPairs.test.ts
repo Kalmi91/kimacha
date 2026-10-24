@@ -86,6 +86,16 @@ describe('the decks of the six pairs', () => {
     expect(a1[0]).toMatchObject({ hu: 'tesztszó', exampleHu: 'Ez egy teszt.' });
   });
 
+  it('a Hungarian prompt gets no hint sentence, the hint is written in English (en→es) or Spanish (es→en)', () => {
+    const pcic = load(false);
+    pcic.setPcicTarget('es', 'en');
+    expect(allItems(pcic).some((i) => i.hint)).toBe(true);
+    for (const target of ['es', 'en'] as const) {
+      pcic.setPcicTarget(target, 'hu');
+      expect(allItems(pcic).filter((i) => i.hint)).toEqual([]);
+    }
+  });
+
   it('en→es and es→en are the full decks, with no card left out', () => {
     const pcic = load(false);
     pcic.setPcicTarget('es', 'en');
