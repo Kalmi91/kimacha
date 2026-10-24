@@ -1,5 +1,7 @@
 // The Hungarian syllabus titles (data/games/grammar-hu/syllabus.json) cover every unit and topic of both
 // courses, and lib/grammar/syllabus.ts / syllabusEn.ts lay them over as `hu` of title / blurb.
+import { existsSync, readFileSync } from 'fs';
+import { join } from 'path';
 import huSyllabus from '@/data/games/grammar-hu/syllabus.json';
 import { getGrammarSyllabus, getGrammarUnits, syllabusTopic, topicsForUnit, unitsForLevel } from '../syllabus';
 import { EN_SYLLABUS, EN_UNITS } from '../syllabusEn';
@@ -23,6 +25,20 @@ describe('Hungarian syllabus titles', () => {
     for (const t of EN_SYLLABUS) expect(t.title.hu?.trim()).toBeTruthy();
     expect(Object.keys(huSyllabus.en.units).sort()).toEqual(EN_UNITS.map((u) => u.id).sort());
     expect(Object.keys(huSyllabus.en.topics).sort()).toEqual(EN_SYLLABUS.map((t) => t.id).sort());
+  });
+
+  it('a topic whose list title and lesson title agree in English agrees in Hungarian too (list row = lesson header)', () => {
+    const root = join(__dirname, '../../..');
+    const read = (p: string) => JSON.parse(readFileSync(join(root, p), 'utf8'));
+    for (const [course, topics] of [['es', getGrammarSyllabus()], ['en', EN_SYLLABUS]] as const) {
+      for (const t of topics) {
+        const file = [t.id, t.id.replace(/_/g, '-')].find((f) => existsSync(join(root, `data/games/grammar/${course}/${f}.json`)));
+        if (!file) continue;
+        const en = read(`data/games/grammar/${course}/${file}.json`).title?.en;
+        if (en !== t.title.en) continue;
+        expect([course, t.id, t.title.hu]).toEqual([course, t.id, read(`data/games/grammar-hu/${course}/${file}.json`)[en]]);
+      }
+    }
   });
 
   it('is reachable through the syllabus API and leaves the en / es texts as they were', () => {

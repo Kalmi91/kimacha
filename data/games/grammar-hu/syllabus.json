@@ -21,7 +21,7 @@
   },
   "topics": {
    "clases-de-palabras": {
-    "title": "Szófajok: melyik micsoda",
+    "title": "Szófajok: mi micsoda",
     "blurb": "Főnév, ige, melléknév, határozószó: hogyan ismered fel őket, és miért számít."
    },
    "sustantivo-numero": {
@@ -29,7 +29,7 @@
     "blurb": "-o hímnem, -a nőnem, és így képezed a többes számot."
    },
    "articulos-genero": {
-    "title": "Névelők: el, la, un, una",
+    "title": "A névelők: el, la, un, una",
     "blurb": "Határozott és határozatlan névelő, nemben egyeztetve."
    },
    "adjetivo-concordancia": {
@@ -53,7 +53,7 @@
     "blurb": "Kell, tud, akar: két ige egymás után, a második nincs ragozva."
    },
    "tener-expresiones": {
-    "title": "Tener: éhség, hideg, életkor és más",
+    "title": "Tener: éhség, hideg, életkor és még sok más",
     "blurb": "Tener hambre, sed, frío, sueño, miedo, prisa, razón, X años: a spanyol „birtokol”, ahol mi azt mondjuk: éhes vagyok, fázom, X éves vagyok."
    },
    "ser-estar": {
@@ -65,11 +65,11 @@
     "blurb": "Valami létezik, vagy egy ismert dolog hol van."
    },
    "tu-usted": {
-    "title": "Tú, usted, ustedes: kihez beszélsz",
+    "title": "Tú, usted, ustedes: kit hogyan szólítasz meg",
     "blurb": "Alanyi névmások, mikor mondj tú-t vagy usted-et Mexikóban, és miért az ustedes az egyetlen többes számú megszólítás."
    },
    "posesivos": {
-    "title": "Birtokos névmások: mi, tu, su, nuestro",
+    "title": "Birtokos szavak: mi, tu, su, nuestro",
     "blurb": "A birtokolt dologhoz igazodik, nem a birtokoshoz."
    },
    "demostrativos": {
@@ -85,7 +85,7 @@
     "blurb": "Kinek adod vagy mondod: le doy el libro, te digo la verdad."
    },
    "quien-a-quien": {
-    "title": "Ki kivel mit tesz: te amo, me das",
+    "title": "Ki kivel mit csinál: te amo, me das",
     "blurb": "A rag megmondja, ki cselekszik, a névmás pedig azt, hogy kivel."
    },
    "interrogativos": {
@@ -97,7 +97,7 @@
     "blurb": "A spanyol is halmozza a tagadást, akárcsak a magyar, és ez helyes."
    },
    "conectores-basicos": {
-    "title": "És, vagy, de, mert, ezért",
+    "title": "És, vagy, de, mert, tehát",
     "blurb": "Két gondolat összekötése: y/e, o/u, pero, porque, por eso, entonces."
    },
    "gustar": {
@@ -113,23 +113,23 @@
     "blurb": "A muy melléknév előtt áll, a mucho főnévvel vagy ige után."
    },
    "numeros-hora-fecha": {
-    "title": "Számok, óra, dátum",
+    "title": "Számok, idő, dátum",
     "blurb": "Son las tres, el 5 de mayo, a las ocho y media."
    },
    "preposiciones-basicas": {
-    "title": "Alap elöljárók: a, de, en, con, por",
+    "title": "Alapvető elöljárószók: a, de, en, con, por",
     "blurb": "Az a + el = al és a de + el = del összevonással együtt."
    },
    "indefinido-regular": {
-    "title": "Múlt idő (pretérito): szabályos igék",
+    "title": "Befejezett múlt: szabályos igék",
     "blurb": "Hablé, comí, viví: a befejezett múlt."
    },
    "indefinido-irregular": {
-    "title": "Múlt idő (pretérito): rendhagyó igék",
+    "title": "Befejezett múlt: rendhagyó igék",
     "blurb": "fui, tuve, hice, dije, estuve, pude, quise."
    },
    "indefinido-10-verbos": {
-    "title": "Múlt idő, a 10 leggyakoribb ige",
+    "title": "Befejezett múlt (pretérito indefinido): a 10 leggyakoribb ige",
     "blurb": "Jelen → múlt átalakító gyakorlat a 10 leggyakoribb igével."
    },
    "imperfecto": {
@@ -137,15 +137,15 @@
     "blurb": "Hablaba, comía: szokás, háttér, leírás."
    },
    "indefinido-imperfecto": {
-    "title": "Pretérito vagy imperfecto?",
+    "title": "Pretérito indefinido vagy imperfecto?",
     "blurb": "Választás a két múlt idő között, ellentétpárokon."
    },
    "perfecto": {
-    "title": "Az összetett múlt (perfecto)",
+    "title": "Az összetett múlt (pretérito perfecto)",
     "blurb": "He comido: ma, ezen a héten, még nem."
    },
    "perfecto-vs-indefinido": {
-    "title": "Perfecto vagy pretérito?",
+    "title": "Perfecto vagy indefinido?",
     "blurb": "Ayer comí, esta semana he comido: lezárt vagy még tartó időszak."
    },
    "estar-gerundio": {
@@ -153,7 +153,7 @@
     "blurb": "Estoy comiendo: ami éppen most történik."
    },
    "hace-desde-hace": {
-    "title": "Mióta: hace, desde hace, llevar",
+    "title": "Mennyi ideje: hace, desde hace, llevar",
     "blurb": "Hace dos años que vivo aquí, vivo aquí desde hace dos años: ami korábban kezdődött, és még tart."
    },
    "futuro-simple": {
@@ -161,11 +161,11 @@
     "blurb": "Hablaré, comeré: ígéret, jóslat, valószínűség."
    },
    "marcadores-temporales": {
-    "title": "Időhatározók: melyik szó, melyik idő",
+    "title": "Időjelzők: melyik szó, melyik igeidő",
     "blurb": "Ayer, hace dos años, antes, esta semana, mañana: a szó megmondja az igeidőt."
    },
    "imperativo-afirmativo": {
-    "title": "Felszólító mód: igenlő",
+    "title": "Felszólító mód: állító",
     "blurb": "Habla, come, ven, haz: kérés és utasítás."
    },
    "imperativo-negativo": {
@@ -177,7 +177,7 @@
     "blurb": "A sorrend rögzített, és a le helyett se lesz."
    },
    "pronombres-preposicion": {
-    "title": "Névmások elöljáró után: para mí, contigo",
+    "title": "Névmások elöljárószó után: para mí, contigo",
     "blurb": "Para mí, contigo, entre tú y yo: elöljáró után a névmásnak külön alakja van."
    },
    "verbos-reflexivos": {
@@ -189,7 +189,7 @@
     "blurb": "Me encanta, me duele, me falta: a dolog az alany, a személy a névmás."
    },
    "imperativo-pronombres": {
-    "title": "Felszólító mód névmással: dímelo, no me lo digas",
+    "title": "Felszólító mód névmásokkal: dímelo, no me lo digas",
     "blurb": "Dímelo, siéntate: igenlőben a névmás hozzátapad, tagadóban elé kerül."
    },
    "comparativos-superlativos": {
@@ -209,7 +209,7 @@
     "blurb": "Casita, cafecito, ahorita: kicsi, kedves, udvarias."
    },
    "numerales-ordinales": {
-    "title": "Sorszámnevek: primero, segundo, tercer",
+    "title": "A sorszámnevek: primero, segundo, tercer",
     "blurb": "El primer piso, la tercera vez, el primero de mayo."
    },
    "saber-conocer": {
@@ -221,7 +221,7 @@
     "blurb": "Valamit kérsz, vagy kérdést teszel fel."
    },
    "llevar-traer-ir-venir": {
-    "title": "Llevar, traer, ir, venir",
+    "title": "Llevar, traer, ir, venir: visz, hoz, megy, jön",
     "blurb": "A beszélő nézőpontja dönti el, melyiket használod."
    },
    "subjuntivo-presente-forma": {
@@ -229,7 +229,7 @@
     "blurb": "Hable, coma, viva: a felcserélt ragok."
    },
    "subjuntivo-disparadores": {
-    "title": "Mi vált ki kötőmódot",
+    "title": "Mi váltja ki a kötőmódot",
     "blurb": "Kívánság, érzelem, kétely, tagadott vélemény."
    },
    "ojala-quizas": {
@@ -241,7 +241,7 @@
     "blurb": "Jövőbeli időmondatok: cuando llegues, nem llegas."
    },
    "subjuntivo-relativo": {
-    "title": "Kötőmód vonatkozó mellékmondatban",
+    "title": "Kötőmód a vonatkozó mellékmondatokban",
     "blurb": "Busco un departamento que tenga balcón: ismeretlen főnévre utal, ezért kötőmód."
    },
    "condicional-simple": {
@@ -249,7 +249,7 @@
     "blurb": "Hablaría: udvariasság, tanács, feltevés."
    },
    "condicionales-tipo1": {
-    "title": "Si + jelen idő: valós feltétel",
+    "title": "Si + jelen idő: valós feltételek",
     "blurb": "Si tengo tiempo, voy: ami tényleg megtörténhet."
    },
    "pluscuamperfecto": {
@@ -261,11 +261,11 @@
     "blurb": "Két mondat összekötése egyetlen szóval."
    },
    "se-impersonal-pasiva": {
-    "title": "Se: személytelen és szenvedő",
+    "title": "Se: személytelen és szenvedő szerkezet",
     "blurb": "Se habla español, se venden casas."
    },
    "se-accidental": {
-    "title": "Se me olvidó: a véletlen se",
+    "title": "Se me olvidó: a nem szándékos se",
     "blurb": "Se me cayó, se nos acabó: a dolog „tette”, te csak átélted."
    },
    "perifrasis": {
@@ -277,23 +277,23 @@
     "blurb": "Állandósult kifejezések és az igazán nehéz esetek."
    },
    "verbos-preposicion": {
-    "title": "Állandó elöljárós igék",
+    "title": "Igék állandó elöljárókkal",
     "blurb": "Pensar en, soñar con, depender de: az ige dönti el az elöljárót."
    },
    "estar-participio": {
-    "title": "Estar + participium: a kialakult állapot",
+    "title": "Estar + melléknévi igenév: a cselekvés eredménye",
     "blurb": "La puerta está abierta: a kialakult állapot, a participium egyezik az alannyal."
    },
    "subjuntivo-imperfecto": {
-    "title": "Múlt idejű kötőmód (imperfecto)",
+    "title": "Múlt idejű kötőmód",
     "blurb": "Hablara / hablase: múltbeli kívánságok és feltételek."
    },
    "subjuntivo-perfecto": {
-    "title": "Összetett idejű kötőmód: az alakok",
+    "title": "Az összetett kötőmód alakjai",
     "blurb": "Haya hablado, hubiera hablado."
    },
    "condicionales-tipo2-3": {
-    "title": "Valótlan feltétel: si tuviera, si hubiera",
+    "title": "Valótlan feltételek: si tuviera, si hubiera",
     "blurb": "Ami nem igaz, és ami már nem lehet."
    },
    "estilo-indirecto": {
@@ -301,11 +301,11 @@
     "blurb": "Dijo que venía: az igeidő eltolódása."
    },
    "pasiva-ser-participio": {
-    "title": "Szenvedő szerkezet: ser + participium",
+    "title": "Szenvedő szerkezet: ser + melléknévi igenév",
     "blurb": "És miért ritkább a spanyolban, mint az angolban."
    },
    "concesivas": {
-    "title": "Megengedés: aunque, a pesar de",
+    "title": "Engedmény: aunque, a pesar de",
     "blurb": "Az aunque kijelentő móddal vagy kötőmóddal áll, és a jelentése más."
    },
    "finales-causales": {
@@ -321,15 +321,15 @@
     "blurb": "Lo importante, lo que dijiste, lo bien que canta."
    },
    "gerundio-participio-construcciones": {
-    "title": "Gerundium- és participium-szerkezetek",
+    "title": "Gerundiumos és melléknévi igenévi szerkezetek",
     "blurb": "Siendo, hecho esto, llevar + gerundium."
    },
    "verbos-de-cambio": {
-    "title": "Változást kifejező igék",
+    "title": "A változást kifejező igék",
     "blurb": "Ponerse, volverse, hacerse, quedarse, llegar a ser: hogyan lesz valami valamivé."
    },
    "futuro-condicional-perfecto": {
-    "title": "Befejezett jövő és feltételes múlt",
+    "title": "Befejezett jövő idő és múlt idejű feltételes mód",
     "blurb": "Habré terminado, habría dicho."
    },
    "probabilidad-con-tiempos": {
@@ -337,7 +337,7 @@
     "blurb": "Serán las tres: a jövő idő mint találgatás."
    },
    "relativos-complejos": {
-    "title": "Összetett vonatkozó mondatok",
+    "title": "Összetett vonatkozó mellékmondatok",
     "blurb": "El cual, cuyo, en el que: az írott nyelv rétege."
    },
    "leismo-laismo": {
