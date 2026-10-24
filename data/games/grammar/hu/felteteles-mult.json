@@ -1,0 +1,1368 @@
+{
+  "schema": 2,
+  "topic": "felteteles-mult",
+  "level": "B2",
+  "title": {
+    "en": "If I had known: tudtam volna, elmentem volna",
+    "es": "Si hubiera sabido: tudtam volna, elmentem volna"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Hungarian past conditional has two parts: the past tense of the verb and the little word volna. Ha tudtam volna, elmentem volna = If I had known, I would have gone. Volna never changes: it has no ending for person or number, because the past verb in front of it already says who (tudtam = I knew, tudtál = you knew). It stands in BOTH halves of the sentence, in the ha-clause and in the main clause. English needs \"had known\" in one half and \"would have gone\" in the other; Hungarian simply says past + volna twice. You already know the present version (Ha lenne időm, elmennék = If I had time, I would go). This lesson moves the same idea into the past: into things that did not happen.",
+        "es": "El condicional pasado del húngaro tiene dos partes: el pasado del verbo y la palabrita volna. Ha tudtam volna, elmentem volna = Si hubiera sabido, habría ido. Volna nunca cambia: no tiene terminación de persona ni de número, porque el verbo en pasado que va delante ya dice quién es (tudtam = yo sabía, tudtál = tú sabías). Aparece en LAS DOS mitades de la oración, en la cláusula con ha y en la principal. El español usa «hubiera sabido» en una mitad y «habría ido» en la otra; el húngaro dice simplemente pasado + volna dos veces. Ya conoces la versión de presente (Ha lenne időm, elmennék = Si tuviera tiempo, iría). Esta lección lleva la misma idea al pasado: a cosas que no ocurrieron."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "past-volna",
+      "title": {
+        "en": "Past tense + volna",
+        "es": "Pasado + volna"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "tudni (to know)",
+          "es": "tudni (saber)"
+        },
+        {
+          "en": "menni (to go)",
+          "es": "menni (ir)"
+        },
+        {
+          "en": "lenni (to be)",
+          "es": "lenni (ser, estar)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "tudtam volna",
+          "mentem volna",
+          "lettem volna"
+        ],
+        [
+          "te",
+          "tudtál volna",
+          "mentél volna",
+          "lettél volna"
+        ],
+        [
+          "ő / Ön",
+          "tudott volna",
+          "ment volna",
+          "lett volna"
+        ],
+        [
+          "mi",
+          "tudtunk volna",
+          "mentünk volna",
+          "lettünk volna"
+        ],
+        [
+          "ti",
+          "tudtatok volna",
+          "mentetek volna",
+          "lettetek volna"
+        ],
+        [
+          "ők / Önök",
+          "tudtak volna",
+          "mentek volna",
+          "lettek volna"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How to build it",
+        "es": "Cómo se construye"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Put the verb in the past tense, then add volna right after it. Do not change volna: tudtunk volna, never tudtunk volnunk. For \"to be\" the past conditional is built on lett: lettem volna, lett volna.",
+            "es": "Pon el verbo en pasado y añade volna justo detrás. No cambies volna: tudtunk volna, nunca tudtunk volnunk. Para «ser, estar» el condicional pasado se forma con lett: lettem volna, lett volna."
+          },
+          "examples": [
+            {
+              "es": "Elmentem volna a koncertre.",
+              "tr": {
+                "en": "I would have gone to the concert.",
+                "es": "Habría ido al concierto."
+              }
+            },
+            {
+              "es": "Anna megvette volna a kabátot.",
+              "tr": {
+                "en": "Anna would have bought the coat.",
+                "es": "Anna habría comprado el abrigo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The ha-clause takes past + volna as well. The whole pattern is: Ha + past + volna, past + volna. English and Spanish change the form in the \"if\" half (\"had known\", \"hubiera sabido\"); Hungarian keeps the same past + volna in both halves.",
+            "es": "La cláusula con ha también lleva pasado + volna. El patrón completo es: Ha + pasado + volna, pasado + volna. El inglés y el español cambian la forma en la mitad del «si» («had known», «hubiera sabido»); el húngaro mantiene el mismo pasado + volna en las dos mitades."
+          },
+          "examples": [
+            {
+              "es": "Ha tudtam volna, hogy késik a vonat, autóval mentem volna.",
+              "tr": {
+                "en": "If I had known the train was late, I would have gone by car.",
+                "es": "Si hubiera sabido que el tren se retrasaba, habría ido en auto."
+              }
+            },
+            {
+              "es": "Ha Anna szólt volna, segítettünk volna neki.",
+              "tr": {
+                "en": "If Anna had said something, we would have helped her.",
+                "es": "Si Anna hubiera avisado, la habríamos ayudado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Word order: volna stands right behind the verb. With nem the prefix moves behind volna: elmentem volna, but nem mentem volna el. This is the same rule as in the present (Elmegyek, but Nem megyek el).",
+            "es": "Orden de palabras: volna va justo detrás del verbo. Con nem el prefijo pasa detrás de volna: elmentem volna, pero nem mentem volna el. Es la misma regla que en presente (Elmegyek, pero Nem megyek el)."
+          },
+          "examples": [
+            {
+              "es": "Nem mentem volna el a vacsorára.",
+              "tr": {
+                "en": "I would not have gone to the dinner.",
+                "es": "No habría ido a la cena."
+              }
+            },
+            {
+              "es": "Nem vettük volna meg a házat.",
+              "tr": {
+                "en": "We would not have bought the house.",
+                "es": "No habríamos comprado la casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "past-volna-def",
+      "title": {
+        "en": "Indefinite or definite object? The past verb decides",
+        "es": "¿Objeto indefinido o definido? Lo decide el verbo en pasado"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "venni + egy kabátot (indefinite)",
+          "es": "venni + egy kabátot (indefinido)"
+        },
+        {
+          "en": "venni + a kabátot (definite)",
+          "es": "venni + a kabátot (definido)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "vettem volna",
+          "vettem volna"
+        ],
+        [
+          "te",
+          "vettél volna",
+          "vetted volna"
+        ],
+        [
+          "ő / Ön",
+          "vett volna",
+          "vette volna"
+        ],
+        [
+          "mi",
+          "vettünk volna",
+          "vettük volna"
+        ],
+        [
+          "ti",
+          "vettetek volna",
+          "vettétek volna"
+        ],
+        [
+          "ők / Önök",
+          "vettek volna",
+          "vették volna"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "modal-volna",
+      "title": {
+        "en": "szerettem volna, mehettem volna",
+        "es": "szerettem volna, mehettem volna"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "szeretni (would have liked)",
+          "es": "szeretni (me habría gustado)"
+        },
+        {
+          "en": "mehetni (could have gone)",
+          "es": "mehetni (habría podido ir)"
+        },
+        {
+          "en": "jöhetni (could have come)",
+          "es": "jöhetni (habría podido venir)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "szerettem volna",
+          "mehettem volna",
+          "jöhettem volna"
+        ],
+        [
+          "te",
+          "szerettél volna",
+          "mehettél volna",
+          "jöhettél volna"
+        ],
+        [
+          "ő / Ön",
+          "szeretett volna",
+          "mehetett volna",
+          "jöhetett volna"
+        ],
+        [
+          "mi",
+          "szerettünk volna",
+          "mehettünk volna",
+          "jöhettünk volna"
+        ],
+        [
+          "ti",
+          "szerettetek volna",
+          "mehettetek volna",
+          "jöhettetek volna"
+        ],
+        [
+          "ők / Önök",
+          "szerettek volna",
+          "mehettek volna",
+          "jöhettek volna"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kellett-volna",
+      "title": {
+        "en": "kellett volna: the person goes on the infinitive",
+        "es": "kellett volna: la persona va en el infinitivo"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "menni (to go)",
+          "es": "menni (ir)"
+        },
+        {
+          "en": "tanulni (to study)",
+          "es": "tanulni (estudiar)"
+        }
+      ],
+      "rows": [
+        [
+          "nekem",
+          "mennem kellett volna",
+          "tanulnom kellett volna"
+        ],
+        [
+          "neked",
+          "menned kellett volna",
+          "tanulnod kellett volna"
+        ],
+        [
+          "neki",
+          "mennie kellett volna",
+          "tanulnia kellett volna"
+        ],
+        [
+          "nekünk",
+          "mennünk kellett volna",
+          "tanulnunk kellett volna"
+        ],
+        [
+          "nektek",
+          "mennetek kellett volna",
+          "tanulnotok kellett volna"
+        ],
+        [
+          "nekik",
+          "menniük kellett volna",
+          "tanulniuk kellett volna"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Three helpers: szerettem volna, kellett volna, mehettem volna",
+        "es": "Tres auxiliares: szerettem volna, kellett volna, mehettem volna"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "szerettem volna + infinitive: I would have liked to, I had wanted to (and it did not happen). The verb szeret takes the definite ending when the infinitive has a definite object (megnézni a filmet), and the indefinite ending otherwise (moziba menni). In a shop or on the phone, Szerettem volna kérdezni valamit is a polite way to open a question.",
+            "es": "szerettem volna + infinitivo: me habría gustado, quería (y no ocurrió). El verbo szeret lleva la terminación definida cuando el infinitivo tiene objeto definido (megnézni a filmet) y la indefinida en los demás casos (moziba menni). En una tienda o por teléfono, Szerettem volna kérdezni valamit es una forma cortés de abrir una pregunta."
+          },
+          "examples": [
+            {
+              "es": "Szerettem volna elmenni, de dolgoznom kellett.",
+              "tr": {
+                "en": "I would have liked to go, but I had to work.",
+                "es": "Me habría gustado ir, pero tuve que trabajar."
+              }
+            },
+            {
+              "es": "Anna szerette volna megnézni a filmet.",
+              "tr": {
+                "en": "Anna would have liked to see the film.",
+                "es": "A Anna le habría gustado ver la película."
+              }
+            },
+            {
+              "es": "Péter szeretett volna moziba menni.",
+              "tr": {
+                "en": "Péter would have liked to go to the cinema.",
+                "es": "A Péter le habría gustado ir al cine."
+              }
+            },
+            {
+              "es": "Szerettem volna kérdezni valamit.",
+              "tr": {
+                "en": "I wanted to ask something (polite opening).",
+                "es": "Quería preguntar algo (apertura cortés)."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "kellett volna + infinitive with the personal ending (as in the previous lesson on kell): should have. nem kellett volna = should not have. Nem kellett volna! on its own is what you say when somebody gives you a present: You should not have!",
+            "es": "kellett volna + infinitivo con terminación personal (como en la lección anterior sobre kell): debería haber. nem kellett volna = no debería haber. ¡Nem kellett volna! solo es lo que se dice cuando alguien te hace un regalo: ¡No tenías que molestarte!"
+          },
+          "examples": [
+            {
+              "es": "Korán kellett volna indulnunk.",
+              "tr": {
+                "en": "We should have left early.",
+                "es": "Deberíamos haber salido temprano."
+              }
+            },
+            {
+              "es": "Neked kellett volna szólnod.",
+              "tr": {
+                "en": "You should have said something.",
+                "es": "Tú deberías haber avisado."
+              }
+            },
+            {
+              "es": "Nem kellett volna elmondanod neki.",
+              "tr": {
+                "en": "You should not have told him.",
+                "es": "No deberías habérselo contado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-hat / -het in the past + volna: could have, might have (it was possible, and it did not happen).",
+            "es": "-hat / -het en pasado + volna: habría podido, podría haber (era posible y no ocurrió)."
+          },
+          "examples": [
+            {
+              "es": "Mehettem volna busszal is.",
+              "tr": {
+                "en": "I could have gone by bus too.",
+                "es": "Habría podido ir en autobús también."
+              }
+            },
+            {
+              "es": "Felhívhattál volna.",
+              "tr": {
+                "en": "You could have called.",
+                "es": "Podrías haber llamado."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What is it for?",
+        "es": "¿Para qué sirve?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "An unreal past: something that did not happen, and what would have followed. Regret, relief, reproach.",
+            "es": "Un pasado irreal: algo que no ocurrió y lo que habría seguido. Arrepentimiento, alivio, reproche."
+          },
+          "examples": [
+            {
+              "es": "Ha lett volna időm, felhívtalak volna.",
+              "tr": {
+                "en": "If I had had time, I would have called you.",
+                "es": "Si hubiera tenido tiempo, te habría llamado."
+              }
+            },
+            {
+              "es": "Ha nem esett volna az eső, kirándultunk volna.",
+              "tr": {
+                "en": "If it had not rained, we would have gone hiking.",
+                "es": "Si no hubiera llovido, habríamos ido de excursión."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "No ha-clause: the condition is understood from the situation. Very common before \"but\": Elmentem volna, de ...",
+            "es": "Sin cláusula con ha: la condición se entiende por la situación. Muy común antes de «pero»: Elmentem volna, de ..."
+          },
+          "examples": [
+            {
+              "es": "Elmentem volna, de nem volt időm.",
+              "tr": {
+                "en": "I would have gone, but I had no time.",
+                "es": "Habría ido, pero no tuve tiempo."
+              }
+            },
+            {
+              "es": "Szívesen segítettem volna, de nem tudtam.",
+              "tr": {
+                "en": "I would gladly have helped, but I could not.",
+                "es": "Con gusto habría ayudado, pero no pude."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Wishes about the past: bárcsak + past + volna. After bárcsak the usual negative is ne (Bárcsak ne mondtam volna). A bare Ha tudtam volna! is an exclamation: if only I had known!",
+            "es": "Deseos sobre el pasado: bárcsak + pasado + volna. Después de bárcsak la negación habitual es ne (Bárcsak ne mondtam volna). Ha tudtam volna! solo es una exclamación: ¡si lo hubiera sabido!"
+          },
+          "examples": [
+            {
+              "es": "Bárcsak ott lettem volna!",
+              "tr": {
+                "en": "If only I had been there!",
+                "es": "¡Ojalá hubiera estado allí!"
+              }
+            },
+            {
+              "es": "Bárcsak ne mondtam volna el neki!",
+              "tr": {
+                "en": "I wish I had not told him!",
+                "es": "¡Ojalá no se lo hubiera dicho!"
+              }
+            },
+            {
+              "es": "Ha tudtam volna!",
+              "tr": {
+                "en": "If only I had known!",
+                "es": "¡Si lo hubiera sabido!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Four pairs people mix up",
+        "es": "Cuatro pares que se confunden"
+      },
+      "pairs": [
+        {
+          "a": "Ha lenne időm, elmennék.",
+          "b": "Ha lett volna időm, elmentem volna.",
+          "note": {
+            "en": "Present conditional: an imaginary situation now or later. Past conditional: the situation is over and it did not happen.",
+            "es": "Condicional presente: una situación imaginaria ahora o más adelante. Condicional pasado: la situación ya pasó y no ocurrió."
+          },
+          "examples": [
+            {
+              "es": "Ha lenne pénzem, utaznék.",
+              "tr": {
+                "en": "If I had money, I would travel.",
+                "es": "Si tuviera dinero, viajaría."
+              }
+            },
+            {
+              "es": "Ha lett volna pénzem, utaztam volna.",
+              "tr": {
+                "en": "If I had had money, I would have travelled.",
+                "es": "Si hubiera tenido dinero, habría viajado."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ha volt időm, elmentem.",
+          "b": "Ha lett volna időm, elmentem volna.",
+          "note": {
+            "en": "Plain past in both halves = a real, repeated past (\"whenever I had time, I went\"). With volna the \"if\" did not happen: I had no time, I did not go.",
+            "es": "Pasado simple en las dos mitades = un pasado real y repetido («cuando tenía tiempo, iba»). Con volna el «si» no ocurrió: no tuve tiempo y no fui."
+          },
+          "examples": [
+            {
+              "es": "Régen, ha volt időm, mindig elmentem a piacra.",
+              "tr": {
+                "en": "In the old days, whenever I had time, I always went to the market.",
+                "es": "Antes, cuando tenía tiempo, siempre iba al mercado."
+              }
+            },
+            {
+              "es": "Ha lett volna időm, elmentem volna a piacra.",
+              "tr": {
+                "en": "If I had had time, I would have gone to the market.",
+                "es": "Si hubiera tenido tiempo, habría ido al mercado."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Szeretnék elmenni.",
+          "b": "Szerettem volna elmenni.",
+          "note": {
+            "en": "szeretnék = I would like to (a wish for now or later). szerettem volna = I would have liked to (the chance is gone).",
+            "es": "szeretnék = me gustaría (un deseo para ahora o más adelante). szerettem volna = me habría gustado (la ocasión ya pasó)."
+          },
+          "examples": [
+            {
+              "es": "Szeretnék kenyeret venni.",
+              "tr": {
+                "en": "I would like to buy bread.",
+                "es": "Quisiera comprar pan."
+              }
+            },
+            {
+              "es": "Szerettem volna kenyeret venni, de zárva volt a bolt.",
+              "tr": {
+                "en": "I would have liked to buy bread, but the shop was closed.",
+                "es": "Quería comprar pan, pero la tienda estaba cerrada."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Mennem kellett.",
+          "b": "Mennem kellett volna.",
+          "note": {
+            "en": "kellett = I had to, and I did it. kellett volna = I should have, and I did not.",
+            "es": "kellett = tuve que, y lo hice. kellett volna = debería haberlo hecho, y no lo hice."
+          },
+          "examples": [
+            {
+              "es": "Tegnap korán kellett kelnem.",
+              "tr": {
+                "en": "I had to get up early yesterday.",
+                "es": "Ayer tuve que levantarme temprano."
+              }
+            },
+            {
+              "es": "Tegnap korán kellett volna kelnem.",
+              "tr": {
+                "en": "I should have got up early yesterday.",
+                "es": "Ayer debería haberme levantado temprano."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) volna never takes an ending: tudtam volna, never tudtam volnam. (2) Keep volna in BOTH halves: Ha tudtam volna, elmentem volna. English drops it in the \"if\" half (\"had known\"); Hungarian does not. (3) For \"to be\" use lett: Ha lett volna időm, Bárcsak ott lettem volna. (4) Do not mix the two conditionals: not \"elmennék volna\", but \"elmentem volna\". (5) A negative wish about the past normally takes ne: Bárcsak ne mondtam volna! (6) Register: the full double pattern is standard in speech and in writing; in conversation people often leave out the second half and just sigh Ha tudtam volna!",
+        "es": "Trampas clásicas: (1) volna nunca lleva terminación: tudtam volna, nunca tudtam volnam. (2) Mantén volna en LAS DOS mitades: Ha tudtam volna, elmentem volna. El inglés lo omite en la mitad del «si» («had known»); el húngaro no. (3) Para «ser, estar» usa lett: Ha lett volna időm, Bárcsak ott lettem volna. (4) No mezcles los dos condicionales: no «elmennék volna», sino «elmentem volna». (5) Un deseo negativo sobre el pasado normalmente lleva ne: Bárcsak ne mondtam volna! (6) Registro: el patrón doble completo es estándar al hablar y al escribir; en una conversación la gente suele omitir la segunda mitad y solo suspira Ha tudtam volna!"
+      }
+    }
+  ],
+  "speak": {
+    "en": "The past conditional is the past tense plus the little word «volna». Say «Ha tudtam volna, elmentem volna» for: if I had known, I would have gone. The word «volna» never changes, and it stands in both halves of the sentence. For a regret use «kellett volna», for example «Korán kellett volna indulnunk». For a wish that did not come true say «szerettem volna». A wish about the past starts with «bárcsak»: «Bárcsak ott lettem volna!» For the verb to be, the form is «lettem volna».",
+    "es": "El condicional pasado es el pasado más la palabrita «volna». Di «Ha tudtam volna, elmentem volna» para: si hubiera sabido, habría ido. La palabra «volna» nunca cambia y aparece en las dos mitades de la oración. Para un reproche usa «kellett volna», por ejemplo «Korán kellett volna indulnunk». Para un deseo que no se cumplió di «szerettem volna». Un deseo sobre el pasado empieza con «bárcsak»: «Bárcsak ott lettem volna!» Para el verbo ser o estar, la forma es «lettem volna»."
+  },
+  "glossary": [
+    {
+      "word": "kirándul",
+      "gloss": {
+        "en": "to go hiking, to go on a trip",
+        "es": "ir de excursión"
+      }
+    },
+    {
+      "word": "meglátogat",
+      "gloss": {
+        "en": "to visit (a person)",
+        "es": "visitar (a una persona)"
+      }
+    },
+    {
+      "word": "régen",
+      "gloss": {
+        "en": "in the old days, long ago",
+        "es": "antes, hace mucho"
+      }
+    },
+    {
+      "word": "akkor",
+      "gloss": {
+        "en": "then, in that case",
+        "es": "entonces, en ese caso"
+      }
+    },
+    {
+      "word": "ilyen",
+      "gloss": {
+        "en": "such, like this",
+        "es": "tal, así de"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "felteteles-mult-c01",
+      "sentence": "Ha tudtam ___, hogy késik a vonat, autóval mentem volna.",
+      "options": [
+        "volnám",
+        "lenne",
+        "volna"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The ha-clause also takes past + volna: tudtam volna. Volna never changes.",
+        "es": "La cláusula con ha también lleva pasado + volna: tudtam volna. Volna nunca cambia."
+      },
+      "wrong": {
+        "volnám": {
+          "en": "Volnám does not exist: volna has no personal ending, the person is already in tudtam.",
+          "es": "Volnám no existe: volna no lleva terminación personal, la persona ya está en tudtam."
+        },
+        "lenne": {
+          "en": "Lenne is the present conditional of lenni (it would be); it cannot follow a past verb to say \"had known\".",
+          "es": "Lenne es el condicional presente de lenni (sería); no puede ir tras un verbo en pasado para decir «hubiera sabido»."
+        }
+      },
+      "examples": [
+        "Ha tudtuk volna, hogy esik, otthon maradtunk volna.",
+        "Ha tudtam volna, szóltam volna neked."
+      ],
+      "tr": {
+        "en": "If I had known the train was late, I would have gone by car.",
+        "es": "Si hubiera sabido que el tren se retrasaba, habría ido en auto."
+      }
+    },
+    {
+      "id": "felteteles-mult-f01",
+      "kind": "form",
+      "verb": "tudni",
+      "person": "én",
+      "answer": "tudtam volna",
+      "table": "past-volna"
+    },
+    {
+      "id": "felteteles-mult-c02",
+      "sentence": "Ha lett volna időm, ___ volna.",
+      "options": [
+        "felhívtalak",
+        "felhívnálak",
+        "felhívlak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The main clause needs a past verb in front of volna: felhívtalak (the past of felhív with the ending -talak for \"I ... you\").",
+        "es": "La oración principal necesita un verbo en pasado delante de volna: felhívtalak (el pasado de felhív con la terminación -talak para «yo ... a ti»)."
+      },
+      "wrong": {
+        "felhívnálak": {
+          "en": "Felhívnálak is already a conditional (I would call you); with volna the \"would\" would be doubled.",
+          "es": "Felhívnálak ya es un condicional (te llamaría); con volna el «habría» quedaría duplicado."
+        },
+        "felhívlak": {
+          "en": "Felhívlak is the present (I call you); in front of volna the verb must be in the past.",
+          "es": "Felhívlak es el presente (te llamo); delante de volna el verbo tiene que estar en pasado."
+        }
+      },
+      "examples": [
+        "Ha tudtam volna, hogy beteg vagy, elvittelek volna az orvoshoz.",
+        "Ha lett volna időm, meglátogattalak volna."
+      ],
+      "tr": {
+        "en": "If I had had time, I would have called you.",
+        "es": "Si hubiera tenido tiempo, te habría llamado."
+      }
+    },
+    {
+      "id": "felteteles-mult-f02",
+      "kind": "form",
+      "verb": "menni",
+      "person": "te",
+      "answer": "mentél volna",
+      "table": "past-volna"
+    },
+    {
+      "id": "felteteles-mult-c03",
+      "sentence": "Bárcsak én is ott ___ volna az esküvőn!",
+      "options": [
+        "lennék",
+        "lettem",
+        "lettél"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A wish about the past: bárcsak + past + volna. Én is points to \"I\", and \"to be\" uses lett-: lettem volna.",
+        "es": "Un deseo sobre el pasado: bárcsak + pasado + volna. Én is apunta a «yo», y «ser, estar» usa lett-: lettem volna."
+      },
+      "wrong": {
+        "lennék": {
+          "en": "Lennék is the present conditional (Bárcsak ott lennék! = I wish I were there now); it cannot stand in front of volna.",
+          "es": "Lennék es el condicional presente (¡Bárcsak ott lennék! = ¡Ojalá estuviera allí ahora!); no puede ir delante de volna."
+        },
+        "lettél": {
+          "en": "Lettél volna means \"you would have been\"; én is shows that the wish is about me.",
+          "es": "Lettél volna significa «tú habrías estado»; én is muestra que el deseo es sobre mí."
+        }
+      },
+      "examples": [
+        "Bárcsak ott lettem volna, amikor megérkeztek!",
+        "Bárcsak itt lettél volna velünk!"
+      ],
+      "tr": {
+        "en": "I wish I had been at the wedding too!",
+        "es": "¡Ojalá yo también hubiera estado en la boda!"
+      }
+    },
+    {
+      "id": "felteteles-mult-f03",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "ő / Ön",
+      "answer": "lett volna",
+      "table": "past-volna",
+      "accept": [
+        "volt volna"
+      ]
+    },
+    {
+      "id": "felteteles-mult-c04",
+      "sentence": "Tegnap ___ moziba menni, de dolgoznom kellett.",
+      "options": [
+        "szerettem volna",
+        "szeretnék",
+        "szeretek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A wish that did not come true in the past: szerettem volna (I would have liked to / I had wanted to).",
+        "es": "Un deseo que no se cumplió en el pasado: szerettem volna (me habría gustado / quería)."
+      },
+      "wrong": {
+        "szeretnék": {
+          "en": "Szeretnék means \"I would like to\" (a wish for now or later); yesterday is over.",
+          "es": "Szeretnék significa «me gustaría» (un deseo para ahora o más adelante); ayer ya pasó."
+        },
+        "szeretek": {
+          "en": "Szeretek means \"I like to\" (in general); it cannot name one missed wish.",
+          "es": "Szeretek significa «me gusta» (en general); no puede nombrar un deseo concreto que no se cumplió."
+        }
+      },
+      "examples": [
+        "Szerettem volna kenyeret venni, de zárva volt a bolt.",
+        "Péter szeretett volna eljönni, de beteg volt."
+      ],
+      "tr": {
+        "en": "Yesterday I would have liked to go to the cinema, but I had to work.",
+        "es": "Ayer me habría gustado ir al cine, pero tuve que trabajar."
+      }
+    },
+    {
+      "id": "felteteles-mult-f04",
+      "kind": "form",
+      "verb": "venni + a kabátot",
+      "person": "te",
+      "answer": "vetted volna",
+      "table": "past-volna-def"
+    },
+    {
+      "id": "felteteles-mult-c05",
+      "sentence": "Nekünk korán kellett volna ___, akkor nem késtünk volna el.",
+      "options": [
+        "indulnunk",
+        "indulnom",
+        "indulniuk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nekünk (to us) names the person, so the infinitive takes the \"we\" ending: indulnunk.",
+        "es": "Nekünk (a nosotros) nombra a la persona, así que el infinitivo lleva la terminación de «nosotros»: indulnunk."
+      },
+      "wrong": {
+        "indulnom": {
+          "en": "Indulnom would be \"I should have left\"; nekünk points to \"we\".",
+          "es": "Indulnom sería «yo debería haber salido»; nekünk apunta a «nosotros»."
+        },
+        "indulniuk": {
+          "en": "Indulniuk would be \"they should have left\"; nekünk points to \"we\".",
+          "es": "Indulniuk sería «ellos deberían haber salido»; nekünk apunta a «nosotros»."
+        }
+      },
+      "examples": [
+        "Nekem is korán kellett volna kelnem.",
+        "Nektek kellett volna szólnotok."
+      ],
+      "tr": {
+        "en": "We should have left early; then we would not have been late.",
+        "es": "Deberíamos haber salido temprano; así no habríamos llegado tarde."
+      }
+    },
+    {
+      "id": "felteteles-mult-f05",
+      "kind": "form",
+      "verb": "szeretni",
+      "person": "mi",
+      "answer": "szerettünk volna",
+      "table": "modal-volna"
+    },
+    {
+      "id": "felteteles-mult-c06",
+      "sentence": "Tegnap sokáig dolgoznom ___, ezért nem tudtam moziba menni.",
+      "options": [
+        "kellett volna",
+        "kellett",
+        "kellene"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Tegnap and ezért nem tudtam show that I really did work: a plain past, kellett (I had to).",
+        "es": "Tegnap y ezért nem tudtam muestran que sí trabajé: pasado simple, kellett (tuve que)."
+      },
+      "wrong": {
+        "kellett volna": {
+          "en": "Kellett volna means \"I should have\" and says I did NOT work; here I did work, so the sentence would contradict itself.",
+          "es": "Kellett volna significa «debería haber» y dice que NO trabajé; aquí sí trabajé, así que la frase se contradiría."
+        },
+        "kellene": {
+          "en": "Kellene means \"I should\" (advice for now or later); it is not a past form.",
+          "es": "Kellene significa «debería» (consejo para ahora o más adelante); no es una forma de pasado."
+        }
+      },
+      "examples": [
+        "Hétvégén is dolgoznunk kellett.",
+        "Tegnap Péternek korán kellett kelnie."
+      ],
+      "tr": {
+        "en": "Yesterday I had to work for a long time, so I could not go to the cinema.",
+        "es": "Ayer tuve que trabajar mucho tiempo, así que no pude ir al cine."
+      }
+    },
+    {
+      "id": "felteteles-mult-f06",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "mi",
+      "answer": "lettünk volna",
+      "table": "past-volna",
+      "accept": [
+        "voltunk volna"
+      ]
+    },
+    {
+      "id": "felteteles-mult-c07",
+      "sentence": "Ha Anna ___ volna a hibát, azonnal szólt volna a főnöknek.",
+      "options": [
+        "látott",
+        "látja",
+        "látta"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A hibát is a definite object, so the past verb takes the definite ending: látta.",
+        "es": "A hibát es un objeto definido, así que el verbo en pasado lleva la terminación definida: látta."
+      },
+      "wrong": {
+        "látott": {
+          "en": "Látott is the indefinite form; it fits an indefinite object (egy hibát), not a hibát.",
+          "es": "Látott es la forma indefinida; va con un objeto indefinido (egy hibát), no con a hibát."
+        },
+        "látja": {
+          "en": "Látja is the present (he or she sees it); in front of volna the verb must be in the past.",
+          "es": "Látja es el presente (lo ve); delante de volna el verbo tiene que estar en pasado."
+        }
+      },
+      "examples": [
+        "Ha Péter megtalálta volna a kulcsot, bejött volna.",
+        "Ha láttam volna a levelet, válaszoltam volna."
+      ],
+      "tr": {
+        "en": "If Anna had seen the mistake, she would have told the boss right away.",
+        "es": "Si Anna hubiera visto el error, habría avisado de inmediato al jefe."
+      }
+    },
+    {
+      "id": "felteteles-mult-w01",
+      "kind": "why",
+      "es": "Ha tudtam volna, elmentem volna.",
+      "target": "tudtam volna",
+      "tr": {
+        "en": "If I had known, I would have gone.",
+        "es": "Si hubiera sabido, habría ido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A plain past: I knew",
+            "es": "Un pasado simple: yo sabía"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Tudtam (I knew); volna adds the meaning \"would have\".",
+            "es": "Con esta regla la frase sería Tudtam (yo sabía); volna añade el sentido de «habría»."
+          }
+        },
+        {
+          "text": {
+            "en": "Past tense + volna: an unreal past, it did not happen",
+            "es": "Pasado + volna: un pasado irreal, no ocurrió"
+          }
+        },
+        {
+          "text": {
+            "en": "Present conditional: if I knew",
+            "es": "Condicional presente: si yo supiera"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ha tudnék, elmennék (if I knew, I would go); volna moves it into the past.",
+            "es": "Con esta regla la frase sería Ha tudnék, elmennék (si supiera, iría); volna la pasa al pasado."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "felteteles-mult-f07",
+      "kind": "form",
+      "verb": "venni + a kabátot",
+      "person": "ők / Önök",
+      "answer": "vették volna",
+      "table": "past-volna-def"
+    },
+    {
+      "id": "felteteles-mult-c08",
+      "sentence": "Régen, ha ___ időm, mindig elmentem a piacra.",
+      "options": [
+        "volt",
+        "lett volna",
+        "lenne"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A real, repeated past (whenever I had time): the plain past in both halves, no volna.",
+        "es": "Un pasado real y repetido (cuando tenía tiempo): pasado simple en las dos mitades, sin volna."
+      },
+      "wrong": {
+        "lett volna": {
+          "en": "Lett volna is for an imagined \"if I had had time\" that did not happen; mindig elmentem tells us the visits really happened.",
+          "es": "Lett volna es para un «si hubiera tenido tiempo» imaginado que no ocurrió; mindig elmentem dice que las visitas sí ocurrieron."
+        },
+        "lenne": {
+          "en": "Lenne is the present conditional (if I had time, now or later); it does not fit régen.",
+          "es": "Lenne es el condicional presente (si tuviera tiempo, ahora o después); no encaja con régen."
+        }
+      },
+      "examples": [
+        "Ha volt pénzem, mindig vettem egy könyvet.",
+        "Ha esett, otthon maradtunk."
+      ],
+      "tr": {
+        "en": "In the old days, whenever I had time, I always went to the market.",
+        "es": "Antes, cuando tenía tiempo, siempre iba al mercado."
+      }
+    },
+    {
+      "id": "felteteles-mult-f08",
+      "kind": "form",
+      "verb": "mehetni",
+      "person": "te",
+      "answer": "mehettél volna",
+      "table": "modal-volna"
+    },
+    {
+      "id": "felteteles-mult-c09",
+      "sentence": "Ha tudtam volna, hogy ő is ott lesz, ___ a vacsorára.",
+      "options": [
+        "nem elmentem volna",
+        "nem mentem volna el",
+        "nem mennék el volna"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After nem the prefix goes behind the verb, and volna follows the verb: nem mentem volna el.",
+        "es": "Después de nem el prefijo va detrás del verbo, y volna sigue al verbo: nem mentem volna el."
+      },
+      "wrong": {
+        "nem elmentem volna": {
+          "en": "After nem the prefix cannot stay on the verb: it moves behind it (nem mentem volna el).",
+          "es": "Después de nem el prefijo no puede quedarse en el verbo: pasa detrás (nem mentem volna el)."
+        },
+        "nem mennék el volna": {
+          "en": "Mennék is already a conditional; volna belongs to the past form (mentem) and cannot double it.",
+          "es": "Mennék ya es un condicional; volna va con la forma de pasado (mentem) y no puede duplicarlo."
+        }
+      },
+      "examples": [
+        "Nem hívtam volna fel, ha tudtam volna.",
+        "Nem maradtunk volna ott, ha tudtuk volna."
+      ],
+      "tr": {
+        "en": "If I had known he would be there too, I would not have gone to the dinner.",
+        "es": "Si hubiera sabido que él también estaría allí, no habría ido a la cena."
+      }
+    },
+    {
+      "id": "felteteles-mult-f09",
+      "kind": "form",
+      "verb": "venni + egy kabátot",
+      "person": "ti",
+      "answer": "vettetek volna",
+      "table": "past-volna-def"
+    },
+    {
+      "id": "felteteles-mult-c10",
+      "sentence": "Busszal is ___ volna, de autóval mentem.",
+      "options": [
+        "mehetnék",
+        "mehetek",
+        "mehettem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "-het + past: mehettem volna = I could have gone (it was possible, I did not do it).",
+        "es": "-het + pasado: mehettem volna = habría podido ir (era posible y no lo hice)."
+      },
+      "wrong": {
+        "mehetnék": {
+          "en": "Mehetnék is a conditional (I could go); in front of volna it would double the \"would\".",
+          "es": "Mehetnék es un condicional (podría ir); delante de volna duplicaría el «habría»."
+        },
+        "mehetek": {
+          "en": "Mehetek is the present (I can go); in front of volna the verb must be in the past.",
+          "es": "Mehetek es el presente (puedo ir); delante de volna el verbo tiene que estar en pasado."
+        }
+      },
+      "examples": [
+        "Felhívhattál volna.",
+        "Taxival is mehettünk volna."
+      ],
+      "tr": {
+        "en": "I could have gone by bus too, but I went by car.",
+        "es": "Habría podido ir en autobús también, pero fui en auto."
+      }
+    },
+    {
+      "id": "felteteles-mult-w02",
+      "kind": "why",
+      "es": "Mennem kellett volna.",
+      "target": "kellett volna",
+      "tr": {
+        "en": "I should have gone.",
+        "es": "Debería haber ido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "I had to go, and I went",
+            "es": "Tuve que ir, y fui"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mennem kellett (I had to go and did); volna turns it into a missed duty.",
+            "es": "Con esta regla la frase sería Mennem kellett (tuve que ir y fui); volna la convierte en un deber que no cumplí."
+          }
+        },
+        {
+          "text": {
+            "en": "I must go now",
+            "es": "Tengo que ir ahora"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mennem kell (I have to go); kellett volna is a past form.",
+            "es": "Con esta regla la frase sería Mennem kell (tengo que ir); kellett volna es una forma de pasado."
+          }
+        },
+        {
+          "text": {
+            "en": "I should have gone, but I did not",
+            "es": "Debería haber ido, pero no fui"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "felteteles-mult-f10",
+      "kind": "form",
+      "verb": "menni",
+      "person": "nektek",
+      "answer": "mennetek kellett volna",
+      "table": "kellett-volna"
+    },
+    {
+      "id": "felteteles-mult-c11",
+      "sentence": "Péter nagyon ___ volna megnézni azt a filmet, de nem kapott jegyet.",
+      "options": [
+        "szeretett",
+        "szerette",
+        "szeretné"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Szeret takes the definite ending when the infinitive has a definite object: azt a filmet, so szerette volna megnézni.",
+        "es": "Szeret lleva la terminación definida cuando el infinitivo tiene un objeto definido: azt a filmet, por eso szerette volna megnézni."
+      },
+      "wrong": {
+        "szeretett": {
+          "en": "Szeretett is the indefinite form; it fits an indefinite object (megnézni egy filmet), not azt a filmet.",
+          "es": "Szeretett es la forma indefinida; va con un objeto indefinido (megnézni egy filmet), no con azt a filmet."
+        },
+        "szeretné": {
+          "en": "Szeretné is the present conditional (he would like); in front of volna the verb must be in the past.",
+          "es": "Szeretné es el condicional presente (le gustaría); delante de volna el verbo tiene que estar en pasado."
+        }
+      },
+      "examples": [
+        "Anna szerette volna megvenni a kabátot.",
+        "Anna szeretett volna kenyeret venni."
+      ],
+      "tr": {
+        "en": "Péter would really have liked to see that film, but he did not get a ticket.",
+        "es": "Péter habría querido mucho ver esa película, pero no consiguió boleto."
+      }
+    },
+    {
+      "id": "felteteles-mult-f11",
+      "kind": "form",
+      "verb": "tanulni",
+      "person": "nekem",
+      "answer": "tanulnom kellett volna",
+      "table": "kellett-volna"
+    },
+    {
+      "id": "felteteles-mult-c12",
+      "sentence": "Ha tegnap ___ volna a jegyeket, ma nem kellett volna sokáig sorban állnotok.",
+      "options": [
+        "megvettétek",
+        "megvettetek",
+        "megvennétek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The subject is ti (állnotok) and a jegyeket is a definite object, so the past takes the definite ending -tétek: megvettétek.",
+        "es": "El sujeto es ti (állnotok) y a jegyeket es un objeto definido, así que el pasado lleva la terminación definida -tétek: megvettétek."
+      },
+      "wrong": {
+        "megvettetek": {
+          "en": "Megvettetek is the indefinite form (you bought something); a jegyeket is definite and needs -tétek.",
+          "es": "Megvettetek es la forma indefinida (compraron algo); a jegyeket es definido y necesita -tétek."
+        },
+        "megvennétek": {
+          "en": "Megvennétek is the present conditional (you would buy them); in front of volna the verb must be in the past.",
+          "es": "Megvennétek es el condicional presente (los comprarían); delante de volna el verbo tiene que estar en pasado."
+        }
+      },
+      "examples": [
+        "Ha megnéztük volna a térképet, nem tévedtünk volna el.",
+        "Ha elolvastad volna a levelet, tudtad volna."
+      ],
+      "tr": {
+        "en": "If you had bought the tickets yesterday, you would not have had to queue for so long today.",
+        "es": "Si ayer hubieran comprado los boletos, hoy no habrían tenido que hacer fila tanto tiempo."
+      }
+    },
+    {
+      "id": "felteteles-mult-f12",
+      "kind": "form",
+      "verb": "jöhetni",
+      "person": "ő / Ön",
+      "answer": "jöhetett volna",
+      "table": "modal-volna"
+    },
+    {
+      "id": "felteteles-mult-c13",
+      "sentence": "Neked nem kellett volna ___ neki a titkot!",
+      "options": [
+        "elmondanom",
+        "elmondanod",
+        "elmondania"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Neked (to you) names the person, so the infinitive takes the \"you\" ending: elmondanod.",
+        "es": "Neked (a ti) nombra a la persona, así que el infinitivo lleva la terminación de «tú»: elmondanod."
+      },
+      "wrong": {
+        "elmondanom": {
+          "en": "Elmondanom would be \"I should not have told\"; neked points to \"you\".",
+          "es": "Elmondanom sería «yo no debería haber contado»; neked apunta a «tú»."
+        },
+        "elmondania": {
+          "en": "Elmondania would be \"he or she should not have told\"; neked points to \"you\".",
+          "es": "Elmondania sería «él o ella no debería haber contado»; neked apunta a «tú»."
+        }
+      },
+      "examples": [
+        "Nem kellett volna ennyi pénzt költenem.",
+        "Nem kellett volna ilyen drága ajándékot venned."
+      ],
+      "tr": {
+        "en": "You should not have told him the secret!",
+        "es": "¡No deberías haberle contado el secreto!"
+      }
+    },
+    {
+      "id": "felteteles-mult-w03",
+      "kind": "why",
+      "es": "Nem mentem volna el a vacsorára.",
+      "target": "el",
+      "tr": {
+        "en": "I would not have gone to the dinner.",
+        "es": "No habría ido a la cena."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A second verb meaning \"away\"",
+            "es": "Un segundo verbo que significa «lejos»"
+          },
+          "wrong": {
+            "en": "With this rule el would be a verb with its own ending; it is the prefix of elmenni, which nem has pushed behind the verb.",
+            "es": "Con esta regla el sería un verbo con su propia terminación; es el prefijo de elmenni, que nem ha empujado detrás del verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "After nem the prefix stands behind the verb",
+            "es": "Después de nem el prefijo va detrás del verbo"
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix always goes behind volna",
+            "es": "El prefijo siempre va detrás de volna"
+          },
+          "wrong": {
+            "en": "With this rule the positive sentence would be Mentem volna el; without nem the prefix stays attached: Elmentem volna.",
+            "es": "Con esta regla la frase afirmativa sería Mentem volna el; sin nem el prefijo se queda unido: Elmentem volna."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "felteteles-mult-c14",
+      "sentence": "Bárcsak ne ___ volna annyit, most nagyon rosszul vagyok.",
+      "options": [
+        "ennék",
+        "enne",
+        "ettem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A negative wish about the past: bárcsak ne + past + volna. Ettem is the past of eszik.",
+        "es": "Un deseo negativo sobre el pasado: bárcsak ne + pasado + volna. Ettem es el pasado de eszik."
+      },
+      "wrong": {
+        "ennék": {
+          "en": "Ennék is the present conditional (I would eat); in front of volna the verb must be in the past.",
+          "es": "Ennék es el condicional presente (comería); delante de volna el verbo tiene que estar en pasado."
+        },
+        "enne": {
+          "en": "Enne is a conditional too (he or she would eat); the past ettem is needed in front of volna.",
+          "es": "Enne también es un condicional (él o ella comería); delante de volna hace falta el pasado ettem."
+        }
+      },
+      "examples": [
+        "Bárcsak ne mondtam volna semmit!",
+        "Bárcsak ne késtem volna el!"
+      ],
+      "tr": {
+        "en": "I wish I had not eaten so much; now I feel really sick!",
+        "es": "¡Ojalá no hubiera comido tanto; ahora me siento muy mal!"
+      }
+    },
+    {
+      "id": "felteteles-mult-w04",
+      "kind": "why",
+      "es": "Bárcsak ott lettem volna!",
+      "target": "lettem volna",
+      "tr": {
+        "en": "If only I had been there!",
+        "es": "¡Ojalá hubiera estado allí!"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A wish about now: I wish I were there",
+            "es": "Un deseo sobre el presente: ojalá estuviera allí"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Bárcsak ott lennék! (present conditional).",
+            "es": "Con esta regla la frase sería Bárcsak ott lennék! (condicional presente)."
+          }
+        },
+        {
+          "text": {
+            "en": "A plain past: I was there",
+            "es": "Un pasado simple: yo estuve allí"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ott voltam (I was there), a fact and not a wish.",
+            "es": "Con esta regla la frase sería Ott voltam (yo estuve allí), un hecho y no un deseo."
+          }
+        },
+        {
+          "text": {
+            "en": "A wish about the past: I was not there",
+            "es": "Un deseo sobre el pasado: yo no estuve allí"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

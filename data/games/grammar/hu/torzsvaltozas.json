@@ -1,0 +1,1457 @@
+{
+  "schema": 2,
+  "topic": "torzsvaltozas",
+  "level": "B1",
+  "title": {
+    "en": "Stems that change: levél → levelet, ló → lovat",
+    "es": "Raíces que cambian: levél → levelet, ló → lovat"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Most Hungarian nouns never change: ház → házat, házak, házam. A few very common nouns do change their stem when an ending that starts with a vowel is added: the accusative -t (with its linking vowel), the plural -k, the possessive endings, and sometimes -on/-en/-ön. There are three patterns. 1) The long vowel shortens: levél → levelet. 2) A vowel falls out: tükör → tükröt. 3) A v appears: ló → lovat. Endings that start with a consonant (-ban/-ben, -val/-vel, -nak/-nek, -ra/-re) leave the word alone: levélben, tükörben, lóval. English has a little of this too (leaf → leaves, wife → wives); Spanish has the z/c change (luz → luces). In Hungarian you simply learn the word together with its accusative: levél, levelet.",
+        "es": "La mayoría de los sustantivos húngaros nunca cambian: ház → házat, házak, házam. Unos pocos, muy comunes, sí cambian su raíz cuando se añade una terminación que empieza por vocal: el acusativo -t (con su vocal de enlace), el plural -k, las terminaciones posesivas y a veces -on/-en/-ön. Hay tres patrones. 1) La vocal larga se acorta: levél → levelet. 2) Una vocal desaparece: tükör → tükröt. 3) Aparece una v: ló → lovat. Las terminaciones que empiezan por consonante (-ban/-ben, -val/-vel, -nak/-nek, -ra/-re) dejan la palabra como está: levélben, tükörben, lóval. El inglés tiene algo parecido (leaf → leaves, wife → wives) y el español el cambio z/c (luz → luces). En húngaro simplemente se aprende la palabra junto con su acusativo: levél, levelet."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "rovidules",
+      "title": {
+        "en": "Group 1: the long vowel shortens",
+        "es": "Grupo 1: la vocal larga se acorta"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "levél (letter)",
+          "es": "levél (carta)"
+        },
+        {
+          "en": "kéz (hand)",
+          "es": "kéz (mano)"
+        },
+        {
+          "en": "madár (bird)",
+          "es": "madár (pájaro)"
+        },
+        {
+          "en": "víz (water)",
+          "es": "víz (agua)"
+        }
+      ],
+      "rows": [
+        [
+          "-t",
+          "levelet",
+          "kezet",
+          "madarat",
+          "vizet"
+        ],
+        [
+          "-k",
+          "levelek",
+          "kezek",
+          "madarak",
+          "vizek"
+        ],
+        [
+          "-m",
+          "levelem",
+          "kezem",
+          "madaram",
+          "vizem"
+        ],
+        [
+          "-ban/-ben",
+          "levélben",
+          "kézben",
+          "madárban",
+          "vízben"
+        ],
+        [
+          "-val/-vel",
+          "levéllel",
+          "kézzel",
+          "madárral",
+          "vízzel"
+        ],
+        [
+          "-on/-en/-ön",
+          "levélen",
+          "kézen",
+          "madáron",
+          "vízen"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Group 1: levél → levelet",
+        "es": "Grupo 1: levél → levelet"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Before -t, -k and the possessive endings the long vowel shortens: é → e, á → a, í → i, ú → u, ű → ü. Common words: levél, kéz, kenyér, tél (é → e); madár, nyár, pohár (á → a); víz, híd (í → i); út, kút (ú → u); tűz (ű → ü). A linking vowel comes with it: levelet, madarat.",
+            "es": "Delante de -t, -k y las terminaciones posesivas la vocal larga se acorta: é → e, á → a, í → i, ú → u, ű → ü. Palabras comunes: levél, kéz, kenyér, tél (é → e); madár, nyár, pohár (á → a); víz, híd (í → i); út, kút (ú → u); tűz (ű → ü). Aparece una vocal de enlace: levelet, madarat."
+          },
+          "examples": [
+            {
+              "es": "Tegnap kaptam egy levelet a bankból.",
+              "tr": {
+                "en": "Yesterday I got a letter from the bank.",
+                "es": "Ayer recibí una carta del banco."
+              }
+            },
+            {
+              "es": "Kérek egy pohár vizet.",
+              "tr": {
+                "en": "I would like a glass of water.",
+                "es": "Quisiera un vaso de agua."
+              }
+            },
+            {
+              "es": "A fán kis madarak ülnek.",
+              "tr": {
+                "en": "Little birds are sitting in the tree.",
+                "es": "Unos pajaritos están posados en el árbol."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The possessive endings use the short stem too (see the last table): levelem, kezem, madaram.",
+            "es": "Las terminaciones posesivas también usan la raíz corta (mira la última tabla): levelem, kezem, madaram."
+          },
+          "examples": [
+            {
+              "es": "Fáj a kezem.",
+              "tr": {
+                "en": "My hand hurts.",
+                "es": "Me duele la mano."
+              }
+            },
+            {
+              "es": "Hol van a levelem?",
+              "tr": {
+                "en": "Where is my letter?",
+                "es": "¿Dónde está mi carta?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A consonant ending keeps the long vowel: levélben, kézzel, vízben. So does -on/-en/-ön (on, in a season): nyáron, télen, kézen. The short stem is for -t, -k and the possessive endings only.",
+            "es": "Una terminación que empieza por consonante conserva la vocal larga: levélben, kézzel, vízben. También -on/-en/-ön (sobre, en una estación): nyáron, télen, kézen. La raíz corta es solo para -t, -k y las terminaciones posesivas."
+          },
+          "examples": [
+            {
+              "es": "Nyáron Mexikóban vagyunk.",
+              "tr": {
+                "en": "In summer we are in Mexico.",
+                "es": "En verano estamos en México."
+              }
+            },
+            {
+              "es": "Télen hideg van.",
+              "tr": {
+                "en": "In winter it is cold.",
+                "es": "En invierno hace frío."
+              }
+            },
+            {
+              "es": "Kézzel is lehet enni.",
+              "tr": {
+                "en": "You can also eat with your hands.",
+                "es": "También se puede comer con las manos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "vegalap",
+      "title": {
+        "en": "Group 2: a vowel falls out",
+        "es": "Grupo 2: una vocal desaparece"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "tükör (mirror)",
+          "es": "tükör (espejo)"
+        },
+        {
+          "en": "sátor (tent)",
+          "es": "sátor (carpa)"
+        },
+        {
+          "en": "eper (strawberry)",
+          "es": "eper (fresa)"
+        },
+        {
+          "en": "ajak (lip)",
+          "es": "ajak (labio)"
+        }
+      ],
+      "rows": [
+        [
+          "-t",
+          "tükröt",
+          "sátrat",
+          "epret",
+          "ajkat"
+        ],
+        [
+          "-k",
+          "tükrök",
+          "sátrak",
+          "eprek",
+          "ajkak"
+        ],
+        [
+          "-m",
+          "tükröm",
+          "sátram",
+          "eprem",
+          "ajkam"
+        ],
+        [
+          "-ban/-ben",
+          "tükörben",
+          "sátorban",
+          "eperben",
+          "ajakban"
+        ],
+        [
+          "-val/-vel",
+          "tükörrel",
+          "sátorral",
+          "eperrel",
+          "ajakkal"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Group 2: tükör → tükröt",
+        "es": "Grupo 2: tükör → tükröt"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The vowel of the last syllable (ö, o, e, a) drops out before an ending that starts with a vowel, and a linking vowel keeps the consonants apart: tükör → tükr + ö + t = tükröt; sátor → sátrat; eper → epret; ajak → ajkat.",
+            "es": "La vocal de la última sílaba (ö, o, e, a) desaparece delante de una terminación que empieza por vocal, y una vocal de enlace separa las consonantes: tükör → tükr + ö + t = tükröt; sátor → sátrat; eper → epret; ajak → ajkat."
+          },
+          "examples": [
+            {
+              "es": "Vettem egy tükröt a fürdőszobába.",
+              "tr": {
+                "en": "I bought a mirror for the bathroom.",
+                "es": "Compré un espejo para el baño."
+              }
+            },
+            {
+              "es": "Nyáron sok epret eszünk.",
+              "tr": {
+                "en": "In summer we eat a lot of strawberries.",
+                "es": "En verano comemos muchas fresas."
+              }
+            },
+            {
+              "es": "A sátrak a tó mellett vannak.",
+              "tr": {
+                "en": "The tents are next to the lake.",
+                "es": "Las carpas están junto al lago."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A consonant ending keeps the full stem: tükörben, sátorban, eperrel. The vowel drops out only when a vowel ending follows.",
+            "es": "Una terminación que empieza por consonante conserva la raíz completa: tükörben, sátorban, eperrel. La vocal desaparece solo cuando sigue una terminación con vocal."
+          },
+          "examples": [
+            {
+              "es": "A tükörben látom magam.",
+              "tr": {
+                "en": "I see myself in the mirror.",
+                "es": "Me veo en el espejo."
+              }
+            },
+            {
+              "es": "Éjszaka a sátorban alszunk.",
+              "tr": {
+                "en": "At night we sleep in the tent.",
+                "es": "De noche dormimos en la carpa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "v-tovek",
+      "title": {
+        "en": "Group 3: a v appears",
+        "es": "Grupo 3: aparece una v"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "tó (lake)",
+          "es": "tó (lago)"
+        },
+        {
+          "en": "ló (horse)",
+          "es": "ló (caballo)"
+        },
+        {
+          "en": "kő (stone)",
+          "es": "kő (piedra)"
+        },
+        {
+          "en": "fű (grass)",
+          "es": "fű (hierba)"
+        }
+      ],
+      "rows": [
+        [
+          "-t",
+          "tavat",
+          "lovat",
+          "követ",
+          "füvet"
+        ],
+        [
+          "-k",
+          "tavak",
+          "lovak",
+          "kövek",
+          "füvek"
+        ],
+        [
+          "-m",
+          "tavam",
+          "lovam",
+          "kövem",
+          "füvem"
+        ],
+        [
+          "-on/-en/-ön",
+          "tavon",
+          "lovon",
+          "kövön",
+          "füvön"
+        ],
+        [
+          "-ra/-re",
+          "tóra",
+          "lóra",
+          "kőre",
+          "fűre"
+        ],
+        [
+          "-val/-vel",
+          "tóval",
+          "lóval",
+          "kővel",
+          "fűvel"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Group 3: ló → lovat",
+        "es": "Grupo 3: ló → lovat"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "A handful of words in -ó/-ő add a v before an ending that starts with a vowel, and the vowel changes: ó → a or o (tó → tavat, hó → havat, ló → lovat); ő → ö and ű → ü, short (kő → követ, fű → füvet).",
+            "es": "Un puñado de palabras en -ó/-ő añaden una v delante de una terminación que empieza por vocal, y la vocal cambia: ó → a u o (tó → tavat, hó → havat, ló → lovat); ő → ö y ű → ü, cortas (kő → követ, fű → füvet)."
+          },
+          "examples": [
+            {
+              "es": "Szeretem a lovakat.",
+              "tr": {
+                "en": "I love horses.",
+                "es": "Me gustan los caballos."
+              }
+            },
+            {
+              "es": "Egy követ találtam a kertben.",
+              "tr": {
+                "en": "I found a stone in the garden.",
+                "es": "Encontré una piedra en el jardín."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Unlike group 1, the v-stem also shows before -on/-en/-ön: tavon, lovon, kövön, füvön.",
+            "es": "A diferencia del grupo 1, la raíz con v también aparece delante de -on/-en/-ön: tavon, lovon, kövön, füvön."
+          },
+          "examples": [
+            {
+              "es": "A tavon sok madár van.",
+              "tr": {
+                "en": "There are many birds on the lake.",
+                "es": "Hay muchos pájaros en el lago."
+              }
+            },
+            {
+              "es": "A lovon ül egy lány.",
+              "tr": {
+                "en": "A girl is sitting on the horse.",
+                "es": "Una chica está sentada en el caballo."
+              }
+            },
+            {
+              "es": "A gyerekek a füvön ülnek.",
+              "tr": {
+                "en": "The children are sitting on the grass.",
+                "es": "Los niños están sentados en la hierba."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Before a consonant, and in the plain form, the word stays as it is: tó, tóban, lóval, kőre, fűvel.",
+            "es": "Delante de consonante, y en la forma simple, la palabra queda como es: tó, tóban, lóval, kőre, fűvel."
+          },
+          "examples": [
+            {
+              "es": "A tóban sok hal van.",
+              "tr": {
+                "en": "There are many fish in the lake.",
+                "es": "Hay muchos peces en el lago."
+              }
+            },
+            {
+              "es": "Ne menj a fűre!",
+              "tr": {
+                "en": "Do not walk on the grass!",
+                "es": "¡No pises la hierba!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Only a handful of -ó/-ő words are v-stems. The others are regular: autó → autót, hajó → hajót, erdő → erdőt, idő → időt.",
+            "es": "Solo un puñado de palabras en -ó/-ő tienen raíz con v. Las demás son regulares: autó → autót, hajó → hajót, erdő → erdőt, idő → időt."
+          },
+          "examples": [
+            {
+              "es": "Veszek egy autót.",
+              "tr": {
+                "en": "I am buying a car.",
+                "es": "Voy a comprar un coche."
+              }
+            },
+            {
+              "es": "Szeretem az erdőt.",
+              "tr": {
+                "en": "I love the forest.",
+                "es": "Me encanta el bosque."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "birtok-torzs",
+      "title": {
+        "en": "The same stems with possessive endings",
+        "es": "Las mismas raíces con terminaciones posesivas"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Poseedor"
+        },
+        {
+          "en": "levél (letter)",
+          "es": "levél (carta)"
+        },
+        {
+          "en": "kéz (hand)",
+          "es": "kéz (mano)"
+        },
+        {
+          "en": "ló (horse)",
+          "es": "ló (caballo)"
+        },
+        {
+          "en": "tükör (mirror)",
+          "es": "tükör (espejo)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "levelem",
+          "kezem",
+          "lovam",
+          "tükröm"
+        ],
+        [
+          "te",
+          "leveled",
+          "kezed",
+          "lovad",
+          "tükröd"
+        ],
+        [
+          "ő",
+          "levele",
+          "keze",
+          "lova",
+          "tükre"
+        ],
+        [
+          "mi",
+          "levelünk",
+          "kezünk",
+          "lovunk",
+          "tükrünk"
+        ],
+        [
+          "ti",
+          "leveletek",
+          "kezetek",
+          "lovatok",
+          "tükrötök"
+        ],
+        [
+          "ők",
+          "levelük",
+          "kezük",
+          "lovuk",
+          "tükrük"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Possessive endings on the changed stem",
+        "es": "Terminaciones posesivas sobre la raíz cambiada"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The possessive endings you know from házam, házad are added to the changed stem, in all three groups: levelem, kezem, lovam, tükröm. The 3rd person is the stem + -a/-e: lova, levele, tükre.",
+            "es": "Las terminaciones posesivas que conoces de házam, házad se añaden a la raíz cambiada, en los tres grupos: levelem, kezem, lovam, tükröm. La 3.ª persona es la raíz + -a/-e: lova, levele, tükre."
+          },
+          "examples": [
+            {
+              "es": "Hol van a leveled?",
+              "tr": {
+                "en": "Where is your letter?",
+                "es": "¿Dónde está tu carta?"
+              }
+            },
+            {
+              "es": "Anna lova nagyon szép.",
+              "tr": {
+                "en": "Anna's horse is very beautiful.",
+                "es": "El caballo de Anna es muy bonito."
+              }
+            },
+            {
+              "es": "A tükrünk a fürdőszobában van.",
+              "tr": {
+                "en": "Our mirror is in the bathroom.",
+                "es": "Nuestro espejo está en el baño."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Short stem or full stem?",
+        "es": "¿Raíz corta o completa?"
+      },
+      "pairs": [
+        {
+          "a": "levelet",
+          "b": "levélben",
+          "note": {
+            "en": "The ending decides: -t is a vowel-start ending, so the stem is short (levelet); -ban starts with a consonant, so the long form stays (levélben).",
+            "es": "La terminación decide: -t empieza por vocal, así que la raíz es corta (levelet); -ban empieza por consonante, así que la forma larga se queda (levélben)."
+          },
+          "examples": [
+            {
+              "es": "Tegnap kaptam egy levelet.",
+              "tr": {
+                "en": "Yesterday I got a letter.",
+                "es": "Ayer recibí una carta."
+              }
+            },
+            {
+              "es": "A levélben jó hír van.",
+              "tr": {
+                "en": "There is good news in the letter.",
+                "es": "Hay una buena noticia en la carta."
+              }
+            }
+          ]
+        },
+        {
+          "a": "nyarat",
+          "b": "nyáron",
+          "note": {
+            "en": "-t shortens the vowel (nyarat); -on does not in this group (nyáron). The same: telet and télen.",
+            "es": "-t acorta la vocal (nyarat); -on no la acorta en este grupo (nyáron). Igual: telet y télen."
+          },
+          "examples": [
+            {
+              "es": "Szeretem a nyarat.",
+              "tr": {
+                "en": "I love summer.",
+                "es": "Me encanta el verano."
+              }
+            },
+            {
+              "es": "Nyáron nagyon meleg van.",
+              "tr": {
+                "en": "In summer it is very hot.",
+                "es": "En verano hace mucho calor."
+              }
+            }
+          ]
+        },
+        {
+          "a": "tavon",
+          "b": "tóban",
+          "note": {
+            "en": "In group 3 the v-stem shows before -on/-en/-ön (tavon, on the lake), but -ban/-ben keeps the plain word (tóban, in the lake).",
+            "es": "En el grupo 3 la raíz con v aparece delante de -on/-en/-ön (tavon, en la superficie del lago), pero -ban/-ben conserva la palabra simple (tóban, dentro del lago)."
+          },
+          "examples": [
+            {
+              "es": "A tavon sok madár van.",
+              "tr": {
+                "en": "There are many birds on the lake.",
+                "es": "Hay muchos pájaros en el lago."
+              }
+            },
+            {
+              "es": "A tóban sok hal van.",
+              "tr": {
+                "en": "There are many fish in the lake.",
+                "es": "Hay muchos peces en el lago."
+              }
+            }
+          ]
+        },
+        {
+          "a": "tükröt",
+          "b": "tükörben",
+          "note": {
+            "en": "The vowel falls out before -t (tükröt) but stays before -ben (tükörben).",
+            "es": "La vocal desaparece delante de -t (tükröt) pero se queda delante de -ben (tükörben)."
+          },
+          "examples": [
+            {
+              "es": "Veszek egy tükröt.",
+              "tr": {
+                "en": "I am buying a mirror.",
+                "es": "Voy a comprar un espejo."
+              }
+            },
+            {
+              "es": "A tükörben látom magam.",
+              "tr": {
+                "en": "I see myself in the mirror.",
+                "es": "Me veo en el espejo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "The classic mistake is to add the ending to the dictionary form: kézet, vízet, levélet, madárat, tükört, lót are all wrong. Say kezet, vizet, levelet, madarat, tükröt, lovat. You cannot guess which words do this: kávé → kávét, sör → sört, hír → hírt, autó → autót stay as they are. Learn the accusative together with the word (levél, levelet; ló, lovat). Register: in everyday speech the accusative -t is often left out after a possessive ending (Megmostam a kezem); careful writing keeps it (a kezemet).",
+        "es": "El error clásico es añadir la terminación a la forma del diccionario: kézet, vízet, levélet, madárat, tükört, lót son todas incorrectas. Di kezet, vizet, levelet, madarat, tükröt, lovat. No se puede adivinar qué palabras hacen esto: kávé → kávét, sör → sört, hír → hírt, autó → autót se quedan como están. Aprende el acusativo junto con la palabra (levél, levelet; ló, lovat). Registro: en el habla diaria el acusativo -t suele omitirse tras una terminación posesiva (Megmostam a kezem); la escritura cuidada lo mantiene (a kezemet)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Some Hungarian nouns change their stem before an ending that begins with a vowel. A long vowel can become short: «levél» becomes «levelet», «kéz» becomes «kezet», and «madár» becomes «madarat». A vowel can drop out: «tükör» becomes «tükröt». And a «v» can appear: «ló» becomes «lovat», and «tó» becomes «tavat». Endings that begin with a consonant leave the word alone: «levélben», «tükörben», «lóval». Learn each word together with its accusative.",
+    "es": "Algunos sustantivos húngaros cambian su raíz delante de una terminación que empieza por vocal. Una vocal larga puede volverse corta: «levél» pasa a «levelet», «kéz» pasa a «kezet» y «madár» pasa a «madarat». Una vocal puede desaparecer: «tükör» pasa a «tükröt». Y puede aparecer una «v»: «ló» pasa a «lovat» y «tó» pasa a «tavat». Las terminaciones que empiezan por consonante dejan la palabra como está: «levélben», «tükörben», «lóval». Aprende cada palabra junto con su acusativo."
+  },
+  "glossary": [
+    {
+      "word": "fog",
+      "gloss": {
+        "en": "to hold, grasp (kezet fog = to shake hands)",
+        "es": "agarrar, sostener (kezet fog = dar la mano)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "torzsvaltozas-c01",
+      "sentence": "Tegnap kaptam egy ___ a bankból.",
+      "options": [
+        "levelet",
+        "levélet",
+        "levélt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The long é shortens before the accusative -t, and a linking vowel e is added: levél → levelet.",
+        "es": "La é larga se acorta delante del acusativo -t y se añade una vocal de enlace e: levél → levelet."
+      },
+      "wrong": {
+        "levélet": {
+          "en": "levélet keeps the long vowel, but Hungarian shortens it before -t. The form levélet does not exist.",
+          "es": "levélet conserva la vocal larga, pero el húngaro la acorta delante de -t. La forma levélet no existe."
+        },
+        "levélt": {
+          "en": "levélt has no linking vowel; a noun ending in a consonant like l needs one before -t, and the stem must be short.",
+          "es": "levélt no tiene vocal de enlace; un sustantivo terminado en consonante como l la necesita delante de -t, y la raíz debe ser corta."
+        }
+      },
+      "examples": [
+        "Írtam egy levelet.",
+        "Kaptam két levelet."
+      ],
+      "tr": {
+        "en": "Yesterday I got a letter from the bank.",
+        "es": "Ayer recibí una carta del banco."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f01",
+      "kind": "form",
+      "verb": "levél",
+      "person": "-t",
+      "answer": "levelet",
+      "table": "rovidules"
+    },
+    {
+      "id": "torzsvaltozas-c02",
+      "sentence": "A főnök kedvesen ___ fogott velem.",
+      "options": [
+        "kézet",
+        "kezet",
+        "kézt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "kezet fog (to shake hands) uses the shortened stem before -t: kéz → kezet.",
+        "es": "kezet fog (dar la mano) usa la raíz acortada delante de -t: kéz → kezet."
+      },
+      "wrong": {
+        "kézet": {
+          "en": "kézet keeps the long vowel; Hungarian shortens it before -t, so kézet does not exist.",
+          "es": "kézet conserva la vocal larga; el húngaro la acorta delante de -t, así que kézet no existe."
+        },
+        "kézt": {
+          "en": "kézt lacks both the short stem and the linking vowel.",
+          "es": "kézt carece tanto de la raíz corta como de la vocal de enlace."
+        }
+      },
+      "examples": [
+        "Kezet fogtam a tanárral.",
+        "Kezet fogunk."
+      ],
+      "tr": {
+        "en": "The boss shook my hand kindly.",
+        "es": "El jefe me dio la mano amablemente."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f02",
+      "kind": "form",
+      "verb": "madár",
+      "person": "-t",
+      "answer": "madarat",
+      "table": "rovidules"
+    },
+    {
+      "id": "torzsvaltozas-c03",
+      "sentence": "A fán kis ___ ülnek.",
+      "options": [
+        "madárak",
+        "madárok",
+        "madarak"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The plural -k comes with the short stem: madár → madarak.",
+        "es": "El plural -k va con la raíz corta: madár → madarak."
+      },
+      "wrong": {
+        "madárak": {
+          "en": "madárak keeps the long á; the stem must be short before the plural -k.",
+          "es": "madárak conserva la á larga; la raíz debe ser corta delante del plural -k."
+        },
+        "madárok": {
+          "en": "madárok is not a Hungarian form; the plural of madár is madarak.",
+          "es": "madárok no es una forma húngara; el plural de madár es madarak."
+        }
+      },
+      "examples": [
+        "Madarakat látok a kertben.",
+        "A madarak nagyon szépek."
+      ],
+      "tr": {
+        "en": "Little birds are sitting in the tree.",
+        "es": "Unos pajaritos están posados en el árbol."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f03",
+      "kind": "form",
+      "verb": "víz",
+      "person": "-t",
+      "answer": "vizet",
+      "table": "rovidules"
+    },
+    {
+      "id": "torzsvaltozas-w01",
+      "kind": "why",
+      "es": "Tegnap kaptam egy levelet.",
+      "target": "levelet",
+      "tr": {
+        "en": "Yesterday I got a letter.",
+        "es": "Ayer recibí una carta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The word is plural, so the vowel changed",
+            "es": "La palabra es plural, por eso cambió la vocal"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about several letters (Kaptam leveleket). Here egy shows one letter; the e comes from shortening, not from the plural.",
+            "es": "Con esta regla la frase hablaría de varias cartas (Kaptam leveleket). Aquí egy muestra una sola carta; la e viene del acortamiento, no del plural."
+          }
+        },
+        {
+          "text": {
+            "en": "The long é shortens to e before the accusative -t, and a linking vowel e is added",
+            "es": "La é larga se acorta a e delante del acusativo -t y se añade una vocal de enlace e"
+          }
+        },
+        {
+          "text": {
+            "en": "It is a spelling mistake for levélet",
+            "es": "Es una falta de ortografía por levélet"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use levélet, but levél shortens its vowel; levélet does not exist.",
+            "es": "Con esta regla la frase usaría levélet, pero levél acorta su vocal; levélet no existe."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "torzsvaltozas-c04",
+      "sentence": "Kérek egy pohár ___.",
+      "options": [
+        "vizet",
+        "vizt",
+        "vízet"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "víz shortens to viz- before -t and takes the linking vowel e: vizet.",
+        "es": "víz se acorta a viz- delante de -t y toma la vocal de enlace e: vizet."
+      },
+      "wrong": {
+        "vizt": {
+          "en": "vizt has the short stem, but the linking vowel is missing; after z the object ending is -et.",
+          "es": "vizt tiene la raíz corta, pero falta la vocal de enlace; después de z la terminación del objeto es -et."
+        },
+        "vízet": {
+          "en": "vízet keeps the long í; it must shorten to i.",
+          "es": "vízet conserva la í larga; debe acortarse a i."
+        }
+      },
+      "examples": [
+        "Iszom egy kis vizet.",
+        "Veszek vizet."
+      ],
+      "tr": {
+        "en": "I would like a glass of water.",
+        "es": "Quisiera un vaso de agua."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f04",
+      "kind": "form",
+      "verb": "kéz",
+      "person": "-ban/-ben",
+      "answer": "kézben",
+      "table": "rovidules"
+    },
+    {
+      "id": "torzsvaltozas-c05",
+      "sentence": "A gyerekek a ___ ülnek a parkban.",
+      "options": [
+        "fűvön",
+        "füvön",
+        "fűön"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "fű is a v-stem: before the vowel-initial -ön it becomes füv- with a short ü: füvön.",
+        "es": "fű es una raíz con v: delante de -ön, que empieza por vocal, pasa a füv- con ü corta: füvön."
+      },
+      "wrong": {
+        "fűvön": {
+          "en": "fűvön keeps the long ű; the v-stem has a short vowel (füv-). The long ű comes back only before consonants (fűvel, fűre).",
+          "es": "fűvön conserva la ű larga; la raíz con v tiene vocal corta (füv-). La ű larga vuelve solo delante de consonantes (fűvel, fűre)."
+        },
+        "fűön": {
+          "en": "fűön has no v; before a vowel ending this word needs the v-stem.",
+          "es": "fűön no tiene v; delante de una terminación con vocal esta palabra necesita la raíz con v."
+        }
+      },
+      "examples": [
+        "A kutya a füvön alszik.",
+        "Ne ülj a füvön!"
+      ],
+      "tr": {
+        "en": "The children are sitting on the grass in the park.",
+        "es": "Los niños están sentados en la hierba del parque."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f05",
+      "kind": "form",
+      "verb": "tükör",
+      "person": "-t",
+      "answer": "tükröt",
+      "table": "vegalap"
+    },
+    {
+      "id": "torzsvaltozas-c06",
+      "sentence": "Szeretem a ___, mert szépek és erősek.",
+      "options": [
+        "lókat",
+        "lóakat",
+        "lovakat"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The plural stem of ló is lov-: lovak. The accusative plural adds -at: lovakat.",
+        "es": "La raíz del plural de ló es lov-: lovak. El acusativo plural añade -at: lovakat."
+      },
+      "wrong": {
+        "lókat": {
+          "en": "lókat adds -k to the plain ló, but the plural of ló is lovak (v-stem).",
+          "es": "lókat añade -k al simple ló, pero el plural de ló es lovak (raíz con v)."
+        },
+        "lóakat": {
+          "en": "lóakat is not a form: the plural is built on the v-stem lov-.",
+          "es": "lóakat no es una forma: el plural se construye sobre la raíz con v lov-."
+        }
+      },
+      "examples": [
+        "Szeretem a lovakat.",
+        "Láttam két lovat."
+      ],
+      "tr": {
+        "en": "I love horses, because they are beautiful and strong.",
+        "es": "Me gustan los caballos, porque son bonitos y fuertes."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f06",
+      "kind": "form",
+      "verb": "sátor",
+      "person": "-k",
+      "answer": "sátrak",
+      "table": "vegalap"
+    },
+    {
+      "id": "torzsvaltozas-c07",
+      "sentence": "A ___ sok hal van.",
+      "options": [
+        "tóban",
+        "tavban",
+        "tavat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "-ban starts with a consonant, so the word stays as it is: a tóban.",
+        "es": "-ban empieza por consonante, así que la palabra queda como es: a tóban."
+      },
+      "wrong": {
+        "tavban": {
+          "en": "tav- appears only before endings that start with a vowel; -ban begins with a consonant.",
+          "es": "tav- aparece solo delante de terminaciones que empiezan por vocal; -ban empieza por consonante."
+        },
+        "tavat": {
+          "en": "tavat is the accusative (the lake as an object); the sentence says \"in the lake\", which is -ban.",
+          "es": "tavat es el acusativo (el lago como objeto); la frase dice «en el lago», que es -ban."
+        }
+      },
+      "examples": [
+        "Nyáron a tóban úszunk.",
+        "Hideg a víz a tóban."
+      ],
+      "tr": {
+        "en": "There are many fish in the lake.",
+        "es": "Hay muchos peces en el lago."
+      }
+    },
+    {
+      "id": "torzsvaltozas-c08",
+      "sentence": "A ___ sok madár van.",
+      "options": [
+        "tón",
+        "tavon",
+        "tavban"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "-on/-en/-ön starts with a vowel, so the v-stem appears: tó → tavon (on the lake).",
+        "es": "-on/-en/-ön empieza por vocal, así que aparece la raíz con v: tó → tavon (en el lago)."
+      },
+      "wrong": {
+        "tón": {
+          "en": "tón is built on the plain stem; before a vowel ending tó becomes tav-.",
+          "es": "tón se construye sobre la raíz simple; delante de una terminación con vocal tó pasa a tav-."
+        },
+        "tavban": {
+          "en": "tavban mixes the v-stem with -ban; -ban is a consonant ending, so it would be tóban, and it means \"inside the lake\".",
+          "es": "tavban mezcla la raíz con v con -ban; -ban empieza por consonante, así que sería tóban, y significa «dentro del lago»."
+        }
+      },
+      "examples": [
+        "A lovon ül egy lány.",
+        "A füvön ülünk."
+      ],
+      "tr": {
+        "en": "There are many birds on the lake.",
+        "es": "Hay muchos pájaros en el lago."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f07",
+      "kind": "form",
+      "verb": "eper",
+      "person": "-val/-vel",
+      "answer": "eperrel",
+      "table": "vegalap"
+    },
+    {
+      "id": "torzsvaltozas-w02",
+      "kind": "why",
+      "es": "A tükörben látom magam.",
+      "target": "tükörben",
+      "tr": {
+        "en": "I see myself in the mirror.",
+        "es": "Me veo en el espejo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The vowel drops before every ending, so it should be tükrben",
+            "es": "La vocal desaparece delante de cualquier terminación, así que debería ser tükrben"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A tükrben látom magam, which is wrong: the ö drops only before an ending that starts with a vowel.",
+            "es": "Con esta regla la frase sería A tükrben látom magam, que es incorrecto: la ö desaparece solo delante de una terminación que empieza por vocal."
+          }
+        },
+        {
+          "text": {
+            "en": "-ben starts with a consonant, so the full stem tükör stays",
+            "es": "-ben empieza por consonante, así que la raíz completa tükör se queda"
+          }
+        },
+        {
+          "text": {
+            "en": "-ben is added to the accusative stem tükröt",
+            "es": "-ben se añade a la raíz del acusativo tükröt"
+          },
+          "wrong": {
+            "en": "With this rule you would get tükrötben; the endings -ban/-ben attach directly to the basic form.",
+            "es": "Con esta regla saldría tükrötben; las terminaciones -ban/-ben se unen directamente a la forma básica."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "torzsvaltozas-c09",
+      "sentence": "Éjszaka a ___ alszunk, nem a szállodában.",
+      "options": [
+        "sátrban",
+        "sátrat",
+        "sátorban"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "-ban starts with a consonant, so sátor keeps its full stem: sátorban.",
+        "es": "-ban empieza por consonante, así que sátor conserva su raíz completa: sátorban."
+      },
+      "wrong": {
+        "sátrban": {
+          "en": "sátrban drops the o, but the vowel only drops before an ending that starts with a vowel.",
+          "es": "sátrban elimina la o, pero la vocal solo desaparece delante de una terminación que empieza por vocal."
+        },
+        "sátrat": {
+          "en": "sátrat is the accusative (the tent as an object); alszunk \"in the tent\" needs -ban.",
+          "es": "sátrat es el acusativo (la carpa como objeto); alszunk «en la carpa» necesita -ban."
+        }
+      },
+      "examples": [
+        "A sátorban hideg van.",
+        "Sátorban alszunk."
+      ],
+      "tr": {
+        "en": "At night we sleep in a tent, not in the hotel.",
+        "es": "De noche dormimos en una carpa, no en el hotel."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f08",
+      "kind": "form",
+      "verb": "ló",
+      "person": "-t",
+      "answer": "lovat",
+      "table": "v-tovek"
+    },
+    {
+      "id": "torzsvaltozas-c10",
+      "sentence": "Vettem egy új ___ a fürdőszobába.",
+      "options": [
+        "tükröt",
+        "tükört",
+        "tükrt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The vowel falls out and a new linking vowel appears: tükör → tükr + ö + t = tükröt.",
+        "es": "La vocal desaparece y aparece una nueva vocal de enlace: tükör → tükr + ö + t = tükröt."
+      },
+      "wrong": {
+        "tükört": {
+          "en": "tükört keeps the whole stem and just adds -t, which is the most common mistake. The second ö falls out and a new linking ö comes in.",
+          "es": "tükört conserva toda la raíz y solo añade -t, que es el error más común. La segunda ö desaparece y entra una nueva ö de enlace."
+        },
+        "tükrt": {
+          "en": "tükrt has dropped the vowel but has no linking vowel; kr + t cannot stand together here.",
+          "es": "tükrt ha perdido la vocal pero no tiene vocal de enlace; kr + t no pueden ir juntas aquí."
+        }
+      },
+      "examples": [
+        "Veszek egy tükröt.",
+        "Látok egy tükröt az ablak mellett."
+      ],
+      "tr": {
+        "en": "I bought a new mirror for the bathroom.",
+        "es": "Compré un espejo nuevo para el baño."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f09",
+      "kind": "form",
+      "verb": "kő",
+      "person": "-t",
+      "answer": "követ",
+      "table": "v-tovek"
+    },
+    {
+      "id": "torzsvaltozas-c11",
+      "sentence": "Nyáron sok ___ eszünk.",
+      "options": [
+        "eperet",
+        "epret",
+        "eper"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "eper loses its second e before the accusative -t: epr + e + t = epret.",
+        "es": "eper pierde su segunda e delante del acusativo -t: epr + e + t = epret."
+      },
+      "wrong": {
+        "eperet": {
+          "en": "eperet keeps the full stem and adds -et; the middle e falls out.",
+          "es": "eperet conserva la raíz completa y añade -et; la e del medio desaparece."
+        },
+        "eper": {
+          "en": "eper without -t is the plain form; eszünk needs an object with -t.",
+          "es": "eper sin -t es la forma simple; eszünk necesita un objeto con -t."
+        }
+      },
+      "examples": [
+        "Szeretem az epret.",
+        "Az eprek nagyon édesek."
+      ],
+      "tr": {
+        "en": "In summer we eat a lot of strawberries.",
+        "es": "En verano comemos muchas fresas."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f10",
+      "kind": "form",
+      "verb": "fű",
+      "person": "-on/-en/-ön",
+      "answer": "füvön",
+      "table": "v-tovek"
+    },
+    {
+      "id": "torzsvaltozas-w03",
+      "kind": "why",
+      "es": "A gyerekek a füvön ülnek.",
+      "target": "füvön",
+      "tr": {
+        "en": "The children are sitting on the grass.",
+        "es": "Los niños están sentados en la hierba."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Every word in -ó, -ő or -ű takes a v before a vowel ending",
+            "es": "Toda palabra en -ó, -ő o -ű toma una v delante de una terminación con vocal"
+          },
+          "wrong": {
+            "en": "With this rule autó would give autóvon, but the correct form is autón; only a handful of words (tó, ló, hó, kő, fű) are v-stems.",
+            "es": "Con esta regla autó daría autóvon, pero la forma correcta es autón; solo un puñado de palabras (tó, ló, hó, kő, fű) tienen raíz con v."
+          }
+        },
+        {
+          "text": {
+            "en": "The long ű stays and a v is put in: fűvön",
+            "es": "La ű larga se queda y se inserta una v: fűvön"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be fűvön, but the v-stem has a short vowel (füv-); the long vowel returns only before consonants (fűvel, fűre).",
+            "es": "Con esta regla la frase sería fűvön, pero la raíz con v tiene vocal corta (füv-); la vocal larga vuelve solo delante de consonantes (fűvel, fűre)."
+          }
+        },
+        {
+          "text": {
+            "en": "fű is a v-stem: before -ön a v appears and the vowel is short (füv-)",
+            "es": "fű es una raíz con v: delante de -ön aparece una v y la vocal es corta (füv-)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "torzsvaltozas-c12",
+      "sentence": "Neked van egy hosszú leveled, nekem csak egy rövid ___ van.",
+      "options": [
+        "levélem",
+        "levele",
+        "levelem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nekem points to \"I\": the possessive ending -m goes on the short stem: levelem (my letter).",
+        "es": "nekem apunta a «yo»: la terminación posesiva -m va sobre la raíz corta: levelem (mi carta)."
+      },
+      "wrong": {
+        "levélem": {
+          "en": "The stem must be short: levelem. levélem is not a form.",
+          "es": "La raíz debe ser corta: levelem. levélem no es una forma."
+        },
+        "levele": {
+          "en": "levele is \"his or her letter\", the ending for a third person; nekem needs the I ending.",
+          "es": "levele es «su carta (de él o ella)», la terminación de tercera persona; nekem pide la terminación de «yo»."
+        }
+      },
+      "examples": [
+        "Nekem is van egy levelem.",
+        "Hol van a levelem?"
+      ],
+      "tr": {
+        "en": "You have a long letter, I only have a short one.",
+        "es": "Tú tienes una carta larga, yo solo tengo una corta."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f11",
+      "kind": "form",
+      "verb": "levél",
+      "person": "ti",
+      "answer": "leveletek",
+      "table": "birtok-torzs"
+    },
+    {
+      "id": "torzsvaltozas-c13",
+      "sentence": "Nekik van egy fehér ___.",
+      "options": [
+        "lovuk",
+        "lóuk",
+        "lovak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "nekik points to \"they\": the ending -uk goes on the v-stem: lovuk (their horse).",
+        "es": "nekik apunta a «ellos»: la terminación -uk va sobre la raíz con v: lovuk (su caballo)."
+      },
+      "wrong": {
+        "lóuk": {
+          "en": "The stem is lov- before a vowel-initial ending, not ló.",
+          "es": "La raíz es lov- delante de una terminación que empieza por vocal, no ló."
+        },
+        "lovak": {
+          "en": "lovak is the plural \"horses\", but egy fehér asks for one horse.",
+          "es": "lovak es el plural «caballos», pero egy fehér pide un solo caballo."
+        }
+      },
+      "examples": [
+        "Nekünk van egy lovunk.",
+        "Annának van egy lova."
+      ],
+      "tr": {
+        "en": "They have a white horse.",
+        "es": "Ellos tienen un caballo blanco."
+      }
+    },
+    {
+      "id": "torzsvaltozas-f12",
+      "kind": "form",
+      "verb": "tükör",
+      "person": "ő",
+      "answer": "tükre",
+      "table": "birtok-torzs"
+    },
+    {
+      "id": "torzsvaltozas-c14",
+      "sentence": "___ Mexikóban vagyunk, télen Budapesten.",
+      "options": [
+        "Nyaron",
+        "Nyáron",
+        "Nyarat"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "-on does not shorten the stem in this group: nyár → nyáron (like télen). Shortening happens before -t, -k and the possessive endings.",
+        "es": "-on no acorta la raíz en este grupo: nyár → nyáron (como télen). El acortamiento ocurre delante de -t, -k y las terminaciones posesivas."
+      },
+      "wrong": {
+        "Nyaron": {
+          "en": "Nyaron shortens the vowel, but -on/-en/-ön leaves the long vowel in this group.",
+          "es": "Nyaron acorta la vocal, pero -on/-en/-ön deja la vocal larga en este grupo."
+        },
+        "Nyarat": {
+          "en": "Nyarat is the accusative (summer as an object); the sentence says \"in summer\".",
+          "es": "Nyarat es el acusativo (el verano como objeto); la frase dice «en verano»."
+        }
+      },
+      "examples": [
+        "Nyáron meleg van.",
+        "Télen hideg van."
+      ],
+      "tr": {
+        "en": "In summer we are in Mexico, in winter in Budapest.",
+        "es": "En verano estamos en México, en invierno en Budapest."
+      }
+    },
+    {
+      "id": "torzsvaltozas-c15",
+      "sentence": "Tegnap sok ___ esett.",
+      "options": [
+        "hav",
+        "havat",
+        "hó"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The plain form hó stays in the nominative (sok hó esett = a lot of snow fell); hav- appears only before endings that start with a vowel.",
+        "es": "La forma simple hó se queda en el nominativo (sok hó esett = cayó mucha nieve); hav- aparece solo delante de terminaciones que empiezan por vocal."
+      },
+      "wrong": {
+        "hav": {
+          "en": "hav is a stem that never stands alone.",
+          "es": "hav es una raíz que nunca aparece sola."
+        },
+        "havat": {
+          "en": "havat is the accusative, but snow is the subject of esett here.",
+          "es": "havat es el acusativo, pero aquí la nieve es el sujeto de esett."
+        }
+      },
+      "examples": [
+        "Sok hó van a hegyen.",
+        "A hó nagyon fehér."
+      ],
+      "tr": {
+        "en": "Yesterday a lot of snow fell.",
+        "es": "Ayer cayó mucha nieve."
+      }
+    },
+    {
+      "id": "torzsvaltozas-w04",
+      "kind": "why",
+      "es": "Nyáron Mexikóban vagyunk.",
+      "target": "Nyáron",
+      "tr": {
+        "en": "In summer we are in Mexico.",
+        "es": "En verano estamos en México."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The vowel shortens before every ending that starts with a vowel",
+            "es": "La vocal se acorta delante de cualquier terminación que empieza por vocal"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nyaron; shortening happens before -t, -k and the possessive endings only (nyarat, nyarak, nyaram).",
+            "es": "Con esta regla la frase sería Nyaron; el acortamiento ocurre solo delante de -t, -k y las terminaciones posesivas (nyarat, nyarak, nyaram)."
+          }
+        },
+        {
+          "text": {
+            "en": "-on/-en/-ön does not shorten this group: the long vowel stays (nyár → nyáron, tél → télen)",
+            "es": "-on/-en/-ön no acorta este grupo: la vocal larga se queda (nyár → nyáron, tél → télen)"
+          }
+        },
+        {
+          "text": {
+            "en": "Nyáron is a separate word, not formed from nyár",
+            "es": "Nyáron es una palabra aparte, no formada a partir de nyár"
+          },
+          "wrong": {
+            "en": "With this rule nyáron would have to be learnt as a word of its own, but it is simply nyár + -on, and télen works the same way.",
+            "es": "Con esta regla nyáron habría que aprenderla como una palabra propia, pero es simplemente nyár + -on, y télen funciona igual."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

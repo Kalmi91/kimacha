@@ -1,0 +1,1503 @@
+{
+  "schema": 2,
+  "topic": "szokapcsolatok",
+  "level": "C1",
+  "title": {
+    "en": "Fixed phrases: részt vesz, szükségem van",
+    "es": "Frases hechas: részt vesz, szükségem van"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Many Hungarian ideas come as fixed chunks, not as single verbs. In a light-verb chunk the verb is almost empty (vesz = take, tesz = put, hoz = bring, játszik = play) and the noun in front carries the meaning: részt vesz (take part), figyelembe vesz (take into account), tudomásul vesz (take note of, accept), szerepet játszik (play a role), döntést hoz (make a decision). A second family uses van with a possessed noun: szükségem van rá (I need it), kedvem van (I feel like it), dolgom van (I have things to do), szó van róla (it is being discussed). You cannot build these word for word. English says make a decision and ask a question, Spanish says tomar una decisión and hacer una pregunta; Hungarian brings the decision (döntést hoz) and puts the question up (feltesz egy kérdést). Learn each chunk whole, with the case it asks for.",
+        "es": "Muchas ideas del húngaro vienen en bloques fijos, no en verbos sueltos. En un bloque con verbo ligero el verbo casi no dice nada (vesz = tomar, tesz = poner, hoz = traer, játszik = jugar) y el sustantivo de delante lleva el significado: részt vesz (participar), figyelembe vesz (tener en cuenta), tudomásul vesz (darse por enterado, aceptar), szerepet játszik (desempeñar un papel), döntést hoz (tomar una decisión). Una segunda familia usa van con un sustantivo poseído: szükségem van rá (lo necesito), kedvem van (tengo ganas), dolgom van (tengo cosas que hacer), szó van róla (se está hablando de ello). No se pueden armar palabra por palabra. El inglés dice make a decision y ask a question, el español dice tomar una decisión y hacer una pregunta; el húngaro «trae» la decisión (döntést hoz) y «pone» la pregunta (feltesz egy kérdést). Aprende cada bloque entero, con el caso que pide."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "fix-igek",
+      "title": {
+        "en": "Light-verb chunks: present, past, negative",
+        "es": "Bloques con verbo ligero: presente, pasado, negación"
+      },
+      "header": [
+        {
+          "en": "Chunk (infinitive)",
+          "es": "Bloque (infinitivo)"
+        },
+        {
+          "en": "he or she, present",
+          "es": "él o ella, presente"
+        },
+        {
+          "en": "he or she, past",
+          "es": "él o ella, pasado"
+        },
+        {
+          "en": "negative, present",
+          "es": "negación, presente"
+        }
+      ],
+      "rows": [
+        [
+          "részt venni",
+          "részt vesz",
+          "részt vett",
+          "nem vesz részt"
+        ],
+        [
+          "figyelembe venni",
+          "figyelembe veszi",
+          "figyelembe vette",
+          "nem veszi figyelembe"
+        ],
+        [
+          "tudomásul venni",
+          "tudomásul veszi",
+          "tudomásul vette",
+          "nem veszi tudomásul"
+        ],
+        [
+          "szerepet játszani",
+          "szerepet játszik",
+          "szerepet játszott",
+          "nem játszik szerepet"
+        ],
+        [
+          "döntést hozni",
+          "döntést hoz",
+          "döntést hozott",
+          "nem hoz döntést"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "The noun in front works like a verb prefix",
+        "es": "El sustantivo de delante funciona como un prefijo verbal"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "In a plain sentence the noun stands right before the verb. After nem, after a question word, or when another word is stressed, it moves behind the verb, exactly as el- or meg- do.",
+            "es": "En una oración neutra el sustantivo va justo antes del verbo. Tras nem, tras una palabra interrogativa o cuando se enfatiza otra palabra, pasa detrás del verbo, igual que lo hacen el- o meg-."
+          },
+          "examples": [
+            {
+              "es": "Anna részt vesz az értekezleten.",
+              "tr": {
+                "en": "Anna takes part in the meeting.",
+                "es": "Anna participa en la reunión."
+              }
+            },
+            {
+              "es": "Nem veszek részt az értekezleten, mert beteg vagyok.",
+              "tr": {
+                "en": "I am not taking part in the meeting because I am ill.",
+                "es": "No participo en la reunión porque estoy enfermo."
+              }
+            },
+            {
+              "es": "Ki vesz részt a vitában?",
+              "tr": {
+                "en": "Who is taking part in the debate?",
+                "es": "¿Quién participa en el debate?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With kell, akar, tud, lehet the noun goes first, then the helper, then the infinitive: Részt kell vennem. This is the same order as El kell mennem. The person ending sits on the infinitive (vennem, venned, vennie); a general rule has the plain infinitive (venni).",
+            "es": "Con kell, akar, tud, lehet va primero el sustantivo, luego el auxiliar y al final el infinitivo: Részt kell vennem. Es el mismo orden que El kell mennem. La terminación de persona va en el infinitivo (vennem, venned, vennie); una regla general lleva el infinitivo simple (venni)."
+          },
+          "examples": [
+            {
+              "es": "Holnap részt kell vennem az értekezleten.",
+              "tr": {
+                "en": "I have to attend the meeting tomorrow.",
+                "es": "Mañana tengo que asistir a la reunión."
+              }
+            },
+            {
+              "es": "Neked is figyelembe kell venned a határidőt.",
+              "tr": {
+                "en": "You too have to take the deadline into account.",
+                "es": "Tú también tienes que tomar en cuenta la fecha límite."
+              }
+            },
+            {
+              "es": "Ezt tudomásul kell venni.",
+              "tr": {
+                "en": "One has to accept this.",
+                "es": "Hay que aceptar esto."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Which case does each chunk take?",
+        "es": "¿Qué caso lleva cada bloque?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "részt vesz usually takes -on/-en/-ön for an event you attend (konferencia, értekezlet, óra, tanfolyam) and -ban/-ben for an activity or process you join (munka, kutatás, háború, projekt). This is a tendency, not a law: some words allow both (vita, projekt), so learn the common ones as they come.",
+            "es": "részt vesz suele llevar -on/-en/-ön para un evento al que asistes (konferencia, értekezlet, óra, tanfolyam) y -ban/-ben para una actividad o proceso en el que participas (munka, kutatás, háború, projekt). Es una tendencia, no una ley: algunas palabras admiten ambos (vita, projekt), así que aprende las comunes sobre la marcha."
+          },
+          "examples": [
+            {
+              "es": "Lupita részt vesz egy konferencián Budapesten.",
+              "tr": {
+                "en": "Lupita is taking part in a conference in Budapest.",
+                "es": "Lupita participa en una conferencia en Budapest."
+              }
+            },
+            {
+              "es": "Gábor részt vesz az új projektben.",
+              "tr": {
+                "en": "Gábor takes part in the new project.",
+                "es": "Gábor participa en el nuevo proyecto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "figyelembe vesz and tudomásul vesz take an object in -t, usually a definite one, so the verb is definite (veszem, veszi, vesszük). figyelembe vesz = let it influence what you decide; tudomásul vesz = accept it as a fact.",
+            "es": "figyelembe vesz y tudomásul vesz llevan un objeto en -t, casi siempre determinado, así que el verbo va en conjugación definida (veszem, veszi, vesszük). figyelembe vesz = dejar que influya en lo que decides; tudomásul vesz = aceptarlo como un hecho."
+          },
+          "examples": [
+            {
+              "es": "A főnök figyelembe veszi a véleményünket.",
+              "tr": {
+                "en": "The boss takes our opinion into account.",
+                "es": "El jefe toma en cuenta nuestra opinión."
+              }
+            },
+            {
+              "es": "Tudomásul vettem a döntést, de nem tetszik.",
+              "tr": {
+                "en": "I accepted the decision, but I do not like it.",
+                "es": "Acepté la decisión, pero no me gusta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "szerepet játszik + -ban/-ben (in what). An adjective goes between the noun and the verb (nagy, fontos), and the whole group stays in front of the verb.",
+            "es": "szerepet játszik + -ban/-ben (en qué). Un adjetivo va entre el sustantivo y el verbo (nagy, fontos), y todo el grupo se queda delante del verbo."
+          },
+          "examples": [
+            {
+              "es": "A zene fontos szerepet játszik az életemben.",
+              "tr": {
+                "en": "Music plays an important role in my life.",
+                "es": "La música desempeña un papel importante en mi vida."
+              }
+            },
+            {
+              "es": "Az idő nagy szerepet játszott a döntésben.",
+              "tr": {
+                "en": "Time played a big part in the decision.",
+                "es": "El tiempo desempeñó un papel importante en la decisión."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "döntést hoz + -ról/-ről (about what). A decision is brought, not made: csinál and vesz do not work here.",
+            "es": "döntést hoz + -ról/-ről (sobre qué). Una decisión se «trae», no se hace: csinál y vesz no funcionan aquí."
+          },
+          "examples": [
+            {
+              "es": "A vezetők döntést hoztak a költözésről.",
+              "tr": {
+                "en": "The managers made a decision about the move.",
+                "es": "Los directivos tomaron una decisión sobre la mudanza."
+              }
+            },
+            {
+              "es": "Kati még nem hozott döntést.",
+              "tr": {
+                "en": "Kati has not made a decision yet.",
+                "es": "Kati todavía no ha tomado una decisión."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "feltesz egy kérdést valakinek: the question is the object and the person takes -nak/-nek. With kérdez and megkérdez it is the other way round: the person is the object.",
+            "es": "feltesz egy kérdést valakinek: la pregunta es el objeto y la persona lleva -nak/-nek. Con kérdez y megkérdez es al revés: la persona es el objeto."
+          },
+          "examples": [
+            {
+              "es": "Feltehetek egy kérdést?",
+              "tr": {
+                "en": "May I ask a question?",
+                "es": "¿Puedo hacer una pregunta?"
+              }
+            },
+            {
+              "es": "Anna feltett egy kérdést a tanárnak.",
+              "tr": {
+                "en": "Anna asked the teacher a question.",
+                "es": "Anna le hizo una pregunta al maestro."
+              }
+            },
+            {
+              "es": "Megkérdeztem a tanárt, hol van a terem.",
+              "tr": {
+                "en": "I asked the teacher where the room is.",
+                "es": "Le pregunté al maestro dónde está el salón."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "szukseg-birtok",
+      "title": {
+        "en": "The possessed noun in the van-chunks",
+        "es": "El sustantivo poseído en los bloques con van"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "szükség (need)",
+          "es": "szükség (necesidad)"
+        },
+        {
+          "en": "kedv (wish, mood)",
+          "es": "kedv (ganas)"
+        },
+        {
+          "en": "jog (right)",
+          "es": "jog (derecho)"
+        },
+        {
+          "en": "dolog (task)",
+          "es": "dolog (cosa que hacer)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "szükségem",
+          "kedvem",
+          "jogom",
+          "dolgom"
+        ],
+        [
+          "te",
+          "szükséged",
+          "kedved",
+          "jogod",
+          "dolgod"
+        ],
+        [
+          "ő",
+          "szüksége",
+          "kedve",
+          "joga",
+          "dolga"
+        ],
+        [
+          "mi",
+          "szükségünk",
+          "kedvünk",
+          "jogunk",
+          "dolgunk"
+        ],
+        [
+          "ti",
+          "szükségetek",
+          "kedvetek",
+          "jogotok",
+          "dolgotok"
+        ],
+        [
+          "ők",
+          "szükségük",
+          "kedvük",
+          "joguk",
+          "dolguk"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Chunks with van: who has what?",
+        "es": "Bloques con van: ¿quién tiene qué?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "szükségem van + -ra/-re: the thing you need takes -ra/-re. The negative is always nincs szükségem rá, never nem van. Without a person: szükség van valamire.",
+            "es": "szükségem van + -ra/-re: lo que necesitas lleva -ra/-re. La negación es siempre nincs szükségem rá, nunca nem van. Sin persona: szükség van valamire."
+          },
+          "examples": [
+            {
+              "es": "Szükségem van egy kis segítségre.",
+              "tr": {
+                "en": "I need a little help.",
+                "es": "Necesito un poco de ayuda."
+              }
+            },
+            {
+              "es": "Nincs szükségünk több időre.",
+              "tr": {
+                "en": "We do not need more time.",
+                "es": "No necesitamos más tiempo."
+              }
+            },
+            {
+              "es": "Szükség van pénzre.",
+              "tr": {
+                "en": "Money is needed.",
+                "es": "Se necesita dinero."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "kedvem van + infinitive: you feel like doing something. The negative is nincs kedvem.",
+            "es": "kedvem van + infinitivo: tienes ganas de hacer algo. La negación es nincs kedvem."
+          },
+          "examples": [
+            {
+              "es": "Van kedved moziba menni?",
+              "tr": {
+                "en": "Do you feel like going to the cinema?",
+                "es": "¿Tienes ganas de ir al cine?"
+              }
+            },
+            {
+              "es": "Nincs kedvem főzni.",
+              "tr": {
+                "en": "I do not feel like cooking.",
+                "es": "No tengo ganas de cocinar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "dolgom van: you have things to do, you are busy. An owner who is named takes -nak/-nek: Péternek dolga van.",
+            "es": "dolgom van: tienes cosas que hacer, estás ocupado. Un poseedor nombrado lleva -nak/-nek: Péternek dolga van."
+          },
+          "examples": [
+            {
+              "es": "Ma sok dolgom van.",
+              "tr": {
+                "en": "I have a lot to do today.",
+                "es": "Hoy tengo mucho que hacer."
+              }
+            },
+            {
+              "es": "Gábornak holnap dolga van a bankban.",
+              "tr": {
+                "en": "Gábor has business at the bank tomorrow.",
+                "es": "Gábor tiene un trámite en el banco mañana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "jogom van: you have the right to something. It is followed by -hoz/-hez/-höz or by an infinitive.",
+            "es": "jogom van: tienes derecho a algo. Va seguido de -hoz/-hez/-höz o de un infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Mindenkinek joga van a pihenéshez.",
+              "tr": {
+                "en": "Everybody has the right to rest.",
+                "es": "Todos tienen derecho al descanso."
+              }
+            },
+            {
+              "es": "Jogod van tudni, mi történt.",
+              "tr": {
+                "en": "You have the right to know what happened.",
+                "es": "Tienes derecho a saber qué pasó."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "problémám van + -val/-vel: you have a problem with something.",
+            "es": "problémám van + -val/-vel: tienes un problema con algo."
+          },
+          "examples": [
+            {
+              "es": "Problémám van a számítógéppel.",
+              "tr": {
+                "en": "I have a problem with the computer.",
+                "es": "Tengo un problema con la computadora."
+              }
+            },
+            {
+              "es": "Kati nem tud dolgozni, mert problémája van az internettel.",
+              "tr": {
+                "en": "Kati cannot work because she has a problem with the internet.",
+                "es": "Kati no puede trabajar porque tiene un problema con el internet."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "szó van + -ról/-ről: it is about something, it is being discussed. Miről van szó? asks what the matter is. Arról van szó, hogy… gives the point. Szó sincs róla! means No way!",
+            "es": "szó van + -ról/-ről: se trata de algo, se está hablando de algo. Miről van szó? pregunta de qué se trata. Arról van szó, hogy… da el punto. Szó sincs róla! significa ¡Ni hablar!"
+          },
+          "examples": [
+            {
+              "es": "Miről van szó?",
+              "tr": {
+                "en": "What is it about?",
+                "es": "¿De qué se trata?"
+              }
+            },
+            {
+              "es": "Arról van szó, hogy a számla még nincs kifizetve.",
+              "tr": {
+                "en": "The point is that the bill has not been paid yet.",
+                "es": "El punto es que la cuenta todavía no está pagada."
+              }
+            },
+            {
+              "es": "Szó sincs róla!",
+              "tr": {
+                "en": "No way!",
+                "es": "¡Ni hablar!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "vonzat-esetek",
+      "title": {
+        "en": "The case after the van-chunk",
+        "es": "El caso después del bloque con van"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "szükségem van ___ (-ra/-re)",
+          "es": "szükségem van ___ (-ra/-re)"
+        },
+        {
+          "en": "szó van ___ (-ról/-ről)",
+          "es": "szó van ___ (-ról/-ről)"
+        },
+        {
+          "en": "problémám van ___ (-val/-vel)",
+          "es": "problémám van ___ (-val/-vel)"
+        }
+      ],
+      "rows": [
+        [
+          "számítógép",
+          "számítógépre",
+          "számítógépről",
+          "számítógéppel"
+        ],
+        [
+          "telefon",
+          "telefonra",
+          "telefonról",
+          "telefonnal"
+        ],
+        [
+          "lakás",
+          "lakásra",
+          "lakásról",
+          "lakással"
+        ],
+        [
+          "szerződés",
+          "szerződésre",
+          "szerződésről",
+          "szerződéssel"
+        ],
+        [
+          "autó",
+          "autóra",
+          "autóról",
+          "autóval"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Close but different",
+        "es": "Parecidos pero distintos"
+      },
+      "pairs": [
+        {
+          "a": "Figyelembe veszem.",
+          "b": "Tudomásul veszem.",
+          "note": {
+            "en": "figyelembe vesz = the thing will influence what you decide or do. tudomásul vesz = you accept it as a fact, whether or not you like it.",
+            "es": "figyelembe vesz = lo que pasa influirá en lo que decides o haces. tudomásul vesz = lo aceptas como un hecho, te guste o no."
+          },
+          "examples": [
+            {
+              "es": "A tanár figyelembe vette, hogy Anna beteg volt.",
+              "tr": {
+                "en": "The teacher took into account that Anna had been ill.",
+                "es": "El maestro tomó en cuenta que Anna había estado enferma."
+              }
+            },
+            {
+              "es": "Tudomásul vettem, hogy a vizsga elmarad.",
+              "tr": {
+                "en": "I accepted that the exam is cancelled.",
+                "es": "Acepté que el examen se cancela."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Szükségem van egy kávéra.",
+          "b": "Kell egy kávé.",
+          "note": {
+            "en": "Same idea. Kell is the everyday, direct way; szükségem van is fuller and more careful, and it is what you write.",
+            "es": "La misma idea. Kell es lo cotidiano y directo; szükségem van es más completo y cuidado, y es lo que se escribe."
+          },
+          "examples": [
+            {
+              "es": "Szükségem van egy kis pihenésre.",
+              "tr": {
+                "en": "I need a little rest.",
+                "es": "Necesito un poco de descanso."
+              }
+            },
+            {
+              "es": "Nekem is kell egy kis pihenés.",
+              "tr": {
+                "en": "I need a little rest too.",
+                "es": "Yo también necesito un poco de descanso."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Miről van szó?",
+          "b": "Miről beszélsz?",
+          "note": {
+            "en": "Miről van szó? asks what the matter or the topic is. Miről beszélsz? asks what you, the person speaking, are talking about.",
+            "es": "Miről van szó? pregunta cuál es el asunto o el tema. Miről beszélsz? pregunta de qué estás hablando tú, la persona que habla."
+          },
+          "examples": [
+            {
+              "es": "Miről van szó ebben a levélben?",
+              "tr": {
+                "en": "What is this letter about?",
+                "es": "¿De qué trata esta carta?"
+              }
+            },
+            {
+              "es": "Miről beszélsz? Én nem ezt mondtam.",
+              "tr": {
+                "en": "What are you talking about? I did not say this.",
+                "es": "¿De qué hablas? Yo no dije esto."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Sayings and proverbs",
+        "es": "Dichos y refranes"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "A proverb is frozen: do not change its words, person or tense. Many have no verb and no article, just two halves with a comma. ahány… annyi… means as many… so many…",
+            "es": "Un refrán está congelado: no cambies sus palabras, persona ni tiempo. Muchos no tienen verbo ni artículo, solo dos mitades con una coma. ahány… annyi… significa tantos… tantos…"
+          },
+          "examples": [
+            {
+              "es": "Ahány ház, annyi szokás.",
+              "tr": {
+                "en": "So many houses, so many customs (every place has its own ways).",
+                "es": "Tantas casas, tantas costumbres (cada lugar tiene las suyas)."
+              }
+            },
+            {
+              "es": "Ahány ember, annyi vélemény.",
+              "tr": {
+                "en": "So many people, so many opinions.",
+                "es": "Tantas personas, tantas opiniones."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Short sayings put two ideas side by side and need no verb; the English and Spanish versions often add is or es.",
+            "es": "Los dichos cortos ponen dos ideas una al lado de la otra y no necesitan verbo; en inglés y en español suele añadirse is o es."
+          },
+          "examples": [
+            {
+              "es": "Beszélni ezüst, hallgatni arany.",
+              "tr": {
+                "en": "Speaking is silver, keeping silent is gold.",
+                "es": "Hablar es plata, callar es oro."
+              }
+            },
+            {
+              "es": "Jobb későn, mint soha.",
+              "tr": {
+                "en": "Better late than never.",
+                "es": "Más vale tarde que nunca."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a verb, a proverb still drops the article, even before the object. Aki… means whoever. The -j imperative can mean if: Lassan járj, tovább érsz.",
+            "es": "Con verbo, un refrán sigue sin artículo, incluso antes del objeto. Aki… significa quien. El imperativo con -j puede significar si: Lassan járj, tovább érsz."
+          },
+          "examples": [
+            {
+              "es": "Kéz kezet mos.",
+              "tr": {
+                "en": "One hand washes the other (you scratch my back and I scratch yours).",
+                "es": "Una mano lava la otra (favor con favor se paga)."
+              }
+            },
+            {
+              "es": "Aki korán kel, aranyat lel.",
+              "tr": {
+                "en": "The early bird catches the worm (literally: whoever gets up early finds gold).",
+                "es": "Al que madruga, Dios lo ayuda (literalmente: quien se levanta temprano encuentra oro)."
+              }
+            },
+            {
+              "es": "Lassan járj, tovább érsz.",
+              "tr": {
+                "en": "Slow and steady wins the race (literally: walk slowly and you get further).",
+                "es": "Despacio se llega lejos (literalmente: camina despacio y llegarás más lejos)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not translate the verb. Where English and Spanish say make, take or do, Hungarian often says something else: döntést hoz, feltesz egy kérdést, szerepet játszik. Check the case as well: szükségem van RÁ (-ra/-re), szó van RÓLA (-ról/-ről). Negate the van-chunks with nincs, never with nem van: Nincs szükségem rá. Nincs kedvem. In the light-verb chunks the noun moves behind the verb after nem: Nem veszek részt. Nem játszik szerepet. A proverb never changes: say it exactly as it is.",
+        "es": "No traduzcas el verbo. Donde el inglés y el español dicen hacer, tomar o tener, el húngaro suele decir otra cosa: döntést hoz, feltesz egy kérdést, szerepet játszik. Revisa también el caso: szükségem van RÁ (-ra/-re), szó van RÓLA (-ról/-ről). Niega los bloques con van usando nincs, nunca con nem van: Nincs szükségem rá. Nincs kedvem. En los bloques con verbo ligero el sustantivo pasa detrás del verbo tras nem: Nem veszek részt. Nem játszik szerepet. Un refrán nunca cambia: dilo exactamente como es."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Many Hungarian ideas are fixed chunks that you learn whole. To take part in something is «részt venni»: «Nem veszek részt az értekezleten.» To take something into account is «figyelembe venni», and to accept it as a fact is «tudomásul venni». A decision is not made but brought: «A vezetők döntést hoztak.» To need something is «szükségem van rá», and the negative is the one word «nincs»: «Nincs szükségem rá.» And one proverb works everywhere: «Ahány ház, annyi szokás.»",
+    "es": "Muchas ideas del húngaro son bloques fijos que se aprenden enteros. Participar en algo es «részt venni»: «Nem veszek részt az értekezleten.» Tomar algo en cuenta es «figyelembe venni», y aceptarlo como un hecho es «tudomásul venni». Una decisión no se toma, se trae: «A vezetők döntést hoztak.» Necesitar algo es «szükségem van rá», y la negación es la sola palabra «nincs»: «Nincs szükségem rá.» Y un refrán sirve en cualquier parte: «Ahány ház, annyi szokás.»"
+  },
+  "glossary": [
+    {
+      "word": "tudomásul",
+      "gloss": {
+        "en": "tudomásul vesz: to take note of, to accept",
+        "es": "tudomásul vesz: darse por enterado, aceptar"
+      }
+    },
+    {
+      "word": "lel",
+      "gloss": {
+        "en": "to find (old, used in proverbs)",
+        "es": "encontrar (antiguo, en refranes)"
+      }
+    },
+    {
+      "word": "probléma",
+      "gloss": {
+        "en": "problem",
+        "es": "problema"
+      }
+    },
+    {
+      "word": "kifizet",
+      "gloss": {
+        "en": "to pay (a bill)",
+        "es": "pagar (una cuenta)"
+      }
+    },
+    {
+      "word": "elmarad",
+      "gloss": {
+        "en": "to be cancelled, to not take place",
+        "es": "cancelarse, no realizarse"
+      }
+    },
+    {
+      "word": "ahány",
+      "gloss": {
+        "en": "as many as",
+        "es": "tantos como"
+      }
+    },
+    {
+      "word": "elköltözik",
+      "gloss": {
+        "en": "to move away",
+        "es": "mudarse (a otro lugar)"
+      }
+    },
+    {
+      "word": "ér",
+      "gloss": {
+        "en": "to reach, to get to",
+        "es": "llegar, alcanzar"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "szokapcsolatok-c01",
+      "sentence": "Péter nem ___ az értekezleten, mert beteg volt.",
+      "options": [
+        "részt vett",
+        "vett részt",
+        "részt vettem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After nem the noun részt moves behind the verb, like a prefix: nem vett részt (he did not take part).",
+        "es": "Tras nem el sustantivo részt pasa detrás del verbo, como un prefijo: nem vett részt (no participó)."
+      },
+      "wrong": {
+        "részt vett": {
+          "en": "Nem részt vett puts the stress on részt, as if he did something else at the meeting; for a plain \"he did not take part\" the verb comes first: nem vett részt.",
+          "es": "Nem részt vett pone el énfasis en részt, como si hubiera hecho otra cosa en la reunión; para un simple «no participó» va primero el verbo: nem vett részt."
+        },
+        "részt vettem": {
+          "en": "részt vettem is \"I took part\"; the sentence is about Péter, who was ill.",
+          "es": "részt vettem es «yo participé»; la oración trata de Péter, que estaba enfermo."
+        }
+      },
+      "examples": [
+        "Nem vettem részt a vitában.",
+        "Anna sem vett részt az értekezleten."
+      ],
+      "tr": {
+        "en": "Péter did not attend the meeting because he was ill.",
+        "es": "Péter no participó en la reunión porque estaba enfermo."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f01",
+      "kind": "form",
+      "verb": "szükség",
+      "person": "én",
+      "answer": "szükségem",
+      "table": "szukseg-birtok"
+    },
+    {
+      "id": "szokapcsolatok-c02",
+      "sentence": "Anna szeretne részt venni a közös ___.",
+      "options": [
+        "munkában",
+        "munkán",
+        "munkára"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Work is an activity you join, so the chunk takes -ban/-ben: részt venni a munkában.",
+        "es": "El trabajo es una actividad en la que participas, así que el bloque lleva -ban/-ben: részt venni a munkában."
+      },
+      "wrong": {
+        "munkán": {
+          "en": "munkán treats work like an event you attend; for an activity you join the chunk wants -ban/-ben.",
+          "es": "munkán trata el trabajo como un evento al que asistes; para una actividad en la que participas el bloque pide -ban/-ben."
+        },
+        "munkára": {
+          "en": "-ra/-re means onto or for (work); the chunk asks \"in what\", not \"where to\".",
+          "es": "-ra/-re significa sobre o para (trabajo); el bloque pregunta «en qué», no «hacia dónde»."
+        }
+      },
+      "examples": [
+        "Gábor is részt vesz a projektben.",
+        "Mindenki részt vett a munkában."
+      ],
+      "tr": {
+        "en": "Anna would like to take part in the joint work.",
+        "es": "Anna quiere participar en el trabajo conjunto."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f02",
+      "kind": "form",
+      "verb": "kedv",
+      "person": "te",
+      "answer": "kedved",
+      "table": "szukseg-birtok"
+    },
+    {
+      "id": "szokapcsolatok-c03",
+      "sentence": "Holnap Lupita részt vesz egy ___ Budapesten.",
+      "options": [
+        "konferenciában",
+        "konferenciára",
+        "konferencián"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A conference is an event you attend, so the chunk takes -n: konferencián.",
+        "es": "Una conferencia es un evento al que asistes, así que el bloque lleva -n: konferencián."
+      },
+      "wrong": {
+        "konferenciában": {
+          "en": "konferenciában would be \"inside the conference\" as if it were a space; for an event you attend the chunk takes -n.",
+          "es": "konferenciában sería «dentro de la conferencia» como si fuera un espacio; para un evento al que asistes el bloque lleva -n."
+        },
+        "konferenciára": {
+          "en": "-ra/-re means \"to\" or \"for\" the conference (where to); részt vesz asks \"at what\".",
+          "es": "-ra/-re significa «a» o «para» la conferencia (hacia dónde); részt vesz pregunta «en qué»."
+        }
+      },
+      "examples": [
+        "Péter részt vett egy tanfolyamon.",
+        "Az órán mindenki részt vesz."
+      ],
+      "tr": {
+        "en": "Tomorrow Lupita is attending a conference in Budapest.",
+        "es": "Mañana Lupita asiste a una conferencia en Budapest."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f03",
+      "kind": "form",
+      "verb": "jog",
+      "person": "ő",
+      "answer": "joga",
+      "table": "szukseg-birtok"
+    },
+    {
+      "id": "szokapcsolatok-c04",
+      "sentence": "A zene nagy szerepet ___ az életemben.",
+      "options": [
+        "csinál",
+        "hoz",
+        "játszik"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The chunk is szerepet játszik: as in English and Spanish, a role is played.",
+        "es": "El bloque es szerepet játszik: igual que en inglés y en español, un papel se desempeña (se «juega»)."
+      },
+      "wrong": {
+        "csinál": {
+          "en": "csinál = make or do a thing; with szerep it would mean \"make a role\", not \"play a role\".",
+          "es": "csinál = hacer algo; con szerep significaría «hacer un papel», no «desempeñar un papel»."
+        },
+        "hoz": {
+          "en": "hoz = bring; szerepet hoz would be \"brings a role\", which is not a chunk.",
+          "es": "hoz = traer; szerepet hoz sería «trae un papel», que no es un bloque."
+        }
+      },
+      "examples": [
+        "Az idő fontos szerepet játszik.",
+        "A családod nagy szerepet játszott a döntésedben."
+      ],
+      "tr": {
+        "en": "Music plays a big role in my life.",
+        "es": "La música desempeña un gran papel en mi vida."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f04",
+      "kind": "form",
+      "verb": "dolog",
+      "person": "mi",
+      "answer": "dolgunk",
+      "table": "szukseg-birtok"
+    },
+    {
+      "id": "szokapcsolatok-c05",
+      "sentence": "A vezetők tegnap végre ___ a költözésről.",
+      "options": [
+        "döntést csináltak",
+        "döntést hoztak",
+        "döntést vettek"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A decision is brought, not made: döntést hoz.",
+        "es": "Una decisión se «trae», no se hace: döntést hoz."
+      },
+      "wrong": {
+        "döntést csináltak": {
+          "en": "csinál = make or do a thing. English \"make a decision\" does not carry over: with döntés this would sound like building one.",
+          "es": "csinál = hacer algo. El «make a decision» del inglés no se traslada: con döntés sonaría a fabricar una."
+        },
+        "döntést vettek": {
+          "en": "vesz = buy or take. Spanish \"tomar una decisión\" does not carry over: döntést venni is not Hungarian.",
+          "es": "vesz = comprar o tomar. El «tomar una decisión» del español no se traslada: döntést venni no es húngaro."
+        }
+      },
+      "examples": [
+        "Kati még nem hozott döntést.",
+        "Mikor hoztok döntést a nyaralásról?"
+      ],
+      "tr": {
+        "en": "The managers finally made a decision about the move yesterday.",
+        "es": "Los directivos por fin tomaron ayer una decisión sobre la mudanza."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f05",
+      "kind": "form",
+      "verb": "szükség",
+      "person": "ti",
+      "answer": "szükségetek",
+      "table": "szukseg-birtok"
+    },
+    {
+      "id": "szokapcsolatok-w01",
+      "kind": "why",
+      "es": "Nem veszek részt a vitában.",
+      "target": "részt",
+      "tr": {
+        "en": "I am not taking part in the debate.",
+        "es": "No participo en el debate."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After nem, részt stays in front of the verb because the verb is negative",
+            "es": "Tras nem, részt se queda delante del verbo porque el verbo es negativo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem részt veszek, which stresses részt (as if I did something else); a plain negative puts it behind the verb.",
+            "es": "Con esta regla la oración sería Nem részt veszek, que enfatiza részt (como si hiciera otra cosa); una negación simple lo pone detrás del verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "After nem, the noun of the chunk moves behind the verb, like a prefix: nem veszek részt",
+            "es": "Tras nem, el sustantivo del bloque pasa detrás del verbo, como un prefijo: nem veszek részt"
+          }
+        },
+        {
+          "text": {
+            "en": "részt is a case ending that belongs to vesz",
+            "es": "részt es una terminación de caso que pertenece a vesz"
+          },
+          "wrong": {
+            "en": "With this rule it would be written together with the verb. It is a separate word, the -t form of rész (part), and it behaves like a prefix.",
+            "es": "Con esta regla se escribiría junto al verbo. Es una palabra aparte, la forma en -t de rész (parte), y se comporta como un prefijo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "szokapcsolatok-c06",
+      "sentence": "Kérem, ___ figyelembe, hogy a határidő péntek.",
+      "options": [
+        "vegye",
+        "vegyen",
+        "vesz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You ask Ön with the -j form. The hogy clause is a definite object, so the definite form is needed: vegye.",
+        "es": "A Ön se le pide algo con la forma en -j. La cláusula con hogy es un objeto determinado, así que hace falta la forma definida: vegye."
+      },
+      "wrong": {
+        "vegyen": {
+          "en": "vegyen is the indefinite -j form (Vegyen egy kenyeret!); a hogy clause asks for the definite vegye.",
+          "es": "vegyen es la forma indefinida en -j (Vegyen egy kenyeret!); una cláusula con hogy pide la definida vegye."
+        },
+        "vesz": {
+          "en": "vesz is the plain present (he or she buys); a request needs the -j form.",
+          "es": "vesz es el presente simple (él o ella compra); una petición necesita la forma en -j."
+        }
+      },
+      "examples": [
+        "Kérem, vegye tudomásul a döntést.",
+        "Vedd figyelembe, hogy késő van."
+      ],
+      "tr": {
+        "en": "Please take into account that the deadline is Friday.",
+        "es": "Por favor, tome en cuenta que la fecha límite es el viernes."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f06",
+      "kind": "form",
+      "verb": "kedv",
+      "person": "ők",
+      "answer": "kedvük",
+      "table": "szukseg-birtok"
+    },
+    {
+      "id": "szokapcsolatok-c07",
+      "sentence": "Az óra végén szeretnék ___ egy kérdést a tanárnak.",
+      "options": [
+        "venni",
+        "feltenni",
+        "hozni"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "To ask a question is feltenni egy kérdést (literally: to put one up).",
+        "es": "Hacer una pregunta es feltenni egy kérdést (literalmente: «ponerla arriba»)."
+      },
+      "wrong": {
+        "venni": {
+          "en": "venni = to buy or to take; vesz is not used with kérdés.",
+          "es": "venni = comprar o tomar; vesz no se usa con kérdés."
+        },
+        "hozni": {
+          "en": "hozni = to bring: you bring a decision (döntést hozni), but you do not bring a question.",
+          "es": "hozni = traer: se «trae» una decisión (döntést hozni), pero no una pregunta."
+        }
+      },
+      "examples": [
+        "Feltehetek egy kérdést?",
+        "Anna feltett egy kérdést az orvosnak."
+      ],
+      "tr": {
+        "en": "At the end of the class I would like to ask the teacher a question.",
+        "es": "Al final de la clase quisiera hacerle una pregunta al maestro."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f07",
+      "kind": "form",
+      "verb": "jog",
+      "person": "ti",
+      "answer": "jogotok",
+      "table": "szukseg-birtok"
+    },
+    {
+      "id": "szokapcsolatok-w02",
+      "kind": "why",
+      "es": "Figyelembe kell venned a határidőt is.",
+      "target": "Figyelembe",
+      "tr": {
+        "en": "You also have to take the deadline into account.",
+        "es": "También tienes que tomar en cuenta la fecha límite."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "figyelembe goes behind the infinitive, as in English: Venned kell figyelembe",
+            "es": "figyelembe va detrás del infinitivo, como en inglés: Venned kell figyelembe"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Venned kell figyelembe, which stresses venned; a plain statement keeps the chunk in front of kell.",
+            "es": "Con esta regla la oración sería Venned kell figyelembe, que enfatiza venned; una afirmación simple mantiene el bloque delante de kell."
+          }
+        },
+        {
+          "text": {
+            "en": "figyelembe is the subject of kell",
+            "es": "figyelembe es el sujeto de kell"
+          },
+          "wrong": {
+            "en": "With this rule figyelembe would be the thing that is needed; it is only the first part of the chunk figyelembe venni.",
+            "es": "Con esta regla figyelembe sería lo que hace falta; es solo la primera parte del bloque figyelembe venni."
+          }
+        },
+        {
+          "text": {
+            "en": "Like a prefix, figyelembe goes before kell; the infinitive venned follows with your ending",
+            "es": "Como un prefijo, figyelembe va antes de kell; el infinitivo venned sigue con tu terminación"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "szokapcsolatok-c08",
+      "sentence": "A költözéshez szükségem van egy kis ___.",
+      "options": [
+        "segítséget",
+        "segítségtől",
+        "segítségre"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "szükségem van asks for -ra/-re: the thing you need takes this case.",
+        "es": "szükségem van pide -ra/-re: lo que necesitas lleva este caso."
+      },
+      "wrong": {
+        "segítséget": {
+          "en": "-t is the object of an ordinary verb (Kérek egy kis segítséget); van never takes an object, so the need is -ra/-re.",
+          "es": "-t es el objeto de un verbo normal (Kérek egy kis segítséget); van nunca lleva objeto, así que la necesidad va en -ra/-re."
+        },
+        "segítségtől": {
+          "en": "-tól/-től means \"from\" (help from someone); you need help, you do not need it from anywhere.",
+          "es": "-tól/-től significa «de» (ayuda de alguien); necesitas ayuda, no «de» algún lado."
+        }
+      },
+      "examples": [
+        "Szükségünk van több időre.",
+        "Szükség van pénzre."
+      ],
+      "tr": {
+        "en": "For the move I need a little help.",
+        "es": "Para la mudanza necesito un poco de ayuda."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f08",
+      "kind": "form",
+      "verb": "dolog",
+      "person": "én",
+      "answer": "dolgom",
+      "table": "szukseg-birtok"
+    },
+    {
+      "id": "szokapcsolatok-w03",
+      "kind": "why",
+      "es": "Szükségem van egy kis segítségre.",
+      "target": "segítségre",
+      "tr": {
+        "en": "I need a little help.",
+        "es": "Necesito un poco de ayuda."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-ra/-re, because the chunk szükségem van asks for it",
+            "es": "-ra/-re, porque el bloque szükségem van lo pide"
+          }
+        },
+        {
+          "text": {
+            "en": "-t, because help is the object of van",
+            "es": "-t, porque la ayuda es el objeto de van"
+          },
+          "wrong": {
+            "en": "With this rule it would be segítséget; but van takes no object, and the need is expressed with -ra/-re.",
+            "es": "Con esta regla sería segítséget; pero van no lleva objeto, y la necesidad se expresa con -ra/-re."
+          }
+        },
+        {
+          "text": {
+            "en": "-ról/-ről, because you speak about help",
+            "es": "-ról/-ről, porque hablas de la ayuda"
+          },
+          "wrong": {
+            "en": "With this rule it would be segítségről; that belongs to szó van (szó van a segítségről = the help is being discussed).",
+            "es": "Con esta regla sería segítségről; eso pertenece a szó van (szó van a segítségről = se habla de la ayuda)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szokapcsolatok-c09",
+      "sentence": "Köszönöm a segítséget, de most ___ szükségem rá.",
+      "options": [
+        "nincs",
+        "nincsenek",
+        "nem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The negative of van is nincs, and it stays in this chunk: nincs szükségem rá.",
+        "es": "La negación de van es nincs, y se queda en este bloque: nincs szükségem rá."
+      },
+      "wrong": {
+        "nincsenek": {
+          "en": "nincsenek is the plural of nincs (\"there are none\"); szükségem is singular, so the verb is nincs.",
+          "es": "nincsenek es el plural de nincs («no hay»); szükségem es singular, así que el verbo es nincs."
+        },
+        "nem": {
+          "en": "nem alone leaves the sentence without its verb: szükségem would be a bare noun with nothing saying \"I have\".",
+          "es": "nem solo deja la oración sin verbo: szükségem sería un sustantivo suelto sin nada que diga «tengo»."
+        }
+      },
+      "examples": [
+        "Nincs szükségünk több időre.",
+        "Nincs kedvem főzni."
+      ],
+      "tr": {
+        "en": "Thanks for the help, but I do not need it right now.",
+        "es": "Gracias por la ayuda, pero ahora no la necesito."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f09",
+      "kind": "form",
+      "verb": "szükségem van ___ (-ra/-re)",
+      "person": "számítógép",
+      "answer": "számítógépre",
+      "accept": [
+        "egy számítógépre",
+        "a számítógépre"
+      ],
+      "table": "vonzat-esetek"
+    },
+    {
+      "id": "szokapcsolatok-c10",
+      "sentence": "Egész nap dolgoztam, fáradt vagyok, ezért nincs kedvem ___.",
+      "options": [
+        "főzök",
+        "főzés",
+        "főzni"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "kedvem van is followed by the infinitive: what you feel like doing is főzni.",
+        "es": "kedvem van va seguido del infinitivo: lo que tienes ganas de hacer es főzni."
+      },
+      "wrong": {
+        "főzök": {
+          "en": "főzök = \"I cook\", a conjugated verb; after kedvem van the second verb stays an infinitive.",
+          "es": "főzök = «yo cocino», un verbo conjugado; después de kedvem van el segundo verbo se queda en infinitivo."
+        },
+        "főzés": {
+          "en": "főzés is the noun \"cooking\"; a bare noun does not work after kedvem van (it would need an ending: a főzéshez).",
+          "es": "főzés es el sustantivo «cocinar/la cocina»; un sustantivo suelto no funciona después de kedvem van (necesitaría una terminación: a főzéshez)."
+        }
+      },
+      "examples": [
+        "Van kedved moziba menni?",
+        "Katinak kedve van táncolni."
+      ],
+      "tr": {
+        "en": "I worked all day and I am tired, so I do not feel like cooking.",
+        "es": "Trabajé todo el día y estoy cansado, así que no tengo ganas de cocinar."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f10",
+      "kind": "form",
+      "verb": "problémám van ___ (-val/-vel)",
+      "person": "telefon",
+      "answer": "telefonnal",
+      "accept": [
+        "a telefonnal"
+      ],
+      "table": "vonzat-esetek"
+    },
+    {
+      "id": "szokapcsolatok-c11",
+      "sentence": "Mi fizessünk a javításért? Szó ___ róla!",
+      "options": [
+        "sincs",
+        "van",
+        "lesz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Szó sincs róla! is the fixed way to say No way! It is a flat refusal.",
+        "es": "Szó sincs róla! es la forma fija de decir ¡Ni hablar! Es una negativa rotunda."
+      },
+      "wrong": {
+        "van": {
+          "en": "Szó van róla! would say that the matter is being discussed: it is not a refusal.",
+          "es": "Szó van róla! diría que el asunto se está discutiendo: no es una negativa."
+        },
+        "lesz": {
+          "en": "Szó lesz róla! means it will be discussed; it is still not a refusal.",
+          "es": "Szó lesz róla! significa que se hablará de ello; sigue sin ser una negativa."
+        }
+      },
+      "examples": [
+        "Szó sincs róla!",
+        "Szó van arról, hogy elköltözünk."
+      ],
+      "tr": {
+        "en": "We should pay for the repair? No way!",
+        "es": "¿Que nosotros paguemos la reparación? ¡Ni hablar!"
+      }
+    },
+    {
+      "id": "szokapcsolatok-f11",
+      "kind": "form",
+      "verb": "szó van ___ (-ról/-ről)",
+      "person": "szerződés",
+      "answer": "szerződésről",
+      "accept": [
+        "a szerződésről"
+      ],
+      "table": "vonzat-esetek"
+    },
+    {
+      "id": "szokapcsolatok-c12",
+      "sentence": "___ van szó, hogy a számla még nincs kifizetve.",
+      "options": [
+        "Abban",
+        "Arról",
+        "Annak"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "szó van asks for -ról/-ről, and az copies that case: arról van szó, hogy…",
+        "es": "szó van pide -ról/-ről, y az copia ese caso: arról van szó, hogy…"
+      },
+      "wrong": {
+        "Abban": {
+          "en": "abban = \"in that\" (-ban); here the matter is what is being talked about, so -ról/-ről.",
+          "es": "abban = «en eso» (-ban); aquí el asunto es de lo que se habla, así que -ról/-ről."
+        },
+        "Annak": {
+          "en": "annak = \"to that\" or \"of that\" (-nak); szó van does not take this case.",
+          "es": "annak = «a eso» o «de eso» (-nak); szó van no lleva este caso."
+        }
+      },
+      "examples": [
+        "Miről van szó?",
+        "Arról van szó, hogy nincs elég idő."
+      ],
+      "tr": {
+        "en": "The point is that the bill has not been paid yet.",
+        "es": "El punto es que la cuenta todavía no está pagada."
+      }
+    },
+    {
+      "id": "szokapcsolatok-f12",
+      "kind": "form",
+      "verb": "problémám van ___ (-val/-vel)",
+      "person": "lakás",
+      "answer": "lakással",
+      "accept": [
+        "a lakással"
+      ],
+      "table": "vonzat-esetek"
+    },
+    {
+      "id": "szokapcsolatok-w04",
+      "kind": "why",
+      "es": "Ahány ház, annyi szokás.",
+      "target": "annyi",
+      "tr": {
+        "en": "So many houses, so many customs.",
+        "es": "Tantas casas, tantas costumbres."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "annyi is a conjunction that means and",
+            "es": "annyi es una conjunción que significa y"
+          },
+          "wrong": {
+            "en": "With this rule the proverb would list houses and customs; annyi is a quantity word, not a conjunction.",
+            "es": "Con esta regla el refrán enumeraría casas y costumbres; annyi es una palabra de cantidad, no una conjunción."
+          }
+        },
+        {
+          "text": {
+            "en": "annyi starts a question: how many customs?",
+            "es": "annyi empieza una pregunta: ¿cuántas costumbres?"
+          },
+          "wrong": {
+            "en": "With this rule the second half would be a question (mennyi? hány?); the proverb is a statement.",
+            "es": "Con esta regla la segunda mitad sería una pregunta (mennyi? hány?); el refrán es una afirmación."
+          }
+        },
+        {
+          "text": {
+            "en": "annyi answers ahány: as many… so many…",
+            "es": "annyi responde a ahány: tantos… tantos…"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "szokapcsolatok-c13",
+      "sentence": "Ahány ház, ___ szokás.",
+      "options": [
+        "amennyi",
+        "ahány",
+        "annyi"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The proverb pairs ahány (as many) with annyi (so many).",
+        "es": "El refrán empareja ahány (tantos como) con annyi (tantos)."
+      },
+      "wrong": {
+        "amennyi": {
+          "en": "amennyi is the relative \"as much as\" that opens a clause; the second half needs the pointing word annyi.",
+          "es": "amennyi es el relativo «tanto como» que abre una cláusula; la segunda mitad necesita la palabra que señala: annyi."
+        },
+        "ahány": {
+          "en": "ahány again would repeat the opening word; the second half needs its partner annyi.",
+          "es": "ahány repetiría la palabra inicial; la segunda mitad necesita a su pareja annyi."
+        }
+      },
+      "examples": [
+        "Ahány ember, annyi vélemény.",
+        "Ahány ország, annyi szokás."
+      ],
+      "tr": {
+        "en": "So many houses, so many customs.",
+        "es": "Tantas casas, tantas costumbres."
+      }
+    },
+    {
+      "id": "szokapcsolatok-c14",
+      "sentence": "Aki korán kel, ___ lel.",
+      "options": [
+        "arany",
+        "aranyat",
+        "aranyból"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "lel (find) is a transitive verb, so its object takes -t: aranyat lel.",
+        "es": "lel (encontrar) es transitivo, así que su objeto lleva -t: aranyat lel."
+      },
+      "wrong": {
+        "arany": {
+          "en": "The bare form arany is the subject form; lel needs an object, so -t.",
+          "es": "La forma sin terminación arany es la del sujeto; lel necesita un objeto, o sea -t."
+        },
+        "aranyból": {
+          "en": "-ból/-ből means \"out of gold\"; the early riser finds gold, he does not find something out of it.",
+          "es": "-ból/-ből significa «de oro (hecho de oro)»; el que madruga encuentra oro, no algo hecho de oro."
+        }
+      },
+      "examples": [
+        "Kéz kezet mos.",
+        "Lassan járj, tovább érsz."
+      ],
+      "tr": {
+        "en": "The early bird catches the worm (literally: whoever gets up early finds gold).",
+        "es": "Al que madruga, Dios lo ayuda (literalmente: quien se levanta temprano encuentra oro)."
+      }
+    }
+  ]
+}

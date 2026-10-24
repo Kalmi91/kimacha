@@ -1,0 +1,1413 @@
+{
+  "schema": 2,
+  "topic": "ert-va-ve",
+  "level": "B1",
+  "title": {
+    "en": "For, into, as far as: pénzért, orvossá, a sarokig",
+    "es": "Por, en, hasta: pénzért, orvossá, a sarokig"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Three endings that bring a new idea. -ért means for: the price you pay (tíz euróért), the thing or person you go to get (a kenyérért megyek), the person you do it for (a családomért), and the reason in miért (why, literally for what). It never changes: there is no vowel harmony, only a final a or e that lengthens (Anna, Annáért). -vá/-vé means into, the result of a change, after válik (become) and tesz (make): jéggé válik, boldoggá tesz. It follows vowel harmony, and the v copies the last consonant, just as in -val/-vel: tanárrá, orvossá. After lesz (will be, becomes) a job or a quality normally has no ending: orvos lesz, boldog lesz (a -vá/-vé form after lesz exists, but it is literary: híressé lett). And -ig in space means as far as: a sarokig. You know -ig from time (ötig); in space it is the same idea.",
+        "es": "Tres terminaciones que traen una idea nueva. -ért significa por o para: el precio que pagas (tíz euróért), lo que o a quién vas a buscar (a kenyérért megyek), la persona por quien lo haces (a családomért) y la razón en miért (por qué, literalmente por qué cosa). Nunca cambia: no hay armonía vocálica, solo la a o e final que se alarga (Anna, Annáért). -vá/-vé significa en, el resultado de un cambio, después de válik (volverse, convertirse) y tesz (hacer que algo sea): jéggé válik, boldoggá tesz. Sigue la armonía vocálica, y la v copia la última consonante, igual que en -val/-vel: tanárrá, orvossá. Después de lesz (será, se vuelve) un oficio o una cualidad normalmente no lleva terminación: orvos lesz, boldog lesz (una forma -vá/-vé después de lesz existe, pero es literaria: híressé lett). Y -ig en el espacio significa hasta: a sarokig. Ya conoces -ig del tiempo (ötig); en el espacio es la misma idea."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ert-tabla",
+      "title": {
+        "en": "-ért: one form, no harmony",
+        "es": "-ért: una sola forma, sin armonía"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "With -ért",
+          "es": "Con -ért"
+        }
+      ],
+      "rows": [
+        [
+          "pénz",
+          "pénzért"
+        ],
+        [
+          "kenyér",
+          "kenyérért"
+        ],
+        [
+          "tej",
+          "tejért"
+        ],
+        [
+          "kávé",
+          "kávéért"
+        ],
+        [
+          "Anna",
+          "Annáért"
+        ],
+        [
+          "Péter",
+          "Péterért"
+        ],
+        [
+          "család",
+          "családért"
+        ],
+        [
+          "ez",
+          "ezért"
+        ],
+        [
+          "mi",
+          "miért"
+        ],
+        [
+          "ő",
+          "érte"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Four jobs of -ért",
+        "es": "Cuatro usos de -ért"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The price, or what you give in exchange. How much does it cost? is Mennyibe kerül? (with -ba/-be), but what you pay for it is Mennyit fizettél érte?",
+            "es": "El precio, o lo que das a cambio. «¿Cuánto cuesta?» es Mennyibe kerül? (con -ba/-be), pero lo que pagas por ello es Mennyit fizettél érte?"
+          },
+          "examples": [
+            {
+              "es": "Tíz euróért vettem ezt a könyvet.",
+              "tr": {
+                "en": "I bought this book for ten euros.",
+                "es": "Compré este libro por diez euros."
+              }
+            },
+            {
+              "es": "Mennyit fizettél a kabátért?",
+              "tr": {
+                "en": "How much did you pay for the coat?",
+                "es": "¿Cuánto pagaste por el abrigo?"
+              }
+            },
+            {
+              "es": "Húsz eurót fizettem érte.",
+              "tr": {
+                "en": "I paid twenty euros for it.",
+                "es": "Pagué veinte euros por él."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The thing or person you go to get. With a person it means to pick them up.",
+            "es": "Lo que o a quién vas a buscar. Con una persona significa ir a recogerla."
+          },
+          "examples": [
+            {
+              "es": "A kenyérért megyek a boltba.",
+              "tr": {
+                "en": "I am going to the shop for bread.",
+                "es": "Voy a la tienda por pan."
+              }
+            },
+            {
+              "es": "Lemegyek a boltba tejért.",
+              "tr": {
+                "en": "I will go down to the shop for milk.",
+                "es": "Bajo a la tienda por leche."
+              }
+            },
+            {
+              "es": "A gyerekekért megyek az iskolába.",
+              "tr": {
+                "en": "I am going to the school to pick up the children.",
+                "es": "Voy a la escuela por los niños."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For the sake of someone, and what you are thankful or sorry for.",
+            "es": "Por el bien de alguien, y por qué estás agradecido o das una disculpa."
+          },
+          "examples": [
+            {
+              "es": "Sokat dolgozom a családomért.",
+              "tr": {
+                "en": "I work a lot for my family.",
+                "es": "Trabajo mucho por mi familia."
+              }
+            },
+            {
+              "es": "Hálás vagyok a segítségért.",
+              "tr": {
+                "en": "I am grateful for the help.",
+                "es": "Estoy agradecido por la ayuda."
+              }
+            },
+            {
+              "es": "Bocsánat a késésért!",
+              "tr": {
+                "en": "Sorry for being late!",
+                "es": "¡Perdón por el retraso!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The reason. miért is mi + -ért (why, literally for what) and ezért is ez + -ért (that is why).",
+            "es": "La razón. miért es mi + -ért (por qué, literalmente por qué cosa) y ezért es ez + -ért (por eso)."
+          },
+          "examples": [
+            {
+              "es": "Miért késtél?",
+              "tr": {
+                "en": "Why were you late?",
+                "es": "¿Por qué llegaste tarde?"
+              }
+            },
+            {
+              "es": "Fáradt voltam, ezért hazamentem.",
+              "tr": {
+                "en": "I was tired, so I went home.",
+                "es": "Estaba cansado, así que me fui a casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "vae-tabla",
+      "title": {
+        "en": "-vá/-vé: the v copies the last consonant",
+        "es": "-vá/-vé: la v copia la última consonante"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Ending that appears",
+          "es": "Terminación que aparece"
+        },
+        {
+          "en": "Result",
+          "es": "Resultado"
+        }
+      ],
+      "rows": [
+        [
+          "tanár",
+          "-rá",
+          "tanárrá"
+        ],
+        [
+          "orvos",
+          "-sá",
+          "orvossá"
+        ],
+        [
+          "boldog",
+          "-gá",
+          "boldoggá"
+        ],
+        [
+          "jég",
+          "-gé",
+          "jéggé"
+        ],
+        [
+          "kék",
+          "-ké",
+          "kékké"
+        ],
+        [
+          "szép",
+          "-pé",
+          "széppé"
+        ],
+        [
+          "víz",
+          "-zé",
+          "vízzé"
+        ],
+        [
+          "híres",
+          "-sé",
+          "híressé"
+        ],
+        [
+          "sötét",
+          "-té",
+          "sötétté"
+        ],
+        [
+          "szomorú",
+          "-vá",
+          "szomorúvá"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Two rules: harmony and the copied consonant",
+        "es": "Dos reglas: armonía y consonante copiada"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Harmony picks the vowel: back words take -vá (tanárrá, pirossá, boldoggá), front words take -vé (jéggé, kékké, híressé). Words with only i, í, e or é usually take -vé.",
+            "es": "La armonía elige la vocal: las palabras posteriores llevan -vá (tanárrá, pirossá, boldoggá), las anteriores -vé (jéggé, kékké, híressé). Las palabras con solo i, í, e o é suelen llevar -vé."
+          },
+          "examples": [
+            {
+              "es": "Az arca pirossá vált.",
+              "tr": {
+                "en": "Her face turned red.",
+                "es": "Su cara se puso roja."
+              }
+            },
+            {
+              "es": "A jég vízzé válik.",
+              "tr": {
+                "en": "Ice turns into water.",
+                "es": "El hielo se convierte en agua."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a consonant the v copies it: tanár + vá = tanárrá, kék + vé = kékké. After a vowel the v stays: szomorúvá. Long consonants are written double, and digraphs are written with the first letter doubled (sz becomes ssz, gy becomes ggy: nagy + vá = naggyá).",
+            "es": "Después de una consonante la v la copia: tanár + vá = tanárrá, kék + vé = kékké. Después de una vocal la v se queda: szomorúvá. Las consonantes largas se escriben dobles, y los dígrafos se escriben duplicando la primera letra (sz pasa a ssz, gy pasa a ggy: nagy + vá = naggyá)."
+          },
+          "examples": [
+            {
+              "es": "Az ég sötétté vált.",
+              "tr": {
+                "en": "The sky turned dark.",
+                "es": "El cielo se oscureció."
+              }
+            },
+            {
+              "es": "A hír szomorúvá tette Annát.",
+              "tr": {
+                "en": "The news made Anna sad.",
+                "es": "La noticia entristeció a Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "válik, tesz and lesz: three ways to say become",
+        "es": "válik, tesz y lesz: tres formas de decir volverse"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "válik (become) shows a change of state and asks for -vá/-vé on the result. It sounds a little written or formal; in everyday speech people say lesz.",
+            "es": "válik (volverse) muestra un cambio de estado y pide -vá/-vé en el resultado. Suena un poco escrito o formal; en el habla diaria se dice lesz."
+          },
+          "examples": [
+            {
+              "es": "A víz jéggé válik.",
+              "tr": {
+                "en": "Water turns into ice.",
+                "es": "El agua se convierte en hielo."
+              }
+            },
+            {
+              "es": "Péter híressé vált.",
+              "tr": {
+                "en": "Péter became famous.",
+                "es": "Péter se hizo famoso."
+              }
+            },
+            {
+              "es": "A kis falu várossá vált.",
+              "tr": {
+                "en": "The small village became a town.",
+                "es": "El pueblito se convirtió en una ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "tesz here means make: one thing makes another thing or person become something, and the result takes -vá/-vé.",
+            "es": "tesz aquí significa hacer que sea: una cosa hace que otra cosa o persona se vuelva algo, y el resultado lleva -vá/-vé."
+          },
+          "examples": [
+            {
+              "es": "A zene boldoggá tesz.",
+              "tr": {
+                "en": "Music makes me happy.",
+                "es": "La música me hace feliz."
+              }
+            },
+            {
+              "es": "A hír szomorúvá tette Annát.",
+              "tr": {
+                "en": "The news made Anna sad.",
+                "es": "La noticia entristeció a Anna."
+              }
+            },
+            {
+              "es": "A lámpa szebbé teszi a szobát.",
+              "tr": {
+                "en": "The lamp makes the room nicer.",
+                "es": "La lámpara hace más bonita la habitación."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In everyday speech lesz (will be, becomes) takes the plain noun or adjective, with no ending. A job: orvos lesz. A quality: boldog lesz. The past is lett. A -vá/-vé form after lesz (híressé lett) exists, but it is literary.",
+            "es": "En el habla diaria lesz (será, se vuelve) lleva el sustantivo o el adjetivo solo, sin terminación. Un oficio: orvos lesz. Una cualidad: boldog lesz. El pasado es lett. Una forma -vá/-vé después de lesz (híressé lett) existe, pero es literaria."
+          },
+          "examples": [
+            {
+              "es": "Anna orvos lesz.",
+              "tr": {
+                "en": "Anna will be a doctor.",
+                "es": "Anna va a ser médica."
+              }
+            },
+            {
+              "es": "Péter tanár lett.",
+              "tr": {
+                "en": "Péter became a teacher.",
+                "es": "Péter se hizo maestro."
+              }
+            },
+            {
+              "es": "Sötét lett.",
+              "tr": {
+                "en": "It got dark.",
+                "es": "Oscureció."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ig-tabla",
+      "title": {
+        "en": "-ig in space: one form, no harmony",
+        "es": "-ig en el espacio: una sola forma, sin armonía"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "With -ig",
+          "es": "Con -ig"
+        }
+      ],
+      "rows": [
+        [
+          "sarok",
+          "sarokig"
+        ],
+        [
+          "híd",
+          "hídig"
+        ],
+        [
+          "bolt",
+          "boltig"
+        ],
+        [
+          "park",
+          "parkig"
+        ],
+        [
+          "utca",
+          "utcáig"
+        ],
+        [
+          "iskola",
+          "iskoláig"
+        ],
+        [
+          "megálló",
+          "megállóig"
+        ],
+        [
+          "Budapest",
+          "Budapestig"
+        ],
+        [
+          "Debrecen",
+          "Debrecenig"
+        ],
+        [
+          "Szeged",
+          "Szegedig"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "-ig in space: as far as",
+        "es": "-ig en el espacio: hasta"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "-ig names the end point of a way: you go up to it and stop or turn. It answers Meddig? (how far). It does not mean that you go inside.",
+            "es": "-ig nombra el punto final de un camino: llegas hasta ahí y te detienes o giras. Responde a Meddig? (hasta dónde). No significa que entres."
+          },
+          "examples": [
+            {
+              "es": "Menj egyenesen a sarokig, aztán fordulj balra.",
+              "tr": {
+                "en": "Go straight as far as the corner, then turn left.",
+                "es": "Ve derecho hasta la esquina, luego da vuelta a la izquierda."
+              }
+            },
+            {
+              "es": "Ez a villamos csak a hídig megy.",
+              "tr": {
+                "en": "This tram only goes as far as the bridge.",
+                "es": "Este tranvía solo llega hasta el puente."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "It also works with place names, and a final a or e lengthens: utca becomes utcáig, iskola becomes iskoláig.",
+            "es": "También funciona con nombres de lugar, y la a o e final se alarga: utca pasa a utcáig, iskola pasa a iskoláig."
+          },
+          "examples": [
+            {
+              "es": "Debrecenből Budapestig három óra az út.",
+              "tr": {
+                "en": "From Debrecen to Budapest the journey is three hours.",
+                "es": "De Debrecen a Budapest el viaje dura tres horas."
+              }
+            },
+            {
+              "es": "Az iskoláig sétálok, aztán busszal megyek.",
+              "tr": {
+                "en": "I walk as far as the school, then I go by bus.",
+                "es": "Camino hasta la escuela, luego voy en autobús."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Time uses the same ending (ötig, until five), and the same question word Meddig? asks for both.",
+            "es": "El tiempo usa la misma terminación (ötig, hasta las cinco), y la misma palabra Meddig? sirve para las dos cosas."
+          },
+          "examples": [
+            {
+              "es": "Meddig mész? A bankig.",
+              "tr": {
+                "en": "How far are you going? As far as the bank.",
+                "es": "¿Hasta dónde vas? Hasta el banco."
+              }
+            },
+            {
+              "es": "Meddig dolgozol? Ötig.",
+              "tr": {
+                "en": "Until when do you work? Until five.",
+                "es": "¿Hasta cuándo trabajas? Hasta las cinco."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Look-alikes: lesz or válik, lesz or tesz, -ért or -hoz, -ig or -ba",
+        "es": "Parecidos: lesz o válik, lesz o tesz, -ért o -hoz, -ig o -ba"
+      },
+      "pairs": [
+        {
+          "a": "Orvos lesz.",
+          "b": "Orvossá válik.",
+          "note": {
+            "en": "Everyday: lesz with the plain noun. Written or formal, and often a slow or striking change: válik with -vá/-vé.",
+            "es": "Cotidiano: lesz con el sustantivo solo. Escrito o formal, y a menudo un cambio lento o llamativo: válik con -vá/-vé."
+          },
+          "examples": [
+            {
+              "es": "Kati tanár lett.",
+              "tr": {
+                "en": "Kati became a teacher.",
+                "es": "Kati se hizo maestra."
+              }
+            },
+            {
+              "es": "Kati híres tanárrá vált.",
+              "tr": {
+                "en": "Kati became a famous teacher (formal).",
+                "es": "Kati se convirtió en una maestra famosa (formal)."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Boldog lesz.",
+          "b": "Boldoggá tesz.",
+          "note": {
+            "en": "With lesz the subject itself changes (he or she becomes happy). With tesz someone or something else makes the change (it makes him or her happy).",
+            "es": "Con lesz cambia el propio sujeto (él o ella se pone feliz). Con tesz otra persona o cosa provoca el cambio (lo hace feliz)."
+          },
+          "examples": [
+            {
+              "es": "Anna boldog lett.",
+              "tr": {
+                "en": "Anna became happy.",
+                "es": "Anna se puso feliz."
+              }
+            },
+            {
+              "es": "A hír boldoggá tette a családot.",
+              "tr": {
+                "en": "The news made the family happy.",
+                "es": "La noticia hizo feliz a la familia."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Annáért megyek.",
+          "b": "Annához megyek.",
+          "note": {
+            "en": "-ért goes to fetch or pick up (Anna is the aim). -hoz/-hez goes to someone's place (Anna is the destination).",
+            "es": "-ért va a buscar o a recoger (Anna es el objetivo). -hoz/-hez va a casa de alguien (Anna es el destino)."
+          },
+          "examples": [
+            {
+              "es": "Péterért megyek az állomásra.",
+              "tr": {
+                "en": "I am going to the station to pick up Péter.",
+                "es": "Voy a la estación por Péter."
+              }
+            },
+            {
+              "es": "Péterhez megyek ebédre.",
+              "tr": {
+                "en": "I am going to Péter's for lunch.",
+                "es": "Voy a casa de Péter a comer."
+              }
+            }
+          ]
+        },
+        {
+          "a": "A boltig megyek.",
+          "b": "A boltba megyek.",
+          "note": {
+            "en": "-ig is as far as (you may stop outside). -ba/-be is into (you go inside).",
+            "es": "-ig es hasta (puedes quedarte afuera). -ba/-be es adentro (entras)."
+          },
+          "examples": [
+            {
+              "es": "A boltig megyek, nem megyek be.",
+              "tr": {
+                "en": "I am going as far as the shop, I am not going in.",
+                "es": "Voy hasta la tienda, no entro."
+              }
+            },
+            {
+              "es": "A boltba megyek, kenyeret veszek.",
+              "tr": {
+                "en": "I am going into the shop, I am buying bread.",
+                "es": "Voy a la tienda, voy a comprar pan."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Three traps. First, Mennyibe kerül? is how much does it cost (-ba/-be); -ért is what you paid: Mennyit fizettél érte? Second, the v of -vá/-vé never stays after a consonant: tanárrá, never tanárvá. Third, after lesz a job stays plain in everyday speech: orvos lesz (orvossá lesz is possible but literary, like híressé lett). The -vá/-vé form is the normal choice after válik and tesz.",
+        "es": "Tres trampas. Primera, Mennyibe kerül? es «¿cuánto cuesta?» (-ba/-be); -ért es lo que pagaste: Mennyit fizettél érte? Segunda, la v de -vá/-vé nunca se queda después de una consonante: tanárrá, nunca tanárvá. Tercera, después de lesz un oficio queda solo en el habla diaria: orvos lesz (orvossá lesz es posible, pero literario, como híressé lett). La forma -vá/-vé es la normal después de válik y tesz."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Three endings. «Ezt a könyvet tíz euróért vettem» and «Mennyit fizettél érte?» use «ért», for a price. It also names what you go to get: «A kenyérért megyek a boltba». The question «miért» means why. After «válik» and «tesz» the result gets «vá» or «vé», and the v copies the last consonant: «A víz jéggé válik» and «A zene boldoggá tesz». After «lesz» there is usually no ending: «Anna orvos lesz». And «ig» means as far as: «Menj egyenesen a sarokig».",
+    "es": "Tres terminaciones. «Ezt a könyvet tíz euróért vettem» y «Mennyit fizettél érte?» llevan «ért», para un precio. También nombra lo que vas a buscar: «A kenyérért megyek a boltba». La pregunta «miért» significa por qué. Después de «válik» y «tesz» el resultado lleva «vá» o «vé», y la v copia la última consonante: «A víz jéggé válik» y «A zene boldoggá tesz». Después de «lesz» normalmente no hay terminación: «Anna orvos lesz». Y «ig» significa hasta: «Menj egyenesen a sarokig»."
+  },
+  "glossary": [
+    {
+      "word": "válik",
+      "gloss": {
+        "en": "to become, to turn into",
+        "es": "volverse, convertirse en"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "ert-va-ve-c01",
+      "sentence": "Ezt a könyvet tíz ___ vettem.",
+      "options": [
+        "euróra",
+        "eurónál",
+        "euróért"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A price you pay takes -ért: tíz euróért (for ten euros). The ending never changes, so there is no harmony to choose.",
+        "es": "Un precio que pagas lleva -ért: tíz euróért (por diez euros). La terminación nunca cambia, así que no hay armonía que elegir."
+      },
+      "wrong": {
+        "euróra": {
+          "en": "-ra shows a direction or a target (a székre, onto the chair); it does not give the price paid.",
+          "es": "-ra muestra una dirección o un destino (a székre, sobre la silla); no da el precio pagado."
+        },
+        "eurónál": {
+          "en": "-nál/-nél means at (Annánál, at Anna's place); it does not give a price.",
+          "es": "-nál/-nél significa «en casa de, junto a» (Annánál, en casa de Anna); no da un precio."
+        }
+      },
+      "examples": [
+        "Húsz euróért vettem ezt a kabátot.",
+        "Mennyiért vetted?"
+      ],
+      "tr": {
+        "en": "I bought this book for ten euros.",
+        "es": "Compré este libro por diez euros."
+      }
+    },
+    {
+      "id": "ert-va-ve-f01",
+      "kind": "form",
+      "verb": "pénz",
+      "person": "-ért",
+      "answer": "pénzért",
+      "table": "ert-tabla"
+    },
+    {
+      "id": "ert-va-ve-c02",
+      "sentence": "Szép kabát! Mennyit fizettél ___?",
+      "options": [
+        "érte",
+        "benne",
+        "tőle"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You pay for something with -ért, and with a thing or person already mentioned the ending fuses into érte (for it).",
+        "es": "Pagas por algo con -ért, y con una cosa o persona ya mencionada la terminación se funde en érte (por ello)."
+      },
+      "wrong": {
+        "benne": {
+          "en": "benne is -ban/-ben with ő (in him or it); it would mean paid in it, not paid for it.",
+          "es": "benne es -ban/-ben con ő («dentro de él»); significaría «pagaste dentro de ello», no «pagaste por ello»."
+        },
+        "tőle": {
+          "en": "tőle is -tól/-től with ő; it would mean from him or from it.",
+          "es": "tőle es -tól/-től con ő; significaría «de él» o «de ello»."
+        }
+      },
+      "examples": [
+        "Sokat fizettem érte.",
+        "Mennyit fizetsz érte?"
+      ],
+      "tr": {
+        "en": "Nice coat! How much did you pay for it?",
+        "es": "¡Qué bonito abrigo! ¿Cuánto pagaste por él?"
+      }
+    },
+    {
+      "id": "ert-va-ve-f02",
+      "kind": "form",
+      "verb": "Anna",
+      "person": "-ért",
+      "answer": "Annáért",
+      "table": "ert-tabla"
+    },
+    {
+      "id": "ert-va-ve-c03",
+      "sentence": "Nincs több tej, ezért lemegyek a boltba ___.",
+      "options": [
+        "tejjel",
+        "tejért",
+        "tejben"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "-ért also shows what you go to get: lemegyek a boltba tejért (to buy milk). tej ends in a consonant, so -ért is added as it is.",
+        "es": "-ért también muestra lo que vas a buscar: lemegyek a boltba tejért (a comprar leche). tej termina en consonante, así que -ért se añade tal cual."
+      },
+      "wrong": {
+        "tejjel": {
+          "en": "tejjel is tej + -val/-vel (the l copies the j: with milk); you would go to the shop carrying milk, not for milk.",
+          "es": "tejjel es tej + -val/-vel (la l copia la j: con leche); irías a la tienda llevando leche, no por leche."
+        },
+        "tejben": {
+          "en": "tejben means in the milk (-ben); it is not the thing you go for.",
+          "es": "tejben significa «en la leche» (-ben); no es lo que vas a buscar."
+        }
+      },
+      "examples": [
+        "A gyerekekért megyek az iskolába.",
+        "Kenyérért megyek a boltba."
+      ],
+      "tr": {
+        "en": "There is no more milk, so I am going down to the shop for milk.",
+        "es": "Ya no hay leche, así que bajo a la tienda por leche."
+      }
+    },
+    {
+      "id": "ert-va-ve-w01",
+      "kind": "why",
+      "es": "Ezt a könyvet tíz euróért vettem.",
+      "target": "euróért",
+      "tr": {
+        "en": "I bought this book for ten euros.",
+        "es": "Compré este libro por diez euros."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-ért shows the price paid: for ten euros",
+            "es": "-ért muestra el precio pagado: por diez euros"
+          }
+        },
+        {
+          "text": {
+            "en": "-ért shows the direction, like -ra/-re: to ten euros",
+            "es": "-ért muestra la dirección, como -ra/-re: hacia diez euros"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about going to ten euros. -ért shows the price, what you give in exchange.",
+            "es": "Con esta regla la frase hablaría de ir hacia diez euros. -ért muestra el precio, lo que das a cambio."
+          }
+        },
+        {
+          "text": {
+            "en": "-ért shows who does the action: the ten euros bought the book",
+            "es": "-ért muestra quién hace la acción: los diez euros compraron el libro"
+          },
+          "wrong": {
+            "en": "With this rule the euros would be the buyer. The buyer is the subject of vettem (I); -ért shows what was paid.",
+            "es": "Con esta regla los euros serían el comprador. El comprador es el sujeto de vettem (yo); -ért muestra lo que se pagó."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ert-va-ve-f03",
+      "kind": "form",
+      "verb": "ő",
+      "person": "-ért",
+      "answer": "érte",
+      "table": "ert-tabla"
+    },
+    {
+      "id": "ert-va-ve-c04",
+      "sentence": "Bocsánat a ___!",
+      "options": [
+        "késésre",
+        "késésért",
+        "késésben"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "You say sorry for something with -ért: Bocsánat a késésért! (Sorry for being late). késés + ért needs no harmony.",
+        "es": "Te disculpas por algo con -ért: Bocsánat a késésért! (Perdón por el retraso). késés + ért no necesita armonía."
+      },
+      "wrong": {
+        "késésre": {
+          "en": "-re is the ending of gondol and vár; it does not say what you are sorry for.",
+          "es": "-re es la terminación de gondol y vár; no dice por qué te disculpas."
+        },
+        "késésben": {
+          "en": "késésben means in lateness (-ben), as in Késésben vagyok (I am running late); it is not what you apologise for.",
+          "es": "késésben significa «con retraso» (-ben), como en Késésben vagyok (voy con retraso); no es por lo que te disculpas."
+        }
+      },
+      "examples": [
+        "Elnézést a késésért!",
+        "Hálás vagyok a segítségért."
+      ],
+      "tr": {
+        "en": "Sorry for being late!",
+        "es": "¡Perdón por el retraso!"
+      }
+    },
+    {
+      "id": "ert-va-ve-f04",
+      "kind": "form",
+      "verb": "mi",
+      "person": "-ért",
+      "answer": "miért",
+      "table": "ert-tabla"
+    },
+    {
+      "id": "ert-va-ve-c05",
+      "sentence": "Beteg voltam, ___ nem mentem dolgozni.",
+      "options": [
+        "ezzel",
+        "ebben",
+        "ezért"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "ezért is ez + -ért: for this reason, that is why. It gives the reason for the second clause.",
+        "es": "ezért es ez + -ért: por esta razón, por eso. Da la razón de la segunda cláusula."
+      },
+      "wrong": {
+        "ezzel": {
+          "en": "ezzel is ez + -val/-vel, with this or by this; it does not give a reason.",
+          "es": "ezzel es ez + -val/-vel, «con esto»; no da una razón."
+        },
+        "ebben": {
+          "en": "ebben is ez + -ban/-ben, in this; it does not give a reason.",
+          "es": "ebben es ez + -ban/-ben, «en esto»; no da una razón."
+        }
+      },
+      "examples": [
+        "Fáradt voltam, ezért hazamentem.",
+        "Esik az eső, ezért otthon maradok."
+      ],
+      "tr": {
+        "en": "I was ill, so I did not go to work.",
+        "es": "Estuve enfermo/a, así que no fui a trabajar."
+      }
+    },
+    {
+      "id": "ert-va-ve-f05",
+      "kind": "form",
+      "verb": "tanár",
+      "person": "-vá/-vé",
+      "answer": "tanárrá",
+      "table": "vae-tabla"
+    },
+    {
+      "id": "ert-va-ve-c06",
+      "sentence": "___ késtél? Mert nem járt a busz.",
+      "options": [
+        "Miért",
+        "Mikor",
+        "Mennyit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The answer starts with mert (because), so the question asks for a reason: miért (mi + -ért, literally for what).",
+        "es": "La respuesta empieza con mert (porque), así que la pregunta pide una razón: miért (mi + -ért, literalmente por qué cosa)."
+      },
+      "wrong": {
+        "Mikor": {
+          "en": "Mikor asks for a time; the answer would be Tegnap or Hétkor.",
+          "es": "Mikor pregunta por el tiempo; la respuesta sería Tegnap o Hétkor."
+        },
+        "Mennyit": {
+          "en": "Mennyit asks how much or how long; the answer would be Egy órát.",
+          "es": "Mennyit pregunta cuánto; la respuesta sería Egy órát."
+        }
+      },
+      "examples": [
+        "Miért nem jöttél tegnap?",
+        "Miért vagy fáradt?"
+      ],
+      "tr": {
+        "en": "Why were you late? Because the bus did not run.",
+        "es": "¿Por qué llegaste tarde? Porque no pasó el autobús."
+      }
+    },
+    {
+      "id": "ert-va-ve-w02",
+      "kind": "why",
+      "es": "A víz jéggé válik.",
+      "target": "jéggé",
+      "tr": {
+        "en": "Water turns into ice.",
+        "es": "El agua se convierte en hielo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "jéggé is the accusative: the water changes the ice",
+            "es": "jéggé es el acusativo: el agua cambia el hielo"
+          },
+          "wrong": {
+            "en": "With this rule the object would be jeget (A víz jeget válik). válik takes no object; the result gets -vá/-vé.",
+            "es": "Con esta regla el objeto sería jeget (A víz jeget válik). válik no lleva objeto; el resultado lleva -vá/-vé."
+          }
+        },
+        {
+          "text": {
+            "en": "The ending is -vé and the v stays after a consonant: jégvé",
+            "es": "La terminación es -vé y la v se queda después de una consonante: jégvé"
+          },
+          "wrong": {
+            "en": "With this rule the form would be jégvé. -vá/-vé works like -val/-vel: the v copies the last consonant.",
+            "es": "Con esta regla la forma sería jégvé. -vá/-vé funciona como -val/-vel: la v copia la última consonante."
+          }
+        },
+        {
+          "text": {
+            "en": "válik asks for -vá/-vé on the result; the v copies the g and the front vowel gives -é",
+            "es": "válik pide -vá/-vé en el resultado; la v copia la g y la vocal anterior da -é"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "ert-va-ve-f06",
+      "kind": "form",
+      "verb": "jég",
+      "person": "-vá/-vé",
+      "answer": "jéggé",
+      "table": "vae-tabla"
+    },
+    {
+      "id": "ert-va-ve-c07",
+      "sentence": "Sokat dolgozom a ___.",
+      "options": [
+        "családomhoz",
+        "családomban",
+        "családomért"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "-ért also means for the sake of someone: sokat dolgozom a családomért. The ending sits on the possessed noun: családom + ért.",
+        "es": "-ért también significa «por el bien de alguien»: sokat dolgozom a családomért. La terminación va en el sustantivo poseído: családom + ért."
+      },
+      "wrong": {
+        "családomhoz": {
+          "en": "családomhoz is -hoz (to, towards my family); it does not say for whose sake you work.",
+          "es": "családomhoz es -hoz (hacia mi familia); no dice por quién trabajas."
+        },
+        "családomban": {
+          "en": "családomban means in my family (-ban); it gives the place, not the reason.",
+          "es": "családomban significa «en mi familia» (-ban); da el lugar, no la razón."
+        }
+      },
+      "examples": [
+        "Péter sokat dolgozik a családjáért.",
+        "Sokat edzek az egészségemért."
+      ],
+      "tr": {
+        "en": "I work a lot for my family.",
+        "es": "Trabajo mucho por mi familia."
+      }
+    },
+    {
+      "id": "ert-va-ve-f07",
+      "kind": "form",
+      "verb": "kék",
+      "person": "-vá/-vé",
+      "answer": "kékké",
+      "table": "vae-tabla"
+    },
+    {
+      "id": "ert-va-ve-c08",
+      "sentence": "Nagy hidegben a víz ___ válik.",
+      "options": [
+        "jégvé",
+        "jéggé",
+        "jéggá"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After válik the result takes -vá/-vé. The v copies the last consonant: jég + vé = jéggé. The vowel é is front, so the ending is -é.",
+        "es": "Después de válik el resultado lleva -vá/-vé. La v copia la última consonante: jég + vé = jéggé. La vocal é es anterior, así que la terminación es -é."
+      },
+      "wrong": {
+        "jégvé": {
+          "en": "With this form the v would stay after a consonant; -vá/-vé works like -val/-vel: the v copies the g.",
+          "es": "Con esta forma la v se quedaría después de una consonante; -vá/-vé funciona como -val/-vel: la v copia la g."
+        },
+        "jéggá": {
+          "en": "The ending would be -vá (back vowels), but jég has the front vowel é, so it is jéggé.",
+          "es": "La terminación sería -vá (vocales posteriores), pero jég tiene la vocal anterior é, así que es jéggé."
+        }
+      },
+      "examples": [
+        "A víz jéggé válik.",
+        "A jég vízzé válik."
+      ],
+      "tr": {
+        "en": "In great cold water turns into ice.",
+        "es": "Con mucho frío el agua se convierte en hielo."
+      }
+    },
+    {
+      "id": "ert-va-ve-f08",
+      "kind": "form",
+      "verb": "boldog",
+      "person": "-vá/-vé",
+      "answer": "boldoggá",
+      "table": "vae-tabla"
+    },
+    {
+      "id": "ert-va-ve-c09",
+      "sentence": "Péter sokat dolgozott, és ___ vált.",
+      "options": [
+        "híressé",
+        "híres",
+        "híresvé"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "vált (from válik) asks for -vá/-vé on the result: híres + sé = híressé (the v copies the s, and the front vowels give -é).",
+        "es": "vált (de válik) pide -vá/-vé en el resultado: híres + sé = híressé (la v copia la s, y las vocales anteriores dan -é)."
+      },
+      "wrong": {
+        "híres": {
+          "en": "A plain adjective follows lesz (híres lett) but not válik; válik needs -vá/-vé.",
+          "es": "Un adjetivo solo va con lesz (híres lett), no con válik; válik necesita -vá/-vé."
+        },
+        "híresvé": {
+          "en": "The v does not stay after a consonant; it copies it: híressé.",
+          "es": "La v no se queda después de una consonante; la copia: híressé."
+        }
+      },
+      "examples": [
+        "Az arca pirossá vált.",
+        "Anna híressé vált."
+      ],
+      "tr": {
+        "en": "Péter worked a lot and became famous.",
+        "es": "Péter trabajó mucho y se hizo famoso."
+      }
+    },
+    {
+      "id": "ert-va-ve-f09",
+      "kind": "form",
+      "verb": "víz",
+      "person": "-vá/-vé",
+      "answer": "vízzé",
+      "table": "vae-tabla"
+    },
+    {
+      "id": "ert-va-ve-w03",
+      "kind": "why",
+      "es": "Anna orvos lesz.",
+      "target": "orvos",
+      "tr": {
+        "en": "Anna will be a doctor.",
+        "es": "Anna va a ser médica."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After lesz a job needs -vá/-vé: orvossá",
+            "es": "Después de lesz un oficio necesita -vá/-vé: orvossá"
+          },
+          "wrong": {
+            "en": "With this rule orvossá would be required after lesz. It is not: in everyday speech a job after lesz stays plain (orvos lesz); orvossá lesz is possible only in a literary style.",
+            "es": "Con esta regla orvossá sería obligatorio después de lesz. No lo es: en el habla diaria un oficio después de lesz queda solo (orvos lesz); orvossá lesz solo es posible en estilo literario."
+          }
+        },
+        {
+          "text": {
+            "en": "After lesz a job stays plain, with no ending",
+            "es": "Después de lesz un oficio queda solo, sin terminación"
+          }
+        },
+        {
+          "text": {
+            "en": "The noun needs the accusative -t after lesz",
+            "es": "El sustantivo necesita el acusativo -t después de lesz"
+          },
+          "wrong": {
+            "en": "With this rule it would be Anna orvost lesz. lesz takes no direct object; orvos is the job Anna will have.",
+            "es": "Con esta regla sería Anna orvost lesz. lesz no lleva objeto directo; orvos es el oficio que tendrá Anna."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ert-va-ve-c10",
+      "sentence": "A jó hír ___ tette Annát.",
+      "options": [
+        "boldoggá",
+        "boldoggé",
+        "boldogvá"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "tesz asks for -vá/-vé on the result: boldog + vá = boldoggá. The vowel o is back, so -á, and the v copies the g.",
+        "es": "tesz pide -vá/-vé en el resultado: boldog + vá = boldoggá. La vocal o es posterior, así que -á, y la v copia la g."
+      },
+      "wrong": {
+        "boldoggé": {
+          "en": "boldog has a back vowel (o), so the ending is -á, not -é.",
+          "es": "boldog tiene una vocal posterior (o), así que la terminación es -á, no -é."
+        },
+        "boldogvá": {
+          "en": "The v copies the g after a consonant: boldoggá, not boldogvá.",
+          "es": "La v copia la g después de una consonante: boldoggá, no boldogvá."
+        }
+      },
+      "examples": [
+        "A zene boldoggá tesz.",
+        "Boldoggá teszel."
+      ],
+      "tr": {
+        "en": "The good news made Anna happy.",
+        "es": "La buena noticia hizo feliz a Anna."
+      }
+    },
+    {
+      "id": "ert-va-ve-f10",
+      "kind": "form",
+      "verb": "sarok",
+      "person": "-ig",
+      "answer": "sarokig",
+      "table": "ig-tabla"
+    },
+    {
+      "id": "ert-va-ve-c11",
+      "sentence": "Száz év alatt a kis falu ___ vált.",
+      "options": [
+        "város",
+        "várossá",
+        "városvá"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "vált (from válik) asks for -vá/-vé: város + vá = várossá (the v copies the s). In everyday speech you can also say város lett.",
+        "es": "vált (de válik) pide -vá/-vé: város + vá = várossá (la v copia la s). En el habla diaria también se puede decir város lett."
+      },
+      "wrong": {
+        "város": {
+          "en": "The plain noun goes with lesz (város lett), not with válik; válik asks for -vá/-vé.",
+          "es": "El sustantivo solo va con lesz (város lett), no con válik; válik pide -vá/-vé."
+        },
+        "városvá": {
+          "en": "The v copies the s: várossá.",
+          "es": "La v copia la s: várossá."
+        }
+      },
+      "examples": [
+        "A fiú híres emberré vált.",
+        "Kati híres énekessé vált."
+      ],
+      "tr": {
+        "en": "In a hundred years the small village became a town.",
+        "es": "En cien años el pueblito se convirtió en una ciudad."
+      }
+    },
+    {
+      "id": "ert-va-ve-f11",
+      "kind": "form",
+      "verb": "utca",
+      "person": "-ig",
+      "answer": "utcáig",
+      "table": "ig-tabla"
+    },
+    {
+      "id": "ert-va-ve-c12",
+      "sentence": "A lámpa ___ teszi a szobát.",
+      "options": [
+        "szebb",
+        "szebbre",
+        "szebbé"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "tesz asks for -vá/-vé on the result: szebb + vé = szebbé (the v copies the b). The comparative takes the ending like any adjective.",
+        "es": "tesz pide -vá/-vé en el resultado: szebb + vé = szebbé (la v copia la b). El comparativo lleva la terminación como cualquier adjetivo."
+      },
+      "wrong": {
+        "szebb": {
+          "en": "The plain adjective cannot follow tesz here; the result needs -vá/-vé.",
+          "es": "El adjetivo solo no puede ir aquí después de tesz; el resultado necesita -vá/-vé."
+        },
+        "szebbre": {
+          "en": "-re is not the ending of the result after tesz; it would mean onto or for.",
+          "es": "-re no es la terminación del resultado después de tesz; significaría «sobre» o «para»."
+        }
+      },
+      "examples": [
+        "A virág szebbé teszi a szobát.",
+        "A zene boldoggá teszi a gyerekeket."
+      ],
+      "tr": {
+        "en": "The lamp makes the room nicer.",
+        "es": "La lámpara hace más bonita la habitación."
+      }
+    },
+    {
+      "id": "ert-va-ve-f12",
+      "kind": "form",
+      "verb": "Budapest",
+      "person": "-ig",
+      "answer": "Budapestig",
+      "table": "ig-tabla"
+    },
+    {
+      "id": "ert-va-ve-w04",
+      "kind": "why",
+      "es": "Menj a sarokig!",
+      "target": "sarokig",
+      "tr": {
+        "en": "Go as far as the corner!",
+        "es": "¡Ve hasta la esquina!"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-ig means into, like -ba/-be: you go into the corner",
+            "es": "-ig significa «adentro», como -ba/-be: entras en la esquina"
+          },
+          "wrong": {
+            "en": "With this rule you would go inside, as in sarokba. -ig only reaches the point; it does not enter.",
+            "es": "Con esta regla entrarías, como en sarokba. -ig solo llega al punto; no entra."
+          }
+        },
+        {
+          "text": {
+            "en": "-ig is only for time: until the corner",
+            "es": "-ig es solo para el tiempo: hasta que llegue la esquina"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about waiting until a time (ötig). In space, -ig means as far as, up to a point.",
+            "es": "Con esta regla la frase hablaría de esperar hasta una hora (ötig). En el espacio, -ig significa hasta un punto."
+          }
+        },
+        {
+          "text": {
+            "en": "-ig in space means as far as: you go up to the corner",
+            "es": "-ig en el espacio significa hasta: vas hasta la esquina"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "ert-va-ve-c13",
+      "sentence": "Anna a jövő évtől tanár ___.",
+      "options": [
+        "lesz",
+        "válik",
+        "tesz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "For a job, lesz takes the plain noun with no ending: tanár lesz. válik would need tanárrá válik.",
+        "es": "Para un oficio, lesz lleva el sustantivo solo, sin terminación: tanár lesz. válik necesitaría tanárrá válik."
+      },
+      "wrong": {
+        "válik": {
+          "en": "válik asks for -vá/-vé (tanárrá válik); with the plain noun tanár it does not work.",
+          "es": "válik pide -vá/-vé (tanárrá válik); con el sustantivo solo tanár no funciona."
+        },
+        "tesz": {
+          "en": "tesz means make or put and needs an object and a result like tanárrá; here Anna herself becomes a teacher.",
+          "es": "tesz significa «hacer» o «poner» y necesita un objeto y un resultado como tanárrá; aquí la propia Anna se hace maestra."
+        }
+      },
+      "examples": [
+        "Péter orvos lesz.",
+        "Kati tanár lett."
+      ],
+      "tr": {
+        "en": "From next year Anna will be a teacher.",
+        "es": "A partir del próximo año Anna va a ser maestra."
+      }
+    },
+    {
+      "id": "ert-va-ve-c14",
+      "sentence": "Meddig megy ez a villamos? Csak a ___.",
+      "options": [
+        "hídra",
+        "hídban",
+        "hídig"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Meddig? (how far) is answered with -ig: a hídig (as far as the bridge).",
+        "es": "Meddig? (hasta dónde) se responde con -ig: a hídig (hasta el puente)."
+      },
+      "wrong": {
+        "hídra": {
+          "en": "hídra is onto the bridge (-ra) and answers Hová?; the question asks for a limit, Meddig?",
+          "es": "hídra es «sobre el puente» (-ra) y responde a Hová?; la pregunta pide un límite, Meddig?"
+        },
+        "hídban": {
+          "en": "hídban would be in the bridge (-ban); it is not an end point.",
+          "es": "hídban sería «en el puente» (-ban); no es un punto final."
+        }
+      },
+      "examples": [
+        "Meddig mész? A bankig.",
+        "Ez a villamos az állomásig megy."
+      ],
+      "tr": {
+        "en": "How far does this tram go? Only as far as the bridge.",
+        "es": "¿Hasta dónde llega este tranvía? Solo hasta el puente."
+      }
+    },
+    {
+      "id": "ert-va-ve-c15",
+      "sentence": "Menj egyenesen a ___, aztán fordulj balra.",
+      "options": [
+        "sarokból",
+        "sarokig",
+        "sarokban"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "-ig says how far you walk: up to the corner, and then you turn.",
+        "es": "-ig dice hasta dónde caminas: hasta la esquina, y luego giras."
+      },
+      "wrong": {
+        "sarokból": {
+          "en": "sarokból means out of the corner (-ból/-ből); you would be leaving it, not walking up to it.",
+          "es": "sarokból significa «desde la esquina» (-ból/-ből); estarías saliendo de ahí, no caminando hasta ahí."
+        },
+        "sarokban": {
+          "en": "sarokban means in the corner (-ban); it gives a place, not a direction.",
+          "es": "sarokban significa «en la esquina» (-ban); da un lugar, no una dirección."
+        }
+      },
+      "examples": [
+        "Egyenesen a parkig megyek, aztán jobbra fordulok.",
+        "Menj egyenesen a hídig."
+      ],
+      "tr": {
+        "en": "Go straight as far as the corner, then turn left.",
+        "es": "Ve derecho hasta la esquina, luego da vuelta a la izquierda."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1617 @@
+{
+  "schema": 2,
+  "topic": "magazas",
+  "level": "B2",
+  "title": {
+    "en": "Polite and formal: Ön, tetszik, Tudna segíteni?",
+    "es": "Cortés y formal: Ön, tetszik, Tudna segíteni?"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has two ways to say 'you'. With friends, family and people your age you use te (tegezés): Hol laksz? With strangers, customers, officials and older people you use Ön (önözés): Hol lakik? Ön is grammatically 3rd person, exactly like Spanish usted, so the verb, the possessive ending and the case forms are the 3rd person ones: Ön dolgozik, az Ön neve, Önnek, Önnel. Formal Hungarian adds more than a pronoun: set phrases (Jó napot kívánok! Parancsoljon! Tessék!), the conditional for requests (Tudna segíteni?) and, in shops and with older people, tetszik + infinitive (Mit tetszik kérni?). A formal letter opens with Tisztelt Hölgyem/Uram! and closes with Üdvözlettel; a friendly one opens with Kedves Anna!.",
+        "es": "El húngaro tiene dos maneras de decir «tú» y «usted». Con amigos, familia y gente de tu edad usas te (tegezés): Hol laksz? Con desconocidos, clientes, autoridades y personas mayores usas Ön (önözés): Hol lakik? Ön es gramaticalmente de 3.ª persona, igual que usted en español, así que el verbo, la terminación posesiva y las formas de los casos son las de 3.ª persona: Ön dolgozik, az Ön neve, Önnek, Önnel. El húngaro formal añade más que un pronombre: frases hechas (Jó napot kívánok! Parancsoljon! Tessék!), el condicional para las peticiones (Tudna segíteni?) y, en tiendas y con personas mayores, tetszik + infinitivo (Mit tetszik kérni?). Una carta formal empieza con Tisztelt Hölgyem/Uram! y termina con Üdvözlettel; una amistosa empieza con Kedves Anna!."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "on-jelen",
+      "title": {
+        "en": "Present tense: te, Ön, ti, Önök",
+        "es": "Presente: te, Ön, ti, Önök"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "dolgozik (to work)",
+          "es": "dolgozik (trabajar)"
+        },
+        {
+          "en": "vár (to wait)",
+          "es": "vár (esperar)"
+        },
+        {
+          "en": "lát + a levelet (to see)",
+          "es": "lát + a levelet (ver)"
+        },
+        {
+          "en": "kér + a számlát (to ask for)",
+          "es": "kér + a számlát (pedir)"
+        }
+      ],
+      "rows": [
+        [
+          "te",
+          "dolgozol",
+          "vársz",
+          "látod",
+          "kéred"
+        ],
+        [
+          "Ön",
+          "dolgozik",
+          "vár",
+          "látja",
+          "kéri"
+        ],
+        [
+          "ti",
+          "dolgoztok",
+          "vártok",
+          "látjátok",
+          "kéritek"
+        ],
+        [
+          "Önök",
+          "dolgoznak",
+          "várnak",
+          "látják",
+          "kérik"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Ön and Önök in the whole sentence",
+        "es": "Ön y Önök en toda la oración"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The verb is in the 3rd person, like ő and ők: Ön dolgozik, Önök dolgoznak. It is the same logic as Spanish usted trabaja, ustedes trabajan. The question word stays right before the verb as usual.",
+            "es": "El verbo va en 3.ª persona, como ő y ők: Ön dolgozik, Önök dolgoznak. Es la misma lógica que usted trabaja, ustedes trabajan. La palabra interrogativa va justo antes del verbo, como siempre."
+          },
+          "examples": [
+            {
+              "es": "Ön hol dolgozik?",
+              "tr": {
+                "en": "Where do you work? (formal)",
+                "es": "¿Dónde trabaja usted?"
+              }
+            },
+            {
+              "es": "Önök Budapesten laknak?",
+              "tr": {
+                "en": "Do you (plural, formal) live in Budapest?",
+                "es": "¿Ustedes viven en Budapest?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A definite object makes the verb definite, as with every 3rd person: Ön ismeri Annát, Önök kérik a számlát. With an indefinite object it stays indefinite: Ön kér egy kávét.",
+            "es": "Un objeto determinado vuelve determinado el verbo, como con toda 3.ª persona: Ön ismeri Annát, Önök kérik a számlát. Con un objeto indeterminado se queda indeterminado: Ön kér egy kávét."
+          },
+          "examples": [
+            {
+              "es": "Ön ismeri Annát?",
+              "tr": {
+                "en": "Do you know Anna? (formal)",
+                "es": "¿Usted conoce a Anna?"
+              }
+            },
+            {
+              "es": "Önök kérik a számlát?",
+              "tr": {
+                "en": "Would you (plural, formal) like the bill?",
+                "es": "¿Ustedes desean la cuenta?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A possessed noun gets the 3rd person ending, and Ön stands before it with the article: az Ön neve, az Ön címe, az Önök lakása. Compare the informal a te neved.",
+            "es": "Un sustantivo poseído lleva la terminación de 3.ª persona, y Ön va delante con el artículo: az Ön neve, az Ön címe, az Önök lakása. Compara con el informal a te neved."
+          },
+          "examples": [
+            {
+              "es": "Mi az Ön neve?",
+              "tr": {
+                "en": "What is your name? (formal)",
+                "es": "¿Cuál es su nombre?"
+              }
+            },
+            {
+              "es": "Mi az Ön telefonszáma?",
+              "tr": {
+                "en": "What is your phone number? (formal)",
+                "es": "¿Cuál es su número de teléfono?"
+              }
+            },
+            {
+              "es": "Az Önök lakása nagyon szép.",
+              "tr": {
+                "en": "Your (plural, formal) flat is very nice.",
+                "es": "El departamento de ustedes es muy bonito."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "on-esetek",
+      "title": {
+        "en": "Case forms: te and Ön",
+        "es": "Formas de caso: te y Ön"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "te",
+          "es": "te"
+        },
+        {
+          "en": "Ön",
+          "es": "Ön"
+        }
+      ],
+      "rows": [
+        [
+          "-t",
+          "téged",
+          "Önt"
+        ],
+        [
+          "-nak/-nek",
+          "neked",
+          "Önnek"
+        ],
+        [
+          "-val/-vel",
+          "veled",
+          "Önnel"
+        ],
+        [
+          "-ról/-ről",
+          "rólad",
+          "Önről"
+        ],
+        [
+          "-nál/-nél",
+          "nálad",
+          "Önnél"
+        ],
+        [
+          "-hoz/-hez/-höz",
+          "hozzád",
+          "Önhöz"
+        ],
+        [
+          "-tól/-től",
+          "tőled",
+          "Öntől"
+        ],
+        [
+          "-ra/-re",
+          "rád",
+          "Önre"
+        ],
+        [
+          "birtokos",
+          "a te neved",
+          "az Ön neve"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Ön in the cases",
+        "es": "Ön en los casos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Önt (plural Önöket) is the object. Because Önt is a 3rd person, definite object, the verb is definite: Látom Önt. The -lak/-lek verbs (Látlak) are only for te.",
+            "es": "Önt (plural Önöket) es el objeto. Como Önt es un objeto determinado de 3.ª persona, el verbo es determinado: Látom Önt. Los verbos en -lak/-lek (Látlak) son solo para te."
+          },
+          "examples": [
+            {
+              "es": "Hívhatom Önt holnap?",
+              "tr": {
+                "en": "May I call you tomorrow? (formal)",
+                "es": "¿Puedo llamarle mañana?"
+              }
+            },
+            {
+              "es": "Holnap várom Önt a rendelőben.",
+              "tr": {
+                "en": "I will expect you at the surgery tomorrow. (formal)",
+                "es": "Lo espero mañana en el consultorio."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Önnek (plural Önöknek) means 'to you' and 'you have' (Önnek van); Önnel (Önökkel) means 'with you'. The n of Ön and the v of -val/-vel merge: Önnel.",
+            "es": "Önnek (plural Önöknek) significa «a usted» y «usted tiene» (Önnek van); Önnel (Önökkel) significa «con usted». La n de Ön y la v de -val/-vel se funden: Önnel."
+          },
+          "examples": [
+            {
+              "es": "Önnek van időpontja?",
+              "tr": {
+                "en": "Do you have an appointment? (formal)",
+                "es": "¿Usted tiene cita?"
+              }
+            },
+            {
+              "es": "Önnel szeretnék beszélni a szerződésről.",
+              "tr": {
+                "en": "I would like to talk to you about the contract. (formal)",
+                "es": "Quisiera hablar con usted sobre el contrato."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The other cases follow the table: Önről (about you), Önnél (at your place), Önhöz (to you), Öntől (from you). In service speech the pronoun is often dropped when the context is clear.",
+            "es": "Los demás casos siguen la tabla: Önről (sobre usted), Önnél (en su casa), Önhöz (hacia usted), Öntől (de usted). En el habla de servicio el pronombre suele omitirse cuando el contexto es claro."
+          },
+          "examples": [
+            {
+              "es": "Miben segíthetek Önnek?",
+              "tr": {
+                "en": "How can I help you? (formal)",
+                "es": "¿En qué puedo ayudarle?"
+              }
+            },
+            {
+              "es": "Miben segíthetek?",
+              "tr": {
+                "en": "How can I help? (the pronoun is understood)",
+                "es": "¿En qué puedo ayudar? (el pronombre se sobrentiende)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "on-felszolito",
+      "title": {
+        "en": "Requests and orders: te, Ön, ti, Önök",
+        "es": "Peticiones y órdenes: te, Ön, ti, Önök"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "vár (to wait)",
+          "es": "vár (esperar)"
+        },
+        {
+          "en": "kér (to ask for)",
+          "es": "kér (pedir)"
+        },
+        {
+          "en": "ül (to sit)",
+          "es": "ül (sentarse)"
+        },
+        {
+          "en": "jön (to come)",
+          "es": "jön (venir)"
+        }
+      ],
+      "rows": [
+        [
+          "te",
+          "várj",
+          "kérj",
+          "ülj",
+          "gyere"
+        ],
+        [
+          "Ön",
+          "várjon",
+          "kérjen",
+          "üljön",
+          "jöjjön"
+        ],
+        [
+          "ti",
+          "várjatok",
+          "kérjetek",
+          "üljetek",
+          "gyertek"
+        ],
+        [
+          "Önök",
+          "várjanak",
+          "kérjenek",
+          "üljenek",
+          "jöjjenek"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Polite requests and invitations",
+        "es": "Peticiones e invitaciones corteses"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Kérem or Legyen szíves + the Ön imperative is the formal 'please'. The prefix still follows the verb: Jöjjön be! The informal twin is Kérlek + the te form.",
+            "es": "Kérem o Legyen szíves + el imperativo de Ön es el «por favor» formal. El prefijo sigue yendo detrás del verbo: Jöjjön be! El gemelo informal es Kérlek + la forma de te."
+          },
+          "examples": [
+            {
+              "es": "Kérem, jöjjön be, és üljön le!",
+              "tr": {
+                "en": "Please come in and sit down. (formal)",
+                "es": "Por favor, pase y siéntese."
+              }
+            },
+            {
+              "es": "Legyen szíves, várjon egy percet!",
+              "tr": {
+                "en": "Be so kind as to wait a minute. (formal)",
+                "es": "Tenga la amabilidad de esperar un minuto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Kérem, hogy + the -j form is more official; on notices an institution says Kérjük, hogy (we ask). With several people the verb is plural: foglaljanak.",
+            "es": "Kérem, hogy + la forma en -j es más oficial; en los avisos una institución dice Kérjük, hogy (pedimos). Con varias personas el verbo va en plural: foglaljanak."
+          },
+          "examples": [
+            {
+              "es": "Kérem, hogy holnap kilenckor menjen a hivatalba.",
+              "tr": {
+                "en": "I ask you to go to the office tomorrow at nine. (formal)",
+                "es": "Le pido que vaya mañana a las nueve a la oficina."
+              }
+            },
+            {
+              "es": "Kérjük, hogy foglaljanak helyet.",
+              "tr": {
+                "en": "Please take a seat. (formal, to several people)",
+                "es": "Les pedimos que tomen asiento."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Tessék, Parancsoljon, tetszik",
+        "es": "Tessék, Parancsoljon, tetszik"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Tessék means 'here you are' when you hand something over, 'please, go ahead' when you invite, and Tessék? means 'Pardon?'. Parancsoljon is a very polite 'please, help yourself' or 'here you are'. Mit parancsol? is a waiter's 'What would you like?'.",
+            "es": "Tessék significa «aquí tiene» cuando entregas algo, «adelante» cuando invitas, y Tessék? significa «¿Perdón?». Parancsoljon es un «adelante» o «aquí tiene» muy cortés. Mit parancsol? es el «¿Qué desea?» de un mesero."
+          },
+          "examples": [
+            {
+              "es": "Tessék, itt a számla.",
+              "tr": {
+                "en": "Here is the bill. (formal)",
+                "es": "Aquí tiene la cuenta."
+              }
+            },
+            {
+              "es": "Tessék? Nem értettem.",
+              "tr": {
+                "en": "Pardon? I did not understand. (formal)",
+                "es": "¿Perdón? No entendí."
+              }
+            },
+            {
+              "es": "Parancsoljon, üljön le!",
+              "tr": {
+                "en": "Please, sit down. (formal)",
+                "es": "Adelante, siéntese."
+              }
+            },
+            {
+              "es": "Mit parancsol?",
+              "tr": {
+                "en": "What would you like? (waiter, formal)",
+                "es": "¿Qué desea? (mesero, formal)"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "tetszik + infinitive is a very deferential politeness that is still current: shop staff and waiters use it with older customers, and children and young people use it with elders and grandparents. tetszik changes (tetszik, plural tetszenek), the infinitive stays. Tessék + infinitive is the lighter version. In an office or an email use Ön + conditional instead.",
+            "es": "tetszik + infinitivo es una cortesía muy deferente y todavía vigente: el personal de tiendas y los meseros la usan con clientes mayores, y los niños y los jóvenes con los mayores y los abuelos. tetszik cambia (tetszik, plural tetszenek), el infinitivo se queda. Tessék + infinitivo es la versión más ligera. En una oficina o en un correo usa Ön + condicional."
+          },
+          "examples": [
+            {
+              "es": "Mit tetszik kérni?",
+              "tr": {
+                "en": "What would you like? (very polite, in a shop)",
+                "es": "¿Qué desea? (muy cortés, en una tienda)"
+              }
+            },
+            {
+              "es": "Hogy tetszik lenni, asszonyom?",
+              "tr": {
+                "en": "How are you, madam? (very polite)",
+                "es": "¿Cómo está usted, señora? (muy cortés)"
+              }
+            },
+            {
+              "es": "Mit tetszenek kérni?",
+              "tr": {
+                "en": "What would you (plural) like? (very polite)",
+                "es": "¿Qué desean ustedes? (muy cortés)"
+              }
+            },
+            {
+              "es": "Tessék várni, mindjárt jövök.",
+              "tr": {
+                "en": "Please wait, I will be right back. (polite)",
+                "es": "Espere, por favor, ya regreso."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "on-feltetel",
+      "title": {
+        "en": "Polite conditional: te, Ön, ti, Önök",
+        "es": "Condicional cortés: te, Ön, ti, Önök"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "segít (to help)",
+          "es": "segít (ayudar)"
+        },
+        {
+          "en": "tud (to be able)",
+          "es": "tud (poder)"
+        },
+        {
+          "en": "kér (to ask for)",
+          "es": "kér (pedir)"
+        },
+        {
+          "en": "megmond + a nevét (to tell)",
+          "es": "megmond + a nevét (decir)"
+        }
+      ],
+      "rows": [
+        [
+          "te",
+          "segítenél",
+          "tudnál",
+          "kérnél",
+          "megmondanád"
+        ],
+        [
+          "Ön",
+          "segítene",
+          "tudna",
+          "kérne",
+          "megmondaná"
+        ],
+        [
+          "ti",
+          "segítenétek",
+          "tudnátok",
+          "kérnétek",
+          "megmondanátok"
+        ],
+        [
+          "Önök",
+          "segítenének",
+          "tudnának",
+          "kérnének",
+          "megmondanák"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Polite questions with the conditional",
+        "es": "Preguntas corteses con el condicional"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Tudna + infinitive is the standard polite request, and Szeretne ...? is the polite 'would you like'. English says 'could you', Spanish «¿podría?»; Hungarian puts the 'would' inside the verb.",
+            "es": "Tudna + infinitivo es la petición cortés estándar, y Szeretne ...? es el «¿desea...?» cortés. El inglés dice «could you», el español «¿podría?»; el húngaro pone el «would» dentro del verbo."
+          },
+          "examples": [
+            {
+              "es": "Elnézést, tudna segíteni?",
+              "tr": {
+                "en": "Excuse me, could you help? (formal)",
+                "es": "Disculpe, ¿podría ayudarme?"
+              }
+            },
+            {
+              "es": "Tudna várni egy percet?",
+              "tr": {
+                "en": "Could you wait a minute? (formal)",
+                "es": "¿Podría esperar un minuto?"
+              }
+            },
+            {
+              "es": "Szeretne még valamit?",
+              "tr": {
+                "en": "Would you like anything else? (formal)",
+                "es": "¿Desea algo más?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Megkérdezhetem, + a question-word clause asks permission to ask. The verb is definite (-hetem) because the whole clause is its object. The clause follows after a comma.",
+            "es": "Megkérdezhetem, + una cláusula con palabra interrogativa pide permiso para preguntar. El verbo es determinado (-hetem) porque toda la cláusula es su objeto. La cláusula va después de una coma."
+          },
+          "examples": [
+            {
+              "es": "Megkérdezhetem, hol van a posta?",
+              "tr": {
+                "en": "May I ask where the post office is? (formal)",
+                "es": "¿Puedo preguntar dónde está el correo?"
+              }
+            },
+            {
+              "es": "Megkérdezhetem, hány óra van?",
+              "tr": {
+                "en": "May I ask what time it is? (formal)",
+                "es": "¿Puedo preguntar qué hora es?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Megmondaná ...? is the definite conditional: it takes a clause or a definite object. Kérhetnék ...? asks for something indefinite.",
+            "es": "Megmondaná ...? es el condicional determinado: lleva una cláusula o un objeto determinado. Kérhetnék ...? pide algo indeterminado."
+          },
+          "examples": [
+            {
+              "es": "Elnézést, megmondaná, hol van a posta?",
+              "tr": {
+                "en": "Excuse me, could you tell me where the post office is? (formal)",
+                "es": "Disculpe, ¿podría decirme dónde está el correo?"
+              }
+            },
+            {
+              "es": "Megmondaná a nevét?",
+              "tr": {
+                "en": "Could you tell me your name? (formal)",
+                "es": "¿Podría decirme su nombre?"
+              }
+            },
+            {
+              "es": "Kérhetnék egy pohár vizet?",
+              "tr": {
+                "en": "Could I have a glass of water? (formal)",
+                "es": "¿Podría pedir un vaso de agua?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Letters and emails",
+        "es": "Cartas y correos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Openings: Tisztelt Hölgyem/Uram! for a person you do not know (Tisztelt Hölgyem! to a woman, Tisztelt Uram! to a man), Kedves Anna! for someone you know.",
+            "es": "Saludos: Tisztelt Hölgyem/Uram! para una persona que no conoces (Tisztelt Hölgyem! a una mujer, Tisztelt Uram! a un hombre), Kedves Anna! para alguien que conoces."
+          },
+          "examples": [
+            {
+              "es": "Tisztelt Hölgyem! Köszönöm a gyors választ.",
+              "tr": {
+                "en": "Dear Madam, thank you for the quick reply. (formal)",
+                "es": "Estimada señora: gracias por la pronta respuesta."
+              }
+            },
+            {
+              "es": "Kedves Anna! Köszönöm a levelet.",
+              "tr": {
+                "en": "Dear Anna, thank you for the letter. (friendly)",
+                "es": "Querida Anna: gracias por la carta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Closings: Üdvözlettel is the neutral formal one, Tisztelettel is more formal; Puszi is only for family and close friends.",
+            "es": "Despedidas: Üdvözlettel es la formal neutra, Tisztelettel es aún más formal; Puszi es solo para familia y amigos cercanos."
+          },
+          "examples": [
+            {
+              "es": "Köszönöm a segítségét. Üdvözlettel, Péter",
+              "tr": {
+                "en": "Thank you for your help. Kind regards, Péter (formal)",
+                "es": "Gracias por su ayuda. Atentamente, Péter"
+              }
+            },
+            {
+              "es": "Köszönöm a segítséget! Puszi, Kati",
+              "tr": {
+                "en": "Thanks for the help! Love, Kati (informal)",
+                "es": "¡Gracias por la ayuda! Besos, Kati"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Friendly or polite?",
+        "es": "¿Amistoso o cortés?"
+      },
+      "pairs": [
+        {
+          "a": "Hol laksz?",
+          "b": "Hol lakik?",
+          "note": {
+            "en": "te for friends, family and people your age; Ön for strangers, customers, officials and older people. Only the verb changes.",
+            "es": "te para amigos, familia y gente de tu edad; Ön para desconocidos, clientes, autoridades y personas mayores. Solo cambia el verbo."
+          },
+          "examples": [
+            {
+              "es": "Szia, Kati! Hol laksz most?",
+              "tr": {
+                "en": "Hi, Kati! Where do you live now? (informal)",
+                "es": "¡Hola, Kati! ¿Dónde vives ahora?"
+              }
+            },
+            {
+              "es": "Jó napot kívánok! Hol lakik, asszonyom?",
+              "tr": {
+                "en": "Good afternoon! Where do you live, madam? (formal)",
+                "es": "¡Buenas tardes! ¿Dónde vive usted, señora?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Kérlek, várj!",
+          "b": "Kérem, várjon!",
+          "note": {
+            "en": "Do not mix the levels: Kérlek goes with the te form, Kérem with the Ön form.",
+            "es": "No mezcles los niveles: Kérlek va con la forma de te, Kérem con la forma de Ön."
+          },
+          "examples": [
+            {
+              "es": "Péter, kérlek, ülj le!",
+              "tr": {
+                "en": "Péter, please sit down. (informal)",
+                "es": "Péter, por favor, siéntate."
+              }
+            },
+            {
+              "es": "Uram, kérem, üljön le!",
+              "tr": {
+                "en": "Sir, please sit down. (formal)",
+                "es": "Señor, por favor, siéntese."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Tudnál segíteni?",
+          "b": "Tudna segíteni?",
+          "note": {
+            "en": "The conditional is polite with both, but the person ending must match: -nál for te, -na for Ön.",
+            "es": "El condicional es cortés con ambos, pero la terminación de persona debe coincidir: -nál para te, -na para Ön."
+          },
+          "examples": [
+            {
+              "es": "Anna, tudnál segíteni?",
+              "tr": {
+                "en": "Anna, could you help? (informal)",
+                "es": "Anna, ¿podrías ayudarme?"
+              }
+            },
+            {
+              "es": "Elnézést, tudna segíteni?",
+              "tr": {
+                "en": "Excuse me, could you help? (formal)",
+                "es": "Disculpe, ¿podría ayudarme?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Szia!",
+          "b": "Jó napot kívánok!",
+          "note": {
+            "en": "Szia (hi and bye) and Sziasztok are for te; Jó napot kívánok!, Jó reggelt kívánok!, Jó estét kívánok! greet with Ön, and Viszontlátásra! is the formal goodbye.",
+            "es": "Szia (hola y adiós) y Sziasztok son para te; Jó napot kívánok!, Jó reggelt kívánok!, Jó estét kívánok! saludan a Ön, y Viszontlátásra! es la despedida formal."
+          },
+          "examples": [
+            {
+              "es": "Szia, Péter! Hogy vagy?",
+              "tr": {
+                "en": "Hi, Péter! How are you? (informal)",
+                "es": "¡Hola, Péter! ¿Cómo estás?"
+              }
+            },
+            {
+              "es": "Jó napot kívánok! Hogy van?",
+              "tr": {
+                "en": "Good afternoon! How are you? (formal)",
+                "es": "¡Buenas tardes! ¿Cómo está usted?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Mit kér?",
+          "b": "Mit tetszik kérni?",
+          "note": {
+            "en": "Both are formal. Mit kér? is the neutral Ön question; Mit tetszik kérni? is more deferential, typical with older customers in a shop.",
+            "es": "Ambas son formales. Mit kér? es la pregunta neutra con Ön; Mit tetszik kérni? es más deferente, típica con clientes mayores en una tienda."
+          },
+          "examples": [
+            {
+              "es": "Jó napot kívánok! Mit kér?",
+              "tr": {
+                "en": "Good afternoon! What would you like? (formal)",
+                "es": "¡Buenas tardes! ¿Qué desea? (formal)"
+              }
+            },
+            {
+              "es": "Jó napot kívánok! Mit tetszik kérni?",
+              "tr": {
+                "en": "Good afternoon! What would you like? (very polite)",
+                "es": "¡Buenas tardes! ¿Qué desea? (muy cortés)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Ön is polite but takes the 3rd person: Ön hol van?, Ön hol lakik?, never Ön hol vagy? or Ön hol laksz?. (2) Do not mix the levels: Kérem, segítsen! (formal) or Kérlek, segíts! (informal), never Kérem, segíts!. (3) A definite object makes the Ön verb definite: Látom Önt (not Látlak Önt), Önök kérik a számlát. (4) In letters and emails Ön, Önnek, Önök are usually written with a capital Ö as a courtesy; the lower-case form (ön) is also correct. (5) The pronoun maga also takes the 3rd person and sits between te and Ön. It is normal in many regions and with older people, but with a stranger it can sound distant, and in an argument even sharp; if you are unsure, choose Ön. (6) tetszik-forms are polite and still in use with older people and in shops; as a learner you mainly need to recognise them. In an office or an email, Ön + conditional is the neutral polite choice (Tudna segíteni?).",
+        "es": "Trampas clásicas: (1) Ön es cortés pero lleva la 3.ª persona: Ön hol van?, Ön hol lakik?, nunca Ön hol vagy? ni Ön hol laksz?. (2) No mezcles los niveles: Kérem, segítsen! (formal) o Kérlek, segíts! (informal), nunca Kérem, segíts!. (3) Un objeto determinado vuelve determinado el verbo de Ön: Látom Önt (no Látlak Önt), Önök kérik a számlát. (4) En cartas y correos Ön, Önnek, Önök se suelen escribir con Ö mayúscula por cortesía; la minúscula (ön) también es correcta. (5) El pronombre maga también lleva la 3.ª persona y está entre te y Ön. Es normal en muchas regiones y entre personas mayores, pero con un desconocido puede sonar distante y, en una discusión, hasta cortante; si dudas, elige Ön. (6) Las formas con tetszik son corteses y siguen en uso con personas mayores y en tiendas; como estudiante sobre todo necesitas reconocerlas. En una oficina o en un correo, Ön + condicional es la opción cortés neutra (Tudna segíteni?)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has a polite word for you: «Ön». It takes the third person of the verb, just like usted in Spanish. A friend hears «Hol laksz?», a stranger hears «Hol lakik?». For a polite request use the conditional: «Tudna segíteni?». To invite someone, say «Kérem, jöjjön be!» or «Tessék, üljön le!». Shop staff may say «Mit tetszik kérni?» to an older customer. A formal letter begins with «Tisztelt Hölgyem, Uram!» and ends with «Üdvözlettel».",
+    "es": "El húngaro tiene una palabra cortés para decir usted: «Ön». Lleva el verbo en tercera persona, igual que usted en español. A un amigo se le dice «Hol laksz?», a un desconocido «Hol lakik?». Para una petición cortés usa el condicional: «Tudna segíteni?». Para invitar a alguien, di «Kérem, jöjjön be!» o «Tessék, üljön le!». El personal de una tienda puede decir «Mit tetszik kérni?» a un cliente mayor. Una carta formal empieza con «Tisztelt Hölgyem, Uram!» y termina con «Üdvözlettel»."
+  },
+  "items": [
+    {
+      "id": "magazas-c01",
+      "sentence": "Jó napot kívánok! Meddig ___ nálunk, uram?",
+      "options": [
+        "marad",
+        "maradsz",
+        "maradok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "uram (sir) shows a polite address to one person, so the verb is the 3rd person: marad. The pronoun Ön is understood.",
+        "es": "uram (señor) muestra un trato cortés a una persona, así que el verbo va en 3.ª persona: marad. El pronombre Ön se sobrentiende."
+      },
+      "wrong": {
+        "maradsz": {
+          "en": "maradsz is the te form; with uram it would address a stranger like a friend.",
+          "es": "maradsz es la forma de te; con uram trataría a un desconocido como a un amigo."
+        },
+        "maradok": {
+          "en": "maradok is 'I stay'; with this the receptionist would ask how long he himself stays.",
+          "es": "maradok es «yo me quedo»; con esto el recepcionista preguntaría hasta cuándo se queda él mismo."
+        }
+      },
+      "examples": [
+        "Meddig marad Budapesten, asszonyom?",
+        "Hol dolgozik, uram?"
+      ],
+      "tr": {
+        "en": "Good afternoon! How long are you staying with us, sir?",
+        "es": "¡Buenas tardes! ¿Hasta cuándo se queda con nosotros, señor?"
+      }
+    },
+    {
+      "id": "magazas-f01",
+      "kind": "form",
+      "verb": "dolgozik",
+      "person": "Önök",
+      "answer": "dolgoznak",
+      "table": "on-jelen"
+    },
+    {
+      "id": "magazas-c02",
+      "sentence": "Elnézést, asszonyom, ___ a számlát?",
+      "options": [
+        "kéri",
+        "kér",
+        "kéred"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "a számlát is a definite object and asszonyom is a polite address (Ön), so the verb is the definite 3rd person: kéri.",
+        "es": "a számlát es un objeto determinado y asszonyom es un trato cortés (Ön), así que el verbo es la 3.ª persona determinada: kéri."
+      },
+      "wrong": {
+        "kér": {
+          "en": "kér is the indefinite form (Kér egy kávét?); with a definite object like a számlát it is wrong.",
+          "es": "kér es la forma indeterminada (Kér egy kávét?); con un objeto determinado como a számlát es incorrecta."
+        },
+        "kéred": {
+          "en": "kéred is the definite te form; with asszonyom it would address a stranger like a friend.",
+          "es": "kéred es la forma determinada de te; con asszonyom trataría a una desconocida como a una amiga."
+        }
+      },
+      "examples": [
+        "Kéri a számlát, uram?",
+        "Önök kérik a számlát?"
+      ],
+      "tr": {
+        "en": "Excuse me, madam, would you like the bill?",
+        "es": "Disculpe, señora, ¿desea la cuenta?"
+      }
+    },
+    {
+      "id": "magazas-f02",
+      "kind": "form",
+      "verb": "lát + a levelet",
+      "person": "Ön",
+      "answer": "látja",
+      "table": "on-jelen"
+    },
+    {
+      "id": "magazas-c03",
+      "sentence": "___, asszonyom! Itt az étlap.",
+      "options": [
+        "Parancsolj",
+        "Parancsol",
+        "Parancsoljon"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Parancsoljon is the formal imperative of parancsol: the waiter's polite 'here you are, please'.",
+        "es": "Parancsoljon es el imperativo formal de parancsol: el «aquí tiene, por favor» cortés de un mesero."
+      },
+      "wrong": {
+        "Parancsolj": {
+          "en": "Parancsolj is the te imperative, for a friend; asszonyom shows a formal situation.",
+          "es": "Parancsolj es el imperativo de te, para un amigo; asszonyom muestra una situación formal."
+        },
+        "Parancsol": {
+          "en": "Parancsol is the plain present 'he or she orders'; with this the sentence would be a statement, not an invitation.",
+          "es": "Parancsol es el presente simple «él o ella manda»; con esto la frase sería una afirmación, no una invitación."
+        }
+      },
+      "examples": [
+        "Parancsoljon, üljön le!",
+        "Parancsoljon, itt a kulcs."
+      ],
+      "tr": {
+        "en": "Here you are, madam! Here is the menu.",
+        "es": "Aquí tiene, señora. Aquí está la carta."
+      }
+    },
+    {
+      "id": "magazas-f03",
+      "kind": "form",
+      "verb": "kér + a számlát",
+      "person": "Önök",
+      "answer": "kérik",
+      "table": "on-jelen"
+    },
+    {
+      "id": "magazas-w01",
+      "kind": "why",
+      "es": "Mit tetszik kérni?",
+      "target": "tetszik",
+      "tr": {
+        "en": "What would you like? (very polite)",
+        "es": "¿Qué desea? (muy cortés)"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "tetszik means 'it pleases': What is pleasing to ask?",
+            "es": "tetszik significa «agrada»: ¿Qué agrada pedir?"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would mean 'What is pleasing to ask for?'; here tetszik is not about liking, it is a polite formula.",
+            "es": "Con esta regla la frase significaría «¿Qué agrada pedir?»; aquí tetszik no habla de gustar, es una fórmula de cortesía."
+          }
+        },
+        {
+          "text": {
+            "en": "tetszik + infinitive is a deferential formula: tetszik is the polite 3rd person 'you' and kérni stays an infinitive",
+            "es": "tetszik + infinitivo es una fórmula deferente: tetszik es el «usted» cortés en 3.ª persona y kérni se queda en infinitivo"
+          }
+        },
+        {
+          "text": {
+            "en": "tetszik is the informal way to talk to friends",
+            "es": "tetszik es la forma informal de hablar con amigos"
+          },
+          "wrong": {
+            "en": "With this rule you would use it with friends; in fact it is a deferential form for strangers and older people, and a friend would hear it as a joke.",
+            "es": "Con esta regla la usarías con amigos; en realidad es una forma deferente para desconocidos y personas mayores, y un amigo la oiría como una broma."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "magazas-c04",
+      "sentence": "Elnézést, asszonyom, ___ segíteni? Nem találom a pénztárat.",
+      "options": [
+        "tudnál",
+        "tudnék",
+        "tudna"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Tudna segíteni? is the polite request to Ön: tud + conditional 3rd person, tudna.",
+        "es": "Tudna segíteni? es la petición cortés a Ön: tud + condicional de 3.ª persona, tudna."
+      },
+      "wrong": {
+        "tudnál": {
+          "en": "tudnál is the te conditional, for a friend; a stranger in a shop is addressed with Ön.",
+          "es": "tudnál es el condicional de te, para un amigo; a un desconocido en una tienda se le trata de Ön."
+        },
+        "tudnék": {
+          "en": "tudnék is the I form; with this the sentence would ask 'Could I help?', not 'Could you help?'.",
+          "es": "tudnék es la forma de yo; con esto la frase preguntaría «¿Podría yo ayudar?», no «¿Podría usted ayudar?»."
+        }
+      },
+      "examples": [
+        "Tudna várni egy percet?",
+        "Szeretne még valamit?"
+      ],
+      "tr": {
+        "en": "Excuse me, madam, could you help? I cannot find the checkout.",
+        "es": "Disculpe, señora, ¿podría ayudarme? No encuentro la caja."
+      }
+    },
+    {
+      "id": "magazas-f04",
+      "kind": "form",
+      "verb": "kér",
+      "person": "Ön",
+      "answer": "kérjen",
+      "table": "on-felszolito"
+    },
+    {
+      "id": "magazas-c05",
+      "sentence": "Jó napot kívánok! Mit tetszik ___?",
+      "options": [
+        "kérni",
+        "kér",
+        "kérjen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "tetszik is followed by an infinitive: kérni. Together they are a deferential 'What would you like?'.",
+        "es": "tetszik va seguido de un infinitivo: kérni. Juntos forman un «¿Qué desea?» deferente."
+      },
+      "wrong": {
+        "kér": {
+          "en": "kér is a finite verb; after tetszik the main verb stays an infinitive.",
+          "es": "kér es un verbo conjugado; después de tetszik el verbo principal se queda en infinitivo."
+        },
+        "kérjen": {
+          "en": "kérjen is the Ön imperative; tetszik already carries the politeness, and the verb after it is an infinitive, not an imperative.",
+          "es": "kérjen es el imperativo de Ön; tetszik ya lleva la cortesía, y el verbo que sigue es un infinitivo, no un imperativo."
+        }
+      },
+      "examples": [
+        "Hogy tetszik lenni, asszonyom?",
+        "Tessék leülni!"
+      ],
+      "tr": {
+        "en": "Good afternoon! What would you like? (very polite)",
+        "es": "¡Buenas tardes! ¿Qué desea? (muy cortés)"
+      }
+    },
+    {
+      "id": "magazas-f05",
+      "kind": "form",
+      "verb": "ül",
+      "person": "Önök",
+      "answer": "üljenek",
+      "table": "on-felszolito"
+    },
+    {
+      "id": "magazas-c06",
+      "sentence": "Kérem, hogy holnap kilenckor ___ a hivatalba.",
+      "options": [
+        "megy",
+        "menjen",
+        "menne"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After Kérem, hogy the verb takes the -j form: menjen. It asks the person to do something.",
+        "es": "Después de Kérem, hogy el verbo toma la forma en -j: menjen. Pide a la persona que haga algo."
+      },
+      "wrong": {
+        "megy": {
+          "en": "megy is the plain present 'you go'; after kérem, hogy the sentence needs a request, not a statement.",
+          "es": "megy es el presente simple «usted va»; después de kérem, hogy la frase necesita una petición, no una afirmación."
+        },
+        "menne": {
+          "en": "menne is the conditional 'would go'; it speaks about a possible event, it does not ask for it.",
+          "es": "menne es el condicional «iría»; habla de un hecho posible, no lo pide."
+        }
+      },
+      "examples": [
+        "Kérem, hogy segítsen.",
+        "Kérjük, hogy foglaljanak helyet."
+      ],
+      "tr": {
+        "en": "I ask you to go to the office tomorrow at nine.",
+        "es": "Le pido que vaya mañana a las nueve a la oficina."
+      }
+    },
+    {
+      "id": "magazas-f06",
+      "kind": "form",
+      "verb": "jön",
+      "person": "Ön",
+      "answer": "jöjjön",
+      "table": "on-felszolito"
+    },
+    {
+      "id": "magazas-c07",
+      "sentence": "Asszonyom, ez a csomag ___ jött. Kérem, írja alá itt.",
+      "options": [
+        "neked",
+        "Önnek",
+        "Önt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Önnek is the formal dative: 'for you'. A stranger is addressed with Ön, so the form is Önnek.",
+        "es": "Önnek es el dativo formal: «para usted». A un desconocido se le trata de Ön, así que la forma es Önnek."
+      },
+      "wrong": {
+        "neked": {
+          "en": "neked is the informal 'for you'; asszonyom and kérem show a formal situation.",
+          "es": "neked es el «para ti» informal; asszonyom y kérem muestran una situación formal."
+        },
+        "Önt": {
+          "en": "Önt is the object form; 'jött Önt' does not work, because 'for you' needs the dative: Önnek.",
+          "es": "Önt es la forma de objeto; 'jött Önt' no funciona, porque «para usted» pide el dativo: Önnek."
+        }
+      },
+      "examples": [
+        "Önnek van időpontja?",
+        "Ez a levél Önnek jött."
+      ],
+      "tr": {
+        "en": "Madam, this parcel came for you. Please sign here.",
+        "es": "Señora, este paquete llegó para usted. Por favor, firme aquí."
+      }
+    },
+    {
+      "id": "magazas-w02",
+      "kind": "why",
+      "es": "Kérem, hogy segítsen.",
+      "target": "segítsen",
+      "tr": {
+        "en": "I ask you to help.",
+        "es": "Le pido que ayude."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "the -j form (subjunctive) after kérem, hogy: segít + jen becomes segítsen; it asks for an action",
+            "es": "la forma en -j (subjuntivo) después de kérem, hogy: segít + jen se convierte en segítsen; pide una acción"
+          }
+        },
+        {
+          "text": {
+            "en": "present tense 3rd person: he or she helps",
+            "es": "presente de 3.ª persona: él o ella ayuda"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Kérem, hogy segít, a fact 'I ask that he helps'; after kérem, hogy you need the -j form.",
+            "es": "Con esta regla la frase sería Kérem, hogy segít, un hecho; después de kérem, hogy hace falta la forma en -j."
+          }
+        },
+        {
+          "text": {
+            "en": "conditional: would help",
+            "es": "condicional: ayudaría"
+          },
+          "wrong": {
+            "en": "With this rule it would be Kérem, hogy segítene; the conditional speaks about what might happen, not about what you ask someone to do.",
+            "es": "Con esta regla sería Kérem, hogy segítene; el condicional habla de lo que podría pasar, no de lo que pides que alguien haga."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "magazas-c08",
+      "sentence": "Elnézést, uram, szeretnék beszélni ___ a szerződésről.",
+      "options": [
+        "Önnel",
+        "veled",
+        "Önhöz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "beszél takes -val/-vel: 'with you' in the formal register is Önnel (the n and the v merge).",
+        "es": "beszél lleva -val/-vel: «con usted» en el registro formal es Önnel (la n y la v se funden)."
+      },
+      "wrong": {
+        "veled": {
+          "en": "veled is the te form, for a friend; Elnézést shows a formal situation.",
+          "es": "veled es la forma de te, para un amigo; Elnézést muestra una situación formal."
+        },
+        "Önhöz": {
+          "en": "Önhöz means 'to you' (direction); beszél 'talk with' takes -val/-vel.",
+          "es": "Önhöz significa «hacia usted» (dirección); beszél «hablar con» lleva -val/-vel."
+        }
+      },
+      "examples": [
+        "Szeretnék Önnel találkozni jövő héten.",
+        "Önnel nagyon jó beszélni."
+      ],
+      "tr": {
+        "en": "Excuse me, sir, I would like to talk to you about the contract.",
+        "es": "Disculpe, señor, quisiera hablar con usted sobre el contrato."
+      }
+    },
+    {
+      "id": "magazas-f07",
+      "kind": "form",
+      "verb": "segít",
+      "person": "Ön",
+      "answer": "segítene",
+      "table": "on-feltetel"
+    },
+    {
+      "id": "magazas-c09",
+      "sentence": "Kérem, mondja meg, mi az Ön ___!",
+      "options": [
+        "neved",
+        "nevem",
+        "neve"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After az Ön the possessed noun has the 3rd person ending: az Ön neve. Ön is a 3rd person.",
+        "es": "Después de az Ön el sustantivo poseído lleva la terminación de 3.ª persona: az Ön neve. Ön es una 3.ª persona."
+      },
+      "wrong": {
+        "neved": {
+          "en": "neved is 'your name' to a friend (a te neved); with Ön the noun takes the 3rd person ending.",
+          "es": "neved es «tu nombre» para un amigo (a te neved); con Ön el sustantivo lleva la terminación de 3.ª persona."
+        },
+        "nevem": {
+          "en": "nevem is 'my name'; with this the sentence would ask for the speaker's own name.",
+          "es": "nevem es «mi nombre»; con esto la frase pediría el nombre del propio hablante."
+        }
+      },
+      "examples": [
+        "Mi az Ön telefonszáma?",
+        "Az Önök lakása nagyon szép."
+      ],
+      "tr": {
+        "en": "Please tell me what your name is!",
+        "es": "¡Por favor, dígame cuál es su nombre!"
+      }
+    },
+    {
+      "id": "magazas-f08",
+      "kind": "form",
+      "verb": "tud",
+      "person": "Önök",
+      "answer": "tudnának",
+      "table": "on-feltetel"
+    },
+    {
+      "id": "magazas-c10",
+      "sentence": "___ Hölgyem/Uram! Szeretném megkérdezni, hogy még szabad-e az állás.",
+      "options": [
+        "Kedves",
+        "Szia",
+        "Tisztelt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Tisztelt Hölgyem/Uram! is the standard opening of a formal letter to a person you do not know.",
+        "es": "Tisztelt Hölgyem/Uram! es el saludo estándar de una carta formal a una persona que no conoces."
+      },
+      "wrong": {
+        "Kedves": {
+          "en": "Kedves goes with a name you know (Kedves Anna!); a formal letter to an unknown person opens with Tisztelt.",
+          "es": "Kedves va con un nombre que conoces (Kedves Anna!); una carta formal a una persona desconocida empieza con Tisztelt."
+        },
+        "Szia": {
+          "en": "Szia is a spoken, informal hello between friends; it does not open a formal letter.",
+          "es": "Szia es un saludo hablado e informal entre amigos; no abre una carta formal."
+        }
+      },
+      "examples": [
+        "Tisztelt Uram! Köszönöm a levelét.",
+        "Kedves Péter! Köszönöm a levelet."
+      ],
+      "tr": {
+        "en": "Dear Sir or Madam, I would like to ask whether the position is still available.",
+        "es": "Estimado señor o señora: quisiera preguntar si el puesto sigue disponible."
+      }
+    },
+    {
+      "id": "magazas-f09",
+      "kind": "form",
+      "verb": "megmond + a nevét",
+      "person": "Ön",
+      "answer": "megmondaná",
+      "table": "on-feltetel"
+    },
+    {
+      "id": "magazas-w03",
+      "kind": "why",
+      "es": "Elnézést, megmondaná, hol van a posta?",
+      "target": "megmondaná",
+      "tr": {
+        "en": "Excuse me, could you tell me where the post office is?",
+        "es": "Disculpe, ¿podría decirme dónde está el correo?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "polite conditional, indefinite: megmondana",
+            "es": "condicional cortés, indeterminado: megmondana"
+          },
+          "wrong": {
+            "en": "With this rule the form would be megmondana, used with no object or an indefinite one; here the clause hol van a posta is the definite object.",
+            "es": "Con esta regla la forma sería megmondana, que se usa sin objeto o con uno indeterminado; aquí la cláusula hol van a posta es el objeto determinado."
+          }
+        },
+        {
+          "text": {
+            "en": "present tense, definite: megmondja",
+            "es": "presente, determinado: megmondja"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would state 'he tells it'; a polite question for a favour needs the conditional.",
+            "es": "Con esta regla la frase afirmaría «él lo dice»; una pregunta cortés para pedir un favor necesita el condicional."
+          }
+        },
+        {
+          "text": {
+            "en": "polite conditional, definite conjugation: the clause is the object, so -ná, not -na",
+            "es": "condicional cortés, conjugación determinada: la cláusula es el objeto, así que -ná, no -na"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "magazas-c11",
+      "sentence": "Köszönöm előre is a segítségét. ___, Anna",
+      "options": [
+        "Üdvözlettel",
+        "Puszi",
+        "Szia"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Üdvözlettel is the neutral formal closing of a letter or email; the line about your help (a segítségét, Ön) shows the formal tone.",
+        "es": "Üdvözlettel es la despedida formal neutra de una carta o un correo; la frase sobre su ayuda (a segítségét, Ön) muestra el tono formal."
+      },
+      "wrong": {
+        "Puszi": {
+          "en": "Puszi (a kiss) is for family and close friends.",
+          "es": "Puszi (un beso) es para la familia y los amigos cercanos."
+        },
+        "Szia": {
+          "en": "Szia is the informal 'hi' or 'bye'; it is not a closing for a formal email.",
+          "es": "Szia es el «hola» o «adiós» informal; no es una despedida para un correo formal."
+        }
+      },
+      "examples": [
+        "Köszönöm a levelét. Üdvözlettel, Gábor",
+        "Köszönöm a levelet! Puszi, Anna"
+      ],
+      "tr": {
+        "en": "Thank you in advance for your help. Kind regards, Anna",
+        "es": "Le agradezco de antemano su ayuda. Atentamente, Anna"
+      }
+    },
+    {
+      "id": "magazas-f10",
+      "kind": "form",
+      "verb": "Ön",
+      "person": "-val/-vel",
+      "answer": "Önnel",
+      "accept": ["önnel"],
+      "table": "on-esetek"
+    },
+    {
+      "id": "magazas-c12",
+      "sentence": "Önök is a buszra ___?",
+      "options": [
+        "vártok",
+        "várnak",
+        "vár"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Önök is the formal plural and takes the 3rd person plural: várnak.",
+        "es": "Önök es el plural formal y lleva la 3.ª persona del plural: várnak."
+      },
+      "wrong": {
+        "vártok": {
+          "en": "vártok is the ti form (several friends); Önök is the formal plural.",
+          "es": "vártok es la forma de ti (varios amigos); Önök es el plural formal."
+        },
+        "vár": {
+          "en": "vár is singular; Önök means several people.",
+          "es": "vár es singular; Önök significa varias personas."
+        }
+      },
+      "examples": [
+        "Önök hol laknak?",
+        "Önök már kérik a számlát?"
+      ],
+      "tr": {
+        "en": "Are you (plural, formal) also waiting for the bus?",
+        "es": "¿Ustedes también esperan el autobús?"
+      }
+    },
+    {
+      "id": "magazas-f11",
+      "kind": "form",
+      "verb": "Ön",
+      "person": "-nak/-nek",
+      "answer": "Önnek",
+      "accept": ["önnek"],
+      "table": "on-esetek"
+    },
+    {
+      "id": "magazas-c13",
+      "sentence": "Elnézést, uram, ___ még egy kávét kérni, vagy hozhatom a számlát?",
+      "options": [
+        "szeretnél",
+        "szeretne",
+        "szeretnék"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "szeretne is the polite conditional 3rd person, the waiter's 'would you like' to Ön.",
+        "es": "szeretne es el condicional cortés de 3.ª persona, el «¿desea?» del mesero a Ön."
+      },
+      "wrong": {
+        "szeretnél": {
+          "en": "szeretnél is the te form; a waiter addresses a guest with Ön.",
+          "es": "szeretnél es la forma de te; un mesero trata a un cliente de Ön."
+        },
+        "szeretnék": {
+          "en": "szeretnék is 'I would like'; with this the waiter would be talking about his own wishes.",
+          "es": "szeretnék es «yo querría»; con esto el mesero hablaría de sus propios deseos."
+        }
+      },
+      "examples": [
+        "Szeretne még valamit?",
+        "Szeretne időpontot kérni?"
+      ],
+      "tr": {
+        "en": "Excuse me, sir, would you like to order another coffee, or may I bring the bill?",
+        "es": "Disculpe, señor, ¿desea pedir otro café o le traigo la cuenta?"
+      }
+    },
+    {
+      "id": "magazas-f12",
+      "kind": "form",
+      "verb": "Ön",
+      "person": "-t",
+      "answer": "Önt",
+      "accept": ["önt"],
+      "table": "on-esetek"
+    },
+    {
+      "id": "magazas-c14",
+      "sentence": "Kedves vendégeink, kérem, ___ le, mindjárt kezdődik az előadás.",
+      "options": [
+        "üljetek",
+        "üljenek",
+        "ülnek"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The guests are addressed formally as Önök, so the imperative is the 3rd person plural: üljenek le.",
+        "es": "Los invitados reciben un trato formal de Önök, así que el imperativo es la 3.ª persona del plural: üljenek le."
+      },
+      "wrong": {
+        "üljetek": {
+          "en": "üljetek is the ti imperative, for friends; Kedves vendégeink asks for the formal plural.",
+          "es": "üljetek es el imperativo de ti, para amigos; Kedves vendégeink pide el plural formal."
+        },
+        "ülnek": {
+          "en": "ülnek is the present 'they sit'; kérem asks for an action, so the imperative is needed.",
+          "es": "ülnek es el presente «ellos se sientan»; kérem pide una acción, así que hace falta el imperativo."
+        }
+      },
+      "examples": [
+        "Kérem, üljenek le!",
+        "Kérem, jöjjenek be!"
+      ],
+      "tr": {
+        "en": "Dear guests, please sit down, the lecture is about to start.",
+        "es": "Estimados invitados, por favor tomen asiento, la conferencia está por comenzar."
+      }
+    },
+    {
+      "id": "magazas-w04",
+      "kind": "why",
+      "es": "Ön hol dolgozik?",
+      "target": "dolgozik",
+      "tr": {
+        "en": "Where do you work? (formal)",
+        "es": "¿Dónde trabaja usted?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "2nd person singular: dolgozol",
+            "es": "segunda persona del singular: dolgozol"
+          },
+          "wrong": {
+            "en": "With this rule the form would be dolgozol, the te form for a friend; Ön takes the 3rd person.",
+            "es": "Con esta regla la forma sería dolgozol, la forma de te para un amigo; Ön lleva la 3.ª persona."
+          }
+        },
+        {
+          "text": {
+            "en": "Ön is the polite 'you' but grammatically 3rd person, so the verb is dolgozik, like ő",
+            "es": "Ön es el «usted» cortés pero gramaticalmente de 3.ª persona, así que el verbo es dolgozik, como ő"
+          }
+        },
+        {
+          "text": {
+            "en": "2nd person plural: dolgoztok",
+            "es": "segunda persona del plural: dolgoztok"
+          },
+          "wrong": {
+            "en": "With this rule the form would be dolgoztok, which belongs to ti (several friends); Ön is one person and takes dolgozik.",
+            "es": "Con esta regla la forma sería dolgoztok, que pertenece a ti (varios amigos); Ön es una persona y lleva dolgozik."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ],
+  "glossary": [
+    {
+      "word": "Tisztelt",
+      "gloss": {
+        "en": "respected, dear (formal letter opening)",
+        "es": "estimado (saludo de carta formal)"
+      }
+    },
+    {
+      "word": "Hölgyem",
+      "gloss": {
+        "en": "Madam (my lady)",
+        "es": "señora (mi dama)"
+      }
+    },
+    {
+      "word": "Uram",
+      "gloss": {
+        "en": "Sir (my lord)",
+        "es": "señor (mi señor)"
+      }
+    },
+    {
+      "word": "asszonyom",
+      "gloss": {
+        "en": "madam (polite address)",
+        "es": "señora (trato cortés)"
+      }
+    },
+    {
+      "word": "parancsol",
+      "gloss": {
+        "en": "to order; Parancsoljon! = Please, here you are",
+        "es": "mandar; Parancsoljon! = Adelante, aquí tiene"
+      }
+    },
+    {
+      "word": "tetszik",
+      "gloss": {
+        "en": "deferential auxiliary: tetszik + infinitive = would you like to ...",
+        "es": "auxiliar deferente: tetszik + infinitivo = ¿desea ...?"
+      }
+    },
+    {
+      "word": "megmond",
+      "gloss": {
+        "en": "to tell (someone something)",
+        "es": "decir (algo a alguien)"
+      }
+    },
+    {
+      "word": "Önök",
+      "gloss": {
+        "en": "you (plural, formal)",
+        "es": "ustedes (plural formal)"
+      }
+    },
+    {
+      "word": "Puszi",
+      "gloss": {
+        "en": "Love, kisses (informal closing)",
+        "es": "Besos (despedida informal)"
+      }
+    },
+    {
+      "word": "Üdvözlettel",
+      "gloss": {
+        "en": "Kind regards (closing of a letter)",
+        "es": "Atentamente (despedida de carta)"
+      }
+    }
+  ]
+}

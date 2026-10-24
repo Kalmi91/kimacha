@@ -1,0 +1,1431 @@
+{
+  "schema": 2,
+  "topic": "fuggo-beszed",
+  "level": "B2",
+  "title": {
+    "en": "She said she is home: azt mondta, hogy otthon van",
+    "es": "Dijo que está en casa: azt mondta, hogy otthon van"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "English and Spanish shift the tense in reported speech: 'I am at home' becomes 'she said she was at home' (dijo que estaba en casa). Hungarian shifts nothing. The tense and the mood the speaker used stay, and only the person changes to fit the new situation. Then the sentence is attached with hogy, always after a comma: Azt mondta: „Otthon vagyok.” → Azt mondta, hogy otthon van. There are four kinds of reported sentence: a statement (hogy + the same tense), a yes/no question (hogy ... -e), a question with a question word (the word stays) and a request (hogy + the -j form).",
+        "es": "El inglés y el español cambian el tiempo en el estilo indirecto: «estoy en casa» pasa a «dijo que estaba en casa». El húngaro no cambia nada. El tiempo y el modo que usó quien habló se quedan, y solo cambia la persona para que encaje con la nueva situación. Luego la frase se une con hogy, siempre después de una coma: Azt mondta: „Otthon vagyok.” → Azt mondta, hogy otthon van. Hay cuatro tipos de frase indirecta: una afirmación (hogy + el mismo tiempo), una pregunta de sí o no (hogy ... -e), una pregunta con palabra interrogativa (la palabra se queda) y una petición (hogy + la forma -j)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "four-types",
+      "title": {
+        "en": "Four kinds of reported sentence",
+        "es": "Cuatro tipos de frase indirecta"
+      },
+      "header": [
+        {
+          "en": "Direct speech",
+          "es": "Habla directa"
+        },
+        {
+          "en": "Reported speech",
+          "es": "Estilo indirecto"
+        }
+      ],
+      "rows": [
+        [
+          "Azt mondta: „Otthon vagyok.”",
+          "Azt mondta, hogy otthon van."
+        ],
+        [
+          "Megkérdezte: „Jössz holnap?”",
+          "Megkérdezte, hogy jövök-e holnap."
+        ],
+        [
+          "Megkérdezte: „Mikor érkezel?”",
+          "Megkérdezte, mikor érkezem."
+        ],
+        [
+          "Megkért: „Segíts!”",
+          "Megkért, hogy segítsek."
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Statements: the person changes, the tense stays",
+        "es": "Afirmaciones: cambia la persona, el tiempo se queda"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Change the person to fit who is talking now: I becomes he or she, you becomes I, we becomes they. The verb ending changes with it (vagyok → van, dolgozom → dolgozik; with -ik verbs the I form can also be dolgozok). Hungarian has no gender: ő is both \"he\" and \"she\". Read the table below like this: \"én → ő\" means the speaker said \"I\" and you now say \"he or she\".",
+            "es": "Cambia la persona para que encaje con quien habla ahora: yo pasa a él o ella, tú pasa a yo, nosotros pasa a ellos. La terminación del verbo cambia con ella (vagyok → van, dolgozom → dolgozik; con los verbos en -ik la forma de «yo» también puede ser dolgozok). El húngaro no tiene género: ő es «él» y «ella». Lee la tabla de abajo así: «én → ő» significa que quien habló dijo «yo» y tú ahora dices «él o ella»."
+          },
+          "examples": [
+            {
+              "es": "Anna azt mondta, hogy holnap Debrecenben van.",
+              "tr": {
+                "en": "Anna said that she is in Debrecen tomorrow.",
+                "es": "Anna dijo que mañana está en Debrecen."
+              }
+            },
+            {
+              "es": "Péter azt mondta, hogy sokat dolgozik.",
+              "tr": {
+                "en": "Péter said that he works a lot.",
+                "es": "Péter dijo que trabaja mucho."
+              }
+            },
+            {
+              "es": "Azt mondtad, hogy otthon vagy.",
+              "tr": {
+                "en": "You said that you are at home.",
+                "es": "Dijiste que estás en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "No tense shift. A past statement stays past, a future stays future, a conditional stays a conditional. Where English says \"was\", \"had been\" or \"would\" and Spanish says \"estaba\", \"había estado\" or \"iría\", Hungarian repeats the speaker's own form with the new person.",
+            "es": "El tiempo no cambia. Un pasado se queda pasado, un futuro se queda futuro, un condicional se queda condicional. Donde el inglés dice «was», «had been» o «would» y el español dice «estaba», «había estado» o «iría», el húngaro repite la forma del hablante con la nueva persona."
+          },
+          "examples": [
+            {
+              "es": "Péter azt mondta, hogy tegnap Szegeden volt.",
+              "tr": {
+                "en": "Péter said that he was in Szeged yesterday.",
+                "es": "Péter dijo que ayer estuvo en Szeged."
+              }
+            },
+            {
+              "es": "Kati azt mondta, hogy holnap korán kel.",
+              "tr": {
+                "en": "Kati said that she gets up early tomorrow.",
+                "es": "Kati dijo que mañana se levanta temprano."
+              }
+            },
+            {
+              "es": "Kati azt mondta, hogy szívesen segítene.",
+              "tr": {
+                "en": "Kati said that she would gladly help.",
+                "es": "Kati dijo que ayudaría con gusto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The hogy-clause counts as a definite object, so the verb that introduces it is in the definite conjugation: azt mondta, azt írta, mondom, tudom. The indefinite mondott only goes with something like valamit or sokat.",
+            "es": "La cláusula con hogy cuenta como objeto definido, así que el verbo que la introduce va en conjugación definida: azt mondta, azt írta, mondom, tudom. El indefinido mondott solo va con algo como valamit o sokat."
+          },
+          "examples": [
+            {
+              "es": "Kati azt írta, hogy holnap nem tud jönni.",
+              "tr": {
+                "en": "Kati wrote that she cannot come tomorrow.",
+                "es": "Kati escribió que mañana no puede venir."
+              }
+            },
+            {
+              "es": "Mondom, hogy késni fogok.",
+              "tr": {
+                "en": "I am telling you that I will be late.",
+                "es": "Te digo que voy a llegar tarde."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Time words follow reality, not a rule. They change only if the situation itself has changed since the words were spoken (yesterday's \"tomorrow\" is today); otherwise they stay.",
+            "es": "Las palabras de tiempo siguen la realidad, no una regla. Solo cambian si la situación ha cambiado desde que se dijeron (el «mañana» de ayer es hoy); si no, se quedan."
+          },
+          "examples": [
+            {
+              "es": "Tegnap azt mondta, hogy ma jön.",
+              "tr": {
+                "en": "Yesterday she said that she is coming today.",
+                "es": "Ayer dijo que hoy viene."
+              }
+            },
+            {
+              "es": "Reggel azt mondta, hogy este felhív.",
+              "tr": {
+                "en": "In the morning she said that she would call me in the evening.",
+                "es": "Por la mañana dijo que me llamaría por la noche."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "person-shift",
+      "title": {
+        "en": "Which person after the shift?",
+        "es": "¿Qué persona después del cambio?"
+      },
+      "header": [
+        {
+          "en": "Shift (said → reported)",
+          "es": "Cambio (dicho → contado)"
+        },
+        {
+          "en": "lenni (to be)",
+          "es": "lenni (ser, estar)"
+        },
+        {
+          "en": "jönni (to come)",
+          "es": "jönni (venir)"
+        },
+        {
+          "en": "dolgozni (to work)",
+          "es": "dolgozni (trabajar)"
+        },
+        {
+          "en": "maradni (to stay)",
+          "es": "maradni (quedarse)"
+        }
+      ],
+      "rows": [
+        [
+          "én → ő",
+          "van",
+          "jön",
+          "dolgozik",
+          "marad"
+        ],
+        [
+          "te → én",
+          "vagyok",
+          "jövök",
+          "dolgozom",
+          "maradok"
+        ],
+        [
+          "mi → ők",
+          "vannak",
+          "jönnek",
+          "dolgoznak",
+          "maradnak"
+        ],
+        [
+          "ti → mi",
+          "vagyunk",
+          "jövünk",
+          "dolgozunk",
+          "maradunk"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Questions: -e or the question word",
+        "es": "Preguntas: -e o la palabra interrogativa"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "In everyday speech a yes/no question has no question word, only intonation (Jössz?). Reported, the verb gets -e, joined with a hyphen: Megkérdezte, hogy jövök-e. The -e has one form only, no vowel harmony. The hogy is often dropped in speech: Megkérdezte, jövök-e. Without -e the clause is a statement, not a question.",
+            "es": "En el habla cotidiana una pregunta de sí o no no tiene palabra interrogativa, solo entonación (Jössz?). En estilo indirecto el verbo recibe -e, unida con un guion: Megkérdezte, hogy jövök-e. La -e tiene una sola forma, sin armonía vocálica. En el habla se omite a menudo hogy: Megkérdezte, jövök-e. Sin -e la cláusula es una afirmación, no una pregunta."
+          },
+          "examples": [
+            {
+              "es": "Anna megkérdezte, hogy van-e időm.",
+              "tr": {
+                "en": "Anna asked whether I have time.",
+                "es": "Anna preguntó si tengo tiempo."
+              }
+            },
+            {
+              "es": "Megkérdezte, jövök-e holnap.",
+              "tr": {
+                "en": "He asked whether I am coming tomorrow.",
+                "es": "Preguntó si vengo mañana."
+              }
+            },
+            {
+              "es": "Nem tudom, hogy Péter otthon van-e.",
+              "tr": {
+                "en": "I do not know whether Péter is at home.",
+                "es": "No sé si Péter está en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The -e goes on the finite verb, in any tense, and a prefix stays in front of it (elmegy-e, megkaptam-e). Verbs of asking, wondering and not knowing take it: megkérdez, nem tudom, kíváncsi vagyok.",
+            "es": "La -e va en el verbo conjugado, en cualquier tiempo, y el prefijo se queda delante (elmegy-e, megkaptam-e). La toman los verbos de preguntar, preguntarse y no saber: megkérdez, nem tudom, kíváncsi vagyok."
+          },
+          "examples": [
+            {
+              "es": "Kati megkérdezte, hogy megkaptam-e a levelet.",
+              "tr": {
+                "en": "Kati asked whether I got the letter.",
+                "es": "Kati preguntó si recibí la carta."
+              }
+            },
+            {
+              "es": "Megkérdeztem, hogy elmegy-e az orvoshoz.",
+              "tr": {
+                "en": "I asked whether he is going to the doctor.",
+                "es": "Pregunté si va al médico."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a question word (ki, mit, hol, mikor, miért, hogyan) the word stays where it was and there is no -e: Megkérdezte, mikor érkezem. hogy is optional here and usually left out. Do not turn mikor into amikor: amikor is the \"when\" of a time clause, not of a question.",
+            "es": "Con una palabra interrogativa (ki, mit, hol, mikor, miért, hogyan) la palabra se queda donde estaba y no hay -e: Megkérdezte, mikor érkezem. Aquí hogy es opcional y casi siempre se omite. No cambies mikor por amikor: amikor es el «cuando» de una cláusula de tiempo, no de una pregunta."
+          },
+          "examples": [
+            {
+              "es": "Megkérdezte, mikor érkezem.",
+              "tr": {
+                "en": "He asked when I arrive.",
+                "es": "Preguntó cuándo llego."
+              }
+            },
+            {
+              "es": "Anna megkérdezte, hol dolgozom.",
+              "tr": {
+                "en": "Anna asked where I work.",
+                "es": "Anna preguntó dónde trabajo."
+              }
+            },
+            {
+              "es": "Kati tudni akarja, miért késtünk.",
+              "tr": {
+                "en": "Kati wants to know why we were late.",
+                "es": "Kati quiere saber por qué llegamos tarde."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "e-forms",
+      "title": {
+        "en": "The verb with -e (indirect yes/no question)",
+        "es": "El verbo con -e (pregunta indirecta de sí o no)"
+      },
+      "header": [
+        {
+          "en": "Subject of the clause",
+          "es": "Sujeto de la cláusula"
+        },
+        {
+          "en": "lenni (to be)",
+          "es": "lenni (ser, estar)"
+        },
+        {
+          "en": "jönni (to come)",
+          "es": "jönni (venir)"
+        },
+        {
+          "en": "dolgozni (to work)",
+          "es": "dolgozni (trabajar)"
+        },
+        {
+          "en": "maradni (to stay)",
+          "es": "maradni (quedarse)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "vagyok-e",
+          "jövök-e",
+          "dolgozom-e",
+          "maradok-e"
+        ],
+        [
+          "te",
+          "vagy-e",
+          "jössz-e",
+          "dolgozol-e",
+          "maradsz-e"
+        ],
+        [
+          "ő",
+          "van-e",
+          "jön-e",
+          "dolgozik-e",
+          "marad-e"
+        ],
+        [
+          "mi",
+          "vagyunk-e",
+          "jövünk-e",
+          "dolgozunk-e",
+          "maradunk-e"
+        ],
+        [
+          "ti",
+          "vagytok-e",
+          "jöttök-e",
+          "dolgoztok-e",
+          "maradtok-e"
+        ],
+        [
+          "ők",
+          "vannak-e",
+          "jönnek-e",
+          "dolgoznak-e",
+          "maradnak-e"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Requests: hogy + the -j form",
+        "es": "Peticiones: hogy + la forma -j"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A request or order (Segíts! Gyere! Ne késs!) is reported with hogy and the -j form of the verb, in the person of the new situation. The introducing verb is kér, megkér, mond or ír. English says \"asked me to help\" and Spanish \"me pidió que ayudara\"; Hungarian always uses a full clause: Megkért, hogy segítsek.",
+            "es": "Una petición u orden (Segíts! Gyere! Ne késs!) se cuenta con hogy y la forma -j del verbo, en la persona de la nueva situación. El verbo que la introduce es kér, megkér, mond o ír. El inglés dice «asked me to help» y el español «me pidió que ayudara»; el húngaro siempre usa una cláusula completa: Megkért, hogy segítsek."
+          },
+          "examples": [
+            {
+              "es": "Anna megkért, hogy segítsek.",
+              "tr": {
+                "en": "Anna asked me to help.",
+                "es": "Anna me pidió que ayudara."
+              }
+            },
+            {
+              "es": "A főnök megkért, hogy holnap korán jöjjek.",
+              "tr": {
+                "en": "The boss asked me to come early tomorrow.",
+                "es": "El jefe me pidió que viniera temprano mañana."
+              }
+            },
+            {
+              "es": "Kati azt mondta Péternek, hogy maradjon otthon.",
+              "tr": {
+                "en": "Kati told Péter to stay at home.",
+                "es": "Kati le dijo a Péter que se quedara en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For \"not to\", put ne in front of the -j verb: ne várjak, ne dolgozzak (with -ik verbs the I form also comes as dolgozzam; both are in use). Prefix verbs follow the same logic, but their word order is a separate topic; the examples here use verbs without a prefix.",
+            "es": "Para «que no», pon ne delante del verbo en -j: ne várjak, ne dolgozzak (con los verbos en -ik la forma de «yo» también aparece como dolgozzam; se usan las dos). Los verbos con prefijo siguen la misma lógica, pero su orden de palabras es otro tema; los ejemplos de aquí usan verbos sin prefijo."
+          },
+          "examples": [
+            {
+              "es": "Az orvos azt mondta, hogy ne dolgozzak sokat.",
+              "tr": {
+                "en": "The doctor told me not to work much.",
+                "es": "El doctor me dijo que no trabajara mucho."
+              }
+            },
+            {
+              "es": "Anna megkért, hogy ne várjak rá.",
+              "tr": {
+                "en": "Anna asked me not to wait for her.",
+                "es": "Anna me pidió que no la esperara."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "request-shift",
+      "title": {
+        "en": "The -j form after the shift",
+        "es": "La forma -j después del cambio"
+      },
+      "header": [
+        {
+          "en": "Shift (said → reported)",
+          "es": "Cambio (dicho → contado)"
+        },
+        {
+          "en": "segíteni (to help)",
+          "es": "segíteni (ayudar)"
+        },
+        {
+          "en": "jönni (to come)",
+          "es": "jönni (venir)"
+        },
+        {
+          "en": "dolgozni (to work)",
+          "es": "dolgozni (trabajar)"
+        },
+        {
+          "en": "maradni (to stay)",
+          "es": "maradni (quedarse)"
+        }
+      ],
+      "rows": [
+        [
+          "te → én",
+          "segítsek",
+          "jöjjek",
+          "dolgozzak",
+          "maradjak"
+        ],
+        [
+          "te → ő",
+          "segítsen",
+          "jöjjön",
+          "dolgozzon",
+          "maradjon"
+        ],
+        [
+          "ti → mi",
+          "segítsünk",
+          "jöjjünk",
+          "dolgozzunk",
+          "maradjunk"
+        ],
+        [
+          "ti → ők",
+          "segítsenek",
+          "jöjjenek",
+          "dolgozzanak",
+          "maradjanak"
+        ],
+        [
+          "te → te",
+          "segíts",
+          "gyere",
+          "dolgozz",
+          "maradj"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "reporting-verbs",
+      "title": {
+        "en": "Who is told or asked?",
+        "es": "¿A quién se le dice o se le pregunta?"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "The person",
+          "es": "La persona"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "mond, ír",
+          "nekem, neked, neki, Annának",
+          "Azt mondta nekem, hogy otthon van."
+        ],
+        [
+          "kérdez",
+          "tőlem, tőled, tőle, Annától (vagy: engem, téged, őt, Annát)",
+          "Megkérdezte tőlem, hogy otthon vagyok-e."
+        ],
+        [
+          "kér",
+          "engem, téged, őt, Annát",
+          "Megkérte Annát, hogy segítsen."
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Fact or order? Present or past?",
+        "es": "¿Hecho u orden? ¿Presente o pasado?"
+      },
+      "pairs": [
+        {
+          "a": "Anna azt mondta, hogy Péter segít.",
+          "b": "Anna azt mondta, hogy Péter segítsen.",
+          "note": {
+            "en": "Same main clause, different mood in the hogy-clause. Indicative: Anna states a fact (Péter helps). -j form: Anna gives an order (Péter should help).",
+            "es": "Misma oración principal, distinto modo en la cláusula con hogy. Indicativo: Anna afirma un hecho (Péter ayuda). Forma -j: Anna da una orden (Péter debe ayudar)."
+          },
+          "examples": [
+            {
+              "es": "Kati azt mondta, hogy holnap dolgozik.",
+              "tr": {
+                "en": "Kati said that she works tomorrow.",
+                "es": "Kati dijo que mañana trabaja."
+              }
+            },
+            {
+              "es": "Kati azt mondta, hogy holnap dolgozzak.",
+              "tr": {
+                "en": "Kati told me to work tomorrow.",
+                "es": "Kati me dijo que trabajara mañana."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Tudom, hogy jön.",
+          "b": "Nem tudom, hogy jön-e.",
+          "note": {
+            "en": "Without -e the hogy-clause is a fact you know. With -e it is an open question (whether).",
+            "es": "Sin -e la cláusula con hogy es un hecho que sabes. Con -e es una pregunta abierta («si»)."
+          },
+          "examples": [
+            {
+              "es": "Tudom, hogy Péter jön.",
+              "tr": {
+                "en": "I know that Péter is coming.",
+                "es": "Sé que Péter viene."
+              }
+            },
+            {
+              "es": "Nem tudom, hogy Péter jön-e.",
+              "tr": {
+                "en": "I do not know whether Péter is coming.",
+                "es": "No sé si Péter viene."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Azt mondta, hogy otthon van.",
+          "b": "Azt mondta, hogy otthon volt.",
+          "note": {
+            "en": "van: she said \"I am at home\". volt: she said \"I was at home\" (earlier). English \"she said she was at home\" fits both; Hungarian copies what she actually said.",
+            "es": "van: ella dijo «estoy en casa». volt: ella dijo «estuve en casa» (antes). El español «dijo que estaba en casa» sirve para ambas; el húngaro copia lo que ella dijo en realidad."
+          },
+          "examples": [
+            {
+              "es": "Anna azt mondta, hogy beteg.",
+              "tr": {
+                "en": "Anna said that she is ill.",
+                "es": "Anna dijo que está enferma."
+              }
+            },
+            {
+              "es": "Anna azt mondta, hogy beteg volt.",
+              "tr": {
+                "en": "Anna said that she had been ill.",
+                "es": "Anna dijo que había estado enferma."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Anna azt mondta, hogy késik.",
+          "b": "Anna mondott valamit.",
+          "note": {
+            "en": "A hogy-clause or azt is a definite object, so the verb is definite: mondta. With an indefinite object (valamit, sokat) the verb is mondott.",
+            "es": "Una cláusula con hogy o azt es un objeto definido, así que el verbo es definido: mondta. Con un objeto indefinido (valamit, sokat) el verbo es mondott."
+          },
+          "examples": [
+            {
+              "es": "Anna azt mondta, hogy késik.",
+              "tr": {
+                "en": "Anna said that she is late.",
+                "es": "Anna dijo que llega tarde."
+              }
+            },
+            {
+              "es": "Anna mondott valamit, de nem értettem.",
+              "tr": {
+                "en": "Anna said something, but I did not understand.",
+                "es": "Anna dijo algo, pero no entendí."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Do not shift the tense. Azt mondta, hogy otthon van is the normal translation of \"she said she was at home\". (2) An indirect yes/no question needs -e; without it the clause is a statement. (3) The comma before hogy is compulsory; hogy itself is normally left out only before -e or a question word (Megkérdezte, jövök-e). (4) In writing, direct speech takes a colon and „low-high” quotation marks: Azt mondta: „Otthon vagyok.” In casual speech azt is often dropped: Mondta, hogy otthon van. (5) Never use amikor or ahol for a reported question: Megkérdezte, mikor érkezem.",
+        "es": "Trampas clásicas: (1) No cambies el tiempo. Azt mondta, hogy otthon van es la traducción normal de «dijo que estaba en casa». (2) Una pregunta indirecta de sí o no necesita -e; sin ella la cláusula es una afirmación. (3) La coma antes de hogy es obligatoria; el propio hogy normalmente solo se omite ante -e o ante una palabra interrogativa (Megkérdezte, jövök-e). (4) Por escrito, el habla directa lleva dos puntos y comillas „bajas-altas”: Azt mondta: „Otthon vagyok.” En el habla informal a menudo se omite azt: Mondta, hogy otthon van. (5) Nunca uses amikor ni ahol en una pregunta indirecta: Megkérdezte, mikor érkezem."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian reported speech the tense does not shift. You only change the person: «Azt mondta: Otthon vagyok» becomes «Azt mondta, hogy otthon van». A yes or no question gets «-e» on the verb: «Megkérdezte, hogy jövök-e». A question word simply stays: «Megkérdezte, mikor érkezem». A request takes the subjunctive: «Megkért, hogy segítsek». The verb that introduces the clause is definite: «azt mondta», not «mondott». Before «hogy» there is always a comma.",
+    "es": "En el estilo indirecto húngaro el tiempo no cambia. Solo cambia la persona: «Azt mondta: Otthon vagyok» pasa a «Azt mondta, hogy otthon van». Una pregunta de sí o no lleva «-e» en el verbo: «Megkérdezte, hogy jövök-e». Una palabra interrogativa simplemente se queda: «Megkérdezte, mikor érkezem». Una petición lleva el subjuntivo: «Megkért, hogy segítsek». El verbo que introduce la cláusula es definido: «azt mondta», no «mondott». Antes de «hogy» siempre va una coma."
+  },
+  "glossary": [
+    {
+      "word": "mond",
+      "gloss": {
+        "en": "to say, to tell",
+        "es": "decir"
+      }
+    },
+    {
+      "word": "megkér",
+      "gloss": {
+        "en": "to ask (someone to do something)",
+        "es": "pedir (a alguien que haga algo)"
+      }
+    },
+    {
+      "word": "késik",
+      "gloss": {
+        "en": "to be late, to run late",
+        "es": "llegar tarde, retrasarse"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "fuggo-beszed-c01",
+      "sentence": "Anna ezt mondta: „Holnap Debrecenben vagyok.” Azt mondta, hogy holnap Debrecenben ___.",
+      "options": [
+        "van",
+        "vagyok",
+        "volt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is the person now, so vagyok (I) becomes van (she). The tense stays as she said it.",
+        "es": "Ahora la persona es Anna, así que vagyok (yo) pasa a van (ella). El tiempo se queda como ella lo dijo."
+      },
+      "wrong": {
+        "vagyok": {
+          "en": "With vagyok the sentence would say that I, the one telling the story, am in Debrecen tomorrow, not Anna.",
+          "es": "Con vagyok la frase diría que yo, quien cuenta la historia, estoy en Debrecen mañana, no Anna."
+        },
+        "volt": {
+          "en": "volt is past: it would say that she was in Debrecen earlier. But she said holnap (tomorrow).",
+          "es": "volt es pasado: diría que estuvo en Debrecen antes. Pero ella dijo holnap (mañana)."
+        }
+      },
+      "examples": [
+        "Péter azt mondta, hogy holnap Szegeden van.",
+        "Kati azt mondta, hogy ma otthon van."
+      ],
+      "tr": {
+        "en": "Anna said that she is in Debrecen tomorrow.",
+        "es": "Anna dijo que mañana está en Debrecen."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f01",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "én → ő",
+      "answer": "van",
+      "table": "person-shift"
+    },
+    {
+      "id": "fuggo-beszed-c02",
+      "sentence": "Anna ezt mondta nekem: „Te jól beszélsz magyarul.” Azt mondta, hogy jól ___ magyarul.",
+      "options": [
+        "beszél",
+        "beszélek",
+        "beszélsz"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Anna was talking to me, so her \"you\" (beszélsz) becomes \"I\" when I tell it: beszélek.",
+        "es": "Anna me hablaba a mí, así que su «tú» (beszélsz) pasa a «yo» cuando lo cuento: beszélek."
+      },
+      "wrong": {
+        "beszélsz": {
+          "en": "beszélsz would still mean \"you\", but the person who speaks Hungarian well is me, the one telling the story.",
+          "es": "beszélsz seguiría significando «tú», pero quien habla bien húngaro soy yo, quien cuenta la historia."
+        },
+        "beszél": {
+          "en": "beszél would say that Anna herself speaks Hungarian well.",
+          "es": "beszél diría que la propia Anna habla bien húngaro."
+        }
+      },
+      "examples": [
+        "Péter azt mondta, hogy jól beszélek angolul.",
+        "Azt mondták, hogy már jól beszélek magyarul."
+      ],
+      "tr": {
+        "en": "Anna told me that I speak Hungarian well.",
+        "es": "Anna me dijo que hablo bien húngaro."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f02",
+      "kind": "form",
+      "verb": "jönni",
+      "person": "te → én",
+      "answer": "jövök",
+      "table": "person-shift"
+    },
+    {
+      "id": "fuggo-beszed-c03",
+      "sentence": "Péter ezt mondta: „Tegnap Szegeden voltam.” Azt mondta, hogy tegnap Szegeden ___.",
+      "options": [
+        "volt",
+        "lesz",
+        "van"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Only the person changes (voltam → volt). The past stays past; Hungarian has no \"had been\".",
+        "es": "Solo cambia la persona (voltam → volt). El pasado se queda pasado; el húngaro no tiene «había estado»."
+      },
+      "wrong": {
+        "van": {
+          "en": "van is present; with tegnap (yesterday) the sentence would make no sense.",
+          "es": "van es presente; con tegnap (ayer) la frase no tendría sentido."
+        },
+        "lesz": {
+          "en": "lesz is future: it would say that he will be in Szeged, but he spoke about yesterday.",
+          "es": "lesz es futuro: diría que estará en Szeged, pero él habló de ayer."
+        }
+      },
+      "examples": [
+        "Kati azt mondta, hogy tegnap beteg volt.",
+        "Azt mondta, hogy tegnap otthon volt."
+      ],
+      "tr": {
+        "en": "Péter said that he was in Szeged yesterday.",
+        "es": "Péter dijo que ayer estuvo en Szeged."
+      }
+    },
+    {
+      "id": "fuggo-beszed-w01",
+      "kind": "why",
+      "es": "Anna azt mondta, hogy otthon van.",
+      "target": "van",
+      "tr": {
+        "en": "Anna said that she is at home.",
+        "es": "Anna dijo que está en casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Only the person changed (vagyok → van); the tense stayed present",
+            "es": "Solo cambió la persona (vagyok → van); el tiempo siguió siendo presente"
+          }
+        },
+        {
+          "text": {
+            "en": "Tense shift to the past, as in English \"was\"",
+            "es": "Cambio de tiempo al pasado, como en el español «estaba»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be volt: Anna said that she had been at home earlier.",
+            "es": "Con esta regla la frase sería volt: Anna dijo que había estado en casa antes."
+          }
+        },
+        {
+          "text": {
+            "en": "The speaker's own person is kept",
+            "es": "Se conserva la persona del hablante"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be vagyok: it would say that I, the one telling it, am at home.",
+            "es": "Con esta regla la frase sería vagyok: diría que yo, quien lo cuenta, estoy en casa."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fuggo-beszed-f03",
+      "kind": "form",
+      "verb": "dolgozni",
+      "person": "mi → ők",
+      "answer": "dolgoznak",
+      "table": "person-shift"
+    },
+    {
+      "id": "fuggo-beszed-c04",
+      "sentence": "Kati ezt mondta: „Szívesen segítenék.” Azt mondta, hogy szívesen ___.",
+      "options": [
+        "segítenék",
+        "segít",
+        "segítene"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A conditional stays a conditional (segítenék → segítene); only the person changes to \"she\".",
+        "es": "Un condicional se queda condicional (segítenék → segítene); solo cambia la persona a «ella»."
+      },
+      "wrong": {
+        "segítenék": {
+          "en": "segítenék is Kati's own \"I\"; you are telling about her, so it has to be the she-form.",
+          "es": "segítenék es el «yo» de la propia Kati; tú hablas de ella, así que debe ser la forma de «ella»."
+        },
+        "segít": {
+          "en": "segít is the plain present (\"she helps gladly\"); the polite wish \"would be glad to help\" would be lost.",
+          "es": "segít es el presente simple («ayuda con gusto»); se perdería el deseo cortés «ayudaría con gusto»."
+        }
+      },
+      "examples": [
+        "Péter azt mondta, hogy szívesen jönne.",
+        "Anna azt mondta, hogy szívesen maradna."
+      ],
+      "tr": {
+        "en": "Kati said that she would gladly help.",
+        "es": "Kati dijo que ayudaría con gusto."
+      }
+    },
+    {
+      "id": "fuggo-beszed-c05",
+      "sentence": "Anna ezt kérdezte tőlem: „Van időd?” Megkérdezte, hogy ___ időm.",
+      "options": [
+        "van-e",
+        "van",
+        "volt-e"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A yes/no question is reported with -e on the verb: Van időd? becomes hogy van-e időm (and időd becomes időm).",
+        "es": "Una pregunta de sí o no se cuenta con -e en el verbo: Van időd? pasa a hogy van-e időm (e időd pasa a időm)."
+      },
+      "wrong": {
+        "van": {
+          "en": "Without -e the clause would be a statement (\"that I have time\"). An indirect yes/no question needs -e.",
+          "es": "Sin -e la cláusula sería una afirmación («que tengo tiempo»). Una pregunta indirecta de sí o no necesita -e."
+        },
+        "volt-e": {
+          "en": "volt-e is past: \"whether I had time\". Anna asked in the present.",
+          "es": "volt-e es pasado: «si tuve tiempo». Anna preguntó en presente."
+        }
+      },
+      "examples": [
+        "Kati megkérdezte, hogy van-e kulcsom.",
+        "Megkérdezte, hogy van-e pénzem."
+      ],
+      "tr": {
+        "en": "Anna asked me whether I have time.",
+        "es": "Anna me preguntó si tengo tiempo."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f04",
+      "kind": "form",
+      "verb": "maradni",
+      "person": "ti → mi",
+      "answer": "maradunk",
+      "table": "person-shift"
+    },
+    {
+      "id": "fuggo-beszed-c06",
+      "sentence": "Péter ezt kérdezte tőlem: „Jössz holnap?” Megkérdezte, hogy holnap ___.",
+      "options": [
+        "jön-e",
+        "jövök-e",
+        "jössz-e"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Péter's \"you\" (jössz) is me when I tell it: jövök, and -e marks the yes/no question.",
+        "es": "El «tú» de Péter (jössz) soy yo cuando lo cuento: jövök, y -e marca la pregunta de sí o no."
+      },
+      "wrong": {
+        "jössz-e": {
+          "en": "jössz-e would ask about the person you are speaking to now, not about me.",
+          "es": "jössz-e preguntaría por la persona a la que le hablas ahora, no por mí."
+        },
+        "jön-e": {
+          "en": "jön-e would ask whether he or she is coming; but Péter asked about me.",
+          "es": "jön-e preguntaría si él o ella viene; pero Péter preguntó por mí."
+        }
+      },
+      "examples": [
+        "Anna megkérdezte, hogy dolgozom-e vasárnap.",
+        "Kati megkérdezte, hogy otthon vagyok-e."
+      ],
+      "tr": {
+        "en": "Péter asked me whether I am coming tomorrow.",
+        "es": "Péter me preguntó si vengo mañana."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f05",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "ő",
+      "answer": "van-e",
+      "table": "e-forms"
+    },
+    {
+      "id": "fuggo-beszed-c07",
+      "sentence": "Kati ezt kérdezte tőlem: „Mikor érkezel?” Megkérdezte, mikor ___.",
+      "options": [
+        "érkezel",
+        "érkezem-e",
+        "érkezem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The question word mikor stays and already makes the question, so there is no -e. Only the person changes: érkezel → érkezem.",
+        "es": "La palabra interrogativa mikor se queda y ya forma la pregunta, así que no hay -e. Solo cambia la persona: érkezel → érkezem."
+      },
+      "wrong": {
+        "érkezel": {
+          "en": "érkezel keeps Kati's \"you\", but she asked me; I report it with \"I\".",
+          "es": "érkezel conserva el «tú» de Kati, pero ella me preguntó a mí; yo lo cuento con «yo»."
+        },
+        "érkezem-e": {
+          "en": "-e belongs to yes/no questions. With it the clause would ask whether I arrive, not when.",
+          "es": "-e es de las preguntas de sí o no. Con ella la cláusula preguntaría si llego, no cuándo."
+        }
+      },
+      "examples": [
+        "Megkérdezte, hol lakom.",
+        "Anna megkérdezte, miért sietek."
+      ],
+      "tr": {
+        "en": "Kati asked me when I arrive.",
+        "es": "Kati me preguntó cuándo llego."
+      }
+    },
+    {
+      "id": "fuggo-beszed-w02",
+      "kind": "why",
+      "es": "Megkérdezte, hogy jövök-e.",
+      "target": "jövök-e",
+      "tr": {
+        "en": "He asked whether I am coming.",
+        "es": "Preguntó si vengo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-e is the question mark of every question, direct ones too",
+            "es": "-e es el signo de toda pregunta, también de las directas"
+          },
+          "wrong": {
+            "en": "With this rule a direct question would be Jössz-e? too; but in everyday speech a direct yes/no question uses only intonation: Jössz?",
+            "es": "Con esta regla una pregunta directa también sería Jössz-e?; pero en el habla cotidiana una pregunta directa de sí o no usa solo entonación: Jössz?"
+          }
+        },
+        {
+          "text": {
+            "en": "-e after the verb makes the hogy-clause an indirect yes/no question (\"whether\")",
+            "es": "-e tras el verbo convierte la cláusula con hogy en una pregunta indirecta de sí o no («si»)"
+          }
+        },
+        {
+          "text": {
+            "en": "-e is part of the person ending (I), like -ok",
+            "es": "-e forma parte de la terminación de persona (yo), como -ok"
+          },
+          "wrong": {
+            "en": "With this rule jövök-e would be just another way to say \"I come\"; but -e does not change the person: jövök is already \"I\".",
+            "es": "Con esta regla jövök-e sería otra manera de decir «vengo»; pero -e no cambia la persona: jövök ya es «yo»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "fuggo-beszed-f06",
+      "kind": "form",
+      "verb": "jönni",
+      "person": "te",
+      "answer": "jössz-e",
+      "table": "e-forms"
+    },
+    {
+      "id": "fuggo-beszed-c08",
+      "sentence": "Anna ezt mondta nekem: „Segíts!” Megkért, hogy ___.",
+      "options": [
+        "segítsek",
+        "segítek",
+        "segítsen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A request is reported with hogy and the -j form; her \"you\" (segíts) becomes \"I\" (segítsek).",
+        "es": "Una petición se cuenta con hogy y la forma -j; su «tú» (segíts) pasa a «yo» (segítsek)."
+      },
+      "wrong": {
+        "segítek": {
+          "en": "segítek is the plain present: the clause would state that I help, not ask me to.",
+          "es": "segítek es el presente simple: la cláusula afirmaría que ayudo, no me pediría que lo haga."
+        },
+        "segítsen": {
+          "en": "segítsen is the -j form for he or she: it would mean that someone else should help.",
+          "es": "segítsen es la forma -j de él o ella: significaría que otra persona debe ayudar."
+        }
+      },
+      "examples": [
+        "Péter megkért, hogy várjak rá.",
+        "Kati megkért, hogy jöjjek korán."
+      ],
+      "tr": {
+        "en": "Anna asked me to help.",
+        "es": "Anna me pidió que ayudara."
+      }
+    },
+    {
+      "id": "fuggo-beszed-c09",
+      "sentence": "Az orvos ezt mondta nekem: „Ne dolgozzon sokat!” Azt mondta, hogy ne ___ sokat.",
+      "options": [
+        "dolgozzon",
+        "dolgozzak",
+        "dolgozom"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ne + the -j form is the reported \"do not\"; the doctor's Ön form (dolgozzon) becomes \"I\" (dolgozzak) when I tell it.",
+        "es": "ne + la forma -j es el «no» indirecto; la forma Ön del doctor (dolgozzon) pasa a «yo» (dolgozzak) cuando lo cuento."
+      },
+      "wrong": {
+        "dolgozom": {
+          "en": "ne dolgozom is not a request; after ne in a reported request the verb needs the -j form.",
+          "es": "ne dolgozom no es una petición; tras ne en una petición indirecta el verbo necesita la forma -j."
+        },
+        "dolgozzon": {
+          "en": "dolgozzon is the doctor's own Ön form. I am telling it about myself, so the verb must be dolgozzak.",
+          "es": "dolgozzon es la forma Ön del propio doctor. Yo lo cuento sobre mí, así que el verbo debe ser dolgozzak."
+        }
+      },
+      "examples": [
+        "Péter azt mondta, hogy ne várjak rá.",
+        "Az orvos azt mondta, hogy ne igyak sok kávét."
+      ],
+      "tr": {
+        "en": "The doctor told me not to work much.",
+        "es": "El doctor me dijo que no trabaje mucho."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f07",
+      "kind": "form",
+      "verb": "dolgozni",
+      "person": "ti",
+      "answer": "dolgoztok-e",
+      "table": "e-forms"
+    },
+    {
+      "id": "fuggo-beszed-c10",
+      "sentence": "Anna ezt mondta Péternek: „Maradj otthon!” Azt mondta Péternek, hogy ___ otthon.",
+      "options": [
+        "maradj",
+        "marad",
+        "maradjon"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The order to Péter is told about Péter: te → ő, so the -j form is maradjon.",
+        "es": "La orden a Péter se cuenta sobre Péter: te → ő, así que la forma -j es maradjon."
+      },
+      "wrong": {
+        "maradj": {
+          "en": "maradj is the form for \"you\"; but the story is told about Péter, in the third person.",
+          "es": "maradj es la forma para «tú»; pero la historia se cuenta sobre Péter, en tercera persona."
+        },
+        "marad": {
+          "en": "marad is a plain statement (\"that someone stays at home\"); the order has disappeared.",
+          "es": "marad es una afirmación simple («que alguien se queda en casa»); la orden ha desaparecido."
+        }
+      },
+      "examples": [
+        "Kati azt mondta Annának, hogy segítsen.",
+        "Péter megkérte Annát, hogy várjon."
+      ],
+      "tr": {
+        "en": "Anna told Péter to stay at home.",
+        "es": "Anna le dijo a Péter que se quedara en casa."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f08",
+      "kind": "form",
+      "verb": "maradni",
+      "person": "ők",
+      "answer": "maradnak-e",
+      "table": "e-forms"
+    },
+    {
+      "id": "fuggo-beszed-w03",
+      "kind": "why",
+      "es": "Megkérdezte, mikor érkezem.",
+      "target": "mikor",
+      "tr": {
+        "en": "He asked when I arrive.",
+        "es": "Preguntó cuándo llego."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "mikor must change to amikor in a reported question",
+            "es": "mikor debe cambiar a amikor en una pregunta indirecta"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would read amikor érkezem: \"when I arrive\" as a time clause, no longer a question.",
+            "es": "Con esta regla la frase diría amikor érkezem: «cuando llego» como cláusula de tiempo, ya no una pregunta."
+          }
+        },
+        {
+          "text": {
+            "en": "mikor needs -e like any question",
+            "es": "mikor necesita -e como toda pregunta"
+          },
+          "wrong": {
+            "en": "With this rule the verb would be érkezem-e and the clause would ask whether, not when.",
+            "es": "Con esta regla el verbo sería érkezem-e y la cláusula preguntaría si, no cuándo."
+          }
+        },
+        {
+          "text": {
+            "en": "The question word stays unchanged and itself makes the question",
+            "es": "La palabra interrogativa se queda igual y por sí sola forma la pregunta"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "fuggo-beszed-c11",
+      "sentence": "Péter azt ___, hogy holnap nem tud jönni.",
+      "options": [
+        "mondta",
+        "mondott",
+        "mondtak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "azt + a hogy-clause is a definite object, so the verb takes the definite conjugation: mondta.",
+        "es": "azt + una cláusula con hogy es un objeto definido, así que el verbo va en conjugación definida: mondta."
+      },
+      "wrong": {
+        "mondott": {
+          "en": "mondott is the indefinite conjugation (Péter mondott valamit). It does not go with azt and a hogy-clause.",
+          "es": "mondott es la conjugación indefinida (Péter mondott valamit). No va con azt y una cláusula con hogy."
+        },
+        "mondtak": {
+          "en": "mondtak is plural: it would say that they said it, not Péter alone.",
+          "es": "mondtak es plural: diría que lo dijeron ellos, no Péter solo."
+        }
+      },
+      "examples": [
+        "Kati azt írta, hogy késik.",
+        "Azt mondtam, hogy nem tudok jönni."
+      ],
+      "tr": {
+        "en": "Péter said that he cannot come tomorrow.",
+        "es": "Péter dijo que mañana no puede venir."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f09",
+      "kind": "form",
+      "verb": "segíteni",
+      "person": "te → én",
+      "answer": "segítsek",
+      "table": "request-shift"
+    },
+    {
+      "id": "fuggo-beszed-c12",
+      "sentence": "Tegnap azt mondtam ___, hogy ma nem tudok jönni.",
+      "options": [
+        "Annát",
+        "Annának",
+        "Annától"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The person you tell something takes the dative -nak/-nek (Annának), like nekem and neki with mond and ír.",
+        "es": "La persona a quien le dices algo lleva el dativo -nak/-nek (Annának), como nekem y neki con mond e ír."
+      },
+      "wrong": {
+        "Annától": {
+          "en": "Annától means \"from Anna\". It goes with kérdez (megkérdeztem Annától), not with mond.",
+          "es": "Annától significa «de Anna». Va con kérdez (megkérdeztem Annától), no con mond."
+        },
+        "Annát": {
+          "en": "Annát would be an object, but the thing said is already the clause (azt); the person told needs the dative.",
+          "es": "Annát sería un objeto, pero lo dicho ya es la cláusula (azt); la persona a quien se dice necesita el dativo."
+        }
+      },
+      "examples": [
+        "Azt írtam Katinak, hogy késni fogok.",
+        "Azt mondtam Péternek, hogy ne várjon."
+      ],
+      "tr": {
+        "en": "Yesterday I told Anna that I cannot come today.",
+        "es": "Ayer le dije a Anna que hoy no puedo venir."
+      }
+    },
+    {
+      "id": "fuggo-beszed-c13",
+      "sentence": "Anna megkérdezte ___, hogy van-e időm.",
+      "options": [
+        "nekem",
+        "hozzám",
+        "tőlem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "kérdez works with -tól/-től: megkérdezte tőlem, \"she asked me\". The clause van-e időm shows it was me.",
+        "es": "kérdez va con -tól/-től: megkérdezte tőlem, «me preguntó». La cláusula van-e időm muestra que fui yo."
+      },
+      "wrong": {
+        "nekem": {
+          "en": "nekem is the dative; it goes with mond and ír (azt mondta nekem), not with kérdez.",
+          "es": "nekem es el dativo; va con mond e ír (azt mondta nekem), no con kérdez."
+        },
+        "hozzám": {
+          "en": "hozzám means \"to me, towards me\"; it goes with verbs like fordul or szól (Hozzám fordult), not with kérdez.",
+          "es": "hozzám significa «hacia mí, a mí»; va con verbos como fordul o szól (Hozzám fordult), no con kérdez."
+        }
+      },
+      "examples": [
+        "Megkérdeztem tőle, hol lakik.",
+        "Péter megkérdezte tőlünk, hogy jövünk-e."
+      ],
+      "tr": {
+        "en": "Anna asked me whether I have time.",
+        "es": "Anna me preguntó si tengo tiempo."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f10",
+      "kind": "form",
+      "verb": "jönni",
+      "person": "te → te",
+      "answer": "gyere",
+      "accept": [
+        "jöjj",
+        "jöjjél"
+      ],
+      "table": "request-shift"
+    },
+    {
+      "id": "fuggo-beszed-c14",
+      "sentence": "Megkérdeztem Katit: „Dolgozol vasárnap?” Megkérdeztem, hogy vasárnap ___.",
+      "options": [
+        "dolgozik-e",
+        "dolgozol-e",
+        "dolgozik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "I tell it to a third person, so Kati's \"you\" becomes \"she\" (dolgozik), and the yes/no question needs -e.",
+        "es": "Se lo cuento a una tercera persona, así que el «tú» de Kati pasa a «ella» (dolgozik), y la pregunta de sí o no necesita -e."
+      },
+      "wrong": {
+        "dolgozol-e": {
+          "en": "dolgozol-e would still be \"you\"; but I am telling about Kati.",
+          "es": "dolgozol-e seguiría siendo «tú»; pero yo hablo de Kati."
+        },
+        "dolgozik": {
+          "en": "Without -e the clause is a statement: \"that she works on Sunday\".",
+          "es": "Sin -e la cláusula es una afirmación: «que ella trabaja el domingo»."
+        }
+      },
+      "examples": [
+        "Megkérdeztem, hogy Péter lakik-e még itt.",
+        "Anna megkérdezte, hogy Kati beteg-e."
+      ],
+      "tr": {
+        "en": "I asked Kati whether she works on Sunday.",
+        "es": "Le pregunté a Kati si trabaja el domingo."
+      }
+    },
+    {
+      "id": "fuggo-beszed-f11",
+      "kind": "form",
+      "verb": "dolgozni",
+      "person": "ti → mi",
+      "answer": "dolgozzunk",
+      "table": "request-shift"
+    },
+    {
+      "id": "fuggo-beszed-c15",
+      "sentence": "Kati ezt kérdezte tőlünk: „Miért késtetek?” Megkérdezte, miért ___.",
+      "options": [
+        "késtek",
+        "késtünk",
+        "késtetek"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Kati asked us (\"you\", plural). I speak for us, so it becomes \"we\": késtünk. The question word miért stays.",
+        "es": "Kati nos preguntó a nosotros («ustedes»). Yo hablo por nosotros, así que pasa a «nosotros»: késtünk. La palabra interrogativa miért se queda."
+      },
+      "wrong": {
+        "késtetek": {
+          "en": "késtetek still means \"you (plural)\"; but the ones who were late are we.",
+          "es": "késtetek sigue significando «ustedes»; pero quienes llegaron tarde somos nosotros."
+        },
+        "késtek": {
+          "en": "késtek means \"they were late\".",
+          "es": "késtek significa «ellos llegaron tarde»."
+        }
+      },
+      "examples": [
+        "Anna megkérdezte, miért nem jöttünk.",
+        "Péter megkérdezte, hol voltunk."
+      ],
+      "tr": {
+        "en": "Kati asked us why we were late.",
+        "es": "Kati nos preguntó por qué llegamos tarde."
+      }
+    },
+    {
+      "id": "fuggo-beszed-w04",
+      "kind": "why",
+      "es": "Megkért, hogy segítsek.",
+      "target": "segítsek",
+      "tr": {
+        "en": "She asked me to help.",
+        "es": "Me pidió que ayudara."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The plain present: a statement",
+            "es": "El presente simple: una afirmación"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be segítek: it would report a fact about my helping, not a request.",
+            "es": "Con esta regla la frase sería segítek: contaría un hecho sobre mi ayuda, no una petición."
+          }
+        },
+        {
+          "text": {
+            "en": "The -j form: the reported request or order",
+            "es": "La forma -j: la petición u orden indirecta"
+          }
+        },
+        {
+          "text": {
+            "en": "The conditional: a polite offer",
+            "es": "El condicional: un ofrecimiento cortés"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be segítenék: \"that I would help\", an offer instead of an order.",
+            "es": "Con esta regla la frase sería segítenék: «que yo ayudaría», un ofrecimiento en lugar de una orden."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "fuggo-beszed-f12",
+      "kind": "form",
+      "verb": "maradni",
+      "person": "te → ő",
+      "answer": "maradjon",
+      "table": "request-shift"
+    }
+  ]
+}

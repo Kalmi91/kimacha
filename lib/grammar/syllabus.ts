@@ -182,6 +182,44 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'ul-ul-kent': 'core',
   'ido-hatarozok': 'exam',
   mennyiseg: 'exam',
+  // --- Hungarian course, B1 ---
+  'szemelyragos-inf': 'core-plus',
+  'rendhagyo-igek': 'core-plus',
+  'targyas-ragozas-2': 'core',
+  'hat-het-idok': 'core',
+  muvelteto: 'exam',
+  'visszahato-igek': 'exam',
+  'befejezett-folyamatos': 'core-plus',
+  'igekoto-elvalas': 'core-plus',
+  'nekem-tetszik': 'core',
+  vonzatok: 'core-plus',
+  'ert-va-ve': 'core',
+  'allapot-van': 'exam',
+  'szemelyragos-esetek': 'core-plus',
+  'birtok-tobbes': 'core-plus',
+  'onallo-birtok': 'core',
+  'hatarozatlan-nevmasok': 'core',
+  torzsvaltozas: 'core',
+  // --- Hungarian course, B2 ---
+  'felteteles-mult': 'core',
+  'hogy-felszolito': 'core-plus',
+  'fuggo-beszed': 'core',
+  'oksag-cel': 'core',
+  engedmeny: 'exam',
+  'ido-mellekmondat': 'core',
+  'azt-amit': 'core',
+  'fokusz-reszecskek': 'exam',
+  'melleknevi-igenev': 'exam',
+  'hatarozoi-igenev': 'exam',
+  kepzok: 'exam',
+  magazas: 'core',
+  // --- Hungarian course, C1 ---
+  'igenevi-szerkezetek': 'exam',
+  'szenvedo-szerkezetek': 'exam',
+  szovegkotok: 'core',
+  'szoalkotas-ige': 'full',
+  szokapcsolatok: 'exam',
+  'hivatalos-stilus': 'exam',
 };
 
 export function getGrammarTier(topicId: string): GrammarTier {
@@ -235,9 +273,9 @@ export const GRAMMAR_PROGRESS_KEY = 'grammar-course';
 
 // Language key: 'es' (default) = the Spanish syllabus (data/grammar/syllabus.json, plus the Hungarian `hu` titles);
 // 'en' = the English syllabus from the English topic tree (lib/grammar/syllabusEn.ts);
-// 'hu' = the Hungarian course (data/grammar/syllabus-hu.json, A1 and A2, explanations in en / es).
+// 'hu' = the Hungarian course (data/grammar/syllabus-hu.json, A1 to C1, explanations in en / es).
 const EN_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
-const HU_SYLLABUS_LEVELS: Level[] = ['A1', 'A2'];
+const HU_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 let huSyllabusData: SyllabusData | null = null;
 

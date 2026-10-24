@@ -1,0 +1,1807 @@
+{
+  "schema": 2,
+  "topic": "rendhagyo-igek",
+  "level": "B1",
+  "title": {
+    "en": "Irregular verbs: teszek, vettem, alszom, megyek",
+    "es": "Verbos irregulares: teszek, vettem, alszom, megyek"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Some of the most useful Hungarian verbs break the regular patterns. Five of them share one trick: tesz (put, do), vesz (buy, take), visz (carry, take along), hisz (believe) and lesz (become, will be). Their present tense is regular, with the stem ending in -sz (teszek, veszek), but in the past tense the -sz turns into -tt-: tettem, vettem, vittem, hittem, lettem. The command uses yet another stem, with -gy-: tegyél, vegyél, vigyél, higgy. Then come alszik (sleep), fekszik (lie), megy (go) and jön (come), whose stems change from tense to tense. These are not exceptions you can skip, you need them every day. Learn each verb as a small set of stems.",
+        "es": "Algunos de los verbos más útiles del húngaro se salen de los patrones regulares. Cinco de ellos comparten un truco: tesz (poner, hacer), vesz (comprar, tomar), visz (llevar), hisz (creer) y lesz (llegar a ser, ser en el futuro). Su presente es regular, con la raíz terminada en -sz (teszek, veszek), pero en el pasado la -sz se convierte en -tt-: tettem, vettem, vittem, hittem, lettem. La orden usa todavía otra raíz, con -gy-: tegyél, vegyél, vigyél, higgy. Además están alszik (dormir), fekszik (estar acostado), megy (ir) y jön (venir), cuyas raíces cambian de un tiempo a otro. No son excepciones que puedas saltarte, se usan todos los días. Aprende cada verbo como un pequeño juego de raíces."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "stems",
+      "title": {
+        "en": "The stems to learn",
+        "es": "Las raíces que debes aprender"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Present (ő)",
+          "es": "Presente (ő)"
+        },
+        {
+          "en": "Past (ő)",
+          "es": "Pasado (ő)"
+        },
+        {
+          "en": "Command (te)",
+          "es": "Orden (te)"
+        },
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        }
+      ],
+      "rows": [
+        [
+          "tesz",
+          "tesz",
+          "tett",
+          "tegyél",
+          "tenni"
+        ],
+        [
+          "vesz",
+          "vesz",
+          "vett",
+          "vegyél",
+          "venni"
+        ],
+        [
+          "visz",
+          "visz",
+          "vitt",
+          "vigyél",
+          "vinni"
+        ],
+        [
+          "hisz",
+          "hisz",
+          "hitt",
+          "higgy",
+          "hinni"
+        ],
+        [
+          "lesz",
+          "lesz",
+          "lett",
+          "legyél",
+          "lenni"
+        ],
+        [
+          "alszik",
+          "alszik",
+          "aludt",
+          "aludj",
+          "aludni"
+        ],
+        [
+          "fekszik",
+          "fekszik",
+          "feküdt",
+          "feküdj",
+          "feküdni"
+        ],
+        [
+          "megy",
+          "megy",
+          "ment",
+          "menj",
+          "menni"
+        ],
+        [
+          "jön",
+          "jön",
+          "jött",
+          "gyere",
+          "jönni"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "sz-present",
+      "title": {
+        "en": "The five sz-verbs: present tense",
+        "es": "Los cinco verbos en -sz: presente"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "tesz (put, do)",
+          "es": "tesz (poner, hacer)"
+        },
+        {
+          "en": "vesz (buy, take)",
+          "es": "vesz (comprar, tomar)"
+        },
+        {
+          "en": "visz (carry, take along)",
+          "es": "visz (llevar)"
+        },
+        {
+          "en": "hisz (believe)",
+          "es": "hisz (creer)"
+        },
+        {
+          "en": "lesz (become, will be)",
+          "es": "lesz (llegar a ser, ser en el futuro)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "teszek",
+          "veszek",
+          "viszek",
+          "hiszek",
+          "leszek"
+        ],
+        [
+          "te",
+          "teszel",
+          "veszel",
+          "viszel",
+          "hiszel",
+          "leszel"
+        ],
+        [
+          "ő",
+          "tesz",
+          "vesz",
+          "visz",
+          "hisz",
+          "lesz"
+        ],
+        [
+          "mi",
+          "teszünk",
+          "veszünk",
+          "viszünk",
+          "hiszünk",
+          "leszünk"
+        ],
+        [
+          "ti",
+          "tesztek",
+          "vesztek",
+          "visztek",
+          "hisztek",
+          "lesztek"
+        ],
+        [
+          "ők",
+          "tesznek",
+          "vesznek",
+          "visznek",
+          "hisznek",
+          "lesznek"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "sz-past",
+      "title": {
+        "en": "The five sz-verbs: past tense",
+        "es": "Los cinco verbos en -sz: pasado"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "tesz (put, do)",
+          "es": "tesz (poner, hacer)"
+        },
+        {
+          "en": "vesz (buy, take)",
+          "es": "vesz (comprar, tomar)"
+        },
+        {
+          "en": "visz (carry, take along)",
+          "es": "visz (llevar)"
+        },
+        {
+          "en": "hisz (believe)",
+          "es": "hisz (creer)"
+        },
+        {
+          "en": "lesz (become, will be)",
+          "es": "lesz (llegar a ser, ser en el futuro)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "tettem",
+          "vettem",
+          "vittem",
+          "hittem",
+          "lettem"
+        ],
+        [
+          "te",
+          "tettél",
+          "vettél",
+          "vittél",
+          "hittél",
+          "lettél"
+        ],
+        [
+          "ő",
+          "tett",
+          "vett",
+          "vitt",
+          "hitt",
+          "lett"
+        ],
+        [
+          "mi",
+          "tettünk",
+          "vettünk",
+          "vittünk",
+          "hittünk",
+          "lettünk"
+        ],
+        [
+          "ti",
+          "tettetek",
+          "vettetek",
+          "vittetek",
+          "hittetek",
+          "lettetek"
+        ],
+        [
+          "ők",
+          "tettek",
+          "vettek",
+          "vittek",
+          "hittek",
+          "lettek"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "The five sz-verbs: three things to know",
+        "es": "Los cinco verbos en -sz: tres cosas que debes saber"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Present: the stem keeps its -sz and takes the usual endings of a front-vowel verb: teszek, teszel, tesz, teszünk, tesztek, tesznek. Vesz, visz, hisz and lesz follow exactly the same pattern.",
+            "es": "Presente: la raíz conserva su -sz y recibe las terminaciones normales de un verbo de vocales anteriores: teszek, teszel, tesz, teszünk, tesztek, tesznek. Vesz, visz, hisz y lesz siguen exactamente el mismo patrón."
+          },
+          "examples": [
+            {
+              "es": "Sok tejet teszek a kávéba.",
+              "tr": {
+                "en": "I put a lot of milk in my coffee.",
+                "es": "Le pongo mucha leche a mi café."
+              }
+            },
+            {
+              "es": "Szombaton új telefont veszünk.",
+              "tr": {
+                "en": "We are buying a new phone on Saturday.",
+                "es": "El sábado compramos un teléfono nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Past: the -sz is replaced by -tt-. Tesz becomes tett-, vesz becomes vett-, visz becomes vitt-, hisz becomes hitt-, lesz becomes lett-. The endings are the usual past endings of a front-vowel verb: -em, -él, nothing for ő, -ünk, -etek, -ek.",
+            "es": "Pasado: la -sz se sustituye por -tt-. Tesz pasa a tett-, vesz a vett-, visz a vitt-, hisz a hitt-, lesz a lett-. Las terminaciones son las normales del pasado de un verbo de vocales anteriores: -em, -él, ninguna para ő, -ünk, -etek, -ek."
+          },
+          "examples": [
+            {
+              "es": "Anna tegnap új telefont vett.",
+              "tr": {
+                "en": "Anna bought a new phone yesterday.",
+                "es": "Ayer Anna compró un teléfono nuevo."
+              }
+            },
+            {
+              "es": "Tegnap este hirtelen hideg lett.",
+              "tr": {
+                "en": "It suddenly got cold last night.",
+                "es": "Anoche, de repente, empezó a hacer frío."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Infinitive and conditional: the -sz is dropped and -nni is added: tenni, venni, vinni, hinni, lenni. The conditional builds on it: tennék, vennék, vinnék, hinnék, lennék.",
+            "es": "Infinitivo y condicional: se quita la -sz y se añade -nni: tenni, venni, vinni, hinni, lenni. El condicional se forma a partir de él: tennék, vennék, vinnék, hinnék, lennék."
+          },
+          "examples": [
+            {
+              "es": "Szeretnék venni egy új kabátot.",
+              "tr": {
+                "en": "I would like to buy a new coat.",
+                "es": "Quisiera comprar un abrigo nuevo."
+              }
+            },
+            {
+              "es": "Ha lenne időm, többet olvasnék.",
+              "tr": {
+                "en": "If I had time, I would read more.",
+                "es": "Si tuviera tiempo, leería más."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "sz-def-present",
+      "title": {
+        "en": "With a specific object: present tense",
+        "es": "Con objeto determinado: presente"
+      },
+      "header": [
+        {
+          "en": "Person (+ a/az)",
+          "es": "Persona (+ a/az)"
+        },
+        {
+          "en": "tesz (put)",
+          "es": "tesz (poner)"
+        },
+        {
+          "en": "vesz (buy)",
+          "es": "vesz (comprar)"
+        },
+        {
+          "en": "visz (take along)",
+          "es": "visz (llevar)"
+        },
+        {
+          "en": "hisz (believe)",
+          "es": "hisz (creer)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "teszem",
+          "veszem",
+          "viszem",
+          "hiszem"
+        ],
+        [
+          "te",
+          "teszed",
+          "veszed",
+          "viszed",
+          "hiszed"
+        ],
+        [
+          "ő",
+          "teszi",
+          "veszi",
+          "viszi",
+          "hiszi"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "sz-def-past",
+      "title": {
+        "en": "With a specific object: past tense",
+        "es": "Con objeto determinado: pasado"
+      },
+      "header": [
+        {
+          "en": "Person (+ a/az)",
+          "es": "Persona (+ a/az)"
+        },
+        {
+          "en": "tesz (put)",
+          "es": "tesz (poner)"
+        },
+        {
+          "en": "vesz (buy)",
+          "es": "vesz (comprar)"
+        },
+        {
+          "en": "visz (take along)",
+          "es": "visz (llevar)"
+        },
+        {
+          "en": "hisz (believe)",
+          "es": "hisz (creer)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "tettem",
+          "vettem",
+          "vittem",
+          "hittem"
+        ],
+        [
+          "te",
+          "tetted",
+          "vetted",
+          "vitted",
+          "hitted"
+        ],
+        [
+          "ő",
+          "tette",
+          "vette",
+          "vitte",
+          "hitte"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ik-present",
+      "title": {
+        "en": "alszik, fekszik, megy, jön: present tense",
+        "es": "alszik, fekszik, megy, jön: presente"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "alszik (sleep)",
+          "es": "alszik (dormir)"
+        },
+        {
+          "en": "fekszik (lie, be lying)",
+          "es": "fekszik (estar acostado)"
+        },
+        {
+          "en": "megy (go)",
+          "es": "megy (ir)"
+        },
+        {
+          "en": "jön (come)",
+          "es": "jön (venir)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "alszom",
+          "fekszem",
+          "megyek",
+          "jövök"
+        ],
+        [
+          "te",
+          "alszol",
+          "fekszel",
+          "mész",
+          "jössz"
+        ],
+        [
+          "ő",
+          "alszik",
+          "fekszik",
+          "megy",
+          "jön"
+        ],
+        [
+          "mi",
+          "alszunk",
+          "fekszünk",
+          "megyünk",
+          "jövünk"
+        ],
+        [
+          "ti",
+          "alszotok",
+          "fekszetek",
+          "mentek",
+          "jöttök"
+        ],
+        [
+          "ők",
+          "alszanak",
+          "fekszenek",
+          "mennek",
+          "jönnek"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ik-past",
+      "title": {
+        "en": "alszik, fekszik, megy, jön: past tense",
+        "es": "alszik, fekszik, megy, jön: pasado"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "alszik (sleep)",
+          "es": "alszik (dormir)"
+        },
+        {
+          "en": "fekszik (lie, be lying)",
+          "es": "fekszik (estar acostado)"
+        },
+        {
+          "en": "megy (go)",
+          "es": "megy (ir)"
+        },
+        {
+          "en": "jön (come)",
+          "es": "jön (venir)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "aludtam",
+          "feküdtem",
+          "mentem",
+          "jöttem"
+        ],
+        [
+          "te",
+          "aludtál",
+          "feküdtél",
+          "mentél",
+          "jöttél"
+        ],
+        [
+          "ő",
+          "aludt",
+          "feküdt",
+          "ment",
+          "jött"
+        ],
+        [
+          "mi",
+          "aludtunk",
+          "feküdtünk",
+          "mentünk",
+          "jöttünk"
+        ],
+        [
+          "ti",
+          "aludtatok",
+          "feküdtetek",
+          "mentetek",
+          "jöttetek"
+        ],
+        [
+          "ők",
+          "aludtak",
+          "feküdtek",
+          "mentek",
+          "jöttek"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "alszik, fekszik, megy, jön: where the stem changes",
+        "es": "alszik, fekszik, megy, jön: dónde cambia la raíz"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "alszik (sleep): the present stem is alsz- (alszom, alszol, alszik), but the past and the command use alud-: aludtam, aludj. In speech you often hear alszok instead of alszom.",
+            "es": "alszik (dormir): la raíz del presente es alsz- (alszom, alszol, alszik), pero el pasado y la orden usan alud-: aludtam, aludj. En el habla se oye a menudo alszok en lugar de alszom."
+          },
+          "examples": [
+            {
+              "es": "Hétvégén sokáig alszom.",
+              "tr": {
+                "en": "At the weekend I sleep for a long time.",
+                "es": "Los fines de semana duermo mucho."
+              }
+            },
+            {
+              "es": "Tegnap este korán elaludtam.",
+              "tr": {
+                "en": "I fell asleep early last night.",
+                "es": "Anoche me dormí temprano."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "fekszik (lie, be lying): feksz- in the present (fekszem, fekszel, fekszik), feküd- in the past and the command (feküdtem, feküdj). The 3rd plural is fekszenek (feküsznek is only regional or old). In speech you also hear fekszek instead of fekszem. With le- it means to go to bed: lefekszem.",
+            "es": "fekszik (estar acostado): feksz- en el presente (fekszem, fekszel, fekszik), feküd- en el pasado y en la orden (feküdtem, feküdj). La 3.ª persona del plural es fekszenek (feküsznek es solo regional o antigua). En el habla también se oye fekszek en lugar de fekszem. Con le- significa acostarse: lefekszem."
+          },
+          "examples": [
+            {
+              "es": "A kutya a kanapén fekszik.",
+              "tr": {
+                "en": "The dog is lying on the sofa.",
+                "es": "El perro está acostado en el sofá."
+              }
+            },
+            {
+              "es": "Tegnap sokáig feküdtem az ágyban.",
+              "tr": {
+                "en": "I lay in bed for a long time yesterday.",
+                "es": "Ayer estuve mucho tiempo acostado en la cama."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "megy (go) uses several stems: megyek and megyünk, but mész, and mennek in the 3rd plural. The ti form mentek looks exactly like the past of ők. The past stem is ment-.",
+            "es": "megy (ir) usa varias raíces: megyek y megyünk, pero mész, y mennek en la 3.ª persona del plural. La forma de ti, mentek, es idéntica a la de ők en pasado. La raíz del pasado es ment-."
+          },
+          "examples": [
+            {
+              "es": "Te is moziba mész ma este?",
+              "tr": {
+                "en": "Are you going to the cinema tonight too?",
+                "es": "¿Tú también vas al cine esta noche?"
+              }
+            },
+            {
+              "es": "A szülők holnap Szegedre mennek.",
+              "tr": {
+                "en": "The parents are going to Szeged tomorrow.",
+                "es": "Los padres van mañana a Szeged."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "jön (come): jövök, jössz, jön, jövünk, then the odd ti form jöttök, and jönnek. The past stem is jött-. In commands the usual forms are gyere and gyertek.",
+            "es": "jön (venir): jövök, jössz, jön, jövünk, luego la rara forma de ti, jöttök, y jönnek. La raíz del pasado es jött-. En las órdenes las formas habituales son gyere y gyertek."
+          },
+          "examples": [
+            {
+              "es": "Holnap mi is jövünk.",
+              "tr": {
+                "en": "We are coming tomorrow too.",
+                "es": "Mañana nosotros también venimos."
+              }
+            },
+            {
+              "es": "Mikor jössz vissza Budapestre?",
+              "tr": {
+                "en": "When are you coming back to Budapest?",
+                "es": "¿Cuándo vuelves a Budapest?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imp-sz",
+      "title": {
+        "en": "Commands: tesz, vesz, visz, hisz",
+        "es": "Órdenes: tesz, vesz, visz, hisz"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "tesz",
+          "es": "tesz"
+        },
+        {
+          "en": "vesz",
+          "es": "vesz"
+        },
+        {
+          "en": "visz",
+          "es": "visz"
+        },
+        {
+          "en": "hisz",
+          "es": "hisz"
+        }
+      ],
+      "rows": [
+        [
+          "te",
+          "tegyél",
+          "vegyél",
+          "vigyél",
+          "higgy"
+        ],
+        [
+          "ő / Ön",
+          "tegyen",
+          "vegyen",
+          "vigyen",
+          "higgyen"
+        ],
+        [
+          "mi",
+          "tegyünk",
+          "vegyünk",
+          "vigyünk",
+          "higgyünk"
+        ],
+        [
+          "ti",
+          "tegyetek",
+          "vegyetek",
+          "vigyetek",
+          "higgyetek"
+        ],
+        [
+          "te + a/az",
+          "tedd",
+          "vedd",
+          "vidd",
+          "hidd"
+        ],
+        [
+          "ő / Ön + a/az",
+          "tegye",
+          "vegye",
+          "vigye",
+          "higgye"
+        ],
+        [
+          "mi + a/az",
+          "tegyük",
+          "vegyük",
+          "vigyük",
+          "higgyük"
+        ],
+        [
+          "ti + a/az",
+          "tegyétek",
+          "vegyétek",
+          "vigyétek",
+          "higgyétek"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imp-ik",
+      "title": {
+        "en": "Commands: alszik, fekszik, megy, jön",
+        "es": "Órdenes: alszik, fekszik, megy, jön"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "alszik",
+          "es": "alszik"
+        },
+        {
+          "en": "fekszik",
+          "es": "fekszik"
+        },
+        {
+          "en": "megy",
+          "es": "megy"
+        },
+        {
+          "en": "jön",
+          "es": "jön"
+        }
+      ],
+      "rows": [
+        [
+          "te",
+          "aludj",
+          "feküdj",
+          "menj",
+          "gyere"
+        ],
+        [
+          "ő / Ön",
+          "aludjon",
+          "feküdjön",
+          "menjen",
+          "jöjjön"
+        ],
+        [
+          "mi",
+          "aludjunk",
+          "feküdjünk",
+          "menjünk",
+          "jöjjünk"
+        ],
+        [
+          "ti",
+          "aludjatok",
+          "feküdjetek",
+          "menjetek",
+          "gyertek"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What do they mean?",
+        "es": "¿Qué significan?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "tesz = put, place; vesz = buy; visz = carry or take somewhere (the opposite is hoz, bring). One vowel decides: veszek is 'I buy', viszek is 'I take along'.",
+            "es": "tesz = poner, colocar; vesz = comprar; visz = llevar a otro lugar (lo contrario es hoz, traer). Una vocal decide: veszek es «compro», viszek es «llevo»."
+          },
+          "examples": [
+            {
+              "es": "Kenyeret veszek a boltban.",
+              "tr": {
+                "en": "I buy bread in the shop.",
+                "es": "Compro pan en la tienda."
+              }
+            },
+            {
+              "es": "Süteményt viszek Annának.",
+              "tr": {
+                "en": "I am taking cake to Anna.",
+                "es": "Le llevo pastel a Anna."
+              }
+            },
+            {
+              "es": "A könyvet az asztalra teszem.",
+              "tr": {
+                "en": "I put the book on the table.",
+                "es": "Pongo el libro sobre la mesa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "hisz = believe. Hisz + dative means to believe a person (Nem hiszek neki). Azt hiszem, hogy... is the usual way to say 'I think that...'; the definite hiszem is needed because azt points to the whole clause.",
+            "es": "hisz = creer. Hisz + dativo significa creerle a una persona (Nem hiszek neki). Azt hiszem, hogy... es la forma habitual de decir «creo que...»; hace falta el hiszem determinado porque azt apunta a toda la oración."
+          },
+          "examples": [
+            {
+              "es": "Nem hiszek neki.",
+              "tr": {
+                "en": "I do not believe him.",
+                "es": "No le creo."
+              }
+            },
+            {
+              "es": "Azt hiszem, hogy késő van.",
+              "tr": {
+                "en": "I think it is late.",
+                "es": "Creo que es tarde."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "lesz = will be, and also become. It is the future of van. Its past lett means 'became', never 'was' (that is volt).",
+            "es": "lesz = será, y también llegar a ser. Es el futuro de van. Su pasado lett significa «se hizo», nunca «era» (eso es volt)."
+          },
+          "examples": [
+            {
+              "es": "Holnap szép idő lesz.",
+              "tr": {
+                "en": "The weather will be nice tomorrow.",
+                "es": "Mañana hará buen tiempo."
+              }
+            },
+            {
+              "es": "Péter tavaly apa lett.",
+              "tr": {
+                "en": "Péter became a father last year.",
+                "es": "Péter se hizo papá el año pasado."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a specific object (a/az + noun, a name, ezt, azt) the endings change as with every verb: teszem, veszem, viszem, hiszem; past tettem, tetted, tette. The complete definite sets are in the next lesson.",
+            "es": "Con un objeto determinado (a/az + sustantivo, un nombre, ezt, azt) las terminaciones cambian como en cualquier verbo: teszem, veszem, viszem, hiszem; pasado tettem, tetted, tette. Los juegos completos de la conjugación determinada están en la próxima lección."
+          },
+          "examples": [
+            {
+              "es": "A táskát az asztalra teszem.",
+              "tr": {
+                "en": "I put the bag on the table.",
+                "es": "Pongo la bolsa sobre la mesa."
+              }
+            },
+            {
+              "es": "Kati tegnap megvette a jegyeket.",
+              "tr": {
+                "en": "Kati bought the tickets yesterday.",
+                "es": "Kati compró ayer los boletos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Commands: never add -j to the present stem. The command stems are tegy-, vegy-, vigy-, higgy-, legy-: tegyél, vegyél, vigyél, higgy, legyél. With a specific object the te form is short: tedd, vedd, vidd, hidd.",
+            "es": "Órdenes: nunca añadas -j a la raíz del presente. Las raíces de la orden son tegy-, vegy-, vigy-, higgy-, legy-: tegyél, vegyél, vigyél, higgy, legyél. Con un objeto determinado la forma de te es corta: tedd, vedd, vidd, hidd."
+          },
+          "examples": [
+            {
+              "es": "Tegyél tejet a kávéba!",
+              "tr": {
+                "en": "Put milk in the coffee!",
+                "es": "¡Ponle leche al café!"
+              }
+            },
+            {
+              "es": "Vedd fel a kabátot!",
+              "tr": {
+                "en": "Put your coat on!",
+                "es": "¡Ponte la chamarra!"
+              }
+            },
+            {
+              "es": "Legyél jó!",
+              "tr": {
+                "en": "Be good!",
+                "es": "¡Pórtate bien!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Three pairs people mix up",
+        "es": "Tres pares que se confunden"
+      },
+      "pairs": [
+        {
+          "a": "Ti mentek moziba.",
+          "b": "Ők tegnap moziba mentek.",
+          "note": {
+            "en": "Same spelling, different meaning: mentek is the present of ti (you all go) and the past of ők (they went). The past of ti is mentetek.",
+            "es": "Misma escritura, distinto significado: mentek es el presente de ti (ustedes van) y el pasado de ők (ellos fueron). El pasado de ti es mentetek."
+          },
+          "examples": [
+            {
+              "es": "Ti hová mentek holnap?",
+              "tr": {
+                "en": "Where are you all going tomorrow?",
+                "es": "¿A dónde van ustedes mañana?"
+              }
+            },
+            {
+              "es": "Tavaly nyáron ők Szegedre mentek.",
+              "tr": {
+                "en": "Last summer they went to Szeged.",
+                "es": "El verano pasado ellos fueron a Szeged."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Veszek kenyeret.",
+          "b": "Viszek kenyeret Annának.",
+          "note": {
+            "en": "One vowel apart: vesz = buy, visz = take along.",
+            "es": "Una vocal de diferencia: vesz = comprar, visz = llevar."
+          },
+          "examples": [
+            {
+              "es": "Mit veszel a boltban?",
+              "tr": {
+                "en": "What are you buying in the shop?",
+                "es": "¿Qué compras en la tienda?"
+              }
+            },
+            {
+              "es": "Mit viszel Annának?",
+              "tr": {
+                "en": "What are you taking to Anna?",
+                "es": "¿Qué le llevas a Anna?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Péter tavaly még diák volt.",
+          "b": "Péter idén orvos lett.",
+          "note": {
+            "en": "volt = was (a state, no change); lett = became (a change happened).",
+            "es": "volt = era o estaba (un estado, sin cambio); lett = se hizo (hubo un cambio)."
+          },
+          "examples": [
+            {
+              "es": "Reggel hideg volt, délre meleg lett.",
+              "tr": {
+                "en": "It was cold in the morning, by noon it got warm.",
+                "es": "En la mañana hacía frío, para el mediodía hizo calor."
+              }
+            },
+            {
+              "es": "Kati régen diák volt, aztán orvos lett.",
+              "tr": {
+                "en": "Kati used to be a student, then she became a doctor.",
+                "es": "Antes Kati era estudiante, luego se hizo médica."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Do not build a command from the present stem: teszj and veszj do not exist. Say tegyél, vegyél, vigyél, higgy. (2) lett is 'became', volt is 'was': Orvos lett means he became a doctor, Orvos volt means he was a doctor. (3) veszek and viszek differ by one vowel: buy and take along. (4) mentek can be 'you all go' (ti) or 'they went' (ők); the pronoun and the time word tell you which.",
+        "es": "Trampas clásicas: (1) No formes la orden con la raíz del presente: teszj y veszj no existen. Di tegyél, vegyél, vigyél, higgy. (2) lett es «se hizo», volt es «era»: Orvos lett significa que se hizo médico, Orvos volt significa que era médico. (3) veszek y viszek se diferencian en una vocal: comprar y llevar. (4) mentek puede ser «ustedes van» (ti) o «ellos fueron» (ők); el pronombre y la palabra de tiempo te dicen cuál."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Some of the most common Hungarian verbs are irregular. The verbs «tesz», «vesz», «visz», «hisz» and «lesz» end in «sz» in the present: «teszek», «veszek», «viszek». In the past the «sz» turns into «tt»: «tettem», «vettem», «vittem», «lettem». For a command, do not use the present stem. Say «tegyél», «vegyél», «vigyél», and with a specific object «tedd», «vedd», «vidd». The verb «alszik» gives «alszom» in the present, but «aludtam» in the past. Be careful with «mentek»: «ti mentek» means you go, and «ők mentek» means they went.",
+    "es": "Algunos de los verbos más comunes del húngaro son irregulares. Los verbos «tesz», «vesz», «visz», «hisz» y «lesz» terminan en «sz» en presente: «teszek», «veszek», «viszek». En pasado la «sz» se convierte en «tt»: «tettem», «vettem», «vittem», «lettem». Para una orden no uses la raíz del presente. Di «tegyél», «vegyél», «vigyél», y con un objeto determinado «tedd», «vedd», «vidd». El verbo «alszik» da «alszom» en presente, pero «aludtam» en pasado. Cuidado con «mentek»: «ti mentek» significa que ustedes van, y «ők mentek» significa que ellos fueron."
+  },
+  "glossary": [
+    {
+      "word": "hisz",
+      "gloss": {
+        "en": "to believe",
+        "es": "creer"
+      }
+    },
+    {
+      "word": "visz",
+      "gloss": {
+        "en": "to carry, to take along",
+        "es": "llevar"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "rendhagyo-igek-c01",
+      "sentence": "Anna tegnap a boltban új táskát ___, mert a régi kicsi volt.",
+      "options": [
+        "vett",
+        "vitt",
+        "tett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Buying is vesz, and its past stem is vett-: vett. The -sz of the present becomes -tt- in the past.",
+        "es": "Comprar es vesz, y su raíz de pasado es vett-: vett. La -sz del presente se convierte en -tt- en el pasado."
+      },
+      "wrong": {
+        "vitt": {
+          "en": "vitt comes from visz (carry, take along): the sentence would say that Anna carried a new bag in the shop, not that she bought it.",
+          "es": "vitt viene de visz (llevar): la frase diría que Anna llevó una bolsa nueva en la tienda, no que la compró."
+        },
+        "tett": {
+          "en": "tett comes from tesz (put): the sentence would say that Anna put a new bag somewhere.",
+          "es": "tett viene de tesz (poner): la frase diría que Anna puso una bolsa nueva en algún lugar."
+        }
+      },
+      "examples": [
+        "Péter új telefont vett.",
+        "Mit vettél a boltban?"
+      ],
+      "tr": {
+        "en": "Anna bought a new bag in the shop yesterday, because the old one was too small.",
+        "es": "Ayer Anna compró una bolsa nueva en la tienda, porque la vieja era pequeña."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f01",
+      "kind": "form",
+      "verb": "vesz",
+      "person": "én (past)",
+      "answer": "vettem",
+      "table": "sz-past"
+    },
+    {
+      "id": "rendhagyo-igek-c02",
+      "sentence": "Anna és Péter tavaly nyáron Mexikóvárosba ___, és egy hétig ott maradtak.",
+      "options": [
+        "mentek",
+        "mennek",
+        "mentetek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tavaly nyáron (last summer) is in the past, and Anna és Péter is 'they': the past ők form of megy is mentek (stem ment-).",
+        "es": "Tavaly nyáron (el verano pasado) está en pasado, y Anna és Péter es «ellos»: la forma de ők en pasado de megy es mentek (raíz ment-)."
+      },
+      "wrong": {
+        "mennek": {
+          "en": "mennek is the present, 'they go'; tavaly nyáron needs the past.",
+          "es": "mennek es el presente, «ellos van»; tavaly nyáron pide el pasado."
+        },
+        "mentetek": {
+          "en": "mentetek is 'you all went' (ti, past); the sentence is about Anna and Péter.",
+          "es": "mentetek es «ustedes fueron» (ti, pasado); la frase habla de Anna y Péter."
+        }
+      },
+      "examples": [
+        "Ők tegnap moziba mentek.",
+        "Tavaly nyáron ők Szegedre mentek."
+      ],
+      "tr": {
+        "en": "Anna and Péter went to Mexico City last summer and stayed there for a week.",
+        "es": "Anna y Péter fueron a la Ciudad de México el verano pasado y se quedaron allí una semana."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f02",
+      "kind": "form",
+      "verb": "visz",
+      "person": "mi",
+      "answer": "viszünk",
+      "table": "sz-present"
+    },
+    {
+      "id": "rendhagyo-igek-c03",
+      "sentence": "Ti is ___ a vacsorára, vagy otthon maradtok?",
+      "options": [
+        "jöttök",
+        "jönnek",
+        "jöttetek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ti (you all) in the present: jö- + -ttök, jöttök. Otthon maradtok (present) confirms that the question is about now.",
+        "es": "Ti (ustedes) en presente: jö- + -ttök, jöttök. Otthon maradtok (presente) confirma que la pregunta es sobre ahora."
+      },
+      "wrong": {
+        "jönnek": {
+          "en": "jönnek is 'they come' (ők); the sentence asks ti, see maradtok.",
+          "es": "jönnek es «ellos vienen» (ők); la frase pregunta a ti, mira maradtok."
+        },
+        "jöttetek": {
+          "en": "jöttetek is the past, 'you all came'; the question is about the present (maradtok).",
+          "es": "jöttetek es el pasado, «ustedes vinieron»; la pregunta es sobre el presente (maradtok)."
+        }
+      },
+      "examples": [
+        "Ti mikor jöttök haza?",
+        "Ti is jöttök holnap?"
+      ],
+      "tr": {
+        "en": "Are you all coming to dinner too, or are you staying at home?",
+        "es": "¿Ustedes también vienen a la cena o se quedan en casa?"
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f03",
+      "kind": "form",
+      "verb": "alszik",
+      "person": "én",
+      "answer": "alszom",
+      "accept": [
+        "alszok"
+      ],
+      "table": "ik-present"
+    },
+    {
+      "id": "rendhagyo-igek-c04",
+      "sentence": "Kati régen diák volt, tavaly orvos ___.",
+      "options": [
+        "lett",
+        "lesz",
+        "lettem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tavaly (last year) is in the past and the subject is Kati: the past of lesz in the 3rd person is lett, 'became'.",
+        "es": "Tavaly (el año pasado) está en pasado y el sujeto es Kati: el pasado de lesz en 3.ª persona es lett, «se hizo»."
+      },
+      "wrong": {
+        "lesz": {
+          "en": "lesz is the present or future, 'will be, becomes'; tavaly needs the past.",
+          "es": "lesz es el presente o el futuro, «será, se hace»; tavaly pide el pasado."
+        },
+        "lettem": {
+          "en": "lettem is 'I became'; the sentence is about Kati, not about me.",
+          "es": "lettem es «yo me hice»; la frase habla de Kati, no de mí."
+        }
+      },
+      "examples": [
+        "Péter tavaly apa lett.",
+        "Estére nagyon hideg lett."
+      ],
+      "tr": {
+        "en": "Kati used to be a student, and last year she became a doctor.",
+        "es": "Antes Kati era estudiante y el año pasado se hizo médica."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f04",
+      "kind": "form",
+      "verb": "hisz",
+      "person": "ti",
+      "answer": "hisztek",
+      "table": "sz-present"
+    },
+    {
+      "id": "rendhagyo-igek-c05",
+      "sentence": "Anna, kérlek, ___ egy kis tejet a kávémba, mert túl erős.",
+      "options": [
+        "tegyél",
+        "teszel",
+        "tegyen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A request to a friend (kérlek, Anna) needs the command form: tegyél. The command stem is tegy-, not tesz-.",
+        "es": "Una petición a una amiga (kérlek, Anna) necesita la forma de la orden: tegyél. La raíz de la orden es tegy-, no tesz-."
+      },
+      "wrong": {
+        "teszel": {
+          "en": "teszel is the present, 'you put': a statement or a question, not a request.",
+          "es": "teszel es el presente, «tú pones»: una afirmación o una pregunta, no una petición."
+        },
+        "tegyen": {
+          "en": "tegyen is the command for Ön or ő (formal); Anna is a friend (kérlek).",
+          "es": "tegyen es la orden para Ön o ő (formal); Anna es una amiga (kérlek)."
+        }
+      },
+      "examples": [
+        "Tegyél még egy kis sót a levesbe.",
+        "Ne tegyél tejet a teába!"
+      ],
+      "tr": {
+        "en": "Anna, please put a little milk in my coffee, because it is too strong.",
+        "es": "Anna, por favor, ponle un poco de leche a mi café, porque está muy fuerte."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-w01",
+      "kind": "why",
+      "es": "Ti holnap mentek Szegedre?",
+      "target": "mentek",
+      "tr": {
+        "en": "Are you all going to Szeged tomorrow?",
+        "es": "¿Ustedes van mañana a Szeged?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Past tense, ők (they): they went",
+            "es": "Pasado, ők (ellos): ellos fueron"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would need ők and a past time word: Ők tegnap Szegedre mentek. Here the sentence has ti and holnap (tomorrow).",
+            "es": "Con esta regla la frase necesitaría ők y una palabra de pasado: Ők tegnap Szegedre mentek. Aquí la frase tiene ti y holnap (mañana)."
+          }
+        },
+        {
+          "text": {
+            "en": "Present tense, ti (you all): you go",
+            "es": "Presente, ti (ustedes): ustedes van"
+          }
+        },
+        {
+          "text": {
+            "en": "Past tense, ti (you all): you went",
+            "es": "Pasado, ti (ustedes): ustedes fueron"
+          },
+          "wrong": {
+            "en": "With this rule the form would be mentetek (Ti tegnap Szegedre mentetek); holnap is the future.",
+            "es": "Con esta regla la forma sería mentetek (Ti tegnap Szegedre mentetek); holnap es el futuro."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "rendhagyo-igek-f05",
+      "kind": "form",
+      "verb": "lesz",
+      "person": "ő (past)",
+      "answer": "lett",
+      "table": "sz-past"
+    },
+    {
+      "id": "rendhagyo-igek-c06",
+      "sentence": "Itt a kabátod, ___ fel, mert nagyon hideg van.",
+      "options": [
+        "vedd",
+        "vegyél",
+        "vegye"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kabátod (your coat) is a specific object, so the command takes the definite form: vedd (te + a/az). The prefix fel follows the command.",
+        "es": "Kabátod (tu chamarra) es un objeto determinado, así que la orden toma la forma determinada: vedd (te + a/az). El prefijo fel va detrás de la orden."
+      },
+      "wrong": {
+        "vegyél": {
+          "en": "vegyél is for an object that is not specific (Vegyél fel egy kabátot! = put on a coat, any coat); here it is your own coat.",
+          "es": "vegyél es para un objeto no determinado (Vegyél fel egy kabátot! = ponte una chamarra, cualquiera); aquí es tu propia chamarra."
+        },
+        "vegye": {
+          "en": "vegye is the command for Ön or ő (formal); kabátod (your) shows that you speak to a friend.",
+          "es": "vegye es la orden para Ön o ő (formal); kabátod (tu) muestra que hablas con un amigo."
+        }
+      },
+      "examples": [
+        "Vedd fel a cipődet!",
+        "Vedd meg a jegyet még ma!"
+      ],
+      "tr": {
+        "en": "Here is your coat, put it on, because it is very cold.",
+        "es": "Aquí está tu chamarra, póntela, porque hace mucho frío."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f06",
+      "kind": "form",
+      "verb": "fekszik",
+      "person": "én",
+      "answer": "fekszem",
+      "accept": [
+        "fekszek"
+      ],
+      "table": "ik-present"
+    },
+    {
+      "id": "rendhagyo-igek-c07",
+      "sentence": "Ha elmész a postára, ___ el ezt a levelet is, kérlek.",
+      "options": [
+        "vidd",
+        "vigyél",
+        "vigye"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ezt a levelet (this letter) is specific, so the command takes the definite form: vidd (te + a/az).",
+        "es": "Ezt a levelet (esta carta) es determinada, así que la orden toma la forma determinada: vidd (te + a/az)."
+      },
+      "wrong": {
+        "vigyél": {
+          "en": "vigyél is used when the object is not specific (Vigyél egy levelet! = take a letter, any); this is a particular letter.",
+          "es": "vigyél se usa cuando el objeto no es determinado (Vigyél egy levelet! = lleva una carta, cualquiera); esta es una carta concreta."
+        },
+        "vigye": {
+          "en": "vigye is the command for Ön or ő; kérlek and elmész show that you speak to a friend.",
+          "es": "vigye es la orden para Ön o ő; kérlek y elmész muestran que hablas con un amigo."
+        }
+      },
+      "examples": [
+        "Vidd el a csomagot a postára!",
+        "Vidd el a gyerekeket az iskolába!"
+      ],
+      "tr": {
+        "en": "If you go to the post office, take this letter too, please.",
+        "es": "Si vas a la oficina de correos, lleva también esta carta, por favor."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-w02",
+      "kind": "why",
+      "es": "Péter tavaly apa lett, ezért most keveset alszik.",
+      "target": "lett",
+      "tr": {
+        "en": "Péter became a father last year, so he sleeps little now.",
+        "es": "Péter se hizo papá el año pasado, así que ahora duerme poco."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Past of lesz: he became (a change)",
+            "es": "Pasado de lesz: se hizo (un cambio)"
+          }
+        },
+        {
+          "text": {
+            "en": "Past of van: he was (a state)",
+            "es": "Pasado de van: era (un estado)"
+          },
+          "wrong": {
+            "en": "The past of van is volt: Péter tavaly apa volt would describe a state without a change. The sentence says he became a father.",
+            "es": "El pasado de van es volt: Péter tavaly apa volt describiría un estado sin cambio. La frase dice que se hizo padre."
+          }
+        },
+        {
+          "text": {
+            "en": "Future of lesz: he will be",
+            "es": "Futuro de lesz: será"
+          },
+          "wrong": {
+            "en": "The future is lesz: Péter jövőre apa lesz. Tavaly (last year) puts the sentence in the past.",
+            "es": "El futuro es lesz: Péter jövőre apa lesz. Tavaly (el año pasado) pone la frase en pasado."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "rendhagyo-igek-f07",
+      "kind": "form",
+      "verb": "tesz",
+      "person": "te (past)",
+      "answer": "tettél",
+      "table": "sz-past"
+    },
+    {
+      "id": "rendhagyo-igek-c08",
+      "sentence": "Azt ___, hogy a vonat már elment, de nem vagyok biztos.",
+      "options": [
+        "hiszem",
+        "hiszek",
+        "hisz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Azt hiszem, hogy... means 'I think that...'. Azt stands for the whole clause, a specific object, so the verb takes the definite form: hiszem.",
+        "es": "Azt hiszem, hogy... significa «creo que...». Azt representa toda la oración, un objeto determinado, así que el verbo toma la forma determinada: hiszem."
+      },
+      "wrong": {
+        "hiszek": {
+          "en": "hiszek is the indefinite form, 'I believe' (a person, in something); it does not go with azt ... hogy.",
+          "es": "hiszek es la forma indeterminada, «creo» (en una persona, en algo); no va con azt ... hogy."
+        },
+        "hisz": {
+          "en": "hisz is the 3rd person, 'he or she believes'; the speaker says 'I' (nem vagyok biztos).",
+          "es": "hisz es la 3.ª persona, «él o ella cree»; el hablante dice «yo» (nem vagyok biztos)."
+        }
+      },
+      "examples": [
+        "Azt hiszem, hogy Péter ma nem jön.",
+        "Azt hiszem, hogy igazad van."
+      ],
+      "tr": {
+        "en": "I think the train has already left, but I am not sure.",
+        "es": "Creo que el tren ya se fue, pero no estoy seguro."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f08",
+      "kind": "form",
+      "verb": "megy",
+      "person": "te",
+      "answer": "mész",
+      "table": "ik-present"
+    },
+    {
+      "id": "rendhagyo-igek-c09",
+      "sentence": "Holnap én ___ a gyerekeket az iskolába, mert te korán kezdesz.",
+      "options": [
+        "viszem",
+        "viszek",
+        "viszi"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekeket (the children) is a specific object and the subject is én (I): the definite form viszem.",
+        "es": "A gyerekeket (los niños) es un objeto determinado y el sujeto es én (yo): la forma determinada viszem."
+      },
+      "wrong": {
+        "viszek": {
+          "en": "viszek is the indefinite form (Viszek egy gyereket = I take a child, any); here the children are the known ones.",
+          "es": "viszek es la forma indeterminada (Viszek egy gyereket = llevo a un niño, cualquiera); aquí los niños son los conocidos."
+        },
+        "viszi": {
+          "en": "viszi is the 3rd person (he or she takes them); the subject is én.",
+          "es": "viszi es la 3.ª persona (él o ella los lleva); el sujeto es én."
+        }
+      },
+      "examples": [
+        "Ki viszi a gyereket az iskolába?",
+        "Kati viszi a gyereket az orvoshoz."
+      ],
+      "tr": {
+        "en": "Tomorrow I will take the children to school, because you start early.",
+        "es": "Mañana yo llevo a los niños a la escuela, porque tú empiezas temprano."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-w03",
+      "kind": "why",
+      "es": "Vidd el a gyerekeket az iskolába, kérlek!",
+      "target": "Vidd",
+      "tr": {
+        "en": "Take the children to school, please!",
+        "es": "¡Lleva a los niños a la escuela, por favor!"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Command without a specific object: vigyél",
+            "es": "Orden sin objeto determinado: vigyél"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Vigyél el gyerekeket! (some children, any); here a gyerekeket is specific.",
+            "es": "Con esta regla la frase sería Vigyél el gyerekeket! (unos niños, cualquiera); aquí a gyerekeket es determinado."
+          }
+        },
+        {
+          "text": {
+            "en": "Present tense: viszed",
+            "es": "Presente: viszed"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be a statement, Viszed a gyerekeket az iskolába (you take them); the exclamation mark and kérlek show an order.",
+            "es": "Con esta regla la frase sería una afirmación, Viszed a gyerekeket az iskolába (tú los llevas); el signo de exclamación y kérlek muestran una orden."
+          }
+        },
+        {
+          "text": {
+            "en": "Command with a specific object: te + a/az",
+            "es": "Orden con objeto determinado: te + a/az"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "rendhagyo-igek-f09",
+      "kind": "form",
+      "verb": "jön",
+      "person": "mi",
+      "answer": "jövünk",
+      "table": "ik-present"
+    },
+    {
+      "id": "rendhagyo-igek-c10",
+      "sentence": "Hová ___ tegnap a kulcsomat? Nem találom sehol.",
+      "options": [
+        "tetted",
+        "tettél",
+        "tettem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tegnap puts it in the past, and a kulcsomat (my key) is specific, so the definite form for te: tetted.",
+        "es": "Tegnap lo pone en pasado, y a kulcsomat (mi llave) es determinada, así que la forma determinada para te: tetted."
+      },
+      "wrong": {
+        "tettél": {
+          "en": "tettél is the indefinite form (Mit tettél a táskába? = what did you put in the bag); the key is a specific one.",
+          "es": "tettél es la forma indeterminada (Mit tettél a táskába? = qué pusiste en la bolsa); la llave es una concreta."
+        },
+        "tettem": {
+          "en": "tettem is 'I put'; the question asks where you put it.",
+          "es": "tettem es «yo puse»; la pregunta es dónde la pusiste tú."
+        }
+      },
+      "examples": [
+        "Hová tetted a telefonomat?",
+        "A kulcsot az asztalra tettem."
+      ],
+      "tr": {
+        "en": "Where did you put my key yesterday? I cannot find it anywhere.",
+        "es": "¿Dónde pusiste mi llave ayer? No la encuentro por ningún lado."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f10",
+      "kind": "form",
+      "verb": "visz",
+      "person": "te + a/az",
+      "answer": "vidd",
+      "table": "imp-sz"
+    },
+    {
+      "id": "rendhagyo-igek-c11",
+      "sentence": "Tegnap este olyan fáradt voltam, hogy tízkor már ___.",
+      "options": [
+        "aludtam",
+        "alszom",
+        "aludtál"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tegnap este is past and voltam says 'I': the past of alszik uses the stem alud-, aludtam.",
+        "es": "Tegnap este es pasado y voltam dice «yo»: el pasado de alszik usa la raíz alud-, aludtam."
+      },
+      "wrong": {
+        "alszom": {
+          "en": "alszom is the present, 'I sleep'; tegnap needs the past.",
+          "es": "alszom es el presente, «duermo»; tegnap pide el pasado."
+        },
+        "aludtál": {
+          "en": "aludtál is 'you slept'; the sentence is about me (voltam).",
+          "es": "aludtál es «tú dormiste»; la frase es sobre mí (voltam)."
+        }
+      },
+      "examples": [
+        "Hétvégén sokáig aludtunk.",
+        "Tegnap este korán elaludtam."
+      ],
+      "tr": {
+        "en": "Last night I was so tired that I was already asleep at ten.",
+        "es": "Anoche estaba tan cansado que a las diez ya dormía."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f11",
+      "kind": "form",
+      "verb": "alszik",
+      "person": "én (past)",
+      "answer": "aludtam",
+      "table": "ik-past"
+    },
+    {
+      "id": "rendhagyo-igek-c12",
+      "sentence": "Már éjfél van, ___ le, holnap korán kell kelned.",
+      "options": [
+        "feküdj",
+        "fekszel",
+        "feküdjön"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A command to one friend: the stem feküd- plus j, feküdj. The prefix le follows the command.",
+        "es": "Una orden a un amigo: la raíz feküd- más j, feküdj. El prefijo le va detrás de la orden."
+      },
+      "wrong": {
+        "fekszel": {
+          "en": "fekszel is the present, 'you lie'; a command is never built on the present stem feksz-.",
+          "es": "fekszel es el presente, «tú te acuestas»; una orden nunca se forma con la raíz del presente feksz-."
+        },
+        "feküdjön": {
+          "en": "feküdjön is the command for Ön or ő; kelned shows that you speak to a friend (te).",
+          "es": "feküdjön es la orden para Ön o ő; kelned muestra que hablas con un amigo (te)."
+        }
+      },
+      "examples": [
+        "Feküdj le, ha fáradt vagy!",
+        "Ne feküdj le túl korán!"
+      ],
+      "tr": {
+        "en": "It is already midnight, go to bed, you have to get up early tomorrow.",
+        "es": "Ya es medianoche, acuéstate, mañana tienes que levantarte temprano."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-f12",
+      "kind": "form",
+      "verb": "jön",
+      "person": "ti",
+      "answer": "gyertek",
+      "accept": [
+        "jöjjetek"
+      ],
+      "table": "imp-ik"
+    },
+    {
+      "id": "rendhagyo-igek-c13",
+      "sentence": "Kérem, ___ be, az orvos már várja.",
+      "options": [
+        "jöjjön",
+        "gyere",
+        "jöjjetek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kérem is the formal register (Ön), so the command is the 3rd person form: jöjjön.",
+        "es": "Kérem es el registro formal (Ön), así que la orden es la forma de 3.ª persona: jöjjön."
+      },
+      "wrong": {
+        "gyere": {
+          "en": "gyere is the informal command to one friend (te); kérem asks for the formal form.",
+          "es": "gyere es la orden informal a un amigo (te); kérem pide la forma formal."
+        },
+        "jöjjetek": {
+          "en": "jöjjetek is the command to several friends (ti).",
+          "es": "jöjjetek es la orden a varios amigos (ti)."
+        }
+      },
+      "examples": [
+        "Jöjjön be, kérem!",
+        "Kérem, jöjjön vissza holnap!"
+      ],
+      "tr": {
+        "en": "Please come in, the doctor is already waiting for you.",
+        "es": "Pase, por favor, el doctor ya lo espera."
+      }
+    },
+    {
+      "id": "rendhagyo-igek-w04",
+      "kind": "why",
+      "es": "Mi mindig későn fekszünk le, mert este dolgozunk.",
+      "target": "fekszünk",
+      "tr": {
+        "en": "We always go to bed late, because we work in the evening.",
+        "es": "Siempre nos acostamos tarde, porque trabajamos por la noche."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Present, mi: the stem feksz- plus -ünk",
+            "es": "Presente, mi: la raíz feksz- más -ünk"
+          }
+        },
+        {
+          "text": {
+            "en": "Past, mi: feküdtünk",
+            "es": "Pasado, mi: feküdtünk"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Tegnap későn feküdtünk le; mindig (always) points to a habit in the present.",
+            "es": "Con esta regla la frase sería Tegnap későn feküdtünk le; mindig (siempre) apunta a un hábito en el presente."
+          }
+        },
+        {
+          "text": {
+            "en": "Present, ők: fekszenek",
+            "es": "Presente, ők: fekszenek"
+          },
+          "wrong": {
+            "en": "With this rule the subject would be ők: Ők későn fekszenek le. Here the subject is mi (dolgozunk).",
+            "es": "Con esta regla el sujeto sería ők: Ők későn fekszenek le. Aquí el sujeto es mi (dolgozunk)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "rendhagyo-igek-c14",
+      "sentence": "A gyerekek már ___, ezért halkan beszélünk.",
+      "options": [
+        "alszanak",
+        "alszik",
+        "alszunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekek is plural, 'they': the 3rd plural of alszik is alszanak.",
+        "es": "A gyerekek es plural, «ellos»: la 3.ª persona del plural de alszik es alszanak."
+      },
+      "wrong": {
+        "alszik": {
+          "en": "alszik is the 3rd singular, 'he or she sleeps'; a gyerekek are several.",
+          "es": "alszik es la 3.ª persona del singular, «él o ella duerme»; a gyerekek son varios."
+        },
+        "alszunk": {
+          "en": "alszunk is 'we sleep'; the sentence says that the children sleep while we speak quietly.",
+          "es": "alszunk es «dormimos»; la frase dice que los niños duermen mientras nosotros hablamos en voz baja."
+        }
+      },
+      "examples": [
+        "A gyerekek még alszanak.",
+        "Hétvégén sokáig alszanak."
+      ],
+      "tr": {
+        "en": "The children are already asleep, so we speak quietly.",
+        "es": "Los niños ya duermen, así que hablamos en voz baja."
+      }
+    }
+  ]
+}
