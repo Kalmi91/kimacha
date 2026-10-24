@@ -140,6 +140,48 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'relativos-complejos': 'exam',
   'leismo-laismo': 'exam',
   'marcadores-discursivos': 'core',
+  // --- Hungarian course (target hu), band from HU-TANTERV; A1 ---
+  'kiejtes-abc': 'core',
+  hangrend: 'core-plus',
+  'lenni-van': 'core-plus',
+  nevelok: 'core',
+  'szemelyes-nevmasok': 'core-plus',
+  'tobbes-szam': 'core',
+  'jelen-alanyi': 'core-plus',
+  'ik-igek': 'core',
+  targyrag: 'core-plus',
+  'jelen-targyas': 'core-plus',
+  'lak-lek': 'core',
+  'belso-helyhatarozok': 'core-plus',
+  'felszini-helyhatarozok': 'core-plus',
+  'kozelsegi-helyhatarozok': 'core',
+  'birtokos-szemelyjelek': 'core-plus',
+  'nekem-van': 'core-plus',
+  'birtokos-szerkezet': 'core',
+  kerdoszavak: 'core',
+  tagadas: 'core',
+  'szamok-ido': 'core',
+  'fonevi-igenev': 'core-plus',
+  'val-vel': 'core',
+  'reszes-eset': 'core',
+  melleknev: 'core',
+  // --- Hungarian course, A2 ---
+  'mult-ido': 'core-plus',
+  'jovo-ido': 'core',
+  igekotok: 'core-plus',
+  'igekoto-szorend': 'core-plus',
+  'felszolito-mod': 'core',
+  'felteteles-mod': 'core-plus',
+  'hat-het': 'core',
+  fokozas: 'core',
+  nevutok: 'core',
+  'mutato-nevmasok': 'core',
+  kotoszavak: 'core',
+  'vonatkozo-nevmasok': 'exam',
+  'szorend-fokusz': 'core',
+  'ul-ul-kent': 'core',
+  'ido-hatarozok': 'exam',
+  mennyiseg: 'exam',
 };
 
 export function getGrammarTier(topicId: string): GrammarTier {
@@ -193,21 +235,29 @@ export const GRAMMAR_PROGRESS_KEY = 'grammar-course';
 
 // Language key: 'es' (default) = the Spanish syllabus (data/grammar/syllabus.json, plus the Hungarian `hu` titles);
 // 'en' = the English syllabus from the English topic tree (lib/grammar/syllabusEn.ts);
-// 'hu' = no Hungarian grammar course yet: an empty syllabus (the course tab says it is coming).
+// 'hu' = the Hungarian course (data/grammar/syllabus-hu.json, A1 and A2, explanations in en / es).
 const EN_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
+const HU_SYLLABUS_LEVELS: Level[] = ['A1', 'A2'];
+
+let huSyllabusData: SyllabusData | null = null;
+
+function hungarianSyllabus(): SyllabusData {
+  if (!huSyllabusData) huSyllabusData = require('@/data/grammar/syllabus-hu.json');
+  return huSyllabusData!;
+}
 
 function syllabusOf(lang: string): SyllabusTopic[] {
-  if (lang === 'hu') return [];
+  if (lang === 'hu') return hungarianSyllabus().topics;
   return lang === 'en' ? EN_SYLLABUS : getGrammarSyllabus();
 }
 
 function unitsOf(lang: string): SyllabusUnit[] {
-  if (lang === 'hu') return [];
+  if (lang === 'hu') return hungarianSyllabus().units;
   return lang === 'en' ? EN_UNITS : getGrammarUnits();
 }
 
 export function syllabusLevels(lang = 'es'): Level[] {
-  if (lang === 'hu') return [];
+  if (lang === 'hu') return HU_SYLLABUS_LEVELS;
   return lang === 'en' ? EN_SYLLABUS_LEVELS : SYLLABUS_LEVELS;
 }
 

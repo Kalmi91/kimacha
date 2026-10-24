@@ -1,0 +1,881 @@
+{
+  "schema": 2,
+  "topic": "kiejtes-abc",
+  "level": "A1",
+  "title": { "en": "Sounds and letters: the Hungarian ABC", "es": "Sonidos y letras: el abecedario húngaro" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian is spelled the way it is said: each letter has one sound, always, so once you know the sounds you can read any word aloud. Three things are new. First, vowels come in short and long pairs (a and á, o and ó, ö and ő ...), and the accent only marks LENGTH, never stress. Second, some sounds are written with two or three signs (cs, sz, zs, gy, ny, ty, ly, dz, dzs), but each is one letter of the alphabet. Third, the stress is always on the FIRST syllable, and a doubled consonant (tt, ll, ssz) is held twice as long. The alphabet: a á b c cs d dz dzs e é f g gy h i í j k l ly m n ny o ó ö ő p q r s sz t ty u ú ü ű v w x y z zs.",
+        "es": "El húngaro se escribe como se dice: cada letra tiene un solo sonido, siempre, así que cuando conoces los sonidos puedes leer cualquier palabra en voz alta. Hay tres novedades. Primera: las vocales vienen en pares de corta y larga (a y á, o y ó, ö y ő ...), y el acento marca solo la LONGITUD, nunca la sílaba tónica. Segunda: algunos sonidos se escriben con dos o tres signos (cs, sz, zs, gy, ny, ty, ly, dz, dzs), pero cada uno es una sola letra del alfabeto. Tercera: la sílaba tónica es siempre la PRIMERA, y una consonante doble (tt, ll, ssz) se sostiene el doble de tiempo. El alfabeto: a á b c cs d dz dzs e é f g gy h i í j k l ly m n ny o ó ö ő p q r s sz t ty u ú ü ű v w x y z zs."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "vowel-words",
+      "noTableDeck": true,
+      "title": { "en": "Short and long vowels in real words", "es": "Vocales cortas y largas en palabras reales" },
+      "header": [
+        { "en": "Short", "es": "Corta" },
+        { "en": "Long", "es": "Larga" },
+        { "en": "Short in a word", "es": "Corta en una palabra" },
+        { "en": "Long in a word", "es": "Larga en una palabra" }
+      ],
+      "rows": [
+        ["a", "á", "alma", "város"],
+        ["e", "é", "kert", "kéz"],
+        ["i", "í", "ing", "híd"],
+        ["o", "ó", "bor", "hó"],
+        ["ö", "ő", "föld", "nő"],
+        ["u", "ú", "kutya", "út"],
+        ["ü", "ű", "fül", "fű"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "The vowels", "es": "Las vocales" },
+      "items": [
+        {
+          "text": {
+            "en": "a is short and slightly rounded, a little like the 'o' of 'hot' or the 'a' of 'what'. á is the open 'a' of 'father'. These two differ in sound as well as in length. e is the 'e' of 'bed'; é is longer and closer, like the 'ay' of 'say' without the glide.",
+            "es": "a es corta y un poco redondeada, entre «a» y «o». á es la «a» española de «casa». Estas dos suenan distinto además de durar distinto. e es la «e» de «pelo»; é es más larga y cerrada, como una «e» de «mesa» alargada."
+          },
+          "examples": [
+            { "es": "A város nagy.", "tr": { "en": "The city is big.", "es": "La ciudad es grande." } },
+            { "es": "A kert kicsi.", "tr": { "en": "The garden is small.", "es": "El jardín es pequeño." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "i, o and u are close to the Spanish vowels: i like the 'ee' of 'see' but short, o like the 'o' of 'more' without the glide, u like the 'oo' of 'book'. The long í, ó and ú are the same sounds held about twice as long.",
+            "es": "i, o y u son casi las vocales españolas: i como la «i» de «sí», o como la «o» de «solo», u como la «u» de «uno». Las largas í, ó y ú son los mismos sonidos sostenidos más o menos el doble."
+          },
+          "examples": [
+            { "es": "A hó hideg.", "tr": { "en": "The snow is cold.", "es": "La nieve está fría." } },
+            { "es": "Az út hosszú.", "tr": { "en": "The way is long.", "es": "El camino es largo." } },
+            { "es": "A híd régi.", "tr": { "en": "The bridge is old.", "es": "El puente es viejo." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "ö and ü do not exist in English or Spanish. ö: say 'e' with your lips rounded as for 'o' (like the French 'eu' in 'peur'). ü: say 'i' with your lips rounded as for 'u' (like the French 'u' in 'tu', or German ü). ő and ű are the same sounds held longer. Two dots mean short, two long strokes mean long.",
+            "es": "ö y ü no existen en español ni en inglés. ö: di «e» con los labios redondeados como para «o» (como «eu» en el francés «peur»). ü: di «i» con los labios redondeados como para «u» (como la «u» francesa de «tu» o la «ü» alemana). ő y ű son los mismos sonidos, más largos. Dos puntos = corta; dos rayitas = larga."
+          },
+          "examples": [
+            { "es": "A fű zöld.", "tr": { "en": "The grass is green.", "es": "El pasto es verde." } },
+            { "es": "A fül kicsi.", "tr": { "en": "The ear is small.", "es": "La oreja es pequeña." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "vowel-length",
+      "noTableDeck": true,
+      "title": { "en": "Short and long vowels", "es": "Vocales cortas y largas" },
+      "header": [
+        { "en": "Length", "es": "Longitud" },
+        { "en": "a", "es": "a" },
+        { "en": "e", "es": "e" },
+        { "en": "i", "es": "i" },
+        { "en": "o", "es": "o" },
+        { "en": "ö", "es": "ö" },
+        { "en": "u", "es": "u" },
+        { "en": "ü", "es": "ü" }
+      ],
+      "rows": [
+        ["rövid", "a", "e", "i", "o", "ö", "u", "ü"],
+        ["hosszú", "á", "é", "í", "ó", "ő", "ú", "ű"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "digraphs",
+      "noTableDeck": true,
+      "title": { "en": "Consonants to watch", "es": "Consonantes a las que hay que prestar atención" },
+      "header": [
+        { "en": "Letter", "es": "Letra" },
+        { "en": "Example", "es": "Ejemplo" },
+        { "en": "Example", "es": "Ejemplo" }
+      ],
+      "rows": [
+        ["cs", "család", "csirke"],
+        ["c", "cukor", "cipő"],
+        ["sz", "szia", "szék"],
+        ["s", "sapka", "só"],
+        ["zs", "zsemle", "zseb"],
+        ["gy", "gyerek", "ágy"],
+        ["ny", "anya", "nyár"],
+        ["ty", "kutya", "kutyák"],
+        ["ly", "melyik", "folyó"],
+        ["j", "jó", "január"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "How to say the consonants", "es": "Cómo decir las consonantes" },
+      "items": [
+        {
+          "text": {
+            "en": "sz is the plain 's' of 'sun'. s is the 'sh' of 'shoe'. It is the reverse of what the spelling suggests to an English or Spanish reader!",
+            "es": "sz es la «s» normal de «sol». s es la «sh» de «show». ¡Es lo contrario de lo que sugiere la ortografía!"
+          },
+          "examples": [
+            { "es": "Szia, Anna!", "tr": { "en": "Hi, Anna!", "es": "¡Hola, Anna!" } },
+            { "es": "A szék kicsi.", "tr": { "en": "The chair is small.", "es": "La silla es pequeña." } },
+            { "es": "A saláta friss.", "tr": { "en": "The salad is fresh.", "es": "La ensalada está fresca." } },
+            { "es": "A sör hideg.", "tr": { "en": "The beer is cold.", "es": "La cerveza está fría." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "cs is the 'ch' of 'church'. c is 'ts', as in 'cats' (not 'k' or 's').",
+            "es": "cs es la «ch» de «chico». c es «ts», como en «tsunami» (no «k» ni «s»)."
+          },
+          "examples": [
+            { "es": "A csirke finom.", "tr": { "en": "The chicken is tasty.", "es": "El pollo está rico." } },
+            { "es": "A család nagy.", "tr": { "en": "The family is big.", "es": "La familia es grande." } },
+            { "es": "A cipő új.", "tr": { "en": "The shoe is new.", "es": "El zapato es nuevo." } },
+            { "es": "A cím rövid.", "tr": { "en": "The address is short.", "es": "La dirección es corta." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "zs is the 's' of 'measure' (the French 'j' of 'je').",
+            "es": "zs es el sonido de la «j» francesa de «je» (o la «s» de «measure» en inglés)."
+          },
+          "examples": [
+            { "es": "A zsemle friss.", "tr": { "en": "The bread roll is fresh.", "es": "El bolillo está fresco." } },
+            { "es": "A zseb kicsi.", "tr": { "en": "The pocket is small.", "es": "El bolsillo es pequeño." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "gy, ny and ty are 'soft' sounds, made with the middle of the tongue against the palate. gy: a soft 'd' glued to 'y' (like 'du' in British 'duty'). ny: like the Spanish ñ, or the 'ny' of 'canyon'. ty: a soft 't' glued to 'y' (like 'tu' in British 'tune').",
+            "es": "gy, ny y ty son sonidos «suaves», hechos con la parte media de la lengua contra el paladar. gy: una «d» suave pegada a «y». ny: como la «ñ» de «año». ty: una «t» suave pegada a «y», casi una «ch» suave."
+          },
+          "examples": [
+            { "es": "A gyerek gyors.", "tr": { "en": "The child is fast.", "es": "El niño es rápido." } },
+            { "es": "Magyar vagyok.", "tr": { "en": "I am Hungarian.", "es": "Soy húngaro." } },
+            { "es": "A nyúl kicsi.", "tr": { "en": "The rabbit is small.", "es": "El conejo es pequeño." } },
+            { "es": "Nyolc kutya van.", "tr": { "en": "There are eight dogs.", "es": "Hay ocho perros." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "ly and j are both the 'y' of 'yes'. ly is just a spelling you have to remember (melyik, folyó): you cannot hear the difference.",
+            "es": "ly y j son las dos la «y» suave de «ya». ly es solo una ortografía que hay que memorizar (melyik, folyó): no se oye la diferencia."
+          },
+          "examples": [
+            { "es": "A folyó hosszú.", "tr": { "en": "The river is long.", "es": "El río es largo." } },
+            { "es": "Jó napot!", "tr": { "en": "Good day!", "es": "¡Buenos días!" } },
+            { "es": "Január hideg.", "tr": { "en": "January is cold.", "es": "Enero es frío." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "dz is 'ds' (as in 'kids'), dzs is the 'j' of 'jam'. Both are rare, mostly in loanwords.",
+            "es": "dz es «ds» pegadas; dzs es la «j» inglesa de «jam», como una «ch» con voz. Las dos son raras, sobre todo en palabras prestadas."
+          },
+          "examples": [
+            { "es": "A dzseki új.", "tr": { "en": "The jacket is new.", "es": "La chamarra es nueva." } },
+            { "es": "Kérek egy dzsemet.", "tr": { "en": "I'd like a jam.", "es": "Quisiera una mermelada." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "h is always pronounced, like English 'h' (Spanish speakers: it is NOT silent). r is a quick tap or roll, like the Spanish 'r' of 'pero'. v is like English 'v' (Spanish speakers: lip against teeth, it is not 'b'). g is always hard, as in 'go' (never like the Spanish 'j' in 'gente').",
+            "es": "h se pronuncia siempre, como la «h» inglesa de «hot» (¡NO es muda!). r es una vibración rápida, como la «r» de «pero». v se dice con el labio inferior contra los dientes, como la «v» inglesa (no es una «b»). g es siempre fuerte, como en «gato» (nunca como en «gente»)."
+          },
+          "examples": [
+            { "es": "A hal friss.", "tr": { "en": "The fish is fresh.", "es": "El pescado está fresco." } },
+            { "es": "A rizs finom.", "tr": { "en": "The rice is tasty.", "es": "El arroz está rico." } },
+            { "es": "A víz hideg.", "tr": { "en": "The water is cold.", "es": "El agua está fría." } },
+            { "es": "Gábor gyors.", "tr": { "en": "Gábor is fast.", "es": "Gábor es rápido." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "q, w, x and y appear only in foreign words and names. x sounds like 'ks': Mexikó.",
+            "es": "q, w, x e y aparecen solo en palabras y nombres extranjeros. x suena «ks»: Mexikó."
+          },
+          "examples": [
+            { "es": "Mexikóváros nagy város.", "tr": { "en": "Mexico City is a big city.", "es": "La Ciudad de México es una ciudad grande." } },
+            { "es": "Diego Mexikóban lakik.", "tr": { "en": "Diego lives in Mexico.", "es": "Diego vive en México." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Stress and length", "es": "Acento tónico y duración" },
+      "points": [
+        {
+          "text": {
+            "en": "The stress is always on the FIRST syllable, in every word: BU-da-pest, DE-bre-cen, SZE-ged, ME-xi-kó-vá-ros. It is only a little louder: do not stretch the vowel.",
+            "es": "La sílaba tónica es siempre la PRIMERA, en todas las palabras: BU-da-pest, DE-bre-cen, SZE-ged, ME-xi-kó-vá-ros. La fuerza es solo un poco mayor: no alargues la vocal."
+          },
+          "examples": [
+            { "es": "Budapest szép város.", "tr": { "en": "Budapest is a beautiful city.", "es": "Budapest es una ciudad hermosa." } },
+            { "es": "Mexikóváros nagy város.", "tr": { "en": "Mexico City is a big city.", "es": "La Ciudad de México es una ciudad grande." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "An accent mark is NOT a stress mark. A long vowel can sit anywhere in the word and is simply held longer: ME-xi-kó (the stress stays on ME), KÖ-szö-nöm.",
+            "es": "Un acento NO marca la sílaba tónica (a diferencia del español). Una vocal larga puede estar en cualquier lugar de la palabra y solo se sostiene más: ME-xi-kó (la fuerza se queda en ME), KÖ-szö-nöm."
+          },
+          "examples": [
+            { "es": "Köszönöm szépen.", "tr": { "en": "Thank you very much.", "es": "Muchas gracias." } },
+            { "es": "Diego Mexikóban lakik.", "tr": { "en": "Diego lives in Mexico.", "es": "Diego vive en México." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A doubled consonant is long: hold it about twice as long, like the 't' in 'hot tea' said smoothly. A doubled digraph doubles only its first letter: sz becomes ssz, cs becomes ccs, gy becomes ggy, ny becomes nny, ty becomes tty, zs becomes zzs.",
+            "es": "Una consonante doble es larga: sostenla más o menos el doble, como la «nn» de «innato». En un dígrafo doble solo se repite la primera letra: sz pasa a ssz, cs a ccs, gy a ggy, ny a nny, ty a tty, zs a zzs."
+          },
+          "examples": [
+            { "es": "Ott van a bank.", "tr": { "en": "The bank is there.", "es": "El banco está allí." } },
+            { "es": "Hosszú az út.", "tr": { "en": "The way is long.", "es": "El camino es largo." } },
+            { "es": "Mennyi ez?", "tr": { "en": "How much is this?", "es": "¿Cuánto es esto?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "consonant-length",
+      "noTableDeck": true,
+      "title": { "en": "Short and long consonants", "es": "Consonantes cortas y largas" },
+      "header": [
+        { "en": "Length", "es": "Longitud" },
+        { "en": "t", "es": "t" },
+        { "en": "l", "es": "l" },
+        { "en": "sz", "es": "sz" },
+        { "en": "cs", "es": "cs" },
+        { "en": "gy", "es": "gy" },
+        { "en": "ny", "es": "ny" }
+      ],
+      "rows": [
+        ["rövid", "t", "l", "sz", "cs", "gy", "ny"],
+        ["hosszú", "tt", "ll", "ssz", "ccs", "ggy", "nny"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "One sign changes the word", "es": "Un solo signo cambia la palabra" },
+      "pairs": [
+        {
+          "a": "hat",
+          "b": "hát",
+          "note": {
+            "en": "hat (short a) is 'six'. hát (long á) is 'back', the body part.",
+            "es": "hat (a corta) es «seis». hát (á larga) es «espalda», la parte del cuerpo."
+          },
+          "examples": [
+            { "es": "Hat kutya van.", "tr": { "en": "There are six dogs.", "es": "Hay seis perros." } },
+            { "es": "Fáj a hátam.", "tr": { "en": "My back hurts.", "es": "Me duele la espalda." } }
+          ]
+        },
+        {
+          "a": "öt",
+          "b": "őt",
+          "note": {
+            "en": "öt (short ö) is 'five'. őt (long ő) is 'him' or 'her'.",
+            "es": "öt (ö corta) es «cinco». őt (ő larga) es «a él» o «a ella»."
+          },
+          "examples": [
+            { "es": "Öt kutya van.", "tr": { "en": "There are five dogs.", "es": "Hay cinco perros." } },
+            { "es": "Látom őt.", "tr": { "en": "I see him (or her).", "es": "Lo veo (o la veo)." } }
+          ]
+        },
+        {
+          "a": "só",
+          "b": "szó",
+          "note": {
+            "en": "só (s = sh) is 'salt'. szó (sz = s) is 'word'.",
+            "es": "só (s = sh) es «sal». szó (sz = s) es «palabra»."
+          },
+          "examples": [
+            { "es": "A só fehér.", "tr": { "en": "The salt is white.", "es": "La sal es blanca." } },
+            { "es": "Egy új szó.", "tr": { "en": "A new word.", "es": "Una palabra nueva." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: the accent is not stress. If you know Spanish, you read an accent as 'stress here'. In Hungarian it only means 'long vowel', and the stress stays on the first syllable: Mexikó is ME-xi-kó, never me-xi-KÓ.",
+        "es": "Trampa clásica: el acento no es tónico. En español la tilde dice dónde cargar la voz; en húngaro solo significa «vocal larga», y la fuerza se queda en la primera sílaba: Mexikó es ME-xi-kó, nunca me-xi-KÓ."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Second trap, for everyone: sz and s are swapped. sz = the 's' of 'sun', s = the 'sh' of 'shoe'. So szia starts with an s sound, and sapka starts with an sh sound.",
+        "es": "Segunda trampa, para todos: sz y s están cambiadas. sz = la «s» de «sol», s = la «sh» de «show». Por eso szia empieza con sonido de s, y sapka empieza con sonido de sh."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian is written the way it is said. Vowels come in short and long pairs, for example «a» and «á», or «ö» and «ő». The accent only shows length, not stress. The stress is always on the first syllable: «Budapest», «Mexikó», «köszönöm». The letters «sz» and «s» are swapped compared with what you expect: «szia» starts with an s sound, and «sapka» starts with an sh sound. The pair «cs» sounds like ch, as in «csirke». A double consonant is held longer: «ott», «kedd», «mellett».",
+    "es": "El húngaro se escribe como se dice. Las vocales vienen en pares de corta y larga, por ejemplo «a» y «á», o «ö» y «ő». El acento solo marca la longitud, no la sílaba tónica. La sílaba tónica es siempre la primera: «Budapest», «Mexikó», «köszönöm». Las letras «sz» y «s» se leen al revés de lo que parece: «szia» empieza con sonido de s, y «sapka» empieza con sonido de sh. El par «cs» suena como ch, igual que en «csirke». Una consonante doble se sostiene más tiempo: «ott», «kedd», «mellett»."
+  },
+  "glossary": [
+    { "word": "dzsem", "gloss": { "en": "jam", "es": "mermelada" } },
+    { "word": "dzseki", "gloss": { "en": "jacket", "es": "chamarra" } }
+  ],
+  "items": [
+    {
+      "id": "kiejtes-abc-c01",
+      "sentence": "A ház ___.",
+      "options": ["új", "ujj", "uj"],
+      "correct": 0,
+      "why": {
+        "en": "The sentence needs 'new', and 'new' is új, with the long ú (accent).",
+        "es": "La frase necesita «nuevo», y «nuevo» es új, con la ú larga (con acento)."
+      },
+      "wrong": {
+        "ujj": {
+          "en": "With ujj the sentence would say the house is a finger: ujj (short u, double j) means 'finger'.",
+          "es": "Con ujj la frase diría que la casa es un dedo: ujj (u corta, jj doble) significa «dedo»."
+        },
+        "uj": {
+          "en": "uj is not a word: without the accent the u is short, but 'new' has a long ú.",
+          "es": "uj no es una palabra: sin acento la u es corta, pero «nuevo» lleva ú larga."
+        }
+      },
+      "examples": ["Az autó új.", "A cipő új."],
+      "tr": { "en": "The house is new.", "es": "La casa es nueva." }
+    },
+    {
+      "id": "kiejtes-abc-f01",
+      "kind": "form",
+      "verb": "ö",
+      "person": "hosszú",
+      "answer": "ő",
+      "table": "vowel-length"
+    },
+    {
+      "id": "kiejtes-abc-c02",
+      "sentence": "Szeretem ___.",
+      "options": ["őt", "öt", "ők"],
+      "correct": 0,
+      "why": {
+        "en": "őt (long ő) is 'him' or 'her' as the one you love; the long ő has the two long strokes.",
+        "es": "őt (ő larga) es «a él» o «a ella» como la persona a quien quieres; la ő larga lleva las dos rayitas."
+      },
+      "wrong": {
+        "öt": {
+          "en": "With öt (short ö) the sentence would say 'I love five': öt is the number five.",
+          "es": "Con öt (ö corta) la frase diría «quiero cinco»: öt es el número cinco."
+        },
+        "ők": {
+          "en": "ők is 'they' as a subject; 'him or her' as the one you love takes the ending -t: őt.",
+          "es": "ők es «ellos» como sujeto; «a él o a ella» como la persona a quien quieres lleva la terminación -t: őt."
+        }
+      },
+      "examples": ["Látom őt.", "Öt kutya van."],
+      "tr": { "en": "I love him (or her).", "es": "Lo quiero (o la quiero)." }
+    },
+    {
+      "id": "kiejtes-abc-f02",
+      "kind": "form",
+      "verb": "ü",
+      "person": "hosszú",
+      "answer": "ű",
+      "table": "vowel-length"
+    },
+    {
+      "id": "kiejtes-abc-c03",
+      "sentence": "A ___ zöld.",
+      "options": ["fű", "fül", "fü"],
+      "correct": 0,
+      "why": {
+        "en": "Grass is fű, with the long ű (two long strokes).",
+        "es": "El pasto es fű, con ű larga (dos rayitas)."
+      },
+      "wrong": {
+        "fül": {
+          "en": "With fül the sentence would say the ear is green: fül (short ü, then l) means 'ear'.",
+          "es": "Con fül la frase diría que la oreja es verde: fül (ü corta, luego l) significa «oreja»."
+        },
+        "fü": {
+          "en": "fü is not a word: the ü of 'grass' is long, so it takes the long strokes: fű.",
+          "es": "fü no es una palabra: la ü de «pasto» es larga, por eso lleva las rayitas: fű."
+        }
+      },
+      "examples": ["A nő magyar.", "A tó nagy."],
+      "tr": { "en": "The grass is green.", "es": "El pasto es verde." }
+    },
+    {
+      "id": "kiejtes-abc-f03",
+      "kind": "form",
+      "verb": "a",
+      "person": "hosszú",
+      "answer": "á",
+      "table": "vowel-length"
+    },
+    {
+      "id": "kiejtes-abc-w01",
+      "kind": "why",
+      "es": "Diego Mexikóban lakik.",
+      "target": "Mexikóban",
+      "tr": { "en": "Diego lives in Mexico.", "es": "Diego vive en México." },
+      "options": [
+        {
+          "text": {
+            "en": "The accent shows where the stress falls: me-xi-KÓ-ban",
+            "es": "El acento muestra dónde cae la fuerza: me-xi-KÓ-ban"
+          },
+          "wrong": {
+            "en": "With this rule the stress would land on kó, as a Spanish accent does; in Hungarian the stress stays on the first syllable: ME-xi-kó-ban.",
+            "es": "Con esta regla la fuerza caería en kó, como lo hace un acento en español; en húngaro la fuerza se queda en la primera sílaba: ME-xi-kó-ban."
+          }
+        },
+        {
+          "text": {
+            "en": "The accent marks a long ó; the stress is on the first syllable",
+            "es": "El acento marca una ó larga; la fuerza está en la primera sílaba"
+          }
+        },
+        {
+          "text": {
+            "en": "The accent shows the o is short",
+            "es": "El acento muestra que la o es corta"
+          },
+          "wrong": {
+            "en": "With this rule the o would be short; the accent is exactly the mark of a LONG vowel.",
+            "es": "Con esta regla la o sería corta; el acento es justo la marca de una vocal LARGA."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "kiejtes-abc-c04",
+      "sentence": "A ___ hideg.",
+      "options": ["hó", "hol", "ho"],
+      "correct": 0,
+      "why": {
+        "en": "Snow is hó, with the long ó (accent).",
+        "es": "La nieve es hó, con la ó larga (con acento)."
+      },
+      "wrong": {
+        "hol": {
+          "en": "With hol the sentence would use the question word 'where': hol means 'where', not 'snow'.",
+          "es": "Con hol la frase usaría la palabra «dónde»: hol significa «dónde», no «nieve»."
+        },
+        "ho": {
+          "en": "ho is not a word: the o of 'snow' is long, so it takes the accent: hó.",
+          "es": "ho no es una palabra: la o de «nieve» es larga, por eso lleva acento: hó."
+        }
+      },
+      "examples": ["A folyó hosszú.", "Az autó új."],
+      "tr": { "en": "The snow is cold.", "es": "La nieve está fría." }
+    },
+    {
+      "id": "kiejtes-abc-f04",
+      "kind": "form",
+      "verb": "e",
+      "person": "hosszú",
+      "answer": "é",
+      "table": "vowel-length"
+    },
+    {
+      "id": "kiejtes-abc-c05",
+      "sentence": "Kérek ___.",
+      "options": ["sót", "szót", "zsót"],
+      "correct": 0,
+      "why": {
+        "en": "Salt is só (here with the ending -t: sót), and the letter s is the 'sh' sound.",
+        "es": "La sal es só (aquí con la terminación -t: sót), y la letra s es el sonido «sh»."
+      },
+      "wrong": {
+        "szót": {
+          "en": "With szót the sentence would mean 'I ask for the floor' (to speak): szó means 'word', not 'salt'.",
+          "es": "Con szót la frase significaría «pido la palabra»: szó significa «palabra», no «sal»."
+        },
+        "zsót": {
+          "en": "zsót is not a word: zs is the sound of 'measure', and salt starts with the sh sound, written s.",
+          "es": "zsót no es una palabra: zs es el sonido de la «j» francesa, y «sal» empieza con el sonido sh, que se escribe s."
+        }
+      },
+      "examples": ["A só fehér.", "A sör hideg."],
+      "tr": { "en": "I'd like some salt.", "es": "Quisiera sal." }
+    },
+    {
+      "id": "kiejtes-abc-f05",
+      "kind": "form",
+      "verb": "o",
+      "person": "hosszú",
+      "answer": "ó",
+      "table": "vowel-length"
+    },
+    {
+      "id": "kiejtes-abc-c06",
+      "sentence": "A ___ piros.",
+      "options": ["sapka", "szapka", "csapka"],
+      "correct": 0,
+      "why": {
+        "en": "The word for 'cap' starts with the sh sound, and that sound is written s.",
+        "es": "La palabra para «gorro» empieza con el sonido sh, y ese sonido se escribe s."
+      },
+      "wrong": {
+        "szapka": {
+          "en": "szapka is not a word: sz is the plain 's' of 'sun', so it would sound 'sapka' with an s; the real word starts with sh.",
+          "es": "szapka no es una palabra: sz es la «s» normal de «sol», así que sonaría con s; la palabra real empieza con sh."
+        },
+        "csapka": {
+          "en": "csapka is not a word: cs is 'ch', so it would sound 'chapka'.",
+          "es": "csapka no es una palabra: cs es «ch», así que sonaría «chapka»."
+        }
+      },
+      "examples": ["A saláta friss.", "A sál új."],
+      "tr": { "en": "The cap is red.", "es": "El gorro es rojo." }
+    },
+    {
+      "id": "kiejtes-abc-f06",
+      "kind": "form",
+      "verb": "u",
+      "person": "hosszú",
+      "answer": "ú",
+      "table": "vowel-length"
+    },
+    {
+      "id": "kiejtes-abc-c07",
+      "sentence": "___, hogy vagy?",
+      "options": ["Szia", "Sia", "Csia"],
+      "correct": 0,
+      "why": {
+        "en": "The greeting is szia: sz is the plain 's' of 'sun'.",
+        "es": "El saludo es szia: sz es la «s» normal de «sol»."
+      },
+      "wrong": {
+        "Sia": {
+          "en": "Sia would be read 'shia' (s = sh), but the greeting starts with the s of 'sun', written sz.",
+          "es": "Sia se leería «shia» (s = sh), pero el saludo empieza con la «s» de «sol», que se escribe sz."
+        },
+        "Csia": {
+          "en": "Csia would be read 'chia' (cs = ch).",
+          "es": "Csia se leería «chia» (cs = ch)."
+        }
+      },
+      "examples": ["Szia, Kati!", "A szék új."],
+      "tr": { "en": "Hi, how are you?", "es": "Hola, ¿cómo estás?" }
+    },
+    {
+      "id": "kiejtes-abc-f07",
+      "kind": "form",
+      "verb": "sz",
+      "person": "hosszú",
+      "answer": "ssz",
+      "table": "consonant-length"
+    },
+    {
+      "id": "kiejtes-abc-c08",
+      "sentence": "A ___ édes.",
+      "options": ["cukor", "csukor", "szukor"],
+      "correct": 0,
+      "why": {
+        "en": "Sugar is cukor: the letter c is the 'ts' sound.",
+        "es": "El azúcar es cukor: la letra c es el sonido «ts»."
+      },
+      "wrong": {
+        "csukor": {
+          "en": "csukor is not a word: cs is 'ch', so it would sound 'chukor'; sugar starts with 'ts', written c.",
+          "es": "csukor no es una palabra: cs es «ch», así que sonaría «chukor»; el azúcar empieza con «ts», que se escribe c."
+        },
+        "szukor": {
+          "en": "szukor is not a word: sz is 's', so it would sound 'sukor'; sugar starts with 'ts', written c.",
+          "es": "szukor no es una palabra: sz es «s», así que sonaría «sukor»; el azúcar empieza con «ts», que se escribe c."
+        }
+      },
+      "examples": ["A cipő új.", "A cím rövid."],
+      "tr": { "en": "Sugar is sweet.", "es": "El azúcar es dulce." }
+    },
+    {
+      "id": "kiejtes-abc-w02",
+      "kind": "why",
+      "es": "A saláta friss.",
+      "target": "saláta",
+      "tr": { "en": "The salad is fresh.", "es": "La ensalada está fresca." },
+      "options": [
+        {
+          "text": {
+            "en": "The letter s is read like the 'ch' of 'church'",
+            "es": "La letra s se lee como la «ch» de «chico»"
+          },
+          "wrong": {
+            "en": "With this rule the word would sound 'chaláta'; the 'ch' sound is written cs.",
+            "es": "Con esta regla la palabra sonaría «chaláta»; el sonido «ch» se escribe cs."
+          }
+        },
+        {
+          "text": {
+            "en": "The letter s is read like the plain 's' of 'sun'",
+            "es": "La letra s se lee como la «s» normal de «sol»"
+          },
+          "wrong": {
+            "en": "With this rule the word would sound 'saláta' with an s; the plain s sound is written sz.",
+            "es": "Con esta regla la palabra sonaría «saláta» con s; el sonido s normal se escribe sz."
+          }
+        },
+        {
+          "text": {
+            "en": "The letter s is read like the 'sh' of 'shoe'",
+            "es": "La letra s se lee como la «sh» de «show»"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "kiejtes-abc-f08",
+      "kind": "form",
+      "verb": "cs",
+      "person": "hosszú",
+      "answer": "ccs",
+      "table": "consonant-length"
+    },
+    {
+      "id": "kiejtes-abc-c09",
+      "sentence": "A ___ a kertben van.",
+      "options": ["kutya", "kugya", "kucsa"],
+      "correct": 0,
+      "why": {
+        "en": "The dog is kutya, with ty: a soft 't' glued to 'y'.",
+        "es": "El perro es kutya, con ty: una «t» suave pegada a «y»."
+      },
+      "wrong": {
+        "kugya": {
+          "en": "kugya is not a word: gy is a soft 'd', so it would sound 'kudya'; the dog word has the soft t, ty.",
+          "es": "kugya no es una palabra: gy es una «d» suave, así que sonaría «kudya»; la palabra del perro tiene la «t» suave, ty."
+        },
+        "kucsa": {
+          "en": "kucsa is not a word: cs is 'ch', so it would sound 'kucha'.",
+          "es": "kucsa no es una palabra: cs es «ch», así que sonaría «kucha»."
+        }
+      },
+      "examples": ["A kutya gyors.", "A kutya kicsi."],
+      "tr": { "en": "The dog is in the garden.", "es": "El perro está en el jardín." }
+    },
+    {
+      "id": "kiejtes-abc-f09",
+      "kind": "form",
+      "verb": "gy",
+      "person": "hosszú",
+      "answer": "ggy",
+      "table": "consonant-length"
+    },
+    {
+      "id": "kiejtes-abc-c10",
+      "sentence": "Az ___ kedves.",
+      "options": ["anya", "anja", "annya"],
+      "correct": 0,
+      "why": {
+        "en": "Mother is anya, with ny: one soft sound, like the Spanish ñ.",
+        "es": "La madre es anya, con ny: un solo sonido suave, como la ñ."
+      },
+      "wrong": {
+        "anja": {
+          "en": "anja is not a word: n and j would be read one after the other, but ny is one soft sound.",
+          "es": "anja no es una palabra: n y j se leerían una tras otra, pero ny es un solo sonido suave."
+        },
+        "annya": {
+          "en": "annya is not a word: nny would be a long soft ny, but the word for mother has a short one.",
+          "es": "annya no es una palabra: nny sería una ny larga, pero la palabra para «madre» la tiene corta."
+        }
+      },
+      "examples": ["A nyár meleg.", "A nyúl kicsi."],
+      "tr": { "en": "The mother is kind.", "es": "La madre es amable." }
+    },
+    {
+      "id": "kiejtes-abc-f10",
+      "kind": "form",
+      "verb": "ny",
+      "person": "hosszú",
+      "answer": "nny",
+      "table": "consonant-length"
+    },
+    {
+      "id": "kiejtes-abc-w03",
+      "kind": "why",
+      "es": "Magyar vagyok.",
+      "target": "Magyar",
+      "tr": { "en": "I am Hungarian.", "es": "Soy húngaro." },
+      "options": [
+        {
+          "text": {
+            "en": "gy is one soft sound, a 'd' glued to 'y'",
+            "es": "gy es un solo sonido suave, una «d» pegada a «y»"
+          }
+        },
+        {
+          "text": {
+            "en": "g and y are read one after the other: mag-yar",
+            "es": "g e y se leen una tras otra: mag-yar"
+          },
+          "wrong": {
+            "en": "With this rule the word would have a hard g and then a y; but gy is one single soft sound.",
+            "es": "Con esta regla la palabra tendría una g fuerte y luego una y; pero gy es un solo sonido suave."
+          }
+        },
+        {
+          "text": {
+            "en": "gy is the same sound as ny",
+            "es": "gy es el mismo sonido que ny"
+          },
+          "wrong": {
+            "en": "With this rule the word would sound 'manyar'; ny is the ñ sound, while gy is a soft d.",
+            "es": "Con esta regla la palabra sonaría «mañar»; ny es el sonido ñ, mientras que gy es una d suave."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "kiejtes-abc-c11",
+      "sentence": "___ autó új?",
+      "options": ["Melyik", "Mejik", "Meyik"],
+      "correct": 0,
+      "why": {
+        "en": "'Which' is melyik: ly sounds like j, but this word is spelled with ly.",
+        "es": "«Cuál» es melyik: ly suena como j, pero esta palabra se escribe con ly."
+      },
+      "wrong": {
+        "Mejik": {
+          "en": "Mejik would sound the same, but the word is spelled with ly: melyik.",
+          "es": "Mejik sonaría igual, pero la palabra se escribe con ly: melyik."
+        },
+        "Meyik": {
+          "en": "Meyik is not a word: a lone y is not used for this sound; Hungarian writes it ly or j.",
+          "es": "Meyik no es una palabra: una y suelta no se usa para este sonido; el húngaro lo escribe ly o j."
+        }
+      },
+      "examples": ["A folyó hosszú.", "Melyik kutya nagy?"],
+      "tr": { "en": "Which car is new?", "es": "¿Cuál coche es nuevo?" }
+    },
+    {
+      "id": "kiejtes-abc-f11",
+      "kind": "form",
+      "verb": "t",
+      "person": "hosszú",
+      "answer": "tt",
+      "table": "consonant-length"
+    },
+    {
+      "id": "kiejtes-abc-c12",
+      "sentence": "A bolt a bank ___ van.",
+      "options": ["mellett", "melett", "mellet"],
+      "correct": 0,
+      "why": {
+        "en": "'Next to' is mellett: both the l and the t are long, so both are doubled.",
+        "es": "«Junto a» es mellett: la l y la t son largas, por eso las dos se duplican."
+      },
+      "wrong": {
+        "melett": {
+          "en": "melett has a single l and a single t, so it would be said short; the word needs both long (ll, tt).",
+          "es": "melett tiene una sola l y una sola t, así que se diría corto; la palabra necesita las dos largas (ll, tt)."
+        },
+        "mellet": {
+          "en": "mellet ends in a single t, which would be short; the final t is long too: mellett.",
+          "es": "mellet termina en una sola t, que sería corta; la t final también es larga: mellett."
+        }
+      },
+      "examples": ["Ott van a bank.", "Mennyi ez?"],
+      "tr": { "en": "The shop is next to the bank.", "es": "La tienda está junto al banco." }
+    },
+    {
+      "id": "kiejtes-abc-f12",
+      "kind": "form",
+      "verb": "l",
+      "person": "hosszú",
+      "answer": "ll",
+      "table": "consonant-length"
+    },
+    {
+      "id": "kiejtes-abc-c13",
+      "sentence": "Ma ___ van.",
+      "options": ["kedd", "ked", "kédd"],
+      "correct": 0,
+      "why": {
+        "en": "Tuesday is kedd, with a long d written dd.",
+        "es": "El martes es kedd, con una d larga escrita dd."
+      },
+      "wrong": {
+        "ked": {
+          "en": "ked is not a word: a single d would be short, but Tuesday has a long d.",
+          "es": "ked no es una palabra: una sola d sería corta, pero el martes tiene una d larga."
+        },
+        "kédd": {
+          "en": "kédd is not a word: the vowel of kedd is a short e; the long sound is the d (dd).",
+          "es": "kédd no es una palabra: la vocal de kedd es una e corta; lo largo es la d (dd)."
+        }
+      },
+      "examples": ["Ott van a bank.", "Hosszú az út."],
+      "tr": { "en": "Today is Tuesday.", "es": "Hoy es martes." }
+    },
+    {
+      "id": "kiejtes-abc-w04",
+      "kind": "why",
+      "es": "Ott van a bank.",
+      "target": "Ott",
+      "tr": { "en": "The bank is there.", "es": "El banco está allí." },
+      "options": [
+        {
+          "text": {
+            "en": "A double letter is read like a single one: ott = ot",
+            "es": "Una letra doble se lee como una sola: ott = ot"
+          },
+          "wrong": {
+            "en": "With this rule ott would sound like ot; Hungarian holds a doubled consonant about twice as long.",
+            "es": "Con esta regla ott sonaría como ot; el húngaro sostiene una consonante doble más o menos el doble."
+          }
+        },
+        {
+          "text": {
+            "en": "A doubled consonant is long: the t is held about twice as long",
+            "es": "Una consonante doble es larga: la t se sostiene más o menos el doble"
+          }
+        },
+        {
+          "text": {
+            "en": "The double t makes the vowel before it long",
+            "es": "La t doble alarga la vocal que tiene delante"
+          },
+          "wrong": {
+            "en": "With this rule the o would be long (ó); the double letter changes the consonant, and the o stays short.",
+            "es": "Con esta regla la o sería larga (ó); la letra doble cambia la consonante, y la o sigue siendo corta."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "kiejtes-abc-c14",
+      "sentence": "___ az idő?",
+      "options": ["Mennyi", "Menyi", "Menni"],
+      "correct": 0,
+      "why": {
+        "en": "'How much' is mennyi: the soft ny is long, so it is doubled: nny.",
+        "es": "«Cuánto» es mennyi: la ny suave es larga, por eso se duplica: nny."
+      },
+      "wrong": {
+        "Menyi": {
+          "en": "Menyi is not a word: its ny would be short, but 'how much' has a long soft ny (nny).",
+          "es": "Menyi no es una palabra: su ny sería corta, pero «cuánto» tiene una ny suave larga (nny)."
+        },
+        "Menni": {
+          "en": "With Menni the sentence would use 'to go': menni has a plain double n, not the soft ny.",
+          "es": "Con Menni la frase usaría «ir»: menni tiene una n doble normal, no la ny suave."
+        }
+      },
+      "examples": ["Mennyi ez?", "Hosszú az út."],
+      "tr": { "en": "What time is it?", "es": "¿Qué hora es?" }
+    }
+  ]
+}

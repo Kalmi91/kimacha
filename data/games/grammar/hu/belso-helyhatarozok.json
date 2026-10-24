@@ -1,0 +1,533 @@
+{
+  "schema": 2,
+  "topic": "belso-helyhatarozok",
+  "level": "A1",
+  "title": { "en": "Inside a place: -ban/-ben, -ba/-be, -ból/-ből", "es": "Dentro de un lugar: -ban/-ben, -ba/-be, -ból/-ből" },
+  "body": [
+    {
+      "kind": "text",
+      "text": { "en": "Hungarian does not put a small word like 'in', 'into' or 'out of' before the noun. It glues an ending to the end of the noun. For places you can be inside (a house, a shop, a room) there are three endings, one for each question: hol? (where? you stay) -ban/-ben, hova? (where to?) -ba/-be, honnan? (where from?) -ból/-ből. So a ház (the house) becomes a házban (in the house), a házba (into the house) and a házból (out of the house). The article a/az stays in front as its own word.", "es": "El húngaro no pone una palabrita como «en», «a» o «de» antes del sustantivo: pega una terminación al final de la palabra. Para lugares donde puedes estar dentro (una casa, una tienda, una habitación) hay tres terminaciones, una por cada pregunta: hol? (¿dónde?, te quedas) -ban/-ben, hova? (¿adónde?) -ba/-be, honnan? (¿de dónde?) -ból/-ből. Así, a ház (la casa) pasa a a házban (en la casa), a házba (a la casa) y a házból (de la casa). El artículo a/az se queda delante, como palabra aparte." }
+    },
+    {
+      "kind": "table",
+      "id": "belso-szavak",
+      "title": { "en": "The inside endings on common places", "es": "Las terminaciones «dentro» en lugares comunes" },
+      "header": [
+        { "en": "Word", "es": "Palabra" },
+        { "en": "hol? (in): -ban/-ben", "es": "hol? (en): -ban/-ben" },
+        { "en": "hova? (into): -ba/-be", "es": "hova? (a): -ba/-be" },
+        { "en": "honnan? (out of): -ból/-ből", "es": "honnan? (de): -ból/-ből" }
+      ],
+      "rows": [
+        ["ház", "házban", "házba", "házból"],
+        ["bolt", "boltban", "boltba", "boltból"],
+        ["város", "városban", "városba", "városból"],
+        ["szoba", "szobában", "szobába", "szobából"],
+        ["iskola", "iskolában", "iskolába", "iskolából"],
+        ["konyha", "konyhában", "konyhába", "konyhából"],
+        ["iroda", "irodában", "irodába", "irodából"],
+        ["szálloda", "szállodában", "szállodába", "szállodából"],
+        ["autó", "autóban", "autóba", "autóból"],
+        ["mozi", "moziban", "moziba", "moziból"],
+        ["kert", "kertben", "kertbe", "kertből"],
+        ["étterem", "étteremben", "étterembe", "étteremből"],
+        ["pékség", "pékségben", "pékségbe", "pékségből"],
+        ["pince", "pincében", "pincébe", "pincéből"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Back or front: which ending?", "es": "Posterior o anterior: ¿qué terminación?" },
+      "items": [
+        {
+          "text": { "en": "Back vowels (a á o ó u ú) in the word: -ban, -ba, -ból.", "es": "Vocales posteriores (a á o ó u ú) en la palabra: -ban, -ba, -ból." },
+          "examples": [
+            { "es": "A kórházban vagyok.", "tr": { "en": "I am in the hospital.", "es": "Estoy en el hospital." } },
+            { "es": "A parkban sétálok.", "tr": { "en": "I walk in the park.", "es": "Camino en el parque." } },
+            { "es": "Az autóban vagyok.", "tr": { "en": "I am in the car.", "es": "Estoy en el coche." } }
+          ]
+        },
+        {
+          "text": { "en": "Only front vowels (e é i í ö ő ü ű): -ben, -be, -ből. (A few words with only i, í or é take the back endings anyway: híd → hídban.)", "es": "Solo vocales anteriores (e é i í ö ő ü ű): -ben, -be, -ből. (Unas pocas palabras con solo i, í o é llevan igualmente las terminaciones posteriores: híd → hídban.)" },
+          "examples": [
+            { "es": "A kertben vagyok.", "tr": { "en": "I am in the garden.", "es": "Estoy en el jardín." } },
+            { "es": "A pékségben vagyok.", "tr": { "en": "I am in the bakery.", "es": "Estoy en la panadería." } },
+            { "es": "Az étteremben eszem.", "tr": { "en": "I eat in the restaurant.", "es": "Como en el restaurante." } }
+          ]
+        },
+        {
+          "text": { "en": "Mixed words (a back vowel plus i or e): the back vowel decides, and i and e do not count. mozi → moziban, iroda → irodában.", "es": "Palabras mixtas (una vocal posterior más i o e): decide la vocal posterior, y la i y la e no cuentan. mozi → moziban, iroda → irodában." },
+          "examples": [
+            { "es": "Anna a moziban van.", "tr": { "en": "Anna is at the cinema.", "es": "Anna está en el cine." } },
+            { "es": "Gábor az irodában dolgozik.", "tr": { "en": "Gábor works in the office.", "es": "Gábor trabaja en la oficina." } },
+            { "es": "A templomban vagyok.", "tr": { "en": "I am in the church.", "es": "Estoy en la iglesia." } }
+          ]
+        },
+        {
+          "text": { "en": "A final a or e gets longer before the ending: a → á, e → é. szoba → szobában, pince → pincében.", "es": "Una a o e final se alarga antes de la terminación: a → á, e → é. szoba → szobában, pince → pincében." },
+          "examples": [
+            { "es": "A szobában alszom.", "tr": { "en": "I sleep in the room.", "es": "Duermo en la habitación." } },
+            { "es": "A pincében van a bor.", "tr": { "en": "The wine is in the cellar.", "es": "El vino está en el sótano." } },
+            { "es": "Az iskolában tanulok.", "tr": { "en": "I study at school.", "es": "Estudio en la escuela." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "belso-hangrend",
+      "noTableDeck": true,
+      "title": { "en": "Back word or front word?", "es": "¿Palabra posterior o anterior?" },
+      "header": [
+        { "en": "Back word", "es": "Palabra posterior" },
+        { "en": "hol? (-ban)", "es": "hol? (-ban)" },
+        { "en": "Front word", "es": "Palabra anterior" },
+        { "en": "hol? (-ben)", "es": "hol? (-ben)" }
+      ],
+      "rows": [
+        ["ház", "házban", "kert", "kertben"],
+        ["bolt", "boltban", "étterem", "étteremben"],
+        ["szoba", "szobában", "pince", "pincében"],
+        ["mozi", "moziban", "pékség", "pékségben"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "hol? hova? honnan?", "es": "hol? hova? honnan?" },
+      "points": [
+        {
+          "text": { "en": "hol? (where?) asks where you are or what you do there. Use -ban/-ben with vagyok, van, lakom, dolgozom, alszom, eszem, főzök.", "es": "hol? (¿dónde?) pregunta dónde estás o qué haces ahí. Usa -ban/-ben con vagyok, van, lakom, dolgozom, alszom, eszem, főzök." },
+          "examples": [
+            { "es": "Az irodában dolgozom.", "tr": { "en": "I work in the office.", "es": "Trabajo en la oficina." } },
+            { "es": "A konyhában főzök.", "tr": { "en": "I cook in the kitchen.", "es": "Cocino en la cocina." } },
+            { "es": "A házban lakom.", "tr": { "en": "I live in the house.", "es": "Vivo en la casa." } }
+          ]
+        },
+        {
+          "text": { "en": "hova? (where to?) asks where you are heading. Use -ba/-be with movement verbs such as megyek (I go).", "es": "hova? (¿adónde?) pregunta hacia dónde vas. Usa -ba/-be con verbos de movimiento como megyek (voy)." },
+          "examples": [
+            { "es": "A boltba megyek.", "tr": { "en": "I am going to the shop.", "es": "Voy a la tienda." } },
+            { "es": "Az iskolába megyek.", "tr": { "en": "I am going to school.", "es": "Voy a la escuela." } },
+            { "es": "Az étterembe megyünk.", "tr": { "en": "We are going to the restaurant.", "es": "Vamos al restaurante." } }
+          ]
+        },
+        {
+          "text": { "en": "honnan? (where from?) asks which place you are coming out of. Use -ból/-ből with jövök (I come).", "es": "honnan? (¿de dónde?) pregunta de qué lugar vienes. Usa -ból/-ből con jövök (vengo)." },
+          "examples": [
+            { "es": "A boltból jövök.", "tr": { "en": "I am coming from the shop.", "es": "Vengo de la tienda." } },
+            { "es": "Az étteremből jövök.", "tr": { "en": "I am coming from the restaurant.", "es": "Vengo del restaurante." } },
+            { "es": "A szállodából jövünk.", "tr": { "en": "We are coming from the hotel.", "es": "Venimos del hotel." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "One letter changes the meaning", "es": "Una letra cambia el significado" },
+      "pairs": [
+        {
+          "a": "A boltban vagyok.",
+          "b": "A boltba megyek.",
+          "note": { "en": "The final n means you stay (-ban/-ben). No n means you move in (-ba/-be).", "es": "La n final significa que te quedas (-ban/-ben). Sin n significa que entras (-ba/-be)." },
+          "examples": [
+            { "es": "Az iskolában vagyok.", "tr": { "en": "I am at school.", "es": "Estoy en la escuela." } },
+            { "es": "Az iskolába megyek.", "tr": { "en": "I am going to school.", "es": "Voy a la escuela." } }
+          ]
+        },
+        {
+          "a": "A boltba megyek.",
+          "b": "A boltból jövök.",
+          "note": { "en": "-ba/-be goes into the place, -ból/-ből comes out of it.", "es": "-ba/-be entra en el lugar, -ból/-ből sale de él." },
+          "examples": [
+            { "es": "A kertbe megyek.", "tr": { "en": "I am going into the garden.", "es": "Voy al jardín." } },
+            { "es": "A kertből jövök.", "tr": { "en": "I am coming from the garden.", "es": "Vengo del jardín." } }
+          ]
+        },
+        {
+          "a": "A házban vagyok.",
+          "b": "A kertben vagyok.",
+          "note": { "en": "The vowel follows the word: back vowels give -ban, front vowels give -ben.", "es": "La vocal sigue a la palabra: las vocales posteriores dan -ban, las anteriores dan -ben." },
+          "examples": [
+            { "es": "A városban vagyok.", "tr": { "en": "I am in the city.", "es": "Estoy en la ciudad." } },
+            { "es": "Az étteremben vagyok.", "tr": { "en": "I am in the restaurant.", "es": "Estoy en el restaurante." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": { "en": "Classic trap: one small letter changes everything. A boltban vagyok (I am in the shop), but A boltba megyek (I am going to the shop). Check the verb: vagyok, van, lakom go with -ban/-ben; megyek goes with -ba/-be; jövök usually goes with -ból/-ből (A boltból jövök). Also remember that these endings are only for closed places: piac, utca, busz and állomás use other endings (next lesson), and otthon (at home), itt and ott take no ending at all.", "es": "Trampa clásica: una letra pequeña lo cambia todo. A boltban vagyok (estoy en la tienda), pero A boltba megyek (voy a la tienda). Revisa el verbo: vagyok, van, lakom van con -ban/-ben; megyek va con -ba/-be; jövök suele ir con -ból/-ből (A boltból jövök). Recuerda también que estas terminaciones son solo para lugares cerrados: piac, utca, busz y állomás usan otras (próxima lección), y otthon (en casa), itt y ott no llevan ninguna terminación." }
+    }
+  ],
+  "speak": { "en": "To say where a place is, Hungarian adds an ending to the place word. Use «ban» or «ben» to say where you are: «a házban», «a kertben». Drop the n to say where you are going: «a házba», «a kertbe». Use «ból» or «ből» to say where you come from: «a házból», «a kertből». Words with back vowels take the endings with the letter a, and words with front vowels take the endings with the letter e. Listen to the three together: «A boltban vagyok. A boltba megyek. A boltból jövök.»", "es": "Para decir dónde está un lugar, el húngaro añade una terminación a la palabra del lugar. Usa «ban» o «ben» para decir dónde estás: «a házban», «a kertben». Quita la n para decir adónde vas: «a házba», «a kertbe». Usa «ból» o «ből» para decir de dónde vienes: «a házból», «a kertből». Las palabras con vocales posteriores llevan las terminaciones con la letra a, y las de vocales anteriores las terminaciones con la letra e. Escucha las tres juntas: «A boltban vagyok. A boltba megyek. A boltból jövök.»" },
+  "glossary": [
+    {
+      "word": "Mexikóváros",
+      "gloss": { "en": "Mexico City", "es": "Ciudad de México" }
+    }
+  ],
+  "items": [
+    {
+      "id": "belso-helyhatarozok-c01",
+      "sentence": "Hol vagy? A ___ vagyok.",
+      "options": ["boltba", "boltban", "boltból"],
+      "correct": 1,
+      "why": { "en": "Hol? asks where you are, so you need the staying ending: A boltban vagyok. Bolt has o (a back vowel), so -ban.", "es": "Hol? pregunta dónde estás, así que necesitas la terminación de quedarse: A boltban vagyok. Bolt tiene o (vocal posterior), por eso -ban." },
+      "wrong": {
+        "boltba": { "en": "boltba is for moving into the shop (A boltba megyek); with vagyok you are already there.", "es": "boltba es para entrar en la tienda (A boltba megyek); con vagyok ya estás ahí." },
+        "boltból": { "en": "boltból means 'out of the shop' (A boltból jövök), not where you are now.", "es": "boltból significa «de la tienda» (A boltból jövök), no dónde estás ahora." }
+      },
+      "examples": ["A szobában vagyok.", "Az étteremben vagyok."],
+      "tr": { "en": "Where are you? I am in the shop.", "es": "¿Dónde estás? Estoy en la tienda." }
+    },
+    {
+      "id": "belso-helyhatarozok-f01",
+      "kind": "form",
+      "verb": "ház",
+      "person": "-ban/-ben",
+      "answer": "házban",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c02",
+      "sentence": "Hova mész? Az ___ megyek.",
+      "options": ["iskolába", "iskolában", "iskolából"],
+      "correct": 0,
+      "why": { "en": "Hova? asks where to, so you need the ending without n: -ba. The final a of iskola gets longer: iskolába.", "es": "Hova? pregunta adónde, así que necesitas la terminación sin n: -ba. La a final de iskola se alarga: iskolába." },
+      "wrong": {
+        "iskolában": { "en": "iskolában would mean 'in the school' (Az iskolában vagyok); here you are going there.", "es": "iskolában significaría «en la escuela» (Az iskolában vagyok); aquí vas hacia allá." },
+        "iskolából": { "en": "iskolából would mean 'out of school' (Az iskolából jövök).", "es": "iskolából significaría «de la escuela» (Az iskolából jövök)." }
+      },
+      "examples": ["A szobába megyek.", "A kertbe megyek."],
+      "tr": { "en": "Where are you going? I am going to school.", "es": "¿Adónde vas? Voy a la escuela." }
+    },
+    {
+      "id": "belso-helyhatarozok-f02",
+      "kind": "form",
+      "verb": "bolt",
+      "person": "-ba/-be",
+      "answer": "boltba",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c03",
+      "sentence": "Honnan jössz? A ___ jövök.",
+      "options": ["kertbe", "kertben", "kertből"],
+      "correct": 2,
+      "why": { "en": "Honnan? asks where you come from, so -ból/-ből. Kert has e (a front vowel), so -ből: kertből.", "es": "Honnan? pregunta de dónde vienes, así que -ból/-ből. Kert tiene e (vocal anterior), por eso -ből: kertből." },
+      "wrong": {
+        "kertbe": { "en": "kertbe means 'into the garden' (A kertbe megyek).", "es": "kertbe significa «al jardín» (A kertbe megyek)." },
+        "kertben": { "en": "kertben means 'in the garden' (A kertben vagyok), not where you come from.", "es": "kertben significa «en el jardín» (A kertben vagyok), no de dónde vienes." }
+      },
+      "examples": ["A házból jövök.", "A pékségből jövök."],
+      "tr": { "en": "Where are you coming from? I am coming from the garden.", "es": "¿De dónde vienes? Vengo del jardín." }
+    },
+    {
+      "id": "belso-helyhatarozok-f03",
+      "kind": "form",
+      "verb": "város",
+      "person": "-ból/-ből",
+      "answer": "városból",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-w01",
+      "kind": "why",
+      "es": "Az étteremben eszem.",
+      "target": "étteremben",
+      "tr": { "en": "I eat in the restaurant.", "es": "Como en el restaurante." },
+      "options": [
+        {
+          "text": { "en": "Back-vowel word, where I am: -ban", "es": "Palabra con vocales posteriores, dónde estoy: -ban" },
+          "wrong": { "en": "With this rule the word would be étteremban; étterem has only e (a front vowel), so it takes -ben.", "es": "Con esta regla la palabra sería étteremban; étterem solo tiene e (vocal anterior), así que lleva -ben." }
+        },
+        {
+          "text": { "en": "Front-vowel word, where I am: -ben", "es": "Palabra con vocales anteriores, dónde estoy: -ben" }
+        },
+        {
+          "text": { "en": "Moving into the place: -be", "es": "Entrar en el lugar: -be" },
+          "wrong": { "en": "With this rule the word would be étterembe ('into the restaurant'); eszem says I am eating there, so -ben.", "es": "Con esta regla la palabra sería étterembe («al restaurante»); eszem dice que como ahí, así que -ben." }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "belso-helyhatarozok-c04",
+      "sentence": "Az étterem___ eszem.",
+      "options": ["ban", "ben", "be"],
+      "correct": 1,
+      "why": { "en": "Étterem has only front vowels (e), so the ending is -ben: étteremben.", "es": "Étterem solo tiene vocales anteriores (e), por eso la terminación es -ben: étteremben." },
+      "wrong": {
+        "ban": { "en": "ban is for back-vowel words (házban); étterem has only e, so étteremban is wrong.", "es": "ban es para palabras con vocales posteriores (házban); étterem solo tiene e, así que étteremban es incorrecto." },
+        "be": { "en": "be would mean 'into the restaurant' (Az étterembe megyek); eszem says I am eating there.", "es": "be significaría «al restaurante» (Az étterembe megyek); eszem dice que como ahí." }
+      },
+      "examples": ["A kertben vagyok.", "A pékségben vagyok."],
+      "tr": { "en": "I eat in the restaurant.", "es": "Como en el restaurante." }
+    },
+    {
+      "id": "belso-helyhatarozok-f04",
+      "kind": "form",
+      "verb": "kert",
+      "person": "-ban/-ben",
+      "answer": "kertben",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c05",
+      "sentence": "A ház___ lakom.",
+      "options": ["ban", "ben", "ból"],
+      "correct": 0,
+      "why": { "en": "Ház has á (a back vowel), so the ending is -ban; lakom says where I live.", "es": "Ház tiene á (vocal posterior), por eso la terminación es -ban; lakom dice dónde vivo." },
+      "wrong": {
+        "ben": { "en": "ben is for front-vowel words (kertben); ház has a back vowel.", "es": "ben es para palabras con vocales anteriores (kertben); ház tiene una vocal posterior." },
+        "ból": { "en": "ból means 'out of' (A házból jövök); lakom says where I live, so the staying ending is needed.", "es": "ból significa «de» (A házból jövök); lakom dice dónde vivo, así que hace falta la terminación de quedarse." }
+      },
+      "examples": ["A városban lakom.", "A kórházban vagyok."],
+      "tr": { "en": "I live in the house.", "es": "Vivo en la casa." }
+    },
+    {
+      "id": "belso-helyhatarozok-f05",
+      "kind": "form",
+      "verb": "szoba",
+      "person": "-ba/-be",
+      "answer": "szobába",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c06",
+      "sentence": "A ___ alszom.",
+      "options": ["szobaban", "szobaben", "szobában"],
+      "correct": 2,
+      "why": { "en": "Szoba is a back-vowel word and its final a gets longer: szobában.", "es": "Szoba es una palabra con vocales posteriores y su a final se alarga: szobában." },
+      "wrong": {
+        "szobaban": { "en": "szobaban keeps a short a; the final a of the word must become á before the ending.", "es": "szobaban deja una a corta; la a final de la palabra debe volverse á antes de la terminación." },
+        "szobaben": { "en": "szobaben uses the front ending, but szoba has o and a (back vowels), so it is -ban, with á.", "es": "szobaben usa la terminación anterior, pero szoba tiene o y a (vocales posteriores), así que es -ban, con á." }
+      },
+      "examples": ["A konyhában főzök.", "Az irodában dolgozom."],
+      "tr": { "en": "I sleep in the room.", "es": "Duermo en la habitación." }
+    },
+    {
+      "id": "belso-helyhatarozok-f06",
+      "kind": "form",
+      "verb": "iskola",
+      "person": "-ból/-ből",
+      "answer": "iskolából",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c07",
+      "sentence": "A bor a ___ van.",
+      "options": ["pinceben", "pincében", "pincéban"],
+      "correct": 1,
+      "why": { "en": "Pince has i and e (front vowels), so -ben, and the final e gets longer: pincében.", "es": "Pince tiene i y e (vocales anteriores), así que -ben, y la e final se alarga: pincében." },
+      "wrong": {
+        "pinceben": { "en": "pinceben keeps a short e; the final e must become é before the ending.", "es": "pinceben deja una e corta; la e final debe volverse é antes de la terminación." },
+        "pincéban": { "en": "pincéban uses the back ending, but pince has only front vowels, so -ben.", "es": "pincéban usa la terminación posterior, pero pince solo tiene vocales anteriores, así que -ben." }
+      },
+      "examples": ["A víz a konyhában van.", "A kenyér a boltban van."],
+      "tr": { "en": "The wine is in the cellar.", "es": "El vino está en el sótano." }
+    },
+    {
+      "id": "belso-helyhatarozok-c08",
+      "sentence": "Anna a ___ van.",
+      "options": ["moziban", "moziben", "moziba"],
+      "correct": 0,
+      "why": { "en": "Mozi has a back vowel (o) and an i, which does not count: moziban.", "es": "Mozi tiene una vocal posterior (o) y una i, que no cuenta: moziban." },
+      "wrong": {
+        "moziben": { "en": "moziben uses the front ending, but the o in mozi is a back vowel and the i does not decide.", "es": "moziben usa la terminación anterior, pero la o de mozi es una vocal posterior y la i no decide." },
+        "moziba": { "en": "moziba would mean 'into the cinema' (A moziba megyek); with van she is already there.", "es": "moziba significaría «al cine» (A moziba megyek); con van ella ya está ahí." }
+      },
+      "examples": ["Az irodában vagyok.", "A templomban vagyok."],
+      "tr": { "en": "Anna is at the cinema.", "es": "Anna está en el cine." }
+    },
+    {
+      "id": "belso-helyhatarozok-w02",
+      "kind": "why",
+      "es": "A boltba megyek.",
+      "target": "boltba",
+      "tr": { "en": "I am going to the shop.", "es": "Voy a la tienda." },
+      "options": [
+        {
+          "text": { "en": "Where I am: -ban", "es": "Dónde estoy: -ban" },
+          "wrong": { "en": "With this rule the word would be boltban ('in the shop'); megyek is movement, so the ending has no n.", "es": "Con esta regla la palabra sería boltban («en la tienda»); megyek es movimiento, así que la terminación no lleva n." }
+        },
+        {
+          "text": { "en": "Coming out of the place: -ból", "es": "Salir del lugar: -ból" },
+          "wrong": { "en": "With this rule the word would be boltból ('out of the shop'), but megyek means I go towards it.", "es": "Con esta regla la palabra sería boltból («de la tienda»), pero megyek significa que voy hacia ella." }
+        },
+        {
+          "text": { "en": "Going into the place, back-vowel word: -ba", "es": "Ir hacia dentro del lugar, palabra posterior: -ba" }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "belso-helyhatarozok-f07",
+      "kind": "form",
+      "verb": "étterem",
+      "person": "-ba/-be",
+      "answer": "étterembe",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c09",
+      "sentence": "Hova mész? A boltba ___.",
+      "options": ["vagyok", "jövök", "megyek"],
+      "correct": 2,
+      "why": { "en": "-ba shows the direction into the shop, so you need a movement verb: megyek (I go).", "es": "-ba muestra la dirección hacia dentro de la tienda, así que necesitas un verbo de movimiento: megyek (voy)." },
+      "wrong": {
+        "vagyok": { "en": "vagyok goes with -ban: A boltban vagyok (I am in the shop).", "es": "vagyok va con -ban: A boltban vagyok (estoy en la tienda)." },
+        "jövök": { "en": "jövök answers Honnan jössz? (A boltból jövök, I come from the shop); the question here is Hova mész?", "es": "jövök contesta a Honnan jössz? (A boltból jövök, vengo de la tienda); aquí la pregunta es Hova mész?" }
+      },
+      "examples": ["Az iskolába megyek.", "A városba megyek."],
+      "tr": { "en": "Where are you going? I am going to the shop.", "es": "¿Adónde vas? Voy a la tienda." }
+    },
+    {
+      "id": "belso-helyhatarozok-f08",
+      "kind": "form",
+      "verb": "pince",
+      "person": "-ban/-ben",
+      "answer": "pincében",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c10",
+      "sentence": "Honnan jössz? A szállodából ___.",
+      "options": ["megyek", "jövök", "vagyok"],
+      "correct": 1,
+      "why": { "en": "-ból shows coming out of the hotel, so jövök (I come).", "es": "-ból muestra que sales o vienes del hotel, así que jövök (vengo)." },
+      "wrong": {
+        "megyek": { "en": "megyek does not answer Honnan jössz?; it goes with -ba/-be: A szállodába megyek (I am going to the hotel).", "es": "megyek no contesta a Honnan jössz?; va con -ba/-be: A szállodába megyek (voy al hotel)." },
+        "vagyok": { "en": "vagyok goes with -ban: A szállodában vagyok (I am in the hotel).", "es": "vagyok va con -ban: A szállodában vagyok (estoy en el hotel)." }
+      },
+      "examples": ["A pékségből jövök.", "Az étteremből jövök."],
+      "tr": { "en": "Where are you coming from? I am coming from the hotel.", "es": "¿De dónde vienes? Vengo del hotel." }
+    },
+    {
+      "id": "belso-helyhatarozok-c11",
+      "sentence": "Hova mentek? Ma a városba ___.",
+      "options": ["megyünk", "vagyunk", "jövünk"],
+      "correct": 0,
+      "why": { "en": "-ba means going into the city, so megyünk (we go).", "es": "-ba significa ir hacia la ciudad, así que megyünk (vamos)." },
+      "wrong": {
+        "vagyunk": { "en": "vagyunk goes with -ban/-ben: A városban vagyunk (we are in the city).", "es": "vagyunk va con -ban/-ben: A városban vagyunk (estamos en la ciudad)." },
+        "jövünk": { "en": "jövünk answers Honnan jöttök? (A városból jövünk, we come from the city); the question here is Hova mentek?", "es": "jövünk contesta a Honnan jöttök? (A városból jövünk, venimos de la ciudad); aquí la pregunta es Hova mentek?" }
+      },
+      "examples": ["Az étterembe megyünk.", "A moziba megyünk."],
+      "tr": { "en": "Where are you (all) going? Today we are going to the city.", "es": "¿Adónde van ustedes? Hoy vamos a la ciudad." }
+    },
+    {
+      "id": "belso-helyhatarozok-w03",
+      "kind": "why",
+      "es": "A szobában alszom.",
+      "target": "szobában",
+      "tr": { "en": "I sleep in the room.", "es": "Duermo en la habitación." },
+      "options": [
+        {
+          "text": { "en": "Front-vowel word: -ben", "es": "Palabra con vocales anteriores: -ben" },
+          "wrong": { "en": "With this rule the word would be szobaben; szoba has o and a (back vowels), so it is -ban.", "es": "Con esta regla la palabra sería szobaben; szoba tiene o y a (vocales posteriores), así que es -ban." }
+        },
+        {
+          "text": { "en": "Back-vowel word, where I am: -ban, and the final a gets longer (á)", "es": "Palabra con vocales posteriores, dónde estoy: -ban, y la a final se alarga (á)" }
+        },
+        {
+          "text": { "en": "Moving into the place: -ba", "es": "Entrar en el lugar: -ba" },
+          "wrong": { "en": "With this rule the word would be szobába ('into the room'); alszom says where I sleep, so -ban.", "es": "Con esta regla la palabra sería szobába («a la habitación»); alszom dice dónde duermo, así que -ban." }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "belso-helyhatarozok-f09",
+      "kind": "form",
+      "verb": "mozi",
+      "person": "-ból/-ből",
+      "answer": "moziból",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c12",
+      "sentence": "Hol dolgozol? Az ___ dolgozom.",
+      "options": ["irodába", "irodából", "irodában"],
+      "correct": 2,
+      "why": { "en": "Hol? asks where you work, so the staying ending: irodában (back word, and the final a gets longer).", "es": "Hol? pregunta dónde trabajas, así que la terminación de quedarse: irodában (palabra posterior, y la a final se alarga)." },
+      "wrong": {
+        "irodába": { "en": "irodába would mean 'into the office' (Az irodába megyek); dolgozom says where I work.", "es": "irodába significaría «a la oficina» (Az irodába megyek); dolgozom dice dónde trabajo." },
+        "irodából": { "en": "irodából would mean 'out of the office' (Az irodából jövök).", "es": "irodából significaría «de la oficina» (Az irodából jövök)." }
+      },
+      "examples": ["A boltban dolgozom.", "A kórházban dolgozom."],
+      "tr": { "en": "Where do you work? I work in the office.", "es": "¿Dónde trabajas? Trabajo en la oficina." }
+    },
+    {
+      "id": "belso-helyhatarozok-f10",
+      "kind": "form",
+      "verb": "konyha",
+      "person": "-ban/-ben",
+      "answer": "konyhában",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c13",
+      "sentence": "Lupita ___ lakik.",
+      "options": ["Mexikóvárosben", "Mexikóvárosban", "Mexikóvárosba"],
+      "correct": 1,
+      "why": { "en": "Mexikóváros ends in város, with the back vowels á and o, so -ban: Mexikóvárosban.", "es": "Mexikóváros termina en város, con las vocales posteriores á y o, así que -ban: Mexikóvárosban." },
+      "wrong": {
+        "Mexikóvárosben": { "en": "Mexikóvárosben uses the front ending, but város has back vowels (á, o).", "es": "Mexikóvárosben usa la terminación anterior, pero város tiene vocales posteriores (á, o)." },
+        "Mexikóvárosba": { "en": "Mexikóvárosba would mean 'to Mexico City' (Mexikóvárosba költözöm); lakik says where she lives.", "es": "Mexikóvárosba significaría «a la Ciudad de México» (Mexikóvárosba költözöm); lakik dice dónde vive." }
+      },
+      "examples": ["A városban lakom.", "A házban lakom."],
+      "tr": { "en": "Lupita lives in Mexico City.", "es": "Lupita vive en la Ciudad de México." }
+    },
+    {
+      "id": "belso-helyhatarozok-f11",
+      "kind": "form",
+      "verb": "pékség",
+      "person": "-ba/-be",
+      "answer": "pékségbe",
+      "table": "belso-szavak"
+    },
+    {
+      "id": "belso-helyhatarozok-c14",
+      "sentence": "___ jössz? A kertből jövök.",
+      "options": ["Honnan", "Hol", "Hova"],
+      "correct": 0,
+      "why": { "en": "A kertből jövök answers honnan? (where from?).", "es": "A kertből jövök contesta a honnan? (¿de dónde?)." },
+      "wrong": {
+        "Hol": { "en": "Hol? would be answered with A kertben vagyok (where you are).", "es": "Hol? se contestaría con A kertben vagyok (dónde estás)." },
+        "Hova": { "en": "Hova? would be answered with A kertbe megyek (where you are going).", "es": "Hova? se contestaría con A kertbe megyek (adónde vas)." }
+      },
+      "examples": ["Honnan jössz?", "Hova mész?"],
+      "tr": { "en": "Where are you coming from? I am coming from the garden.", "es": "¿De dónde vienes? Vengo del jardín." }
+    },
+    {
+      "id": "belso-helyhatarozok-w04",
+      "kind": "why",
+      "es": "Anna a moziban van.",
+      "target": "moziban",
+      "tr": { "en": "Anna is at the cinema.", "es": "Anna está en el cine." },
+      "options": [
+        {
+          "text": { "en": "Mixed word: the back vowel o decides, the i does not count: -ban", "es": "Palabra mixta: decide la vocal posterior o, la i no cuenta: -ban" }
+        },
+        {
+          "text": { "en": "Front-vowel word, because of the i: -ben", "es": "Palabra con vocales anteriores, por la i: -ben" },
+          "wrong": { "en": "With this rule the word would be moziben; the i is neutral and does not decide, the back vowel o does.", "es": "Con esta regla la palabra sería moziben; la i es neutra y no decide, decide la vocal posterior o." }
+        },
+        {
+          "text": { "en": "Coming out of the place: -ból", "es": "Salir del lugar: -ból" },
+          "wrong": { "en": "With this rule the word would be moziból ('from the cinema'); van says where Anna is, so the staying ending is needed.", "es": "Con esta regla la palabra sería moziból («del cine»); van dice dónde está Anna, así que hace falta la terminación de quedarse." }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "belso-helyhatarozok-f12",
+      "kind": "form",
+      "verb": "szálloda",
+      "person": "-ból/-ből",
+      "answer": "szállodából",
+      "table": "belso-szavak"
+    }
+  ]
+}

@@ -361,7 +361,8 @@ export function wordCellsForLesson(
   if (!lesson) return [];
   // the lesson itself asks for no word deck (lesson-level switch-off).
   if (lesson.noWordDeck) return [];
-  // there is no Hungarian grammar course yet, so no lesson has a word deck for the hu target.
+  // The Hungarian course (target hu) has no word deck yet: the cards would come from the Spanish PCIC and show Spanish.
+  // Its table deck is off too (tableCellsForLesson only builds tables with Spanish person rows; huCourse.test.ts guards both).
   if (learnedLang === 'hu') return [];
   // in the es→en direction the deck is built from the English vocabulary.
   if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);

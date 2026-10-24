@@ -1,0 +1,1053 @@
+{
+  "schema": 2,
+  "topic": "reszes-eset",
+  "level": "A1",
+  "title": {
+    "en": "To / for someone: -nak / -nek",
+    "es": "A / para alguien: -nak / -nek"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The ending -nak / -nek marks the person who RECEIVES or BENEFITS: Annának adok egy könyvet (I give Anna a book). It is the same ending you met in nekem van. Vowel harmony: -nak after back vowels, -nek after front vowels. The consonant never changes, but a final -a lengthens: Anna becomes Annának. With a pronoun the ending melts in: nekem, neked, neki, nekünk, nektek, nekik.",
+        "es": "La terminación -nak / -nek marca a la persona que RECIBE o SE BENEFICIA: Annának adok egy könyvet (le doy un libro a Anna). Es la misma terminación de nekem van. Armonía vocálica: -nak tras vocales posteriores, -nek tras anteriores. La consonante nunca cambia, pero una -a final se alarga: Anna pasa a Annának. Con un pronombre la terminación se funde: nekem, neked, neki, nekünk, nektek, nekik."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "reszes-forms",
+      "noTableDeck": true,
+      "title": {
+        "en": "Adding -nak / -nek",
+        "es": "Añadir -nak / -nek"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "To / for",
+          "es": "A / para"
+        }
+      ],
+      "rows": [
+        [
+          "Anna",
+          "-nak",
+          "Annának"
+        ],
+        [
+          "Péter",
+          "-nek",
+          "Péternek"
+        ],
+        [
+          "Kati",
+          "-nak",
+          "Katinak"
+        ],
+        [
+          "Gábor",
+          "-nak",
+          "Gábornak"
+        ],
+        [
+          "Lupita",
+          "-nak",
+          "Lupitának"
+        ],
+        [
+          "anya",
+          "-nak",
+          "anyának"
+        ],
+        [
+          "tanár",
+          "-nak",
+          "tanárnak"
+        ],
+        [
+          "barát",
+          "-nak",
+          "barátnak"
+        ],
+        [
+          "főnök",
+          "-nek",
+          "főnöknek"
+        ],
+        [
+          "gyerek",
+          "-nek",
+          "gyereknek"
+        ],
+        [
+          "barátnő",
+          "-nek",
+          "barátnőnek"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "reszes-pronouns",
+      "title": {
+        "en": "To me, to you...",
+        "es": "A mí, a ti..."
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "to / for (-nak/-nek)",
+          "es": "a / para (-nak/-nek)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "nekem"
+        ],
+        [
+          "te",
+          "neked"
+        ],
+        [
+          "ő",
+          "neki"
+        ],
+        [
+          "mi",
+          "nekünk"
+        ],
+        [
+          "ti",
+          "nektek"
+        ],
+        [
+          "ők",
+          "nekik"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "What does -nak / -nek do?",
+        "es": "¿Qué hace -nak / -nek?"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Verbs with a receiver: ad (give), küld (send), ír (write), mond (say). The receiver takes -nak / -nek; the thing given or sent keeps its own ending, for example -t.",
+            "es": "Verbos con destinatario: ad (dar), küld (enviar), ír (escribir), mond (decir). El destinatario lleva -nak / -nek; lo que se da o se envía conserva su propia terminación, por ejemplo -t. Es el «a» o el «le» del español: le doy un libro a Anna."
+          },
+          "examples": [
+            {
+              "es": "Adok Annának egy könyvet.",
+              "tr": {
+                "en": "I give Anna a book.",
+                "es": "Le doy un libro a Anna."
+              }
+            },
+            {
+              "es": "Küldök Péternek egy üzenetet.",
+              "tr": {
+                "en": "I send Péter a message.",
+                "es": "Le envío un mensaje a Péter."
+              }
+            },
+            {
+              "es": "Levelet írok Katinak.",
+              "tr": {
+                "en": "I write a letter to Kati.",
+                "es": "Le escribo una carta a Kati."
+              }
+            },
+            {
+              "es": "Mit mondasz Gábornak?",
+              "tr": {
+                "en": "What do you say to Gábor?",
+                "es": "¿Qué le dices a Gábor?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "segít (help) and válaszol (answer) also want -nak / -nek. English says 'help Anna' with no little word, so it is easy to add -t by mistake.",
+            "es": "segít (ayudar) y válaszol (responder) también piden -nak / -nek, igual que el español «ayudar a Anna»."
+          },
+          "examples": [
+            {
+              "es": "Segítek Annának.",
+              "tr": {
+                "en": "I help Anna.",
+                "es": "Ayudo a Anna."
+              }
+            },
+            {
+              "es": "A tanár segít a diáknak.",
+              "tr": {
+                "en": "The teacher helps the student.",
+                "es": "El profesor ayuda al estudiante."
+              }
+            },
+            {
+              "es": "Válaszolok Péternek.",
+              "tr": {
+                "en": "I answer Péter.",
+                "es": "Le respondo a Péter."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a pronoun the ending melts in: nekem, neked, neki, nekünk, nektek, nekik. neki = to him and to her.",
+            "es": "Con un pronombre la terminación se funde: nekem (me, a mí), neked (te), neki (le), nekünk (nos), nektek (les, a ustedes), nekik (les, a ellos). neki = a él y a ella."
+          },
+          "examples": [
+            {
+              "es": "Küldök neked egy üzenetet.",
+              "tr": {
+                "en": "I send you a message.",
+                "es": "Te envío un mensaje."
+              }
+            },
+            {
+              "es": "Adok nekik egy ajándékot.",
+              "tr": {
+                "en": "I give them a present.",
+                "es": "Les doy un regalo."
+              }
+            },
+            {
+              "es": "Segítesz nekem?",
+              "tr": {
+                "en": "Will you help me?",
+                "es": "¿Me ayudas?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The owner in \"X has Y\": -nak / -nek + van or nincs, the same ending as in nekem van. The thing owned takes the possessive ending.",
+            "es": "El poseedor en «X tiene Y»: -nak / -nek + van o nincs, la misma terminación de nekem van. La cosa poseída lleva la terminación posesiva."
+          },
+          "examples": [
+            {
+              "es": "Annának van egy autója.",
+              "tr": {
+                "en": "Anna has a car.",
+                "es": "Anna tiene un coche."
+              }
+            },
+            {
+              "es": "Katinak nincs ideje.",
+              "tr": {
+                "en": "Kati has no time.",
+                "es": "Kati no tiene tiempo."
+              }
+            },
+            {
+              "es": "Péternek van egy kutyája.",
+              "tr": {
+                "en": "Péter has a dog.",
+                "es": "Péter tiene un perro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "To, with or from?",
+        "es": "¿A, con o de?"
+      },
+      "pairs": [
+        {
+          "a": "Segítek Annának.",
+          "b": "Annával megyek.",
+          "note": {
+            "en": "-nak / -nek: TO or FOR Anna (she receives). -val / -vel: WITH Anna (she goes along).",
+            "es": "-nak / -nek: A o PARA Anna (ella recibe). -val / -vel: CON Anna (ella va contigo)."
+          },
+          "examples": [
+            {
+              "es": "Küldök Péternek egy levelet.",
+              "tr": {
+                "en": "I send Péter a letter.",
+                "es": "Le envío una carta a Péter."
+              }
+            },
+            {
+              "es": "Péterrel megyek moziba.",
+              "tr": {
+                "en": "I am going to the cinema with Péter.",
+                "es": "Voy al cine con Péter."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Küldök Annának egy üzenetet.",
+          "b": "Annától kapok egy üzenetet.",
+          "note": {
+            "en": "-nak / -nek: the message goes TO Anna. -tól / -től: the message comes FROM Anna.",
+            "es": "-nak / -nek: el mensaje va A Anna. -tól / -től: el mensaje viene DE Anna."
+          },
+          "examples": [
+            {
+              "es": "Adok Katinak egy könyvet.",
+              "tr": {
+                "en": "I give Kati a book.",
+                "es": "Le doy un libro a Kati."
+              }
+            },
+            {
+              "es": "Katitól kapok egy könyvet.",
+              "tr": {
+                "en": "I get a book from Kati.",
+                "es": "Recibo un libro de Kati."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: do not use -t for the person you give to or help. It is Adok Annának, never Adok Annát (that would hand Anna over as the gift). The same goes for segít: Segítek Annának, not Annát. And remember: a final -a lengthens before the ending, Annának, Lupitának.",
+        "es": "Trampa clásica: no uses -t para la persona a quien das o ayudas. Se dice Adok Annának, nunca Adok Annát (eso entregaría a la propia Anna como regalo). Lo mismo con segít: Segítek Annának, no Annát. Y recuerda: la -a final se alarga ante la terminación, Annának, Lupitának."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The ending «nak» or «nek» marks the person who receives something. «Adok Annának egy könyvet»: I give Anna a book. «Küldök Péternek egy üzenetet»: I send Péter a message. Verbs like «segít», to help, also take it: «Segítek Annának». With pronouns you say «nekem», «neked», «neki», «nekünk», «nektek» and «nekik». The same ending shows who has something: «Annának van egy autója».",
+    "es": "La terminación «nak» o «nek» marca a la persona que recibe algo. «Adok Annának egy könyvet»: le doy un libro a Anna. «Küldök Péternek egy üzenetet»: le envío un mensaje a Péter. Verbos como «segít», ayudar, también la llevan: «Segítek Annának». Con los pronombres se dice «nekem», «neked», «neki», «nekünk», «nektek» y «nekik». La misma terminación muestra quién tiene algo: «Annának van egy autója»."
+  },
+  "glossary": [
+    {
+      "word": "mond",
+      "gloss": {
+        "en": "to say, to tell",
+        "es": "decir"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "reszes-eset-c01",
+      "sentence": "Adok ___ egy könyvet.",
+      "options": [
+        "Annának",
+        "Annát",
+        "Annával"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is the person who receives the book: Anna + -nak, and the final a lengthens: Annának.",
+        "es": "Anna es la persona que recibe el libro: Anna + -nak, y la a final se alarga: Annának."
+      },
+      "wrong": {
+        "Annát": {
+          "en": "Annát (with -t) would make Anna the thing that is given: 'I give Anna away'; the receiver takes -nak.",
+          "es": "Annát (con -t) haría de Anna la cosa que se da: «entrego a Anna»; el destinatario lleva -nak."
+        },
+        "Annával": {
+          "en": "Annával means 'with Anna': 'I give a book together with Anna', not 'to Anna'.",
+          "es": "Annával significa «con Anna»: «doy un libro junto con Anna», no «a Anna»."
+        }
+      },
+      "examples": [
+        "Adok Péternek egy könyvet.",
+        "Adok Katinak egy ajándékot."
+      ],
+      "tr": {
+        "en": "I give Anna a book.",
+        "es": "Le doy un libro a Anna."
+      }
+    },
+    {
+      "id": "reszes-eset-f01",
+      "kind": "form",
+      "verb": "Anna",
+      "person": "-nak/-nek",
+      "answer": "Annának",
+      "table": "reszes-forms"
+    },
+    {
+      "id": "reszes-eset-c02",
+      "sentence": "Küldök ___ egy levelet.",
+      "options": [
+        "Péternek",
+        "Péternak",
+        "Péterrel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péter has front vowels (é, e), so the ending is -nek: Péternek.",
+        "es": "Péter tiene vocales anteriores (é, e), así que la terminación es -nek: Péternek."
+      },
+      "wrong": {
+        "Péternak": {
+          "en": "Péternak uses the back ending -nak; Péter has front vowels, so it is -nek.",
+          "es": "Péternak usa la terminación posterior -nak; Péter tiene vocales anteriores, así que es -nek."
+        },
+        "Péterrel": {
+          "en": "Péterrel means 'with Péter': 'I send a letter together with Péter', not 'to Péter'.",
+          "es": "Péterrel significa «con Péter»: «envío una carta junto con Péter», no «a Péter»."
+        }
+      },
+      "examples": [
+        "Küldök Annának egy levelet.",
+        "Küldök Katinak egy üzenetet."
+      ],
+      "tr": {
+        "en": "I send Péter a letter.",
+        "es": "Le envío una carta a Péter."
+      }
+    },
+    {
+      "id": "reszes-eset-f02",
+      "kind": "form",
+      "verb": "Péter",
+      "person": "-nak/-nek",
+      "answer": "Péternek",
+      "table": "reszes-forms"
+    },
+    {
+      "id": "reszes-eset-c03",
+      "sentence": "Írok a ___ egy levelet.",
+      "options": [
+        "tanárnak",
+        "tanárnek",
+        "tanártól"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "tanár has back vowels (a, á), so the ending is -nak: tanárnak.",
+        "es": "tanár tiene vocales posteriores (a, á), así que la terminación es -nak: tanárnak."
+      },
+      "wrong": {
+        "tanárnek": {
+          "en": "tanárnek uses the front ending -nek; tanár has back vowels, so it is -nak.",
+          "es": "tanárnek usa la terminación anterior -nek; tanár tiene vocales posteriores, así que es -nak."
+        },
+        "tanártól": {
+          "en": "tanártól is 'from the teacher'; the letter would come from the teacher, not go to him.",
+          "es": "tanártól es «del profesor»; la carta vendría del profesor, no iría a él."
+        }
+      },
+      "examples": [
+        "Írok az orvosnak egy levelet.",
+        "Írok a főnöknek egy üzenetet."
+      ],
+      "tr": {
+        "en": "I write the teacher a letter.",
+        "es": "Le escribo una carta al profesor."
+      }
+    },
+    {
+      "id": "reszes-eset-f03",
+      "kind": "form",
+      "verb": "tanár",
+      "person": "-nak/-nek",
+      "answer": "tanárnak",
+      "table": "reszes-forms"
+    },
+    {
+      "id": "reszes-eset-w01",
+      "kind": "why",
+      "es": "Segítek Annának.",
+      "target": "Annának",
+      "tr": {
+        "en": "I help Anna.",
+        "es": "Ayudo a Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Receiver ending -nak: segít asks for it",
+            "es": "Terminación de destinatario -nak: segít la pide"
+          }
+        },
+        {
+          "text": {
+            "en": "Object ending -t: Annát",
+            "es": "Terminación de objeto -t: Annát"
+          },
+          "wrong": {
+            "en": "With this rule the form would be Annát, as in Látom Annát; segít does not take a plain object.",
+            "es": "Con esta regla la forma sería Annát, como en Látom Annát; segít no lleva un objeto simple."
+          }
+        },
+        {
+          "text": {
+            "en": "Company ending -val: Annával",
+            "es": "Terminación de compañía -val: Annával"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Annával segítek, 'I help together with Anna'.",
+            "es": "Con esta regla la frase sería Annával segítek, «ayudo junto con Anna»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "reszes-eset-c04",
+      "sentence": "Segítek a ___.",
+      "options": [
+        "barátomnak",
+        "barátomat",
+        "barátommal"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "segít wants the receiver ending, even though English 'help' has no 'to'. barátom has back vowels: barátomnak.",
+        "es": "segít pide la terminación de destinatario, aunque el inglés «help» no lleve «to». barátom tiene vocales posteriores: barátomnak."
+      },
+      "wrong": {
+        "barátomat": {
+          "en": "barátomat is the -t object form, as in Látom a barátomat; segít asks for -nak / -nek, not for -t.",
+          "es": "barátomat es la forma de objeto con -t, como en Látom a barátomat; segít pide -nak / -nek, no -t."
+        },
+        "barátommal": {
+          "en": "barátommal is 'with my friend'; the sentence would say that I help together with him, not that I help him.",
+          "es": "barátommal es «con mi amigo»; la frase diría que ayudo junto con él, no que lo ayudo a él."
+        }
+      },
+      "examples": [
+        "Segítek Annának.",
+        "Segítek a tanárnak."
+      ],
+      "tr": {
+        "en": "I help my friend.",
+        "es": "Ayudo a mi amigo."
+      }
+    },
+    {
+      "id": "reszes-eset-f04",
+      "kind": "form",
+      "verb": "barát",
+      "person": "-nak/-nek",
+      "answer": "barátnak",
+      "table": "reszes-forms"
+    },
+    {
+      "id": "reszes-eset-c05",
+      "sentence": "Kati, segítek ___.",
+      "options": [
+        "neked",
+        "nekem",
+        "neki"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The speaker helps Kati, who is addressed as te (you): 'to you' is neked.",
+        "es": "El hablante ayuda a Kati, a quien le habla de te (tú): «a ti» es neked."
+      },
+      "wrong": {
+        "nekem": {
+          "en": "nekem is 'to me'; the sentence would say 'I help myself'.",
+          "es": "nekem es «a mí»; la frase diría «me ayudo a mí mismo»."
+        },
+        "neki": {
+          "en": "neki is 'to him or her'; Kati would be spoken about, not spoken to.",
+          "es": "neki es «a él o a ella»; se hablaría de Kati, no a Kati."
+        }
+      },
+      "examples": [
+        "Küldök neked egy levelet.",
+        "Adok neked egy ajándékot."
+      ],
+      "tr": {
+        "en": "Kati, I will help you.",
+        "es": "Kati, te ayudo."
+      }
+    },
+    {
+      "id": "reszes-eset-f05",
+      "kind": "form",
+      "verb": "-nak/-nek",
+      "person": "te",
+      "answer": "neked",
+      "table": "reszes-pronouns"
+    },
+    {
+      "id": "reszes-eset-c06",
+      "sentence": "Péter fáradt. Segítek ___.",
+      "options": [
+        "neki",
+        "nekem",
+        "neked"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péter is one person (he): 'to him' is neki.",
+        "es": "Péter es una sola persona (él): «a él» es neki."
+      },
+      "wrong": {
+        "nekem": {
+          "en": "nekem is 'to me'; the sentence would say 'I help myself'.",
+          "es": "nekem es «a mí»; la frase diría «me ayudo a mí mismo»."
+        },
+        "neked": {
+          "en": "neked is 'to you'; the sentence would speak to Péter, but Péter is spoken about.",
+          "es": "neked es «a ti»; la frase hablaría con Péter, pero se habla de Péter."
+        }
+      },
+      "examples": [
+        "Küldök neki egy üzenetet.",
+        "Neki adok egy ajándékot."
+      ],
+      "tr": {
+        "en": "Péter is tired. I help him.",
+        "es": "Péter está cansado. Lo ayudo."
+      }
+    },
+    {
+      "id": "reszes-eset-f06",
+      "kind": "form",
+      "verb": "-nak/-nek",
+      "person": "ő",
+      "answer": "neki",
+      "table": "reszes-pronouns"
+    },
+    {
+      "id": "reszes-eset-c07",
+      "sentence": "Anna és Kati otthon vannak. Küldök ___ egy üzenetet.",
+      "options": [
+        "nekik",
+        "neki",
+        "nektek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna and Kati are two people ('they'): 'to them' is nekik.",
+        "es": "Anna y Kati son dos personas («ellas»): «a ellas» es nekik."
+      },
+      "wrong": {
+        "neki": {
+          "en": "neki is 'to him or her'; it would mean only one of them.",
+          "es": "neki es «a él o a ella»; significaría solo una de ellas."
+        },
+        "nektek": {
+          "en": "nektek is 'to you (all)'; the speaker would write to Anna and Kati as 'you'.",
+          "es": "nektek es «a ustedes»; el hablante escribiría a Anna y Kati como «ustedes»."
+        }
+      },
+      "examples": [
+        "Adok nekik egy ajándékot.",
+        "Írok nekik egy levelet."
+      ],
+      "tr": {
+        "en": "Anna and Kati are at home. I send them a message.",
+        "es": "Anna y Kati están en casa. Les envío un mensaje."
+      }
+    },
+    {
+      "id": "reszes-eset-f07",
+      "kind": "form",
+      "verb": "-nak/-nek",
+      "person": "ők",
+      "answer": "nekik",
+      "table": "reszes-pronouns"
+    },
+    {
+      "id": "reszes-eset-w02",
+      "kind": "why",
+      "es": "Annának van egy autója.",
+      "target": "Annának",
+      "tr": {
+        "en": "Anna has a car.",
+        "es": "Anna tiene un coche."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Owner: -nak + van, like nekem van",
+            "es": "Poseedor: -nak + van, como nekem van"
+          }
+        },
+        {
+          "text": {
+            "en": "Receiver of something given: -nak after ad or küld",
+            "es": "Destinatario de algo que se da: -nak tras ad o küld"
+          },
+          "wrong": {
+            "en": "That rule needs a verb like ad or küld; here van with an owner says that Anna has a car, nobody gives anything.",
+            "es": "Esa regla necesita un verbo como ad o küld; aquí van con un poseedor dice que Anna tiene un coche, nadie da nada."
+          }
+        },
+        {
+          "text": {
+            "en": "Company: -val",
+            "es": "Compañía: -val"
+          },
+          "wrong": {
+            "en": "With this rule the form would be Annával, 'with Anna'; ownership uses -nak, not -val.",
+            "es": "Con esta regla la forma sería Annával, «con Anna»; la posesión usa -nak, no -val."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "reszes-eset-c08",
+      "sentence": "Hol vagytok? Írok ___ egy levelet.",
+      "options": [
+        "nektek",
+        "nekünk",
+        "nekik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The speaker writes to the people asked (ti): 'to you (all)' is nektek.",
+        "es": "El hablante escribe a las personas a quienes pregunta (ti): «a ustedes» es nektek."
+      },
+      "wrong": {
+        "nekünk": {
+          "en": "nekünk is 'to us'; the speaker would write to his own group.",
+          "es": "nekünk es «a nosotros»; el hablante escribiría a su propio grupo."
+        },
+        "nekik": {
+          "en": "nekik is 'to them'; a third group would get the letter, not the people asked.",
+          "es": "nekik es «a ellos»; la carta sería para un tercer grupo, no para las personas a quienes se pregunta."
+        }
+      },
+      "examples": [
+        "Küldök nektek egy üzenetet.",
+        "Adok nektek egy könyvet."
+      ],
+      "tr": {
+        "en": "Where are you (all)? I am writing you a letter.",
+        "es": "¿Dónde están ustedes? Les escribo una carta."
+      }
+    },
+    {
+      "id": "reszes-eset-f08",
+      "kind": "form",
+      "verb": "-nak/-nek",
+      "person": "ti",
+      "answer": "nektek",
+      "table": "reszes-pronouns"
+    },
+    {
+      "id": "reszes-eset-c09",
+      "sentence": "Mi otthon vagyunk. Anna ír ___ egy levelet.",
+      "options": [
+        "nekünk",
+        "nektek",
+        "nekik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The speaker's own group (mi) gets the letter: 'to us' is nekünk.",
+        "es": "El grupo del propio hablante (mi) recibe la carta: «a nosotros» es nekünk."
+      },
+      "wrong": {
+        "nektek": {
+          "en": "nektek is 'to you (all)'; the letter would go to the people the speaker is addressing.",
+          "es": "nektek es «a ustedes»; la carta iría a las personas a quienes habla el hablante."
+        },
+        "nekik": {
+          "en": "nekik is 'to them'; a third group would get the letter, not the speaker's group.",
+          "es": "nekik es «a ellos»; un tercer grupo recibiría la carta, no el grupo del hablante."
+        }
+      },
+      "examples": [
+        "Péter küld nekünk egy üzenetet.",
+        "Kati ad nekünk egy ajándékot."
+      ],
+      "tr": {
+        "en": "We are at home. Anna writes us a letter.",
+        "es": "Estamos en casa. Anna nos escribe una carta."
+      }
+    },
+    {
+      "id": "reszes-eset-f09",
+      "kind": "form",
+      "verb": "-nak/-nek",
+      "person": "mi",
+      "answer": "nekünk",
+      "table": "reszes-pronouns"
+    },
+    {
+      "id": "reszes-eset-c10",
+      "sentence": "Kati vagyok. Péter ad ___ egy ajándékot.",
+      "options": [
+        "nekem",
+        "neked",
+        "neki"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kati is the speaker (én): 'to me' is nekem.",
+        "es": "Kati es la que habla (én): «a mí» es nekem."
+      },
+      "wrong": {
+        "neked": {
+          "en": "neked is 'to you'; Péter would give the present to the person addressed, not to Kati who is speaking.",
+          "es": "neked es «a ti»; Péter daría el regalo a la persona con quien se habla, no a Kati, que es quien habla."
+        },
+        "neki": {
+          "en": "neki is 'to him or her'; the present would go to someone else.",
+          "es": "neki es «a él o a ella»; el regalo sería para otra persona."
+        }
+      },
+      "examples": [
+        "Anna küld nekem egy levelet.",
+        "Segítesz nekem?"
+      ],
+      "tr": {
+        "en": "I am Kati. Péter gives me a present.",
+        "es": "Soy Kati. Péter me da un regalo."
+      }
+    },
+    {
+      "id": "reszes-eset-f10",
+      "kind": "form",
+      "verb": "Kati",
+      "person": "-nak/-nek",
+      "answer": "Katinak",
+      "table": "reszes-forms"
+    },
+    {
+      "id": "reszes-eset-w03",
+      "kind": "why",
+      "es": "Küldök neki egy üzenetet.",
+      "target": "neki",
+      "tr": {
+        "en": "I send him a message.",
+        "es": "Le envío un mensaje."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "neki = to him or to her (ő has no gender)",
+            "es": "neki = a él o a ella (ő no tiene género)"
+          }
+        },
+        {
+          "text": {
+            "en": "nekem = to me",
+            "es": "nekem = a mí"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Küldök nekem egy üzenetet, 'I send myself a message'.",
+            "es": "Con esta regla la frase sería Küldök nekem egy üzenetet, «me envío un mensaje a mí mismo»."
+          }
+        },
+        {
+          "text": {
+            "en": "vele = with him or her",
+            "es": "vele = con él o con ella"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Küldök vele egy üzenetet, 'I send a message through him', not to him.",
+            "es": "Con esta regla la frase sería Küldök vele egy üzenetet, «envío un mensaje por medio de él», no a él."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "reszes-eset-c11",
+      "sentence": "___ van egy kutyája.",
+      "options": [
+        "Annának",
+        "Anna",
+        "Annával"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is the owner. As in nekem van, the owner takes -nak, and van links it to the thing owned: Annának van egy kutyája.",
+        "es": "Anna es la poseedora. Como en nekem van, la poseedora lleva -nak, y van la une con lo poseído: Annának van egy kutyája."
+      },
+      "wrong": {
+        "Anna": {
+          "en": "Without the ending Anna would not be marked as the owner, so the sentence would not say that Anna has a dog.",
+          "es": "Sin la terminación Anna no estaría marcada como poseedora, así que la frase no diría que Anna tiene un perro."
+        },
+        "Annával": {
+          "en": "Annával means 'with Anna'; the sentence would be about company, not about who has the dog.",
+          "es": "Annával significa «con Anna»; la frase trataría de compañía, no de quién tiene el perro."
+        }
+      },
+      "examples": [
+        "Péternek van egy autója.",
+        "Katinak van egy macskája."
+      ],
+      "tr": {
+        "en": "Anna has a dog.",
+        "es": "Anna tiene un perro."
+      }
+    },
+    {
+      "id": "reszes-eset-f11",
+      "kind": "form",
+      "verb": "gyerek",
+      "person": "-nak/-nek",
+      "answer": "gyereknek",
+      "table": "reszes-forms"
+    },
+    {
+      "id": "reszes-eset-c12",
+      "sentence": "___ nincs ideje.",
+      "options": [
+        "Péternek",
+        "Péterrel",
+        "Péter"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Owner + nincs: Péternek nincs ideje, the same pattern as nekem nincs időm.",
+        "es": "Poseedor + nincs: Péternek nincs ideje, el mismo patrón que nekem nincs időm."
+      },
+      "wrong": {
+        "Péterrel": {
+          "en": "Péterrel means 'with Péter'; the sentence would be about company, not about who has no time.",
+          "es": "Péterrel significa «con Péter»; la frase trataría de compañía, no de quién no tiene tiempo."
+        },
+        "Péter": {
+          "en": "Without the ending Péter would not be marked as the owner, so the sentence would not say that Péter has no time.",
+          "es": "Sin la terminación Péter no estaría marcado como poseedor, así que la frase no diría que Péter no tiene tiempo."
+        }
+      },
+      "examples": [
+        "Annának nincs ideje.",
+        "Nekem nincs időm."
+      ],
+      "tr": {
+        "en": "Péter has no time.",
+        "es": "Péter no tiene tiempo."
+      }
+    },
+    {
+      "id": "reszes-eset-f12",
+      "kind": "form",
+      "verb": "főnök",
+      "person": "-nak/-nek",
+      "answer": "főnöknek",
+      "table": "reszes-forms"
+    },
+    {
+      "id": "reszes-eset-c13",
+      "sentence": "Adok a ___ egy almát.",
+      "options": [
+        "gyereknek",
+        "gyereknak",
+        "gyereket"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "gyerek has front vowels (e, e), so the ending is -nek; the child receives the apple.",
+        "es": "gyerek tiene vocales anteriores (e, e), así que la terminación es -nek; el niño recibe la manzana."
+      },
+      "wrong": {
+        "gyereknak": {
+          "en": "gyereknak uses the back ending -nak; gyerek has front vowels, so it is -nek.",
+          "es": "gyereknak usa la terminación posterior -nak; gyerek tiene vocales anteriores, así que es -nek."
+        },
+        "gyereket": {
+          "en": "gyereket (with -t) would make the child the thing that is given: 'I give the child away'.",
+          "es": "gyereket (con -t) haría del niño la cosa que se da: «entrego al niño»."
+        }
+      },
+      "examples": [
+        "Adok a fiúnak egy almát.",
+        "Adok a lánynak egy kávét."
+      ],
+      "tr": {
+        "en": "I give the child an apple.",
+        "es": "Le doy una manzana al niño."
+      }
+    },
+    {
+      "id": "reszes-eset-w04",
+      "kind": "why",
+      "es": "Írok a főnöknek egy levelet.",
+      "target": "főnöknek",
+      "tr": {
+        "en": "I write the boss a letter.",
+        "es": "Le escribo una carta al jefe."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Front vowels (ő, ö): the ending is -nek",
+            "es": "Vocales anteriores (ő, ö): la terminación es -nek"
+          }
+        },
+        {
+          "text": {
+            "en": "Back vowels: the ending is -nak",
+            "es": "Vocales posteriores: la terminación es -nak"
+          },
+          "wrong": {
+            "en": "With this rule the form would be főnöknak; but ő and ö are front vowels, so the ending is -nek.",
+            "es": "Con esta regla la forma sería főnöknak; pero ő y ö son vocales anteriores, así que la terminación es -nek."
+          }
+        },
+        {
+          "text": {
+            "en": "Plural boss: főnököknek",
+            "es": "Jefe en plural: főnököknek"
+          },
+          "wrong": {
+            "en": "With this rule the form would be főnököknek, 'to the bosses'; főnöknek is one boss.",
+            "es": "Con esta regla la forma sería főnököknek, «a los jefes»; főnöknek es un solo jefe."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "reszes-eset-c14",
+      "sentence": "Diego ír ___ egy üzenetet.",
+      "options": [
+        "Lupitának",
+        "Lupitanak",
+        "Lupitával"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Lupita has back vowels, so the ending is -nak, and the final a lengthens to á: Lupitának.",
+        "es": "Lupita tiene vocales posteriores, así que la terminación es -nak, y la a final se alarga a á: Lupitának."
+      },
+      "wrong": {
+        "Lupitanak": {
+          "en": "Lupitanak is not a real form: the final a must lengthen to á before the ending.",
+          "es": "Lupitanak no es una forma real: la a final debe alargarse a á ante la terminación."
+        },
+        "Lupitával": {
+          "en": "Lupitával means 'with Lupita'; Diego would write a message together with her, not to her.",
+          "es": "Lupitával significa «con Lupita»; Diego escribiría un mensaje junto con ella, no a ella."
+        }
+      },
+      "examples": [
+        "Diego küld Annának egy üzenetet.",
+        "Lupita ír Péternek egy levelet."
+      ],
+      "tr": {
+        "en": "Diego writes Lupita a message.",
+        "es": "Diego le escribe un mensaje a Lupita."
+      }
+    }
+  ]
+}

@@ -1,0 +1,734 @@
+{
+  "schema": 2,
+  "topic": "nekem-van",
+  "level": "A1",
+  "title": { "en": "To have: nekem van", "es": "Tener: nekem van" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has no verb 'to have' for owning things. It says 'to me there is a car': Nekem van egy autóm. Three pieces make the sentence: the owner (nekem = to me, or a name + -nak/-nek), van (or nincs for 'not'), and the thing owned, which carries an ending that shows the owner: autóm = my car. Spanish does something similar in 'a mí me gusta': the person is in the 'to me' form.",
+        "es": "El húngaro no tiene un verbo «tener» para poseer cosas. Dice «para mí hay un coche»: Nekem van egy autóm. La frase lleva tres piezas: el poseedor (nekem = para mí, o un nombre + -nak/-nek), van (o nincs para «no») y la cosa poseída, que lleva una terminación que indica de quién es: autóm = mi coche. Es parecido a «a mí me gusta»: la persona va en la forma de «a mí»."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "owner-pronouns",
+      "title": { "en": "Who has it? (to me, to you ...)", "es": "¿Quién lo tiene? (para mí, para ti...)" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "owner form (to me, to you ...)", "es": "forma del poseedor (para mí, para ti...)" }
+      ],
+      "rows": [
+        ["én", "nekem"],
+        ["te", "neked"],
+        ["ő", "neki"],
+        ["mi", "nekünk"],
+        ["ti", "nektek"],
+        ["ők", "nekik"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "owned-forms",
+      "title": { "en": "The thing owned: the ending shows the owner", "es": "La cosa poseída: la terminación indica al dueño" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "autó (car)", "es": "autó (coche)" },
+        { "en": "kutya (dog)", "es": "kutya (perro)" },
+        { "en": "ház (house)", "es": "ház (casa)" }
+      ],
+      "rows": [
+        ["én", "autóm", "kutyám", "házam"],
+        ["te", "autód", "kutyád", "házad"],
+        ["ő", "autója", "kutyája", "háza"],
+        ["mi", "autónk", "kutyánk", "házunk"],
+        ["ti", "autótok", "kutyátok", "házatok"],
+        ["ők", "autójuk", "kutyájuk", "házuk"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Building a 'has' sentence", "es": "Cómo se arma una frase de «tener»" },
+      "items": [
+        {
+          "text": {
+            "en": "The owner: a pronoun from the first table, or a name or noun + -nak/-nek (vowel harmony picks the form: Annának, Péternek).",
+            "es": "El poseedor: un pronombre de la primera tabla, o un nombre o sustantivo + -nak/-nek (la armonía vocálica elige la forma: Annának, Péternek)."
+          },
+          "examples": [
+            { "es": "Nekem van egy autóm.", "tr": { "en": "I have a car.", "es": "Tengo un coche." } },
+            { "es": "Annának van egy kutyája.", "tr": { "en": "Anna has a dog.", "es": "Anna tiene un perro." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "The verb: van says 'there is', nincs says 'there is not'. The usual way to say 'I do not have' is nincs.",
+            "es": "El verbo: van dice «hay», nincs dice «no hay». La forma habitual de decir «no tengo» es nincs."
+          },
+          "examples": [
+            { "es": "Nincs autóm.", "tr": { "en": "I do not have a car.", "es": "No tengo coche." } },
+            { "es": "Annának nincs kutyája.", "tr": { "en": "Anna does not have a dog.", "es": "Anna no tiene perro." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "The thing owned wears the owner's ending (second table). After a number the noun stays singular: két gyerekem (not két gyerekeim).",
+            "es": "La cosa poseída lleva la terminación del dueño (segunda tabla). Después de un número el sustantivo queda en singular: két gyerekem."
+          },
+          "examples": [
+            { "es": "Van két gyerekem.", "tr": { "en": "I have two children.", "es": "Tengo dos hijos." } },
+            { "es": "Van egy húgom.", "tr": { "en": "I have a younger sister.", "es": "Tengo una hermana menor." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nak-nek",
+      "title": { "en": "Names and nouns as owners: -nak or -nek", "es": "Nombres y sustantivos como poseedores: -nak o -nek" },
+      "header": [
+        { "en": "Owner", "es": "Poseedor" },
+        { "en": "+ -nak/-nek (has)", "es": "+ -nak/-nek (tiene)" }
+      ],
+      "rows": [
+        ["Anna", "Annának"],
+        ["Péter", "Péternek"],
+        ["Kati", "Katinak"],
+        ["Gábor", "Gábornak"],
+        ["Diego", "Diegónak"],
+        ["a lány", "a lánynak"],
+        ["a gyerek", "a gyereknek"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Say the owner, or drop it?", "es": "¿Decir al dueño o omitirlo?" },
+      "points": [
+        {
+          "text": {
+            "en": "The usual way: drop the owner. The ending on the noun already says whose it is (autóm = my car), so the sentence starts with van.",
+            "es": "Lo normal: omitir al dueño. La terminación del sustantivo ya dice de quién es (autóm = mi coche), así que la frase empieza con van."
+          },
+          "examples": [
+            { "es": "Van egy autóm.", "tr": { "en": "I have a car.", "es": "Tengo un coche." } },
+            { "es": "Van időd?", "tr": { "en": "Do you have time?", "es": "¿Tienes tiempo?" } },
+            { "es": "Van két gyerekünk.", "tr": { "en": "We have two children.", "es": "Tenemos dos hijos." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Say the owner out loud for contrast ('I do, you do not') or when you talk about a named person.",
+            "es": "Di al dueño en voz alta para contrastar («yo sí, tú no») o cuando hablas de una persona con nombre."
+          },
+          "examples": [
+            { "es": "Nekem van egy autóm, neked nincs.", "tr": { "en": "I have a car, you do not.", "es": "Yo tengo coche, tú no." } },
+            { "es": "Annának van kutyája, Péternek nincs.", "tr": { "en": "Anna has a dog, Péter does not.", "es": "Anna tiene perro, Péter no." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Questions: same word order, the voice goes up. Answer with Igen, van. or Nincs.",
+            "es": "Preguntas: mismo orden de palabras, la voz sube. Se contesta Igen, van. o Nincs."
+          },
+          "examples": [
+            { "es": "Van autód?", "tr": { "en": "Do you have a car?", "es": "¿Tienes coche?" } },
+            { "es": "Neked van kutyád?", "tr": { "en": "Do you have a dog?", "es": "¿Tú tienes perro?" } },
+            { "es": "Igen, van.", "tr": { "en": "Yes, I do.", "es": "Sí, tengo." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Has it, or just 'its'?", "es": "¿Lo tiene, o solo «su»?" },
+      "pairs": [
+        {
+          "a": "Péter autója piros.",
+          "b": "Péternek van autója.",
+          "note": {
+            "en": "Without -nek and van: 'Péter's car', a phrase about the car (next lesson). With -nek and van: Péter HAS a car.",
+            "es": "Sin -nek ni van: «el coche de Péter», una frase sobre el coche (siguiente lección). Con -nek y van: Péter TIENE coche."
+          },
+          "examples": [
+            { "es": "Anna háza nagy.", "tr": { "en": "Anna's house is big.", "es": "La casa de Anna es grande." } },
+            { "es": "Annának van háza.", "tr": { "en": "Anna has a house.", "es": "Anna tiene casa." } }
+          ]
+        },
+        {
+          "a": "Nekem van egy autóm.",
+          "b": "Van egy autóm.",
+          "note": {
+            "en": "Same meaning. With nekem you stress who has it; dropping it is the neutral way.",
+            "es": "Mismo significado. Con nekem destacas quién lo tiene; omitirlo es la forma neutra."
+          },
+          "examples": [
+            { "es": "Neked van időd?", "tr": { "en": "Do YOU have time?", "es": "¿TÚ tienes tiempo?" } },
+            { "es": "Van időd?", "tr": { "en": "Do you have time?", "es": "¿Tienes tiempo?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: do not look for 'have', and do not leave the ending off the noun. Van autó means 'there is a car' (somewhere); Van autóm means 'I have a car'. The owner is never in the plain form: Anna van kutyája is wrong, it is Annának van kutyája.",
+        "es": "Trampa clásica: no busques «tener», y no dejes al sustantivo sin su terminación. Van autó significa «hay un coche» (en algún lugar); Van autóm significa «tengo un coche». El poseedor nunca va en forma simple: Anna van kutyája está mal, se dice Annának van kutyája."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian there is no verb for «to have». Instead you say that something exists for someone: «Nekem van egy autóm», literally, to me there is a car of mine. The owner is «nekem», «neked», «neki», «nekünk», «nektek», «nekik», or a name with the ending «nak» or «nek», like «Annának van egy kutyája». The thing you own takes an ending that shows the owner: «autóm», «autód», «autója». To say you do not have something, use «nincs»: «Nincs időm». Very often you can drop the owner and just say «Van egy autóm».",
+    "es": "En húngaro no hay un verbo para «tener». En su lugar se dice que algo existe para alguien: «Nekem van egy autóm», literalmente, para mí hay un coche mío. El poseedor es «nekem», «neked», «neki», «nekünk», «nektek», «nekik», o un nombre con la terminación «nak» o «nek», como «Annának van egy kutyája». La cosa que posees lleva una terminación que indica de quién es: «autóm», «autód», «autója». Para decir que no tienes algo, usa «nincs»: «Nincs időm». Muy a menudo puedes omitir al poseedor y decir solo «Van egy autóm»."
+  },
+  "items": [
+    {
+      "id": "nekem-van-c01",
+      "sentence": "Nekem ___ egy autóm.",
+      "options": ["van", "vagyok", "nincs"],
+      "correct": 0,
+      "why": {
+        "en": "Hungarian says 'to me there is a car': the owner is nekem and the verb is van.",
+        "es": "El húngaro dice «para mí hay un coche»: el poseedor es nekem y el verbo es van."
+      },
+      "wrong": {
+        "vagyok": {
+          "en": "vagyok is 'I am': the sentence would say that I am a car. Owning is not 'to be', it is van with the thing owned.",
+          "es": "vagyok es «yo soy»: la frase diría que yo soy un coche. Poseer no es «ser», es van con la cosa poseída."
+        },
+        "nincs": {
+          "en": "With nincs the sentence would mean 'I do not have a car'.",
+          "es": "Con nincs la frase significaría «no tengo coche»."
+        }
+      },
+      "examples": ["Nekem van egy kutyám.", "Van egy autóm."],
+      "tr": { "en": "I have a car.", "es": "Tengo un coche." }
+    },
+    {
+      "id": "nekem-van-f01",
+      "kind": "form",
+      "verb": "autó",
+      "person": "én",
+      "answer": "autóm",
+      "table": "owned-forms"
+    },
+    {
+      "id": "nekem-van-c02",
+      "sentence": "Van ___.",
+      "options": ["kutyám", "kutya", "kutyája"],
+      "correct": 0,
+      "why": {
+        "en": "The ending -m says the owner is I: kutyám = my dog, so Van kutyám means 'I have a dog'.",
+        "es": "La terminación -m dice que el dueño soy yo: kutyám = mi perro, así que Van kutyám significa «tengo un perro»."
+      },
+      "wrong": {
+        "kutya": {
+          "en": "Van kutya alone means 'There is a dog' (somewhere), not that you own it.",
+          "es": "Van kutya a secas significa «hay un perro» (en algún lugar), no que sea tuyo."
+        },
+        "kutyája": {
+          "en": "kutyája is 'his or her dog': Van kutyája would mean that he or she has a dog.",
+          "es": "kutyája es «su perro (de él o ella)»: Van kutyája significaría que él o ella tiene un perro."
+        }
+      },
+      "examples": ["Van egy kutyám.", "Annának van kutyája."],
+      "tr": { "en": "I have a dog.", "es": "Tengo un perro." }
+    },
+    {
+      "id": "nekem-van-f02",
+      "kind": "form",
+      "verb": "autó",
+      "person": "te",
+      "answer": "autód",
+      "table": "owned-forms"
+    },
+    {
+      "id": "nekem-van-c03",
+      "sentence": "Neked nincs ___.",
+      "options": ["időd", "időm", "ideje"],
+      "correct": 0,
+      "why": {
+        "en": "Neked is 'to you', so the noun ends in -d: időd (your time); nincs says you have none.",
+        "es": "Neked es «para ti», por eso el sustantivo termina en -d: időd (tu tiempo); nincs dice que no tienes."
+      },
+      "wrong": {
+        "időm": {
+          "en": "időm is 'my time': 'Neked nincs időm' would mix 'you' with 'my'.",
+          "es": "időm es «mi tiempo»: «Neked nincs időm» mezclaría «tú» con «mi»."
+        },
+        "ideje": {
+          "en": "ideje is 'his or her time': the owner would be neki, not neked.",
+          "es": "ideje es «su tiempo (de él o ella)»: el poseedor sería neki, no neked."
+        }
+      },
+      "examples": ["Nincs időm.", "Van időd?"],
+      "tr": { "en": "You have no time.", "es": "No tienes tiempo." }
+    },
+    {
+      "id": "nekem-van-f03",
+      "kind": "form",
+      "verb": "én",
+      "person": "-nak/-nek",
+      "answer": "nekem",
+      "table": "owner-pronouns"
+    },
+    {
+      "id": "nekem-van-c04",
+      "sentence": "Annának van egy ___.",
+      "options": ["kutyája", "kutyám", "kutyájuk"],
+      "correct": 0,
+      "why": {
+        "en": "Anna is one person (he, she), so the dog takes the 3rd person ending: kutyája.",
+        "es": "Anna es una sola persona (él, ella), así que el perro lleva la terminación de 3.ª persona: kutyája."
+      },
+      "wrong": {
+        "kutyám": {
+          "en": "kutyám is 'my dog': the sentence would mix Anna with 'my'.",
+          "es": "kutyám es «mi perro»: la frase mezclaría a Anna con «mi»."
+        },
+        "kutyájuk": {
+          "en": "kutyájuk is 'their dog': the owners would be several people (nekik).",
+          "es": "kutyájuk es «su perro (de ellos)»: los dueños serían varias personas (nekik)."
+        }
+      },
+      "examples": ["Péternek van egy macskája.", "Katinak van egy kutyája."],
+      "tr": { "en": "Anna has a dog.", "es": "Anna tiene un perro." }
+    },
+    {
+      "id": "nekem-van-f04",
+      "kind": "form",
+      "verb": "te",
+      "person": "-nak/-nek",
+      "answer": "neked",
+      "table": "owner-pronouns"
+    },
+    {
+      "id": "nekem-van-w01",
+      "kind": "why",
+      "es": "Nekem van egy autóm.",
+      "target": "autóm",
+      "tr": { "en": "I have a car.", "es": "Tengo un coche." },
+      "options": [
+        {
+          "text": {
+            "en": "-m shows the owner: autóm = my car",
+            "es": "-m indica al dueño: autóm = mi coche"
+          }
+        },
+        {
+          "text": {
+            "en": "-m marks the plural: several cars",
+            "es": "-m marca el plural: varios coches"
+          },
+          "wrong": {
+            "en": "With this rule the word would be autók: the plural is -k. The -m belongs to the owner, I.",
+            "es": "Con esta regla la palabra sería autók: el plural es -k. La -m pertenece al dueño, yo."
+          }
+        },
+        {
+          "text": {
+            "en": "-m marks the object of a verb",
+            "es": "-m marca el objeto de un verbo"
+          },
+          "wrong": {
+            "en": "With this rule it would be autót: the object ending is -t. Here -m means 'my'.",
+            "es": "Con esta regla sería autót: la terminación del objeto es -t. Aquí -m significa «mi»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nekem-van-c05",
+      "sentence": "___ van egy macskájuk.",
+      "options": ["Nekik", "Nektek", "Nekünk"],
+      "correct": 0,
+      "why": {
+        "en": "macskájuk is 'their cat', so the owner is nekik (to them).",
+        "es": "macskájuk es «su gato (de ellos)», así que el poseedor es nekik (para ellos)."
+      },
+      "wrong": {
+        "Nektek": {
+          "en": "Nektek is 'to you (all)': the sentence would mean 'You have a cat', and the noun would be macskátok.",
+          "es": "Nektek es «para ustedes»: la frase significaría «ustedes tienen un gato», y el sustantivo sería macskátok."
+        },
+        "Nekünk": {
+          "en": "Nekünk is 'to us': the sentence would mean 'We have a cat', and the noun would be macskánk.",
+          "es": "Nekünk es «para nosotros»: la frase significaría «tenemos un gato», y el sustantivo sería macskánk."
+        }
+      },
+      "examples": ["Nekik van egy házuk.", "Nektek van kutyátok?"],
+      "tr": { "en": "They have a cat.", "es": "Ellos tienen un gato." }
+    },
+    {
+      "id": "nekem-van-f05",
+      "kind": "form",
+      "verb": "kutya",
+      "person": "én",
+      "answer": "kutyám",
+      "table": "owned-forms"
+    },
+    {
+      "id": "nekem-van-c06",
+      "sentence": "___ nincs autója.",
+      "options": ["Péternek", "Péternak", "Péter"],
+      "correct": 0,
+      "why": {
+        "en": "Péter has only front vowels (é, e), so the owner ending is -nek: Péternek.",
+        "es": "Péter solo tiene vocales anteriores (é, e), así que la terminación del poseedor es -nek: Péternek."
+      },
+      "wrong": {
+        "Péternak": {
+          "en": "-nak is the form for back-vowel words (Gábornak); Péter needs -nek.",
+          "es": "-nak es la forma para palabras con vocales posteriores (Gábornak); Péter necesita -nek."
+        },
+        "Péter": {
+          "en": "A bare Péter is not the owner form: 'Péter's car' is Péter autója, but a 'has' sentence needs -nek.",
+          "es": "Péter sin terminación no es la forma del poseedor: «el coche de Péter» es Péter autója, pero una frase de «tener» necesita -nek."
+        }
+      },
+      "examples": ["Annának nincs autója.", "Gábornak nincs kulcsa."],
+      "tr": { "en": "Péter has no car.", "es": "Péter no tiene coche." }
+    },
+    {
+      "id": "nekem-van-f06",
+      "kind": "form",
+      "verb": "Anna",
+      "person": "-nak/-nek",
+      "answer": "Annának",
+      "table": "nak-nek"
+    },
+    {
+      "id": "nekem-van-c07",
+      "sentence": "Nekünk van két ___.",
+      "options": ["gyerekünk", "gyerekem", "gyerekük"],
+      "correct": 0,
+      "why": {
+        "en": "Nekünk is 'to us', so the noun ends in -ünk (our); after két it stays singular.",
+        "es": "Nekünk es «para nosotros», por eso el sustantivo termina en -ünk (nuestro); después de két queda en singular."
+      },
+      "wrong": {
+        "gyerekem": {
+          "en": "gyerekem is 'my child': with nekünk the sentence would mix 'we' and 'my'.",
+          "es": "gyerekem es «mi hijo»: con nekünk la frase mezclaría «nosotros» y «mi»."
+        },
+        "gyerekük": {
+          "en": "gyerekük is 'their child': the owner would be nekik, not nekünk.",
+          "es": "gyerekük es «su hijo (de ellos)»: el poseedor sería nekik, no nekünk."
+        }
+      },
+      "examples": ["Van két gyerekünk.", "Van egy házunk."],
+      "tr": { "en": "We have two children.", "es": "Tenemos dos hijos." }
+    },
+    {
+      "id": "nekem-van-f07",
+      "kind": "form",
+      "verb": "ház",
+      "person": "mi",
+      "answer": "házunk",
+      "table": "owned-forms"
+    },
+    {
+      "id": "nekem-van-c08",
+      "sentence": "Gábornak nincs autója, ___ van.",
+      "options": ["nekem", "neki", "nekik"],
+      "correct": 0,
+      "why": {
+        "en": "Contrast: the owner is said out loud with nekem, and van stands alone ('I do').",
+        "es": "Contraste: el poseedor se dice en voz alta con nekem, y van queda solo («yo sí»)."
+      },
+      "wrong": {
+        "neki": {
+          "en": "neki is 'to him or her': it would point at Gábor again, which makes no sense after nincs.",
+          "es": "neki es «para él o ella»: volvería a señalar a Gábor, lo que no tiene sentido después de nincs."
+        },
+        "nekik": {
+          "en": "nekik is 'to them': the sentence would mean 'Gábor has no car, they do'.",
+          "es": "nekik es «para ellos»: la frase significaría «Gábor no tiene coche, ellos sí»."
+        }
+      },
+      "examples": ["Nekem van, neked nincs.", "Annának van, Péternek nincs."],
+      "tr": { "en": "Gábor has no car, I do.", "es": "Gábor no tiene coche, yo sí." }
+    },
+    {
+      "id": "nekem-van-f08",
+      "kind": "form",
+      "verb": "ők",
+      "person": "-nak/-nek",
+      "answer": "nekik",
+      "table": "owner-pronouns"
+    },
+    {
+      "id": "nekem-van-w02",
+      "kind": "why",
+      "es": "Annának van egy kutyája.",
+      "target": "Annának",
+      "tr": { "en": "Anna has a dog.", "es": "Anna tiene un perro." },
+      "options": [
+        {
+          "text": {
+            "en": "-nak means 'in': Anna is a place",
+            "es": "-nak significa «en»: Anna es un lugar"
+          },
+          "wrong": {
+            "en": "With this rule it would be about a place; 'in' is -ban/-ben (a házban). Here -nak says who the owner is.",
+            "es": "Con esta regla se hablaría de un lugar; «en» es -ban/-ben (a házban). Aquí -nak dice quién es el dueño."
+          }
+        },
+        {
+          "text": {
+            "en": "-nak marks the owner in a 'has' sentence",
+            "es": "-nak marca al poseedor en una frase de «tener»"
+          }
+        },
+        {
+          "text": {
+            "en": "-nak makes the noun plural",
+            "es": "-nak vuelve plural al sustantivo"
+          },
+          "wrong": {
+            "en": "With this rule it would be a plural like kutyák (-k); -nak marks the owner, not the number.",
+            "es": "Con esta regla sería un plural como kutyák (-k); -nak marca al dueño, no el número."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nekem-van-c09",
+      "sentence": "Van ___?",
+      "options": ["kulcsod", "kulcsom", "kulcs"],
+      "correct": 0,
+      "why": {
+        "en": "You ask about the other person's key, so the noun ends in -od: kulcsod (your key).",
+        "es": "Preguntas por la llave de la otra persona, así que el sustantivo termina en -od: kulcsod (tu llave)."
+      },
+      "wrong": {
+        "kulcsom": {
+          "en": "kulcsom is 'my key': the question would ask whether I have a key.",
+          "es": "kulcsom es «mi llave»: la pregunta sería si yo tengo una llave."
+        },
+        "kulcs": {
+          "en": "Van kulcs? would mean 'Is there a key?', with no owner.",
+          "es": "¿Van kulcs? significaría «¿hay una llave?», sin dueño."
+        }
+      },
+      "examples": ["Van autód?", "Neked van kutyád?"],
+      "tr": { "en": "Do you have a key?", "es": "¿Tienes llave?" }
+    },
+    {
+      "id": "nekem-van-f09",
+      "kind": "form",
+      "verb": "Péter",
+      "person": "-nak/-nek",
+      "answer": "Péternek",
+      "table": "nak-nek"
+    },
+    {
+      "id": "nekem-van-c10",
+      "sentence": "Van ___ gyerekem.",
+      "options": ["két", "kettő", "kétszer"],
+      "correct": 0,
+      "why": {
+        "en": "Before a noun Hungarian uses két for 'two': két gyerekem, with the noun in the singular.",
+        "es": "Delante de un sustantivo el húngaro usa két para «dos»: két gyerekem, con el sustantivo en singular."
+      },
+      "wrong": {
+        "kettő": {
+          "en": "kettő is the counting word 'two' on its own (egy, kettő, három); before a noun it becomes két.",
+          "es": "kettő es el «dos» para contar solo (egy, kettő, három); delante de un sustantivo pasa a ser két."
+        },
+        "kétszer": {
+          "en": "kétszer means 'twice': the sentence would say 'I have a child twice'.",
+          "es": "kétszer significa «dos veces»: la frase diría «tengo un hijo dos veces»."
+        }
+      },
+      "examples": ["Van két húgom.", "Nincs két autóm."],
+      "tr": { "en": "I have two children.", "es": "Tengo dos hijos." }
+    },
+    {
+      "id": "nekem-van-f10",
+      "kind": "form",
+      "verb": "kutya",
+      "person": "ti",
+      "answer": "kutyátok",
+      "table": "owned-forms"
+    },
+    {
+      "id": "nekem-van-c11",
+      "sentence": "Annának ___ egy bátyja.",
+      "options": ["van", "nincs", "vagyok"],
+      "correct": 0,
+      "why": {
+        "en": "Anna has an older brother: owner + van + the thing owned with its ending (bátyja).",
+        "es": "Anna tiene un hermano mayor: poseedor + van + la cosa poseída con su terminación (bátyja)."
+      },
+      "wrong": {
+        "nincs": {
+          "en": "With nincs the sentence would mean that Anna has no older brother.",
+          "es": "Con nincs la frase significaría que Anna no tiene hermano mayor."
+        },
+        "vagyok": {
+          "en": "vagyok is 'I am': the sentence would say that I am Anna's brother, and the verb would not match Annának.",
+          "es": "vagyok es «yo soy»: la frase diría que yo soy el hermano de Anna, y el verbo no encajaría con Annának."
+        }
+      },
+      "examples": ["Péternek van egy húga.", "Katinak nincs bátyja."],
+      "tr": { "en": "Anna has an older brother.", "es": "Anna tiene un hermano mayor." }
+    },
+    {
+      "id": "nekem-van-c12",
+      "sentence": "Van egy ___.",
+      "options": ["húgom", "húgod", "húga"],
+      "correct": 0,
+      "why": {
+        "en": "No owner word, so the ending decides: -om means I have a younger sister.",
+        "es": "No hay palabra de poseedor, así que decide la terminación: -om significa que yo tengo una hermana menor."
+      },
+      "wrong": {
+        "húgod": {
+          "en": "húgod is 'your younger sister': the sentence would say that you have one.",
+          "es": "húgod es «tu hermana menor»: la frase diría que tú tienes una."
+        },
+        "húga": {
+          "en": "húga is 'his or her younger sister': the sentence would say that he or she has one.",
+          "es": "húga es «su hermana menor (de él o ella)»: la frase diría que él o ella tiene una."
+        }
+      },
+      "examples": ["Van egy bátyám.", "Van egy testvérem."],
+      "tr": { "en": "I have a younger sister.", "es": "Tengo una hermana menor." }
+    },
+    {
+      "id": "nekem-van-f11",
+      "kind": "form",
+      "verb": "Diego",
+      "person": "-nak/-nek",
+      "answer": "Diegónak",
+      "table": "nak-nek"
+    },
+    {
+      "id": "nekem-van-w03",
+      "kind": "why",
+      "es": "Nincs időm.",
+      "target": "Nincs",
+      "tr": { "en": "I have no time.", "es": "No tengo tiempo." },
+      "options": [
+        {
+          "text": {
+            "en": "Nincs means 'I am not': the negative of vagyok",
+            "es": "Nincs significa «no soy»: la negación de vagyok"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem vagyok; nincs is the negative of van ('there is not').",
+            "es": "Con esta regla la frase sería Nem vagyok; nincs es la negación de van («no hay»)."
+          }
+        },
+        {
+          "text": {
+            "en": "Nincs means 'never': a time word",
+            "es": "Nincs significa «nunca»: una palabra de tiempo"
+          },
+          "wrong": {
+            "en": "With this rule the word would be soha ('never'); nincs is the negative of van.",
+            "es": "Con esta regla la palabra sería soha («nunca»); nincs es la negación de van."
+          }
+        },
+        {
+          "text": {
+            "en": "Nincs is the negative of van: there is no time of mine",
+            "es": "Nincs es la negación de van: no hay tiempo mío"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "nekem-van-c13",
+      "sentence": "Nekem ___ pénzem.",
+      "options": ["nincs", "van", "nem"],
+      "correct": 0,
+      "why": {
+        "en": "To say 'I have no money' use nincs, the negative of van, with pénzem (my money).",
+        "es": "Para decir «no tengo dinero» usa nincs, la negación de van, con pénzem (mi dinero)."
+      },
+      "wrong": {
+        "van": {
+          "en": "With van the sentence would mean 'I have money'.",
+          "es": "Con van la frase significaría «tengo dinero»."
+        },
+        "nem": {
+          "en": "nem alone leaves the sentence without a verb: 'Nekem nem pénzem' is not a sentence. The negative of van is nincs.",
+          "es": "nem solo deja la frase sin verbo: «Nekem nem pénzem» no es una frase. La negación de van es nincs."
+        }
+      },
+      "examples": ["Nincs pénzem.", "Annának nincs ideje."],
+      "tr": { "en": "I have no money.", "es": "No tengo dinero." }
+    },
+    {
+      "id": "nekem-van-c14",
+      "sentence": "Katinak és Gábornak van egy ___.",
+      "options": ["lányuk", "lányotok", "lányunk"],
+      "correct": 0,
+      "why": {
+        "en": "Kati and Gábor are two people (ők), so the noun takes the 'their' ending: lányuk.",
+        "es": "Kati y Gábor son dos personas (ők), así que el sustantivo lleva la terminación «su (de ellos)»: lányuk."
+      },
+      "wrong": {
+        "lányotok": {
+          "en": "lányotok is 'your (all) daughter': the sentence would need nektek.",
+          "es": "lányotok es «su hija (de ustedes)»: la frase necesitaría nektek."
+        },
+        "lányunk": {
+          "en": "lányunk is 'our daughter': the sentence would need nekünk.",
+          "es": "lányunk es «nuestra hija»: la frase necesitaría nekünk."
+        }
+      },
+      "examples": ["Nekik van egy lányuk.", "Nekik van egy házuk."],
+      "tr": { "en": "Kati and Gábor have a daughter.", "es": "Kati y Gábor tienen una hija." }
+    },
+    {
+      "id": "nekem-van-f12",
+      "kind": "form",
+      "verb": "mi",
+      "person": "-nak/-nek",
+      "answer": "nekünk",
+      "table": "owner-pronouns"
+    },
+    {
+      "id": "nekem-van-w04",
+      "kind": "why",
+      "es": "Van két gyerekem.",
+      "target": "gyerekem",
+      "tr": { "en": "I have two children.", "es": "Tengo dos hijos." },
+      "options": [
+        {
+          "text": {
+            "en": "-em is the plural, so két is not needed",
+            "es": "-em es el plural, así que két no hace falta"
+          },
+          "wrong": {
+            "en": "With this rule it would be gyerekek: the plural is -k, and after a number the noun stays singular. -em means 'my'.",
+            "es": "Con esta regla sería gyerekek: el plural es -k, y después de un número el sustantivo queda en singular. -em significa «mi»."
+          }
+        },
+        {
+          "text": {
+            "en": "-em shows the owner (my); after két the noun stays singular",
+            "es": "-em indica al dueño (mi); después de két el sustantivo queda en singular"
+          }
+        },
+        {
+          "text": {
+            "en": "-em turns the sentence into a question",
+            "es": "-em convierte la frase en una pregunta"
+          },
+          "wrong": {
+            "en": "With this rule it would be a question; questions are marked by the voice (Van gyereked?). -em says 'my'.",
+            "es": "Con esta regla sería una pregunta; las preguntas se marcan con la voz (Van gyereked?). -em dice «mi»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

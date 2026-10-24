@@ -1,0 +1,1088 @@
+{
+  "schema": 2,
+  "topic": "lak-lek",
+  "level": "A1",
+  "title": {
+    "en": "I → you: -lak / -lek (szeretlek)",
+    "es": "Yo → tú: -lak / -lek (szeretlek)"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "When I do something to YOU, Hungarian uses one special ending: -lak after back-vowel verbs, -lek after front-vowel verbs. Szeretlek = I love you; Látlak = I see you; Várlak = I am waiting for you. It works for one person and for several (you all), and the pronoun (téged, titeket) is normally dropped, because the ending already says 'I → you'. It does the job of the 'you' in 'I love you', glued to the end of the verb.",
+        "es": "Cuando yo hago algo a TI, el húngaro usa una terminación especial: -lak en los verbos de vocales posteriores, -lek en los de vocales anteriores. Szeretlek = te quiero; Látlak = te veo; Várlak = te espero. Sirve para una persona y para varias (ustedes), y el pronombre (téged, titeket) normalmente se omite, porque la terminación ya dice «yo → tú». Es como el «te» de «te quiero», pero pegado al final del verbo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "lak-lek-forms",
+      "title": {
+        "en": "I → you: -lak and -lek",
+        "es": "Yo → tú: -lak y -lek"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "I → you",
+          "es": "Yo → tú"
+        },
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        }
+      ],
+      "rows": [
+        [
+          "látni",
+          "látlak",
+          "-lak"
+        ],
+        [
+          "várni",
+          "várlak",
+          "-lak"
+        ],
+        [
+          "hívni",
+          "hívlak",
+          "-lak"
+        ],
+        [
+          "hallgatni",
+          "hallgatlak",
+          "-lak"
+        ],
+        [
+          "szeretni",
+          "szeretlek",
+          "-lek"
+        ],
+        [
+          "keresni",
+          "kereslek",
+          "-lek"
+        ],
+        [
+          "kérdezni",
+          "kérdezlek",
+          "-lek"
+        ],
+        [
+          "kérni",
+          "kérlek",
+          "-lek"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which ending, -lak or -lek?",
+        "es": "¿Qué terminación, -lak o -lek?"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Back-vowel verbs take -lak: látlak, várlak, hallgatlak. (hív has only i, but it follows the back group, like hívom: hívlak.)",
+            "es": "Los verbos de vocales posteriores llevan -lak: látlak, várlak, hallgatlak. (hív solo tiene i, pero sigue al grupo posterior, como hívom: hívlak.)"
+          },
+          "examples": [
+            {
+              "es": "Látlak.",
+              "tr": {
+                "en": "I see you.",
+                "es": "Te veo."
+              }
+            },
+            {
+              "es": "Várlak.",
+              "tr": {
+                "en": "I am waiting for you.",
+                "es": "Te espero."
+              }
+            },
+            {
+              "es": "Hívlak holnap.",
+              "tr": {
+                "en": "I will call you tomorrow.",
+                "es": "Te llamo mañana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Front-vowel verbs take -lek: szeretlek, kereslek, kérdezlek, kérlek.",
+            "es": "Los verbos de vocales anteriores llevan -lek: szeretlek, kereslek, kérdezlek, kérlek."
+          },
+          "examples": [
+            {
+              "es": "Szeretlek.",
+              "tr": {
+                "en": "I love you.",
+                "es": "Te quiero."
+              }
+            },
+            {
+              "es": "Kereslek.",
+              "tr": {
+                "en": "I am looking for you.",
+                "es": "Te estoy buscando."
+              }
+            },
+            {
+              "es": "Kérlek.",
+              "tr": {
+                "en": "Please (literally: I ask you).",
+                "es": "Por favor (literalmente: te lo pido)."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When do you use -lak / -lek?",
+        "es": "¿Cuándo se usa -lak / -lek?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The subject is I and the object is you (one person). téged is usually dropped.",
+            "es": "El sujeto es yo y el objeto es tú (una persona). téged normalmente se omite."
+          },
+          "examples": [
+            {
+              "es": "Szeretlek.",
+              "tr": {
+                "en": "I love you.",
+                "es": "Te quiero."
+              }
+            },
+            {
+              "es": "Várlak itt.",
+              "tr": {
+                "en": "I am waiting for you here.",
+                "es": "Te espero aquí."
+              }
+            },
+            {
+              "es": "Kereslek otthon.",
+              "tr": {
+                "en": "I am looking for you at home.",
+                "es": "Te busco en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The object is several people (titeket, you all): the same ending.",
+            "es": "El objeto son varias personas (titeket, ustedes): la misma terminación."
+          },
+          "examples": [
+            {
+              "es": "Várlak titeket.",
+              "tr": {
+                "en": "I am waiting for you (all).",
+                "es": "Los espero a ustedes."
+              }
+            },
+            {
+              "es": "Szeretlek titeket.",
+              "tr": {
+                "en": "I love you (all).",
+                "es": "Los quiero a ustedes."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The pronoun comes back only for stress or contrast.",
+            "es": "El pronombre vuelve solo para dar énfasis o contraste."
+          },
+          "examples": [
+            {
+              "es": "Téged szeretlek.",
+              "tr": {
+                "en": "It is you I love.",
+                "es": "A ti te quiero."
+              }
+            },
+            {
+              "es": "Téged hívlak, nem Pétert.",
+              "tr": {
+                "en": "It is you I am calling, not Péter.",
+                "es": "A ti te llamo, no a Péter."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "NOT used when the subject is not I: with engem, téged, minket, titeket as objects, everyone else uses the plain first set (see the table below).",
+            "es": "NO se usa cuando el sujeto no es yo: con engem, téged, minket, titeket como objeto, los demás usan la primera serie normal (mira la tabla de abajo)."
+          },
+          "examples": [
+            {
+              "es": "Anna szeret téged.",
+              "tr": {
+                "en": "Anna loves you.",
+                "es": "Anna te quiere."
+              }
+            },
+            {
+              "es": "Látsz engem?",
+              "tr": {
+                "en": "Do you see me?",
+                "es": "¿Me ves?"
+              }
+            },
+            {
+              "es": "Péter hív minket.",
+              "tr": {
+                "en": "Péter is calling us.",
+                "es": "Péter nos llama."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "lak-lek-overview",
+      "noTableDeck": true,
+      "title": {
+        "en": "Who does it to whom? szeretni (to love)",
+        "es": "¿Quién se lo hace a quién? szeretni (querer)"
+      },
+      "header": [
+        {
+          "en": "Who → whom",
+          "es": "Quién → a quién"
+        },
+        {
+          "en": "szeretni (to love)",
+          "es": "szeretni (querer)"
+        }
+      ],
+      "rows": [
+        [
+          "én → téged",
+          "szeretlek"
+        ],
+        [
+          "én → titeket",
+          "szeretlek"
+        ],
+        [
+          "én → őt",
+          "szeretem"
+        ],
+        [
+          "te → engem",
+          "szeretsz"
+        ],
+        [
+          "ő → téged",
+          "szeret"
+        ],
+        [
+          "mi → téged",
+          "szeretünk"
+        ],
+        [
+          "ők → titeket",
+          "szeretnek"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "You or somebody else?",
+        "es": "¿Tú u otra persona?"
+      },
+      "pairs": [
+        {
+          "a": "Szeretlek.",
+          "b": "Szeretem.",
+          "note": {
+            "en": "-lek: I → you. -em: I → him, her, it (a specific object).",
+            "es": "-lek: yo → tú. -em: yo → él, ella, eso (un objeto concreto)."
+          },
+          "examples": [
+            {
+              "es": "Hívlak.",
+              "tr": {
+                "en": "I am calling you.",
+                "es": "Te llamo."
+              }
+            },
+            {
+              "es": "Hívom Annát.",
+              "tr": {
+                "en": "I am calling Anna.",
+                "es": "Llamo a Anna."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Kereslek.",
+          "b": "Keresel.",
+          "note": {
+            "en": "-lek: I look for you. -el: you (te) look for something.",
+            "es": "-lek: yo te busco a ti. -el: tú (te) buscas algo."
+          },
+          "examples": [
+            {
+              "es": "Várlak.",
+              "tr": {
+                "en": "I am waiting for you.",
+                "es": "Te espero."
+              }
+            },
+            {
+              "es": "Vársz?",
+              "tr": {
+                "en": "Are you waiting?",
+                "es": "¿Estás esperando?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: translating word for word. 'I love you' is Szeretlek, not Szeretek téged or Szeretem téged. Do not add téged out of habit: it only adds stress. And do not use -lak / -lek for anything else: 'she loves you' is simply Szeret téged.",
+        "es": "Trampa clásica: traducir palabra por palabra. «Te quiero» es Szeretlek, no Szeretek téged ni Szeretem téged. No añadas téged por costumbre: solo da énfasis. Y no uses -lak / -lek para nada más: «ella te quiere» es simplemente Szeret téged."
+      }
+    }
+  ],
+  "speak": {
+    "en": "When I do something to you, Hungarian has one special ending: «-lak» or «-lek». With back-vowel verbs it is «-lak»: «látlak», «várlak», «hívlak». With front-vowel verbs it is «-lek»: «szeretlek», «kereslek», «kérdezlek». It works for one person and for several people, and the pronoun is normally dropped: «Szeretlek.» Only I to you has this ending. When someone else does it to you, the verb stays plain: «Anna szeret téged.»",
+    "es": "Cuando yo hago algo a ti, el húngaro tiene una terminación especial: «-lak» o «-lek». Con los verbos de vocales posteriores es «-lak»: «látlak», «várlak», «hívlak». Con los verbos de vocales anteriores es «-lek»: «szeretlek», «kereslek», «kérdezlek». Sirve para una persona y para varias, y el pronombre normalmente se omite: «Szeretlek.» Solo yo a ti tiene esta terminación. Cuando otra persona lo hace a ti, el verbo queda normal: «Anna szeret téged.»"
+  },
+  "glossary": [
+    {
+      "word": "titeket",
+      "gloss": {
+        "en": "you (all), object form",
+        "es": "ustedes (objeto): «los, las»"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "lak-lek-c01",
+      "sentence": "Anna, ___ téged.",
+      "options": [
+        "szeretlek",
+        "szeretem",
+        "szeretek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "I → you has its own ending: szeret + lek = szeretlek (front-vowel verb, so -lek).",
+        "es": "«Yo → tú» tiene su propia terminación: szeret + lek = szeretlek (verbo de vocales anteriores, por eso -lek)."
+      },
+      "wrong": {
+        "szeretem": {
+          "en": "szeretem is 'I love it, him, her' (a specific object); to say 'you' use szeretlek.",
+          "es": "szeretem es «lo, la quiero» (un objeto concreto); para decir «a ti» se usa szeretlek."
+        },
+        "szeretek": {
+          "en": "szeretek is the plain 'I love, I like' with no specific object; with téged you need szeretlek.",
+          "es": "szeretek es el simple «quiero, me gusta» sin objeto concreto; con téged hace falta szeretlek."
+        }
+      },
+      "examples": [
+        "Szeretlek.",
+        "Szeretlek titeket."
+      ],
+      "tr": {
+        "en": "Anna, I love you.",
+        "es": "Anna, te quiero."
+      }
+    },
+    {
+      "id": "lak-lek-f01",
+      "kind": "form",
+      "verb": "látni",
+      "person": "én → téged",
+      "answer": "látlak",
+      "table": "lak-lek-forms"
+    },
+    {
+      "id": "lak-lek-c02",
+      "sentence": "Péter, ___ téged holnap.",
+      "options": [
+        "hívlak",
+        "hívom",
+        "hívok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "I → you: hív follows the back group (like hívom), so hív + lak = hívlak.",
+        "es": "Yo → tú: hív sigue al grupo posterior (como hívom), así que hív + lak = hívlak."
+      },
+      "wrong": {
+        "hívom": {
+          "en": "hívom is 'I call it, him, her'; téged is 'you', so it needs hívlak.",
+          "es": "hívom es «lo, la llamo»; téged es «a ti», así que necesita hívlak."
+        },
+        "hívok": {
+          "en": "hívok is the plain 'I call' with no specific object; with téged you need hívlak.",
+          "es": "hívok es el simple «llamo» sin objeto concreto; con téged hace falta hívlak."
+        }
+      },
+      "examples": [
+        "Hívlak.",
+        "Holnap hívlak."
+      ],
+      "tr": {
+        "en": "Péter, I will call you tomorrow.",
+        "es": "Péter, te llamo mañana."
+      }
+    },
+    {
+      "id": "lak-lek-f02",
+      "kind": "form",
+      "verb": "várni",
+      "person": "én → titeket",
+      "answer": "várlak",
+      "table": "lak-lek-forms"
+    },
+    {
+      "id": "lak-lek-c03",
+      "sentence": "Gyerekek, ___ titeket!",
+      "options": [
+        "várlak",
+        "várom",
+        "vársz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Titeket (you all) is also a \"you\" object: vár + lak = várlak.",
+        "es": "Titeket (ustedes) también es un objeto «tú»: vár + lak = várlak."
+      },
+      "wrong": {
+        "várom": {
+          "en": "várom is 'I wait for it, him, her'; the children are 'you', so it needs várlak.",
+          "es": "várom es «lo, la espero»; los niños son «ustedes», así que necesita várlak."
+        },
+        "vársz": {
+          "en": "vársz is 'you wait': the subject would be te, not I.",
+          "es": "vársz es «tú esperas»: el sujeto sería te, no yo."
+        }
+      },
+      "examples": [
+        "Várlak.",
+        "Várlak titeket."
+      ],
+      "tr": {
+        "en": "Kids, I am waiting for you!",
+        "es": "¡Niños, los estoy esperando!"
+      }
+    },
+    {
+      "id": "lak-lek-f03",
+      "kind": "form",
+      "verb": "hívni",
+      "person": "én → téged",
+      "answer": "hívlak",
+      "table": "lak-lek-forms"
+    },
+    {
+      "id": "lak-lek-c04",
+      "sentence": "Kati, téged ___.",
+      "options": [
+        "kereslek",
+        "keresel",
+        "keresem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The object is téged (you) and the subject is I (dropped): keres + lek = kereslek.",
+        "es": "El objeto es téged (a ti) y el sujeto es yo (omitido): keres + lek = kereslek."
+      },
+      "wrong": {
+        "keresel": {
+          "en": "keresel is 'you look for': you would be looking for yourself.",
+          "es": "keresel es «tú buscas»: te estarías buscando a ti mismo."
+        },
+        "keresem": {
+          "en": "keresem is 'I look for it, him, her' (a specific object); téged is 'you', so it needs kereslek.",
+          "es": "keresem es «lo, la busco» (un objeto concreto); téged es «a ti», así que necesita kereslek."
+        }
+      },
+      "examples": [
+        "Kereslek.",
+        "Téged kereslek."
+      ],
+      "tr": {
+        "en": "Kati, I am looking for you.",
+        "es": "Kati, te estoy buscando a ti."
+      }
+    },
+    {
+      "id": "lak-lek-f04",
+      "kind": "form",
+      "verb": "hallgatni",
+      "person": "én → téged",
+      "answer": "hallgatlak",
+      "table": "lak-lek-forms"
+    },
+    {
+      "id": "lak-lek-w01",
+      "kind": "why",
+      "es": "Szeretlek.",
+      "target": "Szeretlek",
+      "tr": {
+        "en": "I love you.",
+        "es": "Te quiero."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "I → you: the special ending -lek",
+            "es": "Yo → tú: la terminación especial -lek"
+          }
+        },
+        {
+          "text": {
+            "en": "I → him or her: the second set",
+            "es": "Yo → él o ella: la segunda serie"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Szeretem; that means I love it, him or her.",
+            "es": "Con esta regla la frase sería Szeretem; eso significa que lo quiero, o la quiero."
+          }
+        },
+        {
+          "text": {
+            "en": "I → something not specific: the first set",
+            "es": "Yo → algo no concreto: la primera serie"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Szeretek; that is the plain I love, I like.",
+            "es": "Con esta regla la frase sería Szeretek; eso es el simple quiero, me gusta."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "lak-lek-c05",
+      "sentence": "Diego, ___ téged.",
+      "options": [
+        "hallgatlak",
+        "hallgatlek",
+        "hallgatom"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Hallgat has back vowels (a, a), so the ending is -lak: hallgat + lak = hallgatlak.",
+        "es": "Hallgat tiene vocales posteriores (a, a), por eso la terminación es -lak: hallgat + lak = hallgatlak."
+      },
+      "wrong": {
+        "hallgatlek": {
+          "en": "-lek is for front-vowel verbs; hallgat is a back-vowel verb, so this form does not exist.",
+          "es": "-lek es para verbos de vocales anteriores; hallgat es de vocales posteriores, así que esta forma no existe."
+        },
+        "hallgatom": {
+          "en": "hallgatom is 'I listen to it, him, her'; for 'you' use hallgatlak.",
+          "es": "hallgatom es «lo, la escucho»; para «a ti» se usa hallgatlak."
+        }
+      },
+      "examples": [
+        "Hallgatlak.",
+        "Hallgatlak titeket."
+      ],
+      "tr": {
+        "en": "Diego, I am listening to you.",
+        "es": "Diego, te escucho."
+      }
+    },
+    {
+      "id": "lak-lek-f05",
+      "kind": "form",
+      "verb": "szeretni",
+      "person": "én → téged",
+      "answer": "szeretlek",
+      "table": "lak-lek-forms"
+    },
+    {
+      "id": "lak-lek-c06",
+      "sentence": "Hol vagy, Kati? ___!",
+      "options": [
+        "Kereslek",
+        "Kereslak",
+        "Keresel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Keres has front vowels (e, e), so the ending is -lek: keres + lek = kereslek.",
+        "es": "Keres tiene vocales anteriores (e, e), por eso la terminación es -lek: keres + lek = kereslek."
+      },
+      "wrong": {
+        "Kereslak": {
+          "en": "-lak is for back-vowel verbs; keres is a front-vowel verb, so this form does not exist.",
+          "es": "-lak es para verbos de vocales posteriores; keres es de vocales anteriores, así que esta forma no existe."
+        },
+        "Keresel": {
+          "en": "Keresel is 'you look for': the subject would be you, but here I am the one looking.",
+          "es": "Keresel es «tú buscas»: el sujeto serías tú, pero aquí soy yo quien busca."
+        }
+      },
+      "examples": [
+        "Kereslek.",
+        "Kereslek titeket."
+      ],
+      "tr": {
+        "en": "Where are you, Kati? I am looking for you!",
+        "es": "¿Dónde estás, Kati? ¡Te estoy buscando!"
+      }
+    },
+    {
+      "id": "lak-lek-f06",
+      "kind": "form",
+      "verb": "keresni",
+      "person": "én → titeket",
+      "answer": "kereslek",
+      "table": "lak-lek-forms"
+    },
+    {
+      "id": "lak-lek-c07",
+      "sentence": "Anna ___ engem.",
+      "options": [
+        "szeret",
+        "szeretlek",
+        "szereti"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is the subject (3rd person) and engem (me) is a 1st person object: the plain first set, szeret.",
+        "es": "Anna es el sujeto (3.ª persona) y engem (a mí) es un objeto de 1.ª persona: la primera serie normal, szeret."
+      },
+      "wrong": {
+        "szeretlek": {
+          "en": "szeretlek is only for I → you; here the subject is Anna.",
+          "es": "szeretlek es solo para yo → tú; aquí el sujeto es Anna."
+        },
+        "szereti": {
+          "en": "szereti is the second set (him, her, it); objects like engem and téged take the plain first set.",
+          "es": "szereti es la segunda serie (a él, a ella, a eso); objetos como engem y téged llevan la primera serie normal."
+        }
+      },
+      "examples": [
+        "Anna szeret téged.",
+        "Péter szeret minket."
+      ],
+      "tr": {
+        "en": "Anna loves me.",
+        "es": "Anna me quiere."
+      }
+    },
+    {
+      "id": "lak-lek-f07",
+      "kind": "form",
+      "verb": "kérdezni",
+      "person": "én → téged",
+      "answer": "kérdezlek",
+      "table": "lak-lek-forms"
+    },
+    {
+      "id": "lak-lek-c08",
+      "sentence": "Péter ___ titeket.",
+      "options": [
+        "hív",
+        "hívja",
+        "hívlak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Titeket (you all) takes the plain first set, and Péter is 3rd person: hív.",
+        "es": "Titeket (ustedes) lleva la primera serie normal, y Péter es 3.ª persona: hív."
+      },
+      "wrong": {
+        "hívja": {
+          "en": "hívja is the second set (him, her, it); titeket takes the plain first set.",
+          "es": "hívja es la segunda serie (a él, a ella, a eso); titeket lleva la primera serie normal."
+        },
+        "hívlak": {
+          "en": "hívlak is only for I → you; here the subject is Péter.",
+          "es": "hívlak es solo para yo → tú; aquí el sujeto es Péter."
+        }
+      },
+      "examples": [
+        "Péter hív minket.",
+        "Anna hív téged."
+      ],
+      "tr": {
+        "en": "Péter is calling you (all).",
+        "es": "Péter los llama a ustedes."
+      }
+    },
+    {
+      "id": "lak-lek-w02",
+      "kind": "why",
+      "es": "Látlak.",
+      "target": "Látlak",
+      "tr": {
+        "en": "I see you.",
+        "es": "Te veo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Front-vowel verb: -lek",
+            "es": "Verbo de vocales anteriores: -lek"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Látlek; but lát has back vowels, so it takes -lak.",
+            "es": "Con esta regla la frase sería Látlek; pero lát tiene vocales posteriores, así que lleva -lak."
+          }
+        },
+        {
+          "text": {
+            "en": "Back-vowel verb, I → you: -lak",
+            "es": "Verbo de vocales posteriores, yo → tú: -lak"
+          }
+        },
+        {
+          "text": {
+            "en": "The subject is you (te): -sz",
+            "es": "El sujeto es tú (te): -sz"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Látsz; that means 'you see', and the subject is te.",
+            "es": "Con esta regla la frase sería Látsz; eso significa «tú ves», y el sujeto es te."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "lak-lek-c09",
+      "sentence": "Te ___ engem?",
+      "options": [
+        "látsz",
+        "látlak",
+        "látod"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Te is the subject and engem (me) is a 1st person object: the plain first set, látsz.",
+        "es": "Te es el sujeto y engem (a mí) es un objeto de 1.ª persona: la primera serie normal, látsz."
+      },
+      "wrong": {
+        "látlak": {
+          "en": "látlak is 'I see you'; here the question is whether you see me.",
+          "es": "látlak es «yo te veo»; aquí la pregunta es si tú me ves a mí."
+        },
+        "látod": {
+          "en": "látod is the second set (you see it, him, her); engem takes the plain first set.",
+          "es": "látod es la segunda serie (tú lo, la ves); engem lleva la primera serie normal."
+        }
+      },
+      "examples": [
+        "Látsz engem?",
+        "Látsz minket?"
+      ],
+      "tr": {
+        "en": "Do you see me?",
+        "es": "¿Me ves?"
+      }
+    },
+    {
+      "id": "lak-lek-f08",
+      "kind": "form",
+      "verb": "kérni",
+      "person": "én → téged",
+      "answer": "kérlek",
+      "table": "lak-lek-forms"
+    },
+    {
+      "id": "lak-lek-c10",
+      "sentence": "Mi ___ téged.",
+      "options": [
+        "várunk",
+        "várjuk",
+        "várlak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mi is the subject (we) and téged is a 2nd person object: the plain first set, várunk.",
+        "es": "Mi es el sujeto (nosotros) y téged es un objeto de 2.ª persona: la primera serie normal, várunk."
+      },
+      "wrong": {
+        "várjuk": {
+          "en": "várjuk is the second set (we wait for it, him, her); téged takes the plain first set.",
+          "es": "várjuk es la segunda serie (lo, la esperamos); téged lleva la primera serie normal."
+        },
+        "várlak": {
+          "en": "várlak is only for one I; with mi (we) the form is várunk.",
+          "es": "várlak es solo para un yo; con mi (nosotros) la forma es várunk."
+        }
+      },
+      "examples": [
+        "Várunk titeket.",
+        "Látunk téged."
+      ],
+      "tr": {
+        "en": "We are waiting for you.",
+        "es": "Te esperamos."
+      }
+    },
+    {
+      "id": "lak-lek-f09",
+      "kind": "form",
+      "verb": "szeretni",
+      "person": "én → őt",
+      "answer": "szeretem",
+      "table": "lak-lek-overview"
+    },
+    {
+      "id": "lak-lek-c11",
+      "sentence": "___ Katit.",
+      "options": [
+        "Szeretem",
+        "Szeretlek",
+        "Szeretsz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kati is a name, so a specific object: the second set, I → her: szeretem.",
+        "es": "Kati es un nombre, así que un objeto concreto: la segunda serie, yo → ella: szeretem."
+      },
+      "wrong": {
+        "Szeretlek": {
+          "en": "Szeretlek is only I → you; Kati is a third person here.",
+          "es": "Szeretlek es solo yo → tú; aquí Kati es una tercera persona."
+        },
+        "Szeretsz": {
+          "en": "Szeretsz is 'you love, you like' (first set); a name needs the second set.",
+          "es": "Szeretsz es «tú quieres, te gusta» (primera serie); un nombre necesita la segunda serie."
+        }
+      },
+      "examples": [
+        "Szeretem Annát.",
+        "Hívom Pétert."
+      ],
+      "tr": {
+        "en": "I love Kati.",
+        "es": "Quiero a Kati."
+      }
+    },
+    {
+      "id": "lak-lek-w03",
+      "kind": "why",
+      "es": "Anna szeret téged.",
+      "target": "szeret",
+      "tr": {
+        "en": "Anna loves you.",
+        "es": "Anna te quiere."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Téged is specific: the second set",
+            "es": "Téged es concreto: la segunda serie"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna szereti téged; but 1st and 2nd person objects take the plain first set.",
+            "es": "Con esta regla la frase sería Anna szereti téged; pero los objetos de 1.ª y 2.ª persona llevan la primera serie normal."
+          }
+        },
+        {
+          "text": {
+            "en": "I → you: the ending -lek",
+            "es": "Yo → tú: la terminación -lek"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna szeretlek téged; but -lek is only for the subject I.",
+            "es": "Con esta regla la frase sería Anna szeretlek téged; pero -lek es solo para el sujeto yo."
+          }
+        },
+        {
+          "text": {
+            "en": "The subject is not I and téged is a 2nd person object: the plain first set",
+            "es": "El sujeto no es yo y téged es un objeto de 2.ª persona: la primera serie normal"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "lak-lek-f10",
+      "kind": "form",
+      "verb": "szeretni",
+      "person": "te → engem",
+      "answer": "szeretsz",
+      "table": "lak-lek-overview"
+    },
+    {
+      "id": "lak-lek-c12",
+      "sentence": "Szeretlek ___.",
+      "options": [
+        "téged",
+        "te",
+        "engem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The object form of te (you) is téged; the ending -lek already says I → you.",
+        "es": "La forma de objeto de te (tú) es téged; la terminación -lek ya dice yo → tú."
+      },
+      "wrong": {
+        "te": {
+          "en": "te is the subject form (you do something); the object form is téged.",
+          "es": "te es la forma de sujeto (tú haces algo); la forma de objeto es téged."
+        },
+        "engem": {
+          "en": "engem is me; the ending -lek means the object is you, not me.",
+          "es": "engem es «a mí»; la terminación -lek significa que el objeto eres tú, no yo."
+        }
+      },
+      "examples": [
+        "Látlak téged.",
+        "Várlak téged."
+      ],
+      "tr": {
+        "en": "I love you.",
+        "es": "Te quiero a ti."
+      }
+    },
+    {
+      "id": "lak-lek-f11",
+      "kind": "form",
+      "verb": "szeretni",
+      "person": "mi → téged",
+      "answer": "szeretünk",
+      "table": "lak-lek-overview"
+    },
+    {
+      "id": "lak-lek-c13",
+      "sentence": "Itt vagyok! Igen, ___ téged!",
+      "options": [
+        "látlak",
+        "látom",
+        "látok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The speaker sees the person who just spoke: I → you, lát + lak = látlak.",
+        "es": "Quien habla ve a la persona que acaba de hablar: yo → tú, lát + lak = látlak."
+      },
+      "wrong": {
+        "látom": {
+          "en": "látom is 'I see it, him, her'; téged is 'you', so it needs látlak.",
+          "es": "látom es «lo, la veo»; téged es «a ti», así que necesita látlak."
+        },
+        "látok": {
+          "en": "látok is the plain 'I see' with no specific object; with téged you need látlak.",
+          "es": "látok es el simple «veo» sin objeto concreto; con téged hace falta látlak."
+        }
+      },
+      "examples": [
+        "Látlak.",
+        "Látlak titeket."
+      ],
+      "tr": {
+        "en": "I am here! Yes, I see you!",
+        "es": "¡Aquí estoy! ¡Sí, te veo!"
+      }
+    },
+    {
+      "id": "lak-lek-w04",
+      "kind": "why",
+      "es": "Gyerekek, várlak.",
+      "target": "várlak",
+      "tr": {
+        "en": "Kids, I am waiting for you.",
+        "es": "Niños, los espero."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A plural object needs a plural verb",
+            "es": "Un objeto plural necesita un verbo plural"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Gyerekek, várnak; that means the kids are waiting.",
+            "es": "Con esta regla la frase sería Gyerekek, várnak; eso significa que los niños esperan."
+          }
+        },
+        {
+          "text": {
+            "en": "I → you, also for several people: -lak",
+            "es": "Yo → tú, también para varias personas: -lak"
+          }
+        },
+        {
+          "text": {
+            "en": "The object is specific: the second set",
+            "es": "El objeto es concreto: la segunda serie"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Gyerekek, várom; that means I wait for it, him or her.",
+            "es": "Con esta regla la frase sería Gyerekek, várom; eso significa que lo, la espero."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "lak-lek-f12",
+      "kind": "form",
+      "verb": "szeretni",
+      "person": "ők → titeket",
+      "answer": "szeretnek",
+      "table": "lak-lek-overview"
+    },
+    {
+      "id": "lak-lek-c14",
+      "sentence": "___, Anna!",
+      "options": [
+        "Kérlek",
+        "Kérsz",
+        "Kérek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kérlek is 'I ask you', the friendly 'please'; Anna is a friend, so the I → you form. The formal 'please' for strangers is Kérem.",
+        "es": "Kérlek es «te lo pido», el «por favor» amistoso; Anna es una amiga, así que va la forma yo → tú. El «por favor» formal para desconocidos es Kérem."
+      },
+      "wrong": {
+        "Kérsz": {
+          "en": "Kérsz is 'you want, you ask for' (Kérsz egy kávét?): the subject would be you, not I.",
+          "es": "Kérsz es «tú quieres, tú pides» (¿Kérsz egy kávét?): el sujeto sería tú, no yo."
+        },
+        "Kérek": {
+          "en": "Kérek is 'I ask for, I would like' (Kérek egy kávét).",
+          "es": "Kérek es «pido, quiero» (Kérek egy kávét)."
+        }
+      },
+      "examples": [
+        "Kérlek!",
+        "Kérlek titeket."
+      ],
+      "tr": {
+        "en": "Please, Anna!",
+        "es": "¡Por favor, Anna!"
+      }
+    }
+  ]
+}

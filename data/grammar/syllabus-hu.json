@@ -1,0 +1,296 @@
+{
+  "units": [
+    { "id": "hangok", "level": "A1", "title": { "en": "Sounds and vowel harmony", "es": "Sonidos y armonía vocálica" } },
+    { "id": "alapok", "level": "A1", "title": { "en": "The basics", "es": "Lo básico" } },
+    { "id": "jelen", "level": "A1", "title": { "en": "The present tense", "es": "El presente" } },
+    { "id": "helyek", "level": "A1", "title": { "en": "Places", "es": "Lugares" } },
+    { "id": "birtoklas", "level": "A1", "title": { "en": "Possession", "es": "La posesión" } },
+    { "id": "kerdes", "level": "A1", "title": { "en": "Questions, negation, numbers", "es": "Preguntas, negación, números" } },
+    { "id": "mindennap", "level": "A1", "title": { "en": "Everyday sentences", "es": "Frases de cada día" } },
+    { "id": "mult-jovo", "level": "A2", "title": { "en": "Past, future, prefixes", "es": "Pasado, futuro, prefijos" } },
+    { "id": "modok", "level": "A2", "title": { "en": "Commands, politeness, possibility", "es": "Órdenes, cortesía, posibilidad" } },
+    { "id": "osszetett", "level": "A2", "title": { "en": "Longer sentences", "es": "Frases más largas" } }
+  ],
+  "topics": [
+    {
+      "id": "kiejtes-abc",
+      "level": "A1",
+      "unit": "hangok",
+      "title": { "en": "Sounds and letters: the Hungarian ABC", "es": "Sonidos y letras: el abecedario húngaro" },
+      "blurb": { "en": "Short and long vowels, letter groups like cs, sz, zs, gy, ny, and stress on the first syllable.", "es": "Vocales cortas y largas, grupos de letras como cs, sz, zs, gy, ny y acento en la primera sílaba." }
+    },
+    {
+      "id": "hangrend",
+      "level": "A1",
+      "unit": "hangok",
+      "title": { "en": "Vowel harmony: -ban or -ben?", "es": "Armonía vocálica: ¿-ban o -ben?" },
+      "blurb": { "en": "Why endings come in two or three forms: -ban/-ben, -hoz/-hez/-höz.", "es": "Por qué las terminaciones tienen dos o tres formas: -ban/-ben, -hoz/-hez/-höz." }
+    },
+    {
+      "id": "lenni-van",
+      "level": "A1",
+      "unit": "alapok",
+      "title": { "en": "To be: vagyok, vagy, van", "es": "Ser y estar: vagyok, vagy, van" },
+      "blurb": { "en": "The verb lenni: vagyok, vagy, van, and when the 3rd person is dropped.", "es": "El verbo lenni: vagyok, vagy, van, y cuándo se omite la 3.ª persona." }
+    },
+    {
+      "id": "nevelok",
+      "level": "A1",
+      "unit": "alapok",
+      "title": { "en": "Articles: a, az, egy", "es": "Artículos: a, az, egy" },
+      "blurb": { "en": "a / az before a vowel, egy, and when there is no article; no grammatical gender.", "es": "a / az ante vocal, egy, y cuándo no hay artículo; no hay género gramatical." }
+    },
+    {
+      "id": "szemelyes-nevmasok",
+      "level": "A1",
+      "unit": "alapok",
+      "title": { "en": "Personal pronouns: én, te, ő", "es": "Pronombres personales: én, te, ő" },
+      "blurb": { "en": "én, te, ő, mi, ti, ők, the formal Ön / Önök and dropping the pronoun; ő means he and she.", "es": "én, te, ő, mi, ti, ők, el formal Ön / Önök y cuándo se omite el pronombre; ő es él y ella." }
+    },
+    {
+      "id": "tobbes-szam",
+      "level": "A1",
+      "unit": "alapok",
+      "title": { "en": "Plural: -k (házak, almák)", "es": "Plural: -k (házak, almák)" },
+      "blurb": { "en": "The plural -k with its linking vowel (-ok, -ek, -ök, -ak), and the singular after numbers.", "es": "El plural -k con su vocal de enlace (-ok, -ek, -ök, -ak) y el singular después de números." }
+    },
+    {
+      "id": "jelen-alanyi",
+      "level": "A1",
+      "unit": "jelen",
+      "title": { "en": "Present tense: tanulok, tanulsz, tanul", "es": "Presente: tanulok, tanulsz, tanul" },
+      "blurb": { "en": "Present tense endings of regular verbs: -ok/-ek/-ök, -sz, -unk/-ünk, -tok/-tek/-tök, -nak/-nek.", "es": "Terminaciones del presente de los verbos regulares: -ok/-ek/-ök, -sz, -unk/-ünk, -tok/-tek/-tök, -nak/-nek." }
+    },
+    {
+      "id": "ik-igek",
+      "level": "A1",
+      "unit": "jelen",
+      "title": { "en": "-ik verbs: lakik, dolgozik, eszik, iszik", "es": "Verbos en -ik: lakik, dolgozik, eszik, iszik" },
+      "blurb": { "en": "-ik verbs like lakik, dolgozik, eszik, iszik, and their 1st person -om/-em/-öm in careful speech.", "es": "Verbos en -ik como lakik, dolgozik, eszik, iszik, y su 1.ª persona -om/-em/-öm en habla cuidada." }
+    },
+    {
+      "id": "targyrag",
+      "level": "A1",
+      "unit": "jelen",
+      "title": { "en": "The object ending -t", "es": "La terminación -t del objeto" },
+      "blurb": { "en": "The accusative -t with linking vowels (almát, kenyeret), and engem, téged, őt.", "es": "El acusativo -t con vocales de enlace (almát, kenyeret), y engem, téged, őt." }
+    },
+    {
+      "id": "jelen-targyas",
+      "level": "A1",
+      "unit": "jelen",
+      "title": { "en": "Definite conjugation: látom, látod, látja", "es": "Conjugación determinada: látom, látod, látja" },
+      "blurb": { "en": "Definite conjugation when the object is definite: látok egy kutyát, but látom a kutyát.", "es": "Conjugación determinada cuando el objeto es determinado: látok egy kutyát, pero látom a kutyát." }
+    },
+    {
+      "id": "lak-lek",
+      "level": "A1",
+      "unit": "jelen",
+      "title": { "en": "I → you: -lak / -lek (szeretlek)", "es": "Yo → tú: -lak / -lek (szeretlek)" },
+      "blurb": { "en": "-lak/-lek when I act on you: szeretlek, látlak, várlak titeket.", "es": "-lak/-lek cuando yo actúo sobre ti: szeretlek, látlak, várlak titeket." }
+    },
+    {
+      "id": "belso-helyhatarozok",
+      "level": "A1",
+      "unit": "helyek",
+      "title": { "en": "Inside a place: -ban/-ben, -ba/-be, -ból/-ből", "es": "Dentro de un lugar: -ban/-ben, -ba/-be, -ból/-ből" },
+      "blurb": { "en": "Inner-space cases: -ban/-ben (where), -ba/-be (where to), -ból/-ből (where from).", "es": "Casos del interior: -ban/-ben (dónde), -ba/-be (adónde), -ból/-ből (de dónde)." }
+    },
+    {
+      "id": "felszini-helyhatarozok",
+      "level": "A1",
+      "unit": "helyek",
+      "title": { "en": "On and at places: -on/-en/-ön, -ra/-re, -ról/-ről", "es": "En lugares abiertos y superficies: -on/-en/-ön, -ra/-re, -ról/-ről" },
+      "blurb": { "en": "Surface cases: -on/-en/-ön (where), -ra/-re (where to), -ról/-ről (where from), and city names.", "es": "Casos de superficie: -on/-en/-ön (dónde), -ra/-re (adónde), -ról/-ről (de dónde), y nombres de ciudades." }
+    },
+    {
+      "id": "kozelsegi-helyhatarozok",
+      "level": "A1",
+      "unit": "helyek",
+      "title": { "en": "Near someone: -nál, -hoz, -tól", "es": "Cerca de alguien: -nál, -hoz, -tól" },
+      "blurb": { "en": "Nearness cases: -nál/-nél (at someone's), -hoz/-hez/-höz (to), -tól/-től (from).", "es": "Casos de cercanía: -nál/-nél (en casa de alguien), -hoz/-hez/-höz (hacia), -tól/-től (de parte de)." }
+    },
+    {
+      "id": "birtokos-szemelyjelek",
+      "level": "A1",
+      "unit": "birtoklas",
+      "title": { "en": "My, your, his: házam, házad, háza", "es": "Mi, tu, su: házam, házad, háza" },
+      "blurb": { "en": "Possessive endings: házam, házad, háza, házunk, házatok, házuk.", "es": "Terminaciones posesivas: házam, házad, háza, házunk, házatok, házuk." }
+    },
+    {
+      "id": "nekem-van",
+      "level": "A1",
+      "unit": "birtoklas",
+      "title": { "en": "To have: nekem van", "es": "Tener: nekem van" },
+      "blurb": { "en": "\"To have\" as nekem van / neked nincs, with nekem, neked, neki, nekünk, nektek, nekik.", "es": "«Tener» como nekem van / neked nincs, con nekem, neked, neki, nekünk, nektek, nekik." }
+    },
+    {
+      "id": "birtokos-szerkezet",
+      "level": "A1",
+      "unit": "birtoklas",
+      "title": { "en": "Possession: Anna háza", "es": "Posesión: Anna háza" },
+      "blurb": { "en": "Owner and owned: Anna háza, a fiú anyja, a tanárnak a könyve.", "es": "Poseedor y poseído: Anna háza, a fiú anyja, a tanárnak a könyve." }
+    },
+    {
+      "id": "kerdoszavak",
+      "level": "A1",
+      "unit": "kerdes",
+      "title": { "en": "Question words: ki, mi, hol, mikor", "es": "Palabras interrogativas: ki, mi, hol, mikor" },
+      "blurb": { "en": "ki, mi, hol, hová, honnan, mikor, hogyan, miért, and where the question word goes.", "es": "ki, mi, hol, hová, honnan, mikor, hogyan, miért, y dónde va la palabra interrogativa." }
+    },
+    {
+      "id": "tagadas",
+      "level": "A1",
+      "unit": "kerdes",
+      "title": { "en": "Saying no: nem, nincs, senki, semmi", "es": "Negar: nem, nincs, senki, semmi" },
+      "blurb": { "en": "nem, nincs/nincsenek, sem / se... se, senki, semmi, sehol.", "es": "nem, nincs/nincsenek, sem / se... se, senki, semmi, sehol." }
+    },
+    {
+      "id": "szamok-ido",
+      "level": "A1",
+      "unit": "kerdes",
+      "title": { "en": "Numbers, time, days and dates", "es": "Números, hora, días y fechas" },
+      "blurb": { "en": "Numbers, Hány óra van?, -kor, days and months, and dates like május elsején.", "es": "Números, Hány óra van?, -kor, días y meses, y fechas como május elsején." }
+    },
+    {
+      "id": "fonevi-igenev",
+      "level": "A1",
+      "unit": "mindennap",
+      "title": { "en": "Infinitive: akarok, tudok, kell, fogok", "es": "Infinitivo: akarok, tudok, kell, fogok" },
+      "blurb": { "en": "The infinitive -ni with akar, tud, szeret, kell, lehet, szabad, fog.", "es": "El infinitivo -ni con akar, tud, szeret, kell, lehet, szabad, fog." }
+    },
+    {
+      "id": "val-vel",
+      "level": "A1",
+      "unit": "mindennap",
+      "title": { "en": "With, by: -val / -vel", "es": "Con y en (medio): -val / -vel" },
+      "blurb": { "en": "-val/-vel (with, by means of) and how it assimilates: busszal, Péterrel, velem.", "es": "-val/-vel (con, por medio de) y cómo se asimila: busszal, Péterrel, velem." }
+    },
+    {
+      "id": "reszes-eset",
+      "level": "A1",
+      "unit": "mindennap",
+      "title": { "en": "To / for someone: -nak / -nek", "es": "A / para alguien: -nak / -nek" },
+      "blurb": { "en": "-nak/-nek for who gets something: ad, mond, küld, segít, ír; neki, nekem.", "es": "-nak/-nek para quien recibe algo: ad, mond, küld, segít, ír; neki, nekem." }
+    },
+    {
+      "id": "melleknev",
+      "level": "A1",
+      "unit": "mindennap",
+      "title": { "en": "Adjectives: nagy, kicsi, piros", "es": "Adjetivos: nagy, kicsi, piros" },
+      "blurb": { "en": "Adjectives before the noun (a nagy házak) and in the predicate (A házak nagyok), milyen?, colours.", "es": "Adjetivos antes del sustantivo (a nagy házak) y en el predicado (A házak nagyok), milyen?, colores." }
+    },
+    {
+      "id": "mult-ido",
+      "level": "A2",
+      "unit": "mult-jovo",
+      "title": { "en": "The past tense: láttam, voltam, ment", "es": "El pasado: láttam, voltam, ment" },
+      "blurb": { "en": "The past tense -t / -tt (láttam, láttam a filmet), and voltam, ment, jött, evett, ivott.", "es": "El pasado -t / -tt (láttam, láttam a filmet), y voltam, ment, jött, evett, ivott." }
+    },
+    {
+      "id": "jovo-ido",
+      "level": "A2",
+      "unit": "mult-jovo",
+      "title": { "en": "The future: Holnap megyek, fogok, leszek", "es": "El futuro: Holnap megyek, fogok, leszek" },
+      "blurb": { "en": "The future: present plus a time word, fog + infinitive, and lesz.", "es": "El futuro: presente más una palabra de tiempo, fog + infinitivo, y lesz." }
+    },
+    {
+      "id": "igekotok",
+      "level": "A2",
+      "unit": "mult-jovo",
+      "title": { "en": "Verb prefixes: be-, ki-, meg-, el-...", "es": "Prefijos verbales: be-, ki-, meg-, el-..." },
+      "blurb": { "en": "Prefixes meg-, el-, ki-, be-, fel-, le-, át-, vissza-, haza-: direction and completion.", "es": "Prefijos meg-, el-, ki-, be-, fel-, le-, át-, vissza-, haza-: dirección y término de la acción." }
+    },
+    {
+      "id": "igekoto-szorend",
+      "level": "A2",
+      "unit": "mult-jovo",
+      "title": { "en": "Prefix word order: Nem megyek el", "es": "Orden del prefijo: Nem megyek el" },
+      "blurb": { "en": "Where the prefix goes: Nem megyek el. Mikor mész el? El akarok menni.", "es": "Dónde va el prefijo: Nem megyek el. Mikor mész el? El akarok menni." }
+    },
+    {
+      "id": "felszolito-mod",
+      "level": "A2",
+      "unit": "modok",
+      "title": { "en": "Commands and requests: menj, gyere, egyél", "es": "Órdenes y peticiones: menj, gyere, egyél" },
+      "blurb": { "en": "Commands and requests with -j: menj, gyere, egyél, nézd meg; polite Jöjjön be!", "es": "Órdenes y peticiones con -j: menj, gyere, egyél, nézd meg; cortés Jöjjön be!" }
+    },
+    {
+      "id": "felteteles-mod",
+      "level": "A2",
+      "unit": "modok",
+      "title": { "en": "Would and would like: szeretnék, kérnék, lenne", "es": "Cortesía y deseos: szeretnék, kérnék, lenne" },
+      "blurb": { "en": "The conditional -na/-ne, -nék: szeretnék, kérnék, lenne; Ha lenne időm, elmennék.", "es": "El condicional -na/-ne, -nék: szeretnék, kérnék, lenne; Ha lenne időm, elmennék." }
+    },
+    {
+      "id": "hat-het",
+      "level": "A2",
+      "unit": "modok",
+      "title": { "en": "Can and may: -hat / -het", "es": "Poder y permiso: -hat / -het" },
+      "blurb": { "en": "-hat/-het for possibility and permission: Bejöhetek? Itt lehet parkolni?", "es": "-hat/-het para posibilidad y permiso: Bejöhetek? Itt lehet parkolni?" }
+    },
+    {
+      "id": "fokozas",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "Comparing: -bb, leg-, mint", "es": "Comparar: -bb, leg-, mint" },
+      "blurb": { "en": "Comparison: -bb, leg-...-bb, mint; jó → jobb, sok → több, szép → szebb.", "es": "Comparación: -bb, leg-...-bb, mint; jó → jobb, sok → több, szép → szebb." }
+    },
+    {
+      "id": "nevutok",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "Postpositions: alatt, mellett, előtt", "es": "Posposiciones: alatt, mellett, előtt" },
+      "blurb": { "en": "Postpositions alatt, fölött, előtt, mögött, mellett, között, után, nélkül, felé, also with pronouns.", "es": "Posposiciones alatt, fölött, előtt, mögött, mellett, között, után, nélkül, felé, también con pronombres." }
+    },
+    {
+      "id": "mutato-nevmasok",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "this and that: ez, az, itt, ide", "es": "Esto y eso: ez, az, itt, ide" },
+      "blurb": { "en": "ez / az with case endings (ebben a házban, azt a könyvet), ilyen / olyan, itt / ott, ide / oda.", "es": "ez / az con terminaciones de caso (ebben a házban, azt a könyvet), ilyen / olyan, itt / ott, ide / oda." }
+    },
+    {
+      "id": "kotoszavak",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "Link words: és, de, vagy, mert, hogy, ha", "es": "Conectores: és, de, vagy, mert, hogy, ha" },
+      "blurb": { "en": "és, de, vagy, mert, hogy, ha, amikor, ezért, pedig, and the comma before hogy, mert, ha.", "es": "és, de, vagy, mert, hogy, ha, amikor, ezért, pedig, y la coma antes de hogy, mert, ha." }
+    },
+    {
+      "id": "vonatkozo-nevmasok",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "Relative words: aki, ami, ahol", "es": "Relativos: aki, ami, ahol" },
+      "blurb": { "en": "aki, ami, amely, ahol, amikor, ahova, also with endings: akinek, amit, amiben.", "es": "aki, ami, amely, ahol, amikor, ahova, también con terminaciones: akinek, amit, amiben." }
+    },
+    {
+      "id": "szorend-fokusz",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "Word order and focus", "es": "Orden de palabras y énfasis" },
+      "blurb": { "en": "The stressed element goes right before the verb: Péter jött, nem Anna.", "es": "El elemento enfatizado va justo antes del verbo: Péter jött, nem Anna." }
+    },
+    {
+      "id": "ul-ul-kent",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "Languages and 'as': -ul/-ül, -ként", "es": "Idiomas y «como»: -ul/-ül, -ként" },
+      "blurb": { "en": "-ul/-ül (magyarul, jól, rosszul) and -ként (tanárként): Beszélsz magyarul?", "es": "-ul/-ül (magyarul, jól, rosszul) y -ként (tanárként): Beszélsz magyarul?" }
+    },
+    {
+      "id": "ido-hatarozok",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "Time: -kor, -ig, óta, múlva, ezelőtt", "es": "Tiempo: -kor, -ig, óta, múlva, ezelőtt" },
+      "blurb": { "en": "Time expressions -ig, óta, múlva, ezelőtt, -kor; mikor, meddig, mióta.", "es": "Expresiones de tiempo -ig, óta, múlva, ezelőtt, -kor; mikor, meddig, mióta." }
+    },
+    {
+      "id": "mennyiseg",
+      "level": "A2",
+      "unit": "osszetett",
+      "title": { "en": "Quantity: sok, kevés, néhány, minden, -szor", "es": "Cantidad: sok, kevés, néhány, minden, -szor" },
+      "blurb": { "en": "sok, kevés, néhány, minden with a singular noun; háromszor, hányszor?", "es": "sok, kevés, néhány, minden con sustantivo en singular; háromszor, hányszor?" }
+    }
+  ]
+}

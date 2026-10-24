@@ -1,0 +1,1269 @@
+{
+  "schema": 2,
+  "topic": "fonevi-igenev",
+  "level": "A1",
+  "title": {
+    "en": "Infinitive: akarok, tudok, kell, fogok",
+    "es": "Infinitivo: akarok, tudok, kell, fogok"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Hungarian infinitive ends in -ni: dolgozni (to work), menni (to go). It goes after the helper words akar (want), tud (can, know how to), szeret (like), kell (must), lehet (one can), szabad (may) and fog (will). Only the helper verb changes for the person: Tudok úszni. (I can swim.) The infinitive never changes. English says 'I can swim' with a bare verb; Hungarian always adds -ni, like the 'to' in 'I want to eat'.",
+        "es": "El infinitivo húngaro termina en -ni: dolgozni (trabajar), menni (ir). Va después de las palabras auxiliares akar (querer), tud (poder, saber), szeret (gustar), kell (hay que), lehet (se puede), szabad (se permite) y fog (futuro). Solo cambia el verbo auxiliar según la persona: Tudok úszni. (Puedo nadar.) El infinitivo nunca cambia. Igual que en español (quiero comer, puedo nadar), el segundo verbo queda en infinitivo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "inf-regular",
+      "title": {
+        "en": "Infinitive: verb + -ni",
+        "es": "Infinitivo: verbo + -ni"
+      },
+      "header": [
+        {
+          "en": "Verb (he, she)",
+          "es": "Verbo (él, ella)"
+        },
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        }
+      ],
+      "rows": [
+        [
+          "dolgozik",
+          "dolgozni"
+        ],
+        [
+          "tanul",
+          "tanulni"
+        ],
+        [
+          "olvas",
+          "olvasni"
+        ],
+        [
+          "sétál",
+          "sétálni"
+        ],
+        [
+          "ír",
+          "írni"
+        ],
+        [
+          "úszik",
+          "úszni"
+        ],
+        [
+          "kel",
+          "kelni"
+        ],
+        [
+          "lát",
+          "látni"
+        ],
+        [
+          "vár",
+          "várni"
+        ],
+        [
+          "segít",
+          "segíteni"
+        ],
+        [
+          "kezd",
+          "kezdeni"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "inf-irregular",
+      "title": {
+        "en": "Very common verbs with their own infinitive",
+        "es": "Verbos muy comunes con infinitivo propio"
+      },
+      "header": [
+        {
+          "en": "Verb (he, she)",
+          "es": "Verbo (él, ella)"
+        },
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        }
+      ],
+      "rows": [
+        [
+          "eszik",
+          "enni"
+        ],
+        [
+          "iszik",
+          "inni"
+        ],
+        [
+          "megy",
+          "menni"
+        ],
+        [
+          "jön",
+          "jönni"
+        ],
+        [
+          "alszik",
+          "aludni"
+        ],
+        [
+          "vesz",
+          "venni"
+        ],
+        [
+          "tesz",
+          "tenni"
+        ],
+        [
+          "van",
+          "lenni"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "How to make the infinitive",
+        "es": "Cómo se forma el infinitivo"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Most verbs: take the verb and add -ni. Verbs in -ik lose the -ik first (dolgozik, dolgozni).",
+            "es": "La mayoría de los verbos: toma el verbo y añade -ni. Los verbos en -ik pierden primero el -ik (dolgozik, dolgozni)."
+          },
+          "examples": [
+            {
+              "es": "Tudok olvasni.",
+              "tr": {
+                "en": "I can read.",
+                "es": "Sé leer."
+              }
+            },
+            {
+              "es": "Akarok sétálni.",
+              "tr": {
+                "en": "I want to take a walk.",
+                "es": "Quiero pasear."
+              }
+            },
+            {
+              "es": "Tudok úszni.",
+              "tr": {
+                "en": "I can swim.",
+                "es": "Sé nadar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few verbs add a vowel before -ni: segíteni, kezdeni. Learn them as they come.",
+            "es": "Unos pocos verbos añaden una vocal antes de -ni: segíteni, kezdeni. Apréndelos conforme aparezcan."
+          },
+          "examples": [
+            {
+              "es": "Tudok segíteni.",
+              "tr": {
+                "en": "I can help.",
+                "es": "Puedo ayudar."
+              }
+            },
+            {
+              "es": "Mikor akarsz kezdeni?",
+              "tr": {
+                "en": "When do you want to start?",
+                "es": "¿Cuándo quieres empezar?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Some very common verbs have an infinitive of their own: enni, inni, menni, jönni, aludni, venni, tenni, lenni. Learn them as a set.",
+            "es": "Algunos verbos muy comunes tienen un infinitivo propio: enni, inni, menni, jönni, aludni, venni, tenni, lenni. Apréndelos como un conjunto."
+          },
+          "examples": [
+            {
+              "es": "Szeretnék enni.",
+              "tr": {
+                "en": "I would like to eat.",
+                "es": "Quisiera comer."
+              }
+            },
+            {
+              "es": "Nem tudok jönni.",
+              "tr": {
+                "en": "I cannot come.",
+                "es": "No puedo venir."
+              }
+            },
+            {
+              "es": "Menni fogok.",
+              "tr": {
+                "en": "I will go.",
+                "es": "Voy a ir."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "modal-forms",
+      "title": {
+        "en": "Helper verbs in the present tense",
+        "es": "Verbos auxiliares en presente"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "akar (want)",
+          "es": "akar (querer)"
+        },
+        {
+          "en": "tud (can)",
+          "es": "tud (poder, saber)"
+        },
+        {
+          "en": "fog (will)",
+          "es": "fog (futuro)"
+        },
+        {
+          "en": "szeret (like)",
+          "es": "szeret (gustar)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "akarok",
+          "tudok",
+          "fogok",
+          "szeretek"
+        ],
+        [
+          "te",
+          "akarsz",
+          "tudsz",
+          "fogsz",
+          "szeretsz"
+        ],
+        [
+          "ő",
+          "akar",
+          "tud",
+          "fog",
+          "szeret"
+        ],
+        [
+          "mi",
+          "akarunk",
+          "tudunk",
+          "fogunk",
+          "szeretünk"
+        ],
+        [
+          "ti",
+          "akartok",
+          "tudtok",
+          "fogtok",
+          "szerettek"
+        ],
+        [
+          "ők",
+          "akarnak",
+          "tudnak",
+          "fognak",
+          "szeretnek"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Helper verbs + infinitive",
+        "es": "Verbos auxiliares + infinitivo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "akar (want), tud (can, know how to) and szeret (like) take the person ending; the infinitive comes after and stays the same.",
+            "es": "akar (querer), tud (poder, saber) y szeret (gustar) llevan la terminación de persona; el infinitivo va después y no cambia. Szeretek olvasni = «me gusta leer» (en húngaro el sujeto es «yo»)."
+          },
+          "examples": [
+            {
+              "es": "Tudok úszni.",
+              "tr": {
+                "en": "I can swim.",
+                "es": "Sé nadar."
+              }
+            },
+            {
+              "es": "Akarok enni.",
+              "tr": {
+                "en": "I want to eat.",
+                "es": "Quiero comer."
+              }
+            },
+            {
+              "es": "Szeretek olvasni.",
+              "tr": {
+                "en": "I like to read.",
+                "es": "Me gusta leer."
+              }
+            },
+            {
+              "es": "Kati nem akar dolgozni.",
+              "tr": {
+                "en": "Kati does not want to work.",
+                "es": "Kati no quiere trabajar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "szeretnék + infinitive = 'I would like to ...', the polite way to ask for something. For now learn it as a ready-made phrase.",
+            "es": "szeretnék + infinitivo = «quisiera ...», la forma cortés de pedir algo. Por ahora apréndela como una frase hecha."
+          },
+          "examples": [
+            {
+              "es": "Szeretnék enni.",
+              "tr": {
+                "en": "I would like to eat.",
+                "es": "Quisiera comer."
+              }
+            },
+            {
+              "es": "Szeretnék inni.",
+              "tr": {
+                "en": "I would like to drink.",
+                "es": "Quisiera beber."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "kell (must, one has to), lehet (one can) and szabad (one may) have no person endings at all; they speak about people in general. Nem kell = no need to; nem szabad = not allowed.",
+            "es": "kell (hay que), lehet (se puede) y szabad (se permite) no llevan terminaciones de persona; hablan de la gente en general. Nem kell = no hace falta; nem szabad = no está permitido."
+          },
+          "examples": [
+            {
+              "es": "Dolgozni kell.",
+              "tr": {
+                "en": "One has to work.",
+                "es": "Hay que trabajar."
+              }
+            },
+            {
+              "es": "Itt lehet enni.",
+              "tr": {
+                "en": "You can eat here.",
+                "es": "Aquí se puede comer."
+              }
+            },
+            {
+              "es": "Itt nem szabad inni.",
+              "tr": {
+                "en": "You may not drink here.",
+                "es": "Aquí no se puede beber."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "fog (will) makes the future: infinitive + fog, and fog takes the person ending. After nem (or a question word) fog goes first: Nem fogok dolgozni.",
+            "es": "fog (futuro) forma el futuro: infinitivo + fog, y fog lleva la terminación de persona. Después de nem (o de una palabra interrogativa) fog va primero: Nem fogok dolgozni."
+          },
+          "examples": [
+            {
+              "es": "Holnap dolgozni fogok.",
+              "tr": {
+                "en": "Tomorrow I will work.",
+                "es": "Mañana trabajaré."
+              }
+            },
+            {
+              "es": "Tanulni fogunk.",
+              "tr": {
+                "en": "We will study.",
+                "es": "Vamos a estudiar."
+              }
+            },
+            {
+              "es": "Nem fogok menni.",
+              "tr": {
+                "en": "I will not go.",
+                "es": "No voy a ir."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "nem goes right before the helper verb. A question is made with intonation or with a question word.",
+            "es": "nem va justo antes del verbo auxiliar. La pregunta se hace con la entonación o con una palabra interrogativa."
+          },
+          "examples": [
+            {
+              "es": "Nem tudok jönni.",
+              "tr": {
+                "en": "I cannot come.",
+                "es": "No puedo venir."
+              }
+            },
+            {
+              "es": "Tudsz úszni?",
+              "tr": {
+                "en": "Can you swim?",
+                "es": "¿Sabes nadar?"
+              }
+            },
+            {
+              "es": "Mit akarsz inni?",
+              "tr": {
+                "en": "What do you want to drink?",
+                "es": "¿Qué quieres beber?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fácil de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Nem kell enni.",
+          "b": "Nem szabad enni.",
+          "note": {
+            "en": "Nem kell = you do not have to (you may if you like). Nem szabad = you must not (it is forbidden).",
+            "es": "Nem kell = no hace falta (puedes si quieres). Nem szabad = no se debe (está prohibido)."
+          },
+          "examples": [
+            {
+              "es": "Nem kell dolgozni.",
+              "tr": {
+                "en": "You do not have to work.",
+                "es": "No hay que trabajar."
+              }
+            },
+            {
+              "es": "Itt nem szabad úszni.",
+              "tr": {
+                "en": "You may not swim here.",
+                "es": "Aquí no se puede nadar."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Tudok főzni.",
+          "b": "Szeretek főzni.",
+          "note": {
+            "en": "tud is ability (I am able to); szeret is liking (I enjoy it).",
+            "es": "tud es capacidad (sé hacerlo); szeret es gusto (me gusta)."
+          },
+          "examples": [
+            {
+              "es": "Tudok úszni.",
+              "tr": {
+                "en": "I can swim.",
+                "es": "Sé nadar."
+              }
+            },
+            {
+              "es": "Szeretek úszni.",
+              "tr": {
+                "en": "I like to swim.",
+                "es": "Me gusta nadar."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Akarok inni.",
+          "b": "Szeretnék inni.",
+          "note": {
+            "en": "akarok = I want (direct, can sound blunt). szeretnék = I would like (polite).",
+            "es": "akarok = quiero (directo, puede sonar seco). szeretnék = quisiera (cortés)."
+          },
+          "examples": [
+            {
+              "es": "Akarok enni.",
+              "tr": {
+                "en": "I want to eat.",
+                "es": "Quiero comer."
+              }
+            },
+            {
+              "es": "Szeretnék enni.",
+              "tr": {
+                "en": "I would like to eat.",
+                "es": "Quisiera comer."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Nem tudok jönni.",
+          "b": "Nem fogok jönni.",
+          "note": {
+            "en": "Nem tudok = I am not able to. Nem fogok = I will not (a decision about the future).",
+            "es": "Nem tudok = no puedo. Nem fogok = no voy a (una decisión sobre el futuro)."
+          },
+          "examples": [
+            {
+              "es": "Nem tudok menni.",
+              "tr": {
+                "en": "I cannot go.",
+                "es": "No puedo ir."
+              }
+            },
+            {
+              "es": "Nem fogok menni.",
+              "tr": {
+                "en": "I will not go.",
+                "es": "No voy a ir."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: only the helper verb changes. Say Tudok úszni, never Tudok úszom. The infinitive takes no person ending. And kell, lehet, szabad have no endings either. 'I must work' with a person (nekem dolgoznom kell) comes at a later level; for now say Dolgozni kell.",
+        "es": "Trampa clásica: solo cambia el verbo auxiliar. Di Tudok úszni, nunca Tudok úszom. El infinitivo no lleva terminación de persona. Y kell, lehet, szabad tampoco llevan terminaciones. «Debo trabajar» con una persona (nekem dolgoznom kell) llega en un nivel posterior; por ahora di Dolgozni kell."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian the infinitive ends in «ni»: «dolgozni», «menni», «enni». It comes after the helper verb, and only the helper verb changes: «Tudok úszni», «Akarok enni», «Szeretek olvasni». The words «kell», «lehet» and «szabad» have no endings: «Dolgozni kell», «Itt lehet enni», «Itt nem szabad inni». For the future you put the infinitive first and «fog» after it: «Holnap dolgozni fogok». Note the difference: «Nem kell» means there is no need, but «nem szabad» means it is forbidden.",
+    "es": "En húngaro el infinitivo termina en «ni»: «dolgozni», «menni», «enni». Va después del verbo auxiliar, y solo cambia el verbo auxiliar: «Tudok úszni», «Akarok enni», «Szeretek olvasni». Las palabras «kell», «lehet» y «szabad» no llevan terminaciones: «Dolgozni kell», «Itt lehet enni», «Itt nem szabad inni». Para el futuro se pone primero el infinitivo y después «fog»: «Holnap dolgozni fogok». Ojo con la diferencia: «Nem kell» significa que no hace falta, pero «nem szabad» significa que está prohibido."
+  },
+  "items": [
+    {
+      "id": "fonevi-igenev-f01",
+      "kind": "form",
+      "verb": "dolgozik",
+      "person": "-ni",
+      "answer": "dolgozni",
+      "table": "inf-regular"
+    },
+    {
+      "id": "fonevi-igenev-c01",
+      "sentence": "Anna tud ___.",
+      "options": [
+        "úszni",
+        "úszik",
+        "úszom"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After tud the second verb is an infinitive: úszni. Only tud takes the person (Anna = she).",
+        "es": "Después de tud el segundo verbo es un infinitivo: úszni. Solo tud lleva la persona (Anna = ella)."
+      },
+      "wrong": {
+        "úszik": {
+          "en": "With úszik the sentence would stack two conjugated verbs; after tud the second verb stays in the infinitive.",
+          "es": "Con úszik la frase pondría dos verbos conjugados seguidos; después de tud el segundo verbo queda en infinitivo."
+        },
+        "úszom": {
+          "en": "úszom is 'I swim'; the subject is Anna, and the second verb never takes a person ending anyway.",
+          "es": "úszom es «yo nado»; el sujeto es Anna, y el segundo verbo nunca lleva terminación de persona."
+        }
+      },
+      "examples": [
+        "Péter tud főzni.",
+        "Tudok olvasni."
+      ],
+      "tr": {
+        "en": "Anna can swim.",
+        "es": "Anna sabe nadar."
+      }
+    },
+    {
+      "id": "fonevi-igenev-f02",
+      "kind": "form",
+      "verb": "eszik",
+      "person": "-ni",
+      "answer": "enni",
+      "table": "inf-irregular"
+    },
+    {
+      "id": "fonevi-igenev-c02",
+      "sentence": "Nem akarok ___.",
+      "options": [
+        "dolgozni",
+        "dolgozom",
+        "dolgozik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After akarok comes the infinitive: nem akarok dolgozni.",
+        "es": "Después de akarok va el infinitivo: nem akarok dolgozni."
+      },
+      "wrong": {
+        "dolgozom": {
+          "en": "dolgozom is 'I work'; 'Nem akarok dolgozom' would stack two conjugated verbs. The second verb is the infinitive.",
+          "es": "dolgozom es «yo trabajo»; «Nem akarok dolgozom» pondría dos verbos conjugados seguidos. El segundo verbo es el infinitivo."
+        },
+        "dolgozik": {
+          "en": "dolgozik is 'he or she works' and cannot follow akarok (I).",
+          "es": "dolgozik es «él o ella trabaja» y no puede ir después de akarok (yo)."
+        }
+      },
+      "examples": [
+        "Nem akarok enni.",
+        "Nem akarok jönni."
+      ],
+      "tr": {
+        "en": "I do not want to work.",
+        "es": "No quiero trabajar."
+      }
+    },
+    {
+      "id": "fonevi-igenev-f03",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "-ni",
+      "answer": "olvasni",
+      "table": "inf-regular"
+    },
+    {
+      "id": "fonevi-igenev-c03",
+      "sentence": "Mit akarsz ___?",
+      "options": [
+        "inni",
+        "iszol",
+        "iszik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "iszik has its own infinitive, inni; after akarsz the infinitive is needed.",
+        "es": "iszik tiene su propio infinitivo, inni; después de akarsz hace falta el infinitivo."
+      },
+      "wrong": {
+        "iszol": {
+          "en": "iszol is 'you drink', a conjugated form; after akarsz the second verb must be the infinitive.",
+          "es": "iszol es «tú bebes», una forma conjugada; después de akarsz el segundo verbo debe ser el infinitivo."
+        },
+        "iszik": {
+          "en": "iszik is 'he or she drinks'; it is the dictionary form, not the infinitive.",
+          "es": "iszik es «él o ella bebe»; es la forma de diccionario, no el infinitivo."
+        }
+      },
+      "examples": [
+        "Mit akarsz enni?",
+        "Akarsz inni?"
+      ],
+      "tr": {
+        "en": "What do you want to drink?",
+        "es": "¿Qué quieres beber?"
+      }
+    },
+    {
+      "id": "fonevi-igenev-f04",
+      "kind": "form",
+      "verb": "megy",
+      "person": "-ni",
+      "answer": "menni",
+      "table": "inf-irregular"
+    },
+    {
+      "id": "fonevi-igenev-c04",
+      "sentence": "Holnap ___ fogok.",
+      "options": [
+        "menni",
+        "megyek",
+        "megy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "fog + infinitive makes the future, and megy has its own infinitive: menni.",
+        "es": "fog + infinitivo forma el futuro, y megy tiene su propio infinitivo: menni."
+      },
+      "wrong": {
+        "megyek": {
+          "en": "megyek is 'I go'; fogok already carries the person, so the other verb must be the infinitive.",
+          "es": "megyek es «yo voy»; fogok ya lleva la persona, así que el otro verbo debe ser el infinitivo."
+        },
+        "megy": {
+          "en": "megy is 'he or she goes'; with fogok you need the infinitive menni.",
+          "es": "megy es «él o ella va»; con fogok hace falta el infinitivo menni."
+        }
+      },
+      "examples": [
+        "Holnap dolgozni fogok.",
+        "Tanulni fogok."
+      ],
+      "tr": {
+        "en": "Tomorrow I will go.",
+        "es": "Mañana iré."
+      }
+    },
+    {
+      "id": "fonevi-igenev-w01",
+      "kind": "why",
+      "es": "Tudok úszni.",
+      "target": "úszni",
+      "tr": {
+        "en": "I can swim.",
+        "es": "Sé nadar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The second verb after tud is an infinitive (-ni) and never takes a person ending",
+            "es": "El segundo verbo después de tud es un infinitivo (-ni) y nunca lleva terminación de persona"
+          }
+        },
+        {
+          "text": {
+            "en": "The second verb agrees with the subject, like the first",
+            "es": "El segundo verbo concuerda con el sujeto, igual que el primero"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Tudok úszom, which is not Hungarian: only the helper verb takes the person.",
+            "es": "Con esta regla la frase sería Tudok úszom, que no es húngaro: solo el verbo auxiliar lleva la persona."
+          }
+        },
+        {
+          "text": {
+            "en": "-ni marks the future: 'I will swim'",
+            "es": "-ni marca el futuro: «voy a nadar»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would mean 'I will swim' (Úszni fogok); here úszni only names what I can do.",
+            "es": "Con esta regla la frase significaría «voy a nadar» (Úszni fogok); aquí úszni solo nombra lo que sé hacer."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fonevi-igenev-c05",
+      "sentence": "Itt nem szabad ___.",
+      "options": [
+        "enni",
+        "eszem",
+        "eszik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "szabad is followed by the infinitive; eszik gives enni. Nem szabad = not allowed.",
+        "es": "szabad va seguido del infinitivo; eszik da enni. Nem szabad = no está permitido."
+      },
+      "wrong": {
+        "eszem": {
+          "en": "eszem is 'I eat'; szabad has no person, so 'Itt nem szabad eszem' is not possible.",
+          "es": "eszem es «yo como»; szabad no lleva persona, así que «Itt nem szabad eszem» no es posible."
+        },
+        "eszik": {
+          "en": "eszik is 'he or she eats'; after szabad you need the infinitive enni.",
+          "es": "eszik es «él o ella come»; después de szabad hace falta el infinitivo enni."
+        }
+      },
+      "examples": [
+        "Itt nem szabad inni.",
+        "Ott nem szabad úszni."
+      ],
+      "tr": {
+        "en": "You may not eat here.",
+        "es": "Aquí no se puede comer."
+      }
+    },
+    {
+      "id": "fonevi-igenev-f05",
+      "kind": "form",
+      "verb": "tanul",
+      "person": "-ni",
+      "answer": "tanulni",
+      "table": "inf-regular"
+    },
+    {
+      "id": "fonevi-igenev-c06",
+      "sentence": "Korán ___ kell.",
+      "options": [
+        "kelni",
+        "kelek",
+        "kel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "kell has no person ending; the action is the infinitive: kelni kell (one has to get up).",
+        "es": "kell no lleva terminación de persona; la acción es el infinitivo: kelni kell (hay que levantarse)."
+      },
+      "wrong": {
+        "kelek": {
+          "en": "kelek is 'I get up'; kell does not go with a conjugated verb, it needs the infinitive.",
+          "es": "kelek es «me levanto»; kell no va con un verbo conjugado, necesita el infinitivo."
+        },
+        "kel": {
+          "en": "kel is 'he or she gets up', a conjugated form; before kell you need the infinitive kelni.",
+          "es": "kel es «él o ella se levanta», una forma conjugada; antes de kell hace falta el infinitivo kelni."
+        }
+      },
+      "examples": [
+        "Dolgozni kell.",
+        "Nem kell dolgozni."
+      ],
+      "tr": {
+        "en": "You have to get up early.",
+        "es": "Hay que levantarse temprano."
+      }
+    },
+    {
+      "id": "fonevi-igenev-f06",
+      "kind": "form",
+      "verb": "segít",
+      "person": "-ni",
+      "answer": "segíteni",
+      "table": "inf-regular"
+    },
+    {
+      "id": "fonevi-igenev-w02",
+      "kind": "why",
+      "es": "Nem kell dolgozni.",
+      "target": "Nem kell",
+      "tr": {
+        "en": "You do not have to work.",
+        "es": "No hay que trabajar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Forbidden: working is not allowed",
+            "es": "Prohibido: no está permitido trabajar"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem szabad dolgozni (you may not work).",
+            "es": "Con esta regla la frase sería Nem szabad dolgozni (no se puede trabajar)."
+          }
+        },
+        {
+          "text": {
+            "en": "No need: working is not required",
+            "es": "No hace falta: trabajar no es obligatorio"
+          }
+        },
+        {
+          "text": {
+            "en": "Inability: I am not able to work",
+            "es": "Incapacidad: no puedo trabajar"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem tudok dolgozni (I am not able to work).",
+            "es": "Con esta regla la frase sería Nem tudok dolgozni (no puedo trabajar)."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "fonevi-igenev-f07",
+      "kind": "form",
+      "verb": "alszik",
+      "person": "-ni",
+      "answer": "aludni",
+      "table": "inf-irregular"
+    },
+    {
+      "id": "fonevi-igenev-c07",
+      "sentence": "Kati és én nem ___ jönni.",
+      "options": [
+        "tudunk",
+        "tudok",
+        "tudnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kati and I = we (mi), so tud takes -unk: tudunk.",
+        "es": "Kati y yo = nosotros (mi), así que tud lleva -unk: tudunk."
+      },
+      "wrong": {
+        "tudok": {
+          "en": "tudok is 'I can'; the sentence would leave Kati out, but she is part of the 'we'.",
+          "es": "tudok es «yo puedo»; la frase dejaría fuera a Kati, pero ella es parte del «nosotros»."
+        },
+        "tudnak": {
+          "en": "tudnak is 'they can'; the sentence would leave the speaker out, but 'I' is part of the 'we'.",
+          "es": "tudnak es «ellos pueden»; la frase dejaría fuera al hablante, pero «yo» es parte del «nosotros»."
+        }
+      },
+      "examples": [
+        "Nem tudunk menni.",
+        "Tudunk segíteni."
+      ],
+      "tr": {
+        "en": "Kati and I cannot come.",
+        "es": "Kati y yo no podemos venir."
+      }
+    },
+    {
+      "id": "fonevi-igenev-f08",
+      "kind": "form",
+      "verb": "akar",
+      "person": "mi",
+      "answer": "akarunk",
+      "table": "modal-forms"
+    },
+    {
+      "id": "fonevi-igenev-c08",
+      "sentence": "Gábor és Péter ___ főzni.",
+      "options": [
+        "tudnak",
+        "tud",
+        "tudtok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Two people are they (ők), so the form is tudnak.",
+        "es": "Dos personas son ellos (ők), así que la forma es tudnak."
+      },
+      "wrong": {
+        "tud": {
+          "en": "tud is singular (he or she); with Gábor and Péter you need the plural tudnak.",
+          "es": "tud es singular (él o ella); con Gábor y Péter hace falta el plural tudnak."
+        },
+        "tudtok": {
+          "en": "tudtok is 'you (all) can'; Gábor and Péter are third person, not the people spoken to.",
+          "es": "tudtok es «ustedes pueden»; Gábor y Péter son tercera persona, no las personas a quienes se habla."
+        }
+      },
+      "examples": [
+        "Lupita és Diego tudnak úszni.",
+        "Anna és Kati tudnak főzni."
+      ],
+      "tr": {
+        "en": "Gábor and Péter can cook.",
+        "es": "Gábor y Péter saben cocinar."
+      }
+    },
+    {
+      "id": "fonevi-igenev-f09",
+      "kind": "form",
+      "verb": "tud",
+      "person": "ti",
+      "answer": "tudtok",
+      "table": "modal-forms"
+    },
+    {
+      "id": "fonevi-igenev-c09",
+      "sentence": "Gyerekek, ___ játszani?",
+      "options": [
+        "akartok",
+        "akarunk",
+        "akarnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You are speaking to the children (ti = you all), so the form is akartok.",
+        "es": "Les hablas a los niños (ti = ustedes), así que la forma es akartok."
+      },
+      "wrong": {
+        "akarunk": {
+          "en": "akarunk is 'we want'; it would include the speaker, who is not part of the group addressed.",
+          "es": "akarunk es «queremos»; incluiría al hablante, que no forma parte del grupo al que se habla."
+        },
+        "akarnak": {
+          "en": "akarnak is 'they want'; you would be talking about the children, not to them.",
+          "es": "akarnak es «ellos quieren»; hablarías de los niños, no a los niños."
+        }
+      },
+      "examples": [
+        "Akartok enni?",
+        "Gyerekek, tudtok úszni?"
+      ],
+      "tr": {
+        "en": "Kids, do you want to play?",
+        "es": "Niños, ¿quieren jugar?"
+      }
+    },
+    {
+      "id": "fonevi-igenev-f10",
+      "kind": "form",
+      "verb": "szeret",
+      "person": "mi",
+      "answer": "szeretünk",
+      "table": "modal-forms"
+    },
+    {
+      "id": "fonevi-igenev-c10",
+      "sentence": "Lehet itt ___?",
+      "options": [
+        "fizetni",
+        "fizetek",
+        "fizet"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "lehet has no person; the action is the infinitive: lehet fizetni (one can pay).",
+        "es": "lehet no lleva persona; la acción es el infinitivo: lehet fizetni (se puede pagar)."
+      },
+      "wrong": {
+        "fizetek": {
+          "en": "fizetek is 'I pay'; lehet is followed by the infinitive, not by a conjugated verb.",
+          "es": "fizetek es «yo pago»; lehet va seguido del infinitivo, no de un verbo conjugado."
+        },
+        "fizet": {
+          "en": "fizet is 'he or she pays'; here you need the infinitive fizetni.",
+          "es": "fizet es «él o ella paga»; aquí hace falta el infinitivo fizetni."
+        }
+      },
+      "examples": [
+        "Itt lehet enni.",
+        "Lehet kérdezni?"
+      ],
+      "tr": {
+        "en": "Can one pay here?",
+        "es": "¿Se puede pagar aquí?"
+      }
+    },
+    {
+      "id": "fonevi-igenev-f11",
+      "kind": "form",
+      "verb": "fog",
+      "person": "ők",
+      "answer": "fognak",
+      "table": "modal-forms"
+    },
+    {
+      "id": "fonevi-igenev-w03",
+      "kind": "why",
+      "es": "Dolgozni fogok.",
+      "target": "fogok",
+      "tr": {
+        "en": "I will work.",
+        "es": "Voy a trabajar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Ability: I can work",
+            "es": "Capacidad: puedo trabajar"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Tudok dolgozni (I am able to work).",
+            "es": "Con esta regla la frase sería Tudok dolgozni (puedo trabajar)."
+          }
+        },
+        {
+          "text": {
+            "en": "Wish: I want to work",
+            "es": "Deseo: quiero trabajar"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Akarok dolgozni (I want to work).",
+            "es": "Con esta regla la frase sería Akarok dolgozni (quiero trabajar)."
+          }
+        },
+        {
+          "text": {
+            "en": "Future: infinitive + fog, and fog takes the person (fogok = I)",
+            "es": "Futuro: infinitivo + fog, y fog lleva la persona (fogok = yo)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "fonevi-igenev-c11",
+      "sentence": "Nem ___ inni, ha nem vagy szomjas.",
+      "options": [
+        "kell",
+        "szabad",
+        "lehet"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nem kell = there is no need: you drink only if you are thirsty.",
+        "es": "Nem kell = no hace falta: bebes solo si tienes sed."
+      },
+      "wrong": {
+        "szabad": {
+          "en": "Nem szabad inni would mean 'you must not drink' (a ban), which does not fit 'if you are not thirsty'.",
+          "es": "Nem szabad inni significaría «no debes beber» (una prohibición), que no encaja con «si no tienes sed»."
+        },
+        "lehet": {
+          "en": "Nem lehet inni would mean 'one cannot drink' (impossible or not allowed), not 'no need'.",
+          "es": "Nem lehet inni significaría «no se puede beber» (imposible o no permitido), no «no hace falta»."
+        }
+      },
+      "examples": [
+        "Nem kell enni.",
+        "Nem kell dolgozni."
+      ],
+      "tr": {
+        "en": "You do not have to drink if you are not thirsty.",
+        "es": "No tienes que beber si no tienes sed."
+      }
+    },
+    {
+      "id": "fonevi-igenev-f12",
+      "kind": "form",
+      "verb": "ír",
+      "person": "-ni",
+      "answer": "írni",
+      "table": "inf-regular"
+    },
+    {
+      "id": "fonevi-igenev-c12",
+      "sentence": "Szabad ___?",
+      "options": [
+        "kérdezni",
+        "kérdezek",
+        "kérdez"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "szabad is followed by the infinitive: Szabad kérdezni? (Is it allowed to ask?)",
+        "es": "szabad va seguido del infinitivo: Szabad kérdezni? (¿Se permite preguntar?)"
+      },
+      "wrong": {
+        "kérdezek": {
+          "en": "kérdezek is 'I ask'; szabad has no person, so it needs the infinitive.",
+          "es": "kérdezek es «yo pregunto»; szabad no lleva persona, así que necesita el infinitivo."
+        },
+        "kérdez": {
+          "en": "kérdez is 'he or she asks'; after szabad you need kérdezni.",
+          "es": "kérdez es «él o ella pregunta»; después de szabad hace falta kérdezni."
+        }
+      },
+      "examples": [
+        "Lehet kérdezni?",
+        "Itt nem szabad inni."
+      ],
+      "tr": {
+        "en": "May I ask?",
+        "es": "¿Puedo preguntar?"
+      }
+    },
+    {
+      "id": "fonevi-igenev-c13",
+      "sentence": "Diego szeret ___.",
+      "options": [
+        "sétálni",
+        "sétál",
+        "sétálok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After szeret (like) the second verb is the infinitive: szeret sétálni.",
+        "es": "Después de szeret (gustar) el segundo verbo es el infinitivo: szeret sétálni."
+      },
+      "wrong": {
+        "sétál": {
+          "en": "sétál is 'he or she walks'; after szeret the second verb must be the infinitive.",
+          "es": "sétál es «él o ella pasea»; después de szeret el segundo verbo debe ser el infinitivo."
+        },
+        "sétálok": {
+          "en": "sétálok is 'I walk'; Diego is the subject, and the second verb takes no person ending.",
+          "es": "sétálok es «yo paseo»; Diego es el sujeto, y el segundo verbo no lleva terminación de persona."
+        }
+      },
+      "examples": [
+        "Kati szeret olvasni.",
+        "Szeretek főzni."
+      ],
+      "tr": {
+        "en": "Diego likes to walk.",
+        "es": "A Diego le gusta pasear."
+      }
+    },
+    {
+      "id": "fonevi-igenev-w04",
+      "kind": "why",
+      "es": "Itt nem szabad enni.",
+      "target": "nem szabad",
+      "tr": {
+        "en": "You may not eat here.",
+        "es": "Aquí no se puede comer."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Forbidden: it is not allowed",
+            "es": "Prohibido: no está permitido"
+          }
+        },
+        {
+          "text": {
+            "en": "No need: you do not have to",
+            "es": "No hace falta: no tienes que"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Itt nem kell enni (you do not have to eat here), not a ban.",
+            "es": "Con esta regla la frase sería Itt nem kell enni (aquí no hace falta comer), no una prohibición."
+          }
+        },
+        {
+          "text": {
+            "en": "Dislike: I do not like it",
+            "es": "Disgusto: no me gusta"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem szeretek enni (I do not like eating), a personal taste.",
+            "es": "Con esta regla la frase sería Nem szeretek enni (no me gusta comer), un gusto personal."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fonevi-igenev-c14",
+      "sentence": "Szeretnék ___.",
+      "options": [
+        "enni",
+        "eszem",
+        "eszik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "szeretnék (I would like) is followed by the infinitive: szeretnék enni.",
+        "es": "szeretnék (quisiera) va seguido del infinitivo: szeretnék enni."
+      },
+      "wrong": {
+        "eszem": {
+          "en": "eszem is 'I eat'; 'Szeretnék eszem' would stack two I-verbs. The second verb is the infinitive.",
+          "es": "eszem es «yo como»; «Szeretnék eszem» pondría dos verbos en primera persona seguidos. El segundo verbo es el infinitivo."
+        },
+        "eszik": {
+          "en": "eszik is 'he or she eats'; after szeretnék you need the infinitive enni.",
+          "es": "eszik es «él o ella come»; después de szeretnék hace falta el infinitivo enni."
+        }
+      },
+      "examples": [
+        "Szeretnék inni.",
+        "Szeretnék segíteni."
+      ],
+      "tr": {
+        "en": "I would like to eat.",
+        "es": "Quisiera comer."
+      }
+    }
+  ]
+}

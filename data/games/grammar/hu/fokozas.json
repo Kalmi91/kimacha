@@ -1,0 +1,776 @@
+{
+  "schema": 2,
+  "topic": "fokozas",
+  "level": "A2",
+  "title": { "en": "Comparing: -bb, leg-, mint", "es": "Comparar: -bb, leg-, mint" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "English says 'bigger' or 'more expensive'; Spanish says más grande, más caro. Hungarian builds the 'more' into the adjective: nagy → nagyobb, drága → drágább. 'Than' is mint, always with a comma before it: Budapest nagyobb, mint Szeged. The superlative puts leg- in front of the comparative: a legnagyobb (the biggest). A few very common adjectives are irregular: jó → jobb, sok → több.",
+        "es": "El español dice más grande, más caro; el húngaro mete el «más» dentro del adjetivo: nagy → nagyobb, drága → drágább. «Que» es mint, siempre con una coma antes: Budapest nagyobb, mint Szeged. El superlativo pone leg- delante del comparativo: a legnagyobb (el más grande). Unos pocos adjetivos muy comunes son irregulares: jó → jobb, sok → több."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "fok-regular",
+      "title": { "en": "Regular adjectives", "es": "Adjetivos regulares" },
+      "header": [
+        { "en": "Adjective", "es": "Adjetivo" },
+        { "en": "középfok: comparative (-bb)", "es": "középfok: comparativo (-bb)" },
+        { "en": "felsőfok: superlative (leg-)", "es": "felsőfok: superlativo (leg-)" }
+      ],
+      "rows": [
+        ["gyors", "gyorsabb", "leggyorsabb"],
+        ["magas", "magasabb", "legmagasabb"],
+        ["rossz", "rosszabb", "legrosszabb"],
+        ["hideg", "hidegebb", "leghidegebb"],
+        ["kedves", "kedvesebb", "legkedvesebb"],
+        ["drága", "drágább", "legdrágább"],
+        ["olcsó", "olcsóbb", "legolcsóbb"],
+        ["új", "újabb", "legújabb"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "How the comparative is built", "es": "Cómo se forma el comparativo" },
+      "items": [
+        {
+          "text": {
+            "en": "Most adjectives ending in a consonant add -abb (back vowels) or -ebb (front vowels).",
+            "es": "La mayoría de los adjetivos que acaban en consonante añaden -abb (vocales posteriores) o -ebb (vocales anteriores)."
+          },
+          "examples": [
+            { "es": "A vonat gyorsabb, mint a busz.", "tr": { "en": "The train is faster than the bus.", "es": "El tren es más rápido que el autobús." } },
+            { "es": "A tél hidegebb, mint az ősz.", "tr": { "en": "Winter is colder than autumn.", "es": "El invierno es más frío que el otoño." } },
+            { "es": "Anna magasabb, mint Péter.", "tr": { "en": "Anna is taller than Péter.", "es": "Anna es más alta que Péter." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Adjectives ending in -a or -e lengthen it (á, é) and add -bb: drága → drágább, tiszta → tisztább. After a long vowel just add -bb: olcsó → olcsóbb.",
+            "es": "Los adjetivos que acaban en -a o -e alargan la vocal (á, é) y añaden -bb: drága → drágább, tiszta → tisztább. Después de una vocal larga solo se añade -bb: olcsó → olcsóbb."
+          },
+          "examples": [
+            { "es": "A taxi drágább, mint a metró.", "tr": { "en": "The taxi is more expensive than the metro.", "es": "El taxi es más caro que el metro." } },
+            { "es": "A piac olcsóbb, mint a szupermarket.", "tr": { "en": "The market is cheaper than the supermarket.", "es": "El mercado es más barato que el supermercado." } },
+            { "es": "A konyha tisztább, mint a szoba.", "tr": { "en": "The kitchen is cleaner than the room.", "es": "La cocina está más limpia que la habitación." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few common adjectives are irregular: jó → jobb, sok → több, nagy → nagyobb, kicsi → kisebb, szép → szebb.",
+            "es": "Unos pocos adjetivos comunes son irregulares: jó → jobb, sok → több, nagy → nagyobb, kicsi → kisebb, szép → szebb."
+          },
+          "examples": [
+            { "es": "Ez a szálloda jobb, mint az.", "tr": { "en": "This hotel is better than that one.", "es": "Este hotel es mejor que aquel." } },
+            { "es": "Nekem több időm van, mint neked.", "tr": { "en": "I have more time than you.", "es": "Tengo más tiempo que tú." } },
+            { "es": "Szeged kisebb, mint Debrecen.", "tr": { "en": "Szeged is smaller than Debrecen.", "es": "Szeged es más pequeña que Debrecen." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "fok-irregular",
+      "title": { "en": "Irregular adjectives", "es": "Adjetivos irregulares" },
+      "header": [
+        { "en": "Adjective", "es": "Adjetivo" },
+        { "en": "középfok: comparative (-bb)", "es": "középfok: comparativo (-bb)" },
+        { "en": "felsőfok: superlative (leg-)", "es": "felsőfok: superlativo (leg-)" }
+      ],
+      "rows": [
+        ["jó", "jobb", "legjobb"],
+        ["sok", "több", "legtöbb"],
+        ["nagy", "nagyobb", "legnagyobb"],
+        ["kicsi", "kisebb", "legkisebb"],
+        ["szép", "szebb", "legszebb"],
+        ["hosszú", "hosszabb", "leghosszabb"],
+        ["lassú", "lassabb", "leglassabb"],
+        ["nehéz", "nehezebb", "legnehezebb"],
+        ["könnyű", "könnyebb", "legkönnyebb"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Using the degrees", "es": "Cómo usar los grados" },
+      "points": [
+        {
+          "text": {
+            "en": "Comparing two things: A is -bb, mint B. The comma before mint is part of the spelling.",
+            "es": "Comparar dos cosas: A es -bb, mint B. La coma antes de mint es parte de la ortografía."
+          },
+          "examples": [
+            { "es": "Budapest nagyobb, mint Szeged.", "tr": { "en": "Budapest is bigger than Szeged.", "es": "Budapest es más grande que Szeged." } },
+            { "es": "Mexikóváros nagyobb, mint Budapest.", "tr": { "en": "Mexico City is bigger than Budapest.", "es": "La Ciudad de México es más grande que Budapest." } },
+            { "es": "Anna fiatalabb, mint Gábor.", "tr": { "en": "Anna is younger than Gábor.", "es": "Anna es más joven que Gábor." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "The best, the most: leg- + comparative, usually with a before it.",
+            "es": "El mejor, el más: leg- + comparativo, normalmente con a delante."
+          },
+          "examples": [
+            { "es": "Mexikóváros a legnagyobb város Mexikóban.", "tr": { "en": "Mexico City is the biggest city in Mexico.", "es": "La Ciudad de México es la ciudad más grande de México." } },
+            { "es": "Gábor a legjobb barátom.", "tr": { "en": "Gábor is my best friend.", "es": "Gábor es mi mejor amigo." } },
+            { "es": "Ez a legolcsóbb szoba.", "tr": { "en": "This is the cheapest room.", "es": "Esta es la habitación más barata." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Before a noun the adjective does not change: no plural and no -t. Only the noun takes endings.",
+            "es": "Antes de un sustantivo el adjetivo no cambia: ni plural ni -t. Solo el sustantivo lleva terminaciones."
+          },
+          "examples": [
+            { "es": "Egy nagyobb lakást keresek.", "tr": { "en": "I'm looking for a bigger flat.", "es": "Busco un departamento más grande." } },
+            { "es": "Szeretnék egy olcsóbb szobát.", "tr": { "en": "I'd like a cheaper room.", "es": "Quisiera una habitación más barata." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "As a predicate with a plural subject, the comparative takes the plural -ak / -ek.",
+            "es": "Como predicado con un sujeto plural, el comparativo lleva el plural -ak / -ek."
+          },
+          "examples": [
+            { "es": "Az autók gyorsabbak, mint a biciklik.", "tr": { "en": "Cars are faster than bikes.", "es": "Los autos son más rápidos que las bicicletas." } },
+            { "es": "A régi autók olcsóbbak.", "tr": { "en": "Old cars are cheaper.", "es": "Los autos viejos son más baratos." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a verb you need the adverb: comparative + -an / -en. jó → jól, but better is jobban.",
+            "es": "Con un verbo hace falta el adverbio: comparativo + -an / -en. jó → jól, pero «mejor» es jobban."
+          },
+          "examples": [
+            { "es": "Péter gyorsabban fut, mint Anna.", "tr": { "en": "Péter runs faster than Anna.", "es": "Péter corre más rápido que Anna." } },
+            { "es": "Anna jobban főz, mint én.", "tr": { "en": "Anna cooks better than I do.", "es": "Anna cocina mejor que yo." } },
+            { "es": "Lassabban, kérem.", "tr": { "en": "Slower, please.", "es": "Más despacio, por favor." } },
+            { "es": "Kati főz a legjobban.", "tr": { "en": "Kati cooks best.", "es": "Kati es la que mejor cocina." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "To strengthen a comparative use sokkal (much) or még (even). Nagyon (very) does not go with a comparative.",
+            "es": "Para reforzar un comparativo se usa sokkal (mucho) o még (todavía). Nagyon (muy) no va con un comparativo."
+          },
+          "examples": [
+            { "es": "A piac sokkal olcsóbb, mint a szupermarket.", "tr": { "en": "The market is much cheaper than the supermarket.", "es": "El mercado es mucho más barato que el supermercado." } },
+            { "es": "Ez még drágább.", "tr": { "en": "This is even more expensive.", "es": "Esto es todavía más caro." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Look-alikes", "es": "Parecidos" },
+      "pairs": [
+        {
+          "a": "Ez jobb.",
+          "b": "Anna jobban főz.",
+          "note": {
+            "en": "jobb describes a thing (an adjective). jobban describes an action (an adverb with a verb).",
+            "es": "jobb describe una cosa (un adjetivo). jobban describe una acción (un adverbio con un verbo)."
+          },
+          "examples": [
+            { "es": "A leves jobb, mint a hal.", "tr": { "en": "The soup is better than the fish.", "es": "La sopa es mejor que el pescado." } },
+            { "es": "Gábor jobban fut, mint Péter.", "tr": { "en": "Gábor runs better than Péter.", "es": "Gábor corre mejor que Péter." } }
+          ]
+        },
+        {
+          "a": "Nekem több időm van.",
+          "b": "A kert nagyobb.",
+          "note": {
+            "en": "több is 'more' in amount (the comparative of sok); nagyobb is 'bigger' in size.",
+            "es": "több es «más» en cantidad (el comparativo de sok); nagyobb es «más grande» en tamaño."
+          },
+          "examples": [
+            { "es": "Nekem több pénzem van, mint neked.", "tr": { "en": "I have more money than you.", "es": "Tengo más dinero que tú." } },
+            { "es": "A kert nagyobb, mint a lakás.", "tr": { "en": "The garden is bigger than the flat.", "es": "El jardín es más grande que el departamento." } }
+          ]
+        },
+        {
+          "a": "Anna magasabb.",
+          "b": "Anna a legmagasabb.",
+          "note": {
+            "en": "-bb compares two; leg- picks the top one out of a whole group.",
+            "es": "-bb compara dos; leg- elige el primero de todo un grupo."
+          },
+          "examples": [
+            { "es": "Péter magasabb, mint Gábor.", "tr": { "en": "Péter is taller than Gábor.", "es": "Péter es más alto que Gábor." } },
+            { "es": "Péter a legmagasabb a családban.", "tr": { "en": "Péter is the tallest in the family.", "es": "Péter es el más alto de la familia." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: there is no separate word for 'more'. 'More expensive' is drágább, never több drága; 'the best' is a legjobb, never a leg jó. And do not forget the comma before mint.",
+        "es": "Trampa clásica: no hay una palabra aparte para «más». «Más caro» es drágább, nunca több drága; «el mejor» es a legjobb, nunca a leg jó. Y no olvides la coma antes de mint."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian the comparative is built into the adjective with a double b ending. «Gyors» becomes «gyorsabb», «hideg» becomes «hidegebb» and «drága» becomes «drágább». For than, say «mint», and put a comma before it: «Budapest nagyobb, mint Szeged.» For the most, add «leg» in front: «a legnagyobb», «a legolcsóbb». Four common adjectives are irregular: «jó» becomes «jobb», «sok» becomes «több», «kicsi» becomes «kisebb» and «szép» becomes «szebb».",
+    "es": "En húngaro el comparativo se forma dentro del adjetivo con una terminación de doble b. «Gyors» pasa a «gyorsabb», «hideg» pasa a «hidegebb» y «drága» pasa a «drágább». Para decir que, usa «mint» y pon una coma antes: «Budapest nagyobb, mint Szeged.» Para el superlativo, añade «leg» delante: «a legnagyobb», «a legolcsóbb». Cuatro adjetivos comunes son irregulares: «jó» pasa a «jobb», «sok» pasa a «több», «kicsi» pasa a «kisebb» y «szép» pasa a «szebb»."
+  },
+  "glossary": [
+    { "word": "sok", "gloss": { "en": "much, many, a lot", "es": "mucho, muchos" } },
+    { "word": "több", "gloss": { "en": "more", "es": "más (cantidad)" } },
+    { "word": "legtöbb", "gloss": { "en": "most", "es": "la mayor parte, el máximo" } },
+    { "word": "sokkal", "gloss": { "en": "much (before a comparative)", "es": "mucho (ante un comparativo)" } },
+    { "word": "nagyon", "gloss": { "en": "very", "es": "muy" } },
+    { "word": "kicsit", "gloss": { "en": "a little, a bit", "es": "un poco" } }
+  ],
+  "items": [
+    {
+      "id": "fokozas-c01",
+      "sentence": "A taxi ___, mint a metró.",
+      "options": ["drágább", "drága", "legdrágább"],
+      "correct": 0,
+      "why": {
+        "en": "Mint ('than') needs a comparative: drága lengthens to á and adds -bb, so drágább.",
+        "es": "Mint («que») pide un comparativo: drága alarga la a en á y añade -bb, por eso drágább."
+      },
+      "wrong": {
+        "drága": {
+          "en": "drága is the plain adjective: 'The taxi is expensive', with no comparison.",
+          "es": "drága es el adjetivo simple: «El taxi es caro», sin comparación."
+        },
+        "legdrágább": {
+          "en": "legdrágább is the superlative, 'the most expensive of all'; with mint you compare just two things.",
+          "es": "legdrágább es el superlativo, «el más caro de todos»; con mint se comparan solo dos cosas."
+        }
+      },
+      "examples": ["A metró olcsóbb, mint a taxi.", "A szálloda drágább, mint a lakás."],
+      "tr": { "en": "The taxi is more expensive than the metro.", "es": "El taxi es más caro que el metro." }
+    },
+    {
+      "id": "fokozas-f01",
+      "kind": "form",
+      "verb": "gyors",
+      "person": "középfok (-bb)",
+      "answer": "gyorsabb",
+      "table": "fok-regular"
+    },
+    {
+      "id": "fokozas-c02",
+      "sentence": "Ez a szálloda ___, mint az.",
+      "options": ["jobb", "jobban", "jó"],
+      "correct": 0,
+      "why": {
+        "en": "Jó (good) has the irregular comparative jobb (better), and here it describes the noun szálloda.",
+        "es": "Jó (bueno) tiene el comparativo irregular jobb (mejor), y aquí describe el sustantivo szálloda."
+      },
+      "wrong": {
+        "jobban": {
+          "en": "jobban is the adverb 'better' for actions (Anna jobban főz); it does not describe a thing like the hotel.",
+          "es": "jobban es el adverbio «mejor» para acciones (Anna jobban főz); no describe una cosa como el hotel."
+        },
+        "jó": {
+          "en": "jó is only 'good': there is no comparison, and mint needs a comparative.",
+          "es": "jó es solo «bueno»: no hay comparación, y mint pide un comparativo."
+        }
+      },
+      "examples": ["Ez a kávé jobb, mint az.", "A tea jobb, mint a kávé."],
+      "tr": { "en": "This hotel is better than that one.", "es": "Este hotel es mejor que aquel." }
+    },
+    {
+      "id": "fokozas-f02",
+      "kind": "form",
+      "verb": "magas",
+      "person": "középfok (-bb)",
+      "answer": "magasabb",
+      "table": "fok-regular"
+    },
+    {
+      "id": "fokozas-c03",
+      "sentence": "Szeged ___, mint Debrecen.",
+      "options": ["kisebb", "kicsi", "legkisebb"],
+      "correct": 0,
+      "why": {
+        "en": "Kicsi (small) has the irregular comparative kisebb: the stem becomes kis- and takes -ebb.",
+        "es": "Kicsi (pequeño) tiene el comparativo irregular kisebb: la raíz pasa a kis- y toma -ebb."
+      },
+      "wrong": {
+        "kicsi": {
+          "en": "kicsi is the plain adjective: 'Szeged is small', with no comparison.",
+          "es": "kicsi es el adjetivo simple: «Szeged es pequeña», sin comparación."
+        },
+        "legkisebb": {
+          "en": "legkisebb is the superlative, 'the smallest of all'; with mint you compare just two cities.",
+          "es": "legkisebb es el superlativo, «la más pequeña de todas»; con mint se comparan solo dos ciudades."
+        }
+      },
+      "examples": ["Kati kisebb, mint Gábor.", "A szoba kisebb, mint a konyha."],
+      "tr": { "en": "Szeged is smaller than Debrecen.", "es": "Szeged es más pequeña que Debrecen." }
+    },
+    {
+      "id": "fokozas-f03",
+      "kind": "form",
+      "verb": "hideg",
+      "person": "középfok (-bb)",
+      "answer": "hidegebb",
+      "table": "fok-regular"
+    },
+    {
+      "id": "fokozas-w01",
+      "kind": "why",
+      "es": "Budapest nagyobb, mint Szeged.",
+      "target": "nagyobb",
+      "tr": { "en": "Budapest is bigger than Szeged.", "es": "Budapest es más grande que Szeged." },
+      "options": [
+        {
+          "text": {
+            "en": "Comparative: two things are compared, and mint introduces the second",
+            "es": "Comparativo: se comparan dos cosas, y mint introduce la segunda"
+          }
+        },
+        {
+          "text": {
+            "en": "Superlative: the biggest of a whole group",
+            "es": "Superlativo: el más grande de todo un grupo"
+          },
+          "wrong": {
+            "en": "With this rule the word would be legnagyobb, as in Budapest a legnagyobb város: 'Budapest is the biggest city'.",
+            "es": "Con esta regla la palabra sería legnagyobb, como en Budapest a legnagyobb város: «Budapest es la ciudad más grande»."
+          }
+        },
+        {
+          "text": {
+            "en": "Plain adjective: Budapest is just 'big'",
+            "es": "Adjetivo simple: Budapest es solo «grande»"
+          },
+          "wrong": {
+            "en": "With this rule the word would be nagy: 'Budapest is big', with no comparison.",
+            "es": "Con esta regla la palabra sería nagy: «Budapest es grande», sin comparación."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fokozas-c04",
+      "sentence": "Nekem ___ időm van, mint neked.",
+      "options": ["több", "sok", "legtöbb"],
+      "correct": 0,
+      "why": {
+        "en": "Sok (much) has the irregular comparative több (more), and mint needs a comparative.",
+        "es": "Sok (mucho) tiene el comparativo irregular több (más), y mint pide un comparativo."
+      },
+      "wrong": {
+        "sok": {
+          "en": "Nekem sok időm van means 'I have a lot of time': no comparison with you.",
+          "es": "Nekem sok időm van significa «tengo mucho tiempo»: sin comparar contigo."
+        },
+        "legtöbb": {
+          "en": "legtöbb means 'the most of all'; with mint you compare just two people.",
+          "es": "legtöbb significa «lo máximo de todos»; con mint se comparan solo dos personas."
+        }
+      },
+      "examples": ["Neked több pénzed van, mint nekem.", "Kati több könyvet olvas, mint Gábor."],
+      "tr": { "en": "I have more time than you.", "es": "Tengo más tiempo que tú." }
+    },
+    {
+      "id": "fokozas-f04",
+      "kind": "form",
+      "verb": "drága",
+      "person": "középfok (-bb)",
+      "answer": "drágább",
+      "table": "fok-regular"
+    },
+    {
+      "id": "fokozas-c05",
+      "sentence": "Mexikóváros a ___ város.",
+      "options": ["legnagyobb", "nagyobb", "nagy"],
+      "correct": 0,
+      "why": {
+        "en": "'The biggest' picks the top of a whole group: leg- + nagyobb = legnagyobb, with a before it.",
+        "es": "«La más grande» elige la primera de todo un grupo: leg- + nagyobb = legnagyobb, con a delante."
+      },
+      "wrong": {
+        "nagyobb": {
+          "en": "a nagyobb város would be 'the bigger city', when two cities have been compared.",
+          "es": "a nagyobb város sería «la ciudad más grande de las dos», cuando se han comparado dos ciudades."
+        },
+        "nagy": {
+          "en": "a nagy város is just 'the big city', with no comparison.",
+          "es": "a nagy város es solo «la ciudad grande», sin comparación."
+        }
+      },
+      "examples": ["Ez a legnagyobb ház.", "A legnagyobb szoba a konyha."],
+      "tr": { "en": "Mexico City is the biggest city.", "es": "La Ciudad de México es la ciudad más grande." }
+    },
+    {
+      "id": "fokozas-f05",
+      "kind": "form",
+      "verb": "olcsó",
+      "person": "középfok (-bb)",
+      "answer": "olcsóbb",
+      "table": "fok-regular"
+    },
+    {
+      "id": "fokozas-c06",
+      "sentence": "Ez a kép ___, mint az.",
+      "options": ["szebb", "szép", "legszebb"],
+      "correct": 0,
+      "why": {
+        "en": "Szép (beautiful) becomes szebb: the vowel shortens (é → e) and the p turns into b, so there is no szépebb.",
+        "es": "Szép (bonito) pasa a szebb: la vocal se acorta (é → e) y la p se vuelve b, así que no existe szépebb."
+      },
+      "wrong": {
+        "szép": {
+          "en": "szép is the plain adjective: 'This picture is beautiful', with no comparison.",
+          "es": "szép es el adjetivo simple: «Esta imagen es bonita», sin comparación."
+        },
+        "legszebb": {
+          "en": "legszebb is the superlative, 'the most beautiful of all'; with mint you compare just two pictures.",
+          "es": "legszebb es el superlativo, «la más bonita de todas»; con mint se comparan solo dos imágenes."
+        }
+      },
+      "examples": ["Ez a ház szebb, mint az.", "A kert szebb, mint a ház."],
+      "tr": { "en": "This picture is more beautiful than that one.", "es": "Esta imagen es más bonita que aquella." }
+    },
+    {
+      "id": "fokozas-w02",
+      "kind": "why",
+      "es": "Ez a legjobb étterem.",
+      "target": "legjobb",
+      "tr": { "en": "This is the best restaurant.", "es": "Este es el mejor restaurante." },
+      "options": [
+        {
+          "text": {
+            "en": "leg- + jobb: the best of all (superlative of jó)",
+            "es": "leg- + jobb: el mejor de todos (superlativo de jó)"
+          }
+        },
+        {
+          "text": {
+            "en": "jobb alone: better than one other (comparative)",
+            "es": "jobb solo: mejor que otro (comparativo)"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ez jobb étterem, mint az: only two restaurants are compared.",
+            "es": "Con esta regla la frase sería Ez jobb étterem, mint az: solo se compararían dos restaurantes."
+          }
+        },
+        {
+          "text": {
+            "en": "jó alone: plain 'good'",
+            "es": "jó solo: «bueno» sin más"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ez egy jó étterem: 'a good restaurant', with no comparison.",
+            "es": "Con esta regla la frase sería Ez egy jó étterem: «un buen restaurante», sin comparación."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fokozas-f06",
+      "kind": "form",
+      "verb": "rossz",
+      "person": "felsőfok (leg-)",
+      "answer": "legrosszabb",
+      "table": "fok-regular"
+    },
+    {
+      "id": "fokozas-c07",
+      "sentence": "Az autók ___, mint a biciklik.",
+      "options": ["gyorsabbak", "gyorsabb", "leggyorsabbak"],
+      "correct": 0,
+      "why": {
+        "en": "Az autók is plural, so the comparative used as a predicate takes the plural -ak: gyorsabbak.",
+        "es": "Az autók es plural, así que el comparativo usado como predicado lleva el plural -ak: gyorsabbak."
+      },
+      "wrong": {
+        "gyorsabb": {
+          "en": "gyorsabb is singular: it would fit one car (az autó gyorsabb), not az autók.",
+          "es": "gyorsabb es singular: iría con un coche (az autó gyorsabb), no con az autók."
+        },
+        "leggyorsabbak": {
+          "en": "leggyorsabbak means 'the fastest'; with mint you compare cars and bikes, two groups.",
+          "es": "leggyorsabbak significa «los más rápidos»; con mint se comparan autos y bicicletas, dos grupos."
+        }
+      },
+      "examples": ["A régi autók olcsóbbak.", "A vonatok gyorsabbak, mint a buszok."],
+      "tr": { "en": "Cars are faster than bikes.", "es": "Los autos son más rápidos que las bicicletas." }
+    },
+    {
+      "id": "fokozas-f07",
+      "kind": "form",
+      "verb": "kedves",
+      "person": "felsőfok (leg-)",
+      "answer": "legkedvesebb",
+      "table": "fok-regular"
+    },
+    {
+      "id": "fokozas-c08",
+      "sentence": "Anna ___ főz, mint én.",
+      "options": ["jobban", "jobb", "jól"],
+      "correct": 0,
+      "why": {
+        "en": "The word describes the verb főz (an action), so the adverb jobban: jobb + -an.",
+        "es": "La palabra describe el verbo főz (una acción), por eso el adverbio jobban: jobb + -an."
+      },
+      "wrong": {
+        "jobb": {
+          "en": "jobb is the adjective: it describes a noun (jobb étel, 'better food'), not the action of cooking.",
+          "es": "jobb es el adjetivo: describe un sustantivo (jobb étel, «mejor comida»), no la acción de cocinar."
+        },
+        "jól": {
+          "en": "jól is 'well': Anna jól főz means 'Anna cooks well', with no comparison to me.",
+          "es": "jól es «bien»: Anna jól főz significa «Anna cocina bien», sin comparar conmigo."
+        }
+      },
+      "examples": ["Gábor jobban fut, mint Péter.", "Kati jobban beszél magyarul, mint én."],
+      "tr": { "en": "Anna cooks better than I do.", "es": "Anna cocina mejor que yo." }
+    },
+    {
+      "id": "fokozas-c09",
+      "sentence": "Péter ___ fut, mint Anna.",
+      "options": ["gyorsabban", "gyorsabb", "gyorsan"],
+      "correct": 0,
+      "why": {
+        "en": "Fut is an action, so the comparative adverb: gyorsabb + -an = gyorsabban.",
+        "es": "Fut es una acción, por eso el adverbio comparativo: gyorsabb + -an = gyorsabban."
+      },
+      "wrong": {
+        "gyorsabb": {
+          "en": "gyorsabb is the adjective and describes a noun (a gyorsabb autó), not the verb fut.",
+          "es": "gyorsabb es el adjetivo y describe un sustantivo (a gyorsabb autó), no el verbo fut."
+        },
+        "gyorsan": {
+          "en": "gyorsan is 'quickly': Péter gyorsan fut says he runs quickly, with no comparison to Anna.",
+          "es": "gyorsan es «rápido»: Péter gyorsan fut dice que corre rápido, sin comparar con Anna."
+        }
+      },
+      "examples": ["Lassabban, kérem.", "Anna lassabban fut, mint Péter."],
+      "tr": { "en": "Péter runs faster than Anna.", "es": "Péter corre más rápido que Anna." }
+    },
+    {
+      "id": "fokozas-f08",
+      "kind": "form",
+      "verb": "jó",
+      "person": "középfok (-bb)",
+      "answer": "jobb",
+      "table": "fok-irregular"
+    },
+    {
+      "id": "fokozas-c10",
+      "sentence": "Gábor a ___ barátom.",
+      "options": ["legjobb", "legjobban", "jobb"],
+      "correct": 0,
+      "why": {
+        "en": "A barátom is a noun, so the adjective: leg- + jobb = legjobb, 'my best friend'.",
+        "es": "A barátom es un sustantivo, por eso el adjetivo: leg- + jobb = legjobb, «mi mejor amigo»."
+      },
+      "wrong": {
+        "legjobban": {
+          "en": "legjobban is the adverb 'best' for actions (Kati főz a legjobban); it does not describe a noun like barátom.",
+          "es": "legjobban es el adverbio «mejor» para acciones (Kati főz a legjobban); no describe un sustantivo como barátom."
+        },
+        "jobb": {
+          "en": "a jobb barátom would be 'my better friend', when you compare two friends, not the best of all.",
+          "es": "a jobb barátom sería «el mejor de dos amigos», cuando se comparan dos amigos, no el mejor de todos."
+        }
+      },
+      "examples": ["Kati a legjobb barátnőm.", "Ez a legjobb étterem."],
+      "tr": { "en": "Gábor is my best friend.", "es": "Gábor es mi mejor amigo." }
+    },
+    {
+      "id": "fokozas-w03",
+      "kind": "why",
+      "es": "A konyha tisztább, mint a szoba.",
+      "target": "tisztább",
+      "tr": { "en": "The kitchen is cleaner than the room.", "es": "La cocina está más limpia que la habitación." },
+      "options": [
+        {
+          "text": {
+            "en": "The final -a lengthens to á, then -bb: tiszta → tisztább",
+            "es": "La -a final se alarga en á y luego -bb: tiszta → tisztább"
+          }
+        },
+        {
+          "text": {
+            "en": "-abb is added to the whole word: tiszta + abb",
+            "es": "-abb se añade a la palabra entera: tiszta + abb"
+          },
+          "wrong": {
+            "en": "With this rule the form would be tisztaabb, which Hungarian does not use: the final -a becomes á.",
+            "es": "Con esta regla la forma sería tisztaabb, que el húngaro no usa: la -a final se convierte en á."
+          }
+        },
+        {
+          "text": {
+            "en": "An irregular stem, like jó → jobb",
+            "es": "Una raíz irregular, como jó → jobb"
+          },
+          "wrong": {
+            "en": "With this rule tiszta would need its own special form; it is regular, like drága → drágább.",
+            "es": "Con esta regla tiszta necesitaría una forma propia; es regular, como drága → drágább."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fokozas-f09",
+      "kind": "form",
+      "verb": "kicsi",
+      "person": "középfok (-bb)",
+      "answer": "kisebb",
+      "table": "fok-irregular"
+    },
+    {
+      "id": "fokozas-c11",
+      "sentence": "Egy ___ lakást keresek.",
+      "options": ["nagyobb", "nagyobbat", "nagyobbak"],
+      "correct": 0,
+      "why": {
+        "en": "Before a noun the adjective takes no ending; only the noun lakást carries the -t.",
+        "es": "Antes de un sustantivo el adjetivo no lleva terminación; solo el sustantivo lakást lleva la -t."
+      },
+      "wrong": {
+        "nagyobbat": {
+          "en": "nagyobbat has the accusative -t, as if the adjective stood alone ('a bigger one'); here lakást already carries it.",
+          "es": "nagyobbat lleva la -t del acusativo, como si el adjetivo estuviera solo («uno más grande»); aquí ya la lleva lakást."
+        },
+        "nagyobbak": {
+          "en": "nagyobbak is plural, but before a noun the adjective never takes the plural; egy and lakást are singular.",
+          "es": "nagyobbak es plural, pero antes de un sustantivo el adjetivo nunca toma el plural; egy y lakást son singulares."
+        }
+      },
+      "examples": ["Szeretnék egy olcsóbb szobát.", "Egy kisebb autót keresek."],
+      "tr": { "en": "I'm looking for a bigger flat.", "es": "Busco un departamento más grande." }
+    },
+    {
+      "id": "fokozas-f10",
+      "kind": "form",
+      "verb": "szép",
+      "person": "felsőfok (leg-)",
+      "answer": "legszebb",
+      "table": "fok-irregular"
+    },
+    {
+      "id": "fokozas-c12",
+      "sentence": "A piac ___ olcsóbb, mint a szupermarket.",
+      "options": ["sokkal", "nagyon", "kicsit"],
+      "correct": 0,
+      "why": {
+        "en": "Sokkal ('much') strengthens a comparative: sokkal olcsóbb = much cheaper.",
+        "es": "Sokkal («mucho») refuerza un comparativo: sokkal olcsóbb = mucho más barato."
+      },
+      "wrong": {
+        "nagyon": {
+          "en": "nagyon means 'very' and goes with the plain adjective (nagyon olcsó), never with a comparative.",
+          "es": "nagyon significa «muy» y va con el adjetivo simple (nagyon olcsó), nunca con un comparativo."
+        },
+        "kicsit": {
+          "en": "kicsit means 'a bit': the sentence would say the market is only a little cheaper.",
+          "es": "kicsit significa «un poco»: la frase diría que el mercado es solo un poco más barato."
+        }
+      },
+      "examples": ["Budapest sokkal nagyobb, mint Szeged.", "Ez még drágább."],
+      "tr": { "en": "The market is much cheaper than the supermarket.", "es": "El mercado es mucho más barato que el supermercado." }
+    },
+    {
+      "id": "fokozas-c13",
+      "sentence": "Péter magasabb, ___ Anna.",
+      "options": ["mint", "de", "mert"],
+      "correct": 0,
+      "why": {
+        "en": "'Than' is mint, with a comma before it: Péter magasabb, mint Anna.",
+        "es": "«Que» es mint, con una coma antes: Péter magasabb, mint Anna."
+      },
+      "wrong": {
+        "de": {
+          "en": "Péter magasabb, de Anna would mean 'Péter is taller, but Anna...' and the sentence would be left unfinished.",
+          "es": "Péter magasabb, de Anna significaría «Péter es más alto, pero Anna...» y la frase quedaría sin terminar."
+        },
+        "mert": {
+          "en": "Péter magasabb, mert Anna would mean 'Péter is taller, because Anna...', a reason and not a comparison.",
+          "es": "Péter magasabb, mert Anna significaría «Péter es más alto, porque Anna...», una razón y no una comparación."
+        }
+      },
+      "examples": ["Anna fiatalabb, mint Péter.", "A tél hidegebb, mint a nyár."],
+      "tr": { "en": "Péter is taller than Anna.", "es": "Péter es más alto que Anna." }
+    },
+    {
+      "id": "fokozas-f11",
+      "kind": "form",
+      "verb": "sok",
+      "person": "középfok (-bb)",
+      "answer": "több",
+      "table": "fok-irregular"
+    },
+    {
+      "id": "fokozas-w04",
+      "kind": "why",
+      "es": "Anna jobban főz, mint én.",
+      "target": "jobban",
+      "tr": { "en": "Anna cooks better than I do.", "es": "Anna cocina mejor que yo." },
+      "options": [
+        {
+          "text": {
+            "en": "Comparative adverb: jobb + -an, because it describes the verb főz",
+            "es": "Adverbio comparativo: jobb + -an, porque describe el verbo főz"
+          }
+        },
+        {
+          "text": {
+            "en": "Comparative adjective jobb: it describes a noun",
+            "es": "Adjetivo comparativo jobb: describe un sustantivo"
+          },
+          "wrong": {
+            "en": "With this rule the word would be jobb, as in Ez jobb, mint az: an adjective describes a noun, but here the word describes the verb főz.",
+            "es": "Con esta regla la palabra sería jobb, como en Ez jobb, mint az: un adjetivo describe un sustantivo, pero aquí la palabra describe el verbo főz."
+          }
+        },
+        {
+          "text": {
+            "en": "Plain adverb jól: 'well'",
+            "es": "Adverbio simple jól: «bien»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna jól főz: 'Anna cooks well', with no comparison.",
+            "es": "Con esta regla la frase sería Anna jól főz: «Anna cocina bien», sin comparación."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fokozas-f12",
+      "kind": "form",
+      "verb": "nagy",
+      "person": "felsőfok (leg-)",
+      "answer": "legnagyobb",
+      "table": "fok-irregular"
+    },
+    {
+      "id": "fokozas-c14",
+      "sentence": "A nyár ___, mint a tél.",
+      "options": ["melegebb", "hidegebb", "legmelegebb"],
+      "correct": 0,
+      "why": {
+        "en": "Meleg (warm) has front vowels, so -ebb: melegebb. Summer is warmer than winter.",
+        "es": "Meleg (cálido) tiene vocales anteriores, por eso -ebb: melegebb. El verano es más cálido que el invierno."
+      },
+      "wrong": {
+        "hidegebb": {
+          "en": "hidegebb means 'colder': the sentence would say summer is colder than winter.",
+          "es": "hidegebb significa «más frío»: la frase diría que el verano es más frío que el invierno."
+        },
+        "legmelegebb": {
+          "en": "legmelegebb means 'the warmest of all'; with mint you compare just two seasons.",
+          "es": "legmelegebb significa «el más cálido de todos»; con mint se comparan solo dos estaciones."
+        }
+      },
+      "examples": ["A tavasz hidegebb, mint a nyár.", "A nap melegebb, mint a hold."],
+      "tr": { "en": "Summer is warmer than winter.", "es": "El verano es más cálido que el invierno." }
+    }
+  ]
+}

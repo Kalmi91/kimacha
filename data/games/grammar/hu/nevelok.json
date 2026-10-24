@@ -1,0 +1,724 @@
+{
+  "schema": 2,
+  "topic": "nevelok",
+  "level": "A1",
+  "title": { "en": "Articles: a, az, egy", "es": "Artículos: a, az, egy" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has just two articles. A (or az) means 'the', egy means 'a' or 'an'. There is no gender and no plural form: a fiú, a lány and a gyerekek all use the same a. The only choice is the sound that follows: az before a vowel (az alma), a before a consonant (a ház). egy never changes and also means the number one. And very often there is no article at all: with a job (Anna tanár), with a name (Péter) or when you mean 'some' (Van tej?).",
+        "es": "El húngaro tiene solo dos artículos. A (o az) significa «el, la, los, las» y egy significa «un, una». No hay género ni forma de plural: a fiú, a lány y a gyerekek llevan el mismo a. Lo único que eliges es según el sonido que sigue: az ante vocal (az alma), a ante consonante (a ház). egy nunca cambia y también significa el número uno. Y muy a menudo no hay artículo: con una profesión (Anna tanár), con un nombre (Péter) o cuando quieres decir «algo de» (Van tej?)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "articles-forms",
+      "title": { "en": "The and a/an with a noun", "es": "El/la y un/una con un sustantivo" },
+      "header": [
+        { "en": "Word", "es": "Palabra" },
+        { "en": "the (a / az)", "es": "el, la (a / az)" },
+        { "en": "a, an (egy)", "es": "un, una (egy)" }
+      ],
+      "rows": [
+        ["ház", "a ház", "egy ház"],
+        ["szék", "a szék", "egy szék"],
+        ["gyerek", "a gyerek", "egy gyerek"],
+        ["lány", "a lány", "egy lány"],
+        ["alma", "az alma", "egy alma"],
+        ["asztal", "az asztal", "egy asztal"],
+        ["iskola", "az iskola", "egy iskola"],
+        ["étterem", "az étterem", "egy étterem"],
+        ["ajtó", "az ajtó", "egy ajtó"],
+        ["autó", "az autó", "egy autó"],
+        ["óra", "az óra", "egy óra"],
+        ["ember", "az ember", "egy ember"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "a-or-az",
+      "noTableDeck": true,
+      "title": { "en": "a or az? Listen to the first sound", "es": "¿a o az? Escucha el primer sonido" },
+      "header": [
+        { "en": "Article", "es": "Artículo" },
+        { "en": "The next word starts with", "es": "La palabra siguiente empieza con" },
+        { "en": "Examples", "es": "Ejemplos" }
+      ],
+      "rows": [
+        ["a", "b c d f g h j k l m n p r s t v z", "a bolt, a szék, a gyerek, a város"],
+        ["az", "a á e é i í o ó ö ő u ú ü ű", "az alma, az étterem, az iskola, az óra"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "a, az or egy?", "es": "¿a, az o egy?" },
+      "items": [
+        {
+          "text": {
+            "en": "a / az = 'the': something specific that both people know, or that was just mentioned. Look at the first sound of the NEXT word. Letters like sz, gy, cs, ny count as one consonant: a szék, a gyerek.",
+            "es": "a / az = «el, la, los, las»: algo concreto que los dos conocen o que acaba de mencionarse. Fíjate en el primer sonido de la palabra SIGUIENTE. Letras como sz, gy, cs, ny cuentan como una sola consonante: a szék, a gyerek."
+          },
+          "examples": [
+            { "es": "A ház nagy.", "tr": { "en": "The house is big.", "es": "La casa es grande." } },
+            { "es": "Az alma finom.", "tr": { "en": "The apple is tasty.", "es": "La manzana está rica." } },
+            { "es": "Az iskola új.", "tr": { "en": "The school is new.", "es": "La escuela es nueva." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "One a for everything: boy, girl, table, children. There is no el/la and no los/las, so there is nothing to memorise.",
+            "es": "Un solo a para todo: niño, niña, mesa, niños. No hay el/la ni los/las, así que no hay nada que memorizar."
+          },
+          "examples": [
+            { "es": "A fiú otthon van.", "tr": { "en": "The boy is at home.", "es": "El niño está en casa." } },
+            { "es": "A lány otthon van.", "tr": { "en": "The girl is at home.", "es": "La niña está en casa." } },
+            { "es": "A gyerekek otthon vannak.", "tr": { "en": "The children are at home.", "es": "Los niños están en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "egy = 'a, an': a new thing, or one of many. It is also the number one, and it stays egy before a vowel (egy alma: there is no 'an').",
+            "es": "egy = «un, una»: algo nuevo, o uno entre varios. También es el número uno, y se queda egy ante vocal (egy alma)."
+          },
+          "examples": [
+            { "es": "Ez egy ház.", "tr": { "en": "This is a house.", "es": "Esto es una casa." } },
+            { "es": "Ez egy alma.", "tr": { "en": "This is an apple.", "es": "Esto es una manzana." } },
+            { "es": "Van egy kutya.", "tr": { "en": "There is a dog.", "es": "Hay un perro." } },
+            { "es": "Egy kávé, kérem.", "tr": { "en": "One coffee, please.", "es": "Un café, por favor." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "When there is no article", "es": "Cuándo no hay artículo" },
+      "points": [
+        {
+          "text": {
+            "en": "A job or a nationality after 'is' needs no article. English says 'she is a teacher'; Hungarian says just Anna tanár (and van is dropped as well).",
+            "es": "Una profesión o una nacionalidad después de «es» no lleva artículo, igual que en español (es profesora): Anna tanár. Y recuerda que van también se omite."
+          },
+          "examples": [
+            { "es": "Anna tanár.", "tr": { "en": "Anna is a teacher.", "es": "Anna es profesora." } },
+            { "es": "Péter orvos.", "tr": { "en": "Péter is a doctor.", "es": "Péter es médico." } },
+            { "es": "Kati magyar.", "tr": { "en": "Kati is Hungarian.", "es": "Kati es húngara." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Names of people and cities take no article: Kati, Péter, Budapest. (In casual talk you may hear a Kati, but you never need it.)",
+            "es": "Los nombres de personas y ciudades no llevan artículo: Kati, Péter, Budapest. (En el habla informal puedes oír a Kati, pero nunca hace falta.)"
+          },
+          "examples": [
+            { "es": "Kati itt van.", "tr": { "en": "Kati is here.", "es": "Kati está aquí." } },
+            { "es": "Budapest szép.", "tr": { "en": "Budapest is beautiful.", "es": "Budapest es bonita." } },
+            { "es": "Gábor és Péter otthon vannak.", "tr": { "en": "Gábor and Péter are at home.", "es": "Gábor y Péter están en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "'Some' or 'any' (an amount, or several things) has no article and no extra word: Van tej? = Is there (any) milk?",
+            "es": "«Algo de» o «hay» (una cantidad, o varias cosas) no lleva artículo ni palabra extra: Van tej? = ¿Hay leche?"
+          },
+          "examples": [
+            { "es": "Van tej?", "tr": { "en": "Is there any milk?", "es": "¿Hay leche?" } },
+            { "es": "Van kenyér.", "tr": { "en": "There is bread.", "es": "Hay pan." } },
+            { "es": "Nincs sajt.", "tr": { "en": "There is no cheese.", "es": "No hay queso." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "The or a? A job or THE person?", "es": "¿El o un? ¿Profesión o LA persona?" },
+      "pairs": [
+        {
+          "a": "Itt van a kulcs.",
+          "b": "Itt van egy kulcs.",
+          "note": {
+            "en": "a = the key we both know or are looking for. egy = a key, new information, any key.",
+            "es": "a = la llave que los dos conocemos o buscamos. egy = una llave, información nueva, cualquier llave."
+          },
+          "examples": [
+            { "es": "A kutya nagy.", "tr": { "en": "The dog is big.", "es": "El perro es grande." } },
+            { "es": "Van egy kutya.", "tr": { "en": "There is a dog.", "es": "Hay un perro." } }
+          ]
+        },
+        {
+          "a": "Anna tanár.",
+          "b": "Anna a tanár.",
+          "note": {
+            "en": "No article: what Anna is (her job). With a: Anna is THE teacher, the one we are talking about.",
+            "es": "Sin artículo: lo que es Anna (su profesión). Con a: Anna es EL profesor, el que estamos mencionando."
+          },
+          "examples": [
+            { "es": "Gábor orvos.", "tr": { "en": "Gábor is a doctor.", "es": "Gábor es médico." } },
+            { "es": "Gábor az orvos.", "tr": { "en": "Gábor is the doctor.", "es": "Gábor es el médico." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) az, not a, before a vowel: az alma, never a alma. (2) There is no 'an': egy alma. (3) Do not add egy to a job: Anna tanár, not Anna egy tanár. (4) Do not look for gender: a fiú and a lány take the same a.",
+        "es": "Trampas clásicas: (1) az, no a, ante vocal: az alma, nunca a alma. (2) egy no cambia: egy alma. (3) No añadas egy a una profesión: Anna tanár, no Anna egy tanár. (4) No busques género: a fiú y a lány llevan el mismo a."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has two articles. «A» and «az» mean the: «a ház», «az alma». Use «az» before a vowel and «a» before a consonant. «Egy» means a or an, and it never changes: «egy ház», «egy alma». There is no gender, so «a fiú» and «a lány» take the same article. With a job there is no article at all: «Anna tanár». The same is true for names: «Péter».",
+    "es": "El húngaro tiene dos artículos. «A» y «az» significan el, la, los y las: «a ház», «az alma». Usa «az» ante una vocal y «a» ante una consonante. «Egy» significa un o una, y nunca cambia: «egy ház», «egy alma». No hay género, así que «a fiú» y «a lány» llevan el mismo artículo. Con una profesión no hay artículo: «Anna tanár». Lo mismo con los nombres: «Péter»."
+  },
+  "items": [
+    {
+      "id": "nevelok-c01",
+      "sentence": "Van egy ház és egy kert. ___ ház nagy.",
+      "options": ["az", "a", "egy"],
+      "correct": 1,
+      "why": {
+        "en": "The house was just mentioned, so it is 'the house': a ház. Ház starts with a consonant (h), so the article is a.",
+        "es": "La casa se acaba de mencionar, así que es «la casa»: a ház. Ház empieza con consonante (h), por eso el artículo es a."
+      },
+      "wrong": {
+        "az": {
+          "en": "az is the form for words that start with a vowel, like az alma; ház starts with h.",
+          "es": "az es la forma para palabras que empiezan con vocal, como az alma; ház empieza con h."
+        },
+        "egy": {
+          "en": "With egy the sentence would introduce a new house, 'a house is big'; here it is the house we already mentioned.",
+          "es": "Con egy la frase presentaría una casa nueva, «una casa es grande»; aquí es la casa que ya mencionamos."
+        }
+      },
+      "examples": ["A kert kicsi.", "A konyha nagy."],
+      "tr": { "en": "There is a house and a garden. The house is big.", "es": "Hay una casa y un jardín. La casa es grande." }
+    },
+    {
+      "id": "nevelok-f01",
+      "kind": "form",
+      "verb": "ház",
+      "person": "a / az",
+      "answer": "a ház",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c02",
+      "sentence": "Itt van egy iskola. ___ iskola új.",
+      "options": ["a", "az", "egy"],
+      "correct": 1,
+      "why": {
+        "en": "The school was just mentioned, so it is 'the school'. Iskola starts with a vowel (i), so the article is az.",
+        "es": "La escuela se acaba de mencionar, así que es «la escuela». Iskola empieza con vocal (i), por eso el artículo es az."
+      },
+      "wrong": {
+        "a": {
+          "en": "a is for words that start with a consonant, like a ház; iskola starts with the vowel i.",
+          "es": "a es para palabras que empiezan con consonante, como a ház; iskola empieza con la vocal i."
+        },
+        "egy": {
+          "en": "With egy it would be another, new school: 'a school is new'.",
+          "es": "Con egy sería otra escuela, nueva: «una escuela es nueva»."
+        }
+      },
+      "examples": ["Az ajtó nyitva van.", "Az asztal új."],
+      "tr": { "en": "Here is a school. The school is new.", "es": "Aquí hay una escuela. La escuela es nueva." }
+    },
+    {
+      "id": "nevelok-f02",
+      "kind": "form",
+      "verb": "alma",
+      "person": "a / az",
+      "answer": "az alma",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c03",
+      "sentence": "Mi ez? Ez ___ alma.",
+      "options": ["az", "egy", "a"],
+      "correct": 1,
+      "why": {
+        "en": "Mi ez? asks what it is, and the answer names a thing: Ez egy alma. egy stays egy before a vowel.",
+        "es": "Mi ez? pregunta qué es, y la respuesta nombra una cosa: Ez egy alma. egy se queda egy ante vocal."
+      },
+      "wrong": {
+        "az": {
+          "en": "Ez az alma means 'this apple' (as in Ez az alma finom), not 'This is an apple'.",
+          "es": "Ez az alma significa «esta manzana» (como en Ez az alma finom), no «Esto es una manzana»."
+        },
+        "a": {
+          "en": "a means 'the' and is used only before a consonant sound; alma starts with a vowel.",
+          "es": "a significa «el, la» y se usa solo ante un sonido de consonante; alma empieza con vocal."
+        }
+      },
+      "examples": ["Ez egy ház.", "Ez egy autó."],
+      "tr": { "en": "What is this? This is an apple.", "es": "¿Qué es esto? Esto es una manzana." }
+    },
+    {
+      "id": "nevelok-f03",
+      "kind": "form",
+      "verb": "szék",
+      "person": "egy",
+      "answer": "egy szék",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-w01",
+      "kind": "why",
+      "es": "Anna tanár.",
+      "target": "tanár",
+      "tr": { "en": "Anna is a teacher.", "es": "Anna es profesora." },
+      "options": [
+        {
+          "text": {
+            "en": "A job after 'is': no article",
+            "es": "Una profesión después de «es»: sin artículo"
+          }
+        },
+        {
+          "text": {
+            "en": "A new thing: egy",
+            "es": "Algo nuevo: egy"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna egy tanár; egy introduces a new thing or one of many, it is not used to state a job.",
+            "es": "Con esta regla la frase sería Anna egy tanár; egy presenta algo nuevo o uno entre varios, no se usa para decir una profesión."
+          }
+        },
+        {
+          "text": {
+            "en": "A known thing: a / az",
+            "es": "Algo conocido: a / az"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna a tanár, 'Anna is THE teacher'.",
+            "es": "Con esta regla la frase sería Anna a tanár, «Anna es EL profesor»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nevelok-c04",
+      "sentence": "Anna ___.",
+      "options": ["tanár", "a tanár", "egy tanár"],
+      "correct": 0,
+      "why": {
+        "en": "A job after 'is' needs no article: Anna tanár (and van is dropped, too).",
+        "es": "Una profesión después de «es» no lleva artículo: Anna tanár (y van también se omite)."
+      },
+      "wrong": {
+        "a tanár": {
+          "en": "Anna a tanár would mean 'Anna is THE teacher', the one we are talking about.",
+          "es": "Anna a tanár significaría «Anna es EL profesor», el que estamos mencionando."
+        },
+        "egy tanár": {
+          "en": "egy tanár is 'a (certain) teacher' or 'one teacher'; to say what someone does for a living, Hungarian leaves the article out.",
+          "es": "egy tanár es «un profesor (concreto)» o «un profesor»; para decir a qué se dedica alguien, el húngaro omite el artículo."
+        }
+      },
+      "examples": ["Péter orvos.", "Kati diák."],
+      "tr": { "en": "Anna is a teacher.", "es": "Anna es profesora." }
+    },
+    {
+      "id": "nevelok-f04",
+      "kind": "form",
+      "verb": "étterem",
+      "person": "a / az",
+      "answer": "az étterem",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c05",
+      "sentence": "Hol van ___?",
+      "options": ["Kati", "egy Kati", "az Kati"],
+      "correct": 0,
+      "why": {
+        "en": "A name takes no article: Hol van Kati?",
+        "es": "Un nombre no lleva artículo: Hol van Kati?"
+      },
+      "wrong": {
+        "egy Kati": {
+          "en": "egy Kati would mean 'a certain Kati', someone you do not know yet.",
+          "es": "egy Kati significaría «una tal Kati», alguien que aún no conoces."
+        },
+        "az Kati": {
+          "en": "az stands before a vowel sound, and Kati starts with k; a name needs no article anyway.",
+          "es": "az va ante un sonido de vocal, y Kati empieza con k; además un nombre no necesita artículo."
+        }
+      },
+      "examples": ["Hol van Péter?", "Hol van Anna?"],
+      "tr": { "en": "Where is Kati?", "es": "¿Dónde está Kati?" }
+    },
+    {
+      "id": "nevelok-f05",
+      "kind": "form",
+      "verb": "gyerek",
+      "person": "a / az",
+      "answer": "a gyerek",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c06",
+      "sentence": "Van egy asztal és egy szék. ___ asztal új.",
+      "options": ["a", "egy", "az"],
+      "correct": 2,
+      "why": {
+        "en": "The table was just mentioned: 'the table'. Asztal starts with a vowel (a), so the article is az.",
+        "es": "La mesa se acaba de mencionar: «la mesa». Asztal empieza con vocal (a), por eso el artículo es az."
+      },
+      "wrong": {
+        "a": {
+          "en": "a is for consonant sounds (a szék); asztal starts with the vowel a.",
+          "es": "a es para sonidos de consonante (a szék); asztal empieza con la vocal a."
+        },
+        "egy": {
+          "en": "With egy it would be another, new table: 'a table is new'.",
+          "es": "Con egy sería otra mesa, nueva: «una mesa es nueva»."
+        }
+      },
+      "examples": ["Az ablak nagy.", "Az ajtó kicsi."],
+      "tr": { "en": "There is a table and a chair. The table is new.", "es": "Hay una mesa y una silla. La mesa es nueva." }
+    },
+    {
+      "id": "nevelok-f06",
+      "kind": "form",
+      "verb": "iskola",
+      "person": "egy",
+      "answer": "egy iskola",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-w02",
+      "kind": "why",
+      "es": "Az iskola új.",
+      "target": "Az",
+      "tr": { "en": "The school is new.", "es": "La escuela es nueva." },
+      "options": [
+        {
+          "text": {
+            "en": "The next word starts with a consonant: a",
+            "es": "La palabra siguiente empieza con consonante: a"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A iskola; but iskola starts with the vowel i.",
+            "es": "Con esta regla la frase sería A iskola; pero iskola empieza con la vocal i."
+          }
+        },
+        {
+          "text": {
+            "en": "The next word starts with a vowel: az",
+            "es": "La palabra siguiente empieza con vocal: az"
+          }
+        },
+        {
+          "text": {
+            "en": "iskola is a feminine word: az",
+            "es": "iskola es una palabra femenina: az"
+          },
+          "wrong": {
+            "en": "Hungarian has no gender; az depends only on the sound, as in az asztal and az étterem.",
+            "es": "El húngaro no tiene género; az depende solo del sonido, como en az asztal y az étterem."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nevelok-c07",
+      "sentence": "Mi ez? Ez ___ étterem.",
+      "options": ["a", "az", "egy"],
+      "correct": 2,
+      "why": {
+        "en": "Ez egy étterem names a thing: 'This is a restaurant'. egy does not change before a vowel (there is no 'an').",
+        "es": "Ez egy étterem nombra una cosa: «Esto es un restaurante». egy no cambia ante vocal."
+      },
+      "wrong": {
+        "a": {
+          "en": "a would mean 'the' and is used only before consonants; étterem starts with a vowel.",
+          "es": "a significaría «el» y se usa solo ante consonantes; étterem empieza con vocal."
+        },
+        "az": {
+          "en": "Ez az étterem means 'this restaurant' (as in Ez az étterem új), not 'This is a restaurant'.",
+          "es": "Ez az étterem significa «este restaurante» (como en Ez az étterem új), no «Esto es un restaurante»."
+        }
+      },
+      "examples": ["Ez egy iskola.", "Ez egy ház."],
+      "tr": { "en": "What is this? This is a restaurant.", "es": "¿Qué es esto? Esto es un restaurante." }
+    },
+    {
+      "id": "nevelok-f07",
+      "kind": "form",
+      "verb": "asztal",
+      "person": "a / az",
+      "answer": "az asztal",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c08",
+      "sentence": "Péter ___, Kati diák.",
+      "options": ["egy orvos", "az orvos", "orvos"],
+      "correct": 2,
+      "why": {
+        "en": "A job needs no article: Péter orvos. Kati diák follows the same pattern.",
+        "es": "Una profesión no lleva artículo: Péter orvos. Kati diák sigue el mismo patrón."
+      },
+      "wrong": {
+        "egy orvos": {
+          "en": "egy orvos is 'a (certain) doctor', not the plain statement of a job.",
+          "es": "egy orvos es «un médico (concreto)», no la simple indicación de una profesión."
+        },
+        "az orvos": {
+          "en": "Péter az orvos would mean 'Péter is THE doctor', the one we mean.",
+          "es": "Péter az orvos significaría «Péter es EL médico», el que estamos mencionando."
+        }
+      },
+      "examples": ["Anna tanár.", "Gábor diák."],
+      "tr": { "en": "Péter is a doctor, Kati is a student.", "es": "Péter es médico, Kati es estudiante." }
+    },
+    {
+      "id": "nevelok-f08",
+      "kind": "form",
+      "verb": "lány",
+      "person": "a / az",
+      "answer": "a lány",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c09",
+      "sentence": "Nincs ___ és nincs tej.",
+      "options": ["a kenyér", "kenyér", "egy kenyér"],
+      "correct": 1,
+      "why": {
+        "en": "'No bread' needs no article, like nincs tej in the same sentence: Nincs kenyér.",
+        "es": "«No hay pan» no lleva artículo, igual que nincs tej en la misma frase: Nincs kenyér."
+      },
+      "wrong": {
+        "a kenyér": {
+          "en": "a kenyér would be one particular, known bread that is missing; it does not fit next to the general nincs tej.",
+          "es": "a kenyér sería un pan concreto y conocido que falta; no encaja junto al general nincs tej."
+        },
+        "egy kenyér": {
+          "en": "egy kenyér is 'one loaf'; Nincs egy kenyér would stress 'not a single loaf'.",
+          "es": "egy kenyér es «una barra de pan»; Nincs egy kenyér destacaría «ni una sola barra»."
+        }
+      },
+      "examples": ["Van sajt.", "Nincs kávé."],
+      "tr": { "en": "There is no bread and there is no milk.", "es": "No hay pan y no hay leche." }
+    },
+    {
+      "id": "nevelok-f09",
+      "kind": "form",
+      "verb": "autó",
+      "person": "a / az",
+      "answer": "az autó",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-w03",
+      "kind": "why",
+      "es": "A fiú és a lány otthon vannak.",
+      "target": "a lány",
+      "tr": { "en": "The boy and the girl are at home.", "es": "El niño y la niña están en casa." },
+      "options": [
+        {
+          "text": {
+            "en": "lány is feminine: a",
+            "es": "lány es femenino: a"
+          },
+          "wrong": {
+            "en": "Hungarian has no gender: fiú and lány take exactly the same article.",
+            "es": "El húngaro no tiene género: fiú y lány llevan exactamente el mismo artículo."
+          }
+        },
+        {
+          "text": {
+            "en": "lány starts with a consonant: a",
+            "es": "lány empieza con consonante: a"
+          }
+        },
+        {
+          "text": {
+            "en": "lány is a new thing: egy",
+            "es": "lány es algo nuevo: egy"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be egy lány, 'a (new) girl'; here we mean the girl we already know.",
+            "es": "Con esta regla la frase sería egy lány, «una niña (nueva)»; aquí es la niña que ya conocemos."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nevelok-c10",
+      "sentence": "___ kávé és egy tea, kérem.",
+      "options": ["A", "Egy", "Az"],
+      "correct": 1,
+      "why": {
+        "en": "The order lists new things: egy kávé és egy tea. egy is also 'one'.",
+        "es": "El pedido enumera cosas nuevas: egy kávé és egy tea. egy también es «uno»."
+      },
+      "wrong": {
+        "A": {
+          "en": "A kávé és egy tea would mix 'the coffee' with 'a tea'.",
+          "es": "A kávé és egy tea mezclaría «el café» con «un té»."
+        },
+        "Az": {
+          "en": "az stands before a vowel sound; kávé starts with k.",
+          "es": "az va ante un sonido de vocal; kávé empieza con k."
+        }
+      },
+      "examples": ["Egy tea, kérem.", "Egy kávé, kérem."],
+      "tr": { "en": "A coffee and a tea, please.", "es": "Un café y un té, por favor." }
+    },
+    {
+      "id": "nevelok-f10",
+      "kind": "form",
+      "verb": "ajtó",
+      "person": "egy",
+      "answer": "egy ajtó",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c11",
+      "sentence": "A fiú otthon van. ___ lány is otthon van.",
+      "options": ["Az", "Egy", "A"],
+      "correct": 2,
+      "why": {
+        "en": "Boy or girl, the article is the same: Hungarian has no gender. Lány starts with a consonant, so a.",
+        "es": "Niño o niña, el artículo es el mismo: el húngaro no tiene género. Lány empieza con consonante, por eso a."
+      },
+      "wrong": {
+        "Az": {
+          "en": "az is only for vowel sounds (az alma); lány starts with l, and the article does not depend on gender.",
+          "es": "az es solo para sonidos de vocal (az alma); lány empieza con l, y el artículo no depende del género."
+        },
+        "Egy": {
+          "en": "Egy lány is otthon van would mean 'a (new) girl is at home too'.",
+          "es": "Egy lány is otthon van significaría «una niña (nueva) también está en casa»."
+        }
+      },
+      "examples": ["A fiú itt van.", "A lány itt van."],
+      "tr": { "en": "The boy is at home. The girl is at home too.", "es": "El niño está en casa. La niña también está en casa." }
+    },
+    {
+      "id": "nevelok-f11",
+      "kind": "form",
+      "verb": "óra",
+      "person": "a / az",
+      "answer": "az óra",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c12",
+      "sentence": "A szoba nagy, ___ konyha kicsi.",
+      "options": ["az", "egy", "a"],
+      "correct": 2,
+      "why": {
+        "en": "Both rooms are known: the room, the kitchen. Konyha starts with a consonant, so a.",
+        "es": "Los dos cuartos son conocidos: la habitación, la cocina. Konyha empieza con consonante, por eso a."
+      },
+      "wrong": {
+        "az": {
+          "en": "az is for vowel sounds; konyha starts with k.",
+          "es": "az es para sonidos de vocal; konyha empieza con k."
+        },
+        "egy": {
+          "en": "With egy the sentence would talk about some other, new kitchen.",
+          "es": "Con egy la frase hablaría de otra cocina, nueva."
+        }
+      },
+      "examples": ["A ház új.", "A kert szép."],
+      "tr": { "en": "The room is big, the kitchen is small.", "es": "La habitación es grande, la cocina es pequeña." }
+    },
+    {
+      "id": "nevelok-f12",
+      "kind": "form",
+      "verb": "ember",
+      "person": "a / az",
+      "answer": "az ember",
+      "table": "articles-forms"
+    },
+    {
+      "id": "nevelok-c13",
+      "sentence": "A ház nagy, ___ ajtó kicsi.",
+      "options": ["egy", "az", "a"],
+      "correct": 1,
+      "why": {
+        "en": "Ajtó starts with a vowel (a), so the article is az; it is the door of that known house.",
+        "es": "Ajtó empieza con vocal (a), por eso el artículo es az; es la puerta de esa casa conocida."
+      },
+      "wrong": {
+        "egy": {
+          "en": "egy ajtó would be 'a door', any door, not the door of this house.",
+          "es": "egy ajtó sería «una puerta», cualquiera, no la puerta de esta casa."
+        },
+        "a": {
+          "en": "a is for consonant sounds; ajtó starts with a vowel.",
+          "es": "a es para sonidos de consonante; ajtó empieza con vocal."
+        }
+      },
+      "examples": ["Az ablak nyitva van.", "Az asztal új."],
+      "tr": { "en": "The house is big, the door is small.", "es": "La casa es grande, la puerta es pequeña." }
+    },
+    {
+      "id": "nevelok-w04",
+      "kind": "why",
+      "es": "Ez egy alma.",
+      "target": "egy",
+      "tr": { "en": "This is an apple.", "es": "Esto es una manzana." },
+      "options": [
+        {
+          "text": {
+            "en": "egy turns into az before a vowel",
+            "es": "egy se convierte en az ante vocal"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ez az alma, 'this apple'; az means 'the', and egy stays egy before every sound.",
+            "es": "Con esta regla la frase sería Ez az alma, «esta manzana»; az significa «el, la», y egy se queda egy ante cualquier sonido."
+          }
+        },
+        {
+          "text": {
+            "en": "egy means the apple we both know",
+            "es": "egy significa la manzana que los dos conocemos"
+          },
+          "wrong": {
+            "en": "A known apple would be az alma; egy introduces a new thing.",
+            "es": "Una manzana conocida sería az alma; egy presenta algo nuevo."
+          }
+        },
+        {
+          "text": {
+            "en": "egy = 'an': a new thing, and it never changes",
+            "es": "egy = «una»: algo nuevo, y nunca cambia"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "nevelok-c14",
+      "sentence": "___ nap süt.",
+      "options": ["Egy", "Az", "A"],
+      "correct": 2,
+      "why": {
+        "en": "'The sun is shining' is A nap süt; nap starts with a consonant, so a.",
+        "es": "«El sol brilla» es A nap süt; nap empieza con consonante, por eso a."
+      },
+      "wrong": {
+        "Egy": {
+          "en": "egy nap means 'a day' or 'one day', not 'the sun'.",
+          "es": "egy nap significa «un día», no «el sol»."
+        },
+        "Az": {
+          "en": "az is for vowel sounds; nap starts with n.",
+          "es": "az es para sonidos de vocal; nap empieza con n."
+        }
+      },
+      "examples": ["A nap meleg.", "A hét hosszú."],
+      "tr": { "en": "The sun is shining.", "es": "El sol brilla." }
+    }
+  ]
+}
