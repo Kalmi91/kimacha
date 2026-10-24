@@ -19,7 +19,7 @@ const FILES: Record<PcicTarget, unknown> = { es: storiesData, en: storiesEnData,
 const SOURCES: Record<PcicTarget, Lang[]> = { es: ['en', 'hu'], en: ['es', 'hu'], hu: ['es', 'en'] };
 // How many stories a file holds: Spanish is complete; English and Hungarian start with one sample story each and grow to 20
 // (TASK-hu-tortenetek parts 2 and 3).
-const COUNT: Record<PcicTarget, [number, number]> = { es: [20, 20], en: [1, 20], hu: [1, 20] };
+const COUNT: Record<PcicTarget, [number, number]> = { es: [20, 20], en: [20, 20], hu: [20, 20] };
 
 const learned = (ids: string[]): Sm2Card[] =>
   ids.map((id) => ({ ...sm2NewCard(id), state: 'review', interval: 4, reps: 2, due: '2026-10-23', lastReview: '2026-10-01', introducedAt: '2026-10-01' }));
