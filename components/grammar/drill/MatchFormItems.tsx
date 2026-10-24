@@ -7,6 +7,7 @@ import { type FormItem, type LessonBlock, type MatchItem } from '@/lib/grammar/l
 import { speak } from '@/lib/speech';
 import SpeakButton from '@/components/SpeakButton';
 import { speechLang } from '@/lib/languages';
+import { strictAnswerMatch } from '@/lib/answerMatch';
 import { hashString, shuffleNoFixedPoints } from '@/lib/shuffle';
 import { useDockedAction } from '@/components/learn/DockSlot';
 import LessonBody from '@/components/grammar/LessonBody';
@@ -223,7 +224,12 @@ export function FormDrillItem({
   const g = useGrammarColors();
 
   const check = () => {
-    const ok = [item.answer, ...(item.accept ?? [])].some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
+    const targets = [item.answer, ...(item.accept ?? [])];
+    // Hungarian: the word cards' rule (accents are phonemic, öt/őt, never forgiven; case and punctuation are).
+    const ok =
+      learnedLang === 'hu'
+        ? targets.some((c) => strictAnswerMatch(value, c, { lang: 'hu' }))
+        : targets.some((c) => value.trim().toLowerCase() === c.trim().toLowerCase());
     setCorrect(ok);
     setChecked(true);
     // the correct form is spoken after Check, after right and wrong answers alike, as on the
