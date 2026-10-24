@@ -12,7 +12,7 @@ import {
 } from '@/lib/grammar/nounArticles';
 import type { LessonV2 } from '@/lib/grammar/lessonTypes';
 
-const LANGS = ['en', 'es'] as const;
+const LANGS = ['en', 'es', 'hu'] as const;
 
 describe('articleNouns', () => {
   const nouns = articleNouns();
@@ -45,7 +45,9 @@ describe('articleNounItems', () => {
     expect(new Set(items.map((i) => i.id)).size).toBe(items.length);
   });
 
-  it('the why and wrong explanations are filled in both languages, wrong exists for the wrong option', () => {
+  // The generated items are not reached by the Hungarian sidecar overlay (lib/grammar/huOverlay.ts), so a text
+  // template that is missing its `hu` would show English to a Hungarian learner: this fails then.
+  it('the why and wrong explanations are filled in all three languages, wrong exists for the wrong option', () => {
     for (const it of items) {
       const wrongOpt = it.options[1 - it.correct];
       for (const lang of LANGS) {
@@ -56,13 +58,23 @@ describe('articleNounItems', () => {
   });
 
   // the noun's meaning from words-open (English for es), shown after the answer.
-  it('every item has a meaning (tr) in both languages, the English one is the en field of words-open', () => {
+  it('every item has a meaning (tr) in all three languages, the English one is the en field of words-open', () => {
     for (const it of items) {
       for (const lang of LANGS) expect(it.tr?.[lang]?.trim()).toBeTruthy();
     }
     const agua = items.find((i) => i.sentence === '___ agua')!;
     expect(agua.tr?.en).toBe('water');
     expect(agua.tr?.es).toBe('water');
+    expect(agua.tr?.hu).toBe('víz');
+  });
+
+  it('the Hungarian texts are written out, not the English ones copied', () => {
+    for (const it of items) {
+      const wrongOpt = it.options[1 - it.correct];
+      expect(it.why.hu).not.toBe(it.why.en);
+      expect(it.wrong[wrongOpt].hu).not.toBe(it.wrong[wrongOpt].en);
+      expect(it.why.hu).toContain(`${it.options[it.correct]} ${it.sentence.replace('___ ', '')}`);
+    }
   });
 
   it('the explanation of agua states the exception', () => {
