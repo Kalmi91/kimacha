@@ -43,6 +43,7 @@ export interface WordEntry {
   [key: string]: string | number | boolean | undefined;
 }
 
+import { getHuWords } from './huWords';
 import { findOpenWordByForm, getOpenWords } from './openWords';
 
 // User feedback (`sentence:El calabacín es una verdura verde.`), translated from Hungarian:
@@ -60,9 +61,10 @@ export function normalizeWordToken(raw: string): string {
 }
 
 // the lookup by text (glossary, mixed read-aloud)
-// runs on the words-open cards (data/openWords.ts), not on the old word list.
-function allWordsFor(): WordEntry[] {
-  return getOpenWords();
+// runs on the words-open cards (data/openWords.ts), not on the old word list. The Hungarian course
+// (learned language 'hu') has no words-open card to tap: it runs on the Hungarian deck (data/huWords.ts).
+function allWordsFor(lang: string): WordEntry[] {
+  return lang === 'hu' ? getHuWords() : getOpenWords();
 }
 
 // A headword field can carry several glosses ("the lorry / the truck"), and each
@@ -91,7 +93,7 @@ function textIndexFor(lang: string, field: string): Map<string, WordEntry> {
   const cacheKey = `${lang}|${field}`;
   if (!textIndex[cacheKey]) {
     const map = new Map<string, WordEntry>();
-    for (const w of allWordsFor()) {
+    for (const w of allWordsFor(lang)) {
       const value = w[field];
       if (typeof value !== 'string') continue;
       // First card wins, so the lowest level owns a word shared by several cards.
@@ -102,8 +104,16 @@ function textIndexFor(lang: string, field: string): Map<string, WordEntry> {
   return textIndex[cacheKey];
 }
 
+// The multi-word headwords of the Hungarian deck are mostly phrases ("a fű a kertben"), and the tail of a phrase is
+// not its meaning: of them only "pronoun + verb" (én vagyok) is the card of its verb form.
+const HU_PRONOUN_HEAD = /^(én|te|ő|mi|ti|ők|ön|önök) $/;
+
+function tailBelongsToCard(key: string, tail: string, lang: string): boolean {
+  return lang !== 'hu' || HU_PRONOUN_HEAD.test(key.slice(0, key.length - tail.length));
+}
+
 // `field` is the language the tapped text is written in ('es', 'en'),
-// `lang` the branch being learned (kept so the call sites need no change; the words-open deck is the only source).
+// `lang` the branch being learned: 'hu' looks the token up in the Hungarian deck, every other branch in words-open.
 export function findWordByText(token: string, field: string, lang: string = 'es'): WordEntry | undefined {
   const norm = normalizeWordToken(token);
   if (!norm) return undefined;
@@ -113,7 +123,7 @@ export function findWordByText(token: string, field: string, lang: string = 'es'
   // A sentence writes "hablas", the card is headed "tú hablas": a token that is
   // the last word of a multi-word headword still belongs to that card.
   for (const [key, entry] of map) {
-    if (key.endsWith(` ${norm}`)) return entry;
+    if (key.endsWith(` ${norm}`) && tailBelongsToCard(key, norm, lang)) return entry;
   }
   // An inflected/plural/gendered form belongs to the base-form words-open card (Spanish only).
   if (field === 'es') return findOpenWordByForm(norm);
