@@ -297,10 +297,14 @@ function buildDeck(target: PcicTarget, source: string): Deck {
   const byLevel = {} as Record<PcicLevel, PcicItem[]>;
   const itemById = new Map<string, PcicItem>();
   const levelById = new Map<string, PcicLevel>();
+  // The hint sentence is written in the deck's en/es prompt language (words-open hint_en, English track hint_es);
+  // under a Hungarian prompt it would be a third language, so it is left off.
+  const dropHint = source === 'hu';
   for (const level of PCIC_LEVELS) {
     const kept = full[level].filter((item) => hasText(item, source));
     // The whole list stays the very same array when nothing is left out (en→es, es→en).
-    byLevel[level] = kept.length === full[level].length ? full[level] : kept;
+    const list = kept.length === full[level].length ? full[level] : kept;
+    byLevel[level] = dropHint ? list.map((item) => (item.hint ? { ...item, hint: undefined } : item)) : list;
     for (const item of byLevel[level]) {
       itemById.set(item.id, item);
       levelById.set(item.id, level);
