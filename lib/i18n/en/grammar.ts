@@ -6,7 +6,6 @@ export default {
       `${done}/${topics} done · ${written} lessons available`,
     yourLevel: 'you are here',
     soon: 'coming',
-    courseComingSoon: 'The Hungarian grammar course is coming soon.',
     coreTag: 'core',
     corePlusTag: 'core+',
     started: 'started',

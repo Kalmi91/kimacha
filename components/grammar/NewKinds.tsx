@@ -215,7 +215,7 @@ export function DictationDrillItem({
   const check = () => {
     if (result) return;
     // Lenient check (punctuation, sentence without a pronoun, accent setting), as on the sentence card.
-    const grade = gradeSentenceAnswer(typed, item.es, strictAccents);
+    const grade = gradeSentenceAnswer(typed, item.es, strictAccents, learnedLang);
     const ok = suggestedGrade(grade) === 'good';
     setResult({ correct: ok });
     speak(item.es, locale); // the right sentence is also spoken after the answer

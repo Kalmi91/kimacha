@@ -82,7 +82,8 @@ export default function GrammarSyllabusScreen() {
     const levelData = await db.getLevel();
     const lvl = (levelData.level as Level) ?? 'A1';
     setLevel(lvl);
-    setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' ? lvl : 'A1'));
+    // The Hungarian course stops at A2: a higher level opens on A1, not on an empty list.
+    setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' && (target !== 'hu' || syllabusLevels(target).includes(lvl)) ? lvl : 'A1'));
 
     // A topic is only "done" if there is a finished row for every
     // kind that exists in its lesson (doneGrammarTopicProgress, lib/grammar/syllabus.ts).
@@ -105,16 +106,6 @@ export default function GrammarSyllabusScreen() {
 
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
-
-  // No Hungarian grammar course yet: an empty state instead of the Spanish course.
-  if (learnedLang === 'hu') {
-    return (
-      <View testID="grammar-coming-soon" style={[styles.container, { backgroundColor: g.brutal ? g.bg : colors.background }]}>
-        <SkinBackdrop />
-        <Text style={[styles.comingSoon, { color: g.brutal ? g.ink : colors.text }]}>{s.grammar.courseComingSoon}</Text>
-      </View>
-    );
-  }
 
   // Neo-brutalist:
   // the classic palette renders today's look below.
@@ -389,7 +380,6 @@ export default function GrammarSyllabusScreen() {
 }
 
 const styles = StyleSheet.create({
-  comingSoon: { fontSize: 16, textAlign: 'center', paddingHorizontal: 24 },
   container: { flex: 1 },
   subtitle: { fontSize: 13, textAlign: 'center', marginTop: 2, marginBottom: 8 },
   body: { padding: 14, paddingBottom: 24, gap: 10 },
