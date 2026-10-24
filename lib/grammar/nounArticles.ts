@@ -9,8 +9,15 @@ import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
 import openC1 from '@/data/words-open/c1.json';
+// Hungarian meaning of the same cards, [{ k: order, hu }]; the explanation texts below are generated, so the
+// sidecar overlay of the other lessons (lib/grammar/huOverlay.ts) cannot reach them, their `hu` is written here.
+import glossA1 from '@/data/words-open/gloss-hu/a1.json';
+import glossA2 from '@/data/words-open/gloss-hu/a2.json';
+import glossB1 from '@/data/words-open/gloss-hu/b1.json';
+import glossB2 from '@/data/words-open/gloss-hu/b2.json';
+import glossC1 from '@/data/words-open/gloss-hu/c1.json';
 import type { GrammarGapItem } from '@/lib/games/content';
-import type { LessonV2 } from '@/lib/grammar/lessonTypes';
+import type { Lang4, LessonV2 } from '@/lib/grammar/lessonTypes';
 
 interface OpenWord {
   order: number;
@@ -22,6 +29,16 @@ interface OpenWord {
   en: string;
   de?: string;
   sentence_es?: string;
+}
+
+/** The Hungarian meaning of a card by `${level}-${order}` (the ArticleNoun id). */
+function huGlossById(): Map<string, string> {
+  const out = new Map<string, string>();
+  const files: [string, unknown][] = [['a1', glossA1], ['a2', glossA2], ['b1', glossB1], ['b2', glossB2], ['c1', glossC1]];
+  for (const [level, cards] of files) {
+    for (const c of cards as { k: number; hu?: string }[]) if (c.hu?.trim()) out.set(`${level}-${c.k}`, c.hu.trim());
+  }
+  return out;
 }
 
 export const ARTICLE_LESSON_ID = 'articulos-genero';
@@ -50,6 +67,7 @@ export function articleNouns(): ArticleNoun[] {
   if (cache) return cache;
   const out: ArticleNoun[] = [];
   const seen = new Set<string>();
+  const hu = huGlossById();
   for (const words of [openA1, openA2, openB1, openB2, openC1] as unknown as OpenWord[][]) {
     for (const w of words) {
       if (w.pos !== 'noun') continue;
@@ -59,14 +77,14 @@ export function articleNouns(): ArticleNoun[] {
       const noun = m[2];
       if (seen.has(noun)) continue;
       seen.add(noun);
-      out.push({ id: `${w.level.toLowerCase()}-${w.order}`, noun, article: m[1] as 'el' | 'la', es: w.es, en: w.en, tr: { en: w.en, es: w.en }, sentence: w.sentence_es });
+      const id = `${w.level.toLowerCase()}-${w.order}`;
+      const huMeaning = hu.get(id);
+      out.push({ id, noun, article: m[1] as 'el' | 'la', es: w.es, en: w.en, tr: { en: w.en, es: w.en, ...(huMeaning ? { hu: huMeaning } : {}) }, sentence: w.sentence_es });
     }
   }
   cache = out;
   return out;
 }
-
-type Lang4 = Record<'en' | 'es', string>;
 
 function whyText(n: ArticleNoun): Lang4 {
   const { noun: x, article: a } = n;
@@ -74,35 +92,41 @@ function whyText(n: ArticleNoun): Lang4 {
     return {
       en: `«${x}» is feminine, but before a stressed a- the singular takes «el»: el ${x} (plural: las ${x}s).`,
       es: `«${x}» es femenino, pero ante «a» tónica el singular lleva «el»: el ${x} (plural: las ${x}s).`,
+      hu: `«${x}» nőnemű, de hangsúlyos a- előtt az egyes szám «el» névelőt kap: el ${x} (többes szám: las ${x}s).`,
     };
   }
   if (a === 'el' && /o$/.test(x)) {
     return {
       en: `«${x}» ends in -o, so it is masculine: el ${x}.`,
       es: `«${x}» acaba en -o: es masculino, el ${x}.`,
+      hu: `«${x}» -o végű, ezért hímnemű: el ${x}.`,
     };
   }
   if (a === 'el' && /a$/.test(x)) {
     return {
       en: `«${x}» ends in -a but is masculine: el ${x}.`,
       es: `«${x}» acaba en -a pero es masculino: el ${x}.`,
+      hu: `«${x}» -a végű, mégis hímnemű: el ${x}.`,
     };
   }
   if (a === 'la' && /(ción|sión|dad|tad)$/.test(x)) {
     return {
       en: `Words ending in -ción, -sión, -dad, -tad are feminine: la ${x}.`,
       es: `Las palabras en -ción, -sión, -dad y -tad son femeninas: la ${x}.`,
+      hu: `A -ción, -sión, -dad, -tad végű szavak nőneműek: la ${x}.`,
     };
   }
   if (a === 'la' && /a$/.test(x)) {
     return {
       en: `«${x}» ends in -a, so it is feminine: la ${x}.`,
       es: `«${x}» acaba en -a: es femenino, la ${x}.`,
+      hu: `«${x}» -a végű, ezért nőnemű: la ${x}.`,
     };
   }
   return {
     en: `The correct form is ${a} ${x}. Always learn a noun together with its article.`,
     es: `La forma correcta es ${a} ${x}. Aprende siempre el sustantivo junto con su artículo.`,
+    hu: `A helyes alak: ${a} ${x}. A főnevet mindig a névelőjével együtt tanuld meg.`,
   };
 }
 
@@ -111,6 +135,7 @@ function wrongText(n: ArticleNoun, wrongArticle: 'el' | 'la'): Lang4 {
   return {
     en: `«${wrongArticle} ${x}» is not correct; the right form is ${a} ${x}.`,
     es: `«${wrongArticle} ${x}» no es correcto; lo correcto es ${a} ${x}.`,
+    hu: `«${wrongArticle} ${x}» nem helyes; a jó alak: ${a} ${x}.`,
   };
 }
 
