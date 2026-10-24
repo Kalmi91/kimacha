@@ -165,7 +165,8 @@ describe('the saved round', () => {
     expect(parseSavedGame(ok, 'other')).toBeNull();
     expect(parseSavedGame(null, 'demo')).toBeNull();
     expect(parseSavedGame({ ...ok, v: 2 }, 'demo')).toBeNull();
-    expect(parseSavedGame({ ...ok, target: 'hu' }, 'demo')).toBeNull();
+    expect(parseSavedGame({ ...ok, target: 'fr' }, 'demo')).toBeNull();
+    expect(parseSavedGame({ ...ok, target: 'hu' }, 'demo')).toEqual({ ...ok, target: 'hu' });
     expect(parseSavedGame({ ...ok, ids: [] }, 'demo')).toBeNull();
     expect(parseSavedGame({ ...ok, ids: ['a', 3] }, 'demo')).toBeNull();
     expect(parseSavedGame({ ...ok, state: undefined }, 'demo')).toBeNull();
