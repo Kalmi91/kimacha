@@ -1,0 +1,627 @@
+{
+  "schema": 2,
+  "topic": "szorend-fokusz",
+  "level": "A2",
+  "title": { "en": "Word order and focus", "es": "Orden de palabras y énfasis" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In English the word order is almost fixed and shows who does what: 'Péter sees Anna' is not 'Anna sees Péter'. In Hungarian the endings do that job (the object gets -t), so the order is free to show what you STRESS. The rule: the stressed word (the answer to a question, the new information, the contrast) stands right before the verb. Péter jön, nem Anna: Péter is coming, not Anna. Unstressed words go after the verb, except the topic (what the sentence is about, often the subject), which can come first. If nothing is stressed, the order is simply subject, verb, rest, and a prefix stays glued to its verb: Anna elmegy.",
+        "es": "En húngaro las terminaciones dicen quién hace qué (el objeto lleva -t), así que el orden queda libre para mostrar lo que destacas. En español destacas con la entonación o con frases como «es Péter quien viene»; en húngaro lo hace la posición. La regla: la palabra destacada (la respuesta a una pregunta, la información nueva, el contraste) va justo antes del verbo. Péter jön, nem Anna: viene Péter, no Anna. Las palabras no destacadas van después del verbo, salvo el tema (de lo que habla la frase, a menudo el sujeto), que puede ir primero. Si no destacas nada, el orden es simplemente sujeto, verbo, resto, y el prefijo se queda pegado al verbo: Anna elmegy."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "szorend-kerdes-valasz",
+      "noTableDeck": true,
+      "title": { "en": "Question and answer: the stressed word keeps its place", "es": "Pregunta y respuesta: la palabra destacada conserva su lugar" },
+      "header": [
+        { "en": "Question", "es": "Pregunta" },
+        { "en": "Answer", "es": "Respuesta" }
+      ],
+      "rows": [
+        ["Ki jön ma?", "Péter jön ma."],
+        ["Mikor megy Péter Szegedre?", "Péter holnap megy Szegedre."],
+        ["Hova megy Péter holnap?", "Péter holnap Szegedre megy."],
+        ["Hol lakik Anna?", "Anna Debrecenben lakik."],
+        ["Mit eszik Kati?", "Kati levest eszik."]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Where does the stressed word go?", "es": "¿Dónde va la palabra destacada?" },
+      "points": [
+        {
+          "text": {
+            "en": "The answer to a question word takes the place of the question word: right before the verb. Whatever the question already said can stay after the verb.",
+            "es": "La respuesta a una palabra interrogativa ocupa el lugar de esa palabra: justo antes del verbo. Lo que la pregunta ya decía puede quedarse después del verbo."
+          },
+          "examples": [
+            { "es": "Péter jön ma.", "tr": { "en": "PÉTER is coming today (not someone else).", "es": "PÉTER viene hoy (no otra persona)." } },
+            {
+              "es": "Anna Debrecenben lakik.",
+              "tr": { "en": "Anna lives in DEBRECEN (not elsewhere).", "es": "Anna vive en DEBRECEN (no en otro lugar)." }
+            },
+            { "es": "Kati levest eszik.", "tr": { "en": "Kati is eating SOUP.", "es": "Kati está comiendo SOPA." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A correction 'X, not Y' works the same way: X goes right before the verb, and nem Y follows.",
+            "es": "Una corrección «X, no Y» funciona igual: X va justo antes del verbo y nem Y viene después."
+          },
+          "examples": [
+            { "es": "Péter jön, nem Anna.", "tr": { "en": "Péter is coming, not Anna.", "es": "Viene Péter, no Anna." } },
+            {
+              "es": "Szegeden lakom, nem Debrecenben.",
+              "tr": { "en": "I live in Szeged, not in Debrecen.", "es": "Vivo en Szeged, no en Debrecen." }
+            },
+            { "es": "Kenyeret veszek, nem sajtot.", "tr": { "en": "I am buying bread, not cheese.", "es": "Compro pan, no queso." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Question words are the stressed word of a question, so they also stand right before the verb. A named subject usually comes after the verb.",
+            "es": "Las palabras interrogativas son la palabra destacada de la pregunta, así que también van justo antes del verbo. Un sujeto nombrado suele ir después del verbo."
+          },
+          "examples": [
+            { "es": "Hol lakik Anna?", "tr": { "en": "Where does Anna live?", "es": "¿Dónde vive Anna?" } },
+            { "es": "Mikor jön Péter?", "tr": { "en": "When is Péter coming?", "es": "¿Cuándo viene Péter?" } },
+            { "es": "Mit eszik Kati?", "tr": { "en": "What is Kati eating?", "es": "¿Qué come Kati?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Nothing stressed: plain order, subject then verb, and a prefix stays glued in front of the verb.",
+            "es": "Nada destacado: orden neutro, sujeto y luego verbo, y el prefijo se queda pegado delante del verbo."
+          },
+          "examples": [
+            { "es": "Felkelek.", "tr": { "en": "I get up.", "es": "Me levanto." } },
+            { "es": "Hazamegyek.", "tr": { "en": "I go home.", "es": "Me voy a casa." } },
+            { "es": "Anna elmegy.", "tr": { "en": "Anna leaves.", "es": "Anna se va." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "When nem, a question word or a stressed word stands right before the verb, the prefix steps behind the verb.",
+            "es": "Cuando nem, una palabra interrogativa o una palabra destacada está justo antes del verbo, el prefijo pasa detrás del verbo."
+          },
+          "examples": [
+            { "es": "Nem kelek fel.", "tr": { "en": "I don't get up.", "es": "No me levanto." } },
+            { "es": "Mikor mész el?", "tr": { "en": "When are you leaving?", "es": "¿Cuándo te vas?" } },
+            { "es": "Nyolckor kelek fel.", "tr": { "en": "I get up at EIGHT.", "es": "Me levanto a las OCHO." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "fokusz-minta",
+      "noTableDeck": true,
+      "title": { "en": "Stressed word + verb", "es": "Palabra destacada + verbo" },
+      "header": [
+        { "en": "Verb", "es": "Verbo" },
+        { "en": "Stressed word", "es": "Palabra destacada" },
+        { "en": "Together", "es": "Juntos" }
+      ],
+      "rows": [
+        ["lakik", "Szegeden", "Szegeden lakik"],
+        ["dolgozik", "a bankban", "a bankban dolgozik"],
+        ["megy", "a boltba", "a boltba megy"],
+        ["jön", "ma", "ma jön"],
+        ["eszik", "levest", "levest eszik"],
+        ["olvas", "egy könyvet", "egy könyvet olvas"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "elotag-minta",
+      "title": { "en": "Prefix verbs: plain and after nem", "es": "Verbos con prefijo: normales y después de nem" },
+      "header": [
+        { "en": "Verb", "es": "Verbo" },
+        { "en": "Plain (én)", "es": "Normal (én)" },
+        { "en": "With nem (én)", "es": "Con nem (én)" }
+      ],
+      "rows": [
+        ["felkel", "felkelek", "nem kelek fel"],
+        ["elmegy", "elmegyek", "nem megyek el"],
+        ["bemegy", "bemegyek", "nem megyek be"],
+        ["hazamegy", "hazamegyek", "nem megyek haza"],
+        ["visszajön", "visszajövök", "nem jövök vissza"],
+        ["leszáll", "leszállok", "nem szállok le"],
+        ["átszáll", "átszállok", "nem szállok át"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Same words, different stress", "es": "Mismas palabras, distinto énfasis" },
+      "pairs": [
+        {
+          "a": "Anna megy a boltba.",
+          "b": "Anna a boltba megy.",
+          "note": {
+            "en": "The word right before the verb is stressed. In the first one ANNA goes (not someone else). In the second one she goes to THE SHOP (not somewhere else).",
+            "es": "La palabra justo antes del verbo es la destacada. En la primera va ANNA (no otra persona). En la segunda va a LA TIENDA (no a otro lugar)."
+          },
+          "examples": [
+            { "es": "Kati jön ma.", "tr": { "en": "KATI is coming today (not someone else).", "es": "KATI viene hoy (no otra persona)." } },
+            { "es": "Kati ma jön.", "tr": { "en": "Kati is coming TODAY (not another day).", "es": "Kati viene HOY (no otro día)." } }
+          ]
+        },
+        {
+          "a": "Elmegyek.",
+          "b": "Nem megyek el.",
+          "note": {
+            "en": "Plain sentence: the prefix is glued in front of the verb. With nem in front, the prefix goes behind the verb.",
+            "es": "Frase neutra: el prefijo va pegado delante del verbo. Con nem delante, el prefijo pasa detrás del verbo."
+          },
+          "examples": [
+            { "es": "Hazamegyek.", "tr": { "en": "I am going home.", "es": "Me voy a casa." } },
+            { "es": "Nem megyek haza.", "tr": { "en": "I am not going home.", "es": "No me voy a casa." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: gluing the prefix to the verb everywhere, as the dictionary shows it. Nem elmegyek and Mikor elmész? are wrong; say Nem megyek el and Mikor mész el? The prefix stays in front only when nothing else stands right before the verb. Also do not copy the English order: Péter megy holnap Szegedre stresses Péter, not the day. To stress the day, put it before the verb: Péter holnap megy Szegedre.",
+        "es": "Trampa clásica: pegar el prefijo al verbo en todas partes, como lo muestra el diccionario. Nem elmegyek y Mikor elmész? son incorrectos; di Nem megyek el y Mikor mész el? El prefijo solo se queda delante cuando nada más está justo antes del verbo. Y no copies el orden del inglés o del español: Péter megy holnap Szegedre destaca a Péter, no el día. Para destacar el día, ponlo antes del verbo: Péter holnap megy Szegedre."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, the endings show who does what, so word order shows what you stress. The stressed word stands right before the verb: «Péter jön, nem Anna». A question word is stressed too: «Hol lakik Anna?» The answer takes the same place: «Anna Debrecenben lakik». In a plain sentence the prefix stays on the verb: «Felkelek». But after «nem», a question word or a stressed word, the prefix goes behind the verb: «Nem kelek fel», «Mikor mész el?»",
+    "es": "En húngaro las terminaciones muestran quién hace qué, así que el orden de las palabras muestra lo que destacas. La palabra destacada va justo antes del verbo: «Péter jön, nem Anna». Una palabra interrogativa también se destaca: «Hol lakik Anna?» La respuesta ocupa el mismo lugar: «Anna Debrecenben lakik». En una frase neutra el prefijo se queda pegado al verbo: «Felkelek». Pero después de «nem», de una palabra interrogativa o de una palabra destacada, el prefijo pasa detrás del verbo: «Nem kelek fel», «Mikor mész el?»"
+  },
+  "glossary": [
+    { "word": "elmegy", "gloss": { "en": "to leave, go away", "es": "irse, marcharse" } },
+    { "word": "bemegy", "gloss": { "en": "to go in", "es": "entrar" } },
+    { "word": "fel", "gloss": { "en": "up (verb prefix)", "es": "arriba (prefijo verbal)" } },
+    { "word": "el", "gloss": { "en": "away (verb prefix)", "es": "fuera, lejos (prefijo verbal)" } },
+    { "word": "be", "gloss": { "en": "in, into (verb prefix)", "es": "dentro (prefijo verbal)" } },
+    { "word": "át", "gloss": { "en": "across, over (verb prefix)", "es": "a través, al otro lado (prefijo verbal)" } }
+  ],
+  "items": [
+    {
+      "id": "szorend-fokusz-c01",
+      "sentence": "Ki megy holnap Szegedre? ___",
+      "options": ["Péter holnap megy Szegedre.", "Péter megy holnap Szegedre.", "Péter holnap Szegedre megy."],
+      "correct": 1,
+      "why": {
+        "en": "ki asks about the person, so the answer, Péter, stands right before the verb: Péter megy holnap Szegedre.",
+        "es": "ki pregunta por la persona, así que la respuesta, Péter, va justo antes del verbo: Péter megy holnap Szegedre."
+      },
+      "wrong": {
+        "Péter holnap megy Szegedre.": {
+          "en": "With this order the stressed word is holnap, so the sentence would answer 'When is Péter going to Szeged?'.",
+          "es": "Con este orden la palabra destacada es holnap, así que la frase respondería «¿Cuándo va Péter a Szeged?»."
+        },
+        "Péter holnap Szegedre megy.": {
+          "en": "With this order the stressed word is Szegedre, so the sentence would answer 'Where is Péter going tomorrow?'.",
+          "es": "Con este orden la palabra destacada es Szegedre, así que la frase respondería «¿A dónde va Péter mañana?»."
+        }
+      },
+      "examples": ["Anna jön ma.", "Kati dolgozik a boltban."],
+      "tr": { "en": "Who is going to Szeged tomorrow? Péter is.", "es": "¿Quién va mañana a Szeged? Va Péter." }
+    },
+    { "id": "szorend-fokusz-f01", "kind": "form", "verb": "lakik", "person": "fókusz: Szegeden", "answer": "Szegeden lakik", "table": "fokusz-minta" },
+    {
+      "id": "szorend-fokusz-c02",
+      "sentence": "Mikor megy Péter Szegedre? ___",
+      "options": ["Péter megy holnap Szegedre.", "Péter holnap Szegedre megy.", "Péter holnap megy Szegedre."],
+      "correct": 2,
+      "why": {
+        "en": "mikor asks about the time, so the answer, holnap, stands right before the verb: Péter holnap megy Szegedre.",
+        "es": "mikor pregunta por el momento, así que la respuesta, holnap, va justo antes del verbo: Péter holnap megy Szegedre."
+      },
+      "wrong": {
+        "Péter megy holnap Szegedre.": {
+          "en": "With this order the stressed word is Péter, so the sentence would answer 'Who is going to Szeged tomorrow?'.",
+          "es": "Con este orden la palabra destacada es Péter, así que la frase respondería «¿Quién va mañana a Szeged?»."
+        },
+        "Péter holnap Szegedre megy.": {
+          "en": "With this order the stressed word is Szegedre, so the sentence would answer 'Where is Péter going tomorrow?'.",
+          "es": "Con este orden la palabra destacada es Szegedre, así que la frase respondería «¿A dónde va Péter mañana?»."
+        }
+      },
+      "examples": ["Kati holnap jön.", "Anna ma megy a boltba."],
+      "tr": { "en": "When is Péter going to Szeged? Tomorrow.", "es": "¿Cuándo va Péter a Szeged? Mañana." }
+    },
+    {
+      "id": "szorend-fokusz-f02",
+      "kind": "form",
+      "verb": "dolgozik",
+      "person": "fókusz: a bankban",
+      "answer": "a bankban dolgozik",
+      "table": "fokusz-minta"
+    },
+    {
+      "id": "szorend-fokusz-c03",
+      "sentence": "Hova megy Péter holnap? ___",
+      "options": ["Péter holnap Szegedre megy.", "Péter holnap megy Szegedre.", "Péter megy holnap Szegedre."],
+      "correct": 0,
+      "why": {
+        "en": "hova asks about the destination, so the answer, Szegedre, stands right before the verb: Péter holnap Szegedre megy.",
+        "es": "hova pregunta por el destino, así que la respuesta, Szegedre, va justo antes del verbo: Péter holnap Szegedre megy."
+      },
+      "wrong": {
+        "Péter holnap megy Szegedre.": {
+          "en": "With this order the stressed word is holnap, so the sentence would answer 'When is Péter going to Szeged?'.",
+          "es": "Con este orden la palabra destacada es holnap, así que la frase respondería «¿Cuándo va Péter a Szeged?»."
+        },
+        "Péter megy holnap Szegedre.": {
+          "en": "With this order the stressed word is Péter, so the sentence would answer 'Who is going to Szeged tomorrow?'.",
+          "es": "Con este orden la palabra destacada es Péter, así que la frase respondería «¿Quién va mañana a Szeged?»."
+        }
+      },
+      "examples": ["Anna a boltba megy.", "Kati ma a bankba megy."],
+      "tr": { "en": "Where is Péter going tomorrow? To Szeged.", "es": "¿A dónde va Péter mañana? A Szeged." }
+    },
+    { "id": "szorend-fokusz-f03", "kind": "form", "verb": "megy", "person": "fókusz: a boltba", "answer": "a boltba megy", "table": "fokusz-minta" },
+    {
+      "id": "szorend-fokusz-w01",
+      "kind": "why",
+      "es": "Péter jön, nem Anna.",
+      "target": "Péter jön",
+      "tr": { "en": "Péter is coming, not Anna.", "es": "Viene Péter, no Anna." },
+      "options": [
+        { "text": { "en": "The stressed word (Péter) stands right before the verb", "es": "La palabra destacada (Péter) va justo antes del verbo" } },
+        {
+          "text": { "en": "Nothing is stressed: plain order, subject then verb", "es": "Nada se destaca: orden neutro, sujeto y luego verbo" },
+          "wrong": {
+            "en": "With this rule the sentence would have no contrast. The part nem Anna shows that Péter is stressed against Anna.",
+            "es": "Con esta regla la frase no tendría contraste. La parte nem Anna muestra que Péter se destaca frente a Anna."
+          }
+        },
+        {
+          "text": { "en": "The prefix moves behind the verb", "es": "El prefijo pasa detrás del verbo" },
+          "wrong": {
+            "en": "With this rule the verb would need a prefix, as in Nem megyek el. jön has no prefix here.",
+            "es": "Con esta regla el verbo necesitaría un prefijo, como en Nem megyek el. jön no tiene prefijo aquí."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szorend-fokusz-c04",
+      "sentence": "Hol dolgozik Gábor ma? ___",
+      "options": ["Gábor ma dolgozik a boltban.", "Gábor dolgozik ma a boltban.", "Gábor ma a boltban dolgozik."],
+      "correct": 2,
+      "why": {
+        "en": "hol asks about the place, so the answer, a boltban, stands right before the verb: Gábor ma a boltban dolgozik.",
+        "es": "hol pregunta por el lugar, así que la respuesta, a boltban, va justo antes del verbo: Gábor ma a boltban dolgozik."
+      },
+      "wrong": {
+        "Gábor ma dolgozik a boltban.": {
+          "en": "With this order the stressed word is ma, so the sentence would answer 'When does Gábor work in the shop?'.",
+          "es": "Con este orden la palabra destacada es ma, así que la frase respondería «¿Cuándo trabaja Gábor en la tienda?»."
+        },
+        "Gábor dolgozik ma a boltban.": {
+          "en": "With this order the stressed word is Gábor, so the sentence would answer 'Who works in the shop today?'.",
+          "es": "Con este orden la palabra destacada es Gábor, así que la frase respondería «¿Quién trabaja hoy en la tienda?»."
+        }
+      },
+      "examples": ["Anna a bankban dolgozik.", "Péter Szegeden lakik."],
+      "tr": { "en": "Where does Gábor work today? In the shop.", "es": "¿Dónde trabaja Gábor hoy? En la tienda." }
+    },
+    { "id": "szorend-fokusz-f04", "kind": "form", "verb": "jön", "person": "fókusz: ma", "answer": "ma jön", "table": "fokusz-minta" },
+    {
+      "id": "szorend-fokusz-c05",
+      "sentence": "Ki dolgozik ma a boltban? ___",
+      "options": ["Gábor ma dolgozik a boltban.", "Gábor ma a boltban dolgozik.", "Gábor dolgozik ma a boltban."],
+      "correct": 2,
+      "why": {
+        "en": "ki asks about the person, so the answer, Gábor, stands right before the verb: Gábor dolgozik ma a boltban.",
+        "es": "ki pregunta por la persona, así que la respuesta, Gábor, va justo antes del verbo: Gábor dolgozik ma a boltban."
+      },
+      "wrong": {
+        "Gábor ma dolgozik a boltban.": {
+          "en": "With this order the stressed word is ma, so the sentence would answer 'When does Gábor work in the shop?'.",
+          "es": "Con este orden la palabra destacada es ma, así que la frase respondería «¿Cuándo trabaja Gábor en la tienda?»."
+        },
+        "Gábor ma a boltban dolgozik.": {
+          "en": "With this order the stressed word is a boltban, so the sentence would answer 'Where does Gábor work today?'.",
+          "es": "Con este orden la palabra destacada es a boltban, así que la frase respondería «¿Dónde trabaja Gábor hoy?»."
+        }
+      },
+      "examples": ["Kati dolgozik ma a bankban.", "Péter lakik Szegeden."],
+      "tr": { "en": "Who works in the shop today? Gábor does.", "es": "¿Quién trabaja hoy en la tienda? Gábor." }
+    },
+    { "id": "szorend-fokusz-f05", "kind": "form", "verb": "eszik", "person": "fókusz: levest", "answer": "levest eszik", "table": "fokusz-minta" },
+    {
+      "id": "szorend-fokusz-c06",
+      "sentence": "Mikor megy Diego a piacra? ___",
+      "options": ["Diego megy ma a piacra.", "Diego ma a piacra megy.", "Diego ma megy a piacra."],
+      "correct": 2,
+      "why": {
+        "en": "mikor asks about the time, so the answer, ma, stands right before the verb: Diego ma megy a piacra.",
+        "es": "mikor pregunta por el momento, así que la respuesta, ma, va justo antes del verbo: Diego ma megy a piacra."
+      },
+      "wrong": {
+        "Diego megy ma a piacra.": {
+          "en": "With this order the stressed word is Diego, so the sentence would answer 'Who is going to the market today?'.",
+          "es": "Con este orden la palabra destacada es Diego, así que la frase respondería «¿Quién va hoy al mercado?»."
+        },
+        "Diego ma a piacra megy.": {
+          "en": "With this order the stressed word is a piacra, so the sentence would answer 'Where is Diego going today?'.",
+          "es": "Con este orden la palabra destacada es a piacra, así que la frase respondería «¿A dónde va Diego hoy?»."
+        }
+      },
+      "examples": ["Anna ma megy a boltba.", "Kati holnap jön."],
+      "tr": { "en": "When is Diego going to the market? Today.", "es": "¿Cuándo va Diego al mercado? Hoy." }
+    },
+    {
+      "id": "szorend-fokusz-f06",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "fókusz: egy könyvet",
+      "answer": "egy könyvet olvas",
+      "table": "fokusz-minta"
+    },
+    {
+      "id": "szorend-fokusz-c07",
+      "sentence": "Ki megy ma a piacra? ___",
+      "options": ["Diego ma megy a piacra.", "Diego megy ma a piacra.", "Diego ma a piacra megy."],
+      "correct": 1,
+      "why": {
+        "en": "ki asks about the person, so the answer, Diego, stands right before the verb: Diego megy ma a piacra.",
+        "es": "ki pregunta por la persona, así que la respuesta, Diego, va justo antes del verbo: Diego megy ma a piacra."
+      },
+      "wrong": {
+        "Diego ma megy a piacra.": {
+          "en": "With this order the stressed word is ma, so the sentence would answer 'When is Diego going to the market?'.",
+          "es": "Con este orden la palabra destacada es ma, así que la frase respondería «¿Cuándo va Diego al mercado?»."
+        },
+        "Diego ma a piacra megy.": {
+          "en": "With this order the stressed word is a piacra, so the sentence would answer 'Where is Diego going today?'.",
+          "es": "Con este orden la palabra destacada es a piacra, así que la frase respondería «¿A dónde va Diego hoy?»."
+        }
+      },
+      "examples": ["Péter megy ma a bankba.", "Anna jön ma."],
+      "tr": { "en": "Who is going to the market today? Diego is.", "es": "¿Quién va hoy al mercado? Va Diego." }
+    },
+    {
+      "id": "szorend-fokusz-w03",
+      "kind": "why",
+      "es": "Anna a boltba megy.",
+      "target": "a boltba",
+      "tr": { "en": "Anna is going to the SHOP.", "es": "Anna va a la TIENDA." },
+      "options": [
+        {
+          "text": { "en": "Anna is stressed: she is the one who goes", "es": "Anna se destaca: es ella quien va" },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna megy a boltba, with Anna right before the verb. Here the word right before the verb is a boltba.",
+            "es": "Con esta regla la frase sería Anna megy a boltba, con Anna justo antes del verbo. Aquí la palabra justo antes del verbo es a boltba."
+          }
+        },
+        { "text": { "en": "a boltba is stressed: it stands right before the verb", "es": "a boltba se destaca: va justo antes del verbo" } },
+        {
+          "text": { "en": "The verb is stressed, so it comes first", "es": "El verbo se destaca, así que va primero" },
+          "wrong": {
+            "en": "With this rule the sentence would start with the verb (Megy Anna a boltba). Here the verb comes after the stressed word.",
+            "es": "Con esta regla la frase empezaría con el verbo (Megy Anna a boltba). Aquí el verbo viene después de la palabra destacada."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "szorend-fokusz-c08",
+      "sentence": "___ Debrecenben lakom.",
+      "options": ["Hol laksz?", "Laksz hol?", "Te laksz hol?"],
+      "correct": 0,
+      "why": {
+        "en": "hol is the stressed word of the question, so it stands right before the verb: Hol laksz?",
+        "es": "hol es la palabra destacada de la pregunta, así que va justo antes del verbo: Hol laksz?"
+      },
+      "wrong": {
+        "Laksz hol?": {
+          "en": "This puts hol after the verb, which a normal question never does; hol must stand right before the verb.",
+          "es": "Esto pone hol después del verbo, algo que una pregunta normal nunca hace; hol debe ir justo antes del verbo."
+        },
+        "Te laksz hol?": {
+          "en": "This could only be an echo question ('You live WHERE?'), asked when you did not believe what you heard. A normal question has hol right before the verb.",
+          "es": "Esto solo sería una pregunta eco («¿Tú vives DÓNDE?»), hecha cuando no crees lo que oíste. Una pregunta normal tiene hol justo antes del verbo."
+        }
+      },
+      "examples": ["Hol dolgozol?", "Hol van Anna?"],
+      "tr": { "en": "Where do you live? I live in Debrecen.", "es": "¿Dónde vives? Vivo en Debrecen." }
+    },
+    {
+      "id": "szorend-fokusz-c09",
+      "sentence": "___ Levest eszem.",
+      "options": ["Eszel mit?", "Mit eszel?", "Te eszel mit?"],
+      "correct": 1,
+      "why": {
+        "en": "mit is the stressed word of the question, so it stands right before the verb: Mit eszel?",
+        "es": "mit es la palabra destacada de la pregunta, así que va justo antes del verbo: Mit eszel?"
+      },
+      "wrong": {
+        "Eszel mit?": {
+          "en": "This puts mit after the verb, which a normal question never does; mit must stand right before the verb.",
+          "es": "Esto pone mit después del verbo, algo que una pregunta normal nunca hace; mit debe ir justo antes del verbo."
+        },
+        "Te eszel mit?": {
+          "en": "This could only be an echo question ('You are eating WHAT?'), asked when you did not believe what you heard. A normal question has mit right before the verb.",
+          "es": "Esto solo sería una pregunta eco («¿Tú comes QUÉ?»), hecha cuando no crees lo que oíste. Una pregunta normal tiene mit justo antes del verbo."
+        }
+      },
+      "examples": ["Mit olvasol?", "Mit kérsz?"],
+      "tr": { "en": "What are you eating? I'm eating soup.", "es": "¿Qué comes? Como sopa." }
+    },
+    {
+      "id": "szorend-fokusz-w02",
+      "kind": "why",
+      "es": "Mikor kelsz fel?",
+      "target": "kelsz fel",
+      "tr": { "en": "When do you get up?", "es": "¿Cuándo te levantas?" },
+      "options": [
+        {
+          "text": { "en": "Plain order: the prefix stays glued to the verb", "es": "Orden neutro: el prefijo se queda pegado al verbo" },
+          "wrong": {
+            "en": "With this rule the sentence would be Felkelsz (You get up). With mikor in front, the prefix cannot stay glued.",
+            "es": "Con esta regla la frase sería Felkelsz (Te levantas). Con mikor delante, el prefijo no puede quedarse pegado."
+          }
+        },
+        {
+          "text": {
+            "en": "A question word stands right before the verb, so the prefix goes behind it",
+            "es": "Una palabra interrogativa va justo antes del verbo, así que el prefijo pasa detrás"
+          }
+        },
+        {
+          "text": { "en": "The verb comes first because it is the stressed word", "es": "El verbo va primero porque es la palabra destacada" },
+          "wrong": {
+            "en": "With this rule the sentence would begin with the verb. Here the question word mikor is the stressed word and sits right before it.",
+            "es": "Con esta regla la frase empezaría con el verbo. Aquí la palabra interrogativa mikor es la destacada y va justo antes."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    { "id": "szorend-fokusz-f07", "kind": "form", "verb": "felkel", "person": "én", "answer": "felkelek", "table": "elotag-minta" },
+    {
+      "id": "szorend-fokusz-c10",
+      "sentence": "Holnap nem ___.",
+      "options": ["megyek el", "elmegyek", "el megyek"],
+      "correct": 0,
+      "why": { "en": "After nem the prefix goes behind the verb: nem megyek el.", "es": "Después de nem el prefijo pasa detrás del verbo: nem megyek el." },
+      "wrong": {
+        "elmegyek": {
+          "en": "elmegyek keeps the prefix glued in front of the verb. That is the plain form (Elmegyek = I am leaving); after nem it must step behind the verb.",
+          "es": "elmegyek mantiene el prefijo pegado delante del verbo. Esa es la forma neutra (Elmegyek = me voy); después de nem debe pasar detrás del verbo."
+        },
+        "el megyek": {
+          "en": "el megyek writes the prefix as a separate word in front of the verb. A prefix is either glued in front (elmegyek) or placed behind the verb (megyek el), never separate in front.",
+          "es": "el megyek escribe el prefijo como palabra separada delante del verbo. El prefijo va pegado delante (elmegyek) o detrás del verbo (megyek el), nunca separado delante."
+        }
+      },
+      "examples": ["Nem megyek be.", "Nem kelek fel."],
+      "tr": { "en": "I'm not leaving tomorrow.", "es": "Mañana no me voy." }
+    },
+    { "id": "szorend-fokusz-f08", "kind": "form", "verb": "elmegy", "person": "nem + én", "answer": "nem megyek el", "table": "elotag-minta" },
+    {
+      "id": "szorend-fokusz-c11",
+      "sentence": "Mikor ___?",
+      "options": ["felkelsz", "kelsz fel", "fel kelsz"],
+      "correct": 1,
+      "why": {
+        "en": "mikor stands right before the verb, so the prefix goes behind it: Mikor kelsz fel?",
+        "es": "mikor va justo antes del verbo, así que el prefijo pasa detrás: Mikor kelsz fel?"
+      },
+      "wrong": {
+        "felkelsz": {
+          "en": "felkelsz keeps the prefix glued in front, which is the plain form (Felkelsz = you get up). After mikor the prefix goes behind the verb.",
+          "es": "felkelsz mantiene el prefijo pegado delante, que es la forma neutra (Felkelsz = te levantas). Después de mikor el prefijo pasa detrás del verbo."
+        },
+        "fel kelsz": {
+          "en": "fel kelsz writes the prefix as a separate word in front of the verb. A prefix is either glued in front (felkelsz) or placed behind the verb (kelsz fel).",
+          "es": "fel kelsz escribe el prefijo como palabra separada delante del verbo. El prefijo va pegado delante (felkelsz) o detrás del verbo (kelsz fel)."
+        }
+      },
+      "examples": ["Mikor mész el?", "Mikor jössz vissza?"],
+      "tr": { "en": "When do you get up?", "es": "¿Cuándo te levantas?" }
+    },
+    { "id": "szorend-fokusz-f09", "kind": "form", "verb": "leszáll", "person": "én", "answer": "leszállok", "table": "elotag-minta" },
+    {
+      "id": "szorend-fokusz-c12",
+      "sentence": "Nyolckor ___.",
+      "options": ["kelek fel", "felkelek", "fel kelek"],
+      "correct": 0,
+      "why": {
+        "en": "nyolckor (at eight) is the stressed word and stands right before the verb, so the prefix goes behind it: Nyolckor kelek fel.",
+        "es": "nyolckor (a las ocho) es la palabra destacada y va justo antes del verbo, así que el prefijo pasa detrás: Nyolckor kelek fel."
+      },
+      "wrong": {
+        "felkelek": {
+          "en": "felkelek is the plain form (Felkelek = I get up). With nyolckor stressed right before the verb, the prefix steps behind it.",
+          "es": "felkelek es la forma neutra (Felkelek = me levanto). Con nyolckor destacado justo antes del verbo, el prefijo pasa detrás."
+        },
+        "fel kelek": {
+          "en": "fel kelek writes the prefix as a separate word in front of the verb. A prefix is either glued in front (felkelek) or placed behind the verb (kelek fel).",
+          "es": "fel kelek escribe el prefijo como palabra separada delante del verbo. El prefijo va pegado delante (felkelek) o detrás del verbo (kelek fel)."
+        }
+      },
+      "examples": ["Hatkor kelek fel.", "Nyolckor megyek haza."],
+      "tr": { "en": "I get up at eight.", "es": "Me levanto a las ocho." }
+    },
+    { "id": "szorend-fokusz-f10", "kind": "form", "verb": "visszajön", "person": "nem + én", "answer": "nem jövök vissza", "table": "elotag-minta" },
+    {
+      "id": "szorend-fokusz-c13",
+      "sentence": "Az étterembe ___, nem a bankba.",
+      "options": ["bemegyek", "megyek be", "be megyek"],
+      "correct": 1,
+      "why": {
+        "en": "az étterembe is stressed against a bankba, so it stands right before the verb and the prefix goes behind it: Az étterembe megyek be.",
+        "es": "az étterembe se destaca frente a a bankba, así que va justo antes del verbo y el prefijo pasa detrás: Az étterembe megyek be."
+      },
+      "wrong": {
+        "bemegyek": {
+          "en": "bemegyek keeps the prefix glued in front. With az étterembe stressed right before the verb, the prefix must step behind it.",
+          "es": "bemegyek mantiene el prefijo pegado delante. Con az étterembe destacado justo antes del verbo, el prefijo debe pasar detrás."
+        },
+        "be megyek": {
+          "en": "be megyek writes the prefix as a separate word in front of the verb. A prefix is either glued in front (bemegyek) or placed behind the verb (megyek be).",
+          "es": "be megyek escribe el prefijo como palabra separada delante del verbo. El prefijo va pegado delante (bemegyek) o detrás del verbo (megyek be)."
+        }
+      },
+      "examples": ["A boltba megyek be.", "Az irodába megyek be."],
+      "tr": { "en": "I'm going INTO THE RESTAURANT, not into the bank.", "es": "Entro al RESTAURANTE, no al banco." }
+    },
+    { "id": "szorend-fokusz-f11", "kind": "form", "verb": "hazamegy", "person": "én", "answer": "hazamegyek", "table": "elotag-minta" },
+    {
+      "id": "szorend-fokusz-c14",
+      "sentence": "Hol ___?",
+      "options": ["szállsz le", "leszállsz", "le szállsz"],
+      "correct": 0,
+      "why": {
+        "en": "hol stands right before the verb, so the prefix goes behind it: Hol szállsz le?",
+        "es": "hol va justo antes del verbo, así que el prefijo pasa detrás: Hol szállsz le?"
+      },
+      "wrong": {
+        "leszállsz": {
+          "en": "leszállsz keeps the prefix glued in front, which is the plain form (Leszállsz = you get off). After hol the prefix goes behind the verb.",
+          "es": "leszállsz mantiene el prefijo pegado delante, que es la forma neutra (Leszállsz = te bajas). Después de hol el prefijo pasa detrás del verbo."
+        },
+        "le szállsz": {
+          "en": "le szállsz writes the prefix as a separate word in front of the verb. A prefix is either glued in front (leszállsz) or placed behind the verb (szállsz le).",
+          "es": "le szállsz escribe el prefijo como palabra separada delante del verbo. El prefijo va pegado delante (leszállsz) o detrás del verbo (szállsz le)."
+        }
+      },
+      "examples": ["Hol szállsz át?", "Hol szállok le?"],
+      "tr": { "en": "Where do you get off?", "es": "¿Dónde te bajas?" }
+    },
+    { "id": "szorend-fokusz-f12", "kind": "form", "verb": "átszáll", "person": "nem + én", "answer": "nem szállok át", "table": "elotag-minta" },
+    {
+      "id": "szorend-fokusz-w04",
+      "kind": "why",
+      "es": "Nem megyek el.",
+      "target": "megyek el",
+      "tr": { "en": "I'm not leaving.", "es": "No me voy." },
+      "options": [
+        { "text": { "en": "After nem the prefix goes behind the verb", "es": "Después de nem el prefijo pasa detrás del verbo" } },
+        {
+          "text": { "en": "Plain order: the prefix stays in front of the verb", "es": "Orden neutro: el prefijo se queda delante del verbo" },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem elmegyek, which is not Hungarian. After nem the prefix steps behind the verb.",
+            "es": "Con esta regla la frase sería Nem elmegyek, que no es húngaro. Después de nem el prefijo pasa detrás del verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "A question word stands in front, so the prefix goes behind",
+            "es": "Una palabra interrogativa va delante, así que el prefijo pasa detrás"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be a question like Mikor mész el? Here the word in front is nem, not a question word.",
+            "es": "Con esta regla la frase sería una pregunta como Mikor mész el? Aquí la palabra delante es nem, no una palabra interrogativa."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

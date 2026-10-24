@@ -6,7 +6,9 @@ import { ONBOARDING_SKINS, SKINS, legibleOn, resolveMode, type SkinId } from '@/
 import { radiusStyle, roleColor } from '@/components/grammar/Brutal';
 import { ActionButton } from '@/components/grammar/Themed';
 import { useGrammarColors, grammarColorsFor } from '@/lib/grammarColors';
+import { getPcicTarget } from '@/data/pcic';
 import { t } from '@/lib/i18n';
+import { sampleWordFor } from '@/lib/languages';
 import { themeKeyFor } from '@/lib/skinTheme';
 import { useSkin } from '@/lib/useSkin';
 import { useTheme } from '@/lib/ThemeContext';
@@ -112,7 +114,7 @@ function ThemeSampleRow({ id, selected, onPress }: { id: SkinId; selected: boole
           ]}
         >
           <View style={styles.sampleText}>
-            <RNText style={wordStyle}>{o.sampleWord}</RNText>
+            <RNText style={wordStyle}>{sampleWordFor(getPcicTarget())}</RNText>
             <RNText testID={`onboarding-theme-name-${id}`} style={nameStyle}>
               {t().skins.names[id]}
             </RNText>

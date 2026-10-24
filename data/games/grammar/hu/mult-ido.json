@@ -1,0 +1,797 @@
+{
+  "schema": 2,
+  "topic": "mult-ido",
+  "level": "A2",
+  "title": { "en": "The past tense: láttam, voltam, ment", "es": "El pasado: láttam, voltam, ment" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has just one simple past tense. Láttam means 'I saw', 'I was seeing' and 'I have seen' all at once: there is no 'did' to add, and no split between preterite and imperfect as in Spanish. You build it with a t between the verb stem and the personal ending: lát (see) becomes láttam (I saw). Time words such as tegnap (yesterday), múlt héten (last week) and tavaly (last year) say when.",
+        "es": "El húngaro tiene un solo pasado simple. Láttam significa «vi», «veía» y «he visto» a la vez: no hay un auxiliar que añadir ni la división entre pretérito e imperfecto del español. Se forma con una t entre la raíz del verbo y la terminación personal: lát (ver) pasa a láttam (vi). Palabras de tiempo como tegnap (ayer), múlt héten (la semana pasada) y tavaly (el año pasado) dicen cuándo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "past-regular",
+      "title": { "en": "Past tense: regular verbs", "es": "Pasado: verbos regulares" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "lát (see)", "es": "lát (ver)" },
+        { "en": "néz (look at, watch)", "es": "néz (mirar)" },
+        { "en": "tanul (study)", "es": "tanul (estudiar)" }
+      ],
+      "rows": [
+        ["én", "láttam", "néztem", "tanultam"],
+        ["te", "láttál", "néztél", "tanultál"],
+        ["ő", "látott", "nézett", "tanult"],
+        ["mi", "láttunk", "néztünk", "tanultunk"],
+        ["ti", "láttatok", "néztetek", "tanultatok"],
+        ["ők", "láttak", "néztek", "tanultak"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "How the past tense is built", "es": "Cómo se forma el pasado" },
+      "items": [
+        {
+          "text": {
+            "en": "Verb stem + t + the personal ending. The vowels of the endings follow vowel harmony: back verbs take -am, -ál, -unk, -atok, -ak (láttam); front verbs take -em, -él, -ünk, -etek, -ek (néztem). Leave out the pronoun: the ending already tells the person.",
+            "es": "Raíz del verbo + t + terminación personal. Las vocales de las terminaciones siguen la armonía vocálica: los verbos con vocales posteriores llevan -am, -ál, -unk, -atok, -ak (láttam); los de vocales anteriores, -em, -él, -ünk, -etek, -ek (néztem). Omite el pronombre: la terminación ya indica la persona."
+          },
+          "examples": [
+            { "es": "Tegnap tanultam.", "tr": { "en": "I studied yesterday.", "es": "Ayer estudié." } },
+            {
+              "es": "Tavaly Budapesten dolgoztunk.",
+              "tr": { "en": "Last year we worked in Budapest.", "es": "El año pasado trabajamos en Budapest." }
+            },
+            {
+              "es": "Mikor tanultatok?",
+              "tr": { "en": "When did you (all) study?", "es": "¿Cuándo estudiaron ustedes?" }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ő (he, she): after a stem ending in l, r or n the ending is usually just -t (tanult, írt, pihent). After other consonants a linking vowel appears: -ott, -ett or -ött (látott, nézett, főzött). Learn the ő form together with each verb.",
+            "es": "ő (él, ella): si la raíz termina en l, r o n, la terminación suele ser solo -t (tanult, írt, pihent). Tras otras consonantes aparece una vocal de enlace: -ott, -ett o -ött (látott, nézett, főzött). Aprende la forma de ő junto con cada verbo."
+          },
+          "examples": [
+            { "es": "Anna tanult.", "tr": { "en": "Anna studied.", "es": "Anna estudió." } },
+            { "es": "Kati írt egy levelet.", "tr": { "en": "Kati wrote a letter.", "es": "Kati escribió una carta." } },
+            { "es": "Gábor dolgozott.", "tr": { "en": "Gábor worked.", "es": "Gábor trabajó." } },
+            {
+              "es": "Péter nézett egy filmet.",
+              "tr": { "en": "Péter watched a film.", "es": "Péter vio una película." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A time word makes the time clear: tegnap (yesterday), tegnap reggel (yesterday morning), múlt héten (last week), tavaly (last year). The same form can mean 'I was', 'I used to be' or 'I have been'; the context chooses.",
+            "es": "Una palabra de tiempo aclara cuándo: tegnap (ayer), tegnap reggel (ayer por la mañana), múlt héten (la semana pasada), tavaly (el año pasado). La misma forma puede significar «estuve», «estaba» o «he estado»; lo decide el contexto."
+          },
+          "examples": [
+            {
+              "es": "Tegnap reggel későn érkeztem.",
+              "tr": { "en": "I arrived late yesterday morning.", "es": "Ayer por la mañana llegué tarde." }
+            },
+            {
+              "es": "Múlt héten Szegeden voltam.",
+              "tr": { "en": "Last week I was in Szeged.", "es": "La semana pasada estuve en Szeged." }
+            },
+            {
+              "es": "Tavaly Debrecenben laktam.",
+              "tr": { "en": "Last year I lived in Debrecen.", "es": "El año pasado viví en Debrecen." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "past-irregular",
+      "title": { "en": "Irregular but very common: be, go, come", "es": "Irregulares pero muy comunes: ser/estar, ir, venir" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "lenni (be)", "es": "lenni (ser, estar)" },
+        { "en": "menni (go)", "es": "menni (ir)" },
+        { "en": "jönni (come)", "es": "jönni (venir)" }
+      ],
+      "rows": [
+        ["én", "voltam", "mentem", "jöttem"],
+        ["te", "voltál", "mentél", "jöttél"],
+        ["ő", "volt", "ment", "jött"],
+        ["mi", "voltunk", "mentünk", "jöttünk"],
+        ["ti", "voltatok", "mentetek", "jöttetek"],
+        ["ők", "voltak", "mentek", "jöttek"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "past-eat-drink",
+      "title": { "en": "Irregular: eat, drink, buy", "es": "Irregulares: comer, beber, comprar" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "enni (eat)", "es": "enni (comer)" },
+        { "en": "inni (drink)", "es": "inni (beber)" },
+        { "en": "venni (buy, take)", "es": "venni (comprar, tomar)" }
+      ],
+      "rows": [
+        ["én", "ettem", "ittam", "vettem"],
+        ["te", "ettél", "ittál", "vettél"],
+        ["ő", "evett", "ivott", "vett"],
+        ["mi", "ettünk", "ittunk", "vettünk"],
+        ["ti", "ettetek", "ittatok", "vettetek"],
+        ["ők", "ettek", "ittak", "vettek"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "past-definite",
+      "title": { "en": "Indefinite and definite object: lát", "es": "Objeto indefinido y definido: lát" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "lát + egy film", "es": "lát + egy film" },
+        { "en": "lát + a film", "es": "lát + a film" }
+      ],
+      "rows": [
+        ["én", "láttam", "láttam"],
+        ["te", "láttál", "láttad"],
+        ["ő", "látott", "látta"],
+        ["mi", "láttunk", "láttuk"],
+        ["ti", "láttatok", "láttátok"],
+        ["ők", "láttak", "látták"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Using the past tense", "es": "Cómo usar el pasado" },
+      "points": [
+        {
+          "text": {
+            "en": "Be in the past is volt-: voltam, voltál, volt. Unlike the present, the 3rd person is NOT dropped: Anna tanár (is a teacher) but Anna tanár volt (was a teacher).",
+            "es": "«Ser, estar» en pasado es volt-: voltam, voltál, volt. A diferencia del presente, la 3.ª persona NO se omite: Anna tanár (es profesora) pero Anna tanár volt (era profesora)."
+          },
+          "examples": [
+            { "es": "Anna tanár volt.", "tr": { "en": "Anna was a teacher.", "es": "Anna era profesora." } },
+            { "es": "A ház nagy volt.", "tr": { "en": "The house was big.", "es": "La casa era grande." } },
+            {
+              "es": "A gyerekek otthon voltak.",
+              "tr": { "en": "The children were at home.", "es": "Los niños estaban en casa." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Five very common verbs are irregular: menni (ment), jönni (jött), enni (evett, but ettem), inni (ivott, but ittam) and venni (vett). Learn them as they are, then use the endings from the tables.",
+            "es": "Cinco verbos muy comunes son irregulares: menni (ment), jönni (jött), enni (evett, pero ettem), inni (ivott, pero ittam) y venni (vett). Apréndelos tal cual y usa las terminaciones de las tablas."
+          },
+          "examples": [
+            {
+              "es": "Anna tegnap a boltba ment.",
+              "tr": { "en": "Anna went to the shop yesterday.", "es": "Anna fue ayer a la tienda." }
+            },
+            {
+              "es": "Kati korán jött haza.",
+              "tr": { "en": "Kati came home early.", "es": "Kati llegó temprano a casa." }
+            },
+            {
+              "es": "Diego ma reggel evett egy almát.",
+              "tr": { "en": "Diego ate an apple this morning.", "es": "Diego se comió una manzana esta mañana." }
+            },
+            { "es": "Gábor ivott egy kávét.", "tr": { "en": "Gábor drank a coffee.", "es": "Gábor tomó un café." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Definite or indefinite object: the same rule as in the present tense. With a/az (the) or a name the verb takes the definite ending (látta); with egy (a) or no article it takes the indefinite one (látott).",
+            "es": "Objeto definido o indefinido: la misma regla que en presente. Con a/az (el, la) o un nombre propio el verbo toma la terminación definida (látta); con egy (un, una) o sin artículo, la indefinida (látott)."
+          },
+          "examples": [
+            { "es": "Péter látott egy kutyát.", "tr": { "en": "Péter saw a dog.", "es": "Péter vio un perro." } },
+            { "es": "Péter látta a kutyát.", "tr": { "en": "Péter saw the dog.", "es": "Péter vio al perro." } },
+            {
+              "es": "Péter kereste Annát.",
+              "tr": { "en": "Péter was looking for Anna.", "es": "Péter buscaba a Anna." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Negation: nem goes before the verb. For 'was not' say nem volt, never nincs (nincs is only for the present).",
+            "es": "Negación: nem va delante del verbo. Para «no estaba» di nem volt, nunca nincs (nincs es solo para el presente)."
+          },
+          "examples": [
+            { "es": "Tegnap nem dolgoztam.", "tr": { "en": "I didn't work yesterday.", "es": "Ayer no trabajé." } },
+            { "es": "Anna nem volt otthon.", "tr": { "en": "Anna wasn't at home.", "es": "Anna no estaba en casa." } },
+            { "es": "Nem láttam a filmet.", "tr": { "en": "I didn't see the film.", "es": "No vi la película." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Present or past?", "es": "¿Presente o pasado?" },
+      "pairs": [
+        {
+          "a": "Most tanulok.",
+          "b": "Tegnap tanultam.",
+          "note": {
+            "en": "The t before the personal ending marks the past; the time word agrees with it.",
+            "es": "La t antes de la terminación personal marca el pasado; la palabra de tiempo concuerda con ella."
+          },
+          "examples": [
+            { "es": "Most dolgozom.", "tr": { "en": "I'm working now.", "es": "Ahora trabajo." } },
+            { "es": "Tegnap dolgoztam.", "tr": { "en": "I worked yesterday.", "es": "Ayer trabajé." } }
+          ]
+        },
+        {
+          "a": "Anna tanár.",
+          "b": "Anna tanár volt.",
+          "note": {
+            "en": "Present: no verb with a noun. Past: volt is added, also in the 3rd person.",
+            "es": "Presente: sin verbo ante un sustantivo. Pasado: se añade volt, también en 3.ª persona."
+          },
+          "examples": [
+            { "es": "A ház nagy.", "tr": { "en": "The house is big.", "es": "La casa es grande." } },
+            { "es": "A ház nagy volt.", "tr": { "en": "The house was big.", "es": "La casa era grande." } }
+          ]
+        },
+        {
+          "a": "Láttál egy kutyát?",
+          "b": "Láttad a kutyát?",
+          "note": {
+            "en": "With te the verb changes: láttál (egy kutyát) but láttad (a kutyát). With én it stays láttam in both cases.",
+            "es": "Con te el verbo cambia: láttál (egy kutyát) pero láttad (a kutyát). Con én queda láttam en los dos casos."
+          },
+          "examples": [
+            { "es": "Láttam egy filmet.", "tr": { "en": "I saw a film.", "es": "Vi una película." } },
+            { "es": "Láttam a filmet.", "tr": { "en": "I saw the film.", "es": "Vi la película." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Do not drop volt for ő: Anna tanár volt, not just Anna tanár, when you mean 'was'. (2) There is no helper like 'did': Láttál? already means 'Did you see?'. (3) enni and inni look odd: ettem, ittam, but evett, ivott for ő only. (4) Do not invent menett or jövött: it is ment and jött.",
+        "es": "Trampas clásicas: (1) No omitas volt con ő: Anna tanár volt, no solo Anna tanár, cuando quieres decir «era». (2) No hay auxiliar como «did»: Láttál? ya significa «¿Viste?». (3) enni e inni parecen raros: ettem, ittam, pero evett, ivott solo para ő. (4) No inventes menett ni jövött: es ment y jött."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has one simple past tense. You add a t between the verb stem and the ending: «lát» becomes «láttam», «láttál», «látott». Time words such as «tegnap», «múlt héten» and «tavaly» tell you when. The past of «lenni» is «voltam», «voltál», «volt», and the third person is not dropped: «Anna tanár volt». Some very common verbs are irregular: «ment», «jött», «evett», «ivott». With a definite object the ending changes: «Láttál egy kutyát?», but «Láttad a kutyát?»",
+    "es": "El húngaro tiene un solo pasado simple. Se añade una t entre la raíz del verbo y la terminación: «lát» se convierte en «láttam», «láttál», «látott». Palabras de tiempo como «tegnap», «múlt héten» y «tavaly» dicen cuándo. El pasado de «lenni» es «voltam», «voltál», «volt», y la tercera persona no se omite: «Anna tanár volt». Algunos verbos muy comunes son irregulares: «ment», «jött», «evett», «ivott». Con un objeto definido cambia la terminación: «Láttál egy kutyát?», pero «Láttad a kutyát?»"
+  },
+  "glossary": [{ "word": "film", "gloss": { "en": "film, movie", "es": "película" } }],
+  "items": [
+    {
+      "id": "mult-ido-c01",
+      "sentence": "Tegnap otthon ___.",
+      "options": ["voltam", "vagyok", "leszek"],
+      "correct": 0,
+      "why": {
+        "en": "Tegnap means yesterday, so you need the past of lenni: voltam (I was). The pronoun én is dropped.",
+        "es": "Tegnap significa ayer, así que hace falta el pasado de lenni: voltam (estuve). El pronombre én se omite."
+      },
+      "wrong": {
+        "vagyok": {
+          "en": "With vagyok the sentence would be present, 'I am at home'; it fits ma (today), not tegnap.",
+          "es": "Con vagyok la frase estaría en presente, «estoy en casa»; encaja con ma (hoy), no con tegnap."
+        },
+        "leszek": {
+          "en": "leszek is the future, 'I will be at home'; it goes with holnap (tomorrow).",
+          "es": "leszek es el futuro, «estaré en casa»; va con holnap (mañana)."
+        }
+      },
+      "examples": ["Tegnap a moziban voltam.", "Múlt héten otthon voltunk."],
+      "tr": { "en": "I was at home yesterday.", "es": "Ayer estuve en casa." }
+    },
+    {
+      "id": "mult-ido-f01",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "én",
+      "answer": "voltam",
+      "table": "past-irregular"
+    },
+    {
+      "id": "mult-ido-c02",
+      "sentence": "Anna és Péter tegnap a boltban ___.",
+      "options": ["voltak", "volt", "vannak"],
+      "correct": 0,
+      "why": {
+        "en": "Two people are ők (they), and the past of lenni for ők is voltak.",
+        "es": "Dos personas son ők (ellos), y el pasado de lenni para ők es voltak."
+      },
+      "wrong": {
+        "volt": {
+          "en": "volt is for one person, 'he or she was'; Anna és Péter are two people, so the plural voltak is needed.",
+          "es": "volt es para una sola persona, «él o ella estuvo»; Anna és Péter son dos personas, así que hace falta el plural voltak."
+        },
+        "vannak": {
+          "en": "vannak is the present, 'they are'; it would say they are in the shop now, not yesterday.",
+          "es": "vannak es el presente, «están»; diría que están en la tienda ahora, no ayer."
+        }
+      },
+      "examples": ["A gyerekek otthon voltak.", "Kati és Gábor a moziban voltak."],
+      "tr": { "en": "Anna and Péter were in the shop yesterday.", "es": "Anna y Péter estuvieron ayer en la tienda." }
+    },
+    {
+      "id": "mult-ido-f02",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "te",
+      "answer": "voltál",
+      "table": "past-irregular"
+    },
+    {
+      "id": "mult-ido-c03",
+      "sentence": "Hol ___ tegnap, Kati?",
+      "options": ["voltál", "volt", "voltam"],
+      "correct": 0,
+      "why": {
+        "en": "Kati is the person being spoken to (te), so the past of lenni is voltál.",
+        "es": "Kati es la persona a la que se habla (te), por eso el pasado de lenni es voltál."
+      },
+      "wrong": {
+        "volt": {
+          "en": "With volt the question would be about a third person, 'Where was he or she yesterday?', not about Kati.",
+          "es": "Con volt la pregunta sería sobre una tercera persona, «¿dónde estuvo él o ella ayer?», no sobre Kati."
+        },
+        "voltam": {
+          "en": "With voltam the sentence would mean 'Where was I yesterday, Kati?'.",
+          "es": "Con voltam la frase significaría «¿Dónde estuve yo ayer, Kati?»."
+        }
+      },
+      "examples": ["Hol voltál?", "Hol voltak a gyerekek?"],
+      "tr": { "en": "Where were you yesterday, Kati?", "es": "¿Dónde estuviste ayer, Kati?" }
+    },
+    {
+      "id": "mult-ido-f03",
+      "kind": "form",
+      "verb": "jönni",
+      "person": "ő",
+      "answer": "jött",
+      "table": "past-irregular"
+    },
+    {
+      "id": "mult-ido-c04",
+      "sentence": "Tavaly Budapesten ___.",
+      "options": ["dolgoztam", "dolgozom", "dolgozni fogok"],
+      "correct": 0,
+      "why": {
+        "en": "Tavaly means last year, so the verb is in the past: dolgoz + t + am = dolgoztam.",
+        "es": "Tavaly significa el año pasado, así que el verbo va en pasado: dolgoz + t + am = dolgoztam."
+      },
+      "wrong": {
+        "dolgozom": {
+          "en": "dolgozom is the present, 'I work'; it fits most (now), not tavaly.",
+          "es": "dolgozom es el presente, «trabajo»; encaja con most (ahora), no con tavaly."
+        },
+        "dolgozni fogok": {
+          "en": "dolgozni fogok is the future, 'I will work'; it goes with jövőre (next year).",
+          "es": "dolgozni fogok es el futuro, «voy a trabajar»; va con jövőre (el año próximo)."
+        }
+      },
+      "examples": ["Tavaly Debrecenben tanultam.", "Tegnap dolgoztam."],
+      "tr": { "en": "Last year I worked in Budapest.", "es": "El año pasado trabajé en Budapest." }
+    },
+    {
+      "id": "mult-ido-f04",
+      "kind": "form",
+      "verb": "látni",
+      "person": "én",
+      "answer": "láttam",
+      "table": "past-regular"
+    },
+    {
+      "id": "mult-ido-w01",
+      "kind": "why",
+      "es": "Anna tegnap beteg volt.",
+      "target": "volt",
+      "tr": { "en": "Anna was ill yesterday.", "es": "Anna estuvo enferma ayer." },
+      "options": [
+        {
+          "text": {
+            "en": "Past of lenni: in the past the 3rd person volt is NOT dropped",
+            "es": "Pasado de lenni: en pasado la 3.ª persona volt NO se omite"
+          }
+        },
+        {
+          "text": {
+            "en": "Adjective in the 3rd person: the verb is left out",
+            "es": "Adjetivo en 3.ª persona: se omite el verbo"
+          },
+          "wrong": {
+            "en": "That rule is only for the present (Anna beteg = Anna is ill). For the past the verb comes back: volt.",
+            "es": "Esa regla es solo para el presente (Anna beteg = Anna está enferma). En pasado el verbo vuelve: volt."
+          }
+        },
+        {
+          "text": { "en": "Plural subject: the form is voltak", "es": "Sujeto plural: la forma es voltak" },
+          "wrong": {
+            "en": "With this rule the sentence would use voltak; Anna is one person, so it is volt.",
+            "es": "Con esta regla la frase usaría voltak; Anna es una sola persona, así que es volt."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "mult-ido-c05",
+      "sentence": "Kati tegnap ___ egy levelet.",
+      "options": ["írt", "írta", "írok"],
+      "correct": 0,
+      "why": {
+        "en": "Egy levelet is indefinite, so the indefinite ő form is used: ír + t = írt (just -t after r).",
+        "es": "Egy levelet es indefinido, así que se usa la forma indefinida de ő: ír + t = írt (solo -t tras r)."
+      },
+      "wrong": {
+        "írta": {
+          "en": "írta is the definite form, for a definite object like a levelet (the letter); here the object is egy levelet.",
+          "es": "írta es la forma definida, para un objeto definido como a levelet (la carta); aquí el objeto es egy levelet."
+        },
+        "írok": {
+          "en": "írok is the present, 'I write'; it does not fit tegnap or Kati.",
+          "es": "írok es el presente, «escribo»; no encaja con tegnap ni con Kati."
+        }
+      },
+      "examples": ["Anna írt egy üzenetet.", "Péter írt egy e-mailt."],
+      "tr": { "en": "Kati wrote a letter yesterday.", "es": "Kati escribió ayer una carta." }
+    },
+    {
+      "id": "mult-ido-f05",
+      "kind": "form",
+      "verb": "nézni",
+      "person": "ő",
+      "answer": "nézett",
+      "table": "past-regular"
+    },
+    {
+      "id": "mult-ido-c06",
+      "sentence": "Gábor tegnap ___ a kulcsot.",
+      "options": ["kereste", "keresett", "kerestem"],
+      "correct": 0,
+      "why": {
+        "en": "A kulcsot (the key) is definite, so the ő form takes the definite ending: kereste.",
+        "es": "A kulcsot (la llave) es definido, por eso la forma de ő toma la terminación definida: kereste."
+      },
+      "wrong": {
+        "keresett": {
+          "en": "keresett is for an indefinite object: Gábor keresett egy kulcsot (a key, any key).",
+          "es": "keresett es para un objeto indefinido: Gábor keresett egy kulcsot (una llave cualquiera)."
+        },
+        "kerestem": {
+          "en": "kerestem means 'I looked for'; the subject here is Gábor (ő).",
+          "es": "kerestem significa «busqué»; el sujeto aquí es Gábor (ő)."
+        }
+      },
+      "examples": ["Péter kereste Annát.", "Anna kereste a telefont."],
+      "tr": { "en": "Gábor was looking for the key yesterday.", "es": "Gábor buscaba la llave ayer." }
+    },
+    {
+      "id": "mult-ido-f06",
+      "kind": "form",
+      "verb": "tanulni",
+      "person": "ti",
+      "answer": "tanultatok",
+      "table": "past-regular"
+    },
+    {
+      "id": "mult-ido-c07",
+      "sentence": "Péter és én tegnap ___ egy filmet.",
+      "options": ["láttunk", "láttuk", "láttak"],
+      "correct": 0,
+      "why": {
+        "en": "Péter és én = mi (we), and egy filmet is indefinite: láttunk.",
+        "es": "Péter és én = mi (nosotros), y egy filmet es indefinido: láttunk."
+      },
+      "wrong": {
+        "láttuk": {
+          "en": "láttuk is the definite form: it would go with a definite object, as in Láttuk a filmet (We saw the film).",
+          "es": "láttuk es la forma definida: iría con un objeto definido, como en Láttuk a filmet (Vimos la película)."
+        },
+        "láttak": {
+          "en": "láttak means 'they saw'; with Péter és én the subject is 'we'.",
+          "es": "láttak significa «ellos vieron»; con Péter és én el sujeto es «nosotros»."
+        }
+      },
+      "examples": ["Láttunk egy kutyát.", "Tegnap láttunk egy macskát."],
+      "tr": { "en": "Péter and I saw a film yesterday.", "es": "Péter y yo vimos una película ayer." }
+    },
+    {
+      "id": "mult-ido-c08",
+      "sentence": "Ti tegnap ___ a filmet?",
+      "options": ["láttátok", "láttatok", "látták"],
+      "correct": 0,
+      "why": {
+        "en": "A filmet is definite, so for ti the definite past form is láttátok.",
+        "es": "A filmet es definido, así que para ti la forma definida del pasado es láttátok."
+      },
+      "wrong": {
+        "láttatok": {
+          "en": "láttatok is the indefinite form: it goes with egy film (Láttatok egy filmet? = Did you see a film?).",
+          "es": "láttatok es la forma indefinida: va con egy film (Láttatok egy filmet? = ¿Vieron una película?)."
+        },
+        "látták": {
+          "en": "látták means 'they saw it'; the subject here is ti (you all).",
+          "es": "látták significa «ellos lo vieron»; el sujeto aquí es ti (ustedes)."
+        }
+      },
+      "examples": ["Láttátok Annát?", "Láttátok a kutyát?"],
+      "tr": { "en": "Did you (all) see the film yesterday?", "es": "¿Vieron ustedes la película ayer?" }
+    },
+    {
+      "id": "mult-ido-w02",
+      "kind": "why",
+      "es": "Péter látta a filmet.",
+      "target": "látta",
+      "tr": { "en": "Péter saw the film.", "es": "Péter vio la película." },
+      "options": [
+        {
+          "text": { "en": "Indefinite object: the ending is -ott", "es": "Objeto indefinido: la terminación es -ott" },
+          "wrong": {
+            "en": "With this rule the form would be látott, as in Péter látott egy filmet; a filmet is definite.",
+            "es": "Con esta regla la forma sería látott, como en Péter látott egy filmet; a filmet es definido."
+          }
+        },
+        {
+          "text": {
+            "en": "Definite object (a filmet): the definite ending -ta",
+            "es": "Objeto definido (a filmet): la terminación definida -ta"
+          }
+        },
+        {
+          "text": { "en": "Present tense: the verb is látja", "es": "Presente: el verbo es látja" },
+          "wrong": {
+            "en": "With this rule the sentence would be Péter látja a filmet (he sees it now); the t in látta marks the past.",
+            "es": "Con esta regla la frase sería Péter látja a filmet (la ve ahora); la t de látta marca el pasado."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "mult-ido-f07",
+      "kind": "form",
+      "verb": "látni",
+      "person": "ő (a filmet)",
+      "answer": "látta",
+      "table": "past-definite"
+    },
+    {
+      "id": "mult-ido-c09",
+      "sentence": "Anna tegnap a boltba ___.",
+      "options": ["ment", "menett", "megy"],
+      "correct": 0,
+      "why": {
+        "en": "Menni is irregular: the ő form of the past is ment.",
+        "es": "Menni es irregular: la forma de ő en pasado es ment."
+      },
+      "wrong": {
+        "menett": {
+          "en": "menett copies the regular pattern (nézett), but menni does not follow it: the past is ment.",
+          "es": "menett copia el patrón regular (nézett), pero menni no lo sigue: el pasado es ment."
+        },
+        "megy": {
+          "en": "megy is the present, 'goes'; tegnap needs the past.",
+          "es": "megy es el presente, «va»; tegnap necesita el pasado."
+        }
+      },
+      "examples": ["Kati tegnap moziba ment.", "Péter és Anna a boltba mentek."],
+      "tr": { "en": "Anna went to the shop yesterday.", "es": "Anna fue ayer a la tienda." }
+    },
+    {
+      "id": "mult-ido-f08",
+      "kind": "form",
+      "verb": "menni",
+      "person": "te",
+      "answer": "mentél",
+      "table": "past-irregular"
+    },
+    {
+      "id": "mult-ido-c10",
+      "sentence": "Tegnap Kati korán ___ haza.",
+      "options": ["jött", "jövött", "jön"],
+      "correct": 0,
+      "why": {
+        "en": "Jönni is irregular: the past stem is jött-, so the ő form is jött.",
+        "es": "Jönni es irregular: la raíz del pasado es jött-, por eso la forma de ő es jött."
+      },
+      "wrong": {
+        "jövött": {
+          "en": "jövött does not exist: the past of jönni is built on jött-, not on jöv-.",
+          "es": "jövött no existe: el pasado de jönni se forma sobre jött-, no sobre jöv-."
+        },
+        "jön": {
+          "en": "jön is the present, 'comes'; tegnap needs the past.",
+          "es": "jön es el presente, «viene»; tegnap necesita el pasado."
+        }
+      },
+      "examples": ["Anna ma reggel későn jött.", "Péter és Kati korán jöttek."],
+      "tr": { "en": "Yesterday Kati came home early.", "es": "Ayer Kati llegó temprano a casa." }
+    },
+    {
+      "id": "mult-ido-c11",
+      "sentence": "Diego ma reggel ___ egy almát.",
+      "options": ["evett", "ette", "ettem"],
+      "correct": 0,
+      "why": {
+        "en": "Enni is irregular in the ő form: evett (but ettem, ettél). Egy almát is indefinite.",
+        "es": "Enni es irregular en la forma de ő: evett (pero ettem, ettél). Egy almát es indefinido."
+      },
+      "wrong": {
+        "ette": {
+          "en": "ette is the definite form: it goes with a definite object, as in Diego ette az almát (the apple).",
+          "es": "ette es la forma definida: va con un objeto definido, como en Diego ette az almát (la manzana)."
+        },
+        "ettem": {
+          "en": "ettem means 'I ate'; the subject here is Diego.",
+          "es": "ettem significa «comí»; el sujeto aquí es Diego."
+        }
+      },
+      "examples": ["Gábor ma reggel evett egy tojást.", "Anna evett egy süteményt."],
+      "tr": { "en": "Diego ate an apple this morning.", "es": "Diego se comió una manzana esta mañana." }
+    },
+    {
+      "id": "mult-ido-w03",
+      "kind": "why",
+      "es": "Kati tegnap tanult.",
+      "target": "tanult",
+      "tr": { "en": "Kati studied yesterday.", "es": "Kati estudió ayer." },
+      "options": [
+        {
+          "text": {
+            "en": "ő form after a stem ending in l: just -t, no linking vowel",
+            "es": "Forma de ő tras una raíz que termina en l: solo -t, sin vocal de enlace"
+          }
+        },
+        {
+          "text": { "en": "Other consonants: linking vowel -ott", "es": "Otras consonantes: vocal de enlace -ott" },
+          "wrong": {
+            "en": "With this rule the form would be tanulott, which is not used; stems in l take only -t.",
+            "es": "Con esta regla la forma sería tanulott, que no se usa; las raíces en l toman solo -t."
+          }
+        },
+        {
+          "text": { "en": "Definite object: the ending -ta", "es": "Objeto definido: la terminación -ta" },
+          "wrong": {
+            "en": "With this rule the form would be tanulta, which needs a definite object; the sentence has none.",
+            "es": "Con esta regla la forma sería tanulta, que necesita un objeto definido; la frase no tiene ninguno."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "mult-ido-f09",
+      "kind": "form",
+      "verb": "látni",
+      "person": "te (a filmet)",
+      "answer": "láttad",
+      "table": "past-definite"
+    },
+    {
+      "id": "mult-ido-c12",
+      "sentence": "Péter tegnap nem ___ otthon.",
+      "options": ["volt", "van", "nincs"],
+      "correct": 0,
+      "why": {
+        "en": "The past of negation is nem + volt: Péter nem volt otthon.",
+        "es": "La negación en pasado es nem + volt: Péter nem volt otthon."
+      },
+      "wrong": {
+        "van": {
+          "en": "van is the present, 'is'; 'was not' needs the past form volt.",
+          "es": "van es el presente, «es, está»; «no estuvo» necesita la forma de pasado volt."
+        },
+        "nincs": {
+          "en": "nincs already means 'is not' (present) and cannot follow nem; Péter nincs otthon says he is not at home now.",
+          "es": "nincs ya significa «no está» (presente) y no puede ir después de nem; Péter nincs otthon dice que no está en casa ahora."
+        }
+      },
+      "examples": ["Anna nem volt a boltban.", "Nem voltam fáradt."],
+      "tr": { "en": "Péter wasn't at home yesterday.", "es": "Péter no estuvo en casa ayer." }
+    },
+    {
+      "id": "mult-ido-f10",
+      "kind": "form",
+      "verb": "venni",
+      "person": "ők",
+      "answer": "vettek",
+      "table": "past-eat-drink"
+    },
+    {
+      "id": "mult-ido-c13",
+      "sentence": "___ Anna Szegeden dolgozott.",
+      "options": ["Múlt héten", "Holnap", "Jövőre"],
+      "correct": 0,
+      "why": {
+        "en": "Dolgozott is past, so the time word must be past too: múlt héten (last week).",
+        "es": "Dolgozott es pasado, así que la palabra de tiempo también debe serlo: múlt héten (la semana pasada)."
+      },
+      "wrong": {
+        "Holnap": {
+          "en": "Holnap means tomorrow; with it the verb would be dolgozik or dolgozni fog.",
+          "es": "Holnap significa mañana; con ello el verbo sería dolgozik o dolgozni fog."
+        },
+        "Jövőre": {
+          "en": "Jövőre means next year; with it the verb would be in the future.",
+          "es": "Jövőre significa el año próximo; con ello el verbo iría en futuro."
+        }
+      },
+      "examples": ["Tavaly Péter itt tanult.", "Tegnap reggel Kati dolgozott."],
+      "tr": { "en": "Last week Anna worked in Szeged.", "es": "La semana pasada Anna trabajó en Szeged." }
+    },
+    {
+      "id": "mult-ido-f11",
+      "kind": "form",
+      "verb": "inni",
+      "person": "mi",
+      "answer": "ittunk",
+      "table": "past-eat-drink"
+    },
+    {
+      "id": "mult-ido-c14",
+      "sentence": "Lupita a könyvesboltban ___ egy könyvet.",
+      "options": ["vett", "vette", "veszek"],
+      "correct": 0,
+      "why": {
+        "en": "Venni: the ő form of the past is vett, and egy könyvet is indefinite.",
+        "es": "Venni: la forma de ő en pasado es vett, y egy könyvet es indefinido."
+      },
+      "wrong": {
+        "vette": {
+          "en": "vette is for a definite object: Lupita vette a könyvet (the book).",
+          "es": "vette es para un objeto definido: Lupita vette a könyvet (el libro)."
+        },
+        "veszek": {
+          "en": "veszek is the present for 'I', 'I buy'; the subject here is Lupita.",
+          "es": "veszek es el presente para «yo», «compro»; el sujeto aquí es Lupita."
+        }
+      },
+      "examples": ["Anna vett egy almát.", "Diego vett egy kenyeret."],
+      "tr": { "en": "Lupita bought a book in the bookshop.", "es": "Lupita compró un libro en la librería." }
+    },
+    {
+      "id": "mult-ido-w04",
+      "kind": "why",
+      "es": "Diego evett egy almát.",
+      "target": "evett",
+      "tr": { "en": "Diego ate an apple.", "es": "Diego se comió una manzana." },
+      "options": [
+        {
+          "text": { "en": "Regular -ett on the present stem", "es": "Terminación regular -ett sobre la raíz del presente" },
+          "wrong": {
+            "en": "With this rule the form would be eszett, which does not exist; the past of enni is irregular.",
+            "es": "Con esta regla la forma sería eszett, que no existe; el pasado de enni es irregular."
+          }
+        },
+        {
+          "text": {
+            "en": "Irregular enni: ev- in the ő form (evett), et- elsewhere (ettem)",
+            "es": "enni irregular: ev- en la forma de ő (evett), et- en las demás (ettem)"
+          }
+        },
+        {
+          "text": { "en": "Definite object: the ending -te", "es": "Objeto definido: la terminación -te" },
+          "wrong": {
+            "en": "With this rule it would be Diego ette az almát; egy almát is indefinite, so evett.",
+            "es": "Con esta regla sería Diego ette az almát; egy almát es indefinido, así que evett."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "mult-ido-f12",
+      "kind": "form",
+      "verb": "enni",
+      "person": "ő",
+      "answer": "evett",
+      "table": "past-eat-drink"
+    }
+  ]
+}

@@ -1,0 +1,1234 @@
+{
+  "schema": 2,
+  "topic": "jelen-alanyi",
+  "level": "A1",
+  "title": {
+    "en": "Present tense: tanulok, tanulsz, tanul",
+    "es": "Presente: tanulok, tanulsz, tanul"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has one present tense: tanulok means both \"I study\" and \"I am studying\". The ending shows the person, so you usually drop the pronoun and say only the verb: Tanulok. The 3rd person singular has no ending at all: ő tanul. This lesson covers regular verbs; the verbs in -ik (lakik, dolgozik) and the forms for a definite object (látom) have their own lessons.",
+        "es": "El húngaro tiene un solo presente: tanulok significa «estudio» y «estoy estudiando». La terminación indica la persona, así que normalmente se omite el pronombre y se dice solo el verbo: Tanulok. La 3.ª persona del singular no lleva ninguna terminación: ő tanul. Esta lección trata los verbos regulares; los verbos en -ik (lakik, dolgozik) y las formas para un objeto determinado (látom) tienen sus propias lecciones."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "conj-regular",
+      "title": {
+        "en": "Three regular verbs: tanul (to study), beszél (to speak), repül (to fly)",
+        "es": "Tres verbos regulares: tanul (estudiar), beszél (hablar), repül (volar)"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "tanul",
+          "es": "tanul"
+        },
+        {
+          "en": "beszél",
+          "es": "beszél"
+        },
+        {
+          "en": "repül",
+          "es": "repül"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "tanulok",
+          "beszélek",
+          "repülök"
+        ],
+        [
+          "te",
+          "tanulsz",
+          "beszélsz",
+          "repülsz"
+        ],
+        [
+          "ő",
+          "tanul",
+          "beszél",
+          "repül"
+        ],
+        [
+          "mi",
+          "tanulunk",
+          "beszélünk",
+          "repülünk"
+        ],
+        [
+          "ti",
+          "tanultok",
+          "beszéltek",
+          "repültök"
+        ],
+        [
+          "ők",
+          "tanulnak",
+          "beszélnek",
+          "repülnek"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "conj-endings",
+      "noTableDeck": true,
+      "title": {
+        "en": "The endings by vowel group",
+        "es": "Las terminaciones por grupo de vocales"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "back vowels (a, á, o, ó, u, ú)",
+          "es": "vocales posteriores (a, á, o, ó, u, ú)"
+        },
+        {
+          "en": "front vowels (e, é, i, í)",
+          "es": "vocales anteriores (e, é, i, í)"
+        },
+        {
+          "en": "front rounded (ö, ő, ü, ű)",
+          "es": "anteriores redondeadas (ö, ő, ü, ű)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "-ok",
+          "-ek",
+          "-ök"
+        ],
+        [
+          "te",
+          "-sz",
+          "-sz",
+          "-sz"
+        ],
+        [
+          "ő",
+          "-",
+          "-",
+          "-"
+        ],
+        [
+          "mi",
+          "-unk",
+          "-ünk",
+          "-ünk"
+        ],
+        [
+          "ti",
+          "-tok",
+          "-tek",
+          "-tök"
+        ],
+        [
+          "ők",
+          "-nak",
+          "-nek",
+          "-nek"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "conj-sz",
+      "title": {
+        "en": "The stem ends in s, sz or z: te = -ol / -el / -öl",
+        "es": "El tema acaba en s, sz o z: te = -ol / -el / -öl"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "olvas",
+          "es": "olvas"
+        },
+        {
+          "en": "néz",
+          "es": "néz"
+        },
+        {
+          "en": "főz",
+          "es": "főz"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "olvasok",
+          "nézek",
+          "főzök"
+        ],
+        [
+          "te",
+          "olvasol",
+          "nézel",
+          "főzöl"
+        ],
+        [
+          "ő",
+          "olvas",
+          "néz",
+          "főz"
+        ],
+        [
+          "mi",
+          "olvasunk",
+          "nézünk",
+          "főzünk"
+        ],
+        [
+          "ti",
+          "olvastok",
+          "néztek",
+          "főztök"
+        ],
+        [
+          "ők",
+          "olvasnak",
+          "néznek",
+          "főznek"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Pronouns and meaning",
+        "es": "Pronombres y significado"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "One present tense covers \"I study\" and \"I am studying\". There is no separate continuous form.",
+            "es": "Un solo presente cubre «estudio» y «estoy estudiando». No hay una forma continua aparte."
+          },
+          "examples": [
+            {
+              "es": "Anna most olvas.",
+              "tr": {
+                "en": "Anna is reading now.",
+                "es": "Anna lee ahora."
+              }
+            },
+            {
+              "es": "Anna minden nap olvas.",
+              "tr": {
+                "en": "Anna reads every day.",
+                "es": "Anna lee todos los días."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Drop the pronoun: the ending already tells the person. English needs I, you, we; Hungarian does not. (ti = you, several people.)",
+            "es": "Omite el pronombre, igual que en español: la terminación ya dice la persona. (ti = varios tú: en México, ustedes.)"
+          },
+          "examples": [
+            {
+              "es": "Tanulok.",
+              "tr": {
+                "en": "I study.",
+                "es": "Estudio."
+              }
+            },
+            {
+              "es": "Beszélsz magyarul?",
+              "tr": {
+                "en": "Do you speak Hungarian?",
+                "es": "¿Hablas húngaro?"
+              }
+            },
+            {
+              "es": "Sétálunk.",
+              "tr": {
+                "en": "We are walking.",
+                "es": "Estamos caminando."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Keep the pronoun only to contrast or stress: \"I read, YOU write\".",
+            "es": "Usa el pronombre solo para contrastar o enfatizar: «yo leo, TÚ escribes»."
+          },
+          "examples": [
+            {
+              "es": "Én olvasok, te írsz.",
+              "tr": {
+                "en": "I read, you write.",
+                "es": "Yo leo, tú escribes."
+              }
+            },
+            {
+              "es": "Te nézel, én főzök.",
+              "tr": {
+                "en": "You watch, I cook.",
+                "es": "Tú miras, yo cocino."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Which ending? Step by step",
+        "es": "¿Qué terminación? Paso a paso"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Look at the vowels of the verb, as with the plural. Back vowels: -ok, -unk, -tok, -nak. Front vowels: -ek, -ünk, -tek, -nek. Last vowel ö, ő, ü, ű: -ök, -ünk, -tök, -nek. Verbs with only i or í mostly take the back endings: írok, hívok.",
+            "es": "Mira las vocales del verbo, como en el plural. Vocales posteriores: -ok, -unk, -tok, -nak. Vocales anteriores: -ek, -ünk, -tek, -nek. Última vocal ö, ő, ü, ű: -ök, -ünk, -tök, -nek. Los verbos con solo i o í suelen llevar las terminaciones posteriores: írok, hívok."
+          },
+          "examples": [
+            {
+              "es": "Én tanulok.",
+              "tr": {
+                "en": "I study.",
+                "es": "Yo estudio."
+              }
+            },
+            {
+              "es": "Én beszélek.",
+              "tr": {
+                "en": "I speak.",
+                "es": "Yo hablo."
+              }
+            },
+            {
+              "es": "Én repülök.",
+              "tr": {
+                "en": "I fly.",
+                "es": "Yo vuelo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "te: the ending is -sz (tanulsz). If the stem ends in s, sz or z, it is -ol / -el / -öl instead: olvasol, nézel, főzöl.",
+            "es": "te: la terminación es -sz (tanulsz). Si el tema acaba en s, sz o z, es -ol / -el / -öl: olvasol, nézel, főzöl."
+          },
+          "examples": [
+            {
+              "es": "Te itt vársz?",
+              "tr": {
+                "en": "Are you waiting here?",
+                "es": "¿Estás esperando aquí?"
+              }
+            },
+            {
+              "es": "Te olvasol.",
+              "tr": {
+                "en": "You are reading.",
+                "es": "Tú lees."
+              }
+            },
+            {
+              "es": "Mit keresel?",
+              "tr": {
+                "en": "What are you looking for?",
+                "es": "¿Qué buscas?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ő: no ending, just the stem. English adds -s in the 3rd person (she studies); Hungarian adds nothing.",
+            "es": "ő: sin terminación, solo el tema. En inglés la 3.ª persona lleva -s (she studies); en húngaro no se agrega nada."
+          },
+          "examples": [
+            {
+              "es": "Péter vár.",
+              "tr": {
+                "en": "Péter is waiting.",
+                "es": "Péter está esperando."
+              }
+            },
+            {
+              "es": "Anna főz.",
+              "tr": {
+                "en": "Anna is cooking.",
+                "es": "Anna está cocinando."
+              }
+            },
+            {
+              "es": "A madár repül.",
+              "tr": {
+                "en": "The bird is flying.",
+                "es": "El pájaro está volando."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Plural: mi -unk / -ünk, ti -tok / -tek / -tök, ők -nak / -nek. A plural subject (Anna és Péter, a gyerekek) uses the ők form.",
+            "es": "Plural: mi -unk / -ünk, ti -tok / -tek / -tök, ők -nak / -nek. Un sujeto plural (Anna és Péter, a gyerekek) usa la forma de ők."
+          },
+          "examples": [
+            {
+              "es": "Mi sétálunk.",
+              "tr": {
+                "en": "We are walking.",
+                "es": "Nosotros caminamos."
+              }
+            },
+            {
+              "es": "Ti beszéltek.",
+              "tr": {
+                "en": "You (all) are speaking.",
+                "es": "Ustedes hablan."
+              }
+            },
+            {
+              "es": "A gyerekek futnak.",
+              "tr": {
+                "en": "The children are running.",
+                "es": "Los niños corren."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A yes/no question has the same words as the statement; only the voice goes up. There is no \"do\" as in English (Do you wait?): just Vársz?",
+            "es": "Una pregunta de sí o no tiene las mismas palabras que la afirmación; solo sube la voz, igual que en el español hablado: Vársz?"
+          },
+          "examples": [
+            {
+              "es": "Vársz?",
+              "tr": {
+                "en": "Are you waiting?",
+                "es": "¿Estás esperando?"
+              }
+            },
+            {
+              "es": "Főzöl?",
+              "tr": {
+                "en": "Are you cooking?",
+                "es": "¿Estás cocinando?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "tanulok",
+          "b": "pihenek",
+          "note": {
+            "en": "Back verb: -ok. Front verb: -ek. Check the vowels of the verb.",
+            "es": "Verbo posterior: -ok. Verbo anterior: -ek. Fíjate en las vocales del verbo."
+          },
+          "examples": [
+            {
+              "es": "Otthon tanulok.",
+              "tr": {
+                "en": "I study at home.",
+                "es": "Estudio en casa."
+              }
+            },
+            {
+              "es": "Otthon pihenek.",
+              "tr": {
+                "en": "I rest at home.",
+                "es": "Descanso en casa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Te nézel.",
+          "b": "Te vársz.",
+          "note": {
+            "en": "Stem ends in s, sz, z: -ol / -el / -öl (nézel). Any other stem: -sz (vársz).",
+            "es": "El tema acaba en s, sz, z: -ol / -el / -öl (nézel). Cualquier otro tema: -sz (vársz)."
+          },
+          "examples": [
+            {
+              "es": "Mit nézel?",
+              "tr": {
+                "en": "What are you watching?",
+                "es": "¿Qué miras?"
+              }
+            },
+            {
+              "es": "Itt vársz?",
+              "tr": {
+                "en": "Are you waiting here?",
+                "es": "¿Esperas aquí?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Gábor sétál.",
+          "b": "Gábor és Kati sétálnak.",
+          "note": {
+            "en": "One person: no ending. Two or more: -nak / -nek.",
+            "es": "Una persona: sin terminación. Dos o más: -nak / -nek."
+          },
+          "examples": [
+            {
+              "es": "Péter vár.",
+              "tr": {
+                "en": "Péter is waiting.",
+                "es": "Péter está esperando."
+              }
+            },
+            {
+              "es": "Péter és Anna várnak.",
+              "tr": {
+                "en": "Péter and Anna are waiting.",
+                "es": "Péter y Anna están esperando."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: in English the 3rd person gets the -s (she studies); in Hungarian it is the one form with NO ending (ő tanul), while én and te do have one (tanulok, tanulsz). And do not translate \"I am studying\" with vagyok: it is just Tanulok.",
+        "es": "Trampa clásica: en español la 3.ª persona lleva terminación (estudia); en húngaro es la única forma SIN terminación (ő tanul), mientras que én y te sí la llevan (tanulok, tanulsz). Y no traduzcas «estoy estudiando» con vagyok: es simplemente Tanulok."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The Hungarian present tense has one form for I study and I am studying. The ending shows the person, so you can drop the pronoun: «tanulok», «tanulsz», «tanul». The third person singular has no ending at all. In the plural: «tanulunk», «tanultok», «tanulnak». The ending follows vowel harmony: «olvasok», but «beszélek» and «főzök». For you, after the letters s, sz and z, the ending is ol, el or öl: «olvasol», «nézel», «főzöl».",
+    "es": "El presente húngaro tiene una sola forma para estudio y estoy estudiando. La terminación indica la persona, así que puedes omitir el pronombre: «tanulok», «tanulsz», «tanul». La tercera persona del singular no lleva ninguna terminación. En plural: «tanulunk», «tanultok», «tanulnak». La terminación sigue la armonía vocálica: «olvasok», pero «beszélek» y «főzök». Para tú, después de las letras s, sz y z, la terminación es ol, el u öl: «olvasol», «nézel», «főzöl»."
+  },
+  "items": [
+    {
+      "id": "jelen-alanyi-c01",
+      "sentence": "Én otthon ___.",
+      "options": [
+        "pihenek",
+        "pihensz",
+        "pihen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Én is \"I\", so the verb takes the 1st-person ending. pihen has front vowels: pihen + ek.",
+        "es": "Én es «yo», así que el verbo lleva la terminación de 1.ª persona. pihen tiene vocales anteriores: pihen + ek."
+      },
+      "wrong": {
+        "pihensz": {
+          "en": "pihensz is the te form, \"you rest\". With it the sentence would mix én (I) and te (you).",
+          "es": "pihensz es la forma de te, «tú descansas». Con ella la frase mezclaría én (yo) y te (tú)."
+        },
+        "pihen": {
+          "en": "pihen has no ending: it is the 3rd person, \"he or she rests\". With én you need -ek.",
+          "es": "pihen no lleva terminación: es la 3.ª persona, «él o ella descansa». Con én hace falta -ek."
+        }
+      },
+      "examples": [
+        "Otthon pihenek.",
+        "Itt várok."
+      ],
+      "tr": {
+        "en": "I rest at home.",
+        "es": "Descanso en casa."
+      }
+    },
+    {
+      "id": "jelen-alanyi-f01",
+      "kind": "form",
+      "verb": "tanul",
+      "person": "én",
+      "answer": "tanulok",
+      "table": "conj-regular"
+    },
+    {
+      "id": "jelen-alanyi-c02",
+      "sentence": "Te mit ___?",
+      "options": [
+        "nézel",
+        "nézek",
+        "néz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Te is \"you\". néz ends in z, so the ending is -el, not -sz: nézel.",
+        "es": "Te es «tú». néz acaba en z, así que la terminación es -el, no -sz: nézel."
+      },
+      "wrong": {
+        "nézek": {
+          "en": "nézek is the én form: \"What do I watch?\". The sentence has te, so the verb must be the te form.",
+          "es": "nézek es la forma de én: «¿qué miro yo?». La frase tiene te, así que el verbo debe ser la forma de te."
+        },
+        "néz": {
+          "en": "néz has no ending: it is the 3rd person, \"What does he or she watch?\". For te it needs an ending.",
+          "es": "néz no lleva terminación: es la 3.ª persona, «¿qué mira él o ella?». Para te necesita una terminación."
+        }
+      },
+      "examples": [
+        "Mit keresel?",
+        "Mit olvasol?"
+      ],
+      "tr": {
+        "en": "What are you watching?",
+        "es": "¿Qué miras?"
+      }
+    },
+    {
+      "id": "jelen-alanyi-f02",
+      "kind": "form",
+      "verb": "beszél",
+      "person": "te",
+      "answer": "beszélsz",
+      "table": "conj-regular"
+    },
+    {
+      "id": "jelen-alanyi-c03",
+      "sentence": "Anna és Péter otthon ___.",
+      "options": [
+        "tanulnak",
+        "tanulunk",
+        "tanultok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna és Péter are two people, \"they\" (ők), so the ending is -nak (tanul has back vowels).",
+        "es": "Anna és Péter son dos personas, «ellos» (ők), así que la terminación es -nak (tanul tiene vocales posteriores)."
+      },
+      "wrong": {
+        "tanulunk": {
+          "en": "tanulunk is \"we study\": the sentence would include the speaker, as in \"Anna, Péter and I\".",
+          "es": "tanulunk es «nosotros estudiamos»: la frase incluiría al hablante, como en «Anna, Péter y yo»."
+        },
+        "tanultok": {
+          "en": "tanultok is \"you (all) study\": the sentence would be addressed to Anna and Péter.",
+          "es": "tanultok es «ustedes estudian»: la frase se dirigiría a Anna y Péter."
+        }
+      },
+      "examples": [
+        "A gyerekek otthon tanulnak.",
+        "Kati és Gábor itt várnak."
+      ],
+      "tr": {
+        "en": "Anna and Péter are studying at home.",
+        "es": "Anna y Péter están estudiando en casa."
+      }
+    },
+    {
+      "id": "jelen-alanyi-f03",
+      "kind": "form",
+      "verb": "repül",
+      "person": "mi",
+      "answer": "repülünk",
+      "table": "conj-regular"
+    },
+    {
+      "id": "jelen-alanyi-w01",
+      "kind": "why",
+      "es": "Anna olvas.",
+      "target": "olvas",
+      "tr": {
+        "en": "Anna is reading.",
+        "es": "Anna está leyendo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "3rd person singular: no ending, just the stem",
+            "es": "3.ª persona del singular: sin terminación, solo el tema"
+          }
+        },
+        {
+          "text": {
+            "en": "te after a stem in s: -ol",
+            "es": "te después de un tema en s: -ol"
+          },
+          "wrong": {
+            "en": "With this rule the form would be olvasol and the sentence would be Te olvasol; Anna is ő, not te.",
+            "es": "Con esta regla la forma sería olvasol y la frase sería Te olvasol; Anna es ő, no te."
+          }
+        },
+        {
+          "text": {
+            "en": "Plural subject: -nak",
+            "es": "Sujeto plural: -nak"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna és Péter olvasnak; Anna is one person, so there is no ending.",
+            "es": "Con esta regla la frase sería Anna és Péter olvasnak; Anna es una sola persona, así que no hay terminación."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "jelen-alanyi-c04",
+      "sentence": "Mi korán ___.",
+      "options": [
+        "kelünk",
+        "kelek",
+        "keltek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mi is \"we\", and kel has a front vowel: kel + ünk.",
+        "es": "Mi es «nosotros», y kel tiene una vocal anterior: kel + ünk."
+      },
+      "wrong": {
+        "kelek": {
+          "en": "kelek is \"I get up\": with mi (we) the sentence would talk about only one person, the speaker.",
+          "es": "kelek es «yo me levanto»: con mi (nosotros) la frase hablaría de una sola persona, el hablante."
+        },
+        "keltek": {
+          "en": "keltek is \"you (all) get up\": the sentence would be addressed to other people, not about \"we\".",
+          "es": "keltek es «ustedes se levantan»: la frase se dirigiría a otras personas, no hablaría de «nosotros»."
+        }
+      },
+      "examples": [
+        "Korán kelek.",
+        "Gábor korán kel."
+      ],
+      "tr": {
+        "en": "We get up early.",
+        "es": "Nos levantamos temprano."
+      }
+    },
+    {
+      "id": "jelen-alanyi-f04",
+      "kind": "form",
+      "verb": "tanul",
+      "person": "ti",
+      "answer": "tanultok",
+      "table": "conj-regular"
+    },
+    {
+      "id": "jelen-alanyi-c05",
+      "sentence": "Ti ___ magyarul?",
+      "options": [
+        "beszéltek",
+        "beszélnek",
+        "beszélünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ti is \"you (all)\", and beszél has front vowels: beszél + tek.",
+        "es": "Ti es «ustedes», y beszél tiene vocales anteriores: beszél + tek."
+      },
+      "wrong": {
+        "beszélnek": {
+          "en": "beszélnek is \"they speak\": Ti ... beszélnek would mix \"you (all)\" and \"they\".",
+          "es": "beszélnek es «ellos hablan»: Ti ... beszélnek mezclaría «ustedes» y «ellos»."
+        },
+        "beszélünk": {
+          "en": "beszélünk is \"we speak\": the sentence would mix \"you (all)\" and \"we\".",
+          "es": "beszélünk es «nosotros hablamos»: la frase mezclaría «ustedes» y «nosotros»."
+        }
+      },
+      "examples": [
+        "Beszélsz magyarul?",
+        "Gábor és Kati beszélnek magyarul."
+      ],
+      "tr": {
+        "en": "Do you (all) speak Hungarian?",
+        "es": "¿Hablan ustedes húngaro?"
+      }
+    },
+    {
+      "id": "jelen-alanyi-f05",
+      "kind": "form",
+      "verb": "beszél",
+      "person": "ők",
+      "answer": "beszélnek",
+      "table": "conj-regular"
+    },
+    {
+      "id": "jelen-alanyi-c06",
+      "sentence": "Péter ___, Anna főz.",
+      "options": [
+        "olvas",
+        "olvasok",
+        "olvasol"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péter is ő (3rd person singular), so the verb is the bare stem: olvas.",
+        "es": "Péter es ő (3.ª persona del singular), así que el verbo es el tema sin terminación: olvas."
+      },
+      "wrong": {
+        "olvasok": {
+          "en": "olvasok is \"I read\": with Péter the sentence would suddenly be about the speaker.",
+          "es": "olvasok es «yo leo»: con Péter la frase de pronto hablaría del hablante."
+        },
+        "olvasol": {
+          "en": "olvasol is \"you read\": the sentence would be addressed to Péter.",
+          "es": "olvasol es «tú lees»: la frase se dirigiría a Péter."
+        }
+      },
+      "examples": [
+        "Gábor ír.",
+        "Kati főz."
+      ],
+      "tr": {
+        "en": "Péter is reading, Anna is cooking.",
+        "es": "Péter está leyendo, Anna está cocinando."
+      }
+    },
+    {
+      "id": "jelen-alanyi-f06",
+      "kind": "form",
+      "verb": "repül",
+      "person": "én",
+      "answer": "repülök",
+      "table": "conj-regular"
+    },
+    {
+      "id": "jelen-alanyi-w02",
+      "kind": "why",
+      "es": "Te nézel.",
+      "target": "nézel",
+      "tr": {
+        "en": "You are watching.",
+        "es": "Tú estás mirando."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Stem ends in z: te takes -el, not -sz",
+            "es": "El tema acaba en z: te lleva -el, no -sz"
+          }
+        },
+        {
+          "text": {
+            "en": "3rd person singular: no ending",
+            "es": "3.ª persona del singular: sin terminación"
+          },
+          "wrong": {
+            "en": "With this rule the form would be néz (ő néz); te needs an ending.",
+            "es": "Con esta regla la forma sería néz (ő néz); te necesita una terminación."
+          }
+        },
+        {
+          "text": {
+            "en": "1st person singular: -ek",
+            "es": "1.ª persona del singular: -ek"
+          },
+          "wrong": {
+            "en": "With this rule the form would be nézek (én nézek); this sentence has te.",
+            "es": "Con esta regla la forma sería nézek (én nézek); esta frase tiene te."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "jelen-alanyi-c07",
+      "sentence": "Te ma ___, én mosogatok.",
+      "options": [
+        "főzöl",
+        "főzök",
+        "főzsz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Te is \"you\". főz ends in z and has a rounded front vowel, so the ending is -öl: főzöl.",
+        "es": "Te es «tú». főz acaba en z y tiene una vocal anterior redondeada, así que la terminación es -öl: főzöl."
+      },
+      "wrong": {
+        "főzök": {
+          "en": "főzök is the én form, \"I cook\". Te ma főzök would mix \"you\" with \"I cook\".",
+          "es": "főzök es la forma de én, «yo cocino». Te ma főzök mezclaría «tú» con «yo cocino»."
+        },
+        "főzsz": {
+          "en": "This form does not exist: after s, sz or z the ending for te is -ol / -el / -öl, not -sz.",
+          "es": "Esta forma no existe: después de s, sz o z la terminación de te es -ol / -el / -öl, no -sz."
+        }
+      },
+      "examples": [
+        "Mit főzöl?",
+        "Te olvasol."
+      ],
+      "tr": {
+        "en": "You cook today, I wash the dishes.",
+        "es": "Hoy cocinas tú, yo lavo los platos."
+      }
+    },
+    {
+      "id": "jelen-alanyi-f07",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "te",
+      "answer": "olvasol",
+      "table": "conj-sz"
+    },
+    {
+      "id": "jelen-alanyi-c08",
+      "sentence": "Te itt ___?",
+      "options": [
+        "vársz",
+        "várok",
+        "vár"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Te needs the ending -sz. vár does not end in s, sz or z, so it is vár + sz: vársz.",
+        "es": "Te lleva la terminación -sz. vár no acaba en s, sz ni z, así que es vár + sz: vársz."
+      },
+      "wrong": {
+        "várok": {
+          "en": "várok is \"I wait\": the sentence would be about the speaker, not about te.",
+          "es": "várok es «yo espero»: la frase hablaría del hablante, no de te."
+        },
+        "vár": {
+          "en": "vár has no ending: it is the 3rd person, \"Is he or she waiting here?\". For te it needs -sz.",
+          "es": "vár no lleva terminación: es la 3.ª persona, «¿espera él o ella aquí?». Para te necesita -sz."
+        }
+      },
+      "examples": [
+        "Vársz?",
+        "Itt várok."
+      ],
+      "tr": {
+        "en": "Are you waiting here?",
+        "es": "¿Estás esperando aquí?"
+      }
+    },
+    {
+      "id": "jelen-alanyi-f08",
+      "kind": "form",
+      "verb": "néz",
+      "person": "ő",
+      "answer": "néz",
+      "table": "conj-sz"
+    },
+    {
+      "id": "jelen-alanyi-c09",
+      "sentence": "Anna és én most ___.",
+      "options": [
+        "sétálunk",
+        "sétálok",
+        "sétálnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna és én = \"Anna and I\" = mi (we), so the ending is -unk (sétál has back vowels).",
+        "es": "Anna és én = «Anna y yo» = mi (nosotros), así que la terminación es -unk (sétál tiene vocales posteriores)."
+      },
+      "wrong": {
+        "sétálok": {
+          "en": "sétálok is \"I walk\": it talks about the speaker alone, but Anna és én are two people.",
+          "es": "sétálok es «yo camino»: habla del hablante solo, pero Anna és én son dos personas."
+        },
+        "sétálnak": {
+          "en": "sétálnak is \"they walk\": it would leave the speaker out, but én is part of the subject.",
+          "es": "sétálnak es «ellos caminan»: dejaría fuera al hablante, pero én forma parte del sujeto."
+        }
+      },
+      "examples": [
+        "Mi sétálunk.",
+        "Péter és én otthon tanulunk."
+      ],
+      "tr": {
+        "en": "Anna and I are walking now.",
+        "es": "Anna y yo estamos caminando ahora."
+      }
+    },
+    {
+      "id": "jelen-alanyi-f09",
+      "kind": "form",
+      "verb": "főz",
+      "person": "te",
+      "answer": "főzöl",
+      "table": "conj-sz"
+    },
+    {
+      "id": "jelen-alanyi-w03",
+      "kind": "why",
+      "es": "Mi beszélünk.",
+      "target": "beszélünk",
+      "tr": {
+        "en": "We are speaking.",
+        "es": "Nosotros hablamos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "mi after a front verb: -ünk",
+            "es": "mi después de un verbo anterior: -ünk"
+          }
+        },
+        {
+          "text": {
+            "en": "ti after a front verb: -tek",
+            "es": "ti después de un verbo anterior: -tek"
+          },
+          "wrong": {
+            "en": "With this rule the form would be beszéltek and the sentence would be Ti beszéltek; this sentence has mi.",
+            "es": "Con esta regla la forma sería beszéltek y la frase sería Ti beszéltek; esta frase tiene mi."
+          }
+        },
+        {
+          "text": {
+            "en": "mi after a back verb: -unk",
+            "es": "mi después de un verbo posterior: -unk"
+          },
+          "wrong": {
+            "en": "With this rule the form would be beszélunk; beszél has front vowels, so the ending is -ünk.",
+            "es": "Con esta regla la forma sería beszélunk; beszél tiene vocales anteriores, así que la terminación es -ünk."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "jelen-alanyi-c10",
+      "sentence": "A gyerekek a kertben ___.",
+      "options": [
+        "futnak",
+        "futunk",
+        "futok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekek is plural (\"they\"), so the verb takes -nak: fut + nak.",
+        "es": "A gyerekek es plural («ellos»), así que el verbo lleva -nak: fut + nak."
+      },
+      "wrong": {
+        "futunk": {
+          "en": "futunk is \"we run\": the sentence would include the speaker among the children.",
+          "es": "futunk es «nosotros corremos»: la frase incluiría al hablante entre los niños."
+        },
+        "futok": {
+          "en": "futok is \"I run\": it would be about one person, the speaker, not about the children.",
+          "es": "futok es «yo corro»: sería sobre una sola persona, el hablante, no sobre los niños."
+        }
+      },
+      "examples": [
+        "A gyerekek otthon tanulnak.",
+        "Kati és Péter futnak."
+      ],
+      "tr": {
+        "en": "The children are running in the garden.",
+        "es": "Los niños están corriendo en el jardín."
+      }
+    },
+    {
+      "id": "jelen-alanyi-f10",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "ők",
+      "answer": "olvasnak",
+      "table": "conj-sz"
+    },
+    {
+      "id": "jelen-alanyi-c11",
+      "sentence": "A madár ___.",
+      "options": [
+        "repül",
+        "repülök",
+        "repülsz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A madár is one bird (ő), so the verb has no ending: repül.",
+        "es": "A madár es un solo pájaro (ő), así que el verbo no lleva terminación: repül."
+      },
+      "wrong": {
+        "repülök": {
+          "en": "repülök is \"I fly\": with A madár the sentence would say that the bird is the speaker.",
+          "es": "repülök es «yo vuelo»: con A madár la frase diría que el pájaro es el hablante."
+        },
+        "repülsz": {
+          "en": "repülsz is \"you fly\": the sentence would be addressed to the bird.",
+          "es": "repülsz es «tú vuelas»: la frase se dirigiría al pájaro."
+        }
+      },
+      "examples": [
+        "A madarak repülnek.",
+        "Holnap repülök."
+      ],
+      "tr": {
+        "en": "The bird is flying.",
+        "es": "El pájaro está volando."
+      }
+    },
+    {
+      "id": "jelen-alanyi-f11",
+      "kind": "form",
+      "verb": "néz",
+      "person": "ti",
+      "answer": "néztek",
+      "table": "conj-sz"
+    },
+    {
+      "id": "jelen-alanyi-c12",
+      "sentence": "Ti mit ___?",
+      "options": [
+        "kerestek",
+        "keresnek",
+        "keresünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ti is \"you (all)\". keres ends in s, but only te changes there; ti is plain -tek: kerestek.",
+        "es": "Ti es «ustedes». keres acaba en s, pero solo te cambia ahí; ti lleva -tek sin más: kerestek."
+      },
+      "wrong": {
+        "keresnek": {
+          "en": "keresnek is \"they look for\": Ti mit keresnek would mix \"you (all)\" and \"they\".",
+          "es": "keresnek es «ellos buscan»: Ti mit keresnek mezclaría «ustedes» y «ellos»."
+        },
+        "keresünk": {
+          "en": "keresünk is \"we look for\": the sentence would mix \"you (all)\" and \"we\".",
+          "es": "keresünk es «nosotros buscamos»: la frase mezclaría «ustedes» y «nosotros»."
+        }
+      },
+      "examples": [
+        "Mit keresel?",
+        "Mit keresnek a gyerekek?"
+      ],
+      "tr": {
+        "en": "What are you (all) looking for?",
+        "es": "¿Qué buscan ustedes?"
+      }
+    },
+    {
+      "id": "jelen-alanyi-f12",
+      "kind": "form",
+      "verb": "főz",
+      "person": "mi",
+      "answer": "főzünk",
+      "table": "conj-sz"
+    },
+    {
+      "id": "jelen-alanyi-c13",
+      "sentence": "Gábor ___, Kati pihen.",
+      "options": [
+        "vezet",
+        "vezetek",
+        "vezetsz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Gábor is ő, so the verb is the bare stem: vezet.",
+        "es": "Gábor es ő, así que el verbo es el tema sin terminación: vezet."
+      },
+      "wrong": {
+        "vezetek": {
+          "en": "vezetek is \"I drive\": with Gábor the sentence would suddenly be about the speaker.",
+          "es": "vezetek es «yo manejo»: con Gábor la frase de pronto hablaría del hablante."
+        },
+        "vezetsz": {
+          "en": "vezetsz is \"you drive\": the sentence would be addressed to Gábor.",
+          "es": "vezetsz es «tú manejas»: la frase se dirigiría a Gábor."
+        }
+      },
+      "examples": [
+        "Péter vezet.",
+        "Én vezetek, te pihensz."
+      ],
+      "tr": {
+        "en": "Gábor is driving, Kati is resting.",
+        "es": "Gábor está manejando, Kati está descansando."
+      }
+    },
+    {
+      "id": "jelen-alanyi-c14",
+      "sentence": "Én most ___.",
+      "options": [
+        "írok",
+        "írek",
+        "írsz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Én needs the 1st-person ending. ír has only the vowel í, and such verbs mostly take the back endings: írok.",
+        "es": "Én lleva la terminación de 1.ª persona. ír solo tiene la vocal í, y esos verbos suelen llevar las terminaciones posteriores: írok."
+      },
+      "wrong": {
+        "írek": {
+          "en": "írek would be the front form. ír is one of the i / í verbs that go with the back endings (írok, hívok).",
+          "es": "írek sería la forma anterior. ír es uno de los verbos con i / í que llevan las terminaciones posteriores (írok, hívok)."
+        },
+        "írsz": {
+          "en": "írsz is the te form, \"you write\"; this sentence has én (I).",
+          "es": "írsz es la forma de te, «tú escribes»; esta frase tiene én (yo)."
+        }
+      },
+      "examples": [
+        "Péter ír.",
+        "Mit írsz?"
+      ],
+      "tr": {
+        "en": "I am writing now.",
+        "es": "Ahora estoy escribiendo."
+      }
+    },
+    {
+      "id": "jelen-alanyi-w04",
+      "kind": "why",
+      "es": "Én írok.",
+      "target": "írok",
+      "tr": {
+        "en": "I write.",
+        "es": "Yo escribo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "1st person; ír takes the back ending -ok (i / í verbs mostly do)",
+            "es": "1.ª persona; ír lleva la terminación posterior -ok (los verbos con i / í suelen hacerlo)"
+          }
+        },
+        {
+          "text": {
+            "en": "Front verbs take -ek",
+            "es": "Los verbos anteriores llevan -ek"
+          },
+          "wrong": {
+            "en": "With this rule the form would be írek; ír is one of the i / í verbs that take the back endings.",
+            "es": "Con esta regla la forma sería írek; ír es uno de los verbos con i / í que llevan las terminaciones posteriores."
+          }
+        },
+        {
+          "text": {
+            "en": "te: the ending -sz",
+            "es": "te: la terminación -sz"
+          },
+          "wrong": {
+            "en": "With this rule the form would be írsz (te írsz); this sentence has én.",
+            "es": "Con esta regla la forma sería írsz (te írsz); esta frase tiene én."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

@@ -1,0 +1,741 @@
+{
+  "schema": 2,
+  "topic": "ik-igek",
+  "level": "A1",
+  "title": { "en": "-ik verbs: lakik, dolgozik, eszik, iszik", "es": "Verbos en -ik: lakik, dolgozik, eszik, iszik" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Some Hungarian verbs end in -ik in the 3rd person: lakik (lives), dolgozik (works), eszik (eats), iszik (drinks). They are called -ik verbs. Almost everything about them is regular, and only two forms differ from the verbs you already know: the 3rd person singular ends in -ik (Anna dolgozik), and the 1st person singular ends in -om, -em or -öm instead of -ok, -ek or -ök (dolgozom). Neither English nor Spanish has anything like it, so learn each of these verbs together with its -ik.",
+        "es": "Algunos verbos húngaros terminan en -ik en la 3.ª persona: lakik (vive), dolgozik (trabaja), eszik (come), iszik (bebe). Se llaman verbos en -ik. Casi todo en ellos es regular y solo dos formas difieren de los verbos que ya conoces: la 3.ª persona del singular termina en -ik (Anna dolgozik) y la 1.ª persona del singular termina en -om, -em o -öm en lugar de -ok, -ek o -ök (dolgozom). El español no tiene nada parecido, así que cada uno de estos verbos se aprende junto con su -ik."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ik-regular",
+      "title": { "en": "Two -ik verbs in the present tense", "es": "Dos verbos en -ik en presente" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "lakik (to live)", "es": "lakik (vivir)" },
+        { "en": "dolgozik (to work)", "es": "dolgozik (trabajar)" }
+      ],
+      "rows": [
+        ["én", "lakom", "dolgozom"],
+        ["te", "laksz", "dolgozol"],
+        ["ő", "lakik", "dolgozik"],
+        ["mi", "lakunk", "dolgozunk"],
+        ["ti", "laktok", "dolgoztok"],
+        ["ők", "laknak", "dolgoznak"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "What changes in an -ik verb?", "es": "¿Qué cambia en un verbo en -ik?" },
+      "items": [
+        {
+          "text": {
+            "en": "ő (he, she, it): the verb ends in -ik. A regular verb has no ending here (Anna olvas), an -ik verb always keeps -ik (Anna dolgozik). Place endings like the -en in Budapesten (in Budapest) come in a later lesson; for now read them as part of the word.",
+            "es": "ő (él, ella): el verbo termina en -ik. Un verbo regular no tiene terminación aquí (Anna olvas); un verbo en -ik siempre conserva -ik (Anna dolgozik). Las terminaciones de lugar como el -en de Budapesten (en Budapest) llegan en una lección posterior; por ahora léelas como parte de la palabra."
+          },
+          "examples": [
+            { "es": "Anna itt dolgozik.", "tr": { "en": "Anna works here.", "es": "Anna trabaja aquí." } },
+            { "es": "Péter Budapesten lakik.", "tr": { "en": "Péter lives in Budapest.", "es": "Péter vive en Budapest." } },
+            { "es": "A nagypapa ott lakik.", "tr": { "en": "Grandpa lives there.", "es": "El abuelo vive allí." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "én (I): the ending is -om, -em or -öm, chosen by vowel harmony: -om after back vowels (lakom, dolgozom), -em after e, é (érkezem), -öm after ö, ő, ü, ű (költözöm). Regular verbs have -ok, -ek, -ök here (olvasok).",
+            "es": "én (yo): la terminación es -om, -em o -öm, según la armonía vocálica: -om tras vocales posteriores (lakom, dolgozom), -em tras e, é (érkezem), -öm tras ö, ő, ü, ű (költözöm). Los verbos regulares tienen aquí -ok, -ek, -ök (olvasok)."
+          },
+          "examples": [
+            { "es": "Itt lakom.", "tr": { "en": "I live here.", "es": "Vivo aquí." } },
+            { "es": "Otthon dolgozom.", "tr": { "en": "I work at home.", "es": "Trabajo en casa." } },
+            { "es": "Későn érkezem.", "tr": { "en": "I arrive late.", "es": "Llego tarde." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "te, mi, ti, ők: exactly like regular verbs. Take the stem (lak-, dolgoz-) and add the usual endings: laksz, lakunk, laktok, laknak; dolgozol, dolgozunk, dolgoztok, dolgoznak.",
+            "es": "te, mi, ti, ők: exactamente como los verbos regulares. Toma el tema (lak-, dolgoz-) y añade las terminaciones de siempre: laksz, lakunk, laktok, laknak; dolgozol, dolgozunk, dolgoztok, dolgoznak."
+          },
+          "examples": [
+            { "es": "Hol laksz?", "tr": { "en": "Where do you live?", "es": "¿Dónde vives?" } },
+            { "es": "Ti hol dolgoztok?", "tr": { "en": "Where do you (all) work?", "es": "¿Dónde trabajan ustedes?" } },
+            { "es": "Anna és Péter Szegeden laknak.", "tr": { "en": "Anna and Péter live in Szeged.", "es": "Anna y Péter viven en Szeged." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ik-harmony",
+      "title": { "en": "-om, -em, -öm: the vowel decides", "es": "-om, -em, -öm: decide la vocal" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "úszik (to swim)", "es": "úszik (nadar)" },
+        { "en": "érkezik (to arrive)", "es": "érkezik (llegar)" },
+        { "en": "költözik (to move)", "es": "költözik (mudarse)" }
+      ],
+      "rows": [
+        ["én", "úszom", "érkezem", "költözöm"],
+        ["te", "úszol", "érkezel", "költözöl"],
+        ["ő", "úszik", "érkezik", "költözik"],
+        ["mi", "úszunk", "érkezünk", "költözünk"],
+        ["ti", "úsztok", "érkeztek", "költöztök"],
+        ["ők", "úsznak", "érkeznek", "költöznek"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ik-eszik-iszik",
+      "title": { "en": "eszik and iszik: the present stems esz- and isz-", "es": "eszik e iszik: los temas de presente esz- e isz-" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "eszik (to eat)", "es": "eszik (comer)" },
+        { "en": "iszik (to drink)", "es": "iszik (beber)" }
+      ],
+      "rows": [
+        ["én", "eszem", "iszom"],
+        ["te", "eszel", "iszol"],
+        ["ő", "eszik", "iszik"],
+        ["mi", "eszünk", "iszunk"],
+        ["ti", "esztek", "isztok"],
+        ["ők", "esznek", "isznak"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "eszik and iszik: special stems", "es": "eszik e iszik: temas especiales" },
+      "points": [
+        {
+          "text": {
+            "en": "The present stem is esz- and isz-. Watch the vowel harmony: eszik takes front endings (eszem, eszünk, esznek), but iszik takes back endings (iszom, iszunk, isznak), although its vowel is i.",
+            "es": "El tema de presente es esz- e isz-. Atento a la armonía vocálica: eszik toma terminaciones anteriores (eszem, eszünk, esznek), pero iszik toma terminaciones posteriores (iszom, iszunk, isznak), aunque su vocal es i."
+          },
+          "examples": [
+            { "es": "Mit eszel?", "tr": { "en": "What are you eating?", "es": "¿Qué comes?" } },
+            { "es": "Kati kávét iszik.", "tr": { "en": "Kati drinks coffee.", "es": "Kati bebe café." } },
+            { "es": "Ti mit isztok?", "tr": { "en": "What are you (all) drinking?", "es": "¿Qué beben ustedes?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "In the past tense (a later lesson) the stem changes again, to ev- and iv-: ettem (I ate), ittam (I drank). For now just remember that eszik and iszik have two stems.",
+            "es": "En el pasado (una lección posterior) el tema cambia otra vez, a ev- e iv-: ettem (comí), ittam (bebí). Por ahora recuerda que eszik e iszik tienen dos temas."
+          },
+          "examples": [
+            { "es": "Ettem egy almát.", "tr": { "en": "I ate an apple.", "es": "Comí una manzana." } },
+            { "es": "Ittam vizet.", "tr": { "en": "I drank water.", "es": "Bebí agua." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "What you eat or drink takes the ending -t (kávét, levest; after some consonants a linking vowel comes first: vizet). That ending has its own lesson right after this one; for now just copy these forms.",
+            "es": "Lo que comes o bebes lleva la terminación -t (kávét, levest; después de algunas consonantes entra antes una vocal de enlace: vizet). Esa terminación tiene su propia lección justo después de esta; por ahora copia estas formas."
+          },
+          "examples": [
+            { "es": "Vizet iszom.", "tr": { "en": "I drink water.", "es": "Bebo agua." } },
+            { "es": "Levest eszem.", "tr": { "en": "I eat soup.", "es": "Como sopa." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Regular verb or -ik verb?", "es": "¿Verbo regular o verbo en -ik?" },
+      "pairs": [
+        {
+          "a": "Olvasok.",
+          "b": "Dolgozom.",
+          "note": {
+            "en": "1st person: a regular verb ends in -ok, -ek, -ök (olvasok), an -ik verb in -om, -em, -öm (dolgozom).",
+            "es": "1.ª persona: un verbo regular termina en -ok, -ek, -ök (olvasok); uno en -ik, en -om, -em, -öm (dolgozom)."
+          },
+          "examples": [
+            { "es": "Írok.", "tr": { "en": "I write.", "es": "Escribo." } },
+            { "es": "Alszom.", "tr": { "en": "I sleep.", "es": "Duermo." } }
+          ]
+        },
+        {
+          "a": "Anna olvas.",
+          "b": "Anna dolgozik.",
+          "note": {
+            "en": "3rd person: a regular verb has no ending, an -ik verb ends in -ik.",
+            "es": "3.ª persona: un verbo regular no tiene terminación; uno en -ik termina en -ik."
+          },
+          "examples": [
+            { "es": "Péter ír.", "tr": { "en": "Péter writes.", "es": "Péter escribe." } },
+            { "es": "Péter alszik.", "tr": { "en": "Péter is sleeping.", "es": "Péter duerme." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: dropping the -ik in the 3rd person. It is Anna dolgozik, never Anna dolgoz. When you meet a new verb, learn it in its ő form (lakik, eszik, úszik): if that form ends in -ik, the én form ends in -om, -em or -öm. In fast everyday speech you will also hear dolgozok, eszek, iszok; people understand both, but -om, -em, -öm is the form to learn.",
+        "es": "Trampa clásica: omitir el -ik en la 3.ª persona. Se dice Anna dolgozik, nunca Anna dolgoz. Cuando aprendas un verbo nuevo, apréndelo en su forma ő (lakik, eszik, úszik): si esa forma termina en -ik, la forma én termina en -om, -em o -öm. En el habla rápida de todos los días también oirás dolgozok, eszek, iszok; se entienden las dos, pero -om, -em, -öm es la forma que debes aprender."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Some Hungarian verbs end in the letters i and k in the third person: «lakik», «dolgozik», «eszik» and «iszik». Two forms differ from regular verbs. The third person singular keeps that ending: «Anna dolgozik». The first person singular changes too: «dolgozom», «érkezem», «költözöm». The other persons are regular: «laksz», «lakunk», «laknak». The verbs «eszik» and «iszik» have their own stems: «eszem», «iszol», «esznek».",
+    "es": "Algunos verbos húngaros terminan en las letras i y k en la tercera persona: «lakik», «dolgozik», «eszik» e «iszik». Dos formas difieren de los verbos regulares. La tercera persona del singular conserva esa terminación: «Anna dolgozik». La primera persona del singular también cambia: «dolgozom», «érkezem», «költözöm». Las demás personas son regulares: «laksz», «lakunk», «laknak». Los verbos «eszik» e «iszik» tienen sus propios temas: «eszem», «iszol», «esznek»."
+  },
+  "items": [
+    {
+      "id": "ik-igek-c01",
+      "sentence": "Hol laksz? Budapesten ___.",
+      "options": ["laksz", "lakom", "lakik"],
+      "correct": 1,
+      "why": {
+        "en": "You answer about yourself, so it is the 1st person of an -ik verb: lakom (-om, not -ok).",
+        "es": "Contestas sobre ti mismo, así que es la 1.ª persona de un verbo en -ik: lakom (-om, no -ok)."
+      },
+      "wrong": {
+        "laksz": {
+          "en": "laksz is the form for te (you): it would repeat the question to the other person, 'You live in Budapest'.",
+          "es": "laksz es la forma de te (tú): repetiría la pregunta a la otra persona, «Tú vives en Budapest»."
+        },
+        "lakik": {
+          "en": "With lakik the sentence would say that he or she lives in Budapest, not that I do.",
+          "es": "Con lakik la frase diría que él o ella vive en Budapest, no que yo vivo allí."
+        }
+      },
+      "examples": ["Szegeden lakom.", "Itt lakom."],
+      "tr": { "en": "Where do you live? I live in Budapest.", "es": "¿Dónde vives? Vivo en Budapest." }
+    },
+    {
+      "id": "ik-igek-f01",
+      "kind": "form",
+      "verb": "lakik",
+      "person": "én",
+      "answer": "lakom",
+      "accept": ["lakok"],
+      "table": "ik-regular"
+    },
+    {
+      "id": "ik-igek-c02",
+      "sentence": "Anna itt ___.",
+      "options": ["dolgozik", "dolgozom", "dolgozol"],
+      "correct": 0,
+      "why": {
+        "en": "Anna is the 3rd person, and an -ik verb ends in -ik there: dolgozik.",
+        "es": "Anna es la 3.ª persona, y un verbo en -ik termina en -ik ahí: dolgozik."
+      },
+      "wrong": {
+        "dolgozom": {
+          "en": "dolgozom means 'I work': with Anna as the subject the sentence would not fit, because that form is for én.",
+          "es": "dolgozom significa «yo trabajo»: con Anna como sujeto la frase no encajaría, porque esa forma es para én."
+        },
+        "dolgozol": {
+          "en": "dolgozol is the form for te (you): the sentence would say 'Anna, you work here'.",
+          "es": "dolgozol es la forma de te (tú): la frase diría «Anna, tú trabajas aquí»."
+        }
+      },
+      "examples": ["Gábor otthon dolgozik.", "Kati is itt dolgozik."],
+      "tr": { "en": "Anna works here.", "es": "Anna trabaja aquí." }
+    },
+    {
+      "id": "ik-igek-f02",
+      "kind": "form",
+      "verb": "dolgozik",
+      "person": "te",
+      "answer": "dolgozol",
+      "table": "ik-regular"
+    },
+    {
+      "id": "ik-igek-c03",
+      "sentence": "Te hol ___?",
+      "options": ["dolgozom", "dolgozik", "dolgozol"],
+      "correct": 2,
+      "why": {
+        "en": "Te is 'you', and the 2nd person of an -ik verb is regular: after z the ending is -ol, so dolgozol.",
+        "es": "Te es «tú», y la 2.ª persona de un verbo en -ik es regular: después de z la terminación es -ol, así que dolgozol."
+      },
+      "wrong": {
+        "dolgozom": {
+          "en": "dolgozom is 'I work': 'Te hol dolgozom?' would mix 'you' with 'I work'.",
+          "es": "dolgozom es «yo trabajo»: «Te hol dolgozom?» mezclaría «tú» con «yo trabajo»."
+        },
+        "dolgozik": {
+          "en": "dolgozik is for he or she; the question is addressed to you, so it needs dolgozol.",
+          "es": "dolgozik es para él o ella; la pregunta va dirigida a ti, así que necesita dolgozol."
+        }
+      },
+      "examples": ["Hol dolgozol?", "Otthon dolgozol?"],
+      "tr": { "en": "Where do you work?", "es": "¿Dónde trabajas?" }
+    },
+    {
+      "id": "ik-igek-f03",
+      "kind": "form",
+      "verb": "lakik",
+      "person": "ők",
+      "answer": "laknak",
+      "table": "ik-regular"
+    },
+    {
+      "id": "ik-igek-c04",
+      "sentence": "Mi Szegeden ___.",
+      "options": ["laknak", "lakunk", "laktok"],
+      "correct": 1,
+      "why": {
+        "en": "Mi is 'we', and the -ik verb is regular here: lak- + -unk.",
+        "es": "Mi es «nosotros», y el verbo en -ik es regular aquí: lak- + -unk."
+      },
+      "wrong": {
+        "laknak": {
+          "en": "laknak is 'they live': the sentence would mix 'we' with 'they'.",
+          "es": "laknak es «ellos viven»: la frase mezclaría «nosotros» con «ellos»."
+        },
+        "laktok": {
+          "en": "laktok is 'you (all) live'; the subject mi is 'we'.",
+          "es": "laktok es «ustedes viven»; el sujeto mi es «nosotros»."
+        }
+      },
+      "examples": ["Itt lakunk.", "Otthon lakunk."],
+      "tr": { "en": "We live in Szeged.", "es": "Vivimos en Szeged." }
+    },
+    {
+      "id": "ik-igek-f04",
+      "kind": "form",
+      "verb": "dolgozik",
+      "person": "ti",
+      "answer": "dolgoztok",
+      "table": "ik-regular"
+    },
+    {
+      "id": "ik-igek-w01",
+      "kind": "why",
+      "es": "Anna itt dolgozik.",
+      "target": "dolgozik",
+      "tr": { "en": "Anna works here.", "es": "Anna trabaja aquí." },
+      "options": [
+        {
+          "text": {
+            "en": "An -ik verb in the 3rd person: it ends in -ik",
+            "es": "Un verbo en -ik en 3.ª persona: termina en -ik"
+          }
+        },
+        {
+          "text": {
+            "en": "A regular verb in the 3rd person: no ending",
+            "es": "Un verbo regular en 3.ª persona: sin terminación"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna itt dolgoz; but dolgozik is an -ik verb, and it keeps -ik in the 3rd person.",
+            "es": "Con esta regla la frase sería Anna itt dolgoz; pero dolgozik es un verbo en -ik y conserva -ik en la 3.ª persona."
+          }
+        },
+        {
+          "text": {
+            "en": "1st person: the ending is -om, -em or -öm",
+            "es": "1.ª persona: la terminación es -om, -em o -öm"
+          },
+          "wrong": {
+            "en": "With this rule the form would be dolgozom, which is what I say about myself; Anna is the 3rd person.",
+            "es": "Con esta regla la forma sería dolgozom, que es lo que digo de mí mismo; Anna es la 3.ª persona."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "ik-igek-c05",
+      "sentence": "Péter és Kati itt ___.",
+      "options": ["dolgoznak", "dolgozik", "dolgoztok"],
+      "correct": 0,
+      "why": {
+        "en": "Two people are 'they' (ők), so dolgoznak: dolgoz- + -nak.",
+        "es": "Dos personas son «ellos» (ők), así que dolgoznak: dolgoz- + -nak."
+      },
+      "wrong": {
+        "dolgozik": {
+          "en": "dolgozik is singular, for one person; Péter and Kati are two.",
+          "es": "dolgozik es singular, para una persona; Péter y Kati son dos."
+        },
+        "dolgoztok": {
+          "en": "dolgoztok is 'you (all) work': it would address Péter and Kati directly.",
+          "es": "dolgoztok es «ustedes trabajan»: se dirigiría directamente a Péter y Kati."
+        }
+      },
+      "examples": ["Anna és Gábor otthon dolgoznak.", "A szülők ott dolgoznak."],
+      "tr": { "en": "Péter and Kati work here.", "es": "Péter y Kati trabajan aquí." }
+    },
+    {
+      "id": "ik-igek-f05",
+      "kind": "form",
+      "verb": "eszik",
+      "person": "én",
+      "answer": "eszem",
+      "accept": ["eszek"],
+      "table": "ik-eszik-iszik"
+    },
+    {
+      "id": "ik-igek-c06",
+      "sentence": "Anna levest ___.",
+      "options": ["eszem", "eszel", "eszik"],
+      "correct": 2,
+      "why": {
+        "en": "Anna is the 3rd person: eszik. The object levest has the ending -t.",
+        "es": "Anna es la 3.ª persona: eszik. El objeto levest lleva la terminación -t."
+      },
+      "wrong": {
+        "eszem": {
+          "en": "eszem is 'I eat'; with Anna as the subject it does not fit.",
+          "es": "eszem es «yo como»; con Anna como sujeto no encaja."
+        },
+        "eszel": {
+          "en": "eszel is 'you eat': the sentence would be addressed to Anna.",
+          "es": "eszel es «tú comes»: la frase se dirigiría a Anna."
+        }
+      },
+      "examples": ["Péter sajtot eszik.", "A gyerek halat eszik."],
+      "tr": { "en": "Anna eats soup.", "es": "Anna come sopa." }
+    },
+    {
+      "id": "ik-igek-f06",
+      "kind": "form",
+      "verb": "iszik",
+      "person": "te",
+      "answer": "iszol",
+      "table": "ik-eszik-iszik"
+    },
+    {
+      "id": "ik-igek-c07",
+      "sentence": "Te mit ___?",
+      "options": ["iszom", "iszol", "iszik"],
+      "correct": 1,
+      "why": {
+        "en": "Te is 'you', so iszol: isz- + -ol.",
+        "es": "Te es «tú», así que iszol: isz- + -ol."
+      },
+      "wrong": {
+        "iszom": {
+          "en": "iszom is 'I drink'; 'Te mit iszom?' mixes 'you' with 'I drink'.",
+          "es": "iszom es «yo bebo»; «Te mit iszom?» mezclaría «tú» con «yo bebo»."
+        },
+        "iszik": {
+          "en": "iszik is for he or she, not for the person you are asking.",
+          "es": "iszik es para él o ella, no para la persona a la que preguntas."
+        }
+      },
+      "examples": ["Mit iszol?", "Vizet iszol?"],
+      "tr": { "en": "What are you drinking?", "es": "¿Qué bebes?" }
+    },
+    {
+      "id": "ik-igek-f07",
+      "kind": "form",
+      "verb": "eszik",
+      "person": "mi",
+      "answer": "eszünk",
+      "table": "ik-eszik-iszik"
+    },
+    {
+      "id": "ik-igek-w02",
+      "kind": "why",
+      "es": "Hol laksz?",
+      "target": "laksz",
+      "tr": { "en": "Where do you live?", "es": "¿Dónde vives?" },
+      "options": [
+        {
+          "text": {
+            "en": "3rd person of an -ik verb: it ends in -ik",
+            "es": "3.ª persona de un verbo en -ik: termina en -ik"
+          },
+          "wrong": {
+            "en": "With this rule the form would be lakik, which is about someone else; here the question goes to te.",
+            "es": "Con esta regla la forma sería lakik, que habla de otra persona; aquí la pregunta va dirigida a te."
+          }
+        },
+        {
+          "text": {
+            "en": "2nd person (te): the usual ending, lak- + -sz; nothing special for -ik verbs",
+            "es": "2.ª persona (te): la terminación de siempre, lak- + -sz; nada especial en los verbos en -ik"
+          }
+        },
+        {
+          "text": {
+            "en": "1st person: the ending is -om",
+            "es": "1.ª persona: la terminación es -om"
+          },
+          "wrong": {
+            "en": "With this rule the form would be lakom, which answers the question instead of asking it.",
+            "es": "Con esta regla la forma sería lakom, que contesta la pregunta en lugar de hacerla."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ik-igek-c08",
+      "sentence": "Péter Debrecenben ___.",
+      "options": ["lakik", "lak", "lakok"],
+      "correct": 0,
+      "why": {
+        "en": "Péter is the 3rd person, and the -ik of an -ik verb never drops: lakik.",
+        "es": "Péter es la 3.ª persona, y el -ik de un verbo en -ik nunca se omite: lakik."
+      },
+      "wrong": {
+        "lak": {
+          "en": "lak is only the stem, not a finished form: regular verbs have no ending in the 3rd person (Anna olvas), but lakik keeps -ik.",
+          "es": "lak es solo el tema, no una forma completa: los verbos regulares no tienen terminación en 3.ª persona (Anna olvas), pero lakik conserva -ik."
+        },
+        "lakok": {
+          "en": "lakok is a 1st person form ('I live', with the regular -ok), so it does not fit Péter; careful speech uses lakom for 'I'.",
+          "es": "lakok es una forma de 1.ª persona («yo vivo», con el -ok regular), así que no encaja con Péter; en habla cuidada «yo» es lakom."
+        }
+      },
+      "examples": ["Anna Szegeden lakik.", "A nagypapa itt lakik."],
+      "tr": { "en": "Péter lives in Debrecen.", "es": "Péter vive en Debrecen." }
+    },
+    {
+      "id": "ik-igek-f08",
+      "kind": "form",
+      "verb": "iszik",
+      "person": "ti",
+      "answer": "isztok",
+      "table": "ik-eszik-iszik"
+    },
+    {
+      "id": "ik-igek-c09",
+      "sentence": "Mit iszol reggel? Reggel kávét ___.",
+      "options": ["iszol", "iszik", "iszom"],
+      "correct": 2,
+      "why": {
+        "en": "You answer about yourself: iszom (iszik takes back endings, so -om).",
+        "es": "Contestas sobre ti mismo: iszom (iszik toma terminaciones posteriores, por eso -om)."
+      },
+      "wrong": {
+        "iszol": {
+          "en": "iszol is 'you drink': it would only repeat the question instead of answering it.",
+          "es": "iszol es «tú bebes»: solo repetiría la pregunta en lugar de contestarla."
+        },
+        "iszik": {
+          "en": "iszik would say that he or she drinks coffee in the morning, not that I do.",
+          "es": "iszik diría que él o ella bebe café por la mañana, no que yo lo bebo."
+        }
+      },
+      "examples": ["Reggel teát iszom.", "Reggel vizet iszom."],
+      "tr": { "en": "What do you drink in the morning? In the morning I drink coffee.", "es": "¿Qué bebes por la mañana? Por la mañana bebo café." }
+    },
+    {
+      "id": "ik-igek-f09",
+      "kind": "form",
+      "verb": "iszik",
+      "person": "Kati és Gábor",
+      "answer": "isznak",
+      "table": "ik-eszik-iszik"
+    },
+    {
+      "id": "ik-igek-c10",
+      "sentence": "Mi most ___.",
+      "options": ["esznek", "eszünk", "esztek"],
+      "correct": 1,
+      "why": {
+        "en": "Mi is 'we': esz- + -ünk, with the front-vowel ending.",
+        "es": "Mi es «nosotros»: esz- + -ünk, con la terminación de vocales anteriores."
+      },
+      "wrong": {
+        "esznek": {
+          "en": "esznek is 'they eat': the sentence would mix 'we' with 'they'.",
+          "es": "esznek es «ellos comen»: la frase mezclaría «nosotros» con «ellos»."
+        },
+        "esztek": {
+          "en": "esztek is 'you (all) eat'; the subject mi is 'we'.",
+          "es": "esztek es «ustedes comen»; el sujeto mi es «nosotros»."
+        }
+      },
+      "examples": ["Mit eszünk?", "Itt eszünk."],
+      "tr": { "en": "We are eating now.", "es": "Ahora estamos comiendo." }
+    },
+    {
+      "id": "ik-igek-f10",
+      "kind": "form",
+      "verb": "úszik",
+      "person": "én",
+      "answer": "úszom",
+      "accept": ["úszok"],
+      "table": "ik-harmony"
+    },
+    {
+      "id": "ik-igek-w03",
+      "kind": "why",
+      "es": "Budapestre költözöm.",
+      "target": "költözöm",
+      "tr": { "en": "I'm moving to Budapest.", "es": "Me mudo a Budapest." },
+      "options": [
+        {
+          "text": {
+            "en": "1st person of a regular verb: the ending is -ök",
+            "es": "1.ª persona de un verbo regular: la terminación es -ök"
+          },
+          "wrong": {
+            "en": "With this rule the form would be költözök; that is the regular ending, but költözik is an -ik verb, so it takes -öm.",
+            "es": "Con esta regla la forma sería költözök; esa es la terminación regular, pero költözik es un verbo en -ik y toma -öm."
+          }
+        },
+        {
+          "text": {
+            "en": "3rd person: the verb ends in -ik",
+            "es": "3.ª persona: el verbo termina en -ik"
+          },
+          "wrong": {
+            "en": "With this rule the form would be költözik, said about someone else, not about me.",
+            "es": "Con esta regla la forma sería költözik, dicha de otra persona, no de mí."
+          }
+        },
+        {
+          "text": {
+            "en": "1st person of an -ik verb: -öm, because of the ö",
+            "es": "1.ª persona de un verbo en -ik: -öm, por la ö"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "ik-igek-c11",
+      "sentence": "Ti mit ___?",
+      "options": ["esztek", "eszünk", "esznek"],
+      "correct": 0,
+      "why": {
+        "en": "Ti is 'you' (several people): esz- + -tek.",
+        "es": "Ti es «ustedes» (varios tú): esz- + -tek."
+      },
+      "wrong": {
+        "eszünk": {
+          "en": "eszünk is 'we eat': 'Ti mit eszünk?' mixes 'you all' with 'we'.",
+          "es": "eszünk es «nosotros comemos»: «Ti mit eszünk?» mezclaría «ustedes» con «nosotros»."
+        },
+        "esznek": {
+          "en": "esznek is 'they eat'; ti is 'you', not 'they'.",
+          "es": "esznek es «ellos comen»; ti es «ustedes», no «ellos»."
+        }
+      },
+      "examples": ["Itt esztek?", "Mit isztok?"],
+      "tr": { "en": "What are you (all) eating?", "es": "¿Qué comen ustedes?" }
+    },
+    {
+      "id": "ik-igek-f11",
+      "kind": "form",
+      "verb": "érkezik",
+      "person": "mi",
+      "answer": "érkezünk",
+      "table": "ik-harmony"
+    },
+    {
+      "id": "ik-igek-c12",
+      "sentence": "Én Budapestre ___.",
+      "options": ["költözom", "költözem", "költözöm"],
+      "correct": 2,
+      "why": {
+        "en": "költözik has ö, a rounded front vowel, so the 1st person ends in -öm: költözöm.",
+        "es": "költözik tiene ö, una vocal anterior redondeada, por eso la 1.ª persona termina en -öm: költözöm."
+      },
+      "wrong": {
+        "költözom": {
+          "en": "-om is for back vowels (úszom); költözik has front vowels, so költözom is not a correct form.",
+          "es": "-om es para vocales posteriores (úszom); költözik tiene vocales anteriores, así que költözom no es una forma correcta."
+        },
+        "költözem": {
+          "en": "-em is for verbs with e, é (érkezem); with ö the ending becomes -öm.",
+          "es": "-em es para verbos con e, é (érkezem); con ö la terminación pasa a -öm."
+        }
+      },
+      "examples": ["Szegedre költözöm.", "Kati Budapestre költözik."],
+      "tr": { "en": "I'm moving to Budapest.", "es": "Me mudo a Budapest." }
+    },
+    {
+      "id": "ik-igek-f12",
+      "kind": "form",
+      "verb": "költözik",
+      "person": "én",
+      "answer": "költözöm",
+      "accept": ["költözök"],
+      "table": "ik-harmony"
+    },
+    {
+      "id": "ik-igek-c13",
+      "sentence": "Én későn ___.",
+      "options": ["érkezom", "érkezem", "érkezöm"],
+      "correct": 1,
+      "why": {
+        "en": "érkezik has the front vowels é and e, so the 1st person ends in -em: érkezem.",
+        "es": "érkezik tiene las vocales anteriores é y e, por eso la 1.ª persona termina en -em: érkezem."
+      },
+      "wrong": {
+        "érkezom": {
+          "en": "-om is for back vowels (lakom, úszom); érkezik has front vowels.",
+          "es": "-om es para vocales posteriores (lakom, úszom); érkezik tiene vocales anteriores."
+        },
+        "érkezöm": {
+          "en": "-öm is only for ö, ő, ü, ű words (költözöm); érkezik has plain front vowels e and é.",
+          "es": "-öm es solo para palabras con ö, ő, ü, ű (költözöm); érkezik tiene las vocales anteriores simples e y é."
+        }
+      },
+      "examples": ["Korán érkezem.", "Péter későn érkezik."],
+      "tr": { "en": "I arrive late.", "es": "Llego tarde." }
+    },
+    {
+      "id": "ik-igek-w04",
+      "kind": "why",
+      "es": "Mit eszel?",
+      "target": "eszel",
+      "tr": { "en": "What are you eating?", "es": "¿Qué comes?" },
+      "options": [
+        {
+          "text": {
+            "en": "The past stem ev-, the same in every tense",
+            "es": "El tema de pasado ev-, el mismo en todos los tiempos"
+          },
+          "wrong": {
+            "en": "With this rule you would get a form like evel; in the present the stem is esz-, and ev- only appears in the past (ettem).",
+            "es": "Con esta regla saldría una forma como evel; en presente el tema es esz-, y ev- solo aparece en el pasado (ettem)."
+          }
+        },
+        {
+          "text": {
+            "en": "The present stem esz- plus the regular 2nd person ending -el",
+            "es": "El tema de presente esz- más la terminación regular de 2.ª persona -el"
+          }
+        },
+        {
+          "text": {
+            "en": "The 1st person ending -em, as in eszem",
+            "es": "La terminación de 1.ª persona -em, como en eszem"
+          },
+          "wrong": {
+            "en": "With this rule the form would be eszem, 'I eat'; the question is addressed to you, so it needs -el.",
+            "es": "Con esta regla la forma sería eszem, «yo como»; la pregunta va dirigida a ti, así que necesita -el."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "ik-igek-c14",
+      "sentence": "Én jól ___.",
+      "options": ["úszom", "úszem", "úszöm"],
+      "correct": 0,
+      "why": {
+        "en": "úszik has the back vowel ú, so the 1st person ends in -om: úszom.",
+        "es": "úszik tiene la vocal posterior ú, por eso la 1.ª persona termina en -om: úszom."
+      },
+      "wrong": {
+        "úszem": {
+          "en": "-em is for front vowels (érkezem); úszik has the back vowel ú.",
+          "es": "-em es para vocales anteriores (érkezem); úszik tiene la vocal posterior ú."
+        },
+        "úszöm": {
+          "en": "-öm is for rounded front vowels (költözöm); ú is a back vowel, so it needs -om.",
+          "es": "-öm es para vocales anteriores redondeadas (költözöm); ú es una vocal posterior, así que necesita -om."
+        }
+      },
+      "examples": ["Anna is jól úszik.", "Péter jól úszik."],
+      "tr": { "en": "I swim well.", "es": "Nado bien." }
+    }
+  ]
+}

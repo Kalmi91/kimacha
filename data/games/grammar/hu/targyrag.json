@@ -1,0 +1,804 @@
+{
+  "schema": 2,
+  "topic": "targyrag",
+  "level": "A1",
+  "title": { "en": "The object ending -t", "es": "La terminación -t del objeto" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In Hungarian the thing an action is done to, the object, takes the ending -t: Kávét kérek (I'd like a coffee). Egy almát eszem (I eat an apple). Grammar books call this the accusative (tárgyeset). The subject has no ending. After a vowel you add just -t, and a final short a or e becomes long: alma, almát. After a consonant a linking vowel comes first: -ot, -et or -öt (a few words take -at). English only changes pronouns (him, me); Spanish marks only people and pronouns (veo a Anna, me ves). In Hungarian every object noun gets -t. This lesson uses objects with 'a, an' or no article (egy kávét, kávét); after a/az + noun the verb changes too, and that comes in a later lesson.",
+        "es": "En húngaro lo que recibe la acción, el objeto, lleva la terminación -t: Kávét kérek (quiero un café). Egy almát eszem (como una manzana). Las gramáticas lo llaman acusativo (tárgyeset). El sujeto no lleva terminación. Después de vocal se añade solo -t, y una a o e corta final se alarga: alma, almát. Después de consonante viene antes una vocal de enlace: -ot, -et o -öt (unas pocas palabras toman -at). El español marca solo a las personas y a los pronombres (veo a Anna, me ves); en húngaro todo sustantivo que es objeto recibe -t. Esta lección usa objetos con «un, una» o sin artículo (egy kávét, kávét); después de a/az + sustantivo el verbo también cambia, y eso llega en una lección posterior."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "acc-vowel",
+      "title": { "en": "Nouns ending in a vowel: just -t", "es": "Sustantivos que acaban en vocal: solo -t" },
+      "header": [
+        { "en": "Noun", "es": "Sustantivo" },
+        { "en": "With -t (object)", "es": "Con -t (objeto)" }
+      ],
+      "rows": [
+        ["alma", "almát"],
+        ["körte", "körtét"],
+        ["tea", "teát"],
+        ["kávé", "kávét"],
+        ["kutya", "kutyát"],
+        ["macska", "macskát"],
+        ["autó", "autót"],
+        ["ruha", "ruhát"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "acc-consonant",
+      "title": { "en": "Nouns ending in a consonant: linking vowel + -t", "es": "Sustantivos que acaban en consonante: vocal de enlace + -t" },
+      "header": [
+        { "en": "Noun", "es": "Sustantivo" },
+        { "en": "With -t (object)", "es": "Con -t (objeto)" },
+        { "en": "Ending", "es": "Terminación" }
+      ],
+      "rows": [
+        ["kulcs", "kulcsot", "-ot"],
+        ["ablak", "ablakot", "-ot"],
+        ["sajt", "sajtot", "-ot"],
+        ["jegy", "jegyet", "-et"],
+        ["bérlet", "bérletet", "-et"],
+        ["gyümölcs", "gyümölcsöt", "-öt"],
+        ["főnök", "főnököt", "-öt"],
+        ["ház", "házat", "-at"],
+        ["hal", "halat", "-at"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "acc-only-t",
+      "title": { "en": "Some words add only -t", "es": "Algunas palabras añaden solo -t" },
+      "header": [
+        { "en": "Noun", "es": "Sustantivo" },
+        { "en": "With -t (object)", "es": "Con -t (objeto)" }
+      ],
+      "rows": [
+        ["bor", "bort"],
+        ["sör", "sört"],
+        ["hús", "húst"],
+        ["leves", "levest"],
+        ["tojás", "tojást"],
+        ["tanár", "tanárt"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "acc-short",
+      "title": { "en": "A few words shorten their vowel", "es": "Unas pocas palabras acortan su vocal" },
+      "header": [
+        { "en": "Noun", "es": "Sustantivo" },
+        { "en": "With -t (object)", "es": "Con -t (objeto)" }
+      ],
+      "rows": [
+        ["kenyér", "kenyeret"],
+        ["levél", "levelet"],
+        ["víz", "vizet"],
+        ["kéz", "kezet"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "How to build the -t form", "es": "Cómo formar la forma con -t" },
+      "items": [
+        {
+          "text": {
+            "en": "Ends in a vowel: add -t. A final short a or e becomes long: á, é. Other final vowels stay as they are (kávé, autó).",
+            "es": "Acaba en vocal: añade -t. Una a o e corta final se alarga: á, é. Las demás vocales finales no cambian (kávé, autó)."
+          },
+          "examples": [
+            { "es": "Eszem egy almát.", "tr": { "en": "I eat an apple.", "es": "Como una manzana." } },
+            { "es": "Kérek egy kávét.", "tr": { "en": "I'd like a coffee.", "es": "Quiero un café." } },
+            { "es": "Látok egy kutyát.", "tr": { "en": "I see a dog.", "es": "Veo un perro." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Ends in a consonant: a linking vowel comes before -t, chosen by vowel harmony. Back vowels: -ot (kulcsot). Front vowels: -et (jegyet). With the rounded ö, ő, ü, ű it is usually -öt (gyümölcsöt, főnököt), but some words take -et (könyvet, fület). A small group takes -at: házat, halat.",
+            "es": "Acaba en consonante: una vocal de enlace va antes de -t, elegida por la armonía vocálica. Vocales posteriores: -ot (kulcsot). Vocales anteriores: -et (jegyet). Con ö, ő, ü, ű suele ser -öt (gyümölcsöt, főnököt), pero algunas palabras toman -et (könyvet, fület). Un grupito toma -at: házat, halat."
+          },
+          "examples": [
+            { "es": "Veszek egy jegyet.", "tr": { "en": "I'm buying a ticket.", "es": "Compro un boleto." } },
+            { "es": "Keresek egy kulcsot.", "tr": { "en": "I'm looking for a key.", "es": "Busco una llave." } },
+            { "es": "Gyümölcsöt eszem.", "tr": { "en": "I eat fruit.", "es": "Como fruta." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A group of common words adds only -t, with no linking vowel: bort, sört, húst, levest, tojást. Learn them as they come.",
+            "es": "Un grupo de palabras comunes añade solo -t, sin vocal de enlace: bort, sört, húst, levest, tojást. Apréndelas según vayan apareciendo."
+          },
+          "examples": [
+            { "es": "Sört iszom.", "tr": { "en": "I drink beer.", "es": "Bebo cerveza." } },
+            { "es": "Levest eszem.", "tr": { "en": "I eat soup.", "es": "Como sopa." } },
+            { "es": "Húst nem eszem.", "tr": { "en": "I don't eat meat.", "es": "No como carne." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few words shorten a long vowel before the ending: kenyér, kenyeret; levél, levelet; víz, vizet.",
+            "es": "Unas pocas palabras acortan una vocal larga antes de la terminación: kenyér, kenyeret; levél, levelet; víz, vizet."
+          },
+          "examples": [
+            { "es": "Kenyeret veszek.", "tr": { "en": "I'm buying bread.", "es": "Compro pan." } },
+            { "es": "Vizet kérek.", "tr": { "en": "I'd like some water.", "es": "Quiero agua." } },
+            { "es": "Levelet írok.", "tr": { "en": "I'm writing a letter.", "es": "Escribo una carta." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "What -t does in a sentence", "es": "Qué hace -t en la frase" },
+      "points": [
+        {
+          "text": {
+            "en": "Only the object takes -t; the subject stays plain. Because -t shows the object, the order of subject and object can change without changing who does what.",
+            "es": "Solo el objeto lleva -t; el sujeto queda sin terminación. Como -t muestra cuál es el objeto, el orden de sujeto y objeto puede cambiar sin cambiar quién hace qué."
+          },
+          "examples": [
+            { "es": "Anna kávét kér.", "tr": { "en": "Anna asks for coffee.", "es": "Anna pide café." } },
+            { "es": "Kávét kér Anna.", "tr": { "en": "It is coffee that Anna asks for.", "es": "Es café lo que pide Anna." } },
+            { "es": "Péter levest eszik.", "tr": { "en": "Péter eats soup.", "es": "Péter come sopa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a number the noun stays singular, and -t goes on it: három kávét, öt jegyet.",
+            "es": "Después de un número el sustantivo queda en singular y lleva -t: három kávét, öt jegyet."
+          },
+          "examples": [
+            { "es": "Három kávét kérek.", "tr": { "en": "I'd like three coffees.", "es": "Quiero tres cafés." } },
+            { "es": "Öt jegyet veszek.", "tr": { "en": "I'm buying five tickets.", "es": "Compro cinco boletos." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Question words take -t too: mi becomes mit (what), ki becomes kit (whom). The verb stays in the form you already know.",
+            "es": "Las palabras interrogativas también toman -t: mi pasa a mit (qué), ki pasa a kit (a quién). El verbo queda en la forma que ya conoces."
+          },
+          "examples": [
+            { "es": "Mit kérsz?", "tr": { "en": "What would you like?", "es": "¿Qué quieres?" } },
+            { "es": "Kit keresel?", "tr": { "en": "Whom are you looking for?", "es": "¿A quién buscas?" } },
+            { "es": "Mit eszel?", "tr": { "en": "What are you eating?", "es": "¿Qué comes?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "When I, you or we are the object, use engem, téged, minket, titeket. The verb stays in the form you already know.",
+            "es": "Cuando el objeto soy yo, eres tú o somos nosotros, usa engem, téged, minket, titeket. El verbo queda en la forma que ya conoces."
+          },
+          "examples": [
+            { "es": "Látsz engem?", "tr": { "en": "Do you see me?", "es": "¿Me ves?" } },
+            { "es": "Anna téged keres.", "tr": { "en": "Anna is looking for you.", "es": "Anna te busca." } },
+            { "es": "Várnak minket.", "tr": { "en": "They are waiting for us.", "es": "Nos esperan." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "When he, she or they are the object, use őt and őket. Here the verb changes to another set of endings (látom őt); that is a later lesson.",
+            "es": "Cuando el objeto es él, ella o ellos, usa őt y őket. Aquí el verbo cambia a otro juego de terminaciones (látom őt); eso es una lección posterior."
+          },
+          "examples": [
+            { "es": "Látom őt.", "tr": { "en": "I see him (or her).", "es": "Lo (o la) veo." } },
+            { "es": "Hívom őket.", "tr": { "en": "I'm calling them.", "es": "Los estoy llamando." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "acc-pronouns",
+      "title": { "en": "Pronouns as objects", "es": "Pronombres como objeto" },
+      "header": [
+        { "en": "Subject", "es": "Sujeto" },
+        { "en": "Object", "es": "Objeto" }
+      ],
+      "rows": [
+        ["én", "engem"],
+        ["te", "téged"],
+        ["ő", "őt"],
+        ["mi", "minket"],
+        ["ti", "titeket"],
+        ["ők", "őket"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Subject or object?", "es": "¿Sujeto u objeto?" },
+      "pairs": [
+        {
+          "a": "A kávé finom.",
+          "b": "Kávét iszom.",
+          "note": {
+            "en": "Subject: no ending. Object: -t.",
+            "es": "Sujeto: sin terminación. Objeto: -t."
+          },
+          "examples": [
+            { "es": "A kutya nagy.", "tr": { "en": "The dog is big.", "es": "El perro es grande." } },
+            { "es": "Látok egy kutyát.", "tr": { "en": "I see a dog.", "es": "Veo un perro." } }
+          ]
+        },
+        {
+          "a": "Én várok.",
+          "b": "Engem várnak.",
+          "note": {
+            "en": "Subject pronoun or object pronoun: én is the one who acts, engem is the one who receives the action.",
+            "es": "Pronombre de sujeto o de objeto: én es quien actúa, engem es quien recibe la acción."
+          },
+          "examples": [
+            { "es": "Te vársz.", "tr": { "en": "You wait.", "es": "Tú esperas." } },
+            { "es": "Téged várnak.", "tr": { "en": "They are waiting for you.", "es": "Te esperan a ti." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: -t goes on the object only, never on the subject (Anna kávét kér, not Annát kávét kér). Do not forget the vowel change: almát, not almat; körtét, not körtet. After a consonant do not add a bare -t unless the word is on the short list (bort, húst): it is kulcsot and jegyet, not kulcst and jegyt. And keep to objects with 'a, an' or no article for now: after a/az + noun the verb changes (látom a házat), a later lesson.",
+        "es": "Trampa clásica: -t va solo en el objeto, nunca en el sujeto (Anna kávét kér, no Annát kávét kér). No olvides el cambio de vocal: almát, no almat; körtét, no körtet. Después de consonante no pongas un -t suelto, salvo en la lista corta (bort, húst): se dice kulcsot y jegyet, no kulcst ni jegyt. Y por ahora quédate con objetos con «un, una» o sin artículo: después de a/az + sustantivo el verbo cambia (látom a házat), en una lección posterior."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian the object of the verb takes the ending t: «Kávét kérek», «Egy almát eszem». After a vowel you add only t, and a final short a or e becomes long: «alma, almát», «körte, körtét». After a consonant a linking vowel comes first: «kulcs, kulcsot», «jegy, jegyet», «gyümölcs, gyümölcsöt». Some words take only t: «bor, bort», «hús, húst». A few words change inside: «kenyér, kenyeret», «víz, vizet». The pronouns change too: «én, engem», «te, téged», «mi, minket».",
+    "es": "En húngaro el objeto del verbo lleva la terminación t: «Kávét kérek», «Egy almát eszem». Después de una vocal se añade solo t, y una a o e corta final se alarga: «alma, almát», «körte, körtét». Después de una consonante viene primero una vocal de enlace: «kulcs, kulcsot», «jegy, jegyet», «gyümölcs, gyümölcsöt». Algunas palabras toman solo t: «bor, bort», «hús, húst». Unas pocas palabras cambian por dentro: «kenyér, kenyeret», «víz, vizet». Los pronombres también cambian: «én, engem», «te, téged», «mi, minket»."
+  },
+  "items": [
+    {
+      "id": "targyrag-c01",
+      "sentence": "Kérek egy ___.",
+      "options": ["kávét", "kávé", "kávát"],
+      "correct": 0,
+      "why": {
+        "en": "The thing I ask for is the object and needs -t; kávé ends in a vowel, so only -t is added: kávét.",
+        "es": "Lo que pido es el objeto y necesita -t; kávé acaba en vocal, así que solo se añade -t: kávét."
+      },
+      "wrong": {
+        "kávé": {
+          "en": "kávé without an ending is the plain form, used for the subject (A kávé finom); the thing you ask for needs -t.",
+          "es": "kávé sin terminación es la forma básica, la del sujeto (A kávé finom); lo que pides necesita -t."
+        },
+        "kávát": {
+          "en": "The last vowel of kávé is already long (é), so it does not change; -t is added directly, and kávát is not a word.",
+          "es": "La última vocal de kávé ya es larga (é), así que no cambia; -t se añade directamente, y kávát no existe."
+        }
+      },
+      "examples": ["Kérek egy teát.", "Kérek egy üdítőt."],
+      "tr": { "en": "I'd like a coffee.", "es": "Quiero un café." }
+    },
+    {
+      "id": "targyrag-f01",
+      "kind": "form",
+      "verb": "tea",
+      "person": "-t",
+      "answer": "teát",
+      "table": "acc-vowel"
+    },
+    {
+      "id": "targyrag-c02",
+      "sentence": "Egy ___ eszem.",
+      "options": ["almat", "almát", "almét"],
+      "correct": 1,
+      "why": {
+        "en": "alma ends in a vowel: only -t is added, and the short a becomes á: almát.",
+        "es": "alma acaba en vocal: solo se añade -t, y la a corta pasa a á: almát."
+      },
+      "wrong": {
+        "almat": {
+          "en": "The final a must become long before -t; almat keeps the short a, which is not correct.",
+          "es": "La a final debe alargarse antes de -t; almat conserva la a corta, lo cual no es correcto."
+        },
+        "almét": {
+          "en": "é is the long form of e, not of a: alma needs á (almát), while körte takes é (körtét).",
+          "es": "é es la forma larga de e, no de a: alma necesita á (almát), mientras que körte toma é (körtét)."
+        }
+      },
+      "examples": ["Veszek egy almát.", "Eszem egy szilvát."],
+      "tr": { "en": "I eat an apple.", "es": "Como una manzana." }
+    },
+    {
+      "id": "targyrag-f02",
+      "kind": "form",
+      "verb": "kutya",
+      "person": "-t",
+      "answer": "kutyát",
+      "table": "acc-vowel"
+    },
+    {
+      "id": "targyrag-c03",
+      "sentence": "Eszem egy ___.",
+      "options": ["körtet", "körtát", "körtét"],
+      "correct": 2,
+      "why": {
+        "en": "körte ends in e, which becomes é before -t: körtét.",
+        "es": "körte acaba en e, que pasa a é antes de -t: körtét."
+      },
+      "wrong": {
+        "körtet": {
+          "en": "The final e must become long before -t; körtet keeps the short e, which is not correct.",
+          "es": "La e final debe alargarse antes de -t; körtet conserva la e corta, lo cual no es correcto."
+        },
+        "körtát": {
+          "en": "á is the long form of a; körte ends in e, so its long form is é.",
+          "es": "á es la forma larga de a; körte acaba en e, así que su forma larga es é."
+        }
+      },
+      "examples": ["Veszek egy körtét.", "Eszem egy cseresznyét."],
+      "tr": { "en": "I eat a pear.", "es": "Como una pera." }
+    },
+    {
+      "id": "targyrag-f03",
+      "kind": "form",
+      "verb": "autó",
+      "person": "-t",
+      "answer": "autót",
+      "table": "acc-vowel"
+    },
+    {
+      "id": "targyrag-w01",
+      "kind": "why",
+      "es": "Kávét kérek.",
+      "target": "Kávét",
+      "tr": { "en": "I'd like a coffee.", "es": "Quiero un café." },
+      "options": [
+        {
+          "text": {
+            "en": "The coffee is the object (what I ask for): it takes -t",
+            "es": "El café es el objeto (lo que pido): lleva -t"
+          }
+        },
+        {
+          "text": {
+            "en": "The coffee is the subject: the subject takes -t",
+            "es": "El café es el sujeto: el sujeto lleva -t"
+          },
+          "wrong": {
+            "en": "With this rule the coffee would be the one doing the action; but the subject has no ending, and here the one asking is I (kérek).",
+            "es": "Con esta regla el café sería quien hace la acción; pero el sujeto no lleva terminación, y aquí quien pide soy yo (kérek)."
+          }
+        },
+        {
+          "text": {
+            "en": "-t shows where something is",
+            "es": "-t indica dónde está algo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about a place; places take other endings (-ban, -on), and -t marks the object.",
+            "es": "Con esta regla la frase hablaría de un lugar; los lugares toman otras terminaciones (-ban, -on), y -t marca el objeto."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "targyrag-c04",
+      "sentence": "Keresek egy ___.",
+      "options": ["kulcsot", "kulcset", "kulcsöt"],
+      "correct": 0,
+      "why": {
+        "en": "kulcs has the back vowel u, so the linking vowel is o: kulcsot.",
+        "es": "kulcs tiene la vocal posterior u, así que la vocal de enlace es o: kulcsot."
+      },
+      "wrong": {
+        "kulcset": {
+          "en": "-et is for front-vowel words (jegyet); kulcs has the back vowel u.",
+          "es": "-et es para palabras con vocales anteriores (jegyet); kulcs tiene la vocal posterior u."
+        },
+        "kulcsöt": {
+          "en": "-öt is for words with ö, ő, ü, ű; kulcs has u, a back vowel.",
+          "es": "-öt es para palabras con ö, ő, ü, ű; kulcs tiene u, una vocal posterior."
+        }
+      },
+      "examples": ["Veszek egy kulcsot.", "Kérek sajtot."],
+      "tr": { "en": "I'm looking for a key.", "es": "Busco una llave." }
+    },
+    {
+      "id": "targyrag-f04",
+      "kind": "form",
+      "verb": "macska",
+      "person": "-t",
+      "answer": "macskát",
+      "table": "acc-vowel"
+    },
+    {
+      "id": "targyrag-c05",
+      "sentence": "Veszek egy ___.",
+      "options": ["jegyot", "jegyet", "jegyöt"],
+      "correct": 1,
+      "why": {
+        "en": "jegy ends in a consonant and has the front vowel e, so the linking vowel is e: jegyet.",
+        "es": "jegy acaba en consonante y tiene la vocal anterior e, así que la vocal de enlace es e: jegyet."
+      },
+      "wrong": {
+        "jegyot": {
+          "en": "-ot is for back-vowel words like kulcs (kulcsot); jegy has a front vowel.",
+          "es": "-ot es para palabras con vocales posteriores como kulcs (kulcsot); jegy tiene una vocal anterior."
+        },
+        "jegyöt": {
+          "en": "-öt belongs to words with ö, ő, ü, ű (gyümölcsöt); jegy has a plain e, so it takes -et.",
+          "es": "-öt es de palabras con ö, ő, ü, ű (gyümölcsöt); jegy tiene una e simple, así que toma -et."
+        }
+      },
+      "examples": ["Kérek egy jegyet.", "Veszek egy bérletet."],
+      "tr": { "en": "I'm buying a ticket.", "es": "Compro un boleto." }
+    },
+    {
+      "id": "targyrag-f05",
+      "kind": "form",
+      "verb": "ablak",
+      "person": "-t",
+      "answer": "ablakot",
+      "table": "acc-consonant"
+    },
+    {
+      "id": "targyrag-c06",
+      "sentence": "Veszek egy ___.",
+      "options": ["házot", "házet", "házat"],
+      "correct": 2,
+      "why": {
+        "en": "ház belongs to the small group of words that take -at: házat.",
+        "es": "ház pertenece al pequeño grupo de palabras que toman -at: házat."
+      },
+      "wrong": {
+        "házot": {
+          "en": "-ot is the usual ending after back vowels (kulcsot), but ház is one of the few words with -at.",
+          "es": "-ot es la terminación normal tras vocales posteriores (kulcsot), pero ház es una de las pocas palabras con -at."
+        },
+        "házet": {
+          "en": "-et is for front-vowel words; ház has the back vowel á, so it cannot take -et.",
+          "es": "-et es para palabras con vocales anteriores; ház tiene la vocal posterior á, así que no puede tomar -et."
+        }
+      },
+      "examples": ["Látok egy halat.", "Eszem halat."],
+      "tr": { "en": "I'm buying a house.", "es": "Compro una casa." }
+    },
+    {
+      "id": "targyrag-f06",
+      "kind": "form",
+      "verb": "bérlet",
+      "person": "-t",
+      "answer": "bérletet",
+      "table": "acc-consonant"
+    },
+    {
+      "id": "targyrag-w02",
+      "kind": "why",
+      "es": "Egy almát eszem.",
+      "target": "almát",
+      "tr": { "en": "I eat an apple.", "es": "Como una manzana." },
+      "options": [
+        {
+          "text": {
+            "en": "Ends in a consonant: linking vowel + -t",
+            "es": "Acaba en consonante: vocal de enlace + -t"
+          },
+          "wrong": {
+            "en": "With this rule you would add a linking vowel (like kulcs, kulcsot); alma already ends in a vowel, so it only gets -t.",
+            "es": "Con esta regla añadirías una vocal de enlace (como kulcs, kulcsot); alma ya acaba en vocal, así que solo recibe -t."
+          }
+        },
+        {
+          "text": {
+            "en": "No ending: the object stays in the plain form",
+            "es": "Sin terminación: el objeto queda en la forma básica"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Egy alma eszem; but what is eaten is the object, and it gets -t.",
+            "es": "Con esta regla la frase sería Egy alma eszem; pero lo que se come es el objeto y lleva -t."
+          }
+        },
+        {
+          "text": {
+            "en": "Ends in a vowel: add -t, and the short a becomes á",
+            "es": "Acaba en vocal: se añade -t y la a corta pasa a á"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "targyrag-c07",
+      "sentence": "Nem iszom sört, ___ iszom.",
+      "options": ["bort", "borot", "boret"],
+      "correct": 0,
+      "why": {
+        "en": "bor is one of the words that add only -t: bort.",
+        "es": "bor es una de las palabras que añaden solo -t: bort."
+      },
+      "wrong": {
+        "borot": {
+          "en": "borot looks like the usual back-vowel ending (kulcsot), but bor takes only -t, just as sör does in the same sentence.",
+          "es": "borot parece la terminación normal de vocales posteriores (kulcsot), pero bor toma solo -t, igual que sör en la misma frase."
+        },
+        "boret": {
+          "en": "-et is for front-vowel words, and bor has the back vowel o; it simply takes -t.",
+          "es": "-et es para palabras con vocales anteriores, y bor tiene la vocal posterior o; simplemente toma -t."
+        }
+      },
+      "examples": ["Bort kérek.", "Sört iszom."],
+      "tr": { "en": "I don't drink beer, I drink wine.", "es": "No bebo cerveza, bebo vino." }
+    },
+    {
+      "id": "targyrag-f07",
+      "kind": "form",
+      "verb": "gyümölcs",
+      "person": "-t",
+      "answer": "gyümölcsöt",
+      "table": "acc-consonant"
+    },
+    {
+      "id": "targyrag-c08",
+      "sentence": "Mit eszel? ___ eszem.",
+      "options": ["Leves", "Levest", "Levesot"],
+      "correct": 1,
+      "why": {
+        "en": "The soup is what I eat, so it is the object: leves takes only -t, levest.",
+        "es": "La sopa es lo que como, así que es el objeto: leves toma solo -t, levest."
+      },
+      "wrong": {
+        "Leves": {
+          "en": "Leves without -t is the plain form; as an object it must be levest.",
+          "es": "Leves sin -t es la forma básica; como objeto debe ser levest."
+        },
+        "Levesot": {
+          "en": "Levesot adds a linking vowel; leves is one of the words that add only -t.",
+          "es": "Levesot añade una vocal de enlace; leves es una de las palabras que añaden solo -t."
+        }
+      },
+      "examples": ["Levest főzök.", "Mit főzöl?"],
+      "tr": { "en": "What are you eating? I eat soup.", "es": "¿Qué comes? Como sopa." }
+    },
+    {
+      "id": "targyrag-f08",
+      "kind": "form",
+      "verb": "hal",
+      "person": "-t",
+      "answer": "halat",
+      "table": "acc-consonant"
+    },
+    {
+      "id": "targyrag-c09",
+      "sentence": "Veszek ___.",
+      "options": ["kenyért", "kenyerot", "kenyeret"],
+      "correct": 2,
+      "why": {
+        "en": "kenyér shortens its long vowel and takes the front ending: kenyeret.",
+        "es": "kenyér acorta su vocal larga y toma la terminación de vocales anteriores: kenyeret."
+      },
+      "wrong": {
+        "kenyért": {
+          "en": "Adding only -t to kenyér is what you would expect, but this word shortens é to e: kenyeret.",
+          "es": "Añadir solo -t a kenyér es lo que cabría esperar, pero esta palabra acorta é a e: kenyeret."
+        },
+        "kenyerot": {
+          "en": "The shortening is right, but the ending is -et: kenyér is a front-vowel word, so kenyerot is not correct.",
+          "es": "El acortamiento es correcto, pero la terminación es -et: kenyér es una palabra de vocales anteriores, así que kenyerot no es correcto."
+        }
+      },
+      "examples": ["Kérek kenyeret.", "Levelet írok."],
+      "tr": { "en": "I'm buying bread.", "es": "Compro pan." }
+    },
+    {
+      "id": "targyrag-f09",
+      "kind": "form",
+      "verb": "hús",
+      "person": "-t",
+      "answer": "húst",
+      "table": "acc-only-t"
+    },
+    {
+      "id": "targyrag-w03",
+      "kind": "why",
+      "es": "Kérek egy jegyet.",
+      "target": "jegyet",
+      "tr": { "en": "I'd like a ticket.", "es": "Quiero un boleto." },
+      "options": [
+        {
+          "text": {
+            "en": "Ends in a consonant with a back vowel: linking vowel o + -t",
+            "es": "Acaba en consonante con vocal posterior: vocal de enlace o + -t"
+          },
+          "wrong": {
+            "en": "With this rule the form would be jegyot; but jegy has the front vowel e, so the linking vowel is e.",
+            "es": "Con esta regla la forma sería jegyot; pero jegy tiene la vocal anterior e, así que la vocal de enlace es e."
+          }
+        },
+        {
+          "text": {
+            "en": "Ends in a consonant with a front vowel: linking vowel e + -t",
+            "es": "Acaba en consonante con vocal anterior: vocal de enlace e + -t"
+          }
+        },
+        {
+          "text": {
+            "en": "Ends in a vowel: only -t",
+            "es": "Acaba en vocal: solo -t"
+          },
+          "wrong": {
+            "en": "With this rule the form would be jegyt; but jegy ends in the consonant gy, so a linking vowel is needed.",
+            "es": "Con esta regla la forma sería jegyt; pero jegy acaba en la consonante gy, así que hace falta una vocal de enlace."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "targyrag-c10",
+      "sentence": "Kérek ___.",
+      "options": ["vizet", "vízt", "víz"],
+      "correct": 0,
+      "why": {
+        "en": "víz shortens its long vowel before the ending: vizet.",
+        "es": "víz acorta su vocal larga antes de la terminación: vizet."
+      },
+      "wrong": {
+        "vízt": {
+          "en": "víz keeps its long í only in the plain form; with the ending it becomes vizet, not vízt.",
+          "es": "víz conserva la í larga solo en la forma básica; con la terminación pasa a vizet, no vízt."
+        },
+        "víz": {
+          "en": "víz alone is the plain form, used for the subject (A víz hideg); the thing I ask for is the object and needs an ending.",
+          "es": "víz solo es la forma básica, la del sujeto (A víz hideg); lo que pido es el objeto y necesita terminación."
+        }
+      },
+      "examples": ["Vizet iszom.", "Tejet iszom."],
+      "tr": { "en": "I'd like some water.", "es": "Quiero agua." }
+    },
+    {
+      "id": "targyrag-f10",
+      "kind": "form",
+      "verb": "levél",
+      "person": "-t",
+      "answer": "levelet",
+      "table": "acc-short"
+    },
+    {
+      "id": "targyrag-c11",
+      "sentence": "Anna ___ keres.",
+      "options": ["engem", "téged", "te"],
+      "correct": 1,
+      "why": {
+        "en": "The sentence is about you being looked for: te as an object becomes téged.",
+        "es": "La frase trata de que te buscan a ti: te como objeto pasa a téged."
+      },
+      "wrong": {
+        "engem": {
+          "en": "With engem the sentence would mean 'Anna is looking for me', not for you.",
+          "es": "Con engem la frase significaría «Anna me busca a mí», no a ti."
+        },
+        "te": {
+          "en": "te is the subject form (Te keresel); when you are the one being looked for, you need téged.",
+          "es": "te es la forma de sujeto (Te keresel); cuando eres a quien buscan, necesitas téged."
+        }
+      },
+      "examples": ["Téged keresnek.", "Hívnak téged."],
+      "tr": { "en": "Anna is looking for you.", "es": "Anna te busca." }
+    },
+    {
+      "id": "targyrag-f11",
+      "kind": "form",
+      "verb": "én",
+      "person": "tárgyeset",
+      "answer": "engem",
+      "table": "acc-pronouns"
+    },
+    {
+      "id": "targyrag-c12",
+      "sentence": "Látsz ___?",
+      "options": ["én", "minket", "engem"],
+      "correct": 2,
+      "why": {
+        "en": "Do you see me? I am the object, so én becomes engem.",
+        "es": "¿Me ves? Yo soy el objeto, así que én pasa a engem."
+      },
+      "wrong": {
+        "én": {
+          "en": "én is the subject form (Én látok); as an object it must be engem.",
+          "es": "én es la forma de sujeto (Én látok); como objeto debe ser engem."
+        },
+        "minket": {
+          "en": "With minket the question would be 'Do you see us?'.",
+          "es": "Con minket la pregunta sería «¿Nos ves?»."
+        }
+      },
+      "examples": ["Hívnak engem.", "Engem keresnek."],
+      "tr": { "en": "Do you see me?", "es": "¿Me ves?" }
+    },
+    {
+      "id": "targyrag-f12",
+      "kind": "form",
+      "verb": "te",
+      "person": "tárgyeset",
+      "answer": "téged",
+      "table": "acc-pronouns"
+    },
+    {
+      "id": "targyrag-c13",
+      "sentence": "Várnak ___.",
+      "options": ["minket", "mi", "téged"],
+      "correct": 0,
+      "why": {
+        "en": "The ones waiting are they; we are the ones waited for, so mi becomes minket.",
+        "es": "Quienes esperan son ellos; nosotros somos a quienes esperan, así que mi pasa a minket."
+      },
+      "wrong": {
+        "mi": {
+          "en": "mi is the subject form (Mi várunk = we wait); as an object it must be minket.",
+          "es": "mi es la forma de sujeto (Mi várunk = nosotros esperamos); como objeto debe ser minket."
+        },
+        "téged": {
+          "en": "With téged the sentence would mean 'They are waiting for you'.",
+          "es": "Con téged la frase significaría «Te esperan a ti»."
+        }
+      },
+      "examples": ["Hívnak minket.", "Keresnek minket."],
+      "tr": { "en": "They are waiting for us.", "es": "Nos esperan." }
+    },
+    {
+      "id": "targyrag-w04",
+      "kind": "why",
+      "es": "Sört iszom.",
+      "target": "Sört",
+      "tr": { "en": "I drink beer.", "es": "Bebo cerveza." },
+      "options": [
+        {
+          "text": {
+            "en": "A word that adds only -t, with no linking vowel",
+            "es": "Una palabra que añade solo -t, sin vocal de enlace"
+          }
+        },
+        {
+          "text": {
+            "en": "Ends in a consonant: linking vowel + -t",
+            "es": "Acaba en consonante: vocal de enlace + -t"
+          },
+          "wrong": {
+            "en": "With this rule the form would be söröt; but sör is one of the words that add only -t.",
+            "es": "Con esta regla la forma sería söröt; pero sör es una de las palabras que añaden solo -t."
+          }
+        },
+        {
+          "text": {
+            "en": "Ends in a vowel: the vowel gets longer",
+            "es": "Acaba en vocal: la vocal se alarga"
+          },
+          "wrong": {
+            "en": "With this rule you would lengthen a final vowel; but sör ends in the consonant r, so there is nothing to lengthen.",
+            "es": "Con esta regla alargarías una vocal final; pero sör acaba en la consonante r, así que no hay nada que alargar."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "targyrag-c14",
+      "sentence": "___ kérsz? Egy teát.",
+      "options": ["Mi", "Mit", "Ki"],
+      "correct": 1,
+      "why": {
+        "en": "Egy teát is the thing asked for, so the question word is in the object form: mi becomes mit.",
+        "es": "Egy teát es lo que se pide, así que la palabra interrogativa va en forma de objeto: mi pasa a mit."
+      },
+      "wrong": {
+        "Mi": {
+          "en": "mi is the plain form (Mi ez? = What is this?); asking what someone wants needs the object form mit.",
+          "es": "mi es la forma básica (Mi ez? = ¿Qué es esto?); preguntar qué quiere alguien necesita la forma de objeto mit."
+        },
+        "Ki": {
+          "en": "ki asks about a person (who); a tea is a thing, and the object form of ki would be kit anyway.",
+          "es": "ki pregunta por una persona (quién); un té es una cosa, y la forma de objeto de ki sería kit de todos modos."
+        }
+      },
+      "examples": ["Mit eszel?", "Kit keresel?"],
+      "tr": { "en": "What would you like? A tea.", "es": "¿Qué quieres? Un té." }
+    }
+  ]
+}

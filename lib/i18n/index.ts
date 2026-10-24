@@ -1,9 +1,10 @@
 import en from './en';
 import es from './es';
+import hu from './hu';
 
 type Strings = typeof en;
 
-const LANGS: Record<string, Strings> = { en, es };
+const LANGS: Record<string, Strings> = { en, es, hu };
 
 let current: Strings = en;
 let currentCode = 'en';
@@ -19,7 +20,7 @@ export function t(): Strings {
   return current;
 }
 
-// Switches only to the languages of the two supported pairs (lib/languages.ts supportedPairs);
+// Switches only to the languages of the supported pairs (lib/languages.ts supportedPairs);
 // an unknown code falls back to English, so the UI never stays empty.
 // It does NOT notify the listeners by itself (see notifyLanguageChange below): the
 // onboarding also calls this between its own steps, as a live preview, and the

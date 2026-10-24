@@ -11,6 +11,8 @@
 // shows no second line.
 
 import type { SyllabusTopic, SyllabusUnit } from './syllabus';
+import { withHuTitles } from './huOverlay';
+import huSyllabus from '@/data/games/grammar-hu/syllabus.json';
 import a0Topics from '@/data/topics/en/a0.json';
 import a1Topics from '@/data/topics/en/a1.json';
 import a2Topics from '@/data/topics/en/a2.json';
@@ -65,15 +67,16 @@ const b1GrammarTopics = grammarOf(b1Topics);
 const b2GrammarTopics = grammarOf(b2Topics);
 const c1GrammarTopics = grammarOf(c1Topics);
 
-export const EN_UNITS: SyllabusUnit[] = [
+// The Hungarian titles (data/games/grammar-hu/syllabus.json) become the `hu` of each title.
+export const EN_UNITS: SyllabusUnit[] = withHuTitles([
   ...unitsOf('A1', a1Sublevels),
   ...unitsOf('A2', a2Sublevels),
   ...unitsOf('B1', b1Sublevels).filter((u) => b1GrammarTopics.some((t) => t.subLevel === u.id)),
   ...unitsOf('B2', b2Sublevels).filter((u) => b2GrammarTopics.some((t) => t.subLevel === u.id)),
   ...unitsOf('C1', c1Sublevels).filter((u) => c1GrammarTopics.some((t) => t.subLevel === u.id)),
-];
+], huSyllabus.en.units);
 
-export const EN_SYLLABUS: SyllabusTopic[] = [
+export const EN_SYLLABUS: SyllabusTopic[] = withHuTitles([
   // A0 basic_verbs opens A1, in the first unit.
   ...grammarOf(a0Topics).map((t) => topicOf(t, 'A1', 'A1.1')),
   ...grammarOf(a1Topics).map((t) => topicOf(t, 'A1', t.subLevel)),
@@ -81,4 +84,4 @@ export const EN_SYLLABUS: SyllabusTopic[] = [
   ...b1GrammarTopics.map((t) => topicOf(t, 'B1', t.subLevel)),
   ...b2GrammarTopics.map((t) => topicOf(t, 'B2', t.subLevel)),
   ...c1GrammarTopics.map((t) => topicOf(t, 'C1', t.subLevel)),
-];
+], huSyllabus.en.topics);

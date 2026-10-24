@@ -46,3 +46,13 @@ export function splitByMarkers(text: string, opts: SplitOptions): SpeechSegment[
   }
   return segments;
 }
+
+/**
+ * The read-aloud sections of a lesson's `speak` field for a learner whose own language is `contentLang`
+ * (en, es, or hu once the Hungarian overlay is on the lesson). A language with no text of its own falls
+ * back to the English text, and that text is then read with the English voice, not the missing language's.
+ */
+export function lessonSpeechSegments(speak: Record<string, string | undefined>, contentLang: string, learnedLang: string): SpeechSegment[] {
+  const own = speak[contentLang];
+  return splitByMarkers(own ?? speak.en ?? '', { learnedLang, nativeLang: own ? contentLang : 'en' });
+}

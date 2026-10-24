@@ -1,0 +1,773 @@
+{
+  "schema": 2,
+  "topic": "szemelyes-nevmasok",
+  "level": "A1",
+  "title": { "en": "Personal pronouns: én, te, ő", "es": "Pronombres personales: én, te, ő" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian has six personal pronouns (névmás): én (I), te (you), ő (he, she), mi (we), ti (you all), ők (they). There is no he/she difference: ő is both, because Hungarian has no gender. For a polite 'you' use Ön for one person and Önök for several; both take the 3rd person verb, like ő and ők. And you can usually drop the pronoun: the verb already says who it is (Tanár vagyok).",
+        "es": "El húngaro tiene seis pronombres personales (névmás): én (yo), te (tú), ő (él, ella), mi (nosotros), ti (ustedes, entre amigos), ők (ellos, ellas). No hay diferencia entre él y ella: ő sirve para los dos, porque el húngaro no tiene género. Para el «usted» cortés se usa Ön para una persona y Önök para varias; los dos llevan el verbo en 3.ª persona, igual que ő y ők. Y casi siempre puedes omitir el pronombre: el verbo ya dice quién es (Tanár vagyok), igual que en español."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "pronoun-forms",
+      "title": { "en": "Pronouns with lenni (to be)", "es": "Pronombres con lenni (ser, estar)" },
+      "header": [
+        { "en": "Pronoun", "es": "Pronombre" },
+        { "en": "lenni (to be)", "es": "lenni (ser, estar)" }
+      ],
+      "rows": [
+        ["én", "vagyok"],
+        ["te", "vagy"],
+        ["ő", "van"],
+        ["mi", "vagyunk"],
+        ["ti", "vagytok"],
+        ["ők", "vannak"],
+        ["Ön", "van"],
+        ["Önök", "vannak"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "who-is-who",
+      "noTableDeck": true,
+      "title": { "en": "Who is which pronoun?", "es": "¿Qué pronombre es cada quién?" },
+      "header": [
+        { "en": "Who", "es": "Quién" },
+        { "en": "Pronoun", "es": "Pronombre" }
+      ],
+      "rows": [
+        ["Kati", "ő"],
+        ["Péter", "ő"],
+        ["Anna és Péter", "ők"],
+        ["a gyerekek", "ők"],
+        ["te és én", "mi"],
+        ["Péter és én", "mi"],
+        ["te és Kati", "ti"],
+        ["Gábor és te", "ti"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "The six pronouns", "es": "Los seis pronombres" },
+      "items": [
+        {
+          "text": {
+            "en": "én = I. te = you, one person you know well: a friend, a relative, a child, someone your age (Spanish: tú).",
+            "es": "én = yo. te = tú, una persona que tuteas: un amigo, un familiar, un niño, alguien de tu edad."
+          },
+          "examples": [
+            { "es": "Te hol vagy?", "tr": { "en": "Where are you?", "es": "¿Dónde estás?" } },
+            { "es": "Én itt vagyok.", "tr": { "en": "I am here.", "es": "Yo estoy aquí." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "ő = he or she: one word for both, because Hungarian has no gender.",
+            "es": "ő = él o ella: una sola palabra para los dos, porque el húngaro no tiene género."
+          },
+          "examples": [
+            { "es": "Ő Péter.", "tr": { "en": "He is Péter.", "es": "Él es Péter." } },
+            { "es": "Ő Kati.", "tr": { "en": "She is Kati.", "es": "Ella es Kati." } },
+            { "es": "Ő tanár.", "tr": { "en": "He (or she) is a teacher.", "es": "Él (o ella) es profesor." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "mi = we. ti = you, several people you know well. ők = they.",
+            "es": "mi = nosotros. ti = ustedes, varias personas de confianza. ők = ellos o ellas."
+          },
+          "examples": [
+            { "es": "Mi otthon vagyunk.", "tr": { "en": "We are at home.", "es": "Estamos en casa." } },
+            { "es": "Ti hol vagytok?", "tr": { "en": "Where are you (all)?", "es": "¿Dónde están ustedes?" } },
+            { "es": "Ők itt vannak.", "tr": { "en": "They are here.", "es": "Ellos están aquí." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Ön and Önök: the polite you", "es": "Ön y Önök: el usted" },
+      "points": [
+        {
+          "text": {
+            "en": "Ön is the polite 'you' for one person: a stranger, an older person, a customer, an official. Write it with a capital Ö. The verb is in the 3rd person singular, exactly as with ő: Ön van, never Ön vagy. With a noun or adjective van is dropped: Ön tanár?",
+            "es": "Ön es el «usted» para una persona: un desconocido, una persona mayor, un cliente, un funcionario. Se escribe con Ö mayúscula. El verbo va en 3.ª persona del singular, igual que con ő: Ön van, nunca Ön vagy. Con un sustantivo o un adjetivo se omite van: Ön tanár?"
+          },
+          "examples": [
+            { "es": "Ön tanár?", "tr": { "en": "Are you a teacher? (polite)", "es": "¿Es usted profesor?" } },
+            { "es": "Ön hol lakik?", "tr": { "en": "Where do you live? (polite)", "es": "¿Dónde vive usted?" } },
+            { "es": "Hogy van?", "tr": { "en": "How are you? (polite)", "es": "¿Cómo está usted?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Önök is the polite 'you' for several people, with the 3rd person plural, like ők: Önök vannak, Önök dolgoznak. English has one 'you'; Hungarian keeps four apart: te, ti, Ön, Önök.",
+            "es": "Önök es el «ustedes» cortés, con la 3.ª persona del plural, igual que ők: Önök vannak, Önök dolgoznak. En México ti y Önök se dicen ustedes; el húngaro distingue cuatro: te, ti, Ön, Önök."
+          },
+          "examples": [
+            { "es": "Önök otthon vannak?", "tr": { "en": "Are you (all) at home? (polite)", "es": "¿Están ustedes en casa?" } },
+            { "es": "Önök hol dolgoznak?", "tr": { "en": "Where do you (all) work? (polite)", "es": "¿Dónde trabajan ustedes?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "te / ti or Ön / Önök? Use te and ti with friends, family, children and people your age. Use Ön and Önök with strangers, older people, customers and officials. If you are unsure with an older stranger, begin with Ön.",
+            "es": "¿te / ti o Ön / Önök? Usa te y ti con amigos, familia, niños y gente de tu edad. Usa Ön y Önök con desconocidos, personas mayores, clientes y funcionarios. Si dudas con un adulto desconocido, empieza con Ön."
+          },
+          "examples": [
+            { "es": "Szia, Kati! Te hol laksz?", "tr": { "en": "Hi, Kati! Where do you live?", "es": "¡Hola, Kati! ¿Dónde vives?" } },
+            { "es": "Jó napot! Ön hol lakik?", "tr": { "en": "Good day! Where do you live? (polite)", "es": "¡Buen día! ¿Dónde vive usted?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Dropping the pronoun", "es": "Omitir el pronombre" },
+      "points": [
+        {
+          "text": {
+            "en": "When the verb already shows the person (én, te, mi, ti), the pronoun is left out. English always needs it (you cannot say 'am a teacher'); Hungarian, like Spanish, does not.",
+            "es": "Cuando el verbo ya dice la persona (én, te, mi, ti), se omite el pronombre, igual que en español."
+          },
+          "examples": [
+            { "es": "Tanár vagyok.", "tr": { "en": "I am a teacher.", "es": "Soy profesor." } },
+            { "es": "Hol vagy?", "tr": { "en": "Where are you?", "es": "¿Dónde estás?" } },
+            { "es": "Otthon vagyunk.", "tr": { "en": "We are at home.", "es": "Estamos en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Keep the pronoun to contrast two people or to stress one: 'I am here, but YOU are at home.'",
+            "es": "Conserva el pronombre para contrastar a dos personas o para destacar a una: «yo estoy aquí, pero TÚ estás en casa»."
+          },
+          "examples": [
+            { "es": "Én tanár vagyok, te diák vagy.", "tr": { "en": "I am a teacher, you are a student.", "es": "Yo soy profesor, tú eres estudiante." } },
+            { "es": "Te otthon vagy, én itt vagyok.", "tr": { "en": "You are at home, I am here.", "es": "Tú estás en casa, yo estoy aquí." } },
+            { "es": "Én Kati vagyok, ő Anna.", "tr": { "en": "I am Kati, she is Anna.", "es": "Yo soy Kati, ella es Anna." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "ő and ők are for people only. For things there is no 'it' as a subject: Hungarian simply names nothing.",
+            "es": "ő y ők son solo para personas. Para las cosas no hay sujeto «ello»: el húngaro simplemente no dice nada."
+          },
+          "examples": [
+            { "es": "Hol van a kulcs? Itt van.", "tr": { "en": "Where is the key? It is here.", "es": "¿Dónde está la llave? Aquí está." } },
+            { "es": "Hol van az iskola? Ott van.", "tr": { "en": "Where is the school? It is there.", "es": "¿Dónde está la escuela? Allí está." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Friendly or polite? One or several?", "es": "¿Tú o usted? ¿Uno o varios?" },
+      "pairs": [
+        {
+          "a": "Hogy vagy?",
+          "b": "Hogy van?",
+          "note": {
+            "en": "Hogy vagy? is for a friend (te). Hogy van? is polite (Ön); it can also ask about a third person: Hogy van Anna?",
+            "es": "Hogy vagy? es para un amigo (te). Hogy van? es cortés (Ön); también puede preguntar por una tercera persona: Hogy van Anna?"
+          },
+          "examples": [
+            { "es": "Szia, Péter! Hogy vagy?", "tr": { "en": "Hi, Péter! How are you?", "es": "¡Hola, Péter! ¿Cómo estás?" } },
+            { "es": "Jó napot! Hogy van?", "tr": { "en": "Good day! How are you? (polite)", "es": "¡Buen día! ¿Cómo está usted?" } }
+          ]
+        },
+        {
+          "a": "Ti hol vagytok?",
+          "b": "Önök hol vannak?",
+          "note": {
+            "en": "ti = several people you know well. Önök = several people, politely.",
+            "es": "ti = varias personas que tuteas. Önök = varias personas, con trato de usted."
+          },
+          "examples": [
+            { "es": "Ti itt vagytok?", "tr": { "en": "Are you (all) here?", "es": "¿Están ustedes aquí?" } },
+            { "es": "Önök itt vannak?", "tr": { "en": "Are you (all) here? (polite)", "es": "¿Están ustedes aquí? (trato formal)" } }
+          ]
+        },
+        {
+          "a": "Ő Péter.",
+          "b": "Ő Kati.",
+          "note": {
+            "en": "Same ő for a man and a woman: he is Péter, she is Kati.",
+            "es": "El mismo ő para un hombre y una mujer: él es Péter, ella es Kati."
+          },
+          "examples": [
+            { "es": "Ő otthon van.", "tr": { "en": "He (or she) is at home.", "es": "Él (o ella) está en casa." } },
+            { "es": "Ő itt van.", "tr": { "en": "He (or she) is here.", "es": "Él (o ella) está aquí." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Ön is a polite 'you' but takes the 3rd person verb: Ön van, never Ön vagy. (2) te is one person, ti is several. (3) There is no he/she: ő for both. (4) Do not add the pronoun everywhere: Tanár vagyok, not Én tanár vagyok, unless you stress it. (5) mi is also the question word 'what': Mi ez? = What is this?",
+        "es": "Trampas clásicas: (1) Ön es el «usted» pero lleva el verbo en 3.ª persona: Ön van, nunca Ön vagy. (2) te es una persona, ti son varias. (3) No hay él/ella: ő para los dos. (4) No pongas el pronombre en todas partes: Tanár vagyok, no Én tanár vagyok, salvo para destacarlo. (5) mi también es la palabra «qué»: Mi ez? = ¿Qué es esto?"
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has six personal pronouns: «én», «te», «ő», «mi», «ti» and «ők». The word «ő» means both he and she, because Hungarian has no gender. For a polite you, use «Ön» for one person and «Önök» for several, with the verb in the third person: «Ön hol lakik?» Between friends you say «Hogy vagy?», but politely it is «Hogy van?» And you usually drop the pronoun, because the verb already says who it is: «Tanár vagyok.»",
+    "es": "El húngaro tiene seis pronombres personales: «én», «te», «ő», «mi», «ti» y «ők». La palabra «ő» significa él y ella, porque el húngaro no tiene género. Para el usted, se usa «Ön» para una persona y «Önök» para varias, con el verbo en tercera persona: «Ön hol lakik?» Entre amigos se dice «Hogy vagy?», pero con cortesía es «Hogy van?» Y casi siempre se omite el pronombre, porque el verbo ya dice quién es: «Tanár vagyok.»"
+  },
+  "glossary": [
+    { "word": "névmás", "gloss": { "en": "pronoun", "es": "pronombre" } }
+  ],
+  "items": [
+    {
+      "id": "szemelyes-nevmasok-c01",
+      "sentence": "___ otthon vagyunk.",
+      "options": ["Ti", "Mi", "Ők"],
+      "correct": 1,
+      "why": {
+        "en": "vagyunk is the form for mi (we): Mi otthon vagyunk.",
+        "es": "vagyunk es la forma de mi (nosotros): Mi otthon vagyunk."
+      },
+      "wrong": {
+        "Ti": {
+          "en": "Ti is 'you all' and goes with vagytok: Ti otthon vagytok.",
+          "es": "Ti es «ustedes» y va con vagytok: Ti otthon vagytok."
+        },
+        "Ők": {
+          "en": "Ők is 'they' and goes with vannak: Ők otthon vannak.",
+          "es": "Ők es «ellos» y va con vannak: Ők otthon vannak."
+        }
+      },
+      "examples": ["Mi itt vagyunk.", "Mi jól vagyunk."],
+      "tr": { "en": "We are at home.", "es": "Estamos en casa." }
+    },
+    {
+      "id": "szemelyes-nevmasok-f01",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "én",
+      "answer": "vagyok",
+      "table": "pronoun-forms"
+    },
+    {
+      "id": "szemelyes-nevmasok-c02",
+      "sentence": "Ön hol ___?",
+      "options": ["vagy", "van", "vagyok"],
+      "correct": 1,
+      "why": {
+        "en": "Ön, the polite 'you', takes the 3rd person verb, like ő: Ön hol van?",
+        "es": "Ön, el «usted», lleva el verbo en 3.ª persona, igual que ő: Ön hol van?"
+      },
+      "wrong": {
+        "vagy": {
+          "en": "vagy is for te: Te hol vagy? would be the friendly 'you'.",
+          "es": "vagy es para te: Te hol vagy? sería el «tú» de confianza."
+        },
+        "vagyok": {
+          "en": "vagyok is 'I am'; Ön hol vagyok? would mix 'you (polite)' with 'I am'.",
+          "es": "vagyok es «yo estoy»; Ön hol vagyok? mezclaría «usted» con «yo estoy»."
+        }
+      },
+      "examples": ["Ön tanár?", "Ön magyar?"],
+      "tr": { "en": "Where are you? (polite)", "es": "¿Dónde está usted?" }
+    },
+    {
+      "id": "szemelyes-nevmasok-f02",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "Ön",
+      "answer": "van",
+      "table": "pronoun-forms"
+    },
+    {
+      "id": "szemelyes-nevmasok-c03",
+      "sentence": "Önök otthon ___?",
+      "options": ["vannak", "vagytok", "van"],
+      "correct": 0,
+      "why": {
+        "en": "Önök, the polite 'you all', takes the 3rd person plural, like ők: vannak.",
+        "es": "Önök, el «ustedes» cortés, lleva la 3.ª persona del plural, igual que ők: vannak."
+      },
+      "wrong": {
+        "vagytok": {
+          "en": "vagytok is for ti, the friendly 'you all': Ti otthon vagytok?",
+          "es": "vagytok es para ti, el «ustedes» de confianza: Ti otthon vagytok?"
+        },
+        "van": {
+          "en": "van is singular, for one person (ő or Ön); Önök is several people.",
+          "es": "van es singular, para una persona (ő u Ön); Önök son varias personas."
+        }
+      },
+      "examples": ["Önök itt vannak?", "Önök hol vannak?"],
+      "tr": { "en": "Are you (all) at home? (polite)", "es": "¿Están ustedes en casa?" }
+    },
+    {
+      "id": "szemelyes-nevmasok-f03",
+      "kind": "form",
+      "verb": "névmás",
+      "person": "Kati",
+      "answer": "ő",
+      "table": "who-is-who"
+    },
+    {
+      "id": "szemelyes-nevmasok-w01",
+      "kind": "why",
+      "es": "Ön tanár?",
+      "target": "Ön tanár",
+      "tr": { "en": "Are you a teacher? (polite)", "es": "¿Es usted profesor?" },
+      "options": [
+        {
+          "text": {
+            "en": "Ön takes the 3rd person, and van is dropped before a noun",
+            "es": "Ön lleva la 3.ª persona, y van se omite ante un sustantivo"
+          }
+        },
+        {
+          "text": {
+            "en": "2nd person like te: the verb vagy stays",
+            "es": "2.ª persona como te: el verbo vagy se queda"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Te tanár vagy?; Ön is polite and takes the same verb as ő.",
+            "es": "Con esta regla la frase sería Te tanár vagy?; Ön es cortés y lleva el mismo verbo que ő."
+          }
+        },
+        {
+          "text": {
+            "en": "1st person: the verb always stays",
+            "es": "1.ª persona: el verbo siempre se queda"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Tanár vagyok; Ön is not 'I'.",
+            "es": "Con esta regla la frase sería Tanár vagyok; Ön no es «yo»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szemelyes-nevmasok-c04",
+      "sentence": "Szia, Gábor! Hogy ___?",
+      "options": ["van", "vagy", "vagytok"],
+      "correct": 1,
+      "why": {
+        "en": "Szia is friendly and Gábor is one person, so it is te: Hogy vagy?",
+        "es": "Szia es de confianza y Gábor es una persona, así que es te: Hogy vagy?"
+      },
+      "wrong": {
+        "van": {
+          "en": "Hogy van? is the polite 'How are you?' (Ön), or asks about a third person.",
+          "es": "Hogy van? es el «¿cómo está usted?» cortés (Ön), o pregunta por una tercera persona."
+        },
+        "vagytok": {
+          "en": "vagytok is for several people (ti); Gábor is one person.",
+          "es": "vagytok es para varias personas (ti); Gábor es una sola persona."
+        }
+      },
+      "examples": ["Hogy vagy?", "Te hol vagy?"],
+      "tr": { "en": "Hi, Gábor! How are you?", "es": "¡Hola, Gábor! ¿Cómo estás?" }
+    },
+    {
+      "id": "szemelyes-nevmasok-f04",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "ti",
+      "answer": "vagytok",
+      "table": "pronoun-forms"
+    },
+    {
+      "id": "szemelyes-nevmasok-c05",
+      "sentence": "Üdvözlöm! Hogy ___?",
+      "options": ["vagy", "van", "vagyok"],
+      "correct": 1,
+      "why": {
+        "en": "Üdvözlöm is a polite greeting, so the speaker uses Ön: Hogy van?",
+        "es": "Üdvözlöm es un saludo cortés, así que se usa Ön: Hogy van?"
+      },
+      "wrong": {
+        "vagy": {
+          "en": "Hogy vagy? is for a friend (te), not for a polite greeting.",
+          "es": "Hogy vagy? es para un amigo (te), no para un saludo cortés."
+        },
+        "vagyok": {
+          "en": "vagyok is 'I am'; Hogy vagyok? would ask 'How am I?'.",
+          "es": "vagyok es «yo estoy»; Hogy vagyok? preguntaría «¿cómo estoy yo?»."
+        }
+      },
+      "examples": ["Jó napot! Hogy van?", "Hogy van Anna?"],
+      "tr": { "en": "Welcome! How are you? (polite)", "es": "¡Bienvenido! ¿Cómo está usted?" }
+    },
+    {
+      "id": "szemelyes-nevmasok-f05",
+      "kind": "form",
+      "verb": "névmás",
+      "person": "Anna és Péter",
+      "answer": "ők",
+      "table": "who-is-who"
+    },
+    {
+      "id": "szemelyes-nevmasok-c06",
+      "sentence": "Kati? ___ otthon van.",
+      "options": ["Ő", "Ők", "Mi"],
+      "correct": 0,
+      "why": {
+        "en": "Kati is one person, 'she': Ő otthon van.",
+        "es": "Kati es una sola persona, «ella»: Ő otthon van."
+      },
+      "wrong": {
+        "Ők": {
+          "en": "Ők is 'they' and goes with vannak: Ők otthon vannak.",
+          "es": "Ők es «ellos» y va con vannak: Ők otthon vannak."
+        },
+        "Mi": {
+          "en": "Mi is 'we' and goes with vagyunk: Mi otthon vagyunk.",
+          "es": "Mi es «nosotros» y va con vagyunk: Mi otthon vagyunk."
+        }
+      },
+      "examples": ["Péter? Ő itt van.", "Ő tanár."],
+      "tr": { "en": "Kati? She is at home.", "es": "¿Kati? Ella está en casa." }
+    },
+    {
+      "id": "szemelyes-nevmasok-f06",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "Önök",
+      "answer": "vannak",
+      "table": "pronoun-forms"
+    },
+    {
+      "id": "szemelyes-nevmasok-c07",
+      "sentence": "Anna és Péter? ___ itt vannak.",
+      "options": ["Ő", "Ők", "Ti"],
+      "correct": 1,
+      "why": {
+        "en": "Anna and Péter are two people, 'they': Ők itt vannak.",
+        "es": "Anna y Péter son dos personas, «ellos»: Ők itt vannak."
+      },
+      "wrong": {
+        "Ő": {
+          "en": "Ő is one person (he or she) and goes with van: Ő itt van.",
+          "es": "Ő es una sola persona (él o ella) y va con van: Ő itt van."
+        },
+        "Ti": {
+          "en": "Ti is 'you all', said to them: Ti itt vagytok.",
+          "es": "Ti es «ustedes», dicho a ellos: Ti itt vagytok."
+        }
+      },
+      "examples": ["Kati és Gábor otthon vannak.", "Ők otthon vannak."],
+      "tr": { "en": "Anna and Péter? They are here.", "es": "¿Anna y Péter? Ellos están aquí." }
+    },
+    {
+      "id": "szemelyes-nevmasok-f07",
+      "kind": "form",
+      "verb": "névmás",
+      "person": "te és Kati",
+      "answer": "ti",
+      "table": "who-is-who"
+    },
+    {
+      "id": "szemelyes-nevmasok-c08",
+      "sentence": "Gábor és te: ___ hol vagytok?",
+      "options": ["mi", "ti", "ők"],
+      "correct": 1,
+      "why": {
+        "en": "te (you) plus Gábor makes 'you all': ti, and vagytok is its form.",
+        "es": "te (tú) más Gábor hacen «ustedes»: ti, y vagytok es su forma."
+      },
+      "wrong": {
+        "mi": {
+          "en": "mi is 'we' (the speaker included): Mi hol vagyunk?",
+          "es": "mi es «nosotros» (incluye al hablante): Mi hol vagyunk?"
+        },
+        "ők": {
+          "en": "ők is 'they', people we talk about: Ők hol vannak?",
+          "es": "ők es «ellos», personas de las que hablamos: Ők hol vannak?"
+        }
+      },
+      "examples": ["Ti otthon vagytok?", "Ti itt vagytok?"],
+      "tr": { "en": "Gábor and you: where are you (all)?", "es": "Gábor y tú: ¿dónde están ustedes?" }
+    },
+    {
+      "id": "szemelyes-nevmasok-f08",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "mi",
+      "answer": "vagyunk",
+      "table": "pronoun-forms"
+    },
+    {
+      "id": "szemelyes-nevmasok-c09",
+      "sentence": "Hol vagy, Anna? ___",
+      "options": ["Otthon vagyok.", "Otthon van.", "Otthon vagytok."],
+      "correct": 0,
+      "why": {
+        "en": "Anna answers about herself: vagyok already says 'I', so the pronoun én is dropped.",
+        "es": "Anna responde sobre sí misma: vagyok ya dice «yo», así que se omite el pronombre én."
+      },
+      "wrong": {
+        "Otthon van.": {
+          "en": "'Otthon van.' says that he or she is at home, not Anna herself.",
+          "es": "«Otthon van.» dice que él o ella está en casa, no la propia Anna."
+        },
+        "Otthon vagytok.": {
+          "en": "'Otthon vagytok.' means 'You (all) are at home.'",
+          "es": "«Otthon vagytok.» significa «ustedes están en casa»."
+        }
+      },
+      "examples": ["Itt vagyok.", "Jól vagyok."],
+      "tr": { "en": "Where are you, Anna? I am at home.", "es": "¿Dónde estás, Anna? Estoy en casa." }
+    },
+    {
+      "id": "szemelyes-nevmasok-f09",
+      "kind": "form",
+      "verb": "névmás",
+      "person": "Péter és én",
+      "answer": "mi",
+      "table": "who-is-who"
+    },
+    {
+      "id": "szemelyes-nevmasok-w02",
+      "kind": "why",
+      "es": "Üdvözlöm! Hogy van?",
+      "target": "van",
+      "tr": { "en": "Welcome! How are you? (polite)", "es": "¡Bienvenido! ¿Cómo está usted?" },
+      "options": [
+        {
+          "text": {
+            "en": "A friend (te): the verb is vagy",
+            "es": "Un amigo (te): el verbo es vagy"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Hogy vagy?, said to a friend; Üdvözlöm is a polite greeting.",
+            "es": "Con esta regla la frase sería Hogy vagy?, dicho a un amigo; Üdvözlöm es un saludo cortés."
+          }
+        },
+        {
+          "text": {
+            "en": "Polite Ön: the verb is the 3rd person van",
+            "es": "Ön, trato de usted: el verbo es la 3.ª persona van"
+          }
+        },
+        {
+          "text": {
+            "en": "Several people: the verb is vannak",
+            "es": "Varias personas: el verbo es vannak"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Hogy vannak?, 'How are they?'; here one person is greeted politely.",
+            "es": "Con esta regla la frase sería Hogy vannak?, «¿cómo están ellos?»; aquí se saluda con cortesía a una persona."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "szemelyes-nevmasok-c10",
+      "sentence": "Én tanár vagyok, ___ diák vagy.",
+      "options": ["ti", "te", "ő"],
+      "correct": 1,
+      "why": {
+        "en": "vagy is the form of te (you): Te diák vagy. The pronouns are kept to contrast the two people.",
+        "es": "vagy es la forma de te (tú): Te diák vagy. Los pronombres se conservan para contrastar a las dos personas."
+      },
+      "wrong": {
+        "ti": {
+          "en": "ti is 'you all' and needs vagytok: Ti diák vagytok.",
+          "es": "ti es «ustedes» y necesita vagytok: Ti diák vagytok."
+        },
+        "ő": {
+          "en": "ő is 'he or she' and drops van before a noun: Ő diák.",
+          "es": "ő es «él o ella» y omite van ante un sustantivo: Ő diák."
+        }
+      },
+      "examples": ["Te otthon vagy, én itt vagyok.", "Te hol vagy?"],
+      "tr": { "en": "I am a teacher, you are a student.", "es": "Yo soy profesor, tú eres estudiante." }
+    },
+    {
+      "id": "szemelyes-nevmasok-f10",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "te",
+      "answer": "vagy",
+      "table": "pronoun-forms"
+    },
+    {
+      "id": "szemelyes-nevmasok-c11",
+      "sentence": "Ön ___?",
+      "options": ["tanár van", "tanár", "tanár vagy"],
+      "correct": 1,
+      "why": {
+        "en": "Ön takes the 3rd person, and van is dropped before a noun: Ön tanár?",
+        "es": "Ön lleva la 3.ª persona, y van se omite ante un sustantivo: Ön tanár?"
+      },
+      "wrong": {
+        "tanár van": {
+          "en": "van is not used after a noun; it is for place (Ön itt van).",
+          "es": "van no se usa después de un sustantivo; es para el lugar (Ön itt van)."
+        },
+        "tanár vagy": {
+          "en": "vagy goes with te: Te tanár vagy? is the friendly 'Are you a teacher?'.",
+          "es": "vagy va con te: Te tanár vagy? es el «¿eres profesor?» de confianza."
+        }
+      },
+      "examples": ["Ön magyar?", "Ön fáradt?"],
+      "tr": { "en": "Are you a teacher? (polite)", "es": "¿Es usted profesor?" }
+    },
+    {
+      "id": "szemelyes-nevmasok-f11",
+      "kind": "form",
+      "verb": "névmás",
+      "person": "a gyerekek",
+      "answer": "ők",
+      "table": "who-is-who"
+    },
+    {
+      "id": "szemelyes-nevmasok-c12",
+      "sentence": "Hol van a kulcs? ___ van.",
+      "options": ["Ő", "Itt", "Ők"],
+      "correct": 1,
+      "why": {
+        "en": "A key is a thing, so there is no pronoun for 'it': Hungarian just says Itt van.",
+        "es": "Una llave es una cosa, así que no hay pronombre para «ella»: el húngaro dice simplemente Itt van."
+      },
+      "wrong": {
+        "Ő": {
+          "en": "ő is 'he or she', a person; a key is a thing.",
+          "es": "ő es «él o ella», una persona; una llave es una cosa."
+        },
+        "Ők": {
+          "en": "ők is 'they', several people; the key is one thing.",
+          "es": "ők es «ellos», varias personas; la llave es una sola cosa."
+        }
+      },
+      "examples": ["Hol van az iskola? Ott van.", "Hol van a bolt? Itt van."],
+      "tr": { "en": "Where is the key? It is here.", "es": "¿Dónde está la llave? Aquí está." }
+    },
+    {
+      "id": "szemelyes-nevmasok-f12",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "ő",
+      "answer": "van",
+      "table": "pronoun-forms"
+    },
+    {
+      "id": "szemelyes-nevmasok-c13",
+      "sentence": "Jó napot! ___ hol lakik?",
+      "options": ["Te", "Ön", "Ti"],
+      "correct": 1,
+      "why": {
+        "en": "lakik is the 3rd person singular, so the polite Ön fits: Ön hol lakik?",
+        "es": "lakik es la 3.ª persona del singular, así que encaja el Ön cortés: Ön hol lakik?"
+      },
+      "wrong": {
+        "Te": {
+          "en": "Te would need laksz: Te hol laksz? is the friendly 'Where do you live?'.",
+          "es": "Te necesitaría laksz: Te hol laksz? es el «¿dónde vives?» de confianza."
+        },
+        "Ti": {
+          "en": "Ti is for several friends; lakik is for one person.",
+          "es": "Ti es para varios amigos; lakik es para una sola persona."
+        }
+      },
+      "examples": ["Szia, Kati! Te hol laksz?", "Ön magyar?"],
+      "tr": { "en": "Good day! Where do you live? (polite)", "es": "¡Buen día! ¿Dónde vive usted?" }
+    },
+    {
+      "id": "szemelyes-nevmasok-w03",
+      "kind": "why",
+      "es": "Ő otthon van.",
+      "target": "Ő",
+      "tr": { "en": "He (or she) is at home.", "es": "Él (o ella) está en casa." },
+      "options": [
+        {
+          "text": {
+            "en": "ő = he or she: one word, no gender",
+            "es": "ő = él o ella: una palabra, sin género"
+          }
+        },
+        {
+          "text": {
+            "en": "ő is only 'he'; 'she' is another word",
+            "es": "ő es solo «él»; «ella» es otra palabra"
+          },
+          "wrong": {
+            "en": "With this rule Hungarian would need a second word for 'she'; it has none, ő is both.",
+            "es": "Con esta regla el húngaro necesitaría una segunda palabra para «ella»; no la tiene, ő sirve para los dos."
+          }
+        },
+        {
+          "text": {
+            "en": "ő is 'it', for things",
+            "es": "ő es «ello», para cosas"
+          },
+          "wrong": {
+            "en": "With this rule ő would also fit a key or a house; but ő is only for people, and things are left unnamed (Itt van).",
+            "es": "Con esta regla ő también serviría para una llave o una casa; pero ő es solo para personas, y las cosas no se nombran (Itt van)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szemelyes-nevmasok-c14",
+      "sentence": "Önök hol ___?",
+      "options": ["dolgoznak", "dolgozik", "dolgozol"],
+      "correct": 0,
+      "why": {
+        "en": "Önök (polite, several people) takes the 3rd person plural, the same ending as ők: -nak.",
+        "es": "Önök (cortés, varias personas) lleva la 3.ª persona del plural, la misma terminación que ők: -nak."
+      },
+      "wrong": {
+        "dolgozik": {
+          "en": "dolgozik is the 3rd person singular: Ön hol dolgozik? asks one person.",
+          "es": "dolgozik es la 3.ª persona del singular: Ön hol dolgozik? pregunta a una persona."
+        },
+        "dolgozol": {
+          "en": "dolgozol is for te: Te hol dolgozol? is the friendly 'Where do you work?'.",
+          "es": "dolgozol es para te: Te hol dolgozol? es el «¿dónde trabajas?» de confianza."
+        }
+      },
+      "examples": ["Önök otthon vannak?", "Önök itt vannak?"],
+      "tr": { "en": "Where do you (all) work? (polite)", "es": "¿Dónde trabajan ustedes?" }
+    },
+    {
+      "id": "szemelyes-nevmasok-w04",
+      "kind": "why",
+      "es": "Tanár vagyok.",
+      "target": "vagyok",
+      "tr": { "en": "I am a teacher.", "es": "Soy profesor." },
+      "options": [
+        {
+          "text": {
+            "en": "Hungarian never uses pronouns",
+            "es": "El húngaro nunca usa pronombres"
+          },
+          "wrong": {
+            "en": "With this rule you could not say Én tanár vagyok, te diák vagy; the pronoun is kept to contrast or stress.",
+            "es": "Con esta regla no podrías decir Én tanár vagyok, te diák vagy; el pronombre se conserva para contrastar o destacar."
+          }
+        },
+        {
+          "text": {
+            "en": "A noun follows: every verb is left out",
+            "es": "Sigue un sustantivo: se omite todo verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Tanár; but with I and you the verb (vagyok, vagy) always stays.",
+            "es": "Con esta regla la frase sería Tanár; pero con yo y tú el verbo (vagyok, vagy) siempre se queda."
+          }
+        },
+        {
+          "text": {
+            "en": "vagyok already says 'I', so the pronoun én is left out",
+            "es": "vagyok ya dice «yo», así que se omite el pronombre én"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

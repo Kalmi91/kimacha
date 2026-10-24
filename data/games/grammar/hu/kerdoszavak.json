@@ -1,0 +1,757 @@
+{
+  "schema": 2,
+  "topic": "kerdoszavak",
+  "level": "A1",
+  "title": { "en": "Question words: ki, mi, hol, mikor", "es": "Palabras interrogativas: ki, mi, hol, mikor" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A Hungarian question is a normal sentence with a question word placed right before the verb: Anna dolgozik → Hol dolgozik Anna? There is no 'do/does' and the verb does not change. Learn the twelve words once: ki (who), mi (what), hol (where), hova (where to), honnan (where from), mikor (when), hogyan (how), miért (why), mennyi (how much), hány (how many), melyik (which), milyen (what kind of). The table shows, for each word, an answer it asks for. A yes/no question has no special word at all: you say the statement with question intonation.",
+        "es": "Una pregunta húngara es una frase normal con una palabra interrogativa justo delante del verbo: Anna dolgozik → Hol dolgozik Anna? No hay verbo auxiliar y el verbo no cambia. Aprende una vez las doce palabras: ki (quién), mi (qué), hol (dónde), hova (adónde), honnan (de dónde), mikor (cuándo), hogyan (cómo), miért (por qué), mennyi (cuánto), hány (cuántos), melyik (cuál), milyen (qué tipo de, cómo es). La tabla muestra, para cada palabra, una respuesta por la que pregunta. Una pregunta de sí o no no lleva ninguna palabra especial: dices la afirmación con entonación de pregunta."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "qw-answers",
+      "title": { "en": "Which question word asks for which answer?", "es": "¿Qué palabra interrogativa pide qué respuesta?" },
+      "header": [
+        { "en": "Answer (válasz)", "es": "Respuesta (válasz)" },
+        { "en": "Question word (kérdőszó)", "es": "Palabra interrogativa (kérdőszó)" },
+        { "en": "Question", "es": "Pregunta" }
+      ],
+      "rows": [
+        ["Kati", "ki", "Ki jön?"],
+        ["egy telefon", "mi", "Mi ez?"],
+        ["otthon", "hol", "Hol van Anna?"],
+        ["a boltba", "hova", "Hova megy Péter?"],
+        ["Szegedről", "honnan", "Honnan jössz?"],
+        ["holnap", "mikor", "Mikor jön a busz?"],
+        ["busszal", "hogyan", "Hogyan mész haza?"],
+        ["mert fáradt vagyok", "miért", "Miért vagy fáradt?"],
+        ["tíz euró", "mennyi", "Mennyi ez?"],
+        ["három gyerek", "hány", "Hány gyerek van itt?"],
+        ["a kettes", "melyik", "Melyik busz jön?"],
+        ["nagy és olcsó", "milyen", "Milyen az étterem?"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Where does the question word go?", "es": "¿Dónde va la palabra interrogativa?" },
+      "items": [
+        {
+          "text": {
+            "en": "Right before the verb. The rest of the sentence keeps its order, and a subject noun often comes after the verb.",
+            "es": "Justo delante del verbo. El resto de la frase mantiene su orden, y un sujeto con sustantivo suele ir después del verbo."
+          },
+          "examples": [
+            { "es": "Hol dolgozik Anna?", "tr": { "en": "Where does Anna work?", "es": "¿Dónde trabaja Anna?" } },
+            { "es": "Mikor jön a busz?", "tr": { "en": "When does the bus come?", "es": "¿Cuándo llega el autobús?" } },
+            { "es": "Miért nem jössz?", "tr": { "en": "Why aren't you coming?", "es": "¿Por qué no vienes?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "No 'do/does': the verb is just its normal present form, as in Spanish. 'Where do you live?' is simply Hol laksz?",
+            "es": "Sin verbo auxiliar: el verbo va en su forma normal de presente, igual que en español. «¿Dónde vives?» es simplemente Hol laksz?"
+          },
+          "examples": [
+            { "es": "Hol laksz?", "tr": { "en": "Where do you live?", "es": "¿Dónde vives?" } },
+            { "es": "Hol dolgozol?", "tr": { "en": "Where do you work?", "es": "¿Dónde trabajas?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A yes/no question has no question word and no 'do': the words and the order are those of the statement, said with question intonation (and a question mark in writing).",
+            "es": "Una pregunta de sí o no no lleva palabra interrogativa ni auxiliar: las palabras y el orden son los de la afirmación, dichos con entonación de pregunta (y con signo de interrogación al escribir)."
+          },
+          "examples": [
+            { "es": "Anna otthon van?", "tr": { "en": "Is Anna at home?", "es": "¿Anna está en casa?" } },
+            { "es": "Fáradt vagy?", "tr": { "en": "Are you tired?", "es": "¿Estás cansado?" } },
+            { "es": "Beszélsz magyarul?", "tr": { "en": "Do you speak Hungarian?", "es": "¿Hablas húngaro?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Inside a longer sentence ('I don't know if ...'), a yes/no question gets -e on the verb: van-e, jön-e.",
+            "es": "Dentro de una frase más larga («no sé si ...»), una pregunta de sí o no lleva -e en el verbo: van-e, jön-e."
+          },
+          "examples": [
+            { "es": "Nem tudom, nyitva van-e a bolt.", "tr": { "en": "I don't know if the shop is open.", "es": "No sé si la tienda está abierta." } },
+            { "es": "Nem tudom, jön-e Péter.", "tr": { "en": "I don't know if Péter is coming.", "es": "No sé si viene Péter." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Which question word for which question?", "es": "¿Qué palabra para qué pregunta?" },
+      "points": [
+        {
+          "text": {
+            "en": "Place: hol asks where something is, hova where it goes to, honnan where it comes from. English often says just 'where' for all three, so keep them apart. Instead of hova you may also see hová.",
+            "es": "Lugar: hol pregunta dónde está algo, hova adónde va, honnan de dónde viene. Igual que en español: dónde / adónde / de dónde. En lugar de hova también verás hová."
+          },
+          "examples": [
+            { "es": "Hol vagy?", "tr": { "en": "Where are you?", "es": "¿Dónde estás?" } },
+            { "es": "Hova mész?", "tr": { "en": "Where are you going?", "es": "¿Adónde vas?" } },
+            { "es": "Honnan jössz?", "tr": { "en": "Where do you come from?", "es": "¿De dónde vienes?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "People and things: ki asks about a person, mi about a thing.",
+            "es": "Personas y cosas: ki pregunta por una persona, mi por una cosa."
+          },
+          "examples": [
+            { "es": "Ki ez?", "tr": { "en": "Who is this?", "es": "¿Quién es?" } },
+            { "es": "Mi ez?", "tr": { "en": "What is this?", "es": "¿Qué es esto?" } },
+            { "es": "Ki van otthon?", "tr": { "en": "Who is at home?", "es": "¿Quién está en casa?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Time, manner, reason: mikor (when), hogyan (how), miért (why). Hogy is a short form of hogyan (Hogy vagy?).",
+            "es": "Tiempo, manera, motivo: mikor (cuándo), hogyan (cómo), miért (por qué). Hogy es una forma corta de hogyan (Hogy vagy?)."
+          },
+          "examples": [
+            { "es": "Mikor érkezik a vonat?", "tr": { "en": "When does the train arrive?", "es": "¿Cuándo llega el tren?" } },
+            { "es": "Hogyan utazol?", "tr": { "en": "How do you travel?", "es": "¿Cómo viajas?" } },
+            { "es": "Hogy vagy?", "tr": { "en": "How are you?", "es": "¿Cómo estás?" } },
+            { "es": "Miért nem alszol?", "tr": { "en": "Why aren't you sleeping?", "es": "¿Por qué no duermes?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Quantity: hány is for things you count, and the noun after it stays SINGULAR (hány gyerek, not hány gyerekek). mennyi is for an amount or a price.",
+            "es": "Cantidad: hány es para cosas que cuentas, y el sustantivo después se queda en SINGULAR (hány gyerek, no hány gyerekek). mennyi es para una cantidad o un precio."
+          },
+          "examples": [
+            { "es": "Hány tojás van a hűtőben?", "tr": { "en": "How many eggs are in the fridge?", "es": "¿Cuántos huevos hay en el refrigerador?" } },
+            { "es": "Mennyi tej van a hűtőben?", "tr": { "en": "How much milk is in the fridge?", "es": "¿Cuánta leche hay en el refrigerador?" } },
+            { "es": "Mennyi ez?", "tr": { "en": "How much is this?", "es": "¿Cuánto cuesta esto?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Choosing and describing: melyik picks one out of several (which), milyen asks what something is like.",
+            "es": "Elegir y describir: melyik elige uno entre varios (cuál), milyen pregunta cómo es algo."
+          },
+          "examples": [
+            { "es": "Melyik busz megy a központba?", "tr": { "en": "Which bus goes to the centre?", "es": "¿Qué autobús va al centro?" } },
+            { "es": "Milyen a lakás?", "tr": { "en": "What is the apartment like?", "es": "¿Cómo es el departamento?" } },
+            { "es": "Milyen az étterem?", "tr": { "en": "What is the restaurant like?", "es": "¿Cómo es el restaurante?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Easily confused", "es": "Se confunden fácilmente" },
+      "pairs": [
+        {
+          "a": "Hol laksz?",
+          "b": "Hova utazol?",
+          "note": {
+            "en": "hol = where you are or live; hova = where you go to. English says 'where' for both.",
+            "es": "hol = dónde estás o vives; hova = adónde vas."
+          },
+          "examples": [
+            { "es": "Hol van Péter?", "tr": { "en": "Where is Péter?", "es": "¿Dónde está Péter?" } },
+            { "es": "Hova megy Péter?", "tr": { "en": "Where is Péter going?", "es": "¿Adónde va Péter?" } }
+          ]
+        },
+        {
+          "a": "Hány tojás van itt?",
+          "b": "Mennyi tej van itt?",
+          "note": {
+            "en": "hány counts separate things (singular noun); mennyi measures an amount.",
+            "es": "hány cuenta cosas separadas (sustantivo en singular); mennyi mide una cantidad."
+          },
+          "examples": [
+            { "es": "Hány pohár van az asztalon?", "tr": { "en": "How many glasses are on the table?", "es": "¿Cuántos vasos hay en la mesa?" } },
+            { "es": "Mennyi víz van a pohárban?", "tr": { "en": "How much water is in the glass?", "es": "¿Cuánta agua hay en el vaso?" } }
+          ]
+        },
+        {
+          "a": "Melyik étterem olcsó?",
+          "b": "Milyen az étterem?",
+          "note": {
+            "en": "melyik = which one of several; milyen = what is it like.",
+            "es": "melyik = cuál de varios; milyen = cómo es."
+          },
+          "examples": [
+            { "es": "Melyik busz jön?", "tr": { "en": "Which bus is coming?", "es": "¿Qué autobús viene?" } },
+            { "es": "Milyen a busz?", "tr": { "en": "What is the bus like?", "es": "¿Cómo es el autobús?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not look for 'do/does' (Hol laksz? is the whole question). English 'where' is hol or hova: Where are you going? = Hova mész? And after hány the noun stays singular: Hány gyerek van itt?",
+        "es": "Trampas clásicas: no busques un auxiliar (Hol laksz? es la pregunta completa). Dónde / adónde se separan igual que en español: ¿Adónde vas? = Hova mész? Y después de hány el sustantivo se queda en singular: Hány gyerek van itt?, nunca Hány gyerekek..."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, the question word goes right before the verb: «Hol dolgozik Anna?» There is no do or does. The most useful words are «ki», who, «mi», what, «hol», where, «hova», where to, «honnan», where from, and «mikor», when. Then come «hogyan», how, «miért», why, «mennyi», how much, «hány», how many, «melyik», which, and «milyen», what kind of. After «hány» the noun stays singular: «Hány gyerek van itt?» A yes or no question has no special word: you just say «Fáradt vagy?» with question intonation.",
+    "es": "En húngaro, la palabra interrogativa va justo delante del verbo: «Hol dolgozik Anna?» No hay verbo auxiliar. Las palabras más útiles son «ki», quién, «mi», qué, «hol», dónde, «hova», adónde, «honnan», de dónde, y «mikor», cuándo. Después vienen «hogyan», cómo, «miért», por qué, «mennyi», cuánto, «hány», cuántos, «melyik», cuál, y «milyen», qué tipo de. Después de «hány» el sustantivo se queda en singular: «Hány gyerek van itt?» Una pregunta de sí o no no lleva palabra especial: dices «Fáradt vagy?» con entonación de pregunta."
+  },
+  "glossary": [
+    { "word": "milyen", "gloss": { "en": "what kind of, what ... like", "es": "qué tipo de, cómo (es)" } }
+  ],
+  "items": [
+    {
+      "id": "kerdoszavak-c01",
+      "sentence": "___ laksz?",
+      "options": ["Hol", "Hova", "Ki"],
+      "correct": 0,
+      "why": {
+        "en": "laksz means 'you live', and living is staying in a place, so you ask hol (where).",
+        "es": "laksz significa «vives», y vivir es estar en un lugar, por eso se pregunta hol (dónde)."
+      },
+      "wrong": {
+        "Hova": {
+          "en": "With Hova the question would ask where you are going to (a destination); it needs a verb of movement like mész.",
+          "es": "Con Hova la pregunta sería adónde vas (un destino); necesita un verbo de movimiento como mész."
+        },
+        "Ki": {
+          "en": "Ki means 'who' and asks about a person; laksz needs a place, so 'Ki laksz?' makes no sense.",
+          "es": "Ki significa «quién» y pregunta por una persona; laksz necesita un lugar, por eso «Ki laksz?» no tiene sentido."
+        }
+      },
+      "examples": ["Hol dolgozol?", "Hol van a bolt?"],
+      "tr": { "en": "Where do you live?", "es": "¿Dónde vives?" }
+    },
+    {
+      "id": "kerdoszavak-f01",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: otthon",
+      "answer": "hol",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c02",
+      "sentence": "___ megy a busz? A központba.",
+      "options": ["Hol", "Honnan", "Hova"],
+      "correct": 2,
+      "why": {
+        "en": "The answer a központba (-ba = into, to) is a destination, so you ask hova (where to).",
+        "es": "La respuesta a központba (-ba = a, hacia) es un destino, por eso se pregunta hova (adónde)."
+      },
+      "wrong": {
+        "Hol": {
+          "en": "With Hol the question would ask where the bus is right now, not where it is heading.",
+          "es": "Con Hol la pregunta sería dónde está el autobús ahora, no hacia dónde va."
+        },
+        "Honnan": {
+          "en": "With Honnan the question would ask where the bus comes from; the answer would be a starting point.",
+          "es": "Con Honnan la pregunta sería de dónde viene el autobús; la respuesta sería un punto de partida."
+        }
+      },
+      "examples": ["Hova megyünk?", "Hova utazol?"],
+      "tr": { "en": "Where is the bus going? To the centre.", "es": "¿Adónde va el autobús? Al centro." }
+    },
+    {
+      "id": "kerdoszavak-f02",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: a boltba",
+      "answer": "hova",
+      "accept": ["hová"],
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c03",
+      "sentence": "___ jössz? Szegedről jövök.",
+      "options": ["Hova", "Hol", "Honnan"],
+      "correct": 2,
+      "why": {
+        "en": "Szegedről jövök gives the starting point (-ről = from), so the question is honnan (where from).",
+        "es": "Szegedről jövök da el punto de partida (-ről = de), por eso la pregunta es honnan (de dónde)."
+      },
+      "wrong": {
+        "Hova": {
+          "en": "With Hova the question would ask where you are coming to; the answer would be a destination.",
+          "es": "Con Hova la pregunta sería adónde vienes; la respuesta sería un destino."
+        },
+        "Hol": {
+          "en": "With Hol the question would ask where you are, and the answer would be a place like otthon.",
+          "es": "Con Hol la pregunta sería dónde estás, y la respuesta sería un lugar como otthon."
+        }
+      },
+      "examples": ["Honnan jön Lupita?", "Honnan érkezik a vonat?"],
+      "tr": { "en": "Where do you come from? I come from Szeged.", "es": "¿De dónde vienes? Vengo de Szeged." }
+    },
+    {
+      "id": "kerdoszavak-f03",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: holnap",
+      "answer": "mikor",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-w01",
+      "kind": "why",
+      "es": "Hova megy Anna?",
+      "target": "Hova",
+      "tr": { "en": "Where is Anna going?", "es": "¿Adónde va Anna?" },
+      "options": [
+        {
+          "text": {
+            "en": "Movement to a place: hova (where to)",
+            "es": "Movimiento hacia un lugar: hova (adónde)"
+          }
+        },
+        {
+          "text": {
+            "en": "Being in a place: hol (where)",
+            "es": "Estar en un lugar: hol (dónde)"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Hol van Anna?, which asks where Anna is, not where she is going.",
+            "es": "Con esta regla la frase sería Hol van Anna?, que pregunta dónde está Anna, no adónde va."
+          }
+        },
+        {
+          "text": {
+            "en": "Coming from a place: honnan (where from)",
+            "es": "Venir de un lugar: honnan (de dónde)"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Honnan jön Anna?, which asks where Anna comes from.",
+            "es": "Con esta regla la frase sería Honnan jön Anna?, que pregunta de dónde viene Anna."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "kerdoszavak-c04",
+      "sentence": "___ jön Péter? Holnap.",
+      "options": ["Ki", "Mikor", "Hol"],
+      "correct": 1,
+      "why": {
+        "en": "holnap means 'tomorrow', which is a time, so you ask mikor (when).",
+        "es": "holnap significa «mañana», que es un tiempo, por eso se pregunta mikor (cuándo)."
+      },
+      "wrong": {
+        "Ki": {
+          "en": "Ki means 'who' and asks about a person; holnap (tomorrow) is not a person.",
+          "es": "Ki significa «quién» y pregunta por una persona; holnap (mañana) no es una persona."
+        },
+        "Hol": {
+          "en": "Hol asks about a place; holnap (tomorrow) is a time, so the answer would not fit.",
+          "es": "Hol pregunta por un lugar; holnap (mañana) es un tiempo, así que la respuesta no encajaría."
+        }
+      },
+      "examples": ["Mikor érkezik a vonat?", "Mikor jössz haza?"],
+      "tr": { "en": "When is Péter coming? Tomorrow.", "es": "¿Cuándo viene Péter? Mañana." }
+    },
+    {
+      "id": "kerdoszavak-f04",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: mert fáradt vagyok",
+      "answer": "miért",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c05",
+      "sentence": "___ vagy fáradt?",
+      "options": ["Mikor", "Mennyi", "Miért"],
+      "correct": 2,
+      "why": {
+        "en": "The question asks for a reason, so miért (why) goes right before vagy.",
+        "es": "La pregunta pide un motivo, por eso miért (por qué) va justo delante de vagy."
+      },
+      "wrong": {
+        "Mikor": {
+          "en": "With Mikor the question would mean 'When are you tired?'.",
+          "es": "Con Mikor la pregunta sería «¿Cuándo estás cansado?»."
+        },
+        "Mennyi": {
+          "en": "mennyi asks about an amount or a price (how much), not about a reason.",
+          "es": "mennyi pregunta por una cantidad o un precio (cuánto), no por un motivo."
+        }
+      },
+      "examples": ["Miért nem jössz?", "Miért nem alszol?"],
+      "tr": { "en": "Why are you tired?", "es": "¿Por qué estás cansado?" }
+    },
+    {
+      "id": "kerdoszavak-f05",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: Kati",
+      "answer": "ki",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c06",
+      "sentence": "___ ez? Ez Kati.",
+      "options": ["Mi", "Hol", "Ki"],
+      "correct": 2,
+      "why": {
+        "en": "Kati is a person, so you ask ki (who).",
+        "es": "Kati es una persona, por eso se pregunta ki (quién)."
+      },
+      "wrong": {
+        "Mi": {
+          "en": "With Mi the question would be 'What is this?', and the answer would name a thing, not a person.",
+          "es": "Con Mi la pregunta sería «¿Qué es esto?», y la respuesta nombraría una cosa, no una persona."
+        },
+        "Hol": {
+          "en": "With Hol the question would be 'Where is this?', which asks for a place.",
+          "es": "Con Hol la pregunta sería «¿Dónde está esto?», que pide un lugar."
+        }
+      },
+      "examples": ["Ki az?", "Ki van otthon?"],
+      "tr": { "en": "Who is this? This is Kati.", "es": "¿Quién es? Ésta es Kati." }
+    },
+    {
+      "id": "kerdoszavak-f06",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: három gyerek",
+      "answer": "hány",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c07",
+      "sentence": "___ ez? Ez egy telefon.",
+      "options": ["Mi", "Ki", "Hány"],
+      "correct": 0,
+      "why": {
+        "en": "A telefon is a thing, so you ask mi (what).",
+        "es": "Un telefon es una cosa, por eso se pregunta mi (qué)."
+      },
+      "wrong": {
+        "Ki": {
+          "en": "With Ki the question would be 'Who is this?', which is for a person.",
+          "es": "Con Ki la pregunta sería «¿Quién es?», que es para una persona."
+        },
+        "Hány": {
+          "en": "hány asks for a number (how many), but the answer names a thing.",
+          "es": "hány pide un número (cuántos), pero la respuesta nombra una cosa."
+        }
+      },
+      "examples": ["Mi az?", "Mi van a hűtőben?"],
+      "tr": { "en": "What is this? This is a phone.", "es": "¿Qué es esto? Esto es un teléfono." }
+    },
+    {
+      "id": "kerdoszavak-w02",
+      "kind": "why",
+      "es": "Hány gyerek van itt?",
+      "target": "gyerek",
+      "tr": { "en": "How many children are here?", "es": "¿Cuántos niños hay aquí?" },
+      "options": [
+        {
+          "text": {
+            "en": "Plural noun, because the question asks about many",
+            "es": "Sustantivo en plural, porque la pregunta es por muchos"
+          },
+          "wrong": {
+            "en": "With this rule the noun would be gyerekek, but Hungarian keeps the singular after hány and after numbers.",
+            "es": "Con esta regla el sustantivo sería gyerekek, pero el húngaro mantiene el singular después de hány y de los números."
+          }
+        },
+        {
+          "text": {
+            "en": "Singular noun after hány, as after any number",
+            "es": "Sustantivo en singular después de hány, como después de cualquier número"
+          }
+        },
+        {
+          "text": {
+            "en": "mennyi plus a noun you cannot count",
+            "es": "mennyi más un sustantivo que no se puede contar"
+          },
+          "wrong": {
+            "en": "With this rule the question would be Mennyi gyerek van itt?; mennyi is for amounts like water or money, and children are counted.",
+            "es": "Con esta regla la pregunta sería Mennyi gyerek van itt?; mennyi es para cantidades como el agua o el dinero, y a los niños se les cuenta."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "kerdoszavak-f07",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: tíz euró",
+      "answer": "mennyi",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c08",
+      "sentence": "Hány ___ van a szobában? Három.",
+      "options": ["gyerekek", "a gyerek", "gyerek"],
+      "correct": 2,
+      "why": {
+        "en": "After hány (and after any number) the noun stays singular: hány gyerek, három gyerek.",
+        "es": "Después de hány (y de cualquier número) el sustantivo se queda en singular: hány gyerek, három gyerek."
+      },
+      "wrong": {
+        "gyerekek": {
+          "en": "gyerekek is the plural 'the children' when there is no number or quantity word (A gyerekek a szobában vannak).",
+          "es": "gyerekek es el plural «los niños» cuando no hay número ni palabra de cantidad (A gyerekek a szobában vannak)."
+        },
+        "a gyerek": {
+          "en": "a gyerek is 'the child', one specific child; a counting question has no article.",
+          "es": "a gyerek es «el niño», un niño concreto; una pregunta de conteo no lleva artículo."
+        }
+      },
+      "examples": ["Hány tojás van a hűtőben?", "Hány óra van?"],
+      "tr": { "en": "How many children are in the room? Three.", "es": "¿Cuántos niños hay en el cuarto? Tres." }
+    },
+    {
+      "id": "kerdoszavak-f08",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: a kettes",
+      "answer": "melyik",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c09",
+      "sentence": "___ víz van a pohárban?",
+      "options": ["Hány", "Milyen", "Mennyi"],
+      "correct": 2,
+      "why": {
+        "en": "víz (water) is not counted one by one, so you ask about the amount: mennyi.",
+        "es": "víz (agua) no se cuenta una por una, por eso se pregunta por la cantidad: mennyi."
+      },
+      "wrong": {
+        "Hány": {
+          "en": "hány asks for a number of countable things (hány pohár, hány tojás); you cannot count víz that way.",
+          "es": "hány pide un número de cosas contables (hány pohár, hány tojás); el víz no se cuenta así."
+        },
+        "Milyen": {
+          "en": "Milyen víz van a pohárban? would mean 'What kind of water is in the glass?' (cold, hot), not how much.",
+          "es": "Milyen víz van a pohárban? sería «¿Qué tipo de agua hay en el vaso?» (fría, caliente), no cuánta."
+        }
+      },
+      "examples": ["Mennyi tej van a hűtőben?", "Mennyi ez?"],
+      "tr": { "en": "How much water is in the glass?", "es": "¿Cuánta agua hay en el vaso?" }
+    },
+    {
+      "id": "kerdoszavak-f09",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: nagy és olcsó",
+      "answer": "milyen",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c10",
+      "sentence": "___ busz megy a központba?",
+      "options": ["Melyik", "Milyen", "Mikor"],
+      "correct": 0,
+      "why": {
+        "en": "You pick one bus out of several, so you ask melyik (which).",
+        "es": "Eliges un autobús entre varios, por eso se pregunta melyik (cuál)."
+      },
+      "wrong": {
+        "Milyen": {
+          "en": "Milyen busz would ask what a bus is like (big, new, fast), not which one.",
+          "es": "Milyen busz preguntaría cómo es un autobús (grande, nuevo, rápido), no cuál."
+        },
+        "Mikor": {
+          "en": "mikor means 'when'; it cannot stand in front of a noun like busz to mean 'which'.",
+          "es": "mikor significa «cuándo»; no puede ir delante de un sustantivo como busz para decir «cuál»."
+        }
+      },
+      "examples": ["Melyik étterem olcsó?", "Melyik busz jön?"],
+      "tr": { "en": "Which bus goes to the centre?", "es": "¿Qué autobús va al centro?" }
+    },
+    {
+      "id": "kerdoszavak-w03",
+      "kind": "why",
+      "es": "Nem tudom, nyitva van-e a bolt.",
+      "target": "van-e",
+      "tr": { "en": "I don't know if the shop is open.", "es": "No sé si la tienda está abierta." },
+      "options": [
+        {
+          "text": {
+            "en": "-e makes a yes/no question inside a longer sentence ('if')",
+            "es": "-e forma una pregunta de sí o no dentro de una frase más larga («si»)"
+          }
+        },
+        {
+          "text": {
+            "en": "-e means 'also'",
+            "es": "-e significa «también»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use is ('the shop is also open'); -e does not mean 'also'.",
+            "es": "Con esta regla la frase usaría is («la tienda también está abierta»); -e no significa «también»."
+          }
+        },
+        {
+          "text": {
+            "en": "-e stands for a question word like 'where'",
+            "es": "-e sustituye a una palabra interrogativa como «dónde»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem tudom, hol van a bolt; -e asks yes or no, it does not replace a question word.",
+            "es": "Con esta regla la frase sería Nem tudom, hol van a bolt; -e pregunta sí o no, no sustituye a una palabra interrogativa."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "kerdoszavak-f10",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: busszal",
+      "answer": "hogyan",
+      "accept": ["hogy"],
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c11",
+      "sentence": "___ az étterem? Nagy és olcsó.",
+      "options": ["Melyik", "Mennyi", "Milyen"],
+      "correct": 2,
+      "why": {
+        "en": "The answer describes the restaurant (big and cheap), so you ask milyen (what is it like).",
+        "es": "La respuesta describe el restaurante (grande y barato), por eso se pregunta milyen (cómo es)."
+      },
+      "wrong": {
+        "Melyik": {
+          "en": "With Melyik the question would mean 'Which restaurant is it?', asking to pick one out, not to describe it.",
+          "es": "Con Melyik la pregunta sería «¿Cuál es el restaurante?», para elegir uno, no para describirlo."
+        },
+        "Mennyi": {
+          "en": "mennyi asks about an amount or a price, but nagy és olcsó describes qualities.",
+          "es": "mennyi pregunta por una cantidad o un precio, pero nagy és olcsó describe cualidades."
+        }
+      },
+      "examples": ["Milyen a lakás?", "Milyen az idő?"],
+      "tr": { "en": "What is the restaurant like? Big and cheap.", "es": "¿Cómo es el restaurante? Grande y barato." }
+    },
+    {
+      "id": "kerdoszavak-f11",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: Szegedről",
+      "answer": "honnan",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c12",
+      "sentence": "___ mész haza? Busszal.",
+      "options": ["Hol", "Hogyan", "Hány"],
+      "correct": 1,
+      "why": {
+        "en": "busszal (by bus) says how you travel, so the question is hogyan (how).",
+        "es": "busszal (en autobús) dice cómo viajas, por eso la pregunta es hogyan (cómo)."
+      },
+      "wrong": {
+        "Hol": {
+          "en": "With Hol the question would ask where you are; busszal is not a place.",
+          "es": "Con Hol la pregunta sería dónde estás; busszal no es un lugar."
+        },
+        "Hány": {
+          "en": "hány asks for a number; busszal is a means of transport.",
+          "es": "hány pide un número; busszal es un medio de transporte."
+        }
+      },
+      "examples": ["Hogyan utazol?", "Hogyan jössz?"],
+      "tr": { "en": "How do you go home? By bus.", "es": "¿Cómo te vas a casa? En autobús." }
+    },
+    {
+      "id": "kerdoszavak-f12",
+      "kind": "form",
+      "verb": "kérdőszó",
+      "person": "válasz: egy telefon",
+      "answer": "mi",
+      "table": "qw-answers"
+    },
+    {
+      "id": "kerdoszavak-c13",
+      "sentence": "___?",
+      "options": ["Hol dolgozik Anna", "Dolgozik hol Anna", "Hol Anna dolgozik"],
+      "correct": 0,
+      "why": {
+        "en": "The question word stands right before the verb, and the subject follows: Hol dolgozik Anna?",
+        "es": "La palabra interrogativa va justo delante del verbo y el sujeto va detrás: Hol dolgozik Anna?"
+      },
+      "wrong": {
+        "Dolgozik hol Anna": {
+          "en": "This puts the question word after the verb; Hungarian wants it directly in front of the verb.",
+          "es": "Esto pone la palabra interrogativa después del verbo; el húngaro la quiere justo delante del verbo."
+        },
+        "Hol Anna dolgozik": {
+          "en": "This puts Anna between the question word and the verb; in a normal question nothing stands between them.",
+          "es": "Esto pone a Anna entre la palabra interrogativa y el verbo; en una pregunta normal no va nada entre ellos."
+        }
+      },
+      "examples": ["Mikor jön Péter?", "Hova megy Kati?"],
+      "tr": { "en": "Where does Anna work?", "es": "¿Dónde trabaja Anna?" }
+    },
+    {
+      "id": "kerdoszavak-c14",
+      "sentence": "Nem tudom, ___ a bolt.",
+      "options": ["hol van", "mikor van nyitva", "nyitva van-e"],
+      "correct": 2,
+      "why": {
+        "en": "-e on the verb turns the clause into 'if/whether' (a yes/no question): nyitva van-e.",
+        "es": "-e en el verbo convierte la cláusula en «si» (una pregunta de sí o no): nyitva van-e."
+      },
+      "wrong": {
+        "hol van": {
+          "en": "With this the sentence would mean 'I don't know where the shop is'; hol asks about a place, not yes or no.",
+          "es": "Con esto la frase significaría «no sé dónde está la tienda»; hol pregunta por un lugar, no sí o no."
+        },
+        "mikor van nyitva": {
+          "en": "With this the sentence would mean 'I don't know when the shop is open'; mikor asks about time.",
+          "es": "Con esto la frase significaría «no sé cuándo está abierta la tienda»; mikor pregunta por el tiempo."
+        }
+      },
+      "examples": ["Nem tudom, otthon van-e Anna.", "Nem tudom, jön-e Péter."],
+      "tr": { "en": "I don't know if the shop is open.", "es": "No sé si la tienda está abierta." }
+    },
+    {
+      "id": "kerdoszavak-w04",
+      "kind": "why",
+      "es": "Mikor jön a busz?",
+      "target": "Mikor jön",
+      "tr": { "en": "When does the bus come?", "es": "¿Cuándo llega el autobús?" },
+      "options": [
+        {
+          "text": {
+            "en": "The verb comes first, then the question word",
+            "es": "Primero va el verbo y después la palabra interrogativa"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Jön mikor a busz?, which is wrong: the question word comes first.",
+            "es": "Con esta regla la frase sería Jön mikor a busz?, que es incorrecta: la palabra interrogativa va primero."
+          }
+        },
+        {
+          "text": {
+            "en": "The subject stands between the question word and the verb",
+            "es": "El sujeto va entre la palabra interrogativa y el verbo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mikor a busz jön?, which is wrong: the verb follows the question word at once.",
+            "es": "Con esta regla la frase sería Mikor a busz jön?, que es incorrecta: el verbo va justo después de la palabra interrogativa."
+          }
+        },
+        {
+          "text": {
+            "en": "The question word stands right before the verb",
+            "es": "La palabra interrogativa va justo delante del verbo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

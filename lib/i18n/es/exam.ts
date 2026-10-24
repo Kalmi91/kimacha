@@ -50,7 +50,7 @@ const es: typeof en = {
     skillPracticeSentences: 'Practica oraciones',
     introSpeaking: (n: number) => `Expresión oral: ${n} ${n === 1 ? 'pregunta' : 'preguntas'}`,
     skillSpeaking: 'Expresión oral',
-    speakTranslate: (lang: string): string => (lang === 'es' ? 'Dilo en español' : 'Dilo en inglés'),
+    speakTranslate: (lang: string): string => (lang === 'es' ? 'Dilo en español' : lang === 'hu' ? 'Dilo en húngaro' : 'Dilo en inglés'),
     speakRepeat: 'Léelo en voz alta',
     speakHint: 'Toca el micrófono del teclado y di la oración. Tus palabras aparecen en el cuadro.',
     speakPlaceholder: 'Aquí aparecen tus palabras',

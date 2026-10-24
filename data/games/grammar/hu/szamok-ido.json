@@ -1,0 +1,1631 @@
+{
+  "schema": 2,
+  "topic": "szamok-ido",
+  "level": "A1",
+  "title": {
+    "en": "Numbers, time, days and dates",
+    "es": "Números, hora, días y fechas"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian numbers are regular: after ten you just build them (tizenegy, huszonöt). To ask the time say Hány óra van? and answer Három óra van. To say AT a time, add -kor to the number: háromkor, hétkor. Days and months are written with small letters (hétfő, május), and 'on Monday' or 'on May 1' take a short ending: hétfőn, május elsején. After a number the noun stays singular: három óra, két hónap.",
+        "es": "Los números húngaros son regulares: después del diez simplemente se arman (tizenegy, huszonöt). Para preguntar la hora se dice Hány óra van? y se responde Három óra van. Para decir A una hora, añade -kor al número: háromkor, hétkor. Los días y los meses se escriben con minúscula, igual que en español (hétfő, május), y «el lunes» o «el 1 de mayo» llevan una terminación corta: hétfőn, május elsején. Después de un número el sustantivo queda en singular: három óra, két hónap."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "numbers",
+      "title": {
+        "en": "Numbers",
+        "es": "Números"
+      },
+      "header": [
+        {
+          "en": "Number",
+          "es": "Número"
+        },
+        {
+          "en": "Hungarian",
+          "es": "Húngaro"
+        }
+      ],
+      "rows": [
+        [
+          "1",
+          "egy"
+        ],
+        [
+          "2",
+          "kettő / két"
+        ],
+        [
+          "3",
+          "három"
+        ],
+        [
+          "4",
+          "négy"
+        ],
+        [
+          "5",
+          "öt"
+        ],
+        [
+          "6",
+          "hat"
+        ],
+        [
+          "7",
+          "hét"
+        ],
+        [
+          "8",
+          "nyolc"
+        ],
+        [
+          "9",
+          "kilenc"
+        ],
+        [
+          "10",
+          "tíz"
+        ],
+        [
+          "20",
+          "húsz"
+        ],
+        [
+          "30",
+          "harminc"
+        ],
+        [
+          "40",
+          "negyven"
+        ],
+        [
+          "50",
+          "ötven"
+        ],
+        [
+          "60",
+          "hatvan"
+        ],
+        [
+          "70",
+          "hetven"
+        ],
+        [
+          "80",
+          "nyolcvan"
+        ],
+        [
+          "90",
+          "kilencven"
+        ],
+        [
+          "100",
+          "száz"
+        ],
+        [
+          "1000",
+          "ezer"
+        ],
+        [
+          "2000",
+          "kétezer"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "number-builder",
+      "noTableDeck": true,
+      "title": {
+        "en": "Building numbers: ten + unit, tens + unit",
+        "es": "Cómo se arman los números: diez + unidad, decena + unidad"
+      },
+      "header": [
+        {
+          "en": "Number",
+          "es": "Número"
+        },
+        {
+          "en": "Built from",
+          "es": "Se arma con"
+        },
+        {
+          "en": "Hungarian",
+          "es": "Húngaro"
+        }
+      ],
+      "rows": [
+        [
+          "11",
+          "tizen + egy",
+          "tizenegy"
+        ],
+        [
+          "12",
+          "tizen + kettő",
+          "tizenkettő"
+        ],
+        [
+          "15",
+          "tizen + öt",
+          "tizenöt"
+        ],
+        [
+          "21",
+          "huszon + egy",
+          "huszonegy"
+        ],
+        [
+          "25",
+          "huszon + öt",
+          "huszonöt"
+        ],
+        [
+          "31",
+          "harminc + egy",
+          "harmincegy"
+        ],
+        [
+          "55",
+          "ötven + öt",
+          "ötvenöt"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Numbers and nouns",
+        "es": "Números y sustantivos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After a number (and after hány, how many) the noun stays SINGULAR. English says 'three children' and Spanish says «tres niños», but Hungarian says három gyerek, never három gyerekek.",
+            "es": "Después de un número (y después de hány, cuántos) el sustantivo queda en SINGULAR. En español se dice «tres niños», pero el húngaro dice három gyerek, nunca három gyerekek."
+          },
+          "examples": [
+            {
+              "es": "Három gyerek van a szobában.",
+              "tr": {
+                "en": "There are three children in the room.",
+                "es": "Hay tres niños en la habitación."
+              }
+            },
+            {
+              "es": "Egy órában hatvan perc van.",
+              "tr": {
+                "en": "There are sixty minutes in an hour.",
+                "es": "Una hora tiene sesenta minutos."
+              }
+            },
+            {
+              "es": "Hány kutya van a kertben?",
+              "tr": {
+                "en": "How many dogs are in the garden?",
+                "es": "¿Cuántos perros hay en el jardín?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Two is kettő when it stands alone and két before a noun: Hány kutya van? Kettő. Két kutya van.",
+            "es": "El dos es kettő cuando va solo y két delante de un sustantivo: Hány kutya van? Kettő. Két kutya van."
+          },
+          "examples": [
+            {
+              "es": "Két kutya van a kertben.",
+              "tr": {
+                "en": "There are two dogs in the garden.",
+                "es": "Hay dos perros en el jardín."
+              }
+            },
+            {
+              "es": "Hány gyerek van? Kettő.",
+              "tr": {
+                "en": "How many children are there? Two.",
+                "es": "¿Cuántos niños hay? Dos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "clock",
+      "noTableDeck": true,
+      "title": {
+        "en": "What time is it? Hány óra van?",
+        "es": "¿Qué hora es? Hány óra van?"
+      },
+      "header": [
+        {
+          "en": "Time",
+          "es": "Hora"
+        },
+        {
+          "en": "Hungarian",
+          "es": "Húngaro"
+        }
+      ],
+      "rows": [
+        [
+          "1:00",
+          "Egy óra van."
+        ],
+        [
+          "2:00",
+          "Két óra van."
+        ],
+        [
+          "3:00",
+          "Három óra van."
+        ],
+        [
+          "7:00",
+          "Hét óra van."
+        ],
+        [
+          "12:00",
+          "Dél van."
+        ],
+        [
+          "2:30",
+          "Fél három van."
+        ],
+        [
+          "6:30",
+          "Fél hét van."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kor-forms",
+      "title": {
+        "en": "At what time? number + -kor",
+        "es": "¿A qué hora? número + -kor"
+      },
+      "header": [
+        {
+          "en": "Number",
+          "es": "Número"
+        },
+        {
+          "en": "At that time",
+          "es": "A esa hora"
+        }
+      ],
+      "rows": [
+        [
+          "egy",
+          "egykor"
+        ],
+        [
+          "kettő",
+          "kettőkor"
+        ],
+        [
+          "három",
+          "háromkor"
+        ],
+        [
+          "négy",
+          "négykor"
+        ],
+        [
+          "öt",
+          "ötkor"
+        ],
+        [
+          "hat",
+          "hatkor"
+        ],
+        [
+          "hét",
+          "hétkor"
+        ],
+        [
+          "nyolc",
+          "nyolckor"
+        ],
+        [
+          "kilenc",
+          "kilenckor"
+        ],
+        [
+          "tíz",
+          "tízkor"
+        ],
+        [
+          "tizenegy",
+          "tizenegykor"
+        ],
+        [
+          "tizenkettő",
+          "tizenkettőkor"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Telling the time",
+        "es": "Decir la hora"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "What time is it now? Hány óra van? (literally 'how many hours are there?'). Answer with number + óra + van. Here van always stays, it is a fixed pattern.",
+            "es": "¿Qué hora es ahora? Hány óra van? (literalmente «¿cuántas horas hay?»). Se responde con número + óra + van. Aquí van siempre se queda, es un patrón fijo (Három óra van = «Son las tres»)."
+          },
+          "examples": [
+            {
+              "es": "Hány óra van?",
+              "tr": {
+                "en": "What time is it?",
+                "es": "¿Qué hora es?"
+              }
+            },
+            {
+              "es": "Nyolc óra van.",
+              "tr": {
+                "en": "It is eight o'clock.",
+                "es": "Son las ocho."
+              }
+            },
+            {
+              "es": "Egy óra van.",
+              "tr": {
+                "en": "It is one o'clock.",
+                "es": "Es la una."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Half past: fél + the NEXT hour. Hungarian says 'half to three', so fél három is 2:30. Noon is dél.",
+            "es": "Y media: fél + la hora SIGUIENTE. El húngaro dice «media hora para las tres», así que fél három es 2:30 (en español sería «las dos y media»). El mediodía es dél."
+          },
+          "examples": [
+            {
+              "es": "Fél három van.",
+              "tr": {
+                "en": "It is half past two (2:30).",
+                "es": "Son las dos y media (2:30)."
+              }
+            },
+            {
+              "es": "Fél hét van.",
+              "tr": {
+                "en": "It is half past six (6:30).",
+                "es": "Son las seis y media (6:30)."
+              }
+            },
+            {
+              "es": "Dél van.",
+              "tr": {
+                "en": "It is noon.",
+                "es": "Es mediodía."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "AT what time? Hánykor? Add -kor to the number. There is only one form: -kor does not change with vowel harmony (hatkor, tízkor, nyolckor).",
+            "es": "¿A QUÉ hora? Hánykor? Añade -kor al número. Solo hay una forma: -kor no cambia con la armonía vocálica (hatkor, tízkor, nyolckor)."
+          },
+          "examples": [
+            {
+              "es": "Hánykor kezdesz?",
+              "tr": {
+                "en": "At what time do you start?",
+                "es": "¿A qué hora empiezas?"
+              }
+            },
+            {
+              "es": "Hétkor kezdek.",
+              "tr": {
+                "en": "I start at seven.",
+                "es": "Empiezo a las siete."
+              }
+            },
+            {
+              "es": "Hatkor otthon vagyok.",
+              "tr": {
+                "en": "At six I am at home.",
+                "es": "A las seis estoy en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Parts of the day need no ending: reggel (in the morning), este (in the evening), délután (in the afternoon). Noon is délben (dél + -ben). They go before the time.",
+            "es": "Las partes del día no llevan terminación: reggel (por la mañana), este (por la noche), délután (por la tarde). El mediodía es délben (dél + -ben). Van antes de la hora."
+          },
+          "examples": [
+            {
+              "es": "Reggel hétkor kelek.",
+              "tr": {
+                "en": "I get up at seven in the morning.",
+                "es": "Me levanto a las siete de la mañana."
+              }
+            },
+            {
+              "es": "Délben eszem.",
+              "tr": {
+                "en": "I eat at noon.",
+                "es": "Como al mediodía."
+              }
+            },
+            {
+              "es": "Délután négykor dolgozom.",
+              "tr": {
+                "en": "I work at four in the afternoon.",
+                "es": "Trabajo a las cuatro de la tarde."
+              }
+            },
+            {
+              "es": "Este hatkor otthon vagyok.",
+              "tr": {
+                "en": "In the evening at six I am at home.",
+                "es": "Por la noche, a las seis, estoy en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "day-forms",
+      "title": {
+        "en": "On which day?",
+        "es": "¿Qué día? («el lunes»)"
+      },
+      "header": [
+        {
+          "en": "Day",
+          "es": "Día"
+        },
+        {
+          "en": "On that day",
+          "es": "En ese día"
+        }
+      ],
+      "rows": [
+        [
+          "hétfő",
+          "hétfőn"
+        ],
+        [
+          "kedd",
+          "kedden"
+        ],
+        [
+          "szerda",
+          "szerdán"
+        ],
+        [
+          "csütörtök",
+          "csütörtökön"
+        ],
+        [
+          "péntek",
+          "pénteken"
+        ],
+        [
+          "szombat",
+          "szombaton"
+        ],
+        [
+          "vasárnap",
+          "vasárnap"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "month-forms",
+      "title": {
+        "en": "In which month?",
+        "es": "¿En qué mes?"
+      },
+      "header": [
+        {
+          "en": "Month",
+          "es": "Mes"
+        },
+        {
+          "en": "In that month",
+          "es": "En ese mes"
+        }
+      ],
+      "rows": [
+        [
+          "január",
+          "januárban"
+        ],
+        [
+          "február",
+          "februárban"
+        ],
+        [
+          "március",
+          "márciusban"
+        ],
+        [
+          "április",
+          "áprilisban"
+        ],
+        [
+          "május",
+          "májusban"
+        ],
+        [
+          "június",
+          "júniusban"
+        ],
+        [
+          "július",
+          "júliusban"
+        ],
+        [
+          "augusztus",
+          "augusztusban"
+        ],
+        [
+          "szeptember",
+          "szeptemberben"
+        ],
+        [
+          "október",
+          "októberben"
+        ],
+        [
+          "november",
+          "novemberben"
+        ],
+        [
+          "december",
+          "decemberben"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "date-forms",
+      "noTableDeck": true,
+      "title": {
+        "en": "Dates: what date is it, and on which date?",
+        "es": "Fechas: ¿qué fecha es y en qué fecha?"
+      },
+      "header": [
+        {
+          "en": "Day of the month",
+          "es": "Día del mes"
+        },
+        {
+          "en": "It is ...",
+          "es": "Es ..."
+        },
+        {
+          "en": "On ...",
+          "es": "El ..."
+        }
+      ],
+      "rows": [
+        [
+          "1.",
+          "elseje",
+          "elsején"
+        ],
+        [
+          "5.",
+          "ötödike",
+          "ötödikén"
+        ],
+        [
+          "10.",
+          "tizedike",
+          "tizedikén"
+        ],
+        [
+          "20.",
+          "huszadika",
+          "huszadikán"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Days, months and dates",
+        "es": "Días, meses y fechas"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "ON a day: a short ending chosen by vowel harmony. After a vowel it is just -n (hétfőn, szerdán: a becomes á). After a consonant it is -on, -en or -ön (szombaton, pénteken, csütörtökön; kedd + en = kedden). Only vasárnap takes nothing.",
+            "es": "EL (un día): una terminación corta que depende de la armonía vocálica. Después de vocal es solo -n (hétfőn, szerdán: la a se vuelve á). Después de consonante es -on, -en o -ön (szombaton, pénteken, csütörtökön; kedd + en = kedden). Solo vasárnap no lleva nada."
+          },
+          "examples": [
+            {
+              "es": "Hétfőn dolgozom.",
+              "tr": {
+                "en": "On Monday I work.",
+                "es": "El lunes trabajo."
+              }
+            },
+            {
+              "es": "Szombaton buli van.",
+              "tr": {
+                "en": "There is a party on Saturday.",
+                "es": "El sábado hay fiesta."
+              }
+            },
+            {
+              "es": "Vasárnap a bolt zárva van.",
+              "tr": {
+                "en": "On Sunday the shop is closed.",
+                "es": "El domingo la tienda está cerrada."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "IN a month: -ban or -ben. Back vowels take -ban (januárban), front vowels take -ben (decemberben).",
+            "es": "EN (un mes): -ban o -ben. Las vocales posteriores llevan -ban (januárban), las anteriores llevan -ben (decemberben)."
+          },
+          "examples": [
+            {
+              "es": "Júliusban meleg van.",
+              "tr": {
+                "en": "It is warm in July.",
+                "es": "En julio hace calor."
+              }
+            },
+            {
+              "es": "Decemberben hideg van.",
+              "tr": {
+                "en": "It is cold in December.",
+                "es": "En diciembre hace frío."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "What is the date? Hányadika van ma? Answer: month + the date word: Május ötödike van. ON a date add -n: the final -e becomes é and -a becomes á (ötödike, ötödikén; huszadika, huszadikán). The month comes first.",
+            "es": "¿Qué fecha es? Hányadika van ma? Respuesta: mes + la palabra de la fecha: Május ötödike van. EL (una fecha) añade -n: la -e final se vuelve é y la -a se vuelve á (ötödike, ötödikén; huszadika, huszadikán). El mes va primero."
+          },
+          "examples": [
+            {
+              "es": "Hányadika van ma? Május ötödike van.",
+              "tr": {
+                "en": "What is the date today? It is May 5th.",
+                "es": "¿Qué fecha es hoy? Es 5 de mayo."
+              }
+            },
+            {
+              "es": "A buli május tizedikén van.",
+              "tr": {
+                "en": "The party is on May 10th.",
+                "es": "La fiesta es el 10 de mayo."
+              }
+            },
+            {
+              "es": "Május elsején szabadnap van.",
+              "tr": {
+                "en": "On May 1st it is a day off.",
+                "es": "El 1 de mayo es día libre."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fácil de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Hány óra van?",
+          "b": "Hánykor kezdesz?",
+          "note": {
+            "en": "Hány óra van? asks the time NOW. Hánykor? asks WHEN something happens; the answer ends in -kor.",
+            "es": "Hány óra van? pregunta la hora AHORA. Hánykor? pregunta CUÁNDO pasa algo; la respuesta termina en -kor."
+          },
+          "examples": [
+            {
+              "es": "Négy óra van.",
+              "tr": {
+                "en": "It is four o'clock.",
+                "es": "Son las cuatro."
+              }
+            },
+            {
+              "es": "Négykor kezdek.",
+              "tr": {
+                "en": "I start at four.",
+                "es": "Empiezo a las cuatro."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Három óra van.",
+          "b": "Fél három van.",
+          "note": {
+            "en": "Three o'clock is 3:00, but fél három is 2:30: Hungarian counts toward the next hour.",
+            "es": "Három óra van es las 3:00, pero fél három es las 2:30: el húngaro cuenta hacia la hora siguiente."
+          },
+          "examples": [
+            {
+              "es": "Fél négy van.",
+              "tr": {
+                "en": "It is half past three (3:30).",
+                "es": "Son las tres y media (3:30)."
+              }
+            },
+            {
+              "es": "Fél öt van.",
+              "tr": {
+                "en": "It is half past four (4:30).",
+                "es": "Son las cuatro y media (4:30)."
+              }
+            }
+          ]
+        },
+        {
+          "a": "hétfő",
+          "b": "hétfőn",
+          "note": {
+            "en": "hétfő is the name of the day; hétfőn is ON Monday. Months work the same way: május is May, májusban is in May.",
+            "es": "hétfő es el nombre del día; hétfőn es EL lunes. Los meses funcionan igual: május es mayo, májusban es en mayo."
+          },
+          "examples": [
+            {
+              "es": "Hétfő van.",
+              "tr": {
+                "en": "It is Monday.",
+                "es": "Es lunes."
+              }
+            },
+            {
+              "es": "Kedden iskola van.",
+              "tr": {
+                "en": "On Tuesday there is school.",
+                "es": "El martes hay escuela."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Május ötödike van.",
+          "b": "A vizsga május ötödikén van.",
+          "note": {
+            "en": "Without -n you say what the date is. With -n you say ON which date something happens.",
+            "es": "Sin -n dices qué fecha es. Con -n dices EN qué fecha pasa algo."
+          },
+          "examples": [
+            {
+              "es": "Június huszadika van.",
+              "tr": {
+                "en": "It is June 20th.",
+                "es": "Es 20 de junio."
+              }
+            },
+            {
+              "es": "A buli június huszadikán van.",
+              "tr": {
+                "en": "The party is on June 20th.",
+                "es": "La fiesta es el 20 de junio."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: fél három is NOT 3:30. Hungarians count toward the next hour, so fél három is 2:30 and fél négy is 3:30. Also: hét means both seven and week (Egy héten hét nap van), and -kor is only for clock times: hétkor, but hétfőn and májusban.",
+        "es": "Trampa clásica: fél három NO es las 3:30. Los húngaros cuentan hacia la hora siguiente: fél három es las 2:30 y fél négy es las 3:30. Además: hét significa siete y también semana (Egy héten hét nap van), y -kor es solo para horas del reloj: hétkor, pero hétfőn y májusban."
+      }
+    }
+  ],
+  "speak": {
+    "en": "To ask the time, say «Hány óra van?» and answer with the number: «Három óra van.» To say at what time something happens, add «kor» to the number: «hétkor», «nyolckor». The ending «kor» never changes. The days are «hétfő», «kedd», «szerda», «csütörtök», «péntek», «szombat» and «vasárnap». On a day you add a short ending: «hétfőn», «szombaton». For dates, say the month and the day: «május elseje», and «május elsején» for on May first. After a number the noun stays singular: «három óra», «két gyerek». Careful: «fél három» is half past two.",
+    "es": "Para preguntar la hora, di «Hány óra van?» y responde con el número: «Három óra van.» Para decir a qué hora pasa algo, añade «kor» al número: «hétkor», «nyolckor». La terminación «kor» nunca cambia. Los días son «hétfő», «kedd», «szerda», «csütörtök», «péntek», «szombat» y «vasárnap». Para decir que algo pasa un día concreto, se añade una terminación corta: «hétfőn», «szombaton». Para las fechas se dice el mes y el día: «május elseje», y «május elsején» para el primero de mayo. Después de un número el sustantivo queda en singular: «három óra», «két gyerek». Ojo: «fél három» son las dos y media."
+  },
+  "glossary": [
+    {
+      "word": "hét",
+      "gloss": {
+        "en": "seven (also: week, a hét)",
+        "es": "siete (también: semana, a hét)"
+      }
+    },
+    {
+      "word": "kilencven",
+      "gloss": {
+        "en": "ninety",
+        "es": "noventa"
+      }
+    },
+    {
+      "word": "dél",
+      "gloss": {
+        "en": "noon",
+        "es": "mediodía"
+      }
+    },
+    {
+      "word": "délután",
+      "gloss": {
+        "en": "afternoon",
+        "es": "tarde (después del mediodía)"
+      }
+    },
+    {
+      "word": "fél",
+      "gloss": {
+        "en": "half (fél három = 2:30)",
+        "es": "media (fél három = las 2:30)"
+      }
+    },
+    {
+      "word": "elseje",
+      "gloss": {
+        "en": "the 1st (of a month)",
+        "es": "el día 1 (del mes)"
+      }
+    },
+    {
+      "word": "ötödike",
+      "gloss": {
+        "en": "the 5th (of a month)",
+        "es": "el día 5 (del mes)"
+      }
+    },
+    {
+      "word": "tizedike",
+      "gloss": {
+        "en": "the 10th (of a month)",
+        "es": "el día 10 (del mes)"
+      }
+    },
+    {
+      "word": "huszadika",
+      "gloss": {
+        "en": "the 20th (of a month)",
+        "es": "el día 20 (del mes)"
+      }
+    },
+    {
+      "word": "hányadika",
+      "gloss": {
+        "en": "what date? (which day of the month)",
+        "es": "¿qué fecha? (qué día del mes)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "szamok-ido-f01",
+      "kind": "form",
+      "verb": "25",
+      "person": "szám",
+      "answer": "huszonöt",
+      "table": "number-builder"
+    },
+    {
+      "id": "szamok-ido-c01",
+      "sentence": "Mennyi egy meg egy? ___.",
+      "options": [
+        "Kettő",
+        "Két",
+        "Három"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "On its own, 2 is kettő; két is the short form that only stands before a noun.",
+        "es": "Solo, el 2 es kettő; két es la forma corta que solo va delante de un sustantivo."
+      },
+      "wrong": {
+        "Két": {
+          "en": "Két needs a noun after it (két óra, két kutya); it cannot stand alone as an answer.",
+          "es": "Két necesita un sustantivo detrás (két óra, két kutya); no puede ir solo como respuesta."
+        },
+        "Három": {
+          "en": "Három is 3; one and one is two.",
+          "es": "Három es 3; uno y uno son dos."
+        }
+      },
+      "examples": [
+        "Két óra van.",
+        "Hány gyerek van? Kettő."
+      ],
+      "tr": {
+        "en": "How much is one and one? Two.",
+        "es": "¿Cuánto es uno y uno? Dos."
+      }
+    },
+    {
+      "id": "szamok-ido-f02",
+      "kind": "form",
+      "verb": "12",
+      "person": "szám",
+      "answer": "tizenkettő",
+      "table": "number-builder"
+    },
+    {
+      "id": "szamok-ido-c02",
+      "sentence": "Hány gyerek van a szobában? Három ___ van.",
+      "options": [
+        "gyerek",
+        "gyerekek",
+        "gyereket"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After a number (and after hány) the noun stays singular: három gyerek.",
+        "es": "Después de un número (y después de hány) el sustantivo queda en singular: három gyerek."
+      },
+      "wrong": {
+        "gyerekek": {
+          "en": "gyerekek is the plural; with it the sentence would copy English 'three children', but Hungarian keeps the singular after a number.",
+          "es": "gyerekek es el plural; con él la frase copiaría el «tres niños» del español, pero el húngaro mantiene el singular después de un número."
+        },
+        "gyereket": {
+          "en": "gyereket has the object ending -t (látok egy gyereket); here gyerek is the subject of the sentence.",
+          "es": "gyereket tiene la terminación de objeto -t (látok egy gyereket); aquí gyerek es el sujeto de la frase."
+        }
+      },
+      "examples": [
+        "Négy ember van az autóban.",
+        "Hány kutya van a kertben?"
+      ],
+      "tr": {
+        "en": "How many children are in the room? There are three children.",
+        "es": "¿Cuántos niños hay en la habitación? Hay tres niños."
+      }
+    },
+    {
+      "id": "szamok-ido-c03",
+      "sentence": "___ kutya van a kertben.",
+      "options": [
+        "Két",
+        "Kettő",
+        "Kettőkor"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Before a noun kettő shortens to két: két kutya.",
+        "es": "Delante de un sustantivo kettő se acorta a két: két kutya."
+      },
+      "wrong": {
+        "Kettő": {
+          "en": "Kettő is the stand-alone form (Hány kutya? Kettő.); before a noun it becomes két.",
+          "es": "Kettő es la forma que va sola (Hány kutya? Kettő.); delante de un sustantivo se vuelve két."
+        },
+        "Kettőkor": {
+          "en": "Kettőkor means 'at two o'clock', not the number two before a noun.",
+          "es": "Kettőkor significa «a las dos», no el número dos delante de un sustantivo."
+        }
+      },
+      "examples": [
+        "Két óra van.",
+        "Két gyerek van a szobában."
+      ],
+      "tr": {
+        "en": "There are two dogs in the garden.",
+        "es": "Hay dos perros en el jardín."
+      }
+    },
+    {
+      "id": "szamok-ido-f03",
+      "kind": "form",
+      "verb": "55",
+      "person": "szám",
+      "answer": "ötvenöt",
+      "table": "number-builder"
+    },
+    {
+      "id": "szamok-ido-c04",
+      "sentence": "Hány óra van? ___ óra van.",
+      "options": [
+        "Négy",
+        "Négykor",
+        "Hány"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "To tell the time use the plain number + óra + van: Négy óra van.",
+        "es": "Para decir la hora se usa el número solo + óra + van: Négy óra van."
+      },
+      "wrong": {
+        "Négykor": {
+          "en": "With Négykor the answer would mean 'at four', which fits Hánykor? (at what time), not Hány óra van? (what time is it).",
+          "es": "Con Négykor la respuesta significaría «a las cuatro», que va con Hánykor? (¿a qué hora?), no con Hány óra van? (¿qué hora es?)."
+        },
+        "Hány": {
+          "en": "Hány is the question word 'how many'; the answer needs a number, not the question again.",
+          "es": "Hány es la palabra interrogativa «cuántos»; la respuesta necesita un número, no la pregunta otra vez."
+        }
+      },
+      "examples": [
+        "Három óra van.",
+        "Nyolc óra van."
+      ],
+      "tr": {
+        "en": "What time is it? It is four o'clock.",
+        "es": "¿Qué hora es? Son las cuatro."
+      }
+    },
+    {
+      "id": "szamok-ido-c05",
+      "sentence": "Hány óra van? 2:30. Fél ___ van.",
+      "options": [
+        "három",
+        "kettő",
+        "négy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Hungarian counts toward the next hour: 2:30 is 'half to three', fél három.",
+        "es": "El húngaro cuenta hacia la hora siguiente: las 2:30 son «media hora para las tres», fél három."
+      },
+      "wrong": {
+        "kettő": {
+          "en": "Fél kettő would mean 1:30 (half to two).",
+          "es": "Fél kettő significaría la 1:30 (media hora para las dos)."
+        },
+        "négy": {
+          "en": "Fél négy would mean 3:30 (half to four).",
+          "es": "Fél négy significaría las 3:30 (media hora para las cuatro)."
+        }
+      },
+      "examples": [
+        "Fél négy van.",
+        "Fél öt van."
+      ],
+      "tr": {
+        "en": "What time is it? 2:30. It is half past two.",
+        "es": "¿Qué hora es? 2:30. Son las dos y media."
+      }
+    },
+    {
+      "id": "szamok-ido-w01",
+      "kind": "why",
+      "es": "Fél három van.",
+      "target": "Fél három",
+      "tr": {
+        "en": "It is half past two (2:30).",
+        "es": "Son las dos y media (2:30)."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "fél + the NEXT hour: half an hour before three, 2:30",
+            "es": "fél + la hora SIGUIENTE: media hora antes de las tres, las 2:30"
+          }
+        },
+        {
+          "text": {
+            "en": "fél + the hour just passed: three and a half, 3:30",
+            "es": "fél + la hora que acaba de pasar: tres y media, las 3:30"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would mean 3:30, like British 'half three'; in Hungarian fél három is 2:30.",
+            "es": "Con esta regla la frase significaría las 3:30; en húngaro fél három son las 2:30."
+          }
+        },
+        {
+          "text": {
+            "en": "-kor + the hour: at three o'clock",
+            "es": "-kor + la hora: a las tres"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Háromkor (at three), the time of an event, not the time now.",
+            "es": "Con esta regla la frase sería Háromkor (a las tres), la hora de un evento, no la hora actual."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szamok-ido-c06",
+      "sentence": "Hánykor kezdesz? ___ kezdek.",
+      "options": [
+        "Nyolckor",
+        "Nyolc",
+        "Mikor"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Hánykor? asks at what time, so the answer takes -kor: Nyolckor kezdek.",
+        "es": "Hánykor? pregunta a qué hora, así que la respuesta lleva -kor: Nyolckor kezdek."
+      },
+      "wrong": {
+        "Nyolc": {
+          "en": "The bare number answers Hány óra van? (Nyolc óra van); it does not say WHEN I start. 'At eight' needs -kor.",
+          "es": "El número solo responde a Hány óra van? (Nyolc óra van); no dice CUÁNDO empiezo. «A las ocho» necesita -kor."
+        },
+        "Mikor": {
+          "en": "Mikor means 'when?'; it is a question word, so it cannot be the answer.",
+          "es": "Mikor significa «¿cuándo?»; es una palabra interrogativa, así que no puede ser la respuesta."
+        }
+      },
+      "examples": [
+        "Hétkor kezdek.",
+        "Ötkor jövök."
+      ],
+      "tr": {
+        "en": "At what time do you start? I start at eight.",
+        "es": "¿A qué hora empiezas? Empiezo a las ocho."
+      }
+    },
+    {
+      "id": "szamok-ido-f04",
+      "kind": "form",
+      "verb": "három",
+      "person": "-kor",
+      "answer": "háromkor",
+      "table": "kor-forms"
+    },
+    {
+      "id": "szamok-ido-c07",
+      "sentence": "A vonat tíz___ jön.",
+      "options": [
+        "kor",
+        "ker",
+        "kör"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "-kor never changes: it is the same after front vowels (tízkor) and back vowels (hatkor).",
+        "es": "-kor nunca cambia: es igual después de vocales anteriores (tízkor) y posteriores (hatkor)."
+      },
+      "wrong": {
+        "ker": {
+          "en": "tízker does not exist: -kor has only one form, whatever the vowels are.",
+          "es": "tízker no existe: -kor tiene una sola forma, sean cuales sean las vocales."
+        },
+        "kör": {
+          "en": "tízkör does not exist: unlike -ban/-ben, -kor does not follow vowel harmony.",
+          "es": "tízkör no existe: a diferencia de -ban/-ben, -kor no sigue la armonía vocálica."
+        }
+      },
+      "examples": [
+        "Hétkor kelek.",
+        "Hatkor otthon vagyok."
+      ],
+      "tr": {
+        "en": "The train comes at ten.",
+        "es": "El tren llega a las diez."
+      }
+    },
+    {
+      "id": "szamok-ido-f05",
+      "kind": "form",
+      "verb": "nyolc",
+      "person": "-kor",
+      "answer": "nyolckor",
+      "table": "kor-forms"
+    },
+    {
+      "id": "szamok-ido-w02",
+      "kind": "why",
+      "es": "Hétkor kelek.",
+      "target": "Hétkor",
+      "tr": {
+        "en": "I get up at seven.",
+        "es": "Me levanto a las siete."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-n/-on/-en/-ön: on a day",
+            "es": "-n/-on/-en/-ön: en un día"
+          },
+          "wrong": {
+            "en": "With this rule the word would be a day, like hétfőn; hétkor is a clock time (hét = seven).",
+            "es": "Con esta regla la palabra sería un día, como hétfőn; hétkor es una hora del reloj (hét = siete)."
+          }
+        },
+        {
+          "text": {
+            "en": "-kor: at a clock time, one form for every number",
+            "es": "-kor: a una hora del reloj, una sola forma para todos los números"
+          }
+        },
+        {
+          "text": {
+            "en": "-ban/-ben: in a month",
+            "es": "-ban/-ben: en un mes"
+          },
+          "wrong": {
+            "en": "With this rule the word would be a month, like májusban; hétkor says at what time.",
+            "es": "Con esta regla la palabra sería un mes, como májusban; hétkor dice a qué hora."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "szamok-ido-c08",
+      "sentence": "A bolt ___ zárva van.",
+      "options": [
+        "vasárnap",
+        "vasárnapon",
+        "vasárnapban"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "vasárnap is the only day that takes no ending: vasárnap already means 'on Sunday'.",
+        "es": "vasárnap es el único día que no lleva terminación: vasárnap ya significa «el domingo»."
+      },
+      "wrong": {
+        "vasárnapon": {
+          "en": "This is built like szombaton, but vasárnap is the exception: it takes no ending.",
+          "es": "Está formada como szombaton, pero vasárnap es la excepción: no lleva terminación."
+        },
+        "vasárnapban": {
+          "en": "-ban means 'in' and goes on months and places (májusban, a házban), not on days.",
+          "es": "-ban significa «en» y va con meses y lugares (májusban, a házban), no con días."
+        }
+      },
+      "examples": [
+        "Vasárnap otthon vagyok.",
+        "Vasárnap nincs iskola."
+      ],
+      "tr": {
+        "en": "The shop is closed on Sunday.",
+        "es": "La tienda está cerrada el domingo."
+      }
+    },
+    {
+      "id": "szamok-ido-f06",
+      "kind": "form",
+      "verb": "hétfő",
+      "person": "-n/-on/-en/-ön",
+      "answer": "hétfőn",
+      "table": "day-forms"
+    },
+    {
+      "id": "szamok-ido-c09",
+      "sentence": "Az esküvő ___ van.",
+      "options": [
+        "szombaton",
+        "szombaten",
+        "szombatkor"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "On a day: szombat has back vowels (o, a), so the ending is -on.",
+        "es": "Para un día: szombat tiene vocales posteriores (o, a), así que la terminación es -on."
+      },
+      "wrong": {
+        "szombaten": {
+          "en": "-en is for words with front vowels (pénteken); szombat has back vowels, so it takes -on.",
+          "es": "-en es para palabras con vocales anteriores (pénteken); szombat tiene vocales posteriores, así que lleva -on."
+        },
+        "szombatkor": {
+          "en": "-kor is only for clock times (hétkor), not for days.",
+          "es": "-kor es solo para horas del reloj (hétkor), no para días."
+        }
+      },
+      "examples": [
+        "A buli szombaton van.",
+        "Szombaton dolgozom."
+      ],
+      "tr": {
+        "en": "The wedding is on Saturday.",
+        "es": "La boda es el sábado."
+      }
+    },
+    {
+      "id": "szamok-ido-f07",
+      "kind": "form",
+      "verb": "szerda",
+      "person": "-n/-on/-en/-ön",
+      "answer": "szerdán",
+      "table": "day-forms"
+    },
+    {
+      "id": "szamok-ido-f08",
+      "kind": "form",
+      "verb": "csütörtök",
+      "person": "-n/-on/-en/-ön",
+      "answer": "csütörtökön",
+      "table": "day-forms"
+    },
+    {
+      "id": "szamok-ido-w03",
+      "kind": "why",
+      "es": "A bolt pénteken nyitva van.",
+      "target": "pénteken",
+      "tr": {
+        "en": "The shop is open on Friday.",
+        "es": "La tienda está abierta el viernes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-kor: at a clock time",
+            "es": "-kor: a una hora del reloj"
+          },
+          "wrong": {
+            "en": "With this rule the word would be like hétkor (at seven); pénteken is a day of the week.",
+            "es": "Con esta regla la palabra sería como hétkor (a las siete); pénteken es un día de la semana."
+          }
+        },
+        {
+          "text": {
+            "en": "-ban/-ben: in a month",
+            "es": "-ban/-ben: en un mes"
+          },
+          "wrong": {
+            "en": "With this rule the word would be a month, like szeptemberben; pénteken is a day.",
+            "es": "Con esta regla la palabra sería un mes, como szeptemberben; pénteken es un día."
+          }
+        },
+        {
+          "text": {
+            "en": "-n/-on/-en/-ön: on a day, by vowel harmony (front vowels: -en)",
+            "es": "-n/-on/-en/-ön: en un día, según la armonía vocálica (vocales anteriores: -en)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "szamok-ido-c10",
+      "sentence": "___ hideg van.",
+      "options": [
+        "Januárban",
+        "Januárben",
+        "Januárkor"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In a month: -ban/-ben. január has back vowels (a, u, á), so -ban.",
+        "es": "Para un mes: -ban/-ben. január tiene vocales posteriores (a, u, á), así que -ban."
+      },
+      "wrong": {
+        "Januárben": {
+          "en": "-ben is for front vowels (decemberben, októberben); január has back vowels.",
+          "es": "-ben es para vocales anteriores (decemberben, októberben); január tiene vocales posteriores."
+        },
+        "Januárkor": {
+          "en": "-kor is only for clock times (hétkor); for a month use -ban/-ben.",
+          "es": "-kor es solo para horas del reloj (hétkor); para un mes se usa -ban/-ben."
+        }
+      },
+      "examples": [
+        "Júliusban meleg van.",
+        "Decemberben hideg van."
+      ],
+      "tr": {
+        "en": "It is cold in January.",
+        "es": "En enero hace frío."
+      }
+    },
+    {
+      "id": "szamok-ido-f09",
+      "kind": "form",
+      "verb": "május",
+      "person": "-ban/-ben",
+      "answer": "májusban",
+      "table": "month-forms"
+    },
+    {
+      "id": "szamok-ido-c11",
+      "sentence": "A születésnapom ___ van.",
+      "options": [
+        "októberben",
+        "októberban",
+        "októberen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "október ends in the front vowel e, so the ending is -ben.",
+        "es": "október termina en la vocal anterior e, así que la terminación es -ben."
+      },
+      "wrong": {
+        "októberban": {
+          "en": "-ban is for back vowels (májusban); október ends in the front vowel e, so it takes -ben.",
+          "es": "-ban es para vocales posteriores (májusban); október termina en la vocal anterior e, así que lleva -ben."
+        },
+        "októberen": {
+          "en": "-en is for days (pénteken); months take -ban/-ben.",
+          "es": "-en es para días (pénteken); los meses llevan -ban/-ben."
+        }
+      },
+      "examples": [
+        "Szeptemberben iskola van.",
+        "Novemberben hideg van."
+      ],
+      "tr": {
+        "en": "My birthday is in October.",
+        "es": "Mi cumpleaños es en octubre."
+      }
+    },
+    {
+      "id": "szamok-ido-f10",
+      "kind": "form",
+      "verb": "szeptember",
+      "person": "-ban/-ben",
+      "answer": "szeptemberben",
+      "table": "month-forms"
+    },
+    {
+      "id": "szamok-ido-c12",
+      "sentence": "Hányadika van ma? Május ___ van.",
+      "options": [
+        "ötödike",
+        "ötödikén",
+        "ötödik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "To say what the date is, use the plain date form: Május ötödike van.",
+        "es": "Para decir qué fecha es, se usa la forma simple de la fecha: Május ötödike van."
+      },
+      "wrong": {
+        "ötödikén": {
+          "en": "With -n the sentence would say ON May 5th (when something happens), not what today's date is.",
+          "es": "Con -n la frase diría EL 5 de mayo (cuándo pasa algo), no qué fecha es hoy."
+        },
+        "ötödik": {
+          "en": "ötödik is only the ordinal 'fifth'; the date word ends in -e: ötödike.",
+          "es": "ötödik es solo el ordinal «quinto»; la palabra de la fecha termina en -e: ötödike."
+        }
+      },
+      "examples": [
+        "Május elseje van.",
+        "Június huszadika van."
+      ],
+      "tr": {
+        "en": "What is the date today? It is May 5th.",
+        "es": "¿Qué fecha es hoy? Es 5 de mayo."
+      }
+    },
+    {
+      "id": "szamok-ido-c13",
+      "sentence": "A buli május ___ van.",
+      "options": [
+        "tizedikén",
+        "tizedike",
+        "tizedikon"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ON a date: add -n; the final -e becomes é: tizedike, tizedikén.",
+        "es": "EL (una fecha): añade -n; la -e final se vuelve é: tizedike, tizedikén."
+      },
+      "wrong": {
+        "tizedike": {
+          "en": "The plain form says what the date is (Május tizedike van), not when something happens.",
+          "es": "La forma simple dice qué fecha es (Május tizedike van), no cuándo pasa algo."
+        },
+        "tizedikon": {
+          "en": "-on goes after consonants; after a vowel the ending is just -n, and the final -e lengthens to é.",
+          "es": "-on va después de consonante; después de vocal la terminación es solo -n, y la -e final se alarga a é."
+        }
+      },
+      "examples": [
+        "A vizsga május huszadikán van.",
+        "A buli június ötödikén van."
+      ],
+      "tr": {
+        "en": "The party is on May 10th.",
+        "es": "La fiesta es el 10 de mayo."
+      }
+    },
+    {
+      "id": "szamok-ido-f11",
+      "kind": "form",
+      "verb": "ötödike",
+      "person": "-n",
+      "answer": "ötödikén",
+      "table": "date-forms"
+    },
+    {
+      "id": "szamok-ido-c14",
+      "sentence": "Május ___ szabadnap van.",
+      "options": [
+        "elsején",
+        "elseján",
+        "elseje"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "elseje + n: the final -e lengthens to é, so elsején means 'on the 1st'.",
+        "es": "elseje + n: la -e final se alarga a é, así que elsején significa «el día 1»."
+      },
+      "wrong": {
+        "elseján": {
+          "en": "The vowel stays front: -e becomes é, never á (elsején).",
+          "es": "La vocal sigue siendo anterior: -e pasa a é, nunca á (elsején)."
+        },
+        "elseje": {
+          "en": "The plain form means 'it is the 1st' (Május elseje van); 'on the 1st' needs -n.",
+          "es": "La forma simple significa «es el 1» (Május elseje van); «el día 1» necesita -n."
+        }
+      },
+      "examples": [
+        "Szeptember elsején iskola van.",
+        "Január elsején zárva van."
+      ],
+      "tr": {
+        "en": "On May 1st it is a day off.",
+        "es": "El 1 de mayo es día libre."
+      }
+    },
+    {
+      "id": "szamok-ido-f12",
+      "kind": "form",
+      "verb": "huszadika",
+      "person": "-n",
+      "answer": "huszadikán",
+      "table": "date-forms"
+    },
+    {
+      "id": "szamok-ido-w04",
+      "kind": "why",
+      "es": "A vizsga május ötödikén van.",
+      "target": "ötödikén",
+      "tr": {
+        "en": "The exam is on May 5th.",
+        "es": "El examen es el 5 de mayo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "On a date: -n after the final -e, which lengthens to é",
+            "es": "El (una fecha): -n después de la -e final, que se alarga a é"
+          }
+        },
+        {
+          "text": {
+            "en": "The plain date: no ending",
+            "es": "La fecha simple: sin terminación"
+          },
+          "wrong": {
+            "en": "With this rule the form would be ötödike, which says what the date is (Május ötödike van), not when something happens.",
+            "es": "Con esta regla la forma sería ötödike, que dice qué fecha es (Május ötödike van), no cuándo pasa algo."
+          }
+        },
+        {
+          "text": {
+            "en": "-kor: at a clock time",
+            "es": "-kor: a una hora del reloj"
+          },
+          "wrong": {
+            "en": "With this rule it would be like ötkor (at five); ötödikén is a day of the month.",
+            "es": "Con esta regla sería como ötkor (a las cinco); ötödikén es un día del mes."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

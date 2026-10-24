@@ -9,6 +9,8 @@
 // is fixed text before the places, not a tile; spaces and punctuation in a phrase are fixed too.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
+import { activeSourceFor } from '@/lib/languagePair';
+import { wordIn } from '@/lib/pcicItemText';
 import { pcicAlternatives } from '@/lib/pcicMatch';
 import type { GameLogic } from '@/lib/practice/gameRound';
 
@@ -57,7 +59,7 @@ export interface ScrambleWord {
 
 /** The word in the learned language split into article, places and fixed characters (the first of its alternatives). */
 export function scrambleWord(item: PcicItem, target: PcicTarget): ScrambleWord {
-  const written = target === 'es' ? item.es : item.en;
+  const written = wordIn(item, target) ?? '';
   const say = (pcicAlternatives(written)[0] ?? written).normalize('NFC').trim();
   const articleMatch = target === 'es' ? ARTICLE_RE.exec(say) : null;
   const rest = articleMatch ? say.slice(articleMatch[0].length) : say;
@@ -67,7 +69,7 @@ export function scrambleWord(item: PcicItem, target: PcicTarget): ScrambleWord {
     letters.push(ch);
     return { ch, slot: letters.length - 1 };
   });
-  return { article: articleMatch ? articleMatch[0].trim() : '', chars, letters, say, meaning: target === 'es' ? item.en : item.es };
+  return { article: articleMatch ? articleMatch[0].trim() : '', chars, letters, say, meaning: wordIn(item, activeSourceFor(target)) ?? '' };
 }
 
 /** A word needs two different letters, or there is nothing to put in order. */

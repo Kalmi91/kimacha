@@ -1,0 +1,772 @@
+{
+  "schema": 2,
+  "topic": "vonatkozo-nevmasok",
+  "level": "A2",
+  "title": { "en": "Relative words: aki, ami, ahol", "es": "Relativos: aki, ami, ahol" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A relative word links a small clause to a noun: 'the woman WHO lives here', 'the book THAT I bought'. Hungarian builds it from the question word plus a-: ki → aki (people), mi → ami (things), hol → ahol (where), hova → ahova (to where), mikor → amikor (when). Two rules: the relative clause always stands between commas, even where English or Spanish would not write them; and the relative word never disappears (English can say 'the book I bought', Hungarian cannot): A könyv, amit vettem, érdekes.",
+        "es": "Una palabra relativa une una oración pequeña a un sustantivo: «la mujer QUE vive aquí», «el libro QUE compré». El húngaro la forma con la palabra interrogativa más a-: ki → aki (personas), mi → ami (cosas), hol → ahol (donde), hova → ahova (adonde), mikor → amikor (cuando). Dos reglas: la oración de relativo siempre va entre comas, incluso donde el español o el inglés no las escribirían; y la palabra relativa nunca se omite (el inglés puede decir «the book I bought», el húngaro no): A könyv, amit vettem, érdekes."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "relative-words",
+      "title": { "en": "Question word → relative word", "es": "Palabra interrogativa → relativo" },
+      "header": [
+        { "en": "Question word", "es": "Interrogativo" },
+        { "en": "Relative word", "es": "Relativo" }
+      ],
+      "rows": [
+        ["ki", "aki"],
+        ["mi", "ami"],
+        ["hol", "ahol"],
+        ["hova", "ahova"],
+        ["honnan", "ahonnan"],
+        ["mikor", "amikor"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Who, what, where, when?", "es": "¿Quién, qué, dónde, cuándo?" },
+      "items": [
+        {
+          "text": {
+            "en": "aki is for people. The clause that follows has its own verb, and the whole thing sits between commas.",
+            "es": "aki es para personas. La oración que sigue tiene su propio verbo, y todo va entre comas."
+          },
+          "examples": [
+            { "es": "A nő, aki itt lakik, Anna.", "tr": { "en": "The woman who lives here is Anna.", "es": "La mujer que vive aquí es Anna." } },
+            { "es": "A férfi, aki ott dolgozik, a főnök.", "tr": { "en": "The man who works there is the boss.", "es": "El hombre que trabaja allá es el jefe." } },
+            { "es": "A lány, aki kávét iszik, Kati.", "tr": { "en": "The girl who is drinking coffee is Kati.", "es": "La chica que está tomando café es Kati." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "ami is for things. Spanish has one que for people and things; Hungarian splits it: aki for people, ami for things.",
+            "es": "ami es para cosas. El español tiene un solo «que» para personas y cosas; el húngaro lo divide: aki para personas, ami para cosas."
+          },
+          "examples": [
+            { "es": "A könyv, ami az asztalon van, új.", "tr": { "en": "The book that is on the table is new.", "es": "El libro que está sobre la mesa es nuevo." } },
+            { "es": "A kávé, ami itt van, forró.", "tr": { "en": "The coffee that is here is hot.", "es": "El café que está aquí está caliente." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "amely (also amelyik) is a slightly more formal word for things, often in writing. It works like ami, but the object form is amelyet. After minden, semmi and az, use only ami.",
+            "es": "amely (también amelyik) es una palabra un poco más formal para cosas, a menudo en textos escritos. Funciona como ami, pero la forma de objeto es amelyet. Después de minden, semmi y az se usa solo ami."
+          },
+          "examples": [
+            { "es": "A ház, amely a parkban van, régi.", "tr": { "en": "The house that is in the park is old.", "es": "La casa que está en el parque es vieja." } },
+            { "es": "A könyv, amelyet vettem, érdekes.", "tr": { "en": "The book that I bought is interesting.", "es": "El libro que compré es interesante." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "ahol (where), ahova (to where), ahonnan (from where) and amikor (when) replace a whole 'in/to/from which' phrase. Use ahol with being or doing something in a place, ahova with going.",
+            "es": "ahol (donde), ahova (adonde), ahonnan (de donde) y amikor (cuando) reemplazan toda una expresión «en/a/desde el cual». Se usa ahol con estar o hacer algo en un lugar, y ahova con ir."
+          },
+          "examples": [
+            { "es": "A város, ahol lakom, nagy.", "tr": { "en": "The city where I live is big.", "es": "La ciudad donde vivo es grande." } },
+            { "es": "A bolt, ahova megyek, zárva van.", "tr": { "en": "The shop I am going to is closed.", "es": "La tienda a la que voy está cerrada." } },
+            { "es": "A város, ahonnan jövök, kicsi.", "tr": { "en": "The city I come from is small.", "es": "La ciudad de donde vengo es pequeña." } },
+            { "es": "Szombat az a nap, amikor otthon vagyok.", "tr": { "en": "Saturday is the day when I am at home.", "es": "El sábado es el día en que estoy en casa." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "relative-cases",
+      "title": { "en": "aki and ami with case endings", "es": "aki y ami con terminaciones de caso" },
+      "header": [
+        { "en": "Ending", "es": "Terminación" },
+        { "en": "aki (people)", "es": "aki (personas)" },
+        { "en": "ami (things)", "es": "ami (cosas)" }
+      ],
+      "rows": [
+        ["-", "aki", "ami"],
+        ["-t", "akit", "amit"],
+        ["-nak/-nek", "akinek", "aminek"],
+        ["-val/-vel", "akivel", "amivel"],
+        ["-ban/-ben", "akiben", "amiben"],
+        ["-ból/-ből", "akiből", "amiből"],
+        ["-ra/-re", "akire", "amire"],
+        ["-ról/-ről", "akiről", "amiről"],
+        ["-hoz/-hez/-höz", "akihez", "amihez"],
+        ["-tól/-től", "akitől", "amitől"],
+        ["-nál/-nél", "akinél", "aminél"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Which ending? Ask the relative clause", "es": "¿Qué terminación? Pregunta a la oración de relativo" },
+      "points": [
+        {
+          "text": {
+            "en": "The relative word takes the ending that ITS OWN clause needs, not the one of the noun before it. If the clause has an object (I saw her, I eat it), the word gets -t: akit, amit.",
+            "es": "La palabra relativa lleva la terminación que pide SU PROPIA oración, no la del sustantivo anterior. Si la oración tiene un objeto directo (la vi, lo como), la palabra recibe -t: akit, amit."
+          },
+          "examples": [
+            { "es": "A nő, akit tegnap láttam, Kati.", "tr": { "en": "The woman I saw yesterday is Kati.", "es": "La mujer que vi ayer es Kati." } },
+            { "es": "Az étel, amit eszem, finom.", "tr": { "en": "The food I am eating is delicious.", "es": "La comida que estoy comiendo está deliciosa." } },
+            { "es": "A könyv, amit vettem, érdekes.", "tr": { "en": "The book I bought is interesting.", "es": "El libro que compré es interesante." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "With people, the verb picks the ending: akivel (with whom), akinek (to or for whom), akihez (to whom), akitől (from whom), akiről (about whom), akire (e.g. wait for whom). Spanish says a quien, con quien, de quien; Hungarian puts the ending on aki.",
+            "es": "Con personas, el verbo elige la terminación: akivel (con quien), akinek (a quien, para quien), akihez (hacia quien), akitől (de quien, desde quien), akiről (de quien se habla), akire (por ejemplo, a quien se espera). El español dice «a quien», «con quien», «de quien»; el húngaro pone la terminación en aki."
+          },
+          "examples": [
+            { "es": "A barát, akivel dolgozom, magyar.", "tr": { "en": "The friend I work with is Hungarian.", "es": "El amigo con quien trabajo es húngaro." } },
+            { "es": "A férfi, akinek levelet írok, magyar.", "tr": { "en": "The man I am writing a letter to is Hungarian.", "es": "El hombre a quien le escribo una carta es húngaro." } },
+            { "es": "A lány, akihez megyek, Anna.", "tr": { "en": "The girl I am going to see is Anna.", "es": "La chica a la que voy a ver es Anna." } },
+            { "es": "A fiú, akire várok, Péter.", "tr": { "en": "The boy I am waiting for is Péter.", "es": "El chico al que espero es Péter." } },
+            { "es": "A nő, akiről beszélek, Kati.", "tr": { "en": "The woman I am talking about is Kati.", "es": "La mujer de la que hablo es Kati." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "With things it works the same way: amiben (in which), amivel (with which), amire (onto which), amiről (about which), amiből (out of which), amitől (from which). Spanish says en el que, con el que, de la que.",
+            "es": "Con cosas funciona igual: amiben (en el que), amivel (con el que), amire (sobre el que), amiről (del que se habla), amiből (del que, de dentro), amitől (del que, de lo que). El español dice «en el que», «con el que», «de la que»."
+          },
+          "examples": [
+            { "es": "A ház, amiben lakom, kicsi.", "tr": { "en": "The house I live in is small.", "es": "La casa en la que vivo es pequeña." } },
+            { "es": "A kés, amivel vágok, olcsó.", "tr": { "en": "The knife I cut with is cheap.", "es": "El cuchillo con el que corto es barato." } },
+            { "es": "Az asztal, amire a könyvet teszem, új.", "tr": { "en": "The table I put the book on is new.", "es": "La mesa sobre la que pongo el libro es nueva." } },
+            { "es": "A pohár, amiből iszom, tiszta.", "tr": { "en": "The glass I drink from is clean.", "es": "El vaso del que bebo está limpio." } },
+            { "es": "A kutya, amitől félek, nagy.", "tr": { "en": "The dog I am afraid of is big.", "es": "El perro al que le tengo miedo es grande." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Without a noun in front: after minden (everything), semmi (nothing) and az (that) use ami; after mindenki (everybody) use aki. ami can also point back to a whole sentence ('which').",
+            "es": "Sin sustantivo delante: después de minden (todo), semmi (nada) y az (eso) se usa ami; después de mindenki (todos) se usa aki. ami también puede referirse a toda una oración («lo cual»)."
+          },
+          "examples": [
+            { "es": "Minden, amit eszem, finom.", "tr": { "en": "Everything I eat is delicious.", "es": "Todo lo que como está delicioso." } },
+            { "es": "Mindenki, aki itt dolgozik, kedves.", "tr": { "en": "Everybody who works here is nice.", "es": "Todos los que trabajan aquí son amables." } },
+            { "es": "Hideg van, ami nem jó.", "tr": { "en": "It is cold, which is not good.", "es": "Hace frío, lo cual no es bueno." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Easy to mix up", "es": "Fáciles de confundir" },
+      "pairs": [
+        {
+          "a": "aki",
+          "b": "ami",
+          "note": {
+            "en": "aki is for people, ami is for things.",
+            "es": "aki es para personas, ami es para cosas."
+          },
+          "examples": [
+            { "es": "A nő, aki itt lakik, Anna.", "tr": { "en": "The woman who lives here is Anna.", "es": "La mujer que vive aquí es Anna." } },
+            { "es": "A ház, ami itt van, kicsi.", "tr": { "en": "The house that is here is small.", "es": "La casa que está aquí es pequeña." } }
+          ]
+        },
+        {
+          "a": "ki",
+          "b": "aki",
+          "note": {
+            "en": "ki asks a question (Who?); aki links a clause to a noun (who, that). The same goes for mi / ami and hol / ahol.",
+            "es": "ki hace una pregunta (¿Quién?); aki une una oración a un sustantivo (que, quien). Lo mismo vale para mi / ami y hol / ahol."
+          },
+          "examples": [
+            { "es": "Ki lakik itt?", "tr": { "en": "Who lives here?", "es": "¿Quién vive aquí?" } },
+            { "es": "A nő, aki itt lakik, Anna.", "tr": { "en": "The woman who lives here is Anna.", "es": "La mujer que vive aquí es Anna." } },
+            { "es": "Mi van az asztalon?", "tr": { "en": "What is on the table?", "es": "¿Qué hay sobre la mesa?" } },
+            { "es": "Az étel, ami az asztalon van, finom.", "tr": { "en": "The food that is on the table is delicious.", "es": "La comida que está sobre la mesa está deliciosa." } }
+          ]
+        },
+        {
+          "a": "amit",
+          "b": "amiben",
+          "note": {
+            "en": "The verb of the relative clause decides: you see the shop (amit), you work in the shop (amiben).",
+            "es": "Decide el verbo de la oración de relativo: ves la tienda (amit), trabajas en la tienda (amiben)."
+          },
+          "examples": [
+            { "es": "A bolt, amit tegnap láttam, zárva van.", "tr": { "en": "The shop I saw yesterday is closed.", "es": "La tienda que vi ayer está cerrada." } },
+            { "es": "A bolt, amiben dolgozom, nagy.", "tr": { "en": "The shop I work in is big.", "es": "La tienda en la que trabajo es grande." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) English and Spanish may leave the commas out; Hungarian never does: A nő, aki itt lakik, Anna. (2) English can drop the relative word (the book I bought); Hungarian never drops it: A könyv, amit vettem. (3) Do not use ki, mi, hol in the relative clause: they are for questions only, the relative words are aki, ami, ahol. (4) The ending belongs to the relative clause: A bolt, amit látok (I see it) but A bolt, amiben dolgozom (I work in it).",
+        "es": "Trampas clásicas: (1) el español y el inglés pueden omitir las comas; el húngaro nunca: A nő, aki itt lakik, Anna. (2) el inglés puede omitir la palabra relativa («the book I bought»); el húngaro nunca: A könyv, amit vettem. (3) No uses ki, mi, hol en la oración de relativo: son solo para preguntas; los relativos son aki, ami, ahol. (4) La terminación pertenece a la oración de relativo: A bolt, amit látok (lo veo), pero A bolt, amiben dolgozom (trabajo en ella)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A relative word links a small sentence to a noun. For people Hungarian uses «aki», for things «ami». «A nő, aki itt lakik, Anna.» «A könyv, amit vettem, érdekes.» The words «aki» and «ami» take case endings, like nouns: «akit», «akivel», «amit», «amiben». For places and times there are «ahol», «ahova» and «amikor». «A város, ahol lakom, nagy.» A relative clause always stands between commas.",
+    "es": "Una palabra relativa une una oración pequeña a un sustantivo. Para personas el húngaro usa «aki», para cosas «ami». «A nő, aki itt lakik, Anna.» «A könyv, amit vettem, érdekes.» Las palabras «aki» y «ami» llevan terminaciones de caso, como los sustantivos: «akit», «akivel», «amit», «amiben». Para lugares y momentos hay «ahol», «ahova» y «amikor». «A város, ahol lakom, nagy.» Una oración de relativo siempre va entre comas."
+  },
+  "glossary": [
+    { "word": "aki", "gloss": { "en": "who, that (for people)", "es": "quien, que (personas)" } },
+    { "word": "ami", "gloss": { "en": "that, which (for things)", "es": "que, lo que (cosas)" } },
+    { "word": "amely", "gloss": { "en": "which (for things, a bit formal)", "es": "que, el cual (cosas, más formal)" } },
+    { "word": "ahol", "gloss": { "en": "where", "es": "donde" } },
+    { "word": "ahova", "gloss": { "en": "to where", "es": "adonde" } },
+    { "word": "ahonnan", "gloss": { "en": "from where", "es": "de donde" } }
+  ],
+  "items": [
+    {
+      "id": "vonatkozo-nevmasok-c01",
+      "sentence": "A nő, ___ itt lakik, Anna.",
+      "options": ["aki", "ami", "ahol"],
+      "correct": 0,
+      "why": {
+        "en": "A woman is a person, and she is the one who lives here: aki.",
+        "es": "Una mujer es una persona, y es ella la que vive aquí: aki."
+      },
+      "wrong": {
+        "ami": {
+          "en": "ami is for things; with ami the sentence would treat the woman like a thing.",
+          "es": "ami es para cosas; con ami la frase trataría a la mujer como una cosa."
+        },
+        "ahol": {
+          "en": "ahol means 'where': it is for places, and the woman is not a place.",
+          "es": "ahol significa «donde»: es para lugares, y la mujer no es un lugar."
+        }
+      },
+      "examples": ["A férfi, aki ott dolgozik, a főnök.", "A lány, aki kávét iszik, Kati."],
+      "tr": { "en": "The woman who lives here is Anna.", "es": "La mujer que vive aquí es Anna." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f01",
+      "kind": "form",
+      "verb": "aki",
+      "person": "-t",
+      "answer": "akit",
+      "table": "relative-cases"
+    },
+    {
+      "id": "vonatkozo-nevmasok-c02",
+      "sentence": "A könyv, ___ az asztalon van, új.",
+      "options": ["ami", "aki", "ahol"],
+      "correct": 0,
+      "why": {
+        "en": "A book is a thing, and it is the book that is on the table: ami.",
+        "es": "Un libro es una cosa, y es el libro el que está sobre la mesa: ami."
+      },
+      "wrong": {
+        "aki": {
+          "en": "aki is for people; with aki the book would be treated like a person.",
+          "es": "aki es para personas; con aki el libro sería tratado como una persona."
+        },
+        "ahol": {
+          "en": "ahol means 'where': the book is not a place.",
+          "es": "ahol significa «donde»: el libro no es un lugar."
+        }
+      },
+      "examples": ["Az étel, ami az asztalon van, finom.", "A kávé, ami itt van, forró."],
+      "tr": { "en": "The book that is on the table is new.", "es": "El libro que está sobre la mesa es nuevo." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f02",
+      "kind": "form",
+      "verb": "ami",
+      "person": "-t",
+      "answer": "amit",
+      "table": "relative-cases"
+    },
+    {
+      "id": "vonatkozo-nevmasok-c03",
+      "sentence": "A város, ___ lakom, nagy.",
+      "options": ["ahol", "aki", "amit"],
+      "correct": 0,
+      "why": {
+        "en": "You live in the city, a place where you are: ahol.",
+        "es": "Vives en la ciudad, un lugar donde estás: ahol."
+      },
+      "wrong": {
+        "aki": {
+          "en": "aki is for people; a city is a place.",
+          "es": "aki es para personas; una ciudad es un lugar."
+        },
+        "amit": {
+          "en": "amit is the object form ('which I see'); you do not live the city, you live in it (ahol or amiben).",
+          "es": "amit es la forma de objeto («que veo»); no vives la ciudad, vives en ella (ahol o amiben)."
+        }
+      },
+      "examples": ["Az étterem, ahol dolgozom, kicsi.", "A szálloda, ahol lakom, olcsó."],
+      "tr": { "en": "The city where I live is big.", "es": "La ciudad donde vivo es grande." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f03",
+      "kind": "form",
+      "verb": "aki",
+      "person": "-nak/-nek",
+      "answer": "akinek",
+      "table": "relative-cases"
+    },
+    {
+      "id": "vonatkozo-nevmasok-w01",
+      "kind": "why",
+      "es": "A férfi, aki itt lakik, magyar.",
+      "target": "aki",
+      "tr": { "en": "The man who lives here is Hungarian.", "es": "El hombre que vive aquí es húngaro." },
+      "options": [
+        {
+          "text": {
+            "en": "A person who does the action: aki, with no ending",
+            "es": "Una persona que hace la acción: aki, sin terminación"
+          }
+        },
+        {
+          "text": {
+            "en": "A thing: the word would be ami",
+            "es": "Una cosa: la palabra sería ami"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would treat the man like a thing; for people use aki.",
+            "es": "Con esta regla la frase trataría al hombre como una cosa; para personas se usa aki."
+          }
+        },
+        {
+          "text": {
+            "en": "A person who receives the action: the word would be akit",
+            "es": "Una persona que recibe la acción: la palabra sería akit"
+          },
+          "wrong": {
+            "en": "With akit the sentence would need an object; but lakik (lives) has none, the man himself is the one who lives here.",
+            "es": "Con akit la frase necesitaría un objeto; pero lakik (vive) no tiene, el hombre mismo es quien vive aquí."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "vonatkozo-nevmasok-c04",
+      "sentence": "A bolt, ___ megyek, zárva van.",
+      "options": ["ahova", "ahol", "amikor"],
+      "correct": 0,
+      "why": {
+        "en": "megyek (I go) shows movement TO the shop, so you need the direction word ahova.",
+        "es": "megyek (voy) muestra movimiento HACIA la tienda, así que hace falta la palabra de dirección ahova."
+      },
+      "wrong": {
+        "ahol": {
+          "en": "ahol is for being IN a place (lakom, dolgozom); with it the sentence would not say where you are heading.",
+          "es": "ahol es para estar EN un lugar (lakom, dolgozom); con ella la frase no diría hacia dónde vas."
+        },
+        "amikor": {
+          "en": "amikor is 'when': 'the shop, when I go' is about time, not about the place.",
+          "es": "amikor es «cuando»: «la tienda, cuando voy» habla de tiempo, no del lugar."
+        }
+      },
+      "examples": ["A park, ahova megyek, nagy.", "Az iskola, ahova megyek, régi."],
+      "tr": { "en": "The shop I am going to is closed.", "es": "La tienda a la que voy está cerrada." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f04",
+      "kind": "form",
+      "verb": "ami",
+      "person": "-val/-vel",
+      "answer": "amivel",
+      "table": "relative-cases"
+    },
+    {
+      "id": "vonatkozo-nevmasok-c05",
+      "sentence": "A nő, ___ tegnap láttam, Kati.",
+      "options": ["akit", "aki", "akinek"],
+      "correct": 0,
+      "why": {
+        "en": "You saw the woman, so she is the object of láttam: aki + -t = akit.",
+        "es": "Viste a la mujer, así que ella es el objeto de láttam: aki + -t = akit."
+      },
+      "wrong": {
+        "aki": {
+          "en": "aki is the subject form, 'the woman who saw'; here somebody saw her.",
+          "es": "aki es la forma de sujeto, «la mujer que vio»; aquí alguien la vio a ella."
+        },
+        "akinek": {
+          "en": "akinek is 'to whom' or 'for whom'; láttam (I saw) takes a direct object, not -nek.",
+          "es": "akinek es «a quien» o «para quien»; láttam (vi) lleva un objeto directo, no -nek."
+        }
+      },
+      "examples": ["A férfi, akit tegnap láttam, magyar.", "A lány, akit tegnap láttam, Anna."],
+      "tr": { "en": "The woman I saw yesterday is Kati.", "es": "La mujer que vi ayer es Kati." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f05",
+      "kind": "form",
+      "verb": "ami",
+      "person": "-ban/-ben",
+      "answer": "amiben",
+      "table": "relative-cases"
+    },
+    {
+      "id": "vonatkozo-nevmasok-c06",
+      "sentence": "A leves, ___ eszem, finom.",
+      "options": ["amit", "ami", "amiben"],
+      "correct": 0,
+      "why": {
+        "en": "You eat the soup, so it is the object of eszem: ami + -t = amit.",
+        "es": "Te comes la sopa, así que es el objeto de eszem: ami + -t = amit."
+      },
+      "wrong": {
+        "ami": {
+          "en": "ami is the subject form, 'the soup that eats'; here you are the one eating.",
+          "es": "ami es la forma de sujeto, «la sopa que come»; aquí tú eres quien come."
+        },
+        "amiben": {
+          "en": "amiben is 'in which': 'the soup in which I eat' would mean you sit inside the soup.",
+          "es": "amiben es «en el que»: «la sopa en la que como» significaría que estás dentro de la sopa."
+        }
+      },
+      "examples": ["Az étel, amit eszem, finom.", "A könyv, amit vettem, érdekes."],
+      "tr": { "en": "The soup I am eating is delicious.", "es": "La sopa que estoy comiendo está deliciosa." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f06",
+      "kind": "form",
+      "verb": "aki",
+      "person": "-ról/-ről",
+      "answer": "akiről",
+      "table": "relative-cases"
+    },
+    {
+      "id": "vonatkozo-nevmasok-w02",
+      "kind": "why",
+      "es": "A könyv, amit vettem, érdekes.",
+      "target": "amit",
+      "tr": { "en": "The book I bought is interesting.", "es": "El libro que compré es interesante." },
+      "options": [
+        {
+          "text": {
+            "en": "ami with no ending: the book does the action",
+            "es": "ami sin terminación: el libro hace la acción"
+          },
+          "wrong": {
+            "en": "With ami the book would be the one buying; but you bought the book.",
+            "es": "Con ami el libro sería quien compra; pero tú compraste el libro."
+          }
+        },
+        {
+          "text": {
+            "en": "ami + -t: the book is the object of vettem",
+            "es": "ami + -t: el libro es el objeto de vettem"
+          }
+        },
+        {
+          "text": {
+            "en": "ami + -ben: the action happens in the book",
+            "es": "ami + -ben: la acción ocurre en el libro"
+          },
+          "wrong": {
+            "en": "With -ben the sentence would mean 'the book in which I bought', which makes no sense.",
+            "es": "Con -ben la frase significaría «el libro en el que compré», que no tiene sentido."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "vonatkozo-nevmasok-c07",
+      "sentence": "A barát, ___ dolgozom, magyar.",
+      "options": ["akivel", "akit", "akinek"],
+      "correct": 0,
+      "why": {
+        "en": "You work WITH the friend: aki + -vel = akivel.",
+        "es": "Trabajas CON el amigo: aki + -vel = akivel."
+      },
+      "wrong": {
+        "akit": {
+          "en": "akit would be a direct object ('whom I work'); dolgozom takes no object.",
+          "es": "akit sería un objeto directo («a quien trabajo»); dolgozom no lleva objeto."
+        },
+        "akinek": {
+          "en": "akinek is 'for whom': the sentence would mean 'the friend I work for', a different meaning.",
+          "es": "akinek es «para quien»: la frase significaría «el amigo para quien trabajo», otro significado."
+        }
+      },
+      "examples": ["A kolléga, akivel dolgozom, kedves.", "A nő, akivel beszélek, Kati."],
+      "tr": { "en": "The friend I work with is Hungarian.", "es": "El amigo con quien trabajo es húngaro." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f07",
+      "kind": "form",
+      "verb": "ami",
+      "person": "-ra/-re",
+      "answer": "amire",
+      "table": "relative-cases"
+    },
+    {
+      "id": "vonatkozo-nevmasok-c08",
+      "sentence": "A ház, ___ lakom, kicsi.",
+      "options": ["amiben", "amit", "amivel"],
+      "correct": 0,
+      "why": {
+        "en": "You live IN the house: ami + -ben = amiben.",
+        "es": "Vives EN la casa: ami + -ben = amiben."
+      },
+      "wrong": {
+        "amit": {
+          "en": "amit would be an object ('which I live'); lakom takes no object.",
+          "es": "amit sería un objeto («que vivo»); lakom no lleva objeto."
+        },
+        "amivel": {
+          "en": "amivel is 'with which': the house would be something you live with, like a tool.",
+          "es": "amivel es «con el que»: la casa sería algo con lo que vives, como una herramienta."
+        }
+      },
+      "examples": ["A szoba, amiben alszom, hideg.", "A bolt, amiben dolgozom, nagy."],
+      "tr": { "en": "The house I live in is small.", "es": "La casa en la que vivo es pequeña." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f08",
+      "kind": "form",
+      "verb": "aki",
+      "person": "-hoz/-hez/-höz",
+      "answer": "akihez",
+      "table": "relative-cases"
+    },
+    {
+      "id": "vonatkozo-nevmasok-c09",
+      "sentence": "A férfi, ___ levelet írok, magyar.",
+      "options": ["akinek", "akitől", "akit"],
+      "correct": 0,
+      "why": {
+        "en": "You write a letter TO the man: aki + -nek = akinek.",
+        "es": "Le escribes una carta AL hombre: aki + -nek = akinek."
+      },
+      "wrong": {
+        "akitől": {
+          "en": "akitől is 'from whom': the sentence would turn the direction around, as if the letter came from him.",
+          "es": "akitől es «de quien»: la frase invertiría la dirección, como si la carta viniera de él."
+        },
+        "akit": {
+          "en": "akit is a direct object, but the letter (levelet) is already the object, so the man needs -nek.",
+          "es": "akit es un objeto directo, pero la carta (levelet) ya es el objeto, así que el hombre necesita -nek."
+        }
+      },
+      "examples": ["A nő, akinek könyvet adok, Anna.", "A lány, akinek levelet írok, Kati."],
+      "tr": { "en": "The man I am writing a letter to is Hungarian.", "es": "El hombre a quien le escribo una carta es húngaro." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f09",
+      "kind": "form",
+      "verb": "hol",
+      "person": "a-",
+      "answer": "ahol",
+      "table": "relative-words"
+    },
+    {
+      "id": "vonatkozo-nevmasok-w03",
+      "kind": "why",
+      "es": "A bolt, ahova megyek, zárva van.",
+      "target": "ahova",
+      "tr": { "en": "The shop I am going to is closed.", "es": "La tienda a la que voy está cerrada." },
+      "options": [
+        {
+          "text": {
+            "en": "ahol: being in a place",
+            "es": "ahol: estar en un lugar"
+          },
+          "wrong": {
+            "en": "With ahol the sentence would say where I am, but megyek (I go) shows movement towards the shop.",
+            "es": "Con ahol la frase diría dónde estoy, pero megyek (voy) muestra movimiento hacia la tienda."
+          }
+        },
+        {
+          "text": {
+            "en": "ahova: movement to the place",
+            "es": "ahova: movimiento hacia el lugar"
+          }
+        },
+        {
+          "text": {
+            "en": "amikor: a time",
+            "es": "amikor: un momento"
+          },
+          "wrong": {
+            "en": "With amikor the sentence would be about a time ('the shop, when I go'), not about the place I am heading to.",
+            "es": "Con amikor la frase hablaría de un momento («la tienda, cuando voy»), no del lugar al que voy."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "vonatkozo-nevmasok-c10",
+      "sentence": "A kutya, ___ félek, nagy.",
+      "options": ["amitől", "amit", "amiben"],
+      "correct": 0,
+      "why": {
+        "en": "félek (I am afraid) goes with -tól/-től, afraid OF the dog: ami + -től = amitől.",
+        "es": "félek (tengo miedo) va con -tól/-től, miedo A lo que sea: ami + -től = amitől."
+      },
+      "wrong": {
+        "amit": {
+          "en": "amit would be a direct object ('which I fear'), but félek needs the 'of' ending -tól/-től.",
+          "es": "amit sería un objeto directo («que temo»), pero félek necesita la terminación -tól/-től."
+        },
+        "amiben": {
+          "en": "amiben is 'in which': the dog would be a place where you are afraid.",
+          "es": "amiben es «en el que»: el perro sería un lugar donde tienes miedo."
+        }
+      },
+      "examples": ["A férfi, akitől levelet kapok, magyar.", "A barát, akitől kávét kapok, kedves."],
+      "tr": { "en": "The dog I am afraid of is big.", "es": "El perro al que le tengo miedo es grande." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f10",
+      "kind": "form",
+      "verb": "mikor",
+      "person": "a-",
+      "answer": "amikor",
+      "table": "relative-words"
+    },
+    {
+      "id": "vonatkozo-nevmasok-c11",
+      "sentence": "Szombat az a nap, ___ otthon vagyok.",
+      "options": ["amikor", "ahol", "aki"],
+      "correct": 0,
+      "why": {
+        "en": "Saturday is a time, the day when I am at home: amikor.",
+        "es": "El sábado es un momento, el día en que estoy en casa: amikor."
+      },
+      "wrong": {
+        "ahol": {
+          "en": "ahol is 'where': 'the day where I am at home' mixes up place and time.",
+          "es": "ahol es «donde»: «el día donde estoy en casa» mezcla lugar y tiempo."
+        },
+        "aki": {
+          "en": "aki is for people; a day is not a person.",
+          "es": "aki es para personas; un día no es una persona."
+        }
+      },
+      "examples": ["Tegnap, amikor dolgoztam, levelet kaptam.", "Vasárnap az a nap, amikor Anna főz."],
+      "tr": { "en": "Saturday is the day when I am at home.", "es": "El sábado es el día en que estoy en casa." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f11",
+      "kind": "form",
+      "verb": "hova",
+      "person": "a-",
+      "answer": "ahova",
+      "accept": ["ahová"],
+      "table": "relative-words"
+    },
+    {
+      "id": "vonatkozo-nevmasok-c12",
+      "sentence": "Holnap esik az eső, ___ nem jó.",
+      "options": ["ami", "aki", "amikor"],
+      "correct": 0,
+      "why": {
+        "en": "The relative word points back to the whole first sentence ('which'): that is ami.",
+        "es": "La palabra relativa se refiere a toda la primera oración («lo cual»): eso es ami."
+      },
+      "wrong": {
+        "aki": {
+          "en": "aki is for people; there is no person in the first sentence for it to point to.",
+          "es": "aki es para personas; no hay ninguna persona en la primera oración a la que referirse."
+        },
+        "amikor": {
+          "en": "amikor is 'when': 'Tomorrow it rains, when not good' does not work.",
+          "es": "amikor es «cuando»: «mañana llueve, cuando no es bueno» no funciona."
+        }
+      },
+      "examples": ["Hideg van, ami nem jó.", "Az étterem zárva van, ami nem jó."],
+      "tr": { "en": "It will rain tomorrow, which is not good.", "es": "Mañana llueve, lo cual no es bueno." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-f12",
+      "kind": "form",
+      "verb": "mi",
+      "person": "a-",
+      "answer": "ami",
+      "table": "relative-words"
+    },
+    {
+      "id": "vonatkozo-nevmasok-w04",
+      "kind": "why",
+      "es": "A barát, akivel dolgozom, magyar.",
+      "target": "akivel",
+      "tr": { "en": "The friend I work with is Hungarian.", "es": "El amigo con quien trabajo es húngaro." },
+      "options": [
+        {
+          "text": {
+            "en": "aki + -t: the friend is the object",
+            "es": "aki + -t: el amigo es el objeto"
+          },
+          "wrong": {
+            "en": "With akit the sentence would need an object ('the friend whom I work'); dolgozom takes none.",
+            "es": "Con akit la frase necesitaría un objeto («el amigo a quien trabajo»); dolgozom no lleva ninguno."
+          }
+        },
+        {
+          "text": {
+            "en": "aki + -nek: to or for the friend",
+            "es": "aki + -nek: a o para el amigo"
+          },
+          "wrong": {
+            "en": "With akinek the sentence would mean 'the friend I work for', a different meaning.",
+            "es": "Con akinek la frase significaría «el amigo para quien trabajo», otro significado."
+          }
+        },
+        {
+          "text": {
+            "en": "aki + -vel: together with the friend",
+            "es": "aki + -vel: junto con el amigo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "vonatkozo-nevmasok-c13",
+      "sentence": "Minden, ___ eszem, finom.",
+      "options": ["amit", "akit", "amikor"],
+      "correct": 0,
+      "why": {
+        "en": "After minden (everything) use ami, here with -t because it is what you eat: amit.",
+        "es": "Después de minden (todo) se usa ami, aquí con -t porque es lo que comes: amit."
+      },
+      "wrong": {
+        "akit": {
+          "en": "akit is 'whom', for people; minden here means every thing, not every person.",
+          "es": "akit es «a quien», para personas; minden aquí significa cada cosa, no cada persona."
+        },
+        "amikor": {
+          "en": "amikor is 'when': it gives a time, but here the clause says what you eat.",
+          "es": "amikor es «cuando»: da un momento, pero aquí la oración dice lo que comes."
+        }
+      },
+      "examples": ["Minden, amit vettem, olcsó.", "Az, amit eszem, finom."],
+      "tr": { "en": "Everything I eat is delicious.", "es": "Todo lo que como está delicioso." }
+    },
+    {
+      "id": "vonatkozo-nevmasok-c14",
+      "sentence": "Mindenki, ___ itt van, magyar.",
+      "options": ["aki", "ami", "ahol"],
+      "correct": 0,
+      "why": {
+        "en": "mindenki (everybody) means people, so the relative word is aki.",
+        "es": "mindenki (todos) se refiere a personas, así que la palabra relativa es aki."
+      },
+      "wrong": {
+        "ami": {
+          "en": "ami follows minden (everything), not mindenki (everybody).",
+          "es": "ami va después de minden (todo), no de mindenki (todos)."
+        },
+        "ahol": {
+          "en": "ahol is 'where': 'everybody, where is here' does not work.",
+          "es": "ahol es «donde»: «todos, donde está aquí» no funciona."
+        }
+      },
+      "examples": ["Mindenki, aki itt dolgozik, kedves.", "Mindenki, aki ott van, fáradt."],
+      "tr": { "en": "Everybody who is here is Hungarian.", "es": "Todos los que están aquí son húngaros." }
+    }
+  ]
+}

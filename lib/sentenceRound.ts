@@ -138,7 +138,7 @@ function parseStep(raw: unknown): RoundStep | null {
 export function parseSentenceRound(raw: unknown): SentenceRound | null {
   if (typeof raw !== 'object' || raw === null) return null;
   const r = raw as Partial<SentenceRound>;
-  if (r.v !== 2 || typeof r.day !== 'string' || (r.target !== 'es' && r.target !== 'en') || !Array.isArray(r.entries) || !Array.isArray(r.steps)) return null;
+  if (r.v !== 2 || typeof r.day !== 'string' || (r.target !== 'es' && r.target !== 'en' && r.target !== 'hu') || !Array.isArray(r.entries) || !Array.isArray(r.steps)) return null;
   const entries: SentenceEntry[] = [];
   for (const raw of r.entries) {
     const entry = parseEntry(raw);

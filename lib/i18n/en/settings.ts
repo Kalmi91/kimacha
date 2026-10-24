@@ -15,7 +15,6 @@ export default {
       title: 'Themes',
       oneLook: 'This theme has one look.',
       posterSlogan: 'LEARN, LEARN, LEARN!',
-      sample: 'el carro',
       know: 'I know',
       // the theme decor texts (senior, retro95, y2k, gamer).
       readAloud: 'Read aloud',
@@ -64,8 +63,6 @@ export default {
     // sheet (Settings, above the Backup row).
     learningDirection: 'Learning direction',
     chooseDirection: 'Choose learning direction',
-    directionEnEs: 'English → Spanish',
-    directionEsEn: 'Spanish → English',
     credits: 'Credits',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reset grammar progress',

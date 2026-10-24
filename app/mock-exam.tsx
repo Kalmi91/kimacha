@@ -6,7 +6,7 @@ import Colors from '@/constants/Colors';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
-import { PCIC_LEVELS, pcicItemsForLevel, type PcicTarget } from '@/data/pcic';
+import { PCIC_LEVELS, pcicItemsForLevel } from '@/data/pcic';
 import { t } from '@/lib/i18n';
 import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
@@ -37,7 +37,7 @@ import {
   secondsLeft,
   type MockSession,
 } from '@/lib/exam/mock/session';
-import type { MockAnswers, MockExam, MockLevel, MockTaskAnswer } from '@/lib/exam/mock/types';
+import type { MockAnswers, MockExam, MockLevel, MockTarget, MockTaskAnswer } from '@/lib/exam/mock/types';
 import { isExamLearned } from '@/lib/exam/unlock';
 
 // The mock-exam screen, laid out like the official exam. Intro -> per paper: paper intro, clock,
@@ -62,7 +62,7 @@ export default function MockExamScreen() {
   const params = useLocalSearchParams<{ level?: string }>();
 
   const [phase, setPhase] = useState<Phase>('loading');
-  const [target, setTarget] = useState<PcicTarget>('es');
+  const [target, setTarget] = useState<MockTarget>('es');
   const [level, setLevel] = useState<MockLevel>('A1');
   const [exam, setExam] = useState<MockExam | null>(null);
   const [learned, setLearned] = useState<ReadonlySet<string>>(new Set());
@@ -94,7 +94,8 @@ export default function MockExamScreen() {
       const db = getDb();
       const { target: tgt } = await refresh(['direction']);
       const lvl = params.level ?? '';
-      if (!mockAvailable(tgt, lvl)) {
+      // target hu has no practice exam, the same screen as an unknown level.
+      if (tgt === 'hu' || !mockAvailable(tgt, lvl)) {
         if (alive) setPhase('unavailable');
         return;
       }

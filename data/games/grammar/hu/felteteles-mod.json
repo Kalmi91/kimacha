@@ -1,0 +1,642 @@
+{
+  "schema": 2,
+  "topic": "felteteles-mod",
+  "level": "A2",
+  "title": { "en": "Would and would like: szeretnék, kérnék, lenne", "es": "Cortesía y deseos: szeretnék, kérnék, lenne" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Hungarian conditional is the 'would' form. Take the infinitive, drop the final -ni, and add the endings: kérni (to ask for) gives kérnék (I would ask for), kérnél, kérne. It is the form of politeness (Kérnék egy kávét. = I'd like a coffee), of wishes (Szeretnék Budapesten lakni. = I would like to live in Budapest) and of 'if' sentences (Ha lenne időm, moziba mennék. = If I had time, I would go to the cinema). English needs the separate word 'would'; Hungarian puts it inside the verb.",
+        "es": "El condicional húngaro es la forma de «-ría» y «quisiera». Toma el infinitivo, quita el -ni final y añade las terminaciones: kérni (pedir) da kérnék (pediría), kérnél, kérne. Es la forma de la cortesía (Kérnék egy kávét. = Quisiera un café), de los deseos (Szeretnék Budapesten lakni. = Me gustaría vivir en Budapest) y de las frases con «si» (Ha lenne időm, moziba mennék. = Si tuviera tiempo, iría al cine). Igual que en español (iría, quisiera), la idea de «haría» va dentro del verbo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "cond-forms",
+      "title": { "en": "The conditional with -ne (front-vowel verbs)", "es": "El condicional con -ne (verbos de vocal anterior)" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "szeretni (to like)", "es": "szeretni (querer, gustar)" },
+        { "en": "kérni (to ask for)", "es": "kérni (pedir)" },
+        { "en": "lenni (to be)", "es": "lenni (ser, estar)" }
+      ],
+      "rows": [
+        ["én", "szeretnék", "kérnék", "lennék"],
+        ["te", "szeretnél", "kérnél", "lennél"],
+        ["ő / Ön", "szeretne", "kérne", "lenne"],
+        ["mi", "szeretnénk", "kérnénk", "lennénk"],
+        ["ti", "szeretnétek", "kérnétek", "lennétek"],
+        ["ők / Önök", "szeretnének", "kérnének", "lennének"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "cond-back",
+      "title": { "en": "The conditional with -na (back-vowel verbs)", "es": "El condicional con -na (verbos de vocal posterior)" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "tudni (to be able)", "es": "tudni (poder, saber)" },
+        { "en": "várni (to wait)", "es": "várni (esperar)" },
+        { "en": "olvasni (to read)", "es": "olvasni (leer)" }
+      ],
+      "rows": [
+        ["én", "tudnék", "várnék", "olvasnék"],
+        ["te", "tudnál", "várnál", "olvasnál"],
+        ["ő / Ön", "tudna", "várna", "olvasna"],
+        ["mi", "tudnánk", "várnánk", "olvasnánk"],
+        ["ti", "tudnátok", "várnátok", "olvasnátok"],
+        ["ők / Önök", "tudnának", "várnának", "olvasnának"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "How to build it", "es": "Cómo se forma" },
+      "items": [
+        {
+          "text": {
+            "en": "Start from the infinitive and drop -ni: menni gives men-, várni gives vár-. Then add -nék, -nál / -nél, -na / -ne, -nánk / -nénk, -nátok / -nétek, -nának / -nének. That is where the double n comes from: men + nék = mennék.",
+            "es": "Parte del infinitivo y quítale -ni: menni da men-, várni da vár-. Después añade -nék, -nál / -nél, -na / -ne, -nánk / -nénk, -nátok / -nétek, -nának / -nének. De ahí sale la doble n: men + nék = mennék."
+          },
+          "examples": [
+            { "es": "Mennék haza.", "tr": { "en": "I would go home.", "es": "Me iría a casa." } },
+            { "es": "Innék egy teát.", "tr": { "en": "I would have a tea.", "es": "Tomaría un té." } },
+            { "es": "Otthon lennék.", "tr": { "en": "I would be at home.", "es": "Estaría en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Vowel harmony picks the ending: back-vowel verbs take -na / -nál / -nánk, front-vowel verbs take -ne / -nél / -nénk. The I form is always -nék.",
+            "es": "La armonía vocálica elige la terminación: los verbos de vocal posterior llevan -na / -nál / -nánk, los de vocal anterior -ne / -nél / -nénk. La forma de yo es siempre -nék."
+          },
+          "examples": [
+            { "es": "Várnál egy percet?", "tr": { "en": "Would you wait a minute?", "es": "¿Esperarías un minuto?" } },
+            { "es": "Kérnél egy kávét?", "tr": { "en": "Would you order a coffee?", "es": "¿Pedirías un café?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs whose infinitive has a linking vowel keep it: segíteni gives segítenék, kezdeni gives kezdenék.",
+            "es": "Los verbos cuyo infinitivo lleva vocal de enlace la conservan: segíteni da segítenék, kezdeni da kezdenék."
+          },
+          "examples": [
+            { "es": "Szívesen segítenék.", "tr": { "en": "I would gladly help.", "es": "Con gusto ayudaría." } },
+            { "es": "Mikor kezdenénk?", "tr": { "en": "When would we start?", "es": "¿Cuándo empezaríamos?" } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "cond-infinitive",
+      "title": { "en": "Check the infinitive: enni, inni, menni, jönni", "es": "Mira el infinitivo: enni, inni, menni, jönni" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "enni (to eat)", "es": "enni (comer)" },
+        { "en": "inni (to drink)", "es": "inni (beber)" },
+        { "en": "menni (to go)", "es": "menni (ir)" },
+        { "en": "jönni (to come)", "es": "jönni (venir)" }
+      ],
+      "rows": [
+        ["én", "ennék", "innék", "mennék", "jönnék"],
+        ["te", "ennél", "innál", "mennél", "jönnél"],
+        ["ő / Ön", "enne", "inna", "menne", "jönne"],
+        ["mi", "ennénk", "innánk", "mennénk", "jönnénk"],
+        ["ti", "ennétek", "innátok", "mennétek", "jönnétek"],
+        ["ők / Önök", "ennének", "innának", "mennének", "jönnének"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "cond-definite",
+      "title": {
+        "en": "With a definite object (a/az + noun, a name): -ném, -néd, -né",
+        "es": "Con objeto definido (a/az + sustantivo, un nombre): -ném, -néd, -né"
+      },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "kérni (to ask for)", "es": "kérni (pedir)" },
+        { "en": "várni (to wait for)", "es": "várni (esperar)" }
+      ],
+      "rows": [
+        ["én + a/az", "kérném", "várnám"],
+        ["te + a/az", "kérnéd", "várnád"],
+        ["ő / Ön + a/az", "kérné", "várná"],
+        ["mi + a/az", "kérnénk", "várnánk"],
+        ["ti + a/az", "kérnétek", "várnátok"],
+        ["ők / Önök + a/az", "kérnék", "várnák"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "What is it for?", "es": "¿Para qué sirve?" },
+      "points": [
+        {
+          "text": {
+            "en": "Polite requests. Kérnék is softer than Kérek; Szeretnék + infinitive is the standard polite wish; Tudna ...? and Lenne ...? are polite questions.",
+            "es": "Peticiones corteses. Kérnék es más suave que Kérek; Szeretnék + infinitivo es el deseo cortés normal; Tudna ...? y Lenne ...? son preguntas corteses."
+          },
+          "examples": [
+            { "es": "Kérnék egy kávét.", "tr": { "en": "I'd like a coffee.", "es": "Quisiera un café." } },
+            { "es": "Szeretnék fizetni.", "tr": { "en": "I'd like to pay.", "es": "Quisiera pagar." } },
+            { "es": "Lenne egy szabad asztal?", "tr": { "en": "Would there be a free table?", "es": "¿Habría una mesa libre?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Offers and questions to a friend: the te form turns 'do you' into 'would you'.",
+            "es": "Ofrecimientos y preguntas a un amigo: la forma te convierte «¿quieres...?» en «¿te gustaría...?»."
+          },
+          "examples": [
+            { "es": "Innál egy teát?", "tr": { "en": "Would you like a tea?", "es": "¿Te gustaría un té?" } },
+            { "es": "Jönnél moziba?", "tr": { "en": "Would you come to the cinema?", "es": "¿Vendrías al cine?" } },
+            { "es": "Tudnál segíteni?", "tr": { "en": "Could you help?", "es": "¿Podrías ayudar?" } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Wishes and daydreams: szeretnék, szívesen + conditional, Jó lenne + infinitive.",
+            "es": "Deseos y sueños: szeretnék, szívesen + condicional, Jó lenne + infinitivo."
+          },
+          "examples": [
+            { "es": "Szeretnék Budapesten lakni.", "tr": { "en": "I would like to live in Budapest.", "es": "Me gustaría vivir en Budapest." } },
+            { "es": "Jó lenne pihenni.", "tr": { "en": "It would be nice to rest.", "es": "Sería bueno descansar." } },
+            { "es": "Szívesen innék egy kávét.", "tr": { "en": "I would gladly have a coffee.", "es": "Con gusto tomaría un café." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "An imaginary or unlikely 'if': Ha + conditional, conditional. English changes the tense ('if I had'); Hungarian puts the conditional in BOTH parts. Spanish uses the imperfect subjunctive in the 'if' part (si tuviera).",
+            "es": "Un «si» imaginario o improbable: Ha + condicional, condicional. El español usa el imperfecto de subjuntivo en la parte del «si» (si tuviera); el húngaro pone el condicional en las DOS partes."
+          },
+          "examples": [
+            {
+              "es": "Ha lenne időm, moziba mennék.",
+              "tr": { "en": "If I had time, I would go to the cinema.", "es": "Si tuviera tiempo, iría al cine." }
+            },
+            { "es": "Ha lenne pénzem, utaznék.", "tr": { "en": "If I had money, I would travel.", "es": "Si tuviera dinero, viajaría." } },
+            {
+              "es": "Ha esne az eső, otthon maradnék.",
+              "tr": { "en": "If it rained, I would stay at home.", "es": "Si lloviera, me quedaría en casa." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Three pairs people mix up", "es": "Tres pares que se confunden" },
+      "pairs": [
+        {
+          "a": "Szeretek úszni.",
+          "b": "Szeretnék úszni.",
+          "note": {
+            "en": "szeretek = I like (in general); szeretnék = I would like (a wish).",
+            "es": "szeretek = me gusta (en general); szeretnék = quisiera (un deseo)."
+          },
+          "examples": [
+            { "es": "Szeretek olvasni.", "tr": { "en": "I like reading.", "es": "Me gusta leer." } },
+            { "es": "Szeretnék olvasni.", "tr": { "en": "I would like to read.", "es": "Quisiera leer." } }
+          ]
+        },
+        {
+          "a": "Kérek egy kávét.",
+          "b": "Kérnék egy kávét.",
+          "note": {
+            "en": "Both are fine in a café; the conditional is softer and more polite.",
+            "es": "Las dos sirven en una cafetería; el condicional es más suave y más cortés."
+          },
+          "examples": [
+            { "es": "Kérek egy vizet.", "tr": { "en": "I'll have a water.", "es": "Me da un agua." } },
+            { "es": "Kérnék egy vizet.", "tr": { "en": "I'd like a water.", "es": "Quisiera un agua." } }
+          ]
+        },
+        {
+          "a": "Ha van időm, moziba megyek.",
+          "b": "Ha lenne időm, moziba mennék.",
+          "note": {
+            "en": "A real possibility: present tense in both parts. An imaginary or unlikely one: conditional in both parts.",
+            "es": "Una posibilidad real: presente en las dos partes. Una imaginaria o improbable: condicional en las dos partes."
+          },
+          "examples": [
+            { "es": "Ha esik az eső, otthon maradok.", "tr": { "en": "If it rains, I'll stay at home.", "es": "Si llueve, me quedo en casa." } },
+            {
+              "es": "Ha esne az eső, otthon maradnék.",
+              "tr": { "en": "If it rained, I would stay at home.", "es": "Si lloviera, me quedaría en casa." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) szeretek is 'I like', szeretnék is 'I would like': for a polite wish you need -nék. (2) In an imaginary 'if' use the conditional in BOTH parts: Ha lenne időm, mennék, never Ha volt időm. (3) With a definite object the I form is -ném: Kérném a számlát. (4) kérnék can be 'I would ask for' or, with a definite object, 'they would ask for it'.",
+        "es": "Trampas clásicas: (1) szeretek es «me gusta», szeretnék es «quisiera»: para un deseo cortés hace falta -nék. (2) En un «si» imaginario usa el condicional en las DOS partes: Ha lenne időm, mennék, nunca Ha volt időm. (3) Con un objeto definido la forma de yo es -ném: Kérném a számlát. (4) kérnék puede ser «yo pediría» o, con un objeto definido, «ellos lo pedirían»."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, the conditional is the polite and the dreaming form. Take the infinitive, drop the ending «ni», and add «nék», «nál», «na» and so on. «Kérnék egy kávét», I would like a coffee. «Szeretnék fizetni», I would like to pay. To ask politely, say «Tudna segíteni?» or «Lenne egy szabad asztal?» For an unreal if, both parts take the conditional: «Ha lenne időm, moziba mennék». Do not confuse «szeretek», I like, with «szeretnék», I would like.",
+    "es": "En húngaro, el condicional es la forma de la cortesía y de los sueños. Toma el infinitivo, quita la terminación «ni» y añade «nék», «nál», «na» y así sucesivamente. «Kérnék egy kávét», quisiera un café. «Szeretnék fizetni», quisiera pagar. Para preguntar con cortesía, di «Tudna segíteni?» o «Lenne egy szabad asztal?» Para un si irreal, las dos partes llevan condicional: «Ha lenne időm, moziba mennék». No confundas «szeretek», me gusta, con «szeretnék», quisiera."
+  },
+  "items": [
+    {
+      "id": "felteteles-mod-c01",
+      "sentence": "Jó napot! ___ egy kávét.",
+      "options": ["Kérnél", "Kérnék", "Kérne"],
+      "correct": 1,
+      "why": {
+        "en": "The speaker asks for something for himself: 1st person, kérnék (I would like to ask for).",
+        "es": "El hablante pide algo para sí mismo: 1.ª persona, kérnék («quisiera pedir»)."
+      },
+      "wrong": {
+        "Kérnél": {
+          "en": "kérnél is 'you would ask for': the sentence would speak to the other person and not make the request.",
+          "es": "kérnél es «tú pedirías»: la frase se dirigiría a la otra persona y no haría la petición."
+        },
+        "Kérne": { "en": "kérne is 'he/she would ask for': it is about a third person.", "es": "kérne es «él/ella pediría»: habla de una tercera persona." }
+      },
+      "examples": ["Kérnék egy sört.", "Kérnék egy vizet."],
+      "tr": { "en": "Hello! I would like a coffee.", "es": "¡Hola! Quisiera un café." }
+    },
+    { "id": "felteteles-mod-f01", "kind": "form", "verb": "szeretni", "person": "én", "answer": "szeretnék", "table": "cond-forms" },
+    {
+      "id": "felteteles-mod-c02",
+      "sentence": "Elnézést, szeretnék ___.",
+      "options": ["fizetni", "fizetek", "fizettem"],
+      "correct": 0,
+      "why": {
+        "en": "After szeretnék the second verb is an infinitive: fizetni (to pay).",
+        "es": "Después de szeretnék el segundo verbo va en infinitivo: fizetni («pagar»)."
+      },
+      "wrong": {
+        "fizetek": {
+          "en": "fizetek is 'I pay' (present): a conjugated form, and szeretnék needs an infinitive.",
+          "es": "fizetek es «pago» (presente): una forma conjugada, y szeretnék necesita un infinitivo."
+        },
+        "fizettem": { "en": "fizettem is 'I paid' (past); a wish needs the infinitive.", "es": "fizettem es «pagué» (pasado); un deseo necesita el infinitivo." }
+      },
+      "examples": ["Szeretnék enni.", "Szeretnék rendelni."],
+      "tr": { "en": "Excuse me, I would like to pay.", "es": "Disculpe, quisiera pagar." }
+    },
+    { "id": "felteteles-mod-f02", "kind": "form", "verb": "kérni", "person": "te", "answer": "kérnél", "table": "cond-forms" },
+    {
+      "id": "felteteles-mod-c03",
+      "sentence": "Péter, ___ egy teát?",
+      "options": ["innék", "inna", "innál"],
+      "correct": 2,
+      "why": {
+        "en": "You offer something to Péter (te): the conditional te form of inni is innál.",
+        "es": "Le ofreces algo a Péter (te): la forma te del condicional de inni es innál."
+      },
+      "wrong": {
+        "innék": {
+          "en": "innék is 'I would drink': the speaker would be asking about himself.",
+          "es": "innék es «yo tomaría»: el hablante preguntaría por sí mismo."
+        },
+        "inna": {
+          "en": "inna is 'he/she would drink': the sentence would be about a third person, not Péter.",
+          "es": "inna es «él/ella tomaría»: la frase hablaría de una tercera persona, no de Péter."
+        }
+      },
+      "examples": ["Innál egy kávét?", "Jönnél moziba?"],
+      "tr": { "en": "Péter, would you like a tea?", "es": "Péter, ¿te gustaría un té?" }
+    },
+    { "id": "felteteles-mod-f03", "kind": "form", "verb": "lenni", "person": "ő / Ön", "answer": "lenne", "table": "cond-forms" },
+    {
+      "id": "felteteles-mod-c04",
+      "sentence": "Nincs időm. Ha ___ időm, moziba mennék.",
+      "options": ["van", "lenne", "volt"],
+      "correct": 1,
+      "why": {
+        "en": "An imaginary or unlikely 'if' takes the conditional: lenne. The main clause (mennék) is conditional too.",
+        "es": "Un «si» imaginario o improbable lleva condicional: lenne. La oración principal (mennék) también es condicional."
+      },
+      "wrong": {
+        "van": {
+          "en": "With van ('if I have time') the condition would be real, and the main clause would be present too: Ha van időm, moziba megyek.",
+          "es": "Con van («si tengo tiempo») la condición sería real, y la principal también iría en presente: Ha van időm, moziba megyek."
+        },
+        "volt": {
+          "en": "volt puts the if-clause in the past ('when I had time'); Hungarian does not use the past for 'if I had'.",
+          "es": "volt pone el «si» en pasado («cuando tuve tiempo»); el húngaro no usa el pasado para «si tuviera»."
+        }
+      },
+      "examples": ["Ha lenne pénzem, utaznék.", "Ha lenne időm, olvasnék."],
+      "tr": { "en": "If I had time, I would go to the cinema.", "es": "Si tuviera tiempo, iría al cine." }
+    },
+    { "id": "felteteles-mod-f04", "kind": "form", "verb": "lenni", "person": "mi", "answer": "lennénk", "table": "cond-forms" },
+    {
+      "id": "felteteles-mod-w01",
+      "kind": "why",
+      "es": "Kérnék egy kávét.",
+      "target": "Kérnék",
+      "tr": { "en": "I would like a coffee.", "es": "Quisiera un café." },
+      "options": [
+        {
+          "text": { "en": "Past tense: I asked for a coffee", "es": "Pasado: pedí un café" },
+          "wrong": {
+            "en": "With this rule the sentence would be Kértem egy kávét (I asked for a coffee), about something already done.",
+            "es": "Con esta regla la frase sería Kértem egy kávét (pedí un café), sobre algo ya hecho."
+          }
+        },
+        {
+          "text": { "en": "Polite request: the conditional -nék is softer than kérek", "es": "Petición cortés: el condicional -nék es más suave que kérek" }
+        },
+        {
+          "text": { "en": "Command: the j form", "es": "Orden: la forma con j" },
+          "wrong": {
+            "en": "With this rule the sentence would be Kérj egy kávét! (Order a coffee!), said to someone else.",
+            "es": "Con esta regla la frase sería Kérj egy kávét! (¡Pide un café!), dicho a otra persona."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "felteteles-mod-c05",
+      "sentence": "Ha lenne pénzem, ___ Mexikóvárosba.",
+      "options": ["utazom", "utaznám", "utaznék"],
+      "correct": 2,
+      "why": {
+        "en": "The 'if' part is conditional, so the main part is conditional too: utaznék (1st person).",
+        "es": "La parte del «si» es condicional, así que la principal también: utaznék (1.ª persona)."
+      },
+      "wrong": {
+        "utazom": {
+          "en": "utazom is the plain present, 'I travel': it fits a real condition, not Ha lenne.",
+          "es": "utazom es el presente normal, «viajo»: encaja con una condición real, no con Ha lenne."
+        },
+        "utaznám": {
+          "en": "utaznám is the definite form: it needs a definite object (the, this), and utazni has no object.",
+          "es": "utaznám es la forma definida: necesita un objeto definido (el, este), y utazni no tiene objeto."
+        }
+      },
+      "examples": ["Ha lenne időm, utaznék.", "Utaznék Szegedre."],
+      "tr": { "en": "If I had money, I would travel to Mexico City.", "es": "Si tuviera dinero, viajaría a la Ciudad de México." }
+    },
+    { "id": "felteteles-mod-f05", "kind": "form", "verb": "tudni", "person": "ő / Ön", "answer": "tudna", "table": "cond-back" },
+    {
+      "id": "felteteles-mod-c06",
+      "sentence": "Szia, Anna! ___ nekem segíteni?",
+      "options": ["Tudnál", "Tudna", "Tudnék"],
+      "correct": 0,
+      "why": { "en": "Anna is a friend (Szia): the te form, tudnál (could you).", "es": "Anna es una amiga (Szia): la forma te, tudnál («podrías»)." },
+      "wrong": {
+        "Tudna": {
+          "en": "tudna is the Ön form, for someone you are formal with; after Szia it would be too stiff.",
+          "es": "tudna es la forma Ön, para alguien a quien tratas de usted; después de Szia sería demasiado rígido."
+        },
+        "Tudnék": {
+          "en": "tudnék is 'I could': the speaker would be asking about himself.",
+          "es": "tudnék es «yo podría»: el hablante preguntaría por sí mismo."
+        }
+      },
+      "examples": ["Tudnál várni?", "Tudnál jönni?"],
+      "tr": { "en": "Hi, Anna! Could you help me?", "es": "¡Hola, Anna! ¿Podrías ayudarme?" }
+    },
+    { "id": "felteteles-mod-f06", "kind": "form", "verb": "várni", "person": "te", "answer": "várnál", "table": "cond-back" },
+    {
+      "id": "felteteles-mod-c07",
+      "sentence": "Elnézést, kérem, ___ nekem segíteni?",
+      "options": ["tudnál", "tudna", "tudnék"],
+      "correct": 1,
+      "why": {
+        "en": "Elnézést, kérem is polite speech to a stranger (Ön), so the 3rd person: tudna.",
+        "es": "Elnézést, kérem es lenguaje cortés con un desconocido (Ön), por eso la 3.ª persona: tudna."
+      },
+      "wrong": {
+        "tudnál": {
+          "en": "tudnál is the informal te form: right for a friend, too casual for a stranger.",
+          "es": "tudnál es la forma informal te: correcta para un amigo, demasiado coloquial para un desconocido."
+        },
+        "tudnék": {
+          "en": "tudnék is 'I could': the speaker would be asking about himself.",
+          "es": "tudnék es «yo podría»: el hablante preguntaría por sí mismo."
+        }
+      },
+      "examples": ["Tudna várni?", "Tudna jönni?"],
+      "tr": { "en": "Excuse me, please, could you help?", "es": "Disculpe, por favor, ¿podría ayudarme?" }
+    },
+    { "id": "felteteles-mod-f07", "kind": "form", "verb": "olvasni", "person": "ti", "answer": "olvasnátok", "table": "cond-back" },
+    {
+      "id": "felteteles-mod-c08",
+      "sentence": "___ egy szabad asztal?",
+      "options": ["Lennék", "Lennének", "Lenne"],
+      "correct": 2,
+      "why": {
+        "en": "'Would there be ...?' is lenne (3rd person singular) with one table.",
+        "es": "«¿Habría...?» es lenne (3.ª persona singular) con una sola mesa."
+      },
+      "wrong": {
+        "Lennék": {
+          "en": "lennék is 'I would be': the sentence would be about the speaker, not about the table.",
+          "es": "lennék es «yo sería»: la frase hablaría del hablante, no de la mesa."
+        },
+        "Lennének": {
+          "en": "lennének is plural, 'they would be': it needs several tables.",
+          "es": "lennének es plural, «serían» o «habría» con varias mesas: necesita varias mesas."
+        }
+      },
+      "examples": ["Lenne egy szék?", "Lenne még szabad szoba?"],
+      "tr": { "en": "Would there be a free table?", "es": "¿Habría una mesa libre?" }
+    },
+    { "id": "felteteles-mod-f08", "kind": "form", "verb": "enni", "person": "én", "answer": "ennék", "table": "cond-infinitive" },
+    {
+      "id": "felteteles-mod-w02",
+      "kind": "why",
+      "es": "Ha lenne időm, moziba mennék.",
+      "target": "lenne",
+      "tr": { "en": "If I had time, I would go to the cinema.", "es": "Si tuviera tiempo, iría al cine." },
+      "options": [
+        {
+          "text": { "en": "Real condition: the present tense", "es": "Condición real: el presente" },
+          "wrong": {
+            "en": "With this rule the sentence would be Ha van időm, moziba megyek (if I have time, I go).",
+            "es": "Con esta regla la frase sería Ha van időm, moziba megyek (si tengo tiempo, voy)."
+          }
+        },
+        {
+          "text": { "en": "Past tense, like English 'had'", "es": "Pasado, como el inglés «had»" },
+          "wrong": {
+            "en": "With this rule the sentence would be Ha volt időm ... (when I had time, in the past); Hungarian does not use the past for an imaginary if.",
+            "es": "Con esta regla la frase sería Ha volt időm ... (cuando tuve tiempo, en pasado); el húngaro no usa el pasado para un «si» imaginario."
+          }
+        },
+        {
+          "text": {
+            "en": "Imaginary 'if': the conditional also stands in the if-clause",
+            "es": "«Si» imaginario: el condicional también va en la parte del «si»"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "felteteles-mod-c09",
+      "sentence": "Ha lenne időm, jó ___ pihenni.",
+      "options": ["lenne", "lesz", "volt"],
+      "correct": 0,
+      "why": { "en": "Jó lenne + infinitive says 'it would be nice to ...': a wish.", "es": "Jó lenne + infinitivo dice «sería bueno...»: un deseo." },
+      "wrong": {
+        "lesz": {
+          "en": "lesz is 'will be': Jó lesz pihenni is 'It will be good to rest', a prediction; after Ha lenne the main clause must be conditional too.",
+          "es": "lesz es «será»: Jó lesz pihenni es «Será bueno descansar», una predicción; después de Ha lenne la principal también debe ir en condicional."
+        },
+        "volt": {
+          "en": "volt is 'was': Jó volt pihenni is 'It was good to rest', about the past; it does not fit Ha lenne.",
+          "es": "volt es «fue»: Jó volt pihenni es «Fue bueno descansar», sobre el pasado; no encaja con Ha lenne."
+        }
+      },
+      "examples": ["Jó lenne enni.", "Jó lenne otthon lenni."],
+      "tr": { "en": "If I had time, it would be nice to rest.", "es": "Si tuviera tiempo, sería bueno descansar." }
+    },
+    { "id": "felteteles-mod-f09", "kind": "form", "verb": "inni", "person": "te", "answer": "innál", "table": "cond-infinitive" },
+    {
+      "id": "felteteles-mod-c10",
+      "sentence": "Mi Debrecenben ___ lakni.",
+      "options": ["szeretnék", "szeretnek", "szeretnénk"],
+      "correct": 2,
+      "why": { "en": "Mi is 'we', so the form is szeretnénk (we would like).", "es": "Mi es «nosotros», por eso la forma es szeretnénk («nos gustaría»)." },
+      "wrong": {
+        "szeretnék": {
+          "en": "szeretnék is 'I would like'; with mi it would mix 'we' and 'I'.",
+          "es": "szeretnék es «quisiera»; con mi mezclaría «nosotros» y «yo»."
+        },
+        "szeretnek": {
+          "en": "szeretnek is 'they like' (present): neither 'would' nor 'we'.",
+          "es": "szeretnek es «ellos quieren» (presente): ni «quisiéramos» ni «nosotros»."
+        }
+      },
+      "examples": ["Szeretnénk enni.", "Szeretnénk fizetni."],
+      "tr": { "en": "We would like to live in Debrecen.", "es": "Nos gustaría vivir en Debrecen." }
+    },
+    { "id": "felteteles-mod-f10", "kind": "form", "verb": "menni", "person": "mi", "answer": "mennénk", "table": "cond-infinitive" },
+    {
+      "id": "felteteles-mod-c11",
+      "sentence": "Éhes vagyok. ___ enni.",
+      "options": ["Szeretek", "Szeretnék", "Szeretem"],
+      "correct": 1,
+      "why": { "en": "A wish right now is szeretnék (I would like).", "es": "Un deseo en este momento es szeretnék («quisiera»)." },
+      "wrong": {
+        "Szeretek": {
+          "en": "szeretek is 'I like' in general: Szeretek enni means 'I like eating'.",
+          "es": "szeretek es «me gusta» en general: Szeretek enni significa «me gusta comer»."
+        },
+        "Szeretem": {
+          "en": "szeretem is 'I like/love it' (definite object); it does not express a wish.",
+          "es": "szeretem es «lo quiero/me gusta» (objeto definido); no expresa un deseo."
+        }
+      },
+      "examples": ["Szeretnék inni.", "Szeretnék pihenni."],
+      "tr": { "en": "I'm hungry. I would like to eat.", "es": "Tengo hambre. Quisiera comer." }
+    },
+    { "id": "felteteles-mod-f11", "kind": "form", "verb": "kérni", "person": "én + a/az", "answer": "kérném", "table": "cond-definite" },
+    {
+      "id": "felteteles-mod-w03",
+      "kind": "why",
+      "es": "Szeretnék enni.",
+      "target": "Szeretnék",
+      "tr": { "en": "I would like to eat.", "es": "Quisiera comer." },
+      "options": [
+        { "text": { "en": "A wish: the conditional szeretnék, 'I would like'", "es": "Un deseo: el condicional szeretnék, «quisiera»" } },
+        {
+          "text": { "en": "A habit: szeretek, 'I like'", "es": "Un hábito: szeretek, «me gusta»" },
+          "wrong": {
+            "en": "With this rule the sentence would be Szeretek enni (I like eating, in general).",
+            "es": "Con esta regla la frase sería Szeretek enni (me gusta comer, en general)."
+          }
+        },
+        {
+          "text": { "en": "A plural subject: szeretnénk, 'we would like'", "es": "Un sujeto plural: szeretnénk, «nos gustaría»" },
+          "wrong": {
+            "en": "With this rule the sentence would be Szeretnénk enni (We would like to eat).",
+            "es": "Con esta regla la frase sería Szeretnénk enni (Nos gustaría comer)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "felteteles-mod-c12",
+      "sentence": "Én szívesen ___ a könyvet, de nincs pénzem.",
+      "options": ["megvenném", "megvennék", "megvennénk"],
+      "correct": 0,
+      "why": {
+        "en": "a könyvet is a definite object, so the definite conditional -ném: megvenném.",
+        "es": "a könyvet es un objeto definido, por eso el condicional definido -ném: megvenném."
+      },
+      "wrong": {
+        "megvennék": {
+          "en": "megvennék is the indefinite form, for an unspecified object: megvennék egy könyvet (I would buy a book).",
+          "es": "megvennék es la forma indefinida, para un objeto no especificado: megvennék egy könyvet (compraría un libro)."
+        },
+        "megvennénk": {
+          "en": "megvennénk is 'we would buy it'; the subject here is én (I), as nincs pénzem (I have no money) shows.",
+          "es": "megvennénk es «lo compraríamos nosotros»; el sujeto aquí es én (yo), como muestra nincs pénzem (no tengo dinero)."
+        }
+      },
+      "examples": ["Szívesen megvenném.", "Kérném a számlát."],
+      "tr": { "en": "I would gladly buy the book, but I have no money.", "es": "Con gusto compraría el libro, pero no tengo dinero." }
+    },
+    { "id": "felteteles-mod-f12", "kind": "form", "verb": "várni", "person": "te + a/az", "answer": "várnád", "table": "cond-definite" },
+    {
+      "id": "felteteles-mod-c13",
+      "sentence": "Ha ___ az eső, otthon maradnék.",
+      "options": ["esnék", "esett", "esne"],
+      "correct": 2,
+      "why": { "en": "An imaginary 'if' takes the conditional: esne (if it rained).", "es": "Un «si» imaginario lleva condicional: esne («si lloviera»)." },
+      "wrong": {
+        "esnék": {
+          "en": "esnék is 'I would fall' (1st person); the rain is a 3rd person subject, so the form is esne.",
+          "es": "esnék es «yo caería» (1.ª persona); la lluvia es sujeto de 3.ª persona, por eso la forma es esne."
+        },
+        "esett": {
+          "en": "esett is the past, 'it rained': it is not 'if it rained' as an imaginary case.",
+          "es": "esett es el pasado, «llovió»: no es «si lloviera» como caso imaginario."
+        }
+      },
+      "examples": ["Ha lenne időm, otthon maradnék.", "Ha lenne pénzem, utaznék."],
+      "tr": { "en": "If it rained, I would stay at home.", "es": "Si lloviera, me quedaría en casa." }
+    },
+    {
+      "id": "felteteles-mod-c14",
+      "sentence": "Péter ___ egy új telefont, de nincs pénze.",
+      "options": ["szeretnék", "szeretne", "szeret"],
+      "correct": 1,
+      "why": { "en": "Péter is a third person, so szeretne (he would like).", "es": "Péter es una tercera persona, por eso szeretne («le gustaría»)." },
+      "wrong": {
+        "szeretnék": { "en": "szeretnék is 'I would like': it is the 1st person, not Péter.", "es": "szeretnék es «quisiera»: es la 1.ª persona, no Péter." },
+        "szeret": { "en": "szeret is 'he likes/loves': it is not a wish.", "es": "szeret es «él quiere/ama»: no es un deseo." }
+      },
+      "examples": ["Anna szeretne pihenni.", "Gábor szeretne enni."],
+      "tr": { "en": "Péter would like a new phone, but he has no money.", "es": "A Péter le gustaría un teléfono nuevo, pero no tiene dinero." }
+    },
+    {
+      "id": "felteteles-mod-w04",
+      "kind": "why",
+      "es": "Megvenném a könyvet.",
+      "target": "Megvenném",
+      "tr": { "en": "I would buy the book.", "es": "Compraría el libro." },
+      "options": [
+        {
+          "text": { "en": "Conditional with an indefinite object: -nék", "es": "Condicional con objeto indefinido: -nék" },
+          "wrong": {
+            "en": "With this rule the sentence would be Megvennék egy könyvet (I would buy a book, any book).",
+            "es": "Con esta regla la frase sería Megvennék egy könyvet (compraría un libro, cualquiera)."
+          }
+        },
+        {
+          "text": { "en": "Present tense: I buy it", "es": "Presente: lo compro" },
+          "wrong": {
+            "en": "With this rule the sentence would be Megveszem a könyvet (I am buying the book).",
+            "es": "Con esta regla la frase sería Megveszem a könyvet (compro el libro)."
+          }
+        },
+        { "text": { "en": "Conditional with a definite object: -ném", "es": "Condicional con objeto definido: -ném" } }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

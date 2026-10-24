@@ -45,7 +45,7 @@ export interface LearnerActions {
   refresh: (fields: LearnerField[]) => Promise<LearnerState>;
   setOnboarding: (source: string, target: PcicTarget) => Promise<void>;
   // The onboarding language step: the direction is tried before anything is saved.
-  previewTarget: (target: PcicTarget) => void;
+  previewTarget: (target: PcicTarget, source?: string) => void;
   setLevel: (level: PcicLevel) => Promise<void>;
   setStrictAccents: (v: boolean) => Promise<void>;
   setAgainDelaySec: (sec: number) => Promise<void>;
@@ -97,7 +97,7 @@ export class LearnerStore {
         patch.onboarded = true;
         patch.source = o.source;
         patch.target = o.target as PcicTarget;
-        setPcicTarget(patch.target);
+        setPcicTarget(patch.target, patch.source);
       } else {
         // not onboarded yet: the previewed direction (if any) stays.
         patch.onboarded = false;
@@ -116,12 +116,12 @@ export class LearnerStore {
 
   setOnboarding = async (source: string, target: PcicTarget) => {
     await getDb().setOnboarding(source, target);
-    setPcicTarget(target);
+    setPcicTarget(target, source);
     this.commit({ onboarded: true, source, target });
   };
 
-  previewTarget = (target: PcicTarget) => {
-    setPcicTarget(target);
+  previewTarget = (target: PcicTarget, source?: string) => {
+    setPcicTarget(target, source);
     this.commit({ target });
   };
 

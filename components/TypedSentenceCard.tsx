@@ -32,6 +32,8 @@ interface Props {
   sourceSpeechLocale?: string;
   // Same accent rule as the word card (Settings -> Difficulty).
   strictAccents?: boolean;
+  // Code of the language the sentence is written in: Hungarian accents are never forgiven (lib/pcicMatch.ts).
+  lang?: string;
   // the Check/Next bar is the same docked bar above the keyboard as on the
   // PCIC word card (DockedAction). The parent supplies the keyboard lift (useDockLift) and receives the
   // bar's height so that the 💬 button can sit above it; with default values it also renders on its own (in a test).
@@ -88,6 +90,7 @@ export default function TypedSentenceCard({
   speechLocale,
   sourceSpeechLocale,
   strictAccents = false,
+  lang,
   dockLift = 0,
   keyboardOpen = false,
   dockH = DOCK_RESERVE,
@@ -126,7 +129,7 @@ export default function TypedSentenceCard({
     // Graded like the word card, on the sentence without its punctuation (the
     // tile card drops it too).
     // An answer without the pronoun is also correct ("Como en casa." instead of "Yo como en casa.").
-    const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents);
+    const grade = gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(targetSentence), strictAccents, lang);
     const isCorrect = suggestedGrade(grade) === 'good';
     setResult(isCorrect ? 'correct' : 'wrong');
     setMissed(!isCorrect);

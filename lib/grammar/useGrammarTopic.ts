@@ -11,8 +11,9 @@ import { grammarKindCounts, type GrammarKind, type GrammarTopicData } from '@/li
 import { GRAMMAR_PROGRESS_KEY, lessonFor, scoredKinds } from '@/lib/grammar/syllabus';
 import { betterBest, kindBestKey, kindProgressFromRows, kindRunKey, lessonScore } from '@/lib/grammar/lessonScore';
 import { speakSequence, stopSpeaking } from '@/lib/speech';
-import { splitByMarkers } from '@/lib/mixedSpeech';
+import { lessonSpeechSegments } from '@/lib/mixedSpeech';
 import { speechLang } from '@/lib/languages';
+import { sourceFor } from '@/lib/languagePair';
 import { countLearningToday } from '@/lib/learningDay';
 import type { RoundStats } from '@/components/grammar/GrammarDrill';
 import { useDockSlot } from '@/components/learn/DockSlot';
@@ -71,12 +72,10 @@ export function useGrammarTopic() {
 
   const load = useCallback(async () => {
     const db = getDb();
-    const { target } = await refresh(['direction']);
+    const { target, source } = await refresh(['direction']);
     setLearnedLang(target);
-    // Kimacha Play: UI always English, regardless of the
-    // stored source language.
-    // es→en: a Spanish-native learner gets the Spanish explanation.
-    setContentLang(target === 'en' ? 'es' : 'en');
+    // The explanation language is the learner's own (the pair's source); a field without text in it falls back to English.
+    setContentLang(sourceFor(target, source));
     const levelData = await db.getLevel();
     setLevel((levelData.level as Level) ?? 'A1');
     setStreak((await db.getStreak())?.current_count ?? 0);
@@ -140,8 +139,7 @@ export function useGrammarTopic() {
       setSpeaking(false);
       return;
     }
-    const text = lesson!.speak[contentLang as 'en' | 'es'] ?? lesson!.speak.en;
-    const segments = splitByMarkers(text, { learnedLang, nativeLang: contentLang }).map((seg) => ({
+    const segments = lessonSpeechSegments(lesson!.speak, contentLang, learnedLang).map((seg) => ({
       text: seg.text,
       locale: speechLang(seg.lang),
     }));

@@ -17,7 +17,7 @@ import { SkinBackdrop } from '@/components/skins/Slots';
 import ThemeSwatch from '@/components/skins/ThemeSwatch';
 // version line in Settings, the same tag the feedback rows carry.
 import { appBuildTag } from '@/lib/appBuild';
-import { languages } from '@/lib/languages';
+import { languages, pairLabel, supportedPairs } from '@/lib/languages';
 import { useBeta, setBeta, BETA_FLAGS, type BetaFlag } from '@/lib/beta';
 import { useSettingsScreen } from '@/lib/settings/useSettingsScreen';
 
@@ -190,7 +190,7 @@ export default function SettingsScreen() {
         <View style={styles.difficultyLabelBox}>
           <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.learningDirection}</Text>
           <Text style={[styles.sectionHint, { color: colors.tabIconDefault }]}>
-            {direction[0] === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
+            {pairLabel(direction[0], direction[1])}
           </Text>
         </View>
         <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
@@ -271,24 +271,19 @@ export default function SettingsScreen() {
         <Pressable style={styles.sheetOverlay} onPress={() => setDirectionSheetOpen(false)}>
           <Pressable style={[styles.sheet, { backgroundColor: colors.card }, themedSheetStyle(g)]} onPress={() => {}}>
             <TitleText style={[styles.sheetTitle, { color: colors.text }]}>{s.settings.chooseDirection}</TitleText>
-            {(
-              [
-                ['en', 'es'],
-                ['es', 'en'],
-              ] as const
-            ).map(([src, tgt]) => {
+            {supportedPairs.map(([src, tgt]) => {
               const active = direction[0] === src && direction[1] === tgt;
               if (g.brutal) {
                 return (
                   <BrutalBox
-                    key={src}
+                    key={`${src}-${tgt}`}
                     fill={active ? 'a' : 'paper'}
                     style={styles.brutalSheetOptionOuter}
                     boxStyle={styles.brutalSheetOption}
                     onPress={() => handleSelectDirection(src, tgt)}
                   >
                     <Text style={[styles.sheetOptionText, styles.brutalOptionText, { color: active ? g.onFill : g.ink }]}>
-                      {src === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
+                      {pairLabel(src, tgt)}
                     </Text>
                     {active && <Text style={[styles.sheetOptionText, { color: g.onFill }]}>✓</Text>}
                   </BrutalBox>
@@ -296,13 +291,13 @@ export default function SettingsScreen() {
               }
               return (
                 <Pressable
-                  key={src}
+                  key={`${src}-${tgt}`}
                   accessibilityRole="button"
                   style={[styles.sheetOption, { backgroundColor: active ? colors.tint : colors.background }]}
                   onPress={() => handleSelectDirection(src, tgt)}
                 >
                   <Text style={[styles.sheetOptionText, { color: active ? colors.onTint : colors.text }]}>
-                    {src === 'en' ? s.settings.directionEnEs : s.settings.directionEsEn}
+                    {pairLabel(src, tgt)}
                   </Text>
                   {active && <Text style={[styles.sheetOptionText, { color: colors.onTint }]}>✓</Text>}
                 </Pressable>

@@ -1,0 +1,1335 @@
+{
+  "schema": 2,
+  "topic": "jelen-targyas",
+  "level": "A1",
+  "title": {
+    "en": "Definite conjugation: látom, látod, látja",
+    "es": "Conjugación determinada: látom, látod, látja"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian verbs have two sets of present-tense endings. You already know the first one (látok, kérek): it is used when the object is not specific, or when there is no object at all. The second set (látom, kérem) is used when the object is a specific, known thing: a / az + noun, a name, ezt / azt, őt. So the verb agrees with its OBJECT as well as with its subject. Quick test: if the object has 'the', 'this' or 'that' in front of it, or is a name, use the second set.",
+        "es": "Los verbos húngaros tienen dos series de terminaciones en presente. La primera ya la conoces (látok, kérek): se usa cuando el objeto no es concreto, o cuando no hay objeto. La segunda serie (látom, kérem) se usa cuando el objeto es algo concreto y conocido: a / az + sustantivo, un nombre, ezt / azt, őt. O sea, el verbo concuerda con su OBJETO además de con su sujeto. El español no hace esto («veo un perro» y «veo al perro» llevan el mismo verbo), el húngaro sí. Prueba rápida: si en la frase el objeto lleva delante «el/la», «este» o «ese», o es un nombre, usa la segunda serie."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "def-vs-indef",
+      "noTableDeck": true,
+      "title": {
+        "en": "Two sets, one verb: lát (to see)",
+        "es": "Dos series, un verbo: lát (ver)"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "Not specific: egy kutyát",
+          "es": "No concreto: egy kutyát"
+        },
+        {
+          "en": "Specific: a kutyát",
+          "es": "Concreto: a kutyát"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "látok",
+          "látom"
+        ],
+        [
+          "te",
+          "látsz",
+          "látod"
+        ],
+        [
+          "ő",
+          "lát",
+          "látja"
+        ],
+        [
+          "mi",
+          "látunk",
+          "látjuk"
+        ],
+        [
+          "ti",
+          "láttok",
+          "látjátok"
+        ],
+        [
+          "ők",
+          "látnak",
+          "látják"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Second set (látom): the object is specific",
+        "es": "Segunda serie (látom): el objeto es concreto"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "a / az + noun: the dog, the newspaper, the bread. Also ezt a / azt a + noun (this one, that one).",
+            "es": "a / az + sustantivo: el perro, el periódico, el pan. También ezt a / azt a + sustantivo (este, ese)."
+          },
+          "examples": [
+            {
+              "es": "Látom a kutyát.",
+              "tr": {
+                "en": "I see the dog.",
+                "es": "Veo al perro."
+              }
+            },
+            {
+              "es": "Olvassa az újságot.",
+              "tr": {
+                "en": "He (or she) reads the newspaper.",
+                "es": "Él (o ella) lee el periódico."
+              }
+            },
+            {
+              "es": "Ezt a könyvet olvasom.",
+              "tr": {
+                "en": "I am reading this book.",
+                "es": "Estoy leyendo este libro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A name: names always count as specific.",
+            "es": "Un nombre propio: los nombres siempre son concretos."
+          },
+          "examples": [
+            {
+              "es": "Várom Annát.",
+              "tr": {
+                "en": "I am waiting for Anna.",
+                "es": "Espero a Anna."
+              }
+            },
+            {
+              "es": "Hívja Pétert.",
+              "tr": {
+                "en": "He (or she) calls Péter.",
+                "es": "Él (o ella) llama a Péter."
+              }
+            },
+            {
+              "es": "Szeretem Katit.",
+              "tr": {
+                "en": "I love Kati.",
+                "es": "Quiero a Kati."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ezt, azt (this, that) and őt (him, her) on their own.",
+            "es": "ezt, azt (esto, eso) y őt (a él, a ella) solos."
+          },
+          "examples": [
+            {
+              "es": "Ezt kérem.",
+              "tr": {
+                "en": "I would like this one.",
+                "es": "Quiero esto."
+              }
+            },
+            {
+              "es": "Azt nem szeretem.",
+              "tr": {
+                "en": "I do not like that.",
+                "es": "Eso no me gusta."
+              }
+            },
+            {
+              "es": "Látom őt.",
+              "tr": {
+                "en": "I see him (or her).",
+                "es": "Lo (o la) veo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "First set (látok): the object is not specific, or missing",
+        "es": "Primera serie (látok): el objeto no es concreto, o no hay"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "egy + noun, or a noun with no article.",
+            "es": "egy + sustantivo, o un sustantivo sin artículo."
+          },
+          "examples": [
+            {
+              "es": "Látok egy kutyát.",
+              "tr": {
+                "en": "I see a dog.",
+                "es": "Veo un perro."
+              }
+            },
+            {
+              "es": "Kávét kérek.",
+              "tr": {
+                "en": "I would like a coffee.",
+                "es": "Quiero un café."
+              }
+            },
+            {
+              "es": "Írok egy levelet.",
+              "tr": {
+                "en": "I am writing a letter.",
+                "es": "Escribo una carta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The question words mit (what) and kit (whom): the object is not known yet.",
+            "es": "Las palabras interrogativas mit (qué) y kit (a quién): el objeto todavía no se conoce."
+          },
+          "examples": [
+            {
+              "es": "Mit olvasol?",
+              "tr": {
+                "en": "What are you reading?",
+                "es": "¿Qué lees?"
+              }
+            },
+            {
+              "es": "Kit keresel?",
+              "tr": {
+                "en": "Whom are you looking for?",
+                "es": "¿A quién buscas?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "engem, téged, minket, titeket (me, you, us, you all) as objects: always this set. (\"I → you\" has its own ending: next lesson.)",
+            "es": "engem, téged, minket, titeket (a mí, a ti, a nosotros, a ustedes) como objeto: siempre esta serie. («Yo → tú» tiene su propia terminación: en la siguiente lección.)"
+          },
+          "examples": [
+            {
+              "es": "Anna lát téged.",
+              "tr": {
+                "en": "Anna sees you.",
+                "es": "Anna te ve."
+              }
+            },
+            {
+              "es": "Péter hív minket.",
+              "tr": {
+                "en": "Péter is calling us.",
+                "es": "Péter nos llama."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "No object at all.",
+            "es": "Sin ningún objeto."
+          },
+          "examples": [
+            {
+              "es": "Olvasok.",
+              "tr": {
+                "en": "I am reading.",
+                "es": "Estoy leyendo."
+              }
+            },
+            {
+              "es": "Írsz?",
+              "tr": {
+                "en": "Are you writing?",
+                "es": "¿Estás escribiendo?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which endings? Vowel harmony decides",
+        "es": "¿Qué terminaciones? Decide la armonía vocálica"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Back-vowel verbs (a, á, o, ó, u, ú): -om, -od, -ja, -juk, -játok, -ják. Most verbs with only i or í go here too: írom, hívom, hívja.",
+            "es": "Verbos de vocales posteriores (a, á, o, ó, u, ú): -om, -od, -ja, -juk, -játok, -ják. La mayoría de los verbos con solo i o í también van aquí: írom, hívom, hívja."
+          },
+          "examples": [
+            {
+              "es": "Várom a buszt.",
+              "tr": {
+                "en": "I am waiting for the bus.",
+                "es": "Espero el autobús."
+              }
+            },
+            {
+              "es": "Hallgatjuk a zenét.",
+              "tr": {
+                "en": "We are listening to the music.",
+                "es": "Escuchamos la música."
+              }
+            },
+            {
+              "es": "Írja a levelet.",
+              "tr": {
+                "en": "He (or she) writes the letter.",
+                "es": "Él (o ella) escribe la carta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Front-vowel verbs (e, é, ö, ő, ü, ű): -em, -ed, -i, -jük, -itek, -ik. With ö, ő, ü, ű the first two are -öm, -öd.",
+            "es": "Verbos de vocales anteriores (e, é, ö, ő, ü, ű): -em, -ed, -i, -jük, -itek, -ik. Con ö, ő, ü, ű las dos primeras son -öm, -öd."
+          },
+          "examples": [
+            {
+              "es": "Keresem a kulcsot.",
+              "tr": {
+                "en": "I am looking for the key.",
+                "es": "Busco la llave."
+              }
+            },
+            {
+              "es": "Szeretitek a teát?",
+              "tr": {
+                "en": "Do you (all) like the tea?",
+                "es": "¿Les gusta el té?"
+              }
+            },
+            {
+              "es": "Főzöm a levest.",
+              "tr": {
+                "en": "I am cooking the soup.",
+                "es": "Estoy cocinando la sopa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Stems ending in -s, -sz, -z: the j of -ja, -juk, -játok, -ják merges with the stem (olvas + ja = olvassa). The -i forms do not change (nézi).",
+            "es": "Raíces que terminan en -s, -sz, -z: la j de -ja, -juk, -játok, -ják se fusiona con la raíz (olvas + ja = olvassa). Las formas en -i no cambian (nézi)."
+          },
+          "examples": [
+            {
+              "es": "Olvassuk a levelet.",
+              "tr": {
+                "en": "We read the letter.",
+                "es": "Leemos la carta."
+              }
+            },
+            {
+              "es": "Nézzük a sorozatot.",
+              "tr": {
+                "en": "We are watching the series.",
+                "es": "Vemos la serie."
+              }
+            },
+            {
+              "es": "Nézi a sorozatot.",
+              "tr": {
+                "en": "He (or she) watches the series.",
+                "es": "Él (o ella) ve la serie."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-back",
+      "title": {
+        "en": "Specific object: back-vowel verbs",
+        "es": "Objeto concreto: verbos de vocales posteriores"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "látni + a kutyát (to see the dog)",
+          "es": "látni + a kutyát (ver al perro)"
+        },
+        {
+          "en": "várni + Annát (to wait for Anna)",
+          "es": "várni + Annát (esperar a Anna)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "látom",
+          "várom"
+        ],
+        [
+          "te",
+          "látod",
+          "várod"
+        ],
+        [
+          "ő",
+          "látja",
+          "várja"
+        ],
+        [
+          "mi",
+          "látjuk",
+          "várjuk"
+        ],
+        [
+          "ti",
+          "látjátok",
+          "várjátok"
+        ],
+        [
+          "ők",
+          "látják",
+          "várják"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-front",
+      "title": {
+        "en": "Specific object: front-vowel verbs",
+        "es": "Objeto concreto: verbos de vocales anteriores"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "kérni + a kávét (to ask for the coffee)",
+          "es": "kérni + a kávét (pedir el café)"
+        },
+        {
+          "en": "szeretni + ezt (to like this)",
+          "es": "szeretni + ezt (querer esto)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "kérem",
+          "szeretem"
+        ],
+        [
+          "te",
+          "kéred",
+          "szereted"
+        ],
+        [
+          "ő",
+          "kéri",
+          "szereti"
+        ],
+        [
+          "mi",
+          "kérjük",
+          "szeretjük"
+        ],
+        [
+          "ti",
+          "kéritek",
+          "szeretitek"
+        ],
+        [
+          "ők",
+          "kérik",
+          "szeretik"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-sibilant",
+      "title": {
+        "en": "Stems in -s, -sz, -z: the j merges",
+        "es": "Raíces en -s, -sz, -z: la j se fusiona"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "olvasni + az újságot (to read the newspaper)",
+          "es": "olvasni + az újságot (leer el periódico)"
+        },
+        {
+          "en": "nézni + a sorozatot (to watch the series)",
+          "es": "nézni + a sorozatot (ver la serie)"
+        },
+        {
+          "en": "főzni + a levest (to cook the soup)",
+          "es": "főzni + a levest (cocinar la sopa)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "olvasom",
+          "nézem",
+          "főzöm"
+        ],
+        [
+          "te",
+          "olvasod",
+          "nézed",
+          "főzöd"
+        ],
+        [
+          "ő",
+          "olvassa",
+          "nézi",
+          "főzi"
+        ],
+        [
+          "mi",
+          "olvassuk",
+          "nézzük",
+          "főzzük"
+        ],
+        [
+          "ti",
+          "olvassátok",
+          "nézitek",
+          "főzitek"
+        ],
+        [
+          "ők",
+          "olvassák",
+          "nézik",
+          "főzik"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Specific or not specific?",
+        "es": "¿Concreto o no concreto?"
+      },
+      "pairs": [
+        {
+          "a": "Látok egy kutyát.",
+          "b": "Látom a kutyát.",
+          "note": {
+            "en": "egy: any dog, not known yet: látok. a: one particular dog you both know: látom.",
+            "es": "egy: un perro cualquiera, aún no conocido: látok. a: un perro concreto que ya conocen: látom."
+          },
+          "examples": [
+            {
+              "es": "Olvasok egy könyvet.",
+              "tr": {
+                "en": "I am reading a book.",
+                "es": "Leo un libro."
+              }
+            },
+            {
+              "es": "Olvasom a könyvet.",
+              "tr": {
+                "en": "I am reading the book.",
+                "es": "Leo el libro."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Várok egy barátot.",
+          "b": "Várom Annát.",
+          "note": {
+            "en": "A name is always specific, even without a / az.",
+            "es": "Un nombre propio siempre es concreto, aunque no lleve a / az."
+          },
+          "examples": [
+            {
+              "es": "Hívok egy taxit.",
+              "tr": {
+                "en": "I am calling a taxi.",
+                "es": "Llamo un taxi."
+              }
+            },
+            {
+              "es": "Hívom Katit.",
+              "tr": {
+                "en": "I am calling Kati.",
+                "es": "Llamo a Kati."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Mit olvasol?",
+          "b": "Olvasom az újságot.",
+          "note": {
+            "en": "The question with mit uses the first set; the answer with a specific object uses the second.",
+            "es": "La pregunta con mit usa la primera serie; la respuesta con un objeto concreto usa la segunda."
+          },
+          "examples": [
+            {
+              "es": "Mit kérsz?",
+              "tr": {
+                "en": "What would you like?",
+                "es": "¿Qué quieres?"
+              }
+            },
+            {
+              "es": "Kérem a levest.",
+              "tr": {
+                "en": "I would like the soup.",
+                "es": "Quiero la sopa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: matching the verb to the subject only. 'I see the dog' is Látom a kutyát, never Látok a kutyát. Also careful: dolgozom and lakom end in -om too, but they are -ik verbs with no object; that -om is not this set. And 'I see you' has its own form (látlak): next lesson.",
+        "es": "Trampa clásica: conjugar solo según el sujeto. «Veo al perro» es Látom a kutyát, nunca Látok a kutyát. Ojo: dolgozom y lakom también terminan en -om, pero son verbos en -ik sin objeto; esa -om no es esta serie. Y «te veo» tiene su propia forma (látlak): en la siguiente lección."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian verbs have two sets of endings. If the object is not specific, you use the first set: «Látok egy kutyát». If the object is specific, a name, or «ezt» and «azt», you use the second set: «Látom a kutyát». The second set is «látom», «látod», «látja», «látjuk», «látjátok», «látják». Front-vowel verbs say «kérem», «kéred», «kéri», «kérjük», «kéritek», «kérik». A name counts as specific: «Várom Annát». After «mit» the verb stays in the first set: «Mit olvasol?»",
+    "es": "Los verbos húngaros tienen dos series de terminaciones. Si el objeto no es concreto, usas la primera serie: «Látok egy kutyát». Si el objeto es concreto, un nombre, o «ezt» y «azt», usas la segunda serie: «Látom a kutyát». La segunda serie es «látom», «látod», «látja», «látjuk», «látjátok», «látják». Los verbos de vocales anteriores dicen «kérem», «kéred», «kéri», «kérjük», «kéritek», «kérik». Un nombre propio cuenta como concreto: «Várom Annát». Después de «mit» el verbo se queda en la primera serie: «Mit olvasol?»"
+  },
+  "items": [
+    {
+      "id": "jelen-targyas-c01",
+      "sentence": "Kati kávét ___.",
+      "options": [
+        "kér",
+        "kéri",
+        "kérek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kávét has no a / az in front, so the object is not specific: the first set. Kati is 3rd person singular: kér.",
+        "es": "Kávét no lleva a / az, así que el objeto no es concreto: la primera serie. Kati es 3.ª persona del singular: kér."
+      },
+      "wrong": {
+        "kéri": {
+          "en": "With kéri the object would be specific: Kati kéri a kávét means Kati asks for the (particular) coffee.",
+          "es": "Con kéri el objeto sería concreto: Kati kéri a kávét significa que Kati pide ese café en particular."
+        },
+        "kérek": {
+          "en": "kérek is 'I ask for': the subject Kati is not 'I'.",
+          "es": "kérek es «yo pido»: el sujeto Kati no es «yo»."
+        }
+      },
+      "examples": [
+        "Péter teát kér.",
+        "Kérek egy kávét."
+      ],
+      "tr": {
+        "en": "Kati orders a coffee.",
+        "es": "Kati pide un café."
+      }
+    },
+    {
+      "id": "jelen-targyas-f01",
+      "kind": "form",
+      "verb": "látni",
+      "person": "én (a kutyát)",
+      "answer": "látom",
+      "table": "def-back"
+    },
+    {
+      "id": "jelen-targyas-c02",
+      "sentence": "Látom ___.",
+      "options": [
+        "a kutyát",
+        "egy kutyát",
+        "kutyát"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Látom is the second set, so the object must be specific: a kutyát (the dog).",
+        "es": "Látom es la segunda serie, así que el objeto debe ser concreto: a kutyát (el perro)."
+      },
+      "wrong": {
+        "egy kutyát": {
+          "en": "With egy kutyát the object is not specific, so the verb would be látok: Látok egy kutyát.",
+          "es": "Con egy kutyát el objeto no es concreto, así que el verbo sería látok: Látok egy kutyát."
+        },
+        "kutyát": {
+          "en": "Without an article the object is not specific either, so the verb would be látok: Kutyát látok.",
+          "es": "Sin artículo el objeto tampoco es concreto, así que el verbo sería látok: Kutyát látok."
+        }
+      },
+      "examples": [
+        "Látom a macskát.",
+        "Látok egy macskát."
+      ],
+      "tr": {
+        "en": "I see the dog.",
+        "es": "Veo al perro."
+      }
+    },
+    {
+      "id": "jelen-targyas-f02",
+      "kind": "form",
+      "verb": "látni",
+      "person": "te (a kutyát)",
+      "answer": "látod",
+      "table": "def-back"
+    },
+    {
+      "id": "jelen-targyas-c03",
+      "sentence": "Anna ___ Pétert.",
+      "options": [
+        "hívja",
+        "hív",
+        "hívok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péter is a name, so the object is specific: the second set. Anna is 3rd person, and hív (only í) takes the back endings: hívja.",
+        "es": "Péter es un nombre, así que el objeto es concreto: la segunda serie. Anna es 3.ª persona y hív (solo í) lleva las terminaciones posteriores: hívja."
+      },
+      "wrong": {
+        "hív": {
+          "en": "hív is the first set: Anna hív egy taxit means Anna calls a taxi. A name needs hívja.",
+          "es": "hív es la primera serie: Anna hív egy taxit significa que Anna llama un taxi. Un nombre necesita hívja."
+        },
+        "hívok": {
+          "en": "hívok is 'I call': the subject here is Anna.",
+          "es": "hívok es «yo llamo»: el sujeto aquí es Anna."
+        }
+      },
+      "examples": [
+        "Hívom Katit.",
+        "Péter hívja Annát."
+      ],
+      "tr": {
+        "en": "Anna calls Péter.",
+        "es": "Anna llama a Péter."
+      }
+    },
+    {
+      "id": "jelen-targyas-f03",
+      "kind": "form",
+      "verb": "várni",
+      "person": "ő (Annát)",
+      "answer": "várja",
+      "table": "def-back"
+    },
+    {
+      "id": "jelen-targyas-c04",
+      "sentence": "Mit ___?",
+      "options": [
+        "olvasol",
+        "olvasod",
+        "olvassa"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mit (what) asks about an object we do not know yet: the first set. For te, the first-set form of olvas is olvasol.",
+        "es": "Mit (qué) pregunta por un objeto que todavía no conocemos: la primera serie. Para te, la forma de la primera serie de olvas es olvasol."
+      },
+      "wrong": {
+        "olvasod": {
+          "en": "olvasod is 'you read it' (second set): it would ask about a specific thing you both already know.",
+          "es": "olvasod es «tú lo lees» (segunda serie): preguntaría por algo concreto que ya conocen los dos."
+        },
+        "olvassa": {
+          "en": "olvassa is 'he or she reads it' (second set), and the subject would not be te.",
+          "es": "olvassa es «él o ella lo lee» (segunda serie), y el sujeto no sería te."
+        }
+      },
+      "examples": [
+        "Mit kérsz?",
+        "Mit nézel?"
+      ],
+      "tr": {
+        "en": "What are you reading?",
+        "es": "¿Qué lees?"
+      }
+    },
+    {
+      "id": "jelen-targyas-f04",
+      "kind": "form",
+      "verb": "látni",
+      "person": "mi (ezt)",
+      "answer": "látjuk",
+      "table": "def-back"
+    },
+    {
+      "id": "jelen-targyas-w01",
+      "kind": "why",
+      "es": "Látom a kutyát.",
+      "target": "Látom",
+      "tr": {
+        "en": "I see the dog.",
+        "es": "Veo al perro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A kutyát is specific (a + noun): the second set",
+            "es": "A kutyát es concreto (a + sustantivo): la segunda serie"
+          }
+        },
+        {
+          "text": {
+            "en": "1st person singular always ends in -ok",
+            "es": "La 1.ª persona del singular siempre termina en -ok"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Látok a kutyát, but the object is specific, so the verb takes -om.",
+            "es": "Con esta regla la frase sería Látok a kutyát, pero el objeto es concreto, así que el verbo lleva -om."
+          }
+        },
+        {
+          "text": {
+            "en": "The object is not specific: the first set",
+            "es": "El objeto no es concreto: la primera serie"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Látok egy kutyát; here a kutyát means one particular dog.",
+            "es": "Con esta regla la frase sería Látok egy kutyát; aquí a kutyát es un perro concreto."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "jelen-targyas-c05",
+      "sentence": "___ a kenyeret.",
+      "options": [
+        "Veszem",
+        "Veszek",
+        "Vesz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A kenyeret is specific (a + noun): the second set, 1st person: veszem.",
+        "es": "A kenyeret es concreto (a + sustantivo): la segunda serie, 1.ª persona: veszem."
+      },
+      "wrong": {
+        "Veszek": {
+          "en": "veszek is the first set: Veszek egy kenyeret means I buy a bread. With a kenyeret you need veszem.",
+          "es": "veszek es la primera serie: Veszek egy kenyeret significa que compro un pan. Con a kenyeret hace falta veszem."
+        },
+        "Vesz": {
+          "en": "Vesz is the first set for he or she (not specific object); a kenyeret needs the second set.",
+          "es": "Vesz es la primera serie para él o ella (objeto no concreto); a kenyeret necesita la segunda serie."
+        }
+      },
+      "examples": [
+        "Veszem a tejet.",
+        "Veszel egy kenyeret?"
+      ],
+      "tr": {
+        "en": "I buy the bread.",
+        "es": "Compro el pan."
+      }
+    },
+    {
+      "id": "jelen-targyas-f05",
+      "kind": "form",
+      "verb": "várni",
+      "person": "ti (Annát)",
+      "answer": "várjátok",
+      "table": "def-back"
+    },
+    {
+      "id": "jelen-targyas-c06",
+      "sentence": "Mi ezt nem ___.",
+      "options": [
+        "szeretjük",
+        "szeretünk",
+        "szeretik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ezt (this) is specific: the second set. Mi is we, and szeret is a front-vowel verb: szeretjük.",
+        "es": "Ezt (esto) es concreto: la segunda serie. Mi es «nosotros» y szeret es un verbo de vocales anteriores: szeretjük."
+      },
+      "wrong": {
+        "szeretünk": {
+          "en": "szeretünk is the first set (we love, we like); ezt is specific and needs szeretjük.",
+          "es": "szeretünk es la primera serie (queremos, nos gusta); ezt es concreto y necesita szeretjük."
+        },
+        "szeretik": {
+          "en": "szeretik is 'they like it': the subject is mi (we).",
+          "es": "szeretik es «a ellos les gusta»: el sujeto es mi (nosotros)."
+        }
+      },
+      "examples": [
+        "Azt nem szeretem.",
+        "Ezt szeretjük."
+      ],
+      "tr": {
+        "en": "We do not like this.",
+        "es": "A nosotros esto no nos gusta."
+      }
+    },
+    {
+      "id": "jelen-targyas-f06",
+      "kind": "form",
+      "verb": "látni",
+      "person": "ők (őt)",
+      "answer": "látják",
+      "table": "def-back"
+    },
+    {
+      "id": "jelen-targyas-c07",
+      "sentence": "Péter ___ egy levelet.",
+      "options": [
+        "ír",
+        "írja",
+        "írok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Egy levelet is not specific: the first set. Péter is 3rd person: ír.",
+        "es": "Egy levelet no es concreto: la primera serie. Péter es 3.ª persona: ír."
+      },
+      "wrong": {
+        "írja": {
+          "en": "írja (he writes it) needs a specific object: Péter írja a levelet.",
+          "es": "írja (él lo escribe) necesita un objeto concreto: Péter írja a levelet."
+        },
+        "írok": {
+          "en": "írok is 'I write': the subject here is Péter.",
+          "es": "írok es «yo escribo»: el sujeto aquí es Péter."
+        }
+      },
+      "examples": [
+        "Írok egy levelet.",
+        "Írom a levelet."
+      ],
+      "tr": {
+        "en": "Péter writes a letter.",
+        "es": "Péter escribe una carta."
+      }
+    },
+    {
+      "id": "jelen-targyas-f07",
+      "kind": "form",
+      "verb": "kérni",
+      "person": "én (a kávét)",
+      "answer": "kérem",
+      "table": "def-front"
+    },
+    {
+      "id": "jelen-targyas-c08",
+      "sentence": "Gábor és Lupita ___ egy sorozatot.",
+      "options": [
+        "néznek",
+        "nézik",
+        "nézünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Egy sorozatot is not specific: the first set. Two people are ők: néznek.",
+        "es": "Egy sorozatot no es concreto: la primera serie. Dos personas son ők: néznek."
+      },
+      "wrong": {
+        "nézik": {
+          "en": "nézik is 'they watch it' (second set); with egy the object is not specific.",
+          "es": "nézik es «ellos la ven» (segunda serie); con egy el objeto no es concreto."
+        },
+        "nézünk": {
+          "en": "nézünk is 'we watch': the subject is Gábor és Lupita (they).",
+          "es": "nézünk es «nosotros vemos»: el sujeto es Gábor és Lupita (ellos)."
+        }
+      },
+      "examples": [
+        "Nézünk egy sorozatot.",
+        "Nézik a sorozatot."
+      ],
+      "tr": {
+        "en": "Gábor and Lupita are watching a series.",
+        "es": "Gábor y Lupita están viendo una serie."
+      }
+    },
+    {
+      "id": "jelen-targyas-w02",
+      "kind": "why",
+      "es": "Kati kávét kér.",
+      "target": "kér",
+      "tr": {
+        "en": "Kati orders a coffee.",
+        "es": "Kati pide un café."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Kávét is specific: the second set",
+            "es": "Kávét es concreto: la segunda serie"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Kati kéri a kávét; but here kávét has no article and is not specific.",
+            "es": "Con esta regla la frase sería Kati kéri a kávét; pero aquí kávét no lleva artículo y no es concreto."
+          }
+        },
+        {
+          "text": {
+            "en": "Kávét has no article: not specific, so the first set",
+            "es": "Kávét no lleva artículo: no es concreto, así que la primera serie"
+          }
+        },
+        {
+          "text": {
+            "en": "3rd person singular always ends in -i",
+            "es": "La 3.ª persona del singular siempre termina en -i"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Kati kéri kávét; but -i is only for a specific object.",
+            "es": "Con esta regla la frase sería Kati kéri kávét; pero -i es solo para un objeto concreto."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "jelen-targyas-c09",
+      "sentence": "Te ___ a levest?",
+      "options": [
+        "főzöd",
+        "főzöl",
+        "főzi"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A levest is specific: the second set. Te takes -d, and főz has ö: főzöd.",
+        "es": "A levest es concreto: la segunda serie. Te lleva -d, y főz tiene ö: főzöd."
+      },
+      "wrong": {
+        "főzöl": {
+          "en": "főzöl is the first set: Főzöl egy levest? asks about any soup. With a levest you need főzöd.",
+          "es": "főzöl es la primera serie: Főzöl egy levest? pregunta por una sopa cualquiera. Con a levest hace falta főzöd."
+        },
+        "főzi": {
+          "en": "főzi is 'he or she cooks it': the subject here is te.",
+          "es": "főzi es «él o ella la cocina»: el sujeto aquí es te."
+        }
+      },
+      "examples": [
+        "Főzök egy levest.",
+        "Főzöm a húst."
+      ],
+      "tr": {
+        "en": "Are you cooking the soup?",
+        "es": "¿Tú cocinas la sopa?"
+      }
+    },
+    {
+      "id": "jelen-targyas-f08",
+      "kind": "form",
+      "verb": "szeretni",
+      "person": "te (ezt)",
+      "answer": "szereted",
+      "table": "def-front"
+    },
+    {
+      "id": "jelen-targyas-c10",
+      "sentence": "Mi ___ az újságot.",
+      "options": [
+        "olvassuk",
+        "olvasunk",
+        "olvassák"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Az újságot is specific: the second set. Mi is we, and olvas ends in -s: olvas + juk = olvassuk.",
+        "es": "Az újságot es concreto: la segunda serie. Mi es «nosotros» y olvas termina en -s: olvas + juk = olvassuk."
+      },
+      "wrong": {
+        "olvasunk": {
+          "en": "olvasunk is the first set: Olvasunk egy újságot means we read a newspaper.",
+          "es": "olvasunk es la primera serie: Olvasunk egy újságot significa que leemos un periódico."
+        },
+        "olvassák": {
+          "en": "olvassák is 'they read it': the subject is mi (we).",
+          "es": "olvassák es «ellos lo leen»: el sujeto es mi (nosotros)."
+        }
+      },
+      "examples": [
+        "Olvassuk a levelet.",
+        "Olvasunk egy könyvet."
+      ],
+      "tr": {
+        "en": "We read the newspaper.",
+        "es": "Leemos el periódico."
+      }
+    },
+    {
+      "id": "jelen-targyas-f09",
+      "kind": "form",
+      "verb": "kérni",
+      "person": "mi (a levest)",
+      "answer": "kérjük",
+      "table": "def-front"
+    },
+    {
+      "id": "jelen-targyas-c11",
+      "sentence": "Ti ___ ezt a kutyát?",
+      "options": [
+        "látjátok",
+        "láttok",
+        "látják"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ezt a kutyát (this dog) is specific: the second set. Ti takes -játok: látjátok.",
+        "es": "Ezt a kutyát (este perro) es concreto: la segunda serie. Ti lleva -játok: látjátok."
+      },
+      "wrong": {
+        "láttok": {
+          "en": "láttok is the first set ('you all see'); ezt a kutyát needs the second set.",
+          "es": "láttok es la primera serie («ustedes ven»); ezt a kutyát necesita la segunda serie."
+        },
+        "látják": {
+          "en": "látják is 'they see it': the subject is ti (you all).",
+          "es": "látják es «ellos lo ven»: el sujeto es ti (ustedes)."
+        }
+      },
+      "examples": [
+        "Látjuk a kutyát.",
+        "Láttok egy kutyát?"
+      ],
+      "tr": {
+        "en": "Do you (all) see this dog?",
+        "es": "¿Ven ustedes este perro?"
+      }
+    },
+    {
+      "id": "jelen-targyas-w03",
+      "kind": "why",
+      "es": "Várom Annát.",
+      "target": "Várom",
+      "tr": {
+        "en": "I am waiting for Anna.",
+        "es": "Espero a Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Without a / az the object is not specific: the first set",
+            "es": "Sin a / az el objeto no es concreto: la primera serie"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Várok Annát; but a name is always specific.",
+            "es": "Con esta regla la frase sería Várok Annát; pero un nombre propio siempre es concreto."
+          }
+        },
+        {
+          "text": {
+            "en": "A name is specific: the second set",
+            "es": "Un nombre propio es concreto: la segunda serie"
+          }
+        },
+        {
+          "text": {
+            "en": "The subject is 3rd person, so -ja",
+            "es": "El sujeto es 3.ª persona, así que -ja"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Várja Annát ('he or she waits for Anna'); the ending -om tells us the subject is I.",
+            "es": "Con esta regla la frase sería Várja Annát («él o ella espera a Anna»); la terminación -om dice que el sujeto es yo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "jelen-targyas-f10",
+      "kind": "form",
+      "verb": "főzni",
+      "person": "én (a levest)",
+      "answer": "főzöm",
+      "table": "def-sibilant"
+    },
+    {
+      "id": "jelen-targyas-c12",
+      "sentence": "Keresem ___.",
+      "options": [
+        "a kulcsot",
+        "egy kulcsot",
+        "kulcsot"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Keresem is the second set, so the object must be specific: a kulcsot (the key).",
+        "es": "Keresem es la segunda serie, así que el objeto debe ser concreto: a kulcsot (la llave)."
+      },
+      "wrong": {
+        "egy kulcsot": {
+          "en": "With egy kulcsot the verb would be keresek: Keresek egy kulcsot (I am looking for a key).",
+          "es": "Con egy kulcsot el verbo sería keresek: Keresek egy kulcsot (busco una llave)."
+        },
+        "kulcsot": {
+          "en": "Without an article the verb would be keresek: Kulcsot keresek.",
+          "es": "Sin artículo el verbo sería keresek: Kulcsot keresek."
+        }
+      },
+      "examples": [
+        "Keresem a telefont.",
+        "Keresek egy térképet."
+      ],
+      "tr": {
+        "en": "I am looking for the key.",
+        "es": "Busco la llave."
+      }
+    },
+    {
+      "id": "jelen-targyas-f11",
+      "kind": "form",
+      "verb": "olvasni",
+      "person": "ő (az újságot)",
+      "answer": "olvassa",
+      "table": "def-sibilant"
+    },
+    {
+      "id": "jelen-targyas-c13",
+      "sentence": "Várom ___.",
+      "options": [
+        "Annát",
+        "egy barátot",
+        "barátokat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Várom is the second set; a name is specific: Annát.",
+        "es": "Várom es la segunda serie; un nombre propio es concreto: Annát."
+      },
+      "wrong": {
+        "egy barátot": {
+          "en": "With egy barátot the verb would be várok: Várok egy barátot.",
+          "es": "Con egy barátot el verbo sería várok: Várok egy barátot."
+        },
+        "barátokat": {
+          "en": "A plural with no article is not specific either: Várok barátokat.",
+          "es": "Un plural sin artículo tampoco es concreto: Várok barátokat."
+        }
+      },
+      "examples": [
+        "Várom Katit.",
+        "Várok egy barátot."
+      ],
+      "tr": {
+        "en": "I am waiting for Anna.",
+        "es": "Espero a Anna."
+      }
+    },
+    {
+      "id": "jelen-targyas-w04",
+      "kind": "why",
+      "es": "Mit olvasol?",
+      "target": "olvasol",
+      "tr": {
+        "en": "What are you reading?",
+        "es": "¿Qué lees?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The object is specific: the second set",
+            "es": "El objeto es concreto: la segunda serie"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mit olvasod?; but mit asks about something not known yet.",
+            "es": "Con esta regla la frase sería Mit olvasod?; pero mit pregunta por algo que todavía no se conoce."
+          }
+        },
+        {
+          "text": {
+            "en": "The subject is 3rd person",
+            "es": "El sujeto es 3.ª persona"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Mit olvas? ('what does he or she read?'); the ending -ol is for te.",
+            "es": "Con esta regla la frase sería Mit olvas? («¿qué lee él o ella?»); la terminación -ol es para te."
+          }
+        },
+        {
+          "text": {
+            "en": "Mit asks about an unknown object: the first set",
+            "es": "Mit pregunta por un objeto desconocido: la primera serie"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "jelen-targyas-f12",
+      "kind": "form",
+      "verb": "nézni",
+      "person": "mi (a sorozatot)",
+      "answer": "nézzük",
+      "table": "def-sibilant"
+    },
+    {
+      "id": "jelen-targyas-c14",
+      "sentence": "Gábor ___ őt.",
+      "options": [
+        "látja",
+        "lát",
+        "látom"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Őt (him, her) is specific: the second set. Gábor is 3rd person, and lát is a back-vowel verb: látja.",
+        "es": "Őt (a él, a ella) es concreto: la segunda serie. Gábor es 3.ª persona y lát es un verbo de vocales posteriores: látja."
+      },
+      "wrong": {
+        "lát": {
+          "en": "lát is the first set; őt is specific, so you need látja.",
+          "es": "lát es la primera serie; őt es concreto, así que hace falta látja."
+        },
+        "látom": {
+          "en": "látom is 'I see it': the subject here is Gábor.",
+          "es": "látom es «yo lo veo»: el sujeto aquí es Gábor."
+        }
+      },
+      "examples": [
+        "Látom őt.",
+        "Várjuk őt."
+      ],
+      "tr": {
+        "en": "Gábor sees him (or her).",
+        "es": "Gábor lo (o la) ve."
+      }
+    }
+  ]
+}

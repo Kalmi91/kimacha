@@ -62,7 +62,7 @@ export function parsePracticeRound(raw: unknown): PracticeRound | null {
     return null;
   }
   if (!p || typeof p !== 'object' || p.v !== 2) return null;
-  if (typeof p.date !== 'string' || (p.target !== 'es' && p.target !== 'en')) return null;
+  if (typeof p.date !== 'string' || (p.target !== 'es' && p.target !== 'en' && p.target !== 'hu')) return null;
   if (!Array.isArray(p.ids) || p.ids.length === 0 || !p.ids.every(isId)) return null;
   if (!Array.isArray(p.qs) || p.qs.length === 0 || !p.qs.every(validQuestion)) return null;
   if (!Number.isInteger(p.step) || p.step < 0 || p.step > p.qs.length + 1) return null;

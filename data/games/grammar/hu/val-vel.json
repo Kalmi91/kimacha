@@ -1,0 +1,1119 @@
+{
+  "schema": 2,
+  "topic": "val-vel",
+  "level": "A1",
+  "title": {
+    "en": "With, by: -val / -vel",
+    "es": "Con y en (medio): -val / -vel"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The ending -val / -vel does two jobs. It says WITH a person (Annával = with Anna) and BY MEANS OF something (busszal = by bus, tollal = with a pen). It follows vowel harmony: -val after back vowels, -vel after front vowels. The surprise comes after a consonant: the v disappears and copies that consonant, so busz + val = busszal and Péter + vel = Péterrel.",
+        "es": "La terminación -val / -vel hace dos trabajos. Dice CON una persona (Annával = con Anna) y POR MEDIO DE algo (busszal = en autobús, tollal = con bolígrafo). Sigue la armonía vocálica: -val tras vocales posteriores, -vel tras anteriores. La sorpresa viene tras una consonante: la v desaparece y copia esa consonante, así que busz + val = busszal y Péter + vel = Péterrel."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "val-vel-vowel",
+      "noTableDeck": true,
+      "title": {
+        "en": "After a vowel: the v stays",
+        "es": "Tras una vocal: la v se queda"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "With / by",
+          "es": "Con / en"
+        }
+      ],
+      "rows": [
+        [
+          "autó",
+          "-val",
+          "autóval"
+        ],
+        [
+          "metró",
+          "-val",
+          "metróval"
+        ],
+        [
+          "bicikli",
+          "-vel",
+          "biciklivel"
+        ],
+        [
+          "Kati",
+          "-val",
+          "Katival"
+        ],
+        [
+          "villa",
+          "-val",
+          "villával"
+        ],
+        [
+          "Anna",
+          "-val",
+          "Annával"
+        ],
+        [
+          "ceruza",
+          "-val",
+          "ceruzával"
+        ],
+        [
+          "barátnő",
+          "-vel",
+          "barátnővel"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "val-vel-consonant",
+      "noTableDeck": true,
+      "title": {
+        "en": "After a consonant: the v copies it",
+        "es": "Tras una consonante: la v la copia"
+      },
+      "header": [
+        {
+          "en": "Word",
+          "es": "Palabra"
+        },
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "With / by",
+          "es": "Con / en"
+        }
+      ],
+      "rows": [
+        [
+          "busz",
+          "-val",
+          "busszal"
+        ],
+        [
+          "vonat",
+          "-val",
+          "vonattal"
+        ],
+        [
+          "kéz",
+          "-vel",
+          "kézzel"
+        ],
+        [
+          "kés",
+          "-vel",
+          "késsel"
+        ],
+        [
+          "toll",
+          "-val",
+          "tollal"
+        ],
+        [
+          "kanál",
+          "-val",
+          "kanállal"
+        ],
+        [
+          "Péter",
+          "-vel",
+          "Péterrel"
+        ],
+        [
+          "Gábor",
+          "-val",
+          "Gáborral"
+        ],
+        [
+          "lány",
+          "-val",
+          "lánnyal"
+        ],
+        [
+          "kulcs",
+          "-val",
+          "kulccsal"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "val-vel-pronouns",
+      "title": {
+        "en": "With me, with you...",
+        "es": "Conmigo, contigo..."
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "with (-val/-vel)",
+          "es": "con (-val/-vel)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "velem"
+        ],
+        [
+          "te",
+          "veled"
+        ],
+        [
+          "ő",
+          "vele"
+        ],
+        [
+          "mi",
+          "velünk"
+        ],
+        [
+          "ti",
+          "veletek"
+        ],
+        [
+          "ők",
+          "velük"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "What does -val / -vel say?",
+        "es": "¿Qué dice -val / -vel?"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "HOW you travel. English says 'by bus'; Hungarian puts the ending on the vehicle, with no 'in' and no -ban.",
+            "es": "CÓMO viajas. El español dice «en autobús»; el húngaro pone la terminación al vehículo, sin «en» y sin -ban."
+          },
+          "examples": [
+            {
+              "es": "Busszal megyek munkába.",
+              "tr": {
+                "en": "I go to work by bus.",
+                "es": "Voy al trabajo en autobús."
+              }
+            },
+            {
+              "es": "Vonattal utazom.",
+              "tr": {
+                "en": "I travel by train.",
+                "es": "Viajo en tren."
+              }
+            },
+            {
+              "es": "Autóval megyünk.",
+              "tr": {
+                "en": "We are going by car.",
+                "es": "Vamos en coche."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "WHAT you do something with: a tool or a part of the body.",
+            "es": "CON QUÉ haces algo: una herramienta o una parte del cuerpo."
+          },
+          "examples": [
+            {
+              "es": "Tollal írok.",
+              "tr": {
+                "en": "I write with a pen.",
+                "es": "Escribo con bolígrafo."
+              }
+            },
+            {
+              "es": "Késsel és villával eszem.",
+              "tr": {
+                "en": "I eat with a knife and fork.",
+                "es": "Como con cuchillo y tenedor."
+              }
+            },
+            {
+              "es": "Kézzel eszem.",
+              "tr": {
+                "en": "I eat with my hands.",
+                "es": "Como con las manos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "WITH WHOM: a person who goes along or does something together with you.",
+            "es": "CON QUIÉN: una persona que va contigo o hace algo junto a ti."
+          },
+          "examples": [
+            {
+              "es": "Annával megyek moziba.",
+              "tr": {
+                "en": "I am going to the cinema with Anna.",
+                "es": "Voy al cine con Anna."
+              }
+            },
+            {
+              "es": "Péterrel dolgozom.",
+              "tr": {
+                "en": "I work with Péter.",
+                "es": "Trabajo con Péter."
+              }
+            },
+            {
+              "es": "A barátommal találkozom.",
+              "tr": {
+                "en": "I am meeting my friend.",
+                "es": "Quedo con mi amigo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a pronoun, the pronoun and the ending melt into one word: velem (with me), veled (with you). You never write énvel or tevel.",
+            "es": "Con un pronombre, el pronombre y la terminación se funden en una sola palabra: velem (conmigo), veled (contigo). Como conmigo y contigo, pero con una forma para cada persona."
+          },
+          "examples": [
+            {
+              "es": "Velem jössz moziba?",
+              "tr": {
+                "en": "Are you coming to the cinema with me?",
+                "es": "¿Vienes al cine conmigo?"
+              }
+            },
+            {
+              "es": "Veled megyek.",
+              "tr": {
+                "en": "I am going with you.",
+                "es": "Voy contigo."
+              }
+            },
+            {
+              "es": "Ki van veled?",
+              "tr": {
+                "en": "Who is with you?",
+                "es": "¿Quién está contigo?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Spelling: after a consonant the v becomes that consonant. A sound written with two letters doubles in full: sz becomes ssz, cs becomes ccs, ny becomes nny. After a vowel the v stays, but a final a or e lengthens: villa becomes villával, ceruza becomes ceruzával.",
+            "es": "Ortografía: tras una consonante la v se vuelve esa consonante. Un sonido escrito con dos letras se duplica entero: sz pasa a ssz, cs a ccs, ny a nny. Tras una vocal la v se queda, pero una a o e final se alarga: villa pasa a villával, ceruza a ceruzával."
+          },
+          "examples": [
+            {
+              "es": "Késsel vágom a kenyeret.",
+              "tr": {
+                "en": "I cut the bread with a knife.",
+                "es": "Corto el pan con cuchillo."
+              }
+            },
+            {
+              "es": "A lánnyal beszélek.",
+              "tr": {
+                "en": "I am talking with the girl.",
+                "es": "Hablo con la chica."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "By or in? Vowel or consonant?",
+        "es": "¿En medio o dentro? ¿Vocal o consonante?"
+      },
+      "pairs": [
+        {
+          "a": "Busszal megyek.",
+          "b": "A buszban vagyok.",
+          "note": {
+            "en": "-val / -vel: HOW you travel (by bus). -ban / -ben: WHERE you are (inside the bus).",
+            "es": "-val / -vel: CÓMO viajas (en autobús). -ban / -ben: DÓNDE estás (dentro del autobús)."
+          },
+          "examples": [
+            {
+              "es": "Metróval megyek munkába.",
+              "tr": {
+                "en": "I go to work by metro.",
+                "es": "Voy al trabajo en metro."
+              }
+            },
+            {
+              "es": "A metróban vagyok.",
+              "tr": {
+                "en": "I am in the metro.",
+                "es": "Estoy en el metro."
+              }
+            }
+          ]
+        },
+        {
+          "a": "busz + val = busszal",
+          "b": "autó + val = autóval",
+          "note": {
+            "en": "After a consonant the v copies it; after a vowel the v stays.",
+            "es": "Tras una consonante la v la copia; tras una vocal la v se queda."
+          },
+          "examples": [
+            {
+              "es": "Vonattal megyek.",
+              "tr": {
+                "en": "I go by train.",
+                "es": "Voy en tren."
+              }
+            },
+            {
+              "es": "Autóval megyek.",
+              "tr": {
+                "en": "I go by car.",
+                "es": "Voy en coche."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: do not write the v after a consonant. It is busszal, not buszval; Péterrel, not Péterval. Also, 'by bus' is busszal, never buszban (that is 'inside the bus'). And with pronouns there is no 'én vel': it is velem.",
+        "es": "Trampa clásica: no escribas la v tras una consonante. Es busszal, no buszval; Péterrel, no Péterval. Y ojo: «en autobús» (como medio) es busszal, nunca buszban (eso es «dentro del autobús»). Con pronombres no existe «én vel»: es velem."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The ending «val» or «vel» means with, or by means of. «Busszal megyek»: I go by bus. «Annával megyek moziba»: I go to the cinema with Anna. After a vowel the v stays: «autóval», «villával». After a consonant the v copies it: «busz» becomes «busszal», «Péter» becomes «Péterrel». With pronouns the ending melts in: «velem», «veled», «vele», «velünk», «veletek», «velük».",
+    "es": "La terminación «val» o «vel» significa con, o por medio de. «Busszal megyek»: voy en autobús. «Annával megyek moziba»: voy al cine con Anna. Tras una vocal la v se queda: «autóval», «villával». Tras una consonante la v la copia: «busz» pasa a «busszal», «Péter» pasa a «Péterrel». Con los pronombres la terminación se funde: «velem», «veled», «vele», «velünk», «veletek», «velük»."
+  },
+  "items": [
+    {
+      "id": "val-vel-c01",
+      "sentence": "___ megyek munkába.",
+      "options": [
+        "Busszal",
+        "Buszban",
+        "Buszval"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You say HOW you travel: busz + -val. The v copies the sz, so it is busszal.",
+        "es": "Dices CÓMO viajas: busz + -val. La v copia la sz, así que es busszal."
+      },
+      "wrong": {
+        "Buszban": {
+          "en": "With buszban the sentence would say 'I go to work inside the bus', a place; how you travel takes -val.",
+          "es": "Con buszban la frase diría «voy al trabajo dentro del autobús», un lugar; el medio de transporte lleva -val."
+        },
+        "Buszval": {
+          "en": "buszval is the form you get by gluing busz + val without copying; after sz the v becomes sz, so it is written busszal.",
+          "es": "buszval es lo que sale al pegar busz + val sin copiar; tras sz la v se vuelve sz, y se escribe busszal."
+        }
+      },
+      "examples": [
+        "Vonattal megyek.",
+        "Autóval megyek munkába."
+      ],
+      "tr": {
+        "en": "I go to work by bus.",
+        "es": "Voy al trabajo en autobús."
+      }
+    },
+    {
+      "id": "val-vel-f01",
+      "kind": "form",
+      "verb": "busz",
+      "person": "-val/-vel",
+      "answer": "busszal",
+      "table": "val-vel-consonant"
+    },
+    {
+      "id": "val-vel-c02",
+      "sentence": "Kati ___ megy moziba.",
+      "options": [
+        "Péterrel",
+        "Péternek",
+        "Péterval"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kati goes together with Péter: -vel after front vowels (é, e), and the v copies the r: Péterrel.",
+        "es": "Kati va junto con Péter: -vel tras vocales anteriores (é, e), y la v copia la r: Péterrel."
+      },
+      "wrong": {
+        "Péternek": {
+          "en": "Péternek is 'to / for Péter'; the sentence would say that Kati goes to the cinema for Péter, not with him.",
+          "es": "Péternek es «a / para Péter»; la frase diría que Kati va al cine para Péter, no con él."
+        },
+        "Péterval": {
+          "en": "Péterval has the wrong ending: Péter has front vowels, so it takes -vel, and the v becomes r: Péterrel.",
+          "es": "Péterval lleva la terminación equivocada: Péter tiene vocales anteriores, así que lleva -vel, y la v se vuelve r: Péterrel."
+        }
+      },
+      "examples": [
+        "Gáborral megyek.",
+        "Annával megyek."
+      ],
+      "tr": {
+        "en": "Kati is going to the cinema with Péter.",
+        "es": "Kati va al cine con Péter."
+      }
+    },
+    {
+      "id": "val-vel-f02",
+      "kind": "form",
+      "verb": "Péter",
+      "person": "-val/-vel",
+      "answer": "Péterrel",
+      "table": "val-vel-consonant"
+    },
+    {
+      "id": "val-vel-c03",
+      "sentence": "___ találkozom.",
+      "options": [
+        "Lupitával",
+        "Lupitaval",
+        "Lupitavel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Lupita has back vowels, so the ending is -val, and the final a lengthens to á: Lupitával.",
+        "es": "Lupita tiene vocales posteriores, así que la terminación es -val, y la a final se alarga a á: Lupitával."
+      },
+      "wrong": {
+        "Lupitaval": {
+          "en": "Lupitaval is not a real form: the final a must lengthen to á before -val.",
+          "es": "Lupitaval no es una forma real: la a final debe alargarse a á ante -val."
+        },
+        "Lupitavel": {
+          "en": "Lupitavel is not a real form either: Lupita has back vowels (u, a), so the ending is -val, not -vel.",
+          "es": "Lupitavel tampoco es una forma real: Lupita tiene vocales posteriores (u, a), así que la terminación es -val, no -vel."
+        }
+      },
+      "examples": [
+        "Annával találkozom.",
+        "A barátommal találkozom."
+      ],
+      "tr": {
+        "en": "I am meeting Lupita.",
+        "es": "Quedo con Lupita."
+      }
+    },
+    {
+      "id": "val-vel-f03",
+      "kind": "form",
+      "verb": "autó",
+      "person": "-val/-vel",
+      "answer": "autóval",
+      "table": "val-vel-vowel"
+    },
+    {
+      "id": "val-vel-w01",
+      "kind": "why",
+      "es": "Busszal megyek munkába.",
+      "target": "Busszal",
+      "tr": {
+        "en": "I go to work by bus.",
+        "es": "Voy al trabajo en autobús."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Means of travel: -val after back vowels, and the v copies the sz",
+            "es": "Medio de transporte: -val tras vocales posteriores, y la v copia la sz"
+          }
+        },
+        {
+          "text": {
+            "en": "Direction to a place: -ba / -be",
+            "es": "Dirección hacia un lugar: -ba / -be"
+          },
+          "wrong": {
+            "en": "With this rule the form would be buszba, 'into the bus'; here the bus is how you travel, not where you go.",
+            "es": "Con esta regla la forma sería buszba, «hacia dentro del autobús»; aquí el autobús es cómo viajas, no adónde vas."
+          }
+        },
+        {
+          "text": {
+            "en": "Place where you are: -ban / -ben",
+            "es": "Lugar donde estás: -ban / -ben"
+          },
+          "wrong": {
+            "en": "With this rule the form would be buszban, 'inside the bus'; here the bus is how you travel, not where you are.",
+            "es": "Con esta regla la forma sería buszban, «dentro del autobús»; aquí el autobús es cómo viajas, no dónde estás."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "val-vel-c04",
+      "sentence": "___ dolgozom.",
+      "options": [
+        "Gáborral",
+        "Gáborrel",
+        "Gábornak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Gábor has back vowels (á, o), so the ending is -val, and the v copies the r: Gáborral.",
+        "es": "Gábor tiene vocales posteriores (á, o), así que la terminación es -val, y la v copia la r: Gáborral."
+      },
+      "wrong": {
+        "Gáborrel": {
+          "en": "Gáborrel uses the front ending -vel; Gábor has back vowels, so it is -val.",
+          "es": "Gáborrel usa la terminación anterior -vel; Gábor tiene vocales posteriores, así que es -val."
+        },
+        "Gábornak": {
+          "en": "Gábornak is 'to / for Gábor'; the sentence would say that I work for Gábor, not with him.",
+          "es": "Gábornak es «a / para Gábor»; la frase diría que trabajo para Gábor, no con él."
+        }
+      },
+      "examples": [
+        "Péterrel dolgozom.",
+        "Katival dolgozom."
+      ],
+      "tr": {
+        "en": "I work with Gábor.",
+        "es": "Trabajo con Gábor."
+      }
+    },
+    {
+      "id": "val-vel-f04",
+      "kind": "form",
+      "verb": "vonat",
+      "person": "-val/-vel",
+      "answer": "vonattal",
+      "table": "val-vel-consonant"
+    },
+    {
+      "id": "val-vel-c05",
+      "sentence": "___ írok.",
+      "options": [
+        "Tollal",
+        "Tollat",
+        "Tollban"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The pen is the tool you write WITH: toll + -val. Toll already ends in l, so the v copies it: tollal.",
+        "es": "El bolígrafo es la herramienta CON la que escribes: toll + -val. Toll ya termina en l, así que la v la copia: tollal."
+      },
+      "wrong": {
+        "Tollat": {
+          "en": "Tollat is the object form with -t; the sentence would say 'I write a pen', as if the pen were what is written.",
+          "es": "Tollat es la forma de objeto con -t; la frase diría «escribo un bolígrafo», como si el bolígrafo fuera lo escrito."
+        },
+        "Tollban": {
+          "en": "Tollban is 'inside the pen', a place; the tool you write with takes -val.",
+          "es": "Tollban es «dentro del bolígrafo», un lugar; la herramienta con la que escribes lleva -val."
+        }
+      },
+      "examples": [
+        "Ceruzával írok.",
+        "Kézzel írok."
+      ],
+      "tr": {
+        "en": "I write with a pen.",
+        "es": "Escribo con bolígrafo."
+      }
+    },
+    {
+      "id": "val-vel-f05",
+      "kind": "form",
+      "verb": "villa",
+      "person": "-val/-vel",
+      "answer": "villával",
+      "table": "val-vel-vowel"
+    },
+    {
+      "id": "val-vel-c06",
+      "sentence": "Péter, ___ jössz moziba?",
+      "options": [
+        "velem",
+        "veled",
+        "vele"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The speaker invites Péter to come along: 'with me' is velem (én + -vel).",
+        "es": "El hablante invita a Péter a venir: «conmigo» es velem (én + -vel)."
+      },
+      "wrong": {
+        "veled": {
+          "en": "veled is 'with you'; the question would ask Péter to come with himself.",
+          "es": "veled es «contigo»; la pregunta pediría a Péter que viniera consigo mismo."
+        },
+        "vele": {
+          "en": "vele is 'with him or her'; the question would be about a third person, not about the speaker.",
+          "es": "vele es «con él o con ella»; la pregunta trataría de una tercera persona, no del hablante."
+        }
+      },
+      "examples": [
+        "Velem jössz?",
+        "Anna velem jön."
+      ],
+      "tr": {
+        "en": "Péter, are you coming to the cinema with me?",
+        "es": "Péter, ¿vienes al cine conmigo?"
+      }
+    },
+    {
+      "id": "val-vel-f06",
+      "kind": "form",
+      "verb": "-val/-vel",
+      "person": "én",
+      "answer": "velem",
+      "table": "val-vel-pronouns"
+    },
+    {
+      "id": "val-vel-c07",
+      "sentence": "Kati, én ___ megyek moziba.",
+      "options": [
+        "veled",
+        "velem",
+        "vele"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The speaker talks to Kati (te): 'with you' is veled.",
+        "es": "El hablante habla con Kati (te): «contigo» es veled."
+      },
+      "wrong": {
+        "velem": {
+          "en": "velem is 'with me'; the sentence would say 'I go with myself'.",
+          "es": "velem es «conmigo»; la frase diría «voy conmigo mismo»."
+        },
+        "vele": {
+          "en": "vele is 'with him or her'; Kati would be spoken about, not spoken to.",
+          "es": "vele es «con él o con ella»; se hablaría de Kati, no a Kati."
+        }
+      },
+      "examples": [
+        "Veled megyek.",
+        "Veled vagyok."
+      ],
+      "tr": {
+        "en": "Kati, I am going to the cinema with you.",
+        "es": "Kati, yo voy al cine contigo."
+      }
+    },
+    {
+      "id": "val-vel-f07",
+      "kind": "form",
+      "verb": "-val/-vel",
+      "person": "te",
+      "answer": "veled",
+      "table": "val-vel-pronouns"
+    },
+    {
+      "id": "val-vel-w02",
+      "kind": "why",
+      "es": "Péterrel dolgozom.",
+      "target": "Péterrel",
+      "tr": {
+        "en": "I work with Péter.",
+        "es": "Trabajo con Péter."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Front vowels: the ending is -vel, and the v copies the r",
+            "es": "Vocales anteriores: la terminación es -vel, y la v copia la r"
+          }
+        },
+        {
+          "text": {
+            "en": "Back vowels: the ending is -val",
+            "es": "Vocales posteriores: la terminación es -val"
+          },
+          "wrong": {
+            "en": "With this rule the form would be Péterral; but Péter has the front vowels é and e, so the ending is -vel.",
+            "es": "Con esta regla la forma sería Péterral; pero Péter tiene las vocales anteriores é y e, así que la terminación es -vel."
+          }
+        },
+        {
+          "text": {
+            "en": "After a consonant the v simply drops",
+            "es": "Tras una consonante la v simplemente cae"
+          },
+          "wrong": {
+            "en": "With this rule you would write Péterel; but the v does not vanish, it turns into r, so the r is doubled.",
+            "es": "Con esta regla escribirías Péterel; pero la v no desaparece, se vuelve r, así que la r se duplica."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "val-vel-c08",
+      "sentence": "Ez Anna. Gábor ___ megy moziba.",
+      "options": [
+        "vele",
+        "velük",
+        "velem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is one person: 'with her' is vele (ő has no gender, so vele also means 'with him').",
+        "es": "Anna es una sola persona: «con ella» es vele (ő no tiene género, así que vele también es «con él»)."
+      },
+      "wrong": {
+        "velük": {
+          "en": "velük is 'with them'; Gábor would go with several people.",
+          "es": "velük es «con ellos»; Gábor iría con varias personas."
+        },
+        "velem": {
+          "en": "velem is 'with me'; Gábor would go with the speaker.",
+          "es": "velem es «conmigo»; Gábor iría con el hablante."
+        }
+      },
+      "examples": [
+        "Vele megyek.",
+        "Péter vele van."
+      ],
+      "tr": {
+        "en": "This is Anna. Gábor is going to the cinema with her.",
+        "es": "Ésta es Anna. Gábor va al cine con ella."
+      }
+    },
+    {
+      "id": "val-vel-f08",
+      "kind": "form",
+      "verb": "kéz",
+      "person": "-val/-vel",
+      "answer": "kézzel",
+      "table": "val-vel-consonant"
+    },
+    {
+      "id": "val-vel-c09",
+      "sentence": "Ti moziba mentek? Mi ___ megyünk.",
+      "options": [
+        "veletek",
+        "velünk",
+        "velük"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "We (mi) go along with the others (ti): 'with you all' is veletek.",
+        "es": "Nosotros (mi) vamos con los otros (ti): «con ustedes» es veletek."
+      },
+      "wrong": {
+        "velünk": {
+          "en": "velünk is 'with us'; the sentence would say 'we go with ourselves'.",
+          "es": "velünk es «con nosotros»; la frase diría «vamos con nosotros mismos»."
+        },
+        "velük": {
+          "en": "velük is 'with them'; another group would be involved, not the people asked.",
+          "es": "velük es «con ellos»; entraría otro grupo, no las personas a quienes se pregunta."
+        }
+      },
+      "examples": [
+        "Veletek vagyunk.",
+        "Veletek megyek."
+      ],
+      "tr": {
+        "en": "Are you going to the cinema? We are going with you.",
+        "es": "¿Ustedes van al cine? Nosotros vamos con ustedes."
+      }
+    },
+    {
+      "id": "val-vel-f09",
+      "kind": "form",
+      "verb": "-val/-vel",
+      "person": "mi",
+      "answer": "velünk",
+      "table": "val-vel-pronouns"
+    },
+    {
+      "id": "val-vel-c10",
+      "sentence": "Anna és Péter moziban vannak. Kati ___ van.",
+      "options": [
+        "velük",
+        "vele",
+        "velünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna and Péter are two people ('they'): 'with them' is velük.",
+        "es": "Anna y Péter son dos personas («ellos»): «con ellos» es velük."
+      },
+      "wrong": {
+        "vele": {
+          "en": "vele is 'with him or her'; it would mean only one of them.",
+          "es": "vele es «con él o con ella»; significaría solo uno de ellos."
+        },
+        "velünk": {
+          "en": "velünk is 'with us'; Kati would be with the speaker too.",
+          "es": "velünk es «con nosotros»; Kati estaría también con el hablante."
+        }
+      },
+      "examples": [
+        "Velük megyek.",
+        "Velük vagyunk."
+      ],
+      "tr": {
+        "en": "Anna and Péter are at the cinema. Kati is with them.",
+        "es": "Anna y Péter están en el cine. Kati está con ellos."
+      }
+    },
+    {
+      "id": "val-vel-f10",
+      "kind": "form",
+      "verb": "Anna",
+      "person": "-val/-vel",
+      "answer": "Annával",
+      "table": "val-vel-vowel"
+    },
+    {
+      "id": "val-vel-w03",
+      "kind": "why",
+      "es": "Velem jössz moziba?",
+      "target": "Velem",
+      "tr": {
+        "en": "Are you coming to the cinema with me?",
+        "es": "¿Vienes al cine conmigo?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "With + I: the pronoun and the ending melt into velem",
+            "es": "Con + yo: el pronombre y la terminación se funden en velem"
+          }
+        },
+        {
+          "text": {
+            "en": "With + you: veled",
+            "es": "Con + tú: veled"
+          },
+          "wrong": {
+            "en": "With this rule the question would be Veled jössz moziba?, asking you to come with yourself.",
+            "es": "Con esta regla la pregunta sería Veled jössz moziba?, pidiéndote que vengas contigo mismo."
+          }
+        },
+        {
+          "text": {
+            "en": "With + he or she: vele",
+            "es": "Con + él o ella: vele"
+          },
+          "wrong": {
+            "en": "With this rule the question would be Vele jössz moziba?, 'Are you coming with him or her?'; here the speaker means himself.",
+            "es": "Con esta regla la pregunta sería Vele jössz moziba?, «¿vienes con él o con ella?»; aquí el hablante se refiere a sí mismo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "val-vel-c11",
+      "sentence": "___ eszem a levest.",
+      "options": [
+        "Kanállal",
+        "Kanálval",
+        "Kanállel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The spoon is the tool: kanál has back vowels (a, á), so -val, and the v copies the l: kanállal.",
+        "es": "La cuchara es la herramienta: kanál tiene vocales posteriores (a, á), así que -val, y la v copia la l: kanállal."
+      },
+      "wrong": {
+        "Kanálval": {
+          "en": "Kanálval is what you get by gluing kanál + val without copying; after l the v becomes l, so it is kanállal.",
+          "es": "Kanálval sale al pegar kanál + val sin copiar; tras l la v se vuelve l, así que es kanállal."
+        },
+        "Kanállel": {
+          "en": "Kanállel uses the front ending -vel; kanál has back vowels, so it is -val.",
+          "es": "Kanállel usa la terminación anterior -vel; kanál tiene vocales posteriores, así que es -val."
+        }
+      },
+      "examples": [
+        "Késsel eszem.",
+        "Villával eszem."
+      ],
+      "tr": {
+        "en": "I eat the soup with a spoon.",
+        "es": "Me como la sopa con cuchara."
+      }
+    },
+    {
+      "id": "val-vel-f11",
+      "kind": "form",
+      "verb": "-val/-vel",
+      "person": "ti",
+      "answer": "veletek",
+      "table": "val-vel-pronouns"
+    },
+    {
+      "id": "val-vel-c12",
+      "sentence": "Az ___ beszélek.",
+      "options": [
+        "orvossal",
+        "orvossel",
+        "orvosnál"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You talk WITH the doctor: orvos ends in s, so the v becomes s, and the back vowels give -sal: orvossal.",
+        "es": "Hablas CON el médico: orvos termina en s, así que la v se vuelve s, y las vocales posteriores dan -sal: orvossal."
+      },
+      "wrong": {
+        "orvossel": {
+          "en": "orvossel uses the front ending -vel; orvos has back vowels (o, o), so it is -sal.",
+          "es": "orvossel usa la terminación anterior -vel; orvos tiene vocales posteriores (o, o), así que es -sal."
+        },
+        "orvosnál": {
+          "en": "orvosnál is 'at the doctor's'; the sentence would say where you talk, not with whom.",
+          "es": "orvosnál es «en la consulta del médico»; la frase diría dónde hablas, no con quién."
+        }
+      },
+      "examples": [
+        "A tanárral beszélek.",
+        "Az orvossal találkozom."
+      ],
+      "tr": {
+        "en": "I am talking with the doctor.",
+        "es": "Hablo con el médico."
+      }
+    },
+    {
+      "id": "val-vel-f12",
+      "kind": "form",
+      "verb": "-val/-vel",
+      "person": "ők",
+      "answer": "velük",
+      "table": "val-vel-pronouns"
+    },
+    {
+      "id": "val-vel-c13",
+      "sentence": "A ___ megyek moziba.",
+      "options": [
+        "barátommal",
+        "barátommel",
+        "barátomval"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "barátom (my friend) ends in m, so the v becomes m; it has back vowels, so -mal: barátommal.",
+        "es": "barátom (mi amigo) termina en m, así que la v se vuelve m; tiene vocales posteriores, así que -mal: barátommal."
+      },
+      "wrong": {
+        "barátommel": {
+          "en": "barátommel uses the front ending -vel; barátom has back vowels, so it is -mal.",
+          "es": "barátommel usa la terminación anterior -vel; barátom tiene vocales posteriores, así que es -mal."
+        },
+        "barátomval": {
+          "en": "barátomval is what you get by gluing barátom + val without copying; after m the v becomes m, so it is barátommal.",
+          "es": "barátomval sale al pegar barátom + val sin copiar; tras m la v se vuelve m, así que es barátommal."
+        }
+      },
+      "examples": [
+        "A barátommal találkozom.",
+        "Anyával megyek."
+      ],
+      "tr": {
+        "en": "I am going to the cinema with my friend.",
+        "es": "Voy al cine con mi amigo."
+      }
+    },
+    {
+      "id": "val-vel-w04",
+      "kind": "why",
+      "es": "Villával eszem.",
+      "target": "Villával",
+      "tr": {
+        "en": "I eat with a fork.",
+        "es": "Como con tenedor."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After a vowel the v stays, and the final a lengthens to á",
+            "es": "Tras una vocal la v se queda, y la a final se alarga a á"
+          }
+        },
+        {
+          "text": {
+            "en": "The final a stays short: villaval",
+            "es": "La a final se queda corta: villaval"
+          },
+          "wrong": {
+            "en": "With this rule you would write villaval; but before -val the final a becomes á: villával.",
+            "es": "Con esta regla escribirías villaval; pero ante -val la a final pasa a á: villával."
+          }
+        },
+        {
+          "text": {
+            "en": "Front ending: villével",
+            "es": "Terminación anterior: villével"
+          },
+          "wrong": {
+            "en": "With this rule you would write villével; but villa has back vowels, so the ending is -val.",
+            "es": "Con esta regla escribirías villével; pero villa tiene vocales posteriores, así que la terminación es -val."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "val-vel-c14",
+      "sentence": "Debrecenbe ___ megyek.",
+      "options": [
+        "vonattal",
+        "vonatval",
+        "vonatnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The train is how you travel: vonat ends in t, so the v becomes t: vonattal.",
+        "es": "El tren es cómo viajas: vonat termina en t, así que la v se vuelve t: vonattal."
+      },
+      "wrong": {
+        "vonatval": {
+          "en": "vonatval is what you get by gluing vonat + val without copying; after t the v becomes t, so it is vonattal.",
+          "es": "vonatval sale al pegar vonat + val sin copiar; tras t la v se vuelve t, así que es vonattal."
+        },
+        "vonatnak": {
+          "en": "vonatnak is 'to / for the train'; the train would be a receiver, not the way you travel.",
+          "es": "vonatnak es «al / para el tren»; el tren sería un receptor, no el medio de viaje."
+        }
+      },
+      "examples": [
+        "Szegedre vonattal megyek.",
+        "Busszal megyek Szegedre."
+      ],
+      "tr": {
+        "en": "I go to Debrecen by train.",
+        "es": "Voy a Debrecen en tren."
+      }
+    }
+  ]
+}

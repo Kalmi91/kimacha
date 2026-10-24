@@ -52,7 +52,7 @@ export default {
     // spoken item dictated with the keyboard's microphone.
     introSpeaking: (n: number) => `Speaking: ${n} ${n === 1 ? 'question' : 'questions'}`,
     skillSpeaking: 'Speaking',
-    speakTranslate: (lang: string): string => (lang === 'es' ? 'Say it in Spanish' : 'Say it in English'),
+    speakTranslate: (lang: string): string => (lang === 'es' ? 'Say it in Spanish' : lang === 'hu' ? 'Say it in Hungarian' : 'Say it in English'),
     speakRepeat: 'Read it aloud',
     speakHint: 'Tap the microphone on your keyboard and say the sentence. Your words appear in the box.',
     speakPlaceholder: 'Your spoken words appear here',

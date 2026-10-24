@@ -4,6 +4,7 @@ export default {
     // Kimacha Play: single en-es pair, no more language
     // picker here, just a way to start the course.
     start: 'Get started',
+    learnTitle: 'Which language do you want to learn?',
   },
   // the intro step after the welcome, and the theme step after it.
   intro: {
@@ -20,8 +21,6 @@ export default {
   },
   onboardingTheme: {
     title: 'Pick a look',
-    // The sample word on each row: the learned language's word, so it shows the font.
-    sampleWord: 'el carro',
     know: 'I know',
     later: 'Later you can pick from 24 in Settings.',
     next: 'Continue',

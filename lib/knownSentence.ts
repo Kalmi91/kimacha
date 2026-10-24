@@ -9,7 +9,7 @@ import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
 import { detectStructures, tokenize, type Structure } from '@/lib/grammar/tenseGate';
 import type { Sm2Card } from '@/lib/sm2';
 
-type KnownLang = 'es' | 'en';
+export type KnownLang = 'es' | 'en' | 'hu';
 
 /** The unlockable tenses: the six tenses of `conjugate` + the subjunctive imperfecto. */
 export type ResolvedTense = Tense | 'subjuntivo_imperfecto';
@@ -34,6 +34,7 @@ const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
     'de', 'del', 'al', 'a', 'en', 'y', 'o', 'que', 'no', 'con', 'por', 'para',
   ]),
   en: new Set(['the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or']),
+  hu: new Set(['a', 'az', 'egy', 'és', 'is', 'de', 'vagy', 'hogy', 'nem', 'meg', 'el', 'ki', 'be']),
 };
 
 // The forms of English be/have/do/go, if the base verb is learned.
@@ -121,6 +122,16 @@ function enTokenize(text: string): string[] {
     .filter(Boolean);
 }
 
+// Hungarian: the letters with an accent or a double acute (á é í ó ö ő ú ü ű) are part of a word, so a
+// token keeps them. Agglutinative suffixes are not modelled: only the learned forms count.
+function huTokenize(text: string): string[] {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9áéíóöőúüű\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
 // Subjunctive imperfecto: from the stem of the 3rd person plural indefinido (-ra instead of -ron…).
 function subjuntivoImperfecto(infinitive: string): string[] | null {
   const ellos = conjugate(infinitive, 'indefinido')?.[4]?.form;
@@ -173,6 +184,10 @@ function addEnglish(known: Set<string>, entry: LearnedEntry) {
   for (const form of EN_IRREGULAR_FORMS[base] ?? []) known.add(form);
 }
 
+function addHungarian(known: Set<string>, entry: LearnedEntry) {
+  for (const token of huTokenize(entry.text)) known.add(token);
+}
+
 /** All accepted (lowercase) tokens from the learned words. */
 export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
   const known = new Set<string>(FREE_WORDS[lang]);
@@ -180,6 +195,7 @@ export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
   for (const raw of ctx.learned) {
     const entry = entryOf(raw);
     if (lang === 'es') addSpanish(known, entry, tenses);
+    else if (lang === 'hu') addHungarian(known, entry);
     else addEnglish(known, entry);
   }
   return known;
@@ -187,6 +203,7 @@ export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
 
 /** The (lowercase) tokens of a sentence, the way the gate reads it. */
 export function sentenceTokens(sentence: string, lang: KnownLang): string[] {
+  if (lang === 'hu') return huTokenize(sentence);
   return lang === 'es' ? tokenize(sentence) : enTokenize(sentence);
 }
 

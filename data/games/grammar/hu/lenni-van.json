@@ -1,0 +1,734 @@
+{
+  "schema": 2,
+  "topic": "lenni-van",
+  "level": "A1",
+  "title": { "en": "To be: vagyok, vagy, van", "es": "Ser y estar: vagyok, vagy, van" },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian uses one verb, lenni, for 'to be' (who or what someone is) and for 'to be somewhere'. In the present it has six forms: vagyok, vagy, van, vagyunk, vagytok, vannak. The big surprise is the 3rd person: when you say WHAT someone or something is (a noun or an adjective), van and vannak are simply left out: Anna tanár. A ház nagy. When you say WHERE, they stay: Anna otthon van.",
+        "es": "El húngaro usa un solo verbo, lenni, para «ser» (quién o qué es algo) y para «estar» en un lugar. En presente tiene seis formas: vagyok, vagy, van, vagyunk, vagytok, vannak. La gran sorpresa es la 3.ª persona: cuando dices QUÉ es alguien o algo (un sustantivo o un adjetivo), van y vannak simplemente se omiten: Anna tanár. A ház nagy. Cuando dices DÓNDE, se quedan: Anna otthon van."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "lenni-forms",
+      "title": { "en": "lenni in the present tense", "es": "lenni en presente" },
+      "header": [
+        { "en": "Person", "es": "Persona" },
+        { "en": "lenni (to be)", "es": "lenni (ser, estar)" }
+      ],
+      "rows": [
+        ["én", "vagyok"],
+        ["te", "vagy"],
+        ["ő", "van"],
+        ["mi", "vagyunk"],
+        ["ti", "vagytok"],
+        ["ők", "vannak"]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Which form for which subject?", "es": "¿Qué forma para qué sujeto?" },
+      "items": [
+        {
+          "text": {
+            "en": "én, te, mi, ti: the form always stays. You can drop the pronoun, because the ending already tells who it is.",
+            "es": "én, te, mi, ti: la forma siempre se queda. Puedes omitir el pronombre, porque la terminación ya dice quién es."
+          },
+          "examples": [
+            { "es": "Tanár vagyok.", "tr": { "en": "I am a teacher.", "es": "Soy profesor." } },
+            { "es": "Fáradt vagy?", "tr": { "en": "Are you tired?", "es": "¿Estás cansado?" } },
+            { "es": "Otthon vagyunk.", "tr": { "en": "We are at home.", "es": "Estamos en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "Two subjects together: count the persons. te és én = mi, te és Kati = ti, Anna és Péter = ők. (ti = you, several people: in Mexican Spanish, ustedes.)",
+            "es": "Dos sujetos juntos: cuenta las personas. te és én = mi, te és Kati = ti, Anna és Péter = ők. (ti = varios tú: en México, ustedes.)"
+          },
+          "examples": [
+            { "es": "Péter és én otthon vagyunk.", "tr": { "en": "Péter and I are at home.", "es": "Péter y yo estamos en casa." } },
+            { "es": "Te és Kati itt vagytok.", "tr": { "en": "You and Kati are here.", "es": "Tú y Kati están aquí." } },
+            { "es": "Anna és Péter otthon vannak.", "tr": { "en": "Anna and Péter are at home.", "es": "Anna y Péter están en casa." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "ő = he and she: Hungarian has no grammatical gender. van = he, she or it is; vannak = they are.",
+            "es": "ő = él y ella: el húngaro no tiene género gramatical. van = es o está; vannak = son o están."
+          },
+          "examples": [
+            { "es": "Ő otthon van.", "tr": { "en": "He (or she) is at home.", "es": "Él (o ella) está en casa." } },
+            { "es": "Ő magyar.", "tr": { "en": "He (or she) is Hungarian.", "es": "Él (o ella) es húngaro." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "subject-count",
+      "noTableDeck": true,
+      "title": { "en": "Counting the subjects", "es": "Contar los sujetos" },
+      "header": [
+        { "en": "Subject", "es": "Sujeto" },
+        { "en": "Counts as", "es": "Cuenta como" },
+        { "en": "lenni (to be)", "es": "lenni (ser, estar)" }
+      ],
+      "rows": [
+        ["te és én", "mi", "vagyunk"],
+        ["Péter és én", "mi", "vagyunk"],
+        ["te és Kati", "ti", "vagytok"],
+        ["Anna és Péter", "ők", "vannak"],
+        ["a gyerekek", "ők", "vannak"],
+        ["Gábor", "ő", "van"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "van: dropped or kept?", "es": "van: ¿se omite o se queda?" },
+      "points": [
+        {
+          "text": {
+            "en": "WHAT someone or something is (noun, adjective): van and vannak are left out in the present tense. English always needs 'is' (she is tired); Hungarian just says Fáradt.",
+            "es": "QUÉ es alguien o algo (sustantivo, adjetivo): en presente se omiten van y vannak. Esto incluye lo que en español sería «estar» + adjetivo (Péter fáradt = Péter está cansado)."
+          },
+          "examples": [
+            { "es": "Anna tanár.", "tr": { "en": "Anna is a teacher.", "es": "Anna es profesora." } },
+            { "es": "A ház nagy.", "tr": { "en": "The house is big.", "es": "La casa es grande." } },
+            { "es": "Péter fáradt.", "tr": { "en": "Péter is tired.", "es": "Péter está cansado." } },
+            { "es": "Lupita mexikói.", "tr": { "en": "Lupita is Mexican.", "es": "Lupita es mexicana." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "WHERE someone or something is (a place word): van and vannak stay. Endings like -ban (in) come in a later lesson; for now read them as part of the place word.",
+            "es": "DÓNDE está alguien o algo (una palabra de lugar): van y vannak se quedan. Terminaciones como -ban (en) llegan en una lección posterior; por ahora léelas como parte de la palabra de lugar."
+          },
+          "examples": [
+            { "es": "Anna otthon van.", "tr": { "en": "Anna is at home.", "es": "Anna está en casa." } },
+            { "es": "A gyerekek a szobában vannak.", "tr": { "en": "The children are in the room.", "es": "Los niños están en la habitación." } },
+            { "es": "A bolt itt van.", "tr": { "en": "The shop is here.", "es": "La tienda está aquí." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few state words keep van too: nyitva (open), zárva (closed), tele (full), jól (well).",
+            "es": "Unas pocas palabras de estado también llevan van: nyitva (abierto), zárva (cerrado), tele (lleno), jól (bien)."
+          },
+          "examples": [
+            { "es": "A bolt zárva van.", "tr": { "en": "The shop is closed.", "es": "La tienda está cerrada." } },
+            { "es": "Az étterem nyitva van.", "tr": { "en": "The restaurant is open.", "es": "El restaurante está abierto." } },
+            { "es": "Anna jól van.", "tr": { "en": "Anna is well.", "es": "Anna está bien." } }
+          ]
+        },
+        {
+          "text": {
+            "en": "'This is ...': ez + a name or noun needs no verb at all.",
+            "es": "«Esto es...»: ez + un nombre o sustantivo no lleva verbo."
+          },
+          "examples": [
+            { "es": "Ez Kati.", "tr": { "en": "This is Kati.", "es": "Ésta es Kati." } },
+            { "es": "Ez a barátom.", "tr": { "en": "This is my friend.", "es": "Éste es mi amigo." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "What or where?", "es": "¿Qué o dónde?" },
+      "pairs": [
+        {
+          "a": "Anna tanár.",
+          "b": "Anna otthon van.",
+          "note": {
+            "en": "What someone is: no van. Where someone is: van.",
+            "es": "Qué es alguien: sin van. Dónde está alguien: con van."
+          },
+          "examples": [
+            { "es": "A ház nagy.", "tr": { "en": "The house is big.", "es": "La casa es grande." } },
+            { "es": "A ház a városban van.", "tr": { "en": "The house is in the city.", "es": "La casa está en la ciudad." } }
+          ]
+        },
+        {
+          "a": "Tanár vagyok.",
+          "b": "Anna tanár.",
+          "note": {
+            "en": "With I and you the verb stays; with he, she or it it is dropped before a noun or adjective.",
+            "es": "Con yo y tú el verbo se queda; con él, ella o eso se omite ante un sustantivo o adjetivo."
+          },
+          "examples": [
+            { "es": "Nagyon fáradt vagyok.", "tr": { "en": "I am very tired.", "es": "Estoy muy cansado." } },
+            { "es": "Péter nagyon fáradt.", "tr": { "en": "Péter is very tired.", "es": "Péter está muy cansado." } }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic trap: do not add 'is' out of habit. 'She is a teacher' is Anna tanár, never Anna van tanár. A profession also takes no 'a/an': Tanár vagyok. To say no: Anna nem tanár. Anna nincs otthon.",
+        "es": "Trampa clásica: no añadas «es» por costumbre. «Anna es profesora» se dice Anna tanár, nunca Anna van tanár. Y si dudas entre «ser» y «estar», pregúntate: ¿qué es o dónde está? Para negar: Anna nem tanár. Anna nincs otthon."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian, the verb «lenni», to be, has six forms: «vagyok», «vagy», «van», «vagyunk», «vagytok» and «vannak». With a noun or an adjective, the third person is simply dropped: «Anna tanár», «A ház nagy». When you say where someone is, you keep it: «Anna otthon van». For I and you the verb always stays: «Tanár vagyok», «Fáradt vagy?»",
+    "es": "En húngaro, el verbo «lenni», ser o estar, tiene seis formas: «vagyok», «vagy», «van», «vagyunk», «vagytok» y «vannak». Con un sustantivo o un adjetivo, la tercera persona simplemente se omite: «Anna tanár», «A ház nagy». Cuando dices dónde está alguien, se mantiene: «Anna otthon van». Para yo y tú el verbo siempre se queda: «Tanár vagyok», «Fáradt vagy?»"
+  },
+  "glossary": [
+    { "word": "mexikói", "gloss": { "en": "Mexican", "es": "mexicano" } },
+    { "word": "nagyon", "gloss": { "en": "very", "es": "muy" } }
+  ],
+  "items": [
+    {
+      "id": "lenni-van-c01",
+      "sentence": "Szia, Kati ___. Te ki vagy?",
+      "options": ["vagy", "vagyok", "van"],
+      "correct": 1,
+      "why": {
+        "en": "Kati talks about herself: 'I am Kati' is Kati vagyok (1st person, the pronoun én is dropped).",
+        "es": "Kati habla de sí misma: «yo soy Kati» es Kati vagyok (1.ª persona, el pronombre én se omite)."
+      },
+      "wrong": {
+        "vagy": {
+          "en": "With vagy the sentence would mean 'Hi, you are Kati': vagy is for te (you).",
+          "es": "Con vagy la frase significaría «Hola, tú eres Kati»: vagy es para te (tú)."
+        },
+        "van": {
+          "en": "van is for he, she or it, so Kati would be talking about someone else; to say 'I am' you need vagyok.",
+          "es": "van es para él o ella, así que Kati hablaría de otra persona; para decir «yo soy» hace falta vagyok."
+        }
+      },
+      "examples": ["Péter vagyok.", "Gábor vagyok, tanár."],
+      "tr": { "en": "Hi, I'm Kati. Who are you?", "es": "Hola, soy Kati. ¿Quién eres tú?" }
+    },
+    {
+      "id": "lenni-van-f01",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "én",
+      "answer": "vagyok",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c02",
+      "sentence": "Te tanár ___, én diák vagyok.",
+      "options": ["vagy", "vagyok", "van"],
+      "correct": 0,
+      "why": {
+        "en": "Te is 'you', so the verb is vagy; in the second half, én ... vagyok matches 'I'.",
+        "es": "Te es «tú», por eso el verbo es vagy; en la segunda parte, én ... vagyok corresponde a «yo»."
+      },
+      "wrong": {
+        "vagyok": {
+          "en": "vagyok is 'I am'; 'Te tanár vagyok' would mix 'you' with 'I am'.",
+          "es": "vagyok es «yo soy»; «Te tanár vagyok» mezclaría «tú» con «yo soy»."
+        },
+        "van": {
+          "en": "van is for he, she or it; the subject here is te (you), so it needs vagy.",
+          "es": "van es para él o ella; el sujeto aquí es te (tú), así que necesita vagy."
+        }
+      },
+      "examples": ["Te magyar vagy?", "Fáradt vagy."],
+      "tr": { "en": "You are a teacher, I am a student.", "es": "Tú eres profesor, yo soy estudiante." }
+    },
+    {
+      "id": "lenni-van-f02",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "te",
+      "answer": "vagy",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c03",
+      "sentence": "Anna és Péter otthon ___.",
+      "options": ["van", "vagyunk", "vannak"],
+      "correct": 2,
+      "why": {
+        "en": "Two people are 'they' (ők), and otthon says where, so the plural vannak stays.",
+        "es": "Dos personas son «ellos» (ők), y otthon dice dónde, así que se queda el plural vannak."
+      },
+      "wrong": {
+        "van": {
+          "en": "van is singular, for one person; with Anna and Péter you need the plural vannak.",
+          "es": "van es singular, para una persona; con Anna y Péter hace falta el plural vannak."
+        },
+        "vagyunk": {
+          "en": "vagyunk is 'we are': the sentence would include the speaker, as in 'Anna, Péter and I'.",
+          "es": "vagyunk es «nosotros estamos»: la frase incluiría al hablante, como en «Anna, Péter y yo»."
+        }
+      },
+      "examples": ["Kati és Gábor itt vannak.", "A fiú és a lány a szobában vannak."],
+      "tr": { "en": "Anna and Péter are at home.", "es": "Anna y Péter están en casa." }
+    },
+    {
+      "id": "lenni-van-f03",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "ő",
+      "answer": "van",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c04",
+      "sentence": "Mi most itt ___.",
+      "options": ["vannak", "vagyunk", "vagytok"],
+      "correct": 1,
+      "why": {
+        "en": "Mi is 'we', so the form is vagyunk.",
+        "es": "Mi es «nosotros», por eso la forma es vagyunk."
+      },
+      "wrong": {
+        "vannak": {
+          "en": "vannak is 'they are'; 'Mi most itt vannak' would mix 'we' and 'they'.",
+          "es": "vannak es «ellos están»; «Mi most itt vannak» mezclaría «nosotros» y «ellos»."
+        },
+        "vagytok": {
+          "en": "vagytok is 'you (all) are'; the subject mi is 'we'.",
+          "es": "vagytok es «ustedes están»; el sujeto mi es «nosotros»."
+        }
+      },
+      "examples": ["Otthon vagyunk.", "Hol vagyunk?"],
+      "tr": { "en": "We are here now.", "es": "Ahora estamos aquí." }
+    },
+    {
+      "id": "lenni-van-f04",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "mi",
+      "answer": "vagyunk",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-w01",
+      "kind": "why",
+      "es": "Anna tanár.",
+      "target": "tanár",
+      "tr": { "en": "Anna is a teacher.", "es": "Anna es profesora." },
+      "options": [
+        {
+          "text": {
+            "en": "A noun says what Anna is: van is left out",
+            "es": "Un sustantivo dice qué es Anna: se omite van"
+          }
+        },
+        {
+          "text": {
+            "en": "A place word: van stays",
+            "es": "Una palabra de lugar: van se queda"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna otthon van; tanár is not a place, it is what Anna is.",
+            "es": "Con esta regla la frase sería Anna otthon van; tanár no es un lugar, es lo que es Anna."
+          }
+        },
+        {
+          "text": {
+            "en": "1st or 2nd person: the verb always stays",
+            "es": "1.ª o 2.ª persona: el verbo siempre se queda"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Tanár vagyok; Anna is the 3rd person, so van is left out.",
+            "es": "Con esta regla la frase sería Tanár vagyok; Anna es 3.ª persona, así que se omite van."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "lenni-van-c05",
+      "sentence": "Ti hol ___?",
+      "options": ["vagytok", "vagyunk", "vannak"],
+      "correct": 0,
+      "why": {
+        "en": "Ti is 'you' for several people, so the form is vagytok.",
+        "es": "Ti es «ustedes» (varios tú), por eso la forma es vagytok."
+      },
+      "wrong": {
+        "vagyunk": {
+          "en": "vagyunk is 'we': 'Ti hol vagyunk?' would mix 'you all' and 'we'.",
+          "es": "vagyunk es «nosotros»: «Ti hol vagyunk?» mezclaría «ustedes» y «nosotros»."
+        },
+        "vannak": {
+          "en": "vannak is 'they are'; ti is 'you' (plural).",
+          "es": "vannak es «ellos están»; ti es «ustedes»."
+        }
+      },
+      "examples": ["Ti otthon vagytok?", "Itt vagytok?"],
+      "tr": { "en": "Where are you (all)?", "es": "¿Dónde están ustedes?" }
+    },
+    {
+      "id": "lenni-van-f05",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "ti",
+      "answer": "vagytok",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c06",
+      "sentence": "Anna ___.",
+      "options": ["tanár van", "van tanár", "tanár"],
+      "correct": 2,
+      "why": {
+        "en": "Anna is a teacher: with a noun in the 3rd person, van is left out.",
+        "es": "Anna es profesora: con un sustantivo en 3.ª persona se omite van."
+      },
+      "wrong": {
+        "tanár van": {
+          "en": "This copies the English 'is': van is not used after a noun; it is for where someone is (Anna otthon van).",
+          "es": "Esto añade un «es» que el húngaro no usa: van no va después de un sustantivo; es para decir dónde está alguien (Anna otthon van)."
+        },
+        "van tanár": {
+          "en": "This form is for 'there is': 'Van tanár.' alone means 'There is a teacher.'",
+          "es": "Esta forma es para «hay»: «Van tanár.» a secas significaría «Hay un profesor»."
+        }
+      },
+      "examples": ["Péter orvos.", "Kati diák."],
+      "tr": { "en": "Anna is a teacher.", "es": "Anna es profesora." }
+    },
+    {
+      "id": "lenni-van-f06",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "ők",
+      "answer": "vannak",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c07",
+      "sentence": "A ház ___.",
+      "options": ["nagy", "nagy van", "nagyok"],
+      "correct": 0,
+      "why": {
+        "en": "An adjective after a 3rd person subject needs no van: A ház nagy.",
+        "es": "Un adjetivo después de un sujeto de 3.ª persona no lleva van: A ház nagy."
+      },
+      "wrong": {
+        "nagy van": {
+          "en": "Adding van copies the English 'is big'; Hungarian leaves it out with an adjective. van is for place.",
+          "es": "Añadir van copia el «es grande»; el húngaro lo omite con un adjetivo. van es para el lugar."
+        },
+        "nagyok": {
+          "en": "nagyok is the plural form: 'A házak nagyok' means the houses are big. Here it is one house.",
+          "es": "nagyok es la forma plural: «A házak nagyok» significa que las casas son grandes. Aquí es una sola casa."
+        }
+      },
+      "examples": ["A szoba kicsi.", "Az autó új."],
+      "tr": { "en": "The house is big.", "es": "La casa es grande." }
+    },
+    {
+      "id": "lenni-van-c08",
+      "sentence": "Anna ___ van.",
+      "options": ["tanár", "otthon", "nagy"],
+      "correct": 1,
+      "why": {
+        "en": "otthon says where Anna is, and a place word keeps van: Anna otthon van.",
+        "es": "otthon dice dónde está Anna, y una palabra de lugar conserva van: Anna otthon van."
+      },
+      "wrong": {
+        "tanár": {
+          "en": "tanár (teacher) says what Anna is, and then there is no van: Anna tanár.",
+          "es": "tanár (profesor) dice qué es Anna, y entonces no hay van: Anna tanár."
+        },
+        "nagy": {
+          "en": "nagy (big) describes someone, and then there is no van: Anna nagy.",
+          "es": "nagy (grande) describe a alguien, y entonces no hay van: Anna nagy."
+        }
+      },
+      "examples": ["Gábor ott van.", "A bolt itt van."],
+      "tr": { "en": "Anna is at home.", "es": "Anna está en casa." }
+    },
+    {
+      "id": "lenni-van-w02",
+      "kind": "why",
+      "es": "Anna otthon van.",
+      "target": "van",
+      "tr": { "en": "Anna is at home.", "es": "Anna está en casa." },
+      "options": [
+        {
+          "text": {
+            "en": "A noun says what Anna is: van is left out",
+            "es": "Un sustantivo dice qué es Anna: se omite van"
+          },
+          "wrong": {
+            "en": "With this rule van would disappear, but otthon is a place word, not a what-word, so van stays.",
+            "es": "Con esta regla van desaparecería, pero otthon es una palabra de lugar, no de «qué», así que van se queda."
+          }
+        },
+        {
+          "text": {
+            "en": "A place word: van stays",
+            "es": "Una palabra de lugar: van se queda"
+          }
+        },
+        {
+          "text": {
+            "en": "Plural subject: the form is vannak",
+            "es": "Sujeto plural: la forma es vannak"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use vannak; Anna is one person, so it is van.",
+            "es": "Con esta regla la frase usaría vannak; Anna es una sola persona, así que es van."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "lenni-van-f07",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "Anna és Péter",
+      "answer": "vannak",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c09",
+      "sentence": "A bolt ___ van.",
+      "options": ["olcsó", "új", "zárva"],
+      "correct": 2,
+      "why": {
+        "en": "zárva (closed) is a state word: it keeps van, like a place word.",
+        "es": "zárva (cerrado) es una palabra de estado: conserva van, como una palabra de lugar."
+      },
+      "wrong": {
+        "olcsó": {
+          "en": "olcsó (cheap) is an ordinary adjective: A bolt olcsó, without van.",
+          "es": "olcsó (barato) es un adjetivo normal: A bolt olcsó, sin van."
+        },
+        "új": {
+          "en": "új (new) is an ordinary adjective: A bolt új, without van.",
+          "es": "új (nuevo) es un adjetivo normal: A bolt új, sin van."
+        }
+      },
+      "examples": ["Az étterem nyitva van.", "A pohár tele van."],
+      "tr": { "en": "The shop is closed.", "es": "La tienda está cerrada." }
+    },
+    {
+      "id": "lenni-van-f08",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "Péter és én",
+      "answer": "vagyunk",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c10",
+      "sentence": "Ki ez? Ez ___.",
+      "options": ["Péter", "Péter vagyok", "Péter van"],
+      "correct": 0,
+      "why": {
+        "en": "'This is Péter' has no verb in Hungarian: Ez Péter.",
+        "es": "«Éste es Péter» no lleva verbo en húngaro: Ez Péter."
+      },
+      "wrong": {
+        "Péter vagyok": {
+          "en": "vagyok is 'I am'; 'Ez Péter vagyok' would mix 'this' with 'I am'.",
+          "es": "vagyok es «yo soy»; «Ez Péter vagyok» mezclaría «éste» con «yo soy»."
+        },
+        "Péter van": {
+          "en": "van says where Péter is; 'this is Péter' needs no verb at all.",
+          "es": "van dice dónde está Péter; «éste es Péter» no necesita ningún verbo."
+        }
+      },
+      "examples": ["Ez Kati.", "Ez a barátom."],
+      "tr": { "en": "Who is this? This is Péter.", "es": "¿Quién es? Éste es Péter." }
+    },
+    {
+      "id": "lenni-van-c11",
+      "sentence": "Hogy ___ Anna?",
+      "options": ["vannak", "vagy", "van"],
+      "correct": 2,
+      "why": {
+        "en": "Hogy asks how Anna is; Anna is 'she', so van, and van stays in this question.",
+        "es": "Hogy pregunta cómo está Anna; Anna es «ella», así que van, y van se queda en esta pregunta."
+      },
+      "wrong": {
+        "vannak": {
+          "en": "vannak is plural; 'How are they' needs more than one person.",
+          "es": "vannak es plural; «cómo están ellos» necesita más de una persona."
+        },
+        "vagy": {
+          "en": "With vagy the sentence would mean 'How are you, Anna?', said to Anna.",
+          "es": "Con vagy la frase significaría «¿Cómo estás, Anna?», dicho a Anna."
+        }
+      },
+      "examples": ["Hogy vagy?", "Hogy vannak a gyerekek?"],
+      "tr": { "en": "How is Anna?", "es": "¿Cómo está Anna?" }
+    },
+    {
+      "id": "lenni-van-w03",
+      "kind": "why",
+      "es": "Fáradt vagyok.",
+      "target": "vagyok",
+      "tr": { "en": "I am tired.", "es": "Estoy cansado." },
+      "options": [
+        {
+          "text": {
+            "en": "An adjective in the 3rd person: the verb is left out",
+            "es": "Un adjetivo en 3.ª persona: se omite el verbo"
+          },
+          "wrong": {
+            "en": "That rule is only for the 3rd person (Péter fáradt); with 'I' the verb vagyok stays.",
+            "es": "Esa regla es solo para la 3.ª persona (Péter fáradt); con «yo» el verbo vagyok se queda."
+          }
+        },
+        {
+          "text": {
+            "en": "A place word: the verb stays",
+            "es": "Una palabra de lugar: el verbo se queda"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would need a place word, like Otthon vagyok; fáradt (tired) says how you are.",
+            "es": "Con esta regla la frase necesitaría una palabra de lugar, como Otthon vagyok; fáradt (cansado) dice cómo estás."
+          }
+        },
+        {
+          "text": {
+            "en": "1st person: vagyok always stays, and the pronoun én is left out",
+            "es": "1.ª persona: vagyok siempre se queda, y el pronombre én se omite"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "lenni-van-f09",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "te és Kati",
+      "answer": "vagytok",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c12",
+      "sentence": "Köszönöm, jól ___.",
+      "options": ["van", "vagyok", "vagy"],
+      "correct": 1,
+      "why": {
+        "en": "You answer about yourself: jól vagyok means 'I am well'.",
+        "es": "Contestas sobre ti mismo: jól vagyok significa «estoy bien»."
+      },
+      "wrong": {
+        "van": {
+          "en": "'Jól van' says that he or she is well, not that I am.",
+          "es": "«Jól van» dice que él o ella está bien, no que yo estoy bien."
+        },
+        "vagy": {
+          "en": "'Jól vagy' means 'you are well'.",
+          "es": "«Jól vagy» significa «tú estás bien»."
+        }
+      },
+      "examples": ["Jól vagyok.", "Anna jól van."],
+      "tr": { "en": "Thank you, I'm well.", "es": "Gracias, estoy bien." }
+    },
+    {
+      "id": "lenni-van-f10",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "a gyerekek",
+      "answer": "vannak",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c13",
+      "sentence": "Hol ___ a gyerekek?",
+      "options": ["vannak", "van", "vagytok"],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekek are 'they' (plural), and hol asks where, so vannak.",
+        "es": "A gyerekek son «ellos» (plural), y hol pregunta dónde, así que vannak."
+      },
+      "wrong": {
+        "van": {
+          "en": "van is singular; 'Hol van a gyerekek?' mixes one verb form with many children.",
+          "es": "van es singular; «Hol van a gyerekek?» mezcla una forma de singular con varios niños."
+        },
+        "vagytok": {
+          "en": "vagytok is 'you (all) are'; the children are 'they', not 'you'.",
+          "es": "vagytok es «ustedes están»; los niños son «ellos», no «ustedes»."
+        }
+      },
+      "examples": ["Hol van Anna?", "Hol vannak a kulcsok?"],
+      "tr": { "en": "Where are the children?", "es": "¿Dónde están los niños?" }
+    },
+    {
+      "id": "lenni-van-f11",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "Gábor",
+      "answer": "van",
+      "table": "lenni-forms"
+    },
+    {
+      "id": "lenni-van-c14",
+      "sentence": "Én most a boltban ___. Te hol vagy?",
+      "options": ["van", "vannak", "vagyok"],
+      "correct": 2,
+      "why": {
+        "en": "Én is 'I', so the form is vagyok; a place word keeps the verb.",
+        "es": "Én es «yo», así que la forma es vagyok; una palabra de lugar conserva el verbo."
+      },
+      "wrong": {
+        "van": {
+          "en": "van is for he, she or it; with én (I) it would talk about someone else.",
+          "es": "van es para él o ella; con én (yo) hablaría de otra persona."
+        },
+        "vannak": {
+          "en": "vannak is 'they are'; én is 'I'.",
+          "es": "vannak es «ellos están»; én es «yo»."
+        }
+      },
+      "examples": ["Itt vagyok.", "Otthon vagyok."],
+      "tr": { "en": "I'm in the shop now. Where are you?", "es": "Ahora estoy en la tienda. ¿Dónde estás tú?" }
+    },
+    {
+      "id": "lenni-van-w04",
+      "kind": "why",
+      "es": "A gyerekek otthon vannak.",
+      "target": "vannak",
+      "tr": { "en": "The children are at home.", "es": "Los niños están en casa." },
+      "options": [
+        {
+          "text": {
+            "en": "Several people (they) and a place word: vannak stays",
+            "es": "Varias personas (ellos) y una palabra de lugar: vannak se queda"
+          }
+        },
+        {
+          "text": {
+            "en": "A noun or adjective says what they are: the verb is left out",
+            "es": "Un sustantivo o adjetivo dice qué son: se omite el verbo"
+          },
+          "wrong": {
+            "en": "That rule is for what-words; here otthon says where, so vannak stays.",
+            "es": "Esa regla es para palabras de «qué»; aquí otthon dice dónde, así que vannak se queda."
+          }
+        },
+        {
+          "text": {
+            "en": "2nd person plural: the form is vagytok",
+            "es": "2.ª persona plural: la forma es vagytok"
+          },
+          "wrong": {
+            "en": "With vagytok the sentence would be addressed to the children, 'You (all) are at home'; a gyerekek is 'they'.",
+            "es": "Con vagytok la frase se dirigiría a los niños, «ustedes están en casa»; a gyerekek es «ellos»."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "lenni-van-f12",
+      "kind": "form",
+      "verb": "lenni",
+      "person": "a fiú és a lány",
+      "answer": "vannak",
+      "table": "lenni-forms"
+    }
+  ]
+}

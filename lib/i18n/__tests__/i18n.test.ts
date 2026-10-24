@@ -6,6 +6,7 @@
 
 import en from '../en';
 import es from '../es';
+import hu from '../hu';
 import { t, setLanguage, currentLanguage, stringsFor } from '../index';
 
 // Walks both objects recursively and compares the set of keys at
@@ -31,6 +32,12 @@ describe('lib/i18n: full coverage of es.ts + t()/setLanguage()', () => {
     expect(esPaths).toEqual(enPaths);
   });
 
+  it('every en.ts key is present in hu (and vice versa, no orphan key on either side)', () => {
+    const enPaths = collectKeyPaths(en).sort();
+    const huPaths = collectKeyPaths(hu).sort();
+    expect(huPaths).toEqual(enPaths);
+  });
+
   it('after setLanguage("en") t() gives the English text', () => {
     setLanguage('en');
     expect(currentLanguage()).toBe('en');
@@ -41,6 +48,12 @@ describe('lib/i18n: full coverage of es.ts + t()/setLanguage()', () => {
     setLanguage('es');
     expect(currentLanguage()).toBe('es');
     expect(t().onboarding.start).toBe('Empezar');
+  });
+
+  it('after setLanguage("hu") t() gives the Hungarian text', () => {
+    setLanguage('hu');
+    expect(currentLanguage()).toBe('hu');
+    expect(t().onboarding.start).toBe('Kezdjük');
   });
 
   it('for an unknown code it falls back to English', () => {
