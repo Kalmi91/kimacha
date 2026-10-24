@@ -15,7 +15,7 @@
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { resolveSet, type ReadingQuestion, type ReadingSet, type ReadingWord } from '@/lib/practice/reading';
-import { STORIES, storyWords } from '@/lib/practice/stories';
+import { storiesFor, storyWords } from '@/lib/practice/stories';
 
 export interface PracticeRound {
   v: 2;
@@ -92,9 +92,9 @@ export function restorePracticeRound(
   if (!saved || saved.date !== today || saved.target !== target) return null;
   let words: ReadingWord[] = [];
   // a story round: the text is the story (gone from the data, or its cards no longer the saved ids: start over)
-  const story = saved.story ? STORIES.find((s) => s.id === saved.story) : undefined;
+  const story = saved.story ? storiesFor(target).find((s) => s.id === saved.story) : undefined;
   if (saved.story) {
-    const fromStory = story ? storyWords(story, findItem) : null;
+    const fromStory = story ? storyWords(story, findItem, target) : null;
     if (!fromStory || fromStory.length !== saved.ids.length || fromStory.some((w, i) => w.itemId !== saved.ids[i])) return null;
     words = fromStory;
   } else {
