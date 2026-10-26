@@ -347,7 +347,7 @@ describe('story rounds (FB526)', () => {
       expect(set.questions.filter((q) => q.kind === 'storyfalse')).toEqual([{ kind: 'storyfalse', index: 0 }]);
       const statements = set.resolved.filter((r) => r.kind === 'truefalse');
       expect(statements.map((r) => r.truth).sort()).toEqual([false, true]);
-      expect(statements.find((r) => !r.truth)).toMatchObject({ statement: first.false_en[0], correct: 1 });
+      expect(statements.find((r) => !r.truth)).toMatchObject({ statement: first.false_en![0], correct: 1 });
       expect(first.sentences.map((s) => s.en)).toContain((statements.find((r) => r.truth) as { statement: string }).statement);
     }
   });
@@ -380,7 +380,7 @@ describe('story rounds (FB526)', () => {
     ];
     const set = resolveSet(words, qs, findPcicItem, 'es', first)!;
     expect(set.storyId).toBe(first.id);
-    expect(set.resolved[0]).toEqual({ kind: 'truefalse', statement: first.false_en[1], truth: false, correct: 1 });
+    expect(set.resolved[0]).toEqual({ kind: 'truefalse', statement: first.false_en![1], truth: false, correct: 1 });
     expect(set.resolved[1]).toEqual({ kind: 'truefalse', statement: words[2].translation, truth: true, correct: 0 });
     // a bad index, or a story false statement without its story
     expect(resolveSet(words, [{ kind: 'storyfalse', index: 2 }], findPcicItem, 'es', first)).toBeNull();
