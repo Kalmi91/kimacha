@@ -106,6 +106,9 @@ const es: typeof en = {
       hangulat: 'Ambiente',
       olvasas: 'Lectura fácil',
     },
+    // the bubble behind the Ukiyo-e theme's red card seal (語).
+    ukiyoeSealMeaning: 'Japonés "go": idioma, palabra',
+    ukiyoeSealNote: 'Los grabados ukiyo-e suelen llevar un sello rojo. Este es el sello del tema Ukiyo-e.',
   },
   backup: {
     backup: 'Copia de seguridad',
