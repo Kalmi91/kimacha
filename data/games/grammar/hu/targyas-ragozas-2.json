@@ -1,0 +1,1744 @@
+{
+  "schema": 2,
+  "topic": "targyas-ragozas-2",
+  "level": "B1",
+  "title": {
+    "en": "Definite conjugation, tricky stems: olvassa, nézzük, veszi, issza",
+    "es": "Conjugación determinada, raíces difíciles: olvassa, nézzük, veszi, issza"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "You already know the rule: a specific object (a/az + noun, a name, ezt, azt, őt) calls for the second set of endings (látom, látja). This lesson is about the verbs where that rule hides a trap. First, the endings come in two vowel families, -ja for back verbs (várja) and -i for front verbs (kéri), and the verb decides, not the object. Second, when the stem ends in -s, -sz or -z, the j of the ending melts into it: olvas + ja is olvassa, and néz + jük is nézzük. Third, a few very frequent verbs have stems of their own: veszi, viszi, hiszi, eszi, but issza. English and Spanish never show on the verb whether the object is specific, so every one of these forms needs practice.",
+        "es": "Ya conoces la regla: un objeto determinado (a/az + sustantivo, un nombre, ezt, azt, őt) pide el segundo juego de terminaciones (látom, látja). Esta lección trata de los verbos en los que esa regla esconde una trampa. Primero, las terminaciones vienen en dos familias de vocales, -ja para los verbos de vocales posteriores (várja) y -i para los de vocales anteriores (kéri), y decide el verbo, no el objeto. Segundo, cuando la raíz termina en -s, -sz o -z, la j de la terminación se funde con ella: olvas + ja es olvassa, y néz + jük es nézzük. Tercero, unos pocos verbos muy frecuentes tienen raíces propias: veszi, viszi, hiszi, eszi, pero issza. El inglés y el español nunca muestran en el verbo si el objeto es determinado, así que cada una de estas formas necesita práctica."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "def-back-sibilant",
+      "title": {
+        "en": "Back verbs ending in -s or -z",
+        "es": "Verbos de vocales posteriores terminados en -s o -z"
+      },
+      "header": [
+        {
+          "en": "Person (+ a/az)",
+          "es": "Persona (+ a/az)"
+        },
+        {
+          "en": "olvas (read)",
+          "es": "olvas (leer)"
+        },
+        {
+          "en": "hoz (bring)",
+          "es": "hoz (traer)"
+        },
+        {
+          "en": "mos (wash)",
+          "es": "mos (lavar)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "olvasom",
+          "hozom",
+          "mosom"
+        ],
+        [
+          "te",
+          "olvasod",
+          "hozod",
+          "mosod"
+        ],
+        [
+          "ő",
+          "olvassa",
+          "hozza",
+          "mossa"
+        ],
+        [
+          "mi",
+          "olvassuk",
+          "hozzuk",
+          "mossuk"
+        ],
+        [
+          "ti",
+          "olvassátok",
+          "hozzátok",
+          "mossátok"
+        ],
+        [
+          "ők",
+          "olvassák",
+          "hozzák",
+          "mossák"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Back verbs ending in -s or -z: the j is absorbed",
+        "es": "Verbos de vocales posteriores en -s o -z: la j se absorbe"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The j of -ja, -juk, -játok, -ják melts into the last sound of the stem: olvas + ja is olvassa, hoz + ja is hozza, mos + ják is mossák. The spelling follows the pronunciation: you hear a long s or z.",
+            "es": "La j de -ja, -juk, -játok, -ják se funde con el último sonido de la raíz: olvas + ja es olvassa, hoz + ja es hozza, mos + ják es mossák. La escritura sigue la pronunciación: se oye una s o una z larga."
+          },
+          "examples": [
+            {
+              "es": "Anna minden reggel olvassa a híreket.",
+              "tr": {
+                "en": "Anna reads the news every morning.",
+                "es": "Anna lee las noticias cada mañana."
+              }
+            },
+            {
+              "es": "A kenyeret mindig Gábor hozza.",
+              "tr": {
+                "en": "It is always Gábor who brings the bread.",
+                "es": "El pan siempre lo trae Gábor."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Only the forms with a j change. The first two persons have no j, so nothing merges: olvasom, olvasod, hozom, hozod.",
+            "es": "Solo cambian las formas con j. Las dos primeras personas no tienen j, así que nada se funde: olvasom, olvasod, hozom, hozod."
+          },
+          "examples": [
+            {
+              "es": "Olvasom a levelet.",
+              "tr": {
+                "en": "I am reading the letter.",
+                "es": "Estoy leyendo la carta."
+              }
+            },
+            {
+              "es": "Hozod a kenyeret?",
+              "tr": {
+                "en": "Are you bringing the bread?",
+                "es": "¿Traes el pan?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In the 1st plural the double letter is the sign of the definite set: olvasunk is 'we read (something)', olvassuk is 'we read it'.",
+            "es": "En la 1.ª persona del plural la letra doble es la señal de la conjugación determinada: olvasunk es «leemos (algo)», olvassuk es «lo leemos»."
+          },
+          "examples": [
+            {
+              "es": "Este együtt olvassuk az újságot.",
+              "tr": {
+                "en": "In the evening we read the newspaper together.",
+                "es": "Por la noche leemos juntos el periódico."
+              }
+            },
+            {
+              "es": "Szombaton együtt mossuk az autót.",
+              "tr": {
+                "en": "On Saturday we wash the car together.",
+                "es": "El sábado lavamos juntos el coche."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-front",
+      "title": {
+        "en": "Front verbs: -i in the 3rd person",
+        "es": "Verbos de vocales anteriores: -i en la 3.ª persona"
+      },
+      "header": [
+        {
+          "en": "Person (+ a/az)",
+          "es": "Persona (+ a/az)"
+        },
+        {
+          "en": "kér (ask for)",
+          "es": "kér (pedir)"
+        },
+        {
+          "en": "ért (understand)",
+          "es": "ért (entender)"
+        },
+        {
+          "en": "néz (watch)",
+          "es": "néz (mirar, ver)"
+        },
+        {
+          "en": "keres (look for)",
+          "es": "keres (buscar)"
+        },
+        {
+          "en": "főz (cook)",
+          "es": "főz (cocinar)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "kérem",
+          "értem",
+          "nézem",
+          "keresem",
+          "főzöm"
+        ],
+        [
+          "te",
+          "kéred",
+          "érted",
+          "nézed",
+          "keresed",
+          "főzöd"
+        ],
+        [
+          "ő",
+          "kéri",
+          "érti",
+          "nézi",
+          "keresi",
+          "főzi"
+        ],
+        [
+          "mi",
+          "kérjük",
+          "értjük",
+          "nézzük",
+          "keressük",
+          "főzzük"
+        ],
+        [
+          "ti",
+          "kéritek",
+          "értitek",
+          "nézitek",
+          "keresitek",
+          "főzitek"
+        ],
+        [
+          "ők",
+          "kérik",
+          "értik",
+          "nézik",
+          "keresik",
+          "főzik"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Front verbs: -i, and the j in the plural",
+        "es": "Verbos de vocales anteriores: -i, y la j en el plural"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "A front verb ends in -i in the 3rd person singular: kéri, érti, nézi, keresi, főzi. There is no j here, so nothing can merge: it is nézi, never nézzi.",
+            "es": "Un verbo de vocales anteriores termina en -i en la 3.ª persona del singular: kéri, érti, nézi, keresi, főzi. Aquí no hay j, así que nada puede fundirse: es nézi, nunca nézzi."
+          },
+          "examples": [
+            {
+              "es": "Péter keresi a kulcsot.",
+              "tr": {
+                "en": "Péter is looking for the key.",
+                "es": "Péter busca la llave."
+              }
+            },
+            {
+              "es": "Kati főzi a vacsorát.",
+              "tr": {
+                "en": "Kati is cooking dinner.",
+                "es": "Kati prepara la cena."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The plural is -jük, -itek, -ik. After s, sz or z the j of -jük merges: kérjük and értjük, but nézzük, keressük, főzzük.",
+            "es": "El plural es -jük, -itek, -ik. Tras s, sz o z la j de -jük se funde: kérjük y értjük, pero nézzük, keressük, főzzük."
+          },
+          "examples": [
+            {
+              "es": "Mi értjük a tanárt.",
+              "tr": {
+                "en": "We understand the teacher.",
+                "es": "Entendemos al maestro."
+              }
+            },
+            {
+              "es": "Mi keressük a kulcsot.",
+              "tr": {
+                "en": "We are looking for the key.",
+                "es": "Buscamos la llave."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs with ö, ő, ü, ű take -öm and -öd in the first two persons: főzöm, főzöd.",
+            "es": "Los verbos con ö, ő, ü, ű toman -öm y -öd en las dos primeras personas: főzöm, főzöd."
+          },
+          "examples": [
+            {
+              "es": "Én főzöm a vacsorát.",
+              "tr": {
+                "en": "I am cooking dinner.",
+                "es": "Yo preparo la cena."
+              }
+            },
+            {
+              "es": "Te főzöd a levest?",
+              "tr": {
+                "en": "Are you cooking the soup?",
+                "es": "¿Tú preparas la sopa?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-mi",
+      "title": {
+        "en": "The 1st plural: where the j goes",
+        "es": "La 1.ª persona del plural: adónde va la j"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Stem + ending",
+          "es": "Raíz + terminación"
+        },
+        {
+          "en": "mi + a/az",
+          "es": "mi + a/az"
+        }
+      ],
+      "rows": [
+        [
+          "kér",
+          "kér + jük",
+          "kérjük"
+        ],
+        [
+          "ért",
+          "ért + jük",
+          "értjük"
+        ],
+        [
+          "olvas",
+          "olvas + juk",
+          "olvassuk"
+        ],
+        [
+          "hoz",
+          "hoz + juk",
+          "hozzuk"
+        ],
+        [
+          "néz",
+          "néz + jük",
+          "nézzük"
+        ],
+        [
+          "főz",
+          "főz + jük",
+          "főzzük"
+        ],
+        [
+          "tesz",
+          "tesz + jük",
+          "tesszük"
+        ],
+        [
+          "visz",
+          "visz + jük",
+          "visszük"
+        ],
+        [
+          "eszik",
+          "esz + jük",
+          "esszük"
+        ],
+        [
+          "iszik",
+          "isz + juk",
+          "isszuk"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-it",
+      "title": {
+        "en": "Verbs in -ít take -ja",
+        "es": "Los verbos en -ít toman -ja"
+      },
+      "header": [
+        {
+          "en": "Person (+ a/az)",
+          "es": "Persona (+ a/az)"
+        },
+        {
+          "en": "javít, present (fix)",
+          "es": "javít, presente (arreglar)"
+        },
+        {
+          "en": "javít, past",
+          "es": "javít, pasado"
+        },
+        {
+          "en": "tanít, present (teach)",
+          "es": "tanít, presente (enseñar)"
+        },
+        {
+          "en": "tanít, past",
+          "es": "tanít, pasado"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "javítom",
+          "javítottam",
+          "tanítom",
+          "tanítottam"
+        ],
+        [
+          "te",
+          "javítod",
+          "javítottad",
+          "tanítod",
+          "tanítottad"
+        ],
+        [
+          "ő",
+          "javítja",
+          "javította",
+          "tanítja",
+          "tanította"
+        ],
+        [
+          "mi",
+          "javítjuk",
+          "javítottuk",
+          "tanítjuk",
+          "tanítottuk"
+        ],
+        [
+          "ti",
+          "javítjátok",
+          "javítottátok",
+          "tanítjátok",
+          "tanítottátok"
+        ],
+        [
+          "ők",
+          "javítják",
+          "javították",
+          "tanítják",
+          "tanították"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Verbs in -ít: the back ending, although í is front",
+        "es": "Verbos en -ít: la terminación posterior, aunque í es anterior"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Verbs in -ít usually take the back endings, even though í is a front vowel: javítja, tanítja, javítjuk, javítják. Learn an -ít verb together with its ő form.",
+            "es": "Los verbos en -ít suelen tomar las terminaciones posteriores, aunque í es una vocal anterior: javítja, tanítja, javítjuk, javítják. Aprende cada verbo en -ít junto con su forma de ő."
+          },
+          "examples": [
+            {
+              "es": "A szerelő javítja az autót.",
+              "tr": {
+                "en": "The mechanic is fixing the car.",
+                "es": "El mecánico arregla el coche."
+              }
+            },
+            {
+              "es": "Kati tanítja a gyerekeket úszni.",
+              "tr": {
+                "en": "Kati is teaching the children to swim.",
+                "es": "Kati enseña a nadar a los niños."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A well-known exception is épít (build), which takes the front endings: építi, építjük, építik.",
+            "es": "Una excepción conocida es épít (construir), que toma las terminaciones anteriores: építi, építjük, építik."
+          },
+          "examples": [
+            {
+              "es": "Péter építi a házat.",
+              "tr": {
+                "en": "Péter is building the house.",
+                "es": "Péter construye la casa."
+              }
+            },
+            {
+              "es": "Anna és Péter építik a házat.",
+              "tr": {
+                "en": "Anna and Péter are building the house.",
+                "es": "Anna y Péter construyen la casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-sz",
+      "title": {
+        "en": "tesz, vesz, visz, hisz: the sz-verbs",
+        "es": "tesz, vesz, visz, hisz: los verbos en -sz"
+      },
+      "header": [
+        {
+          "en": "Person (+ a/az)",
+          "es": "Persona (+ a/az)"
+        },
+        {
+          "en": "tesz (put)",
+          "es": "tesz (poner)"
+        },
+        {
+          "en": "vesz (buy)",
+          "es": "vesz (comprar)"
+        },
+        {
+          "en": "visz (take along)",
+          "es": "visz (llevar)"
+        },
+        {
+          "en": "hisz (believe)",
+          "es": "hisz (creer)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "teszem",
+          "veszem",
+          "viszem",
+          "hiszem"
+        ],
+        [
+          "te",
+          "teszed",
+          "veszed",
+          "viszed",
+          "hiszed"
+        ],
+        [
+          "ő",
+          "teszi",
+          "veszi",
+          "viszi",
+          "hiszi"
+        ],
+        [
+          "mi",
+          "tesszük",
+          "vesszük",
+          "visszük",
+          "hisszük"
+        ],
+        [
+          "ti",
+          "teszitek",
+          "veszitek",
+          "viszitek",
+          "hiszitek"
+        ],
+        [
+          "ők",
+          "teszik",
+          "veszik",
+          "viszik",
+          "hiszik"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-eat-drink",
+      "title": {
+        "en": "eszik and iszik with a specific object",
+        "es": "eszik e iszik con objeto determinado"
+      },
+      "header": [
+        {
+          "en": "Person (+ a/az)",
+          "es": "Persona (+ a/az)"
+        },
+        {
+          "en": "eszik, present (eat)",
+          "es": "eszik, presente (comer)"
+        },
+        {
+          "en": "eszik, past",
+          "es": "eszik, pasado"
+        },
+        {
+          "en": "iszik, present (drink)",
+          "es": "iszik, presente (beber)"
+        },
+        {
+          "en": "iszik, past",
+          "es": "iszik, pasado"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "eszem",
+          "ettem",
+          "iszom",
+          "ittam"
+        ],
+        [
+          "te",
+          "eszed",
+          "etted",
+          "iszod",
+          "ittad"
+        ],
+        [
+          "ő",
+          "eszi",
+          "ette",
+          "issza",
+          "itta"
+        ],
+        [
+          "mi",
+          "esszük",
+          "ettük",
+          "isszuk",
+          "ittuk"
+        ],
+        [
+          "ti",
+          "eszitek",
+          "ettétek",
+          "isszátok",
+          "ittátok"
+        ],
+        [
+          "ők",
+          "eszik",
+          "ették",
+          "isszák",
+          "itták"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Irregular stems: veszi, viszi, hiszi, eszi, issza",
+        "es": "Raíces irregulares: veszi, viszi, hiszi, eszi, issza"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "tesz, vesz, visz and hisz keep their -sz and take the front endings: teszi, veszi, viszi, hiszi. Before a j the sz doubles: tesszük, vesszük, visszük, hisszük.",
+            "es": "tesz, vesz, visz y hisz conservan su -sz y toman las terminaciones anteriores: teszi, veszi, viszi, hiszi. Antes de una j la sz se duplica: tesszük, vesszük, visszük, hisszük."
+          },
+          "examples": [
+            {
+              "es": "Anna veszi a jegyeket, mi pedig visszük a csomagot.",
+              "tr": {
+                "en": "Anna buys the tickets and we carry the parcel.",
+                "es": "Anna compra los boletos y nosotros llevamos el paquete."
+              }
+            },
+            {
+              "es": "Nem hisszük, amit mond.",
+              "tr": {
+                "en": "We do not believe what he says.",
+                "es": "No creemos lo que dice."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "eszik and iszik use the stems esz- and isz-, but they belong to different vowel families. Eszik is a front verb (eszi, esszük, eszitek), iszik is a back verb (issza, isszuk, isszátok, isszák).",
+            "es": "eszik e iszik usan las raíces esz- e isz-, pero pertenecen a familias de vocales distintas. Eszik es un verbo de vocales anteriores (eszi, esszük, eszitek), iszik uno de vocales posteriores (issza, isszuk, isszátok, isszák)."
+          },
+          "examples": [
+            {
+              "es": "Ki issza a kávét, és ki eszi a süteményt?",
+              "tr": {
+                "en": "Who is drinking the coffee and who is eating the cake?",
+                "es": "¿Quién se toma el café y quién se come el pastel?"
+              }
+            },
+            {
+              "es": "Mi esszük a levest, ti isszátok a teát.",
+              "tr": {
+                "en": "We eat the soup, you all drink the tea.",
+                "es": "Nosotros comemos la sopa, ustedes toman el té."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In the past the stems change again: ette and itta (the same stems as ettem and ittam). The set is ettem, etted, ette, ettük, ettétek, ették and ittam, ittad, itta, ittuk, ittátok, itták.",
+            "es": "En el pasado las raíces cambian otra vez: ette e itta (las mismas raíces que ettem e ittam). El juego es ettem, etted, ette, ettük, ettétek, ették e ittam, ittad, itta, ittuk, ittátok, itták."
+          },
+          "examples": [
+            {
+              "es": "Kati megette a levest.",
+              "tr": {
+                "en": "Kati ate up the soup.",
+                "es": "Kati se comió la sopa."
+              }
+            },
+            {
+              "es": "Ki itta meg a kávét?",
+              "tr": {
+                "en": "Who drank the coffee?",
+                "es": "¿Quién se tomó el café?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "def-past",
+      "title": {
+        "en": "Past tense with a specific object: no j, no merging",
+        "es": "Pasado con objeto determinado: sin j, sin fusión"
+      },
+      "header": [
+        {
+          "en": "Person (+ a/az)",
+          "es": "Persona (+ a/az)"
+        },
+        {
+          "en": "olvas (read)",
+          "es": "olvas (leer)"
+        },
+        {
+          "en": "hoz (bring)",
+          "es": "hoz (traer)"
+        },
+        {
+          "en": "néz (watch)",
+          "es": "néz (mirar, ver)"
+        },
+        {
+          "en": "kér (ask for)",
+          "es": "kér (pedir)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "olvastam",
+          "hoztam",
+          "néztem",
+          "kértem"
+        ],
+        [
+          "te",
+          "olvastad",
+          "hoztad",
+          "nézted",
+          "kérted"
+        ],
+        [
+          "ő",
+          "olvasta",
+          "hozta",
+          "nézte",
+          "kérte"
+        ],
+        [
+          "mi",
+          "olvastuk",
+          "hoztuk",
+          "néztük",
+          "kértük"
+        ],
+        [
+          "ti",
+          "olvastátok",
+          "hoztátok",
+          "néztétek",
+          "kértétek"
+        ],
+        [
+          "ők",
+          "olvasták",
+          "hozták",
+          "nézték",
+          "kérték"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The past tense: the same stems, no j",
+        "es": "El pasado: las mismas raíces, sin j"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "In the past there is no j, so nothing merges: olvassa in the present, olvasta in the past. Back verbs take -tam, -tad, -ta, -tuk, -tátok, -ták; front verbs take -tem, -ted, -te, -tük, -tétek, -ték.",
+            "es": "En el pasado no hay j, así que nada se funde: olvassa en presente, olvasta en pasado. Los verbos de vocales posteriores toman -tam, -tad, -ta, -tuk, -tátok, -ták; los de vocales anteriores toman -tem, -ted, -te, -tük, -tétek, -ték."
+          },
+          "examples": [
+            {
+              "es": "Tegnap este Anna olvasta a levelet.",
+              "tr": {
+                "en": "Anna read the letter last night.",
+                "es": "Anoche Anna leyó la carta."
+              }
+            },
+            {
+              "es": "Tegnap este Kati főzte a vacsorát.",
+              "tr": {
+                "en": "Kati cooked dinner last night.",
+                "es": "Anoche Kati preparó la cena."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs in -ít add -ott in the past and then the definite ending: javított (not specific), javította (specific). The exception épít is a front verb and takes -ett: épített, építette.",
+            "es": "Los verbos en -ít añaden -ott en el pasado y luego la terminación determinada: javított (no determinado), javította (determinado). La excepción épít es un verbo anterior y toma -ett: épített, építette."
+          },
+          "examples": [
+            {
+              "es": "A tanár tegnap már kijavította a dolgozatokat.",
+              "tr": {
+                "en": "The teacher already corrected the tests yesterday.",
+                "es": "El maestro ya corrigió los exámenes ayer."
+              }
+            },
+            {
+              "es": "A szerelő megjavította az autót.",
+              "tr": {
+                "en": "The mechanic fixed the car.",
+                "es": "El mecánico arregló el coche."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The irregular verbs keep their past stems: vette, vitte, hitte, tette and ette, itta.",
+            "es": "Los verbos irregulares conservan sus raíces de pasado: vette, vitte, hitte, tette y ette, itta."
+          },
+          "examples": [
+            {
+              "es": "Péter vitte a gyerekeket az iskolába.",
+              "tr": {
+                "en": "Péter took the children to school.",
+                "es": "Péter llevó a los niños a la escuela."
+              }
+            },
+            {
+              "es": "Anna ette a levest, Péter itta a teát.",
+              "tr": {
+                "en": "Anna ate the soup, Péter drank the tea.",
+                "es": "Anna se comió la sopa, Péter se tomó el té."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Four pairs people mix up",
+        "es": "Cuatro pares que se confunden"
+      },
+      "pairs": [
+        {
+          "a": "Péter eszi a levest.",
+          "b": "Péter és Anna eszik a levest.",
+          "note": {
+            "en": "eszi is ő with a specific object. eszik is ők with a specific object; the same word also means 'he eats' with no specific object (Péter eszik). Look at the subject and at the object.",
+            "es": "eszi es ő con un objeto determinado. eszik es ők con un objeto determinado; la misma palabra también significa «él come» sin objeto determinado (Péter eszik). Fíjate en el sujeto y en el objeto."
+          },
+          "examples": [
+            {
+              "es": "Az ebédet Péter eszi meg.",
+              "tr": {
+                "en": "It is Péter who eats up the lunch.",
+                "es": "El almuerzo se lo come Péter."
+              }
+            },
+            {
+              "es": "Az ebédet Péter és Anna eszik meg.",
+              "tr": {
+                "en": "It is Péter and Anna who eat up the lunch.",
+                "es": "El almuerzo se lo comen Péter y Anna."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Veszik a kenyeret.",
+          "b": "Vesznek kenyeret.",
+          "note": {
+            "en": "-ik: they buy the bread (a specific one). -nek: they buy bread (any).",
+            "es": "-ik: compran el pan (uno concreto). -nek: compran pan (cualquiera)."
+          },
+          "examples": [
+            {
+              "es": "Anna és Péter veszik a jegyeket.",
+              "tr": {
+                "en": "Anna and Péter are buying the tickets.",
+                "es": "Anna y Péter compran los boletos."
+              }
+            },
+            {
+              "es": "Anna és Péter jegyeket vesznek.",
+              "tr": {
+                "en": "Anna and Péter are buying tickets.",
+                "es": "Anna y Péter compran boletos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Péter issza a kávét.",
+          "b": "Péter iszik egy kávét.",
+          "note": {
+            "en": "issza: the coffee is a specific one. iszik: a coffee, any coffee.",
+            "es": "issza: el café es uno concreto. iszik: un café, cualquiera."
+          },
+          "examples": [
+            {
+              "es": "Ki issza a kávét?",
+              "tr": {
+                "en": "Who is drinking the coffee?",
+                "es": "¿Quién se toma el café?"
+              }
+            },
+            {
+              "es": "Ki iszik kávét?",
+              "tr": {
+                "en": "Who drinks coffee?",
+                "es": "¿Quién toma café?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Anna olvassa a levelet.",
+          "b": "Anna olvasta a levelet.",
+          "note": {
+            "en": "Present: the j merges with the s, so ss. Past: -ta, no j, so st.",
+            "es": "Presente: la j se funde con la s, así que ss. Pasado: -ta, sin j, así que st."
+          },
+          "examples": [
+            {
+              "es": "Anna most olvassa a levelet.",
+              "tr": {
+                "en": "Anna is reading the letter now.",
+                "es": "Anna está leyendo la carta ahora."
+              }
+            },
+            {
+              "es": "Anna tegnap olvasta a levelet.",
+              "tr": {
+                "en": "Anna read the letter yesterday.",
+                "es": "Anna leyó la carta ayer."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Do not put -ja on every verb: the 3rd person of a front verb is -i, kéri and nézi, never kérja or nézja. (2) Write what you hear: olvassa, hozza, nézzük, never olvasja or nézjük. (3) Verbs in -ít usually take the back endings: javítja, not javíti (épít is the exception: építi). (4) Eszi and issza have different vowels because eszik is a front verb and iszik a back verb.",
+        "es": "Trampas clásicas: (1) No pongas -ja a todos los verbos: la 3.ª persona de un verbo de vocales anteriores es -i, kéri y nézi, nunca kérja ni nézja. (2) Escribe lo que oyes: olvassa, hozza, nézzük, nunca olvasja ni nézjük. (3) Los verbos en -ít suelen tomar las terminaciones posteriores: javítja, no javíti (épít es la excepción: építi). (4) Eszi e issza tienen vocales distintas porque eszik es un verbo de vocales anteriores e iszik uno de vocales posteriores."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In the definite conjugation the stem of some verbs changes. When a back verb ends in s or z, the j of the ending melts into it: «olvassa», «hozza», «mossák». The same happens in the first person plural: «olvassuk», «nézzük». Front verbs end in i in the third person: «kéri», «nézi», «főzi». Verbs ending in «ít» take the back endings: «javítja», «tanítja». Some frequent verbs are special: «veszi», «viszi», «hiszi», «eszi», but «issza». Be careful with «eszik»: it can mean he eats, or they eat it.",
+    "es": "En la conjugación determinada la raíz de algunos verbos cambia. Cuando un verbo de vocales posteriores termina en s o z, la j de la terminación se funde con ella: «olvassa», «hozza», «mossák». Lo mismo pasa en la primera persona del plural: «olvassuk», «nézzük». Los verbos de vocales anteriores terminan en i en la tercera persona: «kéri», «nézi», «főzi». Los verbos terminados en «ít» toman las terminaciones posteriores: «javítja», «tanítja». Algunos verbos frecuentes son especiales: «veszi», «viszi», «hiszi», «eszi», pero «issza». Cuidado con «eszik»: puede significar que él come, o que ellos se lo comen."
+  },
+  "glossary": [
+    {
+      "word": "főz",
+      "gloss": {
+        "en": "to cook",
+        "es": "cocinar"
+      }
+    },
+    {
+      "word": "hisz",
+      "gloss": {
+        "en": "to believe",
+        "es": "creer"
+      }
+    },
+    {
+      "word": "eszik",
+      "gloss": {
+        "en": "to eat",
+        "es": "comer"
+      }
+    },
+    {
+      "word": "iszik",
+      "gloss": {
+        "en": "to drink",
+        "es": "beber"
+      }
+    },
+    {
+      "word": "épít",
+      "gloss": {
+        "en": "to build",
+        "es": "construir"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "targyas-ragozas-2-c01",
+      "sentence": "Anna minden reggel ___ a híreket a telefonján.",
+      "options": [
+        "olvassa",
+        "olvasja",
+        "olvas"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A híreket (the news) is specific, so the definite set is needed. Olvas is a back verb ending in s: the j of -ja merges with it, olvassa.",
+        "es": "A híreket (las noticias) es determinado, así que hace falta la conjugación determinada. Olvas es un verbo de vocales posteriores terminado en s: la j de -ja se funde con ella, olvassa."
+      },
+      "wrong": {
+        "olvasja": {
+          "en": "olvasja is not a Hungarian form: after s the j of -ja is absorbed, which gives olvassa.",
+          "es": "olvasja no es una forma húngara: tras s la j de -ja se absorbe y da olvassa."
+        },
+        "olvas": {
+          "en": "olvas is the indefinite form (Anna olvas egy hírt); a híreket is a specific object.",
+          "es": "olvas es la forma indeterminada (Anna olvas egy hírt); a híreket es un objeto determinado."
+        }
+      },
+      "examples": [
+        "Péter olvassa az újságot.",
+        "Kati olvassa a könyvet."
+      ],
+      "tr": {
+        "en": "Anna reads the news on her phone every morning.",
+        "es": "Anna lee las noticias en su teléfono cada mañana."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f01",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "ő (az újságot)",
+      "answer": "olvassa",
+      "table": "def-back-sibilant"
+    },
+    {
+      "id": "targyas-ragozas-2-c02",
+      "sentence": "A kenyeret mindig Gábor ___, mert ő megy el a bolt előtt.",
+      "options": [
+        "hozza",
+        "hozja",
+        "hoz"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A kenyeret is specific and Gábor is one person: hoz + ja, and after z the j merges, hozza.",
+        "es": "A kenyeret es determinado y Gábor es una persona: hoz + ja, y tras z la j se funde, hozza."
+      },
+      "wrong": {
+        "hozja": {
+          "en": "hozja is not a Hungarian form: after z the j of -ja is absorbed, which gives hozza.",
+          "es": "hozja no es una forma húngara: tras z la j de -ja se absorbe y da hozza."
+        },
+        "hoz": {
+          "en": "hoz is the indefinite form (Gábor hoz kenyeret); a kenyeret is a specific bread.",
+          "es": "hoz es la forma indeterminada (Gábor hoz kenyeret); a kenyeret es un pan concreto."
+        }
+      },
+      "examples": [
+        "Anna hozza a kávét.",
+        "Ki hozza a gyerekeket?"
+      ],
+      "tr": {
+        "en": "Gábor always brings the bread, because he is the one who passes the shop.",
+        "es": "El pan siempre lo trae Gábor, porque él es quien pasa por la tienda."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f02",
+      "kind": "form",
+      "verb": "hoz",
+      "person": "mi (a kenyeret)",
+      "answer": "hozzuk",
+      "table": "def-back-sibilant"
+    },
+    {
+      "id": "targyas-ragozas-2-c03",
+      "sentence": "Szombaton együtt ___ az autót, utána megyünk ebédelni.",
+      "options": [
+        "mossuk",
+        "mosjuk",
+        "mosunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Az autót is specific and the subject is we (együtt, megyünk): mos + juk, and the j merges with the s, mossuk.",
+        "es": "Az autót es determinado y el sujeto es «nosotros» (együtt, megyünk): mos + juk, y la j se funde con la s, mossuk."
+      },
+      "wrong": {
+        "mosjuk": {
+          "en": "mosjuk is not a Hungarian form: after s the j is absorbed, which gives mossuk.",
+          "es": "mosjuk no es una forma húngara: tras s la j se absorbe y da mossuk."
+        },
+        "mosunk": {
+          "en": "mosunk is the indefinite set, 'we wash' with no specific object; az autót is specific.",
+          "es": "mosunk es la conjugación indeterminada, «lavamos» sin objeto determinado; az autót es determinado."
+        }
+      },
+      "examples": [
+        "Mi mossuk a ruhákat.",
+        "Hétvégén mossuk a kocsit."
+      ],
+      "tr": {
+        "en": "On Saturday we wash the car together, then we go to have lunch.",
+        "es": "El sábado lavamos el coche juntos y luego vamos a comer."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f03",
+      "kind": "form",
+      "verb": "néz",
+      "person": "mi (a filmet)",
+      "answer": "nézzük",
+      "table": "def-front"
+    },
+    {
+      "id": "targyas-ragozas-2-c04",
+      "sentence": "Anna és én ma este együtt ___ a sorozatot.",
+      "options": [
+        "nézzük",
+        "nézjük",
+        "nézünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna és én is 'we' and a sorozatot is specific: néz + jük, and the j merges with the z, nézzük.",
+        "es": "Anna és én es «nosotros» y a sorozatot es determinado: néz + jük, y la j se funde con la z, nézzük."
+      },
+      "wrong": {
+        "nézjük": {
+          "en": "nézjük is not a Hungarian form: after z the j is absorbed, which gives nézzük.",
+          "es": "nézjük no es una forma húngara: tras z la j se absorbe y da nézzük."
+        },
+        "nézünk": {
+          "en": "nézünk is the indefinite set, 'we watch' with no specific object; a sorozatot is specific.",
+          "es": "nézünk es la conjugación indeterminada, «vemos» sin objeto determinado; a sorozatot es determinado."
+        }
+      },
+      "examples": [
+        "Mi nézzük a híreket.",
+        "Együtt nézzük a filmet."
+      ],
+      "tr": {
+        "en": "Anna and I are watching the series together tonight.",
+        "es": "Anna y yo vemos la serie juntos esta noche."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f04",
+      "kind": "form",
+      "verb": "kér",
+      "person": "ő (a számlát)",
+      "answer": "kéri",
+      "table": "def-front"
+    },
+    {
+      "id": "targyas-ragozas-2-c05",
+      "sentence": "Péter ___ a számlát a pincértől, mert már indulnunk kell.",
+      "options": [
+        "kéri",
+        "kérja",
+        "kér"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kér has a front vowel (é), so ő takes -i: kéri. A számlát is a specific object.",
+        "es": "Kér tiene una vocal anterior (é), así que ő toma -i: kéri. A számlát es un objeto determinado."
+      },
+      "wrong": {
+        "kérja": {
+          "en": "kérja is not a Hungarian form: -ja belongs to back verbs such as várja, kér is a front verb.",
+          "es": "kérja no es una forma húngara: -ja es de verbos de vocales posteriores como várja, kér es de vocales anteriores."
+        },
+        "kér": {
+          "en": "kér is the indefinite form (Péter kér egy kávét); a számlát is specific.",
+          "es": "kér es la forma indeterminada (Péter kér egy kávét); a számlát es determinado."
+        }
+      },
+      "examples": [
+        "Anna kéri a kávét.",
+        "Kati kéri a kulcsot."
+      ],
+      "tr": {
+        "en": "Péter asks the waiter for the bill, because we have to leave soon.",
+        "es": "Péter le pide la cuenta al mesero, porque ya tenemos que irnos."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-w01",
+      "kind": "why",
+      "es": "Anna és Péter hozzák a süteményt.",
+      "target": "hozzák",
+      "tr": {
+        "en": "Anna and Péter are bringing the cake.",
+        "es": "Anna y Péter traen el pastel."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Indefinite 3rd plural: they bring (something)",
+            "es": "Indeterminada, 3.ª del plural: traen (algo)"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna és Péter hoznak süteményt; hozzák goes with a specific object (a süteményt).",
+            "es": "Con esta regla la frase sería Anna és Péter hoznak süteményt; hozzák va con un objeto determinado (a süteményt)."
+          }
+        },
+        {
+          "text": {
+            "en": "Definite 3rd plural: -ják, and the j merges with the z of hoz",
+            "es": "Determinada, 3.ª del plural: -ják, y la j se funde con la z de hoz"
+          }
+        },
+        {
+          "text": {
+            "en": "Past tense: they brought it",
+            "es": "Pasado: lo trajeron"
+          },
+          "wrong": {
+            "en": "With this rule the form would be hozták, with a t: Anna és Péter hozták a süteményt. Hozzák has zz, which comes from z + j, a present-tense ending.",
+            "es": "Con esta regla la forma sería hozták, con t: Anna és Péter hozták a süteményt. Hozzák tiene zz, que viene de z + j, una terminación de presente."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "targyas-ragozas-2-f05",
+      "kind": "form",
+      "verb": "mos",
+      "person": "ők (az autót)",
+      "answer": "mossák",
+      "table": "def-back-sibilant"
+    },
+    {
+      "id": "targyas-ragozas-2-c06",
+      "sentence": "A szerelő holnap ___ az autómat, ezért ma még nem tudok vezetni.",
+      "options": [
+        "megjavítja",
+        "megjavíti",
+        "megjavít"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Verbs in -ít usually take the back endings, even though í is a front vowel: javítja, megjavítja. Az autómat (my car) is specific.",
+        "es": "Los verbos en -ít suelen tomar las terminaciones posteriores, aunque í es una vocal anterior: javítja, megjavítja. Az autómat (mi coche) es determinado."
+      },
+      "wrong": {
+        "megjavíti": {
+          "en": "megjavíti looks regular for a front vowel, but -ít verbs take -ja: megjavítja.",
+          "es": "megjavíti parece regular para una vocal anterior, pero los verbos en -ít toman -ja: megjavítja."
+        },
+        "megjavít": {
+          "en": "megjavít is the indefinite form; az autómat is specific (it is my car).",
+          "es": "megjavít es la forma indeterminada; az autómat es determinado (es mi coche)."
+        }
+      },
+      "examples": [
+        "A szerelő javítja az autót.",
+        "Kati tanítja a gyerekeket úszni."
+      ],
+      "tr": {
+        "en": "The mechanic will fix my car tomorrow, so I cannot drive yet today.",
+        "es": "El mecánico arreglará mi coche mañana, así que hoy todavía no puedo manejar."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f06",
+      "kind": "form",
+      "verb": "főz",
+      "person": "ti (a levest)",
+      "answer": "főzitek",
+      "table": "def-front"
+    },
+    {
+      "id": "targyas-ragozas-2-c07",
+      "sentence": "Gábor ___ a kenyeret, én pedig a tejet.",
+      "options": [
+        "veszi",
+        "vesz",
+        "veszik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A kenyeret is specific and Gábor is one person: the definite 3rd singular of vesz is veszi.",
+        "es": "A kenyeret es determinado y Gábor es una persona: la 3.ª persona del singular determinada de vesz es veszi."
+      },
+      "wrong": {
+        "vesz": {
+          "en": "vesz is the indefinite form (Gábor vesz kenyeret); a kenyeret is specific.",
+          "es": "vesz es la forma indeterminada (Gábor vesz kenyeret); a kenyeret es determinado."
+        },
+        "veszik": {
+          "en": "veszik is the definite 3rd plural, 'they buy it'; the subject is Gábor alone.",
+          "es": "veszik es la 3.ª persona del plural determinada, «ellos lo compran»; el sujeto es solo Gábor."
+        }
+      },
+      "examples": [
+        "Anna veszi a tejet.",
+        "Ki veszi a jegyeket?"
+      ],
+      "tr": {
+        "en": "Gábor buys the bread and I buy the milk.",
+        "es": "Gábor compra el pan y yo compro la leche."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-w02",
+      "kind": "why",
+      "es": "Tegnap este Kati főzte a vacsorát.",
+      "target": "főzte",
+      "tr": {
+        "en": "Kati cooked dinner last night.",
+        "es": "Anoche Kati preparó la cena."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Past tense, specific object: főz + -te (front verb)",
+            "es": "Pasado, objeto determinado: főz + -te (verbo de vocales anteriores)"
+          }
+        },
+        {
+          "text": {
+            "en": "Present tense, specific object: főzi",
+            "es": "Presente, objeto determinado: főzi"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Kati főzi a vacsorát (she is cooking it); tegnap este puts it in the past.",
+            "es": "Con esta regla la frase sería Kati főzi a vacsorát (la está preparando); tegnap este la pone en pasado."
+          }
+        },
+        {
+          "text": {
+            "en": "Past tense, no specific object: főzött",
+            "es": "Pasado, sin objeto determinado: főzött"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Kati vacsorát főzött (she cooked a dinner); a vacsorát is specific, so főzte.",
+            "es": "Con esta regla la frase sería Kati vacsorát főzött (preparó una cena); a vacsorát es determinado, así que főzte."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "targyas-ragozas-2-f07",
+      "kind": "form",
+      "verb": "keres",
+      "person": "mi (a kulcsot)",
+      "answer": "keressük",
+      "table": "def-front"
+    },
+    {
+      "id": "targyas-ragozas-2-c08",
+      "sentence": "Hétvégén mi ___ a gyerekeket a tóhoz.",
+      "options": [
+        "visszük",
+        "viszjük",
+        "viszünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A gyerekeket is specific and the subject is mi: visz + jük, and the sz doubles before the j, visszük.",
+        "es": "A gyerekeket es determinado y el sujeto es mi: visz + jük, y la sz se duplica ante la j, visszük."
+      },
+      "wrong": {
+        "viszjük": {
+          "en": "viszjük is not a Hungarian form: sz + j becomes ssz, which gives visszük.",
+          "es": "viszjük no es una forma húngara: sz + j se convierte en ssz, lo que da visszük."
+        },
+        "viszünk": {
+          "en": "viszünk is the indefinite set, 'we take' with no specific object; a gyerekeket is specific.",
+          "es": "viszünk es la conjugación indeterminada, «llevamos» sin objeto determinado; a gyerekeket es determinado."
+        }
+      },
+      "examples": [
+        "Mi visszük a csomagot.",
+        "Este visszük a gyereket az orvoshoz."
+      ],
+      "tr": {
+        "en": "At the weekend we take the children to the lake.",
+        "es": "El fin de semana llevamos a los niños al lago."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f08",
+      "kind": "form",
+      "verb": "javít",
+      "person": "ő (az autót)",
+      "answer": "javítja",
+      "table": "def-it"
+    },
+    {
+      "id": "targyas-ragozas-2-c09",
+      "sentence": "A főnököm nem ___ el a történetemet, pedig igazat mondtam.",
+      "options": [
+        "hiszi",
+        "hisz",
+        "hiszik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A történetemet (my story) is specific and the subject is one person: the definite 3rd singular of hisz is hiszi.",
+        "es": "A történetemet (mi historia) es determinado y el sujeto es una persona: la 3.ª persona del singular determinada de hisz es hiszi."
+      },
+      "wrong": {
+        "hisz": {
+          "en": "hisz is the indefinite form (Nem hisz neki = he does not believe him); here a specific object follows.",
+          "es": "hisz es la forma indeterminada (Nem hisz neki = no le cree); aquí sigue un objeto determinado."
+        },
+        "hiszik": {
+          "en": "hiszik is the definite 3rd plural, 'they believe it'; the subject is a főnököm, one person.",
+          "es": "hiszik es la 3.ª persona del plural determinada, «ellos lo creen»; el sujeto es a főnököm, una persona."
+        }
+      },
+      "examples": [
+        "Anna nem hiszi el a hírt.",
+        "Péter elhiszi a történetet."
+      ],
+      "tr": {
+        "en": "My boss does not believe my story, although I told the truth.",
+        "es": "Mi jefe no se cree mi historia, aunque dije la verdad."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-w03",
+      "kind": "why",
+      "es": "Péter issza a kávét, Anna pedig teát iszik.",
+      "target": "issza",
+      "tr": {
+        "en": "Péter drinks the coffee, and Anna drinks tea.",
+        "es": "Péter se toma el café, y Anna toma té."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "iszik, definite 3rd singular: the stem isz- takes the back ending -ja",
+            "es": "iszik, 3.ª del singular determinada: la raíz isz- toma la terminación posterior -ja"
+          }
+        },
+        {
+          "text": {
+            "en": "Front ending, like eszi: iszi",
+            "es": "Terminación anterior, como eszi: iszi"
+          },
+          "wrong": {
+            "en": "iszi is not a form: iszik is a back verb (iszom, issza, isszuk), unlike eszik.",
+            "es": "iszi no es una forma: iszik es un verbo de vocales posteriores (iszom, issza, isszuk), a diferencia de eszik."
+          }
+        },
+        {
+          "text": {
+            "en": "Indefinite: iszik",
+            "es": "Indeterminada: iszik"
+          },
+          "wrong": {
+            "en": "With this rule the clause would be Péter iszik kávét (some coffee); the second clause, teát iszik, is the indefinite one.",
+            "es": "Con esta regla la oración sería Péter iszik kávét (algo de café); la segunda oración, teát iszik, es la indeterminada."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "targyas-ragozas-2-f09",
+      "kind": "form",
+      "verb": "vesz",
+      "person": "ti (a kenyeret)",
+      "answer": "veszitek",
+      "table": "def-sz"
+    },
+    {
+      "id": "targyas-ragozas-2-c10",
+      "sentence": "A kisfiú soha nem ___ meg a zöldséget, ezért főzök mást.",
+      "options": [
+        "eszi",
+        "eszik",
+        "eszem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A zöldséget is specific and the subject is one boy: eszik is a front verb, so the definite 3rd singular is eszi.",
+        "es": "A zöldséget es determinado y el sujeto es un niño: eszik es un verbo de vocales anteriores, así que la 3.ª persona del singular determinada es eszi."
+      },
+      "wrong": {
+        "eszik": {
+          "en": "eszik is the indefinite 3rd singular (A kisfiú eszik = the boy eats); a zöldséget is specific.",
+          "es": "eszik es la 3.ª persona del singular indeterminada (A kisfiú eszik = el niño come); a zöldséget es determinado."
+        },
+        "eszem": {
+          "en": "eszem is 'I eat it'; the subject is a kisfiú.",
+          "es": "eszem es «yo lo como»; el sujeto es a kisfiú."
+        }
+      },
+      "examples": [
+        "Anna eszi a levest.",
+        "Ki eszi meg a süteményt?"
+      ],
+      "tr": {
+        "en": "The little boy never eats up the vegetables, so I cook something else.",
+        "es": "El niño nunca se come las verduras, así que cocino otra cosa."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f10",
+      "kind": "form",
+      "verb": "tesz",
+      "person": "mi (a kulcsot)",
+      "answer": "tesszük",
+      "table": "def-sz"
+    },
+    {
+      "id": "targyas-ragozas-2-c11",
+      "sentence": "Anna a teát issza, Péter pedig a kávét ___.",
+      "options": [
+        "issza",
+        "iszik",
+        "isszák"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A kávét is specific and Péter is one person: the definite 3rd singular of iszik is issza.",
+        "es": "A kávét es determinado y Péter es una persona: la 3.ª persona del singular determinada de iszik es issza."
+      },
+      "wrong": {
+        "iszik": {
+          "en": "iszik is the indefinite form (Péter iszik egy kávét); here a kávét is a specific coffee.",
+          "es": "iszik es la forma indeterminada (Péter iszik egy kávét); aquí a kávét es un café concreto."
+        },
+        "isszák": {
+          "en": "isszák is the definite 3rd plural, 'they drink it'; the subject is Péter alone.",
+          "es": "isszák es la 3.ª persona del plural determinada, «ellos lo beben»; el sujeto es solo Péter."
+        }
+      },
+      "examples": [
+        "Ki issza a vizet?",
+        "A teát Kati issza."
+      ],
+      "tr": {
+        "en": "Anna drinks the tea, and Péter drinks the coffee.",
+        "es": "Anna se toma el té y Péter se toma el café."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f11",
+      "kind": "form",
+      "verb": "iszik",
+      "person": "ők (a vizet, past)",
+      "answer": "itták",
+      "table": "def-eat-drink"
+    },
+    {
+      "id": "targyas-ragozas-2-c12",
+      "sentence": "Mi mindig együtt ___ a vacsorát, utána sétálunk egyet.",
+      "options": [
+        "esszük",
+        "eszünk",
+        "eszitek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A vacsorát is specific and the subject is mi: esz + jük, and the sz doubles before the j, esszük.",
+        "es": "A vacsorát es determinado y el sujeto es mi: esz + jük, y la sz se duplica ante la j, esszük."
+      },
+      "wrong": {
+        "eszünk": {
+          "en": "eszünk is the indefinite set, 'we eat' with no specific object; a vacsorát is specific.",
+          "es": "eszünk es la conjugación indeterminada, «comemos» sin objeto determinado; a vacsorát es determinado."
+        },
+        "eszitek": {
+          "en": "eszitek is 'you all eat it' (ti); the subject is mi.",
+          "es": "eszitek es «ustedes lo comen» (ti); el sujeto es mi."
+        }
+      },
+      "examples": [
+        "Mi esszük a levest.",
+        "Este esszük a vacsorát."
+      ],
+      "tr": {
+        "en": "We always eat dinner together, and afterwards we take a walk.",
+        "es": "Siempre cenamos juntos y después damos un paseo."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-f12",
+      "kind": "form",
+      "verb": "hoz",
+      "person": "ő (a levelet, past)",
+      "answer": "hozta",
+      "table": "def-past"
+    },
+    {
+      "id": "targyas-ragozas-2-c13",
+      "sentence": "Ti mindig a hűtőből ___ a vizet, pedig van pohár.",
+      "options": [
+        "isszátok",
+        "isztok",
+        "isszák"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A vizet is specific and the subject is ti: iszik is a back verb, so the definite 2nd plural is isszátok.",
+        "es": "A vizet es determinado y el sujeto es ti: iszik es un verbo de vocales posteriores, así que la 2.ª persona del plural determinada es isszátok."
+      },
+      "wrong": {
+        "isztok": {
+          "en": "isztok is the indefinite set, 'you all drink' with no specific object; a vizet is specific.",
+          "es": "isztok es la conjugación indeterminada, «ustedes beben» sin objeto determinado; a vizet es determinado."
+        },
+        "isszák": {
+          "en": "isszák is the definite 3rd plural, 'they drink it'; the subject is ti.",
+          "es": "isszák es la 3.ª persona del plural determinada, «ellos lo beben»; el sujeto es ti."
+        }
+      },
+      "examples": [
+        "Ti isszátok a teát.",
+        "Mikor isszátok meg a kávét?"
+      ],
+      "tr": {
+        "en": "You always drink the water straight from the fridge, although there are glasses.",
+        "es": "Ustedes siempre se toman el agua directo del refri, aunque hay vasos."
+      }
+    },
+    {
+      "id": "targyas-ragozas-2-w04",
+      "kind": "why",
+      "es": "Anna és Péter eszik a vacsorát.",
+      "target": "eszik",
+      "tr": {
+        "en": "Anna and Péter are eating the dinner.",
+        "es": "Anna y Péter se están comiendo la cena."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Indefinite 3rd singular: he or she eats",
+            "es": "Indeterminada, 3.ª del singular: él o ella come"
+          },
+          "wrong": {
+            "en": "With this rule the subject would be one person and the object not specific: Anna eszik vacsorát. Here two people eat a specific dinner (a vacsorát).",
+            "es": "Con esta regla el sujeto sería una persona y el objeto no determinado: Anna eszik vacsorát. Aquí dos personas comen una cena concreta (a vacsorát)."
+          }
+        },
+        {
+          "text": {
+            "en": "Indefinite 3rd plural: esznek",
+            "es": "Indeterminada, 3.ª del plural: esznek"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Anna és Péter esznek vacsorát (they eat a dinner, any); a vacsorát is specific.",
+            "es": "Con esta regla la frase sería Anna és Péter esznek vacsorát (comen una cena, cualquiera); a vacsorát es determinado."
+          }
+        },
+        {
+          "text": {
+            "en": "Definite 3rd plural: they eat it (the form looks like the indefinite singular)",
+            "es": "Determinada, 3.ª del plural: ellos lo comen (la forma se parece a la del singular indeterminado)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "targyas-ragozas-2-c14",
+      "sentence": "A tanár tegnap már ___ a dolgozatokat, ezért ma megkapjuk az eredményt.",
+      "options": [
+        "kijavította",
+        "kijavítja",
+        "kijavított"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tegnap puts it in the past, and a dolgozatokat is specific: the definite past of kijavít is kijavította. The prefix ki- shows that the job is finished, as the second clause (today we get the result) needs.",
+        "es": "Tegnap lo pone en pasado, y a dolgozatokat es determinado: el pasado determinado de kijavít es kijavította. El prefijo ki- muestra que el trabajo está terminado, como pide la segunda oración (hoy recibimos el resultado)."
+      },
+      "wrong": {
+        "kijavítja": {
+          "en": "kijavítja is the present, 'corrects'; tegnap needs the past.",
+          "es": "kijavítja es el presente, «corrige»; tegnap pide el pasado."
+        },
+        "kijavított": {
+          "en": "kijavított is the indefinite past, 'corrected (some)'; a dolgozatokat is specific, so kijavította.",
+          "es": "kijavított es el pasado indeterminado, «corrigió (algunos)»; a dolgozatokat es determinado, así que kijavította."
+        }
+      },
+      "examples": [
+        "A szerelő megjavította az autót.",
+        "Anna tegnap kijavította a dolgozatokat."
+      ],
+      "tr": {
+        "en": "The teacher already corrected the tests yesterday, so today we get the result.",
+        "es": "El maestro ya corrigió los exámenes ayer, así que hoy recibimos el resultado."
+      }
+    }
+  ]
+}

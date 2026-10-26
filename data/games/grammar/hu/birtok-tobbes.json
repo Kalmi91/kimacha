@@ -1,0 +1,1468 @@
+{
+  "schema": 2,
+  "topic": "birtok-tobbes",
+  "level": "B1",
+  "title": {
+    "en": "My books, your friends: könyveim, barátaid",
+    "es": "Mis libros, tus amigos: könyveim, barátaid"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "You know házam (my house): one thing, one ending. For SEVERAL things Hungarian puts an -i- between the noun and the personal ending: ház + a + i + m = házaim (my houses). That -i- is the plural of the thing owned, so the noun gets no plural -k: never házakom. English marks the plural on the noun (houses), Spanish on the possessive and the noun (mis casas); Hungarian marks it once, inside the ending. The verb then agrees with a plural subject: A szüleim Budapesten laknak (My parents live in Budapest).",
+        "es": "Ya conoces házam (mi casa): una cosa, una terminación. Para VARIAS cosas el húngaro pone una -i- entre el sustantivo y la terminación personal: ház + a + i + m = házaim (mis casas). Esa -i- es el plural de la cosa poseída, así que el sustantivo no lleva el plural -k: nunca házakom. El inglés marca el plural en el sustantivo (houses), el español en el posesivo y en el sustantivo (mis casas); el húngaro lo marca una sola vez, dentro de la terminación. El verbo concuerda después con el sujeto plural: A szüleim Budapesten laknak (Mis padres viven en Budapest)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "poss-pl-massalhangzo",
+      "title": {
+        "en": "Several things: nouns ending in a consonant",
+        "es": "Varias cosas: sustantivos terminados en consonante"
+      },
+      "header": [
+        {
+          "en": "Owner (several things)",
+          "es": "Dueño (varias cosas)"
+        },
+        {
+          "en": "ház (house)",
+          "es": "ház (casa)"
+        },
+        {
+          "en": "barát (friend)",
+          "es": "barát (amigo)"
+        },
+        {
+          "en": "könyv (book)",
+          "es": "könyv (libro)"
+        },
+        {
+          "en": "főnök (boss)",
+          "es": "főnök (jefe)"
+        }
+      ],
+      "rows": [
+        [
+          "én (több)",
+          "házaim",
+          "barátaim",
+          "könyveim",
+          "főnökeim"
+        ],
+        [
+          "te (több)",
+          "házaid",
+          "barátaid",
+          "könyveid",
+          "főnökeid"
+        ],
+        [
+          "ő (több)",
+          "házai",
+          "barátai",
+          "könyvei",
+          "főnökei"
+        ],
+        [
+          "mi (több)",
+          "házaink",
+          "barátaink",
+          "könyveink",
+          "főnökeink"
+        ],
+        [
+          "ti (több)",
+          "házaitok",
+          "barátaitok",
+          "könyveitek",
+          "főnökeitek"
+        ],
+        [
+          "ők (több)",
+          "házaik",
+          "barátaik",
+          "könyveik",
+          "főnökeik"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "poss-pl-magan",
+      "title": {
+        "en": "Several things: nouns ending in a vowel",
+        "es": "Varias cosas: sustantivos terminados en vocal"
+      },
+      "header": [
+        {
+          "en": "Owner (several things)",
+          "es": "Dueño (varias cosas)"
+        },
+        {
+          "en": "autó (car)",
+          "es": "autó (coche)"
+        },
+        {
+          "en": "kutya (dog)",
+          "es": "kutya (perro)"
+        },
+        {
+          "en": "cipő (shoe)",
+          "es": "cipő (zapato)"
+        }
+      ],
+      "rows": [
+        [
+          "én (több)",
+          "autóim",
+          "kutyáim",
+          "cipőim"
+        ],
+        [
+          "te (több)",
+          "autóid",
+          "kutyáid",
+          "cipőid"
+        ],
+        [
+          "ő (több)",
+          "autói",
+          "kutyái",
+          "cipői"
+        ],
+        [
+          "mi (több)",
+          "autóink",
+          "kutyáink",
+          "cipőink"
+        ],
+        [
+          "ti (több)",
+          "autóitok",
+          "kutyáitok",
+          "cipőitek"
+        ],
+        [
+          "ők (több)",
+          "autóik",
+          "kutyáik",
+          "cipőik"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Building the form",
+        "es": "Cómo se forma"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "After a consonant: noun + linking vowel + i + ending. Back words take a (házaim, kulcsaim, barátaim); front words take e (könyveim, testvéreim), and the rounded ones too (főnökeim, not főnököim).",
+            "es": "Tras consonante: sustantivo + vocal de enlace + i + terminación. Las palabras posteriores llevan a (házaim, kulcsaim, barátaim); las anteriores llevan e (könyveim, testvéreim), también las redondeadas (főnökeim, no főnököim)."
+          },
+          "examples": [
+            {
+              "es": "A kulcsaim az asztalon vannak.",
+              "tr": {
+                "en": "My keys are on the table.",
+                "es": "Mis llaves están sobre la mesa."
+              }
+            },
+            {
+              "es": "A főnökeim nagyon kedvesek.",
+              "tr": {
+                "en": "My bosses are very kind.",
+                "es": "Mis jefes son muy amables."
+              }
+            },
+            {
+              "es": "A testvéreim Szegeden laknak.",
+              "tr": {
+                "en": "My brothers and sisters live in Szeged.",
+                "es": "Mis hermanos viven en Szeged."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a vowel there is no linking vowel: noun + i + ending (autóim, cipőim). A final -a or -e lengthens to á or é, as in kutyám: kutya becomes kutyáim.",
+            "es": "Tras vocal no hay vocal de enlace: sustantivo + i + terminación (autóim, cipőim). Una -a o -e final se alarga a á o é, como en kutyám: kutya pasa a kutyáim."
+          },
+          "examples": [
+            {
+              "es": "Az autóink még újak.",
+              "tr": {
+                "en": "Our cars are still new.",
+                "es": "Nuestros coches todavía son nuevos."
+              }
+            },
+            {
+              "es": "A cipőid a szobában vannak.",
+              "tr": {
+                "en": "Your shoes are in the room.",
+                "es": "Tus zapatos están en la habitación."
+              }
+            },
+            {
+              "es": "A kutyáim a kertben vannak.",
+              "tr": {
+                "en": "My dogs are in the garden.",
+                "es": "Mis perros están en el jardín."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The endings after the -i- are -m, -d, nothing, -nk, -tok/-tek, -k. So \"his or her\" is just -i (házai) and \"their\" is -ik (házaik). The -k is the \"they\" of házuk, not the plural -k of nouns. Words with -ja/-je in the singular need care: barátja loses its j (barátai), but napja keeps it (napjai). Learn the plural together with the word.",
+            "es": "Las terminaciones tras la -i- son -m, -d, nada, -nk, -tok/-tek, -k. Así «de él, de ella» es solo -i (házai) y «de ellos» es -ik (házaik). La -k es la de «ellos» en házuk, no el plural -k de los sustantivos. Las palabras con -ja/-je en singular requieren cuidado: barátja pierde la j (barátai), pero napja la conserva (napjai). Aprende el plural junto con la palabra."
+          },
+          "examples": [
+            {
+              "es": "Anna szülei Szegeden laknak.",
+              "tr": {
+                "en": "Anna's parents live in Szeged.",
+                "es": "Los padres de Anna viven en Szeged."
+              }
+            },
+            {
+              "es": "A szüleik Debrecenben laknak.",
+              "tr": {
+                "en": "Their parents live in Debrecen.",
+                "es": "Sus padres viven en Debrecen."
+              }
+            },
+            {
+              "es": "Péter ötletei mindig jók.",
+              "tr": {
+                "en": "Péter's ideas are always good.",
+                "es": "Las ideas de Péter siempre son buenas."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "text",
+      "text": {
+        "en": "Two family words you will use all the time: testvér (brother or sister) is regular, but szülő (parent) drops its ő: szüleim, never szülőim. Learn szüleim, szüleid, szülei as ready forms; the plain plural szülők (parents in general) stays regular.",
+        "es": "Dos palabras de familia que usarás siempre: testvér (hermano o hermana) es regular, pero szülő (padre o madre) pierde su ő: szüleim, nunca szülőim. Aprende szüleim, szüleid, szülei como formas hechas; el plural simple szülők (los padres en general) sigue siendo regular."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "poss-szulo",
+      "title": {
+        "en": "Two family words",
+        "es": "Dos palabras de familia"
+      },
+      "header": [
+        {
+          "en": "Owner (several)",
+          "es": "Dueño (varios)"
+        },
+        {
+          "en": "szülő (parent)",
+          "es": "szülő (padre, madre)"
+        },
+        {
+          "en": "testvér (brother, sister)",
+          "es": "testvér (hermano, hermana)"
+        }
+      ],
+      "rows": [
+        [
+          "én (több)",
+          "szüleim",
+          "testvéreim"
+        ],
+        [
+          "te (több)",
+          "szüleid",
+          "testvéreid"
+        ],
+        [
+          "ő (több)",
+          "szülei",
+          "testvérei"
+        ],
+        [
+          "mi (több)",
+          "szüleink",
+          "testvéreink"
+        ],
+        [
+          "ti (több)",
+          "szüleitek",
+          "testvéreitek"
+        ],
+        [
+          "ők (több)",
+          "szüleik",
+          "testvéreik"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "poss-egy-tobb",
+      "title": {
+        "en": "One thing or several things?",
+        "es": "¿Una cosa o varias cosas?"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Dueño"
+        },
+        {
+          "en": "egy ház (one house)",
+          "es": "egy ház (una casa)"
+        },
+        {
+          "en": "több ház (several)",
+          "es": "több ház (varias)"
+        },
+        {
+          "en": "egy könyv (one book)",
+          "es": "egy könyv (un libro)"
+        },
+        {
+          "en": "több könyv (several)",
+          "es": "több könyv (varios)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "házam",
+          "házaim",
+          "könyvem",
+          "könyveim"
+        ],
+        [
+          "te",
+          "házad",
+          "házaid",
+          "könyved",
+          "könyveid"
+        ],
+        [
+          "ő",
+          "háza",
+          "házai",
+          "könyve",
+          "könyvei"
+        ],
+        [
+          "mi",
+          "házunk",
+          "házaink",
+          "könyvünk",
+          "könyveink"
+        ],
+        [
+          "ti",
+          "házatok",
+          "házaitok",
+          "könyvetek",
+          "könyveitek"
+        ],
+        [
+          "ők",
+          "házuk",
+          "házaik",
+          "könyvük",
+          "könyveik"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Several things in a sentence",
+        "es": "Varias cosas en la oración"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A plural thing owned is a plural subject: the verb and a predicate adjective are plural too.",
+            "es": "Una cosa poseída en plural es un sujeto plural: el verbo y el adjetivo predicativo también van en plural."
+          },
+          "examples": [
+            {
+              "es": "A szüleim Budapesten laknak.",
+              "tr": {
+                "en": "My parents live in Budapest.",
+                "es": "Mis padres viven en Budapest."
+              }
+            },
+            {
+              "es": "A könyveim nagyon nehezek.",
+              "tr": {
+                "en": "My books are very heavy.",
+                "es": "Mis libros son muy pesados."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "\"To have\" with several things: vannak; the negative is nincsenek, not a negated vannak. The owner is in the dative, the things carry his or her ending.",
+            "es": "«Tener» con varias cosas: vannak; la forma negativa es nincsenek, no un vannak negado. El dueño va en dativo y las cosas llevan su terminación."
+          },
+          "examples": [
+            {
+              "es": "Vannak barátaim Debrecenben.",
+              "tr": {
+                "en": "I have friends in Debrecen.",
+                "es": "Tengo amigos en Debrecen."
+              }
+            },
+            {
+              "es": "Neki nincsenek testvérei.",
+              "tr": {
+                "en": "He or she has no brothers or sisters.",
+                "es": "Él o ella no tiene hermanos."
+              }
+            },
+            {
+              "es": "Nekünk vannak ötleteink.",
+              "tr": {
+                "en": "We have ideas.",
+                "es": "Tenemos ideas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "As an object the form takes -t. After -m, -d, -nk, -tok/-tek, -k the linking vowel is a (back) or e (front): barátaimat, könyveimet. After the 3rd person -i the t goes straight on: szüleit, barátait. The object is definite, so the verb is definite too.",
+            "es": "Como objeto la forma lleva -t. Tras -m, -d, -nk, -tok/-tek, -k la vocal de enlace es a (posteriores) o e (anteriores): barátaimat, könyveimet. Tras la -i de 3.ª persona la t se añade directamente: szüleit, barátait. El objeto es determinado, así que el verbo también es determinado."
+          },
+          "examples": [
+            {
+              "es": "Szeretem a szüleimet.",
+              "tr": {
+                "en": "I love my parents.",
+                "es": "Quiero a mis padres."
+              }
+            },
+            {
+              "es": "Meglátogatom a barátaimat.",
+              "tr": {
+                "en": "I am visiting my friends.",
+                "es": "Voy a visitar a mis amigos."
+              }
+            },
+            {
+              "es": "Péter meghívja a barátait.",
+              "tr": {
+                "en": "Péter invites his friends.",
+                "es": "Péter invita a sus amigos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The other endings follow as usual, with the harmony of the whole word: a barátaimmal, a szüleimnél, a barátaimhoz. After -m, -val/-vel becomes -mal/-mel.",
+            "es": "Las demás terminaciones siguen como siempre, con la armonía de toda la palabra: a barátaimmal, a szüleimnél, a barátaimhoz. Tras -m, -val/-vel pasa a -mal/-mel."
+          },
+          "examples": [
+            {
+              "es": "Szombaton a szüleimnél vacsorázunk.",
+              "tr": {
+                "en": "On Saturday we have dinner at my parents' place.",
+                "es": "El sábado cenamos en casa de mis padres."
+              }
+            },
+            {
+              "es": "Holnap a barátaimhoz megyek.",
+              "tr": {
+                "en": "Tomorrow I am going to my friends' place.",
+                "es": "Mañana voy a casa de mis amigos."
+              }
+            },
+            {
+              "es": "Szombaton a barátaimmal megyek moziba.",
+              "tr": {
+                "en": "On Saturday I am going to the cinema with my friends.",
+                "es": "El sábado voy al cine con mis amigos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a number or a word like sok, kevés, néhány the thing owned stays single: két barátom, sok könyvem. With the article it is plural again: a barátaim.",
+            "es": "Tras un número o una palabra como sok, kevés, néhány la cosa poseída queda en singular: két barátom, sok könyvem. Con el artículo vuelve el plural: a barátaim."
+          },
+          "examples": [
+            {
+              "es": "Két testvérem van.",
+              "tr": {
+                "en": "I have two brothers or sisters.",
+                "es": "Tengo dos hermanos."
+              }
+            },
+            {
+              "es": "Sok barátunk van Budapesten.",
+              "tr": {
+                "en": "We have many friends in Budapest.",
+                "es": "Tenemos muchos amigos en Budapest."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Formal register: the polite Ön takes the 3rd person, so there is no special form. Hogy vannak a szülei? asks a stranger about his or her parents; to a friend you say Hogy vannak a szüleid?",
+            "es": "Registro formal: el Ön de cortesía lleva la 3.ª persona, así que no hay una forma especial. Hogy vannak a szülei? pregunta a un desconocido por sus padres; a un amigo le dices Hogy vannak a szüleid?"
+          },
+          "examples": [
+            {
+              "es": "Hogy vannak a szülei?",
+              "tr": {
+                "en": "How are your parents? (formal)",
+                "es": "¿Cómo están sus padres? (formal)"
+              }
+            },
+            {
+              "es": "Hogy vannak a szüleid?",
+              "tr": {
+                "en": "How are your parents? (informal)",
+                "es": "¿Cómo están tus padres? (informal)"
+              }
+            },
+            {
+              "es": "Önnek nagyon kedves gyerekei vannak.",
+              "tr": {
+                "en": "You have very nice children. (formal)",
+                "es": "Usted tiene hijos muy amables. (formal)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "poss-tulaj-dolog",
+      "title": {
+        "en": "Owners and things: where does the plural go?",
+        "es": "Dueños y cosas: ¿dónde va el plural?"
+      },
+      "header": [
+        {
+          "en": "Owner",
+          "es": "Dueño"
+        },
+        {
+          "en": "egy könyv (one book)",
+          "es": "egy könyv (un libro)"
+        },
+        {
+          "en": "több könyv (several books)",
+          "es": "több könyv (varios libros)"
+        }
+      ],
+      "rows": [
+        [
+          "a fiú",
+          "a fiú könyve",
+          "a fiú könyvei"
+        ],
+        [
+          "a fiúk",
+          "a fiúk könyve",
+          "a fiúk könyvei"
+        ],
+        [
+          "Anna",
+          "Anna könyve",
+          "Anna könyvei"
+        ],
+        [
+          "a tanárok",
+          "a tanárok könyve",
+          "a tanárok könyvei"
+        ],
+        [
+          "a barátom",
+          "a barátom könyve",
+          "a barátom könyvei"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Several owners or several things?",
+        "es": "¿Varios dueños o varias cosas?"
+      },
+      "pairs": [
+        {
+          "a": "a fiú könyve",
+          "b": "a fiú könyvei",
+          "note": {
+            "en": "One boy. -e = one book; -ei = several books. The -i- is the plural of the thing owned.",
+            "es": "Un solo chico. -e = un libro; -ei = varios libros. La -i- es el plural de la cosa poseída."
+          },
+          "examples": [
+            {
+              "es": "A fiú könyve az asztalon van.",
+              "tr": {
+                "en": "The boy's book is on the table.",
+                "es": "El libro del chico está sobre la mesa."
+              }
+            },
+            {
+              "es": "A fiú könyvei az asztalon vannak.",
+              "tr": {
+                "en": "The boy's books are on the table.",
+                "es": "Los libros del chico están sobre la mesa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a fiúk könyve",
+          "b": "a fiú könyvei",
+          "note": {
+            "en": "The -k is on the OWNER (several boys), the -i- is on the THING (several books). They are not the same plural.",
+            "es": "La -k está en el DUEÑO (varios chicos), la -i- está en la COSA (varios libros). No son el mismo plural."
+          },
+          "examples": [
+            {
+              "es": "A fiúk könyve új.",
+              "tr": {
+                "en": "The boys' book is new.",
+                "es": "El libro de los chicos es nuevo."
+              }
+            },
+            {
+              "es": "A fiú könyvei újak.",
+              "tr": {
+                "en": "The boy's books are new.",
+                "es": "Los libros del chico son nuevos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a fiúk könyve",
+          "b": "a fiúk könyvei",
+          "note": {
+            "en": "Several boys in both. Whether the thing is one or several is again shown only by the -i-. After a noun owner the thing keeps the 3rd person singular ending (not -eik).",
+            "es": "Varios chicos en ambos. Si la cosa es una o varias lo indica de nuevo solo la -i-. Tras un dueño nominal la cosa conserva la terminación de 3.ª persona del singular (no -eik)."
+          },
+          "examples": [
+            {
+              "es": "A fiúk könyve nehéz.",
+              "tr": {
+                "en": "The boys' book is heavy.",
+                "es": "El libro de los chicos es pesado."
+              }
+            },
+            {
+              "es": "A fiúk könyvei nehezek.",
+              "tr": {
+                "en": "The boys' books are heavy.",
+                "es": "Los libros de los chicos son pesados."
+              }
+            }
+          ]
+        },
+        {
+          "a": "házuk",
+          "b": "házaik",
+          "note": {
+            "en": "házuk = their house (one); házaik = their houses (several). One small -ai- changes the meaning.",
+            "es": "házuk = su casa (una) de ellos; házaik = sus casas (varias) de ellos. Un pequeño -ai- cambia el significado."
+          },
+          "examples": [
+            {
+              "es": "Az autójuk új.",
+              "tr": {
+                "en": "Their car is new.",
+                "es": "Su coche es nuevo."
+              }
+            },
+            {
+              "es": "Az autóik újak.",
+              "tr": {
+                "en": "Their cars are new.",
+                "es": "Sus coches son nuevos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) The -i- already says \"several\", so the noun gets no -k: házaim, never házakom. (2) After a number or sok the thing stays single: két barátom, not két barátaim; with the article it is plural: a barátaim. (3) One letter changes the meaning: háza (his house) and házai (his houses), házuk (their house) and házaik (their houses). (4) Do not mix the two plurals: a fiúk könyve has several boys, a fiú könyvei has several books.",
+        "es": "Trampas clásicas: (1) La -i- ya dice «varios», así que el sustantivo no lleva -k: házaim, nunca házakom. (2) Tras un número o sok la cosa queda en singular: két barátom, no két barátaim; con el artículo es plural: a barátaim. (3) Una letra cambia el significado: háza (su casa) y házai (sus casas), házuk (su casa de ellos) y házaik (sus casas de ellos). (4) No mezcles los dos plurales: a fiúk könyve tiene varios chicos, a fiú könyvei tiene varios libros."
+      }
+    }
+  ],
+  "speak": {
+    "en": "One house is «házam»; several houses are «házaim». Between the noun and the ending Hungarian puts an «i», and that «i» means several. So you say «házaim», «házaid», «házai», «házaink», «házaitok», «házaik». Words with front vowels take «e»: «könyveim». After a vowel there is no linking vowel: «autóim», «kutyáim». Be careful: «házuk» is their house, but «házaik» is their houses. After a number the thing stays single: «két barátom». And remember this sentence: «A szüleim Budapesten laknak».",
+    "es": "Una casa es «házam»; varias casas son «házaim». Entre el sustantivo y la terminación el húngaro pone una «i», y esa «i» significa varios. Así se dice «házaim», «házaid», «házai», «házaink», «házaitok», «házaik». Las palabras con vocales anteriores llevan «e»: «könyveim». Tras vocal no hay vocal de enlace: «autóim», «kutyáim». Cuidado: «házuk» es su casa de ellos, pero «házaik» son sus casas. Tras un número la cosa queda en singular: «két barátom». Y recuerda esta frase: «A szüleim Budapesten laknak»."
+  },
+  "glossary": [
+    {
+      "word": "szülő",
+      "gloss": {
+        "en": "parent",
+        "es": "padre o madre"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "birtok-tobbes-c01",
+      "sentence": "Anna szülei Szegeden laknak, ezért hétvégén meglátogatja a ___.",
+      "options": [
+        "szüleit",
+        "szüleimet",
+        "szüleiket"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is one person, so the parents are hers: 3rd person, szülei, and with the object ending szüleit (-i- + -t, no linking vowel).",
+        "es": "Anna es una sola persona, así que los padres son suyos: 3.ª persona, szülei, y con la terminación de objeto szüleit (-i- + -t, sin vocal de enlace)."
+      },
+      "wrong": {
+        "szüleimet": {
+          "en": "szüleimet is \"my parents\"; the one who visits is Anna, so the parents are hers.",
+          "es": "szüleimet es «mis padres»; quien visita es Anna, así que los padres son suyos."
+        },
+        "szüleiket": {
+          "en": "szüleiket is \"their parents\" (several owners); Anna is one person.",
+          "es": "szüleiket es «los padres de ellos» (varios dueños); Anna es una sola persona."
+        }
+      },
+      "examples": [
+        "Péter hétvégén meglátogatja a szüleit.",
+        "Hétvégén meglátogatjuk a szüleinket."
+      ],
+      "tr": {
+        "en": "Anna's parents live in Szeged, so she visits her parents at the weekend.",
+        "es": "Los padres de Anna viven en Szeged, así que ella visita a sus padres el fin de semana."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f01",
+      "kind": "form",
+      "verb": "ház",
+      "person": "én (több)",
+      "answer": "házaim",
+      "accept": [
+        "a házaim"
+      ],
+      "table": "poss-pl-massalhangzo"
+    },
+    {
+      "id": "birtok-tobbes-c02",
+      "sentence": "A ___ az asztalon vannak, de a kulcsaim a táskámban.",
+      "options": [
+        "könyveim",
+        "könyvaim",
+        "könyvöim"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "könyv has front vowels (ö), so the plural ending is -eim: könyveim. Even a rounded front vowel gives e before the -i-.",
+        "es": "könyv tiene vocales anteriores (ö), así que la terminación del plural es -eim: könyveim. Incluso una vocal anterior redondeada da e antes de la -i-."
+      },
+      "wrong": {
+        "könyvaim": {
+          "en": "-aim is for back-vowel words (házaim, kulcsaim); könyv is a front word.",
+          "es": "-aim es para palabras de vocales posteriores (házaim, kulcsaim); könyv es una palabra anterior."
+        },
+        "könyvöim": {
+          "en": "There is no such form: even with ö in the word, the vowel before the -i- is e, not ö.",
+          "es": "No existe esa forma: aunque la palabra tenga ö, la vocal antes de la -i- es e, no ö."
+        }
+      },
+      "examples": [
+        "A könyveink a polcon vannak.",
+        "A főnökeim nagyon kedvesek."
+      ],
+      "tr": {
+        "en": "My books are on the table, but my keys are in my bag.",
+        "es": "Mis libros están sobre la mesa, pero mis llaves están en mi bolso."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f02",
+      "kind": "form",
+      "verb": "könyv",
+      "person": "te (több)",
+      "answer": "könyveid",
+      "accept": [
+        "a könyveid"
+      ],
+      "table": "poss-pl-massalhangzo"
+    },
+    {
+      "id": "birtok-tobbes-c03",
+      "sentence": "Péternek két autója van, és az ___ nagyon gyorsak.",
+      "options": [
+        "autói",
+        "autója",
+        "autóik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péternek names one owner, 3rd person. The cars are several (gyorsak is plural), so -i-: autói. After a vowel there is no linking vowel.",
+        "es": "Péternek nombra a un dueño, 3.ª persona. Los coches son varios (gyorsak es plural), así que -i-: autói. Tras vocal no hay vocal de enlace."
+      },
+      "wrong": {
+        "autója": {
+          "en": "autója is \"his car\" (one car); gyorsak is plural and needs several cars.",
+          "es": "autója es «su coche» (un coche); gyorsak es plural y necesita varios coches."
+        },
+        "autóik": {
+          "en": "autóik is \"their cars\" (several owners); Péternek names one owner.",
+          "es": "autóik es «los coches de ellos» (varios dueños); Péternek nombra a un solo dueño."
+        }
+      },
+      "examples": [
+        "Az autóid még újak.",
+        "Anna kutyái nagyon kedvesek."
+      ],
+      "tr": {
+        "en": "Péter has two cars, and his cars are very fast.",
+        "es": "Péter tiene dos coches y sus coches son muy rápidos."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f03",
+      "kind": "form",
+      "verb": "barát",
+      "person": "ő (több)",
+      "answer": "barátai",
+      "accept": [
+        "a barátai"
+      ],
+      "table": "poss-pl-massalhangzo"
+    },
+    {
+      "id": "birtok-tobbes-w01",
+      "kind": "why",
+      "es": "A szüleim Budapesten laknak.",
+      "target": "szüleim",
+      "tr": {
+        "en": "My parents live in Budapest.",
+        "es": "Mis padres viven en Budapest."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Several things owned, and mine: the -i- of several plus the -m of I",
+            "es": "Varias cosas poseídas, y mías: la -i- de varios más la -m de «yo»"
+          }
+        },
+        {
+          "text": {
+            "en": "The plain plural -k: szülők",
+            "es": "El plural simple -k: szülők"
+          },
+          "wrong": {
+            "en": "With this rule the word would be szülők (parents in general); szüleim adds whose they are (mine) and the -i- marks several.",
+            "es": "Con esta regla la palabra sería szülők (los padres en general); szüleim añade de quién son (míos) y la -i- marca varios."
+          }
+        },
+        {
+          "text": {
+            "en": "One thing owned, and mine: szülőm",
+            "es": "Una cosa poseída, y mía: szülőm"
+          },
+          "wrong": {
+            "en": "With this rule the word would be szülőm (my parent, one person); here the -i- says several.",
+            "es": "Con esta regla la palabra sería szülőm (mi padre o madre, una persona); aquí la -i- dice varios."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "birtok-tobbes-c04",
+      "sentence": "Gábor, a ___ nagyon kedvesek, szeretem őket.",
+      "options": [
+        "kutyáid",
+        "kutyád",
+        "kutyáim"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Gábor is spoken to, so the owner is te (-d). The dogs are several (kedvesek, őket): kutya + i + d, and the final -a lengthens: kutyáid.",
+        "es": "A Gábor se le habla, así que el dueño es te (-d). Los perros son varios (kedvesek, őket): kutya + i + d, y la -a final se alarga: kutyáid."
+      },
+      "wrong": {
+        "kutyád": {
+          "en": "kutyád is \"your dog\" (one); kedvesek and őket (them) point to several dogs.",
+          "es": "kutyád es «tu perro» (uno); kedvesek y őket (los) apuntan a varios perros."
+        },
+        "kutyáim": {
+          "en": "kutyáim is \"my dogs\"; Gábor is spoken to, so the dogs are his.",
+          "es": "kutyáim es «mis perros»; a Gábor se le habla, así que los perros son suyos."
+        }
+      },
+      "examples": [
+        "A kutyáink a kertben vannak.",
+        "Anna kutyái nagyon nagyok."
+      ],
+      "tr": {
+        "en": "Gábor, your dogs are very nice, I like them.",
+        "es": "Gábor, tus perros son muy simpáticos, me gustan."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f04",
+      "kind": "form",
+      "verb": "főnök",
+      "person": "mi (több)",
+      "answer": "főnökeink",
+      "accept": [
+        "a főnökeink"
+      ],
+      "table": "poss-pl-massalhangzo"
+    },
+    {
+      "id": "birtok-tobbes-c05",
+      "sentence": "Anna és Péter Debrecenben laknak, a ___ már iskolába járnak.",
+      "options": [
+        "gyerekeik",
+        "gyerekük",
+        "gyerekeink"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna and Péter are \"they\", and the children are several: gyerek + e + i + k = gyerekeik. The -k is the ending for \"they\".",
+        "es": "Anna y Péter son «ellos», y los hijos son varios: gyerek + e + i + k = gyerekeik. La -k es la terminación de «ellos»."
+      },
+      "wrong": {
+        "gyerekük": {
+          "en": "gyerekük is \"their child\" (one); járnak is plural, so there are several children.",
+          "es": "gyerekük es «su hijo» (uno); járnak es plural, así que hay varios hijos."
+        },
+        "gyerekeink": {
+          "en": "gyerekeink is \"our children\"; the sentence is about Anna and Péter, not about us.",
+          "es": "gyerekeink es «nuestros hijos»; la frase habla de Anna y Péter, no de nosotros."
+        }
+      },
+      "examples": [
+        "A szüleik Szegeden laknak.",
+        "A barátaik moziba mennek."
+      ],
+      "tr": {
+        "en": "Anna and Péter live in Debrecen, and their children already go to school.",
+        "es": "Anna y Péter viven en Debrecen, y sus hijos ya van a la escuela."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f05",
+      "kind": "form",
+      "verb": "autó",
+      "person": "én (több)",
+      "answer": "autóim",
+      "accept": [
+        "az autóim"
+      ],
+      "table": "poss-pl-magan"
+    },
+    {
+      "id": "birtok-tobbes-c06",
+      "sentence": "Anna és Péter egy kis lakásban laknak, és a ___ a belvárosban van.",
+      "options": [
+        "lakásuk",
+        "lakásaik",
+        "lakásunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna and Péter share one flat (egy kis lakásban, and van is singular): one thing, \"their\" = lakásuk, without the -i-.",
+        "es": "Anna y Péter comparten un piso (egy kis lakásban, y van es singular): una cosa, «de ellos» = lakásuk, sin la -i-."
+      },
+      "wrong": {
+        "lakásaik": {
+          "en": "lakásaik is \"their flats\" (several); egy kis lakásban says one flat, and van is singular.",
+          "es": "lakásaik es «sus pisos» (varios); egy kis lakásban dice un piso, y van es singular."
+        },
+        "lakásunk": {
+          "en": "lakásunk is \"our flat\"; the owners are Anna and Péter, not \"we\".",
+          "es": "lakásunk es «nuestro piso»; los dueños son Anna y Péter, no «nosotros»."
+        }
+      },
+      "examples": [
+        "Az autójuk piros.",
+        "Az autóik pirosak."
+      ],
+      "tr": {
+        "en": "Anna and Péter live in a small flat, and their flat is downtown.",
+        "es": "Anna y Péter viven en un piso pequeño, y su piso está en el centro."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f06",
+      "kind": "form",
+      "verb": "kutya",
+      "person": "te (több)",
+      "answer": "kutyáid",
+      "accept": [
+        "a kutyáid"
+      ],
+      "table": "poss-pl-magan"
+    },
+    {
+      "id": "birtok-tobbes-w02",
+      "kind": "why",
+      "es": "Két testvérem van.",
+      "target": "testvérem",
+      "tr": {
+        "en": "I have two brothers or sisters.",
+        "es": "Tengo dos hermanos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Several things owned: the -i- of several, testvéreim",
+            "es": "Varias cosas poseídas: la -i- de varios, testvéreim"
+          },
+          "wrong": {
+            "en": "With this rule the form would be testvéreim, which is right with the article (a testvéreim) but not after a number.",
+            "es": "Con esta regla la forma sería testvéreim, que es correcta con el artículo (a testvéreim) pero no tras un número."
+          }
+        },
+        {
+          "text": {
+            "en": "After a number the thing owned stays single",
+            "es": "Tras un número la cosa poseída queda en singular"
+          }
+        },
+        {
+          "text": {
+            "en": "3rd person: his or her brother or sister",
+            "es": "3.ª persona: su hermano o hermana"
+          },
+          "wrong": {
+            "en": "With this rule the form would be testvére; the ending -m is the one for I.",
+            "es": "Con esta regla la forma sería testvére; la terminación -m es la de «yo»."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "birtok-tobbes-c07",
+      "sentence": "Nekem csak két ___ van, de Péternek öt.",
+      "options": [
+        "testvérem",
+        "testvéreim",
+        "testvérek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After a number the thing owned stays single, with the ending of the owner (I): két testvérem. The number already says \"several\".",
+        "es": "Tras un número la cosa poseída queda en singular, con la terminación del dueño (yo): két testvérem. El número ya dice «varios»."
+      },
+      "wrong": {
+        "testvéreim": {
+          "en": "testvéreim is right with the article (a testvéreim), but after két the singular form is used.",
+          "es": "testvéreim es correcta con el artículo (a testvéreim), pero tras két se usa la forma en singular."
+        },
+        "testvérek": {
+          "en": "testvérek has no ending for \"my\"; with van the thing owned needs the ending of the owner: testvérem.",
+          "es": "testvérek no lleva la terminación de «mi»; con van la cosa poseída necesita la terminación del dueño: testvérem."
+        }
+      },
+      "examples": [
+        "Három testvérem van.",
+        "Neki négy gyereke van."
+      ],
+      "tr": {
+        "en": "I have only two brothers or sisters, but Péter has five.",
+        "es": "Yo solo tengo dos hermanos, pero Péter tiene cinco."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f07",
+      "kind": "form",
+      "verb": "cipő",
+      "person": "ti (több)",
+      "answer": "cipőitek",
+      "accept": [
+        "a cipőitek"
+      ],
+      "table": "poss-pl-magan"
+    },
+    {
+      "id": "birtok-tobbes-c08",
+      "sentence": "Budapesten sok ___ van, mert ott születtem.",
+      "options": [
+        "barátom",
+        "barátaim",
+        "barátunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sok is a quantity word, like a number: the thing owned stays single. I am the owner (-m): sok barátom van.",
+        "es": "sok es una palabra de cantidad, como un número: la cosa poseída queda en singular. Yo soy el dueño (-m): sok barátom van."
+      },
+      "wrong": {
+        "barátaim": {
+          "en": "barátaim is right with the article (a barátaim), but after sok the singular is used.",
+          "es": "barátaim es correcta con el artículo (a barátaim), pero tras sok se usa el singular."
+        },
+        "barátunk": {
+          "en": "barátunk is \"our friend\"; ott születtem says I was born there, so I am the owner.",
+          "es": "barátunk es «nuestro amigo»; ott születtem dice que yo nací allí, así que yo soy el dueño."
+        }
+      },
+      "examples": [
+        "Sok könyvem van.",
+        "Kevés ötletünk van."
+      ],
+      "tr": {
+        "en": "I have many friends in Budapest, because I was born there.",
+        "es": "Tengo muchos amigos en Budapest, porque nací allí."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f08",
+      "kind": "form",
+      "verb": "szülő",
+      "person": "én (több)",
+      "answer": "szüleim",
+      "accept": [
+        "a szüleim"
+      ],
+      "table": "poss-szulo"
+    },
+    {
+      "id": "birtok-tobbes-c09",
+      "sentence": "Neki sajnos nincsenek ___ Mexikóvárosban.",
+      "options": [
+        "barátai",
+        "barátja",
+        "barátaim"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "nincsenek is plural (no friends: several things); the owner is neki, 3rd person: barátai.",
+        "es": "nincsenek es plural (ningún amigo: varias cosas); el dueño es neki, 3.ª persona: barátai."
+      },
+      "wrong": {
+        "barátja": {
+          "en": "barátja is one friend; it goes with nincs (Neki nincs barátja), not with nincsenek.",
+          "es": "barátja es un amigo; va con nincs (Neki nincs barátja), no con nincsenek."
+        },
+        "barátaim": {
+          "en": "barátaim is \"my friends\"; neki points to someone else.",
+          "es": "barátaim es «mis amigos»; neki apunta a otra persona."
+        }
+      },
+      "examples": [
+        "Nekem vannak barátaim Debrecenben.",
+        "Nekünk nincsenek terveink."
+      ],
+      "tr": {
+        "en": "Unfortunately he or she has no friends in Mexico City.",
+        "es": "Por desgracia él o ella no tiene amigos en la Ciudad de México."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f09",
+      "kind": "form",
+      "verb": "testvér",
+      "person": "ő (több)",
+      "answer": "testvérei",
+      "accept": [
+        "a testvérei"
+      ],
+      "table": "poss-szulo"
+    },
+    {
+      "id": "birtok-tobbes-w03",
+      "kind": "why",
+      "es": "Péter könyvei az asztalon vannak.",
+      "target": "könyvei",
+      "tr": {
+        "en": "Péter's books are on the table.",
+        "es": "Los libros de Péter están sobre la mesa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "One thing owned by one person: könyve",
+            "es": "Una cosa de una persona: könyve"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Péter könyve az asztalon van (one book).",
+            "es": "Con esta regla la frase sería Péter könyve az asztalon van (un libro)."
+          }
+        },
+        {
+          "text": {
+            "en": "Several owners: the \"they\" ending, könyveik",
+            "es": "Varios dueños: la terminación de «ellos», könyveik"
+          },
+          "wrong": {
+            "en": "With this rule it would be a könyveik (their books); Péter is one person, so only the -i- is added.",
+            "es": "Con esta regla sería a könyveik (sus libros de ellos); Péter es una persona, así que solo se añade la -i-."
+          }
+        },
+        {
+          "text": {
+            "en": "One owner, several things: the -i- of several",
+            "es": "Un dueño, varias cosas: la -i- de varios"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "birtok-tobbes-c10",
+      "sentence": "Holnap meghívom a ___ vacsorára.",
+      "options": [
+        "barátaimat",
+        "barátaim",
+        "barátaimot"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The friends are the object, so they take -t. After -im the linking vowel is a (back word): barátaim + at. The object is definite, hence meghívom.",
+        "es": "Los amigos son el objeto, así que llevan -t. Tras -im la vocal de enlace es a (palabra posterior): barátaim + at. El objeto es determinado, de ahí meghívom."
+      },
+      "wrong": {
+        "barátaim": {
+          "en": "barátaim is the subject form (A barátaim jönnek); an object needs -t.",
+          "es": "barátaim es la forma de sujeto (A barátaim jönnek); un objeto necesita -t."
+        },
+        "barátaimot": {
+          "en": "There is no such form: after the ending -im the linking vowel is always a (back words) or e (front words).",
+          "es": "No existe esa forma: tras la terminación -im la vocal de enlace es siempre a (palabras posteriores) o e (anteriores)."
+        }
+      },
+      "examples": [
+        "Szeretem a szüleimet.",
+        "Meglátogatom a testvéreimet."
+      ],
+      "tr": {
+        "en": "Tomorrow I'll invite my friends to dinner.",
+        "es": "Mañana invito a mis amigos a cenar."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f10",
+      "kind": "form",
+      "verb": "egy könyv",
+      "person": "a fiúk",
+      "answer": "a fiúk könyve",
+      "accept": [
+        "fiúk könyve"
+      ],
+      "table": "poss-tulaj-dolog"
+    },
+    {
+      "id": "birtok-tobbes-c11",
+      "sentence": "Szombaton a ___ megyek moziba.",
+      "options": [
+        "barátaimmal",
+        "barátaimval",
+        "barátaimmel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "-val/-vel copies the last consonant: m + val = mmal. barátaim has back vowels, so -mal: barátaimmal.",
+        "es": "-val/-vel copia la última consonante: m + val = mmal. barátaim tiene vocales posteriores, así que -mal: barátaimmal."
+      },
+      "wrong": {
+        "barátaimval": {
+          "en": "The v of -val assimilates after a consonant; after m it becomes m: barátaimmal.",
+          "es": "La v de -val se asimila tras consonante; tras m se vuelve m: barátaimmal."
+        },
+        "barátaimmel": {
+          "en": "-mel is for front words (szüleimmel); barátaim has back vowels (a, á), so it takes -mal.",
+          "es": "-mel es para palabras anteriores (szüleimmel); barátaim tiene vocales posteriores (a, á), así que lleva -mal."
+        }
+      },
+      "examples": [
+        "A szüleimmel megyek moziba.",
+        "A testvéreinkkel vacsorázunk."
+      ],
+      "tr": {
+        "en": "On Saturday I am going to the cinema with my friends.",
+        "es": "El sábado voy al cine con mis amigos."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f11",
+      "kind": "form",
+      "verb": "több könyv",
+      "person": "a tanárok",
+      "answer": "a tanárok könyvei",
+      "accept": [
+        "tanárok könyvei"
+      ],
+      "table": "poss-tulaj-dolog"
+    },
+    {
+      "id": "birtok-tobbes-c12",
+      "sentence": "A testvéreim holnap ___ Mexikóvárosba.",
+      "options": [
+        "jönnek",
+        "jön",
+        "jövök"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A testvéreim is plural (several brothers or sisters), so the verb is 3rd person plural: jönnek.",
+        "es": "A testvéreim es plural (varios hermanos), así que el verbo va en 3.ª persona del plural: jönnek."
+      },
+      "wrong": {
+        "jön": {
+          "en": "jön is 3rd person singular; it would go with A testvérem (one sibling).",
+          "es": "jön es 3.ª persona del singular; iría con A testvérem (un hermano)."
+        },
+        "jövök": {
+          "en": "jövök is \"I come\"; the subject is A testvéreim, they come.",
+          "es": "jövök es «yo vengo»; el sujeto es A testvéreim, ellos vienen."
+        }
+      },
+      "examples": [
+        "A szüleim holnap jönnek.",
+        "A barátaid is jönnek?"
+      ],
+      "tr": {
+        "en": "My brothers and sisters are coming to Mexico City tomorrow.",
+        "es": "Mis hermanos vienen mañana a la Ciudad de México."
+      }
+    },
+    {
+      "id": "birtok-tobbes-f12",
+      "kind": "form",
+      "verb": "szülő",
+      "person": "ők (több)",
+      "answer": "szüleik",
+      "accept": [
+        "a szüleik"
+      ],
+      "table": "poss-szulo"
+    },
+    {
+      "id": "birtok-tobbes-w04",
+      "kind": "why",
+      "es": "A fiúk könyve új.",
+      "target": "könyve",
+      "tr": {
+        "en": "The boys' book is new.",
+        "es": "El libro de los chicos es nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Several books: the -i- of several, könyvei",
+            "es": "Varios libros: la -i- de varios, könyvei"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A fiúk könyvei újak (several books).",
+            "es": "Con esta regla la frase sería A fiúk könyvei újak (varios libros)."
+          }
+        },
+        {
+          "text": {
+            "en": "Several owners, one thing: the thing keeps the 3rd person singular",
+            "es": "Varios dueños, una cosa: la cosa conserva la 3.ª persona del singular"
+          }
+        },
+        {
+          "text": {
+            "en": "One boy, one book: a fiú könyve",
+            "es": "Un chico, un libro: a fiú könyve"
+          },
+          "wrong": {
+            "en": "With this rule the owner would be a fiú (one boy); fiúk with the -k says several boys.",
+            "es": "Con esta regla el dueño sería a fiú (un chico); fiúk con la -k dice varios chicos."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "birtok-tobbes-c13",
+      "sentence": "A tanárok ___ a polcon vannak, a diákok füzetei az asztalon.",
+      "options": [
+        "könyvei",
+        "könyve",
+        "könyveik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "a tanárok is a noun owner (plural). The thing owned has the 3rd person singular ending, and the -i- if there are several books: a tanárok könyvei.",
+        "es": "a tanárok es un dueño nominal (plural). La cosa poseída lleva la terminación de 3.ª persona del singular, y la -i- si hay varios libros: a tanárok könyvei."
+      },
+      "wrong": {
+        "könyve": {
+          "en": "könyve is one book; vannak (plural) and the parallel füzetei show several books.",
+          "es": "könyve es un libro; vannak (plural) y el paralelo füzetei muestran varios libros."
+        },
+        "könyveik": {
+          "en": "-eik is used when \"they\" is only implied (A szüleik...). After a noun owner like a tanárok the thing owned takes the 3rd person singular: könyvei.",
+          "es": "-eik se usa cuando «ellos» solo está implícito (A szüleik...). Tras un dueño nominal como a tanárok la cosa poseída lleva la 3.ª persona del singular: könyvei."
+        }
+      },
+      "examples": [
+        "A diákok füzetei az asztalon vannak.",
+        "A gyerekek szobái nagyok."
+      ],
+      "tr": {
+        "en": "The teachers' books are on the shelf, the students' notebooks on the table.",
+        "es": "Los libros de los profesores están en el estante, los cuadernos de los alumnos sobre la mesa."
+      }
+    },
+    {
+      "id": "birtok-tobbes-c14",
+      "sentence": "Bocsánat, ezek az Ön ___? Itt vannak az asztalon.",
+      "options": [
+        "kulcsai",
+        "kulcsaid",
+        "kulcsaim"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With Ön (formal you) Hungarian uses the 3rd person: Ön + kulcsai. The keys are several, so the -i-.",
+        "es": "Con Ön (usted) el húngaro usa la 3.ª persona: Ön + kulcsai. Las llaves son varias, así que la -i-."
+      },
+      "wrong": {
+        "kulcsaid": {
+          "en": "kulcsaid is \"your keys\" in the informal te form; with Ön the 3rd person ending is used.",
+          "es": "kulcsaid es «tus llaves» en la forma informal te; con Ön se usa la terminación de 3.ª persona."
+        },
+        "kulcsaim": {
+          "en": "kulcsaim is \"my keys\"; the question is about the other person's keys.",
+          "es": "kulcsaim es «mis llaves»; la pregunta es por las llaves de la otra persona."
+        }
+      },
+      "examples": [
+        "Hogy vannak a szülei?",
+        "Önnek nagyon kedves gyerekei vannak."
+      ],
+      "tr": {
+        "en": "Excuse me, are these your keys? They are here on the table.",
+        "es": "Disculpe, ¿son estas sus llaves? Están aquí sobre la mesa."
+      }
+    }
+  ]
+}

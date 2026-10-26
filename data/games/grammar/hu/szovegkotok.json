@@ -1,0 +1,1207 @@
+{
+  "schema": 2,
+  "topic": "szovegkotok",
+  "level": "C1",
+  "title": {
+    "en": "Connecting ideas: ugyanakkor, tehát, vagyis",
+    "es": "Conectar ideas: ugyanakkor, tehát, vagyis"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "At A2 you linked clauses with és, de, mert and ezért. At C1 you also link whole sentences and paragraphs with connectors that say how one idea relates to the next: adding (ráadásul), contrasting (ugyanakkor, ezzel szemben, mindazonáltal), concluding (tehát, következésképpen), restating (vagyis, azaz) and putting in order (egyrészt..., másrészt...; először..., majd..., végül...). They are adverbs, so they do not change the order of the clause. They stand at the start of a sentence or clause, and tehát, ugyanakkor and ráadásul can also sit after the first word. A comma comes before a connector that joins two clauses in one sentence. Spoken Hungarian has its own little words, szóval and hát; in an essay, a report or a letter to an office you write the longer ones instead.",
+        "es": "En A2 uniste cláusulas con és, de, mert y ezért. En C1 también unes oraciones y párrafos enteros con conectores que dicen cómo se relaciona una idea con la siguiente: añadir (ráadásul), contrastar (ugyanakkor, ezzel szemben, mindazonáltal), concluir (tehát, következésképpen), reformular (vagyis, azaz) y ordenar (egyrészt..., másrészt...; először..., majd..., végül...). Son adverbios, así que no cambian el orden de la oración. Van al principio de la oración o de la cláusula, y tehát, ugyanakkor y ráadásul también pueden ir después de la primera palabra. Se pone coma antes de un conector que une dos cláusulas en una misma oración. El húngaro hablado tiene sus propias palabritas, szóval y hát; en un ensayo, un informe o una carta a una oficina se escriben las más largas."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "connectors",
+      "title": {
+        "en": "Connectors in a sentence",
+        "es": "Conectores en una frase"
+      },
+      "header": [
+        {
+          "en": "Connector",
+          "es": "Conector"
+        },
+        {
+          "en": "In a sentence",
+          "es": "En una frase"
+        }
+      ],
+      "rows": [
+        [
+          "tehát",
+          "Nincs jegyünk, tehát nem mehetünk be."
+        ],
+        [
+          "következésképpen",
+          "A költségek emelkedtek, következésképpen az árak is emelkednek."
+        ],
+        [
+          "vagyis",
+          "Holnap szabadnapom van, vagyis nem kell dolgoznom."
+        ],
+        [
+          "azaz",
+          "A kiállítás hétfőtől péntekig tart, azaz öt napig."
+        ],
+        [
+          "ráadásul",
+          "A lakás kicsi, ráadásul nagyon drága."
+        ],
+        [
+          "ugyanakkor",
+          "A főnököm kedves, ugyanakkor nagyon szigorú."
+        ],
+        [
+          "ezzel szemben",
+          "Gábor mindig korán kel. Ezzel szemben Kati csak kilenckor kel fel."
+        ],
+        [
+          "mindazonáltal",
+          "A terv nem tökéletes. Mindazonáltal érdemes megpróbálni."
+        ],
+        [
+          "egyrészt ... másrészt",
+          "Egyrészt jó a fizetés, másrészt messze van az iroda."
+        ],
+        [
+          "először ... majd ... végül",
+          "Először kitöltöd az űrlapot, majd elküldöd, végül várod a választ."
+        ],
+        [
+          "szóval",
+          "Szóval holnap nem dolgozol?"
+        ],
+        [
+          "hát",
+          "Hát, nem tudom, mit mondjak."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Four jobs: add, contrast, conclude, restate",
+        "es": "Cuatro funciones: añadir, contrastar, concluir, reformular"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "ráadásul = on top of that. It adds one more point of the same kind, usually a stronger or a worse one.",
+            "es": "ráadásul = además, encima. Añade otro punto del mismo tipo, normalmente más fuerte o peor."
+          },
+          "examples": [
+            {
+              "es": "A szálloda messze van a központtól, ráadásul nagyon drága.",
+              "tr": {
+                "en": "The hotel is far from the centre and, on top of that, very expensive.",
+                "es": "El hotel está lejos del centro y, encima, es muy caro."
+              }
+            },
+            {
+              "es": "Kati sokat dolgozik, ráadásul este még tanul is.",
+              "tr": {
+                "en": "Kati works a lot and, on top of that, still studies in the evening.",
+                "es": "Kati trabaja mucho y, además, por la noche todavía estudia."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ugyanakkor = at the same time. It adds a second side of the same thing, often the opposite of the first, and it is softer than de.",
+            "es": "ugyanakkor = al mismo tiempo, a la vez. Añade otra cara de la misma cosa, a menudo opuesta a la primera, y es más suave que de."
+          },
+          "examples": [
+            {
+              "es": "Az új munka érdekes, ugyanakkor nagyon nehéz.",
+              "tr": {
+                "en": "The new job is interesting and, at the same time, very difficult.",
+                "es": "El nuevo trabajo es interesante y, a la vez, muy difícil."
+              }
+            },
+            {
+              "es": "A város szép, ugyanakkor zajos.",
+              "tr": {
+                "en": "The city is beautiful and, at the same time, noisy.",
+                "es": "La ciudad es bonita y, a la vez, ruidosa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ezzel szemben = in contrast, whereas. It sets one person, place or time against another one.",
+            "es": "ezzel szemben = en cambio, por el contrario. Opone una persona, un lugar o un momento a otro."
+          },
+          "examples": [
+            {
+              "es": "Debrecenben csendes az éjszaka. Ezzel szemben Budapesten az utca éjszaka is zajos.",
+              "tr": {
+                "en": "In Debrecen the night is quiet. In contrast, in Budapest the street is noisy even at night.",
+                "es": "En Debrecen la noche es tranquila. En cambio, en Budapest la calle es ruidosa incluso de noche."
+              }
+            },
+            {
+              "es": "Péter a nyarat szereti. Anna ezzel szemben a telet szereti.",
+              "tr": {
+                "en": "Péter likes the summer. Anna, in contrast, likes the winter.",
+                "es": "A Péter le gusta el verano. A Anna, en cambio, le gusta el invierno."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mindazonáltal = nevertheless, all the same. You admit a problem and go on anyway. It is formal and mostly written.",
+            "es": "mindazonáltal = no obstante, aun así. Admites un problema y sigues adelante. Es formal y sobre todo escrito."
+          },
+          "examples": [
+            {
+              "es": "Az út hosszú volt. Mindazonáltal érdemes volt elmenni.",
+              "tr": {
+                "en": "The trip was long. Nevertheless, it was worth going.",
+                "es": "El viaje fue largo. Aun así, valió la pena ir."
+              }
+            },
+            {
+              "es": "Az orvos azt mondta, hogy nem veszélyes. Mindazonáltal pár napig pihenned kell.",
+              "tr": {
+                "en": "The doctor said it is not dangerous. Nevertheless, you have to rest for a few days.",
+                "es": "El médico dijo que no es peligroso. No obstante, tienes que descansar unos días."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "tehát = so, therefore (everyday and written). következésképpen = consequently (formal, written): the second part follows from the first.",
+            "es": "tehát = así que, por lo tanto (cotidiano y escrito). következésképpen = en consecuencia (formal, escrito): la segunda parte se sigue de la primera."
+          },
+          "examples": [
+            {
+              "es": "Elromlott a lift, tehát lépcsőn kell mennünk.",
+              "tr": {
+                "en": "The lift is broken, so we have to take the stairs.",
+                "es": "El elevador se descompuso, así que tenemos que ir por las escaleras."
+              }
+            },
+            {
+              "es": "A vonat késett, következésképpen későn érkeztem az irodába.",
+              "tr": {
+                "en": "The train was late, consequently I arrived at the office late.",
+                "es": "El tren se retrasó; en consecuencia, llegué tarde a la oficina."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "vagyis = that is, in other words (everyday and written). azaz = that is, i.e. (more bookish). The second part says the same thing again, in other words.",
+            "es": "vagyis = es decir, o sea (cotidiano y escrito). azaz = esto es (más libresco). La segunda parte dice lo mismo otra vez, con otras palabras."
+          },
+          "examples": [
+            {
+              "es": "Hat hónapja lakom Szegeden, vagyis fél éve.",
+              "tr": {
+                "en": "I have lived in Szeged for six months, that is, for half a year.",
+                "es": "Vivo en Szeged desde hace seis meses, es decir, medio año."
+              }
+            },
+            {
+              "es": "A szerződés januártól decemberig érvényes, azaz egy évig.",
+              "tr": {
+                "en": "The contract is valid from January to December, that is, for a year.",
+                "es": "El contrato es válido de enero a diciembre, es decir, por un año."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Putting ideas in order, and where connectors stand",
+        "es": "Ordenar las ideas, y dónde van los conectores"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "egyrészt..., másrészt... = on the one hand ..., on the other hand .... It lays out two sides of one question. Each half starts its clause, and másrészt follows a comma.",
+            "es": "egyrészt..., másrészt... = por un lado ..., por otro lado .... Presenta los dos lados de una misma cuestión. Cada mitad abre su cláusula, y másrészt va después de una coma."
+          },
+          "examples": [
+            {
+              "es": "Egyrészt szeretem a várost, másrészt hiányzik nekem a természet.",
+              "tr": {
+                "en": "On the one hand I like the city, on the other I miss nature.",
+                "es": "Por un lado me gusta la ciudad, por otro extraño la naturaleza."
+              }
+            },
+            {
+              "es": "Egyrészt jó a fizetés, másrészt sok az utazás.",
+              "tr": {
+                "en": "On the one hand the pay is good, on the other there is a lot of travelling.",
+                "es": "Por un lado el sueldo es bueno, por otro hay muchos viajes."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "először..., majd..., végül... = first, then, finally. They number the steps of a process or of an argument. majd is the written \"then\"; in speech you often hear aztán.",
+            "es": "először..., majd..., végül... = primero, luego, por último. Numeran los pasos de un proceso o de un argumento. majd es el «luego» escrito; en el habla se oye a menudo aztán."
+          },
+          "examples": [
+            {
+              "es": "Először megnézem a térképet, majd megkeresem a szállodát, végül felhívom Annát.",
+              "tr": {
+                "en": "First I look at the map, then I look for the hotel, finally I call Anna.",
+                "es": "Primero miro el mapa, luego busco el hotel, por último llamo a Anna."
+              }
+            },
+            {
+              "es": "Először fizetsz, majd kapsz egy számot, végül várnod kell.",
+              "tr": {
+                "en": "First you pay, then you get a number, finally you have to wait.",
+                "es": "Primero pagas, luego recibes un número, por último tienes que esperar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "tehát, ugyanakkor and ráadásul do not have to open the clause: they can sit after the first word or phrase, and the word order of the clause stays as it was.",
+            "es": "tehát, ugyanakkor y ráadásul no tienen que abrir la cláusula: pueden ir después de la primera palabra o expresión, y el orden de la cláusula no cambia."
+          },
+          "examples": [
+            {
+              "es": "Ez tehát azt jelenti, hogy lépcsőn kell mennünk.",
+              "tr": {
+                "en": "So this means that we have to take the stairs.",
+                "es": "Entonces esto significa que tenemos que ir por las escaleras."
+              }
+            },
+            {
+              "es": "A lakás ráadásul nagyon drága.",
+              "tr": {
+                "en": "The flat is, on top of that, very expensive.",
+                "es": "El departamento, además, es muy caro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Pairs that are easy to confuse",
+        "es": "Parejas fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "ugyanakkor",
+          "b": "ezzel szemben",
+          "note": {
+            "en": "ugyanakkor adds a second side to the same thing (the flat is big, and at the same time dark). ezzel szemben compares two different things (this flat is big, that one is small).",
+            "es": "ugyanakkor añade una segunda cara a la misma cosa (el departamento es grande y, a la vez, oscuro). ezzel szemben compara dos cosas distintas (este departamento es grande, aquel es pequeño)."
+          },
+          "examples": [
+            {
+              "es": "A lakás nagy, ugyanakkor sötét.",
+              "tr": {
+                "en": "The flat is big and, at the same time, dark.",
+                "es": "El departamento es grande y, a la vez, oscuro."
+              }
+            },
+            {
+              "es": "Az első lakás nagy. Ezzel szemben a második kicsi.",
+              "tr": {
+                "en": "The first flat is big. In contrast, the second one is small.",
+                "es": "El primer departamento es grande. En cambio, el segundo es pequeño."
+              }
+            }
+          ]
+        },
+        {
+          "a": "vagyis",
+          "b": "tehát",
+          "note": {
+            "en": "vagyis says the same thing again in other words: the second part equals the first. tehát draws a conclusion: the second part follows from the first.",
+            "es": "vagyis dice lo mismo otra vez con otras palabras: la segunda parte equivale a la primera. tehát saca una conclusión: la segunda parte se sigue de la primera."
+          },
+          "examples": [
+            {
+              "es": "Holnap szabadnapom van, vagyis nem kell dolgoznom.",
+              "tr": {
+                "en": "I have a day off tomorrow, that is, I do not have to work.",
+                "es": "Mañana tengo día libre, es decir, no tengo que trabajar."
+              }
+            },
+            {
+              "es": "Beteg vagyok, tehát otthon maradok.",
+              "tr": {
+                "en": "I am ill, so I am staying at home.",
+                "es": "Estoy enfermo, así que me quedo en casa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "szóval / hát",
+          "b": "tehát / mindazonáltal",
+          "note": {
+            "en": "szóval and hát belong to speech and to messages between friends. In an essay, a report or a letter to an office use tehát, azaz or mindazonáltal. hát has no real translation: it is a pause or a softener, like English \"well\" or Spanish \"pues\".",
+            "es": "szóval y hát son del habla y de los mensajes entre amigos. En un ensayo, un informe o una carta a una oficina usa tehát, azaz o mindazonáltal. hát no tiene una traducción real: es una pausa o un suavizador, como el español «pues» o el inglés «well»."
+          },
+          "examples": [
+            {
+              "es": "Szóval holnap nem dolgozol?",
+              "tr": {
+                "en": "So you are not working tomorrow? (to a friend)",
+                "es": "¿O sea que mañana no trabajas? (a un amigo)"
+              }
+            },
+            {
+              "es": "A projekt késik. Mindazonáltal a költségek nem emelkedtek.",
+              "tr": {
+                "en": "The project is late. Nevertheless, the costs have not risen. (report)",
+                "es": "El proyecto se retrasa. No obstante, los costos no han subido. (informe)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Two traps. First, keep the register: szóval and hát are for speech, következésképpen and mindazonáltal are for writing; swapped, a chat sounds like a contract and an essay sounds like a chat. Second, majd has two jobs. In a list of steps it means \"then\" (Elmentünk a boltba, majd hazamentünk). Before a verb on its own it means \"later, in a while\": Majd felhívlak = I will call you some time.",
+        "es": "Dos trampas. Primero, cuida el registro: szóval y hát son para hablar, következésképpen y mindazonáltal son para escribir; al revés, un chat suena a contrato y un ensayo suena a chat. Segundo, majd tiene dos usos. En una lista de pasos significa «luego» (Elmentünk a boltba, majd hazamentünk). Solo, delante de un verbo, significa «más tarde, en un rato»: Majd felhívlak = Ya te llamo (en algún momento)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Connectors tell the reader how two ideas fit together. «Ráadásul» adds one more point: «A lakás kicsi, ráadásul nagyon drága». «Ugyanakkor» shows a second side of the same thing: «A főnököm kedves, ugyanakkor nagyon szigorú». «Ezzel szemben» sets two different things against each other: «Gábor korán kel. Ezzel szemben Kati későn kel». «Tehát» draws a conclusion, and «vagyis» says the same thing in other words. For the steps of a process use «először», «majd» and «végül». In a chat you say «szóval» and «hát», but in a report you write «tehát» or «mindazonáltal».",
+    "es": "Los conectores le dicen al lector cómo encajan dos ideas. «Ráadásul» añade un punto más: «A lakás kicsi, ráadásul nagyon drága». «Ugyanakkor» muestra otra cara de la misma cosa: «A főnököm kedves, ugyanakkor nagyon szigorú». «Ezzel szemben» opone dos cosas distintas: «Gábor korán kel. Ezzel szemben Kati későn kel». «Tehát» saca una conclusión, y «vagyis» dice lo mismo con otras palabras. Para los pasos de un proceso usa «először», «majd» y «végül». En un chat dices «szóval» y «hát», pero en un informe escribes «tehát» o «mindazonáltal»."
+  },
+  "glossary": [
+    {
+      "word": "ugyanakkor",
+      "gloss": {
+        "en": "at the same time; yet",
+        "es": "al mismo tiempo; a la vez"
+      }
+    },
+    {
+      "word": "mindazonáltal",
+      "gloss": {
+        "en": "nevertheless, all the same",
+        "es": "no obstante, aun así"
+      }
+    },
+    {
+      "word": "következésképpen",
+      "gloss": {
+        "en": "consequently",
+        "es": "en consecuencia"
+      }
+    },
+    {
+      "word": "vagyis",
+      "gloss": {
+        "en": "that is, in other words",
+        "es": "es decir, o sea"
+      }
+    },
+    {
+      "word": "azaz",
+      "gloss": {
+        "en": "that is, i.e. (written)",
+        "es": "esto es, es decir (escrito)"
+      }
+    },
+    {
+      "word": "egyrészt",
+      "gloss": {
+        "en": "on the one hand",
+        "es": "por un lado"
+      }
+    },
+    {
+      "word": "másrészt",
+      "gloss": {
+        "en": "on the other hand",
+        "es": "por otro lado"
+      }
+    },
+    {
+      "word": "majd",
+      "gloss": {
+        "en": "then; later",
+        "es": "luego; más tarde"
+      }
+    },
+    {
+      "word": "szóval",
+      "gloss": {
+        "en": "so, I mean (spoken)",
+        "es": "o sea, así que (hablado)"
+      }
+    },
+    {
+      "word": "hát",
+      "gloss": {
+        "en": "well (spoken filler)",
+        "es": "pues (muletilla hablada)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "szovegkotok-c01",
+      "sentence": "A szálloda messze van a központtól, ___ nagyon drága.",
+      "options": [
+        "vagyis",
+        "ráadásul",
+        "mindazonáltal"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ráadásul adds one more bad point to the first one: far away and, on top of that, expensive.",
+        "es": "ráadásul añade otro punto malo al primero: lejos y, encima, caro."
+      },
+      "wrong": {
+        "vagyis": {
+          "en": "vagyis would say \"in other words\": the second part would have to repeat the first, but being expensive is not another way of saying far away.",
+          "es": "vagyis diría «es decir»: la segunda parte tendría que repetir la primera, pero ser caro no es otra forma de decir que está lejos."
+        },
+        "mindazonáltal": {
+          "en": "mindazonáltal means \"nevertheless\": nothing is admitted and then overruled here; both points are bad.",
+          "es": "mindazonáltal significa «no obstante»: aquí no se admite algo para luego anularlo; los dos puntos son malos."
+        }
+      },
+      "examples": [
+        "Kati sokat dolgozik, ráadásul este még tanul is.",
+        "A lakás kicsi, ráadásul nagyon drága."
+      ],
+      "tr": {
+        "en": "The hotel is far from the centre and, on top of that, very expensive.",
+        "es": "El hotel está lejos del centro y, encima, es muy caro."
+      }
+    },
+    {
+      "id": "szovegkotok-f01",
+      "kind": "form",
+      "verb": "ráadásul / vagyis",
+      "person": "Fáradt vagyok, ___ éhes is.",
+      "answer": "ráadásul",
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-c02",
+      "sentence": "Az új munka nagyon érdekes, ___ elég nehéz is.",
+      "options": [
+        "vagyis",
+        "tehát",
+        "ugyanakkor"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Two sides of one thing at once, one good and one bad: ugyanakkor, \"at the same time\".",
+        "es": "Dos caras de una misma cosa a la vez, una buena y otra mala: ugyanakkor, «al mismo tiempo»."
+      },
+      "wrong": {
+        "vagyis": {
+          "en": "vagyis would say \"in other words\": the second part would have to repeat the first, but being difficult is not another way of saying interesting.",
+          "es": "vagyis diría «es decir»: la segunda parte tendría que repetir la primera, pero ser difícil no es otra forma de decir interesante."
+        },
+        "tehát": {
+          "en": "tehát means \"so\": the job would be difficult because it is interesting, which is not what is said.",
+          "es": "tehát significa «así que»: el trabajo sería difícil porque es interesante, y no es eso lo que se dice."
+        }
+      },
+      "examples": [
+        "A város szép, ugyanakkor zajos.",
+        "A főnököm kedves, ugyanakkor nagyon szigorú."
+      ],
+      "tr": {
+        "en": "The new job is very interesting and, at the same time, rather difficult.",
+        "es": "El nuevo trabajo es muy interesante y, a la vez, bastante difícil."
+      }
+    },
+    {
+      "id": "szovegkotok-f02",
+      "kind": "form",
+      "verb": "tehát / ugyanakkor",
+      "person": "Elromlott a lift, ___ lépcsőn kell mennünk.",
+      "answer": "tehát",
+      "accept": [
+        "ezért",
+        "így",
+        "szóval"
+      ],
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-c03",
+      "sentence": "Gábor mindig korán kel. ___ Kati csak kilenckor kel fel.",
+      "options": [
+        "Ezzel szemben",
+        "Vagyis",
+        "Ráadásul"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Two different people are set against each other: ezzel szemben, \"in contrast to this\".",
+        "es": "Se oponen dos personas distintas: ezzel szemben, «en cambio»."
+      },
+      "wrong": {
+        "Vagyis": {
+          "en": "Vagyis would make Kati's habit a repetition of Gábor's (\"in other words\"); the sentence says the opposite.",
+          "es": "Vagyis haría del hábito de Kati una repetición del de Gábor («es decir»); la frase dice lo contrario."
+        },
+        "Ráadásul": {
+          "en": "Ráadásul would add Kati's late start on top of Gábor's early one, as if it were more of the same.",
+          "es": "Ráadásul sumaría el levantarse tarde de Kati al madrugar de Gábor, como si fuera más de lo mismo."
+        }
+      },
+      "examples": [
+        "Péter a nyarat szereti. Anna ezzel szemben a telet szereti.",
+        "Debrecenben csendes az éjszaka. Ezzel szemben Budapesten az utca éjszaka is zajos."
+      ],
+      "tr": {
+        "en": "Gábor always gets up early. In contrast, Kati only gets up at nine.",
+        "es": "Gábor siempre se levanta temprano. En cambio, Kati se levanta hasta las nueve."
+      }
+    },
+    {
+      "id": "szovegkotok-w01",
+      "kind": "why",
+      "es": "Egyrészt jó a fizetés, másrészt sok az utazás.",
+      "target": "Egyrészt",
+      "tr": {
+        "en": "On the one hand the pay is good, on the other hand there is a lot of travelling.",
+        "es": "Por un lado el sueldo es bueno, por otro hay muchos viajes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A sequence marker: it numbers a first step before majd and végül",
+            "es": "Una marca de secuencia: numera un primer paso antes de majd y végül"
+          },
+          "wrong": {
+            "en": "With this rule the word would be először (Először fizetek, majd...). egyrészt needs its partner másrészt, and the two halves are sides of a question, not steps.",
+            "es": "Con esta regla la palabra sería először (Először fizetek, majd...). egyrészt necesita a su pareja másrészt, y las dos mitades son lados de una cuestión, no pasos."
+          }
+        },
+        {
+          "text": {
+            "en": "The first half of a pair: egyrészt opens one side, másrészt opens the other side of the same question",
+            "es": "La primera mitad de una pareja: egyrészt abre un lado, másrészt abre el otro lado de la misma cuestión"
+          }
+        },
+        {
+          "text": {
+            "en": "A word that restates the previous part in other words",
+            "es": "Una palabra que reformula la parte anterior con otras palabras"
+          },
+          "wrong": {
+            "en": "With this rule the word would be vagyis or azaz; here the second half adds a different point instead of repeating the first.",
+            "es": "Con esta regla la palabra sería vagyis o azaz; aquí la segunda mitad añade un punto distinto en vez de repetir la primera."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "szovegkotok-f03",
+      "kind": "form",
+      "verb": "ugyanakkor / tehát",
+      "person": "A város szép, ___ zajos.",
+      "answer": "ugyanakkor",
+      "table": "connectors",
+      "accept": [
+        "viszont",
+        "de"
+      ]
+    },
+    {
+      "id": "szovegkotok-c04",
+      "sentence": "Az orvos azt mondta, hogy nem veszélyes. ___ pár napig pihenned kell.",
+      "options": [
+        "Egyrészt",
+        "Vagyis",
+        "Mindazonáltal"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "First good news, then an \"all the same\": \"nevertheless, you must rest\". That is mindazonáltal.",
+        "es": "Primero una buena noticia, luego un «aun así»: «no obstante, debes descansar». Eso es mindazonáltal."
+      },
+      "wrong": {
+        "Egyrészt": {
+          "en": "Egyrészt opens a pair (\"on the one hand\") and needs másrészt later; there is no second side here.",
+          "es": "Egyrészt abre una pareja («por un lado») y necesita másrészt después; aquí no hay segundo lado."
+        },
+        "Vagyis": {
+          "en": "Vagyis would present resting as another way of saying \"not dangerous\", which makes no sense.",
+          "es": "Vagyis presentaría el descansar como otra forma de decir «no es peligroso», lo que no tiene sentido."
+        }
+      },
+      "examples": [
+        "Az út hosszú volt. Mindazonáltal érdemes volt elmenni.",
+        "A terv nem tökéletes. Mindazonáltal érdemes megpróbálni."
+      ],
+      "tr": {
+        "en": "The doctor said it is not dangerous. Nevertheless, you have to rest for a few days.",
+        "es": "El médico dijo que no es peligroso. No obstante, tienes que descansar unos días."
+      }
+    },
+    {
+      "id": "szovegkotok-f04",
+      "kind": "form",
+      "verb": "ezzel szemben / vagyis",
+      "person": "Péter a nyarat szereti. Anna ___ a telet szereti.",
+      "answer": "ezzel szemben",
+      "table": "connectors",
+      "accept": [
+        "viszont"
+      ]
+    },
+    {
+      "id": "szovegkotok-c05",
+      "sentence": "Nincs jegyünk, ___ nem mehetünk be a koncertre.",
+      "options": [
+        "ugyanakkor",
+        "tehát",
+        "ezzel szemben"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Having no ticket is the reason; not getting in is the result. tehát introduces the result.",
+        "es": "No tener entrada es la causa; no poder entrar es el resultado. tehát introduce el resultado."
+      },
+      "wrong": {
+        "ugyanakkor": {
+          "en": "ugyanakkor would add a second side of the same thing (\"at the same time\"); here the second part is a consequence.",
+          "es": "ugyanakkor añadiría otra cara de la misma cosa («a la vez»); aquí la segunda parte es una consecuencia."
+        },
+        "ezzel szemben": {
+          "en": "ezzel szemben would set the second part against the first, but not getting in is not the opposite of having no ticket; it follows from it.",
+          "es": "ezzel szemben opondría la segunda parte a la primera, pero no poder entrar no es lo contrario de no tener entrada; se sigue de ella."
+        }
+      },
+      "examples": [
+        "Elromlott a lift, tehát lépcsőn kell mennünk.",
+        "Beteg vagyok, tehát otthon maradok."
+      ],
+      "tr": {
+        "en": "We do not have a ticket, so we cannot go in to the concert.",
+        "es": "No tenemos entrada, así que no podemos entrar al concierto."
+      }
+    },
+    {
+      "id": "szovegkotok-w02",
+      "kind": "why",
+      "es": "Hát, nem tudom, mit mondjak.",
+      "target": "Hát",
+      "tr": {
+        "en": "Well, I do not know what to say.",
+        "es": "Pues, no sé qué decir."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A spoken filler: a hesitation that softens what follows, used in speech and informal messages",
+            "es": "Una muletilla hablada: una duda que suaviza lo que sigue, usada en el habla y en mensajes informales"
+          }
+        },
+        {
+          "text": {
+            "en": "A written connector that sums up an argument",
+            "es": "Un conector escrito que resume un argumento"
+          },
+          "wrong": {
+            "en": "With this rule the word would be tehát or következésképpen; hát concludes nothing, it only gives the speaker a moment to think.",
+            "es": "Con esta regla la palabra sería tehát o következésképpen; hát no concluye nada, solo le da al hablante un momento para pensar."
+          }
+        },
+        {
+          "text": {
+            "en": "A word that contrasts two things",
+            "es": "Una palabra que contrasta dos cosas"
+          },
+          "wrong": {
+            "en": "With this rule the word would be ezzel szemben; nothing is contrasted here, the speaker only hesitates.",
+            "es": "Con esta regla la palabra sería ezzel szemben; aquí no se contrasta nada, el hablante solo duda."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szovegkotok-f05",
+      "kind": "form",
+      "verb": "mindazonáltal / azaz",
+      "person": "Az út hosszú volt. ___ érdemes volt elmenni.",
+      "answer": "Mindazonáltal",
+      "accept": [
+        "mindazonáltal",
+        "Mégis",
+        "mégis",
+        "Azért",
+        "azért"
+      ],
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-c06",
+      "sentence": "A számlát még nem kaptuk meg, ___ nem tudjuk elküldeni a csomagot.",
+      "options": [
+        "mindazonáltal",
+        "következésképpen",
+        "egyrészt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The missing invoice is the reason and the unsent package is the result, in an official written sentence: következésképpen, \"consequently\". It follows a comma between the two clauses.",
+        "es": "La factura que falta es la causa y el paquete sin enviar es el resultado, en una frase oficial y escrita: következésképpen, «en consecuencia». Va tras una coma entre las dos cláusulas."
+      },
+      "wrong": {
+        "mindazonáltal": {
+          "en": "mindazonáltal means \"nevertheless\" and needs something conceded first; here the missing invoice is the reason, not something that gets overruled.",
+          "es": "mindazonáltal significa «no obstante» y necesita algo concedido antes; aquí la factura que falta es la razón, no algo que se anula."
+        },
+        "egyrészt": {
+          "en": "egyrészt opens a pair (\"on the one hand\") and needs másrészt; it cannot state a result.",
+          "es": "egyrészt abre una pareja («por un lado») y necesita másrészt; no puede expresar un resultado."
+        }
+      },
+      "examples": [
+        "A költségek emelkedtek, következésképpen az árak is emelkednek.",
+        "A vonat késett, következésképpen későn érkeztem az irodába."
+      ],
+      "tr": {
+        "en": "We have not received the invoice yet, consequently we cannot send the package.",
+        "es": "Aún no hemos recibido la factura; en consecuencia, no podemos enviar el paquete."
+      }
+    },
+    {
+      "id": "szovegkotok-f06",
+      "kind": "form",
+      "verb": "vagyis / végül",
+      "person": "Egy hete beteg vagyok, ___ hét napja nem dolgozom.",
+      "answer": "vagyis",
+      "accept": [
+        "azaz"
+      ],
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-c07",
+      "sentence": "A vonat tizenkettőkor indul, ___ délben.",
+      "options": [
+        "ezzel szemben",
+        "ráadásul",
+        "vagyis"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Both parts name the same time: twelve o'clock = noon. vagyis restates it in other words.",
+        "es": "Las dos partes nombran la misma hora: las doce = el mediodía. vagyis lo reformula con otras palabras."
+      },
+      "wrong": {
+        "ezzel szemben": {
+          "en": "ezzel szemben would set noon against twelve o'clock, as if they were different times.",
+          "es": "ezzel szemben opondría el mediodía a las doce, como si fueran horas distintas."
+        },
+        "ráadásul": {
+          "en": "ráadásul would add a second departure at noon on top of the one at twelve.",
+          "es": "ráadásul sumaría una segunda salida al mediodía a la de las doce."
+        }
+      },
+      "examples": [
+        "Hat hónapja lakom Szegeden, vagyis fél éve.",
+        "A kiállítás hétfőtől péntekig tart, azaz öt napig."
+      ],
+      "tr": {
+        "en": "The train leaves at twelve o'clock, that is, at noon.",
+        "es": "El tren sale a las doce, es decir, al mediodía."
+      }
+    },
+    {
+      "id": "szovegkotok-c08",
+      "sentence": "___ szeretem a várost, másrészt hiányzik nekem a természet.",
+      "options": [
+        "Először",
+        "Végül",
+        "Egyrészt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The sentence has másrészt (\"on the other hand\"), so the first half must be egyrészt: two sides of one question.",
+        "es": "La frase tiene másrészt («por otro lado»), así que la primera mitad debe ser egyrészt: dos lados de una misma cuestión."
+      },
+      "wrong": {
+        "Először": {
+          "en": "Először means \"first\" and opens a sequence (then, finally); másrészt does not continue a sequence.",
+          "es": "Először significa «primero» y abre una secuencia (luego, por último); másrészt no continúa una secuencia."
+        },
+        "Végül": {
+          "en": "Végül means \"finally\" and closes a sequence; it cannot open the sentence before másrészt.",
+          "es": "Végül significa «por último» y cierra una secuencia; no puede abrir la frase antes de másrészt."
+        }
+      },
+      "examples": [
+        "Egyrészt jó a fizetés, másrészt sok az utazás.",
+        "Egyrészt drága a lakás, másrészt messze van az iroda."
+      ],
+      "tr": {
+        "en": "On the one hand I like the city, on the other I miss nature.",
+        "es": "Por un lado me gusta la ciudad, por otro extraño la naturaleza."
+      }
+    },
+    {
+      "id": "szovegkotok-f07",
+      "kind": "form",
+      "verb": "másrészt / majd",
+      "person": "Egyrészt jó a fizetés, ___ sok az utazás.",
+      "answer": "másrészt",
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-w03",
+      "kind": "why",
+      "es": "A költségek emelkedtek, következésképpen az árak is emelkednek.",
+      "target": "következésképpen",
+      "tr": {
+        "en": "Costs have risen, consequently prices are rising too.",
+        "es": "Los costos han subido; en consecuencia, los precios también suben."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A word that restates the first clause: both clauses mean the same",
+            "es": "Una palabra que reformula la primera cláusula: las dos cláusulas significan lo mismo"
+          },
+          "wrong": {
+            "en": "With this rule the word would be vagyis or azaz; here higher prices are a result of higher costs, not another way of saying it.",
+            "es": "Con esta regla la palabra sería vagyis o azaz; aquí los precios más altos son un resultado de los costos más altos, no otra forma de decirlo."
+          }
+        },
+        {
+          "text": {
+            "en": "A word for the last step of a list",
+            "es": "Una palabra para el último paso de una lista"
+          },
+          "wrong": {
+            "en": "With this rule the word would be végül; there is no list of steps here, only cause and result.",
+            "es": "Con esta regla la palabra sería végül; aquí no hay lista de pasos, solo causa y resultado."
+          }
+        },
+        {
+          "text": {
+            "en": "A formal, written word for a result: the second clause follows from the first",
+            "es": "Una palabra formal y escrita para un resultado: la segunda cláusula se sigue de la primera"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "szovegkotok-c09",
+      "sentence": "Először kitöltöd az űrlapot, ___ elküldöd, végül várod a választ.",
+      "options": [
+        "vagyis",
+        "majd",
+        "ugyanakkor"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A three-step process: először, majd (\"then\"), végül. majd is the middle step.",
+        "es": "Un proceso de tres pasos: először, majd («luego»), végül. majd es el paso del medio."
+      },
+      "wrong": {
+        "vagyis": {
+          "en": "vagyis would say that sending the form is the same as filling it in; they are two different steps.",
+          "es": "vagyis diría que enviar el formulario es lo mismo que llenarlo; son dos pasos distintos."
+        },
+        "ugyanakkor": {
+          "en": "ugyanakkor means \"at the same time\": you cannot fill in and send the form at once, and the sentence counts steps in order.",
+          "es": "ugyanakkor significa «a la vez»: no puedes llenar y enviar el formulario al mismo tiempo, y la frase cuenta pasos en orden."
+        }
+      },
+      "examples": [
+        "Először megnézem a térképet, majd megkeresem a szállodát, végül felhívom Annát.",
+        "Elmentünk a boltba, majd hazamentünk."
+      ],
+      "tr": {
+        "en": "First you fill in the form, then you send it, finally you wait for the answer.",
+        "es": "Primero llenas el formulario, luego lo envías, por último esperas la respuesta."
+      }
+    },
+    {
+      "id": "szovegkotok-f08",
+      "kind": "form",
+      "verb": "majd / másrészt",
+      "person": "Elmentünk a boltba, ___ hazamentünk.",
+      "answer": "majd",
+      "accept": [
+        "aztán"
+      ],
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-c10",
+      "sentence": "Először felhívom Annát, majd megnézem a térképet, ___ elindulok.",
+      "options": [
+        "egyrészt",
+        "végül",
+        "először"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The sequence already has először and majd; the last step is végül.",
+        "es": "La secuencia ya tiene először y majd; el último paso es végül."
+      },
+      "wrong": {
+        "egyrészt": {
+          "en": "egyrészt belongs to the pair egyrészt ... másrészt, not to a list of steps.",
+          "es": "egyrészt pertenece a la pareja egyrészt ... másrészt, no a una lista de pasos."
+        },
+        "először": {
+          "en": "A second először would say \"first\" again; the third step has to say \"finally\".",
+          "es": "Un segundo először diría «primero» otra vez; el tercer paso tiene que decir «por último»."
+        }
+      },
+      "examples": [
+        "Először fizetsz, majd kapsz egy számot, végül várnod kell.",
+        "Először kitöltöd az űrlapot, majd elküldöd, végül várod a választ."
+      ],
+      "tr": {
+        "en": "First I call Anna, then I look at the map, finally I set off.",
+        "es": "Primero llamo a Anna, luego miro el mapa, por último me pongo en camino."
+      }
+    },
+    {
+      "id": "szovegkotok-f09",
+      "kind": "form",
+      "verb": "először / végül",
+      "person": "___ megnézem a térképet, majd felhívom Annát.",
+      "answer": "Először",
+      "accept": [
+        "először"
+      ],
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-c11",
+      "sentence": "___ holnap nem dolgozol? Elmehetünk együtt moziba.",
+      "options": [
+        "Mindazonáltal",
+        "Szóval",
+        "Egyrészt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A friend asks to be sure he understood: szóval, the everyday \"so\". It belongs to speech.",
+        "es": "Un amigo pregunta para confirmar que entendió: szóval, el «o sea» cotidiano. Es del habla."
+      },
+      "wrong": {
+        "Mindazonáltal": {
+          "en": "Mindazonáltal means \"nevertheless\" and needs something conceded before it; here the question only checks what was said.",
+          "es": "Mindazonáltal significa «no obstante» y necesita algo concedido antes; aquí la pregunta solo confirma lo dicho."
+        },
+        "Egyrészt": {
+          "en": "Egyrészt opens a pair with másrészt; there is no second side in this question.",
+          "es": "Egyrészt abre una pareja con másrészt; en esta pregunta no hay segundo lado."
+        }
+      },
+      "examples": [
+        "Szóval holnap nem dolgozol?",
+        "Szóval nem jössz velünk?"
+      ],
+      "tr": {
+        "en": "So you are not working tomorrow? We can go to the cinema together.",
+        "es": "¿O sea que mañana no trabajas? Podemos ir juntos al cine."
+      }
+    },
+    {
+      "id": "szovegkotok-w04",
+      "kind": "why",
+      "es": "Először kitöltöd az űrlapot, majd elküldöd, végül várod a választ.",
+      "target": "majd",
+      "tr": {
+        "en": "First you fill in the form, then you send it, finally you wait for the answer.",
+        "es": "Primero llenas el formulario, luego lo envías, por último esperas la respuesta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A promise for later: \"I will do it some time\"",
+            "es": "Una promesa para más tarde: «lo haré en algún momento»"
+          },
+          "wrong": {
+            "en": "With this rule majd would stand alone before one verb (Majd felhívlak). Here it sits between először and végül and numbers the second step.",
+            "es": "Con esta regla majd iría solo delante de un verbo (Majd felhívlak). Aquí está entre először y végül y numera el segundo paso."
+          }
+        },
+        {
+          "text": {
+            "en": "The first step of a sequence",
+            "es": "El primer paso de una secuencia"
+          },
+          "wrong": {
+            "en": "With this rule the word would be először; majd comes after the first step, never at the start.",
+            "es": "Con esta regla la palabra sería először; majd viene después del primer paso, nunca al principio."
+          }
+        },
+        {
+          "text": {
+            "en": "The middle step of a sequence: \"then\"",
+            "es": "El paso del medio de una secuencia: «luego»"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "szovegkotok-f10",
+      "kind": "form",
+      "verb": "szóval / mindazonáltal",
+      "person": "___ nem jössz velünk a koncertre?",
+      "answer": "Szóval",
+      "accept": [
+        "szóval"
+      ],
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-c12",
+      "sentence": "Szeretnél nyáron Mexikóba utazni? ___, nem tudom még.",
+      "options": [
+        "Azaz",
+        "Ráadásul",
+        "Hát"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The answer starts with a hesitation, \"well...\": hát, a spoken filler that softens the answer.",
+        "es": "La respuesta empieza con una duda, «pues...»: hát, una muletilla hablada que suaviza la respuesta."
+      },
+      "wrong": {
+        "Azaz": {
+          "en": "Azaz means \"that is\" and restates something; nothing is being restated.",
+          "es": "Azaz significa «es decir» y reformula algo; aquí no se reformula nada."
+        },
+        "Ráadásul": {
+          "en": "Ráadásul adds a further point; the answer has no earlier point to add to.",
+          "es": "Ráadásul añade otro punto; la respuesta no tiene ningún punto previo al que añadir."
+        }
+      },
+      "examples": [
+        "Hát, nem tudom, mit mondjak.",
+        "Hát, ez nehéz kérdés."
+      ],
+      "tr": {
+        "en": "Would you like to travel to Mexico in the summer? Well, I do not know yet.",
+        "es": "¿Te gustaría viajar a México en el verano? Pues, todavía no lo sé."
+      }
+    },
+    {
+      "id": "szovegkotok-f11",
+      "kind": "form",
+      "verb": "hát / azaz",
+      "person": "___, nem tudom, mit mondjak.",
+      "answer": "Hát",
+      "accept": [
+        "hát"
+      ],
+      "table": "connectors"
+    },
+    {
+      "id": "szovegkotok-c13",
+      "sentence": "A szerződés januártól decemberig érvényes, ___ egy évig.",
+      "options": [
+        "végül",
+        "ezzel szemben",
+        "azaz"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "January to December is one year: the second part repeats the first in other words. azaz is the written \"that is\".",
+        "es": "De enero a diciembre es un año: la segunda parte repite la primera con otras palabras. azaz es el «es decir» escrito."
+      },
+      "wrong": {
+        "végül": {
+          "en": "végül means \"finally\" and ends a list of steps; here nothing is in a sequence.",
+          "es": "végül significa «por último» y cierra una lista de pasos; aquí nada va en secuencia."
+        },
+        "ezzel szemben": {
+          "en": "ezzel szemben would set one year against January to December, but they are the same thing.",
+          "es": "ezzel szemben opondría un año a enero-diciembre, pero son lo mismo."
+        }
+      },
+      "examples": [
+        "A kiállítás hétfőtől péntekig tart, azaz öt napig.",
+        "Hat hónapja lakom Szegeden, vagyis fél éve."
+      ],
+      "tr": {
+        "en": "The contract is valid from January to December, that is, for one year.",
+        "es": "El contrato es válido de enero a diciembre, es decir, por un año."
+      }
+    },
+    {
+      "id": "szovegkotok-c14",
+      "sentence": "Ez ___ azt jelenti, hogy holnap nem dolgozol?",
+      "options": [
+        "egyrészt",
+        "ezzel szemben",
+        "tehát"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "tehát (\"so, then\") can stand inside the clause, right after Ez; it sums up what was just said.",
+        "es": "tehát («entonces») puede ir dentro de la oración, justo después de Ez; resume lo que se acaba de decir."
+      },
+      "wrong": {
+        "egyrészt": {
+          "en": "egyrészt inside a clause still needs a másrészt later; this question has none.",
+          "es": "egyrészt dentro de una oración sigue necesitando un másrészt después; esta pregunta no lo tiene."
+        },
+        "ezzel szemben": {
+          "en": "ezzel szemben sets two things against each other; nothing is contrasted in this question.",
+          "es": "ezzel szemben opone dos cosas; en esta pregunta no se contrasta nada."
+        }
+      },
+      "examples": [
+        "Ez tehát azt jelenti, hogy lépcsőn kell mennünk.",
+        "A lakás ráadásul nagyon drága."
+      ],
+      "tr": {
+        "en": "So this means that you are not working tomorrow?",
+        "es": "¿Entonces esto significa que mañana no trabajas?"
+      }
+    },
+    {
+      "id": "szovegkotok-f12",
+      "kind": "form",
+      "verb": "következésképpen / mindazonáltal",
+      "person": "A költségek emelkedtek, ___ az árak is emelkednek.",
+      "answer": "következésképpen",
+      "accept": [
+        "tehát",
+        "ezért",
+        "így"
+      ],
+      "table": "connectors"
+    }
+  ]
+}

@@ -1,0 +1,1308 @@
+{
+  "schema": 2,
+  "topic": "igekoto-elvalas",
+  "level": "B1",
+  "title": {
+    "en": "Prefix position: Hívd fel! Fel kell hívnom",
+    "es": "Posición del prefijo: Hívd fel! Fel kell hívnom"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In a plain statement the prefix (igekötő) stands right in front of the verb, written together: Felhívom Annát. You know that it drops behind the verb after nem, after a question word and after a stressed word. This lesson covers the frames where learners still guess: the imperative (Hívd fel! Ne hívd fel!), verbs with -hat/-het (Felhívhatom? Nem hívhatom fel.), kell with a personal infinitive (Fel kell hívnom.) and akar, tud, szeretne with a plain infinitive (Fel akarom hívni. Fel szeretném hívni. Szeretném felhívni.). English helps a little: call her up and don't call her up also keep the up behind the verb. Spanish has no separable prefix at all (llamar), so treat fel, meg, el, ki as a small extra word whose place you have to learn.",
+        "es": "En una frase afirmativa simple el prefijo (igekötő) va justo delante del verbo, escrito junto: Felhívom Annát. Ya sabes que pasa detrás del verbo después de nem, de una palabra interrogativa y de una palabra enfatizada. Esta lección cubre los casos en que todavía se duda: el imperativo (Hívd fel! Ne hívd fel!), los verbos con -hat/-het (Felhívhatom? Nem hívhatom fel.), kell con infinitivo personal (Fel kell hívnom.) y akar, tud, szeretne con infinitivo simple (Fel akarom hívni. Fel szeretném hívni. Szeretném felhívni.). El inglés ayuda un poco: call her up y don't call her up también dejan el up detrás del verbo. El español no tiene ningún prefijo separable (llamar), así que trata fel, meg, el, ki como una palabrita extra cuyo lugar hay que aprender."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "prefix-imperative",
+      "title": {
+        "en": "Imperative: the prefix drops behind the verb (definite forms)",
+        "es": "Imperativo: el prefijo pasa detrás del verbo (formas definidas)"
+      },
+      "header": [
+        {
+          "en": "Form (! = imperative)",
+          "es": "Forma (! = imperativo)"
+        },
+        {
+          "en": "felhív (to call)",
+          "es": "felhív (llamar)"
+        },
+        {
+          "en": "megnéz (to look at)",
+          "es": "megnéz (mirar, ver)"
+        },
+        {
+          "en": "elolvas (to read)",
+          "es": "elolvas (leer)"
+        },
+        {
+          "en": "kinyit (to open)",
+          "es": "kinyit (abrir)"
+        }
+      ],
+      "rows": [
+        [
+          "te!",
+          "hívd fel",
+          "nézd meg",
+          "olvasd el",
+          "nyisd ki"
+        ],
+        [
+          "ne + te!",
+          "ne hívd fel",
+          "ne nézd meg",
+          "ne olvasd el",
+          "ne nyisd ki"
+        ],
+        [
+          "Ön!",
+          "hívja fel",
+          "nézze meg",
+          "olvassa el",
+          "nyissa ki"
+        ],
+        [
+          "ne + Ön!",
+          "ne hívja fel",
+          "ne nézze meg",
+          "ne olvassa el",
+          "ne nyissa ki"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The imperative: te, ne, Ön, mi",
+        "es": "El imperativo: te, ne, Ön, mi"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "te imperative: the verb first, then the prefix as a separate word, then the rest. With a definite object (az orvost, a levelet) the definite form is used: hívd, nézd, olvasd, nyisd.",
+            "es": "Imperativo de te: primero el verbo, luego el prefijo como palabra separada y después el resto. Con un objeto definido (az orvost, a levelet) se usa la forma definida: hívd, nézd, olvasd, nyisd."
+          },
+          "examples": [
+            {
+              "es": "Hívd fel az orvost!",
+              "tr": {
+                "en": "Call the doctor!",
+                "es": "¡Llama al médico!"
+              }
+            },
+            {
+              "es": "Nézd meg a képet!",
+              "tr": {
+                "en": "Have a look at the picture!",
+                "es": "¡Mira la imagen!"
+              }
+            },
+            {
+              "es": "Olvasd el a levelet!",
+              "tr": {
+                "en": "Read the letter!",
+                "es": "¡Lee la carta!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Negative: ne + imperative, and the prefix still stands behind the verb. Never put the prefix in front: not Ne felhívd, but Ne hívd fel.",
+            "es": "Negativo: ne + imperativo, y el prefijo sigue detrás del verbo. Nunca pongas el prefijo delante: no Ne felhívd, sino Ne hívd fel."
+          },
+          "examples": [
+            {
+              "es": "Ne hívd fel Annát, még alszik!",
+              "tr": {
+                "en": "Don't call Anna, she is still asleep!",
+                "es": "¡No llames a Anna, todavía duerme!"
+              }
+            },
+            {
+              "es": "Ne nyisd ki az ablakot, hideg van!",
+              "tr": {
+                "en": "Don't open the window, it is cold!",
+                "es": "¡No abras la ventana, hace frío!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Without an object the indefinite imperative is used, and the prefix still follows: Gyere be! Ülj le! Menj el a boltba!",
+            "es": "Sin objeto se usa el imperativo indefinido y el prefijo sigue detrás: Gyere be! Ülj le! Menj el a boltba!"
+          },
+          "examples": [
+            {
+              "es": "Gyere be, kérlek!",
+              "tr": {
+                "en": "Come in, please!",
+                "es": "¡Pasa, por favor!"
+              }
+            },
+            {
+              "es": "Ülj le, kérlek!",
+              "tr": {
+                "en": "Sit down, please!",
+                "es": "Siéntate, por favor."
+              }
+            },
+            {
+              "es": "Menj el a boltba, kérlek!",
+              "tr": {
+                "en": "Please go to the shop!",
+                "es": "Por favor, ve a la tienda."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Ön (polite, formal): the same order. You say it to a stranger, an official or an older person: Hívja fel! Nézze meg! Üljön le!",
+            "es": "Ön (cortés, formal): el mismo orden. Se dice a un desconocido, a un funcionario o a una persona mayor: Hívja fel! Nézze meg! Üljön le!"
+          },
+          "examples": [
+            {
+              "es": "Kérem, hívja fel az orvost!",
+              "tr": {
+                "en": "Please call the doctor! (formal)",
+                "es": "Por favor, llame al médico. (formal)"
+              }
+            },
+            {
+              "es": "Kérem, olvassa el a levelet!",
+              "tr": {
+                "en": "Please read the letter. (formal)",
+                "es": "Por favor, lea la carta. (formal)"
+              }
+            },
+            {
+              "es": "Üljön le, kérem!",
+              "tr": {
+                "en": "Please sit down. (formal)",
+                "es": "Siéntese, por favor. (formal)"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mi (let's): the same order again: Hívjuk fel Annát! Nézzük meg a képet! Menjünk el moziba!",
+            "es": "mi (vamos a): otra vez el mismo orden: Hívjuk fel Annát! Nézzük meg a képet! Menjünk el moziba!"
+          },
+          "examples": [
+            {
+              "es": "Hívjuk fel Annát!",
+              "tr": {
+                "en": "Let's call Anna!",
+                "es": "¡Llamemos a Anna!"
+              }
+            },
+            {
+              "es": "Nézzük meg a képet!",
+              "tr": {
+                "en": "Let's have a look at the picture!",
+                "es": "¡Veamos la imagen!"
+              }
+            },
+            {
+              "es": "Menjünk el moziba!",
+              "tr": {
+                "en": "Let's go to the cinema!",
+                "es": "¡Vayamos al cine!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "prefix-modal",
+      "title": {
+        "en": "With helper verbs: where the prefix stands (én, definite object)",
+        "es": "Con verbos auxiliares: dónde va el prefijo (én, objeto definido)"
+      },
+      "header": [
+        {
+          "en": "Frame",
+          "es": "Estructura"
+        },
+        {
+          "en": "felhív (to call)",
+          "es": "felhív (llamar)"
+        },
+        {
+          "en": "megnéz (to look at)",
+          "es": "megnéz (mirar, ver)"
+        },
+        {
+          "en": "elolvas (to read)",
+          "es": "elolvas (leer)"
+        },
+        {
+          "en": "kinyit (to open)",
+          "es": "kinyit (abrir)"
+        }
+      ],
+      "rows": [
+        [
+          "én + -hat/-het",
+          "felhívhatom",
+          "megnézhetem",
+          "elolvashatom",
+          "kinyithatom"
+        ],
+        [
+          "nem + -hat/-het",
+          "nem hívhatom fel",
+          "nem nézhetem meg",
+          "nem olvashatom el",
+          "nem nyithatom ki"
+        ],
+        [
+          "én + kell",
+          "fel kell hívnom",
+          "meg kell néznem",
+          "el kell olvasnom",
+          "ki kell nyitnom"
+        ],
+        [
+          "nem + kell",
+          "nem kell felhívnom",
+          "nem kell megnéznem",
+          "nem kell elolvasnom",
+          "nem kell kinyitnom"
+        ],
+        [
+          "én + akar",
+          "fel akarom hívni",
+          "meg akarom nézni",
+          "el akarom olvasni",
+          "ki akarom nyitni"
+        ],
+        [
+          "nem + akar",
+          "nem akarom felhívni",
+          "nem akarom megnézni",
+          "nem akarom elolvasni",
+          "nem akarom kinyitni"
+        ],
+        [
+          "én + szeretne",
+          "fel szeretném hívni / szeretném felhívni",
+          "meg szeretném nézni / szeretném megnézni",
+          "el szeretném olvasni / szeretném elolvasni",
+          "ki szeretném nyitni / szeretném kinyitni"
+        ],
+        [
+          "nem + szeretne",
+          "nem szeretném felhívni",
+          "nem szeretném megnézni",
+          "nem szeretném elolvasni",
+          "nem szeretném kinyitni"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "-hat/-het, kell, akar, szeretne: one word or two?",
+        "es": "-hat/-het, kell, akar, szeretne: ¿una palabra o dos?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "-hat/-het is a suffix, so verb and prefix stay one word in a plain sentence: felhívhatom. After nem or a question word the verb moves up next to it and the prefix drops behind: nem hívhatom fel, mikor hívhatom fel?",
+            "es": "-hat/-het es un sufijo, así que verbo y prefijo siguen siendo una palabra en una frase simple: felhívhatom. Después de nem o de una palabra interrogativa el verbo sube a su lado y el prefijo pasa detrás: nem hívhatom fel, mikor hívhatom fel?"
+          },
+          "examples": [
+            {
+              "es": "Bemehetek?",
+              "tr": {
+                "en": "May I come in?",
+                "es": "¿Puedo pasar?"
+              }
+            },
+            {
+              "es": "Nem hívhatom fel Annát, mert alszik.",
+              "tr": {
+                "en": "I can't call Anna, because she is asleep.",
+                "es": "No puedo llamar a Anna, porque está dormida."
+              }
+            },
+            {
+              "es": "Mikor nézhetem meg a képet?",
+              "tr": {
+                "en": "When can I have a look at the picture?",
+                "es": "¿Cuándo puedo ver la imagen?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "kell takes no personal ending and stays in the middle. In a plain sentence the prefix of the infinitive jumps in front of kell and is written apart: Fel kell hívnom. After nem, a question word or a stressed word the prefix sticks to the infinitive: Nem kell felhívnom. Mikor kell felhívnom? Neked kell felhívnod. A dative at the start of a plain sentence (Nekem fel kell hívnom) is only the topic and changes nothing; a stressed one (it is YOU who has to call) stands right before kell, and then the prefix sticks to the infinitive. kellene (should) and kellett (had to) work the same way.",
+            "es": "kell no lleva terminación personal y se queda en medio. En una frase simple el prefijo del infinitivo salta delante de kell y se escribe aparte: Fel kell hívnom. Después de nem, de una palabra interrogativa o de una palabra enfatizada el prefijo se pega al infinitivo: Nem kell felhívnom. Mikor kell felhívnom? Neked kell felhívnod. Un dativo al principio de una frase simple (Nekem fel kell hívnom) es solo el tema y no cambia nada; uno enfatizado (eres TÚ quien tiene que llamar) va justo delante de kell, y entonces el prefijo se pega al infinitivo. kellene (debería) y kellett (tuve que) funcionan igual."
+          },
+          "examples": [
+            {
+              "es": "Ma fel kell hívnom a főnököt.",
+              "tr": {
+                "en": "Today I have to call the boss.",
+                "es": "Hoy tengo que llamar al jefe."
+              }
+            },
+            {
+              "es": "Nem kell elolvasnod a levelet.",
+              "tr": {
+                "en": "You don't have to read the letter.",
+                "es": "No tienes que leer la carta."
+              }
+            },
+            {
+              "es": "Mikor kell elmennünk az orvoshoz?",
+              "tr": {
+                "en": "When do we have to go to the doctor?",
+                "es": "¿Cuándo tenemos que ir al médico?"
+              }
+            },
+            {
+              "es": "Fel kellene hívnod a nagymamádat.",
+              "tr": {
+                "en": "You should call your grandmother.",
+                "es": "Deberías llamar a tu abuela."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "akar, tud, fog, szeretne + infinitive (no personal ending on the infinitive): in a plain sentence the prefix stands in front of the helper, written apart: Fel akarom hívni. After nem it goes onto the infinitive: Nem akarom felhívni. You know this pattern from the A2 lesson on prefix word order; here the helper is also definite (akarom, tudom) because the object is definite.",
+            "es": "akar, tud, fog, szeretne + infinitivo (sin terminación personal en el infinitivo): en una frase simple el prefijo va delante del auxiliar, escrito aparte: Fel akarom hívni. Después de nem pasa al infinitivo: Nem akarom felhívni. Conoces este patrón de la lección A2 sobre el orden del prefijo; aquí el auxiliar también es definido (akarom, tudom) porque el objeto es definido."
+          },
+          "examples": [
+            {
+              "es": "Fel akarom hívni a főnököt.",
+              "tr": {
+                "en": "I want to call the boss.",
+                "es": "Quiero llamar al jefe."
+              }
+            },
+            {
+              "es": "Nem tudom megnézni a képet.",
+              "tr": {
+                "en": "I can't look at the picture.",
+                "es": "No puedo ver la imagen."
+              }
+            },
+            {
+              "es": "Ki fogom nyitni az ablakot.",
+              "tr": {
+                "en": "I will open the window.",
+                "es": "Voy a abrir la ventana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "szeretne (would like) works like akar and takes a plain infinitive. In a plain sentence the prefix may climb in front of it and be written apart: Fel szeretném hívni Annát. The order with the prefix glued to the infinitive, Szeretném felhívni Annát, is just as standard; both are common. After nem, a question word or a stressed word only the glued order is possible: Nem szeretném felhívni. Careful: words like kell, lehet, szabad and muszáj give the infinitive a personal ending; szeretne does not, so never Szeretném felhívnom.",
+            "es": "szeretne (querría) funciona como akar y lleva un infinitivo simple. En una frase simple el prefijo puede subir delante de él y escribirse aparte: Fel szeretném hívni Annát. El orden con el prefijo pegado al infinitivo, Szeretném felhívni Annát, es igual de correcto; los dos son frecuentes. Después de nem, de una palabra interrogativa o de una palabra enfatizada solo es posible el orden pegado: Nem szeretném felhívni. Ojo: palabras como kell, lehet, szabad y muszáj dan al infinitivo una terminación personal; szeretne no, así que nunca Szeretném felhívnom."
+          },
+          "examples": [
+            {
+              "es": "Fel szeretném hívni a nagymamámat.",
+              "tr": {
+                "en": "I would like to call my grandmother.",
+                "es": "Quisiera llamar a mi abuela."
+              }
+            },
+            {
+              "es": "Szeretném felhívni a nagymamámat.",
+              "tr": {
+                "en": "I would like to call my grandmother.",
+                "es": "Quisiera llamar a mi abuela."
+              }
+            },
+            {
+              "es": "Szeretnék bemenni az irodába.",
+              "tr": {
+                "en": "I would like to go into the office.",
+                "es": "Quisiera entrar a la oficina."
+              }
+            },
+            {
+              "es": "Nem szeretném elolvasni a levelet.",
+              "tr": {
+                "en": "I would rather not read the letter.",
+                "es": "Preferiría no leer la carta."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fácil de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Nem hívhatom fel.",
+          "b": "Nem kell felhívnom.",
+          "note": {
+            "en": "Same start, different structure. -hat/-het belongs to the verb, so after nem the prefix drops behind it: nem hívhatom fel (I may not, I cannot). With kell the prefix sticks to the infinitive: nem kell felhívnom (I do not have to).",
+            "es": "Mismo comienzo, distinta estructura. -hat/-het forma parte del verbo, así que después de nem el prefijo pasa detrás: nem hívhatom fel (no puedo, no se me permite). Con kell el prefijo se pega al infinitivo: nem kell felhívnom (no tengo que)."
+          },
+          "examples": [
+            {
+              "es": "Nem nézhetem meg a képet, mert még nincs kész.",
+              "tr": {
+                "en": "I can't look at the picture, because it is not ready yet.",
+                "es": "No puedo ver la imagen, porque todavía no está lista."
+              }
+            },
+            {
+              "es": "Nem kell megnéznem a képet, már láttam.",
+              "tr": {
+                "en": "I don't have to look at the picture, I have already seen it.",
+                "es": "No tengo que ver la imagen, ya la vi."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ne hívd fel!",
+          "b": "Nem kell felhívnod.",
+          "note": {
+            "en": "ne is a ban or a warning: do not. nem kell only says there is no need; you may still do it.",
+            "es": "ne es una prohibición o una advertencia: no lo hagas. nem kell solo dice que no hace falta; igual puedes hacerlo."
+          },
+          "examples": [
+            {
+              "es": "Ne hívd fel Annát, még alszik!",
+              "tr": {
+                "en": "Don't call Anna, she is still asleep!",
+                "es": "¡No llames a Anna, todavía duerme!"
+              }
+            },
+            {
+              "es": "Nem kell felhívnod Annát, holnap itt lesz.",
+              "tr": {
+                "en": "You don't need to call Anna, she will be here tomorrow.",
+                "es": "No hace falta que llames a Anna, mañana estará aquí."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Fel akarom hívni.",
+          "b": "Szeretném felhívni.",
+          "note": {
+            "en": "akar says what you want, directly. szeretne is softer and more polite. With akar the prefix stands in front of it (Fel akarom hívni). With szeretne both orders are standard: Fel szeretném hívni (prefix in front) and Szeretném felhívni (prefix on the infinitive).",
+            "es": "akar dice lo que quieres, de forma directa. szeretne es más suave y cortés. Con akar el prefijo va delante (Fel akarom hívni). Con szeretne los dos órdenes son correctos: Fel szeretném hívni (prefijo delante) y Szeretném felhívni (prefijo en el infinitivo)."
+          },
+          "examples": [
+            {
+              "es": "Fel akarom hívni a főnököt még ma.",
+              "tr": {
+                "en": "I want to call the boss today.",
+                "es": "Quiero llamar al jefe hoy mismo."
+              }
+            },
+            {
+              "es": "Szeretném felhívni a főnököt még ma.",
+              "tr": {
+                "en": "I would like to call the boss today.",
+                "es": "Quisiera llamar al jefe hoy mismo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Hívd fel Annát!",
+          "b": "Fel kell hívni Annát.",
+          "note": {
+            "en": "The imperative speaks to one person you address. Fel kell hívni (plain infinitive, no ending) is a general rule: whoever it may be, Anna has to be called. The prefix is in front of kell in both a personal and a general kell sentence.",
+            "es": "El imperativo se dirige a una persona concreta. Fel kell hívni (infinitivo simple, sin terminación) es una regla general: sea quien sea, hay que llamar a Anna. El prefijo va delante de kell tanto en la frase con persona como en la general."
+          },
+          "examples": [
+            {
+              "es": "Hívd fel az orvost, Kati beteg!",
+              "tr": {
+                "en": "Call the doctor, Kati is ill!",
+                "es": "¡Llama al médico, Kati está enferma!"
+              }
+            },
+            {
+              "es": "Fel kell hívni az orvost, ha Kati beteg.",
+              "tr": {
+                "en": "The doctor has to be called if Kati is ill.",
+                "es": "Hay que llamar al médico si Kati está enferma."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) A normal imperative never keeps the prefix in front of the verb: Hívd fel! (not Felhívd), Ne menj el! (not Ne elmenj). Only a sharp warning puts the prefix first and ne after it: Ki ne nyisd! (2) After nem the prefix sticks to the infinitive: Nem kell felhívnom (not Nem kell fel hívnom). (3) In Fel kell hívnom the prefix is a separate word in front of kell, never glued to it. (4) After szeretne the infinitive has no personal ending, and the prefix may climb or stay: Fel szeretném hívni, Szeretném felhívni (never Szeretném felhívnom). Register: te imperatives (Hívd fel!) are for friends and family; Ön imperatives (Hívja fel!) are for strangers, officials and older people, and Kérem, hívja fel... is polite in an office or a shop.",
+        "es": "Trampas clásicas: (1) Un imperativo normal nunca deja el prefijo delante del verbo: Hívd fel! (no Felhívd), Ne menj el! (no Ne elmenj). Solo una advertencia fuerte pone el prefijo primero y ne después: Ki ne nyisd! (2) Después de nem el prefijo se pega al infinitivo: Nem kell felhívnom (no Nem kell fel hívnom). (3) En Fel kell hívnom el prefijo es una palabra aparte delante de kell, nunca pegada a él. (4) Después de szeretne el infinitivo no lleva terminación personal, y el prefijo puede subir o quedarse: Fel szeretném hívni, Szeretném felhívni (nunca Szeretném felhívnom). Registro: los imperativos de te (Hívd fel!) son para amigos y familia; los de Ön (Hívja fel!) son para desconocidos, funcionarios y personas mayores, y Kérem, hívja fel... es cortés en una oficina o una tienda."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In a plain Hungarian sentence the prefix stands in front of the verb: «Felhívom Annát». In an imperative it drops behind the verb: «Hívd fel Annát!» and «Ne hívd fel!». With «kell» the prefix jumps in front of kell: «Fel kell hívnom Annát». After nem it sticks to the infinitive: «Nem kell felhívnom». With a verb that has hat or het, the prefix drops behind after nem: «Nem hívhatom fel». With «szeretném» both orders are fine: «Fel szeretném hívni Annát» and «Szeretném felhívni Annát».",
+    "es": "En una frase húngara simple el prefijo va delante del verbo: «Felhívom Annát». En el imperativo pasa detrás del verbo: «Hívd fel Annát!» y «Ne hívd fel!». Con «kell» el prefijo salta delante de kell: «Fel kell hívnom Annát». Después de nem se pega al infinitivo: «Nem kell felhívnom». Con un verbo que lleva hat o het, el prefijo pasa detrás después de nem: «Nem hívhatom fel». Con «szeretném» valen los dos órdenes: «Fel szeretném hívni Annát» y «Szeretném felhívni Annát»."
+  },
+  "glossary": [
+    {
+      "word": "felhív",
+      "gloss": {
+        "en": "to call (by phone)",
+        "es": "llamar (por teléfono)"
+      }
+    },
+    {
+      "word": "elolvas",
+      "gloss": {
+        "en": "to read (through)",
+        "es": "leer (de principio a fin)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "igekoto-elvalas-c01",
+      "sentence": "Kati nagyon beteg, kérlek, ___ az orvost most!",
+      "options": [
+        "hívd fel",
+        "ne hívd fel",
+        "hívja fel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kérlek shows that you talk to a friend (te), and Kati is ill, so the call is wanted. The imperative is definite because az orvost is definite, and the prefix fel drops behind the verb: hívd fel.",
+        "es": "Kérlek muestra que hablas con un amigo (te), y Kati está enferma, así que se pide la llamada. El imperativo es definido porque az orvost es definido, y el prefijo fel pasa detrás del verbo: hívd fel."
+      },
+      "wrong": {
+        "ne hívd fel": {
+          "en": "ne hívd fel is the negative imperative, \"do not call the doctor\". Kati is ill, so the sentence asks for the call, not against it.",
+          "es": "ne hívd fel es el imperativo negativo, «no llames al médico». Kati está enferma, así que la frase pide la llamada, no lo contrario."
+        },
+        "hívja fel": {
+          "en": "hívja fel is the polite Ön imperative, for a stranger or an official. Kérlek shows that you are speaking to a friend, who gets hívd fel.",
+          "es": "hívja fel es el imperativo cortés de Ön, para un desconocido o un funcionario. Kérlek muestra que hablas con un amigo, que recibe hívd fel."
+        }
+      },
+      "examples": [
+        "Hívd fel Katit!",
+        "Kérlek, nézd meg a képet!"
+      ],
+      "tr": {
+        "en": "Kati is very ill, please call the doctor now!",
+        "es": "Kati está muy enferma, ¡por favor, llama al médico ahora!"
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f01",
+      "kind": "form",
+      "verb": "felhív",
+      "person": "te!",
+      "answer": "hívd fel",
+      "accept": [
+        "hívd fel!",
+        "Hívd fel!"
+      ],
+      "table": "prefix-imperative"
+    },
+    {
+      "id": "igekoto-elvalas-c02",
+      "sentence": "Itt van a levél, ___ most, aztán beszélünk.",
+      "options": [
+        "olvasd el",
+        "elolvasd",
+        "el olvasd"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In an imperative the prefix drops behind the verb and is written apart: olvasd el. The object (a levél) is definite, so the verb takes the definite form olvasd.",
+        "es": "En un imperativo el prefijo pasa detrás del verbo y se escribe aparte: olvasd el. El objeto (a levél) es definido, así que el verbo toma la forma definida olvasd."
+      },
+      "wrong": {
+        "elolvasd": {
+          "en": "elolvasd is not a Hungarian form. An imperative never keeps the prefix in front of it, so el cannot be glued on.",
+          "es": "elolvasd no existe en húngaro. Un imperativo nunca deja el prefijo delante, así que el no puede ir pegado."
+        },
+        "el olvasd": {
+          "en": "el olvasd puts the prefix apart but still in front. In every imperative it has to come after the verb: olvasd el.",
+          "es": "el olvasd pone el prefijo aparte pero todavía delante. En todo imperativo tiene que ir después del verbo: olvasd el."
+        }
+      },
+      "examples": [
+        "Olvasd el a levelet!",
+        "Nézd meg a képet!"
+      ],
+      "tr": {
+        "en": "Here is the letter, read it now, then we will talk.",
+        "es": "Aquí está la carta, léela ahora y luego hablamos."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f02",
+      "kind": "form",
+      "verb": "megnéz",
+      "person": "ne + te!",
+      "answer": "ne nézd meg",
+      "accept": [
+        "ne nézd meg!",
+        "Ne nézd meg!"
+      ],
+      "table": "prefix-imperative"
+    },
+    {
+      "id": "igekoto-elvalas-c03",
+      "sentence": "Hideg van, ne ___ az ablakot!",
+      "options": [
+        "nyisd ki",
+        "kinyisd",
+        "nyiss ki"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After ne the imperative works as usual: the verb first, the prefix behind it. Az ablakot is definite, so the definite form nyisd is needed: ne nyisd ki.",
+        "es": "Después de ne el imperativo funciona como siempre: primero el verbo y detrás el prefijo. Az ablakot es definido, así que hace falta la forma definida nyisd: ne nyisd ki."
+      },
+      "wrong": {
+        "kinyisd": {
+          "en": "kinyisd has the prefix glued in front. In an imperative the prefix follows the verb (nyisd ki), and after ne a glued form such as ne kinyisd is wrong.",
+          "es": "kinyisd lleva el prefijo pegado delante. En el imperativo el prefijo va detrás del verbo (nyisd ki), y después de ne una forma pegada como ne kinyisd es incorrecta."
+        },
+        "nyiss ki": {
+          "en": "nyiss ki is the indefinite imperative (for an object like egy ablakot, or no object). Az ablakot is definite, so you need nyisd.",
+          "es": "nyiss ki es el imperativo indefinido (para un objeto como egy ablakot, o sin objeto). Az ablakot es definido, así que necesitas nyisd."
+        }
+      },
+      "examples": [
+        "Ne nyisd ki az ajtót!",
+        "Ne olvasd el a levelet!"
+      ],
+      "tr": {
+        "en": "It is cold, don't open the window!",
+        "es": "Hace frío, ¡no abras la ventana!"
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f03",
+      "kind": "form",
+      "verb": "elolvas",
+      "person": "Ön!",
+      "answer": "olvassa el",
+      "accept": [
+        "olvassa el!",
+        "Olvassa el!"
+      ],
+      "table": "prefix-imperative"
+    },
+    {
+      "id": "igekoto-elvalas-c04",
+      "sentence": "Jó napot! Kérem, ___ le, az orvos mindjárt jön.",
+      "options": [
+        "üljön",
+        "ülj",
+        "ülnek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Jó napot and kérem make the situation formal: you speak to one patient with Ön. The polite imperative is üljön le, the prefix le behind the verb.",
+        "es": "Jó napot y kérem hacen la situación formal: hablas con un paciente con Ön. El imperativo cortés es üljön le, con el prefijo le detrás del verbo."
+      },
+      "wrong": {
+        "ülj": {
+          "en": "ülj le is the te imperative, for a friend or a child. In a waiting room with kérem the polite Ön form is expected.",
+          "es": "ülj le es el imperativo de te, para un amigo o un niño. En una sala de espera con kérem se espera la forma cortés de Ön."
+        },
+        "ülnek": {
+          "en": "ülnek is the plain present, \"they sit down\", a statement and not an order. A request needs the imperative.",
+          "es": "ülnek es el presente simple, «ellos se sientan», una afirmación y no una orden. Una petición necesita el imperativo."
+        }
+      },
+      "examples": [
+        "Üljön le, kérem!",
+        "Kérem, nyissa ki az ajtót!"
+      ],
+      "tr": {
+        "en": "Good day! Please sit down, the doctor will be here in a moment. (formal)",
+        "es": "¡Buen día! Siéntese, por favor, el médico viene enseguida. (formal)"
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f04",
+      "kind": "form",
+      "verb": "kinyit",
+      "person": "ne + Ön!",
+      "answer": "ne nyissa ki",
+      "accept": [
+        "ne nyissa ki!",
+        "Ne nyissa ki!"
+      ],
+      "table": "prefix-imperative"
+    },
+    {
+      "id": "igekoto-elvalas-c05",
+      "sentence": "Elnézést, ___ az ablakot? Nagyon meleg van itt.",
+      "options": [
+        "kinyithatom",
+        "kinyitom",
+        "kinyitottam"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You ask for permission, so the verb needs -hat/-het. Nothing stands in front of the verb, so the prefix stays in front and the verb is one word: kinyithatom.",
+        "es": "Pides permiso, así que el verbo necesita -hat/-het. Nada va delante del verbo, así que el prefijo se queda delante y el verbo es una sola palabra: kinyithatom."
+      },
+      "wrong": {
+        "kinyitom": {
+          "en": "kinyitom is \"I open it\", a statement about what you do. To ask whether you may, you need the -hat/-het form.",
+          "es": "kinyitom es «lo abro», una afirmación de lo que haces. Para preguntar si puedes, necesitas la forma con -hat/-het."
+        },
+        "kinyitottam": {
+          "en": "kinyitottam is the past, \"I opened it\". The question is about now, and about permission.",
+          "es": "kinyitottam es el pasado, «lo abrí». La pregunta es sobre ahora y sobre un permiso."
+        }
+      },
+      "examples": [
+        "Bemehetek?",
+        "Elolvashatom a levelet?"
+      ],
+      "tr": {
+        "en": "Excuse me, may I open the window? It is very warm here.",
+        "es": "Disculpe, ¿puedo abrir la ventana? Hace mucho calor aquí."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f05",
+      "kind": "form",
+      "verb": "elolvas",
+      "person": "én + -hat/-het",
+      "answer": "elolvashatom",
+      "table": "prefix-modal"
+    },
+    {
+      "id": "igekoto-elvalas-w01",
+      "kind": "why",
+      "es": "Hívd fel az orvost!",
+      "target": "fel",
+      "tr": {
+        "en": "Call the doctor!",
+        "es": "¡Llama al médico!"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "In an imperative the prefix drops behind the verb and is written apart.",
+            "es": "En un imperativo el prefijo pasa detrás del verbo y se escribe aparte."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix stands behind the verb because an object follows it.",
+            "es": "El prefijo va detrás del verbo porque le sigue un objeto."
+          },
+          "wrong": {
+            "en": "With this rule even Felhívom az orvost would become Hívom fel az orvost; but in a plain statement the prefix stays in front: Felhívom az orvost.",
+            "es": "Con esta regla incluso Felhívom az orvost sería Hívom fel az orvost; pero en una frase simple el prefijo se queda delante: Felhívom az orvost."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix drops behind the verb only after ne, not in a positive command.",
+            "es": "El prefijo pasa detrás del verbo solo después de ne, no en una orden positiva."
+          },
+          "wrong": {
+            "en": "With this rule the positive command would be Felhívd az orvost!, which Hungarian does not use; the prefix follows the verb in every imperative, positive or negative.",
+            "es": "Con esta regla la orden positiva sería Felhívd az orvost!, que el húngaro no usa; el prefijo sigue al verbo en todo imperativo, positivo o negativo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igekoto-elvalas-c06",
+      "sentence": "Sajnos ma este nem ___ el, mert dolgoznom kell.",
+      "options": [
+        "mehetek",
+        "elmehetek",
+        "mennem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nem stands right before the verb, so the verb -hat/-het moves up next to it and the prefix drops behind: nem mehetek el. The el is already in the sentence, so only the verb is missing.",
+        "es": "Nem va justo delante del verbo, así que el verbo con -hat/-het sube a su lado y el prefijo pasa detrás: nem mehetek el. El el ya está en la frase, así que solo falta el verbo."
+      },
+      "wrong": {
+        "elmehetek": {
+          "en": "elmehetek is the plain \"I can go\", with the prefix in front. After nem the prefix cannot stay there, and el would be doubled.",
+          "es": "elmehetek es el «puedo ir» simple, con el prefijo delante. Después de nem el prefijo no puede quedarse ahí, y el quedaría duplicado."
+        },
+        "mennem": {
+          "en": "mennem is the infinitive with the ending for I, used with kell (Mennem kell). It does not say \"I can\", so nem mennem el is not a sentence.",
+          "es": "mennem es el infinitivo con la terminación de «yo», que se usa con kell (Mennem kell). No dice «puedo», así que nem mennem el no es una frase."
+        }
+      },
+      "examples": [
+        "Nem mehetek be.",
+        "Nem hívhatom fel Katit."
+      ],
+      "tr": {
+        "en": "Unfortunately I can't go tonight, because I have to work.",
+        "es": "Lamentablemente esta noche no puedo ir, porque tengo que trabajar."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f06",
+      "kind": "form",
+      "verb": "felhív",
+      "person": "nem + -hat/-het",
+      "answer": "nem hívhatom fel",
+      "accept": [
+        "nem hívhatom fel."
+      ],
+      "table": "prefix-modal"
+    },
+    {
+      "id": "igekoto-elvalas-c07",
+      "sentence": "Mikor ___ fel Katit? Reggel még alszik, este dolgozik.",
+      "options": [
+        "hívhatom",
+        "felhívhatom",
+        "hívhatok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mikor is a question word, so it stands right before the verb and the prefix fel drops behind: mikor hívhatom fel. Katit is a definite object (a name), so the definite -om is needed.",
+        "es": "Mikor es una palabra interrogativa, así que va justo delante del verbo y el prefijo fel pasa detrás: mikor hívhatom fel. Katit es un objeto definido (un nombre), así que hace falta el -om definido."
+      },
+      "wrong": {
+        "felhívhatom": {
+          "en": "felhívhatom is the plain \"I may call\". After mikor the prefix cannot stay in front of the verb.",
+          "es": "felhívhatom es el «puedo llamar» simple. Después de mikor el prefijo no puede quedarse delante del verbo."
+        },
+        "hívhatok": {
+          "en": "hívhatok is the indefinite form. Katit is a definite object, so the definite hívhatom is correct.",
+          "es": "hívhatok es la forma indefinida. Katit es un objeto definido, así que lo correcto es hívhatom."
+        }
+      },
+      "examples": [
+        "Mikor nézhetem meg a képet?",
+        "Mikor nyithatom ki az ablakot?"
+      ],
+      "tr": {
+        "en": "When can I call Kati? In the morning she is still asleep, in the evening she works.",
+        "es": "¿Cuándo puedo llamar a Kati? Por la mañana todavía duerme y por la noche trabaja."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f07",
+      "kind": "form",
+      "verb": "megnéz",
+      "person": "én + kell",
+      "answer": "meg kell néznem",
+      "table": "prefix-modal"
+    },
+    {
+      "id": "igekoto-elvalas-w02",
+      "kind": "why",
+      "es": "Nem kell felhívnom Annát.",
+      "target": "felhívnom",
+      "tr": {
+        "en": "I don't have to call Anna.",
+        "es": "No tengo que llamar a Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After nem the prefix sticks to the infinitive, and the infinitive takes the ending for I.",
+            "es": "Después de nem el prefijo se pega al infinitivo, y el infinitivo toma la terminación de «yo»."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix always sticks to the infinitive after kell.",
+            "es": "El prefijo siempre se pega al infinitivo después de kell."
+          },
+          "wrong": {
+            "en": "With this rule a plain statement would be Kell felhívnom Annát; but there the prefix jumps in front of kell: Fel kell hívnom Annát.",
+            "es": "Con esta regla una frase simple sería Kell felhívnom Annát; pero ahí el prefijo salta delante de kell: Fel kell hívnom Annát."
+          }
+        },
+        {
+          "text": {
+            "en": "-nom is the present tense of felhív: I call.",
+            "es": "-nom es el presente de felhív: yo llamo."
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Felhívom Annát, \"I call Anna\"; here -ni is the infinitive and -om only adds the person.",
+            "es": "Con esta regla la frase sería Felhívom Annát, «llamo a Anna»; aquí -ni es el infinitivo y -om solo añade la persona."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igekoto-elvalas-c08",
+      "sentence": "Ma nem ___ Annát, mert tegnap már beszéltünk.",
+      "options": [
+        "kell felhívnom",
+        "fel kell hívnom",
+        "kell hívnom fel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After nem the prefix does not jump in front of kell: it sticks to the infinitive and is written together with it, and the infinitive takes the ending for I: nem kell felhívnom.",
+        "es": "Después de nem el prefijo no salta delante de kell: se pega al infinitivo y se escribe junto con él, y el infinitivo toma la terminación de «yo»: nem kell felhívnom."
+      },
+      "wrong": {
+        "fel kell hívnom": {
+          "en": "fel kell hívnom is the plain \"I have to call\". After nem the prefix cannot stand in front of kell.",
+          "es": "fel kell hívnom es el «tengo que llamar» simple. Después de nem el prefijo no puede ir delante de kell."
+        },
+        "kell hívnom fel": {
+          "en": "kell hívnom fel puts the prefix behind the infinitive, which is never possible. It belongs in front of it, written together: felhívnom.",
+          "es": "kell hívnom fel pone el prefijo detrás del infinitivo, algo que nunca es posible. Va delante de él, escrito junto: felhívnom."
+        }
+      },
+      "examples": [
+        "Nem kell elolvasnom a levelet.",
+        "Nem kell kinyitnod az ablakot."
+      ],
+      "tr": {
+        "en": "Today I don't have to call Anna, because we already talked yesterday.",
+        "es": "Hoy no tengo que llamar a Anna, porque ayer ya hablamos."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f08",
+      "kind": "form",
+      "verb": "kinyit",
+      "person": "nem + kell",
+      "answer": "nem kell kinyitnom",
+      "table": "prefix-modal"
+    },
+    {
+      "id": "igekoto-elvalas-c09",
+      "sentence": "Holnap reggel nekem ___ az orvost, mert Kati még mindig beteg.",
+      "options": [
+        "fel kell hívnom",
+        "fel kell hívnod",
+        "fel kell hívnia"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nekem names me, so the infinitive takes the ending for I: hívnom. In a plain sentence the prefix stands in front of kell: fel kell hívnom.",
+        "es": "Nekem me nombra a mí, así que el infinitivo toma la terminación de «yo»: hívnom. En una frase simple el prefijo va delante de kell: fel kell hívnom."
+      },
+      "wrong": {
+        "fel kell hívnod": {
+          "en": "hívnod is for you (neked). The sentence says nekem, so it is me who has to call.",
+          "es": "hívnod es para ti (neked). La frase dice nekem, así que soy yo quien tiene que llamar."
+        },
+        "fel kell hívnia": {
+          "en": "hívnia is for him or her (neki). The sentence says nekem, so it is me.",
+          "es": "hívnia es para él o ella (neki). La frase dice nekem, así que soy yo."
+        }
+      },
+      "examples": [
+        "Ma fel kell hívnom a főnököt.",
+        "Neked is fel kell hívnod az orvost."
+      ],
+      "tr": {
+        "en": "Tomorrow morning I have to call the doctor, because Kati is still ill.",
+        "es": "Mañana por la mañana tengo que llamar al médico, porque Kati sigue enferma."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f09",
+      "kind": "form",
+      "verb": "elolvas",
+      "person": "én + akar",
+      "answer": "el akarom olvasni",
+      "table": "prefix-modal"
+    },
+    {
+      "id": "igekoto-elvalas-w03",
+      "kind": "why",
+      "es": "Nem hívhatom fel Annát.",
+      "target": "fel",
+      "tr": {
+        "en": "I can't call Anna.",
+        "es": "No puedo llamar a Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Nem stands before the verb; the -hat/-het verb moves up next to it, so the prefix drops behind it.",
+            "es": "Nem va delante del verbo; el verbo con -hat/-het sube a su lado, así que el prefijo pasa detrás."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix always drops behind a verb with -hat/-het.",
+            "es": "El prefijo siempre pasa detrás de un verbo con -hat/-het."
+          },
+          "wrong": {
+            "en": "With this rule the plain sentence would be Hívhatom fel Annát?; but a plain question keeps the prefix in front: Felhívhatom Annát?",
+            "es": "Con esta regla la pregunta simple sería Hívhatom fel Annát?; pero una pregunta simple deja el prefijo delante: Felhívhatom Annát?"
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix drops behind because Annát is a definite object.",
+            "es": "El prefijo pasa detrás porque Annát es un objeto definido."
+          },
+          "wrong": {
+            "en": "With this rule even Felhívom Annát would be Hívom fel Annát; but a definite object does not move the prefix.",
+            "es": "Con esta regla incluso Felhívom Annát sería Hívom fel Annát; pero un objeto definido no mueve el prefijo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igekoto-elvalas-c10",
+      "sentence": "Azt hiszem, nekünk most nem kellene ___ Annát, mert még dolgozik.",
+      "options": [
+        "felhívnunk",
+        "fel hívnunk",
+        "hívnunk fel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nem kellene works like nem kell: the prefix sticks to the infinitive and is written together with it. Nekünk asks for the ending -unk: felhívnunk.",
+        "es": "Nem kellene funciona como nem kell: el prefijo se pega al infinitivo y se escribe junto con él. Nekünk pide la terminación -unk: felhívnunk."
+      },
+      "wrong": {
+        "fel hívnunk": {
+          "en": "fel hívnunk writes the prefix apart. After nem it belongs to the infinitive as one word: felhívnunk.",
+          "es": "fel hívnunk escribe el prefijo aparte. Después de nem pertenece al infinitivo como una sola palabra: felhívnunk."
+        },
+        "hívnunk fel": {
+          "en": "hívnunk fel puts the prefix behind the infinitive, which is never possible. It goes in front, written together.",
+          "es": "hívnunk fel pone el prefijo detrás del infinitivo, algo que nunca es posible. Va delante, escrito junto."
+        }
+      },
+      "examples": [
+        "Nem kellene elmennünk.",
+        "Nem kellene kinyitnod az ablakot."
+      ],
+      "tr": {
+        "en": "I think we should not call Anna now, because she is still working.",
+        "es": "Creo que ahora no deberíamos llamar a Anna, porque todavía está trabajando."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f10",
+      "kind": "form",
+      "verb": "felhív",
+      "person": "nem + akar",
+      "answer": "nem akarom felhívni",
+      "table": "prefix-modal"
+    },
+    {
+      "id": "igekoto-elvalas-c11",
+      "sentence": "Tegnap este fel ___ hívnom a főnököt, mert elromlott a gép.",
+      "options": [
+        "kellett",
+        "kell",
+        "kellene"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tegnap este puts the sentence in the past, and the machine broke down, so it was an obligation: kellett. The prefix fel stands in front of the helper: fel kellett hívnom.",
+        "es": "Tegnap este pone la frase en pasado, y la máquina se descompuso, así que fue una obligación: kellett. El prefijo fel va delante del auxiliar: fel kellett hívnom."
+      },
+      "wrong": {
+        "kell": {
+          "en": "kell is the present, \"I have to\". Tegnap este points to yesterday.",
+          "es": "kell es el presente, «tengo que». Tegnap este apunta a ayer."
+        },
+        "kellene": {
+          "en": "kellene is \"I should\", advice and not a fact. The sentence tells what had to happen because the machine broke down.",
+          "es": "kellene es «debería», un consejo y no un hecho. La frase cuenta lo que tuvo que pasar porque la máquina se descompuso."
+        }
+      },
+      "examples": [
+        "Fel kellett hívnom az orvost.",
+        "Ki kellett nyitnom az ablakot."
+      ],
+      "tr": {
+        "en": "Last night I had to call the boss because the machine broke down.",
+        "es": "Anoche tuve que llamar al jefe porque se descompuso la máquina."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f11",
+      "kind": "form",
+      "verb": "kinyit",
+      "person": "én + szeretne",
+      "answer": "ki szeretném nyitni",
+      "accept": [
+        "szeretném kinyitni"
+      ],
+      "table": "prefix-modal"
+    },
+    {
+      "id": "igekoto-elvalas-c12",
+      "sentence": "Most nem ___ a levelet, mert nincs időm.",
+      "options": [
+        "tudom elolvasni",
+        "el tudom olvasni",
+        "tudom el olvasni"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After nem the prefix goes onto the infinitive, written together: nem tudom elolvasni. The helper tudom is definite because the object (a levelet) is definite.",
+        "es": "Después de nem el prefijo pasa al infinitivo, escrito junto: nem tudom elolvasni. El auxiliar tudom es definido porque el objeto (a levelet) es definido."
+      },
+      "wrong": {
+        "el tudom olvasni": {
+          "en": "el tudom olvasni is the plain \"I can read it\", with the prefix in front of the helper. After nem it cannot stay there.",
+          "es": "el tudom olvasni es el «puedo leerlo» simple, con el prefijo delante del auxiliar. Después de nem no puede quedarse ahí."
+        },
+        "tudom el olvasni": {
+          "en": "tudom el olvasni writes the prefix apart from the infinitive. The prefix and the infinitive are one word after nem: elolvasni.",
+          "es": "tudom el olvasni escribe el prefijo aparte del infinitivo. Después de nem el prefijo y el infinitivo son una sola palabra: elolvasni."
+        }
+      },
+      "examples": [
+        "Nem tudom megnézni a képet.",
+        "Nem tudom kinyitni az ajtót."
+      ],
+      "tr": {
+        "en": "I can't read the letter now, because I have no time.",
+        "es": "Ahora no puedo leer la carta, porque no tengo tiempo."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-f12",
+      "kind": "form",
+      "verb": "megnéz",
+      "person": "nem + szeretne",
+      "answer": "nem szeretném megnézni",
+      "table": "prefix-modal"
+    },
+    {
+      "id": "igekoto-elvalas-c13",
+      "sentence": "Szeretném ___ a nagymamámat, de nem tudom a telefonszámát.",
+      "options": [
+        "felhívni",
+        "felhívnom",
+        "hívni fel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After szeretném the infinitive stays plain (-ni), and the prefix stays on it, written together: felhívni.",
+        "es": "Después de szeretném el infinitivo queda simple (-ni), y el prefijo se queda en él, escrito junto: felhívni."
+      },
+      "wrong": {
+        "felhívnom": {
+          "en": "felhívnom has the personal ending, which words like kell, lehet, szabad and muszáj ask for (Fel kell hívnom). The person is already in szeretném.",
+          "es": "felhívnom lleva la terminación personal, que piden palabras como kell, lehet, szabad y muszáj (Fel kell hívnom). La persona ya está en szeretném."
+        },
+        "hívni fel": {
+          "en": "hívni fel puts the prefix behind the infinitive, which is never possible. It belongs in front of it: felhívni.",
+          "es": "hívni fel pone el prefijo detrás del infinitivo, algo que nunca es posible. Va delante: felhívni."
+        }
+      },
+      "examples": [
+        "Szeretném megnézni a képet.",
+        "Szeretnék bemenni az irodába."
+      ],
+      "tr": {
+        "en": "I would like to call my grandmother, but I don't know her phone number.",
+        "es": "Quisiera llamar a mi abuela, pero no sé su número de teléfono."
+      }
+    },
+    {
+      "id": "igekoto-elvalas-w04",
+      "kind": "why",
+      "es": "Nem akarom felhívni Annát.",
+      "target": "felhívni",
+      "tr": {
+        "en": "I don't want to call Anna.",
+        "es": "No quiero llamar a Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After nem the prefix goes onto the infinitive, and akar takes a plain infinitive without a personal ending.",
+            "es": "Después de nem el prefijo pasa al infinitivo, y akar lleva un infinitivo simple sin terminación personal."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix stays in front of akarom, as in a plain statement.",
+            "es": "El prefijo se queda delante de akarom, como en una frase simple."
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem fel akarom hívni, which is not Hungarian; after nem the prefix goes behind.",
+            "es": "Con esta regla la frase sería Nem fel akarom hívni, que no es húngaro; después de nem el prefijo va detrás."
+          }
+        },
+        {
+          "text": {
+            "en": "akar needs a personal ending on the infinitive, like kell: felhívnom.",
+            "es": "akar necesita una terminación personal en el infinitivo, como kell: felhívnom."
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nem akarom felhívnom, with the person twice; the person is already in akarom.",
+            "es": "Con esta regla la frase sería Nem akarom felhívnom, con la persona dos veces; la persona ya está en akarom."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igekoto-elvalas-c14",
+      "sentence": "Mikor kell ___ az orvoshoz?",
+      "options": [
+        "elmennem",
+        "el mennem",
+        "mennem el"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Mikor stands right before kell, so the prefix cannot jump in front of kell. It sticks to the infinitive, written together, with the ending for I: elmennem.",
+        "es": "Mikor va justo delante de kell, así que el prefijo no puede saltar delante de kell. Se pega al infinitivo, escrito junto, con la terminación de «yo»: elmennem."
+      },
+      "wrong": {
+        "el mennem": {
+          "en": "el mennem writes the prefix apart. After a question word it forms one word with the infinitive: elmennem.",
+          "es": "el mennem escribe el prefijo aparte. Después de una palabra interrogativa forma una sola palabra con el infinitivo: elmennem."
+        },
+        "mennem el": {
+          "en": "mennem el puts the prefix behind the infinitive, which is never possible. It belongs in front of it.",
+          "es": "mennem el pone el prefijo detrás del infinitivo, algo que nunca es posible. Va delante de él."
+        }
+      },
+      "examples": [
+        "Mikor kell elmennünk?",
+        "Mikor kell felhívnod Annát?"
+      ],
+      "tr": {
+        "en": "When do I have to go to the doctor?",
+        "es": "¿Cuándo tengo que ir al médico?"
+      }
+    }
+  ]
+}

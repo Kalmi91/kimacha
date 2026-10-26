@@ -9,7 +9,15 @@
     { "id": "mindennap", "level": "A1", "title": { "en": "Everyday sentences", "es": "Frases de cada día" } },
     { "id": "mult-jovo", "level": "A2", "title": { "en": "Past, future, prefixes", "es": "Pasado, futuro, prefijos" } },
     { "id": "modok", "level": "A2", "title": { "en": "Commands, politeness, possibility", "es": "Órdenes, cortesía, posibilidad" } },
-    { "id": "osszetett", "level": "A2", "title": { "en": "Longer sentences", "es": "Frases más largas" } }
+    { "id": "osszetett", "level": "A2", "title": { "en": "Longer sentences", "es": "Frases más largas" } },
+    { "id": "igealakok", "level": "B1", "title": { "en": "Verb forms", "es": "Formas verbales" } },
+    { "id": "szerkezetek", "level": "B1", "title": { "en": "Sentence patterns", "es": "Estructuras de la oración" } },
+    { "id": "nevszok", "level": "B1", "title": { "en": "Nouns and pronouns", "es": "Sustantivos y pronombres" } },
+    { "id": "feltetel", "level": "B2", "title": { "en": "Conditions and reported speech", "es": "Condiciones y estilo indirecto" } },
+    { "id": "mellekmondatok", "level": "B2", "title": { "en": "Subordinate clauses", "es": "Oraciones subordinadas" } },
+    { "id": "kifejezes", "level": "B2", "title": { "en": "Expression and style", "es": "Expresión y estilo" } },
+    { "id": "szovegepites", "level": "C1", "title": { "en": "Building complex sentences", "es": "Construcción de frases complejas" } },
+    { "id": "szokincs", "level": "C1", "title": { "en": "Word formation and fixed phrases", "es": "Formación de palabras y frases hechas" } }
   ],
   "topics": [
     {
@@ -291,6 +299,251 @@
       "unit": "osszetett",
       "title": { "en": "Quantity: sok, kevés, néhány, minden, -szor", "es": "Cantidad: sok, kevés, néhány, minden, -szor" },
       "blurb": { "en": "sok, kevés, néhány, minden with a singular noun; háromszor, hányszor?", "es": "sok, kevés, néhány, minden con sustantivo en singular; háromszor, hányszor?" }
+    },
+    {
+      "id": "szemelyragos-inf",
+      "level": "B1",
+      "unit": "igealakok",
+      "title": { "en": "I have to go: nekem mennem kell", "es": "Tengo que ir: nekem mennem kell" },
+      "blurb": { "en": "Nekem mennem kell: the infinitive takes the person ending after kell, lehet, szabad.", "es": "Nekem mennem kell: el infinitivo toma la desinencia de persona tras kell, lehet, szabad." }
+    },
+    {
+      "id": "rendhagyo-igek",
+      "level": "B1",
+      "unit": "igealakok",
+      "title": { "en": "Irregular verbs: teszek, vettem, alszom, megyek", "es": "Verbos irregulares: teszek, vettem, alszom, megyek" },
+      "blurb": { "en": "tesz, vesz, visz, hisz, lesz, alszik, megy, jön in every person, and their imperatives: tegyél, vegyél, vigyél.", "es": "tesz, vesz, visz, hisz, lesz, alszik, megy, jön en todas las personas y sus imperativos: tegyél, vegyél, vigyél." }
+    },
+    {
+      "id": "targyas-ragozas-2",
+      "level": "B1",
+      "unit": "igealakok",
+      "title": { "en": "Definite conjugation, tricky stems: olvassa, nézzük, veszi, issza", "es": "Conjugación determinada, raíces difíciles: olvassa, nézzük, veszi, issza" },
+      "blurb": { "en": "Tricky definite stems: olvassa, hozza, nézi, főzi, kéri, javítja, issza.", "es": "Raíces difíciles de la conjugación determinada: olvassa, hozza, nézi, főzi, kéri, javítja, issza." }
+    },
+    {
+      "id": "hat-het-idok",
+      "level": "B1",
+      "unit": "igealakok",
+      "title": { "en": "I was allowed to, I could: -hat/-het in the past and conditional", "es": "Pude, me dejaron, podría: -hat/-het en pasado y condicional" },
+      "blurb": { "en": "-hat/-het in the past and the conditional: mehettem, elmehetnék; tud vs -hat/-het.", "es": "-hat/-het en pasado y condicional: mehettem, elmehetnék; tud frente a -hat/-het." }
+    },
+    {
+      "id": "muvelteto",
+      "level": "B1",
+      "unit": "igealakok",
+      "title": { "en": "Having it done: levágatom, megjavíttatom, íratott", "es": "Mandar hacer: levágatom, megjavíttatom, íratott" },
+      "blurb": { "en": "Having something done: levágatom a hajam, megjavíttatom a telefont (-at/-et, -tat/-tet).", "es": "Hacer que otro lo haga: levágatom a hajam, megjavíttatom a telefont (-at/-et, -tat/-tet)." }
+    },
+    {
+      "id": "visszahato-igek",
+      "level": "B1",
+      "unit": "igealakok",
+      "title": { "en": "Myself and each other: magam, egymás, mosakodik", "es": "Uno mismo y el uno al otro: magam, egymás, mosakodik" },
+      "blurb": { "en": "Reflexive and reciprocal: mosakodik, megmosom magam, egymás, saját.", "es": "Reflexivos y recíprocos: mosakodik, megmosom magam, egymás, saját." }
+    },
+    {
+      "id": "befejezett-folyamatos",
+      "level": "B1",
+      "unit": "igealakok",
+      "title": { "en": "Done or still going: olvastam vs elolvastam", "es": "Terminado o en curso: olvastam vs elolvastam" },
+      "blurb": { "en": "Aspect with prefixes: olvastam vs elolvastam, megettem, szoktam + infinitive, éppen.", "es": "Aspecto con prefijos: olvastam frente a elolvastam, megettem, szoktam + infinitivo, éppen." }
+    },
+    {
+      "id": "igekoto-elvalas",
+      "level": "B1",
+      "unit": "szerkezetek",
+      "title": { "en": "Prefix position: Hívd fel! Fel kell hívnom", "es": "Posición del prefijo: Hívd fel! Fel kell hívnom" },
+      "blurb": { "en": "Where the prefix goes: Hívd fel! Ne hívd fel! Fel kell hívnom. Szeretném felhívni.", "es": "Dónde va el prefijo: Hívd fel! Ne hívd fel! Fel kell hívnom. Szeretném felhívni." }
+    },
+    {
+      "id": "nekem-tetszik",
+      "level": "B1",
+      "unit": "szerkezetek",
+      "title": { "en": "I like it: Nekem tetszik, Hiányzol, Fáj a fejem", "es": "Me gusta: Nekem tetszik, Hiányzol, Fáj a fejem" },
+      "blurb": { "en": "Verbs with a dative experiencer: tetszik, hiányzik, fáj, kell, jól esik, eszembe jut.", "es": "Verbos con experimentador en dativo: tetszik, hiányzik, fáj, kell, jól esik, eszembe jut." }
+    },
+    {
+      "id": "vonzatok",
+      "level": "B1",
+      "unit": "szerkezetek",
+      "title": { "en": "The verb decides: gondolok rá, bízom benne", "es": "El verbo decide: gondolok rá, bízom benne" },
+      "blurb": { "en": "The case a verb demands: gondol valamire, vár valakire, fél valamitől, bízik valakiben.", "es": "El caso que exige el verbo: gondol valamire, vár valakire, fél valamitől, bízik valakiben." }
+    },
+    {
+      "id": "ert-va-ve",
+      "level": "B1",
+      "unit": "szerkezetek",
+      "title": { "en": "For, into, as far as: pénzért, orvossá, a sarokig", "es": "Por, en, hasta: pénzért, orvossá, a sarokig" },
+      "blurb": { "en": "-ért (for), -vá/-vé after válik and tesz, and lesz: pénzért, boldoggá tesz, orvos lesz.", "es": "-ért (por), -vá/-vé tras válik y tesz, y lesz: pénzért, boldoggá tesz, orvos lesz." }
+    },
+    {
+      "id": "allapot-van",
+      "level": "B1",
+      "unit": "szerkezetek",
+      "title": { "en": "The door is locked: be van zárva", "es": "La puerta está cerrada con llave: be van zárva" },
+      "blurb": { "en": "State with van + -va/-ve: nyitva van, be van zárva, el van intézve.", "es": "Estado con van + -va/-ve: nyitva van, be van zárva, el van intézve." }
+    },
+    {
+      "id": "szemelyragos-esetek",
+      "level": "B1",
+      "unit": "nevszok",
+      "title": { "en": "About me, to you, from her: rólam, hozzád, tőle", "es": "Sobre mí, hacia ti, de ella: rólam, hozzád, tőle" },
+      "blurb": { "en": "Case endings with a person: bennem, rólam, hozzám, tőle, érte.", "es": "Casos con desinencia de persona: bennem, rólam, hozzám, tőle, érte." }
+    },
+    {
+      "id": "birtok-tobbes",
+      "level": "B1",
+      "unit": "nevszok",
+      "title": { "en": "My books, your friends: könyveim, barátaid", "es": "Mis libros, tus amigos: könyveim, barátaid" },
+      "blurb": { "en": "Several possessed things: házaim, házai, házaink; a fiú könyvei vs a fiúk könyve.", "es": "Varias cosas poseídas: házaim, házai, házaink; a fiú könyvei frente a a fiúk könyve." }
+    },
+    {
+      "id": "onallo-birtok",
+      "level": "B1",
+      "unit": "nevszok",
+      "title": { "en": "Mine, yours, Péter's: az enyém, a tiéd, Péteré", "es": "Mío, tuyo, de Péter: az enyém, a tiéd, Péteré" },
+      "blurb": { "en": "enyém, tiéd, övé, miénk; Péteré; Kié ez? and a saját házam.", "es": "enyém, tiéd, övé, miénk; Péteré; Kié ez? y a saját házam." }
+    },
+    {
+      "id": "hatarozatlan-nevmasok",
+      "level": "B1",
+      "unit": "nevszok",
+      "title": { "en": "Somebody, anybody, nobody: valaki, bárki, senki", "es": "Alguien, cualquiera, nadie: valaki, bárki, senki" },
+      "blurb": { "en": "valaki, valami, bárki, mindenki, senki, soha: Nem látok senkit.", "es": "valaki, valami, bárki, mindenki, senki, soha: Nem látok senkit." }
+    },
+    {
+      "id": "torzsvaltozas",
+      "level": "B1",
+      "unit": "nevszok",
+      "title": { "en": "Stems that change: levél → levelet, ló → lovat", "es": "Raíces que cambian: levél → levelet, ló → lovat" },
+      "blurb": { "en": "Stems that change: levél → levelet, kéz → kezet, tükör → tükröt, tó → tavat, ló → lovat.", "es": "Raíces que cambian: levél → levelet, kéz → kezet, tükör → tükröt, tó → tavat, ló → lovat." }
+    },
+    {
+      "id": "felteteles-mult",
+      "level": "B2",
+      "unit": "feltetel",
+      "title": { "en": "If I had known: tudtam volna, elmentem volna", "es": "Si hubiera sabido: tudtam volna, elmentem volna" },
+      "blurb": { "en": "Past conditional with volna: Ha tudtam volna, elmentem volna. Bárcsak ott lettem volna!", "es": "Condicional pasado con volna: Ha tudtam volna, elmentem volna. Bárcsak ott lettem volna!" }
+    },
+    {
+      "id": "hogy-felszolito",
+      "level": "B2",
+      "unit": "feltetel",
+      "title": { "en": "I want you to come: azt akarom, hogy gyere", "es": "Quiero que vengas: azt akarom, hogy gyere" },
+      "blurb": { "en": "The -j form after hogy: Azt akarom, hogy gyere. Kérem, hogy segítsen.", "es": "La forma en -j tras hogy: Azt akarom, hogy gyere. Kérem, hogy segítsen." }
+    },
+    {
+      "id": "fuggo-beszed",
+      "level": "B2",
+      "unit": "feltetel",
+      "title": { "en": "She said she is home: azt mondta, hogy otthon van", "es": "Dijo que está en casa: azt mondta, hogy otthon van" },
+      "blurb": { "en": "Reported speech: Azt mondta, hogy otthon van. Megkérdezte, hogy jövök-e.", "es": "Estilo indirecto: Azt mondta, hogy otthon van. Megkérdezte, hogy jövök-e." }
+    },
+    {
+      "id": "oksag-cel",
+      "level": "B2",
+      "unit": "mellekmondatok",
+      "title": { "en": "Because, so, in order to: mert, ezért, azért... hogy", "es": "Porque, por eso, para que: mert, ezért, azért... hogy" },
+      "blurb": { "en": "Reason, result, purpose: mert, mivel, ezért, miatt, azért..., hogy, nehogy.", "es": "Causa, consecuencia, finalidad: mert, mivel, ezért, miatt, azért..., hogy, nehogy." }
+    },
+    {
+      "id": "engedmeny",
+      "level": "B2",
+      "unit": "mellekmondatok",
+      "title": { "en": "Although it rained, we went: bár, mégis, annak ellenére", "es": "Aunque llovía, fuimos: bár, mégis, annak ellenére" },
+      "blurb": { "en": "Concession and contrast: bár, habár, mégis, viszont, annak ellenére, hogy.", "es": "Concesión y contraste: bár, habár, mégis, viszont, annak ellenére, hogy." }
+    },
+    {
+      "id": "ido-mellekmondat",
+      "level": "B2",
+      "unit": "mellekmondatok",
+      "title": { "en": "When, before, after, while: amikor, mielőtt, miután, amíg", "es": "Cuando, antes de, después de, mientras: amikor, mielőtt, miután, amíg" },
+      "blurb": { "en": "Time clauses: amikor, mielőtt, miután, amíg, mialatt, mióta, mihelyt.", "es": "Oraciones de tiempo: amikor, mielőtt, miután, amíg, mialatt, mióta, mihelyt." }
+    },
+    {
+      "id": "azt-amit",
+      "level": "B2",
+      "unit": "mellekmondatok",
+      "title": { "en": "What I asked for: azt, amit kértem", "es": "Lo que pedí: azt, amit kértem" },
+      "blurb": { "en": "Pairs with a relative word: azt, amit; ott, ahol; olyan, amilyen; annyi, amennyi.", "es": "Pares con relativo: azt, amit; ott, ahol; olyan, amilyen; annyi, amennyi." }
+    },
+    {
+      "id": "fokusz-reszecskek",
+      "level": "B2",
+      "unit": "kifejezes",
+      "title": { "en": "Only Péter came: csak, is, sem", "es": "Solo vino Péter: csak, is, sem" },
+      "blurb": { "en": "Focus words: csak, is, nemcsak... hanem... is, még, már, éppen; Péter az, aki elment.", "es": "Palabras de énfasis: csak, is, nemcsak... hanem... is, még, már, éppen; Péter az, aki elment." }
+    },
+    {
+      "id": "melleknevi-igenev",
+      "level": "B2",
+      "unit": "kifejezes",
+      "title": { "en": "Dolgozó ember, megírt levél: participles as adjectives", "es": "Dolgozó ember, megírt levél: participios como adjetivos" },
+      "blurb": { "en": "Adjectival participles: dolgozó ember, megírt levél, megoldandó feladat, olvasható.", "es": "Participios adjetivales: dolgozó ember, megírt levél, megoldandó feladat, olvasható." }
+    },
+    {
+      "id": "hatarozoi-igenev",
+      "level": "B2",
+      "unit": "kifejezes",
+      "title": { "en": "Nevetve mondta, hazaérve felhívlak: adverbial participles", "es": "Nevetve mondta, hazaérve felhívlak: participios adverbiales" },
+      "blurb": { "en": "Adverbial participle -va/-ve: nevetve mondta, hazaérve felhívlak; -ván/-vén.", "es": "Gerundio -va/-ve: nevetve mondta, hazaérve felhívlak; -ván/-vén." }
+    },
+    {
+      "id": "kepzok",
+      "level": "B2",
+      "unit": "kifejezes",
+      "title": { "en": "New words from old: olvas, olvasás, olvasó", "es": "Palabras nuevas de palabras viejas: olvas, olvasás, olvasó" },
+      "blurb": { "en": "Word-forming suffixes: -ás/-és, -ság/-ség, -talan/-telen, -s, -i, -beli, -nyi.", "es": "Sufijos que forman palabras: -ás/-és, -ság/-ség, -talan/-telen, -s, -i, -beli, -nyi." }
+    },
+    {
+      "id": "magazas",
+      "level": "B2",
+      "unit": "kifejezes",
+      "title": { "en": "Polite and formal: Ön, tetszik, Tudna segíteni?", "es": "Cortés y formal: Ön, tetszik, Tudna segíteni?" },
+      "blurb": { "en": "Formal register: Ön, tetszik + infinitive, Parancsoljon, Tudna segíteni?", "es": "Registro formal: Ön, tetszik + infinitivo, Parancsoljon, Tudna segíteni?" }
+    },
+    {
+      "id": "igenevi-szerkezetek",
+      "level": "C1",
+      "unit": "szovegepites",
+      "title": { "en": "Participle phrases: a könyvet olvasó fiú", "es": "Frases de participio: a könyvet olvasó fiú" },
+      "blurb": { "en": "Participle phrases for relative clauses: a könyvet olvasó fiú, a tegnap megírt levél.", "es": "Frases de participio en lugar de relativas: a könyvet olvasó fiú, a tegnap megírt levél." }
+    },
+    {
+      "id": "szenvedo-szerkezetek",
+      "level": "C1",
+      "unit": "szovegepites",
+      "title": { "en": "The car was repaired: megjavították az autót", "es": "Repararon el coche: megjavították az autót" },
+      "blurb": { "en": "Passive meaning without a passive: Megjavították az autót, becsukódott, Itt nem lehet dohányozni.", "es": "Sentido pasivo sin pasiva: Megjavították az autót, becsukódott, Itt nem lehet dohányozni." }
+    },
+    {
+      "id": "szovegkotok",
+      "level": "C1",
+      "unit": "szovegepites",
+      "title": { "en": "Connecting ideas: ugyanakkor, tehát, vagyis", "es": "Conectar ideas: ugyanakkor, tehát, vagyis" },
+      "blurb": { "en": "Discourse connectors: ugyanakkor, ráadásul, ezzel szemben, vagyis, egyrészt..., másrészt...", "es": "Conectores del discurso: ugyanakkor, ráadásul, ezzel szemben, vagyis, egyrészt..., másrészt..." }
+    },
+    {
+      "id": "szoalkotas-ige",
+      "level": "C1",
+      "unit": "szokincs",
+      "title": { "en": "Building verbs: gyorsít, gyorsul, olvasgat, vacsorázik", "es": "Formar verbos: gyorsít, gyorsul, olvasgat, vacsorázik" },
+      "blurb": { "en": "Verb formation: gyorsít vs gyorsul, olvasgat, nézeget, vacsorázik, telefonál.", "es": "Formación de verbos: gyorsít frente a gyorsul, olvasgat, nézeget, vacsorázik, telefonál." }
+    },
+    {
+      "id": "szokapcsolatok",
+      "level": "C1",
+      "unit": "szokincs",
+      "title": { "en": "Fixed phrases: részt vesz, szükségem van", "es": "Frases hechas: részt vesz, szükségem van" },
+      "blurb": { "en": "Collocations: részt vesz, figyelembe vesz, szükségem van rá, kedvem van; proverbs.", "es": "Colocaciones: részt vesz, figyelembe vesz, szükségem van rá, kedvem van; refranes." }
+    },
+    {
+      "id": "hivatalos-stilus",
+      "level": "C1",
+      "unit": "szokincs",
+      "title": { "en": "Official writing: Tisztelt Hölgyem/Uram!", "es": "Escritura oficial: Tisztelt Hölgyem/Uram!" },
+      "blurb": { "en": "Official writing: Tisztelt Hölgyem/Uram!, Ezúton szeretném jelezni, hogy..., Üdvözlettel.", "es": "Escritura oficial: Tisztelt Hölgyem/Uram!, Ezúton szeretném jelezni, hogy..., Üdvözlettel." }
     }
   ]
 }

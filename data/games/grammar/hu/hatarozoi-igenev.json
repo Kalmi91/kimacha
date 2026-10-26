@@ -1,0 +1,1145 @@
+{
+  "schema": 2,
+  "topic": "hatarozoi-igenev",
+  "level": "B2",
+  "title": {
+    "en": "Nevetve mondta, hazaérve felhívlak: adverbial participles",
+    "es": "Nevetve mondta, hazaérve felhívlak: participios adverbiales"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The ending -va/-ve turns a verb into an adverbial participle. It tells how (Nevetve mondta = She said it laughing), when (Hazaérve felhívlak = When I get home I will call you) or, in the formal -ván/-vén form, why (Tudván, hogy késő van, hazamentünk = Knowing that it was late, we went home). It has no tense and no person: in careful Hungarian its subject is the subject of the main verb. English uses -ing (laughing, on arriving) and Spanish the gerund (riendo) or al + infinitive (al llegar). You already know the same ending in nyitva and zárva (open, closed). Use -va after back vowels and -ve after front vowels; -ik verbs drop the -ik (dolgozik → dolgozva).",
+        "es": "La terminación -va/-ve convierte un verbo en un participio adverbial. Dice cómo (Nevetve mondta = Lo dijo riendo), cuándo (Hazaérve felhívlak = Cuando llegue a casa te llamo) o, en la forma formal -ván/-vén, por qué (Tudván, hogy késő van, hazamentünk = Sabiendo que era tarde, nos fuimos a casa). No tiene tiempo ni persona: en un húngaro cuidado su sujeto es el del verbo principal. El inglés usa -ing (laughing, on arriving) y el español el gerundio (riendo) o al + infinitivo (al llegar). Ya conoces la misma terminación en nyitva y zárva (abierto, cerrado). Se usa -va tras vocales posteriores y -ve tras vocales anteriores; los verbos en -ik pierden el -ik (dolgozik → dolgozva)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "va-mod",
+      "title": {
+        "en": "How: -va/-ve without a prefix",
+        "es": "Cómo: -va/-ve sin prefijo"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "nevet (laugh)",
+          "es": "nevet (reír)"
+        },
+        {
+          "en": "áll (stand)",
+          "es": "áll (estar de pie)"
+        },
+        {
+          "en": "sír (cry)",
+          "es": "sír (llorar)"
+        },
+        {
+          "en": "ül (sit)",
+          "es": "ül (estar sentado)"
+        }
+      ],
+      "rows": [
+        [
+          "-va/-ve",
+          "nevetve",
+          "állva",
+          "sírva",
+          "ülve"
+        ],
+        [
+          "példa",
+          "Nevetve mondta.",
+          "Állva eszik.",
+          "Sírva jött haza.",
+          "Ülve vár."
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How, when, why",
+        "es": "Cómo, cuándo, por qué"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "How (hogyan?): without a prefix the participle usually shows something that happens at the same time as the main verb. The subject is the same.",
+            "es": "Cómo (¿hogyan?): sin prefijo el participio suele mostrar algo que ocurre al mismo tiempo que el verbo principal. El sujeto es el mismo."
+          },
+          "examples": [
+            {
+              "es": "Nevetve mondta, hogy nem tud jönni.",
+              "tr": {
+                "en": "Laughing, she said that she cannot come.",
+                "es": "Riendo, dijo que no puede venir."
+              }
+            },
+            {
+              "es": "Anna ülve vár az orvosnál.",
+              "tr": {
+                "en": "Anna waits sitting at the doctor's.",
+                "es": "Anna espera sentada en el consultorio."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "When (mikor?): with a prefix verb the participle usually means after the action is done: hazaérve = after getting home.",
+            "es": "Cuándo (¿mikor?): con un verbo con prefijo el participio suele significar después de terminar la acción: hazaérve = después de llegar a casa."
+          },
+          "examples": [
+            {
+              "es": "Hazaérve felhívlak.",
+              "tr": {
+                "en": "When I get home I will call you.",
+                "es": "Cuando llegue a casa te llamo."
+              }
+            },
+            {
+              "es": "A munkát befejezve hazamegyek.",
+              "tr": {
+                "en": "After finishing work I go home.",
+                "es": "Al terminar el trabajo me voy a casa."
+              }
+            },
+            {
+              "es": "Felkelve kávét főzök.",
+              "tr": {
+                "en": "After getting up I make coffee.",
+                "es": "Al levantarme preparo café."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Why (miért?): -ván/-vén gives a reason. It is formal, written style. Followed by hogy it means knowing that, seeing that, saying that.",
+            "es": "Por qué (¿miért?): -ván/-vén da una razón. Es estilo formal y escrito. Seguido de hogy significa sabiendo que, viendo que, diciendo que."
+          },
+          "examples": [
+            {
+              "es": "Tudván, hogy késő van, hazamentünk.",
+              "tr": {
+                "en": "Knowing that it was late, we went home.",
+                "es": "Sabiendo que era tarde, nos fuimos a casa."
+              }
+            },
+            {
+              "es": "Nem jött el, mondván, hogy beteg.",
+              "tr": {
+                "en": "He did not come, saying that he was ill.",
+                "es": "No vino, diciendo que estaba enfermo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The participle can have its own object and other words; they stand in front of it.",
+            "es": "El participio puede tener su propio objeto y otras palabras; van delante de él."
+          },
+          "examples": [
+            {
+              "es": "A térképet nézve kerestük a szállodát.",
+              "tr": {
+                "en": "Looking at the map, we looked for the hotel.",
+                "es": "Mirando el mapa, buscamos el hotel."
+              }
+            },
+            {
+              "es": "Sorban állva olvasok egy könyvet.",
+              "tr": {
+                "en": "I read a book while standing in a queue.",
+                "es": "Leo un libro mientras hago fila."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "va-ido",
+      "title": {
+        "en": "When: prefix verbs",
+        "es": "Cuándo: verbos con prefijo"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "hazaér (arrive home)",
+          "es": "hazaér (llegar a casa)"
+        },
+        {
+          "en": "felkel (get up)",
+          "es": "felkel (levantarse)"
+        },
+        {
+          "en": "megérkezik (arrive)",
+          "es": "megérkezik (llegar)"
+        },
+        {
+          "en": "befejez (finish)",
+          "es": "befejez (terminar)"
+        }
+      ],
+      "rows": [
+        [
+          "-va/-ve",
+          "hazaérve",
+          "felkelve",
+          "megérkezve",
+          "befejezve"
+        ],
+        [
+          "példa",
+          "Hazaérve felhívlak.",
+          "Felkelve kávét főzök.",
+          "Megérkezve írok neked.",
+          "A munkát befejezve hazamegyek."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "va-van",
+      "title": {
+        "en": "Why: -ván/-vén (formal)",
+        "es": "Por qué: -ván/-vén (formal)"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "tud (know)",
+          "es": "tud (saber)"
+        },
+        {
+          "en": "lát (see)",
+          "es": "lát (ver)"
+        },
+        {
+          "en": "hall (hear)",
+          "es": "hall (oír)"
+        },
+        {
+          "en": "mond (say)",
+          "es": "mond (decir)"
+        }
+      ],
+      "rows": [
+        [
+          "-va/-ve",
+          "tudva",
+          "látva",
+          "hallva",
+          "mondva"
+        ],
+        [
+          "-ván/-vén",
+          "tudván",
+          "látván",
+          "hallván",
+          "mondván"
+        ],
+        [
+          "példa",
+          "Tudván, hogy késő van, hazamentünk.",
+          "Látván, hogy esik, otthon maradtunk.",
+          "Hallván a hírt, felhívtam Annát.",
+          "Nem jött el, mondván, hogy beteg."
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which ending? Harmony and -ik verbs",
+        "es": "¿Qué terminación? Armonía y verbos en -ik"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Back vowels (a, o, u, á, ó, ú): -va and -ván: állva, tudva, látván.",
+            "es": "Vocales posteriores (a, o, u, á, ó, ú): -va y -ván: állva, tudva, látván."
+          },
+          "examples": [
+            {
+              "es": "Egész nap állva dolgozik a pultnál.",
+              "tr": {
+                "en": "She works standing at the counter all day.",
+                "es": "Trabaja de pie en el mostrador todo el día."
+              }
+            },
+            {
+              "es": "Mosolyogva köszön a szomszédnak.",
+              "tr": {
+                "en": "Smiling, he greets the neighbour.",
+                "es": "Sonriendo, saluda al vecino."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Front vowels (e, i, é, í, ö, ü, ő, ű): -ve and -vén: nevetve, ülve, felkelve. A few verbs with only i or í take back endings: sír → sírva, nyit → nyitva.",
+            "es": "Vocales anteriores (e, i, é, í, ö, ü, ő, ű): -ve y -vén: nevetve, ülve, felkelve. Unos pocos verbos con solo i o í toman terminaciones posteriores: sír → sírva, nyit → nyitva."
+          },
+          "examples": [
+            {
+              "es": "Ülve hallgatom a zenét.",
+              "tr": {
+                "en": "I listen to the music sitting down.",
+                "es": "Escucho la música sentado."
+              }
+            },
+            {
+              "es": "Nevetve ment ki az irodából.",
+              "tr": {
+                "en": "She went out of the office laughing.",
+                "es": "Salió de la oficina riendo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ik verbs lose the -ik: dolgozik → dolgozva, megérkezik → megérkezve.",
+            "es": "Los verbos en -ik pierden el -ik: dolgozik → dolgozva, megérkezik → megérkezve."
+          },
+          "examples": [
+            {
+              "es": "Egész nap dolgozva elfáradtam.",
+              "tr": {
+                "en": "Having worked all day, I got tired.",
+                "es": "Después de trabajar todo el día, me cansé."
+              }
+            },
+            {
+              "es": "Megérkezve azonnal elaludtam.",
+              "tr": {
+                "en": "On arriving I fell asleep at once.",
+                "es": "Al llegar me quedé dormido enseguida."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Participle or clause? Adjective or adverb? Formal or spoken?",
+        "es": "¿Participio u oración? ¿Adjetivo o adverbio? ¿Formal o hablado?"
+      },
+      "pairs": [
+        {
+          "a": "Hazaérve felhívlak.",
+          "b": "Ha hazaérek, felhívlak.",
+          "note": {
+            "en": "Same meaning. The participle is shorter but normally needs the same subject; a clause with ha or amikor allows a different subject.",
+            "es": "Mismo significado. El participio es más corto pero normalmente exige el mismo sujeto; una oración con ha o amikor permite otro sujeto."
+          },
+          "examples": [
+            {
+              "es": "Hazaérve megeszem a vacsorát.",
+              "tr": {
+                "en": "When I get home I eat dinner.",
+                "es": "Cuando llego a casa me como la cena."
+              }
+            },
+            {
+              "es": "Ha Péter hazaér, felhív minket.",
+              "tr": {
+                "en": "When Péter gets home, he will call us.",
+                "es": "Cuando Péter llegue a casa, nos llamará."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a nevető lány",
+          "b": "nevetve jött be",
+          "note": {
+            "en": "-ó/-ő describes a noun (which girl). -va/-ve describes the verb (how she came in).",
+            "es": "-ó/-ő describe un sustantivo (qué chica). -va/-ve describe el verbo (cómo entró)."
+          },
+          "examples": [
+            {
+              "es": "A nevető lány az új kolléga.",
+              "tr": {
+                "en": "The laughing girl is the new colleague.",
+                "es": "La chica que se ríe es la nueva colega."
+              }
+            },
+            {
+              "es": "A lány nevetve jött be az irodába.",
+              "tr": {
+                "en": "The girl came into the office laughing.",
+                "es": "La chica entró en la oficina riendo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Tudván, hogy késő van, hazamentünk.",
+          "b": "Mivel tudtuk, hogy késő van, hazamentünk.",
+          "note": {
+            "en": "Both give the reason. -ván/-vén is formal and written; in everyday speech people use mivel or mert with a finite verb.",
+            "es": "Los dos dan la razón. -ván/-vén es formal y escrito; en el habla cotidiana se usa mivel o mert con un verbo conjugado."
+          },
+          "examples": [
+            {
+              "es": "Látván, hogy esik, otthon maradtunk.",
+              "tr": {
+                "en": "Seeing that it was raining, we stayed at home. (formal)",
+                "es": "Viendo que llovía, nos quedamos en casa. (formal)"
+              }
+            },
+            {
+              "es": "Mivel esett, otthon maradtunk.",
+              "tr": {
+                "en": "Because it rained, we stayed at home. (spoken)",
+                "es": "Como llovía, nos quedamos en casa. (hablado)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "The participle has no subject of its own: in careful Hungarian it belongs to the subject of the main verb. Hazaérve megcsörrent a telefon is considered wrong (the telephone did not get home), even if people sometimes say it; say Amikor hazaértem, megcsörrent a telefon. And -va/-ve is not a continuous tense: for 'I am reading' say Olvasok or Épp olvasok, never olvasva vagyok.",
+        "es": "El participio no tiene sujeto propio: en un húngaro cuidado pertenece al sujeto del verbo principal. Hazaérve megcsörrent a telefon se considera incorrecto (el teléfono no llegó a casa), aunque a veces se oiga; se dice Amikor hazaértem, megcsörrent a telefon. Y -va/-ve no es un tiempo continuo: para «estoy leyendo» se dice Olvasok o Épp olvasok, nunca olvasva vagyok."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The ending «va» or «ve» makes an adverbial participle. It says how, when or why the main action happens. «Nevetve mondta»: she said it laughing. «Állva eszik»: he eats standing up. With a prefix verb it often means after: «Hazaérve felhívlak», when I get home I will call you. The formal ending «ván» or «vén» gives a reason: «Tudván, hogy késő van, hazamentünk». In careful Hungarian the subject of the participle is the subject of the main verb. If the subject changes, use a normal clause.",
+    "es": "La terminación «va» o «ve» forma un participio adverbial. Dice cómo, cuándo o por qué ocurre la acción principal. «Nevetve mondta»: lo dijo riendo. «Állva eszik»: come de pie. Con un verbo con prefijo suele significar después: «Hazaérve felhívlak», cuando llegue a casa te llamo. La terminación formal «ván» o «vén» da una razón: «Tudván, hogy késő van, hazamentünk». En un húngaro cuidado el sujeto del participio es el del verbo principal. Si el sujeto cambia, usa una oración normal."
+  },
+  "glossary": [
+    {
+      "word": "késő",
+      "gloss": {
+        "en": "late (adjective)",
+        "es": "tarde (adjetivo)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "hatarozoi-igenev-c01",
+      "sentence": "Anna ___ mondta el, hogy megkapta a munkát.",
+      "options": [
+        "nevetve",
+        "nevetva",
+        "nevető"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "How did she say it? A manner participle, and nevet has a front vowel: nevet + ve.",
+        "es": "¿Cómo lo dijo? Un participio de modo, y nevet tiene vocal anterior: nevet + ve."
+      },
+      "wrong": {
+        "nevetva": {
+          "en": "-va goes with back-vowel verbs (állva); nevet has a front e, so -ve.",
+          "es": "-va va con verbos de vocal posterior (állva); nevet tiene una e anterior, así que -ve."
+        },
+        "nevető": {
+          "en": "-ő describes a noun (a nevető lány); here the word says how she told it, so it needs -ve.",
+          "es": "-ő describe un sustantivo (a nevető lány); aquí la palabra dice cómo lo contó, así que necesita -ve."
+        }
+      },
+      "examples": [
+        "Nevetve mondta, hogy nem tud jönni.",
+        "Mosolyogva köszön a szomszédnak."
+      ],
+      "tr": {
+        "en": "Anna said, laughing, that she had got the job.",
+        "es": "Anna dijo riendo que había conseguido el trabajo."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f01",
+      "kind": "form",
+      "verb": "nevet",
+      "person": "-va/-ve",
+      "answer": "nevetve",
+      "table": "va-mod"
+    },
+    {
+      "id": "hatarozoi-igenev-c02",
+      "sentence": "Gábor mindig ___ eszik, mert siet.",
+      "options": [
+        "állva",
+        "álló",
+        "áll"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The word says how he eats, and áll has a back vowel: áll + va.",
+        "es": "La palabra dice cómo come, y áll tiene vocal posterior: áll + va."
+      },
+      "wrong": {
+        "álló": {
+          "en": "álló describes a noun (az álló fiú); here it should say how he eats.",
+          "es": "álló describe un sustantivo (az álló fiú); aquí debería decir cómo come."
+        },
+        "áll": {
+          "en": "áll is a finite verb: Gábor áll eszik would put two verbs side by side. The how-word is állva.",
+          "es": "áll es un verbo conjugado: Gábor áll eszik pondría dos verbos juntos. La palabra de modo es állva."
+        }
+      },
+      "examples": [
+        "Állva eszik a pultnál.",
+        "Egész nap állva dolgozik."
+      ],
+      "tr": {
+        "en": "Gábor always eats standing up because he is in a hurry.",
+        "es": "Gábor siempre come de pie porque tiene prisa."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-c03",
+      "sentence": "___ azonnal elaludtam.",
+      "options": [
+        "Hazaérve",
+        "Hazaérő",
+        "Hazaér"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A prefix verb + ve: after getting home. Same subject: I got home, I fell asleep.",
+        "es": "Verbo con prefijo + ve: después de llegar a casa. Mismo sujeto: llegué a casa, me dormí."
+      },
+      "wrong": {
+        "Hazaérő": {
+          "en": "-ő would be an adjective for a noun (a hazaérő férj, the husband who is getting home); it cannot say when I fell asleep.",
+          "es": "-ő sería un adjetivo para un sustantivo (a hazaérő férj, el marido que llega a casa); no puede decir cuándo me dormí."
+        },
+        "Hazaér": {
+          "en": "Hazaér is a finite verb (he or she gets home); it would need a conjunction: Ha hazaér, ...",
+          "es": "Hazaér es un verbo conjugado (llega a casa); necesitaría una conjunción: Ha hazaér, ..."
+        }
+      },
+      "examples": [
+        "Hazaérve megettem egy almát.",
+        "Hazaérve leültem a székre."
+      ],
+      "tr": {
+        "en": "As soon as I got home I fell asleep.",
+        "es": "En cuanto llegué a casa me quedé dormido."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f02",
+      "kind": "form",
+      "verb": "hazaér",
+      "person": "-va/-ve",
+      "answer": "hazaérve",
+      "table": "va-ido"
+    },
+    {
+      "id": "hatarozoi-igenev-c04",
+      "sentence": "___ írj nekem egy üzenetet!",
+      "options": [
+        "Megérkezve",
+        "Megérkezikve",
+        "Megérkezett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "megérkezik is an -ik verb: the -ik falls off, megérkez + ve.",
+        "es": "megérkezik es un verbo en -ik: se pierde el -ik, megérkez + ve."
+      },
+      "wrong": {
+        "Megérkezikve": {
+          "en": "The -ik of the verb falls off before -ve: megérkezik → megérkezve.",
+          "es": "El -ik del verbo se pierde antes de -ve: megérkezik → megérkezve."
+        },
+        "Megérkezett": {
+          "en": "Megérkezett is the past tense (he or she arrived); it cannot open a sentence with an imperative.",
+          "es": "Megérkezett es el pasado (llegó); no puede abrir una frase con un imperativo."
+        }
+      },
+      "examples": [
+        "Megérkezve hívj fel!",
+        "Megérkezve küldök egy képet."
+      ],
+      "tr": {
+        "en": "When you have arrived, write me a message!",
+        "es": "Cuando llegues, ¡escríbeme un mensaje!"
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f03",
+      "kind": "form",
+      "verb": "tud",
+      "person": "-ván/-vén",
+      "answer": "tudván",
+      "table": "va-van"
+    },
+    {
+      "id": "hatarozoi-igenev-c05",
+      "sentence": "___, hogy sok ember vár, mi is beálltunk a sorba.",
+      "options": [
+        "Látván",
+        "Látvén",
+        "Látó"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A formal reason, and lát has back vowels: lát + ván.",
+        "es": "Una razón formal, y lát tiene vocales posteriores: lát + ván."
+      },
+      "wrong": {
+        "Látvén": {
+          "en": "-vén goes with front-vowel verbs; lát has a back á, so -ván.",
+          "es": "-vén va con verbos de vocales anteriores; lát tiene una á posterior, así que -ván."
+        },
+        "Látó": {
+          "en": "látó is the -ó participle, an adjective (a látó ember, a person who sees); it cannot give the reason for what we did.",
+          "es": "látó es el participio en -ó, un adjetivo (a látó ember, una persona que ve); no puede dar la razón de lo que hicimos."
+        }
+      },
+      "examples": [
+        "Látván, hogy esik az eső, otthon maradtunk.",
+        "Látván a hosszú sort, elmentünk."
+      ],
+      "tr": {
+        "en": "Seeing that many people were waiting, we also joined the queue.",
+        "es": "Viendo que mucha gente esperaba, nosotros también nos pusimos en la fila."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f04",
+      "kind": "form",
+      "verb": "áll",
+      "person": "-va/-ve",
+      "answer": "állva",
+      "table": "va-mod"
+    },
+    {
+      "id": "hatarozoi-igenev-w01",
+      "kind": "why",
+      "es": "Nevetve mondta el a hírt.",
+      "target": "Nevetve",
+      "tr": {
+        "en": "She told the news laughing.",
+        "es": "Contó la noticia riendo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Manner: she laughed while she told it, same subject, same time",
+            "es": "Modo: se reía mientras lo contaba, mismo sujeto, mismo tiempo"
+          }
+        },
+        {
+          "text": {
+            "en": "An adjective before a noun: the laughing ...",
+            "es": "Un adjetivo delante de un sustantivo: la que se ríe ..."
+          },
+          "wrong": {
+            "en": "With this rule a noun would follow, as in a nevető lány; here nevetve says how she told the news.",
+            "es": "Con esta regla seguiría un sustantivo, como en a nevető lány; aquí nevetve dice cómo contó la noticia."
+          }
+        },
+        {
+          "text": {
+            "en": "Past tense: she laughed",
+            "es": "Pasado: se rió"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Nevetett, és elmondta a hírt (she laughed and told the news); the participle puts both actions into one sentence with a single finite verb.",
+            "es": "Con esta regla la frase sería Nevetett, és elmondta a hírt (se rió y contó la noticia); el participio junta las dos acciones en una frase con un solo verbo conjugado."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hatarozoi-igenev-c06",
+      "sentence": "___ a hírt, azonnal felhívtam Annát.",
+      "options": [
+        "Hallván",
+        "Hallvén",
+        "Hallgat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A formal reason: hall has back vowels, so hall + ván.",
+        "es": "Una razón formal: hall tiene vocales posteriores, así que hall + ván."
+      },
+      "wrong": {
+        "Hallvén": {
+          "en": "-vén goes with front-vowel verbs; hall has a back a, so -ván.",
+          "es": "-vén va con verbos de vocales anteriores; hall tiene una a posterior, así que -ván."
+        },
+        "Hallgat": {
+          "en": "hallgat is a finite verb (he or she listens, is silent); the sentence needs a participle in front of the main verb.",
+          "es": "hallgat es un verbo conjugado (escucha, calla); la frase necesita un participio delante del verbo principal."
+        }
+      },
+      "examples": [
+        "Hallván a hírt, nagyon örültem.",
+        "Hallván a nevét, mosolygott."
+      ],
+      "tr": {
+        "en": "Hearing the news, I called Anna at once.",
+        "es": "Al oír la noticia, llamé enseguida a Anna."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f05",
+      "kind": "form",
+      "verb": "megérkezik",
+      "person": "-va/-ve",
+      "answer": "megérkezve",
+      "table": "va-ido"
+    },
+    {
+      "id": "hatarozoi-igenev-c07",
+      "sentence": "Gábor nem válaszolt, ___, hogy nincs ideje.",
+      "options": [
+        "mondván",
+        "mondvén",
+        "mondó"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mondván = saying that: it gives the reason he stated. mond has a back o, so -ván.",
+        "es": "mondván = diciendo que: da la razón que él indicó. mond tiene una o posterior, así que -ván."
+      },
+      "wrong": {
+        "mondvén": {
+          "en": "-vén goes with front-vowel verbs; mond has a back o, so -ván.",
+          "es": "-vén va con verbos de vocales anteriores; mond tiene una o posterior, así que -ván."
+        },
+        "mondó": {
+          "en": "mondó is the -ó participle, an adjective; it cannot introduce the reason that he gave.",
+          "es": "mondó es el participio en -ó, un adjetivo; no puede introducir la razón que él dio."
+        }
+      },
+      "examples": [
+        "Nem jött el, mondván, hogy beteg.",
+        "Korán elment, mondván, hogy fáradt."
+      ],
+      "tr": {
+        "en": "Gábor did not answer, saying that he had no time.",
+        "es": "Gábor no contestó, diciendo que no tenía tiempo."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f06",
+      "kind": "form",
+      "verb": "lát",
+      "person": "-va/-ve",
+      "answer": "látva",
+      "table": "va-van"
+    },
+    {
+      "id": "hatarozoi-igenev-c08",
+      "sentence": "Hazaérve ___.",
+      "options": [
+        "megfőztem a vacsorát",
+        "esni kezdett az eső",
+        "elromlott a lift"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The participle belongs to the subject of the main verb: I got home, I cooked dinner.",
+        "es": "El participio pertenece al sujeto del verbo principal: llegué a casa, preparé la cena."
+      },
+      "wrong": {
+        "esni kezdett az eső": {
+          "en": "With this the sentence would say that the rain got home; careful Hungarian wants the participle to share its subject with the main verb.",
+          "es": "Con esto la frase diría que la lluvia llegó a casa; el húngaro cuidado quiere que el participio comparta el sujeto con el verbo principal."
+        },
+        "elromlott a lift": {
+          "en": "With this the sentence would say that the lift got home; the lift cannot be the subject of hazaérve.",
+          "es": "Con esto la frase diría que el ascensor llegó a casa; el ascensor no puede ser el sujeto de hazaérve."
+        }
+      },
+      "examples": [
+        "Hazaérve felhívtam Annát.",
+        "Hazaérve leültem a székre."
+      ],
+      "tr": {
+        "en": "Having got home, I cooked dinner.",
+        "es": "Al llegar a casa, preparé la cena."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f07",
+      "kind": "form",
+      "verb": "ül",
+      "person": "-va/-ve",
+      "answer": "ülve",
+      "table": "va-mod"
+    },
+    {
+      "id": "hatarozoi-igenev-c09",
+      "sentence": "A ___ lány az új kolléga.",
+      "options": [
+        "nevető",
+        "nevetve",
+        "nevetett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The word stands before a noun and says which girl: the adjective participle -ő (nevet + ő).",
+        "es": "La palabra va delante de un sustantivo y dice qué chica: el participio adjetival -ő (nevet + ő)."
+      },
+      "wrong": {
+        "nevetve": {
+          "en": "-ve is an adverb: it says how an action happens (nevetve jött be), not which girl.",
+          "es": "-ve es un adverbio: dice cómo ocurre una acción (nevetve jött be), no qué chica."
+        },
+        "nevetett": {
+          "en": "nevetett is a finite past tense (she laughed); it cannot stand before a noun like an adjective.",
+          "es": "nevetett es un pasado conjugado (se rió); no puede ir delante de un sustantivo como un adjetivo."
+        }
+      },
+      "examples": [
+        "A nevető fiú a barátom.",
+        "Egy mosolygó nő áll az ajtóban."
+      ],
+      "tr": {
+        "en": "The laughing girl is the new colleague.",
+        "es": "La chica que se ríe es la nueva colega."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f08",
+      "kind": "form",
+      "verb": "felkel",
+      "person": "-va/-ve",
+      "answer": "felkelve",
+      "table": "va-ido"
+    },
+    {
+      "id": "hatarozoi-igenev-w02",
+      "kind": "why",
+      "es": "Hazaérve felhívlak.",
+      "target": "Hazaérve",
+      "tr": {
+        "en": "When I get home I will call you.",
+        "es": "Cuando llegue a casa te llamo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Manner: I call you in a special way",
+            "es": "Modo: te llamo de una manera especial"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would say how I call, as in Nevetve hívlak (I call you laughing); with a prefix verb like hazaér, -ve says that the action is done first.",
+            "es": "Con esta regla la frase diría cómo llamo, como en Nevetve hívlak (te llamo riendo); con un verbo con prefijo como hazaér, -ve dice que esa acción se hace primero."
+          }
+        },
+        {
+          "text": {
+            "en": "Time: after I have got home",
+            "es": "Tiempo: después de llegar a casa"
+          }
+        },
+        {
+          "text": {
+            "en": "Reason: because I am at home",
+            "es": "Razón: porque estoy en casa"
+          },
+          "wrong": {
+            "en": "With this rule the form would be the formal reason type (Tudván, hogy ...); the plain -ve of a prefix verb only says when.",
+            "es": "Con esta regla sería la forma de razón formal (Tudván, hogy ...); el -ve simple de un verbo con prefijo solo dice cuándo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "hatarozoi-igenev-c10",
+      "sentence": "A fiú ___ jött haza, mert elesett.",
+      "options": [
+        "sírva",
+        "sírt",
+        "síró"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "It says how he came home. sír is one of the few i/í verbs that take back endings (sírok), so sír + va.",
+        "es": "Dice cómo llegó a casa. sír es uno de los pocos verbos con i/í que toman terminaciones posteriores (sírok), así que sír + va."
+      },
+      "wrong": {
+        "sírt": {
+          "en": "sírt is a finite past tense; A fiú sírt jött haza would put two verbs in a row without a link.",
+          "es": "sírt es un pasado conjugado; A fiú sírt jött haza pondría dos verbos seguidos sin enlace."
+        },
+        "síró": {
+          "en": "síró describes a noun directly (a síró fiú); here the word must say how he came home.",
+          "es": "síró describe directamente un sustantivo (a síró fiú); aquí la palabra debe decir cómo llegó a casa."
+        }
+      },
+      "examples": [
+        "Sírva ment el.",
+        "A lány sírva ült a széken."
+      ],
+      "tr": {
+        "en": "The boy came home crying because he fell.",
+        "es": "El chico volvió a casa llorando porque se cayó."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f09",
+      "kind": "form",
+      "verb": "hall",
+      "person": "-ván/-vén",
+      "answer": "hallván",
+      "table": "va-van"
+    },
+    {
+      "id": "hatarozoi-igenev-c11",
+      "sentence": "Zenét ___ takarítok a lakásban.",
+      "options": [
+        "hallgatva",
+        "hallgató",
+        "hallgat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The participle has its own object (zenét) in front of it and says how I clean: hallgat + va.",
+        "es": "El participio tiene su propio objeto (zenét) delante y dice cómo limpio: hallgat + va."
+      },
+      "wrong": {
+        "hallgató": {
+          "en": "hallgató is the -ó participle for a noun (zenét hallgató fiú); here it should say how I clean.",
+          "es": "hallgató es el participio en -ó para un sustantivo (zenét hallgató fiú); aquí debería decir cómo limpio."
+        },
+        "hallgat": {
+          "en": "hallgat is a finite verb; Zenét hallgat takarítok would put two verbs side by side.",
+          "es": "hallgat es un verbo conjugado; Zenét hallgat takarítok pondría dos verbos juntos."
+        }
+      },
+      "examples": [
+        "Zenét hallgatva főzök.",
+        "Sorban állva olvasok egy könyvet."
+      ],
+      "tr": {
+        "en": "I clean the flat while listening to music.",
+        "es": "Limpio el piso escuchando música."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f10",
+      "kind": "form",
+      "verb": "befejez",
+      "person": "-va/-ve",
+      "answer": "befejezve",
+      "table": "va-ido"
+    },
+    {
+      "id": "hatarozoi-igenev-w03",
+      "kind": "why",
+      "es": "Tudván, hogy késő van, hazamentünk.",
+      "target": "Tudván",
+      "tr": {
+        "en": "Knowing that it was late, we went home.",
+        "es": "Sabiendo que era tarde, nos fuimos a casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-ván/-vén: the formal, written form of -va/-ve, here giving the reason",
+            "es": "-ván/-vén: la forma formal y escrita de -va/-ve, aquí con valor de razón"
+          }
+        },
+        {
+          "text": {
+            "en": "A spoken, informal form of -va/-ve",
+            "es": "Una forma hablada e informal de -va/-ve"
+          },
+          "wrong": {
+            "en": "With this rule it would be everyday speech; -ván/-vén is formal and literary, and in speech people say Mivel tudtuk, hogy késő van.",
+            "es": "Con esta regla sería lenguaje cotidiano; -ván/-vén es formal y literario, y al hablar se dice Mivel tudtuk, hogy késő van."
+          }
+        },
+        {
+          "text": {
+            "en": "The -ó participle: the one who knows",
+            "es": "El participio en -ó: el que sabe"
+          },
+          "wrong": {
+            "en": "With this rule the form would be tudó (the knowing one); -ván is the adverbial participle and describes the verb, not a noun.",
+            "es": "Con esta regla la forma sería tudó (el que sabe); -ván es el participio adverbial y describe el verbo, no un sustantivo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hatarozoi-igenev-c12",
+      "sentence": "Egész nap ___ nehéz jól dolgozni.",
+      "options": [
+        "ülve",
+        "ülva",
+        "ülő"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ül has a rounded front vowel, so ül + ve; the word says in what position one works.",
+        "es": "ül tiene una vocal anterior redondeada, así que ül + ve; la palabra dice en qué posición se trabaja."
+      },
+      "wrong": {
+        "ülva": {
+          "en": "-va goes with back-vowel verbs; ül has a front ü, so -ve.",
+          "es": "-va va con verbos de vocal posterior; ül tiene una ü anterior, así que -ve."
+        },
+        "ülő": {
+          "en": "ülő describes a noun (az ülő vendég); here it should say how one works.",
+          "es": "ülő describe un sustantivo (az ülő vendég); aquí debería decir cómo se trabaja."
+        }
+      },
+      "examples": [
+        "Ülve is lehet tanulni.",
+        "Ülve hallgatom a zenét."
+      ],
+      "tr": {
+        "en": "Sitting all day, it is hard to work well.",
+        "es": "Estando sentado todo el día, es difícil trabajar bien."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f11",
+      "kind": "form",
+      "verb": "mond",
+      "person": "-ván/-vén",
+      "answer": "mondván",
+      "table": "va-van"
+    },
+    {
+      "id": "hatarozoi-igenev-c13",
+      "sentence": "___ először kávét iszom.",
+      "options": [
+        "Felkelve",
+        "Felkelva",
+        "Felkelő"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A prefix verb + ve: after getting up. felkel has a front e, so -ve.",
+        "es": "Verbo con prefijo + ve: después de levantarme. felkel tiene una e anterior, así que -ve."
+      },
+      "wrong": {
+        "Felkelva": {
+          "en": "-va goes with back-vowel verbs; felkel has e, so -ve.",
+          "es": "-va va con verbos de vocal posterior; felkel tiene e, así que -ve."
+        },
+        "Felkelő": {
+          "en": "felkelő is the -ő participle for a noun (a felkelő nap, the rising sun); it cannot say when I drink coffee.",
+          "es": "felkelő es el participio en -ő para un sustantivo (a felkelő nap, el sol que sale); no puede decir cuándo tomo café."
+        }
+      },
+      "examples": [
+        "Felkelve kinyitom az ablakot.",
+        "Felkelve megmosom a kezem."
+      ],
+      "tr": {
+        "en": "After getting up I first drink a coffee.",
+        "es": "Al levantarme, lo primero que bebo es un café."
+      }
+    },
+    {
+      "id": "hatarozoi-igenev-f12",
+      "kind": "form",
+      "verb": "tud",
+      "person": "-va/-ve",
+      "answer": "tudva",
+      "table": "va-van"
+    },
+    {
+      "id": "hatarozoi-igenev-w04",
+      "kind": "why",
+      "es": "A fiú sírva jött haza.",
+      "target": "sírva",
+      "tr": {
+        "en": "The boy came home crying.",
+        "es": "El chico volvió a casa llorando."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Same subject, same time: the boy cries while he comes home",
+            "es": "Mismo sujeto, mismo tiempo: el niño llora mientras vuelve a casa"
+          }
+        },
+        {
+          "text": {
+            "en": "Different subject: somebody else is crying",
+            "es": "Otro sujeto: llora otra persona"
+          },
+          "wrong": {
+            "en": "With this rule the participle would need its own subject (Mivel sírt a fiú, ...); -va/-ve normally shares the subject of the main verb.",
+            "es": "Con esta regla el participio necesitaría su propio sujeto (Mivel sírt a fiú, ...); -va/-ve normalmente comparte el sujeto del verbo principal."
+          }
+        },
+        {
+          "text": {
+            "en": "First he came home, then he cried",
+            "es": "Primero llegó a casa, luego lloró"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be like Hazaérve sírt (after getting home he cried); without a prefix -va/-ve usually shows the same time.",
+            "es": "Con esta regla la frase sería como Hazaérve sírt (al llegar a casa lloró); sin prefijo -va/-ve suele mostrar el mismo tiempo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "hatarozoi-igenev-c14",
+      "sentence": "Péter ___ érkezett meg, mert késett.",
+      "options": [
+        "futva",
+        "futve",
+        "futó"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "It says how he arrived; fut has a back u, so fut + va.",
+        "es": "Dice cómo llegó; fut tiene una u posterior, así que fut + va."
+      },
+      "wrong": {
+        "futve": {
+          "en": "-ve goes with front-vowel verbs; fut has a back u, so -va.",
+          "es": "-ve va con verbos de vocal anterior; fut tiene una u posterior, así que -va."
+        },
+        "futó": {
+          "en": "futó is the -ó participle for a noun (a futó gyerek); here it should say how he arrived.",
+          "es": "futó es el participio en -ó para un sustantivo (a futó gyerek); aquí debería decir cómo llegó."
+        }
+      },
+      "examples": [
+        "Futva érkezett az állomásra.",
+        "Futva mentünk a buszhoz."
+      ],
+      "tr": {
+        "en": "Péter arrived running because he was late.",
+        "es": "Péter llegó corriendo porque se le hizo tarde."
+      }
+    }
+  ]
+}

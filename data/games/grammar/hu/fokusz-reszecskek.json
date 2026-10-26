@@ -1,0 +1,1528 @@
+{
+  "schema": 2,
+  "topic": "fokusz-reszecskek",
+  "level": "B2",
+  "title": {
+    "en": "Only Péter came: csak, is, sem",
+    "es": "Solo vino Péter: csak, is, sem"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "English and Spanish mark \"only\", \"also\" and \"not either\" mostly with the voice: ONLY Péter came, Péter came TOO. Hungarian uses small words and word order. csak (only) stands right before the stressed word, and that word stands right before the verb, just as in the focus lesson: Csak Péter jött el. is (also) comes after the word it belongs to: Péter is eljött. sem is the negative of is: Péter sem jött el. Pairs are built from them: nemcsak ... hanem ... is (not only ... but also), is ... is (both ... and), sem ... sem ... nem (neither ... nor). The small time words még and már and the word éppen say where an action stands in time or how exactly it fits. And Péter az, aki elment turns the stressed word into a short identifying sentence: it is Péter who left.",
+        "es": "El español y el inglés marcan «solo», «también» y «tampoco» sobre todo con la voz: SOLO vino Péter, Péter vino TAMBIÉN. El húngaro usa palabras pequeñas y el orden de las palabras. csak (solo) va justo antes de la palabra enfatizada, y esa palabra va justo antes del verbo, igual que en la lección del foco: Csak Péter jött el. is (también) va después de la palabra a la que pertenece: Péter is eljött. sem es el negativo de is: Péter sem jött el. Con ellas se forman parejas: nemcsak ... hanem ... is (no solo ... sino también), is ... is (tanto ... como), sem ... sem ... nem (ni ... ni). Las palabras de tiempo még y már y la palabra éppen dicen en qué punto está una acción o qué tan exacto es el ajuste. Y Péter az, aki elment convierte la palabra enfatizada en una frase corta que identifica: es Péter quien se fue."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "csak-is-sem",
+      "title": {
+        "en": "csak, is, sem with the same sentence",
+        "es": "csak, is, sem con la misma frase"
+      },
+      "header": [
+        {
+          "en": "Word + verb",
+          "es": "Palabra + verbo"
+        },
+        {
+          "en": "csak (only)",
+          "es": "csak (solo)"
+        },
+        {
+          "en": "is (also)",
+          "es": "is (también)"
+        },
+        {
+          "en": "sem (not either)",
+          "es": "sem (tampoco)"
+        }
+      ],
+      "rows": [
+        [
+          "Péter + eljön",
+          "csak Péter jött el",
+          "Péter is eljött",
+          "Péter sem jött el"
+        ],
+        [
+          "Anna + hazamegy",
+          "csak Anna ment haza",
+          "Anna is hazament",
+          "Anna sem ment haza"
+        ],
+        [
+          "Kati + bejön",
+          "csak Kati jött be",
+          "Kati is bejött",
+          "Kati sem jött be"
+        ],
+        [
+          "Gábor + visszajön",
+          "csak Gábor jött vissza",
+          "Gábor is visszajött",
+          "Gábor sem jött vissza"
+        ],
+        [
+          "tegnap + elmegy",
+          "csak tegnap ment el",
+          "tegnap is elment",
+          "tegnap sem ment el"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "csak, is, sem: where do they stand?",
+        "es": "csak, is, sem: ¿dónde van cada una?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "csak + the stressed word, right before the verb. The focus slot pushes the prefix behind the verb, exactly as nem does.",
+            "es": "csak + la palabra enfatizada, justo antes del verbo. El lugar del foco empuja el prefijo detrás del verbo, igual que nem."
+          },
+          "examples": [
+            {
+              "es": "Csak Péter jött el.",
+              "tr": {
+                "en": "Only Péter came.",
+                "es": "Solo vino Péter."
+              }
+            },
+            {
+              "es": "Az értekezletre csak Anna jött el.",
+              "tr": {
+                "en": "Only Anna came to the meeting.",
+                "es": "A la reunión solo vino Anna."
+              }
+            },
+            {
+              "es": "Csak két órát aludtam.",
+              "tr": {
+                "en": "I slept only two hours.",
+                "es": "Dormí solo dos horas."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With csak and an object, the conjugation still follows the object: indefinite for egy könyvet, definite for a könyvet.",
+            "es": "Con csak y un complemento directo, la conjugación sigue al complemento: indeterminada para egy könyvet, determinada para a könyvet."
+          },
+          "examples": [
+            {
+              "es": "Péter csak egy könyvet vett.",
+              "tr": {
+                "en": "Péter bought only one book.",
+                "es": "Péter compró solo un libro."
+              }
+            },
+            {
+              "es": "Péter csak a könyvet vette meg.",
+              "tr": {
+                "en": "Péter bought only the book.",
+                "es": "Péter compró solo el libro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "is (also, too, even) stands AFTER the word it belongs to, never at the start like English \"also\". It does not take the focus slot, so the prefix stays glued to the verb.",
+            "es": "is (también, incluso) va DESPUÉS de la palabra a la que pertenece, nunca al principio como «también» en español. No ocupa el lugar del foco, así que el prefijo queda pegado al verbo."
+          },
+          "examples": [
+            {
+              "es": "Péter is eljött.",
+              "tr": {
+                "en": "Péter came too.",
+                "es": "Péter también vino."
+              }
+            },
+            {
+              "es": "Tegnap is esett.",
+              "tr": {
+                "en": "It rained yesterday too.",
+                "es": "Ayer también llovió."
+              }
+            },
+            {
+              "es": "Magyarul is beszél.",
+              "tr": {
+                "en": "He or she also speaks Hungarian.",
+                "es": "También habla húngaro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "sem (not either) replaces is in a negative sentence. It already carries the negation, so no extra nem; like nem, it pushes the prefix behind the verb. In everyday speech sem is often shortened to se: Péter se jött el.",
+            "es": "sem (tampoco) reemplaza a is en una frase negativa. Ya lleva la negación, así que no hay nem extra; como nem, empuja el prefijo detrás del verbo. En el habla cotidiana sem se acorta a menudo en se: Péter se jött el."
+          },
+          "examples": [
+            {
+              "es": "Péter sem jött el.",
+              "tr": {
+                "en": "Péter did not come either.",
+                "es": "Péter tampoco vino."
+              }
+            },
+            {
+              "es": "Én sem tudom.",
+              "tr": {
+                "en": "I do not know either.",
+                "es": "Yo tampoco lo sé."
+              }
+            },
+            {
+              "es": "Anna sincs itt.",
+              "tr": {
+                "en": "Anna is not here either.",
+                "es": "Anna tampoco está aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If sem stands AFTER the verb, you need nem before the verb, as in any negative sentence. The same meaning with sem in front of the verb needs no nem: Annát sem hívtam meg.",
+            "es": "Si sem va DESPUÉS del verbo, necesitas nem antes del verbo, como en cualquier frase negativa. Con sem delante del verbo se dice lo mismo sin nem: Annát sem hívtam meg."
+          },
+          "examples": [
+            {
+              "es": "Nem jött el Péter sem.",
+              "tr": {
+                "en": "Péter did not come either.",
+                "es": "Péter tampoco vino."
+              }
+            },
+            {
+              "es": "Nem hívtam meg Annát sem.",
+              "tr": {
+                "en": "I did not invite Anna either.",
+                "es": "Tampoco invité a Anna."
+              }
+            },
+            {
+              "es": "Annát sem hívtam meg.",
+              "tr": {
+                "en": "I did not invite Anna either.",
+                "es": "Tampoco invité a Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "parok",
+      "title": {
+        "en": "Three pairs",
+        "es": "Tres parejas"
+      },
+      "header": [
+        {
+          "en": "Pattern",
+          "es": "Patrón"
+        },
+        {
+          "en": "magyarul + angolul (beszél)",
+          "es": "magyarul + angolul (beszél)"
+        }
+      ],
+      "rows": [
+        [
+          "nemcsak ... hanem ... is",
+          "nemcsak magyarul beszél, hanem angolul is"
+        ],
+        [
+          "is ... is",
+          "magyarul is, angolul is beszél"
+        ],
+        [
+          "sem ... sem ...",
+          "sem magyarul, sem angolul nem beszél"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Not only, both, neither",
+        "es": "No solo, tanto, ni"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "nemcsak ... hanem ... is: not only ... but also. Write nemcsak as one word. The second part ends with is, and it needs a comma before hanem.",
+            "es": "nemcsak ... hanem ... is: no solo ... sino también. Escribe nemcsak en una palabra. La segunda parte termina con is, y lleva coma antes de hanem."
+          },
+          "examples": [
+            {
+              "es": "Nemcsak Péter jött el, hanem Anna is.",
+              "tr": {
+                "en": "Not only Péter came, but Anna too.",
+                "es": "No solo vino Péter, sino también Anna."
+              }
+            },
+            {
+              "es": "Ez a telefon nemcsak olcsó, hanem jó is.",
+              "tr": {
+                "en": "This phone is not only cheap but also good.",
+                "es": "Este teléfono no solo es barato, sino también bueno."
+              }
+            },
+            {
+              "es": "Nemcsak magyarul beszél, hanem angolul is.",
+              "tr": {
+                "en": "He or she speaks not only Hungarian but also English.",
+                "es": "No solo habla húngaro, sino también inglés."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "X is, Y is: both X and Y. Each part gets its own is, and the verb comes once, after the pair.",
+            "es": "X is, Y is: tanto X como Y. Cada parte lleva su propio is, y el verbo aparece una vez, después de la pareja."
+          },
+          "examples": [
+            {
+              "es": "Magyarul is, angolul is beszél.",
+              "tr": {
+                "en": "He or she speaks both Hungarian and English.",
+                "es": "Habla tanto húngaro como inglés."
+              }
+            },
+            {
+              "es": "Reggel is, este is dolgozom.",
+              "tr": {
+                "en": "I work both in the morning and in the evening.",
+                "es": "Trabajo tanto en la mañana como en la noche."
+              }
+            },
+            {
+              "es": "Itt is, ott is esik az eső.",
+              "tr": {
+                "en": "It is raining both here and there.",
+                "es": "Llueve tanto aquí como allá."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "sem ... sem ... nem: neither ... nor. With two sem the verb is negated: nem, or nincs for van. In speech se ... se is also common.",
+            "es": "sem ... sem ... nem: ni ... ni. Con dos sem el verbo va negado: nem, o nincs para van. En el habla también es común se ... se."
+          },
+          "examples": [
+            {
+              "es": "Sem Péter, sem Anna nem jött el.",
+              "tr": {
+                "en": "Neither Péter nor Anna came.",
+                "es": "No vino ni Péter ni Anna."
+              }
+            },
+            {
+              "es": "Sem magyarul, sem angolul nem beszél.",
+              "tr": {
+                "en": "He or she speaks neither Hungarian nor English.",
+                "es": "No habla ni húngaro ni inglés."
+              }
+            },
+            {
+              "es": "Sem pénzem, sem időm nincs.",
+              "tr": {
+                "en": "I have neither money nor time.",
+                "es": "No tengo ni dinero ni tiempo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "meg-mar",
+      "title": {
+        "en": "még and már, with and without nem",
+        "es": "még y már, con y sin nem"
+      },
+      "header": [
+        {
+          "en": "Word + verb",
+          "es": "Palabra + verbo"
+        },
+        {
+          "en": "igen",
+          "es": "igen"
+        },
+        {
+          "en": "nem",
+          "es": "nem"
+        }
+      ],
+      "rows": [
+        [
+          "még + dolgozik (én)",
+          "még dolgozom",
+          "még nem dolgozom"
+        ],
+        [
+          "már + dolgozik (én)",
+          "már dolgozom",
+          "már nem dolgozom"
+        ],
+        [
+          "még + itt van (Péter)",
+          "Péter még itt van",
+          "Péter még nincs itt"
+        ],
+        [
+          "már + itt van (Péter)",
+          "Péter már itt van",
+          "Péter már nincs itt"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "még, már, éppen",
+        "es": "még, már, éppen"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "még = still; with nem, még nem = not yet. The order is fixed: még nem, never nem még. The prefix goes behind the verb after nem.",
+            "es": "még = todavía; con nem, még nem = todavía no. El orden es fijo: még nem, nunca nem még. Después de nem el prefijo va detrás del verbo."
+          },
+          "examples": [
+            {
+              "es": "Még dolgozom.",
+              "tr": {
+                "en": "I am still working.",
+                "es": "Todavía estoy trabajando."
+              }
+            },
+            {
+              "es": "Még nem jött meg a vonat.",
+              "tr": {
+                "en": "The train has not arrived yet.",
+                "es": "El tren todavía no ha llegado."
+              }
+            },
+            {
+              "es": "Péter még nincs itt.",
+              "tr": {
+                "en": "Péter is not here yet.",
+                "es": "Péter todavía no está aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "még also means \"more\" and, before a comparative or with is, \"even\".",
+            "es": "még también significa «más» y, antes de un comparativo o con is, «incluso»."
+          },
+          "examples": [
+            {
+              "es": "Kérsz még egy kávét?",
+              "tr": {
+                "en": "Do you want another coffee?",
+                "es": "¿Quieres otro café?"
+              }
+            },
+            {
+              "es": "Ez még drágább.",
+              "tr": {
+                "en": "This one is even more expensive.",
+                "es": "Este es todavía más caro."
+              }
+            },
+            {
+              "es": "Még Péter is eljött.",
+              "tr": {
+                "en": "Even Péter came.",
+                "es": "Hasta Péter vino."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "már = already; with nem, már nem = no longer.",
+            "es": "már = ya; con nem, már nem = ya no."
+          },
+          "examples": [
+            {
+              "es": "Már itthon vagyok.",
+              "tr": {
+                "en": "I am already at home.",
+                "es": "Ya estoy en casa."
+              }
+            },
+            {
+              "es": "Már nem dolgozom ott.",
+              "tr": {
+                "en": "I no longer work there.",
+                "es": "Ya no trabajo ahí."
+              }
+            },
+            {
+              "es": "Péter már nincs itt.",
+              "tr": {
+                "en": "Péter is not here any more.",
+                "es": "Péter ya no está aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "éppen (colloquially épp) = right now, at this very moment.",
+            "es": "éppen (en el habla épp) = ahora mismo, en este mismo momento."
+          },
+          "examples": [
+            {
+              "es": "Éppen főzök.",
+              "tr": {
+                "en": "I am cooking right now.",
+                "es": "Estoy cocinando ahora mismo."
+              }
+            },
+            {
+              "es": "Éppen indulok.",
+              "tr": {
+                "en": "I am just leaving.",
+                "es": "Justo me voy."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "éppen also means \"exactly, of all\": it stands before the stressed word (éppen ezt, éppen te), and that word takes the focus slot, so a prefix would go behind the verb.",
+            "es": "éppen también significa «justo, precisamente»: va antes de la palabra enfatizada (éppen ezt, éppen te), y esa palabra ocupa el lugar del foco, así que un prefijo iría detrás del verbo."
+          },
+          "examples": [
+            {
+              "es": "Éppen ezt akartam mondani.",
+              "tr": {
+                "en": "This is exactly what I wanted to say.",
+                "es": "Justo esto quería decir."
+              }
+            },
+            {
+              "es": "Éppen te mondod ezt?",
+              "tr": {
+                "en": "You of all people say this?",
+                "es": "¿Precisamente tú dices esto?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kiemeles",
+      "title": {
+        "en": "From focus to \"it is X who\"",
+        "es": "Del foco a «es X quien»"
+      },
+      "header": [
+        {
+          "en": "Name + verb",
+          "es": "Nombre + verbo"
+        },
+        {
+          "en": "focus",
+          "es": "foco"
+        },
+        {
+          "en": "az, aki / az, ami",
+          "es": "az, aki / az, ami"
+        }
+      ],
+      "rows": [
+        [
+          "Péter + elmegy",
+          "Péter ment el",
+          "Péter az, aki elment"
+        ],
+        [
+          "Anna + hazamegy",
+          "Anna ment haza",
+          "Anna az, aki hazament"
+        ],
+        [
+          "Kati + bejön",
+          "Kati jött be",
+          "Kati az, aki bejött"
+        ],
+        [
+          "a kávé + hiányzik",
+          "a kávé hiányzik",
+          "a kávé az, ami hiányzik"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Péter az, aki elment",
+        "es": "Péter az, aki elment"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "X az, aki ...: \"it is X who ...\". The stressed word comes first, then az, aki and the rest. It says the same as the plain focus sentence, but heavier: you identify or correct. The prefix stays glued in the relative clause, because aki is not a focus.",
+            "es": "X az, aki ...: «es X quien ...». Primero va la palabra enfatizada, luego az, aki y el resto. Dice lo mismo que la frase de foco simple, pero con más peso: identificas o corriges. El prefijo queda pegado en la oración de relativo, porque aki no es un foco."
+          },
+          "examples": [
+            {
+              "es": "Péter az, aki elment.",
+              "tr": {
+                "en": "Péter is the one who left.",
+                "es": "Péter es el que se fue."
+              }
+            },
+            {
+              "es": "Kati az, aki hazament.",
+              "tr": {
+                "en": "Kati is the one who went home.",
+                "es": "Kati es la que se fue a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For things the pair is az, ami.",
+            "es": "Para cosas la pareja es az, ami."
+          },
+          "examples": [
+            {
+              "es": "A kávé az, ami hiányzik.",
+              "tr": {
+                "en": "The coffee is what is missing.",
+                "es": "El café es lo que falta."
+              }
+            },
+            {
+              "es": "Ez az, amit kértem.",
+              "tr": {
+                "en": "This is what I asked for.",
+                "es": "Esto es lo que pedí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Corrections use nem first and hanem after the clause.",
+            "es": "Las correcciones llevan nem al principio y hanem después de la oración."
+          },
+          "examples": [
+            {
+              "es": "Nem Péter az, aki elment, hanem Anna.",
+              "tr": {
+                "en": "It is not Péter who left, but Anna.",
+                "es": "No es Péter quien se fue, sino Anna."
+              }
+            },
+            {
+              "es": "Nem a kávé az, ami hiányzik, hanem a tea.",
+              "tr": {
+                "en": "It is not the coffee that is missing, but the tea.",
+                "es": "No es el café lo que falta, sino el té."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fácil de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Csak Péter jött el.",
+          "b": "Péter is eljött.",
+          "note": {
+            "en": "csak = nobody else came, and the prefix goes behind the verb. is = Péter came in addition to others, and the prefix stays glued.",
+            "es": "csak = nadie más vino, y el prefijo va detrás del verbo. is = Péter vino además de otros, y el prefijo queda pegado."
+          },
+          "examples": [
+            {
+              "es": "A bulira csak Kati jött el.",
+              "tr": {
+                "en": "Only Kati came to the party.",
+                "es": "A la fiesta solo vino Kati."
+              }
+            },
+            {
+              "es": "A bulira Kati is eljött.",
+              "tr": {
+                "en": "Kati came to the party too.",
+                "es": "A la fiesta también vino Kati."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Még nem dolgozom.",
+          "b": "Már nem dolgozom.",
+          "note": {
+            "en": "még nem = not yet (it has not started). már nem = no longer (it has ended).",
+            "es": "még nem = todavía no (no ha empezado). már nem = ya no (ya terminó)."
+          },
+          "examples": [
+            {
+              "es": "Még nem dolgozom, mert tanulok.",
+              "tr": {
+                "en": "I am not working yet, because I study.",
+                "es": "Todavía no trabajo, porque estudio."
+              }
+            },
+            {
+              "es": "Már nem dolgozom ott, mert új munkám van.",
+              "tr": {
+                "en": "I no longer work there, because I have a new job.",
+                "es": "Ya no trabajo ahí, porque tengo un trabajo nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Péter ment el.",
+          "b": "Péter az, aki elment.",
+          "note": {
+            "en": "Same fact. The plain focus is the normal answer to \"Who left?\". The cleft with az, aki is heavier: you use it to identify someone or to correct a wrong idea.",
+            "es": "El mismo hecho. El foco simple es la respuesta normal a «¿Quién se fue?». La construcción con az, aki es más pesada: sirve para identificar a alguien o corregir una idea equivocada."
+          },
+          "examples": [
+            {
+              "es": "Nem Anna ment el, hanem Péter.",
+              "tr": {
+                "en": "It was not Anna who left, but Péter.",
+                "es": "No se fue Anna, sino Péter."
+              }
+            },
+            {
+              "es": "Nem Anna az, aki elment, hanem Péter.",
+              "tr": {
+                "en": "Anna is not the one who left, Péter is.",
+                "es": "Anna no es la que se fue, es Péter."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Sem Péter, sem Anna nem jött el.",
+          "b": "Nemcsak Péter jött el, hanem Anna is.",
+          "note": {
+            "en": "sem ... sem takes both out (neither came); nemcsak ... hanem ... is adds one to the other (both came).",
+            "es": "sem ... sem excluye a los dos (ninguno vino); nemcsak ... hanem ... is suma uno al otro (vinieron los dos)."
+          },
+          "examples": [
+            {
+              "es": "Sem tej, sem kenyér nincs otthon.",
+              "tr": {
+                "en": "There is neither milk nor bread at home.",
+                "es": "No hay ni leche ni pan en casa."
+              }
+            },
+            {
+              "es": "Nemcsak tej, hanem kenyér is van otthon.",
+              "tr": {
+                "en": "There is not only milk but also bread at home.",
+                "es": "No solo hay leche, sino también pan en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Five classic traps. (1) After csak and sem the prefix goes behind the verb: Csak Péter jött el, Péter sem jött el. After is it stays glued: Péter is eljött. (2) is is never the first word, as English \"also\" can be: Péter is eljött, not Is Péter eljött. (3) One sem before the verb needs no nem (Péter sem jött el); the pair sem ... sem does need it (Sem Péter, sem Anna nem jött el); and sem after the verb needs nem before it (Nem jött el Péter sem). (4) Write nemcsak as one word and do not forget the closing is: Nemcsak Péter jött el, hanem Anna is. (5) With csak the verb still follows the object: Csak egy könyvet vett (indefinite), Csak a könyvet vette (definite).",
+        "es": "Cinco trampas clásicas. (1) Después de csak y sem el prefijo va detrás del verbo: Csak Péter jött el, Péter sem jött el. Después de is queda pegado: Péter is eljött. (2) is nunca es la primera palabra, como puede serlo «también» en español: Péter is eljött, no Is Péter eljött. (3) Un solo sem antes del verbo no necesita nem (Péter sem jött el); la pareja sem ... sem sí lo necesita (Sem Péter, sem Anna nem jött el); y sem después del verbo necesita nem antes de él (Nem jött el Péter sem). (4) Escribe nemcsak en una palabra y no olvides el is final: Nemcsak Péter jött el, hanem Anna is. (5) Con csak el verbo sigue al complemento directo: Csak egy könyvet vett (indeterminado), Csak a könyvet vette (determinado)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian small words show what a sentence is about. «Csak» means only, and it stands right before the stressed word, which stands right before the verb: «Csak Péter jött el». «Is» means also and comes after the word: «Péter is eljött». «Sem» means not either: «Péter sem jött el». The pair for neither and nor is «sem, sem»: «Sem Péter, sem Anna nem jött el». «Még» means still or not yet, and «már» means already or no longer: «Még nem dolgozom», «Már nem dolgozom». And «Péter az, aki elment» is the short sentence that identifies: it is Péter who left.",
+    "es": "En húngaro las palabras pequeñas muestran de qué trata una frase. «Csak» significa solo, y va justo antes de la palabra enfatizada, que va justo antes del verbo: «Csak Péter jött el». «Is» significa también y va después de la palabra: «Péter is eljött». «Sem» significa tampoco: «Péter sem jött el». La pareja para ni ... ni es «sem, sem»: «Sem Péter, sem Anna nem jött el». «Még» significa todavía o todavía no, y «már» significa ya o ya no: «Még nem dolgozom», «Már nem dolgozom». Y «Péter az, aki elment» es la frase corta que identifica: es Péter quien se fue."
+  },
+  "items": [
+    {
+      "id": "fokusz-reszecskek-c01",
+      "sentence": "Az értekezletre csak Anna ___.",
+      "options": [
+        "jött el",
+        "eljött",
+        "el jött"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "csak makes Anna the stressed word right before the verb, so the prefix steps behind the verb: jött el.",
+        "es": "csak hace de Anna la palabra enfatizada justo antes del verbo, así que el prefijo pasa detrás del verbo: jött el."
+      },
+      "wrong": {
+        "eljött": {
+          "en": "eljött with the glued prefix is the neutral order (Anna eljött); after csak the prefix must step behind.",
+          "es": "eljött con el prefijo pegado es el orden neutro (Anna eljött); después de csak el prefijo debe pasar detrás."
+        },
+        "el jött": {
+          "en": "A prefix in front of the verb but written apart is not a possible order: it is either glued (eljött) or behind (jött el).",
+          "es": "Un prefijo delante del verbo pero separado no es un orden posible: o va pegado (eljött) o detrás (jött el)."
+        }
+      },
+      "examples": [
+        "A bulira csak Kati jött el.",
+        "Csak Gábor jött vissza."
+      ],
+      "tr": {
+        "en": "Only Anna came to the meeting.",
+        "es": "A la reunión solo vino Anna."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f01",
+      "kind": "form",
+      "verb": "csak",
+      "person": "Péter + eljön",
+      "answer": "csak Péter jött el",
+      "table": "csak-is-sem"
+    },
+    {
+      "id": "fokusz-reszecskek-c02",
+      "sentence": "Anna eljött a bulira, és Péter ___ eljött.",
+      "options": [
+        "is",
+        "sem",
+        "csak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "is after the word adds Péter to Anna: Péter is eljött (Péter came too).",
+        "es": "is después de la palabra suma a Péter a Anna: Péter is eljött (Péter también vino)."
+      },
+      "wrong": {
+        "sem": {
+          "en": "sem would make it negative: Péter sem jött el means Péter did not come either.",
+          "es": "sem lo volvería negativo: Péter sem jött el significa que Péter tampoco vino."
+        },
+        "csak": {
+          "en": "csak means only and stands before the stressed word: Csak Péter jött el would say that nobody but Péter came, which contradicts Anna.",
+          "es": "csak significa solo y va antes de la palabra enfatizada: Csak Péter jött el diría que nadie salvo Péter vino, lo cual contradice a Anna."
+        }
+      },
+      "examples": [
+        "Tegnap is esett.",
+        "Magyarul is beszél."
+      ],
+      "tr": {
+        "en": "Anna came to the party, and Péter came too.",
+        "es": "Anna vino a la fiesta, y Péter también vino."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-c03",
+      "sentence": "Anna nem jött el, és Péter ___ jött el.",
+      "options": [
+        "sem",
+        "is",
+        "csak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The first clause is negative, so \"not either\" is sem: Péter sem jött el. The prefix goes behind the verb, and no extra nem is needed.",
+        "es": "La primera oración es negativa, así que «tampoco» es sem: Péter sem jött el. El prefijo va detrás del verbo y no hace falta otro nem."
+      },
+      "wrong": {
+        "is": {
+          "en": "Péter is eljött would say that Péter came, which contradicts the negative first clause.",
+          "es": "Péter is eljött diría que Péter vino, lo cual contradice la primera oración negativa."
+        },
+        "csak": {
+          "en": "csak would say that only Péter came, which also contradicts the first clause.",
+          "es": "csak diría que solo Péter vino, lo cual también contradice la primera oración."
+        }
+      },
+      "examples": [
+        "Kati sem jött be.",
+        "Én sem tudom."
+      ],
+      "tr": {
+        "en": "Anna did not come, and Péter did not come either.",
+        "es": "Anna no vino, y Péter tampoco vino."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f02",
+      "kind": "form",
+      "verb": "is",
+      "person": "Anna + hazamegy",
+      "answer": "Anna is hazament",
+      "table": "csak-is-sem"
+    },
+    {
+      "id": "fokusz-reszecskek-w01",
+      "kind": "why",
+      "es": "Csak Péter jött el.",
+      "target": "jött el",
+      "tr": {
+        "en": "Only Péter came.",
+        "es": "Solo vino Péter."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "csak puts Péter in the focus slot right before the verb, and that slot pushes the prefix behind the verb.",
+            "es": "csak pone a Péter en el lugar del foco justo antes del verbo, y ese lugar empuja el prefijo detrás del verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "In the past tense the prefix always goes behind the verb",
+            "es": "En el pasado el prefijo siempre va detrás del verbo"
+          },
+          "wrong": {
+            "en": "With this rule Péter eljött would be impossible, but it is fine: the prefix stays in front when nothing stressed stands before the verb.",
+            "es": "Con esta regla Péter eljött sería imposible, pero está bien: el prefijo queda delante cuando ningún elemento enfatizado está antes del verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix goes behind because csak is a negative word",
+            "es": "El prefijo va detrás porque csak es una palabra negativa"
+          },
+          "wrong": {
+            "en": "With this rule csak would mean not; it means only and is positive. It is the focus slot, not the meaning, that pushes the prefix back.",
+            "es": "Con esta regla csak significaría no; significa solo y es positivo. Lo que empuja el prefijo hacia atrás es el lugar del foco, no el significado."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fokusz-reszecskek-c04",
+      "sentence": "Sem Péter, ___ Anna nem jött el.",
+      "options": [
+        "sem",
+        "is",
+        "csak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "neither ... nor is the fixed pair sem ... sem, and the verb is negated with nem.",
+        "es": "ni ... ni es la pareja fija sem ... sem, y el verbo se niega con nem."
+      },
+      "wrong": {
+        "is": {
+          "en": "is is a positive word and goes after a word; it cannot be the second half of the neither-nor pair.",
+          "es": "is es una palabra positiva y va después de una palabra; no puede ser la segunda mitad de la pareja ni ... ni."
+        },
+        "csak": {
+          "en": "csak means only; neither ... nor needs sem both times.",
+          "es": "csak significa solo; ni ... ni necesita sem las dos veces."
+        }
+      },
+      "examples": [
+        "Sem magyarul, sem angolul nem beszél.",
+        "Se Péter, se Anna nem jött el."
+      ],
+      "tr": {
+        "en": "Neither Péter nor Anna came.",
+        "es": "No vino ni Péter ni Anna."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f03",
+      "kind": "form",
+      "verb": "magyarul + angolul",
+      "person": "nemcsak ... hanem ... is",
+      "answer": "nemcsak magyarul beszél, hanem angolul is",
+      "table": "parok",
+      "accept": [
+        "nemcsak magyarul, hanem angolul is beszél"
+      ]
+    },
+    {
+      "id": "fokusz-reszecskek-c05",
+      "sentence": "Nemcsak Péter jött el, ___ Anna is.",
+      "options": [
+        "hanem",
+        "mert",
+        "hogy"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "nemcsak ... hanem ... is means not only ... but also: hanem introduces the added person.",
+        "es": "nemcsak ... hanem ... is significa no solo ... sino también: hanem introduce a la persona añadida."
+      },
+      "wrong": {
+        "mert": {
+          "en": "mert means because; it would give a reason, not add Anna.",
+          "es": "mert significa porque; daría una razón, no sumaría a Anna."
+        },
+        "hogy": {
+          "en": "hogy means that; it opens a content clause, not the second half of the pair.",
+          "es": "hogy significa que; abre una oración de contenido, no la segunda mitad de la pareja."
+        }
+      },
+      "examples": [
+        "Nemcsak olcsó, hanem jó is.",
+        "Nemcsak magyarul beszél, hanem angolul is."
+      ],
+      "tr": {
+        "en": "Not only Péter came, but Anna too.",
+        "es": "No solo vino Péter, sino también Anna."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f04",
+      "kind": "form",
+      "verb": "sem",
+      "person": "Kati + bejön",
+      "answer": "Kati sem jött be",
+      "table": "csak-is-sem",
+      "accept": [
+        "Kati se jött be"
+      ]
+    },
+    {
+      "id": "fokusz-reszecskek-c06",
+      "sentence": "Ez a telefon nemcsak olcsó, hanem jó ___.",
+      "options": [
+        "is",
+        "sem",
+        "csak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The pair closes with is: nemcsak olcsó, hanem jó is.",
+        "es": "La pareja se cierra con is: nemcsak olcsó, hanem jó is."
+      },
+      "wrong": {
+        "sem": {
+          "en": "sem is negative; this sentence says the phone is good.",
+          "es": "sem es negativo; esta frase dice que el teléfono es bueno."
+        },
+        "csak": {
+          "en": "csak after hanem would turn it into \"but only good\", which is not the pair.",
+          "es": "csak después de hanem lo convertiría en «sino solo bueno», que no es la pareja."
+        }
+      },
+      "examples": [
+        "Nemcsak Péter jött el, hanem Anna is.",
+        "Reggel is, este is dolgozom."
+      ],
+      "tr": {
+        "en": "This phone is not only cheap but also good.",
+        "es": "Este teléfono no solo es barato, sino también bueno."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-w02",
+      "kind": "why",
+      "es": "Péter is eljött.",
+      "target": "eljött",
+      "tr": {
+        "en": "Péter came too.",
+        "es": "Péter también vino."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "is does not take the focus slot, so nothing pushes the prefix back and it stays glued to the verb.",
+            "es": "is no ocupa el lugar del foco, así que nada empuja el prefijo hacia atrás y queda pegado al verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix is glued because the sentence is positive",
+            "es": "El prefijo va pegado porque la frase es positiva"
+          },
+          "wrong": {
+            "en": "With this rule Csak Péter eljött would also be correct, since it is positive too; it is not, because csak puts Péter in the focus slot.",
+            "es": "Con esta regla Csak Péter eljött también sería correcto, pues también es positiva; no lo es, porque csak pone a Péter en el lugar del foco."
+          }
+        },
+        {
+          "text": {
+            "en": "is behaves like csak: the prefix goes behind",
+            "es": "is se comporta como csak: el prefijo va detrás"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Péter is jött el; but is only adds Péter, it does not stress him before the verb.",
+            "es": "Con esta regla la frase sería Péter is jött el; pero is solo suma a Péter, no lo enfatiza delante del verbo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fokusz-reszecskek-f05",
+      "kind": "form",
+      "verb": "magyarul + angolul",
+      "person": "is ... is",
+      "answer": "magyarul is, angolul is beszél",
+      "table": "parok",
+      "accept": [
+        "magyarul is beszél, angolul is"
+      ]
+    },
+    {
+      "id": "fokusz-reszecskek-c07",
+      "sentence": "___ két órát aludtam, ezért fáradt vagyok.",
+      "options": [
+        "Csak",
+        "Is",
+        "Sem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "csak (only) starts the sentence and stands before the stressed word két órát: I slept only two hours.",
+        "es": "csak (solo) abre la frase y va antes de la palabra enfatizada két órát: dormí solo dos horas."
+      },
+      "wrong": {
+        "Is": {
+          "en": "is comes after the word it belongs to, so it cannot open the sentence; Két órát is aludtam would mean \"I even slept two hours\".",
+          "es": "is va después de la palabra a la que pertenece, así que no puede abrir la frase; Két órát is aludtam significaría «dormí incluso dos horas»."
+        },
+        "Sem": {
+          "en": "Sem két órát aludtam is not possible; \"not even two hours\" is Két órát sem aludtam.",
+          "es": "Sem két órát aludtam no es posible; «ni siquiera dos horas» es Két órát sem aludtam."
+        }
+      },
+      "examples": [
+        "Csak holnap tudok jönni.",
+        "Csak Péter jött el."
+      ],
+      "tr": {
+        "en": "I slept only two hours, that is why I am tired.",
+        "es": "Dormí solo dos horas, por eso estoy cansado."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-c08",
+      "sentence": "Tegnap dolgoztam, ma ___ dolgozom.",
+      "options": [
+        "is",
+        "sem",
+        "csak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "is adds today to yesterday: ma is dolgozom (I am working today too).",
+        "es": "is suma hoy a ayer: ma is dolgozom (hoy también trabajo)."
+      },
+      "wrong": {
+        "sem": {
+          "en": "sem means \"not either\", which needs an earlier negative; yesterday I did work.",
+          "es": "sem significa «tampoco», que necesita un negativo anterior; ayer sí trabajé."
+        },
+        "csak": {
+          "en": "ma csak dolgozom would say that today I do nothing but work.",
+          "es": "ma csak dolgozom diría que hoy solo trabajo y nada más."
+        }
+      },
+      "examples": [
+        "Reggel is, este is dolgozom.",
+        "Tegnap is esett."
+      ],
+      "tr": {
+        "en": "I worked yesterday, and I am working today too.",
+        "es": "Ayer trabajé, y hoy también trabajo."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f06",
+      "kind": "form",
+      "verb": "csak",
+      "person": "tegnap + elmegy",
+      "answer": "csak tegnap ment el",
+      "table": "csak-is-sem"
+    },
+    {
+      "id": "fokusz-reszecskek-c09",
+      "sentence": "___ nem dolgozom ott, mert új munkám van.",
+      "options": [
+        "Már",
+        "Még",
+        "Éppen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "már nem = no longer: the job has ended, and the new job is the reason.",
+        "es": "már nem = ya no: el trabajo terminó, y el nuevo trabajo es la razón."
+      },
+      "wrong": {
+        "Még": {
+          "en": "még nem means not yet; it would say that I have not started working there, which does not fit \"I have a new job\".",
+          "es": "még nem significa todavía no; diría que aún no empiezo a trabajar ahí, lo cual no encaja con «tengo un trabajo nuevo»."
+        },
+        "Éppen": {
+          "en": "éppen nem would mean \"right now I am not working there\" (a break), not that it ended.",
+          "es": "éppen nem significaría «ahora mismo no estoy trabajando ahí» (un descanso), no que terminó."
+        }
+      },
+      "examples": [
+        "Péter már nincs itt.",
+        "Már itthon vagyok."
+      ],
+      "tr": {
+        "en": "I do not work there any more, because I have a new job.",
+        "es": "Ya no trabajo ahí, porque tengo un trabajo nuevo."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f07",
+      "kind": "form",
+      "verb": "nem",
+      "person": "már + dolgozik (én)",
+      "answer": "már nem dolgozom",
+      "table": "meg-mar"
+    },
+    {
+      "id": "fokusz-reszecskek-w03",
+      "kind": "why",
+      "es": "Péter sem jött el.",
+      "target": "sem",
+      "tr": {
+        "en": "Péter did not come either.",
+        "es": "Péter tampoco vino."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sem is the negative of is: it already makes the sentence negative, so no extra nem is needed, and like nem it pushes the prefix behind the verb.",
+            "es": "sem es el negativo de is: ya vuelve negativa la frase, así que no hace falta otro nem, y como nem empuja el prefijo detrás del verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "sem means only, like csak",
+            "es": "sem significa solo, como csak"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Csak Péter jött el (only Péter came); sem is a negative word.",
+            "es": "Con esta regla la frase sería Csak Péter jött el (solo vino Péter); sem es una palabra negativa."
+          }
+        },
+        {
+          "text": {
+            "en": "sem still needs nem: Péter sem nem jött el",
+            "es": "sem todavía necesita nem: Péter sem nem jött el"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would carry a second negation; one sem before the verb is enough (only the pair sem ... sem takes nem).",
+            "es": "Con esta regla la frase llevaría una segunda negación; un solo sem antes del verbo basta (solo la pareja sem ... sem lleva nem)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fokusz-reszecskek-c10",
+      "sentence": "Kérsz ___ egy kávét?",
+      "options": [
+        "még",
+        "sem",
+        "nem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "még here means \"more, another\": Kérsz még egy kávét? (Do you want another coffee?)",
+        "es": "még aquí significa «más, otro»: Kérsz még egy kávét? (¿Quieres otro café?)"
+      },
+      "wrong": {
+        "sem": {
+          "en": "sem belongs only to negative sentences; this is a positive offer.",
+          "es": "sem pertenece solo a frases negativas; esto es un ofrecimiento positivo."
+        },
+        "nem": {
+          "en": "Kérsz nem egy kávét is not a possible order; a negative offer would be Nem kérsz egy kávét?, with nem right before the verb.",
+          "es": "Kérsz nem egy kávét no es un orden posible; un ofrecimiento negativo sería Nem kérsz egy kávét?, con nem justo antes del verbo."
+        }
+      },
+      "examples": [
+        "Ez még drágább.",
+        "Még Péter is eljött."
+      ],
+      "tr": {
+        "en": "Do you want another coffee?",
+        "es": "¿Quieres otro café?"
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f08",
+      "kind": "form",
+      "verb": "nem",
+      "person": "még + dolgozik (én)",
+      "answer": "még nem dolgozom",
+      "table": "meg-mar"
+    },
+    {
+      "id": "fokusz-reszecskek-c11",
+      "sentence": "___ vacsorázunk, hívj vissza később!",
+      "options": [
+        "Éppen",
+        "Sem",
+        "Is"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "éppen means \"right now\": we are in the middle of dinner.",
+        "es": "éppen significa «ahora mismo»: estamos en medio de la cena."
+      },
+      "wrong": {
+        "Sem": {
+          "en": "sem is a negative word and needs a negative sentence; this one is positive.",
+          "es": "sem es una palabra negativa y necesita una frase negativa; esta es positiva."
+        },
+        "Is": {
+          "en": "is comes after the word it belongs to, so it cannot open the sentence.",
+          "es": "is va después de la palabra a la que pertenece, así que no puede abrir la frase."
+        }
+      },
+      "examples": [
+        "Éppen főzök.",
+        "Éppen indulok."
+      ],
+      "tr": {
+        "en": "We are having dinner right now, call back later!",
+        "es": "¡Estamos cenando ahora mismo, llama más tarde!"
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f09",
+      "kind": "form",
+      "verb": "magyarul + angolul",
+      "person": "sem ... sem ...",
+      "answer": "sem magyarul, sem angolul nem beszél",
+      "table": "parok",
+      "accept": [
+        "se magyarul, se angolul nem beszél"
+      ]
+    },
+    {
+      "id": "fokusz-reszecskek-c12",
+      "sentence": "Éppen te ___ ezt?",
+      "options": [
+        "mondod",
+        "mondasz",
+        "mondok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ezt is a definite object, so the verb takes the definite conjugation: te mondod. éppen puts the stress on te (\"you of all people\").",
+        "es": "ezt es un complemento directo determinado, así que el verbo va en la conjugación determinada: te mondod. éppen pone el énfasis en te («precisamente tú»)."
+      },
+      "wrong": {
+        "mondasz": {
+          "en": "mondasz is the indefinite form (te mondasz valamit); with ezt you need the definite form.",
+          "es": "mondasz es la forma indeterminada (te mondasz valamit); con ezt necesitas la forma determinada."
+        },
+        "mondok": {
+          "en": "mondok is the I-form; the sentence is about you (te).",
+          "es": "mondok es la forma de «yo»; la frase trata de ti (te)."
+        }
+      },
+      "examples": [
+        "Éppen ezt akartam mondani.",
+        "Éppen ide akartam jönni."
+      ],
+      "tr": {
+        "en": "You of all people say this?",
+        "es": "¿Precisamente tú dices esto?"
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f10",
+      "kind": "form",
+      "verb": "az, aki",
+      "person": "Kati + bejön",
+      "answer": "Kati az, aki bejött",
+      "table": "kiemeles"
+    },
+    {
+      "id": "fokusz-reszecskek-c13",
+      "sentence": "Péter az, ___ elment.",
+      "options": [
+        "aki",
+        "ami",
+        "ahol"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Péter is a person, so the pair is az, aki: Péter is the one who left.",
+        "es": "Péter es una persona, así que la pareja es az, aki: Péter es el que se fue."
+      },
+      "wrong": {
+        "ami": {
+          "en": "ami is for things; Péter is a person.",
+          "es": "ami es para cosas; Péter es una persona."
+        },
+        "ahol": {
+          "en": "ahol is a place word; az here points to Péter, not to a place.",
+          "es": "ahol es una palabra de lugar; az aquí apunta a Péter, no a un lugar."
+        }
+      },
+      "examples": [
+        "Kati az, aki hazament.",
+        "Anna az, aki bejött."
+      ],
+      "tr": {
+        "en": "Péter is the one who left.",
+        "es": "Péter es el que se fue."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-w04",
+      "kind": "why",
+      "es": "Péter az, aki elment.",
+      "target": "aki",
+      "tr": {
+        "en": "Péter is the one who left.",
+        "es": "Péter es el que se fue."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Péter is a person, so the relative word is aki; for a thing it would be ami.",
+            "es": "Péter es una persona, así que la palabra relativa es aki; para una cosa sería ami."
+          }
+        },
+        {
+          "text": {
+            "en": "It is ami, because the sentence is about a fact",
+            "es": "Es ami, porque la frase trata de un hecho"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ez az, ami elment, which makes the subject a thing; here the subject is Péter, a person.",
+            "es": "Con esta regla la frase sería Ez az, ami elment, lo que haría del sujeto una cosa; aquí el sujeto es Péter, una persona."
+          }
+        },
+        {
+          "text": {
+            "en": "It is ahol, because az points to a place",
+            "es": "Es ahol, porque az apunta a un lugar"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about a place where something happens; az here points back to Péter.",
+            "es": "Con esta regla la frase trataría de un lugar donde sucede algo; az aquí retoma a Péter."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "fokusz-reszecskek-c14",
+      "sentence": "Ez az, ___ kerestem.",
+      "options": [
+        "amit",
+        "aki",
+        "ahol"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ez is a thing, and the relative word is the object of kerestem (I was looking for it): az, amit.",
+        "es": "Ez es una cosa, y la palabra relativa es el complemento directo de kerestem (lo buscaba): az, amit."
+      },
+      "wrong": {
+        "aki": {
+          "en": "aki is for people; the speaker is looking for a thing.",
+          "es": "aki es para personas; el hablante busca una cosa."
+        },
+        "ahol": {
+          "en": "ahol is a place word; it would say \"this is where I was looking\".",
+          "es": "ahol es una palabra de lugar; diría «aquí es donde busqué»."
+        }
+      },
+      "examples": [
+        "A kávé az, ami hiányzik.",
+        "Ez az, amit kértem."
+      ],
+      "tr": {
+        "en": "This is what I was looking for.",
+        "es": "Esto es lo que buscaba."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f11",
+      "kind": "form",
+      "verb": "az, ami",
+      "person": "a kávé + hiányzik",
+      "answer": "a kávé az, ami hiányzik",
+      "table": "kiemeles"
+    },
+    {
+      "id": "fokusz-reszecskek-c15",
+      "sentence": "Sem pénzem, sem időm ___.",
+      "options": [
+        "nincs",
+        "nem van",
+        "sincs"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "nem and van fuse into nincs, so the pair sem ... sem takes nincs: pénzem nincs, időm nincs.",
+        "es": "nem y van se funden en nincs, así que la pareja sem ... sem lleva nincs: pénzem nincs, időm nincs."
+      },
+      "wrong": {
+        "nem van": {
+          "en": "nem van is never said: nem and van always fuse into nincs.",
+          "es": "nem van nunca se dice: nem y van siempre se funden en nincs."
+        },
+        "sincs": {
+          "en": "sincs already holds one sem; after the pair sem ... sem the plain nincs is enough.",
+          "es": "sincs ya contiene un sem; después de la pareja sem ... sem basta con nincs."
+        }
+      },
+      "examples": [
+        "Sem Péter, sem Anna nincs itt.",
+        "Sem tej, sem kenyér nincs otthon."
+      ],
+      "tr": {
+        "en": "I have neither money nor time.",
+        "es": "No tengo ni dinero ni tiempo."
+      }
+    },
+    {
+      "id": "fokusz-reszecskek-f12",
+      "kind": "form",
+      "verb": "sem",
+      "person": "Gábor + visszajön",
+      "answer": "Gábor sem jött vissza",
+      "table": "csak-is-sem",
+      "accept": [
+        "Gábor se jött vissza"
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "word": "nemcsak",
+      "gloss": {
+        "en": "not only (one word, with hanem ... is)",
+        "es": "no solo (una palabra, con hanem ... is)"
+      }
+    }
+  ]
+}

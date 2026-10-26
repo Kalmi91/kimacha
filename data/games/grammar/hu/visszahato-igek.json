@@ -1,0 +1,1331 @@
+{
+  "schema": 2,
+  "topic": "visszahato-igek",
+  "level": "B1",
+  "title": {
+    "en": "Myself and each other: magam, egymás, mosakodik",
+    "es": "Uno mismo y el uno al otro: magam, egymás, mosakodik"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "English and Spanish mark 'to oneself' with a small word: I wash myself, me lavo. Hungarian has three tools. First, special reflexive verbs with the endings -kodik / -kedik / -ködik or -kozik, which already mean 'do it to oneself': mosakodik (washes), öltözködik (gets dressed), borotválkozik (shaves). Second, an ordinary verb plus the pronoun maga with a possessive ending: megmosom magam (I wash myself), látom magam a tükörben (I see myself in the mirror). Third, egymás for 'each other': Segítünk egymásnak. Szeretjük egymást. A fourth word, saját (own), lives in the same neighbourhood: a saját szobám (my own room). Hungarian also uses far fewer reflexives than English or Spanish: where you say 'I get up' or 'I sit down', Hungarian just has a verb with a prefix (felkelek, leülök).",
+        "es": "El inglés y el español marcan «a uno mismo» con una palabrita: I wash myself, me lavo. El húngaro tiene tres herramientas. Primero, verbos reflexivos propios con las terminaciones -kodik / -kedik / -ködik o -kozik, que ya significan «hacerlo uno a sí mismo»: mosakodik (se lava), öltözködik (se viste), borotválkozik (se afeita). Segundo, un verbo normal más el pronombre maga con terminación posesiva: megmosom magam (me lavo), látom magam a tükörben (me veo en el espejo). Tercero, egymás para «el uno al otro»: Segítünk egymásnak. Szeretjük egymást. Una cuarta palabra, saját (propio), vive en el mismo barrio: a saját szobám (mi propio cuarto). Además el húngaro usa muchos menos reflexivos que el inglés o el español: donde tú dices «me levanto» o «me siento», el húngaro solo tiene un verbo con prefijo (felkelek, leülök)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "refl-pron",
+      "title": {
+        "en": "maga: myself, yourself, himself...",
+        "es": "maga: yo mismo, tú mismo, él mismo..."
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "maga (self)",
+          "es": "maga (uno mismo)"
+        },
+        {
+          "en": "maga (accusative)",
+          "es": "maga (acusativo)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "magam",
+          "magamat"
+        ],
+        [
+          "te",
+          "magad",
+          "magadat"
+        ],
+        [
+          "ő",
+          "maga",
+          "magát"
+        ],
+        [
+          "mi",
+          "magunk",
+          "magunkat"
+        ],
+        [
+          "ti",
+          "magatok",
+          "magatokat"
+        ],
+        [
+          "ők",
+          "maguk",
+          "magukat"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Three ways to say 'myself'",
+        "es": "Tres maneras de decir «a mí mismo»"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "A reflexive -ik verb. The endings -kodik / -kedik / -ködik and -kozik already mean 'do it to oneself', so no pronoun is needed. Vowel harmony picks the vowel: mosakodik (back), öltözködik and fésülködik (rounded front), borotválkozik (back, -kozik). They conjugate like every -ik verb (1st person -om / -em / -öm). Careful: not every -kodik / -kozik verb is reflexive; gondolkodom (I think), unatkozom (I am bored) and találkozom (I meet) just share the ending.",
+            "es": "Un verbo reflexivo en -ik. Las terminaciones -kodik / -kedik / -ködik y -kozik ya significan «hacerlo uno a sí mismo», así que no hace falta pronombre. La armonía vocálica elige la vocal: mosakodik (posterior), öltözködik y fésülködik (anterior redondeada), borotválkozik (posterior, -kozik). Se conjugan como cualquier verbo en -ik (1.ª persona -om / -em / -öm). Ojo: no todos los verbos en -kodik / -kozik son reflexivos; gondolkodom (pienso), unatkozom (me aburro) y találkozom (me encuentro con alguien) solo comparten la terminación."
+          },
+          "examples": [
+            {
+              "es": "Gábor minden reggel borotválkozik.",
+              "tr": {
+                "en": "Gábor shaves every morning.",
+                "es": "Gábor se afeita todas las mañanas."
+              }
+            },
+            {
+              "es": "Reggel a fürdőszobában fésülködöm.",
+              "tr": {
+                "en": "In the morning I comb my hair in the bathroom.",
+                "es": "Por la mañana me peino en el baño."
+              }
+            },
+            {
+              "es": "A gyerekek a fürdőszobában mosakodnak.",
+              "tr": {
+                "en": "The children wash up in the bathroom.",
+                "es": "Los niños se lavan en el baño."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "An ordinary verb plus maga. Maga takes the possessive endings (magam, magad, maga, magunk, magatok, maguk) and, as the object, the accusative: magamat, magadat, magát, magunkat, magatokat, magukat. In everyday speech the -at after magam and magad is usually dropped (Látom magam). Maga is a definite object, so the verb is in the definite conjugation: látom, not látok.",
+            "es": "Un verbo normal más maga. Maga recibe las terminaciones posesivas (magam, magad, maga, magunk, magatok, maguk) y, como complemento directo, el acusativo: magamat, magadat, magát, magunkat, magatokat, magukat. En el habla diaria el -at de magam y magad suele omitirse (Látom magam). Maga es un objeto determinado, así que el verbo va en la conjugación definida: látom, no látok."
+          },
+          "examples": [
+            {
+              "es": "Megmosom magam, aztán megyek dolgozni.",
+              "tr": {
+                "en": "I wash up, then I go to work.",
+                "es": "Me lavo y luego me voy a trabajar."
+              }
+            },
+            {
+              "es": "Látom magam a tükörben.",
+              "tr": {
+                "en": "I see myself in the mirror.",
+                "es": "Me veo en el espejo."
+              }
+            },
+            {
+              "es": "Nem szeretem magam a fényképeken.",
+              "tr": {
+                "en": "I do not like myself in photos.",
+                "es": "No me gusto en las fotos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "No reflexive at all. Where English or Spanish says 'I get up, I sit down', Hungarian uses a plain verb with a prefix. Do not add magam: felkelek, leülök.",
+            "es": "Ningún reflexivo. Donde el inglés o el español dicen «me levanto, me siento», el húngaro usa un verbo normal con prefijo. No añadas magam: felkelek, leülök."
+          },
+          "examples": [
+            {
+              "es": "Reggel hétkor felkelek.",
+              "tr": {
+                "en": "I get up at seven in the morning.",
+                "es": "Me levanto a las siete de la mañana."
+              }
+            },
+            {
+              "es": "Leülünk az asztalhoz, és vacsorázunk.",
+              "tr": {
+                "en": "We sit down at the table and have dinner.",
+                "es": "Nos sentamos a la mesa y cenamos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kod-verbs",
+      "title": {
+        "en": "Reflexive -ik verbs, present tense",
+        "es": "Verbos reflexivos en -ik, presente"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "mosakodik (wash)",
+          "es": "mosakodik (lavarse)"
+        },
+        {
+          "en": "öltözködik (get dressed)",
+          "es": "öltözködik (vestirse)"
+        },
+        {
+          "en": "borotválkozik (shave)",
+          "es": "borotválkozik (afeitarse)"
+        },
+        {
+          "en": "fésülködik (comb one's hair)",
+          "es": "fésülködik (peinarse)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "mosakodom",
+          "öltözködöm",
+          "borotválkozom",
+          "fésülködöm"
+        ],
+        [
+          "te",
+          "mosakodsz",
+          "öltözködsz",
+          "borotválkozol",
+          "fésülködsz"
+        ],
+        [
+          "ő",
+          "mosakodik",
+          "öltözködik",
+          "borotválkozik",
+          "fésülködik"
+        ],
+        [
+          "mi",
+          "mosakodunk",
+          "öltözködünk",
+          "borotválkozunk",
+          "fésülködünk"
+        ],
+        [
+          "ti",
+          "mosakodtok",
+          "öltözködtök",
+          "borotválkoztok",
+          "fésülködtök"
+        ],
+        [
+          "ők",
+          "mosakodnak",
+          "öltözködnek",
+          "borotválkoznak",
+          "fésülködnek"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Using maga",
+        "es": "Cómo usar maga"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "jól érzi magát, rosszul érzi magát: to feel good or bad, to have a good or bad time. The pronoun follows the person, and the verb is definite.",
+            "es": "jól érzi magát, rosszul érzi magát: sentirse bien o mal, pasarla bien o mal. El pronombre sigue a la persona y el verbo es definido."
+          },
+          "examples": [
+            {
+              "es": "Itt nagyon jól érzem magam.",
+              "tr": {
+                "en": "I feel very good here.",
+                "es": "Aquí me siento muy bien."
+              }
+            },
+            {
+              "es": "Anna rosszul érzi magát, ezért otthon marad.",
+              "tr": {
+                "en": "Anna does not feel well, so she stays at home.",
+                "es": "Anna no se siente bien, por eso se queda en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Case endings go after maga: magamnak (for myself), magadnak, magának; magammal (with myself), magaddal, magával. The possessive ending stays, the case ending follows it.",
+            "es": "Las terminaciones de caso van después de maga: magamnak (para mí mismo), magadnak, magának; magammal (conmigo mismo), magaddal, magával. La terminación posesiva se queda y la de caso la sigue."
+          },
+          "examples": [
+            {
+              "es": "Vacsorát főzök magamnak.",
+              "tr": {
+                "en": "I am cooking dinner for myself.",
+                "es": "Cocino la cena para mí mismo."
+              }
+            },
+            {
+              "es": "Néha magammal beszélek.",
+              "tr": {
+                "en": "Sometimes I talk to myself.",
+                "es": "A veces hablo conmigo mismo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Stress: after a noun or pronoun, maga means 'in person, himself': not somebody else. Then it is no object; it only agrees with the subject, and the verb stays as it is.",
+            "es": "Énfasis: después de un sustantivo o pronombre, maga significa «en persona, él mismo»: no otra persona. Entonces no es objeto; solo concuerda con el sujeto y el verbo no cambia."
+          },
+          "examples": [
+            {
+              "es": "Én magam főztem a vacsorát.",
+              "tr": {
+                "en": "I cooked dinner myself.",
+                "es": "Yo mismo cociné la cena."
+              }
+            },
+            {
+              "es": "Anna maga hívta Pétert.",
+              "tr": {
+                "en": "Anna called Péter herself.",
+                "es": "Anna misma llamó a Péter."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "saját: own",
+        "es": "saját: propio"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "saját stands before a noun that already has its possessive ending (saját szobám, saját lakása) and says 'not somebody else's'. With a definite phrase it takes the article: a saját szobám.",
+            "es": "saját va antes de un sustantivo que ya tiene su terminación posesiva (saját szobám, saját lakása) y dice «no de otra persona». En una frase determinada lleva artículo: a saját szobám."
+          },
+          "examples": [
+            {
+              "es": "Péternek saját lakása van.",
+              "tr": {
+                "en": "Péter has a flat of his own.",
+                "es": "Péter tiene su propio departamento."
+              }
+            },
+            {
+              "es": "A saját szobámban tanulok.",
+              "tr": {
+                "en": "I study in my own room.",
+                "es": "Estudio en mi propio cuarto."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "saját magam, saját maga: the emphatic pair, \"myself and nobody else\". It combines the two ideas of this lesson.",
+            "es": "saját magam, saját maga: la pareja enfática, «yo mismo y nadie más». Une las dos ideas de esta lección."
+          },
+          "examples": [
+            {
+              "es": "Ezt saját magam írtam.",
+              "tr": {
+                "en": "I wrote this myself.",
+                "es": "Esto lo escribí yo mismo."
+              }
+            },
+            {
+              "es": "Gábor saját maga főzte a vacsorát.",
+              "tr": {
+                "en": "Gábor cooked the dinner himself.",
+                "es": "Gábor mismo preparó la cena."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "egymas-cases",
+      "title": {
+        "en": "egymás: each other, with endings",
+        "es": "egymás: el uno al otro, con terminaciones"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "egymás + ending",
+          "es": "egymás + terminación"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "-t",
+          "egymást",
+          "Ismerjük egymást."
+        ],
+        [
+          "-nak/-nek",
+          "egymásnak",
+          "Segítünk egymásnak."
+        ],
+        [
+          "-val/-vel",
+          "egymással",
+          "Sokat beszélünk egymással."
+        ],
+        [
+          "-ról/-ről",
+          "egymásról",
+          "Sokat tudunk egymásról."
+        ],
+        [
+          "-tól/-től",
+          "egymástól",
+          "Messze lakunk egymástól."
+        ],
+        [
+          "-hoz/-hez/-höz",
+          "egymáshoz",
+          "Közel lakunk egymáshoz."
+        ],
+        [
+          "mellett",
+          "egymás mellett",
+          "Az iskolában egymás mellett ülünk."
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "egymás: each other",
+        "es": "egymás: el uno al otro"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "egymás needs two or more people acting on one another (mi, ti, ők, Anna és Péter). It behaves like a noun and takes case endings. As a direct object it is definite, so the verb is too: szeretjük egymást.",
+            "es": "egymás necesita dos o más personas que actúan unas sobre otras (mi, ti, ők, Anna és Péter). Se comporta como un sustantivo y recibe terminaciones de caso. Como objeto directo es determinado, así que el verbo también: szeretjük egymást."
+          },
+          "examples": [
+            {
+              "es": "Gábor és Kati jól ismerik egymást.",
+              "tr": {
+                "en": "Gábor and Kati know each other well.",
+                "es": "Gábor y Kati se conocen bien."
+              }
+            },
+            {
+              "es": "Minden nap hívjuk egymást.",
+              "tr": {
+                "en": "We call each other every day.",
+                "es": "Nos llamamos todos los días."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs that ask for -nak/-nek (segít, ad, köszön) take egymásnak, never egymást.",
+            "es": "Los verbos que piden -nak/-nek (segít, ad, köszön) llevan egymásnak, nunca egymást."
+          },
+          "examples": [
+            {
+              "es": "A szomszédok köszönnek egymásnak.",
+              "tr": {
+                "en": "The neighbours greet each other.",
+                "es": "Los vecinos se saludan."
+              }
+            },
+            {
+              "es": "Születésnapra ajándékot adunk egymásnak.",
+              "tr": {
+                "en": "For birthdays we give each other presents.",
+                "es": "Para los cumpleaños nos damos regalos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Before a postposition egymás takes no ending: egymás mellett, egymás előtt, egymás után. Other cases follow the table above.",
+            "es": "Antes de una posposición egymás no lleva terminación: egymás mellett, egymás előtt, egymás után. Los demás casos siguen la tabla de arriba."
+          },
+          "examples": [
+            {
+              "es": "A testvérek egymás mellett laknak.",
+              "tr": {
+                "en": "The siblings live next to each other.",
+                "es": "Los hermanos viven uno al lado del otro."
+              }
+            },
+            {
+              "es": "Egymás után érkeznek a vendégek.",
+              "tr": {
+                "en": "The guests arrive one after another.",
+                "es": "Los invitados llegan uno tras otro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "magát, egymást, or neither?",
+        "es": "¿magát, egymást o ninguno?"
+      },
+      "pairs": [
+        {
+          "a": "Látják magukat.",
+          "b": "Látják egymást.",
+          "note": {
+            "en": "magukat = each one sees himself or herself. egymást = A sees B and B sees A. Anna és Péter can mean either; the pronoun tells you which.",
+            "es": "magukat = cada uno se ve a sí mismo. egymást = A ve a B y B ve a A. «Anna és Péter» puede ser cualquiera de las dos cosas; el pronombre lo aclara."
+          },
+          "examples": [
+            {
+              "es": "Anna és Péter a tükörben látják magukat.",
+              "tr": {
+                "en": "Anna and Péter see themselves in the mirror.",
+                "es": "Anna y Péter se ven a sí mismos en el espejo."
+              }
+            },
+            {
+              "es": "Anna és Péter a buszon látják egymást.",
+              "tr": {
+                "en": "Anna and Péter see each other on the bus.",
+                "es": "Anna y Péter se ven en el autobús."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Megmosom magam.",
+          "b": "Megmosom a kezem.",
+          "note": {
+            "en": "magam washes the whole self (a wash-up, a bath). For a body part Hungarian uses the possessive ending instead of a pronoun: a kezem, az arcom. Careful: in writing the object keeps its -t (kezemet, arcomat); in everyday speech it is usually dropped after -m and -d.",
+            "es": "magam es lavarse entero (un baño). Para una parte del cuerpo el húngaro usa la terminación posesiva en vez de un pronombre: a kezem, az arcom. Ojo: por escrito el objeto lleva su -t (kezemet, arcomat); en el habla diaria suele omitirse después de -m y -d."
+          },
+          "examples": [
+            {
+              "es": "Ebéd előtt megmosom a kezem.",
+              "tr": {
+                "en": "Before lunch I wash my hands.",
+                "es": "Antes de comer me lavo las manos."
+              }
+            },
+            {
+              "es": "Reggel megmosom az arcom.",
+              "tr": {
+                "en": "In the morning I wash my face.",
+                "es": "Por la mañana me lavo la cara."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Jól érzem magam.",
+          "b": "Jól vagyok.",
+          "note": {
+            "en": "jól érzem magam = I feel good, I am having a good time (mood, place, company). jól vagyok = I am fine (health): the usual answer to Hogy vagy?",
+            "es": "jól érzem magam = me siento bien, la estoy pasando bien (ánimo, lugar, compañía). jól vagyok = estoy bien (salud): la respuesta normal a Hogy vagy?"
+          },
+          "examples": [
+            {
+              "es": "Itt nagyon jól érzem magam.",
+              "tr": {
+                "en": "I feel really good here.",
+                "es": "Aquí me siento muy bien."
+              }
+            },
+            {
+              "es": "Köszönöm, jól vagyok.",
+              "tr": {
+                "en": "Thanks, I am fine.",
+                "es": "Gracias, estoy bien."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Before you add magam, ask: does Hungarian already put the 'self' inside the verb, or use a prefix? Mosakodom, felkelek and leülök never take magam, and a body part takes a possessive ending, not magam: Megmosom a kezem. One more trap: maga is also a 'you' form (magázás). It is normal with some older people and in some regions, but it can sound distant or sharp, so say Ön to a stranger and te to a friend.",
+        "es": "Antes de añadir magam, pregúntate: ¿el húngaro ya pone el «se» dentro del verbo o usa un prefijo? Mosakodom, felkelek y leülök nunca llevan magam, y una parte del cuerpo lleva la terminación posesiva, no magam: Megmosom a kezem. Otra trampa: maga también es una forma de «usted» (magázás). Es normal con algunas personas mayores y en algunas regiones, pero puede sonar distante o seco; a un desconocido dile Ön y a un amigo te."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian has three ways to say myself. First, a special verb: «mosakodik», «öltözködik», «borotválkozik», with no extra word. Second, an ordinary verb plus «magam»: «Megmosom magam.» «Jól érzem magam.» Because «magam» is a definite object, the verb is definite too: «Látom magam a tükörben.» Third, for each other use «egymás»: «Segítünk egymásnak.» «Szeretjük egymást.» And «saját» means own: «a saját szobám». Careful: Hungarian often has no reflexive where English has one: «Reggel hétkor felkelek.»",
+    "es": "El húngaro tiene tres maneras de decir a uno mismo. Primero, un verbo especial: «mosakodik», «öltözködik», «borotválkozik», sin ninguna palabra extra. Segundo, un verbo normal más «magam»: «Megmosom magam.» «Jól érzem magam.» Como «magam» es un objeto determinado, el verbo también es definido: «Látom magam a tükörben.» Tercero, para el uno al otro se usa «egymás»: «Segítünk egymásnak.» «Szeretjük egymást.» Y «saját» significa propio: «a saját szobám». Ojo: el húngaro muchas veces no tiene reflexivo donde el español sí lo tiene: «Reggel hétkor felkelek.»"
+  },
+  "glossary": [
+    {
+      "word": "maga",
+      "gloss": {
+        "en": "self (reflexive pronoun: magam, magad, magát...)",
+        "es": "uno mismo (pronombre reflexivo: magam, magad, magát...)"
+      }
+    },
+    {
+      "word": "egymás",
+      "gloss": {
+        "en": "each other, one another",
+        "es": "el uno al otro, unos a otros"
+      }
+    },
+    {
+      "word": "mosakodik",
+      "gloss": {
+        "en": "to wash oneself (also mosakszik)",
+        "es": "lavarse (también mosakszik)"
+      }
+    },
+    {
+      "word": "öltözködik",
+      "gloss": {
+        "en": "to get dressed, to dress oneself",
+        "es": "vestirse"
+      }
+    },
+    {
+      "word": "megmos",
+      "gloss": {
+        "en": "to wash (something) properly",
+        "es": "lavar (algo) bien"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "visszahato-igek-c01",
+      "sentence": "Gábor minden reggel a fürdőszobában ___, aztán elmegy dolgozni.",
+      "options": [
+        "borotválkozom",
+        "borotválkozik",
+        "borotválkoznak"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Gábor is one person (he), so the -ik verb ends in -ik: borotválkozik. The ending -kozik already means \"shave oneself\", so no magát is needed.",
+        "es": "Gábor es una sola persona (él), así que el verbo en -ik termina en -ik: borotválkozik. La terminación -kozik ya significa «afeitarse», así que no hace falta magát."
+      },
+      "wrong": {
+        "borotválkozom": {
+          "en": "borotválkozom is \"I shave\"; the subject of this sentence is Gábor.",
+          "es": "borotválkozom es «me afeito»; el sujeto de esta frase es Gábor."
+        },
+        "borotválkoznak": {
+          "en": "borotválkoznak is \"they shave\"; Gábor is only one person.",
+          "es": "borotválkoznak es «se afeitan»; Gábor es una sola persona."
+        }
+      },
+      "examples": [
+        "Péter hétkor borotválkozik.",
+        "A férfi a tükör előtt borotválkozik."
+      ],
+      "tr": {
+        "en": "Every morning Gábor shaves in the bathroom, then he goes to work.",
+        "es": "Cada mañana Gábor se afeita en el baño y luego se va a trabajar."
+      }
+    },
+    {
+      "id": "visszahato-igek-f01",
+      "kind": "form",
+      "verb": "maga",
+      "person": "én",
+      "answer": "magam",
+      "table": "refl-pron"
+    },
+    {
+      "id": "visszahato-igek-c02",
+      "sentence": "Kati nem szereti ___ a fényképeken, ezért ritkán mosolyog.",
+      "options": [
+        "magam",
+        "egymást",
+        "magát"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Kati (she) is both the person who looks and the person in the photo, so the reflexive pronoun is magát. It is a definite object, so szereti has the definite ending.",
+        "es": "Kati (ella) es quien mira y también quien sale en la foto, así que el pronombre reflexivo es magát. Es un objeto determinado, por eso szereti lleva la terminación definida."
+      },
+      "wrong": {
+        "magam": {
+          "en": "magam is \"myself\"; the subject is Kati, not I.",
+          "es": "magam es «a mí mismo»; el sujeto es Kati, no yo."
+        },
+        "egymást": {
+          "en": "egymást is \"each other\" and needs two or more people acting on one another; Kati is alone here.",
+          "es": "egymást es «el uno al otro» y necesita dos o más personas; aquí Kati está sola."
+        }
+      },
+      "examples": [
+        "Anna sem szereti magát a videón.",
+        "Mi sem szeretjük magunkat a fényképeken."
+      ],
+      "tr": {
+        "en": "Kati does not like herself in photos, so she rarely smiles.",
+        "es": "A Kati no le gusta cómo sale en las fotos, por eso casi no sonríe."
+      }
+    },
+    {
+      "id": "visszahato-igek-f02",
+      "kind": "form",
+      "verb": "mosakodik",
+      "person": "én",
+      "answer": "mosakodom",
+      "accept": [
+        "mosakodok"
+      ],
+      "table": "kod-verbs"
+    },
+    {
+      "id": "visszahato-igek-c03",
+      "sentence": "Anna és Péter együtt laknak, és nagyon szeretik ___.",
+      "options": [
+        "egymást",
+        "magukat",
+        "egymásnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "szeret takes the accusative, so \"each other\" is egymást. The verb is definite (szeretik) because egymást is a definite object.",
+        "es": "szeret lleva acusativo, así que «el uno al otro» es egymást. El verbo es definido (szeretik) porque egymást es un objeto determinado."
+      },
+      "wrong": {
+        "magukat": {
+          "en": "magukat would mean that each of them loves himself or herself, not the other.",
+          "es": "magukat significaría que cada uno se quiere a sí mismo, no al otro."
+        },
+        "egymásnak": {
+          "en": "egymásnak is the dative (to each other), used with verbs like segít or ad; szeret takes the accusative.",
+          "es": "egymásnak es el dativo (al otro), se usa con verbos como segít o ad; szeret lleva acusativo."
+        }
+      },
+      "examples": [
+        "Szeretjük egymást.",
+        "A testvérek jól ismerik egymást."
+      ],
+      "tr": {
+        "en": "Anna and Péter live together, and they love each other very much.",
+        "es": "Anna y Péter viven juntos y se quieren mucho."
+      }
+    },
+    {
+      "id": "visszahato-igek-w01",
+      "kind": "why",
+      "es": "Megmosom a kezem.",
+      "target": "a kezem",
+      "tr": {
+        "en": "I wash my hands.",
+        "es": "Me lavo las manos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A kezem is the reflexive pronoun for \"hand\"",
+            "es": "A kezem es el pronombre reflexivo para «mano»"
+          },
+          "wrong": {
+            "en": "With this rule the pronoun would be magam: Megmosom magam means I wash all of myself. Here the ending -em simply says whose hand it is: mine.",
+            "es": "Con esta regla el pronombre sería magam: Megmosom magam significa que me lavo entero. Aquí la terminación -em solo dice de quién es la mano: mía."
+          }
+        },
+        {
+          "text": {
+            "en": "The body part carries the possessive ending (kezem = my hand), so no magam is needed",
+            "es": "La parte del cuerpo lleva la terminación posesiva (kezem = mi mano), así que no hace falta magam"
+          }
+        },
+        {
+          "text": {
+            "en": "A kezem is the accusative of egymás",
+            "es": "A kezem es el acusativo de egymás"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be about two or more people washing each other's hands. Here one person washes his or her own hand.",
+            "es": "Con esta regla la frase trataría de dos o más personas que se lavan las manos unas a otras. Aquí una sola persona se lava su propia mano."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "visszahato-igek-f03",
+      "kind": "form",
+      "verb": "maga",
+      "person": "mi",
+      "answer": "magunk",
+      "table": "refl-pron"
+    },
+    {
+      "id": "visszahato-igek-c04",
+      "sentence": "Mi mindig segítünk ___, ha baj van.",
+      "options": [
+        "egymást",
+        "magunkat",
+        "egymásnak"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "segít (help) asks for -nak/-nek, like nekem: \"help each other\" is segít egymásnak. There is no accusative object, so the verb stays indefinite: segítünk.",
+        "es": "segít (ayudar) pide -nak/-nek, como nekem: «ayudarse unos a otros» es segít egymásnak. No hay objeto en acusativo, así que el verbo queda indefinido: segítünk."
+      },
+      "wrong": {
+        "egymást": {
+          "en": "egymást is the accusative (szeret, lát, hív); segít asks for the dative egymásnak.",
+          "es": "egymást es el acusativo (szeret, lát, hív); segít pide el dativo egymásnak."
+        },
+        "magunkat": {
+          "en": "magunkat would mean that we help ourselves, not each other.",
+          "es": "magunkat significaría que nos ayudamos a nosotros mismos, no unos a otros."
+        }
+      },
+      "examples": [
+        "Anna és Péter mindig segítenek egymásnak.",
+        "A szomszédok segítenek egymásnak."
+      ],
+      "tr": {
+        "en": "We always help each other when there is trouble.",
+        "es": "Siempre nos ayudamos cuando hay problemas."
+      }
+    },
+    {
+      "id": "visszahato-igek-f04",
+      "kind": "form",
+      "verb": "öltözködik",
+      "person": "mi",
+      "answer": "öltözködünk",
+      "table": "kod-verbs"
+    },
+    {
+      "id": "visszahato-igek-c05",
+      "sentence": "Látod ___ a tükörben, vagy túl sötét van?",
+      "options": [
+        "magad",
+        "magát",
+        "magam"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Látod is the definite form for te (you see it), so the \"self\" is yours: magad. In speech the -at of magadat is usually dropped.",
+        "es": "Látod es la forma definida para te (tú lo ves), así que el «uno mismo» es el tuyo: magad. En el habla el -at de magadat suele omitirse."
+      },
+      "wrong": {
+        "magát": {
+          "en": "magát is \"himself, herself\"; látod addresses you (te).",
+          "es": "magát es «a sí mismo/a»; látod se dirige a ti (te)."
+        },
+        "magam": {
+          "en": "magam is \"myself\"; látod asks about you, not about me.",
+          "es": "magam es «a mí mismo»; látod pregunta por ti, no por mí."
+        }
+      },
+      "examples": [
+        "Látod magad a videón?",
+        "Nézd meg magad a tükörben!"
+      ],
+      "tr": {
+        "en": "Can you see yourself in the mirror, or is it too dark?",
+        "es": "¿Te ves en el espejo o está demasiado oscuro?"
+      }
+    },
+    {
+      "id": "visszahato-igek-w02",
+      "kind": "why",
+      "es": "Segítünk egymásnak.",
+      "target": "egymásnak",
+      "tr": {
+        "en": "We help each other.",
+        "es": "Nos ayudamos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Dative: segít asks for -nak/-nek, and egymás takes it",
+            "es": "Dativo: segít pide -nak/-nek, y egymás lo recibe"
+          }
+        },
+        {
+          "text": {
+            "en": "Accusative of egymás: the object of segít",
+            "es": "Acusativo de egymás: el objeto de segít"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use the accusative egymást, the form for szeret, lát, hív. segít asks for the dative.",
+            "es": "Con esta regla la frase usaría el acusativo egymást, la forma de szeret, lát, hív. segít pide el dativo."
+          }
+        },
+        {
+          "text": {
+            "en": "Reflexive: we help ourselves",
+            "es": "Reflexivo: nos ayudamos a nosotros mismos"
+          },
+          "wrong": {
+            "en": "With this rule the pronoun would be magunknak: we would help ourselves, not each other.",
+            "es": "Con esta regla el pronombre sería magunknak: nos ayudaríamos a nosotros mismos, no unos a otros."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "visszahato-igek-f05",
+      "kind": "form",
+      "verb": "maga (accusative)",
+      "person": "ő",
+      "answer": "magát",
+      "table": "refl-pron"
+    },
+    {
+      "id": "visszahato-igek-c06",
+      "sentence": "Itt nagyon jól érezzük ___, mert szép idő van.",
+      "options": [
+        "magatokat",
+        "egymást",
+        "magunkat"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "jól érzi magát is the fixed phrase for \"to feel good, to have a good time\". The subject is mi (érezzük), so the pronoun is magunkat.",
+        "es": "jól érzi magát es la expresión fija para «sentirse bien, pasarla bien». El sujeto es mi (érezzük), así que el pronombre es magunkat."
+      },
+      "wrong": {
+        "magatokat": {
+          "en": "magatokat is for ti (you, plural); the verb érezzük belongs to mi (we).",
+          "es": "magatokat es para ti (ustedes); el verbo érezzük es de mi (nosotros)."
+        },
+        "egymást": {
+          "en": "egymást would mean \"we feel each other\"; this phrase always takes the reflexive pronoun.",
+          "es": "egymást significaría «nos sentimos el uno al otro»; esta expresión siempre lleva el pronombre reflexivo."
+        }
+      },
+      "examples": [
+        "A gyerekek jól érzik magukat a parkban.",
+        "Jól érzitek magatokat itt?"
+      ],
+      "tr": {
+        "en": "We feel very good here, because the weather is nice.",
+        "es": "Aquí nos sentimos muy bien, porque hace buen tiempo."
+      }
+    },
+    {
+      "id": "visszahato-igek-f06",
+      "kind": "form",
+      "verb": "borotválkozik",
+      "person": "te",
+      "answer": "borotválkozol",
+      "table": "kod-verbs"
+    },
+    {
+      "id": "visszahato-igek-c07",
+      "sentence": "Ezt a levelet nem Anna írta, hanem én ___ írtam.",
+      "options": [
+        "magam",
+        "magamat",
+        "magunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Here magam only stresses \"I myself, nobody else\". The object of írtam is the letter, so there is no second object and no accusative: magam.",
+        "es": "Aquí magam solo subraya «yo mismo, nadie más». El objeto de írtam es la carta, así que no hay segundo objeto ni acusativo: magam."
+      },
+      "wrong": {
+        "magamat": {
+          "en": "magamat is an object (\"I wrote myself\"); the object of írtam is the letter.",
+          "es": "magamat es un objeto («me escribí a mí mismo»); el objeto de írtam es la carta."
+        },
+        "magunk": {
+          "en": "magunk is \"ourselves\"; the sentence says én (I).",
+          "es": "magunk es «nosotros mismos»; la frase dice én (yo)."
+        }
+      },
+      "examples": [
+        "Én magam főztem a vacsorát.",
+        "Anna maga hívta Pétert."
+      ],
+      "tr": {
+        "en": "Anna did not write this letter, I wrote it myself.",
+        "es": "Esta carta no la escribió Anna, la escribí yo mismo."
+      }
+    },
+    {
+      "id": "visszahato-igek-f07",
+      "kind": "form",
+      "verb": "egymás",
+      "person": "-nak/-nek",
+      "answer": "egymásnak",
+      "table": "egymas-cases"
+    },
+    {
+      "id": "visszahato-igek-c08",
+      "sentence": "A gyerek még nem tud egyedül ___, ezért segítek neki.",
+      "options": [
+        "öltözködik",
+        "öltözködni",
+        "öltözködnek"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After tud (can) the second verb is an infinitive: öltözködni. tud carries the tense and the person, the infinitive does not change.",
+        "es": "Después de tud (poder, saber) el segundo verbo va en infinitivo: öltözködni. tud lleva el tiempo y la persona, el infinitivo no cambia."
+      },
+      "wrong": {
+        "öltözködik": {
+          "en": "öltözködik is a finite form (\"he or she gets dressed\"); after tud we need the infinitive.",
+          "es": "öltözködik es una forma conjugada («se viste»); después de tud hace falta el infinitivo."
+        },
+        "öltözködnek": {
+          "en": "öltözködnek is \"they get dressed\"; the subject is one child and tud wants an infinitive.",
+          "es": "öltözködnek es «se visten»; el sujeto es un solo niño y tud pide un infinitivo."
+        }
+      },
+      "examples": [
+        "Már tudok egyedül öltözködni.",
+        "Anna szeret jól öltözködni."
+      ],
+      "tr": {
+        "en": "The child cannot get dressed alone yet, so I help him.",
+        "es": "El niño todavía no sabe vestirse solo, por eso lo ayudo."
+      }
+    },
+    {
+      "id": "visszahato-igek-f08",
+      "kind": "form",
+      "verb": "maga (accusative)",
+      "person": "ti",
+      "answer": "magatokat",
+      "table": "refl-pron"
+    },
+    {
+      "id": "visszahato-igek-c09",
+      "sentence": "Anna a tükörben ___ magát, mert új kabátot vett.",
+      "options": [
+        "néz",
+        "nézik",
+        "nézi"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "magát is a definite object, so the verb takes the definite ending: nézi. The indefinite néz goes with an indefinite object (néz egy videót).",
+        "es": "magát es un objeto determinado, así que el verbo lleva la terminación definida: nézi. El indefinido néz va con un objeto indeterminado (néz egy videót)."
+      },
+      "wrong": {
+        "néz": {
+          "en": "néz is the indefinite form, for an indefinite object (néz egy videót); magát is definite.",
+          "es": "néz es la forma indefinida, para un objeto indeterminado (néz egy videót); magát es determinado."
+        },
+        "nézik": {
+          "en": "nézik is the definite form for \"they\"; the subject here is Anna alone.",
+          "es": "nézik es la forma definida para «ellos»; el sujeto aquí es solo Anna."
+        }
+      },
+      "examples": [
+        "Péter a tükörben nézi magát.",
+        "Nézem magam a tükörben."
+      ],
+      "tr": {
+        "en": "Anna looks at herself in the mirror, because she bought a new coat.",
+        "es": "Anna se mira en el espejo, porque se compró un abrigo nuevo."
+      }
+    },
+    {
+      "id": "visszahato-igek-w03",
+      "kind": "why",
+      "es": "Látom magam a tükörben.",
+      "target": "Látom",
+      "tr": {
+        "en": "I see myself in the mirror.",
+        "es": "Me veo en el espejo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Látom ends in -om because látni is an -ik verb",
+            "es": "Látom termina en -om porque látni es un verbo en -ik"
+          },
+          "wrong": {
+            "en": "With this rule the verb would follow the -ik pattern. But látni is not an -ik verb (its plain 1st person is látok); the -om here marks the definite object magam.",
+            "es": "Con esta regla el verbo seguiría el patrón de los verbos en -ik. Pero látni no es un verbo en -ik (su 1.ª persona simple es látok); el -om de aquí marca el objeto determinado magam."
+          }
+        },
+        {
+          "text": {
+            "en": "Definite conjugation: magam is a definite object, so the verb takes -om",
+            "es": "Conjugación definida: magam es un objeto determinado, por eso el verbo lleva -om"
+          }
+        },
+        {
+          "text": {
+            "en": "Past tense: I saw myself",
+            "es": "Pasado: me vi"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Láttam magam a tükörben. Látom is present tense.",
+            "es": "Con esta regla la frase sería Láttam magam a tükörben. Látom es presente."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "visszahato-igek-f09",
+      "kind": "form",
+      "verb": "fésülködik",
+      "person": "ti",
+      "answer": "fésülködtök",
+      "table": "kod-verbs"
+    },
+    {
+      "id": "visszahato-igek-c10",
+      "sentence": "A barátaim messze laknak ___, ezért ritkán találkoznak.",
+      "options": [
+        "egymástól",
+        "egymást",
+        "egymásnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "\"Far from\" is messze + -tól/-től, so \"far from each other\" is messze egymástól.",
+        "es": "«Lejos de» es messze + -tól/-től, así que «lejos unos de otros» es messze egymástól."
+      },
+      "wrong": {
+        "egymást": {
+          "en": "egymást is the object form; laknak has no object.",
+          "es": "egymást es la forma de objeto; laknak no tiene objeto."
+        },
+        "egymásnak": {
+          "en": "egymásnak means \"to each other, for each other\"; distance needs -tól/-től.",
+          "es": "egymásnak significa «al otro, para el otro»; la distancia pide -tól/-től."
+        }
+      },
+      "examples": [
+        "Közel lakunk egymáshoz.",
+        "Messze vagyunk egymástól."
+      ],
+      "tr": {
+        "en": "My friends live far from each other, so they rarely meet.",
+        "es": "Mis amigos viven lejos unos de otros, por eso rara vez se ven."
+      }
+    },
+    {
+      "id": "visszahato-igek-f10",
+      "kind": "form",
+      "verb": "egymás",
+      "person": "-val/-vel",
+      "answer": "egymással",
+      "table": "egymas-cases"
+    },
+    {
+      "id": "visszahato-igek-c11",
+      "sentence": "A testvérek az iskolában mindig ___ ülnek, mert együtt tanulnak.",
+      "options": [
+        "egymás mellett",
+        "egymásnál mellett",
+        "egymást mellett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A postposition such as mellett takes the bare noun, so egymás stays without an ending: egymás mellett (like Anna mellett).",
+        "es": "Una posposición como mellett va con el sustantivo sin terminación, así que egymás no lleva ninguna: egymás mellett (como Anna mellett)."
+      },
+      "wrong": {
+        "egymásnál mellett": {
+          "en": "A case ending (-nál) and the postposition mellett cannot be stacked; mellett already says \"next to\".",
+          "es": "Una terminación de caso (-nál) y la posposición mellett no se apilan; mellett ya dice «junto a»."
+        },
+        "egymást mellett": {
+          "en": "egymást is the accusative; a postposition never follows an accusative.",
+          "es": "egymást es el acusativo; una posposición nunca va después de un acusativo."
+        }
+      },
+      "examples": [
+        "A testvérek egymás mellett laknak.",
+        "Az asztalnál egymás mellett ülünk."
+      ],
+      "tr": {
+        "en": "The siblings always sit next to each other at school, because they study together.",
+        "es": "Los hermanos siempre se sientan juntos en la escuela, porque estudian juntos."
+      }
+    },
+    {
+      "id": "visszahato-igek-c12",
+      "sentence": "Annának már van ___ lakása, de még a testvérével lakik.",
+      "options": [
+        "magát",
+        "saját",
+        "egymás"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "saját + a noun with a possessive ending means \"own\": saját lakása is her own flat.",
+        "es": "saját + un sustantivo con terminación posesiva significa «propio»: saját lakása es su propio departamento."
+      },
+      "wrong": {
+        "magát": {
+          "en": "magát is a pronoun (herself) used as an object; it cannot stand before a noun to mean \"own\".",
+          "es": "magát es un pronombre (a sí misma) que funciona como objeto; no puede ir antes de un sustantivo para decir «propio»."
+        },
+        "egymás": {
+          "en": "egymás lakása would be \"each other's flat\" and needs two people.",
+          "es": "egymás lakása sería «el departamento del otro» y necesita dos personas."
+        }
+      },
+      "examples": [
+        "Nekem is van saját szobám.",
+        "Péter a saját autójával jár dolgozni."
+      ],
+      "tr": {
+        "en": "Anna already has a flat of her own, but she still lives with her brother or sister.",
+        "es": "Anna ya tiene su propio departamento, pero todavía vive con su hermano o hermana."
+      }
+    },
+    {
+      "id": "visszahato-igek-f11",
+      "kind": "form",
+      "verb": "egymás",
+      "person": "-tól/-től",
+      "answer": "egymástól",
+      "table": "egymas-cases"
+    },
+    {
+      "id": "visszahato-igek-w04",
+      "kind": "why",
+      "es": "Gábor borotválkozik.",
+      "target": "borotválkozik",
+      "tr": {
+        "en": "Gábor shaves.",
+        "es": "Gábor se afeita."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Plural: they shave",
+            "es": "Plural: ellos se afeitan"
+          },
+          "wrong": {
+            "en": "With this rule the form would be borotválkoznak. Borotválkozik is the singular: one person, Gábor.",
+            "es": "Con esta regla la forma sería borotválkoznak. Borotválkozik es singular: una persona, Gábor."
+          }
+        },
+        {
+          "text": {
+            "en": "A transitive verb whose object is left out: Gábor shaves somebody",
+            "es": "Un verbo transitivo con el objeto omitido: Gábor afeita a alguien"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would need an object (who is shaved?). -kozik verbs are reflexive and take no object.",
+            "es": "Con esta regla la frase necesitaría un objeto (¿a quién afeita?). Los verbos en -kozik son reflexivos y no llevan objeto."
+          }
+        },
+        {
+          "text": {
+            "en": "A reflexive -kozik verb: the shaving goes back to Gábor, so no pronoun or object is needed",
+            "es": "Un verbo reflexivo en -kozik: la acción vuelve a Gábor, así que no hace falta pronombre ni objeto"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "visszahato-igek-c13",
+      "sentence": "Hogy érzed ___ ma, jobban vagy?",
+      "options": [
+        "magát",
+        "magad",
+        "magam"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Hogy érzed magad? asks the other person (te) how they feel, so the pronoun is magad. The usual answer is Jól érzem magam.",
+        "es": "Hogy érzed magad? le pregunta a la otra persona (te) cómo se siente, así que el pronombre es magad. La respuesta normal es Jól érzem magam."
+      },
+      "wrong": {
+        "magát": {
+          "en": "magát is \"himself, herself\"; érzed is addressed to you (te).",
+          "es": "magát es «a sí mismo/a»; érzed se dirige a ti (te)."
+        },
+        "magam": {
+          "en": "magam is \"myself\"; with érzed you ask about the other person, not about yourself.",
+          "es": "magam es «a mí mismo»; con érzed preguntas por la otra persona, no por ti."
+        }
+      },
+      "examples": [
+        "Jól érzem magam.",
+        "Hogy érzi magát Anna?"
+      ],
+      "tr": {
+        "en": "How are you feeling today, are you better?",
+        "es": "¿Cómo te sientes hoy, estás mejor?"
+      }
+    },
+    {
+      "id": "visszahato-igek-f12",
+      "kind": "form",
+      "verb": "egymás",
+      "person": "-hoz/-hez/-höz",
+      "answer": "egymáshoz",
+      "table": "egymas-cases"
+    },
+    {
+      "id": "visszahato-igek-c14",
+      "sentence": "Anna és Péter sokat dolgoznak, ezért hétköznap alig beszélnek ___.",
+      "options": [
+        "egymással",
+        "egymást",
+        "egymásnak"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "beszél asks for -val/-vel: beszél valakivel. So \"talk to each other\" is beszél egymással; English says to, Hungarian uses an ending.",
+        "es": "beszél pide -val/-vel: beszél valakivel. Así que «hablar entre ellos» es beszél egymással; donde otros idiomas usan una palabra suelta, el húngaro usa una terminación."
+      },
+      "wrong": {
+        "egymást": {
+          "en": "egymást would be a direct object; beszél does not take an accusative.",
+          "es": "egymást sería un objeto directo; beszél no lleva acusativo."
+        },
+        "egymásnak": {
+          "en": "egymásnak is the dative (to each other), for verbs like segít or ad; beszél asks for -val/-vel.",
+          "es": "egymásnak es el dativo (al otro), para verbos como segít o ad; beszél pide -val/-vel."
+        }
+      },
+      "examples": [
+        "Gábor és Kati sokat beszélnek egymással.",
+        "Hétvégén sokat beszélünk egymással."
+      ],
+      "tr": {
+        "en": "Anna and Péter work a lot, so on weekdays they hardly talk to each other.",
+        "es": "Anna y Péter trabajan mucho, por eso entre semana casi no hablan entre ellos."
+      }
+    }
+  ]
+}

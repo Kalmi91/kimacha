@@ -1,0 +1,1407 @@
+{
+  "schema": 2,
+  "topic": "azt-amit",
+  "level": "B2",
+  "title": {
+    "en": "What I asked for: azt, amit kértem",
+    "es": "Lo que pedí: azt, amit kértem"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In the A2 lesson a relative word followed a noun: a nő, aki itt lakik. Very often there is no noun at all: the one who, what, the place where, as much as. English and Spanish just say who, what, where (el que, lo que, donde). Hungarian builds a pair: a pointing word in the main clause (az, azt, ott, olyan, annyi) and the matching relative word in the relative clause (aki, amit, ahol, amilyen, amennyi): Azt tette, amit kértem (He did what I asked). Think of two halves of a hinge: each half takes the ending that ITS OWN clause needs, so the two halves can look different (Annak adom, aki jön). The relative word is never dropped. The pointing word is often dropped in casual speech when it would be a plain object: Tedd meg, amit kértem.",
+        "es": "En la lección A2 la palabra relativa iba después de un sustantivo: a nő, aki itt lakik. Muchas veces no hay ningún sustantivo: el que, lo que, el lugar donde, tanto como. El español dice simplemente el que, lo que, donde. El húngaro forma una pareja: una palabra señaladora en la oración principal (az, azt, ott, olyan, annyi) y la palabra relativa correspondiente en la oración de relativo (aki, amit, ahol, amilyen, amennyi): Azt tette, amit kértem (Hizo lo que pedí). Piensa en las dos mitades de una bisagra: cada mitad recibe la terminación que pide SU PROPIA oración, así que las dos mitades pueden verse distintas (Annak adom, aki jön). La palabra relativa nunca se omite. La señaladora se omite a menudo en el habla informal cuando sería un simple complemento directo: Tedd meg, amit kértem."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "az-aki-ami",
+      "title": {
+        "en": "az + aki / ami with every ending",
+        "es": "az + aki / ami con cada terminación"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "az, aki (person)",
+          "es": "az, aki (persona)"
+        },
+        {
+          "en": "az, ami (thing)",
+          "es": "az, ami (cosa)"
+        }
+      ],
+      "rows": [
+        [
+          "-",
+          "az, aki",
+          "az, ami"
+        ],
+        [
+          "-t",
+          "azt, akit",
+          "azt, amit"
+        ],
+        [
+          "-nak/-nek",
+          "annak, akinek",
+          "annak, aminek"
+        ],
+        [
+          "-val/-vel",
+          "azzal, akivel",
+          "azzal, amivel"
+        ],
+        [
+          "-ban/-ben",
+          "abban, akiben",
+          "abban, amiben"
+        ],
+        [
+          "-ra/-re",
+          "arra, akire",
+          "arra, amire"
+        ],
+        [
+          "-ról/-ről",
+          "arról, akiről",
+          "arról, amiről"
+        ],
+        [
+          "-hoz/-hez/-höz",
+          "ahhoz, akihez",
+          "ahhoz, amihez"
+        ],
+        [
+          "-tól/-től",
+          "attól, akitől",
+          "attól, amitől"
+        ],
+        [
+          "-ból/-ből",
+          "abból, akiből",
+          "abból, amiből"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Five pairs you need",
+        "es": "Cinco parejas que necesitas"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "az, aki: the one who (people). The relative clause has its own verb, and the whole group can be the subject or can take an ending of the main verb.",
+            "es": "az, aki: el que, la que (personas). La oración de relativo tiene su propio verbo, y todo el grupo puede ser el sujeto o recibir una terminación del verbo principal."
+          },
+          "examples": [
+            {
+              "es": "Az, aki ott áll, a főnököm.",
+              "tr": {
+                "en": "The one standing there is my boss.",
+                "es": "El que está parado allá es mi jefe."
+              }
+            },
+            {
+              "es": "Annak segítek, aki segítséget kér.",
+              "tr": {
+                "en": "I help the one who asks for help.",
+                "es": "Ayudo al que pide ayuda."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "azt, amit / az, ami: what, the thing that (things). Spanish lo que; English what. For people use aki, for things ami.",
+            "es": "azt, amit / az, ami: lo que, la cosa que (cosas). Inglés: what. Para personas usa aki, para cosas ami."
+          },
+          "examples": [
+            {
+              "es": "Azt tette, amit kértem.",
+              "tr": {
+                "en": "He did what I asked.",
+                "es": "Hizo lo que pedí."
+              }
+            },
+            {
+              "es": "Nem azt kaptam, amit rendeltem.",
+              "tr": {
+                "en": "I did not get what I ordered.",
+                "es": "No recibí lo que pedí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ott, ahol (place), oda, ahova (to a place), onnan, ahonnan (from a place), akkor, amikor (time).",
+            "es": "ott, ahol (lugar), oda, ahova (hacia un lugar), onnan, ahonnan (desde un lugar), akkor, amikor (tiempo)."
+          },
+          "examples": [
+            {
+              "es": "Ott lakom, ahol dolgozom.",
+              "tr": {
+                "en": "I live where I work.",
+                "es": "Vivo donde trabajo."
+              }
+            },
+            {
+              "es": "Oda megyek, ahova te mész.",
+              "tr": {
+                "en": "I am going where you are going.",
+                "es": "Voy adonde vas tú."
+              }
+            },
+            {
+              "es": "Akkor megyek haza, amikor kész vagyok.",
+              "tr": {
+                "en": "I go home when I am done.",
+                "es": "Me voy a casa cuando termino."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "olyan, amilyen (of the kind that) and annyi, amennyi (as much as). The relative word is a- + the question word: a + milyen = amilyen, a + mennyi = amennyi (like a + ki = aki, a + mi = ami).",
+            "es": "olyan, amilyen (del tipo que) y annyi, amennyi (tanto como). La palabra relativa es a- + la palabra interrogativa: a + milyen = amilyen, a + mennyi = amennyi (como a + ki = aki, a + mi = ami)."
+          },
+          "examples": [
+            {
+              "es": "Olyan telefont szeretnék, amilyen Annának van.",
+              "tr": {
+                "en": "I would like the kind of phone Anna has.",
+                "es": "Quisiera un teléfono como el que tiene Anna."
+              }
+            },
+            {
+              "es": "Annyit ettem, amennyit akartam.",
+              "tr": {
+                "en": "I ate as much as I wanted.",
+                "es": "Comí tanto como quise."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mindaz, ami / mindazt, amit: all that. It is more emphatic and more written than minden, ami, which you hear in speech.",
+            "es": "mindaz, ami / mindazt, amit: todo lo que. Es más enfático y más escrito que minden, ami, que se oye en el habla."
+          },
+          "examples": [
+            {
+              "es": "Mindaz, amit mondtam, igaz volt.",
+              "tr": {
+                "en": "All that I said was true.",
+                "es": "Todo lo que dije fue verdad."
+              }
+            },
+            {
+              "es": "Mindazt, amit tudtam, elmondtam neki.",
+              "tr": {
+                "en": "I told him everything I knew.",
+                "es": "Le conté todo lo que sabía."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ott-ahol",
+      "title": {
+        "en": "The pairs without endings",
+        "es": "Las parejas sin terminaciones"
+      },
+      "header": [
+        {
+          "en": "Question word",
+          "es": "Palabra interrogativa"
+        },
+        {
+          "en": "Main clause",
+          "es": "Oración principal"
+        },
+        {
+          "en": "Relative clause",
+          "es": "Oración de relativo"
+        }
+      ],
+      "rows": [
+        [
+          "hol?",
+          "ott",
+          "ahol"
+        ],
+        [
+          "hova?",
+          "oda",
+          "ahova"
+        ],
+        [
+          "honnan?",
+          "onnan",
+          "ahonnan"
+        ],
+        [
+          "mikor?",
+          "akkor",
+          "amikor"
+        ],
+        [
+          "milyen?",
+          "olyan",
+          "amilyen"
+        ],
+        [
+          "mennyi?",
+          "annyi",
+          "amennyi"
+        ],
+        [
+          "minden",
+          "mindaz",
+          "ami"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Two clauses, two endings",
+        "es": "Dos oraciones, dos terminaciones"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The pointing word takes the ending the MAIN verb needs; the relative word takes the ending the RELATIVE verb needs. The two can differ.",
+            "es": "La palabra señaladora recibe la terminación que pide el verbo PRINCIPAL; la palabra relativa recibe la que pide el verbo de la oración de RELATIVO. Pueden ser distintas."
+          },
+          "examples": [
+            {
+              "es": "Azt hívom fel, akivel tegnap beszéltem.",
+              "tr": {
+                "en": "I am calling the one I talked to yesterday.",
+                "es": "Voy a llamar a aquel con quien hablé ayer."
+              }
+            },
+            {
+              "es": "Annak adom az állást, aki először jelentkezik.",
+              "tr": {
+                "en": "I give the job to the one who applies first.",
+                "es": "Le doy el puesto al que se presente primero."
+              }
+            },
+            {
+              "es": "Arról beszélek, amit tegnap láttam.",
+              "tr": {
+                "en": "I am talking about what I saw yesterday.",
+                "es": "Hablo de lo que vi ayer."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The verb of the relative clause follows its own object. amit and akit count as indefinite, like mit and kit, so that verb takes the indefinite conjugation: Azt eszem, amit szeretek. amelyiket is definite, like melyiket, so its verb is definite: ..., amelyiket szeretem. The pointing word azt in the main clause stays definite in both cases (Azt eszem, Azt veszem meg).",
+            "es": "El verbo de la oración de relativo sigue a su propio complemento directo. amit y akit cuentan como indeterminados, igual que mit y kit, así que ese verbo va en la conjugación indeterminada: Azt eszem, amit szeretek. amelyiket es determinado, igual que melyiket, así que su verbo es determinado: ..., amelyiket szeretem. La palabra señaladora azt de la oración principal sigue siendo determinada en ambos casos (Azt eszem, Azt veszem meg)."
+          },
+          "examples": [
+            {
+              "es": "Azt eszem, amit szeretek.",
+              "tr": {
+                "en": "I eat what I like.",
+                "es": "Como lo que me gusta."
+              }
+            },
+            {
+              "es": "Azt a nőt várom, akit szeretek.",
+              "tr": {
+                "en": "I am waiting for the woman I love.",
+                "es": "Espero a la mujer que quiero."
+              }
+            },
+            {
+              "es": "Azt a kabátot veszem meg, amelyiket szeretem.",
+              "tr": {
+                "en": "I am buying the coat I like.",
+                "es": "Voy a comprar el abrigo que me gusta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The order is free. If the relative clause comes first, az picks it up again right before the main verb.",
+            "es": "El orden es libre. Si la oración de relativo va primero, az la retoma justo antes del verbo principal."
+          },
+          "examples": [
+            {
+              "es": "Aki korán jön, az kap helyet.",
+              "tr": {
+                "en": "Whoever comes early gets a seat.",
+                "es": "El que llega temprano consigue lugar."
+              }
+            },
+            {
+              "es": "Amit ígértem, azt megteszem.",
+              "tr": {
+                "en": "What I promised, I will do.",
+                "es": "Lo que prometí, lo cumpliré."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ami can point back to a whole sentence (English which, Spanish lo cual). It then takes the ending its own clause needs: aminek, ami miatt.",
+            "es": "ami puede referirse a toda una oración (inglés which, español lo cual). Entonces recibe la terminación que pide su propia oración: aminek, ami miatt."
+          },
+          "examples": [
+            {
+              "es": "Péter nem jött el, aminek Kati nem örült.",
+              "tr": {
+                "en": "Péter did not come, which Kati was not happy about.",
+                "es": "Péter no vino, lo cual no alegró a Kati."
+              }
+            },
+            {
+              "es": "Késett a vonat, ami miatt elkéstem a munkából.",
+              "tr": {
+                "en": "The train was late, because of which I was late for work.",
+                "es": "El tren se retrasó, por lo cual llegué tarde al trabajo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "amely-amelyik",
+      "title": {
+        "en": "amely and amelyik",
+        "es": "amely y amelyik"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "amely",
+          "es": "amely"
+        },
+        {
+          "en": "amelyik",
+          "es": "amelyik"
+        }
+      ],
+      "rows": [
+        [
+          "-",
+          "amely",
+          "amelyik"
+        ],
+        [
+          "-t",
+          "amelyet",
+          "amelyiket"
+        ],
+        [
+          "-nak/-nek",
+          "amelynek",
+          "amelyiknek"
+        ],
+        [
+          "-ban/-ben",
+          "amelyben",
+          "amelyikben"
+        ],
+        [
+          "-ra/-re",
+          "amelyre",
+          "amelyikre"
+        ],
+        [
+          "-k",
+          "amelyek",
+          "amelyikek"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "amely or amelyik?",
+        "es": "¿amely o amelyik?"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "amely is the written, slightly formal word. It follows a noun and says \"which\" about it. It works like ami for things, but its object form is amelyet.",
+            "es": "amely es la palabra escrita, algo formal. Va después de un sustantivo y dice «el cual» sobre él. Funciona como ami para cosas, pero su forma de objeto es amelyet."
+          },
+          "examples": [
+            {
+              "es": "A vonat, amely Szegedre megy, késik.",
+              "tr": {
+                "en": "The train that goes to Szeged is late.",
+                "es": "El tren que va a Szeged va retrasado."
+              }
+            },
+            {
+              "es": "A könyv, amelyet tegnap vettem, érdekes.",
+              "tr": {
+                "en": "The book that I bought yesterday is interesting.",
+                "es": "El libro que compré ayer es interesante."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "amelyik is the spoken word, and it picks one out of several (\"which one\"). It can also stand alone after az.",
+            "es": "amelyik es la palabra hablada, y elige uno entre varios («cuál»). También puede ir sola después de az."
+          },
+          "examples": [
+            {
+              "es": "Melyik kabátot veszed meg? Azt, amelyik olcsóbb.",
+              "tr": {
+                "en": "Which coat are you buying? The one that is cheaper.",
+                "es": "¿Cuál abrigo vas a comprar? El que es más barato."
+              }
+            },
+            {
+              "es": "Abban a boltban dolgozom, amelyik a sarkon van.",
+              "tr": {
+                "en": "I work in the shop that is on the corner.",
+                "es": "Trabajo en la tienda que está en la esquina."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fácil de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Ott lakom, ahol dolgozom.",
+          "b": "Oda megyek, ahova te mész.",
+          "note": {
+            "en": "ahol is for being or doing something in a place; ahova is for going to a place. The pointing word has to match: ott with ahol, oda with ahova.",
+            "es": "ahol es para estar o hacer algo en un lugar; ahova es para ir a un lugar. La palabra señaladora debe coincidir: ott con ahol, oda con ahova."
+          },
+          "examples": [
+            {
+              "es": "Ott maradok, ahol vagyok.",
+              "tr": {
+                "en": "I stay where I am.",
+                "es": "Me quedo donde estoy."
+              }
+            },
+            {
+              "es": "Oda megyünk, ahova Anna megy.",
+              "tr": {
+                "en": "We go where Anna is going.",
+                "es": "Vamos adonde va Anna."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Olyan telefont szeretnék, amilyen Annának van.",
+          "b": "Olyan telefont szeretnék, mint Annáé.",
+          "note": {
+            "en": "amilyen opens a clause with its own verb (amilyen Annának van). mint is followed only by a noun or a pronoun (mint Annáé, mint az övé). Both mean \"like Anna's\".",
+            "es": "amilyen abre una oración con su propio verbo (amilyen Annának van). mint va seguido solo de un sustantivo o pronombre (mint Annáé, mint az övé). Las dos significan «como el de Anna»."
+          },
+          "examples": [
+            {
+              "es": "Olyan kabátot keresek, amilyen Péternek van.",
+              "tr": {
+                "en": "I am looking for the kind of coat Péter has.",
+                "es": "Busco un abrigo como el que tiene Péter."
+              }
+            },
+            {
+              "es": "Olyan kabátot keresek, mint Péteré.",
+              "tr": {
+                "en": "I am looking for a coat like Péter's.",
+                "es": "Busco un abrigo como el de Péter."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Az, aki ott áll, a főnököm.",
+          "b": "Az, ami az asztalon van, a kulcsom.",
+          "note": {
+            "en": "After az, aki is for people and ami is for things. Never mix them: az, ami would be a thing standing there.",
+            "es": "Después de az, aki es para personas y ami para cosas. No los mezcles: az, ami sería una cosa parada allí."
+          },
+          "examples": [
+            {
+              "es": "Az, aki jön, Péter.",
+              "tr": {
+                "en": "The one who is coming is Péter.",
+                "es": "El que viene es Péter."
+              }
+            },
+            {
+              "es": "Az, ami hiányzik, a kávé.",
+              "tr": {
+                "en": "What is missing is the coffee.",
+                "es": "Lo que falta es el café."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Five classic traps. (1) Do not put the question words in the relative slot: Azt tette, amit kértem, never Azt tette, mit kértem; Ott lakom, ahol dolgozom, never Ott lakom, hol dolgozom. (2) Do not drop the relative word. English can say \"the book I bought\"; Hungarian must say amit. (3) Do not copy one ending into the other half: Annak adom, aki jön has annak because of adni (to someone) and plain aki because jön needs nothing. (4) The pointing word azt is a definite object, so the main verb takes the definite conjugation: Azt tette (not tett), Azt mondom (not mondok), Azt hívom fel. In writing and in careful speech keep az; in casual speech you will often hear it dropped before amit (Tedd meg, amit kértem). (5) The relative clause has its own conjugation: after amit and akit the verb is indefinite (amit szeretek, akit szeretek, not szeretem), after amelyiket it is definite (amelyiket szeretem). With én in the past (kértem, vettem) both conjugations look the same, so you only see the difference in the present.",
+        "es": "Cinco trampas clásicas. (1) No pongas las palabras interrogativas en el lugar del relativo: Azt tette, amit kértem, nunca Azt tette, mit kértem; Ott lakom, ahol dolgozom, nunca Ott lakom, hol dolgozom. (2) No omitas la palabra relativa. El inglés puede decir «the book I bought»; el húngaro debe decir amit. (3) No copies una terminación en la otra mitad: Annak adom, aki jön lleva annak por adni (a alguien) y aki simple porque jön no pide nada. (4) La palabra señaladora azt es un complemento directo determinado, así que el verbo principal va en la conjugación determinada: Azt tette (no tett), Azt mondom (no mondok), Azt hívom fel. Por escrito y en el habla cuidada conserva az; en el habla informal a menudo se omite antes de amit (Tedd meg, amit kértem). (5) La oración de relativo tiene su propia conjugación: después de amit y akit el verbo es indeterminado (amit szeretek, akit szeretek, no szeretem), después de amelyiket es determinado (amelyiket szeretem). Con én en pasado (kértem, vettem) las dos conjugaciones se ven igual, así que la diferencia solo se nota en el presente."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A relative clause often has no noun in front of it: the one who, what, the place where. Hungarian then uses a pair of words: a pointing word in the main clause and a relative word in the relative clause. «Azt tette, amit kértem»: he did what I asked. «Annak adom, aki először jelentkezik»: I give it to the one who applies first. «Ott lakom, ahol dolgozom»: I live where I work. Each half takes the ending of its own clause: «azt» and «amit» in the first sentence, but «annak» and plain «aki» in the second. To point back to a whole sentence, use «ami»: «Péter nem jött el, aminek Kati nem örült».",
+    "es": "Una oración de relativo muchas veces no tiene sustantivo delante: el que, lo que, el lugar donde. El húngaro usa entonces una pareja de palabras: una señaladora en la oración principal y una relativa en la oración de relativo. «Azt tette, amit kértem»: hizo lo que pedí. «Annak adom, aki először jelentkezik»: se lo doy al que se presente primero. «Ott lakom, ahol dolgozom»: vivo donde trabajo. Cada mitad recibe la terminación de su propia oración: «azt» y «amit» en la primera frase, pero «annak» y «aki» simple en la segunda. Para retomar toda una oración usa «ami»: «Péter nem jött el, aminek Kati nem örült»."
+  },
+  "items": [
+    {
+      "id": "azt-amit-c01",
+      "sentence": "Nem azt kaptam, ___ rendeltem.",
+      "options": [
+        "amit",
+        "aminek",
+        "amiről"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "rendeltem has a plain object (I ordered it), so the relative word takes -t: amit.",
+        "es": "rendeltem lleva un complemento directo (lo pedí), así que la palabra relativa lleva -t: amit."
+      },
+      "wrong": {
+        "aminek": {
+          "en": "aminek is \"to which\" or \"for which\"; rendel takes a plain object, not a -nak/-nek complement.",
+          "es": "aminek es «a lo cual» o «para lo cual»; rendel lleva complemento directo, no un complemento con -nak/-nek."
+        },
+        "amiről": {
+          "en": "amiről is \"about which\"; you order something, you do not order about something.",
+          "es": "amiről es «acerca de lo cual»; se pide algo, no se pide acerca de algo."
+        }
+      },
+      "examples": [
+        "Azt tette, amit kértem.",
+        "Azt mondtam, amit gondoltam."
+      ],
+      "tr": {
+        "en": "I did not get what I ordered.",
+        "es": "No recibí lo que pedí."
+      }
+    },
+    {
+      "id": "azt-amit-f01",
+      "kind": "form",
+      "verb": "az, aki",
+      "person": "-t",
+      "answer": "azt, akit",
+      "accept": [
+        "azt akit"
+      ],
+      "table": "az-aki-ami"
+    },
+    {
+      "id": "azt-amit-c02",
+      "sentence": "Annak segítek, ___ segítséget kér.",
+      "options": [
+        "aki",
+        "ki",
+        "ami"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "aki links the clause to annak and is the subject of kér, so it needs no ending.",
+        "es": "aki enlaza la oración con annak y es el sujeto de kér, así que no lleva terminación."
+      },
+      "wrong": {
+        "ki": {
+          "en": "ki is the question word \"who?\"; as a relative word it survives only in old or poetic style, today it is aki.",
+          "es": "ki es la palabra interrogativa «¿quién?»; como relativa solo sobrevive en estilo antiguo o poético, hoy se dice aki."
+        },
+        "ami": {
+          "en": "ami is for things; the one who asks for help is a person.",
+          "es": "ami es para cosas; el que pide ayuda es una persona."
+        }
+      },
+      "examples": [
+        "Az, aki ott áll, a főnököm.",
+        "Aki korán jön, az kap helyet."
+      ],
+      "tr": {
+        "en": "I help the one who asks for help.",
+        "es": "Ayudo al que pide ayuda."
+      }
+    },
+    {
+      "id": "azt-amit-f02",
+      "kind": "form",
+      "verb": "az, ami",
+      "person": "-nak/-nek",
+      "answer": "annak, aminek",
+      "accept": [
+        "annak aminek"
+      ],
+      "table": "az-aki-ami"
+    },
+    {
+      "id": "azt-amit-c03",
+      "sentence": "___ adom a kulcsot, aki holnap korán jön.",
+      "options": [
+        "Annak",
+        "Azt",
+        "Azzal"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "adni takes the receiver in -nak/-nek, and az + -nak becomes annak. The object (a kulcsot) is already in the sentence.",
+        "es": "adni pide al receptor en -nak/-nek, y az + -nak se vuelve annak. El complemento directo (a kulcsot) ya está en la frase."
+      },
+      "wrong": {
+        "Azt": {
+          "en": "Azt would be a second object next to a kulcsot; adni asks for the receiver in -nak/-nek.",
+          "es": "Azt sería un segundo complemento directo junto a a kulcsot; adni pide al receptor en -nak/-nek."
+        },
+        "Azzal": {
+          "en": "Azzal is \"with that one\"; the key is given to someone, not with someone.",
+          "es": "Azzal es «con ese»; la llave se da a alguien, no con alguien."
+        }
+      },
+      "examples": [
+        "Annak adom az állást, aki először jelentkezik.",
+        "Annak mondom el, akiben bízom."
+      ],
+      "tr": {
+        "en": "I give the key to the one who comes early tomorrow.",
+        "es": "Le doy la llave al que venga temprano mañana."
+      }
+    },
+    {
+      "id": "azt-amit-w01",
+      "kind": "why",
+      "es": "Azt hívom fel, akivel tegnap beszéltem.",
+      "target": "akivel",
+      "tr": {
+        "en": "I am calling the one I talked to yesterday.",
+        "es": "Voy a llamar a aquel con quien hablé ayer."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The relative word takes the ending its own verb needs: beszélni valakivel (to talk with someone).",
+            "es": "La palabra relativa recibe la terminación que pide su propio verbo: beszélni valakivel (hablar con alguien)."
+          }
+        },
+        {
+          "text": {
+            "en": "It copies the -t of azt in the main clause",
+            "es": "Copia la -t de azt de la oración principal"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Azt hívom fel, akit tegnap beszéltem; but beszél does not take a plain object, and azt has its own ending from hívom.",
+            "es": "Con esta regla la frase sería Azt hívom fel, akit tegnap beszéltem; pero beszél no lleva complemento directo, y azt tiene su propia terminación por hívom."
+          }
+        },
+        {
+          "text": {
+            "en": "aki always takes -vel when it follows azt",
+            "es": "aki siempre lleva -vel cuando va después de azt"
+          },
+          "wrong": {
+            "en": "With this rule every aki after azt would end in -vel, but in Annak adom, aki jön there is no ending at all.",
+            "es": "Con esta regla todo aki después de azt terminaría en -vel, pero en Annak adom, aki jön no hay ninguna terminación."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "azt-amit-f03",
+      "kind": "form",
+      "verb": "az, aki",
+      "person": "-val/-vel",
+      "answer": "azzal, akivel",
+      "accept": [
+        "azzal akivel"
+      ],
+      "table": "az-aki-ami"
+    },
+    {
+      "id": "azt-amit-c04",
+      "sentence": "Azzal megyek moziba, ___ egy irodában dolgozom.",
+      "options": [
+        "akivel",
+        "akit",
+        "aki"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "dolgozni valakivel means to work with someone, so aki takes -val/-vel: akivel.",
+        "es": "dolgozni valakivel significa trabajar con alguien, así que aki lleva -val/-vel: akivel."
+      },
+      "wrong": {
+        "akit": {
+          "en": "akit would make the person the object of dolgozom, but dolgozik takes no object.",
+          "es": "akit haría de la persona el complemento directo de dolgozom, pero dolgozik no lleva complemento directo."
+        },
+        "aki": {
+          "en": "aki alone is the subject: \"the one who works in an office\"; the \"with\" is lost.",
+          "es": "aki solo es el sujeto: «el que trabaja en una oficina»; se pierde el «con»."
+        }
+      },
+      "examples": [
+        "Azzal beszélek, akivel dolgozom.",
+        "Azzal megyek, akivel akarok."
+      ],
+      "tr": {
+        "en": "I go to the cinema with the person I work with in the same office.",
+        "es": "Voy al cine con la persona con quien trabajo en la misma oficina."
+      }
+    },
+    {
+      "id": "azt-amit-c05",
+      "sentence": "Ott maradunk, ___ vagyunk.",
+      "options": [
+        "ahol",
+        "hol",
+        "ahova"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Both verbs say where we are, without movement: ott … ahol.",
+        "es": "Los dos verbos dicen dónde estamos, sin movimiento: ott … ahol."
+      },
+      "wrong": {
+        "hol": {
+          "en": "hol is only the question \"where?\"; in the relative slot you need ahol.",
+          "es": "hol es solo la pregunta «¿dónde?»; en el lugar del relativo necesitas ahol."
+        },
+        "ahova": {
+          "en": "ahova is \"to where\"; it needs a verb of movement such as megyünk.",
+          "es": "ahova es «hacia donde»; necesita un verbo de movimiento como megyünk."
+        }
+      },
+      "examples": [
+        "Ott lakom, ahol dolgozom.",
+        "Ott maradok, ahol vagyok."
+      ],
+      "tr": {
+        "en": "We stay where we are.",
+        "es": "Nos quedamos donde estamos."
+      }
+    },
+    {
+      "id": "azt-amit-f04",
+      "kind": "form",
+      "verb": "az, ami",
+      "person": "-ban/-ben",
+      "answer": "abban, amiben",
+      "accept": [
+        "abban amiben"
+      ],
+      "table": "az-aki-ami"
+    },
+    {
+      "id": "azt-amit-c06",
+      "sentence": "Oda utazom nyáron, ___ a barátaim is mennek.",
+      "options": [
+        "ahova",
+        "ahol",
+        "ahonnan"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mennek is a verb of movement toward a place, so the pair is oda … ahova.",
+        "es": "mennek es un verbo de movimiento hacia un lugar, así que la pareja es oda … ahova."
+      },
+      "wrong": {
+        "ahol": {
+          "en": "ahol says where something is or happens; with mennek the sentence is about the goal.",
+          "es": "ahol dice dónde está o sucede algo; con mennek la frase trata del destino."
+        },
+        "ahonnan": {
+          "en": "ahonnan is \"from where\"; my friends are going somewhere, not coming from there.",
+          "es": "ahonnan es «desde donde»; mis amigos van a un lugar, no vienen de allí."
+        }
+      },
+      "examples": [
+        "Oda megyek, ahova te mész.",
+        "Oda megyünk, ahova Anna megy."
+      ],
+      "tr": {
+        "en": "This summer I am traveling to where my friends are going too.",
+        "es": "Este verano viajo adonde van también mis amigos."
+      }
+    },
+    {
+      "id": "azt-amit-f05",
+      "kind": "form",
+      "verb": "az, aki",
+      "person": "-hoz/-hez/-höz",
+      "answer": "ahhoz, akihez",
+      "accept": [
+        "ahhoz akihez"
+      ],
+      "table": "az-aki-ami"
+    },
+    {
+      "id": "azt-amit-w02",
+      "kind": "why",
+      "es": "Annak adom az állást, aki először jelentkezik.",
+      "target": "Annak",
+      "tr": {
+        "en": "I give the job to the one who applies first.",
+        "es": "Le doy el puesto al que se presente primero."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The pointing word takes the ending of the MAIN verb: adni valakinek, so az + -nak = annak.",
+            "es": "La palabra señaladora recibe la terminación del verbo PRINCIPAL: adni valakinek, así que az + -nak = annak."
+          }
+        },
+        {
+          "text": {
+            "en": "It takes the ending of the relative verb jelentkezik",
+            "es": "Recibe la terminación del verbo de relativo jelentkezik"
+          },
+          "wrong": {
+            "en": "With this rule the pointing word would stay plain (Az adom az állást, aki jelentkezik), because jelentkezik asks for nothing, and adom would have no receiver.",
+            "es": "Con esta regla la palabra señaladora quedaría simple (Az adom az állást, aki jelentkezik), porque jelentkezik no pide nada, y adom no tendría receptor."
+          }
+        },
+        {
+          "text": {
+            "en": "annak is the usual form of az before any relative word",
+            "es": "annak es la forma habitual de az antes de cualquier palabra relativa"
+          },
+          "wrong": {
+            "en": "With this rule every pair would start with annak, but the same pointing word is azt in Azt tette, amit kértem.",
+            "es": "Con esta regla toda pareja empezaría con annak, pero la misma palabra señaladora es azt en Azt tette, amit kértem."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "azt-amit-c07",
+      "sentence": "Olyan telefont szeretnék, ___ Annának van.",
+      "options": [
+        "amilyen",
+        "amennyi",
+        "amelyik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "olyan (such a) pairs with amilyen (of the kind that): the kind of phone Anna has.",
+        "es": "olyan (un tal) forma pareja con amilyen (del tipo que): el tipo de teléfono que tiene Anna."
+      },
+      "wrong": {
+        "amennyi": {
+          "en": "amennyi is \"as much as\" and pairs with annyi (an amount), not with a kind of thing.",
+          "es": "amennyi es «tanto como» y forma pareja con annyi (una cantidad), no con un tipo de cosa."
+        },
+        "amelyik": {
+          "en": "amelyik is \"which one of several\"; it does not say \"of the kind that\".",
+          "es": "amelyik es «cuál de varios»; no dice «del tipo que»."
+        }
+      },
+      "examples": [
+        "Olyan kabátot keresek, amilyen Péternek van.",
+        "Olyan lakást szeretnék, amilyenben Péter lakik."
+      ],
+      "tr": {
+        "en": "I would like the kind of phone Anna has.",
+        "es": "Quisiera un teléfono como el que tiene Anna."
+      }
+    },
+    {
+      "id": "azt-amit-f06",
+      "kind": "form",
+      "verb": "olyan",
+      "person": "relative word",
+      "answer": "amilyen",
+      "table": "ott-ahol"
+    },
+    {
+      "id": "azt-amit-c08",
+      "sentence": "Annyi pénzem van, ___ kell.",
+      "options": [
+        "amennyi",
+        "amilyen",
+        "amikor"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "annyi (this much) pairs with amennyi (as much as): the amount that is needed.",
+        "es": "annyi (tanto) forma pareja con amennyi (tanto como): la cantidad que hace falta."
+      },
+      "wrong": {
+        "amilyen": {
+          "en": "amilyen is \"of the kind that\"; here the sentence is about an amount of money, not a kind.",
+          "es": "amilyen es «del tipo que»; aquí la frase trata de una cantidad de dinero, no de un tipo."
+        },
+        "amikor": {
+          "en": "amikor is \"when\"; it would turn the amount into a time.",
+          "es": "amikor es «cuando»; convertiría la cantidad en un tiempo."
+        }
+      },
+      "examples": [
+        "Annyit ettem, amennyit akartam.",
+        "Annyi időm van, amennyi kell."
+      ],
+      "tr": {
+        "en": "I have as much money as is needed.",
+        "es": "Tengo tanto dinero como hace falta."
+      }
+    },
+    {
+      "id": "azt-amit-f07",
+      "kind": "form",
+      "verb": "annyi",
+      "person": "relative word",
+      "answer": "amennyi",
+      "table": "ott-ahol"
+    },
+    {
+      "id": "azt-amit-c09",
+      "sentence": "Mindaz, ___ mondtam, igaz volt.",
+      "options": [
+        "amit",
+        "aki",
+        "ahol"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mindaz points to things, and amit is the object of mondtam: all that I said.",
+        "es": "mindaz apunta a cosas, y amit es el complemento directo de mondtam: todo lo que dije."
+      },
+      "wrong": {
+        "aki": {
+          "en": "aki is for people; mindaz here means \"everything\", a thing.",
+          "es": "aki es para personas; mindaz aquí significa «todo», una cosa."
+        },
+        "ahol": {
+          "en": "ahol is a place word; what was said is not a place.",
+          "es": "ahol es una palabra de lugar; lo que se dijo no es un lugar."
+        }
+      },
+      "examples": [
+        "Mindazt, amit tudtam, elmondtam neki.",
+        "Minden, amit mondtam, igaz volt."
+      ],
+      "tr": {
+        "en": "All that I said was true.",
+        "es": "Todo lo que dije fue verdad."
+      }
+    },
+    {
+      "id": "azt-amit-c10",
+      "sentence": "Péter nem jött el, ___ Kati nem örült.",
+      "options": [
+        "aminek",
+        "amit",
+        "ahol"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ami points back to the whole fact that Péter did not come, and örülni asks for -nak/-nek (örül valaminek): aminek.",
+        "es": "ami retoma todo el hecho de que Péter no vino, y örülni pide -nak/-nek (örül valaminek): aminek."
+      },
+      "wrong": {
+        "amit": {
+          "en": "amit is the object form; örül takes no plain object.",
+          "es": "amit es la forma de objeto; örül no lleva complemento directo."
+        },
+        "ahol": {
+          "en": "ahol is a place word; the fact that Péter did not come is not a place.",
+          "es": "ahol es una palabra de lugar; el hecho de que Péter no vino no es un lugar."
+        }
+      },
+      "examples": [
+        "Megnyerte a versenyt, aminek mindenki örült.",
+        "Hideg van, ami nem jó."
+      ],
+      "tr": {
+        "en": "Péter did not come, which Kati was not happy about.",
+        "es": "Péter no vino, lo cual no alegró a Kati."
+      }
+    },
+    {
+      "id": "azt-amit-w03",
+      "kind": "why",
+      "es": "Oda megyek, ahova te mész.",
+      "target": "ahova",
+      "tr": {
+        "en": "I am going where you are going.",
+        "es": "Voy adonde vas tú."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "megyek and mész are verbs of movement toward a place, so the pair is oda … ahova (to where).",
+            "es": "megyek y mész son verbos de movimiento hacia un lugar, así que la pareja es oda … ahova (hacia donde)."
+          }
+        },
+        {
+          "text": {
+            "en": "ahova is the normal relative word for a place where you are",
+            "es": "ahova es la palabra relativa normal para un lugar donde estás"
+          },
+          "wrong": {
+            "en": "With this rule you would say Ott lakom, ahova dolgozom; for being in a place the word is ahol.",
+            "es": "Con esta regla dirías Ott lakom, ahova dolgozom; para estar en un lugar la palabra es ahol."
+          }
+        },
+        {
+          "text": {
+            "en": "ahova means \"from where\"",
+            "es": "ahova significa «desde donde»"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Onnan jövök, ahonnan te jössz; ahova is the goal, ahonnan the starting point.",
+            "es": "Con esta regla la frase sería Onnan jövök, ahonnan te jössz; ahova es el destino, ahonnan el punto de partida."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "azt-amit-f08",
+      "kind": "form",
+      "verb": "oda",
+      "person": "relative word",
+      "answer": "ahova",
+      "accept": [
+        "ahová"
+      ],
+      "table": "ott-ahol"
+    },
+    {
+      "id": "azt-amit-c11",
+      "sentence": "Késett a vonat, ___ elkéstem a munkából.",
+      "options": [
+        "ami miatt",
+        "aki miatt",
+        "ahol miatt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ami points back to the whole fact (the train was late), and miatt (because of) follows it: ami miatt.",
+        "es": "ami retoma todo el hecho (el tren se retrasó), y miatt (por) va después: ami miatt."
+      },
+      "wrong": {
+        "aki miatt": {
+          "en": "aki miatt is \"because of whom\"; a train being late is a fact, not a person.",
+          "es": "aki miatt es «por culpa de quien»; que el tren se retrase es un hecho, no una persona."
+        },
+        "ahol miatt": {
+          "en": "ahol is a place adverb and takes no postposition; \"because of where\" is not what is meant.",
+          "es": "ahol es un adverbio de lugar y no lleva posposición; no se quiere decir «por donde»."
+        }
+      },
+      "examples": [
+        "Elromlott az autóm, ami miatt nem tudtam elmenni.",
+        "Esik az eső, ami miatt itthon maradunk."
+      ],
+      "tr": {
+        "en": "The train was late, because of which I was late for work.",
+        "es": "El tren se retrasó, por lo cual llegué tarde al trabajo."
+      }
+    },
+    {
+      "id": "azt-amit-f09",
+      "kind": "form",
+      "verb": "az, ami",
+      "person": "-ról/-ről",
+      "answer": "arról, amiről",
+      "accept": [
+        "arról amiről"
+      ],
+      "table": "az-aki-ami"
+    },
+    {
+      "id": "azt-amit-c12",
+      "sentence": "Azt a könyvet olvasom, ___ tegnap vettem.",
+      "options": [
+        "amelyet",
+        "amelyik",
+        "amelyt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The book is the object of vettem, so the relative word needs the object ending; amely takes -et: amelyet.",
+        "es": "El libro es el complemento directo de vettem, así que la palabra relativa necesita la terminación de objeto; amely lleva -et: amelyet."
+      },
+      "wrong": {
+        "amelyik": {
+          "en": "amelyik without -t is the subject form (\"which bought\"); the book is bought, so it needs the object form (amelyet or amelyiket).",
+          "es": "amelyik sin -t es la forma de sujeto («el cual compró»); el libro es lo comprado, así que necesita la forma de objeto (amelyet o amelyiket)."
+        },
+        "amelyt": {
+          "en": "There is no such form; amely takes the linking vowel: amelyet.",
+          "es": "No existe esa forma; amely lleva la vocal de enlace: amelyet."
+        }
+      },
+      "examples": [
+        "A könyv, amelyet tegnap vettem, érdekes.",
+        "A film, amelyet tegnap láttam, hosszú volt."
+      ],
+      "tr": {
+        "en": "I am reading the book that I bought yesterday.",
+        "es": "Estoy leyendo el libro que compré ayer."
+      }
+    },
+    {
+      "id": "azt-amit-f10",
+      "kind": "form",
+      "verb": "amely",
+      "person": "-t",
+      "answer": "amelyet",
+      "table": "amely-amelyik"
+    },
+    {
+      "id": "azt-amit-c13",
+      "sentence": "Annak, ___ nincs autója, busszal kell mennie.",
+      "options": [
+        "akinek",
+        "akit",
+        "akivel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "akinek nincs autója is \"who has no car\" (akinek + possessed noun + van/nincs); annak at the front is the person who has to go.",
+        "es": "akinek nincs autója es «el que no tiene coche» (akinek + cosa poseída + van/nincs); annak al principio es la persona que tiene que ir."
+      },
+      "wrong": {
+        "akit": {
+          "en": "akit is the object form; nobody is being seen or called here, a car is being possessed.",
+          "es": "akit es la forma de objeto; aquí nadie es visto ni llamado, lo que hay es un coche poseído."
+        },
+        "akivel": {
+          "en": "akivel is \"with whom\"; the sentence is about who has no car, not about being with someone.",
+          "es": "akivel es «con quien»; la frase trata de quién no tiene coche, no de estar con alguien."
+        }
+      },
+      "examples": [
+        "Akinek van ideje, az jöjjön el.",
+        "Annak, akinek nincs ideje, nem kell eljönnie."
+      ],
+      "tr": {
+        "en": "Whoever has no car has to go by bus.",
+        "es": "El que no tiene coche tiene que ir en autobús."
+      }
+    },
+    {
+      "id": "azt-amit-f11",
+      "kind": "form",
+      "verb": "amelyik",
+      "person": "-nak/-nek",
+      "answer": "amelyiknek",
+      "table": "amely-amelyik"
+    },
+    {
+      "id": "azt-amit-c14",
+      "sentence": "Abban a boltban dolgozom, ___ a sarkon van.",
+      "options": [
+        "amelyik",
+        "amelyiket",
+        "amelyikben"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The relative word takes the ending of ITS OWN clause: a sarkon van needs no object and no extra ending, so amelyik stays plain even though abban has -ban.",
+        "es": "La palabra relativa recibe la terminación de SU PROPIA oración: a sarkon van no pide complemento directo ni otra terminación, así que amelyik queda simple aunque abban tenga -ban."
+      },
+      "wrong": {
+        "amelyiket": {
+          "en": "amelyiket is the object form; nothing in \"is on the corner\" is an object.",
+          "es": "amelyiket es la forma de objeto; nada en «está en la esquina» es un complemento directo."
+        },
+        "amelyikben": {
+          "en": "amelyikben would copy the -ban of abban, but the verb van in the relative clause asks for no such ending.",
+          "es": "amelyikben copiaría la -ban de abban, pero el verbo van de la oración de relativo no pide esa terminación."
+        }
+      },
+      "examples": [
+        "Arra a vonatra várok, amelyik hétkor indul.",
+        "Abban a házban lakom, amelyik a parkban van."
+      ],
+      "tr": {
+        "en": "I work in the shop that is on the corner.",
+        "es": "Trabajo en la tienda que está en la esquina."
+      }
+    },
+    {
+      "id": "azt-amit-w04",
+      "kind": "why",
+      "es": "Péter nem jött el, aminek Kati nem örült.",
+      "target": "aminek",
+      "tr": {
+        "en": "Péter did not come, which Kati was not happy about.",
+        "es": "Péter no vino, lo cual no alegró a Kati."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ami points back to the whole sentence, and örülni asks for -nak/-nek, so ami + -nek = aminek.",
+            "es": "ami retoma toda la oración, y örülni pide -nak/-nek, así que ami + -nek = aminek."
+          }
+        },
+        {
+          "text": {
+            "en": "It is aminek because Péter is a person",
+            "es": "Es aminek porque Péter es una persona"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use akinek (about a person); here the relative word points at the fact, not at Péter, and facts are ami.",
+            "es": "Con esta regla la frase usaría akinek (sobre una persona); aquí la palabra relativa apunta al hecho, no a Péter, y los hechos son ami."
+          }
+        },
+        {
+          "text": {
+            "en": "ami always ends in -nek after a negative sentence",
+            "es": "ami siempre termina en -nek después de una frase negativa"
+          },
+          "wrong": {
+            "en": "With this rule every ami after nem would end in -nek, but in Hideg van, ami nem jó the word has no ending.",
+            "es": "Con esta regla todo ami después de nem terminaría en -nek, pero en Hideg van, ami nem jó la palabra no tiene terminación."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "azt-amit-f12",
+      "kind": "form",
+      "verb": "mindaz",
+      "person": "relative word",
+      "answer": "ami",
+      "table": "ott-ahol"
+    },
+    {
+      "id": "azt-amit-c15",
+      "sentence": "___ korán jön, az kap helyet.",
+      "options": [
+        "Aki",
+        "Ami",
+        "Akit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The relative clause comes first: aki is the subject of jön, and az picks it up as the subject of kap.",
+        "es": "La oración de relativo va primero: aki es el sujeto de jön, y az la retoma como sujeto de kap."
+      },
+      "wrong": {
+        "Ami": {
+          "en": "Ami is for things; the one who comes early is a person.",
+          "es": "Ami es para cosas; el que llega temprano es una persona."
+        },
+        "Akit": {
+          "en": "Akit is the object form; jön has no object, the person is the one who comes.",
+          "es": "Akit es la forma de objeto; jön no lleva complemento directo, la persona es la que viene."
+        }
+      },
+      "examples": [
+        "Amit ígértem, azt megteszem.",
+        "Aki kér, az kap."
+      ],
+      "tr": {
+        "en": "Whoever comes early gets a seat.",
+        "es": "El que llega temprano consigue lugar."
+      }
+    }
+  ],
+  "glossary": [
+    {
+      "word": "ahova",
+      "gloss": {
+        "en": "to where (relative word)",
+        "es": "hacia donde (palabra relativa)"
+      }
+    },
+    {
+      "word": "ahonnan",
+      "gloss": {
+        "en": "from where (relative word)",
+        "es": "desde donde (palabra relativa)"
+      }
+    },
+    {
+      "word": "onnan",
+      "gloss": {
+        "en": "from there",
+        "es": "desde allí"
+      }
+    },
+    {
+      "word": "akkor",
+      "gloss": {
+        "en": "then, at that time",
+        "es": "entonces, en ese momento"
+      }
+    },
+    {
+      "word": "mindaz",
+      "gloss": {
+        "en": "all that, everything that",
+        "es": "todo lo que"
+      }
+    },
+    {
+      "word": "amilyen",
+      "gloss": {
+        "en": "of the kind that (relative word)",
+        "es": "del tipo que (palabra relativa)"
+      }
+    },
+    {
+      "word": "amely",
+      "gloss": {
+        "en": "which (written relative word)",
+        "es": "el cual (palabra relativa escrita)"
+      }
+    },
+    {
+      "word": "amelyik",
+      "gloss": {
+        "en": "which one (spoken relative word)",
+        "es": "el cual, cuál (palabra relativa hablada)"
+      }
+    },
+    {
+      "word": "miatt",
+      "gloss": {
+        "en": "because of",
+        "es": "por, a causa de"
+      }
+    }
+  ]
+}

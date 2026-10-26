@@ -1,0 +1,1338 @@
+{
+  "schema": 2,
+  "topic": "melleknevi-igenev",
+  "level": "B2",
+  "title": {
+    "en": "Dolgozó ember, megírt levél: participles as adjectives",
+    "es": "Dolgozó ember, megírt levél: participios como adjetivos"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A Hungarian participle is a verb that works as an adjective. It stands before the noun and never agrees with it: a dolgozó emberek (the working people), not dolgozók emberek. There are four endings, and each has its own meaning. -ó/-ő: the noun does the action (dolgozó ember). -t/-tt/-ott/-ett/-ött: the action is done (megírt levél, elromlott autó). -andó/-endő: the action still has to be done (megoldandó feladat). -ható/-hető: the action can be done (olvasható szöveg). English says working, written, to be solved, readable; Spanish says que trabaja, escrito, por resolver, legible. Hungarian builds all four from the verb. Many participles also work as nouns: a dolgozók (the employees), a tanuló (the student).",
+        "es": "Un participio húngaro es un verbo que funciona como adjetivo. Va delante del sustantivo y nunca concuerda con él: a dolgozó emberek (las personas que trabajan), no dolgozók emberek. Hay cuatro terminaciones y cada una tiene su propio significado. -ó/-ő: el sustantivo realiza la acción (dolgozó ember). -t/-tt/-ott/-ett/-ött: la acción ya está hecha (megírt levél, elromlott autó). -andó/-endő: la acción todavía hay que hacerla (megoldandó feladat). -ható/-hető: la acción se puede hacer (olvasható szöveg). El inglés dice working, written, to be solved, readable; el español dice «que trabaja», «escrito», «por resolver», «legible». El húngaro forma los cuatro a partir del verbo. Muchos participios también funcionan como sustantivos: a dolgozók (los empleados), a tanuló (el estudiante)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "ig-minta",
+      "title": {
+        "en": "The four participles of four verbs",
+        "es": "Los cuatro participios de cuatro verbos"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "olvas (read)",
+          "es": "olvas (leer)"
+        },
+        {
+          "en": "fizet (pay)",
+          "es": "fizet (pagar)"
+        },
+        {
+          "en": "főz (cook)",
+          "es": "főz (cocinar)"
+        },
+        {
+          "en": "használ (use)",
+          "es": "használ (usar)"
+        }
+      ],
+      "rows": [
+        [
+          "-ó/-ő",
+          "olvasó",
+          "fizető",
+          "főző",
+          "használó"
+        ],
+        [
+          "-t/-tt/-ott/-ett/-ött",
+          "olvasott",
+          "fizetett",
+          "főzött",
+          "használt"
+        ],
+        [
+          "-andó/-endő",
+          "olvasandó",
+          "fizetendő",
+          "főzendő",
+          "használandó"
+        ],
+        [
+          "-ható/-hető",
+          "olvasható",
+          "fizethető",
+          "főzhető",
+          "használható"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Four endings, four meanings",
+        "es": "Cuatro terminaciones, cuatro significados"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "-ó/-ő: the noun does the action, now or typically (a working person, a sleeping baby). Many of these words are also nouns: a tanuló, a dolgozó.",
+            "es": "-ó/-ő: el sustantivo realiza la acción, ahora o de forma típica (una persona que trabaja, un bebé que duerme). Muchas de estas palabras también son sustantivos: a tanuló, a dolgozó."
+          },
+          "examples": [
+            {
+              "es": "A dolgozó emberek reggel sietnek az állomásra.",
+              "tr": {
+                "en": "The working people hurry to the station in the morning.",
+                "es": "Las personas que trabajan se apresuran a la estación por la mañana."
+              }
+            },
+            {
+              "es": "Az alvó baba mellett csendben beszélünk.",
+              "tr": {
+                "en": "We talk quietly next to the sleeping baby.",
+                "es": "Hablamos en voz baja junto al bebé que duerme."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-t/-tt/-ott/-ett/-ött: the action is done. From a transitive verb the noun is the thing the action was done to (megírt levél = a letter that was written). From an intransitive verb the noun is the one that did it (elromlott autó = a car that has broken down).",
+            "es": "-t/-tt/-ott/-ett/-ött: la acción ya está hecha. Con un verbo transitivo el sustantivo es lo que recibió la acción (megírt levél = una carta que fue escrita). Con un verbo intransitivo el sustantivo es quien la hizo (elromlott autó = un coche que se descompuso)."
+          },
+          "examples": [
+            {
+              "es": "A megírt levelet még ma elküldöm.",
+              "tr": {
+                "en": "I will send the written letter today.",
+                "es": "La carta ya escrita la mando hoy."
+              }
+            },
+            {
+              "es": "A megjavított autó újra jól megy.",
+              "tr": {
+                "en": "The repaired car runs well again.",
+                "es": "El coche reparado vuelve a andar bien."
+              }
+            },
+            {
+              "es": "Az elromlott mosógép a pincében áll.",
+              "tr": {
+                "en": "The broken washing machine stands in the cellar.",
+                "es": "La lavadora descompuesta está en el sótano."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-andó/-endő: the action still has to be done (to be solved, to be paid). It is mostly written (forms, instructions, official texts); in speech people often use a clause with kell (see the contrast below).",
+            "es": "-andó/-endő: la acción todavía hay que hacerla (por resolver, por pagar). Es sobre todo escrito (formularios, instrucciones, textos oficiales); al hablar se suele usar una oración con kell (mira el contraste más abajo)."
+          },
+          "examples": [
+            {
+              "es": "A befizetendő összeg húszezer forint.",
+              "tr": {
+                "en": "The amount to be paid in is twenty thousand forints.",
+                "es": "La cantidad por pagar son veinte mil florines."
+              }
+            },
+            {
+              "es": "A kitöltendő űrlap az asztalon van.",
+              "tr": {
+                "en": "The form to be filled in is on the table.",
+                "es": "El formulario por llenar está sobre la mesa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ható/-hető: the action can be done. With nem it cannot (nem olvasható = illegible). These are common in everyday speech too.",
+            "es": "-ható/-hető: la acción se puede hacer. Con nem no se puede (nem olvasható = ilegible). Son frecuentes también en el habla cotidiana."
+          },
+          "examples": [
+            {
+              "es": "Ez a szöveg jól olvasható.",
+              "tr": {
+                "en": "This text is easy to read.",
+                "es": "Este texto se lee bien."
+              }
+            },
+            {
+              "es": "A magyarázat nagyon érthető.",
+              "tr": {
+                "en": "The explanation is very clear.",
+                "es": "La explicación es muy clara."
+              }
+            },
+            {
+              "es": "Ez a termék a boltban is kapható.",
+              "tr": {
+                "en": "This product is also available in the shop.",
+                "es": "Este producto también se consigue en la tienda."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ig-mult",
+      "title": {
+        "en": "The -t participle is the past form of ő",
+        "es": "El participio en -t es la forma de pasado de ő"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "megír (write)",
+          "es": "megír (escribir)"
+        },
+        {
+          "en": "nyit (open)",
+          "es": "nyit (abrir)"
+        },
+        {
+          "en": "elromlik (break down)",
+          "es": "elromlik (descomponerse)"
+        },
+        {
+          "en": "megjavít (repair)",
+          "es": "megjavít (reparar)"
+        }
+      ],
+      "rows": [
+        [
+          "-t/-tt/-ott/-ett/-ött",
+          "megírt",
+          "nyitott",
+          "elromlott",
+          "megjavított"
+        ],
+        [
+          "példa",
+          "megírt levél",
+          "nyitott ablak",
+          "elromlott autó",
+          "megjavított telefon"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ig-kell-lehet",
+      "title": {
+        "en": "To be done and can be done: prefix verbs",
+        "es": "Por hacer y se puede hacer: verbos con prefijo"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "kitölt (fill in)",
+          "es": "kitölt (llenar)"
+        },
+        {
+          "en": "megold (solve)",
+          "es": "megold (resolver)"
+        },
+        {
+          "en": "befizet (pay in)",
+          "es": "befizet (pagar, depositar)"
+        },
+        {
+          "en": "megjavít (repair)",
+          "es": "megjavít (reparar)"
+        }
+      ],
+      "rows": [
+        [
+          "-andó/-endő",
+          "kitöltendő",
+          "megoldandó",
+          "befizetendő",
+          "megjavítandó"
+        ],
+        [
+          "-ható/-hető",
+          "kitölthető",
+          "megoldható",
+          "befizethető",
+          "megjavítható"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Which vowel? Harmony and irregular stems",
+        "es": "¿Qué vocal? Armonía y raíces irregulares"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Back vowels (a, o, u, á, ó, ú): -ó, -ott, -andó, -ható. The -t form is the past form of ő: olvasott, használt.",
+            "es": "Vocales posteriores (a, o, u, á, ó, ú): -ó, -ott, -andó, -ható. La forma en -t es el pasado de ő: olvasott, használt."
+          },
+          "examples": [
+            {
+              "es": "A használt autó olcsóbb.",
+              "tr": {
+                "en": "The used car is cheaper.",
+                "es": "El coche usado es más barato."
+              }
+            },
+            {
+              "es": "A tanuló diákok csendben ülnek a könyvtárban.",
+              "tr": {
+                "en": "The studying pupils sit quietly in the library.",
+                "es": "Los alumnos que estudian están sentados en silencio en la biblioteca."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Front vowels without rounding (e, i, é, í): -ő, -ett, -endő, -hető. A few verbs with only i or í take back endings: nyit → nyitott, ír → író.",
+            "es": "Vocales anteriores sin redondear (e, i, é, í): -ő, -ett, -endő, -hető. Unos pocos verbos con solo i o í toman terminaciones posteriores: nyit → nyitott, ír → író."
+          },
+          "examples": [
+            {
+              "es": "Nyáron két hét fizetett szabadságom van.",
+              "tr": {
+                "en": "In summer I have two weeks of paid leave.",
+                "es": "En verano tengo dos semanas de vacaciones pagadas."
+              }
+            },
+            {
+              "es": "A fizető vendég a pénztárnál áll.",
+              "tr": {
+                "en": "The paying guest is standing at the cash desk.",
+                "es": "El huésped que paga está en la caja."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Rounded front vowels (ö, ü, ő, ű): -ő, -ött, -endő, -hető.",
+            "es": "Vocales anteriores redondeadas (ö, ü, ő, ű): -ő, -ött, -endő, -hető."
+          },
+          "examples": [
+            {
+              "es": "A tegnap főzött leves ma is finom.",
+              "tr": {
+                "en": "The soup cooked yesterday is still good today.",
+                "es": "La sopa que se cocinó ayer todavía está rica hoy."
+              }
+            },
+            {
+              "es": "A főző nagymama mosolyog.",
+              "tr": {
+                "en": "The grandmother who is cooking smiles.",
+                "es": "La abuela que cocina sonríe."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ik verbs lose the -ik before the ending: dolgozik → dolgozó, elromlik → elromlott.",
+            "es": "Los verbos en -ik pierden el -ik antes de la terminación: dolgozik → dolgozó, elromlik → elromlott."
+          },
+          "examples": [
+            {
+              "es": "A dolgozó anyák korán kelnek.",
+              "tr": {
+                "en": "Working mothers get up early.",
+                "es": "Las madres que trabajan se levantan temprano."
+              }
+            },
+            {
+              "es": "Az elromlott lift miatt gyalog mentünk fel.",
+              "tr": {
+                "en": "Because of the broken lift we walked up.",
+                "es": "Por el ascensor descompuesto subimos a pie."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Four irregular -ik or short verbs use another stem in the -ó/-ő participle: eszik → evő, iszik → ivó, alszik → alvó, jön → jövő (see the table below).",
+            "es": "Cuatro verbos irregulares usan otra raíz en el participio en -ó/-ő: eszik → evő, iszik → ivó, alszik → alvó, jön → jövő (mira la tabla de abajo)."
+          },
+          "examples": [
+            {
+              "es": "Jövő hétfőn nem dolgozom.",
+              "tr": {
+                "en": "Next Monday I do not work.",
+                "es": "El próximo lunes no trabajo."
+              }
+            },
+            {
+              "es": "Az evőeszközök a fiókban vannak.",
+              "tr": {
+                "en": "The cutlery is in the drawer.",
+                "es": "Los cubiertos están en el cajón."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "ig-szabalytalan",
+      "title": {
+        "en": "Irregular -ó/-ő stems",
+        "es": "Raíces irregulares en -ó/-ő"
+      },
+      "header": [
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        },
+        {
+          "en": "eszik (eat)",
+          "es": "eszik (comer)"
+        },
+        {
+          "en": "iszik (drink)",
+          "es": "iszik (beber)"
+        },
+        {
+          "en": "alszik (sleep)",
+          "es": "alszik (dormir)"
+        },
+        {
+          "en": "jön (come)",
+          "es": "jön (venir)"
+        }
+      ],
+      "rows": [
+        [
+          "-ó/-ő",
+          "evő",
+          "ivó",
+          "alvó",
+          "jövő"
+        ],
+        [
+          "példa",
+          "evőeszköz",
+          "ivóvíz",
+          "alvó gyerek",
+          "jövő hét"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Before a noun, alone, or as the predicate",
+        "es": "Delante de un sustantivo, solo o como predicado"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Before a noun the participle never agrees: a dolgozó emberek, a megírt levelek. Plural and case endings go on the noun only.",
+            "es": "Delante de un sustantivo el participio nunca concuerda: a dolgozó emberek, a megírt levelek. El plural y los casos van solo en el sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Az elromlott autókat a szerelő javítja.",
+              "tr": {
+                "en": "The mechanic repairs the broken-down cars.",
+                "es": "El mecánico repara los coches descompuestos."
+              }
+            },
+            {
+              "es": "Az olvasó gyerekek csendben ülnek.",
+              "tr": {
+                "en": "The reading children sit quietly.",
+                "es": "Los niños que leen están sentados en silencio."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Alone, a participle is a noun and takes the noun endings: a tanulók, a nézők, a dolgozót.",
+            "es": "Solo, el participio es un sustantivo y toma las terminaciones del sustantivo: a tanulók, a nézők, a dolgozót."
+          },
+          "examples": [
+            {
+              "es": "A tanulók holnap dolgozatot írnak.",
+              "tr": {
+                "en": "The pupils write a test tomorrow.",
+                "es": "Los alumnos escriben un examen mañana."
+              }
+            },
+            {
+              "es": "A nézők a moziban ülnek.",
+              "tr": {
+                "en": "The spectators are sitting in the cinema.",
+                "es": "Los espectadores están sentados en el cine."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "As a predicate (after the noun) -andó and -ható are common. The noun is the subject; there is no van in the 3rd person.",
+            "es": "Como predicado (después del sustantivo) son frecuentes -andó y -ható. El sustantivo es el sujeto; en 3.ª persona no hay van."
+          },
+          "examples": [
+            {
+              "es": "A feladat csütörtökig megoldandó.",
+              "tr": {
+                "en": "The task has to be solved by Thursday.",
+                "es": "La tarea hay que resolverla para el jueves."
+              }
+            },
+            {
+              "es": "Ez a víz nem iható.",
+              "tr": {
+                "en": "This water is not drinkable.",
+                "es": "Esta agua no es potable."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Doer, done, to do, can do",
+        "es": "Quien hace, hecho, por hacer, se puede hacer"
+      },
+      "pairs": [
+        {
+          "a": "az olvasó gyerek",
+          "b": "az olvasott könyv",
+          "note": {
+            "en": "-ó/-ő: the noun does the action (the child reads). -ott: the noun is what was read; from a transitive verb the -t participle is passive in meaning.",
+            "es": "-ó/-ő: el sustantivo realiza la acción (el niño lee). -ott: el sustantivo es lo que se leyó; con un verbo transitivo el participio en -t tiene sentido pasivo."
+          },
+          "examples": [
+            {
+              "es": "Az olvasó gyerek nem hall semmit.",
+              "tr": {
+                "en": "The reading child hears nothing.",
+                "es": "El niño que lee no oye nada."
+              }
+            },
+            {
+              "es": "Az olvasott levelet a fiókba tettem.",
+              "tr": {
+                "en": "I put the letter I had read into the drawer.",
+                "es": "La carta que ya leí la puse en el cajón."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a megoldandó feladat",
+          "b": "a megoldható feladat",
+          "note": {
+            "en": "megoldandó = it has to be solved; megoldható = it can be solved. A third form, a megoldott feladat, is already solved.",
+            "es": "megoldandó = hay que resolverla; megoldható = se puede resolver. Una tercera forma, a megoldott feladat, ya está resuelta."
+          },
+          "examples": [
+            {
+              "es": "Három megoldandó feladatot kaptunk.",
+              "tr": {
+                "en": "We got three tasks to solve.",
+                "es": "Recibimos tres tareas por resolver."
+              }
+            },
+            {
+              "es": "Ez a feladat könnyen megoldható.",
+              "tr": {
+                "en": "This task is easy to solve.",
+                "es": "Esta tarea se resuelve fácilmente."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a kitöltendő űrlap",
+          "b": "az űrlap, amit ki kell tölteni",
+          "note": {
+            "en": "Both mean the same. The participle is written and official (forms, letters); the clause with kell is what people say.",
+            "es": "Los dos significan lo mismo. El participio es escrito y oficial (formularios, cartas); la oración con kell es lo que se dice al hablar."
+          },
+          "examples": [
+            {
+              "es": "A befizetendő összeget a számlán találja.",
+              "tr": {
+                "en": "You will find the amount to be paid on the bill (formal).",
+                "es": "La cantidad por pagar la encuentra en la cuenta (formal)."
+              }
+            },
+            {
+              "es": "Hol van az űrlap, amit ki kell töltenem?",
+              "tr": {
+                "en": "Where is the form that I have to fill in? (spoken)",
+                "es": "¿Dónde está el formulario que tengo que llenar? (hablado)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not use a participle as a verb. 'He is sleeping' is Alszik; alvó only describes a noun (alvó baba). A -t participle from a transitive verb is passive in meaning: a megírt levél is a letter that somebody wrote, never a letter that writes. And -ható is 'can be read', not 'may read': for permission use the verb (Olvashatod a levelet = You may read the letter).",
+        "es": "No uses un participio como verbo. «Está durmiendo» es Alszik; alvó solo describe un sustantivo (alvó baba). Un participio en -t de un verbo transitivo tiene sentido pasivo: a megírt levél es una carta que alguien escribió, nunca una carta que escribe. Y -ható es «se puede leer», no «puede leer»: para el permiso usa el verbo (Olvashatod a levelet = Puedes leer la carta)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A Hungarian participle is an adjective made from a verb. With the ending «ó» or «ő» the noun does the action: «dolgozó ember», a working person. With the ending «ott», «ett» or «t» the action is done: «megírt levél», a written letter, and «elromlott autó», a broken-down car. With «andó» or «endő» the action still has to be done: «megoldandó feladat», a task to be solved. With «ható» or «hető» the action can be done: «olvasható szöveg», a text you can read. The participle stands before the noun and never takes a plural ending: «dolgozó emberek».",
+    "es": "Un participio húngaro es un adjetivo formado a partir de un verbo. Con la terminación «ó» o «ő», el sustantivo realiza la acción: «dolgozó ember», una persona que trabaja. Con la terminación «ott», «ett» o «t», la acción ya está hecha: «megírt levél», una carta escrita, y «elromlott autó», un coche descompuesto. Con «andó» o «endő», la acción todavía hay que hacerla: «megoldandó feladat», una tarea por resolver. Con «ható» o «hető», la acción se puede hacer: «olvasható szöveg», un texto que se puede leer. El participio va delante del sustantivo y nunca lleva plural: «dolgozó emberek»."
+  },
+  "glossary": [
+    {
+      "word": "miatt",
+      "gloss": {
+        "en": "because of",
+        "es": "por, a causa de"
+      }
+    },
+    {
+      "word": "forint",
+      "gloss": {
+        "en": "forint (Hungarian currency)",
+        "es": "florín (moneda húngara)"
+      }
+    },
+    {
+      "word": "gyalog",
+      "gloss": {
+        "en": "on foot",
+        "es": "a pie"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "melleknevi-igenev-c01",
+      "sentence": "Még sok ___ feladat vár ránk ezen a héten.",
+      "options": [
+        "megoldandó",
+        "megoldott",
+        "megoldó"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Still waiting means the tasks are not done yet and have to be done: -andó/-endő (megold + andó).",
+        "es": "«Todavía esperan» significa que las tareas aún no están hechas y hay que hacerlas: -andó/-endő (megold + andó)."
+      },
+      "wrong": {
+        "megoldott": {
+          "en": "megoldott feladat is a task that has been solved; solved tasks no longer wait for us.",
+          "es": "megoldott feladat es una tarea ya resuelta; las tareas resueltas ya no nos esperan."
+        },
+        "megoldó": {
+          "en": "megoldó would be the one who solves (a person, a solver); a task does not solve anything.",
+          "es": "megoldó sería quien resuelve (una persona); una tarea no resuelve nada."
+        }
+      },
+      "examples": [
+        "Két megoldandó feladat maradt.",
+        "Sok megoldandó kérdés van még."
+      ],
+      "tr": {
+        "en": "Many tasks still await us this week.",
+        "es": "Todavía nos esperan muchas tareas por resolver esta semana."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f01",
+      "kind": "form",
+      "verb": "fizet",
+      "person": "-andó/-endő",
+      "answer": "fizetendő",
+      "table": "ig-minta"
+    },
+    {
+      "id": "melleknevi-igenev-c02",
+      "sentence": "A ___ levelet még ma elküldöm Annának.",
+      "options": [
+        "megírt",
+        "megírandó",
+        "megírható"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The letter already exists, it was written: the -t participle (megír → megírt).",
+        "es": "La carta ya existe, ya está escrita: el participio en -t (megír → megírt)."
+      },
+      "wrong": {
+        "megírandó": {
+          "en": "megírandó levél is a letter that still has to be written; you cannot send it today.",
+          "es": "megírandó levél es una carta que todavía hay que escribir; hoy no se puede enviar."
+        },
+        "megírható": {
+          "en": "megírható levél is a letter that can be written; it does not say that the letter exists.",
+          "es": "megírható levél es una carta que se puede escribir; no dice que ya exista."
+        }
+      },
+      "examples": [
+        "A megírt levelet a fiókba tettem.",
+        "Hol van a megírt levél?"
+      ],
+      "tr": {
+        "en": "I will send Anna the letter I have written today.",
+        "es": "La carta que ya escribí se la mando hoy a Anna."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f02",
+      "kind": "form",
+      "verb": "eszik",
+      "person": "-ó/-ő",
+      "answer": "evő",
+      "table": "ig-szabalytalan"
+    },
+    {
+      "id": "melleknevi-igenev-c03",
+      "sentence": "Az ___ autó miatt busszal mentem dolgozni.",
+      "options": [
+        "elromlott",
+        "elromlött",
+        "elromlett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "elromlik has the back vowel o, so the ending is -ott: elromlott (the past form of ő).",
+        "es": "elromlik tiene la vocal posterior o, así que la terminación es -ott: elromlott (el pasado de ő)."
+      },
+      "wrong": {
+        "elromlött": {
+          "en": "-ött goes with rounded front vowels (főzött); elromlik has a back o.",
+          "es": "-ött va con vocales anteriores redondeadas (főzött); elromlik tiene una o posterior."
+        },
+        "elromlett": {
+          "en": "-ett goes with unrounded front vowels (fizetett); elromlik has a back o.",
+          "es": "-ett va con vocales anteriores sin redondear (fizetett); elromlik tiene una o posterior."
+        }
+      },
+      "examples": [
+        "Az elromlott liftet javítják.",
+        "Egy elromlott telefon van a fiókban."
+      ],
+      "tr": {
+        "en": "Because of the broken-down car I took the bus to work.",
+        "es": "Por el coche descompuesto fui al trabajo en autobús."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f03",
+      "kind": "form",
+      "verb": "megír",
+      "person": "-t/-tt/-ott/-ett/-ött",
+      "answer": "megírt",
+      "table": "ig-mult"
+    },
+    {
+      "id": "melleknevi-igenev-w01",
+      "kind": "why",
+      "es": "A megoldandó feladat nehéz.",
+      "target": "megoldandó",
+      "tr": {
+        "en": "The task to be solved is difficult.",
+        "es": "La tarea por resolver es difícil."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-andó/-endő: the task still has to be solved",
+            "es": "-andó/-endő: la tarea todavía hay que resolverla"
+          }
+        },
+        {
+          "text": {
+            "en": "-ható/-hető: the task can be solved",
+            "es": "-ható/-hető: la tarea se puede resolver"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A megoldható feladat nehéz (the solvable task is difficult); megoldandó adds a duty, not a possibility.",
+            "es": "Con esta regla la frase sería A megoldható feladat nehéz (la tarea que se puede resolver es difícil); megoldandó añade una obligación, no una posibilidad."
+          }
+        },
+        {
+          "text": {
+            "en": "-t participle: the task has been solved",
+            "es": "participio en -t: la tarea ya se resolvió"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be A megoldott feladat nehéz (the solved task is difficult); a task that is done no longer has to be solved.",
+            "es": "Con esta regla la frase sería A megoldott feladat nehéz (la tarea resuelta es difícil); una tarea ya hecha no hay que resolverla."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "melleknevi-igenev-c04",
+      "sentence": "A tanár magyarázata nagyon ___.",
+      "options": [
+        "érthető",
+        "értható",
+        "értett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ért has a front vowel, so the ending is -hető: érthető = it can be understood.",
+        "es": "ért tiene una vocal anterior, así que la terminación es -hető: érthető = se entiende."
+      },
+      "wrong": {
+        "értható": {
+          "en": "-ható is for back-vowel verbs (olvasható); ért takes -hető.",
+          "es": "-ható es para verbos con vocal posterior (olvasható); ért lleva -hető."
+        },
+        "értett": {
+          "en": "értett is the past (he or she understood); it does not say that the explanation can be understood.",
+          "es": "értett es el pasado (entendió); no dice que la explicación se pueda entender."
+        }
+      },
+      "examples": [
+        "A szöveg jól érthető.",
+        "Ez a mondat nem érthető."
+      ],
+      "tr": {
+        "en": "The teacher's explanation is very clear.",
+        "es": "La explicación del profesor es muy clara."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f04",
+      "kind": "form",
+      "verb": "kitölt",
+      "person": "-andó/-endő",
+      "answer": "kitöltendő",
+      "table": "ig-kell-lehet"
+    },
+    {
+      "id": "melleknevi-igenev-c05",
+      "sentence": "Az ___ baba mellett csendben kell lenni.",
+      "options": [
+        "alvó",
+        "alszó",
+        "aludó"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "alszik is irregular: the participle uses the stem alv-: alvó.",
+        "es": "alszik es irregular: el participio usa la raíz alv-: alvó."
+      },
+      "wrong": {
+        "alszó": {
+          "en": "alszó is not the participle of alszik; the regular pattern does not work for it, its stem here is alv-.",
+          "es": "alszó no es el participio de alszik; el patrón regular no sirve para este verbo, su raíz aquí es alv-."
+        },
+        "aludó": {
+          "en": "aludó is not the standard form either; the -ó participle of alszik is alvó (aludt is the past tense).",
+          "es": "aludó tampoco es la forma estándar; el participio en -ó de alszik es alvó (aludt es el pasado)."
+        }
+      },
+      "examples": [
+        "Az alvó gyerek mellett ne légy hangos!",
+        "Az alvó fiú nem hall semmit."
+      ],
+      "tr": {
+        "en": "Next to the sleeping baby one has to be quiet.",
+        "es": "Junto al bebé que duerme hay que estar en silencio."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f05",
+      "kind": "form",
+      "verb": "főz",
+      "person": "-ható/-hető",
+      "answer": "főzhető",
+      "table": "ig-minta"
+    },
+    {
+      "id": "melleknevi-igenev-w02",
+      "kind": "why",
+      "es": "Az elromlott autó a ház előtt áll.",
+      "target": "elromlott",
+      "tr": {
+        "en": "The broken-down car stands in front of the house.",
+        "es": "El coche descompuesto está delante de la casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Passive meaning: somebody broke the car",
+            "es": "Sentido pasivo: alguien rompió el coche"
+          },
+          "wrong": {
+            "en": "With this rule the car would be the object of somebody's action, as in megjavított autó (the car somebody repaired); elromlik is intransitive: the car broke down by itself.",
+            "es": "Con esta regla el coche sería el objeto de la acción de alguien, como en megjavított autó (el coche que alguien reparó); elromlik es intransitivo: el coche se descompuso solo."
+          }
+        },
+        {
+          "text": {
+            "en": "Active result: the car that has broken down",
+            "es": "Resultado activo: el coche que se descompuso"
+          }
+        },
+        {
+          "text": {
+            "en": "Possibility: a car that could break down",
+            "es": "Posibilidad: un coche que podría descomponerse"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would use a -hat/-het participle (a car that could break); -ott says that the breakdown has already happened.",
+            "es": "Con esta regla la frase usaría un participio en -hat/-het (un coche que podría romperse); -ott dice que la avería ya ocurrió."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "melleknevi-igenev-c06",
+      "sentence": "A ___ héten Debrecenbe utazunk.",
+      "options": [
+        "jövő",
+        "jönő",
+        "jött"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "jön is irregular: the participle is jövő (stem jöv-). A jövő héten = next week.",
+        "es": "jön es irregular: el participio es jövő (raíz jöv-). A jövő héten = la semana que viene."
+      },
+      "wrong": {
+        "jönő": {
+          "en": "jönő is not a form; jön has the irregular participle jövő.",
+          "es": "jönő no existe; jön tiene el participio irregular jövő."
+        },
+        "jött": {
+          "en": "jött is the past (came); last week is a múlt héten, not a jött héten.",
+          "es": "jött es el pasado (vino); la semana pasada es a múlt héten, no a jött héten."
+        }
+      },
+      "examples": [
+        "A jövő hét nagyon fontos.",
+        "Jövő hétfőn nem dolgozom."
+      ],
+      "tr": {
+        "en": "Next week we are travelling to Debrecen.",
+        "es": "La semana que viene viajamos a Debrecen."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f06",
+      "kind": "form",
+      "verb": "alszik",
+      "person": "-ó/-ő",
+      "answer": "alvó",
+      "table": "ig-szabalytalan"
+    },
+    {
+      "id": "melleknevi-igenev-c07",
+      "sentence": "A megállóban sok ___ ember vár a villamosra.",
+      "options": [
+        "dolgozó",
+        "dolgozók",
+        "dolgozót"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Before a noun the participle stays in its basic form: sok dolgozó ember. Endings go on the noun, not on the participle.",
+        "es": "Delante de un sustantivo el participio se queda en su forma básica: sok dolgozó ember. Las terminaciones van en el sustantivo, no en el participio."
+      },
+      "wrong": {
+        "dolgozók": {
+          "en": "dolgozók is the noun «the employees» (plural); before ember the participle takes no -k.",
+          "es": "dolgozók es el sustantivo «los empleados» (plural); delante de ember el participio no lleva -k."
+        },
+        "dolgozót": {
+          "en": "dolgozót is an accusative, a noun used as an object; a participle before a noun takes no case ending.",
+          "es": "dolgozót es un acusativo, un sustantivo como objeto; un participio delante de un sustantivo no lleva caso."
+        }
+      },
+      "examples": [
+        "Sok dolgozó ember siet haza.",
+        "A dolgozó emberek későn mennek haza."
+      ],
+      "tr": {
+        "en": "Many working people are waiting for the tram at the stop.",
+        "es": "Muchas personas que trabajan esperan el tranvía en la parada."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f07",
+      "kind": "form",
+      "verb": "nyit",
+      "person": "-t/-tt/-ott/-ett/-ött",
+      "answer": "nyitott",
+      "table": "ig-mult"
+    },
+    {
+      "id": "melleknevi-igenev-w03",
+      "kind": "why",
+      "es": "Ez a szöveg jól olvasható.",
+      "target": "olvasható",
+      "tr": {
+        "en": "This text is easy to read.",
+        "es": "Este texto se lee bien."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-t participle: the text has been read",
+            "es": "participio en -t: el texto ya se leyó"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ez az olvasott szöveg (this text that has been read); -ható says nothing about having been read.",
+            "es": "Con esta regla la frase sería Ez az olvasott szöveg (este texto que ya se leyó); -ható no dice nada de haberlo leído."
+          }
+        },
+        {
+          "text": {
+            "en": "-andó/-endő: the text has to be read",
+            "es": "-andó/-endő: el texto hay que leerlo"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Ez az olvasandó szöveg (this text to be read); -ható is about possibility, not duty.",
+            "es": "Con esta regla la frase sería Ez az olvasandó szöveg (este texto por leer); -ható es posibilidad, no obligación."
+          }
+        },
+        {
+          "text": {
+            "en": "-ható/-hető: the text can be read, it is legible",
+            "es": "-ható/-hető: el texto se puede leer, es legible"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "melleknevi-igenev-c08",
+      "sentence": "A felirat nagyon kicsi, alig ___.",
+      "options": [
+        "olvasható",
+        "olvasandó",
+        "olvasott"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Hardly + can be read: the possibility participle olvas + ható.",
+        "es": "Apenas + se puede leer: el participio de posibilidad olvas + ható."
+      },
+      "wrong": {
+        "olvasandó": {
+          "en": "olvasandó means «to be read» (a duty); it does not say that you can hardly read it.",
+          "es": "olvasandó significa «por leer» (una obligación); no dice que apenas se pueda leer."
+        },
+        "olvasott": {
+          "en": "olvasott means «read, has been read»; it says nothing about whether the text is legible.",
+          "es": "olvasott significa «leído»; no dice si el texto es legible."
+        }
+      },
+      "examples": [
+        "Ez a szöveg jól olvasható.",
+        "A levél alig olvasható."
+      ],
+      "tr": {
+        "en": "The sign is very small, you can hardly read it.",
+        "es": "El letrero es muy pequeño, apenas se puede leer."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f08",
+      "kind": "form",
+      "verb": "megold",
+      "person": "-ható/-hető",
+      "answer": "megoldható",
+      "table": "ig-kell-lehet"
+    },
+    {
+      "id": "melleknevi-igenev-c09",
+      "sentence": "A számla holnapig ___.",
+      "options": [
+        "fizetendő",
+        "fizetett",
+        "fizető"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The bill is not paid yet and has to be paid by tomorrow: fizet + endő (front vowels).",
+        "es": "La cuenta aún no está pagada y hay que pagarla antes de mañana: fizet + endő (vocales anteriores)."
+      },
+      "wrong": {
+        "fizetett": {
+          "en": "fizetett means «paid, has been paid»; the deadline holnapig shows that it is still open.",
+          "es": "fizetett significa «pagado»; el plazo holnapig muestra que sigue pendiente."
+        },
+        "fizető": {
+          "en": "fizető means «who pays» (fizető vendég); a bill does not pay.",
+          "es": "fizető significa «que paga» (fizető vendég); una cuenta no paga."
+        }
+      },
+      "examples": [
+        "A kifizetendő számlák az asztalon vannak.",
+        "A fizetendő összeg a számlán van."
+      ],
+      "tr": {
+        "en": "The bill has to be paid by tomorrow.",
+        "es": "La cuenta se debe pagar antes de mañana."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f09",
+      "kind": "form",
+      "verb": "főz",
+      "person": "-t/-tt/-ott/-ett/-ött",
+      "answer": "főzött",
+      "table": "ig-minta"
+    },
+    {
+      "id": "melleknevi-igenev-c10",
+      "sentence": "Ebédre a tegnap ___ levest eszem.",
+      "options": [
+        "főzött",
+        "főzott",
+        "főző"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "főz has the rounded front vowel ő, so the past ending is -ött: főzött. A tegnap főzött leves = the soup that was cooked yesterday.",
+        "es": "főz tiene la vocal anterior redondeada ő, así que la terminación es -ött: főzött. A tegnap főzött leves = la sopa que se cocinó ayer."
+      },
+      "wrong": {
+        "főzott": {
+          "en": "-ott goes with back vowels (olvasott); főz has a rounded front vowel, so -ött.",
+          "es": "-ott va con vocales posteriores (olvasott); főz tiene una vocal anterior redondeada, así que -ött."
+        },
+        "főző": {
+          "en": "főző means «who cooks» (a főző nagymama); a soup is not the one who cooks.",
+          "es": "főző significa «que cocina» (a főző nagymama); una sopa no cocina."
+        }
+      },
+      "examples": [
+        "A tegnap főzött leves még finom.",
+        "Az otthon főzött ebéd olcsóbb."
+      ],
+      "tr": {
+        "en": "For lunch I eat the soup that was cooked yesterday.",
+        "es": "Para la comida me como la sopa que se cocinó ayer."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f10",
+      "kind": "form",
+      "verb": "jön",
+      "person": "-ó/-ő",
+      "answer": "jövő",
+      "table": "ig-szabalytalan"
+    },
+    {
+      "id": "melleknevi-igenev-w04",
+      "kind": "why",
+      "es": "A dolgozók hétkor mentek haza.",
+      "target": "dolgozók",
+      "tr": {
+        "en": "The employees went home at seven.",
+        "es": "Los empleados se fueron a casa a las siete."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A participle used as a noun, in the plural: the employees",
+            "es": "Un participio usado como sustantivo, en plural: los empleados"
+          }
+        },
+        {
+          "text": {
+            "en": "3rd person plural of the verb: they work",
+            "es": "Verbo en 3.ª persona del plural: ellos trabajan"
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Dolgoznak (they work); dolgozók has no verb ending, it is the participle with the noun plural -k, and mentek is the verb.",
+            "es": "Con esta regla la frase sería Dolgoznak (ellos trabajan); dolgozók no tiene terminación verbal, es el participio con el plural -k del sustantivo, y mentek es el verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "An adjective before a noun: the working ...",
+            "es": "Un adjetivo delante de un sustantivo: los ... que trabajan"
+          },
+          "wrong": {
+            "en": "With this rule a noun would follow, as in dolgozó emberek; here dolgozók stands alone as the subject, so it is a noun.",
+            "es": "Con esta regla seguiría un sustantivo, como en dolgozó emberek; aquí dolgozók está solo como sujeto, así que es un sustantivo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "melleknevi-igenev-c11",
+      "sentence": "Nyáron két hét ___ szabadságom van.",
+      "options": [
+        "fizetett",
+        "fizetott",
+        "fizető"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A fizetett szabadság is paid leave: the -t participle, and fizet has front vowels, so -ett.",
+        "es": "A fizetett szabadság son vacaciones pagadas: participio en -t, y fizet tiene vocales anteriores, así que -ett."
+      },
+      "wrong": {
+        "fizetott": {
+          "en": "-ott goes with back-vowel verbs; fizet has i and e, so -ett.",
+          "es": "-ott va con verbos de vocal posterior; fizet tiene i y e, así que -ett."
+        },
+        "fizető": {
+          "en": "fizető means «who pays» (fizető vendég); leave that is paid for is fizetett.",
+          "es": "fizető significa «que paga» (fizető vendég); las vacaciones pagadas son fizetett."
+        }
+      },
+      "examples": [
+        "Van fizetett szabadságod?",
+        "A fizetett szabadság tíz nap."
+      ],
+      "tr": {
+        "en": "In summer I have two weeks of paid leave.",
+        "es": "En verano tengo dos semanas de vacaciones pagadas."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f11",
+      "kind": "form",
+      "verb": "elromlik",
+      "person": "-t/-tt/-ott/-ett/-ött",
+      "answer": "elromlott",
+      "table": "ig-mult"
+    },
+    {
+      "id": "melleknevi-igenev-c12",
+      "sentence": "A jegy az automatánál kártyával is ___.",
+      "options": [
+        "fizethető",
+        "fizetett",
+        "fizető"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "It says that paying by card is possible: fizet + hető.",
+        "es": "Dice que es posible pagar con tarjeta: fizet + hető."
+      },
+      "wrong": {
+        "fizetett": {
+          "en": "fizetett means «paid» (already done); the sentence is about what is possible.",
+          "es": "fizetett significa «pagado» (ya hecho); la frase habla de lo que es posible."
+        },
+        "fizető": {
+          "en": "fizető means «who pays»; it describes a person, not a possibility.",
+          "es": "fizető significa «que paga»; describe a una persona, no una posibilidad."
+        }
+      },
+      "examples": [
+        "A jegy kártyával is fizethető.",
+        "Ez a termék a boltban kapható."
+      ],
+      "tr": {
+        "en": "The ticket can also be paid by card at the machine.",
+        "es": "El boleto también se puede pagar con tarjeta en la máquina."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-f12",
+      "kind": "form",
+      "verb": "befizet",
+      "person": "-andó/-endő",
+      "answer": "befizetendő",
+      "table": "ig-kell-lehet"
+    },
+    {
+      "id": "melleknevi-igenev-c13",
+      "sentence": "Ez a ___ űrlap, a másik már ki van töltve.",
+      "options": [
+        "kitöltendő",
+        "kitöltandó",
+        "kitöltött"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "This form is still empty and has to be filled in: kitölt + endő (front vowels). The other one is already filled in.",
+        "es": "Este formulario está vacío y hay que llenarlo: kitölt + endő (vocales anteriores). El otro ya está lleno."
+      },
+      "wrong": {
+        "kitöltandó": {
+          "en": "-andó goes with back-vowel verbs (megoldandó); kitölt has the front vowel ö, so -endő.",
+          "es": "-andó va con verbos de vocal posterior (megoldandó); kitölt tiene la vocal anterior ö, así que -endő."
+        },
+        "kitöltött": {
+          "en": "kitöltött means «filled in, completed»; but the other form is the filled-in one, so this one is still empty.",
+          "es": "kitöltött significa «ya llenado»; pero el lleno es el otro formulario, así que este todavía está vacío."
+        }
+      },
+      "examples": [
+        "A kitöltendő űrlapot hozd vissza péntekig.",
+        "Hol van a kitöltött űrlap?"
+      ],
+      "tr": {
+        "en": "This is the form to be filled in; the other one is already filled in.",
+        "es": "Este es el formulario por llenar; el otro ya está lleno."
+      }
+    },
+    {
+      "id": "melleknevi-igenev-c14",
+      "sentence": "Az ___ könyvet holnap visszaadom a könyvtárnak.",
+      "options": [
+        "elolvasott",
+        "elolvasandó",
+        "olvasó"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "You give back a book you have read: the -t participle, elolvas + ott (back vowels).",
+        "es": "Se devuelve un libro que ya se leyó: participio en -t, elolvas + ott (vocales posteriores)."
+      },
+      "wrong": {
+        "elolvasandó": {
+          "en": "elolvasandó könyv is a book that is still to be read; you would not give that one back yet.",
+          "es": "elolvasandó könyv es un libro todavía por leer; ese todavía no lo devolverías."
+        },
+        "olvasó": {
+          "en": "olvasó means «reader» or «who reads»; a book does not read.",
+          "es": "olvasó significa «lector» o «que lee»; un libro no lee."
+        }
+      },
+      "examples": [
+        "Az elolvasott könyveket a polcra teszem.",
+        "Az olvasó gyerek nem hall semmit."
+      ],
+      "tr": {
+        "en": "Tomorrow I will give the book I have read back to the library.",
+        "es": "Mañana devuelvo a la biblioteca el libro que ya leí."
+      }
+    }
+  ]
+}

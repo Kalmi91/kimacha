@@ -82,8 +82,7 @@ export default function GrammarSyllabusScreen() {
     const levelData = await db.getLevel();
     const lvl = (levelData.level as Level) ?? 'A1';
     setLevel(lvl);
-    // The Hungarian course stops at A2: a higher level opens on A1, not on an empty list.
-    setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' && (target !== 'hu' || syllabusLevels(target).includes(lvl)) ? lvl : 'A1'));
+    setOpenLevel((current) => current ?? (LEVELS.includes(lvl) && lvl !== 'A0' ? lvl : 'A1'));
 
     // A topic is only "done" if there is a finished row for every
     // kind that exists in its lesson (doneGrammarTopicProgress, lib/grammar/syllabus.ts).

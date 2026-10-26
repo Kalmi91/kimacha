@@ -1,0 +1,1385 @@
+{
+  "schema": 2,
+  "topic": "nekem-tetszik",
+  "level": "B1",
+  "title": {
+    "en": "I like it: Nekem tetszik, Hiányzol, Fáj a fejem",
+    "es": "Me gusta: Nekem tetszik, Hiányzol, Fáj a fejem"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In English the person is the subject: I like the film, I miss you, I need a coffee. In Hungarian the thing is the subject and it acts on the person, who stands in the dative (nekem, neked, neki, Péternek): Nekem tetszik a film (the film pleases me), Hiányzol nekem (you are missing to me), Kell egy kávé (a coffee is needed), Fáj a fejem (my head hurts). The verb agrees with the thing, not with the person: Tetszik a film, Tetszenek a képek. Spanish speakers know the idea from gustar, doler and hacer falta: me gusta la película, me duele la cabeza. Hungarian works the same way, with nekem instead of me, and unlike Spanish me the nekem can be left out when it is obvious: Tetszik a film. With body parts the possessive ending on the noun says whose it is: fejem = my head.",
+        "es": "En inglés la persona es el sujeto: I like the film, I miss you, I need a coffee. En húngaro el sujeto es la cosa, que actúa sobre la persona, y esta va en dativo (nekem, neked, neki, Péternek): Nekem tetszik a film (la película me gusta), Hiányzol nekem (me haces falta), Kell egy kávé (hace falta un café), Fáj a fejem (me duele la cabeza). El verbo concuerda con la cosa, no con la persona: Tetszik a film, Tetszenek a képek. Ya conoces la idea por gustar, doler y hacer falta: me gusta la película, me duele la cabeza. El húngaro funciona igual, con nekem en lugar de me, y a diferencia del me español, nekem se puede omitir cuando es obvio: Tetszik a film. Con las partes del cuerpo, la terminación posesiva del sustantivo dice de quién es: fejem = mi cabeza."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "thing-agrees",
+      "title": {
+        "en": "The verb agrees with the thing (ő = one thing, ők = several things, múlt = past)",
+        "es": "El verbo concuerda con la cosa (ő = una cosa, ők = varias cosas, múlt = pasado)"
+      },
+      "header": [
+        {
+          "en": "The thing is",
+          "es": "La cosa es"
+        },
+        {
+          "en": "tetszik (to like)",
+          "es": "tetszik (gustar)"
+        },
+        {
+          "en": "hiányzik (to miss)",
+          "es": "hiányzik (hacer falta, extrañar)"
+        },
+        {
+          "en": "fáj (to hurt)",
+          "es": "fáj (doler)"
+        },
+        {
+          "en": "kell (to need)",
+          "es": "kell (hacer falta)"
+        }
+      ],
+      "rows": [
+        [
+          "ő",
+          "tetszik",
+          "hiányzik",
+          "fáj",
+          "kell"
+        ],
+        [
+          "ők",
+          "tetszenek",
+          "hiányoznak",
+          "fájnak",
+          "kellenek"
+        ],
+        [
+          "ő (múlt)",
+          "tetszett",
+          "hiányzott",
+          "fájt",
+          "kellett"
+        ],
+        [
+          "ők (múlt)",
+          "tetszettek",
+          "hiányoztak",
+          "fájtak",
+          "kellettek"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The person in the dative, the thing as subject",
+        "es": "La persona en dativo, la cosa como sujeto"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "tetszik (to like, to please): the one who likes it stands in the dative, the thing liked is the subject. One thing: tetszik, several things: tetszenek. Nekem, neked can be left out when it is clear who likes it.",
+            "es": "tetszik (gustar): quien lo disfruta va en dativo, y lo que gusta es el sujeto. Una cosa: tetszik, varias cosas: tetszenek. Nekem, neked pueden omitirse cuando está claro quién disfruta."
+          },
+          "examples": [
+            {
+              "es": "Nekem nagyon tetszik ez a város.",
+              "tr": {
+                "en": "I like this city a lot.",
+                "es": "Esta ciudad me gusta mucho."
+              }
+            },
+            {
+              "es": "Annának tetszenek a képek.",
+              "tr": {
+                "en": "Anna likes the pictures.",
+                "es": "A Anna le gustan las imágenes."
+              }
+            },
+            {
+              "es": "Hogy tetszik Budapest?",
+              "tr": {
+                "en": "How do you like Budapest?",
+                "es": "¿Qué te parece Budapest?"
+              }
+            },
+            {
+              "es": "Tetszett az ajándék?",
+              "tr": {
+                "en": "Did you like the gift?",
+                "es": "¿Te gustó el regalo?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "hiányzik (to be missing, to be missed): what or who is missed is the subject, and the one who misses stands in the dative. Hiányzol nekem = I miss you.",
+            "es": "hiányzik (faltar, ser extrañado): lo que o a quien se extraña es el sujeto, y quien extraña va en dativo. Hiányzol nekem = te extraño."
+          },
+          "examples": [
+            {
+              "es": "Hiányzol nekem.",
+              "tr": {
+                "en": "I miss you.",
+                "es": "Te extraño."
+              }
+            },
+            {
+              "es": "Gábornak hiányoznak a gyerekek.",
+              "tr": {
+                "en": "Gábor misses the children.",
+                "es": "Gábor extraña a los niños."
+              }
+            },
+            {
+              "es": "Az asztalnál hiányzik egy szék.",
+              "tr": {
+                "en": "A chair is missing at the table.",
+                "es": "Falta una silla en la mesa."
+              }
+            },
+            {
+              "es": "Tegnap hiányoztál!",
+              "tr": {
+                "en": "We missed you yesterday!",
+                "es": "¡Ayer nos hiciste falta!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "fáj (to hurt): the body part is the subject, and the possessive ending on it says whose it is. No nekem is needed: Fáj a fejem. For another person the owner comes first in the dative: Katinak fáj a lába.",
+            "es": "fáj (doler): la parte del cuerpo es el sujeto, y la terminación posesiva dice de quién es. No hace falta nekem: Fáj a fejem. Para otra persona, el dueño va primero en dativo: Katinak fáj a lába."
+          },
+          "examples": [
+            {
+              "es": "Fáj a fejem, nem tudok dolgozni.",
+              "tr": {
+                "en": "My head hurts, I can't work.",
+                "es": "Me duele la cabeza, no puedo trabajar."
+              }
+            },
+            {
+              "es": "Katinak fáj a lába.",
+              "tr": {
+                "en": "Kati's leg hurts.",
+                "es": "A Kati le duele la pierna."
+              }
+            },
+            {
+              "es": "Neked is fáj a hasad?",
+              "tr": {
+                "en": "Does your stomach hurt too?",
+                "es": "¿A ti también te duele la barriga?"
+              }
+            },
+            {
+              "es": "Fáj a fogam, el kell mennem a fogorvoshoz.",
+              "tr": {
+                "en": "My tooth hurts, I have to go to the dentist.",
+                "es": "Me duele un diente, tengo que ir al dentista."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "kell (to be needed): the thing needed is the subject and stays in the nominative (Kell egy kávé, not Kell egy kávét). The one who needs it stands in the dative or is left out. Several things: kellenek. This is the kell with a noun; with an infinitive you know the other one (Mennem kell).",
+            "es": "kell (hacer falta): lo que se necesita es el sujeto y queda en nominativo (Kell egy kávé, no Kell egy kávét). Quien lo necesita va en dativo o se omite. Varias cosas: kellenek. Este es el kell con sustantivo; con infinitivo conoces el otro (Mennem kell)."
+          },
+          "examples": [
+            {
+              "es": "Kell egy kávé.",
+              "tr": {
+                "en": "I need a coffee.",
+                "es": "Necesito un café."
+              }
+            },
+            {
+              "es": "Neked kell a kulcs?",
+              "tr": {
+                "en": "Do you need the key?",
+                "es": "¿Necesitas la llave?"
+              }
+            },
+            {
+              "es": "Nekem nem kell cukor.",
+              "tr": {
+                "en": "I don't need sugar.",
+                "es": "No necesito azúcar."
+              }
+            },
+            {
+              "es": "Holnap kellenek a jegyek.",
+              "tr": {
+                "en": "The tickets are needed tomorrow.",
+                "es": "Mañana hacen falta los boletos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "jólesik (it feels good, it is welcome): the thing that feels good is the subject. In a plain sentence it is written as one word: jólesik. After nem the jól drops behind the verb, like a prefix, and the two words are written apart: Nem esik jól.",
+            "es": "jólesik (sentar bien, venir bien): lo que sienta bien es el sujeto. En una frase simple se escribe como una sola palabra: jólesik. Después de nem el jól pasa detrás del verbo, como un prefijo, y se escribe separado: Nem esik jól."
+          },
+          "examples": [
+            {
+              "es": "Jólesik egy hideg víz.",
+              "tr": {
+                "en": "A cold water feels good.",
+                "es": "Qué bien sienta un agua fría."
+              }
+            },
+            {
+              "es": "Jólesett a tea.",
+              "tr": {
+                "en": "The tea felt good.",
+                "es": "Me sentó bien el té."
+              }
+            },
+            {
+              "es": "Este nem esik jól a kávé.",
+              "tr": {
+                "en": "Coffee doesn't agree with me in the evening.",
+                "es": "Por la noche el café no me cae bien."
+              }
+            },
+            {
+              "es": "Neki nem esik jól a tej.",
+              "tr": {
+                "en": "Milk doesn't agree with him or her.",
+                "es": "La leche no le cae bien."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "eszembe jut (it comes to mind): ész (mind) takes the possessive ending and -be, so the form changes with the person: eszembe, eszedbe, eszébe, eszünkbe, eszetekbe, eszükbe. What comes to mind is the subject. Eszembe works like a prefix: in front of the verb in a plain sentence, behind it after nem.",
+            "es": "eszembe jut (se me viene a la mente): ész (mente) toma la terminación posesiva y -be, así que la forma cambia con la persona: eszembe, eszedbe, eszébe, eszünkbe, eszetekbe, eszükbe. Lo que viene a la mente es el sujeto. Eszembe funciona como un prefijo: delante del verbo en una frase simple, detrás después de nem."
+          },
+          "examples": [
+            {
+              "es": "Eszembe jutott a neve.",
+              "tr": {
+                "en": "His name came to my mind.",
+                "es": "Se me vino a la mente su nombre."
+              }
+            },
+            {
+              "es": "Nem jut eszembe a neve.",
+              "tr": {
+                "en": "I can't think of his name.",
+                "es": "No me acuerdo de su nombre."
+              }
+            },
+            {
+              "es": "Katinak eszébe jutott egy jó ötlet.",
+              "tr": {
+                "en": "A good idea occurred to Kati.",
+                "es": "A Kati se le ocurrió una buena idea."
+              }
+            },
+            {
+              "es": "Eszedbe jutott a telefonszáma?",
+              "tr": {
+                "en": "Did her phone number come to your mind?",
+                "es": "¿Se te vino a la mente su número de teléfono?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "person-subject",
+      "title": {
+        "en": "When the person is the one who pleases or is missed",
+        "es": "Cuando la persona es quien gusta o a quien se extraña"
+      },
+      "header": [
+        {
+          "en": "Subject",
+          "es": "Sujeto"
+        },
+        {
+          "en": "tetszik (to please)",
+          "es": "tetszik (gustar)"
+        },
+        {
+          "en": "hiányzik (to be missed)",
+          "es": "hiányzik (ser extrañado)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "tetszem",
+          "hiányzom"
+        ],
+        [
+          "te",
+          "tetszel",
+          "hiányzol"
+        ],
+        [
+          "ő",
+          "tetszik",
+          "hiányzik"
+        ],
+        [
+          "mi",
+          "tetszünk",
+          "hiányzunk"
+        ],
+        [
+          "ti",
+          "tetszetek",
+          "hiányoztok"
+        ],
+        [
+          "ők",
+          "tetszenek",
+          "hiányoznak"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "A person can be the subject too",
+        "es": "Una persona también puede ser el sujeto"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "tetszik with a person: the one who is liked is the subject, the one who likes is in the dative. Tetszel nekem = I like you. Tetszem neked? = Do you like me?",
+            "es": "tetszik con una persona: quien gusta es el sujeto, y a quien le gusta va en dativo. Tetszel nekem = me gustas. Tetszem neked? = ¿te gusto?"
+          },
+          "examples": [
+            {
+              "es": "Tetszel nekem.",
+              "tr": {
+                "en": "I like you.",
+                "es": "Me gustas."
+              }
+            },
+            {
+              "es": "Tetszem neked?",
+              "tr": {
+                "en": "Do you like me?",
+                "es": "¿Te gusto?"
+              }
+            },
+            {
+              "es": "Katinak tetszik Gábor.",
+              "tr": {
+                "en": "Kati likes Gábor.",
+                "es": "A Kati le gusta Gábor."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "hiányzik with a person: Hiányzol nekem = I miss you. Hiányzom neked? = Do you miss me? The verb follows the one who is missed.",
+            "es": "hiányzik con una persona: Hiányzol nekem = te extraño. Hiányzom neked? = ¿me extrañas? El verbo sigue a quien se extraña."
+          },
+          "examples": [
+            {
+              "es": "Nagyon hiányzol nekem.",
+              "tr": {
+                "en": "I miss you a lot.",
+                "es": "Te extraño mucho."
+              }
+            },
+            {
+              "es": "Hiányzom neked?",
+              "tr": {
+                "en": "Do you miss me?",
+                "es": "¿Me extrañas?"
+              }
+            },
+            {
+              "es": "Hiányzunk neked?",
+              "tr": {
+                "en": "Do you miss us?",
+                "es": "¿Nos extrañas?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "kell with a person: Kellek neked? = Do you need me? Kellesz nekem = I need you. Careful: Kellek menni is not a sentence; for \"I have to go\" you say Mennem kell.",
+            "es": "kell con una persona: Kellek neked? = ¿me necesitas? Kellesz nekem = te necesito. Ojo: Kellek menni no es una frase; para «tengo que ir» se dice Mennem kell."
+          },
+          "examples": [
+            {
+              "es": "Kellek neked?",
+              "tr": {
+                "en": "Do you need me?",
+                "es": "¿Me necesitas?"
+              }
+            },
+            {
+              "es": "Nagyon kellesz nekem.",
+              "tr": {
+                "en": "I need you a lot.",
+                "es": "Te necesito mucho."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "poss-experiencer",
+      "title": {
+        "en": "Whose? The dative pronoun and the matching ending",
+        "es": "¿De quién? El pronombre en dativo y la terminación que le corresponde"
+      },
+      "header": [
+        {
+          "en": "Dative",
+          "es": "Dativo"
+        },
+        {
+          "en": "fej (head)",
+          "es": "fej (cabeza)"
+        },
+        {
+          "en": "has (belly)",
+          "es": "has (barriga)"
+        },
+        {
+          "en": "láb (leg)",
+          "es": "láb (pierna)"
+        },
+        {
+          "en": "eszembe jut (comes to mind)",
+          "es": "eszembe jut (se viene a la mente)"
+        }
+      ],
+      "rows": [
+        [
+          "nekem",
+          "fejem",
+          "hasam",
+          "lábam",
+          "eszembe"
+        ],
+        [
+          "neked",
+          "fejed",
+          "hasad",
+          "lábad",
+          "eszedbe"
+        ],
+        [
+          "neki",
+          "feje",
+          "hasa",
+          "lába",
+          "eszébe"
+        ],
+        [
+          "nekünk",
+          "fejünk",
+          "hasunk",
+          "lábunk",
+          "eszünkbe"
+        ],
+        [
+          "nektek",
+          "fejetek",
+          "hasatok",
+          "lábatok",
+          "eszetekbe"
+        ],
+        [
+          "nekik",
+          "fejük",
+          "hasuk",
+          "lábuk",
+          "eszükbe"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fácil de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Szeretem a képet.",
+          "b": "Nekem tetszik a kép.",
+          "note": {
+            "en": "Szeretem: I am the subject and the picture is the object (képet); I like or love it in general. Tetszik: the picture is the subject and appeals to me, often at first sight.",
+            "es": "Szeretem: yo soy el sujeto y la imagen es el objeto (képet); me gusta o la quiero en general. Tetszik: la imagen es el sujeto y me atrae, muchas veces a primera vista."
+          },
+          "examples": [
+            {
+              "es": "Szeretem ezt a képet, minden nap nézem.",
+              "tr": {
+                "en": "I love this picture, I look at it every day.",
+                "es": "Me encanta esta imagen, la miro todos los días."
+              }
+            },
+            {
+              "es": "Ez a kép tetszik nekem, nem is tudom, miért.",
+              "tr": {
+                "en": "I like this picture, I don't even know why.",
+                "es": "Esta imagen me gusta, ni siquiera sé por qué."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Hiányzol nekem.",
+          "b": "Hiányzom neked?",
+          "note": {
+            "en": "The one who is missed is the subject and decides the verb ending: -ol for you, -om for me. The one who misses stands in the dative: nekem, neked.",
+            "es": "Quien es extrañado es el sujeto y decide la terminación del verbo: -ol para ti, -om para mí. Quien extraña va en dativo: nekem, neked."
+          },
+          "examples": [
+            {
+              "es": "Nagyon hiányzol nekem.",
+              "tr": {
+                "en": "I miss you a lot.",
+                "es": "Te extraño mucho."
+              }
+            },
+            {
+              "es": "Hiányzom neked?",
+              "tr": {
+                "en": "Do you miss me?",
+                "es": "¿Me extrañas?"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Jólesik egy kávé.",
+          "b": "Nem esik jól a kávé.",
+          "note": {
+            "en": "A plain sentence has jólesik as one word. After nem the jól drops behind the verb, exactly like a prefix in Nem hívom fel.",
+            "es": "Una frase simple tiene jólesik como una sola palabra. Después de nem el jól pasa detrás del verbo, igual que un prefijo en Nem hívom fel."
+          },
+          "examples": [
+            {
+              "es": "Reggel jólesik egy tea.",
+              "tr": {
+                "en": "A tea feels good in the morning.",
+                "es": "Por la mañana sienta bien un té."
+              }
+            },
+            {
+              "es": "Este nem esik jól a tea.",
+              "tr": {
+                "en": "Tea doesn't agree with me in the evening.",
+                "es": "Por la noche el té no me cae bien."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Eszembe jutott a neve.",
+          "b": "Nem jutott eszembe a neve.",
+          "note": {
+            "en": "Eszembe is in front of the verb in a plain sentence and behind it after nem, the same movement as a prefix.",
+            "es": "Eszembe va delante del verbo en una frase simple y detrás después de nem, el mismo movimiento que un prefijo."
+          },
+          "examples": [
+            {
+              "es": "Eszembe jutott a telefonszáma.",
+              "tr": {
+                "en": "Her phone number came to my mind.",
+                "es": "Se me vino a la mente su número de teléfono."
+              }
+            },
+            {
+              "es": "Nem jutott eszembe a telefonszáma.",
+              "tr": {
+                "en": "I could not think of her phone number.",
+                "es": "No me acordé de su número de teléfono."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Fáj a fejem.",
+          "b": "Fejfájásom van.",
+          "note": {
+            "en": "Both can translate \"I have a headache\". Fáj a fejem tells you what hurts right now; Fejfájásom van uses the pattern from nekem van and names the complaint, headache.",
+            "es": "Ambas pueden traducirse «me duele la cabeza». Fáj a fejem dice qué duele ahora mismo; Fejfájásom van usa el patrón de nekem van y nombra la dolencia, el dolor de cabeza."
+          },
+          "examples": [
+            {
+              "es": "Fáj a fejem, pihennem kell.",
+              "tr": {
+                "en": "My head hurts, I have to rest.",
+                "es": "Me duele la cabeza, tengo que descansar."
+              }
+            },
+            {
+              "es": "Ma is fejfájásom van.",
+              "tr": {
+                "en": "I have a headache today too.",
+                "es": "Hoy también tengo dolor de cabeza."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: (1) Do not make yourself the subject: Én tetszik a film is not Hungarian. Say Nekem tetszik a film, or just Tetszik a film. (2) The verb follows the thing: Tetszenek a képek (not Tetszik a képek), Kellenek a jegyek. (3) Fáj a fejem needs the ending: the head alone (Fáj a fej) does not say whose. (4) Kell with a noun takes the nominative: Kell egy kávé (not Kell egy kávét). (5) Kellek does not mean \"I have to\": Kellek neked? = Do you need me? Register: Tetszik is also the polite way to ask in a shop or an office, Tetszik ez a kabát? (Do you like this coat?), and in speech the nekem is often dropped.",
+        "es": "Trampas clásicas: (1) No te conviertas en el sujeto: Én tetszik a film no es húngaro. Di Nekem tetszik a film, o simplemente Tetszik a film. (2) El verbo sigue a la cosa: Tetszenek a képek (no Tetszik a képek), Kellenek a jegyek. (3) Fáj a fejem necesita la terminación: la cabeza sola (Fáj a fej) no dice de quién es. (4) Kell con sustantivo va en nominativo: Kell egy kávé (no Kell egy kávét). (5) Kellek no significa «tengo que»: Kellek neked? = ¿me necesitas? Registro: Tetszik es también la forma cortés de preguntar en una tienda o una oficina, Tetszik ez a kabát? (¿le gusta este abrigo?), y al hablar el nekem se omite a menudo."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian the thing is the subject and the person stands in the dative. «Nekem tetszik a film» means the film pleases me. With several things the verb is plural: «Tetszenek a képek». «Hiányzol nekem» means I miss you. «Fáj a fejem» means my head hurts, and the ending on «fej» says whose head it is. «Kell egy kávé» means I need a coffee. «Jólesik egy kávé» means a coffee feels good. «Eszembe jutott a neve» means his name came to my mind.",
+    "es": "En húngaro el sujeto es la cosa y la persona va en dativo. «Nekem tetszik a film» significa que la película me gusta. Con varias cosas el verbo va en plural: «Tetszenek a képek». «Hiányzol nekem» significa te extraño. «Fáj a fejem» significa me duele la cabeza, y la terminación de «fej» dice de quién es. «Kell egy kávé» significa necesito un café. «Jólesik egy kávé» significa que sienta bien un café. «Eszembe jutott a neve» significa que se me vino a la mente su nombre."
+  },
+  "glossary": [
+    {
+      "word": "film",
+      "gloss": {
+        "en": "film, movie",
+        "es": "película"
+      }
+    },
+    {
+      "word": "jut",
+      "gloss": {
+        "en": "to come, to get to (eszembe jut = it comes to my mind)",
+        "es": "llegar (eszembe jut = se me viene a la mente)"
+      }
+    },
+    {
+      "word": "ész",
+      "gloss": {
+        "en": "mind, reason (eszem, eszed... = my mind, your mind...)",
+        "es": "mente, razón (eszem, eszed... = mi mente, tu mente...)"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "nekem-tetszik-c01",
+      "sentence": "___ nagyon tetszik ez a zene.",
+      "options": [
+        "Nekem",
+        "Én",
+        "Engem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The person who likes the music stands in the dative: nekem. The music (ez a zene) is the subject of tetszik.",
+        "es": "La persona a quien le gusta la música va en dativo: nekem. La música (ez a zene) es el sujeto de tetszik."
+      },
+      "wrong": {
+        "Én": {
+          "en": "Én is the subject form. With tetszik the subject is the music, so Én tetszik ez a zene is not a sentence; Én tetszem would mean \"I am the one who pleases\".",
+          "es": "Én es la forma de sujeto. Con tetszik el sujeto es la música, así que Én tetszik ez a zene no es una frase; Én tetszem significaría «yo soy quien gusta»."
+        },
+        "Engem": {
+          "en": "Engem is the accusative, the object form used with verbs like szeret (Engem szeret). Tetszik takes no object; the person stands in the dative.",
+          "es": "Engem es el acusativo, la forma de objeto con verbos como szeret (Engem szeret). Tetszik no lleva objeto; la persona va en dativo."
+        }
+      },
+      "examples": [
+        "Nekem tetszik a város.",
+        "Neked tetszik ez a kép?"
+      ],
+      "tr": {
+        "en": "I really like this music.",
+        "es": "Esta música me gusta mucho."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f01",
+      "kind": "form",
+      "verb": "tetszik",
+      "person": "ők",
+      "answer": "tetszenek",
+      "table": "thing-agrees"
+    },
+    {
+      "id": "nekem-tetszik-c02",
+      "sentence": "Annának nagyon ___ ezek a képek.",
+      "options": [
+        "tetszenek",
+        "tetszik",
+        "tetszel"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Ezek a képek is plural, so the verb is plural too: tetszenek. The verb agrees with the pictures, not with Annának.",
+        "es": "Ezek a képek es plural, así que el verbo también: tetszenek. El verbo concuerda con las imágenes, no con Annának."
+      },
+      "wrong": {
+        "tetszik": {
+          "en": "tetszik is for one thing (Tetszik ez a kép). Here there are several pictures.",
+          "es": "tetszik es para una sola cosa (Tetszik ez a kép). Aquí hay varias imágenes."
+        },
+        "tetszel": {
+          "en": "tetszel means \"you please someone\", with te as the subject. The subject here is the pictures.",
+          "es": "tetszel significa «tú gustas a alguien», con te como sujeto. Aquí el sujeto son las imágenes."
+        }
+      },
+      "examples": [
+        "Tetszenek a képek.",
+        "Nekünk is tetszenek a szobák."
+      ],
+      "tr": {
+        "en": "Anna really likes these pictures.",
+        "es": "A Anna le gustan mucho estas imágenes."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f02",
+      "kind": "form",
+      "verb": "hiányzik",
+      "person": "ők (múlt)",
+      "answer": "hiányoztak",
+      "table": "thing-agrees"
+    },
+    {
+      "id": "nekem-tetszik-c03",
+      "sentence": "Tegnap láttam a sorozatot, és nagyon ___ nekem.",
+      "options": [
+        "tetszett",
+        "tetszik",
+        "tetszettek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Tegnap puts the sentence in the past, and a sorozat is one thing: tetszett.",
+        "es": "Tegnap pone la frase en pasado, y a sorozat es una sola cosa: tetszett."
+      },
+      "wrong": {
+        "tetszik": {
+          "en": "tetszik is the present, \"I like it\". Tegnap points to yesterday.",
+          "es": "tetszik es el presente, «me gusta». Tegnap apunta a ayer."
+        },
+        "tetszettek": {
+          "en": "tetszettek is the past for several things. A sorozat is one series.",
+          "es": "tetszettek es el pasado para varias cosas. A sorozat es una sola serie."
+        }
+      },
+      "examples": [
+        "Tetszett az ajándék?",
+        "Nekem is tetszett a zene."
+      ],
+      "tr": {
+        "en": "Yesterday I watched the series and I liked it a lot.",
+        "es": "Ayer vi la serie y me gustó mucho."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f03",
+      "kind": "form",
+      "verb": "fáj",
+      "person": "ő (múlt)",
+      "answer": "fájt",
+      "table": "thing-agrees"
+    },
+    {
+      "id": "nekem-tetszik-c04",
+      "sentence": "Péter, te nagyon ___ Katinak!",
+      "options": [
+        "tetszel",
+        "tetszik",
+        "tetszem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Here the person is the subject: Péter (te) pleases Kati, who stands in the dative (Katinak). The verb agrees with te: tetszel.",
+        "es": "Aquí la persona es el sujeto: Péter (te) le gusta a Kati, que va en dativo (Katinak). El verbo concuerda con te: tetszel."
+      },
+      "wrong": {
+        "tetszik": {
+          "en": "tetszik is for a third person or thing. The sentence speaks to Péter (te).",
+          "es": "tetszik es para una tercera persona o cosa. La frase habla con Péter (te)."
+        },
+        "tetszem": {
+          "en": "tetszem means \"I please someone\". The sentence is addressed to Péter, so the subject is te.",
+          "es": "tetszem significa «yo le gusto a alguien». La frase se dirige a Péter, así que el sujeto es te."
+        }
+      },
+      "examples": [
+        "Tetszem neked?",
+        "Katinak tetszik Gábor."
+      ],
+      "tr": {
+        "en": "Péter, Kati really likes you!",
+        "es": "¡Péter, le gustas mucho a Kati!"
+      }
+    },
+    {
+      "id": "nekem-tetszik-f04",
+      "kind": "form",
+      "verb": "kell",
+      "person": "ők",
+      "answer": "kellenek",
+      "table": "thing-agrees"
+    },
+    {
+      "id": "nekem-tetszik-c05",
+      "sentence": "Már három napja nem láttalak, nagyon ___ nekem.",
+      "options": [
+        "hiányzol",
+        "hiányzom",
+        "hiányzik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The one who is missed is the subject, and here it is you (láttalak = I saw you): hiányzol.",
+        "es": "Quien es extrañado es el sujeto, y aquí eres tú (láttalak = te vi): hiányzol."
+      },
+      "wrong": {
+        "hiányzom": {
+          "en": "hiányzom means \"I am missed\". The speaker is the one who misses, so nekem is me and the missed one is you.",
+          "es": "hiányzom significa «me extrañan». Quien habla es el que extraña, así que nekem soy yo y la persona extrañada eres tú."
+        },
+        "hiányzik": {
+          "en": "hiányzik is for a third person or thing. The person missed is you (te).",
+          "es": "hiányzik es para una tercera persona o cosa. La persona extrañada eres tú (te)."
+        }
+      },
+      "examples": [
+        "Hiányzol nekem.",
+        "Hiányzom neked?"
+      ],
+      "tr": {
+        "en": "I haven't seen you for three days, I miss you a lot.",
+        "es": "Hace tres días que no te veo, te extraño mucho."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f05",
+      "kind": "form",
+      "verb": "tetszik",
+      "person": "te",
+      "answer": "tetszel",
+      "table": "person-subject"
+    },
+    {
+      "id": "nekem-tetszik-w01",
+      "kind": "why",
+      "es": "Nekem tetszik a film.",
+      "target": "Nekem",
+      "tr": {
+        "en": "I like the film.",
+        "es": "La película me gusta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The person who likes it stands in the dative, and the film is the subject.",
+            "es": "La persona a quien le gusta va en dativo, y la película es el sujeto."
+          }
+        },
+        {
+          "text": {
+            "en": "Nekem is the subject, because the person is the one who likes.",
+            "es": "Nekem es el sujeto, porque la persona es quien disfruta."
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Én tetszem a film, which is not Hungarian; the verb agrees with the film, and the person is in the dative.",
+            "es": "Con esta regla la frase sería Én tetszem a film, que no es húngaro; el verbo concuerda con la película, y la persona va en dativo."
+          }
+        },
+        {
+          "text": {
+            "en": "Nekem is the object, so it is an accusative.",
+            "es": "Nekem es el objeto, así que es un acusativo."
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Engem tetszik a film; but tetszik takes no accusative object, the person stands in the dative (nekem).",
+            "es": "Con esta regla la frase sería Engem tetszik a film; pero tetszik no lleva objeto acusativo, la persona va en dativo (nekem)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nekem-tetszik-c06",
+      "sentence": "Gábor külföldön dolgozik, és nagyon ___ neki a gyerekek.",
+      "options": [
+        "hiányoznak",
+        "hiányzik",
+        "hiányozunk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "What is missed is a gyerekek, several children, so the verb is plural: hiányoznak. Neki is the one who misses.",
+        "es": "Lo que se extraña es a gyerekek, varios niños, así que el verbo es plural: hiányoznak. Neki es quien extraña."
+      },
+      "wrong": {
+        "hiányzik": {
+          "en": "hiányzik is for one thing or person. A gyerekek is plural.",
+          "es": "hiányzik es para una sola cosa o persona. A gyerekek es plural."
+        },
+        "hiányozunk": {
+          "en": "hiányozunk means \"we are missed\", with mi as the subject. The ones missed are the children.",
+          "es": "hiányozunk significa «nos extrañan», con mi como sujeto. Los extrañados son los niños."
+        }
+      },
+      "examples": [
+        "Hiányoznak neki a barátok.",
+        "Nekünk hiányoznak a gyerekek."
+      ],
+      "tr": {
+        "en": "Gábor works abroad and misses the children a lot.",
+        "es": "Gábor trabaja en el extranjero y extraña mucho a los niños."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f06",
+      "kind": "form",
+      "verb": "hiányzik",
+      "person": "én",
+      "answer": "hiányzom",
+      "table": "person-subject"
+    },
+    {
+      "id": "nekem-tetszik-c07",
+      "sentence": "Nekem nagyon fáj a ___, ezért nem megyek dolgozni.",
+      "options": [
+        "fejem",
+        "fejed",
+        "feje"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Nekem points to me, so the head has the ending for I: fejem. Fáj a fejem needs no extra pronoun; the ending says whose head it is.",
+        "es": "Nekem apunta a mí, así que la cabeza lleva la terminación de «yo»: fejem. Fáj a fejem no necesita otro pronombre; la terminación dice de quién es."
+      },
+      "wrong": {
+        "fejed": {
+          "en": "fejed is \"your head\". The sentence says nekem, so it is my head.",
+          "es": "fejed es «tu cabeza». La frase dice nekem, así que es mi cabeza."
+        },
+        "feje": {
+          "en": "feje is \"his or her head\". The sentence says nekem, so it is my head.",
+          "es": "feje es «su cabeza». La frase dice nekem, así que es mi cabeza."
+        }
+      },
+      "examples": [
+        "Fáj a hasam.",
+        "Neked is fáj a hasad?"
+      ],
+      "tr": {
+        "en": "My head hurts a lot, so I am not going to work.",
+        "es": "Me duele mucho la cabeza, por eso no voy a trabajar."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f07",
+      "kind": "form",
+      "verb": "hiányzik",
+      "person": "ti",
+      "answer": "hiányoztok",
+      "table": "person-subject"
+    },
+    {
+      "id": "nekem-tetszik-w02",
+      "kind": "why",
+      "es": "Tetszenek a képek.",
+      "target": "Tetszenek",
+      "tr": {
+        "en": "I like the pictures.",
+        "es": "Me gustan las imágenes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The verb agrees with the thing: there are several pictures, so the verb is plural.",
+            "es": "El verbo concuerda con la cosa: hay varias imágenes, así que el verbo es plural."
+          }
+        },
+        {
+          "text": {
+            "en": "The verb agrees with the person who likes it, so it is plural when more people like it.",
+            "es": "El verbo concuerda con la persona a quien le gusta, así que es plural cuando a más personas les gusta."
+          },
+          "wrong": {
+            "en": "With this rule two people liking one picture would give Nekünk tetszenek a kép; but the verb follows the thing: Nekünk tetszik a kép.",
+            "es": "Con esta regla, a dos personas que disfrutan una imagen les correspondería Nekünk tetszenek a kép; pero el verbo sigue a la cosa: Nekünk tetszik a kép."
+          }
+        },
+        {
+          "text": {
+            "en": "-nek is the dative ending, so tetszenek means \"to the pictures\".",
+            "es": "-nek es la terminación del dativo, así que tetszenek significa «a las imágenes»."
+          },
+          "wrong": {
+            "en": "With this rule tetszenek would be a noun like Péternek; but it is a verb, the 3rd person plural of tetszik, and the dative is the person (nekem).",
+            "es": "Con esta regla tetszenek sería un sustantivo como Péternek; pero es un verbo, la 3.ª persona del plural de tetszik, y el dativo es la persona (nekem)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nekem-tetszik-c08",
+      "sentence": "Kati ma nem megy iskolába, mert nagyon fáj a ___.",
+      "options": [
+        "feje",
+        "fejem",
+        "fejük"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The sentence is about Kati, one person, so the head has the ending for he or she: feje.",
+        "es": "La frase habla de Kati, una sola persona, así que la cabeza lleva la terminación de «él o ella»: feje."
+      },
+      "wrong": {
+        "fejem": {
+          "en": "fejem is \"my head\". The sentence is about Kati, not about me.",
+          "es": "fejem es «mi cabeza». La frase habla de Kati, no de mí."
+        },
+        "fejük": {
+          "en": "fejük is \"their head\", for several owners. Kati is one person.",
+          "es": "fejük es «su cabeza», de varios dueños. Kati es una sola persona."
+        }
+      },
+      "examples": [
+        "Katinak fáj a lába.",
+        "Péternek fáj a hasa."
+      ],
+      "tr": {
+        "en": "Kati is not going to school today because her head hurts a lot.",
+        "es": "Kati hoy no va a la escuela porque le duele mucho la cabeza."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f08",
+      "kind": "form",
+      "verb": "tetszik",
+      "person": "mi",
+      "answer": "tetszünk",
+      "table": "person-subject"
+    },
+    {
+      "id": "nekem-tetszik-c09",
+      "sentence": "Egész nap a városban voltunk, ezért fáj a ___.",
+      "options": [
+        "lábunk",
+        "lábam",
+        "lábuk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The speakers are we (voltunk), so the leg has the ending for we: lábunk.",
+        "es": "Los hablantes somos nosotros (voltunk), así que la pierna lleva la terminación de «nosotros»: lábunk."
+      },
+      "wrong": {
+        "lábam": {
+          "en": "lábam is \"my leg\". The sentence says voltunk, so it is about us.",
+          "es": "lábam es «mi pierna». La frase dice voltunk, así que habla de nosotros."
+        },
+        "lábuk": {
+          "en": "lábuk is \"their leg\". The sentence says voltunk, so the owners are we.",
+          "es": "lábuk es «su pierna». La frase dice voltunk, así que los dueños somos nosotros."
+        }
+      },
+      "examples": [
+        "Fáj a lábunk.",
+        "Nekik is fáj a lábuk."
+      ],
+      "tr": {
+        "en": "We were in the city all day, so our legs hurt.",
+        "es": "Estuvimos todo el día en la ciudad, por eso nos duelen las piernas."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f09",
+      "kind": "form",
+      "verb": "fej",
+      "person": "nekem",
+      "answer": "fejem",
+      "table": "poss-experiencer"
+    },
+    {
+      "id": "nekem-tetszik-w03",
+      "kind": "why",
+      "es": "Fáj a fejem.",
+      "target": "fejem",
+      "tr": {
+        "en": "My head hurts.",
+        "es": "Me duele la cabeza."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The ending -m says whose head it is: mine. No nekem is needed.",
+            "es": "La terminación -m dice de quién es la cabeza: mía. No hace falta nekem."
+          }
+        },
+        {
+          "text": {
+            "en": "fejem is the accusative, because the head is the object of fáj.",
+            "es": "fejem es el acusativo, porque la cabeza es el objeto de fáj."
+          },
+          "wrong": {
+            "en": "With this rule the sentence would be Fáj a fejet; but fáj has no object: the head is the subject (nominative), and -m is a possessive ending.",
+            "es": "Con esta regla la frase sería Fáj a fejet; pero fáj no tiene objeto: la cabeza es el sujeto (nominativo), y -m es una terminación posesiva."
+          }
+        },
+        {
+          "text": {
+            "en": "The -m is the verb ending for I: I am the one who hurts.",
+            "es": "La -m es la terminación verbal de «yo»: yo soy quien duele."
+          },
+          "wrong": {
+            "en": "With this rule the verb would be fájok (I hurt) and the head would have no ending; but fáj stays 3rd person for the head, and -m belongs to the noun.",
+            "es": "Con esta regla el verbo sería fájok (yo duelo) y la cabeza no tendría terminación; pero fáj se queda en 3.ª persona para la cabeza, y -m pertenece al sustantivo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nekem-tetszik-c10",
+      "sentence": "Fáradt vagyok, ___ egy kávé.",
+      "options": [
+        "kell",
+        "kellenek",
+        "kellek"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "What is needed is egy kávé, one thing in the nominative, so kell stays singular: Kell egy kávé.",
+        "es": "Lo que se necesita es egy kávé, una cosa en nominativo, así que kell queda en singular: Kell egy kávé."
+      },
+      "wrong": {
+        "kellenek": {
+          "en": "kellenek is the plural, for several things. Egy kávé is one coffee.",
+          "es": "kellenek es el plural, para varias cosas. Egy kávé es un solo café."
+        },
+        "kellek": {
+          "en": "kellek means \"I am needed\" (by someone), with me as the thing needed. Here the thing needed is the coffee.",
+          "es": "kellek significa «me necesitan» (alguien), conmigo como la cosa necesitada. Aquí lo necesitado es el café."
+        }
+      },
+      "examples": [
+        "Kell a pénz.",
+        "Neked is kell egy kávé?"
+      ],
+      "tr": {
+        "en": "I am tired, I need a coffee.",
+        "es": "Estoy cansado, necesito un café."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f10",
+      "kind": "form",
+      "verb": "has",
+      "person": "neked",
+      "answer": "hasad",
+      "table": "poss-experiencer"
+    },
+    {
+      "id": "nekem-tetszik-c11",
+      "sentence": "Holnap a bankba megyünk, ezért ___ az útlevelek.",
+      "options": [
+        "kellenek",
+        "kell",
+        "kellünk"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "What is needed is az útlevelek, several passports, so the verb is plural: kellenek.",
+        "es": "Lo que se necesita es az útlevelek, varios pasaportes, así que el verbo es plural: kellenek."
+      },
+      "wrong": {
+        "kell": {
+          "en": "kell is for one thing (Kell az útlevél). Az útlevelek is plural.",
+          "es": "kell es para una sola cosa (Kell az útlevél). Az útlevelek es plural."
+        },
+        "kellünk": {
+          "en": "kellünk means \"we are needed\" (by someone). The things needed are the passports.",
+          "es": "kellünk significa «nos necesitan» (alguien). Lo necesitado son los pasaportes."
+        }
+      },
+      "examples": [
+        "Kellenek a kulcsok.",
+        "Holnap kellenek a jegyek."
+      ],
+      "tr": {
+        "en": "Tomorrow we are going to the bank, so we need the passports.",
+        "es": "Mañana vamos al banco, por eso hacen falta los pasaportes."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f11",
+      "kind": "form",
+      "verb": "láb",
+      "person": "nekik",
+      "answer": "lábuk",
+      "table": "poss-experiencer"
+    },
+    {
+      "id": "nekem-tetszik-c12",
+      "sentence": "Hosszú nap volt, most ___ egy forró tea.",
+      "options": [
+        "jólesik",
+        "jólesnek",
+        "jólesett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Most points to the present, and egy forró tea is one thing: jólesik.",
+        "es": "Most apunta al presente, y egy forró tea es una sola cosa: jólesik."
+      },
+      "wrong": {
+        "jólesnek": {
+          "en": "jólesnek is the plural, for several things. Egy forró tea is one tea.",
+          "es": "jólesnek es el plural, para varias cosas. Egy forró tea es un solo té."
+        },
+        "jólesett": {
+          "en": "jólesett is the past, \"it felt good\". Most points to now.",
+          "es": "jólesett es el pasado, «sentó bien». Most apunta a ahora."
+        }
+      },
+      "examples": [
+        "Jólesik egy hideg víz.",
+        "Jólesett a tea."
+      ],
+      "tr": {
+        "en": "It was a long day, now a hot tea feels good.",
+        "es": "Fue un día largo, ahora sienta bien un té caliente."
+      }
+    },
+    {
+      "id": "nekem-tetszik-f12",
+      "kind": "form",
+      "verb": "eszembe jut",
+      "person": "neki",
+      "answer": "eszébe",
+      "table": "poss-experiencer"
+    },
+    {
+      "id": "nekem-tetszik-c13",
+      "sentence": "Este nem ___ jól a kávé, aztán nem tudok aludni.",
+      "options": [
+        "esik",
+        "esnek",
+        "esett"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After nem the jól drops behind the verb, and a kávé is one thing in the present: nem esik jól.",
+        "es": "Después de nem el jól pasa detrás del verbo, y a kávé es una cosa en presente: nem esik jól."
+      },
+      "wrong": {
+        "esnek": {
+          "en": "esnek is the plural. A kávé is one coffee.",
+          "es": "esnek es el plural. A kávé es un solo café."
+        },
+        "esett": {
+          "en": "esett is the past, \"it did not agree\". Este and the present tudok point to a general habit now.",
+          "es": "esett es el pasado, «no cayó bien». Este y el presente tudok apuntan a un hábito general de ahora."
+        }
+      },
+      "examples": [
+        "Neki nem esik jól a tej.",
+        "Este nem esik jól a tea."
+      ],
+      "tr": {
+        "en": "Coffee doesn't agree with me in the evening, then I can't sleep.",
+        "es": "Por la noche el café no me cae bien, luego no puedo dormir."
+      }
+    },
+    {
+      "id": "nekem-tetszik-w04",
+      "kind": "why",
+      "es": "Eszembe jutott a neve.",
+      "target": "Eszembe",
+      "tr": {
+        "en": "His name came to my mind.",
+        "es": "Se me vino a la mente su nombre."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Eszembe means \"into my mind\" (ész + my + -be), and the name is the subject of jutott.",
+            "es": "Eszembe significa «a mi mente» (ész + mi + -be), y el nombre es el sujeto de jutott."
+          }
+        },
+        {
+          "text": {
+            "en": "Eszembe is the subject: I am the one who comes.",
+            "es": "Eszembe es el sujeto: yo soy quien viene."
+          },
+          "wrong": {
+            "en": "With this rule the verb would agree with me: Eszembe jutottam; but the name is what comes, and jutott agrees with a neve.",
+            "es": "Con esta regla el verbo concordaría conmigo: Eszembe jutottam; pero el nombre es lo que viene, y jutott concuerda con a neve."
+          }
+        },
+        {
+          "text": {
+            "en": "Eszembe is the object of jutott, so it is an accusative.",
+            "es": "Eszembe es el objeto de jutott, así que es un acusativo."
+          },
+          "wrong": {
+            "en": "With this rule it would be Eszemet jutott a neve; but eszembe is a place form (-be, into), not an accusative.",
+            "es": "Con esta regla sería Eszemet jutott a neve; pero eszembe es una forma de lugar (-be, hacia dentro), no un acusativo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nekem-tetszik-c14",
+      "sentence": "Nem jut ___ a neve, pedig tegnap még tudtam.",
+      "options": [
+        "eszembe",
+        "eszedbe",
+        "eszébe"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The speaker says tudtam (I knew), so it is my mind: eszembe. Nem jut eszembe a neve = I cannot think of his name.",
+        "es": "Quien habla dice tudtam (yo sabía), así que es mi mente: eszembe. Nem jut eszembe a neve = no me acuerdo de su nombre."
+      },
+      "wrong": {
+        "eszedbe": {
+          "en": "eszedbe is \"into your mind\". The sentence says tudtam, so it is about me.",
+          "es": "eszedbe es «a tu mente». La frase dice tudtam, así que habla de mí."
+        },
+        "eszébe": {
+          "en": "eszébe is \"into his or her mind\". The sentence says tudtam, so it is about me.",
+          "es": "eszébe es «a su mente». La frase dice tudtam, así que habla de mí."
+        }
+      },
+      "examples": [
+        "Eszembe jutott a neve.",
+        "Eszedbe jutott a telefonszáma?"
+      ],
+      "tr": {
+        "en": "I can't think of his name, though yesterday I still knew it.",
+        "es": "No me acuerdo de su nombre, aunque ayer todavía lo sabía."
+      }
+    }
+  ]
+}
