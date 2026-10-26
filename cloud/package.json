@@ -1,0 +1,16 @@
+{
+  "name": "kimacha-cloud",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build:web": "cd .. && npx expo export -p web",
+    "deploy": "npm run build:web && wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261023.1",
+    "typescript": "~6.0.3",
+    "wrangler": "4.151.0"
+  }
+}

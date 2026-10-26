@@ -7,6 +7,7 @@ import grammar from './grammar';
 import exam from './exam';
 import stats from './stats';
 import settings from './settings';
+import cloud from './cloud';
 
 export default {
   ...common,
@@ -15,4 +16,5 @@ export default {
   ...exam,
   ...stats,
   ...settings,
+  ...cloud,
 };

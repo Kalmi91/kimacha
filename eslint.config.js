@@ -5,7 +5,7 @@ const expoConfig = require('eslint-config-expo/flat');
 module.exports = [
   ...expoConfig,
   {
-    ignores: ['dist/*', 'android/*', '.expo/*', 'scripts/*'],
+    ignores: ['dist/*', 'android/*', '.expo/*', 'scripts/*', 'cloud/*'],
   },
   {
     // An empty catch block hides the failure: a swallowed error needs a line that says why that is fine.
