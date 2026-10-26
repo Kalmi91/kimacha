@@ -83,7 +83,7 @@ describe('resolveGloss in a Hungarian lesson', () => {
 });
 
 describe('the examples of the Hungarian lessons', () => {
-  const lessons = HU_GRAMMAR_INDEX.map((e) => ({ id: e.id, lesson: e.load() as unknown as { glossary?: { word: string; gloss: Record<string, string> }[]; items: { examples?: string[] }[] } }));
+  const lessons = HU_GRAMMAR_INDEX.map((e) => ({ id: e.id, lesson: e.load() as unknown as { level?: string; glossary?: { word: string; gloss: Record<string, string> }[]; items: { examples?: string[] }[] } }));
 
   function glossedFromDeck(lesson: (typeof lessons)[number]['lesson']): { tokens: number; glossed: number } {
     const overrides = Object.fromEntries((lesson.glossary ?? []).map((g) => [normalizeWordToken(g.word), g.gloss]));
@@ -111,14 +111,22 @@ describe('the examples of the Hungarian lessons', () => {
     expect(bare.map((l) => l.id)).toEqual([]);
   });
 
-  it('about half of all example words are in the deck (it was none before the deck was wired in)', () => {
+  function ratio(of: typeof lessons): number {
     let tokens = 0;
     let glossed = 0;
-    for (const { lesson } of lessons) {
+    for (const { lesson } of of) {
       const r = glossedFromDeck(lesson);
       tokens += r.tokens;
       glossed += r.glossed;
     }
-    expect(glossed / tokens).toBeGreaterThan(0.4);
+    return glossed / tokens;
+  }
+
+  it('about half of the A1 and A2 example words are in the deck (it was none before the deck was wired in)', () => {
+    expect(ratio(lessons.filter(({ lesson }) => ['A1', 'A2'].includes(lesson.level as string)))).toBeGreaterThan(0.4);
+  });
+
+  it('the B1 to C1 examples use words beyond the A0 + A1 deck, but still a good share of them is glossed from it', () => {
+    expect(ratio(lessons.filter(({ lesson }) => !['A1', 'A2'].includes(lesson.level as string)))).toBeGreaterThan(0.25);
   });
 });

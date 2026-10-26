@@ -1,0 +1,1174 @@
+{
+  "schema": 2,
+  "topic": "igenevi-szerkezetek",
+  "level": "C1",
+  "title": {
+    "en": "Participle phrases: a könyvet olvasó fiú",
+    "es": "Frases de participio: a könyvet olvasó fiú"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "English puts a longer description after the noun: the boy reading the book, the letter written yesterday. Hungarian puts all of it in front: a könyvet olvasó fiú, a tegnap megírt levél. The participle (olvasó, megírt) comes last, right before the noun. Everything that belongs to the verb (object, place, time, manner) stands before the participle, with its normal endings. Such a participle phrase replaces a relative clause with aki or ami: a fiú, aki a könyvet olvassa becomes a könyvet olvasó fiú. It saves words, so you meet it in news, official letters, schoolbooks and exams. In everyday talk people usually take the aki/ami clause. You already know the participles themselves (-ó/-ő, -t/-tt, -andó/-endő); here you build whole phrases with them.",
+        "es": "El español pone la descripción larga después del sustantivo: el chico que lee el libro, la carta escrita ayer. El húngaro la pone toda delante: a könyvet olvasó fiú, a tegnap megírt levél. El participio (olvasó, megírt) va al final, justo antes del sustantivo. Todo lo que pertenece al verbo (objeto, lugar, tiempo, modo) va antes del participio, con sus terminaciones normales. Una frase de participio así sustituye a una oración de relativo con aki o ami: a fiú, aki a könyvet olvassa se convierte en a könyvet olvasó fiú. Ahorra palabras, por eso la encuentras en noticias, cartas oficiales, libros de texto y exámenes. En la conversación diaria se suele usar la oración con aki/ami. Los participios mismos (-ó/-ő, -t/-tt, -andó/-endő) ya los conoces; aquí construyes frases enteras con ellos."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "igenev-alakok",
+      "title": {
+        "en": "The three participles you will use",
+        "es": "Los tres participios que vas a usar"
+      },
+      "header": [
+        {
+          "en": "Participle",
+          "es": "Participio"
+        },
+        {
+          "en": "olvas (to read)",
+          "es": "olvas (leer)"
+        },
+        {
+          "en": "ír (to write)",
+          "es": "ír (escribir)"
+        },
+        {
+          "en": "küld (to send)",
+          "es": "küld (enviar)"
+        },
+        {
+          "en": "megold (to solve)",
+          "es": "megold (resolver)"
+        }
+      ],
+      "rows": [
+        [
+          "-ó/-ő",
+          "olvasó",
+          "író",
+          "küldő",
+          "megoldó"
+        ],
+        [
+          "-t/-tt/-ott/-ett/-ött",
+          "olvasott",
+          "írt",
+          "küldött",
+          "megoldott"
+        ],
+        [
+          "-andó/-endő",
+          "olvasandó",
+          "írandó",
+          "küldendő",
+          "megoldandó"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "What goes in front of the participle",
+        "es": "Qué va delante del participio"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The object keeps its -t and its article. The participle itself never changes for a/az or egy.",
+            "es": "El objeto conserva su -t y su artículo. El participio mismo nunca cambia por a/az o egy."
+          },
+          "examples": [
+            {
+              "es": "Az újságot olvasó nő a szomszédom.",
+              "tr": {
+                "en": "The woman reading the newspaper is my neighbour.",
+                "es": "La mujer que lee el periódico es mi vecina."
+              }
+            },
+            {
+              "es": "Egy levelet író lány ült mellettem a vonaton.",
+              "tr": {
+                "en": "A girl writing a letter sat next to me on the train.",
+                "es": "Una chica que escribía una carta se sentó a mi lado en el tren."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Place, time and manner stand in front as well, each with its own ending. The word nem comes right before the participle.",
+            "es": "Lugar, tiempo y modo también van delante, cada uno con su terminación. La palabra nem va justo antes del participio."
+          },
+          "examples": [
+            {
+              "es": "Az asztalon fekvő könyv a tiéd?",
+              "tr": {
+                "en": "Is the book lying on the table yours?",
+                "es": "¿El libro que está sobre la mesa es tuyo?"
+              }
+            },
+            {
+              "es": "A nem működő liftet még nem javították meg.",
+              "tr": {
+                "en": "The lift that does not work has not been repaired yet.",
+                "es": "Todavía no han reparado el ascensor que no funciona."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The article stands at the very beginning of the phrase. Before a plural noun the participle stays the same. If the noun is left out, the participle becomes a noun and takes the plural -k.",
+            "es": "El artículo va al principio de toda la frase. Delante de un sustantivo plural el participio no cambia. Si se omite el sustantivo, el participio se vuelve sustantivo y recibe el plural -k."
+          },
+          "examples": [
+            {
+              "es": "Az ablaknál álló lányok a testvéreim.",
+              "tr": {
+                "en": "The girls standing at the window are my sisters.",
+                "es": "Las chicas que están junto a la ventana son mis hermanas."
+              }
+            },
+            {
+              "es": "Az ablaknál állók a testvéreim.",
+              "tr": {
+                "en": "The ones standing at the window are my brothers and sisters.",
+                "es": "Los que están junto a la ventana son mis hermanos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "igenevi-szerkezet",
+      "title": {
+        "en": "From relative clause to participle phrase",
+        "es": "De la oración de relativo a la frase de participio"
+      },
+      "header": [
+        {
+          "en": "Relative clause (aki / ami)",
+          "es": "Oración de relativo (aki / ami)"
+        },
+        {
+          "en": "igenévi szerkezet (participle phrase)",
+          "es": "igenévi szerkezet (frase de participio)"
+        }
+      ],
+      "rows": [
+        [
+          "a fiú, aki a könyvet olvassa",
+          "a könyvet olvasó fiú"
+        ],
+        [
+          "a lány, aki az ablaknál áll",
+          "az ablaknál álló lány"
+        ],
+        [
+          "a könyv, ami az asztalon fekszik",
+          "az asztalon fekvő könyv"
+        ],
+        [
+          "a levél, amit tegnap megírtam",
+          "a tegnap megírt levél"
+        ],
+        [
+          "a dolgozat, amit te írtál",
+          "az általad írt dolgozat"
+        ],
+        [
+          "a vendégek, akik tegnap megérkeztek",
+          "a tegnap megérkezett vendégek"
+        ],
+        [
+          "a lift, ami nem működik",
+          "a nem működő lift"
+        ],
+        [
+          "a feladat, amit meg kell oldani",
+          "a megoldandó feladat"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Which participle, which meaning?",
+        "es": "¿Qué participio, qué sentido?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "-ó/-ő: the noun itself is doing the action, right now or as a habit. The one who acts is the noun.",
+            "es": "-ó/-ő: el sustantivo mismo realiza la acción, ahora o por costumbre. Quien actúa es el sustantivo."
+          },
+          "examples": [
+            {
+              "es": "A buszra váró emberek a hidegben állnak.",
+              "tr": {
+                "en": "The people waiting for the bus are standing in the cold.",
+                "es": "La gente que espera el autobús está de pie en el frío."
+              }
+            },
+            {
+              "es": "Az ablak mellett ülő férfi a bátyám.",
+              "tr": {
+                "en": "The man sitting by the window is my older brother.",
+                "es": "El hombre que está sentado junto a la ventana es mi hermano mayor."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-t/-tt/-ott/-ett/-ött from a verb that has an object: the noun is the thing the action was done to (a passive meaning). If you name the doer, it takes által.",
+            "es": "-t/-tt/-ott/-ett/-ött de un verbo con objeto: el sustantivo es aquello sobre lo que recayó la acción (sentido pasivo). Si nombras al autor, lleva által."
+          },
+          "examples": [
+            {
+              "es": "A tegnap megírt levelet még nem küldtük el.",
+              "tr": {
+                "en": "We have not sent the letter written yesterday yet.",
+                "es": "Todavía no hemos enviado la carta escrita ayer."
+              }
+            },
+            {
+              "es": "A főnök által aláírt szerződés az asztalon van.",
+              "tr": {
+                "en": "The contract signed by the boss is on the table.",
+                "es": "El contrato firmado por el jefe está sobre la mesa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-t/-tt/-ott/-ett/-ött from a verb without an object (arrive, break down): the noun did it itself and the action is finished (an active meaning).",
+            "es": "-t/-tt/-ott/-ett/-ött de un verbo sin objeto (llegar, estropearse): el sustantivo lo hizo él mismo y la acción ya terminó (sentido activo)."
+          },
+          "examples": [
+            {
+              "es": "A tegnap megérkezett vendégek már a szállodában vannak.",
+              "tr": {
+                "en": "The guests who arrived yesterday are already at the hotel.",
+                "es": "Los invitados que llegaron ayer ya están en el hotel."
+              }
+            },
+            {
+              "es": "A tegnap elromlott lift még mindig nem működik.",
+              "tr": {
+                "en": "The lift that broke down yesterday still does not work.",
+                "es": "El ascensor que se estropeó ayer sigue sin funcionar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-andó/-endő: something still has to be done. The person who has to do it can stand before it in the dative.",
+            "es": "-andó/-endő: algo que todavía hay que hacer. La persona que debe hacerlo puede ir delante en dativo."
+          },
+          "examples": [
+            {
+              "es": "A péntekig megoldandó feladat nagyon nehéz.",
+              "tr": {
+                "en": "The task that has to be solved by Friday is very hard.",
+                "es": "La tarea que hay que resolver antes del viernes es muy difícil."
+              }
+            },
+            {
+              "es": "A diákoknak megoldandó feladat a táblán van.",
+              "tr": {
+                "en": "The task the students have to solve is on the board.",
+                "es": "La tarea que los alumnos deben resolver está en la pizarra."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "által names the doer in front of a -t participle. With a pronoun it takes personal endings: általam, általad, általa, általunk, általatok, általuk.",
+            "es": "által nombra al autor delante de un participio en -t. Con un pronombre recibe terminaciones personales: általam, általad, általa, általunk, általatok, általuk."
+          },
+          "examples": [
+            {
+              "es": "A hallgatók által írt dolgozatokat a tanár javítja.",
+              "tr": {
+                "en": "The teacher corrects the papers written by the students.",
+                "es": "El profesor corrige los trabajos escritos por los estudiantes."
+              }
+            },
+            {
+              "es": "Az általam megírt levél a titkárnál van.",
+              "tr": {
+                "en": "The letter written by me is with the secretary.",
+                "es": "La carta escrita por mí está con el secretario."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "altal-szemelyek",
+      "title": {
+        "en": "által with a person: by me, by you...",
+        "es": "által con una persona: por mí, por ti..."
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "által (by)",
+          "es": "által (por)"
+        }
+      ],
+      "rows": [
+        [
+          "én",
+          "általam"
+        ],
+        [
+          "te",
+          "általad"
+        ],
+        [
+          "ő",
+          "általa"
+        ],
+        [
+          "mi",
+          "általunk"
+        ],
+        [
+          "ti",
+          "általatok"
+        ],
+        [
+          "ők",
+          "általuk"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Three pairs that look alike",
+        "es": "Tres pares que se parecen"
+      },
+      "pairs": [
+        {
+          "a": "A fiú, aki a könyvet olvassa, a bátyám.",
+          "b": "A könyvet olvasó fiú a bátyám.",
+          "note": {
+            "en": "Same meaning. The aki clause is the everyday, spoken choice. The participle phrase is more compact and belongs to writing: news, official letters, exams. Use it while the phrase is short enough to read in one breath.",
+            "es": "Mismo significado. La oración con aki es la opción cotidiana y hablada. La frase de participio es más compacta y es propia de la escritura: noticias, cartas oficiales, exámenes. Úsala mientras la frase sea lo bastante corta para leerla de un tirón."
+          },
+          "examples": [
+            {
+              "es": "A lány, aki az ablaknál áll, a testvérem.",
+              "tr": {
+                "en": "The girl who is standing at the window is my sister (spoken).",
+                "es": "La chica que está junto a la ventana es mi hermana (hablado)."
+              }
+            },
+            {
+              "es": "Az ablaknál álló lány a testvérem.",
+              "tr": {
+                "en": "The girl standing at the window is my sister (written).",
+                "es": "La chica que está junto a la ventana es mi hermana (escrito)."
+              }
+            }
+          ]
+        },
+        {
+          "a": "a diákok által írt levél",
+          "b": "a diákoknak írt levél",
+          "note": {
+            "en": "által names who wrote it (the students are the writers). -nak/-nek names who it was written for (the students are the readers).",
+            "es": "által nombra quién la escribió (los alumnos son quienes escriben). -nak/-nek nombra para quién se escribió (los alumnos son quienes la leen)."
+          },
+          "examples": [
+            {
+              "es": "A diákok által írt levél a tanárnál van.",
+              "tr": {
+                "en": "The letter written by the students is with the teacher.",
+                "es": "La carta escrita por los alumnos está con el profesor."
+              }
+            },
+            {
+              "es": "A diákoknak írt levelet még nem küldtem el.",
+              "tr": {
+                "en": "I have not sent the letter written to the students yet.",
+                "es": "Todavía no he enviado la carta escrita para los alumnos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "az elküldött levél",
+          "b": "az elküldendő levél",
+          "note": {
+            "en": "-ott/-ött: already sent. -andó/-endő: still to be sent. The ending tells you whether the action is behind you or ahead of you.",
+            "es": "-ott/-ött: ya enviada. -andó/-endő: todavía por enviar. La terminación te dice si la acción ya pasó o está por delante."
+          },
+          "examples": [
+            {
+              "es": "Az elküldött levélre még nem jött válasz.",
+              "tr": {
+                "en": "No answer has come to the letter that was sent yet.",
+                "es": "Todavía no ha llegado respuesta a la carta que se envió."
+              }
+            },
+            {
+              "es": "Az elküldendő levelek a titkárnál vannak.",
+              "tr": {
+                "en": "The letters to be sent are with the secretary.",
+                "es": "Las cartas por enviar están con el secretario."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not copy the English order. The boy reading the book is not a fiú olvasó a könyvet: the whole phrase goes between the article and the noun, a könyvet olvasó fiú. Before a noun the participle takes no plural and no case ending: az ablaknál álló lányok, never állók lányok. Keep it short: two or three parts in front of the participle are fine, and when the phrase gets heavy, switch back to an aki/ami clause.",
+        "es": "No copies el orden del español. El chico que lee el libro no es a fiú olvasó a könyvet: toda la frase va entre el artículo y el sustantivo, a könyvet olvasó fiú. Delante de un sustantivo el participio no lleva plural ni caso: az ablaknál álló lányok, nunca állók lányok. Que sea corta: dos o tres elementos delante del participio están bien, y cuando la frase se vuelve pesada, vuelve a una oración con aki/ami."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In Hungarian a long description goes in front of the noun, not after it. Instead of the relative clause «a fiú, aki a könyvet olvassa» you can say «a könyvet olvasó fiú». The participle comes last, and the object, the place and the time stand before it: «az asztalon fekvő könyv», «a tegnap megírt levél». With a past participle the doer takes «által»: «a hallgatók által írt dolgozat». Before a plural noun the participle does not change: «az ablaknál álló lányok». This style belongs to writing. In conversation people prefer «aki» and «ami».",
+    "es": "En húngaro una descripción larga va delante del sustantivo, no después. En lugar de la oración de relativo «a fiú, aki a könyvet olvassa» puedes decir «a könyvet olvasó fiú». El participio va al final, y el objeto, el lugar y el tiempo van antes: «az asztalon fekvő könyv», «a tegnap megírt levél». Con un participio pasado, el autor lleva «által»: «a hallgatók által írt dolgozat». Delante de un sustantivo plural el participio no cambia: «az ablaknál álló lányok». Este estilo es propio de la escritura. En la conversación se prefiere «aki» y «ami»."
+  },
+  "glossary": [
+    {
+      "word": "által",
+      "gloss": {
+        "en": "by (the doer); through",
+        "es": "por (el autor); a través de"
+      }
+    },
+    {
+      "word": "megérkezik",
+      "gloss": {
+        "en": "to arrive",
+        "es": "llegar"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "igenevi-szerkezetek-c01",
+      "sentence": "Az újságot ___ nő a szomszédom.",
+      "options": [
+        "olvasó",
+        "olvasott",
+        "olvasandó"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The woman herself is reading, so the participle is the -ó/-ő one: az újságot olvasó nő = the woman who is reading the newspaper.",
+        "es": "La mujer misma está leyendo, así que va el participio en -ó/-ő: az újságot olvasó nő = la mujer que lee el periódico."
+      },
+      "wrong": {
+        "olvasott": {
+          "en": "olvasott describes the thing that was read (az olvasott újság); it cannot describe the woman who reads.",
+          "es": "olvasott describe lo que fue leído (az olvasott újság); no puede describir a la mujer que lee."
+        },
+        "olvasandó": {
+          "en": "olvasandó means \"still to be read\"; the woman is not something that has to be read.",
+          "es": "olvasandó significa «que aún hay que leer»; la mujer no es algo que haya que leer."
+        }
+      },
+      "examples": [
+        "A kávét ivó férfi a főnököm.",
+        "A levelet író lány a testvérem."
+      ],
+      "tr": {
+        "en": "The woman reading the newspaper is my neighbour.",
+        "es": "La mujer que lee el periódico es mi vecina."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-f01",
+      "kind": "form",
+      "verb": "megold",
+      "person": "-andó/-endő",
+      "answer": "megoldandó",
+      "table": "igenev-alakok"
+    },
+    {
+      "id": "igenevi-szerkezetek-c02",
+      "sentence": "A tegnap ___ levelet még nem küldtük el.",
+      "options": [
+        "megíró",
+        "megírandó",
+        "megírt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The letter is the thing that was written, and tegnap puts it in the past: the -t participle, a tegnap megírt levél.",
+        "es": "La carta es lo que se escribió, y tegnap lo sitúa en el pasado: el participio en -t, a tegnap megírt levél."
+      },
+      "wrong": {
+        "megíró": {
+          "en": "megíró would make the letter the one that writes; letters are written, they do not write.",
+          "es": "megíró haría de la carta quien escribe; las cartas se escriben, no escriben."
+        },
+        "megírandó": {
+          "en": "megírandó means \"still to be written\"; tegnap and the fact that it is waiting to be sent say that it is already written.",
+          "es": "megírandó significa «que aún hay que escribir»; tegnap y el hecho de que espera ser enviada dicen que ya está escrita."
+        }
+      },
+      "examples": [
+        "Az elküldött levélre még nem jött válasz.",
+        "A tegnap megírt jelentés az asztalon van."
+      ],
+      "tr": {
+        "en": "We have not sent the letter written yesterday yet.",
+        "es": "Todavía no hemos enviado la carta escrita ayer."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-f02",
+      "kind": "form",
+      "verb": "küld",
+      "person": "-t/-tt/-ott/-ett/-ött",
+      "answer": "küldött",
+      "table": "igenev-alakok"
+    },
+    {
+      "id": "igenevi-szerkezetek-c03",
+      "sentence": "A holnapig ___ levelek a titkárnál vannak.",
+      "options": [
+        "elküldött",
+        "elküldendő",
+        "elküldő"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The letters still have to be sent by tomorrow: -endő, a holnapig elküldendő levelek.",
+        "es": "Las cartas todavía hay que enviarlas antes de mañana: -endő, a holnapig elküldendő levelek."
+      },
+      "wrong": {
+        "elküldött": {
+          "en": "elküldött means \"already sent\"; holnapig points to a deadline that is still ahead.",
+          "es": "elküldött significa «ya enviadas»; holnapig apunta a un plazo que aún está por delante."
+        },
+        "elküldő": {
+          "en": "elküldő means \"sending\"; letters do not send anything.",
+          "es": "elküldő significa «que envía»; las cartas no envían nada."
+        }
+      },
+      "examples": [
+        "A péntekig megoldandó feladat nagyon nehéz.",
+        "A diákoknak megoldandó feladat a táblán van."
+      ],
+      "tr": {
+        "en": "The letters to be sent by tomorrow are with the secretary.",
+        "es": "Las cartas que hay que enviar antes de mañana están con el secretario."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-w01",
+      "kind": "why",
+      "es": "A könyvet olvasó fiú a bátyám.",
+      "target": "A könyvet olvasó fiú",
+      "tr": {
+        "en": "The boy reading the book is my older brother.",
+        "es": "El chico que lee el libro es mi hermano mayor."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Participle phrase: the -ó/-ő participle with its object in front, instead of \"a fiú, aki a könyvet olvassa\"",
+            "es": "Frase de participio: el participio en -ó/-ő con su objeto delante, en lugar de «a fiú, aki a könyvet olvassa»"
+          }
+        },
+        {
+          "text": {
+            "en": "Possessive: the book belongs to the boy",
+            "es": "Posesivo: el libro es del chico"
+          },
+          "wrong": {
+            "en": "With this rule it would be a fiú könyve (the boy's book); here olvasó is a verb form with its own object, a könyvet.",
+            "es": "Con esta regla sería a fiú könyve (el libro del chico); aquí olvasó es una forma verbal con su propio objeto, a könyvet."
+          }
+        },
+        {
+          "text": {
+            "en": "Plain adjective: olvasó just describes the boy, like nagy",
+            "es": "Adjetivo simple: olvasó solo describe al chico, como nagy"
+          },
+          "wrong": {
+            "en": "With this rule there would be no object in front: az olvasó fiú (the reading boy). The object a könyvet shows that olvasó still works like a verb.",
+            "es": "Con esta regla no habría objeto delante: az olvasó fiú (el chico lector). El objeto a könyvet muestra que olvasó sigue funcionando como verbo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igenevi-szerkezetek-c04",
+      "sentence": "A hallgatók ___ írt dolgozatokat a tanár javítja.",
+      "options": [
+        "által",
+        "szerint",
+        "nélkül"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "által names the doer in front of a past participle: a hallgatók által írt dolgozatok = the papers written by the students.",
+        "es": "által nombra al autor delante de un participio pasado: a hallgatók által írt dolgozatok = los trabajos escritos por los estudiantes."
+      },
+      "wrong": {
+        "szerint": {
+          "en": "a hallgatók szerint means \"in the students' opinion\"; it does not say who wrote the papers.",
+          "es": "a hallgatók szerint significa «según los estudiantes»; no dice quién escribió los trabajos."
+        },
+        "nélkül": {
+          "en": "a hallgatók nélkül means \"without the students\": papers written without the students, which makes no sense here.",
+          "es": "a hallgatók nélkül significa «sin los estudiantes»: trabajos escritos sin los estudiantes, lo cual no tiene sentido aquí."
+        }
+      },
+      "examples": [
+        "A főnök által aláírt szerződés az asztalon van.",
+        "A hivatal által küldött levél a titkárnál van."
+      ],
+      "tr": {
+        "en": "The teacher corrects the papers written by the students.",
+        "es": "El profesor corrige los trabajos escritos por los estudiantes."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-f03",
+      "kind": "form",
+      "verb": "ír",
+      "person": "-ó/-ő",
+      "answer": "író",
+      "table": "igenev-alakok"
+    },
+    {
+      "id": "igenevi-szerkezetek-f04",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "-t/-tt/-ott/-ett/-ött",
+      "answer": "olvasott",
+      "table": "igenev-alakok"
+    },
+    {
+      "id": "igenevi-szerkezetek-c05",
+      "sentence": "Te írtad a levelet, igaz? Az ___ megírt levelet a titkár már elküldte.",
+      "options": [
+        "általam",
+        "általad",
+        "általa"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The first sentence says te írtad (you wrote it), so the doer is \"you\": általad = by you.",
+        "es": "La primera frase dice te írtad (tú la escribiste), así que el autor es «tú»: általad = por ti."
+      },
+      "wrong": {
+        "általam": {
+          "en": "általam means \"by me\", but the first sentence says that you wrote the letter.",
+          "es": "általam significa «por mí», pero la primera frase dice que tú escribiste la carta."
+        },
+        "általa": {
+          "en": "általa means \"by him or her\", but the first sentence says that you wrote the letter.",
+          "es": "általa significa «por él o ella», pero la primera frase dice que tú escribiste la carta."
+        }
+      },
+      "examples": [
+        "Az általam megírt levél a titkárnál van.",
+        "Az általunk megoldott feladat jó volt."
+      ],
+      "tr": {
+        "en": "You wrote the letter, right? The secretary has already sent the letter written by you.",
+        "es": "¿Tú escribiste la carta, cierto? El secretario ya envió la carta escrita por ti."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-c06",
+      "sentence": "A képen az ablaknál ___ a testvéreim.",
+      "options": [
+        "álló",
+        "állót",
+        "állók"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "No noun follows, so the participle works as a noun and takes the plural -k: az ablaknál állók = those standing at the window.",
+        "es": "No sigue ningún sustantivo, así que el participio funciona como sustantivo y recibe el plural -k: az ablaknál állók = los que están junto a la ventana."
+      },
+      "wrong": {
+        "álló": {
+          "en": "álló alone means \"the one standing\" (singular); the predicate a testvéreim is plural, so the plural állók is needed.",
+          "es": "álló solo significa «el que está de pie» (singular); el predicado a testvéreim es plural, hace falta el plural állók."
+        },
+        "állót": {
+          "en": "állót is the accusative (the one standing, as an object); here the group is the subject, so there is no -t.",
+          "es": "állót es el acusativo (el que está de pie, como objeto); aquí el grupo es el sujeto, así que no lleva -t."
+        }
+      },
+      "examples": [
+        "A buszra várók a hidegben állnak.",
+        "A sarkon állók a szomszédaink."
+      ],
+      "tr": {
+        "en": "In the picture, those standing at the window are my brothers and sisters.",
+        "es": "En la foto, los que están junto a la ventana son mis hermanos."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-w02",
+      "kind": "why",
+      "es": "A hallgatók által írt dolgozat jó volt.",
+      "target": "által",
+      "tr": {
+        "en": "The paper written by the students was good.",
+        "es": "El trabajo escrito por los estudiantes estuvo bien."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "által marks the doer: the students wrote the paper",
+            "es": "által marca al autor: los estudiantes escribieron el trabajo"
+          }
+        },
+        {
+          "text": {
+            "en": "által marks the place: at the students' place",
+            "es": "által marca el lugar: en casa de los estudiantes"
+          },
+          "wrong": {
+            "en": "With this rule the phrase would be a hallgatóknál írt dolgozat (written at the students' place); által is about who did it.",
+            "es": "Con esta regla la frase sería a hallgatóknál írt dolgozat (escrito en casa de los estudiantes); által trata de quién lo hizo."
+          }
+        },
+        {
+          "text": {
+            "en": "által marks the receiver: written for the students",
+            "es": "által marca al destinatario: escrito para los estudiantes"
+          },
+          "wrong": {
+            "en": "With this rule it would be a hallgatóknak írt dolgozat (written for the students); the receiver takes -nak/-nek.",
+            "es": "Con esta regla sería a hallgatóknak írt dolgozat (escrito para los estudiantes); el destinatario lleva -nak/-nek."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igenevi-szerkezetek-f05",
+      "kind": "form",
+      "verb": "igenévi szerkezet",
+      "person": "a fiú, aki a könyvet olvassa",
+      "answer": "a könyvet olvasó fiú",
+      "table": "igenevi-szerkezet"
+    },
+    {
+      "id": "igenevi-szerkezetek-c07",
+      "sentence": "Az ablaknál ___ lányok a barátnőim, velük együtt tanulok.",
+      "options": [
+        "állók",
+        "álló",
+        "állnak"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A noun follows (lányok), so the participle stays singular and without an ending: az ablaknál álló lányok.",
+        "es": "Sigue un sustantivo (lányok), así que el participio queda singular y sin terminación: az ablaknál álló lányok."
+      },
+      "wrong": {
+        "állók": {
+          "en": "állók (plural) is for a participle used as a noun; before lányok the plural is already on the noun.",
+          "es": "állók (plural) es para el participio usado como sustantivo; delante de lányok el plural ya está en el sustantivo."
+        },
+        "állnak": {
+          "en": "állnak is a finite verb (they stand); it cannot stand in front of a noun as a description (that needs aki: a lányok, akik ott állnak).",
+          "es": "állnak es un verbo conjugado (están de pie); no puede ir delante de un sustantivo como descripción (haría falta aki: a lányok, akik ott állnak)."
+        }
+      },
+      "examples": [
+        "A sarkon álló boltok vasárnap is nyitva vannak.",
+        "Az asztalnál ülő vendégek már fizettek."
+      ],
+      "tr": {
+        "en": "The girls standing at the window are my friends; I study together with them.",
+        "es": "Las chicas que están junto a la ventana son mis amigas; estudio con ellas."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-f06",
+      "kind": "form",
+      "verb": "igenévi szerkezet",
+      "person": "a lány, aki az ablaknál áll",
+      "answer": "az ablaknál álló lány",
+      "table": "igenevi-szerkezet"
+    },
+    {
+      "id": "igenevi-szerkezetek-c08",
+      "sentence": "Szerintem az ___ könyv a tiéd, mert rajta van a neved.",
+      "options": [
+        "fekvő asztalon",
+        "asztalon fekszik",
+        "asztalon fekvő"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Everything that belongs to the verb comes before the participle, and the phrase ends with the noun: az asztalon fekvő könyv.",
+        "es": "Todo lo que pertenece al verbo va antes del participio y la frase termina con el sustantivo: az asztalon fekvő könyv."
+      },
+      "wrong": {
+        "fekvő asztalon": {
+          "en": "fekvő asztalon would mean \"on the lying table\": the participle now describes asztal and the book has lost its place.",
+          "es": "fekvő asztalon significaría «sobre la mesa acostada»: el participio describe ahora a asztal y el libro se queda sin lugar."
+        },
+        "asztalon fekszik": {
+          "en": "fekszik is a finite verb; a finite verb cannot stand in front of a noun as a description (that needs ami: a könyv, ami az asztalon fekszik).",
+          "es": "fekszik es un verbo conjugado; un verbo conjugado no puede ir delante de un sustantivo como descripción (haría falta ami: a könyv, ami az asztalon fekszik)."
+        }
+      },
+      "examples": [
+        "Az ágyon fekvő kutya alszik.",
+        "A széken ülő fiú a testvérem."
+      ],
+      "tr": {
+        "en": "I think the book lying on the table is yours, because your name is on it.",
+        "es": "Creo que el libro que está sobre la mesa es tuyo, porque tiene tu nombre."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-c09",
+      "sentence": "A tegnap este ___ vendégek még alszanak.",
+      "options": [
+        "megérkezik",
+        "megérkezett",
+        "megérkezendő"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The guests did the arriving themselves and it is over: the -t participle of a verb without an object has an active meaning, a tegnap megérkezett vendégek.",
+        "es": "Los invitados llegaron ellos mismos y ya terminó: el participio en -t de un verbo sin objeto tiene sentido activo, a tegnap megérkezett vendégek."
+      },
+      "wrong": {
+        "megérkezik": {
+          "en": "megérkezik is a finite verb (\"arrives\"); in front of a noun it cannot describe (that needs akik: a vendégek, akik tegnap megérkeztek).",
+          "es": "megérkezik es un verbo conjugado («llega»); delante de un sustantivo no puede describir (haría falta akik: a vendégek, akik tegnap megérkeztek)."
+        },
+        "megérkezendő": {
+          "en": "megérkezendő means \"due to arrive, not here yet\"; these guests are already here.",
+          "es": "megérkezendő significa «que debe llegar, aún no está»; estos invitados ya están aquí."
+        }
+      },
+      "examples": [
+        "A tegnap elromlott lift még mindig nem működik.",
+        "A reggel megérkezett csomag az asztalon van."
+      ],
+      "tr": {
+        "en": "The guests who arrived yesterday evening are still asleep.",
+        "es": "Los invitados que llegaron ayer por la noche todavía duermen."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-w03",
+      "kind": "why",
+      "es": "A tegnap megérkezett vendégek már a szállodában vannak.",
+      "target": "megérkezett",
+      "tr": {
+        "en": "The guests who arrived yesterday are already at the hotel.",
+        "es": "Los invitados que llegaron ayer ya están en el hotel."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Past participle of a verb without an object: the guests did the arriving (active meaning)",
+            "es": "Participio pasado de un verbo sin objeto: los invitados llegaron ellos mismos (sentido activo)"
+          }
+        },
+        {
+          "text": {
+            "en": "Past participle with a passive meaning: the guests were arrived",
+            "es": "Participio pasado con sentido pasivo: los invitados fueron llegados"
+          },
+          "wrong": {
+            "en": "With this rule the guests would be the thing something was done to, as in a megírt levél; but megérkezik has no object, the guests did it themselves.",
+            "es": "Con esta regla los invitados serían aquello sobre lo que recae una acción, como en a megírt levél; pero megérkezik no tiene objeto, los invitados lo hicieron ellos mismos."
+          }
+        },
+        {
+          "text": {
+            "en": "Finite past tense: the guests arrived",
+            "es": "Pasado conjugado: los invitados llegaron"
+          },
+          "wrong": {
+            "en": "With this rule it would be a full sentence, a vendégek megérkeztek; here megérkezett is part of the description in front of vendégek and takes no plural.",
+            "es": "Con esta regla sería una oración completa, a vendégek megérkeztek; aquí megérkezett forma parte de la descripción delante de vendégek y no lleva plural."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igenevi-szerkezetek-f07",
+      "kind": "form",
+      "verb": "igenévi szerkezet",
+      "person": "a könyv, ami az asztalon fekszik",
+      "answer": "az asztalon fekvő könyv",
+      "table": "igenevi-szerkezet"
+    },
+    {
+      "id": "igenevi-szerkezetek-f08",
+      "kind": "form",
+      "verb": "igenévi szerkezet",
+      "person": "a levél, amit tegnap megírtam",
+      "answer": "a tegnap megírt levél",
+      "accept": [
+        "a tegnap írt levél"
+      ],
+      "table": "igenevi-szerkezet"
+    },
+    {
+      "id": "igenevi-szerkezetek-c10",
+      "sentence": "A nem ___ liftet még nem javították meg.",
+      "options": [
+        "működő",
+        "működik",
+        "működni"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A description in front of a noun needs a participle: nem működő = not working, with nem right before it.",
+        "es": "Una descripción delante de un sustantivo necesita un participio: nem működő = que no funciona, con nem justo antes."
+      },
+      "wrong": {
+        "működik": {
+          "en": "működik is a finite verb (\"it works\"); in front of a noun it cannot describe (that needs ami: a lift, ami nem működik).",
+          "es": "működik es un verbo conjugado («funciona»); delante de un sustantivo no puede describir (haría falta ami: a lift, ami nem működik)."
+        },
+        "működni": {
+          "en": "működni is the infinitive (\"to work\"); it cannot describe a noun.",
+          "es": "működni es el infinitivo («funcionar»); no puede describir un sustantivo."
+        }
+      },
+      "examples": [
+        "A nem működő gép a műhelyben van.",
+        "A rosszul működő lift mindenkit zavar."
+      ],
+      "tr": {
+        "en": "The lift that does not work has not been repaired yet.",
+        "es": "Todavía no han reparado el ascensor que no funciona."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-c11",
+      "sentence": "Egy levelet ___ lány ült mellettem a vonaton.",
+      "options": [
+        "írt",
+        "írandó",
+        "író"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The girl is writing at that moment: the -ó/-ő participle, with the object egy levelet in front of it.",
+        "es": "La chica está escribiendo en ese momento: el participio en -ó/-ő, con el objeto egy levelet delante."
+      },
+      "wrong": {
+        "írt": {
+          "en": "írt describes what was written (az írt levél), not the girl; with an object in front it does not fit either.",
+          "es": "írt describe lo que se escribió (az írt levél), no a la chica; con un objeto delante tampoco encaja."
+        },
+        "írandó": {
+          "en": "írandó means \"still to be written\" and describes a letter, not a girl.",
+          "es": "írandó significa «que aún hay que escribir» y describe una carta, no a una chica."
+        }
+      },
+      "examples": [
+        "Az újságot olvasó férfi a főnököm.",
+        "A kávét ivó nő a szomszédunk."
+      ],
+      "tr": {
+        "en": "A girl writing a letter sat next to me on the train.",
+        "es": "Una chica que escribía una carta se sentó a mi lado en el tren."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-f09",
+      "kind": "form",
+      "verb": "által",
+      "person": "én",
+      "answer": "általam",
+      "table": "altal-szemelyek"
+    },
+    {
+      "id": "igenevi-szerkezetek-c12",
+      "sentence": "A főnök által már ___ szerződés az asztalon van.",
+      "options": [
+        "aláírt",
+        "aláíró",
+        "aláírandó"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The boss has already signed it, so the contract is the thing signed: a -t participle, with által for the doer.",
+        "es": "El jefe ya lo firmó, así que el contrato es lo firmado: un participio en -t, con által para el autor."
+      },
+      "wrong": {
+        "aláíró": {
+          "en": "aláíró would make the contract the one that signs; contracts are signed, they do not sign.",
+          "es": "aláíró haría del contrato quien firma; los contratos se firman, no firman."
+        },
+        "aláírandó": {
+          "en": "aláírandó means \"still to be signed\", which clashes with már (already).",
+          "es": "aláírandó significa «que aún hay que firmar», lo que choca con már (ya)."
+        }
+      },
+      "examples": [
+        "A hivatal által már elfogadott kérvény a titkárnál van.",
+        "Az általam már aláírt levelet elküldték."
+      ],
+      "tr": {
+        "en": "The contract already signed by the boss is on the table.",
+        "es": "El contrato que el jefe ya firmó está sobre la mesa."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-w04",
+      "kind": "why",
+      "es": "A péntekig megoldandó feladat nagyon nehéz.",
+      "target": "megoldandó",
+      "tr": {
+        "en": "The task that has to be solved by Friday is very hard.",
+        "es": "La tarea que hay que resolver antes del viernes es muy difícil."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-andó/-endő: the task still has to be solved",
+            "es": "-andó/-endő: la tarea todavía hay que resolverla"
+          }
+        },
+        {
+          "text": {
+            "en": "-ó/-ő: the task itself is solving something",
+            "es": "-ó/-ő: la tarea misma resuelve algo"
+          },
+          "wrong": {
+            "en": "With this rule it would be megoldó feladat, a task that itself solves something; -andó adds the idea \"has to be done\".",
+            "es": "Con esta regla sería megoldó feladat, una tarea que resuelve algo; -andó añade la idea de «hay que hacerlo»."
+          }
+        },
+        {
+          "text": {
+            "en": "-t/-tt: the task has been solved already",
+            "es": "-t/-tt: la tarea ya se resolvió"
+          },
+          "wrong": {
+            "en": "With this rule it would be a megoldott feladat, a task already solved; péntekig points ahead to a deadline.",
+            "es": "Con esta regla sería a megoldott feladat, una tarea ya resuelta; péntekig apunta hacia delante a un plazo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "igenevi-szerkezetek-c13",
+      "sentence": "A rendőrség által ___ tolvaj még nem mondott semmit.",
+      "options": [
+        "elfogó",
+        "elfog",
+        "elfogott"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The thief was caught by the police: a -t participle (the one the action was done to), with által for the doer.",
+        "es": "La policía atrapó al ladrón: un participio en -t (aquel sobre quien recayó la acción), con által para el autor."
+      },
+      "wrong": {
+        "elfogó": {
+          "en": "elfogó would mean that the thief is the one who catches someone.",
+          "es": "elfogó significaría que el ladrón es quien atrapa a alguien."
+        },
+        "elfog": {
+          "en": "elfog is a finite verb (\"catches\"); it cannot describe the noun in front of it.",
+          "es": "elfog es un verbo conjugado («atrapa»); no puede describir al sustantivo que tiene delante."
+        }
+      },
+      "examples": [
+        "A rendőrség által letartóztatott férfi mindent tagad.",
+        "A hivatal által elfogadott kérvény a titkárnál van."
+      ],
+      "tr": {
+        "en": "The thief caught by the police has not said anything yet.",
+        "es": "El ladrón atrapado por la policía todavía no ha dicho nada."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-f10",
+      "kind": "form",
+      "verb": "által",
+      "person": "mi",
+      "answer": "általunk",
+      "table": "altal-szemelyek"
+    },
+    {
+      "id": "igenevi-szerkezetek-f11",
+      "kind": "form",
+      "verb": "által",
+      "person": "ti",
+      "answer": "általatok",
+      "table": "altal-szemelyek"
+    },
+    {
+      "id": "igenevi-szerkezetek-c14",
+      "sentence": "A tavaly ___ házban már semmi sem működik.",
+      "options": [
+        "felújító",
+        "felújítandó",
+        "felújított"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The house is what was renovated, an event of last year: the -t participle, a tavaly felújított ház.",
+        "es": "La casa es lo que se renovó, algo del año pasado: el participio en -t, a tavaly felújított ház."
+      },
+      "wrong": {
+        "felújító": {
+          "en": "felújító means \"renovating\" and describes a firm or a worker (a felújító cég), not the house itself.",
+          "es": "felújító significa «que renueva» y describe a una empresa o a un obrero (a felújító cég), no a la casa."
+        },
+        "felújítandó": {
+          "en": "felújítandó means \"still to be renovated\", but tavaly puts the renovation in the past.",
+          "es": "felújítandó significa «que aún hay que renovar», pero tavaly pone la renovación en el pasado."
+        }
+      },
+      "examples": [
+        "A tavaly megjavított autó újra elromlott.",
+        "A nemrég felújított lakás nagyon szép."
+      ],
+      "tr": {
+        "en": "Nothing works in the house renovated last year anymore.",
+        "es": "En la casa renovada el año pasado ya no funciona nada."
+      }
+    },
+    {
+      "id": "igenevi-szerkezetek-f12",
+      "kind": "form",
+      "verb": "által",
+      "person": "ők",
+      "answer": "általuk",
+      "table": "altal-szemelyek"
+    }
+  ]
+}

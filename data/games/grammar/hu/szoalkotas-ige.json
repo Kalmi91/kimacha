@@ -1,0 +1,1275 @@
+{
+  "schema": 2,
+  "topic": "szoalkotas-ige",
+  "level": "C1",
+  "title": {
+    "en": "Building verbs: gyorsít, gyorsul, olvasgat, vacsorázik",
+    "es": "Formar verbos: gyorsít, gyorsul, olvasgat, vacsorázik"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Hungarian grows its verbs from roots you already know, and three patterns cover most of what you will meet. From an adjective: -ít makes something that way (gyors, fast → gyorsít, to speed up) and -ul/-ül becomes that way on its own (gyorsul, to get faster). From a verb: -gat/-get repeats the action in a relaxed way or does it a little at a time (olvas → olvasgat). From a noun: a verb for the activity, with -z(ik) or another ending (vacsora → vacsorázik, ebéd → ebédel). Learn the pattern and one root gives you two or three words. English often uses one verb for both meanings of the adjective pair (the traffic speeds up, the manager speeds up the work); Hungarian usually keeps two: gyorsul and gyorsít.",
+        "es": "El húngaro forma sus verbos a partir de raíces que ya conoces, y tres patrones cubren casi todo lo que vas a encontrar. De un adjetivo: -ít hace que algo sea así (gyors, rápido → gyorsít, acelerar algo) y -ul/-ül se vuelve así por sí solo (gyorsul, volverse más rápido). De un verbo: -gat/-get repite la acción con calma o la hace un poco cada vez (olvas → olvasgat). De un sustantivo: un verbo para la actividad, con -z(ik) u otra terminación (vacsora → vacsorázik, ebéd → ebédel). Aprende el patrón y una raíz te da dos o tres palabras. El español suele usar un solo verbo para las dos ideas del par de adjetivos (el tráfico se acelera, el jefe acelera el trabajo); el húngaro suele mantener dos: gyorsul y gyorsít."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "adj-verbs",
+      "title": {
+        "en": "From adjective to verb: -ít and -ul/-ül",
+        "es": "Del adjetivo al verbo: -ít y -ul/-ül"
+      },
+      "header": [
+        {
+          "en": "Adjective",
+          "es": "Adjetivo"
+        },
+        {
+          "en": "-ít (make it so)",
+          "es": "-ít (hacer que sea así)"
+        },
+        {
+          "en": "-ul/-ül (become so)",
+          "es": "-ul/-ül (volverse así)"
+        }
+      ],
+      "rows": [
+        [
+          "gyors",
+          "gyorsít",
+          "gyorsul"
+        ],
+        [
+          "jó",
+          "javít",
+          "javul"
+        ],
+        [
+          "szép",
+          "szépít",
+          "szépül"
+        ],
+        [
+          "tiszta",
+          "tisztít",
+          "tisztul"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "-ít or -ul/-ül?",
+        "es": "¿-ít o -ul/-ül?"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "-ít: someone or something makes the change, so the verb normally has an object. A definite object needs the definite ending: gyorsítja, javítja, tisztítja.",
+            "es": "-ít: alguien o algo provoca el cambio, así que el verbo normalmente lleva objeto. Un objeto definido pide la terminación definida: gyorsítja, javítja, tisztítja."
+          },
+          "examples": [
+            {
+              "es": "Az új program gyorsítja a munkát.",
+              "tr": {
+                "en": "The new program speeds up the work.",
+                "es": "El nuevo programa acelera el trabajo."
+              }
+            },
+            {
+              "es": "A tanár minden héten javítja a dolgozatokat.",
+              "tr": {
+                "en": "The teacher corrects the tests every week.",
+                "es": "El maestro corrige los exámenes cada semana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ul/-ül: the change happens by itself, so there is no object. -ul goes with back vowels (gyors → gyorsul), -ül with front vowels (szép → szépül).",
+            "es": "-ul/-ül: el cambio ocurre por sí solo, así que no hay objeto. -ul va con vocales posteriores (gyors → gyorsul), -ül con vocales anteriores (szép → szépül)."
+          },
+          "examples": [
+            {
+              "es": "Az új programmal gyorsul a munka.",
+              "tr": {
+                "en": "With the new program the work gets faster.",
+                "es": "Con el nuevo programa el trabajo se acelera."
+              }
+            },
+            {
+              "es": "Az idő holnap javul.",
+              "tr": {
+                "en": "The weather gets better tomorrow.",
+                "es": "El clima mejora mañana."
+              }
+            },
+            {
+              "es": "Az utcánk az új parkkal nagyon szépült.",
+              "tr": {
+                "en": "Our street has become much nicer with the new park.",
+                "es": "Nuestra calle se ha vuelto mucho más bonita con el nuevo parque."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The root can change before the suffix: jó becomes jav- (javít, javul) and tiszta loses its -a (tisztít, tisztul). Learn each verb as a whole word, do not just add the ending.",
+            "es": "La raíz puede cambiar antes del sufijo: jó pasa a jav- (javít, javul) y tiszta pierde su -a (tisztít, tisztul). Aprende cada verbo como una palabra completa, no solo añadas la terminación."
+          },
+          "examples": [
+            {
+              "es": "Kati minden este tisztítja az arcát.",
+              "tr": {
+                "en": "Kati cleans her face every evening.",
+                "es": "Kati se limpia la cara cada noche."
+              }
+            },
+            {
+              "es": "Eső után tisztul a levegő.",
+              "tr": {
+                "en": "The air gets cleaner after rain.",
+                "es": "Después de la lluvia el aire se limpia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "frequentative",
+      "title": {
+        "en": "Verb + -gat/-get",
+        "es": "Verbo + -gat/-get"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "With -gat/-get",
+          "es": "Con -gat/-get"
+        },
+        {
+          "en": "In a sentence",
+          "es": "En una frase"
+        }
+      ],
+      "rows": [
+        [
+          "olvas",
+          "olvasgat",
+          "Vasárnap délután a kertben olvasgatok."
+        ],
+        [
+          "néz",
+          "nézeget",
+          "Anna a régi fényképeket nézegeti."
+        ],
+        [
+          "sétál",
+          "sétálgat",
+          "Este a parkban sétálgatunk."
+        ],
+        [
+          "iszik",
+          "iszogat",
+          "Péter a kávéját iszogatja az erkélyen."
+        ],
+        [
+          "beszél",
+          "beszélget",
+          "Kati a szomszéddal beszélget."
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What -gat/-get adds",
+        "es": "Qué añade -gat/-get"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A relaxed, unhurried action with no goal and no finish line: you read, walk or look around for the pleasure of it. English: browse, stroll, read a bit. Spanish: ir leyendo, dar una vuelta, hojear.",
+            "es": "Una acción tranquila, sin prisa, sin meta ni final: lees, caminas o miras por el gusto de hacerlo. Inglés: browse, stroll, read a bit. Español: ir leyendo, dar una vuelta, hojear."
+          },
+          "examples": [
+            {
+              "es": "Szombat reggel a kertben olvasgatok.",
+              "tr": {
+                "en": "On Saturday morning I read a bit in the garden.",
+                "es": "El sábado por la mañana voy leyendo un poco en el jardín."
+              }
+            },
+            {
+              "es": "Vasárnap sokat sétálgatunk a városban.",
+              "tr": {
+                "en": "On Sunday we stroll around the city a lot.",
+                "es": "El domingo damos muchas vueltas por la ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A little at a time, or again and again: sipping, nibbling, leafing through. The object, if there is one, makes the verb definite or indefinite as usual (nézegeti a térképet, iszogat egy kávét).",
+            "es": "Un poco cada vez, o una y otra vez: beber a sorbos, picotear, ir hojeando. El objeto, si lo hay, hace que el verbo sea definido o indefinido como siempre (nézegeti a térképet, iszogat egy kávét)."
+          },
+          "examples": [
+            {
+              "es": "Anna a kávéját iszogatja, miközben a térképet nézegeti.",
+              "tr": {
+                "en": "Anna sips her coffee while she looks through the map.",
+                "es": "Anna bebe su café a sorbos mientras va mirando el mapa."
+              }
+            },
+            {
+              "es": "Gábor szívesen nézegeti a térképet.",
+              "tr": {
+                "en": "Gábor likes looking through the map.",
+                "es": "A Gábor le gusta ir mirando el mapa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-ik verbs lose their -ik: iszik gives iszogat, never iszogatik. After a one-syllable stem a linking vowel usually comes first (isz-ogat, néz-eget); after a longer stem the suffix usually goes straight on (olvas-gat, sétál-gat). It is -gat after back vowels and -get after front vowels; a stem with only i or í, like isz- or ír-, takes the back form (iszogat, írogat). This is a rule of thumb: check a dictionary when unsure.",
+            "es": "Los verbos en -ik pierden el -ik: iszik da iszogat, nunca iszogatik. Después de una raíz de una sílaba suele aparecer primero una vocal de enlace (isz-ogat, néz-eget); después de una raíz más larga el sufijo suele añadirse directamente (olvas-gat, sétál-gat). Es -gat tras vocales posteriores y -get tras vocales anteriores; una raíz con solo i o í, como isz- o ír-, toma la forma posterior (iszogat, írogat). Es una regla práctica: ante la duda, consulta el diccionario."
+          },
+          "examples": [
+            {
+              "es": "Mit iszogatsz?",
+              "tr": {
+                "en": "What are you sipping?",
+                "es": "¿Qué estás bebiendo a sorbos?"
+              }
+            },
+            {
+              "es": "Anna a teraszon ül és kávét iszogat.",
+              "tr": {
+                "en": "Anna is sitting on the terrace and sipping coffee.",
+                "es": "Anna está sentada en la terraza y bebe café a sorbos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "beszélget is a word of its own: to chat, to have a conversation with someone. beszél is to speak (a language) or to talk about something.",
+            "es": "beszélget es una palabra propia: platicar, conversar con alguien. beszél es hablar (un idioma) o hablar de algo."
+          },
+          "examples": [
+            {
+              "es": "Vacsora után a szomszéddal beszélgetünk.",
+              "tr": {
+                "en": "After dinner we chat with the neighbour.",
+                "es": "Después de la cena platicamos con el vecino."
+              }
+            },
+            {
+              "es": "Szívesen beszélgetek veled.",
+              "tr": {
+                "en": "I like chatting with you.",
+                "es": "Me gusta platicar contigo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "noun-verbs",
+      "title": {
+        "en": "Verbs made from nouns",
+        "es": "Verbos formados con sustantivos"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "én (I)",
+          "es": "én (yo)"
+        },
+        {
+          "en": "ő (he, she)",
+          "es": "ő (él, ella)"
+        }
+      ],
+      "rows": [
+        [
+          "vacsora",
+          "vacsorázom",
+          "vacsorázik"
+        ],
+        [
+          "bicikli",
+          "biciklizem",
+          "biciklizik"
+        ],
+        [
+          "ebéd",
+          "ebédelek",
+          "ebédel"
+        ],
+        [
+          "telefon",
+          "telefonálok",
+          "telefonál"
+        ],
+        [
+          "fénykép",
+          "fényképezek",
+          "fényképez"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Verbs from nouns: with -ik or without?",
+        "es": "Verbos de sustantivos: ¿con -ik o sin él?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Many verbs for meals, sports and vehicles end in -z + -ik: vacsora → vacsorázik, bicikli → biciklizik. They are -ik verbs: ő vacsorázik, and in the 1st person -om/-em/-öm in careful speech (vacsorázom, biciklizem) or -ok/-ek/-ök in everyday speech (vacsorázok, biciklizek). The last vowel of the noun can change: vacsora → vacsorázik.",
+            "es": "Muchos verbos de comidas, deportes y vehículos terminan en -z + -ik: vacsora → vacsorázik, bicikli → biciklizik. Son verbos en -ik: ő vacsorázik, y en 1.ª persona -om/-em/-öm en habla cuidada (vacsorázom, biciklizem) o -ok/-ek/-ök en habla cotidiana (vacsorázok, biciklizek). La última vocal del sustantivo puede cambiar: vacsora → vacsorázik."
+          },
+          "examples": [
+            {
+              "es": "Kati nagyon későn vacsorázik.",
+              "tr": {
+                "en": "Kati has dinner very late.",
+                "es": "Kati cena muy tarde."
+              }
+            },
+            {
+              "es": "Hol vacsorázunk ma este?",
+              "tr": {
+                "en": "Where are we having dinner tonight?",
+                "es": "¿Dónde cenamos esta noche?"
+              }
+            },
+            {
+              "es": "Hétvégén sokat biciklizem a barátaimmal.",
+              "tr": {
+                "en": "At the weekend I cycle a lot with my friends.",
+                "es": "Los fines de semana ando mucho en bici con mis amigos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Other verbs from nouns are ordinary verbs with no -ik: ebédel, telefonál, fényképez. The 3rd person is the bare stem (ő ebédel) and the 1st person ends in -ok/-ek: ebédelek, telefonálok, fényképezek. No rule tells you which type a noun gets: learn the verb together with its 3rd person.",
+            "es": "Otros verbos de sustantivos son verbos comunes sin -ik: ebédel, telefonál, fényképez. La 3.ª persona es la raíz sola (ő ebédel) y la 1.ª persona termina en -ok/-ek: ebédelek, telefonálok, fényképezek. Ninguna regla dice qué tipo recibe cada sustantivo: aprende el verbo junto con su 3.ª persona."
+          },
+          "examples": [
+            {
+              "es": "Délben Anna mindig a kollégákkal ebédel.",
+              "tr": {
+                "en": "At noon Anna always has lunch with her colleagues.",
+                "es": "Al mediodía Anna siempre almuerza con sus compañeros de trabajo."
+              }
+            },
+            {
+              "es": "Anna minden héten telefonál az anyjának.",
+              "tr": {
+                "en": "Anna phones her mother every week.",
+                "es": "Anna le llama por teléfono a su mamá cada semana."
+              }
+            },
+            {
+              "es": "Gábor a templomot fényképezi.",
+              "tr": {
+                "en": "Gábor is photographing the church.",
+                "es": "Gábor está fotografiando la iglesia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Same root, different verb",
+        "es": "Misma raíz, otro verbo"
+      },
+      "pairs": [
+        {
+          "a": "gyorsít",
+          "b": "gyorsul",
+          "note": {
+            "en": "gyorsít normally has an object: someone speeds something up. gyorsul has no object: something gets faster by itself.",
+            "es": "gyorsít normalmente lleva objeto: alguien acelera algo. gyorsul no tiene objeto: algo se acelera por sí solo."
+          },
+          "examples": [
+            {
+              "es": "Az új program gyorsítja a munkát.",
+              "tr": {
+                "en": "The new program speeds up the work.",
+                "es": "El nuevo programa acelera el trabajo."
+              }
+            },
+            {
+              "es": "Az új programmal gyorsul a munka.",
+              "tr": {
+                "en": "With the new program the work gets faster.",
+                "es": "Con el nuevo programa el trabajo se acelera."
+              }
+            }
+          ]
+        },
+        {
+          "a": "olvas",
+          "b": "olvasgat",
+          "note": {
+            "en": "olvas is reading in general or with a goal. olvasgat is reading at leisure, a little here and a little there, with no hurry and no finish line.",
+            "es": "olvas es leer en general o con una meta. olvasgat es leer con calma, un poco aquí y un poco allá, sin prisa y sin llegar a un final."
+          },
+          "examples": [
+            {
+              "es": "Olvasom a könyvet.",
+              "tr": {
+                "en": "I am reading the book.",
+                "es": "Estoy leyendo el libro."
+              }
+            },
+            {
+              "es": "Olvasgatom a könyvet.",
+              "tr": {
+                "en": "I read the book here and there, at my leisure.",
+                "es": "Voy leyendo el libro de a poco, sin prisa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "beszél",
+          "b": "beszélget",
+          "note": {
+            "en": "beszél means to speak (a language) or to talk about something. beszélget means to chat, to have a conversation with someone. To say you speak Hungarian you need beszél.",
+            "es": "beszél significa hablar (un idioma) o hablar de algo. beszélget significa platicar, conversar con alguien. Para decir que hablas húngaro necesitas beszél."
+          },
+          "examples": [
+            {
+              "es": "Jól beszélek magyarul.",
+              "tr": {
+                "en": "I speak Hungarian well.",
+                "es": "Hablo bien húngaro."
+              }
+            },
+            {
+              "es": "Szívesen beszélgetek Annával.",
+              "tr": {
+                "en": "I like chatting with Anna.",
+                "es": "Me gusta platicar con Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Check the dictionary for each pair: not every adjective has both verbs, and some pairs use another ending for \"become\" (-odik/-edik/-ödik, -ódik/-ődik). -ik verbs lose their -ik before -gat/-get (iszik → iszogat). And -gat/-get does not say that an action is finished: for a completed action use a prefix verb (elolvas, megnéz), not olvasgat.",
+        "es": "Revisa el diccionario para cada par: no todos los adjetivos tienen los dos verbos, y algunos pares usan otra terminación para «volverse» (-odik/-edik/-ödik, -ódik/-ődik). Los verbos en -ik pierden el -ik antes de -gat/-get (iszik → iszogat). Y -gat/-get no dice que una acción esté terminada: para una acción completa usa un verbo con prefijo (elolvas, megnéz), no olvasgat."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Hungarian builds many verbs from roots you know. From an adjective you get two verbs: «gyorsít» makes something faster, and «gyorsul» gets faster by itself. Compare «Az új program gyorsítja a munkát» with «Az új programmal gyorsul a munka». It works the same with «szépít» and «szépül». From a verb you get a relaxed, repeated action: «olvasgat» comes from «olvas», and «nézeget» comes from «néz». From a noun you get verbs like «vacsorázik», «ebédel» and «telefonál». For example: «Kati nagyon későn vacsorázik».",
+    "es": "El húngaro forma muchos verbos a partir de raíces que conoces. De un adjetivo salen dos verbos: «gyorsít» hace algo más rápido, y «gyorsul» se vuelve más rápido por sí solo. Compara «Az új program gyorsítja a munkát» con «Az új programmal gyorsul a munka». Con «szépít» y «szépül» pasa lo mismo. De un verbo sale una acción tranquila y repetida: «olvasgat» viene de «olvas», y «nézeget» viene de «néz». De un sustantivo salen verbos como «vacsorázik», «ebédel» y «telefonál». Por ejemplo: «Kati nagyon későn vacsorázik»."
+  },
+  "glossary": [
+    {
+      "word": "szépít",
+      "gloss": {
+        "en": "to beautify, to make nicer",
+        "es": "embellecer, hacer más bonito"
+      }
+    },
+    {
+      "word": "szépül",
+      "gloss": {
+        "en": "to become nicer",
+        "es": "volverse más bonito"
+      }
+    },
+    {
+      "word": "tisztít",
+      "gloss": {
+        "en": "to clean, to purify",
+        "es": "limpiar, purificar"
+      }
+    },
+    {
+      "word": "tisztul",
+      "gloss": {
+        "en": "to become clean or clear",
+        "es": "volverse limpio o claro"
+      }
+    },
+    {
+      "word": "olvasgat",
+      "gloss": {
+        "en": "to read here and there, at leisure",
+        "es": "ir leyendo, leer sin prisa"
+      }
+    },
+    {
+      "word": "nézeget",
+      "gloss": {
+        "en": "to look through, to browse",
+        "es": "ir mirando, hojear"
+      }
+    },
+    {
+      "word": "sétálgat",
+      "gloss": {
+        "en": "to stroll about",
+        "es": "pasear sin rumbo"
+      }
+    },
+    {
+      "word": "iszogat",
+      "gloss": {
+        "en": "to sip, to drink slowly",
+        "es": "beber a sorbos"
+      }
+    },
+    {
+      "word": "ebédel",
+      "gloss": {
+        "en": "to have lunch",
+        "es": "almorzar"
+      }
+    },
+    {
+      "word": "telefonál",
+      "gloss": {
+        "en": "to phone, to make a call",
+        "es": "llamar por teléfono"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "szoalkotas-ige-c01",
+      "sentence": "Az új program nagyon ___ a munkát.",
+      "options": [
+        "gyorsul",
+        "gyorsít",
+        "gyorsítja"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The program makes the work faster, so the -ít verb is needed, and a munkát is a definite object, so the verb takes the definite ending -ja: gyorsítja.",
+        "es": "El programa hace más rápido el trabajo, así que hace falta el verbo con -ít, y a munkát es un objeto definido, así que el verbo lleva la terminación definida -ja: gyorsítja."
+      },
+      "wrong": {
+        "gyorsul": {
+          "en": "gyorsul is the \"get faster\" verb and takes no object; a munkát is an object, so you need the -ít verb.",
+          "es": "gyorsul es el verbo «volverse más rápido» y no lleva objeto; a munkát es un objeto, así que hace falta el verbo con -ít."
+        },
+        "gyorsít": {
+          "en": "gyorsít is the right verb but in the indefinite form; the object a munkát is definite, so the verb must be gyorsítja.",
+          "es": "gyorsít es el verbo correcto pero en forma indefinida; el objeto a munkát es definido, así que el verbo debe ser gyorsítja."
+        }
+      },
+      "examples": [
+        "A tanár minden héten javítja a dolgozatokat.",
+        "Kati minden este tisztítja az arcát."
+      ],
+      "tr": {
+        "en": "The new program speeds up the work a lot.",
+        "es": "El nuevo programa acelera mucho el trabajo."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f01",
+      "kind": "form",
+      "verb": "gyors",
+      "person": "-ít",
+      "answer": "gyorsít",
+      "table": "adj-verbs"
+    },
+    {
+      "id": "szoalkotas-ige-c02",
+      "sentence": "Az új programmal ___ a munka.",
+      "options": [
+        "gyorsítja",
+        "gyorsul",
+        "gyorsít"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A munka is the thing that changes, the subject, and there is no object: the -ul verb gyorsul, \"gets faster\".",
+        "es": "A munka es lo que cambia, el sujeto, y no hay objeto: el verbo con -ul gyorsul, «se acelera»."
+      },
+      "wrong": {
+        "gyorsítja": {
+          "en": "gyorsítja means \"speeds it up\" and needs an object; here a munka is the subject that gets faster.",
+          "es": "gyorsítja significa «lo acelera» y necesita un objeto; aquí a munka es el sujeto que se acelera."
+        },
+        "gyorsít": {
+          "en": "gyorsít is the -ít verb, \"to speed something up\"; nobody acts on an object in this sentence, the work simply gets faster.",
+          "es": "gyorsít es el verbo con -ít, «acelerar algo»; en esta frase nadie actúa sobre un objeto, el trabajo simplemente se acelera."
+        }
+      },
+      "examples": [
+        "Az idő holnap javul.",
+        "Eső után tisztul a levegő."
+      ],
+      "tr": {
+        "en": "With the new program the work gets faster.",
+        "es": "Con el nuevo programa el trabajo se acelera."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f02",
+      "kind": "form",
+      "verb": "gyors",
+      "person": "-ul/-ül",
+      "answer": "gyorsul",
+      "table": "adj-verbs"
+    },
+    {
+      "id": "szoalkotas-ige-c03",
+      "sentence": "Az idő holnap ___, ezért elmehetünk sétálni.",
+      "options": [
+        "javul",
+        "javítja",
+        "javít"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The weather gets better by itself, with no object: javul, the -ul verb.",
+        "es": "El clima mejora por sí solo, sin objeto: javul, el verbo con -ul."
+      },
+      "wrong": {
+        "javítja": {
+          "en": "javítja is \"corrects or improves it\" and needs a definite object (javítja a dolgozatot); the weather has none.",
+          "es": "javítja es «lo corrige o lo mejora» y necesita un objeto definido (javítja a dolgozatot); el clima no tiene ninguno."
+        },
+        "javít": {
+          "en": "javít also needs an object (javít egy hibát); here nothing is corrected, the weather simply improves.",
+          "es": "javít también necesita un objeto (javít egy hibát); aquí no se corrige nada, el clima simplemente mejora."
+        }
+      },
+      "examples": [
+        "Az új programmal gyorsul a munka.",
+        "Az utcánk az új parkkal nagyon szépült."
+      ],
+      "tr": {
+        "en": "The weather gets better tomorrow, so we can go for a walk.",
+        "es": "El clima mejora mañana, así que podemos ir a caminar."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-w01",
+      "kind": "why",
+      "es": "A tanár minden héten javítja a dolgozatokat.",
+      "target": "javítja",
+      "tr": {
+        "en": "The teacher corrects the tests every week.",
+        "es": "El maestro corrige los exámenes cada semana."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "An -ít verb with a definite object: someone makes the change, so the definite ending -ja",
+            "es": "Un verbo con -ít y un objeto definido: alguien provoca el cambio, por eso la terminación definida -ja"
+          }
+        },
+        {
+          "text": {
+            "en": "An -ul/-ül verb: the thing gets better by itself",
+            "es": "Un verbo con -ul/-ül: la cosa mejora por sí sola"
+          },
+          "wrong": {
+            "en": "With this rule the word would be javul, and no object could follow; here a dolgozatokat is the object of the verb.",
+            "es": "Con esta regla la palabra sería javul, y no podría seguir ningún objeto; aquí a dolgozatokat es el objeto del verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "A -gat/-get verb: a repeated, relaxed action",
+            "es": "Un verbo con -gat/-get: una acción repetida y tranquila"
+          },
+          "wrong": {
+            "en": "With this rule the word would contain -gat/-get; javítja has only the -ít ending and the definite ending -ja.",
+            "es": "Con esta regla la palabra tendría -gat/-get; javítja solo tiene la terminación -ít y la terminación definida -ja."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "szoalkotas-ige-f03",
+      "kind": "form",
+      "verb": "jó",
+      "person": "-ít",
+      "answer": "javít",
+      "table": "adj-verbs"
+    },
+    {
+      "id": "szoalkotas-ige-c04",
+      "sentence": "Az új parkkal az utcánk nagyon ___.",
+      "options": [
+        "szépul",
+        "szépít",
+        "szépül"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The street gets nicer by itself, so the -ül verb. szép has a front vowel (é), so the ending is -ül, not -ul.",
+        "es": "La calle se vuelve más bonita por sí sola, así que el verbo con -ül. szép tiene una vocal anterior (é), así que la terminación es -ül, no -ul."
+      },
+      "wrong": {
+        "szépul": {
+          "en": "-ul goes with back vowels (gyors → gyorsul); szép has the front vowel é, so it takes -ül.",
+          "es": "-ul va con vocales posteriores (gyors → gyorsul); szép tiene la vocal anterior é, así que lleva -ül."
+        },
+        "szépít": {
+          "en": "szépít is the -ít verb and needs an object (szépíti az utcát, \"makes the street nicer\"); here the street changes by itself.",
+          "es": "szépít es el verbo con -ít y necesita un objeto (szépíti az utcát, «hace más bonita la calle»); aquí la calle cambia por sí sola."
+        }
+      },
+      "examples": [
+        "Az utcánk az új parkkal nagyon szépült.",
+        "Eső után tisztul a levegő."
+      ],
+      "tr": {
+        "en": "With the new park our street becomes much nicer.",
+        "es": "Con el nuevo parque nuestra calle se vuelve mucho más bonita."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f04",
+      "kind": "form",
+      "verb": "szép",
+      "person": "-ul/-ül",
+      "answer": "szépül",
+      "table": "adj-verbs"
+    },
+    {
+      "id": "szoalkotas-ige-c05",
+      "sentence": "Kati minden este ___ az arcát.",
+      "options": [
+        "tisztít",
+        "tisztul",
+        "tisztítja"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Kati makes her face clean: the -ít verb with a definite object (az arcát), so the definite ending: tisztítja.",
+        "es": "Kati limpia su cara: el verbo con -ít con un objeto definido (az arcát), así que la terminación definida: tisztítja."
+      },
+      "wrong": {
+        "tisztít": {
+          "en": "tisztít is the right verb but indefinite; az arcát is definite (a possessed noun), so tisztítja.",
+          "es": "tisztít es el verbo correcto pero indefinido; az arcát es definido (un sustantivo poseído), así que tisztítja."
+        },
+        "tisztul": {
+          "en": "tisztul means \"gets clean by itself\" and takes no object.",
+          "es": "tisztul significa «se limpia por sí solo» y no lleva objeto."
+        }
+      },
+      "examples": [
+        "A tanár minden héten javítja a dolgozatokat.",
+        "Az új program gyorsítja a munkát."
+      ],
+      "tr": {
+        "en": "Kati cleans her face every evening.",
+        "es": "Kati se limpia la cara cada noche."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-w02",
+      "kind": "why",
+      "es": "Az utcánk az új parkkal nagyon szépült.",
+      "target": "szépült",
+      "tr": {
+        "en": "Our street has become much nicer with the new park.",
+        "es": "Nuestra calle se ha vuelto mucho más bonita con el nuevo parque."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "An -ít verb: someone made the street nicer",
+            "es": "Un verbo con -ít: alguien hizo más bonita la calle"
+          },
+          "wrong": {
+            "en": "With this rule the word would be szépített or szépítette, with an object (Szépítették az utcát). Here nothing acts on an object; the street itself changes.",
+            "es": "Con esta regla la palabra sería szépített o szépítette, con un objeto (Szépítették az utcát). Aquí nada actúa sobre un objeto; la calle misma cambia."
+          }
+        },
+        {
+          "text": {
+            "en": "A -gat/-get verb: it got nicer little by little",
+            "es": "Un verbo con -gat/-get: se fue volviendo más bonita poco a poco"
+          },
+          "wrong": {
+            "en": "With this rule the word would end in -get; the ending of szépült is -ül, \"become\", plus the past -t.",
+            "es": "Con esta regla la palabra terminaría en -get; la terminación de szépült es -ül, «volverse», más el pasado -t."
+          }
+        },
+        {
+          "text": {
+            "en": "An -ül verb in the past: the street became nicer by itself, with no object",
+            "es": "Un verbo con -ül en pasado: la calle se volvió más bonita por sí sola, sin objeto"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "szoalkotas-ige-f05",
+      "kind": "form",
+      "verb": "tiszta",
+      "person": "-ít",
+      "answer": "tisztít",
+      "table": "adj-verbs"
+    },
+    {
+      "id": "szoalkotas-ige-c06",
+      "sentence": "Vasárnap délután nem tanulok, csak a kertben ___.",
+      "options": [
+        "olvasgatok",
+        "olvasgetek",
+        "olvasogatok"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "olvas is a longer stem with back vowels: -gat goes straight on, no linking vowel: olvasgatok.",
+        "es": "olvas es una raíz más larga con vocales posteriores: -gat se añade directamente, sin vocal de enlace: olvasgatok."
+      },
+      "wrong": {
+        "olvasgetek": {
+          "en": "-get goes with front vowels (néz → nézeget); olvas has back vowels, so it takes -gat.",
+          "es": "-get va con vocales anteriores (néz → nézeget); olvas tiene vocales posteriores, así que lleva -gat."
+        },
+        "olvasogatok": {
+          "en": "A linking vowel (-ogat) appears only after one-syllable stems like isz-; olvas has two syllables, so olvasgat.",
+          "es": "Una vocal de enlace (-ogat) aparece solo después de raíces de una sílaba como isz-; olvas tiene dos sílabas, así que olvasgat."
+        }
+      },
+      "examples": [
+        "Szombat reggel a kertben olvasgatok.",
+        "Este a parkban sétálgatunk."
+      ],
+      "tr": {
+        "en": "On Sunday afternoon I am not studying, I just read a bit in the garden.",
+        "es": "El domingo por la tarde no estudio, solo voy leyendo un poco en el jardín."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f06",
+      "kind": "form",
+      "verb": "olvas",
+      "person": "-gat/-get",
+      "answer": "olvasgat",
+      "table": "frequentative"
+    },
+    {
+      "id": "szoalkotas-ige-c07",
+      "sentence": "Anna szívesen ___ a régi fényképeket.",
+      "options": [
+        "nézegeti",
+        "nézgeti",
+        "nézegetik"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "néz is a one-syllable stem, so a linking vowel comes first (néz-eget). The object is definite and Anna is one person: nézegeti.",
+        "es": "néz es una raíz de una sílaba, así que primero va una vocal de enlace (néz-eget). El objeto es definido y Anna es una sola persona: nézegeti."
+      },
+      "wrong": {
+        "nézgeti": {
+          "en": "After the one-syllable stem néz the suffix needs the linking vowel: nézeget, not nézget.",
+          "es": "Después de la raíz de una sílaba néz el sufijo necesita la vocal de enlace: nézeget, no nézget."
+        },
+        "nézegetik": {
+          "en": "nézegetik is the definite form for \"they\"; Anna is one person, so the 3rd singular nézegeti.",
+          "es": "nézegetik es la forma definida para «ellos»; Anna es una sola persona, así que la 3.ª del singular nézegeti."
+        }
+      },
+      "examples": [
+        "Gábor szívesen nézegeti a térképet.",
+        "Péter a kávéját iszogatja az erkélyen."
+      ],
+      "tr": {
+        "en": "Anna likes looking through the old photos.",
+        "es": "A Anna le gusta ir mirando las fotos viejas."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-c08",
+      "sentence": "Anna a teraszon ül és kávét ___.",
+      "options": [
+        "iszogatik",
+        "iszogat",
+        "iszogatja"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "iszik loses its -ik before -gat/-get: iszogat. The object kávét is indefinite (no article), so the indefinite form.",
+        "es": "iszik pierde su -ik antes de -gat/-get: iszogat. El objeto kávét es indefinido (sin artículo), así que la forma indefinida."
+      },
+      "wrong": {
+        "iszogatik": {
+          "en": "The -ik ending disappears when -gat/-get is added; the word is iszogat, never iszogatik.",
+          "es": "La terminación -ik desaparece al añadir -gat/-get; la palabra es iszogat, nunca iszogatik."
+        },
+        "iszogatja": {
+          "en": "iszogatja is the definite form; kávét is an indefinite object, so iszogat.",
+          "es": "iszogatja es la forma definida; kávét es un objeto indefinido, así que iszogat."
+        }
+      },
+      "examples": [
+        "Mit iszogatsz?",
+        "Péter a kávéját iszogatja az erkélyen."
+      ],
+      "tr": {
+        "en": "Anna is sitting on the terrace and sipping coffee.",
+        "es": "Anna está sentada en la terraza y bebe café a sorbos."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f07",
+      "kind": "form",
+      "verb": "néz",
+      "person": "-gat/-get",
+      "answer": "nézeget",
+      "table": "frequentative"
+    },
+    {
+      "id": "szoalkotas-ige-w03",
+      "kind": "why",
+      "es": "Vasárnap délután a kertben olvasgatok.",
+      "target": "olvasgatok",
+      "tr": {
+        "en": "On Sunday afternoon I read a bit in the garden.",
+        "es": "El domingo por la tarde voy leyendo un poco en el jardín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A finished action: I read something through",
+            "es": "Una acción terminada: leo algo completo"
+          },
+          "wrong": {
+            "en": "With this rule the word would be elolvasok (a prefix and an object); -gat/-get does not mean \"finished\".",
+            "es": "Con esta regla la palabra sería elolvasok (un prefijo y un objeto); -gat/-get no significa «terminado»."
+          }
+        },
+        {
+          "text": {
+            "en": "A relaxed, repeated action made from the verb olvas with -gat",
+            "es": "Una acción tranquila y repetida formada del verbo olvas con -gat"
+          }
+        },
+        {
+          "text": {
+            "en": "A verb made from a noun",
+            "es": "Un verbo formado de un sustantivo"
+          },
+          "wrong": {
+            "en": "With this rule the base would be a noun, as vacsora is for vacsorázik; olvasgat comes from the verb olvas.",
+            "es": "Con esta regla la base sería un sustantivo, como vacsora en vacsorázik; olvasgat viene del verbo olvas."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "szoalkotas-ige-c09",
+      "sentence": "Hat éve tanulok magyarul, ezért már jól ___ magyarul.",
+      "options": [
+        "beszélgetek",
+        "beszélek",
+        "beszélem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "To say you speak a language you need beszél: beszélek magyarul, \"I speak Hungarian\".",
+        "es": "Para decir que hablas un idioma necesitas beszél: beszélek magyarul, «hablo húngaro»."
+      },
+      "wrong": {
+        "beszélgetek": {
+          "en": "beszélget means \"to chat, to have a conversation with someone\"; it does not say that you speak a language well.",
+          "es": "beszélget significa «platicar, conversar con alguien»; no dice que hables bien un idioma."
+        },
+        "beszélem": {
+          "en": "beszélem is the definite form and needs a definite object; magyarul is an adverb, not an object.",
+          "es": "beszélem es la forma definida y necesita un objeto definido; magyarul es un adverbio, no un objeto."
+        }
+      },
+      "examples": [
+        "Jól beszélek magyarul.",
+        "Szívesen beszélgetek veled."
+      ],
+      "tr": {
+        "en": "I have been studying Hungarian for six years, so I already speak Hungarian well.",
+        "es": "Llevo seis años estudiando húngaro, así que ya hablo bien húngaro."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f08",
+      "kind": "form",
+      "verb": "sétál",
+      "person": "-gat/-get",
+      "answer": "sétálgat",
+      "table": "frequentative"
+    },
+    {
+      "id": "szoalkotas-ige-c10",
+      "sentence": "Kati nagyon későn ___, mert este is dolgozik.",
+      "options": [
+        "vacsoráz",
+        "vacsorázik",
+        "vacsorázol"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "vacsorázik is an -ik verb: the 3rd person ends in -ik.",
+        "es": "vacsorázik es un verbo en -ik: la 3.ª persona termina en -ik."
+      },
+      "wrong": {
+        "vacsoráz": {
+          "en": "vacsoráz without -ik is not the standard form: the verb made from vacsora is vacsorázik, and the 3rd person keeps -ik.",
+          "es": "vacsoráz sin -ik no es la forma estándar: el verbo formado de vacsora es vacsorázik, y la 3.ª persona conserva -ik."
+        },
+        "vacsorázol": {
+          "en": "vacsorázol is \"you have dinner\"; the subject is Kati, so the 3rd person.",
+          "es": "vacsorázol es «tú cenas»; el sujeto es Kati, así que la 3.ª persona."
+        }
+      },
+      "examples": [
+        "Hol vacsorázunk ma este?",
+        "Hétvégén sokat biciklizem a barátaimmal."
+      ],
+      "tr": {
+        "en": "Kati has dinner very late because she works in the evening too.",
+        "es": "Kati cena muy tarde porque también trabaja por la noche."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f09",
+      "kind": "form",
+      "verb": "iszik",
+      "person": "-gat/-get",
+      "answer": "iszogat",
+      "table": "frequentative"
+    },
+    {
+      "id": "szoalkotas-ige-c11",
+      "sentence": "Délben Anna mindig a kollégákkal ___.",
+      "options": [
+        "ebédelsz",
+        "ebédelik",
+        "ebédel"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "ebédel is an ordinary verb, not an -ik verb: the 3rd person is the bare stem.",
+        "es": "ebédel es un verbo común, no un verbo en -ik: la 3.ª persona es la raíz sola."
+      },
+      "wrong": {
+        "ebédelsz": {
+          "en": "ebédelsz is \"you have lunch\"; the subject is Anna, so the 3rd person.",
+          "es": "ebédelsz es «tú almuerzas»; el sujeto es Anna, así que la 3.ª persona."
+        },
+        "ebédelik": {
+          "en": "ebédelik would be the definite form for \"they\" (with an object). Anna is one person, and ebédel is not an -ik verb, so the plain stem ebédel.",
+          "es": "ebédelik sería la forma definida para «ellos» (con objeto). Anna es una sola persona y ebédel no es un verbo en -ik, así que la raíz simple ebédel."
+        }
+      },
+      "examples": [
+        "Anna minden héten telefonál az anyjának.",
+        "Gábor a templomot fényképezi."
+      ],
+      "tr": {
+        "en": "At noon Anna always has lunch with her colleagues.",
+        "es": "Al mediodía Anna siempre almuerza con sus compañeros de trabajo."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-w04",
+      "kind": "why",
+      "es": "Kati nagyon későn vacsorázik, mert este is dolgozik.",
+      "target": "vacsorázik",
+      "tr": {
+        "en": "Kati has dinner very late because she works in the evening too.",
+        "es": "Kati cena muy tarde porque también trabaja por la noche."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A verb from an adjective: -ít or -ul/-ül",
+            "es": "Un verbo de un adjetivo: -ít o -ul/-ül"
+          },
+          "wrong": {
+            "en": "With this rule the base would be an adjective and the ending -ít or -ul/-ül; vacsora is a noun and the ending is -z(ik).",
+            "es": "Con esta regla la base sería un adjetivo y la terminación -ít o -ul/-ül; vacsora es un sustantivo y la terminación es -z(ik)."
+          }
+        },
+        {
+          "text": {
+            "en": "A -gat/-get verb",
+            "es": "Un verbo con -gat/-get"
+          },
+          "wrong": {
+            "en": "With this rule the word would end in -gat/-get; vacsorázik has no such ending, the -z- only turns the noun into a verb.",
+            "es": "Con esta regla la palabra terminaría en -gat/-get; vacsorázik no tiene esa terminación, la -z- solo convierte el sustantivo en verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "A verb from a noun (vacsora): -z + -ik, so the 3rd person ends in -ik",
+            "es": "Un verbo de un sustantivo (vacsora): -z + -ik, por eso la 3.ª persona termina en -ik"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "szoalkotas-ige-f10",
+      "kind": "form",
+      "verb": "vacsora",
+      "person": "én",
+      "answer": "vacsorázom",
+      "accept": [
+        "vacsorázok"
+      ],
+      "table": "noun-verbs"
+    },
+    {
+      "id": "szoalkotas-ige-c12",
+      "sentence": "Mikor ___ ma este az anyádnak?",
+      "options": [
+        "telefonálod",
+        "telefonálsz",
+        "telefonálik"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "\"You phone\" is te telefonálsz; telefonál is an ordinary verb with no -ik, and it takes the dative (az anyádnak).",
+        "es": "«Tú llamas» es te telefonálsz; telefonál es un verbo común sin -ik, y lleva dativo (az anyádnak)."
+      },
+      "wrong": {
+        "telefonálod": {
+          "en": "telefonálod is the definite form \"you phone it\"; there is no object here, only the dative az anyádnak.",
+          "es": "telefonálod es la forma definida «lo llamas»; aquí no hay objeto, solo el dativo az anyádnak."
+        },
+        "telefonálik": {
+          "en": "telefonál is not an -ik verb; there is no form telefonálik.",
+          "es": "telefonál no es un verbo en -ik; no existe la forma telefonálik."
+        }
+      },
+      "examples": [
+        "Anna minden héten telefonál az anyjának.",
+        "Délben Anna mindig a kollégákkal ebédel."
+      ],
+      "tr": {
+        "en": "When are you phoning your mother tonight?",
+        "es": "¿Cuándo le llamas por teléfono a tu mamá esta noche?"
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f11",
+      "kind": "form",
+      "verb": "ebéd",
+      "person": "ő",
+      "answer": "ebédel",
+      "table": "noun-verbs"
+    },
+    {
+      "id": "szoalkotas-ige-c13",
+      "sentence": "Anna és én hétvégén sokat ___ a parkban.",
+      "options": [
+        "biciklizem",
+        "biciklizünk",
+        "biciklizik"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Anna és én (Anna and I) means \"we\": the 1st plural biciklizünk (-ünk after a front vowel).",
+        "es": "Anna és én (Anna y yo) significa «nosotros»: la 1.ª del plural biciklizünk (-ünk tras vocal anterior)."
+      },
+      "wrong": {
+        "biciklizem": {
+          "en": "biciklizem is \"I cycle\"; the subject Anna és én is two people, \"we\".",
+          "es": "biciklizem es «yo ando en bici»; el sujeto Anna és én son dos personas, «nosotros»."
+        },
+        "biciklizik": {
+          "en": "biciklizik is \"he or she cycles\"; the subject Anna és én needs \"we\".",
+          "es": "biciklizik es «él o ella anda en bici»; el sujeto Anna és én necesita «nosotros»."
+        }
+      },
+      "examples": [
+        "Hétvégén sokat biciklizem a barátaimmal.",
+        "Hol vacsorázunk ma este?"
+      ],
+      "tr": {
+        "en": "Anna and I cycle a lot in the park at the weekend.",
+        "es": "Anna y yo andamos mucho en bici en el parque los fines de semana."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-c14",
+      "sentence": "Tegnap este fél óra alatt ___ Anna levelét, ezért már mindent tudok.",
+      "options": [
+        "olvasgattam",
+        "elolvastam",
+        "olvasgatom"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "fél óra alatt (\"within half an hour\") and ezért már mindent tudok (\"so now I know everything\") show that the reading is finished: the prefix verb elolvastam, \"I read it through\".",
+        "es": "fél óra alatt («en media hora») y ezért már mindent tudok («así que ya lo sé todo») muestran que la lectura terminó: el verbo con prefijo elolvastam, «lo leí completo»."
+      },
+      "wrong": {
+        "olvasgattam": {
+          "en": "olvasgattam means \"I read in it here and there\"; -gat/-get does not say that the action is finished, and \"within half an hour\" needs a finished action.",
+          "es": "olvasgattam significa «lo fui leyendo aquí y allá»; -gat/-get no dice que la acción terminó, y «en media hora» pide una acción terminada."
+        },
+        "olvasgatom": {
+          "en": "olvasgatom is present tense; the sentence says tegnap, \"yesterday\", so it needs the past.",
+          "es": "olvasgatom es presente; la frase dice tegnap, «ayer», así que necesita el pasado."
+        }
+      },
+      "examples": [
+        "Ma este elolvasom a levelet.",
+        "Vasárnap délután a kertben olvasgatok."
+      ],
+      "tr": {
+        "en": "Yesterday evening I read Anna's letter through in half an hour, so now I know everything.",
+        "es": "Ayer por la noche leí la carta de Anna completa en media hora, así que ya lo sé todo."
+      }
+    },
+    {
+      "id": "szoalkotas-ige-f12",
+      "kind": "form",
+      "verb": "telefon",
+      "person": "én",
+      "answer": "telefonálok",
+      "table": "noun-verbs"
+    }
+  ]
+}
