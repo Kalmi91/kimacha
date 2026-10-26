@@ -5,6 +5,7 @@ import grammar from './grammar';
 import exam from './exam';
 import stats from './stats';
 import settings from './settings';
+import cloud from './cloud';
 
 // complete interface translation, with every key of en/ (the English namespace files)
 // (the `Strings` type enforces this: if a key is missing or its type differs, the file does not
@@ -22,6 +23,7 @@ const hu: Strings = {
   ...exam,
   ...stats,
   ...settings,
+  ...cloud,
 };
 
 export default hu;
