@@ -4,6 +4,8 @@
   // Expo loads the config plugins by the name in app.json, Jest loads jest.setup.js through setupFiles,
   // the scripts are run by hand.
   "entry": ["plugins/*.js", "jest.setup.js", "scripts/*.{mjs,js}"],
+  // cloud/ is the Worker, a separate package run by wrangler (it has its own tsc); its files are not app code.
+  "ignore": ["cloud/**"],
   // An export that its own file still uses is not dead code.
   "ignoreExportsUsedInFile": true,
   "ignoreIssues": {
