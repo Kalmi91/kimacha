@@ -100,7 +100,7 @@ describe('web state round trip', () => {
 
   it('follows the restored onboarding with the active pair, and corrects a pair that is no longer supported', async () => {
     const old = fresh();
-    await old.db.setOnboarding('hu', 'es');
+    await old.db.setOnboarding('fr', 'es');
     const target = fresh();
     await target.db.importState(old.store.serializeState());
     expect(await target.db.getOnboarding()).toEqual({ source: 'en', target: 'es' });
