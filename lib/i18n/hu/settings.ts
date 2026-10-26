@@ -106,6 +106,9 @@ const hu: typeof en = {
       hangulat: 'Hangulat',
       olvasas: 'Könnyű olvasás',
     },
+    // the bubble behind the Ukiyo-e theme's red card seal (語).
+    ukiyoeSealMeaning: 'Japánul „go”: nyelv, szó',
+    ukiyoeSealNote: 'Az ukiyo-e fametszeteken gyakran van piros pecsét. Ez az Ukiyo-e téma pecsétje.',
   },
   backup: {
     backup: 'Biztonsági mentés',
