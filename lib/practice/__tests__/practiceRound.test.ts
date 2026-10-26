@@ -153,7 +153,7 @@ describe('story rounds (FB526)', () => {
     expect(resumed.set.storyId).toBe(story.id);
     expect(resumed.set.words).toEqual(sWords);
     expect(resumed.set.questions).toEqual(sQs);
-    expect(resumed.set.resolved[1]).toEqual({ kind: 'truefalse', statement: story.false_en[0], truth: false, correct: 1 });
+    expect(resumed.set.resolved[1]).toEqual({ kind: 'truefalse', statement: story.false_en![0], truth: false, correct: 1 });
     expect(resumed.set.resolved[2]).toEqual({ kind: 'truefalse', statement: sWords[3].translation, truth: true, correct: 0 });
     expect(resumed.step).toBe(2);
     expect(resumed.picks).toEqual([1, null, null]);
