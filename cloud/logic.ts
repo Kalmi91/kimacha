@@ -64,3 +64,141 @@ export function safeEqual(a: string, b: string): boolean {
 export function toHex(bytes: Uint8Array): string {
   return Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
 }
+
+/** Whether the request may read /api/admin/stats: the bearer token equals ADMIN_KEY. A missing or short (< 32 chars) key opens nothing. */
+export function adminAuthorized(authHeader: string | null, adminKey: string | undefined): boolean {
+  if (adminKey === undefined || adminKey.length < 32) return false;
+  const token = bearerToken(authHeader);
+  return token !== null && safeEqual(token, adminKey);
+}
+
+/** What the saved progress says about the use of the app; null / 0 where the payload has nothing (or nothing readable). */
+export type UsageSummary = {
+  pair: string | null;
+  level: string | null;
+  minutesTotal: number;
+  minutes7d: number;
+  activeDays: number;
+  lastActiveDay: string | null;
+  xpTotal: number;
+  streak: number;
+  longestStreak: number;
+};
+
+/** `day` (YYYY-MM-DD) moved by `delta` days, in UTC; '' when `day` is not a date. */
+function shiftDay(day: string, delta: number): string {
+  const ms = Date.parse(day + 'T00:00:00Z') + delta * 86_400_000;
+  return Number.isNaN(ms) ? '' : new Date(ms).toISOString().slice(0, 10);
+}
+
+/** A JSON string as an object, or null (not JSON, or not an object). Never throws. */
+function parseObject(text: unknown): Record<string, unknown> | null {
+  if (typeof text !== 'string') return null;
+  try {
+    return asRecord(JSON.parse(text));
+  } catch {
+    return null;
+  }
+}
+
+/** A serialized Map (`[key, value][]`) as entries with a string key; anything else in it is skipped. */
+function mapEntries(value: unknown): [string, unknown][] {
+  if (!Array.isArray(value)) return [];
+  const out: [string, unknown][] = [];
+  for (const e of value) if (Array.isArray(e) && typeof e[0] === 'string') out.push([e[0], e[1]]);
+  return out;
+}
+
+/** The (date, number) entries of a serialized Map<string, number> (usageMinutes, dailyXp). */
+function numberEntries(value: unknown): [string, number][] {
+  return mapEntries(value).filter((e): e is [string, number] => typeof e[1] === 'number' && Number.isFinite(e[1]));
+}
+
+/**
+ * The usage figures out of a stored progress payload (`{ v, store, resume }`, lib/cloud/sync.ts; `store` is
+ * MemoryStore.serializeState). `today` is YYYY-MM-DD (UTC). Never throws: whatever cannot be read stays null / 0.
+ */
+export function usageSummary(payload: string | null, today: string): UsageSummary {
+  const sum: UsageSummary = { pair: null, level: null, minutesTotal: 0, minutes7d: 0, activeDays: 0, lastActiveDay: null, xpTotal: 0, streak: 0, longestStreak: 0 };
+  const state = parseObject(parseObject(payload)?.store);
+  if (!state) return sum;
+
+  const ob = asRecord(state.onboarding);
+  const levels = mapEntries(state.userLevels);
+  if (ob && typeof ob.source === 'string' && typeof ob.target === 'string') {
+    sum.pair = ob.source + '→' + ob.target;
+    const own = levels.find(([pair]) => pair === ob.source + '-' + ob.target);
+    const lv = asRecord(own?.[1])?.level;
+    if (typeof lv === 'string') sum.level = lv;
+  }
+  if (sum.level === null && levels.length > 0) {
+    const lv = asRecord(levels[0][1])?.level;
+    if (typeof lv === 'string') sum.level = lv;
+  }
+
+  const from = shiftDay(today, -6);
+  for (const [date, minutes] of numberEntries(state.usageMinutes)) {
+    sum.minutesTotal += minutes;
+    if (date >= from) sum.minutes7d += minutes; // no upper bound: a learner east of UTC can already be on tomorrow
+    if (minutes > 0) {
+      sum.activeDays += 1;
+      if (sum.lastActiveDay === null || date > sum.lastActiveDay) sum.lastActiveDay = date;
+    }
+  }
+  sum.xpTotal = Math.round(numberEntries(state.dailyXp).reduce((acc, [, tenths]) => acc + tenths, 0) / 10);
+
+  const streak = asRecord(state.streak);
+  if (streak) {
+    const current = typeof streak.current_count === 'number' ? streak.current_count : 0;
+    const broken = typeof streak.last_date === 'string' && streak.last_date < shiftDay(today, -1);
+    sum.streak = broken ? 0 : current;
+    if (typeof streak.longest_count === 'number') sum.longestStreak = streak.longest_count;
+  }
+  return sum;
+}
+
+/** One row of the admin SQL; `first_login` / `last_login` are epoch ms (tokens.created_at). */
+export type AdminUserRow = {
+  display_name: string;
+  updated_at: string | null;
+  payload: string | null;
+  payload_chars: number | null;
+  logins: number;
+  first_login: number | null;
+  last_login: number | null;
+};
+
+/** One account as the admin page gets it: no PIN hash, no salt, no payload, only counts, ISO dates and the usage figures. */
+export type AdminUserStat = UsageSummary & {
+  name: string;
+  logins: number;
+  firstLogin: string | null;
+  lastLogin: string | null;
+  lastSave: string | null;
+  progressKb: number;
+};
+
+/** The admin rows as stats, the most recent activity (last login or save) first, accounts with no activity last. */
+export function toAdminStats(rows: AdminUserRow[], today: string): AdminUserStat[] {
+  const activity = (r: AdminUserRow): number => {
+    const save = r.updated_at === null ? NaN : Date.parse(r.updated_at);
+    return Math.max(r.last_login ?? -Infinity, Number.isNaN(save) ? -Infinity : save);
+  };
+  const iso = (ms: number | null): string | null => (ms === null ? null : new Date(ms).toISOString());
+  return rows
+    .map((r) => {
+      const chars = r.payload_chars ?? 0;
+      const stat: AdminUserStat = {
+        name: r.display_name,
+        logins: r.logins,
+        firstLogin: iso(r.first_login),
+        lastLogin: iso(r.last_login),
+        lastSave: r.updated_at,
+        progressKb: chars > 0 ? Math.max(1, Math.round(chars / 1024)) : 0,
+        ...usageSummary(r.payload, today),
+      };
+      return { stat, at: activity(r) };
+    })
+    .sort((a, b) => (a.at < b.at ? 1 : a.at > b.at ? -1 : 0))
+    .map((x) => x.stat);
+}
