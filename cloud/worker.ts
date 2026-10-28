@@ -1,14 +1,18 @@
 // The Kimacha web cloud: the Worker serves the static web build (`../dist`, the ASSETS binding) and the /api/* routes.
 // All /api/* goes to one Durable Object (`KimachaUsers`), which keeps the accounts (name + PIN) and each account's progress
 // payload in its SQLite storage. The API contract is in PLAN-web-felho.md. The Worker is built by wrangler (wrangler.toml
-// `main`); the app does not import it.
+// `main`); the app does not import it. The owner's /admin page and /api/admin/stats (user list, no PIN or progress content)
+// are guarded by the ADMIN_KEY secret.
 import { DurableObject } from 'cloudflare:workers';
 import { nameKey } from '../lib/cloud/validate';
-import { afterBadPin, bearerToken, displayName, lockRemainingSec, parseLogin, parsePayload, safeEqual, toHex } from './logic';
+import { ADMIN_PAGE } from './admin';
+import { adminAuthorized, afterBadPin, bearerToken, displayName, lockRemainingSec, parseLogin, parsePayload, safeEqual, toAdminStats, toHex } from './logic';
+import type { AdminUserRow } from './logic';
 
 interface Env {
   ASSETS: Fetcher;
   USERS: DurableObjectNamespace<KimachaUsers>;
+  ADMIN_KEY?: string;
 }
 
 type UserRow = {
@@ -69,6 +73,7 @@ export class KimachaUsers extends DurableObject<Env> {
         return this.wrongMethod();
       }
       if (pathname === '/api/logout') return req.method === 'POST' ? this.logout(req) : this.wrongMethod();
+      if (pathname === '/api/admin/stats') return req.method === 'GET' ? this.adminStats(req) : this.wrongMethod();
       return json({ error: 'not_found' }, 404);
     } catch {
       return json({ error: 'server_error' }, 500);
@@ -154,11 +159,27 @@ export class KimachaUsers extends DurableObject<Env> {
     this.ctx.storage.sql.exec('DELETE FROM tokens WHERE token = ?', token);
     return json({});
   }
+
+  private adminStats(req: Request): Response {
+    if (!adminAuthorized(req.headers.get('Authorization'), this.env.ADMIN_KEY)) return json({ error: 'bad_token' }, 401);
+    const rows = this.ctx.storage.sql
+      .exec<AdminUserRow>(
+        `SELECT u.display_name, u.updated_at, length(u.payload) AS payload_chars, COUNT(t.token) AS logins,
+          MIN(t.created_at) AS first_login, MAX(t.created_at) AS last_login
+        FROM users u LEFT JOIN tokens t ON t.name_key = u.name_key GROUP BY u.name_key`,
+      )
+      .toArray();
+    return json({ users: toAdminStats(rows) });
+  }
 }
 
 export default {
   async fetch(req: Request, env: Env): Promise<Response> {
-    if (new URL(req.url).pathname.startsWith('/api/')) return env.USERS.get(env.USERS.idFromName('users')).fetch(req);
+    const { pathname } = new URL(req.url);
+    if (pathname === '/admin') {
+      return new Response(ADMIN_PAGE, { headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' } });
+    }
+    if (pathname.startsWith('/api/')) return env.USERS.get(env.USERS.idFromName('users')).fetch(req);
     return env.ASSETS.fetch(req);
   },
 } satisfies ExportedHandler<Env>;

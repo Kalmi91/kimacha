@@ -64,3 +64,54 @@ export function safeEqual(a: string, b: string): boolean {
 export function toHex(bytes: Uint8Array): string {
   return Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
 }
+
+/** Whether the request may read /api/admin/stats: the bearer token equals ADMIN_KEY. A missing or short (< 32 chars) key opens nothing. */
+export function adminAuthorized(authHeader: string | null, adminKey: string | undefined): boolean {
+  if (adminKey === undefined || adminKey.length < 32) return false;
+  const token = bearerToken(authHeader);
+  return token !== null && safeEqual(token, adminKey);
+}
+
+/** One row of the admin SQL; `first_login` / `last_login` are epoch ms (tokens.created_at). */
+export type AdminUserRow = {
+  display_name: string;
+  updated_at: string | null;
+  payload_chars: number | null;
+  logins: number;
+  first_login: number | null;
+  last_login: number | null;
+};
+
+/** One account as the admin page gets it: no PIN hash, no salt, no payload, only counts and ISO dates. */
+export type AdminUserStat = {
+  name: string;
+  logins: number;
+  firstLogin: string | null;
+  lastLogin: string | null;
+  lastSave: string | null;
+  progressKb: number;
+};
+
+/** The admin rows as stats, the most recent activity (last login or save) first, accounts with no activity last. */
+export function toAdminStats(rows: AdminUserRow[]): AdminUserStat[] {
+  const activity = (r: AdminUserRow): number => {
+    const save = r.updated_at === null ? NaN : Date.parse(r.updated_at);
+    return Math.max(r.last_login ?? -Infinity, Number.isNaN(save) ? -Infinity : save);
+  };
+  const iso = (ms: number | null): string | null => (ms === null ? null : new Date(ms).toISOString());
+  return rows
+    .map((r) => {
+      const chars = r.payload_chars ?? 0;
+      const stat: AdminUserStat = {
+        name: r.display_name,
+        logins: r.logins,
+        firstLogin: iso(r.first_login),
+        lastLogin: iso(r.last_login),
+        lastSave: r.updated_at,
+        progressKb: chars > 0 ? Math.max(1, Math.round(chars / 1024)) : 0,
+      };
+      return { stat, at: activity(r) };
+    })
+    .sort((a, b) => (a.at < b.at ? 1 : a.at > b.at ? -1 : 0))
+    .map((x) => x.stat);
+}
