@@ -1,4 +1,5 @@
-import { LOCK_SEC, MAX_FAILS, MAX_PAYLOAD_CHARS, afterBadPin, bearerToken, displayName, lockRemainingSec, parseLogin, parsePayload, safeEqual, toHex } from '../../../cloud/logic';
+import { LOCK_SEC, MAX_FAILS, MAX_PAYLOAD_CHARS, adminAuthorized, afterBadPin, bearerToken, displayName, lockRemainingSec, parseLogin, parsePayload, safeEqual, toAdminStats, toHex } from '../../../cloud/logic';
+import type { AdminUserRow } from '../../../cloud/logic';
 
 describe('parseLogin', () => {
   it('takes a valid name and PIN as typed', () => {
@@ -94,5 +95,79 @@ describe('toHex', () => {
   it('writes each byte as two lowercase hex digits', () => {
     expect(toHex(new Uint8Array([0, 15, 16, 255]))).toBe('000f10ff');
     expect(toHex(new Uint8Array([]))).toBe('');
+  });
+});
+
+describe('adminAuthorized', () => {
+  const key = 'k'.repeat(32);
+
+  it('is true for the right key', () => {
+    expect(adminAuthorized('Bearer ' + key, key)).toBe(true);
+  });
+
+  it.each([
+    ['a wrong key', 'Bearer ' + 'x'.repeat(32)],
+    ['a missing header', null],
+    ['a non-Bearer header', 'Basic ' + key],
+  ])('is false for %s', (_label, header) => {
+    expect(adminAuthorized(header, key)).toBe(false);
+  });
+
+  it.each([
+    ['undefined', undefined],
+    ['empty', ''],
+    ['31 characters', 'k'.repeat(31)],
+  ])('is false when the admin key is %s, even if the header matches', (_label, adminKey) => {
+    expect(adminAuthorized('Bearer ' + (adminKey ?? ''), adminKey)).toBe(false);
+  });
+});
+
+describe('toAdminStats', () => {
+  const row = (over: Partial<AdminUserRow>): AdminUserRow => ({
+    display_name: 'Ana',
+    updated_at: null,
+    payload_chars: null,
+    logins: 0,
+    first_login: null,
+    last_login: null,
+    ...over,
+  });
+
+  it('maps a row: ms to ISO dates, the save date as stored', () => {
+    const [s] = toAdminStats([
+      row({ display_name: 'Kálmán', logins: 3, first_login: 1_000, last_login: 2_000_000_000_000, updated_at: '2026-10-28T10:00:00.000Z', payload_chars: 2048 }),
+    ]);
+    expect(s).toEqual({
+      name: 'Kálmán',
+      logins: 3,
+      firstLogin: '1970-01-01T00:00:01.000Z',
+      lastLogin: '2033-05-18T03:33:20.000Z',
+      lastSave: '2026-10-28T10:00:00.000Z',
+      progressKb: 2,
+    });
+  });
+
+  it('gives null dates for an account that never logged in or saved', () => {
+    expect(toAdminStats([row({})])[0]).toEqual({ name: 'Ana', logins: 0, firstLogin: null, lastLogin: null, lastSave: null, progressKb: 0 });
+  });
+
+  it('rounds the progress to KB, at least 1 for any content', () => {
+    const kb = (chars: number | null) => toAdminStats([row({ payload_chars: chars })])[0].progressKb;
+    expect(kb(null)).toBe(0);
+    expect(kb(0)).toBe(0);
+    expect(kb(100)).toBe(1);
+    expect(kb(2048)).toBe(2);
+  });
+
+  it('puts the most recent activity first (login or save), accounts without activity last', () => {
+    const t = (iso: string) => Date.parse(iso);
+    const names = toAdminStats([
+      row({ display_name: 'none' }),
+      row({ display_name: 'old', last_login: t('2026-10-01T00:00:00Z') }),
+      row({ display_name: 'saveOnly', updated_at: '2026-10-20T00:00:00.000Z' }),
+      row({ display_name: 'new', last_login: t('2026-10-25T00:00:00Z'), updated_at: '2026-10-05T00:00:00.000Z' }),
+      row({ display_name: 'savedLater', last_login: t('2026-10-02T00:00:00Z'), updated_at: '2026-10-27T00:00:00.000Z' }),
+    ]).map((s) => s.name);
+    expect(names).toEqual(['savedLater', 'new', 'saveOnly', 'old', 'none']);
   });
 });
