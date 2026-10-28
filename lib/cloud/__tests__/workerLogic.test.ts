@@ -1,5 +1,7 @@
-import { LOCK_SEC, MAX_FAILS, MAX_PAYLOAD_CHARS, adminAuthorized, afterBadPin, bearerToken, displayName, lockRemainingSec, parseLogin, parsePayload, safeEqual, toAdminStats, toHex } from '../../../cloud/logic';
-import type { AdminUserRow } from '../../../cloud/logic';
+import { LOCK_SEC, MAX_FAILS, MAX_PAYLOAD_CHARS, adminAuthorized, afterBadPin, bearerToken, displayName, lockRemainingSec, parseLogin, parsePayload, safeEqual, toAdminStats, toHex, usageSummary } from '../../../cloud/logic';
+import type { AdminUserRow, UsageSummary } from '../../../cloud/logic';
+import { MemoryStore } from '@/lib/database.web';
+import { PAYLOAD_VERSION } from '../sync';
 
 describe('parseLogin', () => {
   it('takes a valid name and PIN as typed', () => {
@@ -122,10 +124,14 @@ describe('adminAuthorized', () => {
   });
 });
 
+const EMPTY_USAGE: UsageSummary = { pair: null, level: null, minutesTotal: 0, minutes7d: 0, activeDays: 0, lastActiveDay: null, xpTotal: 0, streak: 0, longestStreak: 0 };
+const TODAY = '2026-10-28';
+
 describe('toAdminStats', () => {
   const row = (over: Partial<AdminUserRow>): AdminUserRow => ({
     display_name: 'Ana',
     updated_at: null,
+    payload: null,
     payload_chars: null,
     logins: 0,
     first_login: null,
@@ -136,7 +142,7 @@ describe('toAdminStats', () => {
   it('maps a row: ms to ISO dates, the save date as stored', () => {
     const [s] = toAdminStats([
       row({ display_name: 'Kálmán', logins: 3, first_login: 1_000, last_login: 2_000_000_000_000, updated_at: '2026-10-28T10:00:00.000Z', payload_chars: 2048 }),
-    ]);
+    ], TODAY);
     expect(s).toEqual({
       name: 'Kálmán',
       logins: 3,
@@ -144,15 +150,16 @@ describe('toAdminStats', () => {
       lastLogin: '2033-05-18T03:33:20.000Z',
       lastSave: '2026-10-28T10:00:00.000Z',
       progressKb: 2,
+      ...EMPTY_USAGE,
     });
   });
 
   it('gives null dates for an account that never logged in or saved', () => {
-    expect(toAdminStats([row({})])[0]).toEqual({ name: 'Ana', logins: 0, firstLogin: null, lastLogin: null, lastSave: null, progressKb: 0 });
+    expect(toAdminStats([row({})], TODAY)[0]).toEqual({ name: 'Ana', logins: 0, firstLogin: null, lastLogin: null, lastSave: null, progressKb: 0, ...EMPTY_USAGE });
   });
 
   it('rounds the progress to KB, at least 1 for any content', () => {
-    const kb = (chars: number | null) => toAdminStats([row({ payload_chars: chars })])[0].progressKb;
+    const kb = (chars: number | null) => toAdminStats([row({ payload_chars: chars })], TODAY)[0].progressKb;
     expect(kb(null)).toBe(0);
     expect(kb(0)).toBe(0);
     expect(kb(100)).toBe(1);
@@ -167,7 +174,89 @@ describe('toAdminStats', () => {
       row({ display_name: 'saveOnly', updated_at: '2026-10-20T00:00:00.000Z' }),
       row({ display_name: 'new', last_login: t('2026-10-25T00:00:00Z'), updated_at: '2026-10-05T00:00:00.000Z' }),
       row({ display_name: 'savedLater', last_login: t('2026-10-02T00:00:00Z'), updated_at: '2026-10-27T00:00:00.000Z' }),
-    ]).map((s) => s.name);
+    ], TODAY).map((s) => s.name);
     expect(names).toEqual(['savedLater', 'new', 'saveOnly', 'old', 'none']);
+  });
+});
+
+describe('usageSummary', () => {
+  // A cloud payload (`{ v, store, resume }`) around a hand-written web state; `store` is a string inside the payload.
+  const payloadOf = (state: Record<string, unknown>) => JSON.stringify({ v: 1, store: JSON.stringify({ v: 1, ...state }), resume: {} });
+
+  it.each([
+    ['null', null],
+    ['not JSON', 'not json'],
+    ['a payload without a store', JSON.stringify({ v: 1, resume: {} })],
+    ['a store that is not JSON', JSON.stringify({ v: 1, store: 'S1', resume: {} })],
+    ['a store of the wrong shape', JSON.stringify({ v: 1, store: '[1,2]', resume: {} })],
+    ['an empty state', payloadOf({})],
+    ['broken fields', payloadOf({ streak: 'x', onboarding: 5, userLevels: 'x', usageMinutes: [1, ['d']], dailyXp: {} })],
+  ])('gives the empty summary for %s', (_label, payload) => {
+    expect(usageSummary(payload, TODAY)).toEqual(EMPTY_USAGE);
+  });
+
+  it('reads what it can from a partial payload', () => {
+    const sum = usageSummary(payloadOf({ usageMinutes: [[TODAY, 4]], onboarding: { source: 'en', target: 'es' } }), TODAY);
+    expect(sum).toEqual({ ...EMPTY_USAGE, pair: 'en→es', minutesTotal: 4, minutes7d: 4, activeDays: 1, lastActiveDay: TODAY });
+  });
+
+  it('takes the level of the onboarding pair, else the first entry', () => {
+    const levels = [
+      ['es-en', { level: 'A2' }],
+      ['en-es', { level: 'B1' }],
+    ];
+    expect(usageSummary(payloadOf({ onboarding: { source: 'en', target: 'es' }, userLevels: levels }), TODAY).level).toBe('B1');
+    expect(usageSummary(payloadOf({ onboarding: { source: 'hu', target: 'es' }, userLevels: levels }), TODAY).level).toBe('A2');
+    expect(usageSummary(payloadOf({ userLevels: levels }), TODAY)).toMatchObject({ pair: null, level: 'A2' });
+  });
+
+  it('counts minutes, active days and the last active day; the 7 day window has today-6 in and today-7 out', () => {
+    const sum = usageSummary(
+      payloadOf({
+        usageMinutes: [
+          ['2026-10-21', 5], // today-7: out of the window
+          ['2026-10-22', 3], // today-6: in
+          ['2026-10-25', 0], // no minutes: not an active day
+          ['2026-10-27', 2],
+        ],
+      }),
+      TODAY,
+    );
+    expect(sum).toMatchObject({ minutesTotal: 10, minutes7d: 5, activeDays: 3, lastActiveDay: '2026-10-27' });
+  });
+
+  it('turns the daily XP tenths into XP', () => {
+    expect(usageSummary(payloadOf({ dailyXp: [['2026-10-27', 123], ['2026-10-28', 2]] }), TODAY).xpTotal).toBe(13);
+    expect(usageSummary(payloadOf({ dailyXp: [['2026-10-28', 4]] }), TODAY).xpTotal).toBe(0);
+  });
+
+  it('keeps a streak that ran yesterday or today, and resets one that has broken', () => {
+    const streak = (last_date: string | null) => usageSummary(payloadOf({ streak: { current_count: 3, last_date, longest_count: 7 } }), TODAY);
+    expect(streak(TODAY)).toMatchObject({ streak: 3, longestStreak: 7 });
+    expect(streak('2026-10-27')).toMatchObject({ streak: 3, longestStreak: 7 });
+    expect(streak('2026-10-26')).toMatchObject({ streak: 0, longestStreak: 7 });
+  });
+
+  it('reads the real MemoryStore output (a format change breaks this test)', async () => {
+    const store = new MemoryStore();
+    await store.writeOnboarding('en', 'es');
+    store.userLevels.set('en-es', { level: 'B1', correct_streak: 0, mistakes_in_window: 0, fail_streak: 0 });
+    await store.writeStreak({ current_count: 3, last_date: '2026-10-27', longest_count: 7 });
+    await store.addUsageMinute('2026-10-27');
+    await store.addUsageMinute('2026-10-27');
+    await store.addUsageMinute('2026-10-28');
+    await store.addDailyXpTenths('2026-10-28', 25);
+    const payload = JSON.stringify({ v: PAYLOAD_VERSION, store: store.serializeState(), resume: {} });
+    expect(usageSummary(payload, TODAY)).toEqual({
+      pair: 'en→es',
+      level: 'B1',
+      minutesTotal: 3,
+      minutes7d: 3,
+      activeDays: 2,
+      lastActiveDay: '2026-10-28',
+      xpTotal: 3,
+      streak: 3,
+      longestStreak: 7,
+    });
   });
 });

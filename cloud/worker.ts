@@ -164,12 +164,12 @@ export class KimachaUsers extends DurableObject<Env> {
     if (!adminAuthorized(req.headers.get('Authorization'), this.env.ADMIN_KEY)) return json({ error: 'bad_token' }, 401);
     const rows = this.ctx.storage.sql
       .exec<AdminUserRow>(
-        `SELECT u.display_name, u.updated_at, length(u.payload) AS payload_chars, COUNT(t.token) AS logins,
+        `SELECT u.display_name, u.updated_at, u.payload, length(u.payload) AS payload_chars, COUNT(t.token) AS logins,
           MIN(t.created_at) AS first_login, MAX(t.created_at) AS last_login
         FROM users u LEFT JOIN tokens t ON t.name_key = u.name_key GROUP BY u.name_key`,
       )
       .toArray();
-    return json({ users: toAdminStats(rows) });
+    return json({ users: toAdminStats(rows, new Date().toISOString().slice(0, 10)) });
   }
 }
 

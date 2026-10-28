@@ -70,7 +70,7 @@ table { border-collapse: collapse; width: 100%; }
 th, td { padding: 8px 12px; text-align: left; white-space: nowrap; border-bottom: 1px solid var(--line); }
 th { color: var(--muted); font-size: 0.85rem; font-weight: 600; }
 tr:last-child td { border-bottom: 0; }
-td.num { text-align: right; }
+th.num, td.num { text-align: right; }
 </style>
 </head>
 <body>
@@ -85,7 +85,7 @@ td.num { text-align: right; }
 <div class="wrap" id="wrap" hidden>
 <table>
 <thead>
-<tr><th>Név</th><th>Belépések</th><th>Első belépés</th><th>Utolsó belépés</th><th>Utolsó mentés</th><th>Haladás (KB)</th></tr>
+<tr><th>Név</th><th>Nyelvpár</th><th>Szint</th><th class="num">Perc (7 nap)</th><th class="num">Perc összesen</th><th class="num">Aktív napok</th><th>Utolsó aktív nap</th><th class="num">XP</th><th class="num">Sorozat (most/max)</th><th class="num">Belépések</th><th>Utolsó belépés</th><th>Első belépés</th><th>Utolsó mentés</th><th class="num">Haladás (KB)</th></tr>
 </thead>
 <tbody id="rows"></tbody>
 </table>
@@ -115,6 +115,11 @@ td.num { text-align: right; }
   function when(iso) {
     return iso ? new Date(iso).toLocaleString('hu-HU') : '-';
   }
+  function day(ymd) {
+    if (!ymd) return '-';
+    var p = ymd.split('-');
+    return new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2])).toLocaleDateString('hu-HU');
+  }
   function cell(tr, text, cls) {
     var td = document.createElement('td');
     td.textContent = text;
@@ -127,9 +132,17 @@ td.num { text-align: right; }
     users.forEach(function (u) {
       var tr = document.createElement('tr');
       cell(tr, u.name);
+      cell(tr, u.pair || '-');
+      cell(tr, u.level || '-');
+      cell(tr, String(u.minutes7d), 'num');
+      cell(tr, String(u.minutesTotal), 'num');
+      cell(tr, String(u.activeDays), 'num');
+      cell(tr, day(u.lastActiveDay));
+      cell(tr, String(u.xpTotal), 'num');
+      cell(tr, u.streak + '/' + u.longestStreak, 'num');
       cell(tr, String(u.logins), 'num');
-      cell(tr, when(u.firstLogin));
       cell(tr, when(u.lastLogin));
+      cell(tr, when(u.firstLogin));
       cell(tr, when(u.lastSave));
       cell(tr, String(u.progressKb), 'num');
       rowsEl.appendChild(tr);
