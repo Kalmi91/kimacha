@@ -9,7 +9,7 @@ import { putProgress } from './api';
 
 export const SYNC_INTERVAL_MS = 5000;
 
-const PAYLOAD_VERSION = 1;
+export const PAYLOAD_VERSION = 1;
 // lib/resumeRoute.ts ('kimacha-resume') and lib/resumeStore.ts ('kimacha-resume:<key>') keep the learner's place here.
 const RESUME_PREFIX = 'kimacha-resume';
 
