@@ -422,9 +422,9 @@
     "lemma": "madre",
     "es": "la madre",
     "en": "mother",
-    "sentence_es": "Mi madre está en casa.",
-    "sentence_en": "My mother is at home.",
-    "sentence_lemmas": ["mi", "madre", "estar", "en", "casa"]
+    "sentence_es": "Ella es mi madre.",
+    "sentence_en": "She is my mother.",
+    "sentence_lemmas": ["ella", "ser", "mi", "madre"]
   },
   {
     "order": 39,
@@ -433,9 +433,9 @@
     "lemma": "padre",
     "es": "el padre",
     "en": "father",
-    "sentence_es": "Mi padre quiere un café.",
-    "sentence_en": "My father wants a coffee.",
-    "sentence_lemmas": ["mi", "padre", "querer", "un", "café"]
+    "sentence_es": "Él es mi padre.",
+    "sentence_en": "He is my father.",
+    "sentence_lemmas": ["él", "ser", "mi", "padre"]
   },
   {
     "order": 40,
@@ -456,9 +456,9 @@
     "es": "la familia",
     "en": "family",
     "hint_en": "My *family* is at home",
-    "sentence_es": "Mi familia está en casa.",
-    "sentence_en": "My family is at home.",
-    "sentence_lemmas": ["mi", "familia", "estar", "en", "casa"]
+    "sentence_es": "Mi madre y mi padre son mi familia.",
+    "sentence_en": "My mother and my father are my family.",
+    "sentence_lemmas": ["mi", "madre", "y", "mi", "padre", "ser", "mi", "familia"]
   },
   {
     "order": 42,
@@ -467,9 +467,20 @@
     "lemma": "hermano",
     "es": "el hermano",
     "en": "brother",
-    "sentence_es": "Mi hermano tiene hambre.",
-    "sentence_en": "My brother is hungry.",
-    "sentence_lemmas": ["mi", "hermano", "tener", "hambre"]
+    "sentence_es": "Mi hermano y yo somos familia.",
+    "sentence_en": "My brother and I are family.",
+    "sentence_lemmas": ["mi", "hermano", "y", "yo", "ser", "familia"]
+  },
+  {
+    "order": 4368,
+    "level": "A1",
+    "pos": "noun",
+    "lemma": "hermana",
+    "es": "la hermana",
+    "en": "sister",
+    "sentence_es": "Mi hermana y mi hermano son familia.",
+    "sentence_en": "My sister and my brother are family.",
+    "sentence_lemmas": ["mi", "hermana", "y", "mi", "hermano", "ser", "familia"]
   },
   {
     "order": 43,
@@ -1243,9 +1254,9 @@
     "lemma": "hijo",
     "es": "el hijo",
     "en": "son",
-    "sentence_es": "Tengo un hijo.",
-    "sentence_en": "I have a son.",
-    "sentence_lemmas": ["tener", "un", "hijo"]
+    "sentence_es": "Mi hermano es el hijo de mi madre.",
+    "sentence_en": "My brother is my mother's son.",
+    "sentence_lemmas": ["mi", "hermano", "ser", "el", "hijo", "de", "mi", "madre"]
   },
   {
     "order": 111,
@@ -1886,9 +1897,9 @@
     "lemma": "abuelo",
     "es": "el abuelo",
     "en": "grandfather",
-    "sentence_es": "Mi abuelo vive en la ciudad.",
-    "sentence_en": "My grandfather lives in the city.",
-    "sentence_lemmas": ["mi", "abuelo", "vivir", "en", "el", "ciudad"]
+    "sentence_es": "Mi abuelo es el padre de mi padre.",
+    "sentence_en": "My grandfather is my father's father.",
+    "sentence_lemmas": ["mi", "abuelo", "ser", "el", "padre", "de", "mi", "padre"]
   },
   {
     "order": 620,
@@ -1897,9 +1908,9 @@
     "lemma": "abuela",
     "es": "la abuela",
     "en": "grandmother",
-    "sentence_es": "Mi abuela habla con mi madre.",
-    "sentence_en": "My grandmother talks with my mother.",
-    "sentence_lemmas": ["mi", "abuela", "hablar", "con", "mi", "madre"]
+    "sentence_es": "Mi abuela es la madre de mi madre.",
+    "sentence_en": "My grandmother is my mother's mother.",
+    "sentence_lemmas": ["mi", "abuela", "ser", "el", "madre", "de", "mi", "madre"]
   },
   {
     "order": 621,
@@ -1908,9 +1919,9 @@
     "lemma": "tío",
     "es": "el tío",
     "en": "uncle",
-    "sentence_es": "Mi tío trabaja en una tienda.",
-    "sentence_en": "My uncle works at a store.",
-    "sentence_lemmas": ["mi", "tío", "trabajar", "en", "un", "tienda"]
+    "sentence_es": "Mi tío es el hermano de mi padre.",
+    "sentence_en": "My uncle is my father's brother.",
+    "sentence_lemmas": ["mi", "tío", "ser", "el", "hermano", "de", "mi", "padre"]
   },
   {
     "order": 622,
@@ -5041,9 +5052,9 @@
     "lemma": "tía",
     "es": "la tía",
     "en": "aunt",
-    "sentence_es": "Su tía vive en una casa grande.",
-    "sentence_en": "His aunt lives in a big house.",
-    "sentence_lemmas": ["su", "tía", "vivir", "en", "un", "casa", "grande"]
+    "sentence_es": "Mi tía es la hermana de mi madre.",
+    "sentence_en": "My aunt is my mother's sister.",
+    "sentence_lemmas": ["mi", "tía", "ser", "el", "hermana", "de", "mi", "madre"]
   },
   {
     "order": 3284,
@@ -5096,9 +5107,9 @@
     "lemma": "esposa",
     "es": "la esposa",
     "en": "wife",
-    "sentence_es": "Su esposa trabaja en una escuela.",
-    "sentence_en": "His wife works at a school.",
-    "sentence_lemmas": ["su", "esposa", "trabajar", "en", "un", "escuela"]
+    "sentence_es": "Mi madre es la esposa de mi padre.",
+    "sentence_en": "My mother is my father's wife.",
+    "sentence_lemmas": ["mi", "madre", "ser", "el", "esposa", "de", "mi", "padre"]
   },
   {
     "order": 3305,
@@ -5349,9 +5360,9 @@
     "lemma": "mamá",
     "es": "la mamá",
     "en": "mom",
-    "sentence_es": "Mi mamá cocina muy bien.",
-    "sentence_en": "My mom cooks very well.",
-    "sentence_lemmas": ["mi", "mamá", "cocinar", "muy", "bien"]
+    "sentence_es": "Mi mamá es la madre de mi hermano.",
+    "sentence_en": "My mom is my brother's mother.",
+    "sentence_lemmas": ["mi", "mamá", "ser", "el", "madre", "de", "mi", "hermano"]
   },
   {
     "order": 696,
@@ -5360,9 +5371,9 @@
     "lemma": "papá",
     "es": "el papá",
     "en": "dad",
-    "sentence_es": "Mi papá trabaja en un banco.",
-    "sentence_en": "My dad works at a bank.",
-    "sentence_lemmas": ["mi", "papá", "trabajar", "en", "un", "banco"]
+    "sentence_es": "Mi papá es el padre de mi hermana.",
+    "sentence_en": "My dad is my sister's father.",
+    "sentence_lemmas": ["mi", "papá", "ser", "el", "padre", "de", "mi", "hermana"]
   },
   {
     "order": 697,
@@ -5371,9 +5382,9 @@
     "lemma": "primo",
     "es": "el primo",
     "en": "cousin",
-    "sentence_es": "Mi primo vive en mi casa.",
-    "sentence_en": "My cousin lives in my house.",
-    "sentence_lemmas": ["mi", "primo", "vivir", "en", "mi", "casa"]
+    "sentence_es": "Mi primo es el hijo de mi tío.",
+    "sentence_en": "My cousin is my uncle's son.",
+    "sentence_lemmas": ["mi", "primo", "ser", "el", "hijo", "de", "mi", "tío"]
   },
   {
     "order": 733,
@@ -5393,9 +5404,9 @@
     "lemma": "esposo",
     "es": "el esposo",
     "en": "husband",
-    "sentence_es": "Mi esposo trabaja en un hotel.",
-    "sentence_en": "My husband works at a hotel.",
-    "sentence_lemmas": ["mi", "esposo", "trabajar", "en", "un", "hotel"]
+    "sentence_es": "Mi abuelo es el esposo de mi abuela.",
+    "sentence_en": "My grandfather is my grandmother's husband.",
+    "sentence_lemmas": ["mi", "abuelo", "ser", "el", "esposo", "de", "mi", "abuela"]
   },
   {
     "order": 260,
@@ -5627,20 +5638,9 @@
     "lemma": "hija",
     "es": "la hija",
     "en": "daughter",
-    "sentence_es": "La hija llama a su madre por teléfono.",
-    "sentence_en": "The daughter calls her mother on the phone.",
-    "sentence_lemmas": ["el", "hija", "llamar", "a", "su", "madre", "por", "teléfono"]
-  },
-  {
-    "order": 4368,
-    "level": "A1",
-    "pos": "noun",
-    "lemma": "hermana",
-    "es": "la hermana",
-    "en": "sister",
-    "sentence_es": "¿Dónde vive tu hermana mayor?",
-    "sentence_en": "Where does your older sister live?",
-    "sentence_lemmas": ["dónde", "vivir", "tu", "hermana", "mayor"]
+    "sentence_es": "Mi hermana es la hija de mi madre.",
+    "sentence_en": "My sister is my mother's daughter.",
+    "sentence_lemmas": ["mi", "hermana", "ser", "el", "hija", "de", "mi", "madre"]
   },
   {
     "order": 4369,
@@ -5671,9 +5671,9 @@
     "lemma": "prima",
     "es": "la prima",
     "en": "female cousin",
-    "sentence_es": "La prima baila muy bien.",
-    "sentence_en": "The female cousin dances very well.",
-    "sentence_lemmas": ["el", "prima", "bailar", "muy", "bien"]
+    "sentence_es": "Mi prima es la hija de mi tía.",
+    "sentence_en": "My cousin is my aunt's daughter.",
+    "sentence_lemmas": ["mi", "prima", "ser", "el", "hija", "de", "mi", "tía"]
   },
   {
     "order": 4382,

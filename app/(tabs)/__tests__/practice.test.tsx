@@ -41,7 +41,7 @@ const TODAY = localDateString();
 
 // The five due words, the longest overdue first, and their sentences (words-open sentence_es).
 const DUE = ['o19', 'o37', 'o20', 'o38', 'o3'];
-const SENTENCES = ['Estoy en casa.', 'Usted está bien.', 'Tiene una casa.', 'Mi madre está en casa.', 'Yo estoy bien.'];
+const SENTENCES = ['Estoy en casa.', 'Usted está bien.', 'Tiene una casa.', 'Ella es mi madre.', 'Yo estoy bien.'];
 
 const learned = (itemId: string, due: string, over: Partial<Sm2Card> = {}): Sm2Card => ({
   ...sm2NewCard(itemId),

@@ -5457,9 +5457,9 @@
     "lemma": "padrino",
     "es": "el padrino",
     "en": "godfather",
-    "sentence_es": "El padrino del niño es mi tío.",
-    "sentence_en": "The boy's godfather is my uncle.",
-    "sentence_lemmas": ["el", "padrino", "de", "niño", "ser", "mi", "tío"]
+    "sentence_es": "Mi padrino es el amigo de mi padre.",
+    "sentence_en": "My godfather is my father's friend.",
+    "sentence_lemmas": ["mi", "padrino", "ser", "el", "amigo", "de", "mi", "padre"]
   },
   {
     "order": 2147,
@@ -12170,9 +12170,9 @@
     "lemma": "madrina",
     "es": "la madrina",
     "en": "godmother",
-    "sentence_es": "La madrina del niño vive en la ciudad.",
-    "sentence_en": "The boy's godmother lives in the city.",
-    "sentence_lemmas": ["el", "madrina", "de", "niño", "vivir", "en", "el", "ciudad"]
+    "sentence_es": "Mi madrina es la amiga de mi madre.",
+    "sentence_en": "My godmother is my mother's friend.",
+    "sentence_lemmas": ["mi", "madrina", "ser", "el", "amigo", "de", "mi", "madre"]
   },
   {
     "order": 3585,
@@ -16692,9 +16692,9 @@
     "lemma": "bisabuela",
     "es": "la bisabuela",
     "en": "great-grandmother",
-    "sentence_es": "La bisabuela cumple cien años.",
-    "sentence_en": "The great-grandmother turns a hundred.",
-    "sentence_lemmas": ["el", "bisabuela", "cumplir", "cien", "año"]
+    "sentence_es": "Mi bisabuela es la abuela de mi madre.",
+    "sentence_en": "My great-grandmother is my mother's grandmother.",
+    "sentence_lemmas": ["mi", "bisabuela", "ser", "el", "abuela", "de", "mi", "madre"]
   },
   {
     "order": 4387,
@@ -16725,9 +16725,9 @@
     "lemma": "gemela",
     "es": "la gemela",
     "en": "female twin",
-    "sentence_es": "Su gemela se parece mucho a ella.",
-    "sentence_en": "Her twin sister looks a lot like her.",
-    "sentence_lemmas": ["su", "gemela", "se", "parecer", "mucho", "a", "ella"]
+    "sentence_es": "Mi hermana gemela nació el mismo día que yo.",
+    "sentence_en": "My twin sister was born on the same day as me.",
+    "sentence_lemmas": ["mi", "hermana", "gemela", "nacer", "el", "mismo", "día", "que", "yo"]
   },
   {
     "order": 4397,
