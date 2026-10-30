@@ -3798,9 +3798,9 @@
     "lemma": "suegro",
     "es": "el suegro",
     "en": "father-in-law",
-    "sentence_es": "El suegro es el padre de mi esposa.",
-    "sentence_en": "The father-in-law is my wife's father.",
-    "sentence_lemmas": ["el", "suegro", "ser", "el", "padre", "de", "mi", "esposa"]
+    "sentence_es": "Mi suegro es el padre de mi esposa.",
+    "sentence_en": "My father-in-law is my wife's father.",
+    "sentence_lemmas": ["mi", "suegro", "ser", "el", "padre", "de", "mi", "esposa"]
   },
   {
     "order": 1146,
@@ -9398,9 +9398,9 @@
     "lemma": "ahijado",
     "es": "el ahijado",
     "en": "godson",
-    "sentence_es": "Mi ahijado es el hijo de mi amigo.",
-    "sentence_en": "My godson is my friend's son.",
-    "sentence_lemmas": ["mi", "ahijado", "ser", "el", "hijo", "de", "mi", "amigo"]
+    "sentence_es": "Cuido a mi ahijado como a un hijo.",
+    "sentence_en": "I look after my godson like a son.",
+    "sentence_lemmas": ["cuidar", "a", "mi", "ahijado", "como", "a", "un", "hijo"]
   },
   {
     "order": 2320,
@@ -14840,9 +14840,9 @@
     "lemma": "suegra",
     "es": "la suegra",
     "en": "mother-in-law",
-    "sentence_es": "La suegra es la madre de mi esposa.",
-    "sentence_en": "The mother-in-law is my wife's mother.",
-    "sentence_lemmas": ["el", "suegra", "ser", "el", "madre", "de", "mi", "esposa"]
+    "sentence_es": "Mi suegra es la madre de mi esposa.",
+    "sentence_en": "My mother-in-law is my wife's mother.",
+    "sentence_lemmas": ["mi", "suegra", "ser", "el", "madre", "de", "mi", "esposa"]
   },
   {
     "order": 4379,
@@ -14884,9 +14884,9 @@
     "lemma": "hermanito",
     "es": "el hermanito",
     "en": "little brother",
-    "sentence_es": "Mi hermanito es mi hermano pequeño.",
-    "sentence_en": "My little brother is my younger brother.",
-    "sentence_lemmas": ["mi", "hermanito", "ser", "mi", "hermano", "pequeño"]
+    "sentence_es": "Mi hermanito tiene menos años que yo.",
+    "sentence_en": "My little brother is younger than me.",
+    "sentence_lemmas": ["mi", "hermanito", "tener", "menos", "año", "que", "yo"]
   },
   {
     "order": 4386,
@@ -14895,9 +14895,9 @@
     "lemma": "hermanita",
     "es": "la hermanita",
     "en": "little sister",
-    "sentence_es": "Mi hermanita es mi hermana pequeña.",
-    "sentence_en": "My little sister is my younger sister.",
-    "sentence_lemmas": ["mi", "hermanita", "ser", "mi", "hermana", "pequeño"]
+    "sentence_es": "Mi hermanita tiene menos años que yo.",
+    "sentence_en": "My little sister is younger than me.",
+    "sentence_lemmas": ["mi", "hermanita", "tener", "menos", "año", "que", "yo"]
   },
   {
     "order": 4390,
