@@ -489,9 +489,9 @@
     "lemma": "hombre",
     "es": "el hombre",
     "en": "man",
-    "sentence_es": "El hombre quiere agua.",
-    "sentence_en": "The man wants water.",
-    "sentence_lemmas": ["el", "hombre", "querer", "agua"]
+    "sentence_es": "Mi padre es un hombre.",
+    "sentence_en": "My father is a man.",
+    "sentence_lemmas": ["mi", "padre", "ser", "un", "hombre"]
   },
   {
     "order": 44,
@@ -511,9 +511,9 @@
     "lemma": "niño",
     "es": "el niño",
     "en": "child, boy",
-    "sentence_es": "El niño quiere leche.",
-    "sentence_en": "The child wants milk.",
-    "sentence_lemmas": ["el", "niño", "querer", "leche"]
+    "sentence_es": "Mi hermano es un niño, no un hombre.",
+    "sentence_en": "My brother is a child, not a man.",
+    "sentence_lemmas": ["mi", "hermano", "ser", "un", "niño", "no", "un", "hombre"]
   },
   {
     "order": 46,
@@ -683,9 +683,9 @@
     "lemma": "grande",
     "es": "grande",
     "en": "big, large",
-    "sentence_es": "Su casa es grande.",
-    "sentence_en": "His house is big.",
-    "sentence_lemmas": ["su", "casa", "ser", "grande"]
+    "sentence_es": "El hombre es grande y el niño no.",
+    "sentence_en": "The man is big and the child is not.",
+    "sentence_lemmas": ["el", "hombre", "ser", "grande", "y", "el", "niño", "no"]
   },
   {
     "order": 61,
@@ -694,9 +694,9 @@
     "lemma": "pequeño",
     "es": "pequeño / chico",
     "en": "small",
-    "sentence_es": "Mi casa es pequeña.",
-    "sentence_en": "My house is small.",
-    "sentence_lemmas": ["mi", "casa", "ser", "pequeño"]
+    "sentence_es": "Mi casa es pequeña, la ciudad es grande.",
+    "sentence_en": "My house is small, the city is big.",
+    "sentence_lemmas": ["mi", "casa", "ser", "pequeño", "el", "ciudad", "ser", "grande"]
   },
   {
     "order": 62,
@@ -716,9 +716,9 @@
     "lemma": "malo",
     "es": "malo",
     "en": "bad",
-    "sentence_es": "La leche no es mala.",
-    "sentence_en": "The milk is not bad.",
-    "sentence_lemmas": ["el", "leche", "no", "ser", "malo"]
+    "sentence_es": "Un hombre malo no es mi amigo.",
+    "sentence_en": "A bad man is not my friend.",
+    "sentence_lemmas": ["un", "hombre", "malo", "no", "ser", "mi", "amigo"]
   },
   {
     "order": 64,
@@ -772,9 +772,9 @@
     "lemma": "viejo",
     "es": "viejo",
     "en": "old",
-    "sentence_es": "El hombre es viejo.",
-    "sentence_en": "The man is old.",
-    "sentence_lemmas": ["el", "hombre", "ser", "viejo"]
+    "sentence_es": "Mi casa es vieja, no es nueva.",
+    "sentence_en": "My house is old, it is not new.",
+    "sentence_lemmas": ["mi", "casa", "ser", "viejo", "no", "ser", "nuevo"]
   },
   {
     "order": 69,
@@ -783,9 +783,9 @@
     "lemma": "cansado",
     "es": "cansado",
     "en": "tired",
-    "sentence_es": "Estoy muy cansado.",
-    "sentence_en": "I am very tired.",
-    "sentence_lemmas": ["estar", "muy", "cansado"]
+    "sentence_es": "Trabajo mucho y estoy cansado.",
+    "sentence_en": "I work a lot and I am tired.",
+    "sentence_lemmas": ["trabajar", "mucho", "y", "estar", "cansado"]
   },
   {
     "order": 70,
@@ -1210,9 +1210,9 @@
     "lemma": "dos",
     "es": "dos",
     "en": "two",
-    "sentence_es": "Tengo dos hermanos.",
-    "sentence_en": "I have two brothers.",
-    "sentence_lemmas": ["tener", "dos", "hermano"]
+    "sentence_es": "Mi hermano y yo somos dos.",
+    "sentence_en": "My brother and I are two.",
+    "sentence_lemmas": ["mi", "hermano", "y", "yo", "ser", "dos"]
   },
   {
     "order": 107,
@@ -1232,9 +1232,9 @@
     "lemma": "cinco",
     "es": "cinco",
     "en": "five",
-    "sentence_es": "Son las cinco.",
-    "sentence_en": "It is five o'clock.",
-    "sentence_lemmas": ["ser", "el", "cinco"]
+    "sentence_es": "Dos y tres son cinco.",
+    "sentence_en": "Two and three are five.",
+    "sentence_lemmas": ["dos", "y", "tres", "ser", "cinco"]
   },
   {
     "order": 109,
@@ -1243,9 +1243,9 @@
     "lemma": "diez",
     "es": "diez",
     "en": "ten",
-    "sentence_es": "Tengo diez amigos.",
-    "sentence_en": "I have ten friends.",
-    "sentence_lemmas": ["tener", "diez", "amigo"]
+    "sentence_es": "Cinco y cinco son diez.",
+    "sentence_en": "Five and five are ten.",
+    "sentence_lemmas": ["cinco", "y", "cinco", "ser", "diez"]
   },
   {
     "order": 110,
@@ -1276,9 +1276,9 @@
     "lemma": "perro",
     "es": "el perro",
     "en": "dog",
-    "sentence_es": "Tengo un perro.",
-    "sentence_en": "I have a dog.",
-    "sentence_lemmas": ["tener", "un", "perro"]
+    "sentence_es": "El perro es mi amigo.",
+    "sentence_en": "The dog is my friend.",
+    "sentence_lemmas": ["el", "perro", "ser", "mi", "amigo"]
   },
   {
     "order": 113,
@@ -1287,9 +1287,9 @@
     "lemma": "gato",
     "es": "el gato",
     "en": "cat",
-    "sentence_es": "El gato quiere leche.",
-    "sentence_en": "The cat wants milk.",
-    "sentence_lemmas": ["el", "gato", "querer", "leche"]
+    "sentence_es": "El gato es pequeño y bebe leche.",
+    "sentence_en": "The cat is small and drinks milk.",
+    "sentence_lemmas": ["el", "gato", "ser", "pequeño", "y", "beber", "leche"]
   },
   {
     "order": 114,
@@ -1320,9 +1320,9 @@
     "lemma": "cama",
     "es": "la cama",
     "en": "bed",
-    "sentence_es": "Estoy en la cama.",
-    "sentence_en": "I am in bed.",
-    "sentence_lemmas": ["estar", "en", "el", "cama"]
+    "sentence_es": "Estoy cansado y voy a la cama.",
+    "sentence_en": "I am tired and I go to bed.",
+    "sentence_lemmas": ["estar", "cansado", "y", "ir", "a", "el", "cama"]
   },
   {
     "order": 117,
@@ -1354,9 +1354,9 @@
     "lemma": "tienda",
     "es": "la tienda",
     "en": "shop, store",
-    "sentence_es": "Voy a la tienda.",
-    "sentence_en": "I am going to the store.",
-    "sentence_lemmas": ["ir", "a", "el", "tienda"]
+    "sentence_es": "En la tienda hay pan y leche.",
+    "sentence_en": "In the shop there is bread and milk.",
+    "sentence_lemmas": ["en", "el", "tienda", "haber", "pan", "y", "leche"]
   },
   {
     "order": 120,
@@ -1387,9 +1387,9 @@
     "lemma": "teléfono",
     "es": "el teléfono / el celular",
     "en": "phone",
-    "sentence_es": "Mi teléfono está aquí.",
-    "sentence_en": "My phone is here.",
-    "sentence_lemmas": ["mi", "teléfono", "estar", "aquí"]
+    "sentence_es": "Hablo con mi madre por teléfono.",
+    "sentence_en": "I talk with my mother on the phone.",
+    "sentence_lemmas": ["hablar", "con", "mi", "madre", "por", "teléfono"]
   },
   {
     "order": 123,
@@ -1442,9 +1442,9 @@
     "lemma": "palabra",
     "es": "la palabra",
     "en": "word",
-    "sentence_es": "No sé esta palabra.",
-    "sentence_en": "I do not know this word.",
-    "sentence_lemmas": ["no", "saber", "este", "palabra"]
+    "sentence_es": "Un libro tiene muchas palabras.",
+    "sentence_en": "A book has many words.",
+    "sentence_lemmas": ["un", "libro", "tener", "mucho", "palabra"]
   },
   {
     "order": 128,
@@ -1530,9 +1530,9 @@
     "lemma": "caro",
     "es": "caro",
     "en": "expensive",
-    "sentence_es": "El café es muy caro.",
-    "sentence_en": "The coffee is very expensive.",
-    "sentence_lemmas": ["el", "café", "ser", "muy", "caro"]
+    "sentence_es": "El carro es muy caro, no tengo dinero.",
+    "sentence_en": "The car is very expensive, I have no money.",
+    "sentence_lemmas": ["el", "carro", "ser", "muy", "caro", "no", "tener", "dinero"]
   },
   {
     "order": 136,
@@ -1587,9 +1587,9 @@
     "lemma": "difícil",
     "es": "difícil",
     "en": "difficult",
-    "sentence_es": "Este trabajo es difícil.",
-    "sentence_en": "This job is difficult.",
-    "sentence_lemmas": ["este", "trabajo", "ser", "difícil"]
+    "sentence_es": "No es fácil, es muy difícil.",
+    "sentence_en": "It is not easy, it is very difficult.",
+    "sentence_lemmas": ["no", "ser", "fácil", "ser", "muy", "difícil"]
   },
   {
     "order": 141,
@@ -1609,9 +1609,9 @@
     "lemma": "enfermo",
     "es": "enfermo",
     "en": "sick, ill",
-    "sentence_es": "Mi madre está enferma.",
-    "sentence_en": "My mother is sick.",
-    "sentence_lemmas": ["mi", "madre", "estar", "enfermo"]
+    "sentence_es": "Estoy enfermo y no voy a la escuela.",
+    "sentence_en": "I am sick and I do not go to school.",
+    "sentence_lemmas": ["estar", "enfermo", "y", "no", "ir", "a", "el", "escuela"]
   },
   {
     "order": 143,
@@ -1708,9 +1708,9 @@
     "lemma": "inteligente",
     "es": "inteligente",
     "en": "intelligent",
-    "sentence_es": "Mi hermano es muy inteligente.",
-    "sentence_en": "My brother is very intelligent.",
-    "sentence_lemmas": ["mi", "hermano", "ser", "muy", "inteligente"]
+    "sentence_es": "Mi amigo es inteligente, sabe mucho.",
+    "sentence_en": "My friend is intelligent, he knows a lot.",
+    "sentence_lemmas": ["mi", "amigo", "ser", "inteligente", "saber", "mucho"]
   },
   {
     "order": 603,
@@ -1786,9 +1786,9 @@
     "lemma": "amarillo",
     "es": "amarillo",
     "en": "yellow",
-    "sentence_es": "Tengo una camisa amarilla.",
-    "sentence_en": "I have a yellow shirt.",
-    "sentence_lemmas": ["tener", "un", "camisa", "amarillo"]
+    "sentence_es": "El huevo es blanco y amarillo.",
+    "sentence_en": "The egg is white and yellow.",
+    "sentence_lemmas": ["el", "huevo", "ser", "blanco", "y", "amarillo"]
   },
   {
     "order": 610,
@@ -1797,9 +1797,9 @@
     "lemma": "examen",
     "es": "el examen",
     "en": "exam",
-    "sentence_es": "Tengo un examen hoy.",
-    "sentence_en": "I have an exam today.",
-    "sentence_lemmas": ["tener", "un", "examen", "hoy"]
+    "sentence_es": "Tengo un examen en la escuela.",
+    "sentence_en": "I have an exam at school.",
+    "sentence_lemmas": ["tener", "un", "examen", "en", "el", "escuela"]
   },
   {
     "order": 611,
@@ -1853,9 +1853,9 @@
     "lemma": "moto",
     "es": "la moto",
     "en": "motorcycle",
-    "sentence_es": "Mi hermano tiene una moto nueva.",
-    "sentence_en": "My brother has a new motorcycle.",
-    "sentence_lemmas": ["mi", "hermano", "tener", "un", "moto", "nuevo"]
+    "sentence_es": "La moto es pequeña, el carro es grande.",
+    "sentence_en": "The motorcycle is small, the car is big.",
+    "sentence_lemmas": ["el", "moto", "ser", "pequeño", "el", "carro", "ser", "grande"]
   },
   {
     "order": 616,
@@ -1930,9 +1930,9 @@
     "lemma": "treinta",
     "es": "treinta",
     "en": "thirty",
-    "sentence_es": "Tengo treinta años.",
-    "sentence_en": "I am thirty years old.",
-    "sentence_lemmas": ["tener", "treinta", "año"]
+    "sentence_es": "Diez más diez más diez son treinta.",
+    "sentence_en": "Ten plus ten plus ten is thirty.",
+    "sentence_lemmas": ["diez", "más", "diez", "más", "diez", "ser", "treinta"]
   },
   {
     "order": 623,
@@ -2062,9 +2062,9 @@
     "lemma": "chocolate",
     "es": "el chocolate",
     "en": "chocolate",
-    "sentence_es": "Mi hijo quiere chocolate.",
-    "sentence_en": "My son wants chocolate.",
-    "sentence_lemmas": ["mi", "hijo", "querer", "chocolate"]
+    "sentence_es": "Bebo chocolate caliente con leche.",
+    "sentence_en": "I drink hot chocolate with milk.",
+    "sentence_lemmas": ["beber", "chocolate", "caliente", "con", "leche"]
   },
   {
     "order": 635,
