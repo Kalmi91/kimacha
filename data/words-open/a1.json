@@ -1276,9 +1276,9 @@
     "lemma": "perro",
     "es": "el perro",
     "en": "dog",
-    "sentence_es": "El perro es mi amigo.",
-    "sentence_en": "The dog is my friend.",
-    "sentence_lemmas": ["el", "perro", "ser", "mi", "amigo"]
+    "sentence_es": "El perro es amigo del hombre.",
+    "sentence_en": "The dog is man's friend.",
+    "sentence_lemmas": ["el", "perro", "ser", "amigo", "de", "hombre"]
   },
   {
     "order": 113,
@@ -1797,9 +1797,9 @@
     "lemma": "examen",
     "es": "el examen",
     "en": "exam",
-    "sentence_es": "Tengo un examen en la escuela.",
-    "sentence_en": "I have an exam at school.",
-    "sentence_lemmas": ["tener", "un", "examen", "en", "el", "escuela"]
+    "sentence_es": "En el examen leo y escribo mucho.",
+    "sentence_en": "In the exam I read and write a lot.",
+    "sentence_lemmas": ["en", "el", "examen", "leer", "y", "escribir", "mucho"]
   },
   {
     "order": 611,
@@ -2261,9 +2261,9 @@
     "lemma": "calor",
     "es": "el calor",
     "en": "heat",
-    "sentence_es": "Con calor bebo mucha agua.",
+    "sentence_es": "Con el calor bebo mucha agua.",
     "sentence_en": "When it is hot I drink a lot of water.",
-    "sentence_lemmas": ["con", "calor", "beber", "mucho", "agua"]
+    "sentence_lemmas": ["con", "el", "calor", "beber", "mucho", "agua"]
   },
   {
     "order": 653,
@@ -4027,9 +4027,9 @@
     "lemma": "nariz",
     "es": "la nariz",
     "en": "nose",
-    "sentence_es": "La nariz está en la cabeza.",
-    "sentence_en": "The nose is on the head.",
-    "sentence_lemmas": ["el", "nariz", "estar", "en", "el", "cabeza"]
+    "sentence_es": "La boca está debajo de la nariz.",
+    "sentence_en": "The mouth is below the nose.",
+    "sentence_lemmas": ["el", "boca", "estar", "debajo", "de", "el", "nariz"]
   },
   {
     "order": 929,
