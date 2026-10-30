@@ -3776,9 +3776,9 @@
     "lemma": "sobrino",
     "es": "el sobrino",
     "en": "nephew",
-    "sentence_es": "Mi sobrino tiene cinco años.",
-    "sentence_en": "My nephew is five years old.",
-    "sentence_lemmas": ["mi", "sobrino", "tener", "cinco", "año"]
+    "sentence_es": "Mi sobrino es el hijo de mi hermano.",
+    "sentence_en": "My nephew is my brother's son.",
+    "sentence_lemmas": ["mi", "sobrino", "ser", "el", "hijo", "de", "mi", "hermano"]
   },
   {
     "order": 1144,
@@ -3787,9 +3787,9 @@
     "lemma": "nieto",
     "es": "el nieto",
     "en": "grandchild",
-    "sentence_es": "Mi abuela quiere mucho a sus nietos.",
-    "sentence_en": "My grandmother loves her grandchildren very much.",
-    "sentence_lemmas": ["mi", "abuela", "querer", "mucho", "a", "su", "nieto"]
+    "sentence_es": "Mi primo es el nieto de mi abuela.",
+    "sentence_en": "My cousin is my grandmother's grandson.",
+    "sentence_lemmas": ["mi", "primo", "ser", "el", "nieto", "de", "mi", "abuela"]
   },
   {
     "order": 1145,
@@ -3798,9 +3798,9 @@
     "lemma": "suegro",
     "es": "el suegro",
     "en": "father-in-law",
-    "sentence_es": "Mi suegro vive en otra ciudad.",
-    "sentence_en": "My father-in-law lives in another city.",
-    "sentence_lemmas": ["mi", "suegro", "vivir", "en", "otro", "ciudad"]
+    "sentence_es": "Mi suegro es el padre de mi esposa.",
+    "sentence_en": "My father-in-law is my wife's father.",
+    "sentence_lemmas": ["mi", "suegro", "ser", "el", "padre", "de", "mi", "esposa"]
   },
   {
     "order": 1146,
@@ -7693,9 +7693,9 @@
     "lemma": "gemelo",
     "es": "el gemelo",
     "en": "twin",
-    "sentence_es": "El niño tiene un hermano gemelo.",
-    "sentence_en": "The boy has a twin brother.",
-    "sentence_lemmas": ["el", "niño", "tener", "un", "hermano", "gemelo"]
+    "sentence_es": "Mi hermano gemelo y yo tenemos la misma edad.",
+    "sentence_en": "My twin brother and I are the same age.",
+    "sentence_lemmas": ["mi", "hermano", "gemelo", "y", "yo", "tener", "el", "mismo", "edad"]
   },
   {
     "order": 2143,
@@ -7704,9 +7704,9 @@
     "lemma": "cuñado",
     "es": "el cuñado",
     "en": "brother-in-law",
-    "sentence_es": "¿Dónde vive tu cuñado?",
-    "sentence_en": "Where does your brother-in-law live?",
-    "sentence_lemmas": ["dónde", "vivir", "tu", "cuñado"]
+    "sentence_es": "Mi cuñado es el esposo de mi hermana.",
+    "sentence_en": "My brother-in-law is my sister's husband.",
+    "sentence_lemmas": ["mi", "cuñado", "ser", "el", "esposo", "de", "mi", "hermana"]
   },
   {
     "order": 2145,
@@ -9387,9 +9387,9 @@
     "lemma": "bisabuelo",
     "es": "el bisabuelo",
     "en": "great-grandfather",
-    "sentence_es": "El bisabuelo tiene noventa años.",
-    "sentence_en": "The great-grandfather is ninety years old.",
-    "sentence_lemmas": ["el", "bisabuelo", "tener", "noventa", "año"]
+    "sentence_es": "Mi bisabuelo es el abuelo de mi padre.",
+    "sentence_en": "My great-grandfather is my father's grandfather.",
+    "sentence_lemmas": ["mi", "bisabuelo", "ser", "el", "abuelo", "de", "mi", "padre"]
   },
   {
     "order": 2319,
@@ -9398,9 +9398,9 @@
     "lemma": "ahijado",
     "es": "el ahijado",
     "en": "godson",
-    "sentence_es": "El ahijado de mi tío vive aquí.",
-    "sentence_en": "My uncle's godson lives here.",
-    "sentence_lemmas": ["el", "ahijado", "de", "mi", "tío", "vivir", "aquí"]
+    "sentence_es": "Cuido a mi ahijado como a un hijo.",
+    "sentence_en": "I look after my godson like a son.",
+    "sentence_lemmas": ["cuidar", "a", "mi", "ahijado", "como", "a", "un", "hijo"]
   },
   {
     "order": 2320,
@@ -9409,9 +9409,9 @@
     "lemma": "nuera",
     "es": "la nuera",
     "en": "daughter-in-law",
-    "sentence_es": "La nuera de mi abuela es doctora.",
-    "sentence_en": "My grandmother's daughter-in-law is a doctor.",
-    "sentence_lemmas": ["el", "nuera", "de", "mi", "abuela", "ser", "doctora"]
+    "sentence_es": "Mi nuera es la esposa de mi hijo.",
+    "sentence_en": "My daughter-in-law is my son's wife.",
+    "sentence_lemmas": ["mi", "nuera", "ser", "el", "esposa", "de", "mi", "hijo"]
   },
   {
     "order": 2321,
@@ -9420,9 +9420,9 @@
     "lemma": "yerno",
     "es": "el yerno",
     "en": "son-in-law",
-    "sentence_es": "El yerno ayuda a su suegro.",
-    "sentence_en": "The son-in-law helps his father-in-law.",
-    "sentence_lemmas": ["el", "yerno", "ayudar", "a", "su", "suegro"]
+    "sentence_es": "Mi yerno es el esposo de mi hija.",
+    "sentence_en": "My son-in-law is my daughter's husband.",
+    "sentence_lemmas": ["mi", "yerno", "ser", "el", "esposo", "de", "mi", "hija"]
   },
   {
     "order": 2322,
@@ -14807,9 +14807,9 @@
     "lemma": "sobrina",
     "es": "la sobrina",
     "en": "niece",
-    "sentence_es": "Visito a mi sobrina los sábados.",
-    "sentence_en": "I visit my niece on Saturdays.",
-    "sentence_lemmas": ["visitar", "a", "mi", "sobrina", "el", "sábado"]
+    "sentence_es": "Mi sobrina es la hija de mi hermana.",
+    "sentence_en": "My niece is my sister's daughter.",
+    "sentence_lemmas": ["mi", "sobrina", "ser", "el", "hija", "de", "mi", "hermana"]
   },
   {
     "order": 4375,
@@ -14818,9 +14818,9 @@
     "lemma": "nieta",
     "es": "la nieta",
     "en": "granddaughter",
-    "sentence_es": "La abuela cuenta un cuento a su nieta.",
-    "sentence_en": "The grandmother tells her granddaughter a story.",
-    "sentence_lemmas": ["el", "abuela", "contar", "un", "cuento", "a", "su", "nieta"]
+    "sentence_es": "Mi hermana es la nieta de mi abuelo.",
+    "sentence_en": "My sister is my grandfather's granddaughter.",
+    "sentence_lemmas": ["mi", "hermana", "ser", "el", "nieta", "de", "mi", "abuelo"]
   },
   {
     "order": 4377,
@@ -14829,9 +14829,9 @@
     "lemma": "cuñada",
     "es": "la cuñada",
     "en": "sister-in-law",
-    "sentence_es": "Mañana comemos con mi cuñada.",
-    "sentence_en": "Tomorrow we have lunch with my sister-in-law.",
-    "sentence_lemmas": ["mañana", "comer", "con", "mi", "cuñada"]
+    "sentence_es": "Mi cuñada es la esposa de mi hermano.",
+    "sentence_en": "My sister-in-law is my brother's wife.",
+    "sentence_lemmas": ["mi", "cuñada", "ser", "el", "esposa", "de", "mi", "hermano"]
   },
   {
     "order": 4378,
@@ -14840,9 +14840,9 @@
     "lemma": "suegra",
     "es": "la suegra",
     "en": "mother-in-law",
-    "sentence_es": "La suegra cocina muy bien.",
-    "sentence_en": "The mother-in-law cooks very well.",
-    "sentence_lemmas": ["el", "suegra", "cocinar", "muy", "bien"]
+    "sentence_es": "Mi suegra es la madre de mi esposa.",
+    "sentence_en": "My mother-in-law is my wife's mother.",
+    "sentence_lemmas": ["mi", "suegra", "ser", "el", "madre", "de", "mi", "esposa"]
   },
   {
     "order": 4379,
@@ -14851,9 +14851,9 @@
     "lemma": "abuelito",
     "es": "el abuelito",
     "en": "grandpa",
-    "sentence_es": "El abuelito vive con nosotros.",
-    "sentence_en": "Grandpa lives with us.",
-    "sentence_lemmas": ["el", "abuelito", "vivir", "con", "nosotros"]
+    "sentence_es": "Mi abuelito es el padre de mi mamá.",
+    "sentence_en": "My grandpa is my mom's father.",
+    "sentence_lemmas": ["mi", "abuelito", "ser", "el", "padre", "de", "mi", "mamá"]
   },
   {
     "order": 4380,
@@ -14862,9 +14862,9 @@
     "lemma": "abuelita",
     "es": "la abuelita",
     "en": "granny",
-    "sentence_es": "La abuelita cocina para la familia.",
-    "sentence_en": "Granny cooks for the family.",
-    "sentence_lemmas": ["el", "abuelita", "cocinar", "para", "el", "familia"]
+    "sentence_es": "Mi abuelita es la madre de mi papá.",
+    "sentence_en": "My granny is my dad's mother.",
+    "sentence_lemmas": ["mi", "abuelita", "ser", "el", "madre", "de", "mi", "papá"]
   },
   {
     "order": 4381,
@@ -14884,9 +14884,9 @@
     "lemma": "hermanito",
     "es": "el hermanito",
     "en": "little brother",
-    "sentence_es": "El hermanito juega con su pelota.",
-    "sentence_en": "The little brother plays with his ball.",
-    "sentence_lemmas": ["el", "hermanito", "jugar", "con", "su", "pelota"]
+    "sentence_es": "Mi hermanito tiene menos años que yo.",
+    "sentence_en": "My little brother is younger than me.",
+    "sentence_lemmas": ["mi", "hermanito", "tener", "menos", "año", "que", "yo"]
   },
   {
     "order": 4386,
@@ -14895,9 +14895,9 @@
     "lemma": "hermanita",
     "es": "la hermanita",
     "en": "little sister",
-    "sentence_es": "La hermanita dibuja un gato en su cuaderno.",
-    "sentence_en": "The little sister draws a cat in her notebook.",
-    "sentence_lemmas": ["el", "hermanita", "dibujar", "un", "gato", "en", "su", "cuaderno"]
+    "sentence_es": "Mi hermanita tiene menos años que yo.",
+    "sentence_en": "My little sister is younger than me.",
+    "sentence_lemmas": ["mi", "hermanita", "tener", "menos", "año", "que", "yo"]
   },
   {
     "order": 4390,

@@ -3,21 +3,13 @@
     { "es": "Tú y yo", "en": "you and I" },
     { "es": "estamos bien.", "en": "we are fine" }
   ],
-  "o38": [
-    { "es": "Mi madre está", "en": "my mother is" },
-    { "es": "en casa.", "en": "at home" }
-  ],
-  "o39": [
-    { "es": "Mi padre quiere", "en": "my father wants" },
-    { "es": "un café.", "en": "a coffee" }
-  ],
   "o40": [
     { "es": "Mi amigo está", "en": "my friend is" },
     { "es": "con mi madre.", "en": "with my mother" }
   ],
   "o41": [
-    { "es": "Mi familia está", "en": "my family is" },
-    { "es": "en casa.", "en": "at home" }
+    { "es": "Mi madre y mi padre", "en": "my mother and my father" },
+    { "es": "son mi familia.", "en": "are my family" }
   ],
   "o44": [
     { "es": "La mujer tiene", "en": "the woman has" },
@@ -48,8 +40,8 @@
     { "es": "en casa.", "en": "at home" }
   ],
   "o63": [
-    { "es": "La leche", "en": "the milk" },
-    { "es": "no es mala.", "en": "is not bad" }
+    { "es": "Un hombre malo", "en": "a bad man" },
+    { "es": "no es mi amigo.", "en": "is not my friend" }
   ],
   "o64": [
     { "es": "Mi casa es", "en": "my house is" },
@@ -136,8 +128,8 @@
     { "es": "muy bonita.", "en": "very pretty" }
   ],
   "o135": [
-    { "es": "El café es", "en": "the coffee is" },
-    { "es": "muy caro.", "en": "very expensive" }
+    { "es": "El carro es muy caro,", "en": "the car is very expensive" },
+    { "es": "no tengo dinero.", "en": "I have no money" }
   ],
   "o136": [
     { "es": "La comida", "en": "the food" },
@@ -261,12 +253,12 @@
     { "es": "en mi familia.", "en": "in my family" }
   ],
   "o191": [
-    { "es": "Mi hijo", "en": "my son" },
-    { "es": "tiene seis años.", "en": "is six years old" }
+    { "es": "Tres más tres", "en": "three plus three" },
+    { "es": "son seis.", "en": "is six" }
   ],
   "o192": [
-    { "es": "Mi hijo", "en": "my son" },
-    { "es": "tiene siete años.", "en": "is seven years old" }
+    { "es": "Cinco más dos", "en": "five plus two" },
+    { "es": "son siete.", "en": "is seven" }
   ],
   "o193": [
     { "es": "Llego a casa", "en": "I get home" },
@@ -597,8 +589,8 @@
     { "es": "muy joven.", "en": "very young" }
   ],
   "o289": [
-    { "es": "Mi hermano es", "en": "my brother is" },
-    { "es": "muy alto.", "en": "very tall" }
+    { "es": "El hombre es más alto", "en": "the man is taller" },
+    { "es": "que el niño.", "en": "than the child" }
   ],
   "o290": [
     { "es": "Mi calle es", "en": "my street is" },
@@ -776,8 +768,8 @@
     { "es": "en el concierto.", "en": "at the concert" }
   ],
   "o602": [
-    { "es": "Mi hermano es", "en": "my brother is" },
-    { "es": "muy inteligente.", "en": "very intelligent" }
+    { "es": "Mi amigo es inteligente,", "en": "my friend is intelligent" },
+    { "es": "sabe mucho.", "en": "he knows a lot" }
   ],
   "o603": [
     { "es": "Mi padre tiene", "en": "my father has" },
@@ -821,8 +813,8 @@
     { "es": "un idioma bonito.", "en": "a beautiful language" }
   ],
   "o615": [
-    { "es": "Mi hermano tiene", "en": "my brother has" },
-    { "es": "una moto nueva.", "en": "a new motorcycle" }
+    { "es": "La moto es pequeña,", "en": "the motorcycle is small" },
+    { "es": "el carro es grande.", "en": "the car is big" }
   ],
   "o616": [
     { "es": "El carro rojo", "en": "the red car" },
@@ -837,16 +829,19 @@
     { "es": "y agua.", "en": "and water" }
   ],
   "o619": [
-    { "es": "Mi abuelo vive", "en": "my grandfather lives" },
-    { "es": "en la ciudad.", "en": "in the city" }
+    { "es": "Mi abuelo", "en": "my grandfather" },
+    { "es": "es el padre", "en": "is the father" },
+    { "es": "de mi padre.", "en": "of my father" }
   ],
   "o620": [
-    { "es": "Mi abuela habla", "en": "my grandmother talks" },
-    { "es": "con mi madre.", "en": "with my mother" }
+    { "es": "Mi abuela", "en": "my grandmother" },
+    { "es": "es la madre", "en": "is the mother" },
+    { "es": "de mi madre.", "en": "of my mother" }
   ],
   "o621": [
-    { "es": "Mi tío trabaja", "en": "my uncle works" },
-    { "es": "en una tienda.", "en": "at a store" }
+    { "es": "Mi tío", "en": "my uncle" },
+    { "es": "es el hermano", "en": "is the brother" },
+    { "es": "de mi padre.", "en": "of my father" }
   ],
   "o623": [
     { "es": "Mi amigo necesita", "en": "my friend needs" },
@@ -910,8 +905,8 @@
     { "es": "trabajo en la tienda.", "en": "I work at the store" }
   ],
   "o640": [
-    { "es": "Mi hermano llega", "en": "my brother arrives" },
-    { "es": "en agosto.", "en": "in August" }
+    { "es": "Agosto tiene", "en": "August has" },
+    { "es": "treinta y un días.", "en": "thirty-one days" }
   ],
   "o641": [
     { "es": "En enero", "en": "in January" },
@@ -934,8 +929,8 @@
     { "es": "tiene cuarenta años.", "en": "is forty years old" }
   ],
   "o647": [
-    { "es": "Mi hijo", "en": "my son" },
-    { "es": "tiene quince años.", "en": "is fifteen years old" }
+    { "es": "Diez más cinco", "en": "ten plus five" },
+    { "es": "son quince.", "en": "is fifteen" }
   ],
   "o648": [
     { "es": "Mi amigo", "en": "my friend" },
@@ -950,8 +945,8 @@
     { "es": "tenemos dieciocho años.", "en": "are eighteen years old" }
   ],
   "o651": [
-    { "es": "Mi abuelo", "en": "my grandfather" },
-    { "es": "tiene sesenta años.", "en": "is sixty years old" }
+    { "es": "Treinta más treinta", "en": "thirty plus thirty" },
+    { "es": "son sesenta.", "en": "is sixty" }
   ],
   "o653": [
     { "es": "Mi madre quiere", "en": "my mother wants" },
@@ -986,8 +981,8 @@
     { "es": "para la sopa.", "en": "for the soup" }
   ],
   "o663": [
-    { "es": "La estación está", "en": "the station is" },
-    { "es": "en el centro.", "en": "downtown" }
+    { "es": "En la estación", "en": "at the station" },
+    { "es": "hay muchos trenes.", "en": "there are many trains" }
   ],
   "o664": [
     { "es": "El metro llega", "en": "the subway arrives" },
@@ -1034,16 +1029,16 @@
     { "es": "es grande.", "en": "is big" }
   ],
   "o675": [
-    { "es": "El ropero es", "en": "the wardrobe is" },
-    { "es": "muy viejo.", "en": "very old" }
+    { "es": "Mi abrigo", "en": "my coat" },
+    { "es": "está en el ropero.", "en": "is in the wardrobe" }
   ],
   "o676": [
     { "es": "Mi hijo lee", "en": "my son reads" },
     { "es": "en la biblioteca.", "en": "in the library" }
   ],
   "o677": [
-    { "es": "El café es", "en": "the coffee is" },
-    { "es": "muy dulce.", "en": "very sweet" }
+    { "es": "El azúcar", "en": "sugar" },
+    { "es": "es muy dulce.", "en": "is very sweet" }
   ],
   "o678": [
     { "es": "Mi padre tiene", "en": "my father has" },
@@ -1063,8 +1058,8 @@
     { "es": "muy delgado.", "en": "very thin" }
   ],
   "o686": [
-    { "es": "Mi casa es", "en": "my house is" },
-    { "es": "muy antigua.", "en": "very old" }
+    { "es": "Un ropero antiguo", "en": "an antique wardrobe" },
+    { "es": "es muy viejo.", "en": "is very old" }
   ],
   "o687": [
     { "es": "El color de mi casa", "en": "the color of my house" },
@@ -1075,8 +1070,8 @@
     { "es": "un pez.", "en": "a fish" }
   ],
   "o691": [
-    { "es": "El menú está", "en": "the menu is" },
-    { "es": "en la mesa.", "en": "on the table" }
+    { "es": "En el menú", "en": "on the menu" },
+    { "es": "hay pizza y sopa.", "en": "there is pizza and soup" }
   ],
   "o692": [
     { "es": "Mi madre trabaja", "en": "my mother works" },
@@ -1092,16 +1087,19 @@
     { "es": "para mi padre.", "en": "for my father" }
   ],
   "o695": [
-    { "es": "Mi mamá cocina", "en": "my mom cooks" },
-    { "es": "muy bien.", "en": "very well" }
+    { "es": "Mi mamá", "en": "my mom" },
+    { "es": "es la madre", "en": "is the mother" },
+    { "es": "de mi hermano.", "en": "of my brother" }
   ],
   "o696": [
-    { "es": "Mi papá trabaja", "en": "my dad works" },
-    { "es": "en un banco.", "en": "at a bank" }
+    { "es": "Mi papá", "en": "my dad" },
+    { "es": "es el padre", "en": "is the father" },
+    { "es": "de mi hermana.", "en": "of my sister" }
   ],
   "o697": [
-    { "es": "Mi primo vive", "en": "my cousin lives" },
-    { "es": "en mi casa.", "en": "in my house" }
+    { "es": "Mi primo", "en": "my cousin" },
+    { "es": "es el hijo", "en": "is the son" },
+    { "es": "de mi tío.", "en": "of my uncle" }
   ],
   "o698": [
     { "es": "Mi mamá compró", "en": "my mom bought" },
@@ -1236,7 +1234,7 @@
   ],
   "o733": [
     { "es": "Mi hermano", "en": "my brother" },
-    { "es": "tiene una novia nueva.", "en": "has a new girlfriend" }
+    { "es": "quiere a su novia.", "en": "loves his girlfriend" }
   ],
   "o734": [
     { "es": "La noticia llegó ayer", "en": "the news arrived yesterday" },
@@ -1265,8 +1263,8 @@
     { "es": "en la tercera casa.", "en": "in the third house" }
   ],
   "o741": [
-    { "es": "Mi hijo llega", "en": "my son arrives" },
-    { "es": "a las once.", "en": "at eleven" }
+    { "es": "Diez más uno", "en": "ten plus one" },
+    { "es": "son once.", "en": "is eleven" }
   ],
   "o742": [
     { "es": "No tengo", "en": "I do not have" },
@@ -1415,12 +1413,12 @@
     { "es": "en la oficina.", "en": "in the office" }
   ],
   "o862": [
-    { "es": "Mi hijo llega", "en": "my son arrives" },
-    { "es": "a las doce.", "en": "at twelve" }
+    { "es": "Diez más dos", "en": "ten plus two" },
+    { "es": "son doce.", "en": "is twelve" }
   ],
   "o863": [
-    { "es": "Mi abuelo", "en": "my grandfather" },
-    { "es": "tiene cincuenta años.", "en": "is fifty years old" }
+    { "es": "Cuarenta más diez", "en": "forty plus ten" },
+    { "es": "son cincuenta.", "en": "is fifty" }
   ],
   "o869": [
     { "es": "Mi abuelo habla", "en": "my grandfather talks" },
@@ -1444,8 +1442,8 @@
     { "es": "visito a mi abuela.", "en": "I visit my grandmother" }
   ],
   "o875": [
-    { "es": "Mi hermano llega", "en": "my brother arrives" },
-    { "es": "en abril.", "en": "in April" }
+    { "es": "Abril viene", "en": "April comes" },
+    { "es": "después de marzo.", "en": "after March" }
   ],
   "o876": [
     { "es": "Aquel hombre", "en": "that man" },
@@ -1476,8 +1474,9 @@
     { "es": "en la cama.", "en": "in the bed" }
   ],
   "o887": [
-    { "es": "Mi esposo trabaja", "en": "my husband works" },
-    { "es": "en un hotel.", "en": "at a hotel" }
+    { "es": "Mi abuelo", "en": "my grandfather" },
+    { "es": "es el esposo", "en": "is the husband" },
+    { "es": "de mi abuela.", "en": "of my grandmother" }
   ],
   "o888": [
     { "es": "¿Qué edad tiene", "en": "how old is" },
@@ -1556,8 +1555,8 @@
     { "es": "el domingo.", "en": "on Sunday" }
   ],
   "o914": [
-    { "es": "Mi hijo", "en": "my son" },
-    { "es": "tiene trece años.", "en": "is thirteen years old" }
+    { "es": "Diez más tres", "en": "ten plus three" },
+    { "es": "son trece.", "en": "is thirteen" }
   ],
   "o915": [
     { "es": "Hay catorce estudiantes", "en": "there are fourteen students" },
@@ -1568,12 +1567,12 @@
     { "es": "tiene diecinueve años.", "en": "is nineteen years old" }
   ],
   "o917": [
-    { "es": "Mi abuelo", "en": "my grandfather" },
-    { "es": "tiene setenta años.", "en": "is seventy years old" }
+    { "es": "Sesenta más diez", "en": "sixty plus ten" },
+    { "es": "son setenta.", "en": "is seventy" }
   ],
   "o918": [
-    { "es": "El libro cuesta", "en": "the book costs" },
-    { "es": "ochenta pesos.", "en": "eighty pesos" }
+    { "es": "Setenta más diez", "en": "seventy plus ten" },
+    { "es": "son ochenta.", "en": "is eighty" }
   ],
   "o919": [
     { "es": "Mi abuela", "en": "my grandmother" },
@@ -1593,8 +1592,8 @@
     { "es": "hay muchas flores.", "en": "there are many flowers" }
   ],
   "o925": [
-    { "es": "En invierno", "en": "in winter" },
-    { "es": "hace mucho frío.", "en": "it is very cold" }
+    { "es": "El invierno viene", "en": "winter comes" },
+    { "es": "después del otoño.", "en": "after autumn" }
   ],
   "o926": [
     { "es": "Comemos en casa", "en": "we eat at home" },
@@ -1649,8 +1648,8 @@
     { "es": "no comen verdura.", "en": "do not eat vegetables" }
   ],
   "o943": [
-    { "es": "El plátano es", "en": "the banana is" },
-    { "es": "una fruta.", "en": "a fruit" }
+    { "es": "El plátano", "en": "the banana" },
+    { "es": "es una fruta amarilla.", "en": "is a yellow fruit" }
   ],
   "o944": [
     { "es": "Mi hijo quiere", "en": "my son wants" },
@@ -1665,8 +1664,8 @@
     { "es": "para la sopa.", "en": "for the soup" }
   ],
   "o948": [
-    { "es": "El tenedor está", "en": "the fork is" },
-    { "es": "en la mesa.", "en": "on the table" }
+    { "es": "Como el arroz", "en": "I eat the rice" },
+    { "es": "con el tenedor.", "en": "with the fork" }
   ],
   "o949": [
     { "es": "Necesito un cuchillo", "en": "I need a knife" },
@@ -1734,8 +1733,8 @@
     { "es": "y necesito una chamarra.", "en": "and I need a jacket" }
   ],
   "o971": [
-    { "es": "La iglesia está", "en": "the church is" },
-    { "es": "en el centro.", "en": "downtown" }
+    { "es": "Voy a la iglesia", "en": "I go to church" },
+    { "es": "el domingo.", "en": "on Sunday" }
   ],
   "o972": [
     { "es": "Voy al supermercado", "en": "I go to the supermarket" },
@@ -2287,15 +2286,18 @@
   ],
   "o1143": [
     { "es": "Mi sobrino", "en": "my nephew" },
-    { "es": "tiene cinco años.", "en": "is five years old" }
+    { "es": "es el hijo", "en": "is the son" },
+    { "es": "de mi hermano.", "en": "of my brother" }
   ],
   "o1144": [
-    { "es": "Mi abuela", "en": "my grandmother" },
-    { "es": "quiere mucho a sus nietos.", "en": "loves her grandchildren very much" }
+    { "es": "Mi primo", "en": "my cousin" },
+    { "es": "es el nieto", "en": "is the grandson" },
+    { "es": "de mi abuela.", "en": "of my grandmother" }
   ],
   "o1145": [
     { "es": "Mi suegro", "en": "my father-in-law" },
-    { "es": "vive en otra ciudad.", "en": "lives in another city" }
+    { "es": "es el padre", "en": "is the father" },
+    { "es": "de mi esposa.", "en": "of my wife" }
   ],
   "o1146": [
     { "es": "Una parte de la ciudad", "en": "a part of the city" },
@@ -3632,8 +3634,9 @@
     { "es": "tiene el talón pequeño.", "en": "has the small heel" }
   ],
   "o2142": [
-    { "es": "El niño", "en": "the boy" },
-    { "es": "tiene un hermano gemelo.", "en": "has a twin brother" }
+    { "es": "Mi hermano gemelo", "en": "my twin brother" },
+    { "es": "y yo tenemos", "en": "and I have" },
+    { "es": "la misma edad.", "en": "the same age" }
   ],
   "o2145": [
     { "es": "Mi compadre trabaja", "en": "my compadre works" },
@@ -4204,22 +4207,23 @@
     { "es": "es muy grande.", "en": "is very big" }
   ],
   "o2318": [
-    { "es": "El bisabuelo", "en": "the great-grandfather" },
-    { "es": "tiene noventa años.", "en": "is ninety years old" }
+    { "es": "Mi bisabuelo", "en": "my great-grandfather" },
+    { "es": "es el abuelo", "en": "is the grandfather" },
+    { "es": "de mi padre.", "en": "of my father" }
   ],
   "o2319": [
-    { "es": "El ahijado", "en": "the godson" },
-    { "es": "de mi tío", "en": "of my uncle" },
-    { "es": "vive aquí.", "en": "lives here" }
+    { "es": "Cuido a mi ahijado", "en": "I look after my godson" },
+    { "es": "como a un hijo.", "en": "like a son" }
   ],
   "o2320": [
-    { "es": "La nuera", "en": "the daughter-in-law" },
-    { "es": "de mi abuela", "en": "of my grandmother" },
-    { "es": "es doctora.", "en": "is a doctor" }
+    { "es": "Mi nuera", "en": "my daughter-in-law" },
+    { "es": "es la esposa", "en": "is the wife" },
+    { "es": "de mi hijo.", "en": "of my son" }
   ],
   "o2321": [
-    { "es": "El yerno", "en": "the son-in-law" },
-    { "es": "ayuda a su suegro.", "en": "helps his father-in-law" }
+    { "es": "Mi yerno", "en": "my son-in-law" },
+    { "es": "es el esposo", "en": "is the husband" },
+    { "es": "de mi hija.", "en": "of my daughter" }
   ],
   "o2322": [
     { "es": "El niño huérfano", "en": "the orphan boy" },
@@ -5102,8 +5106,9 @@
     { "es": "en el puesto de la esquina.", "en": "at the stall on the corner" }
   ],
   "o3283": [
-    { "es": "Su tía vive", "en": "his aunt lives" },
-    { "es": "en una casa grande.", "en": "in a big house" }
+    { "es": "Mi tía", "en": "my aunt" },
+    { "es": "es la hermana", "en": "is the sister" },
+    { "es": "de mi madre.", "en": "of my mother" }
   ],
   "o3286": [
     { "es": "La lista de invitados", "en": "the guest list" },
@@ -5171,8 +5176,9 @@
     { "es": "es mañana.", "en": "is tomorrow" }
   ],
   "o3302": [
-    { "es": "Su esposa trabaja", "en": "his wife works" },
-    { "es": "en una escuela.", "en": "at a school" }
+    { "es": "Mi madre", "en": "my mother" },
+    { "es": "es la esposa", "en": "is the wife" },
+    { "es": "de mi padre.", "en": "of my father" }
   ],
   "o3303": [
     { "es": "Dibujo una figura", "en": "I draw a shape" },
@@ -5468,8 +5474,8 @@
     { "es": "en el parque.", "en": "in the park" }
   ],
   "o3842": [
-    { "es": "El libro cuesta", "en": "the book costs" },
-    { "es": "trescientos pesos.", "en": "three hundred pesos" }
+    { "es": "Doscientos más cien", "en": "two hundred plus one hundred" },
+    { "es": "son trescientos.", "en": "is three hundred" }
   ],
   "o3843": [
     { "es": "Una playera nueva", "en": "a new T-shirt" },
@@ -6003,13 +6009,13 @@
     { "es": "en el edificio.", "en": "in the building" }
   ],
   "o4367": [
-    { "es": "La hija llama", "en": "the daughter calls" },
-    { "es": "a su madre", "en": "her mother" },
-    { "es": "por teléfono.", "en": "on the phone" }
+    { "es": "Mi hermana", "en": "my sister" },
+    { "es": "es la hija", "en": "is the daughter" },
+    { "es": "de mi madre.", "en": "of my mother" }
   ],
   "o4368": [
-    { "es": "¿Dónde vive", "en": "where does she live" },
-    { "es": "tu hermana mayor?", "en": "your older sister?" }
+    { "es": "Mi hermana y mi hermano", "en": "my sister and my brother" },
+    { "es": "son familia.", "en": "are family" }
   ],
   "o4369": [
     { "es": "La niña juega", "en": "the girl plays" },
@@ -6029,32 +6035,39 @@
     { "es": "con mi hermano.", "en": "with my brother" }
   ],
   "o4373": [
-    { "es": "La prima baila", "en": "the female cousin dances" },
-    { "es": "muy bien.", "en": "very well" }
+    { "es": "Mi prima", "en": "my cousin" },
+    { "es": "es la hija", "en": "is the daughter" },
+    { "es": "de mi tía.", "en": "of my aunt" }
   ],
   "o4374": [
-    { "es": "Visito a mi sobrina", "en": "I visit my niece" },
-    { "es": "los sábados.", "en": "on Saturdays" }
+    { "es": "Mi sobrina", "en": "my niece" },
+    { "es": "es la hija", "en": "is the daughter" },
+    { "es": "de mi hermana.", "en": "of my sister" }
   ],
   "o4375": [
-    { "es": "La abuela cuenta un cuento", "en": "the grandmother tells a story" },
-    { "es": "a su nieta.", "en": "to her granddaughter" }
+    { "es": "Mi hermana", "en": "my sister" },
+    { "es": "es la nieta", "en": "is the granddaughter" },
+    { "es": "de mi abuelo.", "en": "of my grandfather" }
   ],
   "o4377": [
-    { "es": "Mañana comemos", "en": "tomorrow we eat" },
-    { "es": "con mi cuñada.", "en": "with my sister-in-law" }
+    { "es": "Mi cuñada", "en": "my sister-in-law" },
+    { "es": "es la esposa", "en": "is the wife" },
+    { "es": "de mi hermano.", "en": "of my brother" }
   ],
   "o4378": [
-    { "es": "La suegra", "en": "the mother-in-law" },
-    { "es": "cocina muy bien.", "en": "cooks very well" }
+    { "es": "Mi suegra", "en": "my mother-in-law" },
+    { "es": "es la madre", "en": "is the mother" },
+    { "es": "de mi esposa.", "en": "of my wife" }
   ],
   "o4379": [
-    { "es": "El abuelito", "en": "grandpa" },
-    { "es": "vive con nosotros.", "en": "lives with us" }
+    { "es": "Mi abuelito", "en": "my grandpa" },
+    { "es": "es el padre", "en": "is the father" },
+    { "es": "de mi mamá.", "en": "of my mom" }
   ],
   "o4380": [
-    { "es": "La abuelita", "en": "granny" },
-    { "es": "cocina para la familia.", "en": "cooks for the family" }
+    { "es": "Mi abuelita", "en": "my granny" },
+    { "es": "es la madre", "en": "is the mother" },
+    { "es": "de mi papá.", "en": "of my dad" }
   ],
   "o4381": [
     { "es": "La vecina vive", "en": "the neighbor lives" },
@@ -6073,12 +6086,12 @@
     { "es": "en la clase.", "en": "in class" }
   ],
   "o4385": [
-    { "es": "El hermanito juega", "en": "the little brother plays" },
-    { "es": "con su pelota.", "en": "with his ball" }
+    { "es": "Mi hermanito", "en": "my little brother" },
+    { "es": "tiene menos años que yo.", "en": "is younger than me" }
   ],
   "o4386": [
-    { "es": "La hermanita dibuja un gato", "en": "the little sister draws a cat" },
-    { "es": "en su cuaderno.", "en": "in her notebook" }
+    { "es": "Mi hermanita", "en": "my little sister" },
+    { "es": "tiene menos años que yo.", "en": "is younger than me" }
   ],
   "o4390": [
     { "es": "El gatito", "en": "the kitten" },
@@ -6193,5 +6206,243 @@
   "o4652": [
     { "es": "¿Puede deletrear su apellido,", "en": "can you spell out your last name" },
     { "es": "por favor?", "en": "please?" }
+  ],
+  "o42": [
+    { "es": "Mi hermano y yo", "en": "my brother and I" },
+    { "es": "somos familia.", "en": "are family" }
+  ],
+  "o110": [
+    { "es": "Mi hermano", "en": "my brother" },
+    { "es": "es el hijo", "en": "is the son" },
+    { "es": "de mi madre.", "en": "of my mother" }
+  ],
+  "o2143": [
+    { "es": "Mi cuñado", "en": "my brother-in-law" },
+    { "es": "es el esposo", "en": "is the husband" },
+    { "es": "de mi hermana.", "en": "of my sister" }
+  ],
+  "o43": [
+    { "es": "Mi padre", "en": "my father" },
+    { "es": "es un hombre.", "en": "is a man" }
+  ],
+  "o45": [
+    { "es": "Mi hermano es un niño,", "en": "my brother is a child" },
+    { "es": "no un hombre.", "en": "not a man" }
+  ],
+  "o60": [
+    { "es": "El hombre es grande", "en": "the man is big" },
+    { "es": "y el niño no.", "en": "and the child is not" }
+  ],
+  "o61": [
+    { "es": "Mi casa es pequeña,", "en": "my house is small" },
+    { "es": "la ciudad es grande.", "en": "the city is big" }
+  ],
+  "o68": [
+    { "es": "Mi casa es vieja,", "en": "my house is old" },
+    { "es": "no es nueva.", "en": "it is not new" }
+  ],
+  "o69": [
+    { "es": "Trabajo mucho", "en": "I work a lot" },
+    { "es": "y estoy cansado.", "en": "and I am tired" }
+  ],
+  "o106": [
+    { "es": "Mi hermano y yo", "en": "my brother and I" },
+    { "es": "somos dos.", "en": "are two" }
+  ],
+  "o108": [
+    { "es": "Dos y tres", "en": "two and three" },
+    { "es": "son cinco.", "en": "are five" }
+  ],
+  "o109": [
+    { "es": "Cinco y cinco", "en": "five and five" },
+    { "es": "son diez.", "en": "are ten" }
+  ],
+  "o112": [
+    { "es": "El perro es", "en": "the dog is" },
+    { "es": "amigo del hombre.", "en": "man's friend" }
+  ],
+  "o113": [
+    { "es": "El gato es pequeño", "en": "the cat is small" },
+    { "es": "y bebe leche.", "en": "and drinks milk" }
+  ],
+  "o116": [
+    { "es": "Estoy cansado", "en": "I am tired" },
+    { "es": "y voy a la cama.", "en": "and I go to bed" }
+  ],
+  "o119": [
+    { "es": "En la tienda", "en": "in the shop" },
+    { "es": "hay pan y leche.", "en": "there is bread and milk" }
+  ],
+  "o122": [
+    { "es": "Hablo con mi madre", "en": "I talk with my mother" },
+    { "es": "por teléfono.", "en": "on the phone" }
+  ],
+  "o127": [
+    { "es": "Un libro", "en": "a book" },
+    { "es": "tiene muchas palabras.", "en": "has many words" }
+  ],
+  "o140": [
+    { "es": "No es fácil,", "en": "it is not easy" },
+    { "es": "es muy difícil.", "en": "it is very difficult" }
+  ],
+  "o142": [
+    { "es": "Estoy enfermo", "en": "I am sick" },
+    { "es": "y no voy a la escuela.", "en": "and I do not go to school" }
+  ],
+  "o609": [
+    { "es": "El huevo", "en": "the egg" },
+    { "es": "es blanco y amarillo.", "en": "is white and yellow" }
+  ],
+  "o610": [
+    { "es": "En el examen", "en": "in the exam" },
+    { "es": "leo y escribo mucho.", "en": "I read and write a lot" }
+  ],
+  "o622": [
+    { "es": "Diez más diez más diez", "en": "ten plus ten plus ten" },
+    { "es": "son treinta.", "en": "is thirty" }
+  ],
+  "o634": [
+    { "es": "Bebo chocolate caliente", "en": "I drink hot chocolate" },
+    { "es": "con leche.", "en": "with milk" }
+  ],
+  "o645": [
+    { "es": "Julio y agosto", "en": "July and August" },
+    { "es": "tienen treinta y un días.", "en": "have thirty-one days" }
+  ],
+  "o679": [
+    { "es": "La dirección dice", "en": "the address says" },
+    { "es": "dónde está mi casa.", "en": "where my house is" }
+  ],
+  "o683": [
+    { "es": "El hielo", "en": "ice" },
+    { "es": "está muy frío.", "en": "is very cold" }
+  ],
+  "o688": [
+    { "es": "El azul", "en": "blue" },
+    { "es": "es un color frío.", "en": "is a cold color" }
+  ],
+  "o690": [
+    { "es": "Hoy llueve", "en": "today it rains" },
+    { "es": "y necesito un paraguas.", "en": "and I need an umbrella" }
+  ],
+  "o382": [
+    { "es": "El estudiante lee libros", "en": "the student reads books" },
+    { "es": "en la escuela.", "en": "at school" }
+  ],
+  "o283": [
+    { "es": "En el concierto", "en": "at the concert" },
+    { "es": "hay mucha música.", "en": "there is a lot of music" }
+  ],
+  "o244": [
+    { "es": "El médico", "en": "the doctor" },
+    { "es": "ayuda a los enfermos.", "en": "helps the sick" }
+  ],
+  "o414": [
+    { "es": "Mi camisa está sucia,", "en": "my shirt is dirty" },
+    { "es": "no está limpia.", "en": "it is not clean" }
+  ],
+  "o388": [
+    { "es": "Con el viento fuerte", "en": "with the strong wind" },
+    { "es": "necesito un abrigo.", "en": "I need a coat" }
+  ],
+  "o870": [
+    { "es": "No estoy dentro de la casa,", "en": "I am not inside the house" },
+    { "es": "estoy fuera.", "en": "I am outside" }
+  ],
+  "o899": [
+    { "es": "El rojo y el blanco", "en": "red and white" },
+    { "es": "dan rosa.", "en": "make pink" }
+  ],
+  "o906": [
+    { "es": "Mi madre está casada", "en": "my mother is married" },
+    { "es": "con mi padre.", "en": "to my father" }
+  ],
+  "o920": [
+    { "es": "Febrero viene", "en": "February comes" },
+    { "es": "después de enero.", "en": "after January" }
+  ],
+  "o924": [
+    { "es": "El otoño viene", "en": "autumn comes" },
+    { "es": "después del verano.", "en": "after summer" }
+  ],
+  "o928": [
+    { "es": "La boca", "en": "the mouth" },
+    { "es": "está debajo de la nariz.", "en": "is below the nose" }
+  ],
+  "o950": [
+    { "es": "Por la mañana", "en": "in the morning" },
+    { "es": "desayuno pan y café.", "en": "I have bread and coffee for breakfast" }
+  ],
+  "o951": [
+    { "es": "El vino", "en": "wine" },
+    { "es": "es de uva.", "en": "is made from grapes" }
+  ],
+  "o952": [
+    { "es": "El limón es verde,", "en": "the lime is green" },
+    { "es": "no es dulce.", "en": "it is not sweet" }
+  ],
+  "o970": [
+    { "es": "Los tenis", "en": "sneakers" },
+    { "es": "son zapatos para correr.", "en": "are shoes for running" }
+  ],
+  "o982": [
+    { "es": "Como carne de cerdo", "en": "I eat pork" },
+    { "es": "con arroz.", "en": "with rice" }
+  ],
+  "o986": [
+    { "es": "El sol es amarillo", "en": "the sun is yellow" },
+    { "es": "y da calor.", "en": "and gives heat" }
+  ],
+  "o988": [
+    { "es": "Con la lluvia", "en": "with the rain" },
+    { "es": "hay agua en la calle.", "en": "there is water in the street" }
+  ],
+  "o996": [
+    { "es": "Escribo mi nombre", "en": "I write my name" },
+    { "es": "con una pluma.", "en": "with a pen" }
+  ],
+  "o1009": [
+    { "es": "El francés y el español", "en": "French and Spanish" },
+    { "es": "son idiomas.", "en": "are languages" }
+  ],
+  "o1019": [
+    { "es": "Nos vestimos", "en": "we get dressed" },
+    { "es": "con ropa limpia.", "en": "in clean clothes" }
+  ],
+  "o2141": [
+    { "es": "Mi hermana", "en": "my sister" },
+    { "es": "quiere a su novio.", "en": "loves her boyfriend" }
+  ],
+  "o2771": [
+    { "es": "Una enchilada", "en": "an enchilada" },
+    { "es": "es una tortilla con pollo.", "en": "is a tortilla with chicken" }
+  ],
+  "o3284": [
+    { "es": "Tengo sed", "en": "I am thirsty" },
+    { "es": "y quiero agua.", "en": "and I want water" }
+  ],
+  "o3364": [
+    { "es": "Cien más cien", "en": "one hundred plus one hundred" },
+    { "es": "son doscientos.", "en": "is two hundred" }
+  ],
+  "o3365": [
+    { "es": "Doscientos más doscientos más cien", "en": "two hundred plus two hundred plus one hundred" },
+    { "es": "son quinientos.", "en": "is five hundred" }
+  ],
+  "o652": [
+    { "es": "Con el calor", "en": "when it is hot" },
+    { "es": "bebo mucha agua.", "en": "I drink a lot of water" }
+  ],
+  "o709": [
+    { "es": "El martes viene", "en": "Tuesday comes" },
+    { "es": "después del lunes.", "en": "after Monday" }
+  ],
+  "o752": [
+    { "es": "Junio viene", "en": "June comes" },
+    { "es": "después de mayo.", "en": "after May" }
+  ],
+  "o2803": [
+    { "es": "El rojo y el amarillo", "en": "red and yellow" },
+    { "es": "dan anaranjado.", "en": "make orange" }
   ]
 }
