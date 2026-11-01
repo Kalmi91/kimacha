@@ -119,9 +119,9 @@
     "lemma": "fundamento",
     "es": "el fundamento",
     "en": "basis, grounds",
-    "sentence_es": "Tu idea no tiene fundamento.",
-    "sentence_en": "Your idea has no basis.",
-    "sentence_lemmas": ["tu", "idea", "no", "tener", "fundamento"]
+    "sentence_es": "Tu idea no tiene fundamento: no hay datos ni pruebas.",
+    "sentence_en": "Your idea has no basis: there is no data and no proof.",
+    "sentence_lemmas": ["tu", "idea", "no", "tener", "fundamento", "no", "haber", "dato", "ni", "prueba"]
   },
   {
     "order": 1442,
@@ -362,9 +362,9 @@
     "lemma": "decreto",
     "es": "el decreto",
     "en": "decree",
-    "sentence_es": "El presidente firma un decreto nuevo.",
-    "sentence_en": "The president signs a new decree.",
-    "sentence_lemmas": ["el", "presidente", "firmar", "un", "decreto", "nuevo"]
+    "sentence_es": "Un decreto es una orden oficial del presidente.",
+    "sentence_en": "A decree is an official order from the president.",
+    "sentence_lemmas": ["un", "decreto", "ser", "un", "orden", "oficial", "de", "presidente"]
   },
   {
     "order": 2013,
@@ -2191,9 +2191,9 @@
     "lemma": "órgano",
     "es": "el órgano",
     "en": "organ, governing body",
-    "sentence_es": "El corazón es un órgano importante.",
-    "sentence_en": "The heart is an important organ.",
-    "sentence_lemmas": ["el", "corazón", "ser", "un", "órgano", "importante"]
+    "sentence_es": "Un órgano es una parte del cuerpo: el corazón, por ejemplo.",
+    "sentence_en": "An organ is a part of the body: the heart, for example.",
+    "sentence_lemmas": ["un", "órgano", "ser", "un", "parte", "de", "cuerpo", "el", "corazón", "por", "ejemplo"]
   },
   {
     "order": 3222,
@@ -2775,9 +2775,9 @@
     "lemma": "fallo",
     "es": "el fallo",
     "en": "glitch, slip; ruling",
-    "sentence_es": "Hay un fallo en el sistema.",
-    "sentence_en": "There is a fault in the system.",
-    "sentence_lemmas": ["haber", "un", "fallo", "en", "el", "sistema"]
+    "sentence_es": "Hay un fallo en el sistema: la computadora no abre el programa.",
+    "sentence_en": "There is a glitch in the system: the computer does not open the program.",
+    "sentence_lemmas": ["haber", "un", "fallo", "en", "el", "sistema", "el", "computadora", "no", "abrir", "el", "programa"]
   },
   {
     "order": 3818,
