@@ -85,6 +85,28 @@ describe('EasySentenceCard (build-the-sentence)', () => {
     expect(r.getAllByTestId('sentence-tile-wrong')).toHaveLength(1);
   });
 
+  // FB540: "when the sentence is right, the word is right, the UI should turn green".
+  const fill = (el: { props: { style?: unknown } }) => {
+    const flat = ([] as unknown[]).concat(el.props.style).flat(Infinity) as ({ backgroundColor?: string } | false | undefined)[];
+    return flat.reduce<string | undefined>((bg, s) => (s && s.backgroundColor ? s.backgroundColor : bg), undefined);
+  };
+
+  it('a right build: every tile turns green after the check (none before it)', () => {
+    const r = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    for (const w of props.targetWords) fireEvent.press(r.getAllByText(w)[0]);
+    expect(r.queryAllByTestId('sentence-tile-right')).toHaveLength(0);
+    fireEvent.press(r.getByText('Check'));
+    const green = r.getAllByTestId('sentence-tile-right');
+    expect(green).toHaveLength(5);
+    expect(green.every((t) => fill(t) === '#22C55E')).toBe(true);
+  });
+
+  it('a wrong build: the words in their right place are green, the wrong one red', () => {
+    const r = buildAndCheck(['el', 'libro', 'los', 'la', 'mesa']);
+    expect(r.getAllByTestId('sentence-tile-right').map((t) => within(t).getByText(/./).props.children)).toEqual(['el', 'libro', 'la', 'mesa']);
+    expect(r.getAllByTestId('sentence-tile-wrong')).toHaveLength(1);
+  });
+
   it('tapping a placed tile returns it to the bank', () => {
     const { getAllByText } = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
     fireEvent.press(getAllByText('libro')[0]);
@@ -109,6 +131,20 @@ describe('TypedSentenceCard (type-it)', () => {
     expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(true, 'el libro y la mesa');
+  });
+
+  // FB540: a right sentence turns the field green; a wrong one does not.
+  it('a right sentence turns the field green, a wrong one leaves it as it was', () => {
+    const bg = (style: unknown) =>
+      (([] as unknown[]).concat(style).flat(Infinity) as ({ backgroundColor?: string } | false | undefined)[]).reduce<string | undefined>((b, s) => (s && s.backgroundColor ? s.backgroundColor : b), undefined);
+    const right = render(<TypedSentenceCard {...props} onResult={jest.fn()} />);
+    fireEvent.changeText(right.getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
+    fireEvent.press(right.getByText('✓ Check'));
+    expect(bg(right.getByPlaceholderText('Type the sentence').props.style)).toBe('#22C55E');
+    const wrong = render(<TypedSentenceCard {...props} onResult={jest.fn()} />);
+    fireEvent.changeText(wrong.getByPlaceholderText('Type the sentence'), 'el gato');
+    fireEvent.press(wrong.getByText('✓ Check'));
+    expect(bg(wrong.getByPlaceholderText('Type the sentence').props.style)).not.toBe('#22C55E');
   });
 
   it('a wrong answer shows the correct sentence and can be retried by editing', () => {

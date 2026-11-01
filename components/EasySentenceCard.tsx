@@ -3,6 +3,7 @@ import { StyleSheet, View, Pressable } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
+import { ON_FILL } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, Card } from '@/components/grammar/Brutal';
@@ -97,6 +98,12 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   const bad = (pos: number) => !!misplaced?.[pos];
   const badBox = { backgroundColor: diff.wrong.backgroundColor };
   const badText = { color: diff.wrong.color, textDecorationLine: 'line-through' as const };
+  // FB540 ("when the sentence is right, the word is right, the UI should turn green"): after the check every tile in its
+  // right place is green (all of them on a right build); dark text on the fill, as on the result badge (7.8:1).
+  const good = (pos: number) => result !== null && !bad(pos);
+  const goodBox = { backgroundColor: colors.successFill };
+  const goodText = { color: ON_FILL };
+  const tileId = (pos: number) => (bad(pos) ? 'sentence-tile-wrong' : good(pos) ? 'sentence-tile-right' : undefined);
 
   return (
     <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
@@ -109,12 +116,12 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
           <View style={styles.wordRow}>
             {placed.map((bankIdx, pos) => (
               g.brutal ? (
-                <BrutalBox key={`placed-${bankIdx}-${pos}`} testID={bad(pos) ? 'sentence-tile-wrong' : undefined} fill="b" offset={2} boxStyle={[styles.brutalChip, bad(pos) && badBox]} onPress={() => removeWord(pos)}>
-                  <Text style={[styles.chipText, { color: g.onB }, bad(pos) && badText]}>{bank[bankIdx]}</Text>
+                <BrutalBox key={`placed-${bankIdx}-${pos}`} testID={tileId(pos)} fill="b" offset={2} boxStyle={[styles.brutalChip, bad(pos) && badBox, good(pos) && goodBox]} onPress={() => removeWord(pos)}>
+                  <Text style={[styles.chipText, { color: g.onB }, bad(pos) && badText, good(pos) && goodText]}>{bank[bankIdx]}</Text>
                 </BrutalBox>
               ) : (
-              <Pressable key={`placed-${bankIdx}-${pos}`} testID={bad(pos) ? 'sentence-tile-wrong' : undefined} style={[styles.wordChip, styles.placedChip, bad(pos) && badBox]} onPress={() => removeWord(pos)}>
-                <Text style={[styles.chipText, bad(pos) && badText]}>{bank[bankIdx]}</Text>
+              <Pressable key={`placed-${bankIdx}-${pos}`} testID={tileId(pos)} style={[styles.wordChip, styles.placedChip, bad(pos) && badBox, good(pos) && goodBox]} onPress={() => removeWord(pos)}>
+                <Text style={[styles.chipText, bad(pos) && badText, good(pos) && goodText]}>{bank[bankIdx]}</Text>
               </Pressable>
               )
             ))}

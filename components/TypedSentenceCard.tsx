@@ -3,6 +3,7 @@ import { Pressable, ScrollView, StyleSheet, TextInput, Keyboard, View } from 're
 import { Text } from '@/components/KText';
 import { speak, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
+import { ON_FILL } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, Card } from '@/components/grammar/Brutal';
@@ -183,6 +184,8 @@ export default function TypedSentenceCard({
               { color: colors.text, borderColor: result === 'correct' ? colors.successFill : result === 'wrong' ? colors.danger : colors.tabIconDefault },
               themedInputStyle(g),
               g.brutal && result && { borderColor: result === 'correct' ? colors.successFill : colors.danger },
+              // FB540: a right sentence turns the field green (dark text on the fill, as on the result badge).
+              result === 'correct' && { backgroundColor: colors.successFill, color: ON_FILL },
             ]}
             placeholder={s.card.typeSentence}
             placeholderTextColor={colors.tabIconDefault}
