@@ -592,9 +592,9 @@
     "lemma": "posibilidad",
     "es": "la posibilidad",
     "en": "possibility",
-    "sentence_es": "Habría otra posibilidad.",
-    "sentence_en": "There would be another possibility.",
-    "sentence_lemmas": ["haber", "otro", "posibilidad"]
+    "sentence_es": "Hay posibilidad de lluvia esta tarde.",
+    "sentence_en": "There is a possibility of rain this afternoon.",
+    "sentence_lemmas": ["haber", "posibilidad", "de", "lluvia", "este", "tarde"]
   },
   {
     "order": 366,
@@ -1035,9 +1035,9 @@
     "lemma": "privado",
     "es": "privado",
     "en": "private",
-    "sentence_es": "Esta información es privada.",
-    "sentence_en": "This information is private.",
-    "sentence_lemmas": ["este", "información", "ser", "privado"]
+    "sentence_es": "Mi recámara es privada: nadie entra sin permiso.",
+    "sentence_en": "My bedroom is private: nobody comes in without permission.",
+    "sentence_lemmas": ["mi", "recámara", "ser", "privado", "nadie", "entrar", "sin", "permiso"]
   },
   {
     "order": 427,
@@ -1112,9 +1112,9 @@
     "lemma": "real",
     "es": "real",
     "en": "real",
-    "sentence_es": "Esta historia es real.",
-    "sentence_en": "This story is real.",
-    "sentence_lemmas": ["este", "historia", "ser", "real"]
+    "sentence_es": "Esta flor es real, no es de plástico.",
+    "sentence_en": "This flower is real, it is not made of plastic.",
+    "sentence_lemmas": ["este", "flor", "ser", "real", "no", "ser", "de", "plástico"]
   },
   {
     "order": 434,
@@ -1425,9 +1425,9 @@
     "lemma": "gasolina",
     "es": "la gasolina",
     "en": "gasoline",
-    "sentence_es": "El carro necesita gasolina.",
-    "sentence_en": "The car needs gasoline.",
-    "sentence_lemmas": ["el", "carro", "necesitar", "gasolina"]
+    "sentence_es": "El carro funciona con gasolina.",
+    "sentence_en": "The car runs on gasoline.",
+    "sentence_lemmas": ["el", "carro", "funcionar", "con", "gasolina"]
   },
   {
     "order": 789,
@@ -1559,9 +1559,9 @@
     "lemma": "mojado",
     "es": "mojado",
     "en": "wet",
-    "sentence_es": "La ropa está mojada.",
-    "sentence_en": "The clothes are wet.",
-    "sentence_lemmas": ["el", "ropa", "estar", "mojado"]
+    "sentence_es": "Llueve mucho y llego mojado a casa.",
+    "sentence_en": "It rains a lot and I get home wet.",
+    "sentence_lemmas": ["llover", "mucho", "y", "llegar", "mojado", "a", "casa"]
   },
   {
     "order": 804,
@@ -2732,9 +2732,9 @@
     "lemma": "dato",
     "es": "el dato",
     "en": "piece of data, fact",
-    "sentence_es": "Necesito un dato más.",
-    "sentence_en": "I need one more piece of data.",
-    "sentence_lemmas": ["necesitar", "un", "dato", "más"]
+    "sentence_es": "Escribo mis datos: nombre, edad y teléfono.",
+    "sentence_en": "I write down my details: name, age and phone number.",
+    "sentence_lemmas": ["escribir", "mi", "dato", "nombre", "edad", "y", "teléfono"]
   },
   {
     "order": 1266,
@@ -2743,9 +2743,9 @@
     "lemma": "defecto",
     "es": "el defecto",
     "en": "flaw, defect",
-    "sentence_es": "Todos tenemos algún defecto.",
-    "sentence_en": "We all have some flaw.",
-    "sentence_lemmas": ["todo", "tener", "alguno", "defecto"]
+    "sentence_es": "Mi carro nuevo tiene un defecto en la puerta.",
+    "sentence_en": "My new car has a defect in the door.",
+    "sentence_lemmas": ["mi", "carro", "nuevo", "tener", "un", "defecto", "en", "el", "puerta"]
   },
   {
     "order": 1267,
@@ -2821,9 +2821,9 @@
     "lemma": "elección",
     "es": "la elección",
     "en": "choice; election",
-    "sentence_es": "Es una buena elección.",
-    "sentence_en": "It is a good choice.",
-    "sentence_lemmas": ["ser", "un", "bueno", "elección"]
+    "sentence_es": "Entre el rojo y el azul, mi elección es el azul.",
+    "sentence_en": "Between the red and the blue one, my choice is the blue one.",
+    "sentence_lemmas": ["entre", "el", "rojo", "y", "el", "azul", "mi", "elección", "ser", "el", "azul"]
   },
   {
     "order": 1274,
@@ -3599,9 +3599,9 @@
     "lemma": "tibio",
     "es": "tibio",
     "en": "lukewarm",
-    "sentence_es": "El agua está tibia.",
-    "sentence_en": "The water is lukewarm.",
-    "sentence_lemmas": ["el", "agua", "estar", "tibio"]
+    "sentence_es": "El agua tibia no está fría ni caliente.",
+    "sentence_en": "Lukewarm water is neither cold nor hot.",
+    "sentence_lemmas": ["el", "agua", "tibio", "no", "estar", "frío", "ni", "caliente"]
   },
   {
     "order": 1632,
@@ -4962,9 +4962,9 @@
     "lemma": "auténtico",
     "es": "auténtico",
     "en": "authentic, genuine",
-    "sentence_es": "Esta comida es auténtica.",
-    "sentence_en": "This food is authentic.",
-    "sentence_lemmas": ["este", "comida", "ser", "auténtico"]
+    "sentence_es": "Este billete es auténtico, no es falso.",
+    "sentence_en": "This banknote is authentic, it is not fake.",
+    "sentence_lemmas": ["este", "billete", "ser", "auténtico", "no", "ser", "falso"]
   },
   {
     "order": 1905,
@@ -5369,9 +5369,9 @@
     "lemma": "excusado",
     "es": "el excusado",
     "en": "toilet (fixture)",
-    "sentence_es": "El excusado está limpio.",
-    "sentence_en": "The toilet is clean.",
-    "sentence_lemmas": ["el", "excusado", "estar", "limpio"]
+    "sentence_es": "El excusado está en el baño, junto al lavabo.",
+    "sentence_en": "The toilet is in the bathroom, next to the sink.",
+    "sentence_lemmas": ["el", "excusado", "estar", "en", "el", "baño", "junto", "a", "lavabo"]
   },
   {
     "order": 2118,
@@ -5623,9 +5623,9 @@
     "lemma": "pegajoso",
     "es": "pegajoso",
     "en": "sticky",
-    "sentence_es": "El caramelo es pegajoso.",
-    "sentence_en": "The candy is sticky.",
-    "sentence_lemmas": ["el", "caramelo", "ser", "pegajoso"]
+    "sentence_es": "El caramelo es pegajoso: se pega a los dedos.",
+    "sentence_en": "The candy is sticky: it sticks to your fingers.",
+    "sentence_lemmas": ["el", "caramelo", "ser", "pegajoso", "se", "pegar", "a", "el", "dedo"]
   },
   {
     "order": 2215,
@@ -5645,9 +5645,9 @@
     "lemma": "podrido",
     "es": "podrido",
     "en": "rotten",
-    "sentence_es": "La manzana está podrida.",
-    "sentence_en": "The apple is rotten.",
-    "sentence_lemmas": ["el", "manzana", "estar", "podrido"]
+    "sentence_es": "Una manzana podrida está negra, no se puede comer.",
+    "sentence_en": "A rotten apple is black, you cannot eat it.",
+    "sentence_lemmas": ["un", "manzana", "podrido", "estar", "negro", "no", "se", "poder", "comer"]
   },
   {
     "order": 2219,
@@ -7063,9 +7063,9 @@
     "lemma": "cobarde",
     "es": "cobarde",
     "en": "cowardly",
-    "sentence_es": "El perro es cobarde.",
-    "sentence_en": "The dog is cowardly.",
-    "sentence_lemmas": ["el", "perro", "ser", "cobarde"]
+    "sentence_es": "Una persona cobarde corre cuando tiene miedo.",
+    "sentence_en": "A cowardly person runs away when they are afraid.",
+    "sentence_lemmas": ["un", "persona", "cobarde", "correr", "cuando", "tener", "miedo"]
   },
   {
     "order": 2508,
@@ -13304,9 +13304,9 @@
     "lemma": "indicar",
     "es": "indicar",
     "en": "to signal; to point to",
-    "sentence_es": "El mapa indica el camino.",
-    "sentence_en": "The map shows the way.",
-    "sentence_lemmas": ["el", "mapa", "indicar", "el", "camino"]
+    "sentence_es": "La señal indica dónde está la salida.",
+    "sentence_en": "The sign shows where the exit is.",
+    "sentence_lemmas": ["el", "señal", "indicar", "dónde", "estar", "el", "salida"]
   },
   {
     "order": 3692,
@@ -13843,9 +13843,9 @@
     "lemma": "consomé",
     "es": "el consomé",
     "en": "clear meat broth",
-    "sentence_es": "El consomé es caliente.",
-    "sentence_en": "The consommé is hot.",
-    "sentence_lemmas": ["el", "consomé", "ser", "caliente"]
+    "sentence_es": "El consomé es un caldo caliente de pollo.",
+    "sentence_en": "Consommé is a hot chicken broth.",
+    "sentence_lemmas": ["el", "consomé", "ser", "un", "caldo", "caliente", "de", "pollo"]
   },
   {
     "order": 3916,
@@ -14008,9 +14008,9 @@
     "lemma": "berenjena",
     "es": "la berenjena",
     "en": "eggplant",
-    "sentence_es": "La berenjena es morada.",
-    "sentence_en": "The eggplant is purple.",
-    "sentence_lemmas": ["el", "berenjena", "ser", "morado"]
+    "sentence_es": "La berenjena es una verdura morada y larga.",
+    "sentence_en": "The eggplant is a long, purple vegetable.",
+    "sentence_lemmas": ["el", "berenjena", "ser", "un", "verdura", "morado", "y", "largo"]
   },
   {
     "order": 3939,
@@ -14569,9 +14569,9 @@
     "lemma": "sanitario",
     "es": "el sanitario",
     "en": "restroom",
-    "sentence_es": "¿Dónde está el sanitario?",
-    "sentence_en": "Where is the restroom?",
-    "sentence_lemmas": ["dónde", "estar", "el", "sanitario"]
+    "sentence_es": "En el sanitario me lavo las manos.",
+    "sentence_en": "In the restroom I wash my hands.",
+    "sentence_lemmas": ["en", "el", "sanitario", "me", "lavarse", "el", "mano"]
   },
   {
     "order": 4022,
@@ -14701,9 +14701,9 @@
     "lemma": "cemento",
     "es": "el cemento",
     "en": "cement",
-    "sentence_es": "El cemento es gris.",
-    "sentence_en": "Cement is gray.",
-    "sentence_lemmas": ["el", "cemento", "ser", "gris"]
+    "sentence_es": "Mezclo cemento con arena y agua para hacer una pared.",
+    "sentence_en": "I mix cement with sand and water to make a wall.",
+    "sentence_lemmas": ["mezclar", "cemento", "con", "arena", "y", "agua", "para", "hacer", "un", "pared"]
   },
   {
     "order": 4038,
@@ -14745,9 +14745,9 @@
     "lemma": "carbón",
     "es": "el carbón",
     "en": "charcoal",
-    "sentence_es": "El carbón es negro.",
-    "sentence_en": "Charcoal is black.",
-    "sentence_lemmas": ["el", "carbón", "ser", "negro"]
+    "sentence_es": "Para hacer carne asada, usamos carbón.",
+    "sentence_en": "To make grilled meat, we use charcoal.",
+    "sentence_lemmas": ["para", "hacer", "carne", "asado", "usar", "carbón"]
   },
   {
     "order": 4043,
@@ -15207,9 +15207,9 @@
     "lemma": "calzones",
     "es": "los calzones",
     "en": "underpants",
-    "sentence_es": "Los calzones son blancos.",
-    "sentence_en": "The underpants are white.",
-    "sentence_lemmas": ["el", "calzones", "ser", "blanco"]
+    "sentence_es": "Los calzones se usan debajo del pantalón.",
+    "sentence_en": "Underpants are worn under the pants.",
+    "sentence_lemmas": ["el", "calzones", "se", "usar", "debajo", "de", "pantalón"]
   },
   {
     "order": 4130,
@@ -15482,9 +15482,9 @@
     "lemma": "moretón",
     "es": "el moretón",
     "en": "bruise",
-    "sentence_es": "Tengo un moretón en la mano.",
-    "sentence_en": "I have a bruise on my hand.",
-    "sentence_lemmas": ["tener", "un", "moretón", "en", "el", "mano"]
+    "sentence_es": "Después de un golpe, el moretón se pone morado.",
+    "sentence_en": "After a blow, the bruise turns purple.",
+    "sentence_lemmas": ["después", "de", "un", "golpe", "el", "moretón", "se", "poner", "morado"]
   },
   {
     "order": 4175,
@@ -16043,9 +16043,9 @@
     "lemma": "bloqueado",
     "es": "bloqueado",
     "en": "locked",
-    "sentence_es": "El teléfono está bloqueado.",
-    "sentence_en": "The phone is locked.",
-    "sentence_lemmas": ["el", "teléfono", "estar", "bloqueado"]
+    "sentence_es": "Mi teléfono está bloqueado y necesito el código.",
+    "sentence_en": "My phone is locked and I need the code.",
+    "sentence_lemmas": ["mi", "teléfono", "estar", "bloqueado", "y", "necesitar", "el", "código"]
   },
   {
     "order": 4272,
@@ -16230,9 +16230,9 @@
     "lemma": "chapulín",
     "es": "el chapulín",
     "en": "grasshopper",
-    "sentence_es": "Los chapulines son una comida mexicana.",
-    "sentence_en": "Grasshoppers are a Mexican food.",
-    "sentence_lemmas": ["el", "chapulín", "ser", "un", "comida", "mexicano"]
+    "sentence_es": "El chapulín es un animal pequeño que salta mucho.",
+    "sentence_en": "The grasshopper is a small animal that jumps a lot.",
+    "sentence_lemmas": ["el", "chapulín", "ser", "un", "animal", "pequeño", "que", "saltar", "mucho"]
   },
   {
     "order": 4298,
@@ -16736,9 +16736,9 @@
     "lemma": "encendido",
     "es": "encendido",
     "en": "switched on",
-    "sentence_es": "El teléfono está encendido.",
-    "sentence_en": "The phone is switched on.",
-    "sentence_lemmas": ["el", "teléfono", "estar", "encendido"]
+    "sentence_es": "Cuando la luz está encendida, veo todo en la recámara.",
+    "sentence_en": "When the light is on, I see everything in the bedroom.",
+    "sentence_lemmas": ["cuando", "el", "luz", "estar", "encendido", "ver", "todo", "en", "el", "recámara"]
   },
   {
     "order": 4398,
