@@ -15,7 +15,7 @@ import { pcicItemsForLevel, findPcicItem, type PcicLevel, type PcicTarget } from
 import { gradePcicAnswer, gradeSentenceAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, mixNewCards, autoNewTopUp, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -197,7 +197,11 @@ export function usePcicSession() {
     setAllCards(new Map(cards.map((c) => [c.itemId, c])));
     // Card-level resume: the saved order and the "again" timers are put back on the rebuilt queue (invalid after a day change / level change).
     const resume = await loadLearnResume(db);
-    setQueue(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl));
+    const resumed = mixNewCards(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl), day);
+    // FB535: reviews left with the new-word budget used up: +10 by itself (lib/pcicSession.ts autoNewTopUp).
+    const topUp = autoNewTopUp(resumed, cards, pcicIntroOrder(newOrder), day, { limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday });
+    if (topUp) await db.setPcicNewBonus(topUp.bonus, day);
+    setQueue(topUp ? mixNewCards([...resumed, ...topUp.fresh], day) : resumed);
     if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
     setTypedAnswer('');
     setGrade(null);
@@ -206,7 +210,7 @@ export function usePcicSession() {
     setSessionAgain(0);
     setLastGraded(null);
     setSentenceCard(null);
-    setPcicBonus(bonus);
+    setPcicBonus(topUp ? topUp.bonus : bonus);
     setLoading(false);
     setLoadSeq((n) => n + 1);
     // setTypedAnswer is listed because the React Compiler infers it as a
@@ -331,10 +335,26 @@ export function usePcicSession() {
     return next;
   };
 
+  // FB535: the new-word budget ran out while reviews are left: +10 by itself, one at a time
+  // (lib/pcicSession.ts autoNewTopUp + mixNewCards). `cards` already holds the card just graded.
+  const topUpNew = (queueAfter: Sm2Card[], cards: Map<string, Sm2Card>) => {
+    const activeCards = [...cards.values()];
+    const introducedAllLevels = [...activeCards, ...allLevelCards.filter((c) => !cards.has(c.itemId) && findPcicItem(c.itemId) !== undefined)].filter((c) => c.introducedAt === today).length;
+    const introducedThisLevel = activeCards.filter((c) => c.introducedAt === today).length;
+    const top = autoNewTopUp(queueAfter, activeCards, pcicIntroOrder(newOrder), today, { limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, introducedThisLevel });
+    if (!top) return;
+    setPcicBonus(top.bonus);
+    getDb().setPcicNewBonus(top.bonus, today).catch(() => {
+      // the bonus is already in state; a failed write only means it is not remembered
+    });
+    setQueue((prev) => mixNewCards([...prev, ...top.fresh.filter((c) => !prev.some((p) => p.itemId === c.itemId))], today));
+  };
+
   // It also passes `grade` to requeue, so that only the "Didn't know"
   // (again) card gets a returnAt timer, and the "Knew it" (good) one does not.
   const advance = (next: Sm2Card, g: Sm2Grade) => {
-    setQueue((prev) => requeueAfterGrade(prev, next, today, g, Date.now(), againDelaySec));
+    setQueue((prev) => mixNewCards(requeueAfterGrade(prev, next, today, g, Date.now(), againDelaySec), today));
+    topUpNew(requeueAfterGrade(queue, next, today, g), new Map(allCards).set(next.itemId, next));
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
@@ -419,7 +439,7 @@ export function usePcicSession() {
     // Take the grade's XP back, so undo + grade again cannot farm it.
     if (lastGraded.xp) setDailyXp(await addXp(-lastGraded.xp.points, lastGraded.xp.date));
     setAllCards((prev) => new Map(prev).set(lastGraded.before.itemId, lastGraded.before));
-    setQueue((prev) => requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today));
+    setQueue((prev) => mixNewCards(requeueAfterUndo(prev, lastGraded.before, lastGraded.after, today), today));
     // The floor is 0 because it can be pressed during a session reset (load) too.
     if (lastGraded.counted) {
       setSessionAnswered((n) => Math.max(0, n - 1));
@@ -441,7 +461,7 @@ export function usePcicSession() {
     await getDb().upsertPcicCard(next);
     setAllCards((prev) => new Map(prev).set(next.itemId, next));
     setLastGraded({ before, after: next, typed: typedAnswer, grade, wasNew: false, g: 'good', counted: false, cadenceBefore: cadence });
-    setQueue((prev) => requeueAfterGrade(prev, next, today));
+    setQueue((prev) => mixNewCards(requeueAfterGrade(prev, next, today), today));
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
@@ -464,11 +484,14 @@ export function usePcicSession() {
       // the bonus is already in state; a failed write only means it is not remembered
     });
     setQueue(
-      pickSm2Session(
-        activeCards,
-        pcicIntroOrder(newOrder),
-        today,
-        pcicSessionNewLimit({ limit: dailyNewLimit, bonus: next, introducedAllLevels, introducedThisLevel: introducedToday })
+      mixNewCards(
+        pickSm2Session(
+          activeCards,
+          pcicIntroOrder(newOrder),
+          today,
+          pcicSessionNewLimit({ limit: dailyNewLimit, bonus: next, introducedAllLevels, introducedThisLevel: introducedToday })
+        ),
+        today
       )
     );
   };
