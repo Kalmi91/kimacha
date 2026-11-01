@@ -909,9 +909,9 @@
     "lemma": "venir",
     "es": "venir",
     "en": "to come",
-    "sentence_es": "Mi madre viene a casa.",
-    "sentence_en": "My mother comes home.",
-    "sentence_lemmas": ["mi", "madre", "venir", "a", "casa"]
+    "sentence_es": "Mi madre viene aquí, a mi casa.",
+    "sentence_en": "My mother comes here, to my house.",
+    "sentence_lemmas": ["mi", "madre", "venir", "aquí", "a", "mi", "casa"]
   },
   {
     "order": 81,
@@ -3028,9 +3028,9 @@
     "lemma": "pared",
     "es": "la pared",
     "en": "wall",
-    "sentence_es": "La pared de mi casa es blanca.",
-    "sentence_en": "The wall of my house is white.",
-    "sentence_lemmas": ["el", "pared", "de", "mi", "casa", "ser", "blanco"]
+    "sentence_es": "La puerta está en la pared.",
+    "sentence_en": "The door is in the wall.",
+    "sentence_lemmas": ["el", "puerta", "estar", "en", "el", "pared"]
   },
   {
     "order": 399,

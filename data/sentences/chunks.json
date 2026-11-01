@@ -32,7 +32,7 @@
     { "es": "Él está aquí.", "en": "He is here." }
   ],
   "o80": [
-    { "es": "Mi madre viene.", "en": "My mother comes." }
+    { "es": "Mi madre viene aquí.", "en": "My mother comes here." }
   ],
   "o81": [
     { "es": "Doy pan.", "en": "I give bread." }
@@ -452,9 +452,7 @@
   "o393": [
     { "es": "En el jardín hay flores.", "en": "There are flowers in the garden." }
   ],
-  "o394": [
-    { "es": "La pared es blanca.", "en": "The wall is white." }
-  ],
+  "o394": [],
   "o396": [],
   "o397": [
     { "es": "Hubo un accidente.", "en": "There was an accident." }
@@ -1667,7 +1665,7 @@
     { "es": "Necesito pegamento.", "en": "I need glue." }
   ],
   "o1548": [
-    { "es": "Los niños juegan.", "en": "The children play." }
+    { "es": "Los niños comen y juegan.", "en": "The children eat and play." }
   ],
   "o1549": [
     { "es": "Mi hijo come una paleta.", "en": "My son eats a popsicle." }
@@ -1722,7 +1720,7 @@
     { "es": "Mi carro es rápido.", "en": "My car is fast." }
   ],
   "o1574": [
-    { "es": "Hay un calendario.", "en": "There is a calendar." }
+    { "es": "El calendario tiene los días.", "en": "The calendar has the days." }
   ],
   "o1576": [
     { "es": "Seco la ropa.", "en": "I dry the clothes." }
@@ -1808,9 +1806,7 @@
     { "es": "El tigre es grande.", "en": "The tiger is big." }
   ],
   "o1614": [],
-  "o1615": [
-    { "es": "La jirafa es alta.", "en": "The giraffe is tall." }
-  ],
+  "o1615": [],
   "o1616": [],
   "o1617": [
     { "es": "La rana salta.", "en": "The frog jumps." }
@@ -1828,9 +1824,7 @@
   "o1623": [
     { "es": "Hay una araña.", "en": "There is a spider." }
   ],
-  "o1624": [
-    { "es": "Las hormigas son pequeñas.", "en": "Ants are small." }
-  ],
+  "o1624": [],
   "o1625": [],
   "o1626": [
     { "es": "Mi madre tiene una planta.", "en": "My mother has a plant." }
@@ -2044,11 +2038,11 @@
     { "es": "Hay una estatua.", "en": "There is a statue." }
   ],
   "o1717": [
-    { "es": "El monumento es antiguo.", "en": "The monument is old." }
+    { "es": "El monumento está en el centro.", "en": "The monument is in the center." }
   ],
   "o1719": [],
   "o1720": [
-    { "es": "La catedral es grande.", "en": "The cathedral is big." }
+    { "es": "La catedral es una iglesia.", "en": "The cathedral is a church." }
   ],
   "o1721": [
     { "es": "El cementerio está cerca.", "en": "The cemetery is near." }
@@ -2267,7 +2261,9 @@
     { "es": "El pantalón es azul.", "en": "The pants are blue." }
   ],
   "o2133": [],
-  "o2135": [],
+  "o2135": [
+    { "es": "El pulgar es el dedo.", "en": "The thumb is the finger." }
+  ],
   "o2137": [
     { "es": "Tengo la mano sucia.", "en": "My hand is dirty." }
   ],
@@ -2288,9 +2284,7 @@
   "o2148": [
     { "es": "Una paloma está en la plaza.", "en": "A dove is in the square." }
   ],
-  "o2149": [
-    { "es": "El águila es un pájaro.", "en": "The eagle is a bird." }
-  ],
+  "o2149": [],
   "o2151": [
     { "es": "El gallo canta.", "en": "The rooster crows." }
   ],
@@ -2303,9 +2297,7 @@
   "o2157": [
     { "es": "El delfín nada.", "en": "The dolphin swims." }
   ],
-  "o2158": [
-    { "es": "La ballena es grande.", "en": "The whale is big." }
-  ],
+  "o2158": [],
   "o2159": [
     { "es": "Comemos pulpo.", "en": "We eat octopus." }
   ],
@@ -4095,5 +4087,29 @@
   ],
   "o1504": [
     { "es": "La miel es dulce.", "en": "Honey is sweet." }
-  ]
+  ],
+  "o383": [
+    { "es": "Mi jefe me da trabajo.", "en": "My boss gives me work." }
+  ],
+  "o1552": [],
+  "o1592": [],
+  "o1618": [
+    { "es": "La tortuga lleva su casa.", "en": "The turtle carries its house." }
+  ],
+  "o1737": [
+    { "es": "El carpintero hace mesas.", "en": "The carpenter makes tables." }
+  ],
+  "o1739": [
+    { "es": "El electricista trabaja.", "en": "The electrician works." }
+  ],
+  "o1741": [
+    { "es": "El soldado trabaja.", "en": "The soldier works." }
+  ],
+  "o1750": [
+    { "es": "El músico toca el piano.", "en": "The musician plays the piano." }
+  ],
+  "o1757": [
+    { "es": "La mujer va a tener un bebé.", "en": "The woman is going to have a baby." }
+  ],
+  "o1763": []
 }

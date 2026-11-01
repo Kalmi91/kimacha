@@ -1795,9 +1795,9 @@
     "es": "el jefe",
     "en": "boss",
     "hint_en": "My *boss* arrives early",
-    "sentence_es": "Mi jefe llega temprano.",
-    "sentence_en": "My boss arrives early.",
-    "sentence_lemmas": ["mi", "jefe", "llegar", "temprano"]
+    "sentence_es": "Mi jefe me da trabajo en la oficina.",
+    "sentence_en": "My boss gives me work at the office.",
+    "sentence_lemmas": ["mi", "jefe", "me", "dar", "trabajo", "en", "el", "oficina"]
   },
   {
     "order": 499,
@@ -4863,9 +4863,9 @@
     "lemma": "cartera",
     "es": "la cartera",
     "en": "wallet",
-    "sentence_es": "Mi cartera está en la mochila.",
-    "sentence_en": "My wallet is in the backpack.",
-    "sentence_lemmas": ["mi", "cartera", "estar", "en", "el", "mochila"]
+    "sentence_es": "Tengo dinero en la cartera.",
+    "sentence_en": "I have money in my wallet.",
+    "sentence_lemmas": ["tener", "dinero", "en", "el", "cartera"]
   },
   {
     "order": 1545,
@@ -4908,9 +4908,9 @@
     "es": "el recreo",
     "en": "recess, break (school)",
     "hint_en": "Children play outside at *break*.",
-    "sentence_es": "Los niños juegan en el recreo.",
-    "sentence_en": "The children play at recess.",
-    "sentence_lemmas": ["el", "niño", "jugar", "en", "el", "recreo"]
+    "sentence_es": "En el recreo los niños comen y juegan.",
+    "sentence_en": "At recess the children eat and play.",
+    "sentence_lemmas": ["en", "el", "recreo", "el", "niño", "comer", "y", "jugar"]
   },
   {
     "order": 1549,
@@ -4952,9 +4952,9 @@
     "lemma": "tortillería",
     "es": "la tortillería",
     "en": "tortilla shop",
-    "sentence_es": "La tortillería abre temprano.",
-    "sentence_en": "The tortilla shop opens early.",
-    "sentence_lemmas": ["el", "tortillería", "abrir", "temprano"]
+    "sentence_es": "Compro tortillas en la tortillería.",
+    "sentence_en": "I buy tortillas at the tortilla shop.",
+    "sentence_lemmas": ["comprar", "tortilla", "en", "el", "tortillería"]
   },
   {
     "order": 1553,
@@ -5117,9 +5117,9 @@
     "lemma": "calendario",
     "es": "el calendario",
     "en": "calendar",
-    "sentence_es": "Hay un calendario en la pared.",
-    "sentence_en": "There is a calendar on the wall.",
-    "sentence_lemmas": ["haber", "un", "calendario", "en", "el", "pared"]
+    "sentence_es": "El calendario tiene los días y los meses.",
+    "sentence_en": "The calendar has the days and the months.",
+    "sentence_lemmas": ["el", "calendario", "tener", "el", "día", "y", "el", "mes"]
   },
   {
     "order": 1576,
@@ -5271,9 +5271,9 @@
     "lemma": "enorme",
     "es": "enorme",
     "en": "enormous, huge",
-    "sentence_es": "Mi perro es enorme.",
-    "sentence_en": "My dog is enormous.",
-    "sentence_lemmas": ["mi", "perro", "ser", "enorme"]
+    "sentence_es": "El elefante es enorme.",
+    "sentence_en": "The elephant is huge.",
+    "sentence_lemmas": ["el", "elefante", "ser", "enorme"]
   },
   {
     "order": 1593,
@@ -5403,9 +5403,9 @@
     "lemma": "jirafa",
     "es": "la jirafa",
     "en": "giraffe",
-    "sentence_es": "La jirafa es muy alta.",
-    "sentence_en": "The giraffe is very tall.",
-    "sentence_lemmas": ["el", "jirafa", "ser", "muy", "alto"]
+    "sentence_es": "La jirafa es el animal más alto.",
+    "sentence_en": "The giraffe is the tallest animal.",
+    "sentence_lemmas": ["el", "jirafa", "ser", "el", "animal", "más", "alto"]
   },
   {
     "order": 1616,
@@ -5436,9 +5436,9 @@
     "lemma": "tortuga",
     "es": "la tortuga",
     "en": "turtle",
-    "sentence_es": "La tortuga es lenta.",
-    "sentence_en": "The turtle is slow.",
-    "sentence_lemmas": ["el", "tortuga", "ser", "lento"]
+    "sentence_es": "La tortuga lleva su casa en la espalda.",
+    "sentence_en": "The turtle carries its house on its back.",
+    "sentence_lemmas": ["el", "tortuga", "llevar", "su", "casa", "en", "el", "espalda"]
   },
   {
     "order": 1619,
@@ -5502,9 +5502,9 @@
     "lemma": "hormiga",
     "es": "la hormiga",
     "en": "ant",
-    "sentence_es": "Las hormigas son muy pequeñas.",
-    "sentence_en": "Ants are very small.",
-    "sentence_lemmas": ["el", "hormiga", "ser", "muy", "pequeño"]
+    "sentence_es": "Las hormigas viven juntas.",
+    "sentence_en": "Ants live together.",
+    "sentence_lemmas": ["el", "hormiga", "vivir", "juntos"]
   },
   {
     "order": 1625,
@@ -6256,9 +6256,9 @@
     "lemma": "pozole",
     "es": "el pozole",
     "en": "pozole (Mexican hominy soup)",
-    "sentence_es": "El pozole es una sopa mexicana.",
-    "sentence_en": "Pozole is a Mexican soup.",
-    "sentence_lemmas": ["el", "pozole", "ser", "un", "sopa", "mexicano"]
+    "sentence_es": "El pozole es una sopa con carne de cerdo.",
+    "sentence_en": "Pozole is a soup with pork.",
+    "sentence_lemmas": ["el", "pozole", "ser", "un", "sopa", "con", "carne", "de", "cerdo"]
   },
   {
     "order": 1694,
@@ -6268,9 +6268,9 @@
     "es": "el mole",
     "en": "mole (Mexican sauce)",
     "hint_en": "*Mole* is a Mexican sauce",
-    "sentence_es": "El mole es una salsa mexicana.",
-    "sentence_en": "Mole is a Mexican sauce.",
-    "sentence_lemmas": ["el", "mole", "ser", "un", "salsa", "mexicano"]
+    "sentence_es": "El mole es una salsa con chocolate.",
+    "sentence_en": "Mole is a sauce with chocolate.",
+    "sentence_lemmas": ["el", "mole", "ser", "un", "salsa", "con", "chocolate"]
   },
   {
     "order": 1695,
@@ -6523,9 +6523,9 @@
     "lemma": "monumento",
     "es": "el monumento",
     "en": "monument",
-    "sentence_es": "El monumento es muy antiguo.",
-    "sentence_en": "The monument is very old.",
-    "sentence_lemmas": ["el", "monumento", "ser", "muy", "antiguo"]
+    "sentence_es": "El monumento está en el centro de la ciudad.",
+    "sentence_en": "The monument is in the center of the city.",
+    "sentence_lemmas": ["el", "monumento", "estar", "en", "el", "centro", "de", "el", "ciudad"]
   },
   {
     "order": 1718,
@@ -6556,9 +6556,9 @@
     "lemma": "catedral",
     "es": "la catedral",
     "en": "cathedral",
-    "sentence_es": "La catedral es muy grande.",
-    "sentence_en": "The cathedral is very big.",
-    "sentence_lemmas": ["el", "catedral", "ser", "muy", "grande"]
+    "sentence_es": "La catedral es una iglesia muy grande.",
+    "sentence_en": "The cathedral is a very big church.",
+    "sentence_lemmas": ["el", "catedral", "ser", "un", "iglesia", "muy", "grande"]
   },
   {
     "order": 1721,
@@ -6744,9 +6744,9 @@
     "lemma": "carpintero",
     "es": "el carpintero",
     "en": "carpenter",
-    "sentence_es": "Mi abuelo es carpintero.",
-    "sentence_en": "My grandfather is a carpenter.",
-    "sentence_lemmas": ["mi", "abuelo", "ser", "carpintero"]
+    "sentence_es": "El carpintero hace mesas y sillas.",
+    "sentence_en": "The carpenter makes tables and chairs.",
+    "sentence_lemmas": ["el", "carpintero", "hacer", "mesa", "y", "silla"]
   },
   {
     "order": 1738,
@@ -6766,9 +6766,9 @@
     "lemma": "electricista",
     "es": "el electricista",
     "en": "electrician",
-    "sentence_es": "Mi tío es electricista.",
-    "sentence_en": "My uncle is an electrician.",
-    "sentence_lemmas": ["mi", "tío", "ser", "electricista"]
+    "sentence_es": "El electricista trabaja con la luz.",
+    "sentence_en": "The electrician works with electricity.",
+    "sentence_lemmas": ["el", "electricista", "trabajar", "con", "el", "luz"]
   },
   {
     "order": 1740,
@@ -6788,9 +6788,9 @@
     "lemma": "soldado",
     "es": "el soldado",
     "en": "soldier",
-    "sentence_es": "Mi primo es soldado.",
-    "sentence_en": "My cousin is a soldier.",
-    "sentence_lemmas": ["mi", "primo", "ser", "soldado"]
+    "sentence_es": "El soldado trabaja para el país.",
+    "sentence_en": "The soldier works for the country.",
+    "sentence_lemmas": ["el", "soldado", "trabajar", "para", "el", "país"]
   },
   {
     "order": 1742,
@@ -6887,9 +6887,9 @@
     "lemma": "músico",
     "es": "el músico",
     "en": "musician",
-    "sentence_es": "Mi padre es músico.",
-    "sentence_en": "My father is a musician.",
-    "sentence_lemmas": ["mi", "padre", "ser", "músico"]
+    "sentence_es": "El músico toca el piano en el concierto.",
+    "sentence_en": "The musician plays the piano at the concert.",
+    "sentence_lemmas": ["el", "músico", "tocar", "el", "piano", "en", "el", "concierto"]
   },
   {
     "order": 1751,
@@ -6964,9 +6964,9 @@
     "lemma": "embarazada",
     "es": "embarazada",
     "en": "pregnant",
-    "sentence_es": "Mi hermana está embarazada.",
-    "sentence_en": "My sister is pregnant.",
-    "sentence_lemmas": ["mi", "hermano", "estar", "embarazada"]
+    "sentence_es": "La mujer embarazada va a tener un bebé.",
+    "sentence_en": "The pregnant woman is going to have a baby.",
+    "sentence_lemmas": ["el", "mujer", "embarazada", "ir", "a", "tener", "un", "bebé"]
   },
   {
     "order": 1758,
@@ -7030,9 +7030,9 @@
     "lemma": "hambriento",
     "es": "hambriento",
     "en": "hungry (starving)",
-    "sentence_es": "El perro está hambriento.",
-    "sentence_en": "The dog is hungry.",
-    "sentence_lemmas": ["el", "perro", "estar", "hambriento"]
+    "sentence_es": "Estoy hambriento, quiero comer mucho.",
+    "sentence_en": "I am starving, I want to eat a lot.",
+    "sentence_lemmas": ["estar", "hambriento", "querer", "comer", "mucho"]
   },
   {
     "order": 1764,
@@ -7649,9 +7649,9 @@
     "lemma": "pulgar",
     "es": "el pulgar",
     "en": "thumb",
-    "sentence_es": "El pulgar es un dedo.",
-    "sentence_en": "The thumb is a finger.",
-    "sentence_lemmas": ["el", "pulgar", "ser", "un", "dedo"]
+    "sentence_es": "El pulgar es el dedo más grande.",
+    "sentence_en": "The thumb is the biggest finger.",
+    "sentence_lemmas": ["el", "pulgar", "ser", "el", "dedo", "más", "grande"]
   },
   {
     "order": 2137,
@@ -7749,9 +7749,9 @@
     "lemma": "águila",
     "es": "el águila",
     "en": "eagle",
-    "sentence_es": "El águila es un pájaro grande.",
-    "sentence_en": "The eagle is a big bird.",
-    "sentence_lemmas": ["el", "águila", "ser", "un", "pájaro", "grande"]
+    "sentence_es": "El águila vive en la montaña.",
+    "sentence_en": "The eagle lives in the mountains.",
+    "sentence_lemmas": ["el", "águila", "vivir", "en", "el", "montaña"]
   },
   {
     "order": 2150,
@@ -7837,9 +7837,9 @@
     "lemma": "ballena",
     "es": "la ballena",
     "en": "whale",
-    "sentence_es": "La ballena es muy grande.",
-    "sentence_en": "The whale is very big.",
-    "sentence_lemmas": ["el", "ballena", "ser", "muy", "grande"]
+    "sentence_es": "La ballena vive en el mar.",
+    "sentence_en": "The whale lives in the sea.",
+    "sentence_lemmas": ["el", "ballena", "vivir", "en", "el", "mar"]
   },
   {
     "order": 2159,
@@ -13355,9 +13355,9 @@
     "lemma": "octavo",
     "es": "octavo",
     "en": "eighth",
-    "sentence_es": "Vivo en el octavo piso.",
-    "sentence_en": "I live on the eighth floor.",
-    "sentence_lemmas": ["vivir", "en", "el", "octavo", "piso"]
+    "sentence_es": "Mi oficina está en el octavo piso.",
+    "sentence_en": "My office is on the eighth floor.",
+    "sentence_lemmas": ["mi", "oficina", "estar", "en", "el", "octavo", "piso"]
   },
   {
     "order": 3668,
