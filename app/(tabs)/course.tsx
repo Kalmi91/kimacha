@@ -127,7 +127,9 @@ export default function GrammarSyllabusScreen() {
   const rr = s.randomRound;
   const randomTitle = (() => {
     if (!randomRun) return `🎲 ${rr.start}`;
-    const { phase, index, of } = phaseProgress(randomRun);
+    const { phase, of, index: answered } = phaseProgress(randomRun);
+    // the number of the NEXT question, the same as the round screen's counter.
+    const index = Math.min(answered + 1, of);
     const label =
       phase === 'check' ? rr.phaseCheck(index, of)
       : phase === 'practice' ? rr.phasePractice(index, of)
@@ -140,7 +142,17 @@ export default function GrammarSyllabusScreen() {
     () => syllabusLevels(learnedLang).flatMap((lvl) => syllabusForLevel(lvl, learnedLang)).filter((tp) => hasLesson(learnedLang, tp.id)).map((tp) => tp.id),
     [learnedLang]
   );
-  const randomScore = rr.score(overallScore(writtenIds, percents, evidence), weakTopicCount(evidence));
+  // the lesson % per topic is the one the row badge starts from (with the old-progress fallback), not only `percents`.
+  const lessonPcts = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const id of writtenIds) {
+      const p = progress.get(id);
+      const v = lessonBadgePercent(percents.get(id) ?? null, p?.correct, p?.total);
+      if (v !== null) m.set(id, v);
+    }
+    return m;
+  }, [writtenIds, percents, progress]);
+  const randomScore = rr.score(overallScore(writtenIds, lessonPcts, evidence), weakTopicCount(evidence));
 
   // Neo-brutalist:
   // the classic palette renders today's look below.

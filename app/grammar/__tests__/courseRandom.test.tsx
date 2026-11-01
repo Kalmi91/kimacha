@@ -20,7 +20,7 @@ jest.mock('expo-router', () => ({
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
-import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { GRAMMAR_PROGRESS_KEY, hasLesson, syllabusForLevel, syllabusLevels } from '@/lib/grammar/syllabus';
 import { GRAMMAR_RANDOM_KEY, type EvidenceAnswer, type RoundRun } from '@/lib/grammar/randomRound';
 import GrammarSyllabusScreen from '@/app/(tabs)/course';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -37,8 +37,8 @@ const answers = (ok: number, total: number, kinds: ('choice' | 'form')[] = ['cho
   })),
 });
 
-const openRun = (checkAnswered: number): RoundRun => ({
-  mode: 'mixed',
+const openRun = (checkAnswered: number, mode: RoundRun['mode'] = 'mixed'): RoundRun => ({
+  mode,
   seed: 7,
   startLevel: 'A1',
   steps: Array.from({ length: checkAnswered }, (_, i) => ({
@@ -46,7 +46,7 @@ const openRun = (checkAnswered: number): RoundRun => ({
     qid: `q${i}`,
     kind: 'choice' as const,
     level: 'A1' as const,
-    phase: 'check' as const,
+    phase: (mode === 'full' ? 'full' : 'check') as 'full' | 'check',
     ok: true,
   })),
   pending: null,
@@ -89,8 +89,29 @@ describe.each([
     await db.setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-irregular', 'evidence', answers(0, 3));
     const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
     await flush();
-    expect(screen.queryByText('🎲 Continue · Check 3/10')).toBeTruthy();
+    // 3 answered: the card names the NEXT question, like the round screen's counter.
+    expect(screen.queryByText('🎲 Continue · Check 4/10')).toBeTruthy();
     expect(screen.queryByText(/· 1 weak topic$/)).toBeTruthy();
+    view.unmount();
+  });
+
+  it('a full round continues at the next question number', async () => {
+    await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, '_run', 'run', openRun(2, 'full'));
+    const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
+    await flush();
+    expect(screen.queryByText('🎲 Continue · Full check 3/20')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('the grammar score counts old-style finished lessons (no kind rows) like their row badges do', async () => {
+    const db = getDb();
+    await db.setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 10, total: 10 });
+    await db.setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-irregular', 'done', { correct: 10, total: 10 });
+    const written = syllabusLevels('es').flatMap((l) => syllabusForLevel(l, 'es')).filter((tp) => hasLesson('es', tp.id)).length;
+    const view = render(<ThemeProvider><GrammarSyllabusScreen /></ThemeProvider>);
+    await flush();
+    expect(Math.round(200 / written)).toBeGreaterThan(0);
+    expect(screen.queryByText(`Grammar score ${Math.round(200 / written)}% · 0 weak topics`)).toBeTruthy();
     view.unmount();
   });
 
