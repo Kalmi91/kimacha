@@ -63,7 +63,8 @@ import ScreenFeedback from '@/lib/screenFeedback';
 // question per weak topic) or a full round (20 questions over the whole syllabus). The engine
 // (lib/grammar/randomRound.ts) picks and scores; this screen only draws, saves every answer as evidence
 // and keeps the open round (`_run`) so it can be continued. Check / re-check / full run exam-style (a right
-// answer shows nothing, a wrong one shows the right one), the explanations come in the practice.
+// answer shows nothing, a wrong one shows the right one); the practice cards answer at once (`instant`) and the
+// explanation card after them shows the right answer and the why.
 
 type RoundStrings = ReturnType<typeof t>['randomRound'];
 
@@ -553,6 +554,7 @@ export default function RandomRoundScreen() {
           q={pendingQ}
           learnedLang={data.learnedLang}
           strictAccents={strictAccents}
+          instant={phase === 'practice'}
           onDone={answered}
         />
       </DockSlotProvider>

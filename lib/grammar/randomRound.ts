@@ -343,10 +343,13 @@ export function skipPhase(run: RoundRun, ctx: PickCtx): RoundRun {
   return run.mode === 'mixed' && phase === 'check' ? withWeak(next, ctx) : next;
 }
 
+// The used set of a round holds `topicId:qid` keys: lesson item ids are not guaranteed to be unique across lessons.
+const usedKey = (topicId: string, qid: string): string => `${topicId}:${qid}`;
+
 // A question of the topic: unused in this round, preferably one that is not in the topic's evidence yet,
 // within that preferably a kind that this round has not asked at this topic yet; seeded random among those.
 function questionFor(topicId: string, run: RoundRun, ctx: PickCtx, used: Set<string>, seed: number): string | null {
-  const free = ctx.questionIds(topicId).filter((q) => !used.has(q.id));
+  const free = ctx.questionIds(topicId).filter((q) => !used.has(usedKey(topicId, q.id)));
   if (free.length === 0) return null;
   const seen = new Set((ctx.evidence.get(topicId)?.answers ?? []).map((a) => a.id));
   const fresh = free.filter((q) => !seen.has(q.id));
@@ -357,7 +360,7 @@ function questionFor(topicId: string, run: RoundRun, ctx: PickCtx, used: Set<str
 }
 
 const hasFree = (topicId: string, ctx: PickCtx, used: Set<string>): boolean =>
-  ctx.questionIds(topicId).some((q) => !used.has(q.id));
+  ctx.questionIds(topicId).some((q) => !used.has(usedKey(topicId, q.id)));
 
 // Check: a topic of the ladder level (else the nearest level with one, the lower on a tie), scored by how
 // much the learner needs it, the previous step's topic left out when there is another candidate.
@@ -425,7 +428,10 @@ function pickFullTopic(run: RoundRun, ctx: PickCtx, used: Set<string>, seed: num
   const available = ctx.topics.filter((t) => hasFree(t.id, ctx, used));
 
   const startedNeedy = [...startedLevel.keys()].filter((id) => demand(id) > 0 && available.some((t) => t.id === id));
-  if (startedNeedy.length > 0) {
+  // Only the previous step's topic is left among the started ones: a new topic goes between (A B A B A B, C D C D C D),
+  // the same topic again only when no other topic needs answers.
+  const startNew = startedNeedy.length > 0 && startedNeedy.every((id) => id === prev) && available.some((t) => t.id !== prev && demand(t.id) > 0);
+  if (startedNeedy.length > 0 && !startNew) {
     const others = startedNeedy.filter((id) => id !== prev);
     return (others.length > 0 ? others : startedNeedy)[0];
   }
@@ -448,7 +454,7 @@ function pickFullTopic(run: RoundRun, ctx: PickCtx, used: Set<string>, seed: num
     return best ? best.id : null;
   };
 
-  const fresh = available.filter((t) => demand(t.id) > 0);
+  const fresh = available.filter((t) => demand(t.id) > 0 && !(startNew && t.id === prev));
   if (fresh.length > 0) {
     const perLevel = new Map<Level, number>();
     for (const lv of startedLevel.values()) perLevel.set(lv, (perLevel.get(lv) ?? 0) + 1);
@@ -470,8 +476,8 @@ export function pickNext(run: RoundRun, ctx: PickCtx): { topicId: string; qid: s
   const phase = currentPhase(run);
   if (phase === 'done') return null;
   const seed = run.seed + run.steps.length;
-  const used = new Set(run.steps.map((s) => s.qid));
-  if (run.pending) used.add(run.pending.qid);
+  const used = new Set(run.steps.map((s) => usedKey(s.topicId, s.qid)));
+  if (run.pending) used.add(usedKey(run.pending.topicId, run.pending.qid));
   let topicId: string | null;
   if (phase === 'check') topicId = pickCheckTopic(run, ctx, used, seed);
   else if (phase === 'practice') topicId = pickPracticeTopic(run, ctx, used);

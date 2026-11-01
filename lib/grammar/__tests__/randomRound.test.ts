@@ -414,6 +414,24 @@ describe('pickNext: check', () => {
     }
   });
 
+  it('lesson item ids are not unique across lessons: a question id is only used up in its own topic', () => {
+    const ctx: PickCtx = { levels: LEVELS, topics: [TOPICS[0], TOPICS[1]], evidence: new Map(), questionIds: () => [{ id: 'dup', kind: 'choice' }] };
+    const first = pickNext(runWith({ seed: 5 }), ctx)!;
+    expect(first.qid).toBe('dup');
+    // the other topic's "dup" is still free (the previous step's topic is left out), after the answer ...
+    const answered = recordAnswer(runWith({ seed: 5, pending: first }), step({ topicId: first.topicId, qid: 'dup' }), ctx);
+    const second = pickNext(answered, ctx)!;
+    expect(second).not.toBeNull();
+    expect(second.qid).toBe('dup');
+    expect(second.topicId).not.toBe(first.topicId);
+    // ... and also while the first one is still on screen (pending)
+    const whilePending = pickNext(runWith({ seed: 5, pending: first }), ctx)!;
+    expect(whilePending.topicId).not.toBe(first.topicId);
+    // both used: nothing is left
+    const both = recordAnswer(answered, step({ topicId: second.topicId, qid: 'dup' }), ctx);
+    expect(pickNext(both, ctx)).toBeNull();
+  });
+
   it('keeps the previous topic only when it is the single candidate', () => {
     const ctx = makeCtx({ topics: [TOPICS[0]] });
     const pick = pickNext(runWith({ steps: checkSteps([false], ['a1-x']) }), ctx);
@@ -522,6 +540,32 @@ describe('pickNext: full', () => {
     // The first topic of each level comes before a second topic of the same level.
     expect(new Set(started.slice(0, 3).map((id) => ctx.topics.find((t) => t.id === id)!.level)).size).toBe(3);
     expect(new Set(run.steps.map((s) => s.qid)).size).toBe(FULL_SIZE);
+  });
+
+  it('alternates two new topics three times each before the next pair starts (A B A B A B, C D C D C D)', () => {
+    for (let seed = 1; seed <= 10; seed++) {
+      const run = playRound(newRun('full', seed, 'A1'), makeCtx());
+      const ids = run.steps.map((s) => s.topicId);
+      for (const base of [0, 6, 12]) {
+        const [x, y] = [ids[base], ids[base + 1]];
+        expect(x).not.toBe(y);
+        expect(ids.slice(base, base + 6)).toEqual([x, y, x, y, x, y]);
+      }
+      expect(new Set(ids.slice(0, 18)).size).toBe(6);
+    }
+  });
+
+  it('does not ask the same topic twice in a row while another topic can be started', () => {
+    const ctx = makeCtx();
+    const first = pickNext(newRun('full', 4, 'A1'), ctx)!;
+    const steps = [step({ phase: 'full', topicId: first.topicId, qid: first.qid })];
+    ctx.evidence.set(first.topicId, ev([true]));
+    const second = pickNext({ ...newRun('full', 4, 'A1'), steps }, ctx)!;
+    expect(second.topicId).not.toBe(first.topicId);
+    // the topic is asked again when it is the only one left to ask
+    const single = makeCtx({ topics: [TOPICS.find((t) => t.id === first.topicId)!] });
+    single.evidence.set(first.topicId, ev([true]));
+    expect(pickNext({ ...newRun('full', 4, 'A1'), steps }, single)?.topicId).toBe(first.topicId);
   });
 
   it('counts the evidence of earlier rounds: a topic with 3 answers has no demand', () => {

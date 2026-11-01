@@ -99,13 +99,14 @@ const onScreen = () => {
   return found;
 };
 
-// Answers the question on screen (a tap on the right or a wrong option; a wrong one needs its "Next").
-const answer = async (ok: boolean) => {
+// Answers the question on screen (a tap on the right or a wrong option; a wrong one needs its "Next", except in the
+// practice, where the card hands the answer over at once and the explanation card shows the right one).
+const answer = async (ok: boolean, instant = false) => {
   const found = onScreen();
   const v = found.q.view;
   if (v.card !== 'choice') throw new Error('choice only');
   await press(`exam-option-${ok ? v.correctIndex : (v.correctIndex + 1) % v.options.length}`);
-  if (!ok) await press('exam-next');
+  if (!ok && !instant) await press('exam-next');
   return found;
 };
 
@@ -210,13 +211,17 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
     for (let i = 0; i < 8; i++) {
       expect(text('random-counter')).toBe(`Practice ${i + 1}/8`);
       expect(screen.getByTestId('random-practice-title')).toBeTruthy();
-      const { topic, q } = await answer(i === 0 ? false : true);
+      const { topic, q } = await answer(i !== 0, true);
+      // only the explanation card: no "Not quite!" reveal and no Next of the exam card on top of it
+      expect(screen.queryByTestId('exam-next')).toBeNull();
+      expect(screen.queryByText('Not quite!')).toBeNull();
       expect(text('random-counter')).toBe(`Practice ${i + 1}/8`);
       expect(text('random-feedback-question')).toBe(q.review.question);
       expect(text('random-feedback-answer')).toBe(q.review.answer);
       if (q.review.why) expect(text('random-feedback-why')).toBe(q.review.why);
       expect(screen.getByTestId('random-feedback-badge')).toBeTruthy();
       if (i === 0) {
+        expect(screen.getByTestId('random-feedback-badge')).toHaveTextContent(/Not quite$/);
         await press('random-rule');
         expect(mockPush).toHaveBeenCalledWith(`/grammar/${topic}`);
         expect(screen.getByTestId('random-feedback-badge')).toBeTruthy(); // the round stays where it was
