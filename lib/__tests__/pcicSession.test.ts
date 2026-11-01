@@ -8,6 +8,7 @@ import {
   reorderForReturn,
   mixNewCards,
   needsNewTopUp,
+  autoNewTopUp,
   nextPcicNewBonus,
   pcicNewBudget,
   pcicSessionNewLimit,
@@ -547,5 +548,22 @@ describe('needsNewTopUp (FB535: +10 by itself while reviews are left)', () => {
     expect(needsNewTopUp([reviewCard(), sm2NewCard('n0')], TODAY)).toBe(false);
     expect(needsNewTopUp([sm2Review(sm2NewCard('m0'), 'again', TODAY)], TODAY)).toBe(false);
     expect(needsNewTopUp([], TODAY)).toBe(false);
+  });
+});
+
+describe('autoNewTopUp (FB535)', () => {
+  const order = Array.from({ length: 15 }, (_, i) => `n${i}`);
+  const budget = { limit: 10, bonus: 0, introducedAllLevels: 10, introducedThisLevel: 10 };
+  const learned = order.slice(0, 10).map((id) => sm2Review(sm2NewCard(id), 'good', TODAY));
+
+  it('budget used up with reviews left: the next 10 new words and the "+10" bonus', () => {
+    const top = autoNewTopUp([reviewCard()], [...learned, reviewCard()], order, TODAY, budget);
+    expect(top?.bonus).toBe(10);
+    expect(top?.fresh.map((c) => c.itemId)).toEqual(['n10', 'n11', 'n12', 'n13', 'n14']);
+  });
+
+  it('no new word left on the level, or no reviews left: nothing', () => {
+    expect(autoNewTopUp([reviewCard()], [...learned, reviewCard()], order.slice(0, 10), TODAY, budget)).toBeNull();
+    expect(autoNewTopUp([], learned, order, TODAY, budget)).toBeNull();
   });
 });
