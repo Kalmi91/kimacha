@@ -636,9 +636,9 @@
     "es": "de",
     "en": "of, from",
     "hint_en": "I am *from* here",
-    "sentence_es": "Soy de aquí.",
-    "sentence_en": "I am from here.",
-    "sentence_lemmas": ["ser", "de", "aquí"]
+    "sentence_es": "Soy de aquí, de la ciudad.",
+    "sentence_en": "I am from here, from the city.",
+    "sentence_lemmas": ["ser", "de", "aquí", "de", "el", "ciudad"]
   },
   {
     "order": 57,
@@ -660,9 +660,9 @@
     "es": "tu",
     "en": "your (informal)",
     "hint_en": "*Your* mother is here",
-    "sentence_es": "Tu madre está aquí.",
-    "sentence_en": "Your mother is here.",
-    "sentence_lemmas": ["tu", "madre", "estar", "aquí"]
+    "sentence_es": "Tu madre y tu padre están aquí.",
+    "sentence_en": "Your mother and your father are here.",
+    "sentence_lemmas": ["tu", "madre", "y", "tu", "padre", "estar", "aquí"]
   },
   {
     "order": 59,
@@ -738,9 +738,9 @@
     "lemma": "más",
     "es": "más",
     "en": "more",
-    "sentence_es": "Quiero más agua.",
-    "sentence_en": "I want more water.",
-    "sentence_lemmas": ["querer", "más", "agua"]
+    "sentence_es": "Quiero más agua y más pan.",
+    "sentence_en": "I want more water and more bread.",
+    "sentence_lemmas": ["querer", "más", "agua", "y", "más", "pan"]
   },
   {
     "order": 66,
@@ -761,9 +761,9 @@
     "lemma": "nuevo",
     "es": "nuevo",
     "en": "new",
-    "sentence_es": "Tengo una casa nueva.",
-    "sentence_en": "I have a new house.",
-    "sentence_lemmas": ["tener", "un", "casa", "nuevo"]
+    "sentence_es": "Tengo una casa nueva en la ciudad.",
+    "sentence_en": "I have a new house in the city.",
+    "sentence_lemmas": ["tener", "un", "casa", "nuevo", "en", "el", "ciudad"]
   },
   {
     "order": 68,
@@ -828,9 +828,9 @@
     "es": "también / asimismo",
     "en": "also, too",
     "hint_en": "I am hungry *too*.",
-    "sentence_es": "Yo también tengo hambre.",
-    "sentence_en": "I am also hungry.",
-    "sentence_lemmas": ["yo", "también", "tener", "hambre"]
+    "sentence_es": "Mi madre también tiene hambre hoy.",
+    "sentence_en": "My mother is also hungry today.",
+    "sentence_lemmas": ["mi", "madre", "también", "tener", "hambre", "hoy"]
   },
   {
     "order": 74,
@@ -898,9 +898,9 @@
     "es": "decir",
     "en": "to say, to tell",
     "hint_en": "She will *tell* me the truth.",
-    "sentence_es": "Digo que sí.",
-    "sentence_en": "I say yes.",
-    "sentence_lemmas": ["decir", "que", "sí"]
+    "sentence_es": "Digo que sí porque tengo hambre.",
+    "sentence_en": "I say yes because I am hungry.",
+    "sentence_lemmas": ["decir", "que", "sí", "porque", "tener", "hambre"]
   },
   {
     "order": 80,
@@ -931,9 +931,9 @@
     "lemma": "me",
     "es": "me",
     "en": "to me",
-    "sentence_es": "Mi madre me da pan.",
-    "sentence_en": "My mother gives me bread.",
-    "sentence_lemmas": ["mi", "madre", "me", "dar", "pan"]
+    "sentence_es": "Mi madre me da pan y café.",
+    "sentence_en": "My mother gives me bread and coffee.",
+    "sentence_lemmas": ["mi", "madre", "me", "dar", "pan", "y", "café"]
   },
   {
     "order": 83,
@@ -943,9 +943,9 @@
     "es": "te",
     "en": "you, to you (informal)",
     "hint_en": "I see *you* here",
-    "sentence_es": "Te veo aquí.",
-    "sentence_en": "I see you here.",
-    "sentence_lemmas": ["te", "ver", "aquí"]
+    "sentence_es": "Te veo aquí con tu madre.",
+    "sentence_en": "I see you here with your mother.",
+    "sentence_lemmas": ["te", "ver", "aquí", "con", "tu", "madre"]
   },
   {
     "order": 84,
@@ -967,9 +967,9 @@
     "es": "le",
     "en": "to him, to her",
     "hint_en": "I give *him* water.",
-    "sentence_es": "Le doy agua.",
-    "sentence_en": "I give him water.",
-    "sentence_lemmas": ["le", "dar", "agua"]
+    "sentence_es": "Le doy agua y pan a mi madre.",
+    "sentence_en": "I give water and bread to my mother.",
+    "sentence_lemmas": ["le", "dar", "agua", "y", "pan", "a", "mi", "madre"]
   },
   {
     "order": 86,
@@ -979,9 +979,9 @@
     "es": "se",
     "en": "himself, herself, themselves",
     "hint_en": "She sees *herself* in the mirror.",
-    "sentence_es": "Ella se ve bien.",
-    "sentence_en": "She looks good.",
-    "sentence_lemmas": ["ella", "se", "ver", "bien"]
+    "sentence_es": "Ella se ve muy bien hoy.",
+    "sentence_en": "She looks very good today.",
+    "sentence_lemmas": ["ella", "se", "ver", "muy", "bien", "hoy"]
   },
   {
     "order": 87,
@@ -990,9 +990,9 @@
     "lemma": "nos",
     "es": "nos",
     "en": "us, to us",
-    "sentence_es": "Mi madre nos da pan.",
-    "sentence_en": "My mother gives us bread.",
-    "sentence_lemmas": ["mi", "madre", "nos", "dar", "pan"]
+    "sentence_es": "Mi madre nos da pan y leche.",
+    "sentence_en": "My mother gives us bread and milk.",
+    "sentence_lemmas": ["mi", "madre", "nos", "dar", "pan", "y", "leche"]
   },
   {
     "order": 88,
@@ -1025,9 +1025,9 @@
     "lemma": "cómo",
     "es": "cómo",
     "en": "how",
-    "sentence_es": "¿Cómo estás hoy?",
-    "sentence_en": "How are you today?",
-    "sentence_lemmas": ["cómo", "estar", "hoy"]
+    "sentence_es": "¿Cómo estás hoy, mi amigo?",
+    "sentence_en": "How are you today, my friend?",
+    "sentence_lemmas": ["cómo", "estar", "hoy", "mi", "amigo"]
   },
   {
     "order": 91,
@@ -1072,9 +1072,9 @@
     "es": "por",
     "en": "for (reason), by, because of",
     "hint_en": "I work *for* my family",
-    "sentence_es": "Trabajo por mi familia.",
-    "sentence_en": "I work for my family.",
-    "sentence_lemmas": ["trabajar", "por", "mi", "familia"]
+    "sentence_es": "Trabajo mucho por mi familia.",
+    "sentence_en": "I work a lot for my family.",
+    "sentence_lemmas": ["trabajar", "mucho", "por", "mi", "familia"]
   },
   {
     "order": 95,
@@ -1130,9 +1130,9 @@
     "es": "algo",
     "en": "something",
     "hint_en": "Do you want *something* to drink?",
-    "sentence_es": "Quiero comer algo.",
-    "sentence_en": "I want to eat something.",
-    "sentence_lemmas": ["querer", "comer", "algo"]
+    "sentence_es": "Quiero comer algo con mi madre.",
+    "sentence_en": "I want to eat something with my mother.",
+    "sentence_lemmas": ["querer", "comer", "algo", "con", "mi", "madre"]
   },
   {
     "order": 100,
@@ -1188,9 +1188,9 @@
     "es": "ya",
     "en": "already",
     "hint_en": "I am *already* at home.",
-    "sentence_es": "Ya tengo hambre.",
-    "sentence_en": "I am already hungry.",
-    "sentence_lemmas": ["ya", "tener", "hambre"]
+    "sentence_es": "Ya tengo hambre, voy a casa.",
+    "sentence_en": "I am already hungry, I am going home.",
+    "sentence_lemmas": ["ya", "tener", "hambre", "ir", "a", "casa"]
   },
   {
     "order": 105,
@@ -1398,9 +1398,9 @@
     "lemma": "dinero",
     "es": "el dinero",
     "en": "money",
-    "sentence_es": "No tengo dinero.",
-    "sentence_en": "I have no money.",
-    "sentence_lemmas": ["no", "tener", "dinero"]
+    "sentence_es": "No tengo dinero y tengo hambre.",
+    "sentence_en": "I have no money and I am hungry.",
+    "sentence_lemmas": ["no", "tener", "dinero", "y", "tener", "hambre"]
   },
   {
     "order": 124,
@@ -1453,9 +1453,9 @@
     "lemma": "español",
     "es": "el español",
     "en": "Spanish (language)",
-    "sentence_es": "Mi madre habla español.",
-    "sentence_en": "My mother speaks Spanish.",
-    "sentence_lemmas": ["mi", "madre", "hablar", "español"]
+    "sentence_es": "Mi madre habla español con mi padre.",
+    "sentence_en": "My mother speaks Spanish with my father.",
+    "sentence_lemmas": ["mi", "madre", "hablar", "español", "con", "mi", "padre"]
   },
   {
     "order": 129,
@@ -1475,9 +1475,9 @@
     "lemma": "carne",
     "es": "la carne",
     "en": "meat",
-    "sentence_es": "No como carne.",
-    "sentence_en": "I do not eat meat.",
-    "sentence_lemmas": ["no", "comer", "carne"]
+    "sentence_es": "No como carne, como pan.",
+    "sentence_en": "I do not eat meat, I eat bread.",
+    "sentence_lemmas": ["no", "comer", "carne", "comer", "pan"]
   },
   {
     "order": 131,
@@ -1486,9 +1486,9 @@
     "lemma": "fruta",
     "es": "la fruta",
     "en": "fruit",
-    "sentence_es": "Me gusta la fruta.",
-    "sentence_en": "I like fruit.",
-    "sentence_lemmas": ["me", "gustar", "el", "fruta"]
+    "sentence_es": "Me gusta la fruta con leche.",
+    "sentence_en": "I like fruit with milk.",
+    "sentence_lemmas": ["me", "gustar", "el", "fruta", "con", "leche"]
   },
   {
     "order": 132,
@@ -1497,9 +1497,9 @@
     "lemma": "huevo",
     "es": "el huevo",
     "en": "egg",
-    "sentence_es": "Quiero dos huevos.",
-    "sentence_en": "I want two eggs.",
-    "sentence_lemmas": ["querer", "dos", "huevo"]
+    "sentence_es": "Quiero dos huevos con pan.",
+    "sentence_en": "I want two eggs with bread.",
+    "sentence_lemmas": ["querer", "dos", "huevo", "con", "pan"]
   },
   {
     "order": 133,
@@ -1553,9 +1553,9 @@
     "es": "caliente",
     "en": "hot, warm",
     "hint_en": "The soup is *warm*, not hot.",
-    "sentence_es": "El café está caliente.",
-    "sentence_en": "The coffee is hot.",
-    "sentence_lemmas": ["el", "café", "estar", "caliente"]
+    "sentence_es": "El café está muy caliente.",
+    "sentence_en": "The coffee is very hot.",
+    "sentence_lemmas": ["el", "café", "estar", "muy", "caliente"]
   },
   {
     "order": 138,
@@ -1565,9 +1565,9 @@
     "es": "frío",
     "en": "cold",
     "hint_en": "The water is *cold*",
-    "sentence_es": "El agua está fría.",
-    "sentence_en": "The water is cold.",
-    "sentence_lemmas": ["el", "agua", "estar", "frío"]
+    "sentence_es": "El agua está muy fría hoy.",
+    "sentence_en": "The water is very cold today.",
+    "sentence_lemmas": ["el", "agua", "estar", "muy", "frío", "hoy"]
   },
   {
     "order": 139,
@@ -1598,9 +1598,9 @@
     "lemma": "solo",
     "es": "solo",
     "en": "alone",
-    "sentence_es": "Estoy solo en casa.",
-    "sentence_en": "I am alone at home.",
-    "sentence_lemmas": ["estar", "solo", "en", "casa"]
+    "sentence_es": "Estoy solo en casa y no tengo hambre.",
+    "sentence_en": "I am alone at home and I am not hungry.",
+    "sentence_lemmas": ["estar", "solo", "en", "casa", "y", "no", "tener", "hambre"]
   },
   {
     "order": 142,
@@ -1620,9 +1620,9 @@
     "lemma": "necesitar",
     "es": "necesitar",
     "en": "to need",
-    "sentence_es": "Necesito más dinero.",
-    "sentence_en": "I need more money.",
-    "sentence_lemmas": ["necesitar", "más", "dinero"]
+    "sentence_es": "Necesito más dinero para mi familia.",
+    "sentence_en": "I need more money for my family.",
+    "sentence_lemmas": ["necesitar", "más", "dinero", "para", "mi", "familia"]
   },
   {
     "order": 144,
@@ -1642,9 +1642,9 @@
     "lemma": "leer",
     "es": "leer",
     "en": "to read",
-    "sentence_es": "Leo un libro.",
-    "sentence_en": "I read a book.",
-    "sentence_lemmas": ["leer", "un", "libro"]
+    "sentence_es": "Leo un libro en casa con mi hijo.",
+    "sentence_en": "I read a book at home with my son.",
+    "sentence_lemmas": ["leer", "un", "libro", "en", "casa", "con", "mi", "hijo"]
   },
   {
     "order": 146,
