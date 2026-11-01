@@ -500,9 +500,9 @@
     "lemma": "mujer",
     "es": "la mujer",
     "en": "woman",
-    "sentence_es": "La mujer tiene un café.",
-    "sentence_en": "The woman has a coffee.",
-    "sentence_lemmas": ["el", "mujer", "tener", "un", "café"]
+    "sentence_es": "Mi madre es mujer, mi padre es hombre.",
+    "sentence_en": "My mother is a woman, my father is a man.",
+    "sentence_lemmas": ["mi", "madre", "ser", "mujer", "mi", "padre", "ser", "hombre"]
   },
   {
     "order": 45,
@@ -522,9 +522,9 @@
     "lemma": "persona",
     "es": "la persona",
     "en": "person",
-    "sentence_es": "Mi madre es una persona feliz.",
-    "sentence_en": "My mother is a happy person.",
-    "sentence_lemmas": ["mi", "madre", "ser", "un", "persona", "feliz"]
+    "sentence_es": "El hombre y la mujer son personas.",
+    "sentence_en": "The man and the woman are people.",
+    "sentence_lemmas": ["el", "hombre", "y", "el", "mujer", "ser", "persona"]
   },
   {
     "order": 47,
@@ -1343,9 +1343,9 @@
     "es": "la escuela",
     "en": "school",
     "hint_en": "The child is at *school*",
-    "sentence_es": "El niño está en la escuela.",
-    "sentence_en": "The child is at school.",
-    "sentence_lemmas": ["el", "niño", "estar", "en", "el", "escuela"]
+    "sentence_es": "Los niños van a la escuela.",
+    "sentence_en": "The children go to school.",
+    "sentence_lemmas": ["el", "niño", "ir", "a", "el", "escuela"]
   },
   {
     "order": 119,
@@ -1830,9 +1830,9 @@
     "lemma": "mayor",
     "es": "mayor",
     "en": "older",
-    "sentence_es": "Mi hermano mayor trabaja en la ciudad.",
-    "sentence_en": "My older brother works in the city.",
-    "sentence_lemmas": ["mi", "hermano", "mayor", "trabajar", "en", "el", "ciudad"]
+    "sentence_es": "Mi hermano mayor tiene más años que yo.",
+    "sentence_en": "My older brother is older than me.",
+    "sentence_lemmas": ["mi", "hermano", "mayor", "tener", "más", "año", "que", "yo"]
   },
   {
     "order": 614,
@@ -2084,9 +2084,9 @@
     "lemma": "domingo",
     "es": "el domingo",
     "en": "Sunday",
-    "sentence_es": "El domingo como con mi familia.",
-    "sentence_en": "On Sunday I eat with my family.",
-    "sentence_lemmas": ["el", "domingo", "comer", "con", "mi", "familia"]
+    "sentence_es": "El domingo es un día sin trabajo.",
+    "sentence_en": "Sunday is a day without work.",
+    "sentence_lemmas": ["el", "domingo", "ser", "un", "día", "sin", "trabajo"]
   },
   {
     "order": 637,
@@ -2118,9 +2118,9 @@
     "lemma": "lunes",
     "es": "el lunes",
     "en": "Monday",
-    "sentence_es": "El lunes trabajo en la tienda.",
-    "sentence_en": "On Monday I work at the store.",
-    "sentence_lemmas": ["el", "lunes", "trabajar", "en", "el", "tienda"]
+    "sentence_es": "El lunes trabajo, el domingo no.",
+    "sentence_en": "On Monday I work, on Sunday I do not.",
+    "sentence_lemmas": ["el", "lunes", "trabajar", "el", "domingo", "no"]
   },
   {
     "order": 640,
@@ -2615,9 +2615,9 @@
     "lemma": "delgado",
     "es": "delgado",
     "en": "thin",
-    "sentence_es": "Mi perro es muy delgado.",
-    "sentence_en": "My dog is very thin.",
-    "sentence_lemmas": ["mi", "perro", "ser", "muy", "delgado"]
+    "sentence_es": "Mi perro es delgado porque no come mucho.",
+    "sentence_en": "My dog is thin because he does not eat much.",
+    "sentence_lemmas": ["mi", "perro", "ser", "delgado", "porque", "no", "comer", "mucho"]
   },
   {
     "order": 685,
@@ -2648,9 +2648,9 @@
     "lemma": "color",
     "es": "el color",
     "en": "color",
-    "sentence_es": "El color de mi casa es rojo.",
-    "sentence_en": "The color of my house is red.",
-    "sentence_lemmas": ["el", "color", "de", "mi", "casa", "ser", "rojo"]
+    "sentence_es": "El blanco y el negro son colores.",
+    "sentence_en": "White and black are colors.",
+    "sentence_lemmas": ["el", "blanco", "y", "el", "negro", "ser", "color"]
   },
   {
     "order": 688,
@@ -2715,9 +2715,9 @@
     "lemma": "salado",
     "es": "salado",
     "en": "salty",
-    "sentence_es": "La sopa de mi madre está muy salada.",
-    "sentence_en": "My mother's soup is very salty.",
-    "sentence_lemmas": ["el", "sopa", "de", "mi", "madre", "estar", "muy", "salado"]
+    "sentence_es": "La sopa con mucha sal es salada.",
+    "sentence_en": "Soup with a lot of salt is salty.",
+    "sentence_lemmas": ["el", "sopa", "con", "mucho", "sal", "ser", "salado"]
   },
   {
     "order": 212,
@@ -2726,9 +2726,9 @@
     "lemma": "estudiar",
     "es": "estudiar",
     "en": "to study",
-    "sentence_es": "Mi hermano estudia mucho hoy.",
-    "sentence_en": "My brother studies a lot today.",
-    "sentence_lemmas": ["mi", "hermano", "estudiar", "mucho", "hoy"]
+    "sentence_es": "Estudio en la biblioteca con mis libros.",
+    "sentence_en": "I study in the library with my books.",
+    "sentence_lemmas": ["estudiar", "en", "el", "biblioteca", "con", "mi", "libro"]
   },
   {
     "order": 228,
@@ -2805,9 +2805,9 @@
     "lemma": "viajar",
     "es": "viajar",
     "en": "to travel",
-    "sentence_es": "Mi familia viaja a la ciudad.",
-    "sentence_en": "My family travels to the city.",
-    "sentence_lemmas": ["mi", "familia", "viajar", "a", "el", "ciudad"]
+    "sentence_es": "Viajo a la ciudad en tren.",
+    "sentence_en": "I travel to the city by train.",
+    "sentence_lemmas": ["viajar", "a", "el", "ciudad", "en", "tren"]
   },
   {
     "order": 235,
@@ -2827,9 +2827,9 @@
     "lemma": "profesor",
     "es": "el profesor / el maestro",
     "en": "teacher, professor",
-    "sentence_es": "Mi amigo es profesor en la escuela.",
-    "sentence_en": "My friend is a teacher at the school.",
-    "sentence_lemmas": ["mi", "amigo", "ser", "profesor", "en", "el", "escuela"]
+    "sentence_es": "El profesor trabaja con los estudiantes.",
+    "sentence_en": "The teacher works with the students.",
+    "sentence_lemmas": ["el", "profesor", "trabajar", "con", "el", "estudiante"]
   },
   {
     "order": 193,
@@ -2838,9 +2838,9 @@
     "lemma": "ocho",
     "es": "ocho",
     "en": "eight",
-    "sentence_es": "Llego a casa a las ocho.",
-    "sentence_en": "I get home at eight o'clock.",
-    "sentence_lemmas": ["llegar", "a", "casa", "a", "el", "ocho"]
+    "sentence_es": "Cinco más tres son ocho.",
+    "sentence_en": "Five plus three is eight.",
+    "sentence_lemmas": ["cinco", "más", "tres", "ser", "ocho"]
   },
   {
     "order": 246,
@@ -3050,9 +3050,9 @@
     "lemma": "mar",
     "es": "el mar",
     "en": "sea",
-    "sentence_es": "Mi hijo quiere ver el mar.",
-    "sentence_en": "My son wants to see the sea.",
-    "sentence_lemmas": ["mi", "hijo", "querer", "ver", "el", "mar"]
+    "sentence_es": "El mar es grande y azul.",
+    "sentence_en": "The sea is big and blue.",
+    "sentence_lemmas": ["el", "mar", "ser", "grande", "y", "azul"]
   },
   {
     "order": 224,
@@ -3173,9 +3173,9 @@
     "lemma": "ventana",
     "es": "la ventana",
     "en": "window",
-    "sentence_es": "El gato está en la ventana.",
-    "sentence_en": "The cat is at the window.",
-    "sentence_lemmas": ["el", "gato", "estar", "en", "el", "ventana"]
+    "sentence_es": "Veo la calle por la ventana.",
+    "sentence_en": "I see the street through the window.",
+    "sentence_lemmas": ["ver", "el", "calle", "por", "el", "ventana"]
   },
   {
     "order": 274,
@@ -3206,9 +3206,9 @@
     "lemma": "tarde",
     "es": "tarde",
     "en": "late",
-    "sentence_es": "Mi padre llega tarde a casa.",
-    "sentence_en": "My father gets home late.",
-    "sentence_lemmas": ["mi", "padre", "llegar", "tarde", "a", "casa"]
+    "sentence_es": "Llego tarde, no llego temprano.",
+    "sentence_en": "I arrive late, not early.",
+    "sentence_lemmas": ["llegar", "tarde", "no", "llegar", "temprano"]
   },
   {
     "order": 192,
@@ -4280,9 +4280,9 @@
     "lemma": "sofá",
     "es": "el sofá",
     "en": "couch",
-    "sentence_es": "El gato duerme en el sofá.",
-    "sentence_en": "The cat sleeps on the sofa.",
-    "sentence_lemmas": ["el", "gato", "dormir", "en", "el", "sofá"]
+    "sentence_es": "Veo la televisión en el sofá.",
+    "sentence_en": "I watch TV on the sofa.",
+    "sentence_lemmas": ["ver", "el", "televisión", "en", "el", "sofá"]
   },
   {
     "order": 959,
@@ -4413,9 +4413,9 @@
     "lemma": "supermercado",
     "es": "el supermercado / el súper",
     "en": "supermarket",
-    "sentence_es": "Voy al supermercado con mi madre.",
-    "sentence_en": "I go to the supermarket with my mother.",
-    "sentence_lemmas": ["ir", "a", "supermercado", "con", "mi", "madre"]
+    "sentence_es": "En el supermercado compro pan, leche y carne.",
+    "sentence_en": "At the supermarket I buy bread, milk and meat.",
+    "sentence_lemmas": ["en", "el", "supermercado", "comprar", "pan", "leche", "y", "carne"]
   },
   {
     "order": 973,
@@ -4546,9 +4546,9 @@
     "lemma": "luna",
     "es": "la luna",
     "en": "moon",
-    "sentence_es": "Esta noche la luna es grande.",
-    "sentence_en": "The moon is big tonight.",
-    "sentence_lemmas": ["este", "noche", "el", "luna", "ser", "grande"]
+    "sentence_es": "Veo la luna en la noche.",
+    "sentence_en": "I see the moon at night.",
+    "sentence_lemmas": ["ver", "el", "luna", "en", "el", "noche"]
   },
   {
     "order": 988,
@@ -4623,9 +4623,9 @@
     "lemma": "juego",
     "es": "el juego",
     "en": "game",
-    "sentence_es": "Este juego es muy difícil.",
-    "sentence_en": "This game is very difficult.",
-    "sentence_lemmas": ["este", "juego", "ser", "muy", "difícil"]
+    "sentence_es": "El fútbol es un juego para muchas personas.",
+    "sentence_en": "Soccer is a game for many people.",
+    "sentence_lemmas": ["el", "fútbol", "ser", "un", "juego", "para", "mucho", "persona"]
   },
   {
     "order": 1001,
@@ -4777,9 +4777,9 @@
     "lemma": "librería",
     "es": "la librería",
     "en": "bookstore",
-    "sentence_es": "Hay muchos libros en la librería.",
-    "sentence_en": "There are many books in the bookstore.",
-    "sentence_lemmas": ["haber", "mucho", "libro", "en", "el", "librería"]
+    "sentence_es": "En la librería compro libros.",
+    "sentence_en": "At the bookstore I buy books.",
+    "sentence_lemmas": ["en", "el", "librería", "comprar", "libro"]
   },
   {
     "order": 1558,
@@ -4788,9 +4788,9 @@
     "lemma": "cafetería",
     "es": "la cafetería",
     "en": "coffee shop",
-    "sentence_es": "Nos vemos en la cafetería de la escuela.",
-    "sentence_en": "We meet at the school cafeteria.",
-    "sentence_lemmas": ["nos", "ver", "en", "el", "cafetería", "de", "el", "escuela"]
+    "sentence_es": "En la cafetería tomo café y como pan.",
+    "sentence_en": "At the cafeteria I drink coffee and eat bread.",
+    "sentence_lemmas": ["en", "el", "cafetería", "tomar", "café", "y", "comer", "pan"]
   },
   {
     "order": 1584,
@@ -4997,9 +4997,9 @@
     "lemma": "salón",
     "es": "el salón",
     "en": "classroom (MX)",
-    "sentence_es": "El salón de clase es grande.",
-    "sentence_en": "The classroom is big.",
-    "sentence_lemmas": ["el", "salón", "de", "clase", "ser", "grande"]
+    "sentence_es": "El salón de clase tiene mesas y sillas.",
+    "sentence_en": "The classroom has tables and chairs.",
+    "sentence_lemmas": ["el", "salón", "de", "clase", "tener", "mesa", "y", "silla"]
   },
   {
     "order": 2771,
@@ -5627,9 +5627,9 @@
     "lemma": "mascota",
     "es": "la mascota",
     "en": "pet",
-    "sentence_es": "El perro es mi mascota.",
-    "sentence_en": "The dog is my pet.",
-    "sentence_lemmas": ["el", "perro", "ser", "mi", "mascota"]
+    "sentence_es": "Un perro o un gato es una mascota.",
+    "sentence_en": "A dog or a cat is a pet.",
+    "sentence_lemmas": ["un", "perro", "o", "un", "gato", "ser", "un", "mascota"]
   },
   {
     "order": 4367,

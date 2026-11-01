@@ -5,11 +5,9 @@
   "o40": [],
   "o41": [],
   "o44": [
-    { "es": "La mujer tiene café.", "en": "The woman has coffee." }
+    { "es": "Mi madre es mujer.", "en": "My mother is a woman." }
   ],
-  "o46": [
-    { "es": "Mi madre es feliz.", "en": "My mother is happy." }
-  ],
+  "o46": [],
   "o49": [
     { "es": "Mi padre trabaja.", "en": "My father works." }
   ],
@@ -128,7 +126,7 @@
     { "es": "Vamos a la tienda.", "en": "We are going to the store." }
   ],
   "o174": [
-    { "es": "Mi padre llega a casa.", "en": "My father gets home." }
+    { "es": "Llego tarde.", "en": "I arrive late." }
   ],
   "o176": [
     { "es": "Trabajo temprano.", "en": "I work early." }
@@ -163,9 +161,7 @@
   "o190": [],
   "o191": [],
   "o192": [],
-  "o193": [
-    { "es": "Llego a casa.", "en": "I get home." }
-  ],
+  "o193": [],
   "o194": [],
   "o195": [],
   "o196": [],
@@ -207,7 +203,7 @@
     { "es": "Aprendo español.", "en": "I learn Spanish." }
   ],
   "o212": [
-    { "es": "Mi hermano estudia.", "en": "My brother studies." }
+    { "es": "Estudio en la biblioteca.", "en": "I study in the library." }
   ],
   "o213": [
     { "es": "Mi hijo duerme.", "en": "My son sleeps." }
@@ -245,7 +241,7 @@
     { "es": "Camino a la escuela.", "en": "I walk to school." }
   ],
   "o230": [
-    { "es": "Mi familia viaja.", "en": "My family travels." }
+    { "es": "Viajo en tren.", "en": "I travel by train." }
   ],
   "o231": [
     { "es": "Usé mi teléfono.", "en": "I used my phone." }
@@ -275,7 +271,7 @@
   ],
   "o243": [],
   "o245": [
-    { "es": "Mi amigo es profesor.", "en": "My friend is a teacher." }
+    { "es": "El profesor trabaja.", "en": "The teacher works." }
   ],
   "o246": [
     { "es": "Tengo clase.", "en": "I have class." }
@@ -333,7 +329,9 @@
     { "es": "Mi habitación era pequeña.", "en": "My room was small." }
   ],
   "o269": [],
-  "o270": [],
+  "o270": [
+    { "es": "Veo la calle.", "en": "I see the street." }
+  ],
   "o271": [
     { "es": "Abro la puerta.", "en": "I open the door." }
   ],
@@ -468,7 +466,9 @@
   "o400": [
     { "es": "Hago ejercicio.", "en": "I exercise." }
   ],
-  "o405": [],
+  "o405": [
+    { "es": "El mar es grande.", "en": "The sea is big." }
+  ],
   "o407": [],
   "o416": [
     { "es": "La habitación es oscura.", "en": "The room is dark." }
@@ -517,10 +517,7 @@
   "o612": [
     { "es": "Hay una silla.", "en": "There is a chair." }
   ],
-  "o613": [
-    { "es": "Mi hermano trabaja.", "en": "My brother works." },
-    { "es": "Mi hermano mayor trabaja.", "en": "My older brother works." }
-  ],
+  "o613": [],
   "o614": [
     { "es": "El español es bonito.", "en": "Spanish is beautiful." }
   ],
@@ -569,7 +566,7 @@
     { "es": "Hay bancos y tiendas.", "en": "There are banks and stores." }
   ],
   "o636": [
-    { "es": "Como con mi familia.", "en": "I eat with my family." }
+    { "es": "El domingo es un día.", "en": "Sunday is a day." }
   ],
   "o637": [
     { "es": "Quiero agua.", "en": "I want water." }
@@ -579,7 +576,7 @@
     { "es": "Hay un concierto hoy.", "en": "There is a concert today." }
   ],
   "o639": [
-    { "es": "Trabajo en la tienda.", "en": "I work at the store." }
+    { "es": "El lunes trabajo.", "en": "On Monday I work." }
   ],
   "o640": [],
   "o641": [
@@ -675,9 +672,7 @@
     { "es": "Mi perro es delgado.", "en": "My dog is thin." }
   ],
   "o686": [],
-  "o687": [
-    { "es": "El color es rojo.", "en": "The color is red." }
-  ],
+  "o687": [],
   "o689": [
     { "es": "El pez vive.", "en": "The fish lives." }
   ],
@@ -688,8 +683,7 @@
     { "es": "En el hospital hay medicina.", "en": "There is medicine at the hospital." }
   ],
   "o693": [
-    { "es": "La sopa está salada.", "en": "The soup is salty." },
-    { "es": "La sopa está muy salada.", "en": "The soup is very salty." }
+    { "es": "La sopa es salada.", "en": "The soup is salty." }
   ],
   "o694": [
     { "es": "Mi madre compró un regalo.", "en": "My mother bought a gift." }
@@ -1048,7 +1042,7 @@
     { "es": "Mis padres ven la televisión.", "en": "My parents watch TV." }
   ],
   "o955": [
-    { "es": "El gato duerme.", "en": "The cat sleeps." }
+    { "es": "Veo la televisión.", "en": "I watch TV." }
   ],
   "o956": [
     { "es": "Hay un espejo.", "en": "There is a mirror." }
@@ -1078,7 +1072,7 @@
     { "es": "Voy a la iglesia.", "en": "I go to church." }
   ],
   "o972": [
-    { "es": "Voy al supermercado.", "en": "I go to the supermarket." }
+    { "es": "En el supermercado compro pan.", "en": "At the supermarket I buy bread." }
   ],
   "o973": [
     { "es": "Compro pan.", "en": "I buy bread." }
@@ -1110,7 +1104,7 @@
     { "es": "Hay un ratón.", "en": "There is a mouse." }
   ],
   "o987": [
-    { "es": "La luna es grande.", "en": "The moon is big." }
+    { "es": "Veo la luna.", "en": "I see the moon." }
   ],
   "o989": [
     { "es": "Hay una nube.", "en": "There is a cloud." },
@@ -1138,7 +1132,7 @@
     { "es": "La lección es fácil.", "en": "The lesson is easy." }
   ],
   "o1000": [
-    { "es": "Este juego es difícil.", "en": "This game is difficult." }
+    { "es": "El fútbol es un juego.", "en": "Soccer is a game." }
   ],
   "o1001": [
     { "es": "Mi madre canta.", "en": "My mother sings." }
@@ -1701,7 +1695,7 @@
     { "es": "Compro flores.", "en": "I buy flowers." }
   ],
   "o1554": [
-    { "es": "Hay muchos libros.", "en": "There are many books." }
+    { "es": "Compro libros.", "en": "I buy books." }
   ],
   "o1555": [
     { "es": "Compro zapatos.", "en": "I buy shoes." }
@@ -1713,7 +1707,7 @@
     { "es": "Mi padre trabaja.", "en": "My father works." }
   ],
   "o1558": [
-    { "es": "Nos vemos en la cafetería.", "en": "We meet at the cafeteria." }
+    { "es": "En la cafetería tomo café.", "en": "At the cafeteria I drink coffee." }
   ],
   "o1559": [
     { "es": "Los niños nadan.", "en": "The children swim." }
@@ -2825,7 +2819,7 @@
   ],
   "o2698": [],
   "o2699": [
-    { "es": "El salón es grande.", "en": "The classroom is big." }
+    { "es": "El salón tiene mesas y sillas.", "en": "The classroom has tables and chairs." }
   ],
   "o2702": [],
   "o2704": [
