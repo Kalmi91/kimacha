@@ -21,10 +21,12 @@ type Props = {
   text: string;
   options: string[];
   correctIndex: number;
+  /** The result is handed over at once (`onDone(correct)`), without the card's own reveal and Next: for a screen that shows the answer itself. */
+  instant?: boolean;
   onDone: (correct: boolean) => void;
 };
 
-export default function ExamChoiceCard({ heading, text, options, correctIndex, onDone }: Props) {
+export default function ExamChoiceCard({ heading, text, options, correctIndex, instant = false, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -34,6 +36,7 @@ export default function ExamChoiceCard({ heading, text, options, correctIndex, o
   const choose = (i: number) => {
     if (picked !== null) return;
     if (i === correctIndex) onDone(true);
+    else if (instant) onDone(false);
     else setPicked(i);
   };
 

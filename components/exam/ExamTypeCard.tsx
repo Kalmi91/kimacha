@@ -29,10 +29,12 @@ type Props = {
   /** Code of the learned language, for the placeholder caption. */
   targetLang: string;
   strictAccents: boolean;
+  /** The result is handed over at once (`onDone(correct)`), without the card's own reveal and Next: for a screen that shows the answer itself. */
+  instant?: boolean;
   onDone: (correct: boolean) => void;
 };
 
-export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, targetLang, strictAccents, onDone }: Props) {
+export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, targetLang, strictAccents, instant = false, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -47,9 +49,10 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
         : gradePcicAnswer(typed, target, strictAccents, targetLang);
       return suggestedGrade(grade) === 'good';
     });
-    if (ok) onDone(true);
+    if (ok || instant) onDone(ok);
     else setMissed(true);
   };
+  const giveUp = () => (instant ? onDone(false) : setMissed(true));
 
   // Check (and Next after a wrong answer) is a bar docked above the keyboard, as on the word card (DockSlot).
   const { docked, padBottom } = useDockedAction(
@@ -106,7 +109,7 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
       ) : (
         <>
           {docked ? null : <ExamButton testID="exam-check" label={s.card.check} onPress={check} disabled={typed.trim().length === 0} />}
-          <ExamButton testID="exam-dont-know" secondary label={s.exam.dontKnow} onPress={() => setMissed(true)} />
+          <ExamButton testID="exam-dont-know" secondary label={s.exam.dontKnow} onPress={giveUp} />
         </>
       )}
       {docked ? <View style={{ height: padBottom }} /> : null}

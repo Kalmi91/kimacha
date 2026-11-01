@@ -20,10 +20,7 @@ import { Card } from '@/components/grammar/Brutal';
 import { ProgressBar } from '@/components/grammar/Themed';
 import ResultBadge from '@/components/ResultBadge';
 import ExamButton from '@/components/exam/ExamButton';
-import ExamChoiceCard from '@/components/exam/ExamChoiceCard';
-import ExamMatchCard from '@/components/exam/ExamMatchCard';
-import ExamTilesCard from '@/components/exam/ExamTilesCard';
-import ExamTypeCard from '@/components/exam/ExamTypeCard';
+import TestQuestionView from '@/components/grammar/TestQuestionView';
 import { DockSlotProvider, useDockSlot } from '@/components/learn/DockSlot';
 import { FAB_CLEARANCE } from '@/components/learn/DockedAction';
 import ScreenFeedback from '@/lib/screenFeedback';
@@ -61,41 +58,6 @@ interface Props {
   onBackToSyllabus: () => void;
   /** After confirming the ✕: back to the lesson, without saving. */
   onLeave: () => void;
-}
-
-function QuestionView({
-  q,
-  learnedLang,
-  strictAccents,
-  onDone,
-}: {
-  q: LessonTestQuestion;
-  learnedLang: string;
-  strictAccents: boolean;
-  onDone: (correct: boolean) => void;
-}) {
-  const v = q.view;
-  switch (v.card) {
-    case 'choice':
-      return <ExamChoiceCard heading={v.heading} text={v.text} options={v.options} correctIndex={v.correctIndex} onDone={onDone} />;
-    case 'type':
-      return (
-        <ExamTypeCard
-          prompt={v.prompt}
-          hint={v.hint}
-          answer={v.answer}
-          accept={v.accept}
-          sentence={v.sentence}
-          targetLang={learnedLang}
-          strictAccents={strictAccents}
-          onDone={onDone}
-        />
-      );
-    case 'tiles':
-      return <ExamTilesCard prompt={v.prompt} answerTokens={v.answerTokens} sentence={v.sentence} distractors={[]} onDone={onDone} />;
-    case 'match':
-      return <ExamMatchCard pairs={v.pairs} onDone={onDone} />;
-  }
 }
 
 export default function LessonTest({
@@ -279,7 +241,7 @@ export default function LessonTest({
       <ProgressBar testID="lesson-test-progress" pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
       <DockSlotProvider host={dock}>
         {questions[index] && (
-          <QuestionView key={`${topicId}:${index}:${questions[index].id}`} q={questions[index]} learnedLang={learnedLang} strictAccents={strictAccents} onDone={answered} />
+          <TestQuestionView key={`${topicId}:${index}:${questions[index].id}`} q={questions[index]} learnedLang={learnedLang} strictAccents={strictAccents} onDone={answered} />
         )}
       </DockSlotProvider>
       {dock.node}

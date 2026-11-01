@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View, useWindowDimensions } from 'react-native';
 import { Text } from '@/components/KText';
 import { useFocusEffect, useRouter } from 'expo-router';
@@ -26,6 +26,17 @@ import {
 } from '@/lib/grammar/syllabus';
 import { lessonBadgePercent, lessonScoresByTopic } from '@/lib/grammar/lessonScore';
 import { lessonTestPassedTopics } from '@/lib/grammar/lessonTest';
+import {
+  badgeForTopic,
+  evidenceFromRows,
+  GRAMMAR_RANDOM_KEY,
+  overallScore,
+  phaseProgress,
+  runFromRows,
+  weakTopicCount,
+  type RoundRun,
+  type TopicEvidence,
+} from '@/lib/grammar/randomRound';
 import { DEFAULT_WEEKLY_GOAL_MINUTES } from '@/lib/usageStats';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { BrutalBox, SegmentBar, Sticker, segmentsFilled } from '@/components/grammar/Brutal';
@@ -66,6 +77,9 @@ export default function GrammarSyllabusScreen() {
   const [percents, setPercents] = useState<Map<string, number>>(new Map());
   // lessons that passed the end-of-lesson test ("Test passed" mark).
   const [testPassed, setTestPassed] = useState<Set<string>>(new Set());
+  // the random grammar round (lib/grammar/randomRound.ts): per-topic test evidence + the open round, if any.
+  const [evidence, setEvidence] = useState<Map<string, TopicEvidence>>(new Map());
+  const [randomRun, setRandomRun] = useState<RoundRun | null>(null);
   // streak sticker + weekly goal box (from the existing getStreak / weekly goal / usage values).
   const [streak, setStreak] = useState(0);
   const [weeklyGoal, setWeeklyGoal] = useState(DEFAULT_WEEKLY_GOAL_MINUTES);
@@ -92,6 +106,9 @@ export default function GrammarSyllabusScreen() {
     // The lesson's % is the average over all kinds (the ones not done count as 0), not the cumulative correct rate.
     setPercents(lessonScoresByTopic(rows, (id) => lessonKinds(target, id)));
     setTestPassed(lessonTestPassedTopics(rows));
+    const randomRows = await db.getGameProgress(GRAMMAR_RANDOM_KEY);
+    setEvidence(evidenceFromRows(randomRows));
+    setRandomRun(runFromRows(randomRows));
     setStreak((await db.getStreak())?.current_count ?? 0);
     setWeeklyGoal(await db.getWeeklyGoalMinutes());
     setWeekMinutes((await db.getUsageStats()).thisWeek);
@@ -105,6 +122,37 @@ export default function GrammarSyllabusScreen() {
 
   const coverage = lessonCoverage(learnedLang);
   const doneCount = [...progress.values()].filter((p) => p.state === 'done').length;
+
+  // the entry card of the random round: the title (start / continue the open round) and the grammar score line.
+  const rr = s.randomRound;
+  const randomTitle = (() => {
+    if (!randomRun) return `🎲 ${rr.start}`;
+    const { phase, of, index: answered } = phaseProgress(randomRun);
+    // the number of the NEXT question, the same as the round screen's counter.
+    const index = Math.min(answered + 1, of);
+    const label =
+      phase === 'check' ? rr.phaseCheck(index, of)
+      : phase === 'practice' ? rr.phasePractice(index, of)
+      : phase === 'recheck' ? rr.phaseRecheck(index, of)
+      : phase === 'full' ? rr.phaseFull(index, of)
+      : rr.done;
+    return `🎲 ${rr.continueRound(label)}`;
+  })();
+  const writtenIds = useMemo(
+    () => syllabusLevels(learnedLang).flatMap((lvl) => syllabusForLevel(lvl, learnedLang)).filter((tp) => hasLesson(learnedLang, tp.id)).map((tp) => tp.id),
+    [learnedLang]
+  );
+  // the lesson % per topic is the one the row badge starts from (with the old-progress fallback), not only `percents`.
+  const lessonPcts = useMemo(() => {
+    const m = new Map<string, number>();
+    for (const id of writtenIds) {
+      const p = progress.get(id);
+      const v = lessonBadgePercent(percents.get(id) ?? null, p?.correct, p?.total);
+      if (v !== null) m.set(id, v);
+    }
+    return m;
+  }, [writtenIds, percents, progress]);
+  const randomScore = rr.score(overallScore(writtenIds, lessonPcts, evidence), weakTopicCount(evidence));
 
   // Neo-brutalist:
   // the classic palette renders today's look below.
@@ -132,6 +180,16 @@ export default function GrammarSyllabusScreen() {
           <Text style={[styles.brutalSmall, { color: g.mu }]}>
             {s.grammar.coverage(doneCount, coverage.written, coverage.planned)}
           </Text>
+
+          <BrutalBox
+            testID="grammar-random-start"
+            fill="a"
+            onPress={() => router.push('/grammar/random' as never)}
+            boxStyle={styles.brutalTopic}
+          >
+            <Text variant="title" style={[styles.brutalTopicTitle, { color: g.onFill }]}>{randomTitle}</Text>
+            <Text style={[styles.brutalBlurb, { color: g.onFill }]}>{randomScore}</Text>
+          </BrutalBox>
 
           <View style={styles.brutalLevelRow}>
             {syllabusLevels(learnedLang).map((lvl) => (
@@ -161,17 +219,23 @@ export default function GrammarSyllabusScreen() {
                 const written2 = hasLesson(learnedLang, topic.id);
                 const p = progress.get(topic.id);
                 const pct = percents.get(topic.id) ?? null;
-                const badgePct = lessonBadgePercent(pct, p?.correct, p?.total);
+                // the lesson % or the random-round test % (the larger one), 🎯 behind a test %, ✓ 🎯 once the test ticked the topic.
+                const bd = badgeForTopic(lessonBadgePercent(pct, p?.correct, p?.total), evidence.get(topic.id));
+                const badgePct = bd.pct;
                 const isDone = p?.state === 'done';
+                const tickedOpen = bd.ticked && !isDone;
+                const testMark = bd.fromTest || tickedOpen ? ' 🎯' : '';
                 const inProgress = written2 && !isDone && (badgePct !== null || !!p);
                 const badge = !written2
                   ? `🔒 ${s.grammar.soon}`
                   : isDone
                     ? badgePct !== null
-                      ? `✓ ${badgePct}%`
+                      ? `✓ ${badgePct}%${testMark}`
                       : `✓ ${p.correct ?? 0}/${p.total ?? 0}`
                     : badgePct !== null
-                      ? `${badgePct}% · ${s.grammar.continueTag}`
+                      ? tickedOpen
+                        ? `✓ ${badgePct}%${testMark}`
+                        : `${badgePct}%${testMark} · ${s.grammar.continueTag}`
                       : p
                         ? s.grammar.started
                         : s.grammar.notStarted;
@@ -251,6 +315,15 @@ export default function GrammarSyllabusScreen() {
       </Text>
 
       <ScrollView contentContainerStyle={styles.body}>
+        <Pressable
+          testID="grammar-random-start"
+          style={[styles.randomCard, { backgroundColor: colors.card, borderColor: colors.tint }]}
+          onPress={() => router.push('/grammar/random' as never)}
+        >
+          <Text style={[styles.levelName, { color: colors.text }]}>{randomTitle}</Text>
+          <Text style={[styles.levelMeta, { color: colors.tabIconDefault }]}>{randomScore}</Text>
+        </Pressable>
+
         {syllabusLevels(learnedLang).map((lvl) => {
           const topics = syllabusForLevel(lvl, learnedLang);
           const written = topics.filter((tp) => hasLesson(learnedLang, tp.id)).length;
@@ -291,15 +364,19 @@ export default function GrammarSyllabusScreen() {
                         // ONE badge, not two. On a done topic the cumulative
                         // percentage (or, for the old progress, the round's result)
                         // sits next to the ✓; on a started, not done topic it stands alone.
-                        const badgePct = lessonBadgePercent(pct, p?.correct, p?.total);
+                        // the larger of the lesson % and the random-round test %; 🎯 behind a test %, ✓ 🎯 once the test ticked the topic.
+                        const bd = badgeForTopic(lessonBadgePercent(pct, p?.correct, p?.total), evidence.get(topic.id));
+                        const badgePct = bd.pct;
+                        const tickedOpen = bd.ticked && p?.state !== 'done';
+                        const testMark = bd.fromTest || tickedOpen ? ' 🎯' : '';
                         const badge = !written2
                           ? s.grammar.soon
                           : p?.state === 'done'
                             ? badgePct !== null
-                              ? `✓ ${badgePct}%`
+                              ? `✓ ${badgePct}%${testMark}`
                               : `✓ ${p.correct ?? 0}/${p.total ?? 0}`
                             : badgePct !== null
-                              ? `${badgePct}%`
+                              ? `${tickedOpen ? '✓ ' : ''}${badgePct}%${testMark}`
                               : p
                                 ? s.grammar.started
                                 : s.grammar.notStarted;
@@ -384,6 +461,7 @@ const styles = StyleSheet.create({
   body: { padding: 14, paddingBottom: 24, gap: 10 },
   levelBlock: { gap: 8 },
   levelHeader: { borderRadius: 14, borderWidth: 1.5, padding: 14, gap: 2 },
+  randomCard: { borderRadius: 14, borderWidth: 1.5, padding: 14, gap: 2 },
   levelName: { fontSize: 17, fontWeight: '800' },
   levelMeta: { fontSize: 12 },
   unitBlock: { gap: 6, paddingLeft: 6 },

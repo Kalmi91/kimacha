@@ -10,6 +10,7 @@ import { getDb } from '@/lib/database';
 import { pcicItemsForLevel, PCIC_LEVELS, type PcicTarget, type PcicLevel } from '@/data/pcic';
 import { useLearner, type LearnerActions } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { GRAMMAR_RANDOM_KEY } from '@/lib/grammar/randomRound';
 import { validateBackupPayload } from '@/lib/backup';
 import { validateMistakesPayload } from '@/lib/mistakes/format';
 import { seedExamState } from '@/lib/exam/devSeed';
@@ -35,11 +36,15 @@ import { useScreenLoad } from '@/lib/useScreenLoad';
 async function loadResettable(refresh: LearnerActions['refresh']): Promise<{ levels: PcicLevel[]; grammar: boolean }> {
   const db = getDb();
   await refresh(['direction']);
-  const [cards, grammarRows] = await Promise.all([db.getPcicCards(), db.getGameProgress(GRAMMAR_PROGRESS_KEY)]);
+  const [cards, grammarRows, randomRows] = await Promise.all([
+    db.getPcicCards(),
+    db.getGameProgress(GRAMMAR_PROGRESS_KEY),
+    db.getGameProgress(GRAMMAR_RANDOM_KEY),
+  ]);
   const ids = new Set(cards.map((c) => c.itemId));
   return {
     levels: PCIC_LEVELS.filter((lvl) => pcicItemsForLevel(lvl).some((i) => ids.has(i.id))),
-    grammar: grammarRows.length > 0,
+    grammar: grammarRows.length > 0 || randomRows.length > 0,
   };
 }
 
@@ -262,7 +267,11 @@ export function useSettingsScreen() {
       await clearLearnResume(getDb());
     });
   const handleResetGrammar = () =>
-    confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, () => getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY));
+    confirmReset(s.settings.resetGrammarTitle, s.settings.resetGrammarMessage, async () => {
+      await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
+      // the random round's evidence, counter and open round go with it.
+      await getDb().resetGameProgress(GRAMMAR_RANDOM_KEY);
+    });
 
   // Row visible only in __DEV__; it sets the exam
   // state (A1-B2: 85% of the level's cards graduated + the written lessons done) so that the exam can be clicked through.

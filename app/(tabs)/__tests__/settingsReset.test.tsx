@@ -19,6 +19,7 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
+import { GRAMMAR_RANDOM_KEY } from '@/lib/grammar/randomRound';
 import { buildLearnResume, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
 import { sm2NewCard } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
@@ -52,6 +53,7 @@ describe('Settings: progress reset', () => {
     await getDb().setOnboarding('en', 'es');
     await getDb().resetPcicCards();
     await getDb().resetGameProgress(GRAMMAR_PROGRESS_KEY);
+    await getDb().resetGameProgress(GRAMMAR_RANDOM_KEY);
   });
   afterEach(() => jest.restoreAllMocks());
 
@@ -130,5 +132,32 @@ describe('Settings: progress reset', () => {
     expect((await getDb().getPcicCards()).length).toBe(1);
     expect(queryByText('🗑️ Reset grammar progress')).toBeNull();
     expect(getByText('🗑️ Reset progress (B1)')).toBeTruthy();
+  });
+
+  // the random round's rows (test evidence, counter, open round) are grammar progress too.
+  it('the grammar row also resets the random round rows, and shows up with only those', async () => {
+    await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, 'presente-regular', 'evidence', { answers: [] });
+    await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, '_meta', 'meta', { rounds: 2 });
+    await getDb().setGameProgress(GRAMMAR_PROGRESS_KEY, 'presente-regular', 'done', { correct: 3, total: 3 });
+    const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
+    const r = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    await flush();
+
+    openReset(r);
+    fireEvent.press(r.getByText('🗑️ Reset grammar progress'));
+    await confirmAlert(alertSpy);
+
+    expect(await getDb().getGameProgress(GRAMMAR_PROGRESS_KEY)).toEqual([]);
+    expect(await getDb().getGameProgress(GRAMMAR_RANDOM_KEY)).toEqual([]);
+    expect(r.queryByText('🗑️ Reset grammar progress')).toBeNull();
+  });
+
+  it('only random round rows (no lesson progress) still give a grammar reset row', async () => {
+    await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, '_meta', 'meta', { rounds: 1 });
+    const r = render(<ThemeProvider><SettingsScreen /></ThemeProvider>);
+    await flush();
+
+    openReset(r);
+    expect(r.getByText('🗑️ Reset grammar progress')).toBeTruthy();
   });
 });
