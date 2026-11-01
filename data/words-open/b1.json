@@ -1526,9 +1526,9 @@
     "lemma": "luchar",
     "es": "luchar",
     "en": "to fight",
-    "sentence_es": "Mi madre lucha por su familia.",
-    "sentence_en": "My mother fights for her family.",
-    "sentence_lemmas": ["mi", "madre", "luchar", "por", "su", "familia"]
+    "sentence_es": "Los dos perros luchan por un hueso.",
+    "sentence_en": "The two dogs fight over a bone.",
+    "sentence_lemmas": ["el", "dos", "perro", "luchar", "por", "un", "hueso"]
   },
   {
     "order": 800,
@@ -1691,9 +1691,9 @@
     "lemma": "insistir",
     "es": "insistir",
     "en": "to insist",
-    "sentence_es": "Mi padre insiste en su opinión.",
-    "sentence_en": "My father insists on his opinion.",
-    "sentence_lemmas": ["mi", "padre", "insistir", "en", "su", "opinión"]
+    "sentence_es": "Digo que no, pero mi padre insiste y insiste.",
+    "sentence_en": "I say no, but my father keeps insisting.",
+    "sentence_lemmas": ["decir", "que", "no", "pero", "mi", "padre", "insistir", "y", "insistir"]
   },
   {
     "order": 817,
@@ -2080,9 +2080,9 @@
     "lemma": "engañar",
     "es": "engañar",
     "en": "to deceive, to cheat",
-    "sentence_es": "No quiero engañar a mi familia.",
-    "sentence_en": "I do not want to deceive my family.",
-    "sentence_lemmas": ["no", "querer", "engañar", "a", "mi", "familia"]
+    "sentence_es": "El vendedor me engaña: dice que es nuevo, pero es viejo.",
+    "sentence_en": "The seller deceives me: he says it is new, but it is old.",
+    "sentence_lemmas": ["el", "vendedor", "me", "engañar", "decir", "que", "ser", "nuevo", "pero", "ser", "viejo"]
   },
   {
     "order": 1207,
@@ -2245,9 +2245,9 @@
     "lemma": "merecer",
     "es": "merecer",
     "en": "to deserve",
-    "sentence_es": "Mi madre merece un regalo.",
-    "sentence_en": "My mother deserves a gift.",
-    "sentence_lemmas": ["mi", "madre", "merecer", "un", "regalo"]
+    "sentence_es": "Mi madre trabaja mucho y merece un regalo.",
+    "sentence_en": "My mother works a lot and deserves a gift.",
+    "sentence_lemmas": ["mi", "madre", "trabajar", "mucho", "y", "merecer", "un", "regalo"]
   },
   {
     "order": 1222,
@@ -2446,9 +2446,9 @@
     "lemma": "revisar",
     "es": "revisar",
     "en": "to check, to review",
-    "sentence_es": "Reviso mi correo cada mañana.",
-    "sentence_en": "I check my email every morning.",
-    "sentence_lemmas": ["revisar", "mi", "correo", "cada", "mañana"]
+    "sentence_es": "Reviso la tarea dos veces antes de ir a la escuela.",
+    "sentence_en": "I check my homework twice before going to school.",
+    "sentence_lemmas": ["revisar", "el", "tarea", "dos", "vez", "antes", "de", "ir", "a", "el", "escuela"]
   },
   {
     "order": 1240,
@@ -3809,9 +3809,9 @@
     "lemma": "comentar",
     "es": "comentar",
     "en": "to comment on",
-    "sentence_es": "Mi jefe comenta mi trabajo.",
-    "sentence_en": "My boss comments on my work.",
-    "sentence_lemmas": ["mi", "jefe", "comentar", "mi", "trabajo"]
+    "sentence_es": "Después de la película, comentamos lo que vimos.",
+    "sentence_en": "After the movie, we talk about what we saw.",
+    "sentence_lemmas": ["después", "de", "el", "película", "comentar", "lo", "que", "ver"]
   },
   {
     "order": 1801,
@@ -3920,9 +3920,9 @@
     "lemma": "decepcionar",
     "es": "decepcionar",
     "en": "to disappoint",
-    "sentence_es": "Mi equipo me decepciona hoy.",
-    "sentence_en": "My team disappoints me today.",
-    "sentence_lemmas": ["mi", "equipo", "me", "decepcionar", "hoy"]
+    "sentence_es": "Esperaba mucho de la película y me decepcionó.",
+    "sentence_en": "I expected a lot from the movie and it disappointed me.",
+    "sentence_lemmas": ["esperar", "mucho", "de", "el", "película", "y", "me", "decepcionar"]
   },
   {
     "order": 1811,
@@ -4065,9 +4065,9 @@
     "lemma": "impresionar",
     "es": "impresionar",
     "en": "to impress",
-    "sentence_es": "Tu casa me impresiona mucho.",
-    "sentence_en": "Your house impresses me a lot.",
-    "sentence_lemmas": ["tu", "casa", "me", "impresionar", "mucho"]
+    "sentence_es": "Tu casa es tan grande que me impresiona.",
+    "sentence_en": "Your house is so big that it impresses me.",
+    "sentence_lemmas": ["tu", "casa", "ser", "tan", "grande", "que", "me", "impresionar"]
   },
   {
     "order": 1824,
@@ -5723,9 +5723,9 @@
     "es": "ajustar",
     "en": "to adjust (a setting), to tighten",
     "hint_en": "I *adjust* the belt of my pants",
-    "sentence_es": "Ajusto el cinturón de mi pantalón.",
-    "sentence_en": "I adjust the belt of my pants.",
-    "sentence_lemmas": ["ajustar", "el", "cinturón", "de", "mi", "pantalón"]
+    "sentence_es": "Ajusto el cinturón porque el pantalón está grande.",
+    "sentence_en": "I tighten my belt because the pants are too big.",
+    "sentence_lemmas": ["ajustar", "el", "cinturón", "porque", "el", "pantalón", "estar", "grande"]
   },
   {
     "order": 2387,
@@ -13095,9 +13095,9 @@
     "lemma": "emocionar",
     "es": "emocionar",
     "en": "to move emotionally, to thrill",
-    "sentence_es": "La música me emociona mucho.",
-    "sentence_en": "Music moves me a lot.",
-    "sentence_lemmas": ["el", "música", "me", "emocionar", "mucho"]
+    "sentence_es": "Esa canción es tan bonita que me emociona.",
+    "sentence_en": "That song is so pretty that it moves me.",
+    "sentence_lemmas": ["ese", "canción", "ser", "tan", "bonito", "que", "me", "emocionar"]
   },
   {
     "order": 3673,
@@ -13150,9 +13150,9 @@
     "lemma": "multiplicar",
     "es": "multiplicar",
     "en": "to multiply",
-    "sentence_es": "Multiplico dos por tres.",
-    "sentence_en": "I multiply two by three.",
-    "sentence_lemmas": ["multiplicar", "dos", "por", "tres"]
+    "sentence_es": "Multiplico dos por tres y el resultado es seis.",
+    "sentence_en": "I multiply two by three and the result is six.",
+    "sentence_lemmas": ["multiplicar", "dos", "por", "tres", "y", "el", "resultado", "ser", "seis"]
   },
   {
     "order": 3678,
@@ -13183,9 +13183,9 @@
     "lemma": "premiar",
     "es": "premiar",
     "en": "to reward, to honor with a prize",
-    "sentence_es": "Premian al mejor estudiante.",
-    "sentence_en": "They reward the best student.",
-    "sentence_lemmas": ["premiar", "a", "mejor", "estudiante"]
+    "sentence_es": "La escuela premia al mejor estudiante con un libro.",
+    "sentence_en": "The school rewards the best student with a book.",
+    "sentence_lemmas": ["el", "escuela", "premiar", "a", "mejor", "estudiante", "con", "un", "libro"]
   },
   {
     "order": 3681,
@@ -13216,9 +13216,9 @@
     "lemma": "renovar",
     "es": "renovar",
     "en": "to renew",
-    "sentence_es": "Quiero renovar mi pasaporte.",
-    "sentence_en": "I want to renew my passport.",
-    "sentence_lemmas": ["querer", "renovar", "mi", "pasaporte"]
+    "sentence_es": "Mi pasaporte es viejo y quiero renovarlo.",
+    "sentence_en": "My passport is old and I want to renew it.",
+    "sentence_lemmas": ["mi", "pasaporte", "ser", "viejo", "y", "querer", "renovar"]
   },
   {
     "order": 3684,
@@ -13315,9 +13315,9 @@
     "lemma": "concluir",
     "es": "concluir",
     "en": "to conclude, to wrap up",
-    "sentence_es": "Concluyo mi trabajo hoy.",
-    "sentence_en": "I conclude my work today.",
-    "sentence_lemmas": ["concluir", "mi", "trabajo", "hoy"]
+    "sentence_es": "Concluyo el trabajo: ya no queda nada por hacer.",
+    "sentence_en": "I wrap up the work: there is nothing left to do.",
+    "sentence_lemmas": ["concluir", "el", "trabajo", "ya", "no", "quedar", "nada", "por", "hacer"]
   },
   {
     "order": 3693,
@@ -13348,9 +13348,9 @@
     "lemma": "admirar",
     "es": "admirar",
     "en": "to admire",
-    "sentence_es": "Admiro a mi abuelo.",
-    "sentence_en": "I admire my grandfather.",
-    "sentence_lemmas": ["admirar", "a", "mi", "abuelo"]
+    "sentence_es": "Admiro a mi abuelo: es fuerte y muy valiente.",
+    "sentence_en": "I admire my grandfather: he is strong and very brave.",
+    "sentence_lemmas": ["admirar", "a", "mi", "abuelo", "ser", "fuerte", "y", "muy", "valiente"]
   },
   {
     "order": 3696,
@@ -13359,9 +13359,9 @@
     "lemma": "adorar",
     "es": "adorar",
     "en": "to adore",
-    "sentence_es": "Adoro el chocolate.",
-    "sentence_en": "I adore chocolate.",
-    "sentence_lemmas": ["adorar", "el", "chocolate"]
+    "sentence_es": "Adoro el chocolate: lo como todos los días.",
+    "sentence_en": "I adore chocolate: I eat it every day.",
+    "sentence_lemmas": ["adorar", "el", "chocolate", "lo", "comer", "todo", "el", "día"]
   },
   {
     "order": 3697,
@@ -13370,9 +13370,9 @@
     "lemma": "coleccionar",
     "es": "coleccionar",
     "en": "to amass a collection of",
-    "sentence_es": "Mi hermano colecciona monedas.",
-    "sentence_en": "My brother collects coins.",
-    "sentence_lemmas": ["mi", "hermano", "coleccionar", "moneda"]
+    "sentence_es": "Mi hermano colecciona monedas: ya tiene más de cien.",
+    "sentence_en": "My brother collects coins: he already has more than a hundred.",
+    "sentence_lemmas": ["mi", "hermano", "coleccionar", "moneda", "ya", "tener", "más", "de", "cien"]
   },
   {
     "order": 3698,
@@ -13480,9 +13480,9 @@
     "lemma": "anochecer",
     "es": "anochecer",
     "en": "to get dark (at nightfall)",
-    "sentence_es": "En invierno anochece temprano.",
-    "sentence_en": "In winter it gets dark early.",
-    "sentence_lemmas": ["en", "invierno", "anochecer", "temprano"]
+    "sentence_es": "En invierno anochece temprano: a las seis ya no hay sol.",
+    "sentence_en": "In winter it gets dark early: at six there is no sun anymore.",
+    "sentence_lemmas": ["en", "invierno", "anochecer", "temprano", "a", "el", "seis", "ya", "no", "haber", "sol"]
   },
   {
     "order": 3853,
@@ -15504,9 +15504,9 @@
     "lemma": "sangrar",
     "es": "sangrar",
     "en": "to bleed",
-    "sentence_es": "La mano sangra mucho.",
-    "sentence_en": "The hand bleeds a lot.",
-    "sentence_lemmas": ["el", "mano", "sangrar", "mucho"]
+    "sentence_es": "Me corté la mano y sangra mucho.",
+    "sentence_en": "I cut my hand and it bleeds a lot.",
+    "sentence_lemmas": ["me", "cortar", "el", "mano", "y", "sangrar", "mucho"]
   },
   {
     "order": 4180,
@@ -15955,9 +15955,9 @@
     "lemma": "reiniciar",
     "es": "reiniciar",
     "en": "to restart",
-    "sentence_es": "Reinicio la computadora hoy.",
-    "sentence_en": "I restart the computer today.",
-    "sentence_lemmas": ["reiniciar", "el", "computadora", "hoy"]
+    "sentence_es": "Reinicio la computadora: la apago y la enciendo otra vez.",
+    "sentence_en": "I restart the computer: I turn it off and on again.",
+    "sentence_lemmas": ["reiniciar", "el", "computadora", "el", "apagar", "y", "el", "encender", "otro", "vez"]
   },
   {
     "order": 4259,
@@ -15966,9 +15966,9 @@
     "lemma": "desbloquear",
     "es": "desbloquear",
     "en": "to unlock",
-    "sentence_es": "No puedo desbloquear el teléfono.",
-    "sentence_en": "I cannot unlock the phone.",
-    "sentence_lemmas": ["no", "poder", "desbloquear", "el", "teléfono"]
+    "sentence_es": "Olvidé el código y no puedo desbloquear el teléfono.",
+    "sentence_en": "I forgot the code and I cannot unlock the phone.",
+    "sentence_lemmas": ["olvidar", "el", "código", "y", "no", "poder", "desbloquear", "el", "teléfono"]
   },
   {
     "order": 4262,
