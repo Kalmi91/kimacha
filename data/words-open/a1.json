@@ -534,9 +534,9 @@
     "es": "hablar",
     "en": "to speak, to talk",
     "hint_en": "I *talk* with my mother",
-    "sentence_es": "Hablo con mi madre.",
-    "sentence_en": "I talk with my mother.",
-    "sentence_lemmas": ["hablar", "con", "mi", "madre"]
+    "sentence_es": "Hablo con mi madre y mi padre.",
+    "sentence_en": "I talk with my mother and my father.",
+    "sentence_lemmas": ["hablar", "con", "mi", "madre", "y", "mi", "padre"]
   },
   {
     "order": 48,
@@ -545,9 +545,9 @@
     "lemma": "vivir",
     "es": "vivir",
     "en": "to live",
-    "sentence_es": "Vivo con mi familia.",
-    "sentence_en": "I live with my family.",
-    "sentence_lemmas": ["vivir", "con", "mi", "familia"]
+    "sentence_es": "Vivo con mi familia en una casa.",
+    "sentence_en": "I live with my family in a house.",
+    "sentence_lemmas": ["vivir", "con", "mi", "familia", "en", "un", "casa"]
   },
   {
     "order": 49,
@@ -569,9 +569,9 @@
     "es": "el trabajo / la chamba",
     "en": "work, job",
     "hint_en": "My *work* starts at eight.",
-    "sentence_es": "Tengo un trabajo.",
-    "sentence_en": "I have a job.",
-    "sentence_lemmas": ["tener", "un", "trabajo"]
+    "sentence_es": "Tengo un trabajo y estoy feliz.",
+    "sentence_en": "I have a job and I am happy.",
+    "sentence_lemmas": ["tener", "un", "trabajo", "y", "estar", "feliz"]
   },
   {
     "order": 51,
@@ -580,9 +580,9 @@
     "lemma": "ciudad",
     "es": "la ciudad",
     "en": "city",
-    "sentence_es": "Vivo en la ciudad.",
-    "sentence_en": "I live in the city.",
-    "sentence_lemmas": ["vivir", "en", "el", "ciudad"]
+    "sentence_es": "Vivo en la ciudad con mi familia.",
+    "sentence_en": "I live in the city with my family.",
+    "sentence_lemmas": ["vivir", "en", "el", "ciudad", "con", "mi", "familia"]
   },
   {
     "order": 52,
@@ -591,9 +591,9 @@
     "lemma": "hoy",
     "es": "hoy",
     "en": "today",
-    "sentence_es": "Hoy estoy en casa.",
-    "sentence_en": "Today I am at home.",
-    "sentence_lemmas": ["hoy", "estar", "en", "casa"]
+    "sentence_es": "Hoy estoy en casa y no trabajo.",
+    "sentence_en": "Today I am at home and I do not work.",
+    "sentence_lemmas": ["hoy", "estar", "en", "casa", "y", "no", "trabajar"]
   },
   {
     "order": 53,
@@ -613,9 +613,9 @@
     "lemma": "ahora",
     "es": "ahora",
     "en": "now",
-    "sentence_es": "Ahora voy a comer.",
-    "sentence_en": "Now I am going to eat.",
-    "sentence_lemmas": ["ahora", "ir", "a", "comer"]
+    "sentence_es": "Ahora voy a comer con mi madre.",
+    "sentence_en": "Now I am going to eat with my mother.",
+    "sentence_lemmas": ["ahora", "ir", "a", "comer", "con", "mi", "madre"]
   },
   {
     "order": 55,
@@ -705,9 +705,9 @@
     "lemma": "bueno",
     "es": "bueno",
     "en": "good",
-    "sentence_es": "El café es bueno.",
-    "sentence_en": "The coffee is good.",
-    "sentence_lemmas": ["el", "café", "ser", "bueno"]
+    "sentence_es": "El café con leche es bueno.",
+    "sentence_en": "Coffee with milk is good.",
+    "sentence_lemmas": ["el", "café", "con", "leche", "ser", "bueno"]
   },
   {
     "order": 63,
@@ -750,9 +750,9 @@
     "es": "mucho",
     "en": "much, a lot of",
     "hint_en": "I don't eat *much* meat.",
-    "sentence_es": "Tengo mucha hambre.",
-    "sentence_en": "I am very hungry.",
-    "sentence_lemmas": ["tener", "mucho", "hambre"]
+    "sentence_es": "Tengo mucha hambre y quiero comer.",
+    "sentence_en": "I am very hungry and I want to eat.",
+    "sentence_lemmas": ["tener", "mucho", "hambre", "y", "querer", "comer"]
   },
   {
     "order": 67,
@@ -816,9 +816,9 @@
     "lemma": "porque",
     "es": "porque",
     "en": "because",
-    "sentence_es": "Como porque tengo hambre.",
-    "sentence_en": "I eat because I am hungry.",
-    "sentence_lemmas": ["comer", "porque", "tener", "hambre"]
+    "sentence_es": "Como pan porque tengo mucha hambre.",
+    "sentence_en": "I eat bread because I am very hungry.",
+    "sentence_lemmas": ["comer", "pan", "porque", "tener", "mucho", "hambre"]
   },
   {
     "order": 73,
@@ -840,9 +840,9 @@
     "es": "saber",
     "en": "to know",
     "hint_en": "I *know* the answer.",
-    "sentence_es": "Sé la hora.",
-    "sentence_en": "I know the time.",
-    "sentence_lemmas": ["saber", "el", "hora"]
+    "sentence_es": "Sé la hora, pero no tengo tiempo.",
+    "sentence_en": "I know the time, but I do not have time.",
+    "sentence_lemmas": ["saber", "el", "hora", "pero", "no", "tener", "tiempo"]
   },
   {
     "order": 75,
@@ -863,9 +863,9 @@
     "lemma": "hacer",
     "es": "hacer",
     "en": "to do, to make",
-    "sentence_es": "Hago la comida.",
-    "sentence_en": "I make the food.",
-    "sentence_lemmas": ["hacer", "el", "comida"]
+    "sentence_es": "Hago la comida en casa con mi madre.",
+    "sentence_en": "I make the food at home with my mother.",
+    "sentence_lemmas": ["hacer", "el", "comida", "en", "casa", "con", "mi", "madre"]
   },
   {
     "order": 77,
@@ -874,9 +874,9 @@
     "lemma": "poder",
     "es": "poder",
     "en": "can, to be able to",
-    "sentence_es": "Puedo comer aquí.",
-    "sentence_en": "I can eat here.",
-    "sentence_lemmas": ["poder", "comer", "aquí"]
+    "sentence_es": "Puedo comer aquí con mi madre.",
+    "sentence_en": "I can eat here with my mother.",
+    "sentence_lemmas": ["poder", "comer", "aquí", "con", "mi", "madre"]
   },
   {
     "order": 78,
@@ -886,9 +886,9 @@
     "es": "ver",
     "en": "to see",
     "hint_en": "I *see* a bird.",
-    "sentence_es": "Veo a mi madre.",
-    "sentence_en": "I see my mother.",
-    "sentence_lemmas": ["ver", "a", "mi", "madre"]
+    "sentence_es": "Veo a mi madre en la ciudad.",
+    "sentence_en": "I see my mother in the city.",
+    "sentence_lemmas": ["ver", "a", "mi", "madre", "en", "el", "ciudad"]
   },
   {
     "order": 79,
@@ -1002,9 +1002,9 @@
     "es": "gustar",
     "en": "to like (be pleasing)",
     "hint_en": "I *like* your shoes.",
-    "sentence_es": "Me gusta el café.",
-    "sentence_en": "I like coffee.",
-    "sentence_lemmas": ["me", "gustar", "el", "café"]
+    "sentence_es": "Me gusta el café con leche.",
+    "sentence_en": "I like coffee with milk.",
+    "sentence_lemmas": ["me", "gustar", "el", "café", "con", "leche"]
   },
   {
     "order": 89,
@@ -1037,9 +1037,9 @@
     "es": "dónde",
     "en": "where",
     "hint_en": "*Where* is the bathroom?",
-    "sentence_es": "¿Dónde está mi café?",
-    "sentence_en": "Where is my coffee?",
-    "sentence_lemmas": ["dónde", "estar", "mi", "café"]
+    "sentence_es": "¿Dónde está mi madre, en casa?",
+    "sentence_en": "Where is my mother, at home?",
+    "sentence_lemmas": ["dónde", "estar", "mi", "madre", "en", "casa"]
   },
   {
     "order": 92,
@@ -1048,9 +1048,9 @@
     "lemma": "qué",
     "es": "qué",
     "en": "what",
-    "sentence_es": "¿Qué quieres comer?",
-    "sentence_en": "What do you want to eat?",
-    "sentence_lemmas": ["qué", "querer", "comer"]
+    "sentence_es": "¿Qué quieres comer hoy con tu madre?",
+    "sentence_en": "What do you want to eat today with your mother?",
+    "sentence_lemmas": ["qué", "querer", "comer", "hoy", "con", "tu", "madre"]
   },
   {
     "order": 93,
@@ -1107,9 +1107,9 @@
     "es": "todo",
     "en": "all, whole",
     "hint_en": "The *whole* family is here.",
-    "sentence_es": "Trabajo todo el día.",
-    "sentence_en": "I work all day.",
-    "sentence_lemmas": ["trabajar", "todo", "el", "día"]
+    "sentence_es": "Trabajo todo el día y como en casa.",
+    "sentence_en": "I work all day and I eat at home.",
+    "sentence_lemmas": ["trabajar", "todo", "el", "día", "y", "comer", "en", "casa"]
   },
   {
     "order": 98,
@@ -1118,9 +1118,9 @@
     "lemma": "nada",
     "es": "nada",
     "en": "nothing",
-    "sentence_es": "No quiero nada.",
-    "sentence_en": "I do not want anything.",
-    "sentence_lemmas": ["no", "querer", "nada"]
+    "sentence_es": "No quiero nada, no tengo hambre.",
+    "sentence_en": "I do not want anything, I am not hungry.",
+    "sentence_lemmas": ["no", "querer", "nada", "no", "tener", "hambre"]
   },
   {
     "order": 99,
@@ -1154,9 +1154,9 @@
     "es": "allí",
     "en": "there",
     "hint_en": "The park is *there*, far from here.",
-    "sentence_es": "Mi madre está allí.",
-    "sentence_en": "My mother is there.",
-    "sentence_lemmas": ["mi", "madre", "estar", "allí"]
+    "sentence_es": "Mi madre está allí con mi padre.",
+    "sentence_en": "My mother is over there with my father.",
+    "sentence_lemmas": ["mi", "madre", "estar", "allí", "con", "mi", "padre"]
   },
   {
     "order": 102,
@@ -1165,9 +1165,9 @@
     "lemma": "siempre",
     "es": "siempre",
     "en": "always",
-    "sentence_es": "Siempre bebo café.",
-    "sentence_en": "I always drink coffee.",
-    "sentence_lemmas": ["siempre", "beber", "café"]
+    "sentence_es": "Siempre bebo agua con mi comida.",
+    "sentence_en": "I always drink water with my meal.",
+    "sentence_lemmas": ["siempre", "beber", "agua", "con", "mi", "comida"]
   },
   {
     "order": 103,
@@ -1199,9 +1199,9 @@
     "lemma": "haber",
     "es": "haber",
     "en": "there is, there are (hay), auxiliary verb",
-    "sentence_es": "Aquí hay agua.",
-    "sentence_en": "There is water here.",
-    "sentence_lemmas": ["aquí", "haber", "agua"]
+    "sentence_es": "Aquí hay agua, pan y leche.",
+    "sentence_en": "Here there is water, bread and milk.",
+    "sentence_lemmas": ["aquí", "haber", "agua", "pan", "y", "leche"]
   },
   {
     "order": 106,
@@ -1376,9 +1376,9 @@
     "lemma": "baño",
     "es": "el baño",
     "en": "bathroom",
-    "sentence_es": "¿Dónde está el baño?",
-    "sentence_en": "Where is the bathroom?",
-    "sentence_lemmas": ["dónde", "estar", "el", "baño"]
+    "sentence_es": "¿Dónde está el baño de la casa?",
+    "sentence_en": "Where is the bathroom of the house?",
+    "sentence_lemmas": ["dónde", "estar", "el", "baño", "de", "el", "casa"]
   },
   {
     "order": 122,
