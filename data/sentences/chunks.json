@@ -1963,7 +1963,7 @@
     { "es": "Los chícharos son verdes.", "en": "Peas are green." }
   ],
   "o1684": [
-    { "es": "La toronja es una fruta.", "en": "The grapefruit is a fruit." }
+    { "es": "La toronja es amarilla.", "en": "The grapefruit is yellow." }
   ],
   "o1685": [
     { "es": "Compro almendras.", "en": "I buy almonds." }
@@ -2004,7 +2004,7 @@
   ],
   "o1701": [],
   "o1702": [
-    { "es": "La bocina es fuerte.", "en": "The speaker is loud." }
+    { "es": "El carro tiene una bocina.", "en": "The car has a horn." }
   ],
   "o1703": [
     { "es": "El teclado es nuevo.", "en": "The keyboard is new." }
@@ -2306,7 +2306,7 @@
   ],
   "o2161": [],
   "o2163": [
-    { "es": "El caracol es lento.", "en": "The snail is slow." }
+    { "es": "El caracol camina muy despacio.", "en": "The snail walks very slowly." }
   ],
   "o2164": [
     { "es": "Hay una cucaracha.", "en": "There is a cockroach." }
@@ -2331,14 +2331,12 @@
     { "es": "Hay una cueva grande.", "en": "There is a big cave." }
   ],
   "o2174": [
-    { "es": "La cascada es bonita.", "en": "The waterfall is pretty." }
+    { "es": "En la cascada baja agua.", "en": "Water comes down in the waterfall." }
   ],
   "o2176": [
     { "es": "Hay mucha niebla.", "en": "There is a lot of fog." }
   ],
-  "o2177": [
-    { "es": "El trueno es fuerte.", "en": "The thunder is loud." }
-  ],
+  "o2177": [],
   "o2178": [
     { "es": "Veo un relámpago.", "en": "I see lightning." }
   ],
@@ -2405,9 +2403,7 @@
   "o2220": [
     { "es": "Compro frutas.", "en": "I buy fruit." }
   ],
-  "o2221": [
-    { "es": "La pirámide es antigua.", "en": "The pyramid is old." }
-  ],
+  "o2221": [],
   "o2222": [
     { "es": "La torre es alta.", "en": "The tower is tall." }
   ],
@@ -2450,7 +2446,7 @@
     { "es": "La manguera es larga.", "en": "The hose is long." }
   ],
   "o2246": [
-    { "es": "La aguja es pequeña.", "en": "The needle is small." }
+    { "es": "El médico usa una aguja.", "en": "The doctor uses a needle." }
   ],
   "o2247": [
     { "es": "Necesito hilo.", "en": "I need thread." }
@@ -2502,7 +2498,7 @@
     { "es": "La horchata es una bebida.", "en": "Horchata is a drink." }
   ],
   "o2265": [
-    { "es": "El tequila es una bebida.", "en": "Tequila is a drink." }
+    { "es": "Tomo tequila con sal.", "en": "I drink tequila with salt." }
   ],
   "o2266": [
     { "es": "Los mariscos son caros.", "en": "Seafood is expensive." }
@@ -2610,14 +2606,15 @@
     { "es": "El huracán llega.", "en": "The hurricane arrives." }
   ],
   "o2314": [
-    { "es": "La costa es bonita.", "en": "The coast is pretty." }
+    { "es": "En la costa hay playa.", "en": "On the coast there is a beach." }
   ],
   "o2315": [
     { "es": "Los niños juegan.", "en": "The children play." },
     { "es": "Los niños juegan en la orilla.", "en": "The children play on the shore." }
   ],
   "o2316": [
-    { "es": "El océano es grande.", "en": "The ocean is big." }
+    { "es": "El océano es grande.", "en": "The ocean is big." },
+    { "es": "El océano es más grande.", "en": "The ocean is bigger." }
   ],
   "o2318": [],
   "o2319": [
@@ -2767,9 +2764,7 @@
   "o2683": [
     { "es": "Hay un piano.", "en": "There is a piano." }
   ],
-  "o2684": [
-    { "es": "El violín es bonito.", "en": "The violin is pretty." }
-  ],
+  "o2684": [],
   "o2685": [
     { "es": "El niño tiene un tambor.", "en": "The boy has a drum." }
   ],
@@ -2863,9 +2858,7 @@
   "o2744": [
     { "es": "Hay una medusa.", "en": "There is a jellyfish." }
   ],
-  "o2748": [
-    { "es": "El jaguar es grande.", "en": "The jaguar is big." }
-  ],
+  "o2748": [],
   "o2757": [
     { "es": "El nopal es una planta.", "en": "The nopal is a plant." }
   ],
@@ -2887,7 +2880,7 @@
     { "es": "Comemos salmón.", "en": "We eat salmon." }
   ],
   "o2779": [
-    { "es": "La sardina es un pez.", "en": "The sardine is a fish." }
+    { "es": "La sardina es pequeña.", "en": "The sardine is small." }
   ],
   "o2780": [
     { "es": "Quiero crema.", "en": "I want cream." }
@@ -3076,7 +3069,9 @@
   "o2899": [
     { "es": "La renta es cara.", "en": "The rent is expensive." }
   ],
-  "o2900": [],
+  "o2900": [
+    { "es": "En la mudanza llevo mis cosas.", "en": "In the move I take my things." }
+  ],
   "o2901": [
     { "es": "Necesito cinta.", "en": "I need tape." }
   ],
@@ -3275,7 +3270,9 @@
   "o3315": [
     { "es": "El olor es bueno.", "en": "The smell is good." }
   ],
-  "o3316": [],
+  "o3316": [
+    { "es": "El pago llega cada semana.", "en": "The payment arrives every week." }
+  ],
   "o3317": [
     { "es": "Hay peligro.", "en": "There is danger." }
   ],
@@ -3485,7 +3482,7 @@
     { "es": "Mi padre cocina cordero.", "en": "My father cooks lamb." }
   ],
   "o3890": [
-    { "es": "La langosta es cara.", "en": "Lobster is expensive." }
+    { "es": "La langosta vive en el mar.", "en": "The lobster lives in the sea." }
   ],
   "o3895": [
     { "es": "Comemos carnitas.", "en": "We eat carnitas." }
@@ -3507,7 +3504,9 @@
   "o3904": [
     { "es": "Quiero un pastelito.", "en": "I'd like a small cake." }
   ],
-  "o3906": [],
+  "o3906": [
+    { "es": "La concha es pan dulce.", "en": "A concha is sweet bread." }
+  ],
   "o3909": [
     { "es": "El mezcal se toma en un vaso pequeño.", "en": "Mezcal is drunk from a small glass." }
   ],
@@ -3595,9 +3594,7 @@
     { "es": "Hago yoga.", "en": "I do yoga." },
     { "es": "Hago yoga en la sala.", "en": "I do yoga in the living room." }
   ],
-  "o4048": [
-    { "es": "El ajedrez es difícil.", "en": "Chess is difficult." }
-  ],
+  "o4048": [],
   "o4050": [
     { "es": "Mi abuelo juega dominó.", "en": "My grandfather plays dominoes." }
   ],
@@ -4111,5 +4108,27 @@
   "o1757": [
     { "es": "La mujer va a tener un bebé.", "en": "The woman is going to have a baby." }
   ],
-  "o1763": []
+  "o1763": [],
+  "o2088": [
+    { "es": "El chicle es dulce.", "en": "Gum is sweet." }
+  ],
+  "o2741": [
+    { "es": "La iguana es verde.", "en": "The iguana is green." }
+  ],
+  "o2746": [
+    { "es": "El gorila es fuerte.", "en": "The gorilla is strong." }
+  ],
+  "o2752": [
+    { "es": "El cisne es blanco.", "en": "The swan is white." },
+    { "es": "El cisne es blanco y nada bien.", "en": "The swan is white and swims well." }
+  ],
+  "o2758": [
+    { "es": "La ciruela es dulce.", "en": "The plum is sweet." }
+  ],
+  "o2762": [
+    { "es": "El rábano es rojo.", "en": "The radish is red." }
+  ],
+  "o2784": [
+    { "es": "La naranjada se hace con naranja.", "en": "Orangeade is made with orange." }
+  ]
 }

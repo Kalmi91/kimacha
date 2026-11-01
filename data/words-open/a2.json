@@ -6157,9 +6157,9 @@
     "lemma": "toronja",
     "es": "la toronja",
     "en": "grapefruit",
-    "sentence_es": "La toronja es una fruta grande.",
-    "sentence_en": "The grapefruit is a big fruit.",
-    "sentence_lemmas": ["el", "toronja", "ser", "un", "fruta", "grande"]
+    "sentence_es": "La toronja es amarilla por fuera y rosa por dentro.",
+    "sentence_en": "The grapefruit is yellow on the outside and pink on the inside.",
+    "sentence_lemmas": ["el", "toronja", "ser", "amarillo", "por", "fuera", "y", "rosa", "por", "dentro"]
   },
   {
     "order": 1685,
@@ -6357,9 +6357,9 @@
     "lemma": "bocina",
     "es": "la bocina",
     "en": "speaker; car horn (MX)",
-    "sentence_es": "La bocina es muy fuerte.",
-    "sentence_en": "The speaker is very loud.",
-    "sentence_lemmas": ["el", "bocina", "ser", "muy", "fuerte"]
+    "sentence_es": "El carro tiene una bocina muy fuerte.",
+    "sentence_en": "The car has a very loud horn.",
+    "sentence_lemmas": ["el", "carro", "tener", "un", "bocina", "muy", "fuerte"]
   },
   {
     "order": 1703,
@@ -7296,9 +7296,9 @@
     "lemma": "chicle",
     "es": "el chicle",
     "en": "chewing gum, gum",
-    "sentence_es": "El chicle es dulce.",
-    "sentence_en": "Chewing gum is sweet.",
-    "sentence_lemmas": ["el", "chicle", "ser", "dulce"]
+    "sentence_es": "El chicle es dulce, pero no se come.",
+    "sentence_en": "Gum is sweet, but you do not eat it.",
+    "sentence_lemmas": ["el", "chicle", "ser", "dulce", "pero", "no", "se", "comer"]
   },
   {
     "order": 2089,
@@ -7881,9 +7881,9 @@
     "lemma": "caracol",
     "es": "el caracol",
     "en": "snail",
-    "sentence_es": "El caracol es muy lento.",
-    "sentence_en": "The snail is very slow.",
-    "sentence_lemmas": ["el", "caracol", "ser", "muy", "lento"]
+    "sentence_es": "El caracol camina muy despacio por el jardín.",
+    "sentence_en": "The snail walks very slowly through the garden.",
+    "sentence_lemmas": ["el", "caracol", "caminar", "muy", "despacio", "por", "el", "jardín"]
   },
   {
     "order": 2164,
@@ -7991,9 +7991,9 @@
     "lemma": "cascada",
     "es": "la cascada",
     "en": "waterfall",
-    "sentence_es": "La cascada es muy bonita.",
-    "sentence_en": "The waterfall is very pretty.",
-    "sentence_lemmas": ["el", "cascada", "ser", "muy", "bonito"]
+    "sentence_es": "En la cascada baja mucha agua.",
+    "sentence_en": "A lot of water comes down in the waterfall.",
+    "sentence_lemmas": ["en", "el", "cascada", "bajar", "mucho", "agua"]
   },
   {
     "order": 2176,
@@ -8013,9 +8013,9 @@
     "lemma": "trueno",
     "es": "el trueno",
     "en": "thunder",
-    "sentence_es": "El trueno es muy fuerte.",
-    "sentence_en": "The thunder is very loud.",
-    "sentence_lemmas": ["el", "trueno", "ser", "muy", "fuerte"]
+    "sentence_es": "Cuando llueve mucho, se oye el trueno.",
+    "sentence_en": "When it rains a lot, you hear the thunder.",
+    "sentence_lemmas": ["cuando", "llover", "mucho", "se", "oír", "el", "trueno"]
   },
   {
     "order": 2178,
@@ -8355,9 +8355,9 @@
     "lemma": "pirámide",
     "es": "la pirámide",
     "en": "pyramid",
-    "sentence_es": "La pirámide es muy antigua.",
-    "sentence_en": "The pyramid is very old.",
-    "sentence_lemmas": ["el", "pirámide", "ser", "muy", "antiguo"]
+    "sentence_es": "La pirámide tiene más de mil años.",
+    "sentence_en": "The pyramid is more than a thousand years old.",
+    "sentence_lemmas": ["el", "pirámide", "tener", "más", "de", "mil", "año"]
   },
   {
     "order": 2222,
@@ -8588,9 +8588,9 @@
     "lemma": "aguja",
     "es": "la aguja",
     "en": "needle",
-    "sentence_es": "La aguja es muy pequeña.",
-    "sentence_en": "The needle is very small.",
-    "sentence_lemmas": ["el", "aguja", "ser", "muy", "pequeño"]
+    "sentence_es": "El médico usa una aguja para la medicina.",
+    "sentence_en": "The doctor uses a needle for the medicine.",
+    "sentence_lemmas": ["el", "médico", "usar", "un", "aguja", "para", "el", "medicina"]
   },
   {
     "order": 2247,
@@ -8799,9 +8799,9 @@
     "lemma": "tequila",
     "es": "el tequila",
     "en": "agave liquor",
-    "sentence_es": "El tequila es una bebida mexicana.",
-    "sentence_en": "Tequila is a Mexican drink.",
-    "sentence_lemmas": ["el", "tequila", "ser", "un", "bebida", "mexicano"]
+    "sentence_es": "Tomo tequila con sal y limón.",
+    "sentence_en": "I drink tequila with salt and lemon.",
+    "sentence_lemmas": ["tomar", "tequila", "con", "sal", "y", "limón"]
   },
   {
     "order": 2266,
@@ -9343,9 +9343,9 @@
     "lemma": "costa",
     "es": "la costa",
     "en": "coast",
-    "sentence_es": "La costa es muy bonita.",
-    "sentence_en": "The coast is very pretty.",
-    "sentence_lemmas": ["el", "costa", "ser", "muy", "bonito"]
+    "sentence_es": "En la costa hay playa y mar.",
+    "sentence_en": "On the coast there is a beach and sea.",
+    "sentence_lemmas": ["en", "el", "costa", "haber", "playa", "y", "mar"]
   },
   {
     "order": 2315,
@@ -9365,9 +9365,9 @@
     "lemma": "océano",
     "es": "el océano",
     "en": "ocean",
-    "sentence_es": "El océano es muy grande.",
-    "sentence_en": "The ocean is very big.",
-    "sentence_lemmas": ["el", "océano", "ser", "muy", "grande"]
+    "sentence_es": "El océano es más grande que el mar.",
+    "sentence_en": "The ocean is bigger than the sea.",
+    "sentence_lemmas": ["el", "océano", "ser", "más", "grande", "que", "el", "mar"]
   },
   {
     "order": 2317,
@@ -10105,9 +10105,9 @@
     "lemma": "violín",
     "es": "el violín",
     "en": "violin",
-    "sentence_es": "El violín es muy bonito.",
-    "sentence_en": "The violin is very pretty.",
-    "sentence_lemmas": ["el", "violín", "ser", "muy", "bonito"]
+    "sentence_es": "El violín tiene cuatro cuerdas.",
+    "sentence_en": "The violin has four strings.",
+    "sentence_lemmas": ["el", "violín", "tener", "cuatro", "cuerda"]
   },
   {
     "order": 2685,
@@ -10523,9 +10523,9 @@
     "lemma": "iguana",
     "es": "la iguana",
     "en": "iguana",
-    "sentence_es": "La iguana es verde.",
-    "sentence_en": "The iguana is green.",
-    "sentence_lemmas": ["el", "iguana", "ser", "verde"]
+    "sentence_es": "La iguana es verde y toma el sol.",
+    "sentence_en": "The iguana is green and sunbathes.",
+    "sentence_lemmas": ["el", "iguana", "ser", "verde", "y", "tomar", "el", "sol"]
   },
   {
     "order": 2743,
@@ -10567,9 +10567,9 @@
     "lemma": "gorila",
     "es": "el gorila",
     "en": "gorilla",
-    "sentence_es": "El gorila es fuerte.",
-    "sentence_en": "The gorilla is strong.",
-    "sentence_lemmas": ["el", "gorila", "ser", "fuerte"]
+    "sentence_es": "El gorila es más fuerte que un hombre.",
+    "sentence_en": "The gorilla is stronger than a man.",
+    "sentence_lemmas": ["el", "gorila", "ser", "más", "fuerte", "que", "un", "hombre"]
   },
   {
     "order": 2748,
@@ -10578,9 +10578,9 @@
     "lemma": "jaguar",
     "es": "el jaguar",
     "en": "jaguar",
-    "sentence_es": "El jaguar es un animal grande.",
-    "sentence_en": "The jaguar is a big animal.",
-    "sentence_lemmas": ["el", "jaguar", "ser", "un", "animal", "grande"]
+    "sentence_es": "El jaguar vive en la selva.",
+    "sentence_en": "The jaguar lives in the jungle.",
+    "sentence_lemmas": ["el", "jaguar", "vivir", "en", "el", "selva"]
   },
   {
     "order": 2752,
@@ -10589,9 +10589,9 @@
     "lemma": "cisne",
     "es": "el cisne",
     "en": "swan",
-    "sentence_es": "El cisne es blanco.",
-    "sentence_en": "The swan is white.",
-    "sentence_lemmas": ["el", "cisne", "ser", "blanco"]
+    "sentence_es": "El cisne es blanco y nada bien en el agua.",
+    "sentence_en": "The swan is white and swims well in the water.",
+    "sentence_lemmas": ["el", "cisne", "ser", "blanco", "y", "nadar", "bien", "en", "el", "agua"]
   },
   {
     "order": 2753,
@@ -10622,9 +10622,9 @@
     "lemma": "ciruela",
     "es": "la ciruela",
     "en": "plum",
-    "sentence_es": "La ciruela es dulce.",
-    "sentence_en": "The plum is sweet.",
-    "sentence_lemmas": ["el", "ciruela", "ser", "dulce"]
+    "sentence_es": "La ciruela es dulce y tiene una semilla.",
+    "sentence_en": "The plum is sweet and has a seed.",
+    "sentence_lemmas": ["el", "ciruela", "ser", "dulce", "y", "tener", "un", "semilla"]
   },
   {
     "order": 2760,
@@ -10644,9 +10644,9 @@
     "lemma": "rábano",
     "es": "el rábano",
     "en": "radish",
-    "sentence_es": "El rábano es picante.",
-    "sentence_en": "The radish is spicy.",
-    "sentence_lemmas": ["el", "rábano", "ser", "picante"]
+    "sentence_es": "El rábano es rojo y picante.",
+    "sentence_en": "The radish is red and spicy.",
+    "sentence_lemmas": ["el", "rábano", "ser", "rojo", "y", "picante"]
   },
   {
     "order": 2763,
@@ -10765,9 +10765,9 @@
     "lemma": "sardina",
     "es": "la sardina",
     "en": "sardine",
-    "sentence_es": "La sardina es un pez pequeño.",
-    "sentence_en": "The sardine is a small fish.",
-    "sentence_lemmas": ["el", "sardina", "ser", "un", "pez", "pequeño"]
+    "sentence_es": "La sardina es pequeña y vive en el mar.",
+    "sentence_en": "The sardine is small and lives in the sea.",
+    "sentence_lemmas": ["el", "sardina", "ser", "pequeño", "y", "vivir", "en", "el", "mar"]
   },
   {
     "order": 2780,
@@ -10809,9 +10809,9 @@
     "lemma": "naranjada",
     "es": "la naranjada",
     "en": "orangeade",
-    "sentence_es": "La naranjada es fría.",
-    "sentence_en": "The orangeade is cold.",
-    "sentence_lemmas": ["el", "naranjada", "ser", "frío"]
+    "sentence_es": "La naranjada se hace con naranja, agua y azúcar.",
+    "sentence_en": "Orangeade is made with orange, water and sugar.",
+    "sentence_lemmas": ["el", "naranjada", "se", "hacer", "con", "naranja", "agua", "y", "azúcar"]
   },
   {
     "order": 2785,
@@ -11789,9 +11789,9 @@
     "lemma": "mudanza",
     "es": "la mudanza",
     "en": "house move",
-    "sentence_es": "La mudanza es el sábado.",
-    "sentence_en": "The move is on Saturday.",
-    "sentence_lemmas": ["el", "mudanza", "ser", "el", "sábado"]
+    "sentence_es": "En la mudanza llevo mis cosas a la casa nueva.",
+    "sentence_en": "In the move I take my things to the new house.",
+    "sentence_lemmas": ["en", "el", "mudanza", "llevar", "mi", "cosa", "a", "el", "casa", "nuevo"]
   },
   {
     "order": 2901,
@@ -12671,9 +12671,9 @@
     "lemma": "pago",
     "es": "el pago",
     "en": "payment",
-    "sentence_es": "El pago es en efectivo.",
-    "sentence_en": "The payment is in cash.",
-    "sentence_lemmas": ["el", "pago", "ser", "en", "efectivo"]
+    "sentence_es": "El pago de mi trabajo llega cada semana.",
+    "sentence_en": "The payment for my work arrives every week.",
+    "sentence_lemmas": ["el", "pago", "de", "mi", "trabajo", "llegar", "cada", "semana"]
   },
   {
     "order": 3317,
@@ -13564,9 +13564,9 @@
     "lemma": "langosta",
     "es": "la langosta",
     "en": "lobster",
-    "sentence_es": "La langosta es muy cara.",
-    "sentence_en": "Lobster is very expensive.",
-    "sentence_lemmas": ["el", "langosta", "ser", "muy", "caro"]
+    "sentence_es": "La langosta vive en el mar y es muy cara.",
+    "sentence_en": "The lobster lives in the sea and is very expensive.",
+    "sentence_lemmas": ["el", "langosta", "vivir", "en", "el", "mar", "y", "ser", "muy", "caro"]
   },
   {
     "order": 3895,
@@ -13641,9 +13641,9 @@
     "lemma": "concha",
     "es": "la concha",
     "en": "concha (sweet bread)",
-    "sentence_es": "La concha es pan dulce.",
-    "sentence_en": "The concha is sweet bread.",
-    "sentence_lemmas": ["el", "concha", "ser", "pan", "dulce"]
+    "sentence_es": "La concha es pan dulce con azúcar encima.",
+    "sentence_en": "A concha is sweet bread with sugar on top.",
+    "sentence_lemmas": ["el", "concha", "ser", "pan", "dulce", "con", "azúcar", "encima"]
   },
   {
     "order": 3909,
@@ -13960,9 +13960,9 @@
     "lemma": "ajedrez",
     "es": "el ajedrez",
     "en": "chess",
-    "sentence_es": "El ajedrez es un juego difícil.",
-    "sentence_en": "Chess is a difficult game.",
-    "sentence_lemmas": ["el", "ajedrez", "ser", "un", "juego", "difícil"]
+    "sentence_es": "En el ajedrez juegan dos personas.",
+    "sentence_en": "In chess, two people play.",
+    "sentence_lemmas": ["en", "el", "ajedrez", "jugar", "dos", "persona"]
   },
   {
     "order": 4050,
