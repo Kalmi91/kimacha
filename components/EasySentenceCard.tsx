@@ -99,8 +99,11 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         },
         onPanResponderMove: (_e, g) => pan.setValue({ x: g.dx, y: g.dy }),
         onPanResponderRelease: (_e, g) => {
+          // Read now: PanResponder resets its gesture state after the release, before the updater below runs.
+          const { dx, dy } = g;
+          const frames = [...live.frames];
           end();
-          setPlaced((row) => moveItem(row, pos, dropIndex(live.frames.slice(0, row.length), pos, g.dx, g.dy)));
+          setPlaced((row) => moveItem(row, pos, dropIndex(frames.slice(0, row.length), pos, dx, dy)));
         },
         onPanResponderTerminationRequest: () => false,
         onPanResponderTerminate: end,

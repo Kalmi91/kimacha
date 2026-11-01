@@ -118,6 +118,8 @@ beforeEach(async () => {
   await getDb().setBetaFlag('xpV2', false);
   // these tests read the prompt on every step; the listen-and-type step (beta sentenceListening, on by default) hides it
   await getDb().setBetaFlag('sentenceListening', false);
+  // they also count on one sentence's steps following each other (beta sentenceMix, on by default, mixes them; FB536)
+  await getDb().setBetaFlag('sentenceMix', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
   for (const n of [1, 2, 3, 4, 5, 6]) await getDb().upsertPcicCard(learned(n));
