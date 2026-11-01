@@ -51,6 +51,7 @@ export default {
       sentenceListening: 'Sentences: listen and type step',
       sentenceMistakes: 'Sentences: from my mistakes',
       sentenceHint: 'Sentences: tap-a-word hints',
+      sentenceMix: 'Sentences: the sentences take turns',
     },
     strictAccents: 'Accents count',
     strictAccentsHint: 'A missing accent (á, é, ñ) is a mistake when typing.',

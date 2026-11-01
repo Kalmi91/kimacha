@@ -1,5 +1,5 @@
 // The steps of a Sentences tab round (FB524, Kálmán 2026-10-23): decided in ONE place, so the screen only switches on the
-// kind. A round holds SENTENCE_ROUND_SIZE sentences, played one after the other; each sentence runs through, in order:
+// kind. A round holds SENTENCE_ROUND_SIZE sentences, which take turns (beta sentenceMix, FB536); each sentence runs through, in order:
 //   chunk   one per part of a split sentence (data/sentences/chunks.json): the English part is built into the Spanish part
 //   listen  the whole Spanish sentence is heard and typed (only with the beta sentenceListening; credits nothing)
 //   build   the whole sentence built from tiles (credits nothing)
@@ -27,6 +27,8 @@ export interface RoundStep {
 export interface StepFlags {
   /** Beta sentenceListening: the listen-and-type step. */
   listening: boolean;
+  /** Beta sentenceMix (FB536): the sentences take turns; off/absent = one sentence after the other. */
+  mix?: boolean;
 }
 
 const step = (itemId: string, kind: StepKind, chunk?: number): RoundStep => ({
@@ -36,17 +38,35 @@ const step = (itemId: string, kind: StepKind, chunk?: number): RoundStep => ({
   ...(chunk === undefined ? {} : { chunk }),
 });
 
-/** The whole round's steps, sentence by sentence (see the header). */
-export function roundSteps(entries: readonly SentenceEntry[], flags: StepFlags): RoundStep[] {
+/** One sentence's steps, in their order (see the header). */
+function sentenceSteps(e: SentenceEntry, flags: StepFlags): RoundStep[] {
+  if (e.mistake) return [step(e.itemId, 'mistake')];
   const steps: RoundStep[] = [];
-  for (const e of entries) {
-    if (e.mistake) {
-      steps.push(step(e.itemId, 'mistake'));
-      continue;
-    }
-    for (let i = 0; i < (e.chunks && e.chunks.length >= 2 ? e.chunks.length : 0); i++) steps.push(step(e.itemId, 'chunk', i));
-    if (flags.listening) steps.push(step(e.itemId, 'listen'));
-    steps.push(step(e.itemId, 'build'), step(e.itemId, 'type'));
-  }
+  for (let i = 0; i < (e.chunks && e.chunks.length >= 2 ? e.chunks.length : 0); i++) steps.push(step(e.itemId, 'chunk', i));
+  if (flags.listening) steps.push(step(e.itemId, 'listen'));
+  steps.push(step(e.itemId, 'build'), step(e.itemId, 'type'));
   return steps;
+}
+
+/**
+ * The whole round's steps. With `mix` (FB536, "the same sentences come one after the other, shuffle them") the sentences
+ * take turns, so the same sentence never comes twice in a row while another one still has steps. Each sentence keeps its
+ * own order (its parts, then the whole built, then typed). Next comes the sentence with the most steps left that was not
+ * the last one (ties: the round order), which spreads even a long sentence out. Without it: sentence by sentence.
+ */
+export function roundSteps(entries: readonly SentenceEntry[], flags: StepFlags): RoundStep[] {
+  const left = entries.map((e) => sentenceSteps(e, flags));
+  if (!flags.mix) return left.flat();
+  const steps: RoundStep[] = [];
+  let last = -1;
+  for (;;) {
+    let pick = -1;
+    left.forEach((l, i) => {
+      if (l.length > 0 && i !== last && (pick === -1 || l.length > left[pick].length)) pick = i;
+    });
+    if (pick === -1) pick = last >= 0 && left[last].length > 0 ? last : -1;
+    if (pick === -1) return steps;
+    steps.push(left[pick].shift() as RoundStep);
+    last = pick;
+  }
 }

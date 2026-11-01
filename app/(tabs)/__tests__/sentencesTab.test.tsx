@@ -188,6 +188,8 @@ beforeEach(async () => {
   await getDb().setBetaFlag('sentenceListening', false);
   // the tap-a-word hints (beta sentenceHint, on by default) have their own describe at the end
   await getDb().setBetaFlag('sentenceHint', false);
+  // the sentences taking turns (beta sentenceMix, on by default, FB536) have their own describe at the end
+  await getDb().setBetaFlag('sentenceMix', false);
   resetDailyXp();
   await getDb().addDailyXpTenths(localDateString(), -100000);
   mockRecord.mockClear();
@@ -1256,5 +1258,34 @@ describe('tap-a-word hint (beta sentenceHint, BRIEF-B3)', () => {
     await flush();
     tap(r, 1); // "cat" -> gato
     expect(r.getByText('pista usada')).toBeTruthy();
+  });
+});
+
+// FB536: "the same sentences come one after the other, shuffle them" (beta sentenceMix, lib/sentenceSteps.ts).
+describe('Sentences tab: the sentences take turns (beta sentenceMix)', () => {
+  it('a round of 5: every sentence built, then every one typed, never the same sentence twice in a row', async () => {
+    await getDb().setBetaFlag('sentenceMix', true);
+    __resetBetaForTest();
+    await learnWords([1, 2, 3, 4, 5, 6]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    const seen: string[] = [];
+    for (let i = 0; i < 40 && !r.queryByTestId('sentences-round-done'); i++) {
+      if (r.queryByPlaceholderText('Type the sentence')) seen.push(`type ${await typeCurrent(r)}`);
+      else seen.push(`build ${await buildCurrent(r)}`);
+    }
+    expect(seen).toEqual([...ROUND.map((en) => `build ${en}`), ...ROUND.map((en) => `type ${en}`)]);
+    expect(r.getByText('Round done: 5 sentences')).toBeTruthy();
+  });
+
+  it('a wrong build still goes to the end of the round', async () => {
+    await getDb().setBetaFlag('sentenceMix', true);
+    __resetBetaForTest();
+    await learnWords([1, 2, 3]);
+    const r = render(<SentencesScreen />);
+    await flush();
+    expect(await buildCurrent(r, false)).toBe('The cat.');
+    expect(current(r)).toBe('The book and the table.');
+    await finishRound(r);
   });
 });

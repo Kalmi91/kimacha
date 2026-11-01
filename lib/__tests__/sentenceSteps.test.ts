@@ -31,6 +31,36 @@ describe('roundSteps', () => {
     ]);
   });
 
+  // FB536: "the same sentences come one after the other, shuffle them" (beta sentenceMix).
+  describe('with mix', () => {
+    const mixed = (entries: SentenceEntry[], listening = false) => roundSteps(entries, { listening, mix: true }).map((s) => s.id);
+
+    it('the sentences take turns: never the same one twice in a row while another has steps left', () => {
+      expect(mixed([entry(1), entry(2, 2), entry(3)])).toEqual([
+        'a1-w2#chunk0', 'a1-w1#build', 'a1-w2#chunk1', 'a1-w3#build', 'a1-w2#build', 'a1-w1#type', 'a1-w2#type', 'a1-w3#type',
+      ]);
+      // A full round (5 sentences, some split, listening on): no sentence twice in a row, each one in its own order.
+      const round = [entry(1, 3), entry(2), entry(3, 2), entry(4), entry(5, 2)];
+      const steps = roundSteps(round, { listening: true, mix: true });
+      expect(steps.some((s, i) => i > 0 && steps[i - 1].itemId === s.itemId)).toBe(false);
+      for (const e of round) {
+        expect(steps.filter((s) => s.itemId === e.itemId).map((s) => s.id)).toEqual(ids([e], true));
+      }
+    });
+
+    it('only when one sentence is left do its steps follow each other', () => {
+      expect(mixed([entry(1, 3), entry(2)])).toEqual([
+        'a1-w1#chunk0', 'a1-w2#build', 'a1-w1#chunk1', 'a1-w2#type', 'a1-w1#chunk2', 'a1-w1#build', 'a1-w1#type',
+      ]);
+      expect(mixed([entry(1)])).toEqual(['a1-w1#build', 'a1-w1#type']);
+    });
+
+    it('a mistake sentence is one step among the others', () => {
+      const mistake: SentenceEntry = { ...entry(2, 2), mistake: { wrong: 'frase mal' } };
+      expect(mixed([entry(1), mistake], true)).toEqual(['a1-w1#listen', 'a1-w2#mistake', 'a1-w1#build', 'a1-w1#type']);
+    });
+  });
+
   it('a step knows its sentence, kind and part', () => {
     const steps = roundSteps([entry(1, 2)], { listening: true });
     expect(steps[1]).toEqual({ id: 'a1-w1#chunk1', itemId: 'a1-w1', kind: 'chunk', chunk: 1 });
