@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { StyleSheet, View, Pressable } from 'react-native';
+import { Animated, PanResponder, StyleSheet, View, Pressable, type PanResponderInstance } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
@@ -13,6 +13,7 @@ import SentenceGradeRow from '@/components/learn/SentenceGradeRow';
 import { t } from '@/lib/i18n';
 import { sentenceBuildMatch, sentenceBuildMisplaced } from '@/lib/answerMatch';
 import { useDiffStyles } from '@/lib/useDiffStyles';
+import { dropIndex, moveItem, type TileFrame } from '@/lib/tileDrag';
 import HintedSentence from '@/components/HintedSentence';
 import type { HintPiece } from '@/lib/sentenceHint';
 
@@ -77,6 +78,36 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     setPlaced(placed.filter((_, i) => i !== posInPlaced));
   };
 
+  // FB537 ("drag the words, so a wrong first word or the order can be fixed"): a placed tile can be dragged to another
+  // place in the row; a tap still sends it back to the bank (the drag only takes over once the finger moves). Where it is
+  // let go decides its place (lib/tileDrag.ts). Not after the check (the tiles lose the handlers). One responder per place,
+  // made once (one remade mid-drag would lose its gesture); the tiles' boxes are kept in `live` by their onLayout.
+  const [live] = useState(() => ({ frames: [] as (TileFrame | undefined)[] }));
+  const [pan] = useState(() => new Animated.ValueXY());
+  const [dragging, setDragging] = useState<number | null>(null);
+  const [responders] = useState<PanResponderInstance[]>(() =>
+    Array.from({ length: targetWords.length + trapWords.length }, (_, pos) => {
+      const end = () => {
+        pan.setValue({ x: 0, y: 0 });
+        setDragging(null);
+      };
+      return PanResponder.create({
+        onMoveShouldSetPanResponderCapture: (_e, g) => Math.hypot(g.dx, g.dy) > 8,
+        onPanResponderGrant: () => {
+          pan.setValue({ x: 0, y: 0 });
+          setDragging(pos);
+        },
+        onPanResponderMove: (_e, g) => pan.setValue({ x: g.dx, y: g.dy }),
+        onPanResponderRelease: (_e, g) => {
+          end();
+          setPlaced((row) => moveItem(row, pos, dropIndex(live.frames.slice(0, row.length), pos, g.dx, g.dy)));
+        },
+        onPanResponderTerminationRequest: () => false,
+        onPanResponderTerminate: end,
+      });
+    }),
+  );
+
   const handleCheck = () => {
     // tile for tile, no character tolerance, see sentenceBuildMatch.
     const isCorrect = sentenceBuildMatch(placed.map(i => bank[i]), targetWords);
@@ -115,7 +146,14 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
         ) : (
           <View style={styles.wordRow}>
             {placed.map((bankIdx, pos) => (
-              g.brutal ? (
+              <Animated.View
+                key={`placed-${bankIdx}-${pos}`}
+                testID={`sentence-placed-${pos}`}
+                onLayout={(e) => { live.frames[pos] = e.nativeEvent.layout; }}
+                style={dragging === pos ? [styles.dragging, { transform: pan.getTranslateTransform() }] : undefined}
+                {...(result ? {} : responders[pos]?.panHandlers)}
+              >
+              {g.brutal ? (
                 <BrutalBox key={`placed-${bankIdx}-${pos}`} testID={tileId(pos)} fill="b" offset={2} boxStyle={[styles.brutalChip, bad(pos) && badBox, good(pos) && goodBox]} onPress={() => removeWord(pos)}>
                   <Text style={[styles.chipText, { color: g.onB }, bad(pos) && badText, good(pos) && goodText]}>{bank[bankIdx]}</Text>
                 </BrutalBox>
@@ -123,7 +161,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
               <Pressable key={`placed-${bankIdx}-${pos}`} testID={tileId(pos)} style={[styles.wordChip, styles.placedChip, bad(pos) && badBox, good(pos) && goodBox]} onPress={() => removeWord(pos)}>
                 <Text style={[styles.chipText, bad(pos) && badText, good(pos) && goodText]}>{bank[bankIdx]}</Text>
               </Pressable>
-              )
+              )}
+              </Animated.View>
             ))}
           </View>
         )}
@@ -200,6 +239,8 @@ const styles = StyleSheet.create({
   placedChip: { backgroundColor: '#1E40AF' },
   emptySlot: { backgroundColor: 'transparent', borderStyle: 'dashed' },
   hiddenText: { opacity: 0 },
+  // The tile being dragged rides above the others.
+  dragging: { zIndex: 1, elevation: 6 },
   chipText: { color: '#FFF', fontSize: 16, fontWeight: '600' },
   correctLine: { fontSize: 14, fontWeight: '600', textAlign: 'center' },
   checkBtn: { paddingHorizontal: 32, paddingVertical: 12, borderRadius: 14, marginTop: 8 },
