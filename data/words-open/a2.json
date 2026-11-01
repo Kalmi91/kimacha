@@ -382,9 +382,9 @@
     "es": "mirar",
     "en": "to look at, to watch",
     "hint_en": "I *watch* TV every night.",
-    "sentence_es": "Mi madre miraba a los niños.",
-    "sentence_en": "My mother was looking at the children.",
-    "sentence_lemmas": ["mi", "madre", "mirar", "a", "el", "niño"]
+    "sentence_es": "Miro por la ventana y veo la calle.",
+    "sentence_en": "I look out the window and see the street.",
+    "sentence_lemmas": ["mirar", "por", "el", "ventana", "y", "ver", "el", "calle"]
   },
   {
     "order": 209,
@@ -3159,9 +3159,9 @@
     "lemma": "aguacate",
     "es": "el aguacate",
     "en": "avocado",
-    "sentence_es": "Me gusta el aguacate con limón.",
-    "sentence_en": "I like avocado with lime.",
-    "sentence_lemmas": ["me", "gustar", "el", "aguacate", "con", "limón"]
+    "sentence_es": "El aguacate es verde y lo como con tortilla.",
+    "sentence_en": "The avocado is green and I eat it with a tortilla.",
+    "sentence_lemmas": ["el", "aguacate", "ser", "verde", "y", "lo", "comer", "con", "tortilla"]
   },
   {
     "order": 1088,
@@ -3412,9 +3412,9 @@
     "lemma": "lavadora",
     "es": "la lavadora",
     "en": "washing machine",
-    "sentence_es": "Tengo una lavadora nueva.",
-    "sentence_en": "I have a new washing machine.",
-    "sentence_lemmas": ["tener", "un", "lavadora", "nuevo"]
+    "sentence_es": "Pongo la ropa sucia en la lavadora.",
+    "sentence_en": "I put the dirty clothes in the washing machine.",
+    "sentence_lemmas": ["poner", "el", "ropa", "sucio", "en", "el", "lavadora"]
   },
   {
     "order": 1111,
@@ -3911,9 +3911,9 @@
     "lemma": "cámara",
     "es": "la cámara",
     "en": "camera",
-    "sentence_es": "Mi cámara está en la mochila.",
-    "sentence_en": "My camera is in the backpack.",
-    "sentence_lemmas": ["mi", "cámara", "estar", "en", "el", "mochila"]
+    "sentence_es": "Con la cámara tomo fotos de mi familia.",
+    "sentence_en": "With the camera I take photos of my family.",
+    "sentence_lemmas": ["con", "el", "cámara", "tomar", "foto", "de", "mi", "familia"]
   },
   {
     "order": 1156,
@@ -5271,9 +5271,9 @@
     "lemma": "enorme",
     "es": "enorme",
     "en": "enormous, huge",
-    "sentence_es": "El elefante es enorme.",
-    "sentence_en": "The elephant is huge.",
-    "sentence_lemmas": ["el", "elefante", "ser", "enorme"]
+    "sentence_es": "El elefante es enorme, más grande que un carro.",
+    "sentence_en": "The elephant is huge, bigger than a car.",
+    "sentence_lemmas": ["el", "elefante", "ser", "enorme", "más", "grande", "que", "un", "carro"]
   },
   {
     "order": 1593,
@@ -5282,9 +5282,9 @@
     "lemma": "mediano",
     "es": "mediano",
     "en": "medium",
-    "sentence_es": "Quiero una pizza mediana.",
-    "sentence_en": "I want a medium pizza.",
-    "sentence_lemmas": ["querer", "un", "pizza", "mediano"]
+    "sentence_es": "Una pizza mediana es para dos personas.",
+    "sentence_en": "A medium pizza is for two people.",
+    "sentence_lemmas": ["un", "pizza", "mediano", "ser", "para", "dos", "persona"]
   },
   {
     "order": 1595,
@@ -5458,9 +5458,9 @@
     "lemma": "abeja",
     "es": "la abeja",
     "en": "bee",
-    "sentence_es": "La abeja hace miel.",
-    "sentence_en": "The bee makes honey.",
-    "sentence_lemmas": ["el", "abeja", "hacer", "miel"]
+    "sentence_es": "La abeja hace miel con las flores.",
+    "sentence_en": "The bee makes honey from flowers.",
+    "sentence_lemmas": ["el", "abeja", "hacer", "miel", "con", "el", "flor"]
   },
   {
     "order": 1621,
@@ -5502,9 +5502,9 @@
     "lemma": "hormiga",
     "es": "la hormiga",
     "en": "ant",
-    "sentence_es": "Las hormigas viven juntas.",
-    "sentence_en": "Ants live together.",
-    "sentence_lemmas": ["el", "hormiga", "vivir", "juntos"]
+    "sentence_es": "Las hormigas viven juntas en el jardín.",
+    "sentence_en": "Ants live together in the garden.",
+    "sentence_lemmas": ["el", "hormiga", "vivir", "juntos", "en", "el", "jardín"]
   },
   {
     "order": 1625,
@@ -6179,9 +6179,9 @@
     "lemma": "nuez",
     "es": "la nuez",
     "en": "walnut, pecan (MX)",
-    "sentence_es": "Mi hijo no come nueces.",
-    "sentence_en": "My son does not eat walnuts.",
-    "sentence_lemmas": ["mi", "hijo", "no", "comer", "nuez"]
+    "sentence_es": "Abro la nuez con la mano para comer.",
+    "sentence_en": "I open the walnut with my hand to eat.",
+    "sentence_lemmas": ["abrir", "el", "nuez", "con", "el", "mano", "para", "comer"]
   },
   {
     "order": 1687,
@@ -7318,9 +7318,9 @@
     "lemma": "guayaba",
     "es": "la guayaba",
     "en": "guava",
-    "sentence_es": "La guayaba es dulce y amarilla.",
-    "sentence_en": "The guava is sweet and yellow.",
-    "sentence_lemmas": ["el", "guayaba", "ser", "dulce", "y", "amarillo"]
+    "sentence_es": "La guayaba tiene mucho jugo y es muy dulce.",
+    "sentence_en": "The guava has a lot of juice and is very sweet.",
+    "sentence_lemmas": ["el", "guayaba", "tener", "mucho", "jugo", "y", "ser", "muy", "dulce"]
   },
   {
     "order": 2091,
@@ -7749,9 +7749,9 @@
     "lemma": "águila",
     "es": "el águila",
     "en": "eagle",
-    "sentence_es": "El águila vive en la montaña.",
-    "sentence_en": "The eagle lives in the mountains.",
-    "sentence_lemmas": ["el", "águila", "vivir", "en", "el", "montaña"]
+    "sentence_es": "El águila ve muy bien desde el cielo.",
+    "sentence_en": "The eagle sees very well from the sky.",
+    "sentence_lemmas": ["el", "águila", "ver", "muy", "bien", "desde", "el", "cielo"]
   },
   {
     "order": 2150,
@@ -8211,9 +8211,9 @@
     "lemma": "columpio",
     "es": "el columpio",
     "en": "swing",
-    "sentence_es": "Los niños juegan en el columpio.",
-    "sentence_en": "The children play on the swing.",
-    "sentence_lemmas": ["el", "niño", "jugar", "en", "el", "columpio"]
+    "sentence_es": "Mi hijo juega en el columpio del parque.",
+    "sentence_en": "My son plays on the swing in the park.",
+    "sentence_lemmas": ["mi", "hijo", "jugar", "en", "el", "columpio", "de", "parque"]
   },
   {
     "order": 2200,
@@ -10314,9 +10314,9 @@
     "lemma": "terminal",
     "es": "la terminal",
     "en": "bus terminal",
-    "sentence_es": "Espero el autobús en la terminal.",
-    "sentence_en": "I wait for the bus at the terminal.",
-    "sentence_lemmas": ["esperar", "el", "autobús", "en", "el", "terminal"]
+    "sentence_es": "En la terminal hay muchos autobuses.",
+    "sentence_en": "At the terminal there are many buses.",
+    "sentence_lemmas": ["en", "el", "terminal", "haber", "mucho", "autobús"]
   },
   {
     "order": 2719,
@@ -10380,9 +10380,9 @@
     "lemma": "cómoda",
     "es": "la cómoda",
     "en": "dresser",
-    "sentence_es": "La ropa está en la cómoda.",
-    "sentence_en": "The clothes are in the dresser.",
-    "sentence_lemmas": ["el", "ropa", "estar", "en", "el", "cómoda"]
+    "sentence_es": "La ropa limpia está en la cómoda.",
+    "sentence_en": "The clean clothes are in the dresser.",
+    "sentence_lemmas": ["el", "ropa", "limpio", "estar", "en", "el", "cómoda"]
   },
   {
     "order": 2725,
@@ -10512,9 +10512,9 @@
     "lemma": "búho",
     "es": "el búho",
     "en": "owl",
-    "sentence_es": "El búho duerme de día.",
-    "sentence_en": "The owl sleeps during the day.",
-    "sentence_lemmas": ["el", "búho", "dormir", "de", "día"]
+    "sentence_es": "El búho ve muy bien en la noche.",
+    "sentence_en": "The owl sees very well at night.",
+    "sentence_lemmas": ["el", "búho", "ver", "muy", "bien", "en", "el", "noche"]
   },
   {
     "order": 2741,
@@ -12262,9 +12262,9 @@
     "lemma": "gota",
     "es": "la gota",
     "en": "drop of liquid",
-    "sentence_es": "Hay una gota de agua en la mesa.",
-    "sentence_en": "There is a drop of water on the table.",
-    "sentence_lemmas": ["haber", "un", "gota", "de", "agua", "en", "el", "mesa"]
+    "sentence_es": "Una gota de agua sale de la llave.",
+    "sentence_en": "A drop of water comes out of the tap.",
+    "sentence_lemmas": ["un", "gota", "de", "agua", "salir", "de", "el", "llave"]
   },
   {
     "order": 2969,
@@ -12295,9 +12295,9 @@
     "lemma": "rincón",
     "es": "el rincón",
     "en": "inner corner",
-    "sentence_es": "El gato duerme en el rincón.",
-    "sentence_en": "The cat sleeps in the corner.",
-    "sentence_lemmas": ["el", "gato", "dormir", "en", "el", "rincón"]
+    "sentence_es": "En el rincón de la sala hay una silla.",
+    "sentence_en": "In the corner of the living room there is a chair.",
+    "sentence_lemmas": ["en", "el", "rincón", "de", "el", "sala", "haber", "un", "silla"]
   },
   {
     "order": 2972,
@@ -12594,9 +12594,9 @@
     "lemma": "lucha",
     "es": "la lucha",
     "en": "fight, struggle",
-    "sentence_es": "La lucha es un deporte difícil.",
-    "sentence_en": "Wrestling is a difficult sport.",
-    "sentence_lemmas": ["el", "lucha", "ser", "un", "deporte", "difícil"]
+    "sentence_es": "En la lucha gana el más fuerte.",
+    "sentence_en": "In wrestling, the strongest wins.",
+    "sentence_lemmas": ["en", "el", "lucha", "ganar", "el", "más", "fuerte"]
   },
   {
     "order": 3310,
@@ -13234,9 +13234,9 @@
     "lemma": "vivo",
     "es": "vivo",
     "en": "alive, lively",
-    "sentence_es": "El pez está vivo.",
-    "sentence_en": "The fish is alive.",
-    "sentence_lemmas": ["el", "pez", "estar", "vivo"]
+    "sentence_es": "Mi abuelo está vivo y tiene ochenta años.",
+    "sentence_en": "My grandfather is alive and is eighty years old.",
+    "sentence_lemmas": ["mi", "abuelo", "estar", "vivo", "y", "tener", "ochenta", "año"]
   },
   {
     "order": 3371,
@@ -13432,9 +13432,9 @@
     "lemma": "tranvía",
     "es": "el tranvía",
     "en": "tram",
-    "sentence_es": "El tranvía llega a la estación.",
-    "sentence_en": "The tram arrives at the station.",
-    "sentence_lemmas": ["el", "tranvía", "llegar", "a", "el", "estación"]
+    "sentence_es": "El tranvía va por la calle y lleva gente.",
+    "sentence_en": "The tram goes along the street and carries people.",
+    "sentence_lemmas": ["el", "tranvía", "ir", "por", "el", "calle", "y", "llevar", "gente"]
   },
   {
     "order": 3856,
@@ -14004,9 +14004,9 @@
     "lemma": "actriz",
     "es": "la actriz",
     "en": "actress",
-    "sentence_es": "La actriz es muy bonita.",
-    "sentence_en": "The actress is very pretty.",
-    "sentence_lemmas": ["el", "actriz", "ser", "muy", "bonito"]
+    "sentence_es": "La actriz trabaja en una película.",
+    "sentence_en": "The actress works in a movie.",
+    "sentence_lemmas": ["el", "actriz", "trabajar", "en", "un", "película"]
   },
   {
     "order": 4059,
@@ -14092,9 +14092,9 @@
     "lemma": "pesca",
     "es": "la pesca",
     "en": "fishing",
-    "sentence_es": "La pesca es un trabajo difícil.",
-    "sentence_en": "Fishing is hard work.",
-    "sentence_lemmas": ["el", "pesca", "ser", "un", "trabajo", "difícil"]
+    "sentence_es": "La pesca da pescado del mar a la gente.",
+    "sentence_en": "Fishing gives fish from the sea to the people.",
+    "sentence_lemmas": ["el", "pesca", "dar", "pescado", "de", "mar", "a", "el", "gente"]
   },
   {
     "order": 4072,
@@ -14543,9 +14543,9 @@
     "lemma": "flash",
     "es": "el flash",
     "en": "flash",
-    "sentence_es": "El flash es muy fuerte.",
-    "sentence_en": "The flash is very strong.",
-    "sentence_lemmas": ["el", "flash", "ser", "muy", "fuerte"]
+    "sentence_es": "Con el flash de la cámara hay mucha luz.",
+    "sentence_en": "With the camera flash there is a lot of light.",
+    "sentence_lemmas": ["con", "el", "flash", "de", "el", "cámara", "haber", "mucho", "luz"]
   },
   {
     "order": 4278,
@@ -14609,9 +14609,9 @@
     "lemma": "panda",
     "es": "el panda",
     "en": "panda",
-    "sentence_es": "El panda es un animal bonito.",
-    "sentence_en": "The panda is a pretty animal.",
-    "sentence_lemmas": ["el", "panda", "ser", "un", "animal", "bonito"]
+    "sentence_es": "El panda es blanco y negro.",
+    "sentence_en": "The panda is white and black.",
+    "sentence_lemmas": ["el", "panda", "ser", "blanco", "y", "negro"]
   },
   {
     "order": 4303,
@@ -14939,9 +14939,9 @@
     "lemma": "muerto",
     "es": "muerto",
     "en": "dead",
-    "sentence_es": "El pez está muerto.",
-    "sentence_en": "The fish is dead.",
-    "sentence_lemmas": ["el", "pez", "estar", "muerto"]
+    "sentence_es": "El pez muerto no nada en el agua.",
+    "sentence_en": "A dead fish does not swim in the water.",
+    "sentence_lemmas": ["el", "pez", "muerto", "no", "nadar", "en", "el", "agua"]
   },
   {
     "order": 4394,
