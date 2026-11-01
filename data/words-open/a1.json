@@ -1060,9 +1060,9 @@
     "es": "quién",
     "en": "who",
     "hint_en": "*Who* is that man?",
-    "sentence_es": "¿Quién es ella?",
-    "sentence_en": "Who is she?",
-    "sentence_lemmas": ["quién", "ser", "ella"]
+    "sentence_es": "¿Quién es ella, tu madre?",
+    "sentence_en": "Who is she, your mother?",
+    "sentence_lemmas": ["quién", "ser", "ella", "tu", "madre"]
   },
   {
     "order": 94,
@@ -1176,9 +1176,9 @@
     "lemma": "nunca",
     "es": "nunca / jamás",
     "en": "never",
-    "sentence_es": "Nunca bebo leche.",
-    "sentence_en": "I never drink milk.",
-    "sentence_lemmas": ["nunca", "beber", "leche"]
+    "sentence_es": "Nunca bebo leche, bebo agua.",
+    "sentence_en": "I never drink milk, I drink water.",
+    "sentence_lemmas": ["nunca", "beber", "leche", "beber", "agua"]
   },
   {
     "order": 104,
@@ -1409,9 +1409,9 @@
     "lemma": "libro",
     "es": "el libro",
     "en": "book",
-    "sentence_es": "Tengo un libro nuevo.",
-    "sentence_en": "I have a new book.",
-    "sentence_lemmas": ["tener", "un", "libro", "nuevo"]
+    "sentence_es": "Mi libro está en la mesa.",
+    "sentence_en": "My book is on the table.",
+    "sentence_lemmas": ["mi", "libro", "estar", "en", "el", "mesa"]
   },
   {
     "order": 125,
@@ -1464,9 +1464,9 @@
     "lemma": "problema",
     "es": "el problema",
     "en": "problem",
-    "sentence_es": "No hay problema.",
-    "sentence_en": "There is no problem.",
-    "sentence_lemmas": ["no", "haber", "problema"]
+    "sentence_es": "No hay problema, estoy aquí.",
+    "sentence_en": "There is no problem, I am here.",
+    "sentence_lemmas": ["no", "haber", "problema", "estar", "aquí"]
   },
   {
     "order": 130,
@@ -2593,9 +2593,9 @@
     "lemma": "encender",
     "es": "encender",
     "en": "to turn on",
-    "sentence_es": "Necesito encender el teléfono.",
-    "sentence_en": "I need to turn on the phone.",
-    "sentence_lemmas": ["necesitar", "encender", "el", "teléfono"]
+    "sentence_es": "Necesito encender el teléfono para llamar.",
+    "sentence_en": "I need to turn on the phone to call.",
+    "sentence_lemmas": ["necesitar", "encender", "el", "teléfono", "para", "llamar"]
   },
   {
     "order": 683,
@@ -2962,9 +2962,9 @@
     "lemma": "verdad",
     "es": "la verdad",
     "en": "truth",
-    "sentence_es": "Eso es verdad.",
-    "sentence_en": "That is true.",
-    "sentence_lemmas": ["eso", "ser", "verdad"]
+    "sentence_es": "Eso es verdad, mi madre lo dice.",
+    "sentence_en": "That is true, my mother says it.",
+    "sentence_lemmas": ["eso", "ser", "verdad", "mi", "madre", "lo", "decir"]
   },
   {
     "order": 288,
@@ -2995,9 +2995,9 @@
     "lemma": "importante",
     "es": "importante",
     "en": "important",
-    "sentence_es": "Es importante comer bien.",
-    "sentence_en": "It is important to eat well.",
-    "sentence_lemmas": ["ser", "importante", "comer", "bien"]
+    "sentence_es": "Es importante comer bien en la mañana.",
+    "sentence_en": "It is important to eat well in the morning.",
+    "sentence_lemmas": ["ser", "importante", "comer", "bien", "en", "el", "mañana"]
   },
   {
     "order": 261,
@@ -3129,9 +3129,9 @@
     "lemma": "mismo",
     "es": "mismo",
     "en": "same",
-    "sentence_es": "Tenemos el mismo problema.",
-    "sentence_en": "We have the same problem.",
-    "sentence_lemmas": ["tener", "el", "mismo", "problema"]
+    "sentence_es": "Mi amigo y yo tenemos el mismo problema.",
+    "sentence_en": "My friend and I have the same problem.",
+    "sentence_lemmas": ["mi", "amigo", "y", "yo", "tener", "el", "mismo", "problema"]
   },
   {
     "order": 176,
@@ -3578,9 +3578,9 @@
     "es": "esto",
     "en": "this (thing)",
     "hint_en": "*This* is very good",
-    "sentence_es": "Esto es muy bueno.",
-    "sentence_en": "This is very good.",
-    "sentence_lemmas": ["esto", "ser", "muy", "bueno"]
+    "sentence_es": "Esto es muy bueno para mi familia.",
+    "sentence_en": "This is very good for my family.",
+    "sentence_lemmas": ["esto", "ser", "muy", "bueno", "para", "mi", "familia"]
   },
   {
     "order": 170,
@@ -3714,9 +3714,9 @@
     "lemma": "adiós",
     "es": "adiós",
     "en": "goodbye",
-    "sentence_es": "Adiós, nos vemos mañana.",
-    "sentence_en": "Goodbye, see you tomorrow.",
-    "sentence_lemmas": ["adiós", "nos", "ver", "mañana"]
+    "sentence_es": "Adiós, mi amigo, nos vemos mañana.",
+    "sentence_en": "Goodbye, my friend, see you tomorrow.",
+    "sentence_lemmas": ["adiós", "mi", "amigo", "nos", "ver", "mañana"]
   },
   {
     "order": 884,
@@ -4689,9 +4689,9 @@
     "lemma": "llamarse",
     "es": "llamarse",
     "en": "to be called",
-    "sentence_es": "¿Cómo te llamas?",
-    "sentence_en": "What is your name?",
-    "sentence_lemmas": ["cómo", "te", "llamarse"]
+    "sentence_es": "Hola, mi amigo, ¿cómo te llamas?",
+    "sentence_en": "Hi, my friend, what is your name?",
+    "sentence_lemmas": ["hola", "mi", "amigo", "cómo", "te", "llamarse"]
   },
   {
     "order": 1017,
@@ -4755,9 +4755,9 @@
     "lemma": "lavarse",
     "es": "lavarse",
     "en": "to wash oneself",
-    "sentence_es": "Me lavo las manos.",
-    "sentence_en": "I wash my hands.",
-    "sentence_lemmas": ["me", "lavarse", "el", "mano"]
+    "sentence_es": "Me lavo las manos antes de comer.",
+    "sentence_en": "I wash my hands before eating.",
+    "sentence_lemmas": ["me", "lavarse", "el", "mano", "antes", "de", "comer"]
   },
   {
     "order": 1544,
@@ -5041,9 +5041,9 @@
     "lemma": "guapo",
     "es": "guapo",
     "en": "handsome",
-    "sentence_es": "El hombre es guapo.",
-    "sentence_en": "The man is handsome.",
-    "sentence_lemmas": ["el", "hombre", "ser", "guapo"]
+    "sentence_es": "El novio de mi hermana es muy guapo.",
+    "sentence_en": "My sister's boyfriend is very handsome.",
+    "sentence_lemmas": ["el", "novio", "de", "mi", "hermana", "ser", "muy", "guapo"]
   },
   {
     "order": 3283,
@@ -5449,9 +5449,9 @@
     "es": "cuándo",
     "en": "when",
     "hint_en": "*When* does the class start?",
-    "sentence_es": "¿Cuándo llega tu padre?",
-    "sentence_en": "When does your father arrive?",
-    "sentence_lemmas": ["cuándo", "llegar", "tu", "padre"]
+    "sentence_es": "¿Cuándo llega tu padre a casa hoy?",
+    "sentence_en": "When does your father get home today?",
+    "sentence_lemmas": ["cuándo", "llegar", "tu", "padre", "a", "casa", "hoy"]
   },
   {
     "order": 160,
