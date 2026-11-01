@@ -373,9 +373,9 @@
     "lemma": "disposición",
     "es": "la disposición",
     "en": "willingness; provision",
-    "sentence_es": "Tengo disposición para ayudar.",
-    "sentence_en": "I am willing to help.",
-    "sentence_lemmas": ["tener", "disposición", "para", "ayudar"]
+    "sentence_es": "Tiene disposición para ayudar: siempre dice que sí a todos.",
+    "sentence_en": "He is willing to help: he always says yes to everyone.",
+    "sentence_lemmas": ["tener", "disposición", "para", "ayudar", "siempre", "decir", "que", "sí", "a", "todo"]
   },
   {
     "order": 2015,
@@ -516,9 +516,9 @@
     "lemma": "inminente",
     "es": "inminente",
     "en": "imminent",
-    "sentence_es": "La lluvia es inminente.",
-    "sentence_en": "The rain is imminent.",
-    "sentence_lemmas": ["el", "lluvia", "ser", "inminente"]
+    "sentence_es": "El cielo está negro y la lluvia es inminente.",
+    "sentence_en": "The sky is black and rain is imminent.",
+    "sentence_lemmas": ["el", "cielo", "estar", "negro", "y", "el", "lluvia", "ser", "inminente"]
   },
   {
     "order": 2079,
@@ -879,9 +879,9 @@
     "lemma": "eludir",
     "es": "eludir",
     "en": "to dodge, to sidestep",
-    "sentence_es": "Eludo las preguntas difíciles.",
-    "sentence_en": "I dodge the difficult questions.",
-    "sentence_lemmas": ["eludir", "el", "pregunta", "difícil"]
+    "sentence_es": "Mi jefe elude la pregunta y cambia de tema.",
+    "sentence_en": "My boss dodges the question and changes the subject.",
+    "sentence_lemmas": ["mi", "jefe", "eludir", "el", "pregunta", "y", "cambiar", "de", "tema"]
   },
   {
     "order": 2581,
@@ -912,9 +912,9 @@
     "lemma": "formular",
     "es": "formular",
     "en": "to formulate",
-    "sentence_es": "Formulo una pregunta clara.",
-    "sentence_en": "I formulate a clear question.",
-    "sentence_lemmas": ["formular", "un", "pregunta", "claro"]
+    "sentence_es": "La científica formula una hipótesis antes del experimento.",
+    "sentence_en": "The scientist formulates a hypothesis before the experiment.",
+    "sentence_lemmas": ["el", "científico", "formular", "un", "hipótesis", "antes", "de", "experimento"]
   },
   {
     "order": 2584,
@@ -1111,9 +1111,9 @@
     "es": "el convenio",
     "en": "treaty, pact",
     "hint_en": "The two sides sign a *treaty*.",
-    "sentence_es": "Los dos países firman un convenio.",
-    "sentence_en": "The two countries sign an agreement.",
-    "sentence_lemmas": ["el", "dos", "país", "firmar", "un", "convenio"]
+    "sentence_es": "La empresa firma un convenio con la universidad para los estudiantes.",
+    "sentence_en": "The company signs an agreement with the university for the students.",
+    "sentence_lemmas": ["el", "empresa", "firmar", "un", "convenio", "con", "el", "universidad", "para", "el", "estudiante"]
   },
   {
     "order": 2612,
@@ -1397,9 +1397,9 @@
     "lemma": "afín",
     "es": "afín",
     "en": "akin, like-minded",
-    "sentence_es": "Somos personas afines.",
-    "sentence_en": "We are like-minded people.",
-    "sentence_lemmas": ["ser", "persona", "afín"]
+    "sentence_es": "Somos afines: a los dos nos gusta la misma música.",
+    "sentence_en": "We are kindred spirits: we both like the same music.",
+    "sentence_lemmas": ["ser", "afín", "a", "el", "dos", "nos", "gustar", "el", "mismo", "música"]
   },
   {
     "order": 2658,
@@ -1408,9 +1408,9 @@
     "lemma": "arbitrario",
     "es": "arbitrario",
     "en": "arbitrary",
-    "sentence_es": "Es una decisión arbitraria.",
-    "sentence_en": "It is an arbitrary decision.",
-    "sentence_lemmas": ["ser", "un", "decisión", "arbitrario"]
+    "sentence_es": "Es una decisión arbitraria porque no tiene ninguna razón.",
+    "sentence_en": "It is an arbitrary decision because it has no reason.",
+    "sentence_lemmas": ["ser", "un", "decisión", "arbitrario", "porque", "no", "tener", "ninguno", "razón"]
   },
   {
     "order": 2661,
@@ -1419,9 +1419,9 @@
     "lemma": "colosal",
     "es": "colosal",
     "en": "colossal",
-    "sentence_es": "La pirámide es colosal.",
-    "sentence_en": "The pyramid is colossal.",
-    "sentence_lemmas": ["el", "pirámide", "ser", "colosal"]
+    "sentence_es": "Esa estatua es más alta que un edificio: es colosal.",
+    "sentence_en": "That statue is taller than a building: it is colossal.",
+    "sentence_lemmas": ["ese", "estatua", "ser", "más", "alto", "que", "un", "edificio", "ser", "colosal"]
   },
   {
     "order": 2663,
@@ -1430,9 +1430,9 @@
     "lemma": "controvertido",
     "es": "controvertido",
     "en": "controversial",
-    "sentence_es": "Es un tema controvertido.",
-    "sentence_en": "It is a controversial topic.",
-    "sentence_lemmas": ["ser", "un", "tema", "controvertido"]
+    "sentence_es": "El tema es controvertido: unos dicen sí y otros dicen no.",
+    "sentence_en": "The topic is controversial: some say yes and others say no.",
+    "sentence_lemmas": ["el", "tema", "ser", "controvertido", "un", "decir", "sí", "y", "otro", "decir", "no"]
   },
   {
     "order": 2665,
@@ -1441,9 +1441,9 @@
     "lemma": "cuantioso",
     "es": "cuantioso / considerable",
     "en": "substantial, considerable",
-    "sentence_es": "La deuda es cuantiosa.",
-    "sentence_en": "The debt is substantial.",
-    "sentence_lemmas": ["el", "deuda", "ser", "cuantioso"]
+    "sentence_es": "La deuda es cuantiosa: debemos mucho dinero al banco.",
+    "sentence_en": "The debt is substantial: we owe the bank a lot of money.",
+    "sentence_lemmas": ["el", "deuda", "ser", "cuantioso", "deber", "mucho", "dinero", "a", "banco"]
   },
   {
     "order": 2667,
@@ -1452,9 +1452,9 @@
     "lemma": "determinante",
     "es": "determinante",
     "en": "determining, deciding",
-    "sentence_es": "Es un factor determinante.",
-    "sentence_en": "It is a determining factor.",
-    "sentence_lemmas": ["ser", "un", "factor", "determinante"]
+    "sentence_es": "El precio es determinante: decide si compramos la casa o no.",
+    "sentence_en": "The price is the deciding factor: it decides whether we buy the house or not.",
+    "sentence_lemmas": ["el", "precio", "ser", "determinante", "decidir", "si", "comprar", "el", "casa", "o", "no"]
   },
   {
     "order": 2668,
@@ -1518,9 +1518,9 @@
     "lemma": "imprevisto",
     "es": "imprevisto",
     "en": "unforeseen",
-    "sentence_es": "Tuvimos un problema imprevisto.",
-    "sentence_en": "We had an unforeseen problem.",
-    "sentence_lemmas": ["tener", "un", "problema", "imprevisto"]
+    "sentence_es": "Es un viaje imprevisto: no está en nuestro plan.",
+    "sentence_en": "It is an unforeseen trip: it is not in our plan.",
+    "sentence_lemmas": ["ser", "un", "viaje", "imprevisto", "no", "estar", "en", "nuestro", "plan"]
   },
   {
     "order": 2676,
@@ -1529,9 +1529,9 @@
     "lemma": "inalcanzable",
     "es": "inalcanzable",
     "en": "unattainable",
-    "sentence_es": "Su sueño parece inalcanzable.",
-    "sentence_en": "His dream seems unattainable.",
-    "sentence_lemmas": ["su", "sueño", "parecer", "inalcanzable"]
+    "sentence_es": "El libro está tan alto que es inalcanzable para el niño.",
+    "sentence_en": "The book is so high up that it is out of the child's reach.",
+    "sentence_lemmas": ["el", "libro", "estar", "tan", "alto", "que", "ser", "inalcanzable", "para", "el", "niño"]
   },
   {
     "order": 3133,
@@ -1816,9 +1816,9 @@
     "lemma": "moderar",
     "es": "moderar",
     "en": "to moderate, to restrain",
-    "sentence_es": "Debes moderar tu enojo.",
-    "sentence_en": "You must tone down your anger.",
-    "sentence_lemmas": ["deber", "moderar", "tu", "enojo"]
+    "sentence_es": "Cerca de la escuela debes moderar la velocidad del carro.",
+    "sentence_en": "Near the school you must moderate your car's speed.",
+    "sentence_lemmas": ["cerca", "de", "el", "escuela", "deber", "moderar", "el", "velocidad", "de", "carro"]
   },
   {
     "order": 3172,
@@ -1871,9 +1871,9 @@
     "lemma": "prevalecer",
     "es": "prevalecer",
     "en": "to prevail",
-    "sentence_es": "La verdad debe prevalecer.",
-    "sentence_en": "The truth must prevail.",
-    "sentence_lemmas": ["el", "verdad", "deber", "prevalecer"]
+    "sentence_es": "Al final, la verdad prevalece y la mentira pierde.",
+    "sentence_en": "In the end, the truth prevails and the lie loses.",
+    "sentence_lemmas": ["a", "final", "el", "verdad", "prevalecer", "y", "el", "mentira", "perder"]
   },
   {
     "order": 3178,
@@ -1960,9 +1960,9 @@
     "lemma": "replantear",
     "es": "replantear",
     "en": "to rethink",
-    "sentence_es": "Debemos replantear nuestro plan.",
-    "sentence_en": "We must rethink our plan.",
-    "sentence_lemmas": ["deber", "replantear", "nuestro", "plan"]
+    "sentence_es": "El plan falla, así que debemos replantear todo desde el principio.",
+    "sentence_en": "The plan fails, so we must rethink everything from the beginning.",
+    "sentence_lemmas": ["el", "plan", "fallar", "así", "que", "deber", "replantear", "todo", "desde", "el", "principio"]
   },
   {
     "order": 3188,
@@ -2114,9 +2114,9 @@
     "lemma": "integridad",
     "es": "la integridad",
     "en": "integrity",
-    "sentence_es": "La integridad es un valor importante.",
-    "sentence_en": "Integrity is an important value.",
-    "sentence_lemmas": ["el", "integridad", "ser", "un", "valor", "importante"]
+    "sentence_es": "Mi jefe tiene integridad: nunca roba y siempre dice la verdad.",
+    "sentence_en": "My boss has integrity: he never steals and always tells the truth.",
+    "sentence_lemmas": ["mi", "jefe", "tener", "integridad", "nunca", "robar", "y", "siempre", "decir", "el", "verdad"]
   },
   {
     "order": 3212,
@@ -2203,9 +2203,9 @@
     "es": "el pacto",
     "en": "pact, treaty",
     "hint_en": "The two countries sign a *pact*",
-    "sentence_es": "Los dos países firman un pacto.",
-    "sentence_en": "The two countries sign a pact.",
-    "sentence_lemmas": ["el", "dos", "país", "firmar", "un", "pacto"]
+    "sentence_es": "Mis amigos y yo hacemos un pacto: nadie dice el secreto.",
+    "sentence_en": "My friends and I make a pact: nobody tells the secret.",
+    "sentence_lemmas": ["mi", "amigo", "y", "yo", "hacer", "un", "pacto", "nadie", "decir", "el", "secreto"]
   },
   {
     "order": 3223,
@@ -2335,9 +2335,9 @@
     "lemma": "supuesto",
     "es": "el supuesto",
     "en": "assumption",
-    "sentence_es": "Ese supuesto es falso.",
-    "sentence_en": "That assumption is false.",
-    "sentence_lemmas": ["ese", "supuesto", "ser", "falso"]
+    "sentence_es": "Mi supuesto es que mañana el banco abre, pero no estoy seguro.",
+    "sentence_en": "My assumption is that the bank opens tomorrow, but I am not sure.",
+    "sentence_lemmas": ["mi", "supuesto", "ser", "que", "mañana", "el", "banco", "abrir", "pero", "no", "estar", "seguro"]
   },
   {
     "order": 3245,
@@ -2390,9 +2390,9 @@
     "lemma": "atípico",
     "es": "atípico",
     "en": "atypical",
-    "sentence_es": "Es un caso atípico.",
-    "sentence_en": "It is an atypical case.",
-    "sentence_lemmas": ["ser", "un", "caso", "atípico"]
+    "sentence_es": "En diciembre hace mucho calor: es un clima atípico.",
+    "sentence_en": "It is very hot in December: it is atypical weather.",
+    "sentence_lemmas": ["en", "diciembre", "hacer", "mucho", "calor", "ser", "un", "clima", "atípico"]
   },
   {
     "order": 3250,
@@ -2401,9 +2401,9 @@
     "lemma": "contundente",
     "es": "contundente",
     "en": "forceful, hard-hitting",
-    "sentence_es": "Su respuesta es contundente.",
-    "sentence_en": "His answer is forceful.",
-    "sentence_lemmas": ["su", "respuesta", "ser", "contundente"]
+    "sentence_es": "El equipo gana diez a cero: es una victoria contundente.",
+    "sentence_en": "The team wins ten to zero: it is a resounding victory.",
+    "sentence_lemmas": ["el", "equipo", "ganar", "diez", "a", "cero", "ser", "un", "victoria", "contundente"]
   },
   {
     "order": 3252,
@@ -2423,9 +2423,9 @@
     "lemma": "erróneo",
     "es": "erróneo",
     "en": "erroneous",
-    "sentence_es": "La información es errónea.",
-    "sentence_en": "The information is mistaken.",
-    "sentence_lemmas": ["el", "información", "ser", "erróneo"]
+    "sentence_es": "La cuenta es errónea: dos más dos no son cinco.",
+    "sentence_en": "The sum is wrong: two plus two is not five.",
+    "sentence_lemmas": ["el", "cuenta", "ser", "erróneo", "dos", "más", "dos", "no", "ser", "cinco"]
   },
   {
     "order": 3260,
@@ -2434,9 +2434,9 @@
     "lemma": "inagotable",
     "es": "inagotable",
     "en": "inexhaustible",
-    "sentence_es": "Su energía es inagotable.",
-    "sentence_en": "His energy is inexhaustible.",
-    "sentence_lemmas": ["su", "energía", "ser", "inagotable"]
+    "sentence_es": "El niño juega todo el día: su energía es inagotable.",
+    "sentence_en": "The boy plays all day: his energy is inexhaustible.",
+    "sentence_lemmas": ["el", "niño", "jugar", "todo", "el", "día", "su", "energía", "ser", "inagotable"]
   },
   {
     "order": 3261,
@@ -2467,9 +2467,9 @@
     "lemma": "insólito",
     "es": "insólito",
     "en": "unusual",
-    "sentence_es": "Es un hecho insólito.",
-    "sentence_en": "It is an unusual fact.",
-    "sentence_lemmas": ["ser", "un", "hecho", "insólito"]
+    "sentence_es": "Es insólito ver un elefante en la calle.",
+    "sentence_en": "It is unusual to see an elephant in the street.",
+    "sentence_lemmas": ["ser", "insólito", "ver", "un", "elefante", "en", "el", "calle"]
   },
   {
     "order": 3264,
@@ -2478,9 +2478,9 @@
     "lemma": "inviable",
     "es": "inviable",
     "en": "unworkable",
-    "sentence_es": "El proyecto es inviable.",
-    "sentence_en": "The project is unworkable.",
-    "sentence_lemmas": ["el", "proyecto", "ser", "inviable"]
+    "sentence_es": "El proyecto es inviable porque no hay dinero para empezar.",
+    "sentence_en": "The project is unworkable because there is no money to start.",
+    "sentence_lemmas": ["el", "proyecto", "ser", "inviable", "porque", "no", "haber", "dinero", "para", "empezar"]
   },
   {
     "order": 3266,
