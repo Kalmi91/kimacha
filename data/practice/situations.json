@@ -1,0 +1,119 @@
+[
+  {
+    "id": "a1-familia",
+    "level": "A1",
+    "title": { "en": "Family lunch", "es": "Comida familiar", "hu": "Családi ebéd" },
+    "setting": {
+      "en": "Sunday lunch, your aunt asks you.",
+      "es": "Comida del domingo, tu tía te pregunta.",
+      "hu": "Vasárnapi ebéd, a nagynénéd kérdez."
+    },
+    "words": [
+      { "es": "tener", "forms": ["tengo", "tienes", "tiene"], "en": "to have", "hu": "van (valakinek)" },
+      { "es": "hermano", "forms": ["hermano", "hermanos"], "en": "brother (hermanos: siblings)", "hu": "fiútestvér (hermanos: testvérek)" },
+      { "es": "hermana", "forms": ["hermana", "hermanas"], "en": "sister", "hu": "lánytestvér" },
+      { "es": "sí", "forms": ["sí"], "en": "yes", "hu": "igen" },
+      { "es": "no", "forms": ["no"], "en": "no, not", "hu": "nem" },
+      { "es": "un", "forms": ["un", "una"], "en": "a, one", "hu": "egy" },
+      { "es": "y", "forms": ["y"], "en": "and", "hu": "és" },
+      { "es": "dónde", "forms": ["dónde"], "en": "where", "hu": "hol" },
+      { "es": "vivir", "forms": ["viven"], "en": "to live", "hu": "élni, lakni" },
+      { "es": "tu", "forms": ["tu", "tus"], "en": "your", "hu": "a te …-d" },
+      { "es": "mi", "forms": ["mi", "mis"], "en": "my", "hu": "az én …-m" },
+      { "es": "papás", "forms": ["papás"], "en": "parents", "hu": "szülők" },
+      { "es": "en", "forms": ["en"], "en": "in", "hu": "-ban, -ben" },
+      { "es": "Hungría", "forms": ["Hungría"], "en": "Hungary", "hu": "Magyarország" },
+      { "es": "México", "forms": ["México"], "en": "Mexico", "hu": "Mexikó" },
+      { "es": "cuántos", "forms": ["cuántos"], "en": "how many", "hu": "hány" },
+      { "es": "año", "forms": ["años"], "en": "year", "hu": "év" },
+      { "es": "dos", "forms": ["dos"], "en": "two", "hu": "kettő" },
+      { "es": "treinta", "forms": ["treinta"], "en": "thirty", "hu": "harminc" }
+    ],
+    "patterns": [
+      {
+        "title": { "en": "Tengo + number + noun", "es": "Tengo + número + sustantivo", "hu": "Tengo + szám + főnév" },
+        "example": "Tengo dos hermanos.",
+        "en": "I have + number + noun: what you have.",
+        "hu": "Tengo + szám + főnév: ami neked van (van két testvérem)."
+      },
+      {
+        "title": {
+          "en": "¿Tienes…? → Sí, tengo… / No, no tengo…",
+          "es": "¿Tienes…? → Sí, tengo… / No, no tengo…",
+          "hu": "¿Tienes…? → Sí, tengo… / No, no tengo…"
+        },
+        "example": "¿Tienes hermanos? No, no tengo hermanos.",
+        "en": "Answer a tienes question with tengo; no comes before the verb.",
+        "hu": "A tienes-kérdésre tengo-val felelsz; a no az ige elé kerül."
+      },
+      {
+        "title": { "en": "tener + number + años", "es": "tener + número + años", "hu": "tener + szám + años" },
+        "example": "Mi hermano tiene treinta años.",
+        "en": "Age uses tener: he has thirty years.",
+        "hu": "Az életkor a tener igével megy: harminc évet birtokol = harmincéves."
+      }
+    ],
+    "distractors": ["tienes", "dónde"],
+    "lines": [
+      {
+        "speaker": "other",
+        "es": "¿Tienes hermanos?",
+        "hu": "Van testvéred?",
+        "en": "Do you have any siblings?",
+        "answers": [
+          "Sí, tengo un hermano y una hermana.",
+          "Sí, tengo un hermano.",
+          "Sí, tengo una hermana.",
+          "Sí, tengo dos hermanos.",
+          "Sí, tengo dos hermanas.",
+          "No, no tengo hermanos.",
+          "Tengo un hermano y una hermana.",
+          "Tengo un hermano.",
+          "Tengo una hermana.",
+          "No tengo hermanos."
+        ]
+      },
+      {
+        "speaker": "me",
+        "es": "Sí, tengo un hermano y una hermana.",
+        "hu": "Igen, van egy fiútestvérem és egy lánytestvérem.",
+        "en": "Yes, I have a brother and a sister.",
+        "gap": "tengo"
+      },
+      {
+        "speaker": "other",
+        "es": "¿Dónde viven tus papás?",
+        "hu": "Hol élnek a szüleid?",
+        "en": "Where do your parents live?",
+        "answers": [
+          "Mis papás viven en Hungría.",
+          "Viven en Hungría.",
+          "Mis papás viven en México.",
+          "Viven en México."
+        ]
+      },
+      {
+        "speaker": "me",
+        "es": "Mis papás viven en Hungría.",
+        "hu": "A szüleim Magyarországon élnek.",
+        "en": "My parents live in Hungary.",
+        "gap": "viven"
+      },
+      {
+        "speaker": "other",
+        "es": "¿Cuántos años tiene tu hermano?",
+        "hu": "Hány éves a fiútestvéred?",
+        "en": "How old is your brother?",
+        "answers": ["Mi hermano tiene treinta años.", "Tiene treinta años."]
+      },
+      {
+        "speaker": "me",
+        "es": "Mi hermano tiene treinta años.",
+        "hu": "A fiútestvérem harmincéves.",
+        "en": "My brother is thirty years old.",
+        "gap": "años"
+      }
+    ],
+    "build": [1, 3, 5]
+  }
+]
