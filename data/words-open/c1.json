@@ -63,9 +63,9 @@
     "es": "desempeñar",
     "en": "to perform (a role or job)",
     "hint_en": "He *performs* an important role.",
-    "sentence_es": "Mi madre desempeña un trabajo muy importante.",
-    "sentence_en": "My mother carries out a very important job.",
-    "sentence_lemmas": ["mi", "madre", "desempeñar", "un", "trabajo", "muy", "importante"]
+    "sentence_es": "En la obra de teatro, mi hermano desempeña el papel del rey.",
+    "sentence_en": "In the play, my brother plays the role of the king.",
+    "sentence_lemmas": ["en", "el", "obra", "de", "teatro", "mi", "hermano", "desempeñar", "el", "papel", "de", "rey"]
   },
   {
     "order": 1380,
@@ -86,9 +86,9 @@
     "es": "vincular",
     "en": "to link, to tie",
     "hint_en": "This law *ties* two companies together.",
-    "sentence_es": "Este proyecto se vincula con la universidad.",
-    "sentence_en": "This project is linked to the university.",
-    "sentence_lemmas": ["este", "proyecto", "se", "vincular", "con", "el", "universidad"]
+    "sentence_es": "El puente vincula las dos partes de la ciudad.",
+    "sentence_en": "The bridge links the two parts of the city.",
+    "sentence_lemmas": ["el", "puente", "vincular", "el", "dos", "parte", "de", "el", "ciudad"]
   },
   {
     "order": 1389,
@@ -296,9 +296,9 @@
     "lemma": "aportación",
     "es": "la aportación",
     "en": "contribution",
-    "sentence_es": "Tu aportación al proyecto es importante.",
-    "sentence_en": "Your contribution to the project is important.",
-    "sentence_lemmas": ["tu", "aportación", "a", "proyecto", "ser", "importante"]
+    "sentence_es": "Cada persona hace una aportación de cien pesos para la fiesta.",
+    "sentence_en": "Each person makes a contribution of one hundred pesos for the party.",
+    "sentence_lemmas": ["cada", "persona", "hacer", "un", "aportación", "de", "cien", "peso", "para", "el", "fiesta"]
   },
   {
     "order": 1991,
@@ -340,9 +340,9 @@
     "lemma": "consenso",
     "es": "el consenso",
     "en": "consensus",
-    "sentence_es": "Hay consenso en el grupo.",
-    "sentence_en": "There is consensus in the group.",
-    "sentence_lemmas": ["haber", "consenso", "en", "el", "grupo"]
+    "sentence_es": "Para decidir, el grupo habla hasta llegar a un consenso.",
+    "sentence_en": "To decide, the group talks until it reaches a consensus.",
+    "sentence_lemmas": ["para", "decidir", "el", "grupo", "hablar", "hasta", "llegar", "a", "un", "consenso"]
   },
   {
     "order": 2006,
@@ -351,9 +351,9 @@
     "lemma": "cumplimiento",
     "es": "el cumplimiento",
     "en": "compliance, fulfillment",
-    "sentence_es": "El cumplimiento de las reglas es importante.",
-    "sentence_en": "Compliance with the rules is important.",
-    "sentence_lemmas": ["el", "cumplimiento", "de", "el", "regla", "ser", "importante"]
+    "sentence_es": "El cumplimiento del horario es llegar a la oficina a las ocho.",
+    "sentence_en": "Keeping to the schedule means arriving at the office at eight.",
+    "sentence_lemmas": ["el", "cumplimiento", "de", "horario", "ser", "llegar", "a", "el", "oficina", "a", "el", "ocho"]
   },
   {
     "order": 2008,
@@ -395,9 +395,9 @@
     "lemma": "exigencia",
     "es": "la exigencia",
     "en": "requirement",
-    "sentence_es": "Mi jefe tiene muchas exigencias.",
-    "sentence_en": "My boss has many demands.",
-    "sentence_lemmas": ["mi", "jefe", "tener", "mucho", "exigencia"]
+    "sentence_es": "Mi jefe tiene muchas exigencias: todo debe salir perfecto.",
+    "sentence_en": "My boss has many demands: everything must turn out perfect.",
+    "sentence_lemmas": ["mi", "jefe", "tener", "mucho", "exigencia", "todo", "deber", "salir", "perfecto"]
   },
   {
     "order": 2023,
@@ -406,9 +406,9 @@
     "lemma": "fortaleza",
     "es": "la fortaleza",
     "en": "inner strength; fortress",
-    "sentence_es": "Mi fortaleza es mi familia.",
-    "sentence_en": "My strength is my family.",
-    "sentence_lemmas": ["mi", "fortaleza", "ser", "mi", "familia"]
+    "sentence_es": "En los momentos difíciles mi familia me da fortaleza.",
+    "sentence_en": "In hard moments my family gives me strength.",
+    "sentence_lemmas": ["en", "el", "momento", "difícil", "mi", "familia", "me", "dar", "fortaleza"]
   },
   {
     "order": 2031,
@@ -428,9 +428,9 @@
     "lemma": "legislación",
     "es": "la legislación",
     "en": "legislation",
-    "sentence_es": "La legislación nueva protege a los niños.",
-    "sentence_en": "The new legislation protects children.",
-    "sentence_lemmas": ["el", "legislación", "nuevo", "proteger", "a", "el", "niño"]
+    "sentence_es": "La legislación de este país tiene leyes para proteger a los niños.",
+    "sentence_en": "The legislation of this country has laws to protect children.",
+    "sentence_lemmas": ["el", "legislación", "de", "este", "país", "tener", "ley", "para", "proteger", "a", "el", "niño"]
   },
   {
     "order": 2041,
@@ -439,9 +439,9 @@
     "lemma": "modalidad",
     "es": "la modalidad",
     "en": "format, mode",
-    "sentence_es": "El curso tiene dos modalidades.",
-    "sentence_en": "The course has two formats.",
-    "sentence_lemmas": ["el", "curso", "tener", "dos", "modalidad"]
+    "sentence_es": "El curso tiene dos modalidades: en la escuela o por internet.",
+    "sentence_en": "The course has two formats: at the school or online.",
+    "sentence_lemmas": ["el", "curso", "tener", "dos", "modalidad", "en", "el", "escuela", "o", "por", "internet"]
   },
   {
     "order": 2046,
@@ -505,9 +505,9 @@
     "lemma": "extenso",
     "es": "extenso",
     "en": "extensive, lengthy",
-    "sentence_es": "El libro es muy extenso.",
-    "sentence_en": "The book is very extensive.",
-    "sentence_lemmas": ["el", "libro", "ser", "muy", "extenso"]
+    "sentence_es": "El libro es muy extenso: tiene mil páginas.",
+    "sentence_en": "The book is very extensive: it has a thousand pages.",
+    "sentence_lemmas": ["el", "libro", "ser", "muy", "extenso", "tener", "mil", "página"]
   },
   {
     "order": 2075,
@@ -956,9 +956,9 @@
     "lemma": "adhesión",
     "es": "la adhesión",
     "en": "joining, adherence",
-    "sentence_es": "La adhesión al grupo es voluntaria.",
-    "sentence_en": "Joining the group is voluntary.",
-    "sentence_lemmas": ["el", "adhesión", "a", "grupo", "ser", "voluntario"]
+    "sentence_es": "Para la adhesión al grupo solo debes firmar un papel.",
+    "sentence_en": "To join the group you only have to sign a paper.",
+    "sentence_lemmas": ["para", "el", "adhesión", "a", "grupo", "solo", "deber", "firmar", "un", "papel"]
   },
   {
     "order": 2590,
@@ -1066,9 +1066,9 @@
     "lemma": "cohesión",
     "es": "la cohesión",
     "en": "cohesion",
-    "sentence_es": "Hay cohesión en nuestro equipo.",
-    "sentence_en": "There is cohesion in our team.",
-    "sentence_lemmas": ["haber", "cohesión", "en", "nuestro", "equipo"]
+    "sentence_es": "En nuestro equipo hay cohesión: todos trabajamos por el mismo objetivo.",
+    "sentence_en": "There is cohesion in our team: we all work toward the same goal.",
+    "sentence_lemmas": ["en", "nuestro", "equipo", "haber", "cohesión", "todo", "trabajar", "por", "el", "mismo", "objetivo"]
   },
   {
     "order": 2604,
@@ -2489,9 +2489,9 @@
     "lemma": "latente",
     "es": "latente",
     "en": "latent",
-    "sentence_es": "El riesgo sigue latente.",
-    "sentence_en": "The risk remains latent.",
-    "sentence_lemmas": ["el", "riesgo", "seguir", "latente"]
+    "sentence_es": "Hoy todo está tranquilo, pero el problema sigue latente.",
+    "sentence_en": "Today everything is calm, but the problem remains latent.",
+    "sentence_lemmas": ["hoy", "todo", "estar", "tranquilo", "pero", "el", "problema", "seguir", "latente"]
   },
   {
     "order": 3267,
@@ -2500,9 +2500,9 @@
     "lemma": "ineludible",
     "es": "ineludible",
     "en": "unavoidable",
-    "sentence_es": "Es un paso ineludible.",
-    "sentence_en": "It is an unavoidable step.",
-    "sentence_lemmas": ["ser", "un", "paso", "ineludible"]
+    "sentence_es": "Para salir del país, mostrar el pasaporte es un paso ineludible.",
+    "sentence_en": "To leave the country, showing the passport is an unavoidable step.",
+    "sentence_lemmas": ["para", "salir", "de", "país", "mostrar", "el", "pasaporte", "ser", "un", "paso", "ineludible"]
   },
   {
     "order": 3268,
@@ -2511,9 +2511,9 @@
     "lemma": "minucioso",
     "es": "minucioso",
     "en": "meticulous",
-    "sentence_es": "Hago un trabajo minucioso.",
-    "sentence_en": "I do meticulous work.",
-    "sentence_lemmas": ["hacer", "un", "trabajo", "minucioso"]
+    "sentence_es": "El médico es minucioso: revisa cada detalle con calma.",
+    "sentence_en": "The doctor is meticulous: he checks every detail calmly.",
+    "sentence_lemmas": ["el", "médico", "ser", "minucioso", "revisar", "cada", "detalle", "con", "calmar"]
   },
   {
     "order": 3269,
@@ -2522,9 +2522,9 @@
     "lemma": "paulatino",
     "es": "paulatino",
     "en": "slow and steady",
-    "sentence_es": "El cambio es paulatino.",
-    "sentence_en": "The change is slow and steady.",
-    "sentence_lemmas": ["el", "cambio", "ser", "paulatino"]
+    "sentence_es": "Cada mes mi español mejora un poco: el cambio es paulatino.",
+    "sentence_en": "Every month my Spanish improves a little: the change is gradual.",
+    "sentence_lemmas": ["cada", "mes", "mi", "español", "mejorar", "un", "poco", "el", "cambio", "ser", "paulatino"]
   },
   {
     "order": 3270,
@@ -2544,9 +2544,9 @@
     "lemma": "precario",
     "es": "precario",
     "en": "precarious",
-    "sentence_es": "Su situación es precaria.",
-    "sentence_en": "His situation is precarious.",
-    "sentence_lemmas": ["su", "situación", "ser", "precario"]
+    "sentence_es": "Su situación es precaria: no tiene casa ni trabajo.",
+    "sentence_en": "His situation is precarious: he has neither a home nor a job.",
+    "sentence_lemmas": ["su", "situación", "ser", "precario", "no", "tener", "casa", "ni", "trabajo"]
   },
   {
     "order": 3274,
@@ -2577,9 +2577,9 @@
     "lemma": "sustancial",
     "es": "sustancial",
     "en": "significant, major",
-    "sentence_es": "Hay una diferencia sustancial.",
-    "sentence_en": "There is a substantial difference.",
-    "sentence_lemmas": ["haber", "un", "diferencia", "sustancial"]
+    "sentence_es": "La diferencia es sustancial: él gana diez mil pesos y yo gano mil.",
+    "sentence_en": "The difference is substantial: he earns ten thousand pesos and I earn one thousand.",
+    "sentence_lemmas": ["el", "diferencia", "ser", "sustancial", "él", "ganar", "diez", "mil", "peso", "y", "yo", "ganar", "mil"]
   },
   {
     "order": 3278,
@@ -2588,9 +2588,9 @@
     "lemma": "tangible",
     "es": "tangible",
     "en": "tangible",
-    "sentence_es": "El resultado es tangible.",
-    "sentence_en": "The result is tangible.",
-    "sentence_lemmas": ["el", "resultado", "ser", "tangible"]
+    "sentence_es": "Ahora hay una escuela nueva: es un resultado tangible del trabajo.",
+    "sentence_en": "Now there is a new school: it is a tangible result of the work.",
+    "sentence_lemmas": ["ahora", "haber", "un", "escuela", "nuevo", "ser", "un", "resultado", "tangible", "de", "trabajo"]
   },
   {
     "order": 3279,
@@ -2599,9 +2599,9 @@
     "lemma": "transitorio",
     "es": "transitorio",
     "en": "transitory",
-    "sentence_es": "Es una solución transitoria.",
-    "sentence_en": "It is a transitory solution.",
-    "sentence_lemmas": ["ser", "un", "solución", "transitorio"]
+    "sentence_es": "Es un trabajo transitorio: termina en marzo.",
+    "sentence_en": "It is a temporary job: it ends in March.",
+    "sentence_lemmas": ["ser", "un", "trabajo", "transitorio", "terminar", "en", "marzo"]
   },
   {
     "order": 3281,
@@ -2632,9 +2632,9 @@
     "lemma": "pleno",
     "es": "pleno",
     "en": "at its peak, in the middle of",
-    "sentence_es": "Estamos en pleno verano.",
-    "sentence_en": "We are in the middle of summer.",
-    "sentence_lemmas": ["estar", "en", "pleno", "verano"]
+    "sentence_es": "Estamos en pleno verano: hace calor todos los días.",
+    "sentence_en": "We are in the middle of summer: it is hot every day.",
+    "sentence_lemmas": ["estar", "en", "pleno", "verano", "hacer", "calor", "todo", "el", "día"]
   },
   {
     "order": 3735,
@@ -2643,9 +2643,9 @@
     "lemma": "próspero",
     "es": "próspero",
     "en": "prosperous",
-    "sentence_es": "Es una ciudad próspera.",
-    "sentence_en": "It is a prosperous city.",
-    "sentence_lemmas": ["ser", "un", "ciudad", "próspero"]
+    "sentence_es": "Es una ciudad próspera: hay trabajo, dinero y casas nuevas.",
+    "sentence_en": "It is a prosperous city: there is work, money and new houses.",
+    "sentence_lemmas": ["ser", "un", "ciudad", "próspero", "haber", "trabajo", "dinero", "y", "casa", "nuevo"]
   },
   {
     "order": 3743,
@@ -2676,9 +2676,9 @@
     "lemma": "tardío",
     "es": "tardío",
     "en": "belated, overdue",
-    "sentence_es": "Fue un premio tardío.",
-    "sentence_en": "It was a belated prize.",
-    "sentence_lemmas": ["ser", "un", "premio", "tardío"]
+    "sentence_es": "Es un premio tardío: llega veinte años después del libro.",
+    "sentence_en": "It is a belated prize: it arrives twenty years after the book.",
+    "sentence_lemmas": ["ser", "un", "premio", "tardío", "llegar", "veinte", "año", "después", "de", "libro"]
   },
   {
     "order": 3766,
@@ -2731,9 +2731,9 @@
     "lemma": "redactar",
     "es": "redactar",
     "en": "to draft, to write up",
-    "sentence_es": "Redacto una carta formal.",
-    "sentence_en": "I draft a formal letter.",
-    "sentence_lemmas": ["redactar", "un", "carta", "formal"]
+    "sentence_es": "Redacto un informe de cinco páginas en la computadora.",
+    "sentence_en": "I write up a five-page report on the computer.",
+    "sentence_lemmas": ["redactar", "un", "informe", "de", "cinco", "página", "en", "el", "computadora"]
   },
   {
     "order": 3804,
@@ -2830,9 +2830,9 @@
     "lemma": "prejuicio",
     "es": "el prejuicio",
     "en": "prejudice",
-    "sentence_es": "El prejuicio es un problema social.",
-    "sentence_en": "Prejudice is a social problem.",
-    "sentence_lemmas": ["el", "prejuicio", "ser", "un", "problema", "social"]
+    "sentence_es": "Es un prejuicio pensar que los jóvenes no trabajan.",
+    "sentence_en": "It is a prejudice to think that young people do not work.",
+    "sentence_lemmas": ["ser", "un", "prejuicio", "pensar", "que", "el", "joven", "no", "trabajar"]
   },
   {
     "order": 3829,
