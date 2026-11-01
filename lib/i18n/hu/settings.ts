@@ -47,6 +47,7 @@ const hu: typeof en = {
       practiceScramble: 'Betűkirakó játék',
       practiceMatch: 'Gyors párkereső játék',
       practiceOpposites: 'Ellentétek játék',
+      practiceSituations: 'Szituációs játék',
       sentenceListening: 'Mondatok: hallgatás és gépelés lépés',
       sentenceMistakes: 'Mondatok: a hibáimból',
       sentenceHint: 'Mondatok: súgó egy szóra koppintva',

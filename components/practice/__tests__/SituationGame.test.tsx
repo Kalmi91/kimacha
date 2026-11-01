@@ -1,0 +1,287 @@
+// The Practice tab's Situations mode (components/practice/SituationGame.tsx, lib/practice/situations.ts). The speech recognizer is the
+// stand-in of jest.setup.js (its listeners are fired with __emit); the read-aloud is mocked like in the other Practice tests.
+
+jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock(), stop: jest.fn() }));
+jest.mock('expo-router', () => require('@/test-utils/mocks').focusEffectRouterMock());
+jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
+
+import { act, fireEvent, render } from '@testing-library/react-native';
+import { ExpoSpeechRecognitionModule } from 'expo-speech-recognition';
+
+import SituationGame from '@/components/practice/SituationGame';
+import { getDb } from '@/lib/database';
+import { setLanguage, t } from '@/lib/i18n';
+import {
+  SITUATIONS,
+  SITUATIONS_MODE,
+  fillBank,
+  savedSituation,
+  startSituation,
+  type SituationState,
+  type SituationStep,
+} from '@/lib/practice/situations';
+import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
+import { speak } from '@/lib/speech';
+import { ThemeProvider } from '@/lib/ThemeContext';
+import { makeFlush } from '@/test-utils/flush';
+
+jest.setTimeout(60000);
+
+const { __emit } = require('expo-speech-recognition') as { __emit: (name: string, payload?: unknown) => void };
+const mockSpeak = speak as jest.Mock;
+const flush = makeFlush(20);
+
+const family = SITUATIONS[0];
+const SEED = 11;
+const EVERYTHING = new Set(family.words.flatMap((w) => w.forms.map((f) => f.toLowerCase())));
+// a run in the given step, with nothing left to learn in the Words step
+const at = (step: SituationStep, patch: Partial<SituationState> = {}): SituationState => ({ ...startSituation(family, EVERYTHING, SEED), step, ...patch });
+const saveRun = (run: SituationState) => saveResumeValue(getDb(), SITUATIONS_MODE, savedSituation(run));
+const savedRun = async () => (await loadResumeValue(getDb(), SITUATIONS_MODE)) as SituationState | null;
+
+const mount = async () => {
+  const view = render(<ThemeProvider><SituationGame /></ThemeProvider>);
+  await flush();
+  return view;
+};
+type View = Awaited<ReturnType<typeof mount>>;
+const press = async (view: View, testID: string) => {
+  fireEvent.press(view.getByTestId(testID));
+  await flush();
+};
+const type = async (view: View, text: string) => {
+  fireEvent.changeText(view.getByTestId('situations-type-input'), text);
+  await press(view, 'situations-check');
+};
+const emit = async (name: string, payload?: unknown) => {
+  await act(async () => __emit(name, payload));
+  await flush();
+};
+const heardFinal = (transcript: string) => emit('result', { isFinal: true, results: [{ transcript, confidence: 1 }] });
+
+beforeEach(async () => {
+  mockSpeak.mockClear();
+  (ExpoSpeechRecognitionModule.start as jest.Mock).mockClear();
+  (ExpoSpeechRecognitionModule.isRecognitionAvailable as jest.Mock).mockReturnValue(true);
+  await getDb().resetPcicCards();
+  await getDb().setOnboarding('en', 'es');
+  await saveResumeValue(getDb(), SITUATIONS_MODE, null);
+});
+afterEach(() => setLanguage('en'));
+
+describe('Situations: words, structures', () => {
+  it('opens on the unknown words, one card each, then the structures, then Fill in; the feedback button is on every step', async () => {
+    const view = await mount();
+    expect(view.getByTestId('situations-screen')).toBeTruthy();
+    expect(view.getByTestId('situations-card-word').props.children).toBe('tener');
+    expect(view.getByText('to have')).toBeTruthy();
+    expect(view.getByText('1/15')).toBeTruthy();
+    expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
+    fireEvent.press(view.getByTestId('situations-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('tener', 'es-MX');
+    for (let i = 0; i < 15; i++) await press(view, 'situations-next');
+    expect(view.getByTestId('situations-card-pattern').props.children).toBe('Tengo + número + sustantivo');
+    expect(view.getByText('I have + number + noun: what you have.')).toBeTruthy();
+    expect(view.getByText('1/3')).toBeTruthy();
+    expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
+    fireEvent.press(view.getByTestId('situations-speak'));
+    expect(mockSpeak).toHaveBeenCalledWith('Tengo dos hermanos.', 'es-MX');
+    expect(await savedRun()).toMatchObject({ step: 'patterns', index: 0 });
+    for (let i = 0; i < 3; i++) await press(view, 'situations-next');
+    expect(view.getByTestId('situations-line-0')).toBeTruthy();
+    expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ step: 'fill', index: 0 });
+    view.unmount();
+  });
+
+  it('Hungarian: the meanings and the labels are Hungarian', async () => {
+    setLanguage('hu');
+    await getDb().setOnboarding('hu', 'es');
+    const view = await mount();
+    expect(view.getByText('van (valakinek)')).toBeTruthy();
+    expect(view.getByText('Új szavak')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('no situation for another target language: the empty state', async () => {
+    await getDb().setOnboarding('es', 'en');
+    const view = await mount();
+    expect(view.getByTestId('situations-empty')).toBeTruthy();
+    expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
+    view.unmount();
+  });
+});
+
+describe('Situations: fill in', () => {
+  it('a wrong word flashes red and is not placed; the right ones fill the gaps in order; Next only after the last one', async () => {
+    await saveRun(at('fill'));
+    const view = await mount();
+    const bank = fillBank(family, SEED);
+    const wrongAt = bank.findIndex((w) => w !== 'tengo');
+    expect(view.getByText('1/3')).toBeTruthy();
+    expect(view.getAllByText(/_____/).length).toBeGreaterThan(0);
+    await press(view, `situations-word-${wrongAt}`);
+    expect(view.getByText(`✗ ${bank[wrongAt]}`)).toBeTruthy();
+    expect(view.queryByText(/Sí, tengo un hermano/)).toBeNull();
+    expect(await savedRun()).toMatchObject({ index: 0, wrong: 1 });
+    await press(view, `situations-word-${bank.indexOf('tengo')}`);
+    expect(view.getByText(/Sí, tengo un hermano y una hermana\./)).toBeTruthy();
+    expect(view.queryByTestId('situations-next')).toBeNull();
+    await press(view, `situations-word-${bank.indexOf('viven')}`);
+    await press(view, `situations-word-${bank.indexOf('años')}`);
+    expect(view.getByText(/Mi hermano tiene treinta años\./)).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ index: 3, done: true, scores: { fill: 2 } });
+    await press(view, 'situations-next');
+    expect(view.getByText('Build the sentence')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ step: 'build', index: 0 });
+    view.unmount();
+  });
+});
+
+describe('Situations: build', () => {
+  it('a line built right counts, a wrong one does not; either way the next line comes', async () => {
+    await saveRun(at('build'));
+    const view = await mount();
+    expect(view.getByText('Yes, I have a brother and a sister.')).toBeTruthy();
+    expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
+    for (const w of ['sí', 'tengo', 'un', 'hermano', 'y', 'una', 'hermana']) fireEvent.press(view.getByText(w));
+    fireEvent.press(view.getByText('Check'));
+    fireEvent.press(view.getByText('Next →'));
+    await flush();
+    expect(await savedRun()).toMatchObject({ step: 'build', index: 1, scores: { build: 1 } });
+    expect(view.getByText('My parents live in Hungary.')).toBeTruthy();
+    fireEvent.press(view.getByText('mis'));
+    fireEvent.press(view.getByText('Check'));
+    fireEvent.press(view.getByText('Next →'));
+    await flush();
+    expect(await savedRun()).toMatchObject({ step: 'build', index: 2, scores: { build: 1 } });
+    expect(view.getByText('My brother is thirty years old.')).toBeTruthy();
+    view.unmount();
+  });
+});
+
+describe('Situations: say it', () => {
+  it('typed: a wrong try shows the words red, the right one is green and brings Next; two wrong tries give up', async () => {
+    await saveRun(at('say', { index: 0 }));
+    const view = await mount();
+    expect(view.getByTestId('situations-line-text').props.children).toBe('¿Tienes hermanos?');
+    expect(view.getByText('Do you have any siblings?')).toBeTruthy();
+    expect(view.getByTestId('situations-mic')).toBeTruthy();
+    expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
+    fireEvent.press(view.getByTestId('situations-listen'));
+    expect(mockSpeak).toHaveBeenCalledWith('¿Tienes hermanos?', 'es-MX');
+    expect(view.queryByTestId('situations-type-input')).toBeNull();
+    await press(view, 'situations-type');
+    await type(view, 'tienes amigos');
+    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getAllByTestId('situations-said-right')).toHaveLength(1);
+    expect(view.getAllByTestId('situations-said-wrong')).toHaveLength(1);
+    expect(view.queryByTestId('situations-next')).toBeNull();
+    await type(view, 'tienes hermanos');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getAllByTestId('situations-said-right')).toHaveLength(2);
+    expect(await savedRun()).toMatchObject({ step: 'say', index: 0, done: true, wrong: 1, scores: { say: 0 } });
+    await press(view, 'situations-next');
+    expect(view.getByTestId('situations-line-text').props.children).toBe('Sí, tengo un hermano y una hermana.');
+    // the typing field stays open for the next line
+    await type(view, 'no');
+    await type(view, 'nada');
+    expect(await savedRun()).toMatchObject({ index: 1, done: true, wrong: 2 });
+    expect(view.getByTestId('situations-next')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('by voice: the mic asks for the recognizer in es-MX and the final result is checked', async () => {
+    await saveRun(at('say', { index: 1 }));
+    const view = await mount();
+    await press(view, 'situations-mic');
+    expect(ExpoSpeechRecognitionModule.start).toHaveBeenCalledWith(expect.objectContaining({ lang: 'es-MX', interimResults: false }));
+    await emit('start');
+    expect(view.getByText('Listening… tap to stop')).toBeTruthy();
+    await heardFinal('sí tengo un hermano y una hermana');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(view.getByTestId('situations-next')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ index: 1, done: true, scores: { say: 1 } });
+    view.unmount();
+  });
+
+  it('a denied microphone or no speech service: typing is offered at once', async () => {
+    await saveRun(at('say', { index: 0 }));
+    const view = await mount();
+    expect(view.queryByTestId('situations-type-input')).toBeNull();
+    await emit('error', { error: 'not-allowed', message: 'denied' });
+    expect(view.getByTestId('situations-type-input')).toBeTruthy();
+    expect(view.getByTestId('situations-mic-error')).toBeTruthy();
+    view.unmount();
+    (ExpoSpeechRecognitionModule.isRecognitionAvailable as jest.Mock).mockReturnValue(false);
+    const noService = await mount();
+    expect(noService.queryByTestId('situations-mic')).toBeNull();
+    expect(noService.queryByTestId('situations-type')).toBeNull();
+    expect(noService.getByTestId('situations-type-input')).toBeTruthy();
+    noService.unmount();
+  });
+});
+
+describe('Situations: questions', () => {
+  it('the question is read aloud; a wrong answer shows the model and gives one more try; a number may be a digit', async () => {
+    await saveRun(at('questions', { index: 0 }));
+    const view = await mount();
+    expect(mockSpeak).toHaveBeenCalledWith('¿Tienes hermanos?', 'es-MX');
+    expect(view.getByTestId('situations-line-text').props.children).toBe('¿Tienes hermanos?');
+    expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
+    await press(view, 'situations-type');
+    await type(view, 'hola');
+    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getByTestId('situations-model').props.children).toBe('A good answer: Sí, tengo un hermano y una hermana.');
+    expect(view.queryByTestId('situations-next')).toBeNull();
+    await type(view, 'sí tengo un hermano');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ step: 'questions', index: 0, done: true, scores: { questions: 0 } });
+    await press(view, 'situations-next');
+    expect(view.getByTestId('situations-line-text').props.children).toBe('¿Dónde viven tus papás?');
+    expect(mockSpeak).toHaveBeenCalledWith('¿Dónde viven tus papás?', 'es-MX');
+    await type(view, 'viven en México');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ index: 1, done: true, scores: { questions: 1 } });
+    await press(view, 'situations-next');
+    await type(view, 'tiene 5 años');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ index: 2, done: true, scores: { questions: 2 } });
+    view.unmount();
+  });
+});
+
+describe('Situations: summary and resume', () => {
+  it('the summary shows the score per part, drops the saved run, and Again starts the situation over', async () => {
+    await saveRun(at('questions', { index: 2, done: true, scores: { fill: 3, build: 2, say: 5, questions: 1 } }));
+    const view = await mount();
+    await press(view, 'situations-next');
+    expect(view.getByTestId('situations-summary')).toBeTruthy();
+    expect(view.getByText('Situation done')).toBeTruthy();
+    expect(view.getByText('Fill in the gaps: 3 / 3')).toBeTruthy();
+    expect(view.getByText('Build the sentence: 2 / 3')).toBeTruthy();
+    expect(view.getByText('Say it: 5 / 6')).toBeTruthy();
+    expect(view.getByText('Answer the questions: 1 / 3')).toBeTruthy();
+    expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
+    expect(await savedRun()).toBeNull();
+    await press(view, 'situations-again');
+    expect(view.getByTestId('situations-card-word').props.children).toBe('tener');
+    expect((await savedRun())?.scores).toEqual({ fill: 0, build: 0, say: 0, questions: 0 });
+    view.unmount();
+  });
+
+  it('coming back continues where the learner was; a broken saved value starts a new run', async () => {
+    await saveRun(at('say', { index: 3, wrong: 1, scores: { fill: 3, build: 3, say: 2, questions: 0 } }));
+    let view = await mount();
+    expect(view.getByText('4/6')).toBeTruthy();
+    expect(view.getByTestId('situations-line-text').props.children).toBe('Mis papás viven en Hungría.');
+    view.unmount();
+    view = await mount();
+    expect(view.getByText('4/6')).toBeTruthy();
+    view.unmount();
+    await saveResumeValue(getDb(), SITUATIONS_MODE, { v: 1, id: 'a1-familia', step: 'dance' });
+    view = await mount();
+    expect(view.getByTestId('situations-card-word').props.children).toBe('tener');
+    view.unmount();
+  });
+});

@@ -11,3 +11,22 @@ jest.mock('react-native-safe-area-context', () => ({
 // lib/ get it too. A test of the native layer (nativeDb, migrationsSql, ...) opts out with
 // `jest.unmock('../database')` or supplies its own jest.mock.
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
+
+// expo-speech-recognition is native code: tests get a stand-in whose listeners can be fired with __emit(event, payload)
+// (the last listener registered for an event wins, like the component that renders last).
+jest.mock('expo-speech-recognition', () => {
+  const listeners = {};
+  return {
+    ExpoSpeechRecognitionModule: {
+      isRecognitionAvailable: jest.fn(() => true),
+      requestPermissionsAsync: jest.fn(async () => ({ granted: true })),
+      start: jest.fn(),
+      stop: jest.fn(),
+      abort: jest.fn(),
+    },
+    useSpeechRecognitionEvent: (name, listener) => {
+      listeners[name] = listener;
+    },
+    __emit: (name, payload) => listeners[name]?.(payload),
+  };
+});

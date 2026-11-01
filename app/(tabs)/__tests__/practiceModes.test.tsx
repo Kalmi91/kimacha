@@ -115,6 +115,7 @@ describe('Practice tab: the mode chips', () => {
     await getDb().setBetaFlag('practiceScramble', false);
     await getDb().setBetaFlag('practiceMatch', false);
     await getDb().setBetaFlag('practiceOpposites', false);
+    await getDb().setBetaFlag('practiceSituations', false);
     const view = await mount();
     expect(view.queryByTestId('practice-modes')).toBeNull();
     expect(view.getByTestId('practice-screen')).toBeTruthy();

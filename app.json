@@ -55,6 +55,14 @@
             "enableShrinkResourcesInReleaseBuilds": true
           }
         }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Kimacha listens when you say a sentence aloud.",
+          "speechRecognitionPermission": "Kimacha checks the sentence you said.",
+          "androidSpeechServicePackages": ["com.google.android.googlequicksearchbox"]
+        }
       ]
     ],
     "experiments": {
