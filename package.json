@@ -56,7 +56,15 @@
     "gate": "npm run typecheck:ci && npm run lint && npm run test:ci && npm run audit:data",
     "check-keystore": "node scripts/check-keystore.mjs",
     "ui:overlap": "node scripts/ui-overlap.mjs",
-    "dead": "knip --include files,exports,types"
+    "dead": "knip --include files,exports,types",
+    "postinstall": "node scripts/patch-expo-speech.mjs"
+  },
+  "expo": {
+    "autolinking": {
+      "android": {
+        "buildFromSource": ["expo-speech"]
+      }
+    }
   },
   "license": "UNLICENSED",
   "repository": {
