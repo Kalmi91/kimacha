@@ -55,7 +55,9 @@ export function requeueAfterGrade(
   delaySec: number = DEFAULT_AGAIN_DELAY_SEC
 ): QueuedSm2Card[] {
   const rest = queue.slice(1);
-  if (next.due !== today) return rest;
+  // FB535: a graduating card also lets an expired missed card back to the front (before, only a
+  // card staying today did, so after right answers the missed new word waited for the queue's end).
+  if (next.due !== today) return reorderForReturn(rest, now);
   // The returned card would carry its expired returnAt in the copy made by `sm2Review`,
   // and after "Knew it" it would immediately jump to the front of the queue again
   // (4.1.0 web smoke test, 2026-09-24). Only `again` gets a new timer.

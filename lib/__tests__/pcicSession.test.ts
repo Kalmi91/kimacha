@@ -512,6 +512,20 @@ describe('mixNewCards (FB535: one new word at a time among the reviews)', () => 
     expect(ids(queue)).toEqual(['n1']);
   });
 
+  it('the missed new word comes back after its delay even when the reviews in between are right', () => {
+    let queue: QueuedSm2Card[] = mixNewCards([...reviews(4), ...fresh(2)], TODAY);
+    const step = (g: 'good' | 'again', now: number) => {
+      const next = sm2Review(queue[0], g, TODAY);
+      queue = mixNewCards(requeueAfterGrade(queue, next, TODAY, g, now, 30), TODAY);
+    };
+    step('good', 0); // r0
+    step('again', 1_000); // n0 missed, back at 31 s
+    step('good', 10_000); // r1, n0 not due yet
+    expect(queue[0].itemId).toBe('r2');
+    step('good', 40_000); // r2 right, n0 expired: it is next, n1 still waits
+    expect(ids(queue)).toEqual(['n0', 'r3', 'n1']);
+  });
+
   it('a lapsed review (missed today, introduced earlier) still counts as a review', () => {
     const lapsed = sm2Review(reviewCard({ itemId: 'l0' }), 'again', TODAY);
     expect(ids(mixNewCards([lapsed, ...fresh(2)], TODAY))).toEqual(['l0', 'n0', 'n1']);
