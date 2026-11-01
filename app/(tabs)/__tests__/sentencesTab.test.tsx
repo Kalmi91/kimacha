@@ -877,7 +877,7 @@ describe('the parts of a split sentence (FB524)', () => {
     chunks: [{ source: 'the book', target: 'El libro' }, { source: 'and the table', target: 'y la mesa.' }],
   };
   const seedRound = () => saveSentenceRound(getDb(), startRound([BOOK], localDateString(), 'es', '', { listening: false }));
-  const PART = (n: number) => `Build part ${n} of 2`;
+  const PART = (n: number) => `Build the short sentence ${n} of 2`;
 
   beforeEach(async () => {
     await learnWords([1, 2]);
@@ -955,7 +955,7 @@ describe('the parts of a split sentence (FB524)', () => {
     setLanguage('es');
     const es = render(<SentencesScreen />);
     await flush();
-    expect(stepText(es)).toBe('Frase 1 de 1 · Construye la parte 1 de 2');
+    expect(stepText(es)).toBe('Frase 1 de 1 · Construye la frase corta 1 de 2');
   });
 
   it('a part has no tap-a-word hints; the whole sentence has', async () => {

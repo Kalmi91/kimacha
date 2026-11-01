@@ -204,7 +204,7 @@ export default {
     progressA11y: (done: number, total: number) => `Steps done: ${done} of ${total}`,
     // Step label: the sentence and the step ("Sentence 2 of 5 · Build the whole sentence").
     sentenceOf: (n: number, total: number) => `Sentence ${n} of ${total}`,
-    stepChunk: (part: number, parts: number) => `Build part ${part} of ${parts}`,
+    stepChunk: (part: number, parts: number) => `Build the short sentence ${part} of ${parts}`,
     stepBuildWhole: 'Build the whole sentence',
     stepTypeWhole: 'Type the whole sentence',
     // Listen-and-type step (beta sentenceListening): the sentence is heard, not shown, until it is checked.

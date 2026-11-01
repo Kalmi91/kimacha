@@ -19,10 +19,10 @@ describe('roundSteps', () => {
     expect(ids([entry(1, 2)], false)).toEqual(['a1-w1#chunk0', 'a1-w1#chunk1', 'a1-w1#build', 'a1-w1#type']);
   });
 
-  it('a sentence with no parts (or fewer than 2) has no chunk steps', () => {
+  it('a sentence with no shorter sentences has no chunk steps; one shorter sentence is one step (FB538)', () => {
     expect(ids([entry(1)], true)).toEqual(['a1-w1#listen', 'a1-w1#build', 'a1-w1#type']);
     expect(ids([entry(1, 0)], false)).toEqual(['a1-w1#build', 'a1-w1#type']);
-    expect(ids([entry(1, 1)], false)).toEqual(['a1-w1#build', 'a1-w1#type']);
+    expect(ids([entry(1, 1)], false)).toEqual(['a1-w1#chunk0', 'a1-w1#build', 'a1-w1#type']);
   });
 
   it('the sentences run one after the other, in the round order', () => {
