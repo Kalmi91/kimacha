@@ -1309,9 +1309,9 @@
     "lemma": "mesa",
     "es": "la mesa",
     "en": "table",
-    "sentence_es": "La comida está en la mesa.",
-    "sentence_en": "The food is on the table.",
-    "sentence_lemmas": ["el", "comida", "estar", "en", "el", "mesa"]
+    "sentence_es": "Como en la mesa con mi familia.",
+    "sentence_en": "I eat at the table with my family.",
+    "sentence_lemmas": ["comer", "en", "el", "mesa", "con", "mi", "familia"]
   },
   {
     "order": 116,
@@ -1365,9 +1365,9 @@
     "lemma": "calle",
     "es": "la calle",
     "en": "street",
-    "sentence_es": "Mi casa está en esta calle.",
-    "sentence_en": "My house is on this street.",
-    "sentence_lemmas": ["mi", "casa", "estar", "en", "este", "calle"]
+    "sentence_es": "El carro va por la calle.",
+    "sentence_en": "The car goes along the street.",
+    "sentence_lemmas": ["el", "carro", "ir", "por", "el", "calle"]
   },
   {
     "order": 121,
@@ -2294,9 +2294,9 @@
     "lemma": "helado",
     "es": "el helado",
     "en": "ice cream",
-    "sentence_es": "Mi hijo quiere un helado.",
-    "sentence_en": "My son wants an ice cream.",
-    "sentence_lemmas": ["mi", "hijo", "querer", "un", "helado"]
+    "sentence_es": "El helado de chocolate es muy frío.",
+    "sentence_en": "Chocolate ice cream is very cold.",
+    "sentence_lemmas": ["el", "helado", "de", "chocolate", "ser", "muy", "frío"]
   },
   {
     "order": 656,
@@ -2327,9 +2327,9 @@
     "lemma": "farmacia",
     "es": "la farmacia",
     "en": "pharmacy",
-    "sentence_es": "La farmacia está en mi calle.",
-    "sentence_en": "The pharmacy is on my street.",
-    "sentence_lemmas": ["el", "farmacia", "estar", "en", "mi", "calle"]
+    "sentence_es": "Compro la medicina en la farmacia.",
+    "sentence_en": "I buy the medicine at the pharmacy.",
+    "sentence_lemmas": ["comprar", "el", "medicina", "en", "el", "farmacia"]
   },
   {
     "order": 659,
@@ -2404,9 +2404,9 @@
     "lemma": "queso",
     "es": "el queso",
     "en": "cheese",
-    "sentence_es": "Mi hijo come pan con queso.",
-    "sentence_en": "My son eats bread with cheese.",
-    "sentence_lemmas": ["mi", "hijo", "comer", "pan", "con", "queso"]
+    "sentence_es": "El queso se hace con leche.",
+    "sentence_en": "Cheese is made with milk.",
+    "sentence_lemmas": ["el", "queso", "se", "hacer", "con", "leche"]
   },
   {
     "order": 666,
@@ -2525,9 +2525,9 @@
     "lemma": "biblioteca",
     "es": "la biblioteca",
     "en": "library",
-    "sentence_es": "Mi hijo lee en la biblioteca.",
-    "sentence_en": "My son reads in the library.",
-    "sentence_lemmas": ["mi", "hijo", "leer", "en", "el", "biblioteca"]
+    "sentence_es": "La biblioteca tiene muchos libros para leer.",
+    "sentence_en": "The library has many books to read.",
+    "sentence_lemmas": ["el", "biblioteca", "tener", "mucho", "libro", "para", "leer"]
   },
   {
     "order": 677,
@@ -2704,9 +2704,9 @@
     "lemma": "hospital",
     "es": "el hospital",
     "en": "hospital",
-    "sentence_es": "Mi madre trabaja en el hospital.",
-    "sentence_en": "My mother works at the hospital.",
-    "sentence_lemmas": ["mi", "madre", "trabajar", "en", "el", "hospital"]
+    "sentence_es": "En el hospital hay medicina para el enfermo.",
+    "sentence_en": "At the hospital there is medicine for the sick person.",
+    "sentence_lemmas": ["en", "el", "hospital", "haber", "medicina", "para", "el", "enfermo"]
   },
   {
     "order": 693,
@@ -2871,9 +2871,9 @@
     "lemma": "hotel",
     "es": "el hotel",
     "en": "hotel",
-    "sentence_es": "El hotel es grande y bonito.",
-    "sentence_en": "The hotel is big and beautiful.",
-    "sentence_lemmas": ["el", "hotel", "ser", "grande", "y", "bonito"]
+    "sentence_es": "El hotel tiene muchas camas y baños.",
+    "sentence_en": "The hotel has many beds and bathrooms.",
+    "sentence_lemmas": ["el", "hotel", "tener", "mucho", "cama", "y", "baño"]
   },
   {
     "order": 173,
@@ -2973,9 +2973,9 @@
     "lemma": "joven",
     "es": "joven",
     "en": "young",
-    "sentence_es": "Mi madre es muy joven.",
-    "sentence_en": "My mother is very young.",
-    "sentence_lemmas": ["mi", "madre", "ser", "muy", "joven"]
+    "sentence_es": "Mi hijo es joven, mi abuelo es viejo.",
+    "sentence_en": "My son is young, my grandfather is old.",
+    "sentence_lemmas": ["mi", "hijo", "ser", "joven", "mi", "abuelo", "ser", "viejo"]
   },
   {
     "order": 290,
@@ -3331,9 +3331,9 @@
     "lemma": "restaurante",
     "es": "el restaurante",
     "en": "restaurant",
-    "sentence_es": "Hoy comemos en un restaurante con mi familia.",
-    "sentence_en": "Today we eat at a restaurant with my family.",
-    "sentence_lemmas": ["hoy", "comer", "en", "un", "restaurante", "con", "mi", "familia"]
+    "sentence_es": "En el restaurante pido el menú.",
+    "sentence_en": "At the restaurant I ask for the menu.",
+    "sentence_lemmas": ["en", "el", "restaurante", "pedir", "el", "menú"]
   },
   {
     "order": 391,
@@ -3342,9 +3342,9 @@
     "lemma": "playa",
     "es": "la playa",
     "en": "beach",
-    "sentence_es": "Mi familia va a la playa.",
-    "sentence_en": "My family goes to the beach.",
-    "sentence_lemmas": ["mi", "familia", "ir", "a", "el", "playa"]
+    "sentence_es": "En la playa hay mar y hace calor.",
+    "sentence_en": "At the beach there is sea and it is hot.",
+    "sentence_lemmas": ["en", "el", "playa", "haber", "mar", "y", "hacer", "calor"]
   },
   {
     "order": 244,
@@ -3432,9 +3432,9 @@
     "es": "la llave",
     "en": "key",
     "hint_en": "My *key* is on the table",
-    "sentence_es": "Mi llave está en la mesa.",
-    "sentence_en": "My key is on the table.",
-    "sentence_lemmas": ["mi", "llave", "estar", "en", "el", "mesa"]
+    "sentence_es": "Abro la puerta con la llave.",
+    "sentence_en": "I open the door with the key.",
+    "sentence_lemmas": ["abrir", "el", "puerta", "con", "el", "llave"]
   },
   {
     "order": 393,
@@ -3443,9 +3443,9 @@
     "lemma": "jardín",
     "es": "el jardín",
     "en": "garden",
-    "sentence_es": "Mi perro juega en el jardín.",
-    "sentence_en": "My dog plays in the garden.",
-    "sentence_lemmas": ["mi", "perro", "jugar", "en", "el", "jardín"]
+    "sentence_es": "En el jardín de mi casa hay flores.",
+    "sentence_en": "In the garden of my house there are flowers.",
+    "sentence_lemmas": ["en", "el", "jardín", "de", "mi", "casa", "haber", "flor"]
   },
   {
     "order": 238,
@@ -3454,9 +3454,9 @@
     "lemma": "vender",
     "es": "vender",
     "en": "to sell",
-    "sentence_es": "Mi padre vende su carro.",
-    "sentence_en": "My father sells his car.",
-    "sentence_lemmas": ["mi", "padre", "vender", "su", "carro"]
+    "sentence_es": "En la tienda venden pan y fruta.",
+    "sentence_en": "They sell bread and fruit at the store.",
+    "sentence_lemmas": ["en", "el", "tienda", "vender", "pan", "y", "fruta"]
   },
   {
     "order": 265,
@@ -3510,9 +3510,9 @@
     "lemma": "montaña",
     "es": "la montaña",
     "en": "mountain",
-    "sentence_es": "Hay una montaña grande en mi ciudad.",
-    "sentence_en": "There is a big mountain in my city.",
-    "sentence_lemmas": ["haber", "un", "montaña", "grande", "en", "mi", "ciudad"]
+    "sentence_es": "La montaña es más alta que mi casa.",
+    "sentence_en": "The mountain is taller than my house.",
+    "sentence_lemmas": ["el", "montaña", "ser", "más", "alto", "que", "mi", "casa"]
   },
   {
     "order": 392,
@@ -3521,9 +3521,9 @@
     "lemma": "edificio",
     "es": "el edificio",
     "en": "building",
-    "sentence_es": "Mi oficina está en un edificio muy alto.",
-    "sentence_en": "My office is in a very tall building.",
-    "sentence_lemmas": ["mi", "oficina", "estar", "en", "un", "edificio", "muy", "alto"]
+    "sentence_es": "Un edificio es más grande que una casa.",
+    "sentence_en": "A building is bigger than a house.",
+    "sentence_lemmas": ["un", "edificio", "ser", "más", "grande", "que", "un", "casa"]
   },
   {
     "order": 263,
@@ -3533,9 +3533,9 @@
     "es": "el pescado",
     "en": "fish (as food)",
     "hint_en": "I do not eat *fish* often.",
-    "sentence_es": "No como pescado, pero me gusta la carne.",
-    "sentence_en": "I do not eat fish, but I like meat.",
-    "sentence_lemmas": ["no", "comer", "pescado", "pero", "me", "gustar", "el", "carne"]
+    "sentence_es": "El pescado viene del mar.",
+    "sentence_en": "The fish comes from the sea.",
+    "sentence_lemmas": ["el", "pescado", "venir", "de", "mar"]
   },
   {
     "order": 226,
@@ -3555,9 +3555,9 @@
     "lemma": "pollo",
     "es": "el pollo",
     "en": "chicken",
-    "sentence_es": "Mi madre compra pollo hoy.",
-    "sentence_en": "My mother buys chicken today.",
-    "sentence_lemmas": ["mi", "madre", "comprar", "pollo", "hoy"]
+    "sentence_es": "El pollo es carne, no es pescado.",
+    "sentence_en": "Chicken is meat, it is not fish.",
+    "sentence_lemmas": ["el", "pollo", "ser", "carne", "no", "ser", "pescado"]
   },
   {
     "order": 284,
@@ -3566,9 +3566,9 @@
     "lemma": "película",
     "es": "la película",
     "en": "movie, film",
-    "sentence_es": "Hoy vemos una película en casa.",
-    "sentence_en": "Today we watch a movie at home.",
-    "sentence_lemmas": ["hoy", "ver", "un", "película", "en", "casa"]
+    "sentence_es": "En el cine veo una película.",
+    "sentence_en": "At the movie theater I watch a movie.",
+    "sentence_lemmas": ["en", "el", "cine", "ver", "un", "película"]
   },
   {
     "order": 157,
@@ -3748,9 +3748,9 @@
     "lemma": "bebé",
     "es": "el bebé",
     "en": "baby",
-    "sentence_es": "El bebé duerme en la cama.",
-    "sentence_en": "The baby sleeps in the bed.",
-    "sentence_lemmas": ["el", "bebé", "dormir", "en", "el", "cama"]
+    "sentence_es": "El bebé es muy pequeño y duerme mucho.",
+    "sentence_en": "The baby is very small and sleeps a lot.",
+    "sentence_lemmas": ["el", "bebé", "ser", "muy", "pequeño", "y", "dormir", "mucho"]
   },
   {
     "order": 888,
@@ -3815,9 +3815,9 @@
     "es": "bajo / chaparro",
     "en": "short (height)",
     "hint_en": "My brother is *short* but strong",
-    "sentence_es": "Mi hermano es bajo, pero fuerte.",
-    "sentence_en": "My brother is short, but strong.",
-    "sentence_lemmas": ["mi", "hermano", "ser", "bajo", "pero", "fuerte"]
+    "sentence_es": "Mi hermano es bajo, mi padre es alto.",
+    "sentence_en": "My brother is short, my father is tall.",
+    "sentence_lemmas": ["mi", "hermano", "ser", "bajo", "mi", "padre", "ser", "alto"]
   },
   {
     "order": 901,
@@ -3826,9 +3826,9 @@
     "lemma": "gordo",
     "es": "gordo",
     "en": "fat, chubby",
-    "sentence_es": "Mi gato está muy gordo.",
-    "sentence_en": "My cat is very fat.",
-    "sentence_lemmas": ["mi", "gato", "estar", "muy", "gordo"]
+    "sentence_es": "El gato come mucho y está gordo.",
+    "sentence_en": "The cat eats a lot and is fat.",
+    "sentence_lemmas": ["el", "gato", "comer", "mucho", "y", "estar", "gordo"]
   },
   {
     "order": 902,
@@ -5019,9 +5019,9 @@
     "lemma": "burrito",
     "es": "el burrito",
     "en": "burrito",
-    "sentence_es": "El burrito tiene carne y queso.",
-    "sentence_en": "The burrito has meat and cheese.",
-    "sentence_lemmas": ["el", "burrito", "tener", "carne", "y", "queso"]
+    "sentence_es": "El burrito es una tortilla grande con carne.",
+    "sentence_en": "A burrito is a big tortilla with meat.",
+    "sentence_lemmas": ["el", "burrito", "ser", "un", "tortilla", "grande", "con", "carne"]
   },
   {
     "order": 2783,
@@ -5030,9 +5030,9 @@
     "lemma": "limonada",
     "es": "la limonada",
     "en": "lemonade",
-    "sentence_es": "La limonada tiene mucho hielo.",
-    "sentence_en": "The lemonade has a lot of ice.",
-    "sentence_lemmas": ["el", "limonada", "tener", "mucho", "hielo"]
+    "sentence_es": "La limonada es agua con limón y azúcar.",
+    "sentence_en": "Lemonade is water with lemon and sugar.",
+    "sentence_lemmas": ["el", "limonada", "ser", "agua", "con", "limón", "y", "azúcar"]
   },
   {
     "order": 2795,
@@ -5594,9 +5594,9 @@
     "lemma": "nachos",
     "es": "los nachos",
     "en": "nachos",
-    "sentence_es": "Quiero nachos con mucho queso.",
-    "sentence_en": "I want nachos with lots of cheese.",
-    "sentence_lemmas": ["querer", "nachos", "con", "mucho", "queso"]
+    "sentence_es": "Los nachos llevan queso y frijoles.",
+    "sentence_en": "Nachos have cheese and beans.",
+    "sentence_lemmas": ["el", "nachos", "llevar", "queso", "y", "frijol"]
   },
   {
     "order": 3998,
