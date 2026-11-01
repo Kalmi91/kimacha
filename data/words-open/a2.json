@@ -620,9 +620,9 @@
     "lemma": "respuesta",
     "es": "la respuesta",
     "en": "answer",
-    "sentence_es": "La respuesta es sí.",
-    "sentence_en": "The answer is yes.",
-    "sentence_lemmas": ["el", "respuesta", "ser", "sí"]
+    "sentence_es": "Después de la pregunta viene la respuesta.",
+    "sentence_en": "After the question comes the answer.",
+    "sentence_lemmas": ["después", "de", "el", "pregunta", "venir", "el", "respuesta"]
   },
   {
     "order": 249,
@@ -675,9 +675,9 @@
     "lemma": "cuerpo",
     "es": "el cuerpo",
     "en": "body",
-    "sentence_es": "El cuerpo necesita agua.",
-    "sentence_en": "The body needs water.",
-    "sentence_lemmas": ["el", "cuerpo", "necesitar", "agua"]
+    "sentence_es": "El cuerpo tiene cabeza, manos y espalda.",
+    "sentence_en": "The body has a head, hands and a back.",
+    "sentence_lemmas": ["el", "cuerpo", "tener", "cabeza", "mano", "y", "espalda"]
   },
   {
     "order": 267,
@@ -1141,9 +1141,9 @@
     "lemma": "ensalada",
     "es": "la ensalada",
     "en": "salad",
-    "sentence_es": "Como ensalada con pollo.",
-    "sentence_en": "I eat salad with chicken.",
-    "sentence_lemmas": ["comer", "ensalada", "con", "pollo"]
+    "sentence_es": "La ensalada lleva verdura y fruta.",
+    "sentence_en": "Salad has vegetables and fruit.",
+    "sentence_lemmas": ["el", "ensalada", "llevar", "verdura", "y", "fruta"]
   },
   {
     "order": 725,
@@ -1418,9 +1418,9 @@
     "lemma": "vendedor",
     "es": "el vendedor",
     "en": "salesperson",
-    "sentence_es": "El vendedor trabaja en la tienda.",
-    "sentence_en": "The salesperson works at the store.",
-    "sentence_lemmas": ["el", "vendedor", "trabajar", "en", "el", "tienda"]
+    "sentence_es": "El vendedor vende cosas en la tienda.",
+    "sentence_en": "The salesperson sells things at the store.",
+    "sentence_lemmas": ["el", "vendedor", "vender", "cosa", "en", "el", "tienda"]
   },
   {
     "order": 757,
@@ -1750,9 +1750,9 @@
     "lemma": "equipo",
     "es": "el equipo",
     "en": "team",
-    "sentence_es": "Mi equipo gana hoy.",
-    "sentence_en": "My team wins today.",
-    "sentence_lemmas": ["mi", "equipo", "ganar", "hoy"]
+    "sentence_es": "Un equipo de fútbol tiene muchas personas.",
+    "sentence_en": "A soccer team has many people.",
+    "sentence_lemmas": ["un", "equipo", "de", "fútbol", "tener", "mucho", "persona"]
   },
   {
     "order": 869,
@@ -1985,9 +1985,9 @@
     "lemma": "arriba",
     "es": "arriba",
     "en": "up, upstairs",
-    "sentence_es": "Mi oficina está arriba.",
-    "sentence_en": "My office is upstairs.",
-    "sentence_lemmas": ["mi", "oficina", "estar", "arriba"]
+    "sentence_es": "La cabeza está arriba del cuerpo.",
+    "sentence_en": "The head is above the body.",
+    "sentence_lemmas": ["el", "cabeza", "estar", "arriba", "de", "cuerpo"]
   },
   {
     "order": 894,
@@ -2151,9 +2151,9 @@
     "lemma": "bebida",
     "es": "la bebida",
     "en": "drink, beverage",
-    "sentence_es": "¿Qué bebida quieres?",
-    "sentence_en": "What drink do you want?",
-    "sentence_lemmas": ["qué", "bebida", "querer"]
+    "sentence_es": "El agua, el jugo y el café son bebidas.",
+    "sentence_en": "Water, juice and coffee are drinks.",
+    "sentence_lemmas": ["el", "agua", "el", "jugo", "y", "el", "café", "ser", "bebida"]
   },
   {
     "order": 953,
@@ -2162,9 +2162,9 @@
     "lemma": "mango",
     "es": "el mango",
     "en": "mango",
-    "sentence_es": "El mango es una fruta dulce.",
-    "sentence_en": "The mango is a sweet fruit.",
-    "sentence_lemmas": ["el", "mango", "ser", "un", "fruta", "dulce"]
+    "sentence_es": "El mango es una fruta amarilla y dulce.",
+    "sentence_en": "The mango is a sweet yellow fruit.",
+    "sentence_lemmas": ["el", "mango", "ser", "un", "fruta", "amarillo", "y", "dulce"]
   },
   {
     "order": 956,
@@ -2184,9 +2184,9 @@
     "lemma": "toalla",
     "es": "la toalla",
     "en": "towel",
-    "sentence_es": "Necesito una toalla limpia.",
-    "sentence_en": "I need a clean towel.",
-    "sentence_lemmas": ["necesitar", "un", "toalla", "limpio"]
+    "sentence_es": "Después de bañarme necesito una toalla.",
+    "sentence_en": "After bathing I need a towel.",
+    "sentence_lemmas": ["después", "de", "bañarse", "necesitar", "un", "toalla"]
   },
   {
     "order": 958,
@@ -2195,9 +2195,9 @@
     "lemma": "jabón",
     "es": "el jabón",
     "en": "soap",
-    "sentence_es": "El jabón está en el baño.",
-    "sentence_en": "The soap is in the bathroom.",
-    "sentence_lemmas": ["el", "jabón", "estar", "en", "el", "baño"]
+    "sentence_es": "Me lavo las manos con jabón.",
+    "sentence_en": "I wash my hands with soap.",
+    "sentence_lemmas": ["me", "lavarse", "el", "mano", "con", "jabón"]
   },
   {
     "order": 960,
@@ -2295,9 +2295,9 @@
     "es": "el fuego",
     "en": "fire",
     "hint_en": "*Fire* is very hot",
-    "sentence_es": "El fuego es muy caliente.",
-    "sentence_en": "Fire is very hot.",
-    "sentence_lemmas": ["el", "fuego", "ser", "muy", "caliente"]
+    "sentence_es": "Para cocinar la carne necesito fuego.",
+    "sentence_en": "To cook the meat I need fire.",
+    "sentence_lemmas": ["para", "cocinar", "el", "carne", "necesitar", "fuego"]
   },
   {
     "order": 994,
@@ -2416,9 +2416,9 @@
     "lemma": "comedor",
     "es": "el comedor",
     "en": "dining room",
-    "sentence_es": "Comemos en el comedor.",
-    "sentence_en": "We eat in the dining room.",
-    "sentence_lemmas": ["comer", "en", "el", "comedor"]
+    "sentence_es": "Comemos en el comedor, no en la sala.",
+    "sentence_en": "We eat in the dining room, not in the living room.",
+    "sentence_lemmas": ["comer", "en", "el", "comedor", "no", "en", "el", "sala"]
   },
   {
     "order": 1016,
@@ -2460,9 +2460,9 @@
     "lemma": "enseñar",
     "es": "enseñar",
     "en": "to teach",
-    "sentence_es": "Mi madre enseña español.",
-    "sentence_en": "My mother teaches Spanish.",
-    "sentence_lemmas": ["mi", "madre", "enseñar", "español"]
+    "sentence_es": "El profesor enseña a los estudiantes.",
+    "sentence_en": "The teacher teaches the students.",
+    "sentence_lemmas": ["el", "profesor", "enseñar", "a", "el", "estudiante"]
   },
   {
     "order": 1025,
@@ -2472,9 +2472,9 @@
     "es": "oír",
     "en": "to hear",
     "hint_en": "I can *hear* a noise.",
-    "sentence_es": "No oigo bien.",
-    "sentence_en": "I cannot hear well.",
-    "sentence_lemmas": ["no", "oír", "bien"]
+    "sentence_es": "Oigo la música con las orejas.",
+    "sentence_en": "I hear the music with my ears.",
+    "sentence_lemmas": ["oír", "el", "música", "con", "el", "oreja"]
   },
   {
     "order": 1026,
@@ -2506,9 +2506,9 @@
     "lemma": "nevar",
     "es": "nevar",
     "en": "to snow",
-    "sentence_es": "Mañana va a nevar.",
-    "sentence_en": "It is going to snow tomorrow.",
-    "sentence_lemmas": ["mañana", "ir", "a", "nevar"]
+    "sentence_es": "En la montaña va a nevar porque hace frío.",
+    "sentence_en": "It is going to snow in the mountains because it is cold.",
+    "sentence_lemmas": ["en", "el", "montaña", "ir", "a", "nevar", "porque", "hacer", "frío"]
   },
   {
     "order": 1029,
@@ -2518,9 +2518,9 @@
     "es": "amar",
     "en": "to love (deeply)",
     "hint_en": "I *love* my wife deeply.",
-    "sentence_es": "Amo la música.",
-    "sentence_en": "I love music.",
-    "sentence_lemmas": ["amar", "el", "música"]
+    "sentence_es": "Amo a mi familia y a mis amigos.",
+    "sentence_en": "I love my family and my friends.",
+    "sentence_lemmas": ["amar", "a", "mi", "familia", "y", "a", "mi", "amigo"]
   },
   {
     "order": 1030,
@@ -2959,9 +2959,9 @@
     "lemma": "cuello",
     "es": "el cuello",
     "en": "neck",
-    "sentence_es": "Tengo dolor de cuello.",
-    "sentence_en": "I have neck pain.",
-    "sentence_lemmas": ["tener", "dolor", "de", "cuello"]
+    "sentence_es": "El cuello está debajo de la cabeza.",
+    "sentence_en": "The neck is below the head.",
+    "sentence_lemmas": ["el", "cuello", "estar", "debajo", "de", "el", "cabeza"]
   },
   {
     "order": 1070,
@@ -3423,9 +3423,9 @@
     "lemma": "almohada",
     "es": "la almohada",
     "en": "pillow",
-    "sentence_es": "Duermo con dos almohadas.",
-    "sentence_en": "I sleep with two pillows.",
-    "sentence_lemmas": ["dormir", "con", "dos", "almohada"]
+    "sentence_es": "Duermo con la cabeza en la almohada.",
+    "sentence_en": "I sleep with my head on the pillow.",
+    "sentence_lemmas": ["dormir", "con", "el", "cabeza", "en", "el", "almohada"]
   },
   {
     "order": 1112,
@@ -3490,9 +3490,9 @@
     "lemma": "cinturón",
     "es": "el cinturón",
     "en": "belt",
-    "sentence_es": "Necesito un cinturón negro.",
-    "sentence_en": "I need a black belt.",
-    "sentence_lemmas": ["necesitar", "un", "cinturón", "negro"]
+    "sentence_es": "El cinturón es para el pantalón.",
+    "sentence_en": "The belt is for the pants.",
+    "sentence_lemmas": ["el", "cinturón", "ser", "para", "el", "pantalón"]
   },
   {
     "order": 1118,
@@ -3655,9 +3655,9 @@
     "lemma": "pasaporte",
     "es": "el pasaporte",
     "en": "passport",
-    "sentence_es": "No encuentro mi pasaporte.",
-    "sentence_en": "I cannot find my passport.",
-    "sentence_lemmas": ["no", "encontrar", "mi", "pasaporte"]
+    "sentence_es": "Necesito el pasaporte para viajar.",
+    "sentence_en": "I need the passport to travel.",
+    "sentence_lemmas": ["necesitar", "el", "pasaporte", "para", "viajar"]
   },
   {
     "order": 1133,
@@ -3754,9 +3754,9 @@
     "lemma": "cantante",
     "es": "el cantante",
     "en": "singer",
-    "sentence_es": "Mi hermana es cantante.",
-    "sentence_en": "My sister is a singer.",
-    "sentence_lemmas": ["mi", "hermano", "ser", "cantante"]
+    "sentence_es": "El cantante canta canciones en el concierto.",
+    "sentence_en": "The singer sings songs at the concert.",
+    "sentence_lemmas": ["el", "cantante", "cantar", "canción", "en", "el", "concierto"]
   },
   {
     "order": 1142,
@@ -3765,9 +3765,9 @@
     "lemma": "abogado",
     "es": "el abogado",
     "en": "lawyer",
-    "sentence_es": "Mi vecino es abogado.",
-    "sentence_en": "My neighbor is a lawyer.",
-    "sentence_lemmas": ["mi", "vecino", "ser", "abogado"]
+    "sentence_es": "El abogado ayuda a las personas con los problemas.",
+    "sentence_en": "The lawyer helps people with their problems.",
+    "sentence_lemmas": ["el", "abogado", "ayudar", "a", "el", "persona", "con", "el", "problema"]
   },
   {
     "order": 1143,
@@ -4366,9 +4366,9 @@
     "lemma": "sandía",
     "es": "la sandía",
     "en": "watermelon",
-    "sentence_es": "En verano comemos sandía.",
-    "sentence_en": "In summer we eat watermelon.",
-    "sentence_lemmas": ["en", "verano", "comer", "sandía"]
+    "sentence_es": "La sandía es verde por fuera y roja por dentro.",
+    "sentence_en": "The watermelon is green outside and red inside.",
+    "sentence_lemmas": ["el", "sandía", "ser", "verde", "por", "fuera", "y", "rojo", "por", "dentro"]
   },
   {
     "order": 1498,
@@ -4443,9 +4443,9 @@
     "lemma": "miel",
     "es": "la miel",
     "en": "honey",
-    "sentence_es": "Quiero pan con miel.",
-    "sentence_en": "I want bread with honey.",
-    "sentence_lemmas": ["querer", "pan", "con", "miel"]
+    "sentence_es": "La miel es dulce y amarilla.",
+    "sentence_en": "Honey is sweet and yellow.",
+    "sentence_lemmas": ["el", "miel", "ser", "dulce", "y", "amarillo"]
   },
   {
     "order": 1505,
@@ -4487,9 +4487,9 @@
     "lemma": "camarón",
     "es": "el camarón",
     "en": "shrimp",
-    "sentence_es": "Los camarones son caros hoy.",
-    "sentence_en": "Shrimp are expensive today.",
-    "sentence_lemmas": ["el", "camarón", "ser", "caro", "hoy"]
+    "sentence_es": "El camarón vive en el mar y es pequeño.",
+    "sentence_en": "The shrimp lives in the sea and is small.",
+    "sentence_lemmas": ["el", "camarón", "vivir", "en", "el", "mar", "y", "ser", "pequeño"]
   },
   {
     "order": 1509,

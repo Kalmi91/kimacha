@@ -830,7 +830,7 @@
     { "es": "Tengo un correo nuevo.", "en": "I have a new email." }
   ],
   "o756": [
-    { "es": "El vendedor trabaja.", "en": "The salesperson works." }
+    { "es": "El vendedor vende cosas.", "en": "The salesperson sells things." }
   ],
   "o757": [
     { "es": "Hay un descuento.", "en": "There is a discount." }
@@ -1047,7 +1047,9 @@
   "o956": [
     { "es": "Hay un espejo.", "en": "There is a mirror." }
   ],
-  "o958": [],
+  "o958": [
+    { "es": "Me lavo las manos.", "en": "I wash my hands." }
+  ],
   "o959": [
     { "es": "Trabajo en la computadora.", "en": "I work on the computer." }
   ],
@@ -1120,7 +1122,7 @@
     { "es": "Hay muchas estrellas.", "en": "There are many stars." }
   ],
   "o993": [
-    { "es": "El fuego es caliente.", "en": "Fire is hot." }
+    { "es": "Necesito fuego.", "en": "I need fire." }
   ],
   "o994": [
     { "es": "El lago es grande.", "en": "The lake is big." }
@@ -1586,7 +1588,7 @@
     { "es": "Compro atún.", "en": "I buy tuna." }
   ],
   "o1508": [
-    { "es": "Los camarones son caros.", "en": "Shrimp are expensive." }
+    { "es": "El camarón vive en el mar.", "en": "The shrimp lives in the sea." }
   ],
   "o1509": [
     { "es": "Mi madre come yogur.", "en": "My mother eats yogurt." }
@@ -4062,5 +4064,55 @@
   ],
   "o709": [],
   "o752": [],
-  "o2803": []
+  "o2803": [],
+  "o248": [],
+  "o264": [
+    { "es": "El cuerpo tiene cabeza.", "en": "The body has a head." }
+  ],
+  "o724": [
+    { "es": "La ensalada lleva verdura.", "en": "Salad has vegetables." }
+  ],
+  "o859": [
+    { "es": "Un equipo tiene personas.", "en": "A team has people." }
+  ],
+  "o893": [],
+  "o946": [],
+  "o957": [
+    { "es": "Necesito una toalla.", "en": "I need a towel." }
+  ],
+  "o1014": [
+    { "es": "Comemos en el comedor.", "en": "We eat in the dining room." }
+  ],
+  "o1024": [
+    { "es": "El profesor enseña.", "en": "The teacher teaches." }
+  ],
+  "o1025": [
+    { "es": "Oigo la música.", "en": "I hear the music." }
+  ],
+  "o1028": [
+    { "es": "En la montaña va a nevar.", "en": "It is going to snow in the mountains." }
+  ],
+  "o1029": [
+    { "es": "Amo a mi familia.", "en": "I love my family." }
+  ],
+  "o1069": [],
+  "o1111": [
+    { "es": "Duermo con la cabeza.", "en": "I sleep with my head." }
+  ],
+  "o1117": [],
+  "o1132": [
+    { "es": "Necesito el pasaporte.", "en": "I need the passport." }
+  ],
+  "o1141": [
+    { "es": "El cantante canta canciones.", "en": "The singer sings songs." }
+  ],
+  "o1142": [
+    { "es": "El abogado ayuda a las personas.", "en": "The lawyer helps people." }
+  ],
+  "o1497": [
+    { "es": "La sandía es verde.", "en": "The watermelon is green." }
+  ],
+  "o1504": [
+    { "es": "La miel es dulce.", "en": "Honey is sweet." }
+  ]
 }
