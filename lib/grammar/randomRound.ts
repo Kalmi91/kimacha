@@ -405,10 +405,11 @@ function pickPracticeTopic(run: RoundRun, ctx: PickCtx, used: Set<string>): stri
   return null;
 }
 
-// Re-check: one question per weak topic, in the order of `weak`.
+// Re-check: one question per weak topic, in the order of `weak`. A weak topic without a free question is left
+// out (the next one is asked); `null` when no unchecked weak topic has one, then the screen passes the phase over.
 function pickRecheckTopic(run: RoundRun, ctx: PickCtx, used: Set<string>): string | null {
-  const id = run.weak[countPhase(run, 'recheck')];
-  return id !== undefined && hasFree(id, ctx, used) ? id : null;
+  const checked = new Set(run.steps.filter((s) => s.phase === 'recheck').map((s) => s.topicId));
+  return run.weak.find((id) => !checked.has(id) && hasFree(id, ctx, used)) ?? null;
 }
 
 // Full: fill the topics started in this round up to MIN_ANSWERS_FOR_PCT answers, then start a new topic in

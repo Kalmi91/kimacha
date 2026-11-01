@@ -12,15 +12,8 @@ import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { localDateString } from '@/lib/usageStats';
-import { buildLessonTest, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
-import {
-  getGrammarTier,
-  hasLesson,
-  lessonFor,
-  syllabusForLevel,
-  syllabusLevels,
-  type SyllabusTopic,
-} from '@/lib/grammar/syllabus';
+import type { LessonTestQuestion } from '@/lib/grammar/lessonTest';
+import { hasLesson, syllabusForLevel, syllabusLevels } from '@/lib/grammar/syllabus';
 import {
   GRAMMAR_RANDOM_KEY,
   META_ITEM_ID,
@@ -34,21 +27,19 @@ import {
   newRun,
   nextMode,
   phaseProgress,
-  pickNext,
   recordAnswer,
   runFromRows,
-  skipPhase,
   topicPercent,
   topicTicked,
   type AskPhase,
   type EvidenceAnswer,
-  type PickCtx,
   type RandomMeta,
   type RoundMode,
   type RoundRun,
   type RoundStep,
   type TopicEvidence,
 } from '@/lib/grammar/randomRound';
+import { advance, isResultPause, makeCtx, questionsOf, type RoundData } from '@/lib/grammar/randomRoundView';
 import { Card } from '@/components/grammar/Brutal';
 import { ProgressBar, themedEdgeStyle } from '@/components/grammar/Themed';
 import TestQuestionView from '@/components/grammar/TestQuestionView';
@@ -68,26 +59,6 @@ import ScreenFeedback from '@/lib/screenFeedback';
 
 type RoundStrings = ReturnType<typeof t>['randomRound'];
 
-interface RoundData {
-  learnedLang: string;
-  contentLang: string;
-  /** The user's level as stored: the 💬 (FeedbackModal) writes this into the Feedback sheet. */
-  userLevel: string;
-  /** The syllabus levels of the learned language, in order. */
-  levels: Level[];
-  startLevel: Level;
-  /** The written lessons, in syllabus order. */
-  topics: SyllabusTopic[];
-  /** The questions built so far (lazily, per topic). */
-  cache: QuestionCache;
-}
-
-/** The question cache of one round: the seed fixes the option order, so a new seed (a new round) empties it. */
-interface QuestionCache {
-  seed: number;
-  map: Map<string, LessonTestQuestion[]>;
-}
-
 /** The practice feedback card: shown after an answer of the practice phase. */
 interface Feedback {
   q: LessonTestQuestion;
@@ -95,53 +66,6 @@ interface Feedback {
   topicId: string;
   index: number;
   of: number;
-}
-
-// All usable questions of a topic, built lazily. A match card is left out (one card = many answers).
-function questionsOf(d: RoundData, seed: number, topicId: string): LessonTestQuestion[] {
-  const cache = d.cache;
-  if (cache.seed !== seed) {
-    cache.seed = seed;
-    cache.map = new Map();
-  }
-  let qs = cache.map.get(topicId);
-  if (!qs) {
-    const lesson = lessonFor(d.learnedLang, topicId);
-    qs = lesson
-      ? buildLessonTest(lesson, { seed, learnedLang: d.learnedLang, contentLang: d.contentLang, size: 9999 }).filter((q) => q.kind !== 'match')
-      : [];
-    cache.map.set(topicId, qs);
-  }
-  return qs;
-}
-
-function makeCtx(d: RoundData, seed: number, evidence: Map<string, TopicEvidence>): PickCtx {
-  return {
-    levels: d.levels,
-    topics: d.topics.map((tp) => ({ id: tp.id, level: tp.level, tier: getGrammarTier(tp.id) })),
-    evidence,
-    questionIds: (topicId) => questionsOf(d, seed, topicId).map((q) => ({ id: q.id, kind: q.kind })),
-  };
-}
-
-// The check is over (or skipped) and the practice has not started: the check result is on screen.
-function isResultPause(run: RoundRun): boolean {
-  return run.mode === 'mixed' && run.pending === null && currentPhase(run) !== 'check' && run.steps.every((st) => st.phase === 'check');
-}
-
-// Puts the next question of the current phase on the screen (`pending`); a phase with no unused question is
-// passed over. Passing over the check of a mixed round stops there: the check result comes first.
-function advance(run: RoundRun, ctx: PickCtx): RoundRun {
-  let r = run;
-  for (let i = 0; i < 6; i++) {
-    const phase = currentPhase(r);
-    if (phase === 'done') return r;
-    const pick = pickNext(r, ctx);
-    if (pick) return { ...r, pending: pick };
-    r = skipPhase(r, ctx);
-    if (r.mode === 'mixed' && phase === 'check') return r;
-  }
-  return r;
 }
 
 function phaseLabel(s: RoundStrings, phase: AskPhase, i: number, n: number): string {
@@ -189,9 +113,10 @@ export default function RandomRoundScreen() {
     closedRef.current = true;
     const meta: RandomMeta = { rounds: metaRef.current.rounds + 1 };
     metaRef.current = meta;
+    // the open round first, then the counter: a stop in between loses one count, it never counts the round twice.
     enqueue(async () => {
-      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, META_ITEM_ID, 'meta', meta);
       await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, RUN_ITEM_ID, 'none', null);
+      await getDb().setGameProgress(GRAMMAR_RANDOM_KEY, META_ITEM_ID, 'meta', meta);
     });
   }, [enqueue]);
 
@@ -266,9 +191,10 @@ export default function RandomRoundScreen() {
 
   // the 💬 is on every part of the round; `part` tells the Feedback sheet exactly which one it is about
   // (grammar-random:<phase>:<question id or empty>). On a typed question the 💬 sits above the docked bar.
-  const shell = (children: ReactNode, part?: string, bottomOffset?: number) => (
+  const shell = (children: ReactNode, part?: string, bottomOffset?: number, overlay?: ReactNode) => (
     <View style={[styles.screen, { backgroundColor: colors.background }]}>
       {children}
+      {overlay}
       {part !== undefined && data ? (
         <ScreenFeedback
           level={data.userLevel}
@@ -323,8 +249,10 @@ export default function RandomRoundScreen() {
     const before = phaseProgress(run);
     let next = recordAnswer(run, step, ctx);
     if (!isResultPause(next)) next = advance(next, ctx);
-    enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, topicId, 'evidence', topicEvidence));
+    // the round first (the answer is in its steps), then the evidence: a stop in between loses one evidence answer,
+    // it never counts the answer twice.
     commit(next);
+    enqueue(() => getDb().setGameProgress(GRAMMAR_RANDOM_KEY, topicId, 'evidence', topicEvidence));
     setEvidence(nextEvidence);
     setRun(next);
     if (phase === 'practice') setFeedback({ q: pendingQ, ok, topicId, index: before.index + 1, of: before.of });
@@ -342,8 +270,10 @@ export default function RandomRoundScreen() {
     </View>
   );
 
-  if (leaving) {
-    return shell(
+  // The ✕ confirmation lies over the screen instead of replacing it: the question card stays mounted, so after
+  // "keep going" its state (the typed text, a revealed answer) is exactly as it was.
+  const leaveOverlay = leaving ? (
+    <View testID="random-leave-overlay" accessibilityViewIsModal style={[StyleSheet.absoluteFill, styles.overlay, { backgroundColor: colors.background }]}>
       <View style={styles.body}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Text style={[styles.title, { color: colors.text }]}>{s.leaveTitle}</Text>
@@ -351,10 +281,9 @@ export default function RandomRoundScreen() {
         </Card>
         <ExamButton testID="random-leave" label={t().exam.leave} onPress={onDone} />
         <ExamButton testID="random-keep-going" secondary label={t().exam.keepGoing} onPress={() => setLeaving(false)} />
-      </View>,
-      'leave:'
-    );
-  }
+      </View>
+    </View>
+  ) : null;
 
   // practice: after the answer, the explanation card.
   if (feedback) {
@@ -389,7 +318,9 @@ export default function RandomRoundScreen() {
           <ExamButton testID="random-rule" secondary label={s.rule} onPress={() => router.push(`/grammar/${topicId}` as never)} />
         </ScrollView>
       </View>,
-      `practice:${q.id}`
+      leaving ? 'leave:' : `practice:${q.id}`,
+      undefined,
+      leaveOverlay
     );
   }
 
@@ -550,7 +481,7 @@ export default function RandomRoundScreen() {
       )}
       <DockSlotProvider host={dock}>
         <TestQuestionView
-          key={`${phase}:${pendingQ.id}`}
+          key={`${phase}:${run.steps.length}:${run.pending.topicId}:${pendingQ.id}`}
           q={pendingQ}
           learnedLang={data.learnedLang}
           strictAccents={strictAccents}
@@ -560,13 +491,15 @@ export default function RandomRoundScreen() {
       </DockSlotProvider>
       {dock.node}
     </KeyboardAvoidingView>,
-    `${phase}:${pendingQ.id}`,
-    dock.bottomOffset
+    leaving ? 'leave:' : `${phase}:${pendingQ.id}`,
+    dock.bottomOffset,
+    leaveOverlay
   );
 }
 
 const styles = StyleSheet.create({
   screen: { flex: 1, paddingTop: spacing.xl },
+  overlay: { paddingTop: spacing.xl },
   flex: { flex: 1 },
   centered: { flex: 1 },
   body: { padding: spacing.lg, paddingBottom: FAB_CLEARANCE, gap: spacing.md },

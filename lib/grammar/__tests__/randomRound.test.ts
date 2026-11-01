@@ -516,6 +516,22 @@ describe('pickNext: practice and recheck', () => {
     expect(pickNext(run, ctx)).toBeNull();
   });
 
+  it('leaves a weak topic without a free question out of the re-check and asks the next one', () => {
+    const weak = ['a1-y', 'a2-x', 'b1-x'];
+    const practice = Array.from({ length: PRACTICE_SIZE }, (_, i) => step({ phase: 'practice', qid: `p${i}` }));
+    const ctx = makeCtx({ counts: { 'a1-y': 0 } });
+    let run = runWith({ steps: [...checks, ...practice], weak });
+    const order: string[] = [];
+    for (let pick = pickNext(run, ctx); pick; pick = pickNext(run, ctx)) {
+      order.push(pick.topicId);
+      run = recordAnswer(run, step({ topicId: pick.topicId, qid: pick.qid, phase: 'recheck' }), ctx);
+    }
+    // the first weak topic is left out, the other two are asked; then nothing is left and the screen passes the phase over
+    expect(order).toEqual(['a2-x', 'b1-x']);
+    expect(currentPhase(run)).toBe('recheck');
+    expect(currentPhase(skipPhase(run, ctx))).toBe('done');
+  });
+
   it('does not repeat a practice question in the re-check', () => {
     const ctx = makeCtx({ n: 2 });
     const used = [step({ phase: 'practice', topicId: 'a1-y', qid: 'a1-y#0' }), step({ phase: 'practice', topicId: 'a1-y', qid: 'a1-y#1' })];

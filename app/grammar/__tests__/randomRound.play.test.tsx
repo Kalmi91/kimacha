@@ -327,10 +327,11 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
     await open();
     await answer(true);
     await press('random-close');
-    expect(screen.queryByTestId('random-counter')).toBeNull();
+    expect(screen.getByTestId('random-leave-overlay')).toBeTruthy();
     expect(screen.getByText('Leave the round?')).toBeTruthy();
     expect(screen.getByText('Your answers are saved. You can continue later.')).toBeTruthy();
     await press('random-keep-going');
+    expect(screen.queryByTestId('random-leave-overlay')).toBeNull();
     expect(text('random-counter')).toBe('Check 2/10');
     await press('random-close');
     await press('random-leave');
@@ -338,5 +339,50 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
     const run = runFromRows(await rows());
     expect(run?.steps).toHaveLength(1);
     expect(run?.pending).not.toBeNull();
+  });
+
+  it('✕ does not remount the question: a revealed wrong answer stays revealed and cannot be answered again', async () => {
+    await mixedNext();
+    await open();
+    const { q } = onScreen();
+    const v = q.view;
+    if (v.card !== 'choice') throw new Error('choice only');
+    await press(`exam-option-${(v.correctIndex + 1) % v.options.length}`); // wrong: the card reveals the right option
+    expect(screen.getByTestId('exam-next')).toBeTruthy();
+    await press('random-close');
+    await press('random-keep-going');
+    // the same card as it was left: still revealed, still waiting for Next, a tap on the right option does nothing
+    expect(screen.getByTestId('exam-next')).toBeTruthy();
+    expect(text('random-counter')).toBe('Check 1/10');
+    await press(`exam-option-${v.correctIndex}`);
+    expect(text('random-counter')).toBe('Check 1/10');
+    expect(evidenceFromRows(await rows()).size).toBe(0);
+    await press('exam-next');
+    expect(text('random-counter')).toBe('Check 2/10');
+    const answers = [...evidenceFromRows(await rows()).values()].flatMap((e) => e.answers);
+    expect(answers.map((a) => [a.id, a.ok])).toEqual([[q.id, false]]);
+  });
+
+  it('saves the round before the evidence, and on closing the round before the counter', async () => {
+    await mixedNext();
+    await open();
+    const spy = jest.spyOn(getDb(), 'setGameProgress');
+    const saved = () => spy.mock.calls.filter((c) => c[0] === GRAMMAR_RANDOM_KEY).map((c) => `${c[1]}:${c[2]}`);
+    try {
+      await answer(true);
+      let calls = saved();
+      expect(calls).toHaveLength(2);
+      expect(calls[0]).toBe(`${RUN_ITEM_ID}:run`);
+      expect(calls[1]).toMatch(/^rr-[0-9]+:evidence$/);
+      spy.mockClear();
+      for (let i = 0; i < 9; i++) await answer(true); // the 10th answer ends a check without a wrong answer: the round is closed
+      calls = saved();
+      const last = calls.slice(-3);
+      expect(last[0]).toBe(`${RUN_ITEM_ID}:none`);
+      expect(last[1]).toBe(`${META_ITEM_ID}:meta`);
+      expect(last[2]).toMatch(/^rr-[0-9]+:evidence$/);
+    } finally {
+      spy.mockRestore();
+    }
   });
 });
