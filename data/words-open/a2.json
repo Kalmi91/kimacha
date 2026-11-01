@@ -2062,9 +2062,9 @@
     "lemma": "seco",
     "es": "seco",
     "en": "dry",
-    "sentence_es": "La ropa está seca.",
-    "sentence_en": "The clothes are dry.",
-    "sentence_lemmas": ["el", "ropa", "estar", "seco"]
+    "sentence_es": "El pan está seco y quiero leche.",
+    "sentence_en": "The bread is dry and I want milk.",
+    "sentence_lemmas": ["el", "pan", "estar", "seco", "y", "querer", "leche"]
   },
   {
     "order": 910,
@@ -11305,9 +11305,9 @@
     "lemma": "desvelarse",
     "es": "desvelarse",
     "en": "to stay up late",
-    "sentence_es": "Me desvelo cuando estudio.",
-    "sentence_en": "I stay up late when I study.",
-    "sentence_lemmas": ["me", "desvelarse", "cuando", "estudiar"]
+    "sentence_es": "Me desvelo cuando estudio para un examen.",
+    "sentence_en": "I stay up late when I study for an exam.",
+    "sentence_lemmas": ["me", "desvelarse", "cuando", "estudiar", "para", "un", "examen"]
   },
   {
     "order": 2845,
@@ -11371,9 +11371,9 @@
     "lemma": "chismear",
     "es": "chismear",
     "en": "to gossip",
-    "sentence_es": "Mis vecinos chismean mucho.",
-    "sentence_en": "My neighbors gossip a lot.",
-    "sentence_lemmas": ["mi", "vecino", "chismear", "mucho"]
+    "sentence_es": "Mis vecinos chismean mucho en la calle.",
+    "sentence_en": "My neighbors gossip a lot in the street.",
+    "sentence_lemmas": ["mi", "vecino", "chismear", "mucho", "en", "el", "calle"]
   },
   {
     "order": 2852,
@@ -11393,9 +11393,9 @@
     "lemma": "respirar",
     "es": "respirar",
     "en": "to breathe",
-    "sentence_es": "Respiro por la nariz.",
-    "sentence_en": "I breathe through my nose.",
-    "sentence_lemmas": ["respirar", "por", "el", "nariz"]
+    "sentence_es": "Respiro por la nariz y por la boca.",
+    "sentence_en": "I breathe through my nose and through my mouth.",
+    "sentence_lemmas": ["respirar", "por", "el", "nariz", "y", "por", "el", "boca"]
   },
   {
     "order": 2854,
@@ -11426,9 +11426,9 @@
     "lemma": "temblar",
     "es": "temblar",
     "en": "to tremble, to shake",
-    "sentence_es": "Tiemblo de frío.",
-    "sentence_en": "I shake from the cold.",
-    "sentence_lemmas": ["temblar", "de", "frío"]
+    "sentence_es": "Tiemblo de frío cuando no llevo abrigo.",
+    "sentence_en": "I shake from the cold when I do not wear a coat.",
+    "sentence_lemmas": ["temblar", "de", "frío", "cuando", "no", "llevar", "abrigo"]
   },
   {
     "order": 2858,
@@ -11459,9 +11459,9 @@
     "lemma": "sanar",
     "es": "sanar",
     "en": "to heal up",
-    "sentence_es": "La herida sana rápido.",
-    "sentence_en": "The wound heals quickly.",
-    "sentence_lemmas": ["el", "herida", "sanar", "rápido"]
+    "sentence_es": "La herida de mi hijo sana rápido.",
+    "sentence_en": "My son's wound heals quickly.",
+    "sentence_lemmas": ["el", "herida", "de", "mi", "hijo", "sanar", "rápido"]
   },
   {
     "order": 2861,
@@ -11833,9 +11833,9 @@
     "lemma": "firma",
     "es": "la firma",
     "en": "signature",
-    "sentence_es": "Necesito tu firma aquí.",
-    "sentence_en": "I need your signature here.",
-    "sentence_lemmas": ["necesitar", "tu", "firma", "aquí"]
+    "sentence_es": "Necesito tu firma en el papel.",
+    "sentence_en": "I need your signature on the paper.",
+    "sentence_lemmas": ["necesitar", "tu", "firma", "en", "el", "papel"]
   },
   {
     "order": 2907,
@@ -11932,9 +11932,9 @@
     "lemma": "mandón",
     "es": "mandón",
     "en": "bossy",
-    "sentence_es": "Ese niño es mandón.",
-    "sentence_en": "That boy is bossy.",
-    "sentence_lemmas": ["ese", "niño", "ser", "mandón"]
+    "sentence_es": "Ese niño es mandón y no escucha a nadie.",
+    "sentence_en": "That boy is bossy and does not listen to anyone.",
+    "sentence_lemmas": ["ese", "niño", "ser", "mandón", "y", "no", "escuchar", "a", "nadie"]
   },
   {
     "order": 2919,
@@ -11943,9 +11943,9 @@
     "lemma": "enojón",
     "es": "enojón",
     "en": "easily angered (MX)",
-    "sentence_es": "Mi abuelo es enojón.",
-    "sentence_en": "My grandfather gets angry easily.",
-    "sentence_lemmas": ["mi", "abuelo", "ser", "enojón"]
+    "sentence_es": "Mi abuelo es enojón y habla muy fuerte.",
+    "sentence_en": "My grandfather is grumpy and talks very loudly.",
+    "sentence_lemmas": ["mi", "abuelo", "ser", "enojón", "y", "hablar", "muy", "fuerte"]
   },
   {
     "order": 2920,
@@ -11954,9 +11954,9 @@
     "lemma": "llorón",
     "es": "llorón",
     "en": "crybaby",
-    "sentence_es": "El bebé es llorón.",
-    "sentence_en": "The baby is a crybaby.",
-    "sentence_lemmas": ["el", "bebé", "ser", "llorón"]
+    "sentence_es": "El bebé es llorón y no duerme en la noche.",
+    "sentence_en": "The baby is a crybaby and does not sleep at night.",
+    "sentence_lemmas": ["el", "bebé", "ser", "llorón", "y", "no", "dormir", "en", "el", "noche"]
   },
   {
     "order": 2921,
@@ -11965,9 +11965,9 @@
     "lemma": "mentiroso",
     "es": "mentiroso",
     "en": "lying, dishonest",
-    "sentence_es": "Tu amigo es mentiroso.",
-    "sentence_en": "Your friend is dishonest.",
-    "sentence_lemmas": ["tu", "amigo", "ser", "mentiroso"]
+    "sentence_es": "Tu amigo es mentiroso y no dice la verdad.",
+    "sentence_en": "Your friend is a liar and does not tell the truth.",
+    "sentence_lemmas": ["tu", "amigo", "ser", "mentiroso", "y", "no", "decir", "el", "verdad"]
   },
   {
     "order": 2922,
@@ -12020,9 +12020,9 @@
     "lemma": "enamorado",
     "es": "enamorado",
     "en": "in love",
-    "sentence_es": "Mi hermano está enamorado.",
-    "sentence_en": "My brother is in love.",
-    "sentence_lemmas": ["mi", "hermano", "estar", "enamorado"]
+    "sentence_es": "Mi hermano está enamorado de su novia.",
+    "sentence_en": "My brother is in love with his girlfriend.",
+    "sentence_lemmas": ["mi", "hermano", "estar", "enamorado", "de", "su", "novia"]
   },
   {
     "order": 2927,
@@ -12031,9 +12031,9 @@
     "lemma": "herido",
     "es": "herido",
     "en": "wounded, injured",
-    "sentence_es": "El perro está herido.",
-    "sentence_en": "The dog is wounded.",
-    "sentence_lemmas": ["el", "perro", "estar", "herido"]
+    "sentence_es": "El perro está herido y necesita un médico.",
+    "sentence_en": "The dog is injured and needs a doctor.",
+    "sentence_lemmas": ["el", "perro", "estar", "herido", "y", "necesitar", "un", "médico"]
   },
   {
     "order": 2928,
@@ -12042,9 +12042,9 @@
     "lemma": "despeinado",
     "es": "despeinado",
     "en": "disheveled",
-    "sentence_es": "El niño está despeinado.",
-    "sentence_en": "The boy is disheveled.",
-    "sentence_lemmas": ["el", "niño", "estar", "despeinado"]
+    "sentence_es": "El niño está despeinado cuando se levanta.",
+    "sentence_en": "The boy is messy-haired when he gets up.",
+    "sentence_lemmas": ["el", "niño", "estar", "despeinado", "cuando", "se", "levantarse"]
   },
   {
     "order": 2929,
@@ -12053,9 +12053,9 @@
     "lemma": "descompuesto",
     "es": "descompuesto",
     "en": "broken down (MX)",
-    "sentence_es": "El carro está descompuesto.",
-    "sentence_en": "The car has broken down.",
-    "sentence_lemmas": ["el", "carro", "estar", "descompuesto"]
+    "sentence_es": "Mi carro está descompuesto y voy en autobús.",
+    "sentence_en": "My car is broken down and I go by bus.",
+    "sentence_lemmas": ["mi", "carro", "estar", "descompuesto", "y", "ir", "en", "autobús"]
   },
   {
     "order": 2930,
@@ -12064,9 +12064,9 @@
     "lemma": "roto",
     "es": "roto",
     "en": "torn, cracked",
-    "sentence_es": "La camisa está rota.",
-    "sentence_en": "The shirt is torn.",
-    "sentence_lemmas": ["el", "camisa", "estar", "roto"]
+    "sentence_es": "El vaso está roto y hay agua en la mesa.",
+    "sentence_en": "The glass is broken and there is water on the table.",
+    "sentence_lemmas": ["el", "vaso", "estar", "roto", "y", "haber", "agua", "en", "el", "mesa"]
   },
   {
     "order": 2931,
@@ -12075,9 +12075,9 @@
     "lemma": "usado",
     "es": "usado",
     "en": "used, second-hand",
-    "sentence_es": "Compro un carro usado.",
-    "sentence_en": "I buy a used car.",
-    "sentence_lemmas": ["comprar", "un", "carro", "usado"]
+    "sentence_es": "Compro un carro usado porque es más barato.",
+    "sentence_en": "I buy a used car because it is cheaper.",
+    "sentence_lemmas": ["comprar", "un", "carro", "usado", "porque", "ser", "más", "barato"]
   },
   {
     "order": 2932,
@@ -12086,9 +12086,9 @@
     "lemma": "apagado",
     "es": "apagado",
     "en": "switched off",
-    "sentence_es": "La televisión está apagada.",
-    "sentence_en": "The television is switched off.",
-    "sentence_lemmas": ["el", "televisión", "estar", "apagado"]
+    "sentence_es": "La televisión está apagada y mi hijo duerme.",
+    "sentence_en": "The television is off and my son is sleeping.",
+    "sentence_lemmas": ["el", "televisión", "estar", "apagado", "y", "mi", "hijo", "dormir"]
   },
   {
     "order": 2933,
@@ -12141,9 +12141,9 @@
     "lemma": "tolerar",
     "es": "tolerar",
     "en": "to tolerate",
-    "sentence_es": "No tolero el ruido.",
-    "sentence_en": "I do not tolerate the noise.",
-    "sentence_lemmas": ["no", "tolerar", "el", "ruido"]
+    "sentence_es": "No tolero el ruido de la calle.",
+    "sentence_en": "I cannot stand the noise from the street.",
+    "sentence_lemmas": ["no", "tolerar", "el", "ruido", "de", "el", "calle"]
   },
   {
     "order": 2958,
@@ -12174,9 +12174,9 @@
     "lemma": "parabrisas",
     "es": "el parabrisas",
     "en": "windshield",
-    "sentence_es": "El parabrisas está sucio.",
-    "sentence_en": "The windshield is dirty.",
-    "sentence_lemmas": ["el", "parabrisas", "estar", "sucio"]
+    "sentence_es": "Limpio el parabrisas del carro porque está sucio.",
+    "sentence_en": "I clean the car's windshield because it is dirty.",
+    "sentence_lemmas": ["limpiar", "el", "parabrisas", "de", "carro", "porque", "estar", "sucio"]
   },
   {
     "order": 2961,
@@ -12803,9 +12803,9 @@
     "lemma": "sensación",
     "es": "la sensación",
     "en": "sensation; physical feeling",
-    "sentence_es": "Tengo una sensación rara.",
-    "sentence_en": "I have a strange feeling.",
-    "sentence_lemmas": ["tener", "un", "sensación", "raro"]
+    "sentence_es": "Tengo una sensación rara en la cabeza.",
+    "sentence_en": "I have a strange feeling in my head.",
+    "sentence_lemmas": ["tener", "un", "sensación", "raro", "en", "el", "cabeza"]
   },
   {
     "order": 3329,
@@ -12991,9 +12991,9 @@
     "lemma": "elevador",
     "es": "el elevador",
     "en": "elevator",
-    "sentence_es": "El elevador está descompuesto.",
-    "sentence_en": "The elevator is broken.",
-    "sentence_lemmas": ["el", "elevador", "estar", "descompuesto"]
+    "sentence_es": "Uso el elevador para ir al quinto piso.",
+    "sentence_en": "I use the elevator to go to the fifth floor.",
+    "sentence_lemmas": ["usar", "el", "elevador", "para", "ir", "a", "quinto", "piso"]
   },
   {
     "order": 3346,
@@ -13047,9 +13047,9 @@
     "lemma": "pedido",
     "es": "el pedido",
     "en": "customer order, request",
-    "sentence_es": "Mi pedido llega mañana.",
-    "sentence_en": "My order arrives tomorrow.",
-    "sentence_lemmas": ["mi", "pedido", "llegar", "mañana"]
+    "sentence_es": "Hago un pedido por internet y llega a casa.",
+    "sentence_en": "I place an order online and it arrives at home.",
+    "sentence_lemmas": ["hacer", "un", "pedido", "por", "internet", "y", "llegar", "a", "casa"]
   },
   {
     "order": 3352,
@@ -13157,9 +13157,9 @@
     "lemma": "opción",
     "es": "la opción",
     "en": "option, alternative",
-    "sentence_es": "Tienes dos opciones.",
-    "sentence_en": "You have two options.",
-    "sentence_lemmas": ["tener", "dos", "opción"]
+    "sentence_es": "Tienes dos opciones, café o té.",
+    "sentence_en": "You have two options, coffee or tea.",
+    "sentence_lemmas": ["tener", "dos", "opción", "café", "o", "té"]
   },
   {
     "order": 3362,
@@ -13201,9 +13201,9 @@
     "lemma": "fantástico",
     "es": "fantástico",
     "en": "fantastic",
-    "sentence_es": "El concierto fue fantástico.",
-    "sentence_en": "The concert was fantastic.",
-    "sentence_lemmas": ["el", "concierto", "ser", "fantástico"]
+    "sentence_es": "El concierto fue fantástico y todos bailamos.",
+    "sentence_en": "The concert was fantastic and we all danced.",
+    "sentence_lemmas": ["el", "concierto", "ser", "fantástico", "y", "todo", "bailar"]
   },
   {
     "order": 3368,
