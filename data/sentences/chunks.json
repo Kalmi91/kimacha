@@ -56,7 +56,7 @@
   "o107": [],
   "o111": [],
   "o114": [
-    { "es": "Mi padre tiene un carro.", "en": "My father has a car." }
+    { "es": "Mi padre va a casa.", "en": "My father goes home." }
   ],
   "o115": [
     { "es": "Como en la mesa.", "en": "I eat at the table." }
@@ -72,7 +72,7 @@
     { "es": "Esta cosa es grande.", "en": "This thing is big." }
   ],
   "o133": [
-    { "es": "Tengo mucho trabajo.", "en": "I have a lot of work." }
+    { "es": "Trabajo cinco días.", "en": "I work five days." }
   ],
   "o134": [
     { "es": "Mi casa es bonita.", "en": "My house is pretty." }
@@ -123,7 +123,7 @@
     { "es": "Comí pan.", "en": "I ate bread." }
   ],
   "o173": [
-    { "es": "Vamos a la tienda.", "en": "We are going to the store." }
+    { "es": "Hoy es domingo.", "en": "Today is Sunday." }
   ],
   "o174": [
     { "es": "Llego tarde.", "en": "I arrive late." }
@@ -286,9 +286,7 @@
     { "es": "Esta historia es buena.", "en": "This story is good." }
   ],
   "o251": [],
-  "o252": [
-    { "es": "Mi país es grande.", "en": "My country is big." }
-  ],
+  "o252": [],
   "o253": [
     { "es": "Este lugar era bonito.", "en": "This place was pretty." }
   ],
@@ -368,7 +366,8 @@
     { "es": "Hubo una fiesta.", "en": "There was a party." }
   ],
   "o287": [
-    { "es": "Mi carro es rápido.", "en": "My car is fast." }
+    { "es": "El tren es rápido.", "en": "The train is fast." },
+    { "es": "El tren es más rápido.", "en": "The train is faster." }
   ],
   "o288": [
     { "es": "Mi hijo es joven.", "en": "My son is young." }
@@ -414,7 +413,7 @@
     { "es": "Recibo un mensaje.", "en": "I receive a message." }
   ],
   "o327": [
-    { "es": "Bajo a la tienda.", "en": "I go down to the store." }
+    { "es": "Bajo del autobús.", "en": "I get off the bus." }
   ],
   "o329": [],
   "o330": [
@@ -495,12 +494,8 @@
   "o602": [
     { "es": "Mi amigo es inteligente.", "en": "My friend is intelligent." }
   ],
-  "o603": [
-    { "es": "Mi padre tiene una camisa.", "en": "My father has a shirt." }
-  ],
-  "o604": [
-    { "es": "Necesito zapatos nuevos.", "en": "I need new shoes." }
-  ],
+  "o603": [],
+  "o604": [],
   "o605": [
     { "es": "El día está gris.", "en": "The day is gray." }
   ],
@@ -509,7 +504,7 @@
     { "es": "El café es negro.", "en": "The coffee is black." }
   ],
   "o608": [
-    { "es": "Mi madre compra flores.", "en": "My mother buys flowers." }
+    { "es": "La flor es bonita.", "en": "The flower is pretty." }
   ],
   "o611": [
     { "es": "El libro es interesante.", "en": "The book is interesting." }
@@ -557,7 +552,7 @@
     { "es": "La casa es suya.", "en": "The house is his." }
   ],
   "o632": [
-    { "es": "Hay un cine.", "en": "There is a movie theater." }
+    { "es": "En el cine hay sillas.", "en": "There are seats in the movie theater." }
   ],
   "o633": [
     { "es": "Tengo mi dinero.", "en": "I have my money." }
@@ -582,15 +577,9 @@
   "o641": [
     { "es": "Hace mucho frío.", "en": "It is very cold." }
   ],
-  "o642": [
-    { "es": "Tengo un examen.", "en": "I have an exam." }
-  ],
-  "o643": [
-    { "es": "Mi padre llega.", "en": "My father arrives." }
-  ],
-  "o644": [
-    { "es": "Mi amigo llega.", "en": "My friend arrives." }
-  ],
+  "o642": [],
+  "o643": [],
+  "o644": [],
   "o646": [],
   "o647": [],
   "o648": [],
@@ -646,12 +635,8 @@
   "o672": [
     { "es": "Este libro cuesta mucho.", "en": "This book costs a lot." }
   ],
-  "o673": [
-    { "es": "Mi familia come pizza.", "en": "My family eats pizza." }
-  ],
-  "o674": [
-    { "es": "La plaza es grande.", "en": "The square is big." }
-  ],
+  "o673": [],
+  "o674": [],
   "o675": [],
   "o676": [
     { "es": "La biblioteca tiene muchos libros.", "en": "The library has many books." }
@@ -1794,7 +1779,7 @@
     { "es": "Mi amigo vive en la ciudad.", "en": "My friend lives in the city." }
   ],
   "o1602": [
-    { "es": "Mi amigo cocina bien.", "en": "My friend cooks well." }
+    { "es": "Mi amigo habla español.", "en": "My friend speaks Spanish." }
   ],
   "o1603": [
     { "es": "¿Quieres venir conmigo?", "en": "Do you want to come with me?" }
@@ -2817,7 +2802,7 @@
     { "es": "Necesito un sacapuntas.", "en": "I need a pencil sharpener." }
   ],
   "o2697": [
-    { "es": "Tengo una calculadora.", "en": "I have a calculator." }
+    { "es": "Necesito la calculadora.", "en": "I need the calculator." }
   ],
   "o2698": [],
   "o2699": [
@@ -3825,12 +3810,8 @@
   ],
   "o4367": [],
   "o4368": [],
-  "o4369": [
-    { "es": "La niña juega.", "en": "The girl plays." }
-  ],
-  "o4370": [
-    { "es": "La chica espera el autobús.", "en": "The young woman waits for the bus." }
-  ],
+  "o4369": [],
+  "o4370": [],
   "o4371": [
     { "es": "El muchacho trabaja.", "en": "The lad works." }
   ],

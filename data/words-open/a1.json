@@ -557,9 +557,9 @@
     "es": "trabajar",
     "en": "to work",
     "hint_en": "My father *works* at home",
-    "sentence_es": "Mi padre trabaja en casa.",
-    "sentence_en": "My father works at home.",
-    "sentence_lemmas": ["mi", "padre", "trabajar", "en", "casa"]
+    "sentence_es": "Mi padre trabaja y no está en casa.",
+    "sentence_en": "My father works and is not at home.",
+    "sentence_lemmas": ["mi", "padre", "trabajar", "y", "no", "estar", "en", "casa"]
   },
   {
     "order": 50,
@@ -1298,9 +1298,9 @@
     "lemma": "carro",
     "es": "el carro / el coche / el auto",
     "en": "car",
-    "sentence_es": "Mi padre tiene un carro nuevo.",
-    "sentence_en": "My father has a new car.",
-    "sentence_lemmas": ["mi", "padre", "tener", "un", "carro", "nuevo"]
+    "sentence_es": "Mi padre va a casa en carro.",
+    "sentence_en": "My father goes home by car.",
+    "sentence_lemmas": ["mi", "padre", "ir", "a", "casa", "en", "carro"]
   },
   {
     "order": 115,
@@ -1508,9 +1508,9 @@
     "lemma": "semana",
     "es": "la semana",
     "en": "week",
-    "sentence_es": "Esta semana tengo mucho trabajo.",
-    "sentence_en": "This week I have a lot of work.",
-    "sentence_lemmas": ["este", "semana", "tener", "mucho", "trabajo"]
+    "sentence_es": "Trabajo cinco días a la semana.",
+    "sentence_en": "I work five days a week.",
+    "sentence_lemmas": ["trabajar", "cinco", "día", "a", "el", "semana"]
   },
   {
     "order": 134,
@@ -1720,9 +1720,9 @@
     "es": "la camisa",
     "en": "shirt",
     "hint_en": "A *shirt* has buttons and a collar",
-    "sentence_es": "Mi padre tiene una camisa nueva.",
-    "sentence_en": "My father has a new shirt.",
-    "sentence_lemmas": ["mi", "padre", "tener", "un", "camisa", "nuevo"]
+    "sentence_es": "La camisa es para el trabajo.",
+    "sentence_en": "The shirt is for work.",
+    "sentence_lemmas": ["el", "camisa", "ser", "para", "el", "trabajo"]
   },
   {
     "order": 604,
@@ -1731,9 +1731,9 @@
     "lemma": "zapato",
     "es": "el zapato",
     "en": "shoe",
-    "sentence_es": "Necesito zapatos nuevos para el trabajo.",
-    "sentence_en": "I need new shoes for work.",
-    "sentence_lemmas": ["necesitar", "zapato", "nuevo", "para", "el", "trabajo"]
+    "sentence_es": "Los zapatos son para la calle.",
+    "sentence_en": "Shoes are for the street.",
+    "sentence_lemmas": ["el", "zapato", "ser", "para", "el", "calle"]
   },
   {
     "order": 605,
@@ -1775,9 +1775,9 @@
     "lemma": "flor",
     "es": "la flor",
     "en": "flower",
-    "sentence_es": "Mi madre compra flores en la tienda.",
-    "sentence_en": "My mother buys flowers at the store.",
-    "sentence_lemmas": ["mi", "madre", "comprar", "flor", "en", "el", "tienda"]
+    "sentence_es": "La flor es bonita, no es comida.",
+    "sentence_en": "The flower is pretty, it is not food.",
+    "sentence_lemmas": ["el", "flor", "ser", "bonito", "no", "ser", "comida"]
   },
   {
     "order": 609,
@@ -2040,9 +2040,9 @@
     "lemma": "cine",
     "es": "el cine",
     "en": "movie theater",
-    "sentence_es": "Hay un cine nuevo en mi ciudad.",
-    "sentence_en": "There is a new movie theater in my city.",
-    "sentence_lemmas": ["haber", "un", "cine", "nuevo", "en", "mi", "ciudad"]
+    "sentence_es": "En el cine hay muchas sillas.",
+    "sentence_en": "There are many seats in the movie theater.",
+    "sentence_lemmas": ["en", "el", "cine", "haber", "mucho", "silla"]
   },
   {
     "order": 633,
@@ -2151,9 +2151,9 @@
     "lemma": "marzo",
     "es": "el marzo",
     "en": "March",
-    "sentence_es": "Tengo un examen en marzo.",
-    "sentence_en": "I have an exam in March.",
-    "sentence_lemmas": ["tener", "un", "examen", "en", "marzo"]
+    "sentence_es": "Hay treinta y un días en marzo.",
+    "sentence_en": "There are thirty-one days in March.",
+    "sentence_lemmas": ["haber", "treinta", "y", "un", "día", "en", "marzo"]
   },
   {
     "order": 643,
@@ -2162,9 +2162,9 @@
     "lemma": "octubre",
     "es": "el octubre",
     "en": "October",
-    "sentence_es": "Mi padre llega en octubre.",
-    "sentence_en": "My father arrives in October.",
-    "sentence_lemmas": ["mi", "padre", "llegar", "en", "octubre"]
+    "sentence_es": "En octubre hay treinta y un días.",
+    "sentence_en": "There are thirty-one days in October.",
+    "sentence_lemmas": ["en", "octubre", "haber", "treinta", "y", "un", "día"]
   },
   {
     "order": 644,
@@ -2173,9 +2173,9 @@
     "lemma": "mayo",
     "es": "el mayo",
     "en": "May",
-    "sentence_es": "Mi amigo llega en mayo.",
-    "sentence_en": "My friend arrives in May.",
-    "sentence_lemmas": ["mi", "amigo", "llegar", "en", "mayo"]
+    "sentence_es": "En mayo no hace frío.",
+    "sentence_en": "It is not cold in May.",
+    "sentence_lemmas": ["en", "mayo", "no", "hacer", "frío"]
   },
   {
     "order": 645,
@@ -2217,9 +2217,9 @@
     "lemma": "dieciséis",
     "es": "dieciséis",
     "en": "sixteen",
-    "sentence_es": "Mi amigo tiene dieciséis años.",
-    "sentence_en": "My friend is sixteen years old.",
-    "sentence_lemmas": ["mi", "amigo", "tener", "dieciséis", "año"]
+    "sentence_es": "Dieciséis es más que quince.",
+    "sentence_en": "Sixteen is more than fifteen.",
+    "sentence_lemmas": ["dieciséis", "ser", "más", "que", "quince"]
   },
   {
     "order": 649,
@@ -2228,9 +2228,9 @@
     "lemma": "diecisiete",
     "es": "diecisiete",
     "en": "seventeen",
-    "sentence_es": "Mi hermano tiene diecisiete años.",
-    "sentence_en": "My brother is seventeen years old.",
-    "sentence_lemmas": ["mi", "hermano", "tener", "diecisiete", "año"]
+    "sentence_es": "Diecisiete es más que dieciséis.",
+    "sentence_en": "Seventeen is more than sixteen.",
+    "sentence_lemmas": ["diecisiete", "ser", "más", "que", "dieciséis"]
   },
   {
     "order": 650,
@@ -2239,9 +2239,9 @@
     "lemma": "dieciocho",
     "es": "dieciocho",
     "en": "eighteen",
-    "sentence_es": "Mi amigo y yo tenemos dieciocho años.",
-    "sentence_en": "My friend and I are eighteen years old.",
-    "sentence_lemmas": ["mi", "amigo", "y", "yo", "tener", "dieciocho", "año"]
+    "sentence_es": "Dieciocho es más que diecisiete.",
+    "sentence_en": "Eighteen is more than seventeen.",
+    "sentence_lemmas": ["dieciocho", "ser", "más", "que", "diecisiete"]
   },
   {
     "order": 651,
@@ -2492,9 +2492,9 @@
     "lemma": "pizza",
     "es": "la pizza",
     "en": "pizza",
-    "sentence_es": "Mi familia come pizza hoy.",
-    "sentence_en": "My family eats pizza today.",
-    "sentence_lemmas": ["mi", "familia", "comer", "pizza", "hoy"]
+    "sentence_es": "La pizza tiene mucho queso.",
+    "sentence_en": "The pizza has a lot of cheese.",
+    "sentence_lemmas": ["el", "pizza", "tener", "mucho", "queso"]
   },
   {
     "order": 674,
@@ -2503,9 +2503,9 @@
     "lemma": "plaza",
     "es": "la plaza",
     "en": "square",
-    "sentence_es": "La plaza de mi ciudad es grande.",
-    "sentence_en": "The square in my city is big.",
-    "sentence_lemmas": ["el", "plaza", "de", "mi", "ciudad", "ser", "grande"]
+    "sentence_es": "La plaza está en el centro.",
+    "sentence_en": "The square is in the center.",
+    "sentence_lemmas": ["el", "plaza", "estar", "en", "el", "centro"]
   },
   {
     "order": 675,
@@ -2860,9 +2860,9 @@
     "lemma": "país",
     "es": "el país",
     "en": "country",
-    "sentence_es": "Mi país es grande y bonito.",
-    "sentence_en": "My country is big and beautiful.",
-    "sentence_lemmas": ["mi", "país", "ser", "grande", "y", "bonito"]
+    "sentence_es": "Un país tiene muchas ciudades.",
+    "sentence_en": "A country has many cities.",
+    "sentence_lemmas": ["un", "país", "tener", "mucho", "ciudad"]
   },
   {
     "order": 255,
@@ -2882,9 +2882,9 @@
     "lemma": "mañana",
     "es": "mañana",
     "en": "tomorrow (as a noun: morning)",
-    "sentence_es": "Mañana vamos a la tienda.",
-    "sentence_en": "Tomorrow we are going to the store.",
-    "sentence_lemmas": ["mañana", "ir", "a", "el", "tienda"]
+    "sentence_es": "Hoy es domingo y mañana es lunes.",
+    "sentence_en": "Today is Sunday and tomorrow is Monday.",
+    "sentence_lemmas": ["hoy", "ser", "domingo", "y", "mañana", "ser", "lunes"]
   },
   {
     "order": 259,
@@ -3195,9 +3195,9 @@
     "lemma": "rápido",
     "es": "rápido / veloz",
     "en": "fast, quick",
-    "sentence_es": "Mi carro es muy rápido.",
-    "sentence_en": "My car is very fast.",
-    "sentence_lemmas": ["mi", "carro", "ser", "muy", "rápido"]
+    "sentence_es": "El tren es más rápido que el autobús.",
+    "sentence_en": "The train is faster than the bus.",
+    "sentence_lemmas": ["el", "tren", "ser", "más", "rápido", "que", "el", "autobús"]
   },
   {
     "order": 174,
@@ -3387,9 +3387,9 @@
     "lemma": "bajar",
     "es": "bajar",
     "en": "to go down, to get off",
-    "sentence_es": "Bajo a la tienda con mi hijo.",
-    "sentence_en": "I go down to the store with my son.",
-    "sentence_lemmas": ["bajar", "a", "el", "tienda", "con", "mi", "hijo"]
+    "sentence_es": "Bajo del autobús en la plaza.",
+    "sentence_en": "I get off the bus at the square.",
+    "sentence_lemmas": ["bajar", "de", "autobús", "en", "el", "plaza"]
   },
   {
     "order": 422,
@@ -4843,9 +4843,9 @@
     "lemma": "chino",
     "es": "chino",
     "en": "Chinese",
-    "sentence_es": "Mi amigo chino cocina muy bien.",
-    "sentence_en": "My Chinese friend (male) cooks very well.",
-    "sentence_lemmas": ["mi", "amigo", "chino", "cocinar", "muy", "bien"]
+    "sentence_es": "Mi amigo chino habla chino y español.",
+    "sentence_en": "My Chinese friend speaks Chinese and Spanish.",
+    "sentence_lemmas": ["mi", "amigo", "chino", "hablar", "chino", "y", "español"]
   },
   {
     "order": 1603,
@@ -4986,9 +4986,9 @@
     "lemma": "calculadora",
     "es": "la calculadora",
     "en": "calculator",
-    "sentence_es": "Tengo una calculadora en la mochila.",
-    "sentence_en": "I have a calculator in my backpack.",
-    "sentence_lemmas": ["tener", "un", "calculadora", "en", "el", "mochila"]
+    "sentence_es": "Necesito la calculadora para el examen.",
+    "sentence_en": "I need the calculator for the exam.",
+    "sentence_lemmas": ["necesitar", "el", "calculadora", "para", "el", "examen"]
   },
   {
     "order": 2699,
@@ -5649,9 +5649,9 @@
     "lemma": "niña",
     "es": "la niña",
     "en": "girl",
-    "sentence_es": "La niña juega en el parque.",
-    "sentence_en": "The girl plays in the park.",
-    "sentence_lemmas": ["el", "niña", "jugar", "en", "el", "parque"]
+    "sentence_es": "Una niña es una mujer pequeña.",
+    "sentence_en": "A girl is a little woman.",
+    "sentence_lemmas": ["un", "niña", "ser", "un", "mujer", "pequeño"]
   },
   {
     "order": 4370,
@@ -5660,9 +5660,9 @@
     "lemma": "chica",
     "es": "la chica",
     "en": "young woman",
-    "sentence_es": "La chica espera el autobús en la plaza.",
-    "sentence_en": "The young woman waits for the bus in the square.",
-    "sentence_lemmas": ["el", "chica", "esperar", "el", "autobús", "en", "el", "plaza"]
+    "sentence_es": "Una chica es una mujer joven.",
+    "sentence_en": "A girl is a young woman.",
+    "sentence_lemmas": ["un", "chica", "ser", "un", "mujer", "joven"]
   },
   {
     "order": 4373,
