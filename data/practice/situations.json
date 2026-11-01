@@ -31,24 +31,29 @@
     ],
     "patterns": [
       {
-        "es": "Tengo + número + sustantivo",
+        "title": { "en": "Tengo + number + noun", "es": "Tengo + número + sustantivo", "hu": "Tengo + szám + főnév" },
         "example": "Tengo dos hermanos.",
         "en": "I have + number + noun: what you have.",
         "hu": "Tengo + szám + főnév: ami neked van (van két testvérem)."
       },
       {
-        "es": "¿Tienes…? → Sí, tengo… / No, no tengo…",
+        "title": {
+          "en": "¿Tienes…? → Sí, tengo… / No, no tengo…",
+          "es": "¿Tienes…? → Sí, tengo… / No, no tengo…",
+          "hu": "¿Tienes…? → Sí, tengo… / No, no tengo…"
+        },
         "example": "¿Tienes hermanos? No, no tengo hermanos.",
         "en": "Answer a tienes question with tengo; no comes before the verb.",
         "hu": "A tienes-kérdésre tengo-val felelsz; a no az ige elé kerül."
       },
       {
-        "es": "tener + número + años",
+        "title": { "en": "tener + number + años", "es": "tener + número + años", "hu": "tener + szám + años" },
         "example": "Mi hermano tiene treinta años.",
         "en": "Age uses tener: he has thirty years.",
         "hu": "Az életkor a tener igével megy: harminc évet birtokol = harmincéves."
       }
     ],
+    "distractors": ["tienes", "dónde"],
     "lines": [
       {
         "speaker": "other",
@@ -61,7 +66,11 @@
           "Sí, tengo una hermana.",
           "Sí, tengo dos hermanos.",
           "Sí, tengo dos hermanas.",
-          "No, no tengo hermanos."
+          "No, no tengo hermanos.",
+          "Tengo un hermano y una hermana.",
+          "Tengo un hermano.",
+          "Tengo una hermana.",
+          "No tengo hermanos."
         ]
       },
       {

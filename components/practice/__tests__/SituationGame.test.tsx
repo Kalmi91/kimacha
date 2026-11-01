@@ -21,7 +21,7 @@ import {
   type SituationStep,
 } from '@/lib/practice/situations';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
-import { speak } from '@/lib/speech';
+import { speak, stopSpeaking } from '@/lib/speech';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { makeFlush } from '@/test-utils/flush';
 
@@ -29,6 +29,7 @@ jest.setTimeout(60000);
 
 const { __emit } = require('expo-speech-recognition') as { __emit: (name: string, payload?: unknown) => void };
 const mockSpeak = speak as jest.Mock;
+const mockStopSpeaking = stopSpeaking as jest.Mock;
 const flush = makeFlush(20);
 
 const family = SITUATIONS[0];
@@ -61,7 +62,9 @@ const heardFinal = (transcript: string) => emit('result', { isFinal: true, resul
 
 beforeEach(async () => {
   mockSpeak.mockClear();
+  mockStopSpeaking.mockClear();
   (ExpoSpeechRecognitionModule.start as jest.Mock).mockClear();
+  (ExpoSpeechRecognitionModule.abort as jest.Mock).mockClear();
   (ExpoSpeechRecognitionModule.isRecognitionAvailable as jest.Mock).mockReturnValue(true);
   await getDb().resetPcicCards();
   await getDb().setOnboarding('en', 'es');
@@ -80,7 +83,7 @@ describe('Situations: words, structures', () => {
     fireEvent.press(view.getByTestId('situations-speak'));
     expect(mockSpeak).toHaveBeenCalledWith('tener', 'es-MX');
     for (let i = 0; i < 15; i++) await press(view, 'situations-next');
-    expect(view.getByTestId('situations-card-pattern').props.children).toBe('Tengo + número + sustantivo');
+    expect(view.getByTestId('situations-card-pattern').props.children).toBe('Tengo + number + noun');
     expect(view.getByText('I have + number + noun: what you have.')).toBeTruthy();
     expect(view.getByText('1/3')).toBeTruthy();
     expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
@@ -101,6 +104,17 @@ describe('Situations: words, structures', () => {
     expect(view.getByText('van (valakinek)')).toBeTruthy();
     expect(view.getByText('Új szavak')).toBeTruthy();
     view.unmount();
+    // the pattern is titled in the learner's language
+    await saveRun(at('patterns', { index: 0 }));
+    const patterns = await mount();
+    expect(patterns.getByTestId('situations-card-pattern').props.children).toBe('Tengo + szám + főnév');
+    expect(patterns.getByText('Tengo + szám + főnév: ami neked van (van két testvérem).')).toBeTruthy();
+    patterns.unmount();
+    // and the build step is called what the other build steps are called
+    await saveRun(at('build'));
+    const build = await mount();
+    expect(build.getByText('Építsd fel a mondatot')).toBeTruthy();
+    build.unmount();
   });
 
   it('no situation for another target language: the empty state', async () => {
@@ -202,6 +216,69 @@ describe('Situations: say it', () => {
     expect(view.getByText('Correct!')).toBeTruthy();
     expect(view.getByTestId('situations-next')).toBeTruthy();
     expect(await savedRun()).toMatchObject({ index: 1, done: true, scores: { say: 1 } });
+    view.unmount();
+  });
+
+  it('nothing heard (no-speech, speech-timeout) or another hiccup: a hint to try again, typing is not forced', async () => {
+    await saveRun(at('say', { index: 0 }));
+    const view = await mount();
+    await emit('error', { error: 'speech-timeout', message: 'nothing said' });
+    expect(view.getByTestId('situations-mic-error').props.children).toBe('Nothing heard. Tap the mic again, or type it.');
+    await emit('error', { error: 'no-speech', message: 'nothing said' });
+    expect(view.getByTestId('situations-mic-error').props.children).toBe('Nothing heard. Tap the mic again, or type it.');
+    await emit('error', { error: 'network', message: 'offline' });
+    expect(view.getByTestId('situations-mic-error').props.children).toBe('The microphone did not work this time. Tap it again, or type it.');
+    await emit('error', { error: 'busy', message: 'busy' });
+    expect(view.getByTestId('situations-mic-error').props.children).toBe('The microphone did not work this time. Tap it again, or type it.');
+    expect(view.queryByTestId('situations-type-input')).toBeNull();
+    expect(view.getByTestId('situations-mic')).toBeTruthy();
+    expect(view.getByTestId('situations-type')).toBeTruthy();
+    // only a microphone that cannot be used switches to typing
+    await emit('error', { error: 'audio-capture', message: 'no input' });
+    expect(view.getByTestId('situations-type-input')).toBeTruthy();
+    expect(view.getByTestId('situations-mic-error').props.children).toBe('The microphone is not available. Type it instead.');
+    view.unmount();
+    for (const error of ['service-not-allowed', 'language-not-supported']) {
+      const other = await mount();
+      await emit('error', { error, message: 'x' });
+      expect(other.getByTestId('situations-type-input')).toBeTruthy();
+      other.unmount();
+    }
+  });
+
+  it('the read-aloud stops before the microphone opens; a result that is still on its way cannot land after the answer was typed; the error goes with the line', async () => {
+    await saveRun(at('say', { index: 0 }));
+    const view = await mount();
+    mockStopSpeaking.mockClear();
+    await press(view, 'situations-mic');
+    const starts = (ExpoSpeechRecognitionModule.start as jest.Mock).mock.invocationCallOrder[0];
+    expect(mockStopSpeaking).toHaveBeenCalled();
+    expect(mockStopSpeaking.mock.invocationCallOrder[0]).toBeLessThan(starts);
+    await emit('start');
+    await press(view, 'situations-type');
+    await type(view, 'tienes hermanos');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(ExpoSpeechRecognitionModule.abort).toHaveBeenCalled();
+    await heardFinal('hola que tal');
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ index: 0, done: true, wrong: 0, scores: { say: 1 } });
+    // an error of this line is not shown on the next one
+    await emit('error', { error: 'not-allowed', message: 'denied' });
+    await press(view, 'situations-next');
+    expect(view.queryByTestId('situations-mic-error')).toBeNull();
+    expect(await savedRun()).toMatchObject({ index: 1, done: false, wrong: 0 });
+    view.unmount();
+  });
+
+  it('a result with a wrong number is wrong in Say it (the line has to be said as it is), and right with the number of the line', async () => {
+    await saveRun(at('say', { index: 5 }));
+    const view = await mount();
+    await press(view, 'situations-type');
+    await type(view, 'mi hermano tiene 2 años');
+    expect(view.getByText('Wrong')).toBeTruthy();
+    expect(view.getAllByTestId('situations-said-wrong')).toHaveLength(1);
+    await type(view, 'mi hermano tiene 30 años');
+    expect(view.getByText('Correct!')).toBeTruthy();
     view.unmount();
   });
 

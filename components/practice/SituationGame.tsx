@@ -44,7 +44,7 @@ import {
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
 import { learnedEntries, tileWords } from '@/lib/sentenceCards';
 import { speak, stopSpeaking } from '@/lib/speech';
-import { recognitionAvailable, useRecognizer } from '@/lib/speechRecognition';
+import { isMicOffError, isNothingHeardError, recognitionAvailable, useRecognizer } from '@/lib/speechRecognition';
 import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 import { useTheme } from '@/lib/ThemeContext';
@@ -123,11 +123,6 @@ export default function SituationGame() {
     // the run is dropped on the summary, so the next visit starts a new one
     void saveResumeValue(getDb(), SITUATIONS_MODE, next.step === 'summary' ? null : savedSituation(next));
   };
-  const reset = () => {
-    setTyped('');
-    setHeard(null);
-  };
-
   // The line of the current Build / Say it / Questions item, and what may be said to it.
   const lineIndex = (() => {
     if (!situation || !state) return -1;
@@ -142,14 +137,28 @@ export default function SituationGame() {
     if (asking) speak(asking, speechLang('es'));
   }, [asking]);
 
+  // What was said (the recognizer's final result) or typed is judged.
   const submitSpoken = (text: string) => {
     if (!situation || !state || !line || state.done || !text.trim()) return;
     Keyboard.dismiss();
-    const match = matchSpoken(text, state.step === 'questions' ? (line.answers ?? []) : [line.es]);
+    // Say it wants the number of the line, Questions take any number
+    const match = matchSpoken(text, state.step === 'questions' ? (line.answers ?? []) : [line.es], { anyNumber: state.step === 'questions' });
     setHeard({ text, match });
     apply(answerSituation(state, situation, match.right));
   };
   const rec = useRecognizer(speechLang('es'), submitSpoken);
+  // A typed answer closes the microphone: a result that is still on its way must not land on the next line.
+  const submitTyped = (text: string) => {
+    rec.abort();
+    submitSpoken(text);
+  };
+  // a new item: the typed text, the verdict, the microphone and its error are cleared
+  const reset = () => {
+    rec.abort();
+    rec.reset();
+    setTyped('');
+    setHeard(null);
+  };
 
   if (!loaded) return null;
   if (!situation || !state) return <GameEmpty mode={SITUATIONS_MODE} target={target} text={sx.empty} />;
@@ -198,12 +207,14 @@ export default function SituationGame() {
 
   const size = stepSize(state, situation, step);
   const position = Math.min(state.index + 1, size);
-  const typing = typingOpen || !micOk || (rec.error !== null && rec.error !== 'no-speech');
+  // typing is offered at once when the microphone cannot be used; any other error is just a hint to try again
+  const micOff = rec.error !== null && isMicOffError(rec.error);
+  const typing = typingOpen || !micOk || micOff;
   const speaking = step === 'say' || step === 'questions';
   let dock: GameDock | undefined;
   if (step === 'words' || step === 'patterns' || state.done) dock = nextDock;
   else if (speaking && typing) {
-    dock = { testID: 'situations-check', label: `✓ ${s.card.check}`, tone: 'check', onPress: () => submitSpoken(typed), disabled: !typed.trim() };
+    dock = { testID: 'situations-check', label: `✓ ${s.card.check}`, tone: 'check', onPress: () => submitTyped(typed), disabled: !typed.trim() };
   }
 
   const card = { classicStyle: styles.card, boxStyle: styles.brutalCard };
@@ -245,8 +256,8 @@ export default function SituationGame() {
 
         {pattern && (
           <Card {...card}>
-            <Text testID="situations-card-pattern" style={[styles.big, { color: colors.text }]}>{pattern.es}</Text>
-            <Text testID="situations-card-explanation" style={[styles.meaning, { color: colors.textMuted }]}>{pattern[source]}</Text>
+            <Text testID="situations-card-pattern" style={[styles.big, { color: colors.text }]}>{pattern.title[source]}</Text>
+            <Text testID="situations-card-explanation" style={[styles.meaning, { color: colors.textMuted }]}>{source === 'hu' ? pattern.hu : pattern.en}</Text>
             <Text testID="situations-card-example" style={[styles.lineText, { color: colors.text }]}>{pattern.example}</Text>
             <SpeakButton testID="situations-speak" accessibilityLabel={sx.listen} onPress={() => say(pattern.example)} style={styles.speakBtn} iconStyle={styles.speakIcon} />
           </Card>
@@ -334,6 +345,7 @@ export default function SituationGame() {
                   onPress={() => {
                     if (rec.listening) rec.stop();
                     else {
+                      stopSpeaking();
                       setHeard(null);
                       void rec.start();
                     }
@@ -345,7 +357,11 @@ export default function SituationGame() {
                 <Text style={[styles.micLabel, { color: colors.text }]}>{rec.listening ? sx.listening : sx.sayIt}</Text>
               </View>
             )}
-            {rec.error && !state.done && <Text testID="situations-mic-error" style={[styles.hint, { color: colors.textMuted }]}>{rec.error === 'no-speech' ? sx.micMiss : sx.micOff}</Text>}
+            {rec.error && !state.done && (
+              <Text testID="situations-mic-error" style={[styles.hint, { color: colors.textMuted }]}>
+                {micOff ? sx.micOff : isNothingHeardError(rec.error) ? sx.micMiss : sx.micRetry}
+              </Text>
+            )}
             {!state.done && micOk && !typing && (
               <Pressable testID="situations-type" accessibilityRole="button" onPress={() => setTypingOpen(true)} style={styles.link}>
                 <Text style={[styles.linkText, { color: colors.tint }]}>{sx.typeInstead}</Text>
@@ -359,7 +375,7 @@ export default function SituationGame() {
                 placeholderTextColor={colors.tabIconDefault}
                 value={typed}
                 onChangeText={setTyped}
-                onSubmitEditing={() => submitSpoken(typed)}
+                onSubmitEditing={() => submitTyped(typed)}
                 {...answerInputProps}
               />
             )}

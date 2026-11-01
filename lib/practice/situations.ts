@@ -25,9 +25,9 @@ export interface SituationWord {
   hu: string;
 }
 
-/** A structure the situation practises: the pattern (`es`), an example sentence and the explanation per language. */
+/** A structure the situation practises: the pattern (`title`, in the learner's language), an example sentence and the explanation. */
 export interface SituationPattern {
-  es: string;
+  title: SituationText;
   example: string;
   en: string;
   hu: string;
@@ -51,6 +51,8 @@ export interface Situation {
   setting: SituationText;
   words: SituationWord[];
   patterns: SituationPattern[];
+  /** The 2 words of the dialogue that are added to the gap words in the Fill in word bank (wrong, but they look right). */
+  distractors: string[];
   lines: SituationLine[];
   /** Indexes of the lines of the Build step. */
   build: number[];
@@ -84,25 +86,23 @@ export function questionLines(s: Situation): number[] {
   return s.lines.flatMap((l, i) => (l.speaker === 'other' && l.answers?.length ? [i] : []));
 }
 
-// Words of the other lines that look like a wrong answer without being one: long enough to be a word, not a proper noun.
-function distractors(s: Situation, sentences: string[], exclude: ReadonlySet<string>): string[] {
+// Words of the other lines for the trap tiles: long enough to be a word, not a proper noun.
+function otherWords(s: Situation, sentences: string[], exclude: ReadonlySet<string>): string[] {
   const proper = new Set(s.words.filter((w) => w.es !== w.es.toLowerCase()).map((w) => w.es.toLowerCase()));
   const tokens = sentences.flatMap((sentence) => sentenceTokens(sentence, 'es'));
   return [...new Set(tokens)].filter((w) => w.length > 3 && !exclude.has(w) && !proper.has(w));
 }
 
-/** The word bank of the Fill in step: the gap words and 2 other words of the dialogue, shuffled (the same seed, the same order). */
+/** The word bank of the Fill in step: the gap words and the situation's own distractors, shuffled (the same seed, the same order). */
 export function fillBank(s: Situation, seed: number): string[] {
-  const gaps = fillGaps(s).map((g) => g.word.toLowerCase());
-  const extra = shuffleArray(distractors(s, s.lines.map((l) => l.es), new Set(gaps)), seed).slice(0, 2);
-  return shuffleArray([...gaps, ...extra], seed + 1);
+  return shuffleArray([...fillGaps(s).map((g) => g.word.toLowerCase()), ...s.distractors.map((w) => w.toLowerCase())], seed);
 }
 
 /** The 2 trap tiles of a Build line: words of the other lines that are not in this one. */
 export function buildTraps(s: Situation, lineIndex: number, seed: number): string[] {
   const own = new Set(tileWords(s.lines[lineIndex].es).map((w) => w.toLowerCase()));
   const others = s.lines.filter((_, i) => i !== lineIndex).map((l) => l.es);
-  return shuffleArray(distractors(s, others, own), seed + lineIndex).slice(0, 2);
+  return shuffleArray(otherWords(s, others, own), seed + lineIndex).slice(0, 2);
 }
 
 export type SituationPart = 'fill' | 'build' | 'say' | 'questions';

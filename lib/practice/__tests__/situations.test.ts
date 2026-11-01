@@ -31,7 +31,11 @@ describe('data/practice/situations.json', () => {
     for (const text of [s.title, s.setting]) for (const lang of ['en', 'es', 'hu'] as const) expect(text[lang].trim()).not.toBe('');
     for (const l of s.lines) for (const lang of ['en', 'es', 'hu'] as const) expect(l[lang].trim()).not.toBe('');
     for (const w of s.words) for (const lang of ['en', 'es', 'hu'] as const) expect(w[lang].trim()).not.toBe('');
-    for (const p of s.patterns) for (const lang of ['en', 'es', 'hu'] as const) expect(p[lang].trim()).not.toBe('');
+    for (const p of s.patterns) {
+      for (const lang of ['en', 'es', 'hu'] as const) expect(p.title[lang].trim()).not.toBe('');
+      expect(p.en.trim()).not.toBe('');
+      expect(p.hu.trim()).not.toBe('');
+    }
   });
 
   it.each(SITUATIONS.map((s) => [s.id, s] as const))('%s: every token of the lines and the answers is one of the situation\'s own forms or a free word', (_id, s) => {
@@ -60,6 +64,28 @@ describe('data/practice/situations.json', () => {
       expect(next?.speaker).toBe('me');
       expect(s.lines[i].answers![0]).toBe(next.es);
     }
+  });
+
+  it.each(SITUATIONS.map((s) => [s.id, s] as const))('%s: the distractors are words of the dialogue that fit no gap', (_id, s) => {
+    expect(s.distractors.length).toBeGreaterThan(0);
+    const tokens = new Set(s.lines.flatMap((l) => sentenceTokens(l.es, 'es')));
+    const gaps = fillGaps(s).map((g) => g.word.toLowerCase());
+    for (const w of s.distractors) {
+      expect(tokens.has(w.toLowerCase())).toBe(true);
+      expect(gaps).not.toContain(w.toLowerCase());
+    }
+  });
+
+  it('the family lunch: the first question has the model answer first, then the short forms and the ones without "sí"', () => {
+    const answers = family.lines[0].answers!;
+    expect(answers[0]).toBe('Sí, tengo un hermano y una hermana.');
+    expect(answers).toEqual(expect.arrayContaining([
+      'Tengo un hermano y una hermana.',
+      'Tengo un hermano.',
+      'Tengo una hermana.',
+      'No tengo hermanos.',
+      'No, no tengo hermanos.',
+    ]));
   });
 
   it('the family lunch: 6 lines, gaps tengo / viven / años, build of lines 2, 4 and 6, 3 questions', () => {
@@ -97,16 +123,20 @@ describe('situationsFor, the gate, the unknown words', () => {
 });
 
 describe('the word bank and the trap tiles', () => {
-  it('the bank is the 3 gap words and 2 other words of the dialogue, in a fixed order per seed', () => {
+  it('the bank is the 3 gap words and the curated distractors (tienes, dónde), in a fixed order per seed', () => {
+    expect(family.distractors).toEqual(['tienes', 'dónde']);
     const bank = fillBank(family, 7);
     expect(bank).toHaveLength(5);
-    for (const gap of ['tengo', 'viven', 'años']) expect(bank).toContain(gap);
-    const tokens = new Set(family.lines.flatMap((l) => sentenceTokens(l.es, 'es')));
-    for (const w of bank) expect(tokens.has(w)).toBe(true);
+    expect([...bank].sort()).toEqual(['años', 'dónde', 'tengo', 'tienes', 'viven']);
     expect(fillBank(family, 7)).toEqual(bank);
-    expect(new Set(bank).size).toBe(5);
-    // no proper noun in lower case
-    expect(bank).not.toContain('hungría');
+    // not picked at random: every seed gives the same five words
+    for (const seed of [1, 2, 3, 99]) expect([...fillBank(family, seed)].sort()).toEqual([...bank].sort());
+    // another seed may order them differently
+    expect(new Set([1, 2, 3, 4, 5, 6].map((seed) => fillBank(family, seed).join())).size).toBeGreaterThan(1);
+  });
+
+  it('a situation without distractors has a bank of just its gap words', () => {
+    expect([...fillBank({ ...family, distractors: [] }, 3)].sort()).toEqual(['años', 'tengo', 'viven']);
   });
 
   it('2 traps per build line, none of them in the line', () => {

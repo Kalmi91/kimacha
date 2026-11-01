@@ -189,6 +189,7 @@ const es: typeof en = {
       typeInstead: 'Escríbelo mejor',
       micOff: 'El micrófono no está disponible. Escríbelo.',
       micMiss: 'No se oyó nada. Toca el micrófono otra vez o escríbelo.',
+      micRetry: 'El micrófono no funcionó esta vez. Tócalo otra vez o escríbelo.',
       heard: (text: string) => `Oí: «${text}»`,
       model: (answer: string) => `Una buena respuesta: ${answer}`,
       answerHint: 'Responde en español',

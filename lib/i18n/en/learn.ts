@@ -217,6 +217,7 @@ export default {
       typeInstead: 'Type it instead',
       micOff: 'The microphone is not available. Type it instead.',
       micMiss: 'Nothing heard. Tap the mic again, or type it.',
+      micRetry: 'The microphone did not work this time. Tap it again, or type it.',
       heard: (text: string) => `I heard: “${text}”`,
       model: (answer: string) => `A good answer: ${answer}`,
       answerHint: 'Answer in Spanish',
