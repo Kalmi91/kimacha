@@ -4786,9 +4786,9 @@
     "lemma": "sandalias",
     "es": "las sandalias",
     "en": "sandals",
-    "sentence_es": "En verano llevo sandalias.",
-    "sentence_en": "In summer I wear sandals.",
-    "sentence_lemmas": ["en", "verano", "llevar", "sandalias"]
+    "sentence_es": "En verano llevo sandalias porque hace calor.",
+    "sentence_en": "In summer I wear sandals because it is hot.",
+    "sentence_lemmas": ["en", "verano", "llevar", "sandalias", "porque", "hacer", "calor"]
   },
   {
     "order": 1537,
@@ -5682,9 +5682,9 @@
     "lemma": "equivocarse",
     "es": "equivocarse",
     "en": "to make a mistake, to get wrong",
-    "sentence_es": "Me equivoqué de calle.",
-    "sentence_en": "I took the wrong street.",
-    "sentence_lemmas": ["me", "equivocarse", "de", "calle"]
+    "sentence_es": "Me equivoqué de calle y no llego a casa.",
+    "sentence_en": "I took the wrong street and I do not get home.",
+    "sentence_lemmas": ["me", "equivocarse", "de", "calle", "y", "no", "llegar", "a", "casa"]
   },
   {
     "order": 1642,
@@ -5805,9 +5805,9 @@
     "lemma": "sudar",
     "es": "sudar",
     "en": "to sweat",
-    "sentence_es": "Sudo mucho cuando corro.",
-    "sentence_en": "I sweat a lot when I run.",
-    "sentence_lemmas": ["sudar", "mucho", "cuando", "correr"]
+    "sentence_es": "Sudo mucho cuando corro en el parque.",
+    "sentence_en": "I sweat a lot when I run in the park.",
+    "sentence_lemmas": ["sudar", "mucho", "cuando", "correr", "en", "el", "parque"]
   },
   {
     "order": 1653,
@@ -5970,9 +5970,9 @@
     "lemma": "muela",
     "es": "la muela",
     "en": "molar",
-    "sentence_es": "Tengo una muela mala.",
-    "sentence_en": "I have a bad tooth.",
-    "sentence_lemmas": ["tener", "un", "muela", "malo"]
+    "sentence_es": "Con una muela mala no puedo comer.",
+    "sentence_en": "With a bad molar I cannot eat.",
+    "sentence_lemmas": ["con", "un", "muela", "malo", "no", "poder", "comer"]
   },
   {
     "order": 1668,
@@ -6058,9 +6058,9 @@
     "lemma": "resfriado",
     "es": "el resfriado",
     "en": "common cold",
-    "sentence_es": "Tengo un resfriado fuerte.",
-    "sentence_en": "I have a bad cold.",
-    "sentence_lemmas": ["tener", "un", "resfriado", "fuerte"]
+    "sentence_es": "Con el resfriado tengo tos y mucho sueño.",
+    "sentence_en": "With a cold I have a cough and I am very sleepy.",
+    "sentence_lemmas": ["con", "el", "resfriado", "tener", "tos", "y", "mucho", "sueño"]
   },
   {
     "order": 1676,
@@ -6146,9 +6146,9 @@
     "lemma": "papaya",
     "es": "la papaya",
     "en": "papaya",
-    "sentence_es": "Desayuno papaya con limón.",
-    "sentence_en": "I eat papaya with lime for breakfast.",
-    "sentence_lemmas": ["desayunar", "papaya", "con", "limón"]
+    "sentence_es": "La papaya es naranja por dentro y muy dulce.",
+    "sentence_en": "The papaya is orange on the inside and very sweet.",
+    "sentence_lemmas": ["el", "papaya", "ser", "naranja", "por", "dentro", "y", "muy", "dulce"]
   },
   {
     "order": 1684,
@@ -6190,9 +6190,9 @@
     "lemma": "avena",
     "es": "la avena",
     "en": "oatmeal, oats",
-    "sentence_es": "Desayunamos avena con fruta.",
-    "sentence_en": "We have oatmeal with fruit for breakfast.",
-    "sentence_lemmas": ["desayunar", "avena", "con", "fruta"]
+    "sentence_es": "Desayunamos avena con leche y fruta.",
+    "sentence_en": "We have oatmeal with milk and fruit for breakfast.",
+    "sentence_lemmas": ["desayunar", "avena", "con", "leche", "y", "fruta"]
   },
   {
     "order": 1688,
@@ -6412,9 +6412,9 @@
     "lemma": "cuerda",
     "es": "la cuerda",
     "en": "rope, cord",
-    "sentence_es": "Necesito una cuerda larga.",
-    "sentence_en": "I need a long rope.",
-    "sentence_lemmas": ["necesitar", "un", "cuerda", "largo"]
+    "sentence_es": "Los niños juegan con una cuerda en el patio.",
+    "sentence_en": "The children play with a rope in the yard.",
+    "sentence_lemmas": ["el", "niño", "jugar", "con", "un", "cuerda", "en", "el", "patio"]
   },
   {
     "order": 1708,
@@ -6479,9 +6479,9 @@
     "lemma": "timbre",
     "es": "el timbre",
     "en": "doorbell, buzzer",
-    "sentence_es": "Alguien toca el timbre.",
-    "sentence_en": "Someone rings the doorbell.",
-    "sentence_lemmas": ["alguien", "tocar", "el", "timbre"]
+    "sentence_es": "Alguien toca el timbre y yo abro la puerta.",
+    "sentence_en": "Someone rings the doorbell and I open the door.",
+    "sentence_lemmas": ["alguien", "tocar", "el", "timbre", "y", "yo", "abrir", "el", "puerta"]
   },
   {
     "order": 1714,
@@ -6534,9 +6534,9 @@
     "lemma": "castillo",
     "es": "el castillo",
     "en": "castle",
-    "sentence_es": "Visitamos un castillo viejo.",
-    "sentence_en": "We visited an old castle.",
-    "sentence_lemmas": ["visitar", "un", "castillo", "viejo"]
+    "sentence_es": "Un rey vive en un castillo muy grande.",
+    "sentence_en": "A king lives in a very big castle.",
+    "sentence_lemmas": ["un", "rey", "vivir", "en", "un", "castillo", "muy", "grande"]
   },
   {
     "order": 1719,
@@ -6843,9 +6843,9 @@
     "lemma": "periodista",
     "es": "el periodista",
     "en": "journalist",
-    "sentence_es": "Mi amiga es periodista.",
-    "sentence_en": "My friend is a journalist.",
-    "sentence_lemmas": ["mi", "amigo", "ser", "periodista"]
+    "sentence_es": "La periodista habla con la gente y escribe.",
+    "sentence_en": "The journalist talks with people and writes.",
+    "sentence_lemmas": ["el", "periodista", "hablar", "con", "el", "gente", "y", "escribir"]
   },
   {
     "order": 1747,
@@ -7141,9 +7141,9 @@
     "lemma": "anteayer",
     "es": "anteayer",
     "en": "day before yesterday",
-    "sentence_es": "Anteayer fuimos al cine.",
-    "sentence_en": "The day before yesterday we went to the movies.",
-    "sentence_lemmas": ["anteayer", "ir", "a", "cine"]
+    "sentence_es": "Ayer fue lunes y anteayer fue domingo.",
+    "sentence_en": "Yesterday was Monday and the day before yesterday was Sunday.",
+    "sentence_lemmas": ["ayer", "ser", "lunes", "y", "anteayer", "ser", "domingo"]
   },
   {
     "order": 1774,
@@ -7760,9 +7760,9 @@
     "lemma": "loro",
     "es": "el loro",
     "en": "parrot",
-    "sentence_es": "El loro habla español.",
-    "sentence_en": "The parrot speaks Spanish.",
-    "sentence_lemmas": ["el", "loro", "hablar", "español"]
+    "sentence_es": "El loro habla español con mi abuelo.",
+    "sentence_en": "The parrot speaks Spanish with my grandfather.",
+    "sentence_lemmas": ["el", "loro", "hablar", "español", "con", "mi", "abuelo"]
   },
   {
     "order": 2151,
@@ -7793,9 +7793,9 @@
     "lemma": "zorro",
     "es": "el zorro",
     "en": "fox",
-    "sentence_es": "El zorro come gallinas.",
-    "sentence_en": "The fox eats chickens.",
-    "sentence_lemmas": ["el", "zorro", "comer", "gallina"]
+    "sentence_es": "El zorro vive en el bosque y come gallinas.",
+    "sentence_en": "The fox lives in the forest and eats hens.",
+    "sentence_lemmas": ["el", "zorro", "vivir", "en", "el", "bosque", "y", "comer", "gallina"]
   },
   {
     "order": 2155,
@@ -7804,9 +7804,9 @@
     "lemma": "ardilla",
     "es": "la ardilla",
     "en": "squirrel",
-    "sentence_es": "La ardilla come cacahuates.",
-    "sentence_en": "The squirrel eats peanuts.",
-    "sentence_lemmas": ["el", "ardilla", "comer", "cacahuate"]
+    "sentence_es": "La ardilla es pequeña y come cacahuates.",
+    "sentence_en": "The squirrel is small and eats peanuts.",
+    "sentence_lemmas": ["el", "ardilla", "ser", "pequeño", "y", "comer", "cacahuate"]
   },
   {
     "order": 2156,
@@ -7936,9 +7936,9 @@
     "lemma": "cocodrilo",
     "es": "el cocodrilo",
     "en": "crocodile",
-    "sentence_es": "El cocodrilo come pescado.",
-    "sentence_en": "The crocodile eats fish.",
-    "sentence_lemmas": ["el", "cocodrilo", "comer", "pescado"]
+    "sentence_es": "El cocodrilo nada en el agua y come pescado.",
+    "sentence_en": "The crocodile swims in the water and eats fish.",
+    "sentence_lemmas": ["el", "cocodrilo", "nadar", "en", "el", "agua", "y", "comer", "pescado"]
   },
   {
     "order": 2170,
@@ -8134,9 +8134,9 @@
     "lemma": "crayón",
     "es": "el crayón",
     "en": "crayon",
-    "sentence_es": "Quiero un crayón azul.",
-    "sentence_en": "I want a blue crayon.",
-    "sentence_lemmas": ["querer", "un", "crayón", "azul"]
+    "sentence_es": "Dibujo un sol con un crayón amarillo.",
+    "sentence_en": "I draw a sun with a yellow crayon.",
+    "sentence_lemmas": ["dibujar", "un", "sol", "con", "un", "crayón", "amarillo"]
   },
   {
     "order": 2192,
@@ -8233,9 +8233,9 @@
     "lemma": "estornudar",
     "es": "estornudar",
     "en": "to sneeze",
-    "sentence_es": "Estornudo mucho en primavera.",
-    "sentence_en": "I sneeze a lot in spring.",
-    "sentence_lemmas": ["estornudar", "mucho", "en", "primavera"]
+    "sentence_es": "Estornudo mucho en primavera por las flores.",
+    "sentence_en": "I sneeze a lot in spring because of the flowers.",
+    "sentence_lemmas": ["estornudar", "mucho", "en", "primavera", "por", "el", "flor"]
   },
   {
     "order": 2203,
@@ -8322,9 +8322,9 @@
     "lemma": "crudo",
     "es": "crudo",
     "en": "raw",
-    "sentence_es": "El pollo está crudo.",
-    "sentence_en": "The chicken is raw.",
-    "sentence_lemmas": ["el", "pollo", "estar", "crudo"]
+    "sentence_es": "El pollo crudo no se come.",
+    "sentence_en": "Raw chicken is not eaten.",
+    "sentence_lemmas": ["el", "pollo", "crudo", "no", "se", "comer"]
   },
   {
     "order": 2218,
@@ -8333,9 +8333,9 @@
     "lemma": "congelado",
     "es": "congelado",
     "en": "frozen",
-    "sentence_es": "El pescado está congelado.",
-    "sentence_en": "The fish is frozen.",
-    "sentence_lemmas": ["el", "pescado", "estar", "congelado"]
+    "sentence_es": "El pescado congelado está muy frío.",
+    "sentence_en": "Frozen fish is very cold.",
+    "sentence_lemmas": ["el", "pescado", "congelado", "estar", "muy", "frío"]
   },
   {
     "order": 2220,
@@ -10798,9 +10798,9 @@
     "lemma": "granola",
     "es": "la granola",
     "en": "granola",
-    "sentence_es": "Como granola con yogur.",
-    "sentence_en": "I eat granola with yogurt.",
-    "sentence_lemmas": ["comer", "granola", "con", "yogur"]
+    "sentence_es": "Como granola con yogur y fruta.",
+    "sentence_en": "I eat granola with yogurt and fruit.",
+    "sentence_lemmas": ["comer", "granola", "con", "yogur", "y", "fruta"]
   },
   {
     "order": 2784,
@@ -10842,9 +10842,9 @@
     "lemma": "vainilla",
     "es": "la vainilla",
     "en": "vanilla",
-    "sentence_es": "Quiero helado de vainilla.",
-    "sentence_en": "I want vanilla ice cream.",
-    "sentence_lemmas": ["querer", "helado", "de", "vainilla"]
+    "sentence_es": "Quiero un helado de vainilla con chocolate.",
+    "sentence_en": "I want a vanilla ice cream with chocolate.",
+    "sentence_lemmas": ["querer", "un", "helado", "de", "vainilla", "con", "chocolate"]
   },
   {
     "order": 2788,
@@ -10853,9 +10853,9 @@
     "lemma": "cilantro",
     "es": "el cilantro",
     "en": "cilantro",
-    "sentence_es": "Los tacos llevan cilantro.",
-    "sentence_en": "The tacos have cilantro.",
-    "sentence_lemmas": ["el", "taco", "llevar", "cilantro"]
+    "sentence_es": "Los tacos llevan cilantro y mucho limón.",
+    "sentence_en": "Tacos have cilantro and a lot of lemon.",
+    "sentence_lemmas": ["el", "taco", "llevar", "cilantro", "y", "mucho", "limón"]
   },
   {
     "order": 2789,
@@ -10875,9 +10875,9 @@
     "lemma": "garbanzo",
     "es": "el garbanzo",
     "en": "chickpea",
-    "sentence_es": "La sopa lleva garbanzos.",
-    "sentence_en": "The soup has chickpeas.",
-    "sentence_lemmas": ["el", "sopa", "llevar", "garbanzo"]
+    "sentence_es": "La sopa lleva garbanzos, papas y zanahoria.",
+    "sentence_en": "The soup has chickpeas, potatoes and carrots.",
+    "sentence_lemmas": ["el", "sopa", "llevar", "garbanzo", "papa", "y", "zanahoria"]
   },
   {
     "order": 2792,
@@ -10974,9 +10974,9 @@
     "lemma": "dorado",
     "es": "dorado",
     "en": "golden",
-    "sentence_es": "El anillo es dorado.",
-    "sentence_en": "The ring is golden.",
-    "sentence_lemmas": ["el", "anillo", "ser", "dorado"]
+    "sentence_es": "El anillo dorado está en mi mano.",
+    "sentence_en": "The golden ring is on my hand.",
+    "sentence_lemmas": ["el", "anillo", "dorado", "estar", "en", "mi", "mano"]
   },
   {
     "order": 2802,
