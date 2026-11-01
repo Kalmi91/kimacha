@@ -6,6 +6,9 @@ import {
   requeueAfterGrade,
   requeueAfterUndo,
   reorderForReturn,
+  mixNewCards,
+  needsNewTopUp,
+  autoNewTopUp,
   nextPcicNewBonus,
   pcicNewBudget,
   pcicSessionNewLimit,
@@ -472,5 +475,95 @@ describe('practiceTopUpStep', () => {
     const done = Array.from({ length: 10 }, (_, i) => sm2Review(sm2NewCard(`a1-${i}`), 'good', TODAY));
     const order = Array.from({ length: 60 }, (_, i) => `a1-new-${i}`);
     expect(pickSm2Session(done, order, TODAY, limit).filter((c) => c.state === 'new')).toHaveLength(40);
+  });
+});
+
+describe('mixNewCards (FB535: one new word at a time among the reviews)', () => {
+  const ids = (q: Sm2Card[]) => q.map((c) => c.itemId);
+  const reviews = (n: number) => Array.from({ length: n }, (_, i) => reviewCard({ itemId: `r${i}` }));
+  const fresh = (n: number) => Array.from({ length: n }, (_, i) => sm2NewCard(`n${i}`));
+
+  it('the first new word comes right after the next review, the others wait behind every review', () => {
+    expect(ids(mixNewCards([...reviews(3), ...fresh(3)], TODAY))).toEqual(['r0', 'n0', 'r1', 'r2', 'n1', 'n2']);
+  });
+
+  it('a new word already up front stays up front (it is not pushed back on every step)', () => {
+    expect(ids(mixNewCards([fresh(1)[0], ...reviews(2)], TODAY))).toEqual(['n0', 'r0', 'r1']);
+  });
+
+  it('while a new word is still being learned (missed), no other new word comes in', () => {
+    const missed = sm2Review(sm2NewCard('m0'), 'again', TODAY);
+    expect(ids(mixNewCards([reviews(1)[0], fresh(1)[0], missed, reviewCard({ itemId: 'r9' })], TODAY))).toEqual(['r0', 'm0', 'r9', 'n0']);
+  });
+
+  it('a whole round: Knew it on the new word lets the next one in, behind the next review', () => {
+    let queue: QueuedSm2Card[] = mixNewCards([...reviews(3), ...fresh(2)], TODAY);
+    const step = (g: 'good' | 'again') => {
+      const next = sm2Review(queue[0], g, TODAY);
+      queue = mixNewCards(requeueAfterGrade(queue, next, TODAY, g, 0, 30), TODAY);
+    };
+    step('good'); // r0
+    expect(queue[0].itemId).toBe('n0');
+    step('again'); // n0 missed: it rotates, n1 waits
+    expect(ids(queue)).toEqual(['r1', 'r2', 'n0', 'n1']);
+    step('good'); // r1
+    step('good'); // r2
+    expect(ids(queue)).toEqual(['n0', 'n1']);
+    step('good'); // n0 learned, no reviews left: n1 flows as before
+    expect(ids(queue)).toEqual(['n1']);
+  });
+
+  it('the missed new word comes back after its delay even when the reviews in between are right', () => {
+    let queue: QueuedSm2Card[] = mixNewCards([...reviews(4), ...fresh(2)], TODAY);
+    const step = (g: 'good' | 'again', now: number) => {
+      const next = sm2Review(queue[0], g, TODAY);
+      queue = mixNewCards(requeueAfterGrade(queue, next, TODAY, g, now, 30), TODAY);
+    };
+    step('good', 0); // r0
+    step('again', 1_000); // n0 missed, back at 31 s
+    step('good', 10_000); // r1, n0 not due yet
+    expect(queue[0].itemId).toBe('r2');
+    step('good', 40_000); // r2 right, n0 expired: it is next, n1 still waits
+    expect(ids(queue)).toEqual(['n0', 'r3', 'n1']);
+  });
+
+  it('a lapsed review (missed today, introduced earlier) still counts as a review', () => {
+    const lapsed = sm2Review(reviewCard({ itemId: 'l0' }), 'again', TODAY);
+    expect(ids(mixNewCards([lapsed, ...fresh(2)], TODAY))).toEqual(['l0', 'n0', 'n1']);
+  });
+
+  it('without reviews the queue is not touched', () => {
+    const missed = sm2Review(sm2NewCard('m0'), 'again', TODAY);
+    const queue = [missed, ...fresh(2)];
+    expect(mixNewCards(queue, TODAY)).toBe(queue);
+  });
+});
+
+describe('needsNewTopUp (FB535: +10 by itself while reviews are left)', () => {
+  it('reviews left and no new word in the queue: top up', () => {
+    expect(needsNewTopUp([reviewCard()], TODAY)).toBe(true);
+  });
+
+  it('a new word still waiting, or no reviews left (only today\'s missed new words): no top up', () => {
+    expect(needsNewTopUp([reviewCard(), sm2NewCard('n0')], TODAY)).toBe(false);
+    expect(needsNewTopUp([sm2Review(sm2NewCard('m0'), 'again', TODAY)], TODAY)).toBe(false);
+    expect(needsNewTopUp([], TODAY)).toBe(false);
+  });
+});
+
+describe('autoNewTopUp (FB535)', () => {
+  const order = Array.from({ length: 15 }, (_, i) => `n${i}`);
+  const budget = { limit: 10, bonus: 0, introducedAllLevels: 10, introducedThisLevel: 10 };
+  const learned = order.slice(0, 10).map((id) => sm2Review(sm2NewCard(id), 'good', TODAY));
+
+  it('budget used up with reviews left: the next 10 new words and the "+10" bonus', () => {
+    const top = autoNewTopUp([reviewCard()], [...learned, reviewCard()], order, TODAY, budget);
+    expect(top?.bonus).toBe(10);
+    expect(top?.fresh.map((c) => c.itemId)).toEqual(['n10', 'n11', 'n12', 'n13', 'n14']);
+  });
+
+  it('no new word left on the level, or no reviews left: nothing', () => {
+    expect(autoNewTopUp([reviewCard()], [...learned, reviewCard()], order.slice(0, 10), TODAY, budget)).toBeNull();
+    expect(autoNewTopUp([], learned, order, TODAY, budget)).toBeNull();
   });
 });

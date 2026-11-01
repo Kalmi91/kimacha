@@ -1,4 +1,4 @@
-import type { Sm2Card, Sm2Grade } from './sm2';
+import { pickSm2Session, type Sm2Card, type Sm2Grade } from './sm2';
 import type { PcicKind } from '@/data/pcic';
 
 // Advancing the queue after a rating and on undo, in a testable way.
@@ -55,7 +55,9 @@ export function requeueAfterGrade(
   delaySec: number = DEFAULT_AGAIN_DELAY_SEC
 ): QueuedSm2Card[] {
   const rest = queue.slice(1);
-  if (next.due !== today) return rest;
+  // FB535: a graduating card also lets an expired missed card back to the front (before, only a
+  // card staying today did, so after right answers the missed new word waited for the queue's end).
+  if (next.due !== today) return reorderForReturn(rest, now);
   // The returned card would carry its expired returnAt in the copy made by `sm2Review`,
   // and after "Knew it" it would immediately jump to the front of the queue again
   // (4.1.0 web smoke test, 2026-09-24). Only `again` gets a new timer.
@@ -78,6 +80,58 @@ export function requeueAfterUndo(
 ): QueuedSm2Card[] {
   const rest = graded.due === today ? queue.filter((c) => c.itemId !== graded.itemId) : queue;
   return [before, ...rest];
+}
+
+// FB535: the new words used to wait at the end of the queue, behind every review. Now, while
+// reviews are left (a card not introduced today), exactly ONE new word is in the round: the next
+// one comes in only after this one was typed right ("Knew it" graduates it, it leaves the queue);
+// until then it rotates with the missed reviews. Once the reviews are done, the new words flow
+// as before (several missed ones may rotate together).
+function isReview(card: Sm2Card, today: string): boolean {
+  return card.state !== 'new' && card.introducedAt !== today;
+}
+
+/**
+ * The first new card goes right behind the next card (index 1, or stays at 0 if it is already up),
+ * the other new cards wait behind every review; while a new word introduced today is still being
+ * learned, all new cards wait. Without reviews left the queue is not touched.
+ */
+export function mixNewCards(queue: QueuedSm2Card[], today: string): QueuedSm2Card[] {
+  if (!queue.some((c) => isReview(c, today))) return queue;
+  const fresh = queue.filter((c) => c.state === 'new');
+  if (fresh.length === 0) return queue;
+  const rest = queue.filter((c) => c.state !== 'new');
+  if (rest.some((c) => c.state === 'learning' && c.introducedAt === today)) return [...rest, ...fresh];
+  const [first, ...later] = fresh;
+  const at = queue[0] === first ? 0 : 1;
+  return [...rest.slice(0, at), first, ...rest.slice(at), ...later];
+}
+
+/** FB535: the daily new-word budget ran out while reviews are left, so +10 comes by itself. */
+export function needsNewTopUp(queue: Sm2Card[], today: string): boolean {
+  return queue.some((c) => isReview(c, today)) && !queue.some((c) => c.state === 'new');
+}
+
+/**
+ * The +10 that comes by itself (needsNewTopUp): the new cards to append and the bonus to persist,
+ * the same budget step as the "+10" button (nextPcicNewBonus). Null when no top-up is due or the
+ * level has no new word left.
+ */
+export function autoNewTopUp(
+  queue: Sm2Card[],
+  cards: Sm2Card[],
+  order: string[],
+  today: string,
+  budget: { limit: number; bonus: number; introducedAllLevels: number; introducedThisLevel: number }
+): { bonus: number; fresh: Sm2Card[] } | null {
+  if (!needsNewTopUp(queue, today)) return null;
+  const { limit, bonus, introducedAllLevels, introducedThisLevel } = budget;
+  const next = nextPcicNewBonus({ limit, bonus, introducedToday: introducedAllLevels });
+  const inQueue = new Set(queue.map((c) => c.itemId));
+  const fresh = pickSm2Session(cards, order, today, pcicSessionNewLimit({ limit, bonus: next, introducedAllLevels, introducedThisLevel })).filter(
+    (c) => c.state === 'new' && !inQueue.has(c.itemId)
+  );
+  return fresh.length > 0 ? { bonus: next, fresh } : null;
 }
 
 // Extracted into a pure function so that the daily progress (the header row and the
