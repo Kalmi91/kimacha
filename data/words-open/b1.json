@@ -803,9 +803,9 @@
     "lemma": "río",
     "es": "el río",
     "en": "river",
-    "sentence_es": "El río está cerca de mi casa.",
-    "sentence_en": "The river is near my house.",
-    "sentence_lemmas": ["el", "río", "estar", "cerca", "de", "mi", "casa"]
+    "sentence_es": "El agua del río baja de la montaña al mar.",
+    "sentence_en": "The water of the river flows down from the mountain to the sea.",
+    "sentence_lemmas": ["el", "agua", "de", "río", "bajar", "de", "el", "montaña", "a", "mar"]
   },
   {
     "order": 395,
@@ -1625,9 +1625,9 @@
     "lemma": "museo",
     "es": "el museo",
     "en": "museum",
-    "sentence_es": "El museo está en el centro de la ciudad.",
-    "sentence_en": "The museum is in the city center.",
-    "sentence_lemmas": ["el", "museo", "estar", "en", "el", "centro", "de", "el", "ciudad"]
+    "sentence_es": "En el museo vemos cuadros y cosas viejas.",
+    "sentence_en": "In the museum we see paintings and old things.",
+    "sentence_lemmas": ["en", "el", "museo", "ver", "cuadro", "y", "cosa", "viejo"]
   },
   {
     "order": 811,
@@ -3511,9 +3511,9 @@
     "lemma": "volcán",
     "es": "el volcán",
     "en": "volcano",
-    "sentence_es": "El volcán es grande y alto.",
-    "sentence_en": "The volcano is big and tall.",
-    "sentence_lemmas": ["el", "volcán", "ser", "grande", "y", "alto"]
+    "sentence_es": "El volcán es una montaña con fuego y humo arriba.",
+    "sentence_en": "The volcano is a mountain with fire and smoke on top.",
+    "sentence_lemmas": ["el", "volcán", "ser", "un", "montaña", "con", "fuego", "y", "humo", "arriba"]
   },
   {
     "order": 1566,
@@ -3544,9 +3544,9 @@
     "lemma": "atardecer",
     "es": "el atardecer",
     "en": "sunset, dusk",
-    "sentence_es": "El atardecer es muy bonito hoy.",
-    "sentence_en": "The sunset is very pretty today.",
-    "sentence_lemmas": ["el", "atardecer", "ser", "muy", "bonito", "hoy"]
+    "sentence_es": "En el atardecer el cielo se pone rojo y naranja.",
+    "sentence_en": "At sunset the sky turns red and orange.",
+    "sentence_lemmas": ["en", "el", "atardecer", "el", "cielo", "se", "poner", "rojo", "y", "naranja"]
   },
   {
     "order": 1573,
@@ -3566,9 +3566,9 @@
     "lemma": "campana",
     "es": "la campana",
     "en": "bell",
-    "sentence_es": "La campana es grande y vieja.",
-    "sentence_en": "The bell is big and old.",
-    "sentence_lemmas": ["el", "campana", "ser", "grande", "y", "viejo"]
+    "sentence_es": "La campana suena en la iglesia cada hora.",
+    "sentence_en": "The bell rings in the church every hour.",
+    "sentence_lemmas": ["el", "campana", "sonar", "en", "el", "iglesia", "cada", "hora"]
   },
   {
     "order": 1589,
@@ -4563,9 +4563,9 @@
     "lemma": "combustible",
     "es": "el combustible",
     "en": "fuel",
-    "sentence_es": "El combustible está muy caro.",
-    "sentence_en": "Fuel is very expensive.",
-    "sentence_lemmas": ["el", "combustible", "estar", "muy", "caro"]
+    "sentence_es": "El combustible de los carros es la gasolina.",
+    "sentence_en": "The fuel of cars is gasoline.",
+    "sentence_lemmas": ["el", "combustible", "de", "el", "carro", "ser", "el", "gasolina"]
   },
   {
     "order": 1869,
@@ -4995,9 +4995,9 @@
     "lemma": "cruel",
     "es": "cruel",
     "en": "cruel",
-    "sentence_es": "El ladrón es muy cruel.",
-    "sentence_en": "The thief is very cruel.",
-    "sentence_lemmas": ["el", "ladrón", "ser", "muy", "cruel"]
+    "sentence_es": "Es cruel golpear a un animal.",
+    "sentence_en": "It is cruel to hit an animal.",
+    "sentence_lemmas": ["ser", "cruel", "golpear", "a", "un", "animal"]
   },
   {
     "order": 1908,
@@ -5281,9 +5281,9 @@
     "lemma": "coliflor",
     "es": "la coliflor",
     "en": "cauliflower",
-    "sentence_es": "La sopa tiene coliflor y papa.",
-    "sentence_en": "The soup has cauliflower and potato.",
-    "sentence_lemmas": ["el", "sopa", "tener", "coliflor", "y", "papa"]
+    "sentence_es": "La coliflor es una verdura blanca y parece una flor.",
+    "sentence_en": "Cauliflower is a white vegetable that looks like a flower.",
+    "sentence_lemmas": ["el", "coliflor", "ser", "un", "verdura", "blanco", "y", "parecer", "un", "flor"]
   },
   {
     "order": 2099,
@@ -5358,9 +5358,9 @@
     "lemma": "trapeador",
     "es": "el trapeador",
     "en": "mop",
-    "sentence_es": "El trapeador está en el baño.",
-    "sentence_en": "The mop is in the bathroom.",
-    "sentence_lemmas": ["el", "trapeador", "estar", "en", "el", "baño"]
+    "sentence_es": "Con el trapeador limpio el piso.",
+    "sentence_en": "I clean the floor with the mop.",
+    "sentence_lemmas": ["con", "el", "trapeador", "limpiar", "el", "piso"]
   },
   {
     "order": 2113,
@@ -5391,9 +5391,9 @@
     "lemma": "portón",
     "es": "el portón",
     "en": "gate",
-    "sentence_es": "El portón de la casa es grande.",
-    "sentence_en": "The gate of the house is big.",
-    "sentence_lemmas": ["el", "portón", "de", "el", "casa", "ser", "grande"]
+    "sentence_es": "El portón es la puerta grande para el carro.",
+    "sentence_en": "The gate is the big door for the car.",
+    "sentence_lemmas": ["el", "portón", "ser", "el", "puerta", "grande", "para", "el", "carro"]
   },
   {
     "order": 2123,
@@ -5468,9 +5468,9 @@
     "lemma": "viudo",
     "es": "el viudo",
     "en": "widower",
-    "sentence_es": "El viudo vive solo con su perro.",
-    "sentence_en": "The widower lives alone with his dog.",
-    "sentence_lemmas": ["el", "viudo", "vivir", "solo", "con", "su", "perro"]
+    "sentence_es": "Un viudo es un hombre que perdió a su esposa.",
+    "sentence_en": "A widower is a man who lost his wife.",
+    "sentence_lemmas": ["un", "viudo", "ser", "un", "hombre", "que", "perder", "a", "su", "esposa"]
   },
   {
     "order": 2152,
@@ -5501,9 +5501,9 @@
     "lemma": "lagarto",
     "es": "el lagarto",
     "en": "lizard",
-    "sentence_es": "El lagarto está en la piedra.",
-    "sentence_en": "The lizard is on the rock.",
-    "sentence_lemmas": ["el", "lagarto", "estar", "en", "el", "piedra"]
+    "sentence_es": "El lagarto toma el sol sobre una piedra.",
+    "sentence_en": "The lizard sunbathes on a rock.",
+    "sentence_lemmas": ["el", "lagarto", "tomar", "el", "sol", "sobre", "un", "piedra"]
   },
   {
     "order": 2175,
@@ -5667,9 +5667,9 @@
     "lemma": "faro",
     "es": "el faro",
     "en": "lighthouse",
-    "sentence_es": "El faro está en la isla.",
-    "sentence_en": "The lighthouse is on the island.",
-    "sentence_lemmas": ["el", "faro", "estar", "en", "el", "isla"]
+    "sentence_es": "El faro tiene una luz grande para los barcos.",
+    "sentence_en": "The lighthouse has a big light for the ships.",
+    "sentence_lemmas": ["el", "faro", "tener", "un", "luz", "grande", "para", "el", "barco"]
   },
   {
     "order": 2230,
@@ -5689,9 +5689,9 @@
     "lemma": "triciclo",
     "es": "el triciclo",
     "en": "tricycle",
-    "sentence_es": "El bebé tiene un triciclo.",
-    "sentence_en": "The baby has a tricycle.",
-    "sentence_lemmas": ["el", "bebé", "tener", "un", "triciclo"]
+    "sentence_es": "El triciclo tiene tres ruedas.",
+    "sentence_en": "The tricycle has three wheels.",
+    "sentence_lemmas": ["el", "triciclo", "tener", "tres", "rueda"]
   },
   {
     "order": 2383,
@@ -7880,9 +7880,9 @@
     "lemma": "semestre",
     "es": "el semestre",
     "en": "semester",
-    "sentence_es": "El semestre empieza en agosto.",
-    "sentence_en": "The semester starts in August.",
-    "sentence_lemmas": ["el", "semestre", "empezar", "en", "agosto"]
+    "sentence_es": "Un semestre dura seis meses.",
+    "sentence_en": "A semester lasts six months.",
+    "sentence_lemmas": ["un", "semestre", "durar", "seis", "mes"]
   },
   {
     "order": 2894,
@@ -8656,9 +8656,9 @@
     "lemma": "inscripción",
     "es": "la inscripción",
     "en": "enrollment",
-    "sentence_es": "La inscripción empieza en agosto.",
-    "sentence_en": "Enrollment starts in August.",
-    "sentence_lemmas": ["el", "inscripción", "empezar", "en", "agosto"]
+    "sentence_es": "La inscripción es escribir tu nombre para entrar a un curso.",
+    "sentence_en": "Enrollment is writing your name to join a course.",
+    "sentence_lemmas": ["el", "inscripción", "ser", "escribir", "tu", "nombre", "para", "entrar", "a", "un", "curso"]
   },
   {
     "order": 3019,
@@ -8898,9 +8898,9 @@
     "lemma": "gobernador",
     "es": "el gobernador",
     "en": "governor",
-    "sentence_es": "El gobernador visita la ciudad.",
-    "sentence_en": "The governor visits the city.",
-    "sentence_lemmas": ["el", "gobernador", "visitar", "el", "ciudad"]
+    "sentence_es": "El gobernador es el jefe del gobierno de un estado.",
+    "sentence_en": "The governor is the head of the government of a state.",
+    "sentence_lemmas": ["el", "gobernador", "ser", "el", "jefe", "de", "gobierno", "de", "un", "estado"]
   },
   {
     "order": 3041,
@@ -8931,9 +8931,9 @@
     "lemma": "juicio",
     "es": "el juicio",
     "en": "trial",
-    "sentence_es": "El juicio empieza el lunes.",
-    "sentence_en": "The trial starts on Monday.",
-    "sentence_lemmas": ["el", "juicio", "empezar", "el", "lunes"]
+    "sentence_es": "En un juicio, el juez escucha a las dos partes.",
+    "sentence_en": "In a trial, the judge listens to both sides.",
+    "sentence_lemmas": ["en", "un", "juicio", "el", "juez", "escuchar", "a", "el", "dos", "parte"]
   },
   {
     "order": 3044,
@@ -9074,9 +9074,9 @@
     "lemma": "jornada",
     "es": "la jornada",
     "en": "workday",
-    "sentence_es": "La jornada empieza a las ocho.",
-    "sentence_en": "The workday starts at eight.",
-    "sentence_lemmas": ["el", "jornada", "empezar", "a", "el", "ocho"]
+    "sentence_es": "La jornada de trabajo es de ocho horas al día.",
+    "sentence_en": "The work day is eight hours a day.",
+    "sentence_lemmas": ["el", "jornada", "de", "trabajo", "ser", "de", "ocho", "hora", "a", "día"]
   },
   {
     "order": 3057,
@@ -9152,9 +9152,9 @@
     "lemma": "junta",
     "es": "la junta",
     "en": "business meeting (MX)",
-    "sentence_es": "La junta es a las diez.",
-    "sentence_en": "The meeting is at ten.",
-    "sentence_lemmas": ["el", "junta", "ser", "a", "el", "diez"]
+    "sentence_es": "En una junta, el jefe y los empleados hablan del trabajo.",
+    "sentence_en": "In a meeting, the boss and the employees talk about work.",
+    "sentence_lemmas": ["en", "un", "junta", "el", "jefe", "y", "el", "empleado", "hablar", "de", "trabajo"]
   },
   {
     "order": 3065,
@@ -9857,9 +9857,9 @@
     "lemma": "torneo",
     "es": "el torneo",
     "en": "tournament",
-    "sentence_es": "El torneo de fútbol empieza hoy.",
-    "sentence_en": "The soccer tournament starts today.",
-    "sentence_lemmas": ["el", "torneo", "de", "fútbol", "empezar", "hoy"]
+    "sentence_es": "En un torneo juegan muchos equipos hasta tener un campeón.",
+    "sentence_en": "In a tournament many teams play until there is a champion.",
+    "sentence_lemmas": ["en", "un", "torneo", "jugar", "mucho", "equipo", "hasta", "tener", "un", "campeón"]
   },
   {
     "order": 3129,
@@ -9879,9 +9879,9 @@
     "lemma": "entrenamiento",
     "es": "el entrenamiento",
     "en": "training session",
-    "sentence_es": "El entrenamiento es a las siete.",
-    "sentence_en": "The training is at seven.",
-    "sentence_lemmas": ["el", "entrenamiento", "ser", "a", "el", "siete"]
+    "sentence_es": "El entrenamiento prepara al equipo para el partido.",
+    "sentence_en": "Training prepares the team for the game.",
+    "sentence_lemmas": ["el", "entrenamiento", "preparar", "a", "equipo", "para", "el", "partido"]
   },
   {
     "order": 3131,
@@ -9901,9 +9901,9 @@
     "lemma": "liga",
     "es": "la liga",
     "en": "league",
-    "sentence_es": "La liga empieza en marzo.",
-    "sentence_en": "The league starts in March.",
-    "sentence_lemmas": ["el", "liga", "empezar", "en", "marzo"]
+    "sentence_es": "En la liga, cada equipo juega contra los demás.",
+    "sentence_en": "In the league, each team plays against the others.",
+    "sentence_lemmas": ["en", "el", "liga", "cada", "equipo", "jugar", "contra", "el", "demás"]
   },
   {
     "order": 3166,
@@ -10000,9 +10000,9 @@
     "lemma": "batalla",
     "es": "la batalla",
     "en": "battle",
-    "sentence_es": "La batalla empieza al amanecer.",
-    "sentence_en": "The battle starts at dawn.",
-    "sentence_lemmas": ["el", "batalla", "empezar", "a", "amanecer"]
+    "sentence_es": "En una batalla, dos ejércitos luchan con armas.",
+    "sentence_en": "In a battle, two armies fight with weapons.",
+    "sentence_lemmas": ["en", "un", "batalla", "dos", "ejército", "luchar", "con", "arma"]
   },
   {
     "order": 3388,
@@ -10155,9 +10155,9 @@
     "lemma": "espectáculo",
     "es": "el espectáculo",
     "en": "stage show, spectacle",
-    "sentence_es": "El espectáculo empieza a las nueve.",
-    "sentence_en": "The show starts at nine.",
-    "sentence_lemmas": ["el", "espectáculo", "empezar", "a", "el", "nueve"]
+    "sentence_es": "En el espectáculo los artistas cantan y bailan para el público.",
+    "sentence_en": "At the show the artists sing and dance for the audience.",
+    "sentence_lemmas": ["en", "el", "espectáculo", "el", "artista", "cantar", "y", "bailar", "para", "el", "público"]
   },
   {
     "order": 3402,
