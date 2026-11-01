@@ -275,7 +275,8 @@ export default function SituationGame() {
       progress={{ text: s.practiceTab.progress(position, size), label: sx.stepLabel(titles[step], position, size) }}
       dock={dock}
       footer={footer}
-      scrollKey={step === 'build' ? `${state.index}:${cardH}` : undefined}
+      // fill in: after the first gap the later lines (and their gaps) come into view above the docked word bank
+      scrollKey={step === 'build' ? `${state.index}:${cardH}` : step === 'fill' && state.index > 0 ? `fill:${state.index}` : undefined}
     >
       <View style={styles.box}>
         <Text style={[styles.caption, { color: colors.tint }]}>{titles[step]}</Text>
