@@ -570,9 +570,9 @@
     "lemma": "proceso",
     "es": "el proceso",
     "en": "process",
-    "sentence_es": "El proceso es largo y difícil.",
-    "sentence_en": "The process is long and difficult.",
-    "sentence_lemmas": ["el", "proceso", "ser", "largo", "y", "difícil"]
+    "sentence_es": "El proceso de hacer pan tiene varias partes.",
+    "sentence_en": "The process of making bread has several parts.",
+    "sentence_lemmas": ["el", "proceso", "de", "hacer", "pan", "tener", "varios", "parte"]
   },
   {
     "order": 363,
@@ -2278,9 +2278,9 @@
     "lemma": "matar",
     "es": "matar",
     "en": "to kill",
-    "sentence_es": "El gato mata al ratón.",
-    "sentence_en": "The cat kills the mouse.",
-    "sentence_lemmas": ["el", "gato", "matar", "a", "ratón"]
+    "sentence_es": "Cuando alguien mata a un animal, el animal muere.",
+    "sentence_en": "When someone kills an animal, the animal dies.",
+    "sentence_lemmas": ["cuando", "alguien", "matar", "a", "un", "animal", "el", "animal", "morir"]
   },
   {
     "order": 1225,
@@ -3258,9 +3258,9 @@
     "es": "familiar",
     "en": "family (adj)",
     "hint_en": "It is a *family* movie",
-    "sentence_es": "Es una película familiar.",
-    "sentence_en": "It is a family movie.",
-    "sentence_lemmas": ["ser", "un", "película", "familiar"]
+    "sentence_es": "La cena familiar es con mis padres y mi tío.",
+    "sentence_en": "The family dinner is with my parents and my uncle.",
+    "sentence_lemmas": ["el", "cena", "familiar", "ser", "con", "mi", "padre", "y", "mi", "tío"]
   },
   {
     "order": 1313,
@@ -3379,9 +3379,9 @@
     "lemma": "molesto",
     "es": "molesto",
     "en": "annoying",
-    "sentence_es": "El ruido de la calle es molesto.",
-    "sentence_en": "The street noise is annoying.",
-    "sentence_lemmas": ["el", "ruido", "de", "el", "calle", "ser", "molesto"]
+    "sentence_es": "Es molesto cuando alguien habla en el cine.",
+    "sentence_en": "It is annoying when someone talks in the movie theater.",
+    "sentence_lemmas": ["ser", "molesto", "cuando", "alguien", "hablar", "en", "el", "cine"]
   },
   {
     "order": 1324,
@@ -3522,9 +3522,9 @@
     "lemma": "helicóptero",
     "es": "el helicóptero",
     "en": "helicopter",
-    "sentence_es": "El helicóptero es muy rápido.",
-    "sentence_en": "The helicopter is very fast.",
-    "sentence_lemmas": ["el", "helicóptero", "ser", "muy", "rápido"]
+    "sentence_es": "El helicóptero no necesita pista para subir.",
+    "sentence_en": "The helicopter does not need a runway to take off.",
+    "sentence_lemmas": ["el", "helicóptero", "no", "necesitar", "pista", "para", "subir"]
   },
   {
     "order": 1571,
@@ -5083,9 +5083,9 @@
     "lemma": "emocionante",
     "es": "emocionante",
     "en": "exciting",
-    "sentence_es": "La película es muy emocionante.",
-    "sentence_en": "The movie is very exciting.",
-    "sentence_lemmas": ["el", "película", "ser", "muy", "emocionante"]
+    "sentence_es": "El partido es emocionante: todos gritan.",
+    "sentence_en": "The game is exciting: everyone shouts.",
+    "sentence_lemmas": ["el", "partido", "ser", "emocionante", "todo", "gritar"]
   },
   {
     "order": 1916,
@@ -5116,9 +5116,9 @@
     "lemma": "estrecho",
     "es": "estrecho / angosto",
     "en": "narrow, tight",
-    "sentence_es": "La calle es muy estrecha.",
-    "sentence_en": "The street is very narrow.",
-    "sentence_lemmas": ["el", "calle", "ser", "muy", "estrecho"]
+    "sentence_es": "La puerta es estrecha y solo pasa una persona.",
+    "sentence_en": "The door is narrow and only one person fits through.",
+    "sentence_lemmas": ["el", "puerta", "ser", "estrecho", "y", "solo", "pasar", "un", "persona"]
   },
   {
     "order": 1919,
@@ -5314,9 +5314,9 @@
     "lemma": "abrelatas",
     "es": "el abrelatas",
     "en": "can opener",
-    "sentence_es": "¿Dónde está el abrelatas?",
-    "sentence_en": "Where is the can opener?",
-    "sentence_lemmas": ["dónde", "estar", "el", "abrelatas"]
+    "sentence_es": "Uso el abrelatas para abrir las latas.",
+    "sentence_en": "I use the can opener to open cans.",
+    "sentence_lemmas": ["usar", "el", "abrelatas", "para", "abrir", "el", "lata"]
   },
   {
     "order": 2102,
@@ -5512,9 +5512,9 @@
     "lemma": "charco",
     "es": "el charco",
     "en": "puddle",
-    "sentence_es": "Hay un charco en la calle.",
-    "sentence_en": "There is a puddle in the street.",
-    "sentence_lemmas": ["haber", "un", "charco", "en", "el", "calle"]
+    "sentence_es": "Un charco es agua de lluvia en la calle.",
+    "sentence_en": "A puddle is rainwater in the street.",
+    "sentence_lemmas": ["un", "charco", "ser", "agua", "de", "lluvia", "en", "el", "calle"]
   },
   {
     "order": 2185,
@@ -5601,9 +5601,9 @@
     "lemma": "liso",
     "es": "liso",
     "en": "smooth",
-    "sentence_es": "La mesa es lisa.",
-    "sentence_en": "The table is smooth.",
-    "sentence_lemmas": ["el", "mesa", "ser", "liso"]
+    "sentence_es": "El vidrio es liso y suave.",
+    "sentence_en": "The glass is smooth and sleek.",
+    "sentence_lemmas": ["el", "vidrio", "ser", "liso", "y", "suave"]
   },
   {
     "order": 2213,
@@ -5790,9 +5790,9 @@
     "lemma": "atrapar",
     "es": "atrapar / cachar",
     "en": "to catch, to trap",
-    "sentence_es": "El gato atrapa al ratón.",
-    "sentence_en": "The cat catches the mouse.",
-    "sentence_lemmas": ["el", "gato", "atrapar", "a", "ratón"]
+    "sentence_es": "Atrapo la pelota con las dos manos.",
+    "sentence_en": "I catch the ball with both hands.",
+    "sentence_lemmas": ["atrapar", "el", "pelota", "con", "el", "dos", "mano"]
   },
   {
     "order": 2393,
@@ -6198,9 +6198,9 @@
     "lemma": "facilitar",
     "es": "facilitar",
     "en": "to make easier, to facilitate",
-    "sentence_es": "El mapa facilita el camino.",
-    "sentence_en": "The map makes the way easier.",
-    "sentence_lemmas": ["el", "mapa", "facilitar", "el", "camino"]
+    "sentence_es": "Una lavadora facilita el trabajo de la casa.",
+    "sentence_en": "A washing machine makes housework easier.",
+    "sentence_lemmas": ["un", "lavadora", "facilitar", "el", "trabajo", "de", "el", "casa"]
   },
   {
     "order": 2430,
@@ -6432,9 +6432,9 @@
     "lemma": "ayuntamiento",
     "es": "el ayuntamiento",
     "en": "town hall, city council",
-    "sentence_es": "El ayuntamiento está en el centro.",
-    "sentence_en": "The town hall is downtown.",
-    "sentence_lemmas": ["el", "ayuntamiento", "estar", "en", "el", "centro"]
+    "sentence_es": "El ayuntamiento es el edificio del gobierno de la ciudad.",
+    "sentence_en": "The town hall is the building of the city government.",
+    "sentence_lemmas": ["el", "ayuntamiento", "ser", "el", "edificio", "de", "gobierno", "de", "el", "ciudad"]
   },
   {
     "order": 2451,
@@ -6487,9 +6487,9 @@
     "lemma": "caos",
     "es": "el caos",
     "en": "chaos",
-    "sentence_es": "Hay un caos en la calle.",
-    "sentence_en": "There is chaos in the street.",
-    "sentence_lemmas": ["haber", "un", "caos", "en", "el", "calle"]
+    "sentence_es": "El caos es cuando todo está sin orden.",
+    "sentence_en": "Chaos is when everything is out of order.",
+    "sentence_lemmas": ["el", "caos", "ser", "cuando", "todo", "estar", "sin", "orden"]
   },
   {
     "order": 2456,
@@ -6542,9 +6542,9 @@
     "lemma": "cicatriz",
     "es": "la cicatriz",
     "en": "scar",
-    "sentence_es": "Tengo una cicatriz en la mano.",
-    "sentence_en": "I have a scar on my hand.",
-    "sentence_lemmas": ["tener", "un", "cicatriz", "en", "el", "mano"]
+    "sentence_es": "Una cicatriz es la marca de una herida vieja.",
+    "sentence_en": "A scar is the mark of an old wound.",
+    "sentence_lemmas": ["un", "cicatriz", "ser", "el", "marca", "de", "un", "herida", "viejo"]
   },
   {
     "order": 2461,
@@ -6597,9 +6597,9 @@
     "lemma": "contaminación",
     "es": "la contaminación",
     "en": "pollution",
-    "sentence_es": "La contaminación es un problema grave.",
-    "sentence_en": "Pollution is a serious problem.",
-    "sentence_lemmas": ["el", "contaminación", "ser", "un", "problema", "grave"]
+    "sentence_es": "Con el humo de los carros hay contaminación en la ciudad.",
+    "sentence_en": "With the smoke from cars there is pollution in the city.",
+    "sentence_lemmas": ["con", "el", "humo", "de", "el", "carro", "haber", "contaminación", "en", "el", "ciudad"]
   },
   {
     "order": 2466,
@@ -6630,9 +6630,9 @@
     "lemma": "asesinato",
     "es": "el asesinato",
     "en": "murder",
-    "sentence_es": "El asesinato es un delito grave.",
-    "sentence_en": "Murder is a serious crime.",
-    "sentence_lemmas": ["el", "asesinato", "ser", "un", "delito", "grave"]
+    "sentence_es": "Matar a una persona es un asesinato.",
+    "sentence_en": "Killing a person is murder.",
+    "sentence_lemmas": ["matar", "a", "un", "persona", "ser", "un", "asesinato"]
   },
   {
     "order": 2469,
@@ -6896,9 +6896,9 @@
     "lemma": "ruidoso",
     "es": "ruidoso",
     "en": "noisy",
-    "sentence_es": "La calle es muy ruidosa.",
-    "sentence_en": "The street is very noisy.",
-    "sentence_lemmas": ["el", "calle", "ser", "muy", "ruidoso"]
+    "sentence_es": "El restaurante es ruidoso, la música está muy fuerte.",
+    "sentence_en": "The restaurant is noisy, the music is very loud.",
+    "sentence_lemmas": ["el", "restaurante", "ser", "ruidoso", "el", "música", "estar", "muy", "fuerte"]
   },
   {
     "order": 2493,
@@ -7129,9 +7129,9 @@
     "lemma": "dudoso",
     "es": "dudoso",
     "en": "doubtful, dubious",
-    "sentence_es": "El resultado es dudoso.",
-    "sentence_en": "The result is doubtful.",
-    "sentence_lemmas": ["el", "resultado", "ser", "dudoso"]
+    "sentence_es": "Es dudoso que llueva hoy, no hay nubes.",
+    "sentence_en": "It is doubtful that it will rain today, there are no clouds.",
+    "sentence_lemmas": ["ser", "dudoso", "que", "llover", "hoy", "no", "haber", "nube"]
   },
   {
     "order": 2514,
@@ -7494,9 +7494,9 @@
     "lemma": "colibrí",
     "es": "el colibrí",
     "en": "hummingbird",
-    "sentence_es": "El colibrí es muy pequeño.",
-    "sentence_en": "The hummingbird is very small.",
-    "sentence_lemmas": ["el", "colibrí", "ser", "muy", "pequeño"]
+    "sentence_es": "El colibrí es un pájaro pequeño que visita las flores.",
+    "sentence_en": "The hummingbird is a small bird that visits flowers.",
+    "sentence_lemmas": ["el", "colibrí", "ser", "un", "pájaro", "pequeño", "que", "visitar", "el", "flor"]
   },
   {
     "order": 2740,
@@ -7593,9 +7593,9 @@
     "lemma": "betabel",
     "es": "el betabel",
     "en": "beet",
-    "sentence_es": "El betabel es rojo.",
-    "sentence_en": "The beet is red.",
-    "sentence_lemmas": ["el", "betabel", "ser", "rojo"]
+    "sentence_es": "El betabel es una verdura roja y dulce.",
+    "sentence_en": "The beet is a red and sweet vegetable.",
+    "sentence_lemmas": ["el", "betabel", "ser", "un", "verdura", "rojo", "y", "dulce"]
   },
   {
     "order": 2761,
@@ -7626,9 +7626,9 @@
     "lemma": "tamarindo",
     "es": "el tamarindo",
     "en": "tamarind",
-    "sentence_es": "El tamarindo es ácido.",
-    "sentence_en": "The tamarind is sour.",
-    "sentence_lemmas": ["el", "tamarindo", "ser", "ácido"]
+    "sentence_es": "Con el tamarindo se hace agua fresca.",
+    "sentence_en": "Fresh fruit water is made with tamarind.",
+    "sentence_lemmas": ["con", "el", "tamarindo", "se", "hacer", "agua", "fresco"]
   },
   {
     "order": 2768,
@@ -7704,9 +7704,9 @@
     "es": "el lunar",
     "en": "beauty mark, mole (skin)",
     "hint_en": "I have a *mole* on my hand",
-    "sentence_es": "Tengo un lunar en la mano.",
-    "sentence_en": "I have a mole on my hand.",
-    "sentence_lemmas": ["tener", "un", "lunar", "en", "el", "mano"]
+    "sentence_es": "Un lunar es un punto negro en la piel.",
+    "sentence_en": "A mole is a dark spot on the skin.",
+    "sentence_lemmas": ["un", "lunar", "ser", "un", "punto", "negro", "en", "el", "piel"]
   },
   {
     "order": 2820,
@@ -7946,9 +7946,9 @@
     "lemma": "trámite",
     "es": "el trámite",
     "en": "official procedure",
-    "sentence_es": "El trámite es largo y difícil.",
-    "sentence_en": "The procedure is long and difficult.",
-    "sentence_lemmas": ["el", "trámite", "ser", "largo", "y", "difícil"]
+    "sentence_es": "Para sacar el pasaporte hago un trámite en la oficina.",
+    "sentence_en": "To get a passport I do an official procedure at the office.",
+    "sentence_lemmas": ["para", "sacar", "el", "pasaporte", "hacer", "un", "trámite", "en", "el", "oficina"]
   },
   {
     "order": 2908,
@@ -8854,9 +8854,9 @@
     "lemma": "quemadura",
     "es": "la quemadura",
     "en": "burn",
-    "sentence_es": "Tengo una quemadura en la mano.",
-    "sentence_en": "I have a burn on my hand.",
-    "sentence_lemmas": ["tener", "un", "quemadura", "en", "el", "mano"]
+    "sentence_es": "Una quemadura en la piel duele y se pone roja.",
+    "sentence_en": "A burn on the skin hurts and turns red.",
+    "sentence_lemmas": ["un", "quemadura", "en", "el", "piel", "doler", "y", "se", "poner", "rojo"]
   },
   {
     "order": 3037,
