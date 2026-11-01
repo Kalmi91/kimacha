@@ -5,7 +5,8 @@ jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock()
 jest.mock('expo-router', () => require('@/test-utils/mocks').focusEffectRouterMock());
 jest.mock('@/lib/buildFlavor', () => ({ IS_PLAY_BUILD: false, FEEDBACK_URL: 'https://example.test/feedback' }));
 
-import { act, fireEvent, render } from '@testing-library/react-native';
+import { act, fireEvent, render, within } from '@testing-library/react-native';
+import { ScrollView } from 'react-native';
 import { ExpoSpeechRecognitionModule } from 'expo-speech-recognition';
 
 import SituationGame from '@/components/practice/SituationGame';
@@ -30,6 +31,8 @@ jest.setTimeout(60000);
 const { __emit } = require('expo-speech-recognition') as { __emit: (name: string, payload?: unknown) => void };
 const mockSpeak = speak as jest.Mock;
 const mockStopSpeaking = stopSpeaking as jest.Mock;
+// the jest ScrollView keeps its methods on the class: one jest.fn for every scroller
+const scrollToEnd = ScrollView.prototype.scrollToEnd as unknown as jest.Mock;
 const flush = makeFlush(20);
 
 const family = SITUATIONS[0];
@@ -57,6 +60,19 @@ const type = async (view: View, text: string) => {
 const emit = async (name: string, payload?: unknown) => {
   await act(async () => __emit(name, payload));
   await flush();
+};
+// the testIDs of the rendered tree in screen order (top to bottom)
+const testIdsInOrder = (view: View) => {
+  const out: string[] = [];
+  const walk = (node: unknown) => {
+    const n = node as { props?: { testID?: string }; children?: unknown[] } | string | null;
+    if (!n || typeof n === 'string') return;
+    if (n.props?.testID) out.push(n.props.testID);
+    n.children?.forEach(walk);
+  };
+  const tree = view.toJSON();
+  (Array.isArray(tree) ? tree : [tree]).forEach(walk);
+  return out;
 };
 const heardFinal = (transcript: string) => emit('result', { isFinal: true, results: [{ transcript, confidence: 1 }] });
 
@@ -359,6 +375,67 @@ describe('Situations: summary and resume', () => {
     await saveResumeValue(getDb(), SITUATIONS_MODE, { v: 1, id: 'a1-familia', step: 'dance' });
     view = await mount();
     expect(view.getByTestId('situations-card-word').props.children).toBe('tener');
+    view.unmount();
+  });
+});
+
+describe('Situations: what is needed to answer is on screen without scrolling', () => {
+  it('Fill in: the word bank is docked above the tab bar, not in the scroller, and goes with the last gap', async () => {
+    await saveRun(at('fill'));
+    const view = await mount();
+    const bank = fillBank(family, SEED);
+    const footer = view.getByTestId('game-footer');
+    for (let n = 0; n < bank.length; n++) expect(within(footer).getByTestId(`situations-word-${n}`)).toBeTruthy();
+    expect(within(footer).getByText('Tap the word that fits the first gap')).toBeTruthy();
+    expect(within(view.getByTestId('situations-line-0')).queryByTestId('situations-word-0')).toBeNull();
+    for (const w of ['tengo', 'viven', 'años']) await press(view, `situations-word-${bank.indexOf(w)}`);
+    expect(view.queryByTestId('game-footer')).toBeNull();
+    expect(view.getByTestId('situations-next')).toBeTruthy();
+    view.unmount();
+  });
+
+  it('Build: the frame follows the end of the card whenever it grows, so Check and Next stay in view', async () => {
+    await saveRun(at('build'));
+    const view = await mount();
+    const card = view.getByTestId('situations-build-card');
+    const layout = (height: number) => ({ nativeEvent: { layout: { x: 0, y: 0, width: 320, height } } });
+    scrollToEnd.mockClear();
+    fireEvent(card, 'layout', layout(420));
+    expect(scrollToEnd).toHaveBeenCalledTimes(1);
+    fireEvent(card, 'layout', layout(420));
+    expect(scrollToEnd).toHaveBeenCalledTimes(1);
+    fireEvent(card, 'layout', layout(520));
+    expect(scrollToEnd).toHaveBeenCalledTimes(2);
+    view.unmount();
+  });
+
+  it('Say it: with typing on, the verdict and the field come right under the card, above the microphone', async () => {
+    await saveRun(at('say', { index: 0 }));
+    const view = await mount();
+    await press(view, 'situations-type');
+    await type(view, 'tienes amigos');
+    const order = testIdsInOrder(view);
+    const at_ = (id: string) => order.indexOf(id);
+    expect(at_('situations-line-text')).toBeGreaterThan(-1);
+    expect(at_('situations-line-text')).toBeLessThan(at_('situations-result'));
+    expect(at_('situations-result')).toBeLessThan(at_('situations-type-input'));
+    expect(at_('situations-type-input')).toBeLessThan(at_('situations-mic'));
+    view.unmount();
+  });
+
+  it('Enter in the typing field runs the check once; an empty field does nothing', async () => {
+    await saveRun(at('questions', { index: 0 }));
+    const view = await mount();
+    await press(view, 'situations-type');
+    const input = view.getByTestId('situations-type-input');
+    fireEvent(input, 'submitEditing');
+    await flush();
+    expect(view.queryByTestId('situations-result')).toBeNull();
+    fireEvent.changeText(input, 'sí tengo un hermano');
+    fireEvent(input, 'submitEditing');
+    await flush();
+    expect(view.getByText('Correct!')).toBeTruthy();
+    expect(await savedRun()).toMatchObject({ step: 'questions', index: 0, done: true, wrong: 0, scores: { questions: 1 } });
     view.unmount();
   });
 });

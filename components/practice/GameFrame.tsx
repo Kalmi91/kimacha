@@ -38,22 +38,27 @@ interface Props {
   dock?: GameDock;
   /** The content sits in the middle of the screen instead of a scroller. */
   centered?: boolean;
+  /** Content docked above the tab bar like the dock (the Situations word bank), so it never needs scrolling to; the scroller leaves room for it. */
+  footer?: ReactNode;
+  /** The scroller goes to its end whenever this changes (a card that grows under its own button). */
+  scrollKey?: string | number;
   children: ReactNode;
 }
 
-export default function GameFrame({ testID, target, currentCard, creditSeq = 0, progress, dock, centered = false, children }: Props) {
+export default function GameFrame({ testID, target, currentCard, creditSeq = 0, progress, dock, centered = false, footer, scrollKey, children }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const { dockLift, kbHeight } = useDockLift();
   const [dockH, setDockH] = useState(DOCK_RESERVE);
-  const insets = dockScrollInsets(dockH, dockLift, kbHeight > 0);
+  const [footerH, setFooterH] = useState(DOCK_RESERVE);
+  const insets = dockScrollInsets(footer ? footerH : dockH, dockLift, kbHeight > 0);
   const scroll = useRef<ScrollView>(null);
   // A new dock action (e.g. Next after an answer) scrolls to the end, so the feedback under the options is not left
-  // behind the dock (emulator 2026-10-22: "The opposite: …" half hidden under Next).
+  // behind the dock (emulator 2026-10-22: "The opposite: …" half hidden under Next). So does a change of `scrollKey`.
   const dockId = dock?.testID;
   useEffect(() => {
-    if (dockId) scroll.current?.scrollToEnd({ animated: true });
-  }, [dockId]);
+    if (dockId || scrollKey !== undefined) scroll.current?.scrollToEnd({ animated: true });
+  }, [dockId, scrollKey]);
   return (
     <KeyboardAvoidingView
       testID={testID}
@@ -82,6 +87,15 @@ export default function GameFrame({ testID, target, currentCard, creditSeq = 0, 
         >
           {children}
         </ScrollView>
+      )}
+      {footer && (
+        <View
+          testID="game-footer"
+          style={[styles.footer, { bottom: dockLift, backgroundColor: colors.background }]}
+          onLayout={(e) => setFooterH(e.nativeEvent.layout.height)}
+        >
+          {footer}
+        </View>
       )}
       {dock && (
         <DockedAction
@@ -143,6 +157,7 @@ const styles = StyleSheet.create({
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: spacing.xl, paddingTop: spacing.lg, paddingBottom: spacing.md },
   progress: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   scroll: { flex: 1 },
+  footer: { position: 'absolute', left: 0, right: 0, paddingHorizontal: spacing.xl, paddingTop: spacing.sm, paddingBottom: spacing.md },
   center: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: spacing.xl, gap: spacing.md },
   emptyText: { fontSize: fontSize.lg, fontWeight: fontWeight.semibold, textAlign: 'center' },
   doneTitle: { fontSize: fontSize.xxl, fontWeight: fontWeight.bold, textAlign: 'center' },

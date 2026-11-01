@@ -76,6 +76,8 @@ export default function SituationGame() {
   const [typingOpen, setTypingOpen] = useState(false);
   const [typed, setTyped] = useState('');
   const [heard, setHeard] = useState<{ text: string; match: SpokenMatch } | null>(null);
+  // the height of the Build card: it grows with every tile placed, and the frame follows its end
+  const [cardH, setCardH] = useState(0);
   const known = useRef<ReadonlySet<string>>(new Set());
   // the direction of the run on screen: a refocus keeps the run, another direction replaces it
   const shownTarget = useRef<PcicTarget | null>(null);
@@ -233,6 +235,37 @@ export default function SituationGame() {
     apply(answerSituation(state, situation, right));
   };
 
+  // The word bank sits docked above the tab bar (GameFrame footer), so it is on screen without scrolling; it goes with the last gap.
+  const footer =
+    step === 'fill' && !state.done ? (
+      <>
+        <Text style={[styles.hint, { color: colors.textMuted }]}>{sx.fillHint}</Text>
+        <View style={styles.bank}>
+          {bank.map((w, n) => {
+            const used = usedBank.has(n);
+            const wrong = flash === n;
+            return (
+              <Pressable
+                key={n}
+                testID={`situations-word-${n}`}
+                accessibilityRole="button"
+                disabled={used || state.done}
+                onPress={() => pickWord(n)}
+                style={[
+                  styles.chip,
+                  themedEdgeStyle(g),
+                  used ? { borderStyle: 'dashed', borderColor: colors.tabIconDefault } : { backgroundColor: colors.tint, borderColor: wrong ? colors.danger : colors.tint },
+                  wrong && styles.chipWrong,
+                ]}
+              >
+                <Text style={[styles.chipText, { color: used ? colors.tabIconDefault : wrong ? colors.danger : colors.onTint }, used && styles.hidden]}>{wrong ? `✗ ${w}` : w}</Text>
+              </Pressable>
+            );
+          })}
+        </View>
+      </>
+    ) : undefined;
+
   const word = step === 'words' ? situation.words.find((w) => w.es === state.words[state.index]) : undefined;
   const pattern = step === 'patterns' ? situation.patterns[state.index] : undefined;
 
@@ -241,6 +274,8 @@ export default function SituationGame() {
       {...frame}
       progress={{ text: s.practiceTab.progress(position, size), label: sx.stepLabel(titles[step], position, size) }}
       dock={dock}
+      footer={footer}
+      scrollKey={step === 'build' ? `${state.index}:${cardH}` : undefined}
     >
       <View style={styles.box}>
         <Text style={[styles.caption, { color: colors.tint }]}>{titles[step]}</Text>
@@ -264,64 +299,40 @@ export default function SituationGame() {
         )}
 
         {step === 'fill' && (
-          <>
-            <Card {...card}>
-              {situation.lines.map((l, i) => {
-                const gapNo = gaps.findIndex((x) => x.line === i);
-                const parts = l.gap ? gapByWord(l.es, l.gap) : null;
-                const filled = gapNo >= 0 && gapNo < state.index;
-                return (
-                  <View key={i} testID={`situations-line-${i}`} style={styles.lineRow}>
-                    <Text style={[styles.speaker, { color: colors.textMuted }]}>{speaker(l)}</Text>
-                    <Text style={[styles.lineText, styles.lineBody, { color: colors.text }]}>
-                      {parts ? parts.before : l.es}
-                      {parts && (
-                        <Text style={{ color: filled ? colors.success : gapNo === state.index ? colors.tint : colors.tabIconDefault, fontWeight: fontWeight.bold }}>
-                          {filled ? parts.answer : BLANK}
-                        </Text>
-                      )}
-                      {parts ? parts.after : ''}
-                    </Text>
-                  </View>
-                );
-              })}
-            </Card>
-            {!state.done && <Text style={[styles.hint, { color: colors.textMuted }]}>{sx.fillHint}</Text>}
-            <View style={styles.bank}>
-              {bank.map((w, n) => {
-                const used = usedBank.has(n);
-                const wrong = flash === n;
-                return (
-                  <Pressable
-                    key={n}
-                    testID={`situations-word-${n}`}
-                    accessibilityRole="button"
-                    disabled={used || state.done}
-                    onPress={() => pickWord(n)}
-                    style={[
-                      styles.chip,
-                      themedEdgeStyle(g),
-                      used ? { borderStyle: 'dashed', borderColor: colors.tabIconDefault } : { backgroundColor: colors.tint, borderColor: wrong ? colors.danger : colors.tint },
-                      wrong && styles.chipWrong,
-                    ]}
-                  >
-                    <Text style={[styles.chipText, { color: used ? colors.tabIconDefault : wrong ? colors.danger : colors.onTint }, used && styles.hidden]}>{wrong ? `✗ ${w}` : w}</Text>
-                  </Pressable>
-                );
-              })}
-            </View>
-          </>
+          <Card {...card}>
+            {situation.lines.map((l, i) => {
+              const gapNo = gaps.findIndex((x) => x.line === i);
+              const parts = l.gap ? gapByWord(l.es, l.gap) : null;
+              const filled = gapNo >= 0 && gapNo < state.index;
+              return (
+                <View key={i} testID={`situations-line-${i}`} style={styles.lineRow}>
+                  <Text style={[styles.speaker, { color: colors.textMuted }]}>{speaker(l)}</Text>
+                  <Text style={[styles.lineText, styles.lineBody, { color: colors.text }]}>
+                    {parts ? parts.before : l.es}
+                    {parts && (
+                      <Text style={{ color: filled ? colors.success : gapNo === state.index ? colors.tint : colors.tabIconDefault, fontWeight: fontWeight.bold }}>
+                        {filled ? parts.answer : BLANK}
+                      </Text>
+                    )}
+                    {parts ? parts.after : ''}
+                  </Text>
+                </View>
+              );
+            })}
+          </Card>
         )}
 
         {step === 'build' && line && (
-          <EasySentenceCard
-            key={state.index}
-            sourceSentence={line[source]}
-            targetWords={tileWords(line.es)}
-            trapWords={buildTraps(situation, lineIndex, state.seed)}
-            speechLocale={speechLang('es')}
-            onResult={(right) => apply(answerSituation(state, situation, right))}
-          />
+          <View testID="situations-build-card" onLayout={(e) => setCardH(Math.round(e.nativeEvent.layout.height))}>
+            <EasySentenceCard
+              key={state.index}
+              sourceSentence={line[source]}
+              targetWords={tileWords(line.es)}
+              trapWords={buildTraps(situation, lineIndex, state.seed)}
+              speechLocale={speechLang('es')}
+              onResult={(right) => apply(answerSituation(state, situation, right))}
+            />
+          </View>
         )}
 
         {speaking && line && (
@@ -335,6 +346,37 @@ export default function SituationGame() {
             </Card>
             {step === 'questions' && state.wrong > 0 && line.answers && (
               <Text testID="situations-model" style={[styles.model, { color: colors.success }]}>{sx.model(line.answers[0])}</Text>
+            )}
+            {heard && (
+              <View style={styles.feedback}>
+                <ResultBadge testID="situations-result" correct={heard.match.right} label={heard.match.right ? s.card.correct : s.card.wrong} align="center" />
+                <Text testID="situations-heard" style={[styles.meaning, { color: colors.textMuted }]}>{sx.heard(heard.text)}</Text>
+                {step === 'say' && (
+                  <View style={styles.said}>
+                    {heard.match.words.map((w, n) => (
+                      <Text
+                        key={n}
+                        testID={w.right ? 'situations-said-right' : 'situations-said-wrong'}
+                        style={[styles.saidWord, { color: w.right ? colors.success : colors.danger }, !w.right && styles.struck]}
+                      >
+                        {w.word}
+                      </Text>
+                    ))}
+                  </View>
+                )}
+              </View>
+            )}
+            {typing && !state.done && (
+              <TextInput
+                testID="situations-type-input"
+                style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
+                placeholder={s.card.typeIn('es')}
+                placeholderTextColor={colors.tabIconDefault}
+                value={typed}
+                onChangeText={setTyped}
+                onSubmitEditing={() => submitTyped(typed)}
+                {...answerInputProps}
+              />
             )}
             {!state.done && micOk && (
               <View style={styles.micBox}>
@@ -366,37 +408,6 @@ export default function SituationGame() {
               <Pressable testID="situations-type" accessibilityRole="button" onPress={() => setTypingOpen(true)} style={styles.link}>
                 <Text style={[styles.linkText, { color: colors.tint }]}>{sx.typeInstead}</Text>
               </Pressable>
-            )}
-            {typing && !state.done && (
-              <TextInput
-                testID="situations-type-input"
-                style={[styles.input, { color: colors.text, borderColor: colors.tabIconDefault }, themedInputStyle(g)]}
-                placeholder={s.card.typeIn('es')}
-                placeholderTextColor={colors.tabIconDefault}
-                value={typed}
-                onChangeText={setTyped}
-                onSubmitEditing={() => submitTyped(typed)}
-                {...answerInputProps}
-              />
-            )}
-            {heard && (
-              <View style={styles.feedback}>
-                <ResultBadge testID="situations-result" correct={heard.match.right} label={heard.match.right ? s.card.correct : s.card.wrong} align="center" />
-                <Text testID="situations-heard" style={[styles.meaning, { color: colors.textMuted }]}>{sx.heard(heard.text)}</Text>
-                {step === 'say' && (
-                  <View style={styles.said}>
-                    {heard.match.words.map((w, n) => (
-                      <Text
-                        key={n}
-                        testID={w.right ? 'situations-said-right' : 'situations-said-wrong'}
-                        style={[styles.saidWord, { color: w.right ? colors.success : colors.danger }, !w.right && styles.struck]}
-                      >
-                        {w.word}
-                      </Text>
-                    ))}
-                  </View>
-                )}
-              </View>
             )}
           </>
         )}

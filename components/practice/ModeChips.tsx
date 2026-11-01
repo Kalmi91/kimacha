@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { Pressable, ScrollView, StyleSheet } from 'react-native';
 import { Text } from '@/components/KText';
 import Colors from '@/constants/Colors';
@@ -17,8 +18,12 @@ export default function ModeChips({ chips, activeId, onSelect }: { chips: ModeCh
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
+  const row = useRef<ScrollView>(null);
+  // The row opens with the active chip in view (the last chips are off screen otherwise), once, when that chip is first laid out.
+  const placed = useRef(false);
   return (
     <ScrollView
+      ref={row}
       testID="practice-modes"
       accessibilityLabel={t().practiceTab.modesLabel}
       horizontal
@@ -36,6 +41,15 @@ export default function ModeChips({ chips, activeId, onSelect }: { chips: ModeCh
             accessibilityRole="button"
             accessibilityState={{ selected }}
             onPress={() => onSelect(chip.id)}
+            onLayout={
+              selected
+                ? (e) => {
+                    if (placed.current) return;
+                    placed.current = true;
+                    row.current?.scrollTo({ x: Math.max(0, e.nativeEvent.layout.x - spacing.xl), animated: false });
+                  }
+                : undefined
+            }
             style={[
               styles.chip,
               themedEdgeStyle(g),
