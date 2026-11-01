@@ -312,10 +312,10 @@
     { "es": "Tengo un viaje.", "en": "I have a trip." }
   ],
   "o260": [
-    { "es": "Tomo el desayuno.", "en": "I have breakfast." }
+    { "es": "El desayuno es la comida.", "en": "Breakfast is the meal." }
   ],
   "o261": [
-    { "es": "La cena es hoy.", "en": "Dinner is today." }
+    { "es": "La cena es la comida.", "en": "Dinner is the meal." }
   ],
   "o262": [
     { "es": "Mi madre compra pollo.", "en": "My mother buys chicken." }
@@ -564,7 +564,7 @@
     { "es": "Hay un cine.", "en": "There is a movie theater." }
   ],
   "o633": [
-    { "es": "El banco está en la calle.", "en": "The bank is on the street." }
+    { "es": "Tengo mi dinero.", "en": "I have my money." }
   ],
   "o635": [],
   "o636": [
@@ -660,7 +660,7 @@
     { "es": "El azúcar es dulce.", "en": "Sugar is sweet." }
   ],
   "o678": [
-    { "es": "Mi padre tiene un problema.", "en": "My father has a problem." }
+    { "es": "Tengo la mochila.", "en": "I have the backpack." }
   ],
   "o680": [
     { "es": "Mi padre maneja.", "en": "My father drives." }
@@ -989,7 +989,7 @@
     { "es": "Comemos en casa.", "en": "We eat at home." }
   ],
   "o927": [
-    { "es": "Abre la boca.", "en": "Open your mouth." }
+    { "es": "Hablo con la boca.", "en": "I speak with my mouth." }
   ],
   "o929": [],
   "o930": [
@@ -999,17 +999,19 @@
     { "es": "Te quiero.", "en": "I love you." }
   ],
   "o932": [
-    { "es": "Quiero un jugo.", "en": "I want a juice." }
+    { "es": "El jugo es dulce.", "en": "The juice is sweet." }
   ],
   "o933": [
-    { "es": "Mi madre bebe té.", "en": "My mother drinks tea." }
+    { "es": "El té puede ser verde.", "en": "Tea can be green." }
   ],
   "o934": [
-    { "es": "Mi padre bebe vino.", "en": "My father drinks wine." }
+    { "es": "El vino puede ser rojo.", "en": "Wine can be red." }
   ],
-  "o935": [],
+  "o935": [
+    { "es": "El refresco es dulce.", "en": "Soda is sweet." }
+  ],
   "o939": [
-    { "es": "Quiero tres tacos.", "en": "I want three tacos." }
+    { "es": "El taco es una tortilla.", "en": "A taco is a tortilla." }
   ],
   "o940": [
     { "es": "Me gusta el tomate.", "en": "I like tomato." }
@@ -1021,9 +1023,11 @@
   "o943": [
     { "es": "El plátano es una fruta.", "en": "The banana is a fruit." }
   ],
-  "o944": [],
+  "o944": [
+    { "es": "La galleta es dulce.", "en": "The cookie is sweet." }
+  ],
   "o945": [
-    { "es": "Una torta cuesta cuarenta pesos.", "en": "A sandwich costs forty pesos." }
+    { "es": "La torta es pan.", "en": "A torta is bread." }
   ],
   "o947": [
     { "es": "Necesito una cuchara.", "en": "I need a spoon." }
@@ -1056,7 +1060,9 @@
   ],
   "o963": [],
   "o964": [],
-  "o965": [],
+  "o965": [
+    { "es": "Llevo calcetines.", "en": "I wear socks." }
+  ],
   "o966": [],
   "o967": [],
   "o968": [
@@ -1081,18 +1087,22 @@
   "o976": [
     { "es": "Necesito un mapa.", "en": "I need a map." }
   ],
-  "o977": [],
-  "o978": [],
-  "o979": [],
+  "o977": [
+    { "es": "Escribo con la mano.", "en": "I write with my hand." }
+  ],
+  "o978": [
+    { "es": "Escribo con la derecha.", "en": "I write with the right." }
+  ],
+  "o979": [
+    { "es": "El caballo es grande.", "en": "The horse is big." }
+  ],
   "o981": [
     { "es": "Un pájaro canta.", "en": "A bird sings." }
   ],
   "o983": [
-    { "es": "El niño tiene un conejo.", "en": "The boy has a rabbit." }
+    { "es": "El conejo es pequeño.", "en": "The rabbit is small." }
   ],
-  "o984": [
-    { "es": "El perro es amable.", "en": "The dog is friendly." }
-  ],
+  "o984": [],
   "o985": [
     { "es": "Hay un ratón.", "en": "There is a mouse." }
   ],
@@ -3448,14 +3458,10 @@
   "o3840": [],
   "o3841": [],
   "o3842": [],
-  "o3843": [
-    { "es": "Una playera cuesta cuatrocientos pesos.", "en": "A T-shirt costs four hundred pesos." }
-  ],
+  "o3843": [],
   "o3844": [],
   "o3845": [],
-  "o3846": [
-    { "es": "La tienda vende zapatos.", "en": "The store sells shoes." }
-  ],
+  "o3846": [],
   "o3847": [],
   "o3848": [
     { "es": "El niño aprende.", "en": "The boy learns." },
