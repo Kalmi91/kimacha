@@ -836,9 +836,9 @@
     "lemma": "brazo",
     "es": "el brazo",
     "en": "arm",
-    "sentence_es": "Tengo dolor en el brazo.",
-    "sentence_en": "My arm hurts.",
-    "sentence_lemmas": ["tener", "dolor", "en", "el", "brazo"]
+    "sentence_es": "El brazo está entre el hombro y la mano.",
+    "sentence_en": "The arm is between the shoulder and the hand.",
+    "sentence_lemmas": ["el", "brazo", "estar", "entre", "el", "hombro", "y", "el", "mano"]
   },
   {
     "order": 402,
@@ -880,9 +880,9 @@
     "lemma": "árbol",
     "es": "el árbol",
     "en": "tree",
-    "sentence_es": "Hay un árbol grande en el jardín.",
-    "sentence_en": "There is a big tree in the garden.",
-    "sentence_lemmas": ["haber", "un", "árbol", "grande", "en", "el", "jardín"]
+    "sentence_es": "El árbol da sombra en el jardín.",
+    "sentence_en": "The tree gives shade in the garden.",
+    "sentence_lemmas": ["el", "árbol", "dar", "sombra", "en", "el", "jardín"]
   },
   {
     "order": 408,
@@ -3500,9 +3500,9 @@
     "lemma": "vinagre",
     "es": "el vinagre",
     "en": "vinegar",
-    "sentence_es": "Este vinagre es muy fuerte.",
-    "sentence_en": "This vinegar is very strong.",
-    "sentence_lemmas": ["este", "vinagre", "ser", "muy", "fuerte"]
+    "sentence_es": "Pongo vinagre y aceite en la ensalada.",
+    "sentence_en": "I put vinegar and oil on the salad.",
+    "sentence_lemmas": ["poner", "vinagre", "y", "aceite", "en", "el", "ensalada"]
   },
   {
     "order": 1563,
@@ -4386,9 +4386,9 @@
     "lemma": "barrera",
     "es": "la barrera",
     "en": "barrier",
-    "sentence_es": "Hay una barrera en la calle.",
-    "sentence_en": "There is a barrier in the street.",
-    "sentence_lemmas": ["haber", "un", "barrera", "en", "el", "calle"]
+    "sentence_es": "Una barrera cierra el paso a los carros.",
+    "sentence_en": "A barrier blocks the way for cars.",
+    "sentence_lemmas": ["un", "barrera", "cerrar", "el", "paso", "a", "el", "carro"]
   },
   {
     "order": 1853,
@@ -5138,9 +5138,9 @@
     "lemma": "exótico",
     "es": "exótico",
     "en": "exotic",
-    "sentence_es": "Esa fruta es muy exótica.",
-    "sentence_en": "That fruit is very exotic.",
-    "sentence_lemmas": ["ese", "fruta", "ser", "muy", "exótico"]
+    "sentence_es": "Una fruta exótica viene de un país que está lejos.",
+    "sentence_en": "An exotic fruit comes from a country that is far away.",
+    "sentence_lemmas": ["un", "fruta", "exótico", "venir", "de", "un", "país", "que", "estar", "lejos"]
   },
   {
     "order": 1921,
@@ -5182,9 +5182,9 @@
     "lemma": "frágil",
     "es": "frágil",
     "en": "fragile",
-    "sentence_es": "Esta taza es muy frágil.",
-    "sentence_en": "This cup is very fragile.",
-    "sentence_lemmas": ["este", "taza", "ser", "muy", "frágil"]
+    "sentence_es": "Un vaso de vidrio es frágil y se rompe fácil.",
+    "sentence_en": "A glass cup is fragile and breaks easily.",
+    "sentence_lemmas": ["un", "vaso", "de", "vidrio", "ser", "frágil", "y", "se", "romper", "fácil"]
   },
   {
     "order": 1925,
@@ -5402,9 +5402,9 @@
     "lemma": "reja",
     "es": "la reja",
     "en": "grille, bars",
-    "sentence_es": "Hay una reja en la ventana.",
-    "sentence_en": "There is a grille on the window.",
-    "sentence_lemmas": ["haber", "un", "reja", "en", "el", "ventana"]
+    "sentence_es": "La reja de la ventana protege la casa de los ladrones.",
+    "sentence_en": "The window grille protects the house from thieves.",
+    "sentence_lemmas": ["el", "reja", "de", "el", "ventana", "proteger", "el", "casa", "de", "el", "ladrón"]
   },
   {
     "order": 2131,
@@ -5479,9 +5479,9 @@
     "lemma": "venado",
     "es": "el venado",
     "en": "deer",
-    "sentence_es": "Hay un venado en el bosque.",
-    "sentence_en": "There is a deer in the forest.",
-    "sentence_lemmas": ["haber", "un", "venado", "en", "el", "bosque"]
+    "sentence_es": "El venado es un animal del bosque y corre rápido.",
+    "sentence_en": "The deer is a forest animal and runs fast.",
+    "sentence_lemmas": ["el", "venado", "ser", "un", "animal", "de", "bosque", "y", "correr", "rápido"]
   },
   {
     "order": 2162,
@@ -5523,9 +5523,9 @@
     "lemma": "lodo",
     "es": "el lodo",
     "en": "mud",
-    "sentence_es": "Hay lodo en mis zapatos.",
-    "sentence_en": "There is mud on my shoes.",
-    "sentence_lemmas": ["haber", "lodo", "en", "mi", "zapato"]
+    "sentence_es": "Después de la lluvia, el camino tiene lodo y charcos.",
+    "sentence_en": "After the rain, the road has mud and puddles.",
+    "sentence_lemmas": ["después", "de", "el", "lluvia", "el", "camino", "tener", "lodo", "y", "charco"]
   },
   {
     "order": 2188,
@@ -5567,9 +5567,9 @@
     "lemma": "canica",
     "es": "la canica",
     "en": "marble (toy)",
-    "sentence_es": "Tengo cinco canicas en la bolsa.",
-    "sentence_en": "I have five marbles in the bag.",
-    "sentence_lemmas": ["tener", "cinco", "canica", "en", "el", "bolsa"]
+    "sentence_es": "Las canicas son pequeñas, de vidrio y de colores.",
+    "sentence_en": "Marbles are small, made of glass and colorful.",
+    "sentence_lemmas": ["el", "canica", "ser", "pequeño", "de", "vidrio", "y", "de", "color"]
   },
   {
     "order": 2206,
@@ -6929,9 +6929,9 @@
     "lemma": "arrogante",
     "es": "arrogante",
     "en": "arrogant",
-    "sentence_es": "Ese hombre es muy arrogante.",
-    "sentence_en": "That man is very arrogant.",
-    "sentence_lemmas": ["ese", "hombre", "ser", "muy", "arrogante"]
+    "sentence_es": "Un hombre arrogante cree que es mejor que todos.",
+    "sentence_en": "An arrogant man thinks he is better than everyone.",
+    "sentence_lemmas": ["un", "hombre", "arrogante", "creer", "que", "ser", "mejor", "que", "todo"]
   },
   {
     "order": 2496,
@@ -7394,9 +7394,9 @@
     "lemma": "dulcería",
     "es": "la dulcería",
     "en": "candy store",
-    "sentence_es": "Voy a la dulcería con mi hermano.",
-    "sentence_en": "I go to the candy store with my brother.",
-    "sentence_lemmas": ["ir", "a", "el", "dulcería", "con", "mi", "hermano"]
+    "sentence_es": "En la dulcería compro caramelos y chocolates.",
+    "sentence_en": "At the candy store I buy candies and chocolates.",
+    "sentence_lemmas": ["en", "el", "dulcería", "comprar", "caramelo", "y", "chocolate"]
   },
   {
     "order": 2707,
@@ -7416,9 +7416,9 @@
     "lemma": "glorieta",
     "es": "la glorieta",
     "en": "roundabout",
-    "sentence_es": "Hay una glorieta en el centro.",
-    "sentence_en": "There is a roundabout downtown.",
-    "sentence_lemmas": ["haber", "un", "glorieta", "en", "el", "centro"]
+    "sentence_es": "En una glorieta los carros giran alrededor del centro.",
+    "sentence_en": "In a roundabout the cars go around the center.",
+    "sentence_lemmas": ["en", "un", "glorieta", "el", "carro", "girar", "alrededor", "de", "centro"]
   },
   {
     "order": 2715,
@@ -7427,9 +7427,9 @@
     "lemma": "ciclovía",
     "es": "la ciclovía",
     "en": "bike lane",
-    "sentence_es": "Hay una ciclovía en el parque.",
-    "sentence_en": "There is a bike lane in the park.",
-    "sentence_lemmas": ["haber", "un", "ciclovía", "en", "el", "parque"]
+    "sentence_es": "En la ciclovía solo pasan las bicicletas.",
+    "sentence_en": "Only bicycles go along the bike path.",
+    "sentence_lemmas": ["en", "el", "ciclovía", "solo", "pasar", "el", "bicicleta"]
   },
   {
     "order": 2716,
@@ -7439,9 +7439,9 @@
     "es": "el escalón",
     "en": "step (stair)",
     "hint_en": "There is a *step* at the door",
-    "sentence_es": "Hay un escalón en la puerta.",
-    "sentence_en": "There is a step at the door.",
-    "sentence_lemmas": ["haber", "un", "escalón", "en", "el", "puerta"]
+    "sentence_es": "Un escalón es cada parte de una escalera.",
+    "sentence_en": "A step is each part of a staircase.",
+    "sentence_lemmas": ["un", "escalón", "ser", "cada", "parte", "de", "un", "escalera"]
   },
   {
     "order": 2717,
@@ -7505,9 +7505,9 @@
     "lemma": "alacrán",
     "es": "el alacrán",
     "en": "scorpion",
-    "sentence_es": "Hay un alacrán en el desierto.",
-    "sentence_en": "There is a scorpion in the desert.",
-    "sentence_lemmas": ["haber", "un", "alacrán", "en", "el", "desierto"]
+    "sentence_es": "El alacrán es un animal que pica con la cola.",
+    "sentence_en": "The scorpion is an animal that stings with its tail.",
+    "sentence_lemmas": ["el", "alacrán", "ser", "un", "animal", "que", "picar", "con", "el", "cola"]
   },
   {
     "order": 2742,
@@ -7637,9 +7637,9 @@
     "lemma": "cajeta",
     "es": "la cajeta",
     "en": "goat-milk caramel",
-    "sentence_es": "Quiero cajeta en el pan.",
-    "sentence_en": "I want goat-milk caramel on the bread.",
-    "sentence_lemmas": ["querer", "cajeta", "en", "el", "pan"]
+    "sentence_es": "La cajeta es un dulce de leche de cabra.",
+    "sentence_en": "Cajeta is a sweet made from goat's milk.",
+    "sentence_lemmas": ["el", "cajeta", "ser", "un", "dulce", "de", "leche", "de", "cabra"]
   },
   {
     "order": 2770,
@@ -7648,9 +7648,9 @@
     "lemma": "esquites",
     "es": "los esquites",
     "en": "corn in a cup",
-    "sentence_es": "Compro unos esquites en la calle.",
-    "sentence_en": "I buy a cup of corn on the street.",
-    "sentence_lemmas": ["comprar", "un", "esquites", "en", "el", "calle"]
+    "sentence_es": "Los esquites son maíz con limón, queso y chile.",
+    "sentence_en": "Esquites are corn with lime, cheese and chili.",
+    "sentence_lemmas": ["el", "esquites", "ser", "maíz", "con", "limón", "queso", "y", "chile"]
   },
   {
     "order": 2791,
@@ -7770,9 +7770,9 @@
     "lemma": "palillo",
     "es": "el palillo",
     "en": "toothpick",
-    "sentence_es": "Hay un palillo en el taco.",
-    "sentence_en": "There is a toothpick in the taco.",
-    "sentence_lemmas": ["haber", "un", "palillo", "en", "el", "taco"]
+    "sentence_es": "Uso un palillo para sacar comida de los dientes.",
+    "sentence_en": "I use a toothpick to get food out of my teeth.",
+    "sentence_lemmas": ["usar", "un", "palillo", "para", "sacar", "comida", "de", "el", "diente"]
   },
   {
     "order": 2835,
@@ -13623,9 +13623,9 @@
     "lemma": "tuna",
     "es": "la tuna",
     "en": "prickly pear (fruit)",
-    "sentence_es": "Compro tunas verdes en el mercado.",
-    "sentence_en": "I buy green prickly pears at the market.",
-    "sentence_lemmas": ["comprar", "tuna", "verde", "en", "el", "mercado"]
+    "sentence_es": "La tuna es la fruta dulce del nopal.",
+    "sentence_en": "The prickly pear is the sweet fruit of the nopal.",
+    "sentence_lemmas": ["el", "tuna", "ser", "el", "fruta", "dulce", "de", "nopal"]
   },
   {
     "order": 3878,
@@ -13678,9 +13678,9 @@
     "lemma": "higo",
     "es": "el higo",
     "en": "fig",
-    "sentence_es": "Quiero un higo, por favor.",
-    "sentence_en": "I want a fig, please.",
-    "sentence_lemmas": ["querer", "un", "higo", "por", "favor"]
+    "sentence_es": "El higo es una fruta dulce con muchas semillas.",
+    "sentence_en": "The fig is a sweet fruit with many seeds.",
+    "sentence_lemmas": ["el", "higo", "ser", "un", "fruta", "dulce", "con", "mucho", "semilla"]
   },
   {
     "order": 3884,
@@ -13788,9 +13788,9 @@
     "lemma": "gordita",
     "es": "la gordita",
     "en": "gordita (stuffed masa cake)",
-    "sentence_es": "Pido una gordita de chicharrón en el puesto.",
-    "sentence_en": "I order a pork-rind gordita at the stand.",
-    "sentence_lemmas": ["pedir", "un", "gordita", "de", "chicharrón", "en", "el", "puesto"]
+    "sentence_es": "La gordita es una tortilla gruesa con relleno.",
+    "sentence_en": "The gordita is a thick tortilla with a filling.",
+    "sentence_lemmas": ["el", "gordita", "ser", "un", "tortilla", "grueso", "con", "rellenar"]
   },
   {
     "order": 3905,
@@ -13986,9 +13986,9 @@
     "lemma": "pepinillo",
     "es": "el pepinillo",
     "en": "pickle",
-    "sentence_es": "Pido una hamburguesa sin pepinillos.",
-    "sentence_en": "I order a burger without pickles.",
-    "sentence_lemmas": ["pedir", "un", "hamburguesa", "sin", "pepinillo"]
+    "sentence_es": "El pepinillo es un pepino pequeño en vinagre.",
+    "sentence_en": "The pickle is a small cucumber in vinegar.",
+    "sentence_lemmas": ["el", "pepinillo", "ser", "un", "pepino", "pequeño", "en", "vinagre"]
   },
   {
     "order": 3936,
@@ -14030,9 +14030,9 @@
     "lemma": "fajita",
     "es": "la fajita",
     "en": "fajita",
-    "sentence_es": "Pido fajitas de pollo en el restaurante.",
-    "sentence_en": "I order chicken fajitas at the restaurant.",
-    "sentence_lemmas": ["pedir", "fajita", "de", "pollo", "en", "el", "restaurante"]
+    "sentence_es": "Las fajitas son pollo o carne con cebolla y chile.",
+    "sentence_en": "Fajitas are chicken or beef with onion and chili.",
+    "sentence_lemmas": ["el", "fajita", "ser", "pollo", "o", "carne", "con", "cebolla", "y", "chile"]
   },
   {
     "order": 3950,
@@ -14063,9 +14063,9 @@
     "lemma": "aderezo",
     "es": "el aderezo",
     "en": "salad dressing",
-    "sentence_es": "Quiero aderezo en la comida.",
-    "sentence_en": "I want dressing on my meal.",
-    "sentence_lemmas": ["querer", "aderezo", "en", "el", "comida"]
+    "sentence_es": "El aderezo es una salsa para la ensalada.",
+    "sentence_en": "Dressing is a sauce for the salad.",
+    "sentence_lemmas": ["el", "aderezo", "ser", "un", "salsa", "para", "el", "ensalada"]
   },
   {
     "order": 3958,
