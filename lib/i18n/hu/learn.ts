@@ -172,7 +172,7 @@ const hu: typeof en = {
     progress: (done: number, total: number) => `${done} / ${total}`,
     progressA11y: (done: number, total: number) => `Kész lépések: ${done} / ${total}`,
     sentenceOf: (n: number, total: number) => `Mondat: ${n} / ${total}`,
-    stepChunk: (part: number, parts: number) => `Építsd fel a részt: ${part} / ${parts}`,
+    stepChunk: (part: number, parts: number) => `Építsd fel a rövid mondatot: ${part} / ${parts}`,
     stepBuildWhole: 'Építsd fel az egész mondatot',
     stepTypeWhole: 'Írd be az egész mondatot',
     stepListenType: 'Hallgasd meg, és írd be, amit hallasz',

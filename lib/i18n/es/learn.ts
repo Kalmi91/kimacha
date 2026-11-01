@@ -176,7 +176,7 @@ const es: typeof en = {
     progress: (done: number, total: number) => `${done} / ${total}`,
     progressA11y: (done: number, total: number) => `Pasos hechos: ${done} de ${total}`,
     sentenceOf: (n: number, total: number) => `Frase ${n} de ${total}`,
-    stepChunk: (part: number, parts: number) => `Construye la parte ${part} de ${parts}`,
+    stepChunk: (part: number, parts: number) => `Construye la frase corta ${part} de ${parts}`,
     stepBuildWhole: 'Construye la frase entera',
     stepTypeWhole: 'Escribe la frase entera',
     stepListenType: 'Escucha y escribe lo que oyes',

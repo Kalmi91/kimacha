@@ -93,7 +93,7 @@ function BuildStep({ entry, target, step, hints, onHint, onResult }: { entry: Se
   );
 }
 
-// The label of a step ("Build part 1 of 2"): the screen adds the sentence's place in front of it.
+// The label of a step ("Build the short sentence 1 of 2"): the screen adds the sentence's place in front of it.
 function stepLabel(step: RoundStep, entry: SentenceEntry, s: ReturnType<typeof t>): string {
   if (step.kind === 'chunk') return s.sentenceTab.stepChunk((step.chunk ?? 0) + 1, entry.chunks?.length ?? 1);
   if (step.kind === 'listen') return s.sentenceTab.stepListenType;
