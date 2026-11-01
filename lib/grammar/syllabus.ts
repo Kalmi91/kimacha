@@ -47,7 +47,7 @@ export interface SyllabusUnit {
  *   full    (green)   PCIC completeness, only for the sake of the inventory
  *   perfect (yellow)  100% spelling and grammatical finesse
  */
-type GrammarTier = 'core-plus' | 'core' | 'exam' | 'full' | 'perfect';
+export type GrammarTier = 'core-plus' | 'core' | 'exam' | 'full' | 'perfect';
 
 /** Band per topic. Whatever is not on the list is 'full' (it is in the inventory but not urgent). */
 const GRAMMAR_TIER: Record<string, GrammarTier> = {
