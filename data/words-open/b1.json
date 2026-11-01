@@ -17,9 +17,9 @@
     "lemma": "permitir",
     "es": "permitir",
     "en": "to allow, to permit",
-    "sentence_es": "No permitiré que mi hijo salga solo.",
-    "sentence_en": "I will not allow my son to go out alone.",
-    "sentence_lemmas": ["no", "permitir", "que", "mi", "hijo", "salir", "solo"]
+    "sentence_es": "Mi hijo pide salir; yo le permito ir al parque.",
+    "sentence_en": "My son asks to go out; I allow him to go to the park.",
+    "sentence_lemmas": ["mi", "hijo", "pedir", "salir", "yo", "le", "permitir", "ir", "a", "parque"]
   },
   {
     "order": 303,
@@ -29,9 +29,9 @@
     "es": "intentar",
     "en": "to try, to attempt",
     "hint_en": "I am going to *try* to arrive early",
-    "sentence_es": "Voy a intentar llegar temprano.",
-    "sentence_en": "I am going to try to arrive early.",
-    "sentence_lemmas": ["ir", "a", "intentar", "llegar", "temprano"]
+    "sentence_es": "Intento abrir la puerta, pero no puedo.",
+    "sentence_en": "I try to open the door, but I cannot.",
+    "sentence_lemmas": ["intentar", "abrir", "el", "puerta", "pero", "no", "poder"]
   },
   {
     "order": 304,
@@ -74,9 +74,9 @@
     "es": "enviar",
     "en": "to send (mail, parcel)",
     "hint_en": "I will *send* a letter today.",
-    "sentence_es": "Voy a enviar una carta a mi hermano.",
-    "sentence_en": "I am going to send a letter to my brother.",
-    "sentence_lemmas": ["ir", "a", "enviar", "un", "carta", "a", "mi", "hermano"]
+    "sentence_es": "Escribo una carta y la envío por correo.",
+    "sentence_en": "I write a letter and send it by mail.",
+    "sentence_lemmas": ["escribir", "un", "carta", "y", "el", "enviar", "por", "correo"]
   },
   {
     "order": 310,
@@ -186,9 +186,9 @@
     "lemma": "considerar",
     "es": "considerar",
     "en": "to consider",
-    "sentence_es": "Considero que es una buena idea.",
-    "sentence_en": "I consider it a good idea.",
-    "sentence_lemmas": ["considerar", "que", "ser", "un", "bueno", "idea"]
+    "sentence_es": "Antes de comprar un carro, considero el precio.",
+    "sentence_en": "Before buying a car, I consider the price.",
+    "sentence_lemmas": ["antes", "de", "comprar", "un", "carro", "considerar", "el", "precio"]
   },
   {
     "order": 320,
@@ -323,9 +323,9 @@
     "es": "celebrar",
     "en": "to celebrate",
     "hint_en": "We *celebrate* Christmas at home.",
-    "sentence_es": "Mañana vamos a celebrar una fiesta en casa.",
-    "sentence_en": "Tomorrow we are going to have a party at home.",
-    "sentence_lemmas": ["mañana", "ir", "a", "celebrar", "un", "fiesta", "en", "casa"]
+    "sentence_es": "Mañana es mi cumpleaños y lo celebramos con pastel.",
+    "sentence_en": "Tomorrow is my birthday and we celebrate it with cake.",
+    "sentence_lemmas": ["mañana", "ser", "mi", "cumpleaños", "y", "lo", "celebrar", "con", "pastel"]
   },
   {
     "order": 337,
@@ -334,9 +334,9 @@
     "lemma": "invitar",
     "es": "invitar",
     "en": "to invite",
-    "sentence_es": "Te invitaría a mi casa.",
-    "sentence_en": "I would invite you to my house.",
-    "sentence_lemmas": ["te", "invitar", "a", "mi", "casa"]
+    "sentence_es": "Te invito a cenar: yo pago la cuenta.",
+    "sentence_en": "I invite you to dinner: I pay the bill.",
+    "sentence_lemmas": ["te", "invitar", "a", "cenar", "yo", "pagar", "el", "cuenta"]
   },
   {
     "order": 338,
@@ -1859,9 +1859,9 @@
     "lemma": "actuar",
     "es": "actuar",
     "en": "to act",
-    "sentence_es": "Debemos actuar rápido para ayudar.",
-    "sentence_en": "We must act fast to help.",
-    "sentence_lemmas": ["deber", "actuar", "rápido", "para", "ayudar"]
+    "sentence_es": "Alguien se cae y yo actúo rápido: llamo al médico.",
+    "sentence_en": "Someone falls and I act fast: I call the doctor.",
+    "sentence_lemmas": ["alguien", "se", "caer", "y", "yo", "actuar", "rápido", "llamar", "a", "médico"]
   },
   {
     "order": 1187,
@@ -2368,9 +2368,9 @@
     "es": "plantear",
     "en": "to raise (an issue), to pose",
     "hint_en": "My boss *raises* an important problem",
-    "sentence_es": "Mi jefe plantea un problema importante.",
-    "sentence_en": "My boss raises an important problem.",
-    "sentence_lemmas": ["mi", "jefe", "plantear", "un", "problema", "importante"]
+    "sentence_es": "En la reunión, mi jefe plantea un problema y pide ideas.",
+    "sentence_en": "In the meeting, my boss raises a problem and asks for ideas.",
+    "sentence_lemmas": ["en", "el", "reunión", "mi", "jefe", "plantear", "un", "problema", "y", "pedir", "idea"]
   },
   {
     "order": 1233,
@@ -3776,9 +3776,9 @@
     "lemma": "castigar",
     "es": "castigar",
     "en": "to punish",
-    "sentence_es": "Mi padre castiga a mi hermano.",
-    "sentence_en": "My father punishes my brother.",
-    "sentence_lemmas": ["mi", "padre", "castigar", "a", "mi", "hermano"]
+    "sentence_es": "Mi hermano rompió la ventana y mi padre lo castiga.",
+    "sentence_en": "My brother broke the window and my father punishes him.",
+    "sentence_lemmas": ["mi", "hermano", "romper", "el", "ventana", "y", "mi", "padre", "lo", "castigar"]
   },
   {
     "order": 1798,
@@ -3798,9 +3798,9 @@
     "lemma": "colaborar",
     "es": "colaborar",
     "en": "to collaborate",
-    "sentence_es": "Todos colaboramos en el proyecto.",
-    "sentence_en": "We all collaborate on the project.",
-    "sentence_lemmas": ["todo", "colaborar", "en", "el", "proyecto"]
+    "sentence_es": "Todos colaboramos: cada persona hace una parte del trabajo.",
+    "sentence_en": "We all collaborate: each person does a part of the work.",
+    "sentence_lemmas": ["todo", "colaborar", "cada", "persona", "hacer", "un", "parte", "de", "trabajo"]
   },
   {
     "order": 1800,
@@ -4153,9 +4153,9 @@
     "lemma": "nombrar",
     "es": "nombrar",
     "en": "to name, to appoint",
-    "sentence_es": "Mi madre nombra a todos mis primos.",
-    "sentence_en": "My mother names all my cousins.",
-    "sentence_lemmas": ["mi", "madre", "nombrar", "a", "todo", "mi", "primo"]
+    "sentence_es": "El profesor nombra a cada alumno por su nombre.",
+    "sentence_en": "The teacher calls each student by name.",
+    "sentence_lemmas": ["el", "profesor", "nombrar", "a", "cada", "alumno", "por", "su", "nombre"]
   },
   {
     "order": 1832,
