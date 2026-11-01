@@ -2007,9 +2007,9 @@
     "lemma": "atrás",
     "es": "atrás",
     "en": "at the back, backward",
-    "sentence_es": "Mi carro está atrás de la casa.",
-    "sentence_en": "My car is behind the house.",
-    "sentence_lemmas": ["mi", "carro", "estar", "atrás", "de", "el", "casa"]
+    "sentence_es": "El carro de mi padre está atrás de la casa.",
+    "sentence_en": "My father's car is behind the house.",
+    "sentence_lemmas": ["el", "carro", "de", "mi", "padre", "estar", "atrás", "de", "el", "casa"]
   },
   {
     "order": 896,
@@ -8656,9 +8656,9 @@
     "lemma": "micrófono",
     "es": "el micrófono",
     "en": "microphone",
-    "sentence_es": "Hablo en el micrófono.",
-    "sentence_en": "I speak into the microphone.",
-    "sentence_lemmas": ["hablar", "en", "el", "micrófono"]
+    "sentence_es": "Hablo en el micrófono y mucha gente me escucha.",
+    "sentence_en": "I speak into the microphone and a lot of people listen to me.",
+    "sentence_lemmas": ["hablar", "en", "el", "micrófono", "y", "mucho", "gente", "me", "escuchar"]
   },
   {
     "order": 2253,
@@ -8844,9 +8844,9 @@
     "lemma": "licencia",
     "es": "la licencia",
     "en": "driver's license; permit",
-    "sentence_es": "Tengo licencia para manejar.",
-    "sentence_en": "I have a driver's license.",
-    "sentence_lemmas": ["tener", "licencia", "para", "manejar"]
+    "sentence_es": "Necesito una licencia para manejar un carro.",
+    "sentence_en": "I need a license to drive a car.",
+    "sentence_lemmas": ["necesitar", "un", "licencia", "para", "manejar", "un", "carro"]
   },
   {
     "order": 2270,
@@ -9077,9 +9077,9 @@
     "lemma": "paciencia",
     "es": "la paciencia",
     "en": "patience",
-    "sentence_es": "Los niños necesitan paciencia.",
-    "sentence_en": "Children need patience.",
-    "sentence_lemmas": ["el", "niño", "necesitar", "paciencia"]
+    "sentence_es": "Con los niños necesito mucha paciencia.",
+    "sentence_en": "With children I need a lot of patience.",
+    "sentence_lemmas": ["con", "el", "niño", "necesitar", "mucho", "paciencia"]
   },
   {
     "order": 2291,
@@ -9332,9 +9332,9 @@
     "lemma": "marea",
     "es": "la marea",
     "en": "tide",
-    "sentence_es": "La marea está alta.",
-    "sentence_en": "The tide is high.",
-    "sentence_lemmas": ["el", "marea", "estar", "alto"]
+    "sentence_es": "Con la marea alta no hay playa.",
+    "sentence_en": "With high tide there is no beach.",
+    "sentence_lemmas": ["con", "el", "marea", "alto", "no", "haber", "playa"]
   },
   {
     "order": 2314,
@@ -9376,9 +9376,9 @@
     "lemma": "continente",
     "es": "el continente",
     "en": "continent",
-    "sentence_es": "Hay siete continentes.",
-    "sentence_en": "There are seven continents.",
-    "sentence_lemmas": ["haber", "siete", "continente"]
+    "sentence_es": "Hay siete continentes y muchos países.",
+    "sentence_en": "There are seven continents and many countries.",
+    "sentence_lemmas": ["haber", "siete", "continente", "y", "mucho", "país"]
   },
   {
     "order": 2318,
@@ -9574,9 +9574,9 @@
     "lemma": "hinchado",
     "es": "hinchado",
     "en": "swollen",
-    "sentence_es": "Tengo el pie hinchado.",
-    "sentence_en": "My foot is swollen.",
-    "sentence_lemmas": ["tener", "el", "pie", "hinchado"]
+    "sentence_es": "Tengo el pie hinchado y no puedo caminar.",
+    "sentence_en": "My foot is swollen and I cannot walk.",
+    "sentence_lemmas": ["tener", "el", "pie", "hinchado", "y", "no", "poder", "caminar"]
   },
   {
     "order": 2336,
@@ -9585,9 +9585,9 @@
     "lemma": "oxidado",
     "es": "oxidado",
     "en": "rusty",
-    "sentence_es": "El clavo está oxidado.",
-    "sentence_en": "The nail is rusty.",
-    "sentence_lemmas": ["el", "clavo", "estar", "oxidado"]
+    "sentence_es": "El clavo está oxidado porque está en el agua.",
+    "sentence_en": "The nail is rusty because it is in the water.",
+    "sentence_lemmas": ["el", "clavo", "estar", "oxidado", "porque", "estar", "en", "el", "agua"]
   },
   {
     "order": 2337,
@@ -9651,9 +9651,9 @@
     "lemma": "terco",
     "es": "terco",
     "en": "stubborn",
-    "sentence_es": "El burro es terco.",
-    "sentence_en": "The donkey is stubborn.",
-    "sentence_lemmas": ["el", "burro", "ser", "terco"]
+    "sentence_es": "El burro es terco y no quiere caminar.",
+    "sentence_en": "The donkey is stubborn and does not want to walk.",
+    "sentence_lemmas": ["el", "burro", "ser", "terco", "y", "no", "querer", "caminar"]
   },
   {
     "order": 2343,
@@ -9673,9 +9673,9 @@
     "lemma": "mugroso",
     "es": "mugroso",
     "en": "filthy, grimy",
-    "sentence_es": "Tengo las manos mugrosas.",
-    "sentence_en": "My hands are filthy.",
-    "sentence_lemmas": ["tener", "el", "mano", "mugroso"]
+    "sentence_es": "Tengo las manos mugrosas porque juego en la calle.",
+    "sentence_en": "My hands are filthy because I play in the street.",
+    "sentence_lemmas": ["tener", "el", "mano", "mugroso", "porque", "jugar", "en", "el", "calle"]
   },
   {
     "order": 2345,
@@ -9795,9 +9795,9 @@
     "es": "doblar",
     "en": "to fold; to turn (a corner)",
     "hint_en": "*Turn* left at the corner.",
-    "sentence_es": "Doblo la ropa limpia.",
-    "sentence_en": "I fold the clean clothes.",
-    "sentence_lemmas": ["doblar", "el", "ropa", "limpio"]
+    "sentence_es": "Doblo la ropa limpia en la cama.",
+    "sentence_en": "I fold the clean clothes on the bed.",
+    "sentence_lemmas": ["doblar", "el", "ropa", "limpio", "en", "el", "cama"]
   },
   {
     "order": 2356,
@@ -9884,9 +9884,9 @@
     "lemma": "inflar",
     "es": "inflar",
     "en": "to inflate",
-    "sentence_es": "Inflo el globo rojo.",
-    "sentence_en": "I inflate the red balloon.",
-    "sentence_lemmas": ["inflar", "el", "globo", "rojo"]
+    "sentence_es": "Inflo el globo rojo con aire.",
+    "sentence_en": "I inflate the red balloon with air.",
+    "sentence_lemmas": ["inflar", "el", "globo", "rojo", "con", "aire"]
   },
   {
     "order": 2364,
@@ -9962,9 +9962,9 @@
     "lemma": "resbalar",
     "es": "resbalar",
     "en": "to slip",
-    "sentence_es": "Resbalo en el hielo.",
-    "sentence_en": "I slip on the ice.",
-    "sentence_lemmas": ["resbalar", "en", "el", "hielo"]
+    "sentence_es": "Resbalo en el hielo de la calle.",
+    "sentence_en": "I slip on the ice on the street.",
+    "sentence_lemmas": ["resbalar", "en", "el", "hielo", "de", "el", "calle"]
   },
   {
     "order": 2371,
@@ -9973,9 +9973,9 @@
     "lemma": "rogar",
     "es": "rogar",
     "en": "to beg, to plead",
-    "sentence_es": "Rogamos por nuestra familia.",
-    "sentence_en": "We plead for our family.",
-    "sentence_lemmas": ["rogar", "por", "nuestro", "familia"]
+    "sentence_es": "Rogamos por nuestra familia en la iglesia.",
+    "sentence_en": "We pray for our family in church.",
+    "sentence_lemmas": ["rogar", "por", "nuestro", "familia", "en", "el", "iglesia"]
   },
   {
     "order": 2372,
@@ -10061,9 +10061,9 @@
     "lemma": "avanzar",
     "es": "avanzar",
     "en": "to move forward, to advance",
-    "sentence_es": "El carro avanza despacio.",
-    "sentence_en": "The car moves forward slowly.",
-    "sentence_lemmas": ["el", "carro", "avanzar", "despacio"]
+    "sentence_es": "El carro avanza despacio por la calle.",
+    "sentence_en": "The car moves forward slowly along the street.",
+    "sentence_lemmas": ["el", "carro", "avanzar", "despacio", "por", "el", "calle"]
   },
   {
     "order": 2380,
@@ -10160,9 +10160,9 @@
     "lemma": "línea",
     "es": "la línea",
     "en": "line",
-    "sentence_es": "Dibujo una línea azul.",
-    "sentence_en": "I draw a blue line.",
-    "sentence_lemmas": ["dibujar", "un", "línea", "azul"]
+    "sentence_es": "Dibujo una línea azul en el papel.",
+    "sentence_en": "I draw a blue line on the paper.",
+    "sentence_lemmas": ["dibujar", "un", "línea", "azul", "en", "el", "papel"]
   },
   {
     "order": 2692,
@@ -10215,9 +10215,9 @@
     "lemma": "plumón",
     "es": "el plumón",
     "en": "marker pen (MX)",
-    "sentence_es": "Quiero un plumón negro.",
-    "sentence_en": "I want a black marker.",
-    "sentence_lemmas": ["querer", "un", "plumón", "negro"]
+    "sentence_es": "Escribo en el pizarrón con un plumón.",
+    "sentence_en": "I write on the board with a marker.",
+    "sentence_lemmas": ["escribir", "en", "el", "pizarrón", "con", "un", "plumón"]
   },
   {
     "order": 2702,
@@ -10424,9 +10424,9 @@
     "lemma": "pantuflas",
     "es": "las pantuflas",
     "en": "slippers",
-    "sentence_es": "Tengo pantuflas nuevas.",
-    "sentence_en": "I have new slippers.",
-    "sentence_lemmas": ["tener", "pantuflas", "nuevo"]
+    "sentence_es": "En casa llevo pantuflas para el frío.",
+    "sentence_en": "At home I wear slippers for the cold.",
+    "sentence_lemmas": ["en", "casa", "llevar", "pantuflas", "para", "el", "frío"]
   },
   {
     "order": 2729,
@@ -10556,9 +10556,9 @@
     "lemma": "canguro",
     "es": "el canguro",
     "en": "kangaroo",
-    "sentence_es": "El canguro salta mucho.",
-    "sentence_en": "The kangaroo jumps a lot.",
-    "sentence_lemmas": ["el", "canguro", "saltar", "mucho"]
+    "sentence_es": "El canguro salta mucho y lleva a su bebé.",
+    "sentence_en": "The kangaroo jumps a lot and carries its baby.",
+    "sentence_lemmas": ["el", "canguro", "saltar", "mucho", "y", "llevar", "a", "su", "bebé"]
   },
   {
     "order": 2746,
@@ -10600,9 +10600,9 @@
     "lemma": "gaviota",
     "es": "la gaviota",
     "en": "seagull",
-    "sentence_es": "La gaviota come pescado.",
-    "sentence_en": "The seagull eats fish.",
-    "sentence_lemmas": ["el", "gaviota", "comer", "pescado"]
+    "sentence_es": "La gaviota vive en la playa y come pescado.",
+    "sentence_en": "The seagull lives on the beach and eats fish.",
+    "sentence_lemmas": ["el", "gaviota", "vivir", "en", "el", "playa", "y", "comer", "pescado"]
   },
   {
     "order": 2757,
@@ -10666,9 +10666,9 @@
     "lemma": "jamaica",
     "es": "la jamaica",
     "en": "hibiscus drink",
-    "sentence_es": "Bebo agua de jamaica.",
-    "sentence_en": "I drink hibiscus water.",
-    "sentence_lemmas": ["beber", "agua", "de", "jamaica"]
+    "sentence_es": "Bebo agua de jamaica con mucho hielo.",
+    "sentence_en": "I drink hibiscus water with lots of ice.",
+    "sentence_lemmas": ["beber", "agua", "de", "jamaica", "con", "mucho", "hielo"]
   },
   {
     "order": 2767,
@@ -10677,9 +10677,9 @@
     "lemma": "dona",
     "es": "la dona",
     "en": "donut",
-    "sentence_es": "La dona tiene chocolate.",
-    "sentence_en": "The donut has chocolate.",
-    "sentence_lemmas": ["el", "dona", "tener", "chocolate"]
+    "sentence_es": "La dona es dulce y tiene chocolate encima.",
+    "sentence_en": "The donut is sweet and has chocolate on top.",
+    "sentence_lemmas": ["el", "dona", "ser", "dulce", "y", "tener", "chocolate", "encima"]
   },
   {
     "order": 2769,
@@ -10688,9 +10688,9 @@
     "lemma": "chilaquiles",
     "es": "los chilaquiles",
     "en": "fried tortilla strips in salsa",
-    "sentence_es": "Desayuno chilaquiles con frijoles.",
-    "sentence_en": "I have chilaquiles with beans for breakfast.",
-    "sentence_lemmas": ["desayunar", "chilaquiles", "con", "frijol"]
+    "sentence_es": "En el desayuno como chilaquiles con frijoles.",
+    "sentence_en": "At breakfast I eat chilaquiles with beans.",
+    "sentence_lemmas": ["en", "el", "desayuno", "comer", "chilaquiles", "con", "frijol"]
   },
   {
     "order": 2773,
@@ -10699,9 +10699,9 @@
     "lemma": "chorizo",
     "es": "el chorizo",
     "en": "chorizo sausage",
-    "sentence_es": "Comemos huevo con chorizo.",
-    "sentence_en": "We eat eggs with chorizo.",
-    "sentence_lemmas": ["comer", "huevo", "con", "chorizo"]
+    "sentence_es": "Comemos huevo con chorizo en el desayuno.",
+    "sentence_en": "We eat egg with chorizo at breakfast.",
+    "sentence_lemmas": ["comer", "huevo", "con", "chorizo", "en", "el", "desayuno"]
   },
   {
     "order": 2774,
@@ -10710,9 +10710,9 @@
     "lemma": "milanesa",
     "es": "la milanesa",
     "en": "breaded cutlet",
-    "sentence_es": "Como milanesa con limón.",
-    "sentence_en": "I eat breaded cutlet with lime.",
-    "sentence_lemmas": ["comer", "milanesa", "con", "limón"]
+    "sentence_es": "La milanesa es carne con pan y huevo.",
+    "sentence_en": "Milanesa is meat with bread and egg.",
+    "sentence_lemmas": ["el", "milanesa", "ser", "carne", "con", "pan", "y", "huevo"]
   },
   {
     "order": 2775,
