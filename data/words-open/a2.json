@@ -598,9 +598,9 @@
     "lemma": "señora",
     "es": "la señora",
     "en": "lady, madam, Mrs.",
-    "sentence_es": "La señora vende pan.",
-    "sentence_en": "The lady sells bread.",
-    "sentence_lemmas": ["el", "señora", "vender", "pan"]
+    "sentence_es": "Digo señora a una mujer mayor.",
+    "sentence_en": "I say señora to an older woman.",
+    "sentence_lemmas": ["decir", "señora", "a", "un", "mujer", "mayor"]
   },
   {
     "order": 243,
@@ -1772,9 +1772,9 @@
     "lemma": "proyecto",
     "es": "el proyecto",
     "en": "project",
-    "sentence_es": "El proyecto termina mañana.",
-    "sentence_en": "The project ends tomorrow.",
-    "sentence_lemmas": ["el", "proyecto", "terminar", "mañana"]
+    "sentence_es": "En la oficina trabajo en un proyecto nuevo.",
+    "sentence_en": "At the office I work on a new project.",
+    "sentence_lemmas": ["en", "el", "oficina", "trabajar", "en", "un", "proyecto", "nuevo"]
   },
   {
     "order": 362,
@@ -1996,9 +1996,9 @@
     "lemma": "abajo",
     "es": "abajo",
     "en": "down, below, downstairs",
-    "sentence_es": "Mis zapatos están abajo.",
-    "sentence_en": "My shoes are downstairs.",
-    "sentence_lemmas": ["mi", "zapato", "estar", "abajo"]
+    "sentence_es": "Mi hijo está arriba y mi hija está abajo.",
+    "sentence_en": "My son is upstairs and my daughter is downstairs.",
+    "sentence_lemmas": ["mi", "hijo", "estar", "arriba", "y", "mi", "hija", "estar", "abajo"]
   },
   {
     "order": 895,
@@ -2007,9 +2007,9 @@
     "lemma": "atrás",
     "es": "atrás",
     "en": "at the back, backward",
-    "sentence_es": "Mi carro está atrás.",
-    "sentence_en": "My car is in the back.",
-    "sentence_lemmas": ["mi", "carro", "estar", "atrás"]
+    "sentence_es": "Mi carro está atrás de la casa.",
+    "sentence_en": "My car is behind the house.",
+    "sentence_lemmas": ["mi", "carro", "estar", "atrás", "de", "el", "casa"]
   },
   {
     "order": 896,
@@ -2217,9 +2217,9 @@
     "lemma": "llamada",
     "es": "la llamada",
     "en": "call, phone call",
-    "sentence_es": "Tengo una llamada importante.",
-    "sentence_en": "I have an important call.",
-    "sentence_lemmas": ["tener", "un", "llamada", "importante"]
+    "sentence_es": "En una llamada hablo por teléfono con mi madre.",
+    "sentence_en": "In a call I talk on the phone with my mother.",
+    "sentence_lemmas": ["en", "un", "llamada", "hablar", "por", "teléfono", "con", "mi", "madre"]
   },
   {
     "order": 974,
@@ -2361,9 +2361,9 @@
     "lemma": "sueño",
     "es": "el sueño",
     "en": "sleepiness",
-    "sentence_es": "Tengo mucho sueño.",
-    "sentence_en": "I am very sleepy.",
-    "sentence_lemmas": ["tener", "mucho", "sueño"]
+    "sentence_es": "Tengo mucho sueño y quiero dormir.",
+    "sentence_en": "I am very sleepy and I want to sleep.",
+    "sentence_lemmas": ["tener", "mucho", "sueño", "y", "querer", "dormir"]
   },
   {
     "order": 1007,
@@ -2552,9 +2552,9 @@
     "lemma": "adivinar",
     "es": "adivinar",
     "en": "to guess",
-    "sentence_es": "¿Puedes adivinar mi edad?",
-    "sentence_en": "Can you guess my age?",
-    "sentence_lemmas": ["poder", "adivinar", "mi", "edad"]
+    "sentence_es": "¿Puedes adivinar cuántos años tengo?",
+    "sentence_en": "Can you guess how old I am?",
+    "sentence_lemmas": ["poder", "adivinar", "cuánto", "año", "tener"]
   },
   {
     "order": 1034,
@@ -2631,9 +2631,9 @@
     "lemma": "bostezar",
     "es": "bostezar",
     "en": "to yawn",
-    "sentence_es": "Bostezo porque tengo sueño.",
-    "sentence_en": "I yawn because I am sleepy.",
-    "sentence_lemmas": ["bostezar", "porque", "tener", "sueño"]
+    "sentence_es": "Bostezo mucho porque tengo mucho sueño.",
+    "sentence_en": "I yawn a lot because I am very sleepy.",
+    "sentence_lemmas": ["bostezar", "mucho", "porque", "tener", "mucho", "sueño"]
   },
   {
     "order": 1041,
@@ -2642,9 +2642,9 @@
     "lemma": "cruzar",
     "es": "cruzar",
     "en": "to cross",
-    "sentence_es": "Cruzamos la calle despacio.",
-    "sentence_en": "We cross the street slowly.",
-    "sentence_lemmas": ["cruzar", "el", "calle", "despacio"]
+    "sentence_es": "Cruzamos la calle despacio con los niños.",
+    "sentence_en": "We cross the street slowly with the children.",
+    "sentence_lemmas": ["cruzar", "el", "calle", "despacio", "con", "el", "niño"]
   },
   {
     "order": 1042,
@@ -2654,9 +2654,9 @@
     "es": "probar",
     "en": "to taste, to try (food)",
     "hint_en": "I want to *try* the soup",
-    "sentence_es": "Quiero probar la sopa.",
-    "sentence_en": "I want to try the soup.",
-    "sentence_lemmas": ["querer", "probar", "el", "sopa"]
+    "sentence_es": "Voy a probar la sopa antes de comer.",
+    "sentence_en": "I am going to taste the soup before eating.",
+    "sentence_lemmas": ["ir", "a", "probar", "el", "sopa", "antes", "de", "comer"]
   },
   {
     "order": 1043,
@@ -2699,9 +2699,9 @@
     "lemma": "prestar",
     "es": "prestar",
     "en": "to lend",
-    "sentence_es": "¿Me prestas tu lápiz?",
-    "sentence_en": "Can you lend me your pencil?",
-    "sentence_lemmas": ["me", "prestar", "tu", "lápiz"]
+    "sentence_es": "¿Me prestas tu lápiz para escribir?",
+    "sentence_en": "Can you lend me your pencil to write?",
+    "sentence_lemmas": ["me", "prestar", "tu", "lápiz", "para", "escribir"]
   },
   {
     "order": 1047,
@@ -2901,9 +2901,9 @@
     "lemma": "odiar",
     "es": "odiar",
     "en": "to hate",
-    "sentence_es": "Odio levantarme temprano.",
-    "sentence_en": "I hate getting up early.",
-    "sentence_lemmas": ["odiar", "levantarse", "temprano"]
+    "sentence_es": "Odio levantarme temprano cuando hace frío.",
+    "sentence_en": "I hate getting up early when it is cold.",
+    "sentence_lemmas": ["odiar", "levantarse", "temprano", "cuando", "hacer", "frío"]
   },
   {
     "order": 1065,
@@ -2981,9 +2981,9 @@
     "lemma": "garganta",
     "es": "la garganta",
     "en": "throat",
-    "sentence_es": "Tengo la garganta seca.",
-    "sentence_en": "My throat is dry.",
-    "sentence_lemmas": ["tener", "el", "garganta", "seco"]
+    "sentence_es": "Tengo la garganta seca y quiero agua.",
+    "sentence_en": "My throat is dry and I want water.",
+    "sentence_lemmas": ["tener", "el", "garganta", "seco", "y", "querer", "agua"]
   },
   {
     "order": 1072,
@@ -3070,9 +3070,9 @@
     "lemma": "tos",
     "es": "la tos",
     "en": "cough",
-    "sentence_es": "Tengo tos desde ayer.",
-    "sentence_en": "I have had a cough since yesterday.",
-    "sentence_lemmas": ["tener", "tos", "desde", "ayer"]
+    "sentence_es": "Tengo tos desde ayer por la noche.",
+    "sentence_en": "I have had a cough since last night.",
+    "sentence_lemmas": ["tener", "tos", "desde", "ayer", "por", "el", "noche"]
   },
   {
     "order": 1080,
@@ -3236,9 +3236,9 @@
     "lemma": "zanahoria",
     "es": "la zanahoria",
     "en": "carrot",
-    "sentence_es": "Los conejos comen zanahoria.",
-    "sentence_en": "Rabbits eat carrots.",
-    "sentence_lemmas": ["el", "conejo", "comer", "zanahoria"]
+    "sentence_es": "Los conejos comen zanahoria y otras verduras.",
+    "sentence_en": "Rabbits eat carrots and other vegetables.",
+    "sentence_lemmas": ["el", "conejo", "comer", "zanahoria", "y", "otro", "verdura"]
   },
   {
     "order": 1095,
@@ -3291,9 +3291,9 @@
     "lemma": "aceite",
     "es": "el aceite",
     "en": "oil",
-    "sentence_es": "Usamos aceite para cocinar.",
-    "sentence_en": "We use oil for cooking.",
-    "sentence_lemmas": ["usar", "aceite", "para", "cocinar"]
+    "sentence_es": "Usamos aceite para cocinar el pollo.",
+    "sentence_en": "We use oil to cook the chicken.",
+    "sentence_lemmas": ["usar", "aceite", "para", "cocinar", "el", "pollo"]
   },
   {
     "order": 1100,
@@ -3688,9 +3688,9 @@
     "lemma": "asiento",
     "es": "el asiento",
     "en": "seat",
-    "sentence_es": "Este asiento está ocupado.",
-    "sentence_en": "This seat is taken.",
-    "sentence_lemmas": ["este", "asiento", "estar", "ocupado"]
+    "sentence_es": "En el autobús hay asientos para las personas.",
+    "sentence_en": "On the bus there are seats for the people.",
+    "sentence_lemmas": ["en", "el", "autobús", "haber", "asiento", "para", "el", "persona"]
   },
   {
     "order": 1136,
@@ -4010,9 +4010,9 @@
     "lemma": "aburrido",
     "es": "aburrido",
     "en": "boring; bored",
-    "sentence_es": "La película fue aburrida.",
-    "sentence_en": "The movie was boring.",
-    "sentence_lemmas": ["el", "película", "ser", "aburrido"]
+    "sentence_es": "Estoy aburrido porque no tengo nada que hacer.",
+    "sentence_en": "I am bored because I have nothing to do.",
+    "sentence_lemmas": ["estar", "aburrido", "porque", "no", "tener", "nada", "que", "hacer"]
   },
   {
     "order": 1165,
@@ -4054,9 +4054,9 @@
     "lemma": "húmedo",
     "es": "húmedo",
     "en": "damp, humid",
-    "sentence_es": "El baño está húmedo.",
-    "sentence_en": "The bathroom is damp.",
-    "sentence_lemmas": ["el", "baño", "estar", "húmedo"]
+    "sentence_es": "El baño está húmedo porque hay mucha agua.",
+    "sentence_en": "The bathroom is damp because there is a lot of water.",
+    "sentence_lemmas": ["el", "baño", "estar", "húmedo", "porque", "haber", "mucho", "agua"]
   },
   {
     "order": 1169,
@@ -4575,9 +4575,9 @@
     "lemma": "pavo",
     "es": "el pavo",
     "en": "turkey",
-    "sentence_es": "Comemos pavo en Navidad.",
-    "sentence_en": "We eat turkey at Christmas.",
-    "sentence_lemmas": ["comer", "pavo", "en", "navidad"]
+    "sentence_es": "En Navidad mi familia come pavo con papas.",
+    "sentence_en": "At Christmas my family eats turkey with potatoes.",
+    "sentence_lemmas": ["en", "navidad", "mi", "familia", "comer", "pavo", "con", "papa"]
   },
   {
     "order": 1518,
@@ -4719,9 +4719,9 @@
     "lemma": "champú",
     "es": "el champú",
     "en": "shampoo",
-    "sentence_es": "Necesito champú y jabón.",
-    "sentence_en": "I need shampoo and soap.",
-    "sentence_lemmas": ["necesitar", "champú", "y", "jabón"]
+    "sentence_es": "Me lavo la cabeza con champú.",
+    "sentence_en": "I wash my head with shampoo.",
+    "sentence_lemmas": ["me", "lavarse", "el", "cabeza", "con", "champú"]
   },
   {
     "order": 1531,
@@ -4764,9 +4764,9 @@
     "es": "la plancha",
     "en": "iron (for clothes)",
     "hint_en": "The *iron* is hot",
-    "sentence_es": "La plancha está caliente.",
-    "sentence_en": "The iron is hot.",
-    "sentence_lemmas": ["el", "plancha", "estar", "caliente"]
+    "sentence_es": "Uso la plancha caliente para la camisa.",
+    "sentence_en": "I use the hot iron for the shirt.",
+    "sentence_lemmas": ["usar", "el", "plancha", "caliente", "para", "el", "camisa"]
   },
   {
     "order": 1535,
@@ -5106,9 +5106,9 @@
     "lemma": "medianoche",
     "es": "la medianoche",
     "en": "midnight",
-    "sentence_es": "A medianoche todos duermen.",
-    "sentence_en": "At midnight everyone is sleeping.",
-    "sentence_lemmas": ["a", "medianoche", "todo", "dormir"]
+    "sentence_es": "A medianoche hay luna y todos duermen.",
+    "sentence_en": "At midnight there is a moon and everyone sleeps.",
+    "sentence_lemmas": ["a", "medianoche", "haber", "luna", "y", "todo", "dormir"]
   },
   {
     "order": 1574,
@@ -5370,9 +5370,9 @@
     "lemma": "gallina",
     "es": "la gallina",
     "en": "hen",
-    "sentence_es": "La gallina da huevos.",
-    "sentence_en": "The hen lays eggs.",
-    "sentence_lemmas": ["el", "gallina", "dar", "huevo"]
+    "sentence_es": "La gallina vive en el jardín y da huevos.",
+    "sentence_en": "The hen lives in the garden and lays eggs.",
+    "sentence_lemmas": ["el", "gallina", "vivir", "en", "el", "jardín", "y", "dar", "huevo"]
   },
   {
     "order": 1609,
@@ -7340,9 +7340,9 @@
     "lemma": "espinaca",
     "es": "la espinaca",
     "en": "spinach",
-    "sentence_es": "Cocino espinacas con huevo.",
-    "sentence_en": "I cook spinach with egg.",
-    "sentence_lemmas": ["cocinar", "espinaca", "con", "huevo"]
+    "sentence_es": "Cocino espinacas con huevo para la cena.",
+    "sentence_en": "I cook spinach with egg for dinner.",
+    "sentence_lemmas": ["cocinar", "espinaca", "con", "huevo", "para", "el", "cena"]
   },
   {
     "order": 2094,
