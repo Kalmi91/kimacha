@@ -6,9 +6,9 @@
     "lemma": "otro",
     "es": "otro",
     "en": "other, another",
-    "sentence_es": "Quiero otro café.",
-    "sentence_en": "I want another coffee.",
-    "sentence_lemmas": ["querer", "otro", "café"]
+    "sentence_es": "Quiero otro café con leche.",
+    "sentence_en": "I want another coffee with milk.",
+    "sentence_lemmas": ["querer", "otro", "café", "con", "leche"]
   },
   {
     "order": 153,
@@ -17,9 +17,9 @@
     "lemma": "poco",
     "es": "poco",
     "en": "little, few",
-    "sentence_es": "Tengo poco tiempo hoy.",
-    "sentence_en": "I have little time today.",
-    "sentence_lemmas": ["tener", "poco", "tiempo", "hoy"]
+    "sentence_es": "Hoy tengo poco tiempo para comer.",
+    "sentence_en": "Today I have little time to eat.",
+    "sentence_lemmas": ["hoy", "tener", "poco", "tiempo", "para", "comer"]
   },
   {
     "order": 155,
@@ -28,9 +28,9 @@
     "lemma": "cada",
     "es": "cada",
     "en": "each, every",
-    "sentence_es": "Cada día bebo café.",
-    "sentence_en": "Every day I drink coffee.",
-    "sentence_lemmas": ["cada", "día", "beber", "café"]
+    "sentence_es": "Cada día bebo café en la mañana.",
+    "sentence_en": "Every day I drink coffee in the morning.",
+    "sentence_lemmas": ["cada", "día", "beber", "café", "en", "el", "mañana"]
   },
   {
     "order": 156,
@@ -51,9 +51,9 @@
     "lemma": "nuestro",
     "es": "nuestro",
     "en": "our",
-    "sentence_es": "Nuestra casa es pequeña.",
-    "sentence_en": "Our house is small.",
-    "sentence_lemmas": ["nuestro", "casa", "ser", "pequeño"]
+    "sentence_es": "Nuestra casa es pequeña, pero muy bonita.",
+    "sentence_en": "Our house is small, but very pretty.",
+    "sentence_lemmas": ["nuestro", "casa", "ser", "pequeño", "pero", "muy", "bonito"]
   },
   {
     "order": 163,
@@ -74,9 +74,9 @@
     "lemma": "nadie",
     "es": "nadie",
     "en": "nobody",
-    "sentence_es": "Nadie está en casa.",
-    "sentence_en": "Nobody is at home.",
-    "sentence_lemmas": ["nadie", "estar", "en", "casa"]
+    "sentence_es": "Nadie está en casa, todos están en la escuela.",
+    "sentence_en": "Nobody is at home, everyone is at school.",
+    "sentence_lemmas": ["nadie", "estar", "en", "casa", "todo", "estar", "en", "el", "escuela"]
   },
   {
     "order": 165,
@@ -156,9 +156,9 @@
     "lemma": "pronto",
     "es": "pronto",
     "en": "soon",
-    "sentence_es": "Mi madre llega pronto.",
-    "sentence_en": "My mother is arriving soon.",
-    "sentence_lemmas": ["mi", "madre", "llegar", "pronto"]
+    "sentence_es": "Mi madre llega pronto y vamos a comer.",
+    "sentence_en": "My mother arrives soon and we are going to eat.",
+    "sentence_lemmas": ["mi", "madre", "llegar", "pronto", "y", "ir", "a", "comer"]
   },
   {
     "order": 177,
@@ -167,9 +167,9 @@
     "lemma": "casi",
     "es": "casi",
     "en": "almost",
-    "sentence_es": "Casi no comí hoy.",
-    "sentence_en": "I hardly ate today.",
-    "sentence_lemmas": ["casi", "no", "comer", "hoy"]
+    "sentence_es": "Casi no comí hoy porque tengo mucho trabajo.",
+    "sentence_en": "I almost did not eat today because I have a lot of work.",
+    "sentence_lemmas": ["casi", "no", "comer", "hoy", "porque", "tener", "mucho", "trabajo"]
   },
   {
     "order": 178,
@@ -179,9 +179,9 @@
     "es": "todavía",
     "en": "still, yet",
     "hint_en": "She is *still* sleeping.",
-    "sentence_es": "Todavía estoy en casa.",
-    "sentence_en": "I am still at home.",
-    "sentence_lemmas": ["todavía", "estar", "en", "casa"]
+    "sentence_es": "Todavía estoy en casa porque llueve mucho.",
+    "sentence_en": "I am still at home because it is raining a lot.",
+    "sentence_lemmas": ["todavía", "estar", "en", "casa", "porque", "llover", "mucho"]
   },
   {
     "order": 179,
@@ -13223,9 +13223,9 @@
     "lemma": "prohibido",
     "es": "prohibido",
     "en": "forbidden",
-    "sentence_es": "Está prohibido correr aquí.",
-    "sentence_en": "Running is forbidden here.",
-    "sentence_lemmas": ["estar", "prohibido", "correr", "aquí"]
+    "sentence_es": "Está prohibido correr en el hospital.",
+    "sentence_en": "Running is forbidden in the hospital.",
+    "sentence_lemmas": ["estar", "prohibido", "correr", "en", "el", "hospital"]
   },
   {
     "order": 3370,
@@ -13278,9 +13278,9 @@
     "lemma": "almorzar",
     "es": "almorzar",
     "en": "to have a late-morning meal",
-    "sentence_es": "Almorzamos a las once.",
-    "sentence_en": "We have brunch at eleven.",
-    "sentence_lemmas": ["almorzar", "a", "el", "once"]
+    "sentence_es": "Almorzamos a las once y después trabajamos.",
+    "sentence_en": "We have lunch at eleven and then we work.",
+    "sentence_lemmas": ["almorzar", "a", "el", "once", "y", "después", "trabajar"]
   },
   {
     "order": 3375,
@@ -13322,9 +13322,9 @@
     "lemma": "sumar",
     "es": "sumar",
     "en": "to sum, to total up",
-    "sentence_es": "Sumo dos y tres.",
-    "sentence_en": "I add two and three.",
-    "sentence_lemmas": ["sumar", "dos", "y", "tres"]
+    "sentence_es": "Sumo dos y tres para tener cinco.",
+    "sentence_en": "I add two and three to get five.",
+    "sentence_lemmas": ["sumar", "dos", "y", "tres", "para", "tener", "cinco"]
   },
   {
     "order": 3379,
@@ -13344,9 +13344,9 @@
     "lemma": "acampar",
     "es": "acampar",
     "en": "to camp",
-    "sentence_es": "Acampamos cerca del lago.",
-    "sentence_en": "We camp near the lake.",
-    "sentence_lemmas": ["acampar", "cerca", "de", "lago"]
+    "sentence_es": "En verano acampamos cerca del lago con mi familia.",
+    "sentence_en": "In summer we camp near the lake with my family.",
+    "sentence_lemmas": ["en", "verano", "acampar", "cerca", "de", "lago", "con", "mi", "familia"]
   },
   {
     "order": 3667,
@@ -13696,9 +13696,9 @@
     "lemma": "chipotle",
     "es": "el chipotle",
     "en": "chipotle",
-    "sentence_es": "Siempre cocino con chipotle.",
-    "sentence_en": "I always cook with chipotle.",
-    "sentence_lemmas": ["siempre", "cocinar", "con", "chipotle"]
+    "sentence_es": "Siempre cocino con chipotle porque es picante.",
+    "sentence_en": "I always cook with chipotle because it is spicy.",
+    "sentence_lemmas": ["siempre", "cocinar", "con", "chipotle", "porque", "ser", "picante"]
   },
   {
     "order": 3933,
@@ -13982,9 +13982,9 @@
     "lemma": "fotografía",
     "es": "la fotografía",
     "en": "photography",
-    "sentence_es": "Me gusta la fotografía.",
-    "sentence_en": "I like photography.",
-    "sentence_lemmas": ["me", "gustar", "el", "fotografía"]
+    "sentence_es": "Me gusta la fotografía y tomo fotos de mi ciudad.",
+    "sentence_en": "I like photography and I take photos of my city.",
+    "sentence_lemmas": ["me", "gustar", "el", "fotografía", "y", "tomar", "foto", "de", "mi", "ciudad"]
   },
   {
     "order": 4055,
@@ -14169,9 +14169,9 @@
     "lemma": "pesas",
     "es": "las pesas",
     "en": "gym weights",
-    "sentence_es": "En casa tengo pesas.",
-    "sentence_en": "At home I have weights.",
-    "sentence_lemmas": ["en", "casa", "tener", "pesas"]
+    "sentence_es": "En casa tengo pesas y hago ejercicio.",
+    "sentence_en": "At home I have weights and I exercise.",
+    "sentence_lemmas": ["en", "casa", "tener", "pesas", "y", "hacer", "ejercicio"]
   },
   {
     "order": 4092,
@@ -14521,9 +14521,9 @@
     "lemma": "selfi",
     "es": "la selfi",
     "en": "selfie",
-    "sentence_es": "Quiero una selfi contigo.",
-    "sentence_en": "I want a selfie with you.",
-    "sentence_lemmas": ["querer", "un", "selfi", "contigo"]
+    "sentence_es": "Quiero una selfi contigo en la plaza.",
+    "sentence_en": "I want a selfie with you in the square.",
+    "sentence_lemmas": ["querer", "un", "selfi", "contigo", "en", "el", "plaza"]
   },
   {
     "order": 4268,
@@ -14620,9 +14620,9 @@
     "lemma": "koala",
     "es": "el koala",
     "en": "koala",
-    "sentence_es": "El koala duerme mucho.",
-    "sentence_en": "The koala sleeps a lot.",
-    "sentence_lemmas": ["el", "koala", "dormir", "mucho"]
+    "sentence_es": "El koala duerme mucho y es muy pequeño.",
+    "sentence_en": "The koala sleeps a lot and is very small.",
+    "sentence_lemmas": ["el", "koala", "dormir", "mucho", "y", "ser", "muy", "pequeño"]
   },
   {
     "order": 4311,
@@ -15016,9 +15016,9 @@
     "lemma": "dormirse",
     "es": "dormirse",
     "en": "to fall asleep",
-    "sentence_es": "El bebé quiere dormirse.",
-    "sentence_en": "The baby wants to fall asleep.",
-    "sentence_lemmas": ["el", "bebé", "querer", "dormirse"]
+    "sentence_es": "El bebé quiere dormirse en mi cama.",
+    "sentence_en": "The baby wants to fall asleep in my bed.",
+    "sentence_lemmas": ["el", "bebé", "querer", "dormirse", "en", "mi", "cama"]
   },
   {
     "order": 4408,
@@ -15038,9 +15038,9 @@
     "lemma": "irse",
     "es": "irse",
     "en": "to go away, to head off",
-    "sentence_es": "Quiero irme a casa.",
-    "sentence_en": "I want to go home.",
-    "sentence_lemmas": ["querer", "irse", "a", "casa"]
+    "sentence_es": "Quiero irme a casa porque estoy muy cansado.",
+    "sentence_en": "I want to go home because I am very tired.",
+    "sentence_lemmas": ["querer", "irse", "a", "casa", "porque", "estar", "muy", "cansado"]
   },
   {
     "order": 4412,
@@ -15093,9 +15093,9 @@
     "lemma": "pararse",
     "es": "pararse",
     "en": "to stand up",
-    "sentence_es": "El niño quiere pararse.",
-    "sentence_en": "The boy wants to stand up.",
-    "sentence_lemmas": ["el", "niño", "querer", "pararse"]
+    "sentence_es": "El niño quiere pararse y caminar.",
+    "sentence_en": "The boy wants to stand up and walk.",
+    "sentence_lemmas": ["el", "niño", "querer", "pararse", "y", "caminar"]
   },
   {
     "order": 4421,
@@ -15115,9 +15115,9 @@
     "lemma": "emoji",
     "es": "el emoji",
     "en": "emoji",
-    "sentence_es": "Me gusta este emoji.",
-    "sentence_en": "I like this emoji.",
-    "sentence_lemmas": ["me", "gustar", "este", "emoji"]
+    "sentence_es": "Me gusta este emoji porque es muy feliz.",
+    "sentence_en": "I like this emoji because it is very happy.",
+    "sentence_lemmas": ["me", "gustar", "este", "emoji", "porque", "ser", "muy", "feliz"]
   },
   {
     "order": 4437,
