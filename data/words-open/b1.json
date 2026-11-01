@@ -76,7 +76,7 @@
     "hint_en": "I will *send* a letter today.",
     "sentence_es": "Escribo una carta y la envío por correo.",
     "sentence_en": "I write a letter and send it by mail.",
-    "sentence_lemmas": ["escribir", "un", "carta", "y", "el", "enviar", "por", "correo"]
+    "sentence_lemmas": ["escribir", "un", "carta", "y", "lo", "enviar", "por", "correo"]
   },
   {
     "order": 310,
@@ -3687,9 +3687,9 @@
     "lemma": "anotar",
     "es": "anotar",
     "en": "to write down, to note",
-    "sentence_es": "Anoto mi dirección en la libreta.",
-    "sentence_en": "I write down my address in the notebook.",
-    "sentence_lemmas": ["anotar", "mi", "dirección", "en", "el", "libreta"]
+    "sentence_es": "Anoto tu número en la libreta para no olvidarlo.",
+    "sentence_en": "I write down your number in the notebook so I do not forget it.",
+    "sentence_lemmas": ["anotar", "tu", "número", "en", "el", "libreta", "para", "no", "olvidar"]
   },
   {
     "order": 1790,
@@ -5834,9 +5834,9 @@
     "lemma": "calcular",
     "es": "calcular",
     "en": "to calculate",
-    "sentence_es": "Calculo el precio de la comida.",
-    "sentence_en": "I calculate the price of the food.",
-    "sentence_lemmas": ["calcular", "el", "precio", "de", "el", "comida"]
+    "sentence_es": "Calculo cuánto cuesta todo: tres tacos y dos refrescos.",
+    "sentence_en": "I work out how much everything costs: three tacos and two sodas.",
+    "sentence_lemmas": ["calcular", "cuánto", "costar", "todo", "tres", "taco", "y", "dos", "refresco"]
   },
   {
     "order": 2397,
@@ -5990,7 +5990,7 @@
     "en": "to design",
     "sentence_es": "La artista diseña vestidos: primero los dibuja en papel.",
     "sentence_en": "The artist designs dresses: first she draws them on paper.",
-    "sentence_lemmas": ["el", "artista", "diseñar", "vestido", "primero", "el", "dibujar", "en", "papel"]
+    "sentence_lemmas": ["el", "artista", "diseñar", "vestido", "primero", "lo", "dibujar", "en", "papel"]
   },
   {
     "order": 2411,
@@ -6120,9 +6120,9 @@
     "lemma": "envidiar",
     "es": "envidiar",
     "en": "to envy",
-    "sentence_es": "No envidio a mis vecinos.",
-    "sentence_en": "I do not envy my neighbors.",
-    "sentence_lemmas": ["no", "envidiar", "a", "mi", "vecino"]
+    "sentence_es": "Mis vecinos tienen un carro nuevo y yo los envidio.",
+    "sentence_en": "My neighbors have a new car and I envy them.",
+    "sentence_lemmas": ["mi", "vecino", "tener", "un", "carro", "nuevo", "y", "yo", "lo", "envidiar"]
   },
   {
     "order": 2423,
@@ -6189,7 +6189,7 @@
     "en": "to manufacture",
     "sentence_es": "Esta fábrica fabrica juguetes y los vende a las tiendas.",
     "sentence_en": "This factory makes toys and sells them to stores.",
-    "sentence_lemmas": ["este", "fábrica", "fabricar", "juguete", "y", "el", "vender", "a", "el", "tienda"]
+    "sentence_lemmas": ["este", "fábrica", "fabricar", "juguete", "y", "lo", "vender", "a", "el", "tienda"]
   },
   {
     "order": 2429,
@@ -7935,9 +7935,9 @@
     "lemma": "completar",
     "es": "completar",
     "en": "to complete",
-    "sentence_es": "Completo la tarea antes de la cena.",
-    "sentence_en": "I complete the homework before dinner.",
-    "sentence_lemmas": ["completar", "el", "tarea", "antes", "de", "el", "cena"]
+    "sentence_es": "Escribo las últimas respuestas y así completo la tarea.",
+    "sentence_en": "I write the last answers and so I complete the homework.",
+    "sentence_lemmas": ["escribir", "el", "último", "respuesta", "y", "así", "completar", "el", "tarea"]
   },
   {
     "order": 2904,
@@ -13086,7 +13086,7 @@
     "en": "to waste",
     "sentence_es": "No desperdicies el agua; la necesitamos para beber.",
     "sentence_en": "Do not waste water; we need it to drink.",
-    "sentence_lemmas": ["no", "desperdiciar", "el", "agua", "el", "necesitar", "para", "beber"]
+    "sentence_lemmas": ["no", "desperdiciar", "el", "agua", "lo", "necesitar", "para", "beber"]
   },
   {
     "order": 3672,
@@ -15957,7 +15957,7 @@
     "en": "to restart",
     "sentence_es": "Reinicio la computadora: la apago y la enciendo otra vez.",
     "sentence_en": "I restart the computer: I turn it off and on again.",
-    "sentence_lemmas": ["reiniciar", "el", "computadora", "el", "apagar", "y", "el", "encender", "otro", "vez"]
+    "sentence_lemmas": ["reiniciar", "el", "computadora", "lo", "apagar", "y", "lo", "encender", "otro", "vez"]
   },
   {
     "order": 4259,
