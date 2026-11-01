@@ -405,9 +405,9 @@
     "lemma": "entender",
     "es": "entender",
     "en": "to understand",
-    "sentence_es": "No entiendo esta palabra.",
-    "sentence_en": "I do not understand this word.",
-    "sentence_lemmas": ["no", "entender", "este", "palabra"]
+    "sentence_es": "No entiendo esta palabra en español.",
+    "sentence_en": "I do not understand this word in Spanish.",
+    "sentence_lemmas": ["no", "entender", "este", "palabra", "en", "español"]
   },
   {
     "order": 216,
@@ -429,9 +429,9 @@
     "es": "recordar",
     "en": "to remember",
     "hint_en": "I *remember* your name",
-    "sentence_es": "Recuerdo tu nombre.",
-    "sentence_en": "I remember your name.",
-    "sentence_lemmas": ["recordar", "tu", "nombre"]
+    "sentence_es": "Recuerdo tu nombre porque eres mi amigo.",
+    "sentence_en": "I remember your name because you are my friend.",
+    "sentence_lemmas": ["recordar", "tu", "nombre", "porque", "ser", "mi", "amigo"]
   },
   {
     "order": 219,
@@ -440,9 +440,9 @@
     "lemma": "terminar",
     "es": "terminar",
     "en": "to finish, to end",
-    "sentence_es": "Ya terminé el trabajo.",
-    "sentence_en": "I already finished the work.",
-    "sentence_lemmas": ["ya", "terminar", "el", "trabajo"]
+    "sentence_es": "Ya terminé el trabajo y voy a casa.",
+    "sentence_en": "I already finished work and I am going home.",
+    "sentence_lemmas": ["ya", "terminar", "el", "trabajo", "y", "ir", "a", "casa"]
   },
   {
     "order": 220,
@@ -475,9 +475,9 @@
     "es": "sentir",
     "en": "to feel; to be sorry",
     "hint_en": "I am so *sorry* for your loss.",
-    "sentence_es": "Me siento bien hoy.",
-    "sentence_en": "I feel good today.",
-    "sentence_lemmas": ["me", "sentir", "bien", "hoy"]
+    "sentence_es": "Hoy me siento bien porque no estoy cansado.",
+    "sentence_en": "Today I feel good because I am not tired.",
+    "sentence_lemmas": ["hoy", "me", "sentir", "bien", "porque", "no", "estar", "cansado"]
   },
   {
     "order": 225,
@@ -554,9 +554,9 @@
     "lemma": "deber",
     "es": "deber",
     "en": "must, should, to owe",
-    "sentence_es": "Debo trabajar hoy.",
-    "sentence_en": "I must work today.",
-    "sentence_lemmas": ["deber", "trabajar", "hoy"]
+    "sentence_es": "Debo trabajar hoy y no puedo ir al cine.",
+    "sentence_en": "I must work today and I cannot go to the movies.",
+    "sentence_lemmas": ["deber", "trabajar", "hoy", "y", "no", "poder", "ir", "a", "cine"]
   },
   {
     "order": 237,
@@ -775,9 +775,9 @@
     "lemma": "momento",
     "es": "el momento",
     "en": "moment",
-    "sentence_es": "Un momento, ya voy.",
-    "sentence_en": "One moment, I am coming.",
-    "sentence_lemmas": ["un", "momento", "ya", "ir"]
+    "sentence_es": "Un momento, ya voy a la puerta.",
+    "sentence_en": "One moment, I am coming to the door.",
+    "sentence_lemmas": ["un", "momento", "ya", "ir", "a", "el", "puerta"]
   },
   {
     "order": 285,
@@ -974,9 +974,9 @@
     "lemma": "anoche",
     "es": "anoche",
     "en": "last night",
-    "sentence_es": "Anoche dormí muy bien.",
-    "sentence_en": "Last night I slept very well.",
-    "sentence_lemmas": ["anoche", "dormir", "muy", "bien"]
+    "sentence_es": "Anoche dormí muy bien en mi cama.",
+    "sentence_en": "Last night I slept very well in my bed.",
+    "sentence_lemmas": ["anoche", "dormir", "muy", "bien", "en", "mi", "cama"]
   },
   {
     "order": 710,
@@ -1407,9 +1407,9 @@
     "lemma": "permiso",
     "es": "el permiso",
     "en": "permission",
-    "sentence_es": "Necesito permiso para entrar.",
-    "sentence_en": "I need permission to enter.",
-    "sentence_lemmas": ["necesitar", "permiso", "para", "entrar"]
+    "sentence_es": "Pido permiso a mi padre para ir al cine.",
+    "sentence_en": "I ask my father for permission to go to the movies.",
+    "sentence_lemmas": ["pedir", "permiso", "a", "mi", "padre", "para", "ir", "a", "cine"]
   },
   {
     "order": 756,
@@ -1507,9 +1507,9 @@
     "es": "encantar",
     "en": "to love",
     "hint_en": "I *love* this song.",
-    "sentence_es": "Me encanta la música.",
-    "sentence_en": "I love music.",
-    "sentence_lemmas": ["me", "encantar", "el", "música"]
+    "sentence_es": "Me encanta la música porque puedo bailar.",
+    "sentence_en": "I love music because I can dance.",
+    "sentence_lemmas": ["me", "encantar", "el", "música", "porque", "poder", "bailar"]
   },
   {
     "order": 765,
@@ -1529,9 +1529,9 @@
     "lemma": "interesar",
     "es": "interesar",
     "en": "to interest",
-    "sentence_es": "Me interesa la historia.",
-    "sentence_en": "History interests me.",
-    "sentence_lemmas": ["me", "interesar", "el", "historia"]
+    "sentence_es": "Me interesa la historia de mi país.",
+    "sentence_en": "I am interested in the history of my country.",
+    "sentence_lemmas": ["me", "interesar", "el", "historia", "de", "mi", "país"]
   },
   {
     "order": 767,
@@ -4189,9 +4189,9 @@
     "lemma": "tal",
     "es": "tal",
     "en": "such (a)",
-    "sentence_es": "No digo tal cosa.",
-    "sentence_en": "I do not say such a thing.",
-    "sentence_lemmas": ["no", "decir", "tal", "cosa"]
+    "sentence_es": "No digo tal cosa de mi madre.",
+    "sentence_en": "I do not say such a thing about my mother.",
+    "sentence_lemmas": ["no", "decir", "tal", "cosa", "de", "mi", "madre"]
   },
   {
     "order": 1181,
@@ -7108,9 +7108,9 @@
     "es": "solamente",
     "en": "only (adv.), solely",
     "hint_en": "I *only* have ten pesos",
-    "sentence_es": "Solamente tengo diez pesos.",
-    "sentence_en": "I only have ten pesos.",
-    "sentence_lemmas": ["solamente", "tener", "diez", "peso"]
+    "sentence_es": "Solamente tengo diez pesos y quiero un café.",
+    "sentence_en": "I only have ten pesos and I want a coffee.",
+    "sentence_lemmas": ["solamente", "tener", "diez", "peso", "y", "querer", "un", "café"]
   },
   {
     "order": 1771,
@@ -7152,9 +7152,9 @@
     "lemma": "recién",
     "es": "recién",
     "en": "just now, recently",
-    "sentence_es": "Mi hermano recién llegó.",
-    "sentence_en": "My brother just arrived.",
-    "sentence_lemmas": ["mi", "hermano", "recién", "llegar"]
+    "sentence_es": "Mi hermano recién llegó y quiere comer.",
+    "sentence_en": "My brother just arrived and wants to eat.",
+    "sentence_lemmas": ["mi", "hermano", "recién", "llegar", "y", "querer", "comer"]
   },
   {
     "order": 1775,
@@ -7208,9 +7208,9 @@
     "lemma": "efectivo",
     "es": "el efectivo",
     "en": "cash",
-    "sentence_es": "Pago en efectivo.",
-    "sentence_en": "I pay in cash.",
-    "sentence_lemmas": ["pagar", "en", "efectivo"]
+    "sentence_es": "En la tienda pago en efectivo.",
+    "sentence_en": "At the store I pay in cash.",
+    "sentence_lemmas": ["en", "el", "tienda", "pagar", "en", "efectivo"]
   },
   {
     "order": 1780,
@@ -7517,9 +7517,9 @@
     "lemma": "encendedor",
     "es": "el encendedor",
     "en": "lighter",
-    "sentence_es": "El encendedor no enciende.",
-    "sentence_en": "The lighter does not light.",
-    "sentence_lemmas": ["el", "encendedor", "no", "encender"]
+    "sentence_es": "Con el encendedor se enciende la vela.",
+    "sentence_en": "With the lighter the candle is lit.",
+    "sentence_lemmas": ["con", "el", "encendedor", "se", "encender", "el", "vela"]
   },
   {
     "order": 2119,
@@ -7539,9 +7539,9 @@
     "lemma": "terraza",
     "es": "la terraza",
     "en": "terrace",
-    "sentence_es": "Comemos en la terraza.",
-    "sentence_en": "We eat on the terrace.",
-    "sentence_lemmas": ["comer", "en", "el", "terraza"]
+    "sentence_es": "En la terraza de mi casa comemos con la familia.",
+    "sentence_en": "On the terrace of my house we eat with the family.",
+    "sentence_lemmas": ["en", "el", "terraza", "de", "mi", "casa", "comer", "con", "el", "familia"]
   },
   {
     "order": 2121,
@@ -10985,9 +10985,9 @@
     "lemma": "plateado",
     "es": "plateado",
     "en": "silver-colored",
-    "sentence_es": "El collar es plateado.",
-    "sentence_en": "The necklace is silver-colored.",
-    "sentence_lemmas": ["el", "collar", "ser", "plateado"]
+    "sentence_es": "Mi madre tiene un collar plateado muy bonito.",
+    "sentence_en": "My mother has a very pretty silver necklace.",
+    "sentence_lemmas": ["mi", "madre", "tener", "un", "collar", "plateado", "muy", "bonito"]
   },
   {
     "order": 2804,
@@ -11019,9 +11019,9 @@
     "lemma": "abrochar",
     "es": "abrochar",
     "en": "to button up, to fasten",
-    "sentence_es": "Me abrocho la camisa.",
-    "sentence_en": "I button my shirt.",
-    "sentence_lemmas": ["me", "abrochar", "el", "camisa"]
+    "sentence_es": "Me abrocho la camisa antes de salir.",
+    "sentence_en": "I button my shirt before going out.",
+    "sentence_lemmas": ["me", "abrochar", "el", "camisa", "antes", "de", "salir"]
   },
   {
     "order": 2807,
@@ -11041,9 +11041,9 @@
     "lemma": "trapear",
     "es": "trapear",
     "en": "to mop",
-    "sentence_es": "Trapeo el baño.",
-    "sentence_en": "I mop the bathroom.",
-    "sentence_lemmas": ["trapear", "el", "baño"]
+    "sentence_es": "Trapeo el baño porque está sucio.",
+    "sentence_en": "I mop the bathroom because it is dirty.",
+    "sentence_lemmas": ["trapear", "el", "baño", "porque", "estar", "sucio"]
   },
   {
     "order": 2810,
@@ -11107,9 +11107,9 @@
     "lemma": "bigote",
     "es": "el bigote",
     "en": "mustache",
-    "sentence_es": "El abuelo tiene bigote.",
-    "sentence_en": "The grandfather has a mustache.",
-    "sentence_lemmas": ["el", "abuelo", "tener", "bigote"]
+    "sentence_es": "Mi abuelo tiene un bigote blanco y largo.",
+    "sentence_en": "My grandfather has a long white mustache.",
+    "sentence_lemmas": ["mi", "abuelo", "tener", "un", "bigote", "blanco", "y", "largo"]
   },
   {
     "order": 2819,
@@ -11129,9 +11129,9 @@
     "lemma": "castaño",
     "es": "castaño",
     "en": "chestnut-brown",
-    "sentence_es": "El caballo es castaño.",
-    "sentence_en": "The horse is chestnut-brown.",
-    "sentence_lemmas": ["el", "caballo", "ser", "castaño"]
+    "sentence_es": "El caballo castaño corre muy rápido.",
+    "sentence_en": "The chestnut horse runs very fast.",
+    "sentence_lemmas": ["el", "caballo", "castaño", "correr", "muy", "rápido"]
   },
   {
     "order": 2822,
@@ -11184,9 +11184,9 @@
     "lemma": "botana",
     "es": "la botana",
     "en": "snack (MX)",
-    "sentence_es": "Hay botana para todos.",
-    "sentence_en": "There is a snack for everyone.",
-    "sentence_lemmas": ["haber", "botana", "para", "todo"]
+    "sentence_es": "En la fiesta hay botana para todos.",
+    "sentence_en": "At the party there are snacks for everyone.",
+    "sentence_lemmas": ["en", "el", "fiesta", "haber", "botana", "para", "todo"]
   },
   {
     "order": 2830,
@@ -11272,9 +11272,9 @@
     "lemma": "botar",
     "es": "botar",
     "en": "to toss out, to get rid of",
-    "sentence_es": "Ayer boté la basura.",
-    "sentence_en": "Yesterday I threw out the trash.",
-    "sentence_lemmas": ["ayer", "botar", "el", "basura"]
+    "sentence_es": "Ayer boté la basura de la casa.",
+    "sentence_en": "Yesterday I took out the trash from the house.",
+    "sentence_lemmas": ["ayer", "botar", "el", "basura", "de", "el", "casa"]
   },
   {
     "order": 2842,
@@ -11283,9 +11283,9 @@
     "lemma": "componer",
     "es": "componer",
     "en": "to compose",
-    "sentence_es": "Mi tío compone canciones.",
-    "sentence_en": "My uncle composes songs.",
-    "sentence_lemmas": ["mi", "tío", "componer", "canción"]
+    "sentence_es": "Mi tío compone canciones y toca el piano.",
+    "sentence_en": "My uncle composes songs and plays the piano.",
+    "sentence_lemmas": ["mi", "tío", "componer", "canción", "y", "tocar", "el", "piano"]
   },
   {
     "order": 2843,
@@ -11294,9 +11294,9 @@
     "lemma": "confundir",
     "es": "confundir",
     "en": "to mix up, to confuse",
-    "sentence_es": "Confundo a los gemelos.",
-    "sentence_en": "I mix up the twins.",
-    "sentence_lemmas": ["confundir", "a", "el", "gemelo"]
+    "sentence_es": "Confundo a los gemelos porque son iguales.",
+    "sentence_en": "I mix up the twins because they look the same.",
+    "sentence_lemmas": ["confundir", "a", "el", "gemelo", "porque", "ser", "igual"]
   },
   {
     "order": 2844,
