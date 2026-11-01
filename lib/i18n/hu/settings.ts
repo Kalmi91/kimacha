@@ -50,6 +50,7 @@ const hu: typeof en = {
       sentenceListening: 'Mondatok: hallgatás és gépelés lépés',
       sentenceMistakes: 'Mondatok: a hibáimból',
       sentenceHint: 'Mondatok: súgó egy szóra koppintva',
+      sentenceMix: 'Mondatok: a mondatok váltakoznak',
     },
     strictAccents: 'Az ékezetek számítanak',
     strictAccentsHint: 'A hiányzó ékezet (á, é, ñ) hibának számít gépeléskor.',

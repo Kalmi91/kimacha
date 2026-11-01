@@ -11,9 +11,9 @@ import { useEffect, useMemo, useSyncExternalStore } from 'react';
 
 import { getDb } from '@/lib/database';
 
-export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble' | 'practiceMatch' | 'practiceOpposites' | 'sentenceListening' | 'sentenceMistakes' | 'sentenceHint';
+export type BetaFlag = 'practiceTab' | 'sentenceTab' | 'xpV2' | 'levels' | 'practiceDictation' | 'practiceScramble' | 'practiceMatch' | 'practiceOpposites' | 'sentenceListening' | 'sentenceMistakes' | 'sentenceHint' | 'sentenceMix';
 
-export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'sentenceListening', 'sentenceMistakes', 'sentenceHint'];
+export const BETA_FLAGS: readonly BetaFlag[] = ['practiceTab', 'sentenceTab', 'xpV2', 'levels', 'practiceDictation', 'practiceScramble', 'practiceMatch', 'practiceOpposites', 'sentenceListening', 'sentenceMistakes', 'sentenceHint', 'sentenceMix'];
 
 export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   practiceTab: false,
@@ -29,6 +29,8 @@ export const BETA_DEFAULTS: Readonly<Record<BetaFlag, boolean>> = {
   sentenceListening: true,
   sentenceMistakes: true,
   sentenceHint: true,
+  // FB536: the sentences of a round take turns (lib/sentenceSteps.ts); off = one sentence after the other.
+  sentenceMix: true,
 };
 
 let flags: Record<BetaFlag, boolean> = { ...BETA_DEFAULTS };

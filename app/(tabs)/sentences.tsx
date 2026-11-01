@@ -179,8 +179,8 @@ export default function SentencesScreen() {
         const skip = new Set([...doneKeys.current, ...picked.map((e) => sentenceKey(e))]);
         entries = withMistakeStep(picked, await pickMistakeEntry(today, skip));
       }
-      // beta sentenceListening: each sentence gets its listen-and-type step.
-      next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { listening: getBeta('sentenceListening') }) : null;
+      // beta sentenceListening: each sentence gets its listen-and-type step; beta sentenceMix: the sentences take turns.
+      next = entries.length > 0 ? startRound(entries, today, dir, focusKey, { listening: getBeta('sentenceListening'), mix: getBeta('sentenceMix') }) : null;
       // Saved at once (when there is a round): leaving before the first answer brings back the same sentences.
       if (next) await saveSentenceRound(db, next);
       else await clearSentenceRound(db);

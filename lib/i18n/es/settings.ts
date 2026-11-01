@@ -50,6 +50,7 @@ const es: typeof en = {
       sentenceListening: 'Frases: paso de escuchar y escribir',
       sentenceMistakes: 'Frases: de mis errores',
       sentenceHint: 'Frases: pistas al tocar una palabra',
+      sentenceMix: 'Frases: las frases se alternan',
     },
     strictAccents: 'Los acentos cuentan',
     strictAccentsHint: 'Un acento que falta (á, é, ñ) cuenta como error al escribir.',
