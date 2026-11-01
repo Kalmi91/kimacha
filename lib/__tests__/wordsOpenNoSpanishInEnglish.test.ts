@@ -7,7 +7,7 @@ import openB1 from '@/data/words-open/b1.json';
 import openB2 from '@/data/words-open/b2.json';
 import openC1 from '@/data/words-open/c1.json';
 
-type Card = { order: number; level: string; es: string; en: string };
+type Card = { order: number; level: string; lemma: string; es: string; en: string };
 const cards = [...openA1, ...openA2, ...openB1, ...openB2, ...openC1] as unknown as Card[];
 
 describe('words-open: no Spanish expression in the meaning fields', () => {
@@ -22,5 +22,18 @@ describe('words-open: no Spanish expression in the meaning fields', () => {
       return phrase.includes(' ') && c.en.toLowerCase().includes(phrase.toLowerCase());
     });
     expect(bad.map((c) => `${c.level} ${c.order}: ${c.en}`)).toEqual([]);
+  });
+
+  // FB534 ("collar is among the English words again"): "necklace; collar" shows the answer in the
+  // en→es prompt. A meaning that is the Spanish headword itself (accents and article ignored) goes,
+  // unless it is the only meaning (hotel, chocolate: a real cognate, nothing else to ask with).
+  it('no meaning repeats the Spanish headword next to another meaning', () => {
+    const fold = (s: string) =>
+      s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/^(to|the|a|an) /, '').trim();
+    const bad = cards.filter((c) => {
+      const senses = c.en.split(/[;,]/).map(fold).filter(Boolean);
+      return senses.length > 1 && senses.includes(fold(c.lemma));
+    });
+    expect(bad.map((c) => `${c.level} ${c.order}: ${c.lemma} = ${c.en}`)).toEqual([]);
   });
 });
