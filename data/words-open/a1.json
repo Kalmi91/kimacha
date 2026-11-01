@@ -411,9 +411,9 @@
     "es": "usted",
     "en": "you (formal)",
     "hint_en": "Excuse me, sir, *you* dropped this.",
-    "sentence_es": "Usted está bien.",
-    "sentence_en": "You are fine.",
-    "sentence_lemmas": ["usted", "estar", "bien"]
+    "sentence_es": "Usted está bien, ¿quiere un café?",
+    "sentence_en": "You are fine, do you want a coffee?",
+    "sentence_lemmas": ["usted", "estar", "bien", "querer", "un", "café"]
   },
   {
     "order": 38,
@@ -794,9 +794,9 @@
     "lemma": "o",
     "es": "o",
     "en": "or",
-    "sentence_es": "¿Quieres café o leche?",
-    "sentence_en": "Do you want coffee or milk?",
-    "sentence_lemmas": ["querer", "café", "o", "leche"]
+    "sentence_es": "¿Quieres café o leche con el pan?",
+    "sentence_en": "Do you want coffee or milk with the bread?",
+    "sentence_lemmas": ["querer", "café", "o", "leche", "con", "el", "pan"]
   },
   {
     "order": 71,
@@ -1142,9 +1142,9 @@
     "es": "este",
     "en": "this",
     "hint_en": "*This* coffee is good",
-    "sentence_es": "Este café es bueno.",
-    "sentence_en": "This coffee is good.",
-    "sentence_lemmas": ["este", "café", "ser", "bueno"]
+    "sentence_es": "Este pan es para mi madre.",
+    "sentence_en": "This bread is for my mother.",
+    "sentence_lemmas": ["este", "pan", "ser", "para", "mi", "madre"]
   },
   {
     "order": 101,
@@ -1420,9 +1420,9 @@
     "lemma": "nombre",
     "es": "el nombre",
     "en": "name",
-    "sentence_es": "No sé tu nombre.",
-    "sentence_en": "I do not know your name.",
-    "sentence_lemmas": ["no", "saber", "tu", "nombre"]
+    "sentence_es": "No sé tu nombre, pero eres mi amigo.",
+    "sentence_en": "I do not know your name, but you are my friend.",
+    "sentence_lemmas": ["no", "saber", "tu", "nombre", "pero", "ser", "mi", "amigo"]
   },
   {
     "order": 126,
@@ -1653,9 +1653,9 @@
     "lemma": "escribir",
     "es": "escribir",
     "en": "to write",
-    "sentence_es": "Escribo a mi madre.",
-    "sentence_en": "I write to my mother.",
-    "sentence_lemmas": ["escribir", "a", "mi", "madre"]
+    "sentence_es": "Escribo a mi madre y a mi padre.",
+    "sentence_en": "I write to my mother and to my father.",
+    "sentence_lemmas": ["escribir", "a", "mi", "madre", "y", "a", "mi", "padre"]
   },
   {
     "order": 147,
@@ -1664,9 +1664,9 @@
     "lemma": "abrir",
     "es": "abrir",
     "en": "to open",
-    "sentence_es": "Abro la puerta.",
-    "sentence_en": "I open the door.",
-    "sentence_lemmas": ["abrir", "el", "puerta"]
+    "sentence_es": "Abro la puerta de mi casa.",
+    "sentence_en": "I open the door of my house.",
+    "sentence_lemmas": ["abrir", "el", "puerta", "de", "mi", "casa"]
   },
   {
     "order": 148,
@@ -1675,9 +1675,9 @@
     "lemma": "ayudar",
     "es": "ayudar",
     "en": "to help",
-    "sentence_es": "Ayudo a mi madre.",
-    "sentence_en": "I help my mother.",
-    "sentence_lemmas": ["ayudar", "a", "mi", "madre"]
+    "sentence_es": "Ayudo a mi madre en la casa.",
+    "sentence_en": "I help my mother in the house.",
+    "sentence_lemmas": ["ayudar", "a", "mi", "madre", "en", "el", "casa"]
   },
   {
     "order": 149,
@@ -2007,9 +2007,9 @@
     "lemma": "mío",
     "es": "mío",
     "en": "mine",
-    "sentence_es": "Este libro es mío.",
-    "sentence_en": "This book is mine.",
-    "sentence_lemmas": ["este", "libro", "ser", "mío"]
+    "sentence_es": "Este libro es mío y está aquí.",
+    "sentence_en": "This book is mine and it is here.",
+    "sentence_lemmas": ["este", "libro", "ser", "mío", "y", "estar", "aquí"]
   },
   {
     "order": 630,
@@ -2305,9 +2305,9 @@
     "lemma": "fútbol",
     "es": "el fútbol",
     "en": "soccer",
-    "sentence_es": "Me gusta el fútbol.",
-    "sentence_en": "I like soccer.",
-    "sentence_lemmas": ["me", "gustar", "el", "fútbol"]
+    "sentence_es": "Me gusta el fútbol con mis amigos.",
+    "sentence_en": "I like soccer with my friends.",
+    "sentence_lemmas": ["me", "gustar", "el", "fútbol", "con", "mi", "amigo"]
   },
   {
     "order": 657,
@@ -2360,9 +2360,9 @@
     "lemma": "azúcar",
     "es": "el azúcar",
     "en": "sugar",
-    "sentence_es": "Quiero café sin azúcar.",
-    "sentence_en": "I want coffee without sugar.",
-    "sentence_lemmas": ["querer", "café", "sin", "azúcar"]
+    "sentence_es": "Quiero café con leche, sin azúcar.",
+    "sentence_en": "I want coffee with milk, without sugar.",
+    "sentence_lemmas": ["querer", "café", "con", "leche", "sin", "azúcar"]
   },
   {
     "order": 662,
@@ -2626,9 +2626,9 @@
     "lemma": "ingeniero",
     "es": "el ingeniero",
     "en": "engineer",
-    "sentence_es": "Mi padre es ingeniero.",
-    "sentence_en": "My father is an engineer.",
-    "sentence_lemmas": ["mi", "padre", "ser", "ingeniero"]
+    "sentence_es": "Mi padre es ingeniero y trabaja mucho.",
+    "sentence_en": "My father is an engineer and works a lot.",
+    "sentence_lemmas": ["mi", "padre", "ser", "ingeniero", "y", "trabajar", "mucho"]
   },
   {
     "order": 686,
@@ -3229,9 +3229,9 @@
     "es": "traer",
     "en": "to bring",
     "hint_en": "*Bring* me some water.",
-    "sentence_es": "Mi amigo trae café.",
-    "sentence_en": "My friend brings coffee.",
-    "sentence_lemmas": ["mi", "amigo", "traer", "café"]
+    "sentence_es": "Mi amigo trae café y pan.",
+    "sentence_en": "My friend brings coffee and bread.",
+    "sentence_lemmas": ["mi", "amigo", "traer", "café", "y", "pan"]
   },
   {
     "order": 257,
@@ -3285,9 +3285,9 @@
     "es": "pensar",
     "en": "to think (about)",
     "hint_en": "I *think* about my family",
-    "sentence_es": "Pienso en mi familia.",
-    "sentence_en": "I think about my family.",
-    "sentence_lemmas": ["pensar", "en", "mi", "familia"]
+    "sentence_es": "Pienso en mi familia todos los días.",
+    "sentence_en": "I think about my family every day.",
+    "sentence_lemmas": ["pensar", "en", "mi", "familia", "todo", "el", "día"]
   },
   {
     "order": 218,
@@ -3309,9 +3309,9 @@
     "es": "pedir",
     "en": "to ask for, to order (food)",
     "hint_en": "I *order* coffee and bread",
-    "sentence_es": "Pido café y pan.",
-    "sentence_en": "I order coffee and bread.",
-    "sentence_lemmas": ["pedir", "café", "y", "pan"]
+    "sentence_es": "Pido café y pan por teléfono.",
+    "sentence_en": "I order coffee and bread by phone.",
+    "sentence_lemmas": ["pedir", "café", "y", "pan", "por", "teléfono"]
   },
   {
     "order": 229,
@@ -3658,9 +3658,9 @@
     "lemma": "menos",
     "es": "menos",
     "en": "less",
-    "sentence_es": "Hoy como menos pan.",
-    "sentence_en": "Today I eat less bread.",
-    "sentence_lemmas": ["hoy", "comer", "menos", "pan"]
+    "sentence_es": "Hoy como menos pan y más fruta.",
+    "sentence_en": "Today I eat less bread and more fruit.",
+    "sentence_lemmas": ["hoy", "comer", "menos", "pan", "y", "más", "fruta"]
   },
   {
     "order": 196,
@@ -4104,9 +4104,9 @@
     "lemma": "arroz",
     "es": "el arroz",
     "en": "rice",
-    "sentence_es": "Comemos arroz con pollo.",
-    "sentence_en": "We eat rice with chicken.",
-    "sentence_lemmas": ["comer", "arroz", "con", "pollo"]
+    "sentence_es": "En mi casa comemos arroz con pollo.",
+    "sentence_en": "At my house we eat rice with chicken.",
+    "sentence_lemmas": ["en", "mi", "casa", "comer", "arroz", "con", "pollo"]
   },
   {
     "order": 937,
@@ -4126,9 +4126,9 @@
     "lemma": "tortilla",
     "es": "la tortilla",
     "en": "tortilla",
-    "sentence_es": "Mi abuela hace tortillas.",
-    "sentence_en": "My grandmother makes tortillas.",
-    "sentence_lemmas": ["mi", "abuela", "hacer", "tortilla"]
+    "sentence_es": "Mi abuela hace tortillas para toda la familia.",
+    "sentence_en": "My grandmother makes tortillas for the whole family.",
+    "sentence_lemmas": ["mi", "abuela", "hacer", "tortilla", "para", "todo", "el", "familia"]
   },
   {
     "order": 939,
@@ -4480,9 +4480,9 @@
     "lemma": "vaca",
     "es": "la vaca",
     "en": "cow",
-    "sentence_es": "La vaca da leche.",
-    "sentence_en": "The cow gives milk.",
-    "sentence_lemmas": ["el", "vaca", "dar", "leche"]
+    "sentence_es": "La vaca da la leche para mi café.",
+    "sentence_en": "The cow gives the milk for my coffee.",
+    "sentence_lemmas": ["el", "vaca", "dar", "el", "leche", "para", "mi", "café"]
   },
   {
     "order": 981,
@@ -4579,9 +4579,9 @@
     "lemma": "lápiz",
     "es": "el lápiz",
     "en": "pencil",
-    "sentence_es": "Escribo con un lápiz.",
-    "sentence_en": "I write with a pencil.",
-    "sentence_lemmas": ["escribir", "con", "un", "lápiz"]
+    "sentence_es": "Escribo mi nombre con un lápiz.",
+    "sentence_en": "I write my name with a pencil.",
+    "sentence_lemmas": ["escribir", "mi", "nombre", "con", "un", "lápiz"]
   },
   {
     "order": 996,
@@ -4601,9 +4601,9 @@
     "lemma": "papel",
     "es": "el papel",
     "en": "paper",
-    "sentence_es": "Necesito papel para escribir.",
-    "sentence_en": "I need paper to write.",
-    "sentence_lemmas": ["necesitar", "papel", "para", "escribir"]
+    "sentence_es": "Necesito papel y un lápiz para escribir.",
+    "sentence_en": "I need paper and a pencil to write.",
+    "sentence_lemmas": ["necesitar", "papel", "y", "un", "lápiz", "para", "escribir"]
   },
   {
     "order": 998,
@@ -4832,9 +4832,9 @@
     "lemma": "japonés",
     "es": "japonés",
     "en": "Japanese",
-    "sentence_es": "Mi profesor es japonés.",
-    "sentence_en": "My teacher is Japanese.",
-    "sentence_lemmas": ["mi", "profesor", "ser", "japonés"]
+    "sentence_es": "Mi profesor es japonés y habla español.",
+    "sentence_en": "My teacher is Japanese and speaks Spanish.",
+    "sentence_lemmas": ["mi", "profesor", "ser", "japonés", "y", "hablar", "español"]
   },
   {
     "order": 1602,
@@ -4887,9 +4887,9 @@
     "lemma": "león",
     "es": "el león",
     "en": "lion",
-    "sentence_es": "El león es un animal fuerte.",
-    "sentence_en": "The lion is a strong animal.",
-    "sentence_lemmas": ["el", "león", "ser", "un", "animal", "fuerte"]
+    "sentence_es": "El león es fuerte y come mucha carne.",
+    "sentence_en": "The lion is strong and eats a lot of meat.",
+    "sentence_lemmas": ["el", "león", "ser", "fuerte", "y", "comer", "mucho", "carne"]
   },
   {
     "order": 1613,
@@ -5461,9 +5461,9 @@
     "es": "cuál",
     "en": "which (one)",
     "hint_en": "*Which* one is your book",
-    "sentence_es": "¿Cuál es tu libro?",
-    "sentence_en": "Which one is your book?",
-    "sentence_lemmas": ["cuál", "ser", "tu", "libro"]
+    "sentence_es": "¿Cuál es tu libro, el rojo?",
+    "sentence_en": "Which one is your book, the red one?",
+    "sentence_lemmas": ["cuál", "ser", "tu", "libro", "el", "rojo"]
   },
   {
     "order": 162,
@@ -5473,9 +5473,9 @@
     "es": "cuánto",
     "en": "how much, how many",
     "hint_en": "*How much* does it cost?",
-    "sentence_es": "¿Cuánto dinero tienes?",
-    "sentence_en": "How much money do you have?",
-    "sentence_lemmas": ["cuánto", "dinero", "tener"]
+    "sentence_es": "¿Cuánto dinero tienes hoy en la bolsa?",
+    "sentence_en": "How much money do you have in your bag today?",
+    "sentence_lemmas": ["cuánto", "dinero", "tener", "hoy", "en", "el", "bolsa"]
   },
   {
     "order": 737,
@@ -5484,9 +5484,9 @@
     "lemma": "adónde",
     "es": "adónde",
     "en": "where to",
-    "sentence_es": "¿Adónde vas hoy?",
-    "sentence_en": "Where are you going today?",
-    "sentence_lemmas": ["adónde", "ir", "hoy"]
+    "sentence_es": "¿Adónde vas hoy con tu madre?",
+    "sentence_en": "Where are you going today with your mother?",
+    "sentence_lemmas": ["adónde", "ir", "hoy", "con", "tu", "madre"]
   },
   {
     "order": 3839,
