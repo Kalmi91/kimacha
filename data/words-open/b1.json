@@ -356,9 +356,9 @@
     "lemma": "apoyar",
     "es": "apoyar",
     "en": "to support",
-    "sentence_es": "Mi familia siempre me apoya.",
-    "sentence_en": "My family always supports me.",
-    "sentence_lemmas": ["mi", "familia", "siempre", "me", "apoyar"]
+    "sentence_es": "Mi familia me apoya cuando tengo un problema.",
+    "sentence_en": "My family supports me when I have a problem.",
+    "sentence_lemmas": ["mi", "familia", "me", "apoyar", "cuando", "tener", "un", "problema"]
   },
   {
     "order": 341,
@@ -1636,9 +1636,9 @@
     "lemma": "prohibir",
     "es": "prohibir",
     "en": "to forbid",
-    "sentence_es": "La escuela prohíbe el teléfono.",
-    "sentence_en": "The school forbids the phone.",
-    "sentence_lemmas": ["el", "escuela", "prohibir", "el", "teléfono"]
+    "sentence_es": "En clase, la escuela prohíbe usar el teléfono.",
+    "sentence_en": "In class, the school forbids using the phone.",
+    "sentence_lemmas": ["en", "clase", "el", "escuela", "prohibir", "usar", "el", "teléfono"]
   },
   {
     "order": 812,
@@ -2146,9 +2146,9 @@
     "lemma": "formar",
     "es": "formar",
     "en": "to form",
-    "sentence_es": "Formamos un grupo de trabajo.",
-    "sentence_en": "We form a work group.",
-    "sentence_lemmas": ["formar", "un", "grupo", "de", "trabajo"]
+    "sentence_es": "Once jugadores forman un equipo de fútbol.",
+    "sentence_en": "Eleven players form a soccer team.",
+    "sentence_lemmas": ["once", "jugador", "formar", "un", "equipo", "de", "fútbol"]
   },
   {
     "order": 1213,
@@ -2300,9 +2300,9 @@
     "lemma": "ordenar",
     "es": "ordenar / acomodar",
     "en": "to tidy up; to put in order; to give an order",
-    "sentence_es": "Ordeno mi habitación los sábados.",
-    "sentence_en": "I tidy my room on Saturdays.",
-    "sentence_lemmas": ["ordenar", "mi", "habitación", "el", "sábado"]
+    "sentence_es": "Ordeno mi habitación: pongo cada cosa en su lugar.",
+    "sentence_en": "I tidy my room: I put everything in its place.",
+    "sentence_lemmas": ["ordenar", "mi", "habitación", "poner", "cada", "cosa", "en", "su", "lugar"]
   },
   {
     "order": 1227,
@@ -2345,9 +2345,9 @@
     "lemma": "perdonar",
     "es": "perdonar",
     "en": "to forgive",
-    "sentence_es": "Mi amigo me perdona siempre.",
-    "sentence_en": "My friend always forgives me.",
-    "sentence_lemmas": ["mi", "amigo", "me", "perdonar", "siempre"]
+    "sentence_es": "Llego tarde, pero mi amigo me perdona.",
+    "sentence_en": "I arrive late, but my friend forgives me.",
+    "sentence_lemmas": ["llegar", "tarde", "pero", "mi", "amigo", "me", "perdonar"]
   },
   {
     "order": 1231,
@@ -3765,9 +3765,9 @@
     "lemma": "cancelar",
     "es": "cancelar",
     "en": "to cancel",
-    "sentence_es": "Tengo que cancelar mi cita.",
-    "sentence_en": "I have to cancel my appointment.",
-    "sentence_lemmas": ["tener", "que", "cancelar", "mi", "cita"]
+    "sentence_es": "Estoy enfermo y tengo que cancelar mi cita.",
+    "sentence_en": "I am sick and I have to cancel my appointment.",
+    "sentence_lemmas": ["estar", "enfermo", "y", "tener", "que", "cancelar", "mi", "cita"]
   },
   {
     "order": 1797,
@@ -8090,9 +8090,9 @@
     "lemma": "sujetar",
     "es": "sujetar",
     "en": "to hold firmly",
-    "sentence_es": "Sujeto la mano del niño.",
-    "sentence_en": "I hold the boy's hand.",
-    "sentence_lemmas": ["sujetar", "el", "mano", "de", "niño"]
+    "sentence_es": "Sujeto la mano del niño para cruzar la calle.",
+    "sentence_en": "I hold the child's hand to cross the street.",
+    "sentence_lemmas": ["sujetar", "el", "mano", "de", "niño", "para", "cruzar", "el", "calle"]
   },
   {
     "order": 2948,
@@ -11028,7 +11028,7 @@
     "en": "respect",
     "sentence_es": "Tengo respeto por mis abuelos y los escucho.",
     "sentence_en": "I have respect for my grandparents and I listen to them.",
-    "sentence_lemmas": ["tener", "respeto", "por", "mi", "abuelo", "y", "el", "escuchar"]
+    "sentence_lemmas": ["tener", "respeto", "por", "mi", "abuelo", "y", "lo", "escuchar"]
   },
   {
     "order": 3481,
