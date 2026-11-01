@@ -5,6 +5,8 @@ import { Stack } from 'expo-router';
 export default function GrammarLayout() {
   return (
     <Stack screenOptions={{ headerShown: false }}>
+      {/* the random grammar round; the static route comes before [topic]. */}
+      <Stack.Screen name="random" />
       <Stack.Screen name="[topic]" />
       {/* the table-deck practice screen. */}
       <Stack.Screen name="deck/[topic]" />
