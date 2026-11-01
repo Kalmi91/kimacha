@@ -6,9 +6,9 @@
     "lemma": "ofrecer",
     "es": "ofrecer",
     "en": "to offer",
-    "sentence_es": "¿Le ofrezco un café?",
-    "sentence_en": "Can I offer you a coffee?",
-    "sentence_lemmas": ["le", "ofrecer", "un", "café"]
+    "sentence_es": "Te ofrezco un café: tú dices que sí o que no.",
+    "sentence_en": "I offer you a coffee: you say yes or no.",
+    "sentence_lemmas": ["te", "ofrecer", "un", "café", "tú", "decir", "que", "sí", "o", "que", "no"]
   },
   {
     "order": 302,
@@ -51,9 +51,9 @@
     "lemma": "decidir",
     "es": "decidir",
     "en": "to decide",
-    "sentence_es": "Mañana decidiremos qué hacer.",
-    "sentence_en": "Tomorrow we will decide what to do.",
-    "sentence_lemmas": ["mañana", "decidir", "qué", "hacer"]
+    "sentence_es": "Hay dos carros y debo decidir cuál compro.",
+    "sentence_en": "There are two cars and I must decide which one I buy.",
+    "sentence_lemmas": ["haber", "dos", "carro", "y", "deber", "decidir", "cuál", "comprar"]
   },
   {
     "order": 307,
@@ -153,9 +153,9 @@
     "lemma": "crear",
     "es": "crear",
     "en": "to create",
-    "sentence_es": "Quiero crear algo nuevo.",
-    "sentence_en": "I want to create something new.",
-    "sentence_lemmas": ["querer", "crear", "algo", "nuevo"]
+    "sentence_es": "Quiero crear algo nuevo, algo que nadie tiene.",
+    "sentence_en": "I want to create something new, something nobody has.",
+    "sentence_lemmas": ["querer", "crear", "algo", "nuevo", "algo", "que", "nadie", "tener"]
   },
   {
     "order": 317,
@@ -255,9 +255,9 @@
     "es": "mover",
     "en": "to move",
     "hint_en": "Can you *move* your car",
-    "sentence_es": "¿Puedes mover tu carro?",
-    "sentence_en": "Can you move your car?",
-    "sentence_lemmas": ["poder", "mover", "tu", "carro"]
+    "sentence_es": "Voy a mover la silla de la puerta a la mesa.",
+    "sentence_en": "I am going to move the chair from the door to the table.",
+    "sentence_lemmas": ["ir", "a", "mover", "el", "silla", "de", "el", "puerta", "a", "el", "mesa"]
   },
   {
     "order": 326,
@@ -266,9 +266,9 @@
     "lemma": "subir",
     "es": "subir",
     "en": "to go up, to get on",
-    "sentence_es": "Subo a mi habitación a las ocho.",
-    "sentence_en": "I go up to my room at eight.",
-    "sentence_lemmas": ["subir", "a", "mi", "habitación", "a", "el", "ocho"]
+    "sentence_es": "Subo por la escalera hasta el segundo piso.",
+    "sentence_en": "I go up the stairs to the second floor.",
+    "sentence_lemmas": ["subir", "por", "el", "escalera", "hasta", "el", "segundo", "piso"]
   },
   {
     "order": 328,
@@ -288,9 +288,9 @@
     "lemma": "lavar",
     "es": "lavar",
     "en": "to wash",
-    "sentence_es": "Voy a lavar la ropa hoy.",
-    "sentence_en": "I am going to wash the clothes today.",
-    "sentence_lemmas": ["ir", "a", "lavar", "el", "ropa", "hoy"]
+    "sentence_es": "Lavo la ropa con agua y jabón.",
+    "sentence_en": "I wash clothes with water and soap.",
+    "sentence_lemmas": ["lavar", "el", "ropa", "con", "agua", "y", "jabón"]
   },
   {
     "order": 333,
@@ -299,9 +299,9 @@
     "lemma": "preparar",
     "es": "preparar",
     "en": "to prepare",
-    "sentence_es": "Esta noche prepararé la cena.",
-    "sentence_en": "Tonight I will prepare dinner.",
-    "sentence_lemmas": ["este", "noche", "preparar", "el", "cena"]
+    "sentence_es": "Preparo la cena: corto la cebolla y cocino el arroz.",
+    "sentence_en": "I prepare dinner: I cut the onion and cook the rice.",
+    "sentence_lemmas": ["preparar", "el", "cena", "cortar", "el", "cebolla", "y", "cocinar", "el", "arroz"]
   },
   {
     "order": 334,
@@ -380,9 +380,9 @@
     "es": "funcionar",
     "en": "to function, to work (machine)",
     "hint_en": "My phone does not *work*",
-    "sentence_es": "Mi teléfono no funciona.",
-    "sentence_en": "My phone does not work.",
-    "sentence_lemmas": ["mi", "teléfono", "no", "funcionar"]
+    "sentence_es": "La televisión no funciona porque no hay luz.",
+    "sentence_en": "The television does not work because there is no power.",
+    "sentence_lemmas": ["el", "televisión", "no", "funcionar", "porque", "no", "haber", "luz"]
   },
   {
     "order": 343,
@@ -391,9 +391,9 @@
     "lemma": "depender",
     "es": "depender",
     "en": "to depend",
-    "sentence_es": "Eso depende del precio.",
-    "sentence_en": "That depends on the price.",
-    "sentence_lemmas": ["eso", "depender", "de", "precio"]
+    "sentence_es": "Voy a comprar el carro, pero depende del precio.",
+    "sentence_en": "I am going to buy the car, but it depends on the price.",
+    "sentence_lemmas": ["ir", "a", "comprar", "el", "carro", "pero", "depender", "de", "precio"]
   },
   {
     "order": 344,
@@ -1515,9 +1515,9 @@
     "lemma": "entrenar",
     "es": "entrenar",
     "en": "to train",
-    "sentence_es": "Mi hermano entrena todos los días.",
-    "sentence_en": "My brother trains every day.",
-    "sentence_lemmas": ["mi", "hermano", "entrenar", "todo", "el", "día"]
+    "sentence_es": "Mi hermano entrena en el gimnasio para correr más rápido.",
+    "sentence_en": "My brother trains at the gym to run faster.",
+    "sentence_lemmas": ["mi", "hermano", "entrenar", "en", "el", "gimnasio", "para", "correr", "más", "rápido"]
   },
   {
     "order": 799,
@@ -1736,9 +1736,9 @@
     "lemma": "confiar",
     "es": "confiar",
     "en": "to trust",
-    "sentence_es": "Confío en mi familia.",
-    "sentence_en": "I trust my family.",
-    "sentence_lemmas": ["confiar", "en", "mi", "familia"]
+    "sentence_es": "Confío en mi amigo porque siempre dice la verdad.",
+    "sentence_en": "I trust my friend because he always tells the truth.",
+    "sentence_lemmas": ["confiar", "en", "mi", "amigo", "porque", "siempre", "decir", "el", "verdad"]
   },
   {
     "order": 498,
@@ -2479,9 +2479,9 @@
     "lemma": "aguantar",
     "es": "aguantar",
     "en": "to endure, to put up with",
-    "sentence_es": "No aguanto el calor.",
-    "sentence_en": "I cannot stand the heat.",
-    "sentence_lemmas": ["no", "aguantar", "el", "calor"]
+    "sentence_es": "Hace mucho calor y ya no aguanto más.",
+    "sentence_en": "It is very hot and I cannot take it anymore.",
+    "sentence_lemmas": ["hacer", "mucho", "calor", "y", "ya", "no", "aguantar", "más"]
   },
   {
     "order": 1243,
@@ -4010,9 +4010,9 @@
     "lemma": "engordar",
     "es": "engordar",
     "en": "to gain weight",
-    "sentence_es": "Mi perro engorda mucho.",
-    "sentence_en": "My dog gains a lot of weight.",
-    "sentence_lemmas": ["mi", "perro", "engordar", "mucho"]
+    "sentence_es": "Mi perro come mucho y no corre, por eso engorda.",
+    "sentence_en": "My dog eats a lot and does not run, so he gets fat.",
+    "sentence_lemmas": ["mi", "perro", "comer", "mucho", "y", "no", "correr", "por", "eso", "engordar"]
   },
   {
     "order": 1819,
@@ -4265,9 +4265,9 @@
     "lemma": "rendirse",
     "es": "rendirse",
     "en": "to give up, to surrender",
-    "sentence_es": "No voy a rendirme.",
-    "sentence_en": "I am not going to give up.",
-    "sentence_lemmas": ["no", "ir", "a", "rendirse"]
+    "sentence_es": "El ladrón levanta las manos y decide rendirse.",
+    "sentence_en": "The thief raises his hands and decides to give up.",
+    "sentence_lemmas": ["el", "ladrón", "levantar", "el", "mano", "y", "decidir", "rendirse"]
   },
   {
     "order": 1842,
@@ -5768,9 +5768,9 @@
     "lemma": "asombrar",
     "es": "asombrar",
     "en": "to amaze, to astonish",
-    "sentence_es": "Su fuerza me asombra.",
-    "sentence_en": "His strength amazes me.",
-    "sentence_lemmas": ["su", "fuerza", "me", "asombrar"]
+    "sentence_es": "Levanta un sofá solo y su fuerza me asombra.",
+    "sentence_en": "He lifts a sofa alone and his strength amazes me.",
+    "sentence_lemmas": ["levantar", "un", "sofá", "solo", "y", "su", "fuerza", "me", "asombrar"]
   },
   {
     "order": 2391,
@@ -5955,9 +5955,9 @@
     "lemma": "descender",
     "es": "descender",
     "en": "to descend",
-    "sentence_es": "El avión desciende despacio.",
-    "sentence_en": "The plane descends slowly.",
-    "sentence_lemmas": ["el", "avión", "descender", "despacio"]
+    "sentence_es": "El avión desciende y cada vez está más cerca de la pista.",
+    "sentence_en": "The plane descends and is getting closer and closer to the runway.",
+    "sentence_lemmas": ["el", "avión", "descender", "y", "cada", "vez", "estar", "más", "cerca", "de", "el", "pista"]
   },
   {
     "order": 2408,
@@ -5988,9 +5988,9 @@
     "lemma": "diseñar",
     "es": "diseñar",
     "en": "to design",
-    "sentence_es": "La artista diseña vestidos.",
-    "sentence_en": "The artist designs dresses.",
-    "sentence_lemmas": ["el", "artista", "diseñar", "vestido"]
+    "sentence_es": "La artista diseña vestidos: primero los dibuja en papel.",
+    "sentence_en": "The artist designs dresses: first she draws them on paper.",
+    "sentence_lemmas": ["el", "artista", "diseñar", "vestido", "primero", "el", "dibujar", "en", "papel"]
   },
   {
     "order": 2411,
@@ -6187,9 +6187,9 @@
     "lemma": "fabricar",
     "es": "fabricar",
     "en": "to manufacture",
-    "sentence_es": "Esta fábrica fabrica juguetes.",
-    "sentence_en": "This factory makes toys.",
-    "sentence_lemmas": ["este", "fábrica", "fabricar", "juguete"]
+    "sentence_es": "Esta fábrica fabrica juguetes y los vende a las tiendas.",
+    "sentence_en": "This factory makes toys and sells them to stores.",
+    "sentence_lemmas": ["este", "fábrica", "fabricar", "juguete", "y", "el", "vender", "a", "el", "tienda"]
   },
   {
     "order": 2429,
@@ -7847,9 +7847,9 @@
     "lemma": "sospechar",
     "es": "sospechar",
     "en": "to suspect",
-    "sentence_es": "Sospecho de ese hombre.",
-    "sentence_en": "I suspect that man.",
-    "sentence_lemmas": ["sospechar", "de", "ese", "hombre"]
+    "sentence_es": "Sospecho de ese hombre porque siempre mira mi casa.",
+    "sentence_en": "I suspect that man because he always looks at my house.",
+    "sentence_lemmas": ["sospechar", "de", "ese", "hombre", "porque", "siempre", "mirar", "mi", "casa"]
   },
   {
     "order": 2876,
@@ -8012,9 +8012,9 @@
     "lemma": "desatar",
     "es": "desatar",
     "en": "to untie",
-    "sentence_es": "Desato la cuerda.",
-    "sentence_en": "I untie the rope.",
-    "sentence_lemmas": ["desatar", "el", "cuerda"]
+    "sentence_es": "Desato la cuerda del paquete con los dedos.",
+    "sentence_en": "I untie the string of the package with my fingers.",
+    "sentence_lemmas": ["desatar", "el", "cuerda", "de", "paquete", "con", "el", "dedo"]
   },
   {
     "order": 2940,
@@ -8045,9 +8045,9 @@
     "lemma": "masticar",
     "es": "masticar",
     "en": "to chew",
-    "sentence_es": "Mastico despacio la comida.",
-    "sentence_en": "I chew the food slowly.",
-    "sentence_lemmas": ["masticar", "despacio", "el", "comida"]
+    "sentence_es": "Mastico despacio la comida con los dientes.",
+    "sentence_en": "I chew my food slowly with my teeth.",
+    "sentence_lemmas": ["masticar", "despacio", "el", "comida", "con", "el", "diente"]
   },
   {
     "order": 2943,
@@ -8057,9 +8057,9 @@
     "es": "pulsar",
     "en": "to press (a button)",
     "hint_en": "I *press* the doorbell",
-    "sentence_es": "Pulso el timbre.",
-    "sentence_en": "I press the doorbell.",
-    "sentence_lemmas": ["pulsar", "el", "timbre"]
+    "sentence_es": "Pulso el timbre y alguien abre la puerta.",
+    "sentence_en": "I press the bell and someone opens the door.",
+    "sentence_lemmas": ["pulsar", "el", "timbre", "y", "alguien", "abrir", "el", "puerta"]
   },
   {
     "order": 2944,
@@ -8269,9 +8269,9 @@
     "lemma": "continuar",
     "es": "continuar",
     "en": "to carry on, to resume",
-    "sentence_es": "Continuamos la lección mañana.",
-    "sentence_en": "We carry on with the lesson tomorrow.",
-    "sentence_lemmas": ["continuar", "el", "lección", "mañana"]
+    "sentence_es": "Hoy paramos aquí y mañana continuamos la lección.",
+    "sentence_en": "Today we stop here and tomorrow we continue the lesson.",
+    "sentence_lemmas": ["hoy", "parar", "aquí", "y", "mañana", "continuar", "el", "lección"]
   },
   {
     "order": 2984,
@@ -8280,9 +8280,9 @@
     "lemma": "proceder",
     "es": "proceder",
     "en": "to proceed, to go ahead",
-    "sentence_es": "Debemos proceder con cuidado.",
-    "sentence_en": "We must proceed with care.",
-    "sentence_lemmas": ["deber", "proceder", "con", "cuidado"]
+    "sentence_es": "El camino es peligroso: debemos proceder con cuidado.",
+    "sentence_en": "The road is dangerous: we must proceed carefully.",
+    "sentence_lemmas": ["el", "camino", "ser", "peligroso", "deber", "proceder", "con", "cuidado"]
   },
   {
     "order": 2985,
@@ -13084,9 +13084,9 @@
     "lemma": "desperdiciar",
     "es": "desperdiciar",
     "en": "to waste",
-    "sentence_es": "No desperdicies el agua.",
-    "sentence_en": "Do not waste water.",
-    "sentence_lemmas": ["no", "desperdiciar", "el", "agua"]
+    "sentence_es": "No desperdicies el agua; la necesitamos para beber.",
+    "sentence_en": "Do not waste water; we need it to drink.",
+    "sentence_lemmas": ["no", "desperdiciar", "el", "agua", "el", "necesitar", "para", "beber"]
   },
   {
     "order": 3672,
