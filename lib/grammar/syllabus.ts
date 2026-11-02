@@ -16,6 +16,7 @@ import { getGrammarTopic, getGrammarTopicIds, grammarKindCounts, type GrammarKin
 import type { Level } from '@/data/words';
 import { EN_SYLLABUS, EN_UNITS } from './syllabusEn';
 import { withHuTitles, type HuTitles } from './huOverlay';
+import { withOverlayTitles, type OverlaySyllabus } from './overlay';
 
 export interface SyllabusTopic {
   id: string;
@@ -253,7 +254,12 @@ function spanishSyllabus(): SyllabusData {
     const data: SyllabusData = require('@/data/grammar/syllabus.json');
     // The Hungarian titles and blurbs (data/games/grammar-hu/syllabus.json) become the `hu` of title / blurb.
     const hu: { es: { units: HuTitles; topics: HuTitles } } = require('@/data/games/grammar-hu/syllabus.json');
-    syllabusData = { units: withHuTitles(data.units, hu.es.units), topics: withHuTitles(data.topics, hu.es.topics) };
+    // The German ones (data/games/grammar-de/syllabus.json) become the `de` of title / blurb.
+    const de: OverlaySyllabus = require('@/data/games/grammar-de/syllabus.json');
+    syllabusData = {
+      units: withOverlayTitles(withHuTitles(data.units, hu.es.units), 'de', de.es.units),
+      topics: withOverlayTitles(withHuTitles(data.topics, hu.es.topics), 'de', de.es.topics),
+    };
   }
   return syllabusData;
 }
@@ -275,7 +281,7 @@ export const SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
  */
 export const GRAMMAR_PROGRESS_KEY = 'grammar-course';
 
-// Language key: 'es' (default) = the Spanish syllabus (data/grammar/syllabus.json, plus the Hungarian `hu` titles);
+// Language key: 'es' (default) = the Spanish syllabus (data/grammar/syllabus.json, plus the Hungarian `hu` and German `de` titles);
 // 'en' = the English syllabus from the English topic tree (lib/grammar/syllabusEn.ts);
 // 'hu' = the Hungarian course (data/grammar/syllabus-hu.json, A1 to C1, explanations in en / es);
 // 'de' = no German course yet: an empty syllabus, never the Spanish one.
@@ -285,7 +291,14 @@ const HU_SYLLABUS_LEVELS: Level[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 let huSyllabusData: SyllabusData | null = null;
 
 function hungarianSyllabus(): SyllabusData {
-  if (!huSyllabusData) huSyllabusData = require('@/data/grammar/syllabus-hu.json');
+  if (!huSyllabusData) {
+    const data: SyllabusData = require('@/data/grammar/syllabus-hu.json');
+    // German titles for the Hungarian course are optional (the `hu` section of data/games/grammar-de/syllabus.json).
+    const de: OverlaySyllabus = require('@/data/games/grammar-de/syllabus.json');
+    huSyllabusData = de.hu
+      ? { units: withOverlayTitles(data.units, 'de', de.hu.units), topics: withOverlayTitles(data.topics, 'de', de.hu.topics) }
+      : data;
+  }
   return huSyllabusData!;
 }
 

@@ -1,4 +1,4 @@
-import { readdirSync } from 'fs';
+import { existsSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { getGrammarTopic, getGrammarTopicIds, getGrammarTopics } from '../content';
 import { EN_GRAMMAR_INDEX } from '../content/en.index';
@@ -6,6 +6,7 @@ import { ES_GRAMMAR_INDEX } from '../content/es.index';
 import { HU_GRAMMAR_INDEX } from '../content/hu.index';
 import { withArticleNouns } from '@/lib/grammar/nounArticles';
 import { withHu } from '@/lib/grammar/huOverlay';
+import { withOverlay } from '@/lib/grammar/overlay';
 
 const INDEXES = { es: ES_GRAMMAR_INDEX, en: EN_GRAMMAR_INDEX, hu: HU_GRAMMAR_INDEX };
 const DATA = join(__dirname, '..', '..', '..', 'data', 'games', 'grammar');
@@ -28,14 +29,16 @@ describe.each(['es', 'en', 'hu'] as const)('lazy grammar registry (%s)', (lang) 
     expect(getGrammarTopicIds(lang)).toEqual(ids);
   });
 
-  it('returns the lesson JSON with its Hungarian sidecar laid over it (article nouns added where they belong; the hu course has no sidecar)', () => {
+  it('returns the lesson JSON with its Hungarian and German sidecars laid over it (article nouns added where they belong; the hu course has no Hungarian sidecar, its German ones are optional)', () => {
     for (const { file, json } of files) {
       const lesson = getGrammarTopic(lang, json.topic);
+      const german = join(__dirname, '..', '..', '..', 'data', 'games', 'grammar-de', lang, `${file}.json`);
+      const withGerman = (l: unknown) => (existsSync(german) ? withOverlay(l, 'de', require(`@/data/games/grammar-de/${lang}/${file}.json`)) : l);
       if (lang === 'hu') {
-        expect(lesson).toEqual(json);
+        expect(lesson).toEqual(withGerman(json));
         continue;
       }
-      const withSidecar = withHu(json, require(`@/data/games/grammar-hu/${lang}/${file}.json`));
+      const withSidecar = withGerman(withHu(json, require(`@/data/games/grammar-hu/${lang}/${file}.json`)));
       if (lang === 'es' && json.topic === 'articulos-genero') {
         expect(lesson).toEqual(withArticleNouns(withSidecar as never));
       } else {
