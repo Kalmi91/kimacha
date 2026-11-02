@@ -6,16 +6,21 @@
 // simply built whole (no natural shorter sentence, or a short one).
 
 import chunkData from '@/data/sentences/chunks.json';
+import chunkDataDe from '@/data/sentences/chunks-de.json';
 import type { PcicTarget } from '@/data/pcic';
+import { activeSourceFor } from '@/lib/languagePair';
 import { tileWords } from '@/lib/sentenceCards';
 
-/** One step: `source` is its English (the prompt), `target` the Spanish sentence to build. */
+/** One step: `source` is its prompt (English for the Spanish deck, the learner's language for the German one), `target` the sentence to build. */
 export interface SentenceChunk {
   source: string;
   target: string;
 }
 
 const CHUNKS = chunkData as Record<string, { es: string; en: string }[]>;
+// The German deck's steps (data/sentences/chunks-de.json, keyed by the deck item id "d<id>"): the German sentence and its
+// prompt in each of the three languages a German learner can come from.
+const CHUNKS_DE = chunkDataDe as Record<string, { de: string; en: string; es: string; hu: string }[]>;
 
 const words = (sentence: string): string[] => tileWords(sentence).map((w) => w.toLowerCase());
 
@@ -38,11 +43,20 @@ export function partFitsSentence(part: string, sentence: string): boolean {
 }
 
 /**
- * The shorter sentences of the item's example sentence, or undefined (none written, the other direction, or the data no
- * longer fits the sentence, see partFitsSentence). Only the Spanish direction.
+ * The shorter sentences of the item's example sentence, or undefined (none written, the English and Hungarian directions, or the data no
+ * longer fits the sentence, see partFitsSentence). The Spanish and the German direction.
  */
 export function chunksFor(itemId: string, target: PcicTarget, sentence: string): SentenceChunk[] | undefined {
+  if (target === 'de') {
+    const source = activeSourceFor('de');
+    const german = CHUNKS_DE[itemId];
+    if (!german || german.length === 0 || source === 'de') return undefined;
+    if (!german.every((p) => p[source] && partFitsSentence(p.de, sentence))) return undefined;
+    return german.map((p) => ({ source: p[source], target: p.de }));
+  }
   if (target !== 'es') return undefined;
+  // the Spanish steps are prompted in English: a German learner gets the sentence built whole
+  if (activeSourceFor('es') === 'de') return undefined;
   const parts = CHUNKS[itemId];
   if (!parts || parts.length === 0) return undefined;
   if (!parts.every((p) => partFitsSentence(p.es, sentence))) return undefined;
