@@ -3,13 +3,13 @@
 // Checked surface: the i18n `mockExam` block (en, es and de, including the functions), the names of the papers and skills,
 // the authoring instructions and writing tasks. Corpus sentences are not checked (they may contain the word "key").
 
-import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
+import { pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
 import en from '@/lib/i18n/en';
 import es from '@/lib/i18n/es';
 import de from '@/lib/i18n/de';
 import { MOCK_WRITING } from '../author';
 import { buildMockExam } from '../build';
-import type { MockLevel, MockTarget } from '../types';
+import type { MockLevel } from '../types';
 
 afterAll(() => setPcicTarget('es'));
 
@@ -41,7 +41,7 @@ describe('the UI does not print a trademarked exam name', () => {
   });
 
   it('the text of the papers, skills, instructions and writing tasks is clean on all four exams', () => {
-    for (const [target, level] of [['es', 'A1'], ['es', 'A2'], ['en', 'A1'], ['en', 'A2']] as [MockTarget, MockLevel][]) {
+    for (const [target, level] of [['es', 'A1'], ['es', 'A2'], ['en', 'A1'], ['en', 'A2']] as [PcicTarget, MockLevel][]) {
       setPcicTarget(target);
       const e = buildMockExam({ target, level, items: pcicItemsForLevel(level), seed: 3 });
       const own: string[] = [...e.papers.map((p) => p.name), ...Object.values(e.skillNames)];

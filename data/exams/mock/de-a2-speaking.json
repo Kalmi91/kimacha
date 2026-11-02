@@ -1,0 +1,321 @@
+{
+  "target": "de",
+  "level": "A2",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Der Prüfer stellt Ihnen Fragen zu einem Thema. Antworten Sie in ganzen Sätzen.",
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Freizeit",
+              "prompt": "Fragen zu Ihrer Freizeit.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Was machen Sie gern am Wochenende?",
+                  "minWords": 10,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt eine Aktivität am Wochenende",
+                      "keywords": ["ich gehe", "ich treffe", "ich spiele", "ich lese", "ich fahre", "ich schlafe", "ich koche", "wandern", "fussball", "freunde"]
+                    }
+                  ],
+                  "model": "Am Wochenende treffe ich gern meine Freunde, und wir gehen zusammen ins Kino oder in ein Café."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Wann haben Sie das letzte Mal Sport gemacht?",
+                  "minWords": 10,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Antwortet im Perfekt",
+                      "keywords": ["gestern", "letzte woche", "vor drei", "am montag", "ich habe", "gespielt", "gelaufen", "geschwommen", "noch nie"]
+                    }
+                  ],
+                  "model": "Ich habe vor drei Tagen Fußball gespielt, und wir haben gewonnen."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Möchten Sie in Ihrer Freizeit etwas Neues lernen?",
+                  "minWords": 10,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, was sie lernen möchte, und warum",
+                      "keywords": ["ich will", "gern lernen", "tanzen", "kochen", "gitarre", "malen", "schwimmen", "sprache"]
+                    }
+                  ],
+                  "model": "Ja, ich möchte gern Gitarre lernen, weil ich Musik sehr mag und abends ein Hobby brauche."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Essen und Trinken",
+              "prompt": "Fragen zum Essen und Trinken.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Was essen Sie am liebsten?",
+                  "minWords": 10,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt ein Lieblingsessen",
+                      "keywords": ["ich esse", "pizza", "nudeln", "fisch", "suppe", "reis", "salat", "fleisch", "gemuse"]
+                    }
+                  ],
+                  "model": "Am liebsten esse ich Nudeln mit Tomatensoße und einem grünen Salat dazu."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Wer kocht bei Ihnen zu Hause?",
+                  "minWords": 10,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, wer kocht",
+                      "keywords": ["ich koche", "meine mutter", "mein vater", "mein mann", "meine frau", "wir kochen", "abwechselnd", "meistens", "freund"]
+                    }
+                  ],
+                  "model": "Bei uns kocht meistens meine Frau, aber am Sonntag koche ich für die ganze Familie."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Waren Sie schon einmal in einem deutschen Restaurant?",
+                  "minWords": 10,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Antwortet mit Erfahrung oder Plan",
+                      "keywords": ["ich war", "wir waren", "schnitzel", "bratwurst", "kartoffeln", "noch nie", "leider nicht", "bestellt", "gegessen", "lecker"]
+                    }
+                  ],
+                  "model": "Ja, ich war letztes Jahr in München in einem Restaurant und habe ein Schnitzel gegessen. Es war sehr lecker."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Sprechen Sie zwei bis drei Minuten über ein Thema. Sie haben sechs Minuten Zeit zur Vorbereitung. Sprechen Sie zu allen vier Punkten.",
+          "prepSeconds": 360,
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Mein letzter Urlaub",
+              "prompt": "Erzählen Sie von Ihrem letzten Urlaub oder einer Reise.",
+              "bullets": ["Wohin sind Sie gefahren, und mit wem?", "Was haben Sie dort gemacht?", "Wie war das Wetter, und wo haben Sie gewohnt?", "Möchten Sie noch einmal dorthin fahren? Warum?"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Erzählen Sie jetzt von Ihrem letzten Urlaub. Sie können beginnen, wenn Sie bereit sind.",
+                  "minWords": 45,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, wohin und mit wem",
+                      "keywords": ["ich bin gefahren", "wir sind gefahren", "ich war", "wir waren", "mit meiner", "mit meinem", "mit freunden", "nach italien", "nach spanien", "ans meer"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Erzählt, was sie gemacht hat",
+                      "keywords": ["ich habe", "wir haben", "besichtigt", "gebadet", "gewandert", "fotos", "gegessen", "gesehen", "besucht", "geschwommen"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Spricht über Wetter oder Unterkunft",
+                      "keywords": ["das wetter", "sonnig", "warm", "regen", "hotel", "ferienwohnung", "campingplatz", "gewohnt", "zimmer"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Sagt, ob sie noch einmal hinfahren möchte, und warum",
+                      "keywords": ["noch einmal", "wieder", "nachstes jahr", "gern", "schon", "nicht noch", "leider"]
+                    }
+                  ],
+                  "model": "Im Sommer bin ich mit meiner Familie nach Italien gefahren. Wir haben eine Woche am Meer gewohnt, in einer kleinen Ferienwohnung. Wir haben viel gebadet, Eis gegessen und die Stadt besichtigt. Das Wetter war sehr warm und sonnig. Ich möchte nächstes Jahr gern wieder dorthin fahren, weil die Menschen dort so freundlich sind."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Meine Arbeit oder meine Schule",
+              "prompt": "Erzählen Sie von Ihrer Arbeit oder Ihrer Schule.",
+              "bullets": ["Was sind Sie von Beruf, oder was lernen Sie?", "Wie sieht ein normaler Tag aus?", "Wie sind die Kollegen oder Mitschüler?", "Was möchten Sie in Zukunft machen?"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Erzählen Sie jetzt von Ihrer Arbeit oder Ihrer Schule. Sie können beginnen, wenn Sie bereit sind.",
+                  "minWords": 45,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, was sie von Beruf ist oder lernt",
+                      "keywords": ["ich bin", "ich arbeite als", "ich studiere", "ich lerne", "ingenieur", "lehrerin", "krankenschwester", "verkaufer", "student", "schuler"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Beschreibt einen normalen Tag",
+                      "keywords": ["jeden tag", "um acht", "um neun", "morgens", "mittags", "ich fange", "ich beginne", "pause", "bis funf", "bis siebzehn"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Spricht über Kollegen oder Mitschüler",
+                      "keywords": ["kollegen", "kolleginnen", "mitschuler", "chef", "nett", "freundlich", "team", "klasse", "verstehe mich"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Sagt, was sie in Zukunft machen möchte",
+                      "keywords": ["in zukunft", "spater", "ich will", "nachstes jahr", "weiterlernen", "umziehen", "wechseln", "prufung"]
+                    }
+                  ],
+                  "model": "Ich bin Krankenschwester und arbeite in einem großen Krankenhaus. Ich fange jeden Tag um sieben Uhr an und mache mittags eine Pause. Meine Kolleginnen sind sehr nett, und wir verstehen uns gut. In Zukunft möchte ich Deutsch besser lernen und vielleicht in einer anderen Stadt arbeiten."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Planen Sie etwas gemeinsam mit dem Prüfer. Machen Sie Vorschläge, reagieren Sie auf die Vorschläge des Prüfers und einigen Sie sich.",
+          "talkMinutes": [3, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Ein Ausflug am Wochenende",
+              "prompt": "Sie möchten mit einem Freund (dem Prüfer) am Wochenende einen Ausflug machen. Sie sprechen über Ziel, Zeit, Verkehrsmittel und Essen.",
+              "bullets": ["Wohin?", "Wann und wie lange?", "Wie fahren wir?", "Was nehmen wir zu essen mit?"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Wir wollten schon lange einen Ausflug machen. Hast du eine Idee, wohin wir fahren könnten?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Macht einen Vorschlag für das Ziel",
+                      "keywords": ["wir konnten", "ich schlage vor", "wie ware", "zum see", "in die berge", "ans meer", "in den zoo", "ins museum", "in den wald"]
+                    }
+                  ],
+                  "model": "Wir könnten zum See fahren. Dort kann man im Wasser schwimmen und am Ufer spazieren gehen."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Das ist eine gute Idee. Am Samstag oder am Sonntag?",
+                  "minWords": 12,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Wählt einen Tag und eine Zeit",
+                      "keywords": ["lieber", "um neun", "um zehn", "morgens", "den ganzen tag", "bis abends"]
+                    }
+                  ],
+                  "model": "Ich möchte lieber am Samstag fahren, denn am Sonntag habe ich keine Zeit. Wir können um neun Uhr losfahren."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Und wie kommen wir dorthin? Mit dem Auto oder mit der Bahn?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Entscheidet das Verkehrsmittel",
+                      "keywords": ["mit dem zug", "mit dem bus", "mit dem fahrrad", "billiger", "schneller", "bequemer", "parkplatz"]
+                    }
+                  ],
+                  "model": "Ich finde, wir sollten mit dem Zug fahren. Das ist billiger, und wir müssen keinen Parkplatz suchen."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Gut, einverstanden. Was nehmen wir zu essen und zu trinken mit?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Schlägt Essen und Trinken vor",
+                      "keywords": ["sandwiches", "brote", "obst", "wasser", "saft", "kuchen", "picknick", "salat", "thermoskanne", "schokolade"]
+                    }
+                  ],
+                  "model": "Wir können Sandwiches, Obst und Wasser mitnehmen. Ich bringe auch Kuchen mit, und du kaufst den Saft."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Ein Geschenk für einen Freund",
+              "prompt": "Ein gemeinsamer Freund hat bald Geburtstag. Sie sprechen mit einer Freundin (dem Prüfer) über ein Geschenk, das Geld, die Karte und die Übergabe.",
+              "bullets": ["Was schenken wir?", "Wie viel Geld?", "Wer kauft es?", "Wann und wo geben wir es ihm?"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Max wird nächste Woche dreißig. Was könnten wir ihm schenken?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Macht einen Vorschlag für das Geschenk",
+                      "keywords": ["wir konnten", "ich schlage vor", "wie ware", "buch", "gutschein", "konzert", "tasche", "kopfhorer", "blumen", "wein"]
+                    }
+                  ],
+                  "model": "Wir könnten ihm ein Buch oder einen Gutschein für ein Konzert schenken. Er hört gern Musik."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Das gefällt mir. Wie viel Geld sollen wir ausgeben?",
+                  "minWords": 12,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt eine Summe",
+                      "keywords": ["euro", "zwanzig", "dreissig", "funfzig", "hochstens", "ungefahr", "pro person", "jeder", "zusammen"]
+                    }
+                  ],
+                  "model": "Ich denke, jeder von uns kann zwanzig Euro geben. Dann haben wir zusammen vierzig Euro."
+                },
+                {
+                  "id": "t3",
+                  "ask": "In Ordnung. Wer besorgt das Geschenk, und wer schreibt die Karte?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Verteilt die Aufgaben",
+                      "keywords": ["ich kaufe", "ich besorge", "ich schreibe", "du schreibst", "du kaufst", "ich ubernehme", "ubernimmst du", "zusammen"]
+                    }
+                  ],
+                  "model": "Ich kaufe das Geschenk am Freitag in der Stadt, und du schreibst bitte die Karte. Alle Freunde können unterschreiben."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Prima. Wann und wo geben wir es ihm?",
+                  "minWords": 15,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Schlägt Zeit und Ort vor",
+                      "keywords": ["am samstag", "am freitag", "abends", "bei ihm", "bei mir", "restaurant", "party", "um sieben", "um acht", "zu hause"]
+                    }
+                  ],
+                  "model": "Wir können es ihm am Samstagabend bei seiner Party geben. Ich frage ihn, um wie viel Uhr wir kommen sollen."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

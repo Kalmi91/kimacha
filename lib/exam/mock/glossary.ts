@@ -22,8 +22,8 @@ interface GlossaryIndex {
   singles: Map<string, { item: PcicItem; form: string }>;
   phrases: { words: string; item: PcicItem; form: string }[];
   target: MockTarget;
-  /** Target hu and de: the learner's language (es or en) the meaning is given in; es / en targets have their one counterpart. */
-  source: 'es' | 'en';
+  /** Targets hu and de only: the learner's language the meaning is given in (hu: es or en; de: es, en or hu); es / en targets have their one counterpart. */
+  source: 'es' | 'en' | 'hu';
 }
 
 const ARTICLE: Record<MockTarget, RegExp> = {
@@ -50,7 +50,7 @@ export function buildGlossaryIndex(items: PcicItem[], target: MockTarget, source
       }
     }
   }
-  return { singles, phrases, target, source: source === 'es' ? 'es' : 'en' };
+  return { singles, phrases, target, source: source === 'es' ? 'es' : source === 'hu' && target === 'de' ? 'hu' : 'en' };
 }
 
 /** The `{{n}}` gap marker of the authored texts. */

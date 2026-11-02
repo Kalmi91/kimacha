@@ -1,0 +1,318 @@
+{
+  "target": "de",
+  "level": "B1",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Sie hören fünf kurze Texte. Sie hören jeden Text zweimal. Zu jedem Text lösen Sie zwei Aufgaben: Sind die Aussagen richtig oder falsch? Und: Wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 2,
+          "clips": [
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Achtung an Gleis 3! Der Regionalexpress nach Hamburg, planmäßige Abfahrt 14 Uhr 12, hat voraussichtlich zehn Minuten Verspätung. Bitte beachten Sie: Wegen einer Baustelle fährt der Zug heute nicht von Gleis 3, sondern von Gleis 7 ab. Reisende nach Lübeck steigen bitte in Hamburg um. Wir bitten um Entschuldigung für die Unannehmlichkeiten."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Der Zug nach Hamburg fährt von Gleis 3 ab.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Was müssen Reisende nach Lübeck tun?",
+                  "options": ["Eine Stunde am Bahnhof warten.", "Zu einem anderen Bahnhof fahren.", "In Hamburg in einen anderen Zug steigen."],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Guten Tag, hier ist die Praxis Dr. Brandt. Frau Weber, Sie haben morgen um 9 Uhr einen Termin bei uns. Leider ist der Doktor krank geworden, deshalb müssen wir den Termin verschieben. Wir könnten Ihnen Donnerstag um 11 Uhr oder Freitag um halb neun anbieten. Bitte rufen Sie uns bis heute Nachmittag zurück, die Nummer ist 0341 55 12 30. Danke und bis bald!"
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Frau Weber soll morgen früh in die Praxis kommen.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Was soll Frau Weber tun?",
+                  "options": ["Eine E-Mail an den Doktor schreiben.", "Am Donnerstag um 9 Uhr kommen.", "Heute noch in der Praxis anrufen."],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Liebe Kunden, heute nur bis 18 Uhr: Unser Bäcker bietet frisches Vollkornbrot zum halben Preis an. Außerdem finden Sie in der Obstabteilung heute Erdbeeren aus der Region, 500 Gramm kosten nur 2 Euro 49. Und noch ein Hinweis: Der Eingang auf der Nordseite ist wegen Reparaturarbeiten gesperrt. Bitte benutzen Sie den Haupteingang. Wir wünschen Ihnen einen schönen Einkauf."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Das Brot ist den ganzen Abend billiger.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Was sollen die Kunden beachten?",
+                  "options": ["Die Erdbeeren sind nicht mehr frisch.", "Der Bäcker hat heute nicht geöffnet.", "Ein Eingang des Supermarktes ist geschlossen."],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Hallo Paul, hier ist Mia. Ich wollte fragen, ob du morgen Abend Lust hast, mit ins Kino zu gehen. Der neue Film läuft um Viertel nach acht, ich besorge die Karten. Wir könnten vorher noch eine Pizza essen, wenn du magst. Ruf mich doch kurz zurück, am besten nach sechs, vorher bin ich noch im Büro. Bis später!"
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mia möchte mit Paul ins Kino gehen.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 0
+                },
+                {
+                  "stem": "Wann soll Paul zurückrufen?",
+                  "options": ["Nach 18 Uhr.", "Gleich nach der Nachricht.", "Morgen früh."],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Liebe Mieter, am Dienstag wird zwischen 9 und 14 Uhr das Wasser abgestellt, weil wir im Keller neue Rohre einbauen. Bitte füllen Sie rechtzeitig Wasser in Eimer oder Flaschen. Die Toiletten im ersten Stock können Sie in dieser Zeit nicht benutzen, im Erdgeschoss gibt es eine Ersatztoilette. Bei Fragen finden Sie mich in meinem Büro im Hof. Danke für Ihr Verständnis."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Am Dienstag gibt es den ganzen Tag kein Wasser.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Was können die Mieter während der Arbeiten tun?",
+                  "options": ["Im Keller duschen.", "Eine Toilette im Erdgeschoss benutzen.", "Beim Hausmeister Wasser kaufen."],
+                  "correct": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören eine Führung in einem Museum. Sie hören den Text einmal. Zu den Aufgaben 11 bis 15 wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 1,
+          "audio": [
+            {
+              "speaker": "f",
+              "text": "Guten Morgen, meine Damen und Herren, und herzlich willkommen im Technikmuseum! Mein Name ist Katrin Lorenz, und ich begleite Sie in den nächsten neunzig Minuten durch unser Haus. Bevor wir beginnen, noch ein paar organisatorische Hinweise. Bitte stellen Sie Ihre Taschen und Jacken in die Schließfächer rechts neben dem Eingang. Die Fächer kosten nichts, Sie brauchen nur eine Ein-Euro-Münze, die Sie am Ende zurückbekommen. Fotografieren ist überall erlaubt, nur in der Halle für Textilien bitten wir Sie darauf zu verzichten, weil das Licht die alten Stoffe beschädigt."
+            },
+            {
+              "speaker": "f",
+              "text": "Das Museum besteht aus drei Bereichen. Im Erdgeschoss sehen Sie historische Maschinen, zum Beispiel die große Dampfmaschine aus dem Jahr 1895. Sie wird jeden Tag um elf und um vierzehn Uhr in Betrieb genommen, dann können Sie sie hören und riechen. Im ersten Stock zeigen wir, wie sich das Leben in Küche und Haushalt in den letzten hundert Jahren verändert hat. Besonders beliebt ist bei Kindern die Abteilung für Telefone und Radios, hier darf man nämlich alles ausprobieren. Im zweiten Stock finden Sie das Mitmachlabor. Dort können Sie selbst kleine Experimente durchführen, aber bitte nur mit Anmeldung, denn die Plätze sind begrenzt. Die Anmeldung ist am Informationsschalter."
+            },
+            {
+              "speaker": "f",
+              "text": "Wir fangen jetzt im Erdgeschoss an und gehen dann nach oben. Der Rundgang endet im Museumscafé, wo Sie sich ausruhen können. Wer möchte, kann anschließend noch im Museumsshop vorbeischauen. Alle Teilnehmer der Führung bekommen dort zehn Prozent Rabatt. Haben Sie noch Fragen? Dann geht es jetzt los."
+            }
+          ],
+          "questions": [
+            {
+              "stem": "Was sollen die Besucher vor der Führung tun?",
+              "options": ["Eine Eintrittskarte kaufen.", "Eine Euro-Münze für die Führerin mitbringen.", "Ihre Taschen und Jacken wegbringen."],
+              "correct": 2
+            },
+            {
+              "stem": "Wo darf man nicht fotografieren?",
+              "options": ["Bei der Dampfmaschine.", "Im Mitmachlabor.", "In der Halle mit den alten Stoffen."],
+              "correct": 2
+            },
+            {
+              "stem": "Wann kann man die Dampfmaschine in Betrieb sehen?",
+              "options": ["Nur am Vormittag.", "Nach der Führung im Café.", "Zweimal am Tag."],
+              "correct": 2
+            },
+            {
+              "stem": "Was müssen Besucher für das Mitmachlabor tun?",
+              "options": ["Sich vorher anmelden.", "Etwas bezahlen.", "Mit Kindern kommen."],
+              "correct": 0
+            },
+            {
+              "stem": "Was bekommen die Teilnehmer der Führung im Museumsshop?",
+              "options": ["Ein kleines Geschenk.", "Einen Kaffee.", "Einen günstigeren Preis."],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören ein Gespräch zwischen zwei Bekannten. Sie hören das Gespräch einmal. Sind die Aussagen 16 bis 22 richtig oder falsch? Kreuzen Sie an.",
+          "plays": 1,
+          "audio": [
+            { "speaker": "f", "text": "Hallo Tobias! Mensch, lange nicht gesehen. Wie geht es dir?" },
+            { "speaker": "m", "text": "Hallo Sandra! Gut, danke, aber ich habe gerade ziemlich viel zu tun. Ich bereite mich auf eine Prüfung vor." },
+            { "speaker": "f", "text": "Eine Prüfung? Was denn für eine?" },
+            { "speaker": "m", "text": "Ich mache eine Weiterbildung zum Buchhalter, abends, zweimal in der Woche. Nächsten Monat ist die Abschlussprüfung." },
+            { "speaker": "f", "text": "Wirklich? Das wusste ich gar nicht. Ich dachte, du arbeitest noch im Reisebüro." },
+            {
+              "speaker": "m",
+              "text": "Doch, doch, da arbeite ich noch, aber nur halbtags. Das Reisebüro macht Ende des Jahres zu. Immer mehr Leute buchen ihre Reisen im Internet, und für uns lohnt sich das nicht mehr. Deshalb wollte ich etwas Neues lernen, solange ich noch einen Job habe."
+            },
+            { "speaker": "f", "text": "Das ist wirklich vernünftig. Und ist die Weiterbildung sehr teuer?" },
+            { "speaker": "m", "text": "Es geht. Ich zahle neunzig Euro im Monat, und mein Chef gibt mir freundlicherweise jeden Donnerstag früher frei, damit ich pünktlich im Kurs sein kann." },
+            {
+              "speaker": "f",
+              "text": "Toll, dass er dich so unterstützt. Weißt du, ich überlege auch schon lange, wieder einen Kurs zu machen. Ich möchte Spanisch lernen, weil wir im Herbst nach Mexiko fliegen."
+            },
+            { "speaker": "m", "text": "Spanisch ist eine schöne Idee! Weißt du, wo du dich anmelden könntest?" },
+            { "speaker": "f", "text": "Nein, noch nicht. Ich habe gehört, dass es in der Stadt mehrere Sprachschulen gibt, aber ich weiß nicht, welche gut ist." },
+            {
+              "speaker": "m",
+              "text": "Ich kann dir die Volkshochschule empfehlen. Die ist nicht weit vom Bahnhof entfernt, die Kurse sind billiger als bei den privaten Schulen, und die Lehrer sind richtig gut. Meine Schwester hat dort Französisch gelernt."
+            },
+            {
+              "speaker": "f",
+              "text": "Danke für den Tipp! Dann schaue ich mir die Seite gleich heute Abend im Internet an. Sollen wir uns bald mal wieder treffen? Vielleicht am Samstag auf einen Kaffee?"
+            },
+            { "speaker": "m", "text": "Samstag ist schlecht, da besucht mich meine Mutter. Wie wäre es mit Sonntag, so gegen drei, im Café am Marktplatz?" },
+            { "speaker": "f", "text": "Sonntag um drei passt mir gut. Dann bis dahin, und viel Erfolg bei der Prüfung!" },
+            { "speaker": "m", "text": "Danke, den kann ich brauchen. Tschüs, Sandra!" }
+          ],
+          "questions": [
+            {
+              "stem": "Tobias bereitet sich auf eine Prüfung vor.",
+              "options": ["richtig", "falsch"],
+              "correct": 0
+            },
+            {
+              "stem": "Tobias besucht den Kurs am Wochenende.",
+              "options": ["richtig", "falsch"],
+              "correct": 1
+            },
+            {
+              "stem": "Tobias arbeitet nur noch halbtags im Reisebüro.",
+              "options": ["richtig", "falsch"],
+              "correct": 0
+            },
+            {
+              "stem": "Das Reisebüro schließt, weil kaum jemand Reisen im Internet bucht.",
+              "options": ["richtig", "falsch"],
+              "correct": 1
+            },
+            {
+              "stem": "Sandra möchte einen Italienischkurs besuchen.",
+              "options": ["richtig", "falsch"],
+              "correct": 1
+            },
+            {
+              "stem": "Tobias empfiehlt Sandra die Volkshochschule.",
+              "options": ["richtig", "falsch"],
+              "correct": 0
+            },
+            {
+              "stem": "Sandra und Tobias treffen sich am Samstag.",
+              "options": ["richtig", "falsch"],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören eine Diskussion im Radio. Sie hören die Diskussion einmal. Zu den Aufgaben 23 bis 30 wählen Sie: Wer sagt das? Frau Aydin, Herr Berger oder beide?",
+          "plays": 1,
+          "audio": [
+            {
+              "speaker": "n",
+              "text": "Willkommen zu unserer Sendung „Arbeitswelt“. Heute geht es um die Frage: Arbeiten im Homeoffice, ein Gewinn oder ein Problem? Ich begrüße Frau Aydin, die Projektleiterin in einem Softwareunternehmen ist, und Herrn Berger, der einer Versicherung die Personalabteilung leitet. Frau Aydin, Sie arbeiten drei Tage in der Woche zu Hause. Wie gefällt Ihnen das?"
+            },
+            {
+              "speaker": "f",
+              "text": "Sehr gut. Ich kann zu Hause viel konzentrierter arbeiten, weil mich niemand unterbricht. Außerdem spare ich jeden Tag fast anderthalb Stunden, die ich sonst im Auto verbringen würde. Allerdings habe ich ein eigenes Arbeitszimmer. Ohne dieses Zimmer würde es bei uns mit den beiden Kindern nicht funktionieren."
+            },
+            { "speaker": "n", "text": "Herr Berger, Sie sehen das anders." },
+            {
+              "speaker": "m",
+              "text": "Ja, zum Teil. Die gesparte Zeit ist natürlich ein Vorteil, das gebe ich gern zu. Aber ich habe während der Pandemie fast zwei Jahre von zu Hause gearbeitet, und mir haben die Kollegen sehr gefehlt. Man verliert den Kontakt, und die Grenze zwischen Arbeit und Freizeit verschwindet. Abends habe ich noch einmal schnell E-Mails beantwortet, und plötzlich war es elf Uhr."
+            },
+            { "speaker": "f", "text": "Bei mir ist das anders, ich setze mir feste Zeiten. Um 17 Uhr schalte ich den Computer aus, und dann ist Schluss." },
+            {
+              "speaker": "m",
+              "text": "Das gelingt nicht jedem. Und noch etwas: Neue Mitarbeiter lernen im Büro einfach schneller, weil sie jederzeit jemanden fragen können. Online-Besprechungen finde ich auch anstrengend. Nach drei Stunden vor dem Bildschirm bin ich völlig müde."
+            },
+            { "speaker": "n", "text": "Frau Aydin, was entgegnen Sie?" },
+            {
+              "speaker": "f",
+              "text": "Das sehe ich anders. Auch von zu Hause kann man gut zusammenarbeiten: Bei uns gibt es jeden Morgen eine kurze Videokonferenz, und am Nachmittag erreicht man jeden im Chat. Ich finde, die Firma sollte den Leuten die Wahl lassen. Außerdem bekommen bei uns alle einen Zuschuss für den Schreibtisch und den Strom, das ist fair."
+            },
+            {
+              "speaker": "m",
+              "text": "Das ist vorbildlich, aber nicht alle Firmen machen das, und viele Beschäftigte sitzen dann am Küchentisch. Trotzdem bin ich gar nicht so weit weg von Ihnen. Eine Mischung aus beidem halte ich auch für das Beste: zwei Tage zu Hause, drei im Büro."
+            },
+            { "speaker": "n", "text": "Dann sind Sie sich in diesem Punkt einig. Vielen Dank für das Gespräch." }
+          ],
+          "questions": [
+            {
+              "stem": "Zu Hause arbeitet man konzentrierter.",
+              "options": ["Frau Aydin", "Herr Berger", "beide"],
+              "correct": 0
+            },
+            {
+              "stem": "Die Kollegen haben während der Arbeit zu Hause gefehlt.",
+              "options": ["Frau Aydin", "Herr Berger", "beide"],
+              "correct": 1
+            },
+            {
+              "stem": "Man spart viel Zeit, weil man nicht zur Arbeit fahren muss.",
+              "options": ["Frau Aydin", "Herr Berger", "beide"],
+              "correct": 2
+            },
+            {
+              "stem": "Arbeit und Freizeit vermischen sich zu leicht.",
+              "options": ["Frau Aydin", "Herr Berger", "beide"],
+              "correct": 1
+            },
+            {
+              "stem": "Die Firma sollte den Mitarbeitern die Wahl lassen, wo sie arbeiten.",
+              "options": ["Frau Aydin", "Herr Berger", "beide"],
+              "correct": 2
+            },
+            {
+              "stem": "Man braucht zu Hause ein eigenes Zimmer zum Arbeiten.",
+              "options": ["Frau Aydin", "Herr Berger", "beide"],
+              "correct": 0
+            },
+            {
+              "stem": "Neue Mitarbeiter lernen im Büro schneller.",
+              "options": ["Frau Aydin", "Herr Berger", "beide"],
+              "correct": 1
+            },
+            {
+              "stem": "Online-Besprechungen sind anstrengend.",
+              "options": ["Frau Aydin", "Herr Berger", "beide"],
+              "correct": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

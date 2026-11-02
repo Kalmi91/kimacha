@@ -1,0 +1,290 @@
+{
+  "target": "de",
+  "level": "A1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Stellen Sie sich dem Prüfer vor. Sprechen Sie über die Punkte auf der Karte.",
+          "talkMinutes": [1, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Sich vorstellen",
+              "prompt": "Sie lernen den Prüfer kennen. Sagen Sie, wer Sie sind.",
+              "bullets": ["Name", "Land", "Alter", "Wohnort", "Beruf oder Schule", "Sprachen", "Hobby oder Familie"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Guten Tag! Sie können beginnen, wenn Sie bereit sind.",
+                  "minWords": 30,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt den Namen oder das Herkunftsland",
+                      "keywords": ["mein name", "ich heisse", "ich komme", "aus mexiko", "aus ungarn", "aus spanien", "aus den usa", "ich bin aus", "kolumbien", "argentinien"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Sagt das Alter oder den Wohnort",
+                      "keywords": ["jahre alt", "ich bin dreissig", "ich wohne", "in berlin", "in munchen", "in hamburg", "in koln", "in leipzig"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Spricht über Beruf oder Schule",
+                      "keywords": ["ich arbeite", "ich bin student", "ich bin lehrer", "ich lerne", "ich studiere", "im buro", "als ingenieur", "beruf"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Spricht über Sprachen, Hobby oder Familie",
+                      "keywords": ["ich spreche", "sprachen", "spanisch", "englisch", "mein hobby", "ich spiele", "familie", "schwester", "bruder", "meine eltern"]
+                    }
+                  ],
+                  "model": "Mein Name ist María López, ich komme aus Mexiko. Ich bin dreißig Jahre alt und wohne in Berlin. Ich arbeite in einem Büro und lerne am Abend Deutsch. Ich spreche Spanisch, Englisch und ein bisschen Deutsch. Mein Hobby ist Tanzen, und ich habe eine Schwester."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Wählen Sie ein Thema und sprechen Sie zwei bis drei Minuten darüber. Sie haben zehn Minuten Zeit zur Vorbereitung und können Notizen machen.",
+          "prepSeconds": 600,
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Meine Wohnung",
+              "prompt": "Sprechen Sie über Ihre Wohnung oder Ihr Haus und über die Umgebung.",
+              "bullets": ["Wie ist die Wohnung?", "Welche Zimmer gibt es?", "Mit wem wohnen Sie?", "Was gibt es in der Nähe?", "Was gefällt Ihnen?"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Sprechen Sie jetzt über Ihre Wohnung oder Ihr Haus. Sie können beginnen, wenn Sie bereit sind.",
+                  "minWords": 35,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Beschreibt die Wohnung",
+                      "keywords": ["klein", "gross", "gemutlich", "hell", "modern", "bequem", "im dritten stock"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Nennt Zimmer",
+                      "keywords": ["zimmer", "kuche", "badezimmer", "wohnzimmer", "schlafzimmer", "balkon", "garten", "flur"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Sagt, mit wem sie wohnt",
+                      "keywords": ["allein", "mit meiner", "mit meinem", "mein mann", "meine frau", "meine eltern", "mitbewohner", "freundin", "familie"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Nennt Orte in der Nähe",
+                      "keywords": ["park", "supermarkt", "bushaltestelle", "bahnhof", "schule", "geschaft", "restaurant", "in der nahe", "strasse"]
+                    }
+                  ],
+                  "model": "Meine Wohnung ist klein, aber sehr gemütlich. Sie hat drei Zimmer, eine Küche und einen Balkon. Ich wohne mit meiner Freundin und unserer Katze. In der Nähe gibt es einen Supermarkt, einen Park und eine Bushaltestelle. Ich finde die Wohnung schön, weil sie hell ist."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Ein Tag in meinem Leben",
+              "prompt": "Sprechen Sie über einen normalen Tag von morgens bis abends.",
+              "bullets": ["Wann stehen Sie auf?", "Was essen und trinken Sie am Morgen?", "Wo arbeiten oder lernen Sie?", "Was machen Sie am Nachmittag?", "Was machen Sie am Abend?"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Sprechen Sie jetzt über einen normalen Tag in Ihrem Leben. Sie können beginnen, wenn Sie bereit sind.",
+                  "minWords": 35,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, wann sie aufsteht",
+                      "keywords": ["ich stehe", "aufstehen", "um sechs", "um sieben", "um acht", "uhr auf", "wache auf"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Spricht über das Frühstück",
+                      "keywords": ["fruhstuck", "ich trinke", "ich esse", "kaffee", "brotchen", "muesli", "toast"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Sagt, wo sie arbeitet oder lernt",
+                      "keywords": ["ich arbeite", "ich gehe", "zur arbeit", "in die schule", "im buro", "ich lerne", "universitat", "firma"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Spricht über Nachmittag oder Abend",
+                      "keywords": ["nachmittag", "abend", "ich koche", "fernsehen", "ich lese", "einkaufen", "ich treffe", "sport", "ins bett"]
+                    }
+                  ],
+                  "model": "Ich stehe um sieben Uhr auf. Zum Frühstück trinke ich Kaffee und esse ein Brötchen mit Käse. Dann gehe ich zur Arbeit in ein Büro in der Stadt. Am Nachmittag kaufe ich ein und koche. Am Abend sehe ich fern, und um elf Uhr gehe ich ins Bett."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Der Prüfer stellt Ihnen Situationen vor. Sagen Sie jeweils, was Sie sagen würden. Am Ende stellen Sie dem Prüfer zwei Fragen.",
+          "talkMinutes": [3, 4],
+          "follows": 2,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Meine Wohnung",
+              "prompt": "Situationen bei Ihnen zu Hause.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Sie haben Besuch. Es ist sehr warm im Zimmer, und alle Fenster sind zu. Was sagen Sie zu Ihrem Gast?",
+                  "minWords": 6,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bittet höflich um frische Luft",
+                      "keywords": ["konnen sie", "kannst du", "konntest du", "machen sie", "mach bitte", "aufmachen", "offnen"]
+                    }
+                  ],
+                  "model": "Kannst du bitte das Fenster aufmachen?"
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ihr Gast hat Durst. Was sagen Sie?",
+                  "minWords": 6,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bietet etwas zu trinken an",
+                      "keywords": ["mochten sie", "mochtest du", "wasser", "saft", "kaffee", "trinken", "hast du"]
+                    }
+                  ],
+                  "model": "Möchtest du ein Glas Wasser oder einen Saft?"
+                },
+                {
+                  "id": "t3",
+                  "ask": "Der Fernseher im Wohnzimmer ist sehr laut. Was sagen Sie zu Ihrem Mitbewohner?",
+                  "minWords": 6,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bittet, den Fernseher leiser zu machen",
+                      "keywords": ["leiser", "machen sie", "mach", "konnen sie", "kannst du", "ausmachen", "ausschalten"]
+                    }
+                  ],
+                  "model": "Kannst du den Fernseher bitte leiser machen?"
+                },
+                {
+                  "id": "t4",
+                  "ask": "Sie tragen eine schwere Tasche. Ihr Nachbar steht an der Tür. Was sagen Sie?",
+                  "minWords": 6,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bittet um Hilfe",
+                      "keywords": ["konnen sie mir", "kannst du mir", "helfen", "hilfe", "nehmen sie"]
+                    }
+                  ],
+                  "model": "Können Sie mir bitte helfen? Die Tasche ist sehr schwer."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Jetzt sind Sie dran. Stellen Sie mir zwei Fragen über mein Haus.",
+                  "minWords": 5,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Stellt zwei Fragen",
+                      "keywords": ["wie viele", "wo wohnen", "wohnen sie", "haben sie", "ist ihr", "gibt es", "wie gross", "was kostet", "wie viel"]
+                    }
+                  ],
+                  "model": "Wo wohnen Sie? Haben Sie einen Garten?"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Ein Tag in meinem Leben",
+              "prompt": "Situationen im Alltag.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Sie suchen den Bahnhof und fragen eine Passantin auf der Straße. Was sagen Sie?",
+                  "minWords": 6,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Fragt nach dem Weg",
+                      "keywords": ["wo ist", "entschuldigung", "wie komme ich", "konnen sie mir", "kannst du mir", "wo finde ich"]
+                    }
+                  ],
+                  "model": "Entschuldigung, wo ist der Bahnhof, bitte?"
+                },
+                {
+                  "id": "t2",
+                  "ask": "Sie sind in einem Café und haben Hunger und Durst. Was sagen Sie zur Kellnerin?",
+                  "minWords": 6,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bestellt etwas",
+                      "keywords": ["ich hatte gern", "kaffee", "kuchen", "wasser", "suppe", "salat", "speisekarte", "rechnung"]
+                    }
+                  ],
+                  "model": "Ich möchte einen Tee und ein Stück Kuchen, bitte."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Im Deutschkurs haben Sie keinen Stift. Was sagen Sie zu Ihrer Nachbarin?",
+                  "minWords": 6,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bittet um einen Stift",
+                      "keywords": ["kugelschreiber", "leihen", "borgen", "hast du", "konnen sie", "kannst du"]
+                    }
+                  ],
+                  "model": "Hast du einen Stift für mich? Ich habe keinen."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Sie verstehen den Lehrer nicht, denn er spricht sehr schnell. Was sagen Sie?",
+                  "minWords": 6,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Bittet, langsamer zu sprechen oder zu wiederholen",
+                      "keywords": ["langsamer", "noch einmal", "wiederholen", "nicht verstanden", "ich verstehe", "konnen sie"]
+                    }
+                  ],
+                  "model": "Können Sie bitte langsamer sprechen und das noch einmal sagen?"
+                },
+                {
+                  "id": "t5",
+                  "ask": "Jetzt sind Sie dran. Stellen Sie mir zwei Fragen über meinen Tag.",
+                  "minWords": 5,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Stellt zwei Fragen",
+                      "keywords": ["wann stehen", "was machen", "wo arbeiten", "arbeiten sie", "haben sie", "wie viel", "um wie viel uhr", "was essen"]
+                    }
+                  ],
+                  "model": "Wann stehen Sie auf? Was machen Sie am Abend?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

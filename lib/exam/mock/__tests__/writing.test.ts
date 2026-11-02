@@ -3,16 +3,16 @@
 // points; a good answer gets high points; scoring stays proportional (a half-good answer gets half the
 // points, a short but honest answer gets the content points but not the word-count mark).
 
-import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
+import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicTarget } from '@/data/pcic';
 import { MOCK_WRITING } from '../author';
 import { buildMockExam } from '../build';
 import { scoreMockExam, scoreMockTask } from '../score';
-import type { MockAnswers, MockFormFillTask, MockShortMessageTask, MockTarget } from '../types';
+import type { MockAnswers, MockFormFillTask, MockShortMessageTask } from '../types';
 import { assessMessage, buildLexicon, checkField, foldedTokens, isNonsenseToken } from '../writing';
 
 afterAll(() => setPcicTarget('es'));
 
-function lexiconFor(target: MockTarget) {
+function lexiconFor(target: PcicTarget) {
   setPcicTarget(target);
   return buildLexicon(PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)), target);
 }

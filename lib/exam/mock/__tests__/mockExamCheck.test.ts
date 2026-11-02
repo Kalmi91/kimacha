@@ -195,9 +195,26 @@ describe('the rules, each with a bad fixture', () => {
     fails(broken('es-c1-listening', (d) => (tasks(d)[2].text = 'a written text too')), /exactly one of text \/ audio is needed/);
     fails(broken('es-b1-reading', (d) => (d.forms[0].id = '')), /needs an id and a task list/);
     fails(broken('es-b1-reading', (d) => d.forms.push({ id: 'f1', tasks: tasks(d) })), /form ids are not unique/);
-    fails(broken('es-b1-reading', (d) => (d.target = 'fr')), /target "fr" must be es, en or hu/);
+    fails(broken('es-b1-reading', (d) => (d.target = 'fr')), /target "fr" must be es, en, hu or de/);
     expect(run(path.join(tmp, 'does-not-exist.json')).out).toMatch(/the file does not exist/);
     expect(run('--bogus').status).toBe(1);
+  });
+
+  it('de: a shipped German paper passes; Austrian / Swiss words, ss for ß and ae / oe / ue for umlauts are errors (not in the keywords)', () => {
+    const real = (name: string): Json => JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', '..', '..', 'data', 'exams', 'mock', `${name}.json`), 'utf8'));
+    const withTitle = (title: string) => {
+      const d = real('de-b1-reading');
+      tasks(d)[0].title = title;
+      return run(write(d));
+    };
+    expect(run(write(real('de-b1-reading'))).last).toBe('mock-exam-check: OK (1 files, 0 errors, 0 warnings)');
+    fails(withTitle('Die Strasse im Jänner'), /M6: .*"Strasse" is not de-DE usage/);
+    fails(withTitle('Im Jänner'), /M6: .*"Jänner" is not de-DE usage/);
+    fails(withTitle('Eine Pruefung fuer alle'), /M6: .*"fuer" is not de-DE usage/);
+    // a keyword is folded (ß -> ss), so it is exempt
+    const d = real('de-b1-writing');
+    tasks(d)[0].choices[0].points[0].keywords.push('strasse');
+    expect(run(write(d)).last).toBe('mock-exam-check: OK (1 files, 0 errors, 0 warnings)');
   });
 
   it('hu: a file of target hu has the es format; õ û ô (not ő ű) are an error; the fixed man / woman options are the Hungarian ones', () => {

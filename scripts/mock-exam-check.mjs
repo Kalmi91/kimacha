@@ -5,7 +5,7 @@
 //
 // Usage:
 //   node scripts/mock-exam-check.mjs [--strict] [--photos <registry.json>] [file ...]
-//                                                             check the given files (default: all 42 under data/exams/mock);
+//                                                             check the given files (default: all 56 under data/exams/mock);
 //                                                             a `*` in a path is expanded here (PowerShell does not);
 //                                                             --photos replaces data/exams/mock/photos.json (S5; its photo files then sit next to it)
 //   node scripts/mock-exam-check.mjs --blind <file> <out>      write a copy without the answer key (correct / answer / answers;
@@ -231,8 +231,62 @@ for (const [name, spec] of Object.entries(SPEC)) {
   if (name.startsWith('es-')) SPEC[`hu-${name.slice(3)}`] = spec.map((task) => (task.fixedOptions ? { ...task, ...MWF_HU } : task));
 }
 
+// de (German): the Goethe-Zertifikat structure (.work notes: Durchfuehrungsbestimmungen, Uebungssatz B1, Modellsatz B2, Handbuch C1), mapped to the app's kinds.
+// Lesen / Hoeren have 30 items at B1-C1 as in the real exams; `plays` is the real number of plays (an audio task without it is played twice).
+const T2 = [2, 3]; // a short-text clip with a richtig / falsch item (2 options) and a multiple-choice item (3 options)
+SPEC['de-a1-speaking'] = [speaking(1, 0, [1, 2], 1), speaking(2, 600, [2, 3], 1), speaking(2, 0, [3, 4], 5, { follows: 2 })];
+SPEC['de-a2-speaking'] = [speaking(2, 0, [2, 3], 3), speaking(2, 360, [2, 3], 1), speaking(2, 0, [3, 4], 4)];
+SPEC['de-b1-reading'] = [
+  passage('reading', 'text', [200, 290], 6, 2),
+  clips('reading', 'text', 2, 3, 3, { clipWords: [150, 230] }),
+  pool('reading', 7, 10, true, { promptWords: [18, 32], optionWords: [28, 52] }),
+  passage('reading', 'text', [230, 330], 7, 2),
+  passage('reading', 'text', [140, 230], 4, 3),
+];
+SPEC['de-b1-listening'] = [
+  clips('listening', 'audio', 5, 2, T2, { clipWords: [45, 95], plays: 2 }),
+  passage('listening', 'audio', [280, 400], 5, 3, { plays: 1 }),
+  passage('listening', 'audio', [300, 420], 7, 2, { speakers: ['m', 'f'], plays: 1 }),
+  passage('listening', 'audio', [380, 520], 8, 3, { speakers: ['m', 'f', 'n'], plays: 1 }),
+];
+SPEC['de-b1-writing'] = [
+  essay(1, 80, 100, { input: 'text', inputWords: [40, 120] }),
+  essay(1, 80, 100, { input: 'text', inputWords: [40, 130] }),
+  essay(1, 40, 60, { input: 'text', inputWords: [30, 80] }),
+];
+SPEC['de-b1-speaking'] = [speaking(2, 900, [3, 4], 4), speaking(2, 0, [3, 3], 1), speaking(2, 0, [2, 3], 4, { follows: 2 })];
+SPEC['de-b2-reading'] = [
+  pool('reading', 9, 4, false, { optionWords: [70, 105] }),
+  pool('reading', 6, 8, true, { promptWords: [55, 85], optionWords: [3, 12] }),
+  passage('reading', 'text', [430, 560], 6, 3),
+  gapped('reading', [380, 500], 6, 8, { fragmentWords: [15, 45] }),
+  gapped('reading', [120, 200], 3, 5, { fragmentWords: [10, 35] }),
+];
+SPEC['de-b2-listening'] = [
+  clips('listening', 'audio', 5, 2, T2, { clipWords: [70, 125], plays: 1 }),
+  passage('listening', 'audio', [430, 580], 6, 3, { plays: 2 }),
+  passage('listening', 'audio', [480, 620], 6, 3, { plays: 1 }),
+  passage('listening', 'audio', [520, 680], 8, 3, { plays: 2 }),
+];
+SPEC['de-b2-writing'] = [essay(1, 150, 190, { input: 'text', inputWords: [70, 170] }), essay(1, 100, 130, { input: 'text', inputWords: [60, 140] })];
+SPEC['de-b2-speaking'] = [speaking(2, 900, [4, 4], 3), speaking(2, 0, [5, 5], 4)];
+SPEC['de-c1-reading'] = [
+  cloze('reading', [230, 330], 8, 'mc', { options: 4 }),
+  passage('reading', 'text', [520, 680], 7, 3),
+  cloze('reading', [380, 520], 8, 'mc', { options: 3 }),
+  pool('reading', 7, 6, false, { optionWords: [65, 110] }),
+];
+SPEC['de-c1-listening'] = [
+  passage('listening', 'audio', [330, 450], 6, 3, { plays: 1 }),
+  passage('listening', 'audio', [560, 720], 9, 3, { plays: 2 }),
+  passage('listening', 'audio', [520, 700], 8, 3, { plays: 1 }),
+  passage('listening', 'audio', [440, 580], 7, 3, { plays: 2 }),
+];
+SPEC['de-c1-writing'] = [essay(1, 200, 250, { input: 'text', inputWords: [120, 260] }), essay(1, 150, 200, { input: 'text', inputWords: [60, 160] })];
+SPEC['de-c1-speaking'] = [speaking(2, 900, [6, 7], 3), speaking(2, 0, [5, 5], 4)];
+
 // S7: the minutes of the speaking papers (lib/exam/mock/blueprint.ts) and the words a learner can type / dictate per minute.
-const SPEAKING_MINUTES = { 'es-a1': 10, 'es-a2': 12, 'es-b1': 15, 'es-b2': 20, 'es-c1': 20, 'en-a1': 3.5, 'en-a2': 9, 'en-b1': 12, 'en-b2': 14, 'en-c1': 15, 'hu-a1': 10, 'hu-a2': 12, 'hu-b1': 15, 'hu-b2': 20, 'hu-c1': 20 };
+const SPEAKING_MINUTES = { 'es-a1': 10, 'es-a2': 12, 'es-b1': 15, 'es-b2': 20, 'es-c1': 20, 'en-a1': 3.5, 'en-a2': 9, 'en-b1': 12, 'en-b2': 14, 'en-c1': 15, 'hu-a1': 10, 'hu-a2': 12, 'hu-b1': 15, 'hu-b2': 20, 'hu-c1': 20, 'de-a1': 10, 'de-a2': 12, 'de-b1': 15, 'de-b2': 15, 'de-c1': 20 };
 const WORDS_PER_MINUTE = 20;
 
 const EXPECTED_FILES = Object.keys(SPEC).map((name) => `${name}.json`);
@@ -240,6 +294,12 @@ const EXPECTED_FILES = Object.keys(SPEC).map((name) => `${name}.json`);
 // es norm (PLAN "Norma (es)"): Mexican usage, no vosotros, no Spain-only words. Patterns as in the plan.
 // JS \b treats accented letters as non-word characters ("años" would hit `os`), so the edges are Unicode-aware.
 const ES_BLACKLIST = [/vosotr/iu, /(?<!\p{L})coche/iu, /(?<!\p{L})ordenador/iu, /(?<!\p{L})zumo(?!\p{L})/iu, /(?<!\p{L})móvil(?!\p{L})/iu, /(?<!\p{L})os(?!\p{L})/iu];
+// de norm: Austrian / Swiss words, ss for ß in the common ß words, umlaut digraphs. Unicode-aware edges.
+const DE_BLACKLIST = [
+  /(?<!\p{L})(Jänner|Paradeiser|Erdäpfel|Marillen?|Topfen|Semmeln?|Velo|Trottoir|Spital|Perron|Billett|Rayon|Znüni|Zvieri|grüezi|Servus)(?!\p{L})/iu,
+  /(?<!\p{L})(Strasse|Strassen|gross|grosse|grossen|Fuss|Fussball|Gruss|Gruesse|Spass|heiss|draussen|ausserdem|ausser|schliesslich|weiss|beissen|Massnahmen?)(?!\p{L})/u,
+  /(?<!\p{L})(fuer|ueber|moechte\p{L}*|koenn\p{L}*|muess\p{L}*|haett\p{L}*|waer\p{L}*|wuerd\p{L}*|uebung\p{L}*|buero\p{L}*|aerzt\p{L}*|maerkt\p{L}*|gaest\p{L}*|fruehst\p{L}*|natuerlich\p{L}*|schoen\p{L}*)(?!\p{L})/iu,
+];
 const EM_DASH = /[\u2014\u2013]/;
 
 const TOLERANCE = 0.15;
@@ -268,7 +328,7 @@ const sameJson = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 // Mirrors of the app's scoring of a written / dictated text, so that S4 and --grade give the points the app gives: fold, foldedTokens,
 // isNonsenseToken and assessMessage (without the dictionary) of lib/exam/mock/writing.ts, keywordHit of lib/exam/mock/score.ts. Keep them in step.
-const fold = (text) => text.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[‘’]/g, "'").replace(/\s+/g, ' ').trim();
+const fold = (text) => text.toLowerCase().replace(/ß/g, 'ss').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[‘’]/g, "'").replace(/\s+/g, ' ').trim();
 const foldedTokens = (text) => fold(text).replace(/[^a-z'\s]/g, ' ').split(/\s+/).map((t) => t.replace(/^'+|'+$/g, '')).filter(Boolean);
 const COPY_RUN = 5;
 const MIN_DISTINCT_RATIO = 0.5;
@@ -280,7 +340,9 @@ const KEY_RUNS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'].flatMap((row) => {
   }
   return out;
 });
-const isNonsenseToken = (tok) => (tok.length >= 3 && !/[aeiouy]/.test(tok)) || /([a-z])\1{3,}/.test(tok) || /[^aeiouy']{6,}/.test(tok) || KEY_RUNS.some((run) => tok.includes(run));
+// German digraph clusters (sch, tsch, ch, ck, ph, th, ng, pf) count as one letter, so "Gesellschaft" or "Handschrift" are not 6+ consonants in a row.
+const CLUSTER = /tsch|sch|ch|ck|ph|th|ng|pf/g;
+const isNonsenseToken = (tok) => (tok.length >= 3 && !/[aeiouy]/.test(tok)) || /([a-z])\1{3,}/.test(tok) || /[^aeiouy']{6,}/.test(tok.replace(CLUSTER, 'x')) || KEY_RUNS.some((run) => tok.includes(run));
 
 function assessText(text, reference) {
   const tokens = foldedTokens(text);
@@ -347,7 +409,7 @@ function checkMc(q, err, at, options) {
   if (!Array.isArray(q.options) || q.options.length < 2 || !q.options.every(isStr)) return err(`${at}: options must be a list of at least 2 non-empty strings`);
   if (!unique(q.options.map((o) => o.trim().toLowerCase()))) err(`${at}: two options are the same`);
   if (!isInt(q.correct) || q.correct < 0 || q.correct >= q.options.length) err(`${at}: correct (${q.correct}) is not an index of the ${q.options.length} options`);
-  if (options !== undefined && q.options.length !== options) err(`${at}: ${q.options.length} options, the format wants ${options}`);
+  if (options !== undefined && !(Array.isArray(options) ? options.includes(q.options.length) : q.options.length === options)) err(`${at}: ${q.options.length} options, the format wants ${Array.isArray(options) ? options.join(' or ') : options}`);
 }
 
 /** Exactly one of `text` / `audio` (the source of a passage or a clip); `media` from the SPEC says which one. */
@@ -730,6 +792,7 @@ function speakingWords(form) {
 const FILLER = {
   es: 'Pues bueno, claro que sí, mucho, poco, más de eso, me gusta, no me gusta, porque sí, gracias, de nada, entonces, de acuerdo, está bien, depende, creo que sí, a las cinco de la tarde, buenas tardes, la verdad, siempre, nunca, a veces, es todo, nada más, quiero, donde sea, aquí, allí, muy bien, también, tal vez, por ejemplo, otra cosa, me parece bien, es importante, no sé',
   en: "Well, yes, of course, I think so, because, I like it, I don't know, I go, I will, I would, the best, thank you, yes please, okay, maybe, sometimes, always, never, very good, that's all, I want, here, there, a lot, a little, both, similar, usually, for example, it is important, I agree, really nice",
+  de: 'Also gut, natürlich, ja, doch, klar, genau, ich finde, ich denke, meiner Meinung nach, weil, danke, bitte, vielleicht, manchmal, immer, nie, sehr gut, das ist alles, ich möchte, hier, dort, ein bisschen, zum Beispiel, ich weiß nicht, einverstanden, das stimmt, na ja, wirklich',
   hu: 'Hát jó, persze, igen, természetesen, szeretem, nem szeretem, mert igen, köszönöm, szívesen, akkor, rendben van, nagyon jó, attól függ, szerintem igen, mindig, soha, néha, ennyi, semmi több, itt, ott, nagyon, talán, például, valami más, fontos, nem tudom, minden jó, jól van, nincs mit',
 };
 
@@ -761,7 +824,7 @@ function checkData(data, { strict, photos = registryPhotos }) {
   const errors = [];
   const warnings = [];
   if (!isObj(data)) return { errors: ['M1: the file must be an object { target, level, paper, forms }'], warnings };
-  if (!['es', 'en', 'hu'].includes(data.target)) errors.push(`M1: target "${data.target}" must be es, en or hu`);
+  if (!['es', 'en', 'hu', 'de'].includes(data.target)) errors.push(`M1: target "${data.target}" must be es, en, hu or de`);
   if (!LEVELS.includes(data.level)) errors.push(`M1: level "${data.level}" must be ${LEVELS.join(', ')}`);
   if (!isStr(data.paper)) errors.push('M1: paper must be a non-empty string');
   if (!Array.isArray(data.forms)) errors.push('M1: forms must be a list');
@@ -778,6 +841,8 @@ function checkData(data, { strict, photos = registryPhotos }) {
   for (const [at, text] of strings(data)) {
     if (EM_DASH.test(text)) errors.push(`M7: ${at}: em dash (use a comma, a colon or a new sentence)`);
     if (data.target === 'es') for (const re of ES_BLACKLIST) if (re.test(text)) errors.push(`M6: ${at}: "${text.match(re)[0]}" is not Mexican usage (${re})`);
+    // de norm: Germany standard (de-DE): no Austrian / Swiss variants as the text, ß where the standard has it, no ae / oe / ue for umlauts.
+    if (data.target === 'de' && !/\.keywords\[/.test(at)) for (const re of DE_BLACKLIST) if (re.test(text)) errors.push(`M6: ${at}: "${text.match(re)[0]}" is not de-DE usage (${re})`);
     // hu norm: the Hungarian long double-acute letters ő ű, never the Latin-2 look-alikes õ û ô.
     if (data.target === 'hu' && /[õûôÕÛÔ]/.test(text)) errors.push(`M6: ${at}: "${text.match(/[õûôÕÛÔ]/)[0]}" is not Hungarian (use ő ű)`);
   }

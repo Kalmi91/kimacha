@@ -1,0 +1,375 @@
+{
+  "target": "de",
+  "level": "B1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Sie planen etwas gemeinsam mit einem Partner (dem Prüfer). Wählen Sie eine Situation. Sie haben 15 Minuten Zeit zur Vorbereitung und können sich Notizen machen. Besprechen Sie dann die vier Punkte und einigen Sie sich.",
+          "prepSeconds": 900,
+          "talkMinutes": [3, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Abschiedsfeier für eine Kollegin",
+              "prompt": "Ihre Kollegin Eva verlässt am Ende des Monats die Firma, weil sie in eine andere Stadt zieht. Sie möchten zusammen mit einem Kollegen eine kleine Abschiedsfeier organisieren.",
+              "bullets": ["Wann und wo feiern?", "Was gibt es zu essen und zu trinken?", "Welches Geschenk?", "Wer macht was?"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Eva geht am Monatsende. Ich finde, wir sollten sie nicht einfach gehen lassen. Wann und wo könnten wir feiern?",
+                  "minWords": 22,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Schlägt eine Zeit vor",
+                      "keywords": ["freitag", "donnerstag", "letzten tag", "nach der arbeit", "am abend", "mittags", "um uhr", "nachmittag"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Schlägt einen Ort vor",
+                      "keywords": ["im buro", "restaurant", "cafe", "kantine", "bei mir", "konferenzraum", "garten", "park"]
+                    }
+                  ],
+                  "model": "Ich schlage vor, dass wir am letzten Freitag nach der Arbeit feiern, so gegen fünf Uhr. Am besten machen wir das hier im Büro, im Konferenzraum, denn dort ist genug Platz für alle Kollegen."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Das klingt gut. Und was sollen die Gäste bekommen?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt Essen oder Getränke",
+                      "keywords": ["kuchen", "pizza", "salat", "getranke", "brotchen", "sekt", "kaffee", "buffet", "saft", "belegte"]
+                    }
+                  ],
+                  "model": "Ich würde Getränke und etwas Einfaches zu essen anbieten, zum Beispiel belegte Brötchen und einen Salat. Dazu gibt es Kaffee und Kuchen. Wer möchte, kann auch etwas von zu Hause mitbringen."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Wir brauchen auch ein Geschenk für Eva. Hast du eine Idee?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Macht einen Vorschlag für das Geschenk",
+                      "keywords": ["blumen", "gutschein", "buch", "bild", "fotoalbum", "foto", "geld", "karte", "sammeln", "stadtfuhrer"]
+                    }
+                  ],
+                  "model": "Ich denke, ein Gutschein für ein schönes Restaurant in ihrer neuen Stadt wäre praktisch. Dazu können wir noch eine Karte schreiben, auf der alle Kollegen unterschreiben. Das Geld dafür sammeln wir zusammen."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Gut, dann wären wir uns einig. Wer übernimmt welche Aufgaben?",
+                  "minWords": 22,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Verteilt die Aufgaben",
+                      "keywords": ["ich ubernehme", "ich kummere", "du kannst", "du machst", "ich schreibe", "ich bestelle", "ich kaufe", "ich besorge", "wir teilen", "ich frage"]
+                    }
+                  ],
+                  "model": "Ich übernehme die Einladung und schreibe allen Kollegen eine E-Mail. Du kannst bitte das Essen und die Getränke besorgen. Das Geschenk kaufen wir am Mittwoch gemeinsam in der Mittagspause."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Ausflug mit dem Deutschkurs",
+              "prompt": "Ihr Deutschkurs möchte am Ende des Semesters einen gemeinsamen Ausflug machen. Sie planen ihn zusammen mit einem Kursteilnehmer.",
+              "bullets": ["Wohin fahren?", "Wie kommen wir dorthin? Wo treffen wir uns?", "Was machen wir dort?", "Was darf der Ausflug kosten?"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Unser Kurs möchte einen Ausflug machen. Was meinst du, wohin sollen wir fahren?",
+                  "minWords": 22,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Schlägt ein Ziel vor",
+                      "keywords": ["museum", "schloss", "wald", "stadt", "park", "berg", "schwimmbad", "hamburg"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Begründet den Vorschlag",
+                      "keywords": ["dort kann man", "schon", "interessant", "ruhig", "nicht weit"]
+                    }
+                  ],
+                  "model": "Ich würde gern an einen See fahren, weil man dort im Sommer schwimmen und spazieren gehen kann. Außerdem ist ein See nicht weit von der Stadt entfernt, und alle Teilnehmer kennen ihn schon."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Wie kommen wir dorthin, und wo treffen wir uns?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt das Verkehrsmittel",
+                      "keywords": ["auto", "mit dem", "fahrrad", "bahn", "fahrgemeinschaft"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Nennt Treffpunkt oder Uhrzeit",
+                      "keywords": ["bahnhof", "hauptbahnhof", "treffpunkt", "vor der schule", "um neun", "um acht", "um zehn", "morgens", "haltestelle", "am eingang"]
+                    }
+                  ],
+                  "model": "Am besten fahren wir mit dem Zug, denn das ist billig und bequem. Wir können uns um neun Uhr am Hauptbahnhof vor dem Eingang treffen, dann sind wir am späten Vormittag am See."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Prima. Und was können wir dort alles unternehmen?",
+                  "minWords": 20,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt Aktivitäten",
+                      "keywords": ["wandern", "picknick", "grillen", "schwimmen", "spazieren", "fotos", "spielen", "besichtigen", "essen", "boot"]
+                    }
+                  ],
+                  "model": "Wir können ein Picknick machen und danach am Ufer spazieren gehen. Wer möchte, kann auch schwimmen oder Fußball spielen. Am Nachmittag könnten wir noch gemeinsam Eis essen und Fotos machen."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Das hört sich gut an. Wie viel soll der Ausflug kosten, und wer bezahlt was?",
+                  "minWords": 22,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Spricht über die Kosten",
+                      "keywords": ["euro", "kostet", "preis", "eintritt", "ticket", "fahrkarte", "zahlt selbst", "jeder zahlt", "teilen", "gemeinsam"]
+                    }
+                  ],
+                  "model": "Ich finde, der Ausflug darf nicht mehr als zwanzig Euro pro Person kosten. Jeder zahlt seine Fahrkarte selbst, und das Essen bringt jeder von zu Hause mit. So bleiben die Kosten für alle gering."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Halten Sie eine Präsentation zu einem Thema. Wählen Sie ein Thema. Sprechen Sie über alle fünf Punkte auf der Aufgabenkarte.",
+          "talkMinutes": [3, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Sport in der Freizeit",
+              "prompt": "Sie halten eine Präsentation über das Thema „Sport in der Freizeit“.",
+              "bullets": [
+                "Einleitung: Sagen Sie, worüber Sie sprechen.",
+                "Berichten Sie von Ihrer eigenen Erfahrung.",
+                "Berichten Sie von der Situation in Ihrem Heimatland.",
+                "Nennen Sie Vor- und Nachteile.",
+                "Schluss: Beenden Sie die Präsentation und bedanken Sie sich."
+              ],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Bitte halten Sie jetzt Ihre Präsentation. Sie haben dafür etwa drei Minuten Zeit.",
+                  "minWords": 75,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Leitet das Thema ein",
+                      "keywords": ["mein thema", "ich spreche", "uber sport", "uber den sport", "ich erzahle", "in meiner prasentation"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Berichtet von der eigenen Erfahrung",
+                      "keywords": ["ich mache", "ich spiele", "ich laufe", "ich gehe", "ich fahre", "ich schwimme", "seit", "fussball", "joggen", "jahren"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Berichtet von der Situation im Heimatland",
+                      "keywords": ["in meinem land", "in meiner heimat", "bei uns", "viele menschen", "die meisten", "beliebt", "in mexiko", "in ungarn"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Nennt Vor- und Nachteile",
+                      "keywords": ["vorteil", "nachteil", "gesund", "teuer", "verletzung", "spass", "stress"]
+                    }
+                  ],
+                  "model": "Heute möchte ich über Sport in der Freizeit sprechen. Ich selbst gehe seit drei Jahren zweimal in der Woche joggen und spiele am Wochenende Fußball mit Freunden. Bei uns in meinem Land treiben viele Menschen Sport, besonders Fußball ist sehr beliebt. Ein großer Vorteil von Sport ist, dass man gesund und fit bleibt und Stress abbaut. Ein Nachteil ist, dass manche Sportarten teuer sind oder dass man sich verletzen kann. Ich hoffe, die Präsentation hat Ihnen gefallen. Vielen Dank für Ihre Aufmerksamkeit!"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Online einkaufen",
+              "prompt": "Sie halten eine Präsentation über das Thema „Online einkaufen“.",
+              "bullets": [
+                "Einleitung: Sagen Sie, worüber Sie sprechen.",
+                "Berichten Sie von Ihrer eigenen Erfahrung.",
+                "Berichten Sie von der Situation in Ihrem Heimatland.",
+                "Nennen Sie Vor- und Nachteile.",
+                "Schluss: Beenden Sie die Präsentation und bedanken Sie sich."
+              ],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Bitte halten Sie jetzt Ihre Präsentation. Sie haben dafür etwa drei Minuten Zeit.",
+                  "minWords": 75,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Leitet das Thema ein",
+                      "keywords": ["mein thema", "ich spreche", "uber das einkaufen", "uber online", "ich erzahle", "in meiner prasentation"]
+                    },
+                    {
+                      "id": "p2",
+                      "label": "Berichtet von der eigenen Erfahrung",
+                      "keywords": ["ich kaufe", "ich bestelle", "ich habe", "ich benutze", "schuhe", "bucher", "kleidung", "selten", "letzte woche"]
+                    },
+                    {
+                      "id": "p3",
+                      "label": "Berichtet von der Situation im Heimatland",
+                      "keywords": ["in meinem land", "in meiner heimat", "bei uns", "viele menschen", "die meisten", "immer mehr", "in mexiko", "in ungarn"]
+                    },
+                    {
+                      "id": "p4",
+                      "label": "Nennt Vor- und Nachteile",
+                      "keywords": ["vorteil", "nachteil", "bequem", "billig", "gunstig", "lieferung", "zurucksenden", "anprobieren"]
+                    }
+                  ],
+                  "model": "Heute möchte ich über das Einkaufen im Internet sprechen. Ich bestelle seit einigen Jahren oft Bücher und Kleidung online, weil ich dafür im Alltag wenig Zeit habe. Bei uns in meinem Land kaufen immer mehr Menschen im Internet ein, besonders junge Leute. Ein Vorteil ist, dass es bequem und oft günstiger ist. Ein Nachteil ist, dass man Kleidung nicht anprobieren kann und die Lieferung manchmal lange dauert. Zum Schluss möchte ich mich für Ihre Aufmerksamkeit bedanken."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Der Prüfer gibt Ihnen eine Rückmeldung zu Ihrer Präsentation und stellt Ihnen Fragen. Antworten Sie ausführlich.",
+          "talkMinutes": [2, 3],
+          "follows": 2,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Sport in der Freizeit",
+              "prompt": "Der Prüfer stellt Fragen zu Ihrer Präsentation „Sport in der Freizeit“.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Danke für die Präsentation. Ich finde das Thema sehr interessant. Warum haben Sie gerade diese Sportart gewählt?",
+                  "minWords": 14,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Begründet die Wahl der Sportart",
+                      "keywords": ["spass", "gefallt mir", "gesund", "freunde", "entspannen", "gern", "lieblingssport", "bewegung"]
+                    }
+                  ],
+                  "model": "Ich habe diese Sportart gewählt, weil sie mir viel Spaß macht und ich dabei gut entspannen kann."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Und treiben Sie lieber allein oder mit anderen Sport?",
+                  "minWords": 12,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, ob allein oder mit anderen",
+                      "keywords": ["zusammen", "mit freunden", "in der gruppe", "im verein"]
+                    }
+                  ],
+                  "model": "Ich treibe lieber mit anderen Sport, am liebsten mit meinen Freunden, denn zusammen macht es mehr Spaß."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Was würden Sie jemandem raten, der mit dem Sport anfangen möchte?",
+                  "minWords": 14,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Gibt einen Rat",
+                      "keywords": ["ich rate", "am besten", "man sollte", "sie sollten", "langsam", "klein", "schuhe", "regelmassig"]
+                    }
+                  ],
+                  "model": "Ich würde raten, langsam anzufangen und regelmäßig zu trainieren. Am besten sucht man sich einen Partner, der mitmacht."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Zum Schluss: Wie wichtig ist Sport in Ihrem Leben im Vergleich zu früher?",
+                  "minWords": 14,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Vergleicht mit früher",
+                      "keywords": ["jetzt", "heute", "mehr", "weniger", "wichtiger", "als kind", "damals", "seit"]
+                    }
+                  ],
+                  "model": "Früher habe ich viel weniger Sport gemacht, aber heute ist er mir sehr wichtig. Ich fühle mich seitdem viel besser."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Online einkaufen",
+              "prompt": "Der Prüfer stellt Fragen zu Ihrer Präsentation „Online einkaufen“.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Danke für die Präsentation. Ich finde das Thema sehr interessant. Was kaufen Sie am häufigsten im Internet?",
+                  "minWords": 14,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Nennt, was sie am häufigsten kauft",
+                      "keywords": ["bucher", "kleidung", "schuhe", "elektronik", "lebensmittel", "meistens", "handy", "geschenke"]
+                    }
+                  ],
+                  "model": "Am häufigsten kaufe ich Bücher und manchmal auch Kleidung im Internet, weil das schnell und bequem ist."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Hatten Sie schon einmal ein Problem mit einer Bestellung?",
+                  "minWords": 14,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Erzählt von einem Problem oder sagt, dass es keines gab",
+                      "keywords": ["zu spat", "falsch", "kaputt", "zuruck", "reklamation", "noch nie", "leider"]
+                    }
+                  ],
+                  "model": "Einmal ist ein Paket viel zu spät angekommen, und der Artikel war falsch. Ich habe ihn zurückgeschickt und mein Geld bekommen."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Glauben Sie, dass es in Zukunft noch normale Geschäfte geben wird?",
+                  "minWords": 14,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Äußert eine Meinung zur Zukunft",
+                      "keywords": ["wird es", "weiterhin", "immer noch", "auch in"]
+                    }
+                  ],
+                  "model": "Ich glaube, dass es auch in Zukunft normale Geschäfte geben wird, weil viele Menschen gern vor Ort einkaufen und etwas anfassen wollen."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Zum Schluss: Würden Sie Ihren Freunden das Einkaufen im Internet empfehlen?",
+                  "minWords": 12,
+                  "points": [
+                    {
+                      "id": "p1",
+                      "label": "Sagt, ob sie es empfiehlt",
+                      "keywords": ["ich empfehle", "ich wurde", "auf jeden fall", "nicht unbedingt", "nein", "nur wenn"]
+                    }
+                  ],
+                  "model": "Ja, ich würde es empfehlen, aber nur bei Geschäften, die man kennt, und mit sicherer Bezahlung."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

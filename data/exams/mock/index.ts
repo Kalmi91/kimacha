@@ -37,6 +37,12 @@ import huB1Reading from './hu-b1-reading.json';
 import huB1Listening from './hu-b1-listening.json';
 import huB1Writing from './hu-b1-writing.json';
 import huB1Speaking from './hu-b1-speaking.json';
+import deA1Speaking from './de-a1-speaking.json';
+import deA2Speaking from './de-a2-speaking.json';
+import deB1Reading from './de-b1-reading.json';
+import deB1Listening from './de-b1-listening.json';
+import deB1Writing from './de-b1-writing.json';
+import deB1Speaking from './de-b1-speaking.json';
 import huB2Reading from './hu-b2-reading.json';
 import huB2Listening from './hu-b2-listening.json';
 import huB2Writing from './hu-b2-writing.json';
@@ -81,6 +87,12 @@ export const MOCK_AUTHORED = [
   huB1Listening,
   huB1Writing,
   huB1Speaking,
+  deA1Speaking,
+  deA2Speaking,
+  deB1Reading,
+  deB1Listening,
+  deB1Writing,
+  deB1Speaking,
   huB2Reading,
   huB2Listening,
   huB2Writing,
