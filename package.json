@@ -5,7 +5,9 @@
   "version": "4.1.28",
   "dependencies": {
     "@dr.pogodin/react-native-fs": "2.40.4",
+    "@kesha-antonov/react-native-background-downloader": "^4.7.0",
     "expo": "~56.0.23",
+    "expo-audio": "~56.0.13",
     "expo-build-properties": "~56.0.27",
     "expo-constants": "~56.0.15",
     "expo-document-picker": "~56.0.4",
@@ -65,7 +67,7 @@
     "check-keystore": "node scripts/check-keystore.mjs",
     "ui:overlap": "node scripts/ui-overlap.mjs",
     "dead": "knip --include files,exports,types",
-    "postinstall": "node scripts/patch-expo-speech.mjs"
+    "postinstall": "node scripts/patch-expo-speech.mjs && node scripts/patch-sherpa-onnx.mjs"
   },
   "expo": {
     "autolinking": {
