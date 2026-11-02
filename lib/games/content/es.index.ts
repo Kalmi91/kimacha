@@ -87,4 +87,5 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'comparativos-superlativos', load: () => require('@/data/games/grammar/es/comparativos-superlativos.json') },
   { id: 'finales-causales', load: () => require('@/data/games/grammar/es/finales-causales.json') },
   { id: 'marcadores-discursivos', load: () => require('@/data/games/grammar/es/marcadores-discursivos.json') },
+  { id: 'indefinido-cambios-raiz', load: () => require('@/data/games/grammar/es/indefinido-cambios-raiz.json') },
 ];

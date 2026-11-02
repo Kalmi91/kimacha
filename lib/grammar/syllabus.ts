@@ -81,6 +81,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   // --- A2 ---
   'indefinido-regular': 'core-plus',
   'indefinido-irregular': 'core-plus',
+  'indefinido-cambios-raiz': 'core',
   'indefinido-10-verbos': 'core-plus',
   imperfecto: 'core-plus',
   'indefinido-imperfecto': 'core-plus',

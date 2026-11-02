@@ -85,4 +85,5 @@ export const ES_GRAMMAR_HU: Record<string, () => Record<string, string>> = {
   'comparativos-superlativos': () => require('@/data/games/grammar-hu/es/comparativos-superlativos.json'),
   'finales-causales': () => require('@/data/games/grammar-hu/es/finales-causales.json'),
   'marcadores-discursivos': () => require('@/data/games/grammar-hu/es/marcadores-discursivos.json'),
+  'indefinido-cambios-raiz': () => require('@/data/games/grammar-hu/es/indefinido-cambios-raiz.json'),
 };
