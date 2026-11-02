@@ -109,7 +109,9 @@ export default function PcicCardView({
   const headerRow = (
     <SkinHeader>
     {/* Row 1: the level chip on the left, undo + 💬 on the right (💬 is the level chip's size).
-        Row 2: the five count chips in one line. */}
+        Row 2: the five count chips in one line. One wrapper, so the done screen's container gap does not
+        land between the two rows (SkinHeader is a fragment when the skin has no header ornament). */}
+    <View>
     <View style={styles.headerRow}>
       {g.brutal ? (
         // The level chip box (active = filled).
@@ -142,6 +144,7 @@ export default function PcicCardView({
           { label: s.pcic.badgeXp(xpToday, DAILY_XP_GOAL), tone: 'accent', accessibilityLabel: s.pcic.badgeXpA11y(xpToday, DAILY_XP_GOAL), tabular: true },
         ]}
       />
+    </View>
     </View>
     <MistakesEntry colors={colors} />
     </SkinHeader>
