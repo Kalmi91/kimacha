@@ -1,0 +1,991 @@
+{
+  "schema": 2,
+  "topic": "adjektivdeklination-dativ",
+  "level": "A2",
+  "title": {
+    "en": "Adjectives before nouns: dative",
+    "es": "Adjetivos antes del sustantivo: dativo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In the dative the rule is simple: after der-words and ein-words the adjective always ends in -en (mit dem neuen Auto, mit einer netten Frau, mit meinen guten Freunden). The article already shows the dative, so the adjective needs no other ending. Without an article the adjective carries the case itself: -em for masculine and neuter, -er for feminine, -en for the plural (mit kaltem Wasser, mit kalter Milch, mit netten Leuten).",
+        "es": "En el dativo la regla es sencilla: después de las palabras der y ein el adjetivo termina siempre en -en (mit dem neuen Auto, mit einer netten Frau, mit meinen guten Freunden). El artículo ya muestra el dativo, así que el adjetivo no necesita otra terminación. Sin artículo el adjetivo lleva el caso él mismo: -em para masculino y neutro, -er para femenino, -en para el plural (mit kaltem Wasser, mit kalter Milch, mit netten Leuten)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "adjektiv-dativ",
+      "title": {
+        "en": "Adjective and noun in the dative",
+        "es": "El adjetivo y el sustantivo en dativo"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "bestimmt",
+          "es": "bestimmt"
+        },
+        {
+          "en": "unbestimmt",
+          "es": "unbestimmt"
+        },
+        {
+          "en": "ohne Artikel",
+          "es": "ohne Artikel"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "mit dem neuen Tisch",
+          "mit einem neuen Tisch",
+          "mit kaltem Kaffee"
+        ],
+        [
+          "feminin",
+          "mit der neuen Lampe",
+          "mit einer neuen Lampe",
+          "mit kalter Milch"
+        ],
+        [
+          "neutral",
+          "mit dem neuen Buch",
+          "mit einem neuen Buch",
+          "mit kaltem Wasser"
+        ],
+        [
+          "Plural",
+          "mit den neuen Büchern",
+          "mit meinen neuen Büchern",
+          "mit netten Leuten"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "adjektiv-ueberblick",
+      "title": {
+        "en": "The endings after der, die, das in three cases",
+        "es": "Las terminaciones después de der, die, das en tres casos"
+      },
+      "header": [
+        {
+          "en": "Case",
+          "es": "Caso"
+        },
+        {
+          "en": "maskulin",
+          "es": "maskulin"
+        },
+        {
+          "en": "feminin",
+          "es": "feminin"
+        },
+        {
+          "en": "neutral",
+          "es": "neutral"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "Nominativ",
+          "-e",
+          "-e",
+          "-e",
+          "-en"
+        ],
+        [
+          "Akkusativ",
+          "-en",
+          "-e",
+          "-e",
+          "-en"
+        ],
+        [
+          "Dativ",
+          "-en",
+          "-en",
+          "-en",
+          "-en"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When the dative appears",
+        "es": "Cuándo aparece el dativo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After the prepositions mit, bei, von, zu, nach and aus the noun is always in the dative, so the adjective ends in -en after an article.",
+            "es": "Después de las preposiciones mit, bei, von, zu, nach y aus el sustantivo está siempre en dativo, así que el adjetivo termina en -en después de un artículo."
+          },
+          "examples": [
+            {
+              "es": "Ich fahre mit dem neuen Bus.",
+              "tr": {
+                "en": "I go by the new bus.",
+                "es": "Voy en el autobús nuevo."
+              }
+            },
+            {
+              "es": "Sie wohnt bei einer netten Frau.",
+              "tr": {
+                "en": "She lives with a nice woman.",
+                "es": "Ella vive con una mujer amable."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Some verbs take the dative object: helfen and gefallen, for example.",
+            "es": "Algunos verbos llevan un objeto en dativo: por ejemplo helfen y gefallen."
+          },
+          "examples": [
+            {
+              "es": "Ich helfe dem alten Mann.",
+              "tr": {
+                "en": "I help the old man.",
+                "es": "Ayudo al hombre viejo."
+              }
+            },
+            {
+              "es": "Das Kleid gefällt der jungen Frau.",
+              "tr": {
+                "en": "The young woman likes the dress.",
+                "es": "A la mujer joven le gusta el vestido."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After in, an and auf the question wo? takes the dative. This is a place where something is, not a direction.",
+            "es": "Después de in, an y auf la pregunta wo? lleva el dativo. Es un lugar donde algo está, no una dirección."
+          },
+          "examples": [
+            {
+              "es": "Er wohnt in einem kleinen Haus.",
+              "tr": {
+                "en": "He lives in a small house.",
+                "es": "Él vive en una casa pequeña."
+              }
+            },
+            {
+              "es": "Sie sitzt auf dem roten Stuhl.",
+              "tr": {
+                "en": "She is sitting on the red chair.",
+                "es": "Ella está sentada en la silla roja."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Without an article the adjective shows the case: -em for masculine and neuter, -er for feminine, -en for the plural.",
+            "es": "Sin artículo el adjetivo muestra el caso: -em para masculino y neutro, -er para femenino, -en para el plural."
+          },
+          "examples": [
+            {
+              "es": "Ich esse Brot mit frischem Käse.",
+              "tr": {
+                "en": "I eat bread with fresh cheese.",
+                "es": "Como pan con queso fresco."
+              }
+            },
+            {
+              "es": "Er trinkt Tee mit warmer Milch.",
+              "tr": {
+                "en": "He drinks tea with warm milk.",
+                "es": "Él toma té con leche tibia."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Dative or not",
+        "es": "Dativo o no"
+      },
+      "pairs": [
+        {
+          "a": "Ich sehe das neue Auto.",
+          "b": "Ich fahre mit dem neuen Auto.",
+          "note": {
+            "en": "The accusative neuter ends in -e, the dative ends in -en. mit always asks for the dative.",
+            "es": "El acusativo neutro termina en -e, el dativo termina en -en. mit pide siempre el dativo."
+          },
+          "examples": [
+            {
+              "es": "Wir kaufen das alte Haus.",
+              "tr": {
+                "en": "We buy the old house.",
+                "es": "Compramos la casa vieja."
+              }
+            },
+            {
+              "es": "Wir wohnen in dem alten Haus.",
+              "tr": {
+                "en": "We live in the old house.",
+                "es": "Vivimos en la casa vieja."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Der alte Mann hilft mir.",
+          "b": "Ich helfe dem alten Mann.",
+          "note": {
+            "en": "As the subject the old man is in the nominative: der alte. As the receiver of the help he is in the dative: dem alten.",
+            "es": "Como sujeto el hombre viejo está en nominativo: der alte. Como receptor de la ayuda está en dativo: dem alten."
+          },
+          "examples": [
+            {
+              "es": "Der junge Lehrer kommt.",
+              "tr": {
+                "en": "The young teacher is coming.",
+                "es": "El maestro joven viene."
+              }
+            },
+            {
+              "es": "Ich danke dem jungen Lehrer.",
+              "tr": {
+                "en": "I thank the young teacher.",
+                "es": "Le doy las gracias al maestro joven."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not use -e after dem and der in the dative: not mit dem neue Auto, but mit dem neuen Auto. After an article word the dative is always -en. Only when there is no article do you need -em, -er, -en. Spanish learners often hesitate between -e and -en, so remember: dative means -en. Hungarian learners: the case ending does not go on the noun, it goes on the article and the adjective (mit dem neuen Auto).",
+        "es": "No uses -e después de dem y der en dativo: no mit dem neue Auto, sino mit dem neuen Auto. Después de una palabra de artículo el dativo es siempre -en. Solo cuando no hay artículo necesitas -em, -er, -en. Quien habla español suele dudar entre -e y -en, así que recuerda: dativo significa -en. Para quien habla húngaro: la terminación del caso no va en el sustantivo, va en el artículo y en el adjetivo (mit dem neuen Auto)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In the dative the adjective after an article always ends in «en»: «mit dem neuen Auto», «mit einer netten Frau», «mit meinen guten Freunden». The article already shows the case. Without an article the adjective shows the case itself. It ends in «em» for masculine and neuter, in «er» for feminine and in «en» for the plural: «mit kaltem Wasser», «mit kalter Milch», «mit netten Leuten». After «mit», «bei», «von» and «helfen» use the dative.",
+    "es": "En el dativo el adjetivo después de un artículo termina siempre en «en»: «mit dem neuen Auto», «mit einer netten Frau», «mit meinen guten Freunden». El artículo ya muestra el caso. Sin artículo el adjetivo muestra el caso él mismo. Termina en «em» para masculino y neutro, en «er» para femenino y en «en» para el plural: «mit kaltem Wasser», «mit kalter Milch», «mit netten Leuten». Después de «mit», «bei», «von» y «helfen» se usa el dativo."
+  },
+  "items": [
+    {
+      "id": "adjektivdeklination-dativ-c01",
+      "sentence": "Ich fahre mit dem ___ Auto.",
+      "options": [
+        "neuen",
+        "neue",
+        "neuem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mit asks for the dative, and after dem the adjective ends in -en: mit dem neuen Auto.",
+        "es": "mit pide el dativo, y después de dem el adjetivo termina en -en: mit dem neuen Auto."
+      },
+      "wrong": {
+        "neue": {
+          "en": "-e is the nominative and accusative ending after das. After dem in the dative it must be -en.",
+          "es": "-e es la terminación del nominativo y del acusativo después de das. Después de dem en dativo debe ser -en."
+        },
+        "neuem": {
+          "en": "-em only appears when there is no article. Here dem already shows the dative, so the adjective takes -en.",
+          "es": "-em solo aparece cuando no hay artículo. Aquí dem ya muestra el dativo, así que el adjetivo lleva -en."
+        }
+      },
+      "examples": [
+        "Ich wohne in dem alten Haus.",
+        "Wir sprechen mit dem netten Lehrer."
+      ],
+      "tr": {
+        "en": "I go with the new car.",
+        "es": "Voy en el carro nuevo."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f01",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "maskulin",
+      "answer": "mit dem neuen Tisch",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c02",
+      "sentence": "Sie wohnt bei einer ___ Frau.",
+      "options": [
+        "nette",
+        "netter",
+        "netten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "bei asks for the dative, and after einer the adjective takes -en: bei einer netten Frau.",
+        "es": "bei pide el dativo, y después de einer el adjetivo lleva -en: bei einer netten Frau."
+      },
+      "wrong": {
+        "nette": {
+          "en": "-e would be right in the nominative or accusative (eine nette Frau). After bei the dative needs -en.",
+          "es": "-e sería correcto en el nominativo o el acusativo (eine nette Frau). Después de bei el dativo necesita -en."
+        },
+        "netter": {
+          "en": "-er is the feminine dative ending without an article (mit kalter Milch). After einer the article shows the case, so -en is enough.",
+          "es": "-er es la terminación del dativo femenino sin artículo (mit kalter Milch). Después de einer el artículo muestra el caso, así que basta -en."
+        }
+      },
+      "examples": [
+        "Er kommt von einer großen Stadt.",
+        "Wir gehen zu einer guten Freundin."
+      ],
+      "tr": {
+        "en": "She lives with a nice woman.",
+        "es": "Ella vive con una mujer amable."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f02",
+      "kind": "form",
+      "verb": "ohne Artikel",
+      "person": "feminin",
+      "answer": "mit kalter Milch",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c03",
+      "sentence": "Wir sprechen mit meinen ___ Freunden.",
+      "options": [
+        "gute",
+        "guten",
+        "guter"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The plural dative after meinen takes -en: mit meinen guten Freunden.",
+        "es": "El dativo plural después de meinen lleva -en: mit meinen guten Freunden."
+      },
+      "wrong": {
+        "gute": {
+          "en": "-e is used for the plural only when no article word stands before the adjective (gute Freunde). After meinen it is -en.",
+          "es": "-e se usa en plural solo cuando ninguna palabra de artículo va antes del adjetivo (gute Freunde). Después de meinen es -en."
+        },
+        "guter": {
+          "en": "-er is the feminine dative ending without an article, or the masculine nominative after ein. It does not fit a plural.",
+          "es": "-er es la terminación del dativo femenino sin artículo, o del nominativo masculino después de ein. No encaja en un plural."
+        }
+      },
+      "examples": [
+        "Ich spiele mit den kleinen Kindern.",
+        "Sie lebt bei ihren alten Eltern."
+      ],
+      "tr": {
+        "en": "We talk with my good friends.",
+        "es": "Hablamos con mis buenos amigos."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f03",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "neutral",
+      "answer": "mit einem neuen Buch",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-w01",
+      "kind": "why",
+      "es": "Ich fahre mit dem neuen Auto.",
+      "target": "neuen",
+      "tr": {
+        "en": "I go by the new car.",
+        "es": "Voy en el carro nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Auto is plural, so the adjective ends in -en",
+            "es": "Auto está en plural, así que el adjetivo termina en -en"
+          },
+          "wrong": {
+            "en": "Auto is singular here (dem Auto). The ending -en marks the dative after the article, not the plural.",
+            "es": "Auto está aquí en singular (dem Auto). La terminación -en marca el dativo después del artículo, no el plural."
+          }
+        },
+        {
+          "text": {
+            "en": "After mit the dative is used, and after dem the adjective takes -en",
+            "es": "Después de mit se usa el dativo, y después de dem el adjetivo lleva -en"
+          }
+        },
+        {
+          "text": {
+            "en": "mit asks for the accusative, so the ending is -en",
+            "es": "mit pide el acusativo, así que la terminación es -en"
+          },
+          "wrong": {
+            "en": "mit never takes the accusative, it takes the dative. The accusative neuter would be das neue Auto, with -e.",
+            "es": "mit nunca lleva el acusativo, lleva el dativo. El acusativo neutro sería das neue Auto, con -e."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "adjektivdeklination-dativ-c04",
+      "sentence": "Ich esse Brot mit ___ Butter.",
+      "options": [
+        "frischer",
+        "frische",
+        "frischen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "There is no article, and Butter is feminine, so the dative ending is -er: mit frischer Butter.",
+        "es": "No hay artículo, y Butter es femenino, así que la terminación del dativo es -er: mit frischer Butter."
+      },
+      "wrong": {
+        "frische": {
+          "en": "-e is the accusative or nominative ending without an article (frische Butter). After mit the dative needs a case ending, -er for feminine.",
+          "es": "-e es la terminación del acusativo o nominativo sin artículo (frische Butter). Después de mit el dativo necesita una terminación de caso, -er para el femenino."
+        },
+        "frischen": {
+          "en": "-en is for the plural and after an article. Here there is no article and the noun is singular feminine, so it is -er.",
+          "es": "-en es para el plural y después de un artículo. Aquí no hay artículo y el sustantivo es femenino singular, así que es -er."
+        }
+      },
+      "examples": [
+        "Sie trinkt Tee mit warmer Milch.",
+        "Er isst Reis mit scharfer Soße."
+      ],
+      "tr": {
+        "en": "I eat bread with fresh butter.",
+        "es": "Como pan con mantequilla fresca."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f04",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Plural",
+      "answer": "mit den neuen Büchern",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c05",
+      "sentence": "Er isst Brot mit ___ Käse.",
+      "options": [
+        "frischen",
+        "frischem",
+        "frische"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Käse is masculine, there is no article, and the dative needs the case ending -em: mit frischem Käse.",
+        "es": "Käse es masculino, no hay artículo, y el dativo necesita la terminación de caso -em: mit frischem Käse."
+      },
+      "wrong": {
+        "frischen": {
+          "en": "-en is correct after an article word, but here nothing stands before the adjective, so it has to show the case with -em.",
+          "es": "-en es correcto después de una palabra de artículo, pero aquí nada va antes del adjetivo, así que debe mostrar el caso con -em."
+        },
+        "frische": {
+          "en": "-e would be the accusative of a feminine noun, like frische Butter. Käse is masculine and in the dative.",
+          "es": "-e sería el acusativo de un sustantivo femenino, como frische Butter. Käse es masculino y está en dativo."
+        }
+      },
+      "examples": [
+        "Ich esse Reis mit frischem Fisch.",
+        "Sie isst Brot mit kaltem Fleisch."
+      ],
+      "tr": {
+        "en": "He eats bread with fresh cheese.",
+        "es": "Él come pan con queso fresco."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f05",
+      "kind": "form",
+      "verb": "ohne Artikel",
+      "person": "maskulin",
+      "answer": "mit kaltem Kaffee",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c06",
+      "sentence": "Ich wasche mich mit ___ Wasser.",
+      "options": [
+        "warmes",
+        "warmen",
+        "warmem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Wasser is neuter and has no article; in the dative it takes -em: mit warmem Wasser.",
+        "es": "Wasser es neutro y no lleva artículo; en dativo lleva -em: mit warmem Wasser."
+      },
+      "wrong": {
+        "warmes": {
+          "en": "-es is the nominative or accusative neuter ending without an article (warmes Wasser). After mit the dative is -em.",
+          "es": "-es es la terminación del nominativo o acusativo neutro sin artículo (warmes Wasser). Después de mit el dativo es -em."
+        },
+        "warmen": {
+          "en": "-en is for the plural or after an article. Wasser is singular and has no article, so the adjective must show -em.",
+          "es": "-en es para el plural o después de un artículo. Wasser es singular y no tiene artículo, así que el adjetivo debe mostrar -em."
+        }
+      },
+      "examples": [
+        "Er trinkt Tee mit kaltem Wasser.",
+        "Sie kocht mit heißem Wasser."
+      ],
+      "tr": {
+        "en": "I wash myself with warm water.",
+        "es": "Me lavo con agua tibia."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f06",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "feminin",
+      "answer": "mit einer neuen Lampe",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-w02",
+      "kind": "why",
+      "es": "Ich esse Brot mit frischem Käse.",
+      "target": "frischem",
+      "tr": {
+        "en": "I eat bread with fresh cheese.",
+        "es": "Como pan con queso fresco."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The dative always ends in -en",
+            "es": "El dativo siempre termina en -en"
+          },
+          "wrong": {
+            "en": "-en is correct after an article word. Without an article the adjective must show the case itself, here -em.",
+            "es": "-en es correcto después de una palabra de artículo. Sin artículo el adjetivo debe mostrar el caso él mismo, aquí -em."
+          }
+        },
+        {
+          "text": {
+            "en": "There is no article, so the adjective shows the dative masculine with -em",
+            "es": "No hay artículo, así que el adjetivo muestra el dativo masculino con -em"
+          }
+        },
+        {
+          "text": {
+            "en": "-em is the feminine ending",
+            "es": "-em es la terminación femenina"
+          },
+          "wrong": {
+            "en": "The feminine dative without an article ends in -er (mit frischer Butter). Käse is masculine and takes -em.",
+            "es": "El dativo femenino sin artículo termina en -er (mit frischer Butter). Käse es masculino y lleva -em."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "adjektivdeklination-dativ-c07",
+      "sentence": "Sie spricht mit ___ Leuten.",
+      "options": [
+        "netten",
+        "nette",
+        "netter"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Leute is plural, there is no article, and the dative plural takes -en: mit netten Leuten.",
+        "es": "Leute es plural, no hay artículo, y el dativo plural lleva -en: mit netten Leuten."
+      },
+      "wrong": {
+        "nette": {
+          "en": "-e is the plural ending in the nominative and accusative without an article (nette Leute). The dative plural needs -en.",
+          "es": "-e es la terminación del plural en nominativo y acusativo sin artículo (nette Leute). El dativo plural necesita -en."
+        },
+        "netter": {
+          "en": "-er is a feminine singular dative ending, not a plural one. In the plural the dative uses -en.",
+          "es": "-er es una terminación del dativo femenino singular, no del plural. En el plural el dativo usa -en."
+        }
+      },
+      "examples": [
+        "Er arbeitet mit jungen Leuten.",
+        "Wir sind bei guten Freunden."
+      ],
+      "tr": {
+        "en": "She talks with nice people.",
+        "es": "Ella habla con gente amable."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f07",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "neutral",
+      "answer": "mit dem neuen Buch",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c08",
+      "sentence": "Ich helfe dem ___ Mann.",
+      "options": [
+        "alte",
+        "alten",
+        "alter"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "helfen takes the dative, and after dem the adjective ends in -en: dem alten Mann.",
+        "es": "helfen lleva dativo, y después de dem el adjetivo termina en -en: dem alten Mann."
+      },
+      "wrong": {
+        "alte": {
+          "en": "-e belongs to the nominative (der alte Mann). In the dative after dem the adjective takes -en.",
+          "es": "-e pertenece al nominativo (der alte Mann). En el dativo después de dem el adjetivo lleva -en."
+        },
+        "alter": {
+          "en": "-er is the masculine nominative ending after ein or without an article. After dem there is no -er.",
+          "es": "-er es la terminación del nominativo masculino después de ein o sin artículo. Después de dem no hay -er."
+        }
+      },
+      "examples": [
+        "Sie hilft dem kleinen Kind.",
+        "Wir helfen dem netten Lehrer."
+      ],
+      "tr": {
+        "en": "I help the old man.",
+        "es": "Ayudo al hombre viejo."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f08",
+      "kind": "form",
+      "verb": "ohne Artikel",
+      "person": "neutral",
+      "answer": "mit kaltem Wasser",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c09",
+      "sentence": "Das Buch ist von einem ___ Lehrer.",
+      "options": [
+        "gutem",
+        "guter",
+        "guten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "von asks for the dative, and after einem the adjective ends in -en: von einem guten Lehrer.",
+        "es": "von pide el dativo, y después de einem el adjetivo termina en -en: von einem guten Lehrer."
+      },
+      "wrong": {
+        "gutem": {
+          "en": "-em appears only without an article. Here einem already shows the dative masculine, so the adjective takes -en.",
+          "es": "-em aparece solo sin artículo. Aquí einem ya muestra el dativo masculino, así que el adjetivo lleva -en."
+        },
+        "guter": {
+          "en": "-er would be the nominative after ein (ein guter Lehrer) or the feminine dative without an article. Here it does not fit.",
+          "es": "-er sería el nominativo después de ein (ein guter Lehrer) o el dativo femenino sin artículo. Aquí no encaja."
+        }
+      },
+      "examples": [
+        "Sie kommt aus einem kleinen Dorf.",
+        "Er wohnt bei einem alten Freund."
+      ],
+      "tr": {
+        "en": "The book is by a good teacher.",
+        "es": "El libro es de un buen maestro."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f09",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "maskulin",
+      "answer": "mit einem neuen Tisch",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-w03",
+      "kind": "why",
+      "es": "Ich helfe dem alten Mann.",
+      "target": "alten",
+      "tr": {
+        "en": "I help the old man.",
+        "es": "Ayudo al hombre viejo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "helfen takes the dative, and after dem the ending is -en",
+            "es": "helfen lleva dativo, y después de dem la terminación es -en"
+          }
+        },
+        {
+          "text": {
+            "en": "Mann is the object in the accusative",
+            "es": "Mann es el objeto en acusativo"
+          },
+          "wrong": {
+            "en": "helfen does not take an accusative object. The accusative would be den alten Mann, but here it is the dative dem alten Mann.",
+            "es": "helfen no lleva un objeto en acusativo. El acusativo sería den alten Mann, pero aquí es el dativo dem alten Mann."
+          }
+        },
+        {
+          "text": {
+            "en": "-en marks the plural",
+            "es": "-en marca el plural"
+          },
+          "wrong": {
+            "en": "Mann is singular. After the article dem the ending -en marks the dative of a singular noun.",
+            "es": "Mann es singular. Después del artículo dem la terminación -en marca el dativo de un sustantivo singular."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "adjektivdeklination-dativ-c10",
+      "sentence": "Er wohnt in einem ___ Haus.",
+      "options": [
+        "kleine",
+        "kleinen",
+        "kleines"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wo? with in takes the dative, and after einem the adjective ends in -en: in einem kleinen Haus.",
+        "es": "wo? con in lleva el dativo, y después de einem el adjetivo termina en -en: in einem kleinen Haus."
+      },
+      "wrong": {
+        "kleine": {
+          "en": "-e belongs to the nominative and accusative. After einem in the dative it must be -en.",
+          "es": "-e pertenece al nominativo y al acusativo. Después de einem en dativo debe ser -en."
+        },
+        "kleines": {
+          "en": "-es is the neuter ending after ein in the nominative or accusative (ein kleines Haus). After einem the dative uses -en.",
+          "es": "-es es la terminación neutra después de ein en nominativo o acusativo (ein kleines Haus). Después de einem el dativo usa -en."
+        }
+      },
+      "examples": [
+        "Sie wohnt in einer großen Stadt.",
+        "Wir sind in dem neuen Hotel."
+      ],
+      "tr": {
+        "en": "He lives in a small house.",
+        "es": "Él vive en una casa pequeña."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f10",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "feminin",
+      "answer": "mit der neuen Lampe",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c11",
+      "sentence": "Sie sitzt auf dem ___ Stuhl.",
+      "options": [
+        "roten",
+        "roter",
+        "rote"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "wo? with auf takes the dative, and after dem the adjective ends in -en: auf dem roten Stuhl.",
+        "es": "wo? con auf lleva el dativo, y después de dem el adjetivo termina en -en: auf dem roten Stuhl."
+      },
+      "wrong": {
+        "roter": {
+          "en": "-er is the masculine nominative ending after ein (ein roter Stuhl). After dem the dative takes -en.",
+          "es": "-er es la terminación del nominativo masculino después de ein (ein roter Stuhl). Después de dem el dativo lleva -en."
+        },
+        "rote": {
+          "en": "-e would be the nominative after der (der rote Stuhl). Here the chair is a place, so it stands in the dative.",
+          "es": "-e sería el nominativo después de der (der rote Stuhl). Aquí la silla es un lugar, así que está en dativo."
+        }
+      },
+      "examples": [
+        "Das Buch liegt auf dem neuen Tisch.",
+        "Er sitzt auf dem alten Sofa."
+      ],
+      "tr": {
+        "en": "She is sitting on the red chair.",
+        "es": "Ella está sentada en la silla roja."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f11",
+      "kind": "form",
+      "verb": "ohne Artikel",
+      "person": "Plural",
+      "answer": "mit netten Leuten",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c12",
+      "sentence": "Nach dem ___ Essen gehe ich nach Hause.",
+      "options": [
+        "gute",
+        "gutes",
+        "guten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nach asks for the dative, and after dem the adjective ends in -en: nach dem guten Essen.",
+        "es": "nach pide el dativo, y después de dem el adjetivo termina en -en: nach dem guten Essen."
+      },
+      "wrong": {
+        "gute": {
+          "en": "-e would be right in the nominative or accusative (das gute Essen). After nach the dative needs -en.",
+          "es": "-e sería correcto en nominativo o acusativo (das gute Essen). Después de nach el dativo necesita -en."
+        },
+        "gutes": {
+          "en": "-es is a neuter ending after ein or without an article, not after dem. dem already shows the dative.",
+          "es": "-es es una terminación neutra después de ein o sin artículo, no después de dem. dem ya muestra el dativo."
+        }
+      },
+      "examples": [
+        "Nach dem langen Tag bin ich müde.",
+        "Nach dem kalten Winter kommt der Frühling."
+      ],
+      "tr": {
+        "en": "After the good meal I go home.",
+        "es": "Después de la buena comida me voy a casa."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-f12",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Plural",
+      "answer": "mit meinen neuen Büchern",
+      "table": "adjektiv-dativ"
+    },
+    {
+      "id": "adjektivdeklination-dativ-c13",
+      "sentence": "Der ___ Mann hilft mir.",
+      "options": [
+        "alte",
+        "alten",
+        "alter"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The old man is the subject here, so the nominative after der takes -e: der alte Mann.",
+        "es": "Aquí el hombre viejo es el sujeto, así que el nominativo después de der lleva -e: der alte Mann."
+      },
+      "wrong": {
+        "alten": {
+          "en": "-en is for the dative and the accusative masculine. The man helps, he does not receive help, so he is the subject.",
+          "es": "-en es para el dativo y el acusativo masculino. El hombre ayuda, no recibe ayuda, así que es el sujeto."
+        },
+        "alter": {
+          "en": "-er is the nominative after ein or without an article. After der the article already shows the masculine nominative.",
+          "es": "-er es el nominativo después de ein o sin artículo. Después de der el artículo ya muestra el nominativo masculino."
+        }
+      },
+      "examples": [
+        "Der junge Lehrer kommt.",
+        "Der kleine Hund schläft."
+      ],
+      "tr": {
+        "en": "The old man helps me.",
+        "es": "El hombre viejo me ayuda."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-c14",
+      "sentence": "Sie isst die Suppe mit einem ___ Löffel.",
+      "options": [
+        "großem",
+        "großen",
+        "große"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "mit asks for the dative, and after einem the adjective ends in -en: mit einem großen Löffel.",
+        "es": "mit pide el dativo, y después de einem el adjetivo termina en -en: mit einem großen Löffel."
+      },
+      "wrong": {
+        "großem": {
+          "en": "-em is only needed when no article stands before the adjective. einem already carries the dative.",
+          "es": "-em solo se necesita cuando ninguna palabra de artículo va antes del adjetivo. einem ya lleva el dativo."
+        },
+        "große": {
+          "en": "-e is the nominative or accusative feminine ending. After mit einem the dative needs -en.",
+          "es": "-e es la terminación del nominativo o acusativo femenino. Después de mit einem el dativo necesita -en."
+        }
+      },
+      "examples": [
+        "Er schreibt mit einem schwarzen Stift.",
+        "Sie kommt mit einem großen Hund."
+      ],
+      "tr": {
+        "en": "She eats the soup with a big spoon.",
+        "es": "Ella come la sopa con una cuchara grande."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ-w04",
+      "kind": "why",
+      "es": "Der alte Mann hilft mir.",
+      "target": "alte",
+      "tr": {
+        "en": "The old man helps me.",
+        "es": "El hombre viejo me ayuda."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After der the adjective always ends in -en",
+            "es": "Después de der el adjetivo siempre termina en -en"
+          },
+          "wrong": {
+            "en": "Only the dative and the accusative masculine take -en. After der in the nominative the ending is -e.",
+            "es": "Solo el dativo y el acusativo masculino llevan -en. Después de der en nominativo la terminación es -e."
+          }
+        },
+        {
+          "text": {
+            "en": "The man is the subject (nominative), so the adjective after der takes -e",
+            "es": "El hombre es el sujeto (nominativo), así que el adjetivo después de der lleva -e"
+          }
+        },
+        {
+          "text": {
+            "en": "-e marks the dative",
+            "es": "-e marca el dativo"
+          },
+          "wrong": {
+            "en": "The dative ends in -en after an article. mir is the dative here, but it belongs to hilft, not to the old man.",
+            "es": "El dativo termina en -en después de un artículo. mir es aquí el dativo, pero pertenece a hilft, no al hombre viejo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
