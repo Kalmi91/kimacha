@@ -44,6 +44,8 @@ interface ActiveRun {
   onStopped?: () => void;
   /** Settles when generateSpeechStream has returned (the controller exists then) or failed. */
   started: Promise<unknown>;
+  /** Settles when the native generation has really ended (its end event, also after a cancel), or never began. */
+  ended: Promise<void>;
 }
 let active: ActiveRun | null = null;
 let runCounter = 0;
@@ -51,6 +53,15 @@ let runCounter = 0;
 // release). Every release goes through this chain, and a new speech waits for it: a stopPcmPlayer that lands
 // after the next startPcmPlayer leaves the new speech without a player ("PCM player not initialized").
 let stopping: Promise<void> = Promise.resolve();
+
+// The native side runs one generation per engine, and a cancel only takes effect when the generation reaches
+// its next chunk (for one sentence that is when it is all generated: seconds on a slow phone). A new
+// generation started before the old thread ended is refused with "already in progress", and the phone's
+// voice would speak instead. So a stop waits for the end event of the generation it cut, at most this long,
+// and a start that still meets a busy engine asks again.
+const NATIVE_END_WAIT_MS = 30000;
+const BUSY_RETRY_MS = 120;
+const BUSY_RETRY_MAX = 50;
 
 const now = () => Date.now();
 
@@ -143,6 +154,38 @@ function releasePlayer(engine: StreamingTtsEngine): void {
   stopping = stopping.then(() => engine.stopPcmPlayer().catch(() => {}));
 }
 
+// Resolves when the promise settles, or after `ms`, whichever comes first.
+function settledOrAfter(promise: Promise<unknown>, ms: number): Promise<void> {
+  return new Promise<void>(resolve => {
+    const timer = setTimeout(resolve, ms);
+    const done = () => {
+      clearTimeout(timer);
+      resolve();
+    };
+    promise.then(done, done);
+  });
+}
+
+// Starts the generation; an engine that is still busy with the generation before (the end event arrives a
+// moment before the native flag is cleared) is asked again instead of failing the speech.
+async function generateWhenFree(
+  run: ActiveRun,
+  text: string,
+  options: Parameters<StreamingTtsEngine['generateSpeechStream']>[1],
+  handlers: Parameters<StreamingTtsEngine['generateSpeechStream']>[2],
+): Promise<TtsStreamController> {
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      return await run.engine.generateSpeechStream(text, options, handlers);
+    } catch (err) {
+      const busy = /already in progress/i.test(err instanceof Error ? err.message : String(err));
+      if (!busy || run.finished || attempt >= BUSY_RETRY_MAX) throw err;
+      await new Promise(resolve => setTimeout(resolve, BUSY_RETRY_MS));
+      if (run.finished) throw err;
+    }
+  }
+}
+
 // Cuts the run in flight; resolves when it and every stop before it are done (a new speech awaits this).
 function stopActive(): Promise<void> {
   const run = active;
@@ -152,9 +195,10 @@ function stopActive(): Promise<void> {
     const wasInFlight = !run.finished;
     run.finished = true;
     stopping = stopping.then(async () => {
-      await run.started; // the controller of a generation that is just starting can only be cancelled once it exists
+      await run.started; // a generation that is just starting can only be cancelled once it has started
       try {
-        await run.controller?.cancel();
+        // the engine's own cancel, not the controller's: that one also drops the listeners, and with them the end event
+        await run.engine.cancelSpeechStream();
       } catch {
         // already finished or cancelled
       }
@@ -164,6 +208,7 @@ function stopActive(): Promise<void> {
         // player already released
       }
       if (wasInFlight) run.onStopped?.();
+      await settledOrAfter(run.ended, NATIVE_END_WAIT_MS);
     });
   }
   return stopping;
@@ -193,7 +238,7 @@ export async function speakNeural(
   await stopActive();
   if (myRun !== runCounter) return { firstChunkMs: -1, generatedMs: 0, audioMs: 0, peak: 0 }; // a newer speech or a stop won
 
-  const run: ActiveRun = { engine, controller: null, timer: null, finished: false, onStopped: options.onStopped, started: Promise.resolve() };
+  const run: ActiveRun = { engine, controller: null, timer: null, finished: false, onStopped: options.onStopped, started: Promise.resolve(), ended: Promise.resolve() };
   active = run;
 
   const t0 = now();
@@ -224,8 +269,13 @@ export async function speakNeural(
       reject(err instanceof Error ? err : new Error(String(err)));
     };
 
-    run.started = engine
-      .generateSpeechStream(
+    let endNative: () => void = () => {};
+    run.ended = new Promise<void>(resolveEnded => {
+      endNative = resolveEnded;
+    });
+
+    run.started = generateWhenFree(
+        run,
         text,
         { sid: voice.sid, ...(options.rate !== undefined ? { speed: options.rate } : {}) },
         {
@@ -240,6 +290,7 @@ export async function speakNeural(
             writeChain = writeChain.then(() => (run.finished ? undefined : engine.writePcmChunk(chunk.samples)));
           },
           onEnd: event => {
+            endNative(); // the native generation is over, cancelled or not
             if (run.finished) return;
             if (event.cancelled) return;
             const generatedMs = now() - t0;
@@ -262,12 +313,18 @@ export async function speakNeural(
               })
               .catch(fail);
           },
-          onError: event => fail(new Error(event.message)),
+          onError: event => {
+            endNative();
+            fail(new Error(event.message));
+          },
         },
       )
       .then(controller => {
         run.controller = controller;
       })
-      .catch(fail);
+      .catch(err => {
+        endNative(); // it never started
+        fail(err);
+      });
   });
 }

@@ -16,6 +16,7 @@ import { playPackFile, stopPack } from '../packAudio';
 import { KOKORO_VOICES, PIPER_VOICES } from '../neuralVoices';
 
 function fakeEngine(behavior: 'ok' | 'error' | 'hang' = 'ok') {
+  let live: any = null; // the handlers of a generation that has not ended
   const engine: any = {
     getSampleRate: jest.fn(async () => 24000),
     startPcmPlayer: jest.fn(async () => {}),
@@ -23,12 +24,20 @@ function fakeEngine(behavior: 'ok' | 'error' | 'hang' = 'ok') {
     stopPcmPlayer: jest.fn(async () => {}),
     destroy: jest.fn(async () => {}),
     cancel: jest.fn(async () => {}),
+    cancelSpeechStream: jest.fn(async () => {
+      await engine.cancel();
+      const cb = live;
+      live = null;
+      cb?.onEnd({ cancelled: true }); // the native side ends a cancelled generation with a cancelled end event
+    }),
     generateSpeechStream: jest.fn(async (_text: string, _opts: unknown, cb: any) => {
       if (behavior === 'ok') {
         cb.onChunk({ samples: [0.1, -0.5, 0.25] });
         cb.onEnd({ cancelled: false });
       } else if (behavior === 'error') {
         cb.onError({ message: 'generation failed' });
+      } else {
+        live = cb;
       }
       return { cancel: engine.cancel };
     }),
@@ -147,6 +156,7 @@ describe('neural engines', () => {
 // the next speech line up (the real player is one per engine, and a late stop kills the next speech's player).
 function slowEngine(options: { stopMs?: number; startMs?: number; controllerMs?: number; startFails?: boolean; writeFails?: boolean; hang?: boolean } = {}) {
   const log: string[] = [];
+  let live: any = null;
   const engine: any = {
     getSampleRate: jest.fn(async () => 24000),
     startPcmPlayer: jest.fn(async () => {
@@ -165,11 +175,19 @@ function slowEngine(options: { stopMs?: number; startMs?: number; controllerMs?:
     cancel: jest.fn(async () => {
       log.push('cancel');
     }),
+    cancelSpeechStream: jest.fn(async () => {
+      await engine.cancel();
+      const cb = live;
+      live = null;
+      cb?.onEnd({ cancelled: true });
+    }),
     generateSpeechStream: jest.fn(async (_text: string, _opts: unknown, cb: any) => {
       if (options.controllerMs) await wait(options.controllerMs);
       if (!options.hang) {
         cb.onChunk({ samples: [0.1, -0.5, 0.25] });
         cb.onEnd({ cancelled: false });
+      } else {
+        live = cb;
       }
       return { cancel: engine.cancel };
     }),
@@ -244,6 +262,107 @@ describe('neural engines: stops, failures and the one PCM player', () => {
     stopNeural();
     await wait(80);
     expect(engine.cancel).toHaveBeenCalledTimes(1);
+  });
+});
+
+// An engine that behaves like the native side: one generation at a time ("TTS streaming already in progress"
+// otherwise), a cancel is only noticed when the generation reaches its chunk (so the cancelled generation
+// ends after `genMs`, not at once), and the busy flag is cleared a moment after the end event.
+function nativeEngine(options: { genMs: number; clearMs?: number; neverEnds?: boolean }) {
+  const started: string[] = [];
+  const stats = { busyHits: 0 };
+  let busy = false;
+  let cancelled = false;
+  const engine: any = {
+    getSampleRate: jest.fn(async () => 24000),
+    startPcmPlayer: jest.fn(async () => {}),
+    writePcmChunk: jest.fn(async () => {}),
+    stopPcmPlayer: jest.fn(async () => {}),
+    destroy: jest.fn(async () => {}),
+    cancelSpeechStream: jest.fn(async () => {
+      cancelled = true;
+    }),
+    generateSpeechStream: jest.fn(async (text: string, _opts: unknown, cb: any) => {
+      if (busy) {
+        stats.busyHits += 1;
+        throw new Error('TTS streaming already in progress');
+      }
+      busy = true;
+      cancelled = false;
+      started.push(text);
+      if (!options.neverEnds) {
+        setTimeout(() => {
+          if (!cancelled) cb.onChunk({ samples: [0.1, -0.5] });
+          cb.onEnd({ cancelled });
+          setTimeout(() => {
+            busy = false;
+          }, options.clearMs ?? 0);
+        }, options.genMs);
+      }
+      return { cancel: async () => {} };
+    }),
+  };
+  mockEngines.push(engine);
+  return { engine, started, stats };
+}
+
+describe('neural engines: a new request while the native generation is still running', () => {
+  it('three quick taps on a sentence: the new request waits for the cut generation to end, the middle one is dropped, nothing falls to the phone', async () => {
+    const { engine, started } = nativeEngine({ genMs: 80 });
+    mockCreate.mockImplementation(async () => engine);
+    const voice = PIPER_VOICES.es[0];
+    await loadNeuralVoice(voice, 'es', '/p');
+    const failures: unknown[] = [];
+    const tap = (text: string, options = {}) => speakNeural(text, 'es', voice, options).catch(err => failures.push(err));
+    const onDone = jest.fn();
+    void tap('uno');
+    await wait(20);
+    stopNeural(); // what speech.ts does before every speech
+    void tap('dos');
+    await wait(5);
+    stopNeural();
+    await tap('tres', { onDone });
+    expect(failures).toEqual([]);
+    expect(started).toEqual(['uno', 'tres']); // the generation of 'uno' ended before 'tres' began; 'dos' never started
+    await wait(600);
+    expect(onDone).toHaveBeenCalledTimes(1);
+  });
+
+  it('an engine that is still busy for a moment after the end event is asked again, not given up on', async () => {
+    const { engine, started, stats } = nativeEngine({ genMs: 10, clearMs: 50 });
+    mockCreate.mockImplementation(async () => engine);
+    const voice = PIPER_VOICES.es[0];
+    await loadNeuralVoice(voice, 'es', '/p');
+    await speakNeural('uno', 'es', voice);
+    const onDone = jest.fn();
+    await speakNeural('dos', 'es', voice, { onDone }); // right behind the first: the native flag is still set
+    expect(started).toEqual(['uno', 'dos']);
+    expect(stats.busyHits).toBeGreaterThan(0);
+    await wait(600);
+    expect(onDone).toHaveBeenCalledTimes(1);
+  });
+
+  it('a generation whose end never comes does not block the speech for ever: the wait has a limit, then the busy engine is asked again for a while', async () => {
+    jest.useFakeTimers();
+    try {
+      const { engine, started } = nativeEngine({ genMs: 0, neverEnds: true });
+      mockCreate.mockImplementation(async () => engine);
+      const voice = PIPER_VOICES.es[0];
+      await loadNeuralVoice(voice, 'es', '/p');
+      void speakNeural('uno', 'es', voice).catch(() => {});
+      await jest.advanceTimersByTimeAsync(10);
+      stopNeural();
+      const second = speakNeural('dos', 'es', voice).then(() => 'spoke', err => String(err));
+      await jest.advanceTimersByTimeAsync(29000);
+      expect(engine.generateSpeechStream).toHaveBeenCalledTimes(1); // still waiting for the end of 'uno'
+      await jest.advanceTimersByTimeAsync(2000);
+      expect(engine.generateSpeechStream.mock.calls.length).toBeGreaterThan(1); // the limit passed: it tries
+      await jest.advanceTimersByTimeAsync(8000);
+      expect(await second).toContain('already in progress'); // and in the end the caller still gets its fallback
+      expect(started).toEqual(['uno']);
+    } finally {
+      jest.useRealTimers();
+    }
   });
 });
 
