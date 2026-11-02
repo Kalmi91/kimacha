@@ -6,7 +6,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import { nameKey } from '../lib/cloud/validate';
 import { ADMIN_PAGE } from './admin';
-import { MAX_NAME_FAILS, adminAuthorized, afterBadPin, bearerToken, clientIp, displayName, lockRemainingSec, parseBaseRev, parseLogin, parsePayload, safeEqual, toAdminStats, toHex } from './logic';
+import { adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, clientIp, displayName, lockRemainingSec, parseBaseRev, parseLogin, parsePayload, safeEqual, toAdminStats, toHex } from './logic';
 import type { AdminUserRow } from './logic';
 
 interface Env {
@@ -24,6 +24,7 @@ type UserRow = {
   fail_count: number;
   locked_until: number | null;
   rev: number;
+  fail_since: number | null;
 };
 
 function json(body: unknown, status = 200): Response {
@@ -67,11 +68,12 @@ export class KimachaUsers extends DurableObject<Env> {
       `CREATE TABLE IF NOT EXISTS login_fails (
         name_key TEXT NOT NULL, ip TEXT NOT NULL, fail_count INTEGER NOT NULL DEFAULT 0, locked_until INTEGER, PRIMARY KEY (name_key, ip))`,
     );
-    // Migration: `rev` counts the saves of an account (PUT /api/progress is conditional on it). An older table gets it here, once;
-    // its rows start at 0, and their payload is untouched.
-    if (!sql.exec<{ name: string }>('PRAGMA table_info(users)').toArray().some((c) => c.name === 'rev')) {
-      sql.exec('ALTER TABLE users ADD COLUMN rev INTEGER NOT NULL DEFAULT 0');
-    }
+    // Migration: an older users table gets the columns below here, once each; its rows and payloads are untouched.
+    // `rev` counts the saves of an account (PUT /api/progress is conditional on it), rows start at 0.
+    // `fail_since` (epoch ms) is when the current window of the name-wide wrong-PIN count began (afterBadPinForName), NULL = none.
+    const columns = new Set(sql.exec<{ name: string }>('PRAGMA table_info(users)').toArray().map((c) => c.name));
+    if (!columns.has('rev')) sql.exec('ALTER TABLE users ADD COLUMN rev INTEGER NOT NULL DEFAULT 0');
+    if (!columns.has('fail_since')) sql.exec('ALTER TABLE users ADD COLUMN fail_since INTEGER');
   }
 
   async fetch(req: Request): Promise<Response> {
@@ -108,7 +110,7 @@ export class KimachaUsers extends DurableObject<Env> {
   }
 
   // The lock is per name AND address: the 5th wrong PIN from one address locks that address for the name, so a stranger who
-  // knows only the name locks himself out, not the owner. All addresses together lock the whole name only at MAX_NAME_FAILS.
+  // knows only the name locks himself out, not the owner. All addresses together lock the whole name only at MAX_NAME_FAILS inside one window.
   // A device that already holds a token of this account (Authorization: Bearer) is not held back by either lock, and its
   // wrong PINs are not counted.
   private async login(body: unknown, req: Request): Promise<Response> {
@@ -139,8 +141,8 @@ export class KimachaUsers extends DurableObject<Env> {
       if (!holdsToken) {
         const mine = afterBadPin(here?.fail_count ?? 0, now);
         sql.exec('INSERT OR REPLACE INTO login_fails (name_key, ip, fail_count, locked_until) VALUES (?, ?, ?, ?)', key, ip, mine.failCount, mine.lockedUntil);
-        const name = afterBadPin(user.fail_count, now, MAX_NAME_FAILS);
-        sql.exec('UPDATE users SET fail_count = ?, locked_until = ? WHERE name_key = ?', name.failCount, name.lockedUntil, key);
+        const name = afterBadPinForName(user.fail_count, user.fail_since, now);
+        sql.exec('UPDATE users SET fail_count = ?, locked_until = ?, fail_since = ? WHERE name_key = ?', name.failCount, name.lockedUntil, name.failSince, key);
       }
       return json({ error: 'bad_pin' }, 401);
     }

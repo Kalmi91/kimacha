@@ -5,6 +5,7 @@
 // silently). Not covered: real SQLite or workerd behavior. The cases marked `it.failing` state the RIGHT behavior that the
 // code does not have yet: they pass while the gap exists and go red the day it is fixed, so the `.failing` has to come off then.
 import { createHash } from 'crypto';
+import { SESSION_KEY } from '../session';
 import { LOCK_SEC, MAX_FAILS, MAX_NAME_FAILS, MAX_PAYLOAD_CHARS, usageSummary } from '../../../cloud/logic';
 
 jest.mock(
@@ -57,10 +58,16 @@ function makeSql(legacy = false) {
       for (const u of users.values()) u.rev = 0;
       return cursor([]);
     }
+    if (q === 'alter table users add column fail_since integer') {
+      if (!columns || columns.has('fail_since')) throw new Error('duplicate column name: fail_since');
+      columns.add('fail_since');
+      for (const u of users.values()) u.fail_since = null;
+      return cursor([]);
+    }
     if (q === 'select * from users where name_key = ?') return cursor(users.has(b[0]) ? [{ ...users.get(b[0]) }] : []);
     if (q === 'insert into users (name_key, display_name, salt, pin_hash) values (?, ?, ?, ?)') {
       if (users.has(b[0])) throw new Error('UNIQUE constraint failed: users.name_key');
-      users.set(b[0], { name_key: b[0], display_name: b[1], salt: b[2], pin_hash: b[3], payload: null, updated_at: null, fail_count: 0, locked_until: null, rev: 0 });
+      users.set(b[0], { name_key: b[0], display_name: b[1], salt: b[2], pin_hash: b[3], payload: null, updated_at: null, fail_count: 0, locked_until: null, rev: 0, fail_since: null });
       return cursor([]);
     }
     if (q === 'insert into tokens (token, name_key, created_at) values (?, ?, ?)') {
@@ -68,8 +75,8 @@ function makeSql(legacy = false) {
       tokens.set(b[0], { token: b[0], name_key: b[1], created_at: b[2] });
       return cursor([]);
     }
-    if (q === 'update users set fail_count = ?, locked_until = ? where name_key = ?') {
-      Object.assign(users.get(b[2]) ?? {}, { fail_count: b[0], locked_until: b[1] });
+    if (q === 'update users set fail_count = ?, locked_until = ?, fail_since = ? where name_key = ?') {
+      Object.assign(users.get(b[3]) ?? {}, { fail_count: b[0], locked_until: b[1], fail_since: b[2] });
       return cursor([]);
     }
     if (q === 'update users set fail_count = 0, locked_until = null where name_key = ?') {
@@ -170,6 +177,14 @@ afterEach(() => {
   jest.restoreAllMocks();
 });
 
+// `batches` addresses (`prefix.0` ...) each guess MAX_FAILS wrong PINs for Ana, the clock moving on by `gapMs` after each address.
+async function guessFromAddresses(cloud: Cloud, prefix: string, batches: number, gapMs = 0) {
+  for (let a = 0; a < batches; a++) {
+    for (let i = 0; i < MAX_FAILS; i++) expect((await cloud.login('Ana', '0000', { ip: `${prefix}.${a}` })).status).toBe(401);
+    clock += gapMs;
+  }
+}
+
 describe('login and the lock', () => {
   it('creates the account on the first login, and the same name in any case or spacing gets back into it', async () => {
     const cloud = startCloud();
@@ -242,6 +257,61 @@ describe('login and the lock', () => {
     for (let i = 0; i < 2 * MAX_FAILS; i++) expect((await cloud.login('Ana', '0000', { ip: '10.0.0.1', token })).status).toBe(401);
     expect((await cloud.login('Ana', '1234', { ip: '10.0.0.1' })).status).toBe(200);
     expect(cloud.sql.users.get('ana')?.fail_count).toBe(0);
+  });
+
+  it('counts the name-wide wrong PINs inside one window only: 45 now and 45 a window later do not lock the name', async () => {
+    const cloud = startCloud();
+    await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    await guessFromAddresses(cloud, '7.1', 9);
+    clock = START + LOCK_SEC * 1000;
+    await guessFromAddresses(cloud, '7.2', 9);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.2' })).status).toBe(200);
+  });
+
+  it('does not lock the name for a guesser who spreads 60 wrong PINs over an hour, whatever the gaps', async () => {
+    const cloud = startCloud();
+    await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    await guessFromAddresses(cloud, '7.3', 12, 5 * 60 * 1000);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.2' })).status).toBe(200);
+  });
+
+  it('does not lock the name for one address that guesses again every time its own lock has run out', async () => {
+    const cloud = startCloud();
+    await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    for (let window = 0; window < 12; window++) {
+      for (let i = 0; i < MAX_FAILS; i++) expect((await cloud.login('Ana', '0000', { ip: '7.4.0.1' })).status).toBe(401);
+      expect((await cloud.login('Ana', '0000', { ip: '7.4.0.1' })).status).toBe(429);
+      clock += LOCK_SEC * 1000;
+    }
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.2' })).status).toBe(200);
+  });
+
+  it('lets a name-locked owner in through the client: login() sends the token of the stored session', async () => {
+    const cloud = startCloud();
+    const ownerToken = (await cloud.login('Ana', '1234', { ip: '10.0.0.1' })).body.token as string;
+    const beaToken = (await cloud.login('Bea', '5678', { ip: '10.0.0.5' })).body.token as string;
+    await guessFromAddresses(cloud, '7.5', MAX_NAME_FAILS / MAX_FAILS);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.3' })).status).toBe(429); // the whole name is locked
+    const { login: clientLogin } = jest.requireActual<typeof import('../api')>('../api');
+    const realFetch = (globalThis as any).fetch;
+    (globalThis as any).fetch = async (url: string, init: { method: string; headers: Record<string, string>; body: string }) => {
+      const r = await cloud.call(init.method, url, { header: init.headers.Authorization, raw: init.body, ip: '10.0.0.3' });
+      return { ok: r.status >= 200 && r.status < 300, status: r.status, json: async () => r.body };
+    };
+    const stored = (token: string) =>
+      Object.defineProperty(globalThis, 'localStorage', { value: { getItem: (k: string) => (k === SESSION_KEY ? JSON.stringify({ name: 'Ana', token }) : null) }, configurable: true, writable: true });
+    try {
+      expect(await clientLogin('Ana', '1234')).toMatchObject({ ok: false, error: 'locked' }); // no stored session
+      stored(beaToken);
+      expect(await clientLogin('Ana', '1234')).toMatchObject({ ok: false, error: 'locked' }); // the token of another account
+      stored(ownerToken);
+      const res = await clientLogin('Ana', '1234');
+      expect(res).toMatchObject({ ok: true, data: { created: false, displayName: 'Ana' } });
+      expect((res as any).data.token).toMatch(/^[0-9a-f]{64}$/);
+    } finally {
+      (globalThis as any).fetch = realFetch;
+      delete (globalThis as any).localStorage;
+    }
   });
 
   it('does not let the token of another account past the lock', async () => {
@@ -444,6 +514,7 @@ describe('the progress route', () => {
   it('adds the rev column to the storage of the older version once, and keeps the saved progress', async () => {
     const cloud = startCloud({}, true);
     expect(cloud.sql.columns()?.has('rev')).toBe(true);
+    expect(cloud.sql.columns()?.has('fail_since')).toBe(true);
     expect(() => cloud.restart()).not.toThrow(); // the fake storage throws on a second ALTER, like SQLite
     const login = await cloud.login('Old', '1234');
     expect(login.status).toBe(200);

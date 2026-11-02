@@ -1,6 +1,7 @@
 // Client of the web cloud API (the contract is in PLAN-web-felho.md, the server is cloud/worker.ts).
 // Relative /api/... URLs: the Worker serves the web build and the API from one origin.
 // Nothing here throws: every call answers { ok: true, data } or { ok: false, error }.
+import { loadSession } from './session';
 
 export type CloudErrorCode = 'network' | 'bad_input' | 'locked' | 'bad_pin' | 'bad_token' | 'too_large' | 'conflict' | 'server';
 
@@ -50,10 +51,13 @@ async function call<T>(path: string, init: RequestInit): Promise<CloudResult<T>>
   return retryAfterSec === undefined ? { ok: false, error: code } : { ok: false, error: code, retryAfterSec };
 }
 
+// A token left in the stored session goes along as the bearer: a device that is already signed in to this account is not
+// held back by the lock (cloud/worker.ts). For any other name the server ignores it.
 export function login(name: string, pin: string): Promise<CloudResult<LoginData>> {
+  const token = loadSession()?.token;
   return call<LoginData>('/api/login', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: token ? { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` } : { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name, pin }),
   });
 }

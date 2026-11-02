@@ -5,8 +5,8 @@ import { isValidName, isValidPin } from '../lib/cloud/validate';
 
 export const MAX_FAILS = 5;
 export const LOCK_SEC = 15 * 60;
-// Wrong PINs for one name from all addresses together before the whole name is locked. MAX_FAILS is the limit of one
-// address (name + IP), so a stranger who knows only the name locks his own address, not the owner's.
+// Wrong PINs for one name from all addresses together, inside one window of LOCK_SEC, before the whole name is locked.
+// MAX_FAILS is the limit of one address (name + IP), so a stranger who knows only the name locks his own address, not the owner's.
 export const MAX_NAME_FAILS = 50;
 export const MAX_PAYLOAD_CHARS = 1_000_000;
 
@@ -63,6 +63,16 @@ export function afterBadPin(failCount: number, now: number, maxFails = MAX_FAILS
   const next = failCount + 1;
   if (next >= maxFails) return { failCount: 0, lockedUntil: now + LOCK_SEC * 1000 };
   return { failCount: next, lockedUntil: null };
+}
+
+/**
+ * The name-wide counter after one more wrong PIN at `now`. The count lives inside one window of LOCK_SEC that starts with its
+ * first wrong PIN (`failSince`, epoch ms); a window that is that old (or none) is dropped and this PIN starts a new one. So
+ * only MAX_NAME_FAILS wrong PINs inside one window lock the name, however many windows a slow guesser spreads them over.
+ */
+export function afterBadPinForName(failCount: number, failSince: number | null, now: number): { failCount: number; lockedUntil: number | null; failSince: number } {
+  const stale = failSince === null || now - failSince >= LOCK_SEC * 1000; // the same edge as lockRemainingSec: at the end of a window it is over
+  return { ...afterBadPin(stale ? 0 : failCount, now, MAX_NAME_FAILS), failSince: stale ? now : failSince };
 }
 
 /** The token out of an `Authorization: Bearer <token>` header, or null. */

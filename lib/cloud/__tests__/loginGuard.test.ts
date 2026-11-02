@@ -4,6 +4,7 @@
 // and go red the day it is fixed, so the `.failing` has to come off then (the gaps are in the test report).
 import { LOCK_SEC, MAX_FAILS, afterBadPin, bearerToken, lockRemainingSec, parseLogin, safeEqual } from '../../../cloud/logic';
 import { getProgress, login, putProgress } from '../api';
+import { SESSION_KEY } from '../session';
 import { isValidName, isValidPin, nameKey } from '../validate';
 
 const T = 1_700_000_000_000;
@@ -193,6 +194,25 @@ describe('where the PIN and the token travel', () => {
       expect(init.headers.Authorization).toBe('Bearer TOKEN-abc123');
       expect(String(init.body ?? '')).not.toContain('TOKEN-abc123');
     }
+  });
+
+  it('sends the token of the stored session as the bearer of the login, and no Authorization without a session', async () => {
+    await login('Ana', '4821');
+    expect(mockFetch.mock.calls[0][1].headers.Authorization).toBeUndefined();
+    Object.defineProperty(globalThis, 'localStorage', {
+      value: { getItem: (k: string) => (k === SESSION_KEY ? JSON.stringify({ name: 'Ana', token: 'TOKEN-abc123' }) : null) },
+      configurable: true,
+      writable: true,
+    });
+    try {
+      await login('Ana', '4821');
+    } finally {
+      delete (globalThis as any).localStorage;
+    }
+    const [url, init] = mockFetch.mock.calls[1];
+    expect(url).toBe('/api/login');
+    expect(init.headers.Authorization).toBe('Bearer TOKEN-abc123');
+    expect(JSON.parse(init.body)).toEqual({ name: 'Ana', pin: '4821' });
   });
 
   it('sends the PIN only in the login body, never in a header', async () => {
