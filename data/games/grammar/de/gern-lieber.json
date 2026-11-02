@@ -428,7 +428,7 @@
     },
     {
       "id": "gern-lieber-c02",
-      "sentence": "Kaffee oder Tee? Ich trinke ___ Tee.",
+      "sentence": "Ich trinke ___ Tee als Kaffee.",
       "options": [
         "gern",
         "lieber",
@@ -436,26 +436,26 @@
       ],
       "correct": 1,
       "why": {
-        "en": "The question offers a choice between two things, and lieber says which one you prefer: Ich trinke lieber Tee.",
-        "es": "La pregunta ofrece una opción entre dos cosas, y lieber dice cuál prefieres: Ich trinke lieber Tee."
+        "en": "The sentence compares tea with coffee (als), and the comparative of gern is lieber: Ich trinke lieber Tee als Kaffee.",
+        "es": "La oración compara el té con el café (als), y el comparativo de gern es lieber: Ich trinke lieber Tee als Kaffee."
       },
       "wrong": {
         "gern": {
-          "en": "gern says that you like tea, but it does not answer the choice between two things. Here you need lieber.",
-          "es": "gern dice que te gusta el té, pero no responde a la elección entre dos cosas. Aquí necesitas lieber."
+          "en": "gern says that you like tea, but it cannot be followed by als Kaffee. A comparison of two things needs lieber.",
+          "es": "gern dice que te gusta el té, pero no puede ir seguido de als Kaffee. Una comparación de dos cosas necesita lieber."
         },
         "am liebsten": {
-          "en": "am liebsten means best of all, usually among three or more things. For a choice between two you need lieber.",
-          "es": "am liebsten significa «sobre todo», normalmente entre tres o más cosas. Para una elección entre dos necesitas lieber."
+          "en": "am liebsten is the superlative and does not take als. For a comparison of two things you need lieber.",
+          "es": "am liebsten es el superlativo y no lleva als. Para una comparación de dos cosas necesitas lieber."
         }
       },
       "examples": [
-        "Ich esse lieber Pizza.",
-        "Anna trinkt lieber Milch."
+        "Ich esse lieber Pizza als Suppe.",
+        "Anna trinkt lieber Milch als Wasser."
       ],
       "tr": {
-        "en": "Coffee or tea? I prefer tea.",
-        "es": "¿Café o té? Prefiero té."
+        "en": "I prefer tea to coffee.",
+        "es": "Prefiero el té al café."
       }
     },
     {
