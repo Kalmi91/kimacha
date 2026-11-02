@@ -1,0 +1,1083 @@
+{
+  "schema": 2,
+  "topic": "praepositionen-dativ",
+  "level": "A1",
+  "title": {
+    "en": "Prepositions with the dative: mit, nach, aus, bei, zu",
+    "es": "Preposiciones con dativo: mit, nach, aus, bei, zu"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Seven common prepositions are always followed by the dative: aus, bei, mit, nach, seit, von, zu. The dative articles are dem for masculine and neuter, der for feminine and den for the plural, and in the dative plural the noun also gets an -n: mit den Kindern. Zu and von often merge with the article: zum, zur, beim, vom. This lesson shows the dative only after prepositions. The other uses of the dative come at A2.",
+        "es": "Siete preposiciones frecuentes van siempre seguidas del dativo: aus, bei, mit, nach, seit, von, zu. Los artículos del dativo son dem para masculino y neutro, der para femenino y den para el plural, y en el plural del dativo el sustantivo también recibe una -n: mit den Kindern. Zu y von se funden a menudo con el artículo: zum, zur, beim, vom. Esta lección muestra el dativo solo después de preposiciones. Los demás usos del dativo vienen en A2."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "dativ-artikel",
+      "title": {
+        "en": "Five prepositions with the dative article",
+        "es": "Cinco preposiciones con el artículo del dativo"
+      },
+      "header": [
+        {
+          "en": "Preposition",
+          "es": "Preposición"
+        },
+        {
+          "en": "maskulin",
+          "es": "maskulin"
+        },
+        {
+          "en": "feminin",
+          "es": "feminin"
+        },
+        {
+          "en": "neutral",
+          "es": "neutral"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "aus",
+          "aus dem",
+          "aus der",
+          "aus dem",
+          "aus den"
+        ],
+        [
+          "bei",
+          "bei dem",
+          "bei der",
+          "bei dem",
+          "bei den"
+        ],
+        [
+          "mit",
+          "mit dem",
+          "mit der",
+          "mit dem",
+          "mit den"
+        ],
+        [
+          "nach",
+          "nach dem",
+          "nach der",
+          "nach dem",
+          "nach den"
+        ],
+        [
+          "von",
+          "von dem",
+          "von der",
+          "von dem",
+          "von den"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "dativ-kontraktion",
+      "title": {
+        "en": "Short forms",
+        "es": "Formas cortas"
+      },
+      "header": [
+        {
+          "en": "Long form",
+          "es": "Forma larga"
+        },
+        {
+          "en": "Kurzform",
+          "es": "Kurzform"
+        }
+      ],
+      "rows": [
+        [
+          "zu dem",
+          "zum"
+        ],
+        [
+          "zu der",
+          "zur"
+        ],
+        [
+          "bei dem",
+          "beim"
+        ],
+        [
+          "von dem",
+          "vom"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "dativ-phrasen",
+      "title": {
+        "en": "mit and aus with nouns",
+        "es": "mit y aus con sustantivos"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "mit",
+          "es": "mit"
+        },
+        {
+          "en": "aus",
+          "es": "aus"
+        }
+      ],
+      "rows": [
+        [
+          "der Zug",
+          "mit dem Zug",
+          "aus dem Zug"
+        ],
+        [
+          "die Familie",
+          "mit der Familie",
+          "aus der Familie"
+        ],
+        [
+          "das Haus",
+          "mit dem Haus",
+          "aus dem Haus"
+        ],
+        [
+          "die Kinder",
+          "mit den Kindern",
+          "aus den Kindern"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "What each preposition means",
+        "es": "Qué significa cada preposición"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "mit means with: together with somebody, or by means of something. With vehicles it means by.",
+            "es": "mit significa «con»: junto con alguien, o por medio de algo. Con vehículos significa «en»."
+          },
+          "examples": [
+            {
+              "es": "Ich fahre mit dem Bus.",
+              "tr": {
+                "en": "I go by bus.",
+                "es": "Voy en camión."
+              }
+            },
+            {
+              "es": "Anna spielt mit den Kindern.",
+              "tr": {
+                "en": "Anna plays with the children.",
+                "es": "Anna juega con los niños."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "nach means to with cities and countries that have no article, and also after in time. With home it is nach Hause.",
+            "es": "nach significa «a» con ciudades y países sin artículo, y también «después de» en el tiempo. Con «casa» es nach Hause."
+          },
+          "examples": [
+            {
+              "es": "Wir fahren nach Berlin.",
+              "tr": {
+                "en": "We are going to Berlin.",
+                "es": "Vamos a Berlín."
+              }
+            },
+            {
+              "es": "Nach dem Essen gehen wir nach Hause.",
+              "tr": {
+                "en": "After the meal we go home.",
+                "es": "Después de comer nos vamos a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "aus means out of a place and from a country or town where you come from.",
+            "es": "aus significa «de» dentro de un lugar y «de» un país o ciudad de origen."
+          },
+          "examples": [
+            {
+              "es": "Ich komme aus Mexiko.",
+              "tr": {
+                "en": "I come from Mexico.",
+                "es": "Soy de México."
+              }
+            },
+            {
+              "es": "Paul kommt aus dem Haus.",
+              "tr": {
+                "en": "Paul comes out of the house.",
+                "es": "Paul sale de la casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "bei means at somebody's place or near a place. It answers where you are, not where you go.",
+            "es": "bei significa «en casa de alguien» o «cerca de» un lugar. Responde a dónde estás, no a adónde vas."
+          },
+          "examples": [
+            {
+              "es": "Anna ist bei Paul.",
+              "tr": {
+                "en": "Anna is at Paul's.",
+                "es": "Anna está en casa de Paul."
+              }
+            },
+            {
+              "es": "Der Hund ist beim Arzt.",
+              "tr": {
+                "en": "The dog is at the doctor's.",
+                "es": "El perro está con el médico."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "von means from or of: where something comes from, or who it belongs to. zu means to a person or a place: you go towards it.",
+            "es": "von significa «de»: de dónde viene algo, o a quién pertenece. zu significa «a» una persona o un lugar: vas hacia allí."
+          },
+          "examples": [
+            {
+              "es": "Das Buch ist von Anna.",
+              "tr": {
+                "en": "The book is from Anna.",
+                "es": "El libro es de Anna."
+              }
+            },
+            {
+              "es": "Ich gehe zum Arzt.",
+              "tr": {
+                "en": "I am going to the doctor.",
+                "es": "Voy al médico."
+              }
+            },
+            {
+              "es": "Wir gehen zur Schule.",
+              "tr": {
+                "en": "We are going to school.",
+                "es": "Vamos a la escuela."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "seit means since or for, with a point or a length of time. The time is in the dative too: seit einem Jahr.",
+            "es": "seit significa «desde» o «hace», con un momento o una duración. El tiempo también va en dativo: seit einem Jahr."
+          },
+          "examples": [
+            {
+              "es": "Ich wohne seit einem Jahr in Berlin.",
+              "tr": {
+                "en": "I have lived in Berlin for a year.",
+                "es": "Vivo en Berlín desde hace un año."
+              }
+            },
+            {
+              "es": "Wir lernen seit zwei Monaten Deutsch.",
+              "tr": {
+                "en": "We have been learning German for two months.",
+                "es": "Estudiamos alemán desde hace dos meses."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Pairs that are easy to mix up",
+        "es": "Parejas fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Ich gehe mit dem Lehrer.",
+          "b": "Ich gehe ohne den Lehrer.",
+          "note": {
+            "en": "mit takes the dative, so the masculine noun gets dem. ohne takes the accusative, so it gets den. Learn which group a preposition is in.",
+            "es": "mit lleva dativo, así que el sustantivo masculino lleva dem. ohne lleva acusativo, así que lleva den. Aprende a qué grupo pertenece cada preposición."
+          },
+          "examples": [
+            {
+              "es": "Wir fahren mit dem Zug.",
+              "tr": {
+                "en": "We go by train.",
+                "es": "Vamos en tren."
+              }
+            },
+            {
+              "es": "Wir fahren ohne den Zug.",
+              "tr": {
+                "en": "We go without the train.",
+                "es": "Vamos sin el tren."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Anna ist beim Arzt.",
+          "b": "Anna geht zum Arzt.",
+          "note": {
+            "en": "bei says where she is, at the doctor's. zu says where she is going, to the doctor. Both take the dative.",
+            "es": "bei dice dónde está, con el médico. zu dice adónde va, al médico. Las dos llevan dativo."
+          },
+          "examples": [
+            {
+              "es": "Paul ist bei Anna.",
+              "tr": {
+                "en": "Paul is at Anna's.",
+                "es": "Paul está en casa de Anna."
+              }
+            },
+            {
+              "es": "Paul geht zu Anna.",
+              "tr": {
+                "en": "Paul goes to Anna's.",
+                "es": "Paul va a casa de Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: after mit, nach, aus, bei, seit, von and zu the accusative is wrong (mit dem Bus, not mit den Bus). Do not use nach for people or for places with an article: nach is for cities and countries without an article and for nach Hause, while zu is for people and most places (zum Arzt). Do not forget the -n on the dative plural noun (mit den Kindern). And learn the short forms zum, zur, beim, vom.",
+        "es": "Trampas clásicas: después de mit, nach, aus, bei, seit, von y zu el acusativo es incorrecto (mit dem Bus, no mit den Bus). No uses nach para personas ni para lugares con artículo: nach es para ciudades y países sin artículo y para nach Hause, mientras que zu es para personas y la mayoría de los lugares (zum Arzt). No olvides la -n en el sustantivo plural del dativo (mit den Kindern). Y aprende las formas cortas zum, zur, beim, vom."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Seven prepositions always take the dative: aus, bei, mit, nach, seit, von and zu. Masculine and neuter nouns take dem, feminine nouns take der, and plural nouns take den: «Ich fahre mit dem Bus», «Paul kommt aus der Schule». In the plural the noun gets an -n: «mit den Kindern». Often the preposition merges with the article: «Ich gehe zum Arzt», «Wir gehen zur Schule». For cities say «Wir fahren nach Berlin».",
+    "es": "Siete preposiciones llevan siempre dativo: aus, bei, mit, nach, seit, von y zu. Los sustantivos masculinos y neutros llevan dem, los femeninos llevan der y los plurales llevan den: «Ich fahre mit dem Bus», «Paul kommt aus der Schule». En plural el sustantivo recibe una -n: «mit den Kindern». A menudo la preposición se funde con el artículo: «Ich gehe zum Arzt», «Wir gehen zur Schule». Para ciudades di «Wir fahren nach Berlin»."
+  },
+  "items": [
+    {
+      "id": "praepositionen-dativ-c01",
+      "sentence": "Ich fahre mit ___ Bus.",
+      "options": [
+        "dem",
+        "den",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mit always takes the dative, and the dative of the masculine noun Bus is dem: mit dem Bus.",
+        "es": "mit lleva siempre dativo, y el dativo del sustantivo masculino Bus es dem: mit dem Bus."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the masculine accusative. mit does not take the accusative, it takes the dative: dem.",
+          "es": "den es el acusativo masculino. mit no lleva acusativo, lleva dativo: dem."
+        },
+        "der": {
+          "en": "der is the feminine dative. Bus is masculine, so you need dem.",
+          "es": "der es el dativo femenino. Bus es masculino, así que necesitas dem."
+        }
+      },
+      "examples": [
+        "Wir fahren mit dem Zug.",
+        "Ich fahre mit dem Auto."
+      ],
+      "tr": {
+        "en": "I go by bus.",
+        "es": "Voy en camión."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f01",
+      "kind": "form",
+      "verb": "maskulin",
+      "person": "mit",
+      "answer": "mit dem",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "praepositionen-dativ-c02",
+      "sentence": "Paul kommt aus ___ Schule.",
+      "options": [
+        "die",
+        "der",
+        "dem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "aus takes the dative, and the dative of the feminine noun Schule is der: aus der Schule.",
+        "es": "aus lleva dativo, y el dativo del sustantivo femenino Schule es der: aus der Schule."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the feminine nominative and accusative. aus takes the dative, so the feminine article is der.",
+          "es": "die es el nominativo y acusativo femenino. aus lleva dativo, así que el artículo femenino es der."
+        },
+        "dem": {
+          "en": "dem is the dative of masculine and neuter nouns. Schule is feminine, so you need der.",
+          "es": "dem es el dativo de sustantivos masculinos y neutros. Schule es femenino, así que necesitas der."
+        }
+      },
+      "examples": [
+        "Anna kommt aus der Apotheke.",
+        "Paul kommt aus der Küche."
+      ],
+      "tr": {
+        "en": "Paul comes out of school.",
+        "es": "Paul sale de la escuela."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f02",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "zu dem",
+      "answer": "zum",
+      "table": "dativ-kontraktion"
+    },
+    {
+      "id": "praepositionen-dativ-c03",
+      "sentence": "Wir fahren ___ Berlin.",
+      "options": [
+        "zu",
+        "bei",
+        "nach"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Berlin is a city without an article, so you use nach: Wir fahren nach Berlin.",
+        "es": "Berlín es una ciudad sin artículo, así que se usa nach: Wir fahren nach Berlin."
+      },
+      "wrong": {
+        "zu": {
+          "en": "zu is for people and for most places with an article, such as zum Bahnhof. For a city without an article you need nach.",
+          "es": "zu es para personas y para la mayoría de los lugares con artículo, como zum Bahnhof. Para una ciudad sin artículo necesitas nach."
+        },
+        "bei": {
+          "en": "bei means at a place. It does not show the direction of the trip, so you need nach.",
+          "es": "bei significa «en» un lugar. No muestra la dirección del viaje, así que necesitas nach."
+        }
+      },
+      "examples": [
+        "Wir fahren nach Hamburg.",
+        "Anna fährt nach Köln."
+      ],
+      "tr": {
+        "en": "We are going to Berlin.",
+        "es": "Vamos a Berlín."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f03",
+      "kind": "form",
+      "verb": "mit",
+      "person": "der Zug",
+      "answer": "mit dem Zug",
+      "table": "dativ-phrasen"
+    },
+    {
+      "id": "praepositionen-dativ-w01",
+      "kind": "why",
+      "es": "Ich fahre mit dem Bus.",
+      "target": "dem",
+      "tr": {
+        "en": "I go by bus.",
+        "es": "Voy en camión."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "mit always takes the dative, and the masculine dative article is dem",
+            "es": "mit lleva siempre dativo, y el artículo masculino del dativo es dem"
+          }
+        },
+        {
+          "text": {
+            "en": "mit takes the accusative, so the article is den",
+            "es": "mit lleva acusativo, así que el artículo es den"
+          },
+          "wrong": {
+            "en": "mit is on the dative list: aus, bei, mit, nach, seit, von, zu. The accusative list is different: durch, für, gegen, ohne, um.",
+            "es": "mit está en la lista del dativo: aus, bei, mit, nach, seit, von, zu. La lista del acusativo es otra: durch, für, gegen, ohne, um."
+          }
+        },
+        {
+          "text": {
+            "en": "dem is used because a bus is a thing, not a person",
+            "es": "dem se usa porque un camión es una cosa, no una persona"
+          },
+          "wrong": {
+            "en": "The preposition and the gender decide, not whether it is a person. Mit dem Lehrer also has dem.",
+            "es": "La preposición y el género deciden, no si es una persona. Mit dem Lehrer también lleva dem."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "praepositionen-dativ-c04",
+      "sentence": "Ich gehe ___ Arzt.",
+      "options": [
+        "zur",
+        "zum",
+        "beim"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "zu takes the dative, and the masculine noun Arzt takes dem. zu + dem becomes zum: Ich gehe zum Arzt.",
+        "es": "zu lleva dativo, y el sustantivo masculino Arzt lleva dem. zu + dem se convierte en zum: Ich gehe zum Arzt."
+      },
+      "wrong": {
+        "zur": {
+          "en": "zur is zu + der, the feminine form. Arzt is masculine, so you need zum.",
+          "es": "zur es zu + der, la forma femenina. Arzt es masculino, así que necesitas zum."
+        },
+        "beim": {
+          "en": "beim is bei + dem and means at the doctor's, not going to the doctor. You need zum for the direction.",
+          "es": "beim es bei + dem y significa «con el médico», no «ir al médico». Necesitas zum para la dirección."
+        }
+      },
+      "examples": [
+        "Anna geht zum Lehrer.",
+        "Wir gehen zum Bahnhof."
+      ],
+      "tr": {
+        "en": "I am going to the doctor.",
+        "es": "Voy al médico."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f04",
+      "kind": "form",
+      "verb": "feminin",
+      "person": "aus",
+      "answer": "aus der",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "praepositionen-dativ-c05",
+      "sentence": "Wir gehen ___ Schule.",
+      "options": [
+        "zur",
+        "zum",
+        "nach"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "zu takes the dative, and the feminine noun Schule takes der. zu + der becomes zur: Wir gehen zur Schule.",
+        "es": "zu lleva dativo, y el sustantivo femenino Schule lleva der. zu + der se convierte en zur: Wir gehen zur Schule."
+      },
+      "wrong": {
+        "zum": {
+          "en": "zum is zu + dem, the form for masculine and neuter nouns. Schule is feminine, so you need zur.",
+          "es": "zum es zu + dem, la forma para sustantivos masculinos y neutros. Schule es femenino, así que necesitas zur."
+        },
+        "nach": {
+          "en": "nach is for cities and countries without an article. A school is a place with an article, so you need zur.",
+          "es": "nach es para ciudades y países sin artículo. Una escuela es un lugar con artículo, así que necesitas zur."
+        }
+      },
+      "examples": [
+        "Paul geht zur Bank.",
+        "Anna geht zur Apotheke."
+      ],
+      "tr": {
+        "en": "We are going to school.",
+        "es": "Vamos a la escuela."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f05",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "zu der",
+      "answer": "zur",
+      "table": "dativ-kontraktion"
+    },
+    {
+      "id": "praepositionen-dativ-c06",
+      "sentence": "Ich komme ___ Mexiko.",
+      "options": [
+        "von",
+        "zu",
+        "aus"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "aus names the country you come from: Ich komme aus Mexiko. Countries without an article need no article after aus.",
+        "es": "aus nombra el país del que vienes: Ich komme aus Mexiko. Los países sin artículo no llevan artículo después de aus."
+      },
+      "wrong": {
+        "von": {
+          "en": "von means from or of, for example Das Buch ist von Anna. For the country you come from, German uses aus.",
+          "es": "von significa «de», por ejemplo Das Buch ist von Anna. Para el país del que vienes, el alemán usa aus."
+        },
+        "zu": {
+          "en": "zu is a direction towards a person or place, not where you come from. You need aus.",
+          "es": "zu es una dirección hacia una persona o lugar, no el lugar de origen. Necesitas aus."
+        }
+      },
+      "examples": [
+        "Anna kommt aus Spanien.",
+        "Wir kommen aus Köln."
+      ],
+      "tr": {
+        "en": "I come from Mexico.",
+        "es": "Soy de México."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f06",
+      "kind": "form",
+      "verb": "aus",
+      "person": "die Familie",
+      "answer": "aus der Familie",
+      "table": "dativ-phrasen"
+    },
+    {
+      "id": "praepositionen-dativ-w02",
+      "kind": "why",
+      "es": "Wir gehen zur Schule.",
+      "target": "zur",
+      "tr": {
+        "en": "We are going to school.",
+        "es": "Vamos a la escuela."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "zur is zu + die, because Schule is feminine",
+            "es": "zur es zu + die, porque Schule es femenino"
+          },
+          "wrong": {
+            "en": "zu takes the dative, not the accusative. The feminine dative article is der, so zur is zu + der.",
+            "es": "zu lleva dativo, no acusativo. El artículo femenino del dativo es der, así que zur es zu + der."
+          }
+        },
+        {
+          "text": {
+            "en": "zur is zu + der: zu takes the dative and Schule is feminine",
+            "es": "zur es zu + der: zu lleva dativo y Schule es femenino"
+          }
+        },
+        {
+          "text": {
+            "en": "zur is a plural form",
+            "es": "zur es una forma plural"
+          },
+          "wrong": {
+            "en": "The dative plural is zu den. zur belongs to a feminine singular noun such as Schule.",
+            "es": "El dativo plural es zu den. zur corresponde a un sustantivo femenino singular como Schule."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "praepositionen-dativ-c07",
+      "sentence": "Anna ist ___ Paul.",
+      "options": [
+        "zu",
+        "bei",
+        "nach"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "bei means at somebody's place, so it says where Anna is: Anna ist bei Paul.",
+        "es": "bei significa «en casa de alguien», así que dice dónde está Anna: Anna ist bei Paul."
+      },
+      "wrong": {
+        "zu": {
+          "en": "zu says where somebody goes, as in Anna geht zu Paul. The verb ist asks for the place where she is, so you need bei.",
+          "es": "zu dice adónde va alguien, como en Anna geht zu Paul. El verbo ist pide el lugar donde está, así que necesitas bei."
+        },
+        "nach": {
+          "en": "nach is for cities, countries and nach Hause. It does not go with a person, so you need bei.",
+          "es": "nach es para ciudades, países y nach Hause. No va con una persona, así que necesitas bei."
+        }
+      },
+      "examples": [
+        "Paul ist bei Anna.",
+        "Der Hund ist bei Paul."
+      ],
+      "tr": {
+        "en": "Anna is at Paul's.",
+        "es": "Anna está en casa de Paul."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f07",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "bei",
+      "answer": "bei den",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "praepositionen-dativ-c08",
+      "sentence": "Das Buch ist ___ Anna.",
+      "options": [
+        "von",
+        "aus",
+        "nach"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "von shows who the book is from or belongs to: Das Buch ist von Anna.",
+        "es": "von muestra de quién es el libro o quién lo da: Das Buch ist von Anna."
+      },
+      "wrong": {
+        "aus": {
+          "en": "aus means out of or a country of origin. It does not show who a book is from, so you need von.",
+          "es": "aus significa «de dentro de» o un país de origen. No muestra de quién es un libro, así que necesitas von."
+        },
+        "nach": {
+          "en": "nach is for cities, countries and nach Hause. It does not show who the book is from, so you need von.",
+          "es": "nach es para ciudades, países y nach Hause. No muestra de quién es el libro, así que necesitas von."
+        }
+      },
+      "examples": [
+        "Das Geschenk ist von Paul.",
+        "Der Brief ist von Anna."
+      ],
+      "tr": {
+        "en": "The book is from Anna.",
+        "es": "El libro es de Anna."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f08",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "bei dem",
+      "answer": "beim",
+      "table": "dativ-kontraktion"
+    },
+    {
+      "id": "praepositionen-dativ-c09",
+      "sentence": "Ich wohne ___ einem Jahr in Berlin.",
+      "options": [
+        "von",
+        "bei",
+        "seit"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "seit means since or for a length of time: Ich wohne seit einem Jahr in Berlin.",
+        "es": "seit significa «desde» o «hace» una duración: Ich wohne seit einem Jahr in Berlin."
+      },
+      "wrong": {
+        "von": {
+          "en": "von means from or of. It does not express how long you have lived somewhere, so you need seit.",
+          "es": "von significa «de». No expresa cuánto tiempo llevas viviendo en algún lugar, así que necesitas seit."
+        },
+        "bei": {
+          "en": "bei means at somebody's place. It does not express a length of time, so you need seit.",
+          "es": "bei significa «en casa de alguien». No expresa una duración, así que necesitas seit."
+        }
+      },
+      "examples": [
+        "Anna wohnt seit einem Monat hier.",
+        "Wir lernen seit einem Jahr Deutsch."
+      ],
+      "tr": {
+        "en": "I have lived in Berlin for a year.",
+        "es": "Vivo en Berlín desde hace un año."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f09",
+      "kind": "form",
+      "verb": "mit",
+      "person": "die Kinder",
+      "answer": "mit den Kindern",
+      "table": "dativ-phrasen"
+    },
+    {
+      "id": "praepositionen-dativ-w03",
+      "kind": "why",
+      "es": "Anna spielt mit den Freunden.",
+      "target": "Freunden",
+      "tr": {
+        "en": "Anna plays with the friends.",
+        "es": "Anna juega con los amigos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The noun gets an -n in the dative plural",
+            "es": "El sustantivo recibe una -n en el plural del dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "-en is the normal plural ending of Freund in every case",
+            "es": "-en es la terminación normal del plural de Freund en todos los casos"
+          },
+          "wrong": {
+            "en": "The plural of Freund is Freunde. The extra -n appears only in the dative plural: den Freunden.",
+            "es": "El plural de Freund es Freunde. La -n adicional aparece solo en el dativo plural: den Freunden."
+          }
+        },
+        {
+          "text": {
+            "en": "-en shows that the verb is plural",
+            "es": "-en muestra que el verbo es plural"
+          },
+          "wrong": {
+            "en": "The verb spielt is singular here. The ending belongs to the noun and comes from the dative plural.",
+            "es": "El verbo spielt es singular aquí. La terminación pertenece al sustantivo y viene del dativo plural."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "praepositionen-dativ-c10",
+      "sentence": "Wir spielen mit ___ Kindern.",
+      "options": [
+        "den",
+        "die",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kinder is plural, and the dative plural article is den. The noun also gets an -n: mit den Kindern.",
+        "es": "Kinder es plural, y el artículo del dativo plural es den. El sustantivo también recibe una -n: mit den Kindern."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the plural nominative and accusative. mit takes the dative, so the plural article is den.",
+          "es": "die es el nominativo y acusativo plural. mit lleva dativo, así que el artículo plural es den."
+        },
+        "dem": {
+          "en": "dem is the dative of masculine and neuter singular nouns. Kindern is plural, so you need den.",
+          "es": "dem es el dativo de sustantivos masculinos y neutros en singular. Kindern es plural, así que necesitas den."
+        }
+      },
+      "examples": [
+        "Anna spielt mit den Freunden.",
+        "Ich fahre mit den Kindern."
+      ],
+      "tr": {
+        "en": "We play with the children.",
+        "es": "Jugamos con los niños."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f10",
+      "kind": "form",
+      "verb": "neutral",
+      "person": "nach",
+      "answer": "nach dem",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "praepositionen-dativ-c11",
+      "sentence": "Der Zug kommt ___ Bahnhof.",
+      "options": [
+        "von",
+        "vom",
+        "zum"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "von takes the dative, and the masculine noun Bahnhof takes dem. von + dem becomes vom: Der Zug kommt vom Bahnhof.",
+        "es": "von lleva dativo, y el sustantivo masculino Bahnhof lleva dem. von + dem se convierte en vom: Der Zug kommt vom Bahnhof."
+      },
+      "wrong": {
+        "von": {
+          "en": "von alone leaves the article out. The masculine noun Bahnhof needs dem, so use vom.",
+          "es": "von solo omite el artículo. El sustantivo masculino Bahnhof necesita dem, así que usa vom."
+        },
+        "zum": {
+          "en": "zum is zu + dem and means to. The train comes from the station, so you need vom.",
+          "es": "zum es zu + dem y significa «a». El tren viene de la estación, así que necesitas vom."
+        }
+      },
+      "examples": [
+        "Anna kommt vom Arzt.",
+        "Paul kommt vom Markt."
+      ],
+      "tr": {
+        "en": "The train comes from the station.",
+        "es": "El tren viene de la estación."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f11",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "von dem",
+      "answer": "vom",
+      "table": "dativ-kontraktion"
+    },
+    {
+      "id": "praepositionen-dativ-c12",
+      "sentence": "Ich bin ___ Arzt.",
+      "options": [
+        "zum",
+        "zur",
+        "beim"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "bei takes the dative, and the masculine noun Arzt takes dem. bei + dem becomes beim: Ich bin beim Arzt.",
+        "es": "bei lleva dativo, y el sustantivo masculino Arzt lleva dem. bei + dem se convierte en beim: Ich bin beim Arzt."
+      },
+      "wrong": {
+        "zum": {
+          "en": "zum is zu + dem and shows the direction, I go to the doctor. Ich bin asks where you are, so you need beim.",
+          "es": "zum es zu + dem y muestra la dirección, «voy al médico». Ich bin pregunta dónde estás, así que necesitas beim."
+        },
+        "zur": {
+          "en": "zur is zu + der, the feminine form, and it shows the direction. Arzt is masculine and you are there, so you need beim.",
+          "es": "zur es zu + der, la forma femenina, y muestra la dirección. Arzt es masculino y estás allí, así que necesitas beim."
+        }
+      },
+      "examples": [
+        "Anna ist beim Lehrer.",
+        "Der Hund ist beim Arzt."
+      ],
+      "tr": {
+        "en": "I am at the doctor's.",
+        "es": "Estoy con el médico."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-f12",
+      "kind": "form",
+      "verb": "aus",
+      "person": "das Haus",
+      "answer": "aus dem Haus",
+      "table": "dativ-phrasen"
+    },
+    {
+      "id": "praepositionen-dativ-c13",
+      "sentence": "Anna fährt mit ___ U-Bahn.",
+      "options": [
+        "der",
+        "die",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mit takes the dative, and the dative of the feminine noun U-Bahn is der: mit der U-Bahn.",
+        "es": "mit lleva dativo, y el dativo del sustantivo femenino U-Bahn es der: mit der U-Bahn."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the feminine nominative and accusative. mit takes the dative, so the feminine article is der.",
+          "es": "die es el nominativo y acusativo femenino. mit lleva dativo, así que el artículo femenino es der."
+        },
+        "dem": {
+          "en": "dem is the dative of masculine and neuter nouns. U-Bahn is feminine, so you need der.",
+          "es": "dem es el dativo de sustantivos masculinos y neutros. U-Bahn es femenino, así que necesitas der."
+        }
+      },
+      "examples": [
+        "Paul fährt mit der Straßenbahn.",
+        "Ich fahre mit der U-Bahn."
+      ],
+      "tr": {
+        "en": "Anna goes by subway.",
+        "es": "Anna va en el metro."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-c14",
+      "sentence": "Nach ___ Essen gehen wir nach Hause.",
+      "options": [
+        "den",
+        "dem",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "nach takes the dative, and Essen is neuter, so the article is dem: Nach dem Essen gehen wir nach Hause.",
+        "es": "nach lleva dativo, y Essen es neutro, así que el artículo es dem: Nach dem Essen gehen wir nach Hause."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the masculine accusative and the dative plural. Essen is neuter singular, so you need dem.",
+          "es": "den es el acusativo masculino y el dativo plural. Essen es neutro singular, así que necesitas dem."
+        },
+        "der": {
+          "en": "der is the feminine dative. Essen is neuter, so you need dem.",
+          "es": "der es el dativo femenino. Essen es neutro, así que necesitas dem."
+        }
+      },
+      "examples": [
+        "Nach dem Frühstück lernen wir.",
+        "Nach dem Unterricht gehen wir."
+      ],
+      "tr": {
+        "en": "After the meal we go home.",
+        "es": "Después de comer nos vamos a casa."
+      }
+    },
+    {
+      "id": "praepositionen-dativ-w04",
+      "kind": "why",
+      "es": "Ich komme aus Mexiko.",
+      "target": "aus",
+      "tr": {
+        "en": "I come from Mexico.",
+        "es": "Soy de México."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "aus needs an article here: aus dem Mexiko",
+            "es": "aus necesita un artículo aquí: aus dem Mexiko"
+          },
+          "wrong": {
+            "en": "Countries without an article, like Mexiko, stand without an article. Only a few countries have one, such as die Schweiz.",
+            "es": "Los países sin artículo, como Mexiko, van sin artículo. Solo unos pocos países lo llevan, como die Schweiz."
+          }
+        },
+        {
+          "text": {
+            "en": "aus names the place of origin, and Mexiko needs no article",
+            "es": "aus nombra el lugar de origen, y Mexiko no necesita artículo"
+          }
+        },
+        {
+          "text": {
+            "en": "aus is used for the place you are going to",
+            "es": "aus se usa para el lugar al que vas"
+          },
+          "wrong": {
+            "en": "For going to a city or country you use nach: Ich fahre nach Mexiko. aus is the place you come from.",
+            "es": "Para ir a una ciudad o país se usa nach: Ich fahre nach Mexiko. aus es el lugar de donde vienes."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
