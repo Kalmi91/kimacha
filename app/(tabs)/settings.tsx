@@ -20,6 +20,7 @@ import { appBuildTag } from '@/lib/appBuild';
 import { languages, pairLabel, supportedPairs } from '@/lib/languages';
 import { useBeta, setBeta, BETA_FLAGS, type BetaFlag } from '@/lib/beta';
 import { useSettingsScreen } from '@/lib/settings/useSettingsScreen';
+import BetterVoiceRows from '@/components/settings/BetterVoiceRows';
 
 const appVersionLabel = appBuildTag();
 
@@ -122,6 +123,9 @@ export default function SettingsScreen() {
           </Text>
         </Row>
       )}
+
+      {/* the on-device neural voices (download, switch, sentence engine per language). */}
+      <BetterVoiceRows Row={Row} />
 
       {/* the "weekly goal reached" card is gone (felesleges);
           the reached state stays as the green tag on the goal row below. */}
