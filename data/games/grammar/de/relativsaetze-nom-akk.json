@@ -1,0 +1,1015 @@
+{
+  "schema": 2,
+  "topic": "relativsaetze-nom-akk",
+  "level": "B1",
+  "title": {
+    "en": "Relative clauses: nominative and accusative",
+    "es": "Oraciones de relativo: nominativo y acusativo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A relative clause adds information to a noun: Der Mann, der dort steht, ist mein Lehrer. The relative pronoun looks like the definite article (der, die, das, die; accusative masculine den). Its gender and number come from the noun it refers to, its case from its job inside the relative clause. The clause stands right after the noun, between commas, and the conjugated verb goes to the end. English can drop the pronoun (the man I know); German never does.",
+        "es": "Una oración de relativo añade información a un sustantivo: Der Mann, der dort steht, ist mein Lehrer. El pronombre relativo se parece al artículo definido (der, die, das, die; acusativo masculino den). Su género y su número vienen del sustantivo al que se refiere, y su caso, de la función que tiene dentro de la oración de relativo. La oración va justo después del sustantivo, entre comas, y el verbo conjugado va al final. El inglés puede omitir el pronombre (the man I know); el alemán nunca."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "relativpronomen",
+      "title": {
+        "en": "The relative pronoun",
+        "es": "El pronombre relativo"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "Nominativ",
+          "es": "Nominativ"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "der",
+          "den"
+        ],
+        [
+          "feminin",
+          "die",
+          "die"
+        ],
+        [
+          "neutral",
+          "das",
+          "das"
+        ],
+        [
+          "Plural",
+          "die",
+          "die"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nomen-relativ",
+      "title": {
+        "en": "Which pronoun after which noun",
+        "es": "Qué pronombre después de qué sustantivo"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "Nominativ",
+          "es": "Nominativ"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        }
+      ],
+      "rows": [
+        [
+          "Mann",
+          "der",
+          "den"
+        ],
+        [
+          "Frau",
+          "die",
+          "die"
+        ],
+        [
+          "Kind",
+          "das",
+          "das"
+        ],
+        [
+          "Tisch",
+          "der",
+          "den"
+        ],
+        [
+          "Buch",
+          "das",
+          "das"
+        ],
+        [
+          "Kinder",
+          "die",
+          "die"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Where the case comes from",
+        "es": "De dónde viene el caso"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Nominative: the noun is the subject of the relative clause (it does the action). Ask: who or what does it? Gender comes from the noun, case from the clause.",
+            "es": "Nominativo: el sustantivo es el sujeto de la oración de relativo (hace la acción). Pregunta: ¿quién o qué lo hace? El género viene del sustantivo, el caso de la oración."
+          },
+          "examples": [
+            {
+              "es": "Der Mann, der dort steht, ist mein Lehrer.",
+              "tr": {
+                "en": "The man who is standing there is my teacher.",
+                "es": "El hombre que está parado allí es mi maestro."
+              }
+            },
+            {
+              "es": "Ich kenne eine Frau, die sehr gut singt.",
+              "tr": {
+                "en": "I know a woman who sings very well.",
+                "es": "Conozco a una mujer que canta muy bien."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Accusative: the noun is the object of the relative clause (something happens to it). Only the masculine changes: der becomes den. The case of the noun in the main clause does not matter.",
+            "es": "Acusativo: el sustantivo es el complemento directo de la oración de relativo (algo le pasa). Solo el masculino cambia: der pasa a den. El caso del sustantivo en la oración principal no importa."
+          },
+          "examples": [
+            {
+              "es": "Der Mann, den ich kenne, wohnt hier.",
+              "tr": {
+                "en": "The man I know lives here.",
+                "es": "El hombre que conozco vive aquí."
+              }
+            },
+            {
+              "es": "Das Auto, das ich kaufe, ist rot.",
+              "tr": {
+                "en": "The car I am buying is red.",
+                "es": "El carro que voy a comprar es rojo."
+              }
+            },
+            {
+              "es": "Ich habe einen Freund, der in Berlin wohnt.",
+              "tr": {
+                "en": "I have a friend who lives in Berlin.",
+                "es": "Tengo un amigo que vive en Berlín."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Verb at the end, commas",
+        "es": "El verbo al final, las comas"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "The conjugated verb stands last in the relative clause. With Perfekt it is the auxiliary (gesehen habe), with a modal verb the modal (sehen will), and a separable verb stays in one piece (anrufe).",
+            "es": "El verbo conjugado va al final de la oración de relativo. Con Perfekt es el auxiliar (gesehen habe), con un verbo modal es el modal (sehen will), y un verbo separable se queda en una pieza (anrufe)."
+          },
+          "examples": [
+            {
+              "es": "Das ist der Film, den ich gestern gesehen habe.",
+              "tr": {
+                "en": "That is the film I saw yesterday.",
+                "es": "Esa es la película que vi ayer."
+              }
+            },
+            {
+              "es": "Das ist der Mann, den ich morgen anrufe.",
+              "tr": {
+                "en": "That is the man I will call tomorrow.",
+                "es": "Ese es el hombre al que voy a llamar mañana."
+              }
+            },
+            {
+              "es": "Der Film, den ich sehen will, ist neu.",
+              "tr": {
+                "en": "The film I want to see is new.",
+                "es": "La película que quiero ver es nueva."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A comma stands before the relative clause and after it. When the main clause goes on, its verb comes right after the second comma.",
+            "es": "Una coma va antes de la oración de relativo y otra después. Si la oración principal continúa, su verbo va justo después de la segunda coma."
+          },
+          "examples": [
+            {
+              "es": "Die Kinder, die im Garten spielen, sind laut.",
+              "tr": {
+                "en": "The children who are playing in the garden are loud.",
+                "es": "Los niños que juegan en el jardín hacen ruido."
+              }
+            },
+            {
+              "es": "Ich mag Bücher, die lustig sind.",
+              "tr": {
+                "en": "I like books that are funny.",
+                "es": "Me gustan los libros que son divertidos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "relativsatz-bau",
+      "title": {
+        "en": "Two sentences become one",
+        "es": "Dos oraciones se convierten en una"
+      },
+      "header": [
+        {
+          "en": "Two sentences",
+          "es": "Dos oraciones"
+        },
+        {
+          "en": "One sentence",
+          "es": "Una oración"
+        }
+      ],
+      "rows": [
+        [
+          "Ich kenne den Mann. Der Mann wohnt hier.",
+          "Ich kenne den Mann, der hier wohnt."
+        ],
+        [
+          "Das ist der Mann. Ich kenne den Mann.",
+          "Das ist der Mann, den ich kenne."
+        ],
+        [
+          "Wir haben ein Kind. Das Kind spielt gern.",
+          "Wir haben ein Kind, das gern spielt."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Subject or object: der or den?",
+        "es": "¿Sujeto u objeto: der o den?"
+      },
+      "pairs": [
+        {
+          "a": "der",
+          "b": "den",
+          "note": {
+            "en": "Ask what the man is inside the relative clause. If he does the action, the pronoun is der. If something happens to him, it is den. The main clause does not decide.",
+            "es": "Pregunta qué es el hombre dentro de la oración de relativo. Si él hace la acción, el pronombre es der. Si algo le pasa a él, es den. La oración principal no decide."
+          },
+          "examples": [
+            {
+              "es": "Der Mann, der mich kennt, wohnt hier.",
+              "tr": {
+                "en": "The man who knows me lives here.",
+                "es": "El hombre que me conoce vive aquí."
+              }
+            },
+            {
+              "es": "Der Mann, den ich kenne, wohnt hier.",
+              "tr": {
+                "en": "The man whom I know lives here.",
+                "es": "El hombre a quien conozco vive aquí."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not leave the pronoun out (not der Mann ich kenne). Do not put the verb in second position (not der Mann, der steht dort). Take the gender from the noun and the case from the relative clause: in Ich habe einen Freund, der in Berlin wohnt, the friend is accusative in the main clause but nominative in the relative clause. Never use wer or was for people and things you already named. Only the masculine accusative shows a new form: den.",
+        "es": "Trampas clásicas: no omitas el pronombre (no der Mann ich kenne). No pongas el verbo en segunda posición (no der Mann, der steht dort). Toma el género del sustantivo y el caso de la oración de relativo: en Ich habe einen Freund, der in Berlin wohnt, el amigo es acusativo en la oración principal, pero nominativo en la de relativo. Nunca uses wer ni was para personas y cosas que ya nombraste. Solo el acusativo masculino tiene una forma nueva: den."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A relative clause tells you more about a noun. The relative pronoun looks like the article: «der», «die», «das», and «den» for a masculine object. «Der Mann, der dort steht, ist mein Lehrer.» The gender comes from the noun, the case from the relative clause: «Der Mann, den ich kenne, wohnt hier.» The verb goes to the end of the clause, and commas stand before and after it.",
+    "es": "Una oración de relativo dice más sobre un sustantivo. El pronombre relativo se parece al artículo: «der», «die», «das», y «den» para un complemento masculino. «Der Mann, der dort steht, ist mein Lehrer.» El género viene del sustantivo, el caso de la oración de relativo: «Der Mann, den ich kenne, wohnt hier.» El verbo va al final de la oración, y las comas van antes y después."
+  },
+  "items": [
+    {
+      "id": "relativsaetze-nom-akk-c01",
+      "sentence": "Der Mann, ___ dort steht, ist mein Lehrer.",
+      "options": [
+        "den",
+        "der",
+        "die"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Mann is masculine, and the man is the one who stands there, so he is the subject: nominative der.",
+        "es": "Mann es masculino, y el hombre es quien está parado allí, así que es el sujeto: nominativo der."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the accusative. The man is not the object here: he does the standing, so he is the subject.",
+          "es": "den es el acusativo. El hombre no es el complemento aquí: él es quien está parado, así que es el sujeto."
+        },
+        "die": {
+          "en": "die is feminine or plural. Mann is masculine, so the pronoun must be der or den.",
+          "es": "die es femenino o plural. Mann es masculino, así que el pronombre debe ser der o den."
+        }
+      },
+      "examples": [
+        "Der Mann, der hier wohnt, ist nett.",
+        "Der Lehrer, der dort sitzt, heißt Paul."
+      ],
+      "tr": {
+        "en": "The man who is standing there is my teacher.",
+        "es": "El hombre que está parado allí es mi maestro."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f01",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "maskulin",
+      "answer": "der",
+      "table": "relativpronomen"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c02",
+      "sentence": "Der Mann, ___ ich kenne, wohnt hier.",
+      "options": [
+        "die",
+        "der",
+        "den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The man is masculine and he is the object of kenne (I know him): accusative den.",
+        "es": "El hombre es masculino y es el complemento de kenne (lo conozco): acusativo den."
+      },
+      "wrong": {
+        "der": {
+          "en": "der would make the man the subject. But ich is the subject of kenne, and the man is the object.",
+          "es": "der haría del hombre el sujeto. Pero ich es el sujeto de kenne, y el hombre es el complemento."
+        },
+        "die": {
+          "en": "die is feminine or plural. The antecedent Mann is masculine and needs den in the accusative.",
+          "es": "die es femenino o plural. El antecedente Mann es masculino y necesita den en acusativo."
+        }
+      },
+      "examples": [
+        "Der Film, den ich sehe, ist neu.",
+        "Der Tisch, den ich kaufe, ist groß."
+      ],
+      "tr": {
+        "en": "The man I know lives here.",
+        "es": "El hombre que conozco vive aquí."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f02",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "Mann",
+      "answer": "den",
+      "table": "nomen-relativ"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c03",
+      "sentence": "Die Frau, ___ ich suche, heißt Anna.",
+      "options": [
+        "der",
+        "die",
+        "den"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Frau is feminine, and the feminine accusative is the same as the nominative: die.",
+        "es": "Frau es femenino, y el acusativo femenino es igual que el nominativo: die."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the masculine nominative. Frau is feminine, so the pronoun cannot be der.",
+          "es": "der es el nominativo masculino. Frau es femenino, así que el pronombre no puede ser der."
+        },
+        "den": {
+          "en": "den is only for masculine nouns in the accusative. Feminine nouns keep die.",
+          "es": "den es solo para sustantivos masculinos en acusativo. Los femeninos conservan die."
+        }
+      },
+      "examples": [
+        "Die Lehrerin, die ich kenne, ist nett.",
+        "Die Katze, die ich suche, ist klein."
+      ],
+      "tr": {
+        "en": "The woman I am looking for is called Anna.",
+        "es": "La mujer que busco se llama Anna."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f03",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "maskulin",
+      "answer": "den",
+      "table": "relativpronomen"
+    },
+    {
+      "id": "relativsaetze-nom-akk-w01",
+      "kind": "why",
+      "es": "Das ist der Mann, den ich kenne.",
+      "target": "den",
+      "tr": {
+        "en": "That is the man I know.",
+        "es": "Ese es el hombre que conozco."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "der: the pronoun copies the article of der Mann in the main clause",
+            "es": "der: el pronombre copia el artículo de der Mann de la oración principal"
+          },
+          "wrong": {
+            "en": "The gender comes from the noun, but the case does not. In the relative clause the man is the object of kenne, so the pronoun changes to den.",
+            "es": "El género viene del sustantivo, pero el caso no. En la oración de relativo el hombre es el complemento de kenne, así que el pronombre cambia a den."
+          }
+        },
+        {
+          "text": {
+            "en": "den: masculine because of Mann, accusative because he is the object of kenne",
+            "es": "den: masculino por Mann, acusativo porque es el complemento de kenne"
+          }
+        },
+        {
+          "text": {
+            "en": "den: the verb kenne is at the end, so the accusative is needed",
+            "es": "den: el verbo kenne está al final, así que se necesita el acusativo"
+          },
+          "wrong": {
+            "en": "The position of the verb has nothing to do with the case. The accusative comes from the fact that ich kenne him, not from the verb being last.",
+            "es": "La posición del verbo no tiene nada que ver con el caso. El acusativo viene de que ich lo conozco a él, no de que el verbo esté al final."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "relativsaetze-nom-akk-c04",
+      "sentence": "Das Kind, ___ dort spielt, ist mein Sohn.",
+      "options": [
+        "das",
+        "der",
+        "die"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kind is neuter, so the pronoun is das. The nominative and the accusative of the neuter are the same.",
+        "es": "Kind es neutro, así que el pronombre es das. El nominativo y el acusativo del neutro son iguales."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is for masculine nouns. Kind is neuter, even though the child is a boy.",
+          "es": "der es para sustantivos masculinos. Kind es neutro, aunque el niño sea varón."
+        },
+        "die": {
+          "en": "die is feminine or plural. One child is singular and neuter, so you need das.",
+          "es": "die es femenino o plural. Un niño es singular y neutro, así que necesitas das."
+        }
+      },
+      "examples": [
+        "Das Mädchen, das singt, heißt Lena.",
+        "Das Haus, das dort steht, ist alt."
+      ],
+      "tr": {
+        "en": "The child who is playing there is my son.",
+        "es": "El niño que está jugando allí es mi hijo."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f04",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "Frau",
+      "answer": "die",
+      "table": "nomen-relativ"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c05",
+      "sentence": "Die Kinder, ___ im Garten spielen, sind laut.",
+      "options": [
+        "das",
+        "den",
+        "die"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Kinder is plural, and the plural pronoun is die in the nominative. The children are the ones who play.",
+        "es": "Kinder es plural, y el pronombre plural es die en nominativo. Los niños son quienes juegan."
+      },
+      "wrong": {
+        "das": {
+          "en": "das is singular neuter. Kinder is plural, so the singular das does not fit.",
+          "es": "das es singular neutro. Kinder es plural, así que el singular das no encaja."
+        },
+        "den": {
+          "en": "den is the masculine accusative. The plural nominative has no -n, it is die.",
+          "es": "den es el acusativo masculino. El nominativo plural no lleva -n, es die."
+        }
+      },
+      "examples": [
+        "Die Leute, die dort wohnen, sind nett.",
+        "Die Hunde, die bellen, sind groß."
+      ],
+      "tr": {
+        "en": "The children who are playing in the garden are loud.",
+        "es": "Los niños que juegan en el jardín hacen ruido."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f05",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "feminin",
+      "answer": "die",
+      "table": "relativpronomen"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c06",
+      "sentence": "Das Auto, ___ ich kaufe, ist rot.",
+      "options": [
+        "den",
+        "die",
+        "das"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Auto is neuter and it is the object of kaufe. The neuter accusative is das, the same as the nominative.",
+        "es": "Auto es neutro y es el complemento de kaufe. El acusativo neutro es das, igual que el nominativo."
+      },
+      "wrong": {
+        "den": {
+          "en": "den exists only for masculine nouns. Neuter nouns do not change in the accusative: das.",
+          "es": "den existe solo para sustantivos masculinos. Los neutros no cambian en acusativo: das."
+        },
+        "die": {
+          "en": "die is feminine or plural. Auto is neuter and singular, so it takes das.",
+          "es": "die es femenino o plural. Auto es neutro y singular, así que lleva das."
+        }
+      },
+      "examples": [
+        "Das Buch, das ich lese, ist lang.",
+        "Das Haus, das wir suchen, ist groß."
+      ],
+      "tr": {
+        "en": "The car I am buying is red.",
+        "es": "El carro que voy a comprar es rojo."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f06",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "Kind",
+      "answer": "das",
+      "table": "nomen-relativ"
+    },
+    {
+      "id": "relativsaetze-nom-akk-w02",
+      "kind": "why",
+      "es": "Die Kinder, die im Garten spielen, sind laut.",
+      "target": "die",
+      "tr": {
+        "en": "The children who are playing in the garden are loud.",
+        "es": "Los niños que juegan en el jardín hacen ruido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "das: Kind is neuter, so the pronoun is das",
+            "es": "das: Kind es neutro, así que el pronombre es das"
+          },
+          "wrong": {
+            "en": "Here the noun is Kinder, in the plural. The plural has one pronoun for all genders, so the singular das does not fit.",
+            "es": "Aquí el sustantivo es Kinder, en plural. El plural tiene un solo pronombre para todos los géneros, así que el singular das no encaja."
+          }
+        },
+        {
+          "text": {
+            "en": "die: the plural nominative of every gender is die",
+            "es": "die: el nominativo plural de todos los géneros es die"
+          }
+        },
+        {
+          "text": {
+            "en": "den: the verb spielen is plural, so the pronoun gets -n",
+            "es": "den: el verbo spielen es plural, así que el pronombre lleva -n"
+          },
+          "wrong": {
+            "en": "The plural nominative has no -n. The verb ending does not change the pronoun. The pronoun stays die.",
+            "es": "El nominativo plural no lleva -n. La terminación del verbo no cambia el pronombre. El pronombre se queda en die."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "relativsaetze-nom-akk-c07",
+      "sentence": "Ich habe einen Freund, ___ in Berlin wohnt.",
+      "options": [
+        "den",
+        "der",
+        "das"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In the main clause einen Freund is accusative, but inside the relative clause the friend is the one who lives in Berlin: nominative der.",
+        "es": "En la oración principal einen Freund es acusativo, pero dentro de la oración de relativo el amigo es quien vive en Berlín: nominativo der."
+      },
+      "wrong": {
+        "den": {
+          "en": "den copies the accusative of the main clause. But the case of the pronoun comes from the relative clause, where the friend is the subject.",
+          "es": "den copia el acusativo de la oración principal. Pero el caso del pronombre viene de la oración de relativo, donde el amigo es el sujeto."
+        },
+        "das": {
+          "en": "das is the neuter pronoun. Freund is masculine, so das cannot refer to him.",
+          "es": "das es el pronombre neutro. Freund es masculino, así que das no puede referirse a él."
+        }
+      },
+      "examples": [
+        "Ich habe eine Schwester, die in Wien wohnt.",
+        "Wir haben einen Hund, der sehr groß ist."
+      ],
+      "tr": {
+        "en": "I have a friend who lives in Berlin.",
+        "es": "Tengo un amigo que vive en Berlín."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f07",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "neutral",
+      "answer": "das",
+      "table": "relativpronomen"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c08",
+      "sentence": "Das ist ein Mann, ___ dort wohnt.",
+      "options": [
+        "der",
+        "wer",
+        "den"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The relative pronoun for a masculine noun that does the action is der. The man lives there, so he is the subject.",
+        "es": "El pronombre relativo para un sustantivo masculino que hace la acción es der. El hombre vive allí, así que es el sujeto."
+      },
+      "wrong": {
+        "wer": {
+          "en": "wer is the question word who. It starts a question, but it does not refer back to a noun you already named.",
+          "es": "wer es la palabra interrogativa quién. Inicia una pregunta, pero no se refiere a un sustantivo ya nombrado."
+        },
+        "den": {
+          "en": "den is the masculine accusative. The man is not the object of wohnt, he is the subject.",
+          "es": "den es el acusativo masculino. El hombre no es el complemento de wohnt, es el sujeto."
+        }
+      },
+      "examples": [
+        "Das ist eine Frau, die hier arbeitet.",
+        "Das ist ein Kind, das gern singt."
+      ],
+      "tr": {
+        "en": "That is a man who lives there.",
+        "es": "Ese es un hombre que vive allí."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f08",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "Tisch",
+      "answer": "den",
+      "table": "nomen-relativ"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c09",
+      "sentence": "Das ist der Film, den ich gestern ___ habe.",
+      "options": [
+        "gesehen",
+        "sah",
+        "sehen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The relative clause has Perfekt: the participle gesehen comes before the auxiliary habe, which stands last.",
+        "es": "La oración de relativo está en Perfekt: el participio gesehen va antes del auxiliar habe, que va al final."
+      },
+      "wrong": {
+        "sehen": {
+          "en": "sehen is the infinitive. With the auxiliary habe you need the participle gesehen.",
+          "es": "sehen es el infinitivo. Con el auxiliar habe necesitas el participio gesehen."
+        },
+        "sah": {
+          "en": "sah is the simple past and cannot stand together with habe. The Perfekt needs the participle.",
+          "es": "sah es el pasado simple y no puede ir junto con habe. El Perfekt necesita el participio."
+        }
+      },
+      "examples": [
+        "Das ist das Buch, das ich gelesen habe.",
+        "Das ist die Frau, die ich gesehen habe."
+      ],
+      "tr": {
+        "en": "That is the film I saw yesterday.",
+        "es": "Esa es la película que vi ayer."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f09",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "Plural",
+      "answer": "die",
+      "table": "relativpronomen"
+    },
+    {
+      "id": "relativsaetze-nom-akk-w03",
+      "kind": "why",
+      "es": "Der Mann, der dort steht, ist mein Lehrer.",
+      "target": "steht",
+      "tr": {
+        "en": "The man who is standing there is my teacher.",
+        "es": "El hombre que está parado allí es mi maestro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "steht is last because it is the main verb of the whole sentence",
+            "es": "steht va al final porque es el verbo principal de toda la oración"
+          },
+          "wrong": {
+            "en": "The verb of the whole sentence is ist, and it stands after the relative clause. steht belongs to the relative clause only.",
+            "es": "El verbo de toda la oración es ist, y va después de la oración de relativo. steht pertenece solo a la oración de relativo."
+          }
+        },
+        {
+          "text": {
+            "en": "steht stays in position 2, as in every German sentence",
+            "es": "steht se queda en la posición 2, como en toda oración alemana"
+          },
+          "wrong": {
+            "en": "Position 2 is only for main clauses. A relative clause is a subordinate clause, and its verb moves to the end.",
+            "es": "La posición 2 es solo para oraciones principales. Una oración de relativo es subordinada, y su verbo pasa al final."
+          }
+        },
+        {
+          "text": {
+            "en": "steht is last because a relative clause is a subordinate clause",
+            "es": "steht va al final porque una oración de relativo es una oración subordinada"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "relativsaetze-nom-akk-c10",
+      "sentence": "Das ist der Mann, den ich morgen ___.",
+      "options": [
+        "anrufe",
+        "rufe an",
+        "anrufen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In a relative clause the verb goes to the end, and a separable verb is written in one piece: anrufe.",
+        "es": "En una oración de relativo el verbo va al final, y un verbo separable se escribe en una pieza: anrufe."
+      },
+      "wrong": {
+        "rufe an": {
+          "en": "rufe an splits the verb as in a main clause. In a relative clause the prefix stays attached: anrufe.",
+          "es": "rufe an separa el verbo como en una oración principal. En una oración de relativo el prefijo se queda pegado: anrufe."
+        },
+        "anrufen": {
+          "en": "anrufen is the infinitive. The verb must be conjugated for ich: anrufe.",
+          "es": "anrufen es el infinitivo. El verbo debe estar conjugado para ich: anrufe."
+        }
+      },
+      "examples": [
+        "Das ist die Frau, die ich heute anrufe.",
+        "Das ist der Mann, den ich morgen einlade."
+      ],
+      "tr": {
+        "en": "That is the man I will call tomorrow.",
+        "es": "Ese es el hombre al que voy a llamar mañana."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f10",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "Buch",
+      "answer": "das",
+      "table": "nomen-relativ"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c11",
+      "sentence": "Der Film, den ich sehen ___, ist neu.",
+      "options": [
+        "wollen",
+        "will",
+        "wollt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With a modal verb the modal stands last in the relative clause, and it agrees with ich: will.",
+        "es": "Con un verbo modal, el modal va al final de la oración de relativo y concuerda con ich: will."
+      },
+      "wrong": {
+        "wollen": {
+          "en": "wollen is the infinitive or the plural form. The subject is ich, so the form is will.",
+          "es": "wollen es el infinitivo o la forma plural. El sujeto es ich, así que la forma es will."
+        },
+        "wollt": {
+          "en": "wollt is the form for ihr. For ich the modal verb is will, with no ending.",
+          "es": "wollt es la forma de ihr. Para ich el verbo modal es will, sin terminación."
+        }
+      },
+      "examples": [
+        "Der Film, den ich sehen kann, ist neu.",
+        "Das Buch, das ich lesen will, ist lang."
+      ],
+      "tr": {
+        "en": "The film I want to see is new.",
+        "es": "La película que quiero ver es nueva."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f11",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "neutral",
+      "answer": "das",
+      "table": "relativpronomen"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c12",
+      "sentence": "Hier ist ein Hund, ___ Anna gestern gekauft hat.",
+      "options": [
+        "der",
+        "das",
+        "den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Anna is the subject of gekauft hat, so the dog is the object. Masculine accusative: den.",
+        "es": "Anna es el sujeto de gekauft hat, así que el perro es el complemento. Acusativo masculino: den."
+      },
+      "wrong": {
+        "der": {
+          "en": "der would make the dog the buyer. But Anna bought the dog, so it needs the accusative.",
+          "es": "der haría del perro el comprador. Pero Anna compró el perro, así que necesita el acusativo."
+        },
+        "das": {
+          "en": "das is neuter. Hund is masculine, so the pronoun is der or den.",
+          "es": "das es neutro. Hund es masculino, así que el pronombre es der o den."
+        }
+      },
+      "examples": [
+        "Hier ist ein Tisch, den ich gekauft habe.",
+        "Hier ist ein Mann, den Anna kennt."
+      ],
+      "tr": {
+        "en": "Here is a dog that Anna bought yesterday.",
+        "es": "Aquí hay un perro que Anna compró ayer."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-f12",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "Kinder",
+      "answer": "die",
+      "table": "nomen-relativ"
+    },
+    {
+      "id": "relativsaetze-nom-akk-c13",
+      "sentence": "Ich kenne eine Frau, ___ sehr gut singt.",
+      "options": [
+        "die",
+        "den",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Frau is feminine and she does the singing, so she is the subject: nominative die.",
+        "es": "Frau es femenino y ella es quien canta, así que es el sujeto: nominativo die."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is only the masculine accusative. Frau is feminine, so it cannot take den.",
+          "es": "den es solo el acusativo masculino. Frau es femenino, así que no puede llevar den."
+        },
+        "der": {
+          "en": "der is the masculine nominative. For a woman who sings, the nominative is die.",
+          "es": "der es el nominativo masculino. Para una mujer que canta, el nominativo es die."
+        }
+      },
+      "examples": [
+        "Ich kenne eine Frau, die hier arbeitet.",
+        "Ich sehe eine Katze, die schläft."
+      ],
+      "tr": {
+        "en": "I know a woman who sings very well.",
+        "es": "Conozco a una mujer que canta muy bien."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-c14",
+      "sentence": "Der Lehrer, ___ wir heute gesehen haben, heißt Paul.",
+      "options": [
+        "der",
+        "dem",
+        "den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "We saw the teacher, so he is the object of gesehen haben: masculine accusative den.",
+        "es": "Vimos al maestro, así que él es el complemento de gesehen haben: acusativo masculino den."
+      },
+      "wrong": {
+        "der": {
+          "en": "der would mean the teacher saw us. But wir is the subject, so the teacher is the object.",
+          "es": "der significaría que el maestro nos vio. Pero wir es el sujeto, así que el maestro es el complemento."
+        },
+        "dem": {
+          "en": "dem is a dative form. The verb sehen takes the accusative, so the dative does not fit.",
+          "es": "dem es una forma de dativo. El verbo sehen lleva acusativo, así que el dativo no encaja."
+        }
+      },
+      "examples": [
+        "Der Mann, den wir kennen, wohnt hier.",
+        "Der Freund, den ich liebe, heißt Tom."
+      ],
+      "tr": {
+        "en": "The teacher we saw today is called Paul.",
+        "es": "El maestro que vimos hoy se llama Paul."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk-w04",
+      "kind": "why",
+      "es": "Ich habe einen Freund, der in Berlin wohnt.",
+      "target": "der",
+      "tr": {
+        "en": "I have a friend who lives in Berlin.",
+        "es": "Tengo un amigo que vive en Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "der: masculine like Freund, nominative because the friend is the one who lives there",
+            "es": "der: masculino como Freund, nominativo porque el amigo es quien vive allí"
+          }
+        },
+        {
+          "text": {
+            "en": "den: einen Freund is accusative, so the relative pronoun is accusative too",
+            "es": "den: einen Freund es acusativo, así que el pronombre relativo también es acusativo"
+          },
+          "wrong": {
+            "en": "The relative pronoun takes its case from its own clause. There the friend lives in Berlin, so he is the subject.",
+            "es": "El pronombre relativo toma su caso de su propia oración. Allí el amigo vive en Berlín, así que es el sujeto."
+          }
+        },
+        {
+          "text": {
+            "en": "die: a friend is a person, and people take die",
+            "es": "die: un amigo es una persona, y las personas llevan die"
+          },
+          "wrong": {
+            "en": "The pronoun follows the grammatical gender of the noun, not the fact that it is a person. Freund is masculine, so der.",
+            "es": "El pronombre sigue el género gramatical del sustantivo, no el hecho de que sea una persona. Freund es masculino, así que der."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

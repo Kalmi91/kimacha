@@ -1,0 +1,973 @@
+{
+  "schema": 2,
+  "topic": "relativsaetze-dativ-praep",
+  "level": "B1",
+  "title": {
+    "en": "Relative clauses: dative and prepositions",
+    "es": "Oraciones de relativo: dativo y preposiciones"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The relative pronoun can also be dative: dem (masculine), der (feminine), dem (neuter), denen (plural). Often a preposition stands in front of it, and the preposition decides the case: der Freund, mit dem ich reise; die Stadt, in der ich wohne. In German the preposition always comes first, never at the end like in English (the man I travel with). The verb goes to the end, as in every relative clause.",
+        "es": "El pronombre relativo también puede estar en dativo: dem (masculino), der (femenino), dem (neutro), denen (plural). A menudo hay una preposición delante, y la preposición decide el caso: der Freund, mit dem ich reise; die Stadt, in der ich wohne. En alemán la preposición va siempre primero, nunca al final como en inglés (the man I travel with). El verbo va al final, como en toda oración de relativo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "relativpronomen-kasus",
+      "title": {
+        "en": "The relative pronoun in three cases",
+        "es": "El pronombre relativo en tres casos"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "Nominativ",
+          "es": "Nominativ"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        },
+        {
+          "en": "Dativ",
+          "es": "Dativ"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "der",
+          "den",
+          "dem"
+        ],
+        [
+          "feminin",
+          "die",
+          "die",
+          "der"
+        ],
+        [
+          "neutral",
+          "das",
+          "das",
+          "dem"
+        ],
+        [
+          "Plural",
+          "die",
+          "die",
+          "denen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "praeposition-pronomen",
+      "title": {
+        "en": "Preposition + relative pronoun",
+        "es": "Preposición + pronombre relativo"
+      },
+      "header": [
+        {
+          "en": "Preposition + noun",
+          "es": "Preposición + sustantivo"
+        },
+        {
+          "en": "Präposition + Pronomen",
+          "es": "Präposition + Pronomen"
+        }
+      ],
+      "rows": [
+        [
+          "mit + Freund (m)",
+          "mit dem"
+        ],
+        [
+          "in + Stadt (f)",
+          "in der"
+        ],
+        [
+          "aus + Land (n)",
+          "aus dem"
+        ],
+        [
+          "mit + Kinder (Pl.)",
+          "mit denen"
+        ],
+        [
+          "für + Mann (m)",
+          "für den"
+        ],
+        [
+          "bei + Firma (f)",
+          "bei der"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How the case is chosen",
+        "es": "Cómo se elige el caso"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "With a preposition: the preposition decides. mit, aus, bei, von, zu, nach take the dative; für, durch, gegen, ohne, um take the accusative. Gender and number come from the noun.",
+            "es": "Con una preposición: la preposición decide. mit, aus, bei, von, zu, nach llevan dativo; für, durch, gegen, ohne, um llevan acusativo. El género y el número vienen del sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Der Freund, mit dem ich reise, heißt Paul.",
+              "tr": {
+                "en": "The friend I am traveling with is called Paul.",
+                "es": "El amigo con quien viajo se llama Paul."
+              }
+            },
+            {
+              "es": "Die Leute, für die ich arbeite, sind nett.",
+              "tr": {
+                "en": "The people I work for are nice.",
+                "es": "La gente para la que trabajo es amable."
+              }
+            },
+            {
+              "es": "Das Land, aus dem ich komme, ist klein.",
+              "tr": {
+                "en": "The country I come from is small.",
+                "es": "El país del que vengo es pequeño."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Without a preposition the dative can come from the verb: helfen takes the dative, so the pronoun is dem, der or denen.",
+            "es": "Sin preposición, el dativo puede venir del verbo: helfen lleva dativo, así que el pronombre es dem, der o denen."
+          },
+          "examples": [
+            {
+              "es": "Der Mann, dem ich helfe, ist sehr alt.",
+              "tr": {
+                "en": "The man I am helping is very old.",
+                "es": "El hombre al que ayudo es muy viejo."
+              }
+            },
+            {
+              "es": "Die Frau, der ich helfe, wohnt hier.",
+              "tr": {
+                "en": "The woman I am helping lives here.",
+                "es": "La mujer a la que ayudo vive aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The plural dative is denen, not den. den is only the masculine accusative (and the dative plural of the article before a noun).",
+            "es": "El dativo plural es denen, no den. den es solo el acusativo masculino (y el dativo plural del artículo delante de un sustantivo)."
+          },
+          "examples": [
+            {
+              "es": "Das sind Kinder, mit denen ich oft spiele.",
+              "tr": {
+                "en": "These are children I often play with.",
+                "es": "Son niños con los que juego a menudo."
+              }
+            },
+            {
+              "es": "Das sind die Leute, bei denen ich wohne.",
+              "tr": {
+                "en": "These are the people I live with.",
+                "es": "Esta es la gente con la que vivo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Where or where to: in der or in die?",
+        "es": "¿Dónde o adónde: in der o in die?"
+      },
+      "pairs": [
+        {
+          "a": "die Stadt, in der ich wohne",
+          "b": "die Stadt, in die ich fahre",
+          "note": {
+            "en": "The two-way prepositions in, an, auf work as always. Where something is (wo) takes the dative, where something goes (wohin) takes the accusative. The relative clause follows the verb: wohne is a place, fahre is a movement.",
+            "es": "Las preposiciones de dos casos in, an, auf funcionan como siempre. Donde algo está (wo) lleva dativo, adonde algo va (wohin) lleva acusativo. La oración de relativo sigue al verbo: wohne indica un lugar, fahre un movimiento."
+          },
+          "examples": [
+            {
+              "es": "Das Haus, in dem wir wohnen, ist alt.",
+              "tr": {
+                "en": "The house we live in is old.",
+                "es": "La casa en la que vivimos es vieja."
+              }
+            },
+            {
+              "es": "Das Kino, in das wir gehen, ist neu.",
+              "tr": {
+                "en": "The cinema we are going to is new.",
+                "es": "El cine al que vamos es nuevo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "wo as a relative word for places",
+        "es": "wo como palabra relativa para lugares"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "For a place you can use wo instead of in + pronoun. It is common in speech, and it needs no gender or case. In careful writing in dem, in der is still preferred.",
+            "es": "Para un lugar puedes usar wo en lugar de in + pronombre. Es común al hablar y no necesita género ni caso. En la escritura cuidada se sigue prefiriendo in dem, in der."
+          },
+          "examples": [
+            {
+              "es": "Das ist die Stadt, wo ich wohne.",
+              "tr": {
+                "en": "That is the city where I live.",
+                "es": "Esa es la ciudad donde vivo."
+              }
+            },
+            {
+              "es": "Das ist das Haus, wo wir wohnen.",
+              "tr": {
+                "en": "That is the house where we live.",
+                "es": "Esa es la casa donde vivimos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the preposition comes before the pronoun (die Stadt, in der ich wohne), never at the end (not die Stadt, der ich wohne in). Do not leave the preposition out. The dative plural is denen, not den. The preposition chooses the case, not the main clause: Ich habe einen Freund, mit dem ich reise. After in, an, auf ask: where (dative) or where to (accusative). wo has no gender: use it only for places.",
+        "es": "Trampas clásicas: la preposición va antes del pronombre (die Stadt, in der ich wohne), nunca al final (no die Stadt, der ich wohne in). No omitas la preposición. El dativo plural es denen, no den. La preposición elige el caso, no la oración principal: Ich habe einen Freund, mit dem ich reise. Después de in, an, auf pregunta: dónde (dativo) o adónde (acusativo). wo no tiene género: úsalo solo para lugares."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The relative pronoun can be dative: «dem», «der», «dem» and «denen» in the plural. A preposition comes first and decides the case: «Der Freund, mit dem ich reise, heißt Paul.» «Die Stadt, in der ich wohne, ist klein.» The plural dative is «denen»: «Das sind Kinder, mit denen ich oft spiele.» For a place you may say «wo»: «Das ist die Stadt, wo ich wohne.»",
+    "es": "El pronombre relativo puede estar en dativo: «dem», «der», «dem» y «denen» en plural. Una preposición va primero y decide el caso: «Der Freund, mit dem ich reise, heißt Paul.» «Die Stadt, in der ich wohne, ist klein.» El dativo plural es «denen»: «Das sind Kinder, mit denen ich oft spiele.» Para un lugar puedes decir «wo»: «Das ist die Stadt, wo ich wohne.»"
+  },
+  "items": [
+    {
+      "id": "relativsaetze-dativ-praep-c01",
+      "sentence": "Der Freund, mit ___ ich reise, heißt Paul.",
+      "options": [
+        "dem",
+        "den",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mit always takes the dative, and Freund is masculine: mit dem.",
+        "es": "mit lleva siempre dativo, y Freund es masculino: mit dem."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the accusative. The preposition mit never takes the accusative, so you need the dative dem.",
+          "es": "den es el acusativo. La preposición mit nunca lleva acusativo, así que necesitas el dativo dem."
+        },
+        "der": {
+          "en": "der is dative only for feminine nouns. Freund is masculine, so the dative is dem.",
+          "es": "der es dativo solo para sustantivos femeninos. Freund es masculino, así que el dativo es dem."
+        }
+      },
+      "examples": [
+        "Der Mann, mit dem ich arbeite, ist nett.",
+        "Der Lehrer, mit dem ich spreche, heißt Paul."
+      ],
+      "tr": {
+        "en": "The friend I am traveling with is called Paul.",
+        "es": "El amigo con quien viajo se llama Paul."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f01",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "maskulin",
+      "answer": "dem",
+      "table": "relativpronomen-kasus"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c02",
+      "sentence": "Die Stadt, in ___ ich wohne, ist klein.",
+      "options": [
+        "die",
+        "der",
+        "dem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wohnen in answers wo, so in takes the dative. Stadt is feminine: in der.",
+        "es": "wohnen in responde a wo, así que in lleva dativo. Stadt es femenino: in der."
+      },
+      "wrong": {
+        "die": {
+          "en": "die would be the accusative, which answers where to. Living in a place answers where, so you need the dative.",
+          "es": "die sería el acusativo, que responde adónde. Vivir en un lugar responde dónde, así que necesitas el dativo."
+        },
+        "dem": {
+          "en": "dem is dative for masculine and neuter nouns. Stadt is feminine, so the dative is der.",
+          "es": "dem es dativo para sustantivos masculinos y neutros. Stadt es femenino, así que el dativo es der."
+        }
+      },
+      "examples": [
+        "Die Stadt, in der ich arbeite, ist groß.",
+        "Die Straße, in der wir wohnen, ist ruhig."
+      ],
+      "tr": {
+        "en": "The city I live in is small.",
+        "es": "La ciudad en la que vivo es pequeña."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f02",
+      "kind": "form",
+      "verb": "Präposition + Pronomen",
+      "person": "mit + Freund (m)",
+      "answer": "mit dem",
+      "table": "praeposition-pronomen"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c03",
+      "sentence": "Das Kind, mit ___ ich spiele, heißt Lena.",
+      "options": [
+        "das",
+        "der",
+        "dem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "mit takes the dative, and Kind is neuter: mit dem.",
+        "es": "mit lleva dativo, y Kind es neutro: mit dem."
+      },
+      "wrong": {
+        "das": {
+          "en": "das is nominative or accusative. After mit the dative is required, and for a neuter noun it is dem.",
+          "es": "das es nominativo o acusativo. Después de mit se exige el dativo, y para un sustantivo neutro es dem."
+        },
+        "der": {
+          "en": "der is dative for feminine nouns. Kind is neuter, so it needs dem.",
+          "es": "der es dativo para sustantivos femeninos. Kind es neutro, así que necesita dem."
+        }
+      },
+      "examples": [
+        "Das Kind, mit dem ich lerne, ist klug.",
+        "Das Mädchen, mit dem ich tanze, heißt Eva."
+      ],
+      "tr": {
+        "en": "The child I am playing with is called Lena.",
+        "es": "La niña con la que juego se llama Lena."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f03",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "feminin",
+      "answer": "der",
+      "table": "relativpronomen-kasus"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-w01",
+      "kind": "why",
+      "es": "Der Freund, mit dem ich reise, heißt Paul.",
+      "target": "dem",
+      "tr": {
+        "en": "The friend I am traveling with is called Paul.",
+        "es": "El amigo con quien viajo se llama Paul."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "dem: mit takes the dative and Freund is masculine",
+            "es": "dem: mit lleva dativo y Freund es masculino"
+          }
+        },
+        {
+          "text": {
+            "en": "den: the friend is the object of reise, so the accusative is needed",
+            "es": "den: el amigo es el complemento de reise, así que se necesita el acusativo"
+          },
+          "wrong": {
+            "en": "reise has no object here. The case comes from the preposition mit, which always takes the dative.",
+            "es": "reise no tiene complemento aquí. El caso viene de la preposición mit, que siempre lleva dativo."
+          }
+        },
+        {
+          "text": {
+            "en": "dem: ich is in the dative, so the pronoun is dative too",
+            "es": "dem: ich está en dativo, así que el pronombre también es dativo"
+          },
+          "wrong": {
+            "en": "ich is the subject and stands in the nominative. The dative of the pronoun comes only from the preposition mit.",
+            "es": "ich es el sujeto y está en nominativo. El dativo del pronombre viene solo de la preposición mit."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c04",
+      "sentence": "Die Leute, für ___ ich arbeite, sind nett.",
+      "options": [
+        "die",
+        "den",
+        "denen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "für always takes the accusative. The plural accusative of the relative pronoun is die.",
+        "es": "für lleva siempre acusativo. El acusativo plural del pronombre relativo es die."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is not a plural form of the relative pronoun in the accusative. For plural the accusative is die.",
+          "es": "den no es una forma plural del pronombre relativo en acusativo. Para el plural el acusativo es die."
+        },
+        "denen": {
+          "en": "denen is the dative plural. für does not take the dative, it takes the accusative.",
+          "es": "denen es el dativo plural. für no lleva dativo, lleva acusativo."
+        }
+      },
+      "examples": [
+        "Die Firma, für die ich arbeite, ist groß.",
+        "Der Mann, für den ich arbeite, ist nett."
+      ],
+      "tr": {
+        "en": "The people I work for are nice.",
+        "es": "La gente para la que trabajo es amable."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f04",
+      "kind": "form",
+      "verb": "Präposition + Pronomen",
+      "person": "in + Stadt (f)",
+      "answer": "in der",
+      "table": "praeposition-pronomen"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c05",
+      "sentence": "Das sind Kinder, mit ___ ich oft spiele.",
+      "options": [
+        "den",
+        "denen",
+        "die"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In the relative clause the dative plural of the pronoun is denen: mit denen.",
+        "es": "En la oración de relativo el dativo plural del pronombre es denen: mit denen."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the dative plural of the article before a noun (mit den Kindern). The relative pronoun has the longer form denen.",
+          "es": "den es el dativo plural del artículo delante de un sustantivo (mit den Kindern). El pronombre relativo tiene la forma más larga denen."
+        },
+        "die": {
+          "en": "die is nominative or accusative plural. After mit you need the dative.",
+          "es": "die es nominativo o acusativo plural. Después de mit necesitas el dativo."
+        }
+      },
+      "examples": [
+        "Das sind Freunde, mit denen ich reise.",
+        "Das sind Leute, bei denen ich wohne."
+      ],
+      "tr": {
+        "en": "These are children I often play with.",
+        "es": "Son niños con los que juego a menudo."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f05",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "Plural",
+      "answer": "denen",
+      "table": "relativpronomen-kasus"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c06",
+      "sentence": "Der Mann, ___ ich helfe, ist sehr alt.",
+      "options": [
+        "den",
+        "der",
+        "dem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "helfen takes the dative, so the man is in the dative: masculine dem.",
+        "es": "helfen lleva dativo, así que el hombre está en dativo: masculino dem."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the accusative. helfen does not take an accusative object, so you need the dative.",
+          "es": "den es el acusativo. helfen no lleva complemento en acusativo, así que necesitas el dativo."
+        },
+        "der": {
+          "en": "der would be the nominative, the man as the one who helps. But ich helps him, so he is the dative object.",
+          "es": "der sería el nominativo, el hombre como quien ayuda. Pero ich lo ayuda a él, así que él es el complemento en dativo."
+        }
+      },
+      "examples": [
+        "Die Frau, der ich helfe, wohnt hier.",
+        "Das Kind, dem ich helfe, ist klein."
+      ],
+      "tr": {
+        "en": "The man I am helping is very old.",
+        "es": "El hombre al que ayudo es muy viejo."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f06",
+      "kind": "form",
+      "verb": "Präposition + Pronomen",
+      "person": "mit + Kinder (Pl.)",
+      "answer": "mit denen",
+      "table": "praeposition-pronomen"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-w02",
+      "kind": "why",
+      "es": "Das sind Kinder, mit denen ich oft spiele.",
+      "target": "denen",
+      "tr": {
+        "en": "These are children I often play with.",
+        "es": "Son niños con los que juego a menudo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "den: the plural dative is always den",
+            "es": "den: el dativo plural es siempre den"
+          },
+          "wrong": {
+            "en": "den is the dative plural of the article before a noun (mit den Kindern). The relative pronoun has its own longer form, denen.",
+            "es": "den es el dativo plural del artículo delante de un sustantivo (mit den Kindern). El pronombre relativo tiene su propia forma más larga, denen."
+          }
+        },
+        {
+          "text": {
+            "en": "denen: the dative plural of the relative pronoun, required after mit",
+            "es": "denen: el dativo plural del pronombre relativo, exigido por mit"
+          }
+        },
+        {
+          "text": {
+            "en": "die: every plural relative pronoun is die",
+            "es": "die: todo pronombre relativo plural es die"
+          },
+          "wrong": {
+            "en": "die is only the nominative and accusative plural. In the dative plural the pronoun changes to denen.",
+            "es": "die es solo el nominativo y el acusativo plural. En el dativo plural el pronombre cambia a denen."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c07",
+      "sentence": "Das Haus, in ___ wir wohnen, ist alt.",
+      "options": [
+        "das",
+        "dem",
+        "den"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wohnen answers where, so in takes the dative. Haus is neuter: in dem.",
+        "es": "wohnen responde a dónde, así que in lleva dativo. Haus es neutro: in dem."
+      },
+      "wrong": {
+        "das": {
+          "en": "in das would mean that someone moves into the house. Living in a house is a place, so the dative is needed.",
+          "es": "in das significaría que alguien entra a la casa. Vivir en una casa es un lugar, así que se necesita el dativo."
+        },
+        "den": {
+          "en": "den is for masculine nouns in the accusative. Haus is neuter, and the place needs the dative dem.",
+          "es": "den es para sustantivos masculinos en acusativo. Haus es neutro, y el lugar necesita el dativo dem."
+        }
+      },
+      "examples": [
+        "Das Hotel, in dem wir schlafen, ist neu.",
+        "Das Restaurant, in dem ich esse, ist gut."
+      ],
+      "tr": {
+        "en": "The house we live in is old.",
+        "es": "La casa en la que vivimos es vieja."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f07",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "neutral",
+      "answer": "dem",
+      "table": "relativpronomen-kasus"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c08",
+      "sentence": "Die Stadt, ___ ich wohne, ist klein.",
+      "options": [
+        "in der",
+        "der in",
+        "in die"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The preposition comes first and the pronoun follows it: in der. The verb wohne is last.",
+        "es": "La preposición va primero y el pronombre la sigue: in der. El verbo wohne va al final."
+      },
+      "wrong": {
+        "der in": {
+          "en": "der in copies the English order, the city I live in. In German the preposition cannot go after the pronoun.",
+          "es": "der in copia el orden inglés, the city I live in. En alemán la preposición no puede ir después del pronombre."
+        },
+        "in die": {
+          "en": "in die is accusative and answers where to. Living in a city answers where, so the dative in der is right.",
+          "es": "in die es acusativo y responde adónde. Vivir en una ciudad responde dónde, así que el dativo in der es correcto."
+        }
+      },
+      "examples": [
+        "Die Stadt, in der er arbeitet, ist groß.",
+        "Das Land, aus dem sie kommt, ist klein."
+      ],
+      "tr": {
+        "en": "The city I live in is small.",
+        "es": "La ciudad en la que vivo es pequeña."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f08",
+      "kind": "form",
+      "verb": "Präposition + Pronomen",
+      "person": "für + Mann (m)",
+      "answer": "für den",
+      "table": "praeposition-pronomen"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c09",
+      "sentence": "Das ist die Stadt, ___ ich wohne.",
+      "options": [
+        "wohin",
+        "woher",
+        "wo"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "For a place where you live, wo is possible as a relative word. It is the same as in der, and common in speech.",
+        "es": "Para un lugar donde vives, wo es posible como palabra relativa. Es lo mismo que in der, y común al hablar."
+      },
+      "wrong": {
+        "wohin": {
+          "en": "wohin means to where and needs a movement verb like fahren. Wohnen describes a place, not a direction.",
+          "es": "wohin significa adónde y necesita un verbo de movimiento como fahren. Wohnen describe un lugar, no una dirección."
+        },
+        "woher": {
+          "en": "woher means from where and asks about the origin. It does not fit wohnen, which names a place.",
+          "es": "woher significa de dónde y pregunta por el origen. No encaja con wohnen, que nombra un lugar."
+        }
+      },
+      "examples": [
+        "Das ist das Haus, wo wir wohnen.",
+        "Das ist das Café, wo ich arbeite."
+      ],
+      "tr": {
+        "en": "That is the city where I live.",
+        "es": "Esa es la ciudad donde vivo."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f09",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "maskulin",
+      "answer": "den",
+      "table": "relativpronomen-kasus"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-w03",
+      "kind": "why",
+      "es": "Die Stadt, in der ich wohne, ist klein.",
+      "target": "in",
+      "tr": {
+        "en": "The city I live in is small.",
+        "es": "La ciudad en la que vivo es pequeña."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The preposition goes to the end, after the verb, as in English",
+            "es": "La preposición va al final, después del verbo, como en inglés"
+          },
+          "wrong": {
+            "en": "In German the preposition cannot be left behind. It stays directly in front of its pronoun at the start of the clause.",
+            "es": "En alemán la preposición no puede quedarse atrás. Se queda justo delante de su pronombre al principio de la oración."
+          }
+        },
+        {
+          "text": {
+            "en": "The preposition is dropped, because wohnen already says where",
+            "es": "La preposición se omite, porque wohnen ya dice dónde"
+          },
+          "wrong": {
+            "en": "wohnen needs a place with a preposition: ich wohne in der Stadt. Without in the relative clause would be incomplete.",
+            "es": "wohnen necesita un lugar con una preposición: ich wohne in der Stadt. Sin in la oración de relativo estaría incompleta."
+          }
+        },
+        {
+          "text": {
+            "en": "The preposition comes first and decides the case of the pronoun",
+            "es": "La preposición va primero y decide el caso del pronombre"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c10",
+      "sentence": "Das Kino, in ___ wir gehen, ist neu.",
+      "options": [
+        "dem",
+        "das",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "gehen is a movement, so in answers where to and takes the accusative. Kino is neuter: in das.",
+        "es": "gehen es un movimiento, así que in responde adónde y lleva acusativo. Kino es neutro: in das."
+      },
+      "wrong": {
+        "dem": {
+          "en": "in dem answers where something is. With gehen the cinema is the destination, so you need the accusative.",
+          "es": "in dem responde dónde está algo. Con gehen el cine es el destino, así que necesitas el acusativo."
+        },
+        "der": {
+          "en": "der is dative only for feminine nouns. Kino is neuter, and the movement calls for the accusative das.",
+          "es": "der es dativo solo para sustantivos femeninos. Kino es neutro, y el movimiento pide el acusativo das."
+        }
+      },
+      "examples": [
+        "Die Stadt, in die ich fahre, ist groß.",
+        "Das Café, in das wir gehen, ist klein."
+      ],
+      "tr": {
+        "en": "The cinema we are going to is new.",
+        "es": "El cine al que vamos es nuevo."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f10",
+      "kind": "form",
+      "verb": "Präposition + Pronomen",
+      "person": "aus + Land (n)",
+      "answer": "aus dem",
+      "table": "praeposition-pronomen"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c11",
+      "sentence": "Die Frau, mit ___ ich tanze, ist meine Tante.",
+      "options": [
+        "der",
+        "die",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "mit takes the dative, and Frau is feminine: mit der.",
+        "es": "mit lleva dativo, y Frau es femenino: mit der."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is nominative or accusative. After mit the feminine pronoun is in the dative: der.",
+          "es": "die es nominativo o acusativo. Después de mit el pronombre femenino está en dativo: der."
+        },
+        "dem": {
+          "en": "dem is for masculine and neuter nouns. Frau is feminine, so the dative is der.",
+          "es": "dem es para sustantivos masculinos y neutros. Frau es femenino, así que el dativo es der."
+        }
+      },
+      "examples": [
+        "Die Frau, mit der ich arbeite, ist nett.",
+        "Die Lehrerin, mit der ich lerne, heißt Eva."
+      ],
+      "tr": {
+        "en": "The woman I am dancing with is my aunt.",
+        "es": "La mujer con la que bailo es mi tía."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f11",
+      "kind": "form",
+      "verb": "Nominativ",
+      "person": "feminin",
+      "answer": "die",
+      "table": "relativpronomen-kasus"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c12",
+      "sentence": "Der Mann, für ___ ich arbeite, ist nett.",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "für always takes the accusative, and Mann is masculine: für den.",
+        "es": "für lleva siempre acusativo, y Mann es masculino: für den."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem is the dative. für does not take the dative, only the accusative.",
+          "es": "dem es el dativo. für no lleva dativo, solo acusativo."
+        },
+        "der": {
+          "en": "der is the nominative for a masculine noun. After a preposition like für there is no nominative.",
+          "es": "der es el nominativo de un sustantivo masculino. Después de una preposición como für no hay nominativo."
+        }
+      },
+      "examples": [
+        "Der Chef, für den ich arbeite, ist jung.",
+        "Die Frau, für die ich arbeite, heißt Eva."
+      ],
+      "tr": {
+        "en": "The man I work for is nice.",
+        "es": "El hombre para quien trabajo es amable."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-f12",
+      "kind": "form",
+      "verb": "Präposition + Pronomen",
+      "person": "bei + Firma (f)",
+      "answer": "bei der",
+      "table": "praeposition-pronomen"
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c13",
+      "sentence": "Die Firma, bei ___ ich arbeite, ist groß.",
+      "options": [
+        "dem",
+        "der",
+        "die"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "bei takes the dative, and Firma is feminine: bei der.",
+        "es": "bei lleva dativo, y Firma es femenino: bei der."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem is the dative for masculine and neuter nouns. Firma is feminine and needs der.",
+          "es": "dem es el dativo para sustantivos masculinos y neutros. Firma es femenino y necesita der."
+        },
+        "die": {
+          "en": "die would be the accusative. bei never takes the accusative, so the feminine dative der is required.",
+          "es": "die sería el acusativo. bei nunca lleva acusativo, así que se exige el dativo femenino der."
+        }
+      },
+      "examples": [
+        "Die Schule, bei der ich lerne, ist gut.",
+        "Das Hotel, bei dem ich schlafe, ist neu."
+      ],
+      "tr": {
+        "en": "The company I work at is big.",
+        "es": "La empresa en la que trabajo es grande."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-c14",
+      "sentence": "Das sind die Leute, bei ___ ich wohne.",
+      "options": [
+        "die",
+        "den",
+        "denen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "bei takes the dative, and the plural dative of the relative pronoun is denen.",
+        "es": "bei lleva dativo, y el dativo plural del pronombre relativo es denen."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the plural nominative or accusative. After bei the dative is required.",
+          "es": "die es el nominativo o acusativo plural. Después de bei se exige el dativo."
+        },
+        "den": {
+          "en": "den is not the dative plural of the relative pronoun. Only the article before a noun is den; the pronoun is denen.",
+          "es": "den no es el dativo plural del pronombre relativo. Solo el artículo delante de un sustantivo es den; el pronombre es denen."
+        }
+      },
+      "examples": [
+        "Das sind Freunde, bei denen ich schlafe.",
+        "Das sind Kinder, mit denen ich lerne."
+      ],
+      "tr": {
+        "en": "These are the people I live with.",
+        "es": "Esta es la gente con la que vivo."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep-w04",
+      "kind": "why",
+      "es": "Das Kino, in das wir gehen, ist neu.",
+      "target": "das",
+      "tr": {
+        "en": "The cinema we are going to is new.",
+        "es": "El cine al que vamos es nuevo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "in always takes the dative, so it should be dem",
+            "es": "in lleva siempre dativo, así que debería ser dem"
+          },
+          "wrong": {
+            "en": "in is a two-way preposition. It takes the dative for where (wo) and the accusative for where to (wohin).",
+            "es": "in es una preposición de dos casos. Lleva dativo para dónde (wo) y acusativo para adónde (wohin)."
+          }
+        },
+        {
+          "text": {
+            "en": "das: the pronoun is nominative, because Kino is the subject of the main clause",
+            "es": "das: el pronombre es nominativo, porque Kino es el sujeto de la oración principal"
+          },
+          "wrong": {
+            "en": "The case of the main clause does not matter. The preposition in decides, and gehen shows a movement.",
+            "es": "El caso de la oración principal no importa. Decide la preposición in, y gehen indica un movimiento."
+          }
+        },
+        {
+          "text": {
+            "en": "das: gehen is a movement, so in takes the accusative, neuter das",
+            "es": "das: gehen es un movimiento, así que in lleva acusativo, neutro das"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

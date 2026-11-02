@@ -1,0 +1,1017 @@
+{
+  "schema": 2,
+  "topic": "passiv-modalverben",
+  "level": "B1",
+  "title": {
+    "en": "The passive with modal verbs",
+    "es": "La pasiva con verbos modales"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "To say what must, can, may or should be done without naming who does it, German puts a modal verb in the passive: modal verb (position 2) + Partizip II + werden (at the end). Das Formular muss ausgefüllt werden. The modal verb carries the person and number, and werden never changes, because it is an infinitive. English has has to be filled out and Spanish debe rellenarse or hay que rellenar. The thing that is done is the subject in German.",
+        "es": "Para decir qué se debe, puede, permite o tiene que hacer sin nombrar quién lo hace, el alemán pone un verbo modal en pasiva: verbo modal (posición 2) + Partizip II + werden (al final). Das Formular muss ausgefüllt werden. El verbo modal lleva la persona y el número, y werden nunca cambia, porque es un infinitivo. El inglés tiene has to be filled out y el español debe rellenarse o hay que rellenar. En alemán, la cosa que se hace es el sujeto."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "modal-passiv",
+      "title": {
+        "en": "Modal verb + Partizip II + werden",
+        "es": "Verbo modal + Partizip II + werden"
+      },
+      "header": [
+        {
+          "en": "Modal verb",
+          "es": "Verbo modal"
+        },
+        {
+          "en": "Das Formular",
+          "es": "Das Formular"
+        },
+        {
+          "en": "Die Formulare",
+          "es": "Die Formulare"
+        }
+      ],
+      "rows": [
+        [
+          "müssen",
+          "muss ausgefüllt werden",
+          "müssen ausgefüllt werden"
+        ],
+        [
+          "können",
+          "kann ausgefüllt werden",
+          "können ausgefüllt werden"
+        ],
+        [
+          "dürfen",
+          "darf ausgefüllt werden",
+          "dürfen ausgefüllt werden"
+        ],
+        [
+          "sollen",
+          "soll ausgefüllt werden",
+          "sollen ausgefüllt werden"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "What the passive with a modal verb says",
+        "es": "Qué dice la pasiva con verbo modal"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "müssen: an obligation or a necessary step. The subject is the thing that has to be done.",
+            "es": "müssen: una obligación o un paso necesario. El sujeto es la cosa que hay que hacer."
+          },
+          "examples": [
+            {
+              "es": "Das Formular muss ausgefüllt werden.",
+              "tr": {
+                "en": "The form has to be filled out.",
+                "es": "El formulario tiene que rellenarse."
+              }
+            },
+            {
+              "es": "Die Rechnung muss bezahlt werden.",
+              "tr": {
+                "en": "The bill has to be paid.",
+                "es": "La factura tiene que pagarse."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "können: something is possible. dürfen: something is allowed, and dürfen with nicht is a ban. sollen: a request or a rule from someone else.",
+            "es": "können: algo es posible. dürfen: algo está permitido, y dürfen con nicht es una prohibición. sollen: un pedido o una regla de otra persona."
+          },
+          "examples": [
+            {
+              "es": "Das Auto kann morgen repariert werden.",
+              "tr": {
+                "en": "The car can be repaired tomorrow.",
+                "es": "El carro puede repararse mañana."
+              }
+            },
+            {
+              "es": "Hier darf nicht geraucht werden.",
+              "tr": {
+                "en": "Smoking is not allowed here.",
+                "es": "Aquí no se puede fumar."
+              }
+            },
+            {
+              "es": "Die Fenster sollen geschlossen werden.",
+              "tr": {
+                "en": "The windows are supposed to be closed.",
+                "es": "Se deben cerrar las ventanas."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "partizip-werden",
+      "title": {
+        "en": "Partizip II for the passive",
+        "es": "Partizip II para la pasiva"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Partizip II",
+          "es": "Partizip II"
+        }
+      ],
+      "rows": [
+        [
+          "öffnen",
+          "geöffnet"
+        ],
+        [
+          "bezahlen",
+          "bezahlt"
+        ],
+        [
+          "abholen",
+          "abgeholt"
+        ],
+        [
+          "einladen",
+          "eingeladen"
+        ],
+        [
+          "aufräumen",
+          "aufgeräumt"
+        ],
+        [
+          "schreiben",
+          "geschrieben"
+        ],
+        [
+          "waschen",
+          "gewaschen"
+        ],
+        [
+          "reparieren",
+          "repariert"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Questions, negation and subordinate clauses",
+        "es": "Preguntas, negación y oraciones subordinadas"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "In a yes/no question the modal verb comes first. nicht stands before the participle. Without a subject the modal verb stays in the er/sie/es form.",
+            "es": "En una pregunta de sí o no el verbo modal va primero. nicht va antes del participio. Sin sujeto, el verbo modal se queda en la forma er/sie/es."
+          },
+          "examples": [
+            {
+              "es": "Muss das Formular heute ausgefüllt werden?",
+              "tr": {
+                "en": "Does the form have to be filled out today?",
+                "es": "¿Hay que rellenar el formulario hoy?"
+              }
+            },
+            {
+              "es": "Das Fenster darf nicht geöffnet werden.",
+              "tr": {
+                "en": "The window must not be opened.",
+                "es": "La ventana no debe abrirse."
+              }
+            },
+            {
+              "es": "Darf hier geparkt werden?",
+              "tr": {
+                "en": "Is parking allowed here?",
+                "es": "¿Se puede estacionar aquí?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In a subordinate clause with weil or dass the conjugated modal verb goes to the very end, after werden.",
+            "es": "En una oración subordinada con weil o dass el verbo modal conjugado va al final del todo, después de werden."
+          },
+          "examples": [
+            {
+              "es": "Ich weiß, dass das Formular ausgefüllt werden muss.",
+              "tr": {
+                "en": "I know that the form has to be filled out.",
+                "es": "Sé que hay que rellenar el formulario."
+              }
+            },
+            {
+              "es": "Wir bleiben hier, weil das Zimmer gereinigt werden muss.",
+              "tr": {
+                "en": "We are staying here because the room has to be cleaned.",
+                "es": "Nos quedamos aquí porque hay que limpiar el cuarto."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "man-oder-passiv",
+      "title": {
+        "en": "With man or with the passive",
+        "es": "Con man o con la pasiva"
+      },
+      "header": [
+        {
+          "en": "Active with man",
+          "es": "Activa con man"
+        },
+        {
+          "en": "Passive with a modal verb",
+          "es": "Pasiva con verbo modal"
+        }
+      ],
+      "rows": [
+        [
+          "Man muss das Formular ausfüllen.",
+          "Das Formular muss ausgefüllt werden."
+        ],
+        [
+          "Man darf hier nicht rauchen.",
+          "Hier darf nicht geraucht werden."
+        ],
+        [
+          "Man kann das Problem lösen.",
+          "Das Problem kann gelöst werden."
+        ],
+        [
+          "Man soll die Fenster schließen.",
+          "Die Fenster sollen geschlossen werden."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Two ways to say the same rule",
+        "es": "Dos formas de decir la misma regla"
+      },
+      "pairs": [
+        {
+          "a": "Man muss das Formular ausfüllen.",
+          "b": "Das Formular muss ausgefüllt werden.",
+          "note": {
+            "en": "With man the thing is the object (accusative). In the passive it becomes the subject (nominative), so the article changes for masculine nouns: den Brief becomes der Brief. The passive sounds more formal, and it is common on signs and in instructions.",
+            "es": "Con man la cosa es el complemento directo (acusativo). En la pasiva se convierte en el sujeto (nominativo), así que el artículo cambia en los sustantivos masculinos: den Brief pasa a der Brief. La pasiva suena más formal y es común en carteles e instrucciones."
+          },
+          "examples": [
+            {
+              "es": "Man muss den Brief schreiben.",
+              "tr": {
+                "en": "You have to write the letter.",
+                "es": "Hay que escribir la carta."
+              }
+            },
+            {
+              "es": "Der Brief muss geschrieben werden.",
+              "tr": {
+                "en": "The letter has to be written.",
+                "es": "La carta tiene que escribirse."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the order is Partizip II then werden, not werden then Partizip (not muss werden gemacht). werden stays an infinitive after the modal verb (not muss gemacht wird). The modal agrees with the thing that is done: Das Formular muss, Die Formulare müssen. The forms ich, er, sie, es have no ending in the singular: muss, kann, darf, soll (not musst for er). Separable verbs put ge inside the participle: aufgeräumt, not geaufräumt.",
+        "es": "Trampas clásicas: el orden es Partizip II y luego werden, no werden y luego el participio (no muss werden gemacht). werden se queda en infinitivo después del verbo modal (no muss gemacht wird). El modal concuerda con la cosa que se hace: Das Formular muss, Die Formulare müssen. Las formas ich, er, sie, es no llevan terminación en singular: muss, kann, darf, soll (no musst para er). Los verbos separables ponen ge dentro del participio: aufgeräumt, no geaufräumt."
+      }
+    }
+  ],
+  "speak": {
+    "en": "With a modal verb the passive is built like this: the modal verb in second position, then the participle, and «werden» at the end. «Das Formular muss ausgefüllt werden.» The modal verb agrees with the thing that is done: «Die Formulare müssen ausgefüllt werden.» Rules and bans use this form: «Hier darf nicht geraucht werden.» In a subordinate clause the modal verb goes last: «Ich weiß, dass das Formular ausgefüllt werden muss.»",
+    "es": "Con un verbo modal la pasiva se forma así: el verbo modal en segunda posición, después el participio y «werden» al final. «Das Formular muss ausgefüllt werden.» El verbo modal concuerda con la cosa que se hace: «Die Formulare müssen ausgefüllt werden.» Las reglas y las prohibiciones usan esta forma: «Hier darf nicht geraucht werden.» En una oración subordinada el verbo modal va al final: «Ich weiß, dass das Formular ausgefüllt werden muss.»"
+  },
+  "items": [
+    {
+      "id": "passiv-modalverben-c01",
+      "sentence": "Das Formular muss ausgefüllt ___.",
+      "options": [
+        "wird",
+        "werden",
+        "worden"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After a modal verb the infinitive werden stands at the end: Das Formular muss ausgefüllt werden.",
+        "es": "Después de un verbo modal el infinitivo werden va al final: Das Formular muss ausgefüllt werden."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird is a conjugated form. The modal verb muss is already conjugated, so werden must stay an infinitive.",
+          "es": "wird es una forma conjugada. El verbo modal muss ya está conjugado, así que werden debe quedarse en infinitivo."
+        },
+        "worden": {
+          "en": "worden is a participle used in past tenses of the passive. In the present with a modal verb you need the infinitive werden.",
+          "es": "worden es un participio que se usa en los tiempos pasados de la pasiva. En presente con un verbo modal necesitas el infinitivo werden."
+        }
+      },
+      "examples": [
+        "Die Rechnung muss bezahlt werden.",
+        "Das Auto kann repariert werden."
+      ],
+      "tr": {
+        "en": "The form has to be filled out.",
+        "es": "El formulario tiene que rellenarse."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f01",
+      "kind": "form",
+      "verb": "Das Formular",
+      "person": "müssen",
+      "answer": "muss ausgefüllt werden",
+      "table": "modal-passiv"
+    },
+    {
+      "id": "passiv-modalverben-c02",
+      "sentence": "Rauchen ist verboten: Hier ___ nicht geraucht werden.",
+      "options": [
+        "muss",
+        "dürfen",
+        "darf"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "dürfen with nicht is a ban. The sentence has no subject, so the modal verb takes the singular form darf.",
+        "es": "dürfen con nicht es una prohibición. La oración no tiene sujeto, así que el verbo modal lleva la forma singular darf."
+      },
+      "wrong": {
+        "muss": {
+          "en": "muss nicht means it is not necessary. That does not fit a ban: the sign says smoking is forbidden.",
+          "es": "muss nicht significa que no es necesario. Eso no encaja con una prohibición: el letrero dice que fumar está prohibido."
+        },
+        "dürfen": {
+          "en": "dürfen is the plural form. There is no plural subject here, so the singular darf is needed.",
+          "es": "dürfen es la forma plural. Aquí no hay sujeto plural, así que se necesita la forma singular darf."
+        }
+      },
+      "examples": [
+        "Hier darf nicht geparkt werden.",
+        "Das darf nicht gemacht werden."
+      ],
+      "tr": {
+        "en": "Smoking is forbidden: smoking is not allowed here.",
+        "es": "Fumar está prohibido: aquí no se puede fumar."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f02",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "öffnen",
+      "answer": "geöffnet",
+      "table": "partizip-werden"
+    },
+    {
+      "id": "passiv-modalverben-c03",
+      "sentence": "Die Hausaufgaben ___ heute gemacht werden.",
+      "options": [
+        "muss",
+        "müsst",
+        "müssen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Die Hausaufgaben is plural, so the modal verb is plural too: müssen.",
+        "es": "Die Hausaufgaben es plural, así que el verbo modal también es plural: müssen."
+      },
+      "wrong": {
+        "muss": {
+          "en": "muss is the singular form for ich, er, sie and es. The thing that is done is plural here.",
+          "es": "muss es la forma singular de ich, er, sie y es. La cosa que se hace es plural aquí."
+        },
+        "müsst": {
+          "en": "müsst is the form for ihr, several friends you talk to. The subject here is the homework, not you.",
+          "es": "müsst es la forma de ihr, varios amigos con los que hablas. El sujeto aquí es la tarea, no tú."
+        }
+      },
+      "examples": [
+        "Die Fenster müssen geschlossen werden.",
+        "Die Kinder müssen abgeholt werden."
+      ],
+      "tr": {
+        "en": "The homework has to be done today.",
+        "es": "La tarea tiene que hacerse hoy."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f03",
+      "kind": "form",
+      "verb": "Die Formulare",
+      "person": "können",
+      "answer": "können ausgefüllt werden",
+      "table": "modal-passiv"
+    },
+    {
+      "id": "passiv-modalverben-w01",
+      "kind": "why",
+      "es": "Das Formular muss ausgefüllt werden.",
+      "target": "werden",
+      "tr": {
+        "en": "The form has to be filled out.",
+        "es": "El formulario tiene que rellenarse."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "werden is an infinitive: the modal verb is conjugated, so the infinitive goes to the end",
+            "es": "werden es un infinitivo: el modal está conjugado, así que el infinitivo va al final"
+          }
+        },
+        {
+          "text": {
+            "en": "werden is conjugated for the subject, so it should be wird",
+            "es": "werden está conjugado según el sujeto, así que debería ser wird"
+          },
+          "wrong": {
+            "en": "The modal verb muss already carries the person. The second verb stays an infinitive, so werden never changes.",
+            "es": "El verbo modal muss ya lleva la persona. El segundo verbo se queda en infinitivo, así que werden nunca cambia."
+          }
+        },
+        {
+          "text": {
+            "en": "werden stands at the end because the sentence is a question",
+            "es": "werden va al final porque la oración es una pregunta"
+          },
+          "wrong": {
+            "en": "This sentence is a statement. werden is at the end because the verb bracket closes there: modal in position 2, infinitive last.",
+            "es": "Esta oración es una afirmación. werden va al final porque el paréntesis verbal se cierra ahí: modal en posición 2, infinitivo al final."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "passiv-modalverben-c04",
+      "sentence": "Das Auto kann morgen ___ werden.",
+      "options": [
+        "reparieren",
+        "repariert",
+        "reparierte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The passive needs the Partizip II before werden: repariert.",
+        "es": "La pasiva necesita el Partizip II antes de werden: repariert."
+      },
+      "wrong": {
+        "reparieren": {
+          "en": "reparieren is the infinitive. With werden at the end you need the participle: repariert.",
+          "es": "reparieren es el infinitivo. Con werden al final necesitas el participio: repariert."
+        },
+        "reparierte": {
+          "en": "reparierte is the simple past. The passive never uses a past form here, only the participle.",
+          "es": "reparierte es el pasado simple. La pasiva no usa aquí una forma de pasado, solo el participio."
+        }
+      },
+      "examples": [
+        "Die Rechnung kann heute bezahlt werden.",
+        "Das Zimmer kann gereinigt werden."
+      ],
+      "tr": {
+        "en": "The car can be repaired tomorrow.",
+        "es": "El carro puede repararse mañana."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f04",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "abholen",
+      "answer": "abgeholt",
+      "table": "partizip-werden"
+    },
+    {
+      "id": "passiv-modalverben-c05",
+      "sentence": "Man muss die Tür schließen: Die Tür muss ___ werden.",
+      "options": [
+        "geschlossen",
+        "schließen",
+        "geschlossene"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The active object die Tür becomes the subject. The passive needs the Partizip II: geschlossen.",
+        "es": "El complemento activo die Tür pasa a ser el sujeto. La pasiva necesita el Partizip II: geschlossen."
+      },
+      "wrong": {
+        "schließen": {
+          "en": "schließen is the infinitive. Two infinitives in a row (schließen werden) would be a different structure, not this passive.",
+          "es": "schließen es el infinitivo. Dos infinitivos seguidos (schließen werden) serían otra estructura, no esta pasiva."
+        },
+        "geschlossene": {
+          "en": "geschlossene has an adjective ending (-e). In the verb bracket the participle stays without an ending.",
+          "es": "geschlossene lleva una terminación de adjetivo (-e). En el paréntesis verbal el participio se queda sin terminación."
+        }
+      },
+      "examples": [
+        "Man muss den Brief schreiben: Der Brief muss geschrieben werden.",
+        "Man soll die Fenster öffnen: Die Fenster sollen geöffnet werden."
+      ],
+      "tr": {
+        "en": "You have to close the door: the door has to be closed.",
+        "es": "Hay que cerrar la puerta: la puerta tiene que cerrarse."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f05",
+      "kind": "form",
+      "verb": "Das Formular",
+      "person": "dürfen",
+      "answer": "darf ausgefüllt werden",
+      "table": "modal-passiv"
+    },
+    {
+      "id": "passiv-modalverben-c06",
+      "sentence": "Das Fenster darf ___ geöffnet werden.",
+      "options": [
+        "nicht",
+        "kein",
+        "nichts"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "nicht negates the verb phrase, and it stands before the participle: darf nicht geöffnet werden.",
+        "es": "nicht niega el grupo verbal y va antes del participio: darf nicht geöffnet werden."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein negates a noun with ein or without an article. Here the verb phrase is negated, so you need nicht.",
+          "es": "kein niega un sustantivo con ein o sin artículo. Aquí se niega el grupo verbal, así que necesitas nicht."
+        },
+        "nichts": {
+          "en": "nichts means nothing and is a noun-like word. It does not negate a verb phrase like geöffnet werden.",
+          "es": "nichts significa nada y funciona como un sustantivo. No niega un grupo verbal como geöffnet werden."
+        }
+      },
+      "examples": [
+        "Das Auto darf nicht repariert werden.",
+        "Hier darf nicht gegessen werden."
+      ],
+      "tr": {
+        "en": "The window must not be opened.",
+        "es": "La ventana no debe abrirse."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f06",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "aufräumen",
+      "answer": "aufgeräumt",
+      "table": "partizip-werden"
+    },
+    {
+      "id": "passiv-modalverben-w02",
+      "kind": "why",
+      "es": "Die Formulare müssen ausgefüllt werden.",
+      "target": "müssen",
+      "tr": {
+        "en": "The forms have to be filled out.",
+        "es": "Los formularios tienen que rellenarse."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "müssen agrees with werden",
+            "es": "müssen concuerda con werden"
+          },
+          "wrong": {
+            "en": "werden is an infinitive and has no person. The modal verb agrees with the subject, not with werden.",
+            "es": "werden es un infinitivo y no tiene persona. El verbo modal concuerda con el sujeto, no con werden."
+          }
+        },
+        {
+          "text": {
+            "en": "müssen agrees with the subject die Formulare (plural)",
+            "es": "müssen concuerda con el sujeto die Formulare (plural)"
+          }
+        },
+        {
+          "text": {
+            "en": "müssen is the polite form for the person who fills out the forms",
+            "es": "müssen es la forma cortés para la persona que rellena los formularios"
+          },
+          "wrong": {
+            "en": "The person who fills out the forms is not mentioned at all. The modal verb only follows the grammatical subject, die Formulare.",
+            "es": "La persona que rellena los formularios no se menciona. El verbo modal solo sigue al sujeto gramatical, die Formulare."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "passiv-modalverben-c07",
+      "sentence": "___ das Formular heute ausgefüllt werden?",
+      "options": [
+        "Müssen",
+        "Muss",
+        "Musst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In a yes/no question the modal verb comes first. The subject is singular (das Formular), so: Muss.",
+        "es": "En una pregunta de sí o no el verbo modal va primero. El sujeto es singular (das Formular), así que: Muss."
+      },
+      "wrong": {
+        "Müssen": {
+          "en": "Müssen is plural. Das Formular is one thing, so the modal verb must be singular.",
+          "es": "Müssen es plural. Das Formular es una cosa, así que el verbo modal debe ser singular."
+        },
+        "Musst": {
+          "en": "Musst is the form for du and ihr. The subject here is not you, it is the form.",
+          "es": "Musst es la forma de du y de ihr. El sujeto aquí no eres tú, es el formulario."
+        }
+      },
+      "examples": [
+        "Muss die Rechnung bezahlt werden?",
+        "Kann das Auto repariert werden?"
+      ],
+      "tr": {
+        "en": "Does the form have to be filled out today?",
+        "es": "¿Hay que rellenar el formulario hoy?"
+      }
+    },
+    {
+      "id": "passiv-modalverben-f07",
+      "kind": "form",
+      "verb": "Die Formulare",
+      "person": "sollen",
+      "answer": "sollen ausgefüllt werden",
+      "table": "modal-passiv"
+    },
+    {
+      "id": "passiv-modalverben-c08",
+      "sentence": "Ich weiß, dass das Formular ausgefüllt werden ___.",
+      "options": [
+        "müssen",
+        "müsst",
+        "muss"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In a dass-clause the conjugated verb goes to the very end, after werden. The subject is singular: muss.",
+        "es": "En una oración con dass el verbo conjugado va al final del todo, después de werden. El sujeto es singular: muss."
+      },
+      "wrong": {
+        "müssen": {
+          "en": "müssen is plural, but das Formular is singular. The position at the end is right, the form is not.",
+          "es": "müssen es plural, pero das Formular es singular. La posición al final es correcta, la forma no."
+        },
+        "müsst": {
+          "en": "müsst belongs to ihr. The subject of the clause is das Formular, so the form is muss.",
+          "es": "müsst pertenece a ihr. El sujeto de la oración es das Formular, así que la forma es muss."
+        }
+      },
+      "examples": [
+        "Wir wissen, dass die Rechnung bezahlt werden muss.",
+        "Er sagt, dass das Auto repariert werden kann."
+      ],
+      "tr": {
+        "en": "I know that the form has to be filled out.",
+        "es": "Sé que hay que rellenar el formulario."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f08",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "schreiben",
+      "answer": "geschrieben",
+      "table": "partizip-werden"
+    },
+    {
+      "id": "passiv-modalverben-c09",
+      "sentence": "Das Zimmer soll von Anna ___ werden.",
+      "options": [
+        "geaufräumt",
+        "aufgeräumt",
+        "aufräumen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "aufräumen is separable, so the ge goes between the prefix and the stem: aufgeräumt.",
+        "es": "aufräumen es separable, así que la ge va entre el prefijo y la raíz: aufgeräumt."
+      },
+      "wrong": {
+        "geaufräumt": {
+          "en": "ge cannot stand before the prefix auf. With a separable verb it moves inside: auf + ge + räumt.",
+          "es": "ge no puede ir antes del prefijo auf. Con un verbo separable pasa al interior: auf + ge + räumt."
+        },
+        "aufräumen": {
+          "en": "aufräumen is the infinitive. The passive with werden needs the participle aufgeräumt.",
+          "es": "aufräumen es el infinitivo. La pasiva con werden necesita el participio aufgeräumt."
+        }
+      },
+      "examples": [
+        "Die Kinder müssen abgeholt werden.",
+        "Die Gäste sollen eingeladen werden."
+      ],
+      "tr": {
+        "en": "The room is supposed to be tidied up by Anna.",
+        "es": "El cuarto debe ser ordenado por Anna."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f09",
+      "kind": "form",
+      "verb": "Das Formular",
+      "person": "können",
+      "answer": "kann ausgefüllt werden",
+      "table": "modal-passiv"
+    },
+    {
+      "id": "passiv-modalverben-w03",
+      "kind": "why",
+      "es": "Hier darf nicht geraucht werden.",
+      "target": "darf",
+      "tr": {
+        "en": "Smoking is not allowed here.",
+        "es": "Aquí no se puede fumar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "darf nicht means it is not necessary, like muss nicht",
+            "es": "darf nicht significa que no es necesario, como muss nicht"
+          },
+          "wrong": {
+            "en": "These two are different. muss nicht = not necessary. darf nicht = forbidden. The sign says smoking is forbidden.",
+            "es": "Son diferentes. muss nicht = no es necesario. darf nicht = prohibido. El letrero dice que fumar está prohibido."
+          }
+        },
+        {
+          "text": {
+            "en": "darf is plural, so the subject is a group of people",
+            "es": "darf es plural, así que el sujeto es un grupo de personas"
+          },
+          "wrong": {
+            "en": "darf is singular, and there is no subject at all. The modal verb takes the er/sie/es form when nobody is named.",
+            "es": "darf es singular, y no hay ningún sujeto. El verbo modal toma la forma er/sie/es cuando no se nombra a nadie."
+          }
+        },
+        {
+          "text": {
+            "en": "darf nicht is a ban, and without a subject the modal verb stays singular",
+            "es": "darf nicht es una prohibición, y sin sujeto el modal se queda en singular"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "passiv-modalverben-c10",
+      "sentence": "Der Kuchen soll ___ den Kindern gebacken werden.",
+      "options": [
+        "von",
+        "mit",
+        "durch"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The person who does the action is introduced with von and the dative: von den Kindern.",
+        "es": "La persona que hace la acción se introduce con von y dativo: von den Kindern."
+      },
+      "wrong": {
+        "mit": {
+          "en": "mit means together with or by means of a tool. The children are the ones who bake, so you need von.",
+          "es": "mit significa junto con o por medio de una herramienta. Los niños son quienes hornean, así que necesitas von."
+        },
+        "durch": {
+          "en": "durch introduces a means or a cause, not a person who acts on purpose. Children as the doers take von.",
+          "es": "durch introduce un medio o una causa, no a una persona que actúa a propósito. Los niños como autores llevan von."
+        }
+      },
+      "examples": [
+        "Das Essen muss von Paul gemacht werden.",
+        "Der Brief soll von Anna geschrieben werden."
+      ],
+      "tr": {
+        "en": "The cake is supposed to be baked by the children.",
+        "es": "El pastel debe ser horneado por los niños."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f10",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "einladen",
+      "answer": "eingeladen",
+      "table": "partizip-werden"
+    },
+    {
+      "id": "passiv-modalverben-c11",
+      "sentence": "Hier darf man nicht parken: Hier darf nicht ___ werden.",
+      "options": [
+        "geparkt",
+        "parken",
+        "parkte"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Without man the verb becomes a participle: geparkt werden. The sentence has no subject at all.",
+        "es": "Sin man el verbo pasa a participio: geparkt werden. La oración no tiene ningún sujeto."
+      },
+      "wrong": {
+        "parken": {
+          "en": "parken is the infinitive. In the passive the main verb is a participle before werden.",
+          "es": "parken es el infinitivo. En la pasiva el verbo principal es un participio antes de werden."
+        },
+        "parkte": {
+          "en": "parkte is the simple past. The modal passive needs the participle geparkt, not a past form.",
+          "es": "parkte es el pasado simple. La pasiva con modal necesita el participio geparkt, no una forma de pasado."
+        }
+      },
+      "examples": [
+        "Hier darf nicht geraucht werden.",
+        "Hier darf nicht gegessen werden."
+      ],
+      "tr": {
+        "en": "You must not park here: parking is not allowed here.",
+        "es": "No se debe estacionar aquí: aquí no se puede estacionar."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f11",
+      "kind": "form",
+      "verb": "Die Formulare",
+      "person": "müssen",
+      "answer": "müssen ausgefüllt werden",
+      "table": "modal-passiv"
+    },
+    {
+      "id": "passiv-modalverben-c12",
+      "sentence": "Der Brief ___ heute noch geschickt werden.",
+      "options": [
+        "muss",
+        "musst",
+        "müsst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "For er, sie and es the modal verb has no ending: muss. Der Brief is a he in this sentence.",
+        "es": "Para er, sie y es el verbo modal no lleva terminación: muss. Der Brief es un él en esta oración."
+      },
+      "wrong": {
+        "musst": {
+          "en": "musst is the form for du. A letter is not you, so there is no -st here.",
+          "es": "musst es la forma de du. Una carta no eres tú, así que aquí no hay -st."
+        },
+        "müsst": {
+          "en": "müsst is the form for ihr. The subject is one letter, so you need the singular muss.",
+          "es": "müsst es la forma de ihr. El sujeto es una carta, así que necesitas el singular muss."
+        }
+      },
+      "examples": [
+        "Das Paket muss heute abgeholt werden.",
+        "Der Tisch muss repariert werden."
+      ],
+      "tr": {
+        "en": "The letter still has to be sent today.",
+        "es": "La carta todavía tiene que enviarse hoy."
+      }
+    },
+    {
+      "id": "passiv-modalverben-f12",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "reparieren",
+      "answer": "repariert",
+      "table": "partizip-werden"
+    },
+    {
+      "id": "passiv-modalverben-c13",
+      "sentence": "___ hier geparkt werden?",
+      "options": [
+        "Dürfen",
+        "Darfst",
+        "Darf"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The sentence has no subject, so the modal verb takes the singular form: Darf hier geparkt werden?",
+        "es": "La oración no tiene sujeto, así que el verbo modal lleva la forma singular: Darf hier geparkt werden?"
+      },
+      "wrong": {
+        "Dürfen": {
+          "en": "Dürfen is plural. Nothing in this question is plural, so the singular Darf is needed.",
+          "es": "Dürfen es plural. Nada en esta pregunta es plural, así que se necesita el singular Darf."
+        },
+        "Darfst": {
+          "en": "Darfst is the form for du. The question is not addressed to one person, it is a general rule.",
+          "es": "Darfst es la forma de du. La pregunta no se dirige a una persona, es una regla general."
+        }
+      },
+      "examples": [
+        "Darf hier geraucht werden?",
+        "Darf hier gegessen werden?"
+      ],
+      "tr": {
+        "en": "Is parking allowed here?",
+        "es": "¿Se puede estacionar aquí?"
+      }
+    },
+    {
+      "id": "passiv-modalverben-c14",
+      "sentence": "Der Text muss ___ werden.",
+      "options": [
+        "schreiben",
+        "geschrieben",
+        "geschreibt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "schreiben is a strong verb, so the participle ends in -en: geschrieben.",
+        "es": "schreiben es un verbo fuerte, así que el participio termina en -en: geschrieben."
+      },
+      "wrong": {
+        "geschreibt": {
+          "en": "geschreibt applies the weak ending -t to a strong verb. The participle of schreiben is geschrieben.",
+          "es": "geschreibt aplica la terminación débil -t a un verbo fuerte. El participio de schreiben es geschrieben."
+        },
+        "schreiben": {
+          "en": "schreiben is the infinitive. Before werden at the end you need the participle.",
+          "es": "schreiben es el infinitivo. Antes de werden al final necesitas el participio."
+        }
+      },
+      "examples": [
+        "Die Hausaufgaben müssen geschrieben werden.",
+        "Das Brot muss gegessen werden."
+      ],
+      "tr": {
+        "en": "The text has to be written.",
+        "es": "El texto tiene que escribirse."
+      }
+    },
+    {
+      "id": "passiv-modalverben-w04",
+      "kind": "why",
+      "es": "Wir wissen, dass das Haus verkauft werden muss.",
+      "target": "muss",
+      "tr": {
+        "en": "We know that the house has to be sold.",
+        "es": "Sabemos que hay que vender la casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "muss stands in position 2, as in a main clause",
+            "es": "muss está en la posición 2, como en una oración principal"
+          },
+          "wrong": {
+            "en": "After dass the conjugated verb leaves position 2. It goes to the very end of the clause.",
+            "es": "Después de dass el verbo conjugado deja la posición 2. Va al final de la oración."
+          }
+        },
+        {
+          "text": {
+            "en": "muss is last because it is the conjugated verb of a dass-clause",
+            "es": "muss va al final porque es el verbo conjugado de una oración con dass"
+          }
+        },
+        {
+          "text": {
+            "en": "muss is last because it is the main verb of the sentence",
+            "es": "muss va al final porque es el verbo principal de la oración"
+          },
+          "wrong": {
+            "en": "The main verb is verkauft, the participle. muss is only the helper, and it moves to the end because of dass.",
+            "es": "El verbo principal es verkauft, el participio. muss es solo el auxiliar y pasa al final por causa de dass."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
