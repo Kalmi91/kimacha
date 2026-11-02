@@ -1,5 +1,5 @@
 // The reading stories of the Practice tab (data/practice/stories.json, stories-en.json, stories-hu.json: one file per target
-// language, lib/practice/stories.ts). Each story carries its sentences in the target language and in both source languages.
+// language, lib/practice/stories.ts). Each story carries its sentences in the target language and in the three source languages.
 import { findPcicItem, levelOfItem, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import storiesData from '@/data/practice/stories.json';
 import storiesEnData from '@/data/practice/stories-en.json';
@@ -32,10 +32,17 @@ const tensesOf = (level: PcicLevel): ReadonlySet<ResolvedTense> =>
 const cardIdsUpTo = (level: PcicLevel) => LEVELS.filter((l) => rank(l) <= rank(level)).flatMap((l) => pcicItemsForLevel(l).map((i) => i.id));
 
 const FILES: Record<PcicTarget, unknown> = { es: storiesData, en: storiesEnData, hu: storiesHuData, de: [] };
-// the languages a learner of each target comes from (the translations and false statements a story needs)
-const SOURCES: Record<PcicTarget, Lang[]> = { es: ['en', 'hu'], en: ['es', 'hu'], hu: ['es', 'en'], de: ['en', 'es', 'hu'] };
-// How many stories of each level a file holds (the same in all three target languages): 20 at A1, 5 at each level above.
-const COUNT: Record<PcicLevel, [number, number]> = { A1: [20, 20], A2: [5, 5], B1: [5, 5], B2: [5, 5], C1: [5, 5] };
+// the languages a learner of each target comes from (the translations and false statements a story needs): the other three
+const SOURCES: Record<PcicTarget, Lang[]> = { es: ['en', 'hu', 'de'], en: ['es', 'hu', 'de'], hu: ['es', 'en', 'de'], de: ['en', 'es', 'hu'] };
+// How many stories of each level a file holds: 20 at A1, 5 at each level above. German has only the 20 A1 stories so far (its deck is
+// A1 only): the other levels are an honest empty state, never a story with words above the deck.
+const COUNT_ABOVE_A1: [number, number] = [5, 5];
+const COUNT: Record<PcicTarget, Record<PcicLevel, [number, number]>> = {
+  es: { A1: [20, 20], A2: COUNT_ABOVE_A1, B1: COUNT_ABOVE_A1, B2: COUNT_ABOVE_A1, C1: COUNT_ABOVE_A1 },
+  en: { A1: [20, 20], A2: COUNT_ABOVE_A1, B1: COUNT_ABOVE_A1, B2: COUNT_ABOVE_A1, C1: COUNT_ABOVE_A1 },
+  hu: { A1: [20, 20], A2: COUNT_ABOVE_A1, B1: COUNT_ABOVE_A1, B2: COUNT_ABOVE_A1, C1: COUNT_ABOVE_A1 },
+  de: { A1: [20, 20], A2: [0, 0], B1: [0, 0], B2: [0, 0], C1: [0, 0] },
+};
 
 const learned = (ids: string[]): Sm2Card[] =>
   ids.map((id) => ({ ...sm2NewCard(id), state: 'review', interval: 4, reps: 2, due: '2026-10-23', lastReview: '2026-10-01', introducedAt: '2026-10-01' }));
@@ -53,12 +60,12 @@ describe.each<PcicTarget>(['es', 'en', 'hu'])('reading stories, target %s', (tar
   beforeAll(() => setPcicTarget(target));
   afterAll(() => setPcicTarget('es'));
 
-  it('A1-C1 stories with unique ids, five sentences each, the right number per level', () => {
+  it('stories with unique ids, five sentences each, the right number per level', () => {
     expect(stories).toBe(FILES[target]);
     expect(new Set(stories.map((s) => s.id)).size).toBe(stories.length);
     for (const level of LEVELS) {
       const count = stories.filter((s) => s.level === level).length;
-      expect([level, count >= COUNT[level][0] && count <= COUNT[level][1]]).toEqual([level, true]);
+      expect([level, count >= COUNT[target][level][0] && count <= COUNT[target][level][1]]).toEqual([level, true]);
     }
     for (const story of stories) {
       expect([story.id, LEVELS.includes(story.level)]).toEqual([story.id, true]);
@@ -79,7 +86,7 @@ describe.each<PcicTarget>(['es', 'en', 'hu'])('reading stories, target %s', (tar
     }
   });
 
-  it('a translation of every sentence in both source languages, and 2-3 false statements per source language, none equal to a sentence of the story', () => {
+  it('a translation of every sentence in every source language, and 2-3 false statements per source language, none equal to a sentence of the story', () => {
     for (const story of stories) {
       for (const s of story.sentences) {
         expect([story.id, s.word, (s[target] ?? '').trim()]).not.toEqual([story.id, s.word, '']);
@@ -102,10 +109,11 @@ describe.each<PcicTarget>(['es', 'en', 'hu'])('reading stories, target %s', (tar
 
   it('no dash in a text (house style)', () => {
     const texts = stories.flatMap((s) => [
-      ...s.sentences.flatMap((x) => [x.es ?? '', x.en ?? '', x.hu ?? '']),
+      ...s.sentences.flatMap((x) => [x.es ?? '', x.en ?? '', x.hu ?? '', x.de ?? '']),
       ...falseIn(s, 'en'),
       ...falseIn(s, 'es'),
       ...falseIn(s, 'hu'),
+      ...falseIn(s, 'de'),
     ]);
     const dash = new RegExp(`[${String.fromCharCode(8211, 8212)}]`);
     expect(texts.filter((t) => dash.test(t))).toEqual([]);
@@ -123,6 +131,12 @@ describe.each<PcicTarget>(['es', 'en', 'hu'])('reading stories, target %s', (tar
       const knownByLevel = new Map<PcicLevel, ReadonlySet<string>>(LEVELS.map((level) => [level, knownOf(target, cardIdsUpTo(level), level)]));
       const problems: string[] = [];
       for (const story of stories) {
+        // A level with no card in the deck of this pair (the German meanings cover A1 only so far, de→es/en/hu) has no story to offer:
+        // storyWords must say so (null, never a story with a missing prompt text), the gate below is for the levels the deck has.
+        if (pcicItemsForLevel(story.level).length === 0) {
+          if (storyWords(story, findPcicItem, target)) problems.push(`${story.id}: offered without a deck of ${story.level}`);
+          continue;
+        }
         const known = knownByLevel.get(story.level) ?? new Set<string>();
         for (const s of story.sentences) {
           const text = s[target] ?? '';
