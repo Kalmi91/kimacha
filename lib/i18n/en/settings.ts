@@ -35,6 +35,21 @@ export default {
     weeklyGoalHours: (h: string) => `${h} hours / week`,
     weeklyGoalDoneTag: '✓ DONE',
     missingVoice: (langs: string) => `⚠️ No voice installed for: ${langs}. Download it in the phone's text-to-speech settings; until then the app stays silent in that language.`,
+    // Settings -> Better voice (beta): the on-device neural voices (lib/neuralModels.ts).
+    betterVoice: {
+      title: 'Better voice (beta)',
+      download: (mb: string) => `Download (${mb})`,
+      downloading: (percent: number) => `Downloading… ${percent}%`,
+      unpacking: 'Unpacking…',
+      wifi: 'Wi-Fi recommended',
+      on: 'On',
+      off: "Off: the phone's own voice speaks",
+      retry: 'Part of the download failed. Tap to try again',
+      sentences: (lang: string) => `Sentence voice: ${lang}`,
+      piper: 'Piper (fast)',
+      kokoro: 'Kokoro (nicer, slower)',
+      kokoroSize: (mb: string) => `Kokoro needs a ${mb} download`,
+    },
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
     // Settings -> Beta: early features, each one a switch; off = the app works as before.

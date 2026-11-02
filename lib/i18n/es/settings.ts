@@ -35,6 +35,21 @@ const es: typeof en = {
     weeklyGoalHours: (h: string) => `${h} horas / semana`,
     weeklyGoalDoneTag: '✓ LISTO',
     missingVoice: (langs: string) => `⚠️ No hay voz instalada para: ${langs}. Descárgala en los ajustes de texto a voz del teléfono; hasta entonces la app se queda en silencio en ese idioma.`,
+    // Settings -> Voz mejor (beta): las voces neuronales en el teléfono (lib/neuralModels.ts).
+    betterVoice: {
+      title: 'Voz mejor (beta)',
+      download: (mb: string) => `Descargar (${mb})`,
+      downloading: (percent: number) => `Descargando… ${percent}%`,
+      unpacking: 'Descomprimiendo…',
+      wifi: 'Se recomienda Wi-Fi',
+      on: 'Activada',
+      off: 'Desactivada: habla la voz del teléfono',
+      retry: 'Parte de la descarga falló. Toca para reintentar',
+      sentences: (lang: string) => `Voz de las frases: ${lang}`,
+      piper: 'Piper (rápida)',
+      kokoro: 'Kokoro (mejor, más lenta)',
+      kokoroSize: (mb: string) => `Kokoro necesita una descarga de ${mb}`,
+    },
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
     beta: {
