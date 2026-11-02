@@ -5,7 +5,8 @@
 //
 // (a) irregular verbs: past + past participle from the table below (+ prefixed compounds: rebuild → rebuilt),
 // (b) spelling rules for the regular forms: doubling (stop → stopped), y → ied/ies, silent e (make → making), -es,
-// (c) irregular plurals (child → children, life → lives).
+// (c) irregular plurals (child → children, life → lives),
+// (d) the plural of a noun alone (enPlurals) and the comparative / superlative of an adjective (enDegreeForms).
 
 // base, past, past participle; "/" separates alternatives. The -s and -ing forms come from the spelling rules.
 const IRREGULAR_VERBS =
@@ -325,14 +326,21 @@ function compoundForms(w: string): string[] | null {
   return null;
 }
 
-function formsOf(w: string): string[] {
-  const verb = irregularVerbForms(w);
-  if (verb) return verb;
+/** The plural of a noun that does not take a plain -s, or null. */
+function irregularPlural(w: string): string[] | null {
   const plural = IRREGULAR_PLURALS[w];
   if (plural) return plural;
   if (MAN_COMPOUNDS.has(w)) return [`${w.slice(0, -3)}men`];
   if (w.length > 5 && w.endsWith('woman')) return [`${w.slice(0, -5)}women`];
   if (w.length > 5 && w.endsWith('child')) return [`${w}ren`];
+  return null;
+}
+
+function formsOf(w: string): string[] {
+  const verb = irregularVerbForms(w);
+  if (verb) return verb;
+  const irregular = irregularPlural(w);
+  if (irregular) return irregular;
   const compound = compoundForms(w);
   if (compound) return compound;
   // The spelling rules need a real word: the one- and two-letter ones (a, an, in) get no endings.
@@ -349,4 +357,41 @@ export function enForms(word: string): string[] {
   const w = word.toLowerCase();
   if (!/^[a-z]+$/.test(w)) return [];
   return [...new Set(formsOf(w))].filter((f) => f !== w);
+}
+
+/**
+ * The plural of a noun only (apple → apples, man → men, family → families), for a card that is a noun for sure:
+ * not the -ed / -ing forms that `enForms` also gives. The word itself is not in the result.
+ */
+export function enPlurals(word: string): string[] {
+  const w = word.toLowerCase();
+  if (!/^[a-z]+$/.test(w) || w.length < 3) return [];
+  return [...new Set(irregularPlural(w) ?? sForms(w))].filter((f) => f !== w);
+}
+
+// Adjectives with their own comparative and superlative.
+const IRREGULAR_DEGREE: Record<string, string[]> = {
+  good: ['better', 'best'],
+  bad: ['worse', 'worst'],
+  far: ['farther', 'farthest', 'further', 'furthest'],
+  old: ['older', 'oldest', 'elder', 'eldest'],
+};
+
+/**
+ * The comparative and superlative of an adjective: -er / -est for a one-syllable word (tall → taller, safe → safer,
+ * big → bigger) and -ier / -iest for a -y word (happy → happier), the irregular ones from the table. Nothing for the
+ * longer adjectives (they take more / most), so a form that is not English is never made up for them.
+ */
+export function enDegreeForms(word: string): string[] {
+  const w = word.toLowerCase();
+  if (!/^[a-z]+$/.test(w) || w.length < 3) return [];
+  const irregular = IRREGULAR_DEGREE[w];
+  if (irregular) return irregular;
+  // a silent final e is not a syllable (safe, close, simple)
+  const syllables = (w.replace(/(?<=[^aeiou])e$/, '').match(/[aeiouy]+/g) ?? []).length;
+  if (/[^aeiou]y$/.test(w)) return syllables > 3 ? [] : [`${w.slice(0, -1)}ier`, `${w.slice(0, -1)}iest`];
+  if (syllables !== 1) return [];
+  if (w.endsWith('e')) return [`${w}r`, `${w}st`];
+  const base = doubles(w) ? `${w}${w.slice(-1)}` : w;
+  return [`${base}er`, `${base}est`];
 }
