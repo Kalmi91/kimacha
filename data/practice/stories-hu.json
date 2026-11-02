@@ -258,5 +258,265 @@
     ],
     "false_es": ["Yo vivo en la ciudad.","Tú estudias y yo trabajo.","Somos hermanos."],
     "false_en": ["I live in the city.","You study and I work.","We are brothers."]
+  },
+  {
+    "id": "a2-koltozes",
+    "level": "A2",
+    "sentences": [
+      { "hu": "A barátom költözik, mert az új lakás nagy.", "es": "Mi amigo se muda porque el departamento nuevo es grande.", "en": "My friend is moving because the new apartment is big.", "word": "h20176", "form": "költözik" },
+      { "hu": "Az új bérház a belváros mellett van.", "es": "El edificio nuevo está junto al centro.", "en": "The new apartment building is next to downtown.", "word": "h20774", "form": "bérház" },
+      { "hu": "A lakásban van egy kis hálószoba és egy nagy konyha.", "es": "En el departamento hay una recámara pequeña y una cocina grande.", "en": "In the apartment there is a small bedroom and a big kitchen.", "word": "h20874", "form": "hálószoba" },
+      { "hu": "A házban van lift, ezért a költözés könnyű.", "es": "En el edificio hay elevador, por eso la mudanza es fácil.", "en": "The building has an elevator, so the move is easy.", "word": "h20879", "form": "lift" },
+      { "hu": "Este a barátom fáradt, de izgatott.", "es": "Por la noche mi amigo está cansado, pero emocionado.", "en": "In the evening my friend is tired but excited.", "word": "h21116", "form": "izgatott" }
+    ],
+    "false_es": ["El departamento nuevo es pequeño.","El edificio no tiene elevador."],
+    "false_en": ["The new apartment is small.","The building has no elevator."]
+  },
+  {
+    "id": "a2-allatkert",
+    "level": "A2",
+    "sentences": [
+      { "hu": "Az állatkert nagy, és ma a gyerek ott van.", "es": "El zoológico es grande, y hoy el niño está ahí.", "en": "The zoo is big, and today the child is there.", "word": "h20197", "form": "állatkert" },
+      { "hu": "A zsiráf nagyon magas, de a teknős lassú.", "es": "La jirafa es muy alta, pero la tortuga es lenta.", "en": "The giraffe is very tall, but the turtle is slow.", "word": "h20299", "form": "zsiráf" },
+      { "hu": "A pingvin hideg vizet szeret.", "es": "Al pingüino le gusta el agua fría.", "en": "The penguin likes cold water.", "word": "h20473", "form": "pingvin" },
+      { "hu": "A kenguru ugrik, és a gyerek nevet.", "es": "El canguro salta y el niño se ríe.", "en": "The kangaroo jumps and the child laughs.", "word": "h20685", "form": "kenguru" },
+      { "hu": "A gyerek mosolyog, mert ez a nap fantasztikus.", "es": "El niño sonríe porque este día es fantástico.", "en": "The child smiles because this day is fantastic.", "word": "h20896", "form": "fantasztikus" }
+    ],
+    "false_es": ["El zoológico es pequeño.","La jirafa es baja."],
+    "false_en": ["The zoo is small.","The giraffe is short."]
+  },
+  {
+    "id": "a2-repuloter",
+    "level": "A2",
+    "sentences": [
+      { "hu": "A repülőjegy drága, de a járat gyors.", "es": "El boleto de avión es caro, pero el vuelo es rápido.", "en": "The plane ticket is expensive, but the flight is fast.", "word": "h21489", "form": "repülőjegy" },
+      { "hu": "A poggyász nehéz, és a bőrönd is nagy.", "es": "El equipaje es pesado, y la maleta también es grande.", "en": "The luggage is heavy, and the suitcase is big too.", "word": "h20199", "form": "poggyász" },
+      { "hu": "Sietek, mert a beszállókapu messze van.", "es": "Tengo prisa porque la puerta de embarque está lejos.", "en": "I am in a hurry because the boarding gate is far away.", "word": "h21310", "form": "beszállókapu" },
+      { "hu": "A repülőgép nagy, és a pilóta kedves.", "es": "El avión es grande y el piloto es amable.", "en": "The plane is big and the pilot is kind.", "word": "h20088", "form": "repülőgép" },
+      { "hu": "A repülő leszáll, és már boldog vagyok.", "es": "El avión aterriza y ya estoy feliz.", "en": "The plane lands, and I am already happy.", "word": "h20916", "form": "leszáll" }
+    ],
+    "false_es": ["La maleta es pequeña.","El piloto es antipático."],
+    "false_en": ["The suitcase is small.","The pilot is unfriendly."]
+  },
+  {
+    "id": "a2-foci",
+    "level": "A2",
+    "sentences": [
+      { "hu": "A játékvezető fúj, és a meccs kezdődik.", "es": "El árbitro silba y el partido empieza.", "en": "The referee blows the whistle and the match starts.", "word": "h20406", "form": "játékvezető" },
+      { "hu": "A játékos rúg, és a labda gyors.", "es": "El jugador patea y el balón va rápido.", "en": "The player kicks and the ball is fast.", "word": "h20507", "form": "rúg" },
+      { "hu": "A kapus nagyon ügyes, ezért még nincs gól.", "es": "El portero es muy hábil, por eso todavía no hay gol.", "en": "The goalkeeper is very skilled, so there is no goal yet.", "word": "h21053", "form": "kapus" },
+      { "hu": "Végül egy szép gól van, és a stadion hangos.", "es": "Al final hay un gol bonito y el estadio está ruidoso.", "en": "Finally there is a beautiful goal and the stadium is loud.", "word": "h20554", "form": "gól" },
+      { "hu": "Mindenki tapsol, és én nagyon boldog vagyok.", "es": "Todos aplauden y yo estoy muy feliz.", "en": "Everyone claps and I am very happy.", "word": "h20505", "form": "tapsol" }
+    ],
+    "false_es": ["El partido termina sin goles.","Nadie aplaude."],
+    "false_en": ["The match ends without goals.","Nobody claps."]
+  },
+  {
+    "id": "a2-sutes",
+    "level": "A2",
+    "sentences": [
+      { "hu": "Anya ma süt, mert holnap születésnap van.", "es": "Mamá hornea hoy porque mañana es un cumpleaños.", "en": "Mom is baking today because tomorrow is a birthday.", "word": "h20279", "form": "süt" },
+      { "hu": "Kell tojás, liszt, cukor és vanília.", "es": "Hacen falta huevo, harina, azúcar y vainilla.", "en": "You need egg, flour, sugar and vanilla.", "word": "h20709", "form": "vanília" },
+      { "hu": "A konyha meleg, és jó illat van.", "es": "En la cocina hace calor y huele bien.", "en": "The kitchen is warm and smells good.", "word": "h20856", "form": "illat" },
+      { "hu": "A torta szép, de még nem kész.", "es": "El pastel es bonito, pero todavía no está listo.", "en": "The cake is pretty, but it is not ready yet.", "word": "h20044", "form": "kész" },
+      { "hu": "Végül a torta finom, és anya mosolyog.", "es": "Al final el pastel está delicioso y mamá sonríe.", "en": "In the end the cake is delicious and Mom smiles.", "word": "h20165", "form": "mosolyog" }
+    ],
+    "false_es": ["Mamá compra el pastel.","La cocina está fría."],
+    "false_en": ["Mom buys the cake.","The kitchen is cold."]
+  },
+  {
+    "id": "b1-hivatal",
+    "level": "B1",
+    "sentences": [
+      { "hu": "Új útlevél kell nekem, ezért időpontot foglalok.", "es": "Necesito un pasaporte nuevo, así que hago una cita.", "en": "I need a new passport, so I make an appointment.", "word": "h22880", "form": "időpontot" },
+      { "hu": "Az ügyfélpult előtt sok ember áll.", "es": "Mucha gente está de pie frente al mostrador de atención.", "en": "Many people are standing in front of the service counter.", "word": "h22872", "form": "ügyfélpult" },
+      { "hu": "Az asztalon egy hosszú kérvény van, és sokáig írok.", "es": "Hay una solicitud larga sobre la mesa y escribo por mucho tiempo.", "en": "There is a long application form on the table, and I write for a long time.", "word": "h22257", "form": "kérvény" },
+      { "hu": "Aztán a titkár aláír és lepecsétel.", "es": "Luego el secretario firma y sella.", "en": "Then the secretary signs and stamps.", "word": "h22933", "form": "aláír" },
+      { "hu": "Végül az okmány kész, és nagyon örülök.", "es": "Al final el documento está listo y estoy muy contento.", "en": "In the end the document is ready, and I am very happy.", "word": "h22174", "form": "okmány" }
+    ],
+    "false_es": ["Necesito una licencia de conducir nueva.","Hay muy poca gente frente al mostrador de atención."],
+    "false_en": ["I need a new driver's license.","There are very few people in front of the service counter."]
+  },
+  {
+    "id": "b1-film",
+    "level": "B1",
+    "sentences": [
+      { "hu": "Ma este a mozi tele van, mert premier van.", "es": "Esta noche el cine está lleno porque es un estreno.", "en": "Tonight the cinema is full, because it is a premiere.", "word": "h22688", "form": "premier" },
+      { "hu": "A vígjáték kezdődik, és sok néző nevet.", "es": "La comedia empieza y muchos espectadores se ríen.", "en": "The comedy begins, and many viewers laugh.", "word": "h23137", "form": "vígjáték" },
+      { "hu": "Az első jelenet nagyon vicces.", "es": "La primera escena es muy graciosa.", "en": "The first scene is very funny.", "word": "h21923", "form": "jelenet" },
+      { "hu": "A szereplő hirtelen elesik, és én is nevetek.", "es": "El personaje se cae de repente y yo también me río.", "en": "The character suddenly falls, and I laugh too.", "word": "h21794", "form": "szereplő" },
+      { "hu": "Végül taps van, és mindenki boldog.", "es": "Al final hay aplausos y todos están contentos.", "en": "In the end there is applause, and everyone is happy.", "word": "h22696", "form": "taps" }
+    ],
+    "false_es": ["Esta noche el cine está vacío.","La primera escena es muy triste."],
+    "false_en": ["Tonight the cinema is empty.","The first scene is very sad."]
+  },
+  {
+    "id": "b1-csomag",
+    "level": "B1",
+    "sentences": [
+      { "hu": "Új cipő kell nekem, és a megrendelés egyszerű.", "es": "Necesito zapatos nuevos y el pedido es sencillo.", "en": "I need new shoes, and the order is simple.", "word": "h22474", "form": "megrendelés" },
+      { "hu": "Az átutalás gyors, és a pénz azonnal elmegy.", "es": "La transferencia es rápida y el dinero sale de inmediato.", "en": "The transfer is fast, and the money goes out immediately.", "word": "h22250", "form": "átutalás" },
+      { "hu": "Aztán egy visszaigazolás jön, és a kód benne van.", "es": "Luego llega una confirmación y el código viene en ella.", "en": "Then a confirmation arrives, and the code is in it.", "word": "h23299", "form": "visszaigazolás" },
+      { "hu": "A nyomkövetés szerint a csomag már úton van.", "es": "Según el rastreo, el paquete ya está en camino.", "en": "According to the tracking, the package is already on its way.", "word": "h22898", "form": "nyomkövetés" },
+      { "hu": "A kaputelefon csörög, mert a futár itt van.", "es": "El interfón suena porque el repartidor está aquí.", "en": "The intercom rings, because the courier is here.", "word": "h22903", "form": "kaputelefon" }
+    ],
+    "false_es": ["Necesito una chaqueta nueva.","El paquete todavía no está en camino."],
+    "false_en": ["I need a new jacket.","The package is not on its way yet."]
+  },
+  {
+    "id": "b1-diploma",
+    "level": "B1",
+    "sentences": [
+      { "hu": "Ez az utolsó félév, ezért nagyon sokáig tanulok.", "es": "Este es el último semestre, así que estudio por mucho tiempo.", "en": "This is the last semester, so I study for a very long time.", "word": "h22169", "form": "félév" },
+      { "hu": "A szakdolgozat nehéz, de a téma érdekes.", "es": "La tesis es difícil, pero el tema es interesante.", "en": "The thesis is difficult, but the topic is interesting.", "word": "h22227", "form": "szakdolgozat" },
+      { "hu": "Az oktató sok jó tanácsot ad.", "es": "El profesor da muchos buenos consejos.", "en": "The instructor gives a lot of good advice.", "word": "h23249", "form": "oktató" },
+      { "hu": "A tandíj drága, de a pénz elég.", "es": "La colegiatura es cara, pero el dinero alcanza.", "en": "The tuition is expensive, but the money is enough.", "word": "h22224", "form": "tandíj" },
+      { "hu": "Végül diplomás vagyok, és ez nagy öröm.", "es": "Al final tengo mi título y es una gran alegría.", "en": "In the end I am a graduate, and this is a great joy.", "word": "h22777", "form": "diplomás" }
+    ],
+    "false_es": ["Este es el primer semestre.","La tesis es muy fácil."],
+    "false_en": ["This is the first semester.","The thesis is very easy."]
+  },
+  {
+    "id": "b1-internet",
+    "level": "B1",
+    "sentences": [
+      { "hu": "Este a router lefagy, és nincs internet.", "es": "Por la noche el router se traba y no hay internet.", "en": "In the evening the router freezes, and there is no internet.", "word": "h22859", "form": "router" },
+      { "hu": "A modem piros, ezért ideges vagyok.", "es": "El módem está rojo, así que estoy nervioso.", "en": "The modem is red, so I am upset.", "word": "h22797", "form": "modem" },
+      { "hu": "Nincs wifi, ezért a mobilnet kell nekem.", "es": "No hay wifi, así que necesito los datos móviles.", "en": "There is no wifi, so I need mobile data.", "word": "h22922", "form": "mobilnet" },
+      { "hu": "Később a mobilnet is elfogy.", "es": "Más tarde los datos móviles también se acaban.", "en": "Later the mobile data runs out too.", "word": "h21837", "form": "elfogy" },
+      { "hu": "Végül az egyenleg kevés, ezért feltöltés kell.", "es": "Al final el saldo es bajo, así que hace falta una recarga.", "en": "In the end the balance is low, so a top-up is needed.", "word": "h22786", "form": "egyenleg" }
+    ],
+    "false_es": ["Por la noche el router funciona muy bien.","El saldo es más que suficiente."],
+    "false_en": ["In the evening the router works very well.","The balance is more than enough."]
+  },
+  {
+    "id": "b2-hivatal",
+    "level": "B2",
+    "sentences": [
+      { "hu": "Az útlevél hamarosan lejár, ezért ma a hivatal előtt várok.", "es": "El pasaporte vence pronto, por eso hoy espero frente a la oficina.", "en": "The passport expires soon, so today I am waiting in front of the office.", "word": "h23886", "form": "lejár" },
+      { "hu": "Hosszú sor van, mert a bürokrácia nagyon lassú.", "es": "Hay una fila larga porque la burocracia es muy lenta.", "en": "There is a long line because the bureaucracy is very slow.", "word": "h23888", "form": "bürokrácia" },
+      { "hu": "A hivatalnok udvarias, de sok okmány kell.", "es": "El funcionario es amable, pero se necesitan muchos documentos.", "en": "The clerk is polite, but many documents are needed.", "word": "h23887", "form": "hivatalnok" },
+      { "hu": "Az egyik okmány nem hivatalos, ezért közjegyző kell.", "es": "Uno de los documentos no es oficial, por eso se necesita un notario.", "en": "One of the documents is not official, so a notary is needed.", "word": "h23862", "form": "közjegyző" },
+      { "hu": "Végül a papírmunka kész, és boldog vagyok.", "es": "Al final el papeleo está listo y estoy feliz.", "en": "In the end the paperwork is done and I am happy.", "word": "h23890", "form": "papírmunka" }
+    ],
+    "false_es": ["El pasaporte no vence pronto.","El funcionario es grosero.","No se necesita un notario."],
+    "false_en": ["The passport does not expire soon.","The clerk is rude.","A notary is not needed."]
+  },
+  {
+    "id": "b2-hitel",
+    "level": "B2",
+    "sentences": [
+      { "hu": "Egy új lakás nagyon drága, ezért jelzáloghitel kell.", "es": "Un departamento nuevo es muy caro, por eso se necesita un crédito hipotecario.", "en": "A new apartment is very expensive, so a mortgage is needed.", "word": "h23909", "form": "jelzáloghitel" },
+      { "hu": "A tanácsadó türelmes, de az önrész nagy.", "es": "El asesor es paciente, pero el enganche es grande.", "en": "The advisor is patient, but the down payment is big.", "word": "h23919", "form": "tanácsadó" },
+      { "hu": "A kamatláb magas, ezért félek.", "es": "La tasa de interés es alta, por eso tengo miedo.", "en": "The interest rate is high, so I am afraid.", "word": "h23910", "form": "kamatláb" },
+      { "hu": "A havi részletfizetés nagy, de a fizetés elég.", "es": "La mensualidad es grande, pero el sueldo alcanza.", "en": "The monthly installment is big, but the salary is enough.", "word": "h23908", "form": "részletfizetés" },
+      { "hu": "Szerencsére minden hónapban spórolok, különben a család eladósodik.", "es": "Por suerte ahorro cada mes; si no, la familia se endeuda.", "en": "Luckily I save every month, otherwise the family goes into debt.", "word": "h23907", "form": "eladósodik" }
+    ],
+    "false_es": ["El departamento es muy barato.","La tasa de interés es baja.","Nunca ahorro dinero."],
+    "false_en": ["The apartment is very cheap.","The interest rate is low.","I never save money."]
+  },
+  {
+    "id": "b2-tanya",
+    "level": "B2",
+    "sentences": [
+      { "hu": "A tanya a hegy mellett van, és ott egy nagy nyáj él.", "es": "El rancho está junto a la montaña, y allí vive un rebaño grande.", "en": "The farm is next to the mountain, and a big flock lives there.", "word": "h23873", "form": "nyáj" },
+      { "hu": "Egy kis csikó ugrik a kerítés mellett.", "es": "Un potrillo salta junto a la cerca.", "en": "A little foal jumps next to the fence.", "word": "h23871", "form": "csikó" },
+      { "hu": "A hegy fölött egy sólyom repül.", "es": "Sobre la montaña vuela un halcón.", "en": "A falcon flies over the mountain.", "word": "h23864", "form": "sólyom" },
+      { "hu": "A fa alatt egy vipera alszik, ezért óvatos vagyok.", "es": "Bajo el árbol duerme una víbora, por eso tengo cuidado.", "en": "A viper sleeps under the tree, so I am careful.", "word": "h23866", "form": "vipera" },
+      { "hu": "Este egy raj szúnyog jön, ezért a tűz mellett maradok.", "es": "Por la noche viene un enjambre de mosquitos, por eso me quedo junto al fuego.", "en": "In the evening a swarm of mosquitoes comes, so I stay by the fire.", "word": "h23874", "form": "raj" }
+    ],
+    "false_es": ["El rancho está junto al mar.","Una víbora vuela sobre la montaña.","Por la mañana llega un enjambre de mosquitos."],
+    "false_en": ["The farm is next to the sea.","A viper flies over the mountain.","A swarm of mosquitoes comes in the morning."]
+  },
+  {
+    "id": "b2-felujitas",
+    "level": "B2",
+    "sentences": [
+      { "hu": "A fal régi, ezért gipsz és festék kell.", "es": "La pared es vieja, por eso se necesitan yeso y pintura.", "en": "The wall is old, so plaster and paint are needed.", "word": "h23814", "form": "gipsz" },
+      { "hu": "A festőhenger gyors, de az ecset pontos.", "es": "El rodillo es rápido, pero la brocha es precisa.", "en": "The paint roller is fast, but the brush is precise.", "word": "h23812", "form": "festőhenger" },
+      { "hu": "A fürdőszoba is rossz, és a lefolyó nem működik.", "es": "El baño también está mal, y el desagüe no funciona.", "en": "The bathroom is also bad, and the drain does not work.", "word": "h23813", "form": "lefolyó" },
+      { "hu": "A kerítésfal alacsony, de a kert szép.", "es": "La barda es baja, pero el jardín es bonito.", "en": "The fence wall is low, but the garden is pretty.", "word": "h23815", "form": "kerítésfal" },
+      { "hu": "A lakópark csendes, ezért itt nyugodt vagyok.", "es": "El fraccionamiento es silencioso, por eso aquí estoy en calma.", "en": "The housing estate is quiet, so I am calm here.", "word": "h23811", "form": "lakópark" }
+    ],
+    "false_es": ["La pared es nueva.","El agua baja bien por el desagüe.","El fraccionamiento es ruidoso."],
+    "false_en": ["The wall is new.","The water drains well.","The housing estate is noisy."]
+  },
+  {
+    "id": "b2-szerver",
+    "level": "B2",
+    "sentences": [
+      { "hu": "Éjszaka a szerver lefagy, ezért a weboldal nem működik.", "es": "De noche el servidor se traba, por eso el sitio web no funciona.", "en": "At night the server freezes, so the website does not work.", "word": "h23961", "form": "szerver" },
+      { "hu": "A napló szerint egy vírus van, ezért azonnal javítok.", "es": "Según el registro hay un virus, por eso lo arreglo de inmediato.", "en": "According to the log there is a virus, so I fix it immediately.", "word": "h23969", "form": "napló" },
+      { "hu": "A vírusirtó nem aktív, mert nincs előfizetés.", "es": "El antivirus no está activo porque no hay suscripción.", "en": "The antivirus is not active because there is no subscription.", "word": "h23966", "form": "vírusirtó" },
+      { "hu": "A beállítás rossz, ezért a gép nem indul.", "es": "La configuración está mal, por eso la máquina no arranca.", "en": "The setting is wrong, so the machine does not start.", "word": "h23964", "form": "beállítás" },
+      { "hu": "Végül egy hordozható gép működik, és az ügyfél elégedett.", "es": "Al final funciona un equipo portátil y el cliente está satisfecho.", "en": "In the end a portable machine works, and the client is satisfied.", "word": "h23975", "form": "hordozható" }
+    ],
+    "false_es": ["El servidor se traba al mediodía.","El antivirus está activo.","Al final el cliente está enojado."],
+    "false_en": ["The server freezes at noon.","The antivirus is active.","In the end the client is angry."]
+  },
+  {
+    "id": "c1-per",
+    "level": "C1",
+    "sentences": [
+      { "hu": "A végrendelet nem egyértelmű, ezért a család vitatkozik.", "es": "El testamento no es claro, por eso la familia discute.", "en": "The will is not clear, so the family argues.", "word": "h24181", "form": "végrendelet" },
+      { "hu": "Az ügyvéd szerint a hagyaték nagyon értékes.", "es": "Según el abogado, la herencia es muy valiosa.", "en": "According to the lawyer, the estate is very valuable.", "word": "h24129", "form": "hagyaték" },
+      { "hu": "A testvér szerint a kártérítés összege túl kevés.", "es": "Según el hermano, el monto de la indemnización es demasiado bajo.", "en": "According to the sibling, the amount of the compensation is too low.", "word": "h24072", "form": "kártérítés" },
+      { "hu": "Az idézés szerint a per holnap kezdődik.", "es": "Según la citación, el juicio empieza mañana.", "en": "According to the summons, the trial starts tomorrow.", "word": "h24179", "form": "idézés" },
+      { "hu": "A bíró pártatlan, és a döntés végleges.", "es": "El juez es imparcial y la decisión es definitiva.", "en": "The judge is impartial, and the decision is final.", "word": "h24084", "form": "pártatlan" }
+    ],
+    "false_es": ["El testamento es muy claro y todos están de acuerdo.","El juicio empezó la semana pasada.","El juez no es imparcial."],
+    "false_en": ["The will is very clear and everyone agrees.","The trial started last week.","The judge is not impartial."]
+  },
+  {
+    "id": "c1-projekt",
+    "level": "C1",
+    "sentences": [
+      { "hu": "Az ütemterv szerint a projekt hamarosan kész.", "es": "Según el cronograma, el proyecto estará listo pronto.", "en": "According to the schedule, the project will be ready soon.", "word": "h24187", "form": "ütemterv" },
+      { "hu": "A kódtár elavult, ezért a frissítés sürgős.", "es": "La biblioteca de código está obsoleta, por eso la actualización es urgente.", "en": "The code library is outdated, so the update is urgent.", "word": "h24195", "form": "elavult" },
+      { "hu": "A fejlesztő debuggol, mert az alkalmazás összeomlik.", "es": "El desarrollador depura el código porque la aplicación se cae.", "en": "The developer is debugging because the app crashes.", "word": "h24196", "form": "debuggol" },
+      { "hu": "Az algoritmus gyors, de néha hibázik.", "es": "El algoritmo es rápido, pero a veces falla.", "en": "The algorithm is fast, but sometimes it makes mistakes.", "word": "h24190", "form": "algoritmus" },
+      { "hu": "A javítócsomag kész, a telepítés holnap kezdődik.", "es": "El parche está listo y la instalación empieza mañana.", "en": "The patch is ready, and the installation starts tomorrow.", "word": "h24188", "form": "javítócsomag" }
+    ],
+    "false_es": ["El proyecto está terminado desde hace un año.","El algoritmo nunca falla.","La instalación empezó ayer."],
+    "false_en": ["The project has been finished for a year.","The algorithm never fails.","The installation started yesterday."]
+  },
+  {
+    "id": "c1-hivatal",
+    "level": "C1",
+    "sentences": [
+      { "hu": "Az útlevél érvényes, a tartózkodás törvényes.", "es": "El pasaporte es válido y la estancia es legal.", "en": "The passport is valid, and the stay is legal.", "word": "h24172", "form": "tartózkodás" },
+      { "hu": "Az ügyintéző szerint az akta még nincs itt.", "es": "Según el funcionario, el expediente todavía no está aquí.", "en": "According to the clerk, the file is not here yet.", "word": "h24173", "form": "akta" },
+      { "hu": "Az ügyintéző biometrikus fényképet kér.", "es": "El funcionario pide una foto biométrica.", "en": "The clerk asks for a biometric photo.", "word": "h24180", "form": "biometrikus" },
+      { "hu": "A határidő lejár, ezért haladék kell.", "es": "El plazo vence, por eso se necesita una prórroga.", "en": "The deadline expires, so an extension is needed.", "word": "h24178", "form": "haladék" },
+      { "hu": "A bérleti szerződésnél kezes kell, ezért a barátom aláír.", "es": "En el contrato de renta se necesita un fiador, por eso mi amigo firma.", "en": "The rental contract needs a guarantor, so my friend signs.", "word": "h24183", "form": "kezes" }
+    ],
+    "false_es": ["El pasaporte ya no es válido.","El funcionario no pide ninguna foto.","No hace falta un fiador."],
+    "false_en": ["The passport is no longer valid.","The clerk does not ask for any photo.","A guarantor is not needed."]
+  },
+  {
+    "id": "c1-kutatas",
+    "level": "C1",
+    "sentences": [
+      { "hu": "A tudós aprólékos, és minden adatot ellenőriz.", "es": "El científico es meticuloso y revisa todos los datos.", "en": "The scientist is meticulous and checks all the data.", "word": "h24158", "form": "aprólékos" },
+      { "hu": "A tudós szerint a feltevés egyszerű, de nem biztos.", "es": "Según el científico, la suposición es sencilla, pero no es segura.", "en": "According to the scientist, the assumption is simple, but it is not certain.", "word": "h24144", "form": "feltevés" },
+      { "hu": "A minta szétszórt, ezért a becslés bizonytalan.", "es": "La muestra está dispersa, por eso la estimación es incierta.", "en": "The sample is scattered, so the estimate is uncertain.", "word": "h24081", "form": "szétszórt" },
+      { "hu": "Az eredmény szokatlan, mert nagy az eltérés.", "es": "El resultado es inusual, porque la desviación es grande.", "en": "The result is unusual, because the deviation is large.", "word": "h24058", "form": "eltérés" },
+      { "hu": "A tudós elmélkedik, mert a paradigma új.", "es": "El científico reflexiona porque el paradigma es nuevo.", "en": "The scientist reflects because the paradigm is new.", "word": "h24028", "form": "elmélkedik" }
+    ],
+    "false_es": ["El científico no revisa los datos.","La estimación es muy precisa.","El resultado es completamente normal."],
+    "false_en": ["The scientist does not check the data.","The estimate is very precise.","The result is completely normal."]
+  },
+  {
+    "id": "c1-kozgyules",
+    "level": "C1",
+    "sentences": [
+      { "hu": "A népszámlálás szerint a lakosság növekszik.", "es": "Según el censo, la población crece.", "en": "According to the census, the population is growing.", "word": "h24047", "form": "népszámlálás" },
+      { "hu": "A polgármester izgatott, mert a rendelet új.", "es": "El alcalde está emocionado porque el decreto es nuevo.", "en": "The mayor is excited because the decree is new.", "word": "h23999", "form": "rendelet" },
+      { "hu": "A közgyűlés ma kezdődik, de nincs konszenzus.", "es": "La asamblea empieza hoy, pero no hay consenso.", "en": "The assembly starts today, but there is no consensus.", "word": "h23997", "form": "konszenzus" },
+      { "hu": "A polgármester szerint a mandátum rövid, de a feladat nagy.", "es": "Según el alcalde, el mandato es corto, pero la tarea es grande.", "en": "According to the mayor, the mandate is short, but the task is big.", "word": "h24132", "form": "mandátum" },
+      { "hu": "Végül az egyezmény kész, és mindenki elégedett.", "es": "Al final el acuerdo está listo y todos están satisfechos.", "en": "In the end the agreement is ready, and everyone is satisfied.", "word": "h24053", "form": "egyezmény" }
+    ],
+    "false_es": ["La población disminuye.","El alcalde está aburrido y tranquilo.","Hay consenso desde el principio."],
+    "false_en": ["The population is shrinking.","The mayor is bored and calm.","There is consensus from the start."]
   }
 ]

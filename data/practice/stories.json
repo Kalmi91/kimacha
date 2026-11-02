@@ -258,5 +258,265 @@
     ],
     "false_en": ["My mom makes fish with rice.", "My dad gets home at nine."],
     "false_hu": ["Anyukám halat készít rizzsel.", "Apukám kilenckor ér haza."]
+  },
+  {
+    "id": "a2-cumpleanos",
+    "level": "A2",
+    "sentences": [
+      { "es": "Ayer fue el cumpleaños de mi hermana.", "en": "Yesterday was my sister's birthday.", "hu": "Tegnap volt a nővérem születésnapja.", "word": "o751", "form": "cumpleaños" },
+      { "es": "Mis padres compraron un pastel grande en la tienda.", "en": "My parents bought a big cake at the store.", "hu": "A szüleim vettek egy nagy tortát a boltban.", "word": "o698", "form": "pastel" },
+      { "es": "Muchos invitados llegaron a la casa por la tarde.", "en": "Many guests arrived at the house in the afternoon.", "hu": "Sok vendég érkezett a házhoz délután.", "word": "o1153", "form": "invitados" },
+      { "es": "Yo le di un regalo bonito y ella me abrazó.", "en": "I gave her a pretty gift and she hugged me.", "hu": "Adtam neki egy szép ajándékot, ő pedig megölelt.", "word": "o694", "form": "regalo" },
+      { "es": "Todos cantamos y ella se puso muy feliz con la sorpresa.", "en": "We all sang and she became very happy with the surprise.", "hu": "Mindannyian énekeltünk, ő pedig nagyon boldog lett a meglepetéstől.", "word": "o1151", "form": "sorpresa" }
+    ],
+    "false_en": ["Yesterday was my brother's birthday.", "My parents made a big cake at home."],
+    "false_hu": ["Tegnap a bátyám születésnapja volt.", "A szüleim otthon készítettek egy nagy tortát."]
+  },
+  {
+    "id": "a2-mudanza",
+    "level": "A2",
+    "sentences": [
+      { "es": "El sábado fue el día de la mudanza.", "en": "Saturday was moving day.", "hu": "Szombaton volt a költözés napja.", "word": "o2900", "form": "mudanza" },
+      { "es": "Mi madre puso la ropa en una maleta grande.", "en": "My mother put the clothes in a big suitcase.", "hu": "Anyám egy nagy bőröndbe tette a ruhákat.", "word": "o699", "form": "maleta" },
+      { "es": "Nuestro departamento nuevo está cerca del parque.", "en": "Our new apartment is near the park.", "hu": "Az új lakásunk a park közelében van.", "word": "o714", "form": "departamento" },
+      { "es": "Un vecino simpático nos ayudó con la mesa.", "en": "A friendly neighbor helped us with the table.", "hu": "Egy kedves szomszéd segített nekünk az asztallal.", "word": "o385", "form": "vecino" },
+      { "es": "Por la noche cenamos en la cocina y estábamos muy cansados.", "en": "At night we had dinner in the kitchen and we were very tired.", "hu": "Este a konyhában vacsoráztunk, és nagyon fáradtak voltunk.", "word": "o269", "form": "cocina" }
+    ],
+    "false_en": ["Moving day was on Monday.", "Our new apartment is far from the park."],
+    "false_hu": ["A költözés hétfőn volt.", "Az új lakásunk messze van a parktól."]
+  },
+  {
+    "id": "a2-aeropuerto",
+    "level": "A2",
+    "sentences": [
+      { "es": "Llegué al aeropuerto dos horas antes del vuelo.", "en": "I arrived at the airport two hours before the flight.", "hu": "Két órával a járat előtt érkeztem a repülőtérre.", "word": "o713", "form": "aeropuerto" },
+      { "es": "Le di mi pasaporte a la señora.", "en": "I gave my passport to the lady.", "hu": "Odaadtam az útlevelemet a hölgynek.", "word": "o1132", "form": "pasaporte" },
+      { "es": "Mi equipaje era muy pesado y tuve que pagar más.", "en": "My luggage was very heavy and I had to pay more.", "hu": "A poggyászom nagyon nehéz volt, és többet kellett fizetnem.", "word": "o1131", "form": "equipaje" },
+      { "es": "Mientras esperaba, miré los aviones por la ventana.", "en": "While I waited, I watched the planes through the window.", "hu": "Amíg vártam, a repülőket néztem az ablakon át.", "word": "o748", "form": "aviones" },
+      { "es": "Mi asiento era cómodo y el viaje fue corto.", "en": "My seat was comfortable and the trip was short.", "hu": "Az ülésem kényelmes volt, és az út rövid volt.", "word": "o1135", "form": "asiento" }
+    ],
+    "false_en": ["I arrived at the airport ten minutes before the flight.", "My luggage was very light."],
+    "false_hu": ["Tíz perccel a járat előtt érkeztem a repülőtérre.", "A poggyászom nagyon könnyű volt."]
+  },
+  {
+    "id": "a2-receta",
+    "level": "A2",
+    "sentences": [
+      { "es": "Ayer quise hacer una receta nueva.", "en": "Yesterday I wanted to make a new recipe.", "hu": "Tegnap egy új receptet akartam elkészíteni.", "word": "o722", "form": "receta" },
+      { "es": "Compré harina y mantequilla en el mercado.", "en": "I bought flour and butter at the market.", "hu": "Lisztet és vajat vettem a piacon.", "word": "o1688", "form": "harina" },
+      { "es": "Primero batí los huevos con una taza de azúcar.", "en": "First I beat the eggs with a cup of sugar.", "hu": "Először felvertem a tojásokat egy csésze cukorral.", "word": "o761", "form": "taza" },
+      { "es": "Luego metí el pastel en el horno durante una hora.", "en": "Then I put the cake in the oven for an hour.", "hu": "Aztán egy órára betettem a tortát a sütőbe.", "word": "o1109", "form": "horno" },
+      { "es": "El pastel salió delicioso y mi familia lo comió.", "en": "The cake came out delicious and my family ate it.", "hu": "A torta finomra sikerült, és a családom megette.", "word": "o910", "form": "delicioso" }
+    ],
+    "false_en": ["I bought milk and eggs at the market.", "I put the cake in the oven for ten minutes."],
+    "false_hu": ["Tejet és tojást vettem a piacon.", "Tíz percre tettem be a tortát a sütőbe."]
+  },
+  {
+    "id": "a2-partido",
+    "level": "A2",
+    "sentences": [
+      { "es": "El domingo fuimos al estadio con mis amigos.", "en": "On Sunday we went to the stadium with my friends.", "hu": "Vasárnap a stadionba mentünk a barátaimmal.", "word": "o1126", "form": "estadio" },
+      { "es": "Nuestro equipo era pequeño, pero muy fuerte.", "en": "Our team was small, but very strong.", "hu": "A csapatunk kicsi volt, de nagyon erős.", "word": "o859", "form": "equipo" },
+      { "es": "El jugador número diez metió un gol.", "en": "Player number ten scored a goal.", "hu": "A tízes számú játékos gólt lőtt.", "word": "o1753", "form": "jugador" },
+      { "es": "Todos gritamos con alegría.", "en": "We all shouted with joy.", "hu": "Mindannyian örömmel kiabáltunk.", "word": "o2284", "form": "alegría" },
+      { "es": "Después ganamos y todos fuimos a cenar.", "en": "Afterwards we won and we all went to have dinner.", "hu": "Utána nyertünk, és mindannyian elmentünk vacsorázni.", "word": "o232", "form": "ganamos" }
+    ],
+    "false_en": ["On Sunday we went to the park with my friends.", "Then we lost and went home."],
+    "false_hu": ["Vasárnap a parkba mentünk a barátaimmal.", "Aztán vesztettünk, és hazamentünk."]
+  },
+  {
+    "id": "b1-entrevista",
+    "level": "B1",
+    "sentences": [
+      { "es": "Ayer mandé mi currículum para una vacante en una empresa.", "en": "Yesterday I sent my résumé for a job opening at a company.", "hu": "Tegnap elküldtem az önéletrajzomat egy meghirdetett állásra egy cégnél.", "word": "o3061", "form": "vacante" },
+      { "es": "Hoy tuve una entrevista con el gerente de la empresa.", "en": "Today I had an interview with the manager of the company.", "hu": "Ma interjúm volt a cég menedzserével.", "word": "o1276", "form": "entrevista" },
+      { "es": "Me preguntó por mi experiencia y por mis objetivos.", "en": "He asked me about my experience and my goals.", "hu": "Kérdezett a tapasztalataimról és a céljaimról.", "word": "o375", "form": "objetivos" },
+      { "es": "Le enseñé mi certificado y él dijo que era excelente.", "en": "I showed him my certificate and he said it was excellent.", "hu": "Megmutattam neki a bizonyítványomat, ő pedig azt mondta, hogy kiváló.", "word": "o1863", "form": "certificado" },
+      { "es": "Finalmente me dieron el puesto y lloré de emoción.", "en": "Finally they gave me the position and I cried with emotion.", "hu": "Végül megkaptam az állást, és meghatottságomban elsírtam magam.", "word": "o1861", "form": "puesto" }
+    ],
+    "false_en": ["I sent my résumé a month ago.", "In the end they did not give me the position."],
+    "false_hu": ["Az önéletrajzomat egy hónapja küldtem el.", "A végén nem kaptam meg az állást."]
+  },
+  {
+    "id": "b1-tramite",
+    "level": "B1",
+    "sentences": [
+      { "es": "Hoy por la mañana fui a una oficina para hacer un trámite.", "en": "This morning I went to an office to take care of some paperwork.", "hu": "Ma reggel elmentem egy hivatalba ügyet intézni.", "word": "o2904", "form": "trámite" },
+      { "es": "Llevé mi acta de nacimiento y un comprobante de domicilio.", "en": "I brought my birth certificate and a proof of address.", "hu": "Magammal vittem a születési anyakönyvi kivonatomat és egy lakcímigazolást.", "word": "o2909", "form": "comprobante" },
+      { "es": "Esperé una hora frente a la ventanilla.", "en": "I waited an hour in front of the window.", "hu": "Egy órát vártam az ügyfélablak előtt.", "word": "o2910", "form": "ventanilla" },
+      { "es": "El empleado revisó mis papeles y dijo que faltaba una copia.", "en": "The clerk checked my papers and said a copy was missing.", "hu": "Az ügyintéző átnézte a papírjaimat, és azt mondta, hogy hiányzik egy másolat.", "word": "o1882", "form": "empleado" },
+      { "es": "Por suerte, hicieron la copia ahí mismo y el resto del proceso no fue tardado.", "en": "Luckily, they made the copy right there and the rest of the process was not slow.", "hu": "Szerencsére a másolatot helyben elkészítették, és az ügyintézés további része nem tartott sokáig.", "word": "o4476", "form": "tardado" }
+    ],
+    "false_en": ["I went to the office in the afternoon.", "I waited only five minutes at the window."],
+    "false_hu": ["Délután mentem el a hivatalba.", "Csak öt percet vártam az ügyfélablaknál."]
+  },
+  {
+    "id": "b1-averia",
+    "level": "B1",
+    "sentences": [
+      { "es": "El sábado mi coche tuvo una avería en la carretera.", "en": "On Saturday my car broke down on the highway.", "hu": "Szombaton lerobbant az autóm az országúton.", "word": "o2449", "form": "avería" },
+      { "es": "Primero el coche se apagó y después ya no arrancó.", "en": "First the car shut off and then it would not start anymore.", "hu": "Először lefulladt az autó, aztán már nem indult be.", "word": "o1791", "form": "arrancó" },
+      { "es": "Llamé a una grúa desde mi teléfono.", "en": "I called a tow truck from my phone.", "hu": "Felhívtam egy autómentőt a telefonomról.", "word": "o2230", "form": "grúa" },
+      { "es": "El mecánico revisó el coche y descubrió el problema.", "en": "The mechanic checked the car and discovered the problem.", "hu": "A szerelő átvizsgálta az autót, és rájött a hibára.", "word": "o1239", "form": "revisó" },
+      { "es": "Pagué al mecánico y llegué a casa con mucho cansancio.", "en": "I paid the mechanic and got home very tired.", "hu": "Kifizettem a szerelőt, és nagyon fáradtan értem haza.", "word": "o2454", "form": "cansancio" }
+    ],
+    "false_en": ["My car broke down on Sunday.", "I fixed the car myself."],
+    "false_hu": ["Vasárnap robbant le az autóm.", "Magam szereltem meg az autót."]
+  },
+  {
+    "id": "b1-pedido",
+    "level": "B1",
+    "sentences": [
+      { "es": "Compré un teléfono por internet y pagué el envío.", "en": "I bought a phone online and paid for the shipping.", "hu": "Vettem egy telefont az interneten, és kifizettem a szállítási díjat.", "word": "o4107", "form": "envío" },
+      { "es": "El paquete llegó tarde y la pantalla estaba rota.", "en": "The package arrived late and the screen was broken.", "hu": "A csomag későn érkezett, és a kijelző el volt törve.", "word": "o783", "form": "pantalla" },
+      { "es": "Escribí una queja y solicité un reembolso.", "en": "I wrote a complaint and requested a refund.", "hu": "Panaszt írtam, és visszatérítést kértem.", "word": "o4502", "form": "reembolso" },
+      { "es": "La empresa me dijo que la garantía cubre el producto.", "en": "The company told me that the warranty covers the product.", "hu": "A cég azt mondta nekem, hogy a garancia fedezi a terméket.", "word": "o2478", "form": "garantía" },
+      { "es": "Después de una semana, la devolución llegó a mi tarjeta.", "en": "After a week, the refund reached my card.", "hu": "Egy hét után megérkezett a visszatérítés a kártyámra.", "word": "o4105", "form": "devolución" }
+    ],
+    "false_en": ["The package arrived early.", "The company did not answer my complaint."],
+    "false_hu": ["A csomag korán érkezett meg.", "A cég nem válaszolt a panaszomra."]
+  },
+  {
+    "id": "b1-excursion",
+    "level": "B1",
+    "sentences": [
+      { "es": "El sábado hicimos una excursión al cerro con mis amigos.", "en": "On Saturday we went on a hike to the hill with my friends.", "hu": "Szombaton kirándultunk a dombra a barátaimmal.", "word": "o3517", "form": "excursión" },
+      { "es": "Caminamos por un sendero entre los árboles.", "en": "We walked along a trail among the trees.", "hu": "Egy ösvényen sétáltunk a fák között.", "word": "o4352", "form": "sendero" },
+      { "es": "Desde el mirador vimos el río y todo el pueblo.", "en": "From the lookout we saw the river and the whole town.", "hu": "A kilátóból láttuk a folyót és az egész falut.", "word": "o3586", "form": "mirador" },
+      { "es": "Por la tarde llegamos al campamento y preparamos la cena.", "en": "In the afternoon we reached the camp and made dinner.", "hu": "Délután megérkeztünk a táborhelyre, és vacsorát készítettünk.", "word": "o3569", "form": "campamento" },
+      { "es": "Por la noche hicimos una fogata y hablamos hasta tarde.", "en": "At night we made a campfire and talked until late.", "hu": "Éjjel tüzet raktunk, és későig beszélgettünk.", "word": "o2188", "form": "fogata" }
+    ],
+    "false_en": ["We went to the beach with my friends.", "We did not make a fire at night."],
+    "false_hu": ["A barátaimmal a tengerpartra mentünk.", "Éjjel nem raktunk tüzet."]
+  },
+  {
+    "id": "b2-contrato",
+    "level": "B2",
+    "sentences": [
+      { "es": "Busqué durante semanas hasta que por fin pude alquilar un departamento.", "en": "I searched for weeks until I was finally able to rent an apartment.", "hu": "Hetekig kerestem, mire végre ki tudtam bérelni egy lakást.", "word": "o840", "form": "alquilar" },
+      { "es": "El dueño me explicó cada parte del contrato y revisó mis documentos.", "en": "The owner explained every part of the contract and checked my documents.", "hu": "A tulajdonos elmagyarázta a szerződés minden részét, és átnézte az irataimat.", "word": "o832", "form": "documentos" },
+      { "es": "Como el precio era razonable, firmé el contrato ese mismo día.", "en": "Since the price was reasonable, I signed the contract that same day.", "hu": "Mivel az ár ésszerű volt, még aznap aláírtam a szerződést.", "word": "o837", "form": "firmé" },
+      { "es": "El plazo del contrato era de un año, y yo quería vivir ahí más tiempo.", "en": "The term of the contract was one year, and I wanted to live there longer.", "hu": "A szerződés időtartama egy év volt, én pedig hosszabb ideig akartam ott lakni.", "word": "o1438", "form": "plazo" },
+      { "es": "Ahora vivo cerca de mi trabajo y estoy muy satisfecho con la decisión.", "en": "Now I live near my work and I am very satisfied with the decision.", "hu": "Most a munkahelyem közelében lakom, és nagyon elégedett vagyok a döntéssel.", "word": "o590", "form": "satisfecho" }
+    ],
+    "false_en": ["I thought the price was too high.", "The term of the contract was three years."],
+    "false_hu": ["Szerintem túl magas volt az ár.", "A szerződés időtartama három év volt."]
+  },
+  {
+    "id": "b2-huelga",
+    "level": "B2",
+    "sentences": [
+      { "es": "Mi tío trabaja en una fábrica y el sindicato anunció una huelga.", "en": "My uncle works in a factory and the union announced a strike.", "hu": "A nagybátyám egy gyárban dolgozik, és a szakszervezet sztrájkot hirdetett.", "word": "o4580", "form": "huelga" },
+      { "es": "Los trabajadores querían un salario más alto y mejores condiciones.", "en": "The workers wanted a higher salary and better conditions.", "hu": "A munkások magasabb fizetést és jobb körülményeket akartak.", "word": "o535", "form": "salario" },
+      { "es": "Al principio, la empresa rechazó la propuesta de los trabajadores.", "en": "At first, the company rejected the workers' proposal.", "hu": "A cég eleinte elutasította a munkások javaslatát.", "word": "o513", "form": "propuesta" },
+      { "es": "Después de tres días de negociación, la empresa y el sindicato firmaron un acuerdo.", "en": "After three days of negotiation, the company and the union signed an agreement.", "hu": "Három nap tárgyalás után a cég és a szakszervezet megállapodást írt alá.", "word": "o2042", "form": "negociación" },
+      { "es": "Mi tío quería regresar al trabajo con la esperanza de que las cosas mejoraran.", "en": "My uncle wanted to go back to work, hoping that things would get better.", "hu": "A nagybátyám vissza akart menni dolgozni abban a reményben, hogy a dolgok jobbra fordulnak.", "word": "o517", "form": "esperanza" }
+    ],
+    "false_en": ["The negotiation lasted a whole month.", "The company accepted the proposal at once."],
+    "false_hu": ["A tárgyalás egy egész hónapig tartott.", "A cég azonnal elfogadta a javaslatot."]
+  },
+  {
+    "id": "b2-teletrabajo",
+    "level": "B2",
+    "sentences": [
+      { "es": "Desde el año pasado, mi prima hace teletrabajo desde su casa.", "en": "Since last year, my cousin has been working from home.", "hu": "Tavaly óta az unokatestvérem otthonról dolgozik.", "word": "o4603", "form": "teletrabajo" },
+      { "es": "Cada mañana tiene una videoconferencia con todo su equipo.", "en": "Every morning she has a video call with her whole team.", "hu": "Minden reggel videóhívása van az egész csapatával.", "word": "o4604", "form": "videoconferencia" },
+      { "es": "Al principio fue difícil configurar su computadora nueva.", "en": "At first it was hard to set up her new computer.", "hu": "Eleinte nehéz volt beállítani az új számítógépét.", "word": "o4658", "form": "configurar" },
+      { "es": "Ahora dice que lo mejor es no perder tiempo en el tráfico.", "en": "Now she says the best thing is not wasting time in traffic.", "hu": "Most azt mondja, a legjobb, hogy nem veszít időt a forgalomban.", "word": "o824", "form": "tráfico" },
+      { "es": "Si pudiera elegir, buscaría un equilibrio entre la casa y la oficina.", "en": "If she could choose, she would look for a balance between home and the office.", "hu": "Ha választhatna, egyensúlyt keresne az otthon és az iroda között.", "word": "o1412", "form": "equilibrio" }
+    ],
+    "false_en": ["She works in an office every day.", "She never has meetings with her team."],
+    "false_hu": ["Minden nap irodában dolgozik.", "Soha nincs megbeszélése a csapatával."]
+  },
+  {
+    "id": "b2-investigacion",
+    "level": "B2",
+    "sentences": [
+      { "es": "Mi hermana participa en una investigación sobre el sueño de los estudiantes.", "en": "My sister takes part in a research project about the sleep of students.", "hu": "A nővérem részt vesz egy kutatásban a diákok alvásáról.", "word": "o532", "form": "investigación" },
+      { "es": "Su hipótesis es que los estudiantes descansan poco porque usan mucho el celular.", "en": "Her hypothesis is that students rest little because they use their cell phones a lot.", "hu": "A feltételezése az, hogy a diákok keveset pihennek, mert sokat használják a mobiltelefonjukat.", "word": "o2028", "form": "hipótesis" },
+      { "es": "Para comprobar su idea, ella y su equipo analizaron las respuestas de cien personas.", "en": "To check her idea, she and her team analyzed the answers of a hundred people.", "hu": "Hogy ellenőrizze az ötletét, a csapatával együtt elemezte száz ember válaszait.", "word": "o482", "form": "analizaron" },
+      { "es": "El resultado fue interesante: dormir poco afecta la memoria y el humor.", "en": "The result was interesting: sleeping little affects memory and mood.", "hu": "Az eredmény érdekes volt: a kevés alvás rontja a memóriát és a hangulatot.", "word": "o1336", "form": "afecta" },
+      { "es": "La conclusión del estudio fue clara, pero ella quiere hacer más pruebas.", "en": "The conclusion of the study was clear, but she wants to do more tests.", "hu": "A tanulmány következtetése egyértelmű volt, de több tesztet akar végezni.", "word": "o2002", "form": "conclusión" }
+    ],
+    "false_en": ["The study was about the food of old people.", "The result showed that sleep does not matter."],
+    "false_hu": ["A tanulmány az idősek ételéről szólt.", "Az eredmény szerint az alvás nem számít."]
+  },
+  {
+    "id": "b2-asamblea",
+    "level": "B2",
+    "sentences": [
+      { "es": "El domingo hubo una asamblea en mi edificio para hablar de un problema grave.", "en": "On Sunday there was a meeting in my building to talk about a serious problem.", "hu": "Vasárnap közgyűlés volt az épületünkben egy komoly probléma megbeszélésére.", "word": "o2593", "form": "asamblea" },
+      { "es": "Los vecinos discutieron durante una hora sobre el presupuesto para reparar la fachada.", "en": "The neighbors argued for an hour about the budget to repair the facade.", "hu": "A szomszédok egy órán át vitatkoztak a homlokzat javításának költségvetéséről.", "word": "o857", "form": "presupuesto" },
+      { "es": "Un vecino criticó la propuesta, pero otro vecino quiso defender la idea con buenos argumentos.", "en": "One neighbor criticized the proposal, but another neighbor wanted to defend the idea with good arguments.", "hu": "Egy szomszéd bírálta a javaslatot, de egy másik szomszéd jó érvekkel meg akarta védeni az ötletet.", "word": "o496", "form": "criticó" },
+      { "es": "El administrador quería que todos votaran por la solución más barata.", "en": "The manager wanted everyone to vote for the cheapest solution.", "hu": "A házkezelő azt szerette volna, hogy mindenki a legolcsóbb megoldásra szavazzon.", "word": "o4575", "form": "administrador" },
+      { "es": "Al final, la mayoría aceptó pagar un poco más cada mes.", "en": "In the end, the majority accepted paying a little more each month.", "hu": "Végül a többség elfogadta, hogy havonta egy kicsivel többet fizet.", "word": "o1430", "form": "mayoría" }
+    ],
+    "false_en": ["The neighbors agreed on everything in five minutes.", "The meeting was on Saturday morning."],
+    "false_hu": ["A szomszédok öt perc alatt mindenben megegyeztek.", "A közgyűlés szombat reggel volt."]
+  },
+  {
+    "id": "c1-reunion",
+    "level": "C1",
+    "sentences": [
+      { "es": "Mi vecina del tercer piso mandó una convocatoria a todos los vecinos del edificio.", "en": "My neighbor on the third floor sent out a call for a meeting to everyone in the building.", "hu": "A harmadik emeleti szomszédom összehívó levelet küldött az épület összes lakójának.", "word": "o3199", "form": "convocatoria" },
+      { "es": "Ella quería que revisáramos la normativa del edificio, porque había mucho ruido por la noche.", "en": "She wanted us to review the building rules, because there was a lot of noise at night.", "hu": "Azt akarta, hogy nézzük át a ház szabályzatát, mert éjszaka sok volt a zaj.", "word": "o3220", "form": "normativa" },
+      { "es": "En la reunión hubo una discrepancia fuerte entre los vecinos nuevos y los mayores.", "en": "At the meeting there was a strong disagreement between the new neighbors and the older ones.", "hu": "A gyűlésen erős nézeteltérés volt az új és az idősebb szomszédok között.", "word": "o2618", "form": "discrepancia" },
+      { "es": "Después de dos horas, por fin llegamos a un consenso sobre los horarios de la música.", "en": "After two hours we finally reached a consensus about the times for music.", "hu": "Két óra után végre megegyezésre jutottunk a zenélés időpontjairól.", "word": "o2003", "form": "consenso" },
+      { "es": "Todos firmaron el convenio, y por la noche el edificio estuvo tranquilo.", "en": "Everyone signed the agreement, and at night the building was quiet.", "hu": "Mindenki aláírta a megállapodást, és éjszaka csendes volt a ház.", "word": "o2610", "form": "convenio" }
+    ],
+    "false_en": ["The neighbor lived on the first floor.", "The meeting ended without any agreement."],
+    "false_hu": ["A szomszéd az első emeleten lakott.", "A gyűlés megegyezés nélkül ért véget."]
+  },
+  {
+    "id": "c1-litigio",
+    "level": "C1",
+    "sentences": [
+      { "es": "Mi tío sufrió un accidente de coche y tuvo un litigio con la compañía de seguros.", "en": "My uncle had a car accident and had a legal dispute with the insurance company.", "hu": "A nagybátyám autóbalesetet szenvedett, és pere volt a biztosítóval.", "word": "o3213", "form": "litigio" },
+      { "es": "Un perito revisó el coche y escribió un informe muy minucioso.", "en": "An expert examined the car and wrote a very thorough report.", "hu": "Egy szakértő megvizsgálta az autót, és nagyon alapos jelentést írt.", "word": "o4571", "form": "perito" },
+      { "es": "El abogado presentó el expediente completo ante el juez.", "en": "The lawyer submitted the complete file to the judge.", "hu": "Az ügyvéd benyújtotta a teljes aktát a bíró elé.", "word": "o3812", "form": "expediente" },
+      { "es": "El fallo llegó un año después y fue favorable para mi tío.", "en": "The ruling came a year later and was favorable for my uncle.", "hu": "Az ítélet egy évvel később érkezett, és kedvező volt a nagybátyámnak.", "word": "o3813", "form": "fallo" },
+      { "es": "La compañía tuvo que pagar una indemnización de cien mil pesos.", "en": "The company had to pay compensation of one hundred thousand pesos.", "hu": "A cégnek százezer peso kártérítést kellett fizetnie.", "word": "o2644", "form": "indemnización" }
+    ],
+    "false_en": ["My uncle had a motorcycle accident.", "The judge decided against my uncle."],
+    "false_hu": ["A nagybátyám motorbalesetet szenvedett.", "A bíró a nagybátyám ellen döntött."]
+  },
+  {
+    "id": "c1-despliegue",
+    "level": "C1",
+    "sentences": [
+      { "es": "Mi equipo preparó el cronograma del proyecto para entregar la nueva aplicación.", "en": "My team prepared the project schedule to deliver the new app.", "hu": "A csapatom elkészítette a projekt ütemtervét az új alkalmazás átadásához.", "word": "o4597", "form": "cronograma" },
+      { "es": "Un algoritmo nuevo calculaba los precios de forma automática.", "en": "A new algorithm calculated the prices automatically.", "hu": "Egy új algoritmus automatikusan számolta ki az árakat.", "word": "o4640", "form": "algoritmo" },
+      { "es": "Antes del despliegue descubrimos un error grave y lo solucionamos con un parche.", "en": "Before the deployment we discovered a serious bug and solved it with a patch.", "hu": "A telepítés előtt felfedeztünk egy súlyos hibát, és egy javítócsomaggal megoldottuk.", "word": "o4641", "form": "despliegue" },
+      { "es": "Por la noche el sistema tenía que sincronizar los datos de las tiendas.", "en": "At night the system had to synchronize the data of the stores.", "hu": "Éjszaka a rendszernek szinkronizálnia kellett az üzletek adatait.", "word": "o4660", "form": "sincronizar" },
+      { "es": "Al día siguiente el jefe recibió el entregable final y nos felicitó.", "en": "The next day the boss received the final deliverable and congratulated us.", "hu": "Másnap a főnök megkapta a végső leadandót, és gratulált nekünk.", "word": "o4596", "form": "entregable" }
+    ],
+    "false_en": ["My team prepared a schedule for a restaurant.", "The boss did not congratulate the team."],
+    "false_hu": ["A csapatom egy étterem ütemtervét készítette el.", "A főnök nem gratulált a csapatnak."]
+  },
+  {
+    "id": "c1-herencia",
+    "level": "C1",
+    "sentences": [
+      { "es": "Mi abuela dejó un testamento antes de morir.", "en": "My grandmother left a will before she died.", "hu": "A nagymamám végrendeletet hagyott hátra, mielőtt meghalt.", "word": "o4485", "form": "testamento" },
+      { "es": "Su patrimonio era pequeño: una casa vieja y un terreno cerca del río.", "en": "Her estate was small: an old house and a plot of land near the river.", "hu": "A vagyona kicsi volt: egy régi ház és egy telek a folyó mellett.", "word": "o1411", "form": "patrimonio" },
+      { "es": "Mi tía alegó que la casa era suya, pero no tenía ninguna prueba.", "en": "My aunt claimed that the house was hers, but she had no proof.", "hu": "A nagynéném azt állította, hogy a ház az övé, de nem volt semmilyen bizonyítéka.", "word": "o3136", "form": "alegó" },
+      { "es": "Mi madre quiso evitar un enfrentamiento y habló con ella con tranquilidad.", "en": "My mother wanted to avoid a confrontation and spoke to her calmly.", "hu": "Anyám el akarta kerülni az összetűzést, és nyugodtan beszélt vele.", "word": "o2624", "form": "enfrentamiento" },
+      { "es": "Al final repartimos todo por igual y guardamos el legado de mi abuela: sus recetas.", "en": "In the end we divided everything equally and kept my grandmother's legacy: her recipes.", "hu": "Végül mindent egyenlően elosztottunk, és megőriztük a nagymamám örökségét: a receptjeit.", "word": "o3212", "form": "legado" }
+    ],
+    "false_en": ["My grandmother left no will.", "My aunt had clear proof."],
+    "false_hu": ["A nagymamám nem hagyott végrendeletet.", "A nagynéném egyértelmű bizonyítékkal rendelkezett."]
+  },
+  {
+    "id": "c1-investigacion",
+    "level": "C1",
+    "sentences": [
+      { "es": "Mi hermana emprendió una investigación sobre el agua de nuestro barrio.", "en": "My sister undertook a research project about the water in our neighborhood.", "hu": "A nővérem kutatásba kezdett a környékünk vizéről.", "word": "o2581", "form": "emprendió" },
+      { "es": "Su hallazgo más importante fue que las casas del barrio no recibían agua limpia.", "en": "Her most important finding was that the houses in the neighborhood did not receive clean water.", "hu": "A legfontosabb felfedezése az volt, hogy a környék házai nem kaptak tiszta vizet.", "word": "o2047", "form": "hallazgo" },
+      { "es": "Algunos vecinos dijeron que el resultado era controvertido y querían más pruebas.", "en": "Some neighbors said the result was controversial and wanted more evidence.", "hu": "Néhány szomszéd azt mondta, hogy az eredmény vitatott, és több bizonyítékot akartak.", "word": "o2663", "form": "controvertido" },
+      { "es": "Entonces ella corroboró los datos con nuevos análisis en el laboratorio.", "en": "So she confirmed the data with new analyses in the laboratory.", "hu": "Ekkor megerősítette az adatokat új elemzésekkel a laboratóriumban.", "word": "o3144", "form": "corroboró" },
+      { "es": "Por fin el gobierno de la ciudad decidió implementar un plan de limpieza.", "en": "Finally the city government decided to implement a cleanup plan.", "hu": "Végül a város vezetése úgy döntött, hogy bevezet egy tisztítási tervet.", "word": "o1972", "form": "implementar" }
+    ],
+    "false_en": ["My sister did research about the air in our neighborhood.", "The city government refused to do anything."],
+    "false_hu": ["A nővérem a környékünk levegőjéről végzett kutatást.", "A város vezetése nem volt hajlandó semmit sem tenni."]
   }
 ]
