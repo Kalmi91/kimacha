@@ -262,4 +262,16 @@ describe('validateBackupPayload', () => {
     expect(payload.tables.learn_settings[0]).toMatchObject({ again_delay_sec: 30, pcic_level: 'a2' });
     expect(payload.tables.user_meta[0]).toMatchObject({ pcic_level: 'a2' });
   });
+
+  // A German pair is a supported pair: a restore must keep it, not reset it to en-es.
+  it('keeps a German pair active after a restore, with its d<id> cards', async () => {
+    const db = getDb();
+    await db.setOnboarding('hu', 'de');
+    await db.upsertPcicCard({ ...sm2NewCard('d100001'), state: 'learning' as const, due: '2026-10-08', introducedAt: '2026-10-08' });
+    const payload = await db.exportAll();
+    await db.setOnboarding('en', 'es');
+    await db.importAll(payload);
+    expect(await db.getOnboarding()).toEqual({ source: 'hu', target: 'de' });
+    expect((await db.getPcicCards()).map((c) => c.itemId)).toContain('d100001');
+  });
 });

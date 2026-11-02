@@ -26,6 +26,7 @@ const hu: typeof en = {
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
     oneMoreRound: 'még egy kör',
     soonLong: 'Ez a lecke még nincs megírva. Rajta van a listán, a szint többi része viszont már nyitva.',
+    noCourse: 'Német nyelvtani kurzus még nincs. Hamarosan jön.',
     footNote: 'A nyelv teljes nyelvtana A1-től C1-ig, tanulási sorrendben. A „hamarosan” jelzésű leckék tervben vannak, de még nincsenek megírva.',
     ruleLabel: 'A szabály',
     examplesLabel: 'Példák',

@@ -355,8 +355,8 @@ export type MockAnswers = Record<string, MockTaskAnswer>;
 /** The default number of plays of a recorded task. */
 export const DEFAULT_PLAYS = 2;
 
-/** The word that leads a task's instruction on the paper: "TAREA 2." (es), "PART 2." (en), "FELADAT 2." (hu). */
-export const TASK_WORD: Record<MockTarget, string> = { es: 'TAREA', en: 'PART', hu: 'FELADAT' };
+/** The word that leads a task's instruction on the paper: "TAREA 2." (es), "PART 2." (en), "FELADAT 2." (hu), "AUFGABE 2." (de). */
+export const TASK_WORD: Record<MockTarget, string> = { es: 'TAREA', en: 'PART', hu: 'FELADAT', de: 'AUFGABE' };
 
 /** The leading "<TASK_WORD> n." of an instruction (any language), to strip before the paper numbers its tasks. */
 export const TASK_PREFIX = new RegExp(`^(${Object.values(TASK_WORD).join('|')}) \\d+\\.\\s*`);

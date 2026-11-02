@@ -38,6 +38,7 @@ export function startScramble(ids: string[]): ScrambleState {
 }
 
 const ARTICLE_RE = /^(el|la|los|las|un|una)\s+/i;
+const ARTICLE_RE_DE = /^(der|die|das)\s+/i;
 const LETTER_RE = /[\p{L}\p{N}]/u;
 
 /** One character after the article: a letter (it has a place, `slot` = its number among the places) or fixed text. */
@@ -47,7 +48,7 @@ export interface ScrambleChar {
 }
 
 export interface ScrambleWord {
-  /** The article of a Spanish noun without its space ("la"), or ''. */
+  /** The article of a Spanish or German noun without its space ("la", "die"), or ''. */
   article: string;
   chars: ScrambleChar[];
   /** The letters in the order of the places. */
@@ -61,7 +62,7 @@ export interface ScrambleWord {
 export function scrambleWord(item: PcicItem, target: PcicTarget): ScrambleWord {
   const written = wordIn(item, target) ?? '';
   const say = (pcicAlternatives(written)[0] ?? written).normalize('NFC').trim();
-  const articleMatch = target === 'es' ? ARTICLE_RE.exec(say) : null;
+  const articleMatch = target === 'es' ? ARTICLE_RE.exec(say) : target === 'de' ? ARTICLE_RE_DE.exec(say) : null;
   const rest = articleMatch ? say.slice(articleMatch[0].length) : say;
   const letters: string[] = [];
   const chars: ScrambleChar[] = Array.from(rest).map((ch) => {

@@ -9,7 +9,7 @@
 import type { PcicLevel, PcicTarget } from '@/data/pcic';
 import situationsData from '@/data/practice/situations.json';
 import { sentenceTokens } from '@/lib/knownSentence';
-import type { Lang } from '@/lib/languagePair';
+import { activeSourceFor, type Lang } from '@/lib/languagePair';
 import { tileWords } from '@/lib/sentenceCards';
 import { shuffleArray } from '@/lib/shuffle';
 
@@ -23,6 +23,7 @@ export interface SituationWord {
   forms: string[];
   en: string;
   hu: string;
+  de: string;
 }
 
 /** A structure the situation practises: the pattern (`title`, in the learner's language), an example sentence and the explanation. */
@@ -31,6 +32,7 @@ export interface SituationPattern {
   example: string;
   en: string;
   hu: string;
+  de?: string;
 }
 
 export interface SituationLine {
@@ -38,6 +40,7 @@ export interface SituationLine {
   es: string;
   en: string;
   hu: string;
+  de: string;
   /** A whole word of `es` that is a blank in the Fill in step. */
   gap?: string;
   /** What the learner may answer to this line (the Questions step); the first is the model answer. */
@@ -60,9 +63,19 @@ export interface Situation {
 
 export const SITUATIONS: Situation[] = situationsData as Situation[];
 
-/** The situations of a target language (Spanish only for now). */
-export function situationsFor(target: PcicTarget): readonly Situation[] {
-  return target === 'es' ? SITUATIONS : [];
+// A situation is told to a learner in a language only when every text it shows has that language (the German
+// translations of the dialogues are not written yet: a German speaker gets the empty state, never another language).
+function toldIn(s: Situation, source: Lang): boolean {
+  return Boolean(
+    s.title[source] && s.setting[source] && s.words.every((w) => w[source]) && s.patterns.every((p) => p.title[source]) && s.lines.every((l) => l[source]),
+  );
+}
+
+/** The situations of a target language (Spanish only for now) that can be told in the learner's language. */
+export function situationsFor(target: PcicTarget, source: Lang = activeSourceFor('es')): readonly Situation[] {
+  if (target !== 'es') return [];
+  const told = SITUATIONS.filter((s) => toldIn(s, source));
+  return told.length === SITUATIONS.length ? SITUATIONS : told;
 }
 
 /** The words of the situation the learner does not know yet: none of their forms is in `known` (lib/knownSentence.ts knownTokens). */

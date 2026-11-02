@@ -2,7 +2,7 @@
 // The words the corpus writes with a capital INSIDE a sentence and never in lowercase, per language (lowercased).
 // lib/knownSentence.ts takes a capitalised word at the start of a sentence as a name only when it is here.
 
-export const CORPUS_NAMES: Record<'es' | 'en' | 'hu', string[]> = {
+export const CORPUS_NAMES: Record<'es' | 'en' | 'hu' | 'de', string[]> = {
   es: [
     'anna', 'budapest', 'dios', 'españa', 'europa', 'inglaterra', 'john', 'londres', 'mary', 'metrobús',
     'navidad', 'pascua', 'péter', 'tom',
@@ -20,4 +20,5 @@ export const CORPUS_NAMES: Record<'es' | 'en' | 'hu', string[]> = {
     'londonba', 'londonban', 'londonból', 'mary', 'metrobús', 'péter', 'sim-kártyáját', 'spanyolország',
     'spanyolországba', 'spanyolországban', 'spanyolországból', 'tom', 'wc-papír', 'önt',
   ],
+  de: [],
 };

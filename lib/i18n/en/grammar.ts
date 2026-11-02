@@ -27,6 +27,7 @@ export default {
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
     oneMoreRound: 'one more round',
     soonLong: 'This lesson has not been written yet. It is on the list, and the rest of the level is already open.',
+    noCourse: 'There is no German grammar course yet. It is on the way.',
     footNote: 'The whole grammar of the language, A1 to C1, in teaching order. Lessons marked "coming" are planned, not written yet.',
     ruleLabel: 'The rule',
     examplesLabel: 'Examples',

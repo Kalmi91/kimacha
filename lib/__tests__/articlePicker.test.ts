@@ -1,12 +1,14 @@
 import {
   ARTICLE_OPTIONS,
+  ARTICLE_OPTIONS_DE,
   articleOf,
+  articleOptionsFor,
   articlePickerApplies,
   articleRowAppliesForPos,
   bodyOf,
   composeAnswer,
 } from '../articlePicker';
-import { gradePcicAnswer } from '../pcicMatch';
+import { gradePcicAnswer, suggestedGrade as suggested } from '../pcicMatch';
 import { kindOfEs } from '../../data/pcic';
 
 describe('articlePickerApplies', () => {
@@ -23,9 +25,9 @@ describe('articlePickerApplies', () => {
     expect(articlePickerApplies('es', false)).toBe(false);
   });
 
-  it('stays away from other target languages', () => {
+  it('stays away from the target languages without an article set', () => {
     expect(articlePickerApplies('en', true)).toBe(false);
-    expect(articlePickerApplies('de', true)).toBe(false);
+    expect(articlePickerApplies('hu', true)).toBe(false);
   });
 });
 
@@ -155,5 +157,47 @@ describe('slash-separated (" / ") answer', () => {
     const g = gradePcicAnswer(composeAnswer('el', 'cochee'), answer);
     expect(articleOf(g.best)).toBe('el');
     expect(bodyOf(g.best)).toBe('coche');
+  });
+});
+
+describe('the German article chips (der / die / das)', () => {
+  it('has its own three buttons, the Spanish four stay as they were', () => {
+    expect(articleOptionsFor('de')).toEqual(['der', 'die', 'das']);
+    expect(ARTICLE_OPTIONS_DE).toEqual(['der', 'die', 'das']);
+    expect(articleOptionsFor('es')).toEqual([...ARTICLE_OPTIONS]);
+    expect(articleOptionsFor('en')).toEqual([]);
+  });
+
+  it('shows on German word cards, with and without an article in the answer, not on sentence cards', () => {
+    expect(articlePickerApplies('de', true)).toBe(true);
+    expect(articlePickerApplies('de', true, 'der Hund')).toBe(true);
+    expect(articlePickerApplies('de', true, 'gehen')).toBe(true);
+    expect(articlePickerApplies('de', true, 'der Ort / der Platz')).toBe(true);
+    expect(articlePickerApplies('de', true, 'guten Morgen')).toBe(false);
+    expect(articlePickerApplies('de', false)).toBe(false);
+    expect(articlePickerApplies('de', true, 'Der Hund schläft.')).toBe(false);
+  });
+
+  it('reads the article of a German headword, and a Spanish one is no German article', () => {
+    expect(articleOf('der Hund', 'de')).toBe('der');
+    expect(articleOf('Die Katze', 'de')).toBe('die');
+    expect(articleOf('das Auto', 'de')).toBe('das');
+    expect(articleOf('gehen', 'de')).toBe('');
+    expect(articleOf('el perro', 'de')).toBe('');
+    expect(articleOf('der Hund')).toBe('');
+    expect(bodyOf('der Hund', 'de')).toBe('Hund');
+    expect(bodyOf('gehen', 'de')).toBe('gehen');
+  });
+
+  it('a noun answered without its article is not a full match, as in Spanish; with the picked article it is', () => {
+    expect(gradePcicAnswer('Hund', 'der Hund', false, 'de').match).not.toBe('exact');
+    expect(suggested(gradePcicAnswer('Hund', 'der Hund', false, 'de'))).toBe('again');
+    expect(gradePcicAnswer(composeAnswer('der', 'Hund'), 'der Hund', false, 'de').match).toBe('exact');
+    expect(gradePcicAnswer(composeAnswer('die', 'Hund'), 'der Hund', false, 'de').match).not.toBe('exact');
+  });
+
+  it('on a wrong answer the right article goes back to the button row', () => {
+    const grade = gradePcicAnswer('die Hund', 'der Hund', false, 'de');
+    expect(articleOf(grade.best, 'de')).toBe('der');
   });
 });

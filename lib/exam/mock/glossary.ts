@@ -6,6 +6,7 @@
 // give away the meaning of the sentence that was heard.
 
 import type { PcicItem } from '@/data/pcic';
+import { wordIn } from '@/lib/pcicItemText';
 import { sentenceWords } from './build';
 import type { MockTarget, MockTask } from './types';
 
@@ -21,7 +22,7 @@ interface GlossaryIndex {
   singles: Map<string, { item: PcicItem; form: string }>;
   phrases: { words: string; item: PcicItem; form: string }[];
   target: MockTarget;
-  /** Target hu only: the learner's language (es or en) the meaning is given in; es / en targets have their one counterpart. */
+  /** Target hu and de: the learner's language (es or en) the meaning is given in; es / en targets have their one counterpart. */
   source: 'es' | 'en';
 }
 
@@ -29,6 +30,7 @@ const ARTICLE: Record<MockTarget, RegExp> = {
   es: /^(el|la|los|las|un|una)\s+/i,
   en: /^(to|the|a|an)\s+/i,
   hu: /^(a|az|egy)\s+/i,
+  de: /^(der|die|das|ein|eine|sich)\s+/i,
 };
 
 /** The index of the level's items: single-word forms verbatim, multi-word ones as phrases. */
@@ -36,7 +38,7 @@ export function buildGlossaryIndex(items: PcicItem[], target: MockTarget, source
   const singles: GlossaryIndex['singles'] = new Map();
   const phrases: GlossaryIndex['phrases'] = [];
   for (const item of items) {
-    const raw = target === 'es' ? item.es : target === 'hu' ? (item.hu ?? '') : item.en;
+    const raw = wordIn(item, target) ?? '';
     for (const alt of raw.split(' / ')) {
       const form = alt.replace(/\(.*?\)/g, '').trim().replace(ARTICLE[target], '').trim().toLowerCase();
       const words = sentenceWords(form);
@@ -110,8 +112,8 @@ export function mockGlossary(task: MockTask, index: GlossaryIndex, learned: Read
   const seen = new Set<string>();
   const push = (item: PcicItem, form: string) => {
     if (learned.has(item.id) || seen.has(item.id)) return;
-    const meaningSide = index.target === 'es' ? item.en : index.target === 'hu' ? item[index.source] : item.es;
-    const meaning = meaningSide.split(' / ')[0].trim();
+    const meaningSide = index.target === 'es' ? item.en : index.target === 'en' ? item.es : item[index.source];
+    const meaning = (meaningSide ?? '').split(' / ')[0].trim();
     if (!meaning) return;
     seen.add(item.id);
     out.push({ itemId: item.id, term: form, meaning });

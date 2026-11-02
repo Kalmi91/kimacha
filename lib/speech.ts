@@ -113,7 +113,7 @@ export function speechTag(locale: string): string {
 export function voiceIdFor(locale: string): string | undefined {
   // Reported (`word:the grandson`): the English voice seemed to have changed
   // ("did you change it? if so, change it back"). The
-  // pinning was aimed at Spanish (es-MX, not Castilian) and Hungarian; English
+  // pinning was aimed at Spanish (es-MX, not Castilian), Hungarian and German (de-DE, not de-AT / de-CH); English
   // only came along for the ride and swapped the familiar system voice for an
   // "enhanced" one. English is therefore left to the engine's own default again;
   // the locale still goes out, so nothing else about that fix changes.

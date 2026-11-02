@@ -13,6 +13,8 @@ import { useLoadOnMount } from '@/lib/useLoadOnMount';
 import { localDateString } from '@/lib/usageStats';
 import { charDiff } from '@/lib/charDiff';
 import { speak } from '@/lib/speech';
+import { getPcicTarget } from '@/data/pcic';
+import { pairOf } from '@/lib/languagePair';
 import { speechLang } from '@/lib/languages';
 import { answerInputProps } from '@/lib/inputProps';
 import { requeueAfterGrade } from '@/lib/pcicSession';
@@ -144,7 +146,7 @@ export default function MistakesDeckScreen() {
             classicRole={null}
           />
         </View>
-        <ScreenFeedback level={level} languagePair="en→es" currentCard="mistakes:deck:done" />
+        <ScreenFeedback level={level} languagePair={pairOf(getPcicTarget())} currentCard="mistakes:deck:done" />
       </View>
     );
   }
@@ -259,7 +261,7 @@ export default function MistakesDeckScreen() {
         onHeight={setDockH}
       />
 
-      <ScreenFeedback level={level} languagePair="en→es" currentCard={`mistakes:deck:${currentCard.cardId}`} bottomOffset={dockH + dockLift} />
+      <ScreenFeedback level={level} languagePair={pairOf(getPcicTarget())} currentCard={`mistakes:deck:${currentCard.cardId}`} bottomOffset={dockH + dockLift} />
     </KeyboardAvoidingView>
   );
 }

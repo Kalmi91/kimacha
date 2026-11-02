@@ -411,7 +411,7 @@ export function usePcicSession() {
       const g = gradePcicAnswer('', answerText, strictAccents, target);
       const revealed: PcicGrade = { ...g, match: 'wrong', accentOnly: undefined };
       setGrade(revealed);
-      if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best));
+      if (revealed.match !== 'exact') setArticlePick(articleOf(revealed.best, target));
       speakRevealed(g.best);
       return;
     }
@@ -420,7 +420,7 @@ export function usePcicSession() {
     const g = (currentItem.kind === 'sentence' ? gradeSentenceAnswer : gradePcicAnswer)(answer, answerText, strictAccents, target);
     setTypedAnswer(answer);
     setGrade(g);
-    if (g.match !== 'exact') setArticlePick(articleOf(g.best));
+    if (g.match !== 'exact') setArticlePick(articleOf(g.best, target));
     speakRevealed(g.best);
   };
 

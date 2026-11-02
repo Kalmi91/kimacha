@@ -58,12 +58,25 @@ const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
     listen_fill: 'Néhány mondatot fog hallani. Ezeket {times} hallja. Írja be a hiányzó szót.',
     dictation: 'Egy szöveget fog hallani. Ezt {times} hallja. Írja le pontosan úgy, ahogy hallja.',
   },
+  de: {
+    read_mc: 'Lies die Texte und kreuze die richtige Antwort an.',
+    match: 'Lies die Sätze und ordne jedem Satz seine Bedeutung zu. Es gibt mehr Bedeutungen als Sätze.',
+    true_false: 'Lies den Text und kreuze an, ob die Sätze richtig (✓) oder falsch (✗) sind.',
+    gap_mc: 'Ergänze die Sätze. Wähle für jede Lücke die richtige Antwort.',
+    gap_type: 'Ergänze die Sätze mit einem Wort.',
+    listen_mc: 'Du hörst einige Sätze. Du hörst sie {times}. Kreuze die richtige Antwort an.',
+    listen_match: 'Du hörst einige Sätze. Ordne jedem Satz seine Bedeutung zu. Es gibt mehr Bedeutungen als Sätze.',
+    listen_dialogue: 'Du hörst ein Gespräch. Du hörst es {times}. Beantworte die Fragen.',
+    listen_fill: 'Du hörst einige Sätze. Du hörst sie {times}. Schreibe das fehlende Wort auf.',
+    dictation: 'Du hörst einen Text. Du hörst ihn {times}. Schreibe ihn so auf, wie du ihn hörst.',
+  },
 };
 
 const TIMES: Record<MockTarget, Record<number, string>> = {
   es: { 1: 'una vez', 2: 'dos veces' },
   en: { 1: 'once', 2: 'twice' },
   hu: { 1: 'egyszer', 2: 'kétszer' },
+  de: { 1: 'einmal', 2: 'zweimal' },
 };
 
 /** The task number on the paper: in Spanish "TAREA 2.", in English "PART 2.", in Hungarian "FELADAT 2."; for a recorded task, the number of plays. */

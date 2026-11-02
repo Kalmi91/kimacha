@@ -290,6 +290,8 @@ export const MOCK_LEVELS: Record<MockTarget, readonly MockLevel[]> = {
   es: ['A1', 'A2', 'B1', 'B2', 'C1'],
   en: ['A1', 'A2', 'B1', 'B2', 'C1'],
   hu: ['A1', 'A2', 'B1', 'B2', 'C1'],
+  // German has no practice exam yet: no level is offered (mockAvailable is false, the exam screens show their empty state).
+  de: [],
 };
 
 // hu: the names of the skills in Hungarian.
@@ -337,6 +339,8 @@ const ES_ORDER: PaperSkill[] = ['reading', 'writing', 'listening', 'speaking'];
 
 export function getMockBlueprint(target: MockTarget, level: MockLevel): MockBlueprint {
   if (target === 'hu') return huBlueprint(level);
+  // no German paper exists yet, so there is nothing to sit (MOCK_LEVELS.de is empty): a blueprint with no paper, never another language's
+  if (target === 'de') return { plan: 'authored', official: false, papers: [], skillNames: EN_NAMES, rule: HU_RULE, counts: AUTHORED_COUNTS };
   if (level !== 'A1' && level !== 'A2') {
     if (target === 'es') {
       const names = level === 'C1' ? ES_C1_NAMES : ES_NAMES;

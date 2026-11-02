@@ -11,7 +11,8 @@ import { t } from '@/lib/i18n';
 import { getDb } from '@/lib/database';
 import { localDateString } from '@/lib/usageStats';
 import { hasLesson, syllabusTopic } from '@/lib/grammar/syllabus';
-import { activeSourceFor } from '@/lib/languagePair';
+import { getPcicTarget } from '@/data/pcic';
+import { activeSourceFor, pairOf } from '@/lib/languagePair';
 import type { MistakesBatch } from '@/lib/mistakes/format';
 import { cardsForBatches, pickMistakeSession } from '@/lib/mistakes/deck';
 import { Card } from '@/components/grammar/Brutal';
@@ -93,7 +94,7 @@ export default function MistakesReportScreen() {
       <View style={[styles.container, { backgroundColor: colors.background }]}>
         {header}
         <Text style={[styles.emptyText, { color: colors.tabIconDefault }]}>{s.mistakes.empty}</Text>
-        <ScreenFeedback level={level} languagePair="en→es" currentCard="mistakes:report:empty" />
+        <ScreenFeedback level={level} languagePair={pairOf(getPcicTarget())} currentCard="mistakes:report:empty" />
       </View>
     );
   }
@@ -183,7 +184,7 @@ export default function MistakesReportScreen() {
           );
         })}
       </ScrollView>
-      <ScreenFeedback level={level} languagePair="en→es" currentCard="mistakes:report" />
+      <ScreenFeedback level={level} languagePair={pairOf(getPcicTarget())} currentCard="mistakes:report" />
     </View>
   );
 }

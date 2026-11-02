@@ -105,7 +105,7 @@ describe('situationsFor, the gate, the unknown words', () => {
   });
 
   it('a line with a word that nothing teaches closes the situation', () => {
-    const odd: Situation = { ...family, lines: [...family.lines, { speaker: 'me', es: 'Tengo un perro.', en: 'x', hu: 'x' }] };
+    const odd: Situation = { ...family, lines: [...family.lines, { speaker: 'me', es: 'Tengo un perro.', en: 'x', hu: 'x', de: 'x' }] };
     expect(isSituationOpen(odd, NOTHING)).toBe(false);
     expect(isSituationOpen(odd, new Set(['perro']))).toBe(true);
   });

@@ -84,6 +84,25 @@ describe('what actually reaches the engine', () => {
     expect((mocked.speak as jest.Mock).mock.calls[0][1].language).toBe('hu-HU');
   });
 
+  it('speaks German with the German voice: de-DE keeps its tag on ios and pins the device voice of the region', async () => {
+    await withVoiceList([
+      { language: 'en-US', identifier: 'en-us-x-sfg', quality: 'Default' },
+      { language: 'de-AT', identifier: 'de-at-x-abc', quality: 'Default' },
+      { language: 'de-DE', identifier: 'de-de-x-nfh', quality: 'Default' },
+    ]);
+    speak('der Hund', 'de-DE');
+    const options = (mocked.speak as jest.Mock).mock.calls[0][1];
+    expect(options.language).toBe('de-DE');
+    expect(options.voice).toBe('de-de-x-nfh');
+  });
+
+  it('stays silent instead of reading German with an English voice', async () => {
+    await withVoices(['en-US']);
+    speak('der Hund', 'de-DE');
+    expect(mocked.speak).not.toHaveBeenCalled();
+    expect(missingVoiceLanguages()).toContain('de');
+  });
+
   it('strips the region on android, where Locale("hu-HU") is unparsable', () => {
     const os = Platform.OS;
     // Platform.OS is a plain field at runtime, so the android branch is testable
@@ -92,6 +111,7 @@ describe('what actually reaches the engine', () => {
     try {
       expect(speechTag('hu-HU')).toBe('hu');
       expect(speechTag('es-ES')).toBe('es');
+      expect(speechTag('de-DE')).toBe('de');
     } finally {
       (Platform as { OS: string }).OS = os;
     }

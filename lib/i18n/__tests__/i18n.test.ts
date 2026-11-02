@@ -56,6 +56,13 @@ describe('lib/i18n: full coverage of es.ts + t()/setLanguage()', () => {
     expect(t().onboarding.start).toBe('Kezdjük');
   });
 
+  // German has no UI strings of its own yet (a later slice adds them): a German speaker sees English, never Spanish.
+  it('after setLanguage("de") t() gives the English text, the language stays de', () => {
+    setLanguage('de');
+    expect(currentLanguage()).toBe('de');
+    expect(t().onboarding.start).toBe('Get started');
+  });
+
   it('for an unknown code it falls back to English', () => {
     setLanguage('xx');
     expect(t().onboarding.start).toBe('Get started');
@@ -64,6 +71,11 @@ describe('lib/i18n: full coverage of es.ts + t()/setLanguage()', () => {
   it('stringsFor gives the usage block of the requested language (for the toasts of the learned language)', () => {
     expect(stringsFor('es').usage.dailyGreeting).toBe(es.usage.dailyGreeting);
     expect(stringsFor('en').usage.dailyGreeting).toBe(en.usage.dailyGreeting);
+  });
+
+  it('stringsFor("de") is the English usage block for now, not the Spanish one', () => {
+    expect(stringsFor('de').usage.dailyGreeting).toBe(en.usage.dailyGreeting);
+    expect(stringsFor('de').usage.dailyGreeting).not.toBe(es.usage.dailyGreeting);
   });
 
   // singular instead of "1 days" (1 day / 1 día); other numbers stay plural.

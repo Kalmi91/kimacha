@@ -26,6 +26,7 @@ const es: typeof en = {
     progressChange: (from: number | null, to: number) => (from === null ? `${to}%` : `${from}% → ${to}%`),
     oneMoreRound: 'una ronda más',
     soonLong: 'Esta lección todavía no está escrita. Está en la lista, y el resto del nivel ya está abierto.',
+    noCourse: 'Todavía no hay un curso de gramática de alemán. Llegará pronto.',
     footNote: 'Toda la gramática del idioma, de A1 a C1, en el orden en que se enseña. Las lecciones marcadas "próximamente" están planeadas, pero todavía no escritas.',
     ruleLabel: 'La regla',
     examplesLabel: 'Ejemplos',

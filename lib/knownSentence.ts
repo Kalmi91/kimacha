@@ -17,7 +17,7 @@ import { detectStructures, tokenize, type Structure } from '@/lib/grammar/tenseG
 import { capitalizedWords } from '@/lib/properNames';
 import type { Sm2Card } from '@/lib/sm2';
 
-export type KnownLang = 'es' | 'en' | 'hu';
+export type KnownLang = 'es' | 'en' | 'hu' | 'de';
 
 /** The unlockable tenses: the six tenses of `conjugate` + the subjunctive imperfecto. */
 export type ResolvedTense = Tense | 'subjuntivo_imperfecto';
@@ -88,6 +88,12 @@ const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
   ]),
   en: new Set(['the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or', ...EN_CLOSED_CLASS]),
   hu: new Set(['a', 'az', 'egy', 'és', 'is', 'de', 'vagy', 'hogy', 'nem', 'meg', 'el', 'ki', 'be', ...HU_CLOSED_CLASS]),
+  // Articles (all cases), the common conjunctions and the negation. German inflection is not modelled
+  // here (like Hungarian): only the forms of the learned words count.
+  de: new Set([
+    'der', 'die', 'das', 'den', 'dem', 'des', 'ein', 'eine', 'einen', 'einem', 'einer', 'eines',
+    'und', 'oder', 'aber', 'nicht', 'sondern', 'denn',
+  ]),
 };
 
 // What tenseGate recognises but the unlocked tenses (ResolvedTense) do not cover:
@@ -173,6 +179,16 @@ function huTokenize(text: string): string[] {
   return text
     .toLowerCase()
     .replace(/[^a-z0-9áéíóöőúüűñ\s]/g, ' ')
+    .split(/\s+/)
+    .filter(Boolean);
+}
+
+// German: ä ö ü ß are letters. A bracketed gloss of a headword ("die Leute (Pl.)") is not a word of the sentence.
+function deTokenize(text: string): string[] {
+  return text
+    .toLowerCase()
+    .replace(/\([^)]*\)/g, ' ')
+    .replace(/[^a-z0-9äöüß\s]/g, ' ')
     .split(/\s+/)
     .filter(Boolean);
 }
@@ -337,6 +353,10 @@ function addHungarian(known: Set<string>, entry: LearnedEntry) {
   for (const key of huStemKeys(entry.text, entry.pos)) known.add(key);
 }
 
+function addGerman(known: Set<string>, entry: LearnedEntry) {
+  for (const token of deTokenize(entry.text)) known.add(token);
+}
+
 /** All accepted (lowercase) tokens from the learned words. */
 export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
   const known = new Set<string>(FREE_WORDS[lang]);
@@ -345,6 +365,7 @@ export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
     const entry = entryOf(raw);
     if (lang === 'es') addSpanish(known, entry, tenses);
     else if (lang === 'hu') addHungarian(known, entry);
+    else if (lang === 'de') addGerman(known, entry);
     else addEnglish(known, entry);
   }
   return known;
@@ -353,6 +374,7 @@ export function knownTokens(lang: KnownLang, ctx: KnownContext): Set<string> {
 /** The (lowercase) tokens of a sentence, the way the gate reads it. */
 export function sentenceTokens(sentence: string, lang: KnownLang): string[] {
   if (lang === 'hu') return huTokenize(sentence);
+  if (lang === 'de') return deTokenize(sentence);
   return lang === 'es' ? tokenize(sentence) : enTokenize(sentence);
 }
 
@@ -377,6 +399,8 @@ function listedNames(lang: KnownLang): ReadonlySet<string> {
 /** The (lowercase) tokens of a sentence that are proper names. */
 function nameTokens(sentence: string, lang: KnownLang): Set<string> {
   const names = new Set<string>();
+  // German capitalises every noun: a capital says nothing about a name, so a name must be learned like any word.
+  if (lang === 'de') return names;
   const listed = listedNames(lang);
   for (const { word, initial } of capitalizedWords(sentence)) {
     for (const token of sentenceTokens(word, lang)) {

@@ -3,7 +3,7 @@
 // learner knows all of it: every sentence passes the same "never an unknown word in a sentence" gate as the Sentences tab
 // (lib/knownSentence.ts) and the card of each sentence's word is learned. Of those, the story with the most due words wins
 // (a tie: the data order), the story of the previous round goes last. Each target language has its own file (es stories.json,
-// en stories-en.json, hu stories-hu.json): the sentence text is the target-language field, the translation and the true/false
+// en stories-en.json, hu stories-hu.json, de none yet): the sentence text is the target-language field, the translation and the true/false
 // statements are the field of the learner's native language (the active source, lib/languagePair.ts). Without a usable story
 // lib/practice/reading.ts builds the text from the due words' own example sentences. Pure logic, no I/O.
 
@@ -17,11 +17,12 @@ import { learnedEntryOf } from '@/lib/sentenceCards';
 import { gapByWord, practiceCandidates } from './gapFill';
 import { meaningOf, type ReadingDeps, type ReadingWord } from './reading';
 
-/** One sentence of a story: its text per language, and the card it practises (`word`: `o<order>`, `e<id>` or `h<id>`) as written in the target-language text (`form`). */
+/** One sentence of a story: its text per language, and the card it practises (`word`: `o<order>`, `e<id>`, `h<id>` or `d<id>`) as written in the target-language text (`form`). */
 export interface StorySentence {
   es?: string;
   en?: string;
   hu?: string;
+  de?: string;
   word: string;
   form: string;
 }
@@ -34,11 +35,13 @@ export interface Story {
   false_en?: string[];
   false_es?: string[];
   false_hu?: string[];
+  false_de?: string[];
 }
 
 export const STORIES: Story[] = storiesData as Story[];
 
-const STORIES_BY_TARGET: Record<PcicTarget, readonly Story[]> = { es: STORIES, en: storiesEnData as Story[], hu: storiesHuData as Story[] };
+// German has no stories of its own yet (an empty list is the honest empty state, reading then builds the text from example sentences).
+const STORIES_BY_TARGET: Record<PcicTarget, readonly Story[]> = { es: STORIES, en: storiesEnData as Story[], hu: storiesHuData as Story[], de: [] };
 
 /** The stories of a target language (none when it has none). */
 export function storiesFor(target: PcicTarget): readonly Story[] {

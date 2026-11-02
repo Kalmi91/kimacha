@@ -61,10 +61,9 @@ function RootLayout() {
       // Reading the direction also sets the PCIC tab's active direction to the stored
       // target, not always en-es (the store calls data/pcic.ts setPcicTarget).
       let result = await learner.refresh(['direction']);
-      // Kimacha Play: single en-es pair. An install that
-      // still has an older pair (hu-es, es-hu, hu-en, ...) is corrected to
-      // en-es here, silently, at startup; its old DB rows stay, they are just
-      // no longer the active pair.
+      // An install whose stored pair is not one of the supported pairs (lib/languages.ts supportedPairs: all
+      // 12 ordered pairs of en / es / hu / de), e.g. a language that no longer exists, is corrected to en-es
+      // here, silently, at startup; its old DB rows stay, they are just no longer the active pair.
       if (result.onboarded && needsPairCorrection({ source: result.source!, target: result.target })) {
         await learner.setOnboarding(FORCED_PAIR.source, FORCED_PAIR.target);
         result = await learner.refresh(['direction']);

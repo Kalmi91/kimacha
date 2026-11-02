@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { StyleSheet, View, Pressable, ScrollView, Modal } from 'react-native';
+import { StyleSheet, View, Pressable, ScrollView, Modal, useWindowDimensions } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedSheetStyle } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
@@ -18,6 +18,7 @@ import ThemeSwatch from '@/components/skins/ThemeSwatch';
 // version line in Settings, the same tag the feedback rows carry.
 import { appBuildTag } from '@/lib/appBuild';
 import { languages, pairLabel, supportedPairs } from '@/lib/languages';
+import { articleOptionsFor } from '@/lib/articlePicker';
 import { useBeta, setBeta, BETA_FLAGS, type BetaFlag } from '@/lib/beta';
 import { useSettingsScreen } from '@/lib/settings/useSettingsScreen';
 import BetterVoiceRows from '@/components/settings/BetterVoiceRows';
@@ -90,6 +91,8 @@ export default function SettingsScreen() {
   const router = useRouter();
   // General (everything else) or Voice (the better voice and whose voice reads each language).
   const [tab, setTab] = useState<SettingsTab>('general');
+  // the direction sheet lists all 12 pairs: its rows scroll inside a list that leaves room for the title on a small phone.
+  const sheetListMax = useWindowDimensions().height * 0.6;
   const {
     level, direction, directionSheetOpen, setDirectionSheetOpen, weeklyGoal, dailyNewLimit, againDelaySec,
     strictAccents, articlePicker, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
@@ -190,9 +193,8 @@ export default function SettingsScreen() {
         <BrutalSwitch testID="settings-strict-accents" accessibilityLabel={s.settings.strictAccents} value={strictAccents} onValueChange={handleStrictAccentsToggle} />
       </Row>
 
-      {/* article button row on the typing Spanish noun cards.
-          It is active only for Spanish as the target language (in index.tsx the button row also appears only at target==='es'). */}
-      {direction[1] === 'es' && (
+      {/* article button row on the typing noun cards of the languages with articles to pick (Spanish el/la/los/las, German der/die/das). */}
+      {articleOptionsFor(direction[1]).length > 0 && (
         <Row>
           <View style={styles.difficultyLabelBox}>
             <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.articlePicker}</Text>
@@ -290,6 +292,7 @@ export default function SettingsScreen() {
         <Pressable style={styles.sheetOverlay} onPress={() => setDirectionSheetOpen(false)}>
           <Pressable style={[styles.sheet, { backgroundColor: colors.card }, themedSheetStyle(g)]} onPress={() => {}}>
             <TitleText style={[styles.sheetTitle, { color: colors.text }]}>{s.settings.chooseDirection}</TitleText>
+            <ScrollView style={{ maxHeight: sheetListMax }}>
             {supportedPairs.map(([src, tgt]) => {
               const active = direction[0] === src && direction[1] === tgt;
               if (g.brutal) {
@@ -322,6 +325,7 @@ export default function SettingsScreen() {
                 </Pressable>
               );
             })}
+            </ScrollView>
           </Pressable>
         </Pressable>
       </Modal>

@@ -23,6 +23,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const out = join(root, 'lib', 'corpusNames.ts');
 const check = process.argv.includes('--check');
 const LANGS = ['es', 'en', 'hu'];
+// German capitalises every noun, so a capital inside a sentence says nothing about a name: it has no list
+// (lib/knownSentence.ts reads no names for it) and the entry is always empty.
+const NO_NAMES_LANGS = ['de'];
 
 // same rule as lib/properNames.ts
 const OPENER = /["“«¿¡(‘'[]/;
@@ -95,8 +98,9 @@ const content = [
   `// The words the corpus writes with a capital INSIDE a sentence and never in lowercase, per language (lowercased).`,
   `// lib/knownSentence.ts takes a capitalised word at the start of a sentence as a name only when it is here.`,
   ``,
-  `export const CORPUS_NAMES: Record<'es' | 'en' | 'hu', string[]> = {`,
+  `export const CORPUS_NAMES: Record<'es' | 'en' | 'hu' | 'de', string[]> = {`,
   ...lines.flat(),
+  ...NO_NAMES_LANGS.map((lang) => `  ${lang}: [],`),
   `};`,
   ``,
 ].join('\n');

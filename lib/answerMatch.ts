@@ -60,7 +60,7 @@ function normalizeKeepingAccents(text: string): string[] {
 // the same word, and an adjective ending is exactly what this card grades.
 const DE_DIGRAPH: Record<string, string> = { 'ä': 'ae', 'ö': 'oe', 'ü': 'ue' };
 
-function germanReadings(text: string): string[] {
+export function germanReadings(text: string): string[] {
   const bare = text.normalize('NFC').replace(/ß/g, 'ss');
   const digraph = bare.replace(/[äöü]/gi, (ch) => {
     const mapped = DE_DIGRAPH[ch.toLowerCase()];
@@ -171,8 +171,8 @@ function answerCandidates(correct: string): string[] {
 export function strictAnswerMatch(answer: string, correct: string, opts: MatchOptions = {}): boolean {
   const answerForms = normalizedForms(answer, opts);
   const candidates = answerCandidates(correct);
-  // The Spanish article swap (el/la) is for Spanish answers only.
-  if (opts.eitherArticle && opts.lang !== 'hu') {
+  // The Spanish article swap (el/la) is for Spanish answers only (German articles are part of the word: der/die/das never swap).
+  if (opts.eitherArticle && opts.lang !== 'hu' && opts.lang !== 'de') {
     for (const c of [...candidates]) {
       const swapped = withSwappedArticle(c);
       if (swapped) candidates.push(swapped);

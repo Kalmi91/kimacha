@@ -43,11 +43,15 @@ export interface MatchState {
 
 const firstForm = (text: string) => (pcicAlternatives(text)[0] ?? text).trim();
 
-/** The languages of the left and right column: Spanish and English, or with Hungarian in the pair, the Hungarian on the left and the pair's other language on the right. */
+/**
+ * The languages of the left and right column: Spanish and English for the two original pairs; with a third language in
+ * the pair (Hungarian or German), that language is the left column and the pair's other language the right one
+ * (the language being learned on the left when it is the third one, otherwise the source's).
+ */
 function columnLangs(target: PcicTarget): { left: Lang; right: Lang } {
   const source = activeSourceFor(target);
-  if (target === 'hu') return { left: 'hu', right: source };
-  if (source === 'hu') return { left: 'hu', right: target };
+  if (target === 'hu' || target === 'de') return { left: target, right: source };
+  if (source === 'hu' || source === 'de') return { left: source, right: target };
   return { left: 'es', right: 'en' };
 }
 

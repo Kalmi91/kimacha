@@ -9,18 +9,25 @@
 // Spanish NOUN card, with and without an article. The ⊘ is the default, so
 // whoever does not touch it can type as before.
 
-import type { PosInfo } from '@/lib/pcicPos';
-
 export const ARTICLE_OPTIONS = ['el', 'la', 'los', 'las'] as const;
+// German: the definite article of the nominative singular (der Hund, die Katze, das Auto); a plural-only
+// noun (die Leute) takes die.
+export const ARTICLE_OPTIONS_DE = ['der', 'die', 'das'] as const;
 
-export type ArticlePick = '' | (typeof ARTICLE_OPTIONS)[number];
+export type ArticlePick = '' | (typeof ARTICLE_OPTIONS)[number] | (typeof ARTICLE_OPTIONS_DE)[number];
 
 // Issue #3: which languages have an article button row at all, and with which forms.
 // Swedish (en/ett) or German (der/die/das) is thus one entry, not another
 // `||` branch in this function.
-const ARTICLES_BY_LANG: Record<string, readonly string[]> = {
+const ARTICLES_BY_LANG: Record<string, readonly ArticlePick[]> = {
   es: ARTICLE_OPTIONS,
+  de: ARTICLE_OPTIONS_DE,
 };
+
+/** The buttons of the article row for the language being typed (none = no row for that language). */
+export function articleOptionsFor(lang: string): readonly ArticlePick[] {
+  return ARTICLES_BY_LANG[lang] ?? [];
+}
 
 /**
  * Whether the button row is shown. It is, if the language being typed has an article set and
@@ -36,7 +43,7 @@ const ARTICLES_BY_LANG: Record<string, readonly string[]> = {
  */
 export function articlePickerApplies(backLang: string, isWordCard: boolean, answer?: string): boolean {
   if (!ARTICLES_BY_LANG[backLang] || !isWordCard) return false;
-  return answer === undefined || answer.split('/').some((alt) => articleCanApply(alt));
+  return answer === undefined || answer.split('/').some((alt) => articleCanApply(alt, backLang));
 }
 
 /**
@@ -52,11 +59,11 @@ export function articlePickerApplies(backLang: string, isWordCard: boolean, answ
  * mark (¿/¡) is a sentence, not a word, and the row stays noise there even if it
  * starts with an article (El gato está en la mesa.).
  */
-function articleCanApply(answer: string): boolean {
+function articleCanApply(answer: string, lang: string): boolean {
   const trimmed = answer.trim();
   if (!trimmed) return true;
   if (/[.?!…]$/.test(trimmed) || /^[¿¡]/.test(trimmed)) return false;
-  if (articleOf(trimmed)) return true;
+  if (articleOf(trimmed, lang)) return true;
   return !/\s/.test(trimmed);
 }
 
@@ -72,15 +79,15 @@ export function composeAnswer(pick: ArticlePick, typed: string): string {
  * The article of the correct form, so that on reveal the button row shows the RIGHT answer
  * (the learner sees what they should have pressed).
  */
-export function articleOf(text: string): ArticlePick {
+export function articleOf(text: string, lang = 'es'): ArticlePick {
   const first = text.trim().split(/\s+/)[0]?.toLowerCase() ?? '';
-  return (ARTICLE_OPTIONS as readonly string[]).includes(first) ? (first as ArticlePick) : '';
+  return articleOptionsFor(lang).includes(first as ArticlePick) ? (first as ArticlePick) : '';
 }
 
 /** The correct form without an article, the expected content of the typing field. */
-export function bodyOf(text: string): string {
+export function bodyOf(text: string, lang = 'es'): string {
   const trimmed = text.trim();
-  return articleOf(trimmed) ? trimmed.split(/\s+/).slice(1).join(' ') : trimmed;
+  return articleOf(trimmed, lang) ? trimmed.split(/\s+/).slice(1).join(' ') : trimmed;
 }
 
 /**
@@ -90,6 +97,6 @@ export function bodyOf(text: string): string {
  * only applies when the part of speech is unknown (`null`, then the
  * ⊘ answer is still a lesson) or explicitly `noun`.
  */
-export function articleRowAppliesForPos(pos: PosInfo | null): boolean {
+export function articleRowAppliesForPos(pos: { pos: string; gender?: string } | null): boolean {
   return !pos || pos.pos === 'noun';
 }

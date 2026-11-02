@@ -26,7 +26,8 @@ export function cumulativeCorpusWordIds(level: Level, lang: string): Set<number>
   if (cached) return cached;
   // The words-open cards (id = order), A0 → A1, C2 → C1; for the Hungarian course the cards of the Hungarian deck.
   const ids = new Set<number>();
-  const cards = lang === 'hu' ? getHuWords().filter((w) => LEVELS.indexOf(w.level) <= LEVELS.indexOf(level)) : getOpenWordsUpToLevel(level);
+  // German has no course (no lesson to read words in) yet: no card is "known" there, never the Spanish ones.
+  const cards = lang === 'de' ? [] : lang === 'hu' ? getHuWords().filter((w) => LEVELS.indexOf(w.level) <= LEVELS.indexOf(level)) : getOpenWordsUpToLevel(level);
   for (const w of cards) ids.add(w.id);
   cumulativeIdsCache.set(key, ids);
   return ids;

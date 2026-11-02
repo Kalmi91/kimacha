@@ -31,9 +31,9 @@ const tensesOf = (level: PcicLevel): ReadonlySet<ResolvedTense> =>
 // the cards a learner of a level knows: every card of that level and of the levels below it
 const cardIdsUpTo = (level: PcicLevel) => LEVELS.filter((l) => rank(l) <= rank(level)).flatMap((l) => pcicItemsForLevel(l).map((i) => i.id));
 
-const FILES: Record<PcicTarget, unknown> = { es: storiesData, en: storiesEnData, hu: storiesHuData };
+const FILES: Record<PcicTarget, unknown> = { es: storiesData, en: storiesEnData, hu: storiesHuData, de: [] };
 // the languages a learner of each target comes from (the translations and false statements a story needs)
-const SOURCES: Record<PcicTarget, Lang[]> = { es: ['en', 'hu'], en: ['es', 'hu'], hu: ['es', 'en'] };
+const SOURCES: Record<PcicTarget, Lang[]> = { es: ['en', 'hu'], en: ['es', 'hu'], hu: ['es', 'en'], de: ['en', 'es', 'hu'] };
 // How many stories of each level a file holds (the same in all three target languages): 20 at A1, 5 at each level above.
 const COUNT: Record<PcicLevel, [number, number]> = { A1: [20, 20], A2: [5, 5], B1: [5, 5], B2: [5, 5], C1: [5, 5] };
 

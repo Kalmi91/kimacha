@@ -1,4 +1,4 @@
-// The direction sheet of Settings lists every supported pair (six), generated from lib/languages.ts, with the flags
+// The direction sheet of Settings lists every supported pair (twelve), generated from lib/languages.ts, with the flags
 // and the native names. Mock pattern: settingsFeedbackHeader.test.tsx.
 
 jest.mock('expo-router', () => ({
@@ -32,7 +32,7 @@ describe('Settings: the direction sheet', () => {
     await getDb().setOnboarding('en', 'es');
   });
 
-  it('has one option per supported pair: six, each as "flag name → flag name"', async () => {
+  it('has one option per supported pair: twelve, each as "flag name → flag name"', async () => {
     render(
       <ThemeProvider>
         <FeedbackHeaderProvider navigation={{ setOptions: jest.fn() }}>
@@ -42,14 +42,16 @@ describe('Settings: the direction sheet', () => {
     );
     await flush();
 
-    expect(supportedPairs).toHaveLength(6);
+    expect(supportedPairs).toHaveLength(12);
     // the row that opens the sheet shows the active pair
     fireEvent.press(screen.getByText('Learning direction'));
     for (const [source, target] of supportedPairs) {
       expect(screen.getAllByText(pairLabel(source, target)).length).toBeGreaterThan(0);
     }
-    // the active one is in the row and in the sheet; the other five appear once, in the sheet only
+    // the active one is in the row and in the sheet; the other eleven appear once, in the sheet only
     expect(screen.getAllByText('🇬🇧 English → 🇪🇸 Español')).toHaveLength(2);
     expect(screen.getAllByText('🇭🇺 Magyar → 🇬🇧 English')).toHaveLength(1);
+    expect(screen.getAllByText('🇩🇪 Deutsch → 🇭🇺 Magyar')).toHaveLength(1);
+    expect(screen.getAllByText('🇭🇺 Magyar → 🇩🇪 Deutsch')).toHaveLength(1);
   });
 });

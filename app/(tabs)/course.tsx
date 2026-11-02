@@ -154,6 +154,17 @@ export default function GrammarSyllabusScreen() {
   }, [writtenIds, percents, progress]);
   const randomScore = rr.score(overallScore(writtenIds, lessonPcts, evidence), weakTopicCount(evidence));
 
+  // No German course exists yet: say so, never list the Spanish syllabus or an empty one.
+  if (learnedLang === 'de') {
+    return (
+      <View testID="grammar-no-course" style={[styles.container, { backgroundColor: g.brutal ? g.bg : colors.background, justifyContent: 'center', padding: 24 }]}>
+        <Text variant="title" style={{ color: g.brutal ? g.ink : colors.text, textAlign: 'center' }}>{s.tabs.grammar}</Text>
+        <Text style={{ color: g.brutal ? g.mu : colors.textMuted, textAlign: 'center', marginTop: 12 }}>{s.grammar.noCourse}</Text>
+        <ScreenFeedback placement="inline" level={level} languagePair={`${contentLang}→${learnedLang}`} currentCard="grammar-syllabus" />
+      </View>
+    );
+  }
+
   // Neo-brutalist:
   // the classic palette renders today's look below.
   if (g.brutal) {

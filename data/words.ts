@@ -63,7 +63,9 @@ export function normalizeWordToken(raw: string): string {
 // the lookup by text (glossary, mixed read-aloud)
 // runs on the words-open cards (data/openWords.ts), not on the old word list. The Hungarian course
 // (learned language 'hu') has no words-open card to tap: it runs on the Hungarian deck (data/huWords.ts).
+// The German course has no tappable cards yet (no lesson text exists for it), so it finds nothing: never a Spanish card.
 function allWordsFor(lang: string): WordEntry[] {
+  if (lang === 'de') return [];
   return lang === 'hu' ? getHuWords() : getOpenWords();
 }
 

@@ -4,19 +4,18 @@ interface Language {
   flag: string;
 }
 
-// Kimacha Play: single en-es pair. The other language
-// tracks (hu, de, fr, pt, sv) no longer have an onboarding entry point, and their
-// content is gone from the repo.
+// The four languages of the app: each one can be the learner's own language (the source, the UI
+// language) and the language being learned (the target).
 export const languages: Language[] = [
   { code: 'en', name: 'English', flag: '🇬🇧' },
   { code: 'es', name: 'Español', flag: '🇪🇸' },
   { code: 'hu', name: 'Magyar', flag: '🇭🇺' },
+  { code: 'de', name: 'Deutsch', flag: '🇩🇪' },
 ];
 
-// the second direction, es→en (the learner
-// learns English from Spanish), alongside the old en→es. An existing install stays on en-es
-// because of FORCED_PAIR, this list only decides which pair
-// the onboarding/settings direction switch accepts.
+// Every ordered pair of the four languages (12). The list decides which pair the onboarding and the
+// Settings direction switch accept, and which pair the startup correction (needsPairCorrection)
+// leaves alone. A pair whose content does not exist yet shows an empty state in the app.
 export const supportedPairs: [string, string][] = [
   ['en', 'es'],
   ['es', 'en'],
@@ -24,6 +23,12 @@ export const supportedPairs: [string, string][] = [
   ['en', 'hu'],
   ['hu', 'es'],
   ['hu', 'en'],
+  ['en', 'de'],
+  ['es', 'de'],
+  ['hu', 'de'],
+  ['de', 'en'],
+  ['de', 'es'],
+  ['de', 'hu'],
 ];
 
 // "🇬🇧 English → 🇪🇸 Español", the label of a pair in the direction pickers: the native language
@@ -36,16 +41,17 @@ export function pairLabel(source: string, target: string): string {
   return `${show(source)} → ${show(target)}`;
 }
 
-// Play Store release: the pair onboarding is forced to whenever
-// it drifts from the single supported pair, whether at startup (an older
-// install still on hu-es/es-hu/hu-en/...) or after a backup restore (an
+// The pair an install is reset to whenever it drifts from the supported pairs (an unknown language
+// code, or a source equal to the target), whether at startup or after a backup restore (an
 // older-schema payload, same drift). Shared so both call sites agree.
 export const FORCED_PAIR = { source: 'en', target: 'es' } as const;
 
 // The sample word of the theme previews (onboarding theme step, My mix), in the language being learned,
 // so it shows the theme's font on a real word of that language.
-const SAMPLE_WORD: Record<string, string> = { es: 'el carro', en: 'the car', hu: 'az autó' };
+const SAMPLE_WORD: Record<string, string> = { es: 'el carro', en: 'the car', hu: 'az autó', de: 'das Auto' };
 
+// Every language of the app has its own sample; only a code outside the four falls back (to the
+// default pair's target, Spanish).
 export function sampleWordFor(target: string): string {
   return SAMPLE_WORD[target] ?? SAMPLE_WORD.es;
 }
@@ -67,6 +73,7 @@ const SPEECH_LOCALE: Record<string, string> = {
   es: 'es-MX',
   en: 'en-US',
   hu: 'hu-HU',
+  de: 'de-DE',
 };
 
 export function speechLang(code: string): string {
