@@ -153,10 +153,16 @@ describe('places with no German content yet say so, they never answer in another
     expect('TEIL 3. Lesen Sie den Text.'.replace(TASK_PREFIX, '')).toBe('Lesen Sie den Text.');
   });
 
-  it('has only the authored bank in the placement pool of a German target (no grammar lessons are wired yet)', () => {
-    const gaps = placementPoolFor('A1', 'de').gaps;
-    expect(gaps).toHaveLength(20);
-    expect(gaps.every((g) => g.topicId === 'placement')).toBe(true);
+  it('draws the placement gap sentences of a German target from the written German lessons and the authored bank, never from the der / die / das noun task', () => {
+    const a1 = placementPoolFor('A1', 'de').gaps;
+    const bank = a1.filter((g) => g.topicId === 'placement');
+    const fromLessons = a1.filter((g) => g.topicId !== 'placement');
+    expect(bank).toHaveLength(20);
+    expect(fromLessons.length).toBeGreaterThan(0);
+    expect(a1.length).toBeLessThan(600);
+    expect(a1.every((g) => g.sentence.includes('___') && !g.itemId.startsWith('art-n-'))).toBe(true);
+    expect(fromLessons.map((g) => g.topicId)).toContain('aussprache-umlaute');
+    expect(fromLessons.every((g) => syllabusForLevel('A1', 'de').some((tp) => tp.id === g.topicId))).toBe(true);
   });
 });
 

@@ -5,6 +5,7 @@
 // (data/words), not on the 150 cards of words-open.
 
 import {
+  isArticleSetItem,
   isDictationItem,
   isFormItem,
   isMarkItem,
@@ -50,6 +51,8 @@ export function gapSourcesForLevel(level: PcicLevel, lang: string, doneTopicIds:
     if (!lesson) continue;
     for (const item of filterVosotros(lesson.items as GrammarItem[])) {
       if (!isGapChoice(item) || !item.sentence?.includes('___') || item.options.length < 2) continue;
+      // German: the der / die / das noun task spans every level of the deck (C1 nouns in the A1 pool) and is a drill, not a sentence.
+      if (lang === 'de' && isArticleSetItem(item)) continue;
       out.push({ topicId, itemId: item.id, sentence: item.sentence, options: item.options, correct: item.correct });
     }
   }
