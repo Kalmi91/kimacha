@@ -85,6 +85,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'indefinido-10-verbos': 'core-plus',
   imperfecto: 'core-plus',
   'indefinido-imperfecto': 'core-plus',
+  'haber-impersonal-tiempos': 'core',
   // In Mexico the spoken language uses the preterite instead of the perfecto
   // (comí, not he comido), so it is not in the speech core.
   perfecto: 'exam',

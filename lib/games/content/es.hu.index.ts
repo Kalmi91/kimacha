@@ -33,6 +33,7 @@ export const ES_GRAMMAR_HU: Record<string, () => Record<string, string>> = {
   'indefinido-10-verbos': () => require('@/data/games/grammar-hu/es/indefinido-10-verbos.json'),
   'imperfecto': () => require('@/data/games/grammar-hu/es/imperfecto.json'),
   'indefinido-imperfecto': () => require('@/data/games/grammar-hu/es/indefinido-imperfecto.json'),
+  'haber-impersonal-tiempos': () => require('@/data/games/grammar-hu/es/haber-impersonal-tiempos.json'),
   'perfecto': () => require('@/data/games/grammar-hu/es/perfecto.json'),
   'perfecto-vs-indefinido': () => require('@/data/games/grammar-hu/es/perfecto-vs-indefinido.json'),
   'estar-gerundio': () => require('@/data/games/grammar-hu/es/estar-gerundio.json'),

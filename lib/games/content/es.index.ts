@@ -35,6 +35,7 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'indefinido-10-verbos', load: () => require('@/data/games/grammar/es/indefinido-10-verbos.json') },
   { id: 'imperfecto', load: () => require('@/data/games/grammar/es/imperfecto.json') },
   { id: 'indefinido-imperfecto', load: () => require('@/data/games/grammar/es/indefinido-imperfecto.json') },
+  { id: 'haber-impersonal-tiempos', load: () => require('@/data/games/grammar/es/haber-impersonal-tiempos.json') },
   { id: 'perfecto', load: () => require('@/data/games/grammar/es/perfecto.json') },
   { id: 'perfecto-vs-indefinido', load: () => require('@/data/games/grammar/es/perfecto-vs-indefinido.json') },
   { id: 'estar-gerundio', load: () => require('@/data/games/grammar/es/estar-gerundio.json') },
