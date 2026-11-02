@@ -21,6 +21,7 @@ jest.mock('@/data/pcic', () => ({
   PCIC_LEVELS: ['B1'],
   PCIC_VIEW_LEVELS: ['B1'],
   pcicItemsForLevel: () => [FIXTURE_ITEM],
+  levelOfItem: () => 'A1',
   findPcicItem: (id: string) => (id === 'b1-x1' ? FIXTURE_ITEM : undefined),
   setPcicTarget: () => {},
 }));
