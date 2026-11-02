@@ -1,4 +1,4 @@
-import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
+import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicTarget } from '@/data/pcic';
 import { knownTokens, type ResolvedTense } from '@/lib/knownSentence';
 import { setActiveSource, type Lang } from '@/lib/languagePair';
 import { learnedEntries } from '@/lib/sentenceCards';
@@ -344,14 +344,15 @@ describe('German stories: levels with no story, learners who know too little', (
     expect(set === null || set.storyId === undefined).toBe(true);
   });
 
-  it('de→es: the German meanings cover A1 only, so only A1 stories are offered, whatever else the learner has', () => {
+  it('de→es: the German meanings cover every level, so a B1 story reads in German too', () => {
     setPcicTarget('es', 'de');
-    const levels: PcicLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
-    const cards = levels.flatMap((level) => pcicItemsForLevel(level)).map((i) => learned(i.id));
-    const set = buildReadingSet({ target: 'es', cards, tenses: new Set<ResolvedTense>(['presente', 'indefinido', 'imperfecto', 'futuro']), findItem: findPcicItem, today: TODAY, random: () => 0.5 })!;
-    expect(storiesFor('es').find((s) => s.id === set.storyId)?.level).toBe('A1');
-    // a story above A1 has no card in this deck: no reading words
     const b1 = storiesFor('es').find((s) => s.level === 'B1')!;
-    expect(storyWords(b1, findPcicItem, 'es')).toBeNull();
+    const words = storyWords(b1, findPcicItem, 'es');
+    expect(words).not.toBeNull();
+    // every reading word carries its German meaning and a German translation of its sentence
+    for (const w of words!) {
+      expect(w.meaning.trim()).toBeTruthy();
+      expect(w.translation.trim()).toBeTruthy();
+    }
   });
 });
