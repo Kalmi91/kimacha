@@ -4,7 +4,9 @@
 // exactly the statements worker.ts runs (any other statement throws, so a changed query shows up here instead of passing
 // silently). Not covered: real SQLite or workerd behavior. The cases marked `it.failing` state the RIGHT behavior that the
 // code does not have yet: they pass while the gap exists and go red the day it is fixed, so the `.failing` has to come off then.
-import { LOCK_SEC, MAX_FAILS, MAX_PAYLOAD_CHARS, usageSummary } from '../../../cloud/logic';
+import { createHash } from 'crypto';
+import { SESSION_KEY } from '../session';
+import { LOCK_SEC, MAX_FAILS, MAX_NAME_FAILS, MAX_PAYLOAD_CHARS, usageSummary } from '../../../cloud/logic';
 
 jest.mock(
   'cloudflare:workers',
@@ -23,17 +25,49 @@ jest.mock(
 
 type Row = Record<string, any>;
 
-function makeSql() {
+// `legacy`: the storage of the version before the revisions: a users table without the rev column, and one account (name Old,
+// PIN 1234) whose progress was saved then.
+const OLD_COLUMNS = ['name_key', 'display_name', 'salt', 'pin_hash', 'payload', 'updated_at', 'fail_count', 'locked_until'];
+const LEGACY_PAYLOAD = '{"v":1,"store":"old","resume":{}}';
+const LEGACY_SALT = 'a'.repeat(32);
+
+function makeSql(legacy = false) {
   const users = new Map<string, Row>();
   const tokens = new Map<string, Row>();
+  const fails = new Map<string, Row>();
+  let columns: Set<string> | null = null;
+  if (legacy) {
+    columns = new Set(OLD_COLUMNS);
+    const pin_hash = createHash('sha256')
+      .update(LEGACY_SALT + '1234')
+      .digest('hex');
+    users.set('old', { name_key: 'old', display_name: 'Old', salt: LEGACY_SALT, pin_hash, payload: LEGACY_PAYLOAD, updated_at: '2026-10-01T00:00:00.000Z', fail_count: 0, locked_until: null });
+  }
   const cursor = (rows: Row[]) => ({ toArray: () => rows });
   const exec = (query: string, ...b: any[]) => {
     const q = query.replace(/\s+/g, ' ').trim().toLowerCase();
+    if (q.startsWith('create table if not exists users')) {
+      columns ??= new Set(OLD_COLUMNS);
+      return cursor([]);
+    }
     if (q.startsWith('create table')) return cursor([]);
+    if (q === 'pragma table_info(users)') return cursor([...(columns ?? [])].map((name) => ({ name })));
+    if (q === 'alter table users add column rev integer not null default 0') {
+      if (!columns || columns.has('rev')) throw new Error('duplicate column name: rev');
+      columns.add('rev');
+      for (const u of users.values()) u.rev = 0;
+      return cursor([]);
+    }
+    if (q === 'alter table users add column fail_since integer') {
+      if (!columns || columns.has('fail_since')) throw new Error('duplicate column name: fail_since');
+      columns.add('fail_since');
+      for (const u of users.values()) u.fail_since = null;
+      return cursor([]);
+    }
     if (q === 'select * from users where name_key = ?') return cursor(users.has(b[0]) ? [{ ...users.get(b[0]) }] : []);
     if (q === 'insert into users (name_key, display_name, salt, pin_hash) values (?, ?, ?, ?)') {
       if (users.has(b[0])) throw new Error('UNIQUE constraint failed: users.name_key');
-      users.set(b[0], { name_key: b[0], display_name: b[1], salt: b[2], pin_hash: b[3], payload: null, updated_at: null, fail_count: 0, locked_until: null });
+      users.set(b[0], { name_key: b[0], display_name: b[1], salt: b[2], pin_hash: b[3], payload: null, updated_at: null, fail_count: 0, locked_until: null, rev: 0, fail_since: null });
       return cursor([]);
     }
     if (q === 'insert into tokens (token, name_key, created_at) values (?, ?, ?)') {
@@ -41,8 +75,8 @@ function makeSql() {
       tokens.set(b[0], { token: b[0], name_key: b[1], created_at: b[2] });
       return cursor([]);
     }
-    if (q === 'update users set fail_count = ?, locked_until = ? where name_key = ?') {
-      Object.assign(users.get(b[2]) ?? {}, { fail_count: b[0], locked_until: b[1] });
+    if (q === 'update users set fail_count = ?, locked_until = ?, fail_since = ? where name_key = ?') {
+      Object.assign(users.get(b[3]) ?? {}, { fail_count: b[0], locked_until: b[1], fail_since: b[2] });
       return cursor([]);
     }
     if (q === 'update users set fail_count = 0, locked_until = null where name_key = ?') {
@@ -50,12 +84,24 @@ function makeSql() {
       return cursor([]);
     }
     if (q === 'select name_key from tokens where token = ?') return cursor(tokens.has(b[0]) ? [{ name_key: tokens.get(b[0])!.name_key }] : []);
-    if (q === 'select payload, updated_at from users where name_key = ?') {
-      const u = users.get(b[0]);
-      return cursor(u ? [{ payload: u.payload, updated_at: u.updated_at }] : []);
+    if (q === 'select fail_count, locked_until from login_fails where name_key = ? and ip = ?') {
+      const f = fails.get(b[0] + '|' + b[1]);
+      return cursor(f ? [{ fail_count: f.fail_count, locked_until: f.locked_until }] : []);
     }
-    if (q === 'update users set payload = ?, updated_at = ? where name_key = ?') {
-      Object.assign(users.get(b[2]) ?? {}, { payload: b[0], updated_at: b[1] });
+    if (q === 'insert or replace into login_fails (name_key, ip, fail_count, locked_until) values (?, ?, ?, ?)') {
+      fails.set(b[0] + '|' + b[1], { fail_count: b[2], locked_until: b[3] });
+      return cursor([]);
+    }
+    if (q === 'delete from login_fails where name_key = ? and ip = ?') {
+      fails.delete(b[0] + '|' + b[1]);
+      return cursor([]);
+    }
+    if (q === 'select payload, updated_at, rev from users where name_key = ?') {
+      const u = users.get(b[0]);
+      return cursor(u ? [{ payload: u.payload, updated_at: u.updated_at, rev: u.rev }] : []);
+    }
+    if (q === 'update users set payload = ?, updated_at = ?, rev = ? where name_key = ?') {
+      Object.assign(users.get(b[3]) ?? {}, { payload: b[0], updated_at: b[1], rev: b[2] });
       return cursor([]);
     }
     if (q === 'delete from tokens where token = ?') {
@@ -80,20 +126,22 @@ function makeSql() {
     }
     throw new Error('fake sql: unsupported statement: ' + q.slice(0, 80));
   };
-  return { exec, users, tokens };
+  return { exec, users, tokens, fails, columns: () => columns };
 }
 
 type Reply = { status: number; body: any; text: string };
-type CallOptions = { token?: string; header?: string; body?: unknown; raw?: string };
+// `ip`: the address Cloudflare would put in CF-Connecting-IP (none: the header is missing).
+type CallOptions = { token?: string; header?: string; body?: unknown; raw?: string; ip?: string };
 
-function startCloud(env: { ADMIN_KEY?: string } = {}) {
-  const sql = makeSql();
+function startCloud(env: { ADMIN_KEY?: string } = {}, legacy = false) {
+  const sql = makeSql(legacy);
   const { KimachaUsers } = jest.requireActual<{ KimachaUsers: new (ctx: unknown, env: unknown) => { fetch(req: Request): Promise<Response> } }>('../../../cloud/worker');
   const obj = new KimachaUsers({ storage: { sql } }, env);
   const call = async (method: string, path: string, o: CallOptions = {}): Promise<Reply> => {
     const headers: Record<string, string> = {};
     if (o.token !== undefined) headers.Authorization = 'Bearer ' + o.token;
     if (o.header !== undefined) headers.Authorization = o.header;
+    if (o.ip !== undefined) headers['CF-Connecting-IP'] = o.ip;
     const raw = o.raw ?? (o.body === undefined ? undefined : JSON.stringify(o.body));
     const res = await obj.fetch(new Request('https://cloud.test' + path, { method, headers, body: raw }));
     const text = await res.text();
@@ -108,9 +156,11 @@ function startCloud(env: { ADMIN_KEY?: string } = {}) {
   return {
     sql,
     call,
-    login: (name: string, pin: string) => call('POST', '/api/login', { body: { name, pin } }),
+    // A second start of the Durable Object on the same storage (the constructor runs the table setup and the migration again).
+    restart: () => new KimachaUsers({ storage: { sql } }, env),
+    login: (name: string, pin: string, o: CallOptions = {}) => call('POST', '/api/login', { ...o, body: { name, pin } }),
     get: (token: string) => call('GET', '/api/progress', { token }),
-    put: (token: string, payload: string) => call('PUT', '/api/progress', { token, body: { payload } }),
+    put: (token: string, payload: string, rev?: number) => call('PUT', '/api/progress', { token, body: rev === undefined ? { payload } : { payload, rev } }),
   };
 }
 type Cloud = ReturnType<typeof startCloud>;
@@ -126,6 +176,14 @@ beforeEach(() => {
 afterEach(() => {
   jest.restoreAllMocks();
 });
+
+// `batches` addresses (`prefix.0` ...) each guess MAX_FAILS wrong PINs for Ana, the clock moving on by `gapMs` after each address.
+async function guessFromAddresses(cloud: Cloud, prefix: string, batches: number, gapMs = 0) {
+  for (let a = 0; a < batches; a++) {
+    for (let i = 0; i < MAX_FAILS; i++) expect((await cloud.login('Ana', '0000', { ip: `${prefix}.${a}` })).status).toBe(401);
+    clock += gapMs;
+  }
+}
 
 describe('login and the lock', () => {
   it('creates the account on the first login, and the same name in any case or spacing gets back into it', async () => {
@@ -153,15 +211,115 @@ describe('login and the lock', () => {
     expect(locked.body).toEqual({ error: 'locked', retryAfterSec: LOCK_SEC });
   });
 
-  it('refuses even the right PIN during the lock and issues no token for it', async () => {
+  it('refuses even the right PIN from the locked address and issues no token for it, but lets the owner in from another address', async () => {
     const cloud = startCloud();
-    await cloud.login('Ana', '1234');
-    for (let i = 0; i < MAX_FAILS; i++) await cloud.login('Ana', '0000');
+    await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    for (let i = 0; i < MAX_FAILS; i++) await cloud.login('Ana', '0000', { ip: '6.6.6.6' }); // a stranger who knows only the name
     const tokensBefore = cloud.sql.tokens.size;
-    const right = await cloud.login('Ana', '1234');
+    const right = await cloud.login('Ana', '1234', { ip: '6.6.6.6' });
     expect(right.status).toBe(429);
     expect(right.body.token).toBeUndefined();
     expect(cloud.sql.tokens.size).toBe(tokensBefore);
+    const owner = await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    expect(owner.status).toBe(200);
+    expect(owner.body.token).toMatch(/^[0-9a-f]{64}$/);
+  });
+
+  it('counts the requests without an address as one address', async () => {
+    const cloud = startCloud();
+    await cloud.login('Ana', '1234');
+    for (let i = 0; i < MAX_FAILS; i++) await cloud.login('Ana', '0000');
+    const right = await cloud.login('Ana', '1234');
+    expect(right.status).toBe(429);
+    expect(right.body.token).toBeUndefined();
+  });
+
+  it('locks the whole name only at MAX_NAME_FAILS wrong PINs from many addresses, and a device with a token of the account still gets in', async () => {
+    const cloud = startCloud();
+    const ownerToken = (await cloud.login('Ana', '1234', { ip: '10.0.0.1' })).body.token as string;
+    const wrongFrom = async (n: number, from: number) => {
+      for (let a = 0; a < n / MAX_FAILS; a++) for (let i = 0; i < MAX_FAILS; i++) expect((await cloud.login('Ana', '0000', { ip: `7.7.${from + a}.1` })).status).toBe(401);
+    };
+    await wrongFrom(MAX_NAME_FAILS - MAX_FAILS, 0);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.2' })).status).toBe(200); // one wrong PIN short of the name lock, a new address is fine
+    await wrongFrom(MAX_NAME_FAILS, 100); // the count was zeroed by that login: MAX_NAME_FAILS more lock the name
+    const fresh = await cloud.login('Ana', '1234', { ip: '10.0.0.3' });
+    expect(fresh.status).toBe(429);
+    expect(fresh.body.retryAfterSec).toBe(LOCK_SEC);
+    const holder = await cloud.login('Ana', '1234', { ip: '10.0.0.3', token: ownerToken });
+    expect(holder.status).toBe(200);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.4' })).status).toBe(200); // the good login of the holder lifted the name lock
+  });
+
+  it('does not count the wrong PINs of a device that holds a token of the account', async () => {
+    const cloud = startCloud();
+    const token = (await cloud.login('Ana', '1234', { ip: '10.0.0.1' })).body.token as string;
+    for (let i = 0; i < 2 * MAX_FAILS; i++) expect((await cloud.login('Ana', '0000', { ip: '10.0.0.1', token })).status).toBe(401);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.1' })).status).toBe(200);
+    expect(cloud.sql.users.get('ana')?.fail_count).toBe(0);
+  });
+
+  it('counts the name-wide wrong PINs inside one window only: 45 now and 45 a window later do not lock the name', async () => {
+    const cloud = startCloud();
+    await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    await guessFromAddresses(cloud, '7.1', 9);
+    clock = START + LOCK_SEC * 1000;
+    await guessFromAddresses(cloud, '7.2', 9);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.2' })).status).toBe(200);
+  });
+
+  it('does not lock the name for a guesser who spreads 60 wrong PINs over an hour, whatever the gaps', async () => {
+    const cloud = startCloud();
+    await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    await guessFromAddresses(cloud, '7.3', 12, 5 * 60 * 1000);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.2' })).status).toBe(200);
+  });
+
+  it('does not lock the name for one address that guesses again every time its own lock has run out', async () => {
+    const cloud = startCloud();
+    await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    for (let window = 0; window < 12; window++) {
+      for (let i = 0; i < MAX_FAILS; i++) expect((await cloud.login('Ana', '0000', { ip: '7.4.0.1' })).status).toBe(401);
+      expect((await cloud.login('Ana', '0000', { ip: '7.4.0.1' })).status).toBe(429);
+      clock += LOCK_SEC * 1000;
+    }
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.2' })).status).toBe(200);
+  });
+
+  it('lets a name-locked owner in through the client: login() sends the token of the stored session', async () => {
+    const cloud = startCloud();
+    const ownerToken = (await cloud.login('Ana', '1234', { ip: '10.0.0.1' })).body.token as string;
+    const beaToken = (await cloud.login('Bea', '5678', { ip: '10.0.0.5' })).body.token as string;
+    await guessFromAddresses(cloud, '7.5', MAX_NAME_FAILS / MAX_FAILS);
+    expect((await cloud.login('Ana', '1234', { ip: '10.0.0.3' })).status).toBe(429); // the whole name is locked
+    const { login: clientLogin } = jest.requireActual<typeof import('../api')>('../api');
+    const realFetch = (globalThis as any).fetch;
+    (globalThis as any).fetch = async (url: string, init: { method: string; headers: Record<string, string>; body: string }) => {
+      const r = await cloud.call(init.method, url, { header: init.headers.Authorization, raw: init.body, ip: '10.0.0.3' });
+      return { ok: r.status >= 200 && r.status < 300, status: r.status, json: async () => r.body };
+    };
+    const stored = (token: string) =>
+      Object.defineProperty(globalThis, 'localStorage', { value: { getItem: (k: string) => (k === SESSION_KEY ? JSON.stringify({ name: 'Ana', token }) : null) }, configurable: true, writable: true });
+    try {
+      expect(await clientLogin('Ana', '1234')).toMatchObject({ ok: false, error: 'locked' }); // no stored session
+      stored(beaToken);
+      expect(await clientLogin('Ana', '1234')).toMatchObject({ ok: false, error: 'locked' }); // the token of another account
+      stored(ownerToken);
+      const res = await clientLogin('Ana', '1234');
+      expect(res).toMatchObject({ ok: true, data: { created: false, displayName: 'Ana' } });
+      expect((res as any).data.token).toMatch(/^[0-9a-f]{64}$/);
+    } finally {
+      (globalThis as any).fetch = realFetch;
+      delete (globalThis as any).localStorage;
+    }
+  });
+
+  it('does not let the token of another account past the lock', async () => {
+    const cloud = startCloud();
+    await cloud.login('Ana', '1234', { ip: '10.0.0.1' });
+    const bea = (await cloud.login('Bea', '5678', { ip: '10.0.0.2' })).body.token as string;
+    for (let i = 0; i < MAX_FAILS; i++) await cloud.login('Ana', '0000', { ip: '6.6.6.6' });
+    expect((await cloud.login('Ana', '1234', { ip: '6.6.6.6', token: bea })).status).toBe(429);
   });
 
   it('lets the right PIN in at the very end of the lock, and not one second before', async () => {
@@ -304,6 +462,68 @@ describe('the progress route', () => {
     expect((await cloud.get(token)).body.payload).toBe(payload);
   });
 
+  it('counts the saves: rev 0 for a new account, plus one per save, told by the login and by GET', async () => {
+    const cloud = startCloud();
+    const first = await cloud.login('Ana', '1234');
+    expect(first.body.rev).toBe(0);
+    const token = first.body.token as string;
+    expect((await cloud.get(token)).body).toMatchObject({ payload: null, rev: 0 });
+    expect((await cloud.put(token, '{"a":1}', 0)).body).toMatchObject({ rev: 1 });
+    expect((await cloud.put(token, '{"a":2}', 1)).body).toMatchObject({ rev: 2 });
+    expect((await cloud.get(token)).body).toMatchObject({ payload: '{"a":2}', rev: 2 });
+    expect((await cloud.login('Ana', '1234')).body).toMatchObject({ payload: '{"a":2}', rev: 2 });
+  });
+
+  it('refuses a save based on an older revision with 409 and the current state, and writes nothing', async () => {
+    const cloud = startCloud();
+    const a = (await cloud.login('Ana', '1234')).body.token as string;
+    const b = (await cloud.login('Ana', '1234')).body.token as string;
+    await cloud.put(a, '{"from":"A"}', 0);
+    const stale = await cloud.put(b, '{"from":"B"}', 0);
+    expect(stale.status).toBe(409);
+    expect(stale.body).toMatchObject({ error: 'conflict', payload: '{"from":"A"}', rev: 1 });
+    expect(stale.body.updatedAt).toEqual(expect.any(String));
+    expect((await cloud.get(a)).body).toMatchObject({ payload: '{"from":"A"}', rev: 1 });
+    expect((await cloud.put(b, '{"from":"B"}', 1)).status).toBe(200);
+  });
+
+  it('refuses a save from the future as well: the revision has to be the current one', async () => {
+    const cloud = startCloud();
+    const token = (await cloud.login('Ana', '1234')).body.token as string;
+    expect((await cloud.put(token, '{}', 5)).status).toBe(409);
+    expect((await cloud.get(token)).body.payload).toBeNull();
+  });
+
+  it('still writes a save without a revision (an old client), and counts it', async () => {
+    const cloud = startCloud();
+    const token = (await cloud.login('Ana', '1234')).body.token as string;
+    await cloud.put(token, '{"a":1}', 0);
+    expect((await cloud.put(token, '{"old":true}')).body).toMatchObject({ rev: 2 });
+    expect((await cloud.get(token)).body).toMatchObject({ payload: '{"old":true}', rev: 2 });
+  });
+
+  it.each([-1, 1.5, '1', null, true, [1]])('answers 400 bad_input for the revision %j and keeps the progress', async (rev) => {
+    const cloud = startCloud();
+    const token = (await cloud.login('Ana', '1234')).body.token as string;
+    const r = await cloud.call('PUT', '/api/progress', { token, body: { payload: '{"x":1}', rev } });
+    expect(r.status).toBe(400);
+    expect(r.body).toEqual({ error: 'bad_input' });
+    expect((await cloud.get(token)).body.payload).toBeNull();
+  });
+
+  it('adds the rev column to the storage of the older version once, and keeps the saved progress', async () => {
+    const cloud = startCloud({}, true);
+    expect(cloud.sql.columns()?.has('rev')).toBe(true);
+    expect(cloud.sql.columns()?.has('fail_since')).toBe(true);
+    expect(() => cloud.restart()).not.toThrow(); // the fake storage throws on a second ALTER, like SQLite
+    const login = await cloud.login('Old', '1234');
+    expect(login.status).toBe(200);
+    expect(login.body).toMatchObject({ created: false, payload: LEGACY_PAYLOAD, updatedAt: '2026-10-01T00:00:00.000Z', rev: 0 });
+    const token = login.body.token as string;
+    expect((await cloud.get(token)).body).toMatchObject({ payload: LEGACY_PAYLOAD, rev: 0 });
+    expect((await cloud.put(token, '{"v":1,"store":"new","resume":{}}', 0)).body).toMatchObject({ rev: 1 });
+  });
+
   it('answers 404 for an unknown route and 405 for a wrong method, never a server error', async () => {
     const cloud = startCloud();
     const token = (await cloud.login('Ana', '1234')).body.token as string;
@@ -387,11 +607,14 @@ describe('two devices on one account', () => {
     let dev!: Device;
     jest.isolateModules(() => {
       jest.doMock('../api', () => ({
-        putProgress: (token: string, payload: string) => {
-          const p = cloud.put(token, payload).then((r) => (r.status === 200 ? { ok: true, data: r.body } : { ok: false, error: r.body?.error ?? 'server' }));
+        putProgress: (token: string, payload: string, _keepalive: boolean, rev?: number) => {
+          const p = cloud
+            .put(token, payload, rev)
+            .then((r) => (r.status === 200 ? { ok: true, data: r.body } : { ok: false, error: r.body?.error ?? 'server', current: r.status === 409 ? r.body : undefined }));
           pending.push(p);
           return p;
         },
+        getProgress: (token: string) => cloud.get(token).then((r) => (r.status === 200 ? { ok: true, data: r.body } : { ok: false, error: r.body?.error ?? 'server' })),
       }));
       dev = { sync: jest.requireActual('../sync'), db: jest.requireActual('@/lib/database.web') };
     });
@@ -401,7 +624,7 @@ describe('two devices on one account', () => {
   async function signIn(dev: Device, cloud: Cloud, name: string) {
     const res = (await cloud.login(name, '1234')).body;
     await dev.sync.restoreFromCloud(res.payload);
-    return dev.sync.startSync(res.token, await dev.sync.snapshotKey(), () => {});
+    return dev.sync.startSync(res.token, await dev.sync.snapshotKey(), () => {}, res.rev);
   }
 
   // One sync round of every running device, then wait for the uploads to land.
@@ -459,7 +682,7 @@ describe('two devices on one account', () => {
     [stopA, stopB, stopC].forEach((stop) => stop());
   });
 
-  it.failing('keeps what both devices saved when each of them learned something the other has not seen', async () => {
+  it('keeps what both devices saved when each of them learned something the other has not seen', async () => {
     const cloud = startCloud();
     const a = makeDevice(cloud);
     const stopA = await signIn(a, cloud, 'Ana');

@@ -62,14 +62,14 @@ export default function CloudGate({ children }: { children: ReactNode }) {
   const started = useRef(false);
 
   // The progress is in hand: restore it, take the baseline, start the sync, let the app mount.
-  const enter = useCallback(async (tok: string, payload: string | null) => {
+  const enter = useCallback(async (tok: string, payload: string | null, rev: number) => {
     try {
       await restoreFromCloud(payload);
     } catch {
       setPhase('error');
       return;
     }
-    stopSync.current = startSync(tok, await snapshotKey(), restartAtLogin);
+    stopSync.current = startSync(tok, await snapshotKey(), restartAtLogin, rev);
     setPhase('ready');
   }, []);
 
@@ -78,7 +78,7 @@ export default function CloudGate({ children }: { children: ReactNode }) {
       setPhase('loading');
       const res = await getProgress(tok);
       if (res.ok) {
-        await enter(tok, res.data.payload);
+        await enter(tok, res.data.payload, res.data.rev);
       } else if (res.error === 'bad_token') {
         clearSession();
         token.current = null;
@@ -103,7 +103,7 @@ export default function CloudGate({ children }: { children: ReactNode }) {
     saveSession({ name: data.displayName, token: data.token });
     token.current = data.token;
     setPhase('loading');
-    void enter(data.token, data.payload);
+    void enter(data.token, data.payload, data.rev);
   };
 
   const retry = () => {

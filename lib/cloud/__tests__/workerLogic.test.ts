@@ -1,4 +1,4 @@
-import { LOCK_SEC, MAX_FAILS, MAX_PAYLOAD_CHARS, adminAuthorized, afterBadPin, bearerToken, displayName, lockRemainingSec, parseLogin, parsePayload, safeEqual, toAdminStats, toHex, usageSummary } from '../../../cloud/logic';
+import { LOCK_SEC, MAX_FAILS, MAX_NAME_FAILS, MAX_PAYLOAD_CHARS, adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, clientIp, displayName, lockRemainingSec, parseBaseRev, parseLogin, parsePayload, safeEqual, toAdminStats, toHex, usageSummary } from '../../../cloud/logic';
 import type { AdminUserRow, UsageSummary } from '../../../cloud/logic';
 import { MemoryStore } from '@/lib/database.web';
 import { PAYLOAD_VERSION } from '../sync';
@@ -38,6 +38,34 @@ describe('parsePayload', () => {
   });
 });
 
+describe('parseBaseRev', () => {
+  it('is null for a body without rev (an old client), the number for a non-negative integer', () => {
+    expect(parseBaseRev({ payload: '{}' })).toEqual({ ok: true, rev: null });
+    expect(parseBaseRev({ payload: '{}', rev: 0 })).toEqual({ ok: true, rev: 0 });
+    expect(parseBaseRev({ payload: '{}', rev: 41 })).toEqual({ ok: true, rev: 41 });
+  });
+
+  it.each([-1, 1.5, NaN, Infinity, 2 ** 60, '1', null, true, [1], {}])('rejects the rev %j', (rev) => {
+    expect(parseBaseRev({ payload: '{}', rev })).toEqual({ ok: false });
+  });
+
+  it('has no rev in anything that is not an object', () => {
+    expect(parseBaseRev(null)).toEqual({ ok: true, rev: null });
+    expect(parseBaseRev([5])).toEqual({ ok: true, rev: null });
+  });
+});
+
+describe('clientIp', () => {
+  it('is the trimmed header, and the empty string when there is none', () => {
+    expect(clientIp(' 203.0.113.7 ')).toBe('203.0.113.7');
+    expect(clientIp(null)).toBe('');
+  });
+
+  it('cuts a very long value, so a forged header cannot fill the storage', () => {
+    expect(clientIp('9'.repeat(500))).toHaveLength(64);
+  });
+});
+
 describe('displayName', () => {
   it('trims, collapses inner whitespace and keeps the case', () => {
     expect(displayName('  Kálmán   Fekete ')).toBe('Kálmán Fekete');
@@ -71,6 +99,34 @@ describe('afterBadPin', () => {
     expect(MAX_FAILS).toBe(5);
     expect(LOCK_SEC).toBe(900);
     expect(afterBadPin(MAX_FAILS - 1, 5000)).toEqual({ failCount: 0, lockedUntil: 5000 + 900_000 });
+  });
+
+  it('takes the limit as a third argument: the name-wide lock comes much later than the lock of one address', () => {
+    expect(MAX_NAME_FAILS).toBeGreaterThan(MAX_FAILS);
+    expect(afterBadPin(MAX_FAILS - 1, 5000, MAX_NAME_FAILS)).toEqual({ failCount: MAX_FAILS, lockedUntil: null });
+    expect(afterBadPin(MAX_NAME_FAILS - 1, 5000, MAX_NAME_FAILS)).toEqual({ failCount: 0, lockedUntil: 5000 + 900_000 });
+  });
+});
+
+describe('afterBadPinForName', () => {
+  const WINDOW = LOCK_SEC * 1000;
+
+  it('starts a window with the first wrong PIN and counts inside it', () => {
+    expect(afterBadPinForName(0, null, 5000)).toEqual({ failCount: 1, lockedUntil: null, failSince: 5000 });
+    expect(afterBadPinForName(7, 5000, 5000 + WINDOW - 1)).toEqual({ failCount: 8, lockedUntil: null, failSince: 5000 });
+  });
+
+  it('locks the name on the MAX_NAME_FAILS-th wrong PIN of one window, and restarts the count', () => {
+    expect(afterBadPinForName(MAX_NAME_FAILS - 1, 5000, 5000 + WINDOW - 1)).toEqual({ failCount: 0, lockedUntil: 5000 + WINDOW - 1 + WINDOW, failSince: 5000 });
+  });
+
+  it('drops a window that is LOCK_SEC old (the same edge as the end of a lock): this PIN starts a new one', () => {
+    expect(afterBadPinForName(MAX_NAME_FAILS - 1, 5000, 5000 + WINDOW)).toEqual({ failCount: 1, lockedUntil: null, failSince: 5000 + WINDOW });
+    expect(afterBadPinForName(30, 5000, 5000 + 10 * WINDOW)).toEqual({ failCount: 1, lockedUntil: null, failSince: 5000 + 10 * WINDOW });
+  });
+
+  it('counts from zero when the count has no window yet (rows from before the windows)', () => {
+    expect(afterBadPinForName(MAX_NAME_FAILS - 1, null, 5000)).toEqual({ failCount: 1, lockedUntil: null, failSince: 5000 });
   });
 });
 
