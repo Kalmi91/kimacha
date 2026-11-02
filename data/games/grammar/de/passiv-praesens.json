@@ -1,0 +1,1062 @@
+{
+  "schema": 2,
+  "topic": "passiv-praesens",
+  "level": "B1",
+  "title": {
+    "en": "The passive: werden + participle",
+    "es": "La voz pasiva: werden + participio"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In a passive sentence the action matters more than the person who does it. The present passive is formed with a conjugated form of werden in position two and the Partizip II at the end: Das Haus wird gebaut. The accusative object of the active sentence becomes the subject: Die Firma baut das Haus becomes Das Haus wird von der Firma gebaut. The doer is optional, and it is often left out: Hier wird Deutsch gesprochen. You find the passive on signs, in recipes, in rules and in the news.",
+        "es": "En una oración pasiva importa más la acción que la persona que la hace. La pasiva de presente se forma con una forma conjugada de werden en la posición dos y el Partizip II al final: Das Haus wird gebaut. El objeto en acusativo de la oración activa pasa a ser el sujeto: Die Firma baut das Haus se convierte en Das Haus wird von der Firma gebaut. El agente es opcional, y a menudo se omite: Hier wird Deutsch gesprochen. La pasiva aparece en letreros, recetas, reglas y noticias."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "werden-passiv",
+      "title": {
+        "en": "werden with different subjects",
+        "es": "werden con distintos sujetos"
+      },
+      "header": [
+        {
+          "en": "Subject",
+          "es": "Sujeto"
+        },
+        {
+          "en": "werden",
+          "es": "werden"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "werde"
+        ],
+        [
+          "du",
+          "wirst"
+        ],
+        [
+          "das Haus",
+          "wird"
+        ],
+        [
+          "wir",
+          "werden"
+        ],
+        [
+          "ihr",
+          "werdet"
+        ],
+        [
+          "die Zimmer",
+          "werden"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "partizip-ii",
+      "title": {
+        "en": "The Partizip II of common verbs",
+        "es": "El Partizip II de verbos frecuentes"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Partizip II",
+          "es": "Partizip II"
+        }
+      ],
+      "rows": [
+        [
+          "bauen",
+          "gebaut"
+        ],
+        [
+          "kaufen",
+          "gekauft"
+        ],
+        [
+          "machen",
+          "gemacht"
+        ],
+        [
+          "öffnen",
+          "geöffnet"
+        ],
+        [
+          "reinigen",
+          "gereinigt"
+        ],
+        [
+          "lesen",
+          "gelesen"
+        ],
+        [
+          "sprechen",
+          "gesprochen"
+        ],
+        [
+          "schreiben",
+          "geschrieben"
+        ],
+        [
+          "anrufen",
+          "angerufen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "aktiv-passiv",
+      "title": {
+        "en": "From the active to the passive",
+        "es": "De la activa a la pasiva"
+      },
+      "header": [
+        {
+          "en": "Active",
+          "es": "Activa"
+        },
+        {
+          "en": "Passiv",
+          "es": "Passiv"
+        }
+      ],
+      "rows": [
+        [
+          "Man öffnet das Fenster.",
+          "Das Fenster wird geöffnet."
+        ],
+        [
+          "Man kauft das Brot.",
+          "Das Brot wird gekauft."
+        ],
+        [
+          "Man putzt die Zimmer.",
+          "Die Zimmer werden geputzt."
+        ],
+        [
+          "Man spricht hier Deutsch.",
+          "Hier wird Deutsch gesprochen."
+        ],
+        [
+          "Man liest die Zeitung.",
+          "Die Zeitung wird gelesen."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "passiv-gebrauch",
+      "title": {
+        "en": "Where you meet the passive",
+        "es": "Dónde encuentras la pasiva"
+      },
+      "header": [
+        {
+          "en": "Place",
+          "es": "Lugar"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "Schild",
+          "Hier wird nicht geraucht."
+        ],
+        [
+          "Rezept",
+          "Die Zwiebeln werden geschnitten."
+        ],
+        [
+          "Regel",
+          "Hier wird Deutsch gesprochen."
+        ],
+        [
+          "Nachricht",
+          "Das Haus wird gebaut."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How the passive works",
+        "es": "Cómo funciona la pasiva"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "werden agrees with the new subject and stands in position two. The Partizip II goes to the end. A separable verb keeps its prefix in the participle: angerufen.",
+            "es": "werden concuerda con el nuevo sujeto y va en la posición dos. El Partizip II va al final. Un verbo separable conserva el prefijo en el participio: angerufen."
+          },
+          "examples": [
+            {
+              "es": "Das Brot wird gekauft.",
+              "tr": {
+                "en": "The bread is being bought.",
+                "es": "El pan se compra."
+              }
+            },
+            {
+              "es": "Die Zimmer werden jeden Tag geputzt.",
+              "tr": {
+                "en": "The rooms are cleaned every day.",
+                "es": "Los cuartos se limpian todos los días."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The agent, the one who acts, comes after von + dative: von der Firma. A thing or means that causes the action takes durch + accusative: durch den Wind.",
+            "es": "El agente, el que actúa, va después de von + dativo: von der Firma. Una cosa o medio que causa la acción lleva durch + acusativo: durch den Wind."
+          },
+          "examples": [
+            {
+              "es": "Das Haus wird von der Firma gebaut.",
+              "tr": {
+                "en": "The house is built by the company.",
+                "es": "La casa la construye la empresa."
+              }
+            },
+            {
+              "es": "Das Fenster wird durch den Wind geöffnet.",
+              "tr": {
+                "en": "The window is opened by the wind.",
+                "es": "La ventana la abre el viento."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Often the agent is left out, because it is unknown or unimportant. A sentence can even have no subject: Hier wird getanzt. The verb stays in the singular.",
+            "es": "A menudo se omite el agente, porque no se conoce o no importa. Una oración puede incluso no tener sujeto: Hier wird getanzt. El verbo queda en singular."
+          },
+          "examples": [
+            {
+              "es": "Hier wird nicht geraucht.",
+              "tr": {
+                "en": "Smoking is not allowed here.",
+                "es": "Aquí no se fuma."
+              }
+            },
+            {
+              "es": "Auf der Party wird viel getanzt.",
+              "tr": {
+                "en": "There is a lot of dancing at the party.",
+                "es": "En la fiesta se baila mucho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Questions put werden first or after the question word. Negation: nicht stands before the participle.",
+            "es": "Las preguntas ponen werden primero o después de la palabra interrogativa. Negación: nicht va antes del participio."
+          },
+          "examples": [
+            {
+              "es": "Wird das Haus gebaut?",
+              "tr": {
+                "en": "Is the house being built?",
+                "es": "¿Se está construyendo la casa?"
+              }
+            },
+            {
+              "es": "Das Haus wird nicht verkauft.",
+              "tr": {
+                "en": "The house is not being sold.",
+                "es": "La casa no se vende."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Active or passive",
+        "es": "Activa o pasiva"
+      },
+      "pairs": [
+        {
+          "a": "Die Firma baut das Haus.",
+          "b": "Das Haus wird von der Firma gebaut.",
+          "note": {
+            "en": "The accusative object das Haus becomes the subject of the passive. The old subject becomes von + dative, or it disappears.",
+            "es": "El objeto en acusativo das Haus pasa a ser el sujeto de la pasiva. El antiguo sujeto pasa a ser von + dativo, o desaparece."
+          },
+          "examples": [
+            {
+              "es": "Der Koch macht das Essen.",
+              "tr": {
+                "en": "The cook makes the meal.",
+                "es": "El cocinero hace la comida."
+              }
+            },
+            {
+              "es": "Das Essen wird vom Koch gemacht.",
+              "tr": {
+                "en": "The meal is made by the cook.",
+                "es": "La comida la hace el cocinero."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Das Haus wird gebaut.",
+          "b": "Das Haus ist gebaut.",
+          "note": {
+            "en": "wird gebaut is the process: it is being built. ist gebaut only names the result: it is built. For now, use werden for the process.",
+            "es": "wird gebaut es el proceso: se está construyendo. ist gebaut solo nombra el resultado: está construida. Por ahora usa werden para el proceso."
+          },
+          "examples": [
+            {
+              "es": "Das Brot wird gebacken.",
+              "tr": {
+                "en": "The bread is being baked.",
+                "es": "El pan se está horneando."
+              }
+            },
+            {
+              "es": "Das Fenster wird geöffnet.",
+              "tr": {
+                "en": "The window is being opened.",
+                "es": "La ventana se está abriendo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not use sein for the process: not Das Haus ist gebaut when you mean it is being built, but Das Haus wird gebaut. English learners: \"is built\" is not always ist gebaut, it is wird gebaut. Spanish learners: both ser + participle and se (aquí se habla alemán) match werden + Partizip II. Hungarian learners: the passive is rare in your language, and German often uses it where you would say \"they speak\" (Hier wird Deutsch gesprochen). And check the agreement: wird with a singular subject, werden with a plural one. Use von for the doer and durch for the means.",
+        "es": "No uses sein para el proceso: no Das Haus ist gebaut cuando quieres decir que se está construyendo, sino Das Haus wird gebaut. Para quien habla inglés: \"is built\" no siempre es ist gebaut, es wird gebaut. Para quien habla español: tanto ser + participio como se (aquí se habla alemán) corresponden a werden + Partizip II. Para quien habla húngaro: la pasiva es rara en tu idioma, y el alemán la usa a menudo donde tú dirías \"hablan\" (Hier wird Deutsch gesprochen). Y revisa la concordancia: wird con sujeto singular, werden con plural. Usa von para quien hace la acción y durch para el medio."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The passive is formed with «werden» and the Partizip II at the end: «Das Haus wird gebaut.» The object of the active sentence becomes the subject. With «von» you name the doer: «Das Haus wird von der Firma gebaut.» With «durch» you name the means. Often the doer is left out: «Hier wird Deutsch gesprochen.» With a plural subject you say «werden»: «Die Zimmer werden gereinigt.» You see the passive on signs, in recipes and in the news.",
+    "es": "La pasiva se forma con «werden» y el Partizip II al final: «Das Haus wird gebaut.» El objeto de la oración activa pasa a ser el sujeto. Con «von» nombras al agente: «Das Haus wird von der Firma gebaut.» Con «durch» nombras el medio. A menudo se omite el agente: «Hier wird Deutsch gesprochen.» Con un sujeto plural se dice «werden»: «Die Zimmer werden gereinigt.» La pasiva aparece en letreros, recetas y noticias."
+  },
+  "items": [
+    {
+      "id": "passiv-praesens-c01",
+      "sentence": "Das Haus ___ gebaut.",
+      "options": [
+        "wird",
+        "werden",
+        "werde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The subject das Haus is singular, so werden becomes wird: Das Haus wird gebaut.",
+        "es": "El sujeto das Haus es singular, así que werden pasa a wird: Das Haus wird gebaut."
+      },
+      "wrong": {
+        "werden": {
+          "en": "werden is the plural form for wir and sie. das Haus is one thing, so you need the singular wird.",
+          "es": "werden es la forma plural para wir y sie. das Haus es una sola cosa, así que necesitas el singular wird."
+        },
+        "werde": {
+          "en": "werde is the form for ich. The subject here is das Haus, which takes wird.",
+          "es": "werde es la forma para ich. El sujeto aquí es das Haus, que lleva wird."
+        }
+      },
+      "examples": [
+        "Das Brot wird gekauft.",
+        "Der Kuchen wird gebacken."
+      ],
+      "tr": {
+        "en": "The house is being built.",
+        "es": "La casa se está construyendo."
+      }
+    },
+    {
+      "id": "passiv-praesens-f01",
+      "kind": "form",
+      "verb": "werden",
+      "person": "ich",
+      "answer": "werde",
+      "table": "werden-passiv"
+    },
+    {
+      "id": "passiv-praesens-c02",
+      "sentence": "Die Zimmer ___ jeden Tag geputzt.",
+      "options": [
+        "wird",
+        "werden",
+        "werde"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The subject die Zimmer is plural, so the passive uses werden.",
+        "es": "El sujeto die Zimmer es plural, así que la pasiva usa werden."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird is singular and fits one thing. die Zimmer means several rooms, so the plural is needed.",
+          "es": "wird es singular y encaja con una sola cosa. die Zimmer son varios cuartos, así que se necesita el plural."
+        },
+        "werde": {
+          "en": "werde is the form for ich. The subject here is die Zimmer.",
+          "es": "werde es la forma para ich. El sujeto aquí es die Zimmer."
+        }
+      },
+      "examples": [
+        "Die Betten werden gemacht.",
+        "Die Fenster werden geöffnet."
+      ],
+      "tr": {
+        "en": "The rooms are cleaned every day.",
+        "es": "Los cuartos se limpian todos los días."
+      }
+    },
+    {
+      "id": "passiv-praesens-f02",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "bauen",
+      "answer": "gebaut",
+      "table": "partizip-ii"
+    },
+    {
+      "id": "passiv-praesens-c03",
+      "sentence": "Ich ___ von meinem Chef angerufen.",
+      "options": [
+        "wirst",
+        "wird",
+        "werde"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The subject is ich, so werden becomes werde: Ich werde angerufen.",
+        "es": "El sujeto es ich, así que werden pasa a werde: Ich werde angerufen."
+      },
+      "wrong": {
+        "wirst": {
+          "en": "wirst is the form for du. The subject here is ich.",
+          "es": "wirst es la forma para du. El sujeto aquí es ich."
+        },
+        "wird": {
+          "en": "wird is the form for er, sie, es. With ich the form is werde.",
+          "es": "wird es la forma para er, sie, es. Con ich la forma es werde."
+        }
+      },
+      "examples": [
+        "Ich werde oft gefragt.",
+        "Du wirst von Anna gerufen."
+      ],
+      "tr": {
+        "en": "I am called by my boss.",
+        "es": "Mi jefe me llama."
+      }
+    },
+    {
+      "id": "passiv-praesens-f03",
+      "kind": "form",
+      "verb": "Passiv",
+      "person": "Man öffnet das Fenster.",
+      "answer": "Das Fenster wird geöffnet.",
+      "table": "aktiv-passiv"
+    },
+    {
+      "id": "passiv-praesens-w01",
+      "kind": "why",
+      "es": "Das Haus wird gebaut.",
+      "target": "wird",
+      "tr": {
+        "en": "The house is being built.",
+        "es": "La casa se está construyendo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wird is a form of sein and describes a finished state",
+            "es": "wird es una forma de sein y describe un estado terminado"
+          },
+          "wrong": {
+            "en": "wird is a form of werden, not sein. It describes the process: the house is being built, not finished.",
+            "es": "wird es una forma de werden, no de sein. Describe el proceso: la casa se está construyendo, no está terminada."
+          }
+        },
+        {
+          "text": {
+            "en": "wird is werden: with the Partizip II at the end it forms the passive",
+            "es": "wird es werden: con el Partizip II al final forma la pasiva"
+          }
+        },
+        {
+          "text": {
+            "en": "wird with gebaut always means the future: the house will be built",
+            "es": "wird con gebaut siempre significa el futuro: la casa se construirá"
+          },
+          "wrong": {
+            "en": "The future uses the infinitive: wird bauen. With the Partizip II, wird gebaut is the present passive.",
+            "es": "El futuro usa el infinitivo: wird bauen. Con el Partizip II, wird gebaut es la pasiva de presente."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "passiv-praesens-c04",
+      "sentence": "Das Brot wird ___.",
+      "options": [
+        "kaufen",
+        "gekauft",
+        "kauft"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The passive needs the Partizip II at the end: gekauft.",
+        "es": "La pasiva necesita el Partizip II al final: gekauft."
+      },
+      "wrong": {
+        "kaufen": {
+          "en": "kaufen is the infinitive. That would be the future (wird kaufen), where das Brot would buy something.",
+          "es": "kaufen es el infinitivo. Eso sería el futuro (wird kaufen), en el que das Brot compraría algo."
+        },
+        "kauft": {
+          "en": "kauft is a conjugated form. Only werden is conjugated in the passive, the main verb is a participle.",
+          "es": "kauft es una forma conjugada. En la pasiva solo werden se conjuga, el verbo principal es un participio."
+        }
+      },
+      "examples": [
+        "Das Auto wird gebaut.",
+        "Der Brief wird geschrieben."
+      ],
+      "tr": {
+        "en": "The bread is being bought.",
+        "es": "El pan se compra."
+      }
+    },
+    {
+      "id": "passiv-praesens-f04",
+      "kind": "form",
+      "verb": "werden",
+      "person": "die Zimmer",
+      "answer": "werden",
+      "table": "werden-passiv"
+    },
+    {
+      "id": "passiv-praesens-c05",
+      "sentence": "Hier wird Deutsch ___.",
+      "options": [
+        "gesprochen",
+        "sprechen",
+        "spricht"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The passive needs the Partizip II at the end: gesprochen, from sprechen.",
+        "es": "La pasiva necesita el Partizip II al final: gesprochen, de sprechen."
+      },
+      "wrong": {
+        "sprechen": {
+          "en": "sprechen is the infinitive. After wird it would be the future, with Deutsch as the speaker.",
+          "es": "sprechen es el infinitivo. Después de wird sería el futuro, con Deutsch como el que habla."
+        },
+        "spricht": {
+          "en": "spricht is a conjugated form. In the passive only werden is conjugated.",
+          "es": "spricht es una forma conjugada. En la pasiva solo werden se conjuga."
+        }
+      },
+      "examples": [
+        "Hier wird Englisch gesprochen.",
+        "Hier wird viel gelacht."
+      ],
+      "tr": {
+        "en": "German is spoken here.",
+        "es": "Aquí se habla alemán."
+      }
+    },
+    {
+      "id": "passiv-praesens-f05",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "öffnen",
+      "answer": "geöffnet",
+      "table": "partizip-ii"
+    },
+    {
+      "id": "passiv-praesens-c06",
+      "sentence": "Das Haus wird ___ der Firma gebaut.",
+      "options": [
+        "von",
+        "durch",
+        "mit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The doer is a company, so it is introduced by von + dative: von der Firma.",
+        "es": "El agente es una empresa, así que se introduce con von + dativo: von der Firma."
+      },
+      "wrong": {
+        "durch": {
+          "en": "durch needs the accusative (durch die Firma). The form der Firma is dative, so von is needed.",
+          "es": "durch necesita el acusativo (durch die Firma). La forma der Firma es dativo, así que se necesita von."
+        },
+        "mit": {
+          "en": "mit means \"with\" and shows a tool or company, not the doer of a passive sentence.",
+          "es": "mit significa \"con\" y muestra un instrumento o compañía, no el agente de una oración pasiva."
+        }
+      },
+      "examples": [
+        "Das Essen wird vom Koch gemacht.",
+        "Das Buch wird von Anna gelesen."
+      ],
+      "tr": {
+        "en": "The house is built by the company.",
+        "es": "La casa la construye la empresa."
+      }
+    },
+    {
+      "id": "passiv-praesens-f06",
+      "kind": "form",
+      "verb": "Passiv",
+      "person": "Man kauft das Brot.",
+      "answer": "Das Brot wird gekauft.",
+      "table": "aktiv-passiv"
+    },
+    {
+      "id": "passiv-praesens-w02",
+      "kind": "why",
+      "es": "Das Haus wird von der Firma gebaut.",
+      "target": "von",
+      "tr": {
+        "en": "The house is built by the company.",
+        "es": "La casa la construye la empresa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The agent, the one who acts, is introduced by von + dative",
+            "es": "El agente, el que actúa, se introduce con von + dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "von marks the accusative object of the sentence",
+            "es": "von marca el objeto en acusativo de la oración"
+          },
+          "wrong": {
+            "en": "von takes the dative, not the accusative. The old accusative object is now the subject, das Haus.",
+            "es": "von lleva dativo, no acusativo. El antiguo objeto en acusativo ahora es el sujeto, das Haus."
+          }
+        },
+        {
+          "text": {
+            "en": "von is the preposition for place and means \"from\"",
+            "es": "von es la preposición de lugar y significa \"desde\""
+          },
+          "wrong": {
+            "en": "Here von does not show a place. In the passive it introduces the doer of the action.",
+            "es": "Aquí von no muestra un lugar. En la pasiva introduce al que hace la acción."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "passiv-praesens-c07",
+      "sentence": "Das Fenster wird ___ den Wind geöffnet.",
+      "options": [
+        "von",
+        "durch",
+        "mit"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The wind is the means that causes the action, and den Wind is accusative, so durch fits.",
+        "es": "El viento es el medio que causa la acción, y den Wind está en acusativo, así que encaja durch."
+      },
+      "wrong": {
+        "von": {
+          "en": "von needs the dative (von dem Wind or vom Wind). den Wind is accusative, so von cannot be used here.",
+          "es": "von necesita el dativo (von dem Wind o vom Wind). den Wind está en acusativo, así que von no se puede usar aquí."
+        },
+        "mit": {
+          "en": "mit takes the dative, but den Wind is accusative. mit also does not name the cause in a passive sentence.",
+          "es": "mit lleva dativo, pero den Wind está en acusativo. mit tampoco nombra la causa en una oración pasiva."
+        }
+      },
+      "examples": [
+        "Die Tür wird durch den Wind geschlossen.",
+        "Das Licht wird durch den Schalter eingeschaltet."
+      ],
+      "tr": {
+        "en": "The window is opened by the wind.",
+        "es": "La ventana la abre el viento."
+      }
+    },
+    {
+      "id": "passiv-praesens-f07",
+      "kind": "form",
+      "verb": "werden",
+      "person": "du",
+      "answer": "wirst",
+      "table": "werden-passiv"
+    },
+    {
+      "id": "passiv-praesens-c08",
+      "sentence": "Man schreibt den Brief. = Der Brief ___ geschrieben.",
+      "options": [
+        "hat",
+        "bin",
+        "wird"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The passive of man schreibt den Brief is Der Brief wird geschrieben: the object becomes the subject.",
+        "es": "La pasiva de man schreibt den Brief es Der Brief wird geschrieben: el objeto pasa a ser el sujeto."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the auxiliary of the Perfekt. A letter cannot \"have written\" something, it is written by someone.",
+          "es": "hat es el auxiliar del Perfekt. Una carta no puede \"haber escrito\" algo, la escribe alguien."
+        },
+        "bin": {
+          "en": "bin is the form for ich. The subject is der Brief, which would take wird.",
+          "es": "bin es la forma para ich. El sujeto es der Brief, que llevaría wird."
+        }
+      },
+      "examples": [
+        "Der Kuchen wird gegessen.",
+        "Die Zeitung wird gelesen."
+      ],
+      "tr": {
+        "en": "One writes the letter. = The letter is being written.",
+        "es": "Se escribe la carta. = La carta se está escribiendo."
+      }
+    },
+    {
+      "id": "passiv-praesens-f08",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "sprechen",
+      "answer": "gesprochen",
+      "table": "partizip-ii"
+    },
+    {
+      "id": "passiv-praesens-c09",
+      "sentence": "Hier ___ nicht geraucht.",
+      "options": [
+        "werden",
+        "wird",
+        "ist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "There is no subject, so the verb stays in the singular: Hier wird nicht geraucht.",
+        "es": "No hay sujeto, así que el verbo queda en singular: Hier wird nicht geraucht."
+      },
+      "wrong": {
+        "werden": {
+          "en": "werden is the plural form. Without a plural subject the verb is singular: wird.",
+          "es": "werden es la forma plural. Sin sujeto plural el verbo es singular: wird."
+        },
+        "ist": {
+          "en": "ist with geraucht does not make a passive. The passive is formed with werden, not with sein.",
+          "es": "ist con geraucht no forma una pasiva. La pasiva se forma con werden, no con sein."
+        }
+      },
+      "examples": [
+        "Hier wird nicht gegessen.",
+        "Hier wird viel gearbeitet."
+      ],
+      "tr": {
+        "en": "There is no smoking here.",
+        "es": "Aquí no se fuma."
+      }
+    },
+    {
+      "id": "passiv-praesens-f09",
+      "kind": "form",
+      "verb": "Passiv",
+      "person": "Man putzt die Zimmer.",
+      "answer": "Die Zimmer werden geputzt.",
+      "table": "aktiv-passiv"
+    },
+    {
+      "id": "passiv-praesens-w03",
+      "kind": "why",
+      "es": "Hier wird Deutsch gesprochen.",
+      "target": "wird",
+      "tr": {
+        "en": "German is spoken here.",
+        "es": "Aquí se habla alemán."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wird is the future: people will speak German here",
+            "es": "wird es el futuro: aquí se hablará alemán"
+          },
+          "wrong": {
+            "en": "The future would be wird sprechen with an infinitive. wird gesprochen, with the participle, is the present passive.",
+            "es": "El futuro sería wird sprechen con un infinitivo. wird gesprochen, con el participio, es la pasiva de presente."
+          }
+        },
+        {
+          "text": {
+            "en": "The doer does not matter, so the passive can leave it out",
+            "es": "El agente no importa, así que la pasiva puede omitirlo"
+          }
+        },
+        {
+          "text": {
+            "en": "wird agrees with Hier, the first word of the sentence",
+            "es": "wird concuerda con Hier, la primera palabra de la oración"
+          },
+          "wrong": {
+            "en": "The verb agrees with the subject Deutsch, which is singular, not with the adverb Hier.",
+            "es": "El verbo concuerda con el sujeto Deutsch, que es singular, no con el adverbio Hier."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "passiv-praesens-c10",
+      "sentence": "Auf der Party ___ viel getanzt.",
+      "options": [
+        "werden",
+        "wirst",
+        "wird"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A passive without a subject uses the singular: Auf der Party wird viel getanzt.",
+        "es": "Una pasiva sin sujeto usa el singular: Auf der Party wird viel getanzt."
+      },
+      "wrong": {
+        "werden": {
+          "en": "werden is plural. There is no plural subject, only the action tanzen, so the verb stays singular.",
+          "es": "werden es plural. No hay sujeto plural, solo la acción tanzen, así que el verbo queda en singular."
+        },
+        "wirst": {
+          "en": "wirst is the form for du. There is no du in this sentence.",
+          "es": "wirst es la forma para du. No hay un du en esta oración."
+        }
+      },
+      "examples": [
+        "Heute Abend wird gefeiert.",
+        "Im Hotel wird gesungen."
+      ],
+      "tr": {
+        "en": "There is a lot of dancing at the party.",
+        "es": "En la fiesta se baila mucho."
+      }
+    },
+    {
+      "id": "passiv-praesens-f10",
+      "kind": "form",
+      "verb": "werden",
+      "person": "das Haus",
+      "answer": "wird",
+      "table": "werden-passiv"
+    },
+    {
+      "id": "passiv-praesens-c11",
+      "sentence": "Wann ___ das Essen gekocht?",
+      "options": [
+        "wird",
+        "werden",
+        "wirst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In the question werden stays in position two after the question word. das Essen is singular: wird.",
+        "es": "En la pregunta werden queda en la posición dos después de la palabra interrogativa. das Essen es singular: wird."
+      },
+      "wrong": {
+        "werden": {
+          "en": "werden is plural. das Essen is singular, so the verb is wird.",
+          "es": "werden es plural. das Essen es singular, así que el verbo es wird."
+        },
+        "wirst": {
+          "en": "wirst is the form for du. The subject is das Essen.",
+          "es": "wirst es la forma para du. El sujeto es das Essen."
+        }
+      },
+      "examples": [
+        "Wann wird das Haus gebaut?",
+        "Wo wird das Auto repariert?"
+      ],
+      "tr": {
+        "en": "When is the meal cooked?",
+        "es": "¿Cuándo se cocina la comida?"
+      }
+    },
+    {
+      "id": "passiv-praesens-f11",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "anrufen",
+      "answer": "angerufen",
+      "table": "partizip-ii"
+    },
+    {
+      "id": "passiv-praesens-c12",
+      "sentence": "Das Haus wird ___ verkauft.",
+      "options": [
+        "kein",
+        "nichts",
+        "nicht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nicht negates the verb or the whole sentence, and it stands before the participle: nicht verkauft.",
+        "es": "nicht niega el verbo o toda la oración, y va antes del participio: nicht verkauft."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein negates a noun with an article (kein Haus). Here the verb is negated.",
+          "es": "kein niega un sustantivo con artículo (kein Haus). Aquí se niega el verbo."
+        },
+        "nichts": {
+          "en": "nichts means \"nothing\" and replaces a noun. It cannot negate the participle verkauft.",
+          "es": "nichts significa \"nada\" y sustituye a un sustantivo. No puede negar el participio verkauft."
+        }
+      },
+      "examples": [
+        "Das Auto wird nicht gebaut.",
+        "Das Essen wird nicht gekocht."
+      ],
+      "tr": {
+        "en": "The house is not being sold.",
+        "es": "La casa no se vende."
+      }
+    },
+    {
+      "id": "passiv-praesens-f12",
+      "kind": "form",
+      "verb": "Passiv",
+      "person": "Man spricht hier Deutsch.",
+      "answer": "Hier wird Deutsch gesprochen.",
+      "table": "aktiv-passiv"
+    },
+    {
+      "id": "passiv-praesens-c13",
+      "sentence": "Du ___ gerufen.",
+      "options": [
+        "wirst",
+        "wird",
+        "werde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The subject is du, so werden becomes wirst: Du wirst gerufen.",
+        "es": "El sujeto es du, así que werden pasa a wirst: Du wirst gerufen."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird is the form for er, sie, es. With du you need wirst.",
+          "es": "wird es la forma para er, sie, es. Con du necesitas wirst."
+        },
+        "werde": {
+          "en": "werde is the form for ich. The subject here is du.",
+          "es": "werde es la forma para ich. El sujeto aquí es du."
+        }
+      },
+      "examples": [
+        "Du wirst gesucht.",
+        "Ihr werdet gerufen."
+      ],
+      "tr": {
+        "en": "You are being called.",
+        "es": "Te están llamando."
+      }
+    },
+    {
+      "id": "passiv-praesens-c14",
+      "sentence": "Die Zeitung wird jeden Morgen ___.",
+      "options": [
+        "gelest",
+        "gelesen",
+        "lesen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "lesen is a strong verb, and its participle is gelesen, with -en at the end.",
+        "es": "lesen es un verbo fuerte, y su participio es gelesen, con -en al final."
+      },
+      "wrong": {
+        "gelest": {
+          "en": "gelest would be the regular form with -t. lesen is strong and ends in -en: gelesen.",
+          "es": "gelest sería la forma regular con -t. lesen es fuerte y termina en -en: gelesen."
+        },
+        "lesen": {
+          "en": "lesen is the infinitive. The passive needs the participle with ge-.",
+          "es": "lesen es el infinitivo. La pasiva necesita el participio con ge-."
+        }
+      },
+      "examples": [
+        "Das Buch wird gelesen.",
+        "Der Brief wird geschrieben."
+      ],
+      "tr": {
+        "en": "The newspaper is read every morning.",
+        "es": "El periódico se lee todas las mañanas."
+      }
+    },
+    {
+      "id": "passiv-praesens-w04",
+      "kind": "why",
+      "es": "Die Zimmer werden gereinigt.",
+      "target": "werden",
+      "tr": {
+        "en": "The rooms are cleaned.",
+        "es": "Los cuartos se limpian."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "werden is the infinitive, and the sentence is the future",
+            "es": "werden es el infinitivo, y la oración es el futuro"
+          },
+          "wrong": {
+            "en": "Here werden is conjugated for the plural subject die Zimmer. It looks like the infinitive, but it is the plural form.",
+            "es": "Aquí werden está conjugado para el sujeto plural die Zimmer. Se parece al infinitivo, pero es la forma plural."
+          }
+        },
+        {
+          "text": {
+            "en": "The subject die Zimmer is plural, so werden agrees with it",
+            "es": "El sujeto die Zimmer es plural, así que werden concuerda con él"
+          }
+        },
+        {
+          "text": {
+            "en": "werden agrees with the doer of the action",
+            "es": "werden concuerda con el agente de la acción"
+          },
+          "wrong": {
+            "en": "The verb agrees with the grammatical subject, which is die Zimmer. The doer is not even named here.",
+            "es": "El verbo concuerda con el sujeto gramatical, que es die Zimmer. Aquí ni siquiera se nombra al agente."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
