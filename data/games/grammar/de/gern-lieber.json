@@ -1,0 +1,1090 @@
+{
+  "schema": 2,
+  "topic": "gern-lieber",
+  "level": "A1",
+  "title": {
+    "en": "gern, lieber, am liebsten",
+    "es": "gern, lieber, am liebsten"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "To say that you like doing something, German uses the adverb gern after the verb: Ich spiele gern Fußball. To say that you prefer something, use lieber: Ich trinke lieber Tee. For what you like best, use am liebsten: Am liebsten esse ich Pizza. The three words are one irregular series, gern, lieber, am liebsten. For things and people you use the verb mögen instead: Ich mag Pizza.",
+        "es": "Para decir que te gusta hacer algo, el alemán usa el adverbio gern después del verbo: Ich spiele gern Fußball. Para decir que prefieres algo, usa lieber: Ich trinke lieber Tee. Para lo que más te gusta, usa am liebsten: Am liebsten esse ich Pizza. Las tres palabras son una serie irregular: gern, lieber, am liebsten. Para cosas y personas se usa en cambio el verbo mögen: Ich mag Pizza. Así el «me gusta» del español se reparte entre gern y mögen."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "gern-steigerung",
+      "title": {
+        "en": "gern, gut, viel in three degrees",
+        "es": "gern, gut, viel en tres grados"
+      },
+      "header": [
+        {
+          "en": "Degree",
+          "es": "Grado"
+        },
+        {
+          "en": "gern",
+          "es": "gern"
+        },
+        {
+          "en": "gut",
+          "es": "gut"
+        },
+        {
+          "en": "viel",
+          "es": "viel"
+        }
+      ],
+      "rows": [
+        [
+          "Positiv",
+          "gern",
+          "gut",
+          "viel"
+        ],
+        [
+          "Komparativ",
+          "lieber",
+          "besser",
+          "mehr"
+        ],
+        [
+          "Superlativ",
+          "am liebsten",
+          "am besten",
+          "am meisten"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "gern-satz",
+      "title": {
+        "en": "The verb with gern",
+        "es": "El verbo con gern"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "spielen",
+          "es": "spielen"
+        },
+        {
+          "en": "kochen",
+          "es": "kochen"
+        },
+        {
+          "en": "essen",
+          "es": "essen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "spiele gern",
+          "koche gern",
+          "esse gern"
+        ],
+        [
+          "du",
+          "spielst gern",
+          "kochst gern",
+          "isst gern"
+        ],
+        [
+          "er/sie/es",
+          "spielt gern",
+          "kocht gern",
+          "isst gern"
+        ],
+        [
+          "wir",
+          "spielen gern",
+          "kochen gern",
+          "essen gern"
+        ],
+        [
+          "ihr",
+          "spielt gern",
+          "kocht gern",
+          "esst gern"
+        ],
+        [
+          "sie/Sie",
+          "spielen gern",
+          "kochen gern",
+          "essen gern"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "moegen-formen",
+      "title": {
+        "en": "mögen in the present tense",
+        "es": "mögen en presente"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "mögen",
+          "es": "mögen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "mag"
+        ],
+        [
+          "du",
+          "magst"
+        ],
+        [
+          "er/sie/es",
+          "mag"
+        ],
+        [
+          "wir",
+          "mögen"
+        ],
+        [
+          "ihr",
+          "mögt"
+        ],
+        [
+          "sie/Sie",
+          "mögen"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How to use the three words",
+        "es": "Cómo usar las tres palabras"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "gern comes after the verb and says that you enjoy doing something. It does not stand at the beginning of the sentence like English I like to.",
+            "es": "gern va después del verbo y dice que disfrutas haciendo algo. No va al principio de la oración como el «me gusta» del español."
+          },
+          "examples": [
+            {
+              "es": "Ich spiele gern Fußball.",
+              "tr": {
+                "en": "I like to play soccer.",
+                "es": "Me gusta jugar fútbol."
+              }
+            },
+            {
+              "es": "Anna kocht gern.",
+              "tr": {
+                "en": "Anna likes to cook.",
+                "es": "A Anna le gusta cocinar."
+              }
+            },
+            {
+              "es": "Wir tanzen gern.",
+              "tr": {
+                "en": "We like to dance.",
+                "es": "Nos gusta bailar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "lieber says that you prefer one thing to another. It also stands after the verb.",
+            "es": "lieber dice que prefieres una cosa a otra. También va después del verbo."
+          },
+          "examples": [
+            {
+              "es": "Ich trinke lieber Tee.",
+              "tr": {
+                "en": "I prefer to drink tea.",
+                "es": "Prefiero tomar té."
+              }
+            },
+            {
+              "es": "Paul spielt lieber Fußball.",
+              "tr": {
+                "en": "Paul prefers to play soccer.",
+                "es": "Paul prefiere jugar fútbol."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "am liebsten says what you like best. It stands after the verb or at the beginning. At the beginning the verb is next and the subject follows.",
+            "es": "am liebsten dice lo que más te gusta. Va después del verbo o al principio. Al principio, el verbo viene después y el sujeto lo sigue."
+          },
+          "examples": [
+            {
+              "es": "Ich esse am liebsten Pizza.",
+              "tr": {
+                "en": "I like pizza best.",
+                "es": "Lo que más me gusta comer es pizza."
+              }
+            },
+            {
+              "es": "Am liebsten esse ich Pizza.",
+              "tr": {
+                "en": "Best of all I like to eat pizza.",
+                "es": "Lo que más me gusta es comer pizza."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "To say you do not like doing something, put nicht before gern.",
+            "es": "Para decir que no te gusta hacer algo, pon nicht antes de gern."
+          },
+          "examples": [
+            {
+              "es": "Ich koche nicht gern.",
+              "tr": {
+                "en": "I do not like to cook.",
+                "es": "No me gusta cocinar."
+              }
+            },
+            {
+              "es": "Paul tanzt nicht gern.",
+              "tr": {
+                "en": "Paul does not like to dance.",
+                "es": "A Paul no le gusta bailar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mögen goes with nouns, things and people, and has no ending in ich and er/sie/es: ich mag, Anna mag. For activities with a verb, use gern.",
+            "es": "mögen va con sustantivos, cosas y personas, y no lleva terminación en ich y er/sie/es: ich mag, Anna mag. Para actividades con un verbo, usa gern."
+          },
+          "examples": [
+            {
+              "es": "Ich mag Pizza.",
+              "tr": {
+                "en": "I like pizza.",
+                "es": "Me gusta la pizza."
+              }
+            },
+            {
+              "es": "Anna mag Musik.",
+              "tr": {
+                "en": "Anna likes music.",
+                "es": "A Anna le gusta la música."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "To ask what someone likes to do, use Was machst du gern? To ask about favourites, use am liebsten.",
+            "es": "Para preguntar qué le gusta hacer a alguien, usa Was machst du gern? Para preguntar por lo favorito, usa am liebsten."
+          },
+          "examples": [
+            {
+              "es": "Was machst du gern?",
+              "tr": {
+                "en": "What do you like to do?",
+                "es": "¿Qué te gusta hacer?"
+              }
+            },
+            {
+              "es": "Was isst du am liebsten?",
+              "tr": {
+                "en": "What do you like to eat best?",
+                "es": "¿Qué es lo que más te gusta comer?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Pairs to keep apart",
+        "es": "Parejas que hay que distinguir"
+      },
+      "pairs": [
+        {
+          "a": "Ich schwimme gern.",
+          "b": "Ich mag Schokolade.",
+          "note": {
+            "en": "With a verb of doing, use gern after the verb. With a noun, use mögen. Ich mag schwimmen is not the usual way to say it.",
+            "es": "Con un verbo de acción, usa gern después del verbo. Con un sustantivo, usa mögen. Ich mag schwimmen no es la forma habitual de decirlo."
+          },
+          "examples": [
+            {
+              "es": "Wir spielen gern Musik.",
+              "tr": {
+                "en": "We like to play music.",
+                "es": "Nos gusta tocar música."
+              }
+            },
+            {
+              "es": "Wir mögen Musik.",
+              "tr": {
+                "en": "We like music.",
+                "es": "Nos gusta la música."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich trinke gern Tee.",
+          "b": "Ich trinke lieber Tee.",
+          "note": {
+            "en": "gern says that you like tea. lieber compares: you like tea more than something else. am liebsten says it is your favourite.",
+            "es": "gern dice que te gusta el té. lieber compara: te gusta más el té que otra cosa. am liebsten dice que es tu favorito."
+          },
+          "examples": [
+            {
+              "es": "Anna isst gern Suppe.",
+              "tr": {
+                "en": "Anna likes to eat soup.",
+                "es": "A Anna le gusta comer sopa."
+              }
+            },
+            {
+              "es": "Anna isst lieber Pizza.",
+              "tr": {
+                "en": "Anna prefers to eat pizza.",
+                "es": "Anna prefiere comer pizza."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: gern does not stand at the beginning like English I like to, and it does not take a verb of its own (Ich spiele gern Fußball, not Ich gern spiele). Do not say Ich mag schwimmen, say Ich schwimme gern. The comparison is irregular: gern, lieber, am liebsten, not gerner and not am gernsten. And with am liebsten at the beginning, the verb comes next: Am liebsten esse ich Pizza.",
+        "es": "Trampas clásicas: gern no va al principio como el «me gusta» del español, ni lleva un verbo propio (Ich spiele gern Fußball, no Ich gern spiele). No digas Ich mag schwimmen, di Ich schwimme gern. La comparación es irregular: gern, lieber, am liebsten, no gerner ni am gernsten. Y con am liebsten al principio, el verbo viene después: Am liebsten esse ich Pizza."
+      }
+    }
+  ],
+  "speak": {
+    "en": "To say what you like doing, use «gern» after the verb: «Ich spiele gern Fußball». To say what you prefer, use «lieber»: «Ich trinke lieber Tee». For your favourite, use «am liebsten»: «Am liebsten esse ich Pizza». The series is irregular: gern, lieber, am liebsten. For things and people use «mögen»: «Ich mag Pizza». And for not liking to do something, say «Ich koche nicht gern».",
+    "es": "Para decir lo que te gusta hacer, usa «gern» después del verbo: «Ich spiele gern Fußball». Para decir lo que prefieres, usa «lieber»: «Ich trinke lieber Tee». Para lo que más te gusta, usa «am liebsten»: «Am liebsten esse ich Pizza». La serie es irregular: gern, lieber, am liebsten. Para cosas y personas usa «mögen»: «Ich mag Pizza». Y para lo que no te gusta hacer, di «Ich koche nicht gern»."
+  },
+  "items": [
+    {
+      "id": "gern-lieber-c01",
+      "sentence": "Ich ___ Fußball.",
+      "options": [
+        "spiele gern",
+        "gern spiele",
+        "spielen gern"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "gern stands after the verb, and the verb stays in second place: Ich spiele gern Fußball.",
+        "es": "gern va después del verbo, y el verbo se queda en segundo lugar: Ich spiele gern Fußball."
+      },
+      "wrong": {
+        "gern spiele": {
+          "en": "gern spiele puts gern before the verb, so the verb ends up in third place: Ich gern spiele Fußball. That is wrong.",
+          "es": "gern spiele pone gern antes del verbo, y el verbo queda en tercer lugar: Ich gern spiele Fußball. Eso es incorrecto."
+        },
+        "spielen gern": {
+          "en": "The order is right, but spielen is the form for wir and sie (they). With ich the verb is spiele.",
+          "es": "El orden es correcto, pero spielen es la forma de wir y de sie (ellos). Con ich el verbo es spiele."
+        }
+      },
+      "examples": [
+        "Ich koche gern Suppe.",
+        "Ich tanze gern."
+      ],
+      "tr": {
+        "en": "I like to play soccer.",
+        "es": "Me gusta jugar fútbol."
+      }
+    },
+    {
+      "id": "gern-lieber-f01",
+      "kind": "form",
+      "verb": "gern",
+      "person": "Komparativ",
+      "answer": "lieber",
+      "table": "gern-steigerung"
+    },
+    {
+      "id": "gern-lieber-c02",
+      "sentence": "Kaffee oder Tee? Ich trinke ___ Tee.",
+      "options": [
+        "gern",
+        "lieber",
+        "am liebsten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The question offers a choice between two things, and lieber says which one you prefer: Ich trinke lieber Tee.",
+        "es": "La pregunta ofrece una opción entre dos cosas, y lieber dice cuál prefieres: Ich trinke lieber Tee."
+      },
+      "wrong": {
+        "gern": {
+          "en": "gern says that you like tea, but it does not answer the choice between two things. Here you need lieber.",
+          "es": "gern dice que te gusta el té, pero no responde a la elección entre dos cosas. Aquí necesitas lieber."
+        },
+        "am liebsten": {
+          "en": "am liebsten means best of all, usually among three or more things. For a choice between two you need lieber.",
+          "es": "am liebsten significa «sobre todo», normalmente entre tres o más cosas. Para una elección entre dos necesitas lieber."
+        }
+      },
+      "examples": [
+        "Ich esse lieber Pizza.",
+        "Anna trinkt lieber Milch."
+      ],
+      "tr": {
+        "en": "Coffee or tea? I prefer tea.",
+        "es": "¿Café o té? Prefiero té."
+      }
+    },
+    {
+      "id": "gern-lieber-f02",
+      "kind": "form",
+      "verb": "spielen",
+      "person": "ich",
+      "answer": "spiele gern",
+      "table": "gern-satz"
+    },
+    {
+      "id": "gern-lieber-c03",
+      "sentence": "Ich esse Pizza, Suppe und Eis. ___ esse ich Pizza.",
+      "options": [
+        "Am gernsten",
+        "Am lieber",
+        "Am liebsten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Among three things, am liebsten names your favourite. It is the first element, so the verb esse follows: Am liebsten esse ich Pizza.",
+        "es": "Entre tres cosas, am liebsten nombra tu favorita. Es el primer elemento, así que el verbo esse sigue: Am liebsten esse ich Pizza."
+      },
+      "wrong": {
+        "Am gernsten": {
+          "en": "Am gernsten does not exist. The superlative of gern is irregular: am liebsten.",
+          "es": "Am gernsten no existe. El superlativo de gern es irregular: am liebsten."
+        },
+        "Am lieber": {
+          "en": "Am lieber mixes the comparative lieber with the superlative form am. The superlative is am liebsten.",
+          "es": "Am lieber mezcla el comparativo lieber con la forma am del superlativo. El superlativo es am liebsten."
+        }
+      },
+      "examples": [
+        "Am liebsten trinke ich Tee.",
+        "Am liebsten spiele ich Fußball."
+      ],
+      "tr": {
+        "en": "I eat pizza, soup and ice cream. Best of all I like to eat pizza.",
+        "es": "Como pizza, sopa y helado. Lo que más me gusta es comer pizza."
+      }
+    },
+    {
+      "id": "gern-lieber-f03",
+      "kind": "form",
+      "verb": "mögen",
+      "person": "ich",
+      "answer": "mag",
+      "table": "moegen-formen"
+    },
+    {
+      "id": "gern-lieber-w01",
+      "kind": "why",
+      "es": "Ich spiele gern Fußball.",
+      "target": "gern",
+      "tr": {
+        "en": "I like to play soccer.",
+        "es": "Me gusta jugar fútbol."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "gern stands at the beginning, as in English I like to",
+            "es": "gern va al principio, como I like to en inglés"
+          },
+          "wrong": {
+            "en": "gern is an adverb and stands after the verb. Ich gern spiele Fußball is wrong because the verb must stay in second place.",
+            "es": "gern es un adverbio y va después del verbo. Ich gern spiele Fußball es incorrecto porque el verbo debe quedarse en segundo lugar."
+          }
+        },
+        {
+          "text": {
+            "en": "gern is an adverb and stands after the verb",
+            "es": "gern es un adverbio y va después del verbo"
+          }
+        },
+        {
+          "text": {
+            "en": "gern needs the verb mögen: Ich mag Fußball spielen",
+            "es": "gern necesita el verbo mögen: Ich mag Fußball spielen"
+          },
+          "wrong": {
+            "en": "gern replaces mögen when you do something. Ich spiele gern Fußball already says that you like it, with no extra mögen.",
+            "es": "gern reemplaza a mögen cuando haces algo. Ich spiele gern Fußball ya dice que te gusta, sin mögen adicional."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "gern-lieber-c04",
+      "sentence": "Wasser trinke ich, aber Tee trinke ich ___.",
+      "options": [
+        "gerner",
+        "lieber",
+        "liebst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The word aber sets two drinks against each other, so you need the comparative of gern: lieber.",
+        "es": "La palabra aber contrapone dos bebidas, así que necesitas el comparativo de gern: lieber."
+      },
+      "wrong": {
+        "gerner": {
+          "en": "gerner does not exist. The comparative of gern is irregular: lieber.",
+          "es": "gerner no existe. El comparativo de gern es irregular: lieber."
+        },
+        "liebst": {
+          "en": "liebst is not a form you use here. The comparative of gern is lieber, and the superlative is am liebsten.",
+          "es": "liebst no es una forma que se use aquí. El comparativo de gern es lieber, y el superlativo es am liebsten."
+        }
+      },
+      "examples": [
+        "Ich esse lieber Suppe.",
+        "Wir tanzen lieber."
+      ],
+      "tr": {
+        "en": "I drink water, but I prefer tea.",
+        "es": "Tomo agua, pero prefiero té."
+      }
+    },
+    {
+      "id": "gern-lieber-f04",
+      "kind": "form",
+      "verb": "gern",
+      "person": "Superlativ",
+      "answer": "am liebsten",
+      "table": "gern-steigerung"
+    },
+    {
+      "id": "gern-lieber-c05",
+      "sentence": "Ich schwimme ___.",
+      "options": [
+        "gern",
+        "mag",
+        "mögen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "When you like doing something, use gern after the verb: Ich schwimme gern.",
+        "es": "Cuando te gusta hacer algo, usa gern después del verbo: Ich schwimme gern."
+      },
+      "wrong": {
+        "mag": {
+          "en": "mag is a verb and needs its own object, a noun. For the activity schwimmen with its own verb you need gern.",
+          "es": "mag es un verbo y necesita su propio complemento, un sustantivo. Para la actividad schwimmen con su propio verbo necesitas gern."
+        },
+        "mögen": {
+          "en": "mögen is a verb and cannot just be added to schwimme. For doing something you like, use gern.",
+          "es": "mögen es un verbo y no se puede añadir sin más a schwimme. Para algo que te gusta hacer, usa gern."
+        }
+      },
+      "examples": [
+        "Ich tanze gern.",
+        "Ich singe gern."
+      ],
+      "tr": {
+        "en": "I like to swim.",
+        "es": "Me gusta nadar."
+      }
+    },
+    {
+      "id": "gern-lieber-f05",
+      "kind": "form",
+      "verb": "kochen",
+      "person": "du",
+      "answer": "kochst gern",
+      "table": "gern-satz"
+    },
+    {
+      "id": "gern-lieber-c06",
+      "sentence": "Ich ___ Schokolade.",
+      "options": [
+        "gern",
+        "lieber",
+        "mag"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Schokolade is a noun, so you use the verb mögen. With ich the form is mag: Ich mag Schokolade.",
+        "es": "Schokolade es un sustantivo, así que se usa el verbo mögen. Con ich la forma es mag: Ich mag Schokolade."
+      },
+      "wrong": {
+        "gern": {
+          "en": "gern is an adverb and needs a verb in the sentence. Here there is no other verb, so you need mag.",
+          "es": "gern es un adverbio y necesita un verbo en la oración. Aquí no hay otro verbo, así que necesitas mag."
+        },
+        "lieber": {
+          "en": "lieber compares and also needs a verb. Here there is no other verb, so you need mag.",
+          "es": "lieber compara y también necesita un verbo. Aquí no hay otro verbo, así que necesitas mag."
+        }
+      },
+      "examples": [
+        "Ich mag Pizza.",
+        "Ich mag Musik."
+      ],
+      "tr": {
+        "en": "I like chocolate.",
+        "es": "Me gusta el chocolate."
+      }
+    },
+    {
+      "id": "gern-lieber-f06",
+      "kind": "form",
+      "verb": "mögen",
+      "person": "du",
+      "answer": "magst",
+      "table": "moegen-formen"
+    },
+    {
+      "id": "gern-lieber-w02",
+      "kind": "why",
+      "es": "Ich trinke lieber Tee.",
+      "target": "lieber",
+      "tr": {
+        "en": "I prefer to drink tea.",
+        "es": "Prefiero tomar té."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "lieber is the comparative of gern and says preference",
+            "es": "lieber es el comparativo de gern y expresa preferencia"
+          }
+        },
+        {
+          "text": {
+            "en": "lieber means dear, as in lieber Freund",
+            "es": "lieber significa «querido», como en lieber Freund"
+          },
+          "wrong": {
+            "en": "The adjective lieb exists, but here lieber is the irregular comparative of gern. It means that you prefer tea.",
+            "es": "El adjetivo lieb existe, pero aquí lieber es el comparativo irregular de gern. Significa que prefieres el té."
+          }
+        },
+        {
+          "text": {
+            "en": "lieber is the superlative, the favourite",
+            "es": "lieber es el superlativo, el favorito"
+          },
+          "wrong": {
+            "en": "The superlative is am liebsten. lieber is only the comparative: you prefer one thing to another.",
+            "es": "El superlativo es am liebsten. lieber es solo el comparativo: prefieres una cosa a otra."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "gern-lieber-c07",
+      "sentence": "Anna ___ Musik.",
+      "options": [
+        "magst",
+        "mag",
+        "mögt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "mögen has no ending in the er/sie/es-form: Anna mag Musik.",
+        "es": "mögen no lleva terminación en la forma de er/sie/es: Anna mag Musik."
+      },
+      "wrong": {
+        "magst": {
+          "en": "magst is the form for du. Anna is one person, a she, so you need mag.",
+          "es": "magst es la forma de du. Anna es una persona, una ella, así que necesitas mag."
+        },
+        "mögt": {
+          "en": "mögt is the form for ihr. For one person like Anna you need mag.",
+          "es": "mögt es la forma de ihr. Para una persona como Anna necesitas mag."
+        }
+      },
+      "examples": [
+        "Paul mag Suppe.",
+        "Das Kind mag Schokolade."
+      ],
+      "tr": {
+        "en": "Anna likes music.",
+        "es": "A Anna le gusta la música."
+      }
+    },
+    {
+      "id": "gern-lieber-f07",
+      "kind": "form",
+      "verb": "gut",
+      "person": "Komparativ",
+      "answer": "besser",
+      "table": "gern-steigerung"
+    },
+    {
+      "id": "gern-lieber-c08",
+      "sentence": "Paul tanzt ___ gern.",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "To say that you do not like doing something, put nicht before gern: Paul tanzt nicht gern.",
+        "es": "Para decir que no te gusta hacer algo, pon nicht antes de gern: Paul tanzt nicht gern."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein needs a noun after it. gern is an adverb, so you negate it with nicht.",
+          "es": "kein necesita un sustantivo detrás. gern es un adverbio, así que se niega con nicht."
+        },
+        "keine": {
+          "en": "keine needs a noun after it. gern is an adverb, so you negate it with nicht.",
+          "es": "keine necesita un sustantivo detrás. gern es un adverbio, así que se niega con nicht."
+        }
+      },
+      "examples": [
+        "Anna kocht nicht gern.",
+        "Ich singe nicht gern."
+      ],
+      "tr": {
+        "en": "Paul does not like to dance.",
+        "es": "A Paul no le gusta bailar."
+      }
+    },
+    {
+      "id": "gern-lieber-f08",
+      "kind": "form",
+      "verb": "essen",
+      "person": "du",
+      "answer": "isst gern",
+      "table": "gern-satz"
+    },
+    {
+      "id": "gern-lieber-c09",
+      "sentence": "Was machst du ___?",
+      "options": [
+        "mag",
+        "mögen",
+        "gern"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "To ask what someone likes to do, use gern after the verb: Was machst du gern?",
+        "es": "Para preguntar qué le gusta hacer a alguien, usa gern después del verbo: Was machst du gern?"
+      },
+      "wrong": {
+        "mag": {
+          "en": "mag is a verb and would need its own place in the sentence. machst is already the verb here, so you add the adverb gern.",
+          "es": "mag es un verbo y necesitaría su propio lugar en la oración. machst ya es el verbo aquí, así que añades el adverbio gern."
+        },
+        "mögen": {
+          "en": "mögen is a verb and cannot be added to machst du. Use the adverb gern.",
+          "es": "mögen es un verbo y no se puede añadir a machst du. Usa el adverbio gern."
+        }
+      },
+      "examples": [
+        "Was isst du gern?",
+        "Was kochst du gern?"
+      ],
+      "tr": {
+        "en": "What do you like to do?",
+        "es": "¿Qué te gusta hacer?"
+      }
+    },
+    {
+      "id": "gern-lieber-f09",
+      "kind": "form",
+      "verb": "mögen",
+      "person": "wir",
+      "answer": "mögen",
+      "table": "moegen-formen"
+    },
+    {
+      "id": "gern-lieber-w03",
+      "kind": "why",
+      "es": "Anna mag Musik.",
+      "target": "mag",
+      "tr": {
+        "en": "Anna likes music.",
+        "es": "A Anna le gusta la música."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "mag is used with verbs: Anna mag singen",
+            "es": "mag se usa con verbos: Anna mag singen"
+          },
+          "wrong": {
+            "en": "For activities with a verb use gern: Anna singt gern. mögen goes with nouns such as Musik.",
+            "es": "Para actividades con un verbo usa gern: Anna singt gern. mögen va con sustantivos como Musik."
+          }
+        },
+        {
+          "text": {
+            "en": "mögen goes with a noun, and it has no ending in er/sie/es",
+            "es": "mögen va con un sustantivo y no lleva terminación en er/sie/es"
+          }
+        },
+        {
+          "text": {
+            "en": "mag has the ending -t for er/sie/es: magt",
+            "es": "mag lleva la terminación -t para er/sie/es: magt"
+          },
+          "wrong": {
+            "en": "mögen works like the modal verbs: ich mag, Anna mag. There is no ending in the singular er/sie/es form.",
+            "es": "mögen funciona como los verbos modales: ich mag, Anna mag. No hay terminación en la forma er/sie/es del singular."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "gern-lieber-c10",
+      "sentence": "Am liebsten ___ ich Pizza.",
+      "options": [
+        "esse",
+        "isst",
+        "essen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Am liebsten is the first element, so the verb comes next and ich follows. With ich the verb essen has no vowel change: esse.",
+        "es": "Am liebsten es el primer elemento, así que el verbo viene después e ich lo sigue. Con ich el verbo essen no cambia la vocal: esse."
+      },
+      "wrong": {
+        "isst": {
+          "en": "isst is the form for du and er/sie/es. With ich the verb is esse.",
+          "es": "isst es la forma de du y de er/sie/es. Con ich el verbo es esse."
+        },
+        "essen": {
+          "en": "essen is the form for wir and sie (they). With ich the verb is esse.",
+          "es": "essen es la forma de wir y de sie (ellos). Con ich el verbo es esse."
+        }
+      },
+      "examples": [
+        "Am liebsten spiele ich Fußball.",
+        "Am liebsten trinke ich Tee."
+      ],
+      "tr": {
+        "en": "Best of all I like to eat pizza.",
+        "es": "Lo que más me gusta es comer pizza."
+      }
+    },
+    {
+      "id": "gern-lieber-f10",
+      "kind": "form",
+      "verb": "viel",
+      "person": "Superlativ",
+      "answer": "am meisten",
+      "table": "gern-steigerung"
+    },
+    {
+      "id": "gern-lieber-c11",
+      "sentence": "Du ___ gern.",
+      "options": [
+        "kocht",
+        "kochst",
+        "kochen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With du the verb kochen takes the ending -st, and gern follows the verb: Du kochst gern.",
+        "es": "Con du el verbo kochen lleva la terminación -st, y gern sigue al verbo: Du kochst gern."
+      },
+      "wrong": {
+        "kocht": {
+          "en": "kocht is the form for er/sie/es and ihr. With du you need kochst.",
+          "es": "kocht es la forma de er/sie/es e ihr. Con du necesitas kochst."
+        },
+        "kochen": {
+          "en": "kochen is the form for wir and sie (they). With du you need kochst.",
+          "es": "kochen es la forma de wir y de sie (ellos). Con du necesitas kochst."
+        }
+      },
+      "examples": [
+        "Du spielst gern.",
+        "Du tanzt gern."
+      ],
+      "tr": {
+        "en": "You like to cook.",
+        "es": "Te gusta cocinar."
+      }
+    },
+    {
+      "id": "gern-lieber-f11",
+      "kind": "form",
+      "verb": "essen",
+      "person": "wir",
+      "answer": "essen gern",
+      "table": "gern-satz"
+    },
+    {
+      "id": "gern-lieber-c12",
+      "sentence": "Paul und Anna ___ Tee.",
+      "options": [
+        "mag",
+        "magst",
+        "mögen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Paul und Anna are several people, so mögen takes the plural form mögen: Paul und Anna mögen Tee.",
+        "es": "Paul und Anna son varias personas, así que mögen lleva la forma plural mögen: Paul und Anna mögen Tee."
+      },
+      "wrong": {
+        "mag": {
+          "en": "mag is the form for ich and er/sie/es, one person. Two people need mögen.",
+          "es": "mag es la forma de ich y de er/sie/es, una persona. Dos personas necesitan mögen."
+        },
+        "magst": {
+          "en": "magst is the form for du. Paul and Anna are two people, so you need mögen.",
+          "es": "magst es la forma de du. Paul y Anna son dos personas, así que necesitas mögen."
+        }
+      },
+      "examples": [
+        "Wir mögen Suppe.",
+        "Sie mögen Musik."
+      ],
+      "tr": {
+        "en": "Paul and Anna like tea.",
+        "es": "A Paul y a Anna les gusta el té."
+      }
+    },
+    {
+      "id": "gern-lieber-f12",
+      "kind": "form",
+      "verb": "mögen",
+      "person": "ihr",
+      "answer": "mögt",
+      "table": "moegen-formen"
+    },
+    {
+      "id": "gern-lieber-c13",
+      "sentence": "Ich koche nicht ___.",
+      "options": [
+        "gern",
+        "mag",
+        "lieber"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "To say that you do not like cooking, put gern after nicht: Ich koche nicht gern.",
+        "es": "Para decir que no te gusta cocinar, pon gern después de nicht: Ich koche nicht gern."
+      },
+      "wrong": {
+        "mag": {
+          "en": "mag is a verb. The sentence already has the verb koche, so you need the adverb gern.",
+          "es": "mag es un verbo. La oración ya tiene el verbo koche, así que necesitas el adverbio gern."
+        },
+        "lieber": {
+          "en": "lieber compares and does not fit here, because the sentence says that you do not like cooking at all. You need gern.",
+          "es": "lieber compara y no encaja aquí, porque la oración dice que no te gusta cocinar. Necesitas gern."
+        }
+      },
+      "examples": [
+        "Ich tanze nicht gern.",
+        "Wir singen nicht gern."
+      ],
+      "tr": {
+        "en": "I do not like to cook.",
+        "es": "No me gusta cocinar."
+      }
+    },
+    {
+      "id": "gern-lieber-c14",
+      "sentence": "Ihr ___ Pizza, oder?",
+      "options": [
+        "mag",
+        "mögt",
+        "magst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With ihr the form of mögen is mögt: Ihr mögt Pizza, oder?",
+        "es": "Con ihr la forma de mögen es mögt: Ihr mögt Pizza, oder?"
+      },
+      "wrong": {
+        "mag": {
+          "en": "mag is the form for ich and er/sie/es. With ihr, several friends, you need mögt.",
+          "es": "mag es la forma de ich y de er/sie/es. Con ihr, varios amigos, necesitas mögt."
+        },
+        "magst": {
+          "en": "magst is the form for du, one friend. With ihr, several friends, you need mögt.",
+          "es": "magst es la forma de du, un amigo. Con ihr, varios amigos, necesitas mögt."
+        }
+      },
+      "examples": [
+        "Ihr mögt Suppe, oder?",
+        "Ihr mögt Musik, oder?"
+      ],
+      "tr": {
+        "en": "You all like pizza, right?",
+        "es": "A ustedes les gusta la pizza, ¿verdad?"
+      }
+    },
+    {
+      "id": "gern-lieber-w04",
+      "kind": "why",
+      "es": "Am liebsten esse ich Pizza.",
+      "target": "esse",
+      "tr": {
+        "en": "Best of all I like to eat pizza.",
+        "es": "Lo que más me gusta es comer pizza."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "am liebsten is the first element, so the verb follows and ich comes after it",
+            "es": "am liebsten es el primer elemento, así que el verbo sigue e ich viene después"
+          }
+        },
+        {
+          "text": {
+            "en": "am liebsten belongs to the verb and is part of it",
+            "es": "am liebsten pertenece al verbo y forma parte de él"
+          },
+          "wrong": {
+            "en": "am liebsten is an adverb phrase and a separate element. It stands in position 1 here, and the verb esse follows.",
+            "es": "am liebsten es una frase adverbial y un elemento aparte. Aquí está en la posición 1, y el verbo esse le sigue."
+          }
+        },
+        {
+          "text": {
+            "en": "The verb goes to the end: Am liebsten ich Pizza esse",
+            "es": "El verbo va al final: Am liebsten ich Pizza esse"
+          },
+          "wrong": {
+            "en": "The verb never goes to the end of a simple sentence. It stays in second place, right after am liebsten.",
+            "es": "El verbo nunca va al final de una oración simple. Se queda en segundo lugar, justo después de am liebsten."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

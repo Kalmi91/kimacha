@@ -1,0 +1,1102 @@
+{
+  "schema": 2,
+  "topic": "imperativ",
+  "level": "A1",
+  "title": {
+    "en": "The imperative",
+    "es": "El imperativo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The imperative gives orders, advice and invitations. German has three forms, one for each way of addressing people: du (one friend), ihr (several friends) and Sie (formal). The du-form is the stem without the ending and without the pronoun: Komm! The ihr-form is the same as the present: Kommt! The Sie-form puts the verb first and keeps Sie: Kommen Sie! Add bitte to be polite. A command ends with an exclamation mark.",
+        "es": "El imperativo da órdenes, consejos e invitaciones. El alemán tiene tres formas, una para cada manera de dirigirse a las personas: du (un amigo), ihr (varios amigos, en español «ustedes») y Sie (formal). La forma de du es la raíz sin terminación y sin pronombre: Komm! La forma de ihr es igual que el presente: Kommt! La forma de Sie pone el verbo primero y conserva Sie: Kommen Sie! Añade bitte para ser cortés. Una orden termina con un signo de exclamación."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "imperativ-regelmaessig",
+      "title": {
+        "en": "Regular verbs and sein",
+        "es": "Verbos regulares y sein"
+      },
+      "header": [
+        {
+          "en": "Form",
+          "es": "Forma"
+        },
+        {
+          "en": "kommen",
+          "es": "kommen"
+        },
+        {
+          "en": "machen",
+          "es": "machen"
+        },
+        {
+          "en": "arbeiten",
+          "es": "arbeiten"
+        },
+        {
+          "en": "sein",
+          "es": "sein"
+        }
+      ],
+      "rows": [
+        [
+          "du",
+          "komm",
+          "mach",
+          "arbeite",
+          "sei"
+        ],
+        [
+          "ihr",
+          "kommt",
+          "macht",
+          "arbeitet",
+          "seid"
+        ],
+        [
+          "Sie",
+          "kommen Sie",
+          "machen Sie",
+          "arbeiten Sie",
+          "seien Sie"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imperativ-stammwechsel",
+      "title": {
+        "en": "Stem-changing verbs",
+        "es": "Verbos con cambio de raíz"
+      },
+      "header": [
+        {
+          "en": "Form",
+          "es": "Forma"
+        },
+        {
+          "en": "sprechen",
+          "es": "sprechen"
+        },
+        {
+          "en": "nehmen",
+          "es": "nehmen"
+        },
+        {
+          "en": "lesen",
+          "es": "lesen"
+        },
+        {
+          "en": "fahren",
+          "es": "fahren"
+        },
+        {
+          "en": "schlafen",
+          "es": "schlafen"
+        }
+      ],
+      "rows": [
+        [
+          "du",
+          "sprich",
+          "nimm",
+          "lies",
+          "fahr",
+          "schlaf"
+        ],
+        [
+          "ihr",
+          "sprecht",
+          "nehmt",
+          "lest",
+          "fahrt",
+          "schlaft"
+        ],
+        [
+          "Sie",
+          "sprechen Sie",
+          "nehmen Sie",
+          "lesen Sie",
+          "fahren Sie",
+          "schlafen Sie"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "imperativ-trennbar",
+      "title": {
+        "en": "Separable verbs",
+        "es": "Verbos separables"
+      },
+      "header": [
+        {
+          "en": "Form",
+          "es": "Forma"
+        },
+        {
+          "en": "aufstehen",
+          "es": "aufstehen"
+        },
+        {
+          "en": "aufmachen",
+          "es": "aufmachen"
+        },
+        {
+          "en": "zumachen",
+          "es": "zumachen"
+        },
+        {
+          "en": "mitkommen",
+          "es": "mitkommen"
+        }
+      ],
+      "rows": [
+        [
+          "du",
+          "steh auf",
+          "mach auf",
+          "mach zu",
+          "komm mit"
+        ],
+        [
+          "ihr",
+          "steht auf",
+          "macht auf",
+          "macht zu",
+          "kommt mit"
+        ],
+        [
+          "Sie",
+          "stehen Sie auf",
+          "machen Sie auf",
+          "machen Sie zu",
+          "kommen Sie mit"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How to build the three forms",
+        "es": "Cómo formar las tres formas"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "du: take the stem, drop -st, drop the pronoun. If the stem ends in -d, -t, -chn or -ffn, add -e so that you can say it: Arbeite! Warte! Öffne!",
+            "es": "du: toma la raíz, quita -st y quita el pronombre. Si la raíz termina en -d, -t, -chn o -ffn, añade -e para poder pronunciarla: Arbeite! Warte! Öffne!"
+          },
+          "examples": [
+            {
+              "es": "Komm bitte nach Hause!",
+              "tr": {
+                "en": "Please come home!",
+                "es": "¡Ven a casa, por favor!"
+              }
+            },
+            {
+              "es": "Warte hier!",
+              "tr": {
+                "en": "Wait here!",
+                "es": "¡Espera aquí!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ihr: the same form as in the present tense, without the pronoun.",
+            "es": "ihr: la misma forma que en presente, sin el pronombre."
+          },
+          "examples": [
+            {
+              "es": "Kommt nach Hause!",
+              "tr": {
+                "en": "Come home! (to several people)",
+                "es": "¡Vengan a casa!"
+              }
+            },
+            {
+              "es": "Macht das Fenster zu!",
+              "tr": {
+                "en": "Close the window! (to several people)",
+                "es": "¡Cierren la ventana!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Sie: the verb comes first and Sie follows it, exactly like the present-tense form for Sie in a question.",
+            "es": "Sie: el verbo va primero y Sie lo sigue, igual que la forma de presente de Sie en una pregunta."
+          },
+          "examples": [
+            {
+              "es": "Kommen Sie bitte!",
+              "tr": {
+                "en": "Please come!",
+                "es": "¡Venga, por favor!"
+              }
+            },
+            {
+              "es": "Warten Sie hier!",
+              "tr": {
+                "en": "Wait here, please! (formal)",
+                "es": "¡Espere aquí, por favor!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Verbs with e becoming i or ie keep the change in the du-form: Sprich! Nimm! Lies! Gib! Verbs with a becoming ä lose it: Fahr! Schlaf! In the ihr-form nothing changes: Sprecht! Lest!",
+            "es": "Los verbos con e que pasa a i o ie conservan el cambio en la forma de du: Sprich! Nimm! Lies! Gib! Los verbos con a que pasa a ä lo pierden: Fahr! Schlaf! En la forma de ihr no cambia nada: Sprecht! Lest!"
+          },
+          "examples": [
+            {
+              "es": "Sprich bitte langsam!",
+              "tr": {
+                "en": "Please speak slowly!",
+                "es": "¡Habla despacio, por favor!"
+              }
+            },
+            {
+              "es": "Lies das Buch!",
+              "tr": {
+                "en": "Read the book!",
+                "es": "¡Lee el libro!"
+              }
+            },
+            {
+              "es": "Fahr nach Hause!",
+              "tr": {
+                "en": "Drive home!",
+                "es": "¡Maneja a casa!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Separable verbs: the stem is the command and the prefix goes to the end.",
+            "es": "Verbos separables: la raíz es la orden y el prefijo va al final."
+          },
+          "examples": [
+            {
+              "es": "Steh auf!",
+              "tr": {
+                "en": "Get up!",
+                "es": "¡Levántate!"
+              }
+            },
+            {
+              "es": "Mach die Tür zu!",
+              "tr": {
+                "en": "Close the door!",
+                "es": "¡Cierra la puerta!"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "sein is irregular: Sei! Seid! Seien Sie! Small words like bitte and doch mal make an order softer.",
+            "es": "sein es irregular: Sei! Seid! Seien Sie! Palabras pequeñas como bitte y doch mal suavizan una orden."
+          },
+          "examples": [
+            {
+              "es": "Sei ruhig!",
+              "tr": {
+                "en": "Be quiet!",
+                "es": "¡Cállate!"
+              }
+            },
+            {
+              "es": "Seien Sie bitte ruhig!",
+              "tr": {
+                "en": "Please be quiet!",
+                "es": "¡Guarde silencio, por favor!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Pairs to keep apart",
+        "es": "Parejas que hay que distinguir"
+      },
+      "pairs": [
+        {
+          "a": "Sprich langsam!",
+          "b": "Fahr nach Hause!",
+          "note": {
+            "en": "sprechen keeps the vowel change of the du-form: sprich. fahren loses the umlaut: fahr, not fähr.",
+            "es": "sprechen conserva el cambio de vocal de la forma de du: sprich. fahren pierde la diéresis: fahr, no fähr."
+          },
+          "examples": [
+            {
+              "es": "Nimm Tee!",
+              "tr": {
+                "en": "Take tea!",
+                "es": "¡Toma té!"
+              }
+            },
+            {
+              "es": "Schlaf gut!",
+              "tr": {
+                "en": "Sleep well!",
+                "es": "¡Duerme bien!"
+              }
+            }
+          ]
+        },
+        {
+          "a": "Kommt bitte!",
+          "b": "Kommen Sie bitte!",
+          "note": {
+            "en": "ihr has no pronoun and ends in -t. Sie has the verb first and keeps the pronoun Sie.",
+            "es": "ihr no lleva pronombre y termina en -t. Sie tiene el verbo primero y conserva el pronombre Sie."
+          },
+          "examples": [
+            {
+              "es": "Wartet hier!",
+              "tr": {
+                "en": "Wait here! (to several people)",
+                "es": "¡Esperen aquí!"
+              }
+            },
+            {
+              "es": "Warten Sie hier!",
+              "tr": {
+                "en": "Wait here, please! (formal)",
+                "es": "¡Espere aquí, por favor!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not keep the pronoun with du (Komm!, not Du komm!). Do not keep -st (Komm!, not Kommst!). Do not forget -t for ihr (Kommt!, not Komm!). With Sie, do not forget the pronoun (Kommen Sie!, not Kommen!). Do not add an umlaut in the imperative of fahren and schlafen (Fahr!, not Fähr!). And put the prefix of a separable verb at the end (Steh auf!, not Aufsteh!).",
+        "es": "Trampas clásicas: no conserves el pronombre con du (Komm!, no Du komm!). No conserves -st (Komm!, no Kommst!). No olvides la -t de ihr (Kommt!, no Komm!). Con Sie no olvides el pronombre (Kommen Sie!, no Kommen!). No pongas diéresis en el imperativo de fahren y schlafen (Fahr!, no Fähr!). Y pon el prefijo de un verbo separable al final (Steh auf!, no Aufsteh!)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The imperative has three forms. To one friend you say «Komm!», with no ending and no pronoun. To several friends you say «Kommt!». To a person you address formally you say «Kommen Sie bitte!». Verbs like sprechen keep the vowel change: «Sprich langsam!». But fahren loses the umlaut: «Fahr nach Hause!». A separable prefix goes to the end: «Steh auf!». And sein is special: «Sei ruhig!».",
+    "es": "El imperativo tiene tres formas. A un amigo le dices «Komm!», sin terminación y sin pronombre. A varios amigos les dices «Kommt!». A una persona a quien tratas de usted le dices «Kommen Sie bitte!». Verbos como sprechen conservan el cambio de vocal: «Sprich langsam!». Pero fahren pierde la diéresis: «Fahr nach Hause!». Un prefijo separable va al final: «Steh auf!». Y sein es especial: «Sei ruhig!»."
+  },
+  "items": [
+    {
+      "id": "imperativ-c01",
+      "sentence": "Anna, ___ bitte nach Hause!",
+      "options": [
+        "komm",
+        "kommst",
+        "kommt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is addressed with du. The du-imperative is the stem without ending: Anna, komm bitte nach Hause!",
+        "es": "A Anna se le habla con du. El imperativo de du es la raíz sin terminación: Anna, komm bitte nach Hause!"
+      },
+      "wrong": {
+        "kommst": {
+          "en": "kommst is the present tense for du. The imperative drops the ending -st: komm.",
+          "es": "kommst es el presente de du. El imperativo omite la terminación -st: komm."
+        },
+        "kommt": {
+          "en": "kommt is the form for ihr, several friends. Anna is one person, so you need komm.",
+          "es": "kommt es la forma de ihr, varios amigos. Anna es una persona, así que necesitas komm."
+        }
+      },
+      "examples": [
+        "Komm bitte mit!",
+        "Komm bitte hier!"
+      ],
+      "tr": {
+        "en": "Anna, please come home!",
+        "es": "¡Anna, ven a casa, por favor!"
+      }
+    },
+    {
+      "id": "imperativ-f01",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "du",
+      "answer": "komm",
+      "table": "imperativ-regelmaessig"
+    },
+    {
+      "id": "imperativ-c02",
+      "sentence": "Kinder, ___ bitte nach Hause!",
+      "options": [
+        "komm",
+        "kommt",
+        "kommst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Kinder are several people addressed with ihr. The ihr-imperative is like the present: kommt.",
+        "es": "Kinder son varias personas a las que se habla con ihr. El imperativo de ihr es como el presente: kommt."
+      },
+      "wrong": {
+        "komm": {
+          "en": "komm is the imperative for one person with du. Kinder are several, so you need kommt.",
+          "es": "komm es el imperativo para una persona con du. Kinder son varios, así que necesitas kommt."
+        },
+        "kommst": {
+          "en": "kommst is the present tense for du and not an imperative. For several children you need kommt.",
+          "es": "kommst es el presente de du y no un imperativo. Para varios niños necesitas kommt."
+        }
+      },
+      "examples": [
+        "Kommt bitte mit!",
+        "Kommt bitte hier!"
+      ],
+      "tr": {
+        "en": "Children, please come home!",
+        "es": "¡Niños, vengan a casa, por favor!"
+      }
+    },
+    {
+      "id": "imperativ-f02",
+      "kind": "form",
+      "verb": "sprechen",
+      "person": "du",
+      "answer": "sprich",
+      "table": "imperativ-stammwechsel"
+    },
+    {
+      "id": "imperativ-c03",
+      "sentence": "Frau Müller, ___ Sie bitte hier!",
+      "options": [
+        "wartet",
+        "warte",
+        "warten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Frau Müller is addressed with Sie. The Sie-imperative has the verb in first position and Sie after it: Warten Sie hier!",
+        "es": "A Frau Müller se le habla con Sie. El imperativo de Sie tiene el verbo en primera posición y Sie detrás: Warten Sie hier!"
+      },
+      "wrong": {
+        "wartet": {
+          "en": "wartet is the form for ihr. For the formal Sie you need warten.",
+          "es": "wartet es la forma de ihr. Para el Sie formal necesitas warten."
+        },
+        "warte": {
+          "en": "warte is the du-imperative. With Sie the verb has the ending -en: warten.",
+          "es": "warte es el imperativo de du. Con Sie el verbo lleva la terminación -en: warten."
+        }
+      },
+      "examples": [
+        "Kommen Sie bitte!",
+        "Warten Sie bitte hier!"
+      ],
+      "tr": {
+        "en": "Ms Müller, please wait here!",
+        "es": "¡Señora Müller, espere aquí, por favor!"
+      }
+    },
+    {
+      "id": "imperativ-f03",
+      "kind": "form",
+      "verb": "aufstehen",
+      "person": "du",
+      "answer": "steh auf",
+      "table": "imperativ-trennbar"
+    },
+    {
+      "id": "imperativ-w01",
+      "kind": "why",
+      "es": "Komm bitte nach Hause!",
+      "target": "Komm",
+      "tr": {
+        "en": "Please come home!",
+        "es": "¡Ven a casa, por favor!"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The du-form keeps its ending -st: Kommst",
+            "es": "La forma de du conserva su terminación -st: Kommst"
+          },
+          "wrong": {
+            "en": "Kommst is the present tense. The imperative drops the ending -st and the pronoun: Komm!",
+            "es": "Kommst es el presente. El imperativo omite la terminación -st y el pronombre: Komm!"
+          }
+        },
+        {
+          "text": {
+            "en": "The du-imperative is the stem without -st and without the pronoun",
+            "es": "El imperativo de du es la raíz sin -st y sin pronombre"
+          }
+        },
+        {
+          "text": {
+            "en": "The pronoun must stay: Du komm",
+            "es": "El pronombre debe quedarse: Du komm"
+          },
+          "wrong": {
+            "en": "An imperative is addressed directly, so du is not said. Du komm is wrong, Komm is right.",
+            "es": "Un imperativo se dirige directamente a la persona, así que no se dice du. Du komm es incorrecto, Komm es correcto."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "imperativ-c04",
+      "sentence": "Paul, ___ hier!",
+      "options": [
+        "wart",
+        "warte",
+        "wartest"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The stem warten ends in -t, so the du-imperative takes -e to be pronounceable: Warte hier!",
+        "es": "La raíz de warten termina en -t, así que el imperativo de du lleva -e para poder pronunciarse: Warte hier!"
+      },
+      "wrong": {
+        "wart": {
+          "en": "wart would be hard to say after the stem ending in -t. The du-imperative of warten is warte.",
+          "es": "wart sería difícil de decir con la raíz terminada en -t. El imperativo de du de warten es warte."
+        },
+        "wartest": {
+          "en": "wartest is the present tense for du. The imperative drops -st: warte.",
+          "es": "wartest es el presente de du. El imperativo omite -st: warte."
+        }
+      },
+      "examples": [
+        "Arbeite heute!",
+        "Öffne die Tür!"
+      ],
+      "tr": {
+        "en": "Paul, wait here!",
+        "es": "¡Paul, espera aquí!"
+      }
+    },
+    {
+      "id": "imperativ-f04",
+      "kind": "form",
+      "verb": "arbeiten",
+      "person": "du",
+      "answer": "arbeite",
+      "table": "imperativ-regelmaessig"
+    },
+    {
+      "id": "imperativ-c05",
+      "sentence": "___ bitte langsam, Anna!",
+      "options": [
+        "Sprich",
+        "Sprech",
+        "Sprichst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sprechen changes e to i in the du-form, and the du-imperative keeps that change: Sprich!",
+        "es": "sprechen cambia e por i en la forma de du, y el imperativo de du conserva ese cambio: Sprich!"
+      },
+      "wrong": {
+        "Sprech": {
+          "en": "Sprech would be the regular imperative, but sprechen changes its vowel: the correct form is Sprich.",
+          "es": "Sprech sería el imperativo regular, pero sprechen cambia la vocal: la forma correcta es Sprich."
+        },
+        "Sprichst": {
+          "en": "Sprichst is the present tense for du. The imperative drops the ending -st: Sprich.",
+          "es": "Sprichst es el presente de du. El imperativo omite la terminación -st: Sprich."
+        }
+      },
+      "examples": [
+        "Sprich bitte Deutsch!",
+        "Sprich bitte lauter!"
+      ],
+      "tr": {
+        "en": "Please speak slowly, Anna!",
+        "es": "¡Habla despacio, por favor, Anna!"
+      }
+    },
+    {
+      "id": "imperativ-f05",
+      "kind": "form",
+      "verb": "nehmen",
+      "person": "du",
+      "answer": "nimm",
+      "table": "imperativ-stammwechsel"
+    },
+    {
+      "id": "imperativ-c06",
+      "sentence": "___ das Buch, Paul!",
+      "options": [
+        "Les",
+        "Lest",
+        "Lies"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "lesen changes e to ie in the du-form, and the du-imperative keeps that change: Lies das Buch!",
+        "es": "lesen cambia e por ie en la forma de du, y el imperativo de du conserva ese cambio: Lies das Buch!"
+      },
+      "wrong": {
+        "Les": {
+          "en": "Les would be the regular imperative, but lesen changes its vowel: the correct form is Lies.",
+          "es": "Les sería el imperativo regular, pero lesen cambia la vocal: la forma correcta es Lies."
+        },
+        "Lest": {
+          "en": "Lest is the form for ihr, several friends. Paul is one person, so you need Lies.",
+          "es": "Lest es la forma de ihr, varios amigos. Paul es una persona, así que necesitas Lies."
+        }
+      },
+      "examples": [
+        "Lies bitte das Wort!",
+        "Lies die Zeitung!"
+      ],
+      "tr": {
+        "en": "Read the book, Paul!",
+        "es": "¡Lee el libro, Paul!"
+      }
+    },
+    {
+      "id": "imperativ-f06",
+      "kind": "form",
+      "verb": "aufmachen",
+      "person": "ihr",
+      "answer": "macht auf",
+      "table": "imperativ-trennbar"
+    },
+    {
+      "id": "imperativ-w02",
+      "kind": "why",
+      "es": "Lies das Buch!",
+      "target": "Lies",
+      "tr": {
+        "en": "Read the book!",
+        "es": "¡Lee el libro!"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The imperative uses the plain stem les-: Les",
+            "es": "El imperativo usa la raíz simple les-: Les"
+          },
+          "wrong": {
+            "en": "Les would be the regular form. lesen is a stem-changing verb and keeps its ie in the du-imperative: Lies!",
+            "es": "Les sería la forma regular. lesen es un verbo con cambio de raíz y conserva su ie en el imperativo de du: Lies!"
+          }
+        },
+        {
+          "text": {
+            "en": "lesen keeps the change e to ie in the du-imperative",
+            "es": "lesen conserva el cambio de e a ie en el imperativo de du"
+          }
+        },
+        {
+          "text": {
+            "en": "Lies is the form for ihr",
+            "es": "Lies es la forma de ihr"
+          },
+          "wrong": {
+            "en": "The ihr-form is Lest, with no vowel change. Lies is the du-imperative.",
+            "es": "La forma de ihr es Lest, sin cambio de vocal. Lies es el imperativo de du."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "imperativ-c07",
+      "sentence": "___ Tee, Anna!",
+      "options": [
+        "Nehm",
+        "Nimm",
+        "Nimmt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "nehmen changes e to i and doubles the m in the du-form, and the imperative keeps it: Nimm Tee!",
+        "es": "nehmen cambia e por i y duplica la m en la forma de du, y el imperativo lo conserva: Nimm Tee!"
+      },
+      "wrong": {
+        "Nehm": {
+          "en": "Nehm would be the regular imperative, but nehmen changes its stem: the correct form is Nimm.",
+          "es": "Nehm sería el imperativo regular, pero nehmen cambia la raíz: la forma correcta es Nimm."
+        },
+        "Nimmt": {
+          "en": "Nimmt is the present tense for er/sie/es. For Anna as du you need the imperative Nimm.",
+          "es": "Nimmt es el presente de er/sie/es. Para Anna con du necesitas el imperativo Nimm."
+        }
+      },
+      "examples": [
+        "Nimm Milch!",
+        "Nimm Kaffee!"
+      ],
+      "tr": {
+        "en": "Take tea, Anna!",
+        "es": "¡Toma té, Anna!"
+      }
+    },
+    {
+      "id": "imperativ-f07",
+      "kind": "form",
+      "verb": "sein",
+      "person": "ihr",
+      "answer": "seid",
+      "table": "imperativ-regelmaessig"
+    },
+    {
+      "id": "imperativ-c08",
+      "sentence": "Paul, ___ nach Hause!",
+      "options": [
+        "fahr",
+        "fähr",
+        "fährst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "fahren is an a to ä verb, and these verbs lose the umlaut in the du-imperative: Fahr nach Hause!",
+        "es": "fahren es un verbo con a que pasa a ä, y estos verbos pierden la diéresis en el imperativo de du: Fahr nach Hause!"
+      },
+      "wrong": {
+        "fähr": {
+          "en": "fähr keeps the umlaut of fährst, but a to ä verbs lose it in the imperative. The form is fahr.",
+          "es": "fähr conserva la diéresis de fährst, pero los verbos con a que pasa a ä la pierden en el imperativo. La forma es fahr."
+        },
+        "fährst": {
+          "en": "fährst is the present tense for du. The imperative drops the ending and the umlaut: fahr.",
+          "es": "fährst es el presente de du. El imperativo omite la terminación y la diéresis: fahr."
+        }
+      },
+      "examples": [
+        "Fahr bitte langsam!",
+        "Fahr nach Köln!"
+      ],
+      "tr": {
+        "en": "Paul, drive home!",
+        "es": "¡Paul, maneja a casa!"
+      }
+    },
+    {
+      "id": "imperativ-f08",
+      "kind": "form",
+      "verb": "lesen",
+      "person": "du",
+      "answer": "lies",
+      "table": "imperativ-stammwechsel"
+    },
+    {
+      "id": "imperativ-c09",
+      "sentence": "Es ist kalt. Mach die Tür ___!",
+      "options": [
+        "auf",
+        "mit",
+        "zu"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "It is cold, so you want the door closed. The verb is zumachen, and the prefix zu goes to the end: Mach die Tür zu!",
+        "es": "Hace frío, así que quieres la puerta cerrada. El verbo es zumachen, y el prefijo zu va al final: Mach die Tür zu!"
+      },
+      "wrong": {
+        "auf": {
+          "en": "auf would open the door. It is cold, so you want it closed with zu.",
+          "es": "auf abriría la puerta. Hace frío, así que la quieres cerrada, con zu."
+        },
+        "mit": {
+          "en": "mit does not fit machen. The verb that means close is zumachen, with zu at the end.",
+          "es": "mit no encaja con machen. El verbo que significa «cerrar» es zumachen, con zu al final."
+        }
+      },
+      "examples": [
+        "Mach das Fenster zu!",
+        "Mach bitte die Tür zu!"
+      ],
+      "tr": {
+        "en": "It is cold. Close the door!",
+        "es": "Hace frío. ¡Cierra la puerta!"
+      }
+    },
+    {
+      "id": "imperativ-f09",
+      "kind": "form",
+      "verb": "zumachen",
+      "person": "Sie",
+      "answer": "machen Sie zu",
+      "table": "imperativ-trennbar"
+    },
+    {
+      "id": "imperativ-w03",
+      "kind": "why",
+      "es": "Fahr nach Hause!",
+      "target": "Fahr",
+      "tr": {
+        "en": "Drive home!",
+        "es": "¡Maneja a casa!"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "fahren loses the umlaut in the du-imperative",
+            "es": "fahren pierde la diéresis en el imperativo de du"
+          }
+        },
+        {
+          "text": {
+            "en": "The umlaut of fährst stays: Fähr",
+            "es": "La diéresis de fährst se queda: Fähr"
+          },
+          "wrong": {
+            "en": "Only e to i or ie verbs keep the change. For a to ä verbs the imperative uses the infinitive stem: Fahr!",
+            "es": "Solo los verbos con e a i o ie conservan el cambio. Para los verbos con a a ä el imperativo usa la raíz del infinitivo: Fahr!"
+          }
+        },
+        {
+          "text": {
+            "en": "The imperative needs an ending -e: Fahre",
+            "es": "El imperativo necesita una terminación -e: Fahre"
+          },
+          "wrong": {
+            "en": "The ending -e is only added after stems in -d, -t, -chn or -ffn, as in Warte! The stem fahr- needs no extra e.",
+            "es": "La terminación -e solo se añade después de raíces en -d, -t, -chn o -ffn, como en Warte! La raíz fahr- no necesita una e extra."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "imperativ-c10",
+      "sentence": "Anna, ___ jetzt auf!",
+      "options": [
+        "steh",
+        "steh auf",
+        "aufsteh"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The imperative of aufstehen is steh ... auf: the stem comes first and the prefix is at the end: Steh jetzt auf!",
+        "es": "El imperativo de aufstehen es steh ... auf: primero la raíz y el prefijo al final: Steh jetzt auf!"
+      },
+      "wrong": {
+        "steh auf": {
+          "en": "steh auf already contains the prefix, but the sentence has auf at the end. The prefix would appear twice.",
+          "es": "steh auf ya contiene el prefijo, pero la oración tiene auf al final. El prefijo aparecería dos veces."
+        },
+        "aufsteh": {
+          "en": "aufsteh keeps the prefix attached. In the imperative the prefix is separated and goes to the end.",
+          "es": "aufsteh deja el prefijo pegado. En el imperativo el prefijo se separa y va al final."
+        }
+      },
+      "examples": [
+        "Anna, steh um sieben Uhr auf!",
+        "Paul, steh bitte auf!"
+      ],
+      "tr": {
+        "en": "Anna, get up now!",
+        "es": "¡Anna, levántate ya!"
+      }
+    },
+    {
+      "id": "imperativ-f10",
+      "kind": "form",
+      "verb": "machen",
+      "person": "Sie",
+      "answer": "machen Sie",
+      "table": "imperativ-regelmaessig"
+    },
+    {
+      "id": "imperativ-c11",
+      "sentence": "Kinder, ___ bitte ruhig!",
+      "options": [
+        "sei",
+        "seid",
+        "seien"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sein is irregular. The ihr-imperative is seid: Kinder, seid bitte ruhig!",
+        "es": "sein es irregular. El imperativo de ihr es seid: Kinder, seid bitte ruhig!"
+      },
+      "wrong": {
+        "sei": {
+          "en": "sei is the imperative for one person with du. Kinder are several, so you need seid.",
+          "es": "sei es el imperativo para una persona con du. Kinder son varios, así que necesitas seid."
+        },
+        "seien": {
+          "en": "seien is only used in Seien Sie, the formal form. For several children you need seid.",
+          "es": "seien solo se usa en Seien Sie, la forma formal. Para varios niños necesitas seid."
+        }
+      },
+      "examples": [
+        "Seid bitte nett!",
+        "Seid bitte leise!"
+      ],
+      "tr": {
+        "en": "Children, please be quiet!",
+        "es": "¡Niños, guarden silencio, por favor!"
+      }
+    },
+    {
+      "id": "imperativ-f11",
+      "kind": "form",
+      "verb": "fahren",
+      "person": "du",
+      "answer": "fahr",
+      "table": "imperativ-stammwechsel"
+    },
+    {
+      "id": "imperativ-c12",
+      "sentence": "Herr Meier, ___ Sie bitte ruhig!",
+      "options": [
+        "seid",
+        "sei",
+        "seien"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "For the formal Sie the imperative of sein is seien: Seien Sie bitte ruhig!",
+        "es": "Para el Sie formal el imperativo de sein es seien: Seien Sie bitte ruhig!"
+      },
+      "wrong": {
+        "seid": {
+          "en": "seid is the imperative for ihr, several friends. For the formal Sie you need seien.",
+          "es": "seid es el imperativo de ihr, varios amigos. Para el Sie formal necesitas seien."
+        },
+        "sei": {
+          "en": "sei is the imperative for du. For the formal Sie you need seien.",
+          "es": "sei es el imperativo de du. Para el Sie formal necesitas seien."
+        }
+      },
+      "examples": [
+        "Seien Sie nett!",
+        "Seien Sie bitte leise!"
+      ],
+      "tr": {
+        "en": "Mr Meier, please be quiet!",
+        "es": "¡Señor Meier, guarde silencio, por favor!"
+      }
+    },
+    {
+      "id": "imperativ-f12",
+      "kind": "form",
+      "verb": "mitkommen",
+      "person": "du",
+      "answer": "komm mit",
+      "table": "imperativ-trennbar"
+    },
+    {
+      "id": "imperativ-c13",
+      "sentence": "___ Sie bitte langsam!",
+      "options": [
+        "Sprechen",
+        "Sprecht",
+        "Sprich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The Sie-imperative has the verb first and no vowel change: Sprechen Sie bitte langsam!",
+        "es": "El imperativo de Sie tiene el verbo primero y sin cambio de vocal: Sprechen Sie bitte langsam!"
+      },
+      "wrong": {
+        "Sprecht": {
+          "en": "Sprecht is the form for ihr. With Sie the verb ends in -en: Sprechen Sie.",
+          "es": "Sprecht es la forma de ihr. Con Sie el verbo termina en -en: Sprechen Sie."
+        },
+        "Sprich": {
+          "en": "Sprich is the imperative for du. With Sie the verb stays in its infinitive form: Sprechen Sie.",
+          "es": "Sprich es el imperativo de du. Con Sie el verbo conserva la forma del infinitivo: Sprechen Sie."
+        }
+      },
+      "examples": [
+        "Sprechen Sie bitte Deutsch!",
+        "Lesen Sie bitte das Buch!"
+      ],
+      "tr": {
+        "en": "Please speak slowly! (formal)",
+        "es": "¡Hable despacio, por favor!"
+      }
+    },
+    {
+      "id": "imperativ-c14",
+      "sentence": "Anna, ___ heute!",
+      "options": [
+        "arbeit",
+        "arbeite",
+        "arbeitet"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The stem arbeit- ends in -t, so the du-imperative takes -e: Arbeite heute!",
+        "es": "La raíz arbeit- termina en -t, así que el imperativo de du lleva -e: Arbeite heute!"
+      },
+      "wrong": {
+        "arbeit": {
+          "en": "arbeit is hard to say, because the stem ends in -t. The du-imperative of arbeiten is arbeite.",
+          "es": "arbeit es difícil de decir, porque la raíz termina en -t. El imperativo de du de arbeiten es arbeite."
+        },
+        "arbeitet": {
+          "en": "arbeitet is the form for ihr and er/sie/es. For one person with du you need arbeite.",
+          "es": "arbeitet es la forma de ihr y de er/sie/es. Para una persona con du necesitas arbeite."
+        }
+      },
+      "examples": [
+        "Warte hier!",
+        "Arbeite nicht!"
+      ],
+      "tr": {
+        "en": "Anna, work today!",
+        "es": "¡Anna, trabaja hoy!"
+      }
+    },
+    {
+      "id": "imperativ-w04",
+      "kind": "why",
+      "es": "Steh um sieben Uhr auf!",
+      "target": "auf",
+      "tr": {
+        "en": "Get up at seven o'clock!",
+        "es": "¡Levántate a las siete!"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The prefix stays on the verb: Aufsteh",
+            "es": "El prefijo se queda en el verbo: Aufsteh"
+          },
+          "wrong": {
+            "en": "In the imperative the separable prefix splits off, just like in the present tense. Aufsteh is wrong.",
+            "es": "En el imperativo el prefijo separable se separa, igual que en presente. Aufsteh es incorrecto."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix goes right after the verb: Steh auf um sieben Uhr",
+            "es": "El prefijo va justo después del verbo: Steh auf um sieben Uhr"
+          },
+          "wrong": {
+            "en": "The prefix goes to the very end of the sentence, after the time phrase um sieben Uhr, not right after the verb.",
+            "es": "El prefijo va al final de todo, después de la frase de tiempo um sieben Uhr, no justo después del verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix of a separable verb goes to the end of the imperative sentence",
+            "es": "El prefijo de un verbo separable va al final de la oración imperativa"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}
