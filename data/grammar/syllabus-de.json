@@ -1,0 +1,1365 @@
+{
+  "units": [
+    {
+      "id": "laute",
+      "level": "A1",
+      "title": {
+        "en": "Sounds and spelling",
+        "es": "Sonidos y escritura",
+        "hu": "Hangok és helyesírás"
+      }
+    },
+    {
+      "id": "grundlagen",
+      "level": "A1",
+      "title": {
+        "en": "The first sentences",
+        "es": "Las primeras frases",
+        "hu": "Az első mondatok"
+      }
+    },
+    {
+      "id": "satzbau",
+      "level": "A1",
+      "title": {
+        "en": "Building sentences",
+        "es": "Construir frases",
+        "hu": "Mondatalkotás"
+      }
+    },
+    {
+      "id": "verben",
+      "level": "A1",
+      "title": {
+        "en": "More about verbs",
+        "es": "Más sobre los verbos",
+        "hu": "Még több ige"
+      }
+    },
+    {
+      "id": "kasus",
+      "level": "A1",
+      "title": {
+        "en": "Nominative, accusative and prepositions",
+        "es": "Nominativo, acusativo y preposiciones",
+        "hu": "Alany- és tárgyeset, elöljárók"
+      }
+    },
+    {
+      "id": "zeit-ort",
+      "level": "A1",
+      "title": {
+        "en": "Numbers, time and place",
+        "es": "Números, tiempo y lugar",
+        "hu": "Számok, idő és hely"
+      }
+    },
+    {
+      "id": "perfekt",
+      "level": "A1",
+      "title": {
+        "en": "The first past tense",
+        "es": "El primer pasado",
+        "hu": "Az első múlt idő"
+      }
+    },
+    {
+      "id": "dativ",
+      "level": "A2",
+      "title": {
+        "en": "The dative and objects",
+        "es": "El dativo y los complementos",
+        "hu": "A részes eset és a bővítmények"
+      }
+    },
+    {
+      "id": "lage-richtung",
+      "level": "A2",
+      "title": {
+        "en": "Place and direction",
+        "es": "Lugar y dirección",
+        "hu": "Hely és irány"
+      }
+    },
+    {
+      "id": "vergangenheit",
+      "level": "A2",
+      "title": {
+        "en": "Talking about the past",
+        "es": "Hablar del pasado",
+        "hu": "A múlt kifejezése"
+      }
+    },
+    {
+      "id": "nebensaetze",
+      "level": "A2",
+      "title": {
+        "en": "Subordinate clauses",
+        "es": "Oraciones subordinadas",
+        "hu": "Mellékmondatok"
+      }
+    },
+    {
+      "id": "adjektive",
+      "level": "A2",
+      "title": {
+        "en": "Adjectives and comparison",
+        "es": "Adjetivos y comparación",
+        "hu": "Melléknevek és fokozás"
+      }
+    },
+    {
+      "id": "pronomen-wortbildung",
+      "level": "A2",
+      "title": {
+        "en": "Pronouns, reflexives, word building",
+        "es": "Pronombres, reflexivos, formación de palabras",
+        "hu": "Névmások, visszaható igék, szóalkotás"
+      }
+    },
+    {
+      "id": "zeitformen",
+      "level": "B1",
+      "title": {
+        "en": "More tenses",
+        "es": "Más tiempos verbales",
+        "hu": "További igeidők"
+      }
+    },
+    {
+      "id": "konjunktiv",
+      "level": "B1",
+      "title": {
+        "en": "Wishes, advice and unreal situations",
+        "es": "Deseos, consejos y situaciones irreales",
+        "hu": "Kívánság, tanács és valótlan helyzetek"
+      }
+    },
+    {
+      "id": "passiv",
+      "level": "B1",
+      "title": {
+        "en": "The passive",
+        "es": "La voz pasiva",
+        "hu": "A szenvedő szerkezet"
+      }
+    },
+    {
+      "id": "relativ",
+      "level": "B1",
+      "title": {
+        "en": "Relative clauses",
+        "es": "Oraciones de relativo",
+        "hu": "Vonatkozó mellékmondatok"
+      }
+    },
+    {
+      "id": "nebensaetze-b1",
+      "level": "B1",
+      "title": {
+        "en": "More subordinate clauses",
+        "es": "Más oraciones subordinadas",
+        "hu": "További mellékmondatok"
+      }
+    },
+    {
+      "id": "nomen-verben",
+      "level": "B1",
+      "title": {
+        "en": "Nouns, adjectives and verb patterns",
+        "es": "Sustantivos, adjetivos y régimen verbal",
+        "hu": "Főnevek, melléknevek és igei vonzatok"
+      }
+    },
+    {
+      "id": "satzbau-b1",
+      "level": "B1",
+      "title": {
+        "en": "Sentence structure",
+        "es": "Estructura de la oración",
+        "hu": "Mondatszerkezet"
+      }
+    },
+    {
+      "id": "vergangenheit-passiv",
+      "level": "B2",
+      "title": {
+        "en": "Past tenses and the passive in depth",
+        "es": "Tiempos del pasado y la pasiva en profundidad",
+        "hu": "Múlt idők és szenvedő szerkezet mélyebben"
+      }
+    },
+    {
+      "id": "konjunktiv-b2",
+      "level": "B2",
+      "title": {
+        "en": "Reported speech and unreal past",
+        "es": "Estilo indirecto y pasado irreal",
+        "hu": "Függő beszéd és valótlan múlt"
+      }
+    },
+    {
+      "id": "nomen-partizip",
+      "level": "B2",
+      "title": {
+        "en": "Nouns, participles and word formation",
+        "es": "Sustantivos, participios y formación de palabras",
+        "hu": "Főnevek, igenevek és szóképzés"
+      }
+    },
+    {
+      "id": "satzgefuege",
+      "level": "B2",
+      "title": {
+        "en": "Complex sentences",
+        "es": "Oraciones complejas",
+        "hu": "Összetett mondatok"
+      }
+    },
+    {
+      "id": "stil",
+      "level": "C1",
+      "title": {
+        "en": "Written and formal style",
+        "es": "Estilo escrito y formal",
+        "hu": "Írott és hivatalos stílus"
+      }
+    },
+    {
+      "id": "haltung",
+      "level": "C1",
+      "title": {
+        "en": "Attitude and nuance",
+        "es": "Actitud y matices",
+        "hu": "Hozzáállás és árnyalatok"
+      }
+    }
+  ],
+  "topics": [
+    {
+      "id": "aussprache-umlaute",
+      "level": "A1",
+      "unit": "laute",
+      "title": {
+        "en": "Sounds and spelling: umlauts, ß, ch, sch",
+        "es": "Sonidos y escritura: diéresis, ß, ch, sch",
+        "hu": "Hangok és írás: umlautok, ß, ch, sch"
+      },
+      "blurb": {
+        "en": "ä, ö, ü, ß, ie and ei, the two ch sounds, sch, sp and st, and why nouns start with a capital.",
+        "es": "ä, ö, ü, ß, ie y ei, los dos sonidos de ch, sch, sp y st, y por qué los sustantivos llevan mayúscula.",
+        "hu": "ä, ö, ü, ß, ie és ei, a ch két hangja, sch, sp és st, és miért nagybetűsek a főnevek."
+      }
+    },
+    {
+      "id": "personalpronomen-sein",
+      "level": "A1",
+      "unit": "grundlagen",
+      "title": {
+        "en": "Pronouns and sein: ich bin, du bist, Sie sind",
+        "es": "Pronombres y sein: ich bin, du bist, Sie sind",
+        "hu": "Személyes névmások és a sein: ich bin, du bist, Sie sind"
+      },
+      "blurb": {
+        "en": "ich, du, er, sie, es, wir, ihr, sie, Sie and the verb sein; when to use du, ihr or Sie.",
+        "es": "ich, du, er, sie, es, wir, ihr, sie, Sie y el verbo sein; cuándo usar du, ihr o Sie.",
+        "hu": "ich, du, er, sie, es, wir, ihr, sie, Sie és a sein ige; mikor du, ihr vagy Sie."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig",
+      "level": "A1",
+      "unit": "grundlagen",
+      "title": {
+        "en": "Present tense: regular verbs",
+        "es": "Presente: verbos regulares",
+        "hu": "Jelen idő: szabályos igék"
+      },
+      "blurb": {
+        "en": "Stem plus -e, -st, -t, -en, -t, -en, the extra -e- in arbeitest and findet, and one present for \"I work\" and \"I am working\".",
+        "es": "Raíz más -e, -st, -t, -en, -t, -en, la -e- extra de arbeitest y findet, y un solo presente para «trabajo» y «estoy trabajando».",
+        "hu": "Tő plusz -e, -st, -t, -en, -t, -en, az extra -e- az arbeitest és findet alakban, és egyetlen jelen idő a dolgozom és az éppen dolgozom jelentésre."
+      }
+    },
+    {
+      "id": "artikel-genus",
+      "level": "A1",
+      "unit": "grundlagen",
+      "title": {
+        "en": "Articles and gender: der, die, das, ein, eine",
+        "es": "Artículos y género: der, die, das, ein, eine",
+        "hu": "Névelők és nyelvtani nem: der, die, das, ein, eine"
+      },
+      "blurb": {
+        "en": "Every noun has a gender; learn the article with the noun, use the endings as hints, and replace nouns with er, sie, es.",
+        "es": "Cada sustantivo tiene género; aprende el artículo con el sustantivo, usa las terminaciones como pista y sustituye con er, sie, es.",
+        "hu": "Minden főnévnek van neme; a névelőt a főnévvel együtt tanuld, a végződések támpontot adnak, és a főnevet er, sie, es névmással helyettesítheted."
+      }
+    },
+    {
+      "id": "plural-nomen",
+      "level": "A1",
+      "unit": "grundlagen",
+      "title": {
+        "en": "The plural of nouns",
+        "es": "El plural de los sustantivos",
+        "hu": "A főnevek többes száma"
+      },
+      "blurb": {
+        "en": "Five plural types (-e, -er, -(e)n, -s, no ending), the umlaut, and the article die for every plural.",
+        "es": "Cinco tipos de plural (-e, -er, -(e)n, -s, sin terminación), la diéresis y el artículo die para todos los plurales.",
+        "hu": "Öt többesszám-típus (-e, -er, -(e)n, -s, nincs rag), az umlaut, és a die névelő minden többes számnál."
+      }
+    },
+    {
+      "id": "haben-es-gibt",
+      "level": "A1",
+      "unit": "grundlagen",
+      "title": {
+        "en": "haben and es gibt",
+        "es": "haben y es gibt",
+        "hu": "A haben és az es gibt"
+      },
+      "blurb": {
+        "en": "haben in the present, haben for possession and needs, and es gibt for \"there is\" and \"there are\".",
+        "es": "haben en presente, haben para posesión y necesidades, y es gibt para «hay».",
+        "hu": "A haben jelen időben, birtoklásra és szükségletekre, és az es gibt a van, vannak kifejezésére."
+      }
+    },
+    {
+      "id": "verbposition-v2",
+      "level": "A1",
+      "unit": "satzbau",
+      "title": {
+        "en": "Word order: the verb in second place",
+        "es": "Orden de las palabras: el verbo en segundo lugar",
+        "hu": "Szórend: az ige a második helyen"
+      },
+      "blurb": {
+        "en": "The conjugated verb is always second in a statement; when you start with time or place, the subject moves behind the verb.",
+        "es": "El verbo conjugado va siempre en segundo lugar; si empiezas con tiempo o lugar, el sujeto pasa detrás del verbo.",
+        "hu": "A ragozott ige kijelentő mondatban mindig a második helyen áll; ha időhatározóval vagy helyhatározóval kezdesz, az alany az ige mögé kerül."
+      }
+    },
+    {
+      "id": "fragen-ja-nein-w",
+      "level": "A1",
+      "unit": "satzbau",
+      "title": {
+        "en": "Questions: yes/no and W-questions",
+        "es": "Preguntas: sí/no y con palabra interrogativa",
+        "hu": "Kérdések: eldöntendő és kérdőszavas"
+      },
+      "blurb": {
+        "en": "Verb first for yes/no questions; wer, was, wo, woher, wohin, wann, wie, warum plus the verb in second place.",
+        "es": "Verbo al inicio en las preguntas de sí o no; wer, was, wo, woher, wohin, wann, wie, warum más el verbo en segundo lugar.",
+        "hu": "Az ige elöl áll az eldöntendő kérdésekben; wer, was, wo, woher, wohin, wann, wie, warum és az ige a második helyen."
+      }
+    },
+    {
+      "id": "negation-nicht-kein",
+      "level": "A1",
+      "unit": "satzbau",
+      "title": {
+        "en": "Negation: nicht and kein",
+        "es": "La negación: nicht y kein",
+        "hu": "A tagadás: nicht és kein"
+      },
+      "blurb": {
+        "en": "kein negates a noun with ein or no article, nicht negates everything else; where nicht stands in the sentence.",
+        "es": "kein niega un sustantivo con ein o sin artículo, nicht niega todo lo demás; dónde va nicht en la frase.",
+        "hu": "A kein az ein-es vagy névelő nélküli főnevet tagadja, a nicht mindent mást; hol áll a nicht a mondatban."
+      }
+    },
+    {
+      "id": "konjunktionen-und-aber",
+      "level": "A1",
+      "unit": "satzbau",
+      "title": {
+        "en": "Joining sentences: und, aber, oder, denn",
+        "es": "Unir frases: und, aber, oder, denn",
+        "hu": "Mondatok összekapcsolása: und, aber, oder, denn"
+      },
+      "blurb": {
+        "en": "und, aber, oder and denn do not change the word order; sondern after a negation.",
+        "es": "und, aber, oder y denn no cambian el orden de las palabras; sondern después de una negación.",
+        "hu": "A und, aber, oder és denn nem változtatja meg a szórendet; sondern tagadás után."
+      }
+    },
+    {
+      "id": "praesens-stammwechsel",
+      "level": "A1",
+      "unit": "verben",
+      "title": {
+        "en": "Present tense: stem-changing verbs",
+        "es": "Presente: verbos con cambio de raíz",
+        "hu": "Jelen idő: tőhangváltós igék"
+      },
+      "blurb": {
+        "en": "fahren, sehen, essen, sprechen, schlafen, nehmen: the vowel changes in du and er/sie/es; plus werden and wissen.",
+        "es": "fahren, sehen, essen, sprechen, schlafen, nehmen: la vocal cambia en du y er/sie/es; además werden y wissen.",
+        "hu": "fahren, sehen, essen, sprechen, schlafen, nehmen: a magánhangzó változik a du és az er/sie/es alakban; továbbá werden és wissen."
+      }
+    },
+    {
+      "id": "modalverben-praesens",
+      "level": "A1",
+      "unit": "verben",
+      "title": {
+        "en": "Modal verbs: können, müssen, wollen, möchten",
+        "es": "Verbos modales: können, müssen, wollen, möchten",
+        "hu": "Módbeli segédigék: können, müssen, wollen, möchten"
+      },
+      "blurb": {
+        "en": "können, müssen, wollen, möchten, dürfen, sollen: forms and the second verb in the infinitive at the end.",
+        "es": "können, müssen, wollen, möchten, dürfen, sollen: formas y el segundo verbo en infinitivo al final.",
+        "hu": "können, müssen, wollen, möchten, dürfen, sollen: alakok, és a második ige főnévi igenévben a mondat végén."
+      }
+    },
+    {
+      "id": "trennbare-verben",
+      "level": "A1",
+      "unit": "verben",
+      "title": {
+        "en": "Separable verbs",
+        "es": "Verbos separables",
+        "hu": "Különváló igekötős igék"
+      },
+      "blurb": {
+        "en": "aufstehen, anrufen, einkaufen, mitkommen: the prefix goes to the end of the sentence; the infinitive stays whole.",
+        "es": "aufstehen, anrufen, einkaufen, mitkommen: el prefijo va al final de la frase; el infinitivo permanece completo.",
+        "hu": "aufstehen, anrufen, einkaufen, mitkommen: az igekötő a mondat végére kerül; a főnévi igenév egyben marad."
+      }
+    },
+    {
+      "id": "imperativ",
+      "level": "A1",
+      "unit": "verben",
+      "title": {
+        "en": "The imperative",
+        "es": "El imperativo",
+        "hu": "A felszólító mód"
+      },
+      "blurb": {
+        "en": "Komm! Kommt! Kommen Sie!: three forms, stem-changing verbs, sein, and polite bitte.",
+        "es": "¡Komm! ¡Kommt! ¡Kommen Sie!: tres formas, verbos con cambio de raíz, sein y el bitte de cortesía.",
+        "hu": "Komm! Kommt! Kommen Sie!: három alak, tőhangváltós igék, a sein és a bitte udvariassági szó."
+      }
+    },
+    {
+      "id": "gern-lieber",
+      "level": "A1",
+      "unit": "verben",
+      "title": {
+        "en": "gern, lieber, am liebsten",
+        "es": "gern, lieber, am liebsten",
+        "hu": "gern, lieber, am liebsten"
+      },
+      "blurb": {
+        "en": "Say what you like to do with gern, prefer with lieber and like best with am liebsten.",
+        "es": "Di qué te gusta hacer con gern, qué prefieres con lieber y qué te gusta más con am liebsten.",
+        "hu": "A gern-nel mondd el, mit csinálsz szívesen, a lieber-rel, mit részesítesz előnyben, az am liebsten-nel pedig, mit szeretsz a legjobban."
+      }
+    },
+    {
+      "id": "nominativ-akkusativ",
+      "level": "A1",
+      "unit": "kasus",
+      "title": {
+        "en": "Nominative and accusative",
+        "es": "Nominativo y acusativo",
+        "hu": "Alanyeset és tárgyeset"
+      },
+      "blurb": {
+        "en": "Who does it and what is it done to: only the masculine article changes (der -> den, ein -> einen); the case table.",
+        "es": "Quién lo hace y a qué se lo hace: solo cambia el artículo masculino (der -> den, ein -> einen); la tabla de casos.",
+        "hu": "Ki csinálja, és mire irányul: csak a hímnemű névelő változik (der -> den, ein -> einen); az esettábla."
+      }
+    },
+    {
+      "id": "possessivartikel",
+      "level": "A1",
+      "unit": "kasus",
+      "title": {
+        "en": "Possessive articles: mein, dein, sein",
+        "es": "Artículos posesivos: mein, dein, sein",
+        "hu": "Birtokos névelők: mein, dein, sein"
+      },
+      "blurb": {
+        "en": "mein, dein, sein, ihr, unser, euer, ihr, Ihr: endings like ein/kein; nominative and accusative.",
+        "es": "mein, dein, sein, ihr, unser, euer, ihr, Ihr: terminaciones como ein/kein; nominativo y acusativo.",
+        "hu": "mein, dein, sein, ihr, unser, euer, ihr, Ihr: az ein/kein ragjaival; alany- és tárgyeset."
+      }
+    },
+    {
+      "id": "praepositionen-akkusativ",
+      "level": "A1",
+      "unit": "kasus",
+      "title": {
+        "en": "Prepositions with the accusative",
+        "es": "Preposiciones con acusativo",
+        "hu": "Elöljárók tárgyesettel"
+      },
+      "blurb": {
+        "en": "für, ohne, durch, gegen, um always take the accusative; contraction fürs, ums, durchs.",
+        "es": "für, ohne, durch, gegen, um siempre llevan acusativo; contracciones fürs, ums, durchs.",
+        "hu": "A für, ohne, durch, gegen, um mindig tárgyesetet vonz; összevonások: fürs, ums, durchs."
+      }
+    },
+    {
+      "id": "praepositionen-dativ",
+      "level": "A1",
+      "unit": "kasus",
+      "title": {
+        "en": "Prepositions with the dative: mit, nach, aus, bei, zu",
+        "es": "Preposiciones con dativo: mit, nach, aus, bei, zu",
+        "hu": "Elöljárók részes esettel: mit, nach, aus, bei, zu"
+      },
+      "blurb": {
+        "en": "aus, bei, mit, nach, seit, von, zu always take the dative; dem, der, dem, den + -n; zum, zur, beim, vom.",
+        "es": "aus, bei, mit, nach, seit, von, zu siempre llevan dativo; dem, der, dem, den + -n; zum, zur, beim, vom.",
+        "hu": "Az aus, bei, mit, nach, seit, von, zu mindig részes esetet vonz; dem, der, dem, den + -n; zum, zur, beim, vom."
+      }
+    },
+    {
+      "id": "zahlen-uhrzeit-datum",
+      "level": "A1",
+      "unit": "zeit-ort",
+      "title": {
+        "en": "Numbers, time and dates",
+        "es": "Números, hora y fechas",
+        "hu": "Számok, óra és dátum"
+      },
+      "blurb": {
+        "en": "Numbers up to a million, one-and-twenty (einundzwanzig), the clock, days, months and ordinal dates.",
+        "es": "Números hasta un millón, einundzwanzig, la hora, los días, los meses y las fechas con ordinales.",
+        "hu": "Számok egymillióig, einundzwanzig, az óra, a napok, a hónapok és a dátum sorszámnévvel."
+      }
+    },
+    {
+      "id": "praepositionen-zeit-ort",
+      "level": "A1",
+      "unit": "zeit-ort",
+      "title": {
+        "en": "Prepositions of time and place: am, im, um, in, bei",
+        "es": "Preposiciones de tiempo y lugar: am, im, um, in, bei",
+        "hu": "Idő- és helyelöljárók: am, im, um, in, bei"
+      },
+      "blurb": {
+        "en": "am Montag, im Mai, um acht Uhr, in der Stadt, bei Anna: which small word for which time or place.",
+        "es": "am Montag, im Mai, um acht Uhr, in der Stadt, bei Anna: qué palabrita para qué tiempo o lugar.",
+        "hu": "am Montag, im Mai, um acht Uhr, in der Stadt, bei Anna: melyik kis szó melyik időhöz vagy helyhez."
+      }
+    },
+    {
+      "id": "wo-woher-wohin",
+      "level": "A1",
+      "unit": "zeit-ort",
+      "title": {
+        "en": "Where, where from, where to",
+        "es": "Dónde, de dónde, adónde",
+        "hu": "Hol, honnan, hová"
+      },
+      "blurb": {
+        "en": "wo, woher and wohin with in, aus, nach, zu: countries, cities, people and places.",
+        "es": "wo, woher y wohin con in, aus, nach, zu: países, ciudades, personas y lugares.",
+        "hu": "wo, woher és wohin az in, aus, nach, zu elöljárókkal: országok, városok, személyek és helyek."
+      }
+    },
+    {
+      "id": "perfekt-haben",
+      "level": "A1",
+      "unit": "perfekt",
+      "title": {
+        "en": "Perfect tense with haben",
+        "es": "Pretérito perfecto con haben",
+        "hu": "Befejezett múlt a haben igével"
+      },
+      "blurb": {
+        "en": "haben + participle (ge-...-t / ge-...-en): the everyday past tense, with the participle at the end.",
+        "es": "haben + participio (ge-...-t / ge-...-en): el pasado de todos los días, con el participio al final.",
+        "hu": "haben + igenév (ge-...-t / ge-...-en): a mindennapi múlt idő, az igenévvel a mondat végén."
+      }
+    },
+    {
+      "id": "perfekt-sein",
+      "level": "A1",
+      "unit": "perfekt",
+      "title": {
+        "en": "Perfect tense with sein",
+        "es": "Pretérito perfecto con sein",
+        "hu": "Befejezett múlt a sein igével"
+      },
+      "blurb": {
+        "en": "Verbs of movement and change take sein: ich bin gegangen, ich bin gefahren, ich bin gewesen.",
+        "es": "Los verbos de movimiento y de cambio llevan sein: ich bin gegangen, ich bin gefahren, ich bin gewesen.",
+        "hu": "A mozgást és változást kifejező igék sein-nel állnak: ich bin gegangen, ich bin gefahren, ich bin gewesen."
+      }
+    },
+    {
+      "id": "dativ-artikel",
+      "level": "A2",
+      "unit": "dativ",
+      "title": {
+        "en": "The dative: articles and nouns",
+        "es": "El dativo: artículos y sustantivos",
+        "hu": "A részes eset: névelők és főnevek"
+      },
+      "blurb": {
+        "en": "dem, der, dem, den + -n: who receives something, and the typical dative verbs geben, schenken, zeigen.",
+        "es": "dem, der, dem, den + -n: quién recibe algo, y los verbos típicos del dativo: geben, schenken, zeigen.",
+        "hu": "dem, der, dem, den + -n: ki kap valamit, és a tipikus részes esetű igék: geben, schenken, zeigen."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ",
+      "level": "A2",
+      "unit": "dativ",
+      "title": {
+        "en": "Personal pronouns in accusative and dative",
+        "es": "Pronombres personales en acusativo y dativo",
+        "hu": "Személyes névmások tárgy- és részes esetben"
+      },
+      "blurb": {
+        "en": "mich, dich, ihn, sie, es, uns, euch, sie and mir, dir, ihm, ihr, uns, euch, ihnen: the full table.",
+        "es": "mich, dich, ihn, sie, es, uns, euch, sie y mir, dir, ihm, ihr, uns, euch, ihnen: la tabla completa.",
+        "hu": "mich, dich, ihn, sie, es, uns, euch, sie és mir, dir, ihm, ihr, uns, euch, ihnen: a teljes táblázat."
+      }
+    },
+    {
+      "id": "verben-mit-dativ",
+      "level": "A2",
+      "unit": "dativ",
+      "title": {
+        "en": "Verbs with the dative",
+        "es": "Verbos con dativo",
+        "hu": "Részes esetet vonzó igék"
+      },
+      "blurb": {
+        "en": "helfen, gehören, gefallen, schmecken, passen, danken, antworten, wehtun: person in the dative.",
+        "es": "helfen, gehören, gefallen, schmecken, passen, danken, antworten, wehtun: la persona va en dativo.",
+        "hu": "helfen, gehören, gefallen, schmecken, passen, danken, antworten, wehtun: a személy részes esetben áll."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge",
+      "level": "A2",
+      "unit": "dativ",
+      "title": {
+        "en": "Word order of objects",
+        "es": "Orden de los complementos",
+        "hu": "A bővítmények szórendje"
+      },
+      "blurb": {
+        "en": "Dative before accusative with nouns, accusative before dative with pronouns; time, manner, place.",
+        "es": "Dativo antes de acusativo con sustantivos, acusativo antes de dativo con pronombres; tiempo, modo, lugar.",
+        "hu": "Főnevekkel a részes eset megelőzi a tárgyesetet, névmásokkal fordítva; idő, mód, hely."
+      }
+    },
+    {
+      "id": "wechselpraepositionen",
+      "level": "A2",
+      "unit": "lage-richtung",
+      "title": {
+        "en": "Two-way prepositions: wo or wohin?",
+        "es": "Preposiciones mixtas: ¿wo o wohin?",
+        "hu": "Kétféle esetet vonzó elöljárók: wo vagy wohin?"
+      },
+      "blurb": {
+        "en": "in, an, auf, über, unter, vor, hinter, neben, zwischen: dative for position (wo?), accusative for direction (wohin?).",
+        "es": "in, an, auf, über, unter, vor, hinter, neben, zwischen: dativo para la posición (wo?), acusativo para la dirección (wohin?).",
+        "hu": "in, an, auf, über, unter, vor, hinter, neben, zwischen: részes eset a helyzetre (wo?), tárgyeset az irányra (wohin?)."
+      }
+    },
+    {
+      "id": "positionsverben",
+      "level": "A2",
+      "unit": "lage-richtung",
+      "title": {
+        "en": "stehen or stellen? liegen or legen?",
+        "es": "¿stehen o stellen? ¿liegen o legen?",
+        "hu": "stehen vagy stellen? liegen vagy legen?"
+      },
+      "blurb": {
+        "en": "stehen/stellen, liegen/legen, sitzen/setzen, hängen/hängen: position verbs paired with the case.",
+        "es": "stehen/stellen, liegen/legen, sitzen/setzen, hängen/hängen: verbos de posición emparejados con el caso.",
+        "hu": "stehen/stellen, liegen/legen, sitzen/setzen, hängen/hängen: helyzetet és tevést kifejező igék az esettel párosítva."
+      }
+    },
+    {
+      "id": "partizip-ii-formen",
+      "level": "A2",
+      "unit": "vergangenheit",
+      "title": {
+        "en": "The participle: more verbs in the perfect",
+        "es": "El participio: más verbos en perfecto",
+        "hu": "Az igenév: több ige a befejezett múltban"
+      },
+      "blurb": {
+        "en": "Regular and irregular participles, separable and inseparable verbs, -ieren verbs, and the haben/sein choice in more verbs.",
+        "es": "Participios regulares e irregulares, verbos separables e inseparables, verbos en -ieren, y la elección haben/sein en más verbos.",
+        "hu": "Szabályos és szabálytalan igenevek, különváló és elválaszthatatlan igék, -ieren igék, és a haben/sein választás több igénél."
+      }
+    },
+    {
+      "id": "praeteritum-sein-haben",
+      "level": "A2",
+      "unit": "vergangenheit",
+      "title": {
+        "en": "Simple past of sein and haben",
+        "es": "Pretérito de sein y haben",
+        "hu": "A sein és a haben egyszerű múltja"
+      },
+      "blurb": {
+        "en": "war, warst, waren and hatte, hattest, hatten: the only simple-past forms every A2 learner needs in speech.",
+        "es": "war, warst, waren y hatte, hattest, hatten: las únicas formas del pretérito simple que todo alumno de A2 necesita al hablar.",
+        "hu": "war, warst, waren és hatte, hattest, hatten: az egyetlen egyszerű múlt alakok, amelyekre A2 szinten a beszédben szükséged van."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben",
+      "level": "A2",
+      "unit": "vergangenheit",
+      "title": {
+        "en": "Simple past of modal verbs",
+        "es": "Pretérito de los verbos modales",
+        "hu": "A módbeli segédigék egyszerű múltja"
+      },
+      "blurb": {
+        "en": "konnte, musste, wollte, durfte, sollte, mochte: no umlaut in the past, the infinitive at the end.",
+        "es": "konnte, musste, wollte, durfte, sollte, mochte: sin diéresis en el pasado, infinitivo al final.",
+        "hu": "konnte, musste, wollte, durfte, sollte, mochte: a múltban nincs umlaut, a főnévi igenév a végén áll."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass",
+      "level": "A2",
+      "unit": "nebensaetze",
+      "title": {
+        "en": "Subordinate clauses with weil and dass",
+        "es": "Oraciones subordinadas con weil y dass",
+        "hu": "Mellékmondatok weil és dass kötőszóval"
+      },
+      "blurb": {
+        "en": "weil (because) and dass (that) send the conjugated verb to the end of the clause; the comma is compulsory.",
+        "es": "weil (porque) y dass (que) mandan el verbo conjugado al final de la oración; la coma es obligatoria.",
+        "hu": "A weil (mert) és a dass (hogy) a ragozott igét a mellékmondat végére viszi; a vessző kötelező."
+      }
+    },
+    {
+      "id": "nebensatz-wenn-ob",
+      "level": "A2",
+      "unit": "nebensaetze",
+      "title": {
+        "en": "wenn and ob",
+        "es": "wenn y ob",
+        "hu": "wenn és ob"
+      },
+      "blurb": {
+        "en": "wenn for \"if\" and \"whenever\", ob for \"whether\" in indirect questions; W-question words as conjunctions.",
+        "es": "wenn para «si» y «cuando (siempre)», ob para «si» en preguntas indirectas; palabras interrogativas como conjunción.",
+        "hu": "A wenn jelentése ha és valahányszor, az ob jelentése hogy-e függő kérdésekben; kérdőszavak kötőszóként."
+      }
+    },
+    {
+      "id": "konnektoren-deshalb",
+      "level": "A2",
+      "unit": "nebensaetze",
+      "title": {
+        "en": "deshalb, darum, dann, trotzdem: connecting words",
+        "es": "deshalb, darum, dann, trotzdem: conectores",
+        "hu": "deshalb, darum, dann, trotzdem: kapcsolószavak"
+      },
+      "blurb": {
+        "en": "deshalb, deswegen, darum, dann, danach, außerdem: after them the verb comes straight away (position 2).",
+        "es": "deshalb, deswegen, darum, dann, danach, außerdem: tras ellos el verbo va enseguida (posición 2).",
+        "hu": "deshalb, deswegen, darum, dann, danach, außerdem: utánuk az ige azonnal következik (a második helyen)."
+      }
+    },
+    {
+      "id": "adjektivdeklination-nom-akk",
+      "level": "A2",
+      "unit": "adjektive",
+      "title": {
+        "en": "Adjectives before nouns: nominative and accusative",
+        "es": "Adjetivos antes del sustantivo: nominativo y acusativo",
+        "hu": "Melléknevek a főnév előtt: alany- és tárgyeset"
+      },
+      "blurb": {
+        "en": "der neue Computer, ein neuer Computer, neue Computer: -e or -en after der-words, the article ending after ein-words.",
+        "es": "der neue Computer, ein neuer Computer, neue Computer: -e o -en tras der-words, la terminación del artículo tras ein-words.",
+        "hu": "der neue Computer, ein neuer Computer, neue Computer: -e vagy -en a der-szavak után, a névelő végződése az ein-szavak után."
+      }
+    },
+    {
+      "id": "adjektivdeklination-dativ",
+      "level": "A2",
+      "unit": "adjektive",
+      "title": {
+        "en": "Adjectives before nouns: dative",
+        "es": "Adjetivos antes del sustantivo: dativo",
+        "hu": "Melléknevek a főnév előtt: részes eset"
+      },
+      "blurb": {
+        "en": "mit dem neuen Auto, mit einem neuen Auto, mit neuen Freunden: -en in the dative and plural.",
+        "es": "mit dem neuen Auto, mit einem neuen Auto, mit neuen Freunden: -en en dativo y plural.",
+        "hu": "mit dem neuen Auto, mit einem neuen Auto, mit neuen Freunden: -en részes esetben és többes számban."
+      }
+    },
+    {
+      "id": "komparativ-superlativ",
+      "level": "A2",
+      "unit": "adjektive",
+      "title": {
+        "en": "Comparison: bigger, biggest",
+        "es": "Comparación: más grande, el más grande",
+        "hu": "Fokozás: nagyobb, legnagyobb"
+      },
+      "blurb": {
+        "en": "-er, am -sten, umlaut and irregular forms (gut, besser, am besten), als and wie, and the endings before nouns.",
+        "es": "-er, am -sten, diéresis y formas irregulares (gut, besser, am besten), als y wie, y las terminaciones antes del sustantivo.",
+        "hu": "-er, am -sten, umlaut és szabálytalan alakok (gut, besser, am besten), als és wie, és a ragok főnév előtt."
+      }
+    },
+    {
+      "id": "reflexive-verben",
+      "level": "A2",
+      "unit": "pronomen-wortbildung",
+      "title": {
+        "en": "Reflexive verbs",
+        "es": "Verbos reflexivos",
+        "hu": "Visszaható igék"
+      },
+      "blurb": {
+        "en": "sich freuen, sich waschen, sich treffen: mich, dich, sich, uns, euch, sich; accusative and dative reflexive.",
+        "es": "sich freuen, sich waschen, sich treffen: mich, dich, sich, uns, euch, sich; reflexivo en acusativo y dativo.",
+        "hu": "sich freuen, sich waschen, sich treffen: mich, dich, sich, uns, euch, sich; tárgyesetű és részes esetű visszaható névmás."
+      }
+    },
+    {
+      "id": "demonstrativ-welcher-dieser",
+      "level": "A2",
+      "unit": "pronomen-wortbildung",
+      "title": {
+        "en": "dieser, welcher, jeder: der-words",
+        "es": "dieser, welcher, jeder: der-words",
+        "hu": "dieser, welcher, jeder: der-szavak"
+      },
+      "blurb": {
+        "en": "dieser, jeder, welcher, solcher and der/die/das as pronouns: pointing at things and choosing between them.",
+        "es": "dieser, jeder, welcher, solcher y der/die/das como pronombres: señalar cosas y elegir entre ellas.",
+        "hu": "dieser, jeder, welcher, solcher és a der/die/das mutató névmásként: rámutatás és választás."
+      }
+    },
+    {
+      "id": "indefinitpronomen",
+      "level": "A2",
+      "unit": "pronomen-wortbildung",
+      "title": {
+        "en": "man, jemand, niemand, etwas, nichts, alle",
+        "es": "man, jemand, niemand, etwas, nichts, alle",
+        "hu": "man, jemand, niemand, etwas, nichts, alle"
+      },
+      "blurb": {
+        "en": "man for \"you/one/they\", jemand, niemand, etwas, nichts, alles, alle, viele, einige: small words for people and things.",
+        "es": "man para «uno/se», jemand, niemand, etwas, nichts, alles, alle, viele, einige: palabras pequeñas para personas y cosas.",
+        "hu": "A man az általános alanyra, jemand, niemand, etwas, nichts, alles, alle, viele, einige: kis szavak személyekre és dolgokra."
+      }
+    },
+    {
+      "id": "komposita-wortbildung",
+      "level": "A2",
+      "unit": "pronomen-wortbildung",
+      "title": {
+        "en": "Compound nouns and word building",
+        "es": "Sustantivos compuestos y formación de palabras",
+        "hu": "Összetett főnevek és szóalkotás"
+      },
+      "blurb": {
+        "en": "Wohnzimmer, Handytasche, Lehrerin, Freundschaft: how German builds long words; the last part decides the article.",
+        "es": "Wohnzimmer, Handytasche, Lehrerin, Freundschaft: cómo el alemán forma palabras largas; la última parte decide el artículo.",
+        "hu": "Wohnzimmer, Handytasche, Lehrerin, Freundschaft: hogyan épít a német hosszú szavakat; az utolsó rész dönti el a névelőt."
+      }
+    },
+    {
+      "id": "praeteritum-schwache-starke",
+      "level": "B1",
+      "unit": "zeitformen",
+      "title": {
+        "en": "The simple past (Präteritum)",
+        "es": "El pretérito simple (Präteritum)",
+        "hu": "Az egyszerű múlt (Präteritum)"
+      },
+      "blurb": {
+        "en": "machte, ging, kam: weak and strong verbs, mixed verbs, and when to prefer the Präteritum to the Perfekt.",
+        "es": "machte, ging, kam: verbos débiles, fuertes y mixtos, y cuándo preferir el Präteritum al Perfekt.",
+        "hu": "machte, ging, kam: gyenge, erős és vegyes igék, és mikor érdemes a Präteritum-ot a Perfekt helyett használni."
+      }
+    },
+    {
+      "id": "futur-i",
+      "level": "B1",
+      "unit": "zeitformen",
+      "title": {
+        "en": "The future with werden",
+        "es": "El futuro con werden",
+        "hu": "A jövő idő a werden igével"
+      },
+      "blurb": {
+        "en": "werden + infinitive for plans, promises, predictions and guesses; the present with a time word is often enough.",
+        "es": "werden + infinitivo para planes, promesas, predicciones y suposiciones; el presente con una palabra de tiempo suele bastar.",
+        "hu": "werden + főnévi igenév tervekre, ígéretekre, jóslatokra és feltevésekre; az időhatározós jelen idő gyakran elég."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-wuensche-hoeflichkeit",
+      "level": "B1",
+      "unit": "konjunktiv",
+      "title": {
+        "en": "Konjunktiv II: wishes, advice and polite requests",
+        "es": "Konjunktiv II: deseos, consejos y peticiones corteses",
+        "hu": "Konjunktiv II: kívánság, tanács és udvarias kérés"
+      },
+      "blurb": {
+        "en": "würde + infinitive, hätte, wäre, könnte, sollte, möchte: Ich hätte gern..., Könnten Sie...? Du solltest...",
+        "es": "würde + infinitivo, hätte, wäre, könnte, sollte, möchte: Ich hätte gern..., ¿Könnten Sie...? Du solltest...",
+        "hu": "würde + főnévi igenév, hätte, wäre, könnte, sollte, möchte: Ich hätte gern..., Könnten Sie...? Du solltest..."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-irreale-saetze",
+      "level": "B1",
+      "unit": "konjunktiv",
+      "title": {
+        "en": "Konjunktiv II: unreal \"if\" sentences",
+        "es": "Konjunktiv II: oraciones condicionales irreales",
+        "hu": "Konjunktiv II: valótlan feltételes mondatok"
+      },
+      "blurb": {
+        "en": "Wenn ich Zeit hätte, würde ich reisen: unreal conditions about the present and the future.",
+        "es": "Wenn ich Zeit hätte, würde ich reisen: condiciones irreales sobre el presente y el futuro.",
+        "hu": "Wenn ich Zeit hätte, würde ich reisen: valótlan feltételek jelenre és jövőre."
+      }
+    },
+    {
+      "id": "passiv-praesens",
+      "level": "B1",
+      "unit": "passiv",
+      "title": {
+        "en": "The passive: werden + participle",
+        "es": "La voz pasiva: werden + participio",
+        "hu": "A szenvedő szerkezet: werden + igenév"
+      },
+      "blurb": {
+        "en": "Das Auto wird repariert: werden + Partizip II at the end; von for the doer; the passive is about the action, not the actor.",
+        "es": "Das Auto wird repariert: werden + Partizip II al final; von para el agente; la pasiva se centra en la acción, no en el actor.",
+        "hu": "Das Auto wird repariert: werden + Partizip II a végén; von a cselekvőre; a szenvedő a cselekvésről szól, nem a cselekvőről."
+      }
+    },
+    {
+      "id": "passiv-modalverben",
+      "level": "B1",
+      "unit": "passiv",
+      "title": {
+        "en": "The passive with modal verbs",
+        "es": "La pasiva con verbos modales",
+        "hu": "Szenvedő szerkezet módbeli segédigével"
+      },
+      "blurb": {
+        "en": "Das muss gemacht werden: modal + Partizip II + werden; rules and instructions.",
+        "es": "Das muss gemacht werden: modal + Partizip II + werden; reglas e instrucciones.",
+        "hu": "Das muss gemacht werden: módbeli segédige + Partizip II + werden; szabályok és utasítások."
+      }
+    },
+    {
+      "id": "relativsaetze-nom-akk",
+      "level": "B1",
+      "unit": "relativ",
+      "title": {
+        "en": "Relative clauses: nominative and accusative",
+        "es": "Oraciones de relativo: nominativo y acusativo",
+        "hu": "Vonatkozó mellékmondatok: alany- és tárgyeset"
+      },
+      "blurb": {
+        "en": "der Mann, der...; die Frau, die...; das Kind, das...: the pronoun takes gender and number from the noun, the case from its job in the clause.",
+        "es": "der Mann, der...; die Frau, die...; das Kind, das...: el pronombre toma género y número del sustantivo y el caso de su función en la oración.",
+        "hu": "der Mann, der...; die Frau, die...; das Kind, das...: a névmás neme és száma a főnévtől, esete a mondatbeli szerepétől függ."
+      }
+    },
+    {
+      "id": "relativsaetze-dativ-praep",
+      "level": "B1",
+      "unit": "relativ",
+      "title": {
+        "en": "Relative clauses: dative and prepositions",
+        "es": "Oraciones de relativo: dativo y preposiciones",
+        "hu": "Vonatkozó mellékmondatok: részes eset és elöljárók"
+      },
+      "blurb": {
+        "en": "der Mann, dem ich helfe; die Stadt, in der ich wohne: dative and preposition + relative pronoun.",
+        "es": "der Mann, dem ich helfe; die Stadt, in der ich wohne: dativo y preposición + pronombre relativo.",
+        "hu": "der Mann, dem ich helfe; die Stadt, in der ich wohne: részes eset és elöljáró + vonatkozó névmás."
+      }
+    },
+    {
+      "id": "nebensatz-temporal",
+      "level": "B1",
+      "unit": "nebensaetze-b1",
+      "title": {
+        "en": "Time clauses: als, wenn, bevor, nachdem, während, seit",
+        "es": "Oraciones temporales: als, wenn, bevor, nachdem, während, seit",
+        "hu": "Időhatározói mellékmondatok: als, wenn, bevor, nachdem, während, seit"
+      },
+      "blurb": {
+        "en": "als for one past occasion, wenn for repeated or future, bevor, nachdem, während, seit(dem), bis.",
+        "es": "als para una ocasión pasada, wenn para repetido o futuro, bevor, nachdem, während, seit(dem), bis.",
+        "hu": "Az als egyszeri múltbeli alkalomra, a wenn ismétlődőre vagy jövőre, bevor, nachdem, während, seit(dem), bis."
+      }
+    },
+    {
+      "id": "nebensatz-obwohl-damit",
+      "level": "B1",
+      "unit": "nebensaetze-b1",
+      "title": {
+        "en": "obwohl, damit, um ... zu, sodass",
+        "es": "obwohl, damit, um ... zu, sodass",
+        "hu": "obwohl, damit, um ... zu, sodass"
+      },
+      "blurb": {
+        "en": "concession (obwohl), purpose (damit, um ... zu) and result (sodass): choosing the right clause.",
+        "es": "concesión (obwohl), finalidad (damit, um ... zu) y consecuencia (sodass): elegir la oración correcta.",
+        "hu": "Megengedés (obwohl), cél (damit, um ... zu) és következmény (sodass): a megfelelő mellékmondat kiválasztása."
+      }
+    },
+    {
+      "id": "infinitiv-mit-zu",
+      "level": "B1",
+      "unit": "nebensaetze-b1",
+      "title": {
+        "en": "The infinitive with zu",
+        "es": "El infinitivo con zu",
+        "hu": "A főnévi igenév zu-val"
+      },
+      "blurb": {
+        "en": "Ich habe vor, nach Berlin zu fahren: zu before the infinitive, separable verbs (aufzustehen), and when no zu is used.",
+        "es": "Ich habe vor, nach Berlin zu fahren: zu antes del infinitivo, verbos separables (aufzustehen) y cuándo no se usa zu.",
+        "hu": "Ich habe vor, nach Berlin zu fahren: zu a főnévi igenév előtt, különváló igék (aufzustehen), és mikor nem kell zu."
+      }
+    },
+    {
+      "id": "genitiv",
+      "level": "B1",
+      "unit": "nomen-verben",
+      "title": {
+        "en": "The genitive",
+        "es": "El genitivo",
+        "hu": "A birtokos eset (Genitiv)"
+      },
+      "blurb": {
+        "en": "des Mannes, der Frau, des Kindes, der Kinder: possession, genitive prepositions (wegen, trotz, während, statt) and names (Annas Buch).",
+        "es": "des Mannes, der Frau, des Kindes, der Kinder: posesión, preposiciones con genitivo (wegen, trotz, während, statt) y nombres (Annas Buch).",
+        "hu": "des Mannes, der Frau, des Kindes, der Kinder: birtoklás, birtokos esetet vonzó elöljárók (wegen, trotz, während, statt) és nevek (Annas Buch)."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig",
+      "level": "B1",
+      "unit": "nomen-verben",
+      "title": {
+        "en": "Adjective endings: the full system",
+        "es": "Terminaciones del adjetivo: el sistema completo",
+        "hu": "Melléknévragozás: a teljes rendszer"
+      },
+      "blurb": {
+        "en": "After der, ein and with no article, in all four cases: genitive, plural, and the nominalised adjective (der Deutsche, etwas Neues).",
+        "es": "Tras der, ein y sin artículo, en los cuatro casos: genitivo, plural y el adjetivo sustantivado (der Deutsche, etwas Neues).",
+        "hu": "der, ein és névelő nélkül, mind a négy esetben: birtokos eset, többes szám és a főnevesült melléknév (der Deutsche, etwas Neues)."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen",
+      "level": "B1",
+      "unit": "nomen-verben",
+      "title": {
+        "en": "Verbs with prepositions and da-/wo- compounds",
+        "es": "Verbos con preposición y compuestos con da-/wo-",
+        "hu": "Elöljárós igék és a da-/wo- összetételek"
+      },
+      "blurb": {
+        "en": "warten auf, sich freuen über, denken an: learn the verb with its preposition and case; darauf, worauf, dafür, wofür.",
+        "es": "warten auf, sich freuen über, denken an: aprende el verbo con su preposición y caso; darauf, worauf, dafür, wofür.",
+        "hu": "warten auf, sich freuen über, denken an: az igét az elöljárójával és esetével tanuld; darauf, worauf, dafür, wofür."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial",
+      "level": "B1",
+      "unit": "satzbau-b1",
+      "title": {
+        "en": "Linking words: trotzdem, außerdem, entweder ... oder",
+        "es": "Conectores: trotzdem, außerdem, entweder ... oder",
+        "hu": "Kapcsolószavak: trotzdem, außerdem, entweder ... oder"
+      },
+      "blurb": {
+        "en": "adverbs that connect sentences (trotzdem, deshalb, außerdem, danach) and two-part connectors (sowohl ... als auch, weder ... noch, entweder ... oder, nicht nur ... sondern auch).",
+        "es": "adverbios que unen frases (trotzdem, deshalb, außerdem, danach) y conectores dobles (sowohl ... als auch, weder ... noch, entweder ... oder, nicht nur ... sondern auch).",
+        "hu": "Mondatokat összekötő határozószók (trotzdem, deshalb, außerdem, danach) és kettős kötőszók (sowohl ... als auch, weder ... noch, entweder ... oder, nicht nur ... sondern auch)."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo",
+      "level": "B1",
+      "unit": "satzbau-b1",
+      "title": {
+        "en": "Word order in the middle of the sentence",
+        "es": "Orden de las palabras en el medio de la frase",
+        "hu": "Szórend a mondat közepén"
+      },
+      "blurb": {
+        "en": "Time, reason, manner, place (temporal, kausal, modal, lokal), pronouns before nouns, nicht near the end.",
+        "es": "Tiempo, causa, modo, lugar (temporal, kausal, modal, lokal), pronombres antes de sustantivos, nicht cerca del final.",
+        "hu": "Idő, ok, mód, hely (temporal, kausal, modal, lokal), névmások a főnevek előtt, a nicht a vége felé."
+      }
+    },
+    {
+      "id": "plusquamperfekt",
+      "level": "B2",
+      "unit": "vergangenheit-passiv",
+      "title": {
+        "en": "The past perfect (Plusquamperfekt)",
+        "es": "El pluscuamperfecto (Plusquamperfekt)",
+        "hu": "A régmúlt (Plusquamperfekt)"
+      },
+      "blurb": {
+        "en": "hatte/war + Partizip II: what happened before another past event, with nachdem, als and bevor.",
+        "es": "hatte/war + Partizip II: lo que ocurrió antes de otro hecho pasado, con nachdem, als y bevor.",
+        "hu": "hatte/war + Partizip II: ami egy másik múltbeli esemény előtt történt, nachdem, als és bevor kötőszóval."
+      }
+    },
+    {
+      "id": "passiv-alle-zeiten",
+      "level": "B2",
+      "unit": "vergangenheit-passiv",
+      "title": {
+        "en": "The passive in all tenses",
+        "es": "La pasiva en todos los tiempos",
+        "hu": "A szenvedő szerkezet minden igeidőben"
+      },
+      "blurb": {
+        "en": "wurde gebaut, ist gebaut worden, wird gebaut werden, war gebaut worden; passive with modals.",
+        "es": "wurde gebaut, ist gebaut worden, wird gebaut werden, war gebaut worden; pasiva con modales.",
+        "hu": "wurde gebaut, ist gebaut worden, wird gebaut werden, war gebaut worden; szenvedő szerkezet módbeli segédigével."
+      }
+    },
+    {
+      "id": "passiversatz-zustandspassiv",
+      "level": "B2",
+      "unit": "vergangenheit-passiv",
+      "title": {
+        "en": "Alternatives to the passive and the state passive",
+        "es": "Alternativas a la pasiva y la pasiva de estado",
+        "hu": "A szenvedő helyettesítői és az állapotszenvedő"
+      },
+      "blurb": {
+        "en": "Die Tür ist geöffnet, man kann das machen, sich lassen, lässt sich, -bar and sein + zu.",
+        "es": "Die Tür ist geöffnet, man kann das machen, sich lassen, lässt sich, -bar y sein + zu.",
+        "hu": "Die Tür ist geöffnet, man kann das machen, sich lassen, lässt sich, -bar és sein + zu."
+      }
+    },
+    {
+      "id": "konjunktiv-i-indirekte-rede",
+      "level": "B2",
+      "unit": "konjunktiv-b2",
+      "title": {
+        "en": "Reported speech and Konjunktiv I",
+        "es": "El estilo indirecto y el Konjunktiv I",
+        "hu": "Függő beszéd és a Konjunktiv I"
+      },
+      "blurb": {
+        "en": "Er sagt, er komme: forms of Konjunktiv I, the replacement by Konjunktiv II and by würde, and the dass-clause.",
+        "es": "Er sagt, er komme: formas del Konjunktiv I, su sustitución por Konjunktiv II y por würde, y la oración con dass.",
+        "hu": "Er sagt, er komme: a Konjunktiv I alakjai, helyettesítésük Konjunktiv II-vel és würde-vel, és a dass-mondat."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit",
+      "level": "B2",
+      "unit": "konjunktiv-b2",
+      "title": {
+        "en": "Konjunktiv II in the past: hätte gemacht, wäre gegangen",
+        "es": "Konjunktiv II en pasado: hätte gemacht, wäre gegangen",
+        "hu": "Konjunktiv II a múltban: hätte gemacht, wäre gegangen"
+      },
+      "blurb": {
+        "en": "unreal past conditions: Wenn ich gewusst hätte, wäre ich gekommen; regrets, could-have, should-have.",
+        "es": "condiciones irreales del pasado: Wenn ich gewusst hätte, wäre ich gekommen; lamentos, podría haber, debería haber.",
+        "hu": "Valótlan múltbeli feltételek: Wenn ich gewusst hätte, wäre ich gekommen; megbánás, lehetett volna, kellett volna."
+      }
+    },
+    {
+      "id": "partizipien-als-adjektive",
+      "level": "B2",
+      "unit": "nomen-partizip",
+      "title": {
+        "en": "Participles as adjectives",
+        "es": "Participios como adjetivos",
+        "hu": "Igenevek melléknévként"
+      },
+      "blurb": {
+        "en": "der lesende Mann, das gekochte Ei, die geöffnete Tür: Partizip I (-d) and Partizip II used before a noun.",
+        "es": "der lesende Mann, das gekochte Ei, die geöffnete Tür: Partizip I (-d) y Partizip II antes de un sustantivo.",
+        "hu": "der lesende Mann, das gekochte Ei, die geöffnete Tür: a Partizip I (-d) és a Partizip II főnév előtt."
+      }
+    },
+    {
+      "id": "n-deklination",
+      "level": "B2",
+      "unit": "nomen-partizip",
+      "title": {
+        "en": "Weak masculine nouns (n-declension)",
+        "es": "Sustantivos masculinos débiles (declinación en -n)",
+        "hu": "Gyenge hímnemű főnevek (n-ragozás)"
+      },
+      "blurb": {
+        "en": "der Junge, den Jungen, dem Jungen, des Jungen: masculine nouns with -(e)n in every case except the nominative singular.",
+        "es": "der Junge, den Jungen, dem Jungen, des Jungen: sustantivos masculinos con -(e)n en todos los casos salvo el nominativo singular.",
+        "hu": "der Junge, den Jungen, dem Jungen, des Jungen: hímnemű főnevek, amelyek az alanyeset egyes számán kívül mindenhol -(e)n-t kapnak."
+      }
+    },
+    {
+      "id": "nominalisierung",
+      "level": "B2",
+      "unit": "nomen-partizip",
+      "title": {
+        "en": "Turning verbs and adjectives into nouns",
+        "es": "De verbos y adjetivos a sustantivos",
+        "hu": "Igék és melléknevek főnevesítése"
+      },
+      "blurb": {
+        "en": "die Entscheidung, das Lesen, die Schönheit: nominalised verbs and adjectives; clause to noun phrase.",
+        "es": "die Entscheidung, das Lesen, die Schönheit: verbos y adjetivos sustantivados; de oración a grupo nominal.",
+        "hu": "die Entscheidung, das Lesen, die Schönheit: főnevesített igék és melléknevek; mellékmondatból főnévi szerkezet."
+      }
+    },
+    {
+      "id": "nebensaetze-b2",
+      "level": "B2",
+      "unit": "satzgefuege",
+      "title": {
+        "en": "More subordinate clauses: indem, ohne dass, falls, je ... desto",
+        "es": "Más subordinadas: indem, ohne dass, falls, je ... desto",
+        "hu": "További mellékmondatok: indem, ohne dass, falls, je ... desto"
+      },
+      "blurb": {
+        "en": "indem, ohne dass, (an)statt dass, falls, sofern, als ob, je ... desto, sodass, so ... dass: reason, means, condition and degree.",
+        "es": "indem, ohne dass, (an)statt dass, falls, sofern, als ob, je ... desto, sodass, so ... dass: medio, condición y grado.",
+        "hu": "indem, ohne dass, (an)statt dass, falls, sofern, als ob, je ... desto, sodass, so ... dass: mód, feltétel és fok."
+      }
+    },
+    {
+      "id": "relativsaetze-genitiv-was-wo",
+      "level": "B2",
+      "unit": "satzgefuege",
+      "title": {
+        "en": "Relative clauses: dessen, deren, was, wo, wer",
+        "es": "Oraciones de relativo: dessen, deren, was, wo, wer",
+        "hu": "Vonatkozó mellékmondatok: dessen, deren, was, wo, wer"
+      },
+      "blurb": {
+        "en": "der Mann, dessen Auto...; alles, was...; das, was...; wo and wer as relative words; preposition + welch- in written style.",
+        "es": "der Mann, dessen Auto...; alles, was...; das, was...; wo y wer como relativos; preposición + welch- en estilo escrito.",
+        "hu": "der Mann, dessen Auto...; alles, was...; das, was...; wo és wer vonatkozó szóként; elöljáró + welch- írott stílusban."
+      }
+    },
+    {
+      "id": "nominalstil-verbalstil",
+      "level": "C1",
+      "unit": "stil",
+      "title": {
+        "en": "Nominal style and verbal style",
+        "es": "Estilo nominal y estilo verbal",
+        "hu": "Nominális és igei stílus"
+      },
+      "blurb": {
+        "en": "Wegen der Verspätung des Zuges vs Weil der Zug Verspätung hatte: choosing the register of academic and official writing.",
+        "es": "Wegen der Verspätung des Zuges frente a Weil der Zug Verspätung hatte: elegir el registro de la escritura académica y oficial.",
+        "hu": "Wegen der Verspätung des Zuges és Weil der Zug Verspätung hatte: az akadémiai és hivatalos írás stílusának megválasztása."
+      }
+    },
+    {
+      "id": "funktionsverbgefuege",
+      "level": "C1",
+      "unit": "stil",
+      "title": {
+        "en": "Verb-noun phrases: eine Entscheidung treffen",
+        "es": "Locuciones verbo-nominales: eine Entscheidung treffen",
+        "hu": "Ige-főnév szerkezetek: eine Entscheidung treffen"
+      },
+      "blurb": {
+        "en": "Fixed pairs like Rücksicht nehmen, in Frage kommen, zur Verfügung stellen: which light verb goes with which noun.",
+        "es": "Pares fijos como Rücksicht nehmen, in Frage kommen, zur Verfügung stellen: qué verbo ligero va con qué sustantivo.",
+        "hu": "Rögzített párok, mint Rücksicht nehmen, in Frage kommen, zur Verfügung stellen: melyik igét melyik főnévvel használjuk."
+      }
+    },
+    {
+      "id": "erweiterte-partizipialattribute",
+      "level": "C1",
+      "unit": "stil",
+      "title": {
+        "en": "Extended participle phrases before the noun",
+        "es": "Grupos participiales extendidos antes del sustantivo",
+        "hu": "Bővített igenévi jelzők a főnév előtt"
+      },
+      "blurb": {
+        "en": "der seit Jahren in Berlin lebende Autor: a whole relative clause packed in front of the noun.",
+        "es": "der seit Jahren in Berlin lebende Autor: toda una oración de relativo comprimida delante del sustantivo.",
+        "hu": "der seit Jahren in Berlin lebende Autor: egy egész vonatkozó mellékmondat a főnév előtt összesűrítve."
+      }
+    },
+    {
+      "id": "modalpartikeln",
+      "level": "C1",
+      "unit": "haltung",
+      "title": {
+        "en": "Modal particles: doch, mal, ja, eben",
+        "es": "Partículas modales: doch, mal, ja, eben",
+        "hu": "Módosítószók: doch, mal, ja, eben"
+      },
+      "blurb": {
+        "en": "doch, mal, ja, eben, halt, wohl, schon, denn, eigentlich: small words that carry attitude and tone.",
+        "es": "doch, mal, ja, eben, halt, wohl, schon, denn, eigentlich: palabras pequeñas que dan actitud y tono.",
+        "hu": "doch, mal, ja, eben, halt, wohl, schon, denn, eigentlich: kis szavak, amelyek hozzáállást és hangnemet fejeznek ki."
+      }
+    },
+    {
+      "id": "modalverben-vermutung",
+      "level": "C1",
+      "unit": "haltung",
+      "title": {
+        "en": "Modal verbs for assumptions and reports",
+        "es": "Verbos modales para suposiciones e informes",
+        "hu": "Módbeli segédigék feltevésre és közvetítésre"
+      },
+      "blurb": {
+        "en": "Er muss krank sein, er dürfte da sein, er soll reich sein, er will es gesehen haben: subjective use of the modals.",
+        "es": "Er muss krank sein, er dürfte da sein, er soll reich sein, er will es gesehen haben: uso subjetivo de los modales.",
+        "hu": "Er muss krank sein, er dürfte da sein, er soll reich sein, er will es gesehen haben: a módbeli segédigék szubjektív használata."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche",
+      "level": "C1",
+      "unit": "haltung",
+      "title": {
+        "en": "Subjunctive in unreal comparisons and reports",
+        "es": "Subjuntivo en comparaciones irreales y en el estilo indirecto",
+        "hu": "Konjunktiv valótlan összehasonlításokban és közvetítésben"
+      },
+      "blurb": {
+        "en": "als ob, als wenn, als + Konjunktiv II, so tun als ob, ohne dass; Konjunktiv I and II in complex reports and nuance.",
+        "es": "als ob, als wenn, als + Konjunktiv II, so tun als ob, ohne dass; Konjunktiv I y II en informes complejos y matices.",
+        "hu": "als ob, als wenn, als + Konjunktiv II, so tun als ob, ohne dass; Konjunktiv I és II összetett közvetítésben és árnyalásban."
+      }
+    }
+  ]
+}

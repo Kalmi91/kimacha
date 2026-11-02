@@ -65,6 +65,9 @@ import { importTs } from './lib/importTs.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
 const LANGS = ['en', 'es'];
+// Target languages whose lessons get only the language-neutral schema checks (the Spanish tokenizer, the vosotros rule and the
+// tense gate do not apply): the Hungarian course (word gate: the hu course check) and the German course (scripts/grammar-de-course-check.mjs).
+const NEUTRAL_TARGETS = new Set(['hu', 'de']);
 const LEVELS = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1']; // C2 frozen, excluded
 
 // ---------------------------------------------------------------------------
@@ -751,8 +754,8 @@ function auditFormItem(item, itemPath, topic, tableIds, lang = 'es') {
     p1.push({ path: itemPath, issue: `form item references unknown table "${item.table}"` });
     return;
   }
-  // hu: the table is a hint (suffix patterns), person is the slot ("-ban/-ben"), not a conjugation row/column to look up.
-  if (lang === 'hu') return;
+  // hu/de: the table is a hint (suffix patterns), person is the slot ("-ban/-ben"), not necessarily a conjugation row/column to look up.
+  if (NEUTRAL_TARGETS.has(lang)) return;
   const table = topic.body.find((b) => b.kind === 'table' && b.id === item.table);
   // Multi-verb table (header: Person | hablar | comer | vivir): the verb's column is given by the
   // `es` cell of the header; for a single-verb table (Person | ser) the second column.
@@ -778,8 +781,8 @@ function auditWhyItem(item, itemPath, lang = 'es') {
     p1.push({ path: itemPath, issue: `why item correctIndex ${item.correctIndex} out of range` });
   }
   if (!item.es) p1.push({ path: itemPath, issue: 'why item missing es' });
-  // hu: tr holds the English and Spanish translations of the Hungarian sentence, so there is no tr.hu to equal es.
-  if (lang !== 'hu') {
+  // hu/de: tr holds the English and Spanish translations of the Hungarian or German sentence, so there is no tr.<lang> to equal es.
+  if (!NEUTRAL_TARGETS.has(lang)) {
     if (item.es && item.tr?.[lang] !== item.es) p1.push({ path: itemPath, issue: `why item tr.${lang} must equal es` });
   } else {
     checkLangs(item.tr, `${itemPath} tr`);
@@ -945,9 +948,10 @@ function auditGrammarTopic(topic, filePath, lang = 'es') {
   const tableIds = isV2 ? tableIdsOf(topic) : null;
 
   const isEn = lang === 'en';
-  // Hungarian (target hu): only the language-neutral schema checks run. The word gate (known words, glossary) is
-  // C:AIai-workspacekimachahu-kurzuscheck.cjs; the Spanish tokenizer, vosotros and the tense gate do not apply.
-  const isHu = lang === 'hu';
+  // Hungarian and German (targets hu, de): only the language-neutral schema checks run. The word gate (known words, glossary) of
+  // the hu course is C:AIai-workspacekimachahu-kurzuscheck.cjs, that of the de course is scripts/grammar-de-course-check.mjs; the Spanish
+  // tokenizer, vosotros and the tense gate do not apply.
+  const isHu = NEUTRAL_TARGETS.has(lang);
   const taughtSet = isHu ? new Set() : isEn ? cumulativeTaughtEn(topic.level ?? 'C1') : cumulativeTaught(topic.level ?? 'C1');
   const extra = isHu ? new Set() : glossaryTokenSet(topic.glossary, lang);
   const norm = isEn ? normalizeEn : normalize;

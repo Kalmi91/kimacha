@@ -1,0 +1,1191 @@
+{
+  "schema": 2,
+  "topic": "plural-nomen",
+  "level": "A1",
+  "title": {
+    "en": "The plural of nouns",
+    "es": "El plural de los sustantivos"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In the plural the article is always die, and the noun changes in one of five ways: -e (Tage), -er (Kinder), -(e)n (Frauen), -s (Autos) or no ending (Lehrer). Many nouns also get an umlaut (Haus becomes Häuser). There is no safe rule, so learn the plural together with the noun: der Tisch, die Tische. But a few rules of thumb help a lot, and you will find them below.",
+        "es": "En plural el artículo es siempre die, y el sustantivo cambia de una de cinco maneras: -e (Tage), -er (Kinder), -(e)n (Frauen), -s (Autos) o sin terminación (Lehrer). Muchos sustantivos además llevan diéresis (Haus pasa a Häuser). No hay una regla segura, así que aprende el plural junto con el sustantivo: der Tisch, die Tische. Pero unas reglas generales ayudan mucho, y las encontrarás abajo."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "plural-typen",
+      "title": {
+        "en": "The five plural types",
+        "es": "Los cinco tipos de plural"
+      },
+      "header": [
+        {
+          "en": "Type",
+          "es": "Tipo"
+        },
+        {
+          "en": "Singular",
+          "es": "Singular"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "-e",
+          "der Tag",
+          "die Tage"
+        ],
+        [
+          "-e + umlaut",
+          "die Stadt",
+          "die Städte"
+        ],
+        [
+          "-er",
+          "das Kind",
+          "die Kinder"
+        ],
+        [
+          "-er + umlaut",
+          "das Haus",
+          "die Häuser"
+        ],
+        [
+          "-n",
+          "die Tasche",
+          "die Taschen"
+        ],
+        [
+          "-en",
+          "die Frau",
+          "die Frauen"
+        ],
+        [
+          "-nen",
+          "die Lehrerin",
+          "die Lehrerinnen"
+        ],
+        [
+          "-s",
+          "das Auto",
+          "die Autos"
+        ],
+        [
+          "no ending",
+          "der Lehrer",
+          "die Lehrer"
+        ],
+        [
+          "umlaut only",
+          "der Vater",
+          "die Väter"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Rules of thumb",
+        "es": "Reglas generales"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "-e: many masculine nouns and a few others (der Tag, der Hund, der Tisch). Short feminine words often add -e with an umlaut (die Stadt becomes die Städte).",
+            "es": "-e: muchos sustantivos masculinos y unos pocos más (der Tag, der Hund, der Tisch). Las palabras femeninas cortas suelen añadir -e con diéresis (die Stadt pasa a die Städte)."
+          },
+          "examples": [
+            {
+              "es": "Die Tage sind lang.",
+              "tr": {
+                "en": "The days are long.",
+                "es": "Los días son largos."
+              }
+            },
+            {
+              "es": "Die Hunde sind klein.",
+              "tr": {
+                "en": "The dogs are small.",
+                "es": "Los perros son pequeños."
+              }
+            },
+            {
+              "es": "Die Städte sind groß.",
+              "tr": {
+                "en": "The cities are big.",
+                "es": "Las ciudades son grandes."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-er: many neuter nouns and a few masculine ones. The vowels a, o, u always get an umlaut: ä, ö, ü (das Haus becomes die Häuser, das Buch becomes die Bücher, der Mann becomes die Männer).",
+            "es": "-er: muchos sustantivos neutros y unos pocos masculinos. Las vocales a, o, u siempre llevan diéresis: ä, ö, ü (das Haus pasa a die Häuser, das Buch pasa a die Bücher, der Mann pasa a die Männer)."
+          },
+          "examples": [
+            {
+              "es": "Die Kinder spielen.",
+              "tr": {
+                "en": "The children play.",
+                "es": "Los niños juegan."
+              }
+            },
+            {
+              "es": "Die Häuser sind alt.",
+              "tr": {
+                "en": "The houses are old.",
+                "es": "Las casas son viejas."
+              }
+            },
+            {
+              "es": "Die Männer arbeiten.",
+              "tr": {
+                "en": "The men work.",
+                "es": "Los hombres trabajan."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-(e)n: most feminine nouns (die Frau, die Tasche, die Uhr, die Zeitung). The ending -in becomes -innen (die Lehrerin becomes die Lehrerinnen). Nouns ending in -e take -n, the others take -en.",
+            "es": "-(e)n: la mayoría de los sustantivos femeninos (die Frau, die Tasche, die Uhr, die Zeitung). La terminación -in pasa a -innen (die Lehrerin pasa a die Lehrerinnen). Los que terminan en -e llevan -n, los demás -en."
+          },
+          "examples": [
+            {
+              "es": "Die Frauen kommen aus Spanien.",
+              "tr": {
+                "en": "The women come from Spain.",
+                "es": "Las mujeres vienen de España."
+              }
+            },
+            {
+              "es": "Die Taschen sind rot.",
+              "tr": {
+                "en": "The bags are red.",
+                "es": "Las bolsas son rojas."
+              }
+            },
+            {
+              "es": "Die Lehrerinnen sind nett.",
+              "tr": {
+                "en": "The teachers are nice.",
+                "es": "Las maestras son amables."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "-s: words from other languages and short or new words (das Auto, das Hotel, das Handy, das Café). Do not use -s as a general rule!",
+            "es": "-s: palabras de otros idiomas y palabras cortas o nuevas (das Auto, das Hotel, das Handy, das Café). ¡No uses -s como regla general!"
+          },
+          "examples": [
+            {
+              "es": "Die Autos sind neu.",
+              "tr": {
+                "en": "The cars are new.",
+                "es": "Los carros son nuevos."
+              }
+            },
+            {
+              "es": "Die Hotels sind groß.",
+              "tr": {
+                "en": "The hotels are big.",
+                "es": "Los hoteles son grandes."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "No ending: nouns ending in -er, -el, -en and -chen (der Lehrer, der Kuchen, das Mädchen). Some get an umlaut (der Vater becomes die Väter, der Apfel becomes die Äpfel). Only the article die and the verb show that it is plural.",
+            "es": "Sin terminación: sustantivos que terminan en -er, -el, -en y -chen (der Lehrer, der Kuchen, das Mädchen). Algunos llevan diéresis (der Vater pasa a die Väter, der Apfel pasa a die Äpfel). Solo el artículo die y el verbo muestran que es plural."
+          },
+          "examples": [
+            {
+              "es": "Die Lehrer arbeiten hier.",
+              "tr": {
+                "en": "The teachers work here.",
+                "es": "Los maestros trabajan aquí."
+              }
+            },
+            {
+              "es": "Die Mädchen spielen Tennis.",
+              "tr": {
+                "en": "The girls play tennis.",
+                "es": "Las niñas juegan tenis."
+              }
+            },
+            {
+              "es": "Die Äpfel sind gut.",
+              "tr": {
+                "en": "The apples are good.",
+                "es": "Las manzanas están buenas."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nomen-plural",
+      "title": {
+        "en": "Nouns and their plurals",
+        "es": "Sustantivos y sus plurales"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "Plural",
+          "es": "Plural"
+        }
+      ],
+      "rows": [
+        [
+          "Tag",
+          "die Tage"
+        ],
+        [
+          "Tisch",
+          "die Tische"
+        ],
+        [
+          "Hund",
+          "die Hunde"
+        ],
+        [
+          "Stadt",
+          "die Städte"
+        ],
+        [
+          "Kind",
+          "die Kinder"
+        ],
+        [
+          "Haus",
+          "die Häuser"
+        ],
+        [
+          "Mann",
+          "die Männer"
+        ],
+        [
+          "Buch",
+          "die Bücher"
+        ],
+        [
+          "Frau",
+          "die Frauen"
+        ],
+        [
+          "Tasche",
+          "die Taschen"
+        ],
+        [
+          "Zeitung",
+          "die Zeitungen"
+        ],
+        [
+          "Lehrerin",
+          "die Lehrerinnen"
+        ],
+        [
+          "Auto",
+          "die Autos"
+        ],
+        [
+          "Hotel",
+          "die Hotels"
+        ],
+        [
+          "Lehrer",
+          "die Lehrer"
+        ],
+        [
+          "Mädchen",
+          "die Mädchen"
+        ],
+        [
+          "Vater",
+          "die Väter"
+        ],
+        [
+          "Apfel",
+          "die Äpfel"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The plural in a sentence",
+        "es": "El plural en la frase"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After a number or a word like viele the noun is plural: zwei Kinder, drei Autos. A plural subject also needs a plural verb (sind, haben, -en).",
+            "es": "Después de un número o de una palabra como viele el sustantivo va en plural: zwei Kinder, drei Autos. Un sujeto plural necesita también un verbo plural (sind, haben, -en)."
+          },
+          "examples": [
+            {
+              "es": "Ich habe zwei Kinder.",
+              "tr": {
+                "en": "I have two children.",
+                "es": "Tengo dos hijos."
+              }
+            },
+            {
+              "es": "Die Kinder sind hier.",
+              "tr": {
+                "en": "The children are here.",
+                "es": "Los niños están aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Some words have no plural (das Wasser, das Brot, der Kaffee: mass nouns) and some have only the plural (die Eltern, die Leute, die Ferien). Learn them as they are.",
+            "es": "Algunas palabras no tienen plural (das Wasser, das Brot, der Kaffee: sustantivos incontables) y otras solo existen en plural (die Eltern, die Leute, die Ferien). Apréndelas tal cual."
+          },
+          "examples": [
+            {
+              "es": "Die Eltern wohnen in Berlin.",
+              "tr": {
+                "en": "The parents live in Berlin.",
+                "es": "Los papás viven en Berlín."
+              }
+            },
+            {
+              "es": "Das Wasser ist kalt.",
+              "tr": {
+                "en": "The water is cold.",
+                "es": "El agua está fría."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Singular or plural?",
+        "es": "¿Singular o plural?"
+      },
+      "pairs": [
+        {
+          "a": "Das Kind ist hier.",
+          "b": "Die Kinder sind hier.",
+          "note": {
+            "en": "Plural: die instead of das, an ending on the noun, and a plural verb (sind).",
+            "es": "Plural: die en lugar de das, una terminación en el sustantivo y un verbo plural (sind)."
+          },
+          "examples": [
+            {
+              "es": "Das Auto ist neu.",
+              "tr": {
+                "en": "The car is new.",
+                "es": "El carro es nuevo."
+              }
+            },
+            {
+              "es": "Die Autos sind neu.",
+              "tr": {
+                "en": "The cars are new.",
+                "es": "Los carros son nuevos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Der Lehrer wohnt in Berlin.",
+          "b": "Die Lehrer wohnen in Berlin.",
+          "note": {
+            "en": "Some nouns do not change in the plural. Then only the article (der or die) and the verb (wohnt or wohnen) show the number.",
+            "es": "Algunos sustantivos no cambian en plural. Entonces solo el artículo (der o die) y el verbo (wohnt o wohnen) muestran el número."
+          },
+          "examples": [
+            {
+              "es": "Der Apfel ist gut.",
+              "tr": {
+                "en": "The apple is good.",
+                "es": "La manzana está buena."
+              }
+            },
+            {
+              "es": "Die Äpfel sind gut.",
+              "tr": {
+                "en": "The apples are good.",
+                "es": "Las manzanas están buenas."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not put -s on everything (not Kinds, not Tischs); do not forget the umlaut (Häuser, not Hauser); and after a number the noun is plural (zwei Kinder, not zwei Kind). In the dictionary a noun looks like this: Tisch, der, -e. That means: der Tisch, die Tische.",
+        "es": "Trampas clásicas: no pongas -s a todo (no Kinds, no Tischs); no olvides la diéresis (Häuser, no Hauser); y después de un número el sustantivo va en plural (zwei Kinder, no zwei Kind). En el diccionario un sustantivo aparece así: Tisch, der, -e. Eso significa: der Tisch, die Tische."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In the plural the article is always «die». The noun changes in five ways: it takes «e», as in «die Tage», or «er», as in «die Kinder», or «n» or «en», as in «die Frauen», or «s», as in «die Autos», or it has no ending, as in «die Lehrer». Many nouns also get an umlaut: «das Haus» becomes «die Häuser». So learn the plural together with the noun. After a number the noun is plural: «zwei Kinder». A plural subject needs a plural verb: «die Kinder sind hier».",
+    "es": "En plural el artículo es siempre «die». El sustantivo cambia de cinco maneras: lleva «e», como en «die Tage», o «er», como en «die Kinder», o «n» o «en», como en «die Frauen», o «s», como en «die Autos», o no tiene terminación, como en «die Lehrer». Muchos sustantivos además llevan diéresis: «das Haus» pasa a «die Häuser». Por eso aprende el plural junto con el sustantivo. Después de un número el sustantivo va en plural: «zwei Kinder». Un sujeto plural necesita un verbo plural: «die Kinder sind hier»."
+  },
+  "items": [
+    {
+      "id": "plural-nomen-c01",
+      "sentence": "Ich habe zwei ___.",
+      "options": [
+        "Kinde",
+        "Kinder",
+        "Kinds"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The plural of das Kind is die Kinder, with the ending -er.",
+        "es": "El plural de das Kind es die Kinder, con la terminación -er."
+      },
+      "wrong": {
+        "Kinde": {
+          "en": "Kinde is not a German plural. The plural of Kind takes -er, not -e.",
+          "es": "Kinde no es un plural alemán. El plural de Kind lleva -er, no -e."
+        },
+        "Kinds": {
+          "en": "The ending -s is for words from other languages. Kind is a German word and takes -er.",
+          "es": "La terminación -s es para palabras de otros idiomas. Kind es una palabra alemana y lleva -er."
+        }
+      },
+      "examples": [
+        "Die Kinder spielen.",
+        "Ich habe drei Kinder."
+      ],
+      "tr": {
+        "en": "I have two children.",
+        "es": "Tengo dos hijos."
+      }
+    },
+    {
+      "id": "plural-nomen-f01",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Tag",
+      "answer": "die Tage",
+      "accept": [
+        "Tage"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c02",
+      "sentence": "Dort sind drei ___.",
+      "options": [
+        "Autos",
+        "Autoen",
+        "Auto"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Words like Auto, from other languages, take -s: das Auto, die Autos.",
+        "es": "Las palabras como Auto, de otros idiomas, llevan -s: das Auto, die Autos."
+      },
+      "wrong": {
+        "Autoen": {
+          "en": "Autoen does not exist. The plural of Auto is formed only with -s.",
+          "es": "Autoen no existe. El plural de Auto se forma solo con -s."
+        },
+        "Auto": {
+          "en": "After the number drei the noun must be plural. Auto alone is the singular.",
+          "es": "Después del número drei el sustantivo debe ir en plural. Auto solo es el singular."
+        }
+      },
+      "examples": [
+        "Die Autos sind neu.",
+        "Dort sind zwei Hotels."
+      ],
+      "tr": {
+        "en": "There are three cars over there.",
+        "es": "Allí hay tres carros."
+      }
+    },
+    {
+      "id": "plural-nomen-f02",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Mann",
+      "answer": "die Männer",
+      "accept": [
+        "Männer"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c03",
+      "sentence": "Die ___ sind klein.",
+      "options": [
+        "Hunden",
+        "Hünde",
+        "Hunde"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The plural of der Hund is die Hunde, with the ending -e and no umlaut.",
+        "es": "El plural de der Hund es die Hunde, con la terminación -e y sin diéresis."
+      },
+      "wrong": {
+        "Hunden": {
+          "en": "The ending -n appears only in the dative plural, which you learn later. The plain plural is Hunde.",
+          "es": "La terminación -n aparece solo en el dativo plural, que verás más adelante. El plural simple es Hunde."
+        },
+        "Hünde": {
+          "en": "Hund does not take an umlaut in the plural. Only some nouns do, for example Stadt and Haus.",
+          "es": "Hund no lleva diéresis en plural. Solo algunos sustantivos la llevan, por ejemplo Stadt y Haus."
+        }
+      },
+      "examples": [
+        "Die Hunde sind nett.",
+        "Die Tage sind lang."
+      ],
+      "tr": {
+        "en": "The dogs are small.",
+        "es": "Los perros son pequeños."
+      }
+    },
+    {
+      "id": "plural-nomen-f03",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Tasche",
+      "answer": "die Taschen",
+      "accept": [
+        "Taschen"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-w01",
+      "kind": "why",
+      "es": "Die Kinder spielen.",
+      "target": "Kinder",
+      "tr": {
+        "en": "The children play.",
+        "es": "Los niños juegan."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-er: many neuter nouns take -er in the plural",
+            "es": "-er: muchos sustantivos neutros llevan -er en plural"
+          }
+        },
+        {
+          "text": {
+            "en": "-s: the plural is formed by adding s",
+            "es": "-s: el plural se forma añadiendo s"
+          },
+          "wrong": {
+            "en": "-s is for words from other languages. Kind is German, and most German neuter words take -er or -e.",
+            "es": "-s es para palabras de otros idiomas. Kind es alemán, y la mayoría de las palabras neutras alemanas llevan -er o -e."
+          }
+        },
+        {
+          "text": {
+            "en": "-e: every noun takes -e",
+            "es": "-e: todo sustantivo lleva -e"
+          },
+          "wrong": {
+            "en": "Many nouns take -e, but not Kind. The neuter noun Kind takes -er, so the plural is Kinder.",
+            "es": "Muchos sustantivos llevan -e, pero no Kind. El sustantivo neutro Kind lleva -er, así que el plural es Kinder."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "plural-nomen-c04",
+      "sentence": "Zwei ___ kommen aus Mexiko.",
+      "options": [
+        "Frau",
+        "Fraun",
+        "Frauen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Feminine nouns mostly take -(e)n: die Frau, die Frauen.",
+        "es": "Los sustantivos femeninos suelen llevar -(e)n: die Frau, die Frauen."
+      },
+      "wrong": {
+        "Frau": {
+          "en": "After zwei the noun has to be plural. Frau alone is the singular.",
+          "es": "Después de zwei el sustantivo debe ir en plural. Frau solo es el singular."
+        },
+        "Fraun": {
+          "en": "The ending is written -en in full: Frauen. Fraun is not a correct spelling.",
+          "es": "La terminación se escribe completa, -en: Frauen. Fraun no es una escritura correcta."
+        }
+      },
+      "examples": [
+        "Die Frauen sind nett.",
+        "Die Uhren sind neu."
+      ],
+      "tr": {
+        "en": "Two women come from Mexico.",
+        "es": "Dos mujeres vienen de México."
+      }
+    },
+    {
+      "id": "plural-nomen-f04",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Auto",
+      "answer": "die Autos",
+      "accept": [
+        "Autos"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c05",
+      "sentence": "Die ___ sind alt.",
+      "options": [
+        "Hauser",
+        "Häuser",
+        "Hausen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Haus takes -er and an umlaut: die Häuser. With -er, an a, o or u becomes ä, ö or ü.",
+        "es": "Haus lleva -er y diéresis: die Häuser. Con -er, una a, o o u pasa a ä, ö o ü."
+      },
+      "wrong": {
+        "Hauser": {
+          "en": "The ending -er is right, but the vowel needs an umlaut: Häuser. Without it the word is misspelled.",
+          "es": "La terminación -er es correcta, pero la vocal necesita diéresis: Häuser. Sin ella la palabra está mal escrita."
+        },
+        "Hausen": {
+          "en": "Hausen is not the plural of Haus. A neuter noun like Haus takes -er and an umlaut.",
+          "es": "Hausen no es el plural de Haus. Un sustantivo neutro como Haus lleva -er y diéresis."
+        }
+      },
+      "examples": [
+        "Die Häuser sind groß.",
+        "Die Bücher sind neu."
+      ],
+      "tr": {
+        "en": "The houses are old.",
+        "es": "Las casas son viejas."
+      }
+    },
+    {
+      "id": "plural-nomen-f05",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Stadt",
+      "answer": "die Städte",
+      "accept": [
+        "Städte"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c06",
+      "sentence": "Wir haben zwei ___.",
+      "options": [
+        "Bücher",
+        "Buchs",
+        "Büchen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Buch takes -er with an umlaut: das Buch, die Bücher.",
+        "es": "Buch lleva -er con diéresis: das Buch, die Bücher."
+      },
+      "wrong": {
+        "Buchs": {
+          "en": "The ending -s is for foreign words. Buch is a German neuter noun and takes -er plus an umlaut.",
+          "es": "La terminación -s es para palabras extranjeras. Buch es un sustantivo neutro alemán y lleva -er más diéresis."
+        },
+        "Büchen": {
+          "en": "The umlaut is right, but the ending is -er, not -en: Bücher.",
+          "es": "La diéresis es correcta, pero la terminación es -er, no -en: Bücher."
+        }
+      },
+      "examples": [
+        "Die Bücher sind gut.",
+        "Ich habe viele Bücher."
+      ],
+      "tr": {
+        "en": "We have two books.",
+        "es": "Tenemos dos libros."
+      }
+    },
+    {
+      "id": "plural-nomen-f06",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Zeitung",
+      "answer": "die Zeitungen",
+      "accept": [
+        "Zeitungen"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-w02",
+      "kind": "why",
+      "es": "Die Häuser sind alt.",
+      "target": "Häuser",
+      "tr": {
+        "en": "The houses are old.",
+        "es": "Las casas son viejas."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-er without an umlaut",
+            "es": "-er sin diéresis"
+          },
+          "wrong": {
+            "en": "With -er the vowels a, o and u almost always get an umlaut. Hauser would be wrong.",
+            "es": "Con -er las vocales a, o y u casi siempre llevan diéresis. Hauser sería incorrecto."
+          }
+        },
+        {
+          "text": {
+            "en": "-er with an umlaut: a, o and u become ä, ö and ü",
+            "es": "-er con diéresis: a, o y u pasan a ä, ö y ü"
+          }
+        },
+        {
+          "text": {
+            "en": "-s: short words take -s",
+            "es": "-s: las palabras cortas llevan -s"
+          },
+          "wrong": {
+            "en": "Haus is a short word, but -s is for foreign words. The plural of Haus is Häuser.",
+            "es": "Haus es una palabra corta, pero -s es para palabras extranjeras. El plural de Haus es Häuser."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "plural-nomen-c07",
+      "sentence": "Die ___ arbeiten in der Schule.",
+      "options": [
+        "Lehrern",
+        "Lehrer",
+        "Lehrers"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Nouns ending in -er have no extra ending in the plural: der Lehrer, die Lehrer. Only die and arbeiten show the plural.",
+        "es": "Los sustantivos que terminan en -er no llevan terminación extra en plural: der Lehrer, die Lehrer. Solo die y arbeiten muestran el plural."
+      },
+      "wrong": {
+        "Lehrern": {
+          "en": "An extra -n appears only in the dative plural, which comes later. The plain plural is Lehrer.",
+          "es": "Una -n extra aparece solo en el dativo plural, que viene después. El plural simple es Lehrer."
+        },
+        "Lehrers": {
+          "en": "The ending -s is not used for Lehrer. In the plural the noun stays as it is.",
+          "es": "La terminación -s no se usa con Lehrer. En plural el sustantivo se queda como está."
+        }
+      },
+      "examples": [
+        "Die Lehrer sind nett.",
+        "Die Mädchen spielen."
+      ],
+      "tr": {
+        "en": "The teachers work at the school.",
+        "es": "Los maestros trabajan en la escuela."
+      }
+    },
+    {
+      "id": "plural-nomen-f07",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Vater",
+      "answer": "die Väter",
+      "accept": [
+        "Väter"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c08",
+      "sentence": "Ich esse drei ___.",
+      "options": [
+        "Äpfel",
+        "Apfel",
+        "Apfels"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Apfel takes an umlaut and no ending: der Apfel, die Äpfel.",
+        "es": "Apfel lleva diéresis y ninguna terminación: der Apfel, die Äpfel."
+      },
+      "wrong": {
+        "Apfel": {
+          "en": "Apfel is the singular. After drei the noun must be plural, and this plural needs the umlaut: Äpfel.",
+          "es": "Apfel es el singular. Después de drei el sustantivo debe ir en plural, y este plural necesita diéresis: Äpfel."
+        },
+        "Apfels": {
+          "en": "The ending -s is not right for Apfel. The plural is formed with an umlaut only.",
+          "es": "La terminación -s no es correcta para Apfel. El plural se forma solo con diéresis."
+        }
+      },
+      "examples": [
+        "Die Äpfel sind rot.",
+        "Die Väter kochen."
+      ],
+      "tr": {
+        "en": "I eat three apples.",
+        "es": "Como tres manzanas."
+      }
+    },
+    {
+      "id": "plural-nomen-f08",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Haus",
+      "answer": "die Häuser",
+      "accept": [
+        "Häuser"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c09",
+      "sentence": "Die ___ sind lang.",
+      "options": [
+        "Tags",
+        "Tage",
+        "Tagen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Many masculine nouns take -e: der Tag, die Tage.",
+        "es": "Muchos sustantivos masculinos llevan -e: der Tag, die Tage."
+      },
+      "wrong": {
+        "Tags": {
+          "en": "The ending -s is for foreign words. Tag is a German word, and its plural ends in -e.",
+          "es": "La terminación -s es para palabras extranjeras. Tag es una palabra alemana, y su plural termina en -e."
+        },
+        "Tagen": {
+          "en": "Tagen exists, but only in the dative plural or in fixed phrases. The plain plural is Tage.",
+          "es": "Tagen existe, pero solo en el dativo plural o en expresiones fijas. El plural simple es Tage."
+        }
+      },
+      "examples": [
+        "Die Tage sind kurz.",
+        "Die Tische sind braun."
+      ],
+      "tr": {
+        "en": "The days are long.",
+        "es": "Los días son largos."
+      }
+    },
+    {
+      "id": "plural-nomen-f09",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Lehrerin",
+      "answer": "die Lehrerinnen",
+      "accept": [
+        "Lehrerinnen"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-w03",
+      "kind": "why",
+      "es": "Die Frauen sind nett.",
+      "target": "Frauen",
+      "tr": {
+        "en": "The women are nice.",
+        "es": "Las mujeres son amables."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "No ending: the plural looks like the singular",
+            "es": "Sin terminación: el plural se ve como el singular"
+          },
+          "wrong": {
+            "en": "Only nouns in -er, -el, -en and -chen stay unchanged. Frau does not belong to this group.",
+            "es": "Solo los sustantivos en -er, -el, -en y -chen no cambian. Frau no pertenece a este grupo."
+          }
+        },
+        {
+          "text": {
+            "en": "-e: the noun takes -e",
+            "es": "-e: el sustantivo lleva -e"
+          },
+          "wrong": {
+            "en": "-e is typical for masculine nouns such as Tag and Hund. Feminine nouns mostly take -(e)n.",
+            "es": "-e es típico de sustantivos masculinos como Tag y Hund. Los femeninos suelen llevar -(e)n."
+          }
+        },
+        {
+          "text": {
+            "en": "-(e)n: feminine nouns mostly take -(e)n",
+            "es": "-(e)n: los sustantivos femeninos suelen llevar -(e)n"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "plural-nomen-c10",
+      "sentence": "Die ___ sind groß.",
+      "options": [
+        "Stadte",
+        "Städtes",
+        "Städte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Stadt takes -e and an umlaut: die Stadt, die Städte.",
+        "es": "Stadt lleva -e y diéresis: die Stadt, die Städte."
+      },
+      "wrong": {
+        "Stadte": {
+          "en": "The ending -e is right, but a short feminine word like Stadt also needs the umlaut: Städte.",
+          "es": "La terminación -e es correcta, pero una palabra femenina corta como Stadt necesita también la diéresis: Städte."
+        },
+        "Städtes": {
+          "en": "The umlaut is right, but there is no -s after -e in the plural. The plural is Städte.",
+          "es": "La diéresis es correcta, pero no hay -s después de -e en el plural. El plural es Städte."
+        }
+      },
+      "examples": [
+        "Die Städte sind schön.",
+        "Die Stühle sind neu."
+      ],
+      "tr": {
+        "en": "The cities are big.",
+        "es": "Las ciudades son grandes."
+      }
+    },
+    {
+      "id": "plural-nomen-f10",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Tisch",
+      "answer": "die Tische",
+      "accept": [
+        "Tische"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c11",
+      "sentence": "Zwei ___ spielen Tennis.",
+      "options": [
+        "Mädchens",
+        "Mädchenen",
+        "Mädchen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Nouns ending in -chen do not change in the plural: das Mädchen, die Mädchen.",
+        "es": "Los sustantivos que terminan en -chen no cambian en plural: das Mädchen, die Mädchen."
+      },
+      "wrong": {
+        "Mädchens": {
+          "en": "The ending -s is not used for words in -chen. Mädchen stays as it is.",
+          "es": "La terminación -s no se usa en palabras en -chen. Mädchen se queda como está."
+        },
+        "Mädchenen": {
+          "en": "Mädchenen does not exist. The word already ends in -en and gets no further ending.",
+          "es": "Mädchenen no existe. La palabra ya termina en -en y no recibe otra terminación."
+        }
+      },
+      "examples": [
+        "Die Mädchen sind klein.",
+        "Die Brötchen sind gut."
+      ],
+      "tr": {
+        "en": "Two girls play tennis.",
+        "es": "Dos niñas juegan tenis."
+      }
+    },
+    {
+      "id": "plural-nomen-f11",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Hotel",
+      "answer": "die Hotels",
+      "accept": [
+        "Hotels"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c12",
+      "sentence": "Die ___ wohnen in Berlin.",
+      "options": [
+        "Elter",
+        "Eltern",
+        "Elterns"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Eltern is a plural-only word: it has no singular. The verb wohnen is plural too.",
+        "es": "Eltern es una palabra que solo existe en plural: no tiene singular. El verbo wohnen también va en plural."
+      },
+      "wrong": {
+        "Elter": {
+          "en": "Elter is not a word. The parents are always called Eltern; the singular is expressed with Vater and Mutter.",
+          "es": "Elter no es una palabra. Los padres siempre se llaman Eltern; el singular se expresa con Vater y Mutter."
+        },
+        "Elterns": {
+          "en": "The ending -s is not used with Eltern. The word is already the full plural form.",
+          "es": "La terminación -s no se usa con Eltern. La palabra ya es la forma plural completa."
+        }
+      },
+      "examples": [
+        "Die Eltern sind nett.",
+        "Die Leute sind hier."
+      ],
+      "tr": {
+        "en": "The parents live in Berlin.",
+        "es": "Los papás viven en Berlín."
+      }
+    },
+    {
+      "id": "plural-nomen-f12",
+      "kind": "form",
+      "verb": "Plural",
+      "person": "Kind",
+      "answer": "die Kinder",
+      "accept": [
+        "Kinder"
+      ],
+      "table": "nomen-plural"
+    },
+    {
+      "id": "plural-nomen-c13",
+      "sentence": "Die ___ sind neu.",
+      "options": [
+        "Uhren",
+        "Uhr",
+        "Uhrs"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Feminine nouns take -(e)n: die Uhr, die Uhren. The plural verb sind needs a plural noun.",
+        "es": "Los sustantivos femeninos llevan -(e)n: die Uhr, die Uhren. El verbo plural sind necesita un sustantivo plural."
+      },
+      "wrong": {
+        "Uhr": {
+          "en": "Uhr is the singular. With the plural verb sind the noun must be plural: Uhren.",
+          "es": "Uhr es el singular. Con el verbo plural sind el sustantivo debe ir en plural: Uhren."
+        },
+        "Uhrs": {
+          "en": "The ending -s is for foreign words. Uhr is feminine and takes -en: Uhren.",
+          "es": "La terminación -s es para palabras extranjeras. Uhr es femenino y lleva -en: Uhren."
+        }
+      },
+      "examples": [
+        "Die Uhren sind teuer.",
+        "Die Zeitungen sind alt."
+      ],
+      "tr": {
+        "en": "The clocks are new.",
+        "es": "Los relojes son nuevos."
+      }
+    },
+    {
+      "id": "plural-nomen-c14",
+      "sentence": "Die ___ sind nett.",
+      "options": [
+        "Lehrerins",
+        "Lehrerinen",
+        "Lehrerinnen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The ending -in becomes -innen in the plural, with a double n: die Lehrerin, die Lehrerinnen.",
+        "es": "La terminación -in pasa a -innen en plural, con n doble: die Lehrerin, die Lehrerinnen."
+      },
+      "wrong": {
+        "Lehrerins": {
+          "en": "The ending -s is not used for feminine words in -in. They take -nen.",
+          "es": "La terminación -s no se usa en palabras femeninas en -in. Estas llevan -nen."
+        },
+        "Lehrerinen": {
+          "en": "The ending is -nen with a double n: the n of -in is doubled, so Lehrerinnen.",
+          "es": "La terminación es -nen con n doble: la n de -in se duplica, así que Lehrerinnen."
+        }
+      },
+      "examples": [
+        "Die Lehrerinnen sind jung.",
+        "Die Freundinnen kommen."
+      ],
+      "tr": {
+        "en": "The teachers are nice.",
+        "es": "Las maestras son amables."
+      }
+    },
+    {
+      "id": "plural-nomen-w04",
+      "kind": "why",
+      "es": "Die Autos sind neu.",
+      "target": "Autos",
+      "tr": {
+        "en": "The cars are new.",
+        "es": "Los carros son nuevos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-s: words from other languages and short words take -s",
+            "es": "-s: las palabras de otros idiomas y las cortas llevan -s"
+          }
+        },
+        {
+          "text": {
+            "en": "-er: neuter nouns take -er",
+            "es": "-er: los sustantivos neutros llevan -er"
+          },
+          "wrong": {
+            "en": "Auto is neuter, but it comes from another language. Such words take -s, so Autoer is wrong.",
+            "es": "Auto es neutro, pero viene de otro idioma. Estas palabras llevan -s, así que Autoer es incorrecto."
+          }
+        },
+        {
+          "text": {
+            "en": "-en: every noun in -o takes -en",
+            "es": "-en: todo sustantivo en -o lleva -en"
+          },
+          "wrong": {
+            "en": "Nouns in -o take -s (Auto, Foto, Kilo), not -en. Autoen does not exist.",
+            "es": "Los sustantivos en -o llevan -s (Auto, Foto, Kilo), no -en. Autoen no existe."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

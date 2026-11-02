@@ -1,0 +1,1041 @@
+{
+  "schema": 2,
+  "topic": "haben-es-gibt",
+  "level": "A1",
+  "title": {
+    "en": "haben and es gibt",
+    "es": "haben y es gibt"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "haben (to have) is the second key verb after sein: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben. It says what you own (Ich habe ein Auto) and it also expresses needs and states, without an article: Hunger, Durst, Zeit haben. To say there is or there are, German uses es gibt, and the verb gibt never changes: Es gibt einen Supermarkt. Es gibt zwei Banken.",
+        "es": "haben (tener) es el segundo verbo clave después de sein: ich habe, du hast, er/sie/es hat, wir haben, ihr habt, sie/Sie haben. Dice lo que posees (Ich habe ein Auto) y también expresa necesidades y estados, sin artículo: Hunger, Durst, Zeit haben. Para decir «hay», el alemán usa es gibt, y el verbo gibt nunca cambia: Es gibt einen Supermarkt. Es gibt zwei Banken."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "haben-formen",
+      "title": {
+        "en": "haben in the present tense",
+        "es": "haben en presente"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "haben",
+          "es": "haben"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "habe"
+        ],
+        [
+          "du",
+          "hast"
+        ],
+        [
+          "er/sie/es",
+          "hat"
+        ],
+        [
+          "wir",
+          "haben"
+        ],
+        [
+          "ihr",
+          "habt"
+        ],
+        [
+          "sie/Sie",
+          "haben"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Using haben",
+        "es": "Usar haben"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Possession: what you own or have around you, including family. The thing is the object, so a masculine noun takes einen (more in the Accusative lesson).",
+            "es": "Posesión: lo que posees o tienes a tu alrededor, incluida la familia. La cosa es el complemento, así que un sustantivo masculino lleva einen (más en la lección del acusativo)."
+          },
+          "examples": [
+            {
+              "es": "Ich habe ein Auto.",
+              "tr": {
+                "en": "I have a car.",
+                "es": "Tengo un carro."
+              }
+            },
+            {
+              "es": "Du hast eine Schwester.",
+              "tr": {
+                "en": "You have a sister.",
+                "es": "Tienes una hermana."
+              }
+            },
+            {
+              "es": "Wir haben zwei Kinder.",
+              "tr": {
+                "en": "We have two children.",
+                "es": "Tenemos dos hijos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Needs and states: haben plus a noun with no article. Hunger, Durst, Zeit, Angst, Glück and Geburtstag are the most common.",
+            "es": "Necesidades y estados: haben más un sustantivo sin artículo. Hunger, Durst, Zeit, Angst, Glück y Geburtstag son los más comunes."
+          },
+          "examples": [
+            {
+              "es": "Ich habe Hunger.",
+              "tr": {
+                "en": "I am hungry.",
+                "es": "Tengo hambre."
+              }
+            },
+            {
+              "es": "Hast du Zeit?",
+              "tr": {
+                "en": "Do you have time?",
+                "es": "¿Tienes tiempo?"
+              }
+            },
+            {
+              "es": "Anna hat heute Geburtstag.",
+              "tr": {
+                "en": "It is Anna's birthday today.",
+                "es": "Hoy es el cumpleaños de Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "haben-ausdruecke",
+      "title": {
+        "en": "Common expressions with haben",
+        "es": "Expresiones frecuentes con haben"
+      },
+      "header": [
+        {
+          "en": "Expression",
+          "es": "Expresión"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "Hunger haben",
+          "Ich habe Hunger."
+        ],
+        [
+          "Durst haben",
+          "Wir haben Durst."
+        ],
+        [
+          "Zeit haben",
+          "Hast du Zeit?"
+        ],
+        [
+          "Angst haben",
+          "Er hat Angst."
+        ],
+        [
+          "Glück haben",
+          "Sie hat Glück."
+        ],
+        [
+          "Geburtstag haben",
+          "Anna hat Geburtstag."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "es gibt: there is, there are",
+        "es": "es gibt: hay"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "es gibt names something that exists or is available. The verb stays gibt, for one thing and for many, and the thing is the object: einen Supermarkt, eine Bank, ein Kino, zwei Banken.",
+            "es": "es gibt nombra algo que existe o está disponible. El verbo se queda en gibt, para una cosa y para muchas, y la cosa es el complemento: einen Supermarkt, eine Bank, ein Kino, zwei Banken."
+          },
+          "examples": [
+            {
+              "es": "Hier gibt es einen Supermarkt.",
+              "tr": {
+                "en": "There is a supermarket here.",
+                "es": "Aquí hay un supermercado."
+              }
+            },
+            {
+              "es": "In Berlin gibt es viele Parks.",
+              "tr": {
+                "en": "There are many parks in Berlin.",
+                "es": "En Berlín hay muchos parques."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "For a question the verb comes first: Gibt es hier eine Bank? The answer is Ja, es gibt eine Bank or Nein, hier gibt es keine.",
+            "es": "Para preguntar, el verbo va primero: Gibt es hier eine Bank? La respuesta es Ja, es gibt eine Bank o Nein, hier gibt es keine."
+          },
+          "examples": [
+            {
+              "es": "Gibt es hier ein Café?",
+              "tr": {
+                "en": "Is there a café here?",
+                "es": "¿Hay un café aquí?"
+              }
+            },
+            {
+              "es": "Ja, es gibt ein Café.",
+              "tr": {
+                "en": "Yes, there is a café.",
+                "es": "Sí, hay un café."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "es-gibt-artikel",
+      "title": {
+        "en": "The article after es gibt and haben",
+        "es": "El artículo después de es gibt y haben"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "Artikel",
+          "es": "Artikel"
+        }
+      ],
+      "rows": [
+        [
+          "Supermarkt",
+          "einen"
+        ],
+        [
+          "Bank",
+          "eine"
+        ],
+        [
+          "Kino",
+          "ein"
+        ],
+        [
+          "Park",
+          "einen"
+        ],
+        [
+          "Apotheke",
+          "eine"
+        ],
+        [
+          "Restaurant",
+          "ein"
+        ]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "haben or sein?",
+        "es": "¿haben o sein?"
+      },
+      "pairs": [
+        {
+          "a": "Ich habe Hunger.",
+          "b": "Ich bin müde.",
+          "note": {
+            "en": "Needs (Hunger, Durst, Angst) go with haben and a noun. Feelings with an adjective (müde, froh) go with sein. Age also goes with sein.",
+            "es": "Las necesidades (Hunger, Durst, Angst) van con haben y un sustantivo. Los sentimientos con un adjetivo (müde, froh) van con sein. La edad también va con sein."
+          },
+          "examples": [
+            {
+              "es": "Wir haben Durst.",
+              "tr": {
+                "en": "We are thirsty.",
+                "es": "Tenemos sed."
+              }
+            },
+            {
+              "es": "Wir sind müde.",
+              "tr": {
+                "en": "We are tired.",
+                "es": "Estamos cansados."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Es gibt ein Café.",
+          "b": "Das Café ist hier.",
+          "note": {
+            "en": "es gibt says that something exists. ist places or describes a thing you already know about.",
+            "es": "es gibt dice que algo existe. ist ubica o describe una cosa que ya conoces."
+          },
+          "examples": [
+            {
+              "es": "Hier gibt es ein Café.",
+              "tr": {
+                "en": "There is a café here.",
+                "es": "Aquí hay un café."
+              }
+            },
+            {
+              "es": "Das Café ist neu.",
+              "tr": {
+                "en": "The café is new.",
+                "es": "El café es nuevo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: age uses sein, not haben (Ich bin 20, not Ich habe 20 Jahre). Do not say Es hat for there is: it is Es gibt. The verb gibt does not become plural: Es gibt zwei Banken, not Es geben. Nouns like Hunger and Zeit have no article after haben. And du has hast, not habst.",
+        "es": "Trampas clásicas: la edad usa sein, no haben (Ich bin 20, no Ich habe 20 Jahre). No digas Es hat para «hay»: es Es gibt. El verbo gibt no pasa a plural: Es gibt zwei Banken, no Es geben. Sustantivos como Hunger y Zeit no llevan artículo después de haben. Y para du es hast, no habst."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The verb «haben» means to have: «ich habe», «du hast», «er hat», «wir haben», «ihr habt», «sie haben». It says what you own, «Ich habe ein Auto», and it is used with needs, without an article: «Ich habe Hunger», «Hast du Zeit». Age is not said with «haben» but with «sein». To say there is or there are, use «es gibt». The verb «gibt» never changes: «Es gibt einen Supermarkt», «Es gibt zwei Banken».",
+    "es": "El verbo «haben» significa tener: «ich habe», «du hast», «er hat», «wir haben», «ihr habt», «sie haben». Dice lo que posees, «Ich habe ein Auto», y se usa con necesidades, sin artículo: «Ich habe Hunger», «Hast du Zeit». La edad no se dice con «haben» sino con «sein». Para decir «hay», usa «es gibt». El verbo «gibt» nunca cambia: «Es gibt einen Supermarkt», «Es gibt zwei Banken»."
+  },
+  "items": [
+    {
+      "id": "haben-es-gibt-c01",
+      "sentence": "Ich ___ ein Auto.",
+      "options": [
+        "habe",
+        "hast",
+        "hat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With ich the form of haben is habe: Ich habe ein Auto.",
+        "es": "Con ich la forma de haben es habe: Ich habe ein Auto."
+      },
+      "wrong": {
+        "hast": {
+          "en": "hast is the form for du. With ich you need habe.",
+          "es": "hast es la forma de du. Con ich necesitas habe."
+        },
+        "hat": {
+          "en": "hat is for er, sie and es. With ich the form is habe.",
+          "es": "hat es para er, sie y es. Con ich la forma es habe."
+        }
+      },
+      "examples": [
+        "Ich habe ein Haus.",
+        "Ich habe Zeit."
+      ],
+      "tr": {
+        "en": "I have a car.",
+        "es": "Tengo un carro."
+      }
+    },
+    {
+      "id": "haben-es-gibt-f01",
+      "kind": "form",
+      "verb": "haben",
+      "person": "ich",
+      "answer": "habe",
+      "table": "haben-formen"
+    },
+    {
+      "id": "haben-es-gibt-c02",
+      "sentence": "Du ___ eine Schwester.",
+      "options": [
+        "habe",
+        "hast",
+        "hat"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With du the form is hast. The b of the stem disappears: du hast, not du habst.",
+        "es": "Con du la forma es hast. La b de la raíz desaparece: du hast, no du habst."
+      },
+      "wrong": {
+        "habe": {
+          "en": "habe is the form for ich. With du you need hast.",
+          "es": "habe es la forma de ich. Con du necesitas hast."
+        },
+        "hat": {
+          "en": "hat is for er, sie and es. The subject here is du, so the form is hast.",
+          "es": "hat es para er, sie y es. El sujeto aquí es du, así que la forma es hast."
+        }
+      },
+      "examples": [
+        "Du hast ein Buch.",
+        "Hast du Zeit?"
+      ],
+      "tr": {
+        "en": "You have a sister.",
+        "es": "Tienes una hermana."
+      }
+    },
+    {
+      "id": "haben-es-gibt-f02",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Supermarkt",
+      "answer": "einen",
+      "table": "es-gibt-artikel"
+    },
+    {
+      "id": "haben-es-gibt-c03",
+      "sentence": "Paul ___ zwei Kinder.",
+      "options": [
+        "habt",
+        "haben",
+        "hat"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Paul is one person, a he, so the form is hat.",
+        "es": "Paul es una persona, un él, así que la forma es hat."
+      },
+      "wrong": {
+        "habt": {
+          "en": "habt is only for ihr. Paul is one person, not several friends.",
+          "es": "habt es solo para ihr. Paul es una persona, no varios amigos."
+        },
+        "haben": {
+          "en": "haben is for wir, sie (they) and Sie. One person like Paul takes hat.",
+          "es": "haben es para wir, sie (ellos) y Sie. Una persona como Paul lleva hat."
+        }
+      },
+      "examples": [
+        "Anna hat ein Kind.",
+        "Er hat ein Auto."
+      ],
+      "tr": {
+        "en": "Paul has two children.",
+        "es": "Paul tiene dos hijos."
+      }
+    },
+    {
+      "id": "haben-es-gibt-f03",
+      "kind": "form",
+      "verb": "haben",
+      "person": "du",
+      "answer": "hast",
+      "table": "haben-formen"
+    },
+    {
+      "id": "haben-es-gibt-w01",
+      "kind": "why",
+      "es": "Ich habe Hunger.",
+      "target": "Hunger",
+      "tr": {
+        "en": "I am hungry.",
+        "es": "Tengo hambre."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sein + noun, as in English I am hunger",
+            "es": "sein + sustantivo, como en inglés I am hunger"
+          },
+          "wrong": {
+            "en": "sein cannot take the noun Hunger. With sein you need an adjective: Ich bin hungrig.",
+            "es": "sein no puede llevar el sustantivo Hunger. Con sein necesitas un adjetivo: Ich bin hungrig."
+          }
+        },
+        {
+          "text": {
+            "en": "haben + noun without an article for needs and states",
+            "es": "haben + sustantivo sin artículo para necesidades y estados"
+          }
+        },
+        {
+          "text": {
+            "en": "haben + ein + noun, like a normal object",
+            "es": "haben + ein + sustantivo, como un complemento normal"
+          },
+          "wrong": {
+            "en": "Ich habe einen Hunger is not used. Hunger, Durst and Angst stand without an article after haben.",
+            "es": "Ich habe einen Hunger no se usa. Hunger, Durst y Angst van sin artículo después de haben."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "haben-es-gibt-c04",
+      "sentence": "Wir ___ Zeit.",
+      "options": [
+        "hat",
+        "habt",
+        "haben"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With wir the form is haben: Wir haben Zeit. There is no article after haben with Zeit.",
+        "es": "Con wir la forma es haben: Wir haben Zeit. No hay artículo después de haben con Zeit."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is for one person (er, sie, es). We are several people, so you need haben.",
+          "es": "hat es para una persona (er, sie, es). Somos varias personas, así que necesitas haben."
+        },
+        "habt": {
+          "en": "habt is only for ihr. For wir the form is haben.",
+          "es": "habt es solo para ihr. Para wir la forma es haben."
+        }
+      },
+      "examples": [
+        "Wir haben Hunger.",
+        "Wir haben ein Auto."
+      ],
+      "tr": {
+        "en": "We have time.",
+        "es": "Tenemos tiempo."
+      }
+    },
+    {
+      "id": "haben-es-gibt-f04",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Bank",
+      "answer": "eine",
+      "table": "es-gibt-artikel"
+    },
+    {
+      "id": "haben-es-gibt-c05",
+      "sentence": "Ihr ___ Hunger, oder?",
+      "options": [
+        "haben",
+        "habt",
+        "hast"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ihr takes habt: Ihr habt Hunger. Hunger needs no article.",
+        "es": "ihr lleva habt: Ihr habt Hunger. Hunger no lleva artículo."
+      },
+      "wrong": {
+        "haben": {
+          "en": "haben goes with wir, sie and Sie. ihr has its own form, habt.",
+          "es": "haben va con wir, sie y Sie. ihr tiene su propia forma, habt."
+        },
+        "hast": {
+          "en": "hast is only for du, one friend. Ihr means several friends.",
+          "es": "hast es solo para du, un amigo. Ihr significa varios amigos."
+        }
+      },
+      "examples": [
+        "Ihr habt Zeit.",
+        "Habt ihr Durst?"
+      ],
+      "tr": {
+        "en": "You are hungry, right?",
+        "es": "Ustedes tienen hambre, ¿verdad?"
+      }
+    },
+    {
+      "id": "haben-es-gibt-f05",
+      "kind": "form",
+      "verb": "haben",
+      "person": "er/sie/es",
+      "answer": "hat",
+      "table": "haben-formen"
+    },
+    {
+      "id": "haben-es-gibt-c06",
+      "sentence": "___ du Durst?",
+      "options": [
+        "Bist",
+        "Habe",
+        "Hast"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Thirst is a need, so it takes haben: Hast du Durst? In a question the verb comes first.",
+        "es": "La sed es una necesidad, así que lleva haben: Hast du Durst? En una pregunta el verbo va primero."
+      },
+      "wrong": {
+        "Bist": {
+          "en": "With the noun Durst you use haben, not sein. Bist du durstig would be the adjective version.",
+          "es": "Con el sustantivo Durst se usa haben, no sein. Bist du durstig sería la versión con adjetivo."
+        },
+        "Habe": {
+          "en": "Habe is the form for ich. With du you need hast.",
+          "es": "Habe es la forma de ich. Con du necesitas hast."
+        }
+      },
+      "examples": [
+        "Hast du Hunger?",
+        "Hast du Zeit?"
+      ],
+      "tr": {
+        "en": "Are you thirsty?",
+        "es": "¿Tienes sed?"
+      }
+    },
+    {
+      "id": "haben-es-gibt-f06",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Kino",
+      "answer": "ein",
+      "table": "es-gibt-artikel"
+    },
+    {
+      "id": "haben-es-gibt-w02",
+      "kind": "why",
+      "es": "Es gibt einen Supermarkt.",
+      "target": "einen",
+      "tr": {
+        "en": "There is a supermarket.",
+        "es": "Hay un supermercado."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A masculine noun after es gibt is the object, so ein becomes einen",
+            "es": "Un sustantivo masculino después de es gibt es el complemento, así que ein pasa a einen"
+          }
+        },
+        {
+          "text": {
+            "en": "The article is always ein, whatever the gender",
+            "es": "El artículo es siempre ein, sea cual sea el género"
+          },
+          "wrong": {
+            "en": "The indefinite article changes with the gender: ein, eine, ein. And the masculine form changes again for the object: einen.",
+            "es": "El artículo indefinido cambia con el género: ein, eine, ein. Y la forma masculina cambia otra vez para el complemento: einen."
+          }
+        },
+        {
+          "text": {
+            "en": "einen is the plural form",
+            "es": "einen es la forma plural"
+          },
+          "wrong": {
+            "en": "einen is not plural. The plural has no indefinite article: es gibt zwei Banken.",
+            "es": "einen no es plural. El plural no tiene artículo indefinido: es gibt zwei Banken."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "haben-es-gibt-c07",
+      "sentence": "Anna ___ heute Geburtstag.",
+      "options": [
+        "ist",
+        "hat",
+        "gibt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In German you have a birthday: Geburtstag haben. Anna is a she, so hat.",
+        "es": "En alemán se «tiene» el cumpleaños: Geburtstag haben. Anna es una ella, así que hat."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist would need an adjective or a noun that says who Anna is. A birthday is something you have: hat.",
+          "es": "ist necesitaría un adjetivo o un sustantivo que diga quién es Anna. Un cumpleaños es algo que se tiene: hat."
+        },
+        "gibt": {
+          "en": "gibt only appears in es gibt. Here Anna is the subject, so you need hat.",
+          "es": "gibt solo aparece en es gibt. Aquí Anna es el sujeto, así que necesitas hat."
+        }
+      },
+      "examples": [
+        "Paul hat morgen Geburtstag.",
+        "Hast du heute Geburtstag?"
+      ],
+      "tr": {
+        "en": "It is Anna's birthday today.",
+        "es": "Hoy es el cumpleaños de Anna."
+      }
+    },
+    {
+      "id": "haben-es-gibt-f07",
+      "kind": "form",
+      "verb": "haben",
+      "person": "wir",
+      "answer": "haben",
+      "table": "haben-formen"
+    },
+    {
+      "id": "haben-es-gibt-c08",
+      "sentence": "Hier ___ es einen Supermarkt.",
+      "options": [
+        "gibt",
+        "ist",
+        "hat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "To say there is, German uses es gibt. In this sentence the place Hier comes first, so the verb gibt follows it.",
+        "es": "Para decir «hay», el alemán usa es gibt. En esta frase el lugar Hier va primero, así que el verbo gibt le sigue."
+      },
+      "wrong": {
+        "ist": {
+          "en": "es ist means it is. For there is you need es gibt.",
+          "es": "es ist significa «es». Para «hay» necesitas es gibt."
+        },
+        "hat": {
+          "en": "es hat is not used for there is. It is always es gibt.",
+          "es": "es hat no se usa para «hay». Siempre es es gibt."
+        }
+      },
+      "examples": [
+        "Hier gibt es ein Café.",
+        "Dort gibt es eine Bank."
+      ],
+      "tr": {
+        "en": "There is a supermarket here.",
+        "es": "Aquí hay un supermercado."
+      }
+    },
+    {
+      "id": "haben-es-gibt-f08",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Park",
+      "answer": "einen",
+      "table": "es-gibt-artikel"
+    },
+    {
+      "id": "haben-es-gibt-c09",
+      "sentence": "___ es hier ein Café?",
+      "options": [
+        "Gebt",
+        "Ist",
+        "Gibt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In a yes/no question the verb comes first, and it stays gibt: Gibt es hier ein Café?",
+        "es": "En una pregunta de sí o no el verbo va primero, y se queda en gibt: Gibt es hier ein Café?"
+      },
+      "wrong": {
+        "Gebt": {
+          "en": "Gebt is the ihr-form of geben. The expression is always es gibt, the verb does not change for any subject.",
+          "es": "Gebt es la forma de ihr de geben. La expresión es siempre es gibt, el verbo no cambia con ningún sujeto."
+        },
+        "Ist": {
+          "en": "Ist es hier ein Café? is not a sentence that asks whether one exists. For that you need Gibt es.",
+          "es": "Ist es hier ein Café? no es una frase que pregunte si existe uno. Para eso necesitas Gibt es."
+        }
+      },
+      "examples": [
+        "Gibt es hier eine Bank?",
+        "Gibt es ein Kino?"
+      ],
+      "tr": {
+        "en": "Is there a café here?",
+        "es": "¿Hay un café aquí?"
+      }
+    },
+    {
+      "id": "haben-es-gibt-f09",
+      "kind": "form",
+      "verb": "haben",
+      "person": "ihr",
+      "answer": "habt",
+      "table": "haben-formen"
+    },
+    {
+      "id": "haben-es-gibt-w03",
+      "kind": "why",
+      "es": "Es gibt zwei Banken.",
+      "target": "gibt",
+      "tr": {
+        "en": "There are two banks.",
+        "es": "Hay dos bancos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "geben: the noun is plural, so the verb is plural",
+            "es": "geben: el sustantivo es plural, así que el verbo es plural"
+          },
+          "wrong": {
+            "en": "The subject of es gibt is always es, so the verb stays singular, even with a plural noun.",
+            "es": "El sujeto de es gibt es siempre es, así que el verbo se queda en singular, aun con un sustantivo plural."
+          }
+        },
+        {
+          "text": {
+            "en": "hat: es is used with haben",
+            "es": "hat: es se usa con haben"
+          },
+          "wrong": {
+            "en": "es hat does not mean there is. The fixed expression for existence is es gibt.",
+            "es": "es hat no significa «hay». La expresión fija para la existencia es es gibt."
+          }
+        },
+        {
+          "text": {
+            "en": "gibt: es gibt is a fixed expression, and gibt never changes",
+            "es": "gibt: es gibt es una expresión fija, y gibt nunca cambia"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "haben-es-gibt-c10",
+      "sentence": "Paul ___ Angst.",
+      "options": [
+        "ist",
+        "hat",
+        "gibt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Angst is a state expressed with haben and no article: Angst haben. For Paul the form is hat.",
+        "es": "Angst es un estado que se expresa con haben y sin artículo: Angst haben. Para Paul la forma es hat."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist would need an adjective such as ängstlich. With the noun Angst you use haben.",
+          "es": "ist necesitaría un adjetivo como ängstlich. Con el sustantivo Angst se usa haben."
+        },
+        "gibt": {
+          "en": "gibt is only part of es gibt. Paul is the subject here, so you need hat.",
+          "es": "gibt es solo parte de es gibt. Paul es el sujeto aquí, así que necesitas hat."
+        }
+      },
+      "examples": [
+        "Anna hat Angst.",
+        "Ich habe Angst."
+      ],
+      "tr": {
+        "en": "Paul is afraid.",
+        "es": "Paul tiene miedo."
+      }
+    },
+    {
+      "id": "haben-es-gibt-f10",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Apotheke",
+      "answer": "eine",
+      "table": "es-gibt-artikel"
+    },
+    {
+      "id": "haben-es-gibt-c11",
+      "sentence": "Ich ___ Hunger.",
+      "options": [
+        "bin",
+        "habe",
+        "hat"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Hunger is a noun, and needs go with haben and no article: Ich habe Hunger.",
+        "es": "Hunger es un sustantivo, y las necesidades van con haben y sin artículo: Ich habe Hunger."
+      },
+      "wrong": {
+        "bin": {
+          "en": "bin would need the adjective hungrig: Ich bin hungrig. With the noun Hunger you use haben.",
+          "es": "bin necesitaría el adjetivo hungrig: Ich bin hungrig. Con el sustantivo Hunger se usa haben."
+        },
+        "hat": {
+          "en": "hat is for er, sie and es. With ich the form is habe.",
+          "es": "hat es para er, sie y es. Con ich la forma es habe."
+        }
+      },
+      "examples": [
+        "Ich habe Durst.",
+        "Wir haben Hunger."
+      ],
+      "tr": {
+        "en": "I am hungry.",
+        "es": "Tengo hambre."
+      }
+    },
+    {
+      "id": "haben-es-gibt-f11",
+      "kind": "form",
+      "verb": "haben",
+      "person": "sie/Sie",
+      "answer": "haben",
+      "table": "haben-formen"
+    },
+    {
+      "id": "haben-es-gibt-c12",
+      "sentence": "Gibt es hier ___ Bank?",
+      "options": [
+        "eine",
+        "ein",
+        "einen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Bank is feminine, so it takes eine: eine Bank.",
+        "es": "Bank es femenino, así que lleva eine: eine Bank."
+      },
+      "wrong": {
+        "ein": {
+          "en": "ein is for neuter nouns (ein Kino) and, in the nominative, masculine ones. Bank is feminine and needs eine.",
+          "es": "ein es para sustantivos neutros (ein Kino) y, en nominativo, masculinos. Bank es femenino y necesita eine."
+        },
+        "einen": {
+          "en": "einen is only for masculine nouns, for example einen Supermarkt. Bank is feminine.",
+          "es": "einen es solo para sustantivos masculinos, por ejemplo einen Supermarkt. Bank es femenino."
+        }
+      },
+      "examples": [
+        "Gibt es hier eine Apotheke?",
+        "Es gibt eine Bank."
+      ],
+      "tr": {
+        "en": "Is there a bank here?",
+        "es": "¿Hay un banco aquí?"
+      }
+    },
+    {
+      "id": "haben-es-gibt-f12",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "Restaurant",
+      "answer": "ein",
+      "table": "es-gibt-artikel"
+    },
+    {
+      "id": "haben-es-gibt-c13",
+      "sentence": "Es gibt ___ Supermarkt.",
+      "options": [
+        "ein",
+        "eine",
+        "einen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Supermarkt is masculine (der Supermarkt). After es gibt it is the object, and a masculine object takes einen.",
+        "es": "Supermarkt es masculino (der Supermarkt). Después de es gibt es el complemento, y un complemento masculino lleva einen."
+      },
+      "wrong": {
+        "ein": {
+          "en": "ein would be the form in the nominative. After es gibt the masculine noun is the object, so it becomes einen.",
+          "es": "ein sería la forma del nominativo. Después de es gibt el sustantivo masculino es el complemento, así que pasa a einen."
+        },
+        "eine": {
+          "en": "eine is for feminine nouns (eine Bank). Supermarkt is masculine.",
+          "es": "eine es para sustantivos femeninos (eine Bank). Supermarkt es masculino."
+        }
+      },
+      "examples": [
+        "Es gibt einen Park.",
+        "Es gibt einen Bahnhof."
+      ],
+      "tr": {
+        "en": "There is a supermarket.",
+        "es": "Hay un supermercado."
+      }
+    },
+    {
+      "id": "haben-es-gibt-c14",
+      "sentence": "Frau Müller, ___ Sie Zeit?",
+      "options": [
+        "haben",
+        "habt",
+        "hat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The formal Sie always takes the same form as wir and sie (they): haben.",
+        "es": "El Sie formal lleva siempre la misma forma que wir y sie (ellos): haben."
+      },
+      "wrong": {
+        "habt": {
+          "en": "habt is only for ihr, several friends. Frau Müller is addressed formally with Sie.",
+          "es": "habt es solo para ihr, varios amigos. A Frau Müller se le habla de usted, con Sie."
+        },
+        "hat": {
+          "en": "hat is for er, sie (she) and es. The formal Sie takes the plural form haben.",
+          "es": "hat es para er, sie (ella) y es. El Sie formal lleva la forma plural haben."
+        }
+      },
+      "examples": [
+        "Haben Sie Zeit?",
+        "Haben Sie Hunger?"
+      ],
+      "tr": {
+        "en": "Ms Müller, do you have time?",
+        "es": "Señora Müller, ¿tiene usted tiempo?"
+      }
+    },
+    {
+      "id": "haben-es-gibt-w04",
+      "kind": "why",
+      "es": "Du hast Zeit.",
+      "target": "hast",
+      "tr": {
+        "en": "You have time.",
+        "es": "Tienes tiempo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "habst: add -st to the stem hab-",
+            "es": "habst: añadir -st a la raíz hab-"
+          },
+          "wrong": {
+            "en": "Regular verbs do that, but haben is irregular: the b disappears and the form is hast.",
+            "es": "Los verbos regulares lo hacen, pero haben es irregular: la b desaparece y la forma es hast."
+          }
+        },
+        {
+          "text": {
+            "en": "hast: haben is irregular, and the b disappears in du and er",
+            "es": "hast: haben es irregular, y la b desaparece en du y en er"
+          }
+        },
+        {
+          "text": {
+            "en": "hat: the du-form is the same as er",
+            "es": "hat: la forma de du es igual a la de er"
+          },
+          "wrong": {
+            "en": "er has hat. du has its own form with -st: hast.",
+            "es": "er tiene hat. du tiene su propia forma con -st: hast."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

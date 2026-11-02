@@ -1,0 +1,1116 @@
+{
+  "schema": 2,
+  "topic": "praesens-regelmaessig",
+  "level": "A1",
+  "title": {
+    "en": "Present tense: regular verbs",
+    "es": "Presente: verbos regulares"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A German verb in the infinitive ends in -en (or -n): kommen, wohnen, lernen. To use it, take off -en and add the ending that fits the subject: -e, -st, -t, -en, -t, -en. The present tense does the work of I work and I am working, and it often says the near future too (Morgen komme ich).",
+        "es": "Un verbo alemán en infinitivo termina en -en (o -n): kommen, wohnen, lernen. Para usarlo, quita -en y añade la terminación que corresponde al sujeto: -e, -st, -t, -en, -t, -en. El presente sirve para «trabajo» y «estoy trabajando», y muchas veces expresa también el futuro cercano (Morgen komme ich)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "regulaere-verben",
+      "title": {
+        "en": "Regular verbs in the present tense",
+        "es": "Verbos regulares en presente"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "kommen",
+          "es": "kommen"
+        },
+        {
+          "en": "wohnen",
+          "es": "wohnen"
+        },
+        {
+          "en": "lernen",
+          "es": "lernen"
+        },
+        {
+          "en": "machen",
+          "es": "machen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "komme",
+          "wohne",
+          "lerne",
+          "mache"
+        ],
+        [
+          "du",
+          "kommst",
+          "wohnst",
+          "lernst",
+          "machst"
+        ],
+        [
+          "er/sie/es",
+          "kommt",
+          "wohnt",
+          "lernt",
+          "macht"
+        ],
+        [
+          "wir",
+          "kommen",
+          "wohnen",
+          "lernen",
+          "machen"
+        ],
+        [
+          "ihr",
+          "kommt",
+          "wohnt",
+          "lernt",
+          "macht"
+        ],
+        [
+          "sie/Sie",
+          "kommen",
+          "wohnen",
+          "lernen",
+          "machen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "endungen",
+      "title": {
+        "en": "The endings",
+        "es": "Las terminaciones"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "Ending",
+          "es": "Terminación"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "-e"
+        ],
+        [
+          "du",
+          "-st"
+        ],
+        [
+          "er/sie/es",
+          "-t"
+        ],
+        [
+          "wir",
+          "-en"
+        ],
+        [
+          "ihr",
+          "-t"
+        ],
+        [
+          "sie/Sie",
+          "-en"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Rules to remember",
+        "es": "Reglas para recordar"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "wir, sie and Sie look like the infinitive: wir wohnen, sie wohnen, Sie wohnen. Only the pronoun tells them apart. er/sie/es and ihr both end in -t.",
+            "es": "wir, sie y Sie se ven como el infinitivo: wir wohnen, sie wohnen, Sie wohnen. Solo el pronombre los distingue. er/sie/es e ihr terminan los dos en -t."
+          },
+          "examples": [
+            {
+              "es": "Wir wohnen in Berlin.",
+              "tr": {
+                "en": "We live in Berlin.",
+                "es": "Vivimos en Berlín."
+              }
+            },
+            {
+              "es": "Er wohnt in Hamburg.",
+              "tr": {
+                "en": "He lives in Hamburg.",
+                "es": "Él vive en Hamburgo."
+              }
+            },
+            {
+              "es": "Ihr lernt Deutsch.",
+              "tr": {
+                "en": "You all learn German.",
+                "es": "Ustedes aprenden alemán."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If the stem ends in -d or -t (also -chn, -ffn, -tm), an e goes in before -st and -t, so that you can say it: du arbeitest, er arbeitet, ihr arbeitet; du findest, er findet.",
+            "es": "Si la raíz termina en -d o -t (también -chn, -ffn, -tm), se añade una e antes de -st y -t para poder pronunciarlo: du arbeitest, er arbeitet, ihr arbeitet; du findest, er findet."
+          },
+          "examples": [
+            {
+              "es": "Du arbeitest in Berlin.",
+              "tr": {
+                "en": "You work in Berlin.",
+                "es": "Trabajas en Berlín."
+              }
+            },
+            {
+              "es": "Paul findet das gut.",
+              "tr": {
+                "en": "Paul thinks that is good.",
+                "es": "A Paul le parece bien."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If the stem ends in -s, -ß, -z or -x, the du-form takes only -t, because the s sound is already there: du heißt, du tanzt, du reist.",
+            "es": "Si la raíz termina en -s, -ß, -z o -x, la forma de du lleva solo -t, porque el sonido s ya está: du heißt, du tanzt, du reist."
+          },
+          "examples": [
+            {
+              "es": "Wie heißt du?",
+              "tr": {
+                "en": "What is your name?",
+                "es": "¿Cómo te llamas?"
+              }
+            },
+            {
+              "es": "Du tanzt sehr gut.",
+              "tr": {
+                "en": "You dance very well.",
+                "es": "Bailas muy bien."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "besondere-staemme",
+      "title": {
+        "en": "Verbs with a special stem",
+        "es": "Verbos con raíz especial"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "arbeiten",
+          "es": "arbeiten"
+        },
+        {
+          "en": "finden",
+          "es": "finden"
+        },
+        {
+          "en": "heißen",
+          "es": "heißen"
+        },
+        {
+          "en": "tanzen",
+          "es": "tanzen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "arbeite",
+          "finde",
+          "heiße",
+          "tanze"
+        ],
+        [
+          "du",
+          "arbeitest",
+          "findest",
+          "heißt",
+          "tanzt"
+        ],
+        [
+          "er/sie/es",
+          "arbeitet",
+          "findet",
+          "heißt",
+          "tanzt"
+        ],
+        [
+          "wir",
+          "arbeiten",
+          "finden",
+          "heißen",
+          "tanzen"
+        ],
+        [
+          "ihr",
+          "arbeitet",
+          "findet",
+          "heißt",
+          "tanzt"
+        ],
+        [
+          "sie/Sie",
+          "arbeiten",
+          "finden",
+          "heißen",
+          "tanzen"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "One tense, three meanings",
+        "es": "Un tiempo, tres significados"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "German has only one present. Ich lerne Deutsch means I learn German and I am learning German. You never build a form with am or do.",
+            "es": "El alemán tiene un solo presente. Ich lerne Deutsch significa «aprendo alemán» y «estoy aprendiendo alemán». Nunca se forma con una estructura como «estar + gerundio»."
+          },
+          "examples": [
+            {
+              "es": "Ich lerne Deutsch.",
+              "tr": {
+                "en": "I learn German. / I am learning German.",
+                "es": "Aprendo alemán. / Estoy aprendiendo alemán."
+              }
+            },
+            {
+              "es": "Was machst du?",
+              "tr": {
+                "en": "What do you do? / What are you doing?",
+                "es": "¿Qué haces?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a time word the present tense also means the near future: Morgen komme ich. The verb stays in second place, so the subject moves behind it.",
+            "es": "Con una palabra de tiempo el presente significa también el futuro cercano: Morgen komme ich. El verbo se queda en segundo lugar, así que el sujeto pasa detrás."
+          },
+          "examples": [
+            {
+              "es": "Morgen komme ich.",
+              "tr": {
+                "en": "I am coming tomorrow.",
+                "es": "Mañana vengo."
+              }
+            },
+            {
+              "es": "Heute spielen wir Tennis.",
+              "tr": {
+                "en": "Today we play tennis.",
+                "es": "Hoy jugamos tenis."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Look-alike forms",
+        "es": "Formas parecidas"
+      },
+      "pairs": [
+        {
+          "a": "Du lernst Deutsch.",
+          "b": "Ihr lernt Deutsch.",
+          "note": {
+            "en": "du takes -st, ihr takes -t. One friend or several friends: the ending shows which.",
+            "es": "du lleva -st, ihr lleva -t. Un amigo o varios amigos: la terminación lo muestra."
+          },
+          "examples": [
+            {
+              "es": "Lukas, du kommst aus Berlin.",
+              "tr": {
+                "en": "Lukas, you come from Berlin.",
+                "es": "Lukas, vienes de Berlín."
+              }
+            },
+            {
+              "es": "Lukas und Anna, ihr kommt aus Berlin.",
+              "tr": {
+                "en": "Lukas and Anna, you come from Berlin.",
+                "es": "Lukas y Anna, vienen de Berlín."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Er arbeitet in Berlin.",
+          "b": "Sie arbeiten in Berlin.",
+          "note": {
+            "en": "er takes -t, sie (they) and Sie take -en. The stem arbeit- keeps the e in arbeitet.",
+            "es": "er lleva -t, sie (ellos) y Sie llevan -en. La raíz arbeit- conserva la e en arbeitet."
+          },
+          "examples": [
+            {
+              "es": "Paul arbeitet in Hamburg.",
+              "tr": {
+                "en": "Paul works in Hamburg.",
+                "es": "Paul trabaja en Hamburgo."
+              }
+            },
+            {
+              "es": "Paul und Anna arbeiten in Hamburg.",
+              "tr": {
+                "en": "Paul and Anna work in Hamburg.",
+                "es": "Paul y Anna trabajan en Hamburgo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: no am or do in German (not Ich bin arbeite, not Ich tue arbeiten); the English he works becomes er arbeitet, with -t, not -s; and the pronoun stays (Ich komme, not Komme). After a stem in -d or -t, do not forget the extra e: du arbeitest.",
+        "es": "Trampas clásicas: en alemán no hay «estar + gerundio» ni «do» (no Ich bin arbeite, no Ich tue arbeiten); el inglés he works se convierte en er arbeitet, con -t, no con -s; y el pronombre se queda (Ich komme, no Komme). Después de una raíz en -d o -t, no olvides la e extra: du arbeitest."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A German verb ends in «en» in the infinitive, for example «kommen» or «wohnen». Take off the «en» and add an ending: «ich komme», «du kommst», «er kommt», «wir kommen», «ihr kommt», «sie kommen». If the stem ends in d or t, an extra e is added: «du arbeitest», «er arbeitet». If it ends in s, ß or z, the du-form takes only a t: «du heißt», «du tanzt». The present tense also says the near future: «Morgen komme ich».",
+    "es": "Un verbo alemán termina en «en» en infinitivo, por ejemplo «kommen» o «wohnen». Quita la «en» y añade una terminación: «ich komme», «du kommst», «er kommt», «wir kommen», «ihr kommt», «sie kommen». Si la raíz termina en d o t, se añade una e extra: «du arbeitest», «er arbeitet». Si termina en s, ß o z, la forma de du lleva solo una t: «du heißt», «du tanzt». El presente también expresa el futuro cercano: «Morgen komme ich»."
+  },
+  "items": [
+    {
+      "id": "praesens-regelmaessig-c01",
+      "sentence": "Ich ___ in Berlin.",
+      "options": [
+        "wohnst",
+        "wohnt",
+        "wohne"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With ich the ending is -e: ich wohne.",
+        "es": "Con ich la terminación es -e: ich wohne."
+      },
+      "wrong": {
+        "wohnst": {
+          "en": "The ending -st belongs to du: du wohnst. With ich you need -e.",
+          "es": "La terminación -st corresponde a du: du wohnst. Con ich necesitas -e."
+        },
+        "wohnt": {
+          "en": "The ending -t belongs to er, sie, es and ihr. With ich the ending is -e.",
+          "es": "La terminación -t corresponde a er, sie, es e ihr. Con ich la terminación es -e."
+        }
+      },
+      "examples": [
+        "Ich wohne in Hamburg.",
+        "Ich wohne hier."
+      ],
+      "tr": {
+        "en": "I live in Berlin.",
+        "es": "Vivo en Berlín."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f01",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "ich",
+      "answer": "komme",
+      "table": "regulaere-verben"
+    },
+    {
+      "id": "praesens-regelmaessig-c02",
+      "sentence": "Du ___ Deutsch.",
+      "options": [
+        "lernt",
+        "lernst",
+        "lerne"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With du the ending is -st: du lernst.",
+        "es": "Con du la terminación es -st: du lernst."
+      },
+      "wrong": {
+        "lernt": {
+          "en": "lernt is the form for er, sie, es and ihr. With du you need the ending -st.",
+          "es": "lernt es la forma de er, sie, es e ihr. Con du necesitas la terminación -st."
+        },
+        "lerne": {
+          "en": "lerne is the form for ich. With du the ending is -st, not -e.",
+          "es": "lerne es la forma de ich. Con du la terminación es -st, no -e."
+        }
+      },
+      "examples": [
+        "Du lernst Englisch.",
+        "Du lernst schnell."
+      ],
+      "tr": {
+        "en": "You learn German.",
+        "es": "Aprendes alemán."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f02",
+      "kind": "form",
+      "verb": "arbeiten",
+      "person": "du",
+      "answer": "arbeitest",
+      "table": "besondere-staemme"
+    },
+    {
+      "id": "praesens-regelmaessig-c03",
+      "sentence": "Anna ___ aus Mexiko.",
+      "options": [
+        "kommen",
+        "kommst",
+        "kommt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Anna is a she, so the ending is -t: Anna kommt.",
+        "es": "Anna es una ella, así que la terminación es -t: Anna kommt."
+      },
+      "wrong": {
+        "kommen": {
+          "en": "kommen is the form for wir, sie (they) and Sie. One person like Anna needs the ending -t.",
+          "es": "kommen es la forma de wir, sie (ellos) y Sie. Una sola persona como Anna necesita la terminación -t."
+        },
+        "kommst": {
+          "en": "kommst is only for du. Anna is not you, she is er/sie/es, so -t.",
+          "es": "kommst es solo para du. Anna no eres tú, es er/sie/es, así que -t."
+        }
+      },
+      "examples": [
+        "Anna kommt aus Spanien.",
+        "Paul kommt aus Berlin."
+      ],
+      "tr": {
+        "en": "Anna comes from Mexico.",
+        "es": "Anna es de México."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f03",
+      "kind": "form",
+      "verb": "wohnen",
+      "person": "du",
+      "answer": "wohnst",
+      "table": "regulaere-verben"
+    },
+    {
+      "id": "praesens-regelmaessig-w01",
+      "kind": "why",
+      "es": "Du arbeitest in Berlin.",
+      "target": "arbeitest",
+      "tr": {
+        "en": "You work in Berlin.",
+        "es": "Trabajas en Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-est: the stem ends in t, so an e is added before the ending",
+            "es": "-est: la raíz termina en t, así que se añade una e antes de la terminación"
+          }
+        },
+        {
+          "text": {
+            "en": "-st: every du-form simply adds -st",
+            "es": "-st: toda forma de du simplemente añade -st"
+          },
+          "wrong": {
+            "en": "Adding only -st gives arbeitst, which nobody can say. After d or t an e is added: arbeitest.",
+            "es": "Si solo añades -st sale arbeitst, que nadie puede pronunciar. Después de d o t se añade una e: arbeitest."
+          }
+        },
+        {
+          "text": {
+            "en": "-t: du always takes -t",
+            "es": "-t: du siempre lleva -t"
+          },
+          "wrong": {
+            "en": "The ending -t is for er, sie, es and ihr. The du-form always has an s sound: -st or -est.",
+            "es": "La terminación -t es para er, sie, es e ihr. La forma de du siempre tiene un sonido s: -st o -est."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "praesens-regelmaessig-c04",
+      "sentence": "Wir ___ Fußball.",
+      "options": [
+        "spielen",
+        "spielt",
+        "spiele"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "wir takes the infinitive form: wir spielen.",
+        "es": "wir lleva la forma del infinitivo: wir spielen."
+      },
+      "wrong": {
+        "spielt": {
+          "en": "spielt is for er, sie, es and ihr. For wir you need spielen.",
+          "es": "spielt es para er, sie, es e ihr. Para wir necesitas spielen."
+        },
+        "spiele": {
+          "en": "spiele is only for ich. We are more than one person, so the form is spielen.",
+          "es": "spiele es solo para ich. Somos más de una persona, así que la forma es spielen."
+        }
+      },
+      "examples": [
+        "Wir spielen Tennis.",
+        "Wir spielen heute."
+      ],
+      "tr": {
+        "en": "We play soccer.",
+        "es": "Jugamos fútbol."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f04",
+      "kind": "form",
+      "verb": "arbeiten",
+      "person": "er/sie/es",
+      "answer": "arbeitet",
+      "table": "besondere-staemme"
+    },
+    {
+      "id": "praesens-regelmaessig-c05",
+      "sentence": "Ihr ___ Tennis.",
+      "options": [
+        "spielst",
+        "spielt",
+        "spielen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "ihr takes -t: ihr spielt.",
+        "es": "ihr lleva -t: ihr spielt."
+      },
+      "wrong": {
+        "spielst": {
+          "en": "The ending -st belongs to du, one friend. For ihr, several friends, the ending is -t.",
+          "es": "La terminación -st corresponde a du, un amigo. Para ihr, varios amigos, la terminación es -t."
+        },
+        "spielen": {
+          "en": "spielen goes with wir, sie and Sie. ihr is different, it ends in -t.",
+          "es": "spielen va con wir, sie y Sie. ihr es distinto, termina en -t."
+        }
+      },
+      "examples": [
+        "Ihr spielt gut.",
+        "Ihr spielt Fußball."
+      ],
+      "tr": {
+        "en": "You play tennis.",
+        "es": "Ustedes juegan tenis."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f05",
+      "kind": "form",
+      "verb": "lernen",
+      "person": "er/sie/es",
+      "answer": "lernt",
+      "table": "regulaere-verben"
+    },
+    {
+      "id": "praesens-regelmaessig-c06",
+      "sentence": "Paul ___ in Hamburg.",
+      "options": [
+        "arbeitt",
+        "arbeitet",
+        "arbeites"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The stem arbeit- ends in t, so an e goes in before the ending -t: Paul arbeitet.",
+        "es": "La raíz arbeit- termina en t, así que se añade una e antes de la terminación -t: Paul arbeitet."
+      },
+      "wrong": {
+        "arbeitt": {
+          "en": "Two t sounds in a row are hard to say. After a stem in t an e is added: arbeitet.",
+          "es": "Dos sonidos t seguidos son difíciles de decir. Después de una raíz en t se añade una e: arbeitet."
+        },
+        "arbeites": {
+          "en": "The e is there, but the ending is -t, not -s: er arbeitet. Nothing in German ends in -es for er.",
+          "es": "La e está, pero la terminación es -t, no -s: er arbeitet. En alemán nada termina en -es para er."
+        }
+      },
+      "examples": [
+        "Anna arbeitet hier.",
+        "Er arbeitet heute."
+      ],
+      "tr": {
+        "en": "Paul works in Hamburg.",
+        "es": "Paul trabaja en Hamburgo."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f06",
+      "kind": "form",
+      "verb": "finden",
+      "person": "du",
+      "answer": "findest",
+      "table": "besondere-staemme"
+    },
+    {
+      "id": "praesens-regelmaessig-w02",
+      "kind": "why",
+      "es": "Du heißt Anna.",
+      "target": "heißt",
+      "tr": {
+        "en": "Your name is Anna.",
+        "es": "Te llamas Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-st: every du-form adds -st",
+            "es": "-st: toda forma de du añade -st"
+          },
+          "wrong": {
+            "en": "After ß the s of -st would be a second s sound in a row, so the ending is only -t.",
+            "es": "Después de ß la s de -st sería un segundo sonido s seguido, así que la terminación es solo -t."
+          }
+        },
+        {
+          "text": {
+            "en": "-est: an e is added after ß",
+            "es": "-est: se añade una e después de ß"
+          },
+          "wrong": {
+            "en": "The extra e is only added after d and t (arbeitest, findest), not after an s sound.",
+            "es": "La e extra solo se añade después de d y t (arbeitest, findest), no después de un sonido s."
+          }
+        },
+        {
+          "text": {
+            "en": "-t: the stem ends in an s sound, so du takes only -t",
+            "es": "-t: la raíz termina en sonido s, así que du lleva solo -t"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "praesens-regelmaessig-c07",
+      "sentence": "Wie ___ du?",
+      "options": [
+        "heiße",
+        "heißst",
+        "heißt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The stem heiß- ends in ß, so du takes only a t: du heißt.",
+        "es": "La raíz heiß- termina en ß, así que du lleva solo una t: du heißt."
+      },
+      "wrong": {
+        "heiße": {
+          "en": "heiße is the form for ich. With du the form is heißt.",
+          "es": "heiße es la forma de ich. Con du la forma es heißt."
+        },
+        "heißst": {
+          "en": "After ß the ending -st would pile up s sounds, so the s of the ending is left out: du heißt.",
+          "es": "Después de ß la terminación -st acumularía sonidos s, así que se omite la s de la terminación: du heißt."
+        }
+      },
+      "examples": [
+        "Wie heißt du?",
+        "Du heißt Paul."
+      ],
+      "tr": {
+        "en": "What is your name?",
+        "es": "¿Cómo te llamas?"
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f07",
+      "kind": "form",
+      "verb": "machen",
+      "person": "wir",
+      "answer": "machen",
+      "table": "regulaere-verben"
+    },
+    {
+      "id": "praesens-regelmaessig-c08",
+      "sentence": "Du ___ sehr gut.",
+      "options": [
+        "tanzt",
+        "tanzst",
+        "tanzet"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The stem tanz- ends in z, so du takes only a t: du tanzt.",
+        "es": "La raíz tanz- termina en z, así que du lleva solo una t: du tanzt."
+      },
+      "wrong": {
+        "tanzst": {
+          "en": "After z the s of -st is not added, because the z already has an s sound: du tanzt.",
+          "es": "Después de z no se añade la s de -st, porque la z ya tiene un sonido s: du tanzt."
+        },
+        "tanzet": {
+          "en": "The extra e is only for stems in d or t (arbeiten, finden). tanzen ends in z.",
+          "es": "La e extra es solo para raíces en d o t (arbeiten, finden). tanzen termina en z."
+        }
+      },
+      "examples": [
+        "Du tanzt heute.",
+        "Du reist viel."
+      ],
+      "tr": {
+        "en": "You dance very well.",
+        "es": "Bailas muy bien."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f08",
+      "kind": "form",
+      "verb": "finden",
+      "person": "ihr",
+      "answer": "findet",
+      "table": "besondere-staemme"
+    },
+    {
+      "id": "praesens-regelmaessig-c09",
+      "sentence": "Was ___ du?",
+      "options": [
+        "machst",
+        "macht",
+        "mache"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In a question with a question word the verb stays second, and du still takes -st: Was machst du?",
+        "es": "En una pregunta con palabra interrogativa el verbo queda en segundo lugar, y du sigue llevando -st: Was machst du?"
+      },
+      "wrong": {
+        "macht": {
+          "en": "macht is the form for er, sie, es and ihr. With du you need the ending -st.",
+          "es": "macht es la forma de er, sie, es e ihr. Con du necesitas la terminación -st."
+        },
+        "mache": {
+          "en": "mache is only for ich. The subject here is du, so the verb is machst.",
+          "es": "mache es solo para ich. El sujeto aquí es du, así que el verbo es machst."
+        }
+      },
+      "examples": [
+        "Was machst du heute?",
+        "Was macht Paul?"
+      ],
+      "tr": {
+        "en": "What are you doing?",
+        "es": "¿Qué haces?"
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f09",
+      "kind": "form",
+      "verb": "kommen",
+      "person": "ihr",
+      "answer": "kommt",
+      "table": "regulaere-verben"
+    },
+    {
+      "id": "praesens-regelmaessig-w03",
+      "kind": "why",
+      "es": "Wir wohnen in Berlin.",
+      "target": "wohnen",
+      "tr": {
+        "en": "We live in Berlin.",
+        "es": "Vivimos en Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-t: wir takes the same ending as er",
+            "es": "-t: wir lleva la misma terminación que er"
+          },
+          "wrong": {
+            "en": "er and ihr take -t, but wir does not. wir uses the infinitive form, -en.",
+            "es": "er e ihr llevan -t, pero wir no. wir usa la forma del infinitivo, -en."
+          }
+        },
+        {
+          "text": {
+            "en": "-en: wir, sie (they) and Sie use the infinitive form",
+            "es": "-en: wir, sie (ellos) y Sie usan la forma del infinitivo"
+          }
+        },
+        {
+          "text": {
+            "en": "-e: wir takes the same ending as ich",
+            "es": "-e: wir lleva la misma terminación que ich"
+          },
+          "wrong": {
+            "en": "-e belongs to ich only. As soon as the subject is plural, the verb ends in -en or -t.",
+            "es": "-e corresponde solo a ich. En cuanto el sujeto es plural, el verbo termina en -en o -t."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "praesens-regelmaessig-c10",
+      "sentence": "Wo ___ Sie?",
+      "options": [
+        "wohnt",
+        "wohnst",
+        "wohnen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Sie, the formal you, always takes the same form as wir and sie (they): wohnen.",
+        "es": "Sie, el usted formal, lleva siempre la misma forma que wir y sie (ellos): wohnen."
+      },
+      "wrong": {
+        "wohnt": {
+          "en": "wohnt is for er, sie (she), es and ihr. The formal Sie always takes the plural form.",
+          "es": "wohnt es para er, sie (ella), es e ihr. El Sie formal siempre lleva la forma plural."
+        },
+        "wohnst": {
+          "en": "wohnst is only for du. The formal Sie does not take the du ending -st.",
+          "es": "wohnst es solo para du. El Sie formal no lleva la terminación -st de du."
+        }
+      },
+      "examples": [
+        "Wo wohnen Sie?",
+        "Woher kommen Sie?"
+      ],
+      "tr": {
+        "en": "Where do you live?",
+        "es": "¿Dónde vive usted?"
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f10",
+      "kind": "form",
+      "verb": "heißen",
+      "person": "du",
+      "answer": "heißt",
+      "table": "besondere-staemme"
+    },
+    {
+      "id": "praesens-regelmaessig-c11",
+      "sentence": "Die Kinder ___ Musik.",
+      "options": [
+        "hört",
+        "hören",
+        "höre"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Die Kinder is plural, so it is sie (they) and the form is hören. The ö stays in every form.",
+        "es": "Die Kinder es plural, o sea sie (ellos), y la forma es hören. La ö se queda en todas las formas."
+      },
+      "wrong": {
+        "hört": {
+          "en": "hört is singular (er, sie, es) or ihr. The children are several, so they are sie and need -en.",
+          "es": "hört es singular (er, sie, es) o ihr. Los niños son varios, así que son sie y necesitan -en."
+        },
+        "höre": {
+          "en": "höre is only for ich. The subject is die Kinder, several persons.",
+          "es": "höre es solo para ich. El sujeto es die Kinder, varias personas."
+        }
+      },
+      "examples": [
+        "Die Kinder spielen.",
+        "Die Kinder lernen Deutsch."
+      ],
+      "tr": {
+        "en": "The children listen to music.",
+        "es": "Los niños escuchan música."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f11",
+      "kind": "form",
+      "verb": "wohnen",
+      "person": "sie/Sie",
+      "answer": "wohnen",
+      "table": "regulaere-verben"
+    },
+    {
+      "id": "praesens-regelmaessig-c12",
+      "sentence": "Paul und ich ___ Kaffee.",
+      "options": [
+        "trinken",
+        "trinkt",
+        "trinke"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Paul and I together are wir, and wir takes -en: trinken.",
+        "es": "Paul y yo juntos somos wir, y wir lleva -en: trinken."
+      },
+      "wrong": {
+        "trinkt": {
+          "en": "trinkt is for er, sie, es and ihr. Paul and I are we, wir.",
+          "es": "trinkt es para er, sie, es e ihr. Paul y yo somos nosotros, wir."
+        },
+        "trinke": {
+          "en": "trinke is only for ich alone. With Paul and I together the verb is trinken.",
+          "es": "trinke es solo para ich solo. Con Paul y yo juntos el verbo es trinken."
+        }
+      },
+      "examples": [
+        "Paul und ich lernen Deutsch.",
+        "Wir trinken Tee."
+      ],
+      "tr": {
+        "en": "Paul and I drink coffee.",
+        "es": "Paul y yo tomamos café."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-f12",
+      "kind": "form",
+      "verb": "tanzen",
+      "person": "du",
+      "answer": "tanzt",
+      "table": "besondere-staemme"
+    },
+    {
+      "id": "praesens-regelmaessig-c13",
+      "sentence": "Der Kaffee ___ zwei Euro.",
+      "options": [
+        "kostet",
+        "kostest",
+        "kosten"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "der Kaffee is er, so the ending is -t, and because the stem kost- ends in t an e goes in: kostet.",
+        "es": "der Kaffee es er, así que la terminación es -t, y como la raíz kost- termina en t se añade una e: kostet."
+      },
+      "wrong": {
+        "kostest": {
+          "en": "kostest is the du-form. The coffee is er (singular), not you, so the ending is -et.",
+          "es": "kostest es la forma de du. El café es er (singular), no tú, así que la terminación es -et."
+        },
+        "kosten": {
+          "en": "kosten is the plural form. One coffee is singular, so it needs kostet.",
+          "es": "kosten es la forma plural. Un café es singular, así que necesita kostet."
+        }
+      },
+      "examples": [
+        "Das Brot kostet drei Euro.",
+        "Der Tee kostet zwei Euro."
+      ],
+      "tr": {
+        "en": "The coffee costs two euros.",
+        "es": "El café cuesta dos euros."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-c14",
+      "sentence": "Morgen ___ ich nach München.",
+      "options": [
+        "reist",
+        "reisen",
+        "reise"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "ich takes -e. The present tense with morgen says the future, and the verb stays second: Morgen reise ich.",
+        "es": "ich lleva -e. El presente con morgen expresa el futuro, y el verbo se queda en segundo lugar: Morgen reise ich."
+      },
+      "wrong": {
+        "reist": {
+          "en": "reist is for er, sie, es and ihr (and du after a stem in s). The subject here is ich.",
+          "es": "reist es para er, sie, es e ihr (y para du después de una raíz en s). El sujeto aquí es ich."
+        },
+        "reisen": {
+          "en": "reisen goes with wir, sie and Sie. ich needs the ending -e.",
+          "es": "reisen va con wir, sie y Sie. ich necesita la terminación -e."
+        }
+      },
+      "examples": [
+        "Morgen komme ich.",
+        "Heute lerne ich Deutsch."
+      ],
+      "tr": {
+        "en": "Tomorrow I travel to Munich.",
+        "es": "Mañana viajo a Múnich."
+      }
+    },
+    {
+      "id": "praesens-regelmaessig-w04",
+      "kind": "why",
+      "es": "Morgen komme ich.",
+      "target": "komme",
+      "tr": {
+        "en": "I am coming tomorrow.",
+        "es": "Mañana vengo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The present tense cannot talk about the future",
+            "es": "El presente no puede hablar del futuro"
+          },
+          "wrong": {
+            "en": "It can: with a time word like morgen the present tense is the normal way to talk about the near future.",
+            "es": "Sí puede: con una palabra de tiempo como morgen el presente es la forma normal de hablar del futuro cercano."
+          }
+        },
+        {
+          "text": {
+            "en": "The future always needs werden",
+            "es": "El futuro siempre necesita werden"
+          },
+          "wrong": {
+            "en": "werden exists, but for plans you do not need it. Morgen komme ich is shorter and more natural.",
+            "es": "werden existe, pero para planes no lo necesitas. Morgen komme ich es más corto y más natural."
+          }
+        },
+        {
+          "text": {
+            "en": "The present tense with a time word says the near future",
+            "es": "El presente con una palabra de tiempo expresa el futuro cercano"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}
