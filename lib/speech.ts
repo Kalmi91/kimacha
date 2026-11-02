@@ -29,6 +29,10 @@
 
 import { AppState, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
+import { speakNeural, stopNeural } from './neuralTts';
+import { neuralEngineFor, neuralPackFile, startNeural } from './neuralModels';
+import { playPackFile, stopPack } from './packAudio';
+import { voiceFor, type NeuralLang, type VoiceGender } from './neuralVoices';
 
 let voiceLanguages: Set<string> | null = null;
 let voicesByLanguage: Map<string, Speech.Voice[]> | null = null;
@@ -149,21 +153,83 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
     setTimeout(() => options.onDone?.(), 0);
     return;
   }
-  if (!hasVoiceFor(locale)) {
-    missing.add(baseLanguage(locale));
-    return;
+  const viaPhone = () => {
+    if (!hasVoiceFor(locale)) {
+      missing.add(baseLanguage(locale));
+      return;
+    }
+    const voice = voiceIdFor(locale);
+    Speech.speak(padForAndroid(text), {
+      ...options,
+      language: speechTag(locale),
+      ...(voice ? { voice } : {}),
+    });
+  };
+  if (speakBetter(text, locale, { rate: options.rate, onDone: options.onDone, onStopped: options.onStopped }, viaPhone)) return;
+  viaPhone();
+}
+
+function neuralLangFor(locale: string): NeuralLang | null {
+  const base = baseLanguage(locale);
+  return base === 'es' || base === 'en' || base === 'hu' ? base : null;
+}
+
+// The better voice (Settings, lib/neuralModels.ts) is tried before the phone's own, on three levels:
+// (1) the word pack's recording of a card word, (2) the language's sentence engine (Piper or Kokoro, the
+// text spoken by the voice lib/neuralVoices.ts picks), (3) the phone. A level that is not ready is
+// skipped, and one that fails (a broken file, an engine error) hands the same text to the next, so the
+// learner never gets silence for a text the phone could have read. Returns false when neither of the
+// first two is ready: nothing was started, the caller speaks with the phone. The speech in flight is cut
+// first, like the next phone speech cuts it; onDone / onStopped mean what they mean for the phone.
+interface BetterOptions {
+  rate?: number;
+  gender?: VoiceGender;
+  onDone?: () => void;
+  onStopped?: () => void;
+}
+
+function speakBetter(text: string, locale: string, opts: BetterOptions, phone: () => void): boolean {
+  const lang = neuralLangFor(locale);
+  if (!lang) return false;
+  // A male / female line (practice exam) must not get a pack recording of the other sex.
+  const wrongSex = !!opts.gender && opts.gender !== 'n' && lang !== 'hu' && voiceFor(lang, 'kokoro', text).gender !== opts.gender;
+  const pack = wrongSex ? null : neuralPackFile(lang, text);
+  const engine = neuralEngineFor(lang);
+  if (!pack && !engine) return false;
+  Speech.stop();
+  stopNeural();
+  stopPack();
+  // The phone takes over from a level that failed: whatever of that level still sounds is cut first.
+  const toPhone = () => {
+    stopNeural();
+    stopPack();
+    phone();
+  };
+  const viaEngine = () => {
+    const now = neuralEngineFor(lang);
+    if (!now) {
+      toPhone();
+      return;
+    }
+    speakNeural(text, lang, voiceFor(lang, now, text, opts.gender), {
+      rate: opts.rate,
+      onDone: opts.onDone,
+      onStopped: opts.onStopped,
+    }).catch(toPhone);
+  };
+  if (pack) {
+    playPackFile(pack, { rate: opts.rate, onDone: opts.onDone, onStopped: opts.onStopped, onFail: viaEngine });
+  } else {
+    viaEngine();
   }
-  const voice = voiceIdFor(locale);
-  Speech.speak(padForAndroid(text), {
-    ...options,
-    language: speechTag(locale),
-    ...(voice ? { voice } : {}),
-  });
+  return true;
 }
 
 export function stop(): void {
   speakingRun += 1; // no running segment chain may continue after the stop
   Speech.stop();
+  stopNeural();
+  stopPack();
 }
 
 // The lesson screen's stop button calls this (the same button
@@ -182,6 +248,7 @@ export function stopSpeaking(): void {
 let appStateSub: { remove(): void } | null = null;
 
 export function watchAppStateForSpeech(): () => void {
+  void startNeural(); // reads the better voice's settings and loads its engines (once per run)
   appStateSub?.remove();
   appStateSub = AppState.addEventListener('change', () => stop());
   return () => {
@@ -201,11 +268,15 @@ export interface SpeechRunSegment {
   locale: string;
   /** Voice pitch of the segment (1 = the engine's own); the practice exam gives each speaker a different one. */
   pitch?: number;
+  /** m / f picks the male / female voice of the better voice; n or nothing leaves it to the text. */
+  gender?: VoiceGender;
 }
 
 // `onStopped` fires when a segment in flight is cut off by a stop() or by the next speech (not at the natural end).
 export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, onStopped?: () => void): void {
   Speech.stop();
+  stopNeural();
+  stopPack();
   speakingRun += 1;
   const run = speakingRun;
   const queue = segments.filter((seg) => seg.text.trim());
@@ -217,23 +288,27 @@ export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, 
       onEnd?.();
       return;
     }
-    if (!hasVoiceFor(segment.locale)) {
-      // No voice for this language: the segment is skipped, the rest carry on
-      // (Settings offers the installation based on missingVoiceLanguages(),
-      // the same way as for the single-language speak()).
-      missing.add(baseLanguage(segment.locale));
-      next(index + 1);
-      return;
-    }
-    const voice = voiceIdFor(segment.locale);
-    Speech.speak(padForAndroid(segment.text), {
-      language: speechTag(segment.locale),
-      ...(voice ? { voice } : {}),
-      ...(segment.pitch !== undefined ? { pitch: segment.pitch } : {}),
-      onDone: () => next(index + 1),
-      onStopped: () => onStopped?.(),
-      onError: () => next(index + 1),
-    });
+    const viaPhone = () => {
+      if (!hasVoiceFor(segment.locale)) {
+        // No voice for this language: the segment is skipped, the rest carry on
+        // (Settings offers the installation based on missingVoiceLanguages(),
+        // the same way as for the single-language speak()).
+        missing.add(baseLanguage(segment.locale));
+        next(index + 1);
+        return;
+      }
+      const voice = voiceIdFor(segment.locale);
+      Speech.speak(padForAndroid(segment.text), {
+        language: speechTag(segment.locale),
+        ...(voice ? { voice } : {}),
+        ...(segment.pitch !== undefined ? { pitch: segment.pitch } : {}),
+        onDone: () => next(index + 1),
+        onStopped: () => onStopped?.(),
+        onError: () => next(index + 1),
+      });
+    };
+    const better = { gender: segment.gender, onDone: () => next(index + 1), onStopped: () => onStopped?.() };
+    if (!speakBetter(segment.text, segment.locale, better, viaPhone)) viaPhone();
   };
 
   if (isHeadlessWeb()) {

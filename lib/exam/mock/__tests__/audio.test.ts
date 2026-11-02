@@ -7,10 +7,10 @@ describe('audio lines', () => {
     expect(SPEAKER_PITCH).toEqual({ m: 0.85, f: 1.15, n: 1.0 });
     const segments = audioSegments([{ speaker: 'm', text: 'a' }, { speaker: 'f', text: 'b' }, { speaker: 'n', text: 'c' }, { text: 'd' }], 'es-MX');
     expect(segments).toEqual([
-      { text: 'a', locale: 'es-MX', pitch: 0.85 },
-      { text: 'b', locale: 'es-MX', pitch: 1.15 },
-      { text: 'c', locale: 'es-MX', pitch: 1 },
-      { text: 'd', locale: 'es-MX', pitch: 1 },
+      { text: 'a', locale: 'es-MX', pitch: 0.85, gender: 'm' },
+      { text: 'b', locale: 'es-MX', pitch: 1.15, gender: 'f' },
+      { text: 'c', locale: 'es-MX', pitch: 1, gender: 'n' },
+      { text: 'd', locale: 'es-MX', pitch: 1, gender: 'n' },
     ]);
   });
 

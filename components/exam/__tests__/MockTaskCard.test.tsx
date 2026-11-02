@@ -282,3 +282,43 @@ describe('essay', () => {
     expect(sink.current).toMatchObject({ choice: b.id, text: 'otra' });
   });
 });
+
+describe('older listening kinds: the lines go through speakSequence', () => {
+  const listening = (kind: 'listen_mc' | 'listen_dialogue'): MockTask => ({
+    id: 'old-listen',
+    skill: 'listening',
+    instruction: 'Escucha.',
+    kind,
+    audio: ['Hola.', 'Buenos días.', '¿Cómo estás?'],
+    questions: [{ options: ['a', 'b'], correct: 0 }],
+  });
+
+  it('a dialogue: one sequence, line by line, speaker A female and B male and deeper, the button released at the end', () => {
+    const { view } = show(listening('listen_dialogue'), 'es');
+    fireEvent.press(view.getByTestId('mock-play'));
+    fireEvent.press(view.getByTestId('mock-play')); // mute while it plays
+    expect(speakSequence).toHaveBeenCalledTimes(1);
+    const [segments, onEnd, onStopped] = (speakSequence as jest.Mock).mock.calls[0];
+    expect(segments).toEqual([
+      { text: 'Hola.', locale: 'es-MX', gender: 'f' },
+      { text: 'Buenos días.', locale: 'es-MX', gender: 'm', pitch: 0.8 },
+      { text: '¿Cómo estás?', locale: 'es-MX', gender: 'f' },
+    ]);
+    act(() => onEnd());
+    fireEvent.press(view.getByTestId('mock-play'));
+    expect(speakSequence).toHaveBeenCalledTimes(2);
+    act(() => onStopped());
+    expect(view.getByTestId('mock-plays-left').props.children).toBe('Plays left: 0');
+  });
+
+  it('a monologue: no speaker, no pitch', () => {
+    const { view } = show(listening('listen_mc'), 'es');
+    fireEvent.press(view.getByTestId('mock-play'));
+    const [segments] = (speakSequence as jest.Mock).mock.calls[0];
+    expect(segments).toEqual([
+      { text: 'Hola.', locale: 'es-MX' },
+      { text: 'Buenos días.', locale: 'es-MX' },
+      { text: '¿Cómo estás?', locale: 'es-MX' },
+    ]);
+  });
+});
