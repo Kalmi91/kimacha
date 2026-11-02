@@ -34,21 +34,34 @@ const TONE_COLOR: Record<Tone, string | null> = {
 type Props = {
   items: BadgeItem[];
   colors: ColorScheme;
+  // one line, never wraps: the chips shrink and their labels scale down to fit (the Learn header's five count chips).
+  singleLine?: boolean;
 };
+
+// label props for `singleLine`: one line, font shrinks down to 70 % before it is cut.
+const FIT_LABEL = { numberOfLines: 1, adjustsFontSizeToFit: true, minimumFontScale: 0.7 } as const;
 
 // small boxes on the brutalist palette (due = b, XP = a fill).
 const TONE_FILL: Record<Tone, BrutalFill> = { default: 'paper', blue: 'b', green: 'paper', accent: 'a' };
 
-export default function BadgeRow({ items, colors }: Props) {
+export default function BadgeRow({ items, colors, singleLine = false }: Props) {
   const g = useGrammarColors();
+  const fit = singleLine ? FIT_LABEL : null;
   if (g.brutal) {
     return (
-      <View style={styles.row}>
+      <View style={[styles.row, singleLine && styles.rowSingle]}>
         {items.map((item, i) => {
           const fill = TONE_FILL[item.tone ?? 'default'];
           return (
-            <BrutalBox key={i} fill={fill} offset={2} boxStyle={styles.brutalBadge}>
+            <BrutalBox
+              key={i}
+              fill={fill}
+              offset={2}
+              style={singleLine ? styles.chipShrink : undefined}
+              boxStyle={[styles.brutalBadge, singleLine && styles.brutalBadgeSingle]}
+            >
               <Text
+                {...fit}
                 accessibilityLabel={item.accessibilityLabel}
                 style={[styles.brutalBadgeText, { color: textOnFill(g, fill) }, item.tabular && styles.tabular]}
               >
@@ -61,10 +74,11 @@ export default function BadgeRow({ items, colors }: Props) {
     );
   }
   return (
-    <View style={styles.row}>
+    <View style={[styles.row, singleLine && styles.rowSingle]}>
       {items.map((item, i) => (
-        <View key={i} style={[styles.badge, { backgroundColor: colors.card }]}>
+        <View key={i} style={[styles.badge, singleLine && styles.chipShrink, { backgroundColor: colors.card }]}>
           <Text
+            {...fit}
             accessibilityLabel={item.accessibilityLabel}
             style={[
               styles.badgeText,
@@ -89,6 +103,9 @@ const styles = StyleSheet.create({
     // row does not shrink to its parent, so it never wrapped and the last chip stuck out.
     flexShrink: 1,
   },
+  rowSingle: { flexWrap: 'nowrap' },
+  // minWidth 0 lets a flex child shrink below its text's natural width.
+  chipShrink: { flexShrink: 1, minWidth: 0 },
   badge: {
     paddingHorizontal: 10,
     paddingVertical: 4,
@@ -99,6 +116,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   brutalBadge: { paddingHorizontal: 8, paddingVertical: 2, borderWidth: 2 },
+  brutalBadgeSingle: { paddingHorizontal: 6 },
   brutalBadgeText: { fontSize: 13, fontWeight: '500' },
   tabular: { fontVariant: ['tabular-nums'] },
 });

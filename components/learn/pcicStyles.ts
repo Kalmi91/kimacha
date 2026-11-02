@@ -1,5 +1,8 @@
 import { StyleSheet } from 'react-native';
 
+// The Learn header's level chip and the compact 💬 button share this size (dp); FeedbackModal.tsx reads it.
+export const HEADER_CHIP = { width: 56, height: 30 };
+
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -27,19 +30,18 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: 8,
-    marginBottom: 12,
+    marginBottom: 8,
   },
-  // the level chip + the existing four BadgeRow chips in one row.
-  headerBadges: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    alignItems: 'center',
-    gap: 6,
-    flex: 1,
+  // the five BadgeRow chips (row 2 of the header), 8 px above the bar / mistakes entry.
+  badgeRowWrap: {
+    marginBottom: 8,
   },
   levelChip: {
     paddingHorizontal: 10,
-    paddingVertical: 4,
+    height: HEADER_CHIP.height,
+    minWidth: HEADER_CHIP.width,
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 999,
   },
   levelChipText: {
@@ -47,7 +49,7 @@ export const styles = StyleSheet.create({
     fontWeight: '700',
     color: '#FFFFFF',
   },
-  brutalLevelChip: { paddingHorizontal: 10, paddingVertical: 3 },
+  brutalLevelChip: { width: HEADER_CHIP.width, height: HEADER_CHIP.height, alignItems: 'center', justifyContent: 'center' },
   brutalTile: { flex: 1 },
   brutalTileBox: { paddingVertical: 12, alignItems: 'center' },
   // the three "+N new words" buttons in one row.
@@ -61,15 +63,7 @@ export const styles = StyleSheet.create({
   headerIcons: {
     flexDirection: 'row',
     alignItems: 'center',
-    // the 💬 button stays at the top right corner when the chip row wraps over several lines.
-    alignSelf: 'flex-start',
     gap: 4,
-  },
-  // fix: today's word/sentence breakdown is its own full-width,
-  // wrappable row under the chip row (see the Text after headerRow).
-  todayLine: {
-    fontSize: 12,
-    marginBottom: 8,
   },
   resetBtn: {
     width: 32,

@@ -75,11 +75,37 @@ describe('Learn tab, neo-brutalist', () => {
     view.unmount();
   });
 
+  // The compact header: the top bar is ONE track (not blocks), its fill width is the percentage,
+  // and the grey "today: N words · N sentences / N" line is gone.
+  it('with the brand palette the top bar is one continuous track and the "today:" line is not rendered', async () => {
+    await getDb().setGrammarPalette('brand');
+    const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
+    await flush();
+    expect(view.queryByTestId('learn-progress')).toBeTruthy();
+    expect(view.queryByTestId('learn-progress-0')).toBeNull();
+    expect(StyleSheet.flatten(view.getByTestId('learn-progress-fill').props.style).width).toBe('0%');
+    expect(view.queryByText(/^today:/)).toBeNull();
+    view.unmount();
+  });
+
+  // The level chip and the 💬 button in row 1 are the same size.
+  it('with the brand palette the level chip and the 💬 button have the same width and height', async () => {
+    await getDb().setGrammarPalette('brand');
+    const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
+    await flush();
+    const chip = StyleSheet.flatten(view.getByTestId('learn-level-chip').props.style);
+    const feedback = StyleSheet.flatten(view.getByTestId('feedback-fab').props.style);
+    expect(chip.width).toBe(feedback.width);
+    expect(chip.height).toBe(feedback.height);
+    view.unmount();
+  });
+
   it('with the classic palette the current look stays: no BrutalBox', async () => {
     await getDb().setGrammarPalette('classic');
     const view = render(<ThemeProvider><PcicScreen /></ThemeProvider>);
     await flush();
     expect(view.queryByText('✓ Check')).toBeTruthy();
+    expect(view.queryByText(/^today:/)).toBeNull();
     expect(view.queryByTestId('learn-card')).toBeNull();
     expect(view.queryByTestId('learn-level-chip')).toBeNull();
     expect(view.queryByTestId('learn-docked-action')).toBeNull();

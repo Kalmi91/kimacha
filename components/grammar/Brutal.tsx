@@ -435,6 +435,34 @@ export function SegmentBar({
   );
 }
 
+// Continuous progress: one track with the same border look as a SegmentBar block, the ink fill = pct (0-100).
+export function ContinuousBar({
+  pct,
+  style,
+  testID,
+  fillTestID,
+}: {
+  pct: number;
+  style?: StyleProp<ViewStyle>;
+  testID?: string;
+  fillTestID?: string;
+}) {
+  const g = useGrammarColors();
+  const { shape } = useSkin().skin;
+  return (
+    <View
+      testID={testID}
+      style={[
+        styles.continuousTrack,
+        { borderColor: roleColor(g, shape.borderColor), borderWidth: Math.min(2, shape.borderWidth), ...smallRadius(shape, 4) },
+        style,
+      ]}
+    >
+      <View testID={fillTestID} style={{ width: `${Math.max(0, Math.min(100, pct))}%`, height: '100%', backgroundColor: g.ink }} />
+    </View>
+  );
+}
+
 const styles = StyleSheet.create({
   card: { padding: 14, gap: 6 },
   sticker: {
@@ -456,5 +484,6 @@ const styles = StyleSheet.create({
   backBox: { width: 30, height: 30, alignItems: 'center', justifyContent: 'center' },
   backArrow: { fontSize: 20, fontWeight: '500' },
   segmentRow: { flexDirection: 'row', gap: 3 },
+  continuousTrack: { height: 10, overflow: 'hidden' },
   segment: { flex: 1, height: 9, borderWidth: 2 },
 });
