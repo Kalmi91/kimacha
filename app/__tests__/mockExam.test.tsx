@@ -15,6 +15,7 @@ jest.mock('expo-router', () => ({
 
 jest.mock('@/lib/speech', () => ({
   speak: jest.fn(),
+  speakSequence: jest.fn(),
   stop: jest.fn(),
   stopSpeaking: jest.fn(),
   loadVoices: jest.fn().mockResolvedValue(undefined),
@@ -110,7 +111,7 @@ import { getDb } from '@/lib/database';
 import { singleWordForm } from '@/lib/exam/mock/build';
 import { MOCK_EXAM_PROGRESS_KEY, readMockOverview } from '@/lib/exam/mock/session';
 import { setLanguage, t } from '@/lib/i18n';
-import { speak } from '@/lib/speech';
+import { speakSequence } from '@/lib/speech';
 import { sm2NewCard } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import MockExamScreen from '../mock-exam';
@@ -141,7 +142,7 @@ const press = async (screen: Screen, testID: string) => {
 const reset = async () => {
   jest.useFakeTimers({ doNotFake: ['nextTick', 'setImmediate', 'queueMicrotask'] });
   mockBack.mockClear();
-  (speak as jest.Mock).mockClear();
+  (speakSequence as jest.Mock).mockClear();
   mockLevel = 'A1';
   mockExam = baseExam();
   setPcicTarget('es');
@@ -261,11 +262,11 @@ describe('Mock exam: flow', () => {
     await press(s, 'mock-play');
     expect(s.getByText('Plays left: 1')).toBeTruthy();
     // The mocked audio is "done" immediately, so the lock releases by itself: the 2nd play can go.
-    const speakMock = speak as jest.Mock;
-    speakMock.mock.calls[0][2].onDone?.();
+    const speakMock = speakSequence as jest.Mock;
+    speakMock.mock.calls[0][1]?.();
     await press(s, 'mock-play');
     expect(s.getByText('Plays left: 0')).toBeTruthy();
-    speakMock.mock.calls[1][2].onDone?.();
+    speakMock.mock.calls[1][1]?.();
     await press(s, 'mock-play');
     expect(speakMock).toHaveBeenCalledTimes(2);
     s.unmount();
@@ -499,9 +500,9 @@ describe('Mock exam: es→en direction (international sample, UI in Spanish)', (
     await press(s, 'mock-start-paper');
     await press(s, 'mock-play');
     expect(s.getByText('Reproducciones restantes: 0')).toBeTruthy();
-    (speak as jest.Mock).mock.calls[0][2].onDone?.();
+    (speakSequence as jest.Mock).mock.calls[0][1]?.();
     await press(s, 'mock-play');
-    expect(speak).toHaveBeenCalledTimes(1);
+    expect(speakSequence).toHaveBeenCalledTimes(1);
     s.unmount();
   });
 

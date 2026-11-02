@@ -9,7 +9,7 @@ import { DEFAULT_PLAYS, isAuthoredKindTask, type MockTarget, type MockTask, type
 import { answerInputProps } from '@/lib/inputProps';
 import { t } from '@/lib/i18n';
 import { speechLang } from '@/lib/languages';
-import { speak, stop as stopSpeaking } from '@/lib/speech';
+import { speakSequence, stop as stopSpeaking } from '@/lib/speech';
 import { useTheme } from '@/lib/ThemeContext';
 import ClipsMcTask from './mock/ClipsMcTask';
 import ClozeTask from './mock/ClozeTask';
@@ -107,14 +107,18 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
     const release = () => {
       playingRef.current = false;
     };
-    // One read-aloud per line; in a dialogue the odd lines are spoken in a deeper voice (two speakers).
-    audioLines.forEach((line, i) => {
-      const last = i === audioLines.length - 1;
-      speak(line, speechLang(target), {
+    // One read-aloud per line, one after the other; in a dialogue speaker A (even lines) has the female voice
+    // of the better voice and speaker B (odd lines) the male one, B also in a deeper phone voice.
+    speakSequence(
+      audioLines.map((line, i) => ({
+        text: line,
+        locale: speechLang(target),
+        ...(isDialogue ? { gender: i % 2 === 1 ? ('m' as const) : ('f' as const) } : {}),
         ...(isDialogue && i % 2 === 1 ? { pitch: 0.8 } : {}),
-        ...(last ? { onDone: release, onStopped: release, onError: release } : {}),
-      });
-    });
+      })),
+      release,
+      release,
+    );
   };
 
   const optionRow = (options: string[], picked: unknown, onPick: (i: number) => void, id: string) => (
