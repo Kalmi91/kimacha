@@ -120,6 +120,10 @@
     "title": "Alapvető elöljárószók: a, de, en, con, por",
     "blurb": "Az a + el = al és a de + el = del összevonással együtt."
    },
+   "lugar-direcciones": {
+    "title": "Hol van: encima, detrás, enfrente, jobbra, balra",
+    "blurb": "Az encima de, debajo de, detrás de, enfrente de, a la izquierda és a la derecha."
+   },
    "indefinido-regular": {
     "title": "Befejezett múlt: szabályos igék",
     "blurb": "Hablé, comí, viví: a befejezett múlt."
@@ -127,6 +131,10 @@
    "indefinido-irregular": {
     "title": "Befejezett múlt: rendhagyó igék",
     "blurb": "fui, tuve, hice, dije, estuve, pude, quise."
+   },
+   "indefinido-cambios-raiz": {
+    "title": "Múlt idő: pidió, durmió, leyó, oyó",
+    "blurb": "pidió, durmió, leyó, oyó: a magánhangzó-változás a harmadik személyben."
    },
    "indefinido-10-verbos": {
     "title": "Befejezett múlt (pretérito indefinido): a 10 leggyakoribb ige",
@@ -139,6 +147,10 @@
    "indefinido-imperfecto": {
     "title": "Pretérito indefinido vagy imperfecto?",
     "blurb": "Választás a két múlt idő között, ellentétpárokon."
+   },
+   "haber-impersonal-tiempos": {
+    "title": "Volt, lesz: había, hubo, habrá, habría",
+    "blurb": "A hay más időkben: volt, lesz, lenne."
    },
    "perfecto": {
     "title": "Az összetett múlt (pretérito perfecto)",
@@ -267,6 +279,10 @@
    "se-accidental": {
     "title": "Se me olvidó: a nem szándékos se",
     "blurb": "Se me cayó, se nos acabó: a dolog „tette”, te csak átélted."
+   },
+   "verbos-pronominales": {
+    "title": "Névmásos igék: darse cuenta, olvidarse, acordarse, quejarse, parecerse",
+    "blurb": "Me doy cuenta, se queja: a névmás az ige része, nem visszaható."
    },
    "perifrasis": {
     "title": "Igei körülírások",

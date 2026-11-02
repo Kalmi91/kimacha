@@ -195,6 +195,13 @@
       "blurb": { "en": "Including the contractions a + el = al and de + el = del.", "es": "Incluidas las contracciones al y del." }
     },
     {
+      "id": "lugar-direcciones",
+      "level": "A1",
+      "unit": "a1-cantidad",
+      "title": { "en": "Where is it: encima, detrás, enfrente, right, left", "es": "¿Dónde está?: encima, detrás, enfrente, derecha, izquierda" },
+      "blurb": { "en": "Encima de, debajo de, detrás de, enfrente de, a la izquierda, a la derecha.", "es": "Encima de, debajo de, detrás de, enfrente de, a la izquierda y a la derecha." }
+    },
+    {
       "id": "indefinido-regular",
       "level": "A2",
       "unit": "a2-pasado",
@@ -207,6 +214,13 @@
       "unit": "a2-pasado",
       "title": { "en": "Preterite: irregular verbs", "es": "Pretérito perfecto simple: irregulares" },
       "blurb": { "en": "fui, tuve, hice, dije, estuve, pude, quise.", "es": "fui, tuve, hice, dije, estuve, pude, quise." }
+    },
+    {
+      "id": "indefinido-cambios-raiz",
+      "level": "A2",
+      "unit": "a2-pasado",
+      "title": { "en": "Preterite: stem changes (pidió, durmió, leyó, oyó)", "es": "Pretérito perfecto simple: cambios de raíz (pidió, durmió, leyó, oyó)" },
+      "blurb": { "en": "pidió, durmió, leyó, oyó: the vowel change in the third person.", "es": "pidió, durmió, leyó, oyó: el cambio de vocal en la tercera persona." }
     },
     {
       "id": "indefinido-10-verbos",
@@ -228,6 +242,13 @@
       "unit": "a2-pasado",
       "title": { "en": "Preterite or imperfect?", "es": "¿Pretérito perfecto simple o imperfecto?" },
       "blurb": { "en": "Choosing between the two pasts, on contrast pairs.", "es": "La elección entre los dos pasados, con pares." }
+    },
+    {
+      "id": "haber-impersonal-tiempos",
+      "level": "A2",
+      "unit": "a2-pasado",
+      "title": { "en": "There was, there will be: había, hubo, habrá, habría", "es": "Había, hubo, habrá, habría: hay en otros tiempos" },
+      "blurb": { "en": "Hay in other tenses: there was, there will be, there would be.", "es": "Hay en otros tiempos: había, hubo, habrá, habría." }
     },
     {
       "id": "perfecto",
@@ -452,6 +473,13 @@
       "unit": "b1-estructuras",
       "title": { "en": "Se me olvidó: the accidental se", "es": "Se involuntario: se me olvidó, se me cayó" },
       "blurb": { "en": "Se me cayó, se nos acabó: the thing \"did it\", you just went through it.", "es": "Se me cayó, se nos acabó: la cosa \"lo hizo\", tú solo lo viviste." }
+    },
+    {
+      "id": "verbos-pronominales",
+      "level": "B1",
+      "unit": "b1-estructuras",
+      "title": { "en": "Pronominal verbs: darse cuenta, olvidarse, acordarse, quejarse, parecerse", "es": "Verbos pronominales: darse cuenta, olvidarse, acordarse, quejarse, parecerse" },
+      "blurb": { "en": "Me doy cuenta, se queja: the pronoun is part of the verb, nobody does it to themselves.", "es": "Me doy cuenta, se queja: el pronombre forma parte del verbo, no es reflexivo." }
     },
     {
       "id": "perifrasis",

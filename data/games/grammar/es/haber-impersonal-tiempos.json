@@ -1,0 +1,2015 @@
+{
+  "schema": 2,
+  "topic": "haber-impersonal-tiempos",
+  "level": "A2",
+  "title": {
+    "en": "There was, there will be: había, hubo, habrá, habría",
+    "es": "Había, hubo, habrá, habría: hay en otros tiempos"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In the present, Spanish says hay for \"there is\" and \"there are\". In other times the same idea uses other forms of the verb haber: había, hubo, habrá, habría. These forms exist only in the singular, even before plural nouns.",
+        "es": "En presente decimos hay. En otros tiempos usamos otras formas del verbo haber: había, hubo, habrá, habría. Estas formas existen solo en singular, también delante de sustantivos en plural."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "haber-tiempos",
+      "title": {
+        "en": "Hay in five tenses",
+        "es": "Hay en cinco tiempos"
+      },
+      "header": [
+        {
+          "en": "Tense",
+          "es": "Tiempo"
+        },
+        {
+          "en": "haber",
+          "es": "haber"
+        }
+      ],
+      "rows": [
+        ["presente", "hay"],
+        ["imperfecto", "había"],
+        ["indefinido", "hubo"],
+        ["futuro", "habrá"],
+        ["condicional", "habría"]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When to use which form",
+        "es": "Cuándo usar cada forma"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Había: a scene, a description or a habit in the past (imperfecto). It says how things were.",
+            "es": "Había: una escena, una descripción o una costumbre en el pasado (imperfecto). Dice cómo eran las cosas."
+          },
+          "examples": [
+            {
+              "es": "Antes había un mercado aquí.",
+              "tr": {
+                "en": "There used to be a market here.",
+                "es": "Antes había un mercado aquí."
+              }
+            },
+            {
+              "es": "Siempre había mucha gente en la plaza.",
+              "tr": {
+                "en": "There were always a lot of people in the square.",
+                "es": "Siempre había mucha gente en la plaza."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Hubo: one event that happened and ended (indefinido). It says what took place.",
+            "es": "Hubo: un hecho que pasó y terminó (indefinido). Dice lo que ocurrió."
+          },
+          "examples": [
+            {
+              "es": "Ayer hubo una reunión en la oficina.",
+              "tr": {
+                "en": "Yesterday there was a meeting in the office.",
+                "es": "Ayer hubo una reunión en la oficina."
+              }
+            },
+            {
+              "es": "Hace un año hubo un temblor en la ciudad.",
+              "tr": {
+                "en": "A year ago there was a tremor in the city.",
+                "es": "Hace un año hubo un temblor en la ciudad."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Habrá: what there will be in the future, a plan or a prediction (futuro simple).",
+            "es": "Habrá: lo que habrá en el futuro, un plan o una predicción (futuro simple)."
+          },
+          "examples": [
+            {
+              "es": "Mañana habrá un examen.",
+              "tr": {
+                "en": "Tomorrow there will be an exam.",
+                "es": "Mañana habrá un examen."
+              }
+            },
+            {
+              "es": "El domingo habrá fútbol en el estadio.",
+              "tr": {
+                "en": "On Sunday there will be football at the stadium.",
+                "es": "El domingo habrá fútbol en el estadio."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Habría: what there would be in an imagined situation (condicional).",
+            "es": "Habría: lo que habría en una situación imaginada (condicional)."
+          },
+          "examples": [
+            {
+              "es": "Con más dinero habría más opciones.",
+              "tr": {
+                "en": "With more money there would be more options.",
+                "es": "Con más dinero habría más opciones."
+              }
+            },
+            {
+              "es": "En el campo habría menos ruido.",
+              "tr": {
+                "en": "In the countryside there would be less noise.",
+                "es": "En el campo habría menos ruido."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Always singular: the form never agrees with the noun that follows.",
+            "es": "Siempre singular: la forma nunca concuerda con el sustantivo que sigue."
+          },
+          "examples": [
+            {
+              "es": "Había dos niños en la puerta.",
+              "tr": {
+                "en": "There were two children at the door.",
+                "es": "Había dos niños en la puerta."
+              }
+            },
+            {
+              "es": "Habrá muchas personas en la fiesta.",
+              "tr": {
+                "en": "There will be many people at the party.",
+                "es": "Habrá muchas personas en la fiesta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Hay que + infinitive (one has to) uses the same forms: había que, hubo que, habrá que, habría que.",
+            "es": "Hay que + infinitivo (hay que hacer algo) usa las mismas formas: había que, hubo que, habrá que, habría que."
+          },
+          "examples": [
+            {
+              "es": "Había que esperar una hora.",
+              "tr": {
+                "en": "We had to wait an hour.",
+                "es": "Había que esperar una hora."
+              }
+            },
+            {
+              "es": "Habrá que estudiar para el examen.",
+              "tr": {
+                "en": "We will have to study for the exam.",
+                "es": "Habrá que estudiar para el examen."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "haber-marcadores",
+      "title": {
+        "en": "Time words and the form they call for",
+        "es": "Palabras de tiempo y la forma que piden"
+      },
+      "header": [
+        {
+          "en": "Time word",
+          "es": "Palabra de tiempo"
+        },
+        {
+          "en": "haber",
+          "es": "haber"
+        }
+      ],
+      "rows": [
+        ["ahora", "hay"],
+        ["antes", "había"],
+        ["de niño", "había"],
+        ["ayer", "hubo"],
+        ["anoche", "hubo"],
+        ["hace un año", "hubo"],
+        ["mañana", "habrá"],
+        ["el lunes", "habrá"],
+        ["la próxima semana", "habrá"],
+        ["con más tiempo", "habría"],
+        ["con más dinero", "habría"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "había",
+          "b": "hubo",
+          "note": {
+            "en": "Había paints the scene; hubo reports one event that happened and ended.",
+            "es": "Había pinta la escena; hubo cuenta un hecho que pasó y terminó."
+          },
+          "examples": [
+            {
+              "es": "Había mucha gente en la calle.",
+              "tr": {
+                "en": "There were a lot of people in the street.",
+                "es": "Había mucha gente en la calle."
+              }
+            },
+            {
+              "es": "Hubo un accidente en la calle.",
+              "tr": {
+                "en": "There was an accident in the street.",
+                "es": "Hubo un accidente en la calle."
+              }
+            }
+          ]
+        },
+        {
+          "a": "habrá",
+          "b": "habría",
+          "note": {
+            "en": "Habrá is a real plan or prediction; habría is an imagined situation, a what-if.",
+            "es": "Habrá es un plan o una predicción real; habría es una situación imaginada, una hipótesis."
+          },
+          "examples": [
+            {
+              "es": "Mañana habrá clase.",
+              "tr": {
+                "en": "Tomorrow there will be class.",
+                "es": "Mañana habrá clase."
+              }
+            },
+            {
+              "es": "Con otro plan habría tiempo para todos.",
+              "tr": {
+                "en": "With another plan there would be time for everyone.",
+                "es": "Con otro plan habría tiempo para todos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not say habían or habrán. Even with plural nouns the form stays singular: había dos clases, habrá muchas personas.",
+        "es": "No digas habían ni habrán. Aunque el sustantivo esté en plural, la forma queda en singular: había dos clases, habrá muchas personas."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In the present, Spanish has one short word for there is and there are. In other times it uses other forms of the same verb. One form paints a scene or a habit in the past. Another reports one event that happened and ended. A third looks ahead to the future, and a fourth says what would exist in an imagined situation. All of them stay in the singular, even before plural nouns.",
+    "es": "En presente decimos hay. En otros tiempos usamos otras formas del mismo verbo. Había pinta una escena o una costumbre en el pasado. Hubo cuenta un hecho que pasó y terminó. Habrá mira al futuro, y habría dice lo que existiría en una situación imaginada. Todas las formas quedan en singular, también delante de plurales."
+  },
+  "items": [
+    {
+      "id": "hb-gap-01",
+      "sentence": "Cuando era niño, ___ un perro en mi casa.",
+      "options": ["había", "hubo", "habrá"],
+      "correct": 0,
+      "why": {
+        "en": "The sentence describes how things were when I was a child: a background description, so imperfecto: había.",
+        "es": "La frase describe cómo eran las cosas cuando era niño: una descripción de fondo, imperfecto: había."
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo would tell of one event, like a dog that showed up one day; here the dog is simply part of the scene.",
+          "es": "Hubo contaría un hecho único, como un perro que apareció un día; aquí el perro es parte de la escena."
+        },
+        "habrá": {
+          "en": "Habrá looks to the future, but cuando era niño puts the sentence in the past.",
+          "es": "Habrá mira al futuro, pero cuando era niño pone la frase en el pasado."
+        }
+      },
+      "examples": ["Antes había una tienda en la esquina.", "Siempre había comida en la casa de mi abuelo."],
+      "tr": {
+        "en": "When I was a child, there was a dog in my house.",
+        "es": "Cuando era niño, había un perro en mi casa."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "id": "hb-gap-02",
+      "sentence": "Ayer ___ un accidente en la carretera.",
+      "options": ["hay", "había", "hubo"],
+      "correct": 2,
+      "why": {
+        "en": "An accident is one event that happened and ended, so indefinido: hubo.",
+        "es": "Un accidente es un hecho que pasó y terminó, por eso indefinido: hubo."
+      },
+      "wrong": {
+        "hay": {
+          "en": "Hay is the present tense; ayer puts the accident in the past, so the verb must change too.",
+          "es": "Hay es presente; ayer pone el accidente en el pasado, y el verbo también debe cambiar."
+        },
+        "había": {
+          "en": "Había would describe the road as a background or a habit; an accident is not a state, it is something that happened.",
+          "es": "Había describiría la carretera como fondo o costumbre; un accidente no es un estado, es algo que pasó."
+        }
+      },
+      "examples": ["Hubo un temblor en la ciudad.", "Anoche hubo una tormenta."],
+      "tr": {
+        "en": "Yesterday there was an accident on the highway.",
+        "es": "Ayer hubo un accidente en la carretera."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
+    },
+    {
+      "id": "hb-gap-03",
+      "sentence": "Mañana ___ clase a las diez.",
+      "options": ["hubo", "habrá", "había"],
+      "correct": 1,
+      "why": {
+        "en": "Mañana points to the future, so the future form: habrá.",
+        "es": "Mañana apunta al futuro, por eso la forma de futuro: habrá."
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo would say that a class already took place; mañana has not happened yet.",
+          "es": "Hubo diría que una clase ya pasó; mañana todavía no ha pasado."
+        },
+        "había": {
+          "en": "Había describes the past; the sentence is about tomorrow.",
+          "es": "Había describe el pasado; la frase habla de mañana."
+        }
+      },
+      "examples": ["El lunes habrá un examen.", "Habrá música en la plaza."],
+      "tr": {
+        "en": "Tomorrow there will be class at ten.",
+        "es": "Mañana habrá clase a las diez."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "hb-gap-04",
+      "sentence": "Con más dinero, ___ más opciones.",
+      "options": ["hubo", "habrá", "habría"],
+      "correct": 2,
+      "why": {
+        "en": "The sentence imagines another situation (with more money), so the conditional: habría.",
+        "es": "La frase imagina otra situación (con más dinero), por eso el condicional: habría."
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo would say that on one occasion there were more options; here nobody has more money, it is only imagined.",
+          "es": "Hubo diría que en una ocasión hubo más opciones; aquí nadie tiene más dinero, solo se imagina."
+        },
+        "habrá": {
+          "en": "Habrá is a real prediction; con más dinero, habría is a what-if that may never happen.",
+          "es": "Habrá es una predicción real; con más dinero, habría es una hipótesis que quizá nunca ocurra."
+        }
+      },
+      "examples": ["Sin lluvia habría más gente.", "Con un amigo habría menos problemas."],
+      "tr": {
+        "en": "With more money, there would be more options.",
+        "es": "Con más dinero, habría más opciones."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
+    },
+    {
+      "id": "hb-gap-05",
+      "sentence": "Anoche ___ una fiesta en mi calle.",
+      "options": ["había", "hubo", "habría"],
+      "correct": 1,
+      "why": {
+        "en": "One party that took place last night and ended: indefinido: hubo.",
+        "es": "Una fiesta que ocurrió anoche y terminó: indefinido: hubo."
+      },
+      "wrong": {
+        "había": {
+          "en": "Había would suggest that a party was part of the background or happened every night; anoche points to one night.",
+          "es": "Había sugeriría que la fiesta era parte del fondo o pasaba cada noche; anoche señala una sola noche."
+        },
+        "habría": {
+          "en": "Habría is a what-if; anoche is real and already over.",
+          "es": "Habría es una hipótesis; anoche es real y ya pasó."
+        }
+      },
+      "examples": ["Hubo un concierto en el parque.", "Hubo una reunión en la oficina."],
+      "tr": {
+        "en": "Last night there was a party on my street.",
+        "es": "Anoche hubo una fiesta en mi calle."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
+    },
+    {
+      "id": "hb-gap-06",
+      "sentence": "Antes ___ mucha gente en este parque.",
+      "options": ["había", "hubo", "habrá"],
+      "correct": 0,
+      "why": {
+        "en": "Antes introduces how things used to be, a lasting situation: imperfecto: había.",
+        "es": "Antes presenta cómo eran las cosas, una situación que duraba: imperfecto: había."
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo would mean a single event, as if the crowd appeared once; antes describes how the park used to be.",
+          "es": "Hubo significaría un hecho único, como si la gente apareciera una vez; antes describe cómo era el parque."
+        },
+        "habrá": {
+          "en": "Habrá is the future; antes means before, so the sentence is about the past.",
+          "es": "Habrá es futuro; antes significa antes, así que la frase habla del pasado."
+        }
+      },
+      "examples": ["Antes había un mercado aquí.", "Siempre había música en la plaza."],
+      "tr": {
+        "en": "There used to be a lot of people in this park.",
+        "es": "Antes había mucha gente en este parque."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "id": "hb-gap-07",
+      "sentence": "El próximo sábado ___ un concierto en la plaza.",
+      "options": ["hubo", "habrá", "habría"],
+      "correct": 1,
+      "why": {
+        "en": "El próximo sábado is a future time, so: habrá.",
+        "es": "El próximo sábado es un tiempo futuro, por eso: habrá."
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo reports a concert that already took place; próximo says it has not happened yet.",
+          "es": "Hubo cuenta un concierto que ya ocurrió; próximo dice que todavía no ha pasado."
+        },
+        "habría": {
+          "en": "Habría is a what-if; this is a real plan for a real Saturday.",
+          "es": "Habría es una hipótesis; esto es un plan real para un sábado real."
+        }
+      },
+      "examples": ["Mañana habrá una película en el cine.", "El domingo habrá fútbol en el estadio."],
+      "tr": {
+        "en": "Next Saturday there will be a concert in the square.",
+        "es": "El próximo sábado habrá un concierto en la plaza."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "hb-gap-08",
+      "sentence": "Ahora no hay tiempo, pero con otro plan ___ tiempo para todos.",
+      "options": ["había", "habrá", "habría"],
+      "correct": 2,
+      "why": {
+        "en": "Now there is no time, so another plan is only imagined: the conditional, habría.",
+        "es": "Ahora no hay tiempo, así que otro plan solo se imagina: el condicional, habría."
+      },
+      "wrong": {
+        "había": {
+          "en": "Había is the past; the sentence compares the present with an imagined plan.",
+          "es": "Había es pasado; la frase compara el presente con un plan imaginado."
+        },
+        "habrá": {
+          "en": "Habrá would promise it as a real future; but ahora no hay tiempo makes the other plan only a what-if.",
+          "es": "Habrá lo prometería como un futuro real; pero ahora no hay tiempo hace del otro plan solo una hipótesis."
+        }
+      },
+      "examples": ["Con más ventanas habría más luz.", "Con un jardín habría lugar para jugar."],
+      "tr": {
+        "en": "Right now there is no time, but with another plan there would be time for everyone.",
+        "es": "Ahora no hay tiempo, pero con otro plan habría tiempo para todos."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
+    },
+    {
+      "id": "hb-gap-09",
+      "sentence": "Cuando vivía aquí, todos los días ___ ruido en la calle.",
+      "options": ["hubo", "había", "habrá"],
+      "correct": 1,
+      "why": {
+        "en": "Todos los días is a habit in the past: imperfecto: había.",
+        "es": "Todos los días es una costumbre en el pasado: imperfecto: había."
+      },
+      "wrong": {
+        "hubo": {
+          "en": "Hubo would be one noisy event; todos los días says it happened again and again.",
+          "es": "Hubo sería un solo hecho ruidoso; todos los días dice que pasaba una y otra vez."
+        },
+        "habrá": {
+          "en": "Habrá is the future; cuando vivía puts the sentence in the past.",
+          "es": "Habrá es futuro; cuando vivía pone la frase en el pasado."
+        }
+      },
+      "examples": ["Siempre había mucha gente aquí.", "Antes había más ruido en la ciudad."],
+      "tr": {
+        "en": "When I lived here, there was noise in the street every day.",
+        "es": "Cuando vivía aquí, todos los días había ruido en la calle."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "id": "hb-gap-10",
+      "sentence": "Hace un año ___ un temblor en la ciudad.",
+      "options": ["había", "hubo", "habría"],
+      "correct": 1,
+      "why": {
+        "en": "A tremor is one event that happened and ended; hace un año marks when: hubo.",
+        "es": "Un temblor es un hecho que pasó y terminó; hace un año dice cuándo: hubo."
+      },
+      "wrong": {
+        "había": {
+          "en": "Había would treat the tremor as part of the scenery; a tremor is something that happened once.",
+          "es": "Había trataría el temblor como parte del paisaje; un temblor es algo que pasó una vez."
+        },
+        "habría": {
+          "en": "Habría is a what-if; hace un año is a real, finished moment.",
+          "es": "Habría es una hipótesis; hace un año es un momento real y terminado."
+        }
+      },
+      "examples": ["Hubo un incendio en el mercado.", "Hace dos días hubo una fiesta."],
+      "tr": {
+        "en": "A year ago there was a tremor in the city.",
+        "es": "Hace un año hubo un temblor en la ciudad."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
+    },
+    {
+      "id": "hb-gap-11",
+      "sentence": "¿___ clase mañana?",
+      "options": ["Hubo", "Habrá", "Había"],
+      "correct": 1,
+      "why": {
+        "en": "Mañana is tomorrow, so the question uses the future form: ¿habrá...?",
+        "es": "Mañana es el día siguiente, por eso la pregunta usa el futuro: ¿habrá...?"
+      },
+      "wrong": {
+        "Hubo": {
+          "en": "¿Hubo clase mañana? would ask about a class that already took place, which cannot be tomorrow.",
+          "es": "¿Hubo clase mañana? preguntaría por una clase que ya ocurrió, y eso no puede ser mañana."
+        },
+        "Había": {
+          "en": "¿Había clase mañana? looks back, but mañana looks forward.",
+          "es": "¿Había clase mañana? mira atrás, pero mañana mira adelante."
+        }
+      },
+      "examples": ["¿Habrá música en la fiesta?", "¿Habrá comida para todos?"],
+      "tr": {
+        "en": "Will there be class tomorrow?",
+        "es": "¿Habrá clase mañana?"
+      },
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "id": "hb-gap-12",
+      "sentence": "Cuando llegué, ___ muchos niños en la fiesta.",
+      "options": ["habían", "había", "hubieron"],
+      "correct": 1,
+      "why": {
+        "en": "Haber is impersonal, so it stays singular even before muchos niños; the scene on arrival is imperfecto: había.",
+        "es": "Haber es impersonal: queda en singular, también delante de muchos niños; la escena al llegar es imperfecto: había."
+      },
+      "wrong": {
+        "habían": {
+          "en": "Habían agrees with niños, but impersonal haber never agrees with the noun: it is always singular.",
+          "es": "Habían concuerda con niños, pero el haber impersonal nunca concuerda con el sustantivo: siempre es singular."
+        },
+        "hubieron": {
+          "en": "Hubieron makes the same slip in the preterite: impersonal haber takes no plural, and the scene on arrival needs the imperfect anyway.",
+          "es": "Hubieron comete el mismo error en pretérito: el haber impersonal no admite plural, y la escena al llegar pide imperfecto."
+        }
+      },
+      "examples": ["Había dos niños en la puerta.", "Había tres clases ese día."],
+      "tr": {
+        "en": "When I arrived, there were many children at the party.",
+        "es": "Cuando llegué, había muchos niños en la fiesta."
+      },
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "kind": "match",
+      "id": "hb-match-01",
+      "pairs": [
+        {
+          "es": "hay",
+          "en": "there is/are"
+        },
+        {
+          "es": "había",
+          "en": "there used to be"
+        },
+        {
+          "es": "hubo",
+          "en": "there was (event)"
+        },
+        {
+          "es": "habrá",
+          "en": "there will be"
+        },
+        {
+          "es": "habría",
+          "en": "there would be"
+        }
+      ]
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-01",
+      "verb": "haber",
+      "person": "antes",
+      "answer": "había",
+      "table": "haber-marcadores",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-02",
+      "verb": "haber",
+      "person": "imperfecto",
+      "answer": "había",
+      "table": "haber-tiempos",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-03",
+      "verb": "haber",
+      "person": "ayer",
+      "answer": "hubo",
+      "table": "haber-marcadores",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-04",
+      "verb": "haber",
+      "person": "indefinido",
+      "answer": "hubo",
+      "table": "haber-tiempos",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-05",
+      "verb": "haber",
+      "person": "mañana",
+      "answer": "habrá",
+      "table": "haber-marcadores",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-06",
+      "verb": "haber",
+      "person": "futuro",
+      "answer": "habrá",
+      "table": "haber-tiempos",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-07",
+      "verb": "haber",
+      "person": "con más tiempo",
+      "answer": "habría",
+      "table": "haber-marcadores",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-08",
+      "verb": "haber",
+      "person": "condicional",
+      "answer": "habría",
+      "table": "haber-tiempos",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-09",
+      "verb": "haber",
+      "person": "anoche",
+      "answer": "hubo",
+      "table": "haber-marcadores",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-10",
+      "verb": "haber",
+      "person": "el lunes",
+      "answer": "habrá",
+      "table": "haber-marcadores",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-11",
+      "verb": "haber",
+      "person": "hace un año",
+      "answer": "hubo",
+      "table": "haber-marcadores",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "form",
+      "id": "hb-form-12",
+      "verb": "haber",
+      "person": "la próxima semana",
+      "answer": "habrá",
+      "table": "haber-marcadores",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "hb-why-01",
+      "es": "Siempre había mucha gente aquí.",
+      "target": "había",
+      "tr": {
+        "en": "There were always a lot of people here.",
+        "es": "Siempre había mucha gente aquí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Scene or habit in the past",
+            "es": "Escena o costumbre en el pasado"
+          }
+        },
+        {
+          "text": {
+            "en": "One event that happened",
+            "es": "Un hecho que pasó una vez"
+          },
+          "wrong": {
+            "en": "Not one event: siempre says it was usual, so the verb paints a scene, not a single happening.",
+            "es": "No es un hecho único: siempre dice que era habitual, así que el verbo pinta una escena, no un suceso."
+          }
+        },
+        {
+          "text": {
+            "en": "The future: what will happen",
+            "es": "El futuro: lo que pasará"
+          },
+          "wrong": {
+            "en": "The verb form is a past form (había), so this is not about the future.",
+            "es": "La forma del verbo es de pasado (había), así que no habla del futuro."
+          }
+        }
+      ],
+      "correctIndex": 0,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "hb-why-02",
+      "es": "Anoche hubo un accidente en mi calle.",
+      "target": "hubo",
+      "tr": {
+        "en": "Last night there was an accident on my street.",
+        "es": "Anoche hubo un accidente en mi calle."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Scene or habit in the past",
+            "es": "Escena o costumbre en el pasado"
+          },
+          "wrong": {
+            "en": "An accident is not a scene or a habit; it happened once, so hubo and not había.",
+            "es": "Un accidente no es una escena ni una costumbre; pasó una vez, por eso hubo y no había."
+          }
+        },
+        {
+          "text": {
+            "en": "One event that happened",
+            "es": "Un hecho que pasó una vez"
+          }
+        },
+        {
+          "text": {
+            "en": "An imagined situation",
+            "es": "Una situación imaginada"
+          },
+          "wrong": {
+            "en": "Anoche is a real moment in the past, not an imagined situation.",
+            "es": "Anoche es un momento real del pasado, no una situación imaginada."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "hb-why-03",
+      "es": "Mañana habrá una reunión en la oficina.",
+      "target": "habrá",
+      "tr": {
+        "en": "Tomorrow there will be a meeting in the office.",
+        "es": "Mañana habrá una reunión en la oficina."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "One event that happened",
+            "es": "Un hecho que pasó una vez"
+          },
+          "wrong": {
+            "en": "Mañana has not happened yet, so this cannot be an event that already took place.",
+            "es": "Mañana todavía no ha pasado, así que no puede ser un hecho que ya ocurrió."
+          }
+        },
+        {
+          "text": {
+            "en": "An imagined situation",
+            "es": "Una situación imaginada"
+          },
+          "wrong": {
+            "en": "A meeting planned for tomorrow is a real plan, not an imagined what-if.",
+            "es": "Una reunión planeada para mañana es un plan real, no una hipótesis imaginada."
+          }
+        },
+        {
+          "text": {
+            "en": "The future: what will happen",
+            "es": "El futuro: lo que pasará"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "hb-why-04",
+      "es": "Con más dinero, habría más lugar.",
+      "target": "habría",
+      "tr": {
+        "en": "With more money, there would be more room.",
+        "es": "Con más dinero, habría más lugar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The future: what will happen",
+            "es": "El futuro: lo que pasará"
+          },
+          "wrong": {
+            "en": "It is not a prediction: con más dinero imagines something that is not true now.",
+            "es": "No es una predicción: con más dinero imagina algo que ahora no es verdad."
+          }
+        },
+        {
+          "text": {
+            "en": "An imagined situation",
+            "es": "Una situación imaginada"
+          }
+        },
+        {
+          "text": {
+            "en": "Scene or habit in the past",
+            "es": "Escena o costumbre en el pasado"
+          },
+          "wrong": {
+            "en": "It is not a scene from the past: habría looks at an imagined situation.",
+            "es": "No es una escena del pasado: habría mira una situación imaginada."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "hb-why-05",
+      "es": "Había dos niños en la puerta.",
+      "target": "Había",
+      "tr": {
+        "en": "There were two children at the door.",
+        "es": "Había dos niños en la puerta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "An imagined situation",
+            "es": "Una situación imaginada"
+          },
+          "wrong": {
+            "en": "The form is not conditional (that would be habría); the point here is why it stays singular with dos niños.",
+            "es": "La forma no es condicional (sería habría); lo importante aquí es por qué queda en singular con dos niños."
+          }
+        },
+        {
+          "text": {
+            "en": "Always singular, even before plurals",
+            "es": "Siempre singular, también delante de plurales"
+          }
+        },
+        {
+          "text": {
+            "en": "The future: what will happen",
+            "es": "El futuro: lo que pasará"
+          },
+          "wrong": {
+            "en": "Habrá would be the future; the sentence is in the past, and the question is why it is not habían.",
+            "es": "Habrá sería el futuro; la frase está en pasado, y la pregunta es por qué no es habían."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "hb-why-06",
+      "es": "¿Habrá clase el lunes?",
+      "target": "Habrá",
+      "tr": {
+        "en": "Will there be class on Monday?",
+        "es": "¿Habrá clase el lunes?"
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Scene or habit in the past",
+            "es": "Escena o costumbre en el pasado"
+          },
+          "wrong": {
+            "en": "An imperfect would look back at a scene; el lunes here is still ahead of us.",
+            "es": "Un imperfecto miraría atrás a una escena; el lunes aquí todavía está por delante."
+          }
+        },
+        {
+          "text": {
+            "en": "The future: what will happen",
+            "es": "El futuro: lo que pasará"
+          }
+        },
+        {
+          "text": {
+            "en": "One event that happened",
+            "es": "Un hecho que pasó una vez"
+          },
+          "wrong": {
+            "en": "A past event would use hubo; the question is about a Monday that has not come yet.",
+            "es": "Un hecho pasado usaría hubo; la pregunta es sobre un lunes que todavía no llega."
+          }
+        }
+      ],
+      "correctIndex": 1,
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      }
+    },
+    {
+      "kind": "why",
+      "id": "hb-why-07",
+      "es": "Antes no había internet en el pueblo.",
+      "target": "había",
+      "tr": {
+        "en": "There used to be no internet in the village.",
+        "es": "Antes no había internet en el pueblo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "An imagined situation",
+            "es": "Una situación imaginada"
+          },
+          "wrong": {
+            "en": "It is not imagined: antes refers to something that really was the case.",
+            "es": "No es imaginado: antes se refiere a algo que realmente era así."
+          }
+        },
+        {
+          "text": {
+            "en": "One event that happened",
+            "es": "Un hecho que pasó una vez"
+          },
+          "wrong": {
+            "en": "Not a single event: antes describes a lasting situation, so había and not hubo.",
+            "es": "No es un hecho único: antes describe una situación que duraba, por eso había y no hubo."
+          }
+        },
+        {
+          "text": {
+            "en": "Scene or habit in the past",
+            "es": "Escena o costumbre en el pasado"
+          }
+        }
+      ],
+      "correctIndex": 2,
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      }
+    },
+    {
+      "id": "hb-tr-01",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There are always a lot of people in the square.",
+        "es": "Siempre hay mucha gente en la plaza."
+      },
+      "answer": "Siempre había mucha gente en la plaza.",
+      "accept": ["En la plaza siempre había mucha gente."],
+      "wordIds": ["102", "105", "66", "240", "18", "21", "674"],
+      "why": {
+        "en": "A usual situation in the past (siempre): había.",
+        "es": "Situación habitual en el pasado (siempre): había."
+      }
+    },
+    {
+      "id": "hb-tr-02",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is a shop and a restaurant on my street.",
+        "es": "Hay una tienda y un restaurante en mi calle."
+      },
+      "answer": "Había una tienda y un restaurante en mi calle.",
+      "wordIds": ["105", "20", "119", "15", "256", "18", "31", "120"],
+      "why": {
+        "en": "Describes how the street was, as a background: había.",
+        "es": "Describe cómo era la calle, como fondo: había."
+      }
+    },
+    {
+      "id": "hb-tr-03",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is no light in the living room.",
+        "es": "No hay luz en la sala."
+      },
+      "answer": "No había luz en la sala.",
+      "wordIds": ["5", "105", "272", "18", "21", "954"],
+      "why": {
+        "en": "The scene in the past, with no light: había.",
+        "es": "La escena en el pasado, sin luz: había."
+      }
+    },
+    {
+      "id": "hb-tr-04",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is a lot of wind on the beach.",
+        "es": "Hay mucho viento en la playa."
+      },
+      "answer": "Había mucho viento en la playa.",
+      "wordIds": ["105", "66", "388", "18", "21", "391"],
+      "why": {
+        "en": "Weather as the background of a past scene: había.",
+        "es": "El clima como fondo de una escena pasada: había."
+      }
+    },
+    {
+      "id": "hb-tr-05",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is only one hotel here.",
+        "es": "Aquí solo hay un hotel."
+      },
+      "answer": "Aquí solo había un hotel.",
+      "accept": ["Solo había un hotel aquí.", "Aquí sólo había un hotel."],
+      "wordIds": ["9", "141", "105", "20", "255"],
+      "why": {
+        "en": "How a place used to be: había.",
+        "es": "Cómo era un lugar: había."
+      }
+    },
+    {
+      "id": "hb-tr-06",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "Is there hot water in the bathroom?",
+        "es": "¿Hay agua caliente en el baño?"
+      },
+      "answer": "¿Había agua caliente en el baño?",
+      "wordIds": ["105", "24", "137", "18", "21", "121"],
+      "why": {
+        "en": "A question about the situation in the past: ¿había...?",
+        "es": "Una pregunta sobre la situación en el pasado: ¿había...?"
+      }
+    },
+    {
+      "id": "hb-tr-07",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is a very big garden behind the house.",
+        "es": "Hay un jardín muy grande detrás de la casa."
+      },
+      "answer": "Había un jardín muy grande detrás de la casa.",
+      "wordIds": ["105", "20", "393", "64", "60", "1173", "56", "21", "19"],
+      "why": {
+        "en": "A description of the place in the past: había.",
+        "es": "Una descripción del lugar en el pasado: había."
+      }
+    },
+    {
+      "id": "hb-tr-08",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "In the summer there is a lot of heat in the city.",
+        "es": "En el verano hay mucho calor en la ciudad."
+      },
+      "answer": "En el verano había mucho calor en la ciudad.",
+      "accept": ["Había mucho calor en la ciudad en el verano."],
+      "wordIds": ["18", "21", "667", "105", "66", "652", "51"],
+      "why": {
+        "en": "A regular situation each summer in the past: había.",
+        "es": "Una situación regular cada verano en el pasado: había."
+      }
+    },
+    {
+      "id": "hb-tr-09",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is no food in the fridge.",
+        "es": "No hay comida en el refrigerador."
+      },
+      "answer": "No había comida en el refrigerador.",
+      "wordIds": ["5", "105", "26", "18", "21", "1107"],
+      "why": {
+        "en": "Describes the state of things at that time: había.",
+        "es": "Describe el estado de las cosas en ese momento: había."
+      }
+    },
+    {
+      "id": "hb-tr-10",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is a flower in every window.",
+        "es": "Hay una flor en cada ventana."
+      },
+      "answer": "Había una flor en cada ventana.",
+      "wordIds": ["105", "20", "608", "18", "155", "270"],
+      "why": {
+        "en": "A picture of the past, one flower in each window: había.",
+        "es": "Una imagen del pasado, una flor en cada ventana: había."
+      }
+    },
+    {
+      "id": "hb-tr-11",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is a bed and a table in my grandfather's house.",
+        "es": "Hay una cama y una mesa en la casa de mi abuelo."
+      },
+      "answer": "Había una cama y una mesa en la casa de mi abuelo.",
+      "wordIds": ["105", "20", "116", "15", "115", "18", "21", "19", "56", "31", "619"],
+      "why": {
+        "en": "Describes the house as it used to be: había.",
+        "es": "Describe cómo era la casa: había."
+      }
+    },
+    {
+      "id": "hb-tr-12",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There is little snow on the mountain.",
+        "es": "Hay poca nieve en la montaña."
+      },
+      "answer": "Había poca nieve en la montaña.",
+      "wordIds": ["105", "153", "990", "18", "21", "389"],
+      "why": {
+        "en": "A state of things, not an event: había.",
+        "es": "Un estado de cosas, no un hecho: había."
+      }
+    },
+    {
+      "id": "hb-tr-13",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "imperfecto"
+      },
+      "prompt": {
+        "en": "There are three dogs and a cat in the yard.",
+        "es": "Hay tres perros y un gato en el patio."
+      },
+      "answer": "Había tres perros y un gato en el patio.",
+      "wordIds": ["105", "107", "112", "15", "20", "113", "18", "21", "1114"],
+      "why": {
+        "en": "The scene in the yard back then: había.",
+        "es": "La escena en el patio de entonces: había."
+      }
+    },
+    {
+      "id": "hb-tr-14",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is an accident on the highway.",
+        "es": "Hay un accidente en la carretera."
+      },
+      "answer": "Hubo un accidente en la carretera.",
+      "wordIds": ["105", "20", "397", "18", "21", "1133"],
+      "why": {
+        "en": "An accident is one event that happened: hubo.",
+        "es": "Un accidente es un hecho que pasó una vez: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-15",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a meeting in the office.",
+        "es": "Hay una reunión en la oficina."
+      },
+      "answer": "Hubo una reunión en la oficina.",
+      "wordIds": ["105", "20", "540", "18", "21", "258"],
+      "why": {
+        "en": "A meeting is an event with a beginning and an end: hubo.",
+        "es": "Una reunión es un hecho con principio y fin: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-16",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a party at my house.",
+        "es": "Hay una fiesta en mi casa."
+      },
+      "answer": "Hubo una fiesta en mi casa.",
+      "wordIds": ["105", "20", "285", "18", "31", "19"],
+      "why": {
+        "en": "A party that took place once: hubo.",
+        "es": "Una fiesta que pasó una vez: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-17",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a concert in the park.",
+        "es": "Hay un concierto en el parque."
+      },
+      "answer": "Hubo un concierto en el parque.",
+      "wordIds": ["105", "20", "638", "18", "21", "254"],
+      "why": {
+        "en": "A concert is a closed event: hubo.",
+        "es": "Un concierto es un hecho cerrado: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-18",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a storm with rain and wind.",
+        "es": "Hay una tormenta con lluvia y viento."
+      },
+      "answer": "Hubo una tormenta con lluvia y viento.",
+      "wordIds": ["105", "20", "2180", "32", "988", "15", "388"],
+      "why": {
+        "en": "A storm that happened and ended: hubo.",
+        "es": "Una tormenta que pasó y terminó: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-19",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a fire in the market.",
+        "es": "Hay un incendio en el mercado."
+      },
+      "answer": "Hubo un incendio en el mercado.",
+      "wordIds": ["105", "20", "2311", "18", "21", "257"],
+      "why": {
+        "en": "A fire is an event that took place: hubo.",
+        "es": "Un incendio es un hecho que ocurrió: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-20",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a tremor in the city.",
+        "es": "Hay un temblor en la ciudad."
+      },
+      "answer": "Hubo un temblor en la ciudad.",
+      "wordIds": ["105", "20", "4366", "18", "21", "51"],
+      "why": {
+        "en": "A tremor lasts seconds: a finished event, hubo.",
+        "es": "Un temblor dura segundos: hecho terminado, hubo."
+      }
+    },
+    {
+      "id": "hb-tr-21",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a problem with the flight.",
+        "es": "Hay un problema con el vuelo."
+      },
+      "answer": "Hubo un problema con el vuelo.",
+      "wordIds": ["105", "20", "129", "32", "21", "1130"],
+      "why": {
+        "en": "A problem that came up once: hubo.",
+        "es": "Un problema que surgió una vez: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-22",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a wedding in the church.",
+        "es": "Hay una boda en la iglesia."
+      },
+      "answer": "Hubo una boda en la iglesia.",
+      "wordIds": ["105", "20", "1150", "18", "21", "971"],
+      "why": {
+        "en": "A wedding is an event that took place: hubo.",
+        "es": "Una boda es un hecho que ocurrió: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-23",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "Is there class today?",
+        "es": "¿Hay clase hoy?"
+      },
+      "answer": "¿Hubo clase hoy?",
+      "wordIds": ["105", "246", "52"],
+      "why": {
+        "en": "Asks whether a class took place today: ¿hubo...?",
+        "es": "Pregunta si hubo una clase hoy: ¿hubo...?"
+      }
+    },
+    {
+      "id": "hb-tr-24",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is nobody at the meeting.",
+        "es": "No hay nadie en la reunión."
+      },
+      "answer": "No hubo nadie en la reunión.",
+      "wordIds": ["5", "105", "164", "18", "21", "540"],
+      "why": {
+        "en": "Nobody came to that one meeting: hubo.",
+        "es": "Nadie vino a esa reunión: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-25",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is a dinner with the whole family.",
+        "es": "Hay una cena con toda la familia."
+      },
+      "answer": "Hubo una cena con toda la familia.",
+      "wordIds": ["105", "20", "261", "32", "97", "21", "41"],
+      "why": {
+        "en": "A dinner that happened one evening: hubo.",
+        "es": "Una cena que pasó una noche: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-26",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "indefinido"
+      },
+      "prompt": {
+        "en": "There is an exam at school.",
+        "es": "Hay un examen en la escuela."
+      },
+      "answer": "Hubo un examen en la escuela.",
+      "wordIds": ["105", "20", "610", "18", "21", "118"],
+      "why": {
+        "en": "An exam is a closed event: hubo.",
+        "es": "Un examen es un hecho cerrado: hubo."
+      }
+    },
+    {
+      "id": "hb-tr-27",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There are about a hundred people at the wedding.",
+        "es": "Hay unas cien personas en la boda."
+      },
+      "answer": "Habrá unas cien personas en la boda.",
+      "wordIds": ["105", "20", "196", "46", "18", "21", "1150"],
+      "why": {
+        "en": "A number we expect for the future: habrá.",
+        "es": "Un número que esperamos para el futuro: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-28",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is food for everyone.",
+        "es": "Hay comida para todos."
+      },
+      "answer": "Habrá comida para todos.",
+      "wordIds": ["105", "26", "95", "97"],
+      "why": {
+        "en": "A promise for the future: habrá.",
+        "es": "Una promesa para el futuro: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-29",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There are classes on Monday.",
+        "es": "Hay clases el lunes."
+      },
+      "answer": "Habrá clases el lunes.",
+      "accept": ["El lunes habrá clases."],
+      "wordIds": ["105", "246", "21", "639"],
+      "why": {
+        "en": "A plan for next Monday: habrá.",
+        "es": "Un plan para el próximo lunes: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-30",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is no problem.",
+        "es": "No hay problema."
+      },
+      "answer": "No habrá problema.",
+      "wordIds": ["5", "105", "129"],
+      "why": {
+        "en": "A reassurance about the future: habrá.",
+        "es": "Una seguridad sobre el futuro: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-31",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is an exam tomorrow.",
+        "es": "Hay un examen mañana."
+      },
+      "answer": "Habrá un examen mañana.",
+      "accept": ["Mañana habrá un examen."],
+      "wordIds": ["105", "20", "610", "173"],
+      "why": {
+        "en": "With mañana, the future form is habrá.",
+        "es": "Con mañana, la forma de futuro es habrá."
+      }
+    },
+    {
+      "id": "hb-tr-32",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is more time after dinner.",
+        "es": "Hay más tiempo después de la cena."
+      },
+      "answer": "Habrá más tiempo después de la cena.",
+      "wordIds": ["105", "65", "22", "170", "56", "21", "261"],
+      "why": {
+        "en": "A prediction about later: habrá.",
+        "es": "Una predicción sobre más tarde: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-33",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is a new movie at the cinema.",
+        "es": "Hay una película nueva en el cine."
+      },
+      "answer": "Habrá una película nueva en el cine.",
+      "wordIds": ["105", "20", "284", "67", "18", "21", "632"],
+      "why": {
+        "en": "An announcement about the future: habrá.",
+        "es": "Un anuncio sobre el futuro: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-34",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is a new market on my street.",
+        "es": "Hay un mercado nuevo en mi calle."
+      },
+      "answer": "Habrá un mercado nuevo en mi calle.",
+      "wordIds": ["105", "20", "257", "67", "18", "31", "120"],
+      "why": {
+        "en": "Something that will open: habrá.",
+        "es": "Algo que abrirá: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-35",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is football at the stadium on Sunday.",
+        "es": "Hay fútbol en el estadio el domingo."
+      },
+      "answer": "Habrá fútbol en el estadio el domingo.",
+      "accept": ["El domingo habrá fútbol en el estadio."],
+      "wordIds": ["105", "656", "18", "21", "1126", "636"],
+      "why": {
+        "en": "A scheduled event in the future: habrá.",
+        "es": "Un evento programado en el futuro: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-36",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is music and dancing in the square.",
+        "es": "Hay música y baile en la plaza."
+      },
+      "answer": "Habrá música y baile en la plaza.",
+      "wordIds": ["105", "283", "15", "1002", "18", "21", "674"],
+      "why": {
+        "en": "What the program includes: habrá.",
+        "es": "Lo que incluye el programa: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-37",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "There is another train at eight.",
+        "es": "Hay otro tren a las ocho."
+      },
+      "answer": "Habrá otro tren a las ocho.",
+      "wordIds": ["105", "151", "628", "34", "21", "193"],
+      "why": {
+        "en": "A timetable for later: habrá.",
+        "es": "Un horario para más tarde: habrá."
+      }
+    },
+    {
+      "id": "hb-tr-38",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "futuro-simple"
+      },
+      "prompt": {
+        "en": "You have to study for the exam.",
+        "es": "Hay que estudiar para el examen."
+      },
+      "answer": "Habrá que estudiar para el examen.",
+      "wordIds": ["105", "75", "212", "95", "21", "610"],
+      "why": {
+        "en": "Hay que in the future: habrá que, a need that is coming.",
+        "es": "Hay que en futuro: habrá que, una necesidad que viene."
+      }
+    },
+    {
+      "id": "hb-tr-39",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "With more money there are more options.",
+        "es": "Con más dinero hay más opciones."
+      },
+      "answer": "Con más dinero habría más opciones.",
+      "accept": ["Con más dinero, habría más opciones."],
+      "wordIds": ["32", "65", "123", "105", "3361"],
+      "why": {
+        "en": "An imagined situation (with more money): habría.",
+        "es": "Una situación imaginada (con más dinero): habría."
+      }
+    },
+    {
+      "id": "hb-tr-40",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "Without rain there are more people on the beach.",
+        "es": "Sin lluvia hay más gente en la playa."
+      },
+      "answer": "Sin lluvia habría más gente en la playa.",
+      "accept": ["Sin lluvia, habría más gente en la playa."],
+      "wordIds": ["96", "988", "105", "65", "240", "18", "21", "391"],
+      "why": {
+        "en": "What would happen without rain: habría.",
+        "es": "Lo que pasaría sin lluvia: habría."
+      }
+    },
+    {
+      "id": "hb-tr-41",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "In the countryside there is less noise.",
+        "es": "En el campo hay menos ruido."
+      },
+      "answer": "En el campo habría menos ruido.",
+      "wordIds": ["18", "21", "407", "105", "154", "702"],
+      "why": {
+        "en": "Imagining another place: habría.",
+        "es": "Imaginando otro lugar: habría."
+      }
+    },
+    {
+      "id": "hb-tr-42",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "There is no other option.",
+        "es": "No hay otra opción."
+      },
+      "answer": "No habría otra opción.",
+      "wordIds": ["5", "105", "151", "3361"],
+      "why": {
+        "en": "What the situation would be like: habría.",
+        "es": "Cómo sería la situación: habría."
+      }
+    },
+    {
+      "id": "hb-tr-43",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "Is there a table for two?",
+        "es": "¿Hay una mesa para dos?"
+      },
+      "answer": "¿Habría una mesa para dos?",
+      "wordIds": ["105", "20", "115", "95", "106"],
+      "why": {
+        "en": "A polite request at a restaurant: ¿habría...?",
+        "es": "Una petición amable en un restaurante: ¿habría...?"
+      }
+    },
+    {
+      "id": "hb-tr-44",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "Is there a quiet place nearby?",
+        "es": "¿Hay un lugar tranquilo cerca?"
+      },
+      "answer": "¿Habría un lugar tranquilo cerca?",
+      "wordIds": ["105", "20", "253", "421", "180"],
+      "why": {
+        "en": "A polite way to ask for a possibility: ¿habría...?",
+        "es": "Una manera amable de preguntar por una posibilidad: ¿habría...?"
+      }
+    },
+    {
+      "id": "hb-tr-45",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "There is light in the kitchen with a big window.",
+        "es": "Hay luz en la cocina con una ventana grande."
+      },
+      "answer": "Habría luz en la cocina con una ventana grande.",
+      "accept": ["Con una ventana grande habría luz en la cocina."],
+      "wordIds": ["105", "272", "18", "21", "269", "32", "20", "270", "60"],
+      "why": {
+        "en": "How the kitchen would be: habría.",
+        "es": "Cómo sería la cocina: habría."
+      }
+    },
+    {
+      "id": "hb-tr-46",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "There are books for everyone with a library.",
+        "es": "Hay libros para todos con una biblioteca."
+      },
+      "answer": "Habría libros para todos con una biblioteca.",
+      "accept": ["Con una biblioteca habría libros para todos."],
+      "wordIds": ["105", "124", "95", "97", "32", "20", "676"],
+      "why": {
+        "en": "A hypothetical library: habría.",
+        "es": "Una biblioteca hipotética: habría."
+      }
+    },
+    {
+      "id": "hb-tr-47",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "Then there is another way.",
+        "es": "Entonces hay otro camino."
+      },
+      "answer": "Entonces habría otro camino.",
+      "wordIds": ["168", "105", "151", "975"],
+      "why": {
+        "en": "A possible way out in an imagined case: habría.",
+        "es": "Un camino posible en un caso imaginado: habría."
+      }
+    },
+    {
+      "id": "hb-tr-48",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "There are fewer problems with a friend here.",
+        "es": "Hay menos problemas con un amigo aquí."
+      },
+      "answer": "Habría menos problemas con un amigo aquí.",
+      "accept": ["Con un amigo aquí habría menos problemas."],
+      "wordIds": ["105", "154", "129", "32", "20", "40", "9"],
+      "why": {
+        "en": "A what-if with a friend: habría.",
+        "es": "Una hipótesis con un amigo: habría."
+      }
+    },
+    {
+      "id": "hb-tr-49",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "There is something better.",
+        "es": "Hay algo mejor."
+      },
+      "answer": "Habría algo mejor.",
+      "wordIds": ["105", "99", "187"],
+      "why": {
+        "en": "A possibility we imagine: habría.",
+        "es": "Una posibilidad que imaginamos: habría."
+      }
+    },
+    {
+      "id": "hb-tr-50",
+      "kind": "transform",
+      "tense": {
+        "from": "presente",
+        "to": "condicional"
+      },
+      "prompt": {
+        "en": "You have to open the window.",
+        "es": "Hay que abrir la ventana."
+      },
+      "answer": "Habría que abrir la ventana.",
+      "wordIds": ["105", "75", "147", "21", "270"],
+      "why": {
+        "en": "Habría que is the polite suggestion: it would be good to open it.",
+        "es": "Habría que es la sugerencia amable: sería bueno abrirla."
+      }
+    }
+  ]
+}

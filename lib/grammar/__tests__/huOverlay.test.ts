@@ -91,6 +91,6 @@ describe.each(COURSES)('Hungarian sidecars (%s course)', (lang) => {
 describe('scripts/grammar-hu-check.mjs', () => {
   it('prints the coverage summary and exits 0', () => {
     const out = execFileSync(process.execPath, [path.join(ROOT, 'scripts', 'grammar-hu-check.mjs')], { encoding: 'utf8' });
-    expect(out).toMatch(/^TOTAL: 145 lessons, \d+\/\d+ Lang4 covered \(\d+\.\d+%\), \d+ stale$/m);
+    expect(out).toMatch(/^TOTAL: 149 lessons, \d+\/\d+ Lang4 covered \(\d+\.\d+%\), \d+ stale$/m);
   });
 });

@@ -77,12 +77,15 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'muy-mucho': 'exam',
   'numeros-hora-fecha': 'core',
   'preposiciones-basicas': 'core',
+  'lugar-direcciones': 'core',
   // --- A2 ---
   'indefinido-regular': 'core-plus',
   'indefinido-irregular': 'core-plus',
+  'indefinido-cambios-raiz': 'core',
   'indefinido-10-verbos': 'core-plus',
   imperfecto: 'core-plus',
   'indefinido-imperfecto': 'core-plus',
+  'haber-impersonal-tiempos': 'core',
   // In Mexico the spoken language uses the preterite instead of the perfecto
   // (comí, not he comido), so it is not in the speech core.
   perfecto: 'exam',
@@ -118,6 +121,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   relativos: 'core',
   'se-impersonal-pasiva': 'exam',
   'se-accidental': 'full',
+  'verbos-pronominales': 'exam',
   perifrasis: 'exam',
   'por-para-avanzado': 'exam',
   'verbos-preposicion': 'exam',
