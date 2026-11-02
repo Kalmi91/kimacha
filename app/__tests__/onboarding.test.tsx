@@ -143,7 +143,7 @@ describe('OnboardingScreen: language and level step', () => {
     expect(mockReplace).not.toHaveBeenCalled();
   });
 
-  it('"Español" -> es→en: Spanish greeting, the level picker offers A1, A2 and B1', () => {
+  it('"Español" -> es→en: Spanish greeting, the level picker offers A1, A2, B1, B2 and C1', () => {
     const { getByText, queryByText } = render(<OnboardingScreen />);
     fireEvent.press(getByText('Español'));
     fireEvent.press(getByText('English'));
@@ -161,9 +161,22 @@ describe('OnboardingScreen: language and level step', () => {
     expect(getByText('B1')).toBeTruthy();
     // A1 = en a0+a1, A2 = en a2, the "no words yet" row does not appear.
     expect(queryByText('Todavía no hay palabras aquí')).toBeNull();
-    // es→en B2 and C1 are empty, the "0 items = we do not offer it" filter skips them.
-    expect(queryByText('B2')).toBeNull();
-    expect(queryByText('C1')).toBeNull();
+    // B2 = en/b2.json and C1 = en/c1.json, so both are offered in the es→en direction too.
+    expect(getByText('B2')).toBeTruthy();
+    expect(getByText('Intermedio alto')).toBeTruthy();
+    expect(getByText('C1')).toBeTruthy();
+    expect(getByText('Avanzado')).toBeTruthy();
+  });
+
+  it('"Magyar" -> hu→en: the level picker offers A1, A2, B1, B2 and C1 (the Hungarian gloss covers every English card)', () => {
+    const { getByText } = render(<OnboardingScreen />);
+    fireEvent.press(getByText('Magyar'));
+    fireEvent.press(getByText('English'));
+    fireEvent.press(getByText('Kezdjük'));
+    fireEvent.press(getByText('Kezdjük'));
+    fireEvent.press(getByText('Tovább'));
+
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1']) expect(getByText(level)).toBeTruthy();
   });
 
   it('choosing es→en A1 saves "es"/"en", always with level A1', async () => {

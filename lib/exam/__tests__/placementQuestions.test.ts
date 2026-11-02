@@ -17,11 +17,13 @@ const norm = (text: string) => text.trim().toLowerCase();
 afterEach(() => setPcicTarget('es'));
 
 describe('placementLevels', () => {
-  it('en→es: A1-C1, es→en: A1-B1 (B2 and C1 are empty)', () => {
+  it('en→es, es→en and hu→en: A1-C1 (every level has a deck)', () => {
     setPcicTarget('es');
     expect(placementLevels()).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
     setPcicTarget('en');
-    expect(placementLevels()).toEqual(['A1', 'A2', 'B1']);
+    expect(placementLevels()).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
+    setPcicTarget('en', 'hu');
+    expect(placementLevels()).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
   });
 });
 

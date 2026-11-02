@@ -10,5 +10,15 @@
   {"id": "hedging_language", "order": 9, "subLevel": "C1.3", "type": "grammar", "icon": "🌫️", "name_en": "Hedging Language", "name_es": "Lenguaje atenuado (hedging)"},
   {"id": "discourse_markers", "order": 10, "subLevel": "C1.3", "type": "grammar", "icon": "🧭", "name_en": "Discourse Markers", "name_es": "Marcadores del discurso"},
   {"id": "ellipsis_substitution", "order": 11, "subLevel": "C1.4", "type": "grammar", "icon": "♻️", "name_en": "Ellipsis & Substitution", "name_es": "Elipsis y sustitución"},
-  {"id": "phrasal_verbs_c1", "order": 12, "subLevel": "C1.4", "type": "grammar", "icon": "🪢", "name_en": "Phrasal Verbs: C1", "name_es": "Phrasal verbs: C1"}
+  {"id": "phrasal_verbs_c1", "order": 12, "subLevel": "C1.4", "type": "grammar", "icon": "🪢", "name_en": "Phrasal Verbs: C1", "name_es": "Phrasal verbs: C1"},
+  {"id": "work_money", "order": 13, "subLevel": "C1.5", "type": "vocab", "icon": "💰", "name_en": "Work & Money", "name_es": "Trabajo y dinero"},
+  {"id": "law_society", "order": 14, "subLevel": "C1.5", "type": "vocab", "icon": "⚖️", "name_en": "Law & Society", "name_es": "Ley y sociedad"},
+  {"id": "politics_world", "order": 15, "subLevel": "C1.6", "type": "vocab", "icon": "🌍", "name_en": "Politics & World", "name_es": "Política y mundo"},
+  {"id": "science_tech", "order": 16, "subLevel": "C1.6", "type": "vocab", "icon": "🔬", "name_en": "Science & Tech", "name_es": "Ciencia y tecnología"},
+  {"id": "things_places", "order": 17, "subLevel": "C1.6", "type": "vocab", "icon": "🏠", "name_en": "Things & Places", "name_es": "Objetos y lugares"},
+  {"id": "feelings_mind", "order": 18, "subLevel": "C1.7", "type": "vocab", "icon": "🧠", "name_en": "Feelings & Thoughts", "name_es": "Sentimientos y pensamientos"},
+  {"id": "people_life", "order": 19, "subLevel": "C1.7", "type": "vocab", "icon": "👥", "name_en": "People & Life", "name_es": "Gente y vida"},
+  {"id": "actions", "order": 20, "subLevel": "C1.8", "type": "vocab", "icon": "🏃", "name_en": "Actions", "name_es": "Acciones"},
+  {"id": "describing", "order": 21, "subLevel": "C1.8", "type": "vocab", "icon": "🎨", "name_en": "Describing", "name_es": "Descripción"},
+  {"id": "ideas", "order": 22, "subLevel": "C1.8", "type": "vocab", "icon": "💡", "name_en": "Abstract Ideas", "name_es": "Ideas abstractas"}
 ]

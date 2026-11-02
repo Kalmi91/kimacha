@@ -131,7 +131,7 @@ export default {
   credits: {
     title: 'Credits',
     cefrjBody:
-      'English B1 word list: The CEFR-J Wordlist Version 1.5, compiled by Yukio Tono, Tokyo ' +
+      'English B1 and B2 word lists: The CEFR-J Wordlist Version 1.5, compiled by Yukio Tono, Tokyo ' +
       'University of Foreign Studies (cefr-j.org). Used under its terms for research and ' +
       'commercial use with attribution.',
     cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',

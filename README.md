@@ -174,6 +174,6 @@ Copyright (c) 2026 Fekete Kálmán. All rights reserved. The code, the word data
 viewed and evaluated, but not copied, modified or distributed without written permission. See
 [LICENSE](LICENSE).
 
-Third-party components keep their own licences: the English B1 word list (CEFR-J), the Wikimedia
+Third-party components keep their own licences: the English B1 and B2 word lists (CEFR-J), the Wikimedia
 Commons word photos and the bundled fonts. Details are in
 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).

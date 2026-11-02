@@ -126,7 +126,7 @@ const hu: typeof en = {
   credits: {
     title: 'Források és licencek',
     cefrjBody:
-      'Angol B1 szólista: The CEFR-J Wordlist Version 1.5, összeállította Yukio Tono, Tokiói ' +
+      'Angol B1 és B2 szólisták: The CEFR-J Wordlist Version 1.5, összeállította Yukio Tono, Tokiói ' +
       'Idegennyelvi Egyetem (cefr-j.org). A feltételei szerint, forrásmegjelöléssel használjuk ' +
       'kutatási és kereskedelmi célra.',
     cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',

@@ -53,25 +53,50 @@ describe('data/pcic.ts: direction-aware corpus', () => {
     expect(findPcicItem('o883')?.pos).toBe('interj');
   });
 
-  // A1 gives the first 50 cards of data/words/en/a0.json
-  // with the e<id> id space; A2/B1/B2 stay empty (no plan for them).
-  // B1 = data/words/en/b1.json (CEFR-J), from e10000; B2 is empty.
-  it('switches to setPcicTarget("en"): A1 = en a0+a1, A2 = en a2, B1 = en b1, e<id>, an English word once; B2 empty', () => {
+  // A1 = data/words/en a0 + a1 with the e<id> id space, A2 = a2.
+  // B1 = data/words/en/b1.json (CEFR-J), from e10000; B2 = b2.json (CEFR-J), from e11000;
+  // C1 = c1.json (the owner's Spanish deck headwords), from e12000.
+  it('switches to setPcicTarget("en"): A1 = en a0+a1, A2 = en a2, B1/B2/C1 = en b1/b2/c1, e<id>, an English word once', () => {
     setPcicTarget('en');
     expect(getPcicTarget()).toBe('en');
     const a1 = pcicItemsForLevel('A1');
     const a2 = pcicItemsForLevel('A2');
     const b1 = pcicItemsForLevel('B1');
+    const b2 = pcicItemsForLevel('B2');
+    const c1 = pcicItemsForLevel('C1');
     expect(a1.length).toBeGreaterThan(1100);
     expect(a2.length).toBeGreaterThan(750);
     expect(b1.length).toBeGreaterThan(700);
-    const all = [...a1, ...a2, ...b1];
+    expect(b2.length).toBeGreaterThan(900);
+    expect(c1.length).toBeGreaterThan(500);
+    const all = [...a1, ...a2, ...b1, ...b2, ...c1];
     expect(all.every((item) => item.id.startsWith('e'))).toBe(true);
     expect(new Set(all.map((item) => item.id)).size).toBe(all.length);
     expect(new Set(all.map((item) => item.en.trim().toLowerCase())).size).toBe(all.length);
     expect(a1[0].id).toBe('e5800');
     expect(b1[0].id).toBe('e10000');
-    expect(pcicItemsForLevel('B2')).toEqual([]);
+    expect(b2[0].id).toBe('e11000');
+    expect(c1[0].id).toBe('e12000');
+    expect(levelOfItem('e11000')).toBe('B2');
+    expect(levelOfItem('e12000')).toBe('C1');
+  });
+
+  // Every en B2/C1 card is a complete card (es, en and both sentences), and the Hungarian overlay
+  // (hu→en) has a row with hu + sentence_hu for it: none of the new cards may reach the learner half-empty.
+  it('the en B2/C1 cards are complete and every one has a Hungarian gloss row', () => {
+    setPcicTarget('en');
+    for (const level of ['B2', 'C1'] as const) {
+      const items = pcicItemsForLevel(level);
+      expect(items.length).toBeGreaterThan(0);
+      for (const item of items) {
+        expect(item.es.trim()).not.toBe('');
+        expect(item.en.trim()).not.toBe('');
+        expect((item.exampleEs ?? '').trim()).not.toBe('');
+        expect((item.exampleEn ?? '').trim()).not.toBe('');
+        expect((item.hu ?? '').trim()).not.toBe('');
+        expect((item.exampleHu ?? '').trim()).not.toBe('');
+      }
+    }
   });
 
   it('the id spaces of the two directions live apart: an es-es id does not resolve on the "en" target language, and vice versa', () => {
