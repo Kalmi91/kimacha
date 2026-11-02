@@ -37,7 +37,7 @@
           "ja"
         ],
         [
-          "Komm ___ mit! (Ermunterung)",
+          "Komm ___ mit! (Einladung)",
           "doch"
         ],
         [
@@ -57,7 +57,7 @@
           "denn"
         ],
         [
-          "Das ist ___ so. (Resignation)",
+          "Das ist ___ so. (nicht zu ändern)",
           "eben"
         ],
         [
@@ -77,7 +77,7 @@
           "ruhig"
         ],
         [
-          "Was machst du ___ hier? (nebenbei gefragt)",
+          "Was machst du ___ hier? (neugierig gefragt)",
           "eigentlich"
         ]
       ]
@@ -387,7 +387,7 @@
       "id": "modalpartikeln-f02",
       "kind": "form",
       "verb": "Partikel",
-      "person": "Komm ___ mit! (Ermunterung)",
+      "person": "Komm ___ mit! (Einladung)",
       "answer": "doch",
       "accept": [
         "mal"
@@ -497,7 +497,7 @@
         }
       },
       "examples": [
-        "Komm doch herein!",
+        "Komm doch zu uns!",
         "Sag doch etwas!"
       ],
       "tr": {
@@ -549,7 +549,7 @@
       "id": "modalpartikeln-f05",
       "kind": "form",
       "verb": "Partikel",
-      "person": "Das ist ___ so. (Resignation)",
+      "person": "Das ist ___ so. (nicht zu ändern)",
       "answer": "eben",
       "accept": [
         "halt"
@@ -830,7 +830,7 @@
       "id": "modalpartikeln-f10",
       "kind": "form",
       "verb": "Partikel",
-      "person": "Was machst du ___ hier? (nebenbei gefragt)",
+      "person": "Was machst du ___ hier? (neugierig gefragt)",
       "answer": "eigentlich",
       "table": "modalpartikeln-liste"
     },

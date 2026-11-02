@@ -44,7 +44,7 @@
         [
           "Verneinung",
           "ohne dass",
-          "Er geht, ohne dass jemand es merkt."
+          "Er geht, ohne dass jemand ihn sieht."
         ],
         [
           "Ersatz",
@@ -168,10 +168,10 @@
           },
           "examples": [
             {
-              "es": "Er geht, ohne dass jemand es merkt.",
+              "es": "Er geht, ohne dass jemand ihn sieht.",
               "tr": {
-                "en": "He leaves without anyone noticing.",
-                "es": "Él se va sin que nadie lo note."
+                "en": "He leaves without anyone seeing him.",
+                "es": "Él se va sin que nadie lo vea."
               }
             },
             {
@@ -308,11 +308,11 @@
       },
       "pairs": [
         {
-          "a": "Er geht, ohne dass ich es merke.",
+          "a": "Er geht, ohne dass ich ihn sehe.",
           "b": "Er geht, ohne mich zu fragen.",
           "note": {
-            "en": "Different subjects (he leaves, I notice) need ohne dass and a full clause. The same subject (he leaves, he does not ask) is shorter with ohne ... zu.",
-            "es": "Sujetos distintos (él se va, yo lo noto) necesitan ohne dass y una oración completa. El mismo sujeto (él se va, él no pregunta) es más corto con ohne ... zu."
+            "en": "Different subjects (he leaves, I see him) need ohne dass and a full clause. The same subject (he leaves, he does not ask) is shorter with ohne ... zu.",
+            "es": "Sujetos distintos (él se va, yo lo veo) necesitan ohne dass y una oración completa. El mismo sujeto (él se va, él no pregunta) es más corto con ohne ... zu."
           },
           "examples": [
             {
@@ -366,8 +366,8 @@
     }
   ],
   "speak": {
-    "en": "Here you learn more subordinate clauses. In all of them the verb goes to the end. «Indem» names the means: «Er löst das Problem, indem er viel arbeitet». «Ohne dass» says that something happens without something else: «Er geht, ohne dass jemand es merkt». With the same subject you use «ohne zu». «Falls» introduces a possible case, and «je mehr, desto besser» links two comparatives. After «als ob» you need the Konjunktiv II: «Er tut, als ob er krank wäre». «Sodass» names the result, and «zumal» adds one more reason.",
-    "es": "Aquí aprendes más oraciones subordinadas. En todas el verbo va al final. «Indem» nombra el medio: «Er löst das Problem, indem er viel arbeitet». «Ohne dass» dice que algo ocurre sin que ocurra otra cosa: «Er geht, ohne dass jemand es merkt». Con el mismo sujeto usas «ohne zu». «Falls» introduce un caso posible, y «je mehr, desto besser» une dos comparativos. Después de «als ob» necesitas el Konjunktiv II: «Er tut, als ob er krank wäre». «Sodass» nombra el resultado, y «zumal» añade una razón más."
+    "en": "Here you learn more subordinate clauses. In all of them the verb goes to the end. «Indem» names the means: «Er löst das Problem, indem er viel arbeitet». «Ohne dass» says that something happens without something else: «Er geht, ohne dass jemand ihn sieht». With the same subject you use «ohne zu». «Falls» introduces a possible case, and «je mehr, desto besser» links two comparatives. After «als ob» you need the Konjunktiv II: «Er tut, als ob er krank wäre». «Sodass» names the result, and «zumal» adds one more reason.",
+    "es": "Aquí aprendes más oraciones subordinadas. En todas el verbo va al final. «Indem» nombra el medio: «Er löst das Problem, indem er viel arbeitet». «Ohne dass» dice que algo ocurre sin que ocurra otra cosa: «Er geht, ohne dass jemand ihn sieht». Con el mismo sujeto usas «ohne zu». «Falls» introduce un caso posible, y «je mehr, desto besser» une dos comparativos. Después de «als ob» necesitas el Konjunktiv II: «Er tut, als ob er krank wäre». «Sodass» nombra el resultado, y «zumal» añade una razón más."
   },
   "items": [
     {
@@ -412,7 +412,7 @@
     },
     {
       "id": "nebensaetze-b2-c02",
-      "sentence": "Er geht, ___ jemand es merkt.",
+      "sentence": "Er geht, ___ jemand ihn sieht.",
       "options": [
         "indem",
         "falls",
@@ -420,17 +420,17 @@
       ],
       "correct": 2,
       "why": {
-        "en": "He leaves, and nobody notices: something happens without something else. That is ohne dass, because the subjects differ.",
-        "es": "Él se va y nadie lo nota: algo ocurre sin que ocurra otra cosa. Eso es ohne dass, porque los sujetos son distintos."
+        "en": "He leaves, and nobody sees him: something happens without something else. That is ohne dass, because the subjects differ.",
+        "es": "Él se va y nadie lo ve: algo ocurre sin que ocurra otra cosa. Eso es ohne dass, porque los sujetos son distintos."
       },
       "wrong": {
         "indem": {
-          "en": "indem would say that he leaves by means of someone noticing it. That makes no sense.",
-          "es": "indem diría que se va por medio de que alguien lo note. Eso no tiene sentido."
+          "en": "indem would say that he leaves by means of someone seeing him. That makes no sense.",
+          "es": "indem diría que se va por medio de que alguien lo vea. Eso no tiene sentido."
         },
         "falls": {
-          "en": "falls would make it a condition (in case someone notices). The sentence states that nobody notices it.",
-          "es": "falls lo convertiría en una condición (en caso de que alguien lo note). La oración dice que nadie lo nota."
+          "en": "falls would make it a condition (in case someone sees him). The sentence states that nobody notices it.",
+          "es": "falls lo convertiría en una condición (en caso de que alguien lo vea). La oración dice que nadie lo ve."
         }
       },
       "examples": [
@@ -438,8 +438,8 @@
         "Er kauft ein, ohne dass sie es sieht."
       ],
       "tr": {
-        "en": "He leaves without anyone noticing.",
-        "es": "Él se va sin que nadie lo note."
+        "en": "He leaves without anyone seeing him.",
+        "es": "Él se va sin que nadie lo vea."
       }
     },
     {
@@ -474,7 +474,7 @@
         }
       },
       "examples": [
-        "Sie geht, ohne sich umzudrehen.",
+        "Sie geht, ohne zu antworten.",
         "Er kommt, ohne anzurufen."
       ],
       "tr": {
@@ -796,7 +796,7 @@
       },
       "examples": [
         "Er tut, als würde er lesen.",
-        "Sie sieht aus, als würde sie frieren."
+        "Sie sieht aus, als würde sie schlafen."
       ],
       "tr": {
         "en": "She acts as if she were sleeping.",

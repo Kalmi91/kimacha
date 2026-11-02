@@ -311,10 +311,10 @@
           },
           "examples": [
             {
-              "es": "Der Sprecher sagt, die Firma habe keine Probleme.",
+              "es": "Der Chef sagt, die Firma habe keine Probleme.",
               "tr": {
-                "en": "The spokesman says the company has no problems.",
-                "es": "El portavoz dice que la empresa no tiene problemas."
+                "en": "The boss says the company has no problems.",
+                "es": "El jefe dice que la empresa no tiene problemas."
               }
             },
             {
@@ -365,7 +365,7 @@
         }
       },
       "examples": [
-        "Der Sprecher sagt, der Zug sei schon weg.",
+        "Der Chef sagt, der Zug sei schon weg.",
         "Sie meint, ihr Bruder sei krank."
       ],
       "tr": {
@@ -383,7 +383,7 @@
     },
     {
       "id": "konjunktiv-i-indirekte-rede-c02",
-      "sentence": "Der Sprecher erklärt, die Firma ___ keine Probleme.",
+      "sentence": "Der Chef erklärt, die Firma ___ keine Probleme.",
       "options": [
         "habe",
         "hat",
@@ -391,13 +391,13 @@
       ],
       "correct": 0,
       "why": {
-        "en": "The spokesman is quoted, so Konjunktiv I is used. For die Firma (sie) the form habe differs from the indicative hat.",
-        "es": "Se cita al portavoz, así que se usa el Konjunktiv I. Para die Firma (sie) la forma habe se distingue del indicativo hat."
+        "en": "The boss is quoted, so Konjunktiv I is used. For die Firma (sie) the form habe differs from the indicative hat.",
+        "es": "Se cita al jefe, así que se usa el Konjunktiv I. Para die Firma (sie) la forma habe se distingue del indicativo hat."
       },
       "wrong": {
         "hat": {
-          "en": "hat is the indicative. It would present the words of the spokesman as a fact instead of as his statement.",
-          "es": "hat es el indicativo. Presentaría las palabras del portavoz como un hecho y no como su declaración."
+          "en": "hat is the indicative. It would present the words of the boss as a fact instead of as his statement.",
+          "es": "hat es el indicativo. Presentaría las palabras del jefe como un hecho y no como su declaración."
         },
         "hätte": {
           "en": "hätte is Konjunktiv II. It is only the substitute when Konjunktiv I looks like the indicative, and habe does not look like hat.",
@@ -409,8 +409,8 @@
         "Sie sagt, sie habe keinen Hunger."
       ],
       "tr": {
-        "en": "The spokesman explains that the company has no problems.",
-        "es": "El portavoz explica que la empresa no tiene problemas."
+        "en": "The boss explains that the company has no problems.",
+        "es": "El jefe explica que la empresa no tiene problemas."
       }
     },
     {
@@ -661,7 +661,7 @@
     },
     {
       "id": "konjunktiv-i-indirekte-rede-c07",
-      "sentence": "Der Sprecher sagt, die Ministerin ___ nächste Woche kommen.",
+      "sentence": "Der Chef sagt, die Lehrerin ___ nächste Woche kommen.",
       "options": [
         "wird",
         "werde",
@@ -674,8 +674,8 @@
       },
       "wrong": {
         "wird": {
-          "en": "wird is the indicative future. In a formal report the plan is presented as the statement of the spokesman, so werde is used.",
-          "es": "wird es el futuro de indicativo. En un relato formal el plan se presenta como declaración del portavoz, así que se usa werde."
+          "en": "wird is the indicative future. In a formal report the plan is presented as the statement of the boss, so werde is used.",
+          "es": "wird es el futuro de indicativo. En un relato formal el plan se presenta como declaración del jefe, así que se usa werde."
         },
         "wäre": {
           "en": "wäre kommen is not possible: wäre needs a participle or an adjective. The future is formed with werden plus the infinitive.",
@@ -687,8 +687,8 @@
         "Sie meint, es werde bald regnen."
       ],
       "tr": {
-        "en": "The spokesman says the minister will come next week.",
-        "es": "El portavoz dice que la ministra vendrá la próxima semana."
+        "en": "The boss says the teacher will come next week.",
+        "es": "El jefe dice que la maestra vendrá la próxima semana."
       }
     },
     {
@@ -820,7 +820,7 @@
     },
     {
       "id": "konjunktiv-i-indirekte-rede-c10",
-      "sentence": "Der Sprecher sagt, wir ___ zu Hause bleiben.",
+      "sentence": "Der Chef sagt, wir ___ zu Hause bleiben.",
       "options": [
         "sollen",
         "solle",
@@ -846,8 +846,8 @@
         "Sie sagt, wir sollten leise sein."
       ],
       "tr": {
-        "en": "The spokesman says we should stay at home.",
-        "es": "El portavoz dice que debemos quedarnos en casa."
+        "en": "The boss says we should stay at home.",
+        "es": "El jefe dice que debemos quedarnos en casa."
       }
     },
     {
@@ -972,7 +972,7 @@
     },
     {
       "id": "konjunktiv-i-indirekte-rede-c14",
-      "sentence": "Der Sprecher sagt, es ___ keine Probleme.",
+      "sentence": "Der Chef sagt, es ___ keine Probleme.",
       "options": [
         "gebe",
         "gibt",
@@ -985,8 +985,8 @@
       },
       "wrong": {
         "gibt": {
-          "en": "gibt is the indicative. A formal report marks the statement of the spokesman with the Konjunktiv I gebe.",
-          "es": "gibt es el indicativo. Un relato formal marca la declaración del portavoz con el Konjunktiv I gebe."
+          "en": "gibt is the indicative. A formal report marks the statement of the boss with the Konjunktiv I gebe.",
+          "es": "gibt es el indicativo. Un relato formal marca la declaración del jefe con el Konjunktiv I gebe."
         },
         "gäbe": {
           "en": "gäbe is Konjunktiv II. It suggests an unreal or doubtful situation. In reported speech Konjunktiv I gebe comes first.",
@@ -998,8 +998,8 @@
         "Sie meint, es gebe noch Tickets."
       ],
       "tr": {
-        "en": "The spokesman says there are no problems.",
-        "es": "El portavoz dice que no hay problemas."
+        "en": "The boss says there are no problems.",
+        "es": "El jefe dice que no hay problemas."
       }
     },
     {

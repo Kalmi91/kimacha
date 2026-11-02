@@ -27,8 +27,8 @@
           "es": "Verbo"
         },
         {
-          "en": "Gegenwart",
-          "es": "Gegenwart"
+          "en": "jetzt",
+          "es": "jetzt"
         },
         {
           "en": "Vergangenheit",
@@ -87,7 +87,7 @@
       ],
       "rows": [
         [
-          "Vergleich (Gegenwart)",
+          "Vergleich (jetzt)",
           "Er tut, als ob er alles wüsste."
         ],
         [
@@ -324,7 +324,7 @@
     {
       "id": "konjunktiv-irreale-vergleiche-f01",
       "kind": "form",
-      "verb": "Gegenwart",
+      "verb": "jetzt",
       "person": "sein",
       "answer": "wäre",
       "table": "konjunktiv-vergleiche-formen"
@@ -404,7 +404,7 @@
     {
       "id": "konjunktiv-irreale-vergleiche-f03",
       "kind": "form",
-      "verb": "Gegenwart",
+      "verb": "jetzt",
       "person": "haben",
       "answer": "hätte",
       "table": "konjunktiv-vergleiche-formen"
@@ -523,14 +523,14 @@
     {
       "id": "konjunktiv-irreale-vergleiche-f05",
       "kind": "form",
-      "verb": "Gegenwart",
+      "verb": "jetzt",
       "person": "wissen",
       "answer": "wüsste",
       "table": "konjunktiv-vergleiche-formen"
     },
     {
       "id": "konjunktiv-irreale-vergleiche-c06",
-      "sentence": "Hätte ich damals Geld gespart, ___ ich jetzt ein Haus.",
+      "sentence": "Hätte ich früher Geld gespart, ___ ich jetzt ein Haus.",
       "options": [
         "wäre",
         "habe",
@@ -556,8 +556,8 @@
         "Wäre er reich, hätte er ein Auto."
       ],
       "tr": {
-        "en": "Had I saved money back then, I would have a house now.",
-        "es": "De haber ahorrado dinero entonces, ahora tendría una casa."
+        "en": "Had I saved money earlier, I would have a house now.",
+        "es": "De haber ahorrado dinero antes, ahora tendría una casa."
       }
     },
     {
@@ -642,7 +642,7 @@
     {
       "id": "konjunktiv-irreale-vergleiche-f07",
       "kind": "form",
-      "verb": "Gegenwart",
+      "verb": "jetzt",
       "person": "kommen",
       "answer": "käme",
       "table": "konjunktiv-vergleiche-formen"
@@ -722,7 +722,7 @@
     {
       "id": "konjunktiv-irreale-vergleiche-f09",
       "kind": "form",
-      "verb": "Gegenwart",
+      "verb": "jetzt",
       "person": "gehen",
       "answer": "ginge",
       "table": "konjunktiv-vergleiche-formen"
@@ -841,7 +841,7 @@
     {
       "id": "konjunktiv-irreale-vergleiche-f11",
       "kind": "form",
-      "verb": "Gegenwart",
+      "verb": "jetzt",
       "person": "schlafen",
       "answer": "schliefe",
       "table": "konjunktiv-vergleiche-formen"
