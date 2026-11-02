@@ -35,14 +35,13 @@ const cardIdsUpTo = (level: PcicLevel) => LEVELS.filter((l) => rank(l) <= rank(l
 const FILES: Record<PcicTarget, unknown> = { es: storiesData, en: storiesEnData, hu: storiesHuData, de: storiesDeData };
 // the languages a learner of each target comes from (the translations and false statements a story needs): the other three
 const SOURCES: Record<PcicTarget, Lang[]> = { es: ['en', 'hu', 'de'], en: ['es', 'hu', 'de'], hu: ['es', 'en', 'de'], de: ['en', 'es', 'hu'] };
-// How many stories of each level a file holds: 20 at A1, 5 at each level above. German has only the 20 A1 stories so far (the A2 to C1
-// stories are written later): a level without a story is an honest empty state, never a story with words above its level.
+// How many stories of each level a file holds: 20 at A1, 5 at each level above (German too: the German deck covers A1 to C1).
 const COUNT_ABOVE_A1: [number, number] = [5, 5];
 const COUNT: Record<PcicTarget, Record<PcicLevel, [number, number]>> = {
   es: { A1: [20, 20], A2: COUNT_ABOVE_A1, B1: COUNT_ABOVE_A1, B2: COUNT_ABOVE_A1, C1: COUNT_ABOVE_A1 },
   en: { A1: [20, 20], A2: COUNT_ABOVE_A1, B1: COUNT_ABOVE_A1, B2: COUNT_ABOVE_A1, C1: COUNT_ABOVE_A1 },
   hu: { A1: [20, 20], A2: COUNT_ABOVE_A1, B1: COUNT_ABOVE_A1, B2: COUNT_ABOVE_A1, C1: COUNT_ABOVE_A1 },
-  de: { A1: [20, 20], A2: [0, 0], B1: [0, 0], B2: [0, 0], C1: [0, 0] },
+  de: { A1: [20, 20], A2: COUNT_ABOVE_A1, B1: COUNT_ABOVE_A1, B2: COUNT_ABOVE_A1, C1: COUNT_ABOVE_A1 },
 };
 
 const learned = (ids: string[]): Sm2Card[] =>
@@ -178,7 +177,7 @@ describe('reading stories, Spanish', () => {
 
 // The German stories (target de) are checked against the real known-word gate, which models no German inflection: only the tokens of
 // the headwords of the learned cards count (lib/knownSentence.ts). So each story is tried with exactly the cards it needs: the card of
-// each sentence's word and, for every other word, the first card of the deck that carries it.
+// each sentence's word and, for every other word, the first card of the deck (A1 up to C1) that carries it.
 describe('reading stories, German: each story is offered to a learner with the cards it needs', () => {
   beforeAll(() => setPcicTarget('de'));
   afterAll(() => setPcicTarget('es'));
@@ -188,7 +187,9 @@ describe('reading stories, German: each story is offered to a learner with the c
 
   it('with exactly those cards the story is picked, without the card of one of its words it is not', () => {
     const firstCard = new Map<string, string>();
-    for (const item of pcicItemsForLevel('A1')) for (const token of sentenceTokens(item.de ?? '', 'de')) if (!firstCard.has(token)) firstCard.set(token, item.id);
+    for (const level of LEVELS) {
+      for (const item of pcicItemsForLevel(level)) for (const token of sentenceTokens(item.de ?? '', 'de')) if (!firstCard.has(token)) firstCard.set(token, item.id);
+    }
     const free = knownTokens('de', { learned: [] });
     const problems: string[] = [];
     for (const story of storiesFor('de')) {

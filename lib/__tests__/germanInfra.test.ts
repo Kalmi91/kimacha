@@ -136,9 +136,9 @@ describe('places with no German content yet say so, they never answer in another
     expect(wordCellsForLesson({ id: 'x', items: [] } as never, 'de')).toEqual([]);
   });
 
-  it('has German stories (A1 so far), and the dialogues exist for the Spanish and the German target in every learner language, never for English or Hungarian', () => {
-    expect(storiesFor('de').length).toBeGreaterThanOrEqual(20);
-    expect(storiesFor('de').some((story) => story.level === 'A1')).toBe(true);
+  it('has German stories on every level, and the dialogues exist for the Spanish and the German target in every learner language, never for English or Hungarian', () => {
+    expect(storiesFor('de')).toHaveLength(40);
+    expect([...new Set(storiesFor('de').map((story) => story.level))]).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
     for (const source of ['en', 'hu', 'de'] as const) expect(situationsFor('es', source).length).toBeGreaterThan(0);
     for (const source of ['en', 'hu', 'es'] as const) expect(situationsFor('de', source).length).toBeGreaterThan(0);
     expect(situationsFor('en', 'de')).toEqual([]);

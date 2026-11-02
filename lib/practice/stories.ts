@@ -6,9 +6,8 @@
 // en stories-en.json, hu stories-hu.json, de stories-de.json): the sentence text is the target-language field, the translation and the true/false
 // statements are the field of the learner's native language (the active source, lib/languagePair.ts). Without a usable story
 // lib/practice/reading.ts builds the text from the due words' own example sentences. Pure logic, no I/O.
-// A level of a language that has no story yet (German: only the 20 A1 stories exist so far) is not an error: the stories are offered
-// by what the learner knows, not by level, so such a learner is offered the stories there are, or none and then the text of example
-// sentences, or the empty state of the Practice tab.
+// The stories are offered by what the learner knows, not by level: a learner who knows too little of the deck is offered no story and
+// then gets the text of example sentences, or the empty state of the Practice tab.
 
 import type { PcicItem, PcicLevel, PcicTarget } from '@/data/pcic';
 import storiesData from '@/data/practice/stories.json';

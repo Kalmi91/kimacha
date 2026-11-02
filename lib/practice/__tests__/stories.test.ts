@@ -1,4 +1,4 @@
-import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicTarget } from '@/data/pcic';
+import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { knownTokens, type ResolvedTense } from '@/lib/knownSentence';
 import { setActiveSource, type Lang } from '@/lib/languagePair';
 import { learnedEntries } from '@/lib/sentenceCards';
@@ -315,17 +315,25 @@ describe('the stories of the twelve pairs', () => {
   });
 });
 
-// German has the 20 A1 stories only (the A2 to C1 stories are written later). A level without a story is no error: stories are picked by
-// what the learner knows, a learner who knows nothing (or not enough of the German deck) gets the empty state or the text of example
-// sentences, and a story of a level whose cards the learner's deck lacks is never half shown.
-describe('German stories: levels with no story, learners who know too little', () => {
+// German has 20 A1 stories and 5 at each level above. Stories are picked by what the learner knows: a learner who knows nothing (or not
+// enough of the German deck) gets the empty state or the text of example sentences, never a story half shown.
+describe('German stories: every level, learners who know too little', () => {
   afterEach(() => setPcicTarget('es'));
 
-  it('the German file holds the 20 A1 stories and nothing above', () => {
+  it('the German file holds 20 A1 stories and 5 of each level above', () => {
     const stories = storiesFor('de');
-    expect(stories).toHaveLength(20);
-    expect([...new Set(stories.map((s) => s.level))]).toEqual(['A1']);
-    expect(stories.filter((s) => s.level !== 'A1')).toEqual([]);
+    expect(stories).toHaveLength(40);
+    expect(stories.filter((s) => s.level === 'A1')).toHaveLength(20);
+    for (const level of ['A2', 'B1', 'B2', 'C1']) expect(stories.filter((s) => s.level === level)).toHaveLength(5);
+  });
+
+  it('a learner who knows the German deck up to B2 is offered a story of the levels A1 to B2, never one that needs a C1 card', () => {
+    setPcicTarget('de', 'en');
+    const cards = (['A1', 'A2', 'B1', 'B2'] as PcicLevel[]).flatMap((level) => pcicItemsForLevel(level)).map((i) => learned(i.id));
+    const d: ReadingDeps = { target: 'de', cards, findItem: findPcicItem, today: TODAY, random: () => 0.5 };
+    const picked = pickStory(d, knownTokens('de', { learned: learnedEntries(cards, 'de', findPcicItem) }));
+    expect(picked).not.toBeNull();
+    expect(picked!.story.level).not.toBe('C1');
   });
 
   it.each<Lang>(['en', 'es', 'hu'])('%s→de: nothing learned, no reading (the empty state), and no crash', (source) => {
