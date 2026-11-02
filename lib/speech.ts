@@ -29,6 +29,28 @@
 
 import { AppState, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
+import {
+  NEURAL_VOICES,
+  initNeural,
+  isNeuralReady,
+  runNeuralSelfTest,
+  speakNeural,
+  stopNeural,
+  type NeuralLang,
+  type NeuralModelDirs,
+} from './neuralTts';
+
+// Spike switch: es/en/hu go through the on-device neural voices (lib/neuralTts.ts)
+// when the models are pushed into the app's files dir; anything else, or any
+// failure, still goes to expo-speech. The real settings switch replaces this.
+const NEURAL_SPIKE = true;
+const NEURAL_SPIKE_SELFTEST = true;
+const NEURAL_DIR = '/data/data/com.kimachaapp.kimacha.app/files/tts';
+const NEURAL_DIRS: NeuralModelDirs = {
+  kokoro: `${NEURAL_DIR}/kokoro-int8-multi-lang-v1_0`,
+  berta: `${NEURAL_DIR}/vits-piper-hu_HU-berta-medium-int8`,
+  imre: `${NEURAL_DIR}/vits-piper-hu_HU-imre-medium-int8`,
+};
 
 let voiceLanguages: Set<string> | null = null;
 let voicesByLanguage: Map<string, Speech.Voice[]> | null = null;
@@ -154,16 +176,41 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
     return;
   }
   const voice = voiceIdFor(locale);
-  Speech.speak(padForAndroid(text), {
-    ...options,
-    language: speechTag(locale),
-    ...(voice ? { voice } : {}),
-  });
+  const viaPhone = () =>
+    Speech.speak(padForAndroid(text), {
+      ...options,
+      language: speechTag(locale),
+      ...(voice ? { voice } : {}),
+    });
+  const neural = NEURAL_SPIKE ? neuralLangFor(locale) : null;
+  if (neural && isNeuralReady(neural)) {
+    speakNeural(text, neural, neuralVoiceFor(text, neural), {
+      rate: options.rate,
+      onDone: options.onDone,
+      onStopped: options.onStopped,
+    }).catch(viaPhone);
+    return;
+  }
+  viaPhone();
+}
+
+function neuralLangFor(locale: string): NeuralLang | null {
+  const base = baseLanguage(locale);
+  return base === 'es' || base === 'en' || base === 'hu' ? base : null;
+}
+
+// Spike: the same text always gets the same one of the language's two voices.
+function neuralVoiceFor(text: string, lang: NeuralLang): string {
+  let hash = 0;
+  for (let i = 0; i < text.length; i += 1) hash = (hash * 31 + text.charCodeAt(i)) | 0;
+  const voices = NEURAL_VOICES[lang];
+  return voices[Math.abs(hash) % voices.length].id;
 }
 
 export function stop(): void {
   speakingRun += 1; // no running segment chain may continue after the stop
   Speech.stop();
+  if (NEURAL_SPIKE) stopNeural();
 }
 
 // The lesson screen's stop button calls this (the same button
@@ -180,8 +227,15 @@ export function stopSpeaking(): void {
 // it cannot keep speaking in the background anyway, and in the foreground the
 // next speak() starts with a clean slate. The root layout wires it up, following the usageTimer pattern.
 let appStateSub: { remove(): void } | null = null;
+let neuralStarted = false;
 
 export function watchAppStateForSpeech(): () => void {
+  if (NEURAL_SPIKE && !neuralStarted) {
+    neuralStarted = true;
+    initNeural(NEURAL_DIRS, { debug: true })
+      .then(() => (NEURAL_SPIKE_SELFTEST ? runNeuralSelfTest() : undefined))
+      .catch(e => console.log(`[neural] init failed: ${String(e)}`));
+  }
   appStateSub?.remove();
   appStateSub = AppState.addEventListener('change', () => stop());
   return () => {
@@ -206,6 +260,7 @@ export interface SpeechRunSegment {
 // `onStopped` fires when a segment in flight is cut off by a stop() or by the next speech (not at the natural end).
 export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, onStopped?: () => void): void {
   Speech.stop();
+  if (NEURAL_SPIKE) stopNeural();
   speakingRun += 1;
   const run = speakingRun;
   const queue = segments.filter((seg) => seg.text.trim());
