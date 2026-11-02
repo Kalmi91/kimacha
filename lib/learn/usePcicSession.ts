@@ -531,7 +531,8 @@ export function usePcicSession() {
     sentenceCard,
     setSentenceCard,
     levelSheetOpen,
-    allLevelCards,
+    // FB541: the level picker shows the live progress (the load-time list said "not started" after a finished day).
+    allLevelCards: cardsAllLevels,
     target,
     examRow,
     openPlacement,
