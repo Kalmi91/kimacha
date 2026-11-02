@@ -43,3 +43,24 @@ export function esFeminine(word: string): string | null {
   if (m && (m[3] === 'n' || m[2] === 'é')) return `${m[1]}${ACCENT_DROP[m[2]]}${m[3]}a`;
   return null;
 }
+
+// Absolute superlative of an adjective, all four forms (altísimo, altísima, altísimos, altísimas), for the "learned
+// words only" gate. The written accent of the stem goes (fácil → facilísimo, simpático → simpatiquísimo), the
+// final vowel goes, and the spelling keeps the sound: -co → -quísimo (rico), -go → -guísimo (largo),
+// -ble → -bilísimo (amable), -z → -císimo (feliz). Nothing for what is irregular or not used: -io / -ío / -uo
+// (limpísimo or limpiísimo, friísimo, antiquísimo), the comparatives (mejor, mayor, -ior) and the consonants other than l, r, z (joven).
+const NO_SUPERLATIVE = /^(?:mejor|peor|mayor|menor)$|ior$/;
+
+export function esSuperlativeForms(word: string): string[] {
+  if (word.length < 3 || NO_SUPERLATIVE.test(word) || /(?:[ií]o|uo)$/.test(word)) return [];
+  const plain = word.replace(/[áéíóú]/g, (v) => ACCENT_DROP[v]);
+  let stem: string;
+  if (plain.endsWith('ble')) stem = `${plain.slice(0, -3)}bil`;
+  else if (plain.endsWith('co')) stem = `${plain.slice(0, -2)}qu`;
+  else if (plain.endsWith('go')) stem = `${plain.slice(0, -2)}gu`;
+  else if (/[aeo]$/.test(plain)) stem = plain.slice(0, -1);
+  else if (plain.endsWith('z')) stem = `${plain.slice(0, -1)}c`;
+  else if (/[lr]$/.test(plain)) stem = plain;
+  else return [];
+  return ['ísimo', 'ísima', 'ísimos', 'ísimas'].map((ending) => `${stem}${ending}`);
+}

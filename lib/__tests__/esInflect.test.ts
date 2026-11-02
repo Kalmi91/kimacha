@@ -1,4 +1,4 @@
-import { esFeminine, esPlural } from '../esInflect';
+import { esFeminine, esPlural, esSuperlativeForms } from '../esInflect';
 
 describe('esPlural', () => {
   it('-s after a vowel, -es after a consonant', () => {
@@ -60,5 +60,44 @@ describe('esFeminine', () => {
     expect(esFeminine('español')).toBe('española');
     expect(esFeminine('francés')).toBe('francesa');
     expect(esFeminine('joven')).toBeNull();
+  });
+});
+
+describe('esSuperlativeForms', () => {
+  it('the final vowel goes and the four forms follow', () => {
+    expect(esSuperlativeForms('alto')).toEqual(['altísimo', 'altísima', 'altísimos', 'altísimas']);
+    expect(esSuperlativeForms('grande')).toContain('grandísimo');
+    expect(esSuperlativeForms('mucho')).toContain('muchísimo');
+    expect(esSuperlativeForms('bueno')).toContain('buenísimo');
+  });
+
+  it('the spelling keeps the sound: -co, -go, -ble, -z', () => {
+    expect(esSuperlativeForms('rico')).toContain('riquísimo');
+    expect(esSuperlativeForms('poco')).toContain('poquísimo');
+    expect(esSuperlativeForms('largo')).toContain('larguísimo');
+    expect(esSuperlativeForms('amable')).toContain('amabilísimo');
+    expect(esSuperlativeForms('feliz')).toContain('felicísimo');
+  });
+
+  it('the written accent of the stem goes (the stress moves to -ísimo)', () => {
+    expect(esSuperlativeForms('fácil')).toContain('facilísimo');
+    expect(esSuperlativeForms('difícil')).toContain('dificilísimo');
+    expect(esSuperlativeForms('simpático')).toContain('simpatiquísimo');
+    expect(esSuperlativeForms('rápido')).toContain('rapidísimo');
+  });
+
+  it('-l and -r words just add -ísimo', () => {
+    expect(esSuperlativeForms('azul')).toContain('azulísimo');
+    expect(esSuperlativeForms('popular')).toContain('popularísimo');
+  });
+
+  it('nothing for the irregular or unused: -io / -ío, comparatives, other consonants', () => {
+    expect(esSuperlativeForms('limpio')).toEqual([]);
+    expect(esSuperlativeForms('frío')).toEqual([]);
+    expect(esSuperlativeForms('antiguo')).toEqual([]);
+    expect(esSuperlativeForms('mejor')).toEqual([]);
+    expect(esSuperlativeForms('superior')).toEqual([]);
+    expect(esSuperlativeForms('joven')).toEqual([]);
+    expect(esSuperlativeForms('gris')).toEqual([]);
   });
 });

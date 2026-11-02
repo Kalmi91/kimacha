@@ -1,4 +1,4 @@
-import { enForms } from '@/lib/enForms';
+import { enDegreeForms, enForms, enPlurals } from '@/lib/enForms';
 
 function has(word: string, ...forms: string[]) {
   const got = enForms(word);
@@ -226,5 +226,56 @@ describe('enForms, edge cases', () => {
     has('STOP', 'stopped');
     lacks('stop', 'stop');
     lacks('cut', 'cut');
+  });
+});
+
+describe('enPlurals', () => {
+  it('gives the plural of a noun and nothing else (no -ed / -ing)', () => {
+    expect(enPlurals('apple')).toEqual(['apples']);
+    expect(enPlurals('machine')).toEqual(['machines']);
+    expect(enPlurals('stop')).toEqual(['stops']);
+    expect(enPlurals('family')).toEqual(['families']);
+    expect(enPlurals('box')).toEqual(['boxes']);
+    expect(enPlurals('man')).toEqual(['men']);
+    expect(enPlurals('policeman')).toEqual(['policemen']);
+    expect(enPlurals('child')).toEqual(['children']);
+  });
+
+  it('gives nothing for a word the spelling rules cannot work on', () => {
+    expect(enPlurals("it's")).toEqual([]);
+    expect(enPlurals('a')).toEqual([]);
+    expect(enPlurals('')).toEqual([]);
+  });
+});
+
+describe('enDegreeForms', () => {
+  it('-er / -est for a one-syllable adjective, with the silent e and the doubling', () => {
+    expect(enDegreeForms('tall')).toEqual(['taller', 'tallest']);
+    expect(enDegreeForms('safe')).toEqual(['safer', 'safest']);
+    expect(enDegreeForms('close')).toEqual(['closer', 'closest']);
+    expect(enDegreeForms('large')).toEqual(['larger', 'largest']);
+    expect(enDegreeForms('big')).toEqual(['bigger', 'biggest']);
+    expect(enDegreeForms('hot')).toEqual(['hotter', 'hottest']);
+    expect(enDegreeForms('new')).toEqual(['newer', 'newest']);
+    expect(enDegreeForms('free')).toEqual(['freer', 'freest']);
+  });
+
+  it('-ier / -iest for a -y adjective', () => {
+    expect(enDegreeForms('happy')).toEqual(['happier', 'happiest']);
+    expect(enDegreeForms('easy')).toEqual(['easier', 'easiest']);
+    expect(enDegreeForms('dry')).toEqual(['drier', 'driest']);
+  });
+
+  it('the irregular ones come from the table', () => {
+    expect(enDegreeForms('good')).toEqual(['better', 'best']);
+    expect(enDegreeForms('bad')).toEqual(['worse', 'worst']);
+    expect(enDegreeForms('old')).toContain('oldest');
+    expect(enDegreeForms('far')).toContain('further');
+  });
+
+  it('a longer adjective takes more / most, so it gets no form', () => {
+    expect(enDegreeForms('beautiful')).toEqual([]);
+    expect(enDegreeForms('expensive')).toEqual([]);
+    expect(enDegreeForms('ordinary')).toEqual([]);
   });
 });

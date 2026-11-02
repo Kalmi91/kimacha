@@ -5,9 +5,11 @@
 // preposition, conjunction). A pure module: no database, no corpus import.
 
 import { CORPUS_NAMES } from '@/lib/corpusNames';
-import { enForms } from '@/lib/enForms';
-import { esFeminine, esPlural } from '@/lib/esInflect';
+import { enDegreeForms, enForms, enPlurals } from '@/lib/enForms';
+import { gerundForms } from '@/lib/esGerunds';
+import { esFeminine, esPlural, esSuperlativeForms } from '@/lib/esInflect';
 import { irregularForms, type IrregularTense } from '@/lib/esIrregularForms';
+import { occupationFeminine } from '@/lib/esOccupations';
 import { participleForms } from '@/lib/esParticiples';
 import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
 import { detectStructures, tokenize, type Structure } from '@/lib/grammar/tenseGate';
@@ -45,7 +47,8 @@ const ES_CLOSED_CLASS = [
   'mi', 'mis', 'tu', 'tus', 'su', 'sus', 'nuestro', 'nuestra', 'nuestros', 'nuestras',
   'mío', 'mía', 'míos', 'mías', 'tuyo', 'tuya', 'tuyos', 'tuyas', 'suyo', 'suya', 'suyos', 'suyas',
   // indefinite and quantifying determiners (algún / ningún are the short forms of alguno / ninguno)
-  'mucho', 'mucha', 'muchos', 'muchas', 'poco', 'poca', 'pocos', 'pocas',
+  'mucho', 'mucha', 'muchos', 'muchas', 'muchísimo', 'muchísima', 'muchísimos', 'muchísimas', 'poco', 'poca', 'pocos', 'pocas',
+  'demasiado', 'demasiada', 'demasiados', 'demasiadas', 'bastante', 'bastantes',
   'todo', 'toda', 'todos', 'todas', 'otro', 'otra', 'otros', 'otras', 'varios', 'varias', 'cada',
   'alguno', 'alguna', 'algunos', 'algunas', 'algún', 'ninguno', 'ninguna', 'ningunos', 'ningunas', 'ningún',
   // personal and object pronouns
@@ -71,6 +74,8 @@ const EN_CLOSED_CLASS = [
   'but', 'if', 'because', 'so', 'when', 'while', 'than', 'as', 'although', 'though',
   'will', 'would', 'can', 'could', 'shall', 'should', 'may', 'might', 'must',
   'not', 'very', 'too', 'also',
+  // question words and the two place words
+  'what', 'who', 'whom', 'whose', 'which', 'where', 'why', 'how', 'there', 'here', 'yes',
 ];
 
 // Free words: contain no verb, the learner does not have to learn them separately.
@@ -211,12 +216,24 @@ function addSpanish(known: Set<string>, entry: LearnedEntry, tenses: ReadonlySet
       }
       const short = ES_APOCOPE.get(token);
       if (short) known.add(short);
+      for (const form of esSuperlativeForms(token)) known.add(form);
+    }
+    if (entry.pos === 'noun') {
+      const fem = occupationFeminine(token);
+      if (fem) {
+        known.add(fem);
+        const femPlural = esPlural(fem);
+        if (femPlural) known.add(femPlural);
+      }
     }
   }
   if (!isVerb) return;
   for (const inf of esInfinitives(text)) {
     // The participle stands as an adjective (cerrada), in no tense; the compound tense (he cerrado) stays blocked by the structure gate.
     for (const form of participleForms(inf)) known.add(form);
+    // The gerundio stands in no tense either (estar + gerundio is not a structure of the tense gate); the -ir stem change comes from the indefinido.
+    const ellos = irregularForms(inf, 'indefinido')[4] ?? conjugate(inf, 'indefinido')?.[4]?.form;
+    for (const form of gerundForms(inf, ellos)) known.add(form);
     for (const tense of TENSES) {
       if (!tenses.has(tense)) continue;
       for (const f of conjugate(inf, tense) ?? []) known.add(f.form);
@@ -247,6 +264,52 @@ function enInflectedWord(alternative: string): string | null {
   return tokens.length === 1 ? tokens[0] : null;
 }
 
+// The plural of the noun a card stands for: the noun of "an apple" / "a machine" (the article does not stop the
+// plural), and the head of a noun phrase ("bus stop" → stops, "phone number" → numbers: its last word). Only a card
+// that is a noun for sure (pos noun, or an article in front and no pos); a phrase with a preposition or a conjunction
+// ("cup of tea") or a hyphen ("father-in-law") has its head elsewhere, so it gives nothing.
+const EN_NOT_NOUN_PHRASE: ReadonlySet<string> = new Set([
+  'of', 'in', 'on', 'at', 'to', 'for', 'from', 'with', 'by', 'and', 'or', 'a', 'an', 'the',
+]);
+
+function enNounPlurals(alternative: string, pos?: string): string[] {
+  const text = alternative.trim().toLowerCase().replace(/\([^)]*\)/g, ' ');
+  if (text.includes('-')) return [];
+  const article = /^(?:a|an|the)\s/.test(text);
+  if (pos !== 'noun' && !(article && pos === undefined)) return [];
+  const words = enTokenize(text.replace(/^(?:a|an|the)\s+/, ''));
+  if (!words.length || words.some((w) => EN_NOT_NOUN_PHRASE.has(w))) return [];
+  const head = words[words.length - 1];
+  return /[^su]s$/.test(head) ? [] : enPlurals(head); // already a plural (birds, books): no "birdses"
+}
+
+// The base verb inside a phrase card: after a modal ("you cannot smoke", "I can swim"), after "do not" / "don't",
+// and after the infinitive "to" of going / have / need / want / nice ("I am going to travel", "nice to meet you"). It
+// is a verb for sure, so its -s / -ed / -ing forms count. Not the "to" of a place ("go to school"), and not a pronoun
+// or an article after the modal ("can you help").
+const EN_MODAL: ReadonlySet<string> = new Set([
+  'can', 'cannot', 'could', 'will', 'would', 'shall', 'should', 'may', 'might', 'must',
+  "can't", "couldn't", "won't", "wouldn't", "shan't", "shouldn't", "mustn't", "don't", "doesn't", "didn't",
+]);
+const EN_DO: ReadonlySet<string> = new Set(['do', 'does', 'did']);
+const EN_TO_BEFORE_VERB: ReadonlySet<string> = new Set(['going', 'have', 'has', 'had', 'need', 'needs', 'nice', 'want', 'wants', 'how']);
+
+function enPhraseVerbs(alternative: string, pos?: string): string[] {
+  if (pos !== undefined && pos !== 'phrase' && pos !== 'verb') return [];
+  const words = enTokenize(alternative.trim().toLowerCase().replace(/\([^)]*\)/g, ' '));
+  const verbs: string[] = [];
+  for (let i = 0; i < words.length - 1; i++) {
+    const word = words[i];
+    const before = words[i - 1];
+    const trigger =
+      EN_MODAL.has(word) ||
+      (word === 'not' && before !== undefined && (EN_MODAL.has(before) || EN_DO.has(before))) ||
+      (word === 'to' && before !== undefined && EN_TO_BEFORE_VERB.has(before));
+    if (trigger && !FREE_WORDS.en.has(words[i + 1])) verbs.push(words[i + 1]);
+  }
+  return verbs;
+}
+
 function addEnglish(known: Set<string>, entry: LearnedEntry) {
   const text = entry.text.trim();
   const tokens = enEntryTokens(text);
@@ -260,6 +323,11 @@ function addEnglish(known: Set<string>, entry: LearnedEntry) {
   for (const alternative of text.split('/')) {
     const word = enInflectedWord(alternative);
     if (word) for (const form of enForms(word)) known.add(form);
+    if (word && entry.pos === 'adj') for (const form of enDegreeForms(word)) known.add(form);
+    for (const form of enNounPlurals(alternative, entry.pos)) known.add(form);
+    for (const verb of enPhraseVerbs(alternative, entry.pos)) {
+      for (const form of enForms(verb)) known.add(form);
+    }
   }
 }
 
