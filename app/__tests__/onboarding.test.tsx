@@ -62,10 +62,10 @@ describe('OnboardingScreen: language and level step', () => {
     expect(hu.queryByText('Magyar')).toBeNull();
     hu.unmount();
 
-    // German has no strings of its own yet: the interface stays English, and the three other languages are offered
+    // German: the interface switches to German, and the three other languages are offered
     const de = render(<OnboardingScreen />);
     fireEvent.press(de.getByText('Deutsch'));
-    expect(de.getByText('Which language do you want to learn?')).toBeTruthy();
+    expect(de.getByText('Welche Sprache möchtest du lernen?')).toBeTruthy();
     expect(de.getByText('English')).toBeTruthy();
     expect(de.getByText('Español')).toBeTruthy();
     expect(de.getByText('Magyar')).toBeTruthy();
@@ -92,11 +92,11 @@ describe('OnboardingScreen: language and level step', () => {
       fireEvent.press(view.getByText(speak));
       fireEvent.press(view.getByText(learn));
       // welcome -> intro -> theme -> level (A1 is always offered, even on an empty deck)
-      // the buttons are in the chosen native language: English, Spanish or Hungarian (German shows English until it has strings)
+      // the buttons are in the chosen native language: English, Spanish, Hungarian or German
       const press = (...labels: string[]) => fireEvent.press(view.getByText(labels.find((l) => view.queryByText(l)) ?? labels[0]));
-      press('Get started', 'Empezar', 'Kezdjük');
-      press("Let's start", 'Empecemos', 'Kezdjük');
-      press('Continue', 'Continuar', 'Tovább');
+      press('Get started', 'Empezar', 'Kezdjük', "Los geht's");
+      press("Let's start", 'Empecemos', 'Kezdjük', "Los geht's");
+      press('Continue', 'Continuar', 'Tovább', 'Weiter');
       await act(async () => {
         fireEvent.press(view.getByText('A1'));
         await Promise.resolve();

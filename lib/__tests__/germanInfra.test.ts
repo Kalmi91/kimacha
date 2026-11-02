@@ -157,12 +157,13 @@ describe('places with no German content yet say so, they never answer in another
 });
 
 describe('the UI strings that name a language', () => {
-  it('German has no strings of its own yet: it shows English, never Spanish', () => {
+  it('German has strings of its own: neither English nor Spanish', () => {
     setLanguage('de');
     const german = t();
     setLanguage('en');
-    expect(german).toBe(t());
-    expect(stringsFor('de')).toBe(stringsFor('en'));
+    expect(german).not.toBe(t());
+    expect(german.onboarding.learnTitle).toBe('Welche Sprache möchtest du lernen?');
+    expect(stringsFor('de')).not.toBe(stringsFor('en'));
     expect(stringsFor('de')).not.toBe(stringsFor('es'));
   });
 
