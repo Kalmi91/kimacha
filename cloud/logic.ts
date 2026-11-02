@@ -5,6 +5,9 @@ import { isValidName, isValidPin } from '../lib/cloud/validate';
 
 export const MAX_FAILS = 5;
 export const LOCK_SEC = 15 * 60;
+// Wrong PINs for one name from all addresses together before the whole name is locked. MAX_FAILS is the limit of one
+// address (name + IP), so a stranger who knows only the name locks his own address, not the owner's.
+export const MAX_NAME_FAILS = 50;
 export const MAX_PAYLOAD_CHARS = 1_000_000;
 
 function asRecord(body: unknown): Record<string, unknown> | null {
@@ -29,6 +32,21 @@ export function parsePayload(body: unknown): PayloadResult {
   return { ok: true, payload: rec.payload };
 }
 
+/**
+ * The server revision a PUT /api/progress body says its payload is based on: `rev` null when the body has none (an old client:
+ * the write is unconditional, as before), not ok when `rev` is there but is not a non-negative integer (-> 400 bad_input).
+ */
+export function parseBaseRev(body: unknown): { ok: true; rev: number | null } | { ok: false } {
+  const rev = asRecord(body)?.rev;
+  if (rev === undefined) return { ok: true, rev: null };
+  return typeof rev === 'number' && Number.isSafeInteger(rev) && rev >= 0 ? { ok: true, rev } : { ok: false };
+}
+
+/** The address of the request as Cloudflare names it, '' when the header is missing (all such requests share one address). */
+export function clientIp(header: string | null): string {
+  return (header ?? '').trim().slice(0, 64);
+}
+
 /** The name as typed, for display: NFC, trimmed, inner whitespace collapsed (the case is kept, unlike nameKey). */
 export function displayName(raw: string): string {
   return raw.normalize('NFC').trim().replace(/\s+/g, ' ');
@@ -40,10 +58,10 @@ export function lockRemainingSec(lockedUntil: number | null, now: number): numbe
   return Math.ceil((lockedUntil - now) / 1000);
 }
 
-/** The counter state after one more wrong PIN: the MAX_FAILS-th in a row locks the name for LOCK_SEC and restarts the count. */
-export function afterBadPin(failCount: number, now: number): { failCount: number; lockedUntil: number | null } {
+/** The counter state after one more wrong PIN: the `maxFails`-th in a row locks for LOCK_SEC and restarts the count. */
+export function afterBadPin(failCount: number, now: number, maxFails = MAX_FAILS): { failCount: number; lockedUntil: number | null } {
   const next = failCount + 1;
-  if (next >= MAX_FAILS) return { failCount: 0, lockedUntil: now + LOCK_SEC * 1000 };
+  if (next >= maxFails) return { failCount: 0, lockedUntil: now + LOCK_SEC * 1000 };
   return { failCount: next, lockedUntil: null };
 }
 
