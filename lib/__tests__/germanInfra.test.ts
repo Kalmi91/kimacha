@@ -142,17 +142,19 @@ describe('places with no German content yet say so, they never answer in another
     expect(situationsFor('de', 'en')).toEqual([]);
   });
 
-  it('has no practice exam: no level offered, the paper words are German', () => {
-    expect(MOCK_LEVELS.de).toEqual([]);
-    expect(mockAvailable('de', 'A1')).toBe(false);
-    expect(mockAvailable('de', 'B1')).toBe(false);
-    expect(mockInstruction('de', 'read_mc', 1)).toMatch(/^AUFGABE 1\. /);
+  it('has a practice exam on every level, the paper words are German', () => {
+    expect(MOCK_LEVELS.de).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
+    expect(mockAvailable('de', 'A1')).toBe(true);
+    expect(mockAvailable('de', 'B1')).toBe(true);
+    expect(mockInstruction('de', 'read_mc', 1)).toMatch(/^TEIL 1\. /);
     expect(mockInstruction('de', 'listen_mc', 2, 1)).toContain('einmal');
-    expect('AUFGABE 3. Lies den Text.'.replace(TASK_PREFIX, '')).toBe('Lies den Text.');
+    expect('TEIL 3. Lesen Sie den Text.'.replace(TASK_PREFIX, '')).toBe('Lesen Sie den Text.');
   });
 
-  it('has no gap-sentence question in the placement pool of a German target', () => {
-    expect(placementPoolFor('A1', 'de').gaps).toEqual([]);
+  it('has only the authored bank in the placement pool of a German target (no grammar lessons are wired yet)', () => {
+    const gaps = placementPoolFor('A1', 'de').gaps;
+    expect(gaps).toHaveLength(20);
+    expect(gaps.every((g) => g.topicId === 'placement')).toBe(true);
   });
 });
 

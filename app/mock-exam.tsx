@@ -114,7 +114,7 @@ export default function MockExamScreen() {
       setTarget(tgt);
       setLevel(lvl);
       setLearned(new Set(cards.filter(isExamLearned).map((c) => c.itemId)));
-      // No dictionary check for hu: a Hungarian word has too many inflected forms for a word list (the other sense checks stay).
+      // No dictionary check for hu and de: a Hungarian word has too many inflected forms and a German text too many compounds for a word list (the other sense checks stay).
       setLexicon(tgt === 'hu' || tgt === 'de' ? undefined : buildLexicon(PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)), tgt));
       setSource(src);
       setCanSpeak(hasVoiceFor(speechLang(tgt)));
