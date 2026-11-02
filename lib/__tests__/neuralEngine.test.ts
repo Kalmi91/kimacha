@@ -143,6 +143,110 @@ describe('neural engines', () => {
   });
 });
 
+// An engine whose native calls take time and are logged in the order they finish, to check how stops and
+// the next speech line up (the real player is one per engine, and a late stop kills the next speech's player).
+function slowEngine(options: { stopMs?: number; startMs?: number; controllerMs?: number; startFails?: boolean; writeFails?: boolean; hang?: boolean } = {}) {
+  const log: string[] = [];
+  const engine: any = {
+    getSampleRate: jest.fn(async () => 24000),
+    startPcmPlayer: jest.fn(async () => {
+      if (options.startMs) await wait(options.startMs);
+      if (options.startFails) throw new Error('PCM player failed');
+      log.push('start');
+    }),
+    writePcmChunk: jest.fn(async () => {
+      if (options.writeFails) throw new Error('write failed');
+    }),
+    stopPcmPlayer: jest.fn(async () => {
+      if (options.stopMs) await wait(options.stopMs);
+      log.push('stop');
+    }),
+    destroy: jest.fn(async () => {}),
+    cancel: jest.fn(async () => {
+      log.push('cancel');
+    }),
+    generateSpeechStream: jest.fn(async (_text: string, _opts: unknown, cb: any) => {
+      if (options.controllerMs) await wait(options.controllerMs);
+      if (!options.hang) {
+        cb.onChunk({ samples: [0.1, -0.5, 0.25] });
+        cb.onEnd({ cancelled: false });
+      }
+      return { cancel: engine.cancel };
+    }),
+  };
+  mockEngines.push(engine);
+  return { engine, log };
+}
+
+describe('neural engines: stops, failures and the one PCM player', () => {
+  it('a speech that follows a stop waits for the old player release: cancel and stop land before the next start', async () => {
+    const { engine, log } = slowEngine({ stopMs: 15, hang: true });
+    mockCreate.mockImplementation(async () => engine);
+    const voice = PIPER_VOICES.es[0];
+    await loadNeuralVoice(voice, 'es', '/p');
+    void speakNeural('uno', 'es', voice);
+    await wait(10);
+    stopNeural(); // speech.ts cuts the old voice, then speaks the next text
+    void speakNeural('dos', 'es', voice);
+    await wait(80);
+    expect(log).toEqual(['start', 'cancel', 'stop', 'start']);
+  });
+
+  it('a write that fails after the generation ended rejects (the caller falls back), onDone stays silent and the player is released', async () => {
+    const { engine } = slowEngine({ writeFails: true });
+    mockCreate.mockImplementation(async () => engine);
+    const voice = PIPER_VOICES.es[0];
+    await loadNeuralVoice(voice, 'es', '/p');
+    const onDone = jest.fn();
+    const onStopped = jest.fn();
+    await expect(speakNeural('hola', 'es', voice, { onDone, onStopped })).rejects.toThrow('write failed');
+    await wait(600);
+    expect(onDone).not.toHaveBeenCalled();
+    expect(onStopped).not.toHaveBeenCalled();
+    expect(engine.stopPcmPlayer).toHaveBeenCalled();
+  });
+
+  it('a stop while the player is starting cuts the speech before any generation begins', async () => {
+    const { engine } = slowEngine({ startMs: 30, hang: true });
+    mockCreate.mockImplementation(async () => engine);
+    const voice = PIPER_VOICES.es[0];
+    await loadNeuralVoice(voice, 'es', '/p');
+    const onStopped = jest.fn();
+    const speech = speakNeural('hola', 'es', voice, { onStopped });
+    await wait(10);
+    stopNeural();
+    await speech;
+    await wait(60);
+    expect(engine.generateSpeechStream).not.toHaveBeenCalled();
+    expect(onStopped).toHaveBeenCalledTimes(1);
+  });
+
+  it('a player that fails to start rejects and leaves nothing active: a later stop reports nothing', async () => {
+    const { engine } = slowEngine({ startFails: true });
+    mockCreate.mockImplementation(async () => engine);
+    const voice = PIPER_VOICES.es[0];
+    await loadNeuralVoice(voice, 'es', '/p');
+    const onStopped = jest.fn();
+    await expect(speakNeural('hola', 'es', voice, { onStopped })).rejects.toThrow('PCM player failed');
+    stopNeural();
+    await wait(20);
+    expect(onStopped).not.toHaveBeenCalled();
+    expect(engine.stopPcmPlayer).not.toHaveBeenCalled();
+  });
+
+  it('a stop before the generation has returned its controller still cancels the generation', async () => {
+    const { engine } = slowEngine({ controllerMs: 30, hang: true });
+    mockCreate.mockImplementation(async () => engine);
+    const voice = PIPER_VOICES.es[0];
+    await loadNeuralVoice(voice, 'es', '/p');
+    void speakNeural('hola', 'es', voice);
+    await wait(10);
+    stopNeural();
+    await wait(80);
+    expect(engine.cancel).toHaveBeenCalledTimes(1);
+  });
+});
+
 function fakePlayer() {
   const player: any = {
     listener: null as null | ((status: unknown) => void),

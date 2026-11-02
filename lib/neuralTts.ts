@@ -42,9 +42,15 @@ interface ActiveRun {
   timer: ReturnType<typeof setTimeout> | null;
   finished: boolean;
   onStopped?: () => void;
+  /** Settles when generateSpeechStream has returned (the controller exists then) or failed. */
+  started: Promise<unknown>;
 }
 let active: ActiveRun | null = null;
 let runCounter = 0;
+// The native side has one PCM player per engine, and stopping is asynchronous (cancel, then the player
+// release). Every release goes through this chain, and a new speech waits for it: a stopPcmPlayer that lands
+// after the next startPcmPlayer leaves the new speech without a player ("PCM player not initialized").
+let stopping: Promise<void> = Promise.resolve();
 
 const now = () => Date.now();
 
@@ -100,6 +106,7 @@ export function loadNeuralVoice(
 // Frees the engines (Settings switched the better voice off, or deleted the models).
 export async function releaseNeural(): Promise<void> {
   stopNeural();
+  await stopping;
   const all = [...engines.values()];
   engines.clear();
   sampleRates.clear();
@@ -112,24 +119,54 @@ export async function releaseNeural(): Promise<void> {
   }
 }
 
-async function stopActive(): Promise<void> {
+// Frees the engines of one language's pair: its other engine is the chosen and loaded one now, and the
+// memory of two loaded models is not needed (a Piper pair is two models, the Kokoro engine ~130 MB).
+export async function releaseNeuralPair(lang: NeuralLang, engine: NeuralEngine): Promise<void> {
+  const keys = [...new Set(voicePair(lang, engine).map(voice => engineKey(voice, lang)))].filter(key => engines.has(key));
+  if (keys.length === 0) return;
+  if (active && keys.some(key => engines.get(key) === active?.engine)) stopNeural();
+  await stopping;
+  for (const key of keys) {
+    const gone = engines.get(key);
+    engines.delete(key);
+    sampleRates.delete(key);
+    try {
+      await gone?.destroy();
+    } catch {
+      // already gone
+    }
+  }
+}
+
+// Queues the release of an engine's PCM player behind the stops that are under way.
+function releasePlayer(engine: StreamingTtsEngine): void {
+  stopping = stopping.then(() => engine.stopPcmPlayer().catch(() => {}));
+}
+
+// Cuts the run in flight; resolves when it and every stop before it are done (a new speech awaits this).
+function stopActive(): Promise<void> {
   const run = active;
-  if (!run) return;
-  active = null;
-  if (run.timer) clearTimeout(run.timer);
-  const wasInFlight = !run.finished;
-  run.finished = true;
-  try {
-    await run.controller?.cancel();
-  } catch {
-    // already finished or cancelled
+  if (run) {
+    active = null;
+    if (run.timer) clearTimeout(run.timer);
+    const wasInFlight = !run.finished;
+    run.finished = true;
+    stopping = stopping.then(async () => {
+      await run.started; // the controller of a generation that is just starting can only be cancelled once it exists
+      try {
+        await run.controller?.cancel();
+      } catch {
+        // already finished or cancelled
+      }
+      try {
+        await run.engine.stopPcmPlayer();
+      } catch {
+        // player already released
+      }
+      if (wasInFlight) run.onStopped?.();
+    });
   }
-  try {
-    await run.engine.stopPcmPlayer();
-  } catch {
-    // player already released
-  }
-  if (wasInFlight) run.onStopped?.();
+  return stopping;
 }
 
 export function stopNeural(): void {
@@ -156,7 +193,7 @@ export async function speakNeural(
   await stopActive();
   if (myRun !== runCounter) return { firstChunkMs: -1, generatedMs: 0, audioMs: 0, peak: 0 }; // a newer speech or a stop won
 
-  const run: ActiveRun = { engine, controller: null, timer: null, finished: false, onStopped: options.onStopped };
+  const run: ActiveRun = { engine, controller: null, timer: null, finished: false, onStopped: options.onStopped, started: Promise.resolve() };
   active = run;
 
   const t0 = now();
@@ -165,18 +202,29 @@ export async function speakNeural(
   let peak = 0;
   let writeChain: Promise<void> = Promise.resolve();
 
-  await engine.startPcmPlayer(sampleRate, 1);
+  try {
+    await engine.startPcmPlayer(sampleRate, 1);
+  } catch (err) {
+    // the run never started: it must not stay `active` (a later stop would report it as cut off)
+    const superseded = run.finished;
+    run.finished = true;
+    if (active === run) active = null;
+    if (superseded) return { firstChunkMs: -1, generatedMs: 0, audioMs: 0, peak: 0 };
+    throw err;
+  }
+  // stopped while the player was starting: no generation, or it would run on and the next one find the engine busy
+  if (run.finished) return { firstChunkMs: -1, generatedMs: 0, audioMs: 0, peak: 0 };
 
   return new Promise<NeuralTimings>((resolve, reject) => {
     const fail = (err: unknown) => {
       if (run.finished) return;
       run.finished = true;
       if (active === run) active = null;
-      void engine.stopPcmPlayer().catch(() => {});
+      releasePlayer(engine);
       reject(err instanceof Error ? err : new Error(String(err)));
     };
 
-    engine
+    run.started = engine
       .generateSpeechStream(
         text,
         { sid: voice.sid, ...(options.rate !== undefined ? { speed: options.rate } : {}) },
@@ -198,15 +246,17 @@ export async function speakNeural(
             const audioMs = Math.round((samplesTotal / sampleRate) * 1000);
             const timings: NeuralTimings = { firstChunkMs, generatedMs, audioMs, peak: Math.round(peak * 1000) / 1000 };
             console.log(`[neural] ${lang}/${voice.id} first=${firstChunkMs} gen=${generatedMs} audio=${audioMs} peak=${timings.peak} "${text.slice(0, 40)}"`);
-            resolve(timings);
+            // resolves once the audio is queued, so a write that fails (the player died, a Bluetooth headset
+            // dropped) still rejects and the caller can hand the text to the next level
             writeChain
               .then(() => {
                 if (run.finished) return;
+                resolve(timings);
                 run.timer = setTimeout(() => {
                   if (run.finished) return;
                   run.finished = true;
                   if (active === run) active = null;
-                  void engine.stopPcmPlayer().catch(() => {});
+                  releasePlayer(engine);
                   options.onDone?.();
                 }, PCM_TAIL_MS);
               })

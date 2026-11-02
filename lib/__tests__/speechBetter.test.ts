@@ -90,6 +90,19 @@ describe('speak(): the levels', () => {
     expect(speech.speak).toHaveBeenCalledWith('el perro', { language: 'es-MX' });
   });
 
+  it('the phone takes over from a failed level only after whatever of the better voice still sounds is cut', async () => {
+    engineFor.mockReturnValue('piper');
+    speakNeural.mockRejectedValue(new Error('write failed'));
+    speak('el perro', 'es-MX');
+    (engine.stopNeural as jest.Mock).mockClear(); // the cut that every speech starts with
+    (pack.stopPack as jest.Mock).mockClear();
+    await flush();
+    expect(engine.stopNeural).toHaveBeenCalledTimes(1);
+    expect(pack.stopPack).toHaveBeenCalledTimes(1);
+    expect((engine.stopNeural as jest.Mock).mock.invocationCallOrder[0]).toBeLessThan(speech.speak.mock.invocationCallOrder[0]);
+    expect((pack.stopPack as jest.Mock).mock.invocationCallOrder[0]).toBeLessThan(speech.speak.mock.invocationCallOrder[0]);
+  });
+
   it('the engine going away between the levels goes straight to the phone', () => {
     packFile.mockReturnValue('/files/tts/pack/es/x.mp3');
     engineFor.mockReturnValueOnce('piper').mockReturnValue(null);

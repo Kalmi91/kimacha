@@ -12,8 +12,11 @@ const mockDownloads: { url: string; status: number }[] = [];
 const mockStatusFor: Record<string, number> = {};
 const mockExtracted: { id: string; target: string }[] = [];
 const mockFailExtract = new Set<string>();
+const mockPauseExtract = new Set<string>();
+const mockFailLoad = new Set<string>();
 const mockLoaded: string[] = [];
 const mockReady = new Set<string>();
+const mockPairReleased: string[] = [];
 let mockReleased = 0;
 
 const under = (path: string) => [...mockFs.keys()].filter(key => key === path || key.startsWith(`${path}/`));
@@ -48,6 +51,10 @@ jest.mock('react-native-sherpa-onnx/extraction', () => ({
   extractArchive: async (archive: { modelId: string }, target: string) => {
     mockExtracted.push({ id: archive.modelId, target });
     if (mockFailExtract.has(archive.modelId)) throw new Error('extract failed');
+    if (mockPauseExtract.has(archive.modelId)) {
+      mockFs.set(`${target}/${archive.modelId === 'pack' ? 'half' : (require('../neuralVoices').NEURAL_MODELS as typeof NEURAL_MODELS)[archive.modelId].dir}/part`, 'x');
+      return { success: false, paused: true, reason: 'paused' };
+    }
     if (archive.modelId === 'pack') mockFs.set(`${target}/index.json`, JSON.stringify({ version: 1, engine: 'kokoro-v1.0', files: { es: { 'el perro': 'es/27956ac4.mp3' } } }));
     else mockFs.set(`${target}/${(require('../neuralVoices').NEURAL_MODELS as typeof NEURAL_MODELS)[archive.modelId].dir}/tokens.txt`, 't');
     return { success: true };
@@ -57,6 +64,7 @@ jest.mock('react-native-sherpa-onnx/extraction', () => ({
 jest.mock('../neuralTts', () => ({
   loadNeuralVoice: async (voice: { id: string; engine: string; model: string }, lang: string, dir: string) => {
     mockLoaded.push(`${lang}:${voice.id}@${dir}`);
+    if (mockFailLoad.has(voice.id)) throw new Error('bad model');
     mockReady.add(`${lang}:${voice.engine}:${voice.id}`);
     return 1;
   },
@@ -67,6 +75,10 @@ jest.mock('../neuralTts', () => ({
   releaseNeural: async () => {
     mockReleased += 1;
     mockReady.clear();
+  },
+  releaseNeuralPair: async (lang: string, engine: string) => {
+    mockPairReleased.push(`${lang}:${engine}`);
+    for (const key of [...mockReady]) if (key.startsWith(`${lang}:${engine}:`)) mockReady.delete(key);
   },
   stopNeural: jest.fn(),
 }));
@@ -99,6 +111,9 @@ beforeEach(() => {
   mockDownloads.length = 0;
   mockExtracted.length = 0;
   mockFailExtract.clear();
+  mockPauseExtract.clear();
+  mockFailLoad.clear();
+  mockPairReleased.length = 0;
   mockLoaded.length = 0;
   mockReady.clear();
   mockReleased = 0;
@@ -126,16 +141,47 @@ describe('better voice: state at start', () => {
     expect(m.getNeuralState().installed['hu_HU-berta-medium']).toBe(false);
   });
 
-  it('installed models load at start: Spanish and English now, Hungarian at its first use', async () => {
+  it('installed models load lazily: nothing at start, a language at its first use', async () => {
     for (const key of PIPER_MODEL_KEYS) installModel(key);
     const m = load();
     await m.startNeural();
     await flush();
-    expect(mockLoaded.map(x => x.split('@')[0]).sort()).toEqual(['en:en_US-john-medium', 'en:en_US-kristin-medium', 'es:es_MX-ald-medium', 'es:es_MX-claude-high']);
+    expect(mockLoaded).toEqual([]);
+    expect(m.neuralEngineFor('es')).toBeNull(); // asking starts its load
+    await flush();
+    expect(mockLoaded.map(x => x.split('@')[0]).sort()).toEqual(['es:es_MX-ald-medium', 'es:es_MX-claude-high']);
     expect(m.neuralEngineFor('es')).toBe('piper');
-    expect(m.neuralEngineFor('hu')).toBeNull(); // asking starts its load
+    expect(m.neuralEngineFor('hu')).toBeNull();
     await flush();
     expect(m.neuralEngineFor('hu')).toBe('piper');
+    expect(mockLoaded.some(x => x.startsWith('en:'))).toBe(false); // English was never asked for
+  });
+
+  it('a model that fails to load is not tried again on every speech', async () => {
+    for (const key of PIPER_MODEL_KEYS) installModel(key);
+    mockFailLoad.add('es_MX-claude-high');
+    const m = load();
+    await m.startNeural();
+    for (let i = 0; i < 4; i += 1) {
+      expect(m.neuralEngineFor('es')).toBeNull();
+      await flush();
+    }
+    expect(mockLoaded).toHaveLength(1); // one attempt, the first voice of the pair
+  });
+
+  it('a download that ran lets the failed language try again at its next use', async () => {
+    for (const key of PIPER_MODEL_KEYS) installModel(key);
+    mockFailLoad.add('es_MX-claude-high');
+    const m = load();
+    await m.startNeural();
+    m.neuralEngineFor('es');
+    await flush();
+    mockFailLoad.clear();
+    mockFs.delete(`${TTS}/kimacha-tts-pack-v1.ok`);
+    await m.downloadNeural(); // the pack is missing, so something is fetched
+    m.neuralEngineFor('es');
+    await flush();
+    expect(m.neuralEngineFor('es')).toBe('piper');
   });
 
   it('the saved switch and choices come back after a restart', async () => {
@@ -163,6 +209,7 @@ describe('better voice: download', () => {
     expect([...mockFs.keys()].some(k => k.includes('/dl/') && !k.endsWith('.dir'))).toBe(false); // no archive left behind
     expect(m.neuralPackFile('es', 'el perro')).toBe(`${TTS}/kimacha-tts-pack-v1/es/27956ac4.mp3`);
     expect(m.neuralPackFile('es', 'la casa')).toBeNull();
+    expect(m.neuralEngineFor('en')).toBeNull(); // the first ask loads the language
     await flush();
     expect(m.neuralEngineFor('en')).toBe('piper');
   });
@@ -197,6 +244,18 @@ describe('better voice: download', () => {
     expect(m.getNeuralState().download.failed).toEqual([]);
   });
 
+  it('an extraction that came back paused (success false, no throw) leaves no marker and no half folder', async () => {
+    mockPauseExtract.add('en_US-john-medium');
+    const m = load();
+    await m.startNeural();
+    await m.downloadNeural();
+    expect(m.getNeuralState().download.failed).toEqual(['en_US-john-medium']);
+    expect(m.getNeuralState().installed['en_US-john-medium']).toBe(false);
+    expect(mockFs.has(`${TTS}/${NEURAL_MODELS['en_US-john-medium'].dir}.ok`)).toBe(false);
+    expect(under(`${TTS}/${NEURAL_MODELS['en_US-john-medium'].dir}`)).toEqual([]);
+    expect(m.getNeuralState().installed['en_US-kristin-medium']).toBe(true); // the others went on
+  });
+
   it('nothing missing means nothing to download', async () => {
     for (const key of PIPER_MODEL_KEYS) installModel(key);
     mockFs.set(`${TTS}/kimacha-tts-pack-v1.ok`, '1');
@@ -213,6 +272,8 @@ describe('better voice: switch and engine choice', () => {
     mockFs.set(`${TTS}/kimacha-tts-pack-v1.ok`, '1');
     const m = load();
     await m.startNeural();
+    m.neuralEngineFor('es');
+    m.neuralEngineFor('en');
     await flush();
     await m.setNeuralEngine('es', 'kokoro');
     expect(mockDownloads.map(d => d.url)).toEqual([NEURAL_MODELS.kokoro.archive]);
@@ -222,6 +283,28 @@ describe('better voice: switch and engine choice', () => {
     expect(mockLoaded.some(x => x.startsWith('es:ef_dora@'))).toBe(true);
     expect(m.neuralEngineFor('es')).toBe('kokoro');
     expect(m.neuralEngineFor('en')).toBe('piper');
+  });
+
+  it('when the new engine is loaded the old one of that language is freed, and only of that language', async () => {
+    for (const key of PIPER_MODEL_KEYS) installModel(key);
+    installModel('kokoro');
+    mockFs.set(`${TTS}/kimacha-tts-pack-v1.ok`, '1');
+    const m = load();
+    await m.startNeural();
+    m.neuralEngineFor('es');
+    m.neuralEngineFor('en');
+    await flush();
+    expect(mockPairReleased).toEqual(['es:kokoro', 'en:kokoro']); // the chosen Piper is loaded: nothing else of the language is kept
+    mockPairReleased.length = 0;
+    await m.setNeuralEngine('es', 'kokoro');
+    await flush();
+    expect(mockPairReleased).toEqual(['es:piper']);
+    expect(m.neuralEngineFor('es')).toBe('kokoro');
+    expect(m.neuralEngineFor('en')).toBe('piper');
+    await m.setNeuralEngine('es', 'piper');
+    await flush();
+    expect(mockPairReleased).toEqual(['es:piper', 'es:kokoro']);
+    expect(m.neuralEngineFor('es')).toBe('piper');
   });
 
   it('Hungarian cannot be switched to Kokoro, and an unchanged choice does nothing', async () => {
@@ -239,6 +322,7 @@ describe('better voice: switch and engine choice', () => {
     mockFs.set(`${TTS}/kimacha-tts-pack-v1.ok`, '1');
     const m = load();
     await m.startNeural();
+    m.neuralEngineFor('es');
     await flush();
     expect(m.neuralPackFile('es', 'el perro')).not.toBeNull();
     await m.setNeuralEnabled(false);
@@ -247,6 +331,7 @@ describe('better voice: switch and engine choice', () => {
     expect(m.neuralPackFile('es', 'el perro')).toBeNull();
     expect(JSON.parse(mockFs.get(`${TTS}/settings.json`) as string).enabled).toBe(false);
     await m.setNeuralEnabled(true);
+    expect(m.neuralEngineFor('es')).toBeNull(); // loads at its next use
     await flush();
     expect(m.neuralEngineFor('es')).toBe('piper');
     expect(m.neuralPackFile('es', 'el perro')).not.toBeNull();

@@ -199,17 +199,23 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   Speech.stop();
   stopNeural();
   stopPack();
+  // The phone takes over from a level that failed: whatever of that level still sounds is cut first.
+  const toPhone = () => {
+    stopNeural();
+    stopPack();
+    phone();
+  };
   const viaEngine = () => {
     const now = neuralEngineFor(lang);
     if (!now) {
-      phone();
+      toPhone();
       return;
     }
     speakNeural(text, lang, voiceFor(lang, now, text, opts.gender), {
       rate: opts.rate,
       onDone: opts.onDone,
       onStopped: opts.onStopped,
-    }).catch(phone);
+    }).catch(toPhone);
   };
   if (pack) {
     playPackFile(pack, { rate: opts.rate, onDone: opts.onDone, onStopped: opts.onStopped, onFail: viaEngine });

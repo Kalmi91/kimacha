@@ -19,6 +19,7 @@ import { Platform } from 'react-native';
 import {
   DEFAULT_ENGINES,
   NEURAL_MODELS,
+  PACK_BYTES,
   PACK_DIR,
   PACK_KEY,
   PACK_URL,
@@ -31,7 +32,7 @@ import {
   type NeuralLang,
   type PackIndex,
 } from './neuralVoices';
-import { isNeuralReady, loadNeuralVoice, releaseNeural, stopNeural } from './neuralTts';
+import { isNeuralReady, loadNeuralVoice, releaseNeural, releaseNeuralPair, stopNeural } from './neuralTts';
 import { stopPack } from './packAudio';
 
 export interface NeuralDownloadState {
@@ -144,8 +145,10 @@ async function loadPackIndex(fs: Fs): Promise<void> {
   console.log('[neural] word pack installed but its index.json is unreadable');
 }
 
-// Voices load one after the other (a load takes seconds and memory); a failed one stays not ready and the
-// language keeps the phone's voice. Languages load once: es and en at start, hu on its first use.
+// Voices load one after the other (a load takes seconds and memory). A language loads lazily, on its first
+// use (neuralEngineFor), and once: a load that failed is not tried again until the switch is toggled, the
+// engine choice changes or a download ran, so a broken model does not cost a load attempt on every speech.
+// The language keeps the phone's voice meanwhile.
 const loadedLangs = new Set<string>();
 let loadingChain: Promise<void> = Promise.resolve();
 
@@ -163,15 +166,21 @@ function loadEngines(lang: NeuralLang): void {
         await loadNeuralVoice(voice, lang, itemDir(fs, voice.model));
       } catch (e) {
         console.log(`[neural] load failed ${lang}/${voice.id}: ${String(e)}`);
-        loadedLangs.delete(tag);
-        return;
+        return; // the tag stays in loadedLangs: no retry on every speech
       }
     }
     update({}); // the engine is ready now
+    // The language's other engine is not needed any more (the old choice, or the stand-in while this one loaded).
+    if (lang !== 'hu' && state.engines[lang] === engine) {
+      const other: NeuralEngine = engine === 'piper' ? 'kokoro' : 'piper';
+      loadedLangs.delete(`${lang}:${other}`); // choosing it again loads it again
+      await releaseNeuralPair(lang, other);
+    }
   });
 }
 
-// Once per app run (lib/speech.ts calls it from watchAppStateForSpeech).
+// Once per app run (lib/speech.ts calls it from watchAppStateForSpeech). It reads the settings and the installed
+// state; no engine loads here (that waits for the language's first use).
 let started = false;
 export async function startNeural(): Promise<void> {
   if (started || !state.supported) return;
@@ -181,8 +190,6 @@ export async function startNeural(): Promise<void> {
     const settings = await readSettings(fs);
     update({ ...settings, installed: await readInstalled(fs), ready: true });
     await loadPackIndex(fs);
-    loadEngines('es');
-    loadEngines('en');
   } catch (e) {
     console.log(`[neural] start failed: ${String(e)}`);
     update({ ready: true });
@@ -191,7 +198,7 @@ export async function startNeural(): Promise<void> {
 
 // Which engine speaks this language's sentences right now: the chosen one if it is loaded, else the other
 // one of es/en if that is (Kokoro chosen but still downloading or loading: Piper speaks meanwhile);
-// null = none is ready, the phone speaks. Asking also starts the first load of a language (hu).
+// null = none is ready, the phone speaks. Asking also starts the first load of a language.
 export function neuralEngineFor(lang: NeuralLang): NeuralEngine | null {
   if (!state.supported || !state.enabled) return null;
   loadEngines(lang);
@@ -214,10 +221,7 @@ export async function setNeuralEnabled(enabled: boolean): Promise<void> {
   if (state.enabled === enabled) return;
   update({ enabled });
   void writeSettings();
-  if (enabled) {
-    loadEngines('es');
-    loadEngines('en');
-  } else {
+  if (!enabled) {
     stopNeural();
     stopPack();
     loadedLangs.clear();
@@ -233,7 +237,7 @@ export async function setNeuralEngine(lang: NeuralLang, engine: NeuralEngine): P
   void writeSettings();
   const needs = voicePair(lang, next[lang]).some(v => !state.installed[v.model]);
   if (needs) await downloadNeural();
-  else loadEngines(lang);
+  loadEngines(lang);
 }
 
 interface Job {
@@ -253,7 +257,7 @@ export async function downloadNeural(): Promise<void> {
     .filter(key => !state.installed[key])
     .map(key => {
       const url = key === PACK_KEY ? PACK_URL : NEURAL_MODELS[key].archive;
-      return { key, url, file: `${ttsDir(fs)}/dl/${url.split('/').pop()}`, bytes: key === PACK_KEY ? 0 : NEURAL_MODELS[key].bytes };
+      return { key, url, file: `${ttsDir(fs)}/dl/${url.split('/').pop()}`, bytes: key === PACK_KEY ? PACK_BYTES : NEURAL_MODELS[key].bytes };
     });
   if (jobs.length === 0) return;
 
@@ -280,8 +284,8 @@ export async function downloadNeural(): Promise<void> {
         progressInterval: 400,
         begin: ({ contentLength }) => {
           if (job.key === PACK_KEY && contentLength > 0) {
+            totalBytes += contentLength - size; // the server's size replaces the one built in
             size = contentLength;
-            totalBytes += contentLength;
           }
         },
         progress: ({ bytesWritten }) => show(Math.min(bytesWritten, size), 'download'),
@@ -294,10 +298,12 @@ export async function downloadNeural(): Promise<void> {
       // the pack's files sit at the archive root, the models' in their own folder
       const target = job.key === PACK_KEY ? dir : ttsDir(fs);
       await fs.mkdir(target);
-      await extractArchive({ modelId: job.key, archivePath: job.file, format: 'tar.bz2' }, target, {
+      const extracted = await extractArchive({ modelId: job.key, archivePath: job.file, format: 'tar.bz2' }, target, {
         force: true,
         showNotificationsEnabled: false,
       });
+      // a paused or cut-off extraction comes back as { success: false }, not as an error: no marker for it
+      if (!extracted?.success) throw new Error(`extraction stopped (${extracted?.success === false ? (extracted.reason ?? 'paused') : 'no result'})`);
       await fs.writeFile(`${dir}.ok`, '1', 'utf8');
       doneBytes += size;
       console.log(`[neural] installed ${job.key} (${size} bytes)`);
@@ -313,6 +319,5 @@ export async function downloadNeural(): Promise<void> {
   update({ installed: await readInstalled(fs) });
   await loadPackIndex(fs);
   update({ download: { running: false, percent: failed.length ? state.download.percent : 100, phase: 'download', failed } });
-  loadEngines('es');
-  loadEngines('en');
+  loadedLangs.clear(); // new files may have repaired a model that failed to load: the next use tries again
 }

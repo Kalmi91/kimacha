@@ -5,6 +5,7 @@
 import {
   KOKORO_VOICES,
   NEURAL_MODELS,
+  PACK_BYTES,
   PACK_KEY,
   PIPER_MODEL_KEYS,
   PIPER_VOICES,
@@ -119,8 +120,10 @@ describe('models', () => {
   it('counts the bytes of what is not installed yet', () => {
     const items = requiredItems({ es: 'piper', en: 'piper', hu: 'piper' });
     const all = missingBytes(items, {});
-    expect(all).toBe(PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0));
+    expect(all).toBe(PACK_BYTES + PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0)); // the pack counts too
+    expect(formatMegabytes(all)).toBe('235 MB');
     expect(missingBytes(items, { 'hu_HU-berta-medium': true })).toBe(all - NEURAL_MODELS['hu_HU-berta-medium'].bytes);
+    expect(missingBytes(items, { [PACK_KEY]: true })).toBe(all - PACK_BYTES);
     expect(formatMegabytes(NEURAL_MODELS.kokoro.bytes)).toBe('126 MB');
   });
 });

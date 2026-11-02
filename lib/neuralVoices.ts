@@ -95,10 +95,10 @@ export const PIPER_MODEL_KEYS: string[] = Object.values(NEURAL_MODELS)
   .filter(m => m.engine === 'piper')
   .map(m => m.key);
 
-// The word pack (scripts/tts-pack.py): a GitHub release asset of the app's own repo. Its real size is not
-// known until the pack is built and uploaded (PLAN-tts-1101, slice C): the Settings label counts the
-// models only, and the progress learns the pack's size from the server when its download starts.
+// The word pack (scripts/tts-pack.py): a GitHub release asset of the app's own repo (tts-pack-v1, 119 608 678
+// bytes as uploaded). The Settings label and the progress count it with the models.
 export const PACK_KEY = 'pack';
+export const PACK_BYTES = 119608678;
 export const PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v1/kimacha-tts-pack-v1.tar.bz2';
 export const PACK_DIR = 'kimacha-tts-pack-v1';
 
@@ -190,9 +190,9 @@ export function requiredItems(engines: EngineChoice): string[] {
   return [PACK_KEY, ...PIPER_MODEL_KEYS, ...(kokoro ? ['kokoro'] : [])];
 }
 
-// Bytes still to fetch for the items that are not installed yet (the pack is not counted, see PACK_KEY).
+// Bytes still to fetch for the items that are not installed yet (the pack included).
 export function missingBytes(items: string[], installed: Record<string, boolean>): number {
-  return items.filter(key => !installed[key]).reduce((sum, key) => sum + (NEURAL_MODELS[key]?.bytes ?? 0), 0);
+  return items.filter(key => !installed[key]).reduce((sum, key) => sum + (key === PACK_KEY ? PACK_BYTES : NEURAL_MODELS[key]?.bytes ?? 0), 0);
 }
 
 // The shape of the pack's index.json.
