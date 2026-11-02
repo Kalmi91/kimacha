@@ -1,0 +1,999 @@
+{
+  "schema": 2,
+  "topic": "nebensatz-weil-dass",
+  "level": "A2",
+  "title": {
+    "en": "Subordinate clauses with weil and dass",
+    "es": "Oraciones subordinadas con weil y dass"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A subordinate clause starts with a conjunction, such as weil (because) or dass (that), and the conjugated verb goes to the end: Ich lerne Deutsch, weil ich in Berlin wohne. A comma separates the two clauses. If the subordinate clause comes first, it fills position 1, and the verb of the main clause follows right after the comma: Weil ich müde bin, gehe ich ins Bett. English and Spanish keep the normal order after because and porque, and Hungarian keeps its verb in the middle, so the verb at the end needs practice.",
+        "es": "Una oración subordinada empieza con una conjunción, como weil (porque) o dass (que), y el verbo conjugado va al final: Ich lerne Deutsch, weil ich in Berlin wohne. Una coma separa las dos oraciones. Si la subordinada va primero, ocupa la posición 1, y el verbo de la oración principal sigue justo después de la coma: Weil ich müde bin, gehe ich ins Bett. El inglés y el español mantienen el orden normal después de because y porque, y el húngaro mantiene el verbo en medio, así que el verbo al final requiere práctica."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "nebensatz-umbau",
+      "title": {
+        "en": "From main clause to subordinate clause",
+        "es": "De oración principal a subordinada"
+      },
+      "header": [
+        {
+          "en": "Main clause",
+          "es": "Oración principal"
+        },
+        {
+          "en": "weil-Satz",
+          "es": "weil-Satz"
+        },
+        {
+          "en": "dass-Satz",
+          "es": "dass-Satz"
+        }
+      ],
+      "rows": [
+        [
+          "ich bin müde",
+          "weil ich müde bin",
+          "dass ich müde bin"
+        ],
+        [
+          "wir lernen Deutsch",
+          "weil wir Deutsch lernen",
+          "dass wir Deutsch lernen"
+        ],
+        [
+          "er arbeitet viel",
+          "weil er viel arbeitet",
+          "dass er viel arbeitet"
+        ],
+        [
+          "ich stehe früh auf",
+          "weil ich früh aufstehe",
+          "dass ich früh aufstehe"
+        ],
+        [
+          "sie hat viel gearbeitet",
+          "weil sie viel gearbeitet hat",
+          "dass sie viel gearbeitet hat"
+        ],
+        [
+          "du musst arbeiten",
+          "weil du arbeiten musst",
+          "dass du arbeiten musst"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The verb at the end",
+        "es": "El verbo al final"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After weil the order is conjunction, subject, other parts, conjugated verb. The verb stands last, and there is a comma before weil.",
+            "es": "Después de weil el orden es conjunción, sujeto, otras partes, verbo conjugado. El verbo va al final, y hay una coma antes de weil."
+          },
+          "examples": [
+            {
+              "es": "Ich lerne Deutsch, weil ich in Berlin wohne.",
+              "tr": {
+                "en": "I am learning German because I live in Berlin.",
+                "es": "Estudio alemán porque vivo en Berlín."
+              }
+            },
+            {
+              "es": "Ich bleibe zu Hause, weil ich krank bin.",
+              "tr": {
+                "en": "I am staying at home because I am sick.",
+                "es": "Me quedo en casa porque estoy enfermo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Separable verbs are written together at the end. A perfect tense has the participle first and the helper verb last. A modal verb is last, after the infinitive.",
+            "es": "Los verbos separables se escriben juntos al final. Un tiempo compuesto tiene primero el participio y al final el verbo auxiliar. Un verbo modal va al final, después del infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Ich bin müde, weil ich früh aufstehe.",
+              "tr": {
+                "en": "I am tired because I get up early.",
+                "es": "Estoy cansado porque me levanto temprano."
+              }
+            },
+            {
+              "es": "Ich bin müde, weil ich viel gearbeitet habe.",
+              "tr": {
+                "en": "I am tired because I worked a lot.",
+                "es": "Estoy cansado porque trabajé mucho."
+              }
+            },
+            {
+              "es": "Ich kann nicht kommen, weil ich arbeiten muss.",
+              "tr": {
+                "en": "I cannot come because I have to work.",
+                "es": "No puedo venir porque tengo que trabajar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If the weil clause comes first, it fills position 1 of the whole sentence. So the main-clause verb comes next and the subject follows it.",
+            "es": "Si la oración con weil va primero, ocupa la posición 1 de toda la oración. Entonces el verbo de la principal viene a continuación y el sujeto lo sigue."
+          },
+          "examples": [
+            {
+              "es": "Weil ich müde bin, gehe ich ins Bett.",
+              "tr": {
+                "en": "Because I am tired, I am going to bed.",
+                "es": "Como estoy cansado, me voy a la cama."
+              }
+            },
+            {
+              "es": "Weil es regnet, bleiben wir zu Hause.",
+              "tr": {
+                "en": "Because it is raining, we are staying at home.",
+                "es": "Como está lloviendo, nos quedamos en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "dass and weil or denn",
+        "es": "dass y weil o denn"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "dass (that) starts a clause after verbs of saying, thinking and feeling (glauben, finden, wissen, sagen) and after expressions like Es ist schön. The verb stands at the end, with a comma before dass.",
+            "es": "dass («que») inicia una oración después de verbos de decir, pensar y sentir (glauben, finden, wissen, sagen) y después de expresiones como Es ist schön. El verbo va al final, con una coma antes de dass."
+          },
+          "examples": [
+            {
+              "es": "Ich glaube, dass er krank ist.",
+              "tr": {
+                "en": "I think that he is sick.",
+                "es": "Creo que está enfermo."
+              }
+            },
+            {
+              "es": "Es ist schön, dass du hier bist.",
+              "tr": {
+                "en": "It is nice that you are here.",
+                "es": "Qué bueno que estés aquí."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Remember denn from A1: it also means because, but it keeps the main-clause order, with the verb in second place. weil sends the verb to the end.",
+            "es": "Recuerda denn de A1: también significa «porque», pero mantiene el orden de la oración principal, con el verbo en segundo lugar. weil manda el verbo al final."
+          },
+          "examples": [
+            {
+              "es": "Ich bin müde, denn ich habe viel gearbeitet.",
+              "tr": {
+                "en": "I am tired, for I worked a lot.",
+                "es": "Estoy cansado, pues trabajé mucho."
+              }
+            },
+            {
+              "es": "Ich bin müde, weil ich viel gearbeitet habe.",
+              "tr": {
+                "en": "I am tired because I worked a lot.",
+                "es": "Estoy cansado porque trabajé mucho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Spelling: dass with double s is the conjunction. das with one s is the article or the pronoun. If a noun follows it or it means that thing, it is das.",
+            "es": "Ortografía: dass con doble s es la conjunción. das con una sola s es el artículo o el pronombre. Si le sigue un sustantivo o significa «eso», es das."
+          },
+          "examples": [
+            {
+              "es": "Ich habe das Buch gelesen.",
+              "tr": {
+                "en": "I have read the book.",
+                "es": "Leí el libro."
+              }
+            },
+            {
+              "es": "Ich weiß, dass du krank bist.",
+              "tr": {
+                "en": "I know that you are sick.",
+                "es": "Sé que estás enfermo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "denn or weil?",
+        "es": "¿denn o weil?"
+      },
+      "pairs": [
+        {
+          "a": "Ich bin müde, denn ich habe viel gearbeitet.",
+          "b": "Ich bin müde, weil ich viel gearbeitet habe.",
+          "note": {
+            "en": "Same meaning, different order. After denn the verb stays in second place (ich habe). After weil the conjugated verb goes to the end (gearbeitet habe).",
+            "es": "Mismo significado, distinto orden. Después de denn el verbo se queda en segundo lugar (ich habe). Después de weil el verbo conjugado va al final (gearbeitet habe)."
+          },
+          "examples": [
+            {
+              "es": "Wir bleiben zu Hause, denn es regnet.",
+              "tr": {
+                "en": "We are staying at home, for it is raining.",
+                "es": "Nos quedamos en casa, pues está lloviendo."
+              }
+            },
+            {
+              "es": "Wir bleiben zu Hause, weil es regnet.",
+              "tr": {
+                "en": "We are staying at home because it is raining.",
+                "es": "Nos quedamos en casa porque está lloviendo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich weiß das nicht.",
+          "b": "Ich weiß, dass du kommst.",
+          "note": {
+            "en": "das is a pronoun here (it, that thing), and dass starts a new clause with the verb at the end. If you can add a verb at the end of the clause, you need dass.",
+            "es": "das es aquí un pronombre («eso»), y dass inicia una nueva oración con el verbo al final. Si puedes poner un verbo al final de la oración, necesitas dass."
+          },
+          "examples": [
+            {
+              "es": "Das ist mein Buch.",
+              "tr": {
+                "en": "That is my book.",
+                "es": "Ese es mi libro."
+              }
+            },
+            {
+              "es": "Ich finde, dass das Buch gut ist.",
+              "tr": {
+                "en": "I think the book is good.",
+                "es": "Me parece que el libro está bueno."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not keep the verb in second place after weil (not weil ich bin müde) and do not forget the comma before weil and dass. After a weil clause at the start, the main verb comes next (not Weil ich müde bin, ich gehe ins Bett). In the Perfekt the helper goes last (gearbeitet habe, not habe gearbeitet). Separable verbs are written together (aufstehe, not stehe auf). And dass has two s, but das (the, that) has one.",
+        "es": "Trampas clásicas: no mantengas el verbo en segundo lugar después de weil (no weil ich bin müde) y no olvides la coma antes de weil y dass. Después de una oración con weil al inicio, viene el verbo principal (no Weil ich müde bin, ich gehe ins Bett). En el Perfekt el auxiliar va al final (gearbeitet habe, no habe gearbeitet). Los verbos separables se escriben juntos (aufstehe, no stehe auf). Y dass lleva dos s, pero das («el», «eso») lleva una."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A subordinate clause with «weil» or «dass» sends the conjugated verb to the end. «Ich lerne Deutsch, weil ich in Berlin wohne». Put a comma before «weil». If the «weil» clause comes first, the main verb follows at once: «Weil ich müde bin, gehe ich ins Bett». Separable verbs are written together: «weil ich früh aufstehe». In the Perfekt the helper is last: «weil ich viel gearbeitet habe». After «glauben» and «finden» use «dass»: «Ich glaube, dass er krank ist». Do not confuse «dass» with «das».",
+    "es": "Una oración subordinada con «weil» o «dass» manda el verbo conjugado al final. «Ich lerne Deutsch, weil ich in Berlin wohne». Pon una coma antes de «weil». Si la oración con «weil» va primero, el verbo principal sigue enseguida: «Weil ich müde bin, gehe ich ins Bett». Los verbos separables se escriben juntos: «weil ich früh aufstehe». En el Perfekt el auxiliar va al final: «weil ich viel gearbeitet habe». Después de «glauben» y «finden» se usa «dass»: «Ich glaube, dass er krank ist». No confundas «dass» con «das»."
+  },
+  "items": [
+    {
+      "id": "nebensatz-weil-dass-c01",
+      "sentence": "Ich lerne Deutsch, weil ___.",
+      "options": [
+        "ich in Berlin wohne",
+        "ich wohne in Berlin",
+        "wohne ich in Berlin"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After weil the conjugated verb goes to the end of the clause: weil ich in Berlin wohne.",
+        "es": "Después de weil el verbo conjugado va al final de la oración: weil ich in Berlin wohne."
+      },
+      "wrong": {
+        "ich wohne in Berlin": {
+          "en": "That is the order of a main clause, with the verb in second place. After weil the verb must go to the end.",
+          "es": "Ese es el orden de una oración principal, con el verbo en segundo lugar. Después de weil el verbo debe ir al final."
+        },
+        "wohne ich in Berlin": {
+          "en": "Verb first is the order of a yes/no question. After weil the subject comes first and the verb comes last.",
+          "es": "El verbo primero es el orden de una pregunta de sí o no. Después de weil el sujeto va primero y el verbo al final."
+        }
+      },
+      "examples": [
+        "Ich bin hier, weil ich arbeite.",
+        "Wir bleiben, weil wir Hunger haben."
+      ],
+      "tr": {
+        "en": "I am learning German because I live in Berlin.",
+        "es": "Estudio alemán porque vivo en Berlín."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f01",
+      "kind": "form",
+      "verb": "weil-Satz",
+      "person": "ich bin müde",
+      "answer": "weil ich müde bin",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c02",
+      "sentence": "Ich bleibe zu Hause, weil ___.",
+      "options": [
+        "ich bin krank",
+        "ich krank bin",
+        "krank ich bin"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The verb bin goes to the end of the weil clause: weil ich krank bin.",
+        "es": "El verbo bin va al final de la oración con weil: weil ich krank bin."
+      },
+      "wrong": {
+        "ich bin krank": {
+          "en": "That is the order of a main clause. After weil the verb bin must stand last.",
+          "es": "Ese es el orden de una oración principal. Después de weil el verbo bin debe ir al final."
+        },
+        "krank ich bin": {
+          "en": "The subject comes right after weil. krank belongs before the verb, but ich has to come first.",
+          "es": "El sujeto va justo después de weil. krank va antes del verbo, pero ich tiene que ir primero."
+        }
+      },
+      "examples": [
+        "Ich bin müde, weil ich arbeite.",
+        "Sie bleibt zu Hause, weil sie krank ist."
+      ],
+      "tr": {
+        "en": "I am staying at home because I am sick.",
+        "es": "Me quedo en casa porque estoy enfermo."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f02",
+      "kind": "form",
+      "verb": "dass-Satz",
+      "person": "wir lernen Deutsch",
+      "answer": "dass wir Deutsch lernen",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c03",
+      "sentence": "Weil ich müde bin, ___ ins Bett.",
+      "options": [
+        "ich gehe",
+        "gehe",
+        "gehe ich"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The whole weil clause is position 1, so the main-clause verb comes next, and the subject follows it: gehe ich.",
+        "es": "Toda la oración con weil es la posición 1, así que el verbo de la principal viene a continuación, y el sujeto lo sigue: gehe ich."
+      },
+      "wrong": {
+        "ich gehe": {
+          "en": "With the subject first, the main clause would start in position 2. But the weil clause already fills position 1, so the verb must come first.",
+          "es": "Con el sujeto primero, la oración principal empezaría en la posición 2. Pero la oración con weil ya ocupa la posición 1, así que el verbo debe ir primero."
+        },
+        "gehe": {
+          "en": "The subject ich cannot be dropped in German. After the comma the sentence needs the verb and the subject: gehe ich.",
+          "es": "El sujeto ich no se puede omitir en alemán. Después de la coma la oración necesita el verbo y el sujeto: gehe ich."
+        }
+      },
+      "examples": [
+        "Weil es kalt ist, trinke ich Tee.",
+        "Weil ich Hunger habe, esse ich Brot."
+      ],
+      "tr": {
+        "en": "Because I am tired, I am going to bed.",
+        "es": "Como estoy cansado, me voy a la cama."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f03",
+      "kind": "form",
+      "verb": "weil-Satz",
+      "person": "wir lernen Deutsch",
+      "answer": "weil wir Deutsch lernen",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-w01",
+      "kind": "why",
+      "es": "Ich lerne Deutsch, weil ich in Berlin wohne.",
+      "target": "wohne",
+      "tr": {
+        "en": "I am learning German because I live in Berlin.",
+        "es": "Estudio alemán porque vivo en Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A subordinate clause with weil sends the conjugated verb to the end",
+            "es": "Una subordinada con weil manda el verbo conjugado al final"
+          }
+        },
+        {
+          "text": {
+            "en": "The verb stays in second place, as in a main clause: weil ich wohne in Berlin",
+            "es": "El verbo se queda en segundo lugar, como en una oración principal: weil ich wohne in Berlin"
+          },
+          "wrong": {
+            "en": "That is the order of a main clause or of denn. After weil the conjugated verb moves to the end of the clause.",
+            "es": "Ese es el orden de una oración principal o de denn. Después de weil el verbo conjugado pasa al final de la oración."
+          }
+        },
+        {
+          "text": {
+            "en": "The verb goes to the front, as in a question: weil wohne ich in Berlin",
+            "es": "El verbo va al principio, como en una pregunta: weil wohne ich in Berlin"
+          },
+          "wrong": {
+            "en": "Verb first is the order of a yes/no question. After weil the subject comes first and the verb last.",
+            "es": "El verbo primero es el orden de una pregunta de sí o no. Después de weil el sujeto va primero y el verbo al final."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nebensatz-weil-dass-c04",
+      "sentence": "Ich glaube, dass er ___.",
+      "options": [
+        "krank ist",
+        "ist krank",
+        "ist er krank"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After dass the conjugated verb goes to the end: dass er krank ist.",
+        "es": "Después de dass el verbo conjugado va al final: dass er krank ist."
+      },
+      "wrong": {
+        "ist krank": {
+          "en": "ist krank is the order of a main clause. After dass the verb ist must stand last.",
+          "es": "ist krank es el orden de una oración principal. Después de dass el verbo ist debe ir al final."
+        },
+        "ist er krank": {
+          "en": "The subject er stands before the gap already, and ist er would repeat it. After dass the verb simply goes last.",
+          "es": "El sujeto er ya está antes del hueco, e ist er lo repetiría. Después de dass el verbo simplemente va al final."
+        }
+      },
+      "examples": [
+        "Ich weiß, dass sie kommt.",
+        "Ich finde, dass es gut ist."
+      ],
+      "tr": {
+        "en": "I think that he is sick.",
+        "es": "Creo que está enfermo."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f04",
+      "kind": "form",
+      "verb": "dass-Satz",
+      "person": "er arbeitet viel",
+      "answer": "dass er viel arbeitet",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c05",
+      "sentence": "Ich bin müde, ___ ich viel gearbeitet habe.",
+      "options": [
+        "denn",
+        "weil",
+        "dass"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The verb habe is at the end of the clause, which shows a subordinate clause with weil. denn would keep the verb in second place.",
+        "es": "El verbo habe está al final de la oración, lo que muestra una subordinada con weil. denn mantendría el verbo en segundo lugar."
+      },
+      "wrong": {
+        "denn": {
+          "en": "denn is followed by a main clause with the verb in second place (denn ich habe viel gearbeitet). Here the verb is last.",
+          "es": "Después de denn viene una oración principal con el verbo en segundo lugar (denn ich habe viel gearbeitet). Aquí el verbo va al final."
+        },
+        "dass": {
+          "en": "dass introduces a content clause after verbs like glauben. It does not give a reason.",
+          "es": "dass introduce una oración de contenido después de verbos como glauben. No da una razón."
+        }
+      },
+      "examples": [
+        "Ich bleibe zu Hause, weil ich krank bin.",
+        "Wir essen, weil wir Hunger haben."
+      ],
+      "tr": {
+        "en": "I am tired because I worked a lot.",
+        "es": "Estoy cansado porque trabajé mucho."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f05",
+      "kind": "form",
+      "verb": "weil-Satz",
+      "person": "er arbeitet viel",
+      "answer": "weil er viel arbeitet",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c06",
+      "sentence": "Ich bin müde, ___ ich habe viel gearbeitet.",
+      "options": [
+        "weil",
+        "dass",
+        "denn"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Here the verb habe stays in second place, so the conjunction is denn.",
+        "es": "Aquí el verbo habe se queda en segundo lugar, así que la conjunción es denn."
+      },
+      "wrong": {
+        "weil": {
+          "en": "weil sends the verb to the end (weil ich viel gearbeitet habe). With the verb in second place you need denn.",
+          "es": "weil manda el verbo al final (weil ich viel gearbeitet habe). Con el verbo en segundo lugar necesitas denn."
+        },
+        "dass": {
+          "en": "dass also sends the verb to the end, and it does not give a reason. denn fits here.",
+          "es": "dass también manda el verbo al final, y no da una razón. Aquí encaja denn."
+        }
+      },
+      "examples": [
+        "Wir bleiben, denn es regnet.",
+        "Ich komme nicht, denn ich bin krank."
+      ],
+      "tr": {
+        "en": "I am tired, for I worked a lot.",
+        "es": "Estoy cansado, pues trabajé mucho."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f06",
+      "kind": "form",
+      "verb": "dass-Satz",
+      "person": "ich stehe früh auf",
+      "answer": "dass ich früh aufstehe",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-w02",
+      "kind": "why",
+      "es": "Weil ich müde bin, gehe ich ins Bett.",
+      "target": "gehe",
+      "tr": {
+        "en": "Because I am tired, I am going to bed.",
+        "es": "Como estoy cansado, me voy a la cama."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The subject stays in front: Weil ich müde bin, ich gehe ins Bett",
+            "es": "El sujeto se queda delante: Weil ich müde bin, ich gehe ins Bett"
+          },
+          "wrong": {
+            "en": "The whole weil clause fills position 1, so the verb must follow right away and the subject comes after it.",
+            "es": "Toda la oración con weil ocupa la posición 1, así que el verbo debe seguir enseguida y el sujeto viene después."
+          }
+        },
+        {
+          "text": {
+            "en": "The weil clause counts as the first element, so the verb comes next: gehe ich",
+            "es": "La oración con weil cuenta como el primer elemento, así que el verbo viene a continuación: gehe ich"
+          }
+        },
+        {
+          "text": {
+            "en": "The comma shows that the verb moves to the end",
+            "es": "La coma muestra que el verbo pasa al final"
+          },
+          "wrong": {
+            "en": "The comma only separates the clauses. It does not move any verb.",
+            "es": "La coma solo separa las oraciones. No mueve ningún verbo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nebensatz-weil-dass-c07",
+      "sentence": "Ich weiß, ___ du krank bist.",
+      "options": [
+        "dass",
+        "das",
+        "was"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The clause du krank bist has its verb at the end, so it is a subordinate clause, and the conjunction is dass with double s.",
+        "es": "La oración du krank bist tiene su verbo al final, así que es una subordinada, y la conjunción es dass con doble s."
+      },
+      "wrong": {
+        "das": {
+          "en": "das with one s is the article or the pronoun (Das ist gut). The conjunction needs double s.",
+          "es": "das con una sola s es el artículo o el pronombre (Das ist gut). La conjunción necesita doble s."
+        },
+        "was": {
+          "en": "was means what and starts a question or another kind of clause. After wissen with a statement you need dass.",
+          "es": "was significa «qué» y empieza una pregunta u otro tipo de oración. Después de wissen con una afirmación necesitas dass."
+        }
+      },
+      "examples": [
+        "Ich glaube, dass du müde bist.",
+        "Ich weiß, dass er kommt."
+      ],
+      "tr": {
+        "en": "I know that you are sick.",
+        "es": "Sé que estás enfermo."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f07",
+      "kind": "form",
+      "verb": "weil-Satz",
+      "person": "ich stehe früh auf",
+      "answer": "weil ich früh aufstehe",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c08",
+      "sentence": "Ich habe ___ Buch gelesen.",
+      "options": [
+        "dass",
+        "das",
+        "was"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Here the word is the article of Buch (das Buch), so it has one s: das.",
+        "es": "Aquí la palabra es el artículo de Buch (das Buch), así que lleva una sola s: das."
+      },
+      "wrong": {
+        "dass": {
+          "en": "dass with double s is a conjunction and starts a clause. It cannot stand before a noun as an article.",
+          "es": "dass con doble s es una conjunción y empieza una oración. No puede estar delante de un sustantivo como artículo."
+        },
+        "was": {
+          "en": "was means what. It is not an article, and Buch needs das.",
+          "es": "was significa «qué». No es un artículo, y Buch necesita das."
+        }
+      },
+      "examples": [
+        "Das ist mein Buch.",
+        "Ich kenne das Haus."
+      ],
+      "tr": {
+        "en": "I have read the book.",
+        "es": "Leí el libro."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f08",
+      "kind": "form",
+      "verb": "dass-Satz",
+      "person": "sie hat viel gearbeitet",
+      "answer": "dass sie viel gearbeitet hat",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c09",
+      "sentence": "Ich bin müde, weil ich viel ___.",
+      "options": [
+        "habe gearbeitet",
+        "gearbeitet hat",
+        "gearbeitet habe"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In a subordinate clause the participle comes first and the conjugated helper last: gearbeitet habe.",
+        "es": "En una subordinada el participio va primero y el auxiliar conjugado al final: gearbeitet habe."
+      },
+      "wrong": {
+        "habe gearbeitet": {
+          "en": "habe in second place is the order of a main clause. After weil the helper goes to the very end.",
+          "es": "habe en segundo lugar es el orden de una oración principal. Después de weil el auxiliar va al final de todo."
+        },
+        "gearbeitet hat": {
+          "en": "hat is the form for er, sie and es. The subject here is ich, so the helper is habe.",
+          "es": "hat es la forma de er, sie y es. El sujeto aquí es ich, así que el auxiliar es habe."
+        }
+      },
+      "examples": [
+        "Ich bleibe zu Hause, weil ich gearbeitet habe.",
+        "Er ist müde, weil er gelaufen ist."
+      ],
+      "tr": {
+        "en": "I am tired because I worked a lot.",
+        "es": "Estoy cansado porque trabajé mucho."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f09",
+      "kind": "form",
+      "verb": "weil-Satz",
+      "person": "sie hat viel gearbeitet",
+      "answer": "weil sie viel gearbeitet hat",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-w03",
+      "kind": "why",
+      "es": "Ich glaube, dass er krank ist.",
+      "target": "dass",
+      "tr": {
+        "en": "I think that he is sick.",
+        "es": "Creo que está enfermo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "das: the article and the conjunction are spelled the same",
+            "es": "das: el artículo y la conjunción se escriben igual"
+          },
+          "wrong": {
+            "en": "The conjunction is spelled dass, with ss. das is the article or the pronoun (das Buch, Das ist gut).",
+            "es": "La conjunción se escribe dass, con ss. das es el artículo o el pronombre (das Buch, Das ist gut)."
+          }
+        },
+        {
+          "text": {
+            "en": "dass with double s is the conjunction that starts a subordinate clause",
+            "es": "dass con doble s es la conjunción que inicia una subordinada"
+          }
+        },
+        {
+          "text": {
+            "en": "dass is used only after the verb sagen",
+            "es": "dass se usa solo después del verbo sagen"
+          },
+          "wrong": {
+            "en": "dass follows many verbs of thinking and feeling (glauben, finden, wissen) and expressions such as Es ist schön, dass...",
+            "es": "dass sigue a muchos verbos de pensar y sentir (glauben, finden, wissen) y a expresiones como Es ist schön, dass..."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nebensatz-weil-dass-c10",
+      "sentence": "Ich kann nicht kommen, weil ich ___.",
+      "options": [
+        "arbeiten muss",
+        "muss arbeiten",
+        "arbeiten müssen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In a subordinate clause the infinitive comes first and the modal last: arbeiten muss.",
+        "es": "En una subordinada el infinitivo va primero y el modal al final: arbeiten muss."
+      },
+      "wrong": {
+        "muss arbeiten": {
+          "en": "muss arbeiten is the order of a main clause. After weil the modal goes to the very end.",
+          "es": "muss arbeiten es el orden de una oración principal. Después de weil el modal va al final de todo."
+        },
+        "arbeiten müssen": {
+          "en": "müssen is the form for wir and sie (they). The subject here is ich, so the modal is muss.",
+          "es": "müssen es la forma de wir y sie (ellos). El sujeto aquí es ich, así que el modal es muss."
+        }
+      },
+      "examples": [
+        "Ich bleibe, weil ich lernen muss.",
+        "Wir gehen, weil wir arbeiten müssen."
+      ],
+      "tr": {
+        "en": "I cannot come because I have to work.",
+        "es": "No puedo venir porque tengo que trabajar."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f10",
+      "kind": "form",
+      "verb": "dass-Satz",
+      "person": "du musst arbeiten",
+      "answer": "dass du arbeiten musst",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c11",
+      "sentence": "Ich bin müde, weil ich früh ___.",
+      "options": [
+        "stehe auf",
+        "aufstehe",
+        "auf stehe"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A separable verb is written together again at the end of a subordinate clause: weil ich früh aufstehe.",
+        "es": "Un verbo separable se escribe junto de nuevo al final de una subordinada: weil ich früh aufstehe."
+      },
+      "wrong": {
+        "stehe auf": {
+          "en": "stehe auf splits the verb as in a main clause. In a weil clause the verb stays together and goes to the end.",
+          "es": "stehe auf separa el verbo como en una oración principal. En una oración con weil el verbo se queda junto y va al final."
+        },
+        "auf stehe": {
+          "en": "auf stehe splits the verb in the wrong order. The prefix has to join the verb: aufstehe.",
+          "es": "auf stehe separa el verbo en el orden equivocado. El prefijo tiene que unirse al verbo: aufstehe."
+        }
+      },
+      "examples": [
+        "Ich bin müde, weil ich spät einschlafe.",
+        "Ich komme nicht, weil ich einkaufe."
+      ],
+      "tr": {
+        "en": "I am tired because I get up early.",
+        "es": "Estoy cansado porque me levanto temprano."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f11",
+      "kind": "form",
+      "verb": "weil-Satz",
+      "person": "du musst arbeiten",
+      "answer": "weil du arbeiten musst",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c12",
+      "sentence": "Weil es regnet, ___ zu Hause.",
+      "options": [
+        "bleiben",
+        "wir bleiben",
+        "bleiben wir"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The weil clause fills position 1, so the verb of the main clause comes next and the subject follows: bleiben wir.",
+        "es": "La oración con weil ocupa la posición 1, así que el verbo de la principal viene a continuación y el sujeto lo sigue: bleiben wir."
+      },
+      "wrong": {
+        "bleiben": {
+          "en": "The subject wir cannot be dropped in German. The main clause needs the verb and the subject: bleiben wir.",
+          "es": "El sujeto wir no se puede omitir en alemán. La oración principal necesita el verbo y el sujeto: bleiben wir."
+        },
+        "wir bleiben": {
+          "en": "The subject cannot come first, because the weil clause already fills position 1. The verb comes first.",
+          "es": "El sujeto no puede ir primero, porque la oración con weil ya ocupa la posición 1. El verbo va primero."
+        }
+      },
+      "examples": [
+        "Weil ich Hunger habe, koche ich.",
+        "Weil es kalt ist, bleibe ich zu Hause."
+      ],
+      "tr": {
+        "en": "Because it is raining, we are staying at home.",
+        "es": "Como está lloviendo, nos quedamos en casa."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-f12",
+      "kind": "form",
+      "verb": "dass-Satz",
+      "person": "ich bin müde",
+      "answer": "dass ich müde bin",
+      "table": "nebensatz-umbau"
+    },
+    {
+      "id": "nebensatz-weil-dass-c13",
+      "sentence": "Es ist schön, ___ du hier bist.",
+      "options": [
+        "dass",
+        "das",
+        "was"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After Es ist schön a dass clause says what is nice. The verb bist is at the end, so the conjunction is dass.",
+        "es": "Después de Es ist schön una oración con dass dice qué es bonito. El verbo bist va al final, así que la conjunción es dass."
+      },
+      "wrong": {
+        "das": {
+          "en": "das with one s is the article or the pronoun. Here a conjunction is needed, which has double s.",
+          "es": "das con una sola s es el artículo o el pronombre. Aquí se necesita una conjunción, que lleva doble s."
+        },
+        "was": {
+          "en": "was means what. It does not connect the clause to the sentence as a conjunction here.",
+          "es": "was significa «qué». No une la oración a la frase como conjunción aquí."
+        }
+      },
+      "examples": [
+        "Es ist gut, dass du kommst.",
+        "Es ist schön, dass es warm ist."
+      ],
+      "tr": {
+        "en": "It is nice that you are here.",
+        "es": "Qué bueno que estés aquí."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-c14",
+      "sentence": "Ich komme nicht, weil ich keine Zeit ___.",
+      "options": [
+        "hat",
+        "habe",
+        "haben"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The verb is at the end of the weil clause, and for ich the form of haben is habe.",
+        "es": "El verbo va al final de la oración con weil, y para ich la forma de haben es habe."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the form for er, sie and es. With ich you need habe.",
+          "es": "hat es la forma de er, sie y es. Con ich necesitas habe."
+        },
+        "haben": {
+          "en": "haben is the form for wir and sie (they). With ich you need habe.",
+          "es": "haben es la forma de wir y sie (ellos). Con ich necesitas habe."
+        }
+      },
+      "examples": [
+        "Ich bleibe zu Hause, weil ich Hunger habe.",
+        "Wir gehen, weil wir Zeit haben."
+      ],
+      "tr": {
+        "en": "I am not coming because I have no time.",
+        "es": "No voy porque no tengo tiempo."
+      }
+    },
+    {
+      "id": "nebensatz-weil-dass-w04",
+      "kind": "why",
+      "es": "Ich bin müde, weil ich viel gearbeitet habe.",
+      "target": "habe",
+      "tr": {
+        "en": "I am tired because I worked a lot.",
+        "es": "Estoy cansado porque trabajé mucho."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "In a subordinate clause the participle comes first and the conjugated helper last",
+            "es": "En una subordinada el participio va primero y el auxiliar conjugado al final"
+          }
+        },
+        {
+          "text": {
+            "en": "habe stays in second place: weil ich habe viel gearbeitet",
+            "es": "habe se queda en segundo lugar: weil ich habe viel gearbeitet"
+          },
+          "wrong": {
+            "en": "In a weil clause no verb stays in second place. The conjugated verb goes to the very end.",
+            "es": "En una oración con weil ningún verbo se queda en segundo lugar. El verbo conjugado va al final de todo."
+          }
+        },
+        {
+          "text": {
+            "en": "The two verbs swap places only in questions",
+            "es": "Los dos verbos cambian de lugar solo en las preguntas"
+          },
+          "wrong": {
+            "en": "The order participle, then helper, is regular in every subordinate clause, not only in questions.",
+            "es": "El orden participio y luego auxiliar es regular en toda subordinada, no solo en las preguntas."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

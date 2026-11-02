@@ -1,0 +1,1031 @@
+{
+  "schema": 2,
+  "topic": "praeteritum-modalverben",
+  "level": "A2",
+  "title": {
+    "en": "Simple past of modal verbs",
+    "es": "Pretérito de los verbos modales"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Modal verbs use the simple past (Präteritum) instead of the Perfekt in everyday German: Gestern musste ich arbeiten. The past stem is the infinitive without the umlaut plus -te: konnte, musste, wollte, durfte, sollte, mochte. The endings are -te, -test, -te, -ten, -tet, -ten, and ich and er have the same form. The modal stays in second place and the infinitive goes to the end, or the infinitive is left out when it is clear: Ich musste nach Hause. English could and had to, Spanish pude and tuve que, and Hungarian tudtam and kellett become one regular pattern in German.",
+        "es": "Los verbos modales usan el pasado simple (Präteritum) en lugar del Perfekt en el alemán cotidiano: Gestern musste ich arbeiten. La raíz del pasado es el infinitivo sin diéresis más -te: konnte, musste, wollte, durfte, sollte, mochte. Las terminaciones son -te, -test, -te, -ten, -tet, -ten, e ich y er tienen la misma forma. El modal se queda en segundo lugar y el infinitivo va al final, o se omite el infinitivo cuando está claro: Ich musste nach Hause. El inglés could y had to, el español pude y tuve que, y el húngaro tudtam y kellett se convierten en un solo patrón regular en alemán."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "modalverben-praeteritum",
+      "title": {
+        "en": "The modal verbs in the simple past",
+        "es": "Los verbos modales en pasado simple"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "können",
+          "es": "können"
+        },
+        {
+          "en": "müssen",
+          "es": "müssen"
+        },
+        {
+          "en": "wollen",
+          "es": "wollen"
+        },
+        {
+          "en": "dürfen",
+          "es": "dürfen"
+        },
+        {
+          "en": "sollen",
+          "es": "sollen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "konnte",
+          "musste",
+          "wollte",
+          "durfte",
+          "sollte"
+        ],
+        [
+          "du",
+          "konntest",
+          "musstest",
+          "wolltest",
+          "durftest",
+          "solltest"
+        ],
+        [
+          "er/sie/es",
+          "konnte",
+          "musste",
+          "wollte",
+          "durfte",
+          "sollte"
+        ],
+        [
+          "wir",
+          "konnten",
+          "mussten",
+          "wollten",
+          "durften",
+          "sollten"
+        ],
+        [
+          "ihr",
+          "konntet",
+          "musstet",
+          "wolltet",
+          "durftet",
+          "solltet"
+        ],
+        [
+          "sie/Sie",
+          "konnten",
+          "mussten",
+          "wollten",
+          "durften",
+          "sollten"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "praesens-praeteritum-modal",
+      "title": {
+        "en": "Present and simple past",
+        "es": "Presente y pasado simple"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Present (ich)",
+          "es": "Presente (ich)"
+        },
+        {
+          "en": "Simple past (ich)",
+          "es": "Pasado simple (ich)"
+        }
+      ],
+      "rows": [
+        [
+          "können",
+          "kann",
+          "konnte"
+        ],
+        [
+          "müssen",
+          "muss",
+          "musste"
+        ],
+        [
+          "wollen",
+          "will",
+          "wollte"
+        ],
+        [
+          "dürfen",
+          "darf",
+          "durfte"
+        ],
+        [
+          "sollen",
+          "soll",
+          "sollte"
+        ],
+        [
+          "mögen",
+          "mag",
+          "mochte"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Forms and sentences",
+        "es": "Formas y oraciones"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The past stem has no umlaut: können becomes konnte, müssen becomes musste, dürfen becomes durfte. The ending -te is the same for every modal. ich and er have no extra ending.",
+            "es": "La raíz del pasado no tiene diéresis: können pasa a konnte, müssen a musste, dürfen a durfte. La terminación -te es igual para todos los modales. ich y er no llevan terminación adicional."
+          },
+          "examples": [
+            {
+              "es": "Gestern musste ich arbeiten.",
+              "tr": {
+                "en": "Yesterday I had to work.",
+                "es": "Ayer tuve que trabajar."
+              }
+            },
+            {
+              "es": "Ich konnte nicht kommen.",
+              "tr": {
+                "en": "I could not come.",
+                "es": "No pude venir."
+              }
+            },
+            {
+              "es": "Du durftest nicht gehen.",
+              "tr": {
+                "en": "You were not allowed to go.",
+                "es": "No tenías permiso de ir."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The modal stays in second place, the infinitive goes to the end. In a question the modal comes first. After a time word at the start, the subject follows the modal.",
+            "es": "El modal se queda en segundo lugar, el infinitivo va al final. En una pregunta el modal va primero. Después de una palabra de tiempo al inicio, el sujeto sigue al modal."
+          },
+          "examples": [
+            {
+              "es": "Konntest du gestern kommen?",
+              "tr": {
+                "en": "Were you able to come yesterday?",
+                "es": "¿Pudiste venir ayer?"
+              }
+            },
+            {
+              "es": "Letzte Woche mussten wir viel lernen.",
+              "tr": {
+                "en": "Last week we had to study a lot.",
+                "es": "La semana pasada tuvimos que estudiar mucho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "When the movement is clear, the infinitive can be left out: Ich musste nach Hause (gehen). This is very common with wollen and müssen.",
+            "es": "Cuando el movimiento está claro, se puede omitir el infinitivo: Ich musste nach Hause (gehen). Esto es muy común con wollen y müssen."
+          },
+          "examples": [
+            {
+              "es": "Ich musste nach Hause.",
+              "tr": {
+                "en": "I had to go home.",
+                "es": "Tuve que irme a casa."
+              }
+            },
+            {
+              "es": "Wir wollten ins Kino.",
+              "tr": {
+                "en": "We wanted to go to the movies.",
+                "es": "Queríamos ir al cine."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "mögen becomes mochte and is mostly used for liking. For the polite wish möchte, the past is wollte.",
+            "es": "mögen pasa a mochte y se usa sobre todo para gustar. Para el deseo cortés möchte, el pasado es wollte."
+          },
+          "examples": [
+            {
+              "es": "Als Kind mochte ich keinen Fisch.",
+              "tr": {
+                "en": "As a child I did not like fish.",
+                "es": "De niño no me gustaba el pescado."
+              }
+            },
+            {
+              "es": "Anna wollte einen Kaffee.",
+              "tr": {
+                "en": "Anna wanted a coffee.",
+                "es": "Anna quería un café."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Present or past? What kind of past?",
+        "es": "¿Presente o pasado? ¿Qué clase de pasado?"
+      },
+      "pairs": [
+        {
+          "a": "Ich muss arbeiten.",
+          "b": "Ich musste arbeiten.",
+          "note": {
+            "en": "The present tense and the simple past differ only in the stem and the ending: muss against musste. The time word (heute, gestern) tells you which one fits.",
+            "es": "El presente y el pasado simple solo se distinguen por la raíz y la terminación: muss frente a musste. La palabra de tiempo (heute, gestern) indica cuál corresponde."
+          },
+          "examples": [
+            {
+              "es": "Heute muss ich arbeiten.",
+              "tr": {
+                "en": "Today I have to work.",
+                "es": "Hoy tengo que trabajar."
+              }
+            },
+            {
+              "es": "Gestern musste ich arbeiten.",
+              "tr": {
+                "en": "Yesterday I had to work.",
+                "es": "Ayer tuve que trabajar."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich konnte nicht gehen.",
+          "b": "Ich durfte nicht gehen.",
+          "note": {
+            "en": "können and dürfen both translate English could, but they are not the same. konnte means that you were not able to, durfte that you were not allowed to.",
+            "es": "können y dürfen se traducen con could en inglés, pero no son lo mismo. konnte significa que no pudiste, durfte que no tenías permiso."
+          },
+          "examples": [
+            {
+              "es": "Ich war krank und konnte nicht kommen.",
+              "tr": {
+                "en": "I was sick and could not come.",
+                "es": "Estaba enfermo y no pude venir."
+              }
+            },
+            {
+              "es": "Die Kinder durften nicht ins Zimmer.",
+              "tr": {
+                "en": "The children were not allowed into the room.",
+                "es": "Los niños no tenían permiso de entrar al cuarto."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the umlaut disappears (konnte, not könnte; könnte is a different form that comes at the next level). Do not use the Perfekt of modal verbs in speech (not Ich habe gemusst). Do not leave out the ending -te or the -st of du (not Du konnt). Remember that ich and er are identical (ich konnte, er konnte). Keep the infinitive at the end of the sentence. And do not mix können (ability) and dürfen (permission).",
+        "es": "Trampas clásicas: la diéresis desaparece (konnte, no könnte; könnte es otra forma que viene en el siguiente nivel). No uses el Perfekt de los verbos modales en el habla (no Ich habe gemusst). No omitas la terminación -te ni la -st de du (no Du konnt). Recuerda que ich y er son idénticos (ich konnte, er konnte). Mantén el infinitivo al final de la oración. Y no mezcles können (capacidad) y dürfen (permiso)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The modal verbs use the simple past in everyday speech. The past stem has no umlaut and takes «te»: «konnte», «musste», «wollte», «durfte», «sollte», «mochte». The endings are «te», «test», «te», «ten», «tet», «ten». «Ich konnte» and «er konnte» are the same. The modal stays in second place and the infinitive goes to the end: «Gestern musste ich arbeiten». You can leave out the infinitive when it is clear: «Ich musste nach Hause». And ask «Konntest du kommen?»",
+    "es": "Los verbos modales usan el pasado simple en el habla cotidiana. La raíz del pasado no tiene diéresis y lleva «te»: «konnte», «musste», «wollte», «durfte», «sollte», «mochte». Las terminaciones son «te», «test», «te», «ten», «tet», «ten». «Ich konnte» y «er konnte» son iguales. El modal se queda en segundo lugar y el infinitivo va al final: «Gestern musste ich arbeiten». Puedes omitir el infinitivo cuando está claro: «Ich musste nach Hause». Y pregunta «Konntest du kommen?»"
+  },
+  "items": [
+    {
+      "id": "praeteritum-modalverben-c01",
+      "sentence": "Gestern ___ ich arbeiten.",
+      "options": [
+        "musste",
+        "muss",
+        "musst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Gestern points to the past, and the simple past of müssen for ich is musste.",
+        "es": "Gestern apunta al pasado, y el pasado simple de müssen para ich es musste."
+      },
+      "wrong": {
+        "muss": {
+          "en": "muss is the present tense. Gestern needs the past: musste.",
+          "es": "muss es el presente. Gestern necesita el pasado: musste."
+        },
+        "musst": {
+          "en": "musst is the present tense for du and ihr. With ich and the past you need musste.",
+          "es": "musst es el presente de du e ihr. Con ich y el pasado necesitas musste."
+        }
+      },
+      "examples": [
+        "Ich musste früh aufstehen.",
+        "Ich musste viel lernen."
+      ],
+      "tr": {
+        "en": "Yesterday I had to work.",
+        "es": "Ayer tuve que trabajar."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f01",
+      "kind": "form",
+      "verb": "können",
+      "person": "ich",
+      "answer": "konnte",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c02",
+      "sentence": "Du ___ gestern nicht kommen.",
+      "options": [
+        "kannst",
+        "konntest",
+        "konnten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The past stem konn- plus -test gives konntest for du.",
+        "es": "La raíz del pasado konn- más -test da konntest para du."
+      },
+      "wrong": {
+        "kannst": {
+          "en": "kannst is the present tense. With gestern you need the simple past: konntest.",
+          "es": "kannst es el presente. Con gestern necesitas el pasado simple: konntest."
+        },
+        "konnten": {
+          "en": "konnten is the form for wir and sie (they). With du you need konntest.",
+          "es": "konnten es la forma de wir y sie (ellos). Con du necesitas konntest."
+        }
+      },
+      "examples": [
+        "Du konntest gestern nicht arbeiten.",
+        "Konntest du gestern kommen?"
+      ],
+      "tr": {
+        "en": "You could not come yesterday.",
+        "es": "Ayer no pudiste venir."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f02",
+      "kind": "form",
+      "verb": "müssen",
+      "person": "du",
+      "answer": "musstest",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c03",
+      "sentence": "Paul ___ gestern nicht ins Kino gehen.",
+      "options": [
+        "durften",
+        "durftest",
+        "durfte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Paul is one person (he), and the simple past of dürfen for er is durfte, with no ending.",
+        "es": "Paul es una persona (él), y el pasado simple de dürfen para er es durfte, sin terminación."
+      },
+      "wrong": {
+        "durften": {
+          "en": "durften is the form for wir and sie (they). Paul is one person.",
+          "es": "durften es la forma de wir y sie (ellos). Paul es una persona."
+        },
+        "durftest": {
+          "en": "durftest is the form for du. With Paul you need durfte.",
+          "es": "durftest es la forma de du. Con Paul necesitas durfte."
+        }
+      },
+      "examples": [
+        "Anna durfte nicht kommen.",
+        "Er durfte nicht schwimmen."
+      ],
+      "tr": {
+        "en": "Paul was not allowed to go to the movies yesterday.",
+        "es": "Ayer Paul no tuvo permiso de ir al cine."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f03",
+      "kind": "form",
+      "verb": "wollen",
+      "person": "wir",
+      "answer": "wollten",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-w01",
+      "kind": "why",
+      "es": "Ich konnte nicht kommen.",
+      "target": "konnte",
+      "tr": {
+        "en": "I could not come.",
+        "es": "No pude venir."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "konnte: the stem without umlaut plus -te",
+            "es": "konnte: la raíz sin diéresis más -te"
+          }
+        },
+        {
+          "text": {
+            "en": "könnte: the umlaut stays in the past",
+            "es": "könnte: la diéresis se queda en el pasado"
+          },
+          "wrong": {
+            "en": "könnte is a different form that belongs to a later level (a polite or unreal can). The simple past drops the umlaut: konnte.",
+            "es": "könnte es otra forma que pertenece a un nivel posterior (un poder cortés o irreal). El pasado simple pierde la diéresis: konnte."
+          }
+        },
+        {
+          "text": {
+            "en": "kann: the present stays, and the time word shows the past",
+            "es": "kann: el presente se queda, y la palabra de tiempo muestra el pasado"
+          },
+          "wrong": {
+            "en": "A time word alone does not change the verb. For a past meaning the verb itself needs the past form konnte.",
+            "es": "Una palabra de tiempo sola no cambia el verbo. Para un significado pasado el propio verbo necesita la forma de pasado konnte."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "praeteritum-modalverben-c04",
+      "sentence": "Wir ___ letzte Woche viel lernen.",
+      "options": [
+        "mussten",
+        "musste",
+        "musstet"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "With wir the simple past of müssen is mussten: the past stem muss- plus the plural ending -ten.",
+        "es": "Con wir el pasado simple de müssen es mussten: la raíz del pasado muss- más la terminación plural -ten."
+      },
+      "wrong": {
+        "musste": {
+          "en": "musste is the form for ich, er, sie and es. With wir you need mussten.",
+          "es": "musste es la forma de ich, er, sie y es. Con wir necesitas mussten."
+        },
+        "musstet": {
+          "en": "musstet is the form for ihr. With wir you need mussten.",
+          "es": "musstet es la forma de ihr. Con wir necesitas mussten."
+        }
+      },
+      "examples": [
+        "Wir mussten früh aufstehen.",
+        "Die Kinder mussten zu Hause bleiben."
+      ],
+      "tr": {
+        "en": "Last week we had to study a lot.",
+        "es": "La semana pasada tuvimos que estudiar mucho."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f04",
+      "kind": "form",
+      "verb": "dürfen",
+      "person": "er/sie/es",
+      "answer": "durfte",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c05",
+      "sentence": "Ihr ___ gestern zu Hause bleiben.",
+      "options": [
+        "sollten",
+        "solltet",
+        "sollte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With ihr the simple past of sollen is solltet: the past stem sollte- plus -t.",
+        "es": "Con ihr el pasado simple de sollen es solltet: la terminación -tet se aplica a ihr."
+      },
+      "wrong": {
+        "sollten": {
+          "en": "sollten is the form for wir and sie (they). With ihr you need solltet.",
+          "es": "sollten es la forma de wir y sie (ellos). Con ihr necesitas solltet."
+        },
+        "sollte": {
+          "en": "sollte is the form for ich, er, sie and es. With ihr you need solltet.",
+          "es": "sollte es la forma de ich, er, sie y es. Con ihr necesitas solltet."
+        }
+      },
+      "examples": [
+        "Ihr solltet mehr lernen.",
+        "Ihr solltet früh kommen."
+      ],
+      "tr": {
+        "en": "You (all) were supposed to stay at home yesterday.",
+        "es": "Ustedes debían quedarse en casa ayer."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f05",
+      "kind": "form",
+      "verb": "sollen",
+      "person": "ihr",
+      "answer": "solltet",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c06",
+      "sentence": "Ich ___ gestern ins Kino.",
+      "options": [
+        "wollten",
+        "wolltest",
+        "wollte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The simple past of wollen for ich is wollte. The infinitive gehen can be left out because ins Kino shows the direction.",
+        "es": "El pasado simple de wollen para ich es wollte. El infinitivo gehen se puede omitir porque ins Kino muestra la dirección."
+      },
+      "wrong": {
+        "wollten": {
+          "en": "wollten is the form for wir and sie (they). With ich you need wollte.",
+          "es": "wollten es la forma de wir y sie (ellos). Con ich necesitas wollte."
+        },
+        "wolltest": {
+          "en": "wolltest is the form for du. With ich you need wollte.",
+          "es": "wolltest es la forma de du. Con ich necesitas wollte."
+        }
+      },
+      "examples": [
+        "Anna wollte nach Hause.",
+        "Wir wollten in den Park."
+      ],
+      "tr": {
+        "en": "I wanted to go to the movies yesterday.",
+        "es": "Ayer quería ir al cine."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f06",
+      "kind": "form",
+      "verb": "können",
+      "person": "du",
+      "answer": "konntest",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-w02",
+      "kind": "why",
+      "es": "Gestern musste ich arbeiten.",
+      "target": "musste",
+      "tr": {
+        "en": "Yesterday I had to work.",
+        "es": "Ayer tuve que trabajar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The modal goes to the end: Gestern ich arbeiten musste",
+            "es": "El modal va al final: Gestern ich arbeiten musste"
+          },
+          "wrong": {
+            "en": "In a main clause the conjugated modal verb stays in second place. Only the infinitive goes to the end.",
+            "es": "En una oración principal el verbo modal conjugado se queda en segundo lugar. Solo el infinitivo va al final."
+          }
+        },
+        {
+          "text": {
+            "en": "The infinitive follows the modal: Gestern musste arbeiten ich",
+            "es": "El infinitivo sigue al modal: Gestern musste arbeiten ich"
+          },
+          "wrong": {
+            "en": "The subject comes right after the modal, and the infinitive is pushed to the end of the sentence.",
+            "es": "El sujeto va justo después del modal, y el infinitivo se manda al final de la oración."
+          }
+        },
+        {
+          "text": {
+            "en": "The modal stays in second place, the infinitive goes to the end",
+            "es": "El modal se queda en segundo lugar, el infinitivo va al final"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "praeteritum-modalverben-c07",
+      "sentence": "Was ___ du als Kind werden?",
+      "options": [
+        "wolltest",
+        "willst",
+        "wolltet"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The question is about your childhood, so the simple past: wolltest for du.",
+        "es": "La pregunta es sobre tu infancia, así que el pasado simple: wolltest para du."
+      },
+      "wrong": {
+        "willst": {
+          "en": "willst is the present tense. As a child points to the past, so you need wolltest.",
+          "es": "willst es el presente. Als Kind apunta al pasado, así que necesitas wolltest."
+        },
+        "wolltet": {
+          "en": "wolltet is the form for ihr, several friends. With du you need wolltest.",
+          "es": "wolltet es la forma de ihr, varios amigos. Con du necesitas wolltest."
+        }
+      },
+      "examples": [
+        "Was wolltest du gestern machen?",
+        "Wolltest du Pizza?"
+      ],
+      "tr": {
+        "en": "What did you want to be as a child?",
+        "es": "¿Qué querías ser de niño?"
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f07",
+      "kind": "form",
+      "verb": "müssen",
+      "person": "wir",
+      "answer": "mussten",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c08",
+      "sentence": "Gestern ___ wir nicht schwimmen gehen.",
+      "options": [
+        "können",
+        "konnten",
+        "konnte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The simple past of können for wir is konnten. After Gestern the subject wir follows the modal.",
+        "es": "El pasado simple de können para wir es konnten. Después de Gestern el sujeto wir sigue al modal."
+      },
+      "wrong": {
+        "können": {
+          "en": "können is the present tense. Gestern points to the past, so you need konnten.",
+          "es": "können es el presente. Gestern apunta al pasado, así que necesitas konnten."
+        },
+        "konnte": {
+          "en": "konnte is the form for ich, er, sie and es. With wir you need konnten.",
+          "es": "konnte es la forma de ich, er, sie y es. Con wir necesitas konnten."
+        }
+      },
+      "examples": [
+        "Gestern konnten wir nicht kommen.",
+        "Am Montag konnten wir nicht arbeiten."
+      ],
+      "tr": {
+        "en": "Yesterday we could not go swimming.",
+        "es": "Ayer no pudimos ir a nadar."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f08",
+      "kind": "form",
+      "verb": "wollen",
+      "person": "ihr",
+      "answer": "wolltet",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c09",
+      "sentence": "Heute ___ ich arbeiten, gestern nicht.",
+      "options": [
+        "musste",
+        "musst",
+        "muss"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Heute points to the present, so the present tense muss. gestern nicht refers to the past, but the first clause is about today.",
+        "es": "Heute apunta al presente, así que el presente muss. gestern nicht se refiere al pasado, pero la primera parte trata de hoy."
+      },
+      "wrong": {
+        "musste": {
+          "en": "musste is the simple past. Heute talks about today, so the verb must be in the present.",
+          "es": "musste es el pasado simple. Heute habla de hoy, así que el verbo debe ir en presente."
+        },
+        "musst": {
+          "en": "musst is the present form for du and ihr. The subject here is ich, so the form is muss.",
+          "es": "musst es la forma de presente de du e ihr. El sujeto aquí es ich, así que la forma es muss."
+        }
+      },
+      "examples": [
+        "Heute muss ich lernen.",
+        "Heute kann ich nicht kommen."
+      ],
+      "tr": {
+        "en": "Today I have to work, yesterday I did not.",
+        "es": "Hoy tengo que trabajar, ayer no."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f09",
+      "kind": "form",
+      "verb": "dürfen",
+      "person": "du",
+      "answer": "durftest",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-w03",
+      "kind": "why",
+      "es": "Wir wollten ins Kino.",
+      "target": "wollten",
+      "tr": {
+        "en": "We wanted to go to the movies.",
+        "es": "Queríamos ir al cine."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The infinitive gehen is missing by mistake",
+            "es": "Falta el infinitivo gehen por error"
+          },
+          "wrong": {
+            "en": "In German a modal can stand without an infinitive when a direction is given. Wir wollten ins Kino is a complete sentence.",
+            "es": "En alemán un modal puede estar sin infinitivo cuando se da una dirección. Wir wollten ins Kino es una oración completa."
+          }
+        },
+        {
+          "text": {
+            "en": "A modal can stand alone when the movement is clear (ins Kino)",
+            "es": "Un modal puede estar solo cuando el movimiento está claro (ins Kino)"
+          }
+        },
+        {
+          "text": {
+            "en": "wollten is a Perfekt form",
+            "es": "wollten es una forma de Perfekt"
+          },
+          "wrong": {
+            "en": "It is the simple past. The Perfekt of wollen (hat gewollt) is rarely used.",
+            "es": "Es el pasado simple. El Perfekt de wollen (hat gewollt) se usa rara vez."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "praeteritum-modalverben-c10",
+      "sentence": "Letztes Jahr ___ ich nicht schwimmen.",
+      "options": [
+        "konnte",
+        "kann",
+        "kannst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Letztes Jahr is in the past, so the simple past of können for ich: konnte.",
+        "es": "Letztes Jahr está en el pasado, así que el pasado simple de können para ich: konnte."
+      },
+      "wrong": {
+        "kann": {
+          "en": "kann is the present tense. Letztes Jahr needs the past: konnte.",
+          "es": "kann es el presente. Letztes Jahr necesita el pasado: konnte."
+        },
+        "kannst": {
+          "en": "kannst is the present form for du. The subject here is ich and the time is last year.",
+          "es": "kannst es la forma de presente de du. El sujeto aquí es ich y el tiempo es el año pasado."
+        }
+      },
+      "examples": [
+        "Letztes Jahr konnte ich nicht Auto fahren.",
+        "Letzte Woche konnte ich nicht kommen."
+      ],
+      "tr": {
+        "en": "Last year I could not swim.",
+        "es": "El año pasado no sabía nadar."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f10",
+      "kind": "form",
+      "verb": "sollen",
+      "person": "ich",
+      "answer": "sollte",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c11",
+      "sentence": "Als Kind ___ ich keinen Fisch.",
+      "options": [
+        "mag",
+        "mochte",
+        "mochten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Als Kind points to the past, and the simple past of mögen for ich is mochte.",
+        "es": "Als Kind apunta al pasado, y el pasado simple de mögen para ich es mochte."
+      },
+      "wrong": {
+        "mag": {
+          "en": "mag is the present tense. As a child is in the past, so you need mochte.",
+          "es": "mag es el presente. De niño está en el pasado, así que necesitas mochte."
+        },
+        "mochten": {
+          "en": "mochten is the form for wir and sie (they). With ich you need mochte.",
+          "es": "mochten es la forma de wir y sie (ellos). Con ich necesitas mochte."
+        }
+      },
+      "examples": [
+        "Als Kind mochte ich Eis.",
+        "Anna mochte keinen Kaffee."
+      ],
+      "tr": {
+        "en": "As a child I did not like fish.",
+        "es": "De niño no me gustaba el pescado."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f11",
+      "kind": "form",
+      "verb": "können",
+      "person": "sie/Sie",
+      "answer": "konnten",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c12",
+      "sentence": "___ du gestern kommen?",
+      "options": [
+        "Kannst",
+        "Konnte",
+        "Konntest"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In a yes/no question the modal comes first, and the simple past for du is Konntest.",
+        "es": "En una pregunta de sí o no el modal va primero, y el pasado simple para du es Konntest."
+      },
+      "wrong": {
+        "Kannst": {
+          "en": "Kannst is the present tense. gestern is in the past, so you need Konntest.",
+          "es": "Kannst es el presente. gestern está en el pasado, así que necesitas Konntest."
+        },
+        "Konnte": {
+          "en": "Konnte is the form for ich, er, sie and es. With du you need Konntest.",
+          "es": "Konnte es la forma de ich, er, sie y es. Con du necesitas Konntest."
+        }
+      },
+      "examples": [
+        "Konntest du schwimmen?",
+        "Konntet ihr kommen?"
+      ],
+      "tr": {
+        "en": "Were you able to come yesterday?",
+        "es": "¿Pudiste venir ayer?"
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-f12",
+      "kind": "form",
+      "verb": "müssen",
+      "person": "er/sie/es",
+      "answer": "musste",
+      "table": "modalverben-praeteritum"
+    },
+    {
+      "id": "praeteritum-modalverben-c13",
+      "sentence": "Ich ___ gestern nicht kommen, ich war krank.",
+      "options": [
+        "konnte",
+        "wollte",
+        "sollte"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Being sick means you were not able to: konnte. The meaning decides which modal fits.",
+        "es": "Estar enfermo significa que no pudiste: konnte. El significado decide qué modal encaja."
+      },
+      "wrong": {
+        "wollte": {
+          "en": "wollte means that you did not want to. Being sick is a reason why you could not, not why you did not want to.",
+          "es": "wollte significa que no querías. Estar enfermo es una razón por la que no pudiste, no por la que no quisiste."
+        },
+        "sollte": {
+          "en": "sollte means that you were supposed to. Being sick does not fit the idea of an order.",
+          "es": "sollte significa que debías. Estar enfermo no encaja con la idea de una orden."
+        }
+      },
+      "examples": [
+        "Ich war müde und konnte nicht arbeiten.",
+        "Paul war krank und konnte nicht kommen."
+      ],
+      "tr": {
+        "en": "I could not come yesterday, I was sick.",
+        "es": "Ayer no pude venir, estaba enfermo."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-c14",
+      "sentence": "Die Kinder ___ gestern nicht draußen spielen.",
+      "options": [
+        "durfte",
+        "durften",
+        "durftest"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The children are plural, so the simple past of dürfen is durften.",
+        "es": "Los niños son plural, así que el pasado simple de dürfen es durften."
+      },
+      "wrong": {
+        "durfte": {
+          "en": "durfte is the form for ich, er, sie and es. Die Kinder is plural, so you need durften.",
+          "es": "durfte es la forma de ich, er, sie y es. Die Kinder es plural, así que necesitas durften."
+        },
+        "durftest": {
+          "en": "durftest is the form for du. Die Kinder are several children, so you need durften.",
+          "es": "durftest es la forma de du. Die Kinder son varios niños, así que necesitas durften."
+        }
+      },
+      "examples": [
+        "Die Kinder durften ins Kino.",
+        "Wir durften nicht fernsehen."
+      ],
+      "tr": {
+        "en": "The children were not allowed to play outside yesterday.",
+        "es": "Ayer los niños no tenían permiso de jugar afuera."
+      }
+    },
+    {
+      "id": "praeteritum-modalverben-w04",
+      "kind": "why",
+      "es": "Du konntest nicht kommen.",
+      "target": "konntest",
+      "tr": {
+        "en": "You could not come.",
+        "es": "No pudiste venir."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "konnst: du adds -st to konn-",
+            "es": "konnst: du añade -st a konn-"
+          },
+          "wrong": {
+            "en": "The -te of the simple past stays in all persons: konn + te + st. Without it the form would look like the present.",
+            "es": "La -te del pasado simple se queda en todas las personas: konn + te + st. Sin ella, la forma parecería presente."
+          }
+        },
+        {
+          "text": {
+            "en": "konntet: du takes -t like ihr",
+            "es": "konntet: du lleva -t como ihr"
+          },
+          "wrong": {
+            "en": "konntet is the form for ihr. du takes -st: konntest.",
+            "es": "konntet es la forma de ihr. du lleva -st: konntest."
+          }
+        },
+        {
+          "text": {
+            "en": "du adds -st to the past stem konnte-: konntest",
+            "es": "du añade -st a la raíz del pasado konnte-: konntest"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}
