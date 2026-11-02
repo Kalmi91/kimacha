@@ -176,6 +176,50 @@ describe('isSentenceKnown (English)', () => {
   it('does not use the Spanish structure guard', () => {
     expect(isSentenceKnown('He tome asiento', 'en', { learned: ['he', 'tome', 'asiento'] })).toBe(true);
   });
+
+  it('recognises the irregular past and participle of a learned verb', () => {
+    const ctx = { learned: ['he', 'to become', 'teacher'] };
+    expect(isSentenceKnown('He became a teacher.', 'en', ctx)).toBe(true);
+    expect(isSentenceKnown('She began and built it.', 'en', { learned: ['she', 'it', 'to begin', 'to build'] })).toBe(true);
+    expect(isSentenceKnown('He heard it and knew it.', 'en', { learned: ['he', 'it', 'to hear', 'to know'] })).toBe(true);
+    expect(isSentenceKnown('They rebuilt it.', 'en', { learned: ['they', 'it', 'to rebuild'] })).toBe(true);
+    expect(isSentenceKnown('He became a teacher.', 'en', { learned: ['he', 'teacher'] })).toBe(false);
+  });
+
+  it('recognises the spelling changes of the regular forms', () => {
+    expect(isSentenceKnown('The bus stopped.', 'en', { learned: ['bus', 'stop'] })).toBe(true);
+    expect(isSentenceKnown('He clapped.', 'en', { learned: ['he', 'clap'] })).toBe(true);
+    expect(isSentenceKnown('She applied.', 'en', { learned: ['she', 'apply'] })).toBe(true);
+    expect(isSentenceKnown('The families and the stories.', 'en', { learned: ['family', 'story'] })).toBe(true);
+    expect(isSentenceKnown('He is making it.', 'en', { learned: ['he', 'it', 'make', 'to be'] })).toBe(true);
+  });
+
+  it('adds no doubled consonant where the rule has none', () => {
+    expect(isSentenceKnown('He visitted it.', 'en', { learned: ['he', 'it', 'visit'] })).toBe(false);
+    expect(isSentenceKnown('He visited it.', 'en', { learned: ['he', 'it', 'visit'] })).toBe(true);
+    expect(isSentenceKnown('He openned it.', 'en', { learned: ['he', 'it', 'open'] })).toBe(false);
+  });
+
+  it('keeps the blind endings of before: "ban" + d still opens "band"', () => {
+    expect(isSentenceKnown('The band.', 'en', { learned: ['ban'] })).toBe(true);
+  });
+
+  it('recognises the irregular plurals', () => {
+    expect(isSentenceKnown('The children and the women.', 'en', { learned: ['child', 'woman'] })).toBe(true);
+    expect(isSentenceKnown('The mice and the lives.', 'en', { learned: ['mouse', 'life'] })).toBe(true);
+  });
+
+  it('inflects every alternative of an item, and the verb of "to X ..."', () => {
+    const ctx = { learned: ['to speak / to talk', 'to take part', 'to love (someone)'] };
+    expect(isSentenceKnown('She spoke and talked.', 'en', { learned: ['she', ...ctx.learned] })).toBe(true);
+    expect(isSentenceKnown('They took part.', 'en', { learned: ['they', ...ctx.learned] })).toBe(true);
+    expect(isSentenceKnown('They loved her.', 'en', { learned: ['they', 'her', ...ctx.learned] })).toBe(true);
+  });
+
+  it('gives a closed word class and a non-"to" phrase no endings', () => {
+    expect(isSentenceKnown('A thing.', 'en', { learned: [{ text: 'the', pos: 'det' }] })).toBe(false);
+    expect(isSentenceKnown('He works.', 'en', { learned: ['he work'] })).toBe(false);
+  });
 });
 
 describe('isLearnedCard', () => {

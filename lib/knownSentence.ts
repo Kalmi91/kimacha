@@ -4,6 +4,7 @@
 // form, a learned verb conjugated in an unlocked tense, or a free word (article,
 // preposition, conjunction). A pure module: no database, no corpus import.
 
+import { enForms } from '@/lib/enForms';
 import { esFeminine, esPlural } from '@/lib/esInflect';
 import { irregularForms, type IrregularTense } from '@/lib/esIrregularForms';
 import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
@@ -36,14 +37,6 @@ const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
   ]),
   en: new Set(['the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or']),
   hu: new Set(['a', 'az', 'egy', 'és', 'is', 'de', 'vagy', 'hogy', 'nem', 'meg', 'el', 'ki', 'be']),
-};
-
-// The forms of English be/have/do/go, if the base verb is learned.
-const EN_IRREGULAR_FORMS: Record<string, string[]> = {
-  be: ['am', 'is', 'are', 'was', 'were', 'been', 'being'],
-  have: ['has', 'had', 'having'],
-  do: ['does', 'did', 'done', 'doing'],
-  go: ['goes', 'went', 'gone', 'going'],
 };
 
 // What tenseGate recognises but the unlocked tenses (ResolvedTense) do not cover:
@@ -188,15 +181,35 @@ function addSpanish(known: Set<string>, entry: LearnedEntry, tenses: ReadonlySet
   }
 }
 
+// Closed word classes never inflect: an "ending" on them is only a wrong word (the -ing of "the" is "thing").
+const EN_NO_INFLECTION: ReadonlySet<string> = new Set(['pron', 'det', 'prep', 'conj']);
+
+// The word that takes the endings, from one alternative of an item ("a / b" lists several): a one-word item,
+// or the verb of "to X ..." ("to walk (a dog)", "to take part"). The words of any other phrase
+// ("good morning") do not get an -ing/-ed form.
+function enInflectedWord(alternative: string): string | null {
+  const text = alternative.trim().toLowerCase();
+  if (/^to\s/.test(text)) {
+    return enTokenize(text.replace(/^to\s+/, '').replace(/\([^)]*\)/g, ' '))[0] ?? null;
+  }
+  const tokens = enTokenize(text);
+  return tokens.length === 1 ? tokens[0] : null;
+}
+
 function addEnglish(known: Set<string>, entry: LearnedEntry) {
-  const tokens = enEntryTokens(entry.text.trim());
+  const text = entry.text.trim();
+  const tokens = enEntryTokens(text);
   for (const token of tokens) known.add(token);
-  // The conjugation endings only apply to a one-word item (or "to X"); the words of a
-  // phrase ("good morning") do not get an -ing/-ed form.
-  if (tokens.length !== 1) return;
-  const [base] = tokens;
-  for (const suffix of ['s', 'es', 'ed', 'ing', 'd']) known.add(`${base}${suffix}`);
-  for (const form of EN_IRREGULAR_FORMS[base] ?? []) known.add(form);
+  // The old blind endings stay, so that nothing known before becomes unknown: the B2 story "rehearsal" is
+  // written with "band", which only the blind "ban" + d gives (the deck has no "band" item).
+  if (tokens.length === 1) {
+    for (const suffix of ['s', 'es', 'ed', 'ing', 'd']) known.add(`${tokens[0]}${suffix}`);
+  }
+  if (entry.pos && EN_NO_INFLECTION.has(entry.pos)) return;
+  for (const alternative of text.split('/')) {
+    const word = enInflectedWord(alternative);
+    if (word) for (const form of enForms(word)) known.add(form);
+  }
 }
 
 function addHungarian(known: Set<string>, entry: LearnedEntry) {
