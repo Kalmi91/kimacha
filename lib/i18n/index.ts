@@ -1,11 +1,11 @@
 import en from './en';
 import es from './es';
 import hu from './hu';
+import de from './de';
 
 type Strings = typeof en;
 
-// German has no strings of its own yet: a German speaker sees the English UI until the translation lands.
-const LANGS: Record<string, Strings> = { en, es, hu, de: en };
+const LANGS: Record<string, Strings> = { en, es, hu, de };
 
 let current: Strings = en;
 let currentCode = 'en';

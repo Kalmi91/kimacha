@@ -226,7 +226,7 @@ export default {
     speakAnswerPlaceholder: 'Your answer',
     // the microphone of the keyboard listens in the keyboard's language, so the hint names the language to switch it to.
     speakAnswerHint: (lang: string) =>
-      `Speak with your keyboard's microphone, or type. Set the keyboard to ${lang === 'es' ? 'Spanish' : 'English'} so it understands you.`,
+      `Speak with your keyboard's microphone, or type. Set the keyboard to ${lang === 'es' ? 'Spanish' : lang === 'hu' ? 'Hungarian' : lang === 'de' ? 'German' : 'English'} so it understands you.`,
     speakWords: (n: number, min: number) => `${n} ${n === 1 ? 'word' : 'words'}, aim for at least ${min}`,
     speakNextQuestion: 'Next question',
     speakPrevQuestion: 'Previous question',

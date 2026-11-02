@@ -1,19 +1,21 @@
 // The UI never prints an examiner or exam name (the background research may name them, the UI may not).
 // In the English direction the label is "international sample", not "official".
-// Checked surface: the i18n `mockExam` block (en and es, including the functions), the names of the papers and skills,
+// Checked surface: the i18n `mockExam` block (en, es and de, including the functions), the names of the papers and skills,
 // the authoring instructions and writing tasks. Corpus sentences are not checked (they may contain the word "key").
 
 import { pcicItemsForLevel, setPcicTarget } from '@/data/pcic';
 import en from '@/lib/i18n/en';
 import es from '@/lib/i18n/es';
+import de from '@/lib/i18n/de';
 import { MOCK_WRITING } from '../author';
 import { buildMockExam } from '../build';
 import type { MockLevel, MockTarget } from '../types';
 
 afterAll(() => setPcicTarget('es'));
 
+// "peic" only as a whole word: it is a substring of the German "gespeichert".
 // DELE is a brand only in capitals (the Spanish verb "dele", e.g. "dele las gracias", is a legitimate word).
-const TRADEMARK_WORDS = /pearson|peic|cambridge|\bkey\b|siele|cervantes|ielts|toefl|toeic|trinity|oxford|languagecert|\bket\b|goethe/i;
+const TRADEMARK_WORDS = /pearson|\bpeic\b|cambridge|\bkey\b|siele|cervantes|ielts|toefl|toeic|trinity|oxford|languagecert|\bket\b|goethe/i;
 const TRADEMARK_CAPS = /\bDELE\b/;
 const clean = (text: string) => !TRADEMARK_WORDS.test(text) && !TRADEMARK_CAPS.test(text);
 
@@ -30,8 +32,8 @@ function strings(value: unknown, out: string[] = []): string[] {
 }
 
 describe('the UI does not print a trademarked exam name', () => {
-  it('i18n mockExam (en and es): no trademarked name', () => {
-    for (const block of [en.mockExam, es.mockExam]) {
+  it('i18n mockExam (en, es and de): no trademarked name', () => {
+    for (const block of [en.mockExam, es.mockExam, de.mockExam]) {
       const all = strings(block);
       expect(all.length).toBeGreaterThan(50);
       for (const text of all) expect(clean(text)).toBe(true);

@@ -219,7 +219,7 @@ const es: typeof en = {
     speakNoVoice: 'No hay una voz de este idioma instalada en este dispositivo. Lee la pregunta del examinador en la pantalla.',
     speakAnswerPlaceholder: 'Tu respuesta',
     speakAnswerHint: (lang: string) =>
-      `Habla con el micrófono del teclado o escribe. Pon el teclado en ${lang === 'es' ? 'español' : 'inglés'} para que te entienda.`,
+      `Habla con el micrófono del teclado o escribe. Pon el teclado en ${lang === 'es' ? 'español' : lang === 'hu' ? 'húngaro' : lang === 'de' ? 'alemán' : 'inglés'} para que te entienda.`,
     speakWords: (n: number, min: number) => `${n} ${n === 1 ? 'palabra' : 'palabras'}, intenta llegar al menos a ${min}`,
     speakNextQuestion: 'Siguiente pregunta',
     speakPrevQuestion: 'Pregunta anterior',

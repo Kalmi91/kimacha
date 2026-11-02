@@ -1,6 +1,7 @@
 import { isDailyMilestone, isLongHaulMilestone, pickMilestoneLine } from '@/lib/usageMilestones';
 import en from '@/lib/i18n/en';
 import es from '@/lib/i18n/es';
+import de from '@/lib/i18n/de';
 
 // User feedback: "after 1 hour the app should congratulate every 15 minutes,
 // always with a different text."
@@ -29,7 +30,7 @@ describe('long-haul milestone lines', () => {
   // Kimacha Play: single en-es pair, UI always English.
   // `en` is the full pool (the "+1 minute" pill and any UI text); `es` is the
   // usage-toast subset the learner actually hears (always Spanish).
-  const pools = { en: en.usage.milestoneLong, es: es.usage.milestoneLong };
+  const pools = { en: en.usage.milestoneLong, es: es.usage.milestoneLong, de: de.usage.milestoneLong };
 
   it('every language has a pool, and no line is left with a placeholder', () => {
     for (const [lang, pool] of Object.entries(pools)) {

@@ -220,7 +220,7 @@ const hu: typeof en = {
     speakAnswerPlaceholder: 'A válaszod',
     // a billentyűzet mikrofonja a billentyűzet nyelvén hallgat, ezért a súgó megnevezi a nyelvet, amelyre át kell állítani.
     speakAnswerHint: (lang: string) =>
-      `Beszélj a billentyűzet mikrofonjával, vagy gépeld be. Állítsd a billentyűzetet ${lang === 'es' ? 'spanyolra' : 'angolra'}, hogy megértsen.`,
+      `Beszélj a billentyűzet mikrofonjával, vagy gépeld be. Állítsd a billentyűzetet ${lang === 'es' ? 'spanyolra' : lang === 'hu' ? 'magyarra' : lang === 'de' ? 'németre' : 'angolra'}, hogy megértsen.`,
     speakWords: (n: number, min: number) => `${n} szó, legalább ${min} szóra törekedj`,
     speakNextQuestion: 'Következő kérdés',
     speakPrevQuestion: 'Előző kérdés',
