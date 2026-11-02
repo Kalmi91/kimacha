@@ -60,6 +60,9 @@ function load(withGloss: boolean): typeof import('@/data/pcic') {
       jest.doMock('@/data/words-open/gloss-de/a1.json', () => [{ k: openA1[0].order, de: 'das Testwort', sentence_de: 'Das ist ein Test.' }]);
       jest.doMock('@/data/words/en/gloss-de/a0.json', () => [{ k: enA0[0].id, de: 'das Testwort', sentence_de: 'Das ist ein Test.' }]);
       jest.doMock('@/data/words/hu/gloss-de/a0.json', () => [{ k: huA0[0].id, de: 'das Testwort', sentence_de: 'Das ist ein Test.' }]);
+      // the real A1 German gloss of the en and hu decks is left out, so the one glossed test card is the whole A1 deck
+      jest.doMock('@/data/words/en/gloss-de/a1.json', () => []);
+      jest.doMock('@/data/words/hu/gloss-de/a1.json', () => []);
       jest.doMock('@/data/words/de/a1.json', () => [DE_CARD]);
     }
     mod = require('@/data/pcic');
