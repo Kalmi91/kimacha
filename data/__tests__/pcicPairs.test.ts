@@ -64,6 +64,7 @@ function load(withGloss: boolean): typeof import('@/data/pcic') {
       jest.doMock('@/data/words/en/gloss-de/a1.json', () => []);
       jest.doMock('@/data/words/hu/gloss-de/a1.json', () => []);
       jest.doMock('@/data/words/de/a1.json', () => [DE_CARD]);
+      for (const level of ['a2', 'b1', 'b2', 'c1']) jest.doMock(`@/data/words/de/${level}.json`, () => []);
     }
     mod = require('@/data/pcic');
     // an explicit mock outlives the isolated registry: take it away again for the next load

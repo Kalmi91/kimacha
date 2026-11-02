@@ -1,16 +1,17 @@
 #!/usr/bin/env node
-// Builds the German deck data/words/de/{a1,a2,b1,b2,c1}.json from the three source decks and their
-// gloss-hu / gloss-de overlays. Deterministic and re-runnable, the output is never edited by hand.
+// Builds the German deck data/words/de/{a1,a2,b1,b2,c1}.json from the Spanish and Hungarian decks seen from the
+// German side (their gloss-hu / gloss-de overlays), the way the Hungarian deck was built from the existing cards. Deterministic and re-runnable, the output is never edited by hand.
 //
 //   node scripts/build-de-deck.mjs          write the deck files and print the counts
 //   node scripts/build-de-deck.mjs --check  exit 1 when the committed files differ from what would be built
 //
 // Rules (see the German expansion contract):
-//   - sources: words-open (Spanish deck, key = order), en deck (key = id), hu deck (key = id)
-//   - level map: words-open a1..c1 -> A1..C1; en and hu a0 + a1 -> A1, a2..c1 -> same level
-//   - ids: 100000 + order (words-open), 200000 + id (en), 300000 + id (hu); src = o<order> | e<id> | h<id>
+//   - sources: words-open (Spanish deck, key = order) and the hu deck (key = id). The en deck is not a source (its
+//     German gloss serves de→en); with it the deck grew to about 1.5 times the planned size at every level.
+//   - level map: words-open a1..c1 -> A1..C1; hu a0 + a1 -> A1, a2..c1 -> same level
+//   - ids: 100000 + order (words-open), 300000 + id (hu); src = o<order> | h<id> (200000 + id / e<id> stays reserved)
 //   - a German headword appears once (key: lower-case, article and parenthetical stripped), at the LOWEST
-//     level; within a level the priority is words-open > en > hu, then file order
+//     level; within a level the priority is words-open > hu, then file order
 //   - a card is kept only when it has all four meanings and all four sentences
 
 import fs from 'node:fs';
@@ -25,7 +26,7 @@ const byKey = (rows) => new Map(rows.map((r) => [r.k, r]));
 const text = (v) => (typeof v === 'string' ? v.trim() : '');
 
 // One entry per source file, in the order they are considered inside a level.
-// `files` lists the card files that feed the level (the en and hu decks fold a0 into A1).
+// `files` lists the card files that feed the level (the hu deck folds a0 into A1).
 const SOURCES = [
   {
     name: 'open',
@@ -36,16 +37,6 @@ const SOURCES = [
     dir: 'data/words-open',
     glossHu: 'data/words-open/gloss-hu',
     glossDe: 'data/words-open/gloss-de',
-  },
-  {
-    name: 'en',
-    prefix: 'e',
-    base: 200000,
-    key: 'id',
-    levelFiles: { a1: ['a0', 'a1'], a2: ['a2'], b1: ['b1'], b2: ['b2'], c1: ['c1'] },
-    dir: 'data/words/en',
-    glossHu: 'data/words/en/gloss-hu',
-    glossDe: 'data/words/en/gloss-de',
   },
   {
     name: 'hu',
