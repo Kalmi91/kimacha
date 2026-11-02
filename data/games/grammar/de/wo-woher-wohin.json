@@ -1,0 +1,1062 @@
+{
+  "schema": 2,
+  "topic": "wo-woher-wohin",
+  "level": "A1",
+  "title": {
+    "en": "Where, where from, where to",
+    "es": "Dónde, de dónde, adónde"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Three questions, three groups of prepositions. wo? asks where you are: in Berlin, bei Anna. woher? asks where you come from: aus Mexiko, von Anna. wohin? asks where you are going: nach Spanien, zu Anna, zum Arzt. Cities and most countries have no article (in Berlin, aus Mexiko, nach Spanien); a few countries have one, and then the preposition is followed by it (in der Schweiz, aus der Schweiz). English to and Spanish a become three different words in German: nach, zu or in.",
+        "es": "Tres preguntas, tres grupos de preposiciones. wo? pregunta dónde estás: in Berlin, bei Anna. woher? pregunta de dónde vienes: aus Mexiko, von Anna. wohin? pregunta adónde vas: nach Spanien, zu Anna, zum Arzt. Las ciudades y la mayoría de los países no llevan artículo (in Berlin, aus Mexiko, nach Spanien); unos pocos sí lo llevan, y entonces la preposición va seguida de él (in der Schweiz, aus der Schweiz). El inglés to y el español a se convierten en tres palabras distintas en alemán: nach, zu o in."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "herkunft",
+      "title": {
+        "en": "Where from, where, where to",
+        "es": "De dónde, dónde, adónde"
+      },
+      "header": [
+        {
+          "en": "Country, place or person",
+          "es": "País, lugar o persona"
+        },
+        {
+          "en": "woher",
+          "es": "woher"
+        },
+        {
+          "en": "wo",
+          "es": "wo"
+        },
+        {
+          "en": "wohin",
+          "es": "wohin"
+        }
+      ],
+      "rows": [
+        [
+          "Mexiko",
+          "aus Mexiko",
+          "in Mexiko",
+          "nach Mexiko"
+        ],
+        [
+          "Spanien",
+          "aus Spanien",
+          "in Spanien",
+          "nach Spanien"
+        ],
+        [
+          "Berlin",
+          "aus Berlin",
+          "in Berlin",
+          "nach Berlin"
+        ],
+        [
+          "die Schweiz",
+          "aus der Schweiz",
+          "in der Schweiz",
+          "in die Schweiz"
+        ],
+        [
+          "die Türkei",
+          "aus der Türkei",
+          "in der Türkei",
+          "in die Türkei"
+        ],
+        [
+          "die USA",
+          "aus den USA",
+          "in den USA",
+          "in die USA"
+        ],
+        [
+          "Anna",
+          "von Anna",
+          "bei Anna",
+          "zu Anna"
+        ],
+        [
+          "der Arzt",
+          "vom Arzt",
+          "beim Arzt",
+          "zum Arzt"
+        ],
+        [
+          "der Bahnhof",
+          "vom Bahnhof",
+          "am Bahnhof",
+          "zum Bahnhof"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The three questions",
+        "es": "Las tres preguntas"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "wo? (where are you?) takes in for cities and countries and bei for people. The article, if there is one, is in the dative.",
+            "es": "wo? (¿dónde estás?) lleva in para ciudades y países, y bei para personas. El artículo, si lo hay, va en dativo."
+          },
+          "examples": [
+            {
+              "es": "Wir wohnen in Berlin.",
+              "tr": {
+                "en": "We live in Berlin.",
+                "es": "Vivimos en Berlín."
+              }
+            },
+            {
+              "es": "Heute bin ich bei Anna.",
+              "tr": {
+                "en": "Today I am at Anna's.",
+                "es": "Hoy estoy en casa de Anna."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "woher? (where do you come from?) takes aus for cities and countries and von for people and places like the doctor or the station.",
+            "es": "woher? (¿de dónde vienes?) lleva aus para ciudades y países, y von para personas y lugares como el médico o la estación."
+          },
+          "examples": [
+            {
+              "es": "Ich komme aus Mexiko.",
+              "tr": {
+                "en": "I am from Mexico.",
+                "es": "Soy de México."
+              }
+            },
+            {
+              "es": "Paul kommt vom Bahnhof.",
+              "tr": {
+                "en": "Paul is coming from the station.",
+                "es": "Paul viene de la estación."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "wohin? (where to?) takes nach for cities and countries without an article, and zu for people and places: zu Anna, zum Arzt, zur Schule, zum Bahnhof.",
+            "es": "wohin? (¿adónde?) lleva nach para ciudades y países sin artículo, y zu para personas y lugares: zu Anna, zum Arzt, zur Schule, zum Bahnhof."
+          },
+          "examples": [
+            {
+              "es": "Im Sommer fahren wir nach Spanien.",
+              "tr": {
+                "en": "In summer we are going to Spain.",
+                "es": "En verano vamos a España."
+              }
+            },
+            {
+              "es": "Ich gehe zum Arzt.",
+              "tr": {
+                "en": "I am going to the doctor.",
+                "es": "Voy al médico."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Countries with and without an article",
+        "es": "Países con y sin artículo"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Cities and most countries have no article: Berlin, Mexiko, Spanien, Deutschland. Only nach is needed for the direction.",
+            "es": "Las ciudades y la mayoría de los países no llevan artículo: Berlin, Mexiko, Spanien, Deutschland. Para la dirección solo hace falta nach."
+          },
+          "examples": [
+            {
+              "es": "Meine Eltern wohnen in Spanien.",
+              "tr": {
+                "en": "My parents live in Spain.",
+                "es": "Mis papás viven en España."
+              }
+            },
+            {
+              "es": "Anna fährt nach Mexiko.",
+              "tr": {
+                "en": "Anna is going to Mexico.",
+                "es": "Anna va a México."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A few countries have an article: die Schweiz, die Türkei, die USA. Then wo? is in der / in den, woher? is aus der / aus den, and wohin? is in die. Learn the article with the country.",
+            "es": "Unos pocos países llevan artículo: die Schweiz, die Türkei, die USA. Entonces wo? es in der / in den, woher? es aus der / aus den, y wohin? es in die. Aprende el artículo junto con el país."
+          },
+          "examples": [
+            {
+              "es": "Mein Bruder arbeitet in der Schweiz.",
+              "tr": {
+                "en": "My brother works in Switzerland.",
+                "es": "Mi hermano trabaja en Suiza."
+              }
+            },
+            {
+              "es": "Sie kommt aus der Türkei.",
+              "tr": {
+                "en": "She is from Turkey.",
+                "es": "Ella es de Turquía."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "fragen-kurz",
+      "title": {
+        "en": "The short version",
+        "es": "La versión corta"
+      },
+      "header": [
+        {
+          "en": "Question",
+          "es": "Pregunta"
+        },
+        {
+          "en": "City or country",
+          "es": "Ciudad o país"
+        },
+        {
+          "en": "Person",
+          "es": "Persona"
+        }
+      ],
+      "rows": [
+        [
+          "wo?",
+          "in",
+          "bei"
+        ],
+        [
+          "woher?",
+          "aus",
+          "von"
+        ],
+        [
+          "wohin?",
+          "nach",
+          "zu"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to confuse",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "zu Hause",
+          "b": "nach Hause",
+          "note": {
+            "en": "zu Hause says where you are (at home). nach Hause says where you are going (home). German needs both for what English says with at home and home.",
+            "es": "zu Hause dice dónde estás (en casa). nach Hause dice adónde vas (a casa). El alemán necesita las dos expresiones."
+          },
+          "examples": [
+            {
+              "es": "Am Sonntag bin ich zu Hause.",
+              "tr": {
+                "en": "On Sunday I am at home.",
+                "es": "El domingo estoy en casa."
+              }
+            },
+            {
+              "es": "Um sechs Uhr gehe ich nach Hause.",
+              "tr": {
+                "en": "At six o'clock I go home.",
+                "es": "A las seis me voy a casa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "nach Spanien",
+          "b": "in die Schweiz",
+          "note": {
+            "en": "Both answer wohin. A country without an article takes nach; a country with an article takes in plus die (the accusative, which a later lesson explains).",
+            "es": "Las dos responden a wohin. Un país sin artículo lleva nach; un país con artículo lleva in más die (el acusativo, que explica una lección posterior)."
+          },
+          "examples": [
+            {
+              "es": "Wir fahren nach Spanien.",
+              "tr": {
+                "en": "We are going to Spain.",
+                "es": "Vamos a España."
+              }
+            },
+            {
+              "es": "Wir fahren in die Schweiz.",
+              "tr": {
+                "en": "We are going to Switzerland.",
+                "es": "Vamos a Suiza."
+              }
+            }
+          ]
+        },
+        {
+          "a": "bei Anna",
+          "b": "zu Anna",
+          "note": {
+            "en": "bei Anna says where you are (at Anna's). zu Anna says where you are going (to Anna's). Spanish a and English to hide this difference.",
+            "es": "bei Anna dice dónde estás (en casa de Anna). zu Anna dice adónde vas (a casa de Anna). Esa diferencia se pierde con el español a y el inglés to."
+          },
+          "examples": [
+            {
+              "es": "Ich bin heute bei Anna.",
+              "tr": {
+                "en": "Today I am at Anna's.",
+                "es": "Hoy estoy en casa de Anna."
+              }
+            },
+            {
+              "es": "Ich gehe heute zu Anna.",
+              "tr": {
+                "en": "Today I am going to Anna's.",
+                "es": "Hoy voy a casa de Anna."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: ir a la escuela is zur Schule gehen, but nach der Schule means after school. Do not say nach for people (not nach Anna) and do not use zu Hause for the direction (not Ich gehe zu Hause). Countries with an article keep it: aus der Schweiz, in der Türkei, in den USA. And aus is for coming from a country or city, von for coming from a person.",
+        "es": "Trampas clásicas: ir a la escuela es zur Schule gehen, pero nach der Schule significa «después de la escuela». No uses nach con personas (no nach Anna) y no uses zu Hause para la dirección (no Ich gehe zu Hause). Los países con artículo lo conservan: aus der Schweiz, in der Türkei, in den USA. Y aus se usa para venir de un país o una ciudad, von para venir de una persona."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Three questions: «wo», where you are; «woher», where you come from; «wohin», where you are going. For cities and countries without an article, say «in Berlin», «aus Mexiko», «nach Spanien». For people, say «bei Anna», «von Anna», «zu Anna». The doctor and the station work the same way: «beim Arzt», «vom Arzt», «zum Arzt». Countries with an article keep it: «in der Schweiz», «aus der Schweiz». At home is «zu Hause», but going home is «nach Hause».",
+    "es": "Tres preguntas: «wo», dónde estás; «woher», de dónde vienes; «wohin», adónde vas. Para ciudades y países sin artículo, di «in Berlin», «aus Mexiko», «nach Spanien». Para personas, di «bei Anna», «von Anna», «zu Anna». El médico y la estación funcionan igual: «beim Arzt», «vom Arzt», «zum Arzt». Los países con artículo lo conservan: «in der Schweiz», «aus der Schweiz». En casa es «zu Hause», pero ir a casa es «nach Hause»."
+  },
+  "items": [
+    {
+      "id": "wo-woher-wohin-c01",
+      "sentence": "Woher kommst du? Ich komme ___ Mexiko.",
+      "options": [
+        "aus",
+        "nach",
+        "in"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The question is woher (where from), and a country without an article takes aus: aus Mexiko.",
+        "es": "La pregunta es woher (de dónde) y un país sin artículo lleva aus: aus Mexiko."
+      },
+      "wrong": {
+        "nach": {
+          "en": "nach answers wohin and means to: Ich fahre nach Mexiko. The question here is woher, so you need aus.",
+          "es": "nach responde a wohin y significa «a»: Ich fahre nach Mexiko. Aquí la pregunta es woher, así que necesitas aus."
+        },
+        "in": {
+          "en": "in tells where you are (Ich wohne in Mexiko). It does not tell where you come from.",
+          "es": "in dice dónde estás (Ich wohne in Mexiko). No dice de dónde vienes."
+        }
+      },
+      "examples": [
+        "Anna kommt aus Berlin.",
+        "Wir kommen aus Spanien."
+      ],
+      "tr": {
+        "en": "Where are you from? I am from Mexico.",
+        "es": "¿De dónde eres? Soy de México."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f01",
+      "kind": "form",
+      "verb": "woher",
+      "person": "Mexiko",
+      "answer": "aus Mexiko",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c02",
+      "sentence": "Wo wohnt ihr? Wir wohnen ___ Spanien.",
+      "options": [
+        "nach",
+        "in",
+        "aus"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The question is wo (where), so a country without an article takes in: in Spanien.",
+        "es": "La pregunta es wo (dónde), así que un país sin artículo lleva in: in Spanien."
+      },
+      "wrong": {
+        "nach": {
+          "en": "nach is for going to a place (wohin). Living in a place is in, not nach.",
+          "es": "nach es para ir a un lugar (wohin). Vivir en un lugar es in, no nach."
+        },
+        "aus": {
+          "en": "aus means from or out of. Where you live is in Spanien.",
+          "es": "aus significa «de» o «desde». El lugar donde vives es in Spanien."
+        }
+      },
+      "examples": [
+        "Wir wohnen in Berlin.",
+        "Anna wohnt in Mexiko."
+      ],
+      "tr": {
+        "en": "Where do you live? We live in Spain.",
+        "es": "¿Dónde viven ustedes? Vivimos en España."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f02",
+      "kind": "form",
+      "verb": "wohin",
+      "person": "Spanien",
+      "answer": "nach Spanien",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c03",
+      "sentence": "Wohin fahrt ihr? Wir fahren ___ Spanien.",
+      "options": [
+        "aus",
+        "in",
+        "nach"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The question is wohin (where to), and a country without an article takes nach: nach Spanien.",
+        "es": "La pregunta es wohin (adónde) y un país sin artículo lleva nach: nach Spanien."
+      },
+      "wrong": {
+        "aus": {
+          "en": "aus Spanien would say that you leave Spain. The question asks for the goal, so you need nach.",
+          "es": "aus Spanien diría que salen de España. La pregunta pide el destino, así que necesitas nach."
+        },
+        "in": {
+          "en": "in Spanien tells where you are. For the goal of a trip, a country without an article takes nach.",
+          "es": "in Spanien dice dónde estás. Para el destino de un viaje, un país sin artículo lleva nach."
+        }
+      },
+      "examples": [
+        "Ich fahre nach Berlin.",
+        "Paul reist nach Mexiko."
+      ],
+      "tr": {
+        "en": "Where are you going? We are going to Spain.",
+        "es": "¿Adónde van? Vamos a España."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f03",
+      "kind": "form",
+      "verb": "wo",
+      "person": "Berlin",
+      "answer": "in Berlin",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-w01",
+      "kind": "why",
+      "es": "Wir fahren nach Spanien.",
+      "target": "nach",
+      "tr": {
+        "en": "We are going to Spain.",
+        "es": "Vamos a España."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "nach: a country without an article, direction (wohin)",
+            "es": "nach: un país sin artículo, dirección (wohin)"
+          }
+        },
+        {
+          "text": {
+            "en": "in: every country takes in",
+            "es": "in: todos los países llevan in"
+          },
+          "wrong": {
+            "en": "in with the dative tells where you are (wo). The direction to a country without an article is nach.",
+            "es": "in con dativo dice dónde estás (wo). La dirección hacia un país sin artículo es nach."
+          }
+        },
+        {
+          "text": {
+            "en": "zu: every goal takes zu",
+            "es": "zu: todo destino lleva zu"
+          },
+          "wrong": {
+            "en": "zu is for people and places like the doctor or the station. Cities and countries without an article take nach.",
+            "es": "zu es para personas y lugares como el médico o la estación. Las ciudades y los países sin artículo llevan nach."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "wo-woher-wohin-c04",
+      "sentence": "Wo wohnt er? Er wohnt ___ der Schweiz.",
+      "options": [
+        "in",
+        "nach",
+        "aus"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Die Schweiz has an article. For wo you use in plus the dative article: in der Schweiz.",
+        "es": "Die Schweiz lleva artículo. Para wo se usa in más el artículo en dativo: in der Schweiz."
+      },
+      "wrong": {
+        "nach": {
+          "en": "nach is only used for going to cities and countries without an article. The question here is wo, so you need in.",
+          "es": "nach se usa solo para ir a ciudades y países sin artículo. Aquí la pregunta es wo, así que necesitas in."
+        },
+        "aus": {
+          "en": "aus der Schweiz means from Switzerland. The question wo asks where he lives, so you need in der Schweiz.",
+          "es": "aus der Schweiz significa «de Suiza». La pregunta wo pregunta dónde vive, así que necesitas in der Schweiz."
+        }
+      },
+      "examples": [
+        "Mein Bruder arbeitet in der Schweiz.",
+        "Meine Eltern wohnen in der Türkei."
+      ],
+      "tr": {
+        "en": "Where does he live? He lives in Switzerland.",
+        "es": "¿Dónde vive él? Vive en Suiza."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f04",
+      "kind": "form",
+      "verb": "woher",
+      "person": "die Schweiz",
+      "answer": "aus der Schweiz",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c05",
+      "sentence": "Woher kommt sie? Sie kommt ___ der Türkei.",
+      "options": [
+        "in",
+        "aus",
+        "nach"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Woher asks for the origin, and the country has an article: aus der Türkei.",
+        "es": "Woher pregunta por el origen, y el país lleva artículo: aus der Türkei."
+      },
+      "wrong": {
+        "in": {
+          "en": "in der Türkei tells where she is, but the question asks where she comes from.",
+          "es": "in der Türkei dice dónde está ella, pero la pregunta es de dónde viene."
+        },
+        "nach": {
+          "en": "nach goes with countries without an article and means to. For the origin you need aus, here aus der Türkei.",
+          "es": "nach va con países sin artículo y significa «a». Para el origen necesitas aus, aquí aus der Türkei."
+        }
+      },
+      "examples": [
+        "Paul kommt aus der Schweiz.",
+        "Wir kommen aus den USA."
+      ],
+      "tr": {
+        "en": "Where is she from? She is from Turkey.",
+        "es": "¿De dónde es ella? Ella es de Turquía."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f05",
+      "kind": "form",
+      "verb": "wo",
+      "person": "die Türkei",
+      "answer": "in der Türkei",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c06",
+      "sentence": "Wo arbeitet Paul? Er arbeitet ___ den USA.",
+      "options": [
+        "aus",
+        "nach",
+        "in"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The USA are plural (die USA), and wo takes in with the dative: in den USA.",
+        "es": "Los USA son plural en alemán (die USA), y wo lleva in con dativo: in den USA."
+      },
+      "wrong": {
+        "aus": {
+          "en": "aus den USA means from the USA. The question wo asks where he works, so you need in.",
+          "es": "aus den USA significa «de los Estados Unidos». La pregunta wo pregunta dónde trabaja, así que necesitas in."
+        },
+        "nach": {
+          "en": "nach is for going to a place, and it is not used with countries that have an article. Where he works is in den USA.",
+          "es": "nach es para ir a un lugar y no se usa con países que llevan artículo. Donde trabaja él es in den USA."
+        }
+      },
+      "examples": [
+        "Meine Eltern wohnen in den USA.",
+        "Wir sind in den USA."
+      ],
+      "tr": {
+        "en": "Where does Paul work? He works in the USA.",
+        "es": "¿Dónde trabaja Paul? Trabaja en Estados Unidos."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f06",
+      "kind": "form",
+      "verb": "wohin",
+      "person": "die Türkei",
+      "answer": "in die Türkei",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-w02",
+      "kind": "why",
+      "es": "Ich gehe zu Anna.",
+      "target": "zu",
+      "tr": {
+        "en": "I am going to Anna's.",
+        "es": "Voy a casa de Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "bei: a person always takes bei",
+            "es": "bei: una persona siempre lleva bei"
+          },
+          "wrong": {
+            "en": "bei tells where you are with a person (Ich bin bei Anna). Going to a person is zu.",
+            "es": "bei dice dónde estás con una persona (Ich bin bei Anna). Ir a casa de una persona es zu."
+          }
+        },
+        {
+          "text": {
+            "en": "nach: Anna is a name, like a city",
+            "es": "nach: Anna es un nombre, como una ciudad"
+          },
+          "wrong": {
+            "en": "nach is for cities and countries without an article. A person is not a place, so the goal is zu.",
+            "es": "nach es para ciudades y países sin artículo. Una persona no es un lugar, así que el destino es zu."
+          }
+        },
+        {
+          "text": {
+            "en": "zu: direction to a person",
+            "es": "zu: dirección hacia una persona"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "wo-woher-wohin-c07",
+      "sentence": "Wohin gehst du? Ich gehe ___ Anna.",
+      "options": [
+        "bei",
+        "nach",
+        "zu"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "For going to a person German uses zu: zu Anna.",
+        "es": "Para ir a casa de una persona el alemán usa zu: zu Anna."
+      },
+      "wrong": {
+        "bei": {
+          "en": "bei tells where you are with a person (Ich bin bei Anna). The question asks where you are going, so you need zu.",
+          "es": "bei dice dónde estás con una persona (Ich bin bei Anna). La pregunta es adónde vas, así que necesitas zu."
+        },
+        "nach": {
+          "en": "nach is for cities and countries without an article, not for people. A person is a goal with zu.",
+          "es": "nach es para ciudades y países sin artículo, no para personas. Una persona es un destino con zu."
+        }
+      },
+      "examples": [
+        "Ich fahre zu Paul.",
+        "Er geht zu Anna."
+      ],
+      "tr": {
+        "en": "Where are you going? I am going to Anna's.",
+        "es": "¿Adónde vas? Voy a casa de Anna."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f07",
+      "kind": "form",
+      "verb": "wo",
+      "person": "die USA",
+      "answer": "in den USA",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c08",
+      "sentence": "Wo ist Paul? Er ist ___ Anna.",
+      "options": [
+        "bei",
+        "zu",
+        "nach"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Being at a person's place is bei: bei Anna.",
+        "es": "Estar en casa de una persona es bei: bei Anna."
+      },
+      "wrong": {
+        "zu": {
+          "en": "zu answers wohin: Er geht zu Anna. Here the question wo asks where he is.",
+          "es": "zu responde a wohin: Er geht zu Anna. Aquí la pregunta wo es dónde está él."
+        },
+        "nach": {
+          "en": "nach is only for cities and countries without an article. For being at a person, German uses bei.",
+          "es": "nach es solo para ciudades y países sin artículo. Para estar en casa de una persona, el alemán usa bei."
+        }
+      },
+      "examples": [
+        "Ich bin bei Paul.",
+        "Wir sind heute bei Anna."
+      ],
+      "tr": {
+        "en": "Where is Paul? He is at Anna's.",
+        "es": "¿Dónde está Paul? Está en casa de Anna."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f08",
+      "kind": "form",
+      "verb": "woher",
+      "person": "Anna",
+      "answer": "von Anna",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c09",
+      "sentence": "Woher kommst du? Ich komme gerade ___ Arzt.",
+      "options": [
+        "zum",
+        "vom",
+        "beim"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Woher with a person or a place like the doctor takes von, and von dem becomes vom: vom Arzt.",
+        "es": "Woher con una persona o un lugar como el médico lleva von, y von dem se convierte en vom: vom Arzt."
+      },
+      "wrong": {
+        "zum": {
+          "en": "zum (zu dem) answers wohin: Ich gehe zum Arzt. Here you are coming back from the doctor.",
+          "es": "zum (zu dem) responde a wohin: Ich gehe zum Arzt. Aquí vienes de vuelta del médico."
+        },
+        "beim": {
+          "en": "beim (bei dem) tells where you are, as in Ich bin beim Arzt. The question asks where you come from.",
+          "es": "beim (bei dem) dice dónde estás, como en Ich bin beim Arzt. La pregunta es de dónde vienes."
+        }
+      },
+      "examples": [
+        "Anna kommt vom Bahnhof.",
+        "Paul kommt vom Bäcker."
+      ],
+      "tr": {
+        "en": "Where are you coming from? I am just coming from the doctor's.",
+        "es": "¿De dónde vienes? Vengo del médico."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f09",
+      "kind": "form",
+      "verb": "wo",
+      "person": "Anna",
+      "answer": "bei Anna",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-w03",
+      "kind": "why",
+      "es": "Er wohnt in der Schweiz.",
+      "target": "in",
+      "tr": {
+        "en": "He lives in Switzerland.",
+        "es": "Él vive en Suiza."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "nach der Schweiz: nach works for every country",
+            "es": "nach der Schweiz: nach sirve para todos los países"
+          },
+          "wrong": {
+            "en": "nach is only for going to countries without an article, and Er wohnt asks for the place. With an article you use in plus the article.",
+            "es": "nach es solo para ir a países sin artículo, y Er wohnt pregunta por el lugar. Con artículo se usa in más el artículo."
+          }
+        },
+        {
+          "text": {
+            "en": "in der Schweiz: place (wo) with the article of the country",
+            "es": "in der Schweiz: lugar (wo) con el artículo del país"
+          }
+        },
+        {
+          "text": {
+            "en": "in Schweiz: like Mexiko, the country needs no article",
+            "es": "in Schweiz: como Mexiko, el país no necesita artículo"
+          },
+          "wrong": {
+            "en": "Mexiko and Spanien have no article, but die Schweiz does. It stays in der Schweiz.",
+            "es": "Mexiko y Spanien no llevan artículo, pero die Schweiz sí. Se queda in der Schweiz."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "wo-woher-wohin-c10",
+      "sentence": "Wohin gehst du? Ich gehe ___ Arzt.",
+      "options": [
+        "zum",
+        "vom",
+        "beim"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Wohin with a person or a place like the doctor takes zu, and zu dem becomes zum: zum Arzt.",
+        "es": "Wohin con una persona o un lugar como el médico lleva zu, y zu dem se convierte en zum: zum Arzt."
+      },
+      "wrong": {
+        "vom": {
+          "en": "vom (von dem) means from the doctor and answers woher. The question asks where you are going.",
+          "es": "vom (von dem) significa «del médico» y responde a woher. La pregunta es adónde vas."
+        },
+        "beim": {
+          "en": "beim (bei dem) tells that you are at the doctor's. For going there, you need zum.",
+          "es": "beim (bei dem) dice que estás con el médico. Para ir allá necesitas zum."
+        }
+      },
+      "examples": [
+        "Ich gehe zum Bäcker.",
+        "Anna fährt zum Supermarkt."
+      ],
+      "tr": {
+        "en": "Where are you going? I am going to the doctor.",
+        "es": "¿Adónde vas? Voy al médico."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f10",
+      "kind": "form",
+      "verb": "wohin",
+      "person": "Anna",
+      "answer": "zu Anna",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c11",
+      "sentence": "Wo bist du am Sonntag? Ich bin ___ Hause.",
+      "options": [
+        "nach",
+        "zu",
+        "bei"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Being at home is the fixed phrase zu Hause.",
+        "es": "Estar en casa es la expresión fija zu Hause."
+      },
+      "wrong": {
+        "nach": {
+          "en": "nach Hause means home as a direction (Ich gehe nach Hause). With sein you say where you are.",
+          "es": "nach Hause significa «a casa» como dirección (Ich gehe nach Hause). Con sein dices dónde estás."
+        },
+        "bei": {
+          "en": "bei goes with a person (bei Anna). For your own home you say zu Hause.",
+          "es": "bei va con una persona (bei Anna). Para tu propia casa se dice zu Hause."
+        }
+      },
+      "examples": [
+        "Paul ist heute zu Hause.",
+        "Wir sind am Abend zu Hause."
+      ],
+      "tr": {
+        "en": "Where are you on Sunday? I am at home.",
+        "es": "¿Dónde estás el domingo? Estoy en casa."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f11",
+      "kind": "form",
+      "verb": "wohin",
+      "person": "der Arzt",
+      "answer": "zum Arzt",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c12",
+      "sentence": "Wohin gehst du jetzt? Ich gehe ___ Hause.",
+      "options": [
+        "nach",
+        "zu",
+        "bei"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Going home, as a direction, is the fixed phrase nach Hause.",
+        "es": "Ir a casa, como dirección, es la expresión fija nach Hause."
+      },
+      "wrong": {
+        "zu": {
+          "en": "zu Hause tells where you are (at home). For the direction home, German uses nach Hause.",
+          "es": "zu Hause dice dónde estás (en casa). Para la dirección a casa, el alemán usa nach Hause."
+        },
+        "bei": {
+          "en": "bei is used for being at a person (bei Anna). Going home is nach Hause.",
+          "es": "bei se usa para estar en casa de una persona (bei Anna). Ir a casa es nach Hause."
+        }
+      },
+      "examples": [
+        "Um sechs Uhr fahre ich nach Hause.",
+        "Anna geht jetzt nach Hause."
+      ],
+      "tr": {
+        "en": "Where are you going now? I am going home.",
+        "es": "¿Adónde vas ahora? Me voy a casa."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-f12",
+      "kind": "form",
+      "verb": "wo",
+      "person": "der Bahnhof",
+      "answer": "am Bahnhof",
+      "table": "herkunft"
+    },
+    {
+      "id": "wo-woher-wohin-c13",
+      "sentence": "Wohin fährst du? Ich fahre ___ Bahnhof.",
+      "options": [
+        "am",
+        "vom",
+        "zum"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Wohin with a place like the station takes zu, and zu dem becomes zum: zum Bahnhof.",
+        "es": "Wohin con un lugar como la estación lleva zu, y zu dem se convierte en zum: zum Bahnhof."
+      },
+      "wrong": {
+        "am": {
+          "en": "am Bahnhof tells where you are (wo). The question asks where you are going.",
+          "es": "am Bahnhof dice dónde estás (wo). La pregunta es adónde vas."
+        },
+        "vom": {
+          "en": "vom (von dem) means from the station and answers woher, not wohin.",
+          "es": "vom (von dem) significa «de la estación» y responde a woher, no a wohin."
+        }
+      },
+      "examples": [
+        "Ich gehe zur Schule.",
+        "Paul fährt zum Flughafen."
+      ],
+      "tr": {
+        "en": "Where are you going? I am going to the station.",
+        "es": "¿Adónde vas? Voy a la estación."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-c14",
+      "sentence": "Wohin reist ihr? Wir reisen in ___ Schweiz.",
+      "options": [
+        "der",
+        "die",
+        "den"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "For the direction (wohin) into a country with an article, in is followed by die: in die Schweiz. A later lesson explains this accusative.",
+        "es": "Para la dirección (wohin) hacia un país con artículo, in va seguido de die: in die Schweiz. Una lección posterior explica este acusativo."
+      },
+      "wrong": {
+        "der": {
+          "en": "in der Schweiz answers wo (we are in Switzerland). The direction needs in die Schweiz.",
+          "es": "in der Schweiz responde a wo (estamos en Suiza). La dirección necesita in die Schweiz."
+        },
+        "den": {
+          "en": "den is the plural article (in den USA). Die Schweiz is feminine singular, so the article is die.",
+          "es": "den es el artículo plural (in den USA). Die Schweiz es femenino singular, así que el artículo es die."
+        }
+      },
+      "examples": [
+        "Wir fahren in die Türkei.",
+        "Meine Eltern reisen in die USA."
+      ],
+      "tr": {
+        "en": "Where are you traveling? We are traveling to Switzerland.",
+        "es": "¿Adónde viajan? Viajamos a Suiza."
+      }
+    },
+    {
+      "id": "wo-woher-wohin-w04",
+      "kind": "why",
+      "es": "Ich gehe nach Hause.",
+      "target": "nach",
+      "tr": {
+        "en": "I am going home.",
+        "es": "Me voy a casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "zu Hause: Hause always goes with zu",
+            "es": "zu Hause: Hause siempre va con zu"
+          },
+          "wrong": {
+            "en": "zu Hause tells where you are (at home). With a verb of going, the direction home is nach Hause.",
+            "es": "zu Hause dice dónde estás (en casa). Con un verbo de movimiento, la dirección a casa es nach Hause."
+          }
+        },
+        {
+          "text": {
+            "en": "nach Hause: the fixed phrase for the direction home",
+            "es": "nach Hause: la expresión fija para la dirección a casa"
+          }
+        },
+        {
+          "text": {
+            "en": "in Hause: in goes with every place",
+            "es": "in Hause: in va con todos los lugares"
+          },
+          "wrong": {
+            "en": "in Hause is not used in German. For the direction home you say nach Hause, for being at home zu Hause.",
+            "es": "in Hause no se usa en alemán. Para la dirección a casa se dice nach Hause, y para estar en casa, zu Hause."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

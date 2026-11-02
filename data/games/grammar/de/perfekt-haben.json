@@ -1,0 +1,1124 @@
+{
+  "schema": 2,
+  "topic": "perfekt-haben",
+  "level": "A1",
+  "title": {
+    "en": "Perfect tense with haben",
+    "es": "Pretérito perfecto con haben"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Perfekt is the everyday past tense of spoken German. It has two parts: haben in second place and the participle (Partizip II) at the very end: Ich habe Pizza gegessen. Regular verbs form the participle with ge- and -t (gemacht, gelernt), irregular verbs with ge- and -en (gegessen, getrunken). Where English says I ate or I have eaten and Spanish says comí or he comido, German normally says Ich habe gegessen.",
+        "es": "El Perfekt es el tiempo pasado de todos los días en el alemán hablado. Tiene dos partes: haben en segundo lugar y el participio (Partizip II) al final de la oración: Ich habe Pizza gegessen. Los verbos regulares forman el participio con ge- y -t (gemacht, gelernt), los irregulares con ge- y -en (gegessen, getrunken). Donde el español dice comí o he comido, el alemán dice normalmente Ich habe gegessen."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "perfekt-muster",
+      "title": {
+        "en": "haben + participle",
+        "es": "haben + participio"
+      },
+      "header": [
+        {
+          "en": "Pronoun",
+          "es": "Pronombre"
+        },
+        {
+          "en": "haben",
+          "es": "haben"
+        },
+        {
+          "en": "Partizip II",
+          "es": "Partizip II"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "habe",
+          "gemacht"
+        ],
+        [
+          "du",
+          "hast",
+          "gemacht"
+        ],
+        [
+          "er/sie/es",
+          "hat",
+          "gemacht"
+        ],
+        [
+          "wir",
+          "haben",
+          "gemacht"
+        ],
+        [
+          "ihr",
+          "habt",
+          "gemacht"
+        ],
+        [
+          "sie/Sie",
+          "haben",
+          "gemacht"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "partizip-haben",
+      "title": {
+        "en": "Participles of common verbs",
+        "es": "Participios de verbos frecuentes"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Partizip II",
+          "es": "Partizip II"
+        },
+        {
+          "en": "Type",
+          "es": "Tipo"
+        }
+      ],
+      "rows": [
+        [
+          "machen",
+          "gemacht",
+          "ge-...-t"
+        ],
+        [
+          "lernen",
+          "gelernt",
+          "ge-...-t"
+        ],
+        [
+          "arbeiten",
+          "gearbeitet",
+          "ge-...-t"
+        ],
+        [
+          "kaufen",
+          "gekauft",
+          "ge-...-t"
+        ],
+        [
+          "spielen",
+          "gespielt",
+          "ge-...-t"
+        ],
+        [
+          "essen",
+          "gegessen",
+          "ge-...-en"
+        ],
+        [
+          "trinken",
+          "getrunken",
+          "ge-...-en"
+        ],
+        [
+          "sehen",
+          "gesehen",
+          "ge-...-en"
+        ],
+        [
+          "lesen",
+          "gelesen",
+          "ge-...-en"
+        ],
+        [
+          "schreiben",
+          "geschrieben",
+          "ge-...-en"
+        ],
+        [
+          "sprechen",
+          "gesprochen",
+          "ge-...-en"
+        ],
+        [
+          "nehmen",
+          "genommen",
+          "ge-...-en"
+        ],
+        [
+          "studieren",
+          "studiert",
+          "ohne ge-"
+        ],
+        [
+          "telefonieren",
+          "telefoniert",
+          "ohne ge-"
+        ],
+        [
+          "besuchen",
+          "besucht",
+          "ohne ge-"
+        ],
+        [
+          "bezahlen",
+          "bezahlt",
+          "ohne ge-"
+        ],
+        [
+          "einkaufen",
+          "eingekauft",
+          "ge- in der Mitte"
+        ],
+        [
+          "aufmachen",
+          "aufgemacht",
+          "ge- in der Mitte"
+        ],
+        [
+          "anrufen",
+          "angerufen",
+          "ge- in der Mitte"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Building the Perfekt",
+        "es": "Formar el Perfekt"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "haben is the conjugated verb and stays in second place; the participle goes to the very end. In a question haben comes first, and after a time word like gestern the subject follows haben.",
+            "es": "haben es el verbo conjugado y se queda en segundo lugar; el participio va al final de todo. En una pregunta haben va primero, y después de una palabra de tiempo como gestern el sujeto sigue a haben."
+          },
+          "examples": [
+            {
+              "es": "Ich habe Pizza gegessen.",
+              "tr": {
+                "en": "I ate pizza.",
+                "es": "Comí pizza."
+              }
+            },
+            {
+              "es": "Gestern habe ich Deutsch gelernt.",
+              "tr": {
+                "en": "Yesterday I studied German.",
+                "es": "Ayer estudié alemán."
+              }
+            },
+            {
+              "es": "Hast du Kaffee getrunken?",
+              "tr": {
+                "en": "Did you drink coffee?",
+                "es": "¿Tomaste café?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Regular verbs: ge- + stem + -t. If the stem ends in -t or -d, you add -et: gearbeitet.",
+            "es": "Verbos regulares: ge- + raíz + -t. Si la raíz termina en -t o -d, se añade -et: gearbeitet."
+          },
+          "examples": [
+            {
+              "es": "Wir haben Fußball gespielt.",
+              "tr": {
+                "en": "We played soccer.",
+                "es": "Jugamos fútbol."
+              }
+            },
+            {
+              "es": "Anna hat im Büro gearbeitet.",
+              "tr": {
+                "en": "Anna worked in the office.",
+                "es": "Anna trabajó en la oficina."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Irregular verbs: ge- + stem + -en. The stem sometimes changes (trinken, getrunken; schreiben, geschrieben), so learn the participle together with the verb.",
+            "es": "Verbos irregulares: ge- + raíz + -en. La raíz a veces cambia (trinken, getrunken; schreiben, geschrieben), así que aprende el participio junto con el verbo."
+          },
+          "examples": [
+            {
+              "es": "Ich habe einen Film gesehen.",
+              "tr": {
+                "en": "I watched a movie.",
+                "es": "Vi una película."
+              }
+            },
+            {
+              "es": "Paul hat ein Buch gelesen.",
+              "tr": {
+                "en": "Paul read a book.",
+                "es": "Paul leyó un libro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "No ge- for verbs that end in -ieren and for verbs with an unstressed prefix such as be-: studiert, telefoniert, besucht, bezahlt.",
+            "es": "Sin ge- para los verbos que terminan en -ieren y para los verbos con un prefijo átono como be-: studiert, telefoniert, besucht, bezahlt."
+          },
+          "examples": [
+            {
+              "es": "Ich habe Anna besucht.",
+              "tr": {
+                "en": "I visited Anna.",
+                "es": "Visité a Anna."
+              }
+            },
+            {
+              "es": "Wir haben in Berlin studiert.",
+              "tr": {
+                "en": "We studied in Berlin.",
+                "es": "Estudiamos en Berlín."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Separable verbs: the prefix stays in front and ge- goes in the middle: einkaufen, eingekauft; anrufen, angerufen; aufmachen, aufgemacht.",
+            "es": "Verbos separables: el prefijo se queda delante y ge- va en medio: einkaufen, eingekauft; anrufen, angerufen; aufmachen, aufgemacht."
+          },
+          "examples": [
+            {
+              "es": "Wir haben im Supermarkt eingekauft.",
+              "tr": {
+                "en": "We shopped at the supermarket.",
+                "es": "Hicimos las compras en el supermercado."
+              }
+            },
+            {
+              "es": "Ich habe Paul angerufen.",
+              "tr": {
+                "en": "I called Paul.",
+                "es": "Le llamé a Paul."
+              }
+            },
+            {
+              "es": "Anna hat das Fenster aufgemacht.",
+              "tr": {
+                "en": "Anna opened the window.",
+                "es": "Anna abrió la ventana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Typical time words: gestern, letzte Woche, schon (already), noch nicht (not yet). They stand before the verb or in the middle of the sentence, never after the participle.",
+            "es": "Palabras de tiempo típicas: gestern, letzte Woche, schon («ya»), noch nicht («todavía no»). Van antes del verbo o en medio de la oración, nunca después del participio."
+          },
+          "examples": [
+            {
+              "es": "Ich habe schon gegessen.",
+              "tr": {
+                "en": "I have already eaten.",
+                "es": "Ya comí."
+              }
+            },
+            {
+              "es": "Ich habe noch nicht gegessen.",
+              "tr": {
+                "en": "I have not eaten yet.",
+                "es": "Todavía no he comido."
+              }
+            },
+            {
+              "es": "Letzte Woche habe ich viel gearbeitet.",
+              "tr": {
+                "en": "Last week I worked a lot.",
+                "es": "La semana pasada trabajé mucho."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Now or finished?",
+        "es": "¿Ahora o terminado?"
+      },
+      "pairs": [
+        {
+          "a": "Ich esse Pizza.",
+          "b": "Ich habe Pizza gegessen.",
+          "note": {
+            "en": "The present tense says what happens now. The Perfekt says that it is over. Hungarian and Spanish show this with a past ending; German adds haben and moves the participle to the end.",
+            "es": "El presente dice lo que pasa ahora. El Perfekt dice que ya terminó. El húngaro y el español lo muestran con una terminación de pasado; el alemán añade haben y manda el participio al final."
+          },
+          "examples": [
+            {
+              "es": "Heute arbeite ich zu Hause.",
+              "tr": {
+                "en": "Today I work at home.",
+                "es": "Hoy trabajo en casa."
+              }
+            },
+            {
+              "es": "Gestern habe ich im Büro gearbeitet.",
+              "tr": {
+                "en": "Yesterday I worked at the office.",
+                "es": "Ayer trabajé en la oficina."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich habe ein Auto.",
+          "b": "Ich habe ein Auto gekauft.",
+          "note": {
+            "en": "Alone, haben means to have. With a participle at the end, haben is only the helper and the participle gives the meaning.",
+            "es": "Solo, haben significa «tener». Con un participio al final, haben es solo el auxiliar y el participio da el significado."
+          },
+          "examples": [
+            {
+              "es": "Anna hat eine Katze.",
+              "tr": {
+                "en": "Anna has a cat.",
+                "es": "Anna tiene un gato."
+              }
+            },
+            {
+              "es": "Anna hat eine Katze gekauft.",
+              "tr": {
+                "en": "Anna bought a cat.",
+                "es": "Anna compró un gato."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: never drop haben (not Ich gemacht) and never leave the participle after the object (not Ich habe gegessen Pizza). Verbs in -ieren and with be- take no ge- (studiert, besucht). Separable verbs put ge- in the middle (eingekauft). Learn the irregular participles with the verb. And not every verb uses haben: verbs of going, like gehen and fahren, use sein, which is the next lesson.",
+        "es": "Trampas clásicas: nunca omitas haben (no Ich gemacht) y nunca dejes el participio después del complemento (no Ich habe gegessen Pizza). Los verbos en -ieren y con be- no llevan ge- (studiert, besucht). Los verbos separables ponen ge- en medio (eingekauft). Aprende los participios irregulares junto con el verbo. Y no todos los verbos usan haben: los verbos de movimiento, como gehen y fahren, usan sein, que es la próxima lección."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The Perfekt is the everyday past tense. Use «haben» in second place and the participle at the end: «Ich habe Pizza gegessen». Regular verbs have «ge» and «t», «gemacht», «gelernt». Irregular verbs have «ge» and «en», «gegessen», «getrunken». Verbs in «ieren» have no «ge», «studiert», and neither do verbs with «be», «besucht». Separable verbs put «ge» in the middle, «eingekauft», «angerufen». Time words are «gestern», «letzte Woche» and «schon».",
+    "es": "El Perfekt es el tiempo pasado de todos los días. Usa «haben» en segundo lugar y el participio al final: «Ich habe Pizza gegessen». Los verbos regulares llevan «ge» y «t», «gemacht», «gelernt». Los irregulares llevan «ge» y «en», «gegessen», «getrunken». Los verbos en «ieren» no llevan «ge», «studiert», y tampoco los verbos con «be», «besucht». Los verbos separables ponen «ge» en medio, «eingekauft», «angerufen». Las palabras de tiempo son «gestern», «letzte Woche» y «schon»."
+  },
+  "items": [
+    {
+      "id": "perfekt-haben-c01",
+      "sentence": "Gestern habe ich Pizza ___.",
+      "options": [
+        "gegessen",
+        "geessen",
+        "gegesst"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "essen is an irregular verb, so its participle is ge- + stem + -en, and the stem keeps a double s: gegessen.",
+        "es": "essen es un verbo irregular, así que su participio es ge- + raíz + -en, y la raíz conserva la doble s: gegessen."
+      },
+      "wrong": {
+        "geessen": {
+          "en": "geessen is not a German word. The stem of the participle is gess-, and that is how the form gegessen is spelled.",
+          "es": "geessen no es una palabra alemana. La raíz del participio es gess-, y así se escribe la forma gegessen."
+        },
+        "gegesst": {
+          "en": "gegesst would be the pattern of regular verbs (ge- + stem + -t). essen is irregular and ends in -en.",
+          "es": "gegesst sería el patrón de los verbos regulares (ge- + raíz + -t). essen es irregular y termina en -en."
+        }
+      },
+      "examples": [
+        "Ich habe Brot gegessen.",
+        "Wir haben Suppe gegessen."
+      ],
+      "tr": {
+        "en": "Yesterday I ate pizza.",
+        "es": "Ayer comí pizza."
+      }
+    },
+    {
+      "id": "perfekt-haben-f01",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "machen",
+      "answer": "gemacht",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c02",
+      "sentence": "Wir haben Fußball ___.",
+      "options": [
+        "gespielen",
+        "gespielt",
+        "spielt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "spielen is regular: ge- + stem + -t gives gespielt.",
+        "es": "spielen es regular: ge- + raíz + -t da gespielt."
+      },
+      "wrong": {
+        "gespielen": {
+          "en": "The ending -en with ge- is the pattern of irregular verbs (gegessen). A regular verb like spielen ends in -t.",
+          "es": "La terminación -en con ge- es el patrón de los verbos irregulares (gegessen). Un verbo regular como spielen termina en -t."
+        },
+        "spielt": {
+          "en": "spielt is the present tense (er spielt). The participle needs ge- in front: gespielt.",
+          "es": "spielt es el presente (er spielt). El participio necesita ge- delante: gespielt."
+        }
+      },
+      "examples": [
+        "Anna hat Musik gespielt.",
+        "Die Kinder haben im Park gespielt."
+      ],
+      "tr": {
+        "en": "We played soccer.",
+        "es": "Jugamos fútbol."
+      }
+    },
+    {
+      "id": "perfekt-haben-f02",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "essen",
+      "answer": "gegessen",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c03",
+      "sentence": "Ich habe Anna ___.",
+      "options": [
+        "gebesucht",
+        "besuchen",
+        "besucht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "besuchen starts with the unstressed prefix be-, so the participle has no ge-: besucht.",
+        "es": "besuchen empieza con el prefijo átono be-, así que el participio no lleva ge-: besucht."
+      },
+      "wrong": {
+        "gebesucht": {
+          "en": "Verbs with the prefix be- do not take ge-. The participle is besucht, not gebesucht.",
+          "es": "Los verbos con el prefijo be- no llevan ge-. El participio es besucht, no gebesucht."
+        },
+        "besuchen": {
+          "en": "besuchen is the infinitive. After haben at the end you need the participle, besucht.",
+          "es": "besuchen es el infinitivo. Después de haben, al final, necesitas el participio, besucht."
+        }
+      },
+      "examples": [
+        "Paul hat Anna besucht.",
+        "Wir haben Freunde besucht."
+      ],
+      "tr": {
+        "en": "I visited Anna.",
+        "es": "Visité a Anna."
+      }
+    },
+    {
+      "id": "perfekt-haben-f03",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "lernen",
+      "answer": "gelernt",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-w01",
+      "kind": "why",
+      "es": "Ich habe Pizza gegessen.",
+      "target": "gegessen",
+      "tr": {
+        "en": "I ate pizza.",
+        "es": "Comí pizza."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The participle stands right after haben, as in English I have eaten",
+            "es": "El participio va justo después de haben, como en inglés I have eaten"
+          },
+          "wrong": {
+            "en": "In German haben stays in second place and the participle is pushed to the very end, after the object: Ich habe Pizza gegessen.",
+            "es": "En alemán haben se queda en segundo lugar y el participio se manda hasta el final, después del complemento: Ich habe Pizza gegessen."
+          }
+        },
+        {
+          "text": {
+            "en": "The participle goes to the end; haben stays in second place",
+            "es": "El participio va al final; haben se queda en segundo lugar"
+          }
+        },
+        {
+          "text": {
+            "en": "The participle takes second place and haben goes to the end",
+            "es": "El participio ocupa el segundo lugar y haben va al final"
+          },
+          "wrong": {
+            "en": "The conjugated verb, here haben, is always in second place. Only the participle goes to the end.",
+            "es": "El verbo conjugado, aquí haben, está siempre en segundo lugar. Solo el participio va al final."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "perfekt-haben-c04",
+      "sentence": "Paul hat in Berlin ___.",
+      "options": [
+        "gestudiert",
+        "studiert",
+        "studieren"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Verbs that end in -ieren have no ge- in the participle: studiert.",
+        "es": "Los verbos que terminan en -ieren no llevan ge- en el participio: studiert."
+      },
+      "wrong": {
+        "gestudiert": {
+          "en": "A regular verb normally takes ge-, but verbs in -ieren are an exception. The participle is studiert.",
+          "es": "Un verbo regular normalmente lleva ge-, pero los verbos en -ieren son una excepción. El participio es studiert."
+        },
+        "studieren": {
+          "en": "studieren is the infinitive. In the Perfekt, the participle studiert stands at the end.",
+          "es": "studieren es el infinitivo. En el Perfekt, el participio studiert va al final."
+        }
+      },
+      "examples": [
+        "Anna hat in Mexiko studiert.",
+        "Ich habe mit Paul telefoniert."
+      ],
+      "tr": {
+        "en": "Paul studied in Berlin.",
+        "es": "Paul estudió en Berlín."
+      }
+    },
+    {
+      "id": "perfekt-haben-f04",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "trinken",
+      "answer": "getrunken",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c05",
+      "sentence": "Hast du das Buch ___?",
+      "options": [
+        "gelest",
+        "lesen",
+        "gelesen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "lesen is irregular: the participle is ge- + stem + -en, gelesen.",
+        "es": "lesen es irregular: el participio es ge- + raíz + -en, gelesen."
+      },
+      "wrong": {
+        "gelest": {
+          "en": "gelest is not a German word. lesen is irregular and its participle ends in -en: gelesen.",
+          "es": "gelest no es una palabra alemana. lesen es irregular y su participio termina en -en: gelesen."
+        },
+        "lesen": {
+          "en": "lesen is the infinitive. At the end of a Perfekt sentence you need the participle, gelesen.",
+          "es": "lesen es el infinitivo. Al final de una oración en Perfekt necesitas el participio, gelesen."
+        }
+      },
+      "examples": [
+        "Paul hat ein Buch gelesen.",
+        "Ich habe viel gelesen."
+      ],
+      "tr": {
+        "en": "Have you read the book?",
+        "es": "¿Leíste el libro?"
+      }
+    },
+    {
+      "id": "perfekt-haben-f05",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "arbeiten",
+      "answer": "gearbeitet",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c06",
+      "sentence": "Anna hat einen Brief ___.",
+      "options": [
+        "geschreibt",
+        "schreiben",
+        "geschrieben"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "schreiben is irregular: the stem changes and the participle ends in -en, geschrieben.",
+        "es": "schreiben es irregular: la raíz cambia y el participio termina en -en, geschrieben."
+      },
+      "wrong": {
+        "geschreibt": {
+          "en": "geschreibt applies the regular pattern (ge- + stem + -t). schreiben is irregular and its participle ends in -en.",
+          "es": "geschreibt aplica el patrón regular (ge- + raíz + -t). schreiben es irregular y su participio termina en -en."
+        },
+        "schreiben": {
+          "en": "schreiben is the infinitive. After haben, at the end of the sentence, you need the participle geschrieben.",
+          "es": "schreiben es el infinitivo. Después de haben, al final de la oración, necesitas el participio geschrieben."
+        }
+      },
+      "examples": [
+        "Ich habe einen Brief geschrieben.",
+        "Paul hat nicht geschrieben."
+      ],
+      "tr": {
+        "en": "Anna wrote a letter.",
+        "es": "Anna escribió una carta."
+      }
+    },
+    {
+      "id": "perfekt-haben-f06",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "sehen",
+      "answer": "gesehen",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-w02",
+      "kind": "why",
+      "es": "Wir haben in Berlin studiert.",
+      "target": "studiert",
+      "tr": {
+        "en": "We studied in Berlin.",
+        "es": "Estudiamos en Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Verbs in -ieren form the participle without ge-",
+            "es": "Los verbos en -ieren forman el participio sin ge-"
+          }
+        },
+        {
+          "text": {
+            "en": "Every participle needs ge- in front of the stem",
+            "es": "Todo participio necesita ge- delante de la raíz"
+          },
+          "wrong": {
+            "en": "Most do, but verbs in -ieren (studieren, telefonieren) are an exception: studiert, not gestudiert.",
+            "es": "La mayoría sí, pero los verbos en -ieren (studieren, telefonieren) son una excepción: studiert, no gestudiert."
+          }
+        },
+        {
+          "text": {
+            "en": "The ge- is dropped because the verb is regular",
+            "es": "Se quita ge- porque el verbo es regular"
+          },
+          "wrong": {
+            "en": "Regular verbs normally take ge- (gemacht, gelernt). The ending -ieren is what removes it.",
+            "es": "Los verbos regulares normalmente llevan ge- (gemacht, gelernt). Lo que lo quita es la terminación -ieren."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "perfekt-haben-c07",
+      "sentence": "Wir haben im Supermarkt ___.",
+      "options": [
+        "eingekauft",
+        "geeinkauft",
+        "einkauft"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "einkaufen is separable: the prefix ein- stays in front and ge- goes in the middle, eingekauft.",
+        "es": "einkaufen es separable: el prefijo ein- se queda delante y ge- va en medio, eingekauft."
+      },
+      "wrong": {
+        "geeinkauft": {
+          "en": "With a separable verb, ge- does not stand in front of the prefix. It goes between prefix and stem.",
+          "es": "Con un verbo separable, ge- no va delante del prefijo. Va entre el prefijo y la raíz."
+        },
+        "einkauft": {
+          "en": "einkauft has no ge-, so it looks like the present tense (er kauft ein). The participle needs ge- in the middle.",
+          "es": "einkauft no tiene ge-, así que parece el presente (er kauft ein). El participio necesita ge- en medio."
+        }
+      },
+      "examples": [
+        "Anna hat gestern eingekauft.",
+        "Ich habe nicht eingekauft."
+      ],
+      "tr": {
+        "en": "We shopped at the supermarket.",
+        "es": "Hicimos las compras en el supermercado."
+      }
+    },
+    {
+      "id": "perfekt-haben-f07",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "lesen",
+      "answer": "gelesen",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c08",
+      "sentence": "Anna hat Paul ___.",
+      "options": [
+        "geanrufen",
+        "angerufen",
+        "anrufen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "anrufen is separable and irregular: an- stays in front, ge- goes in the middle and the ending is -en, angerufen.",
+        "es": "anrufen es separable e irregular: an- se queda delante, ge- va en medio y la terminación es -en, angerufen."
+      },
+      "wrong": {
+        "geanrufen": {
+          "en": "ge- never stands in front of a separable prefix. It goes in the middle: an + ge + rufen.",
+          "es": "ge- nunca va delante de un prefijo separable. Va en medio: an + ge + rufen."
+        },
+        "anrufen": {
+          "en": "anrufen is the infinitive. In the Perfekt you need the participle, angerufen.",
+          "es": "anrufen es el infinitivo. En el Perfekt necesitas el participio, angerufen."
+        }
+      },
+      "examples": [
+        "Ich habe Anna angerufen.",
+        "Paul hat nicht angerufen."
+      ],
+      "tr": {
+        "en": "Anna called Paul.",
+        "es": "Anna le llamó a Paul."
+      }
+    },
+    {
+      "id": "perfekt-haben-f08",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "studieren",
+      "answer": "studiert",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c09",
+      "sentence": "Gestern ___ ich Kaffee getrunken.",
+      "options": [
+        "habe",
+        "hat",
+        "bin"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The helper for ich is habe: Ich habe Kaffee getrunken. After Gestern it stays in second place, before ich.",
+        "es": "El auxiliar para ich es habe: Ich habe Kaffee getrunken. Después de Gestern se queda en segundo lugar, antes de ich."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the form for er, sie and es. With ich the form is habe.",
+          "es": "hat es la forma de er, sie y es. Con ich la forma es habe."
+        },
+        "bin": {
+          "en": "bin is a form of sein. Verbs like trinken, essen and machen take haben.",
+          "es": "bin es una forma de sein. Verbos como trinken, essen y machen llevan haben."
+        }
+      },
+      "examples": [
+        "Heute habe ich Tee getrunken.",
+        "Am Morgen habe ich Brot gegessen."
+      ],
+      "tr": {
+        "en": "Yesterday I drank coffee.",
+        "es": "Ayer tomé café."
+      }
+    },
+    {
+      "id": "perfekt-haben-f09",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "besuchen",
+      "answer": "besucht",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-w03",
+      "kind": "why",
+      "es": "Ich habe einen Film gesehen.",
+      "target": "gesehen",
+      "tr": {
+        "en": "I watched a movie.",
+        "es": "Vi una película."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ge- + stem + -t, as with every verb",
+            "es": "ge- + raíz + -t, como con todos los verbos"
+          },
+          "wrong": {
+            "en": "That pattern (gemacht, gelernt) is only for regular verbs. Irregular verbs such as sehen, essen and trinken end in -en.",
+            "es": "Ese patrón (gemacht, gelernt) es solo para verbos regulares. Los irregulares como sehen, essen y trinken terminan en -en."
+          }
+        },
+        {
+          "text": {
+            "en": "No ge-, because sehen is a short verb",
+            "es": "Sin ge-, porque sehen es un verbo corto"
+          },
+          "wrong": {
+            "en": "The length does not matter. Only verbs in -ieren and verbs with an unstressed prefix like be- have no ge-.",
+            "es": "La longitud no importa. Solo los verbos en -ieren y los verbos con un prefijo átono como be- no llevan ge-."
+          }
+        },
+        {
+          "text": {
+            "en": "ge- + stem + -en: sehen is irregular, so the participle must be learned",
+            "es": "ge- + raíz + -en: sehen es irregular, así que hay que aprender el participio"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "perfekt-haben-c10",
+      "sentence": "Anna ___ einen Film gesehen.",
+      "options": [
+        "haben",
+        "hat",
+        "ist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Anna is one person (she), so the form of haben is hat.",
+        "es": "Anna es una persona (ella), así que la forma de haben es hat."
+      },
+      "wrong": {
+        "haben": {
+          "en": "haben is for wir, sie (they) and Sie. One person like Anna takes hat.",
+          "es": "haben es para wir, sie (ellos) y Sie. Una persona como Anna lleva hat."
+        },
+        "ist": {
+          "en": "ist belongs to the verb sein, which some verbs of movement use. sehen takes haben.",
+          "es": "ist es del verbo sein, que usan algunos verbos de movimiento. sehen lleva haben."
+        }
+      },
+      "examples": [
+        "Paul hat einen Film gesehen.",
+        "Die Kinder haben einen Film gesehen."
+      ],
+      "tr": {
+        "en": "Anna watched a movie.",
+        "es": "Anna vio una película."
+      }
+    },
+    {
+      "id": "perfekt-haben-f10",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "einkaufen",
+      "answer": "eingekauft",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c11",
+      "sentence": "Wo ___ du gearbeitet?",
+      "options": [
+        "hat",
+        "habe",
+        "hast"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With du the form of haben is hast. In a W-question it comes right after the question word: Wo hast du gearbeitet?",
+        "es": "Con du la forma de haben es hast. En una pregunta con palabra interrogativa va justo después de ella: Wo hast du gearbeitet?"
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the form for er, sie and es. With du you need hast.",
+          "es": "hat es la forma de er, sie y es. Con du necesitas hast."
+        },
+        "habe": {
+          "en": "habe is the form for ich. With du you need hast.",
+          "es": "habe es la forma de ich. Con du necesitas hast."
+        }
+      },
+      "examples": [
+        "Was hast du gemacht?",
+        "Wo hast du gegessen?"
+      ],
+      "tr": {
+        "en": "Where did you work?",
+        "es": "¿Dónde trabajaste?"
+      }
+    },
+    {
+      "id": "perfekt-haben-f11",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "anrufen",
+      "answer": "angerufen",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c12",
+      "sentence": "Ihr ___ viel gelernt.",
+      "options": [
+        "habt",
+        "haben",
+        "hat"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "ihr takes habt: Ihr habt viel gelernt.",
+        "es": "ihr lleva habt: Ihr habt viel gelernt."
+      },
+      "wrong": {
+        "haben": {
+          "en": "haben goes with wir, sie and Sie. ihr has its own form, habt.",
+          "es": "haben va con wir, sie y Sie. ihr tiene su propia forma, habt."
+        },
+        "hat": {
+          "en": "hat is for one person (er, sie, es). ihr means several friends, so you need habt.",
+          "es": "hat es para una persona (er, sie, es). ihr significa varios amigos, así que necesitas habt."
+        }
+      },
+      "examples": [
+        "Habt ihr Pizza gegessen?",
+        "Ihr habt gut gespielt."
+      ],
+      "tr": {
+        "en": "You (all) learned a lot.",
+        "es": "Ustedes aprendieron mucho."
+      }
+    },
+    {
+      "id": "perfekt-haben-f12",
+      "kind": "form",
+      "verb": "Partizip II",
+      "person": "schreiben",
+      "answer": "geschrieben",
+      "table": "partizip-haben"
+    },
+    {
+      "id": "perfekt-haben-c13",
+      "sentence": "Letzte Woche habe ich viel ___.",
+      "options": [
+        "gearbeit",
+        "gearbeitet",
+        "arbeitet"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The stem arbeit- ends in -t, so the participle takes -et to stay pronounceable: gearbeitet.",
+        "es": "La raíz arbeit- termina en -t, así que el participio lleva -et para poder pronunciarse: gearbeitet."
+      },
+      "wrong": {
+        "gearbeit": {
+          "en": "gearbeit would end in a hard -t after t, which is hard to say. After a stem in -t, German adds -et.",
+          "es": "gearbeit terminaría en una -t dura después de t, difícil de pronunciar. Después de una raíz en -t, el alemán añade -et."
+        },
+        "arbeitet": {
+          "en": "arbeitet is the present tense (er arbeitet). The participle also needs ge-: gearbeitet.",
+          "es": "arbeitet es el presente (er arbeitet). El participio también necesita ge-: gearbeitet."
+        }
+      },
+      "examples": [
+        "Anna hat gestern gearbeitet.",
+        "Wir haben heute nicht gearbeitet."
+      ],
+      "tr": {
+        "en": "Last week I worked a lot.",
+        "es": "La semana pasada trabajé mucho."
+      }
+    },
+    {
+      "id": "perfekt-haben-c14",
+      "sentence": "Hast du schon die Hausaufgaben ___?",
+      "options": [
+        "machen",
+        "macht",
+        "gemacht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "machen is regular: ge- + stem + -t gives gemacht, and it stands at the end of the question.",
+        "es": "machen es regular: ge- + raíz + -t da gemacht, y va al final de la pregunta."
+      },
+      "wrong": {
+        "machen": {
+          "en": "machen is the infinitive. With haben in the Perfekt you need the participle, gemacht.",
+          "es": "machen es el infinitivo. Con haben en el Perfekt necesitas el participio, gemacht."
+        },
+        "macht": {
+          "en": "macht is the present tense (er macht, ihr macht). The participle needs ge-: gemacht.",
+          "es": "macht es el presente (er macht, ihr macht). El participio necesita ge-: gemacht."
+        }
+      },
+      "examples": [
+        "Ich habe die Hausaufgaben gemacht.",
+        "Was hast du gestern gemacht?"
+      ],
+      "tr": {
+        "en": "Have you already done your homework?",
+        "es": "¿Ya hiciste la tarea?"
+      }
+    },
+    {
+      "id": "perfekt-haben-w04",
+      "kind": "why",
+      "es": "Wir haben im Supermarkt eingekauft.",
+      "target": "eingekauft",
+      "tr": {
+        "en": "We shopped at the supermarket.",
+        "es": "Hicimos las compras en el supermercado."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ge- always goes first: geeinkauft",
+            "es": "ge- siempre va primero: geeinkauft"
+          },
+          "wrong": {
+            "en": "With separable verbs the prefix stays in front and ge- goes after it: ein + ge + kauft.",
+            "es": "Con los verbos separables el prefijo se queda delante y ge- va después: ein + ge + kauft."
+          }
+        },
+        {
+          "text": {
+            "en": "Separable verbs put ge- between the prefix and the stem",
+            "es": "Los verbos separables ponen ge- entre el prefijo y la raíz"
+          }
+        },
+        {
+          "text": {
+            "en": "No ge- at all, because ein- is a prefix",
+            "es": "Sin ge-, porque ein- es un prefijo"
+          },
+          "wrong": {
+            "en": "Only inseparable prefixes (be-, ver-) and the ending -ieren remove ge-. ein- is separable, so ge- stays, inside the verb.",
+            "es": "Solo los prefijos inseparables (be-, ver-) y la terminación -ieren quitan ge-. ein- es separable, así que ge- se queda, dentro del verbo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
