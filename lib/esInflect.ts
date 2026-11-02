@@ -3,9 +3,14 @@
 // `lib/knownSentence.ts` use the same rule without a circular import.
 
 const ACCENT_DROP: Record<string, string> = { á: 'a', é: 'e', í: 'i', ó: 'o', ú: 'u' };
+const ACCENT_ADD: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú' };
 
 // Plural: -s after a vowel, -ces after -z, after a stressed -ón/-án/-én/-ín/-és
-// ending the accent drops (canción → canciones), -es after any other consonant.
+// ending the accent drops (canción → canciones), -es after any other consonant. A stressed
+// -ás/-ís/-ús drops it too (autobús → autobuses), except after a vowel, where the accent keeps the
+// hiatus (país → países). A one-syllable word in -s takes -es (mes → meses). A word in -n without
+// a written accent is stressed on the syllable before the last, and the extra syllable of the plural
+// needs the accent there (joven → jóvenes, examen → exámenes).
 export function esPlural(word: string): string | null {
   if (/[aeiouáéíóú]$/.test(word)) return `${word}s`;
   if (word.endsWith('z')) return `${word.slice(0, -1)}ces`;
@@ -13,7 +18,19 @@ export function esPlural(word: string): string | null {
   if (/[óáéí]n$|és$/.test(word) && accented) {
     return `${accented[1]}${ACCENT_DROP[accented[2]]}${accented[3]}es`;
   }
-  if (word.endsWith('s')) return null; // lunes, crisis: unchanged
+  const stressedS = word.match(/^(.*)([áíóú])s$/);
+  if (stressedS) {
+    const hiatus = /[aeiou]$/.test(stressedS[1]) && /[íú]/.test(stressedS[2]);
+    return hiatus ? `${word}es` : `${stressedS[1]}${ACCENT_DROP[stressedS[2]]}ses`;
+  }
+  if (word.endsWith('s')) {
+    // lunes, crisis: unchanged
+    return (word.match(/[aeiouüáéíóú]+/g) ?? []).length === 1 ? `${word}es` : null;
+  }
+  const llana = word.match(/^(.*?)([aeiou])([^aeiou]+)([aeiou])n$/);
+  if (llana && !/[aeiouüáéíóú]$/.test(llana[1]) && !/[áéíóú]/.test(word)) {
+    return `${llana[1]}${ACCENT_ADD[llana[2]]}${llana[3]}${llana[4]}nes`;
+  }
   return `${word}es`;
 }
 

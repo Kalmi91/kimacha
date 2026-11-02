@@ -39,4 +39,13 @@ describe('detectStructures', () => {
     expect([...detectStructures('No creo que él sepa la verdad.')]).toContain('subjuntivo_presente');
     expect(detectStructures('Tengo varios libros sobre este tema.').has('subjuntivo_presente')).toBe(false);
   });
+
+  it('a sentence-initial "una" / "uno" is an article or numeral, not an imperative', () => {
+    // "una" is also the subjunctive of unir, which stands at the head of the clause like a command.
+    expect(detectStructures('Una manzana puede ser roja.').has('imperativo')).toBe(false);
+    expect(detectStructures('Y una manzana es roja.').has('imperativo')).toBe(false);
+    expect(detectStructures('No una manzana, dos.').has('imperativo')).toBe(false);
+    expect(detectStructures('Uno de ellos es rojo.').has('imperativo')).toBe(false);
+    expect([...detectStructures('No culpes a tu hermano.')]).toContain('imperativo');
+  });
 });

@@ -225,3 +225,81 @@ describe('knownSentence, Hungarian', () => {
     expect(unknownTokens('A fű kék.', 'hu', ctx)).toEqual(['kék']);
   });
 });
+
+describe('knownSentence, Spanish irregular verb forms', () => {
+  const ALL: ReadonlySet<ResolvedTense> = new Set<ResolvedTense>([
+    'presente',
+    'indefinido',
+    'imperfecto',
+    'futuro',
+    'condicional',
+    'subjuntivo_presente',
+    'subjuntivo_imperfecto',
+  ]);
+  const verb = (text: string) => ({ text, pos: 'verb' });
+  const known = (sentence: string, learned: Array<string | { text: string; pos: string }>, tenses: ReadonlySet<ResolvedTense> = ALL) =>
+    isSentenceKnown(sentence, 'es', { learned, tenses });
+
+  it('recognises the forms that stories failed on (stem changes, spelling, irregular stems)', () => {
+    expect(known('Envió una carta.', [verb('enviar'), 'la carta'])).toBe(true);
+    expect(known('Empezó la clase.', [verb('empezar'), 'la clase'])).toBe(true);
+    expect(known('Encontramos la casa.', [verb('encontrar'), 'la casa'])).toBe(true);
+    expect(known('Corregimos el libro.', [verb('corregir'), 'el libro'])).toBe(true);
+    expect(known('Pidieron la mesa.', [verb('pedir'), 'la mesa'])).toBe(true);
+    expect(known('Apareció la luna.', [verb('aparecer'), 'la luna'])).toBe(true);
+    expect(known('Mostré la casa.', [verb('mostrar'), 'la casa'])).toBe(true);
+    expect(known('Sintió la luna.', [verb('sentir'), 'la luna'])).toBe(true);
+    expect(known('Dormía en la casa y dormí en la mesa.', [verb('dormir'), 'la casa', 'la mesa'])).toBe(true);
+    expect(known('Volvimos a la casa.', [verb('volver'), 'la casa'])).toBe(true);
+    expect(known('Subí a la casa.', [verb('subir'), 'la casa'])).toBe(true);
+    expect(known('Jugó y jugaron en la casa.', [verb('jugar'), 'la casa'])).toBe(true);
+    expect(known('Pensaba en la casa.', [verb('pensar'), 'la casa'])).toBe(true);
+    expect(known('Hay una mesa.', [verb('haber'), 'la mesa'])).toBe(true);
+    expect(known('Tuve una mesa y hice la casa.', [verb('tener'), verb('hacer'), 'la mesa', 'la casa'])).toBe(true);
+    expect(known('Tuvieron la mesa y obtuvieron la casa.', [verb('tener'), verb('obtener'), 'la mesa', 'la casa'])).toBe(true);
+  });
+
+  it('keeps the tense gate: a form counts only in an unlocked tense', () => {
+    const learned = [verb('pedir'), 'la mesa'];
+    const presente: ReadonlySet<ResolvedTense> = new Set<ResolvedTense>(['presente']);
+    const withIndefinido: ReadonlySet<ResolvedTense> = new Set<ResolvedTense>(['presente', 'indefinido']);
+    expect(known('Pide la mesa.', learned, presente)).toBe(true);
+    expect(known('Pidió la mesa.', learned, presente)).toBe(false);
+    expect(known('Pidió la mesa.', learned, withIndefinido)).toBe(true);
+    expect(known('Pidiera la mesa.', learned, withIndefinido)).toBe(false);
+    expect(known('Pidiera la mesa.', learned, ALL)).toBe(true);
+    expect(known('Pide la mesa.', learned, new Set<ResolvedTense>())).toBe(false);
+  });
+
+  it('a form of a verb that is not learned stays unknown', () => {
+    expect(known('Dormí en la casa.', [verb('pedir'), 'la casa'])).toBe(false);
+  });
+
+  it('takes both words of "responder / contestar" and the base of a reflexive verb', () => {
+    expect(known('Respondí a la casa.', [verb('responder / contestar'), 'la casa'])).toBe(true);
+    expect(known('Contesté a la casa.', [verb('responder / contestar'), 'la casa'])).toBe(true);
+    expect(known('Me acuesto en la casa.', ['me', verb('acostarse'), 'la casa'])).toBe(true);
+    expect(known('Se bañó en la casa.', ['se', verb('bañarse'), 'la casa'])).toBe(true);
+  });
+
+  it('recognises an infinitive with an object pronoun attached (quedarme, verlo)', () => {
+    expect(known('Quiero quedarme en la casa.', [verb('querer'), verb('quedar'), 'la casa'])).toBe(true);
+    expect(known('Quiero verlo.', [verb('querer'), verb('ver')])).toBe(true);
+    expect(known('Quiero levantarme.', [verb('querer'), verb('levantarse')])).toBe(true);
+    expect(known('Quiero comprarlas.', [verb('querer'), verb('comprar')])).toBe(true);
+  });
+
+  it('recognises the verbs written with an accented -ír (oír, reír)', () => {
+    expect(known('Oí la luna y reí.', [verb('oír'), verb('reír'), 'la luna'])).toBe(true);
+  });
+
+  it('knows the plurals that need an accent or an extra syllable (jóvenes, meses, países)', () => {
+    expect(known('Los meses y los países.', ['el mes', 'el país'])).toBe(true);
+    expect(known('Los jóvenes y los exámenes.', [{ text: 'joven', pos: 'adj' }, 'el examen'])).toBe(true);
+  });
+
+  it('a sentence starting with "Una" is not an imperative', () => {
+    expect(known('Una mesa.', ['la mesa'])).toBe(true);
+    expect(known('Y una mesa.', ['la mesa'])).toBe(true);
+  });
+});
