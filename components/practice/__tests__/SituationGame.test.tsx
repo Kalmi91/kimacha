@@ -94,11 +94,11 @@ describe('Situations: words, structures', () => {
     expect(view.getByTestId('situations-screen')).toBeTruthy();
     expect(view.getByTestId('situations-card-word').props.children).toBe('tener');
     expect(view.getByText('to have')).toBeTruthy();
-    expect(view.getByText('1/15')).toBeTruthy();
+    expect(view.getByText('1/13')).toBeTruthy();
     expect(view.getByLabelText(t().feedback.button)).toBeTruthy();
     fireEvent.press(view.getByTestId('situations-speak'));
     expect(mockSpeak).toHaveBeenCalledWith('tener', 'es-MX');
-    for (let i = 0; i < 15; i++) await press(view, 'situations-next');
+    for (let i = 0; i < 13; i++) await press(view, 'situations-next');
     expect(view.getByTestId('situations-card-pattern').props.children).toBe('Tengo + number + noun');
     expect(view.getByText('I have + number + noun: what you have.')).toBeTruthy();
     expect(view.getByText('1/3')).toBeTruthy();
