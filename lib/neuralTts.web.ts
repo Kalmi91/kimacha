@@ -1,17 +1,7 @@
 // Web twin of lib/neuralTts.ts: the web build keeps the browser's own speech, so
 // nothing is ever "ready" here and the native package is never bundled.
 
-export type NeuralLang = 'es' | 'en' | 'hu';
-export type NeuralModelKey = 'kokoro' | 'berta' | 'imre';
-export type NeuralModelDirs = Partial<Record<NeuralModelKey, string>>;
-
-export interface NeuralVoice {
-  id: string;
-  model: NeuralModelKey;
-  sid: number;
-}
-
-export const NEURAL_VOICES: Record<NeuralLang, NeuralVoice[]> = { es: [], en: [], hu: [] };
+import type { NeuralEngine, NeuralLang, NeuralVoice } from './neuralVoices';
 
 export interface NeuralSpeakOptions {
   rate?: number;
@@ -26,30 +16,28 @@ export interface NeuralTimings {
   peak: number;
 }
 
-export function isNeuralReady(_lang: NeuralLang): boolean {
+export function isNeuralReady(_lang: NeuralLang, _engine: NeuralEngine): boolean {
   return false;
 }
 
-export function hasNeuralVoice(_lang: NeuralLang, _voiceId: string): boolean {
-  return false;
-}
-
-export async function initNeural(
-  _modelDirs: NeuralModelDirs,
+export async function loadNeuralVoice(
+  _voice: NeuralVoice,
+  _lang: NeuralLang,
+  _modelDir: string,
   _options: { numThreads?: number; debug?: boolean } = {},
-): Promise<Partial<Record<NeuralModelKey, number>>> {
-  return {};
+): Promise<number> {
+  return 0;
 }
+
+export async function releaseNeural(): Promise<void> {}
 
 export function stopNeural(): void {}
 
 export async function speakNeural(
   _text: string,
   _lang: NeuralLang,
-  _voiceId: string,
+  _voice: NeuralVoice,
   _options: NeuralSpeakOptions = {},
 ): Promise<NeuralTimings> {
   throw new Error('neural speech is not available on web');
 }
-
-export async function runNeuralSelfTest(): Promise<void> {}

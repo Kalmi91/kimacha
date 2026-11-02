@@ -1,45 +1,18 @@
-// On-device neural speech (react-native-sherpa-onnx, sherpa-onnx under the hood).
-// Native only: lib/neuralTts.web.ts is the no-op twin Metro picks for the web build.
+// On-device neural speech (react-native-sherpa-onnx, sherpa-onnx under the hood): Piper (VITS) and Kokoro
+// voices for es, en and hu. Native only: lib/neuralTts.web.ts is the no-op twin Metro picks for the web
+// build. The voice tables, the hash and the engine choice live in lib/neuralVoices.ts; the downloads in
+// lib/neuralModels.ts; lib/speech.ts decides which level (word pack, this engine, the phone) speaks.
 //
-// Voices (two per language, the caller alternates between them):
-//   es  Kokoro em_alex, ef_dora        en  Kokoro af_heart, am_michael
-//   hu  Piper hu_HU-berta-medium, hu_HU-imre-medium (two separate single-speaker models)
+// One engine per model, except Kokoro: its language is part of the engine config (scripts/patch-sherpa-onnx.mjs
+// hands it to the native side through the modelType string, "kokoro@es-419"), so the Spanish and the English
+// Kokoro are two engines over the same model folder. The Piper models have one speaker, sid 0.
 //
-// Kokoro speaker ids come from the model's own ONNX metadata (`speaker2id` of
-// kokoro-int8-multi-lang-v1_0/model.int8.onnx, 54 voices, 24 kHz):
-//   af_heart=3  am_michael=16  ef_dora=28  em_alex=29  (em_santa=53, added last)
-// The Piper models have one speaker, sid 0.
-//
-// The package is loaded lazily (dynamic import inside the functions), so merely
-// importing this file, e.g. from a jest test, never touches the native module.
+// The package is loaded lazily (a require inside the function), so merely importing this file, e.g.
+// from a jest test, never touches the native module.
 
 import { Platform } from 'react-native';
 import type { StreamingTtsEngine, TtsStreamController } from 'react-native-sherpa-onnx/tts';
-
-export type NeuralLang = 'es' | 'en' | 'hu';
-export type NeuralModelKey = 'kokoro' | 'berta' | 'imre';
-export type NeuralModelDirs = Partial<Record<NeuralModelKey, string>>;
-
-export interface NeuralVoice {
-  id: string;
-  model: NeuralModelKey;
-  sid: number;
-}
-
-export const NEURAL_VOICES: Record<NeuralLang, NeuralVoice[]> = {
-  es: [
-    { id: 'em_alex', model: 'kokoro', sid: 29 },
-    { id: 'ef_dora', model: 'kokoro', sid: 28 },
-  ],
-  en: [
-    { id: 'af_heart', model: 'kokoro', sid: 3 },
-    { id: 'am_michael', model: 'kokoro', sid: 16 },
-  ],
-  hu: [
-    { id: 'berta', model: 'berta', sid: 0 },
-    { id: 'imre', model: 'imre', sid: 0 },
-  ],
-};
+import { KOKORO_LANG_TAG, voicePair, type NeuralEngine, type NeuralLang, type NeuralVoice } from './neuralVoices';
 
 export interface NeuralSpeakOptions {
   /** Speech speed multiplier of the engine (1 = normal). */
@@ -59,8 +32,9 @@ export interface NeuralTimings {
 // audio still sitting in the track buffer has not been heard yet.
 const PCM_TAIL_MS = 400;
 
-const engines: Partial<Record<NeuralModelKey, StreamingTtsEngine>> = {};
-const sampleRates: Partial<Record<NeuralModelKey, number>> = {};
+const engines = new Map<string, StreamingTtsEngine>();
+const sampleRates = new Map<string, number>();
+const loading = new Map<string, Promise<number>>();
 
 interface ActiveRun {
   engine: StreamingTtsEngine;
@@ -78,39 +52,64 @@ function isSupported(): boolean {
   return Platform.OS === 'android';
 }
 
-export function isNeuralReady(lang: NeuralLang): boolean {
-  return NEURAL_VOICES[lang].some(v => engines[v.model] !== undefined);
+// One engine per model; the Kokoro engines also per language.
+function engineKey(voice: NeuralVoice, lang: NeuralLang): string {
+  return voice.engine === 'kokoro' ? `kokoro:${lang}` : voice.model;
 }
 
-export function hasNeuralVoice(lang: NeuralLang, voiceId: string): boolean {
-  const voice = NEURAL_VOICES[lang].find(v => v.id === voiceId);
-  return !!voice && engines[voice.model] !== undefined;
+// Both voices of the pair are loaded: the pair alternates, so half of the words would otherwise fall back.
+export function isNeuralReady(lang: NeuralLang, engine: NeuralEngine): boolean {
+  return voicePair(lang, engine).every(voice => engines.has(engineKey(voice, lang)));
 }
 
-// Loads the models whose directory is given. Returns the load time per model.
-export async function initNeural(
-  modelDirs: NeuralModelDirs,
+// Loads the engine of one voice from its model folder (a no-op when it is loaded already). Resolves with
+// the load time in ms; rejects when the folder is not a usable model, which leaves the voice not ready.
+export function loadNeuralVoice(
+  voice: NeuralVoice,
+  lang: NeuralLang,
+  modelDir: string,
   options: { numThreads?: number; debug?: boolean } = {},
-): Promise<Partial<Record<NeuralModelKey, number>>> {
-  const loadMs: Partial<Record<NeuralModelKey, number>> = {};
-  if (!isSupported()) return loadMs;
-  const { createStreamingTTS } = await import('react-native-sherpa-onnx/tts');
-  for (const key of Object.keys(modelDirs) as NeuralModelKey[]) {
-    const dir = modelDirs[key];
-    if (!dir || engines[key]) continue;
+): Promise<number> {
+  if (!isSupported()) return Promise.resolve(0);
+  const key = engineKey(voice, lang);
+  if (engines.has(key)) return Promise.resolve(0);
+  const pending = loading.get(key);
+  if (pending) return pending;
+  const run = (async () => {
+    const { createStreamingTTS } = require('react-native-sherpa-onnx/tts') as typeof import('react-native-sherpa-onnx/tts');
     const t0 = now();
     const engine = await createStreamingTTS({
-      modelPath: { type: 'file', path: dir },
-      modelType: key === 'kokoro' ? 'kokoro' : 'vits',
+      modelPath: { type: 'file', path: modelDir },
+      // "kokoro@es-419": the language rides on the type string (see scripts/patch-sherpa-onnx.mjs)
+      modelType: (voice.engine === 'kokoro' ? `kokoro@${KOKORO_LANG_TAG[lang as 'es' | 'en']}` : 'vits') as 'kokoro',
       numThreads: options.numThreads ?? 2,
       debug: options.debug ?? false,
     });
-    sampleRates[key] = await engine.getSampleRate();
-    engines[key] = engine;
-    loadMs[key] = now() - t0;
-    console.log(`[neural] loaded ${key} in ${loadMs[key]} ms (sampleRate ${sampleRates[key]})`);
+    sampleRates.set(key, await engine.getSampleRate());
+    engines.set(key, engine);
+    const loadMs = now() - t0;
+    console.log(`[neural] loaded ${key} in ${loadMs} ms (sampleRate ${sampleRates.get(key)})`);
+    return loadMs;
+  })().finally(() => {
+    loading.delete(key);
+  });
+  loading.set(key, run);
+  return run;
+}
+
+// Frees the engines (Settings switched the better voice off, or deleted the models).
+export async function releaseNeural(): Promise<void> {
+  stopNeural();
+  const all = [...engines.values()];
+  engines.clear();
+  sampleRates.clear();
+  for (const engine of all) {
+    try {
+      await engine.destroy();
+    } catch {
+      // already gone
+    }
   }
-  return loadMs;
 }
 
 async function stopActive(): Promise<void> {
@@ -144,13 +143,13 @@ export function stopNeural(): void {
 export async function speakNeural(
   text: string,
   lang: NeuralLang,
-  voiceId: string,
+  voice: NeuralVoice,
   options: NeuralSpeakOptions = {},
 ): Promise<NeuralTimings> {
-  const voice = NEURAL_VOICES[lang].find(v => v.id === voiceId);
-  const engine = voice ? engines[voice.model] : undefined;
-  const sampleRate = voice ? sampleRates[voice.model] : undefined;
-  if (!voice || !engine || !sampleRate) throw new Error(`neural voice not ready: ${lang}/${voiceId}`);
+  const key = engineKey(voice, lang);
+  const engine = engines.get(key);
+  const sampleRate = sampleRates.get(key);
+  if (!engine || !sampleRate) throw new Error(`neural voice not ready: ${lang}/${voice.id}`);
 
   runCounter += 1;
   const myRun = runCounter;
@@ -198,7 +197,7 @@ export async function speakNeural(
             const generatedMs = now() - t0;
             const audioMs = Math.round((samplesTotal / sampleRate) * 1000);
             const timings: NeuralTimings = { firstChunkMs, generatedMs, audioMs, peak: Math.round(peak * 1000) / 1000 };
-            console.log(`[neural] ${lang}/${voiceId} first=${firstChunkMs} gen=${generatedMs} audio=${audioMs} peak=${timings.peak} "${text.slice(0, 40)}"`);
+            console.log(`[neural] ${lang}/${voice.id} first=${firstChunkMs} gen=${generatedMs} audio=${audioMs} peak=${timings.peak} "${text.slice(0, 40)}"`);
             resolve(timings);
             writeChain
               .then(() => {
@@ -221,34 +220,4 @@ export async function speakNeural(
       })
       .catch(fail);
   });
-}
-
-// Spike only: speaks one word card and one 10-word sentence per voice in turn and
-// logs the timings ("[neural] ..."), so a device run needs no tapping.
-const SELFTEST_CASES: [NeuralLang, string, string][] = [
-  ['es', 'em_alex', 'el perro'],
-  ['es', 'em_alex', 'Mañana por la tarde vamos a visitar a mis abuelos.'],
-  ['es', 'ef_dora', 'Mañana por la tarde vamos a visitar a mis abuelos.'],
-  ['en', 'af_heart', 'the dog'],
-  ['en', 'af_heart', 'Tomorrow afternoon we are going to visit my old grandparents.'],
-  ['en', 'am_michael', 'Tomorrow afternoon we are going to visit my old grandparents.'],
-  ['hu', 'berta', 'a kutya'],
-  ['hu', 'berta', 'Holnap délután meglátogatjuk a nagyszüleimet a régi faluban, ahol születtem.'],
-  ['hu', 'imre', 'Holnap délután meglátogatjuk a nagyszüleimet a régi faluban, ahol születtem.'],
-];
-
-export async function runNeuralSelfTest(): Promise<void> {
-  for (const [lang, voiceId, text] of SELFTEST_CASES) {
-    if (!hasNeuralVoice(lang, voiceId)) {
-      console.log(`[neural] selftest skip ${lang}/${voiceId} (not loaded)`);
-      continue;
-    }
-    await new Promise<void>(resolve => {
-      speakNeural(text, lang, voiceId, { onDone: resolve, onStopped: resolve }).catch(err => {
-        console.log(`[neural] selftest FAIL ${lang}/${voiceId}: ${String(err)}`);
-        resolve();
-      });
-    });
-  }
-  console.log('[neural] selftest done');
 }
