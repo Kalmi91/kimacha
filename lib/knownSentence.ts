@@ -5,6 +5,7 @@
 // preposition, conjunction). A pure module: no database, no corpus import.
 
 import { esFeminine, esPlural } from '@/lib/esInflect';
+import { irregularForms, type IrregularTense } from '@/lib/esIrregularForms';
 import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
 import { detectStructures, tokenize, type Structure } from '@/lib/grammar/tenseGate';
 import type { Sm2Card } from '@/lib/sm2';
@@ -56,15 +57,13 @@ const UNMODELED_STRUCTURES: ReadonlySet<Structure> = new Set<Structure>([
 ]);
 
 // `ir` is the one infinitive without a letter before the ending.
-const ES_INFINITIVE = /^(?:[a-záéíóúñü]+(?:ar|er|ir)|ir)$/;
+const ES_INFINITIVE = /^(?:[a-záéíóúñü]+(?:ar|er|ir|ír)|ir)$/;
 
-// Stem-changing verbs that `conjugate` refuses on purpose (it only teaches forms it is sure of).
-// Their presente is short and exact, so the gate lists it here, for the presente only.
-const STEM_CHANGE_PRESENTE: Record<string, string[]> = {
-  pedir: ['pido', 'pides', 'pide', 'pedimos', 'piden'],
-  jugar: ['juego', 'juegas', 'juega', 'jugamos', 'juegan'],
-  llover: ['llueve'], // impersonal: no other person
-};
+// The verbs `conjugate` refuses on purpose (it only teaches forms it is sure of) are recognised by
+// `lib/esIrregularForms.ts`, tense by tense, so the same unlock gate applies to them.
+const IRREGULAR_TENSES: IrregularTense[] = [...TENSES, 'subjuntivo_imperfecto'];
+// An infinitive takes the object pronouns (quedarme, verlo): not a conjugated form, so no tense gate.
+const CLITICS = ['me', 'te', 'se', 'nos', 'lo', 'la', 'los', 'las', 'le', 'les'];
 const ACCENT_ADD: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú' };
 
 /**
@@ -141,6 +140,19 @@ function subjuntivoImperfecto(infinitive: string): string[] | null {
   return [`${base}ra`, `${base}ras`, `${base}ra`, `${accented}ramos`, `${base}ran`];
 }
 
+// The infinitives a dictionary entry stands for: every alternative of "volver / regresar", and a
+// reflexive one ("acostarse") by its base verb (me acuesto, se baña).
+function esInfinitives(text: string): string[] {
+  const out: string[] = [];
+  for (const alt of text.split(' / ')) {
+    const trimmed = alt.trim();
+    const reflexive = trimmed.match(/^(.+r)se$/);
+    const inf = reflexive ? reflexive[1] : trimmed;
+    if (ES_INFINITIVE.test(inf)) out.push(inf);
+  }
+  return out;
+}
+
 function addSpanish(known: Set<string>, entry: LearnedEntry, tenses: ReadonlySet<ResolvedTense>) {
   const text = entry.text.trim().toLowerCase();
   const isVerb = entry.pos === undefined || entry.pos === 'verb';
@@ -159,17 +171,20 @@ function addSpanish(known: Set<string>, entry: LearnedEntry, tenses: ReadonlySet
       }
     }
   }
-  if (isVerb && ES_INFINITIVE.test(text)) {
+  if (!isVerb) return;
+  for (const inf of esInfinitives(text)) {
     for (const tense of TENSES) {
       if (!tenses.has(tense)) continue;
-      for (const f of conjugate(text, tense) ?? []) known.add(f.form);
+      for (const f of conjugate(inf, tense) ?? []) known.add(f.form);
     }
-    if (tenses.has('presente')) {
-      for (const form of STEM_CHANGE_PRESENTE[text] ?? []) known.add(form);
+    for (const tense of IRREGULAR_TENSES) {
+      if (!tenses.has(tense)) continue;
+      for (const form of irregularForms(inf, tense)) known.add(form);
     }
     if (tenses.has('subjuntivo_imperfecto')) {
-      for (const form of subjuntivoImperfecto(text) ?? []) known.add(form);
+      for (const form of subjuntivoImperfecto(inf) ?? []) known.add(form);
     }
+    for (const clitic of CLITICS) known.add(`${inf}${clitic}`);
   }
 }
 

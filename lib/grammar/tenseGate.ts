@@ -75,6 +75,8 @@ const SUBJUNCTIVE_TRIGGERS = new Set([
   'para', 'como', 'donde', 'dónde', 'tal',
 ]);
 
+const ARTICLE_NOT_COMMAND = new Set(['una', 'uno']);
+
 /** Imperative position: start of a clause, after a prohibition, or with an attached pronoun. */
 function isCommandPosition(tokens: string[], i: number): boolean {
   if (/(?:me|te|se|nos|le|les|lo|la|los|las)$/.test(tokens[i]) && tokens[i].length > 5) return true;
@@ -205,6 +207,8 @@ export function detectStructures(sentence: string): Set<Structure> {
     // that of the subjunctive subordinate clause (B1). We take it as an imperative if it
     // stands at the head of the clause, if a prohibition word precedes it, or if a pronoun is attached.
     if (structure === 'subjuntivo_presente') {
+      // "Una casa", "Uno de ellos": the article / numeral (una is also the subjunctive of unir), never a command.
+      if (ARTICLE_NOT_COMMAND.has(token)) return;
       if (isCommandPosition(tokens, i)) {
         found.add('imperativo');
         return;
