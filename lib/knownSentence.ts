@@ -29,13 +29,55 @@ interface KnownContext {
   tenses?: ReadonlySet<ResolvedTense>;
 }
 
+// Closed word classes (2026-11-02): determiners, pronouns, prepositions, conjunctions, modal verbs and
+// the degree words take no new members and carry no content of their own, so a sentence is not blocked by
+// them. Each class is listed with ALL its forms (gender, number, case). A content word never goes here
+// (noun, verb, adjective, -mente/-ly adverb: those are learned one by one), and neither does a word the
+// app leaves out on purpose (Spanish vosotros, see lib/grammar/vosotros.ts).
+const ES_CLOSED_CLASS = [
+  // demonstratives
+  'este', 'esta', 'estos', 'estas', 'esto', 'ese', 'esa', 'esos', 'esas', 'eso',
+  'aquel', 'aquella', 'aquellos', 'aquellas', 'aquello',
+  // possessives, before the noun and after it
+  'mi', 'mis', 'tu', 'tus', 'su', 'sus', 'nuestro', 'nuestra', 'nuestros', 'nuestras',
+  'mío', 'mía', 'míos', 'mías', 'tuyo', 'tuya', 'tuyos', 'tuyas', 'suyo', 'suya', 'suyos', 'suyas',
+  // indefinite and quantifying determiners (algún / ningún are the short forms of alguno / ninguno)
+  'mucho', 'mucha', 'muchos', 'muchas', 'poco', 'poca', 'pocos', 'pocas',
+  'todo', 'toda', 'todos', 'todas', 'otro', 'otra', 'otros', 'otras', 'varios', 'varias', 'cada',
+  'alguno', 'alguna', 'algunos', 'algunas', 'algún', 'ninguno', 'ninguna', 'ningunos', 'ningunas', 'ningún',
+  // personal and object pronouns
+  'yo', 'tú', 'él', 'ella', 'nosotros', 'nosotras', 'ellos', 'ellas', 'usted', 'ustedes',
+  'me', 'te', 'se', 'nos', 'lo', 'le', 'les', 'mí', 'ti', 'conmigo', 'contigo',
+  // conjunctions, prepositions, degree words
+  'pero', 'si', 'porque', 'cuando', 'como', 'e', 'u', 'ni', 'aunque', 'mientras',
+  'sin', 'sobre', 'entre', 'hasta', 'desde', 'hacia', 'según', 'contra', 'durante',
+  'muy', 'más', 'menos', 'tan',
+];
+const EN_CLOSED_CLASS = [
+  // personal, object and possessive pronouns
+  'i', 'you', 'he', 'she', 'it', 'we', 'they', 'me', 'him', 'her', 'us', 'them',
+  'my', 'your', 'his', 'its', 'our', 'their', 'mine', 'yours', 'hers', 'ours', 'theirs',
+  'myself', 'yourself', 'himself', 'herself', 'itself', 'ourselves', 'yourselves', 'themselves',
+  // determiners
+  'this', 'that', 'these', 'those', 'some', 'any', 'no', 'every', 'each', 'all', 'both',
+  'many', 'much', 'few', 'other', 'another',
+  // prepositions
+  'at', 'by', 'for', 'from', 'with', 'without', 'about', 'after', 'before', 'between', 'into',
+  'over', 'under', 'through', 'during', 'until', 'up', 'down', 'out', 'off', 'against',
+  // conjunctions, modal verbs, degree words
+  'but', 'if', 'because', 'so', 'when', 'while', 'than', 'as', 'although', 'though',
+  'will', 'would', 'can', 'could', 'shall', 'should', 'may', 'might', 'must',
+  'not', 'very', 'too', 'also',
+];
+
 // Free words: contain no verb, the learner does not have to learn them separately.
 const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
   es: new Set([
     'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas',
     'de', 'del', 'al', 'a', 'en', 'y', 'o', 'que', 'no', 'con', 'por', 'para',
+    ...ES_CLOSED_CLASS,
   ]),
-  en: new Set(['the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or']),
+  en: new Set(['the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or', ...EN_CLOSED_CLASS]),
   hu: new Set(['a', 'az', 'egy', 'és', 'is', 'de', 'vagy', 'hogy', 'nem', 'meg', 'el', 'ki', 'be']),
 };
 
@@ -58,6 +100,8 @@ const IRREGULAR_TENSES: IrregularTense[] = [...TENSES, 'subjuntivo_imperfecto'];
 // An infinitive takes the object pronouns (quedarme, verlo): not a conjugated form, so no tense gate.
 const CLITICS = ['me', 'te', 'se', 'nos', 'lo', 'la', 'los', 'las', 'le', 'les'];
 const ACCENT_ADD: Record<string, string> = { a: 'á', e: 'é', i: 'í', o: 'ó', u: 'ú' };
+// The short form an adjective takes before a noun (un buen día, el primer día); alguno / ninguno are free words.
+const ES_APOCOPE = new Map([['bueno', 'buen'], ['malo', 'mal'], ['grande', 'gran'], ['primero', 'primer'], ['tercero', 'tercer']]);
 
 /**
  * Whether a card is "learned": it has been answered correctly at least once (it reached the
@@ -162,6 +206,8 @@ function addSpanish(known: Set<string>, entry: LearnedEntry, tenses: ReadonlySet
         const femPlural = esPlural(fem);
         if (femPlural) known.add(femPlural);
       }
+      const short = ES_APOCOPE.get(token);
+      if (short) known.add(short);
     }
   }
   if (!isVerb) return;
@@ -235,10 +281,22 @@ export function sentenceTokens(sentence: string, lang: KnownLang): string[] {
   return lang === 'es' ? tokenize(sentence) : enTokenize(sentence);
 }
 
+// An English contraction is its stem + a clitic ("it's" = it + 's, "don't" = do + n't): known when the stem is
+// (the clitics are one closed class). can't / won't / shan't do not strip cleanly, so they name their stem.
+const EN_CLITIC = /^(.+?)(?:'s|'ll|'re|'ve|'d|'m|n't)$/;
+const EN_NT_STEM = new Map([["can't", 'can'], ["won't", 'will'], ["shan't", 'shall']]);
+
+function isKnownToken(token: string, lang: KnownLang, known: ReadonlySet<string>): boolean {
+  if (known.has(token)) return true;
+  if (lang !== 'en') return false;
+  const stem = EN_NT_STEM.get(token) ?? EN_CLITIC.exec(token)?.[1];
+  return stem !== undefined && known.has(stem);
+}
+
 /** The tokens of the sentence that the gate does not accept. Empty = every word is known. */
 export function unknownTokens(sentence: string, lang: KnownLang, ctx: KnownContext): string[] {
   const known = knownTokens(lang, ctx);
-  return sentenceTokens(sentence, lang).filter((token) => !known.has(token));
+  return sentenceTokens(sentence, lang).filter((token) => !isKnownToken(token, lang, known));
 }
 
 /**
@@ -252,7 +310,7 @@ export function isSentenceKnownIn(sentence: string, lang: KnownLang, known: Read
       if (UNMODELED_STRUCTURES.has(structure)) return false;
     }
   }
-  return sentenceTokens(sentence, lang).every((token) => known.has(token));
+  return sentenceTokens(sentence, lang).every((token) => isKnownToken(token, lang, known));
 }
 
 /**

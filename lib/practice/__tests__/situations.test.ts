@@ -110,10 +110,10 @@ describe('situationsFor, the gate, the unknown words', () => {
     expect(isSituationOpen(odd, new Set(['perro']))).toBe(true);
   });
 
-  it('the Words step lists the words whose forms are all unknown (free words like un, y, en, no are known)', () => {
+  it('the Words step lists the words whose forms are all unknown (free words like un, y, en, no, tu, mi are known)', () => {
     const none = unknownWords(family, NOTHING).map((w) => w.es);
-    expect(none).toHaveLength(family.words.length - 4);
-    for (const free of ['un', 'y', 'en', 'no']) expect(none).not.toContain(free);
+    expect(none).toHaveLength(family.words.length - 6);
+    for (const free of ['un', 'y', 'en', 'no', 'tu', 'mi']) expect(none).not.toContain(free);
     const some = unknownWords(family, knownTokens('es', { learned: ['hermano', 'sí'] })).map((w) => w.es);
     expect(some).not.toContain('hermano');
     expect(some).not.toContain('sí');
@@ -153,7 +153,7 @@ describe('the word bank and the trap tiles', () => {
 describe('the run', () => {
   it('goes through words, structures, fill in, build, say it, questions, summary; the Words step is skipped with nothing to learn', () => {
     const fresh = startSituation(family, NOTHING, 1);
-    expect(fresh.words).toHaveLength(15);
+    expect(fresh.words).toHaveLength(13);
     expect(situationSteps(fresh, family)).toEqual(['words', 'patterns', 'fill', 'build', 'say', 'questions', 'summary']);
     expect(fresh).toMatchObject({ step: 'words', index: 0, wrong: 0, done: false, scores: { fill: 0, build: 0, say: 0, questions: 0 } });
     const known = startSituation(family, EVERYTHING, 1);

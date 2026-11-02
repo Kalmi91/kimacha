@@ -45,6 +45,30 @@ describe('isSentenceKnown (Spanish)', () => {
     expect(isSentenceKnown('El de la, y no.', 'es', { learned: [] })).toBe(true);
   });
 
+  it.each([
+    ['demonstratives', 'Esta casa, esos libros, eso y aquellas casas.'],
+    ['possessives', 'Mi casa, tus libros, su casa, la nuestra y los míos.'],
+    ['quantifiers', 'Muchas casas, pocos libros, toda la casa, otra casa, varios libros, cada casa, algún libro y ningún libro.'],
+    ['pronouns', 'Yo, tú, él, ella, nosotros, ellos, usted, me, te, se, nos, lo, le, mí, ti, conmigo y contigo.'],
+    ['conjunctions and prepositions', 'Pero si la casa, porque sin ella, hasta el libro, e incluso según él, mientras.'],
+    ['degree words', 'Muy más menos tan.'],
+  ])('lets the closed class through with nothing but the nouns learned (%s)', (_name, sentence) => {
+    const ctx = { learned: ['la casa', 'el libro', 'incluso'] };
+    expect(unknownTokens(sentence, 'es', ctx)).toEqual([]);
+    expect(isSentenceKnown(sentence, 'es', ctx)).toBe(true);
+  });
+
+  it('still blocks the content words around the closed class (noun, verb, adjective, -mente adverb)', () => {
+    const ctx = { learned: ['la casa'] };
+    expect(unknownTokens('Esta casa tiene un jardín muy bonito y rápidamente.', 'es', ctx)).toEqual([
+      'tiene',
+      'jardín',
+      'bonito',
+      'rápidamente',
+    ]);
+    expect(unknownTokens('Vosotros y vuestros libros.', 'es', ctx)).toEqual(['vosotros', 'vuestros', 'libros']);
+  });
+
   it('ignores case and Spanish punctuation', () => {
     expect(isSentenceKnown('¿EL LIBRO?', 'es', { learned: ['el libro'] })).toBe(true);
   });
@@ -171,6 +195,34 @@ describe('isSentenceKnown (English)', () => {
 
   it('handles an apostrophe and mixed case', () => {
     expect(isSentenceKnown("It's the DOG.", 'en', { learned: ["it's", 'dog'] })).toBe(true);
+  });
+
+  it.each([
+    ['pronouns', 'I and you, he and she, we and they, me, him, us, them, my dog, your dog, his dog, its dog, ours, myself.'],
+    ['determiners', 'This dog, those dogs, some dogs, any dog, no dog, every dog, each dog, all dogs, both dogs, many dogs, few dogs, another dog.'],
+    ['prepositions', 'At the dog, by the dog, from a dog, with a dog, without a dog, about a dog, between dogs, through the dog, up, down, out, off.'],
+    ['conjunctions', 'A dog but not a dog, if a dog, because a dog, so a dog, when a dog, while a dog, than a dog, as a dog, though a dog.'],
+    ['modals and degree words', 'Will, would, can, could, shall, should, may, might, must, not, very, too, also a dog.'],
+  ])('lets the closed class through with only the noun learned (%s)', (_name, sentence) => {
+    const ctx = { learned: ['dog'] };
+    expect(unknownTokens(sentence, 'en', ctx)).toEqual([]);
+    expect(isSentenceKnown(sentence, 'en', ctx)).toBe(true);
+  });
+
+  it('still blocks the content words around the closed class', () => {
+    expect(unknownTokens('She and I will see them at home.', 'en', { learned: [] })).toEqual(['see', 'home']);
+    expect(unknownTokens('He is very happy.', 'en', { learned: ['to be'] })).toEqual(['happy']);
+  });
+
+  it('reads a contraction as its stem + clitic, known when the stem is', () => {
+    // pronouns and modals are free words
+    expect(isSentenceKnown("I'm, it's, we're, they've, you'll, she'd, he's. I can't and we won't.", 'en', { learned: [] })).toBe(true);
+    // a learned word's own clitic forms: don't / isn't need do / be
+    expect(isSentenceKnown("I don't, it isn't, he doesn't, we weren't.", 'en', { learned: ['to do', 'to be'] })).toBe(true);
+    expect(unknownTokens("I don't know.", 'en', { learned: ['to know'] })).toEqual(["don't"]);
+    expect(isSentenceKnown("The dog's bone.", 'en', { learned: ['dog', 'bone'] })).toBe(true);
+    expect(unknownTokens("The cat's dog.", 'en', { learned: ['dog'] })).toEqual(["cat's"]);
+    expect(unknownTokens("Ain't it, o'clock.", 'en', { learned: [] })).toEqual(["ain't", "o'clock"]);
   });
 
   it('does not use the Spanish structure guard', () => {
@@ -340,6 +392,18 @@ describe('knownSentence, Spanish irregular verb forms', () => {
   it('knows the plurals that need an accent or an extra syllable (jóvenes, meses, países)', () => {
     expect(known('Los meses y los países.', ['el mes', 'el país'])).toBe(true);
     expect(known('Los jóvenes y los exámenes.', [{ text: 'joven', pos: 'adj' }, 'el examen'])).toBe(true);
+  });
+
+  it('gives an adjective its short form before a noun (buen, mal, gran, primer, tercer)', () => {
+    const adj = (text: string) => ({ text, pos: 'adj' });
+    expect(known('Un buen día, un mal día, un gran día.', [adj('bueno'), adj('malo'), adj('grande'), 'el día'])).toBe(true);
+    expect(known('El primer día y el tercer día.', [adj('primero'), adj('tercero'), 'el día'])).toBe(true);
+  });
+
+  it('gives the short form only when the full adjective is learned', () => {
+    expect(known('Un buen día.', ['el día'])).toBe(false);
+    expect(known('Un buen día.', [{ text: 'malo', pos: 'adj' }, 'el día'])).toBe(false);
+    expect(known('Un gran día.', [{ text: 'grande', pos: 'noun' }, 'el día'])).toBe(false);
   });
 
   it('a sentence starting with "Una" is not an imperative', () => {
