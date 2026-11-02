@@ -77,6 +77,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   'muy-mucho': 'exam',
   'numeros-hora-fecha': 'core',
   'preposiciones-basicas': 'core',
+  'lugar-direcciones': 'core',
   // --- A2 ---
   'indefinido-regular': 'core-plus',
   'indefinido-irregular': 'core-plus',

@@ -27,6 +27,7 @@ export const ES_GRAMMAR_HU: Record<string, () => Record<string, string>> = {
   'muy-mucho': () => require('@/data/games/grammar-hu/es/muy-mucho.json'),
   'numeros-hora-fecha': () => require('@/data/games/grammar-hu/es/numeros-hora-fecha.json'),
   'preposiciones-basicas': () => require('@/data/games/grammar-hu/es/preposiciones-basicas.json'),
+  'lugar-direcciones': () => require('@/data/games/grammar-hu/es/lugar-direcciones.json'),
   'indefinido-regular': () => require('@/data/games/grammar-hu/es/indefinido-regular.json'),
   'indefinido-irregular': () => require('@/data/games/grammar-hu/es/indefinido-irregular.json'),
   'indefinido-10-verbos': () => require('@/data/games/grammar-hu/es/indefinido-10-verbos.json'),

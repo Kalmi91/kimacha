@@ -1,0 +1,859 @@
+{
+  "schema": 2,
+  "topic": "lugar-direcciones",
+  "level": "A1",
+  "title": {
+    "en": "Where is it: encima, detrás, enfrente, right, left",
+    "es": "¿Dónde está?: encima, detrás, enfrente, derecha, izquierda"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "To say where something is, Spanish uses estar plus a place phrase: El libro está encima de la mesa. Almost every place phrase ends in de, and de joins the noun that follows: encima de, debajo de, delante de, detrás de, enfrente de, al lado de, a la izquierda de, a la derecha de.",
+        "es": "Para decir dónde está algo, el español usa estar y una frase de lugar: El libro está encima de la mesa. Casi todas las frases de lugar terminan en de, y ese de une la frase con el sustantivo: encima de, debajo de, delante de, detrás de, enfrente de, al lado de, a la izquierda de, a la derecha de."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": { "en": "Which place phrase?", "es": "¿Qué frase de lugar?" },
+      "points": [
+        {
+          "text": {
+            "en": "Encima de means on top of or above, debajo de means under or below.",
+            "es": "Encima de indica que algo está sobre otra cosa; debajo de indica que está bajo ella."
+          },
+          "examples": [
+            {
+              "es": "El libro está encima de la mesa.",
+              "tr": { "en": "The book is on the table.", "es": "El libro está encima de la mesa." }
+            },
+            {
+              "es": "Los zapatos están debajo de la cama.",
+              "tr": { "en": "The shoes are under the bed.", "es": "Los zapatos están debajo de la cama." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Delante de means in front of, detrás de means behind.",
+            "es": "Delante de indica la parte de adelante de algo; detrás de indica la parte de atrás."
+          },
+          "examples": [
+            {
+              "es": "El carro está delante de la casa.",
+              "tr": { "en": "The car is in front of the house.", "es": "El carro está delante de la casa." }
+            },
+            {
+              "es": "Mi mochila está detrás de la puerta.",
+              "tr": { "en": "My backpack is behind the door.", "es": "Mi mochila está detrás de la puerta." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Enfrente de means across from: on the opposite side of a street or a room, facing it.",
+            "es": "Enfrente de indica el lado opuesto de una calle o de una sala, de cara a ella."
+          },
+          "examples": [
+            {
+              "es": "La farmacia está enfrente del banco.",
+              "tr": { "en": "The pharmacy is across from the bank.", "es": "La farmacia está enfrente del banco." }
+            },
+            {
+              "es": "Mi casa está enfrente del parque.",
+              "tr": { "en": "My house is across from the park.", "es": "Mi casa está enfrente del parque." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Al lado de means next to, beside.",
+            "es": "Al lado de indica que algo está junto a otra cosa, a un lado."
+          },
+          "examples": [
+            {
+              "es": "Mi casa está al lado de la escuela.",
+              "tr": { "en": "My house is next to the school.", "es": "Mi casa está al lado de la escuela." }
+            },
+            {
+              "es": "El teléfono está al lado del libro.",
+              "tr": { "en": "The phone is next to the book.", "es": "El teléfono está al lado del libro." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A la izquierda de and a la derecha de mean on the left of and on the right of. They take a, never en. Alone they need no de.",
+            "es": "A la izquierda de y a la derecha de indican el lado. Llevan a, nunca en. Solos, sin sustantivo, no necesitan de."
+          },
+          "examples": [
+            {
+              "es": "La puerta está a la izquierda.",
+              "tr": { "en": "The door is on the left.", "es": "La puerta está a la izquierda." }
+            },
+            {
+              "es": "El baño está a la derecha de la sala.",
+              "tr": {
+                "en": "The bathroom is to the right of the living room.",
+                "es": "El baño está a la derecha de la sala."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Entre means between. It takes no de, but you need y between the two things.",
+            "es": "Entre indica que algo está en medio de dos cosas. No lleva de, pero entre las dos cosas va y."
+          },
+          "examples": [
+            {
+              "es": "La tienda está entre el banco y la farmacia.",
+              "tr": {
+                "en": "The shop is between the bank and the pharmacy.",
+                "es": "La tienda está entre el banco y la farmacia."
+              }
+            },
+            {
+              "es": "El gato está entre la silla y la mesa.",
+              "tr": {
+                "en": "The cat is between the chair and the table.",
+                "es": "El gato está entre la silla y la mesa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": { "en": "Two small rules", "es": "Dos reglas pequeñas" },
+      "items": [
+        {
+          "text": {
+            "en": "Before a noun the phrase needs de. When no noun follows, drop the de.",
+            "es": "Antes de un sustantivo la frase lleva de. Si no sigue ningún sustantivo, el de desaparece."
+          },
+          "examples": [
+            {
+              "es": "El gato está debajo de la mesa.",
+              "tr": { "en": "The cat is under the table.", "es": "El gato está debajo de la mesa." }
+            },
+            { "es": "El gato está debajo.", "tr": { "en": "The cat is underneath.", "es": "El gato está debajo." } },
+            {
+              "es": "¿Dónde está el libro? Está encima.",
+              "tr": { "en": "Where is the book? It is on top.", "es": "¿Dónde está el libro? Está encima." }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "De + el always becomes del. De la, de los and de las stay as they are.",
+            "es": "De + el siempre se convierte en del. De la, de los y de las no cambian."
+          },
+          "examples": [
+            {
+              "es": "El banco está enfrente del hospital.",
+              "tr": { "en": "The bank is across from the hospital.", "es": "El banco está enfrente del hospital." }
+            },
+            {
+              "es": "Mi casa está cerca del parque.",
+              "tr": { "en": "My house is near the park.", "es": "Mi casa está cerca del parque." }
+            },
+            {
+              "es": "La escuela está lejos de mi casa.",
+              "tr": { "en": "The school is far from my house.", "es": "La escuela está lejos de mi casa." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "lugar-articulo",
+      "title": { "en": "Place phrase + article", "es": "Frase de lugar + artículo" },
+      "header": [
+        { "en": "Combination", "es": "combinación" },
+        { "en": "Form", "es": "forma" }
+      ],
+      "rows": [
+        ["encima de + el", "encima del"],
+        ["debajo de + el", "debajo del"],
+        ["detrás de + la", "detrás de la"],
+        ["delante de + el", "delante del"],
+        ["enfrente de + el", "enfrente del"],
+        ["al lado de + el", "al lado del"],
+        ["al lado de + los", "al lado de los"],
+        ["a la izquierda de + el", "a la izquierda del"],
+        ["a la derecha de + la", "a la derecha de la"],
+        ["cerca de + el", "cerca del"],
+        ["lejos de + las", "lejos de las"],
+        ["detrás de + el", "detrás del"]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "lugar-opuestos",
+      "title": { "en": "Opposites", "es": "Opuestos" },
+      "header": [
+        { "en": "Position", "es": "posición" },
+        { "en": "Opposite", "es": "opuesto" }
+      ],
+      "rows": [
+        ["encima de", "debajo de"],
+        ["delante de", "detrás de"],
+        ["a la izquierda de", "a la derecha de"],
+        ["cerca de", "lejos de"],
+        ["dentro de", "fuera de"]
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": { "en": "Similar, yet different", "es": "Parecido, pero distinto" },
+      "pairs": [
+        {
+          "a": "delante de la casa",
+          "b": "enfrente de la casa",
+          "note": {
+            "en": "Delante de is the front of the house, on the same side, like a dog at the door. Enfrente de is the opposite side, facing the house.",
+            "es": "Delante de es la parte de adelante de la casa, del mismo lado. Enfrente de es el lado opuesto, de cara a la casa."
+          },
+          "examples": [
+            {
+              "es": "El perro está delante de la puerta.",
+              "tr": { "en": "The dog is in front of the door.", "es": "El perro está delante de la puerta." }
+            },
+            {
+              "es": "La farmacia está enfrente de la casa.",
+              "tr": { "en": "The pharmacy is across from the house.", "es": "La farmacia está enfrente de la casa." }
+            }
+          ]
+        },
+        {
+          "a": "en la mesa",
+          "b": "encima de la mesa",
+          "note": {
+            "en": "En la mesa is the everyday way to say on the table. Encima de stresses that it is on top, and not under or next to it.",
+            "es": "En la mesa es la forma normal de decir sobre la mesa. Encima de subraya que está sobre la mesa, y no debajo ni al lado."
+          },
+          "examples": [
+            {
+              "es": "Mi teléfono está en la mesa.",
+              "tr": { "en": "My phone is on the table.", "es": "Mi teléfono está en la mesa." }
+            },
+            {
+              "es": "El gato está encima de la mesa.",
+              "tr": { "en": "The cat is on top of the table.", "es": "El gato está encima de la mesa." }
+            }
+          ]
+        },
+        {
+          "a": "hay un gato debajo",
+          "b": "el gato está debajo",
+          "note": {
+            "en": "Hay introduces something new (un gato). Estar gives the place of something already known (el gato).",
+            "es": "Hay presenta algo nuevo (un gato). Estar dice el lugar de algo ya conocido (el gato)."
+          },
+          "examples": [
+            {
+              "es": "Debajo de la mesa hay un gato.",
+              "tr": { "en": "There is a cat under the table.", "es": "Debajo de la mesa hay un gato." }
+            },
+            {
+              "es": "El gato está debajo de la mesa.",
+              "tr": { "en": "The cat is under the table.", "es": "El gato está debajo de la mesa." }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Ask with ¿Dónde está…? and answer with estar plus the phrase: ¿Dónde está el baño? Está a la derecha.",
+        "es": "Pregunta con ¿Dónde está…? y responde con estar y la frase: ¿Dónde está el baño? Está a la derecha."
+      }
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Directions with verbs (sigue, gira, cruza) come later, with the imperative. For now, say where things are.",
+        "es": "Las indicaciones con verbos (sigue, gira, cruza) vienen después, con el imperativo. Por ahora, di dónde están las cosas."
+      }
+    }
+  ],
+  "speak": {
+    "en": "To say where something is, Spanish uses the verb for being somewhere, followed by a small place phrase. There is a phrase for on top of, one for under, one for in front of, one for behind and one for across from. Next to, on the left and on the right work the same way. Almost all of them end in the little word for of, and that word is left out only when no noun follows. With a masculine noun, of and the article melt into one word. Between is the exception: it takes no of, but needs and between the two things. Left and right use the little word for to, never the one for in.",
+    "es": "Para decir dónde está algo, el español usa el verbo estar y una frase de lugar. Hay una para encima, una para debajo, una para delante, una para detrás y una para enfrente. Al lado, a la izquierda y a la derecha funcionan igual. Casi todas terminan en de, y ese de solo desaparece cuando no sigue ningún sustantivo. Con un sustantivo masculino, de y el se funden en una sola palabra: del. Entre es la excepción: no lleva de, pero necesita y entre las dos cosas. Izquierda y derecha llevan a, nunca en."
+  },
+  "glossary": [
+    { "word": "encima", "gloss": { "en": "on top of, above", "es": "sobre algo, en su parte superior" } },
+    { "word": "detrás", "gloss": { "en": "behind", "es": "en la parte de atrás" } },
+    { "word": "delante", "gloss": { "en": "in front of", "es": "en la parte de adelante" } },
+    { "word": "enfrente", "gloss": { "en": "across from, opposite", "es": "en el lado opuesto" } }
+  ],
+  "items": [
+    {
+      "id": "ld-01",
+      "sentence": "La farmacia está enfrente ___ banco.",
+      "options": ["del", "de el", "al"],
+      "correct": 0,
+      "why": {
+        "en": "De + el always contracts to del: enfrente del banco.",
+        "es": "De + el siempre se contrae en del: enfrente del banco."
+      },
+      "wrong": {
+        "de el": {
+          "en": "De el is never written: de + el always becomes del, so the correct phrase is enfrente del banco.",
+          "es": "De el nunca se escribe: de + el siempre se convierte en del, así que lo correcto es enfrente del banco."
+        },
+        "al": {
+          "en": "Al is a + el and marks direction; after enfrente you need de, so it is enfrente del banco, not enfrente al banco.",
+          "es": "Al es a + el y marca dirección; después de enfrente hace falta de, así que es enfrente del banco, no enfrente al banco."
+        }
+      },
+      "examples": ["El hospital está enfrente del parque.", "Mi escuela está enfrente del mercado."],
+      "tr": { "en": "The pharmacy is across from the bank.", "es": "La farmacia está enfrente del banco." }
+    },
+    {
+      "id": "ld-02",
+      "sentence": "El perro duerme debajo ___ sofá.",
+      "options": ["del", "de", "al"],
+      "correct": 0,
+      "why": {
+        "en": "Sofá is masculine, so de + el becomes del: debajo del sofá.",
+        "es": "Sofá es masculino, así que de + el se convierte en del: debajo del sofá."
+      },
+      "wrong": {
+        "de": {
+          "en": "De alone leaves out the article and sounds incomplete: debajo de sofá is wrong; with the sofá you need debajo del sofá.",
+          "es": "De solo deja fuera el artículo y suena incompleto: debajo de sofá es incorrecto; con el sofá hace falta debajo del sofá."
+        },
+        "al": {
+          "en": "Al is a + el and marks direction; after debajo you need de, so it is debajo del sofá.",
+          "es": "Al es a + el y marca dirección; después de debajo hace falta de, así que es debajo del sofá."
+        }
+      },
+      "examples": ["El gato está debajo del sofá.", "Mi mochila está debajo de la silla."],
+      "tr": { "en": "The dog sleeps under the sofa.", "es": "El perro duerme debajo del sofá." }
+    },
+    {
+      "id": "ld-03",
+      "sentence": "Mi mochila está detrás ___ la puerta.",
+      "options": ["de", "del", "a"],
+      "correct": 0,
+      "why": {
+        "en": "Before la the phrase just needs de: detrás de la puerta. Only el contracts.",
+        "es": "Antes de la la frase solo necesita de: detrás de la puerta. Solo el se contrae."
+      },
+      "wrong": {
+        "del": {
+          "en": "Del is de + el, and puerta is feminine with la; the article does not contract, so it is detrás de la puerta.",
+          "es": "Del es de + el, y puerta es femenino con la; el artículo no se contrae, así que es detrás de la puerta."
+        },
+        "a": {
+          "en": "A marks direction or a point in time; to say behind the door you need de: detrás de la puerta.",
+          "es": "A marca dirección o un momento; para decir detrás de la puerta hace falta de."
+        }
+      },
+      "examples": ["Los zapatos están detrás de la puerta.", "El perro está detrás de la casa."],
+      "tr": { "en": "My backpack is behind the door.", "es": "Mi mochila está detrás de la puerta." }
+    },
+    {
+      "id": "ld-04",
+      "sentence": "La escuela está lejos ___ mi casa.",
+      "options": ["de", "a", "en"],
+      "correct": 0,
+      "why": {
+        "en": "Lejos takes de before the noun: lejos de mi casa.",
+        "es": "Lejos lleva de antes del sustantivo: lejos de mi casa."
+      },
+      "wrong": {
+        "a": {
+          "en": "A would mean you are heading toward the house; to say far from it you need de: lejos de mi casa.",
+          "es": "A significaría que vas hacia la casa; para decir lejos de ella hace falta de: lejos de mi casa."
+        },
+        "en": {
+          "en": "En marks being inside a place; the phrase lejos has no en, it needs de: lejos de mi casa.",
+          "es": "En marca estar dentro de un lugar; la frase lejos no lleva en, necesita de: lejos de mi casa."
+        }
+      },
+      "examples": ["Mi casa está cerca de la escuela.", "El hotel está lejos del centro."],
+      "tr": { "en": "The school is far from my house.", "es": "La escuela está lejos de mi casa." }
+    },
+    {
+      "id": "ld-05",
+      "sentence": "¿Dónde está el libro? Está ___.",
+      "options": ["encima", "encima de"],
+      "correct": 0,
+      "why": {
+        "en": "No noun follows, so the de drops: Está encima.",
+        "es": "No sigue ningún sustantivo, así que el de desaparece: Está encima."
+      },
+      "wrong": {
+        "encima de": {
+          "en": "De needs a noun after it (encima de la mesa); at the end of a sentence it is left out, so just Está encima.",
+          "es": "De necesita un sustantivo después (encima de la mesa); al final de la frase se omite, así que solo Está encima."
+        }
+      },
+      "examples": ["¿Dónde está el gato? Está debajo.", "¿Dónde está mi mochila? Está detrás."],
+      "tr": { "en": "Where is the book? It is on top.", "es": "¿Dónde está el libro? Está encima." }
+    },
+    {
+      "id": "ld-06",
+      "sentence": "La tienda está entre el banco ___ la farmacia.",
+      "options": ["y", "con", "a"],
+      "correct": 0,
+      "why": {
+        "en": "Entre needs y between the two things: entre el banco y la farmacia.",
+        "es": "Entre necesita y entre las dos cosas: entre el banco y la farmacia."
+      },
+      "wrong": {
+        "con": {
+          "en": "Con means with and joins company; between two things uses y, so it is entre el banco y la farmacia.",
+          "es": "Con significa con y une compañía; entre dos cosas se usa y, así que es entre el banco y la farmacia."
+        },
+        "a": {
+          "en": "A marks direction; the two things between which something stands are joined with y: entre el banco y la farmacia.",
+          "es": "A marca dirección; las dos cosas entre las que está algo se unen con y: entre el banco y la farmacia."
+        }
+      },
+      "examples": ["La mesa está entre la silla y la puerta.", "Mi casa está entre el parque y la escuela."],
+      "tr": {
+        "en": "The shop is between the bank and the pharmacy.",
+        "es": "La tienda está entre el banco y la farmacia."
+      }
+    },
+    {
+      "id": "ld-07",
+      "sentence": "El gato está entre ___ silla y la mesa.",
+      "options": ["la", "de la"],
+      "correct": 0,
+      "why": {
+        "en": "Entre takes no de: entre la silla y la mesa.",
+        "es": "Entre no lleva de: entre la silla y la mesa."
+      },
+      "wrong": {
+        "de la": {
+          "en": "Entre never takes de, unlike encima de or detrás de; it goes straight to the noun: entre la silla y la mesa.",
+          "es": "Entre nunca lleva de, a diferencia de encima de o detrás de; va directo al sustantivo: entre la silla y la mesa."
+        }
+      },
+      "examples": ["Mi libro está entre la silla y el sofá.", "Ana está entre Luis y María."],
+      "tr": { "en": "The cat is between the chair and the table.", "es": "El gato está entre la silla y la mesa." }
+    },
+    {
+      "id": "ld-08",
+      "sentence": "La puerta está ___ la izquierda.",
+      "options": ["a", "en", "de"],
+      "correct": 0,
+      "why": { "en": "Left and right take a: a la izquierda.", "es": "Izquierda y derecha llevan a: a la izquierda." },
+      "wrong": {
+        "en": {
+          "en": "En la izquierda would sound like inside the left, as if it were a place; for the side you say a la izquierda.",
+          "es": "En la izquierda sonaría como dentro de la izquierda, como si fuera un lugar; para el lado se dice a la izquierda."
+        },
+        "de": {
+          "en": "De marks origin or possession; to say on the left the phrase starts with a: a la izquierda.",
+          "es": "De marca origen o posesión; para decir a la izquierda la frase empieza con a."
+        }
+      },
+      "examples": ["El baño está a la derecha.", "El parque está a la izquierda."],
+      "tr": { "en": "The door is on the left.", "es": "La puerta está a la izquierda." }
+    },
+    {
+      "id": "ld-09",
+      "sentence": "El baño está a la derecha ___ sala.",
+      "options": ["de la", "del", "a la"],
+      "correct": 0,
+      "why": {
+        "en": "Sala is feminine, so the phrase takes de la: a la derecha de la sala.",
+        "es": "Sala es femenino, así que la frase lleva de la: a la derecha de la sala."
+      },
+      "wrong": {
+        "del": {
+          "en": "Del is de + el for masculine nouns; sala is feminine, so it stays de la.",
+          "es": "Del es de + el para sustantivos masculinos; sala es femenino, así que queda de la."
+        },
+        "a la": {
+          "en": "A la repeats the first part of the phrase; after derecha the noun is joined with de: a la derecha de la sala.",
+          "es": "A la repite la primera parte de la frase; después de derecha se une el sustantivo con de: a la derecha de la sala."
+        }
+      },
+      "examples": ["La puerta está a la izquierda de la cama.", "El teléfono está a la derecha del libro."],
+      "tr": {
+        "en": "The bathroom is to the right of the living room.",
+        "es": "El baño está a la derecha de la sala."
+      }
+    },
+    {
+      "id": "ld-10",
+      "sentence": "Si Ana está detrás de Luis, Luis está ___ de Ana.",
+      "options": ["delante", "encima", "enfrente"],
+      "correct": 0,
+      "why": {
+        "en": "If Ana is behind Luis, Luis is in front of Ana: delante de.",
+        "es": "Si Ana está detrás de Luis, Luis está delante de Ana."
+      },
+      "wrong": {
+        "encima": {
+          "en": "Encima de means on top of; two people one behind the other are not stacked, so Luis is delante de Ana.",
+          "es": "Encima de significa sobre; dos personas una detrás de otra no están apiladas, así que Luis está delante de Ana."
+        },
+        "enfrente": {
+          "en": "Enfrente de means on the opposite side, facing; for one person ahead of another in a line it is delante de.",
+          "es": "Enfrente de significa el lado opuesto, de cara; para una persona que va delante de otra se usa delante de."
+        }
+      },
+      "examples": ["Mi amigo está delante de mí.", "María está detrás de Ana."],
+      "tr": {
+        "en": "If Ana is behind Luis, Luis is in front of Ana.",
+        "es": "Si Ana está detrás de Luis, Luis está delante de Ana."
+      }
+    },
+    {
+      "id": "ld-11",
+      "sentence": "Si el libro está encima de la mesa, la mesa está ___.",
+      "options": ["debajo", "al lado", "enfrente"],
+      "correct": 0,
+      "why": {
+        "en": "If the book is on top of the table, the table is under the book: debajo.",
+        "es": "Si el libro está encima de la mesa, la mesa está debajo del libro."
+      },
+      "wrong": {
+        "al lado": {
+          "en": "Al lado means next to, side by side; things placed one on the other are encima and debajo.",
+          "es": "Al lado significa junto a, uno al costado del otro; las cosas puestas una sobre otra son encima y debajo."
+        },
+        "enfrente": {
+          "en": "Enfrente de means on the opposite side; a table under a book is below it, not facing it: debajo.",
+          "es": "Enfrente de significa el lado opuesto; una mesa bajo un libro está debajo de él, no enfrente."
+        }
+      },
+      "examples": ["El teléfono está encima de la mesa.", "La mesa está debajo del teléfono."],
+      "tr": {
+        "en": "If the book is on top of the table, the table is underneath.",
+        "es": "Si el libro está encima de la mesa, la mesa está debajo."
+      }
+    },
+    {
+      "id": "ld-12",
+      "sentence": "Debajo de la mesa ___ un gato.",
+      "options": ["hay", "está", "es"],
+      "correct": 0,
+      "why": {
+        "en": "A new thing (un gato) is introduced, so hay: Debajo de la mesa hay un gato.",
+        "es": "Se presenta algo nuevo (un gato), así que hay: Debajo de la mesa hay un gato."
+      },
+      "wrong": {
+        "está": {
+          "en": "Está points to something already known; with un gato you say hay, or switch to El gato está debajo de la mesa.",
+          "es": "Está se refiere a algo ya conocido; con un gato se dice hay, o se cambia a El gato está debajo de la mesa."
+        },
+        "es": {
+          "en": "Es identifies or describes and does not say that something exists somewhere; existence needs hay.",
+          "es": "Es identifica o describe y no dice que algo existe en un lugar; la existencia necesita hay."
+        }
+      },
+      "examples": ["Encima de la mesa hay un libro.", "Detrás de la puerta hay una mochila."],
+      "tr": { "en": "There is a cat under the table.", "es": "Debajo de la mesa hay un gato." }
+    },
+    {
+      "id": "ld-match-01",
+      "kind": "match",
+      "pairs": [
+        { "es": "encima de", "en": "on top of" },
+        { "es": "debajo de", "en": "under" },
+        { "es": "detrás de", "en": "behind" },
+        { "es": "enfrente de", "en": "across from" },
+        { "es": "al lado de", "en": "next to" },
+        { "es": "entre", "en": "between" }
+      ]
+    },
+    {
+      "id": "ld-form-01",
+      "kind": "form",
+      "verb": "forma",
+      "person": "encima de + el",
+      "answer": "encima del",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-02",
+      "kind": "form",
+      "verb": "forma",
+      "person": "debajo de + el",
+      "answer": "debajo del",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-03",
+      "kind": "form",
+      "verb": "forma",
+      "person": "detrás de + la",
+      "answer": "detrás de la",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-04",
+      "kind": "form",
+      "verb": "forma",
+      "person": "delante de + el",
+      "answer": "delante del",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-05",
+      "kind": "form",
+      "verb": "forma",
+      "person": "enfrente de + el",
+      "answer": "enfrente del",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-06",
+      "kind": "form",
+      "verb": "forma",
+      "person": "al lado de + el",
+      "answer": "al lado del",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-07",
+      "kind": "form",
+      "verb": "forma",
+      "person": "al lado de + los",
+      "answer": "al lado de los",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-08",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a la izquierda de + el",
+      "answer": "a la izquierda del",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-09",
+      "kind": "form",
+      "verb": "forma",
+      "person": "a la derecha de + la",
+      "answer": "a la derecha de la",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-10",
+      "kind": "form",
+      "verb": "forma",
+      "person": "cerca de + el",
+      "answer": "cerca del",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-11",
+      "kind": "form",
+      "verb": "forma",
+      "person": "lejos de + las",
+      "answer": "lejos de las",
+      "table": "lugar-articulo"
+    },
+    {
+      "id": "ld-form-12",
+      "kind": "form",
+      "verb": "forma",
+      "person": "detrás de + el",
+      "answer": "detrás del",
+      "table": "lugar-articulo"
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-01",
+      "es": "El libro está encima de la mesa.",
+      "target": "encima de",
+      "tr": { "en": "The book is on the table.", "es": "El libro está encima de la mesa." },
+      "options": [
+        {
+          "text": {
+            "en": "the side: al lado de, a la izquierda, a la derecha",
+            "es": "el lado: al lado de, a la izquierda, a la derecha"
+          },
+          "wrong": {
+            "en": "There is nothing beside it or to the left or right here; the book is on top of the table: encima de.",
+            "es": "Aquí no hay nada al lado ni a la izquierda o a la derecha; el libro está sobre la mesa: encima de."
+          }
+        },
+        { "text": { "en": "above or below: encima de, debajo de", "es": "sobre o bajo algo: encima de, debajo de" } },
+        {
+          "text": { "en": "across from: enfrente de", "es": "el lado opuesto: enfrente de" },
+          "wrong": {
+            "en": "Enfrente de means on the opposite side; the book is on the table itself, not facing it: encima de.",
+            "es": "Enfrente de significa el lado opuesto; el libro está en la mesa misma, no de frente: encima de."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-02",
+      "es": "Mi mochila está detrás de la puerta.",
+      "target": "detrás de",
+      "tr": { "en": "My backpack is behind the door.", "es": "Mi mochila está detrás de la puerta." },
+      "options": [
+        { "text": { "en": "front or back: delante de, detrás de", "es": "delante o detrás: delante de, detrás de" } },
+        {
+          "text": { "en": "between two things: entre … y …", "es": "en medio de dos cosas: entre … y …" },
+          "wrong": {
+            "en": "Entre needs two things with y between them; here only the door is named, and the backpack is behind it: detrás de.",
+            "es": "Entre necesita dos cosas unidas con y; aquí solo se nombra la puerta, y la mochila está detrás: detrás de."
+          }
+        },
+        {
+          "text": { "en": "above or below: encima de, debajo de", "es": "sobre o bajo algo: encima de, debajo de" },
+          "wrong": {
+            "en": "Encima de and debajo de say what is on or under something; a backpack behind a door is neither: detrás de.",
+            "es": "Encima de y debajo de dicen lo que está sobre o bajo algo; una mochila detrás de la puerta no está ni sobre ni bajo ella: detrás de."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-03",
+      "es": "La farmacia está enfrente del banco.",
+      "target": "enfrente",
+      "tr": { "en": "The pharmacy is across from the bank.", "es": "La farmacia está enfrente del banco." },
+      "options": [
+        {
+          "text": { "en": "above or below: encima de, debajo de", "es": "sobre o bajo algo: encima de, debajo de" },
+          "wrong": {
+            "en": "The pharmacy is not above or below the bank; it faces it from the other side: enfrente de.",
+            "es": "La farmacia no está sobre ni bajo el banco; está del otro lado, de frente: enfrente de."
+          }
+        },
+        {
+          "text": { "en": "front or back: delante de, detrás de", "es": "delante o detrás: delante de, detrás de" },
+          "wrong": {
+            "en": "Delante de and detrás de put one thing before or after another on the same side; the pharmacy is on the opposite side: enfrente de.",
+            "es": "Delante de y detrás de ponen una cosa antes o después de otra en el mismo lado; la farmacia está en el lado opuesto: enfrente de."
+          }
+        },
+        { "text": { "en": "across from: enfrente de", "es": "el lado opuesto: enfrente de" } }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-04",
+      "es": "La tienda está entre el banco y la farmacia.",
+      "target": "entre",
+      "tr": {
+        "en": "The shop is between the bank and the pharmacy.",
+        "es": "La tienda está entre el banco y la farmacia."
+      },
+      "options": [
+        {
+          "text": { "en": "above or below: encima de, debajo de", "es": "sobre o bajo algo: encima de, debajo de" },
+          "wrong": {
+            "en": "Nothing is above or below anything here; the shop stands in the middle of two buildings: entre.",
+            "es": "Aquí nada está sobre ni bajo nada; la tienda está en medio de dos edificios: entre."
+          }
+        },
+        { "text": { "en": "between two things: entre … y …", "es": "en medio de dos cosas: entre … y …" } },
+        {
+          "text": {
+            "en": "the side: al lado de, a la izquierda, a la derecha",
+            "es": "el lado: al lado de, a la izquierda, a la derecha"
+          },
+          "wrong": {
+            "en": "Beside means next to one thing; here the shop sits between two things joined by y: entre.",
+            "es": "Al lado de indica junto a una cosa; aquí la tienda está en medio de dos cosas unidas con y: entre."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-05",
+      "es": "El baño está a la derecha.",
+      "target": "a la derecha",
+      "tr": { "en": "The bathroom is on the right.", "es": "El baño está a la derecha." },
+      "options": [
+        {
+          "text": {
+            "en": "the side: al lado de, a la izquierda, a la derecha",
+            "es": "el lado: al lado de, a la izquierda, a la derecha"
+          }
+        },
+        {
+          "text": { "en": "front or back: delante de, detrás de", "es": "delante o detrás: delante de, detrás de" },
+          "wrong": {
+            "en": "Front and back say what is before or behind something; the bathroom is on a side, the right one: a la derecha.",
+            "es": "Delante y detrás dicen lo que está antes o después de algo; el baño está en un lado, el derecho: a la derecha."
+          }
+        },
+        {
+          "text": { "en": "between two things: entre … y …", "es": "en medio de dos cosas: entre … y …" },
+          "wrong": {
+            "en": "Entre needs two things; here only a side is named: a la derecha.",
+            "es": "Entre necesita dos cosas; aquí solo se nombra un lado: a la derecha."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-06",
+      "es": "El banco está enfrente del hospital.",
+      "target": "del",
+      "tr": { "en": "The bank is across from the hospital.", "es": "El banco está enfrente del hospital." },
+      "options": [
+        {
+          "text": { "en": "between two things: entre … y …", "es": "en medio de dos cosas: entre … y …" },
+          "wrong": {
+            "en": "Entre means between two things; del here is just de + el before hospital.",
+            "es": "Entre significa en medio de dos cosas; del aquí es solo de + el antes de hospital."
+          }
+        },
+        {
+          "text": { "en": "no noun follows, so no de", "es": "no sigue ningún sustantivo, así que sin de" },
+          "wrong": {
+            "en": "A noun does follow: hospital. That is why de is there, and with el it becomes del.",
+            "es": "Sí sigue un sustantivo: hospital. Por eso está el de, y con el se convierte en del."
+          }
+        },
+        { "text": { "en": "de + el becomes del", "es": "de + el se convierte en del" } }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "kind": "why",
+      "id": "ld-why-07",
+      "es": "¿Dónde está el libro? Está encima.",
+      "target": "encima",
+      "tr": { "en": "Where is the book? It is on top.", "es": "¿Dónde está el libro? Está encima." },
+      "options": [
+        {
+          "text": { "en": "front or back: delante de, detrás de", "es": "delante o detrás: delante de, detrás de" },
+          "wrong": {
+            "en": "Front and back are not the point here; the answer is just encima, with nothing after it.",
+            "es": "Aquí no se trata de delante ni detrás; la respuesta es solo encima, sin nada después."
+          }
+        },
+        {
+          "text": { "en": "de + el becomes del", "es": "de + el se convierte en del" },
+          "wrong": {
+            "en": "There is no el after de here, because there is no de at all: nothing follows encima.",
+            "es": "Aquí no hay el después de de, porque no hay de: no sigue nada a encima."
+          }
+        },
+        { "text": { "en": "no noun follows, so no de", "es": "no sigue ningún sustantivo, así que sin de" } }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

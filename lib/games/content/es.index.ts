@@ -29,6 +29,7 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'muy-mucho', load: () => require('@/data/games/grammar/es/muy-mucho.json') },
   { id: 'numeros-hora-fecha', load: () => require('@/data/games/grammar/es/numeros-hora-fecha.json') },
   { id: 'preposiciones-basicas', load: () => require('@/data/games/grammar/es/preposiciones-basicas.json') },
+  { id: 'lugar-direcciones', load: () => require('@/data/games/grammar/es/lugar-direcciones.json') },
   { id: 'indefinido-regular', load: () => require('@/data/games/grammar/es/indefinido-regular.json') },
   { id: 'indefinido-irregular', load: () => require('@/data/games/grammar/es/indefinido-irregular.json') },
   { id: 'indefinido-10-verbos', load: () => require('@/data/games/grammar/es/indefinido-10-verbos.json') },
