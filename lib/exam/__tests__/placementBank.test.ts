@@ -1,10 +1,9 @@
 // The German placement bank (data/exams/placement/de.json): German has no grammar lessons yet, so its grammar questions come from
 // 20 reviewed gap sentences per level. Every row must be a clean question: one blank, four different options, one right.
 
-import type { PcicTarget } from '@/data/pcic';
-import { PCIC_LEVELS } from '@/data/pcic';
+import { PCIC_LEVELS, pcicItemsForLevel, setPcicTarget, type PcicItem } from '@/data/pcic';
 import de from '@/data/exams/placement/de.json';
-import { buildPlacementQuestion, placementPoolFor } from '../placementQuestions';
+import { PLACEMENT_PATTERN, buildPlacementQuestion, placementLevels, placementPoolFor, placementQuestionKey } from '../placementQuestions';
 import { PLACEMENT_BANK_TOPIC, placementBankGaps } from '../placementBank';
 
 const rows = PCIC_LEVELS.flatMap((level) => ((de as Record<string, { id: string; sentence: string; options: string[]; correct: number }[]>)[level] ?? []).map((row) => [`${level} ${row.id}`, level, row] as const));
@@ -38,14 +37,14 @@ describe('the bank in the placement pool', () => {
     expect(placementBankGaps('A1', 'es')).toEqual([]);
     expect(placementBankGaps('A1', 'hu')).toEqual([]);
     for (const level of PCIC_LEVELS) {
-      const pool = placementPoolFor(level, 'de' as PcicTarget);
+      const pool = placementPoolFor(level, 'de');
       expect(pool.gaps.filter((g) => g.topicId === PLACEMENT_BANK_TOPIC)).toHaveLength(20);
     }
   });
 
   it('a gap question of the bank has the four options and the right one is the bank answer', () => {
     const [gap] = placementBankGaps('B1', 'de');
-    const q = buildPlacementQuestion({ level: 'B1', position: 1, target: 'de' as PcicTarget, pool: { items: [], gaps: [gap] }, used: new Set(), seed: 3 });
+    const q = buildPlacementQuestion({ level: 'B1', position: 1, target: 'de', pool: { items: [], gaps: [gap] }, used: new Set(), seed: 3 });
     expect(q).toMatchObject({ kind: 'gap', level: 'B1', topicId: PLACEMENT_BANK_TOPIC, itemId: gap.itemId, sentence: gap.sentence });
     if (q?.kind !== 'gap') throw new Error('a gap question was expected');
     expect([...q.options].sort()).toEqual([...gap.options].sort());
@@ -56,12 +55,55 @@ describe('the bank in the placement pool', () => {
     const gaps = placementBankGaps('A2', 'de');
     const used = new Set<string>();
     for (let i = 0; i < 20; i += 1) {
-      const q = buildPlacementQuestion({ level: 'A2', position: 1, target: 'de' as PcicTarget, pool: { items: [], gaps }, used, seed: 5 });
+      const q = buildPlacementQuestion({ level: 'A2', position: 1, target: 'de', pool: { items: [], gaps }, used, seed: 5 });
       expect(q).toBeDefined();
       const key = `g:${q!.kind === 'gap' ? `${q!.topicId}:${q!.itemId}` : ''}`;
       expect(used.has(key)).toBe(false);
       used.add(key);
     }
-    expect(buildPlacementQuestion({ level: 'A2', position: 1, target: 'de' as PcicTarget, pool: { items: [], gaps }, used, seed: 5 })).toBeUndefined();
+    expect(buildPlacementQuestion({ level: 'A2', position: 1, target: 'de', pool: { items: [], gaps }, used, seed: 5 })).toBeUndefined();
+  });
+});
+
+describe('the placement test on the German deck (data/words/de)', () => {
+  afterEach(() => setPcicTarget('es'));
+
+  // The levels of the deck that are built; the others have no words yet and the test does not measure them.
+  it.each(['en', 'es', 'hu'] as const)('%s→de: every sampled word of a built level is a good question and a step is word, gap, word, gap, word', (source) => {
+    setPcicTarget('de', source);
+    const levels = placementLevels();
+    expect(levels).toContain('A1');
+    for (const level of levels) {
+      const items = pcicItemsForLevel(level);
+      const pool = placementPoolFor(level, 'de');
+      expect(pool.gaps.filter((g) => g.topicId === PLACEMENT_BANK_TOPIC)).toHaveLength(20);
+      for (const item of items.filter((_, i) => i % 25 === 0)) {
+        const q = buildPlacementQuestion({ level, position: 0, target: 'de', pool: { items, gaps: [] }, used: new Set(Array.from(items, (o) => `w:${o.id}`).filter((k) => k !== `w:${item.id}`)), seed: 7 });
+        expect(q?.kind).toBe('word');
+        if (q?.kind !== 'word') continue;
+        expect(q.itemId).toBe(item.id);
+        expect(q.word).toBe((item.de ?? '').split(' / ')[0].trim());
+        expect(new Set(q.options.map((o) => o.toLowerCase())).size).toBe(4);
+        expect(q.options[q.correctIndex]).toBe((item[source] as string).trim());
+      }
+      const used = new Set<string>();
+      const kinds: string[] = [];
+      for (let position = 0; position < PLACEMENT_PATTERN.length; position += 1) {
+        const q = buildPlacementQuestion({ level, position, target: 'de', pool, used, seed: 11 });
+        expect(q).toBeDefined();
+        kinds.push(q!.kind);
+        used.add(placementQuestionKey(q!));
+      }
+      expect(kinds).toEqual([...PLACEMENT_PATTERN]);
+      expect(used.size).toBe(PLACEMENT_PATTERN.length);
+    }
+  });
+
+  it('a card of the German deck without a meaning in the learner\'s language is never asked', () => {
+    setPcicTarget('de', 'en');
+    const [item] = pcicItemsForLevel('A1');
+    const bare: PcicItem = { ...item, en: '' };
+    const q = buildPlacementQuestion({ level: 'A1', position: 0, target: 'de', pool: { items: [bare], gaps: [] }, used: new Set(), seed: 1 });
+    expect(q).toBeUndefined();
   });
 });
