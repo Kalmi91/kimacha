@@ -1,0 +1,347 @@
+{
+  "target": "hu",
+  "level": "B1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válasszon a két téma közül, készítsen rövid előadást a feladatlap pontjai alapján, és beszéljen a témáról két-három percig.",
+          "prepSeconds": 900,
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Élet a fővárosban és vidéken",
+              "prompt": "Az életről fog beszélni a fővárosban és vidéken. Az előkészület alatt jegyzetelhet, és támaszkodhat a feladatlap pontjaira.",
+              "bullets": ["az élet előnyei a fővárosban", "az élet előnyei vidéken", "a saját tapasztalata", "hol szeretne élni, és miért"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, kezdheti.",
+                  "minWords": 70,
+                  "points": [
+                    { "id": "p1", "label": "Beszél a nagyváros előnyeiről", "keywords": ["nagyvaros", "budapest", "fovaros", "tomegkozleked", "munkalehetoseg", "kulturalis", "szinhaz", "mozi", "villamos", "metro", "sok lehetoseg", "kinalat"] },
+                    { "id": "p2", "label": "Beszél a vidéki élet előnyeiről", "keywords": ["videk", "falu", "kisvaros", "csend", "nyugalom", "termeszetben", "friss levego", "kert", "olcsobb", "kozosseg", "szomszed", "tiszta"] },
+                    { "id": "p3", "label": "Hátrányt említ, a nagyvárosét vagy a vidékét", "keywords": ["hatrany", "dragabb", "zajos", "forgalom", "dugo", "stressz", "messze", "kevesebb", "tomeg", "szennyez", "unalmas", "munkahely"] },
+                    { "id": "p4", "label": "Megmondja, hol szeretne élni, és miért", "keywords": ["szeretnek elni", "inkabb", "elonyben", "valasztanam", "koltoznek", "koltoznom", "maradnek", "szeretnenk elni", "ezert", "valasztom", "jobban", "tervezem"] }
+                  ],
+                  "model": "Budapesten élek már öt éve, de a gyerekkoromat egy kis faluban töltöttem, ezért mindkét életformát ismerem. A fővárosban sokkal több a munkalehetőség, és mindig van valami program: színház, mozi, koncert. A tömegközlekedés is jó, a BKV-vel mindenhová eljutok autó nélkül. Vidéken viszont csendesebb és tisztább az élet, a szomszédok ismerik egymást, és a lakások is olcsóbbak. A nagyváros hátránya a zaj, a forgalom és a stressz, a falué pedig, hogy kevesebb a munkahely. Én inkább a városban szeretnék élni, mert itt több a lehetőség, de később szívesen költöznék vidékre, egy kis házba kerttel."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Az okostelefon a mindennapokban",
+              "prompt": "Az okostelefon használatáról fog beszélni a mindennapi életben. Az előkészület alatt jegyzetelhet, és támaszkodhat a feladatlap pontjaira.",
+              "bullets": ["mire használja a telefonját", "mik az előnyei", "mik a hátrányai vagy a veszélyei", "hogyan változtatta meg az emberek életét"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, kezdheti.",
+                  "minWords": 70,
+                  "points": [
+                    { "id": "p1", "label": "Elmondja, mire használja a telefonját", "keywords": ["hivas", "uzenet", "internet", "terkep", "fenykep", "zenet", "applikacio", "email", "bankolas", "vasarlas", "navigal", "fizet"] },
+                    { "id": "p2", "label": "Előnyöket említ", "keywords": ["elony", "gyors", "kenyelmes", "konnyebb", "egyszeru", "hasznos", "segit", "kapcsolat", "informacio", "kozel", "tajekoz", "idot"] },
+                    { "id": "p3", "label": "Hátrányt vagy veszélyt említ", "keywords": ["hatrany", "veszely", "fuggo", "fuggoseg", "tul sokat", "idopazarl", "alvas", "figyelem", "kozosseg", "magany", "korlatoz", "szemet"] },
+                    { "id": "p4", "label": "Elmondja, hogyan változtatta meg az emberek életét", "keywords": ["valtozott", "megvaltoztat", "regen", "azelott", "ma mar", "mostanaban", "korabban", "mar nem", "helyett", "mielott", "sokkal", "mindenki"] }
+                  ],
+                  "model": "A telefonomat naponta sokszor használom: üzeneteket írok, telefonálok, térképet nézek, és a bankolást is a telefonon intézem. Szerintem nagy előnye, hogy gyors és kényelmes, mert mindent egy helyen találok, és mindig kapcsolatban lehetek a családommal, akik külföldön élnek. A hátránya viszont, hogy sokan túl sokat használják, és függővé válnak tőle. Nálam is előfordul, hogy este túl sokáig nézem, és rosszul alszom. Régen az emberek többet beszélgettek egymással, ma már a vacsoránál is a telefonjukat nézik. Azt gondolom, hogy az élet sokkal könnyebb lett, de okosan kell használnunk."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Beszélgessen a vizsgáztatóval az előadása témájáról. Minden kérdésre részletesen válaszoljon.",
+          "talkMinutes": [3, 4],
+          "follows": 1,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Beszélgetés a fővárosról és a vidékről",
+              "prompt": "Most a vizsgáztató néhány kérdést tesz fel a fővárosi és a vidéki életről. Mondjon példákat, és indokolja a véleményét.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Élt már más városban vagy faluban? Mesélje el, milyen volt.",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, élt-e máshol, és hol", "keywords": ["eltem", "koltoztem", "szulettem", "nottem", "dolgoztam", "korabban", "tanultam", "masik", "kulfold", "gyerekkor", "nagyvaros", "egyetem"] },
+                    { "id": "p2", "label": "Elmondja, milyen volt ott élni", "keywords": ["nehez", "kellemes", "szokatlan", "megszok", "hianyzott", "ismeros", "biztonsagos", "unalmas", "kihivas", "tapasztalat", "jo volt", "megszerett"] }
+                  ],
+                  "model": "Igen, tizennyolc éves koromig egy kis faluban éltem, aztán Debrecenbe költöztem egyetemre. Eleinte nehéz volt megszokni a nagy forgalmat, de később nagyon megszerettem a várost."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Mit szeret leginkább abban a városban, ahol most él? Miért?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Megnevez valamit, ami tetszik neki", "keywords": ["tetszik", "kedvenc", "duna", "setany", "park", "kavehaz", "piac", "kozosseg", "csendes", "kulturalis", "tomegkozleked", "baratok"] },
+                    { "id": "p2", "label": "Megindokolja", "keywords": ["ezert", "miatt", "azert", "hiszen", "kozel", "egyszeru", "kenyelmes", "biztonsag", "hangulat", "emberek", "baratsagos", "lehetoseg"] }
+                  ],
+                  "model": "A városban a Duna-part tetszik a legjobban, mert esténként sokat sétálok ott a barátaimmal. A hangulata is nagyon különleges, ezért szeretek itt élni, és a közlekedés is kényelmes."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Sok fiatal elköltözik a faluból a városba tanulni vagy dolgozni. Mit gondol erről?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Véleményt mond", "keywords": ["gondolom", "velemenyem", "egyetertek", "nem ertek egyet", "ertheto", "nem meglepo", "sajnalatos", "problema", "logikus", "megertem", "belatom", "szuksegszeru"] },
+                    { "id": "p2", "label": "Indokolja a véleményét", "keywords": ["munka", "egyetem", "lehetoseg", "kereset", "fizetes", "jovo", "karrier", "kevesebb", "videk", "elmennek", "visszajon", "tanulmany"] }
+                  ],
+                  "model": "Szerintem ez érthető, mert vidéken kevesebb a lehetőség, és a fiatalok jobb fizetést és karriert szeretnének. Én is így tettem, de remélem, hogy később sok fiatal visszajön, mert a falvaknak szükségük van rájuk."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Képzelje el, hogy jó állást ajánlanak Önnek egy messzi városban, a családjától távol. Mit tenne?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mit tenne", "keywords": ["elfogadnam", "elvallalnam", "elmennek", "maradnek", "megfontolnam", "gondolkodnek", "koltoznek", "kerdeznem", "beszelnek", "valasztanam", "nemet mondanek", "igent mondanek"] },
+                    { "id": "p2", "label": "Indokolja a döntését", "keywords": ["szuleim", "baratai", "hianyozn", "karrier", "fizetes", "lehetoseg", "kockazat", "kapcsolat", "tavolsag", "visszajarn", "latogatn", "hivn"] }
+                  ],
+                  "model": "Valószínűleg elfogadnám az állást, mert nagy lehetőség lenne a karrieremnek és jobb fizetést kapnék. Persze nagyon hiányozna a családom, de hétvégén gyakran hazalátogatnék, és minden este telefonálnék velük."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Hogyan képzeli el a városokat húsz év múlva? Milyen változásokat vár?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Elmondja, milyenek lesznek a jövő városai", "keywords": ["elektromos", "zold", "autonelkul", "okos", "intelligens", "zsufolt", "legszennyez", "kornyezet", "energia", "kerekpar", "technologi", "tomegkozleked"] }
+                  ],
+                  "model": "Úgy gondolom, hogy húsz év múlva a városok zöldebbek és okosabbak lesznek: több elektromos autó és kerékpár lesz, és a környezet tisztább lesz."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Beszélgetés az okostelefonról",
+              "prompt": "Most a vizsgáztató néhány kérdést tesz fel az okostelefon használatáról. Mondjon példákat, és indokolja a véleményét.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Mennyi időt tölt naponta a telefonjával? Ön szerint ez sok vagy kevés?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mennyi időt tölt vele", "keywords": ["orat", "oraig", "oraban", "percet", "naponkent", "egesz nap", "harom", "negy", "hat ora", "sokat", "atlagosan", "korulbelul"] },
+                    { "id": "p2", "label": "Megmondja, szerinte sok-e", "keywords": ["tulzas", "tul sokat", "tobb mint kellene", "megfelelo", "elfogadhato", "gondolom", "nem tulzas", "normalis", "atlagos", "nem gond", "egeszseges", "nehez abbahagyni"] }
+                  ],
+                  "model": "Naponta körülbelül négy órát töltök a telefonommal, és ez szerintem már túl sokat jelent. Főleg munka után nem kellene folyton a képernyőt nézni, de nehéz abbahagyni."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Emlékszik, hogyan tartotta a kapcsolatot a barátaival, amikor még nem volt okostelefonja? Miben más ez ma?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Elmondja, hogyan tartotta a kapcsolatot régen", "keywords": ["level", "telefonaltam", "telefonfulke", "uzenetet", "talalkoz", "irtam", "hivtam", "postai", "telefonkartya", "vezetekes", "szemelyesen", "regen"] },
+                    { "id": "p2", "label": "Elmondja, mi más ma", "keywords": ["valtozott", "gyorsabb", "konnyebb", "kevesebb", "tobbet", "video", "uzenet", "kozossegi", "most mar", "ma mar", "sokkal", "mindenki"] }
+                  ],
+                  "model": "Régen levelet írtunk, vagy telefonáltunk, és a barátokkal személyesen találkoztunk. Ma sokkal könnyebb, mert üzenetet küldök, de szerintem kevesebbet beszélünk igazából egymással."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Sok szülő korlátozza a gyerekei telefonhasználatát. Egyetért ezzel? Miért?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, egyetért-e", "keywords": ["egyetertek", "nem ertek egyet", "helyes", "jo otlet", "szukseges", "indokolt", "tul szigoru", "tamogatom", "ellenzem", "jogos", "ertelmes", "nem helyes"] },
+                    { "id": "p2", "label": "Megindokolja a véleményét", "keywords": ["egeszseg", "tanulas", "alvas", "szem", "fuggo", "internet", "veszely", "vedeni", "ellenorz", "kozossegi", "idopazarl", "figyelem"] }
+                  ],
+                  "model": "Egyetértek ezzel, mert a kisgyerekek még nem tudják jól beosztani az idejüket, és a túl sok telefon árthat az egészségüknek és a tanulásnak. Szerintem jó, ha a szülők szabályokat hoznak, de nem szabad mindent megtiltani."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Néhányan otthon hagyják a telefonjukat a nyaraláson. Ön megtenné? Magyarázza el, miért.",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, megtenné-e", "keywords": ["megtennem", "nem tennem", "otthon hagynam", "magammal vinnem", "nem hagynam", "elvinnem", "kikapcsolnam", "kikapcsolom", "lehetetlen", "kockazatos", "nem tudnam", "tudnam"] },
+                    { "id": "p2", "label": "Megindokolja a döntését", "keywords": ["pihen", "kikapcsol", "stressz", "terkep", "biztonsag", "segitseg", "nelkul", "szabadsag", "figyelem", "kapcsolat", "munka", "szuksegem"] }
+                  ],
+                  "model": "Szerintem nem hagynám otthon, mert térkép nélkül nehezen találnám meg a helyeket, és szükségem van rá a biztonságomhoz. Egy napra viszont kikapcsolnám, hogy jobban tudjak pihenni."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Milyen tanácsot adna annak, aki naponta túl sok órát használja a telefonját?",
+                  "minWords": 20,
+                  "points": [
+                    { "id": "p1", "label": "Tanácsot ad", "keywords": ["korlat", "idozit", "kikapcsol", "sport", "mozgas", "termeszetben", "konyv", "baratok", "alvas", "ertesites", "szunet", "kepernyo"] }
+                  ],
+                  "model": "Azt tanácsolnám, hogy korlátozza az időt, és kapcsolja ki az értesítéseket. Jó, ha többet sportol, sétál a természetben, vagy találkozik a barátaival, és este egy órával korábban kikapcsolja a telefont."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válasszon a két fénykép közül, és mondja el, mit lát rajta. Utána válaszoljon a vizsgáztató egy kérdésére. Ezt a feladatot nem kell előkészíteni.",
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Utasok egy pályaudvaron",
+              "photos": ["es-b1-1"],
+              "prompt": "A fényképen emberek láthatók egy vasútállomáson. Mondja el, mit lát a fényképen, és válaszoljon utána a vizsgáztató egy kérdésére.",
+              "bullets": ["kik vannak a képen, és hol", "mit csinálnak", "milyen a hangulat"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Mondja el, mit lát a kiválasztott fényképen. Amikor készen áll, kezdheti.",
+                  "minWords": 45,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, hol vannak az emberek", "keywords": ["palyaudvar", "allomas", "vasutallomas", "vonat", "peron", "metro", "repuloter", "aluljaro", "csarnok", "vagon", "kocsi", "terminal"] },
+                    { "id": "p2", "label": "Elmondja, mit csinálnak", "keywords": ["varakoz", "felszall", "leszall", "huznak", "visznek", "setalnak", "sietnek", "utaznak", "beszelgetnek", "bepakol", "gurit", "keresik"] },
+                    { "id": "p3", "label": "Beszél az utasokról vagy a hangulatról", "keywords": ["borond", "hatizsak", "taska", "poggyasz", "nyari", "kenyelmes", "ruha", "hangulat", "nyugodt", "forgalmas", "tomeg", "sok ember"] }
+                  ],
+                  "model": "A fényképen egy pályaudvar látható, ahol egy vonat áll a peronnál. Sok utas van a képen, a legtöbbjüknél bőrönd vagy hátizsák van, tehát valószínűleg utazni fognak. Néhányan sietnek, mások beszélgetnek vagy várakoznak. A jobb oldalon egy zöld bőrönd áll, a bal oldalon egy férfi húz egy nagy fekete bőröndöt. A legtöbben könnyű ruhában vannak, ezért szerintem meleg van. A hangulat nyugodt, de nagyon forgalmas."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ön hogyan szeret hosszú úton utazni? Mesélje el, miért.",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, hogyan szeret utazni, és miért", "keywords": ["vonattal", "repulovel", "repulon", "autoval", "busszal", "kenyelmes", "gyorsabb", "olcsobb", "konyvet", "aludhat", "kilatas", "kornyezet"] }
+                  ],
+                  "model": "Hosszú utakra inkább vonattal megyek, mert kényelmes és olcsóbb, és közben olvashatok vagy aludhatok, a repülőtérre pedig nem szeretek kimenni."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Egy csoport a parkban",
+              "photos": ["es-b1-2"],
+              "prompt": "A fényképen emberek jógáznak egy parkban. Mondja el, mit lát a fényképen, és válaszoljon utána a vizsgáztató egy kérdésére.",
+              "bullets": ["kik vannak a képen, és hol", "mit csinálnak", "milyen a hangulat"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Mondja el, mit lát a kiválasztott fényképen. Amikor készen áll, kezdheti.",
+                  "minWords": 45,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, hol vannak az emberek", "keywords": ["park", "gyep", "szabadban", "tisztas", "reten", "hatterben", "jobb oldalon", "bal oldalon", "kozepen", "erdo", "homokos", "palya"] },
+                    { "id": "p2", "label": "Elmondja, mit csinálnak", "keywords": ["joga", "gyakorl", "nyujtoz", "edzenek", "sportol", "mozognak", "meditalnak", "allnak", "tornaz", "felemelik", "hajolnak", "hosszu"] },
+                    { "id": "p3", "label": "Leírja az embereket vagy az időjárást", "keywords": ["napos", "derult", "meleg", "nyar", "rovid nadrag", "polo", "mezitlab", "szonyeg", "matrac", "uveg", "csendes", "nyugodt"] }
+                  ],
+                  "model": "A fényképen emberek jógáznak egy nagy parkban. Sokan vannak, és mindannyian ugyanazt a gyakorlatot csinálják: az egyik lábuk előre van, a másik hátra, a karjukat pedig felemelik. Napos, meleg idő van, mert mindenki rövid nadrágban van, néhányan póló nélkül. A háttérben kék ég és fák látszanak, a fűben pedig szőnyegek és palackok vannak. A hangulat nyugodt és kellemes, szerintem reggel vagy este készült a kép."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ön szokott valamilyen mozgást végezni? Mesélje el, milyen gyakran és hol.",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Elmondja, milyen mozgást végez, hol és milyen gyakran", "keywords": ["futok", "uszom", "edzoterem", "konditerem", "kerekparoz", "biciklizek", "jogazom", "setalok", "focizom", "tornazom", "hetente", "futni"] }
+                  ],
+                  "model": "Hetente háromszor futni járok a Margitszigetre, és szombatonként néha úszom is az uszodában, mert szeretek mozogni."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Képzelje el a feladatlapon leírt helyzetet, és beszélgessen a vizsgáztatóval, aki egy másik személyt alakít.",
+          "talkMinutes": [2, 3],
+          "follows": 3,
+          "choices": [
+            {
+              "id": "a",
+              "title": "A pályaudvaron: jegyátváltás",
+              "photos": ["es-b1-1"],
+              "prompt": "Egy pályaudvaron áll egy bőrönddel és egy jeggyel, amely egy óra múlva induló vonatra szól. Szeretné, ha később indulna, ezért az állomás alkalmazottjához fordul. A vizsgáztató az alkalmazott szerepét játssza.",
+              "bullets": ["megmondja, mit szeretne", "megmondja, mikor szeretne indulni", "az árról beszél", "információt kér"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Jó napot kívánok. Mondja, miben segíthetek?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Elmondja, hogy át szeretné váltani a jegyét", "keywords": ["jegy", "atvaltani", "atvalt", "visszavalt", "vonat", "cserelni", "modositani", "kesobbi", "szeretnem", "kernem", "kerdezn", "lekestem"] }
+                  ],
+                  "model": "Jó napot kívánok! Szeretném átváltani a jegyemet egy későbbi vonatra, mert nem érek ki a peronra időben."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Természetesen. Mikor szeretne indulni?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mikor szeretne indulni", "keywords": ["oraban", "delutan", "este", "reggel", "negyed", "haromkor", "negykor", "otkor", "hatkor", "hetkor", "legkorabban", "kesobb"] }
+                  ],
+                  "model": "Ha lehet, a következő vonattal szeretnék indulni, de legkésőbb délután négykor, mert este fontos találkozóm van."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Rendben. Az átváltás ezerötszáz forintba kerül. Megfelel Önnek?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Reagál az árra, és megmondja, hogyan fizet", "keywords": ["elfogadom", "draga", "fizetek", "fizetni", "kartya", "keszpenz", "nem baj", "nincs mas", "olcsobb", "alternativ", "vallalom", "kifizet"] }
+                  ],
+                  "model": "Nem baj, elfogadom az árat, de kártyával szeretnék fizetni, mert nincs nálam elég készpénz, és a bankautomata is messze van."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Tessék, itt az új jegye. A vonat a negyedik vágányról indul. Szüksége van még valamire?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Megköszöni, és információt kér", "keywords": ["hol van", "merre", "melyik", "mosdo", "kavezo", "csomagmegorzo", "kerdezhetek", "kerdeznem", "segitseg", "lift", "mozgolepcso", "mennyi ido"] }
+                  ],
+                  "model": "Köszönöm szépen, és még megkérdezhetem, hol van a mosdó, és merre találom a csomagmegőrzőt? Viszontlátásra!"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "A parkban: csatlakozás egy csoporthoz",
+              "photos": ["es-b1-2"],
+              "prompt": "Egy parkban elmegy egy jógázó csoport mellett. Szeretne csatlakozni hozzájuk, ezért beszél a csoport szervezőjével. A vizsgáztató a szervező szerepét játssza.",
+              "bullets": ["megmondja, mi érdekli", "megbeszéli, mikor találkoznak", "elmondja, volt-e már tapasztalata", "az árról beszél"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Jó napot! Látom, megállt nálunk. Miben segíthetek?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Elmondja, hogy érdekli a csoport", "keywords": ["csatlakoz", "erdekel", "jogazni", "reszt venni", "kiprobal", "probalni", "csoportba", "orakra", "tagja", "szeretnek", "jelentkez", "megismer"] }
+                  ],
+                  "model": "Jó napot! Nagyon érdekel a jóga, és szeretnék csatlakozni a csoportjukhoz, ha van még hely, mert nemrég költöztem a környékre."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Hetente többször találkozunk. Mely napok felelnének meg Önnek a legjobban?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mely napok felelnek meg neki", "keywords": ["hetfo", "kedd", "szerda", "csutortok", "pentek", "szombat", "vasarnap", "hetvegen", "este", "reggel", "delutan", "munka utan"] }
+                  ],
+                  "model": "A legjobb nekem általában a kedd és a csütörtök este, mert hétfőn és szerdán későig dolgozom."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Nagyon jó. Javaslom, hogy hozzon egy jógaszőnyeget és egy üveg vizet. Gyakorolt már jógát?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Elmondja, volt-e már tapasztalata", "keywords": ["meg nem", "elso", "kezdo", "tobbszor", "egyszer", "evekkel", "regebben", "tanfolyam", "konyvbol", "videobol", "nem probaltam", "probaltam"] }
+                  ],
+                  "model": "Még soha nem próbáltam rendszeresen, csak egyszer voltam egy tanfolyamon, tehát teljesen kezdő vagyok, de szeretném megtanulni."
+                },
+                {
+                  "id": "t4",
+                  "ask": "A havi díj tizenkétezer forint. Szeretne ma jelentkezni?",
+                  "minWords": 15,
+                  "points": [
+                    { "id": "p1", "label": "Reagál az árra, és megmondja, mit tesz", "keywords": ["draga", "olcso", "fizetek", "kartya", "keszpenz", "probaora", "ingyenes", "elso ora", "atgondolom", "holnap", "kovetkezo", "megfontol"] }
+                  ],
+                  "model": "Először szeretnék egy próbaórán részt venni, aztán átgondolom a dolgot, és holnap megmondom, hogy jelentkezem-e vagy sem."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

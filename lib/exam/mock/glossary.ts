@@ -21,19 +21,22 @@ interface GlossaryIndex {
   singles: Map<string, { item: PcicItem; form: string }>;
   phrases: { words: string; item: PcicItem; form: string }[];
   target: MockTarget;
+  /** Target hu only: the learner's language (es or en) the meaning is given in; es / en targets have their one counterpart. */
+  source: 'es' | 'en';
 }
 
 const ARTICLE: Record<MockTarget, RegExp> = {
   es: /^(el|la|los|las|un|una)\s+/i,
   en: /^(to|the|a|an)\s+/i,
+  hu: /^(a|az|egy)\s+/i,
 };
 
 /** The index of the level's items: single-word forms verbatim, multi-word ones as phrases. */
-export function buildGlossaryIndex(items: PcicItem[], target: MockTarget): GlossaryIndex {
+export function buildGlossaryIndex(items: PcicItem[], target: MockTarget, source: string | null = null): GlossaryIndex {
   const singles: GlossaryIndex['singles'] = new Map();
   const phrases: GlossaryIndex['phrases'] = [];
   for (const item of items) {
-    const raw = target === 'es' ? item.es : item.en;
+    const raw = target === 'es' ? item.es : target === 'hu' ? (item.hu ?? '') : item.en;
     for (const alt of raw.split(' / ')) {
       const form = alt.replace(/\(.*?\)/g, '').trim().replace(ARTICLE[target], '').trim().toLowerCase();
       const words = sentenceWords(form);
@@ -45,7 +48,7 @@ export function buildGlossaryIndex(items: PcicItem[], target: MockTarget): Gloss
       }
     }
   }
-  return { singles, phrases, target };
+  return { singles, phrases, target, source: source === 'es' ? 'es' : 'en' };
 }
 
 /** The `{{n}}` gap marker of the authored texts. */
@@ -107,7 +110,8 @@ export function mockGlossary(task: MockTask, index: GlossaryIndex, learned: Read
   const seen = new Set<string>();
   const push = (item: PcicItem, form: string) => {
     if (learned.has(item.id) || seen.has(item.id)) return;
-    const meaning = (index.target === 'es' ? item.en : item.es).split(' / ')[0].trim();
+    const meaningSide = index.target === 'es' ? item.en : index.target === 'hu' ? item[index.source] : item.es;
+    const meaning = meaningSide.split(' / ')[0].trim();
     if (!meaning) return;
     seen.add(item.id);
     out.push({ itemId: item.id, term: form, meaning });

@@ -19,7 +19,12 @@
 // direction averages scale scores (anchors from the research of 2026-10-22: pass 140 / 160 / 180, the speaking has its
 // own anchors).
 //
-// The speaking paper (every level, both directions) comes from the file data/exams/mock/<target>-<level>-speaking.json
+// hu direction (E90, learner of Hungarian): A1 and A2 are the speaking paper ONLY (no paper is generated from the words),
+// B1, B2 and C1 are the four authored papers in the order of the es direction with the same minutes (⚠ the minutes are not
+// verified against a Hungarian exam body). The pass rule is the equal-weight average of the counted skills against the
+// approximate AVERAGE_PASS_PCT (the examiners' thresholds are not known here), labelled "approximate" in the UI.
+//
+// The speaking paper (every level, all directions) comes from the file data/exams/mock/<target>-<level>-speaking.json
 // (PLAN-vizsga-szobeli.md). While that file has no form the paper stays a placeholder (reserve): no task, not counted.
 // ⚠ The Spanish A1 / A2 oral structure (3 tareas, the minutes below) is from a search summary: the official guide was not
 // available on 2026-10-22.
@@ -284,12 +289,41 @@ const ES_GROUPS = [
 export const MOCK_LEVELS: Record<MockTarget, readonly MockLevel[]> = {
   es: ['A1', 'A2', 'B1', 'B2', 'C1'],
   en: ['A1', 'A2', 'B1', 'B2', 'C1'],
+  hu: ['A1', 'A2', 'B1', 'B2', 'C1'],
 };
 
-/** A1 / A2 are always available; B1 and up only when every non-placeholder paper has at least one authored form (the speaking is not required: with an empty file it stays a placeholder). */
+// hu: the names of the skills in Hungarian.
+const HU_NAMES: MockSkillNames = {
+  reading: 'Olvasott szöveg értése',
+  writing: 'Íráskészség',
+  listening: 'Hallott szöveg értése',
+  speaking: 'Beszédkészség',
+};
+
+const HU_RULE: MockRule = { kind: 'average', passPct: AVERAGE_PASS_PCT, approximate: true };
+
+/** hu: A1 / A2 = the speaking paper only (not a placeholder: it is the whole exam); B1-C1 = the four authored papers. */
+function huBlueprint(level: MockLevel): MockBlueprint {
+  const common = { plan: 'authored' as const, official: false, skillNames: HU_NAMES, rule: HU_RULE, counts: AUTHORED_COUNTS };
+  if (level === 'A1' || level === 'A2') {
+    return { ...common, papers: [{ id: 'speaking', name: HU_NAMES.speaking, minutes: ES_MINUTES[level].speaking, skills: ['speaking'] }] };
+  }
+  return {
+    ...common,
+    papers: ES_AUTHORED_ORDER.map((skill) => ({
+      id: skill,
+      name: HU_NAMES[skill],
+      minutes: ES_AUTHORED_MINUTES[level][skill],
+      skills: [skill],
+      placeholder: skill === 'speaking',
+    })),
+  };
+}
+
+/** A1 / A2 are always available (hu: only with an authored speaking form, it is the whole exam); B1 and up only when every non-placeholder paper has at least one authored form (the speaking is not required: with an empty file it stays a placeholder). */
 export function mockAvailable(target: MockTarget, level: string, authored?: AuthoredPaperFile[]): level is MockLevel {
   if (!(MOCK_LEVELS[target] as readonly string[]).includes(level)) return false;
-  if (level === 'A1' || level === 'A2') return true;
+  if ((level === 'A1' || level === 'A2') && target !== 'hu') return true;
   const papers = getMockBlueprint(target, level as MockLevel).papers.filter((p) => !p.placeholder);
   return authoredFormCount(target, level as MockLevel, papers.map((p) => p.id), authored) > 0;
 }
@@ -302,6 +336,7 @@ export function mockIsFullLength(level: MockLevel): boolean {
 const ES_ORDER: PaperSkill[] = ['reading', 'writing', 'listening', 'speaking'];
 
 export function getMockBlueprint(target: MockTarget, level: MockLevel): MockBlueprint {
+  if (target === 'hu') return huBlueprint(level);
   if (level !== 'A1' && level !== 'A2') {
     if (target === 'es') {
       const names = level === 'C1' ? ES_C1_NAMES : ES_NAMES;

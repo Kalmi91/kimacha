@@ -69,6 +69,8 @@ export function isNonsenseToken(tok: string): boolean {
 const FREE: Record<MockTarget, string> = {
   es: 'de la que el en y a los se del las un por con no una su para es al lo como mas pero sus le ya o fue este si porque esta entre cuando muy sin sobre tambien me hasta hay donde quien desde todo nos durante todos uno les ni contra otros ese eso ante ellos e esto mi antes algunos unos yo otro otras otra tanto esa estos mucho nada muchos cual poco ella estar estas algo nosotros mis tu te ti tus ellas soy eres somos son estoy estas esta estan tengo tiene tienen vivo vive trabajo quiero puedo voy va vamos hago hace gusta gustan llamo llama hola gracias adios por favor aqui alli hoy manana ayer',
   en: 'the be to of and a in that have i it for not on with he as you do at this but his by from they we say her she or an will my one all would there their what so up out if about who get which go me when make can like time no just him know take people into year your good some could them see other than then now look only come its over think also back after use two how our work first well way even new want because any these give day most us is are was were am been has had does did said went made got very much more here where why yes hello thanks please today tomorrow yesterday live name',
+  // hu is not checked against a dictionary (see app/mock-exam.tsx: an agglutinative language has too many inflected forms for a word list), so this is only the table's entry.
+  hu: 'a az egy es de hogy nem is meg el ki be fel le van volt lesz ez az ezt azt itt ott igen koszonom szia',
 };
 
 const stripPunct = /[¿?¡!.,;:()"«»/]/g;
@@ -77,7 +79,7 @@ const stripPunct = /[¿?¡!.,;:()"«»/]/g;
 export function buildLexicon(items: PcicItem[], target: MockTarget): Set<string> {
   const lex = new Set<string>(FREE[target].split(' '));
   for (const it of items) {
-    const forms = target === 'es' ? [it.es, it.exampleEs] : [it.en, it.exampleEn];
+    const forms = target === 'es' ? [it.es, it.exampleEs] : target === 'hu' ? [it.hu, it.exampleHu] : [it.en, it.exampleEn];
     for (const text of forms) {
       if (!text) continue;
       for (const tok of foldedTokens(text.replace(stripPunct, ' '))) lex.add(tok);

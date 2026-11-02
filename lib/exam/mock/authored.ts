@@ -4,9 +4,7 @@
 // included, is the exception: lib/exam/mock/build.ts gives it a form count of its own). Pure module: the files can be injected (tests).
 
 import { MOCK_AUTHORED } from '@/data/exams/mock';
-import type { AuthoredPaperFile, MockLevel, MockTarget, MockTask } from './types';
-
-const PREFIX = /^(TAREA|PART) \d+\.\s*/;
+import { TASK_PREFIX, TASK_WORD, type AuthoredPaperFile, type MockLevel, type MockTarget, type MockTask } from './types';
 
 const fileOf = (files: AuthoredPaperFile[], target: MockTarget, level: MockLevel, paper: string) =>
   files.find((f) => f.target === target && f.level === level && f.paper === paper);
@@ -17,7 +15,7 @@ export function authoredFormCount(target: MockTarget, level: MockLevel, paperIds
   return Math.min(...paperIds.map((id) => fileOf(files, target, level, id)?.forms.length ?? 0));
 }
 
-/** The tasks of one paper from the seed's form (`forms[seed % formCount]`): id `<paper>-<n>`, the instruction led by `TAREA n.` / `PART n.`. */
+/** The tasks of one paper from the seed's form (`forms[seed % formCount]`): id `<paper>-<n>`, the instruction led by `TAREA n.` / `PART n.` / `FELADAT n.`. */
 export function authoredTasks(
   target: MockTarget,
   level: MockLevel,
@@ -31,7 +29,7 @@ export function authoredTasks(
   const form = forms[((seed % formCount) + formCount) % formCount];
   return form.tasks.map((task, i) => {
     const n = i + 1;
-    const instruction = `${target === 'es' ? 'TAREA' : 'PART'} ${n}. ${task.instruction.replace(PREFIX, '')}`;
+    const instruction = `${TASK_WORD[target]} ${n}. ${task.instruction.replace(TASK_PREFIX, '')}`;
     return { ...task, id: `${paper}-${n}`, instruction } as MockTask;
   });
 }

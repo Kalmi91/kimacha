@@ -1,0 +1,319 @@
+{
+  "target": "hu",
+  "level": "B2",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válasszon a két helyzet közül. Tíz perce van arra, hogy felkészüljön egy kiselőadásra, utána a vizsgáztatóval beszélget a témáról.",
+          "prepSeconds": 600,
+          "talkMinutes": [6, 7],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Az elhanyagolt játszótér a lakótelepen",
+              "prompt": "Ön a lakótelep lakóközösségének tagja. A ház melletti játszótér egyre piszkosabb és elhanyagoltabb, és a közösségnek döntenie kell, mi legyen. Készítsen kiselőadást, amelyben értékeli a dokumentum javaslatait.",
+              "bullets": [
+                "Mutassa be a problémát és lehetséges okait.",
+                "Mondja el legalább három javaslat előnyeit és hátrányait.",
+                "Válassza ki a legjobbnak tartott javaslatot, és indokolja a döntését.",
+                "Tegyen hozzá egy kiegészítő intézkedést, vagy mondja el, mi történne, ha nem lépnének."
+              ],
+              "input": "A lakók javaslatai:\n1. Havi hozzájárulást kérni minden családtól, hogy fizetni tudjanak egy kertészt.\n2. Havonta egy szombaton önkéntes takarítónapot tartani.\n3. Jobb világítást és térfigyelő kamerákat felszerelni.\n4. Megkérni az önkormányzatot, hogy vállalja a karbantartást.\n5. Engedélyezni egy büfét a játszótér mellett, ha az üzemeltetője rendben tartja a területet.\n6. Éjszakára kerítéssel lezárni a játszóteret.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, elkezdheti a kiselőadását.",
+                  "minWords": 100,
+                  "points": [
+                    { "id": "problema", "label": "Bemutatja a problémát és az okait", "keywords": ["szemetes", "szemét", "elhanyagol", "rongál", "vandál", "karbantartás hiány", "hiányzik", "az oka", "okozza", "romos", "piszkos"] },
+                    { "id": "ertekeles", "label": "Értékeli több javaslat előnyeit és hátrányait", "keywords": ["előnye", "hátránya", "egyrészt", "másrészt", "viszont", "azonban", "mellett szól", "ellen szól", "problémája"] },
+                    { "id": "valasztas", "label": "Kiválaszt egy javaslatot, és indokolja", "keywords": ["leghatékonyabb", "legjobbnak", "választanám", "döntenék", "támogatom", "inkább", "legjobb megoldás", "mellett döntenék"] },
+                    { "id": "kiegeszites", "label": "Kiegészítő intézkedést említ, vagy a következményeket", "keywords": ["tovább romlik", "kiegészít", "emellett", "hosszú távon", "ha semmit", "ha nem", "kampány", "aláírás", "romlana", "gyűjtenék"] }
+                  ],
+                  "model": "Rendben. A probléma az, hogy a játszótér az utóbbi években egyre szemetesebb és elhanyagoltabb lett. Szerintem ennek az oka egyrészt a karbantartás hiánya, másrészt néhány fiatal, aki rongálja a padokat és a játékokat. A javaslatok közül a havi hozzájárulásnak az az előnye, hogy biztos pénzt ad, de az a hátránya, hogy nem mindenki tudja kifizetni. Az önkéntes takarítónapok összehozzák a szomszédokat, viszont az emberek hamar elfáradnak. A kamerák megelőzhetik a rongálást, azonban drágák. Én a leghatékonyabbnak azt tartom, ha az önkormányzat vállalja a karbantartást, mert ez az ő feladata. Emellett aláírásokat is gyűjtenék, hogy nyomást gyakoroljunk rájuk. Ha semmit sem teszünk, a játszótér tovább romlik, és hosszú távon senki sem viszi oda a gyerekét."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Vannak, akik szerint egy közterület gondozása a hatóságok feladata, nem a lakóké. Ön mit gondol?",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "felelosseg", "label": "Állást foglal arról, kinek a dolga", "keywords": ["felelősség", "közös", "együtt", "adóból", "önkormányzat", "kötelesség", "mindenki", "hozzájár"] },
+                    { "id": "indok", "label": "Érvet vagy példát hoz", "keywords": ["büszke", "magukénak", "vigyáz", "szemetel", "összetartás", "szomszéd", "közösségi"] }
+                  ],
+                  "model": "Szerintem ez közös felelősség. A hatóságoknak biztosítaniuk kell a szolgáltatást, de ha mindenki hozzájárul, akkor az emberek büszkébbek a környékükre, és jobban vigyáznak arra, ami az övék, például nem szemetelnek az utcán."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Tegyük fel, hogy a közösségnek sikerül összegyűjtenie a szükséges pénzt. Hogyan győzné meg a lakókat, hogy vegyenek részt a projektben?",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "forma", "label": "Konkrét módot javasol a tájékoztatásra vagy meghívásra", "keywords": ["lakógyűlés", "gyűlés", "plakát", "szórólap", "közösségi oldal", "meghív", "tájékoztat", "üzenet", "csoport"] },
+                    { "id": "elonyok", "label": "Bemutatja az előnyöket vagy az eredményeket", "keywords": ["előny", "eredmény", "biztonság", "gyerek", "család", "bemutat", "fénykép", "szebb", "élhetőbb"] }
+                  ],
+                  "model": "Először lakógyűlést tartanék a játszótéren, és plakátokat tennék ki a lépcsőházakban, hogy mindenkit meghívjak. Utána fényképekkel bemutatnám az eredményeket, és elmondanám az előnyöket, például hogy biztonságosabb lesz a gyerekeknek és a családoknak."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Kevesebb élelmiszer-pazarlás a céges étkezdében",
+              "prompt": "Ön egy közepes méretű cégnél dolgozik, amelynek az étkezdéjében naponta sok ételt kidobnak. A vezetés csökkenteni szeretné a pazarlást, és kikéri a munkatársak véleményét. Készítsen kiselőadást, amelyben értékeli a dokumentum javaslatait.",
+              "bullets": [
+                "Mutassa be a problémát, és magyarázza el, miért érdemes megoldani.",
+                "Mondja el legalább három javaslat előnyeit és hátrányait.",
+                "Válassza ki a leghatékonyabbnak tartott javaslatot, és indokolja a döntését.",
+                "Tegyen hozzá egy kiegészítő intézkedést, vagy mondja el, mi történne, ha nem lépnének."
+              ],
+              "input": "A vezetés javaslatai:\n1. Minden ételből kisebb és nagyobb adagot is kínálni.\n2. Előre, mobilalkalmazással lehet rendelni, így csak annyi étel készül, amennyi kell.\n3. A megmaradt ételt jótékonysági szervezeteknek odaadni.\n4. Plakátokkal és előadásokkal tudatosságnövelő kampányt indítani.\n5. Havonta jutalmat adni annak az osztálynak, amelyik a legkevesebb ételt dobja ki.\n6. Díjat kérni a tányéron hagyott ételért.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, elkezdheti a kiselőadását.",
+                  "minWords": 100,
+                  "points": [
+                    { "id": "problema", "label": "Bemutatja a problémát, és megindokolja, miért érdemes megoldani", "keywords": ["pazarl", "kukában", "kidob", "költség", "környezet", "pénz", "hulladék", "érdemes"] },
+                    { "id": "ertekeles", "label": "Értékeli több javaslat előnyeit és hátrányait", "keywords": ["előnye", "hátránya", "egyrészt", "másrészt", "viszont", "azonban", "mellett szól", "ellen szól", "problémája"] },
+                    { "id": "valasztas", "label": "Kiválaszt egy javaslatot, és indokolja", "keywords": ["leghatékonyabb", "legjobbnak", "választanám", "döntenék", "támogatom", "inkább", "legjobb megoldás", "mellett döntenék"] },
+                    { "id": "kiegeszites", "label": "Kiegészítő intézkedést említ, vagy a következményeket", "keywords": ["tovább nő", "kiegészít", "emellett", "hosszú távon", "ha semmit", "ha nem", "kampány", "növekedne", "büntet"] }
+                  ],
+                  "model": "A cégünk étkezdéjében minden nap sok étel a kukában köt ki, és ez nemcsak pénzpazarlás, hanem a környezetnek is árt. Érdemes ezért változtatni, mert a hulladék költségeket is okoz. A kisebb adag előnye, hogy mindenki a saját étvágyához igazíthatja, de van, aki ezt kényelmetlennek találja. Az előre rendelés azért jó, mert csak annyi étel készül, amennyire szükség van, viszont ehhez alkalmazást kell fejleszteni, ami drága. A díjfizetés hátránya, hogy sokakat bosszanthat. Én az előre rendelést választanám, mert az a leghatékonyabb, és senkit sem kényszerít semmire. Emellett kampányt is indítanék plakátokkal. Ha semmit sem teszünk, a pazarlás tovább nő, és hosszú távon még többe kerül."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Egyes cégek büntetéssel sújtják azokat, akik pazarolják az erőforrásokat. Jó módszernek tartja ezt a szokások megváltoztatására?",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "ertekeles", "label": "Értékeli a büntetést, és indokol", "keywords": ["ösztönz", "jutalm", "motivál", "kényszer", "elutasít", "nevel", "meggyőz", "félelem", "igazságtalan"] },
+                    { "id": "hosszutav", "label": "Beszél a tudatosságról vagy a hosszú távú hatásról", "keywords": ["tudatos", "megszok", "idővel", "hosszú távon", "kultúra", "szemlélet", "meggyőződés", "tartós", "fokozatos"] }
+                  ],
+                  "model": "Szerintem a büntetés nem a legjobb megoldás, mert a dolgozók elutasítást érezhetnek. Inkább jutalmakkal motiválnám őket, és fokozatosan nevelném őket, mert idővel kialakul a tudatosság és a megszokás, és ez tartós eredményt hoz."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Gondoljon a saját otthonára. Mit tehetne Ön azért, hogy kevesebb ételt dobjon ki?",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "cselekves", "label": "Konkrét otthoni lépéseket említ", "keywords": ["bevásárlólista", "tervez", "lefagyaszt", "fagyaszt", "maradék", "komposzt", "felhasznál", "dátum", "ellenőriz"] }
+                  ],
+                  "model": "Otthon bevásárlólistát készítenék, és csak annyit vennék, amennyire valóban szükségem van. A maradék ételt lefagyasztanám, vagy másnap felhasználnám, a zöldséghulladékból pedig komposztot csinálnék, és figyelném a lejárati dátumokat. A heti menüt is előre megterveznám, hogy ne vegyek fölösleges dolgokat."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válasszon a két fénykép közül. Tíz perce van arra, hogy felkészüljön a helyzet leírására, utána a vizsgáztatóval beszélget a témáról.",
+          "prepSeconds": 600,
+          "talkMinutes": [5, 6],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Egy munkahelyi megbeszélés",
+              "prompt": "Nézze meg a fényképet, amelyen egy csoport egy kis teremben munkahelyi megbeszélésen vesz részt. Készítsen leírást a helyzetről és arról, amit elképzel vele kapcsolatban.",
+              "bullets": [
+                "Mondja el, mit lát: hol vannak, és ki mit csinál.",
+                "Képzelje el, miről szól a megbeszélés, és mi történt előtte.",
+                "Tegyen feltevéseket arról, mit gondolnak vagy éreznek az emberek most.",
+                "Meséljen egy hasonló saját élményről."
+              ],
+              "input": "Képzelje el, hogy Ön is ennek a cégnek dolgozik, és éppen most lépett be a terembe. Gondolja végig, miről vitatkoznak, milyen döntést kell hozniuk, és hogyan érzi magát mindenki.",
+              "photos": ["es-b2-1"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, elkezdheti a leírást.",
+                  "minWords": 80,
+                  "points": [
+                    { "id": "leiras", "label": "Leírja, amit a fényképen lát", "keywords": ["vetít", "vászn", "oszlopdiagram", "grafikon", "laptop", "számítógép", "asztal", "maszk", "ülnek"] },
+                    { "id": "tema", "label": "Elképzeli a megbeszélés témáját és az előzményeket", "keywords": ["értékesítés", "eladás", "eredmény", "termék", "költségvetés", "bevezet", "stratégia", "projekt", "ügyfél"] },
+                    { "id": "erzesek", "label": "Feltételezi, mit éreznek az emberek", "keywords": ["aggód", "fáradt", "unott", "figyel", "érdekl", "koncentrál", "ideges", "motivált", "feszült"] },
+                    { "id": "tapasztalat", "label": "Hasonló saját élményt mesél", "keywords": ["nekem is volt", "volt egyszer", "emlékszem", "tavaly", "régi munkahely", "korábbi munka", "nálunk is", "velem is", "az előző"] }
+                  ],
+                  "model": "A képen egy kis tárgyalóteremben öt embert látok, a legtöbbjük arcmaszkot visel. Egy férfi a vásznon álló vetítés mellett áll, és egy oszlopdiagramra mutat, a többiek az asztal körül ülnek. Az egyik lány a laptopján jegyzetel. Úgy képzelem, hogy egy termék értékesítési eredményeit nézik át, talán egy új bevezetést készítenek elő, és előtte ügyfelekkel tárgyaltak. Szerintem figyelnek, de néhányan fáradtnak tűnnek, vagy aggódnak az eredmények miatt. Nekem is volt egyszer egy hasonló megbeszélésem a régi munkahelyemen, és sok feladattal jöttünk ki belőle."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Ön szerint mindig szükségesek a személyes megbeszélések? Miért?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "allaspont", "label": "Értékeli a személyes találkozó szükségességét, és érvet mond", "keywords": ["videóhívás", "videókonferencia", "online", "távolról", "e-mail", "időpazarlás", "kapcsolat", "kommunikáció", "megtakarít", "telefon", "írásban"] },
+                    { "id": "arnyalas", "label": "A téma szerint árnyalja a választ", "keywords": ["témától függ", "fontos döntés", "kényes", "egyszerű ügy", "egyes esetekben", "bizonyos esetekben"] }
+                  ],
+                  "model": "Nem mindig. Sok mindent el lehet intézni videóhíváson vagy e-mailben, így nem vész kárba az idő, de ez a témától függ: a fontos döntésekhez inkább a személyes kapcsolatot választom, az egész csapattal."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Hogyan fog változni a csapatmunka a következő tíz évben?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "jovo", "label": "Feltevést fogalmaz meg a jövőről", "keywords": ["mesterséges intelligencia", "technológia", "automatiz", "távmunka", "virtuális", "digitális", "robot", "otthonról"] },
+                    { "id": "kovetkezmeny", "label": "Pozitív vagy negatív következményt említ", "keywords": ["rugalmas", "kockázat", "veszély", "emberi kapcsolat", "munkahely", "magány", "termelékeny", "szabadidő"] }
+                  ],
+                  "model": "Biztosan több technológia lesz, például mesterséges intelligencia végzi az ismétlődő feladatokat, és többen dolgoznak majd otthonról. Ez rugalmasságot adhat, de fennáll a kockázat, hogy elvész az emberi kapcsolat."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Egy költözés",
+              "prompt": "Nézze meg a fényképet, amelyen többen ládákat és bútorokat pakolnak az utcán egy épület előtt. Készítsen leírást a helyzetről és arról, amit elképzel vele kapcsolatban.",
+              "bullets": [
+                "Mondja el, mit lát: hol vannak, és ki mit csinál.",
+                "Képzelje el, miért költöznek, és milyen volt eddig a délelőtt.",
+                "Tegyen feltevéseket arról, mit éreznek az emberek most.",
+                "Meséljen egy költözésről, amelyet Ön vagy valaki közeli átélt."
+              ],
+              "input": "Képzelje el, hogy a költöző személy az Ön barátja, és Ön elment neki segíteni. Gondolja végig, miért vált lakást, milyen volt eddig a délelőtt, és mit éreznek az emberek.",
+              "photos": ["es-b2-2"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, elkezdheti a leírást.",
+                  "minWords": 80,
+                  "points": [
+                    { "id": "leiras", "label": "Leírja, amit a fényképen lát", "keywords": ["kisteherautó", "furgon", "doboz", "láda", "zsák", "járda", "bútor", "cipel", "emel"] },
+                    { "id": "ok", "label": "Elképzeli, miért költöznek, és milyen volt a délelőtt", "keywords": ["új munka", "másik város", "nagyobb lakás", "olcsóbb", "bérleti", "albérlet", "házasod", "munkahely", "pakolnak"] },
+                    { "id": "erzes", "label": "Feltételezi, mit éreznek az emberek", "keywords": ["fáradt", "boldog", "izgatott", "ideges", "stressz", "kimerült", "nosztalgi", "lelkes"] },
+                    { "id": "tapasztalat", "label": "Mesél egy saját vagy közeli költözésről", "keywords": ["költöztem", "segítettek", "emlékszem", "tavaly", "egyszer", "legutóbb", "segítettem", "unokatestvér"] }
+                  ],
+                  "model": "A képen öt embert látok a járdán és a füvön egy épület előtt. Rengeteg kartondoboz és fekete zsák van mindenfelé, és egy fehér kisteherautó áll nyitott hátsó ajtóval. A háttérben fák és egy lépcső is látszik. Egy férfi egy fabútort emel ki, egy nő pedig egy ládát cipel. Úgy képzelem, hogy a barátjuk másik városba költözik egy új munka miatt, és reggel óta pakolnak. Valószínűleg fáradtak, de izgatottak és egy kicsit stresszesek. Én tavaly költöztem, és az unokatestvéreim segítettek, kimerültünk, de jó hangulatban telt."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Részt vett már Ön valaha költözésben? Mesélje el, milyen volt.",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "elbeszeles", "label": "Konkrét élményt mesél el", "keywords": ["segít", "család", "barát", "testvér", "szülő", "unokatestvér", "cipel", "pakol", "egész nap", "órákig"] },
+                    { "id": "ertekeles", "label": "Értékeli az élményt", "keywords": ["fárasztó", "kimerítő", "kimerül", "vicces", "jó hangulat", "káosz", "bonyolult", "stressz", "nevet"] }
+                  ],
+                  "model": "Igen, két éve költöztem albérletbe, és a barátaim segítettek. Majdnem egész nap pakoltunk, és végül kimerültünk, de nagyon jó hangulat volt, mert pizzát rendeltünk, és közben sokat nevettünk."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Ön szerint mi a legnehezebb egy költözésben? Indokolja.",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "nehezseg", "label": "Megnevez valamit, ami nehéz egy költözésben", "keywords": ["csomagol", "kidob", "pénz", "drága", "elbúcsúz", "megszok", "papírmunka", "emlék", "cipel"] },
+                    { "id": "indok", "label": "Gyakorlati vagy érzelmi indokot mond", "keywords": ["érzelmi", "stressz", "szervez", "hiányoz", "nosztalgi", "fáradság", "bizonytalan", "alkalmazkod"] }
+                  ],
+                  "model": "Szerintem a legnehezebb elbúcsúzni a környéktől és megszokni egy újat, mert hiányoznak a szomszédok. Ezen kívül mindent szervezni kell, és pénzt is kell költeni, ami sok stresszel jár."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válasszon a két felmérés közül. Olvassa el az eredményeket, és beszélgessen a vizsgáztatóval a témáról. Felkészülési idő nincs.",
+          "talkMinutes": [3, 4],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Felmérés a vásárlási szokásokról",
+              "prompt": "Olvassa el egy felmérés eredményeit arról, hogyan vásárolnak az emberek. Utána beszélgessen a vizsgáztatóval a témáról.",
+              "input": "Felmérés a vásárlási szokásokról. Ezer magyar felnőtt vett részt.\nHavonta többször vásárol az interneten: 41 %\nInkább üzletben vásárol: 34 %\nMindkettőt nagyjából egyformán használja: 25 %\nAz online vásárlók 62 %-a az alacsonyabb árat, 48 %-a a kényelmet említi fő okként.\nAz üzletben vásárlók 55 %-a azért marad, mert megnézheti és kipróbálhatja a terméket.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Nézze meg a felmérés adatait. Van olyan eredmény, amely meglepi? Mondja el, miért.",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "adat", "label": "Konkrét adatot említ", "keywords": ["százalék", "negyven", "harmad", "negyed", "több mint", "fele", "többség", "kisebbség"] },
+                    { "id": "elvaras", "label": "Elmondja, miért lepi meg, vagy miért számított rá", "keywords": ["számítottam", "vártam", "gondoltam", "azt hittem", "meglepő", "feltűnő", "nem csodálkozom"] }
+                  ],
+                  "model": "Meglepő, hogy az emberek több mint negyven százaléka minden hónapban többször rendel az interneten keresztül. Én azt hittem, hogy kevesebben vannak, mert sokan szeretik kézbe venni a termékeket, mielőtt megvásárolják őket."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Miért gondolja, hogy sokan az alacsonyabb árat tartják a legfontosabbnak az online vásárlásnál?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "ar", "label": "Az árak összehasonlításának lehetőségét említi", "keywords": ["összehasonlít", "akció", "kedvezmény", "kupon", "ingyenes szállítás", "alacsonyabb költség", "árverseny", "versenyképes"] },
+                    { "id": "kenyelem", "label": "Kényelmet vagy időmegtakarítást említ", "keywords": ["kényelm", "időt", "otthonról", "nem kell", "sorban", "parkol", "bármikor", "gyors"] }
+                  ],
+                  "model": "Szerintem azért, mert az interneten könnyű összehasonlítani az árakat, és gyakran van akció vagy kedvezmény. Emellett kényelmes, mert otthonról, bármikor lehet rendelni, és nem kell sorban állni."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Milyen előnyei és hátrányai vannak annak, ha valaki az üzletben vásárol?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "elony", "label": "Előnyt említ", "keywords": ["kipróbál", "megnéz", "megérint", "azonnal", "kézbe", "személyes", "tanácsadás", "eladó", "cserél"] },
+                    { "id": "hatrany", "label": "Hátrányt említ", "keywords": ["drágább", "sorban", "utazás", "parkolás", "zárva", "nyitvatartás", "szűk választék", "kisebb választék", "tömeg", "időigényes"] }
+                  ],
+                  "model": "Az előnye, hogy a terméket kipróbálhatom, és az eladó személyesen tanácsot ad. A hátránya, hogy gyakran drágább, kisebb a választék, és sokszor sorban kell állni."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Képzelje el, hogy tíz év múlva szinte mindenki az interneten vásárol. Hogyan változna a város, és milyen gondokat okozna ez?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "kep", "label": "Leírja, milyen lenne a város", "keywords": ["üres", "bezár", "kisebb üzletek", "bolt", "utcák", "csendes", "csomagszállít", "furgon", "futár", "forgalom"] },
+                    { "id": "problema", "label": "Gondot említ", "keywords": ["munkahely", "elveszít", "kisvállalkozó", "magány", "közösség", "csomaghegy", "csomagolás", "környezet", "szemét"] }
+                  ],
+                  "model": "Szerintem sok kisebb üzlet bezárna, és az utcák üresebbek, csendesebbek lennének, viszont több furgon és futár járna. A gond az, hogy sokan elveszítenék a munkahelyüket, és a közösségi élet is gyengülne."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Felmérés a nyelvtanulásról",
+              "prompt": "Olvassa el egy felmérés eredményeit arról, hogyan tanulnak nyelvet a felnőttek. Utána beszélgessen a vizsgáztatóval a témáról.",
+              "input": "Felmérés a felnőttek nyelvtanulási szokásairól. Ezer ember vett részt.\nMobilalkalmazással tanul: 36 %\nNyelvtanfolyamra jár: 29 %\nMagántanárral tanul: 15 %\nÖnállóan tanul könyvből vagy videókból: 14 %\nKülföldön tanul a mindennapokban: 6 %\nA megkérdezettek 58 %-a hetente két óránál kevesebbet tanul.\nAzoknak a 42 %-a, akik abbahagyták a tanulást, azt mondja, hogy nem látta a haladást.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Nézze meg az eredményeket. Melyik tanulási módot használja Ön, és miért?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "mod", "label": "Megnevezi a saját tanulási módját", "keywords": ["alkalmazás", "applikáció", "tanfolyam", "magántanár", "könyv", "videó", "kurzus", "külföldön", "program"] },
+                    { "id": "ok", "label": "Megindokolja a választását", "keywords": ["rugalmas", "olcsó", "kényelmes", "praktikus", "motivál", "időbeosztás", "gyors", "hatékony", "szórakoztat"] }
+                  ],
+                  "model": "Én főleg mobilalkalmazást használok, mert rugalmas, és bárhol, bármikor lehet vele gyakorolni. A tanfolyam túl drága lenne, és nem tudnám a munkámhoz igazítani az időbeosztásomat."
+                },
+                {
+                  "id": "t2",
+                  "ask": "A megkérdezettek több mint fele hetente két óránál kevesebbet tanul. Mi lehet ennek az oka?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "ido", "label": "Időhiányt vagy fáradtságot említ", "keywords": ["időhiány", "elfoglalt", "fáradt", "munkahely", "család", "nincs idő", "dolgozik", "későn", "stressz"] },
+                    { "id": "motivacio", "label": "Motivációt vagy a látható haladás hiányát említi", "keywords": ["motiváció", "lelkesedés", "unalmas", "haladás", "eredmény", "nincs cél", "gyakorlás", "kitartás", "lemond"] }
+                  ],
+                  "model": "Szerintem a legtöbb embernek időhiánya van, mert sokat dolgozik, és este fáradt. Emellett hiányzik a motiváció is, főleg ha nem látja a haladást, és ilyenkor könnyen abbahagyja."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Sokan azért hagyják abba, mert nem látják a haladást. Mivel lehetne őket motiválni?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "javaslat", "label": "Konkrét módot javasol", "keywords": ["célok", "kitűz", "kis lépés", "napló", "jutalom", "játék", "pontgyűjt", "visszajelzés", "csoport", "kihívás", "teszt"] },
+                    { "id": "hatas", "label": "Megmagyarázza, miért segítene", "keywords": ["lelkesít", "örömet", "sikerélmény", "magabiztos", "folyamatos", "látható", "mérhető", "fejlődés"] }
+                  ],
+                  "model": "Rövid távú célokat tűznék ki, és rendszeres tesztekkel, kihívásokkal mutatnám meg a fejlődést. Ha valaki sikerélményt él át, magabiztosabb lesz, szívesen folytatja, és így hosszabb ideig kitart."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Mit gondol, milyen szerepe lesz a mesterséges intelligenciának a nyelvtanulásban az elkövetkező években?",
+                  "minWords": 25,
+                  "points": [
+                    { "id": "szerep", "label": "Megnevezi, mire használható", "keywords": ["beszélgetőpartner", "fordít", "gyakorol", "javít", "tanár", "korrekció", "chat", "személyre szabott", "virtuális"] },
+                    { "id": "korlat", "label": "Korlátot vagy kockázatot említ", "keywords": ["nem pótol", "helyettesít", "emberi", "kulturális", "kockázat", "hibázik", "pontatlan", "megbízható", "ellenőriz"] }
+                  ],
+                  "model": "Szerintem egyre több diák fog beszélgetőpartnerként használni egy virtuális tanárt, amely javítja a hibákat, és személyre szabott feladatokat ad. Ugyanakkor nem pótolja az emberi kapcsolatot, és néha pontatlan lehet."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

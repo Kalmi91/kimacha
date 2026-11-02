@@ -1,0 +1,367 @@
+{
+  "target": "hu",
+  "level": "B2",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Hat rövid párbeszédet fog hallani. Mindegyiket kétszer hallhatja. Minden párbeszédnél jelölje meg a helyes választ (1-6).",
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "f", "text": "Jó napot kívánok! Egy jegyet kérnék Debrecenbe, péntek estére." },
+                { "speaker": "m", "text": "Pénteken az ötórás vonatra már nincs hely. Van még egy négyórás és egy fél tízes, de az utóbbi csak éjfél után ér Debrecenbe." },
+                { "speaker": "f", "text": "Akkor a négyórásat kérem. A fél tízessel túl későn érkeznék, és szombaton korán kell kelnem, mert a húgom esküvőjére megyek." }
+              ],
+              "questions": [
+                {
+                  "stem": "Miért kéri a nő a korábbi vonatra a jegyet?",
+                  "options": [
+                    "Mert a korábbi vonaton olcsóbb a jegy.",
+                    "Mert a későbbi vonat túl későn érne Debrecenbe.",
+                    "Mert a későbbi vonaton már nincs szabad hely."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Szia, Bálint! Eldöntötted már, hogy jössz-e a hétvégén a Balatonra?" },
+                { "speaker": "m", "text": "Még nem tudom. Nagyon szeretnék menni, de nincs autóm, és a vonatjegy is drága." },
+                { "speaker": "f", "text": "Mi autóval megyünk szombaton reggel Zsófiékkal. Ha nem zavar, hogy korán kell kelni, elviszünk." },
+                { "speaker": "m", "text": "Tényleg? Akkor számíthattok rám. A benzint én állom." }
+              ],
+              "questions": [
+                {
+                  "stem": "Miben állapodnak meg?",
+                  "options": [
+                    "Abban, hogy vonattal utaznak, és ő veszi meg a jegyet.",
+                    "Abban, hogy ő vezeti a nő autóját az egész úton.",
+                    "Abban, hogy ő is az autóval utazik, és ő fizeti a benzint."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Jó napot! Tegnap óta nagyon lassú az internetem. Szeretnék műszaki segítséget kérni." },
+                { "speaker": "f", "text": "Rendben, felvettem a bejelentést. A szerelő szerdán érkezhet, reggel nyolc és dél között." },
+                { "speaker": "m", "text": "Sajnos akkor dolgozom. Nincs valamilyen délutáni időpont?" },
+                { "speaker": "f", "text": "Pénteken délután négy és hat óra között tudjuk vállalni." },
+                { "speaker": "m", "text": "Az megfelel, köszönöm." }
+              ],
+              "questions": [
+                {
+                  "stem": "Mikorra beszélnek meg időpontot a szerelővel?",
+                  "options": [
+                    "Péntek délutánra.",
+                    "Szerda délelőttre.",
+                    "Csütörtök reggelre."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Gabi, jelentkeztél már a márciusi szakmai napra? A határidő pénteken lejár." },
+                { "speaker": "m", "text": "Még nem, mert nem tudtam, hogy a cég állja-e a szállást." },
+                { "speaker": "f", "text": "Állja, de csak akkor, ha két héttel előtte lefoglaljuk. Ha ma elküldöd az adataidat, én intézem." },
+                { "speaker": "m", "text": "Rendben, mindjárt küldöm." }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit ígér a nő a férfinak?",
+                  "options": [
+                    "Hogy meghosszabbítja a jelentkezési határidőt.",
+                    "Hogy a cég a repülőjegyet is kifizeti.",
+                    "Hogy ő foglalja le a szállást, ha megkapja az adatait."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Jó napot! Ezt az orrcseppet szeretném kérni a kislányomnak." },
+                { "speaker": "m", "text": "Sajnos az csak receptre kapható. Van otthon receptje?" },
+                { "speaker": "f", "text": "Nincs, a háziorvosunk csak holnap rendel." },
+                { "speaker": "m", "text": "Akkor most adhatok egy sós orrspray-t, amely enyhíti a panaszt. A cseppért viszont holnap vissza kell jönnie a recepttel." }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit javasol a gyógyszerész?",
+                  "options": [
+                    "Azt, hogy a nő holnap recept nélkül térjen vissza a gyógyszerért.",
+                    "Azt, hogy a nő ma sós orrspray-t használjon, a cseppet pedig recepttel vegye meg.",
+                    "Azt, hogy a gyerek ne használjon semmilyen szert."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Péter, te megnézted már a vizsgabeosztást?" },
+                { "speaker": "m", "text": "Igen, a statisztika jövő hétfőn lesz, reggel kilenckor." },
+                { "speaker": "f", "text": "Az nagyon korai! Én a mikroökonómiát is aznap délután írom." },
+                { "speaker": "m", "text": "Akkor nem lesz sok időd pihenni. Szerintem ma este már ne tanulj, inkább feküdj le korán." }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit tanácsol a férfi?",
+                  "options": [
+                    "Azt, hogy ma este pihenjen, és feküdjön le korán.",
+                    "Azt, hogy hétfő reggel ne menjen el a vizsgára.",
+                    "Azt, hogy ma este is sokat tanuljon."
+                  ],
+                  "correct": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Egy férfi és egy nő beszélgetését fogja hallani. Kétszer hallhatja. Döntse el, hogy az állítások (1-6) a férfira, a nőre vagy egyikükre sem vonatkoznak.",
+          "audio": [
+            { "speaker": "m", "text": "Anna, beszéltem anyával. Apa hetvenedik születésnapja március tizenötödikén lesz, és anya nagy ünnepséget szeretne. Szerinte az egész rokonság eljönne." },
+            { "speaker": "f", "text": "Egy nagy ünnepség? Apa utálja a felhajtást, Tamás. Emlékszel, hogy a hatvanadik születésnapján is alig akart bejönni a szobába? Szerintem neki egy csendes vacsora lenne jó, csak a legközelebbi családtagokkal." },
+            { "speaker": "m", "text": "Értem, de Laci bácsi már szólt, hogy kihagyni nem fogja. Aztán ott vannak apa régi kollégái is. Egy vendéglőben el tudnánk rendezni az egészet, hatvan személyig is." },
+            { "speaker": "f", "text": "Az nagyon drága lenne. Mennyibe kerülne fejenként?" },
+            { "speaker": "m", "text": "Hatezer forint körül, itallal együtt. Szívesen kifizetném a felét. Most kaptam meg a jutalmamat." },
+            { "speaker": "f", "text": "Köszönöm, de nem a pénzen múlik. Apának inkább az számít, hogy otthon lehet. A kertje a mindene. Mi lenne, ha a kertben ülnénk le? Én főznék egy nagy bográcsgulyást, és mindenki hozna valamit." },
+            { "speaker": "m", "text": "Márciusban még hideg van odakint. Mi lesz, ha esik az eső, vagy fúj a szél?" },
+            { "speaker": "f", "text": "Akkor bent maradunk a házban. Szoktunk így is ünnepelni, nem?" },
+            { "speaker": "m", "text": "Hát jó. De a tortát én rendelem meg, mert neked úgysem lenne rá időd. Anya szerint a debreceni nagynénink is eljönne, és szállást is kérne." },
+            { "speaker": "f", "text": "Az nem gond, nálunk van hely. A szomszédokat talán nem kellene meghívni, de erről még ráérünk dönteni." },
+            { "speaker": "m", "text": "Rendben. Akkor mi lesz Marikával?" },
+            { "speaker": "f", "text": "Őt hívjuk meg mindenképp. Apa régi iskolatársa, és tudom, hogy nagyon örülne neki." },
+            { "speaker": "m", "text": "Persze. Ma este felhívom." },
+            { "speaker": "f", "text": "Köszönöm. A többit majd megbeszéljük anyával is." }
+          ],
+          "questions": [
+            { "stem": "Úgy véli, hogy az apjuknak a szűk körű vacsora tetszene jobban.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 1 },
+            { "stem": "Fontolgatja, hogy az ünnepet külföldön tartsák.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 2 },
+            { "stem": "Felajánlja, hogy kifizeti a vendéglői költségek felét.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 0 },
+            { "stem": "Azt javasolja, hogy a kertben tartsák az ünnepséget.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 1 },
+            { "stem": "Attól tart, hogy az időjárás elronthatja a kerti ünnepet.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 0 },
+            { "stem": "Azt szeretné, ha az apjuk beszédet mondana az ünnepségen.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 2 }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Egy rádióinterjút fog hallani. Kétszer hallhatja. Minden kérdésnél jelölje meg a helyes választ (1-6).",
+          "audio": [
+            { "speaker": "m", "text": "Jó napot kívánok, kedves hallgatóink! Mai vendégünk Horváth Eszter nyelvész, aki a magyar nyelv változásait kutatja. Eszter, sokan aggódnak, hogy a magyar nyelvet elárasztják az angol szavak. Ön is így látja?" },
+            { "speaker": "f", "text": "Nem, én nem aggódom. Minden nyelv átvesz szavakat másoktól. A magyar is átvett a törökből, a németből és a franciából. Ma az angol van soron. A fontos az, hogy a nyelvtan közben nem változik. A „lájkol” szót is úgy ragozzuk, mint bármelyik magyar igét." },
+            { "speaker": "m", "text": "A fiatalok nyelvét viszont sokszor nem értik a szüleik." },
+            { "speaker": "f", "text": "Ez mindig így volt. A fiatalok azért alkotnak új szavakat, hogy különbözzenek a felnőttektől. A mai szleng egy része pár hónap alatt eltűnik, de néhány szó megmarad. A közösségi oldalak ezt a folyamatot felgyorsítják: egy új kifejezés ma egyetlen hét alatt eljut az egész országba." },
+            { "speaker": "m", "text": "Mit tart a legnagyobb problémának a mai írott nyelvben?" },
+            { "speaker": "f", "text": "Szerintem azt, hogy rengetegen ékezet nélkül írnak a telefonjukon. Ez nem mindig lustaság, mert az ékezetek begépelése lassabb. Csakhogy a magyarban az ékezet sokszor jelentést különböztet meg. A „hat” és a „hát” két különböző szó, és a „ver” meg a „vér” között is jókora a különbség. Egy apró ékezet miatt is sok félreértés keletkezhet." },
+            { "speaker": "m", "text": "Mit tanácsol azoknak a szülőknek, akik aggódnak a gyerekeik nyelvhasználata miatt?" },
+            { "speaker": "f", "text": "Azt, hogy ne tiltsák, hanem beszélgessenek velük. Ha egy tizenhat éves a barátaival szlenget használ, de a tanárának és a nagymamájának udvariasan beszél, az nem baj, sőt jó jel. Azt mutatja, hogy tudja, mikor melyik forma illik a helyzethez. A baj akkor kezdődik, ha valaki csak egyfélét ismer." },
+            { "speaker": "m", "text": "És a nyelvjárások? Eltűnnek?" },
+            { "speaker": "f", "text": "Sajnos sok nyelvjárás gyengül. A tévé és az iskola egységesítette a nyelvet, és sok fiatal már szégyelli a nagyszülei kiejtését. Pedig a nyelvjárások a nyelv kincsei. Ezért tartom fontosnak azokat a gyűjtéseket, amelyek az idős falusiak szavait rögzítik." },
+            { "speaker": "m", "text": "Ön tehát optimista a magyar nyelv jövőjét illetően?" },
+            { "speaker": "f", "text": "Inkább realista. A nyelv él, ezért változik. Nem a változás a veszély, hanem az, ha az emberek kevesebbet olvasnak, és egyre kevesebb szót ismernek. Aki olvas, annak gazdag a szókincse, akármilyen új szavak jönnek is." },
+            { "speaker": "m", "text": "Köszönöm a beszélgetést, Eszter." },
+            { "speaker": "f", "text": "Én is köszönöm." }
+          ],
+          "questions": [
+            {
+              "stem": "Mit gondol Horváth Eszter az angol szavak elterjedéséről?",
+              "options": [
+                "Veszélyesnek tartja, mert megváltoztatja a magyar nyelvtant.",
+                "Nem tartja veszélyesnek, mert a nyelvek mindig átvettek szavakat másoktól.",
+                "Szerinte csak a fiatalok használnak angol szavakat."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Miért alkotnak a fiatalok új szavakat a nyelvész szerint?",
+              "options": [
+                "Mert a felnőttek szavait nem értik.",
+                "Mert a közösségi oldalak ezt megkövetelik tőlük.",
+                "Mert különbözni szeretnének a felnőttektől."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Mi az ékezet nélküli írás fő veszélye?",
+              "options": [
+                "Az, hogy a jelentés félreérthetővé válhat.",
+                "Az, hogy lassabban lehet vele írni.",
+                "Az, hogy az emberek elfelejtik a helyesírást."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Mit tanácsol a nyelvész a szülőknek?",
+              "options": [
+                "Azt, hogy tiltsák meg a szleng használatát.",
+                "Azt, hogy javítsák ki a gyerek minden nyelvi hibáját.",
+                "Azt, hogy beszélgessenek a gyerekkel ahelyett, hogy tiltanának."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Mit mond a nyelvész a nyelvjárásokról?",
+              "options": [
+                "Azt, hogy értékesek, ezért érdemes megőrizni a szavaikat.",
+                "Azt, hogy elavultak, ezért nem érdemes foglalkozni velük.",
+                "Azt, hogy nem tűnnek el, mert a televízió is használja őket."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Hogyan látja a nyelvész a magyar nyelv jövőjét?",
+              "options": [
+                "Borúlátóan: szerinte a magyar nyelv hamarosan eltűnik.",
+                "Realistán: a veszélyt nem a változás, hanem az olvasás hiánya jelenti.",
+                "Lelkesen: szerinte az új szavak mindig gazdagítják a nyelvet."
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "match_pool",
+          "instruction": "Hat rövid megszólalást fog hallani (1-6). Kétszer hallhatja őket. Párosítsa mindegyiket a megfelelő állítással (a-i). Három állítást nem kell felhasználnia.",
+          "prompts": [
+            {
+              "id": "1",
+              "audio": [
+                { "speaker": "f", "text": "Jó reggelt kívánok mindenkinek! Szeretném emlékeztetni önöket, hogy a szemináriumi dolgozat beadási határideje megváltozott: nem december tizenötödike, hanem december nyolcadika lesz, mert a kar a téli szünet miatt korábban zár. Aki haladékot szeretne kérni, azt a héten írásban kell megtennie, és meg kell indokolnia. Ezután már nem lesz kivétel, ezért kérem, hogy jól osszák be az idejüket." }
+              ]
+            },
+            {
+              "id": "2",
+              "audio": [
+                { "speaker": "m", "text": "Kutatócsoportunk azt vizsgálja, hogyan szennyezik a mezőgazdasági vegyszerek a Balaton déli partjának patakjait. Az első évben húsz helyen vettünk mintát. Az előzetes eredmények aggasztóak, de még rengeteg laborvizsgálat van hátra. Ezért további támogatást kérünk: két technikust szeretnénk felvenni, és új mérőműszereket kell vásárolnunk. Ha ez megvalósul, jövő nyárra befejezhetjük a munkát." }
+              ]
+            },
+            {
+              "id": "3",
+              "audio": [
+                { "speaker": "f", "text": "Tíz évig a pénzügyi osztályon dolgoztam, és szerettem a munkámat. Aztán észrevettem, hogy a legtöbb örömet az okozza, ha az új kollégáknak elmagyarázhatok valamit. Ezért kértem, hogy helyezzenek át a képzési részlegre. A főnököm támogatott, bár figyelmeztetett, hogy kevesebbet fogok keresni. Számomra ez másodlagos. Most sokkal elégedettebben érek haza." }
+              ]
+            },
+            {
+              "id": "4",
+              "audio": [
+                { "speaker": "m", "text": "A nyári gyakorlatomat egy siófoki szállodában töltöttem. Az elején nehezebb volt, mint gondoltam: nem értettem a szakkifejezéseket, és elrontottam néhány szobafoglalást. A mentorom azonban nagyon türelmes volt, és mindent nyugodtan megmagyarázott. A hónap végére már egyedül is el tudtam intézni egy csoportos foglalást. Megtanultam, hogy a hibákból lehet a legtöbbet tanulni." }
+              ]
+            },
+            {
+              "id": "5",
+              "audio": [
+                { "speaker": "f", "text": "Kedves vendégeink, mielőtt belépnénk a kiállítóterembe, kérem, kapcsolják ki a mobiltelefonjukat, és ne használjanak vakut a fényképezéskor. A kiállított tárgyak nagyon sérülékenyek, a vaku károsítja őket. A termeket időrendben járjuk végig, a séta végén pedig kérdéseket is lehet majd feltenni. A tárlatvezetés negyven percig tart, ezért kérem, hogy ne maradjanak le a csoporttól." }
+              ]
+            },
+            {
+              "id": "6",
+              "audio": [
+                { "speaker": "m", "text": "Tisztelt utasok! Pályafelújítás miatt a Budapestről induló vonatok csak Tatabányáig közlekednek. Tatabánya és Győr között pótlóbuszok szállítják az utasokat, amelyek az állomás előtt indulnak. Az utazási idő így körülbelül fél órával hosszabb. Kérjük, figyeljék a hangosbemondót, és számoljanak a késéssel. További segítséget az információs pultnál kérhetnek. Megértésüket köszönjük." }
+              ]
+            }
+          ],
+          "options": [
+            { "id": "a", "text": "Egy tanulmány végeredményét ismerteti." },
+            { "id": "b", "text": "Pénzt kér egy kutatás folytatásához." },
+            { "id": "c", "text": "Elmeséli, hogyan oldott meg egy félreértést egy kollégájával." },
+            { "id": "d", "text": "Megindokolja, miért váltott másik munkaterületre." },
+            { "id": "e", "text": "Közlekedési zavarról tájékoztat." },
+            { "id": "f", "text": "Útmutatást ad egy tárlatvezetés előtt." },
+            { "id": "g", "text": "Egy beadási határidő módosításáról ad hírt." },
+            { "id": "h", "text": "Bejelenti, hogy lemond a megbízatásáról." },
+            { "id": "i", "text": "Elmondja, mit tanult egy szakmai gyakorlaton." }
+          ],
+          "answer": { "1": "g", "2": "b", "3": "d", "4": "i", "5": "f", "6": "e" },
+          "unique": true
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Egy előadást fog hallani egy közösségi kezdeményezésről. Kétszer hallhatja. Minden kérdésnél jelölje meg a helyes választ (1-6).",
+          "audio": [
+            { "speaker": "f", "text": "Jó estét kívánok mindenkinek, és köszönöm, hogy eljöttek. Nagy Katalin vagyok, tanítónő, és tizenöt éve lakom ebben a városrészben. Most elmesélem, hogyan született a Közös hűtő, és mi az, ami nem úgy sikerült, ahogyan terveztük." },
+            { "speaker": "f", "text": "Minden azzal kezdődött, hogy a sarki pékség tulajdonosa egyszer elmondta nekem: este, zárás után, rengeteg pékáru marad meg, és ő nem szívesen dobja ki. Gondoltam, miért ne lehetne ezt valahogy továbbadni azoknak, akiknek szükségük van rá? Így született meg az ötlet, hogy kitegyünk egy hűtőt az utcára, ahová bárki betehet, és ahonnan bárki elvehet ételt." },
+            { "speaker": "f", "text": "Eleinte csak öt család vett részt. Ma már több mint negyvenen vagyunk, és három hűtőt üzemeltetünk a városrészben. Mindegyik hűtő mellé tartozik egy kis csoport, amely a saját szabályait maga alakítja ki." },
+            { "speaker": "f", "text": "Közben meg kellett tanulnunk szervezkedni is. Készítettünk egy beosztást, indítottunk egy üzenetküldő csoportot, ahol mindenki szól, ha baj van, és havonta tartunk egy találkozót. Ez nem volt benne az eredeti tervben, de szervezés nélkül a projekt nem élte volna túl az első telet." },
+            { "speaker": "f", "text": "Ami a legjobban meglepett, nem az volt, hogy mennyi étel gyűlik össze, hanem az, ami az emberek között történt. Szomszédok, akik addig alig köszöntek egymásnak, most üzenetet hagynak a hűtőn, receptet cserélnek, és meghívják egymást vacsorára." },
+            { "speaker": "f", "text": "Persze voltak problémák. Az első az áram volt. A hűtő működtetése pénzbe kerül, és eleinte nem tudtuk, ki fizesse. Végül a sarki zöldséges ajánlotta fel, hogy a hűtőt az ő csatlakozójára köthetjük, cserébe kap egy táblát a kirakatába. Egy kis szívesség, és megoldódott." },
+            { "speaker": "f", "text": "A második a higiénia volt. Voltak, akik lejárt ételt tettek be, vagy olyat, amit nem szabad hűtés nélkül tartani. Ezért kitettünk egy szabálylistát, minden ételre ráírjuk a dátumot, és az önkéntesek naponta kétszer átnézik a hűtőt. Aki lejárt terméket talál, kidobja." },
+            { "speaker": "f", "text": "A harmadik, és talán a legfontosabb, hogy fenntartsuk az emberek lelkesedését. Néhány család pár hónap után kiesett. Megtanultuk, hogy a projekt nem épülhet néhány lelkes emberre. Most hetente váltjuk egymást a feladatokkal, és ez sokat segített." },
+            { "speaker": "f", "text": "Ha valakinek tanácsot adhatnék, aki hasonlót szeretne elindítani, az a következő lenne: ne nagy tervvel kezdjék, hanem apró, rendszeres szokással. Egy nagy projekt gyorsan elhal, egy kicsi viszont, ami minden nap működik, magától növekszik. Mi is egyetlen hűtővel kezdtük. Köszönöm a figyelmüket." }
+          ],
+          "questions": [
+            {
+              "stem": "Mi indította el Nagy Katalint a projekt megvalósítása felé?",
+              "options": [
+                "Egy tanfolyam az élelmiszer-pazarlásról.",
+                "Az, amit a pékség tulajdonosa mondott neki.",
+                "Egy önkormányzati pályázat."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Mi lepte meg a legjobban az előadót?",
+              "options": [
+                "Az összegyűlt étel mennyisége.",
+                "A hatóságok támogatása.",
+                "A szomszédok közötti kapcsolat megváltozása."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Hogyan oldották meg az áram problémáját?",
+              "options": [
+                "A zöldséges csatlakozót biztosított, cserébe reklámot kapott.",
+                "Az önkormányzat vállalta a költségeket.",
+                "A résztvevők havonta összeadtak pénzt a számlára."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Mit tesznek a higiénia biztosítására?",
+              "options": [
+                "Csak csomagolt élelmiszert fogadnak el.",
+                "Naponta ellenőrzik a hűtőt, és az ételeket dátummal látják el.",
+                "Egy egészségügyi hatóság ellenőrzi hetente."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Mivel tartják fenn az önkéntesek érdeklődését?",
+              "options": [
+                "Pénzt fizetnek a felelős önkéntesnek.",
+                "Versenyeket szerveznek a hűtők között.",
+                "Hetente cserélődnek a feladatok."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Milyen tanácsot ad az előadó a végén?",
+              "options": [
+                "Induljanak egy nagy projekttel, hogy felkeltsék a figyelmet.",
+                "Kis, rendszeres szokással kezdjék.",
+                "Várjanak a nyárig a kezdéssel."
+              ],
+              "correct": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

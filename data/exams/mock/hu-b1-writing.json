@@ -1,0 +1,68 @@
+{
+  "target": "hu",
+  "level": "B1",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Olvassa el a barátja e-mailjét, és írjon neki 100 és 120 szó közötti választ. A feladatban megadott minden pontra térjen ki.",
+          "choices": [
+            {
+              "id": "t1",
+              "title": "Válasz egy barát e-mailjére",
+              "prompt": "Gergő, a barátja, e-mailt írt Önnek. Írjon neki 100 és 120 szó közötti választ. A válaszában javasoljon egy napot és egy helyet a vacsorához; ajánljon egy szállodát vagy a város egy részét; mondja meg, milyen ruhát vigyen az időjárás miatt; és meséljen egy újdonságot az életéből.",
+              "input": "Szia! Remélem, jól vagy, és a család is egészséges. Én mostanában nagyon sokat dolgozom, de már nagyon várom a következő hónapot. Egy hétig Pécsett leszek munka miatt, és szeretnélek újra látni. Hétfő este érkezem, és a következő vasárnap utazom haza. Elmennénk valamelyik este vacsorázni? Szükségem van még egy olcsó, kényelmes szállodára is a belváros közelében. Tudsz ajánlani egyet? És milyen ruhát vigyek: hideg vagy meleg lesz? Írd meg, mi újság nálad! Alig várom, hogy találkozzunk! Üdv: Gergő",
+              "minWords": 100,
+              "maxWords": 120,
+              "points": [
+                { "id": "p1", "label": "Javasol egy napot és egy helyet a vacsorához", "keywords": ["kedd", "szerda", "csutortok", "pentek", "szombat", "etterem", "meghivlak", "talalkozzunk", "talalkozhatunk", "javaslom", "vacsorara", "vasarnap"] },
+                { "id": "p2", "label": "Ajánl egy szállodát vagy a város egy részét", "keywords": ["ajanlom", "szalloda", "hotel", "belvaros", "kozpont", "varosresz", "szallas", "panzio", "olcso", "kozel", "vendeghaz", "apartman"] },
+                { "id": "p3", "label": "Megmondja, milyen ruhát vigyen az időjárás miatt", "keywords": ["kabat", "pulover", "esokabat", "esernyo", "vekony", "cipo", "idojaras", "hideg", "napszemuveg", "hoseg", "melegen", "ruhat"] },
+                { "id": "p4", "label": "Mesél egy újdonságot az életéből", "keywords": ["ujdonsag", "nemreg", "koltoztem", "kezdtem", "kaptam", "megvettem", "uj munka", "uj lakas", "tervezem", "elkezdtem", "megismertem", "eljegyez"] }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Válasszon a két lehetőség közül, és írjon 130 és 150 szó közötti szöveget. A feladatban megadott minden pontra térjen ki.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "Életem legjobb utazása",
+              "prompt": "Írjon 130 és 150 szó közötti szöveget az egyetemi utazási blog számára. A szövegében mondja meg, hová utazott, és kivel; mesélje el, mit csinált ott; magyarázza el, miért volt különleges az utazás; és írja meg, hogy visszamenne-e oda.",
+              "input": "Az egyetemünk utazási blogja olvasói szövegeket keres. Ha van egy különleges utazásról szóló története, osszon meg velünk! Szeretnénk tudni, hová utazott, kivel, mit csinált, és miért emlékszik rá olyan jól. A legjobb szövegeket a következő számban közöljük. Mindenki küldhet egyet.",
+              "minWords": 130,
+              "maxWords": 150,
+              "points": [
+                { "id": "p1", "label": "Megmondja, hová utazott, és kivel", "keywords": ["utazt", "mentem", "mentunk", "barat", "csaladommal", "egyedul", "felesegemmel", "ferjemmel", "testvermmel", "kollegakkal", "szuleimmel", "ismerosokkel"] },
+                { "id": "p2", "label": "Elmeséli, mit csinált ott", "keywords": ["megnezt", "meglatogat", "setalt", "furdoz", "kirandult", "ettunk", "kiprobal", "fenykep", "vasarolt", "megismertunk", "talalkoztunk", "hajoztunk"] },
+                { "id": "p3", "label": "Megmagyarázza, miért volt különleges", "keywords": ["felejthetetlen", "kulonleges", "eletem", "legszebb", "soha nem felejtem", "nem felejtem", "elso alkalom", "varatlan", "meglepo", "tanultam", "elmeny", "megvaltoztat"] },
+                { "id": "p4", "label": "Megírja, hogy visszamenne-e oda", "keywords": ["visszamennek", "visszamenne", "visszamennem", "visszatern", "szivesen", "egyszer", "ujra", "legkozelebb", "biztosan", "szeretnek", "visszajar", "ujabb"] }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Egy fontos ember",
+              "prompt": "Írjon 130 és 150 szó közötti szöveget a kerületi újság számára. A szövegében mutassa be a személyt; írja le, milyen ember; meséljen egy helyzetről, amikor segített Önnek vagy tanított Önnek valamit; és mondja meg, miért fontos ez a személy Önnek.",
+              "input": "Kerületünk újságja olyan emberekről készít sorozatot, akik hatással voltak a szomszédok életére. Ha részt szeretne venni, írjon valakiről, aki fontos Önnek: ki ő, milyen ember, és mit tanított Önnek. Néhány szöveget a következő számban közlünk. Várjuk a leveleket!",
+              "minWords": 130,
+              "maxWords": 150,
+              "points": [
+                { "id": "p1", "label": "Bemutatja a személyt", "keywords": ["hivjak", "nagymama", "nagyapa", "apam", "anyam", "baratom", "baratnom", "tanarom", "szomszedom", "testverem", "nagybacsi", "nagyneni"] },
+                { "id": "p2", "label": "Leírja, milyen ember", "keywords": ["kedves", "turelmes", "okos", "vicces", "nagylelku", "szorgalmas", "segitokesz", "bator", "oszinte", "kovetkezetes", "szigoru", "mosolygos"] },
+                { "id": "p3", "label": "Elmesél egy helyzetet, amikor segített vagy tanított", "keywords": ["egyszer", "amikor", "segitett", "tanitott", "tanacsot", "megtanitott", "megmutatta", "tamogatott", "mellettem", "bajban", "nehez", "problema"] },
+                { "id": "p4", "label": "Megmondja, miért fontos neki", "keywords": ["csodalom", "hala", "pelda", "fontos", "sokat jelent", "nelkule", "miatta", "tole", "tanultam", "tisztelem", "szeretem", "hianyzik"] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

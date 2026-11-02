@@ -63,6 +63,8 @@ export default function MockExamScreen() {
 
   const [phase, setPhase] = useState<Phase>('loading');
   const [target, setTarget] = useState<MockTarget>('es');
+  // The learner's own language: the glossary of a hu exam gives the meanings in it.
+  const [source, setSource] = useState<string | null>(null);
   const [level, setLevel] = useState<MockLevel>('A1');
   const [exam, setExam] = useState<MockExam | null>(null);
   const [learned, setLearned] = useState<ReadonlySet<string>>(new Set());
@@ -92,10 +94,10 @@ export default function MockExamScreen() {
     let alive = true;
     (async () => {
       const db = getDb();
-      const { target: tgt } = await refresh(['direction']);
+      const { target: tgt, source: src } = await refresh(['direction']);
       const lvl = params.level ?? '';
-      // target hu has no practice exam, the same screen as an unknown level.
-      if (tgt === 'hu' || !mockAvailable(tgt, lvl)) {
+      // A level with no written papers (hu B2 / C1 until they are authored) is the same screen as an unknown level.
+      if (!mockAvailable(tgt, lvl)) {
         if (alive) setPhase('unavailable');
         return;
       }
@@ -112,7 +114,9 @@ export default function MockExamScreen() {
       setTarget(tgt);
       setLevel(lvl);
       setLearned(new Set(cards.filter(isExamLearned).map((c) => c.itemId)));
-      setLexicon(buildLexicon(PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)), tgt));
+      // No dictionary check for hu: a Hungarian word has too many inflected forms for a word list (the other sense checks stay).
+      setLexicon(tgt === 'hu' ? undefined : buildLexicon(PCIC_LEVELS.flatMap((l) => pcicItemsForLevel(l)), tgt));
+      setSource(src);
       setCanSpeak(hasVoiceFor(speechLang(tgt)));
       setSaved(resumable);
       setExam(built);
@@ -124,7 +128,7 @@ export default function MockExamScreen() {
     };
   }, [params.level, refresh]);
 
-  const glossaryIndex = useMemo(() => buildGlossaryIndex(pcicItemsForLevel(level), target), [level, target]);
+  const glossaryIndex = useMemo(() => buildGlossaryIndex(pcicItemsForLevel(level), target, source), [level, target, source]);
   const paper = exam?.papers[paperIdx];
   const task = paper?.tasks[taskIdx];
   const left = paper ? secondsLeft(startedAt, paper.minutes, pausedAt ?? now) : 0;

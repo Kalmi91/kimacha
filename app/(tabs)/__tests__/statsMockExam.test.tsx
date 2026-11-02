@@ -64,6 +64,18 @@ describe('Stats tab: Practice exam card', () => {
     view.unmount();
   });
 
+  it.each(['es', 'en'] as const)('hu target (%s→hu): the card shows all five Hungarian levels, the button leads to the mock exam', async (source) => {
+    await getDb().setOnboarding(source, 'hu');
+    const view = await renderStats();
+    expect(view.getByTestId('mock-exam-card')).toBeTruthy();
+    // A1 / A2 = the speaking paper, B1-C1 = the four papers
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1']) expect(view.getByTestId(`mock-exam-start-${level}`)).toBeTruthy();
+    expect(view.queryByText(/official/i)).toBeNull();
+    fireEvent.press(view.getByTestId('mock-exam-start-B1'));
+    expect(mockPush).toHaveBeenCalledWith({ pathname: '/mock-exam', params: { level: 'B1' } });
+    view.unmount();
+  });
+
   it('the latest result shows on the card (level, passed or not, date)', async () => {
     await getDb().setOnboarding('en', 'es');
     await getDb().setGameProgress(MOCK_EXAM_PROGRESS_KEY, 'es-A1', 'passed', {

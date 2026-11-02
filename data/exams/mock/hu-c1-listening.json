@@ -1,0 +1,837 @@
+{
+  "target": "hu",
+  "level": "C1",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "pick_statements",
+          "instruction": "Egy előadást fog hallani kétszer. Válassza ki azt a hat állítást, amely megfelel az elhangzottaknak.",
+          "audio": [
+            {
+              "speaker": "f",
+              "text": "Jó napot kívánok mindenkinek, és köszönöm a meghívást. Ma egy tizenegy hónapig tartó munkáról fogok beszélni: egy Tisza menti holtág, a Nádasi-holtág helyreállításáról. Nemcsak arról mesélek, hogy mit csináltunk, hanem arról is, hogy miben kételkedtünk."
+            },
+            {
+              "speaker": "f",
+              "text": "A holtág egykor a folyó élő mellékága volt. A folyószabályozás után elvágták a főmedertől, és azóta évtizedeken át lassan feltöltődött iszappal. Nyaranta már csak néhány tócsa maradt belőle, a partján pedig nád és gaz nőtt. Amikor először odaértünk, a helybeliek csak legyintettek. Azt mondták, hogy ez már nem tó, hanem egy hosszú árok. Az idősek még emlékeztek rá, hogy gyerekként fürödtek benne és halat fogtak, a fiatalabbak viszont alig tudták, hogy valaha víz volt ott."
+            },
+            {
+              "speaker": "f",
+              "text": "Az első feladat a dokumentálás volt. A munka első szakaszában három szakember dolgozott a terepen, később már tizenketten. Hónapokon át mértük a vízszintet, térképeztük a mélységet, és felmértük a növény- és állatvilágot. Ekkor derült ki valami, ami megváltoztatta a tervet. A holtág alsó végén egy beton gát állt, amelyet a hetvenes években építettek öntözéshez. Egyetlen térképen sem szerepelt, és teljesen elzárta a holtágat a folyótól."
+            },
+            {
+              "speaker": "f",
+              "text": "Itt kezdődött az első nagy vita a csapatban. Egyesek azt javasolták, hogy bontsuk el az egész gátat. Mások attól tartottak, hogy a gát mellett kialakult élővilág elpusztul. Hetekig tartott, mire megegyeztünk. Mi nem akartunk vaktában dönteni. Kiválasztottunk egy félreeső szakaszt, és három hónapon át kísérleteztünk. Végül csak a gát középső részét bontottuk el. A két szélén nem nyúltunk hozzá, mert az omladozó betonfal nyílásaiban partifecskék fészkeltek."
+            },
+            {
+              "speaker": "f",
+              "text": "A második dilemma az iszap volt. Ha mindent kikotrunk, a víz mély lesz, de a part élővilága odavész. Ezért csak egy keskeny csatornát nyitottunk meg a mederben, a szigeteket és a nádasokat meghagytuk. Ezt a módszert is előbb egy kis szakaszon próbáltuk ki. A kotrógép vezetője, aki tizenöt éve dolgozik folyópartokon, azt mondta, hogy ilyen óvatosan még soha nem dolgozott. Meg kell mondanom, hogy a megoldás nem tökéletes. A nyári vízállás még így is ingadozik."
+            },
+            {
+              "speaker": "f",
+              "text": "A következő meglepetés a halakkal jött. Egy kiszáradó tócsában, a sárban védett halakra bukkantunk, lápi pócokra. Addig úgy hittük, hogy a környékről évtizedekkel ezelőtt kipusztultak. Gyorsan kellett cselekednünk. Egy hajnalon hatan vödrökkel és hálóval kimentünk a partra, és kézzel vittük át a halakat az újonnan megnyitott vízrészbe. Ma már rendszeresen látjuk őket a csatornában. A növényzet is meglepett minket. A kotort csatorna partján néhány héten belül megjelentek a tavirózsák, a mocsári gyékény és több olyan növény, amelyet évtizedek óta nem láttak a környéken. Nem ültettünk el egyetlen szálat sem, a magok ott pihentek az iszapban."
+            },
+            {
+              "speaker": "f",
+              "text": "Nagyon fontos volt a helyiek részvétele. Eleinte a környékbeli gazdák ellenezték a tervet, mert attól féltek, hogy a helyreállított holtág elönti a földjeiket. Egy falugyűlésen megmutattuk nekik az árvízi térképeket, és bebizonyítottuk, hogy a víz nem megy messzebb, mint eddig. Ezután már ők kölcsönöztek gépeket. Az iskolások nem nyúlhattak a munkához, de az ornitológussal együtt madarat számoltak, és naplót vezettek. Az idősebbek pedig megmutatták, hol volt régen a komp, és hogyan hívták a mélyebb részeket. Gyakran az ő emlékeik alapján választottuk meg, hová kerüljenek a padok és a kilátó."
+            },
+            {
+              "speaker": "f",
+              "text": "Most jöjjön a kevésbé romantikus rész: az idő és a pénz. A projektet hat hónapra terveztük, és tizenegy hónap lett belőle. A költségek nagyobb részét uniós pályázat fedezte, a többit a megye és egy alapítvány adományai adták össze. Megható volt, hogy kisebb összegek is érkeztek olyanoktól, akik már régen elköltöztek a faluból, de valamikor ott jártak iskolába. Az eredmény nem maradt el. Két évvel a befejezés után a holtágban a legszárazabb nyáron is van víz, és a madárszámláló önkéntesek tavaly kétszer annyi fajt jegyeztek fel, mint a munka megkezdése előtt."
+            },
+            {
+              "speaker": "f",
+              "text": "Befejezésül három gondolat. Az első: mielőtt cselekszünk, először mérjünk, és hallgassunk meg mindenkit. A második: egy helyreállítás sosem lesz hibátlan, és ezt nem kell szégyellni. A harmadik: a munka nem az utolsó ásónyommal ér véget, hanem akkor kezdődik igazán, amikor a szakemberek elmennek. Remélem, hogy a Nádasi-holtág nem marad egyedi eset. Köszönöm a figyelmüket, és szívesen válaszolok a kérdéseikre."
+            }
+          ],
+          "statements": [
+            "A holtág az elmúlt évtizedekben fokozatosan feltöltődött iszappal.",
+            "A holtág kiszáradását közvetlenül a legutóbbi aszály okozta.",
+            "A munkák során előkerült egy gát, amely egyik térképen sem szerepelt.",
+            "A gátat nem bontották el teljesen, mert egy része fészkelőhelyül szolgált.",
+            "Az iszapot a holtág teljes hosszán eltávolították, a szigeteket és a nádasokat is beleértve.",
+            "A lápi pócot külföldről telepítették be a helyreállított vízrészbe.",
+            "A védett halakat a szakemberek kézzel vitték át az újonnan megnyitott vízrészbe.",
+            "A gazdák kezdettől támogatták a tervet, mert áradás sosem fenyegette a földjeiket.",
+            "Az idősebb helybeliek emlékei segítettek eldönteni, hová kerüljenek a padok és a kilátó.",
+            "A gyerekek az iszap eltávolításában is részt vettek.",
+            "A projekt a tervezett időn belül, hat hónap alatt elkészült.",
+            "A költségek nagyobb részét pályázati támogatásból fedezték."
+          ],
+          "correct": [
+            0,
+            2,
+            3,
+            6,
+            8,
+            11
+          ],
+          "pick": 6
+        },
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Négy beszélgetést fog hallani, mindegyiket kétszer. Minden beszélgetéshez két kérdés tartozik. Válassza ki a helyes választ.",
+          "clips": [
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Szia, Eszter! Képzeld, Dóri bekerült a debreceni gimnáziumba is, meg a műszaki szakközépiskolába is. Most kell döntenünk. Mindkettőbe jó pontszámmal jutott be, a szakközépiskola még ösztöndíjat is ajánlott neki."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Gratulálok neki! De miért van ilyen gondterhelt arcod? Ez jó hír."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Az is. A gond az, hogy a gimnáziumban sokkal nagyobb a tanulási nyomás, és Dóri már most is alig alszik a dolgozatok miatt. A szakközépiskolában viszont tanulhat programozást, és érettségi után akár azonnal el is helyezkedhet."
+                },
+                {
+                  "speaker": "f",
+                  "text": "És ő mit szeretne?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Azt mondja, mindkettőt. A programozást szereti, de a gimnáziumban van egy énekkar, és az is nagyon vonzza."
+                },
+                {
+                  "speaker": "f",
+                  "text": "A mi fiunknál úgy csináltuk, hogy elmentünk a nyílt napokra. Egy délután az egyik iskolába, egy délután a másikba. Az ottani diákok sokkal őszintébbek, mint a tájékoztató füzet."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Jó ötlet, de a nyílt napok csak jövő hétvégén lesznek, a jelentkezési határidő viszont szerdán lejár."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Akkor kérj haladékot. A legtöbb igazgató szívesen ad néhány nap türelmet, ha kedvesen kérik."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Nem szeretnék kellemetlenkedni. Az igazgatónő biztosan rengeteg szülővel beszél most."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Nem az. Az lenne igazán kellemetlen, ha két év múlva kiderülne, hogy rossz iskolát választottatok."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Igazad van. Még ma felhívom az igazgatónőt. És Dórival is leülök beszélgetni, hogy ne csak mi döntsünk helyette."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Pontosan. És ha az énekkar ennyire fontos neki, kérdezzétek meg, hogy a szakközépiskolában nincs-e valami hasonló."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Azt is megkérdezem. Köszönöm, Eszter, sokat segítettél."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Miért nehéz a férfinak a döntés?",
+                  "options": [
+                    "Mert mindkét iskolának van olyan oldala, amely a lányát vonzza.",
+                    "Mert a lánya csak az egyik iskolába nyert felvételt.",
+                    "Mert nem bízik a szakközépiskola színvonalában."
+                  ],
+                  "correct": 0
+                },
+                {
+                  "stem": "Mit javasol Eszter?",
+                  "options": [
+                    "Hagyják, hogy Dóri egyedül döntsön, a szülők beavatkozása nélkül.",
+                    "Válasszák a gimnáziumot, mert onnan könnyebb bejutni az egyetemre.",
+                    "Kérjenek haladékot, és nézzék meg az iskolákat a nyílt napokon."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Jó napot kívánok! A múlt hónapban vettem önöknél egy mosógépet, és már a második héten leállt a program közepén."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Jó napot kívánok! Sajnálom, hogy kellemetlenséget okozott. Kérem, mutassa meg a számlát, hogy lássam a vásárlás időpontját."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Itt van. Április tizenkilencedikén vettem."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Köszönöm. Egy kis probléma van, asszonyom. Nálunk a gyártói jótállás csak arra az esetre vonatkozik, ha a készüléket a mi szerelőink kötötték be. Önnél ki végezte a bekötést?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "A szomszédom, aki vízvezeték-szerelő. Azt mondta, hogy semmi bonyolult nincs benne."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Akkor itt van a nehézség. Ettől még nem utasíthatom el a panaszát. Kitölthetünk egy hibajelentő lapot, és a szerelőnk megvizsgálja a gépet. Ha a hiba a készülékben van, a javítás ingyenes. Ha viszont a bekötésben, akkor sajnos önnek kell fizetnie."
+                },
+                {
+                  "speaker": "f",
+                  "text": "És mennyi idő alatt jönnek ki?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Általában három munkanapon belül. Ha addig nem keresik, hívjon vissza, és megadom a közvetlen számot. A lapra kérem, írja be a hibát is. Pontosan mit csinál a gép?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Mosás közben megáll, a kijelzőn pedig egy hibakód látszik, az E három."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Köszönöm, ezt feljegyzem."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Rendben. Szeretném viszont, ha a szerelő a szomszédom jelenlétében nézné meg a gépet. Ő pontosan meg tudja mutatni, hogyan kötötte be."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Természetesen. Ezt beírom megjegyzésként a lapra. Itt kérem aláírni."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Miért nem fogadja el azonnal a jótállási igényt az eladó?",
+                  "options": [
+                    "Mert a vásárlás óta már több mint fél év eltelt.",
+                    "Mert a gépet nem a bolt szerelői kötötték be.",
+                    "Mert a vevő nem tudta bemutatni a számlát."
+                  ],
+                  "correct": 1
+                },
+                {
+                  "stem": "Mi fog történni ezután?",
+                  "options": [
+                    "A szerelő megvizsgálja a gépet, és attól függően fizet valaki, hogy hol van a hiba.",
+                    "A bolt azonnal kicseréli a készüléket egy újra.",
+                    "A vevőnek vissza kell vinnie a gépet a gyártóhoz."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Szia, Réka! Mesélj, hogy sikerült a prezentáció a megbízóknál?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Hát... Az igazgató a végén azt mondta, hogy nagyon érdekes volt."
+                },
+                {
+                  "speaker": "m",
+                  "text": "És az jó?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Ebben az országban, ha valaki azt mondja, hogy nagyon érdekes, az többnyire azt jelenti, hogy nem lesz belőle semmi. Különösen, ha közben végig a telefonját nézi."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Ne légy már ilyen borúlátó. Lehet, hogy tényleg érdekesnek találta."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Tamás, tizenöt perc alatt kétszer is az órájára nézett. Pedig három hétig dolgoztam azon az anyagon. A diákat is újracsináltam kedd éjjel. A cég másik vezetője viszont egy szót sem szólt, pedig ő dönt a költségvetésről."
+                },
+                {
+                  "speaker": "m",
+                  "text": "A diákkal szerintem nem volt baj. Én láttam őket. Csak túl sok volt rajtuk az adat."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Ezt Gábor is mondta. Azt javasolta, hogy a számokat tegyem át egy mellékletbe, és az előadásban csak három fő üzenetet hagyjak."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Gábornak igaza van. Én is így csinálom. A megrendelő elé három mondatot teszek, a többi mehet e-mailben."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Rendben, de az már késő. Ki tudja, hogy felhív-e még az igazgató."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Küldj neki holnap egy rövid levelet, köszönd meg az idejét, és ajánld fel, hogy küldesz egy egyoldalas összefoglalót. Ne kérj semmit, csak ajánld fel."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Jó, így talán nem lesz kínos."
+                },
+                {
+                  "speaker": "m",
+                  "text": "És legközelebb próbáld végig a prezentációt velem. Szívesen leülök, és kérdezek is, mintha ügyfél lennék."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Köszi, ez jó ötlet."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit gondol Réka az igazgató megjegyzéséről?",
+                  "options": [
+                    "Őszinte elismerésnek tekinti.",
+                    "Azt hiszi, hogy az igazgató nem értette meg az előadást.",
+                    "Udvarias elutasításnak tartja."
+                  ],
+                  "correct": 2
+                },
+                {
+                  "stem": "Mit tanácsol Tamás?",
+                  "options": [
+                    "Kérjen új időpontot, és mutassa be újra az egész anyagot.",
+                    "Küldjön egy rövid köszönő levelet, és ajánljon fel egy összefoglalót.",
+                    "Várja meg, hogy az igazgató jelentkezzen."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Gyula, ott voltál a tegnapi közgyűlésen? Elfogadták a tetőfelújítást?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Ott voltam. Harminckét igen, nyolc nem. A közös képviselő szerint a tető több helyen beázik, és a tavaszi esőket már nem bírná ki."
+                },
+                {
+                  "speaker": "f",
+                  "text": "És mennyibe kerül egy lakásnak?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "Átlagosan négyszázezer forintba, de két évig részletekben is lehet fizetni. Aki egy összegben fizet, tíz százalék kedvezményt kap."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Négyszázezer forint! Nekem a nyugdíjam alig háromszázezer, a lányom támogatásával együtt is."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Ezt a többiek is megértették. Ezért elfogadtak egy javaslatot: az átlagnál kevesebbet fizetnek azok, akik kis lakásban laknak, a legfelső szint lakói pedig többet, mert a beázás őket érinti a leginkább. Te a másodikon laksz, ugye?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Igen, de a lakás nagyon kicsi, harminchét négyzetméter."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Akkor te körülbelül háromszázezret fizetsz. És van még valami. Létrehoztak egy szociális alapot azoknak, akik még így sem tudják kifizetni. Kérelmet kell benyújtani a közös képviselőnek, a hónap végéig."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Ez jó hír. Mikor kezdődik a munka, és mit kell mellékelni a kérelemhez?"
+                },
+                {
+                  "speaker": "m",
+                  "text": "A munka március elején indul, a tavaszi esők előtt. Addig a lakók kapnak egy részletes költségvetést is. A kérelemhez szerintem a nyugdíjszelvényt és egy nyilatkozatot a jövedelemről. Menj le holnap a képviselőhöz, és kérdezd meg pontosan."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Mindenképpen. Köszönöm, hogy elmondtad. Már attól tartottam, hogy el kell adnom a lakást."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Hogyan osztották el a költségeket?",
+                  "options": [
+                    "A kis lakások tulajdonosai kevesebbet, a legfelső szint lakói többet fizetnek az átlagnál.",
+                    "Mindenki ugyanannyit fizet, lakásmérettől és emelettől függetlenül.",
+                    "Csak a legfelső szint lakói fizetnek, a többiek mentesülnek."
+                  ],
+                  "correct": 0
+                },
+                {
+                  "stem": "Mit tehet a nő, ha a hozzájárulást nem tudja kifizetni?",
+                  "options": [
+                    "Halasztást kérhet a következő közgyűlésig, külön döntés nélkül.",
+                    "Eladhatja a lakását a társasháznak.",
+                    "Kérelmet nyújthat be a szociális alaphoz a hónap végéig."
+                  ],
+                  "correct": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Egy rádióinterjút fog hallani kétszer. Válaszoljon a kérdésekre. Válassza ki a helyes választ.",
+          "audio": [
+            {
+              "speaker": "m",
+              "text": "Üdvözlöm hallgatóinkat a Közéleti délután című műsorunkban. Vendégünk ma Dr. Szabó Andrea oktatáskutató, aki az elmúlt években a falusi kisiskolák sorsát vizsgálta. Üdvözlöm, doktornő. Hallgatóink a műsor végéig a szerkesztőségi telefonon is feltehetik a kérdéseiket."
+            },
+            {
+              "speaker": "f",
+              "text": "Köszönöm a meghívást, Péter."
+            },
+            {
+              "speaker": "m",
+              "text": "Az utóbbi években több száz kis iskolát zártak be vagy vontak össze. Az önkormányzatok szerint ez elkerülhetetlen, mert a gyerekek száma csökken, a fenntartás pedig drága. Igazuk van?"
+            },
+            {
+              "speaker": "f",
+              "text": "Részben igen. A számok valóban meggyőzőek. Ha egy iskolának tizenöt tanulója van, az egy gyerekre jutó költség többszöröse a városi iskoláénak. Csakhogy ez a számítás kizárólag a fenntartási költséget látja. Azt nem látja, hogy mi történik a faluval, ha az iskola bezár."
+            },
+            {
+              "speaker": "m",
+              "text": "Mi történik?"
+            },
+            {
+              "speaker": "f",
+              "text": "A fiatal családok elköltöznek, vagy el sem költöznek oda. Egy településről, ahol nincs óvoda és iskola, az emberek nehezebben döntenek úgy, hogy ott nevelik a gyerekeiket. Ezt több kutatás is megmutatta. Én azonban óvatosan fogalmaznék. Az iskola bezárása nem az egyetlen oka az elnéptelenedésnek, de gyakran az utolsó csepp a pohárban."
+            },
+            {
+              "speaker": "m",
+              "text": "Van példa arra, hogy pontosan mi történt egy faluban a bezárás után?"
+            },
+            {
+              "speaker": "f",
+              "text": "Az általunk vizsgált tizennégy faluból hatban zárták be az iskolát. Három évvel később ezekben a településeken a hat és tizennégy év közötti gyerekek száma közel egyharmadával csökkent, míg a másik nyolc faluban alig változott. Természetesen nem állítom, hogy ennek egyetlen oka van, de a különbség szembetűnő. Az is kiderült, hogy a bezárás után a faluban gyakran megszűnik az utolsó közösségi tér is, mert az iskolában tartották a falunapot, a nyugdíjasklub összejöveteleit, sőt, egy ideig még az orvosi rendelést is."
+            },
+            {
+              "speaker": "m",
+              "text": "És a szülők hogyan reagálnak, amikor a bezárásról hallanak?"
+            },
+            {
+              "speaker": "f",
+              "text": "Sokan megijednek. Ha nem tudják, mi lesz az iskolával, inkább elköltöznek, még mielőtt bármi eldőlne. A bizonytalanság maga is elnéptelenítő hatású."
+            },
+            {
+              "speaker": "m",
+              "text": "Az ellenérv az, hogy a gyerekek a nagyobb iskolában jobb oktatást kapnak."
+            },
+            {
+              "speaker": "f",
+              "text": "Ez is félig igaz. A nagyobb iskolában több a szaktanár, és több szakkör közül lehet választani. A bejáró gyerekeknek viszont naponta egy-két órát kell utazniuk. Ez különösen az alsó tagozatosoknak megterhelő. Néhány vizsgálat szerint a legkisebbek és a hátrányos helyzetű családok gyerekeinek eredményei az áthelyezés után romlottak, nem javultak."
+            },
+            {
+              "speaker": "m",
+              "text": "Van-e alternatíva a bezárásra?"
+            },
+            {
+              "speaker": "f",
+              "text": "Több is. Az egyik a társult iskola. A falusi iskola megmarad alsó tagozaton, a szaktanárok viszont hetente átjárnak a nagyobb iskolából. A másik a vegyes korosztályú osztály, amelyet például Finnországban és Skóciában régóta használnak. A harmadik, hogy az iskolaépület délutánonként könyvtárként vagy közösségi házként is működik."
+            },
+            {
+              "speaker": "m",
+              "text": "Az online oktatás nem segíthetne?"
+            },
+            {
+              "speaker": "f",
+              "text": "Kiegészítheti a tanítást, de nem pótolja. Egy nyelvórát vagy egy szakkört lehet távoktatással tartani, az első osztályosok olvasástanítását viszont nem. A kisgyereknek tanárra van szüksége, nem képernyőre."
+            },
+            {
+              "speaker": "m",
+              "text": "Ez nem túl drága?"
+            },
+            {
+              "speaker": "f",
+              "text": "Az iskola fenntartása valóban drágább, mint a gyerekek buszoztatása. De ha beleszámítjuk, hogy a falu megmarad, és vele a boltok és a szolgáltatások is, akkor sok esetben mégis megéri. Fontos azonban kimondani, hogy ez nem minden településre igaz. Néhány faluban két-három gyerek van. Ott a szomszéd faluba vinni őket a józan megoldás."
+            },
+            {
+              "speaker": "m",
+              "text": "Ez egy érdekes megjegyzés egy olyan szakértőtől, aki a kisiskolákat védi. Mit javasol a döntéshozóknak?"
+            },
+            {
+              "speaker": "f",
+              "text": "Három dolgot. Az első, hogy az iskola bezárása előtt kötelező legyen egy hatásvizsgálat, amelyben nemcsak a költségek szerepelnek, hanem a gyerekek bejárási ideje és a falu helyzete is. A második, hogy a vidéken tanító pedagógusokat ösztönözzük, például lakhatási támogatással. A harmadik, hogy a szülőket és a helyi közösséget már a döntés előtt bevonjuk, ne utána értesüljenek róla."
+            },
+            {
+              "speaker": "m",
+              "text": "Nem attól tartanak, hogy a pedagógusok nem akarnak vidékre menni?"
+            },
+            {
+              "speaker": "f",
+              "text": "De igen, ez a legnagyobb gond. A vidéki iskoláknál gyakran évekig üres egy-egy szaktanári állás. Ezért kell a lakhatási támogatás, és ezért kell az is, hogy a fiatal tanár ne érezze magát magányosnak. Két-három iskola akár közös tanácsadót is kaphatna."
+            },
+            {
+              "speaker": "m",
+              "text": "Végül egy provokatív kérdés. Nem lehet, hogy mindez nosztalgia? Az emberek ragaszkodnak a régihez, de a világ megváltozott."
+            },
+            {
+              "speaker": "f",
+              "text": "Lehet, hogy van benne nosztalgia, és el kell ismerni, hogy a világ valóban változik. De én nem a múlt megőrzéséről beszélek, hanem arról, hogy a döntés mérlegeljen minden következményt. Ha a mérlegelés után is az a döntés, hogy az iskolát be kell zárni, akkor azt fel kell vállalni, és a gyerekeknek biztonságos és rövid utat kell biztosítani. Az viszont rossz gyakorlat, hogy a döntést csak a költségvetési táblázat alapján hozzák meg."
+            },
+            {
+              "speaker": "m",
+              "text": "Doktornő, nagyon köszönöm a beszélgetést."
+            },
+            {
+              "speaker": "f",
+              "text": "Én köszönöm, Péter."
+            }
+          ],
+          "questions": [
+            {
+              "stem": "Mi a doktornő fő kifogása a költségekre hivatkozó bezárási érvvel szemben?",
+              "options": [
+                "Szerinte a számok hamisak, az iskolák valójában nem drágák.",
+                "A számítás csak a fenntartási költséget látja, azt nem, hogy mi lesz a faluval.",
+                "Szerinte az önkormányzatoknak egyáltalán nem kell takarékoskodniuk."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Hogyan viszonyul az iskola bezárása az elnéptelenedéshez?",
+              "options": [
+                "Szerinte az elnéptelenedésnek kizárólag az iskola bezárása az oka.",
+                "Szerinte nincs összefüggés a kettő között.",
+                "Nem az egyetlen ok, de gyakran ez billenti el a helyzetet."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Mit állít a doktornő a bejáró gyerekekről?",
+              "options": [
+                "A napi utazás különösen a kisebbeket terheli, és a hátrányos helyzetűek eredményei romolhatnak.",
+                "A bejárás növeli a gyerekek önállóságát, és javítja az eredményeiket.",
+                "A nagyobb iskola minden tanuló számára egyformán jobb."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Mi a társult iskola lényege?",
+              "options": [
+                "A falu gyerekei a nagyobb iskolába járnak, a falusi épület pedig bezár.",
+                "A falusi alsó tagozat megmarad, a szaktanárok pedig hetente átjárnak a nagyobb iskolából.",
+                "Két falu iskoláját egyetlen épületben egyesítik."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Mit mond a doktornő a kisiskolák költségeiről?",
+              "options": [
+                "A fenntartásuk mindig olcsóbb, mint a gyerekek buszoztatása.",
+                "A költségek nem számítanak, csak a hagyományok megőrzése.",
+                "A fenntartásuk drágább, de a falu szolgáltatásainak megmaradásával együtt sokszor megéri, bár nem mindenhol."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Mit javasol a doktornő elsőként a döntéshozóknak?",
+              "options": [
+                "Az iskola bezárása előtt kötelező hatásvizsgálatot, amely a költségeken kívül a bejárási időt és a falu helyzetét is vizsgálja.",
+                "Minden kisiskolát tartsanak fenn, bármi áron.",
+                "A szülők szavazzanak az iskolák költségvetéséről."
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Tíz rövid párbeszédet fog hallani, mindegyiket kétszer. Minden párbeszédhez egy kérdés tartozik. Válassza ki a helyes választ.",
+          "clips": [
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Háromszor megmondtam Pistának, hogy a megbeszélés átkerült két órára, és ma délelőtt mégis kilencre jött be."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Ez érthetetlen. Tegnap este még megígérte, hogy időben ott lesz."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Nála mindig későn esik le a tantusz. Mire megérti, amit mondanak neki, a többiek már rég végeztek."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit jelent, hogy „nála mindig későn esik le a tantusz”?",
+                  "options": [
+                    "Hogy mindig késve érkezik a munkahelyére.",
+                    "Hogy nehezen és későn érti meg, amit mondanak neki.",
+                    "Hogy nagyon keveset keres a munkahelyén."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Mit szólt a főnök, hogy elfelejtetted elküldeni a szerződést?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Hát, kiütötte nála a biztosítékot. Fél órán át kiabált, még a folyosóra is kihallatszott, a titkárnő pedig bezárkózott az irodájába."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Akkor ma jobb, ha nem mész be hozzá. Várj, amíg lehiggad."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit fejez ki a nő azzal, hogy „kiütötte nála a biztosítékot”?",
+                  "options": [
+                    "Hogy a főnök nagyon dühös lett.",
+                    "Hogy a főnök megijedt az áramkimaradástól.",
+                    "Hogy a főnök megbocsátott neki."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Hallottad, hogy Zoli otthagyta a tanfolyamot, amelyre az egész nyarat félretette?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Igen, két hónapig bírta. A vizsga előtt egy héttel bedobta a törülközőt, mert elege lett a sok tanulásból."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Pedig mindig azt mondta, hogy befejezi."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit tett Zoli?",
+                  "options": [
+                    "Átment a vizsgán, és befejezte a tanfolyamot.",
+                    "Új tanfolyamra iratkozott be.",
+                    "Feladta, és abbahagyta a tanfolyamot."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "A hétvégén a Balatonon voltunk. Végig esett, az apartmanban nem volt internet, és a szomszédok hajnalig buliztak. A gyerekek azt kérdezték, mikor indulunk már haza."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Akkor nagyon pihentető volt."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Az. Hétfőn szabadságot is kell kivennem, hogy kipihenjem."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit fejez ki a férfi azzal, hogy „akkor nagyon pihentető volt”?",
+                  "options": [
+                    "Őszintén örül, hogy a nő kipihente magát.",
+                    "Ironikusan azt mondja, hogy a hétvége nem sikerült jól.",
+                    "Sajnálja, hogy nem tudott velük menni."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Jó estét kívánok! Szeretnék asztalt foglalni hétre, négy főre, lehetőleg csendes sarokba."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Sajnálom, hétre már csak a pult mellett van hely. Fél kilenctől viszont szabad az ablak melletti asztal. Addig megkínálhatom egy itallal a bárpultnál."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Köszönöm, akkor a fél kilencet kérem. A nevem Kovács."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit döntött a nő?",
+                  "options": [
+                    "Hétre foglal asztalt a pultnál.",
+                    "Máshol keres éttermet.",
+                    "Fél kilencre foglal asztalt az ablak mellett."
+                  ],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Megnéztem a filmet, amit ajánlottál."
+                },
+                {
+                  "speaker": "m",
+                  "text": "És? Hogy tetszett? Ugye, nem aludtál el?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Hát... a díszletek gyönyörűek voltak, a zene is kellemes, és az operatőr nagyon ügyes. Az egyik színésznek különösen szép volt a hangja."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit gondol a nő a filmről?",
+                  "options": [
+                    "Nagyon tetszett neki az egész film.",
+                    "Valójában nem tetszett neki, mert csak a mellékes dolgokat dicséri.",
+                    "Nem látta a filmet, csak hallott róla."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Megvetted azt az olcsó telefont a hirdetésből?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Meg. Az első héten kiderült, hogy három óra alatt lemerül, és a kijelzője is megrepedt. A hirdető átvert a palánkon."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Visszaviheted?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Nem, magánszemélytől vettem, és a hirdetés már le is került az oldalról."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit jelent, hogy a hirdető „átvert a palánkon”?",
+                  "options": [
+                    "Segített neki kiválasztani a megfelelő telefont.",
+                    "Becsapta, megtévesztette.",
+                    "Elfogadta a telefon visszaküldését."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Megnéztem a menetrendet. A vonatunk tizenegy órakor érkezik Szolnokra, a csatlakozás tizenegy tizenötkor indul."
+                },
+                {
+                  "speaker": "m",
+                  "text": "A kijelző szerint ma tíz perces késéssel jön, de ez a jegyiroda szerint még változhat."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Akkor éppen elérjük, de csak akkor, ha nem lesz nagyobb a késés."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mi a helyzet a csatlakozással?",
+                  "options": [
+                    "Elérhetik, de csak akkor, ha a késés nem nő tovább.",
+                    "Biztosan lekésik, mert a vonat későn érkezik.",
+                    "Bőven elérik, mert a vonat pontosan érkezik."
+                  ],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "A főnök azt mondta, hogy a bónuszt jövőre talán megkapjuk."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Talán. Ezt tavaly is mondta, és tavalyelőtt is, és mindig volt valami új indok."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Szerinted most sem lesz?"
+                },
+                {
+                  "speaker": "f",
+                  "text": "Azt nem mondtam. Csak azt, hogy én már nem számolok vele."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mi a nő álláspontja a bónuszról?",
+                  "options": [
+                    "Biztos benne, hogy idén végre megkapják.",
+                    "Nem bízik az ígéretben, és nem épít a pénzre.",
+                    "Szerinte a főnök soha nem ígért ilyet."
+                  ],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                {
+                  "speaker": "f",
+                  "text": "Kimegyünk biciklizni a Margitszigetre? A reggeli rádió szerint ma lesz az év legszebb napja."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Nézz az égre. Szerintem lóg az eső lába, és a szél is feltámadt."
+                },
+                {
+                  "speaker": "f",
+                  "text": "Tényleg, olyan sötét felhők jönnek nyugat felől."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Azt mondom, maradjunk itthon, és főzzünk valamit."
+                }
+              ],
+              "questions": [
+                {
+                  "stem": "Mit jelent, hogy „lóg az eső lába”?",
+                  "options": [
+                    "Már hosszú ideje esik.",
+                    "Hamarosan esni fog.",
+                    "Az eső éppen elállt."
+                  ],
+                  "correct": 1
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

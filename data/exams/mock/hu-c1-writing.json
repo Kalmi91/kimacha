@@ -1,0 +1,303 @@
+{
+  "target": "hu",
+  "level": "C1",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Egy előadást fog hallani kétszer. Jegyzeteljen, majd írja meg a kért szöveget.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "Cikk a lakóközösség hírlevelébe",
+              "prompt": "Ön részt vett ezen az előadáson, és a lakóközösség hírlevele cikket kér Öntől. Írjon cikket, amelyben összefoglalja az előadás fő gondolatait, értékeli a javasolt intézkedéseket, és kifejti, hogyan lehetne alkalmazni azokat az Ön környékén.",
+              "audio": [
+                {
+                  "speaker": "m",
+                  "text": "Jó estét kívánok, és szeretettel köszöntöm az előadássorozat mai vendégeit. Egy ellentmondással kezdem. Miközben sok család egyre nehezebben tudja kifizetni a heti bevásárlást, a világon az előállított élelmiszer nagyjából egyharmada kárba vész. A boltok polcairól, a háztartások hűtőszekrényéből és az éttermek konyhájából naponta tonnaszám kerül a szemétbe olyan étel, amely még elfogyasztható volna. Egy átlagos háztartásban hetente több ezer forintnyi étel kerül a kukába, és ennek nagy része nem a bolt polcán romlott meg, hanem otthon, a hűtőben. Ez nem két külön probléma. Ugyanannak a rendszernek a két oldala."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Hogyan jutottunk idáig? Az élelmiszer útja hosszú: a mezőtől a feldolgozón és a raktáron át a boltig, onnan pedig a konyhákig. Ezen az úton minden lépésnél elvész valami. A termelő kiselejtezi a görbe uborkát és a túl kicsi almát, mert a kereskedő csak a szabályos külsejű árut veszi át. A boltok sokat rendelnek, mert a tele polc többet ad el, és ami megmarad, azt a lejárat napján kidobják. A háztartásokban leggyakrabban a túlvásárlás okoz gondot: akciós tételeket veszünk, amelyeket nem tudunk megenni. Sokan összekeverik a két dátumot is. A „minőségét megőrzi” felirat nem azt jelenti, hogy az étel a dátum után veszélyes, csak azt, hogy a gyártó addig vállal felelősséget az ízéért és az állagáért. A vendéglátásban a nagy adagok és a svédasztalos kínálat jelent külön gondot, mert a megmaradt ételt a szabályok miatt gyakran nem lehet továbbadni."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Az utóbbi években többféle megoldással is kísérleteznek. Az első a közösségi hűtő: egy közterületen elhelyezett hűtőszekrény, ahová bárki betehet felesleges, még jó ételt, és bárki kivehet belőle. A második az élelmiszerbankok és az alkalmazások hálózata, amelyek a boltoktól napi szinten átveszik a közel lejáró árut, és kedvezményes áron vagy ingyen továbbadják. A harmadik a dátumok reformja: egyértelműbb jelölések, hogy a vásárló tudja, mit kell kidobni, és mit nem. A negyedik a háztartásokban kezdődik: heti menütervezés, fagyasztás, maradékokból főzés, a megmaradt zöldségek komposztálása."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Egy kísérleti városrészben, ahol több intézkedést vezettek be egyszerre, az egyik felmérés szerint a háztartásokban kidobott élelmiszer mennyisége néhány hónap alatt körülbelül a harmadával csökkent. Mégis óvatosnak kell lennünk. Az ilyen programok nem szüntetik meg az éhezést, és a termelésnél keletkező veszteséget sem oldják meg. Amit tesznek, az az, hogy csökkentik a pazarlás egy részét, és újra tudatosítják, hogy az étel érték. A résztvevők szerint a legnagyobb változást az hozta, hogy hetente egyszer közösen főztek a megmaradt alapanyagokból, és ezt az ebédet a szomszédok is megkóstolhatták."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Miért nem működik ez mindenhol? Három akadályt látok. Az első a költség és a logisztika. A hűtés, a szállítás és a nyilvántartás pénzbe kerül, és a megtakarítás gyakran más zsebében jelenik meg, mint ahol a kiadás keletkezik. A második a jogi bizonytalanság: a boltok attól tartanak, hogy ha adományoznak, és valaki megbetegszik, őket vonják felelősségre. A harmadik, amelyről gyakran megfeledkezünk, a karbantartás. Egy elhanyagolt közösségi hűtő kosszal, szaggal és rendetlenséggel jár, és a környék joggal arra következtet, hogy a kezdeményezés kudarcot vallott."
+                },
+                {
+                  "speaker": "m",
+                  "text": "A tapasztalatom az, hogy a technikai rész a könnyebb. A nehéz az emberek szokásainak megváltoztatása. Sokan szégyellik elvenni a közös hűtőből, vagy attól tartanak, hogy az adományozott étel veszélyes. Azok a programok működtek jól, amelyek az első naptól bevonták a környék lakóit: önkéntesek feleltek minden egyes hűtőért, a program látható előnyökkel járt, például alacsonyabb bevásárlási költséggel, és az iskolákban is beszéltek róla. Egyes városokban a hűtőt egy közeli kávézó gondozza, amely cserébe a hűtő oldalán hirdetheti magát."
+                },
+                {
+                  "speaker": "m",
+                  "text": "Befejezésül három javaslatom van. Az első: a nagy áruházak számára legyen kötelező, hogy a még fogyasztható felesleget átadják a szervezeteknek, ne dobják ki. Jó példa, ha a piaci árusok a nap végén nem a kukába teszik, hanem átadják az önkéntesek ládáiba a megmaradt zöldséget. A második: az iskolákban tanítsák meg a gyerekeknek, hogyan kell olvasni az élelmiszerek jelöléseit. A harmadik: hozzunk létre egy alapot a közösségi hűtők rendszeres karbantartására, mert a gondozatlan kezdeményezés tönkremegy. Ha sikerül elérni, hogy az étel ne szemét, hanem érték legyen, jelentős lépést teszünk egy fenntarthatóbb város felé. Köszönöm a figyelmüket."
+                }
+              ],
+              "minWords": 220,
+              "maxWords": 250,
+              "points": [
+                {
+                  "id": "ellentmondas",
+                  "label": "Bemutatja az ellentmondást: sok ember nehezen él meg, mégis rengeteg ételt dobnak ki",
+                  "keywords": [
+                    "pazarl",
+                    "kidob",
+                    "szemetbe",
+                    "ellentmond",
+                    "ellentet",
+                    "parados",
+                    "karba",
+                    "egyharmad",
+                    "tonnaszam"
+                  ]
+                },
+                {
+                  "id": "okok",
+                  "label": "Elmagyarázza az okokat: kiselejtezés, túlvásárlás, lejárati dátumok",
+                  "keywords": [
+                    "lejarat",
+                    "datum",
+                    "kinezet",
+                    "kiselejtez",
+                    "gorbe",
+                    "tulvasarl",
+                    "tulrendel",
+                    "akcio",
+                    "uzlet",
+                    "kereskedo"
+                  ]
+                },
+                {
+                  "id": "megoldasok",
+                  "label": "Leírja a konkrét megoldásokat: közösségi hűtő, élelmiszerbank, jelölések, tudatos háztartás",
+                  "keywords": [
+                    "kozossegi huto",
+                    "huto",
+                    "elelmiszerbank",
+                    "adomany",
+                    "jeloles",
+                    "menutervez",
+                    "fagyaszt",
+                    "komposzt",
+                    "maradek",
+                    "alkalmazas"
+                  ]
+                },
+                {
+                  "id": "akadalyok",
+                  "label": "Megemlíti az akadályokat: költség, jogi bizonytalanság vagy karbantartás",
+                  "keywords": [
+                    "koltseg",
+                    "logisztik",
+                    "jogi",
+                    "felelosseg",
+                    "karbantart",
+                    "szokas",
+                    "bizonytalan",
+                    "elhanyagol",
+                    "kosz"
+                  ]
+                },
+                {
+                  "id": "velemeny",
+                  "label": "Véleményt mond arról, hogyan lehetne alkalmazni a javaslatot a saját környékén",
+                  "keywords": [
+                    "a kornyekunkon",
+                    "a kornyekemen",
+                    "nalunk",
+                    "a lakokozosseg",
+                    "a hazunkban",
+                    "a lakoparkban",
+                    "bevezet",
+                    "onkentes",
+                    "szerintem",
+                    "javaslom",
+                    "kiserlet",
+                    "alkalmazhato"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Válasszon a két lehetőség közül, és írja meg a kért szöveget.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "A lehetőség: Cikk grafikon alapján",
+              "prompt": "Írjon cikket egy ismeretterjesztő folyóiratba, amelyben bemutatja a grafikon fő adatait, értelmezi a megfigyelhető tendenciákat, és értékeli a változások lehetséges társadalmi következményeit.",
+              "input": "GRAFIKON. A megkérdezettek leggyakoribb hírforrásai (a válaszadók százaléka, 1 200 fős minta; több választ is meg lehetett jelölni).\n\nTelevízió: 2015-ben 62 %, 2025-ben 41 %.\nInternetes hírportálok: 2015-ben 33 %, 2025-ben 38 %.\nKözösségi média: 2015-ben 11 %, 2025-ben 36 %.\nRádió: 2015-ben 21 %, 2025-ben 17 %.\nNyomtatott sajtó: 2015-ben 18 %, 2025-ben 6 %.\nPodcast és videócsatorna: 2015-ben 2 %, 2025-ben 12 %.\n\nA felmérés megjegyzése: a napi átlagos hírfogyasztás 35 percről 52 percre nőtt. A válaszadók 58 %-a szerint ma nehezebb eldönteni, hogy mi igaz a hírek között, mint tíz éve.",
+              "minWords": 180,
+              "maxWords": 220,
+              "points": [
+                {
+                  "id": "altalanos",
+                  "label": "Bemutatja a fő tendenciát: csökken a televízió, nő a közösségi média",
+                  "keywords": [
+                    "televizi",
+                    "kozossegi",
+                    "csokken",
+                    "csokkent",
+                    "visszaes",
+                    "nott",
+                    "novekedett",
+                    "novekedes",
+                    "emelkedett"
+                  ]
+                },
+                {
+                  "id": "masodlagos",
+                  "label": "Említ további változásokat: nyomtatott sajtó, podcast, rádió vagy hírportálok",
+                  "keywords": [
+                    "nyomtatott",
+                    "sajto",
+                    "podcast",
+                    "videocsatorna",
+                    "hirportal",
+                    "radio",
+                    "ujsag"
+                  ]
+                },
+                {
+                  "id": "okok",
+                  "label": "Értelmezi az okokat: okostelefon, gyorsaság, ingyenes elérés, fiatalok szokásai",
+                  "keywords": [
+                    "okostelefon",
+                    "telefon",
+                    "gyors",
+                    "ingyen",
+                    "hozzaferes",
+                    "kenyelem",
+                    "kenyelmes",
+                    "fiatalok",
+                    "algoritmus",
+                    "mindig elerheto"
+                  ]
+                },
+                {
+                  "id": "kovetkezmenyek",
+                  "label": "Értékeli a következményeket a társadalomra nézve",
+                  "keywords": [
+                    "megbizhato",
+                    "dezinformacio",
+                    "hamis",
+                    "polarizacio",
+                    "kritikus",
+                    "mediaertes",
+                    "tajekozott",
+                    "buborek",
+                    "velemeny",
+                    "demokracia"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "B lehetőség: Hivatalos levél",
+              "prompt": "Írjon hivatalos levelet a Közlekedési Osztály vezetőjének, amelyben kifejti egyet nem értését a bejelentett intézkedésekkel, érvel az álláspontja mellett, és alternatív megoldásokat javasol.",
+              "input": "HIRDETMÉNY A LAKOSSÁGNAK. A Kertvárosi Önkormányzat Közlekedési Osztálya tájékoztatja a lakosságot, hogy költségvetési okokból március 1-jétől a harminchatos autóbusz hétköznap a jelenlegi tizenöt perc helyett negyven percenként közlekedik, szombaton este nyolc óráig jár, vasárnap pedig egyáltalán nem. A nyugdíjas bérletek kizárólag a központi ügyfélszolgálaton válthatók meg, amely hétfőtől péntekig 9 és 13 óra között tart nyitva. A diákbérletek árát a változás nem érinti. A járatok pótlására az önkormányzat nem tervez más szolgáltatást, a megtakarított összeget pedig útfelújításra fordítja. A lakosság észrevételeit írásban lehet megküldeni az osztály vezetőjének, dr. Varga Máriának február 15-ig. Megértésüket köszönjük.",
+              "minWords": 180,
+              "maxWords": 220,
+              "points": [
+                {
+                  "id": "formalis",
+                  "label": "Hivatalosan szólítja meg a címzettet, és megmondja, miért ír",
+                  "keywords": [
+                    "tisztelt",
+                    "osztalyvezet",
+                    "hirdetmeny",
+                    "hivatkozom",
+                    "ezuton",
+                    "azert irok",
+                    "azert fordulok",
+                    "tajekoztat",
+                    "kozlemeny"
+                  ]
+                },
+                {
+                  "id": "egyet_nem_ertes",
+                  "label": "Kifejezi egyet nem értését az intézkedésekkel",
+                  "keywords": [
+                    "nem ertek egyet",
+                    "egyet nem ert",
+                    "tiltakoz",
+                    "elfogadhatatlan",
+                    "sajnalatos",
+                    "aggaszt",
+                    "helytelen",
+                    "joggal",
+                    "kifogas"
+                  ]
+                },
+                {
+                  "id": "ervek",
+                  "label": "Érvel: kiket érint hátrányosan a változtatás",
+                  "keywords": [
+                    "idos",
+                    "nyugdijas",
+                    "diak",
+                    "dolgozo",
+                    "vasarnap",
+                    "orvos",
+                    "munkahely",
+                    "csalad",
+                    "kiszolgaltat",
+                    "hatrany",
+                    "bevasarl"
+                  ]
+                },
+                {
+                  "id": "alternativak",
+                  "label": "Alternatív megoldásokat javasol",
+                  "keywords": [
+                    "javaslom",
+                    "javasolok",
+                    "alternativ",
+                    "csucsido",
+                    "kisbusz",
+                    "kiserleti",
+                    "onkentes",
+                    "kozmeghallgat",
+                    "felulvizsgal",
+                    "idoszak"
+                  ]
+                },
+                {
+                  "id": "zaras",
+                  "label": "Válaszot vagy személyes egyeztetést kér, és udvariasan lezárja a levelet",
+                  "keywords": [
+                    "valaszat varom",
+                    "valaszat kerem",
+                    "kerem",
+                    "szemelyes",
+                    "talalkozo",
+                    "egyeztet",
+                    "megbeszel",
+                    "tisztelettel",
+                    "varom"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "target": "hu",
+  "level": "B1",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Olvassa el a hat ember leírását és a tíz hirdetést. Válassza ki mindegyik emberhez a legjobban illő hirdetést. Több hirdetés van, mint amennyire szükség van, és minden hirdetést csak egyszer lehet használni.",
+          "prompts": [
+            { "id": "1", "text": "Dóra délelőtt dolgozik, ezért csak délután van szabad ideje. Nulláról szeretne megtanulni egy hangszeren játszani, de nem költhet sok pénzt a tanfolyamra." },
+            { "id": "2", "text": "Ferenc nyugdíjas, és nagyon szeret a természetben lenni, de egyedül nem szeret kirándulni. Társaságot keres, és már nem tud nehéz, hosszú túrákra menni." },
+            { "id": "3", "text": "Kata hétvégén a hatéves fiával együtt szeretne valami kreatívat csinálni. Olyan programot keres, ahol a gyerek is, és ő is jól érzi magát." },
+            { "id": "4", "text": "Márk amerikai, és fél éve él Budapesten. Szeretne megtanulni magyarul, de csak este tud tanulni, mert napközben dolgozik az irodában." },
+            { "id": "5", "text": "Zsuzsa szeretne elkezdeni futni, de egyedül nem tud motivált maradni. Csak korán reggel, munka előtt van ideje sportolni." },
+            { "id": "6", "text": "Péter szeretne megtanulni főzni. A felesége vegetáriánus, és a születésnapjára különleges, hús nélküli vacsorát szeretne készíteni neki. Eddig csak tojást sütött." }
+          ],
+          "options": [
+            { "id": "a", "title": "Kerámiaműhely", "text": "Ha szeretsz a kezeddel dolgozni, ez a műhely neked való. Minden szombaton tíztől egyig tartjuk a józsefvárosi kultúrházban, tizennyolc éves kortól. Az anyagok ára benne van a díjban. Előzetes tudás nem szükséges. A csoportok kicsik, a tanár mindenkivel foglalkozik. Jelentkezni a kultúrház recepcióján lehet." },
+            { "id": "b", "title": "Vasárnapi kirándulások", "text": "A Szabad Lépések Egyesület könnyű sétákat szervez a Budai-hegységben idősebb felnőtteknek. Vasárnap reggel nyolckor indul a busz a Moszkva térről, és délután érkezik vissza. A séták három óránál nem hosszabbak, és mindig van pihenő is. A részvétel ingyenes, de előre kell jelentkezni telefonon." },
+            { "id": "c", "title": "Gitár kezdőknek", "text": "A zeneiskola új gitárcsoportot indít azoknak, akik még soha nem játszottak hangszeren. Az órák hétfőn és szerdán délután négytől ötig vannak. Az első hónap ára csak nyolcezer forint, és a gitárt kölcsön is lehet kapni. Zenei előképzettség nem kell, csak türelem és kedv." },
+            { "id": "d", "title": "Vegetáriánus főzőtanfolyam", "text": "Négy héten át minden csütörtök este megtanulhatsz finom, hús nélküli ételeket főzni. A tanfolyamot egy ismert séf vezeti a Rákóczi úton, egy modern konyhában. Az első alkalmon a legegyszerűbb receptekkel kezdünk. A nap végén közösen vacsorázunk. A tanfolyam ára húszezer forint, a hozzávalókkal együtt." },
+            { "id": "e", "title": "Családi alkotóműhely", "text": "Szombaton délelőtt a szülők és a gyerekek együtt festhetnek, agyagozhatnak és építhetnek a tizennegyedik kerületi művelődési házban. A program öt- és tízéves kor között ajánlott, és legalább egy felnőttnek el kell kísérnie a gyereket. Az alkalom két óráig tart, az anyagokat mi adjuk." },
+            { "id": "f", "title": "Magyar nyelv külföldieknek", "text": "Esti tanfolyam kezdőknek, kedden és csütörtökön hat órától nyolcig, a belvárosban. A csoportban legfeljebb tíz ember van, és a tanár angolul is magyaráz, ha szükséges. A tanfolyam három hónapig tart. A tankönyv ára benne van a díjban. Az első órára ingyen el lehet jönni kipróbálni." },
+            { "id": "g", "title": "Reggeli futóklub", "text": "Ha egyedül nem szeretsz futni, gyere hozzánk! Hétköznap reggelente hatkor találkozunk a Margitszigeten, a víztorony előtt. Egy óráig futunk, utána együtt reggelizünk. Kezdőket is szívesen várunk, mert két csoportban futunk: lassan és gyorsan. A klub ingyenes, csak jó cipő kell." },
+            { "id": "h", "title": "Fotóklub haladóknak", "text": "Havonta kétszer, kedd este találkozunk azokkal, akik már jól ismerik a fényképezőgépüket. Közösen beszéljük meg a képeket, és időnként közös kirándulást is szervezünk. A részvételhez saját, jó minőségű gép szükséges. A tagsági díj évi tízezer forint. Jelentkezni e-mailben lehet." },
+            { "id": "i", "title": "Úszás felnőtteknek", "text": "A belvárosi uszodában vasárnap este nyolckor kezdődik a felnőttek úszásórája. A tanár javítja az úszásotokat, ezért azoknak ajánljuk, akik már tudnak úszni, de szeretnének gyorsabbak és erősebbek lenni. Egy alkalom ára háromezer forint, bérletet is lehet vásárolni." },
+            { "id": "j", "title": "Társasjáték-est", "text": "Minden pénteken este hét órától társasjáték-estet tartunk egy belvárosi kávézóban. Hozhatsz saját játékot is, de a helyszínen is van sok játék. Jó lehetőség új embereket megismerni. A belépés ingyenes, a fogyasztás nem kötelező. Mindenkit szeretettel várunk." }
+          ],
+          "answer": { "1": "c", "2": "b", "3": "e", "4": "f", "5": "g", "6": "d" },
+          "unique": true
+        },
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Olvassa el a szöveget, és válaszoljon a kérdésekre. Minden kérdésnél válassza ki a helyes választ.",
+          "title": "Egy kis zöld a nagyvárosban",
+          "text": "Budapesten egyre több közösségi kert van. Ezek olyan telkek vagy háztetők, ahol a környék lakói együtt termesztenek zöldséget, gyümölcsöt és virágot. Az első kertek tíz évvel ezelőtt nyíltak meg, de a hírük gyorsan elterjedt, és ma már majdnem minden kerületben van legalább egy. A kertek mérete különböző: van, ahol húsz család dolgozik együtt, és van, ahol csak néhány szomszéd.\n\nSzabó Anna, az egyik kert szervezője, a hetedik kerületben él. Elmondása szerint a lakók azért kezdtek kertészkedni, mert a városban kevés a zöld terület, és sokan nem engedhetik meg maguknak, hogy hétvégén falura menjenek. „Egy üres telek volt a házunk mögött, tele szeméttel”, meséli. „Összeálltunk néhány szomszéddal, megtisztítottuk, és tavaszra már voltak az első sorok.”\n\nA kertben mindenkinek van saját kis földje, de az eszközöket és a vizet közösen használják. Hetente egyszer, szombat délelőtt mindenki eljön, és közösen dolgoznak a közös részeken. Azok, akik még soha nem kertészkedtek, bátran kérdezhetnek, mert a tapasztaltabb szomszédok szívesen segítenek. A szakértők azt tanácsolják a kezdőknek, hogy ne a nagy és nehéz növényekkel kezdjék, hanem olyanokkal, amelyek gyorsan nőnek és kevés gondozást igényelnek, például retekkel, salátával vagy zöldfűszerekkel. Az első években sokan csak nézelődtek, de ma már a legtöbb kertben várólista van, mert több a jelentkező, mint a szabad föld.\n\nA kertek nemcsak a környezetnek jók. Anna szerint a legnagyobb változás az, hogy a szomszédok megismerték egymást. „Korábban évekig köszönés nélkül mentünk el egymás mellett a lépcsőházban. Most szombat este együtt sütögetünk a kertben, és az idősebbek mesélnek a gyerekeknek a régi Budapestről.” A kert a gyerekeknek is hasznos: az iskolák rendszeresen elhozzák az osztályokat, hogy lássák, honnan jön a zöldség, amit az étkezdében esznek.\n\nTermészetesen nem minden egyszerű. A legnagyobb gond az, hogy a telkek a város tulajdonában vannak, és sosem lehet biztosan tudni, meddig használhatják őket. Néhány kertet már be is zártak, mert egy új lakóházat építettek a helyén. Ezért a kertészek egyesületet alapítottak, és azt kérik a várostól, hogy hosszú távú szerződést kapjanak. Anna reméli, hogy ez hamarosan sikerül. „Ha a kert biztos, akkor a közösség is biztos”, mondja.\n\nAddig is a hétvégi találkozók folytatódnak, és bárki csatlakozhat: elég elmenni a kert kapujához egy szombat délelőtt, és megkérdezni, hol van még szabad hely.",
+          "questions": [
+            {
+              "stem": "A szöveg szerint miért kezdtek a budapestiek közösségi kertekben dolgozni?",
+              "options": ["Mert a városi parkokat bezárták előlük.", "Mert a városban kevés a hely a növényeknek.", "Mert a zöldség a piacon túl drága."],
+              "correct": 1
+            },
+            {
+              "stem": "Hogyan működik Anna kertje?",
+              "options": ["Mindenki közösen műveli az egész földet, és a termést elosztják.", "A szervezők dolgoznak, a többiek csak vásárolnak a termésből.", "Mindenkinek van saját földje, de az eszközöket és a vizet együtt használják."],
+              "correct": 2
+            },
+            {
+              "stem": "Mit tanácsolnak a szakértők a kezdőknek?",
+              "options": ["Olyan növényekkel kezdjék, amelyek gyorsan nőnek, és kevés gondozást igényelnek.", "Nagy, gyümölcsöt hozó növényeket ültessenek, például almafát.", "Minden nap sok vizet öntsenek a növényekre."],
+              "correct": 0
+            },
+            {
+              "stem": "Anna szerint mi változott a legjobban a kert miatt?",
+              "options": ["Kevesebb lett a szemét a környéken.", "Olcsóbb lett a zöldség a boltban.", "A szomszédok megismerték egymást."],
+              "correct": 2
+            },
+            {
+              "stem": "Mi a kertek legnagyobb problémája?",
+              "options": ["A telkek a városéi, és nem biztos, meddig használhatják őket.", "A lakók nem akarnak együtt dolgozni.", "A növények nem nőnek jól a városi levegőben."],
+              "correct": 0
+            },
+            {
+              "stem": "Mit tehet az, aki csatlakozni szeretne a kerthez?",
+              "options": ["Egy hosszú kérdőívet kell kitöltenie.", "Egy szombat délelőtt el kell mennie a kert kapujához.", "Meg kell várnia a következő tavaszt."],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Olvassa el a három szöveget és a hat mondatot. Állapítsa meg, melyik szöveg mondja azt, amit az egyes mondatok kifejeznek. Ugyanazt a szöveget többször is választhatja.",
+          "prompts": [
+            { "id": "1", "text": "Gyorsan elköltözött, mert nem tudott aludni a zaj miatt." },
+            { "id": "2", "text": "Megosztotta a bérleti díjat egy barátjával." },
+            { "id": "3", "text": "Az első napokban a tulajdonos segített neki." },
+            { "id": "4", "text": "Télen kellemetlen volt a lakás hőmérséklete." },
+            { "id": "5", "text": "Követett néhány szabályt, amelyet a tulajdonos kért." },
+            { "id": "6", "text": "Rossz tapasztalata miatt ma már előre megkérdezi a szomszédokat." }
+          ],
+          "options": [
+            { "id": "a", "title": "Dávid, 24 éves", "text": "Az első albérletemet tizenkilenc évesen vettem ki Debrecenben, amikor elkezdtem az egyetemet. Egy gimnáziumi barátommal laktunk együtt egy kétszobás lakásban a belvárosban. A bérleti díjat felezni tudtuk, így nem volt drága. A lakás régi volt, és télen nagyon hideg volt, mert a radiátorok gyengén működtek. Ennek ellenére jól éreztük magunkat, mert sok vendég jött hozzánk, és szinte minden hétvégén bulit tartottunk. Azért választottuk ezt a lakást, mert közel volt az egyetemhez, és csak tíz percet kellett gyalogolni. Három évig laktunk ott, aztán a barátom külföldre ment. Később, amikor már egyedül éltem, még sokáig hiányoztak azok a közös esték." },
+            { "id": "b", "title": "Eszter, 31 éves", "text": "Budapestre költöztem a munkám miatt, és egy hónapig nem találtam lakást. Végül egy idős nénitől vettem ki egy kis szobát a tizenharmadik kerületben. A szobám kicsi, de világos volt, és a konyhát is használhattam. Az első hónapokban nagyon hiányzott a családom, ezért a néni társasága sokat segített. A néni nagyon kedves volt: az első napon vacsorát főzött, és segített elrendezni a holmimat. Persze voltak szabályai, például este tízig kellett csendben lenni, és nem hívhattam vendéget. Nekem ez nem számított, mert egész nap dolgoztam. Két évig laktam nála, és még ma is meglátogatom karácsony előtt." },
+            { "id": "c", "title": "Imre, 45 éves", "text": "Az első lakásom egy panelház negyedik emeletén volt Miskolcon, és nagyon olcsó volt. Akkor még keveset kerestem, ezért nem engedhettem meg magamnak egy drágább lakást. Az első héten kiderült, hogy a szomszédban egy zenekar próbál minden este tízig, így aludni szinte lehetetlen volt. Megkértem őket, hogy halkabban játsszanak, de nem történt semmi. A tulajdonos soha nem vette fel a telefont, amikor a csap elromlott. Ezért egy hónap után elköltöztem egy másik városrészbe, és a kauciót is csak félig kaptam vissza. Azóta mindig megkérdezem a szomszédokat, mielőtt aláírok egy szerződést." }
+          ],
+          "answer": { "1": "c", "2": "a", "3": "b", "4": "a", "5": "b", "6": "c" },
+          "unique": false
+        },
+        {
+          "skill": "reading",
+          "kind": "gapped_text",
+          "instruction": "Olvassa el a szöveget, amelyből hat részlet hiányzik. Minden üres helyre válassza ki a megfelelő részletet. Két részlet fölösleges.",
+          "title": "Egy mérnök és a méhei",
+          "text": "Kovács Gábor tizenkét évig dolgozott egy budapesti informatikai cégnél. Pest egyik zsúfolt részén lakott egy kis lakásban, ahonnan alig látott zöldet. Reggel nyolckor ért be az irodába, és legtöbbször este hétig ott maradt, így a családjával alig találkozott. A telefonok folyton csengtek, és mindenki rohant. A hétvégéken is gyakran dolgozott, mert mindig volt sürgős feladat. {{1}} Egy nyári délután, amikor a Balatonnál nyaralt, véletlenül találkozott egy idős méhésszel, aki a piacon árult mézet.\n\nA méhész meghívta a gazdaságába, és megmutatta neki a kaptárakat. Elmagyarázta, hogyan készül a méz, és megkínálta egy pohár friss akácmézes teával. Gábor órákig nézte, ahogy a méhek dolgoznak. {{2}} Hazatérve állandóan a méhekről beszélt, és elkezdett könyveket olvasni a méhészetről. Egy téli estén a felesége, Judit, megkérdezte tőle: „Mi lenne, ha kipróbálnád?” {{3}} Aztán végiggondolták, mennyi pénzük van, és mit kellene tenniük.\n\nVégül úgy döntöttek, hogy Gábor felmond, és a Káli-medencében vesznek egy kis házat kerttel. A telek egy dombon állt, és szép kilátás nyílt a tóra. Az első évben három kaptárral kezdett. {{4}} Sok méh elpusztult, és a méz nagy része ehetetlen volt. Gábor azonban nem adta fel: elment egy méhésztanfolyamra, és sokat tanult a szomszédjától, egy tapasztalt méhésztől. Télen, amikor kevesebb volt a munka, a kaptárakat javította, és új kereteket készített.\n\nA második évben már jobban ment. A méz minősége sokat javult, és a helyi piacon egyre többen vásárolták. {{5}} Ma már húsz kaptára van, és évente közel kétszáz kiló mézet termel. Judit hétvégén a piacon árulja a mézet, és már a vevők nevét is ismeri. Nyáron a kertben gyerekeknek is tart bemutatókat, mert szeretné, ha minél többen megismernék a méhek életét.\n\nGábor azt mondja, hogy nem bánta meg a döntését. Kevesebbet keres, mint korábban, de sokkal többet van a családjával. {{6}} Néha még hiányzik neki az iroda, de csak addig, amíg meg nem hallja a méhek zümmögését. Egyszer egy régi kollégája is meglátogatta, és megkérdezte, nem unatkozik-e. Gábor csak mosolygott, és megkínálta egy kanál friss mézzel. Szerinte a legjobb döntés az volt, hogy mert változtatni, amikor még nem késő. A fia, Bence, aki régen csak a számítógép előtt ült, ma már minden nyáron segít neki a kaptárak körül, és a lánya is szívesen kóstolja az új mézfajtákat.",
+          "fragments": [
+            { "id": "a", "text": "Az első év azonban nagyon nehéz volt, mert sokat hibázott." },
+            { "id": "b", "text": "Évek óta először érezte, hogy teljesen nyugodt." },
+            { "id": "c", "text": "Gábor először meglepődött, de aztán rájött, hogy a felesége komolyan gondolja." },
+            { "id": "d", "text": "Ekkor eldöntötte, hogy új kaptárakat vesz, és nagyobbra növeli a méhészetét." },
+            { "id": "e", "text": "Egyre fáradtabb volt, és sokszor azon gondolkodott, hogy valami mást kellene csinálnia." },
+            { "id": "f", "text": "Délutánonként a gyerekekkel játszik, és minden vasárnap együtt vacsoráznak." },
+            { "id": "g", "text": "A méhész azonban rosszkedvű volt, és gyorsan elküldte Gábort." },
+            { "id": "h", "text": "Gábor ezért úgy döntött, hogy mégis az irodában marad." }
+          ],
+          "answer": { "1": "e", "2": "b", "3": "c", "4": "a", "5": "d", "6": "f" }
+        },
+        {
+          "skill": "reading",
+          "kind": "cloze",
+          "instruction": "Olvassa el a levelet, és egészítse ki az üres helyeket. Minden helyen válassza ki a helyes lehetőséget.",
+          "title": "Levél egy barátnőnek",
+          "text": "Kedves Zsófi!\n\nRemélem, minden rendben van veled! A Balatonról írok neked, ahová a családommal két napja {{1}}. A szállásunk egy kis faluban van, és {{2}} csak öt perc gyalog. A víz nagyon meleg, és a gyerekek egész nap a vízben {{3}}. Tegnap este a teraszon vacsoráztunk, és halászlét ettünk. Szerintem sokkal {{4}} volt, mint amit otthon szoktunk enni. A faluban sok kis étterem és fagylaltozó van, és minden este zene szól a kikötőben. A szállásadónk, egy kedves házaspár, minden reggel friss kenyeret hoz nekünk. Az idő eddig szép volt, csak tegnap délelőtt esett egy kicsit. Holnap hajóval átmegyünk Tihanyba, mert szeretnénk megnézni az apátságot. Tegnap délután hosszú biciklitúrát {{5}} a part mentén. Nagyon szeretném, ha te is eljönnél velünk, mert együtt mindig jól {{6}} magunkat. Gyere el legalább a hétvégére!\n\nSok puszi:\nEszter",
+          "gaps": [
+            { "options": ["érkezünk", "érkeztünk", "érkezzünk"], "correct": 1 },
+            { "options": ["a parton", "a parttól", "a partot"], "correct": 1 },
+            { "options": ["játszik", "játszunk", "játszanak"], "correct": 2 },
+            { "options": ["jobb", "jó", "legjobb"], "correct": 0 },
+            { "options": ["csinálunk", "csináltunk", "csinálnánk"], "correct": 1 },
+            { "options": ["érezzem", "érezzétek", "érezzük"], "correct": 2 }
+          ]
+        }
+      ]
+    }
+  ]
+}

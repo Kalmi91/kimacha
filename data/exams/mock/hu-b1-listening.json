@@ -1,0 +1,174 @@
+{
+  "target": "hu",
+  "level": "B1",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Hat üzenetet fog hallani. Minden üzenetet kétszer hall. Minden üzenet után válassza ki a helyes választ.",
+          "clips": [
+            {
+              "audio": [{ "speaker": "f", "text": "Jó napot kívánok, Tóth doktor rendelőjéből telefonálok. A holnap délelőtt tíz órára kért időpontot sajnos át kell tennünk, mert a doktor úr megbetegedett. Szeretnénk felajánlani a jövő heti keddet, délután három órára. Kérem, hívjon vissza még ma, vagy válaszoljon egy üzenetben, hogy megfelel-e az új időpont. Köszönöm szépen, viszonthallásra." }],
+              "questions": [
+                { "stem": "Miért telefonál a rendelő?", "options": ["Mert elvesztettek egy leletet.", "Mert át kell tenni az időpontot.", "Mert az orvos új címre költözött."], "correct": 1 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "n", "text": "Tisztelt utasaink! A Budapestről Szegedre tizennégy óra tíz perckor induló InterCity vonat a harmadik vágányról indul, nem az ötödikről. A vonat várhatóan tizenöt perc késéssel indul. Kérjük, hogy a késés miatt ne a peronon várakozzanak, hanem a váróteremben. Köszönjük a türelmüket." }],
+              "questions": [
+                { "stem": "Mit kérnek az utasoktól?", "options": ["Hogy a váróteremben várakozzanak.", "Hogy vegyenek új jegyet.", "Hogy szálljanak át egy másik vonatra."], "correct": 0 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "m", "text": "Az időjárás-jelentés következik. Holnap az ország nagy részén napos idő lesz, de délután nyugat felől megérkezik a hidegfront, és a Dunántúlon eső várható. A hőmérséklet reggel nyolc fok körül alakul, délután pedig tizenhét fok körül. A hétvégén ismét melegebb lesz, de a Balatonnál még szeles marad." }],
+              "questions": [
+                { "stem": "Milyen idő várható holnap délután a Dunántúlon?", "options": ["Napos és meleg idő.", "Erős havazás.", "Eső."], "correct": 2 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "m", "text": "Szia Peti, Zsolt vagyok. Sajnos ma este nem tudok elmenni a vacsorára, mert a főnököm megkért, hogy maradjak túlórázni. Nagyon sajnálom. Mit szólnál a jövő szombathoz? Mehetnénk ugyanabba az étterembe a Duna-partra. Írj, kérlek, hogy neked jó-e." }],
+              "questions": [
+                { "stem": "Mit javasol Zsolt?", "options": ["Hogy máskor, szombaton vacsorázzanak.", "Hogy menjenek el moziba.", "Hogy Peti jöjjön el hozzá."], "correct": 0 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "f", "text": "Kedves vásárlóink! Áruházunk a következő héten kedden és szerdán csak délig tart nyitva, mert átalakítjuk a földszintet. Csütörtöktől újra a megszokott nyitvatartással várjuk Önöket. Az átalakítás miatt a pénztárak ideiglenesen az első emeleten lesznek. Köszönjük a megértésüket." }],
+              "questions": [
+                { "stem": "Mi változik az áruházban kedden és szerdán?", "options": ["Egész héten zárva lesz.", "Rövidebb lesz a nyitvatartás.", "Minden termék olcsóbb lesz."], "correct": 1 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "m", "text": "Jó napot kívánok, a házmester vagyok. Szeretném elmondani, hogy holnap reggel nyolc és tizenkét óra között nem lesz víz a házban, mert a csöveket javítják. Kérem, hogy előtte töltsenek meg néhány vödröt, és ebben az időszakban ne mosogassanak, és ne mossanak. Köszönöm a megértést." }],
+              "questions": [
+                { "stem": "Mit kérnek a lakóktól?", "options": ["Hogy hívjanak szerelőt.", "Hogy költözzenek ki a házból.", "Hogy előre gyűjtsenek vizet."], "correct": 2 }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Egy nő arról mesél, hogyan lett önkéntes egy állatmenhelyen. A felvételt kétszer hallja. Minden kérdésnél válassza ki a helyes választ.",
+          "audio": [
+            { "speaker": "f", "text": "Három éve önkéntes vagyok egy állatmenhelyen Budaörsön. Hogy hogyan kezdődött? Akkoriban elvesztettem a régi munkámat, és sok szabad időm lett. Egy barátnőm azt mondta, hogy a menhelyen mindig kellenek segítők, ezért egy szombat reggel elmentem megnézni. Azt hittem, hogy majd csak egy-két alkalommal megyek, de a menhely vezetője olyan kedves volt, hogy rögtön megkínált egy csésze teával, és körbevezetett. Közben megmutatta, hogyan kell biztonságosan bánni a kutyákkal." },
+            { "speaker": "f", "text": "Az első nap nem volt könnyű. Rengeteg kutya ugatott, és a szag is erős volt. Elkezdtem takarítani a kennelekben, és este úgy fájt a hátam, hogy alig tudtam lefeküdni. Azt gondoltam, hogy ez a munka nem nekem való. De másnap reggel mégis visszamentem, mert egy kis fekete kutya, akit Mazsolának hívtak, úgy nézett rám, mintha várt volna." },
+            { "speaker": "f", "text": "Azóta minden szombaton és vasárnap ott vagyok. A feladatom az, hogy sétáltassam a kutyákat, és megtanítsam őket az alapvető szabályokra, hogy könnyebben találjanak gazdát. Ehhez türelem kell, mert van olyan kutya, amelyik hetekig fél az embertől. A kutyák nagyon különbözőek: van, amelyik vidám, és mindenkihez odamegy, és van, amelyik csak a sarokban ül. Mazsola például először nem akart bejönni az irodába, most pedig mindenhová követ." },
+            { "speaker": "f", "text": "A munkának vannak nehéz pillanatai is. Néha olyan állatok érkeznek, amelyekkel rosszul bántak, és ilyenkor napokig nem tudok másra gondolni. Viszont amikor egy kutya új családot talál, az a legjobb érzés a világon. Tavaly tizenkét kutyát adtunk örökbe, és minden búcsúnál sírtam egy kicsit." },
+            { "speaker": "f", "text": "A menhely adományokból él, ezért néhány havonta gyűjtést szervezünk. Legutóbb egy nagy bemutatót rendeztünk a közelben, ahol sok család megnézte a kutyákat. Aznap öt kutya talált gazdát, és több száz kiló kutyatáp is összegyűlt. A gyűjtés mindig nagy munka, mert plakátokat kell kirakni, és sok embert kell felhívni, de megéri." },
+            { "speaker": "f", "text": "Sokan megkérdezik, miért csinálom ezt ingyen. Azt szoktam mondani, hogy a menhely visszaadott valamit, amit a régi munkám elvett: azt az érzést, hogy hasznos vagyok. Ma már van új állásom, de az önkéntességet nem hagyom abba, és szívesen biztatok másokat is, hogy próbálják ki. Aki nem tud pénzt adni, az adjon időt, mert az legalább annyit ér. A páromat eleinte megnevettette az ötlet, de most ő is eljön velem néha." }
+          ],
+          "questions": [
+            { "stem": "Miért ment el a nő először a menhelyre?", "options": ["Egy barátnője mondta neki, hogy kellenek ott segítők, és sok szabad ideje volt.", "Kutyát szeretett volna venni.", "A munkahelye küldte oda."], "correct": 0 },
+            { "stem": "Mit gondolt az első nap után?", "options": ["Hogy nagyon jól érezte magát.", "Hogy más menhelyre kellene mennie.", "Hogy talán nem neki való ez a munka."], "correct": 2 },
+            { "stem": "Miért ment vissza másnap?", "options": ["Mert fizetést kapott.", "Mert egy kutya úgy nézett rá, mintha várta volna.", "Mert a főnöke kérte."], "correct": 1 },
+            { "stem": "Mi a fő feladata a menhelyen?", "options": ["A kutyák etetése.", "Az adományok kezelése.", "A kutyák sétáltatása és tanítása."], "correct": 2 },
+            { "stem": "Mit mond a nő a nehéz pillanatokról?", "options": ["Soha nem szomorú a munka miatt.", "Néha napokig szomorú az olyan állatok miatt, amelyekkel rosszul bántak.", "Az emberekkel van gondja."], "correct": 1 },
+            { "stem": "Miért marad önkéntes, bár van új állása?", "options": ["Mert a menhely segített neki újra hasznosnak érezni magát.", "Mert az új állásában keveset fizetnek.", "Mert a menhely ezt kérte tőle."], "correct": 0 }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Hat hírt fog hallani egy hírműsorból. A hírműsort kétszer hallja. Minden hírnél válassza ki a helyes választ.",
+          "clips": [
+            {
+              "audio": [{ "speaker": "n", "text": "A BKV bejelentette, hogy a négyes metró hétvégén nem közlekedik a Kálvin tér és a Keleti pályaudvar között, mert felújítják a síneket. Ezen a szakaszon pótlóbuszok járnak majd a szokásos útvonalon. A munkák vasárnap este tíz órára fejeződnek be. A pótlóbuszok a metróval megegyező megállókban állnak meg, és a jegyek érvényesek rajtuk. Az utasokat a BKV honlapján és a megállókban is tájékoztatják." }],
+              "questions": [
+                { "stem": "Mi lesz hétvégén a négyes metróval?", "options": ["Nem közlekedik az egész vonalon.", "Egy szakaszon pótlóbuszok járnak.", "Ingyenes lesz az utazás."], "correct": 1 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "n", "text": "Idén nyáron tizenöt százalékkal több turista érkezett a Balatonhoz, mint tavaly. A szállodák és a kempingek augusztusban szinte mindenhol megteltek. A turisztikai szakemberek szerint ennek oka a jó idő és az olcsóbb szálláshelyek. A legtöbben külföldről, főként Németországból és Ausztriából érkeztek, de sok magyar család is a Balatont választotta." }],
+              "questions": [
+                { "stem": "Mi a hír lényege?", "options": ["Idén nyáron több turista volt a Balatonnál.", "A Balaton vize idén túl hideg volt.", "A szállodák árai nagyon megemelkedtek."], "correct": 0 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "n", "text": "A magyar női kézilabda-válogatott tegnap este megnyerte az Európa-bajnoki selejtezőt Norvégia ellen, harminckettő-huszonnyolc arányban. A találkozó után az edző azt mondta, hogy a játékosok nagyon fegyelmezetten játszottak. A mérkőzésen több mint ötezer néző volt a csarnokban, és a hangulat nagyon jó volt. A következő mérkőzés jövő szerdán lesz Debrecenben." }],
+              "questions": [
+                { "stem": "Mikor lesz a következő mérkőzés?", "options": ["Holnap.", "Két hét múlva.", "Jövő szerdán."], "correct": 2 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "n", "text": "A Nemzeti Galéria hétfőtől új kiállítást nyit magyar festőkről. A kiállításon száz kép látható a tizenkilencedik századból. A belépő felnőtteknek háromezer forint, de a diákok és a nyugdíjasok féláron nézhetik meg. A kiállítás egészen novemberig tart nyitva. A kiállítás különlegessége, hogy több kép most először látható Magyarországon, mert külföldi gyűjteményekből érkeztek." }],
+              "questions": [
+                { "stem": "Ki fizet kevesebbet a belépőért?", "options": ["A diákok és a nyugdíjasok.", "A gyerekek.", "Az előző kiállítás látogatói."], "correct": 0 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "n", "text": "Budapest a jövő évtől több kerékpárutat épít, hogy a belvárosban kevesebb legyen az autó. A fővárosi önkormányzat szerint az új utak összesen harminc kilométer hosszúak lesznek. Az építésüket tavasszal kezdik el, és két éven belül befejezik. A tervek szerint az új utak a főbb tereket kötik össze, és lesznek köztük külön, autóktól elzárt szakaszok is." }],
+              "questions": [
+                { "stem": "Miért építenek új kerékpárutakat?", "options": ["Hogy a buszok gyorsabban haladjanak.", "Hogy a turisták többet költsenek.", "Hogy kevesebb autó legyen a belvárosban."], "correct": 2 }
+              ]
+            },
+            {
+              "audio": [{ "speaker": "n", "text": "A boltokban a tojás és a tej ára az elmúlt hónapban öt százalékkal emelkedett. A szakértők szerint ennek oka az időjárás és a drágább takarmány. A kormány azt ígéri, hogy a következő hetekben megvizsgálja a helyzetet. A kereskedők azt mondják, hogy a vásárlók egyre többet a piacon vásárolnak, mert ott kicsit olcsóbb az áru." }],
+              "questions": [
+                { "stem": "Mi történt a tojás és a tej árával?", "options": ["Csökkent.", "Emelkedett.", "Nem változott."], "correct": 1 }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "match_pool",
+          "instruction": "Hat embert fog hallani. A felvételeket kétszer hallja. Párosítsa mindegyik embert a hozzá legjobban illő mondattal. Több mondat van, mint amennyire szükség van, és minden mondatot csak egyszer lehet használni.",
+          "prompts": [
+            { "id": "1", "audio": [{ "speaker": "m", "text": "Minden nap biciklivel megyek dolgozni, tíz kilométert tekerek. Télen is így van, csak vastagabb kabátot veszek fel. Az irodánkban zuhanyzó is van, ezért nincs gond. Szerintem a bicikli gyorsabb, mint egy autó a dugóban, és még az egészségemnek is jót tesz. A kollégáim is látják, hogy ezért mindig jókedvű vagyok. Hétvégén a családdal is hosszú túrákra megyünk." }] },
+            { "id": "2", "audio": [{ "speaker": "f", "text": "Régebben autóval jártam dolgozni, de a parkolás a belvárosban rémálom volt. Most a villamost választom. Húsz perc az út, és közben el tudom olvasni a híreket a telefonomon. Az egyetlen baj a reggeli csúcsidőszak, amikor alig lehet felszállni. Néha a buszt is kipróbálom, de a villamos kiszámíthatóbb. A bérletet havonta egyszer veszem meg, így olcsóbb." }] },
+            { "id": "3", "audio": [{ "speaker": "f", "text": "Én otthonról dolgozom, a kis kertes házunkban. Hetente csak egyszer megyek be az irodába, akkor vonattal. Nagyon szeretem, hogy nem kell minden reggel korán kelni, de néha hiányzik, hogy nincsenek kollégáim a közelemben. Az otthoni munkában az a legjobb, hogy a gyerekekkel is többet vagyok. Persze néha nehéz szétválasztani a munkát és a pihenést." }] },
+            { "id": "4", "audio": [{ "speaker": "m", "text": "Egy vidéki faluban lakom, ezért autóval kell mennem. Negyven perc az út oda, negyven vissza. Az autópályán nincs sok forgalom, de sokat költök benzinre. Szeretnék közelebb költözni, csak nem találok megfelelő lakást. A feleségem azt mondja, hogy a faluban jó élni, de nekem a mindennapi ingázás fárasztó. Télen különösen nehéz, mert korán sötétedik." }] },
+            { "id": "5", "audio": [{ "speaker": "m", "text": "Gyalog járok dolgozni, mert a pékségem a házunk földszintjén van. Hajnali négykor kelek, lemegyek a lépcsőn, és már a munkahelyemen is vagyok. Nincs jobb, mint ez. Az egyetlen hátrány, hogy a vendégek mindig tudják, hol lakom. Délelőtt tízre már minden kenyeret kisütök, és utána van időm a vendégekkel beszélgetni. Szeretem ezt a munkát, bár nagyon korán kell kelnem." }] },
+            { "id": "6", "audio": [{ "speaker": "f", "text": "A munkahelyemre busszal és metróval megyek, két átszállással. Egy óra az út, de szeretem, mert közben zenét hallgatok vagy tanulok. Most éppen spanyolul tanulok az utazás alatt. Egyszer az egyik útitársam megkérdezte, nem szeretnék-e vele nyelvet gyakorolni. Nekem nagyon fontos, hogy az úton ne unatkozzak, ezért mindig van nálam fülhallgató. A családom is tudja, hogy az utazás az én tanulási időm." }] }
+          ],
+          "options": [
+            { "id": "a", "text": "A munkahelye a lakása alatt van." },
+            { "id": "b", "text": "Taxival megy dolgozni, mert fél a tömegtől." },
+            { "id": "c", "text": "Sportol munkába menet, és nem zavarja az időjárás." },
+            { "id": "d", "text": "Azért váltott közlekedési eszközt, mert a parkolás gondot okozott." },
+            { "id": "e", "text": "Hosszú útja van, de hasznosan tölti az idejét." },
+            { "id": "f", "text": "Vonaton ingázik minden nap, és mindig késik." },
+            { "id": "g", "text": "Ritkán megy be az irodába, ami előny is, hátrány is." },
+            { "id": "h", "text": "Az útja alatt a főnökével beszél telefonon." },
+            { "id": "i", "text": "Drága az utazása, és szeretne közelebb lakni." }
+          ],
+          "answer": { "1": "c", "2": "d", "3": "g", "4": "i", "5": "a", "6": "e" },
+          "unique": true
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Egy férfi és egy nő beszélgetését fogja hallani. A beszélgetést kétszer hallja. Állapítsa meg, kiről mondják az egyes mondatokat: a férfiról, a nőről, vagy egyikükről sem.",
+          "audio": [
+            { "speaker": "f", "text": "Marcell, megnéztem az egri szállásokat. Találtam egy aranyos kis panziót a belvárosban, reggelivel együtt. A panzióban parkoló is van, ezért nem kell keresgélnünk a környéken." },
+            { "speaker": "m", "text": "Jól hangzik, Anna, és az is jó, hogy van parkoló, mert a belvárosban mindig nehéz helyet találni. De aggódom az út miatt. Majdnem három óra autóval, és nem szeretnék egyedül vezetni." },
+            { "speaker": "f", "text": "Ne aggódj, én vezetek az út felében. Ráadásul pénteken korán indulhatunk, hogy elkerüljük a dugót." },
+            { "speaker": "m", "text": "Pénteken délelőtt még dolgoznom kell. Tizenkét óráig a cégnél kell lennem, és csak utána tudunk elindulni." },
+            { "speaker": "f", "text": "Az nem baj. Akkor fél egykor indulunk, és négyre odaérünk. A szállásadó azt mondta, hogy a bejelentkezés hatig lehetséges." },
+            { "speaker": "m", "text": "Rendben. És mit csinálunk szombaton? Én szívesen megnézném az egri várat." },
+            { "speaker": "f", "text": "Én is, de szerintem a szépasszonyvölgyi borozókat is érdemes megnézni. Egy barátnőm már járt ott, és nagyon dicsérte a helyet." },
+            { "speaker": "m", "text": "Jó ötlet. Én még soha nem voltam a borvidéken, pedig mindig szerettem volna. Te voltál már ott?" },
+            { "speaker": "f", "text": "Én sem voltam még, de nagyon szeretném. A várba egyébként tegnap este online megvettem két jegyet. Vasárnapra viszont nincs semmi terv. Szerinted maradjunk még egy napot?" },
+            { "speaker": "m", "text": "Sajnos vasárnap este korán haza kell érnem, mert hétfő reggel nyolckor repülök Münchenbe. A bőröndömet még nem csomagoltam be." },
+            { "speaker": "f", "text": "Akkor vasárnap reggel hazaindulunk, és még marad időd csomagolni." },
+            { "speaker": "m", "text": "Köszönöm, ez nagyon kedves tőled. Akkor foglald le a szállást, és küldd át a címet!" },
+            { "speaker": "f", "text": "Megcsinálom ma este, aztán átküldöm. Ha mégis lenne kérdésed, írj nyugodtan." },
+            { "speaker": "m", "text": "Köszönöm szépen, Anna, nagyon jó, hogy ilyen jól szervezel." }
+          ],
+          "questions": [
+            { "stem": "Már megnézte a szállásokat.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 1 },
+            { "stem": "Nem szeretne egyedül vezetni.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 0 },
+            { "stem": "Pénteken délig dolgoznia kell.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 0 },
+            { "stem": "Egy ismerőse ajánlotta neki a borozókat.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 1 },
+            { "stem": "Már járt a borvidéken.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 2 },
+            { "stem": "Hétfőn külföldre repül.", "options": ["a férfi", "a nő", "egyikük sem"], "correct": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

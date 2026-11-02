@@ -10,8 +10,8 @@
 import type { PcicLevel, PcicTarget } from '@/data/pcic';
 import { foldedTokens } from './writing';
 
-// The practice exam has Spanish and English papers only; target hu has no exam (its entry points are hidden).
-export type MockTarget = Exclude<PcicTarget, 'hu'>;
+// The practice exam has Spanish, English and Hungarian papers (hu: A1 / A2 speaking only, B1-C1 four papers).
+export type MockTarget = PcicTarget;
 export type MockLevel = PcicLevel;
 /** `use` = Use of English: its own skill in the English B2 / C1 exams (the examiner scores it apart from reading). */
 export type MockSkill = 'reading' | 'writing' | 'listening' | 'speaking' | 'use';
@@ -354,6 +354,12 @@ export type MockAnswers = Record<string, MockTaskAnswer>;
 
 /** The default number of plays of a recorded task. */
 export const DEFAULT_PLAYS = 2;
+
+/** The word that leads a task's instruction on the paper: "TAREA 2." (es), "PART 2." (en), "FELADAT 2." (hu). */
+export const TASK_WORD: Record<MockTarget, string> = { es: 'TAREA', en: 'PART', hu: 'FELADAT' };
+
+/** The leading "<TASK_WORD> n." of an instruction (any language), to strip before the paper numbers its tasks. */
+export const TASK_PREFIX = new RegExp(`^(${Object.values(TASK_WORD).join('|')}) \\d+\\.\\s*`);
 
 /** How many scored marks there are in a task. */
 export function mockTaskItemCount(task: MockTask): number {

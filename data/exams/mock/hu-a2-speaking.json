@@ -1,0 +1,264 @@
+{
+  "target": "hu",
+  "level": "A2",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Beszéljen az egyik témáról. Kövesse a feladatlapon megadott pontokat.",
+          "prepSeconds": 360,
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Egy nyaralás",
+              "prompt": "Egy nemrégi nyaralásról vagy utazásról fog beszélni. Mondja el a következőket.",
+              "bullets": ["hová utazott, és kivel", "mit csinált ott", "milyen volt az időjárás és a szállás", "mi tetszett a legjobban"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, kezdheti.",
+                  "minWords": 50,
+                  "points": [
+                    { "id": "p1", "label": "Elmondja, hová utazott, és kivel", "keywords": ["utazt", "mentem", "mentunk", "voltam", "voltunk", "nyaralt", "balaton", "szeged", "pecs", "barat", "csalad", "egyedul"] },
+                    { "id": "p2", "label": "Elmondja, mit csinált ott", "keywords": ["furodt", "furdoz", "setalt", "ettunk", "ettem", "ittunk", "ittam", "megnezt", "kirandult", "pihent", "fenykep", "vasarolt"] },
+                    { "id": "p3", "label": "Beszél az időjárásról vagy a szállásról", "keywords": ["idojaras", "napos", "esos", "meleg", "hideg", "szallas", "szalloda", "apartman", "kemping", "panzio", "hotel", "laktunk"] },
+                    { "id": "p4", "label": "Megmondja, mi tetszett a legjobban", "keywords": ["legjobban", "tetszett", "legjobb", "legszebb", "kedvenc", "szerettem", "kellemes", "erdekes", "finom", "gyonyoru", "meglepo", "elvezt"] }
+                  ],
+                  "model": "Tavaly nyáron a barátnőmmel a Balatonra utaztunk. Egy hétig egy kis apartmanban laktunk. Minden nap fürödtünk a tóban, sétáltunk a parton, és sok finom halat ettünk. Egyik nap kirándultunk, és megnéztük a tihanyi apátságot is. Az időjárás végig napos és meleg volt. A legjobban a naplemente tetszett, mert nagyon szép volt. Nagyon jól pihentünk."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Egy fontos ember",
+              "prompt": "Egy fontos emberről fog beszélni az életéből: egy barátról, egy családtagról vagy a párjáról. Mondja el a következőket.",
+              "bullets": ["ki ő, és hogyan ismerkedtek meg", "milyen ember", "mit szoktak együtt csinálni", "miért fontos Önnek"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Kérem, kezdje el. Hallgatom.",
+                  "minWords": 50,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, ki ő, és hogyan ismerkedtek meg", "keywords": ["baratom", "baratnom", "testverem", "noverem", "ocsem", "ferjem", "felesegem", "anyam", "apam", "nagymamam", "ismerkedt", "talalkoztunk"] },
+                    { "id": "p2", "label": "Leírja, milyen ember", "keywords": ["kedves", "vicces", "okos", "szorgalmas", "turelmes", "nyugodt", "segitokesz", "szimpatikus", "energikus", "komoly", "nyitott", "joindulat"] },
+                    { "id": "p3", "label": "Elmondja, mit szoktak együtt csinálni", "keywords": ["egyutt", "setal", "beszelget", "fozunk", "mozi", "kirandul", "utazunk", "sportol", "focizunk", "kavezunk", "vacsorazunk", "jatszunk"] },
+                    { "id": "p4", "label": "Megmondja, miért fontos neki", "keywords": ["fontos szamomra", "segit", "tamogat", "bizom", "hianyzik", "szamithatok", "tanacs", "vele", "tolem", "megert", "hu baratom", "bizalom"] }
+                  ],
+                  "model": "A legjobb barátom Péter. Tizenöt évvel ezelőtt ismerkedtünk meg az egyetemen, azóta nagyon jó barátok vagyunk. Péter vicces és nagyon kedves ember. Hétvégén gyakran együtt sétálunk a Margitszigeten, és néha moziba is megyünk. Sokat beszélgetünk, és mindent megbeszélünk. Ő nekem nagyon fontos, mert mindig segít, ha problémám van. Bízom benne, és ő is bízik bennem."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Mondja el, mit lát a választott téma fényképén, és válaszoljon a vizsgáztató két kérdésére.",
+          "prepSeconds": 360,
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Családi ebéd",
+              "photos": ["es-a2-1"],
+              "prompt": "Nézze meg a fényképet, és mondja el a saját szavaival, mit lát. Utána a vizsgáztató két kérdést fog feltenni.",
+              "bullets": ["kik vannak a képen", "mit csinálnak", "milyen a hangulat"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Kérem, mondja el, mit lát a fényképen.",
+                  "minWords": 40,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, kik vannak a képen", "keywords": ["csalad", "nagymama", "gyerek", "kislany", "kisfiu", "ferfi", "asszony", "emberek", "szulok", "apuka", "anyuka", "oten"] },
+                    { "id": "p2", "label": "Elmondja, mit csinálnak", "keywords": ["esznek", "ebedelnek", "vacsoraznak", "beszelgetnek", "mosolyognak", "nevetnek", "asztalnal", "asztal", "kinal", "tolt", "ulnek", "uldogelnek"] },
+                    { "id": "p3", "label": "Beszél az ételekről vagy a hangulatról", "keywords": ["leves", "salata", "rizs", "zoldseg", "krumpli", "finom", "etel", "kancso", "boldog", "vidam", "kellemes", "hangulat"] }
+                  ],
+                  "model": "A képen egy család ül az asztalnál. Öten vannak: egy nagymama, egy apa, egy anya és két gyerek, egy kislány és egy kisfiú. Ebédelnek, és mosolyognak. Az asztalon van leves, rizs és saláta. Az emberek boldogok, a hangulat nagyon kellemes. Mindenki beszélget, és együtt eszik."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Kivel szokott Ön ebédelni?",
+                  "minWords": 10,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, kivel ebédel", "keywords": ["csalad", "kolleg", "baratok", "baratnom", "feleseg", "ferj", "szulok", "egyedul", "gyerek", "munkatars", "osztalytars", "lakotars"] }
+                  ],
+                  "model": "Hétköznap általában a kollégáimmal ebédelek az irodában, hétvégén viszont a családommal."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Mi az Ön kedvenc étele, és miért?",
+                  "minWords": 10,
+                  "points": [
+                    { "id": "p1", "label": "Megnevezi a kedvenc ételét, és megmondja, miért", "keywords": ["gulyas", "porkolt", "palacsinta", "teszta", "pizza", "leves", "halaszle", "paprikas", "lango", "sutemeny", "taco", "rantott"] }
+                  ],
+                  "model": "A kedvenc ételem a gulyásleves, mert nagyon finom, és a nagymamám főzi."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Egy nap a piacon",
+              "photos": ["es-a2-2"],
+              "prompt": "Nézze meg a fényképet, és mondja el a saját szavaival, mit lát. Utána a vizsgáztató két kérdést fog feltenni.",
+              "bullets": ["hol vannak az emberek", "mit árulnak", "mit csinálnak az emberek"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Kérem, mondja el, mit lát a fényképen.",
+                  "minWords": 40,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, hol vannak az emberek", "keywords": ["piac", "vasar", "utca", "sator", "szabadban", "kozepen", "jobbra", "balra", "mogott", "elol", "hely", "teren"] },
+                    { "id": "p2", "label": "Elmondja, mit árulnak", "keywords": ["gyumolcs", "zoldseg", "banan", "narancs", "dinnye", "kaposzta", "paradicsom", "alma", "krumpli", "paprika", "aruljak", "arulnak"] },
+                    { "id": "p3", "label": "Elmondja, mit csinálnak az emberek", "keywords": ["vasarolnak", "vesznek", "nezelodnek", "setalnak", "beszelgetnek", "arusit", "adnak", "kosar", "taska", "fizetnek", "valogatnak", "mennek"] }
+                  ],
+                  "model": "A fényképen egy utcai piac van. Az emberek felett nagy sátrak vannak. Sok gyümölcs és zöldség van: banán, narancs, dinnye és káposzta. Az emberek vásárolnak, sétálnak, és beszélgetnek az árusokkal. A bal oldalon egy nő áll a gyümölcsök mellett. Sok ember van a piacon. A hangulat nyugodt és barátságos."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Hol szokott Ön bevásárolni?",
+                  "minWords": 10,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, hol szokott bevásárolni", "keywords": ["piac", "bolt", "uzlet", "aruhaz", "szupermarket", "vasarcsarnok", "interneten", "kozelben", "sarkon", "hetvegen", "zoldseges", "pekseg"] }
+                  ],
+                  "model": "Általában a közeli szupermarketben vásárolok, de hétvégén a piacra is elmegyek."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Mit vásárolt Ön a múlt héten?",
+                  "minWords": 10,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mit vásárolt a múlt héten", "keywords": ["vettem", "vasaroltam", "kenyer", "tejet", "gyumolcs", "zoldseg", "alma", "hust", "sajt", "tojas", "ruha", "cipo"] }
+                  ],
+                  "model": "A múlt héten a piacon vettem kenyeret, tejet, sajtot és sok gyümölcsöt."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Beszélgessen a vizsgáztatóval, aki egy másik személyt alakít, az előző feladat fényképéhez kapcsolódó helyzetben.",
+          "talkMinutes": [3, 4],
+          "follows": 2,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Étkezés egy étteremben",
+              "photos": ["es-a2-1"],
+              "prompt": "A családjával egy étterembe érkezik ebédelni. A vizsgáztató a pincért játssza. Beszéljen vele, és oldja meg a helyzeteket.",
+              "bullets": ["asztalt kér", "italt rendel", "ételt rendel", "reagál egy problémára", "fizet"],
+              "input": "Napi menü: gulyásleves, rántott csirke rizzsel, palacsinta",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Jó napot kívánok, isten hozta Önöket! Hányan vannak?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, hányan vannak, és asztalt kér", "keywords": ["ketten", "harman", "negyen", "oten", "hatan", "heten", "asztalt", "foglal", "szemelyre", "szabad", "hely", "csalad"] }
+                  ],
+                  "model": "Jó napot kívánok! Négyen vagyunk, és egy asztalt szeretnénk az ablak mellett, ha lehet."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Erre parancsoljanak. Mit hozhatok inni?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Italt rendel", "keywords": ["vizet", "asvanyviz", "szodaviz", "uditot", "kolat", "limonade", "kavet", "teat", "sort", "bort", "narancsle", "almale"] }
+                  ],
+                  "model": "Kérem, hozzon nekünk két ásványvizet, egy narancslevet és két kávét az ebéd után."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Tessék, itt a napi menü. Mit kérnek?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Ételt rendel", "keywords": ["gulyas", "rantott", "csirke", "rizs", "palacsinta", "leves", "foetel", "desszert", "kerek", "kerunk", "szeretnenk", "sajat"] }
+                  ],
+                  "model": "Én gulyáslevest kérek, a gyerekek pedig rántott csirkét kérnek rizzsel, a végén pedig palacsintát."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Elnézést kérek, ma lassú a konyha, ezért az ételre körülbelül harminc percet kell várni. Megfelel Önöknek?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Reagál a késésre", "keywords": ["megvarjuk", "varunk", "varhatunk", "sietunk", "sajnos", "nem baj", "nem tudunk", "nem probl", "inkabb", "elfogadjuk", "nincs gond", "nem gond"] }
+                  ],
+                  "model": "Nem baj, megvárjuk, de nem szeretnénk túl sokat várni, mert a gyerekek éhesek."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Szeretnének még valamit? Van desszert és kávé is.",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Desszertet vagy kávét kér, vagy számlát kér és fizet", "keywords": ["sutemeny", "fagylalt", "palacsinta", "kavet", "szamlat", "szamla", "fizetn", "kartyaval", "keszpenz", "koszonjuk", "nem kerunk", "kerunk"] }
+                  ],
+                  "model": "Köszönjük, a gyerekek fagylaltot kérnek, mi csak egy kávét, és utána kérjük a számlát."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Vásárlás a piacon",
+              "photos": ["es-a2-2"],
+              "prompt": "A piacon gyümölcsöt szeretne venni. A vizsgáztató a piaci eladót játssza. Beszéljen vele, és oldja meg a helyzeteket.",
+              "bullets": ["köszön, és megmondja, mit szeretne", "megmondja a mennyiséget", "még valamit kér", "az árról beszél", "fizet, és elköszön"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Jó napot kívánok! Tessék, mit adhatok?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Köszön, és megmondja, mit szeretne venni", "keywords": ["szeretnek", "szeretnenk", "kerek", "kerunk", "gyumolcs", "alma", "banan", "korte", "narancs", "szolo", "eper", "dinnye"] }
+                  ],
+                  "model": "Jó napot! Gyümölcsöt szeretnék venni: egy kiló almát és néhány banánt, kérem."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Az alma ma nagyon jó, a banán is friss. Mennyit kér?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja a mennyiséget", "keywords": ["kilo", "fel kilo", "ketto", "harom", "negy", "darab", "csomag", "zacsko", "dekagramm", "egy kis", "tizenket", "majd"] }
+                  ],
+                  "model": "Egy kiló almát kérek, és hat banánt, mert a gyerekek nagyon szeretik a banánt."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Tessék, így jó? Szeretne még valamit, például epret vagy szőlőt?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Még valamit kér, vagy nem kér többet", "keywords": ["korte", "dinnye", "citrom", "paradicsom", "paprika", "uborka", "meg egy", "kerek meg", "nem kerek", "nincs szuksegem", "kiloval", "banan"] }
+                  ],
+                  "model": "Igen, így jó, köszönöm. Még egy kiló körtét és egy dinnyét kérek, ha van."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Összesen kétezer-négyszáz forint. Megfelel az ár?",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Reagál az árra", "keywords": ["draga", "olcso", "kicsit", "kevesebb", "engedmeny", "lealkudni", "alku", "kedvezmeny", "sokalom", "nem sok", "penzem", "keves"] }
+                  ],
+                  "model": "Hmm, ez nekem egy kicsit drága, nem tudná nekem egy kicsit olcsóbban adni, kérem szépen?"
+                },
+                {
+                  "id": "t5",
+                  "ask": "Rendben, akkor kétezer forint lesz. Tessék, itt van minden. Viszontlátásra!",
+                  "minWords": 12,
+                  "points": [
+                    { "id": "p1", "label": "Fizet, és elköszön", "keywords": ["penz", "fizetek", "kartya", "keszpenz", "ezer", "szep napot", "jo napot", "jo munkat", "legkozelebb", "kellemes", "nagyon koszon", "hamarosan"] }
+                  ],
+                  "model": "Köszönöm szépen, tessék, itt van kétezer forint készpénzben. Viszontlátásra, szép napot kívánok!"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

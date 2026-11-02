@@ -1,0 +1,798 @@
+{
+  "target": "hu",
+  "level": "C1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válasszon a két lehetőség közül. Olvassa el a cikket, és húsz percig készüljön fel egy szóbeli kiselőadásra. Jegyzetelhet.",
+          "prepSeconds": 1200,
+          "talkMinutes": [
+            3,
+            5
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "title": "A lehetőség: Papír vagy képernyő?",
+              "prompt": "Olvassa el ezt a véleménycikket. Ezután készüljön fel egy kiselőadásra az iskolai rádió oktatási műsora számára: adja át a szerző gondolatait a saját szavaival, értékelje őket, és fejtse ki a saját véleményét.",
+              "bullets": [
+                "Foglalja össze a szerző tézisét és azokat az érveket, amelyekkel alátámasztja.",
+                "Magyarázza el, milyen következményekre figyelmeztet a tanulók és a tanárok szempontjából.",
+                "Mutassa be a szerző javaslatait, és értékelje, hogy meggyőzőek-e.",
+                "Fejtse ki és indokolja a saját véleményét a témáról."
+              ],
+              "input": "PAPÍR VAGY KÉPERNYŐ?\n\nTavaly ősszel az unokahúgom iskolatáskája először lett könnyebb. A tankönyveket ugyanis tabletre cserélték, amelyet az iskola ingyen biztosított. Első pillantásra jó hír: nincs sérült gerinc, nincs otthon felejtett könyv, és a tananyag mindig naprakész. Amikor azonban megkérdeztem, mit olvasott aznap, ezt felelte: „Valamit a reformkorról, de nem tudom, melyik oldalon.” Ez a mondat többet mondott nekem, mint a tanulmányok fele.\n\nNem vagyok a technika ellensége. A digitális eszközök sok gyereknek valódi segítséget jelentenek: a látássérült diák felnagyíthatja a betűket, a tanár pedig percek alatt frissítheti az anyagot. Az állításom másról szól: a papír és a képernyő nem ugyanazt a figyelmet kívánja. A kutatások szerint a képernyőn olvasó gyerek hajlamos átfutni a szöveget, kulcsszavakat keres, és nem követi végig az érvelést. A nyomtatott könyvben a szem útja kiszámítható, és a lap fizikai helye segít emlékezni: a gyerek tudja, hogy a keresett mondat a bal oldalon, az oldal alján volt.\n\nEhhez jön a figyelem kérdése. Egy tablet nemcsak tankönyv, hanem játék, üzenetküldő és videólejátszó is. Hiába kéri a tanár, hogy zárják be a többi alkalmazást, az értesítések ott villognak a képernyő sarkában. Ez nem akaraterő kérdése: egy felnőtt sem tudja végigolvasni a hosszú cikket, ha közben ötpercenként csörög a telefonja. A gyerektől ezt elvárni nem tisztességes.\n\nVan egy harmadik szempont is, amelyről ritkán esik szó: az egyenlőtlenség. Az iskola ingyen adja az eszközt, de ha az otthoni internet lassú, vagy a család egyetlen számítógépén három testvér tanul, a „korszerű” megoldás éppen a legkiszolgáltatottabbakat sújtja. A papírkönyv ezzel szemben nem igényel sem áramot, sem wifit.\n\nMit javasolok? Nem a visszatérést a régihez. Először is: az olvasásigényes tantárgyakhoz, vagyis az irodalomhoz és a történelemhez maradjon meg a nyomtatott tankönyv, a digitális eszközöket pedig ott használják, ahol valóban többet adnak, például a földrajzi térképeknél vagy a kísérletek szimulációinál. Másodszor: a pedagógusok kapjanak képzést arról, hogyan taníthatnak digitálisan úgy, hogy közben ne szakadjon meg a mélyolvasás. Harmadszor: az iskolai tabletek legyenek zártak, értesítések és játékok nélkül.\n\nTalán egyszer lesz olyan képernyő, amelyen a gyerekek úgy olvasnak, mint a papíron. Addig azonban érdemes óvatosnak lenni. A tananyag nem csupán adat, amelyet be kell tölteni: gondolkodásmód, amelyet meg kell tanulni.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, megkezdheti a kiselőadást.",
+                  "minWords": 130,
+                  "points": [
+                    {
+                      "id": "tezis",
+                      "label": "Összefoglalja a szerző tézisét: a nyomtatott tankönyv és a tablet más-más figyelmet kíván",
+                      "keywords": [
+                        "tankonyv",
+                        "tablet",
+                        "nyomtatott",
+                        "kepernyo",
+                        "kijelzo",
+                        "papirkonyv",
+                        "melyolvas",
+                        "lecser"
+                      ]
+                    },
+                    {
+                      "id": "ervek",
+                      "label": "Elmagyarázza a szöveg érveit: átfutó olvasás, elterelő értesítések, egyenlőtlenség",
+                      "keywords": [
+                        "atfut",
+                        "kulcssz",
+                        "ertesites",
+                        "elterel",
+                        "jatek",
+                        "internet",
+                        "hatrany",
+                        "csalad",
+                        "gondolatmenet"
+                      ]
+                    },
+                    {
+                      "id": "javaslatok",
+                      "label": "Bemutatja a szerző javaslatait az olvasás és a digitális eszközök egyensúlyára",
+                      "keywords": [
+                        "javaslat",
+                        "irodalom",
+                        "tortenelem",
+                        "kepzes",
+                        "pedagogus",
+                        "zartak",
+                        "papirkonyv",
+                        "maradjon"
+                      ]
+                    },
+                    {
+                      "id": "velemeny",
+                      "label": "Értékeli a szöveget, és kifejti, indokolja a saját véleményét",
+                      "keywords": [
+                        "egyetertek",
+                        "velemenyem",
+                        "tuloz",
+                        "egyensuly",
+                        "kombinal",
+                        "meggyoz",
+                        "igaza van"
+                      ]
+                    }
+                  ],
+                  "model": "Az előadásomban először összefoglalom a cikk lényegét, aztán elmondom a saját véleményemet. A szerző azt állítja, hogy nem szabad kapkodva lecserélni a nyomtatott tankönyveket tabletekre, mert a lap és a kijelző másfajta figyelmet kíván. Szerinte a gyerekek a képernyőn inkább átfutják a szöveget, kulcsszavakat keresnek, és nem követik végig a gondolatmenetet. Érvei között szerepel az is, hogy a tablet egyben játék és üzenetküldő, ezért az értesítések elterelik a figyelmet, ráadásul a lassú otthoni internet miatt sok család hátrányba kerülhet. Három javaslatot tesz: az irodalomhoz és a történelemhez maradjon meg a papírkönyv, a pedagógusok kapjanak képzést a digitális tanításról, az iskolai eszközök pedig legyenek zártak, értesítések és játékok nélkül. Egyetértek vele abban, hogy a mélyolvasás fontos, de szerintem kissé túloz, mert a digitális jártasság is fontos készség, amelyet az iskolában kell megtanulni. Véleményem szerint a legjobb egyensúlyt a kettő kombinálása adja. Az iskoláknak érdemes volna kipróbálniuk a vegyes megoldást, és közben arra is figyelniük kell, hogy minden diák egyformán hozzájusson a szükséges eszközökhöz."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "B lehetőség: Autó nélkül a Balatonra?",
+              "prompt": "Olvassa el ezt a véleménycikket. Ezután készüljön fel egy kiselőadásra egy egyetemi rádió városi életről szóló műsora számára: adja át a szerző gondolatait a saját szavaival, értékelje őket, és fejtse ki a saját véleményét.",
+              "bullets": [
+                "Foglalja össze a szerző tézisét és azokat az érveket, amelyekkel alátámasztja.",
+                "Magyarázza el, milyen előnyöket és kockázatokat lát a szerző a helyi lakosok és a vállalkozások szempontjából.",
+                "Mutassa be a szerző javaslatait, és értékelje, hogy meggyőzőek-e.",
+                "Fejtse ki és indokolja a saját véleményét a témáról."
+              ],
+              "input": "AUTÓ NÉLKÜL A BALATONRA?\n\nEgy júliusi szombaton háromórás dugóban ültem Siófok előtt. Az autóm lassan araszolt, mellettem pedig mosolygó emberek tekertek el biciklivel, törülközővel a vállukon. Akkor értettem meg, hogy nyáron a Balaton legnagyobb ellensége nem a szennyezés vagy az algák, hanem a forgalom. Ebből a tapasztalatból jutottam el ahhoz a gondolathoz, hogy a part menti települések belvárosaiból a főszezonban ki kellene tiltani az autókat.\n\nAz érvek többsége kézenfekvő. Az autók zajt csinálnak, a kipufogógáz ott lebeg a sétány felett, a parkolók pedig elfoglalják azt a helyet, ahol a gyerekek játszhatnának vagy a nyaralók leülhetnének egy fagylalttal. A vendégek fele azért jön, hogy a víz mellett pihenjen, és mégis egy parkolóban kezdi a napját. A biztonságról sem szabad megfeledkezni: aki látott már kisgyereket két sor megállt autó között átszaladni, tudja, miről beszélek.\n\nA legerősebb ellenvetés a helyi vállalkozóktól érkezik. A kereskedők és a vendéglősök attól tartanak, hogy az autómentes övezetben kevesebb vásárló jön. Ezt nem lehet egyszerűen elintézni egy mondattal, mert a megélhetésük a tét. Ugyanakkor számos európai város példája azt mutatja, hogy a gyalogos utcákban a látogatók tovább maradnak, többet költenek, és sokkal szívesebben térnek vissza. Ráadásul az áruszállítás megoldható hajnali órákra.\n\nNem azt javaslom, hogy tiltsunk mindent, és hagyjuk magára a nyaralókat. Először is szükség van parkolókra a települések szélén, ahonnan ingyenes, gyakori buszjárat visz a partra. Másodszor: sűrűbben járó vonatok kellenek a part mentén, és egyetlen kedvezményes jegy, amely a vonatot, a buszt és a kerékpárbérlést együtt tartalmazza. Harmadszor: legyenek kivételek a helyi lakosoknak, a mozgáskorlátozottaknak és az áruszállítóknak, meghatározott időpontokban.\n\nVannak, akik szerint ez szokatlan beavatkozás a természetes rendbe. Én úgy látom, hogy a természetes rend már régen eltűnt, amikor a dugó lett a nyár legjellemzőbb látványa. Egy tó, amelyre ezrével autóznak rá az emberek, nem pihenőhely, hanem útvonal. Pedig arra való, hogy odamenjünk hozzá, nem arra, hogy elmenjünk mellette.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Amikor készen áll, megkezdheti a kiselőadást.",
+                  "minWords": 130,
+                  "points": [
+                    {
+                      "id": "tezis",
+                      "label": "Összefoglalja a szerző tézisét: nyáron ki kellene tiltani az autókat a part menti belvárosokból",
+                      "keywords": [
+                        "autokat",
+                        "tiltsak",
+                        "kitilt",
+                        "forgalom",
+                        "dugo",
+                        "automentes",
+                        "autoforgalom",
+                        "belvaros"
+                      ]
+                    },
+                    {
+                      "id": "ervek",
+                      "label": "Elmagyarázza az érveket és az ellenérveket: zaj, szennyezés, helyi vállalkozók",
+                      "keywords": [
+                        "szennyez",
+                        "kereskedo",
+                        "vasarlo",
+                        "koltenek",
+                        "gyalogos",
+                        "vallalkoz",
+                        "vendeglos",
+                        "levego"
+                      ]
+                    },
+                    {
+                      "id": "javaslatok",
+                      "label": "Bemutatja a szerző javaslatait: parkolók, buszok, vonatok, kivételek",
+                      "keywords": [
+                        "javaslat",
+                        "buszjarat",
+                        "vonat",
+                        "kerekpar",
+                        "kivetel",
+                        "szallito",
+                        "parkolo",
+                        "jegy"
+                      ]
+                    },
+                    {
+                      "id": "velemeny",
+                      "label": "Értékeli a szöveget, és kifejti, indokolja a saját véleményét",
+                      "keywords": [
+                        "nem ertek egyet",
+                        "igaza van",
+                        "kompromisszum",
+                        "idosek",
+                        "mozgassert",
+                        "nelkulozhetetlen",
+                        "meggyoz"
+                      ]
+                    }
+                  ],
+                  "model": "Az előadásom első részében a cikk fő gondolatát mutatom be, utána a véleményemet mondom el. A szerző azt javasolja, hogy a Balaton belvárosaiban nyáron tiltsák ki az autókat, mert a part legnagyobb ellensége nem a szennyezés, hanem a forgalom. Úgy látja, hogy a dugók, a zaj és a parkolók elveszik a teret a sétálók és a gyerekek elől, a levegő pedig szennyezett. A helyi vállalkozók részéről érkező aggodalmat is bemutatja: a kereskedők attól tartanak, hogy kevesebb vásárló jön, de a szerző szerint más városok példája azt mutatja, hogy a gyalogosok tovább maradnak és többet költenek. Javaslatai a következők: parkolók a települések szélén, ingyenes buszjárat, sűrűbb vonatok kerékpárbérléssel együtt, és kivételek a helyieknek meg a szállítóknak. Szerintem a szerzőnek igaza van abban, hogy változtatni kell, de nem értek egyet azzal, hogy mindenkit egyformán ki kellene zárni, mert az idősek és a mozgássérültek számára az autó néha nélkülözhetetlen. A legjobbnak egy kompromisszumot tartanék."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "A vizsgáztató kérdéseket tesz fel a kiselőadás témájáról. Válaszoljon érvekkel és példákkal.",
+          "talkMinutes": [
+            4,
+            6
+          ],
+          "follows": 1,
+          "choices": [
+            {
+              "id": "a",
+              "title": "A lehetőség: Papír vagy képernyő?",
+              "prompt": "A vizsgáztató néhány kérdést tesz fel az olvasásról és a digitális tankönyvekről, vagyis annak a cikknek a témájáról, amelyre a kiselőadását építette.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Köszönöm a kiselőadást. Hogyan olvas Ön a mindennapokban: inkább papírról vagy kijelzőről? Mikor melyiket részesíti előnyben?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "szokas",
+                      "label": "Leírja az olvasási szokásait",
+                      "keywords": [
+                        "szoktam",
+                        "altalaban",
+                        "rendszerint",
+                        "legtobbszor",
+                        "utazas",
+                        "metro",
+                        "telefonon",
+                        "tableten"
+                      ]
+                    },
+                    {
+                      "id": "valasztas",
+                      "label": "Megindokolja, mikor melyik formát választja",
+                      "keywords": [
+                        "fenye",
+                        "farasz",
+                        "praktikus",
+                        "jegyzet",
+                        "hosszu szoveg",
+                        "tanul",
+                        "nehez konyv"
+                      ]
+                    }
+                  ],
+                  "model": "Általában este, lefekvés előtt olvasok, és olyankor szinte mindig papírkönyvet veszek elő, mert a kijelző fénye fárasztja a szemem, és rosszabbul alszom tőle. Utazás közben viszont szoktam a telefonomon cikkeket olvasni, mert az praktikus, és nem kell nehéz könyvet cipelnem. Ha tanulnom kell, inkább kinyomtatom a hosszú szövegeket, mert így könnyebben írok bele jegyzeteket."
+                },
+                {
+                  "id": "t2",
+                  "ask": "A szerző azt állítja, hogy a gyerekek képernyőn felszínesebben olvasnak. Egyetért ezzel, vagy szerinte ez inkább a szokásokon múlik?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "allaspont",
+                      "label": "Állást foglal, és árnyalja a véleményét",
+                      "keywords": [
+                        "reszben",
+                        "egyetertek",
+                        "nem teljesen",
+                        "nem ertek egyet",
+                        "igaza van",
+                        "tuloz",
+                        "nem biztos"
+                      ]
+                    },
+                    {
+                      "id": "indoklas",
+                      "label": "Indokol: gyakorlás, tanítási módszer, figyelem",
+                      "keywords": [
+                        "gyakorl",
+                        "megszok",
+                        "tanar",
+                        "modszer",
+                        "feladat",
+                        "jegyzetel",
+                        "figyelmes",
+                        "koncentral"
+                      ]
+                    }
+                  ],
+                  "model": "Részben egyetértek vele, mert én is azt tapasztalom, hogy a képernyőn hajlamosak vagyunk átfutni a szöveget. Ugyanakkor szerintem sokat számít a gyakorlás is: ha a tanárok megtanítják a gyerekeket arra, hogyan olvassanak figyelmesen digitális szövegeket, például jegyzetelés közben, akkor a különbség jelentősen csökkenhet. Tehát nemcsak az eszközön, hanem a tanítási módszeren is múlik."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Képzelje el, hogy egy vidéki iskolában minden diák kap egy tabletet, de sok családnak otthon nincs jó internetkapcsolata. Milyen problémákat okozhat ez?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "problemak",
+                      "label": "Megnevezi az egyenlőtlenségből eredő problémákat",
+                      "keywords": [
+                        "hatrany",
+                        "lemarad",
+                        "egyenlotlen",
+                        "hazi feladat",
+                        "kiszolgaltat",
+                        "nem tudnak",
+                        "kulonbseg"
+                      ]
+                    },
+                    {
+                      "id": "megoldas",
+                      "label": "Javaslatot tesz a probléma kezelésére",
+                      "keywords": [
+                        "konyvtar",
+                        "delutan",
+                        "szamitogepes",
+                        "mobilinternet",
+                        "csomag",
+                        "kolcson",
+                        "tamogat",
+                        "raszorulo"
+                      ]
+                    }
+                  ],
+                  "model": "Az egyik legnagyobb gond, hogy ezek a gyerekek hátrányba kerülnének, mert nem tudnák elkészíteni a házi feladatot, és lemaradnának a többiektől. Ez a különbség idővel még nagyobb lenne. A helyzeten úgy lehetne segíteni, hogy az iskola délutánonként nyitva tartja a könyvtárat és a számítógépes termet, vagy mobilinternetes csomagot adnak a rászoruló családoknak."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Végül: milyen konkrét intézkedést javasolna az iskolák vezetőinek, hogy a digitális eszközök a tanulást segítsék, és ne zavarják?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "intezkedes",
+                      "label": "Konkrét intézkedést javasol",
+                      "keywords": [
+                        "javasolnam",
+                        "szabaly",
+                        "ertesites",
+                        "zarol",
+                        "korlatoz",
+                        "vezessenek",
+                        "tilt"
+                      ]
+                    },
+                    {
+                      "id": "cel",
+                      "label": "Megindokolja, miért segíti ez a tanulást",
+                      "keywords": [
+                        "koncentral",
+                        "hatekony",
+                        "eredmeny",
+                        "kezben tart",
+                        "motival",
+                        "figyel"
+                      ]
+                    }
+                  ],
+                  "model": "Én azt javasolnám, hogy az iskolák vezessenek be egy egyszerű szabályt: a diákok csak azokon az órákon használhatnak digitális eszközt, ahol erre valóban szükség van, az értesítéseket pedig zárolják. Így a gyerekek jobban tudnak koncentrálni, a tanárok pedig könnyebben kézben tartják az órát. Szerintem ezzel a hatékonyság és az eredmények is javulnának."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "B lehetőség: Autó nélkül a Balatonra?",
+              "prompt": "A vizsgáztató néhány kérdést tesz fel az autómentes nyaralásról és a part menti forgalomról, vagyis annak a cikknek a témájáról, amelyre a kiselőadását építette.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Köszönöm a kiselőadást. Hogyan szokott Ön nyaralni vagy kirándulni, és milyen közlekedési eszközt használ ilyenkor?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "szokas",
+                      "label": "Leírja a nyaralási szokásait",
+                      "keywords": [
+                        "nyaranta",
+                        "altalaban",
+                        "evente",
+                        "hetvegen",
+                        "baratai",
+                        "csaladommal",
+                        "tavaly",
+                        "szoktam"
+                      ]
+                    },
+                    {
+                      "id": "jarmu",
+                      "label": "Megnevezi a járművet, és megindokolja a választását",
+                      "keywords": [
+                        "vonat",
+                        "busz",
+                        "kerekpar",
+                        "biciklive",
+                        "menetrend",
+                        "olcso",
+                        "parkol",
+                        "kocsi"
+                      ]
+                    }
+                  ],
+                  "model": "Általában nyaranta egyszer megyek a Balatonra a barátaimmal, és többnyire vonattal utazunk, mert gyorsabb és olcsóbb, mint az autó, ráadásul nem kell parkolóhelyet keresni. Ha nagy a csomag, akkor viszont megkérünk valakit, hogy vigyen el kocsival, mert a buszokra nem szívesen szállunk fel. Szerintem ez a legkényelmesebb megoldás számunkra."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Egyesek szerint az autómentes övezet a helyi vállalkozásoknak árt, mert kevesebb vendég érkezik. Mit gondol erről?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "allaspont",
+                      "label": "Állást foglal",
+                      "keywords": [
+                        "nem feltetlenul",
+                        "nem igaz",
+                        "nem biztos",
+                        "reszben",
+                        "ellenkezoleg",
+                        "kockazat"
+                      ]
+                    },
+                    {
+                      "id": "indoklas",
+                      "label": "Indokolja az álláspontját példával vagy érvvel",
+                      "keywords": [
+                        "gyalogos",
+                        "tovabb maradnak",
+                        "tobbet koltenek",
+                        "teraszokon",
+                        "bevetel",
+                        "setal",
+                        "hangulat"
+                      ]
+                    }
+                  ],
+                  "model": "Szerintem ez nem feltétlenül igaz. Sok helyen azt tapasztalták, hogy a gyalogos utcákban a látogatók tovább maradnak, kényelmesen sétálnak, és többet költenek a teraszokon, tehát a bevétel inkább nő, mint csökken. Persze a boltoknak szükségük van az árufuvarozásra, ezért az áruszállítást hajnalra kellene tenni, ahogyan más városokban is teszik."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Tegyük fel, hogy a városvezetés ezt az intézkedést két évre próbaképpen bevezeti. Mit kellene előre megtervezni, hogy ne legyen káosz?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "elokeszites",
+                      "label": "Szól a tájékoztatásról és az előkészítésről",
+                      "keywords": [
+                        "tajekoztat",
+                        "kampany",
+                        "tabla",
+                        "lakokat",
+                        "figyelmeztet",
+                        "informal"
+                      ]
+                    },
+                    {
+                      "id": "logisztika",
+                      "label": "Szól a közlekedési megoldásokról és a kivételekről",
+                      "keywords": [
+                        "parkolo",
+                        "menetrend",
+                        "busz",
+                        "kivetel",
+                        "szallito",
+                        "mozgaskorlatozott",
+                        "taxi"
+                      ]
+                    }
+                  ],
+                  "model": "Először is a lakókat és a vállalkozókat időben tájékoztatni kellene, kampányt indítani, és kitenni az útjelző táblákat. Másrészt ki kellene jelölni a parkolókat a város szélén, és sűrűbb menetrenddel buszokat indítani, a mozgáskorlátozottaknak és a szállítóknak pedig kivételeket adni. Szerintem ez nélkül az egész kísérlet kudarcba fulladna."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Végül: ha Ön lehetne a polgármester, milyen első lépést tenne, hogy a nyári forgalom kevésbé terhelje a part menti településeket?",
+                  "minWords": 40,
+                  "points": [
+                    {
+                      "id": "lepes",
+                      "label": "Megnevezi az első lépést",
+                      "keywords": [
+                        "eloszor",
+                        "probauzem",
+                        "inditanek",
+                        "kezdenem",
+                        "javaslom",
+                        "bevezetnem",
+                        "kiserlet"
+                      ]
+                    },
+                    {
+                      "id": "hatas",
+                      "label": "Elmagyarázza az intézkedés várható hatását",
+                      "keywords": [
+                        "szennyez",
+                        "levego",
+                        "biztonsag",
+                        "kellemesebb",
+                        "csokken",
+                        "kiterjeszt",
+                        "setal"
+                      ]
+                    }
+                  ],
+                  "model": "Először egy próbaüzemet indítanék a legzsúfoltabb településen, ahol a belvárosban nyáron nem lehet autóval közlekedni. Ezzel csökkenne a zaj és a szennyezett levegő, a gyerekek pedig biztonságosabban sétálhatnának és biciklizhetnének, az utazók számára pedig kellemesebb lenne a part. Ha beválna, jövőre kiterjeszteném a többi városra is."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válasszon a két helyzet közül, és tárgyaljon a vizsgáztatóval, amíg meg nem állapodnak.",
+          "talkMinutes": [
+            4,
+            6
+          ],
+          "choices": [
+            {
+              "id": "a",
+              "title": "A lehetőség: A társasház belső udvara",
+              "prompt": "Ön és a vizsgáztató ugyanannak a társasháznak a lakói, és tagjai a házbizottságnak. A közgyűlés megszavazta a belső udvar felújítását, de a rendelkezésre álló pénz csak az egyik javaslatra elég. Mivel a lakók közötti baráti beszélgetésről van szó, tegeződnek. Tárgyaljanak, amíg megállapodásra nem jutnak.",
+              "bullets": [
+                "Válassza ki azt a javaslatot, amelyet a legjobbnak tart, és indokolja a választását.",
+                "Érvekkel reagáljon a vizsgáztató ellenvetéseire.",
+                "Fogadja el, hogy enged valamiben, vagy javasoljon egy kombinációt.",
+                "Jussanak megállapodásra, és döntsék el, mit tegyenek először."
+              ],
+              "input": "HELYZET. A társasház közgyűlése pénzt különített el a belső udvar felújítására, de az összeg csak az alábbi javaslatok egyikére elegendő.\n\nJAVASLATOK\n1. Közösségi kert magaságyásokkal és komposztálóval, ahol a lakók zöldséget és fűszernövényt termesztenek, és megtanulják kezelni a konyhai hulladékot.\n2. Fedett kerékpártároló zárható állványokkal és elektromos kerékpárok töltőpontjaival, hogy a lakók ne a lépcsőházban tartsák a járműveiket.\n3. Gyerekjátszótér ütéselnyelő burkolattal, padokkal és árnyékot adó fákkal, a kisgyerekes családok számára.\n4. Napelemes rendszer a tetőn, amely csökkenti a közös áramfogyasztás költségét, és évek alatt megtérül.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Csak egyetlen javaslatra van pénzünk a négy közül. Te melyiket választanád, és miért?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "valasztas",
+                      "label": "Kiválaszt egy javaslatot",
+                      "keywords": [
+                        "valasztom",
+                        "valasztanam",
+                        "ezt javaslom",
+                        "kozossegi kert",
+                        "kerekpartarolo",
+                        "jatszoter",
+                        "napelem"
+                      ]
+                    },
+                    {
+                      "id": "indoklas",
+                      "label": "Megindokolja a választását",
+                      "keywords": [
+                        "elony",
+                        "hasznos",
+                        "segit",
+                        "megtakarit",
+                        "kozosseg",
+                        "gyerek",
+                        "biztonsag",
+                        "hosszu tavon"
+                      ]
+                    }
+                  ],
+                  "model": "Én a közösségi kertet választanám, mert az egész házat összehozza, és a lakók közösen gondozhatnák. Hasznos is, hiszen friss zöldség és fűszernövény terem benne, és a komposztáló miatt kevesebb szemét keletkezne."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Értem, de attól félek, hogy a kert sok munkával jár, és a nyári szabadságok idején senki nem fogja locsolni. Mit felelsz erre?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "elismeres",
+                      "label": "Elismeri az ellenvetést",
+                      "keywords": [
+                        "igazad van",
+                        "megertem",
+                        "jogos",
+                        "tenyleg",
+                        "van benne valami",
+                        "fontos kerdes"
+                      ]
+                    },
+                    {
+                      "id": "megoldas",
+                      "label": "Konkrét megoldást ajánl",
+                      "keywords": [
+                        "beosztas",
+                        "felelos",
+                        "onkentes",
+                        "csepegtet",
+                        "automatik",
+                        "turnus",
+                        "szomszed",
+                        "megoszt"
+                      ]
+                    }
+                  ],
+                  "model": "Megértem az aggodalmadat, jogos felvetés. Úgy lehetne megoldani, hogy beosztást készítünk, és minden szinten felelőst jelölünk ki, a nyári hetekre pedig csepegtető öntözőrendszert szerelünk fel. Szerintem így mindenki számára elfogadható lenne a megoldás."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Talán egyikünknek sincs teljesen igaza. Hajlandó lennél egy kisebb változatra, amelyben két javaslatot ötvözünk, vagy engednél valamiben? Mit kérnél cserébe?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "kombinacio",
+                      "label": "Kombinációt javasol, vagy enged valamiben",
+                      "keywords": [
+                        "kombinal",
+                        "egyesit",
+                        "reszleges",
+                        "szakaszokban",
+                        "ket lepesben",
+                        "etapokban",
+                        "mindkettot",
+                        "felet"
+                      ]
+                    },
+                    {
+                      "id": "feltetel",
+                      "label": "Feltételt szab",
+                      "keywords": [
+                        "feltetel",
+                        "csak akkor",
+                        "ragaszkodom",
+                        "kikotom",
+                        "garancia",
+                        "biztositsuk",
+                        "onkent",
+                        "azzal a feltetellel"
+                      ]
+                    }
+                  ],
+                  "model": "Szívesen kombinálnám a két ötletet: a kert egy kisebb részét hoznánk létre, mellé pedig kerékpártárolót építenénk, szakaszokban. Azzal a feltétellel egyeznék bele, hogy a lakók önként vállalják a gondozást, és a költségvetésben marad pénz a karbantartásra."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Rendben, nagyjából megegyeztünk. Összefoglalnád, hogy mit fogunk csinálni, és mi lenne az első lépés?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "osszefoglalas",
+                      "label": "Összefoglalja a megállapodást",
+                      "keywords": [
+                        "megallapodtunk",
+                        "dontottunk",
+                        "osszefoglalva",
+                        "vegul",
+                        "tehat",
+                        "hozzuk letre",
+                        "epitunk"
+                      ]
+                    },
+                    {
+                      "id": "lepes",
+                      "label": "Megnevezi az első lépést",
+                      "keywords": [
+                        "legeloszor",
+                        "kozgyules",
+                        "arajanlat",
+                        "jovo heten",
+                        "osszehiv",
+                        "szavaz",
+                        "hetfon"
+                      ]
+                    }
+                  ],
+                  "model": "Összefoglalva: úgy döntöttünk, hogy létrehozzuk a közösségi kert kisebb változatát, mellé pedig kerékpártárolót építünk. Legelőször a jövő héten összehívnánk a közgyűlést, és árajánlatot kérnénk két cégtől, mielőtt szavaznánk. Szerintem ezzel mindenki elégedett lehet."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "B lehetőség: A falunap programja",
+              "prompt": "Ön és a vizsgáztató egy kis település falunapját szervező bizottság tagjai. Az önkormányzat támogatása csak egyetlen nagyobb programra elég. Mivel a faluban mindenki ismeri egymást, tegeződnek. Tárgyaljanak, amíg megállapodásra nem jutnak.",
+              "bullets": [
+                "Válassza ki azt a programot, amelyet a legjobbnak tart, és indokolja a választását.",
+                "Érvekkel reagáljon a vizsgáztató ellenvetéseire.",
+                "Fogadja el, hogy enged valamiben, vagy javasoljon egy kombinációt.",
+                "Jussanak megállapodásra, és döntsék el, mivel kezdjék a szervezést."
+              ],
+              "input": "HELYZET. Az önkormányzat támogatást adott a falunap megszervezésére, de az összeg csak az alábbi programok egyikére elegendő.\n\nJAVASLATOK\n1. Ismert együttes koncertje a focipályán, nagyszínpaddal és hangosítással.\n2. Főzőverseny a helyi termelőkkel és a környékbeli csapatokkal, bográcsokkal és ételkóstolóval.\n3. Gyerekprogramok: ugrálóvár, kézműves foglalkozások és bábszínház a sportcsarnokban.\n4. Történelmi felvonulás korhű ruhákban és kiállítás a falu elmúlt kétszáz évéről.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Egyetlen programra elég a költségvetés a négy közül. Te melyiket választanád, és miért?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "valasztas",
+                      "label": "Kiválaszt egy programot",
+                      "keywords": [
+                        "valasztanam",
+                        "ezt javaslom",
+                        "koncert",
+                        "fozoverseny",
+                        "bogracs",
+                        "gyermekprogram",
+                        "felvonulas"
+                      ]
+                    },
+                    {
+                      "id": "indoklas",
+                      "label": "Megindokolja a választását",
+                      "keywords": [
+                        "elony",
+                        "vonz",
+                        "latogato",
+                        "bevetel",
+                        "termelo",
+                        "hagyomany",
+                        "osszehoz",
+                        "ismeretlen"
+                      ]
+                    }
+                  ],
+                  "model": "Én a főzőversenyt választanám, mert a helyi termelők is részt vehetnének benne, és az egész falut összehozza. Sok látogatót vonzana a környékről is, ami a termelőknek jó bevétel, a hagyományos ételek pedig segítenének megőrizni a helyi hagyományokat."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Megértem, de szerintem a gyerekeknek és a fiataloknak ez nem elég érdekes. Aki nem főz, csak néz, az hamar elunja magát.",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "elismeres",
+                      "label": "Elismeri az ellenvetést",
+                      "keywords": [
+                        "igazad van",
+                        "jogos",
+                        "tenyleg",
+                        "van benne valami",
+                        "nem kizart",
+                        "fontos kerdes",
+                        "jogosan"
+                      ]
+                    },
+                    {
+                      "id": "megoldas",
+                      "label": "Javaslatot tesz, hogyan lehet mindenkinek érdekessé tenni",
+                      "keywords": [
+                        "jatek",
+                        "kisero",
+                        "kezmuves",
+                        "zenekar",
+                        "kostol",
+                        "szerepel",
+                        "foglalkoz",
+                        "csapat"
+                      ]
+                    }
+                  ],
+                  "model": "Jogos a felvetés. Ezt úgy lehetne orvosolni, hogy a verseny mellé játékos kísérőprogramot szervezünk: kézműves foglalkozást, élő zenét egy helyi zenekarral, és a gyerekek is kóstolhatnának, sőt, kis csapatokban szerepelhetnének. Így biztosan mindenki talál valamit, ami tetszik neki."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Lehet, hogy mindkettőnknek van igaza. Mi lenne, ha két ötletet összekapcsolnánk, vagy ha te engednél valamiben? Mit kérnél ezért?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "kombinacio",
+                      "label": "Kombinációt javasol, vagy enged valamiben",
+                      "keywords": [
+                        "kombinal",
+                        "egyesit",
+                        "osszevon",
+                        "ket napra",
+                        "ketnapos",
+                        "szombat",
+                        "vasarnap",
+                        "etapokban"
+                      ]
+                    },
+                    {
+                      "id": "feltetel",
+                      "label": "Feltételt szab",
+                      "keywords": [
+                        "feltetel",
+                        "csak akkor",
+                        "ragaszkodom",
+                        "kikotom",
+                        "garancia",
+                        "szponzor",
+                        "onkent",
+                        "biztosit"
+                      ]
+                    }
+                  ],
+                  "model": "Szívesen kombinálnám a két ötletet: szombaton lenne a főzőverseny, vasárnap pedig kisebb gyerekprogram. Azzal a feltétellel engednék, hogy a szponzorok vállalják a költségek egy részét, és a faluból sokan önként segítenek a szervezésben."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Jól haladunk. Összegeznéd a megállapodásunkat, és megmondanád, mivel kezdenénk a szervezést?",
+                  "minWords": 25,
+                  "points": [
+                    {
+                      "id": "osszegzes",
+                      "label": "Összefoglalja a megállapodást",
+                      "keywords": [
+                        "megallapodtunk",
+                        "dontottunk",
+                        "osszefoglalva",
+                        "vegul",
+                        "tehat",
+                        "ket napos",
+                        "rendezunk"
+                      ]
+                    },
+                    {
+                      "id": "lepes",
+                      "label": "Megnevezi az első lépést",
+                      "keywords": [
+                        "legeloszor",
+                        "jovo heten",
+                        "egyeztet",
+                        "szponzor",
+                        "engedely",
+                        "plakat",
+                        "felhivas",
+                        "jelentkez"
+                      ]
+                    }
+                  ],
+                  "model": "Tehát megállapodtunk abban, hogy két napos programot rendezünk, főzőversennyel és gyerekprogrammal. Legelőször a jövő héten egyeztetnék a termelőkkel és a szponzorokkal, utána pedig kiküldenénk a jelentkezési felhívást az egész faluban. Szerintem így a falunap sikeres lehet."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
