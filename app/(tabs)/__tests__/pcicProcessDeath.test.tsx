@@ -152,6 +152,7 @@ describe('Learn round: the progress survives a process death', () => {
 
   // FOUND GAP (skipped, expects the correct behavior): the "again" return timer lives only in the card-order snapshot, so if
   // the process dies between the grade write and the snapshot write, the stale snapshot puts the missed card back at the head.
+  // Unskip when the return timer is stored in the same DB write as the grade.
   it.skip('process death right after a missed grade, before the snapshot is written: the missed card does not come straight back', async () => {
     const first = render(<PcicScreen />);
     await flush();
