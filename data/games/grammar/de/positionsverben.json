@@ -1,0 +1,1038 @@
+{
+  "schema": 2,
+  "topic": "positionsverben",
+  "level": "A2",
+  "title": {
+    "en": "stehen or stellen? liegen or legen?",
+    "es": "¿stehen o stellen? ¿liegen o legen?"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "German does not say put or poner for everything. It has pairs: stehen (to stand) and stellen (to stand something up), liegen (to lie) and legen (to lay), sitzen (to sit) and setzen (to seat). The first verb of each pair says where something is (wo?) and takes the dative: Das Buch liegt auf dem Tisch. The second says that someone puts something somewhere (wohin?) and takes an object and the accusative: Ich lege das Buch auf den Tisch. Hungarian has the same pairs (áll and állít, fekszik and fektet, ül and ültet).",
+        "es": "El alemán no dice put ni poner para todo. Tiene parejas: stehen (estar de pie) y stellen (poner de pie), liegen (estar acostado) y legen (acostar o poner plano), sitzen (estar sentado) y setzen (sentar). El primer verbo de cada pareja dice dónde está algo (wo?) y lleva dativo: Das Buch liegt auf dem Tisch. El segundo dice que alguien pone algo en algún lugar (wohin?) y lleva complemento y acusativo: Ich lege das Buch auf den Tisch. El húngaro tiene las mismas parejas (áll y állít, fekszik y fektet, ül y ültet)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "positionsverben",
+      "title": {
+        "en": "Position and movement verbs",
+        "es": "Verbos de posición y de movimiento"
+      },
+      "header": [
+        {
+          "en": "Example noun",
+          "es": "Sustantivo de ejemplo"
+        },
+        {
+          "en": "Position",
+          "es": "Position"
+        },
+        {
+          "en": "Bewegung",
+          "es": "Bewegung"
+        },
+        {
+          "en": "Partizip (Position)",
+          "es": "Partizip (Position)"
+        },
+        {
+          "en": "Partizip (Bewegung)",
+          "es": "Partizip (Bewegung)"
+        }
+      ],
+      "rows": [
+        [
+          "Flasche",
+          "stehen",
+          "stellen",
+          "gestanden",
+          "gestellt"
+        ],
+        [
+          "Buch",
+          "liegen",
+          "legen",
+          "gelegen",
+          "gelegt"
+        ],
+        [
+          "Kind",
+          "sitzen",
+          "setzen",
+          "gesessen",
+          "gesetzt"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Position (wo?) and movement (wohin?)",
+        "es": "Posición (wo?) y movimiento (wohin?)"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "stehen, liegen and sitzen tell where something is. They have no object, and the preposition takes the dative. stehen is for upright things, liegen for flat things, sitzen for people and animals sitting.",
+            "es": "stehen, liegen y sitzen dicen dónde está algo. No tienen complemento, y la preposición lleva dativo. stehen es para cosas verticales, liegen para cosas planas, sitzen para personas y animales sentados."
+          },
+          "examples": [
+            {
+              "es": "Die Lampe steht auf dem Tisch.",
+              "tr": {
+                "en": "The lamp is on the table.",
+                "es": "La lámpara está sobre la mesa."
+              }
+            },
+            {
+              "es": "Das Buch liegt auf dem Tisch.",
+              "tr": {
+                "en": "The book is on the table.",
+                "es": "El libro está sobre la mesa."
+              }
+            },
+            {
+              "es": "Das Kind sitzt auf dem Stuhl.",
+              "tr": {
+                "en": "The child is sitting on the chair.",
+                "es": "El niño está sentado en la silla."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "stellen, legen and setzen mean to put something somewhere. They take an object in the accusative, and the preposition takes the accusative, too.",
+            "es": "stellen, legen y setzen significan poner algo en algún lugar. Llevan un complemento en acusativo, y la preposición también lleva acusativo."
+          },
+          "examples": [
+            {
+              "es": "Ich stelle die Lampe auf den Tisch.",
+              "tr": {
+                "en": "I put the lamp on the table.",
+                "es": "Pongo la lámpara sobre la mesa."
+              }
+            },
+            {
+              "es": "Ich lege das Buch auf den Tisch.",
+              "tr": {
+                "en": "I put the book on the table.",
+                "es": "Pongo el libro sobre la mesa."
+              }
+            },
+            {
+              "es": "Ich setze das Kind auf den Stuhl.",
+              "tr": {
+                "en": "I put the child on the chair.",
+                "es": "Siento al niño en la silla."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "When you sit or lie down yourself, German uses sich setzen and sich legen. For now, learn them as chunks. The goal is in the accusative: auf das Sofa, ins Bett.",
+            "es": "Cuando uno mismo se sienta o se acuesta, el alemán usa sich setzen y sich legen. Por ahora, apréndelos como bloques. La meta va en acusativo: auf das Sofa, ins Bett."
+          },
+          "examples": [
+            {
+              "es": "Ich setze mich auf das Sofa.",
+              "tr": {
+                "en": "I sit down on the sofa.",
+                "es": "Me siento en el sofá."
+              }
+            },
+            {
+              "es": "Ich lege mich ins Bett.",
+              "tr": {
+                "en": "I lie down in bed.",
+                "es": "Me acuesto en la cama."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The Perfekt",
+        "es": "El Perfekt"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The position verbs are irregular: gestanden, gelegen, gesessen. The movement verbs are regular: gestellt, gelegt, gesetzt. All six take haben in Germany.",
+            "es": "Los verbos de posición son irregulares: gestanden, gelegen, gesessen. Los verbos de movimiento son regulares: gestellt, gelegt, gesetzt. Los seis llevan haben en Alemania."
+          },
+          "examples": [
+            {
+              "es": "Die Flasche hat im Schrank gestanden.",
+              "tr": {
+                "en": "The bottle stood in the cabinet.",
+                "es": "La botella estuvo en el armario."
+              }
+            },
+            {
+              "es": "Ich habe die Flasche in den Schrank gestellt.",
+              "tr": {
+                "en": "I put the bottle into the cabinet.",
+                "es": "Puse la botella en el armario."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "In the room",
+        "es": "En el cuarto"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "A room is the best place to practise: the furniture stands (stehen), the carpet and the books lie (liegen), the people sit (sitzen).",
+            "es": "Un cuarto es el mejor lugar para practicar: los muebles están de pie (stehen), la alfombra y los libros están acostados (liegen), las personas están sentadas (sitzen)."
+          },
+          "examples": [
+            {
+              "es": "Das Bett steht im Schlafzimmer.",
+              "tr": {
+                "en": "The bed is in the bedroom.",
+                "es": "La cama está en la recámara."
+              }
+            },
+            {
+              "es": "Der Teppich liegt auf dem Boden.",
+              "tr": {
+                "en": "The carpet is on the floor.",
+                "es": "La alfombra está en el piso."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The same objects can be moved: you stand the bed up, lay the carpet down, seat the child. Each time the verb and the accusative show the movement.",
+            "es": "Los mismos objetos se pueden mover: pones la cama, extiendes la alfombra, sientas al niño. Cada vez el verbo y el acusativo muestran el movimiento."
+          },
+          "examples": [
+            {
+              "es": "Wir stellen das Bett ins Zimmer.",
+              "tr": {
+                "en": "We put the bed into the room.",
+                "es": "Ponemos la cama en el cuarto."
+              }
+            },
+            {
+              "es": "Ich lege den Teppich auf den Boden.",
+              "tr": {
+                "en": "I lay the carpet on the floor.",
+                "es": "Pongo la alfombra en el piso."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "State or movement?",
+        "es": "¿Estado o movimiento?"
+      },
+      "pairs": [
+        {
+          "a": "Die Lampe steht auf dem Tisch.",
+          "b": "Ich stelle die Lampe auf den Tisch.",
+          "note": {
+            "en": "Without an object, steht is a state (dative). With an object, stelle is an action (accusative). If you can ask Wo?, use the position verb; if you can ask Wohin? and there is an object, use the movement verb.",
+            "es": "Sin complemento, steht es un estado (dativo). Con complemento, stelle es una acción (acusativo). Si puedes preguntar Wo?, usa el verbo de posición; si puedes preguntar Wohin? y hay un complemento, usa el verbo de movimiento."
+          },
+          "examples": [
+            {
+              "es": "Die Flasche steht im Kühlschrank.",
+              "tr": {
+                "en": "The bottle is in the fridge.",
+                "es": "La botella está en el refrigerador."
+              }
+            },
+            {
+              "es": "Ich stelle die Flasche in den Kühlschrank.",
+              "tr": {
+                "en": "I put the bottle into the fridge.",
+                "es": "Pongo la botella en el refrigerador."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Das Buch liegt auf dem Tisch.",
+          "b": "Ich lege das Buch auf den Tisch.",
+          "note": {
+            "en": "The same with flat things. liegt answers wo?, lege answers wohin? and needs an object.",
+            "es": "Lo mismo con cosas planas. liegt responde a wo?, lege responde a wohin? y necesita un complemento."
+          },
+          "examples": [
+            {
+              "es": "Der Hund liegt unter dem Tisch.",
+              "tr": {
+                "en": "The dog is lying under the table.",
+                "es": "El perro está acostado debajo de la mesa."
+              }
+            },
+            {
+              "es": "Ich lege das Handy in die Tasche.",
+              "tr": {
+                "en": "I put the phone into the bag.",
+                "es": "Pongo el celular en la bolsa."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Das Kind sitzt auf dem Stuhl.",
+          "b": "Ich setze das Kind auf den Stuhl.",
+          "note": {
+            "en": "sitzen is the state, setzen is to seat somebody. For yourself, German says sich setzen.",
+            "es": "sitzen es el estado, setzen es sentar a alguien. Para uno mismo, el alemán dice sich setzen."
+          },
+          "examples": [
+            {
+              "es": "Anna sitzt im Garten.",
+              "tr": {
+                "en": "Anna is sitting in the garden.",
+                "es": "Anna está sentada en el jardín."
+              }
+            },
+            {
+              "es": "Anna setzt das Baby auf das Sofa.",
+              "tr": {
+                "en": "Anna puts the baby on the sofa.",
+                "es": "Anna sienta al bebé en el sofá."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the English verb put and the Spanish verb poner are not enough. You must choose by shape: upright things stehen or stellen, flat things liegen or legen, people sitzen or setzen. Do not mix the cases (not auf den Tisch with steht, not auf dem Tisch with stelle). Do not use sein as the helper (in Germany the Perfekt is hat gestanden, hat gelegen, hat gesessen). And do not use regular forms for the position verbs: gestanden, not gestehnt.",
+        "es": "Trampas clásicas: el verbo inglés put y el verbo español poner no bastan. Hay que elegir según la forma: cosas verticales stehen o stellen, cosas planas liegen o legen, personas sitzen o setzen. No mezcles los casos (no auf den Tisch con steht, no auf dem Tisch con stelle). No uses sein como auxiliar (en Alemania el Perfekt es hat gestanden, hat gelegen, hat gesessen). Y no uses formas regulares para los verbos de posición: gestanden, no gestehnt."
+      }
+    }
+  ],
+  "speak": {
+    "en": "German has pairs of verbs. «Stehen», «liegen» and «sitzen» say where something is, and take the dative: «Das Buch liegt auf dem Tisch». «Stellen», «legen» and «setzen» say that you put something somewhere, and take the accusative: «Ich lege das Buch auf den Tisch». Upright things stand, flat things lie, people sit. For yourself, use «sich setzen» and «sich legen»: «Ich setze mich auf das Sofa». The Perfekt is «hat gestanden», «hat gelegen», «hat gesessen», and «hat gestellt», «hat gelegt», «hat gesetzt».",
+    "es": "El alemán tiene parejas de verbos. «Stehen», «liegen» y «sitzen» dicen dónde está algo, y llevan dativo: «Das Buch liegt auf dem Tisch». «Stellen», «legen» y «setzen» dicen que pones algo en algún lugar, y llevan acusativo: «Ich lege das Buch auf den Tisch». Las cosas verticales están de pie, las planas están acostadas, las personas están sentadas. Para uno mismo, usa «sich setzen» y «sich legen»: «Ich setze mich auf das Sofa». El Perfekt es «hat gestanden», «hat gelegen», «hat gesessen», y «hat gestellt», «hat gelegt», «hat gesetzt»."
+  },
+  "items": [
+    {
+      "id": "positionsverben-c01",
+      "sentence": "Das Buch ___ auf dem Tisch.",
+      "options": [
+        "legt",
+        "liegt",
+        "stellt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The book is simply there, flat, with no object and no person acting: liegt. The dative dem Tisch fits a position.",
+        "es": "El libro simplemente está ahí, plano, sin complemento y sin nadie que actúe: liegt. El dativo dem Tisch encaja con una posición."
+      },
+      "wrong": {
+        "legt": {
+          "en": "legt needs somebody who puts something there and an object (Anna legt das Buch auf den Tisch). Here the book is just lying there.",
+          "es": "legt necesita a alguien que pone algo ahí y un complemento (Anna legt das Buch auf den Tisch). Aquí el libro simplemente está ahí."
+        },
+        "stellt": {
+          "en": "stellt is for putting something upright and needs an object. A book on the table is not put upright, and nobody acts here.",
+          "es": "stellt es para poner algo de pie y necesita un complemento. Un libro sobre la mesa no se pone de pie, y aquí nadie actúa."
+        }
+      },
+      "examples": [
+        "Der Hund liegt auf dem Sofa.",
+        "Die Zeitung liegt auf dem Tisch."
+      ],
+      "tr": {
+        "en": "The book is lying on the table.",
+        "es": "El libro está sobre la mesa."
+      }
+    },
+    {
+      "id": "positionsverben-f01",
+      "kind": "form",
+      "verb": "Position",
+      "person": "Flasche",
+      "answer": "stehen",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c02",
+      "sentence": "Ich ___ das Buch auf den Tisch.",
+      "options": [
+        "lege",
+        "liege",
+        "liegt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Here somebody (ich) puts an object (das Buch) somewhere, with the accusative den Tisch: lege.",
+        "es": "Aquí alguien (ich) pone un objeto (das Buch) en algún lugar, con el acusativo den Tisch: lege."
+      },
+      "wrong": {
+        "liege": {
+          "en": "liege is the verb of the position (Ich liege im Bett). It has no object, so it cannot go with das Buch.",
+          "es": "liege es el verbo de la posición (Ich liege im Bett). No tiene complemento, así que no puede ir con das Buch."
+        },
+        "liegt": {
+          "en": "liegt is a form for er, sie and es, and the position verb has no object. With ich and an object you need lege.",
+          "es": "liegt es una forma para er, sie y es, y el verbo de posición no tiene complemento. Con ich y un complemento necesitas lege."
+        }
+      },
+      "examples": [
+        "Ich lege das Handy auf den Tisch.",
+        "Anna legt das Buch auf das Sofa."
+      ],
+      "tr": {
+        "en": "I put the book on the table.",
+        "es": "Pongo el libro sobre la mesa."
+      }
+    },
+    {
+      "id": "positionsverben-f02",
+      "kind": "form",
+      "verb": "Bewegung",
+      "person": "Buch",
+      "answer": "legen",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c03",
+      "sentence": "Der Schrank ___ neben dem Fenster.",
+      "options": [
+        "liegt",
+        "stellt",
+        "steht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A cabinet is an upright piece of furniture, and it is just there: steht. neben dem Fenster is a position (dative).",
+        "es": "Un armario es un mueble vertical, y simplemente está ahí: steht. neben dem Fenster es una posición (dativo)."
+      },
+      "wrong": {
+        "liegt": {
+          "en": "liegt is for flat things like a book or a carpet. A cabinet stands upright.",
+          "es": "liegt es para cosas planas como un libro o una alfombra. Un armario está de pie."
+        },
+        "stellt": {
+          "en": "stellt needs somebody who puts the cabinet there. The sentence only says where it is.",
+          "es": "stellt necesita a alguien que ponga el armario ahí. La oración solo dice dónde está."
+        }
+      },
+      "examples": [
+        "Der Tisch steht in der Küche.",
+        "Das Bett steht im Schlafzimmer."
+      ],
+      "tr": {
+        "en": "The cabinet is next to the window.",
+        "es": "El armario está junto a la ventana."
+      }
+    },
+    {
+      "id": "positionsverben-f03",
+      "kind": "form",
+      "verb": "Partizip (Position)",
+      "person": "Kind",
+      "answer": "gesessen",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-w01",
+      "kind": "why",
+      "es": "Die Lampe steht auf dem Tisch.",
+      "target": "steht",
+      "tr": {
+        "en": "The lamp is on the table.",
+        "es": "La lámpara está sobre la mesa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "stehen: no object, the lamp is just there (position), so the dative dem Tisch",
+            "es": "stehen: sin complemento, la lámpara simplemente está ahí (posición), así que el dativo dem Tisch"
+          }
+        },
+        {
+          "text": {
+            "en": "stellen: steht is a form of stellen",
+            "es": "stellen: steht es una forma de stellen"
+          },
+          "wrong": {
+            "en": "stellen is for putting something somewhere and needs an object (Ich stelle die Lampe auf den Tisch). steht belongs to stehen, a state.",
+            "es": "stellen es para poner algo en algún lugar y necesita un complemento (Ich stelle die Lampe auf den Tisch). steht es de stehen, un estado."
+          }
+        },
+        {
+          "text": {
+            "en": "liegen: everything on a surface lies",
+            "es": "liegen: todo lo que está sobre una superficie está acostado"
+          },
+          "wrong": {
+            "en": "liegen is for flat things such as a book or a carpet. A lamp stands upright, so it is steht.",
+            "es": "liegen es para cosas planas como un libro o una alfombra. Una lámpara está de pie, así que es steht."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "positionsverben-c04",
+      "sentence": "Wir ___ den Tisch ans Fenster.",
+      "options": [
+        "stellen",
+        "stehen",
+        "sitzen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "We put an object (den Tisch) somewhere, with the accusative ans Fenster: stellen. An upright thing is stood up with stellen.",
+        "es": "Ponemos un objeto (den Tisch) en algún lugar, con el acusativo ans Fenster: stellen. Una cosa vertical se pone con stellen."
+      },
+      "wrong": {
+        "stehen": {
+          "en": "stehen has no object. Here den Tisch is an accusative object, so you need stellen.",
+          "es": "stehen no tiene complemento. Aquí den Tisch es un complemento en acusativo, así que necesitas stellen."
+        },
+        "sitzen": {
+          "en": "sitzen is for people and animals sitting. A table does not sit, and the verb has no object.",
+          "es": "sitzen es para personas y animales sentados. Una mesa no se sienta, y el verbo no tiene complemento."
+        }
+      },
+      "examples": [
+        "Ich stelle die Flasche auf den Tisch.",
+        "Paul stellt das Auto vor das Haus."
+      ],
+      "tr": {
+        "en": "We put the table by the window.",
+        "es": "Ponemos la mesa junto a la ventana."
+      }
+    },
+    {
+      "id": "positionsverben-f04",
+      "kind": "form",
+      "verb": "Position",
+      "person": "Buch",
+      "answer": "liegen",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c05",
+      "sentence": "Das Kind ___ auf dem Stuhl.",
+      "options": [
+        "setzt",
+        "sitzen",
+        "sitzt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The child is already sitting on the chair, a state with the dative dem Stuhl: sitzt.",
+        "es": "El niño ya está sentado en la silla, un estado con el dativo dem Stuhl: sitzt."
+      },
+      "wrong": {
+        "setzt": {
+          "en": "setzt means to seat somebody and needs an object (Anna setzt das Kind auf den Stuhl). Here nobody does that.",
+          "es": "setzt significa sentar a alguien y necesita un complemento (Anna setzt das Kind auf den Stuhl). Aquí nadie lo hace."
+        },
+        "sitzen": {
+          "en": "sitzen is the infinitive or the form for wir, sie and Sie. The subject here is one child, so it is sitzt.",
+          "es": "sitzen es el infinitivo o la forma para wir, sie y Sie. El sujeto aquí es un niño, así que es sitzt."
+        }
+      },
+      "examples": [
+        "Anna sitzt im Garten.",
+        "Die Katze sitzt auf dem Sofa."
+      ],
+      "tr": {
+        "en": "The child is sitting on the chair.",
+        "es": "El niño está sentado en la silla."
+      }
+    },
+    {
+      "id": "positionsverben-f05",
+      "kind": "form",
+      "verb": "Bewegung",
+      "person": "Kind",
+      "answer": "setzen",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c06",
+      "sentence": "Anna ___ das Kind auf den Stuhl.",
+      "options": [
+        "sitzt",
+        "setzt",
+        "sitzen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Anna puts the child on the chair: an object (das Kind) and the accusative den Stuhl. That is setzen: setzt.",
+        "es": "Anna pone al niño en la silla: un complemento (das Kind) y el acusativo den Stuhl. Eso es setzen: setzt."
+      },
+      "wrong": {
+        "sitzt": {
+          "en": "sitzt has no object. Here das Kind is an accusative object, so you need setzt.",
+          "es": "sitzt no tiene complemento. Aquí das Kind es un complemento en acusativo, así que necesitas setzt."
+        },
+        "sitzen": {
+          "en": "sitzen is the position verb and has no object. It is also not the form for one subject.",
+          "es": "sitzen es el verbo de posición y no tiene complemento. Tampoco es la forma para un solo sujeto."
+        }
+      },
+      "examples": [
+        "Ich setze das Baby auf das Sofa.",
+        "Paul setzt den Hund ins Auto."
+      ],
+      "tr": {
+        "en": "Anna puts the child on the chair.",
+        "es": "Anna sienta al niño en la silla."
+      }
+    },
+    {
+      "id": "positionsverben-f06",
+      "kind": "form",
+      "verb": "Partizip (Bewegung)",
+      "person": "Flasche",
+      "answer": "gestellt",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-w02",
+      "kind": "why",
+      "es": "Ich lege das Buch auf den Tisch.",
+      "target": "lege",
+      "tr": {
+        "en": "I put the book on the table.",
+        "es": "Pongo el libro sobre la mesa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "liegen: the book is lying there",
+            "es": "liegen: el libro está acostado ahí"
+          },
+          "wrong": {
+            "en": "liegen has no object (Das Buch liegt auf dem Tisch). Here ich puts the book there, so it is legen.",
+            "es": "liegen no tiene complemento (Das Buch liegt auf dem Tisch). Aquí ich pone el libro ahí, así que es legen."
+          }
+        },
+        {
+          "text": {
+            "en": "legen with the dative: auf dem Tisch",
+            "es": "legen con dativo: auf dem Tisch"
+          },
+          "wrong": {
+            "en": "The direction auf den Tisch answers wohin?, which takes the accusative and not the dative.",
+            "es": "La dirección auf den Tisch responde a wohin?, que lleva acusativo y no dativo."
+          }
+        },
+        {
+          "text": {
+            "en": "legen with the accusative: someone puts something somewhere (wohin?)",
+            "es": "legen con acusativo: alguien pone algo en algún lugar (wohin?)"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "positionsverben-c07",
+      "sentence": "Die Lampe steht auf ___ Tisch.",
+      "options": [
+        "den",
+        "dem",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "steht describes a position (wo?), so auf takes the dative. The masculine dative article is dem: auf dem Tisch.",
+        "es": "steht describe una posición (wo?), así que auf lleva dativo. El artículo masculino en dativo es dem: auf dem Tisch."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the accusative, for a movement. After steht the lamp is not moving, so the dative is needed.",
+          "es": "den es el acusativo, para un movimiento. Después de steht la lámpara no se mueve, así que se necesita el dativo."
+        },
+        "der": {
+          "en": "der is the dative of feminine nouns. Tisch is masculine, so the dative is dem.",
+          "es": "der es el dativo de los sustantivos femeninos. Tisch es masculino, así que el dativo es dem."
+        }
+      },
+      "examples": [
+        "Das Glas steht auf dem Tisch.",
+        "Das Auto steht vor dem Haus."
+      ],
+      "tr": {
+        "en": "The lamp is on the table.",
+        "es": "La lámpara está sobre la mesa."
+      }
+    },
+    {
+      "id": "positionsverben-f07",
+      "kind": "form",
+      "verb": "Position",
+      "person": "Kind",
+      "answer": "sitzen",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c08",
+      "sentence": "Ich stelle die Lampe auf ___ Tisch.",
+      "options": [
+        "den",
+        "dem",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "stelle is an action with a direction (wohin?), so auf takes the accusative. The masculine accusative article is den: auf den Tisch.",
+        "es": "stelle es una acción con una dirección (wohin?), así que auf lleva acusativo. El artículo masculino en acusativo es den: auf den Tisch."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem is the dative, for a state. After stelle the lamp is moved onto the table, so you need the accusative.",
+          "es": "dem es el dativo, para un estado. Después de stelle la lámpara se mueve a la mesa, así que necesitas el acusativo."
+        },
+        "der": {
+          "en": "der is the dative of feminine nouns. Tisch is masculine, and the direction needs the accusative den.",
+          "es": "der es el dativo de los sustantivos femeninos. Tisch es masculino, y la dirección necesita el acusativo den."
+        }
+      },
+      "examples": [
+        "Ich stelle das Glas auf den Tisch.",
+        "Wir stellen den Stuhl an den Tisch."
+      ],
+      "tr": {
+        "en": "I put the lamp on the table.",
+        "es": "Pongo la lámpara sobre la mesa."
+      }
+    },
+    {
+      "id": "positionsverben-f08",
+      "kind": "form",
+      "verb": "Partizip (Position)",
+      "person": "Flasche",
+      "answer": "gestanden",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c09",
+      "sentence": "Der Hund liegt unter ___ Sofa.",
+      "options": [
+        "das",
+        "den",
+        "dem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "liegt describes a position (wo?), so unter takes the dative. The neuter dative article is dem: unter dem Sofa.",
+        "es": "liegt describe una posición (wo?), así que unter lleva dativo. El artículo neutro en dativo es dem: unter dem Sofa."
+      },
+      "wrong": {
+        "das": {
+          "en": "das is the accusative, for a movement (unter das Sofa laufen). After liegt the dog is already there.",
+          "es": "das es el acusativo, para un movimiento (unter das Sofa laufen). Después de liegt el perro ya está allí."
+        },
+        "den": {
+          "en": "den is the masculine accusative or the dative plural. Sofa is neuter singular, so the dative is dem.",
+          "es": "den es el acusativo masculino o el dativo plural. Sofa es neutro singular, así que el dativo es dem."
+        }
+      },
+      "examples": [
+        "Die Katze liegt unter dem Tisch.",
+        "Der Ball liegt unter dem Bett."
+      ],
+      "tr": {
+        "en": "The dog is lying under the sofa.",
+        "es": "El perro está acostado debajo del sofá."
+      }
+    },
+    {
+      "id": "positionsverben-f09",
+      "kind": "form",
+      "verb": "Bewegung",
+      "person": "Flasche",
+      "answer": "stellen",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-w03",
+      "kind": "why",
+      "es": "Das Kind sitzt auf dem Stuhl.",
+      "target": "dem",
+      "tr": {
+        "en": "The child is sitting on the chair.",
+        "es": "El niño está sentado en la silla."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "auf den Stuhl would be correct, because the child is on the chair",
+            "es": "auf den Stuhl sería correcto, porque el niño está en la silla"
+          },
+          "wrong": {
+            "en": "den would describe a movement onto the chair (Das Kind setzt sich auf den Stuhl). Sitting is a state, so the dative.",
+            "es": "den describiría un movimiento hacia la silla (Das Kind setzt sich auf den Stuhl). Estar sentado es un estado, así que dativo."
+          }
+        },
+        {
+          "text": {
+            "en": "The child is already sitting there: a position (wo?), so the dative dem Stuhl",
+            "es": "El niño ya está sentado allí: una posición (wo?), así que el dativo dem Stuhl"
+          }
+        },
+        {
+          "text": {
+            "en": "sitzt comes from setzen, so the accusative",
+            "es": "sitzt viene de setzen, así que el acusativo"
+          },
+          "wrong": {
+            "en": "setzen means to put somebody down, and it needs an object. sitzen is the verb for the state, and it takes the dative.",
+            "es": "setzen significa sentar a alguien, y necesita un complemento. sitzen es el verbo del estado, y lleva dativo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "positionsverben-c10",
+      "sentence": "Wir legen das Handy in ___ Tasche.",
+      "options": [
+        "die",
+        "der",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "legen moves an object somewhere (wohin?), so in takes the accusative. The feminine accusative article is die: in die Tasche.",
+        "es": "legen mueve un objeto a algún lugar (wohin?), así que in lleva acusativo. El artículo femenino en acusativo es die: in die Tasche."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the dative of feminine nouns, for a state. After legen the phone goes into the bag, which is a direction.",
+          "es": "der es el dativo de los sustantivos femeninos, para un estado. Después de legen el celular va a la bolsa, que es una dirección."
+        },
+        "dem": {
+          "en": "dem is the dative for masculine and neuter nouns. Tasche is feminine, and the direction needs the accusative die.",
+          "es": "dem es el dativo para sustantivos masculinos y neutros. Tasche es femenino, y la dirección necesita el acusativo die."
+        }
+      },
+      "examples": [
+        "Ich lege das Buch in die Tasche.",
+        "Anna legt den Schlüssel in die Küche."
+      ],
+      "tr": {
+        "en": "We put the phone into the bag.",
+        "es": "Ponemos el celular en la bolsa."
+      }
+    },
+    {
+      "id": "positionsverben-f10",
+      "kind": "form",
+      "verb": "Partizip (Bewegung)",
+      "person": "Buch",
+      "answer": "gelegt",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c11",
+      "sentence": "Das Buch hat auf dem Tisch ___.",
+      "options": [
+        "gelegt",
+        "gelegen",
+        "gelagt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "liegen is irregular: the participle is gelegen. The sentence describes a position, so it is liegen, not legen.",
+        "es": "liegen es irregular: el participio es gelegen. La oración describe una posición, así que es liegen, no legen."
+      },
+      "wrong": {
+        "gelegt": {
+          "en": "gelegt is the participle of legen, to put something somewhere. Here the book just lay on the table.",
+          "es": "gelegt es el participio de legen, poner algo en algún lugar. Aquí el libro simplemente estaba sobre la mesa."
+        },
+        "gelagt": {
+          "en": "gelagt is not a German word. The participle of liegen is gelegen, and that of legen is gelegt.",
+          "es": "gelagt no es una palabra alemana. El participio de liegen es gelegen, y el de legen es gelegt."
+        }
+      },
+      "examples": [
+        "Der Hund hat unter dem Tisch gelegen.",
+        "Wir haben im Bett gelegen."
+      ],
+      "tr": {
+        "en": "The book was lying on the table.",
+        "es": "El libro estuvo sobre la mesa."
+      }
+    },
+    {
+      "id": "positionsverben-f11",
+      "kind": "form",
+      "verb": "Partizip (Position)",
+      "person": "Buch",
+      "answer": "gelegen",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c12",
+      "sentence": "Ich habe das Buch auf den Tisch ___.",
+      "options": [
+        "gelegen",
+        "gelagt",
+        "gelegt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "legen is regular: ge- + stem + -t gives gelegt. Somebody put the book there, an action with an object.",
+        "es": "legen es regular: ge- + raíz + -t da gelegt. Alguien puso el libro ahí, una acción con complemento."
+      },
+      "wrong": {
+        "gelegen": {
+          "en": "gelegen is the participle of liegen, the state. Here somebody did the action, so it is legen, gelegt.",
+          "es": "gelegen es el participio de liegen, el estado. Aquí alguien hizo la acción, así que es legen, gelegt."
+        },
+        "gelagt": {
+          "en": "gelagt is not a German word. The regular participle of legen is gelegt.",
+          "es": "gelagt no es una palabra alemana. El participio regular de legen es gelegt."
+        }
+      },
+      "examples": [
+        "Anna hat das Handy auf den Tisch gelegt.",
+        "Ich habe die Tasche aufs Sofa gelegt."
+      ],
+      "tr": {
+        "en": "I have put the book on the table.",
+        "es": "Puse el libro sobre la mesa."
+      }
+    },
+    {
+      "id": "positionsverben-f12",
+      "kind": "form",
+      "verb": "Partizip (Bewegung)",
+      "person": "Kind",
+      "answer": "gesetzt",
+      "table": "positionsverben"
+    },
+    {
+      "id": "positionsverben-c13",
+      "sentence": "Die Flasche hat im Schrank ___.",
+      "options": [
+        "gestanden",
+        "gestellt",
+        "gestehnt"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "stehen is irregular: the participle is gestanden. The bottle just was in the cabinet, a state, so it is stehen.",
+        "es": "stehen es irregular: el participio es gestanden. La botella simplemente estaba en el armario, un estado, así que es stehen."
+      },
+      "wrong": {
+        "gestellt": {
+          "en": "gestellt is the participle of stellen, to put something upright. Here nobody acts, so it is stehen.",
+          "es": "gestellt es el participio de stellen, poner algo de pie. Aquí nadie actúa, así que es stehen."
+        },
+        "gestehnt": {
+          "en": "gestehnt applies the regular pattern to stehen. stehen is irregular and the stem changes: the participle is gestanden.",
+          "es": "gestehnt aplica el patrón regular a stehen. stehen es irregular y la raíz cambia: el participio es gestanden."
+        }
+      },
+      "examples": [
+        "Das Auto hat vor dem Haus gestanden.",
+        "Der Tisch hat im Zimmer gestanden."
+      ],
+      "tr": {
+        "en": "The bottle stood in the cabinet.",
+        "es": "La botella estuvo en el armario."
+      }
+    },
+    {
+      "id": "positionsverben-c14",
+      "sentence": "Ich setze ___ auf das Sofa.",
+      "options": [
+        "ich",
+        "mich",
+        "mir"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sich setzen means to sit down. The person who sits down is the object, so the pronoun is mich, with the accusative auf das Sofa.",
+        "es": "sich setzen significa sentarse. La persona que se sienta es el complemento, así que el pronombre es mich, con el acusativo auf das Sofa."
+      },
+      "wrong": {
+        "ich": {
+          "en": "ich is the subject and is already there at the start. The thing that sits down is also me, as an object: mich.",
+          "es": "ich es el sujeto y ya está al inicio. Lo que se sienta también soy yo, como complemento: mich."
+        },
+        "mir": {
+          "en": "mir is the dative. In sich setzen the pronoun is in the accusative: mich.",
+          "es": "mir es el dativo. En sich setzen el pronombre va en acusativo: mich."
+        }
+      },
+      "examples": [
+        "Ich lege mich ins Bett.",
+        "Setz dich auf den Stuhl!"
+      ],
+      "tr": {
+        "en": "I sit down on the sofa.",
+        "es": "Me siento en el sofá."
+      }
+    },
+    {
+      "id": "positionsverben-w04",
+      "kind": "why",
+      "es": "Ich habe das Buch auf den Tisch gelegt.",
+      "target": "gelegt",
+      "tr": {
+        "en": "I have put the book on the table.",
+        "es": "Puse el libro sobre la mesa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "gelegt: legen is regular, so ge- + stem + -t, with haben",
+            "es": "gelegt: legen es regular, así que ge- + raíz + -t, con haben"
+          }
+        },
+        {
+          "text": {
+            "en": "gelegen: that is the participle of legen",
+            "es": "gelegen: ese es el participio de legen"
+          },
+          "wrong": {
+            "en": "gelegen belongs to liegen (Das Buch hat auf dem Tisch gelegen). legen forms gelegt.",
+            "es": "gelegen es de liegen (Das Buch hat auf dem Tisch gelegen). legen forma gelegt."
+          }
+        },
+        {
+          "text": {
+            "en": "bin gelegt: the book moves, so the helper is sein",
+            "es": "bin gelegt: el libro se mueve, así que el auxiliar es sein"
+          },
+          "wrong": {
+            "en": "Verbs of movement without an object take sein, but legen has an object, das Buch, so it takes haben.",
+            "es": "Los verbos de movimiento sin complemento llevan sein, pero legen tiene un complemento, das Buch, así que lleva haben."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

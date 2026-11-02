@@ -1,0 +1,1062 @@
+{
+  "schema": 2,
+  "topic": "wechselpraepositionen",
+  "level": "A2",
+  "title": {
+    "en": "Two-way prepositions: wo or wohin?",
+    "es": "Preposiciones mixtas: ¿wo o wohin?"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Nine prepositions can take the dative or the accusative: an, auf, hinter, in, neben, über, unter, vor, zwischen. The question decides. Wo? (where is it?) takes the dative: Das Buch ist auf dem Tisch. Wohin? (where to?) takes the accusative: Ich gehe in die Küche. English in and into, and Spanish en and a, hide the difference; Hungarian marks it with the endings -ban/-ben (hol) and -ba/-be (hová). The contractions am, im, ans, ins and aufs are very common.",
+        "es": "Nueve preposiciones pueden llevar dativo o acusativo: an, auf, hinter, in, neben, über, unter, vor, zwischen. La pregunta decide. Wo? («¿dónde está?») lleva dativo: Das Buch ist auf dem Tisch. Wohin? («¿adónde?») lleva acusativo: Ich gehe in die Küche. El inglés in e into, y el español en y a, ocultan la diferencia; el húngaro la marca con las terminaciones -ban/-ben (hol) y -ba/-be (hová). Las contracciones am, im, ans, ins y aufs son muy frecuentes."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "wechselpraep",
+      "title": {
+        "en": "The article after the two-way prepositions",
+        "es": "El artículo después de las preposiciones mixtas"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "wo? Dativ",
+          "es": "wo? Dativ"
+        },
+        {
+          "en": "wohin? Akkusativ",
+          "es": "wohin? Akkusativ"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "dem",
+          "den"
+        ],
+        [
+          "feminin",
+          "der",
+          "die"
+        ],
+        [
+          "neutral",
+          "dem",
+          "das"
+        ],
+        [
+          "Plural",
+          "den",
+          "die"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "wo? or wohin?",
+        "es": "¿wo o wohin?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "wo? names a place where someone is or something happens, with no change of place: the dative. A plural noun also gets -n in the dative.",
+            "es": "wo? nombra un lugar donde alguien está o algo ocurre, sin cambio de lugar: el dativo. Un sustantivo plural recibe además -n en dativo."
+          },
+          "examples": [
+            {
+              "es": "Das Buch ist auf dem Tisch.",
+              "tr": {
+                "en": "The book is on the table.",
+                "es": "El libro está sobre la mesa."
+              }
+            },
+            {
+              "es": "Die Kinder spielen vor dem Haus.",
+              "tr": {
+                "en": "The children are playing in front of the house.",
+                "es": "Los niños juegan delante de la casa."
+              }
+            },
+            {
+              "es": "Der Ball ist zwischen den Bäumen.",
+              "tr": {
+                "en": "The ball is between the trees.",
+                "es": "La pelota está entre los árboles."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "wohin? names the goal of a movement: the accusative. Only masculine nouns change (dem becomes den); feminine, neuter and plural stay like the nominative.",
+            "es": "wohin? nombra la meta de un movimiento: el acusativo. Solo cambian los sustantivos masculinos (dem pasa a den); el femenino, el neutro y el plural quedan como el nominativo."
+          },
+          "examples": [
+            {
+              "es": "Ich gehe in die Küche.",
+              "tr": {
+                "en": "I am going into the kitchen.",
+                "es": "Voy a la cocina."
+              }
+            },
+            {
+              "es": "Wir fahren an den See.",
+              "tr": {
+                "en": "We are going to the lake.",
+                "es": "Vamos al lago."
+              }
+            },
+            {
+              "es": "Der Hund läuft zwischen die Bäume.",
+              "tr": {
+                "en": "The dog runs in between the trees.",
+                "es": "El perro corre entre los árboles."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "wechselpraep-beispiele",
+      "title": {
+        "en": "The nine prepositions",
+        "es": "Las nueve preposiciones"
+      },
+      "header": [
+        {
+          "en": "Präposition",
+          "es": "Präposition"
+        },
+        {
+          "en": "wo?",
+          "es": "wo?"
+        },
+        {
+          "en": "wohin?",
+          "es": "wohin?"
+        }
+      ],
+      "rows": [
+        [
+          "an",
+          "Das Bild ist an der Wand.",
+          "Ich gehe ans Fenster."
+        ],
+        [
+          "auf",
+          "Das Buch ist auf dem Tisch.",
+          "Ich gehe auf den Markt."
+        ],
+        [
+          "hinter",
+          "Der Hund ist hinter dem Haus.",
+          "Der Hund läuft hinter das Haus."
+        ],
+        [
+          "in",
+          "Wir sind im Park.",
+          "Wir gehen in den Park."
+        ],
+        [
+          "neben",
+          "Die Bank ist neben dem Bahnhof.",
+          "Ich bringe den Stuhl neben das Sofa."
+        ],
+        [
+          "über",
+          "Die Lampe ist über dem Tisch.",
+          "Wir gehen über die Brücke."
+        ],
+        [
+          "unter",
+          "Die Katze ist unter dem Tisch.",
+          "Die Katze läuft unter den Tisch."
+        ],
+        [
+          "vor",
+          "Das Auto ist vor dem Haus.",
+          "Wir fahren vor das Hotel."
+        ],
+        [
+          "zwischen",
+          "Der Ball ist zwischen den Bäumen.",
+          "Der Hund läuft zwischen die Bäume."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "kurzformen-wechsel",
+      "title": {
+        "en": "Short forms",
+        "es": "Formas cortas"
+      },
+      "header": [
+        {
+          "en": "Long form",
+          "es": "Forma larga"
+        },
+        {
+          "en": "Kurzform",
+          "es": "Kurzform"
+        }
+      ],
+      "rows": [
+        [
+          "an dem",
+          "am"
+        ],
+        [
+          "in dem",
+          "im"
+        ],
+        [
+          "an das",
+          "ans"
+        ],
+        [
+          "in das",
+          "ins"
+        ],
+        [
+          "auf das",
+          "aufs"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Fixed expressions",
+        "es": "Expresiones fijas"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "Some expressions are always used with the same pair: go to a place (accusative) and be at a place (dative). You will meet them every day.",
+            "es": "Algunas expresiones se usan siempre con la misma pareja: ir a un lugar (acusativo) y estar en un lugar (dativo). Las encontrarás todos los días."
+          },
+          "examples": [
+            {
+              "es": "Die Kinder gehen in die Schule.",
+              "tr": {
+                "en": "The children go to school.",
+                "es": "Los niños van a la escuela."
+              }
+            },
+            {
+              "es": "Die Kinder sind in der Schule.",
+              "tr": {
+                "en": "The children are at school.",
+                "es": "Los niños están en la escuela."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The same pairs: ins Bett gehen and im Bett sein, in die Stadt fahren and in der Stadt sein, ins Kino gehen and im Kino sein.",
+            "es": "Los mismos pares: ins Bett gehen e im Bett sein, in die Stadt fahren e in der Stadt sein, ins Kino gehen e im Kino sein."
+          },
+          "examples": [
+            {
+              "es": "Ich gehe um zehn Uhr ins Bett.",
+              "tr": {
+                "en": "I go to bed at ten.",
+                "es": "Me voy a la cama a las diez."
+              }
+            },
+            {
+              "es": "Anna ist heute in der Stadt.",
+              "tr": {
+                "en": "Anna is in town today.",
+                "es": "Hoy Anna está en la ciudad."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Position or direction?",
+        "es": "¿Posición o dirección?"
+      },
+      "pairs": [
+        {
+          "a": "Ich bin im Park.",
+          "b": "Ich gehe in den Park.",
+          "note": {
+            "en": "The same preposition in, two different cases. Im Park (in dem Park) says where you are; in den Park says where you are going. Ask wo? or wohin? first.",
+            "es": "La misma preposición in, dos casos distintos. Im Park (in dem Park) dice dónde estás; in den Park dice adónde vas. Pregunta primero wo? o wohin?."
+          },
+          "examples": [
+            {
+              "es": "Wir sind im Garten.",
+              "tr": {
+                "en": "We are in the garden.",
+                "es": "Estamos en el jardín."
+              }
+            },
+            {
+              "es": "Wir gehen in den Garten.",
+              "tr": {
+                "en": "We are going into the garden.",
+                "es": "Vamos al jardín."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Die Katze schläft unter dem Tisch.",
+          "b": "Die Katze läuft unter den Tisch.",
+          "note": {
+            "en": "Dative for the place where the cat sleeps, accusative for the goal of its run. With feminine, neuter and plural nouns only the question helps, because dative and accusative differ only in the masculine, so check the article.",
+            "es": "Dativo para el lugar donde duerme el gato, acusativo para la meta de su carrera. Con sustantivos femeninos, neutros y plurales solo ayuda la pregunta; fíjate en el artículo."
+          },
+          "examples": [
+            {
+              "es": "Das Kind ist hinter dem Haus.",
+              "tr": {
+                "en": "The child is behind the house.",
+                "es": "El niño está detrás de la casa."
+              }
+            },
+            {
+              "es": "Das Kind läuft hinter das Haus.",
+              "tr": {
+                "en": "The child runs behind the house.",
+                "es": "El niño corre detrás de la casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not use one case for everything (not Ich gehe in dem Park, not Ich bin in den Park). Ask wo? or wohin? before you choose. With a masculine noun the difference is visible (dem Tisch, den Tisch), with feminine and neuter nouns look at der or die, dem or das. Do not forget the contractions am, im, ans, ins. The verbs stehen and stellen, liegen and legen, sitzen and setzen follow in the next lesson. And note that in die Schule gehen is going to school as a pupil, whereas nach der Schule means after school.",
+        "es": "Trampas clásicas: no uses un solo caso para todo (no Ich gehe in dem Park, no Ich bin in den Park). Pregunta wo? o wohin? antes de elegir. Con un sustantivo masculino la diferencia se ve (dem Tisch, den Tisch), con femeninos y neutros fíjate en der o die, dem o das. No olvides las contracciones am, im, ans, ins. Los verbos stehen y stellen, liegen y legen, sitzen y setzen vienen en la siguiente lección. Y ten en cuenta que in die Schule gehen es ir a la escuela como alumno, mientras que nach der Schule significa «después de la escuela»."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Nine prepositions can take the dative or the accusative: «an», «auf», «hinter», «in», «neben», «über», «unter», «vor», «zwischen». Ask «wo» for the dative: «Das Buch ist auf dem Tisch». Ask «wohin» for the accusative: «Ich gehe in die Küche». Only masculine nouns change between the two: «dem Tisch», «den Tisch». The contractions are «am», «im», «ans», «ins». Compare «Ich bin im Park» and «Ich gehe in den Park». And remember: «Die Kinder sind in der Schule», but «Die Kinder gehen in die Schule».",
+    "es": "Nueve preposiciones pueden llevar dativo o acusativo: «an», «auf», «hinter», «in», «neben», «über», «unter», «vor», «zwischen». Pregunta «wo» para el dativo: «Das Buch ist auf dem Tisch». Pregunta «wohin» para el acusativo: «Ich gehe in die Küche». Solo los sustantivos masculinos cambian entre los dos: «dem Tisch», «den Tisch». Las contracciones son «am», «im», «ans», «ins». Compara «Ich bin im Park» e «Ich gehe in den Park». Y recuerda: «Die Kinder sind in der Schule», pero «Die Kinder gehen in die Schule»."
+  },
+  "items": [
+    {
+      "id": "wechselpraepositionen-c01",
+      "sentence": "Wo ist das Buch? Auf ___ Tisch.",
+      "options": [
+        "den",
+        "dem",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The question is wo? (position), so auf takes the dative. The masculine dative article is dem: auf dem Tisch.",
+        "es": "La pregunta es wo? (posición), así que auf lleva dativo. El artículo masculino en dativo es dem: auf dem Tisch."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the accusative, the case for a movement (wohin). Nothing moves here, the book simply lies there.",
+          "es": "den es el acusativo, el caso del movimiento (wohin). Aquí nada se mueve, el libro simplemente está ahí."
+        },
+        "der": {
+          "en": "der is the dative of feminine nouns. Tisch is masculine, so the dative is dem.",
+          "es": "der es el dativo de los sustantivos femeninos. Tisch es masculino, así que el dativo es dem."
+        }
+      },
+      "examples": [
+        "Die Lampe ist über dem Tisch.",
+        "Das Handy ist auf dem Sofa."
+      ],
+      "tr": {
+        "en": "Where is the book? On the table.",
+        "es": "¿Dónde está el libro? Sobre la mesa."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f01",
+      "kind": "form",
+      "verb": "wo? Dativ",
+      "person": "maskulin",
+      "answer": "dem",
+      "table": "wechselpraep"
+    },
+    {
+      "id": "wechselpraepositionen-c02",
+      "sentence": "Wohin gehst du? In ___ Küche.",
+      "options": [
+        "die",
+        "der",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The question is wohin? (direction), so in takes the accusative. The feminine accusative article is die: in die Küche.",
+        "es": "La pregunta es wohin? (dirección), así que in lleva acusativo. El artículo femenino en acusativo es die: in die Küche."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the dative of feminine nouns, the case for a position (wo). Going into the kitchen is a direction.",
+          "es": "der es el dativo de los sustantivos femeninos, el caso de la posición (wo). Ir a la cocina es una dirección."
+        },
+        "dem": {
+          "en": "dem is the dative for masculine and neuter nouns. Küche is feminine, and the direction needs the accusative die.",
+          "es": "dem es el dativo para sustantivos masculinos y neutros. Küche es femenino, y la dirección necesita el acusativo die."
+        }
+      },
+      "examples": [
+        "Ich gehe in die Stadt.",
+        "Wir fahren in die Schule."
+      ],
+      "tr": {
+        "en": "Where are you going? Into the kitchen.",
+        "es": "¿Adónde vas? A la cocina."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f02",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "an dem",
+      "answer": "am",
+      "table": "kurzformen-wechsel"
+    },
+    {
+      "id": "wechselpraepositionen-c03",
+      "sentence": "Wo schläft die Katze? Auf ___ Sofa.",
+      "options": [
+        "das",
+        "den",
+        "dem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The question is wo? (position), so auf takes the dative. The neuter dative article is dem: auf dem Sofa.",
+        "es": "La pregunta es wo? (posición), así que auf lleva dativo. El artículo neutro en dativo es dem: auf dem Sofa."
+      },
+      "wrong": {
+        "das": {
+          "en": "das is the accusative of neuter nouns, used for a movement (wohin). The cat is not moving, it sleeps in one place.",
+          "es": "das es el acusativo de los sustantivos neutros, que se usa para un movimiento (wohin). El gato no se mueve, duerme en un solo lugar."
+        },
+        "den": {
+          "en": "den is the masculine accusative or the dative plural. Sofa is neuter singular, so the dative is dem.",
+          "es": "den es el acusativo masculino o el dativo plural. Sofa es neutro singular, así que el dativo es dem."
+        }
+      },
+      "examples": [
+        "Der Hund ist auf dem Sofa.",
+        "Das Bild ist auf dem Sofa."
+      ],
+      "tr": {
+        "en": "Where does the cat sleep? On the sofa.",
+        "es": "¿Dónde duerme el gato? Sobre el sofá."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f03",
+      "kind": "form",
+      "verb": "wohin? Akkusativ",
+      "person": "maskulin",
+      "answer": "den",
+      "table": "wechselpraep"
+    },
+    {
+      "id": "wechselpraepositionen-w01",
+      "kind": "why",
+      "es": "Das Buch ist auf dem Tisch.",
+      "target": "dem",
+      "tr": {
+        "en": "The book is on the table.",
+        "es": "El libro está sobre la mesa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wo? asks for the place, so the dative: dem Tisch",
+            "es": "wo? pregunta por el lugar, así que el dativo: dem Tisch"
+          }
+        },
+        {
+          "text": {
+            "en": "Tisch is masculine, so it is always den",
+            "es": "Tisch es masculino, así que siempre es den"
+          },
+          "wrong": {
+            "en": "den is the masculine accusative. It would be right for a movement (Ich bringe das Buch auf den Tisch), but here nothing moves.",
+            "es": "den es el acusativo masculino. Sería correcto para un movimiento (Ich bringe das Buch auf den Tisch), pero aquí nada se mueve."
+          }
+        },
+        {
+          "text": {
+            "en": "auf always takes the accusative",
+            "es": "auf siempre lleva acusativo"
+          },
+          "wrong": {
+            "en": "auf is a two-way preposition: the accusative for a direction, the dative for a position.",
+            "es": "auf es una preposición mixta: acusativo para una dirección, dativo para una posición."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "wechselpraepositionen-c04",
+      "sentence": "Wohin fahrt ihr? An ___ See.",
+      "options": [
+        "dem",
+        "den",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The question is wohin? (direction), so an takes the accusative. The masculine accusative article is den: an den See.",
+        "es": "La pregunta es wohin? (dirección), así que an lleva acusativo. El artículo masculino en acusativo es den: an den See."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem is the dative, the case for a position (wo). Driving to the lake is a direction.",
+          "es": "dem es el dativo, el caso de la posición (wo). Ir en carro al lago es una dirección."
+        },
+        "der": {
+          "en": "der is the dative of feminine nouns. See is masculine here (der See), and the direction needs the accusative den.",
+          "es": "der es el dativo de los sustantivos femeninos. See es aquí masculino (der See), y la dirección necesita el acusativo den."
+        }
+      },
+      "examples": [
+        "Wir fahren an den Strand.",
+        "Ich gehe an den Tisch."
+      ],
+      "tr": {
+        "en": "Where are you driving? To the lake.",
+        "es": "¿Adónde van? Al lago."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f04",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "in dem",
+      "answer": "im",
+      "table": "kurzformen-wechsel"
+    },
+    {
+      "id": "wechselpraepositionen-c05",
+      "sentence": "Wo ist Paul? ___ Park.",
+      "options": [
+        "Ins",
+        "In",
+        "Im"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The question is wo? (position): in dem Park becomes the short form Im Park.",
+        "es": "La pregunta es wo? (posición): in dem Park se convierte en la forma corta Im Park."
+      },
+      "wrong": {
+        "Ins": {
+          "en": "Ins is in das, the accusative for a direction. Park is masculine, and Paul is simply there, so this does not fit.",
+          "es": "Ins es in das, el acusativo para una dirección. Park es masculino, y Paul simplemente está allí, así que no encaja."
+        },
+        "In": {
+          "en": "In alone lacks the article: you need in dem, shortened to Im.",
+          "es": "In solo no tiene el artículo: necesitas in dem, acortado a Im."
+        }
+      },
+      "examples": [
+        "Wir sind im Garten.",
+        "Anna ist im Büro."
+      ],
+      "tr": {
+        "en": "Where is Paul? In the park.",
+        "es": "¿Dónde está Paul? En el parque."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f05",
+      "kind": "form",
+      "verb": "wo? Dativ",
+      "person": "feminin",
+      "answer": "der",
+      "table": "wechselpraep"
+    },
+    {
+      "id": "wechselpraepositionen-c06",
+      "sentence": "Wohin geht ihr? ___ Kino.",
+      "options": [
+        "Im",
+        "Ins",
+        "Am"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The question is wohin? (direction): in das becomes the short form Ins Kino.",
+        "es": "La pregunta es wohin? (dirección): in das se convierte en la forma corta Ins Kino."
+      },
+      "wrong": {
+        "Im": {
+          "en": "Im is in dem, the dative for a position (wo). Going to the cinema is a direction, so you need ins.",
+          "es": "Im es in dem, el dativo para una posición (wo). Ir al cine es una dirección, así que necesitas ins."
+        },
+        "Am": {
+          "en": "Am is an dem, which means at the edge of something. Going to the cinema is in das, ins Kino.",
+          "es": "Am es an dem, que significa en el borde de algo. Ir al cine es in das, ins Kino."
+        }
+      },
+      "examples": [
+        "Wir gehen ins Café.",
+        "Ich fahre ins Büro."
+      ],
+      "tr": {
+        "en": "Where are you going? To the movies.",
+        "es": "¿Adónde van? Al cine."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f06",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "an das",
+      "answer": "ans",
+      "table": "kurzformen-wechsel"
+    },
+    {
+      "id": "wechselpraepositionen-w02",
+      "kind": "why",
+      "es": "Ich gehe in die Küche.",
+      "target": "die",
+      "tr": {
+        "en": "I am going into the kitchen.",
+        "es": "Voy a la cocina."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "der: Küche is feminine, and the dative of feminine nouns is der",
+            "es": "der: Küche es femenino, y el dativo de los sustantivos femeninos es der"
+          },
+          "wrong": {
+            "en": "der Küche would say that you are already in the kitchen. Going into it is a direction, and a direction takes the accusative, die.",
+            "es": "der Küche diría que ya estás en la cocina. Ir hacia ella es una dirección, y una dirección lleva acusativo, die."
+          }
+        },
+        {
+          "text": {
+            "en": "die: wohin? asks for the direction, so the accusative",
+            "es": "die: wohin? pregunta por la dirección, así que el acusativo"
+          }
+        },
+        {
+          "text": {
+            "en": "der, because in always takes the dative",
+            "es": "der, porque in siempre lleva dativo"
+          },
+          "wrong": {
+            "en": "in is a two-way preposition. With a direction it takes the accusative: in die Küche gehen.",
+            "es": "in es una preposición mixta. Con una dirección lleva acusativo: in die Küche gehen."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "wechselpraepositionen-c07",
+      "sentence": "___ ist die Katze? Unter dem Tisch.",
+      "options": [
+        "Wo",
+        "Wohin",
+        "Woher"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The answer unter dem Tisch is in the dative, so the question is wo? (where is the cat?).",
+        "es": "La respuesta unter dem Tisch está en dativo, así que la pregunta es wo? (¿dónde está el gato?)."
+      },
+      "wrong": {
+        "Wohin": {
+          "en": "Wohin asks for a goal and goes with the accusative (unter den Tisch). The answer here is dative.",
+          "es": "Wohin pregunta por una meta y va con acusativo (unter den Tisch). La respuesta aquí está en dativo."
+        },
+        "Woher": {
+          "en": "Woher asks for the origin, answered with aus or von. The answer unter dem Tisch names a place.",
+          "es": "Woher pregunta por el origen, y se responde con aus o von. La respuesta unter dem Tisch nombra un lugar."
+        }
+      },
+      "examples": [
+        "Wo ist der Hund? Im Garten.",
+        "Wo seid ihr? Vor dem Haus."
+      ],
+      "tr": {
+        "en": "Where is the cat? Under the table.",
+        "es": "¿Dónde está el gato? Debajo de la mesa."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f07",
+      "kind": "form",
+      "verb": "wohin? Akkusativ",
+      "person": "feminin",
+      "answer": "die",
+      "table": "wechselpraep"
+    },
+    {
+      "id": "wechselpraepositionen-c08",
+      "sentence": "___ läuft der Hund? In den Garten.",
+      "options": [
+        "Wo",
+        "Woher",
+        "Wohin"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The answer in den Garten is in the accusative and names a goal, so the question is wohin? (where to?).",
+        "es": "La respuesta in den Garten está en acusativo y nombra una meta, así que la pregunta es wohin? (¿adónde?)."
+      },
+      "wrong": {
+        "Wo": {
+          "en": "Wo asks for a position and goes with the dative (im Garten). The accusative den Garten names a goal.",
+          "es": "Wo pregunta por una posición y va con dativo (im Garten). El acusativo den Garten nombra una meta."
+        },
+        "Woher": {
+          "en": "Woher asks where something comes from. The answer in den Garten says where the dog is running to.",
+          "es": "Woher pregunta de dónde viene algo. La respuesta in den Garten dice hacia dónde corre el perro."
+        }
+      },
+      "examples": [
+        "Wohin fährt Anna? In die Stadt.",
+        "Wohin gehen die Kinder? In den Park."
+      ],
+      "tr": {
+        "en": "Where is the dog running to? Into the garden.",
+        "es": "¿Adónde corre el perro? Al jardín."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f08",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "in das",
+      "answer": "ins",
+      "table": "kurzformen-wechsel"
+    },
+    {
+      "id": "wechselpraepositionen-c09",
+      "sentence": "Wohin läuft das Kind? Auf ___ Straße.",
+      "options": [
+        "die",
+        "der",
+        "den"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The question is wohin? (direction), so auf takes the accusative. The feminine accusative article is die: auf die Straße.",
+        "es": "La pregunta es wohin? (dirección), así que auf lleva acusativo. El artículo femenino en acusativo es die: auf die Straße."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the dative, the case for a position (wo). Running onto the street is a direction.",
+          "es": "der es el dativo, el caso de la posición (wo). Correr a la calle es una dirección."
+        },
+        "den": {
+          "en": "den is the masculine accusative or the dative plural. Straße is feminine, so the accusative is die.",
+          "es": "den es el acusativo masculino o el dativo plural. Straße es femenino, así que el acusativo es die."
+        }
+      },
+      "examples": [
+        "Der Hund läuft auf die Straße.",
+        "Ich gehe auf die Bank."
+      ],
+      "tr": {
+        "en": "Where is the child running to? Onto the street.",
+        "es": "¿Adónde corre el niño? A la calle."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f09",
+      "kind": "form",
+      "verb": "wo? Dativ",
+      "person": "neutral",
+      "answer": "dem",
+      "table": "wechselpraep"
+    },
+    {
+      "id": "wechselpraepositionen-w03",
+      "kind": "why",
+      "es": "Wir gehen ins Kino.",
+      "target": "ins",
+      "tr": {
+        "en": "We are going to the movies.",
+        "es": "Vamos al cine."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ins is in dem and says where we are",
+            "es": "ins es in dem y dice dónde estamos"
+          },
+          "wrong": {
+            "en": "in dem becomes im. ins is the short form of in das, the accusative that goes with a direction.",
+            "es": "in dem se convierte en im. ins es la forma corta de in das, el acusativo que va con una dirección."
+          }
+        },
+        {
+          "text": {
+            "en": "ins is just another word for in",
+            "es": "ins es simplemente otra palabra para in"
+          },
+          "wrong": {
+            "en": "ins is a contraction: in plus das. Compare im, which is in plus dem for a position.",
+            "es": "ins es una contracción: in más das. Compara con im, que es in más dem para una posición."
+          }
+        },
+        {
+          "text": {
+            "en": "ins is in das: a direction (accusative), and Kino is neuter",
+            "es": "ins es in das: una dirección (acusativo), y Kino es neutro"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "wechselpraepositionen-c10",
+      "sentence": "Wo spielen die Kinder? Vor ___ Haus.",
+      "options": [
+        "dem",
+        "das",
+        "den"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The question is wo? (position), so vor takes the dative. The neuter dative article is dem: vor dem Haus.",
+        "es": "La pregunta es wo? (posición), así que vor lleva dativo. El artículo neutro en dativo es dem: vor dem Haus."
+      },
+      "wrong": {
+        "das": {
+          "en": "das is the accusative, used for a direction (wohin). The children play in one place, so you need the dative dem.",
+          "es": "das es el acusativo, que se usa para una dirección (wohin). Los niños juegan en un solo lugar, así que necesitas el dativo dem."
+        },
+        "den": {
+          "en": "den is the dative plural or the masculine accusative. Haus is neuter singular, so the dative is dem.",
+          "es": "den es el dativo plural o el acusativo masculino. Haus es neutro singular, así que el dativo es dem."
+        }
+      },
+      "examples": [
+        "Das Auto ist vor dem Haus.",
+        "Wir warten vor dem Bahnhof."
+      ],
+      "tr": {
+        "en": "Where are the children playing? In front of the house.",
+        "es": "¿Dónde juegan los niños? Delante de la casa."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f10",
+      "kind": "form",
+      "verb": "Kurzform",
+      "person": "auf das",
+      "answer": "aufs",
+      "table": "kurzformen-wechsel"
+    },
+    {
+      "id": "wechselpraepositionen-c11",
+      "sentence": "Wohin bringst du den Stuhl? ___ Fenster.",
+      "options": [
+        "Am",
+        "Ans",
+        "An"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The question is wohin? (direction): an das becomes the short form Ans Fenster.",
+        "es": "La pregunta es wohin? (dirección): an das se convierte en la forma corta Ans Fenster."
+      },
+      "wrong": {
+        "Am": {
+          "en": "Am is an dem, the dative for a position (wo). Bringing the chair somewhere is a direction, so you need ans.",
+          "es": "Am es an dem, el dativo para una posición (wo). Llevar la silla a algún lugar es una dirección, así que necesitas ans."
+        },
+        "An": {
+          "en": "An alone lacks the article: you need an das, shortened to Ans.",
+          "es": "An solo no tiene el artículo: necesitas an das, acortado a Ans."
+        }
+      },
+      "examples": [
+        "Ich gehe ans Fenster.",
+        "Wir fahren ans Meer."
+      ],
+      "tr": {
+        "en": "Where are you taking the chair? To the window.",
+        "es": "¿Adónde llevas la silla? A la ventana."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f11",
+      "kind": "form",
+      "verb": "wohin? Akkusativ",
+      "person": "neutral",
+      "answer": "das",
+      "table": "wechselpraep"
+    },
+    {
+      "id": "wechselpraepositionen-c12",
+      "sentence": "Wo sind die Kinder? In ___ Schule.",
+      "options": [
+        "der",
+        "die",
+        "den"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The question is wo? (position), so in takes the dative. The feminine dative article is der: in der Schule.",
+        "es": "La pregunta es wo? (posición), así que in lleva dativo. El artículo femenino en dativo es der: in der Schule."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the accusative, the case for a direction (in die Schule gehen). The children are there already.",
+          "es": "die es el acusativo, el caso de la dirección (in die Schule gehen). Los niños ya están allí."
+        },
+        "den": {
+          "en": "den would fit a plural noun. The article belongs to Schule, which is singular, and not to Kinder.",
+          "es": "den iría con un sustantivo plural. El artículo pertenece a Schule, que es singular, y no a Kinder."
+        }
+      },
+      "examples": [
+        "Anna ist in der Küche.",
+        "Paul ist in der Stadt."
+      ],
+      "tr": {
+        "en": "Where are the children? At school.",
+        "es": "¿Dónde están los niños? En la escuela."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-f12",
+      "kind": "form",
+      "verb": "wo? Dativ",
+      "person": "Plural",
+      "answer": "den",
+      "table": "wechselpraep"
+    },
+    {
+      "id": "wechselpraepositionen-c13",
+      "sentence": "Wohin geht Paul? In ___ Schule.",
+      "options": [
+        "der",
+        "dem",
+        "die"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The question is wohin? (direction), so in takes the accusative. The feminine accusative article is die: in die Schule.",
+        "es": "La pregunta es wohin? (dirección), así que in lleva acusativo. El artículo femenino en acusativo es die: in die Schule."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the dative, the case for a position (in der Schule sein). Going to school is a direction.",
+          "es": "der es el dativo, el caso de la posición (in der Schule sein). Ir a la escuela es una dirección."
+        },
+        "dem": {
+          "en": "dem is the dative for masculine and neuter nouns. Schule is feminine, and the direction needs the accusative die.",
+          "es": "dem es el dativo para sustantivos masculinos y neutros. Schule es femenino, y la dirección necesita el acusativo die."
+        }
+      },
+      "examples": [
+        "Anna geht in die Küche.",
+        "Ich fahre in die Stadt."
+      ],
+      "tr": {
+        "en": "Where is Paul going? To school.",
+        "es": "¿Adónde va Paul? A la escuela."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-c14",
+      "sentence": "Wo ist der Ball? Zwischen ___ Bäumen.",
+      "options": [
+        "die",
+        "den",
+        "dem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The question is wo? (position), so zwischen takes the dative. The dative plural article is den, and the noun adds -n: den Bäumen.",
+        "es": "La pregunta es wo? (posición), así que zwischen lleva dativo. El artículo del dativo plural es den, y el sustantivo añade -n: den Bäumen."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the plural accusative, for a direction (zwischen die Bäume). The noun Bäumen already shows the dative plural.",
+          "es": "die es el acusativo plural, para una dirección (zwischen die Bäume). El sustantivo Bäumen ya muestra el dativo plural."
+        },
+        "dem": {
+          "en": "dem is for one masculine or neuter noun. Bäumen is plural and takes den.",
+          "es": "dem es para un solo sustantivo masculino o neutro. Bäumen es plural y lleva den."
+        }
+      },
+      "examples": [
+        "Das Haus ist zwischen den Bäumen.",
+        "Anna sitzt zwischen den Kindern."
+      ],
+      "tr": {
+        "en": "Where is the ball? Between the trees.",
+        "es": "¿Dónde está la pelota? Entre los árboles."
+      }
+    },
+    {
+      "id": "wechselpraepositionen-w04",
+      "kind": "why",
+      "es": "Die Kinder sind in der Schule.",
+      "target": "der",
+      "tr": {
+        "en": "The children are at school.",
+        "es": "Los niños están en la escuela."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "den, because Kinder is plural",
+            "es": "den, porque Kinder es plural"
+          },
+          "wrong": {
+            "en": "The article belongs to Schule, which is singular. It agrees with the noun after the preposition, not with the subject.",
+            "es": "El artículo pertenece a Schule, que es singular. Concuerda con el sustantivo que sigue a la preposición, no con el sujeto."
+          }
+        },
+        {
+          "text": {
+            "en": "der is the dative of feminine nouns; the children are there (wo?)",
+            "es": "der es el dativo de los sustantivos femeninos; los niños están allí (wo?)"
+          }
+        },
+        {
+          "text": {
+            "en": "die, because Schule is feminine",
+            "es": "die, porque Schule es femenino"
+          },
+          "wrong": {
+            "en": "die Schule is nominative or accusative. Being at school answers wo?, so the feminine dative der is needed.",
+            "es": "die Schule es nominativo o acusativo. Estar en la escuela responde a wo?, así que se necesita el dativo femenino der."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
