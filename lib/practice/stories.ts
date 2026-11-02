@@ -3,12 +3,16 @@
 // learner knows all of it: every sentence passes the same "never an unknown word in a sentence" gate as the Sentences tab
 // (lib/knownSentence.ts) and the card of each sentence's word is learned. Of those, the story with the most due words wins
 // (a tie: the data order), the story of the previous round goes last. Each target language has its own file (es stories.json,
-// en stories-en.json, hu stories-hu.json, de none yet): the sentence text is the target-language field, the translation and the true/false
+// en stories-en.json, hu stories-hu.json, de stories-de.json): the sentence text is the target-language field, the translation and the true/false
 // statements are the field of the learner's native language (the active source, lib/languagePair.ts). Without a usable story
 // lib/practice/reading.ts builds the text from the due words' own example sentences. Pure logic, no I/O.
+// A level of a language that has no story yet (German: only the 20 A1 stories exist so far) is not an error: the stories are offered
+// by what the learner knows, not by level, so such a learner is offered the stories there are, or none and then the text of example
+// sentences, or the empty state of the Practice tab.
 
 import type { PcicItem, PcicLevel, PcicTarget } from '@/data/pcic';
 import storiesData from '@/data/practice/stories.json';
+import storiesDeData from '@/data/practice/stories-de.json';
 import storiesEnData from '@/data/practice/stories-en.json';
 import storiesHuData from '@/data/practice/stories-hu.json';
 import { isSentenceKnownIn } from '@/lib/knownSentence';
@@ -40,8 +44,14 @@ export interface Story {
 
 export const STORIES: Story[] = storiesData as Story[];
 
-// German has no stories of its own yet (an empty list is the honest empty state, reading then builds the text from example sentences).
-const STORIES_BY_TARGET: Record<PcicTarget, readonly Story[]> = { es: STORIES, en: storiesEnData as Story[], hu: storiesHuData as Story[], de: [] };
+// Every target has its own file; the learner's language only picks the translation and the true/false statements (`de` as a source
+// reads the `de` and `false_de` fields the Spanish, English and Hungarian files carry).
+const STORIES_BY_TARGET: Record<PcicTarget, readonly Story[]> = {
+  es: STORIES,
+  en: storiesEnData as Story[],
+  hu: storiesHuData as Story[],
+  de: storiesDeData as Story[],
+};
 
 /** The stories of a target language (none when it has none). */
 export function storiesFor(target: PcicTarget): readonly Story[] {

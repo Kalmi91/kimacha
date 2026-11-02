@@ -1,13 +1,14 @@
-// The reading stories of the Practice tab (data/practice/stories.json, stories-en.json, stories-hu.json: one file per target
-// language, lib/practice/stories.ts). Each story carries its sentences in the target language and in the three source languages.
+// The reading stories of the Practice tab (data/practice/stories.json, stories-en.json, stories-hu.json, stories-de.json: one file per
+// target language, lib/practice/stories.ts). Each story carries its sentences in the target language and in the three source languages.
 import { findPcicItem, levelOfItem, pcicItemsForLevel, setPcicTarget, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import storiesData from '@/data/practice/stories.json';
+import storiesDeData from '@/data/practice/stories-de.json';
 import storiesEnData from '@/data/practice/stories-en.json';
 import storiesHuData from '@/data/practice/stories-hu.json';
 import { detectStructures } from '@/lib/grammar/tenseGate';
 import { isSentenceKnownIn, knownTokens, sentenceTokens, type ResolvedTense } from '@/lib/knownSentence';
 import type { Lang } from '@/lib/languagePair';
-import { falseIn, STORIES, storiesFor, storyWords } from '@/lib/practice/stories';
+import { falseIn, pickStory, STORIES, storiesFor, storyWords } from '@/lib/practice/stories';
 import { learnedEntries } from '@/lib/sentenceCards';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 
@@ -31,11 +32,11 @@ const tensesOf = (level: PcicLevel): ReadonlySet<ResolvedTense> =>
 // the cards a learner of a level knows: every card of that level and of the levels below it
 const cardIdsUpTo = (level: PcicLevel) => LEVELS.filter((l) => rank(l) <= rank(level)).flatMap((l) => pcicItemsForLevel(l).map((i) => i.id));
 
-const FILES: Record<PcicTarget, unknown> = { es: storiesData, en: storiesEnData, hu: storiesHuData, de: [] };
+const FILES: Record<PcicTarget, unknown> = { es: storiesData, en: storiesEnData, hu: storiesHuData, de: storiesDeData };
 // the languages a learner of each target comes from (the translations and false statements a story needs): the other three
 const SOURCES: Record<PcicTarget, Lang[]> = { es: ['en', 'hu', 'de'], en: ['es', 'hu', 'de'], hu: ['es', 'en', 'de'], de: ['en', 'es', 'hu'] };
-// How many stories of each level a file holds: 20 at A1, 5 at each level above. German has only the 20 A1 stories so far (its deck is
-// A1 only): the other levels are an honest empty state, never a story with words above the deck.
+// How many stories of each level a file holds: 20 at A1, 5 at each level above. German has only the 20 A1 stories so far (the A2 to C1
+// stories are written later): a level without a story is an honest empty state, never a story with words above its level.
 const COUNT_ABOVE_A1: [number, number] = [5, 5];
 const COUNT: Record<PcicTarget, Record<PcicLevel, [number, number]>> = {
   es: { A1: [20, 20], A2: COUNT_ABOVE_A1, B1: COUNT_ABOVE_A1, B2: COUNT_ABOVE_A1, C1: COUNT_ABOVE_A1 },
@@ -53,7 +54,7 @@ const idsOf = (stories: typeof STORIES) => stories.flatMap((s) => s.sentences.ma
 const norm = (text: string) => text.trim().toLowerCase();
 const WORDS = /\p{L}+/gu;
 
-describe.each<PcicTarget>(['es', 'en', 'hu'])('reading stories, target %s', (target) => {
+describe.each<PcicTarget>(['es', 'en', 'hu', 'de'])('reading stories, target %s', (target) => {
   const stories = storiesFor(target);
   const sources = SOURCES[target];
 
@@ -172,6 +173,42 @@ describe('reading stories, Spanish', () => {
     expect(easy.length).toBeGreaterThanOrEqual(10);
     // the stories are not only these: the rest lean on later A1 cards
     expect(idsOf(easy).length).toBeLessThan(idsOf(STORIES).length);
+  });
+});
+
+// The German stories (target de) are checked against the real known-word gate, which models no German inflection: only the tokens of
+// the headwords of the learned cards count (lib/knownSentence.ts). So each story is tried with exactly the cards it needs: the card of
+// each sentence's word and, for every other word, the first card of the deck that carries it.
+describe('reading stories, German: each story is offered to a learner with the cards it needs', () => {
+  beforeAll(() => setPcicTarget('de'));
+  afterAll(() => setPcicTarget('es'));
+
+  const deps = (cards: Sm2Card[]) => ({ target: 'de' as PcicTarget, cards, findItem: findPcicItem, today: '2026-10-23' });
+  const knownFor = (cards: Sm2Card[]) => knownTokens('de', { learned: learnedEntries(cards, 'de', findPcicItem) });
+
+  it('with exactly those cards the story is picked, without the card of one of its words it is not', () => {
+    const firstCard = new Map<string, string>();
+    for (const item of pcicItemsForLevel('A1')) for (const token of sentenceTokens(item.de ?? '', 'de')) if (!firstCard.has(token)) firstCard.set(token, item.id);
+    const free = knownTokens('de', { learned: [] });
+    const problems: string[] = [];
+    for (const story of storiesFor('de')) {
+      const needed = new Set(story.sentences.map((x) => x.word));
+      for (const x of story.sentences) {
+        for (const token of sentenceTokens(x.de ?? '', 'de')) if (!free.has(token)) needed.add(firstCard.get(token) ?? `missing:${token}`);
+      }
+      const cards = learned([...needed]);
+      const picked = pickStory(deps(cards), knownFor(cards), [story]);
+      if (picked?.story.id !== story.id) problems.push(`${story.id}: not offered with ${needed.size} cards`);
+      for (const x of story.sentences) {
+        const without = cards.filter((c) => c.itemId !== x.word);
+        if (pickStory(deps(without), knownFor(without), [story])) problems.push(`${story.id}: offered without the card of ${x.form}`);
+      }
+    }
+    expect(problems).toEqual([]);
+  });
+
+  it('a learner with no card is offered no story', () => {
+    expect(pickStory(deps([]), knownFor([]))).toBeNull();
   });
 });
 

@@ -1,4 +1,4 @@
-import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicTarget } from '@/data/pcic';
+import { findPcicItem, pcicItemsForLevel, setPcicTarget, type PcicItem, type PcicLevel, type PcicTarget } from '@/data/pcic';
 import { knownTokens, type ResolvedTense } from '@/lib/knownSentence';
 import { setActiveSource, type Lang } from '@/lib/languagePair';
 import { learnedEntries } from '@/lib/sentenceCards';
@@ -287,12 +287,17 @@ describe('a story in the language of each pair', () => {
   });
 });
 
-// The shipped files, whole pipeline: a learner who knows the whole A1 deck of each of the six pairs gets a story of the file of
+// The shipped files, whole pipeline: a learner who knows the whole A1 deck of each of the twelve pairs gets a story of the file of
 // the target, written in the target language, translated and questioned in the language of the learner.
-describe('the stories of the six pairs', () => {
+describe('the stories of the twelve pairs', () => {
   afterEach(() => setPcicTarget('es'));
 
-  const PAIRS: [Lang, PcicTarget][] = [['en', 'es'], ['hu', 'es'], ['es', 'en'], ['hu', 'en'], ['es', 'hu'], ['en', 'hu']];
+  const LANGS: Lang[] = ['en', 'es', 'hu', 'de'];
+  const PAIRS = LANGS.flatMap((source) => LANGS.filter((target) => target !== source).map((target): [Lang, PcicTarget] => [source, target]));
+  it('there are twelve pairs', () => {
+    expect(PAIRS).toHaveLength(12);
+  });
+
   it.each(PAIRS)('%s→%s', (source, target) => {
     setPcicTarget(target, source);
     const cards = pcicItemsForLevel('A1').map((i) => learned(i.id));
@@ -305,5 +310,48 @@ describe('the stories of the six pairs', () => {
     const statements = set.resolved.filter((r) => r.kind === 'truefalse').map((r) => (r as { statement: string }).statement);
     expect(statements.length).toBeGreaterThan(0);
     for (const statement of statements) expect([...translations, ...falseIn(story, source)]).toContain(statement);
+    // the meanings of the questions are in the language of the learner too
+    for (const word of set.words) expect(word.meaning).toBe((findPcicItem(word.itemId) as unknown as Record<string, string>)[source].trim());
+  });
+});
+
+// German has the 20 A1 stories only (the A2 to C1 stories are written later). A level without a story is no error: stories are picked by
+// what the learner knows, a learner who knows nothing (or not enough of the German deck) gets the empty state or the text of example
+// sentences, and a story of a level whose cards the learner's deck lacks is never half shown.
+describe('German stories: levels with no story, learners who know too little', () => {
+  afterEach(() => setPcicTarget('es'));
+
+  it('the German file holds the 20 A1 stories and nothing above', () => {
+    const stories = storiesFor('de');
+    expect(stories).toHaveLength(20);
+    expect([...new Set(stories.map((s) => s.level))]).toEqual(['A1']);
+    expect(stories.filter((s) => s.level !== 'A1')).toEqual([]);
+  });
+
+  it.each<Lang>(['en', 'es', 'hu'])('%s→de: nothing learned, no reading (the empty state), and no crash', (source) => {
+    setPcicTarget('de', source);
+    const d: ReadingDeps = { target: 'de', cards: [], findItem: findPcicItem, today: TODAY, random: () => 0.5 };
+    expect(pickStory(d, knownTokens('de', { learned: [] }))).toBeNull();
+    expect(buildReadingSet(d)).toBeNull();
+  });
+
+  it('a learner who knows only the first cards of the German deck is not offered a story that needs more, and nothing breaks', () => {
+    setPcicTarget('de', 'en');
+    const cards = pcicItemsForLevel('A1').slice(0, 300).map((i) => learned(i.id));
+    const d: ReadingDeps = { target: 'de', cards, findItem: findPcicItem, today: TODAY, random: () => 0.5 };
+    expect(pickStory(d, knownTokens('de', { learned: learnedEntries(cards, 'de', findPcicItem) }))).toBeNull();
+    const set = buildReadingSet(d);
+    expect(set === null || set.storyId === undefined).toBe(true);
+  });
+
+  it('de→es: the German meanings cover A1 only, so only A1 stories are offered, whatever else the learner has', () => {
+    setPcicTarget('es', 'de');
+    const levels: PcicLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
+    const cards = levels.flatMap((level) => pcicItemsForLevel(level)).map((i) => learned(i.id));
+    const set = buildReadingSet({ target: 'es', cards, tenses: new Set<ResolvedTense>(['presente', 'indefinido', 'imperfecto', 'futuro']), findItem: findPcicItem, today: TODAY, random: () => 0.5 })!;
+    expect(storiesFor('es').find((s) => s.id === set.storyId)?.level).toBe('A1');
+    // a story above A1 has no card in this deck: no reading words
+    const b1 = storiesFor('es').find((s) => s.level === 'B1')!;
+    expect(storyWords(b1, findPcicItem, 'es')).toBeNull();
   });
 });

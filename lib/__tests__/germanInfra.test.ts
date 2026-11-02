@@ -135,8 +135,9 @@ describe('places with no German content yet say so, they never answer in another
     expect(wordCellsForLesson({ id: 'x', items: [] } as never, 'de')).toEqual([]);
   });
 
-  it('has no stories, and the dialogues are told only in a language they are written in', () => {
-    expect(storiesFor('de')).toEqual([]);
+  it('has A1 stories only, and the dialogues are told only in a language they are written in', () => {
+    expect(storiesFor('de')).toHaveLength(20);
+    expect(storiesFor('de').every((story) => story.level === 'A1')).toBe(true);
     expect(situationsFor('es', 'de')).toEqual([]);
     expect(situationsFor('es', 'hu').length).toBeGreaterThan(0);
     expect(situationsFor('de', 'en')).toEqual([]);
