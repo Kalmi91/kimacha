@@ -67,6 +67,12 @@ describe('TENSE_NAMES', () => {
       expect(TENSE_NAMES[tense].hu?.trim()).toBeTruthy();
     }
   });
+
+  it('has a German name for every tense (de→es and de→en learners)', () => {
+    for (const tense of TENSE_IDS) {
+      expect(TENSE_NAMES[tense].de?.trim()).toBeTruthy();
+    }
+  });
 });
 
 describe.each(lessons)('%s is a valid LessonV2', (_file, lesson) => {

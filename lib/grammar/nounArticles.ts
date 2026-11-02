@@ -93,6 +93,7 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `«${x}» is feminine, but before a stressed a- the singular takes «el»: el ${x} (plural: las ${x}s).`,
       es: `«${x}» es femenino, pero ante «a» tónica el singular lleva «el»: el ${x} (plural: las ${x}s).`,
       hu: `«${x}» nőnemű, de hangsúlyos a- előtt az egyes szám «el» névelőt kap: el ${x} (többes szám: las ${x}s).`,
+      de: `„${x}“ ist feminin, aber vor betontem a- steht im Singular „el“: el ${x} (Plural: las ${x}s).`,
     };
   }
   if (a === 'el' && /o$/.test(x)) {
@@ -100,6 +101,7 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `«${x}» ends in -o, so it is masculine: el ${x}.`,
       es: `«${x}» acaba en -o: es masculino, el ${x}.`,
       hu: `«${x}» -o végű, ezért hímnemű: el ${x}.`,
+      de: `„${x}“ endet auf -o, deshalb ist es maskulin: el ${x}.`,
     };
   }
   if (a === 'el' && /a$/.test(x)) {
@@ -107,6 +109,7 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `«${x}» ends in -a but is masculine: el ${x}.`,
       es: `«${x}» acaba en -a pero es masculino: el ${x}.`,
       hu: `«${x}» -a végű, mégis hímnemű: el ${x}.`,
+      de: `„${x}“ endet auf -a, ist aber maskulin: el ${x}.`,
     };
   }
   if (a === 'la' && /(ción|sión|dad|tad)$/.test(x)) {
@@ -114,6 +117,7 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `Words ending in -ción, -sión, -dad, -tad are feminine: la ${x}.`,
       es: `Las palabras en -ción, -sión, -dad y -tad son femeninas: la ${x}.`,
       hu: `A -ción, -sión, -dad, -tad végű szavak nőneműek: la ${x}.`,
+      de: `Wörter auf -ción, -sión, -dad, -tad sind feminin: la ${x}.`,
     };
   }
   if (a === 'la' && /a$/.test(x)) {
@@ -121,12 +125,14 @@ function whyText(n: ArticleNoun): Lang4 {
       en: `«${x}» ends in -a, so it is feminine: la ${x}.`,
       es: `«${x}» acaba en -a: es femenino, la ${x}.`,
       hu: `«${x}» -a végű, ezért nőnemű: la ${x}.`,
+      de: `„${x}“ endet auf -a, deshalb ist es feminin: la ${x}.`,
     };
   }
   return {
     en: `The correct form is ${a} ${x}. Always learn a noun together with its article.`,
     es: `La forma correcta es ${a} ${x}. Aprende siempre el sustantivo junto con su artículo.`,
     hu: `A helyes alak: ${a} ${x}. A főnevet mindig a névelőjével együtt tanuld meg.`,
+    de: `Die richtige Form ist ${a} ${x}. Lerne ein Nomen immer zusammen mit seinem Artikel.`,
   };
 }
 
@@ -136,6 +142,7 @@ function wrongText(n: ArticleNoun, wrongArticle: 'el' | 'la'): Lang4 {
     en: `«${wrongArticle} ${x}» is not correct; the right form is ${a} ${x}.`,
     es: `«${wrongArticle} ${x}» no es correcto; lo correcto es ${a} ${x}.`,
     hu: `«${wrongArticle} ${x}» nem helyes; a jó alak: ${a} ${x}.`,
+    de: `„${wrongArticle} ${x}“ ist nicht richtig; die richtige Form ist ${a} ${x}.`,
   };
 }
 
