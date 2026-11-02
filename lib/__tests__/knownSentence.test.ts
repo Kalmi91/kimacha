@@ -320,6 +320,34 @@ describe('knownSentence, Hungarian', () => {
     expect(isSentenceKnown('A fű zöld.', 'hu', ctx)).toBe(true);
     expect(unknownTokens('A fű kék.', 'hu', ctx)).toEqual(['kék']);
   });
+
+  it('a suffixed form of a learned word is known (lib/huForms.ts), a wrong-harmony one is not', () => {
+    const ctx = {
+      learned: [
+        { text: 'az iroda', pos: 'noun' },
+        { text: 'az anya', pos: 'noun' },
+        { text: 'a kert', pos: 'noun' },
+        { text: 'eszem', pos: 'verb' },
+        { text: 'én vagyok', pos: 'verb' },
+      ],
+    };
+    expect(unknownTokens('Anyám az irodában volt.', 'hu', ctx)).toEqual([]);
+    expect(unknownTokens('Az anyám ezt a kertet eszi.', 'hu', ctx)).toEqual([]);
+    expect(unknownTokens('Anyám a kertban volt.', 'hu', ctx)).toEqual(['kertban']);
+    expect(unknownTokens('Az irodaban van.', 'hu', ctx)).toEqual(['irodaban']);
+  });
+
+  it('the closed classes (demonstratives, postpositions, preverbs, quantity words) never block a sentence', () => {
+    expect(isSentenceKnown('Ez miatt fel kell sok.', 'hu', { learned: ['kell'] })).toBe(true);
+  });
+
+  it('the suffixed forms of a learned card come from stem keys that no token can equal', () => {
+    const tokens = knownTokens('hu', { learned: [{ text: 'a ház', pos: 'noun' }] });
+    expect(tokens.has('ház')).toBe(true);
+    expect(tokens.has('házat')).toBe(false);
+    expect([...tokens].filter((t) => t.startsWith('#')).length).toBeGreaterThan(0);
+    expect(sentenceTokens('# házat', 'hu')).toEqual(['házat']);
+  });
 });
 
 describe('knownSentence, Spanish irregular verb forms', () => {

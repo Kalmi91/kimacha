@@ -11,6 +11,7 @@ import { esFeminine, esPlural, esSuperlativeForms } from '@/lib/esInflect';
 import { irregularForms, type IrregularTense } from '@/lib/esIrregularForms';
 import { occupationFeminine } from '@/lib/esOccupations';
 import { participleForms } from '@/lib/esParticiples';
+import { HU_CLOSED_CLASS, huRecognises, huStemKeys } from '@/lib/huForms';
 import { conjugate, TENSES, type Tense } from '@/lib/games/conjugate';
 import { detectStructures, tokenize, type Structure } from '@/lib/grammar/tenseGate';
 import { capitalizedWords } from '@/lib/properNames';
@@ -86,7 +87,7 @@ const FREE_WORDS: Record<KnownLang, ReadonlySet<string>> = {
     ...ES_CLOSED_CLASS,
   ]),
   en: new Set(['the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or', ...EN_CLOSED_CLASS]),
-  hu: new Set(['a', 'az', 'egy', 'és', 'is', 'de', 'vagy', 'hogy', 'nem', 'meg', 'el', 'ki', 'be']),
+  hu: new Set(['a', 'az', 'egy', 'és', 'is', 'de', 'vagy', 'hogy', 'nem', 'meg', 'el', 'ki', 'be', ...HU_CLOSED_CLASS]),
 };
 
 // What tenseGate recognises but the unlocked tenses (ResolvedTense) do not cover:
@@ -167,7 +168,7 @@ function enTokenize(text: string): string[] {
 }
 
 // Hungarian: the letters with an accent or a double acute (á é í ó ö ő ú ü ű) are part of a word, so a
-// token keeps them. Agglutinative suffixes are not modelled: only the learned forms count.
+// token keeps them. The suffixed forms of a learned word are recognised by lib/huForms.ts (stem keys in the set).
 function huTokenize(text: string): string[] {
   return text
     .toLowerCase()
@@ -333,6 +334,7 @@ function addEnglish(known: Set<string>, entry: LearnedEntry) {
 
 function addHungarian(known: Set<string>, entry: LearnedEntry) {
   for (const token of huTokenize(entry.text)) known.add(token);
+  for (const key of huStemKeys(entry.text, entry.pos)) known.add(key);
 }
 
 /** All accepted (lowercase) tokens from the learned words. */
@@ -387,6 +389,7 @@ function nameTokens(sentence: string, lang: KnownLang): Set<string> {
 
 function isKnownToken(token: string, lang: KnownLang, known: ReadonlySet<string>, names: ReadonlySet<string>): boolean {
   if (known.has(token) || names.has(token)) return true;
+  if (lang === 'hu') return huRecognises(token, known);
   if (lang !== 'en') return false;
   const stem = enStem(token);
   return stem !== undefined && (known.has(stem) || names.has(stem));
