@@ -8,6 +8,8 @@
  *   A1 sentence_en ⊆ taught(A0 ∪ A1)
  *   A2 sentence_en ⊆ taught(A0 ∪ A1 ∪ A2)
  *   B1 sentence_en ⊆ taught(A0 ∪ A1 ∪ A2 ∪ B1)
+ *   B2 sentence_en ⊆ taught(A0 ∪ A1 ∪ A2 ∪ B1 ∪ B2)
+ *   C1 sentence_en ⊆ taught(A0 ∪ A1 ∪ A2 ∪ B1 ∪ B2 ∪ C1)
  * plus a glue whitelist of English function words that are never taught as cards.
  *
  * This is the en-track counterpart of scripts/audit-corpus.mjs (Spanish flagship,
@@ -21,7 +23,7 @@ import { dirname, join } from 'path';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
-const LEVELS = ['A0', 'A1', 'A2', 'B1'];
+const LEVELS = ['A0', 'A1', 'A2', 'B1', 'B2', 'C1'];
 
 // ---------------------------------------------------------------------------
 // Glue whitelist, English function words NOT taught as vocabulary cards.

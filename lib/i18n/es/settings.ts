@@ -126,7 +126,7 @@ const es: typeof en = {
   credits: {
     title: 'Créditos',
     cefrjBody:
-      'Lista de palabras de inglés B1: The CEFR-J Wordlist Version 1.5, compilada por Yukio Tono, ' +
+      'Listas de palabras de inglés B1 y B2: The CEFR-J Wordlist Version 1.5, compilada por Yukio Tono, ' +
       'Universidad de Estudios Extranjeros de Tokio (cefr-j.org). Se usa según sus términos para ' +
       'investigación y uso comercial, con atribución.',
     cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',

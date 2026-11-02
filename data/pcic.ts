@@ -14,6 +14,8 @@ import enA0 from '@/data/words/en/a0.json';
 import enA1 from '@/data/words/en/a1.json';
 import enA2 from '@/data/words/en/a2.json';
 import enB1 from '@/data/words/en/b1.json';
+import enB2 from '@/data/words/en/b2.json';
+import enC1 from '@/data/words/en/c1.json';
 // The Hungarian target deck (h<id> id space, see itemsFromHu): A1 = a0 + a1, no higher level yet.
 import huA0 from '@/data/words/hu/a0.json';
 import huA1 from '@/data/words/hu/a1.json';
@@ -32,6 +34,8 @@ import glossEnA0 from '@/data/words/en/gloss-hu/a0.json';
 import glossEnA1 from '@/data/words/en/gloss-hu/a1.json';
 import glossEnA2 from '@/data/words/en/gloss-hu/a2.json';
 import glossEnB1 from '@/data/words/en/gloss-hu/b1.json';
+import glossEnB2 from '@/data/words/en/gloss-hu/b2.json';
+import glossEnC1 from '@/data/words/en/gloss-hu/c1.json';
 // the source of the en→es deck is the new 600-card
 // data/words-open (o<order> id space, see itemsFromOpen).
 import openA1 from '@/data/words-open/a1.json';
@@ -50,9 +54,8 @@ export type PcicLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1';
 
 export const PCIC_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
-// B2 and C1 are selectable too (en→es: 763 and 259 items); in the
-// es→en direction they are empty, and the level pickers skip them with the
-// "0 items = not offered" filter.
+// B2 and C1 are selectable too (en→es: 763 and 259 items; es→en and hu→en: data/words/en b2.json
+// and c1.json); the level pickers skip a level with the "0 items = not offered" filter.
 export const PCIC_VIEW_LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
 
 export interface PcicItem {
@@ -112,7 +115,7 @@ function glossMap(...files: unknown[]): GlossMap {
 }
 
 const GLOSS_OPEN = glossMap(glossOpenA1, glossOpenA2, glossOpenB1, glossOpenB2, glossOpenC1);
-const GLOSS_EN = glossMap(glossEnA0, glossEnA1, glossEnA2, glossEnB1);
+const GLOSS_EN = glossMap(glossEnA0, glossEnA1, glossEnA2, glossEnB1, glossEnB2, glossEnC1);
 
 function glossFields(gloss: GlossCard | undefined): { hu?: string; exampleHu?: string } {
   return gloss ? { hu: gloss.hu, exampleHu: gloss.sentence_hu || undefined } : {};
@@ -184,9 +187,9 @@ const ITEMS_BY_LEVEL_ES: Record<PcicLevel, PcicItem[]> = {
 // the es→en deck for A1 = data/words/en/a0.json +
 // a1.json (there is no separate A0), A2 = a2.json (e<id> id space, the ids of the old first 50
 // do not change). The same English word stays only once, at its first occurrence
-// (on the lower level). B1 = en/b1.json (CEFR-J word list,
-// from e10000); B2 and C1 are empty (no content for them), and the level pickers skip them with the
-// "0 items = not offered" rule.
+// (on the lower level). B1 = en/b1.json (CEFR-J word list, from e10000), B2 = en/b2.json
+// (CEFR-J B2 rows, from e11000), C1 = en/c1.json (the English headwords of the owner's Spanish
+// B2/C1 deck that CEFR-J does not cover, from e12000).
 function dedupeByEn(levels: WordEntry[][]): WordEntry[][] {
   const seen = new Set<string>();
   return levels.map((entries) =>
@@ -199,18 +202,20 @@ function dedupeByEn(levels: WordEntry[][]): WordEntry[][] {
   );
 }
 
-const [EN_A1_WORDS, EN_A2_WORDS, EN_B1_WORDS] = dedupeByEn([
+const [EN_A1_WORDS, EN_A2_WORDS, EN_B1_WORDS, EN_B2_WORDS, EN_C1_WORDS] = dedupeByEn([
   [...(enA0 as WordEntry[]), ...(enA1 as WordEntry[])],
   enA2 as WordEntry[],
   enB1 as WordEntry[],
+  enB2 as WordEntry[],
+  enC1 as WordEntry[],
 ]);
 
 const ITEMS_BY_LEVEL_EN: Record<PcicLevel, PcicItem[]> = {
   A1: itemsFromWords(EN_A1_WORDS),
   A2: itemsFromWords(EN_A2_WORDS),
   B1: itemsFromWords(EN_B1_WORDS),
-  B2: [],
-  C1: [],
+  B2: itemsFromWords(EN_B2_WORDS),
+  C1: itemsFromWords(EN_C1_WORDS),
 };
 
 // the hu target deck: data/words/hu a0 + a1 = A1, a2 / b1 / b2 / c1 = the level of the same name,

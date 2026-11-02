@@ -5,11 +5,15 @@ Copyright (c) 2026 Fekete Kálmán, all rights reserved (see [LICENSE](LICENSE))
 are third-party material that keeps its own licence. The app shows a short version of the word list
 and font credits on its Credits screen (Settings, Credits).
 
-## Word list: CEFR-J (English B1)
+## Word list: CEFR-J (English B1 and B2)
 
-`data/words/en/`: the B1 list follows The CEFR-J Wordlist Version 1.5, compiled by Yukio Tono, Tokyo
-University of Foreign Studies (https://cefr-j.org), used under its terms for research and commercial
-use with attribution. Source: https://github.com/openlanguageprofiles/olp-en-cefrj
+`data/words/en/`: the B1 and B2 lists follow The CEFR-J Wordlist Version 1.5, compiled by Yukio Tono,
+Tokyo University of Foreign Studies (https://cefr-j.org), used under its terms for research and
+commercial use with attribution. Source: https://github.com/openlanguageprofiles/olp-en-cefrj
+The B2 file (`b2.json`) also holds the CEFR-J A1-B1 words that the lower files do not teach.
+
+The English C1 list (`data/words/en/c1.json`) is not third-party material: it comes from the English
+headwords of the owner's own Spanish word list (`data/words-open/`, all rights reserved).
 
 ## Word photos: Wikimedia Commons
 
