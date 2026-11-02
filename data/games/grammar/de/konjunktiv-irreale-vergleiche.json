@@ -1,0 +1,993 @@
+{
+  "schema": 2,
+  "topic": "konjunktiv-irreale-vergleiche",
+  "level": "C1",
+  "title": {
+    "en": "Subjunctive in unreal comparisons and reports",
+    "es": "Subjuntivo en comparaciones irreales y en el estilo indirecto"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Konjunktiv II marks what is unreal, and Konjunktiv I marks what is reported. In comparisons with als ob, als wenn or als plus verb in first position, the verb is Konjunktiv II: Er tut, als ob er alles wüsste. If the comparison lies before the main verb in time, you use the past form: Er tat, als hätte er nichts gehört. A condition and its result can lie in different times (Wenn ich früher studiert hätte, wäre ich jetzt Ärztin), and a wish that is contrary to reality also takes Konjunktiv II: Ich wünschte, ich hätte mehr Zeit. English as if with were or had, Spanish como si with the imperfect subjunctive and Hungarian mintha with the conditional all correspond to this. In speech würde plus infinitive is common, and in writing the synthetic forms are preferred.",
+        "es": "El Konjunktiv II marca lo irreal, y el Konjunktiv I marca lo relatado. En comparaciones con als ob, als wenn o als más el verbo en primera posición, el verbo va en Konjunktiv II: Er tut, als ob er alles wüsste. Si la comparación queda antes del verbo principal en el tiempo, se usa la forma del pasado: Er tat, als hätte er nichts gehört. Una condición y su resultado pueden estar en tiempos distintos (Wenn ich früher studiert hätte, wäre ich jetzt Ärztin), y un deseo contrario a la realidad también lleva Konjunktiv II: Ich wünschte, ich hätte mehr Zeit. El inglés as if con were o had, el español como si con el imperfecto de subjuntivo y el húngaro mintha con el condicional corresponden a esto. En el habla es común würde más infinitivo, y en la escritura se prefieren las formas sintéticas."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-vergleiche-formen",
+      "title": {
+        "en": "Konjunktiv II of important verbs, present and past",
+        "es": "Konjunktiv II de verbos importantes, presente y pasado"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Gegenwart",
+          "es": "Gegenwart"
+        },
+        {
+          "en": "Vergangenheit",
+          "es": "Vergangenheit"
+        }
+      ],
+      "rows": [
+        [
+          "sein",
+          "wäre",
+          "gewesen wäre"
+        ],
+        [
+          "haben",
+          "hätte",
+          "gehabt hätte"
+        ],
+        [
+          "wissen",
+          "wüsste",
+          "gewusst hätte"
+        ],
+        [
+          "kommen",
+          "käme",
+          "gekommen wäre"
+        ],
+        [
+          "gehen",
+          "ginge",
+          "gegangen wäre"
+        ],
+        [
+          "schlafen",
+          "schliefe",
+          "geschlafen hätte"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-vergleiche-anlass",
+      "title": {
+        "en": "Occasions for the subjunctive",
+        "es": "Ocasiones para el subjuntivo"
+      },
+      "header": [
+        {
+          "en": "Occasion",
+          "es": "Ocasión"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "Vergleich (Gegenwart)",
+          "Er tut, als ob er alles wüsste."
+        ],
+        [
+          "Vergleich (Vergangenheit)",
+          "Er tat, als hätte er nichts gehört."
+        ],
+        [
+          "Eindruck (Bericht)",
+          "Es sieht aus, als sei er krank."
+        ],
+        [
+          "gemischte Bedingung",
+          "Wenn ich früher studiert hätte, wäre ich jetzt Ärztin."
+        ],
+        [
+          "Bedingung ohne wenn",
+          "Hätte ich Geld gespart, hätte ich jetzt ein Haus."
+        ],
+        [
+          "Wunsch",
+          "Ich wünschte, ich hätte mehr Zeit."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Unreal comparisons: als ob, als wenn, als",
+        "es": "Comparaciones irreales: als ob, als wenn, als"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After als ob and als wenn the verb stands at the end. After als alone the verb comes directly after it: Er tut, als wüsste er alles. The time of the verb follows the time of the main verb: simultaneous gives the present form (wäre, hätte, wüsste), earlier gives gewesen wäre, gehört hätte.",
+            "es": "Después de als ob y als wenn el verbo va al final. Después de als solo el verbo viene directamente después: Er tut, als wüsste er alles. El tiempo del verbo sigue al tiempo del verbo principal: simultáneo da la forma de presente (wäre, hätte, wüsste), anterior da gewesen wäre, gehört hätte."
+          },
+          "examples": [
+            {
+              "es": "Er tut, als ob er alles wüsste.",
+              "tr": {
+                "en": "He acts as if he knew everything.",
+                "es": "Él actúa como si lo supiera todo."
+              }
+            },
+            {
+              "es": "Er tat, als hätte er nichts gehört.",
+              "tr": {
+                "en": "He acted as if he had not heard anything.",
+                "es": "Él actuó como si no hubiera oído nada."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In spoken German, würde plus infinitive replaces most synthetic forms: als würde er schlafen. After als, the Konjunktiv I can stand in written reports when the impression is only passed on: Es sieht aus, als sei er krank.",
+            "es": "En alemán hablado, würde más infinitivo reemplaza a la mayoría de las formas sintéticas: als würde er schlafen. Después de als, el Konjunktiv I puede aparecer en informes escritos cuando la impresión solo se transmite: Es sieht aus, als sei er krank."
+          },
+          "examples": [
+            {
+              "es": "Sie tut, als würde sie schlafen.",
+              "tr": {
+                "en": "She acts as if she were sleeping.",
+                "es": "Ella actúa como si estuviera durmiendo."
+              }
+            },
+            {
+              "es": "Es sieht aus, als sei er krank.",
+              "tr": {
+                "en": "It looks as if he were sick.",
+                "es": "Parece como si estuviera enfermo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Mixed conditions and wishes",
+        "es": "Condiciones mixtas y deseos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A condition in the past can have a result in the present. The wenn-clause has hätte or wäre plus Partizip II, and the main clause has the present form: Wenn ich früher studiert hätte, wäre ich jetzt Ärztin. Without wenn, the verb goes first: Hätte ich Geld gespart, hätte ich jetzt ein Haus.",
+            "es": "Una condición en el pasado puede tener un resultado en el presente. La oración con wenn lleva hätte o wäre más Partizip II, y la oración principal lleva la forma de presente: Wenn ich früher studiert hätte, wäre ich jetzt Ärztin. Sin wenn, el verbo va primero: Hätte ich Geld gespart, hätte ich jetzt ein Haus."
+          },
+          "examples": [
+            {
+              "es": "Wenn ich früher studiert hätte, wäre ich jetzt Ärztin.",
+              "tr": {
+                "en": "If I had studied earlier, I would be a doctor now.",
+                "es": "Si hubiera estudiado antes, ahora sería doctora."
+              }
+            },
+            {
+              "es": "Hätte ich Geld gespart, hätte ich jetzt ein Haus.",
+              "tr": {
+                "en": "Had I saved money, I would have a house now.",
+                "es": "De haber ahorrado dinero, ahora tendría una casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A wish that is contrary to reality uses wünschte plus Konjunktiv II: Ich wünschte, ich hätte mehr Zeit. In speech you often hear würde plus infinitive: Ich wünschte, du würdest kommen.",
+            "es": "Un deseo contrario a la realidad usa wünschte más Konjunktiv II: Ich wünschte, ich hätte mehr Zeit. En el habla a menudo se oye würde más infinitivo: Ich wünschte, du würdest kommen."
+          },
+          "examples": [
+            {
+              "es": "Ich wünschte, ich hätte mehr Zeit.",
+              "tr": {
+                "en": "I wish I had more time.",
+                "es": "Ojalá tuviera más tiempo."
+              }
+            },
+            {
+              "es": "Ich wünschte, du wärst hier.",
+              "tr": {
+                "en": "I wish you were here.",
+                "es": "Ojalá estuvieras aquí."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Same time or earlier? Unreal or reported?",
+        "es": "¿Mismo tiempo o antes? ¿Irreal o relatado?"
+      },
+      "pairs": [
+        {
+          "a": "Er tat, als wäre er krank.",
+          "b": "Er tat, als wäre er krank gewesen.",
+          "note": {
+            "en": "The first sentence says that he pretended to be sick at that time. The second says that he pretended to have been sick before.",
+            "es": "La primera oración dice que fingió estar enfermo en ese momento. La segunda dice que fingió haber estado enfermo antes."
+          },
+          "examples": [
+            {
+              "es": "Er tut, als hätte er Zeit.",
+              "tr": {
+                "en": "He acts as if he had time.",
+                "es": "Él actúa como si tuviera tiempo."
+              }
+            },
+            {
+              "es": "Er tut, als hätte er Zeit gehabt.",
+              "tr": {
+                "en": "He acts as if he had had time.",
+                "es": "Él actúa como si hubiera tenido tiempo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Er tut, als wäre er krank.",
+          "b": "Es heißt, er sei krank.",
+          "note": {
+            "en": "Konjunktiv II after als ob says that it is not true. Konjunktiv I in a report only passes on what somebody says, without judging it.",
+            "es": "El Konjunktiv II después de als ob dice que no es verdad. El Konjunktiv I en un informe solo transmite lo que alguien dice, sin juzgarlo."
+          },
+          "examples": [
+            {
+              "es": "Sie tut, als ob sie schliefe.",
+              "tr": {
+                "en": "She acts as if she were asleep.",
+                "es": "Ella actúa como si estuviera dormida."
+              }
+            },
+            {
+              "es": "Sie sagt, sie schlafe schon.",
+              "tr": {
+                "en": "She says she is already asleep.",
+                "es": "Ella dice que ya está dormida."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: using the indicative after als ob (*als ob er krank ist). Mixing up the times: a comparison that lies before the main verb needs the past form (als hätte er nichts gehört). Forgetting that the main clause of a mixed condition has a present form (wäre ich jetzt Ärztin). Confusing als in a comparison (größer als) with als ob. And using würde in the wenn-clause (*Wenn ich Zeit haben würde): in writing use hätte, and in speech use it only in the main clause.",
+        "es": "Trampas clásicas: usar el indicativo después de als ob (*als ob er krank ist). Confundir los tiempos: una comparación que queda antes del verbo principal necesita la forma del pasado (als hätte er nichts gehört). Olvidar que la oración principal de una condición mixta lleva una forma de presente (wäre ich jetzt Ärztin). Confundir als en una comparación (größer als) con als ob. Y usar würde en la oración con wenn (*Wenn ich Zeit haben würde): en la escritura usa hätte, y en el habla úsalo solo en la oración principal."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The Konjunktiv II marks what is unreal. After «als ob» the verb is in the Konjunktiv II: «Er tut, als ob er alles wüsste». If the comparison lies earlier, you use the past form: «Er tat, als hätte er nichts gehört». A mixed condition has a past condition and a present result: «Wenn ich früher studiert hätte, wäre ich jetzt Ärztin». A wish that is not real uses «wünschte»: «Ich wünschte, ich hätte mehr Zeit». The Konjunktiv I reports what someone says: «Es heißt, er sei krank». In speech you often use «würde» and the infinitive, but in writing the short forms are better.",
+    "es": "El Konjunktiv II marca lo irreal. Después de «als ob» el verbo va en Konjunktiv II: «Er tut, als ob er alles wüsste». Si la comparación es anterior, se usa la forma del pasado: «Er tat, als hätte er nichts gehört». Una condición mixta tiene una condición en el pasado y un resultado en el presente: «Wenn ich früher studiert hätte, wäre ich jetzt Ärztin». Un deseo que no es real usa «wünschte»: «Ich wünschte, ich hätte mehr Zeit». El Konjunktiv I relata lo que alguien dice: «Es heißt, er sei krank». En el habla se usa a menudo «würde» y el infinitivo, pero en la escritura son mejores las formas cortas."
+  },
+  "items": [
+    {
+      "id": "konjunktiv-irreale-vergleiche-c01",
+      "sentence": "Er tut, als ob er alles ___.",
+      "options": [
+        "weiß",
+        "wüsste",
+        "wusste"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The comparison is unreal: he does not know everything, he only acts like it. After als ob the verb is Konjunktiv II: wüsste.",
+        "es": "La comparación es irreal: no lo sabe todo, solo actúa así. Después de als ob el verbo va en Konjunktiv II: wüsste."
+      },
+      "wrong": {
+        "weiß": {
+          "en": "weiß is the indicative and would claim that he really knows everything. After als ob the unreal form is needed.",
+          "es": "weiß es el indicativo y afirmaría que realmente lo sabe todo. Después de als ob se necesita la forma irreal."
+        },
+        "wusste": {
+          "en": "wusste is the Präteritum and talks about the past. The Konjunktiv II has an umlaut: wüsste.",
+          "es": "wusste es el Präteritum y habla del pasado. El Konjunktiv II lleva diéresis: wüsste."
+        }
+      },
+      "examples": [
+        "Sie tut, als ob sie schliefe.",
+        "Er tut, als ob er Zeit hätte."
+      ],
+      "tr": {
+        "en": "He acts as if he knew everything.",
+        "es": "Él actúa como si lo supiera todo."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f01",
+      "kind": "form",
+      "verb": "Gegenwart",
+      "person": "sein",
+      "answer": "wäre",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c02",
+      "sentence": "Sie sieht aus, als ___ sie krank.",
+      "options": [
+        "wäre",
+        "ist",
+        "war"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Without ob, the verb comes right after als, and it is Konjunktiv II: als wäre sie krank.",
+        "es": "Sin ob, el verbo viene justo después de als, y está en Konjunktiv II: als wäre sie krank."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist is the indicative. After als in an unreal comparison you need the Konjunktiv II.",
+          "es": "ist es el indicativo. Después de als en una comparación irreal necesitas el Konjunktiv II."
+        },
+        "war": {
+          "en": "war is the Präteritum and states a past fact. It cannot express an unreal comparison.",
+          "es": "war es el Präteritum y enuncia un hecho pasado. No puede expresar una comparación irreal."
+        }
+      },
+      "examples": [
+        "Er sieht aus, als wäre er müde.",
+        "Es klingt, als hätte sie Angst."
+      ],
+      "tr": {
+        "en": "She looks as if she were sick.",
+        "es": "Ella parece como si estuviera enferma."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f02",
+      "kind": "form",
+      "verb": "Vergangenheit",
+      "person": "haben",
+      "answer": "gehabt hätte",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c03",
+      "sentence": "Er tat, als ___ er nichts gehört.",
+      "options": [
+        "hat",
+        "hätte",
+        "hatte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The hearing lies before the acting, so the past form is needed: als hätte er nichts gehört. It is Konjunktiv II.",
+        "es": "El oír queda antes del actuar, así que se necesita la forma del pasado: als hätte er nichts gehört. Es Konjunktiv II."
+      },
+      "wrong": {
+        "hat": {
+          "en": "hat is the indicative present. After als in an unreal comparison you need the Konjunktiv II.",
+          "es": "hat es el presente de indicativo. Después de als en una comparación irreal necesitas el Konjunktiv II."
+        },
+        "hatte": {
+          "en": "hatte is the indicative Präteritum. It would state a fact and not form an unreal comparison.",
+          "es": "hatte es el Präteritum de indicativo. Enunciaría un hecho y no formaría una comparación irreal."
+        }
+      },
+      "examples": [
+        "Sie tat, als hätte sie nichts gesehen.",
+        "Er tat, als wäre er nicht da gewesen."
+      ],
+      "tr": {
+        "en": "He acted as if he had not heard anything.",
+        "es": "Él actuó como si no hubiera oído nada."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f03",
+      "kind": "form",
+      "verb": "Gegenwart",
+      "person": "haben",
+      "answer": "hätte",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-w01",
+      "kind": "why",
+      "es": "Er tut, als ob er alles wüsste.",
+      "target": "wüsste",
+      "tr": {
+        "en": "He acts as if he knew everything.",
+        "es": "Él actúa como si lo supiera todo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Konjunktiv II: the comparison is unreal, he does not know everything",
+            "es": "Konjunktiv II: la comparación es irreal, no lo sabe todo"
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv I: wisse, because somebody reports what he knows",
+            "es": "Konjunktiv I: wisse, porque alguien relata lo que él sabe"
+          },
+          "wrong": {
+            "en": "Konjunktiv I reports what somebody says. After als ob the comparison is unreal and takes Konjunktiv II.",
+            "es": "El Konjunktiv I relata lo que alguien dice. Después de als ob la comparación es irreal y lleva Konjunktiv II."
+          }
+        },
+        {
+          "text": {
+            "en": "Präteritum: wusste, because the sentence is about the past",
+            "es": "Präteritum: wusste, porque la oración trata del pasado"
+          },
+          "wrong": {
+            "en": "wüsste with an umlaut is not the Präteritum wusste. It is the Konjunktiv II and refers to the present.",
+            "es": "wüsste con diéresis no es el Präteritum wusste. Es el Konjunktiv II y se refiere al presente."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c04",
+      "sentence": "Sie tut, als ob sie mich nicht ___.",
+      "options": [
+        "kannte",
+        "kennt",
+        "kennen würde"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The Konjunktiv II of kennen looks like the Präteritum and is rare, so speech uses würde plus infinitive: als ob sie mich nicht kennen würde.",
+        "es": "El Konjunktiv II de kennen se parece al Präteritum y es raro, por eso el habla usa würde más infinitivo: als ob sie mich nicht kennen würde."
+      },
+      "wrong": {
+        "kannte": {
+          "en": "kannte is the Präteritum, an indicative form. It would state a past fact and not an unreal comparison.",
+          "es": "kannte es el Präteritum, una forma de indicativo. Enunciaría un hecho pasado y no una comparación irreal."
+        },
+        "kennt": {
+          "en": "kennt is the present indicative and would claim that she really does not know me. After als ob the unreal form is needed.",
+          "es": "kennt es el presente de indicativo y afirmaría que realmente no me conoce. Después de als ob se necesita la forma irreal."
+        }
+      },
+      "examples": [
+        "Er tut, als ob er schlafen würde.",
+        "Sie tut, als ob sie arbeiten würde."
+      ],
+      "tr": {
+        "en": "She acts as if she did not know me.",
+        "es": "Ella actúa como si no me conociera."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f04",
+      "kind": "form",
+      "verb": "Vergangenheit",
+      "person": "sein",
+      "answer": "gewesen wäre",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c05",
+      "sentence": "Wenn ich früher studiert hätte, ___ ich jetzt Ärztin.",
+      "options": [
+        "wäre",
+        "war",
+        "hätte"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The condition lies in the past, but the result is true now: jetzt. The main clause uses the present form wäre, without a participle.",
+        "es": "La condición queda en el pasado, pero el resultado es verdad ahora: jetzt. La oración principal usa la forma de presente wäre, sin participio."
+      },
+      "wrong": {
+        "war": {
+          "en": "war is the indicative Präteritum. The unreal result needs the Konjunktiv II wäre.",
+          "es": "war es el Präteritum de indicativo. El resultado irreal necesita el Konjunktiv II wäre."
+        },
+        "hätte": {
+          "en": "hätte would be wrong with the noun Ärztin: Ich hätte jetzt Ärztin is not possible. The profession needs sein.",
+          "es": "hätte sería incorrecto con el sustantivo Ärztin: Ich hätte jetzt Ärztin no es posible. La profesión necesita sein."
+        }
+      },
+      "examples": [
+        "Wenn ich mehr geübt hätte, wäre ich jetzt besser.",
+        "Wenn er Geld gespart hätte, wäre er jetzt reich."
+      ],
+      "tr": {
+        "en": "If I had studied earlier, I would be a doctor now.",
+        "es": "Si hubiera estudiado antes, ahora sería doctora."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f05",
+      "kind": "form",
+      "verb": "Gegenwart",
+      "person": "wissen",
+      "answer": "wüsste",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c06",
+      "sentence": "Hätte ich damals Geld gespart, ___ ich jetzt ein Haus.",
+      "options": [
+        "wäre",
+        "habe",
+        "hätte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The result is true now, and Haus needs haben: hätte ich jetzt ein Haus. Without wenn the first clause starts with the verb.",
+        "es": "El resultado es verdad ahora, y Haus necesita haben: hätte ich jetzt ein Haus. Sin wenn la primera oración empieza con el verbo."
+      },
+      "wrong": {
+        "wäre": {
+          "en": "wäre goes with sein. You do not say Ich wäre ein Haus. Owning a house needs haben.",
+          "es": "wäre va con sein. No se dice Ich wäre ein Haus. Tener una casa necesita haben."
+        },
+        "habe": {
+          "en": "habe is the present indicative. The result of an unreal condition needs the Konjunktiv II hätte.",
+          "es": "habe es el presente de indicativo. El resultado de una condición irreal necesita el Konjunktiv II hätte."
+        }
+      },
+      "examples": [
+        "Hätte ich Zeit, würde ich helfen.",
+        "Wäre er reich, hätte er ein Auto."
+      ],
+      "tr": {
+        "en": "Had I saved money back then, I would have a house now.",
+        "es": "De haber ahorrado dinero entonces, ahora tendría una casa."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f06",
+      "kind": "form",
+      "verb": "Vergangenheit",
+      "person": "kommen",
+      "answer": "gekommen wäre",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-w02",
+      "kind": "why",
+      "es": "Er tat, als hätte er nichts gehört.",
+      "target": "hätte",
+      "tr": {
+        "en": "He acted as if he had not heard anything.",
+        "es": "Él actuó como si no hubiera oído nada."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Präteritum: hatte, because the sentence is in the past",
+            "es": "Präteritum: hatte, porque la oración está en pasado"
+          },
+          "wrong": {
+            "en": "hatte is an indicative and would state a fact. The comparison is unreal and needs the Konjunktiv II hätte.",
+            "es": "hatte es un indicativo y enunciaría un hecho. La comparación es irreal y necesita el Konjunktiv II hätte."
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv II of the present: würde hören, at the same time as the acting",
+            "es": "Konjunktiv II del presente: würde hören, al mismo tiempo que el actuar"
+          },
+          "wrong": {
+            "en": "The hearing lies before the acting, so a present form would be wrong. The participle gehört shows the earlier time.",
+            "es": "El oír queda antes del actuar, así que una forma de presente sería incorrecta. El participio gehört muestra el tiempo anterior."
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv II of the past: the hearing lies before the acting",
+            "es": "Konjunktiv II del pasado: el oír queda antes del actuar"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c07",
+      "sentence": "Ich wünschte, ich ___ mehr Zeit.",
+      "options": [
+        "habe",
+        "hätte",
+        "hatte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A wish that is contrary to reality takes the Konjunktiv II: Ich wünschte, ich hätte mehr Zeit.",
+        "es": "Un deseo contrario a la realidad lleva el Konjunktiv II: Ich wünschte, ich hätte mehr Zeit."
+      },
+      "wrong": {
+        "habe": {
+          "en": "habe is the present indicative. It would state that you have more time, which is not what the wish means.",
+          "es": "habe es el presente de indicativo. Diría que tienes más tiempo, y eso no es lo que significa el deseo."
+        },
+        "hatte": {
+          "en": "hatte is the Präteritum and talks about the past. The wish is about now, so hätte is needed.",
+          "es": "hatte es el Präteritum y habla del pasado. El deseo es sobre ahora, así que se necesita hätte."
+        }
+      },
+      "examples": [
+        "Ich wünschte, wir hätten Urlaub.",
+        "Ich wünschte, er hätte Zeit."
+      ],
+      "tr": {
+        "en": "I wish I had more time.",
+        "es": "Ojalá tuviera más tiempo."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f07",
+      "kind": "form",
+      "verb": "Gegenwart",
+      "person": "kommen",
+      "answer": "käme",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c08",
+      "sentence": "Ich wünschte, du ___ hier.",
+      "options": [
+        "bist",
+        "warst",
+        "wärst"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sein has the Konjunktiv II wärst for du. The wish is contrary to reality, so: Ich wünschte, du wärst hier.",
+        "es": "sein tiene el Konjunktiv II wärst para du. El deseo es contrario a la realidad, así que: Ich wünschte, du wärst hier."
+      },
+      "wrong": {
+        "bist": {
+          "en": "bist is the present indicative and would say that you are here. The wish expresses that you are not.",
+          "es": "bist es el presente de indicativo y diría que estás aquí. El deseo expresa que no lo estás."
+        },
+        "warst": {
+          "en": "warst is the Präteritum and talks about the past. The Konjunktiv II is wärst, with an umlaut.",
+          "es": "warst es el Präteritum y habla del pasado. El Konjunktiv II es wärst, con diéresis."
+        }
+      },
+      "examples": [
+        "Ich wünschte, ihr wärt hier.",
+        "Ich wünschte, er wäre nicht krank."
+      ],
+      "tr": {
+        "en": "I wish you were here.",
+        "es": "Ojalá estuvieras aquí."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f08",
+      "kind": "form",
+      "verb": "Vergangenheit",
+      "person": "wissen",
+      "answer": "gewusst hätte",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c09",
+      "sentence": "Ich wünschte, du ___ endlich kommen.",
+      "options": [
+        "wirst",
+        "würdest",
+        "wurdest"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In speech, würde plus infinitive replaces a synthetic form: Ich wünschte, du würdest endlich kommen.",
+        "es": "En el habla, würde más infinitivo reemplaza a una forma sintética: Ich wünschte, du würdest endlich kommen."
+      },
+      "wrong": {
+        "wirst": {
+          "en": "wirst is the present indicative of werden and would predict that you come. A wish needs the Konjunktiv II würdest.",
+          "es": "wirst es el presente de indicativo de werden y predeciría que vienes. Un deseo necesita el Konjunktiv II würdest."
+        },
+        "wurdest": {
+          "en": "wurdest is the Präteritum of werden and has no umlaut. The Konjunktiv II needs the umlaut: würdest.",
+          "es": "wurdest es el Präteritum de werden y no tiene diéresis. El Konjunktiv II necesita la diéresis: würdest."
+        }
+      },
+      "examples": [
+        "Ich wünschte, er würde mir helfen.",
+        "Ich wünschte, ihr würdet leiser sein."
+      ],
+      "tr": {
+        "en": "I wish you would finally come.",
+        "es": "Ojalá vinieras por fin."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f09",
+      "kind": "form",
+      "verb": "Gegenwart",
+      "person": "gehen",
+      "answer": "ginge",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-w03",
+      "kind": "why",
+      "es": "Wenn ich früher studiert hätte, wäre ich jetzt Ärztin.",
+      "target": "wäre",
+      "tr": {
+        "en": "If I had studied earlier, I would be a doctor now.",
+        "es": "Si hubiera estudiado antes, ahora sería doctora."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The result is true now, so the present form wäre stands without a participle",
+            "es": "El resultado es verdad ahora, así que la forma de presente wäre va sin participio"
+          }
+        },
+        {
+          "text": {
+            "en": "gewesen wäre, because the condition lies in the past",
+            "es": "gewesen wäre, porque la condición queda en el pasado"
+          },
+          "wrong": {
+            "en": "That would put the result in the past too, but jetzt shows that the result belongs to the present.",
+            "es": "Eso pondría también el resultado en el pasado, pero jetzt muestra que el resultado pertenece al presente."
+          }
+        },
+        {
+          "text": {
+            "en": "hätte, because the first clause also has hätte",
+            "es": "hätte, porque la primera oración también tiene hätte"
+          },
+          "wrong": {
+            "en": "The auxiliary of the main clause depends on its own verb. The result is ich bin Ärztin, with sein, so it is wäre.",
+            "es": "El auxiliar de la oración principal depende de su propio verbo. El resultado es ich bin Ärztin, con sein, así que es wäre."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c10",
+      "sentence": "Er tat, als ___ er krank gewesen.",
+      "options": [
+        "wäre",
+        "hätte",
+        "würde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The participle gewesen belongs to sein, so the auxiliary is wäre: als wäre er krank gewesen. The sickness lies before the acting.",
+        "es": "El participio gewesen pertenece a sein, así que el auxiliar es wäre: als wäre er krank gewesen. La enfermedad queda antes del actuar."
+      },
+      "wrong": {
+        "hätte": {
+          "en": "hätte would go with a participle of a haben-verb (gehabt). gewesen needs wäre.",
+          "es": "hätte iría con el participio de un verbo con haben (gehabt). gewesen necesita wäre."
+        },
+        "würde": {
+          "en": "würde is followed by an infinitive, not by a participle like gewesen.",
+          "es": "würde va seguido de un infinitivo, no de un participio como gewesen."
+        }
+      },
+      "examples": [
+        "Sie tat, als wäre sie nicht da gewesen.",
+        "Er tat, als wäre er nie gekommen."
+      ],
+      "tr": {
+        "en": "He acted as if he had been sick.",
+        "es": "Él actuó como si hubiera estado enfermo."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f10",
+      "kind": "form",
+      "verb": "Vergangenheit",
+      "person": "gehen",
+      "answer": "gegangen wäre",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c11",
+      "sentence": "Er hat nicht gearbeitet. Er tat, als ob er viel ___.",
+      "options": [
+        "arbeitete",
+        "arbeiten würde",
+        "gearbeitet hätte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The working would lie before the acting: he pretended to have worked a lot. So the past form is needed: gearbeitet hätte.",
+        "es": "El trabajar quedaría antes del actuar: fingió haber trabajado mucho. Así que se necesita la forma del pasado: gearbeitet hätte."
+      },
+      "wrong": {
+        "arbeitete": {
+          "en": "arbeitete is the Präteritum, an indicative form. It would state a fact and not an unreal comparison.",
+          "es": "arbeitete es el Präteritum, una forma de indicativo. Enunciaría un hecho y no una comparación irreal."
+        },
+        "arbeiten würde": {
+          "en": "arbeiten würde describes an unreal working at the same time as the acting. Here the working lies before it.",
+          "es": "arbeiten würde describe un trabajar irreal al mismo tiempo que el actuar. Aquí el trabajar queda antes."
+        }
+      },
+      "examples": [
+        "Er tat, als ob er viel gelernt hätte.",
+        "Sie tat, als ob sie alles gesehen hätte."
+      ],
+      "tr": {
+        "en": "He did not work. He acted as if he had worked a lot.",
+        "es": "Él no trabajó. Actuó como si hubiera trabajado mucho."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f11",
+      "kind": "form",
+      "verb": "Gegenwart",
+      "person": "schlafen",
+      "answer": "schliefe",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c12",
+      "sentence": "Es heißt, er ___ krank. Aber er tut nur so.",
+      "options": [
+        "wäre",
+        "ist",
+        "sei"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Es heißt introduces a report. A report of what other people say takes Konjunktiv I: er sei krank.",
+        "es": "Es heißt introduce un informe. Un informe de lo que otros dicen lleva Konjunktiv I: er sei krank."
+      },
+      "wrong": {
+        "wäre": {
+          "en": "wäre is Konjunktiv II and expresses an unreal case. A report of other people's words first uses Konjunktiv I.",
+          "es": "wäre es Konjunktiv II y expresa un caso irreal. Un informe de las palabras de otros usa primero Konjunktiv I."
+        },
+        "ist": {
+          "en": "ist is the plain indicative. In a formal report the Konjunktiv I sei marks that the claim is only passed on.",
+          "es": "ist es el indicativo simple. En un informe formal el Konjunktiv I sei marca que la afirmación solo se transmite."
+        }
+      },
+      "examples": [
+        "Es heißt, er sei zu Hause.",
+        "Man sagt, sie habe Geld."
+      ],
+      "tr": {
+        "en": "It is said that he is sick. But he is only pretending.",
+        "es": "Se dice que está enfermo. Pero solo está fingiendo."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-f12",
+      "kind": "form",
+      "verb": "Vergangenheit",
+      "person": "schlafen",
+      "answer": "geschlafen hätte",
+      "table": "konjunktiv-vergleiche-formen"
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c13",
+      "sentence": "Er ist größer ___ sein Bruder.",
+      "options": [
+        "als",
+        "als ob",
+        "wie"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In a comparison of unequal things, als stands without ob and takes the same case as the first part: größer als sein Bruder.",
+        "es": "En una comparación de cosas desiguales, als va sin ob y toma el mismo caso que la primera parte: größer als sein Bruder."
+      },
+      "wrong": {
+        "als ob": {
+          "en": "als ob introduces an unreal comparison with a verb (als ob er groß wäre). Here two real persons are compared.",
+          "es": "als ob introduce una comparación irreal con un verbo (als ob er groß wäre). Aquí se comparan dos personas reales."
+        },
+        "wie": {
+          "en": "wie is used for equality (so groß wie). After a comparative you need als.",
+          "es": "wie se usa para la igualdad (so groß wie). Después de un comparativo necesitas als."
+        }
+      },
+      "examples": [
+        "Sie ist älter als ihr Mann.",
+        "Mein Auto ist kleiner als dein Auto."
+      ],
+      "tr": {
+        "en": "He is taller than his brother.",
+        "es": "Él es más alto que su hermano."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-c14",
+      "sentence": "___ er früher gekommen, hätten wir gespielt.",
+      "options": [
+        "Wäre",
+        "Hätte",
+        "Würde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Without wenn, the verb comes first. kommen takes sein, so the Konjunktiv II is wäre: Wäre er früher gekommen.",
+        "es": "Sin wenn, el verbo va primero. kommen usa sein, así que el Konjunktiv II es wäre: Wäre er früher gekommen."
+      },
+      "wrong": {
+        "Hätte": {
+          "en": "Hätte would need a haben-verb (Hätte er gelernt). kommen forms its Perfekt with sein.",
+          "es": "Hätte necesitaría un verbo con haben (Hätte er gelernt). kommen forma su Perfekt con sein."
+        },
+        "Würde": {
+          "en": "Würde cannot be combined with the participle gekommen. It needs an infinitive.",
+          "es": "Würde no se puede combinar con el participio gekommen. Necesita un infinitivo."
+        }
+      },
+      "examples": [
+        "Wäre ich früher aufgestanden, hätte ich Zeit gehabt.",
+        "Hätte er gelernt, hätte er die Prüfung bestanden."
+      ],
+      "tr": {
+        "en": "Had he come earlier, we would have played.",
+        "es": "De haber venido antes, habríamos jugado."
+      }
+    },
+    {
+      "id": "konjunktiv-irreale-vergleiche-w04",
+      "kind": "why",
+      "es": "Ich wünschte, du wärst hier.",
+      "target": "wärst",
+      "tr": {
+        "en": "I wish you were here.",
+        "es": "Ojalá estuvieras aquí."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Konjunktiv I: the wish is reported from somebody else",
+            "es": "Konjunktiv I: el deseo se relata de otra persona"
+          },
+          "wrong": {
+            "en": "Konjunktiv I would report somebody's words. This wish is contrary to reality, so it takes Konjunktiv II.",
+            "es": "El Konjunktiv I relataría las palabras de alguien. Este deseo es contrario a la realidad, así que lleva Konjunktiv II."
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv II: the wish describes something that is not real",
+            "es": "Konjunktiv II: el deseo describe algo que no es real"
+          }
+        },
+        {
+          "text": {
+            "en": "Präteritum: warst, because the wish is in the past",
+            "es": "Präteritum: warst, porque el deseo está en pasado"
+          },
+          "wrong": {
+            "en": "warst is an indicative Präteritum and would state a fact about the past. The wish needs the form with an umlaut: wärst.",
+            "es": "warst es un Präteritum de indicativo y enunciaría un hecho del pasado. El deseo necesita la forma con diéresis: wärst."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
