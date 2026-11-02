@@ -18,7 +18,7 @@ describe('data/exams/placement/de.json', () => {
   it.each(rows)('%s is a clean question', (_name, level, row) => {
     expect(row.id.startsWith(level.toLowerCase())).toBe(true);
     expect(row.sentence.match(/___/g)).toHaveLength(1);
-    expect(row.sentence).not.toMatch(/[–—]/);
+    expect(row.sentence).not.toMatch(new RegExp(`[${String.fromCharCode(0x2013, 0x2014)}]`));
     expect(row.options).toHaveLength(4);
     expect(new Set(row.options.map((o) => o.toLowerCase())).size).toBe(4);
     expect(Number.isInteger(row.correct) && row.correct >= 0 && row.correct < 4).toBe(true);

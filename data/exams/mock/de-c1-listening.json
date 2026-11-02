@@ -47,7 +47,11 @@
             },
             {
               "stem": "Welches Hörproblem nennt die Sprecherin als Beispiel?",
-              "options": ["Deutsche verwechseln im Spanischen die Laute r und rr.", "Erwachsene können neue Wörter schlecht behalten.", "Spanier überhören im Deutschen den Unterschied zwischen kurzen und langen Vokalen."],
+              "options": [
+                "Deutsche verwechseln im Spanischen die Laute r und rr, weil sie geschrieben gleich aussehen.",
+                "Erwachsene können neue Wörter schlecht behalten, wenn sie sie nur hören.",
+                "Spanier überhören im Deutschen den Unterschied zwischen kurzen und langen Vokalen."
+              ],
               "correct": 2
             },
             {
@@ -126,7 +130,11 @@
             },
             {
               "stem": "Was schließt Dr. Lenz aus den Pfefferkörnern?",
-              "options": ["In der Siedlung wurde mit Gewürzen gehandelt.", "Die Bewohner hatten Verbindung zum Fernhandel oder mehr Geld als vermutet.", "Pfeffer war im dreizehnten Jahrhundert ein alltägliches Gewürz."],
+              "options": [
+                "In der Siedlung wurde im großen Stil mit Gewürzen gehandelt.",
+                "Die Bewohner hatten Verbindung zum Fernhandel oder mehr Geld als vermutet.",
+                "Pfeffer war im dreizehnten Jahrhundert ein alltägliches Gewürz für einfache Handwerker."
+              ],
               "correct": 1
             },
             {
@@ -136,7 +144,7 @@
             },
             {
               "stem": "Wer muss nach dem Gesetz für die Untersuchung bezahlen?",
-              "options": ["Die Stadt, in der gegraben wird.", "Die Firma, die baut und dabei Bodendenkmäler gefährdet.", "Das Landesmuseum, das die Funde erhält."],
+              "options": ["Die Stadt, in deren Altstadt gegraben wird.", "Die Firma, die baut und dabei Bodendenkmäler gefährdet.", "Das Landesmuseum, das die Funde später erhalten soll."],
               "correct": 1
             },
             {
@@ -146,12 +154,16 @@
             },
             {
               "stem": "Was bedauert er besonders?",
-              "options": ["Dass ein Teil des Geländes abgetragen wurde, bevor man ihn untersuchen konnte.", "Dass viele Funde beim Reinigen beschädigt wurden.", "Dass die Öffentlichkeit sich nicht für die Grabung interessierte."],
+              "options": [
+                "Dass ein Teil des Geländes abgetragen wurde, bevor man ihn untersuchen konnte.",
+                "Dass viele Funde beim Reinigen und Restaurieren beschädigt wurden.",
+                "Dass die Öffentlichkeit sich nicht für die Grabung und ihre Ergebnisse interessierte."
+              ],
               "correct": 0
             },
             {
               "stem": "Was geschieht mit den Funden?",
-              "options": ["Sie werden dem Landesarchiv übergeben.", "Eine Auswahl wird im nächsten Frühjahr im Museum gezeigt.", "Sie bleiben vorerst im Depot."],
+              "options": ["Sie werden nach der Restaurierung dem Landesarchiv übergeben.", "Eine Auswahl wird im nächsten Frühjahr im Museum gezeigt.", "Sie bleiben vorerst im Depot der Grabungsfirma."],
               "correct": 1
             }
           ]
@@ -204,12 +216,12 @@
             },
             {
               "stem": "Wie steht Lara Hoffmann zu Seminaren mit Diskussionen?",
-              "options": ["Sie lehnt jede Anwesenheitspflicht ab.", "Sie versteht die Pflicht dort, hält sie aber nicht überall für nötig.", "Sie findet die Pflicht gerade dort überflüssig."],
+              "options": ["Sie lehnt jede Form der Anwesenheitspflicht an Hochschulen ab.", "Sie versteht die Pflicht dort, hält sie aber nicht überall für nötig.", "Sie findet die Pflicht gerade in Seminaren überflüssig und störend."],
               "correct": 1
             },
             {
               "stem": "Welche Erfahrung schildert Frau Hoffmann?",
-              "options": ["Dozenten zeichnen ihre Seminare auf.", "Es gibt zu wenige Plätze in den Seminaren.", "Manche Vorlesungen bestehen nur im Vorlesen von Folien."],
+              "options": ["Dozenten zeichnen ihre Seminare auf und stellen sie online.", "Es gibt zu wenige Plätze in den beliebten Seminaren.", "Manche Vorlesungen bestehen nur im Vorlesen von Folien."],
               "correct": 2
             },
             {
@@ -224,12 +236,16 @@
             },
             {
               "stem": "Welche Alternative schlägt Frau Hoffmann vor?",
-              "options": ["Prüfungen statt Teilnahme.", "Aktive Mitarbeit statt Anwesenheit in Seminaren.", "Anwesenheitspflicht nur für Anfänger."],
+              "options": ["Zusätzliche Prüfungen statt der Teilnahme.", "Aktive Mitarbeit statt Anwesenheit in Seminaren.", "Anwesenheitspflicht nur für Studierende im ersten Jahr."],
               "correct": 1
             },
             {
               "stem": "Was wendet Professor Weidner gegen diesen Vorschlag ein?",
-              "options": ["Studierende würden dann zu wenig lernen.", "Die Mitarbeit ließe sich bei großen Gruppen kaum gerecht beurteilen.", "Die Hochschule habe kein Geld für die Kontrolle."],
+              "options": [
+                "Studierende würden dann insgesamt zu wenig lernen und schlechter abschneiden.",
+                "Die Mitarbeit ließe sich bei großen Gruppen kaum gerecht beurteilen.",
+                "Die Hochschule habe kein Geld für die zusätzliche Kontrolle der Mitarbeit."
+              ],
               "correct": 1
             },
             {
@@ -273,12 +289,12 @@
           "questions": [
             {
               "stem": "Warum wurden nach dem Krieg so viele Fichten gepflanzt?",
-              "options": ["Sie wachsen schnell und liefern vielseitiges Holz.", "Sie vertragen Trockenheit besonders gut.", "Sie wurden vom Staat vorgeschrieben."],
+              "options": ["Sie wachsen schnell und liefern vielseitiges Holz.", "Sie vertragen Trockenheit besonders gut und brauchen wenig Pflege.", "Sie wurden vom Staat für den Wiederaufbau vorgeschrieben."],
               "correct": 0
             },
             {
               "stem": "Warum sind Fichtenwälder anfällig?",
-              "options": ["Sie stehen meist in zu dichten Beständen.", "Sie bestehen aus einer Baumart mit flachen Wurzeln und hohem Wasserbedarf.", "Ihr Holz ist für den Hausbau zu weich."],
+              "options": ["Sie stehen meist in zu dichten Beständen und bekommen zu wenig Licht.", "Sie bestehen aus einer Baumart mit flachen Wurzeln und hohem Wasserbedarf.", "Ihr Holz ist für den Hausbau zu weich und bricht schnell."],
               "correct": 1
             },
             {
@@ -288,12 +304,12 @@
             },
             {
               "stem": "Wozu dient der Vergleich mit der Geldanlage?",
-              "options": ["Er zeigt, dass der Waldumbau Gewinn bringt.", "Er macht deutlich, wie teuer die Pflanzungen sind.", "Er erklärt, warum man das Risiko auf mehrere Arten verteilt."],
+              "options": ["Er zeigt, dass der Waldumbau langfristig Gewinn bringt.", "Er macht deutlich, wie teuer die Pflanzungen für Waldbesitzer sind.", "Er erklärt, warum man das Risiko auf mehrere Arten verteilt."],
               "correct": 2
             },
             {
               "stem": "Was spricht für die Naturverjüngung?",
-              "options": ["Sie ist günstig und bringt gut angepasste Bäume hervor.", "Sie funktioniert auch ohne Samenbäume.", "Sie ist schneller als das Pflanzen."],
+              "options": ["Sie ist günstig und bringt gut angepasste Bäume hervor.", "Sie funktioniert auch ohne Samenbäume in der Nähe.", "Sie ist schneller als das Pflanzen und braucht keine Zäune."],
               "correct": 0
             },
             {
@@ -303,7 +319,11 @@
             },
             {
               "stem": "Was sagt die Referentin zum Schluss über die Zukunft?",
-              "options": ["Es gibt eine Lösung, die nur noch umgesetzt werden muss.", "Der künftige Wald wird anders aussehen, und Vielfalt ist der richtige Anfang.", "Der Wald wird in hundert Jahren wieder so wie früher sein."],
+              "options": [
+                "Es gibt eine Lösung, die nur noch umgesetzt werden muss.",
+                "Der künftige Wald wird anders aussehen, und Vielfalt ist der richtige Anfang.",
+                "Der Wald wird in hundert Jahren wieder so aussehen wie vor dem Klimawandel."
+              ],
               "correct": 1
             }
           ]

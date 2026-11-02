@@ -29,7 +29,7 @@
                 },
                 {
                   "stem": "Was wird die Frau wahrscheinlich tun?",
-                  "options": ["Die Besprechung absagen.", "Versuchen, ihren Zahnarzttermin auf eine frühere Zeit zu legen.", "Ihre Chefin um einen anderen Termin bitten."],
+                  "options": ["Die Besprechung wegen des Arzttermins absagen.", "Versuchen, ihren Zahnarzttermin auf eine frühere Zeit zu legen.", "Ihre Chefin bitten, die Besprechung auf den Donnerstag zu legen."],
                   "correct": 1
                 }
               ]
@@ -51,7 +51,7 @@
                 },
                 {
                   "stem": "Wer empfängt den Handwerker?",
-                  "options": ["Der Nachbar.", "Der Hausmeister.", "Die Frau von Herrn Brandt."],
+                  "options": ["Der Nachbar aus der Wohnung nebenan.", "Der Hausmeister, sobald er aus dem Urlaub zurück ist.", "Die Frau von Herrn Brandt."],
                   "correct": 2
                 }
               ]
@@ -121,7 +121,7 @@
                 },
                 {
                   "stem": "Was soll der Praktikant mit dem Bericht machen?",
-                  "options": ["Ihn erst nach der Klärung abgeben.", "Ihn heute abgeben und die unsichere Zahl markieren.", "Ihn Herrn Kaya zur Korrektur schicken."],
+                  "options": ["Ihn erst abgeben, wenn die Zahl endgültig geklärt ist.", "Ihn heute abgeben und die unsichere Zahl markieren.", "Ihn heute noch an Herrn Kaya zur Korrektur schicken."],
                   "correct": 1
                 }
               ]
@@ -183,17 +183,21 @@
             },
             {
               "stem": "Was bedeutet „sozialer Jetlag“?",
-              "options": ["Die Müdigkeit nach einer weiten Reise.", "Der Unterschied zwischen den Schlafzeiten an Schultagen und am Wochenende.", "Der Schlafmangel durch zu viel Zeit mit Freunden."],
+              "options": [
+                "Die Müdigkeit, die nach einer weiten Reise in einer anderen Zeitzone auftritt.",
+                "Der Unterschied zwischen den Schlafzeiten an Schultagen und am Wochenende.",
+                "Der Schlafmangel, der durch zu viel Zeit mit Freunden am Abend entsteht."
+              ],
               "correct": 1
             },
             {
               "stem": "Wie beurteilt Frau Reuter das Ausschlafen am Wochenende?",
-              "options": ["Es ist die beste Lösung für Jugendliche.", "Es hilft nur für kurze Zeit und stört den Rhythmus.", "Es schadet der Gesundheit ernsthaft."],
+              "options": ["Es ist für Jugendliche die beste Lösung gegen Müdigkeit.", "Es hilft nur für kurze Zeit und stört den Rhythmus.", "Es schadet der Gesundheit mehr als zu wenig Schlaf."],
               "correct": 1
             },
             {
               "stem": "Was rät sie in Bezug auf Handys und Tablets?",
-              "options": ["Nur noch das Handy abends zu verbieten.", "Abends nur noch Musik über das Gerät zu hören.", "Sie spätestens eine Stunde vor dem Schlafen nicht mehr zu benutzen."],
+              "options": ["Nur das Handy am Abend zu verbieten, Tablets aber zu erlauben.", "Abends keine Videos mehr, sondern nur noch Musik über das Gerät zu hören.", "Sie spätestens eine Stunde vor dem Schlafen nicht mehr zu benutzen."],
               "correct": 2
             },
             {
@@ -315,7 +319,7 @@
             },
             {
               "stem": "Warum täuscht das Gefühl nach dem wiederholten Lesen?",
-              "options": ["Man erkennt Wörter wieder, kann sie aber nicht selbst abrufen.", "Man vergisst den Text sofort wieder.", "Man versteht den Inhalt nicht."],
+              "options": ["Man erkennt Wörter wieder, kann sie aber nicht selbst abrufen.", "Man vergisst den Inhalt des Textes schon nach wenigen Minuten wieder.", "Man versteht den Inhalt des Textes nur zur Hälfte."],
               "correct": 0
             },
             {
@@ -330,7 +334,7 @@
             },
             {
               "stem": "Welchen Vorteil hat es, Themen beim Lernen zu mischen?",
-              "options": ["Man lernt von Anfang an schneller.", "Man behält langfristig mehr, auch wenn man anfangs langsamer ist.", "Man wird weniger müde."],
+              "options": ["Man lernt von Anfang an schneller und macht weniger Fehler.", "Man behält langfristig mehr, auch wenn man anfangs langsamer ist.", "Man wird beim Lernen weniger müde und braucht weniger Pausen."],
               "correct": 1
             },
             {

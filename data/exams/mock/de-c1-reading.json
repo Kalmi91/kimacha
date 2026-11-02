@@ -56,12 +56,16 @@
           "questions": [
             {
               "stem": "Wie erklärt Dr. Bernd die Ursache des Aufschiebens?",
-              "options": ["Betroffene können ihre Zeit schlecht einteilen.", "Man weicht unangenehmen Gefühlen aus, die eine Aufgabe auslöst.", "Betroffene überschätzen die Dauer einer Aufgabe."],
+              "options": [
+                "Betroffene können ihre Zeit schlecht einteilen und unterschätzen den Aufwand.",
+                "Man weicht unangenehmen Gefühlen aus, die eine Aufgabe auslöst.",
+                "Betroffene überschätzen die Dauer einer Aufgabe und scheuen deshalb den Anfang."
+              ],
               "correct": 1
             },
             {
               "stem": "Warum wird der beschriebene Mechanismus heute zum Problem?",
-              "options": ["Er entwickelte sich erst durch moderne Büroarbeit.", "Er verleitet dazu, Aufgaben trotz fester Abgabetermine zu meiden.", "Er löst bei Betroffenen starke Angst aus."],
+              "options": ["Er entwickelte sich erst durch die moderne Büroarbeit mit Abgabefristen.", "Er verleitet dazu, Aufgaben trotz fester Abgabetermine zu meiden.", "Er löst bei Betroffenen starke Angst vor Fristen aus."],
               "correct": 1
             },
             {
@@ -71,12 +75,16 @@
             },
             {
               "stem": "Was ist über die gesundheitlichen Folgen chronischen Aufschiebens bekannt?",
-              "options": ["Sie wurden bisher kaum untersucht.", "Sie treten vor allem bei Studierenden auf.", "Sie hängen vermutlich mit dem dauerhaften Stress zusammen."],
+              "options": ["Sie wurden bisher kaum wissenschaftlich untersucht.", "Sie treten vor allem bei Studierenden vor Prüfungen auf.", "Sie hängen vermutlich mit dem dauerhaften Stress zusammen."],
               "correct": 2
             },
             {
               "stem": "Was zeigt das erwähnte Experiment mit Studierenden?",
-              "options": ["Wer sich nach einem Fehler nicht kritisiert, bereitet sich besser vor.", "Wer sich Vorwürfe macht, lernt gründlicher.", "Wer früh beginnt, schneidet in der Prüfung besser ab."],
+              "options": [
+                "Wer sich nach einem Fehler nicht kritisiert, bereitet sich besser vor.",
+                "Wer sich Vorwürfe macht, lernt gründlicher für die nächste Prüfung.",
+                "Wer früh mit dem Lernen beginnt, schneidet in der Prüfung besser ab."
+              ],
               "correct": 0
             },
             {
@@ -88,7 +96,7 @@
               "stem": "Worin unterscheiden sich die Positionen von Albrecht und Bernd?",
               "options": [
                 "Albrecht hält das Aufschieben für eine Krankheit, Bernd für einen Arbeitsstil.",
-                "Albrecht fordert mehr Kontrolle, Bernd mehr Freiheit für Teams.",
+                "Albrecht fordert mehr Kontrolle durch Vorgesetzte, Bernd mehr Freiheit für die Teams.",
                 "Albrecht sieht viele Aufschieber nicht als Problemfall, Bernd verweist auf deren Leidensdruck."
               ],
               "correct": 2
