@@ -1,0 +1,202 @@
+{
+  "target": "hu",
+  "level": "A1",
+  "paper": "speaking",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Mondja el a vizsgáztatónak, ki Ön. Beszéljen a feladatlapon lévő pontokról.",
+          "talkMinutes": [1, 2],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Bemutatkozás",
+              "prompt": "Most ismerkedik meg a vizsgáztatóval. Mondja el, ki Ön.",
+              "bullets": ["a neve", "honnan jön", "a kora", "hol lakik", "a munkája vagy az iskolája", "milyen nyelveken beszél", "a családja"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Jó napot! Amikor készen áll, kezdheti.",
+                  "minWords": 30,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja a nevét vagy azt, honnan jön", "keywords": ["a nevem", "nevem", "hivnak", "magyar", "mexikoi", "amerikai", "angol", "nemet", "spanyol", "kolumbiai", "argentin", "brazil"] },
+                    { "id": "p2", "label": "Megmondja a korát vagy hogy hol lakik", "keywords": ["eves", "korom", "lakom", "lakunk", "budapest", "debrecen", "szeged", "pecs", "varosban", "lakasban", "hazban", "falun"] },
+                    { "id": "p3", "label": "Beszél a munkájáról vagy az iskolájáról", "keywords": ["dolgozom", "tanulok", "irodaban", "egyetem", "iskola", "munkam", "cegnel", "mernok", "tanar", "orvos", "diak", "program"] },
+                    { "id": "p4", "label": "Beszél a nyelvekről vagy a családjáról", "keywords": ["beszelek", "nyelv", "angolul", "magyarul", "spanyolul", "csaladom", "testver", "noverem", "ocsem", "szuleim", "felesegem", "ferjem"] }
+                  ],
+                  "model": "A nevem Maria Lopez, mexikói vagyok. Harminc éves vagyok, és Budapesten lakom. Egy irodában dolgozom, és este magyarul tanulok. Spanyolul, angolul és egy kicsit magyarul beszélek. Van egy nővérem, a szüleim Mexikóban élnek."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válasszon egy témát, és beszéljen róla két-három percig. Előtte tíz percig készülhet, és írhat néhány szót a papírra.",
+          "prepSeconds": 600,
+          "talkMinutes": [2, 3],
+          "choices": [
+            {
+              "id": "a",
+              "title": "Az otthonom",
+              "prompt": "Beszéljen a lakásáról és arról a helyről, ahol él.",
+              "bullets": ["milyen a lakása vagy a háza", "hány szobája van", "kivel lakik", "mi van a közelben", "mi tetszik Önnek ott, ahol lakik"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Most beszéljen a lakásáról és arról a helyről, ahol él. Amikor készen áll, kezdheti.",
+                  "minWords": 35,
+                  "points": [
+                    { "id": "p1", "label": "Leírja a lakását vagy a házát", "keywords": ["a lakasom", "a hazam", "kicsi", "szep", "kenyelmes", "vilagos", "modern", "regi", "emeleten", "panelhaz", "tagas", "hangulatos"] },
+                    { "id": "p2", "label": "Megmondja, milyen szobái vannak", "keywords": ["szoba", "konyha", "furdoszoba", "nappali", "erkely", "kert", "haloszoba", "etkezo", "folyoso", "pince", "garazs", "terasz"] },
+                    { "id": "p3", "label": "Megmondja, kivel lakik", "keywords": ["egyedul", "baratnom", "baratom", "ferjem", "felesegem", "szuleim", "csaladom", "testverem", "lakotars", "gyerekeim", "kutyam", "macska"] },
+                    { "id": "p4", "label": "Beszél arról a helyről, ahol él", "keywords": ["park", "bolt", "metro", "busz", "villamos", "piac", "uzlet", "iskola", "etterem", "csendes", "szomszed", "kozel"] }
+                  ],
+                  "model": "A lakásom kicsi, de nagyon szép. Két szobám, egy konyhám és egy fürdőszobám van. A barátnőmmel lakom, és van egy macskánk is. Ott, ahol lakom, csendes az utca, és a közelben van egy park és egy bolt. Szeretem, mert a metró öt percre van."
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Egy napom",
+              "prompt": "Beszéljen egy napjáról, reggeltől estig.",
+              "bullets": ["mikor kel fel", "mit reggelizik", "hol dolgozik vagy tanul", "mit csinál délután", "mit csinál este"],
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Most beszéljen egy napjáról. Amikor készen áll, kezdheti.",
+                  "minWords": 35,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mikor kel fel", "keywords": ["felkelek", "kelek fel", "ebredek", "koran", "hatkor", "hetkor", "nyolckor", "kilenckor", "tizkor", "korabban", "felkel", "kelek"] },
+                    { "id": "p2", "label": "Megmondja, mit reggelizik", "keywords": ["reggelizek", "reggelit", "kave", "teat", "kenyer", "sajtot", "tojast", "szendvics", "zsemle", "tejet", "gyumolcs", "muzli"] },
+                    { "id": "p3", "label": "Megmondja, hol dolgozik vagy tanul", "keywords": ["dolgozom", "tanulok", "irodaban", "irodaba", "egyetem", "iskola", "munkahely", "cegnel", "kolleg", "oktat", "tanitok", "bolt"] },
+                    { "id": "p4", "label": "Elmondja, mit csinál délután vagy este", "keywords": ["delutan", "este", "vacsora", "hazamegyek", "hazajovok", "setalok", "tevez", "olvasok", "fozok", "lefekszem", "sport", "alszom"] }
+                  ],
+                  "model": "Reggelente hétkor kelek fel, és reggelizem: kávét iszom, és kenyeret eszem sajttal. Egy nagy irodában dolgozom a városban, és kettőkor ebédelek a kollégákkal. Délután hazamegyek, és sétálok egy kicsit. Este vacsorázom, filmet nézek, és tizenegykor már alszom."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "speaking",
+          "kind": "speaking",
+          "instruction": "Válaszoljon a vizsgáztató kérdéseire. A végén Ön is kérdezzen két dolgot a vizsgáztatótól.",
+          "talkMinutes": [3, 4],
+          "follows": 2,
+          "choices": [
+            {
+              "id": "a",
+              "title": "Az otthonom",
+              "prompt": "Most válaszoljon a lakásával kapcsolatos kérdésekre. A végén Ön kérdez két dolgot.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Mi van a szobájában?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Megnevez dolgokat a szobájából", "keywords": ["asztal", "szek", "kanape", "polc", "szekreny", "lampa", "fotel", "tukor", "szonyeg", "komod", "televizio", "agy van"] }
+                  ],
+                  "model": "A szobámban van egy ágy, egy asztal és két szék."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Mivel megy a munkahelyére vagy az iskolába?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mivel megy", "keywords": ["metro", "busz", "villamos", "auto", "bicikli", "gyalog", "vonat", "taxi", "kerekpar", "troli"] }
+                  ],
+                  "model": "A munkahelyemre metróval megyek, de néha gyalog."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Mit szeret csinálni otthon?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mit szeret csinálni otthon", "keywords": ["fozni", "fozok", "olvas", "zenet", "zenehall", "tevez", "film", "sorozat", "pihen", "takarit", "jatszom", "kertesz"] }
+                  ],
+                  "model": "Otthon szeretek főzni, olvasni és sorozatot nézni."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Szereti azt a helyet, ahol lakik? Miért?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, tetszik-e neki a hely, és miért", "keywords": ["csendes", "szep", "park", "szomszed", "tiszta", "biztonsag", "kenyelmes", "kozel", "zajos", "nyugodt", "barati", "zold"] }
+                  ],
+                  "model": "Igen, szeretem, mert csendes és sok park van."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Most Ön kérdez. Kérem, kérdezzen tőlem két dolgot.",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Kérdez a vizsgáztatótól", "keywords": ["?", "hol lakik", "hol dolgozik", "mikor", "mennyi", "melyik", "hogyan", "mit csinal", "hany", "kivel", "szereti", "van-e"] }
+                  ],
+                  "model": "Hol lakik Ön? És mit csinál a hétvégén?"
+                }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "Egy napom",
+              "prompt": "Most válaszoljon a napjával kapcsolatos kérdésekre. A végén Ön kérdez két dolgot.",
+              "turns": [
+                {
+                  "id": "t1",
+                  "ask": "Mikor kel fel vasárnap?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mikor kel fel vasárnap", "keywords": ["kelek", "felkelek", "ebredek", "keso", "koran", "hatkor", "hetkor", "nyolckor", "kilenckor", "tizkor", "tizenegykor", "delben"] }
+                  ],
+                  "model": "Vasárnap később kelek fel, általában kilenckor vagy tízkor."
+                },
+                {
+                  "id": "t2",
+                  "ask": "Mit eszik ebédre?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mit eszik ebédre", "keywords": ["eszem", "ebedelek", "leves", "hust", "halat", "salata", "rizs", "teszta", "krumpli", "pizza", "tojas", "szendvics"] }
+                  ],
+                  "model": "Ebédre levest és húst eszem salátával."
+                },
+                {
+                  "id": "t3",
+                  "ask": "Milyen napokon dolgozik vagy tanul?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mely napokon dolgozik vagy tanul", "keywords": ["hetfo", "kedd", "szerda", "csutortok", "pentek", "hetkoznap", "minden nap", "naponta", "szombat", "vasarnap", "hetvege", "hetfotol"] }
+                  ],
+                  "model": "Hétfőtől péntekig dolgozom, szombaton és vasárnap pihenek."
+                },
+                {
+                  "id": "t4",
+                  "ask": "Mit csinál a hétvégén?",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Megmondja, mit csinál a hétvégén", "keywords": ["barat", "csalad", "setal", "pihen", "film", "mozi", "kirandul", "fozni", "olvas", "bevasarol", "jatsz", "focizom"] }
+                  ],
+                  "model": "A hétvégén a barátaimmal találkozom, és néha moziba megyek."
+                },
+                {
+                  "id": "t5",
+                  "ask": "Most Ön kérdez. Kérem, kérdezzen tőlem két dolgot.",
+                  "minWords": 6,
+                  "points": [
+                    { "id": "p1", "label": "Kérdez a vizsgáztatótól", "keywords": ["?", "hol lakik", "hol dolgozik", "mikor", "mennyi", "melyik", "hogyan", "mit csinal", "hany", "kivel", "szereti", "van-e"] }
+                  ],
+                  "model": "Hol dolgozik Ön? És mikor megy haza?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -195,9 +195,20 @@ describe('the rules, each with a bad fixture', () => {
     fails(broken('es-c1-listening', (d) => (tasks(d)[2].text = 'a written text too')), /exactly one of text \/ audio is needed/);
     fails(broken('es-b1-reading', (d) => (d.forms[0].id = '')), /needs an id and a task list/);
     fails(broken('es-b1-reading', (d) => d.forms.push({ id: 'f1', tasks: tasks(d) })), /form ids are not unique/);
-    fails(broken('es-b1-reading', (d) => (d.target = 'fr')), /target "fr" must be es or en/);
+    fails(broken('es-b1-reading', (d) => (d.target = 'fr')), /target "fr" must be es, en or hu/);
     expect(run(path.join(tmp, 'does-not-exist.json')).out).toMatch(/the file does not exist/);
     expect(run('--bogus').status).toBe(1);
+  });
+
+  it('hu: a file of target hu has the es format; õ û ô (not ő ű) are an error; the fixed man / woman options are the Hungarian ones', () => {
+    const asHu = (d: Json) => (d.target = 'hu');
+    expect(broken('es-b1-reading', asHu).last).toBe('mock-exam-check: OK (1 files, 0 errors, 0 warnings)');
+    fails(broken('es-b1-reading', (d) => { asHu(d); tasks(d)[1].title = 'Kõ'; }), /M6: .*"õ" is not Hungarian/);
+    fails(broken('es-b1-reading', (d) => { asHu(d); tasks(d)[1].title = 'Tû'; }), /M6: .*"û" is not Hungarian/);
+    // the es speaker question set (hombre / mujer / ninguno) is not valid in hu
+    const esListening = esB1Listening();
+    esListening.target = 'hu';
+    fails(run(write(esListening)), /the options must be a férfi \/ a nő \/ egyikük sem/);
   });
 });
 

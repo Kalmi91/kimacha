@@ -16,10 +16,12 @@ type Level = AuthoredPaperFile['level'];
 const SOURCES: Record<MockTarget, Record<string, unknown>> = {
   es: { reading: esB1Reading, listening: esC1Listening, writing: esB2Writing },
   en: { reading: enB1Reading, readinguse: enB2Readinguse, listening: enC1Listening, writing: esB2Writing },
+  // hu has the shape of the es papers (the same task kinds and counts), so the es fixtures stand in for it.
+  hu: { reading: esB1Reading, listening: esC1Listening, writing: esB2Writing },
 };
 
 /** The non-placeholder papers of a level, in the blueprint's order. */
-const paperIds = (target: MockTarget, level: Level) => (target === 'es' ? ['reading', 'listening', 'writing'] : level === 'B1' ? ['reading', 'writing', 'listening'] : ['readinguse', 'writing', 'listening']);
+const paperIds = (target: MockTarget, level: Level) => (target === 'es' || target === 'hu' ? ['reading', 'listening', 'writing'] : level === 'B1' ? ['reading', 'writing', 'listening'] : ['readinguse', 'writing', 'listening']);
 
 /** Every paper file of one level (one form each), so that `mockAvailable(target, level)` is true. */
 export function fixturePapers(target: MockTarget, level: Level): AuthoredPaperFile[] {

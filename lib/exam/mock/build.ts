@@ -18,6 +18,8 @@ import { authoredFormCount, authoredTasks } from './authored';
 import { getMockBlueprint } from './blueprint';
 import {
   DEFAULT_PLAYS,
+  TASK_PREFIX,
+  TASK_WORD,
   type AuthoredPaperFile,
   type MockExam,
   type MockGapMcTask,
@@ -53,6 +55,7 @@ const PUNCT = /[¿?¡!.,;:()"«»]/g;
 const ARTICLE: Record<MockTarget, RegExp> = {
   es: /^(el|la|los|las|un|una)\s+/i,
   en: /^(to|the|a|an)\s+/i,
+  hu: /^(a|az|egy)\s+/i,
 };
 // Numerals, pronouns, prepositions and conjunctions would fit several answers: they are neither a host nor a trap in the gaps.
 const AMBIGUOUS_POS = new Set(['num', 'pron', 'prep', 'conj']);
@@ -63,7 +66,7 @@ export function sentenceWords(sentence: string): string[] {
 
 /** The item's target-language form without article / "to" and parentheses, as a single word; otherwise null. */
 export function singleWordForm(item: PcicItem, target: MockTarget): string | null {
-  const raw = (target === 'es' ? item.es : item.en).split(' / ')[0].replace(/\(.*?\)/g, '').trim();
+  const raw = (target === 'es' ? item.es : target === 'hu' ? (item.hu ?? '') : item.en).split(' / ')[0].replace(/\(.*?\)/g, '').trim();
   const bare = raw.replace(ARTICLE[target], '').trim().toLowerCase();
   if (!bare || /\s/.test(bare) || bare.length < MIN_WORDS) return null;
   return bare;
@@ -102,8 +105,6 @@ interface Draft {
   task: MockTask;
 }
 
-const AUTHORED_PREFIX = /^(TAREA|PART) \d+\.\s*/;
-
 export function buildMockExam(input: MockBuildInput): MockExam {
   const { target, level, items, seed } = input;
   const bp = getMockBlueprint(target, level);
@@ -119,6 +120,8 @@ export function buildMockExam(input: MockBuildInput): MockExam {
     });
     return { target, level, seed, official: bp.official, papers, skillNames: bp.skillNames, rule: bp.rule };
   }
+  // hu has only the authored plan (getMockBlueprint); the generator below builds the es / en A1 / A2 papers from the deck's sentences.
+  if (target === 'hu') return { target, level, seed, official: bp.official, papers: [], skillNames: bp.skillNames, rule: bp.rule };
   const c = bp.counts;
   const key = `${target}:${level}:${seed}`;
   const rank = (part: string) => hashString(`${key}:${part}`);
@@ -314,7 +317,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
   const writing: Draft[] = (MOCK_WRITING[`${target}:${level}`] ?? []).map((w) => ({
     skill: 'writing' as const,
     instruction: null,
-    task: { ...w, id: '', skill: 'writing', instruction: w.instruction.replace(AUTHORED_PREFIX, '') } as MockTask,
+    task: { ...w, id: '', skill: 'writing', instruction: w.instruction.replace(TASK_PREFIX, '') } as MockTask,
   }));
 
   const drafts: Record<MockSkill, (Draft | null)[]> = { reading: [], writing, listening: [], speaking: [], use: [] };
@@ -348,7 +351,7 @@ export function buildMockExam(input: MockBuildInput): MockExam {
         if (!d) continue;
         const n = tasks.length + 1;
         const plays = 'plays' in d.task && typeof d.task.plays === 'number' ? d.task.plays : DEFAULT_PLAYS;
-        const instruction = d.instruction ? mockInstruction(target, d.instruction, n, plays) : `${target === 'es' ? 'TAREA' : 'PART'} ${n}. ${d.task.instruction}`;
+        const instruction = d.instruction ? mockInstruction(target, d.instruction, n, plays) : `${TASK_WORD[target]} ${n}. ${d.task.instruction}`;
         tasks.push({ ...d.task, id: `${spec.id}-${n}`, instruction } as MockTask);
       }
     }

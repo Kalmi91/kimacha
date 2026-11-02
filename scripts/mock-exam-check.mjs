@@ -5,7 +5,7 @@
 //
 // Usage:
 //   node scripts/mock-exam-check.mjs [--strict] [--photos <registry.json>] [file ...]
-//                                                             check the given files (default: all 28 under data/exams/mock);
+//                                                             check the given files (default: all 42 under data/exams/mock);
 //                                                             a `*` in a path is expanded here (PowerShell does not);
 //                                                             --photos replaces data/exams/mock/photos.json (S5; its photo files then sit next to it)
 //   node scripts/mock-exam-check.mjs --blind <file> <out>      write a copy without the answer key (correct / answer / answers;
@@ -224,8 +224,15 @@ const SPEC = {
   ],
 };
 
+// hu (Hungarian): the same task order, counts, bands and speaking structure as the es papers (E90); only the fixed
+// man / woman / neither options of the dialogue question set are Hungarian.
+const MWF_HU = { speakers: ['m', 'f'], fixedOptions: ['a férfi', 'a nő', 'egyikük sem'] };
+for (const [name, spec] of Object.entries(SPEC)) {
+  if (name.startsWith('es-')) SPEC[`hu-${name.slice(3)}`] = spec.map((task) => (task.fixedOptions ? { ...task, ...MWF_HU } : task));
+}
+
 // S7: the minutes of the speaking papers (lib/exam/mock/blueprint.ts) and the words a learner can type / dictate per minute.
-const SPEAKING_MINUTES = { 'es-a1': 10, 'es-a2': 12, 'es-b1': 15, 'es-b2': 20, 'es-c1': 20, 'en-a1': 3.5, 'en-a2': 9, 'en-b1': 12, 'en-b2': 14, 'en-c1': 15 };
+const SPEAKING_MINUTES = { 'es-a1': 10, 'es-a2': 12, 'es-b1': 15, 'es-b2': 20, 'es-c1': 20, 'en-a1': 3.5, 'en-a2': 9, 'en-b1': 12, 'en-b2': 14, 'en-c1': 15, 'hu-a1': 10, 'hu-a2': 12, 'hu-b1': 15, 'hu-b2': 20, 'hu-c1': 20 };
 const WORDS_PER_MINUTE = 20;
 
 const EXPECTED_FILES = Object.keys(SPEC).map((name) => `${name}.json`);
@@ -723,6 +730,7 @@ function speakingWords(form) {
 const FILLER = {
   es: 'Pues bueno, claro que sí, mucho, poco, más de eso, me gusta, no me gusta, porque sí, gracias, de nada, entonces, de acuerdo, está bien, depende, creo que sí, a las cinco de la tarde, buenas tardes, la verdad, siempre, nunca, a veces, es todo, nada más, quiero, donde sea, aquí, allí, muy bien, también, tal vez, por ejemplo, otra cosa, me parece bien, es importante, no sé',
   en: "Well, yes, of course, I think so, because, I like it, I don't know, I go, I will, I would, the best, thank you, yes please, okay, maybe, sometimes, always, never, very good, that's all, I want, here, there, a lot, a little, both, similar, usually, for example, it is important, I agree, really nice",
+  hu: 'Hát jó, persze, igen, természetesen, szeretem, nem szeretem, mert igen, köszönöm, szívesen, akkor, rendben van, nagyon jó, attól függ, szerintem igen, mindig, soha, néha, ennyi, semmi több, itt, ott, nagyon, talán, például, valami más, fontos, nem tudom, minden jó, jól van, nincs mit',
 };
 
 /** S9: "task n choices[i].turns[k].points[m]: keyword ..." for every keyword that matches the content-free filler of the language. */
@@ -753,7 +761,7 @@ function checkData(data, { strict, photos = registryPhotos }) {
   const errors = [];
   const warnings = [];
   if (!isObj(data)) return { errors: ['M1: the file must be an object { target, level, paper, forms }'], warnings };
-  if (!['es', 'en'].includes(data.target)) errors.push(`M1: target "${data.target}" must be es or en`);
+  if (!['es', 'en', 'hu'].includes(data.target)) errors.push(`M1: target "${data.target}" must be es, en or hu`);
   if (!LEVELS.includes(data.level)) errors.push(`M1: level "${data.level}" must be ${LEVELS.join(', ')}`);
   if (!isStr(data.paper)) errors.push('M1: paper must be a non-empty string');
   if (!Array.isArray(data.forms)) errors.push('M1: forms must be a list');
@@ -770,6 +778,8 @@ function checkData(data, { strict, photos = registryPhotos }) {
   for (const [at, text] of strings(data)) {
     if (EM_DASH.test(text)) errors.push(`M7: ${at}: em dash (use a comma, a colon or a new sentence)`);
     if (data.target === 'es') for (const re of ES_BLACKLIST) if (re.test(text)) errors.push(`M6: ${at}: "${text.match(re)[0]}" is not Mexican usage (${re})`);
+    // hu norm: the Hungarian long double-acute letters ő ű, never the Latin-2 look-alikes õ û ô.
+    if (data.target === 'hu' && /[õûôÕÛÔ]/.test(text)) errors.push(`M6: ${at}: "${text.match(/[õûôÕÛÔ]/)[0]}" is not Hungarian (use ő ű)`);
   }
 
   // A speaking file is written after the engine; the app keeps its placeholder while it is empty, so it is only a warning, also with --strict.

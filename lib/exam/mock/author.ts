@@ -5,7 +5,7 @@
 // of Kimacha's English exam research. The reading
 // and listening content does not come from here: lib/exam/mock/build.ts builds it from the level's words.
 
-import { DEFAULT_PLAYS, type MockFormFillTask, type MockShortMessageTask, type MockTarget } from './types';
+import { DEFAULT_PLAYS, TASK_WORD, type MockFormFillTask, type MockShortMessageTask, type MockTarget } from './types';
 
 export type MockInstructionKind =
   | 'read_mc'
@@ -45,17 +45,31 @@ const INSTRUCTIONS: Record<MockTarget, Record<MockInstructionKind, string>> = {
     listen_fill: 'You will hear some sentences. You hear them {times}. Write the missing word.',
     dictation: 'You will hear a text. You hear it {times}. Write it down exactly as you hear it.',
   },
+  // hu: the A1 / A2 papers of the Hungarian exam are speaking only (nothing is generated), so these are not shown today; they keep the table complete.
+  hu: {
+    read_mc: 'Olvassa el a szövegeket, és válassza ki a helyes választ.',
+    match: 'Olvassa el a mondatokat, és párosítsa mindegyiket a jelentésével. Több jelentés van, mint mondat.',
+    true_false: 'Olvassa el a szöveget. Igazak (✓) vagy hamisak (✗) a mondatok?',
+    gap_mc: 'Egészítse ki a mondatokat. Minden hiányzó szóhoz válassza ki a helyes lehetőséget.',
+    gap_type: 'Egészítse ki a mondatokat egy-egy szóval.',
+    listen_mc: 'Néhány mondatot fog hallani. Ezeket {times} hallja. Válassza ki a helyes választ.',
+    listen_match: 'Néhány mondatot fog hallani. Párosítsa mindegyiket a jelentésével. Több jelentés van, mint mondat.',
+    listen_dialogue: 'Egy beszélgetést fog hallani. Ezt {times} hallja. Válaszoljon a kérdésekre.',
+    listen_fill: 'Néhány mondatot fog hallani. Ezeket {times} hallja. Írja be a hiányzó szót.',
+    dictation: 'Egy szöveget fog hallani. Ezt {times} hallja. Írja le pontosan úgy, ahogy hallja.',
+  },
 };
 
 const TIMES: Record<MockTarget, Record<number, string>> = {
   es: { 1: 'una vez', 2: 'dos veces' },
   en: { 1: 'once', 2: 'twice' },
+  hu: { 1: 'egyszer', 2: 'kétszer' },
 };
 
-/** The task number on the paper: in Spanish "TAREA 2.", in English "PART 2."; for a recorded task, the number of plays. */
+/** The task number on the paper: in Spanish "TAREA 2.", in English "PART 2.", in Hungarian "FELADAT 2."; for a recorded task, the number of plays. */
 export function mockInstruction(target: MockTarget, kind: MockInstructionKind, taskNumber: number, plays: number = DEFAULT_PLAYS): string {
   const text = INSTRUCTIONS[target][kind].replace('{times}', TIMES[target][plays] ?? TIMES[target][DEFAULT_PLAYS]);
-  return `${target === 'es' ? 'TAREA' : 'PART'} ${taskNumber}. ${text}`;
+  return `${TASK_WORD[target]} ${taskNumber}. ${text}`;
 }
 
 type WritingTask = Omit<MockFormFillTask, 'id' | 'skill'> | Omit<MockShortMessageTask, 'id' | 'skill'>;
