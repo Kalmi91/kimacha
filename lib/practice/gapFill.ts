@@ -16,7 +16,7 @@ import openB2 from '@/data/words-open/b2.json';
 import openC1 from '@/data/words-open/c1.json';
 import { addDays, type Sm2Card } from '@/lib/sm2';
 import { activeSourceFor } from '@/lib/languagePair';
-import { exampleIn, wordIn } from '@/lib/pcicItemText';
+import { GERMAN_ARTICLE_RE, exampleIn, wordIn } from '@/lib/pcicItemText';
 
 /** A word counts as freshly learned (Words tab) when it was first asked within this many days. */
 export const PRACTICE_RECENT_DAYS = 7;
@@ -93,7 +93,7 @@ export function gapByWord(sentence: string, headword: string): Gap | null {
 function germanForms(headword: string): string[] {
   return headword
     .split(' / ')
-    .map((alt) => alt.replace(/\([^)]*\)/g, ' ').trim().replace(/^(der|die|das|ein|eine|sich)\s+/i, '').trim())
+    .map((alt) => alt.replace(/\([^)]*\)/g, ' ').trim().replace(GERMAN_ARTICLE_RE, '').replace(/^sich\s+/i, '').trim())
     .filter(Boolean);
 }
 

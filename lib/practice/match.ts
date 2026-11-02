@@ -9,8 +9,7 @@
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { activeSourceFor, type Lang } from '@/lib/languagePair';
-import { wordIn } from '@/lib/pcicItemText';
-import { pcicAlternatives } from '@/lib/pcicMatch';
+import { firstForm, wordIn } from '@/lib/pcicItemText';
 import type { GameLogic } from '@/lib/practice/gameRound';
 import { scrambleTiles, seedOf } from '@/lib/practice/scramble';
 import { loadResumeValue, saveResumeValue } from '@/lib/resumeStore';
@@ -41,8 +40,6 @@ export interface MatchState {
   over: MatchEnd | null;
 }
 
-const firstForm = (text: string) => (pcicAlternatives(text)[0] ?? text).trim();
-
 /**
  * The languages of the left and right column: Spanish and English for the two original pairs; with a third language in
  * the pair (Hungarian or German), that language is the left column and the pair's other language the right one
@@ -58,7 +55,7 @@ function columnLangs(target: PcicTarget): { left: Lang; right: Lang } {
 /** What a card shows: the left word (Spanish with its article) as `es`, and the right meaning (English as written, its notes in brackets too) as `en`; the keys name the columns. */
 export function matchCard(item: PcicItem, target: PcicTarget = 'es'): { es: string; en: string } {
   const { left, right } = columnLangs(target);
-  return { es: firstForm(wordIn(item, left) ?? ''), en: (wordIn(item, right) ?? '').trim() };
+  return { es: firstForm(wordIn(item, left) ?? '', left), en: (wordIn(item, right) ?? '').trim() };
 }
 
 /** A word needs both texts. */
