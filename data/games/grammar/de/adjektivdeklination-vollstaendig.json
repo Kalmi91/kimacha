@@ -1,0 +1,1090 @@
+{
+  "schema": 2,
+  "topic": "adjektivdeklination-vollstaendig",
+  "level": "B1",
+  "title": {
+    "en": "Adjective endings: the full system",
+    "es": "Terminaciones del adjetivo: el sistema completo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "An adjective in front of a noun takes an ending. Which ending depends on the article before it. The logic is simple: the case and gender signal appears once. If the article already shows it (der, dem, einen), the adjective takes the weak ending -e or -en. If the article shows nothing (ein, kein, or no article), the adjective shows the signal itself, with the ending of der, die, das. English adjectives never change; Spanish adjectives only agree in gender and number, and Hungarian adjectives do not change either.",
+        "es": "Un adjetivo delante de un sustantivo lleva una terminación. Cuál depende del artículo que lo precede. La lógica es simple: la señal de caso y género aparece una sola vez. Si el artículo ya la muestra (der, dem, einen), el adjetivo lleva la terminación débil -e o -en. Si el artículo no muestra nada (ein, kein, o ningún artículo), el adjetivo muestra la señal él mismo, con la terminación de der, die, das. Los adjetivos ingleses nunca cambian; los adjetivos españoles solo concuerdan en género y número, y los adjetivos húngaros tampoco cambian."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "adjektiv-endungen",
+      "title": {
+        "en": "The adjective gut in all cases",
+        "es": "El adjetivo gut en todos los casos"
+      },
+      "header": [
+        {
+          "en": "Case and gender",
+          "es": "Caso y género"
+        },
+        {
+          "en": "nach der/die/das",
+          "es": "nach der/die/das"
+        },
+        {
+          "en": "nach ein/kein/mein",
+          "es": "nach ein/kein/mein"
+        },
+        {
+          "en": "ohne Artikel",
+          "es": "ohne Artikel"
+        }
+      ],
+      "rows": [
+        [
+          "Nominativ maskulin",
+          "gute",
+          "guter",
+          "guter"
+        ],
+        [
+          "Nominativ feminin",
+          "gute",
+          "gute",
+          "gute"
+        ],
+        [
+          "Nominativ neutral",
+          "gute",
+          "gutes",
+          "gutes"
+        ],
+        [
+          "Nominativ Plural",
+          "guten",
+          "guten",
+          "gute"
+        ],
+        [
+          "Akkusativ maskulin",
+          "guten",
+          "guten",
+          "guten"
+        ],
+        [
+          "Akkusativ feminin",
+          "gute",
+          "gute",
+          "gute"
+        ],
+        [
+          "Akkusativ neutral",
+          "gute",
+          "gutes",
+          "gutes"
+        ],
+        [
+          "Akkusativ Plural",
+          "guten",
+          "guten",
+          "gute"
+        ],
+        [
+          "Dativ maskulin",
+          "guten",
+          "guten",
+          "gutem"
+        ],
+        [
+          "Dativ feminin",
+          "guten",
+          "guten",
+          "guter"
+        ],
+        [
+          "Dativ neutral",
+          "guten",
+          "guten",
+          "gutem"
+        ],
+        [
+          "Dativ Plural",
+          "guten",
+          "guten",
+          "guten"
+        ],
+        [
+          "Genitiv maskulin",
+          "guten",
+          "guten",
+          "guten"
+        ],
+        [
+          "Genitiv feminin",
+          "guten",
+          "guten",
+          "guter"
+        ],
+        [
+          "Genitiv neutral",
+          "guten",
+          "guten",
+          "guten"
+        ],
+        [
+          "Genitiv Plural",
+          "guten",
+          "guten",
+          "guter"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Three situations, one logic",
+        "es": "Tres situaciones, una lógica"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "After der, die, das (weak): only -e or -en. -e in the nominative singular and the accusative feminine and neuter; -en in all other places, including the whole dative and genitive.",
+            "es": "Después de der, die, das (débil): solo -e o -en. -e en el nominativo singular y en el acusativo femenino y neutro; -en en todos los demás lugares, incluidos todo el dativo y el genitivo."
+          },
+          "examples": [
+            {
+              "es": "Der junge Mann wohnt hier.",
+              "tr": {
+                "en": "The young man lives here.",
+                "es": "El joven vive aquí."
+              }
+            },
+            {
+              "es": "Ich helfe dem alten Mann.",
+              "tr": {
+                "en": "I help the old man.",
+                "es": "Ayudo al anciano."
+              }
+            },
+            {
+              "es": "Das Auto des alten Mannes ist neu.",
+              "tr": {
+                "en": "The old man's car is new.",
+                "es": "El carro del anciano es nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After ein, kein, mein (mixed): the same as after the definite article, except where ein shows nothing: masculine nominative (ein guter), neuter nominative and accusative (ein gutes).",
+            "es": "Después de ein, kein, mein (mixta): igual que después del artículo definido, excepto donde ein no muestra nada: nominativo masculino (ein guter), nominativo y acusativo neutro (ein gutes)."
+          },
+          "examples": [
+            {
+              "es": "Das ist ein neuer Tisch.",
+              "tr": {
+                "en": "This is a new table.",
+                "es": "Esta es una mesa nueva."
+              }
+            },
+            {
+              "es": "Ich kaufe einen neuen Tisch.",
+              "tr": {
+                "en": "I am buying a new table.",
+                "es": "Compro una mesa nueva."
+              }
+            },
+            {
+              "es": "Das ist ein neues Auto.",
+              "tr": {
+                "en": "This is a new car.",
+                "es": "Este es un carro nuevo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Without an article (strong): the adjective takes the ending of der: -er, -e, -es, -e (plural), -en, -em. Only the genitive masculine and neuter has -en. This is used with mass nouns and the plural.",
+            "es": "Sin artículo (fuerte): el adjetivo toma la terminación de der: -er, -e, -es, -e (plural), -en, -em. Solo el genitivo masculino y neutro tiene -en. Se usa con sustantivos no contables y con el plural."
+          },
+          "examples": [
+            {
+              "es": "Heißer Kaffee schmeckt gut.",
+              "tr": {
+                "en": "Hot coffee tastes good.",
+                "es": "El café caliente sabe bien."
+              }
+            },
+            {
+              "es": "Ich trinke Kaffee mit frischer Milch.",
+              "tr": {
+                "en": "I drink coffee with fresh milk.",
+                "es": "Tomo café con leche fresca."
+              }
+            },
+            {
+              "es": "Bei gutem Wetter gehen wir raus.",
+              "tr": {
+                "en": "When the weather is good, we go outside.",
+                "es": "Cuando hace buen tiempo, salimos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "After viele, alle and similar words",
+        "es": "Después de viele, alle y palabras parecidas"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "viele, wenige, einige, mehrere, andere and numbers are followed by -e (like no article): viele gute Freunde. alle is followed by -en: alle guten Freunde.",
+            "es": "viele, wenige, einige, mehrere, andere y los números van seguidos de -e (como sin artículo): viele gute Freunde. alle va seguido de -en: alle guten Freunde."
+          },
+          "examples": [
+            {
+              "es": "Viele gute Freunde wohnen in Berlin.",
+              "tr": {
+                "en": "Many good friends live in Berlin.",
+                "es": "Muchos buenos amigos viven en Berlín."
+              }
+            },
+            {
+              "es": "Alle guten Freunde kommen zur Party.",
+              "tr": {
+                "en": "All good friends come to the party.",
+                "es": "Todos los buenos amigos vienen a la fiesta."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "adjektiv-nomen",
+      "title": {
+        "en": "Adjectives used as nouns",
+        "es": "Adjetivos usados como sustantivos"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "bestimmt",
+          "es": "bestimmt"
+        },
+        {
+          "en": "unbestimmt",
+          "es": "unbestimmt"
+        }
+      ],
+      "rows": [
+        [
+          "Bekannt (m)",
+          "der Bekannte",
+          "ein Bekannter"
+        ],
+        [
+          "Bekannt (f)",
+          "die Bekannte",
+          "eine Bekannte"
+        ],
+        [
+          "Angestellt (m)",
+          "der Angestellte",
+          "ein Angestellter"
+        ],
+        [
+          "Angestellt (f)",
+          "die Angestellte",
+          "eine Angestellte"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Adjectives that become nouns",
+        "es": "Adjetivos que se vuelven sustantivos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A nominalised adjective is written with a capital letter and keeps the adjective ending: der Bekannte, ein Bekannter, die Angestellte. After etwas, nichts, viel the ending is -es: etwas Neues, nichts Gutes.",
+            "es": "Un adjetivo sustantivado se escribe con mayúscula y conserva la terminación del adjetivo: der Bekannte, ein Bekannter, die Angestellte. Después de etwas, nichts, viel la terminación es -es: etwas Neues, nichts Gutes."
+          },
+          "examples": [
+            {
+              "es": "Ich treffe einen Bekannten.",
+              "tr": {
+                "en": "I am meeting an acquaintance.",
+                "es": "Me encuentro con un conocido."
+              }
+            },
+            {
+              "es": "Ich möchte etwas Gutes essen.",
+              "tr": {
+                "en": "I would like to eat something good.",
+                "es": "Quisiera comer algo rico."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "der neue Tisch or ein neuer Tisch?",
+        "es": "¿der neue Tisch o ein neuer Tisch?"
+      },
+      "pairs": [
+        {
+          "a": "der neue Tisch",
+          "b": "ein neuer Tisch",
+          "note": {
+            "en": "der already shows masculine nominative, so the adjective only needs -e. ein has no ending in this place, so the adjective takes -er and carries the signal.",
+            "es": "der ya muestra el nominativo masculino, así que el adjetivo solo necesita -e. ein no tiene terminación en este lugar, así que el adjetivo lleva -er y porta la señal."
+          },
+          "examples": [
+            {
+              "es": "Der neue Tisch steht hier.",
+              "tr": {
+                "en": "The new table is here.",
+                "es": "La mesa nueva está aquí."
+              }
+            },
+            {
+              "es": "Ein neuer Tisch steht hier.",
+              "tr": {
+                "en": "A new table is here.",
+                "es": "Una mesa nueva está aquí."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: after ein the masculine nominative needs -er and the neuter -es (not ein neue Auto, not ein neuer Auto). After der, die, das and in the dative the ending is -en (not dem alte Mann). Without an article use the strong ending of der: Bei gutem Wetter, Mit frischer Milch. In the genitive the adjective is -en after an article (des alten Mannes). viele takes -e, alle takes -en. Never leave the adjective without an ending in front of a noun, and never add an ending when the adjective stands after the noun with sein: Der Tisch ist neu.",
+        "es": "Trampas clásicas: después de ein el nominativo masculino necesita -er y el neutro -es (no ein neue Auto, no ein neuer Auto). Después de der, die, das y en el dativo la terminación es -en (no dem alte Mann). Sin artículo usa la terminación fuerte de der: Bei gutem Wetter, Mit frischer Milch. En el genitivo el adjetivo es -en después de un artículo (des alten Mannes). viele lleva -e, alle lleva -en. Nunca dejes el adjetivo sin terminación delante de un sustantivo, y nunca añadas terminación cuando el adjetivo va después del sustantivo con sein: Der Tisch ist neu."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The adjective ending shows the case and the gender only once. After «der», «dem» or «einen» the adjective ends in «e» or «en»: «Der junge Mann wohnt hier.» After «ein» it carries the signal itself: «Das ist ein neuer Tisch», «Das ist ein neues Auto.» Without an article it takes the ending of «der»: «Bei gutem Wetter gehen wir raus.» In the genitive and the dative the ending is «en» after an article.",
+    "es": "La terminación del adjetivo muestra el caso y el género una sola vez. Después de «der», «dem» o «einen» el adjetivo termina en «e» o «en»: «Der junge Mann wohnt hier.» Después de «ein» porta la señal él mismo: «Das ist ein neuer Tisch», «Das ist ein neues Auto.» Sin artículo toma la terminación de «der»: «Bei gutem Wetter gehen wir raus.» En el genitivo y el dativo la terminación es «en» después de un artículo."
+  },
+  "items": [
+    {
+      "id": "adjektivdeklination-vollstaendig-c01",
+      "sentence": "Das ist ein ___ Tisch.",
+      "options": [
+        "neue",
+        "neuer",
+        "neuen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Tisch is masculine, and ein shows nothing in the nominative, so the adjective carries the signal: neuer.",
+        "es": "Tisch es masculino, y ein no muestra nada en nominativo, así que el adjetivo porta la señal: neuer."
+      },
+      "wrong": {
+        "neue": {
+          "en": "neue is the weak ending after der. After ein there is no ending to show the case, so you need -er.",
+          "es": "neue es la terminación débil después de der. Después de ein no hay terminación que muestre el caso, así que necesitas -er."
+        },
+        "neuen": {
+          "en": "neuen is the accusative or dative form. This is the nominative, the subject of the sentence.",
+          "es": "neuen es la forma del acusativo o del dativo. Este es el nominativo, el sujeto de la oración."
+        }
+      },
+      "examples": [
+        "Das ist ein guter Freund.",
+        "Das ist ein kleiner Hund."
+      ],
+      "tr": {
+        "en": "This is a new table.",
+        "es": "Esta es una mesa nueva."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f01",
+      "kind": "form",
+      "verb": "nach ein/kein/mein",
+      "person": "Nominativ maskulin",
+      "answer": "guter",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c02",
+      "sentence": "Ich kaufe einen ___ Tisch.",
+      "options": [
+        "neuer",
+        "neues",
+        "neuen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "einen already shows the masculine accusative, so the adjective takes the weak ending -en.",
+        "es": "einen ya muestra el acusativo masculino, así que el adjetivo toma la terminación débil -en."
+      },
+      "wrong": {
+        "neuer": {
+          "en": "neuer is the nominative masculine form. After einen the case is already shown, so -en is enough.",
+          "es": "neuer es la forma del nominativo masculino. Después de einen el caso ya está mostrado, así que basta con -en."
+        },
+        "neues": {
+          "en": "neues is for neuter nouns. Tisch is masculine, and einen asks for -en.",
+          "es": "neues es para sustantivos neutros. Tisch es masculino, y einen pide -en."
+        }
+      },
+      "examples": [
+        "Ich sehe einen kleinen Hund.",
+        "Ich habe einen guten Freund."
+      ],
+      "tr": {
+        "en": "I am buying a new table.",
+        "es": "Compro una mesa nueva."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f02",
+      "kind": "form",
+      "verb": "nach der/die/das",
+      "person": "Akkusativ maskulin",
+      "answer": "guten",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c03",
+      "sentence": "Das ist ein ___ Auto.",
+      "options": [
+        "neues",
+        "neue",
+        "neuen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Auto is neuter, and ein shows nothing for the neuter, so the adjective takes -es: ein neues Auto.",
+        "es": "Auto es neutro, y ein no muestra nada para el neutro, así que el adjetivo toma -es: ein neues Auto."
+      },
+      "wrong": {
+        "neue": {
+          "en": "neue is feminine or plural, or the weak ending after das. After ein the neuter needs -es.",
+          "es": "neue es femenino o plural, o la terminación débil después de das. Después de ein el neutro necesita -es."
+        },
+        "neuen": {
+          "en": "neuen is for the accusative masculine or the dative. This is the nominative neuter.",
+          "es": "neuen es para el acusativo masculino o el dativo. Este es el nominativo neutro."
+        }
+      },
+      "examples": [
+        "Das ist ein gutes Buch.",
+        "Das ist ein kleines Kind."
+      ],
+      "tr": {
+        "en": "This is a new car.",
+        "es": "Este es un carro nuevo."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f03",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Bekannt (m)",
+      "answer": "der Bekannte",
+      "table": "adjektiv-nomen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-w01",
+      "kind": "why",
+      "es": "Das ist ein neuer Tisch.",
+      "target": "neuer",
+      "tr": {
+        "en": "This is a new table.",
+        "es": "Esta es una mesa nueva."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-e: the adjective takes -e before every masculine noun",
+            "es": "-e: el adjetivo toma -e delante de todo sustantivo masculino"
+          },
+          "wrong": {
+            "en": "-e is only the weak ending after der. After ein there is no ending that shows the case, so the adjective must show it.",
+            "es": "-e es solo la terminación débil después de der. Después de ein no hay terminación que muestre el caso, así que el adjetivo debe mostrarlo."
+          }
+        },
+        {
+          "text": {
+            "en": "-er: ein has no ending in the masculine nominative, so the adjective shows the signal",
+            "es": "-er: ein no tiene terminación en el nominativo masculino, así que el adjetivo muestra la señal"
+          }
+        },
+        {
+          "text": {
+            "en": "-en: after ein the adjective always takes -en",
+            "es": "-en: después de ein el adjetivo siempre toma -en"
+          },
+          "wrong": {
+            "en": "-en comes after ein only in the accusative masculine (einen neuen Tisch) and in the dative. In the nominative the adjective needs -er.",
+            "es": "-en viene después de ein solo en el acusativo masculino (einen neuen Tisch) y en el dativo. En nominativo el adjetivo necesita -er."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c04",
+      "sentence": "___ Kaffee schmeckt gut.",
+      "options": [
+        "Heiße",
+        "Heißen",
+        "Heißer"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Without an article the adjective takes the ending of der: masculine nominative -er. Heißer Kaffee.",
+        "es": "Sin artículo el adjetivo toma la terminación de der: nominativo masculino -er. Heißer Kaffee."
+      },
+      "wrong": {
+        "Heiße": {
+          "en": "Heiße is the weak form after der, or feminine. Without an article the masculine needs -er.",
+          "es": "Heiße es la forma débil después de der, o femenino. Sin artículo el masculino necesita -er."
+        },
+        "Heißen": {
+          "en": "Heißen is the accusative or dative form. Kaffee is the subject here, so it is nominative.",
+          "es": "Heißen es la forma del acusativo o del dativo. Kaffee es el sujeto aquí, así que es nominativo."
+        }
+      },
+      "examples": [
+        "Frischer Fisch schmeckt gut.",
+        "Kalter Tee schmeckt nicht."
+      ],
+      "tr": {
+        "en": "Hot coffee tastes good.",
+        "es": "El café caliente sabe bien."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f04",
+      "kind": "form",
+      "verb": "ohne Artikel",
+      "person": "Dativ maskulin",
+      "answer": "gutem",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c05",
+      "sentence": "Ich mag ___ Blumen.",
+      "options": [
+        "rote",
+        "roten",
+        "roter"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Without an article, the plural accusative takes the ending -e (like die): rote Blumen.",
+        "es": "Sin artículo, el acusativo plural toma la terminación -e (como die): rote Blumen."
+      },
+      "wrong": {
+        "roten": {
+          "en": "roten would be right after an article (die roten Blumen). Without an article the adjective carries the signal, -e.",
+          "es": "roten sería correcto después de un artículo (die roten Blumen). Sin artículo el adjetivo porta la señal, -e."
+        },
+        "roter": {
+          "en": "roter is the masculine nominative or the feminine dative. Blumen is plural accusative here.",
+          "es": "roter es el nominativo masculino o el dativo femenino. Blumen es acusativo plural aquí."
+        }
+      },
+      "examples": [
+        "Ich kaufe frische Brötchen.",
+        "Ich sehe kleine Kinder."
+      ],
+      "tr": {
+        "en": "I like red flowers.",
+        "es": "Me gustan las flores rojas."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f05",
+      "kind": "form",
+      "verb": "nach ein/kein/mein",
+      "person": "Nominativ neutral",
+      "answer": "gutes",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c06",
+      "sentence": "Ich trinke Kaffee mit ___ Milch.",
+      "options": [
+        "frische",
+        "frischer",
+        "frischen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After mit the noun is dative, and Milch is feminine. Without an article the dative feminine takes -er.",
+        "es": "Después de mit el sustantivo está en dativo, y Milch es femenino. Sin artículo el dativo femenino toma -er."
+      },
+      "wrong": {
+        "frische": {
+          "en": "frische is the nominative or accusative feminine form. After mit the dative is needed.",
+          "es": "frische es la forma femenina del nominativo o acusativo. Después de mit se necesita el dativo."
+        },
+        "frischen": {
+          "en": "frischen is the weak dative ending after an article. Without an article the adjective must show the case.",
+          "es": "frischen es la terminación débil del dativo después de un artículo. Sin artículo el adjetivo debe mostrar el caso."
+        }
+      },
+      "examples": [
+        "Ich esse Brot mit frischer Butter.",
+        "Ich trinke Tee mit kalter Milch."
+      ],
+      "tr": {
+        "en": "I drink coffee with fresh milk.",
+        "es": "Tomo café con leche fresca."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f06",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Bekannt (m)",
+      "answer": "ein Bekannter",
+      "table": "adjektiv-nomen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-w02",
+      "kind": "why",
+      "es": "Ich sehe den alten Mann.",
+      "target": "alten",
+      "tr": {
+        "en": "I see the old man.",
+        "es": "Veo al anciano."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "-en: den already shows the masculine accusative, so the adjective takes the weak -en",
+            "es": "-en: den ya muestra el acusativo masculino, así que el adjetivo toma la débil -en"
+          }
+        },
+        {
+          "text": {
+            "en": "-e: the adjective takes -e in every singular form",
+            "es": "-e: el adjetivo toma -e en toda forma singular"
+          },
+          "wrong": {
+            "en": "-e appears after the article only in the nominative singular and in the feminine and neuter accusative. The masculine accusative has -en.",
+            "es": "-e aparece después del artículo solo en el nominativo singular y en el acusativo femenino y neutro. El acusativo masculino tiene -en."
+          }
+        },
+        {
+          "text": {
+            "en": "-er: the adjective must show the masculine, so it takes -er",
+            "es": "-er: el adjetivo debe mostrar el masculino, así que toma -er"
+          },
+          "wrong": {
+            "en": "The article den already shows the masculine accusative. The adjective does not need to repeat the signal.",
+            "es": "El artículo den ya muestra el acusativo masculino. El adjetivo no necesita repetir la señal."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c07",
+      "sentence": "Bei ___ Wetter gehen wir raus.",
+      "options": [
+        "gutem",
+        "guten",
+        "gutes"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "bei takes the dative, and Wetter is neuter. Without an article the dative neuter takes -em.",
+        "es": "bei lleva dativo, y Wetter es neutro. Sin artículo el dativo neutro toma -em."
+      },
+      "wrong": {
+        "guten": {
+          "en": "guten is correct after an article (bei dem guten Wetter). Here there is no article, so the adjective shows the case.",
+          "es": "guten es correcto después de un artículo (bei dem guten Wetter). Aquí no hay artículo, así que el adjetivo muestra el caso."
+        },
+        "gutes": {
+          "en": "gutes is the nominative or accusative neuter. After bei the dative is required.",
+          "es": "gutes es el nominativo o acusativo neutro. Después de bei se exige el dativo."
+        }
+      },
+      "examples": [
+        "Bei schönem Wetter bleiben wir hier.",
+        "Mit kaltem Wasser wasche ich mich."
+      ],
+      "tr": {
+        "en": "When the weather is good, we go outside.",
+        "es": "Cuando hace buen tiempo, salimos."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f07",
+      "kind": "form",
+      "verb": "ohne Artikel",
+      "person": "Dativ feminin",
+      "answer": "guter",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c08",
+      "sentence": "Das Auto des ___ Mannes ist neu.",
+      "options": [
+        "alter",
+        "alten",
+        "alte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "des already shows the genitive, so the adjective takes the weak ending -en: des alten Mannes.",
+        "es": "des ya muestra el genitivo, así que el adjetivo toma la terminación débil -en: des alten Mannes."
+      },
+      "wrong": {
+        "alter": {
+          "en": "alter is the nominative masculine without an article. After des the ending is the weak -en.",
+          "es": "alter es el nominativo masculino sin artículo. Después de des la terminación es la débil -en."
+        },
+        "alte": {
+          "en": "alte is used in the nominative after der. In the genitive every ending after an article is -en.",
+          "es": "alte se usa en nominativo después de der. En genitivo toda terminación después de un artículo es -en."
+        }
+      },
+      "examples": [
+        "Das Haus der alten Frau ist klein.",
+        "Der Name des kleinen Hundes ist Bello."
+      ],
+      "tr": {
+        "en": "The old man's car is new.",
+        "es": "El carro del anciano es nuevo."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f08",
+      "kind": "form",
+      "verb": "ohne Artikel",
+      "person": "Nominativ Plural",
+      "answer": "gute",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c09",
+      "sentence": "Ich helfe dem ___ Mann.",
+      "options": [
+        "alte",
+        "alter",
+        "alten"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "helfen takes the dative, and dem already shows it. The adjective takes the weak ending -en.",
+        "es": "helfen lleva dativo, y dem ya lo muestra. El adjetivo toma la terminación débil -en."
+      },
+      "wrong": {
+        "alte": {
+          "en": "alte is the weak ending for the nominative. In the dative every adjective after an article ends in -en.",
+          "es": "alte es la terminación débil del nominativo. En dativo todo adjetivo después de un artículo termina en -en."
+        },
+        "alter": {
+          "en": "alter would be right without an article (alter Mann). After dem the case is already shown.",
+          "es": "alter sería correcto sin artículo (alter Mann). Después de dem el caso ya está mostrado."
+        }
+      },
+      "examples": [
+        "Ich gebe der jungen Frau das Buch.",
+        "Ich danke dem netten Mann."
+      ],
+      "tr": {
+        "en": "I help the old man.",
+        "es": "Ayudo al anciano."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f09",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "Angestellt (m)",
+      "answer": "ein Angestellter",
+      "table": "adjektiv-nomen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-w03",
+      "kind": "why",
+      "es": "Bei gutem Wetter gehen wir raus.",
+      "target": "gutem",
+      "tr": {
+        "en": "When the weather is good, we go outside.",
+        "es": "Cuando hace buen tiempo, salimos."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "guten: the dative always ends in -en",
+            "es": "guten: el dativo siempre termina en -en"
+          },
+          "wrong": {
+            "en": "-en in the dative is the weak ending after an article. Here there is no article, so the adjective takes the strong ending -em.",
+            "es": "-en en dativo es la terminación débil después de un artículo. Aquí no hay artículo, así que el adjetivo toma la terminación fuerte -em."
+          }
+        },
+        {
+          "text": {
+            "en": "gutem: no article, so the adjective carries the dative signal -em",
+            "es": "gutem: sin artículo, así que el adjetivo porta la señal de dativo -em"
+          }
+        },
+        {
+          "text": {
+            "en": "gutes: Wetter is neuter, so the adjective takes -es",
+            "es": "gutes: Wetter es neutro, así que el adjetivo toma -es"
+          },
+          "wrong": {
+            "en": "-es is for the neuter nominative and accusative. After bei the noun is in the dative, and the dative has its own ending.",
+            "es": "-es es para el nominativo y el acusativo neutros. Después de bei el sustantivo está en dativo, y el dativo tiene su propia terminación."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c10",
+      "sentence": "Die ___ Kinder spielen im Garten.",
+      "options": [
+        "jungen",
+        "junge",
+        "junger"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After die in the plural the weak ending is -en: die jungen Kinder.",
+        "es": "Después de die en plural la terminación débil es -en: die jungen Kinder."
+      },
+      "wrong": {
+        "junge": {
+          "en": "junge is the singular weak ending (der junge Mann). The plural after die takes -en.",
+          "es": "junge es la terminación débil del singular (der junge Mann). El plural después de die lleva -en."
+        },
+        "junger": {
+          "en": "junger is a strong ending for the masculine. After the article die the weak -en is used.",
+          "es": "junger es una terminación fuerte del masculino. Después del artículo die se usa la débil -en."
+        }
+      },
+      "examples": [
+        "Die kleinen Hunde schlafen.",
+        "Die netten Leute wohnen hier."
+      ],
+      "tr": {
+        "en": "The young children play in the garden.",
+        "es": "Los niños pequeños juegan en el jardín."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f10",
+      "kind": "form",
+      "verb": "nach der/die/das",
+      "person": "Genitiv maskulin",
+      "answer": "guten",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c11",
+      "sentence": "Der ___ Mann wohnt hier.",
+      "options": [
+        "junger",
+        "junge",
+        "jungen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "der already shows the masculine nominative, so the adjective takes the weak ending -e.",
+        "es": "der ya muestra el nominativo masculino, así que el adjetivo toma la terminación débil -e."
+      },
+      "wrong": {
+        "junger": {
+          "en": "junger repeats the signal that der already gives. After der the weak ending -e is enough.",
+          "es": "junger repite la señal que der ya da. Después de der basta la terminación débil -e."
+        },
+        "jungen": {
+          "en": "jungen is the accusative or dative form. Mann is the subject here, so it is the nominative.",
+          "es": "jungen es la forma del acusativo o del dativo. Mann es el sujeto aquí, así que es nominativo."
+        }
+      },
+      "examples": [
+        "Der alte Hund schläft.",
+        "Die junge Frau wohnt hier."
+      ],
+      "tr": {
+        "en": "The young man lives here.",
+        "es": "El joven vive aquí."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f11",
+      "kind": "form",
+      "verb": "nach ein/kein/mein",
+      "person": "Akkusativ feminin",
+      "answer": "gute",
+      "table": "adjektiv-endungen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c12",
+      "sentence": "Viele ___ Freunde wohnen in Berlin.",
+      "options": [
+        "guten",
+        "guter",
+        "gute"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After viele the adjective takes -e in the nominative plural, like an adjective without an article.",
+        "es": "Después de viele el adjetivo toma -e en el nominativo plural, como un adjetivo sin artículo."
+      },
+      "wrong": {
+        "guten": {
+          "en": "guten would be right after alle or an article (alle guten Freunde). After viele the ending is -e.",
+          "es": "guten sería correcto después de alle o de un artículo (alle guten Freunde). Después de viele la terminación es -e."
+        },
+        "guter": {
+          "en": "guter is the masculine singular or the feminine dative. Freunde is plural here.",
+          "es": "guter es el masculino singular o el dativo femenino. Freunde es plural aquí."
+        }
+      },
+      "examples": [
+        "Viele kleine Kinder spielen hier.",
+        "Einige neue Schüler kommen."
+      ],
+      "tr": {
+        "en": "Many good friends live in Berlin.",
+        "es": "Muchos buenos amigos viven en Berlín."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-f12",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Angestellt (f)",
+      "answer": "die Angestellte",
+      "table": "adjektiv-nomen"
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c13",
+      "sentence": "Alle ___ Freunde kommen zur Party.",
+      "options": [
+        "guten",
+        "gute",
+        "guter"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After alle the adjective takes -en, like after an article: alle guten Freunde.",
+        "es": "Después de alle el adjetivo toma -en, como después de un artículo: alle guten Freunde."
+      },
+      "wrong": {
+        "gute": {
+          "en": "gute is right after viele, wenige and einige, but alle works like an article and asks for -en.",
+          "es": "gute es correcto después de viele, wenige y einige, pero alle funciona como un artículo y pide -en."
+        },
+        "guter": {
+          "en": "guter is a singular form. Freunde is plural, and after alle the ending is -en.",
+          "es": "guter es una forma singular. Freunde es plural, y después de alle la terminación es -en."
+        }
+      },
+      "examples": [
+        "Alle kleinen Kinder spielen.",
+        "Alle neuen Schüler kommen."
+      ],
+      "tr": {
+        "en": "All good friends come to the party.",
+        "es": "Todos los buenos amigos vienen a la fiesta."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-c14",
+      "sentence": "Ich möchte etwas ___ essen.",
+      "options": [
+        "Gute",
+        "Gutes",
+        "Guten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After etwas the adjective becomes a noun with a capital letter and the ending -es: etwas Gutes.",
+        "es": "Después de etwas el adjetivo se convierte en sustantivo con mayúscula y la terminación -es: etwas Gutes."
+      },
+      "wrong": {
+        "Gute": {
+          "en": "Gute is the feminine or plural form. etwas is followed by the neuter ending -es.",
+          "es": "Gute es la forma femenina o plural. etwas va seguido de la terminación neutra -es."
+        },
+        "Guten": {
+          "en": "Guten is the accusative masculine or dative form. After etwas the ending is -es.",
+          "es": "Guten es la forma del acusativo masculino o del dativo. Después de etwas la terminación es -es."
+        }
+      },
+      "examples": [
+        "Ich suche etwas Neues.",
+        "Hier gibt es nichts Gutes."
+      ],
+      "tr": {
+        "en": "I would like to eat something good.",
+        "es": "Quisiera comer algo rico."
+      }
+    },
+    {
+      "id": "adjektivdeklination-vollstaendig-w04",
+      "kind": "why",
+      "es": "Ich treffe einen Bekannten.",
+      "target": "Bekannten",
+      "tr": {
+        "en": "I am meeting an acquaintance.",
+        "es": "Me encuentro con un conocido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Bekannten is a noun, so it never changes its ending",
+            "es": "Bekannten es un sustantivo, así que nunca cambia su terminación"
+          },
+          "wrong": {
+            "en": "Bekannte comes from the adjective bekannt and is declined like one: der Bekannte, ein Bekannter, einen Bekannten.",
+            "es": "Bekannte viene del adjetivo bekannt y se declina como uno: der Bekannte, ein Bekannter, einen Bekannten."
+          }
+        },
+        {
+          "text": {
+            "en": "Bekannten is an adjective used as a noun: capital letter, adjective ending after einen",
+            "es": "Bekannten es un adjetivo usado como sustantivo: mayúscula, terminación de adjetivo después de einen"
+          }
+        },
+        {
+          "text": {
+            "en": "Bekannten: an adjective used as a noun is written in lower case",
+            "es": "Bekannten: un adjetivo usado como sustantivo se escribe en minúscula"
+          },
+          "wrong": {
+            "en": "A nominalised adjective is a noun and gets a capital letter, just like other nouns.",
+            "es": "Un adjetivo sustantivado es un sustantivo y se escribe con mayúscula, igual que los demás sustantivos."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

@@ -1,0 +1,964 @@
+{
+  "schema": 2,
+  "topic": "konnektoren-adverbial",
+  "level": "B1",
+  "title": {
+    "en": "Linking words: trotzdem, außerdem, entweder ... oder",
+    "es": "Conectores: trotzdem, außerdem, entweder ... oder"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Adverbial connectors like trotzdem, deshalb, außerdem and sonst link two main clauses. They stand in position 1 of the second clause, so the verb comes right after them and the subject follows the verb: Es regnet. Trotzdem gehen wir spazieren. Conjunctions like aber, und, denn and oder are different: they stand in position 0 and the word order stays normal. Subordinators like obwohl and weil send the verb to the end. English however and therefore, Spanish sin embargo and por eso, and Hungarian mégis and ezért do not change the order, but German does.",
+        "es": "Los conectores adverbiales como trotzdem, deshalb, außerdem y sonst unen dos oraciones principales. Ocupan la posición 1 de la segunda oración, así que el verbo va justo después y el sujeto sigue al verbo: Es regnet. Trotzdem gehen wir spazieren. Las conjunciones como aber, und, denn y oder son diferentes: están en la posición 0 y el orden de las palabras sigue siendo normal. Los subordinantes como obwohl y weil mandan el verbo al final. El inglés however y therefore, el español sin embargo y por eso, y el húngaro mégis y ezért no cambian el orden, pero el alemán sí."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "konnektor-bedeutung",
+      "title": {
+        "en": "Connectors and their meaning",
+        "es": "Conectores y su significado"
+      },
+      "header": [
+        {
+          "en": "Meaning",
+          "es": "Significado"
+        },
+        {
+          "en": "Konnektor",
+          "es": "Konnektor"
+        }
+      ],
+      "rows": [
+        [
+          "aber doch",
+          "trotzdem"
+        ],
+        [
+          "Folge",
+          "deshalb"
+        ],
+        [
+          "noch dazu",
+          "außerdem"
+        ],
+        [
+          "wenn nicht",
+          "sonst"
+        ],
+        [
+          "am Anfang",
+          "zuerst"
+        ],
+        [
+          "später",
+          "danach"
+        ],
+        [
+          "am Ende",
+          "schließlich"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Adverbial connectors: position 1, verb in position 2",
+        "es": "Conectores adverbiales: posición 1, verbo en posición 2"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "trotzdem (but still), deshalb and deswegen (for this reason), außerdem (besides), sonst (otherwise). After them the verb comes at once, then the subject.",
+            "es": "trotzdem (a pesar de eso), deshalb y deswegen (por eso), außerdem (además), sonst (si no). Después de ellos el verbo va de inmediato, luego el sujeto."
+          },
+          "examples": [
+            {
+              "es": "Ich bin müde. Trotzdem gehe ich noch ins Kino.",
+              "tr": {
+                "en": "I am tired. Still, I am going to the cinema.",
+                "es": "Estoy cansado. Aun así, voy al cine."
+              }
+            },
+            {
+              "es": "Es regnet. Deshalb bleiben wir zu Hause.",
+              "tr": {
+                "en": "It is raining. So we are staying at home.",
+                "es": "Llueve. Por eso nos quedamos en casa."
+              }
+            },
+            {
+              "es": "Geh jetzt! Sonst kommst du zu spät.",
+              "tr": {
+                "en": "Go now! Otherwise you will be late.",
+                "es": "¡Vete ya! Si no, llegarás tarde."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The same goes for the order words zuerst, dann, danach and schließlich: they open a sentence and the verb follows. A comma can also precede them inside a longer sentence.",
+            "es": "Lo mismo vale para las palabras de orden zuerst, dann, danach y schließlich: abren una oración y el verbo las sigue. También puede haber una coma antes de ellas dentro de una oración más larga."
+          },
+          "examples": [
+            {
+              "es": "Zuerst esse ich, danach gehe ich spazieren.",
+              "tr": {
+                "en": "First I eat, then I go for a walk.",
+                "es": "Primero como, luego salgo a caminar."
+              }
+            },
+            {
+              "es": "Das Essen ist gut. Außerdem ist es nicht teuer.",
+              "tr": {
+                "en": "The food is good. Besides, it is not expensive.",
+                "es": "La comida es buena. Además, no es cara."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "zweiteilige-konnektoren",
+      "title": {
+        "en": "Two-part connectors",
+        "es": "Conectores de dos partes"
+      },
+      "header": [
+        {
+          "en": "First part",
+          "es": "Primera parte"
+        },
+        {
+          "en": "Zweiter Teil",
+          "es": "Zweiter Teil"
+        }
+      ],
+      "rows": [
+        [
+          "entweder",
+          "oder"
+        ],
+        [
+          "weder",
+          "noch"
+        ],
+        [
+          "sowohl",
+          "als auch"
+        ],
+        [
+          "nicht nur",
+          "sondern auch"
+        ],
+        [
+          "zwar",
+          "aber"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Two-part connectors",
+        "es": "Conectores de dos partes"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "entweder ... oder (one of two), weder ... noch (neither ... nor, no nicht or kein needed), sowohl ... als auch (both), nicht nur ... sondern auch (not only ... but also), zwar ... aber (admittedly ... but).",
+            "es": "entweder ... oder (uno de dos), weder ... noch (ni ... ni, sin nicht ni kein), sowohl ... als auch (tanto ... como), nicht nur ... sondern auch (no solo ... sino también), zwar ... aber (es cierto que ... pero)."
+          },
+          "examples": [
+            {
+              "es": "Wir fahren entweder mit dem Bus oder mit dem Zug.",
+              "tr": {
+                "en": "We go either by bus or by train.",
+                "es": "Vamos o en autobús o en tren."
+              }
+            },
+            {
+              "es": "Er isst weder Fleisch noch Fisch.",
+              "tr": {
+                "en": "He eats neither meat nor fish.",
+                "es": "No come ni carne ni pescado."
+              }
+            },
+            {
+              "es": "Sie spricht sowohl Deutsch als auch Englisch.",
+              "tr": {
+                "en": "She speaks both German and English.",
+                "es": "Habla tanto alemán como inglés."
+              }
+            },
+            {
+              "es": "Er ist nicht nur nett, sondern auch klug.",
+              "tr": {
+                "en": "He is not only nice, but also smart.",
+                "es": "No solo es amable, sino también inteligente."
+              }
+            },
+            {
+              "es": "Das Essen ist zwar gut, aber teuer.",
+              "tr": {
+                "en": "The food is good, to be sure, but expensive.",
+                "es": "La comida es buena, pero cara."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "aber, trotzdem or obwohl?",
+        "es": "¿aber, trotzdem u obwohl?"
+      },
+      "pairs": [
+        {
+          "a": "Ich bin müde, aber ich gehe ins Kino.",
+          "b": "Ich bin müde. Trotzdem gehe ich ins Kino.",
+          "note": {
+            "en": "aber is a conjunction in position 0: subject and verb keep their normal order. trotzdem is an adverb in position 1: the verb comes before the subject. obwohl needs a subordinate clause with the verb at the end: Obwohl ich müde bin, gehe ich ins Kino.",
+            "es": "aber es una conjunción en la posición 0: sujeto y verbo conservan su orden normal. trotzdem es un adverbio en la posición 1: el verbo va antes del sujeto. obwohl necesita una oración subordinada con el verbo al final: Obwohl ich müde bin, gehe ich ins Kino."
+          },
+          "examples": [
+            {
+              "es": "Ich bin krank, aber ich arbeite.",
+              "tr": {
+                "en": "I am sick, but I am working.",
+                "es": "Estoy enfermo, pero trabajo."
+              }
+            },
+            {
+              "es": "Ich bin krank. Trotzdem arbeite ich.",
+              "tr": {
+                "en": "I am sick. Still, I am working.",
+                "es": "Estoy enfermo. Aun así, trabajo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: after trotzdem, deshalb, außerdem and sonst the verb comes before the subject (not Deshalb ich bleibe, but Deshalb bleibe ich). Do not send the verb to the end after trotzdem, as you do after obwohl. aber, und, denn and oder do not change the order. weder ... noch already negates, so do not add nicht or kein. In nicht nur ... sondern auch the part after sondern repeats the verb or the subject. Use a comma before aber and before the second part of the pairs. And do not mix up deshalb (consequence) with weil (cause).",
+        "es": "Trampas clásicas: después de trotzdem, deshalb, außerdem y sonst el verbo va antes del sujeto (no Deshalb ich bleibe, sino Deshalb bleibe ich). No mandes el verbo al final después de trotzdem, como haces después de obwohl. aber, und, denn y oder no cambian el orden. weder ... noch ya niega, así que no añadas nicht ni kein. En nicht nur ... sondern auch la parte después de sondern repite el verbo o el sujeto. Usa una coma antes de aber y antes de la segunda parte de los pares. Y no confundas deshalb (consecuencia) con weil (causa)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Linking words like «trotzdem», «deshalb» and «außerdem» stand in first position, and the verb follows right after them: «Es regnet. Trotzdem gehen wir spazieren.» The words «aber», «und» and «oder» do not change the order: «Ich bin müde, aber ich gehe ins Kino.» There are also pairs: «entweder oder», «weder noch», «sowohl als auch». For example: «Er isst weder Fleisch noch Fisch.»",
+    "es": "Los conectores como «trotzdem», «deshalb» y «außerdem» van en primera posición, y el verbo les sigue de inmediato: «Es regnet. Trotzdem gehen wir spazieren.» Las palabras «aber», «und» y «oder» no cambian el orden: «Ich bin müde, aber ich gehe ins Kino.» También hay pares: «entweder oder», «weder noch», «sowohl als auch». Por ejemplo: «Er isst weder Fleisch noch Fisch.»"
+  },
+  "items": [
+    {
+      "id": "konnektoren-adverbial-c01",
+      "sentence": "Ich bin müde. ___ gehe ich noch ins Kino.",
+      "options": [
+        "Obwohl",
+        "Trotzdem",
+        "Weil"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The second sentence is a contrast to being tired, and the verb gehe stands right after the connector: Trotzdem gehe ich.",
+        "es": "La segunda oración es un contraste con estar cansado, y el verbo gehe va justo después del conector: Trotzdem gehe ich."
+      },
+      "wrong": {
+        "Obwohl": {
+          "en": "Obwohl starts a subordinate clause with the verb at the end. Here gehe ich follows directly, a main clause.",
+          "es": "Obwohl inicia una oración subordinada con el verbo al final. Aquí gehe ich sigue directamente, una oración principal."
+        },
+        "Weil": {
+          "en": "Weil gives a reason and sends the verb to the end. Being tired is no reason to go to the cinema.",
+          "es": "Weil da una razón y manda el verbo al final. Estar cansado no es una razón para ir al cine."
+        }
+      },
+      "examples": [
+        "Es ist kalt. Trotzdem gehen wir raus.",
+        "Er ist krank. Trotzdem arbeitet er."
+      ],
+      "tr": {
+        "en": "I am tired. Still, I am going to the cinema.",
+        "es": "Estoy cansado. Aun así, voy al cine."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f01",
+      "kind": "form",
+      "verb": "Konnektor",
+      "person": "aber doch",
+      "answer": "trotzdem",
+      "table": "konnektor-bedeutung"
+    },
+    {
+      "id": "konnektoren-adverbial-c02",
+      "sentence": "Es regnet. ___ bleiben wir zu Hause.",
+      "options": [
+        "Deshalb",
+        "Trotzdem",
+        "Außerdem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Staying at home is the consequence of the rain, so the connector is Deshalb.",
+        "es": "Quedarse en casa es la consecuencia de la lluvia, así que el conector es Deshalb."
+      },
+      "wrong": {
+        "Trotzdem": {
+          "en": "Trotzdem would mean that we stay at home although it rains. That reverses the logic.",
+          "es": "Trotzdem significaría que nos quedamos en casa aunque llueve. Eso invierte la lógica."
+        },
+        "Außerdem": {
+          "en": "Außerdem adds another fact. It does not tell us that staying at home follows from the rain.",
+          "es": "Außerdem añade otro hecho. No dice que quedarse en casa sea consecuencia de la lluvia."
+        }
+      },
+      "examples": [
+        "Ich bin krank. Deshalb bleibe ich im Bett.",
+        "Es ist spät. Deshalb gehen wir nach Hause."
+      ],
+      "tr": {
+        "en": "It is raining. So we are staying at home.",
+        "es": "Llueve. Por eso nos quedamos en casa."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f02",
+      "kind": "form",
+      "verb": "Zweiter Teil",
+      "person": "entweder",
+      "answer": "oder",
+      "table": "zweiteilige-konnektoren"
+    },
+    {
+      "id": "konnektoren-adverbial-c03",
+      "sentence": "Das Essen ist gut. ___ ist es nicht teuer.",
+      "options": [
+        "Sonst",
+        "Trotzdem",
+        "Außerdem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The second sentence adds another good point, so the connector is Außerdem (besides).",
+        "es": "La segunda oración añade otro punto bueno, así que el conector es Außerdem (además)."
+      },
+      "wrong": {
+        "Sonst": {
+          "en": "Sonst means otherwise and warns about a bad result. The sentence adds a second positive fact.",
+          "es": "Sonst significa si no y advierte de un mal resultado. La oración añade un segundo hecho positivo."
+        },
+        "Trotzdem": {
+          "en": "Trotzdem would introduce a contrast, as if good food and a low price did not fit together.",
+          "es": "Trotzdem introduciría un contraste, como si la buena comida y el precio bajo no fueran juntos."
+        }
+      },
+      "examples": [
+        "Er ist nett. Außerdem ist er klug.",
+        "Das Hotel ist schön. Außerdem ist es klein."
+      ],
+      "tr": {
+        "en": "The food is good. Besides, it is not expensive.",
+        "es": "La comida es buena. Además, no es cara."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f03",
+      "kind": "form",
+      "verb": "Konnektor",
+      "person": "Folge",
+      "answer": "deshalb",
+      "table": "konnektor-bedeutung"
+    },
+    {
+      "id": "konnektoren-adverbial-w01",
+      "kind": "why",
+      "es": "Es regnet. Trotzdem gehen wir spazieren.",
+      "target": "gehen",
+      "tr": {
+        "en": "It is raining. Still, we go for a walk.",
+        "es": "Llueve. Aun así, salimos a caminar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "gehen is last, because trotzdem is a subordinating conjunction",
+            "es": "gehen va al final, porque trotzdem es una conjunción subordinante"
+          },
+          "wrong": {
+            "en": "trotzdem is an adverb, not a subordinator. It does not send the verb to the end, unlike obwohl.",
+            "es": "trotzdem es un adverbio, no un subordinante. No manda el verbo al final, a diferencia de obwohl."
+          }
+        },
+        {
+          "text": {
+            "en": "gehen comes before wir: trotzdem fills position 1, so the verb is in position 2",
+            "es": "gehen va antes de wir: trotzdem ocupa la posición 1, así que el verbo está en la posición 2"
+          }
+        },
+        {
+          "text": {
+            "en": "wir gehen: the subject always stays directly after the connector",
+            "es": "wir gehen: el sujeto se queda siempre justo después del conector"
+          },
+          "wrong": {
+            "en": "With an adverb in position 1 the verb takes position 2, and the subject moves behind it.",
+            "es": "Con un adverbio en la posición 1 el verbo ocupa la posición 2, y el sujeto pasa detrás."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konnektoren-adverbial-c04",
+      "sentence": "Geh jetzt! ___ kommst du zu spät.",
+      "options": [
+        "Deshalb",
+        "Sonst",
+        "Außerdem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The second sentence names the bad result if you do not go now: Sonst (otherwise).",
+        "es": "La segunda oración nombra el mal resultado si no te vas ahora: Sonst (si no)."
+      },
+      "wrong": {
+        "Deshalb": {
+          "en": "Deshalb gives a consequence of something that has already happened. The warning here is about the future.",
+          "es": "Deshalb da una consecuencia de algo que ya ocurrió. La advertencia aquí es sobre el futuro."
+        },
+        "Außerdem": {
+          "en": "Außerdem adds another point. It does not express what happens if you stay.",
+          "es": "Außerdem añade otro punto. No expresa lo que pasa si te quedas."
+        }
+      },
+      "examples": [
+        "Iss etwas! Sonst bekommst du Hunger.",
+        "Lern jetzt! Sonst hast du keine Zeit."
+      ],
+      "tr": {
+        "en": "Go now! Otherwise you will be late.",
+        "es": "¡Vete ya! Si no, llegarás tarde."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f04",
+      "kind": "form",
+      "verb": "Zweiter Teil",
+      "person": "weder",
+      "answer": "noch",
+      "table": "zweiteilige-konnektoren"
+    },
+    {
+      "id": "konnektoren-adverbial-c05",
+      "sentence": "Es regnet. Trotzdem ___ spazieren.",
+      "options": [
+        "gehen wir",
+        "wir gehen",
+        "gehen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "trotzdem fills position 1, so the verb comes next and the subject after it: gehen wir.",
+        "es": "trotzdem ocupa la posición 1, así que el verbo va a continuación y el sujeto después: gehen wir."
+      },
+      "wrong": {
+        "wir gehen": {
+          "en": "wir gehen keeps the subject in front. After trotzdem the verb must come first.",
+          "es": "wir gehen deja el sujeto delante. Después de trotzdem el verbo debe ir primero."
+        },
+        "gehen": {
+          "en": "gehen alone has no subject. The sentence needs wir after the verb: gehen wir.",
+          "es": "gehen solo no tiene sujeto. La oración necesita wir después del verbo: gehen wir."
+        }
+      },
+      "examples": [
+        "Es ist spät. Trotzdem arbeiten wir.",
+        "Er ist müde. Trotzdem lernt er."
+      ],
+      "tr": {
+        "en": "It is raining. Still, we go for a walk.",
+        "es": "Llueve. Aun así, salimos a caminar."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f05",
+      "kind": "form",
+      "verb": "Konnektor",
+      "person": "noch dazu",
+      "answer": "außerdem",
+      "table": "konnektor-bedeutung"
+    },
+    {
+      "id": "konnektoren-adverbial-c06",
+      "sentence": "Ich bin müde, ___ ich gehe ins Kino.",
+      "options": [
+        "trotzdem",
+        "obwohl",
+        "aber"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The order is subject then verb, which fits the conjunction aber. It stands in position 0.",
+        "es": "El orden es sujeto y luego verbo, lo que encaja con la conjunción aber. Está en la posición 0."
+      },
+      "wrong": {
+        "trotzdem": {
+          "en": "trotzdem would need the verb before the subject: trotzdem gehe ich. Here ich comes first.",
+          "es": "trotzdem necesitaría el verbo antes del sujeto: trotzdem gehe ich. Aquí ich va primero."
+        },
+        "obwohl": {
+          "en": "obwohl sends the verb to the end: obwohl ich ins Kino gehe. That does not fit the sentence.",
+          "es": "obwohl manda el verbo al final: obwohl ich ins Kino gehe. Eso no encaja con la oración."
+        }
+      },
+      "examples": [
+        "Er ist müde, aber er lernt.",
+        "Es regnet, aber wir gehen raus."
+      ],
+      "tr": {
+        "en": "I am tired, but I am going to the cinema.",
+        "es": "Estoy cansado, pero voy al cine."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f06",
+      "kind": "form",
+      "verb": "Zweiter Teil",
+      "person": "sowohl",
+      "answer": "als auch",
+      "table": "zweiteilige-konnektoren"
+    },
+    {
+      "id": "konnektoren-adverbial-w02",
+      "kind": "why",
+      "es": "Ich bin müde, aber ich gehe ins Kino.",
+      "target": "aber",
+      "tr": {
+        "en": "I am tired, but I am going to the cinema.",
+        "es": "Estoy cansado, pero voy al cine."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "aber sends the verb to the end, like obwohl",
+            "es": "aber manda el verbo al final, como obwohl"
+          },
+          "wrong": {
+            "en": "aber is a conjunction in position 0. It does not change the word order of the clause it connects.",
+            "es": "aber es una conjunción en la posición 0. No cambia el orden de las palabras de la oración que une."
+          }
+        },
+        {
+          "text": {
+            "en": "aber needs the verb before the subject, like trotzdem",
+            "es": "aber necesita el verbo antes del sujeto, como trotzdem"
+          },
+          "wrong": {
+            "en": "Only adverbs like trotzdem fill position 1. aber stands outside the clause, so the subject stays first.",
+            "es": "Solo los adverbios como trotzdem ocupan la posición 1. aber está fuera de la oración, así que el sujeto sigue primero."
+          }
+        },
+        {
+          "text": {
+            "en": "aber is in position 0, so subject and verb keep their normal order",
+            "es": "aber está en la posición 0, así que sujeto y verbo conservan su orden normal"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "konnektoren-adverbial-c07",
+      "sentence": "Ich esse weder Fleisch ___ Fisch.",
+      "options": [
+        "oder",
+        "und",
+        "noch"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "weder is paired with noch: weder ... noch means neither ... nor.",
+        "es": "weder se combina con noch: weder ... noch significa ni ... ni."
+      },
+      "wrong": {
+        "oder": {
+          "en": "oder belongs to entweder ... oder. After weder the second part must be noch.",
+          "es": "oder pertenece a entweder ... oder. Después de weder la segunda parte debe ser noch."
+        },
+        "und": {
+          "en": "und joins two things positively. With weder the pair needs noch.",
+          "es": "und une dos cosas de manera positiva. Con weder el par necesita noch."
+        }
+      },
+      "examples": [
+        "Er hat weder Zeit noch Geld.",
+        "Sie trinkt weder Kaffee noch Tee."
+      ],
+      "tr": {
+        "en": "I eat neither meat nor fish.",
+        "es": "No como ni carne ni pescado."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f07",
+      "kind": "form",
+      "verb": "Konnektor",
+      "person": "wenn nicht",
+      "answer": "sonst",
+      "table": "konnektor-bedeutung"
+    },
+    {
+      "id": "konnektoren-adverbial-c08",
+      "sentence": "Wir fahren entweder mit dem Bus ___ mit dem Zug.",
+      "options": [
+        "oder",
+        "noch",
+        "aber"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "entweder ... oder means one of two options: either by bus or by train.",
+        "es": "entweder ... oder significa una de dos opciones: o en autobús o en tren."
+      },
+      "wrong": {
+        "noch": {
+          "en": "noch belongs to weder. With entweder the second part is oder.",
+          "es": "noch pertenece a weder. Con entweder la segunda parte es oder."
+        },
+        "aber": {
+          "en": "aber would add a contrast and does not complete the pair entweder ... oder.",
+          "es": "aber añadiría un contraste y no completa el par entweder ... oder."
+        }
+      },
+      "examples": [
+        "Du kannst entweder kommen oder anrufen.",
+        "Entweder trinke ich Tee oder Kaffee."
+      ],
+      "tr": {
+        "en": "We go either by bus or by train.",
+        "es": "Vamos o en autobús o en tren."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f08",
+      "kind": "form",
+      "verb": "Zweiter Teil",
+      "person": "nicht nur",
+      "answer": "sondern auch",
+      "table": "zweiteilige-konnektoren"
+    },
+    {
+      "id": "konnektoren-adverbial-c09",
+      "sentence": "Sie spricht sowohl Deutsch ___ auch Englisch.",
+      "options": [
+        "und",
+        "sondern",
+        "als"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sowohl is paired with als auch: she speaks both German and English.",
+        "es": "sowohl se combina con als auch: habla tanto alemán como inglés."
+      },
+      "wrong": {
+        "und": {
+          "en": "und cannot replace als in this pair. The fixed expression is sowohl ... als auch.",
+          "es": "und no puede reemplazar a als en este par. La expresión fija es sowohl ... als auch."
+        },
+        "sondern": {
+          "en": "sondern belongs to nicht nur ... sondern auch. With sowohl you need als.",
+          "es": "sondern pertenece a nicht nur ... sondern auch. Con sowohl necesitas als."
+        }
+      },
+      "examples": [
+        "Er kennt sowohl Anna als auch Paul.",
+        "Das Hotel ist sowohl schön als auch billig."
+      ],
+      "tr": {
+        "en": "She speaks both German and English.",
+        "es": "Habla tanto alemán como inglés."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f09",
+      "kind": "form",
+      "verb": "Konnektor",
+      "person": "am Anfang",
+      "answer": "zuerst",
+      "table": "konnektor-bedeutung"
+    },
+    {
+      "id": "konnektoren-adverbial-w03",
+      "kind": "why",
+      "es": "Er isst weder Fleisch noch Fisch.",
+      "target": "weder",
+      "tr": {
+        "en": "He eats neither meat nor fish.",
+        "es": "No come ni carne ni pescado."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "weder ... noch is already negative, so no nicht or kein is added",
+            "es": "weder ... noch ya es negativo, así que no se añade nicht ni kein"
+          }
+        },
+        {
+          "text": {
+            "en": "weder needs nicht as well, as in weder nicht Fleisch noch Fisch",
+            "es": "weder necesita también nicht, como en weder nicht Fleisch noch Fisch"
+          },
+          "wrong": {
+            "en": "The pair weder ... noch is the negation itself. Adding nicht or kein would be a double negative.",
+            "es": "El par weder ... noch es la negación misma. Añadir nicht o kein sería una doble negación."
+          }
+        },
+        {
+          "text": {
+            "en": "weder ... noch means either ... or",
+            "es": "weder ... noch significa o ... o"
+          },
+          "wrong": {
+            "en": "Either ... or is entweder ... oder. weder ... noch means that neither of the two is true.",
+            "es": "O ... o es entweder ... oder. weder ... noch significa que ninguno de los dos es verdad."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "konnektoren-adverbial-c10",
+      "sentence": "Er ist nicht nur nett, ___ auch klug.",
+      "options": [
+        "aber",
+        "sondern",
+        "und"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "nicht nur is paired with sondern auch: not only nice, but also smart.",
+        "es": "nicht nur se combina con sondern auch: no solo amable, sino también inteligente."
+      },
+      "wrong": {
+        "aber": {
+          "en": "aber expresses a contrast. The pair nicht nur needs sondern auch, which adds a second point.",
+          "es": "aber expresa un contraste. El par nicht nur necesita sondern auch, que añade un segundo punto."
+        },
+        "und": {
+          "en": "und alone does not complete the pair. The fixed expression is nicht nur ... sondern auch.",
+          "es": "und solo no completa el par. La expresión fija es nicht nur ... sondern auch."
+        }
+      },
+      "examples": [
+        "Sie ist nicht nur schön, sondern auch nett.",
+        "Er arbeitet nicht nur viel, sondern auch gern."
+      ],
+      "tr": {
+        "en": "He is not only nice, but also smart.",
+        "es": "No solo es amable, sino también inteligente."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f10",
+      "kind": "form",
+      "verb": "Zweiter Teil",
+      "person": "zwar",
+      "answer": "aber",
+      "table": "zweiteilige-konnektoren"
+    },
+    {
+      "id": "konnektoren-adverbial-c11",
+      "sentence": "Das Essen ist zwar gut, ___ teuer.",
+      "options": [
+        "aber",
+        "sondern",
+        "trotzdem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "zwar is paired with aber: the food is good, to be sure, but expensive.",
+        "es": "zwar se combina con aber: la comida es buena, es cierto, pero cara."
+      },
+      "wrong": {
+        "sondern": {
+          "en": "sondern follows a negation (nicht ..., sondern ...). There is no negation in this sentence.",
+          "es": "sondern sigue a una negación (nicht ..., sondern ...). No hay ninguna negación en esta oración."
+        },
+        "trotzdem": {
+          "en": "trotzdem is an adverb for a whole clause. Here only one word, teuer, follows after the comma.",
+          "es": "trotzdem es un adverbio para una oración completa. Aquí solo sigue una palabra, teuer, después de la coma."
+        }
+      },
+      "examples": [
+        "Das Zimmer ist zwar klein, aber schön.",
+        "Er ist zwar jung, aber klug."
+      ],
+      "tr": {
+        "en": "The food is good, to be sure, but expensive.",
+        "es": "La comida es buena, pero cara."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f11",
+      "kind": "form",
+      "verb": "Konnektor",
+      "person": "später",
+      "answer": "danach",
+      "table": "konnektor-bedeutung"
+    },
+    {
+      "id": "konnektoren-adverbial-c12",
+      "sentence": "Zuerst esse ich, ___ gehe ich spazieren.",
+      "options": [
+        "bevor",
+        "weil",
+        "danach"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "danach is an adverb: it stands in position 1 and the verb gehe follows right away.",
+        "es": "danach es un adverbio: está en la posición 1 y el verbo gehe sigue de inmediato."
+      },
+      "wrong": {
+        "bevor": {
+          "en": "bevor starts a subordinate clause with the verb at the end. Here gehe ich follows in second position.",
+          "es": "bevor inicia una oración subordinada con el verbo al final. Aquí gehe ich sigue en segunda posición."
+        },
+        "weil": {
+          "en": "weil gives a reason and also sends the verb to the end. Eating first and then walking is a sequence.",
+          "es": "weil da una razón y también manda el verbo al final. Comer primero y luego pasear es una secuencia."
+        }
+      },
+      "examples": [
+        "Zuerst lerne ich, danach spiele ich.",
+        "Zuerst koche ich, danach essen wir."
+      ],
+      "tr": {
+        "en": "First I eat, then I go for a walk.",
+        "es": "Primero como, luego salgo a caminar."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-f12",
+      "kind": "form",
+      "verb": "Konnektor",
+      "person": "am Ende",
+      "answer": "schließlich",
+      "table": "konnektor-bedeutung"
+    },
+    {
+      "id": "konnektoren-adverbial-c13",
+      "sentence": "Ich habe Hunger, ___ esse ich Pizza.",
+      "options": [
+        "weil",
+        "deshalb",
+        "obwohl"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "deshalb gives the consequence, and the verb esse comes right after it: deshalb esse ich.",
+        "es": "deshalb da la consecuencia, y el verbo esse va justo después: deshalb esse ich."
+      },
+      "wrong": {
+        "weil": {
+          "en": "weil would send the verb to the end: weil ich Pizza esse. The sentence puts the verb right after the connector.",
+          "es": "weil mandaría el verbo al final: weil ich Pizza esse. La oración pone el verbo justo después del conector."
+        },
+        "obwohl": {
+          "en": "obwohl expresses a contrast and also needs the verb at the end. Hunger is the reason for eating, not a contrast.",
+          "es": "obwohl expresa un contraste y también necesita el verbo al final. El hambre es la razón para comer, no un contraste."
+        }
+      },
+      "examples": [
+        "Ich bin krank, deshalb bleibe ich hier.",
+        "Es ist kalt, deshalb trage ich eine Jacke."
+      ],
+      "tr": {
+        "en": "I am hungry, so I eat pizza.",
+        "es": "Tengo hambre, por eso como pizza."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-c14",
+      "sentence": "Er ist nett. Außerdem ___ klug.",
+      "options": [
+        "er ist",
+        "ist er",
+        "ist"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "außerdem fills position 1, so the verb comes next and the subject after it: ist er.",
+        "es": "außerdem ocupa la posición 1, así que el verbo va a continuación y el sujeto después: ist er."
+      },
+      "wrong": {
+        "er ist": {
+          "en": "er ist keeps the subject in front. After außerdem the verb must come before the subject.",
+          "es": "er ist deja el sujeto delante. Después de außerdem el verbo debe ir antes del sujeto."
+        },
+        "ist": {
+          "en": "ist alone leaves out the subject. A complete main clause needs er after the verb: ist er.",
+          "es": "ist solo omite el sujeto. Una oración principal completa necesita er después del verbo: ist er."
+        }
+      },
+      "examples": [
+        "Sie ist froh. Außerdem ist sie gesund.",
+        "Das Zimmer ist klein. Außerdem ist es teuer."
+      ],
+      "tr": {
+        "en": "He is nice. Besides, he is smart.",
+        "es": "Es amable. Además, es inteligente."
+      }
+    },
+    {
+      "id": "konnektoren-adverbial-w04",
+      "kind": "why",
+      "es": "Geh jetzt! Sonst kommst du zu spät.",
+      "target": "Sonst",
+      "tr": {
+        "en": "Go now! Otherwise you will be late.",
+        "es": "¡Vete ya! Si no, llegarás tarde."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Sonst starts a subordinate clause, so the verb goes to the end",
+            "es": "Sonst inicia una oración subordinada, así que el verbo va al final"
+          },
+          "wrong": {
+            "en": "Sonst is an adverb for a main clause. The verb comes in position 2, right after it: Sonst kommst du.",
+            "es": "Sonst es un adverbio para una oración principal. El verbo va en la posición 2, justo después: Sonst kommst du."
+          }
+        },
+        {
+          "text": {
+            "en": "Sonst means otherwise, an adverb in position 1 with the verb right after it",
+            "es": "Sonst significa si no, un adverbio en la posición 1 con el verbo justo después"
+          }
+        },
+        {
+          "text": {
+            "en": "Sonst gives the consequence of something that has already happened, like deshalb",
+            "es": "Sonst da la consecuencia de algo que ya ocurrió, como deshalb"
+          },
+          "wrong": {
+            "en": "Sonst looks forward to a bad result if the first part is not done. deshalb gives a result of what has already happened.",
+            "es": "Sonst mira hacia un mal resultado si no se cumple la primera parte. deshalb da el resultado de lo que ya ocurrió."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}

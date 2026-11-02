@@ -1,0 +1,1034 @@
+{
+  "schema": 2,
+  "topic": "verben-mit-praepositionen",
+  "level": "B1",
+  "title": {
+    "en": "Verbs with prepositions and da-/wo- compounds",
+    "es": "Verbos con preposición y compuestos con da-/wo-"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Many German verbs come with a fixed preposition, and the preposition decides the case: warten auf + Akkusativ, träumen von + Dativ. The preposition does not follow the English or Spanish one, so you learn verb, preposition and case together as one block. For things, German replaces the preposition + noun with a da-compound (darauf, dafür), and asks with a wo-compound (worauf, wofür). For people it keeps the preposition and uses a pronoun (auf ihn) or asks auf wen.",
+        "es": "Muchos verbos alemanes llevan una preposición fija, y la preposición decide el caso: warten auf + acusativo, träumen von + dativo. La preposición no sigue a la inglesa ni a la española, así que aprendes verbo, preposición y caso juntos como un bloque. Para cosas, el alemán reemplaza preposición + sustantivo por un compuesto con da- (darauf, dafür), y pregunta con un compuesto con wo- (worauf, wofür). Para personas mantiene la preposición y usa un pronombre (auf ihn) o pregunta auf wen."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "verben-praepositionen",
+      "title": {
+        "en": "Verbs with a fixed preposition",
+        "es": "Verbos con preposición fija"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Präposition",
+          "es": "Präposition"
+        },
+        {
+          "en": "Kasus",
+          "es": "Kasus"
+        }
+      ],
+      "rows": [
+        [
+          "warten",
+          "auf",
+          "Akkusativ"
+        ],
+        [
+          "denken",
+          "an",
+          "Akkusativ"
+        ],
+        [
+          "sich freuen (Zukunft)",
+          "auf",
+          "Akkusativ"
+        ],
+        [
+          "sich freuen (jetzt)",
+          "über",
+          "Akkusativ"
+        ],
+        [
+          "sich interessieren",
+          "für",
+          "Akkusativ"
+        ],
+        [
+          "sich ärgern",
+          "über",
+          "Akkusativ"
+        ],
+        [
+          "sich erinnern",
+          "an",
+          "Akkusativ"
+        ],
+        [
+          "träumen",
+          "von",
+          "Dativ"
+        ],
+        [
+          "fragen",
+          "nach",
+          "Dativ"
+        ],
+        [
+          "teilnehmen",
+          "an",
+          "Dativ"
+        ],
+        [
+          "abhängen",
+          "von",
+          "Dativ"
+        ],
+        [
+          "Angst haben",
+          "vor",
+          "Dativ"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "da-wo-woerter",
+      "title": {
+        "en": "da- and wo- compounds",
+        "es": "Compuestos con da- y wo-"
+      },
+      "header": [
+        {
+          "en": "Preposition",
+          "es": "Preposición"
+        },
+        {
+          "en": "da-Wort",
+          "es": "da-Wort"
+        },
+        {
+          "en": "wo-Wort",
+          "es": "wo-Wort"
+        }
+      ],
+      "rows": [
+        [
+          "auf",
+          "darauf",
+          "worauf"
+        ],
+        [
+          "an",
+          "daran",
+          "woran"
+        ],
+        [
+          "für",
+          "dafür",
+          "wofür"
+        ],
+        [
+          "über",
+          "darüber",
+          "worüber"
+        ],
+        [
+          "von",
+          "davon",
+          "wovon"
+        ],
+        [
+          "mit",
+          "damit",
+          "womit"
+        ],
+        [
+          "nach",
+          "danach",
+          "wonach"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Learn the block: verb + preposition + case",
+        "es": "Aprende el bloque: verbo + preposición + caso"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The preposition is part of the verb. With an accusative preposition the noun goes into the accusative, with a dative one into the dative. Two-way prepositions (an, auf) follow the verb, not the usual rule about place and direction.",
+            "es": "La preposición forma parte del verbo. Con una preposición de acusativo el sustantivo va en acusativo, con una de dativo va en dativo. Las preposiciones de dos casos (an, auf) siguen al verbo, no la regla habitual de lugar y dirección."
+          },
+          "examples": [
+            {
+              "es": "Ich warte auf den Bus.",
+              "tr": {
+                "en": "I am waiting for the bus.",
+                "es": "Espero el autobús."
+              }
+            },
+            {
+              "es": "Er denkt oft an seine Familie.",
+              "tr": {
+                "en": "He often thinks of his family.",
+                "es": "Piensa a menudo en su familia."
+              }
+            },
+            {
+              "es": "Sie träumt von einem Haus.",
+              "tr": {
+                "en": "She dreams of a house.",
+                "es": "Ella sueña con una casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "More fixed pairs: sich interessieren für, sich ärgern über, fragen nach, teilnehmen an, abhängen von, Angst haben vor.",
+            "es": "Más parejas fijas: sich interessieren für, sich ärgern über, fragen nach, teilnehmen an, abhängen von, Angst haben vor."
+          },
+          "examples": [
+            {
+              "es": "Ich interessiere mich für Musik.",
+              "tr": {
+                "en": "I am interested in music.",
+                "es": "Me interesa la música."
+              }
+            },
+            {
+              "es": "Er fragt nach dem Weg.",
+              "tr": {
+                "en": "He asks for the way.",
+                "es": "Pregunta por el camino."
+              }
+            },
+            {
+              "es": "Wir nehmen an dem Konzert teil.",
+              "tr": {
+                "en": "We are taking part in the concert.",
+                "es": "Participamos en el concierto."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Questions and answers: things and people",
+        "es": "Preguntas y respuestas: cosas y personas"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Ask about a thing with wo(r)- + preposition: Worauf wartest du? Answer with da(r)- + preposition: Ich warte darauf. Ask about a person with the preposition + wen or wem: Auf wen wartest du? Answer: Ich warte auf ihn. An r is added before a vowel: worauf, darüber.",
+            "es": "Pregunta por una cosa con wo(r)- + preposición: Worauf wartest du? Responde con da(r)- + preposición: Ich warte darauf. Pregunta por una persona con la preposición + wen o wem: Auf wen wartest du? Responde: Ich warte auf ihn. Se añade una r antes de una vocal: worauf, darüber."
+          },
+          "examples": [
+            {
+              "es": "Worauf wartest du? Auf den Bus.",
+              "tr": {
+                "en": "What are you waiting for? For the bus.",
+                "es": "¿Qué esperas? El autobús."
+              }
+            },
+            {
+              "es": "Auf wen wartest du? Auf Paul.",
+              "tr": {
+                "en": "Who are you waiting for? For Paul.",
+                "es": "¿A quién esperas? A Paul."
+              }
+            },
+            {
+              "es": "Wartest du auf Paul? Ja, ich warte auf ihn.",
+              "tr": {
+                "en": "Are you waiting for Paul? Yes, I am waiting for him.",
+                "es": "¿Esperas a Paul? Sí, lo espero."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A da-compound can point ahead to an infinitive with zu or to a dass-clause: Ich freue mich darauf, dich zu sehen. Ich warte darauf, dass du kommst.",
+            "es": "Un compuesto con da- puede apuntar a un infinitivo con zu o a una oración con dass: Ich freue mich darauf, dich zu sehen. Ich warte darauf, dass du kommst."
+          },
+          "examples": [
+            {
+              "es": "Ich freue mich darauf, dich zu sehen.",
+              "tr": {
+                "en": "I am looking forward to seeing you.",
+                "es": "Tengo ganas de verte."
+              }
+            },
+            {
+              "es": "Ich warte darauf, dass du kommst.",
+              "tr": {
+                "en": "I am waiting for you to come.",
+                "es": "Espero a que vengas."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "sich freuen auf or über?",
+        "es": "¿sich freuen auf o über?"
+      },
+      "pairs": [
+        {
+          "a": "Ich freue mich auf das Wochenende.",
+          "b": "Ich freue mich über das Geschenk.",
+          "note": {
+            "en": "auf looks forward to something that will come. über is a joy about something that is here or has just happened. Both take the accusative.",
+            "es": "auf mira hacia algo que vendrá. über es la alegría por algo que ya está aquí o acaba de pasar. Los dos llevan acusativo."
+          },
+          "examples": [
+            {
+              "es": "Ich freue mich auf den Urlaub.",
+              "tr": {
+                "en": "I am looking forward to the vacation.",
+                "es": "Tengo ganas de las vacaciones."
+              }
+            },
+            {
+              "es": "Ich freue mich über den Brief.",
+              "tr": {
+                "en": "I am happy about the letter.",
+                "es": "Me alegra la carta."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not translate the preposition literally. warten is auf, not für; denken is an; sich interessieren is für. Choose the preposition and the case together: auf + Akkusativ, von + Dativ. For people never use darauf: say auf ihn, mit ihr. In a question about a person keep the preposition in front: Auf wen wartest du? Add the r before a vowel: worauf, darüber, not woauf. A da-compound can start a dass-clause or an infinitive with zu, and the verb and preposition stay together: Ich freue mich darauf, dass du kommst.",
+        "es": "Trampas clásicas: no traduzcas la preposición literalmente. warten es auf, no für; denken es an; sich interessieren es für. Elige la preposición y el caso juntos: auf + acusativo, von + dativo. Para personas nunca uses darauf: di auf ihn, mit ihr. En una pregunta sobre una persona deja la preposición delante: Auf wen wartest du? Añade la r antes de una vocal: worauf, darüber, no woauf. Un compuesto con da- puede iniciar una oración con dass o un infinitivo con zu, y el verbo y la preposición se quedan juntos: Ich freue mich darauf, dass du kommst."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Many verbs have a fixed preposition, and the preposition decides the case. «Ich warte auf den Bus.» «Sie träumt von einem Haus.» For things use «darauf» and «worauf»: «Worauf wartest du?» For people keep the preposition: «Auf wen wartest du?» «Ich warte auf ihn.» A da-word can point ahead to a clause: «Ich freue mich darauf, dich zu sehen.»",
+    "es": "Muchos verbos tienen una preposición fija, y la preposición decide el caso. «Ich warte auf den Bus.» «Sie träumt von einem Haus.» Para cosas usa «darauf» y «worauf»: «Worauf wartest du?» Para personas mantén la preposición: «Auf wen wartest du?» «Ich warte auf ihn.» Una palabra con da- puede apuntar hacia una oración: «Ich freue mich darauf, dich zu sehen.»"
+  },
+  "items": [
+    {
+      "id": "verben-mit-praepositionen-c01",
+      "sentence": "Ich warte ___ den Bus.",
+      "options": [
+        "auf",
+        "für",
+        "an"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "warten always goes with auf, followed by the accusative: warten auf den Bus.",
+        "es": "warten va siempre con auf, seguido del acusativo: warten auf den Bus."
+      },
+      "wrong": {
+        "für": {
+          "en": "für is the English for in wait for, but German does not copy it. The fixed preposition of warten is auf.",
+          "es": "für es el for del inglés en wait for, pero el alemán no lo copia. La preposición fija de warten es auf."
+        },
+        "an": {
+          "en": "an belongs to verbs like denken an. With warten you need auf.",
+          "es": "an pertenece a verbos como denken an. Con warten necesitas auf."
+        }
+      },
+      "examples": [
+        "Sie wartet auf den Zug.",
+        "Wir warten auf Paul."
+      ],
+      "tr": {
+        "en": "I am waiting for the bus.",
+        "es": "Espero el autobús."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f01",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "warten",
+      "answer": "auf",
+      "table": "verben-praepositionen"
+    },
+    {
+      "id": "verben-mit-praepositionen-c02",
+      "sentence": "Er denkt oft ___ seine Familie.",
+      "options": [
+        "auf",
+        "an",
+        "über"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "denken is used with an and the accusative: an seine Familie denken.",
+        "es": "denken se usa con an y el acusativo: an seine Familie denken."
+      },
+      "wrong": {
+        "auf": {
+          "en": "auf is the preposition of warten and sich freuen auf. With denken you need an.",
+          "es": "auf es la preposición de warten y sich freuen auf. Con denken necesitas an."
+        },
+        "über": {
+          "en": "über goes with sprechen or sich ärgern. Thinking of someone is denken an.",
+          "es": "über va con sprechen o sich ärgern. Pensar en alguien es denken an."
+        }
+      },
+      "examples": [
+        "Ich denke an dich.",
+        "Sie denkt an den Urlaub."
+      ],
+      "tr": {
+        "en": "He often thinks of his family.",
+        "es": "Piensa a menudo en su familia."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f02",
+      "kind": "form",
+      "verb": "da-Wort",
+      "person": "auf",
+      "answer": "darauf",
+      "table": "da-wo-woerter"
+    },
+    {
+      "id": "verben-mit-praepositionen-c03",
+      "sentence": "Ich interessiere mich ___ Musik.",
+      "options": [
+        "auf",
+        "an",
+        "für"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sich interessieren takes für and the accusative: sich für Musik interessieren.",
+        "es": "sich interessieren lleva für y el acusativo: sich für Musik interessieren."
+      },
+      "wrong": {
+        "auf": {
+          "en": "auf is the preposition of warten. Interest in something is expressed with für.",
+          "es": "auf es la preposición de warten. El interés por algo se expresa con für."
+        },
+        "an": {
+          "en": "an belongs to denken and teilnehmen. Interest in something is not an but für.",
+          "es": "an pertenece a denken y teilnehmen. El interés por algo no es an sino für."
+        }
+      },
+      "examples": [
+        "Er interessiert sich für Sport.",
+        "Wir interessieren uns für Kunst."
+      ],
+      "tr": {
+        "en": "I am interested in music.",
+        "es": "Me interesa la música."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f03",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "denken",
+      "answer": "an",
+      "table": "verben-praepositionen"
+    },
+    {
+      "id": "verben-mit-praepositionen-w01",
+      "kind": "why",
+      "es": "Ich warte auf den Bus.",
+      "target": "auf",
+      "tr": {
+        "en": "I am waiting for the bus.",
+        "es": "Espero el autobús."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "auf is the fixed preposition of warten, learned together with the verb",
+            "es": "auf es la preposición fija de warten, que se aprende junto con el verbo"
+          }
+        },
+        {
+          "text": {
+            "en": "auf means on, so the bus is on something",
+            "es": "auf significa sobre, así que el autobús está sobre algo"
+          },
+          "wrong": {
+            "en": "The preposition is not translated word for word. With warten, auf only belongs to the verb and has no meaning of place.",
+            "es": "La preposición no se traduce palabra por palabra. Con warten, auf solo pertenece al verbo y no tiene sentido de lugar."
+          }
+        },
+        {
+          "text": {
+            "en": "auf is wrong; warten should take für, like English wait for",
+            "es": "auf es incorrecto; warten debería llevar für, como wait for en inglés"
+          },
+          "wrong": {
+            "en": "German does not copy the English preposition. The fixed pair is warten auf, and für is wrong.",
+            "es": "El alemán no copia la preposición inglesa. La pareja fija es warten auf, y für es incorrecto."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "verben-mit-praepositionen-c04",
+      "sentence": "Sie träumt ___ einem Haus.",
+      "options": [
+        "von",
+        "über",
+        "an"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "träumen goes with von and the dative: von einem Haus träumen.",
+        "es": "träumen va con von y el dativo: von einem Haus träumen."
+      },
+      "wrong": {
+        "über": {
+          "en": "über goes with verbs of talking or being annoyed. Dreaming of something is von.",
+          "es": "über va con verbos de hablar o enojarse. Soñar con algo es von."
+        },
+        "an": {
+          "en": "an would need the accusative (an ein Haus), but träumen is fixed with von and the dative.",
+          "es": "an necesitaría el acusativo (an ein Haus), pero träumen es fijo con von y el dativo."
+        }
+      },
+      "examples": [
+        "Er träumt von einem Auto.",
+        "Wir träumen vom Urlaub."
+      ],
+      "tr": {
+        "en": "She dreams of a house.",
+        "es": "Ella sueña con una casa."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f04",
+      "kind": "form",
+      "verb": "wo-Wort",
+      "person": "über",
+      "answer": "worüber",
+      "table": "da-wo-woerter"
+    },
+    {
+      "id": "verben-mit-praepositionen-c05",
+      "sentence": "Ich warte auf ___ Freundin.",
+      "options": [
+        "meiner",
+        "meine",
+        "meinen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "warten auf takes the accusative, and Freundin is feminine: meine Freundin.",
+        "es": "warten auf lleva acusativo, y Freundin es femenino: meine Freundin."
+      },
+      "wrong": {
+        "meiner": {
+          "en": "meiner is the dative or genitive feminine. After warten auf the accusative is needed.",
+          "es": "meiner es el dativo o el genitivo femenino. Después de warten auf se necesita el acusativo."
+        },
+        "meinen": {
+          "en": "meinen is the masculine accusative. Freundin is feminine and keeps meine.",
+          "es": "meinen es el acusativo masculino. Freundin es femenino y se queda en meine."
+        }
+      },
+      "examples": [
+        "Ich warte auf meinen Bruder.",
+        "Sie wartet auf ihre Mutter."
+      ],
+      "tr": {
+        "en": "I am waiting for my girlfriend.",
+        "es": "Espero a mi amiga."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f05",
+      "kind": "form",
+      "verb": "Kasus",
+      "person": "träumen",
+      "answer": "Dativ",
+      "table": "verben-praepositionen"
+    },
+    {
+      "id": "verben-mit-praepositionen-c06",
+      "sentence": "Er fragt nach ___ Weg.",
+      "options": [
+        "den",
+        "der",
+        "dem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nach always takes the dative, and Weg is masculine: nach dem Weg fragen.",
+        "es": "nach lleva siempre dativo, y Weg es masculino: nach dem Weg fragen."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the accusative. The preposition nach never takes the accusative.",
+          "es": "den es el acusativo. La preposición nach nunca lleva acusativo."
+        },
+        "der": {
+          "en": "der is the dative of feminine nouns. Weg is masculine, so the dative is dem.",
+          "es": "der es el dativo de los sustantivos femeninos. Weg es masculino, así que el dativo es dem."
+        }
+      },
+      "examples": [
+        "Sie fragt nach dem Preis.",
+        "Wir fragen nach der Uhrzeit."
+      ],
+      "tr": {
+        "en": "He asks for the way.",
+        "es": "Pregunta por el camino."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f06",
+      "kind": "form",
+      "verb": "da-Wort",
+      "person": "für",
+      "answer": "dafür",
+      "table": "da-wo-woerter"
+    },
+    {
+      "id": "verben-mit-praepositionen-w02",
+      "kind": "why",
+      "es": "Sie träumt von einem Haus.",
+      "target": "einem",
+      "tr": {
+        "en": "She dreams of a house.",
+        "es": "Ella sueña con una casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "einem is the accusative, because every verb with a preposition takes the accusative",
+            "es": "einem es el acusativo, porque todo verbo con preposición lleva acusativo"
+          },
+          "wrong": {
+            "en": "The case depends on the preposition. einem is a dative form, and von always takes the dative.",
+            "es": "El caso depende de la preposición. einem es una forma de dativo, y von lleva siempre dativo."
+          }
+        },
+        {
+          "text": {
+            "en": "einem is dative: träumen von takes the dative",
+            "es": "einem es dativo: träumen von lleva dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "einem is dative because träumen is a reflexive verb",
+            "es": "einem es dativo porque träumen es un verbo reflexivo"
+          },
+          "wrong": {
+            "en": "träumen is not reflexive here, and reflexive verbs do not decide the case. The preposition von does.",
+            "es": "träumen no es reflexivo aquí, y los verbos reflexivos no deciden el caso. La preposición von sí."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "verben-mit-praepositionen-c07",
+      "sentence": "Danke! Ich freue mich ___ das Geschenk.",
+      "options": [
+        "über",
+        "auf",
+        "für"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The gift is already here, so the joy is about it: sich freuen über.",
+        "es": "El regalo ya está aquí, así que la alegría es por él: sich freuen über."
+      },
+      "wrong": {
+        "auf": {
+          "en": "auf looks forward to something still to come. Here you thank for a present you have received.",
+          "es": "auf mira hacia algo que todavía vendrá. Aquí agradeces un regalo que ya recibiste."
+        },
+        "für": {
+          "en": "für is not a preposition of sich freuen. For the joy over a gift you need über.",
+          "es": "für no es una preposición de sich freuen. Para la alegría por un regalo necesitas über."
+        }
+      },
+      "examples": [
+        "Ich freue mich über den Brief.",
+        "Sie freut sich über die Blumen."
+      ],
+      "tr": {
+        "en": "Thank you! I am happy about the gift.",
+        "es": "¡Gracias! Me alegra el regalo."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f07",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "sich interessieren",
+      "answer": "für",
+      "table": "verben-praepositionen"
+    },
+    {
+      "id": "verben-mit-praepositionen-c08",
+      "sentence": "Morgen ist Samstag. Ich freue mich ___ das Wochenende.",
+      "options": [
+        "über",
+        "auf",
+        "für"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The weekend is still to come, so you look forward to it: sich freuen auf.",
+        "es": "El fin de semana todavía no llega, así que lo esperas con ganas: sich freuen auf."
+      },
+      "wrong": {
+        "über": {
+          "en": "über is used for something that is already here or has happened. The weekend has not started yet.",
+          "es": "über se usa para algo que ya está aquí o ya ocurrió. El fin de semana todavía no empezó."
+        },
+        "für": {
+          "en": "für does not belong to sich freuen. Looking forward to something is auf.",
+          "es": "für no pertenece a sich freuen. Esperar algo con ganas es auf."
+        }
+      },
+      "examples": [
+        "Ich freue mich auf den Urlaub.",
+        "Wir freuen uns auf das Konzert."
+      ],
+      "tr": {
+        "en": "Tomorrow is Saturday. I am looking forward to the weekend.",
+        "es": "Mañana es sábado. Tengo ganas del fin de semana."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f08",
+      "kind": "form",
+      "verb": "wo-Wort",
+      "person": "an",
+      "answer": "woran",
+      "table": "da-wo-woerter"
+    },
+    {
+      "id": "verben-mit-praepositionen-c09",
+      "sentence": "Er ärgert sich ___ das Wetter.",
+      "options": [
+        "auf",
+        "an",
+        "über"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sich ärgern goes with über and the accusative: sich über das Wetter ärgern.",
+        "es": "sich ärgern va con über y el acusativo: sich über das Wetter ärgern."
+      },
+      "wrong": {
+        "auf": {
+          "en": "auf goes with warten and sich freuen auf. Being annoyed about something is über.",
+          "es": "auf va con warten y sich freuen auf. Enojarse por algo es über."
+        },
+        "an": {
+          "en": "an goes with denken and teilnehmen. For being annoyed you need über.",
+          "es": "an va con denken y teilnehmen. Para enojarse necesitas über."
+        }
+      },
+      "examples": [
+        "Ich ärgere mich über den Lärm.",
+        "Sie ärgert sich über die Rechnung."
+      ],
+      "tr": {
+        "en": "He is annoyed about the weather.",
+        "es": "Se enoja por el clima."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f09",
+      "kind": "form",
+      "verb": "Kasus",
+      "person": "warten",
+      "answer": "Akkusativ",
+      "table": "verben-praepositionen"
+    },
+    {
+      "id": "verben-mit-praepositionen-w03",
+      "kind": "why",
+      "es": "Ich freue mich darauf, dich zu sehen.",
+      "target": "darauf",
+      "tr": {
+        "en": "I am looking forward to seeing you.",
+        "es": "Tengo ganas de verte."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "darauf replaces a person, like auf ihn",
+            "es": "darauf reemplaza a una persona, como auf ihn"
+          },
+          "wrong": {
+            "en": "da-compounds stand for things and for whole clauses. Here darauf points ahead to the infinitive dich zu sehen.",
+            "es": "Los compuestos con da- representan cosas y oraciones enteras. Aquí darauf apunta hacia el infinitivo dich zu sehen."
+          }
+        },
+        {
+          "text": {
+            "en": "darauf points ahead to the infinitive, because sich freuen auf needs auf",
+            "es": "darauf apunta hacia el infinitivo, porque sich freuen auf necesita auf"
+          }
+        },
+        {
+          "text": {
+            "en": "darauf is wrong, because sich freuen takes über",
+            "es": "darauf es incorrecto, porque sich freuen lleva über"
+          },
+          "wrong": {
+            "en": "sich freuen takes auf for something in the future, and seeing someone is still to come, so darauf is right.",
+            "es": "sich freuen lleva auf para algo futuro, y ver a alguien aún está por venir, así que darauf es correcto."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "verben-mit-praepositionen-c10",
+      "sentence": "Wartest du auf den Bus? Ja, ich warte ___.",
+      "options": [
+        "darauf",
+        "auf ihn",
+        "dafür"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The bus is a thing, so the preposition and the noun become a da-compound: darauf.",
+        "es": "El autobús es una cosa, así que la preposición y el sustantivo se vuelven un compuesto con da-: darauf."
+      },
+      "wrong": {
+        "auf ihn": {
+          "en": "auf ihn is used for a person. For a thing like the bus you use the da-compound.",
+          "es": "auf ihn se usa para una persona. Para una cosa como el autobús se usa el compuesto con da-."
+        },
+        "dafür": {
+          "en": "dafür is the da-compound of für. The preposition of warten is auf, so it must be darauf.",
+          "es": "dafür es el compuesto con da- de für. La preposición de warten es auf, así que debe ser darauf."
+        }
+      },
+      "examples": [
+        "Denkst du an die Prüfung? Ja, ich denke daran.",
+        "Freust du dich auf den Urlaub? Ja, ich freue mich darauf."
+      ],
+      "tr": {
+        "en": "Are you waiting for the bus? Yes, I am waiting for it.",
+        "es": "¿Esperas el autobús? Sí, lo espero."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f10",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "fragen",
+      "answer": "nach",
+      "table": "verben-praepositionen"
+    },
+    {
+      "id": "verben-mit-praepositionen-c11",
+      "sentence": "Wartest du auf Paul? Ja, ich warte ___.",
+      "options": [
+        "darauf",
+        "auf ihn",
+        "auf ihm"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Paul is a person, so the preposition stays and a pronoun follows. warten auf takes the accusative: auf ihn.",
+        "es": "Paul es una persona, así que la preposición se queda y le sigue un pronombre. warten auf lleva acusativo: auf ihn."
+      },
+      "wrong": {
+        "darauf": {
+          "en": "darauf is only for things. For a person you keep the preposition and add the pronoun.",
+          "es": "darauf es solo para cosas. Para una persona se mantiene la preposición y se añade el pronombre."
+        },
+        "auf ihm": {
+          "en": "auf ihm is the dative. warten auf takes the accusative, so the pronoun is ihn.",
+          "es": "auf ihm es el dativo. warten auf lleva acusativo, así que el pronombre es ihn."
+        }
+      },
+      "examples": [
+        "Wartest du auf Anna? Ja, ich warte auf sie.",
+        "Denkst du an Paul? Ja, ich denke an ihn."
+      ],
+      "tr": {
+        "en": "Are you waiting for Paul? Yes, I am waiting for him.",
+        "es": "¿Esperas a Paul? Sí, lo espero."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f11",
+      "kind": "form",
+      "verb": "Präposition",
+      "person": "sich ärgern",
+      "answer": "über",
+      "table": "verben-praepositionen"
+    },
+    {
+      "id": "verben-mit-praepositionen-c12",
+      "sentence": "___ wartest du? Auf den Bus.",
+      "options": [
+        "Auf wen",
+        "Wofür",
+        "Worauf"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The answer is a thing, the bus, so the question is a wo-compound of auf: Worauf?",
+        "es": "La respuesta es una cosa, el autobús, así que la pregunta es un compuesto con wo- de auf: Worauf?"
+      },
+      "wrong": {
+        "Auf wen": {
+          "en": "Auf wen asks about a person. The answer here is a thing, the bus.",
+          "es": "Auf wen pregunta por una persona. La respuesta aquí es una cosa, el autobús."
+        },
+        "Wofür": {
+          "en": "Wofür is the wo-compound of für. The preposition of warten is auf.",
+          "es": "Wofür es el compuesto con wo- de für. La preposición de warten es auf."
+        }
+      },
+      "examples": [
+        "Woran denkst du? An die Prüfung.",
+        "Worüber ärgerst du dich? Über den Lärm."
+      ],
+      "tr": {
+        "en": "What are you waiting for? For the bus.",
+        "es": "¿Qué esperas? El autobús."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-f12",
+      "kind": "form",
+      "verb": "Kasus",
+      "person": "fragen",
+      "answer": "Dativ",
+      "table": "verben-praepositionen"
+    },
+    {
+      "id": "verben-mit-praepositionen-c13",
+      "sentence": "___ wartest du? Auf Paul.",
+      "options": [
+        "Auf wen",
+        "Worauf",
+        "Wem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The answer is a person, so you ask with the preposition and wen: Auf wen?",
+        "es": "La respuesta es una persona, así que preguntas con la preposición y wen: Auf wen?"
+      },
+      "wrong": {
+        "Worauf": {
+          "en": "Worauf asks about things. For a person you ask auf wen.",
+          "es": "Worauf pregunta por cosas. Para una persona preguntas auf wen."
+        },
+        "Wem": {
+          "en": "Wem is the dative question word and has no preposition. The question needs auf wen.",
+          "es": "Wem es la palabra interrogativa del dativo y no tiene preposición. La pregunta necesita auf wen."
+        }
+      },
+      "examples": [
+        "An wen denkst du? An Anna.",
+        "Für wen arbeitest du? Für Paul."
+      ],
+      "tr": {
+        "en": "Who are you waiting for? For Paul.",
+        "es": "¿A quién esperas? A Paul."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-c14",
+      "sentence": "Ich freue mich ___, dass du kommst.",
+      "options": [
+        "dafür",
+        "darauf",
+        "auf"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The da-compound darauf points ahead to the dass-clause: sich freuen auf becomes darauf.",
+        "es": "El compuesto con da- darauf apunta hacia la oración con dass: sich freuen auf se convierte en darauf."
+      },
+      "wrong": {
+        "dafür": {
+          "en": "dafür is the da-compound of für. The verb sich freuen auf needs darauf here.",
+          "es": "dafür es el compuesto con da- de für. El verbo sich freuen auf necesita darauf aquí."
+        },
+        "auf": {
+          "en": "auf alone cannot stand in front of a dass-clause. It needs the da-compound darauf.",
+          "es": "auf solo no puede ir delante de una oración con dass. Necesita el compuesto con da- darauf."
+        }
+      },
+      "examples": [
+        "Ich warte darauf, dass du anrufst.",
+        "Ich denke daran, dass du kommst."
+      ],
+      "tr": {
+        "en": "I am looking forward to you coming.",
+        "es": "Tengo ganas de que vengas."
+      }
+    },
+    {
+      "id": "verben-mit-praepositionen-w04",
+      "kind": "why",
+      "es": "Ich warte auf ihn.",
+      "target": "ihn",
+      "tr": {
+        "en": "I am waiting for him.",
+        "es": "Lo espero a él."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "auf + ihn: for a person the preposition stays and a personal pronoun in the accusative follows",
+            "es": "auf + ihn: para una persona la preposición se queda y le sigue un pronombre personal en acusativo"
+          }
+        },
+        {
+          "text": {
+            "en": "darauf: da + preposition replaces any noun, also a person",
+            "es": "darauf: da + preposición reemplaza cualquier sustantivo, también una persona"
+          },
+          "wrong": {
+            "en": "da-compounds are for things only. For a person you keep the preposition and use the pronoun.",
+            "es": "Los compuestos con da- son solo para cosas. Para una persona mantienes la preposición y usas el pronombre."
+          }
+        },
+        {
+          "text": {
+            "en": "auf ihm: the pronoun is dative after auf",
+            "es": "auf ihm: el pronombre es dativo después de auf"
+          },
+          "wrong": {
+            "en": "warten auf takes the accusative, not the dative. The accusative of er is ihn.",
+            "es": "warten auf lleva acusativo, no dativo. El acusativo de er es ihn."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
