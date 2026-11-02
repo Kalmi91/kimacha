@@ -1,22 +1,27 @@
 // Opposites game of the Practice tab (beta practiceOpposites, PLAN-jatekok-1021 BRIEF-A4b): the word is shown and read aloud,
 // "What is the opposite?", four words to tap. Pure round logic; the screen is components/practice/OppositesGame.tsx.
 //
-// The pairs are data/practice/opposites.json (Spanish lemmas, checked by scripts/check-opposites.mjs); the cards of a lemma come
-// from data/words-open. A round is the 8 words of lib/practice/gameRound.ts that have a learned opposite of the same part of
+// The pairs are data/practice/opposites.json (Spanish lemmas) and data/practice/opposites-de.json (German headwords, nouns with their
+// article), both checked by scripts/check-opposites.mjs; the cards of a Spanish lemma come from data/words-open (o<order>), the cards of a
+// German headword from data/words/de (d<id>). A round is the 8 words of lib/practice/gameRound.ts that have a learned opposite of the same part of
 // speech and at least 3 more learned words of that part of speech for the wrong options. The 4 options of a word are three
 // learned words of its part of speech plus the opposite; none of them is the word itself or ANY opposite of it (viejo is a pair
 // of joven and of nuevo: they are never both options). They are fixed when the round starts and saved with it.
 //
 // A right option is one half for the asked word (credited by the screen). A wrong one shows the right option, only the day
-// counts, and the word is never sent back a step. Score = words answered right. Spanish words only: the es->en deck has no pairs,
-// so there no word is usable (= the empty state).
+// counts, and the word is never sent back a step. Score = words answered right. Only the Spanish and the German target have pairs: the
+// en and hu decks have none, so there no word is usable (= the empty state).
 
 import { findPcicItem, type PcicItem, type PcicTarget } from '@/data/pcic';
 import pairs from '@/data/practice/opposites.json';
+import pairsDe from '@/data/practice/opposites-de.json';
 import openA1 from '@/data/words-open/a1.json';
 import openA2 from '@/data/words-open/a2.json';
 import openB1 from '@/data/words-open/b1.json';
-import { pcicAlternatives } from '@/lib/pcicMatch';
+import deA1 from '@/data/words/de/a1.json';
+import deA2 from '@/data/words/de/a2.json';
+import deB1 from '@/data/words/de/b1.json';
+import { firstForm, wordIn } from '@/lib/pcicItemText';
 import type { GameLogic } from '@/lib/practice/gameRound';
 import { scrambleTiles, seedOf } from '@/lib/practice/scramble';
 
@@ -25,26 +30,44 @@ export const OPPOSITES_MODE = 'opposites';
 export const OPPOSITES_OPTIONS = 4;
 
 type OpenCard = { order: number; lemma: string };
+type DeCard = { id: number; de: string };
 
 let partnerIndex: Map<string, string[]> | null = null;
 
-// card id (o<order>, the en->es deck) -> the card ids of its opposites; the pairs are written with lemmas.
+// The forms of a German headword a pair can name: each alternative of "der Ort / der Platz" as written (article kept), without its
+// bracketed gloss ("sein (Zustand, Ort)" is "sein").
+function germanHeadwords(de: string): string[] {
+  return de.split(' / ').map((alt) => alt.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim()).filter(Boolean);
+}
+
+// card id -> the card ids of its opposites; the pairs are written with lemmas (Spanish) or headwords (German). The ids of the two
+// decks (o<order>, d<id>) never meet, so one index serves both targets.
 function partners(): Map<string, string[]> {
   if (!partnerIndex) {
-    const idsOfLemma = new Map<string, string[]>();
-    for (const file of [openA1, openA2, openB1] as OpenCard[][]) {
-      for (const c of file) idsOfLemma.set(c.lemma, [...(idsOfLemma.get(c.lemma) ?? []), `o${c.order}`]);
-    }
     const index = new Map<string, string[]>();
     const link = (from: string[], to: string[]) => {
       for (const id of from) index.set(id, [...(index.get(id) ?? []), ...to]);
     };
-    for (const { a, b } of pairs) {
-      const as = idsOfLemma.get(a) ?? [];
-      const bs = idsOfLemma.get(b) ?? [];
-      link(as, bs);
-      link(bs, as);
+    const addPairs = (list: readonly { a: string; b: string }[], idsOf: Map<string, string[]>) => {
+      for (const { a, b } of list) {
+        const as = idsOf.get(a) ?? [];
+        const bs = idsOf.get(b) ?? [];
+        link(as, bs);
+        link(bs, as);
+      }
+    };
+    const idsOfLemma = new Map<string, string[]>();
+    for (const file of [openA1, openA2, openB1] as OpenCard[][]) {
+      for (const c of file) idsOfLemma.set(c.lemma, [...(idsOfLemma.get(c.lemma) ?? []), `o${c.order}`]);
     }
+    addPairs(pairs, idsOfLemma);
+    const idsOfHeadword = new Map<string, string[]>();
+    for (const file of [deA1, deA2, deB1] as DeCard[][]) {
+      for (const c of file) {
+        for (const headword of germanHeadwords(c.de)) idsOfHeadword.set(headword, [...(idsOfHeadword.get(headword) ?? []), `d${c.id}`]);
+      }
+    }
+    addPairs(pairsDe, idsOfHeadword);
     partnerIndex = index;
   }
   return partnerIndex;
@@ -55,9 +78,9 @@ export function oppositesOf(itemId: string): readonly string[] {
   return partners().get(itemId) ?? [];
 }
 
-/** What a card shows: the Spanish word with its article (the first of its alternatives). */
-export function oppositeText(item: PcicItem): string {
-  return (pcicAlternatives(item.es)[0] ?? item.es).trim();
+/** What a card shows in the learned language: the word with its article (the first of its alternatives; a German gloss in brackets is left out). */
+export function oppositeText(item: PcicItem, target: PcicTarget = 'es'): string {
+  return firstForm(wordIn(item, target) ?? '', target);
 }
 
 export interface OppositesQuestion {
@@ -74,14 +97,14 @@ const byOrder = (a: PcicItem, b: PcicItem) => a.order - b.order;
  * learned words of that part of speech with a text of their own. `learned` = the ids of the learned cards. Deterministic
  * (the word's id seeds every choice), so the same inputs give the same question.
  */
-export function buildQuestion(item: PcicItem, learned: ReadonlySet<string>): OppositesQuestion | null {
-  const text = oppositeText(item);
+export function buildQuestion(item: PcicItem, learned: ReadonlySet<string>, target: PcicTarget = 'es'): OppositesQuestion | null {
+  const text = oppositeText(item, target);
   const partnerIds = new Set(oppositesOf(item.id));
   if (!item.pos || text === '' || partnerIds.size === 0) return null;
   const answers = [...partnerIds]
     .filter((id) => learned.has(id))
     .map((id) => findPcicItem(id))
-    .filter((p): p is PcicItem => p !== undefined && p.pos === item.pos && oppositeText(p) !== '')
+    .filter((p): p is PcicItem => p !== undefined && p.pos === item.pos && oppositeText(p, target) !== '')
     .sort(byOrder);
   if (answers.length === 0) return null;
   const answer = answers[seedOf(`answer:${item.id}`) % answers.length];
@@ -93,10 +116,10 @@ export function buildQuestion(item: PcicItem, learned: ReadonlySet<string>): Opp
   }
   if (pool.size < OPPOSITES_OPTIONS - 1) return null;
   // no two options (or the word) with the same text
-  const shown = new Set([text.toLowerCase(), oppositeText(answer).toLowerCase()]);
+  const shown = new Set([text.toLowerCase(), oppositeText(answer, target).toLowerCase()]);
   const wrong: string[] = [];
   for (const id of scrambleTiles([...pool.keys()], seedOf(`wrong:${item.id}`))) {
-    const label = oppositeText(pool.get(id)!).toLowerCase();
+    const label = oppositeText(pool.get(id)!, target).toLowerCase();
     if (label === '' || shown.has(label)) continue;
     shown.add(label);
     wrong.push(id);
@@ -107,8 +130,8 @@ export function buildQuestion(item: PcicItem, learned: ReadonlySet<string>): Opp
 }
 
 /** A word can be asked when it has a question over the learned words. */
-export function isOppositesUsable(item: PcicItem, _target: PcicTarget, learned: ReadonlySet<string>): boolean {
-  return buildQuestion(item, learned) !== null;
+export function isOppositesUsable(item: PcicItem, target: PcicTarget, learned: ReadonlySet<string>): boolean {
+  return buildQuestion(item, learned, target) !== null;
 }
 
 export interface OppositesState {
@@ -124,12 +147,12 @@ export interface OppositesState {
   turn: number;
 }
 
-export function startOpposites(ids: string[], ctx: { items: PcicItem[]; learned: ReadonlySet<string> }): OppositesState {
+export function startOpposites(ids: string[], ctx: { items: PcicItem[]; learned: ReadonlySet<string>; target?: PcicTarget }): OppositesState {
   const byId = new Map(ctx.items.map((i) => [i.id, i]));
   const questions: Record<string, OppositesQuestion> = {};
   for (const id of ids) {
     const item = byId.get(id);
-    const question = item ? buildQuestion(item, ctx.learned) : null;
+    const question = item ? buildQuestion(item, ctx.learned, ctx.target) : null;
     if (question) questions[id] = question;
   }
   return { questions, queue: ids.filter((id) => questions[id] !== undefined), picked: null, right: [], turn: 0 };

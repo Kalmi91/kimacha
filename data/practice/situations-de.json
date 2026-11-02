@@ -1,0 +1,149 @@
+[
+  {
+    "id": "a1-familie",
+    "target": "de",
+    "level": "A1",
+    "title": { "en": "Family lunch", "es": "Comida familiar", "hu": "Családi ebéd", "de": "Familienessen" },
+    "setting": {
+      "en": "Sunday lunch, your aunt asks you.",
+      "es": "Comida del domingo, tu tía te pregunta.",
+      "hu": "Vasárnapi ebéd, a nagynénéd kérdez.",
+      "de": "Sonntagsessen, deine Tante fragt dich."
+    },
+    "words": [
+      { "de": "haben", "forms": ["habe", "hast"], "en": "to have", "es": "tener", "hu": "van (valakinek)" },
+      { "de": "du", "forms": ["du"], "en": "you", "es": "tú", "hu": "te" },
+      { "de": "die Geschwister (Pl.)", "forms": ["Geschwister"], "en": "siblings", "es": "los hermanos", "hu": "testvérek" },
+      { "de": "ja", "forms": ["ja"], "en": "yes", "es": "sí", "hu": "igen" },
+      { "de": "nein", "forms": ["nein"], "en": "no", "es": "no", "hu": "nem" },
+      { "de": "ich", "forms": ["ich"], "en": "I", "es": "yo", "hu": "én" },
+      { "de": "ein", "forms": ["ein", "eine", "einen"], "en": "a, one", "es": "un, una", "hu": "egy" },
+      { "de": "der Bruder", "forms": ["Bruder", "Brüder"], "en": "brother", "es": "el hermano", "hu": "fiútestvér" },
+      { "de": "die Schwester", "forms": ["Schwester", "Schwestern"], "en": "sister", "es": "la hermana", "hu": "lánytestvér" },
+      { "de": "und", "forms": ["und"], "en": "and", "es": "y", "hu": "és" },
+      { "de": "kein", "forms": ["keine"], "en": "no, not any", "es": "ningún, ninguna", "hu": "nincs (főnév előtt)" },
+      { "de": "zwei", "forms": ["zwei"], "en": "two", "es": "dos", "hu": "kettő" },
+      { "de": "wo", "forms": ["wo"], "en": "where", "es": "dónde", "hu": "hol" },
+      { "de": "wohnen", "forms": ["wohnen"], "en": "to live (somewhere)", "es": "vivir", "hu": "lakni" },
+      { "de": "dein", "forms": ["dein", "deine"], "en": "your", "es": "tu, tus", "hu": "a te …-d" },
+      { "de": "mein", "forms": ["mein", "meine"], "en": "my", "es": "mi, mis", "hu": "az én …-m" },
+      { "de": "die Eltern (Pl.)", "forms": ["Eltern"], "en": "parents", "es": "los padres", "hu": "szülők" },
+      { "de": "in", "forms": ["in"], "en": "in", "es": "en", "hu": "-ban, -ben" },
+      { "de": "Ungarn", "forms": ["Ungarn"], "en": "Hungary", "es": "Hungría", "hu": "Magyarország" },
+      { "de": "Deutschland", "forms": ["Deutschland"], "en": "Germany", "es": "Alemania", "hu": "Németország" },
+      { "de": "er", "forms": ["er"], "en": "he", "es": "él", "hu": "ő (férfi)" },
+      { "de": "sie", "forms": ["sie"], "en": "they (also: she)", "es": "ellos, ellas (también: ella)", "hu": "ők (egy nőre: ő)" },
+      { "de": "wie", "forms": ["wie"], "en": "how", "es": "cómo", "hu": "hogyan" },
+      { "de": "sein", "forms": ["ist"], "en": "to be", "es": "ser, estar", "hu": "lenni" },
+      { "de": "alt", "forms": ["alt"], "en": "old", "es": "viejo", "hu": "idős, régi" },
+      { "de": "das Jahr", "forms": ["Jahre"], "en": "year", "es": "año", "hu": "év" },
+      { "de": "dreißig", "forms": ["dreißig"], "en": "thirty", "es": "treinta", "hu": "harminc" }
+    ],
+    "patterns": [
+      {
+        "title": {
+          "en": "Ich habe + ein / eine / einen + noun",
+          "es": "Ich habe + ein / eine / einen + sustantivo",
+          "hu": "Ich habe + ein / eine / einen + főnév",
+          "de": "Ich habe + ein / eine / einen + Nomen"
+        },
+        "example": "Ich habe einen Bruder und eine Schwester.",
+        "en": "What you have is in the accusative: der Bruder becomes einen Bruder, die Schwester becomes eine Schwester.",
+        "es": "Lo que tienes va en acusativo: der Bruder pasa a einen Bruder, die Schwester pasa a eine Schwester.",
+        "hu": "Ami neked van, az tárgyesetbe kerül: der Bruder → einen Bruder, die Schwester → eine Schwester."
+      },
+      {
+        "title": {
+          "en": "Hast du …? → Ja, ich habe … / Nein, ich habe keine …",
+          "es": "Hast du …? → Ja, ich habe … / Nein, ich habe keine …",
+          "hu": "Hast du …? → Ja, ich habe … / Nein, ich habe keine …",
+          "de": "Hast du …? → Ja, ich habe … / Nein, ich habe keine …"
+        },
+        "example": "Hast du Geschwister? Nein, ich habe keine Geschwister.",
+        "en": "To say you have none, put keine before the noun: Ich habe keine Geschwister.",
+        "es": "Para decir que no tienes ninguno, pon keine delante del sustantivo: Ich habe keine Geschwister.",
+        "hu": "Ha nincs, a főnév elé keine kerül: Ich habe keine Geschwister (nincsenek testvéreim)."
+      },
+      {
+        "title": {
+          "en": "Wie alt ist …? → … ist … Jahre alt",
+          "es": "Wie alt ist …? → … ist … Jahre alt",
+          "hu": "Wie alt ist …? → … ist … Jahre alt",
+          "de": "Wie alt ist …? → … ist … Jahre alt"
+        },
+        "example": "Mein Bruder ist dreißig Jahre alt.",
+        "en": "Age uses sein: he is thirty years old.",
+        "es": "La edad se dice con sein: er ist dreißig Jahre alt (tiene treinta años).",
+        "hu": "A kort a sein igével mondod: er ist dreißig Jahre alt (harmincéves)."
+      }
+    ],
+    "distractors": ["hast", "ist"],
+    "lines": [
+      {
+        "speaker": "other",
+        "de": "Hast du Geschwister?",
+        "es": "¿Tienes hermanos?",
+        "hu": "Van testvéred?",
+        "en": "Do you have any siblings?",
+        "answers": [
+          "Ja, ich habe einen Bruder und eine Schwester.",
+          "Ja, ich habe einen Bruder.",
+          "Ja, ich habe eine Schwester.",
+          "Ja, ich habe zwei Brüder.",
+          "Ja, ich habe zwei Schwestern.",
+          "Nein, ich habe keine Geschwister.",
+          "Ich habe einen Bruder und eine Schwester.",
+          "Ich habe einen Bruder.",
+          "Ich habe eine Schwester.",
+          "Ich habe keine Geschwister."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Ja, ich habe einen Bruder und eine Schwester.",
+        "es": "Sí, tengo un hermano y una hermana.",
+        "hu": "Igen, van egy fiútestvérem és egy lánytestvérem.",
+        "en": "Yes, I have a brother and a sister.",
+        "gap": "habe"
+      },
+      {
+        "speaker": "other",
+        "de": "Wo wohnen deine Eltern?",
+        "es": "¿Dónde viven tus papás?",
+        "hu": "Hol élnek a szüleid?",
+        "en": "Where do your parents live?",
+        "answers": [
+          "Meine Eltern wohnen in Ungarn.",
+          "Sie wohnen in Ungarn.",
+          "Meine Eltern wohnen in Deutschland.",
+          "Sie wohnen in Deutschland."
+        ]
+      },
+      {
+        "speaker": "me",
+        "de": "Meine Eltern wohnen in Ungarn.",
+        "es": "Mis papás viven en Hungría.",
+        "hu": "A szüleim Magyarországon élnek.",
+        "en": "My parents live in Hungary.",
+        "gap": "wohnen"
+      },
+      {
+        "speaker": "other",
+        "de": "Wie alt ist dein Bruder?",
+        "es": "¿Cuántos años tiene tu hermano?",
+        "hu": "Hány éves a fiútestvéred?",
+        "en": "How old is your brother?",
+        "answers": ["Mein Bruder ist dreißig Jahre alt.", "Er ist dreißig Jahre alt.", "Er ist dreißig."]
+      },
+      {
+        "speaker": "me",
+        "de": "Mein Bruder ist dreißig Jahre alt.",
+        "es": "Mi hermano tiene treinta años.",
+        "hu": "A fiútestvérem harmincéves.",
+        "en": "My brother is thirty years old.",
+        "gap": "Jahre"
+      }
+    ],
+    "build": [1, 3, 5]
+  }
+]

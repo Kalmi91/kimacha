@@ -197,7 +197,7 @@ const es: typeof en = {
       micRetry: 'El micrófono no funcionó esta vez. Tócalo otra vez o escríbelo.',
       heard: (text: string) => `Oí: «${text}»`,
       model: (answer: string) => `Una buena respuesta: ${answer}`,
-      answerHint: 'Responde en español',
+      answerHint: (lang: string): string => (lang === 'de' ? 'Responde en alemán' : 'Responde en español'),
       done: 'Situación terminada',
       partScore: (part: string, n: number, total: number) => `${part}: ${n} / ${total}`,
       again: 'Otra vez',

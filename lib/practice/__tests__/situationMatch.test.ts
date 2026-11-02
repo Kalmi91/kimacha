@@ -1,4 +1,4 @@
-import { matchSpoken, normalizeSpoken, numberWords } from '../situationMatch';
+import { germanNumberWords, matchSpoken, normalizeSpoken, numberWords } from '../situationMatch';
 
 describe('numberWords', () => {
   it.each([
@@ -159,5 +159,101 @@ describe('matchSpoken', () => {
 
   it('no expected sentence: nothing is right', () => {
     expect(matchSpoken('hola', [])).toEqual({ right: false, best: '', words: [] });
+  });
+});
+
+describe('German: germanNumberWords and normalizeSpoken', () => {
+  it.each([
+    [0, 'null'],
+    [1, 'eins'],
+    [5, 'fuenf'],
+    [12, 'zwoelf'],
+    [16, 'sechzehn'],
+    [21, 'einundzwanzig'],
+    [30, 'dreissig'],
+    [31, 'einunddreissig'],
+    [66, 'sechsundsechzig'],
+    [99, 'neunundneunzig'],
+    [100, 'hundert'],
+  ])('%i is "%s"', (n, words) => {
+    expect(germanNumberWords(n)).toBe(words);
+  });
+
+  it('ä ö ü ß are written ae oe ue ss, the capital does not matter, other accents go, digits become German number words', () => {
+    expect(normalizeSpoken('  Wo wohnen Deine   Eltern?  ', 'de')).toBe('wo wohnen deine eltern');
+    expect(normalizeSpoken('Ich habe zwei Brüder.', 'de')).toBe('ich habe zwei brueder');
+    expect(normalizeSpoken('Die Straße ist schön', 'de')).toBe('die strasse ist schoen');
+    expect(normalizeSpoken('Mädchen', 'de')).toBe('maedchen');
+    expect(normalizeSpoken('Mein Bruder ist 30 Jahre alt', 'de')).toBe('mein bruder ist dreissig jahre alt');
+    expect(normalizeSpoken('„Ja“, sagt er: "nein"!', 'de')).toBe('ja sagt er nein');
+    expect(normalizeSpoken('1999', 'de')).toBe('1999');
+    // Spanish keeps its own rules
+    expect(normalizeSpoken('Mi hermano tiene 30 años')).toBe('mi hermano tiene treinta anos');
+  });
+});
+
+describe('matchSpoken in German', () => {
+  const ANSWERS = ['Mein Bruder ist dreißig Jahre alt.', 'Er ist dreißig Jahre alt.', 'Er ist dreißig.'];
+  const de = { lang: 'de' } as const;
+
+  it('right: the sentence as the recognizer writes it, ß and the capitals do not matter', () => {
+    const m = matchSpoken('mein bruder ist dreissig jahre alt', ANSWERS, de);
+    expect(m.right).toBe(true);
+    expect(m.best).toBe('Mein Bruder ist dreißig Jahre alt.');
+    expect(m.words).toEqual([
+      { word: 'Mein', right: true },
+      { word: 'Bruder', right: true },
+      { word: 'ist', right: true },
+      { word: 'dreißig', right: true },
+      { word: 'Jahre', right: true },
+      { word: 'alt', right: true },
+    ]);
+    expect(matchSpoken('Mein Bruder ist dreißig Jahre alt', ANSWERS, de).right).toBe(true);
+  });
+
+  it('umlauts typed as ae oe ue are right, a missing umlaut is a different word', () => {
+    const one = ['Ja, ich habe zwei Brüder.'];
+    expect(matchSpoken('ja ich habe zwei brueder', one, de).right).toBe(true);
+    expect(matchSpoken('ja ich habe zwei Brüder', one, de).right).toBe(true);
+    const wrong = matchSpoken('ja ich habe zwei bruder', one, de);
+    expect(wrong.right).toBe(false);
+    expect(wrong.words.filter((w) => !w.right).map((w) => w.word)).toEqual(['Brüder']);
+  });
+
+  it('a digit is the number word: 30 is dreißig, a wrong number is wrong unless any number is allowed', () => {
+    expect(matchSpoken('er ist 30 jahre alt', ANSWERS, de).right).toBe(true);
+    expect(matchSpoken('er ist 31 jahre alt', ANSWERS, de).right).toBe(false);
+    expect(matchSpoken('er ist 31 jahre alt', ANSWERS, { ...de, anyNumber: true }).right).toBe(true);
+    expect(matchSpoken('er ist einunddreißig', ANSWERS, { ...de, anyNumber: true }).right).toBe(true);
+    expect(matchSpoken('er ist dreissig', ANSWERS, de).best).toBe('Er ist dreißig.');
+  });
+
+  it('a heard "eins" or the digit 1 matches ein / eine / einen', () => {
+    const one = ['Ich habe einen Bruder und eine Schwester.'];
+    expect(matchSpoken('ich habe 1 bruder und eine schwester', one, de).right).toBe(true);
+    expect(matchSpoken('ich habe eins bruder und eins schwester', one, de).right).toBe(true);
+    expect(matchSpoken('ich habe zwei bruder und eine schwester', one, de).right).toBe(false);
+  });
+
+  it('a negation the sentence does not have turns it round (nicht, nein, kein...), one it has is fine', () => {
+    const yes = ['Ja, ich habe einen Bruder.'];
+    expect(matchSpoken('nein ich habe einen bruder', yes, de).right).toBe(false);
+    expect(matchSpoken('ich habe keinen bruder', yes, de).right).toBe(false);
+    const no = ['Nein, ich habe keine Geschwister.'];
+    expect(matchSpoken('nein ich habe keine geschwister', no, de).right).toBe(true);
+    // extra words that are no negation do no harm
+    expect(matchSpoken('also ja ich habe einen bruder wirklich', yes, de).right).toBe(true);
+  });
+
+  it('a German subject pronoun is never dropped (only Spanish may leave it out)', () => {
+    const m = matchSpoken('ist dreissig jahre alt', ['Er ist dreißig Jahre alt.'], de);
+    expect(m.right).toBe(false);
+    expect(m.words[0]).toEqual({ word: 'Er', right: false });
+    // the same words in Spanish: the pronoun may go
+    expect(matchSpoken('tiene treinta años', ['Él tiene treinta años.']).right).toBe(true);
+  });
+
+  it('nothing to compare with: not right, the first expected sentence is the best one', () => {
+    expect(matchSpoken('hallo', [], de)).toEqual({ right: false, best: '', words: [] });
   });
 });

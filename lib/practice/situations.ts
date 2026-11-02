@@ -2,12 +2,15 @@
 // the learner first learns and then uses, one step after the other: Words (the situation's words the learner does not know yet),
 // Structures (its patterns), Fill in (the gaps of the dialogue from a word bank), Build (the learner's lines as tiles), Say it
 // (every line by voice or typed), Questions (the other person's questions, answered by voice or typed), then the Summary.
-// Only the Spanish target has situations. A situation is offered only when every word of it is known or taught by its own `words`
-// (the same "never an unknown word" rule as the rest of the app). Pure logic, no I/O: the screen is components/practice/SituationGame.tsx,
-// what is said is checked by lib/practice/situationMatch.ts. No SRS writes in this mode: the scores are for the summary only.
+// The Spanish target (data/practice/situations.json) and the German target (data/practice/situations-de.json) have situations; a
+// situation's dialogue is in its `target` language, everything else (title, meanings, explanations) in the learner's. A situation is
+// offered only when every word of it is known or taught by its own `words` (the same "never an unknown word" rule as the rest of the
+// app). Pure logic, no I/O: the screen is components/practice/SituationGame.tsx, what is said is checked by
+// lib/practice/situationMatch.ts. No SRS writes in this mode: the scores are for the summary only.
 
 import type { PcicLevel, PcicTarget } from '@/data/pcic';
 import situationsData from '@/data/practice/situations.json';
+import situationsDeData from '@/data/practice/situations-de.json';
 import { sentenceTokens } from '@/lib/knownSentence';
 import { activeSourceFor, type Lang } from '@/lib/languagePair';
 import { tileWords } from '@/lib/sentenceCards';
@@ -17,13 +20,9 @@ export const SITUATIONS_MODE = 'situations';
 
 export type SituationText = Record<Lang, string>;
 
-/** A word the situation uses: the headword (`es`), the forms it takes in the dialogue and what it means. */
-export interface SituationWord {
-  es: string;
+/** A word the situation uses: the headword (in the situation's target language), the forms it takes in the dialogue and what it means. */
+export interface SituationWord extends SituationText {
   forms: string[];
-  en: string;
-  hu: string;
-  de: string;
 }
 
 /** A structure the situation practises: the pattern (`title`, in the learner's language), an example sentence and the explanation. */
@@ -32,23 +31,25 @@ export interface SituationPattern {
   example: string;
   en: string;
   hu: string;
+  es?: string;
   de?: string;
 }
 
-export interface SituationLine {
+export interface SituationLine extends SituationText {
   speaker: 'other' | 'me';
-  es: string;
-  en: string;
-  hu: string;
-  de: string;
-  /** A whole word of `es` that is a blank in the Fill in step. */
+  /** A whole word of the line (in the target language) that is a blank in the Fill in step. */
   gap?: string;
   /** What the learner may answer to this line (the Questions step); the first is the model answer. */
   answers?: string[];
 }
 
+/** The languages that have situations: the dialogue is in this language. */
+export type SituationTarget = 'es' | 'de';
+
 export interface Situation {
   id: string;
+  /** The language of the dialogue (`lines`, the words' headwords, the pattern examples): the language the learner learns. */
+  target: SituationTarget;
   level: PcicLevel;
   title: SituationText;
   setting: SituationText;
@@ -61,21 +62,40 @@ export interface Situation {
   build: number[];
 }
 
+/** The Spanish situations. */
 export const SITUATIONS: Situation[] = situationsData as Situation[];
+/** The German situations. */
+export const SITUATIONS_DE: Situation[] = situationsDeData as Situation[];
 
-// A situation is told to a learner in a language only when every text it shows has that language (the German
-// translations of the dialogues are not written yet: a German speaker gets the empty state, never another language).
+const BY_TARGET: Partial<Record<PcicTarget, readonly Situation[]>> = { es: SITUATIONS, de: SITUATIONS_DE };
+
+/** The headword of a word of the situation, in the language of the dialogue. */
+export const headwordOf = (s: Pick<Situation, 'target'>, w: SituationWord): string => w[s.target];
+
+/** The text of a line, in the language of the dialogue. */
+export const lineText = (s: Pick<Situation, 'target'>, l: SituationLine): string => l[s.target];
+
+/** The explanation of a pattern in the learner's language ('' when it has none). */
+export const patternExplanation = (p: SituationPattern, source: Lang): string => p[source] ?? '';
+
+// A situation is told to a learner in a language only when every text it shows has that language (a learner never gets another
+// language in its place: without the texts the situation is simply not offered).
 function toldIn(s: Situation, source: Lang): boolean {
   return Boolean(
-    s.title[source] && s.setting[source] && s.words.every((w) => w[source]) && s.patterns.every((p) => p.title[source]) && s.lines.every((l) => l[source]),
+    s.title[source] &&
+      s.setting[source] &&
+      s.words.every((w) => w[source]) &&
+      s.patterns.every((p) => p.title[source] && patternExplanation(p, source)) &&
+      s.lines.every((l) => l[source]),
   );
 }
 
-/** The situations of a target language (Spanish only for now) that can be told in the learner's language. */
-export function situationsFor(target: PcicTarget, source: Lang = activeSourceFor('es')): readonly Situation[] {
-  if (target !== 'es') return [];
-  const told = SITUATIONS.filter((s) => toldIn(s, source));
-  return told.length === SITUATIONS.length ? SITUATIONS : told;
+/** The situations of a target language (Spanish and German) that can be told in the learner's language. */
+export function situationsFor(target: PcicTarget, source: Lang = activeSourceFor(target)): readonly Situation[] {
+  const all = BY_TARGET[target];
+  if (!all) return [];
+  const told = all.filter((s) => toldIn(s, source));
+  return told.length === all.length ? all : told;
 }
 
 /** The words of the situation the learner does not know yet: none of their forms is in `known` (lib/knownSentence.ts knownTokens). */
@@ -86,7 +106,7 @@ export function unknownWords(s: Situation, known: ReadonlySet<string>): Situatio
 /** Every token of every line is known or one of the situation's own forms (so a word it teaches is never an unknown word). */
 export function isSituationOpen(s: Situation, known: ReadonlySet<string>): boolean {
   const own = new Set(s.words.flatMap((w) => w.forms.map((f) => f.toLowerCase())));
-  return s.lines.every((l) => sentenceTokens(l.es, 'es').every((token) => known.has(token) || own.has(token)));
+  return s.lines.every((l) => sentenceTokens(lineText(s, l), s.target).every((token) => known.has(token) || own.has(token)));
 }
 
 /** The blanks of the Fill in step, in dialogue order. */
@@ -99,22 +119,30 @@ export function questionLines(s: Situation): number[] {
   return s.lines.flatMap((l, i) => (l.speaker === 'other' && l.answers?.length ? [i] : []));
 }
 
-// Words of the other lines for the trap tiles: long enough to be a word, not a proper noun.
+// A proper noun among the words: capitalised, and in German also without an article (every German noun is capitalised: der Bruder).
+const isProper = (s: Situation, w: SituationWord) => {
+  const head = headwordOf(s, w);
+  return head !== head.toLowerCase() && !(s.target === 'de' && /^(der|die|das)\s/.test(head));
+};
+
+// Words of the other lines for the trap tiles: long enough to be a word, not a proper noun. A German noun keeps its capital (a
+// trap in lower case would stand out among the tiles of the sentence).
 function otherWords(s: Situation, sentences: string[], exclude: ReadonlySet<string>): string[] {
-  const proper = new Set(s.words.filter((w) => w.es !== w.es.toLowerCase()).map((w) => w.es.toLowerCase()));
-  const tokens = sentences.flatMap((sentence) => sentenceTokens(sentence, 'es'));
-  return [...new Set(tokens)].filter((w) => w.length > 3 && !exclude.has(w) && !proper.has(w));
+  const proper = new Set(s.words.filter((w) => isProper(s, w)).map((w) => headwordOf(s, w).toLowerCase()));
+  const tokens = sentences.flatMap((sentence) => (s.target === 'de' ? tileWords(sentence) : sentenceTokens(sentence, s.target)));
+  const unique = new Map(tokens.map((w) => [w.toLowerCase(), w] as const));
+  return [...unique.values()].filter((w) => w.length > 3 && !exclude.has(w.toLowerCase()) && !proper.has(w.toLowerCase()));
 }
 
-/** The word bank of the Fill in step: the gap words and the situation's own distractors, shuffled (the same seed, the same order). */
+/** The word bank of the Fill in step: the gap words and the situation's own distractors as written (a German noun keeps its capital), shuffled (the same seed, the same order). */
 export function fillBank(s: Situation, seed: number): string[] {
-  return shuffleArray([...fillGaps(s).map((g) => g.word.toLowerCase()), ...s.distractors.map((w) => w.toLowerCase())], seed);
+  return shuffleArray([...fillGaps(s).map((g) => g.word), ...s.distractors], seed);
 }
 
 /** The 2 trap tiles of a Build line: words of the other lines that are not in this one. */
 export function buildTraps(s: Situation, lineIndex: number, seed: number): string[] {
-  const own = new Set(tileWords(s.lines[lineIndex].es).map((w) => w.toLowerCase()));
-  const others = s.lines.filter((_, i) => i !== lineIndex).map((l) => l.es);
+  const own = new Set(tileWords(lineText(s, s.lines[lineIndex])).map((w) => w.toLowerCase()));
+  const others = s.lines.filter((_, i) => i !== lineIndex).map((l) => lineText(s, l));
   return shuffleArray(otherWords(s, others, own), seed + lineIndex).slice(0, 2);
 }
 
@@ -163,9 +191,9 @@ export function situationSteps(state: Pick<SituationState, 'words'>, s: Situatio
   return [...STEP_ORDER.filter((step) => stepSize(state, s, step) > 0), 'summary'];
 }
 
-/** A fresh run of the situation; `known` = knownTokens('es', ...) of the learner. */
+/** A fresh run of the situation; `known` = knownTokens(target, ...) of the learner. */
 export function startSituation(s: Situation, known: ReadonlySet<string>, seed: number): SituationState {
-  const words = unknownWords(s, known).map((w) => w.es);
+  const words = unknownWords(s, known).map((w) => headwordOf(s, w));
   return {
     id: s.id,
     seed,
@@ -227,7 +255,7 @@ export function parseSituation(raw: unknown, open: readonly Situation[]): Situat
   const r = raw as Record<string, unknown>;
   const s = open.find((x) => x.id === r.id);
   if (!s || r.v !== 1 || !Number.isInteger(r.seed) || typeof r.done !== 'boolean') return null;
-  const heads = new Set(s.words.map((w) => w.es));
+  const heads = new Set(s.words.map((w) => headwordOf(s, w)));
   if (!Array.isArray(r.words) || !r.words.every((w) => typeof w === 'string' && heads.has(w))) return null;
   const words = r.words as string[];
   const steps = situationSteps({ words }, s);

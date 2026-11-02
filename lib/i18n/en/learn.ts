@@ -225,7 +225,7 @@ export default {
       micRetry: 'The microphone did not work this time. Tap it again, or type it.',
       heard: (text: string) => `I heard: “${text}”`,
       model: (answer: string) => `A good answer: ${answer}`,
-      answerHint: 'Answer in Spanish',
+      answerHint: (lang: string): string => (lang === 'de' ? 'Answer in German' : 'Answer in Spanish'),
       done: 'Situation done',
       partScore: (part: string, n: number, total: number) => `${part}: ${n} / ${total}`,
       again: 'Again',

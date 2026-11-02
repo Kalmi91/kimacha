@@ -194,7 +194,7 @@ const hu: typeof en = {
       micRetry: 'A mikrofon most nem működött. Koppints rá újra, vagy írd be.',
       heard: (text: string) => `Ezt hallottam: „${text}”`,
       model: (answer: string) => `Jó válasz: ${answer}`,
-      answerHint: 'Válaszolj spanyolul',
+      answerHint: (lang: string): string => (lang === 'de' ? 'Válaszolj németül' : 'Válaszolj spanyolul'),
       done: 'Szituáció kész',
       partScore: (part: string, n: number, total: number) => `${part}: ${n} / ${total}`,
       again: 'Újra',
