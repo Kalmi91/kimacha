@@ -86,7 +86,7 @@ export function usePcicSession() {
   // The stepper of the Settings "Missed word comes back
   // after"; it supplies the returnAt of the "again" branch of requeueAfterGrade.
   // Both come from the learner store (load() refreshes them).
-  const { strictAccents, againDelaySec, refresh, setLevel: saveLevel } = useLearner();
+  const { strictAccents, againDelaySec, hasLevel, refresh, setLevel: saveLevel } = useLearner();
   const [allCards, setAllCards] = useState<Map<string, Sm2Card>>(new Map());
   const [queue, setQueue] = useState<Sm2Card[]>([]);
   // Number of cards already finished today when the "+N new words" expansion happens; the bar measures the new batch relative to this.
@@ -226,7 +226,9 @@ export function usePcicSession() {
   // (the sheet closes first, so the switch does not look frozen).
   const handleSelectLevel = async (lvl: PcicLevel) => {
     setLevelSheetOpen(false);
-    if (lvl === level) return;
+    // Only a level that is ALREADY saved can be skipped: the fallback default (A1 for -en/-hu pairs, B1 otherwise)
+    // is shown as `level` without a learn_settings row, so choosing it must still write the row.
+    if (lvl === level && hasLevel) return;
     await saveLevel(lvl);
     setLoading(true);
     await load(lvl);
@@ -506,7 +508,7 @@ export function usePcicSession() {
     setLevelSheetOpen(false);
     const db = getDb();
     await db.setPcicNewBonus(nextPcicNewBonus({ limit: dailyNewLimit, bonus: pcicBonus, introducedToday: introducedAllLevels }, step), today);
-    if (lvl !== level) await saveLevel(lvl);
+    if (lvl !== level || !hasLevel) await saveLevel(lvl);
     const levelCards = lvl === level ? [...allCards.values()] : cardsForLevel(allLevelCards, lvl);
     setLoading(true);
     await load(lvl);
