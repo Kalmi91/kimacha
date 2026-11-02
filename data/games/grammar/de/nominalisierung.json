@@ -1,0 +1,1036 @@
+{
+  "schema": 2,
+  "topic": "nominalisierung",
+  "level": "B2",
+  "title": {
+    "en": "Turning verbs and adjectives into nouns",
+    "es": "De verbos y adjetivos a sustantivos"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "German builds many nouns from verbs and adjectives, and the ending tells you the gender. Verbs give nouns with -ung (die Entscheidung), with the bare stem (der Besuch), with -e (die Hilfe) or with -nis (das Ergebnis), and the infinitive itself can be a neuter noun (das Lesen). Adjectives give nouns with -heit, -keit and -igkeit (die Gesundheit, die Möglichkeit, die Müdigkeit), all of them feminine. This is the basis of the written style at B2 and C1, where a whole clause becomes a noun phrase: weil er krank ist becomes wegen seiner Krankheit. English -tion and -ment, Spanish -ción and -miento, and Hungarian -ás and -és mostly match the German -ung.",
+        "es": "El alemán forma muchos sustantivos a partir de verbos y adjetivos, y la terminación te dice el género. Los verbos dan sustantivos con -ung (die Entscheidung), con la raíz sola (der Besuch), con -e (die Hilfe) o con -nis (das Ergebnis), y el infinitivo mismo puede ser un sustantivo neutro (das Lesen). Los adjetivos dan sustantivos con -heit, -keit e -igkeit (die Gesundheit, die Möglichkeit, die Müdigkeit), todos femeninos. Esta es la base del estilo escrito en B2 y C1, donde toda una oración pasa a ser un grupo nominal: weil er krank ist pasa a wegen seiner Krankheit. El inglés -tion y -ment, el español -ción y -miento y el húngaro -ás y -és corresponden en su mayoría al alemán -ung."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "nominalisierung-formen",
+      "title": {
+        "en": "From verb or adjective to noun",
+        "es": "De verbo o adjetivo a sustantivo"
+      },
+      "header": [
+        {
+          "en": "Verb / adjective",
+          "es": "Verbo / adjetivo"
+        },
+        {
+          "en": "Nomen",
+          "es": "Nomen"
+        },
+        {
+          "en": "Artikel",
+          "es": "Artikel"
+        }
+      ],
+      "rows": [
+        [
+          "entscheiden",
+          "Entscheidung",
+          "die"
+        ],
+        [
+          "lösen",
+          "Lösung",
+          "die"
+        ],
+        [
+          "besuchen",
+          "Besuch",
+          "der"
+        ],
+        [
+          "anfangen",
+          "Anfang",
+          "der"
+        ],
+        [
+          "helfen",
+          "Hilfe",
+          "die"
+        ],
+        [
+          "fragen",
+          "Frage",
+          "die"
+        ],
+        [
+          "ergeben",
+          "Ergebnis",
+          "das"
+        ],
+        [
+          "lesen",
+          "Lesen",
+          "das"
+        ],
+        [
+          "gesund",
+          "Gesundheit",
+          "die"
+        ],
+        [
+          "möglich",
+          "Möglichkeit",
+          "die"
+        ],
+        [
+          "schwierig",
+          "Schwierigkeit",
+          "die"
+        ],
+        [
+          "neu",
+          "Neuigkeit",
+          "die"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Nouns from verbs",
+        "es": "Sustantivos a partir de verbos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The suffix -ung makes feminine nouns and names an event or a result: entscheiden gives die Entscheidung, lösen gives die Lösung. The plural is -ungen.",
+            "es": "El sufijo -ung forma sustantivos femeninos y nombra un suceso o un resultado: entscheiden da die Entscheidung, lösen da die Lösung. El plural es -ungen."
+          },
+          "examples": [
+            {
+              "es": "Wir müssen heute eine Entscheidung treffen.",
+              "tr": {
+                "en": "We have to make a decision today.",
+                "es": "Hoy tenemos que tomar una decisión."
+              }
+            },
+            {
+              "es": "Die Lösung ist ganz einfach.",
+              "tr": {
+                "en": "The solution is quite simple.",
+                "es": "La solución es muy sencilla."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Many nouns are just the verb stem, often masculine: besuchen gives der Besuch, anfangen gives der Anfang, verkaufen gives der Verkauf. Others add -e and are feminine: helfen gives die Hilfe, fragen gives die Frage. Nouns on -nis are mostly neuter: das Ergebnis.",
+            "es": "Muchos sustantivos son solo la raíz del verbo, a menudo masculinos: besuchen da der Besuch, anfangen da der Anfang, verkaufen da der Verkauf. Otros añaden -e y son femeninos: helfen da die Hilfe, fragen da die Frage. Los sustantivos en -nis son sobre todo neutros: das Ergebnis."
+          },
+          "examples": [
+            {
+              "es": "Der Besuch bei meiner Oma war schön.",
+              "tr": {
+                "en": "The visit to my grandma was nice.",
+                "es": "La visita a mi abuela fue bonita."
+              }
+            },
+            {
+              "es": "Das Ergebnis der Prüfung war gut.",
+              "tr": {
+                "en": "The result of the exam was good.",
+                "es": "El resultado del examen fue bueno."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The infinitive can be a noun: it is always neuter and names the activity itself (das Lesen, das Reisen, das Rauchen). You write it with a capital letter.",
+            "es": "El infinitivo puede ser un sustantivo: siempre es neutro y nombra la actividad misma (das Lesen, das Reisen, das Rauchen). Se escribe con mayúscula."
+          },
+          "examples": [
+            {
+              "es": "Das Lesen macht mir Spaß.",
+              "tr": {
+                "en": "Reading is fun for me.",
+                "es": "Leer me divierte."
+              }
+            },
+            {
+              "es": "Das Rauchen ist hier verboten.",
+              "tr": {
+                "en": "Smoking is forbidden here.",
+                "es": "Aquí está prohibido fumar."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Nouns from adjectives are all feminine: -heit after most adjectives (krank gives die Krankheit, gesund gives die Gesundheit), -keit after -ig, -lich, -sam and -bar (möglich gives die Möglichkeit, schwierig gives die Schwierigkeit), -igkeit after a few short ones (müde gives die Müdigkeit, neu gives die Neuigkeit). The plurals end in -en.",
+            "es": "Los sustantivos de adjetivos son todos femeninos: -heit después de la mayoría de los adjetivos (krank da die Krankheit, gesund da die Gesundheit), -keit después de -ig, -lich, -sam y -bar (möglich da die Möglichkeit, schwierig da die Schwierigkeit), -igkeit después de unos pocos adjetivos cortos (müde da die Müdigkeit, neu da die Neuigkeit). Los plurales terminan en -en."
+          },
+          "examples": [
+            {
+              "es": "Es gibt viele Möglichkeiten in dieser Stadt.",
+              "tr": {
+                "en": "There are many possibilities in this city.",
+                "es": "Hay muchas posibilidades en esta ciudad."
+              }
+            },
+            {
+              "es": "Die Gesundheit ist sehr wichtig.",
+              "tr": {
+                "en": "Health is very important.",
+                "es": "La salud es muy importante."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "An adjective can also become a noun directly, with a capital letter and the adjective ending: das Neue, etwas Neues, die Kranke. This lesson only introduces it; the participle nouns were in the lesson on participles.",
+            "es": "Un adjetivo también puede convertirse directamente en sustantivo, con mayúscula y la terminación del adjetivo: das Neue, etwas Neues, die Kranke. Esta lección solo lo introduce; los sustantivos de participio estaban en la lección de los participios."
+          },
+          "examples": [
+            {
+              "es": "Gibt es etwas Neues?",
+              "tr": {
+                "en": "Is there anything new?",
+                "es": "¿Hay algo nuevo?"
+              }
+            },
+            {
+              "es": "Die Kranke liegt im Bett.",
+              "tr": {
+                "en": "The sick woman is lying in bed.",
+                "es": "La enferma está acostada en la cama."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nominalisierung-saetze",
+      "title": {
+        "en": "From a clause to a noun phrase",
+        "es": "De una oración subordinada a un grupo nominal"
+      },
+      "header": [
+        {
+          "en": "Clause",
+          "es": "Oración"
+        },
+        {
+          "en": "Noun phrase",
+          "es": "Grupo nominal"
+        }
+      ],
+      "rows": [
+        [
+          "weil er krank ist",
+          "wegen seiner Krankheit"
+        ],
+        [
+          "obwohl es regnet",
+          "trotz des Regens"
+        ],
+        [
+          "nachdem er angekommen ist",
+          "nach seiner Ankunft"
+        ],
+        [
+          "bevor wir essen",
+          "vor dem Essen"
+        ],
+        [
+          "wenn es Probleme gibt",
+          "bei Problemen"
+        ],
+        [
+          "während er arbeitet",
+          "während der Arbeit"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Clause or noun phrase?",
+        "es": "¿Oración o grupo nominal?"
+      },
+      "pairs": [
+        {
+          "a": "Er bleibt zu Hause, weil er krank ist.",
+          "b": "Wegen seiner Krankheit bleibt er zu Hause.",
+          "note": {
+            "en": "The noun phrase says the same in a denser, more written way. wegen and trotz take the genitive, nach and bei the dative.",
+            "es": "El grupo nominal dice lo mismo de forma más densa y más escrita. wegen y trotz llevan genitivo, nach y bei dativo."
+          },
+          "examples": [
+            {
+              "es": "Wir gehen spazieren, obwohl es regnet.",
+              "tr": {
+                "en": "We go for a walk although it is raining.",
+                "es": "Salimos a caminar aunque llueve."
+              }
+            },
+            {
+              "es": "Trotz des Regens gehen wir spazieren.",
+              "tr": {
+                "en": "In spite of the rain we go for a walk.",
+                "es": "A pesar de la lluvia salimos a caminar."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Das Reisen macht Spaß.",
+          "b": "Die Reise war lang.",
+          "note": {
+            "en": "The infinitive noun (das Reisen) names the activity in general. The noun with -e or a suffix (die Reise) names one single event or thing.",
+            "es": "El sustantivo en infinitivo (das Reisen) nombra la actividad en general. El sustantivo con -e o con un sufijo (die Reise) nombra un solo suceso o una sola cosa."
+          },
+          "examples": [
+            {
+              "es": "Das Lesen ist mein Hobby.",
+              "tr": {
+                "en": "Reading is my hobby.",
+                "es": "Leer es mi pasatiempo."
+              }
+            },
+            {
+              "es": "Die Entscheidung war schwer.",
+              "tr": {
+                "en": "The decision was hard.",
+                "es": "La decisión fue difícil."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the suffix decides the gender, so every -ung, -heit and -keit noun is feminine (*der Entscheidung is wrong, die Entscheidung is right), and -nis nouns are mostly neuter. Do not use -keit where -heit belongs (Gesundheit, not *Gesundkeit). Plurals: Entscheidungen, Möglichkeiten, Ergebnisse. After wegen and trotz use the genitive (wegen seiner Krankheit, trotz des Regens). And write every noun, including the infinitive noun, with a capital letter.",
+        "es": "Trampas clásicas: el sufijo decide el género, así que todo sustantivo en -ung, -heit y -keit es femenino (*der Entscheidung es incorrecto, die Entscheidung es correcto), y los sustantivos en -nis son sobre todo neutros. No uses -keit donde corresponde -heit (Gesundheit, no *Gesundkeit). Plurales: Entscheidungen, Möglichkeiten, Ergebnisse. Después de wegen y trotz usa el genitivo (wegen seiner Krankheit, trotz des Regens). Y escribe todo sustantivo, también el infinitivo sustantivado, con mayúscula."
+      }
+    }
+  ],
+  "speak": {
+    "en": "German forms many nouns from verbs and adjectives, and the ending shows the gender. The ending «-ung» is always feminine: «die Entscheidung», «die Lösung». The same is true for «-heit» and «-keit»: «die Gesundheit», «die Möglichkeit». Some nouns are only the verb stem, for example «der Besuch» and «der Anfang». The infinitive can be a neuter noun: «das Lesen». In written German a clause often becomes a noun phrase: «weil er krank ist» becomes «wegen seiner Krankheit», and «obwohl es regnet» becomes «trotz des Regens».",
+    "es": "El alemán forma muchos sustantivos a partir de verbos y adjetivos, y la terminación muestra el género. La terminación «-ung» siempre es femenina: «die Entscheidung», «die Lösung». Lo mismo vale para «-heit» y «-keit»: «die Gesundheit», «die Möglichkeit». Algunos sustantivos son solo la raíz del verbo, por ejemplo «der Besuch» y «der Anfang». El infinitivo puede ser un sustantivo neutro: «das Lesen». En alemán escrito una oración a menudo se convierte en un grupo nominal: «weil er krank ist» pasa a «wegen seiner Krankheit», y «obwohl es regnet» pasa a «trotz des Regens»."
+  },
+  "items": [
+    {
+      "id": "nominalisierung-c01",
+      "sentence": "Wir müssen heute eine ___ treffen.",
+      "options": [
+        "Entscheidung",
+        "Entscheidungen",
+        "Entscheiden"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "eine shows a feminine singular noun. entscheiden gives the noun die Entscheidung with the suffix -ung.",
+        "es": "eine muestra un sustantivo femenino singular. entscheiden da el sustantivo die Entscheidung con el sufijo -ung."
+      },
+      "wrong": {
+        "Entscheidungen": {
+          "en": "Entscheidungen is the plural. After eine you need the singular form, so the noun is Entscheidung.",
+          "es": "Entscheidungen es el plural. Después de eine necesitas la forma singular, así que el sustantivo es Entscheidung."
+        },
+        "Entscheiden": {
+          "en": "Entscheiden is the infinitive noun and is neuter (das Entscheiden). It cannot follow the feminine article eine.",
+          "es": "Entscheiden es el infinitivo sustantivado y es neutro (das Entscheiden). No puede ir después del artículo femenino eine."
+        }
+      },
+      "examples": [
+        "Das ist eine gute Entscheidung.",
+        "Wir brauchen eine Lösung."
+      ],
+      "tr": {
+        "en": "We have to make a decision today.",
+        "es": "Hoy tenemos que tomar una decisión."
+      }
+    },
+    {
+      "id": "nominalisierung-f01",
+      "kind": "form",
+      "verb": "Nomen",
+      "person": "entscheiden",
+      "answer": "Entscheidung",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c02",
+      "sentence": "___ Lösung ist ganz einfach.",
+      "options": [
+        "Der",
+        "Die",
+        "Das"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Nouns on -ung are always feminine, so the article is die: die Lösung.",
+        "es": "Los sustantivos en -ung siempre son femeninos, así que el artículo es die: die Lösung."
+      },
+      "wrong": {
+        "Der": {
+          "en": "der is the masculine article. Nouns with the suffix -ung are never masculine, so der cannot be right.",
+          "es": "der es el artículo masculino. Los sustantivos con el sufijo -ung nunca son masculinos, así que der no puede ser correcto."
+        },
+        "Das": {
+          "en": "das is the neuter article. It fits the infinitive noun (das Lesen) or -nis nouns, but not the suffix -ung.",
+          "es": "das es el artículo neutro. Va con el infinitivo sustantivado (das Lesen) o con sustantivos en -nis, pero no con el sufijo -ung."
+        }
+      },
+      "examples": [
+        "Die Wohnung ist neu.",
+        "Die Entscheidung ist schwer."
+      ],
+      "tr": {
+        "en": "The solution is quite simple.",
+        "es": "La solución es muy sencilla."
+      }
+    },
+    {
+      "id": "nominalisierung-f02",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "lösen",
+      "answer": "die",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c03",
+      "sentence": "Der ___ bei meiner Oma war schön.",
+      "options": [
+        "Besuch",
+        "Besuchung",
+        "Besuchen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The noun for besuchen is the bare stem, and it is masculine: der Besuch. There is no -ung form.",
+        "es": "El sustantivo de besuchen es la raíz sola, y es masculino: der Besuch. No existe una forma con -ung."
+      },
+      "wrong": {
+        "Besuchung": {
+          "en": "Besuchung does not exist. Not every verb forms its noun with -ung, and besuchen uses the stem.",
+          "es": "Besuchung no existe. No todos los verbos forman su sustantivo con -ung, y besuchen usa la raíz."
+        },
+        "Besuchen": {
+          "en": "Besuchen is the infinitive noun and is neuter (das Besuchen). After the masculine article der you need Besuch.",
+          "es": "Besuchen es el infinitivo sustantivado y es neutro (das Besuchen). Después del artículo masculino der necesitas Besuch."
+        }
+      },
+      "examples": [
+        "Der Anfang war schwer.",
+        "Ich freue mich auf den Besuch."
+      ],
+      "tr": {
+        "en": "The visit to my grandma was nice.",
+        "es": "La visita a mi abuela fue bonita."
+      }
+    },
+    {
+      "id": "nominalisierung-f03",
+      "kind": "form",
+      "verb": "Nomen",
+      "person": "besuchen",
+      "answer": "Besuch",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-w01",
+      "kind": "why",
+      "es": "Die Entscheidung ist gut.",
+      "target": "Entscheidung",
+      "tr": {
+        "en": "The decision is good.",
+        "es": "La decisión es buena."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The suffix -ung always makes a feminine noun, so the article is die",
+            "es": "El sufijo -ung siempre forma un sustantivo femenino, así que el artículo es die"
+          }
+        },
+        {
+          "text": {
+            "en": "A noun made from a verb is neuter, like das Entscheiden",
+            "es": "Un sustantivo formado de un verbo es neutro, como das Entscheiden"
+          },
+          "wrong": {
+            "en": "Only the plain infinitive used as a noun is neuter (das Entscheiden). With the suffix -ung the noun is feminine.",
+            "es": "Solo el infinitivo simple usado como sustantivo es neutro (das Entscheiden). Con el sufijo -ung el sustantivo es femenino."
+          }
+        },
+        {
+          "text": {
+            "en": "Abstract nouns are masculine, like der Besuch",
+            "es": "Los sustantivos abstractos son masculinos, como der Besuch"
+          },
+          "wrong": {
+            "en": "There is no such rule. Der Besuch is masculine because it is a bare-stem noun, but the suffix -ung decides the gender here.",
+            "es": "No existe tal regla. Der Besuch es masculino porque es un sustantivo de raíz sola, pero aquí el sufijo -ung decide el género."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "nominalisierung-c04",
+      "sentence": "Das ___ der Prüfung war gut.",
+      "options": [
+        "Lösung",
+        "Besuch",
+        "Ergebnis"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The article das fits only a neuter noun. Ergebnis ends in -nis and is neuter. Lösung is feminine and Besuch is masculine.",
+        "es": "El artículo das solo encaja con un sustantivo neutro. Ergebnis termina en -nis y es neutro. Lösung es femenino y Besuch es masculino."
+      },
+      "wrong": {
+        "Lösung": {
+          "en": "Lösung is feminine (die Lösung) because of the suffix -ung. It cannot follow the neuter article das.",
+          "es": "Lösung es femenino (die Lösung) por el sufijo -ung. No puede ir después del artículo neutro das."
+        },
+        "Besuch": {
+          "en": "Besuch is a masculine noun made from the bare stem (der Besuch), so it does not fit the article das.",
+          "es": "Besuch es un sustantivo masculino formado con la raíz sola (der Besuch), así que no encaja con el artículo das."
+        }
+      },
+      "examples": [
+        "Das Ergebnis ist klar.",
+        "Das Erlebnis war schön."
+      ],
+      "tr": {
+        "en": "The result of the exam was good.",
+        "es": "El resultado del examen fue bueno."
+      }
+    },
+    {
+      "id": "nominalisierung-f04",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "anfangen",
+      "answer": "der",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c05",
+      "sentence": "Die ___ ist sehr wichtig.",
+      "options": [
+        "Gesundheit",
+        "Gesundkeit",
+        "Gesundigkeit"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "gesund takes the suffix -heit: die Gesundheit. The suffix -keit is used after -ig, -lich, -sam and -bar.",
+        "es": "gesund toma el sufijo -heit: die Gesundheit. El sufijo -keit se usa después de -ig, -lich, -sam y -bar."
+      },
+      "wrong": {
+        "Gesundkeit": {
+          "en": "Gesundkeit is wrong: gesund does not end in -ig, -lich, -sam or -bar, so the suffix is -heit.",
+          "es": "Gesundkeit es incorrecto: gesund no termina en -ig, -lich, -sam ni -bar, así que el sufijo es -heit."
+        },
+        "Gesundigkeit": {
+          "en": "Gesundigkeit is wrong: the suffix -igkeit appears only after a few short adjectives such as müde or neu.",
+          "es": "Gesundigkeit es incorrecto: el sufijo -igkeit aparece solo después de unos pocos adjetivos cortos como müde o neu."
+        }
+      },
+      "examples": [
+        "Die Krankheit dauert lange.",
+        "Seine Müdigkeit ist groß."
+      ],
+      "tr": {
+        "en": "Health is very important.",
+        "es": "La salud es muy importante."
+      }
+    },
+    {
+      "id": "nominalisierung-f05",
+      "kind": "form",
+      "verb": "Nomen",
+      "person": "helfen",
+      "answer": "Hilfe",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c06",
+      "sentence": "Es gibt viele ___ in dieser Stadt.",
+      "options": [
+        "Möglichkeit",
+        "Möglichkeiten",
+        "Möglichheiten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "viele asks for a plural. Nouns on -keit form the plural with -en: die Möglichkeiten.",
+        "es": "viele pide un plural. Los sustantivos en -keit forman el plural con -en: die Möglichkeiten."
+      },
+      "wrong": {
+        "Möglichkeit": {
+          "en": "Möglichkeit is the singular. After viele you need a plural form, so the noun ends in -en.",
+          "es": "Möglichkeit es el singular. Después de viele necesitas una forma plural, así que el sustantivo termina en -en."
+        },
+        "Möglichheiten": {
+          "en": "Möglichheiten is wrong. After -lich the suffix is -keit, not -heit, so the plural is Möglichkeiten.",
+          "es": "Möglichheiten es incorrecto. Después de -lich el sufijo es -keit, no -heit, así que el plural es Möglichkeiten."
+        }
+      },
+      "examples": [
+        "Es gibt viele Schwierigkeiten.",
+        "Ich habe viele Fragen."
+      ],
+      "tr": {
+        "en": "There are many possibilities in this city.",
+        "es": "Hay muchas posibilidades en esta ciudad."
+      }
+    },
+    {
+      "id": "nominalisierung-f06",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "ergeben",
+      "answer": "das",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-w02",
+      "kind": "why",
+      "es": "Wegen seiner Krankheit bleibt er zu Hause.",
+      "target": "seiner",
+      "tr": {
+        "en": "Because of his illness he stays at home.",
+        "es": "Por su enfermedad se queda en casa."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Nominative: Krankheit is the subject of the sentence",
+            "es": "Nominativo: Krankheit es el sujeto de la oración"
+          },
+          "wrong": {
+            "en": "Krankheit is not the subject. The subject is er, and the preposition wegen decides the case of seiner Krankheit.",
+            "es": "Krankheit no es el sujeto. El sujeto es er, y la preposición wegen decide el caso de seiner Krankheit."
+          }
+        },
+        {
+          "text": {
+            "en": "Accusative: the possessive would be seine",
+            "es": "Acusativo: el posesivo sería seine"
+          },
+          "wrong": {
+            "en": "wegen does not take the accusative. It takes the genitive, and the feminine genitive is seiner.",
+            "es": "wegen no lleva acusativo. Lleva genitivo, y el genitivo femenino es seiner."
+          }
+        },
+        {
+          "text": {
+            "en": "Genitive: wegen takes the genitive, and the feminine form is seiner",
+            "es": "Genitivo: wegen lleva genitivo, y la forma femenina es seiner"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "nominalisierung-c07",
+      "sentence": "Das ___ macht mir Spaß.",
+      "options": [
+        "Leser",
+        "Lektüre",
+        "Lesen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The article das needs a neuter noun. The infinitive Lesen used as a noun is neuter and names the activity.",
+        "es": "El artículo das necesita un sustantivo neutro. El infinitivo Lesen usado como sustantivo es neutro y nombra la actividad."
+      },
+      "wrong": {
+        "Leser": {
+          "en": "Leser is masculine (der Leser) and means the person who reads. It does not fit the article das.",
+          "es": "Leser es masculino (der Leser) y significa la persona que lee. No encaja con el artículo das."
+        },
+        "Lektüre": {
+          "en": "Lektüre is feminine (die Lektüre) and means the text you read. It does not fit the article das.",
+          "es": "Lektüre es femenino (die Lektüre) y significa el texto que lees. No encaja con el artículo das."
+        }
+      },
+      "examples": [
+        "Das Reisen macht Spaß.",
+        "Das Kochen macht ihm Freude."
+      ],
+      "tr": {
+        "en": "Reading is fun for me.",
+        "es": "Leer me divierte."
+      }
+    },
+    {
+      "id": "nominalisierung-f07",
+      "kind": "form",
+      "verb": "Nomen",
+      "person": "gesund",
+      "answer": "Gesundheit",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c08",
+      "sentence": "Gibt es etwas ___?",
+      "options": [
+        "Neues",
+        "Neue",
+        "Neuer"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After etwas an adjective becomes a neuter noun with a capital letter and the ending -es: etwas Neues.",
+        "es": "Después de etwas un adjetivo se convierte en un sustantivo neutro con mayúscula y la terminación -es: etwas Neues."
+      },
+      "wrong": {
+        "Neue": {
+          "en": "Neue is the ending after der, die, das or for the feminine. After etwas the neuter noun needs -es.",
+          "es": "Neue es la terminación después de der, die, das o para el femenino. Después de etwas el sustantivo neutro necesita -es."
+        },
+        "Neuer": {
+          "en": "Neuer is a masculine ending. The thing we ask about is neuter, so after etwas the ending is -es.",
+          "es": "Neuer es una terminación masculina. Lo que preguntamos es neutro, así que después de etwas la terminación es -es."
+        }
+      },
+      "examples": [
+        "Ich habe etwas Gutes für dich.",
+        "Gibt es etwas Besseres?"
+      ],
+      "tr": {
+        "en": "Is there anything new?",
+        "es": "¿Hay algo nuevo?"
+      }
+    },
+    {
+      "id": "nominalisierung-f08",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "lesen",
+      "answer": "das",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c09",
+      "sentence": "Wegen ___ Krankheit bleibt er zu Hause.",
+      "options": [
+        "seine",
+        "seiner",
+        "seinen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "wegen takes the genitive. Krankheit is feminine, so the genitive of the possessive is seiner: wegen seiner Krankheit.",
+        "es": "wegen lleva genitivo. Krankheit es femenino, así que el genitivo del posesivo es seiner: wegen seiner Krankheit."
+      },
+      "wrong": {
+        "seine": {
+          "en": "seine is the nominative or accusative feminine. After wegen the genitive is needed, and that is seiner.",
+          "es": "seine es el nominativo o acusativo femenino. Después de wegen se necesita el genitivo, y ese es seiner."
+        },
+        "seinen": {
+          "en": "seinen is a masculine accusative or a dative plural. Krankheit is feminine and needs the genitive seiner.",
+          "es": "seinen es un acusativo masculino o un dativo plural. Krankheit es femenino y necesita el genitivo seiner."
+        }
+      },
+      "examples": [
+        "Wegen seiner Arbeit ist er müde.",
+        "Wegen des Wetters bleiben wir hier."
+      ],
+      "tr": {
+        "en": "Because of his illness he stays at home.",
+        "es": "Por su enfermedad se queda en casa."
+      }
+    },
+    {
+      "id": "nominalisierung-f09",
+      "kind": "form",
+      "verb": "Nomen",
+      "person": "möglich",
+      "answer": "Möglichkeit",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-w03",
+      "kind": "why",
+      "es": "Trotz des Regens gehen wir spazieren.",
+      "target": "Trotz",
+      "tr": {
+        "en": "In spite of the rain we go for a walk.",
+        "es": "A pesar de la lluvia salimos a caminar."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A reason, the noun form of weil",
+            "es": "Una razón, la forma nominal de weil"
+          },
+          "wrong": {
+            "en": "The noun form of weil is wegen. Here the rain does not stop us, so the sentence expresses a contrast and not a reason.",
+            "es": "La forma nominal de weil es wegen. Aquí la lluvia no nos detiene, así que la oración expresa un contraste y no una razón."
+          }
+        },
+        {
+          "text": {
+            "en": "A contrast, the noun form of obwohl",
+            "es": "Un contraste, la forma nominal de obwohl"
+          }
+        },
+        {
+          "text": {
+            "en": "A time, the noun form of nachdem",
+            "es": "Un tiempo, la forma nominal de nachdem"
+          },
+          "wrong": {
+            "en": "The noun form of nachdem is nach plus the dative. Trotz does not express time; it expresses that something happens despite an obstacle.",
+            "es": "La forma nominal de nachdem es nach más dativo. Trotz no expresa tiempo; expresa que algo ocurre a pesar de un obstáculo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nominalisierung-c10",
+      "sentence": "Trotz ___ Regens gehen wir spazieren.",
+      "options": [
+        "des",
+        "dem",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "trotz takes the genitive, and Regens has the genitive ending -s. The masculine genitive article is des: trotz des Regens.",
+        "es": "trotz lleva genitivo, y Regens tiene la terminación de genitivo -s. El artículo masculino de genitivo es des: trotz des Regens."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem is the dative. It is sometimes heard in speech, but the standard rule is the genitive, and Regens shows it.",
+          "es": "dem es el dativo. A veces se oye en la lengua hablada, pero la norma es el genitivo, y Regens lo muestra."
+        },
+        "der": {
+          "en": "der is the genitive feminine or the dative feminine. Regen is masculine, and Regens already shows the genitive: des.",
+          "es": "der es el genitivo o dativo femenino. Regen es masculino, y Regens ya muestra el genitivo: des."
+        }
+      },
+      "examples": [
+        "Trotz des Wetters spielen wir draußen.",
+        "Trotz der Arbeit hat er Zeit."
+      ],
+      "tr": {
+        "en": "In spite of the rain we go for a walk.",
+        "es": "A pesar de la lluvia salimos a caminar."
+      }
+    },
+    {
+      "id": "nominalisierung-f10",
+      "kind": "form",
+      "verb": "Artikel",
+      "person": "fragen",
+      "answer": "die",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c11",
+      "sentence": "Nach ___ Ankunft ruft er an.",
+      "options": [
+        "seine",
+        "seines",
+        "seiner"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nach takes the dative. Ankunft is feminine, so the dative of the possessive is seiner: nach seiner Ankunft.",
+        "es": "nach lleva dativo. Ankunft es femenino, así que el dativo del posesivo es seiner: nach seiner Ankunft."
+      },
+      "wrong": {
+        "seine": {
+          "en": "seine is the nominative or accusative feminine. After nach you need the dative, and that is seiner.",
+          "es": "seine es el nominativo o acusativo femenino. Después de nach necesitas el dativo, y ese es seiner."
+        },
+        "seines": {
+          "en": "seines is a genitive masculine or neuter ending. Ankunft is feminine, and nach takes the dative, not the genitive.",
+          "es": "seines es una terminación de genitivo masculino o neutro. Ankunft es femenino, y nach lleva dativo, no genitivo."
+        }
+      },
+      "examples": [
+        "Nach seiner Arbeit geht er nach Hause.",
+        "Nach dem Essen trinken wir Tee."
+      ],
+      "tr": {
+        "en": "After his arrival he calls.",
+        "es": "Después de su llegada, él llama."
+      }
+    },
+    {
+      "id": "nominalisierung-f11",
+      "kind": "form",
+      "verb": "Nomen",
+      "person": "schwierig",
+      "answer": "Schwierigkeit",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c12",
+      "sentence": "Er ist krank. ___ seiner Krankheit bleibt er im Bett.",
+      "options": [
+        "Trotz",
+        "Wegen",
+        "Nach"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The illness is the reason why he stays in bed. wegen names a reason and is the noun form of weil.",
+        "es": "La enfermedad es la razón por la que se queda en la cama. wegen nombra una razón y es la forma nominal de weil."
+      },
+      "wrong": {
+        "Trotz": {
+          "en": "Trotz would mean in spite of: he would stay in bed although he is ill. That makes no sense, because the illness is the reason.",
+          "es": "Trotz significaría a pesar de: se quedaría en la cama aunque está enfermo. Eso no tiene sentido, porque la enfermedad es la razón."
+        },
+        "Nach": {
+          "en": "Nach would express time (after his illness). Here the illness explains why he stays in bed now.",
+          "es": "Nach expresaría tiempo (después de su enfermedad). Aquí la enfermedad explica por qué se queda ahora en la cama."
+        }
+      },
+      "examples": [
+        "Er ist müde. Wegen seiner Arbeit schläft er wenig.",
+        "Wegen des Regens bleiben wir hier."
+      ],
+      "tr": {
+        "en": "He is sick. Because of his illness he stays in bed.",
+        "es": "Está enfermo. Por su enfermedad se queda en la cama."
+      }
+    },
+    {
+      "id": "nominalisierung-f12",
+      "kind": "form",
+      "verb": "Nomen",
+      "person": "neu",
+      "answer": "Neuigkeit",
+      "table": "nominalisierung-formen"
+    },
+    {
+      "id": "nominalisierung-c13",
+      "sentence": "Es regnet stark. ___ des Regens gehen wir spazieren.",
+      "options": [
+        "Wegen",
+        "Bei",
+        "Trotz"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "We go for a walk although it rains. trotz expresses a contrast and is the noun form of obwohl.",
+        "es": "Salimos a caminar aunque llueve. trotz expresa un contraste y es la forma nominal de obwohl."
+      },
+      "wrong": {
+        "Wegen": {
+          "en": "Wegen would make the rain the reason for the walk. But the rain is a reason to stay in, so the contrast word trotz fits.",
+          "es": "Wegen haría de la lluvia la razón del paseo. Pero la lluvia es una razón para quedarse en casa, así que encaja la palabra de contraste trotz."
+        },
+        "Bei": {
+          "en": "Bei plus the dative would express a condition or a situation (bei Regen), and it would not take the genitive des Regens.",
+          "es": "Bei más el dativo expresaría una condición o una situación (bei Regen), y no llevaría el genitivo des Regens."
+        }
+      },
+      "examples": [
+        "Trotz seiner Müdigkeit arbeitet er weiter.",
+        "Trotz der Kälte gehen wir schwimmen."
+      ],
+      "tr": {
+        "en": "It is raining hard. In spite of the rain we go for a walk.",
+        "es": "Llueve fuerte. A pesar de la lluvia salimos a caminar."
+      }
+    },
+    {
+      "id": "nominalisierung-c14",
+      "sentence": "Wir haben eine ___ mit dem Auto.",
+      "options": [
+        "Schwierigheit",
+        "Schwierigkeit",
+        "Schwierigung"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "schwierig ends in -ig, so the noun takes -keit: die Schwierigkeit. Nouns on -keit are feminine, which fits eine.",
+        "es": "schwierig termina en -ig, así que el sustantivo toma -keit: die Schwierigkeit. Los sustantivos en -keit son femeninos, lo que encaja con eine."
+      },
+      "wrong": {
+        "Schwierigheit": {
+          "en": "After words on -ig the suffix is -keit, not -heit. So schwierig gives Schwierigkeit.",
+          "es": "Después de las palabras en -ig el sufijo es -keit, no -heit. Por eso schwierig da Schwierigkeit."
+        },
+        "Schwierigung": {
+          "en": "The suffix -ung forms nouns from verbs. schwierig is an adjective, so the noun needs -keit.",
+          "es": "El sufijo -ung forma sustantivos a partir de verbos. schwierig es un adjetivo, así que el sustantivo necesita -keit."
+        }
+      },
+      "examples": [
+        "Ich habe eine Frage.",
+        "Das ist eine Möglichkeit."
+      ],
+      "tr": {
+        "en": "We have a problem with the car.",
+        "es": "Tenemos un problema con el carro."
+      }
+    },
+    {
+      "id": "nominalisierung-w04",
+      "kind": "why",
+      "es": "Der Besuch war kurz.",
+      "target": "Besuch",
+      "tr": {
+        "en": "The visit was short.",
+        "es": "La visita fue corta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The infinitive as a noun: besuchen becomes das Besuchen",
+            "es": "El infinitivo como sustantivo: besuchen pasa a das Besuchen"
+          },
+          "wrong": {
+            "en": "The infinitive noun is neuter and names the activity in general. Der Besuch names one single visit.",
+            "es": "El infinitivo sustantivado es neutro y nombra la actividad en general. Der Besuch nombra una sola visita."
+          }
+        },
+        {
+          "text": {
+            "en": "The suffix -ung: besuchen becomes die Besuchung",
+            "es": "El sufijo -ung: besuchen pasa a die Besuchung"
+          },
+          "wrong": {
+            "en": "The word Besuchung does not exist. Not every verb takes -ung; besuchen forms its noun from the stem.",
+            "es": "La palabra Besuchung no existe. No todos los verbos toman -ung; besuchen forma su sustantivo con la raíz."
+          }
+        },
+        {
+          "text": {
+            "en": "The bare verb stem makes a noun, here a masculine one",
+            "es": "La raíz sola del verbo forma un sustantivo, aquí uno masculino"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

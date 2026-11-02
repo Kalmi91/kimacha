@@ -1,0 +1,1083 @@
+{
+  "schema": 2,
+  "topic": "nebensaetze-b2",
+  "level": "B2",
+  "title": {
+    "en": "More subordinate clauses: indem, ohne dass, falls, je ... desto",
+    "es": "Más subordinadas: indem, ohne dass, falls, je ... desto"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "At B2 you add conjunctions for means, condition, comparison, consequence and contrast. All of them send the conjugated verb to the end of the clause and are separated from the main clause by a comma. Where both clauses have the same subject, ohne and (an)statt often use a short zu-infinitive instead of a clause. English by plus -ing becomes indem, without plus -ing becomes ohne dass or ohne ... zu; Spanish gerunds often become indem; Hungarian -va/-ve and anélkül hogy correspond to indem and ohne dass.",
+        "es": "En el nivel B2 se añaden conjunciones de medio, condición, comparación, consecuencia y contraste. Todas mandan el verbo conjugado al final de la oración y se separan de la oración principal con una coma. Cuando ambas oraciones tienen el mismo sujeto, ohne y (an)statt suelen usar un infinitivo corto con zu en lugar de una oración. El inglés by más -ing se convierte en indem, y without más -ing en ohne dass o ohne ... zu; los gerundios del español a menudo se convierten en indem; el húngaro -va/-ve y anélkül hogy corresponden a indem y ohne dass."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "nebensaetze-b2-konjunktionen",
+      "title": {
+        "en": "Conjunctions of B2",
+        "es": "Conjunciones del nivel B2"
+      },
+      "header": [
+        {
+          "en": "Function",
+          "es": "Función"
+        },
+        {
+          "en": "Konjunktion",
+          "es": "Konjunktion"
+        },
+        {
+          "en": "Beispiel",
+          "es": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "Mittel",
+          "indem",
+          "Er löst das Problem, indem er viel arbeitet."
+        ],
+        [
+          "Verneinung",
+          "ohne dass",
+          "Er geht, ohne dass jemand es merkt."
+        ],
+        [
+          "Ersatz",
+          "anstatt dass",
+          "Anstatt dass er lernt, schläft er."
+        ],
+        [
+          "Bedingung",
+          "falls",
+          "Falls es regnet, bleiben wir hier."
+        ],
+        [
+          "Ausnahme",
+          "es sei denn, dass",
+          "Ich komme, es sei denn, dass ich krank bin."
+        ],
+        [
+          "Verhältnis",
+          "je ... desto",
+          "Je mehr du übst, desto besser wirst du."
+        ],
+        [
+          "Vergleich",
+          "als ob",
+          "Er tut, als ob er krank wäre."
+        ],
+        [
+          "Folge",
+          "sodass",
+          "Es regnet stark, sodass wir hier bleiben."
+        ],
+        [
+          "Grund",
+          "zumal",
+          "Wir bleiben hier, zumal es stark regnet."
+        ],
+        [
+          "Gegensatz",
+          "während",
+          "Er arbeitet, während sie schläft."
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "nebensaetze-b2-als-ob",
+      "title": {
+        "en": "als ob takes Konjunktiv II",
+        "es": "als ob lleva Konjunktiv II"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "er (Konjunktiv II)",
+          "es": "er (Konjunktiv II)"
+        }
+      ],
+      "rows": [
+        [
+          "sein",
+          "wäre"
+        ],
+        [
+          "haben",
+          "hätte"
+        ],
+        [
+          "kommen",
+          "käme"
+        ],
+        [
+          "gehen",
+          "ginge"
+        ],
+        [
+          "wissen",
+          "wüsste"
+        ],
+        [
+          "können",
+          "könnte"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Means, without, instead of",
+        "es": "Medio, sin, en lugar de"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "indem names the means by which something happens: the clause answers the question how. The verb stands at the end.",
+            "es": "indem nombra el medio con el que algo ocurre: la oración responde a la pregunta cómo. El verbo va al final."
+          },
+          "examples": [
+            {
+              "es": "Er löst das Problem, indem er mit allen spricht.",
+              "tr": {
+                "en": "He solves the problem by talking to everyone.",
+                "es": "Él resuelve el problema hablando con todos."
+              }
+            },
+            {
+              "es": "Man lernt Sprachen, indem man viele Bücher liest.",
+              "tr": {
+                "en": "You learn languages by reading many books.",
+                "es": "Se aprenden idiomas leyendo muchos libros."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "ohne dass says that something happens without something else. With the same subject in both clauses, use ohne ... zu plus infinitive. (an)statt works the same way: (an)statt dass, (an)statt ... zu.",
+            "es": "ohne dass dice que algo ocurre sin que ocurra otra cosa. Con el mismo sujeto en ambas oraciones, usa ohne ... zu más infinitivo. (an)statt funciona igual: (an)statt dass, (an)statt ... zu."
+          },
+          "examples": [
+            {
+              "es": "Er geht, ohne dass jemand es merkt.",
+              "tr": {
+                "en": "He leaves without anyone noticing.",
+                "es": "Él se va sin que nadie lo note."
+              }
+            },
+            {
+              "es": "Er geht, ohne ein Wort zu sagen.",
+              "tr": {
+                "en": "He leaves without saying a word.",
+                "es": "Él se va sin decir una palabra."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Condition and exception",
+        "es": "Condición y excepción"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "falls is a conditional conjunction for a possible case, like in case or if. It takes the indicative. es sei denn, dass names an exception: the main clause is true unless the dass-clause happens.",
+            "es": "falls es una conjunción condicional para un caso posible, como en caso de que o si. Lleva indicativo. es sei denn, dass nombra una excepción: la oración principal es cierta a menos que ocurra la oración con dass."
+          },
+          "examples": [
+            {
+              "es": "Falls es regnet, bleiben wir zu Hause.",
+              "tr": {
+                "en": "In case it rains, we stay at home.",
+                "es": "En caso de que llueva, nos quedamos en casa."
+              }
+            },
+            {
+              "es": "Ich komme, es sei denn, dass ich krank bin.",
+              "tr": {
+                "en": "I will come unless I am sick.",
+                "es": "Voy a venir, a menos que esté enfermo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Comparison: je ... desto, als ob",
+        "es": "Comparación: je ... desto, als ob"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "je ... desto (or umso) links two comparatives: the more ..., the more .... The je-clause sends the verb to the end, the desto-part has the verb in second place after the comparative.",
+            "es": "je ... desto (o umso) une dos comparativos: cuanto más ..., más .... La oración con je manda el verbo al final; en la parte con desto el verbo va en segundo lugar, después del comparativo."
+          },
+          "examples": [
+            {
+              "es": "Je mehr du übst, desto besser wirst du.",
+              "tr": {
+                "en": "The more you practice, the better you get.",
+                "es": "Cuanto más practicas, mejor te vuelves."
+              }
+            },
+            {
+              "es": "Je länger er wartet, desto müder wird er.",
+              "tr": {
+                "en": "The longer he waits, the more tired he gets.",
+                "es": "Cuanto más espera, más cansado se pone."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "als ob and als wenn introduce an unreal comparison and take Konjunktiv II. With als würde the verb stands in the infinitive at the end.",
+            "es": "als ob y als wenn introducen una comparación irreal y llevan Konjunktiv II. Con als würde el verbo va en infinitivo al final."
+          },
+          "examples": [
+            {
+              "es": "Er tut, als ob er krank wäre.",
+              "tr": {
+                "en": "He acts as if he were sick.",
+                "es": "Él actúa como si estuviera enfermo."
+              }
+            },
+            {
+              "es": "Sie tut, als würde sie schlafen.",
+              "tr": {
+                "en": "She acts as if she were sleeping.",
+                "es": "Ella actúa como si estuviera durmiendo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Consequence, reason and contrast",
+        "es": "Consecuencia, razón y contraste"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "sodass (or so ... dass) names the result. zumal adds a further reason, especially since. während contrasts two things that happen at the same time.",
+            "es": "sodass (o so ... dass) nombra el resultado. zumal añade otra razón, sobre todo porque. während contrasta dos cosas que ocurren al mismo tiempo."
+          },
+          "examples": [
+            {
+              "es": "Er ist so müde, dass er sofort einschläft.",
+              "tr": {
+                "en": "He is so tired that he falls asleep at once.",
+                "es": "Está tan cansado que se duerme enseguida."
+              }
+            },
+            {
+              "es": "Er arbeitet viel, während seine Frau zu Hause bleibt.",
+              "tr": {
+                "en": "He works a lot while his wife stays at home.",
+                "es": "Él trabaja mucho, mientras que su esposa se queda en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "dass or zu? falls or wenn?",
+        "es": "¿dass o zu? ¿falls o wenn?"
+      },
+      "pairs": [
+        {
+          "a": "Er geht, ohne dass ich es merke.",
+          "b": "Er geht, ohne mich zu fragen.",
+          "note": {
+            "en": "Different subjects (he leaves, I notice) need ohne dass and a full clause. The same subject (he leaves, he does not ask) is shorter with ohne ... zu.",
+            "es": "Sujetos distintos (él se va, yo lo noto) necesitan ohne dass y una oración completa. El mismo sujeto (él se va, él no pregunta) es más corto con ohne ... zu."
+          },
+          "examples": [
+            {
+              "es": "Sie hilft mir, ohne dass ich sie bitte.",
+              "tr": {
+                "en": "She helps me without my asking her.",
+                "es": "Ella me ayuda sin que yo se lo pida."
+              }
+            },
+            {
+              "es": "Sie hilft mir, ohne lange zu fragen.",
+              "tr": {
+                "en": "She helps me without asking for long.",
+                "es": "Ella me ayuda sin preguntar mucho."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Falls du Zeit hast, ruf mich an.",
+          "b": "Wenn ich Zeit habe, lese ich.",
+          "note": {
+            "en": "falls expresses one possible case that may not happen. wenn can also mean whenever, a repeated situation.",
+            "es": "falls expresa un caso posible que quizá no ocurra. wenn también puede significar siempre que, una situación repetida."
+          },
+          "examples": [
+            {
+              "es": "Falls er kommt, sag mir Bescheid.",
+              "tr": {
+                "en": "In case he comes, let me know.",
+                "es": "En caso de que venga, avísame."
+              }
+            },
+            {
+              "es": "Wenn er kommt, kochen wir immer Tee.",
+              "tr": {
+                "en": "Whenever he comes, we always make tea.",
+                "es": "Cada vez que viene, siempre preparamos té."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: the verb goes to the end after every one of these conjunctions (indem er viel arbeitet, not *indem er arbeitet viel). Do not use the English -ing pattern (*ohne sagen). Use ohne ... zu only when the subject is the same, otherwise ohne dass. je ... desto needs two comparatives (je mehr ... desto besser), and als ob needs Konjunktiv II, not the indicative (*als ob er krank ist).",
+        "es": "Trampas clásicas: el verbo va al final después de todas estas conjunciones (indem er viel arbeitet, no *indem er arbeitet viel). No uses el patrón inglés con -ing (*ohne sagen). Usa ohne ... zu solo cuando el sujeto es el mismo; si no, ohne dass. je ... desto necesita dos comparativos (je mehr ... desto besser), y als ob necesita Konjunktiv II, no el indicativo (*als ob er krank ist)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Here you learn more subordinate clauses. In all of them the verb goes to the end. «Indem» names the means: «Er löst das Problem, indem er viel arbeitet». «Ohne dass» says that something happens without something else: «Er geht, ohne dass jemand es merkt». With the same subject you use «ohne zu». «Falls» introduces a possible case, and «je mehr, desto besser» links two comparatives. After «als ob» you need the Konjunktiv II: «Er tut, als ob er krank wäre». «Sodass» names the result, and «zumal» adds one more reason.",
+    "es": "Aquí aprendes más oraciones subordinadas. En todas el verbo va al final. «Indem» nombra el medio: «Er löst das Problem, indem er viel arbeitet». «Ohne dass» dice que algo ocurre sin que ocurra otra cosa: «Er geht, ohne dass jemand es merkt». Con el mismo sujeto usas «ohne zu». «Falls» introduce un caso posible, y «je mehr, desto besser» une dos comparativos. Después de «als ob» necesitas el Konjunktiv II: «Er tut, als ob er krank wäre». «Sodass» nombra el resultado, y «zumal» añade una razón más."
+  },
+  "items": [
+    {
+      "id": "nebensaetze-b2-c01",
+      "sentence": "Er löst das Problem, ___ er mit allen spricht.",
+      "options": [
+        "indem",
+        "damit",
+        "obwohl"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The second clause names the means by which he solves the problem: he talks to everyone. That is indem, and the verb goes to the end.",
+        "es": "La segunda oración nombra el medio con el que resuelve el problema: habla con todos. Eso es indem, y el verbo va al final."
+      },
+      "wrong": {
+        "damit": {
+          "en": "damit expresses a goal (so that). Talking to everyone is not the goal here but the way he solves the problem.",
+          "es": "damit expresa una meta (para que). Hablar con todos no es aquí la meta sino la manera de resolver el problema."
+        },
+        "obwohl": {
+          "en": "obwohl expresses a contrast (although). Talking to everyone does not contradict solving the problem; it is how he does it.",
+          "es": "obwohl expresa un contraste (aunque). Hablar con todos no contradice resolver el problema; es la manera en que lo hace."
+        }
+      },
+      "examples": [
+        "Sie lernt Deutsch, indem sie viel liest.",
+        "Man spart Geld, indem man weniger kauft."
+      ],
+      "tr": {
+        "en": "He solves the problem by talking to everyone.",
+        "es": "Él resuelve el problema hablando con todos."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f01",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Mittel",
+      "answer": "indem",
+      "table": "nebensaetze-b2-konjunktionen"
+    },
+    {
+      "id": "nebensaetze-b2-c02",
+      "sentence": "Er geht, ___ jemand es merkt.",
+      "options": [
+        "indem",
+        "falls",
+        "ohne dass"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "He leaves, and nobody notices: something happens without something else. That is ohne dass, because the subjects differ.",
+        "es": "Él se va y nadie lo nota: algo ocurre sin que ocurra otra cosa. Eso es ohne dass, porque los sujetos son distintos."
+      },
+      "wrong": {
+        "indem": {
+          "en": "indem would say that he leaves by means of someone noticing it. That makes no sense.",
+          "es": "indem diría que se va por medio de que alguien lo note. Eso no tiene sentido."
+        },
+        "falls": {
+          "en": "falls would make it a condition (in case someone notices). The sentence states that nobody notices it.",
+          "es": "falls lo convertiría en una condición (en caso de que alguien lo note). La oración dice que nadie lo nota."
+        }
+      },
+      "examples": [
+        "Sie hilft mir, ohne dass ich sie bitte.",
+        "Er kauft ein, ohne dass sie es sieht."
+      ],
+      "tr": {
+        "en": "He leaves without anyone noticing.",
+        "es": "Él se va sin que nadie lo note."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f02",
+      "kind": "form",
+      "verb": "er (Konjunktiv II)",
+      "person": "sein",
+      "answer": "wäre",
+      "table": "nebensaetze-b2-als-ob"
+    },
+    {
+      "id": "nebensaetze-b2-c03",
+      "sentence": "Er geht, ohne ein Wort ___ sagen.",
+      "options": [
+        "zu",
+        "dass",
+        "um"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The subject is the same in both parts (he leaves, he says nothing), so ohne is followed by an infinitive group with zu: ohne ein Wort zu sagen.",
+        "es": "El sujeto es el mismo en ambas partes (él se va, él no dice nada), así que ohne va seguido de un grupo de infinitivo con zu: ohne ein Wort zu sagen."
+      },
+      "wrong": {
+        "dass": {
+          "en": "ohne dass needs its own subject and a conjugated verb at the end (ohne dass er ein Wort sagt). Here only the infinitive sagen follows.",
+          "es": "ohne dass necesita su propio sujeto y un verbo conjugado al final (ohne dass er ein Wort sagt). Aquí solo sigue el infinitivo sagen."
+        },
+        "um": {
+          "en": "ohne um zu does not exist. um zu expresses a purpose, and it cannot follow ohne.",
+          "es": "ohne um zu no existe. um zu expresa una finalidad, y no puede ir después de ohne."
+        }
+      },
+      "examples": [
+        "Sie geht, ohne sich umzudrehen.",
+        "Er kommt, ohne anzurufen."
+      ],
+      "tr": {
+        "en": "He leaves without saying a word.",
+        "es": "Él se va sin decir una palabra."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f03",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Verneinung",
+      "answer": "ohne dass",
+      "table": "nebensaetze-b2-konjunktionen"
+    },
+    {
+      "id": "nebensaetze-b2-w01",
+      "kind": "why",
+      "es": "Er löst das Problem, indem er viel arbeitet.",
+      "target": "indem",
+      "tr": {
+        "en": "He solves the problem by working a lot.",
+        "es": "Él resuelve el problema trabajando mucho."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "weil: the second clause gives the reason",
+            "es": "weil: la segunda oración da la razón"
+          },
+          "wrong": {
+            "en": "weil would say why he solves the problem. The second clause here shows how he does it, so it is a means, not a reason.",
+            "es": "weil diría por qué resuelve el problema. La segunda oración muestra aquí cómo lo hace, así que es un medio, no una razón."
+          }
+        },
+        {
+          "text": {
+            "en": "indem: the second clause names the means, the answer to how",
+            "es": "indem: la segunda oración nombra el medio, la respuesta a cómo"
+          }
+        },
+        {
+          "text": {
+            "en": "damit: the second clause gives the goal",
+            "es": "damit: la segunda oración da la meta"
+          },
+          "wrong": {
+            "en": "damit expresses a goal (so that). Working a lot is not the goal here but the way to solve the problem.",
+            "es": "damit expresa una meta (para que). Trabajar mucho no es aquí la meta sino el camino para resolver el problema."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nebensaetze-b2-c04",
+      "sentence": "___ du Zeit hast, ruf mich an.",
+      "options": [
+        "Indem",
+        "Falls",
+        "Ohne"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "falls introduces one possible case: in case you have time. The verb hast stands at the end, and the main clause starts with the verb.",
+        "es": "falls introduce un caso posible: en caso de que tengas tiempo. El verbo hast va al final, y la oración principal empieza con el verbo."
+      },
+      "wrong": {
+        "Indem": {
+          "en": "Indem names a means (by having time). Having time is a condition for the call, not the way of calling.",
+          "es": "Indem nombra un medio (teniendo tiempo). Tener tiempo es una condición para llamar, no la manera de llamar."
+        },
+        "Ohne": {
+          "en": "Ohne would need dass or zu and mean without. The sentence says that having time is the condition for the call.",
+          "es": "Ohne necesitaría dass o zu y significaría sin. La oración dice que tener tiempo es la condición para la llamada."
+        }
+      },
+      "examples": [
+        "Falls es regnet, bleiben wir hier.",
+        "Falls er kommt, sag mir Bescheid."
+      ],
+      "tr": {
+        "en": "In case you have time, call me.",
+        "es": "En caso de que tengas tiempo, llámame."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f04",
+      "kind": "form",
+      "verb": "er (Konjunktiv II)",
+      "person": "haben",
+      "answer": "hätte",
+      "table": "nebensaetze-b2-als-ob"
+    },
+    {
+      "id": "nebensaetze-b2-c05",
+      "sentence": "Ich komme, es sei denn, ___ ich krank bin.",
+      "options": [
+        "ob",
+        "damit",
+        "dass"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The fixed phrase is es sei denn, dass. After dass the verb goes to the end: dass ich krank bin.",
+        "es": "La frase fija es es sei denn, dass. Después de dass el verbo va al final: dass ich krank bin."
+      },
+      "wrong": {
+        "ob": {
+          "en": "ob means whether and introduces an indirect question. The exception here is a condition, so ob does not fit.",
+          "es": "ob significa si (o no) e introduce una pregunta indirecta. La excepción aquí es una condición, así que ob no encaja."
+        },
+        "damit": {
+          "en": "damit expresses a goal (so that). An exception like unless I am sick is not a goal.",
+          "es": "damit expresa una meta (para que). Una excepción como a menos que esté enfermo no es una meta."
+        }
+      },
+      "examples": [
+        "Wir gehen spazieren, es sei denn, dass es regnet.",
+        "Er kommt, es sei denn, dass er arbeiten muss."
+      ],
+      "tr": {
+        "en": "I will come unless I am sick.",
+        "es": "Voy a venir, a menos que esté enfermo."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f05",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Bedingung",
+      "answer": "falls",
+      "table": "nebensaetze-b2-konjunktionen"
+    },
+    {
+      "id": "nebensaetze-b2-c06",
+      "sentence": "Je mehr du übst, ___ besser wirst du.",
+      "options": [
+        "desto",
+        "je",
+        "dann"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "je ... desto links two comparatives. After the je-clause comes desto plus the comparative, and the verb is second: desto besser wirst du.",
+        "es": "je ... desto une dos comparativos. Después de la oración con je viene desto más el comparativo, y el verbo va en segundo lugar: desto besser wirst du."
+      },
+      "wrong": {
+        "je": {
+          "en": "je opens the first part (je mehr du übst). The second part needs desto, not another je.",
+          "es": "je abre la primera parte (je mehr du übst). La segunda parte necesita desto, no otro je."
+        },
+        "dann": {
+          "en": "dann means then and does not form a pair with je. The fixed pair is je ... desto (or umso).",
+          "es": "dann significa entonces y no forma pareja con je. La pareja fija es je ... desto (o umso)."
+        }
+      },
+      "examples": [
+        "Je früher du kommst, desto besser.",
+        "Je mehr er lernt, desto mehr weiß er."
+      ],
+      "tr": {
+        "en": "The more you practice, the better you get.",
+        "es": "Cuanto más practicas, mejor te vuelves."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f06",
+      "kind": "form",
+      "verb": "er (Konjunktiv II)",
+      "person": "kommen",
+      "answer": "käme",
+      "table": "nebensaetze-b2-als-ob"
+    },
+    {
+      "id": "nebensaetze-b2-w02",
+      "kind": "why",
+      "es": "Er geht, ohne ein Wort zu sagen.",
+      "target": "zu",
+      "tr": {
+        "en": "He leaves without saying a word.",
+        "es": "Él se va sin decir una palabra."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ohne dass is always needed after ohne, so zu is a mistake",
+            "es": "después de ohne siempre se necesita ohne dass, así que zu es un error"
+          },
+          "wrong": {
+            "en": "ohne dass is only needed when the subjects differ. With the same subject the shorter ohne ... zu is the normal choice.",
+            "es": "ohne dass solo se necesita cuando los sujetos son distintos. Con el mismo sujeto lo normal es el ohne ... zu, más corto."
+          }
+        },
+        {
+          "text": {
+            "en": "The subject is the same in both parts, so ohne is followed by zu plus infinitive",
+            "es": "El sujeto es el mismo en ambas partes, así que ohne va seguido de zu más infinitivo"
+          }
+        },
+        {
+          "text": {
+            "en": "zu is the preposition to, as in zu Hause",
+            "es": "zu es la preposición a, como en zu Hause"
+          },
+          "wrong": {
+            "en": "Here zu is not a preposition. It belongs to the infinitive (zu sagen), just like to in to say.",
+            "es": "Aquí zu no es una preposición. Pertenece al infinitivo (zu sagen), igual que to en to say."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "nebensaetze-b2-c07",
+      "sentence": "Je länger er wartet, desto ___ wird er.",
+      "options": [
+        "müde",
+        "müder",
+        "am müdesten"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "je ... desto needs a comparative in both parts: länger and müder.",
+        "es": "je ... desto necesita un comparativo en ambas partes: länger y müder."
+      },
+      "wrong": {
+        "müde": {
+          "en": "müde is the basic form. After desto, the comparison needs the comparative müder.",
+          "es": "müde es la forma básica. Después de desto, la comparación necesita el comparativo müder."
+        },
+        "am müdesten": {
+          "en": "am müdesten is the superlative. je ... desto links two comparatives, not a superlative.",
+          "es": "am müdesten es el superlativo. je ... desto une dos comparativos, no un superlativo."
+        }
+      },
+      "examples": [
+        "Je mehr er arbeitet, desto weniger schläft er.",
+        "Je älter sie wird, desto ruhiger wird sie."
+      ],
+      "tr": {
+        "en": "The longer he waits, the more tired he gets.",
+        "es": "Cuanto más espera, más cansado se pone."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f07",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Ersatz",
+      "answer": "anstatt dass",
+      "accept": [
+        "statt dass"
+      ],
+      "table": "nebensaetze-b2-konjunktionen"
+    },
+    {
+      "id": "nebensaetze-b2-c08",
+      "sentence": "Er tut, als ob er krank ___.",
+      "options": [
+        "ist",
+        "war",
+        "wäre"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "als ob introduces an unreal comparison: he is not sick, he only acts like it. That needs Konjunktiv II: wäre.",
+        "es": "als ob introduce una comparación irreal: no está enfermo, solo actúa así. Eso necesita Konjunktiv II: wäre."
+      },
+      "wrong": {
+        "ist": {
+          "en": "ist is the indicative and would say that he really is sick. After als ob the unreal wäre is needed.",
+          "es": "ist es el indicativo y diría que realmente está enfermo. Después de als ob se necesita el irreal wäre."
+        },
+        "war": {
+          "en": "war is the Präteritum and talks about the past. The comparison is unreal, so the Konjunktiv II wäre is needed.",
+          "es": "war es el Präteritum y habla del pasado. La comparación es irreal, así que se necesita el Konjunktiv II wäre."
+        }
+      },
+      "examples": [
+        "Sie tut, als ob sie alles wüsste.",
+        "Er tut, als ob er Zeit hätte."
+      ],
+      "tr": {
+        "en": "He acts as if he were sick.",
+        "es": "Él actúa como si estuviera enfermo."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f08",
+      "kind": "form",
+      "verb": "er (Konjunktiv II)",
+      "person": "wissen",
+      "answer": "wüsste",
+      "table": "nebensaetze-b2-als-ob"
+    },
+    {
+      "id": "nebensaetze-b2-c09",
+      "sentence": "Sie tut, als ___ sie schlafen.",
+      "options": [
+        "wird",
+        "würde",
+        "wurde"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Without ob the verb follows als directly, and for the unreal comparison the form is würde plus infinitive: als würde sie schlafen.",
+        "es": "Sin ob el verbo sigue directamente a als, y para la comparación irreal la forma es würde más infinitivo: als würde sie schlafen."
+      },
+      "wrong": {
+        "wird": {
+          "en": "wird is the indicative future and would present the sleeping as real. An unreal comparison needs würde.",
+          "es": "wird es el futuro de indicativo y presentaría el dormir como real. Una comparación irreal necesita würde."
+        },
+        "wurde": {
+          "en": "wurde is the Präteritum of werden and does not make a Konjunktiv. The Konjunktiv II is würde.",
+          "es": "wurde es el Präteritum de werden y no forma un Konjunktiv. El Konjunktiv II es würde."
+        }
+      },
+      "examples": [
+        "Er tut, als würde er lesen.",
+        "Sie sieht aus, als würde sie frieren."
+      ],
+      "tr": {
+        "en": "She acts as if she were sleeping.",
+        "es": "Ella actúa como si estuviera durmiendo."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f09",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Vergleich",
+      "answer": "als ob",
+      "accept": [
+        "als wenn"
+      ],
+      "table": "nebensaetze-b2-konjunktionen"
+    },
+    {
+      "id": "nebensaetze-b2-w03",
+      "kind": "why",
+      "es": "Je mehr du übst, desto besser wirst du.",
+      "target": "besser",
+      "tr": {
+        "en": "The more you practice, the better you get.",
+        "es": "Cuanto más practicas, mejor te vuelves."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Positive: gut, because desto already means more",
+            "es": "Positivo: gut, porque desto ya significa más"
+          },
+          "wrong": {
+            "en": "desto does not replace the comparative. The pair je ... desto always has a comparative in both parts: mehr and besser.",
+            "es": "desto no reemplaza al comparativo. La pareja je ... desto siempre lleva un comparativo en ambas partes: mehr y besser."
+          }
+        },
+        {
+          "text": {
+            "en": "Superlative: am besten, because the comparison is about the best",
+            "es": "Superlativo: am besten, porque la comparación trata de lo mejor"
+          },
+          "wrong": {
+            "en": "je ... desto links two comparatives, not a superlative. The sentence says how things change together.",
+            "es": "je ... desto une dos comparativos, no un superlativo. La oración dice cómo cambian las cosas a la vez."
+          }
+        },
+        {
+          "text": {
+            "en": "Comparative: je ... desto links two comparatives",
+            "es": "Comparativo: je ... desto une dos comparativos"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "nebensaetze-b2-c10",
+      "sentence": "Es regnet stark, ___ wir hier bleiben.",
+      "options": [
+        "sodass",
+        "damit",
+        "obwohl"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The heavy rain is the cause and staying here is the result. sodass names the consequence.",
+        "es": "La lluvia fuerte es la causa y quedarse aquí es el resultado. sodass nombra la consecuencia."
+      },
+      "wrong": {
+        "damit": {
+          "en": "damit expresses a goal. Nobody stays here in order to make it rain heavily; the staying is only a result.",
+          "es": "damit expresa una meta. Nadie se queda aquí para que llueva fuerte; quedarse es solo un resultado."
+        },
+        "obwohl": {
+          "en": "obwohl expresses a contrast. Here the rain is the reason for staying, so there is no contrast.",
+          "es": "obwohl expresa un contraste. Aquí la lluvia es la razón para quedarse, así que no hay contraste."
+        }
+      },
+      "examples": [
+        "Er spricht leise, sodass wir ihn nicht hören.",
+        "Es ist spät, sodass wir gehen müssen."
+      ],
+      "tr": {
+        "en": "It is raining hard, so we are staying here.",
+        "es": "Llueve fuerte, de modo que nos quedamos aquí."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f10",
+      "kind": "form",
+      "verb": "er (Konjunktiv II)",
+      "person": "gehen",
+      "answer": "ginge",
+      "table": "nebensaetze-b2-als-ob"
+    },
+    {
+      "id": "nebensaetze-b2-c11",
+      "sentence": "Er ist so müde, ___ er sofort einschläft.",
+      "options": [
+        "ob",
+        "dass",
+        "wenn"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "so ... dass names the result of a degree: so tired that. The verb of the dass-clause goes to the end.",
+        "es": "so ... dass nombra el resultado de un grado: tan cansado que. El verbo de la oración con dass va al final."
+      },
+      "wrong": {
+        "ob": {
+          "en": "ob means whether and starts an indirect question. The sentence states a result, not a question.",
+          "es": "ob significa si (o no) y comienza una pregunta indirecta. La oración enuncia un resultado, no una pregunta."
+        },
+        "wenn": {
+          "en": "wenn means if or whenever. It would make the falling asleep a condition instead of the result of being so tired.",
+          "es": "wenn significa si o cada vez que. Convertiría el dormirse en una condición en lugar del resultado de estar tan cansado."
+        }
+      },
+      "examples": [
+        "Es ist so kalt, dass wir zu Hause bleiben.",
+        "Sie spricht so schnell, dass ich nichts verstehe."
+      ],
+      "tr": {
+        "en": "He is so tired that he falls asleep at once.",
+        "es": "Está tan cansado que se duerme enseguida."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f11",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Folge",
+      "answer": "sodass",
+      "accept": [
+        "so dass"
+      ],
+      "table": "nebensaetze-b2-konjunktionen"
+    },
+    {
+      "id": "nebensaetze-b2-c12",
+      "sentence": "Wir bleiben hier, ___ es stark regnet.",
+      "options": [
+        "indem",
+        "ohne dass",
+        "zumal"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "zumal adds a further reason: especially since it rains hard. The verb regnet stands at the end.",
+        "es": "zumal añade una razón más: sobre todo porque llueve fuerte. El verbo regnet va al final."
+      },
+      "wrong": {
+        "indem": {
+          "en": "indem names the means. Raining hard is not the way in which we stay here, it is a reason.",
+          "es": "indem nombra el medio. Que llueva fuerte no es la manera en que nos quedamos aquí, es una razón."
+        },
+        "ohne dass": {
+          "en": "ohne dass would say that we stay here without it raining. That is the opposite of the intended meaning.",
+          "es": "ohne dass diría que nos quedamos aquí sin que llueva. Eso es lo contrario del sentido que se quiere."
+        }
+      },
+      "examples": [
+        "Ich bleibe zu Hause, zumal ich müde bin.",
+        "Wir fahren nicht, zumal es spät ist."
+      ],
+      "tr": {
+        "en": "We are staying here, especially since it is raining hard.",
+        "es": "Nos quedamos aquí, sobre todo porque llueve fuerte."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-f12",
+      "kind": "form",
+      "verb": "Konjunktion",
+      "person": "Grund",
+      "answer": "zumal",
+      "table": "nebensaetze-b2-konjunktionen"
+    },
+    {
+      "id": "nebensaetze-b2-c13",
+      "sentence": "Er arbeitet viel, ___ seine Frau zu Hause bleibt.",
+      "options": [
+        "während",
+        "indem",
+        "ohne dass"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The two things happen at the same time and contrast with each other: he works, she stays home. That is während.",
+        "es": "Las dos cosas ocurren al mismo tiempo y se contraponen: él trabaja, ella se queda en casa. Eso es während."
+      },
+      "wrong": {
+        "indem": {
+          "en": "indem would say that he works by means of his wife staying home. That is not what the sentence means.",
+          "es": "indem diría que él trabaja por medio de que su esposa se queda en casa. No es eso lo que significa la oración."
+        },
+        "ohne dass": {
+          "en": "ohne dass says that one thing happens without the other. The sentence only contrasts two parallel facts.",
+          "es": "ohne dass dice que una cosa ocurre sin la otra. La oración solo contrapone dos hechos paralelos."
+        }
+      },
+      "examples": [
+        "Sie liest, während er kocht.",
+        "Er mag Fleisch, während sie Gemüse mag."
+      ],
+      "tr": {
+        "en": "He works a lot while his wife stays at home.",
+        "es": "Él trabaja mucho, mientras que su esposa se queda en casa."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-c14",
+      "sentence": "Man lernt Sprachen, indem man viele Bücher ___.",
+      "options": [
+        "lesen",
+        "gelesen",
+        "liest"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In an indem-clause the conjugated verb stands at the end. With man the form is liest: indem man viele Bücher liest.",
+        "es": "En una oración con indem el verbo conjugado va al final. Con man la forma es liest: indem man viele Bücher liest."
+      },
+      "wrong": {
+        "lesen": {
+          "en": "lesen is the infinitive or the plural form. After man the conjugated verb must be liest.",
+          "es": "lesen es el infinitivo o la forma del plural. Después de man el verbo conjugado debe ser liest."
+        },
+        "gelesen": {
+          "en": "gelesen is a participle and needs an auxiliary (hat gelesen). Here a simple conjugated present verb is needed.",
+          "es": "gelesen es un participio y necesita un auxiliar (hat gelesen). Aquí se necesita un verbo simple conjugado en presente."
+        }
+      },
+      "examples": [
+        "Man spart Geld, indem man Wasser trinkt.",
+        "Er lernt Wörter, indem er sie aufschreibt."
+      ],
+      "tr": {
+        "en": "You learn languages by reading many books.",
+        "es": "Se aprenden idiomas leyendo muchos libros."
+      }
+    },
+    {
+      "id": "nebensaetze-b2-w04",
+      "kind": "why",
+      "es": "Er tut, als ob er krank wäre.",
+      "target": "wäre",
+      "tr": {
+        "en": "He acts as if he were sick.",
+        "es": "Él actúa como si estuviera enfermo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Indikativ: ist, because the sentence describes his real state",
+            "es": "Indikativ: ist, porque la oración describe su estado real"
+          },
+          "wrong": {
+            "en": "With ist the sentence would claim that he really is sick. als ob shows that he only seems to be, so the sentence is unreal.",
+            "es": "Con ist la oración afirmaría que realmente está enfermo. als ob muestra que solo lo parece, así que la oración es irreal."
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv II: the comparison after als ob is unreal",
+            "es": "Konjunktiv II: la comparación después de als ob es irreal"
+          }
+        },
+        {
+          "text": {
+            "en": "Perfekt: gewesen, because the sentence is about the past",
+            "es": "Perfekt: gewesen, porque la oración trata del pasado"
+          },
+          "wrong": {
+            "en": "The sentence is about now: he acts now. A comparison about the past would need gewesen wäre.",
+            "es": "La oración trata de ahora: él actúa ahora. Una comparación sobre el pasado necesitaría gewesen wäre."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
