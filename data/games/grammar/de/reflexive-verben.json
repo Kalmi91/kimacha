@@ -1,0 +1,1064 @@
+{
+  "schema": 2,
+  "topic": "reflexive-verben",
+  "level": "A2",
+  "title": {
+    "en": "Reflexive verbs",
+    "es": "Verbos reflexivos"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A reflexive verb has a small pronoun that points back to the subject: Ich wasche mich, Er freut sich. The reflexive pronoun is the accusative personal pronoun (mich, dich, uns, euch), except in the third person, where it is always sich, also for Sie. It stands right after the verb. When the sentence has another object, for example a body part, the pronoun becomes dative: Ich wasche mir die Hände. Many verbs are reflexive in German that are not in English: sich freuen, sich setzen, sich duschen.",
+        "es": "Un verbo reflexivo lleva un pequeño pronombre que se refiere al sujeto: Ich wasche mich, Er freut sich. El pronombre reflexivo es el pronombre personal en acusativo (mich, dich, uns, euch), salvo en la tercera persona, donde es siempre sich, también para Sie. Va justo después del verbo. Cuando la oración tiene otro objeto, por ejemplo una parte del cuerpo, el pronombre pasa a dativo: Ich wasche mir die Hände. Muchos verbos son reflexivos en alemán y no en inglés: sich freuen, sich setzen, sich duschen."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "reflexivpronomen",
+      "title": {
+        "en": "The reflexive pronoun",
+        "es": "El pronombre reflexivo"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        },
+        {
+          "en": "Dativ",
+          "es": "Dativ"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "mich",
+          "mir"
+        ],
+        [
+          "du",
+          "dich",
+          "dir"
+        ],
+        [
+          "er/sie/es",
+          "sich",
+          "sich"
+        ],
+        [
+          "wir",
+          "uns",
+          "uns"
+        ],
+        [
+          "ihr",
+          "euch",
+          "euch"
+        ],
+        [
+          "sie/Sie",
+          "sich",
+          "sich"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "reflexive-verben",
+      "title": {
+        "en": "Three reflexive verbs in the present",
+        "es": "Tres verbos reflexivos en presente"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "sich waschen",
+          "es": "sich waschen"
+        },
+        {
+          "en": "sich freuen",
+          "es": "sich freuen"
+        },
+        {
+          "en": "sich setzen",
+          "es": "sich setzen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "wasche mich",
+          "freue mich",
+          "setze mich"
+        ],
+        [
+          "du",
+          "wäschst dich",
+          "freust dich",
+          "setzt dich"
+        ],
+        [
+          "er/sie/es",
+          "wäscht sich",
+          "freut sich",
+          "setzt sich"
+        ],
+        [
+          "wir",
+          "waschen uns",
+          "freuen uns",
+          "setzen uns"
+        ],
+        [
+          "ihr",
+          "wascht euch",
+          "freut euch",
+          "setzt euch"
+        ],
+        [
+          "sie/Sie",
+          "waschen sich",
+          "freuen sich",
+          "setzen sich"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "reflexive-liste",
+      "title": {
+        "en": "Common reflexive verbs",
+        "es": "Verbos reflexivos frecuentes"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "sich waschen",
+          "Ich wasche mich."
+        ],
+        [
+          "sich anziehen",
+          "Ich ziehe mich an."
+        ],
+        [
+          "sich duschen",
+          "Sie duscht sich jeden Morgen."
+        ],
+        [
+          "sich treffen",
+          "Wir treffen uns um acht."
+        ],
+        [
+          "sich setzen",
+          "Setz dich bitte!"
+        ],
+        [
+          "sich ausruhen",
+          "Ihr ruht euch aus."
+        ],
+        [
+          "sich fühlen",
+          "Wie fühlst du dich?"
+        ],
+        [
+          "sich freuen auf",
+          "Wir freuen uns auf den Urlaub."
+        ],
+        [
+          "sich interessieren für",
+          "Ich interessiere mich für Musik."
+        ],
+        [
+          "sich erinnern an",
+          "Ich erinnere mich an den Urlaub."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Where the pronoun stands",
+        "es": "Dónde va el pronombre"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The reflexive pronoun follows the conjugated verb directly. A separable verb puts the prefix at the end.",
+            "es": "El pronombre reflexivo sigue directamente al verbo conjugado. Un verbo separable pone el prefijo al final."
+          },
+          "examples": [
+            {
+              "es": "Ich setze mich auf den Stuhl.",
+              "tr": {
+                "en": "I sit down on the chair.",
+                "es": "Me siento en la silla."
+              }
+            },
+            {
+              "es": "Wir ruhen uns am Wochenende aus.",
+              "tr": {
+                "en": "We rest on the weekend.",
+                "es": "Descansamos el fin de semana."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "If another word opens the sentence, the verb stays in position two and the pronoun stays behind it. With a noun as the subject the pronoun comes after the verb and before the noun.",
+            "es": "Si otra palabra abre la oración, el verbo se queda en la posición dos y el pronombre sigue detrás. Con un sustantivo como sujeto el pronombre va después del verbo y antes del sustantivo."
+          },
+          "examples": [
+            {
+              "es": "Heute freut sich das Kind.",
+              "tr": {
+                "en": "Today the child is happy.",
+                "es": "Hoy se alegra el niño."
+              }
+            },
+            {
+              "es": "Am Abend duscht sie sich.",
+              "tr": {
+                "en": "In the evening she takes a shower.",
+                "es": "Por la noche ella se baña."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a body part or clothing as the accusative object, the reflexive pronoun is dative: mir, dir, sich, uns, euch, sich. Without another object it stays accusative.",
+            "es": "Con una parte del cuerpo o una prenda como objeto en acusativo, el pronombre reflexivo es dativo: mir, dir, sich, uns, euch, sich. Sin otro objeto sigue siendo acusativo."
+          },
+          "examples": [
+            {
+              "es": "Ich putze mir die Zähne.",
+              "tr": {
+                "en": "I brush my teeth.",
+                "es": "Me lavo los dientes."
+              }
+            },
+            {
+              "es": "Du ziehst dir eine Jacke an.",
+              "tr": {
+                "en": "You put on a jacket.",
+                "es": "Te pones una chaqueta."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Some verbs are reflexive in German but not in your language, and the other way round. aufstehen is not reflexive, and sich fühlen is.",
+            "es": "Algunos verbos son reflexivos en alemán pero no en tu idioma, y al revés. aufstehen no es reflexivo, y sich fühlen sí lo es."
+          },
+          "examples": [
+            {
+              "es": "Ich stehe um sieben Uhr auf.",
+              "tr": {
+                "en": "I get up at seven o’clock.",
+                "es": "Me levanto a las siete."
+              }
+            },
+            {
+              "es": "Ich fühle mich müde.",
+              "tr": {
+                "en": "I feel tired.",
+                "es": "Me siento cansado."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "mich or mir",
+        "es": "mich o mir"
+      },
+      "pairs": [
+        {
+          "a": "Ich wasche mich.",
+          "b": "Ich wasche mir die Hände.",
+          "note": {
+            "en": "Without another object the pronoun is accusative (mich). With a body part as object the pronoun is dative (mir).",
+            "es": "Sin otro objeto el pronombre es acusativo (mich). Con una parte del cuerpo como objeto el pronombre es dativo (mir)."
+          },
+          "examples": [
+            {
+              "es": "Er duscht sich.",
+              "tr": {
+                "en": "He takes a shower.",
+                "es": "Él se baña."
+              }
+            },
+            {
+              "es": "Er wäscht sich die Haare.",
+              "tr": {
+                "en": "He washes his hair.",
+                "es": "Él se lava el pelo."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Du ziehst dich an.",
+          "b": "Du ziehst dir eine Jacke an.",
+          "note": {
+            "en": "The same rule works for clothes: dich when nothing else is named, dir when you name the piece of clothing.",
+            "es": "La misma regla vale para la ropa: dich cuando no se nombra nada más, dir cuando se nombra la prenda."
+          },
+          "examples": [
+            {
+              "es": "Ich ziehe mich schnell an.",
+              "tr": {
+                "en": "I get dressed quickly.",
+                "es": "Me visto rápido."
+              }
+            },
+            {
+              "es": "Ich ziehe mir einen Mantel an.",
+              "tr": {
+                "en": "I put on a coat.",
+                "es": "Me pongo un abrigo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Do not leave out the pronoun: not Ich freue, but Ich freue mich. English learners: where English says only \"I shower\", German says Ich dusche mich. Spanish learners: me levanto is not reflexive in German, you say Ich stehe auf. Hungarian learners: your language has no such pronoun, so memorise the verb with sich (sich freuen = örülni). And do not mix up mir and mich: mir only appears when another accusative object is in the sentence, for example die Zähne or eine Jacke.",
+        "es": "No omitas el pronombre: no Ich freue, sino Ich freue mich. Para quien habla inglés: donde el inglés dice solo \"I shower\", el alemán dice Ich dusche mich. Para quien habla español: me levanto no es reflexivo en alemán, se dice Ich stehe auf. Para quien habla húngaro: tu idioma no tiene ese pronombre, así que memoriza el verbo con sich (sich freuen = örülni). Y no confundas mir y mich: mir solo aparece cuando hay otro objeto en acusativo en la oración, por ejemplo die Zähne o eine Jacke."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A reflexive verb has a pronoun that points back to the subject: «Ich wasche mich.» The forms are «mich», «dich», «sich», «uns», «euch» and «sich». In the third person it is always «sich», also for Sie. Many verbs are reflexive in German: «Ich freue mich», «Er setzt sich», «Wir treffen uns». If the sentence has another object, the pronoun becomes dative: «Ich putze mir die Zähne.» The verb «aufstehen» is not reflexive: «Ich stehe um sieben Uhr auf.»",
+    "es": "Un verbo reflexivo lleva un pronombre que se refiere al sujeto: «Ich wasche mich.» Las formas son «mich», «dich», «sich», «uns», «euch» y «sich». En la tercera persona es siempre «sich», también para Sie. Muchos verbos son reflexivos en alemán: «Ich freue mich», «Er setzt sich», «Wir treffen uns». Si la oración tiene otro objeto, el pronombre pasa a dativo: «Ich putze mir die Zähne.» El verbo «aufstehen» no es reflexivo: «Ich stehe um sieben Uhr auf.»"
+  },
+  "items": [
+    {
+      "id": "reflexive-verben-c01",
+      "sentence": "Ich freue ___ auf das Wochenende.",
+      "options": [
+        "mir",
+        "mich",
+        "sich"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sich freuen is reflexive, and the reflexive pronoun of ich is mich: Ich freue mich.",
+        "es": "sich freuen es reflexivo, y el pronombre reflexivo de ich es mich: Ich freue mich."
+      },
+      "wrong": {
+        "mir": {
+          "en": "mir is dative and only appears when another accusative object is in the sentence. Here there is none, so it is mich.",
+          "es": "mir es dativo y solo aparece cuando hay otro objeto en acusativo en la oración. Aquí no hay ninguno, así que es mich."
+        },
+        "sich": {
+          "en": "sich is for the third person (er, sie, es, sie, Sie). The subject here is ich, so the pronoun is mich.",
+          "es": "sich es para la tercera persona (er, sie, es, sie, Sie). El sujeto aquí es ich, así que el pronombre es mich."
+        }
+      },
+      "examples": [
+        "Ich freue mich auf den Urlaub.",
+        "Wir freuen uns auf das Essen."
+      ],
+      "tr": {
+        "en": "I am looking forward to the weekend.",
+        "es": "Tengo ganas de que llegue el fin de semana."
+      }
+    },
+    {
+      "id": "reflexive-verben-f01",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "ich",
+      "answer": "mich",
+      "table": "reflexivpronomen"
+    },
+    {
+      "id": "reflexive-verben-c02",
+      "sentence": "Du wäschst ___ die Hände.",
+      "options": [
+        "dich",
+        "sich",
+        "dir"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The hands are the accusative object, so the reflexive pronoun is dative: Du wäschst dir die Hände.",
+        "es": "Las manos son el objeto en acusativo, así que el pronombre reflexivo es dativo: Du wäschst dir die Hände."
+      },
+      "wrong": {
+        "dich": {
+          "en": "dich is the accusative and would be right without another object (Du wäschst dich). With die Hände the pronoun must be dative.",
+          "es": "dich es el acusativo y sería correcto sin otro objeto (Du wäschst dich). Con die Hände el pronombre debe ser dativo."
+        },
+        "sich": {
+          "en": "sich is for the third person. The subject here is du, so the pronoun is dich or dir.",
+          "es": "sich es para la tercera persona. El sujeto aquí es du, así que el pronombre es dich o dir."
+        }
+      },
+      "examples": [
+        "Ich wasche mir die Hände.",
+        "Er wäscht sich die Haare."
+      ],
+      "tr": {
+        "en": "You wash your hands.",
+        "es": "Te lavas las manos."
+      }
+    },
+    {
+      "id": "reflexive-verben-f02",
+      "kind": "form",
+      "verb": "sich waschen",
+      "person": "ich",
+      "answer": "wasche mich",
+      "table": "reflexive-verben"
+    },
+    {
+      "id": "reflexive-verben-c03",
+      "sentence": "Er setzt ___ auf den Stuhl.",
+      "options": [
+        "sich",
+        "ihn",
+        "ihm"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In the third person the reflexive pronoun is always sich: Er setzt sich.",
+        "es": "En la tercera persona el pronombre reflexivo es siempre sich: Er setzt sich."
+      },
+      "wrong": {
+        "ihn": {
+          "en": "ihn would mean another person, as in \"he sets him on the chair\". The subject sits down himself, so the pronoun must be reflexive.",
+          "es": "ihn significaría otra persona, como en \"él lo sienta en la silla\". El sujeto mismo se sienta, así que el pronombre debe ser reflexivo."
+        },
+        "ihm": {
+          "en": "ihm is the dative of er and refers to another person. The reflexive pronoun of the third person has only the form sich.",
+          "es": "ihm es el dativo de er y se refiere a otra persona. El pronombre reflexivo de la tercera persona solo tiene la forma sich."
+        }
+      },
+      "examples": [
+        "Sie setzt sich an den Tisch.",
+        "Das Kind setzt sich auf das Sofa."
+      ],
+      "tr": {
+        "en": "He sits down on the chair.",
+        "es": "Él se sienta en la silla."
+      }
+    },
+    {
+      "id": "reflexive-verben-f03",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "ich",
+      "answer": "mir",
+      "table": "reflexivpronomen"
+    },
+    {
+      "id": "reflexive-verben-w01",
+      "kind": "why",
+      "es": "Ich putze mir die Zähne.",
+      "target": "mir",
+      "tr": {
+        "en": "I brush my teeth.",
+        "es": "Me lavo los dientes."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Die Zähne is an accusative object, so the reflexive pronoun is dative",
+            "es": "Die Zähne es un objeto en acusativo, así que el pronombre reflexivo es dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "The reflexive pronoun of ich is always mir",
+            "es": "El pronombre reflexivo de ich es siempre mir"
+          },
+          "wrong": {
+            "en": "The accusative mich is the normal form: Ich wasche mich. mir appears only when another accusative object is named.",
+            "es": "El acusativo mich es la forma normal: Ich wasche mich. mir aparece solo cuando se nombra otro objeto en acusativo."
+          }
+        },
+        {
+          "text": {
+            "en": "mir is used because putzen is a separable verb",
+            "es": "mir se usa porque putzen es un verbo separable"
+          },
+          "wrong": {
+            "en": "putzen is not separable. The dative comes from the second object, die Zähne, not from the verb type.",
+            "es": "putzen no es separable. El dativo viene del segundo objeto, die Zähne, no del tipo de verbo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "reflexive-verben-c04",
+      "sentence": "Wir treffen ___ um acht Uhr.",
+      "options": [
+        "wir",
+        "euch",
+        "uns"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The pronoun for wir is uns, in the accusative and the dative: Wir treffen uns.",
+        "es": "El pronombre de wir es uns, en acusativo y en dativo: Wir treffen uns."
+      },
+      "wrong": {
+        "wir": {
+          "en": "wir is the subject form and is already in the sentence. The reflexive pronoun needs the object form uns.",
+          "es": "wir es la forma del sujeto y ya está en la oración. El pronombre reflexivo necesita la forma de objeto uns."
+        },
+        "euch": {
+          "en": "euch belongs to ihr. The subject here is wir, so the pronoun is uns.",
+          "es": "euch pertenece a ihr. El sujeto aquí es wir, así que el pronombre es uns."
+        }
+      },
+      "examples": [
+        "Wir sehen uns am Freitag.",
+        "Wir ruhen uns aus."
+      ],
+      "tr": {
+        "en": "We meet at eight o’clock.",
+        "es": "Nos vemos a las ocho."
+      }
+    },
+    {
+      "id": "reflexive-verben-f04",
+      "kind": "form",
+      "verb": "sich freuen",
+      "person": "du",
+      "answer": "freust dich",
+      "table": "reflexive-verben"
+    },
+    {
+      "id": "reflexive-verben-c05",
+      "sentence": "Heute freut ___ das Kind.",
+      "options": [
+        "mich",
+        "es",
+        "sich"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The child is a third-person subject, so the reflexive pronoun is sich. It stays behind the verb.",
+        "es": "El niño es un sujeto de tercera persona, así que el pronombre reflexivo es sich. Se queda detrás del verbo."
+      },
+      "wrong": {
+        "mich": {
+          "en": "mich belongs to ich. The subject here is das Kind, which is a third-person subject.",
+          "es": "mich pertenece a ich. El sujeto aquí es das Kind, que es un sujeto de tercera persona."
+        },
+        "es": {
+          "en": "es is a personal pronoun, not a reflexive one. A reflexive verb needs sich in the third person.",
+          "es": "es es un pronombre personal, no uno reflexivo. Un verbo reflexivo necesita sich en la tercera persona."
+        }
+      },
+      "examples": [
+        "Heute duscht sich mein Vater.",
+        "Am Abend ruht sich die Katze aus."
+      ],
+      "tr": {
+        "en": "Today the child is happy.",
+        "es": "Hoy el niño está contento."
+      }
+    },
+    {
+      "id": "reflexive-verben-f05",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "wir",
+      "answer": "uns",
+      "table": "reflexivpronomen"
+    },
+    {
+      "id": "reflexive-verben-c06",
+      "sentence": "Ich putze ___ die Zähne.",
+      "options": [
+        "mich",
+        "mir",
+        "sich"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Die Zähne is the accusative object, so the reflexive pronoun is dative: mir.",
+        "es": "Die Zähne es el objeto en acusativo, así que el pronombre reflexivo es dativo: mir."
+      },
+      "wrong": {
+        "mich": {
+          "en": "mich is correct when nothing else is named (Ich dusche mich). With die Zähne the pronoun becomes dative.",
+          "es": "mich es correcto cuando no se nombra nada más (Ich dusche mich). Con die Zähne el pronombre pasa a dativo."
+        },
+        "sich": {
+          "en": "sich is for the third person. The subject here is ich, so the pronoun is mich or mir.",
+          "es": "sich es para la tercera persona. El sujeto aquí es ich, así que el pronombre es mich o mir."
+        }
+      },
+      "examples": [
+        "Du putzt dir die Zähne.",
+        "Sie putzt sich die Zähne."
+      ],
+      "tr": {
+        "en": "I brush my teeth.",
+        "es": "Me lavo los dientes."
+      }
+    },
+    {
+      "id": "reflexive-verben-f06",
+      "kind": "form",
+      "verb": "sich setzen",
+      "person": "er/sie/es",
+      "answer": "setzt sich",
+      "table": "reflexive-verben"
+    },
+    {
+      "id": "reflexive-verben-w02",
+      "kind": "why",
+      "es": "Er freut sich auf das Wochenende.",
+      "target": "sich",
+      "tr": {
+        "en": "He is looking forward to the weekend.",
+        "es": "Él tiene ganas de que llegue el fin de semana."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "In the third person the reflexive pronoun changes like the personal pronoun: ihn",
+            "es": "En la tercera persona el pronombre reflexivo cambia como el pronombre personal: ihn"
+          },
+          "wrong": {
+            "en": "ihn would be another man. The reflexive pronoun of the third person has only one form: sich.",
+            "es": "ihn sería otro hombre. El pronombre reflexivo de la tercera persona tiene una sola forma: sich."
+          }
+        },
+        {
+          "text": {
+            "en": "In the third person the reflexive pronoun is always sich",
+            "es": "En la tercera persona el pronombre reflexivo es siempre sich"
+          }
+        },
+        {
+          "text": {
+            "en": "sich is only used for the plural and for Sie",
+            "es": "sich se usa solo para el plural y para Sie"
+          },
+          "wrong": {
+            "en": "sich is used for the singular too: er, sie and es all take sich. Plural sie and polite Sie take sich as well.",
+            "es": "sich se usa también para el singular: er, sie y es llevan todos sich. El plural sie y el Sie de cortesía también llevan sich."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "reflexive-verben-c07",
+      "sentence": "Ich wasche ___.",
+      "options": [
+        "mich",
+        "mir",
+        "sich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "There is no other object, so the reflexive pronoun is accusative: Ich wasche mich.",
+        "es": "No hay otro objeto, así que el pronombre reflexivo es acusativo: Ich wasche mich."
+      },
+      "wrong": {
+        "mir": {
+          "en": "mir needs another accusative object, for example Ich wasche mir die Hände. Here nothing else is named.",
+          "es": "mir necesita otro objeto en acusativo, por ejemplo Ich wasche mir die Hände. Aquí no se nombra nada más."
+        },
+        "sich": {
+          "en": "sich is for the third person. With ich the pronoun has to be mich.",
+          "es": "sich es para la tercera persona. Con ich el pronombre tiene que ser mich."
+        }
+      },
+      "examples": [
+        "Er duscht sich.",
+        "Sie waschen sich."
+      ],
+      "tr": {
+        "en": "I wash myself.",
+        "es": "Me lavo."
+      }
+    },
+    {
+      "id": "reflexive-verben-f07",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "du",
+      "answer": "dir",
+      "table": "reflexivpronomen"
+    },
+    {
+      "id": "reflexive-verben-c08",
+      "sentence": "Ihr ruht ___ aus.",
+      "options": [
+        "euch",
+        "sich",
+        "uns"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The reflexive pronoun of ihr is euch. The separable prefix aus goes to the end: Ihr ruht euch aus.",
+        "es": "El pronombre reflexivo de ihr es euch. El prefijo separable aus va al final: Ihr ruht euch aus."
+      },
+      "wrong": {
+        "sich": {
+          "en": "sich is for er, sie, es, sie and Sie. The subject here is ihr, which takes euch.",
+          "es": "sich es para er, sie, es, sie y Sie. El sujeto aquí es ihr, que lleva euch."
+        },
+        "uns": {
+          "en": "uns belongs to wir. For ihr you need euch.",
+          "es": "uns pertenece a wir. Para ihr necesitas euch."
+        }
+      },
+      "examples": [
+        "Ihr freut euch auf den Urlaub.",
+        "Ihr setzt euch an den Tisch."
+      ],
+      "tr": {
+        "en": "You all rest.",
+        "es": "Ustedes descansan."
+      }
+    },
+    {
+      "id": "reflexive-verben-f08",
+      "kind": "form",
+      "verb": "sich waschen",
+      "person": "wir",
+      "answer": "waschen uns",
+      "table": "reflexive-verben"
+    },
+    {
+      "id": "reflexive-verben-c09",
+      "sentence": "Sie duscht ___ jeden Morgen.",
+      "options": [
+        "ihr",
+        "sie",
+        "sich"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Sie duscht is third person, so the reflexive pronoun is sich: Sie duscht sich.",
+        "es": "Sie duscht es tercera persona, así que el pronombre reflexivo es sich: Sie duscht sich."
+      },
+      "wrong": {
+        "ihr": {
+          "en": "ihr is the dative of sie and refers to another woman, or it is the form for \"you all\". A reflexive verb needs sich.",
+          "es": "ihr es el dativo de sie y se refiere a otra mujer, o es la forma para \"ustedes\". Un verbo reflexivo necesita sich."
+        },
+        "sie": {
+          "en": "sie as an object would mean another person: \"she showers her\". The pronoun must point back to the subject: sich.",
+          "es": "sie como objeto significaría otra persona: \"ella la baña a ella\". El pronombre debe volver al sujeto: sich."
+        }
+      },
+      "examples": [
+        "Er duscht sich am Abend.",
+        "Der Gast setzt sich."
+      ],
+      "tr": {
+        "en": "She takes a shower every morning.",
+        "es": "Ella se baña todas las mañanas."
+      }
+    },
+    {
+      "id": "reflexive-verben-f09",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "er/sie/es",
+      "answer": "sich",
+      "table": "reflexivpronomen"
+    },
+    {
+      "id": "reflexive-verben-w03",
+      "kind": "why",
+      "es": "Wir treffen uns um acht Uhr.",
+      "target": "uns",
+      "tr": {
+        "en": "We meet at eight o’clock.",
+        "es": "Nos vemos a las ocho."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "uns is the dative, because treffen takes the dative",
+            "es": "uns es el dativo, porque treffen lleva dativo"
+          },
+          "wrong": {
+            "en": "uns has the same form in the accusative and the dative. Here it is accusative, because sich treffen is a reflexive verb with the accusative.",
+            "es": "uns tiene la misma forma en acusativo y dativo. Aquí es acusativo, porque sich treffen es un verbo reflexivo con acusativo."
+          }
+        },
+        {
+          "text": {
+            "en": "uns replaces um acht Uhr",
+            "es": "uns sustituye a um acht Uhr"
+          },
+          "wrong": {
+            "en": "um acht Uhr is the time and stays in the sentence. uns points back to wir, the subject.",
+            "es": "um acht Uhr es la hora y se queda en la oración. uns vuelve a wir, el sujeto."
+          }
+        },
+        {
+          "text": {
+            "en": "uns is the reflexive pronoun of wir and points back to the subject",
+            "es": "uns es el pronombre reflexivo de wir y vuelve al sujeto"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "reflexive-verben-c10",
+      "sentence": "Ich interessiere ___ für Musik.",
+      "options": [
+        "mir",
+        "mich",
+        "sich"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sich interessieren is reflexive, and the pronoun of ich is mich. The verb comes with the preposition für.",
+        "es": "sich interessieren es reflexivo, y el pronombre de ich es mich. El verbo viene con la preposición für."
+      },
+      "wrong": {
+        "mir": {
+          "en": "mir needs another accusative object in the sentence. Here für Musik is a prepositional phrase, so the pronoun stays accusative.",
+          "es": "mir necesita otro objeto en acusativo en la oración. Aquí für Musik es una frase con preposición, así que el pronombre sigue siendo acusativo."
+        },
+        "sich": {
+          "en": "sich is third person. With ich the pronoun is mich.",
+          "es": "sich es tercera persona. Con ich el pronombre es mich."
+        }
+      },
+      "examples": [
+        "Er interessiert sich für Sport.",
+        "Wir interessieren uns für Bücher."
+      ],
+      "tr": {
+        "en": "I am interested in music.",
+        "es": "Me interesa la música."
+      }
+    },
+    {
+      "id": "reflexive-verben-f10",
+      "kind": "form",
+      "verb": "sich freuen",
+      "person": "ihr",
+      "answer": "freut euch",
+      "table": "reflexive-verben"
+    },
+    {
+      "id": "reflexive-verben-c11",
+      "sentence": "Du ziehst ___ eine Jacke an.",
+      "options": [
+        "dich",
+        "dir",
+        "sich"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "eine Jacke is the accusative object, so the reflexive pronoun is dative: dir.",
+        "es": "eine Jacke es el objeto en acusativo, así que el pronombre reflexivo es dativo: dir."
+      },
+      "wrong": {
+        "dich": {
+          "en": "dich is right when no piece of clothing is named (Du ziehst dich an). With eine Jacke the pronoun is dative.",
+          "es": "dich es correcto cuando no se nombra ninguna prenda (Du ziehst dich an). Con eine Jacke el pronombre es dativo."
+        },
+        "sich": {
+          "en": "sich is for the third person. With du the pronoun is dich or dir.",
+          "es": "sich es para la tercera persona. Con du el pronombre es dich o dir."
+        }
+      },
+      "examples": [
+        "Ich ziehe mir einen Mantel an.",
+        "Er zieht sich eine Hose an."
+      ],
+      "tr": {
+        "en": "You put on a jacket.",
+        "es": "Te pones una chaqueta."
+      }
+    },
+    {
+      "id": "reflexive-verben-f11",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "ihr",
+      "answer": "euch",
+      "table": "reflexivpronomen"
+    },
+    {
+      "id": "reflexive-verben-c12",
+      "sentence": "Wie fühlst du ___?",
+      "options": [
+        "dich",
+        "dir",
+        "sich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sich fühlen is reflexive, and no other object is named, so the pronoun is accusative: dich.",
+        "es": "sich fühlen es reflexivo, y no se nombra ningún otro objeto, así que el pronombre es acusativo: dich."
+      },
+      "wrong": {
+        "dir": {
+          "en": "dir needs another accusative object, like in Du kaufst dir ein Auto. Here the question is only about the feeling.",
+          "es": "dir necesita otro objeto en acusativo, como en Du kaufst dir ein Auto. Aquí la pregunta es solo por el sentimiento."
+        },
+        "sich": {
+          "en": "sich is for the third person. The question is addressed to du, so the pronoun is dich.",
+          "es": "sich es para la tercera persona. La pregunta se dirige a du, así que el pronombre es dich."
+        }
+      },
+      "examples": [
+        "Wie fühlt sie sich?",
+        "Ich fühle mich gut."
+      ],
+      "tr": {
+        "en": "How do you feel?",
+        "es": "¿Cómo te sientes?"
+      }
+    },
+    {
+      "id": "reflexive-verben-f12",
+      "kind": "form",
+      "verb": "sich setzen",
+      "person": "sie/Sie",
+      "answer": "setzen sich",
+      "table": "reflexive-verben"
+    },
+    {
+      "id": "reflexive-verben-c13",
+      "sentence": "Herr Meier, setzen Sie ___ bitte.",
+      "options": [
+        "Sie",
+        "sich",
+        "Ihnen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The polite Sie takes the third-person reflexive pronoun sich: Setzen Sie sich.",
+        "es": "El Sie de cortesía lleva el pronombre reflexivo de tercera persona sich: Setzen Sie sich."
+      },
+      "wrong": {
+        "Sie": {
+          "en": "Sie is already in the sentence as the subject. The reflexive pronoun is a different word, sich.",
+          "es": "Sie ya está en la oración como sujeto. El pronombre reflexivo es otra palabra, sich."
+        },
+        "Ihnen": {
+          "en": "Ihnen is the dative of Sie for another object. A reflexive verb with Sie always uses sich.",
+          "es": "Ihnen es el dativo de Sie para otro objeto. Un verbo reflexivo con Sie usa siempre sich."
+        }
+      },
+      "examples": [
+        "Frau Berger, freuen Sie sich?",
+        "Herr Meier, ruhen Sie sich aus."
+      ],
+      "tr": {
+        "en": "Mr. Meier, please sit down.",
+        "es": "Señor Meier, siéntese, por favor."
+      }
+    },
+    {
+      "id": "reflexive-verben-c14",
+      "sentence": "Ich erinnere ___ an den Urlaub.",
+      "options": [
+        "mir",
+        "sich",
+        "mich"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "sich erinnern is reflexive, and the pronoun of ich is mich. The verb comes with the preposition an.",
+        "es": "sich erinnern es reflexivo, y el pronombre de ich es mich. El verbo viene con la preposición an."
+      },
+      "wrong": {
+        "mir": {
+          "en": "mir needs another accusative object. an den Urlaub is a prepositional phrase, so the pronoun stays accusative.",
+          "es": "mir necesita otro objeto en acusativo. an den Urlaub es una frase con preposición, así que el pronombre sigue siendo acusativo."
+        },
+        "sich": {
+          "en": "sich is third person. With ich the pronoun is mich.",
+          "es": "sich es tercera persona. Con ich el pronombre es mich."
+        }
+      },
+      "examples": [
+        "Er erinnert sich an den Namen.",
+        "Wir erinnern uns an den Tag."
+      ],
+      "tr": {
+        "en": "I remember the vacation.",
+        "es": "Me acuerdo de las vacaciones."
+      }
+    },
+    {
+      "id": "reflexive-verben-w04",
+      "kind": "why",
+      "es": "Ich ziehe mir eine Jacke an.",
+      "target": "mir",
+      "tr": {
+        "en": "I put on a jacket.",
+        "es": "Me pongo una chaqueta."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "mir is wrong, the verb sich anziehen always takes mich",
+            "es": "mir es incorrecto, el verbo sich anziehen lleva siempre mich"
+          },
+          "wrong": {
+            "en": "mich is right only without an object (Ich ziehe mich an). With a named piece of clothing the pronoun is dative: mir.",
+            "es": "mich es correcto solo sin objeto (Ich ziehe mich an). Con una prenda nombrada el pronombre es dativo: mir."
+          }
+        },
+        {
+          "text": {
+            "en": "eine Jacke is the accusative object, so the reflexive pronoun is dative",
+            "es": "eine Jacke es el objeto en acusativo, así que el pronombre reflexivo es dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "mir is used for everything you wear",
+            "es": "mir se usa para todo lo que te pones"
+          },
+          "wrong": {
+            "en": "The rule is about the object, not about clothes. Ich ziehe mich an has no object and uses mich.",
+            "es": "La regla trata del objeto, no de la ropa. Ich ziehe mich an no tiene objeto y usa mich."
+          }
+        }
+      ],
+      "correctIndex": 1
+    }
+  ]
+}
