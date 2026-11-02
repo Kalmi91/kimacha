@@ -33,7 +33,7 @@ describe('PlacementScreen: German deck', () => {
     await getDb().setOnboarding('en', 'de');
   });
 
-  it('asks German words with four English answers and a bank gap sentence in turn, and ends in a suggested level', async () => {
+  it('asks German words with four English answers and a German gap sentence in turn, and ends in a suggested level', async () => {
     // the app root loads the direction before the tree mounts (the screen builds its questions on the first render)
     const store = new LearnerStore();
     await store.refresh(['direction']);
@@ -48,7 +48,9 @@ describe('PlacementScreen: German deck', () => {
     for (let n = 0; n < 40 && screen.queryByTestId('placement-dont-know'); n++) {
       const text = String(screen.getByTestId('placement-text').props.children);
       seen.push(text);
-      for (const i of [0, 1, 2, 3]) expect(screen.getByTestId(`placement-option-${i}`)).toBeTruthy();
+      // a word question has four answers; a gap sentence has three (a lesson item) or four (the authored bank)
+      const options = /___/.test(text) ? [0, 1, 2] : [0, 1, 2, 3];
+      for (const i of options) expect(screen.getByTestId(`placement-option-${i}`)).toBeTruthy();
       fireEvent.press(screen.getByTestId('placement-dont-know'));
       await flush();
     }
