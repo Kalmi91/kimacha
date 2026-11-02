@@ -1,0 +1,1010 @@
+{
+  "schema": 2,
+  "topic": "konjunktiv-ii-vergangenheit",
+  "level": "B2",
+  "title": {
+    "en": "Konjunktiv II in the past: hätte gemacht, wäre gegangen",
+    "es": "Konjunktiv II en pasado: hätte gemacht, wäre gegangen"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The Konjunktiv II of the past talks about what did not happen: missed chances, regrets and reproaches. You build it with hätte or wäre plus the Partizip II (Ich hätte das gewusst, Ich wäre gekommen). The auxiliary is the same as in the Perfekt: haben for most verbs, sein for verbs of movement and change. This is the German equivalent of English would have done, Spanish habría hecho or hubiera hecho, and Hungarian csináltam volna.",
+        "es": "El Konjunktiv II del pasado habla de lo que no ocurrió: oportunidades perdidas, arrepentimientos y reproches. Se forma con hätte o wäre más el Partizip II (Ich hätte das gewusst, Ich wäre gekommen). El auxiliar es el mismo que en el Perfekt: haben para la mayoría de los verbos, sein para los verbos de movimiento y de cambio. Es el equivalente alemán del inglés would have done, del español habría hecho o hubiera hecho y del húngaro csináltam volna."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-ii-vergangenheit-formen",
+      "title": {
+        "en": "Konjunktiv II in the past with hätte and wäre",
+        "es": "Konjunktiv II en pasado con hätte y wäre"
+      },
+      "header": [
+        {
+          "en": "Person",
+          "es": "Persona"
+        },
+        {
+          "en": "hätte ... gemacht",
+          "es": "hätte ... gemacht"
+        },
+        {
+          "en": "wäre ... gegangen",
+          "es": "wäre ... gegangen"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "hätte gemacht",
+          "wäre gegangen"
+        ],
+        [
+          "du",
+          "hättest gemacht",
+          "wärst gegangen"
+        ],
+        [
+          "er/sie/es",
+          "hätte gemacht",
+          "wäre gegangen"
+        ],
+        [
+          "wir",
+          "hätten gemacht",
+          "wären gegangen"
+        ],
+        [
+          "ihr",
+          "hättet gemacht",
+          "wärt gegangen"
+        ],
+        [
+          "sie/Sie",
+          "hätten gemacht",
+          "wären gegangen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-ii-vergangenheit-verben",
+      "title": {
+        "en": "Which auxiliary? Common verbs",
+        "es": "¿Qué auxiliar? Verbos frecuentes"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "Konjunktiv II",
+          "es": "Konjunktiv II"
+        }
+      ],
+      "rows": [
+        [
+          "gehen",
+          "wäre gegangen"
+        ],
+        [
+          "kommen",
+          "wäre gekommen"
+        ],
+        [
+          "bleiben",
+          "wäre geblieben"
+        ],
+        [
+          "fahren",
+          "wäre gefahren"
+        ],
+        [
+          "machen",
+          "hätte gemacht"
+        ],
+        [
+          "sagen",
+          "hätte gesagt"
+        ],
+        [
+          "wissen",
+          "hätte gewusst"
+        ],
+        [
+          "essen",
+          "hätte gegessen"
+        ],
+        [
+          "sehen",
+          "hätte gesehen"
+        ],
+        [
+          "lernen",
+          "hätte gelernt"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Using the past Konjunktiv II",
+        "es": "Cómo usar el Konjunktiv II del pasado"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "A condition that was not fulfilled: in the wenn-clause the conjugated hätte or wäre stands at the end, after the participle. The main clause has the same form. Without wenn, the verb moves to the first position.",
+            "es": "Una condición que no se cumplió: en la oración con wenn, el hätte o wäre conjugado va al final, después del participio. La oración principal tiene la misma forma. Sin wenn, el verbo pasa a la primera posición."
+          },
+          "examples": [
+            {
+              "es": "Wenn ich Zeit gehabt hätte, wäre ich gekommen.",
+              "tr": {
+                "en": "If I had had time, I would have come.",
+                "es": "Si hubiera tenido tiempo, habría venido."
+              }
+            },
+            {
+              "es": "Hätte ich das gewusst, wäre ich gekommen.",
+              "tr": {
+                "en": "Had I known that, I would have come.",
+                "es": "De haberlo sabido, habría venido."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Regrets, reproaches and wishes about the past. A wish with Wenn ... doch (nur) ends in hätte or wäre. A reproach with hätte or wäre says what somebody should have done.",
+            "es": "Arrepentimientos, reproches y deseos sobre el pasado. Un deseo con Wenn ... doch (nur) termina en hätte o wäre. Un reproche con hätte o wäre dice lo que alguien debió hacer."
+          },
+          "examples": [
+            {
+              "es": "Wenn ich das doch nur gewusst hätte!",
+              "tr": {
+                "en": "If only I had known that!",
+                "es": "¡Si tan solo hubiera sabido eso!"
+              }
+            },
+            {
+              "es": "Du hättest früher aufstehen sollen.",
+              "tr": {
+                "en": "You should have gotten up earlier.",
+                "es": "Deberías haberte levantado más temprano."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a modal verb you get a double infinitive at the end: hätte plus infinitive plus modal infinitive. The modal does not take its own participle here (not gekonnt, gesollt).",
+            "es": "Con un verbo modal aparece un doble infinitivo al final: hätte más infinitivo más infinitivo modal. El modal no usa aquí su propio participio (no gekonnt, gesollt)."
+          },
+          "examples": [
+            {
+              "es": "Du hättest mich anrufen können.",
+              "tr": {
+                "en": "You could have called me.",
+                "es": "Podrías haberme llamado."
+              }
+            },
+            {
+              "es": "Das hätte ich nicht sagen sollen.",
+              "tr": {
+                "en": "I should not have said that.",
+                "es": "No debí haber dicho eso."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "konjunktiv-ii-vergangenheit-tatsache",
+      "title": {
+        "en": "The fact and the unreal past",
+        "es": "El hecho y el pasado irreal"
+      },
+      "header": [
+        {
+          "en": "What happened",
+          "es": "Lo que ocurrió"
+        },
+        {
+          "en": "What would have happened",
+          "es": "Lo que habría ocurrido"
+        }
+      ],
+      "rows": [
+        [
+          "Ich hatte keine Zeit, deshalb bin ich nicht gekommen.",
+          "Wenn ich Zeit gehabt hätte, wäre ich gekommen."
+        ],
+        [
+          "Er hat nicht gelernt, deshalb hat er die Prüfung nicht bestanden.",
+          "Wenn er gelernt hätte, hätte er die Prüfung bestanden."
+        ],
+        [
+          "Wir sind spät aufgestanden und haben den Zug verpasst.",
+          "Wären wir früher aufgestanden, hätten wir den Zug nicht verpasst."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Unreal now or unreal in the past?",
+        "es": "¿Irreal en el presente o irreal en el pasado?"
+      },
+      "pairs": [
+        {
+          "a": "Wenn ich reich wäre, würde ich reisen.",
+          "b": "Wenn ich reich gewesen wäre, wäre ich gereist.",
+          "note": {
+            "en": "Without a participle the unreal condition is about now or the future. With the participle (gewesen, gereist) it is about the past.",
+            "es": "Sin participio la condición irreal trata del presente o del futuro. Con el participio (gewesen, gereist) trata del pasado."
+          },
+          "examples": [
+            {
+              "es": "Wenn ich Zeit hätte, würde ich helfen.",
+              "tr": {
+                "en": "If I had time, I would help.",
+                "es": "Si tuviera tiempo, ayudaría."
+              }
+            },
+            {
+              "es": "Wenn ich Zeit gehabt hätte, hätte ich geholfen.",
+              "tr": {
+                "en": "If I had had time, I would have helped.",
+                "es": "Si hubiera tenido tiempo, habría ayudado."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich konnte nicht kommen.",
+          "b": "Ich hätte kommen können.",
+          "note": {
+            "en": "konnte states a fact: it was not possible. hätte ... können says that it would have been possible, but it did not happen, often with regret or a reproach.",
+            "es": "konnte expresa un hecho: no era posible. hätte ... können dice que habría sido posible, pero no ocurrió, a menudo con pesar o como reproche."
+          },
+          "examples": [
+            {
+              "es": "Wir konnten nicht früher gehen.",
+              "tr": {
+                "en": "We could not leave earlier.",
+                "es": "No pudimos irnos más temprano."
+              }
+            },
+            {
+              "es": "Wir hätten früher gehen können.",
+              "tr": {
+                "en": "We could have left earlier.",
+                "es": "Podríamos habernos ido más temprano."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not translate would have word by word with würde (*Ich würde gegangen sein is wrong; say Ich wäre gegangen). Take the same auxiliary as in the Perfekt: Ich wäre gefahren, Ich hätte gegessen. With a modal use the infinitive, not the participle: hätte kommen können. In a wenn-clause the verb stands last (Wenn ich das gewusst hätte), and after a dropped wenn it stands first (Hätte ich das gewusst).",
+        "es": "Trampas clásicas: no traduzcas would have palabra por palabra con würde (*Ich würde gegangen sein es incorrecto; di Ich wäre gegangen). Usa el mismo auxiliar que en el Perfekt: Ich wäre gefahren, Ich hätte gegessen. Con un modal usa el infinitivo, no el participio: hätte kommen können. En una oración con wenn el verbo va al final (Wenn ich das gewusst hätte), y tras un wenn omitido va al principio (Hätte ich das gewusst)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The Konjunktiv II of the past talks about things that did not happen. You build it with «hätte» or «wäre» plus the Partizip II: «Ich hätte das gewusst», «Ich wäre gekommen». The helper verb is the same as in the Perfekt. Movement and change take «sein», most other verbs take «haben». A full condition sounds like this: «Wenn ich Zeit gehabt hätte, wäre ich gekommen». Without «wenn» the verb goes first: «Hätte ich das gewusst, wäre ich gekommen». With a modal verb you get two infinitives at the end: «Du hättest anrufen können», «Das hätte ich nicht sagen sollen».",
+    "es": "El Konjunktiv II del pasado habla de cosas que no ocurrieron. Se forma con «hätte» o «wäre» más el Partizip II: «Ich hätte das gewusst», «Ich wäre gekommen». El verbo auxiliar es el mismo que en el Perfekt. Movimiento y cambio llevan «sein», la mayoría de los otros verbos llevan «haben». Una condición completa suena así: «Wenn ich Zeit gehabt hätte, wäre ich gekommen». Sin «wenn» el verbo va primero: «Hätte ich das gewusst, wäre ich gekommen». Con un verbo modal hay dos infinitivos al final: «Du hättest anrufen können», «Das hätte ich nicht sagen sollen»."
+  },
+  "items": [
+    {
+      "id": "konjunktiv-ii-vergangenheit-c01",
+      "sentence": "Wenn ich Zeit gehabt ___, wäre ich gekommen.",
+      "options": [
+        "wäre",
+        "hätte",
+        "würde"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The participle gehabt belongs to haben, so the Konjunktiv II of the past uses hätte. In the wenn-clause hätte stands at the end.",
+        "es": "El participio gehabt pertenece a haben, así que el Konjunktiv II del pasado usa hätte. En la oración con wenn, hätte va al final."
+      },
+      "wrong": {
+        "wäre": {
+          "en": "wäre goes with verbs of movement and change, and with sein itself. gehabt is the participle of haben, so you need hätte.",
+          "es": "wäre va con verbos de movimiento y de cambio, y con el propio sein. gehabt es el participio de haben, así que necesitas hätte."
+        },
+        "würde": {
+          "en": "würde is followed by an infinitive (würde haben). It cannot be combined with the participle gehabt.",
+          "es": "würde va seguido de un infinitivo (würde haben). No se puede combinar con el participio gehabt."
+        }
+      },
+      "examples": [
+        "Wenn er Geld gehabt hätte, hätte er das Auto gekauft.",
+        "Wenn wir Hunger gehabt hätten, hätten wir gegessen."
+      ],
+      "tr": {
+        "en": "If I had had time, I would have come.",
+        "es": "Si hubiera tenido tiempo, habría venido."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f01",
+      "kind": "form",
+      "verb": "hätte ... gemacht",
+      "person": "ich",
+      "answer": "hätte gemacht",
+      "table": "konjunktiv-ii-vergangenheit-formen"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c02",
+      "sentence": "Ich ___ gestern gern ins Kino gegangen.",
+      "options": [
+        "hätte",
+        "würde",
+        "wäre"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "gehen is a verb of movement, so its Perfekt uses sein, and the Konjunktiv II of the past uses wäre: Ich wäre gegangen.",
+        "es": "gehen es un verbo de movimiento, así que su Perfekt usa sein, y el Konjunktiv II del pasado usa wäre: Ich wäre gegangen."
+      },
+      "wrong": {
+        "hätte": {
+          "en": "hätte would be right for verbs that form the Perfekt with haben. gehen takes sein, so the auxiliary must be wäre.",
+          "es": "hätte sería correcto para verbos que forman el Perfekt con haben. gehen usa sein, así que el auxiliar debe ser wäre."
+        },
+        "würde": {
+          "en": "würde needs an infinitive (würde gehen) and talks about the present or future. With the participle gegangen you need wäre.",
+          "es": "würde necesita un infinitivo (würde gehen) y habla del presente o del futuro. Con el participio gegangen necesitas wäre."
+        }
+      },
+      "examples": [
+        "Wir wären gern länger geblieben.",
+        "Sie wäre gern nach Berlin gefahren."
+      ],
+      "tr": {
+        "en": "I would have liked to go to the movies yesterday.",
+        "es": "Ayer me habría gustado ir al cine."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f02",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "gehen",
+      "answer": "wäre gegangen",
+      "table": "konjunktiv-ii-vergangenheit-verben"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c03",
+      "sentence": "Er ___ das Buch gern gelesen.",
+      "options": [
+        "hätte",
+        "wäre",
+        "würde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "lesen forms its Perfekt with haben, so the Konjunktiv II of the past is hätte plus gelesen.",
+        "es": "lesen forma su Perfekt con haben, así que el Konjunktiv II del pasado es hätte más gelesen."
+      },
+      "wrong": {
+        "wäre": {
+          "en": "wäre is for movement and change. lesen is not one of them, and its Perfekt is hat gelesen.",
+          "es": "wäre es para movimiento y cambio. lesen no es uno de ellos, y su Perfekt es hat gelesen."
+        },
+        "würde": {
+          "en": "würde is followed by the infinitive (würde lesen). With the participle gelesen, the auxiliary must be hätte.",
+          "es": "würde va seguido del infinitivo (würde lesen). Con el participio gelesen, el auxiliar debe ser hätte."
+        }
+      },
+      "examples": [
+        "Sie hätte den Film gern gesehen.",
+        "Wir hätten gern mehr gelernt."
+      ],
+      "tr": {
+        "en": "He would have liked to read the book.",
+        "es": "A él le habría gustado leer el libro."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f03",
+      "kind": "form",
+      "verb": "wäre ... gegangen",
+      "person": "er/sie/es",
+      "answer": "wäre gegangen",
+      "table": "konjunktiv-ii-vergangenheit-formen"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-w01",
+      "kind": "why",
+      "es": "Ich wäre gestern gern gekommen.",
+      "target": "wäre",
+      "tr": {
+        "en": "I would have liked to come yesterday.",
+        "es": "Ayer me habría gustado venir."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "wäre: kommen is a verb of movement, so it takes sein as in the Perfekt",
+            "es": "wäre: kommen es un verbo de movimiento, así que usa sein como en el Perfekt"
+          }
+        },
+        {
+          "text": {
+            "en": "hätte: every Konjunktiv II of the past is built with hätte",
+            "es": "hätte: todo Konjunktiv II del pasado se forma con hätte"
+          },
+          "wrong": {
+            "en": "Only verbs that form the Perfekt with haben use hätte. kommen forms it with sein (ist gekommen), so the Konjunktiv II needs wäre.",
+            "es": "Solo los verbos que forman el Perfekt con haben usan hätte. kommen lo forma con sein (ist gekommen), así que el Konjunktiv II necesita wäre."
+          }
+        },
+        {
+          "text": {
+            "en": "würde: würde plus the participle expresses the past",
+            "es": "würde: würde más el participio expresa el pasado"
+          },
+          "wrong": {
+            "en": "würde is always followed by an infinitive, never by a participle. The past needs hätte or wäre plus the participle.",
+            "es": "würde va siempre seguido de un infinitivo, nunca de un participio. El pasado necesita hätte o wäre más el participio."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c04",
+      "sentence": "Wir ___ früher gefahren, aber der Zug war voll.",
+      "options": [
+        "hätten",
+        "wären",
+        "würden"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "fahren without an object is a verb of movement, so the auxiliary is wären: Wir wären gefahren.",
+        "es": "fahren sin complemento directo es un verbo de movimiento, así que el auxiliar es wären: Wir wären gefahren."
+      },
+      "wrong": {
+        "hätten": {
+          "en": "hätten would fit a verb that takes haben. Here fahren means to go somewhere, and that takes sein.",
+          "es": "hätten encajaría con un verbo que usa haben. Aquí fahren significa ir a algún lugar, y eso usa sein."
+        },
+        "würden": {
+          "en": "würden needs an infinitive and speaks about the present or future. With gefahren you need wären.",
+          "es": "würden necesita un infinitivo y habla del presente o del futuro. Con gefahren necesitas wären."
+        }
+      },
+      "examples": [
+        "Wir wären gern mit dem Zug gefahren.",
+        "Ihr wärt gestern gekommen."
+      ],
+      "tr": {
+        "en": "We would have gone earlier, but the train was full.",
+        "es": "Habríamos ido más temprano, pero el tren estaba lleno."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f04",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "wissen",
+      "answer": "hätte gewusst",
+      "table": "konjunktiv-ii-vergangenheit-verben"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c05",
+      "sentence": "Du ___ mich anrufen können.",
+      "options": [
+        "wärst",
+        "würdest",
+        "hättest"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With a modal verb the auxiliary is hätte: Du hättest anrufen können. The two infinitives anrufen können stand at the end.",
+        "es": "Con un verbo modal el auxiliar es hätte: Du hättest anrufen können. Los dos infinitivos anrufen können van al final."
+      },
+      "wrong": {
+        "wärst": {
+          "en": "wärst needs a participle of a movement verb (du wärst gekommen). Before anrufen können you need hättest.",
+          "es": "wärst necesita el participio de un verbo de movimiento (du wärst gekommen). Antes de anrufen können necesitas hättest."
+        },
+        "würdest": {
+          "en": "würdest would give a statement about the present (würdest anrufen können). A reproach about the past needs hättest.",
+          "es": "würdest daría un enunciado sobre el presente (würdest anrufen können). Un reproche sobre el pasado necesita hättest."
+        }
+      },
+      "examples": [
+        "Ihr hättet früher kommen können.",
+        "Er hätte mir helfen können."
+      ],
+      "tr": {
+        "en": "You could have called me.",
+        "es": "Podrías haberme llamado."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f05",
+      "kind": "form",
+      "verb": "hätte ... gemacht",
+      "person": "du",
+      "answer": "hättest gemacht",
+      "table": "konjunktiv-ii-vergangenheit-formen"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c06",
+      "sentence": "Das ___ ich nicht sagen sollen.",
+      "options": [
+        "wäre",
+        "würde",
+        "hätte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A regret about the past: hätte plus two infinitives at the end. Das hätte ich nicht sagen sollen means I should not have said that.",
+        "es": "Un arrepentimiento sobre el pasado: hätte más dos infinitivos al final. Das hätte ich nicht sagen sollen significa que no debí haber dicho eso."
+      },
+      "wrong": {
+        "wäre": {
+          "en": "wäre is used with verbs of movement and change. sagen takes haben, so the form must be hätte.",
+          "es": "wäre se usa con verbos de movimiento y de cambio. sagen usa haben, así que la forma debe ser hätte."
+        },
+        "würde": {
+          "en": "würde would speak about the present or future (würde sagen sollen). The regret here is about something already said.",
+          "es": "würde hablaría del presente o del futuro (würde sagen sollen). El arrepentimiento aquí es por algo que ya se dijo."
+        }
+      },
+      "examples": [
+        "Das hätte ich nicht machen sollen.",
+        "Wir hätten das früher sagen müssen."
+      ],
+      "tr": {
+        "en": "I should not have said that.",
+        "es": "No debí haber dicho eso."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f06",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "bleiben",
+      "answer": "wäre geblieben",
+      "table": "konjunktiv-ii-vergangenheit-verben"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-w02",
+      "kind": "why",
+      "es": "Du hättest mich anrufen können.",
+      "target": "können",
+      "tr": {
+        "en": "You could have called me.",
+        "es": "Podrías haberme llamado."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "gekonnt: every verb has a participle at the end in the past",
+            "es": "gekonnt: todo verbo lleva un participio al final en el pasado"
+          },
+          "wrong": {
+            "en": "With a second verb the modal does not take the participle gekonnt. Hättest ... anrufen können has two infinitives at the end.",
+            "es": "Con un segundo verbo el modal no usa el participio gekonnt. Hättest ... anrufen können tiene dos infinitivos al final."
+          }
+        },
+        {
+          "text": {
+            "en": "double infinitive: a modal verb next to another infinitive stays an infinitive instead of a participle",
+            "es": "doble infinitivo: un verbo modal junto a otro infinitivo se queda en infinitivo en lugar de participio"
+          }
+        },
+        {
+          "text": {
+            "en": "können: the ability exists now, not in the past",
+            "es": "können: la capacidad existe ahora, no en el pasado"
+          },
+          "wrong": {
+            "en": "Hättest ... können places the possibility in the past: you had the chance, but you did not use it. It is not about now.",
+            "es": "Hättest ... können sitúa la posibilidad en el pasado: tenías la oportunidad, pero no la usaste. No se trata de ahora."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c07",
+      "sentence": "Wenn wir früher aufgestanden ___, hätten wir den Zug nicht verpasst.",
+      "options": [
+        "wären",
+        "hätten",
+        "würden"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "aufstehen means to get up, a change of state, and it forms the Perfekt with sein. So the wenn-clause ends in wären.",
+        "es": "aufstehen significa levantarse, un cambio de estado, y forma el Perfekt con sein. Por eso la oración con wenn termina en wären."
+      },
+      "wrong": {
+        "hätten": {
+          "en": "hätten fits verbs with haben. aufstehen has the Perfekt ist aufgestanden, so it needs wären.",
+          "es": "hätten encaja con verbos que usan haben. aufstehen tiene el Perfekt ist aufgestanden, así que necesita wären."
+        },
+        "würden": {
+          "en": "würden is followed by an infinitive (würden aufstehen) and is not used with a participle like aufgestanden.",
+          "es": "würden va seguido de un infinitivo (würden aufstehen) y no se usa con un participio como aufgestanden."
+        }
+      },
+      "examples": [
+        "Wenn er früher gekommen wäre, hätten wir gelacht.",
+        "Wenn sie angekommen wären, hätten wir gegessen."
+      ],
+      "tr": {
+        "en": "If we had gotten up earlier, we would not have missed the train.",
+        "es": "Si nos hubiéramos levantado más temprano, no habríamos perdido el tren."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f07",
+      "kind": "form",
+      "verb": "hätte ... gemacht",
+      "person": "wir",
+      "answer": "hätten gemacht",
+      "table": "konjunktiv-ii-vergangenheit-formen"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c08",
+      "sentence": "___ ich das gewusst, wäre ich gekommen.",
+      "options": [
+        "Hätte",
+        "Wäre",
+        "Würde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Without wenn, the verb moves to the first position. Hätte ich das gewusst means If I had known that. The participle is gewusst, so the auxiliary is haben.",
+        "es": "Sin wenn, el verbo pasa a la primera posición. Hätte ich das gewusst significa Si hubiera sabido eso. El participio es gewusst, así que el auxiliar es haben."
+      },
+      "wrong": {
+        "Wäre": {
+          "en": "Wäre ich das gewusst is not possible, because wissen forms its Perfekt with haben. The correct first word is Hätte.",
+          "es": "Wäre ich das gewusst no es posible, porque wissen forma su Perfekt con haben. La primera palabra correcta es Hätte."
+        },
+        "Würde": {
+          "en": "Würde ich das gewusst is wrong: würde never combines with a participle. Use the auxiliary Hätte.",
+          "es": "Würde ich das gewusst es incorrecto: würde nunca se combina con un participio. Usa el auxiliar Hätte."
+        }
+      },
+      "examples": [
+        "Wäre ich früher aufgestanden, hätte ich den Zug erreicht.",
+        "Hätte er gelernt, hätte er die Prüfung bestanden."
+      ],
+      "tr": {
+        "en": "Had I known that, I would have come.",
+        "es": "De haberlo sabido, habría venido."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f08",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "essen",
+      "answer": "hätte gegessen",
+      "table": "konjunktiv-ii-vergangenheit-verben"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c09",
+      "sentence": "Wenn ich das doch nur gewusst ___!",
+      "options": [
+        "habe",
+        "wäre",
+        "hätte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A wish about the past with Wenn ... doch nur ends in hätte or wäre. gewusst goes with haben, so hätte is right.",
+        "es": "Un deseo sobre el pasado con Wenn ... doch nur termina en hätte o wäre. gewusst va con haben, así que hätte es correcto."
+      },
+      "wrong": {
+        "habe": {
+          "en": "habe is the indicative. A wish about something that did not happen needs the Konjunktiv II hätte.",
+          "es": "habe es el indicativo. Un deseo sobre algo que no ocurrió necesita el Konjunktiv II hätte."
+        },
+        "wäre": {
+          "en": "wäre needs the participle of a movement verb or gewesen. wissen forms its Perfekt with haben, so you need hätte.",
+          "es": "wäre necesita el participio de un verbo de movimiento o gewesen. wissen forma su Perfekt con haben, así que necesitas hätte."
+        }
+      },
+      "examples": [
+        "Wenn ich doch nur mehr gelernt hätte!",
+        "Wenn wir doch nur früher gegangen wären!"
+      ],
+      "tr": {
+        "en": "If only I had known that!",
+        "es": "¡Si tan solo hubiera sabido eso!"
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f09",
+      "kind": "form",
+      "verb": "wäre ... gegangen",
+      "person": "ihr",
+      "answer": "wärt gegangen",
+      "table": "konjunktiv-ii-vergangenheit-formen"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-w03",
+      "kind": "why",
+      "es": "Wenn ich das gewusst hätte, wäre ich gekommen.",
+      "target": "hätte",
+      "tr": {
+        "en": "If I had known that, I would have come.",
+        "es": "Si hubiera sabido eso, habría venido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "main clause: the finite verb stays in second place",
+            "es": "oración principal: el verbo conjugado se queda en segundo lugar"
+          },
+          "wrong": {
+            "en": "Here wenn starts a subordinate clause. The conjugated verb hätte is not in second place but last, after the participle gewusst.",
+            "es": "Aquí wenn inicia una oración subordinada. El verbo conjugado hätte no va en segundo lugar sino al final, después del participio gewusst."
+          }
+        },
+        {
+          "text": {
+            "en": "subordinate clause: the conjugated verb goes to the end, after the participle",
+            "es": "oración subordinada: el verbo conjugado va al final, después del participio"
+          }
+        },
+        {
+          "text": {
+            "en": "Konjunktiv II: the mood forces the verb to the end",
+            "es": "Konjunktiv II: el modo obliga al verbo a ir al final"
+          },
+          "wrong": {
+            "en": "The mood does not decide the position. In a main clause hätte stays second: Ich hätte das gewusst.",
+            "es": "El modo no decide la posición. En una oración principal hätte se queda en segundo lugar: Ich hätte das gewusst."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c10",
+      "sentence": "Ich wäre gern länger ___.",
+      "options": [
+        "bleiben",
+        "geblieben",
+        "gebleibt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The Konjunktiv II of the past needs the Partizip II. bleiben is a strong verb, so the participle is geblieben, with the ending -en.",
+        "es": "El Konjunktiv II del pasado necesita el Partizip II. bleiben es un verbo fuerte, así que el participio es geblieben, con la terminación -en."
+      },
+      "wrong": {
+        "bleiben": {
+          "en": "bleiben is the infinitive. With wäre it would be the unreal present or a different construction; the past needs the participle.",
+          "es": "bleiben es el infinitivo. Con wäre sería otra construcción; el pasado necesita el participio."
+        },
+        "gebleibt": {
+          "en": "gebleibt treats bleiben as a weak verb. It is a strong verb, and its participle is geblieben.",
+          "es": "gebleibt trata bleiben como un verbo débil. Es un verbo fuerte, y su participio es geblieben."
+        }
+      },
+      "examples": [
+        "Wir wären gern länger gefahren.",
+        "Ich wäre gern zu Hause geblieben."
+      ],
+      "tr": {
+        "en": "I would have liked to stay longer.",
+        "es": "Me habría gustado quedarme más tiempo."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f10",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "fahren",
+      "answer": "wäre gefahren",
+      "table": "konjunktiv-ii-vergangenheit-verben"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c11",
+      "sentence": "Wenn du hier gewesen ___, hätten wir gelacht.",
+      "options": [
+        "hättest",
+        "wärst",
+        "würdest"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "sein forms its own Konjunktiv II past with wäre: Wenn du hier gewesen wärst. The conjugated verb stands at the end.",
+        "es": "sein forma su propio Konjunktiv II del pasado con wäre: Wenn du hier gewesen wärst. El verbo conjugado va al final."
+      },
+      "wrong": {
+        "hättest": {
+          "en": "hättest would be right for haben verbs. The participle gewesen belongs to sein, which takes wäre.",
+          "es": "hättest sería correcto para los verbos con haben. El participio gewesen pertenece a sein, que usa wäre."
+        },
+        "würdest": {
+          "en": "würdest is not combined with a participle. After gewesen you need the finite auxiliary wärst.",
+          "es": "würdest no se combina con un participio. Después de gewesen necesitas el auxiliar conjugado wärst."
+        }
+      },
+      "examples": [
+        "Wenn ich dort gewesen wäre, wäre ich geblieben.",
+        "Wenn ihr hier gewesen wärt, hätten wir gespielt."
+      ],
+      "tr": {
+        "en": "If you had been here, we would have laughed.",
+        "es": "Si hubieras estado aquí, nos habríamos reído."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f11",
+      "kind": "form",
+      "verb": "wäre ... gegangen",
+      "person": "sie/Sie",
+      "answer": "wären gegangen",
+      "table": "konjunktiv-ii-vergangenheit-formen"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c12",
+      "sentence": "Ich ___ gern gekommen, aber ich hatte keine Zeit.",
+      "options": [
+        "bin",
+        "wäre",
+        "hätte"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The first part says what would have happened, but did not: Ich wäre gern gekommen. kommen takes sein, so wäre is right.",
+        "es": "La primera parte dice lo que habría ocurrido, pero no ocurrió: Ich wäre gern gekommen. kommen usa sein, así que wäre es correcto."
+      },
+      "wrong": {
+        "bin": {
+          "en": "bin gekommen is the normal Perfekt and says that I came. The aber-part shows that I did not come, so the unreal wäre is needed.",
+          "es": "bin gekommen es el Perfekt normal y dice que vine. La parte con aber muestra que no vine, así que se necesita el irreal wäre."
+        },
+        "hätte": {
+          "en": "hätte is the wrong auxiliary: kommen forms its Perfekt with sein, so Konjunktiv II needs wäre.",
+          "es": "hätte es el auxiliar incorrecto: kommen forma su Perfekt con sein, así que el Konjunktiv II necesita wäre."
+        }
+      },
+      "examples": [
+        "Ich wäre gern geblieben, aber ich musste gehen.",
+        "Wir wären gern gefahren, aber es war zu spät."
+      ],
+      "tr": {
+        "en": "I would have liked to come, but I had no time.",
+        "es": "Me habría gustado venir, pero no tenía tiempo."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-f12",
+      "kind": "form",
+      "verb": "Konjunktiv II",
+      "person": "sagen",
+      "answer": "hätte gesagt",
+      "table": "konjunktiv-ii-vergangenheit-verben"
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c13",
+      "sentence": "Wenn es gestern nicht geregnet hätte, ___ wir spazieren gegangen.",
+      "options": [
+        "hätten",
+        "würden",
+        "wären"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "spazieren gehen is a verb of movement and takes sein, so the main clause has wären: Wir wären spazieren gegangen.",
+        "es": "spazieren gehen es un verbo de movimiento y usa sein, así que la oración principal tiene wären: Wir wären spazieren gegangen."
+      },
+      "wrong": {
+        "hätten": {
+          "en": "hätten does not fit gegangen. The participle gegangen belongs to a movement verb that takes sein.",
+          "es": "hätten no encaja con gegangen. El participio gegangen pertenece a un verbo de movimiento que usa sein."
+        },
+        "würden": {
+          "en": "würden would need an infinitive (würden spazieren gehen) and would point to the present or future.",
+          "es": "würden necesitaría un infinitivo (würden spazieren gehen) y apuntaría al presente o al futuro."
+        }
+      },
+      "examples": [
+        "Wenn es heiß gewesen wäre, wären wir geschwommen.",
+        "Wenn wir Zeit gehabt hätten, wären wir geblieben."
+      ],
+      "tr": {
+        "en": "If it had not rained yesterday, we would have gone for a walk.",
+        "es": "Si ayer no hubiera llovido, habríamos salido a caminar."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-c14",
+      "sentence": "Wenn ich jetzt reich ___, würde ich reisen.",
+      "options": [
+        "wäre",
+        "gewesen wäre",
+        "würde"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "jetzt shows that the unreal condition is about the present, so there is no participle: Wenn ich reich wäre. With gewesen it would be about the past.",
+        "es": "jetzt muestra que la condición irreal trata del presente, así que no hay participio: Wenn ich reich wäre. Con gewesen trataría del pasado."
+      },
+      "wrong": {
+        "gewesen wäre": {
+          "en": "gewesen wäre puts the condition in the past, which clashes with jetzt and with würde ich reisen about the present.",
+          "es": "gewesen wäre pone la condición en el pasado, lo que choca con jetzt y con würde ich reisen sobre el presente."
+        },
+        "würde": {
+          "en": "reich würde would mean to become rich (reich werden). The sentence needs the state to be rich, so the Konjunktiv II of sein: wäre.",
+          "es": "reich würde significaría llegar a ser rico (reich werden). La oración necesita el estado de ser rico, así que el Konjunktiv II de sein: wäre."
+        }
+      },
+      "examples": [
+        "Wenn ich jetzt Zeit hätte, würde ich helfen.",
+        "Wenn es heute warm wäre, würden wir schwimmen."
+      ],
+      "tr": {
+        "en": "If I were rich now, I would travel.",
+        "es": "Si ahora fuera rico, viajaría."
+      }
+    },
+    {
+      "id": "konjunktiv-ii-vergangenheit-w04",
+      "kind": "why",
+      "es": "Hätte ich das gewusst, wäre ich gekommen.",
+      "target": "Hätte",
+      "tr": {
+        "en": "Had I known that, I would have come.",
+        "es": "De haberlo sabido, habría venido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "yes/no question: the verb comes first",
+            "es": "pregunta de sí o no: el verbo va primero"
+          },
+          "wrong": {
+            "en": "It is not a question: there is a comma and a second clause. The sentence is a condition with the meaning If I had known that.",
+            "es": "No es una pregunta: hay una coma y una segunda oración. La oración es una condición con el sentido de Si hubiera sabido eso."
+          }
+        },
+        {
+          "text": {
+            "en": "imperative: the verb comes first",
+            "es": "imperativo: el verbo va primero"
+          },
+          "wrong": {
+            "en": "An imperative gives an order and has no subject pronoun. Here ich is the subject and hätte is a Konjunktiv II, so it is a condition.",
+            "es": "Un imperativo da una orden y no lleva pronombre sujeto. Aquí ich es el sujeto y hätte es un Konjunktiv II, así que es una condición."
+          }
+        },
+        {
+          "text": {
+            "en": "dropped wenn: the verb moves to the first position",
+            "es": "wenn omitido: el verbo pasa a la primera posición"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}
