@@ -11,6 +11,7 @@ import { useDockedAction } from '@/components/learn/DockSlot';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { gradePcicAnswer, gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
+import { strictAnswerMatch } from '@/lib/answerMatch';
 import { stripSentencePunct } from '@/lib/sentenceCards';
 import { useTheme } from '@/lib/ThemeContext';
 import ExamButton from './ExamButton';
@@ -29,12 +30,14 @@ type Props = {
   /** Code of the learned language, for the placeholder caption. */
   targetLang: string;
   strictAccents: boolean;
+  /** German only: the umlaut and the ß are the thing asked (a grammar form), so dropping the dots is wrong even while accents are forgiven. */
+  keepUmlauts?: boolean;
   /** The result is handed over at once (`onDone(correct)`), without the card's own reveal and Next: for a screen that shows the answer itself. */
   instant?: boolean;
   onDone: (correct: boolean) => void;
 };
 
-export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, targetLang, strictAccents, instant = false, onDone }: Props) {
+export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, targetLang, strictAccents, keepUmlauts = false, instant = false, onDone }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -44,6 +47,7 @@ export default function ExamTypeCard({ prompt, hint, answer, accept, sentence, t
 
   const check = () => {
     const ok = [answer, ...(accept ?? [])].some((target) => {
+      if (keepUmlauts && targetLang === 'de') return strictAnswerMatch(typed, target, { lang: 'de', keepUmlauts: true, strictAccents });
       const grade = sentence
         ? gradeSentenceAnswer(stripSentencePunct(typed), stripSentencePunct(target), strictAccents, targetLang)
         : gradePcicAnswer(typed, target, strictAccents, targetLang);

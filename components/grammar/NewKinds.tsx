@@ -15,13 +15,13 @@ import { gradeSentenceAnswer, suggestedGrade } from '@/lib/pcicMatch';
 import { tileWords } from '@/lib/sentenceCards';
 import { hashString, shuffleOptions } from '@/lib/shuffle';
 import { speak, stopSpeaking } from '@/lib/speech';
-import type { DictationItem, OrderItem, SpotItem } from '@/lib/grammar/lessonTypes';
+import type { ContentLang, DictationItem, OrderItem, SpotItem } from '@/lib/grammar/lessonTypes';
 
 // three new task kinds, FOR NOW only in the
 // ser-estar (error spotting + dictation) and negacion (word order + error spotting) lessons. All three are 1 unit in
 // scoring (right or not), and the right sentence is spoken after the answer.
 
-type Lang = 'en' | 'es';
+type Lang = ContentLang;
 
 const PUNCT_TAIL = /[.,;:!?¡¿]+$/;
 

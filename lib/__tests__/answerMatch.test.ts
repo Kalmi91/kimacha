@@ -244,3 +244,37 @@ describe('strictAnswerMatch, Hungarian answers (lang "hu")', () => {
     expect(strictAnswerMatch('la guardia', 'el guardia', { lang: 'es', eitherArticle: true })).toBe(true);
   });
 });
+describe('strictAnswerMatch, German typing where the umlaut and the ß are graded (lang "de", keepUmlauts)', () => {
+  const opts = { lang: 'de', keepUmlauts: true } as const;
+
+  it('never forgives dropped dots: Vater is not Väter, schon is not schön, in either accent setting', () => {
+    for (const strictAccents of [false, true]) {
+      expect(strictAnswerMatch('Vater', 'Väter', { ...opts, strictAccents })).toBe(false);
+      expect(strictAnswerMatch('schon', 'schön', { ...opts, strictAccents })).toBe(false);
+      expect(strictAnswerMatch('die Fusse', 'die Füße', { ...opts, strictAccents })).toBe(false);
+    }
+  });
+
+  it('takes the real letters, and case and closing punctuation stay forgiven', () => {
+    expect(strictAnswerMatch('Väter', 'Väter', opts)).toBe(true);
+    expect(strictAnswerMatch('die väter.', 'die Väter', opts)).toBe(true);
+    expect(strictAnswerMatch('Straße', 'Straße', { ...opts, strictAccents: true })).toBe(true);
+  });
+
+  it('takes the typewriter digraphs only while accents are forgiven', () => {
+    expect(strictAnswerMatch('Vaeter', 'Väter', opts)).toBe(true);
+    expect(strictAnswerMatch('Strasse', 'Straße', opts)).toBe(true);
+    expect(strictAnswerMatch('Vaeter', 'Väter', { ...opts, strictAccents: true })).toBe(false);
+    expect(strictAnswerMatch('Strasse', 'Straße', { ...opts, strictAccents: true })).toBe(false);
+  });
+
+  it('keeps an "a / b" alternative list and never swaps der / die / das', () => {
+    expect(strictAnswerMatch('Tage', 'die Tage / Tage', opts)).toBe(true);
+    expect(strictAnswerMatch('die Hund', 'der Hund', { ...opts, eitherArticle: true })).toBe(false);
+  });
+
+  it('without keepUmlauts the word-card rule is unchanged (dots forgiven while accents are forgiven)', () => {
+    expect(strictAnswerMatch('Vater', 'Väter', { lang: 'de' })).toBe(true);
+    expect(strictAnswerMatch('Vater', 'Väter', { lang: 'de', strictAccents: true })).toBe(false);
+  });
+});

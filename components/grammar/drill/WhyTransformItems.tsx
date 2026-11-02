@@ -5,7 +5,7 @@ import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { strictAnswerMatch } from '@/lib/answerMatch';
 import { answerInputProps } from '@/lib/inputProps';
-import { TENSE_NAMES, type TransformItem, type WhyItem } from '@/lib/grammar/lessonTypes';
+import { TENSE_NAMES, type ContentLang, type TransformItem, type WhyItem } from '@/lib/grammar/lessonTypes';
 import { speak } from '@/lib/speech';
 import { speechLang } from '@/lib/languages';
 import { findWholeWord } from '@/lib/grammar/whyTarget';
@@ -32,7 +32,7 @@ export function WhyDrillItem({
 }: {
   item: WhyItem;
   learnedLang: string;
-  contentLang: 'en' | 'es';
+  contentLang: ContentLang;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;
   onDone: (correct: boolean) => void;
@@ -237,7 +237,7 @@ export function TransformDrillItem({
   onDone,
 }: {
   item: TransformItem;
-  contentLang: 'en' | 'es';
+  contentLang: ContentLang;
   strictAccents: boolean;
   colors: (typeof Colors)['light'];
   s: ReturnType<typeof t>;

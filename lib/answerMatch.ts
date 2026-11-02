@@ -17,6 +17,12 @@ export interface MatchOptions {
    * but typing the other article is correct too (la guardia).
    */
   eitherArticle?: boolean;
+  /**
+   * German only: the umlaut and the ß are the thing being graded (a grammar form drill: Vater / Väter, schon / schön),
+   * so dropping the dots is never forgiven, whatever the accent switch says. While accents are forgiven the typewriter
+   * digraphs still count (Vaeter, Strasse); with strict accents on only the real letters do.
+   */
+  keepUmlauts?: boolean;
 }
 
 const ARTICLE_SWAP: Record<string, string> = { el: 'la', la: 'el', los: 'las', las: 'los' };
@@ -94,6 +100,9 @@ function normalizeHungarian(text: string): string[] {
 
 function normalizedForms(text: string, opts: MatchOptions): string[][] {
   if (opts.lang === 'hu') return [normalizeHungarian(text)];
+  if (opts.lang === 'de' && opts.keepUmlauts) {
+    return (opts.strictAccents ? [text] : germanReadings(text)).map(normalizeKeepingAccents);
+  }
   const readings = opts.lang ? ALTERNATE_READINGS[opts.lang] : undefined;
   if (readings && !opts.strictAccents) {
     return readings(text).map((reading) => normalizeWords(reading, false));
