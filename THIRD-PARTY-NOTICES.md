@@ -55,7 +55,7 @@ to 480 px; where listed, they were also cropped to 4:3.
 
 ## Exam photos: Wikimedia Commons
 
-15 photos in `assets/exam-photos/` are shown in the speaking part of the mock exams. Author, licence and
+20 photos in `assets/exam-photos/` are shown in the speaking part of the mock exams. Author, licence and
 source of each are recorded in `data/exams/mock/photos.json` and shown with the photo. The files were
 resized to 640 px.
 
@@ -76,6 +76,11 @@ resized to 640 px.
 | en-c1-1 | `en-c1-1.jpg` | Victor Gomez Ruiz | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:West_Kensington_Music_Team.jpg) | resized to 640 px |
 | en-c1-2 | `en-c1-2.jpg` | Punya | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:%E0%A4%95%E0%A5%81%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A5%87_01.JPG) | resized to 640 px |
 | en-c1-3 | `en-c1-3.jpg` | Kippelboy | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Viquimarat%C3%B3_Matar%C3%B3_setembre_2012_(2).JPG) | resized to 640 px |
+| de-a2-1 | `de-a2-1.jpg` | Reinhold Möller | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Berlin_Wochenmarkt_Maybachufer-20241206-RM-151935.jpg) | resized to 640 px |
+| de-a2-2 | `de-a2-2.jpg` | Reinhold Möller | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Berlin_Wochenmarkt_Maybachufer-20241206-RM-152853.jpg) | resized to 640 px |
+| de-b1-1 | `de-b1-1.jpg` | Bernd Schwabe in Hannover | [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Altstadt-Flohmarkt_in_Hannover_am_Leibnizufer_Mike-Gehrke-Promenade_zwischen_den_Nanas_mit_Blick_auf_Beginenturm_und_Pferdeschwemme.jpg) | resized to 640 px |
+| de-b1-2 | `de-b1-2.jpg` | hrs51 | [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Bern_Switzerland_2011.jpg) | resized to 640 px |
+| de-b2-1 | `de-b2-1.jpg` | Bybbisch94, Christian Gebhardt | [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) | [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:20221224.Annaberg-Weihnachtsmarkt.-011.jpg) | resized to 640 px |
 
 ## Fonts
 

@@ -41,6 +41,11 @@ export const EXAM_PHOTO_SOURCES: Record<string, ImageSourcePropType> = {
   'en-c1-1.jpg': require('../assets/exam-photos/en-c1-1.jpg'),
   'en-c1-2.jpg': require('../assets/exam-photos/en-c1-2.jpg'),
   'en-c1-3.jpg': require('../assets/exam-photos/en-c1-3.jpg'),
+  'de-a2-1.jpg': require('../assets/exam-photos/de-a2-1.jpg'),
+  'de-a2-2.jpg': require('../assets/exam-photos/de-a2-2.jpg'),
+  'de-b1-1.jpg': require('../assets/exam-photos/de-b1-1.jpg'),
+  'de-b1-2.jpg': require('../assets/exam-photos/de-b1-2.jpg'),
+  'de-b2-1.jpg': require('../assets/exam-photos/de-b2-1.jpg'),
 };
 
 export const EXAM_PHOTO_META = photosJson as Record<string, ExamPhotoMeta>;
