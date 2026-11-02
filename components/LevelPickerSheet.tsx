@@ -37,11 +37,13 @@ type Props = {
   exam?: ExamRow | ExamRow[];
   // a quiet entry to the adaptive placement test below the level rows.
   onPlacement?: () => void;
+  // FB541: today's new-word batch is done; the active level's row turns green.
+  dayDone?: boolean;
   onSelect: (level: PcicLevel) => void;
   onClose: () => void;
 };
 
-export default function LevelPickerSheet({ visible, active, cards, colors, title, target, exam, onPlacement, onSelect, onClose }: Props) {
+export default function LevelPickerSheet({ visible, active, cards, colors, title, target, exam, onPlacement, dayDone = false, onSelect, onClose }: Props) {
   const s = t();
   const g = useGrammarColors();
   const levelLabels: Partial<Record<PcicLevel, string>> = {
@@ -78,6 +80,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
                   introduced={introduced}
                   total={total}
                   active={lvl === active}
+                  done={dayDone && lvl === active}
                   colors={colors}
                   onPress={() => onSelect(lvl)}
                 />

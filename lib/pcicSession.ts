@@ -315,6 +315,12 @@ export function finishedInBatch(finishedToday: number, batchBase: number): numbe
   return Math.max(0, finishedToday - batchBase);
 }
 
+// FB541: today's new-word batch is done once the day's introductions (words + sentences, all levels)
+// reach the daily limit; the "+10" bonus does not raise the bar. The level picker paints the active row green.
+export function dayBatchDone(introducedToday: number, dailyLimit: number): boolean {
+  return dailyLimit > 0 && introducedToday >= dailyLimit;
+}
+
 export function dayProgressPercent(finished: number, remaining: number): number {
   const total = finished + remaining;
   if (total <= 1) return remaining === 0 && finished > 0 ? 100 : 0;
