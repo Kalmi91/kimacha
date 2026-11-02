@@ -259,28 +259,28 @@ SPEC['de-b2-reading'] = [
   pool('reading', 9, 4, false, { optionWords: [70, 105] }),
   pool('reading', 6, 8, true, { promptWords: [55, 85], optionWords: [3, 12] }),
   passage('reading', 'text', [430, 560], 6, 3),
-  gapped('reading', [380, 500], 6, 8, { fragmentWords: [15, 45] }),
-  gapped('reading', [120, 200], 3, 5, { fragmentWords: [10, 35] }),
+  gapped('reading', [300, 450], 6, 8, { fragmentWords: [12, 45] }),
+  gapped('reading', [100, 200], 3, 5, { fragmentWords: [10, 35] }),
 ];
 SPEC['de-b2-listening'] = [
   clips('listening', 'audio', 5, 2, T2, { clipWords: [70, 125], plays: 1 }),
-  passage('listening', 'audio', [430, 580], 6, 3, { plays: 2 }),
-  passage('listening', 'audio', [480, 620], 6, 3, { plays: 1 }),
-  passage('listening', 'audio', [520, 680], 8, 3, { plays: 2 }),
+  passage('listening', 'audio', [330, 500], 6, 3, { plays: 2 }),
+  passage('listening', 'audio', [300, 480], 6, 3, { plays: 1 }),
+  passage('listening', 'audio', [350, 520], 8, 3, { plays: 2 }),
 ];
 SPEC['de-b2-writing'] = [essay(1, 150, 190, { input: 'text', inputWords: [70, 170] }), essay(1, 100, 130, { input: 'text', inputWords: [60, 140] })];
 SPEC['de-b2-speaking'] = [speaking(2, 900, [4, 4], 3), speaking(2, 0, [5, 5], 4)];
 SPEC['de-c1-reading'] = [
-  cloze('reading', [230, 330], 8, 'mc', { options: 4 }),
-  passage('reading', 'text', [520, 680], 7, 3),
-  cloze('reading', [380, 520], 8, 'mc', { options: 3 }),
-  pool('reading', 7, 6, false, { optionWords: [65, 110] }),
+  cloze('reading', [200, 330], 8, 'mc', { options: 4 }),
+  passage('reading', 'text', [400, 600], 7, 3),
+  cloze('reading', [240, 420], 8, 'mc', { options: 3 }),
+  pool('reading', 7, 6, false, { optionWords: [55, 110] }),
 ];
 SPEC['de-c1-listening'] = [
-  passage('listening', 'audio', [330, 450], 6, 3, { plays: 1 }),
-  passage('listening', 'audio', [560, 720], 9, 3, { plays: 2 }),
-  passage('listening', 'audio', [520, 700], 8, 3, { plays: 1 }),
-  passage('listening', 'audio', [440, 580], 7, 3, { plays: 2 }),
+  passage('listening', 'audio', [260, 380], 6, 3, { plays: 1 }),
+  passage('listening', 'audio', [420, 600], 9, 3, { plays: 2 }),
+  passage('listening', 'audio', [400, 560], 8, 3, { plays: 1 }),
+  passage('listening', 'audio', [350, 500], 7, 3, { plays: 2 }),
 ];
 SPEC['de-c1-writing'] = [essay(1, 200, 250, { input: 'text', inputWords: [120, 260] }), essay(1, 150, 200, { input: 'text', inputWords: [60, 160] })];
 SPEC['de-c1-speaking'] = [speaking(2, 900, [6, 7], 3), speaking(2, 0, [5, 5], 4)];

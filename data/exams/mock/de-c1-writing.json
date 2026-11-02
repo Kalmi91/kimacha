@@ -1,0 +1,86 @@
+{
+  "target": "de",
+  "level": "C1",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Sie lesen in einer Zeitung einen Beitrag über ein Handyverbot an einer Schule. Schreiben Sie einen Forumsbeitrag von etwa 200 Wörtern, in dem Sie Stellung nehmen. Gehen Sie auf die Argumente im Text ein.",
+          "choices": [
+            {
+              "id": "w1",
+              "title": "Forumsbeitrag zum Handyverbot",
+              "prompt": "Nehmen Sie Stellung: Welche Position vertreten Sie? Setzen Sie sich mit den Argumenten im Text auseinander, belegen Sie Ihre Meinung mit einem Beispiel und schließen Sie mit einer Empfehlung ab.",
+              "input": "Handys bleiben künftig im Schließfach\nAb dem neuen Schuljahr dürfen Schülerinnen und Schüler des Albert-Schweitzer-Gymnasiums ihre Smartphones auf dem Schulgelände nicht mehr benutzen. Schulleiterin Dr. Winkler begründet die Entscheidung: „Wir haben beobachtet, dass in den Pausen kaum noch gesprochen wird. Die Kinder sitzen nebeneinander und schauen auf ihre Bildschirme. Das wollen wir ändern.“ Eltern reagieren geteilt. Einige begrüßen die Regel, andere befürchten, dass sie ihre Kinder im Notfall nicht mehr erreichen. Der Elternvertreter Marc Jäger sagt: „Statt zu verbieten, sollte die Schule lieber lehren, wie man vernünftig mit dem Gerät umgeht.“ Die Schülervertretung kündigte an, gegen den Beschluss zu protestieren. Die Lehrerkonferenz hatte ihn mit knapper Mehrheit gefasst, einzelne Fachlehrer wollen Geräte aber weiterhin im Unterricht einsetzen.",
+              "minWords": 200,
+              "maxWords": 250,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Nimmt klar Stellung zum Verbot",
+                  "keywords": ["meiner meinung nach", "ich bin der ansicht", "ich vertrete", "ich halte das verbot", "ich befurworte", "ich lehne", "grundsatzlich", "ich stehe dem verbot"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Geht auf die Argumente der Schulleiterin und der Eltern ein",
+                  "keywords": ["schulleiterin", "winkler", "eltern", "notfall", "erreichbar", "pausen", "gesprach", "jager", "umgang", "bildschirm"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Belegt die Meinung mit einem Beispiel oder einer Erfahrung",
+                  "keywords": ["beispielsweise", "zum beispiel", "in meiner schulzeit", "ich habe erlebt", "erfahrungen zeigen", "studien", "in anderen landern", "bei mir", "frankreich"]
+                },
+                {
+                  "id": "p4",
+                  "label": "Schließt mit einer Empfehlung oder einem Fazit",
+                  "keywords": ["abschliessend", "zusammenfassend", "fazit", "ich empfehle", "meines erachtens sollte", "ein kompromiss", "insgesamt", "daher sollte", "deshalb sollte"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Sie wohnen in einem Mietshaus. Die Hausverwaltung hat Ihnen einen Brief über Bauarbeiten geschickt. Schreiben Sie eine formelle Nachricht von etwa 150 Wörtern an die Hausverwaltung. Achten Sie auf Aufbau, Register und höfliche Formulierungen.",
+          "choices": [
+            {
+              "id": "w2",
+              "title": "Beschwerde an die Hausverwaltung",
+              "prompt": "Schildern Sie Ihre persönliche Situation (Sie arbeiten tagsüber zu Hause). Kritisieren Sie die kurze Vorankündigung und die langen Arbeitszeiten, machen Sie einen konkreten Vorschlag und bitten Sie um eine Antwort innerhalb einer Frist.",
+              "input": "Betreff: Fassadensanierung ab dem 3. Mai\nSehr geehrte Mieterinnen und Mieter,\nab dem 3. Mai wird die Fassade unseres Hauses saniert. Die Arbeiten dauern voraussichtlich sechs Monate und finden montags bis samstags von 7 bis 18 Uhr statt. Das Gerüst wird in der kommenden Woche aufgestellt. Wir bitten um Verständnis für die zeitweise Beeinträchtigung. Eine Minderung der Miete ist laut Mietvertrag nicht vorgesehen.\nIhre Hausverwaltung Berger",
+              "minWords": 150,
+              "maxWords": 200,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Verwendet Betreff, formelle Anrede und einen höflichen Einstieg",
+                  "keywords": ["sehr geehrte damen und herren", "sehr geehrter herr", "sehr geehrte frau", "betreff", "bezug nehmend", "ihr schreiben", "hiermit", "ich wende mich"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Schildert die persönliche Situation und die Folgen",
+                  "keywords": ["homeoffice", "zu hause", "telefonate", "konzentrieren", "larm", "beeintrachtigung", "berufstatig", "videokonferenzen", "ich arbeite"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Kritisiert Vorankündigung und Arbeitszeiten und macht einen Vorschlag",
+                  "keywords": ["vorankundigung", "zu kurzfristig", "kurzfristig", "ich schlage vor", "konnten die arbeiten", "ruhezeiten", "mittagspause", "samstag", "erst ab", "verlegt"]
+                },
+                {
+                  "id": "p4",
+                  "label": "Nennt eine Frist und schließt höflich",
+                  "keywords": ["bis zum", "innerhalb von", "frist", "antwort", "ich bitte um", "mit freundlichen grussen", "ich danke", "rechtliche schritte", "mietminderung"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

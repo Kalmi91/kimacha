@@ -1,0 +1,356 @@
+{
+  "target": "de",
+  "level": "B2",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "clips_mc",
+          "instruction": "Sie hören fünf kurze Gespräche. Sie hören jedes Gespräch einmal. Zu jedem Gespräch lösen Sie zwei Aufgaben: Sind die Aussagen richtig oder falsch? Und: Wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 1,
+          "clips": [
+            {
+              "audio": [
+                { "speaker": "f", "text": "Hast du schon gesehen? Die Teambesprechung ist von Dienstag auf Mittwoch verschoben worden." },
+                { "speaker": "m", "text": "Ja, die Chefin hat mir gestern eine Nachricht geschickt. Sie ist am Dienstag bei einem Kunden in Stuttgart." },
+                { "speaker": "f", "text": "Dann passt es mir nicht so gut. Ich habe mittwochs einen Zahnarzttermin um halb zehn. Die Besprechung beginnt doch um neun?" },
+                { "speaker": "m", "text": "Um zehn, soweit ich weiß. Dann schaffst du es vielleicht noch, wenn dein Termin nicht lange dauert." },
+                { "speaker": "f", "text": "Hoffentlich. Ich frage in der Praxis, ob ich früher kommen kann. Sonst muss ich später dazustoßen." },
+                { "speaker": "m", "text": "Sag einfach Bescheid, dann schicke ich dir die Unterlagen." }
+              ],
+              "questions": [
+                {
+                  "stem": "Die Teambesprechung findet am Dienstag statt.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Was wird die Frau wahrscheinlich tun?",
+                  "options": ["Die Besprechung absagen.", "Versuchen, ihren Zahnarzttermin auf eine frühere Zeit zu legen.", "Ihre Chefin um einen anderen Termin bitten."],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Guten Tag, hier spricht Brandt aus Wohnung 14. Ich rufe an, weil seit drei Tagen die Heizung in meinem Wohnzimmer nicht richtig funktioniert." },
+                { "speaker": "f", "text": "Guten Tag, Herr Brandt. Hat sich der Hausmeister das schon angesehen?" },
+                { "speaker": "m", "text": "Nein, den habe ich nicht erreicht. Er ist bis Freitag im Urlaub, hat mir der Nachbar gesagt." },
+                { "speaker": "f", "text": "Das stimmt. Ich schicke Ihnen am Donnerstag einen Handwerker vorbei. Sind Sie vormittags zu Hause?" },
+                { "speaker": "m", "text": "Leider nicht, ich arbeite bis 16 Uhr. Aber meine Frau ist da." },
+                { "speaker": "f", "text": "Dann geben Sie ihr bitte meine Nummer, falls etwas ist." }
+              ],
+              "questions": [
+                {
+                  "stem": "Der Hausmeister kann sich sofort um das Problem kümmern.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Wer empfängt den Handwerker?",
+                  "options": ["Der Nachbar.", "Der Hausmeister.", "Die Frau von Herrn Brandt."],
+                  "correct": 2
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Ich habe gute Nachrichten: Ich habe noch Karten für das Konzert am Samstag bekommen!" },
+                { "speaker": "m", "text": "Wirklich? Ich dachte, es wäre längst ausverkauft." },
+                { "speaker": "f", "text": "Das war es auch, aber jemand hat zwei Tickets zurückgegeben. Sie kosten allerdings 60 Euro pro Stück." },
+                { "speaker": "m", "text": "Das ist mehr, als ich ausgeben wollte. Dafür sind die Plätze hoffentlich gut." },
+                { "speaker": "f", "text": "Mitte, achte Reihe. Wenn du nicht willst, frage ich Jana." },
+                { "speaker": "m", "text": "Nein, nein, ich komme mit! Es ist schließlich unsere Lieblingsband. Soll ich dir das Geld gleich überweisen?" },
+                { "speaker": "f", "text": "Das reicht auch nach dem Konzert." }
+              ],
+              "questions": [
+                {
+                  "stem": "Die Karten waren nie ausverkauft.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Wie reagiert der Mann auf den Preis der Karten?",
+                  "options": ["Er findet sie teuer, will sie aber trotzdem haben.", "Er will lieber eine andere Freundin einladen.", "Er bittet um einen niedrigeren Preis."],
+                  "correct": 0
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "f", "text": "Guten Tag, ich hätte gern etwas gegen Halsschmerzen." },
+                { "speaker": "m", "text": "Haben Sie auch Fieber oder Husten?" },
+                { "speaker": "f", "text": "Nein, nur Schmerzen beim Schlucken, seit gestern." },
+                { "speaker": "m", "text": "Dann empfehle ich Ihnen diese Lutschtabletten. Nehmen Sie alle zwei Stunden eine, aber nicht mehr als acht pro Tag. Und trinken Sie viel warmen Tee." },
+                { "speaker": "f", "text": "Muss ich sie zum Essen nehmen?" },
+                { "speaker": "m", "text": "Nein, zwischen den Mahlzeiten. Wenn es in drei Tagen nicht besser ist, gehen Sie bitte zum Arzt." },
+                { "speaker": "f", "text": "Danke, das mache ich." }
+              ],
+              "questions": [
+                {
+                  "stem": "Die Kundin hat Fieber.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Was rät der Apotheker?",
+                  "options": ["Die Tabletten zu den Mahlzeiten zu nehmen.", "Bei ausbleibender Besserung zum Arzt zu gehen.", "So viele Tabletten wie nötig zu nehmen."],
+                  "correct": 1
+                }
+              ]
+            },
+            {
+              "audio": [
+                { "speaker": "m", "text": "Frau Möller, hätten Sie kurz Zeit? Ich bin mit dem Bericht fast fertig, aber bei den Zahlen für das dritte Quartal bin ich unsicher." },
+                { "speaker": "f", "text": "Gern. Haben Sie die Tabelle aus der Buchhaltung bekommen?" },
+                { "speaker": "m", "text": "Ja, aber da stehen zwei verschiedene Summen für den Umsatz in Spanien." },
+                {
+                  "speaker": "f",
+                  "text": "Das passiert öfter. Schicken Sie mir die Datei, ich frage bei Herrn Kaya nach, er kennt sich damit aus. Geben Sie den Bericht bitte trotzdem heute Abend ab, wir korrigieren die Zahl später."
+                },
+                { "speaker": "m", "text": "In Ordnung, ich markiere die Stelle gelb." }
+              ],
+              "questions": [
+                {
+                  "stem": "Der Praktikant hat die Tabelle aus der Buchhaltung nicht erhalten.",
+                  "options": ["richtig", "falsch"],
+                  "correct": 1
+                },
+                {
+                  "stem": "Was soll der Praktikant mit dem Bericht machen?",
+                  "options": ["Ihn erst nach der Klärung abgeben.", "Ihn heute abgeben und die unsichere Zahl markieren.", "Ihn Herrn Kaya zur Korrektur schicken."],
+                  "correct": 1
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören ein Interview mit einer Wissenschaftlerin im Radio. Sie hören das Interview zweimal. Zu den Aufgaben 11 bis 16 wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 2,
+          "audio": [
+            {
+              "speaker": "n",
+              "text": "Willkommen zu „Wissen am Morgen“. Heute spreche ich mit der Schlafforscherin Dr. Katharina Reuter über ein Thema, das viele Familien kennen: Jugendliche und ihr Schlaf. Frau Reuter, warum fällt es Teenagern so schwer, morgens aufzustehen?"
+            },
+            {
+              "speaker": "f",
+              "text": "Das hat nichts mit Faulheit zu tun. In der Pubertät verschiebt sich die innere Uhr des Körpers nach hinten. Jugendliche werden abends später müde und wachen morgens später auf als Kinder oder Erwachsene. Wenn der Unterricht um acht Uhr beginnt, ist ihr Körper noch im Nachtmodus."
+            },
+            { "speaker": "n", "text": "Gibt es Erfahrungen, wie sich das ändern ließe?" },
+            {
+              "speaker": "f",
+              "text": "Ja, an mehreren Schulen wurde der Unterrichtsbeginn versuchsweise auf neun Uhr verschoben. Die Ergebnisse waren eindeutig: Die Schüler waren besser gelaunt, fehlten seltener wegen Krankheit und schliefen im Schnitt fast eine Stunde länger. Ob sich auch die Noten verbessern, lässt sich noch nicht sicher sagen, dafür war der Zeitraum zu kurz."
+            },
+            { "speaker": "n", "text": "Sie sprechen oft vom „sozialen Jetlag“. Was ist damit gemeint?" },
+            {
+              "speaker": "f",
+              "text": "Damit beschreiben wir den Unterschied zwischen den Schlafzeiten unter der Woche und am Wochenende. Viele Jugendliche stehen an Schultagen um sechs auf und schlafen am Sonntag bis Mittag. Für den Körper ist das so, als würde er jede Woche in eine andere Zeitzone reisen. Das macht müde und kann die Konzentration verschlechtern."
+            },
+            { "speaker": "n", "text": "Dann ist Ausschlafen am Wochenende also keine gute Idee?" },
+            {
+              "speaker": "f",
+              "text": "Es hilft kurzfristig, löst das Problem aber nicht, weil es den Rhythmus noch weiter durcheinanderbringt. Besser ist es, auch am Wochenende nicht mehr als ein bis zwei Stunden später aufzustehen."
+            },
+            { "speaker": "n", "text": "Was können Eltern und Jugendliche noch tun?" },
+            {
+              "speaker": "f",
+              "text": "Ein wichtiger Punkt sind die Bildschirme. Das blaue Licht von Handys und Tablets macht den Körper wach. Ich empfehle, spätestens eine Stunde vor dem Schlafengehen alle Geräte wegzulegen und stattdessen zu lesen oder Musik zu hören. Auch Koffein, etwa in Cola oder Energy-Drinks, sollte man nachmittags meiden."
+            },
+            { "speaker": "n", "text": "Und was ist mit dem Mittagsschlaf?" },
+            {
+              "speaker": "f",
+              "text": "Ein kurzes Nickerchen kann sehr erholsam sein, aber nur bis zu zwanzig Minuten. Wer länger schläft, fällt in den Tiefschlaf und fühlt sich danach oft noch müder. Außerdem fällt es dann abends schwerer einzuschlafen."
+            },
+            { "speaker": "n", "text": "Frau Reuter, vielen Dank für das Gespräch." },
+            { "speaker": "f", "text": "Gern geschehen." }
+          ],
+          "questions": [
+            {
+              "stem": "Warum haben Jugendliche Schwierigkeiten, früh aufzustehen?",
+              "options": ["Sie gehen abends zu spät ins Bett.", "Ihre innere Uhr geht später als bei Kindern.", "Sie sind morgens weniger motiviert."],
+              "correct": 1
+            },
+            {
+              "stem": "Was haben die Versuche mit späterem Unterrichtsbeginn gezeigt?",
+              "options": ["Die Schüler fehlten weniger und schliefen länger.", "Die Noten der Schüler wurden deutlich besser.", "Die Eltern waren mit dem Versuch unzufrieden."],
+              "correct": 0
+            },
+            {
+              "stem": "Was bedeutet „sozialer Jetlag“?",
+              "options": ["Die Müdigkeit nach einer weiten Reise.", "Der Unterschied zwischen den Schlafzeiten an Schultagen und am Wochenende.", "Der Schlafmangel durch zu viel Zeit mit Freunden."],
+              "correct": 1
+            },
+            {
+              "stem": "Wie beurteilt Frau Reuter das Ausschlafen am Wochenende?",
+              "options": ["Es ist die beste Lösung für Jugendliche.", "Es hilft nur für kurze Zeit und stört den Rhythmus.", "Es schadet der Gesundheit ernsthaft."],
+              "correct": 1
+            },
+            {
+              "stem": "Was rät sie in Bezug auf Handys und Tablets?",
+              "options": ["Nur noch das Handy abends zu verbieten.", "Abends nur noch Musik über das Gerät zu hören.", "Sie spätestens eine Stunde vor dem Schlafen nicht mehr zu benutzen."],
+              "correct": 2
+            },
+            {
+              "stem": "Was sagt sie zum Mittagsschlaf?",
+              "options": ["Er sollte höchstens zwanzig Minuten dauern.", "Er ist für Jugendliche grundsätzlich ungesund.", "Er sollte möglichst am späten Nachmittag stattfinden."],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören ein Gespräch im Radio mit mehreren Personen. Sie hören das Gespräch einmal. Sie sprechen über das Thema „Mieten oder kaufen?“. Wer sagt das? Wählen Sie für die Aufgaben 17 bis 22: Frau Demir, Herr Kessler oder beide?",
+          "plays": 1,
+          "audio": [
+            {
+              "speaker": "n",
+              "text": "Herzlich willkommen zur Sendung „Stadtgespräch“. Heute geht es um die Frage: Soll man eine Wohnung mieten oder kaufen? Bei mir im Studio sind Frau Demir, Geschäftsführerin eines Mietervereins, und Herr Kessler, der als Immobilienmakler arbeitet. Herr Kessler, fangen wir mit Ihnen an: Warum sollte man kaufen?"
+            },
+            {
+              "speaker": "m",
+              "text": "Weil man mit einer eigenen Wohnung für das Alter vorsorgt. Wer mit sechzig keine Miete mehr zahlen muss, hat eine deutlich höhere Sicherheit. Ich erlebe es täglich: Die Menschen, die früh gekauft haben, sind später froh darüber."
+            },
+            { "speaker": "n", "text": "Frau Demir, Sie sehen das sicher anders." },
+            {
+              "speaker": "f",
+              "text": "Ich sehe das differenzierter. Ein Kauf bindet einen jahrzehntelang an einen Ort und an einen Kredit. Wer seinen Arbeitsplatz wechselt, kann als Mieter einfach umziehen. Als Eigentümer muss man erst verkaufen, und das dauert oft Monate. Außerdem vergessen viele, dass man Rücklagen für Reparaturen bilden muss: ein neues Dach, eine neue Heizung, das geht schnell in die Zehntausende."
+            },
+            { "speaker": "m", "text": "Diese Flexibilität kostet aber auch etwas. Die Mieten steigen seit Jahren, und im Alter zahlt man weiter, ohne dass einem etwas gehört." },
+            {
+              "speaker": "f",
+              "text": "Die steigenden Mieten sind in der Tat ein großes Problem, vor allem für junge Familien, die ohnehin wenig Geld haben. Aber auch der Kauf ist für diese Familien kaum möglich. In vielen Großstädten sind die Preise so hoch, dass man ohne Erbschaft kaum noch etwas findet."
+            },
+            {
+              "speaker": "m",
+              "text": "Da muss ich Ihnen leider zustimmen. In München oder Hamburg kann sich ein normaler Angestellter heute nur noch kleine Wohnungen am Stadtrand leisten. Das ist nicht mehr gesund."
+            },
+            { "speaker": "n", "text": "Was müsste sich denn ändern?" },
+            {
+              "speaker": "f",
+              "text": "Der Staat sollte viel mehr bezahlbare Wohnungen bauen lassen, am besten an Orten mit guter Anbindung. Sonst bleibt den Menschen nur die Wahl zwischen teuer und sehr teuer."
+            },
+            { "speaker": "m", "text": "Da sind wir uns ausnahmsweise einig. Wenn mehr gebaut würde, würden die Preise sinken, und das nützt Mietern und Käufern gleichermaßen." },
+            { "speaker": "n", "text": "Dann sind Sie sich immerhin bei diesem Punkt einig. Herzlichen Dank an Sie beide." }
+          ],
+          "questions": [
+            {
+              "stem": "Eine eigene Wohnung ist eine sichere Vorsorge fürs Alter.",
+              "options": ["Frau Demir", "Herr Kessler", "beide"],
+              "correct": 1
+            },
+            {
+              "stem": "Als Mieter kann man leichter umziehen, wenn man eine neue Arbeit hat.",
+              "options": ["Frau Demir", "Herr Kessler", "beide"],
+              "correct": 0
+            },
+            {
+              "stem": "Wohnungen sind in großen Städten für normale Verdiener kaum noch zu bezahlen.",
+              "options": ["Frau Demir", "Herr Kessler", "beide"],
+              "correct": 2
+            },
+            {
+              "stem": "Steigende Mieten belasten junge Familien besonders stark.",
+              "options": ["Frau Demir", "Herr Kessler", "beide"],
+              "correct": 0
+            },
+            {
+              "stem": "Besitzer einer Wohnung müssen Geld für Reparaturen zurücklegen.",
+              "options": ["Frau Demir", "Herr Kessler", "beide"],
+              "correct": 0
+            },
+            {
+              "stem": "Der Staat sollte dafür sorgen, dass mehr Wohnungen gebaut werden.",
+              "options": ["Frau Demir", "Herr Kessler", "beide"],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören einen Vortrag zum Thema „Wie wir am besten lernen“. Sie hören den Vortrag zweimal. Zu den Aufgaben 23 bis 30 wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 2,
+          "audio": [
+            {
+              "speaker": "f",
+              "text": "Guten Abend, meine Damen und Herren. Ich freue mich, dass so viele von Ihnen gekommen sind. Mein Thema heute lautet: Wie lernt man eigentlich am besten? Die Lernforschung hat in den letzten Jahren einige Methoden untersucht, und das Ergebnis ist überraschend: Viele Techniken, die Schüler und Studenten am häufigsten benutzen, gehören zu den ineffektivsten."
+            },
+            {
+              "speaker": "f",
+              "text": "Das beste Beispiel ist das wiederholte Lesen. Wer einen Text dreimal hintereinander liest, hat anschließend das Gefühl, ihn zu kennen. Dieses Gefühl täuscht. Man erkennt die Wörter wieder, aber man kann sie nicht selbst abrufen. Viel wirksamer ist es, das Buch zuzuklappen und sich selbst zu fragen: Was stand da eigentlich? Das nennen wir aktives Abrufen. Es ist anstrengender, aber nach einer Woche erinnern sich die Teilnehmer in unseren Versuchen deutlich besser."
+            },
+            {
+              "speaker": "f",
+              "text": "Die zweite wichtige Erkenntnis betrifft die Verteilung des Lernens. Wer den ganzen Stoff in einer Nacht vor der Prüfung lernt, vergisst ihn schnell wieder. Besser ist es, an mehreren Tagen kürzere Einheiten einzulegen, mit Wiederholungen in wachsenden Abständen: nach einem Tag, nach drei Tagen, nach einer Woche. So kommt der Stoff ins Langzeitgedächtnis."
+            },
+            {
+              "speaker": "f",
+              "text": "Ein dritter Punkt: Abwechslung. Viele lernen ein Thema, bis sie es perfekt können, und wechseln dann zum nächsten. Besser ist es, Themen zu mischen. Wer in einer Stunde zwischen Mathematik, Vokabeln und Geschichte wechselt, lernt zunächst langsamer, behält aber langfristig mehr. Die Forscher erklären das damit, dass das Gehirn lernen muss, Aufgaben zu unterscheiden, statt nur ein Muster abzuspulen."
+            },
+            {
+              "speaker": "f",
+              "text": "Auch der Schlaf spielt eine Rolle. Im Schlaf ordnet das Gehirn, was wir tagsüber gelernt haben. Studenten, die nach dem Lernen schlafen, schneiden in Tests besser ab als solche, die die ganze Nacht durcharbeiten. Der Kaffee in der Nacht ist also kein Ersatz."
+            },
+            {
+              "speaker": "f",
+              "text": "Und schließlich ein praktischer Tipp: Versuchen Sie, den Stoff anderen zu erklären, am besten jemandem, der sich nicht auskennt. Wenn Sie merken, dass Sie an einer Stelle ins Stocken geraten, wissen Sie genau, was Sie noch nicht verstanden haben. Das ist wertvoller als jede Zusammenfassung."
+            },
+            {
+              "speaker": "f",
+              "text": "Zum Schluss noch eine Bemerkung zu Pausen: Nach etwa fünfundvierzig Minuten lässt die Konzentration nach. Stehen Sie dann kurz auf, gehen Sie ein paar Schritte, und kehren Sie erst dann an den Schreibtisch zurück. Danke für Ihre Aufmerksamkeit, ich beantworte jetzt gern Ihre Fragen."
+            }
+          ],
+          "questions": [
+            {
+              "stem": "Was sagt die Referentin über die häufigsten Lerntechniken?",
+              "options": ["Viele von ihnen sind wenig wirksam.", "Sie wurden bisher kaum untersucht.", "Sie funktionieren nur bei Schülern."],
+              "correct": 0
+            },
+            {
+              "stem": "Warum täuscht das Gefühl nach dem wiederholten Lesen?",
+              "options": ["Man erkennt Wörter wieder, kann sie aber nicht selbst abrufen.", "Man vergisst den Text sofort wieder.", "Man versteht den Inhalt nicht."],
+              "correct": 0
+            },
+            {
+              "stem": "Was bedeutet „aktives Abrufen“?",
+              "options": ["Den Text laut vorzulesen.", "Mit anderen über den Stoff zu diskutieren.", "Sich selbst Fragen zum Gelernten zu stellen."],
+              "correct": 2
+            },
+            {
+              "stem": "Was empfiehlt sie zur Verteilung des Lernens?",
+              "options": ["Den Stoff an mehreren Tagen in Abständen zu wiederholen.", "Den Stoff kurz vor der Prüfung intensiv durchzugehen.", "Jeden Tag genau eine Stunde zu lernen."],
+              "correct": 0
+            },
+            {
+              "stem": "Welchen Vorteil hat es, Themen beim Lernen zu mischen?",
+              "options": ["Man lernt von Anfang an schneller.", "Man behält langfristig mehr, auch wenn man anfangs langsamer ist.", "Man wird weniger müde."],
+              "correct": 1
+            },
+            {
+              "stem": "Was wurde über den Schlaf festgestellt?",
+              "options": ["Man braucht nach dem Lernen mindestens zehn Stunden Schlaf.", "Wer nach dem Lernen schläft, schneidet in Tests besser ab.", "Nächtliches Lernen mit Kaffee ist gleich wirksam."],
+              "correct": 1
+            },
+            {
+              "stem": "Welchen Nutzen hat es, den Stoff jemand anderem zu erklären?",
+              "options": ["Man bekommt eine Zusammenfassung von dem anderen.", "Man lernt, deutlicher zu sprechen.", "Man merkt, welche Stellen man noch nicht verstanden hat."],
+              "correct": 2
+            },
+            {
+              "stem": "Was rät die Referentin zu Pausen?",
+              "options": ["Nach jeder Stunde eine halbe Stunde Pause zu machen.", "Nach etwa 45 Minuten kurz aufzustehen und sich zu bewegen.", "Ohne Pause durchzuarbeiten, bis man müde ist."],
+              "correct": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

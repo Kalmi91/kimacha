@@ -1,0 +1,86 @@
+{
+  "target": "de",
+  "level": "B2",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Sie lesen in einem Internetforum eine Diskussion zum Thema „Vier-Tage-Woche“. Schreiben Sie einen Beitrag von etwa 150 Wörtern. Äußern Sie Ihre Meinung, begründen Sie sie und gehen Sie auf die Beiträge im Forum ein.",
+          "choices": [
+            {
+              "id": "w1",
+              "title": "Beitrag im Forum",
+              "prompt": "Schreiben Sie Ihren Beitrag. Nehmen Sie Stellung zu den Meinungen, nennen Sie Vor- und Nachteile, begründen Sie Ihre eigene Meinung und machen Sie einen Vorschlag.",
+              "input": "Forum „Arbeit und Leben“\nThema: Vier-Tage-Woche bei vollem Gehalt: ein Modell für alle?\nIn einigen Firmen arbeiten die Beschäftigten nur noch vier Tage in der Woche und bekommen trotzdem ihr volles Gehalt. Befürworter sagen, dass die Menschen zufriedener und produktiver sind. Kritiker meinen, dass das nicht in jeder Branche funktioniert.\nSabine: Ich bin dafür! Mit einem freien Tag mehr habe ich Zeit für meine Kinder und bin im Büro viel konzentrierter.\nTom: Das geht nur im Büro. In Krankenhäusern und Geschäften fehlen dann Leute, und alles wird teurer.",
+              "minWords": 150,
+              "maxWords": 190,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Äußert klar die eigene Meinung zur Vier-Tage-Woche",
+                  "keywords": ["meiner meinung nach", "ich bin dafur", "ich bin dagegen", "ich finde", "ich halte", "ich bin der meinung", "ich stimme", "meiner ansicht"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Nennt Vorteile und geht auf einen Beitrag ein",
+                  "keywords": ["vorteil", "erholung", "freizeit", "gesundheit", "weniger stress", "motivation", "familie", "ausgeruht", "mehr zeit"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Nennt Nachteile oder Gegenargumente",
+                  "keywords": ["nachteil", "problem", "nicht uberall", "schichtarbeit", "kosten", "personal", "teurer", "allerdings", "jedoch", "schwierig"]
+                },
+                {
+                  "id": "p4",
+                  "label": "Macht einen Vorschlag oder zieht ein Fazit",
+                  "keywords": ["ich schlage vor", "mein vorschlag", "deshalb sollte", "zusammenfassend", "fazit", "ausprobieren", "testphase", "pilotprojekt", "am ende", "abschliessend"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Sie haben in einem Online-Shop einen Staubsauger bestellt, der defekt angekommen ist. Schreiben Sie an den Kundenservice eine E-Mail von etwa 100 Wörtern. Achten Sie auf Anrede, Gruß und eine höfliche, aber klare Sprache.",
+          "choices": [
+            {
+              "id": "w2",
+              "title": "E-Mail an den Kundenservice",
+              "prompt": "Beschreiben Sie das Problem, sagen Sie, was Sie von der Firma erwarten (Ersatz oder Rückerstattung), und nennen Sie eine Frist.",
+              "input": "Bestellbestätigung\nBestellnummer: 48-2291-07\nArtikel: Staubsauger „CleanPro 800“, Preis: 129 Euro\nLieferung: am 12. März per Paket\nBei Fragen wenden Sie sich an den Kundenservice: service@haushaltwelt.example\nSie haben 14 Tage Zeit, die Ware zurückzusenden. Unser Kundenservice ist von Montag bis Freitag zwischen 8 und 18 Uhr erreichbar. Wenn ein Artikel defekt ist, ersetzen wir ihn nach Rücksprache oder erstatten den Kaufpreis.",
+              "minWords": 100,
+              "maxWords": 130,
+              "points": [
+                {
+                  "id": "p1",
+                  "label": "Verwendet eine formelle Anrede und einen Betreff",
+                  "keywords": ["sehr geehrte damen und herren", "sehr geehrte", "betreff", "guten tag", "sehr geehrter"]
+                },
+                {
+                  "id": "p2",
+                  "label": "Beschreibt das Problem",
+                  "keywords": ["defekt", "funktioniert nicht", "kaputt", "schaltet sich", "geliefert", "angekommen", "saugt nicht", "beschadigt", "motor"]
+                },
+                {
+                  "id": "p3",
+                  "label": "Sagt, was sie erwartet",
+                  "keywords": ["ersatz", "austausch", "ruckerstattung", "erstatten", "geld zuruck", "umtausch", "ich erwarte", "ich bitte", "ich verlange"]
+                },
+                {
+                  "id": "p4",
+                  "label": "Nennt eine Frist und beendet die E-Mail höflich",
+                  "keywords": ["frist", "bis zum", "innerhalb", "tagen", "mit freundlichen grussen", "ich warte", "antwort", "vielen dank"]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "target": "de",
+  "level": "C1",
+  "paper": "listening",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören einen Beitrag aus einem Podcast. Sie hören den Beitrag einmal. Zu den Aufgaben 1 bis 6 wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 1,
+          "audio": [
+            {
+              "speaker": "f",
+              "text": "Herzlich willkommen zu einer neuen Folge von „Kopf an“. Heute geht es um eine Frage, die mir viele von Ihnen geschrieben haben: Warum ist es für Erwachsene so schwer, eine Fremdsprache ohne Akzent zu sprechen? Die gängige Erklärung lautet, wir hätten das Zeitfenster für den Spracherwerb verpasst. Das stimmt nur zum Teil. Tatsächlich gibt es keinen Stichtag, an dem das Gehirn plötzlich aufhört zu lernen. Studien zeigen, dass auch Menschen, die erst mit vierzig anfangen, ihre Aussprache deutlich verbessern können. Entscheidend ist weniger das Alter als die Erfahrung."
+            },
+            {
+              "speaker": "f",
+              "text": "Kinder hören ihre Muttersprache tausende Stunden lang, bevor sie das erste Wort sagen. Erwachsene dagegen fangen meist gleich mit dem Sprechen an und hören vergleichsweise wenig. Dazu kommt, dass wir die Laute unserer Muttersprache so gut kennen, dass wir fremde Laute automatisch in vertraute einsortieren. Ein Spanier, der Deutsch lernt, hört kaum einen Unterschied zwischen „Rate“ und „Ratte“, weil im Spanischen die Länge eines Vokals keine Bedeutung trägt. Das Gehör muss also erst lernen, genauer hinzuhören."
+            },
+            {
+              "speaker": "f",
+              "text": "Die gute Nachricht: Das lässt sich trainieren. Sprachlehrer empfehlen das sogenannte Nachsprechen. Man hört einen kurzen Satz und wiederholt ihn sofort, möglichst mit derselben Melodie und im selben Tempo. Wichtig ist, dass man dabei nicht auf den geschriebenen Text schaut, denn sonst orientiert man sich an der Schrift und nicht am Klang. Fünfzehn Minuten täglich reichen nach Ansicht von Fachleuten aus, wenn man das über Monate durchhält. Wer dagegen nur gelegentlich übt, wird wenig Fortschritte bemerken."
+            },
+            {
+              "speaker": "f",
+              "text": "Und noch etwas zum Schluss: Ein leichter Akzent ist kein Makel. Er zeigt, dass jemand mehr als eine Sprache beherrscht. Viel wichtiger ist, dass man verstanden wird, und dafür sind Betonung und Rhythmus meistens bedeutsamer als einzelne Laute."
+            }
+          ],
+          "questions": [
+            {
+              "stem": "Was sagt die Sprecherin zur verbreiteten Erklärung mit dem Zeitfenster?",
+              "options": ["Sie ist durch neue Studien widerlegt worden.", "Sie trifft nur teilweise zu.", "Sie gilt nur für Menschen über vierzig."],
+              "correct": 1
+            },
+            {
+              "stem": "Was ist für eine gute Aussprache laut den Studien besonders wichtig?",
+              "options": ["Wie viel man die Sprache gehört hat.", "In welchem Alter man mit dem Lernen beginnt.", "Wie früh man mit dem Sprechen anfängt."],
+              "correct": 0
+            },
+            {
+              "stem": "Wodurch unterscheidet sich das Lernen von Kindern und Erwachsenen?",
+              "options": ["Kinder sprechen von Anfang an mehr als Erwachsene.", "Kinder hören sehr lange zu, bevor sie sprechen.", "Erwachsene haben ein schlechteres Gehör für Laute."],
+              "correct": 1
+            },
+            {
+              "stem": "Welches Hörproblem nennt die Sprecherin als Beispiel?",
+              "options": ["Deutsche verwechseln im Spanischen die Laute r und rr.", "Erwachsene können neue Wörter schlecht behalten.", "Spanier überhören im Deutschen den Unterschied zwischen kurzen und langen Vokalen."],
+              "correct": 2
+            },
+            {
+              "stem": "Was ist beim Nachsprechen besonders wichtig?",
+              "options": ["Dass man den Satz nicht mitliest.", "Dass man den Satz zuerst aufschreibt.", "Dass man den Satz langsamer als im Original spricht."],
+              "correct": 0
+            },
+            {
+              "stem": "Wie bewertet die Sprecherin einen leichten Akzent?",
+              "options": ["Er sollte mit Betonungsübungen vermieden werden.", "Er zeigt, dass jemand sich nicht genug Mühe gegeben hat.", "Er ist unproblematisch, solange man gut verstanden wird."],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören ein Radiogespräch mit einem Archäologen. Sie hören das Gespräch zweimal. Zu den Aufgaben 7 bis 15 wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 2,
+          "audio": [
+            {
+              "speaker": "n",
+              "text": "Bei den Bauarbeiten für eine Tiefgarage in der Altstadt von Eschenfurt sind Archäologen auf eine mittelalterliche Siedlung gestoßen. Ich begrüße den Grabungsleiter Dr. Hartmut Lenz. Herr Lenz, wie groß war die Überraschung?"
+            },
+            {
+              "speaker": "m",
+              "text": "Groß, aber nicht völlig unerwartet. Wir wussten aus alten Karten, dass hier im dreizehnten Jahrhundert Handwerker gewohnt haben. Dass die Reste so gut erhalten sind, hat uns allerdings erstaunt. Wir haben die Fundamente von drei Häusern freigelegt, dazu mehr als fünfhundert Scherben von Keramik und einen Brunnen."
+            },
+            { "speaker": "n", "text": "Ein Brunnen ist doch für Archäologen etwas Besonderes?" },
+            {
+              "speaker": "m",
+              "text": "Absolut. Der Boden dort ist nass, und was im Wasser liegt, wird nicht von Sauerstoff zerstört. Deshalb haben wir im Brunnen Holzgeräte gefunden, einen Löffel, einen Eimer und sogar Reste von Leder. Solche Dinge sind in trockener Erde längst vergangen. Sie verraten uns viel über den Alltag der Menschen."
+            },
+            { "speaker": "n", "text": "Gab es auch Überraschungen bei der Ernährung?" },
+            {
+              "speaker": "m",
+              "text": "Ja, in einer alten Abfallgrube haben wir Samen gefunden, darunter Pfefferkörner. Pfeffer musste damals aus Indien eingeführt werden und war sehr teuer. Das zeigt, dass die Bewohner Kontakt zum Fernhandel hatten oder zumindest mehr verdienten, als man bisher von einfachen Handwerkern annahm."
+            },
+            { "speaker": "n", "text": "Wie alt sind die Funde ungefähr?" },
+            {
+              "speaker": "m",
+              "text": "Die meisten stammen aus der Zeit zwischen 1250 und 1350. Danach ist offenbar ein Teil der Siedlung abgebrannt, wir haben eine dicke Ascheschicht gefunden. Ob es ein Unglück oder ein Krieg war, wissen wir noch nicht."
+            },
+            { "speaker": "n", "text": "Die Bauarbeiten mussten für die Grabung unterbrochen werden. Wie ging die Baufirma damit um?" },
+            {
+              "speaker": "m",
+              "text": "Erstaunlich entgegenkommend. Die Arbeiten ruhten sechs Wochen, und die Firma hat einen großen Teil der Kosten übernommen, so wie es das Gesetz vorsieht: Wer baut und dabei Bodendenkmäler gefährdet, zahlt für die Untersuchung. Das ist leider nicht überall so selbstverständlich, wie es klingt."
+            },
+            { "speaker": "n", "text": "Reichte die Zeit?" },
+            {
+              "speaker": "m",
+              "text": "Ehrlich gesagt nicht ganz. Sechs Wochen sind für eine so reiche Fundstelle zu wenig. Ein Teil des Geländes wurde bereits mit Baggern abgetragen, bevor wir ihn gründlich untersuchen konnten. Das schmerzt, denn was einmal zerstört ist, lässt sich nicht wiederherstellen. Aber wir haben alles dokumentiert, was möglich war."
+            },
+            { "speaker": "n", "text": "Was geschieht jetzt mit den Funden?" },
+            {
+              "speaker": "m",
+              "text": "Sie werden gereinigt und restauriert. Ab dem nächsten Frühjahr zeigt das Stadtmuseum eine Auswahl, darunter den Löffel aus dem Brunnen. Ich hoffe, dass die Menschen daran sehen, wie spannend die Geschichte direkt unter ihren Füßen ist."
+            },
+            { "speaker": "n", "text": "Herr Lenz, herzlichen Dank." }
+          ],
+          "questions": [
+            {
+              "stem": "Wie wirkte der Fund auf Dr. Lenz?",
+              "options": ["Dass dort eine Siedlung lag, kam ihm völlig unerwartet.", "Er war enttäuscht, weil nur wenig erhalten war.", "Dass die Reste so gut erhalten waren, überraschte ihn."],
+              "correct": 2
+            },
+            {
+              "stem": "Was wurde bei der Grabung unter anderem freigelegt?",
+              "options": ["Die Mauer einer mittelalterlichen Stadt.", "Die Grundmauern von drei Häusern.", "Mehrere Brunnen."],
+              "correct": 1
+            },
+            {
+              "stem": "Warum sind die Holzgegenstände aus dem Brunnen erhalten geblieben?",
+              "options": ["Der nasse Boden hat sie vor der Zersetzung geschützt.", "Sie wurden damals mit einem besonderen Mittel behandelt.", "Sie lagen tief unter einer Lehmschicht."],
+              "correct": 0
+            },
+            {
+              "stem": "Was schließt Dr. Lenz aus den Pfefferkörnern?",
+              "options": ["In der Siedlung wurde mit Gewürzen gehandelt.", "Die Bewohner hatten Verbindung zum Fernhandel oder mehr Geld als vermutet.", "Pfeffer war im dreizehnten Jahrhundert ein alltägliches Gewürz."],
+              "correct": 1
+            },
+            {
+              "stem": "Wie verhielt sich die Baufirma?",
+              "options": ["Sie war kooperativ und beteiligte sich an den Kosten.", "Sie hat die Grabung wegen der Kosten abgelehnt.", "Sie wollte die Arbeiten nur zwei Wochen unterbrechen."],
+              "correct": 0
+            },
+            {
+              "stem": "Wer muss nach dem Gesetz für die Untersuchung bezahlen?",
+              "options": ["Die Stadt, in der gegraben wird.", "Die Firma, die baut und dabei Bodendenkmäler gefährdet.", "Das Landesmuseum, das die Funde erhält."],
+              "correct": 1
+            },
+            {
+              "stem": "Wie beurteilt Dr. Lenz die zur Verfügung stehende Zeit?",
+              "options": ["Sie war knapp, aber ausreichend.", "Sie war großzügig bemessen.", "Sie war für diese Fundstelle zu kurz."],
+              "correct": 2
+            },
+            {
+              "stem": "Was bedauert er besonders?",
+              "options": ["Dass ein Teil des Geländes abgetragen wurde, bevor man ihn untersuchen konnte.", "Dass viele Funde beim Reinigen beschädigt wurden.", "Dass die Öffentlichkeit sich nicht für die Grabung interessierte."],
+              "correct": 0
+            },
+            {
+              "stem": "Was geschieht mit den Funden?",
+              "options": ["Sie werden dem Landesarchiv übergeben.", "Eine Auswahl wird im nächsten Frühjahr im Museum gezeigt.", "Sie bleiben vorerst im Depot."],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören eine Diskussion im Radio. Sie hören die Diskussion einmal. Zu den Aufgaben 16 bis 23 wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 1,
+          "audio": [
+            {
+              "speaker": "n",
+              "text": "Willkommen bei „Campus-Radio“. Heute diskutieren wir über die Anwesenheitspflicht an Hochschulen. Bei mir sind Professor Weidner, der Soziologie lehrt, und Lara Hoffmann, die im sechsten Semester Biologie studiert. Herr Weidner, in vielen Seminaren müssen die Studierenden anwesend sein. Warum?"
+            },
+            {
+              "speaker": "m",
+              "text": "Weil ein Seminar vom Gespräch lebt. Wenn die Hälfte der Gruppe fehlt, kann man nicht diskutieren, und diejenigen, die kommen, bekommen weniger. Die Pflicht ist für mich kein Ausdruck von Misstrauen, sondern die Voraussetzung dafür, dass die Veranstaltung funktioniert. In meinem eigenen Seminar sind die Gespräche deutlich lebendiger geworden, seit alle regelmäßig kommen."
+            },
+            { "speaker": "n", "text": "Frau Hoffmann, Sie sehen das anders?" },
+            {
+              "speaker": "f",
+              "text": "Zum Teil. Bei Seminaren mit Diskussionen verstehe ich das. Aber in meinem Fach sitze ich oft in Vorlesungen, in denen vorn jemand eine Stunde lang Folien vorliest. Dafür muss ich keine Anwesenheit nachweisen. Hinzu kommt, dass ich dreimal in der Woche arbeite und eine Stunde pendele. Manchmal ist es effektiver, den Stoff zu Hause nachzuarbeiten. Ich gebe zu, dass ich in Seminaren, die mir gefallen, ohnehin selten fehle. Zwang führt eher zu Frust als zu Interesse."
+            },
+            {
+              "speaker": "m",
+              "text": "Bei reinen Vorlesungen bin ich ganz bei Ihnen. Dort halte ich eine Pflicht für unnötig, zumal viele Kollegen ihre Vorlesungen ohnehin aufzeichnen. Es geht mir um Veranstaltungen, in denen man etwas gemeinsam erarbeitet."
+            },
+            {
+              "speaker": "f",
+              "text": "Dann sind wir uns einig. Ich würde mir wünschen, dass die Regelung nach Veranstaltungsart unterschieden wird, statt pauschal für alles zu gelten. Und in Seminaren könnte man statt der Anwesenheit eine aktive Mitarbeit verlangen, zum Beispiel ein kurzes Referat oder schriftliche Fragen."
+            },
+            {
+              "speaker": "m",
+              "text": "Das klingt vernünftig, hat aber einen Haken. Bei dreißig Teilnehmern kann ich die Mitarbeit kaum fair beurteilen, und der Aufwand für die Lehrenden wäre enorm. Die Anwesenheitsliste ist einfach zu führen und vor allem objektiv."
+            },
+            { "speaker": "f", "text": "Dafür sitzen im Raum aber gerade die, die nur körperlich da sind. Wer sich in der letzten Reihe mit dem Telefon beschäftigt, trägt nichts bei." },
+            { "speaker": "n", "text": "Gibt es dann einen Kompromiss?" },
+            {
+              "speaker": "m",
+              "text": "Vielleicht eine begrenzte Zahl erlaubter Fehltermine, sagen wir zwei oder drei pro Semester. Das würde Berufstätigen und Kranken entgegenkommen, ohne dass das Seminar zerfällt."
+            },
+            { "speaker": "f", "text": "Damit könnte ich leben." },
+            { "speaker": "n", "text": "Dann bedanke ich mich bei Ihnen beiden." }
+          ],
+          "questions": [
+            {
+              "stem": "Welches Hauptargument führt Professor Weidner für die Anwesenheitspflicht an?",
+              "options": ["Studierende arbeiten sonst nicht genug.", "Die Hochschule muss die Teilnahme dokumentieren.", "Seminare funktionieren nur mit der Gruppe."],
+              "correct": 2
+            },
+            {
+              "stem": "Wie steht Lara Hoffmann zu Seminaren mit Diskussionen?",
+              "options": ["Sie lehnt jede Anwesenheitspflicht ab.", "Sie versteht die Pflicht dort, hält sie aber nicht überall für nötig.", "Sie findet die Pflicht gerade dort überflüssig."],
+              "correct": 1
+            },
+            {
+              "stem": "Welche Erfahrung schildert Frau Hoffmann?",
+              "options": ["Dozenten zeichnen ihre Seminare auf.", "Es gibt zu wenige Plätze in den Seminaren.", "Manche Vorlesungen bestehen nur im Vorlesen von Folien."],
+              "correct": 2
+            },
+            {
+              "stem": "Warum kommt Frau Hoffmann nicht immer zu den Veranstaltungen?",
+              "options": ["Sie kann den Stoff aus Büchern besser lernen.", "Sie arbeitet neben dem Studium und hat einen langen Weg.", "Sie hat sich für wenige Veranstaltungen angemeldet."],
+              "correct": 1
+            },
+            {
+              "stem": "Worin stimmen die beiden überein?",
+              "options": ["Bei reinen Vorlesungen ist eine Pflicht unnötig.", "Es sollte eine feste Zahl von Fehltagen geben.", "Aufzeichnungen ersetzen Seminare."],
+              "correct": 0
+            },
+            {
+              "stem": "Welche Alternative schlägt Frau Hoffmann vor?",
+              "options": ["Prüfungen statt Teilnahme.", "Aktive Mitarbeit statt Anwesenheit in Seminaren.", "Anwesenheitspflicht nur für Anfänger."],
+              "correct": 1
+            },
+            {
+              "stem": "Was wendet Professor Weidner gegen diesen Vorschlag ein?",
+              "options": ["Studierende würden dann zu wenig lernen.", "Die Mitarbeit ließe sich bei großen Gruppen kaum gerecht beurteilen.", "Die Hochschule habe kein Geld für die Kontrolle."],
+              "correct": 1
+            },
+            {
+              "stem": "Welchen Kompromiss schlägt Professor Weidner am Ende vor?",
+              "options": ["Eine Pflicht, aber nur für Studierende im ersten Jahr.", "Eine Pflicht ohne Anwesenheitsliste.", "Eine kleine Zahl erlaubter Fehltermine pro Semester."],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "listening",
+          "kind": "passage_mc",
+          "instruction": "Sie hören einen Vortrag zum Thema „Wald im Klimawandel“. Sie hören den Vortrag zweimal. Zu den Aufgaben 24 bis 30 wählen Sie die richtige Lösung a, b oder c.",
+          "plays": 2,
+          "audio": [
+            {
+              "speaker": "f",
+              "text": "Sehr geehrte Damen und Herren, wenn Sie heute durch einen deutschen Wald spazieren, sehen Sie vielerorts kahle Flächen mit abgestorbenen Fichten. Ich möchte Ihnen erklären, wie es dazu kam und was die Forstwirtschaft dagegen tut."
+            },
+            {
+              "speaker": "f",
+              "text": "Beginnen wir mit der Geschichte. Nach dem Zweiten Weltkrieg wurde viel Holz gebraucht, und die Fichte war dafür ideal: Sie wächst schnell, ihr Holz ist vielseitig, und sie lässt sich leicht anpflanzen. So entstanden riesige Wälder, in denen fast nur eine Baumart stand. Solche Monokulturen sind aber anfällig. Fichten haben flache Wurzeln und brauchen viel Wasser. In den Trockenjahren der letzten Zeit waren sie geschwächt und konnten sich nicht mehr gegen den Borkenkäfer wehren, der sich in der Rinde einnistet und die Bäume binnen weniger Wochen tötet."
+            },
+            {
+              "speaker": "f",
+              "text": "Die Antwort der Forstleute heißt Waldumbau. Man will gemischte Wälder schaffen, in denen Buche, Eiche, Kiefer und andere Arten nebeneinander stehen. Der Gedanke dahinter ist der gleiche wie bei einer Geldanlage: Wer sein Risiko verteilt, verliert nicht alles, wenn eine Art ausfällt. Dieser Umbau dauert Jahrzehnte, denn Bäume wachsen langsam, und niemand weiß heute genau, welche Arten in siebzig Jahren mit dem Klima zurechtkommen werden."
+            },
+            {
+              "speaker": "f",
+              "text": "Es gibt zwei Wege. Entweder pflanzt man junge Bäume, was mehrere tausend Euro pro Hektar kostet, oder man lässt den Wald sich selbst verjüngen. Diese Naturverjüngung ist billig, und die Bäume wachsen mit besser angepassten Wurzeln heran. Sie funktioniert aber nur, wenn genügend Samenbäume in der Nähe stehen. Auf großen Kahlflächen ist das oft nicht der Fall."
+            },
+            {
+              "speaker": "f",
+              "text": "Ein Problem wird häufig unterschätzt: das Wild. Rehe fressen gern junge Triebe, besonders von Eiche und Tanne. Wenn zu viele Rehe im Wald leben, kommen die jungen Bäume nicht hoch, und alle Mühe war umsonst. Man kann die Pflanzen mit Zäunen schützen, das ist teuer, oder die Zahl der Rehe durch Jagd begrenzen, was oft umstritten ist."
+            },
+            {
+              "speaker": "f",
+              "text": "Mein Fazit: Es gibt keine Patentlösung, und der Wald, den wir in hundert Jahren sehen, wird anders aussehen als der heutige. Entscheidend ist, dass wir heute mit der Vielfalt beginnen. Vielen Dank."
+            }
+          ],
+          "questions": [
+            {
+              "stem": "Warum wurden nach dem Krieg so viele Fichten gepflanzt?",
+              "options": ["Sie wachsen schnell und liefern vielseitiges Holz.", "Sie vertragen Trockenheit besonders gut.", "Sie wurden vom Staat vorgeschrieben."],
+              "correct": 0
+            },
+            {
+              "stem": "Warum sind Fichtenwälder anfällig?",
+              "options": ["Sie stehen meist in zu dichten Beständen.", "Sie bestehen aus einer Baumart mit flachen Wurzeln und hohem Wasserbedarf.", "Ihr Holz ist für den Hausbau zu weich."],
+              "correct": 1
+            },
+            {
+              "stem": "Was bedeutet „Waldumbau“?",
+              "options": ["Aus Monokulturen gemischte Wälder zu machen.", "Kahle Flächen mit Fichten neu zu bepflanzen.", "Bäume durch Zäune zu schützen."],
+              "correct": 0
+            },
+            {
+              "stem": "Wozu dient der Vergleich mit der Geldanlage?",
+              "options": ["Er zeigt, dass der Waldumbau Gewinn bringt.", "Er macht deutlich, wie teuer die Pflanzungen sind.", "Er erklärt, warum man das Risiko auf mehrere Arten verteilt."],
+              "correct": 2
+            },
+            {
+              "stem": "Was spricht für die Naturverjüngung?",
+              "options": ["Sie ist günstig und bringt gut angepasste Bäume hervor.", "Sie funktioniert auch ohne Samenbäume.", "Sie ist schneller als das Pflanzen."],
+              "correct": 0
+            },
+            {
+              "stem": "Welches Problem wird nach Ansicht der Referentin oft unterschätzt?",
+              "options": ["Die Pflanzen finden zu wenig Wasser.", "Es gibt zu wenig Personal für die Pflege.", "Die jungen Triebe werden von Rehen gefressen."],
+              "correct": 2
+            },
+            {
+              "stem": "Was sagt die Referentin zum Schluss über die Zukunft?",
+              "options": ["Es gibt eine Lösung, die nur noch umgesetzt werden muss.", "Der künftige Wald wird anders aussehen, und Vielfalt ist der richtige Anfang.", "Der Wald wird in hundert Jahren wieder so wie früher sein."],
+              "correct": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

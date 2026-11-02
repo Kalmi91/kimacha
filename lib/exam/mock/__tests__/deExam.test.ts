@@ -1,7 +1,7 @@
 // The German practice exam: target de is a MockTarget. A1 / A2 = the speaking paper only, B1-C1 = reading, listening, writing and
 // speaking like the Hungarian direction; the papers are written in German (data/exams/mock/de-*.json) in the structure of the
 // Goethe-Zertifikat modules (Lesen / Hören with 30 items from B1 on, the number of plays of each recording, the Schreiben tasks).
-// A level whose files are missing or empty is "not written yet": it is not offered.
+// All 14 papers are wired; a level whose files are missing or empty would be "not written yet" and is not offered.
 
 import { MOCK_AUTHORED } from '@/data/exams/mock';
 import type { PcicItem } from '@/data/pcic';
@@ -46,12 +46,10 @@ describe('de: levels, papers, names, rule', () => {
 });
 
 describe('de: the entry point is offered once the papers are written', () => {
-  const written = (level: MockLevel) => deFiles.some((f) => f.level === level && f.forms.length > 0);
-
   it('A1 / A2 need an authored speaking form (they are the whole exam); B1-C1 need reading, listening and writing', () => {
     expect(mockAvailable('de', 'A1', [])).toBe(false);
     expect(mockAvailable('de', 'B1', [])).toBe(false);
-    for (const level of ['A1', 'A2', 'B1'] as const) expect(mockAvailable('de', level)).toBe(written(level));
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) expect(mockAvailable('de', level)).toBe(true);
   });
 
   it('not written yet (an empty forms list) = the level is not offered, the exam is empty', () => {
@@ -83,7 +81,7 @@ describe('de: the built exam', () => {
   });
 
   it('the speaking model answers earn every point and the exam is scored by the de rule (the speaking skill alone at A1 / A2)', () => {
-    for (const level of ['A1', 'A2', 'B1'] as const) {
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
       const exam = buildMockExam({ target: 'de', level, items: [], seed: 2 });
       const answers: MockAnswers = {};
       for (const task of exam.papers.find((p) => p.id === 'speaking')!.tasks) {
@@ -123,13 +121,12 @@ describe('de: the glossary of a de exam gives the meaning in the learner languag
 });
 
 describe('de: the shipped papers', () => {
-  const wantedFiles = () => {
-    const levels = [...new Set(deFiles.map((f) => f.level))];
-    return [...(deFiles.length ? ['A1-speaking', 'A2-speaking'] : []), ...levels.filter((l) => l !== 'A1' && l !== 'A2').flatMap((l) => ['reading', 'listening', 'writing', 'speaking'].map((p) => `${l}-${p}`))];
-  };
-
-  it('the wired files are A1 / A2 speaking and four papers for each wired level from B1, one form each', () => {
-    expect(deFiles.map((f) => `${f.level}-${f.paper}`).sort()).toEqual([...wantedFiles()].sort());
+  it('all 14 papers are wired (A1 / A2 speaking, four papers each of B1, B2 and C1), one form each', () => {
+    const wanted = [
+      ...['A1', 'A2'].map((l) => `${l}-speaking`),
+      ...['B1', 'B2', 'C1'].flatMap((l) => ['reading', 'listening', 'writing', 'speaking'].map((p) => `${l}-${p}`)),
+    ];
+    expect(deFiles.map((f) => `${f.level}-${f.paper}`).sort()).toEqual([...wanted].sort());
     for (const f of deFiles) expect(f.forms).toHaveLength(1);
   });
 
@@ -140,9 +137,11 @@ describe('de: the shipped papers', () => {
     }
   });
 
-  it('B1 listening plays the recordings as the Goethe module does: short texts twice, the rest once', () => {
-    const plays = file('B1', 'listening').forms[0].tasks.map((t) => (t as { plays?: number }).plays);
-    expect(plays).toEqual([2, 1, 1, 1]);
+  it('the listening papers play each recording as often as the Goethe module does', () => {
+    const plays = (level: string) => file(level, 'listening').forms[0].tasks.map((t) => (t as { plays?: number }).plays);
+    expect(plays('B1')).toEqual([2, 1, 1, 1]);
+    expect(plays('B2')).toEqual([1, 2, 1, 2]);
+    expect(plays('C1')).toEqual([1, 2, 1, 2]);
   });
 
   it.each(deFiles.map((f) => [`${f.level}-${f.paper}`, f] as const))('%s: no em dash, no Austrian ss-for-ß slips in the instructions, every instruction non-empty and in German', (_name, f) => {

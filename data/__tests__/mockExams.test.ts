@@ -27,7 +27,7 @@ const HU_FILES = [
 // de (German, Goethe-shaped papers): A1 / A2 speaking only, B1-C1 four papers each.
 const DE_FILES = [
   ...['a1', 'a2'].map((level) => `de-${level}-speaking.json`),
-  ...['b1'].flatMap((level) => ['reading', 'listening', 'writing', 'speaking'].map((paper) => `de-${level}-${paper}.json`)),
+  ...['b1', 'b2', 'c1'].flatMap((level) => ['reading', 'listening', 'writing', 'speaking'].map((paper) => `de-${level}-${paper}.json`)),
 ];
 const ALL = [...FILES, ...HU_FILES, ...DE_FILES];
 
@@ -35,7 +35,7 @@ describe('data/exams/mock', () => {
   it('has the 28 es / en paper files (18 B1-C1 papers + 10 speaking papers) and the 14 hu ones and the de ones, one per direction, level and paper', () => {
     expect(FILES).toHaveLength(28);
     expect(HU_FILES).toHaveLength(14);
-    expect(DE_FILES).toHaveLength(6);
+    expect(DE_FILES).toHaveLength(14);
     // photos.json is the photo registry of the speaking papers (S5), not a paper file
     expect(fs.readdirSync(DIR).filter((n) => n.endsWith('.json') && n !== 'photos.json').sort()).toEqual([...ALL].sort());
   });

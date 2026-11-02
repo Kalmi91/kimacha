@@ -1,6 +1,6 @@
 // The authored practice-exam papers (B1-C1, and the speaking paper of every level): the content lives in the JSON files (one
 // per direction, level and paper), this module only wires them up (lib/exam/mock/authored.ts picks a form). An empty `forms`
-// list = not written yet. hu (Hungarian): the A1 / A2 speaking papers and the four papers of B1, B2 and C1 (14 files).
+// list = not written yet. hu (Hungarian) and de (German): the A1 / A2 speaking papers and the four papers of B1, B2 and C1 (14 files each).
 
 import type { AuthoredPaperFile } from '@/lib/exam/mock/types';
 import esB1Reading from './es-b1-reading.json';
@@ -43,6 +43,14 @@ import deB1Reading from './de-b1-reading.json';
 import deB1Listening from './de-b1-listening.json';
 import deB1Writing from './de-b1-writing.json';
 import deB1Speaking from './de-b1-speaking.json';
+import deB2Reading from './de-b2-reading.json';
+import deB2Listening from './de-b2-listening.json';
+import deB2Writing from './de-b2-writing.json';
+import deB2Speaking from './de-b2-speaking.json';
+import deC1Reading from './de-c1-reading.json';
+import deC1Listening from './de-c1-listening.json';
+import deC1Writing from './de-c1-writing.json';
+import deC1Speaking from './de-c1-speaking.json';
 import huB2Reading from './hu-b2-reading.json';
 import huB2Listening from './hu-b2-listening.json';
 import huB2Writing from './hu-b2-writing.json';
@@ -93,6 +101,14 @@ export const MOCK_AUTHORED = [
   deB1Listening,
   deB1Writing,
   deB1Speaking,
+  deB2Reading,
+  deB2Listening,
+  deB2Writing,
+  deB2Speaking,
+  deC1Reading,
+  deC1Listening,
+  deC1Writing,
+  deC1Speaking,
   huB2Reading,
   huB2Listening,
   huB2Writing,
