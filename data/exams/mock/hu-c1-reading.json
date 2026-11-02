@@ -1,0 +1,386 @@
+{
+  "target": "hu",
+  "level": "C1",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Olvassa el a szöveget, majd válaszoljon a kérdésekre. Minden kérdésnél válassza ki a helyes választ.",
+          "title": "A Kertvárosi Közösségi Kertek használati szabályzata",
+          "text": "1. § (Tárgy és hatály) E szabályzat a Kertvárosi Önkormányzat által fenntartott közösségi kertek használatának feltételeit rögzíti. A kertekben az önkormányzat kisebb parcellákat ad bérbe a kerület lakóinak zöldség-, virág- és fűszernövények termesztésére. A bérlet nem jelent tulajdonjogot, ezért a bérlő a területen épületet vagy tartós építményt nem emelhet, a kerítést pedig nem helyezheti át. A parcellák használata önkéntes és nem áll összefüggésben az önkormányzattal fennálló egyéb jogviszonnyal. A kertek nyitvatartását a kertgondnok állapítja meg, az a bejáratnál kifüggesztett táblán olvasható.\n\n2. § (Igénylés) Parcellát az igényelhet, aki nagykorú, és legalább egy éve a kerület állandó lakosa. Az igényeket kizárólag a kert honlapján lehet benyújtani, minden év február 1. és 28. között. Az igényhez csatolni kell a lakcímkártya másolatát. A határidő után érkezett igényt csak akkor vizsgálják meg, ha a határidőig beérkezett igények kielégítése után marad szabad parcella, és a késedelem okáról a kérelmező írásban nyilatkozik. Ha többen jelentkeznek, mint ahány parcella szabad, sorsolás dönt; ilyenkor előnyben részesülnek azok, akiknek az otthonához nem tartozik kert. Aki már bérel parcellát az önkormányzat valamelyik másik kertjében, újabbat nem igényelhet.\n\n3. § (Bérleti díj) A parcella éves díját a képviselő-testület évente állapítja meg. A nyugdíjasok és a három vagy több gyermeket nevelők a díj felét fizetik. A díjat március 31-ig kell befizetni, átutalással vagy a kerületi ügyfélszolgálaton készpénzben. Aki határidőre nem fizet, annak a bérleti szerződése megszűnik, kivéve, ha a késedelmet előre, írásban jelezte, és a kertgondnok azt engedélyezte. A befizetett díj a vízfogyasztást és a közös eszközök használatát is fedezi, így további költséget a bérlőre áthárítani nem lehet.\n\n4. § (A parcella használata) A bérlő köteles a parcellát a szerződéskötéstől számított két héten belül művelésbe venni, és a szezon végéig rendben tartani. A locsolásra a kert közös vízvételi helyei állnak rendelkezésre, aszályos időszakban azonban a kertgondnok korlátozhatja a vízfogyasztást. Vegyszeres növényvédő szert és műtrágyát használni tilos; a kártevők ellen kizárólag természetes módszerek, például a komposzt, a növényi lé vagy a kézi gyomlálás alkalmazhatók. Ha valaki a parcellát egy hónapnál tovább gondozatlanul hagyja, a kertgondnok írásban felszólítja. Amennyiben a felszólítástól számított tizenöt napon belül sem történik változás, az önkormányzat a szerződést felmondhatja. Aki tartósan beteg, vagy hosszabb időre külföldre utazik, ezt előre bejelentheti, és ilyenkor a parcellát az általa megnevezett helyettes gondozhatja.\n\n5. § (Átruházás és albérlet) A parcellát albérletbe adni vagy másnak átengedni tilos. Aki ezt megszegi, azonnal elveszíti a bérleti jogot, és a befizetett díjat sem kapja vissza. Nem minősül átengedésnek, ha a bérlővel közös háztartásban élő családtag is dolgozik a parcellán. A bérlő halála esetén a vele együtt élő házastárs vagy gyermek az adott szezon végéig tovább használhatja a parcellát, utána azonban új igénylést kell benyújtania.\n\n6. § (Közös munka) Minden bérlő évente legalább tíz órát köteles a közös területek, vagyis az ösvények, a komposztáló és a kerítés gondozásával tölteni. A közös munkanapokat a kertgondnok hirdeti meg, legalább két héttel korábban, a szükséges eszközöket pedig az önkormányzat biztosítja. Aki nem tud részt venni, a kieső órákat a szezon végéig pótolhatja; ha ezt nem teszi meg, óránként ötszáz forintot köteles a közös alapba befizetni. A befizetett összegből az önkormányzat szerszámokat és növényeket vásárol, amelyeket minden bérlő használhat.\n\n7. § (Vitás esetek) A bérlők közötti vitákat elsősorban a kertgondnok igyekszik rendezni, a panaszokat pedig jegyzőkönyvbe veszi, amelyet mindkét fél megkap. Ha ez nem vezet eredményre, bármelyik fél a kerület jegyzőjéhez fordulhat, akinek a döntése ellen a Szociális és Környezetvédelmi Bizottságnál lehet fellebbezni, a döntés kézhezvételétől számított nyolc napon belül. A bizottság határozata végleges, ellene további jogorvoslatnak az önkormányzaton belül nincs helye.\n\n8. § (Záró rendelkezések) E szabályzat a kihirdetését követő napon lép hatályba. Hatálybalépésével egyidejűleg a korábbi szabályzat, valamint az azzal ellentétes minden más rendelkezés hatályát veszti. A szabályzat szövege a kertek bejáratánál és az önkormányzat honlapján mindenki számára hozzáférhető.",
+          "questions": [
+            {
+              "stem": "Ki igényelhet parcellát?",
+              "options": [
+                "Bárki, aki a kerületben dolgozik, akkor is, ha egyébként máshol lakik.",
+                "Az a nagykorú személy, aki legalább egy éve a kerületben lakik.",
+                "Csak az, akinek a lakásához nem tartozik saját kert."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Mi a helyzet azzal, aki a határidő lejárta után adja be az igényét?",
+              "options": [
+                "Az igényét csak akkor vizsgálják meg, ha a határidőig beadott igények után is marad szabad parcella.",
+                "Az igényét elutasítják, mert a határidő után benyújtott kérelmet semmilyen esetben sem fogadnak el.",
+                "Az igénye is részt vesz a sorsoláson, de a többiekhez képest kisebb eséllyel."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Mi dönt, ha több az igénylő, mint a szabad parcella?",
+              "options": [
+                "A jelentkezés sorrendje: az kap parcellát, aki hamarabb adta be az igényét.",
+                "A kerületben eltöltött idő: a régebben itt lakók élveznek elsőbbséget.",
+                "A sorsolás, amelynél előnyt élveznek azok, akiknek az otthonához nem tartozik kert."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Mi történik, ha a bérlő március végéig nem fizeti be a díjat?",
+              "options": [
+                "Megszűnik a szerződése, kivéve, ha a késedelmet előre jelezte, és a kertgondnok engedélyezte.",
+                "Késedelmi pótlékot kell fizetnie, de a parcellát megtarthatja.",
+                "Az önkormányzat tizenöt napos határidővel írásban felszólítja a fizetésre."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Melyik eset nem számít a parcella tiltott átengedésének?",
+              "options": [
+                "A bérlő a szezonra díjmentesen átadja a parcellát egy barátjának.",
+                "A bérlő megkéri a szomszédját, hogy a szezonban helyette műveljen, mert nincs ideje.",
+                "A bérlővel egy háztartásban élő családtag is segít a parcella művelésében."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Mit tehet az a bérlő, akinek a vitáját a kertgondnok nem tudta rendezni?",
+              "options": [
+                "A bírósághoz fordulhat, mert a jegyzőnek ezekben az ügyekben nincs hatásköre.",
+                "A jegyzőhöz fordulhat, akinek a döntését nyolc napon belül megfellebbezheti a bizottságnál.",
+                "Közvetlenül a bizottsághoz fordulhat, a jegyzőt megkerülve, bármikor."
+              ],
+              "correct": 1
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "gapped_text",
+          "instruction": "Olvassa el a szöveget, amelyből hat részletet kihagytunk. Válassza ki, melyik részlet illik az egyes helyekre. Egy részletre nincs szükség.",
+          "title": "Az utolsó vonat Szilvásmajorba",
+          "text": "Lázár Gyula negyvenegy éven át volt a szilvásmajori állomás főnöke, és ezalatt, ha rajta múlt, egyetlen vonat sem indult késve. Az állomás egy somogyi mellékvonal végén áll: két vágány, egy sárga épület, egy öreg hársfa, amelyet még Gyula nagyapja ültetett, és egy padlásablak, amelyből egész évben rálátni a szomszéd falu templomtornyára. Amikor tavaly ősszel megérkezett a vasúttársaság levele, Gyula éppen a váróterem ajtaját festette. {{1}} A levél szerint a vonalat a következő menetrendváltással megszüntetik, mert az utasforgalom évek óta csökken, a felújítás pedig többe kerülne, mint amennyit a vonal valaha hozni fog.\n\nA faluban eleinte senki sem hitte el a hírt. A gyerekek, akik hétköznap reggelente ezzel a vonattal jártak a városi iskolába, azt mondták, hogy biztosan tévedés történt. A boltban a pénztáros azt kérdezte, hogyan jutnak majd el a nyugdíjasok az orvoshoz, de erre senki sem tudott válaszolni. Az idősebbek viszont hallgattak, mert ők tudták, milyen üresen jár már ez a szerelvény. {{2}} Gyula mégsem tudott beletörődni, és másnap reggel elővette a régi jegyzetfüzetét.\n\nGyula szerint nem az volt a baj, hogy nincs kinek vonatot indítani, hanem az, hogy senki sem tudta, mire való még a vonal. Ezért először összeszámolta, kik utaznak rajta, és kik nem utaznak, noha szeretnének. Nyolc héten át minden érkező vonatnál ott állt a peronon egy kérdőívvel a kezében. {{3}} A válaszokból kiderült, hogy a környék kisvállalkozói, a kerékpáros turisták és a közeli tó nyaralói közül sokan igénybe vennék a vonatot, ha lenne rajta kerékpárszállítás, és a menetrend illeszkedne a csatlakozásokhoz.\n\nAz eredményeket Gyula a polgármesternek vitte el, aki először csak legyintett. {{4}} Ezért Gyula a következő héten nem a hivatalba ment, hanem a szomszéd falu vendéglőjébe, ahol a környék gazdái és vállalkozói minden szerdán összejöttek, és ahol a hír olyan gyorsan terjedt, hogy az asztalnál ülők fele már a második pohár bor előtt tudta, miről van szó.\n\nOtt derült ki, hogy Gyula nincs egyedül. Egy héten belül megalakult a Szilvásmajori Vasútbarátok Egyesülete, és a tagok közös levélben kértek tárgyalást a vasúttársaságtól. A társaság nem ígért semmit, de végül beleegyezett egy nyári próbaidőszakba, azzal a feltétellel, hogy az egyesület vállalja az állomás karbantartását és a jegyek árusítását. Az egész tavaszt a készülődés töltötte ki: a tagok kifestették a várótermet, kijavították az állomási órát, amely tizenkét éve mutatta ugyanazt az időt, a helyi nyugdíjasok pedig elővették a régi fényképeiket, hogy kiállítást rendezzenek a falak mentén. {{5}} A peronon többen várakoztak, mint amennyien Gyula teljes szolgálati ideje alatt bármikor.\n\nNem mindenki örült az újításnak. Egy közeli ház tulajdonosa azt kifogásolta, hogy a nyári vonat zajos, egy másik lakó pedig attól tartott, hogy a turisták tönkreteszik a falu nyugalmát. Gyula türelmesen meghallgatta őket, majd mindkettőjüket meghívta egy ingyenes vonatútra, amelyről az egyikük elgondolkodva, a másikuk pedig egy kosár szilvával a kezében tért vissza.\n\nMa a szilvásmajori vonat nem hoz nyereséget, de közlekedik. {{6}} Gyula tavasszal ment nyugdíjba, de a napjait most is többnyire az állomáson tölti, a hársfa alatti padon. Az állomás órája azóta is pontosan jár. Ha valaki megkérdezi tőle, nem bánja-e, hogy a nyugdíjas éveit is a vasútnak adja, legyint, és azt feleli, hogy a vonat nem a pénzért indul, hanem azért, hogy legyen, ahová megérkezni.",
+          "fragments": [
+            {
+              "id": "a",
+              "text": "Az igazság az, hogy a reggeli járaton is ritkán ült hatnál több ember, a délutánin pedig, ahogy a kalauz mondogatta, már csak ő és a mozdonyvezető volt a közönség."
+            },
+            {
+              "id": "b",
+              "text": "Június első szombatján a kerékpárszállító kocsival közlekedő próbavonat már az első fordulóján megtelt."
+            },
+            {
+              "id": "c",
+              "text": "A polgármester ugyanis jól tudta, hogy az ilyen döntéseket nem a falvakban hozzák, és nem akart olyan ügyben fáradozni, amelyet eleve elveszettnek tartott."
+            },
+            {
+              "id": "d",
+              "text": "A vasúttársaság később egy második levélben megerősítette, hogy a vonalat mégis megszünteti, az állomásépületet pedig még abban az évben eladja."
+            },
+            {
+              "id": "e",
+              "text": "Elolvasta, majd gondosan összehajtotta, és a kabátja zsebébe dugta, mintha azzal el lehetne halasztani, ami benne áll."
+            },
+            {
+              "id": "f",
+              "text": "Hétvégenként a kerékpáros kocsi rendszerint zsúfolásig tele van, a váróteremben pedig az egyesület tagjai főzik a kávét azoknak, akik a következő vonatra várnak."
+            },
+            {
+              "id": "g",
+              "text": "Volt, aki udvariasan elhárította a kérést, volt, aki negyedóráig mesélte az életét, de a végére a legtöbben kitöltötték a lapot."
+            }
+          ],
+          "answer": {
+            "1": "e",
+            "2": "a",
+            "3": "g",
+            "4": "c",
+            "5": "b",
+            "6": "f"
+          }
+        },
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Olvassa el a szöveget, majd válaszoljon a kérdésekre. Minden kérdésnél válassza ki a helyes választ.",
+          "title": "Hétvégi lakók",
+          "text": "Tavaly nyáron egy zalai faluban jártam, ahol a nagyszüleim háza áll, és megtudtam, hogy a szomszéd porta, Ilonka néni háza gazdát cserélt. A vevő egy budapesti házaspár volt: udvarias, csendes emberek, akik az első héten kicserélték a kerítést, a másodikon bevezettették a vezetékes internetet, a harmadikon pedig elutaztak. Amikor megkérdeztem a szomszédasszonyt, haragszik-e rájuk, vállat vont, és azt felelte, hogy nem tudja, kire kellene.\n\nEz a válasz szerintem sokkal bölcsebb, mint a témáról szóló írások zöme. Kézenfekvő volna ismerős bűnbakot keresni: a pénzes pestit, aki ingatlannak tekinti a falut, a külföldi befektetőt, a bankot, amely olcsó hitelt kínál a másodlakáshoz. Mindegyikük hozzájárul a folyamathoz, ezt tagadni nevetséges volna. Aki azonban megáll ennél a kérdésnél, az összekeveri a tünetet a betegséggel, és olyan indulatokat szít falusiak és városiak között, amelyekből senki sem profitál, legfeljebb az, aki a zűrzavarból él.\n\nA betegség, úgy vélem, más: szó nélkül megegyeztünk abban, hogy a ház mindenekelőtt befektetés, amelynek hoznia kell. Amíg ezt a feltevést nem vitatjuk meg, minden szabály csak lyukas lesz. Senki sem döntötte el, hogy a falvak utcái télen kihaljanak; egyszerűen megtörtént, mert minden egyes döntés külön-külön ésszerű volt. Az idős asszonynak kórházi ápolásra volt szüksége, a vevő jó árat fizetett, a pesti pár pedig csendet és szabadságot keresett. Egyenként senki sem hibás. A falu külseje közben megmarad, sőt, a kerítések újabbak, a virágágyások rendezettebbek, mint valaha, csak a redőnyök mögött nem lakik senki, mintha az egész díszlet volna egy olyan darabhoz, amelyet már nem játszanak.\n\nMégis igazságtalan volna mindezt pusztán a pénzvágyra visszavezetni. Amit egy olyan utcában elveszítünk, ahol a házak fele évente tizenegy hónapig üres, az nem a látvány, hiszen az éppolyan szép marad, mint azelőtt, hanem valami sokkal kevésbé fényképezhető dolog: a szomszéd, aki tudja, ki beteg, a boltos, aki félreteszi a kenyeret annak, aki aznap nem jött el, a gyerek, akit bárki hazakísér, ha eltéved. Ezek a bizalmi hálók egyetlen statisztikában sem szerepelnek, és ha egyszer elszakadtak, egyetlen kampány sem kötözi össze őket újra.\n\nEgyesek a fórumokon jól hangzó, az életben azonban hamar elbukó megoldásokat javasolnak. Keveset segít az a szokás sem, hogy törvényt akkor hozunk, amikor a probléma már a hírekbe került: addigra az adásvételi szerződéseket már aláírták, a szomszédok pedig elköltöztek. A teljes tiltás éppoly valószerűtlen, mint a semmittevés: a hétvégi lakók is a helyi boltban vásárolnak, és adót fizetnek, egy ország pedig, amely a vendégszeretetére büszke, nem zárkózhat el az „eredetiség” nevében, ez a szó ugyanis már maga is csak egy újabb eladható portéka. Ígéretesebbnek tűnik az az elképzelés, hogy a települések házainak meghatározott hányada kötelezően állandó lakóhely maradjon, ahogyan másutt a beépítésnél előírják a zöldterület arányát. Nem zseniális ötlet, de ellenőrizhető, ez pedig nem kevés egy olyan vitában, amelyben az érzések uralkodnak.\n\nA zalai szomszédasszony egyébként az új szomszédokat is megszerette. Mesélte, hogy a pesti asszony a múlt héten becsengetett hozzá, és megkérdezte, nem hozhatna-e neki valamit a boltból. Úgy emlékszik, az elmúlt tíz évben senki sem kérdezte tőle ilyesmit. Talán csak így lehet újraépíteni, amit elvesztettünk: lassan, türelemmel, kampányok nélkül, míg egyszer valaki megint tudni fogja, ki lakik a szomszéd házban.",
+          "questions": [
+            {
+              "stem": "Az elején elmesélt történettel a szerző azt akarja bemutatni, hogy",
+              "options": [
+                "a vevők kihasználták az idős eladó tájékozatlanságát.",
+                "a változás konkrét embereket érint, de nincs benne egyértelműen felelős.",
+                "a falusiak ellenségesen fogadják az újonnan érkezőket."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "A szerző szerint, ha valakit felelősnek kiáltunk ki,",
+              "options": [
+                "azzal segítünk a hatóságoknak, mert így pontosan látják, kit kell megbüntetni.",
+                "azzal azt is kimondjuk, hogy a bankoknak kell viselniük a teljes felelősséget.",
+                "csak a folyamat egy részét magyarázzuk, és falusiakat állítunk szembe városiakkal."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Amikor a szerző a falut egy darab díszletéhez hasonlítja, azt akarja kifejezni, hogy",
+              "options": [
+                "a falu külseje megmarad, de elveszíti a benne zajló mindennapi életet.",
+                "az új tulajdonosok szebbé és drágábbá tették a falu utcáit.",
+                "a falu házait ma már leginkább filmforgatásokra használják."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "A szerző szerint annak, hogy a házak nagy része üresen áll, a legsúlyosabb következménye",
+              "options": [
+                "a falu megszokott látványának romlása, ezért kevesebb turista érkezik.",
+                "a mindennapi bizalmi kapcsolatok eltűnése, amelyeket semmilyen statisztika nem rögzít.",
+                "a zaj és a forgalom növekedése, aminek nyomán gyakoribbak a panaszok."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "A szerző a javaslatot, amely szerint a házak egy részének állandó lakóhelynek kell maradnia,",
+              "options": [
+                "szerénynek tartja, de előnye, hogy betartása ellenőrizhető.",
+                "olyan lépésnek tartja, amely az egész problémát nagyrészt megoldaná.",
+                "éppoly megvalósíthatatlannak ítéli, mint a hétvégi házak teljes tiltását."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "A szomszédasszony történetének befejezése arra utal, hogy",
+              "options": [
+                "az új tulajdonosok megérkezése hosszú távon megoldja a falu gondjait.",
+                "a szomszédasszony még mindig nem bocsátott meg az új szomszédoknak.",
+                "a megromlott közösségi kapcsolatok apró, következetes gesztusokkal építhetők újra."
+              ],
+              "correct": 2
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Olvassa el egy hétvégi zenei fesztivál hat programjának leírását és az utána következő nyolc állítást. Párosítsa az állításokat azzal a programmal, amelyre vonatkoznak. Egy programhoz több állítás is tartozhat.",
+          "prompts": [
+            {
+              "id": "1",
+              "text": "Az előadó szerint az emberek egy hely hangjait hamarabb elfelejtik, mint a kinézetét."
+            },
+            {
+              "id": "2",
+              "text": "A foglalkozás végén a résztvevők hazavihetik azt, amit a foglalkozáson elkészítettek."
+            },
+            {
+              "id": "3",
+              "text": "Az egyik vitapartner azt gondolja, hogy a zenészek bevételeinek elosztása nem fog gyorsan megváltozni."
+            },
+            {
+              "id": "4",
+              "text": "Az előadás olyan dokumentumokon alapul, amelyek eredetileg hivatalos ügyintézés céljából, nem pedig a zenei élet bemutatására készültek."
+            },
+            {
+              "id": "5",
+              "text": "Az előadó úgy véli, hogy a lejegyzett kották nem őrizték meg az énekesek eredeti előadásmódját."
+            },
+            {
+              "id": "6",
+              "text": "A közönség tagjai a saját hangfelvételeikkel is hozzájárulhatnak egy mindenki számára hozzáférhető gyűjteményhez."
+            },
+            {
+              "id": "7",
+              "text": "Aki részt vesz a foglalkozáson, a végén megkapja a közös előadás hangfelvételét."
+            },
+            {
+              "id": "8",
+              "text": "A program végén az előadó néhány dalt élőben is elénekel a hallgatóságnak."
+            }
+          ],
+          "options": [
+            {
+              "id": "A",
+              "title": "Hangtérkép: a város, ahogy hallottuk",
+              "text": "A hangtájképekkel foglalkozó előadó három év terepmunkájának eredményeit mutatja be, amelyet debreceni külvárosokban, alföldi falvakban és Tisza-parti településeken végzett. Fő állítása szerint az emberek egy hely hangjait hamarabb elfelejtik, mint a látványát: a piac zsivaját, a villamos csikorgását vagy a gyárszirénát gyakran már a következő nemzedék sem tudja felidézni. Az előadás közben régi és új felvételeket játszik le, és megmutatja, hogyan készíthető egy utca hangjaiból térkép. Arról is beszámol, milyen nehézségekkel járt a felvételek készítése a zajos, forgalmas helyszíneken. A hallgatóság a saját felvételeit is feltöltheti egy nyilvános hangarchívumba, amely a fesztivál végén mindenki számára elérhetővé válik."
+            },
+            {
+              "id": "B",
+              "title": "A viaszhenger szava",
+              "text": "Az előadó néprajzkutató, aki a huszadik század elején készült, viaszhengeres hangfelvételeket vizsgálta át. Kiindulópontja, hogy a gyűjtők által lejegyzett kották nem adták vissza az énekesek tényleges előadásmódját: a díszítéseket, a lassulásokat és a szabálytalan ritmusokat a lejegyzés kisimította, mert nem fértek bele az akkori kottaírásba. Három dalon mutatja be az eltérést, ugyanazt a dallamot először a hengerről, majd a kottából játszva hallhatjuk. Hozzáteszi, hogy a hengerek állapota gyorsan romlik, ezért a digitalizálásuk sürgős feladat. Az előadás végén a kutató néhány dalt élőben is elénekel, és válaszol a közönség kérdéseire a gyűjtés körülményeiről."
+            },
+            {
+              "id": "C",
+              "title": "Hangszert építünk",
+              "text": "Ez a műhelyfoglalkozás kezdőknek szól, előzetes tapasztalat nélkül is bátran jelentkezhet bárki. A résztvevők irányítással egyszerű húros hangszert készítenek háztartási anyagokból: kartondobozból, fából, gumiszalagokból és horgászzsinórból. A szükséges anyagokat a szervezők biztosítják, de aki szeretné, saját szerszámot is hozhat. A foglalkozás vezetője, egy hangszerkészítő mester, minden lépést bemutat, majd körbejár, és segít annak, akinek nem sikerül valami elsőre. A végén mindenki kipróbálja a saját hangszerét egy közös zenélésben, a kész darabot pedig hazaviheti. Mivel csak húsz fő fér el a teremben, érdemes a fesztivál honlapján jelentkezni, mielőtt betelnek a helyek."
+            },
+            {
+              "id": "D",
+              "title": "Kinek fizet a streaming?",
+              "text": "Ebben a kerekasztal-beszélgetésben négy szakember vitatja meg, hogy a zenei streamingszolgáltatások jövedelmezőbbé tették-e a pályát a fiatal előadók számára. A moderátor előre jelzi, hogy a beszélgetés egyaránt kerüli a lelkes dicséretet és a mindent elutasító kritikát. Egy fiatal énekesnő saját elszámolásai alapján mutatja meg, mennyit keres százezer meghallgatás után, egy jogász pedig a szerzői jogi szabályokat magyarázza. Egy lemezkiadó tulajdonosa kételkedik abban, hogy a bevételek elosztása hamar és gyökeresen megváltozik, mert szerinte a szokások lassabban módosulnak, mint ahogy a jelentések jósolják. A beszélgetést a jelenlévők előre beküldött kérdései is színesítik majd, amelyekre a végén kerül sor."
+            },
+            {
+              "id": "E",
+              "title": "Zene a lépcsőházban",
+              "text": "A történész előadása olyan iratokra épül, amelyeket sosem azért írtak, hogy a zenei életről számot adjanak: panaszlevelekre, házmesteri jelentésekre és társasházi közgyűlések jegyzőkönyveire az 1960-as és 70-es évekből. Ezekből mégis kiderül, kik tanultak zongorázni a lakótelepeken, mikor szólt hangosan a rádió, és mit tartottak a szomszédok elviselhetőnek. A kutató nem csupán felsorolja az eseteket, hanem azt is vizsgálja, hogyan alakította a zenei ízlést a lakótelepi élet. Több eredeti levelet is felolvas, mert a panaszok hangneme gyakran meglepően költői. Az előadást vetítés és hangminták kísérik, a végén pedig közönségtalálkozó következik."
+            },
+            {
+              "id": "F",
+              "title": "Kórus mindenkinek",
+              "text": "Ez a nyílt próba senkitől sem kér előképzettséget, elég hozzá az éneklés kedve. Életkortól függetlenül bárki részt vehet, a gyerekeket is szívesen látják a szüleikkel együtt. A karnagy, aki a város egyik gyerekkórusát is vezeti, fülre tanítja meg a dalokat, kottát nem használ, a résztvevők pedig egyszerű gyakorlatokkal melegítenek be. A foglalkozás utolsó negyedórájában a csoport a kávézó belső udvarán előadja, amit megtanult. Ezt az előadást felvételre veszik, a felvételt pedig minden résztvevő megkapja e-mailben. A szervezők szerint a közös éneklés nemcsak jókedvet ad, hanem a csoporton belüli figyelmet is fejleszti."
+            }
+          ],
+          "answer": {
+            "1": "A",
+            "2": "C",
+            "3": "D",
+            "4": "E",
+            "5": "B",
+            "6": "A",
+            "7": "F",
+            "8": "B"
+          },
+          "unique": false
+        },
+        {
+          "skill": "reading",
+          "kind": "cloze",
+          "instruction": "Olvassa el a szöveget, és egészítse ki a hiányzó részeket. Minden helyre válassza ki a megfelelő megoldást.",
+          "title": "Méhek a háztetőn",
+          "text": "Az utóbbi évtizedben egyre több nagyváros tetején jelentek meg méhkaptárak. Budapesten, Debrecenben és Szegeden is működnek már háztetői kaptárak, többnyire irodaházak és szállodák tetején, ahol a méhek elérik a környék fasorait és parkjait. Ami korábban különcségnek tűnt, az ma már a fenntartható városi élet egyik jelképének {{1}}. A méhek ugyanis a városokban gyakran jobb körülmények között élnek, mint a vegyszerekkel kezelt vidéki földek közelében. A szakemberek szerint hasznosak is, hiszen a beporzásuk gazdagabbá teszi a parkok és a kertek növényvilágát. {{2}}, a városi méhészet nem mentes a vitáktól.\n\nA kaptárak gondozói, {{3}} többsége önkéntes, azt hangsúlyozzák, hogy a méhek nem veszélyesek, {{4}} jellemzően nem támadnak embert. Szerintük a méhek tavasszal és kora nyáron a hársfákról és az akácról gyűjtenek, amelyekből ízletes, világos színű méz készül. A természetvédők viszont attól tartanak, hogy a sok kaptár miatt a vadméhek {{5}} szorulnak a táplálékért folyó versenyben. Egy hazai vizsgálat {{6}} a belvárosi méz minősége nem marad el a vidékiétől, a kutatók azonban hozzáteszik, hogy ez nagyban függ a környék növényeitől.\n\nAhhoz, hogy a méhek egész nyáron életben {{7}}, folyamatosan virágzó növényekre van szükségük. Ha a városi tetők zöldebbek {{8}}, a kaptárak lakói könnyebben találnának táplálékot. A szakértők szerint azt sem szabad elfelejteni, hogy a városi környezet a méhek számára kihívásokat is tartogat, például a légszennyezést és a nyári hőségnapokat. Egy kaptárban akár ötvenezer méh is él, és a szomszédok panaszai miatt több kaptárt is át kellett {{9}} a belvárosból a külső kerületekbe. A tapasztalatok szerint a legtöbb félreértés abból ered, hogy a lakók nem tudják, mit jelent valójában egy méhcsalád jelenléte. A hatóságok {{10}} figyelnek, hogy a kaptárak ne zavarják a lakókat, az önkormányzat pedig az összes eddigi tapasztalatot {{11}} nyilvánosságra hozni, hogy a döntések átláthatóbbak legyenek.\n\nA méz iránti érdeklődés {{12}} nő. Mögötte nemcsak a termék iránti kíváncsiság áll, hanem az is, hogy sokan szeretnének közelebb kerülni a természethez, és a méhészek közül {{13}} sem gondolt arra, hogy abbahagyja. A méhészek ezért gyakran szerveznek nyílt napokat, ahol a környékbeliek megismerhetik a kaptárakat, és megkóstolhatják a friss mézet. A program sikere azonban azon múlik, hogy a lakók {{14}} értik meg a méhek jelenlétének előnyeit.",
+          "gaps": [
+            {
+              "options": [
+                "számít",
+                "számol",
+                "számlál"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "Éppen ezért",
+                "Ennek ellenére",
+                "Tehát"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "akik a",
+                "akiket a",
+                "akiknek a"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "noha",
+                "mivel",
+                "hacsak"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "háttérbe",
+                "hátterében",
+                "háttérből"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "szerinti",
+                "szerinte",
+                "szerint"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "maradnak",
+                "maradjanak",
+                "maradtak"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "lennének",
+                "lesznek",
+                "voltak"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "helyezték",
+                "helyeznek",
+                "helyezni"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "abba",
+                "arra",
+                "azzal"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "tervez",
+                "tervezik",
+                "tervezi"
+              ],
+              "correct": 2
+            },
+            {
+              "options": [
+                "folyamatos",
+                "folyamatosan",
+                "folyamatosabb"
+              ],
+              "correct": 1
+            },
+            {
+              "options": [
+                "senki",
+                "valaki",
+                "semmi"
+              ],
+              "correct": 0
+            },
+            {
+              "options": [
+                "mennyivel",
+                "mennyi",
+                "mennyire"
+              ],
+              "correct": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

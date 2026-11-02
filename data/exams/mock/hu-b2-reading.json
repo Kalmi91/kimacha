@@ -1,0 +1,157 @@
+{
+  "target": "hu",
+  "level": "B2",
+  "paper": "reading",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "reading",
+          "kind": "passage_mc",
+          "instruction": "Olvassa el a szöveget, és válaszoljon a kérdésekre (1-6). Minden kérdésnél jelölje meg a helyes választ.",
+          "title": "Vissza a faluba?",
+          "text": "Néhány éve még különc ötletnek számított, ma már egyre többen megteszik: otthagyják a fővárost, és kisebb településre költöznek. Szabó Dóra és a férje, Gergely sem gondolta, hogy valaha Zala megyében fog élni. Budapesten dolgoztak, egy bérelt ferencvárosi lakásban laktak, és minden hónap végén azt számolgatták, mennyi pénzük marad.\n\nA döntést a távmunka tette lehetővé. Dóra így emlékszik vissza: „Amikor a cégünk bejelentette, hogy hetente csak egyszer kell bemennünk az irodába, hirtelen minden megváltozott. Addig azt hittük, hogy a munka és a lakóhely elválaszthatatlan. Aztán rájöttünk, hogy az egyik nem kell, hogy a másik mellett legyen.” A család egy régi parasztházat vásárolt egy kétszáz lelkes faluban. Abból a pénzből, amelyet Budapesten egy kis lakás hiteltörlesztésére költöttek volna, itt a ház felújítására és egy nagy kertre is futotta.\n\nNem ment minden zökkenőmentesen. Az első télen többször napokig nem volt áram, a legközelebbi orvos pedig tizenkét kilométerre van. Gergely bevallja, hogy eleinte hiányzott neki a város. „Itt egy kávéért is autóba kell ülni. Azt hittem, nem fogom bírni.” A szomszédok azonban hamar befogadták őket. Egy idős házaspár megtanította a családot a veteményeskert gondozására, a polgármester pedig meghívta Gergelyt a helyi egyesületbe, amely a faluház életre keltésén dolgozik.\n\nNem mindenki látja ilyen derűsen a jelenséget. Kovács Péter szociológus, aki a kistelepülések népességének változását kutatja, kettős hatásról beszél. „Egyrészt fiatalok érkeznek, így az iskolát nem zárják be, és az üzlet is megmarad. Másrészt az emelkedő ingatlanárak miatt a helyi fiatalok sokszor nem tudnak otthont venni a saját falujukban.” Hozzáteszi, hogy a betelepülők többnyire jól képzett, jól kereső emberek, akiknek más az életstílusuk, mint a régi lakosoké, és ebből feszültség is adódhat.\n\nA falu vezetése ezért tudatosan próbálja összekapcsolni a két csoportot. Havonta közös főzést szerveznek, a gyerekek pedig ugyanabba az iskolába járnak. „Az a tapasztalatunk, hogy aki megtanulja a szomszédja nevét, az nem megy el egyhamar”, mondja a polgármester. A számok egyelőre őt igazolják: a faluban öt év alatt tizenöt új család telepedett le, és közülük eddig senki sem költözött el.\n\nDóráék közben megszokták az új ritmust. Reggel a kertben dolgoznak, délután ülnek le a számítógép elé, esténként pedig gyakran átmennek a szomszédhoz. Hiányzik a város? „Néha igen, de már nem úgy gondolok rá, mint az otthonomra. Inkább úgy, mint egy helyre, ahová szívesen elmegyek egy hétvégére”, mosolyog Dóra.",
+          "questions": [
+            {
+              "stem": "Mi tette lehetővé, hogy a család Budapestről vidékre költözzön?",
+              "options": [
+                "Dóra új munkahelyet kapott Zala megyében.",
+                "A család egy örökölt házba költözhetett.",
+                "A munkahelyükön már nem kellett naponta bejárniuk."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Mit jelent Dóra mondata: „az egyik nem kell, hogy a másik mellett legyen”?",
+              "options": [
+                "Azt, hogy a munkahelynek nem kell a lakóhely közelében lennie.",
+                "Azt, hogy a család tagjai a jövőben külön fognak élni.",
+                "Azt, hogy a falu nem alkalmas a munkavégzésre."
+              ],
+              "correct": 0
+            },
+            {
+              "stem": "Mit mond Gergely a költözés utáni első időszakról?",
+              "options": [
+                "Azt, hogy a szomszédok eleinte nem fogadták szívesen őket.",
+                "Azt, hogy hiányzott neki a város, és kételkedett abban, hogy kibírja.",
+                "Azt, hogy a téli áramszünetek miatt vissza akartak költözni."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Mit tart problémának Kovács Péter szociológus?",
+              "options": [
+                "Azt, hogy az iskola és az üzlet is bezár a faluban.",
+                "Azt, hogy a falusi fiatalok egymás után a városba költöznek.",
+                "Azt, hogy a helyi fiatalok az emelkedő árak miatt nem tudnak otthont venni."
+              ],
+              "correct": 2
+            },
+            {
+              "stem": "Mit sugall a polgármester mondata: „aki megtanulja a szomszédja nevét, az nem megy el egyhamar”?",
+              "options": [
+                "Azt, hogy az új lakók gyorsan megtanulják a falu történetét.",
+                "Azt, hogy a jó kapcsolatok az emberek helyben maradását segítik.",
+                "Azt, hogy a szomszédok nevét nyilvántartják a hivatalban."
+              ],
+              "correct": 1
+            },
+            {
+              "stem": "Mit érez Dóra a város iránt a cikk végén?",
+              "options": [
+                "Már nem tekinti otthonának, de szívesen meglátogatja.",
+                "Még mindig szeretne oda visszaköltözni.",
+                "Már semmilyen kapcsolata nincs vele."
+              ],
+              "correct": 0
+            }
+          ]
+        },
+        {
+          "skill": "reading",
+          "kind": "match_pool",
+          "instruction": "Olvassa el a négy szöveget és az állításokat (1-10). Párosítsa az állításokat azzal a szöveggel, amelyre vonatkoznak. Egy szöveg többször is lehet a megoldás.",
+          "prompts": [
+            { "id": "1", "text": "Minden programját a járatok indulási idejéhez kell igazítania." },
+            { "id": "2", "text": "Úgy tapasztalja, hogy a rendszeres gyaloglás javított az egészségén." },
+            { "id": "3", "text": "Nem a környezet védelme miatt él autó nélkül." },
+            { "id": "4", "text": "Szerinte néhány kereszteződés veszélyes a kerékpárosok számára." },
+            { "id": "5", "text": "Bosszantja, hogy a járatok gyakran késnek." },
+            { "id": "6", "text": "A fia szeretné, ha autót vásárolna." },
+            { "id": "7", "text": "Nem kell foglalkoznia a karbantartással és a biztosítással." },
+            { "id": "8", "text": "Reggelente gyorsabban jut el a céljához, mint a legtöbb autós." },
+            { "id": "9", "text": "Ha elhagyja a várost, néha bérelt autóval utazik." },
+            { "id": "10", "text": "Ha orvoshoz kell mennie, általában a szomszédja segítségére szorul." }
+          ],
+          "options": [
+            {
+              "id": "a",
+              "title": "Réka, tanár",
+              "text": "Három éve eladtam az autómat, és azóta egyetlen percig sem bántam meg. A lakásom környékén a parkolás havonta tízezer forintba került, a benzinről nem is beszélve. Most BKV-bérlettel járok, és az utazás idején olvasok, amire korábban sosem volt időm. Az orvosom szerint a vérnyomásom is javult a rendszeres gyaloglástól, hiszen a megállóig és vissza minden nap megteszek egy jó kilométert. Persze nem minden tökéletes: a villamosok gyakran késnek, és ez néha nagyon dühít, főleg esőben, a megállóban állva. Ha el akarok jutni a Balatonra vagy vidékre a nagyszüleimhez, hétvégére bérelek egy autót. Ez évente talán négyszer fordul elő, és még így is olcsóbb, mint egy saját kocsi. A kollégáim közül sokan azt hiszik, hogy autó nélkül nehéz élni, pedig szerintem épp ellenkezőleg: sokkal kevesebb a stressz."
+            },
+            {
+              "id": "b",
+              "title": "Márton, grafikus",
+              "text": "Két gyerekem van, és tavaly vettem egy teherbiciklit, amelyen mindkettőjüket el tudom vinni az óvodába. Eleinte mindenki őrültnek tartott, de mára a barátaim is megkérdezik, hol lehet ilyet kapni. Reggel az autósok a dugóban állnak a Nagykörúton, én pedig húsz perc alatt odaérek, vagyis gyorsabb vagyok, mint a legtöbbjük. Télen persze nehezebb: a gyerekeknek meleg ruha kell, és ha esik, bőrig ázunk. A legnagyobb gondot a kereszteződések jelentik. Sok helyen nincs külön kerékpársáv, az autósok pedig nem mindig néznek körül, ezért néha félek. Szerintem a városnak több és biztonságosabb kerékpárútra lenne szüksége, hiszen egyre többen választjuk ezt a közlekedési módot. A feleségemnek van autója, de az is a garázsban áll a hét nagy részében."
+            },
+            {
+              "id": "c",
+              "title": "Ilona néni, nyugdíjas",
+              "text": "A faluban, ahol élek, naponta háromszor jár busz. Az első reggel hatkor indul, az utolsó délután négykor, ezért minden tervemet a buszok indulásához kell igazítanom. Ha a város orvosához megyek, előző nap megbeszélem a szomszéddal, Karcsival, hogy elvigyen, különben nem érnék haza sötétedés előtt. A fiam már többször mondta, hogy vegyek egy kis autót, de nyolcvan évesen már nem akarok volán mögé ülni, és a nyugdíjam sem elég a költségekre. Szeretem, hogy nem kell sietnem: a buszon mindig összefutok valakivel, és tíz perc alatt megtudom a falu összes hírét. Mégis azt kívánom, bárcsak ne lenne a megálló két kilométerre a házamtól. Régebben a férjemmel jártunk a városba, de ő már tíz éve nincs közöttünk. A faluban van bolt és posta is, így a mindennapi ügyeimet el tudom intézni."
+            },
+            {
+              "id": "d",
+              "title": "Dávid, informatikus",
+              "text": "Sosem volt autóm, és nem is hiányzik. A telefonomon van egy alkalmazás, amellyel percek alatt taxit hívhatok, ha tényleg szükségem van rá. A többi napon metróval vagy elektromos rollerrel közlekedem. Aki autót tart, annak a biztosítással, a műszaki vizsgával és a szervizzel is törődnie kell, én ezekről szerencsére soha nem hallok. Az igazat megvallva, nem a környezetvédelem miatt döntöttem így: egyszerűen kényelmes és olcsó. Egy hosszabb kirándulásnál viszont már drága, olyankor inkább vonattal megyek, ha van megfelelő járat. Szerintem a legtöbben azért ragaszkodnak az autóhoz, mert megszokták, nem azért, mert valóban szükségük van rá. A barátaim közül néhányan azt mondják, hogy ez nem lenne nekik való, mert szeretik a függetlenséget. Én viszont azt tapasztalom, hogy autó nélkül is lehet szabadon élni."
+            }
+          ],
+          "answer": { "1": "c", "2": "a", "3": "d", "4": "b", "5": "a", "6": "c", "7": "d", "8": "b", "9": "a", "10": "c" },
+          "unique": false
+        },
+        {
+          "skill": "reading",
+          "kind": "gapped_text",
+          "instruction": "Olvassa el a szöveget, és pótolja a hiányzó részeket (1-6) a megadott mondatokkal (a-h). Két mondatot nem kell felhasználnia.",
+          "title": "A kékfestő, aki nem hagyta kihalni a mesterséget",
+          "text": "Amikor Fekete Éva reggel kinyitja a műhely nehéz faajtaját, az első, amit érez, a kádakból áradó csípős szag. A nagy medencékben a sötétkék festék ugyanúgy hullámzik, mint száz évvel ezelőtt, és ma is természetes alapanyagból készül. {{1}} Aki először lép be a műhelybe, hajlamos azt hinni, hogy időutazásba csöppent, Éva viszont már régen nem veszi észre, milyen furcsának tűnhet mindez a látogatók szemében. A falak mentén hosszú sorokban lógnak a megszáradt vásznak, mintha egy mesebeli zászlóerdő lenne.\n\nA műhelyt az üknagyapja alapította egy veszprémi kisvárosban, és a család négy nemzedéken át kékfestő volt. Éva nagyapja idejében még tucatnyi segéd dolgozott itt, és a környék minden faluja innen vásárolta a szoknyákhoz és kötényekhez való anyagot. {{2}} Mire Éva befejezte az egyetemet, már csak maroknyi ilyen műhely működött az országban. A kisváros főterén ma is áll a régi épület, a bejárata fölött még látszik a család neve.\n\nÉva Budapestre ment közgazdásznak tanulni, és tíz évig egy bank irodájában dolgozott. {{3}} Az apja nem panaszkodott, de a szemében ott volt a félelem, hogy a munka, amelyet egész életében végzett, vele együtt eltűnik. Éva végül úgy döntött, hogy hazamegy. Visszatérése, mint mondja, nem volt nosztalgikus gesztus: kiszámolta, hogy amit a világ elveszíthet, annál sokkal többet ér, mint amennyibe a megmentése kerülne.\n\nElső lépésként megtanult mindent, amit az apja tudott, és közben leírta a minták és a festési eljárás titkait, hogy ne csak egyetlen ember fejében maradjanak meg. {{4}} Ma már négy segéd dolgozik mellette, és minden évben két-három gyakornokot is fogad. Az új tanulók mindegyike tervez egy saját mintát is, így a régi motívumok mellett modern formák is megjelennek a vásznakon. Az egyik tanítvány, egy fiatal lány, először tévedésből lépett be a műhelybe, és azóta sem ment el onnan.\n\nA műhely termékeit kis mennyiségben árulják, és nem véletlenül. {{5}} A kékfestő ruha és terítő ennek ellenére egyre keresettebb: néhány budapesti étterem már saját terítőket rendel, a külföldi turisták pedig szívesen visznek haza egy-egy kendőt emlékbe. A várólista minden szezonban hosszabb.\n\nÉva nem hiszi, hogy a mestersége valaha nagyipari üzemmé nő, és nem is szeretné. {{6}} „Nem azt akarom, hogy divat legyen”, mondja, miközben gondosan lezárja a nagy kád fedelét. „Azt akarom, hogy újra természetes legyen.” A kertben a vásznak lassan száradnak a szélben.",
+          "fragments": [
+            { "id": "a", "text": "Hamarosan a szomszédok is megjelentek, először csak kíváncsiságból, aztán azért, hogy ők is megtanulják a mesterséget." },
+            { "id": "b", "text": "A kádban egy erős vegyszer van, amelytől a vászon néhány perc alatt kék lesz, ezért ehhez semmilyen tudás nem kell." },
+            { "id": "c", "text": "Amikor azonban megjelentek a boltokban az olcsó gyári szövetek, a megrendelések fogyni kezdtek, és a műhelyek sorra bezártak." },
+            { "id": "d", "text": "Neki elég, ha a falubeliek az ünnepeken újra büszkén viselnek kékfestő blúzt és kötényt, ahogyan a nagymamáik tették." },
+            { "id": "e", "text": "A technika lényege, hogy előbb famintával pépet nyomnak a vászonra, ez védi az anyagot, így csak a szabadon hagyott részek lesznek kékek." },
+            { "id": "f", "text": "Egy műhely naponta több száz métert is megfest, ezért az árak nagyon alacsonyak maradhatnak." },
+            { "id": "g", "text": "Valahányszor azonban hazalátogatott, észrevette, hogy a műhely egyre csendesebb, és az apja egyre kevesebb megrendelést kap." },
+            { "id": "h", "text": "Egyetlen terítő elkészítése napokig tart, és minden darab kézzel készül, így a gyári árakkal nem versenyezhet." }
+          ],
+          "answer": { "1": "e", "2": "c", "3": "g", "4": "a", "5": "h", "6": "d" }
+        },
+        {
+          "skill": "reading",
+          "kind": "cloze",
+          "instruction": "Olvassa el a szöveget, és töltse ki a hiányzó helyeket (1-14). Minden helyen válassza ki a helyes megoldást.",
+          "title": "Rubik Ernő, a kocka feltalálója",
+          "text": "Rubik Ernő 1944-ben Budapesten {{1}}, és már gyerekként szenvedélyesen szerette a formákat és a szerkezeteket. Később építészetet tanult, majd az Iparművészeti Főiskola tanára {{2}}, {{3}} a hallgatóinak a háromdimenziós gondolkodást kellett megtanítania. Ezt nem volt könnyű elmagyarázni pusztán a táblánál {{4}}, ezért egyszer úgy döntött, hogy készít egy tárgyat, {{5}} a hallgatók a saját kezükkel megtapasztalhatják a tér szabályait. Hosszú ideje foglalkoztatta, hogyan lehet egy bonyolult térbeli problémát egyszerűen, mégis szemléletesen bemutatni.\n\n1974-ben elkészült az első kocka, amely még fából készült. Kisebb kockákból építette, és úgy kapcsolta össze őket, {{6}} bármelyik oldalt el lehessen forgatni. Amikor összekeverte, rájött, hogy nem tudja visszarakni. Egy hónapba {{7}}, mire megtalálta a megoldást. Ez az élmény adta az ötletet: {{8}} neki ennyi időre volt szüksége, másoknak is örömet szerezhet a feladat. Bár a kocka egyszerűnek látszik, rengeteg különböző állása lehetséges, sokkal több, mint amennyit egy ember egész élete során ki tudna próbálni.\n\nA kockát 1977-ben kezdték {{9}} Magyarországon, Bűvös kocka néven. Eleinte csak kevesen ismerték, {{10}} a hír gyorsan elterjedt. Egy külföldi játékgyártó cég felfigyelt rá, és néhány évvel később már a világ minden táján {{11}}. Azóta több százmillió darabot adtak el {{12}}, a leggyorsabb kirakók pedig ma már néhány másodperc alatt megoldják. Az évek során számos nemzetközi versenyt rendeztek, ahol a résztvevők azon versengenek, ki tudja leggyorsabban kirakni a kockát. A kocka népszerűsége nemcsak a gyerekek körében nőtt: a felnőttek is szívesen töltöttek vele hosszú estéket, és sok családban a nagyszülők, a szülők és az unokák együtt próbálkoztak a megoldással.\n\nRubik Ernő a sikertől nem változott meg. Továbbra is tanított, később más játékokat és tárgyakat is tervezett. Sokak szerint a kocka nem a gazdagságot hozta el neki, {{13}} a szabadságot, hogy azt csinálhassa, {{14}} szeret.\n\nA kocka titka talán az, hogy mindenki azonnal megérti a feladatot: mind a hat oldalnak egyszínűnek kell lennie. Ennek ellenére a megoldás sokaknak napokig, sőt hetekig tart, ezért a sikerélmény óriási.\n\nA kocka ma már több, mint játék: a tanárok a térlátás fejlesztésére használják, a matematikusok pedig a csoportelmélet szemléltetésére. Egyes iskolákban külön szakkört is szerveznek azoknak a diákoknak, akik szívesen foglalkoznak vele. Nem csoda, hogy az első kocka elkészülte után ötven évvel is milliók forgatják a világ minden táján.",
+          "gaps": [
+            { "options": ["született", "szülessen", "születne"], "correct": 0 },
+            { "options": ["lesz", "lett", "legyen"], "correct": 1 },
+            { "options": ["ahová", "ahonnan", "ahol"], "correct": 2 },
+            { "options": ["állva", "áll", "állt"], "correct": 0 },
+            { "options": ["amelyet", "amellyel", "amelynek"], "correct": 1 },
+            { "options": ["mert", "hogy", "ha"], "correct": 1 },
+            { "options": ["tartott", "telt", "múlt"], "correct": 1 },
+            { "options": ["ha", "hogy", "ami"], "correct": 0 },
+            { "options": ["árulva", "árult", "árulni"], "correct": 2 },
+            { "options": ["mert", "de", "ezért"], "correct": 1 },
+            { "options": ["ismerik", "ismerték", "ismernék"], "correct": 1 },
+            { "options": ["tőle", "belőle", "benne"], "correct": 1 },
+            { "options": ["de", "sem", "hanem"], "correct": 2 },
+            { "options": ["ami", "amit", "amiért"], "correct": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

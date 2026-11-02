@@ -1,0 +1,73 @@
+{
+  "target": "hu",
+  "level": "B2",
+  "paper": "writing",
+  "forms": [
+    {
+      "id": "f1",
+      "tasks": [
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Egy rádióhirdetést fog hallani. Kétszer hallhatja, és jegyzetelhet. Ezután írja meg a kért szöveget.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "E-mail a tábor szervezőjének",
+              "prompt": "Ön a rádióban meghallotta a felhívást, és szeretne önkéntes lenni a nyári gyerektáborban. Írjon e-mailt a tábor szervezőjének (150-180 szó), amelyben bemutatkozik, és elmondja, miért érdekli a lehetőség; további információt kér a feladatokról és a beosztásról; felajánlja a segítségét egy konkrét feladatban a képességei szerint; végül elköszön, és megadja az elérhetőségét.",
+              "audio": [
+                { "speaker": "m", "text": "Figyelem, kedves hallgatóink! A Balatonfüredi Ifjúsági Ház ma meghirdeti az önkéntes segítők jelentkezését a nyári gyerektáborba. Ez már a harmadik tábor, amelyet az Ifjúsági Ház szervez. A tábor július elsején kezdődik, két hétig tart, és a Balaton partján, egy erdős táborhelyen lesz." },
+                { "speaker": "m", "text": "A táborban ebben az évben százhúsz gyerek vesz részt, hat és tizennégy év között. A gyerekek Budapestről és a környező falvakból érkeznek. Tizenöt önkéntes segítőt keresünk, akik különböző feladatokat vállalnak. Néhányan sportfoglalkozásokat vezetnek, mások a kézműves műhelyben segítenek, és olyan jelentkezőket is várunk, akik esténként a tábortűz mellett énekelnek vagy mesélnek a gyerekeknek." },
+                { "speaker": "m", "text": "Előzetes tapasztalatra nincs szükség. Csak annyit kérünk, hogy a jelentkező elmúlt tizennyolc éves legyen, és vegyen részt egy tájékoztatón május tizedikén, este hétkor a füredi Ifjúsági Házban. Az önkéntesek ingyen szállást és étkezést kapnak, a tábor végén pedig igazolást is kiállítunk." },
+                { "speaker": "m", "text": "Jelentkezni hétfőtől péntekig, reggel kilenc és délután négy között lehet az Ifjúsági Ház titkárságán, vagy e-mailben, a honlapunkon megadott címen. A helyek száma korlátozott, a jelentkezéseket sorrendben fogadjuk el. Várjuk önöket, hogy együtt tegyük felejthetetlenné a gyerekek nyarát!" }
+              ],
+              "minWords": 150,
+              "maxWords": 180,
+              "points": [
+                { "id": "bemutatkozas", "label": "Bemutatkozik, és elmondja, miért érdekli a lehetőség", "keywords": ["bemutatkoz", "nevem", "tanulok", "dolgozom", "érdekel", "motivál", "szeretnék", "lelkes"] },
+                { "id": "informacio", "label": "Információt kér a feladatokról és a beosztásról", "keywords": ["tájékoz", "információ", "beosztás", "turnus", "feladat", "kérdez", "érdeklőd", "részlet", "időpont"] },
+                { "id": "segitseg", "label": "Felajánlja a segítségét egy konkrét feladatban", "keywords": ["segíte", "segít", "felajánl", "vállal", "tudok", "szívesen", "kézműves", "sport", "énekel", "gitár"] },
+                { "id": "zaras", "label": "Elköszön, és megadja az elérhetőségét", "keywords": ["üdvözlettel", "tisztelettel", "köszön", "elérhető", "telefon", "várom", "válasz", "kapcsolat"] }
+              ]
+            }
+          ]
+        },
+        {
+          "skill": "writing",
+          "kind": "essay",
+          "instruction": "Válasszon a két feladat (A vagy B) közül, és írja meg a kért szöveget.",
+          "choices": [
+            {
+              "id": "a",
+              "title": "A. Cikk egy grafikon alapján",
+              "prompt": "A grafikon adatai alapján írjon cikket (150-180 szó) egy lakossági egyesület hírlevelébe. Mutassa be a legfontosabb változásokat, hasonlítsa össze a két időpontot, és mondjon véleményt a változások lehetséges okairól.",
+              "input": "1. ábra. A magyar háztartások fő nyári pihenésének célpontja (a megkérdezettek százalékában).\n\nBalaton: 38 % 2010-ben és 27 % 2024-ben.\nMás belföldi úti cél: 24 % 2010-ben és 22 % 2024-ben.\nHorvátország: 12 % 2010-ben és 17 % 2024-ben.\nMás európai ország: 14 % 2010-ben és 21 % 2024-ben.\nEurópán kívüli úti cél: 3 % 2010-ben és 6 % 2024-ben.\nNem utazott el sehova: 9 % 2010-ben és 7 % 2024-ben.\n\nForrás: egy turisztikai kutatóintézet felmérése, amelyet mindkét évben májusban, kétezer háztartás megkérdezésével végeztek.\n\nAz intézet megjegyzései. 2010 és 2024 között a balatoni szálláshelyek ára jóval gyorsabban emelkedett, mint a bérek. Ugyanebben az időszakban sok új, olcsó légijárat indult Budapestről és a vidéki repülőterekről európai városokba. Egyre több munkáltató engedi meg a távmunkát, ezért sokan nem egy hétre, hanem két-három hétre utaznak, vagy külföldről dolgoznak egy ideig. Az adatok szerint a harminc év alatti válaszadók harmada külföldre utazott, míg az ötven év felettiek közül kevesebben választanak külföldi utat, és közülük sokan inkább belföldön maradnak. A felmérés azt is mutatta, hogy a családok nagy részénél a nyaralásra szánt összeg az utóbbi években nem nőtt akkora mértékben, mint amennyivel a szolgáltatások ára emelkedett.",
+              "minWords": 150,
+              "maxWords": 180,
+              "points": [
+                { "id": "balaton", "label": "Leírja a Balaton népszerűségének csökkenését", "keywords": ["balaton", "csökken", "visszaesés", "visszaes", "kevesebben", "lecsökkent", "esett"] },
+                { "id": "kulfold", "label": "Kiemeli a külföldi úti célok növekedését", "keywords": ["külföld", "horvát", "európai", "nőtt", "növeked", "emelkedett", "többen", "gyarapod"] },
+                { "id": "osszehasonlitas", "label": "Összehasonlítja a belföldi és más úti célok adatait", "keywords": ["belföld", "összehasonlítva", "ezzel szemben", "ugyanakkor", "viszont", "európán kívül", "nem utazott", "változatlan"] },
+                { "id": "okok", "label": "Megmagyarázza a változások lehetséges okait", "keywords": ["okai", "ezért", "köszönhető", "miatt", "szállás", "légijárat", "repül", "távmunk", "olcsó"] }
+              ]
+            },
+            {
+              "id": "b",
+              "title": "B. Filmkritika egy blogra",
+              "prompt": "Ön most látta a filmet, és úgy dönt, hogy kritikát ír egy filmes blogra. Írjon 150-180 szavas szöveget, amelyben röviden összefoglalja a cselekményt anélkül, hogy elárulná a végét, kifejti a személyes véleményét, és megmondja, kinek ajánlaná a filmet, és miért.",
+              "input": "Moziműsor. „A hídőr”. Dráma, száztizenkét perc. Rendező: Szőke Réka. Szereplők: Bartos Ilona és Lukács Gergely.\n\nTartalom. Márta, a nyugdíjba vonult vasutas évtizedek óta a Tisza melletti hídőrházban él, és gondozza az öreg vashidat. Amikor a megye bejelenti, hogy a hidat lebontják, Márta nem hajlandó elköltözni. Hamarosan megérkezik Ádám, egy fiatal mérnök, akinek az a feladata, hogy előkészítse a bontást. Eleinte vitatkoznak a papírokról és a határidőkről, de lassan megismerik egymás történetét. Márta egy régi fiókból előhoz egy térképet, amely megmutatja, hogy a hídhoz egy egész falu élete kapcsolódik, és Ádám kénytelen újragondolni mindazt, amit a munkájáról hitt.\n\nA filmet természetes fényben, szinte zene nélkül forgatták, és a két főszereplő játékára épül. Egyes kritikusok lassúnak találták, mások az öregedés és az emlékezet őszinte ábrázolásaként védik. A fesztiválon, ahol bemutatták, a közönség percekig állva tapsolt. A rendezőnő ezzel a filmmel debütál, és a forgatást abban a faluban végezte, ahol a nagyszülei éltek. A mellékszerepekben a forgatás helyszínének lakói is feltűnnek, és a film zenéje mindössze egyetlen dal, amely a stáblista alatt hallható.\n\nBemutató: ezen a héten, péntektől az ország mozijaiban.",
+              "minWords": 150,
+              "maxWords": 180,
+              "points": [
+                { "id": "cselekmeny", "label": "Összefoglalja a cselekményt a vége elárulása nélkül", "keywords": ["cselekmény", "történet", "szól", "márta", "ádám", "hidat", "hídőr", "mérnök", "főszereplő"] },
+                { "id": "velemeny", "label": "Kifejti a személyes véleményét", "keywords": ["szerintem", "véleményem", "tetszett", "tetszik", "gondolom", "számomra", "úgy érzem", "meggyőző"] },
+                { "id": "ertekeles", "label": "Konkrét szempontokat értékel (játék, tempó, kép, zene)", "keywords": ["színész", "alakítás", "játék", "tempó", "lassú", "operatőr", "zene", "csend", "fényképezés"] },
+                { "id": "ajanlas", "label": "Konkrét közönségnek ajánlja a filmet", "keywords": ["ajánl", "érdemes", "megnéz", "közönség", "azoknak", "szerető", "nézzék"] }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

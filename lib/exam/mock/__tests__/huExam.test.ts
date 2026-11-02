@@ -1,7 +1,7 @@
 // The Hungarian practice exam (E90): target hu is a MockTarget. A1 / A2 = the speaking paper only, B1-C1 = reading,
 // listening, writing and speaking like the Spanish direction; the papers are written in Hungarian (data/exams/mock/hu-*.json),
-// every hu paper has the task kinds and counts of its Spanish counterpart. The B2 / C1 files are wired when they are written
-// (an empty or missing file is "not written yet": the level is not offered).
+// every hu paper has the task kinds and counts of its Spanish counterpart. All 14 papers are wired (A1 / A2 speaking, B1-C1 four each);
+// an empty or missing file would be "not written yet": the level is not offered.
 
 import { MOCK_AUTHORED } from '@/data/exams/mock';
 import photos from '@/data/exams/mock/photos.json';
@@ -73,10 +73,10 @@ describe('hu: levels, papers, names, rule', () => {
 });
 
 describe('hu: the entry point is offered once the papers are written', () => {
-  it('A1 / A2 need an authored speaking form (they are the whole exam); B1 needs reading, listening and writing', () => {
+  it('A1 / A2 need an authored speaking form (they are the whole exam); B1-C1 need reading, listening and writing; every level is offered', () => {
     expect(mockAvailable('hu', 'A1', [])).toBe(false);
     expect(mockAvailable('hu', 'B1', [])).toBe(false);
-    for (const level of ['A1', 'A2', 'B1'] as const) expect(mockAvailable('hu', level)).toBe(true);
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) expect(mockAvailable('hu', level)).toBe(true);
   });
 
   it('not written yet (an empty forms list) = the level is not offered, the exam is empty', () => {
@@ -109,15 +109,16 @@ describe('hu: the built exam', () => {
     expect(tasks.map((t) => t.kind)).toEqual(es.papers.find((p) => p.id === 'speaking')!.tasks.map((t) => t.kind));
   });
 
-  it('B1: reading, listening, writing and speaking papers with the task counts of the es B1 exam', () => {
-    const hu = buildMockExam({ target: 'hu', level: 'B1', items: [], seed: 5 });
-    const es = buildMockExam({ target: 'es', level: 'B1', items: [], seed: 5 });
+  it.each(['B1', 'B2', 'C1'] as const)('%s: reading, listening, writing and speaking papers with the task counts and kinds of the es exam', (level) => {
+    const hu = buildMockExam({ target: 'hu', level, items: [], seed: 5 });
+    const es = buildMockExam({ target: 'es', level, items: [], seed: 5 });
     expect(hu.papers.map((p) => [p.id, p.tasks.length, p.placeholder])).toEqual(es.papers.map((p) => [p.id, p.tasks.length, p.placeholder]));
+    expect(hu.papers.map((p) => p.tasks.map((t) => t.kind))).toEqual(es.papers.map((p) => p.tasks.map((t) => t.kind)));
     expect(hu.papers.every((p) => p.tasks.length > 0 && p.tasks.every((t, i) => t.instruction.startsWith(`FELADAT ${i + 1}. `)))).toBe(true);
   });
 
   it('the speaking model answers earn every point and the exam is scored by the hu rule (the speaking skill alone at A1 / A2)', () => {
-    for (const level of ['A1', 'A2', 'B1'] as const) {
+    for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
       const exam = buildMockExam({ target: 'hu', level, items: [], seed: 2 });
       const answers: MockAnswers = {};
       for (const task of exam.papers.find((p) => p.id === 'speaking')!.tasks) {
@@ -130,7 +131,7 @@ describe('hu: the built exam', () => {
       expect(speaking.included).toBe(true);
       expect(speaking.correct).toBe(speaking.total);
       expect(speaking.points).toBe(25);
-      if (level !== 'B1') {
+      if (level === 'A1' || level === 'A2') {
         expect(result.rule).toMatchObject({ kind: 'average', pct: 100, passed: true });
         expect(result.passed).toBe(true);
       }
@@ -149,9 +150,13 @@ describe('hu: the glossary of a hu exam gives the meaning in the learner languag
 });
 
 describe('hu: the shipped papers', () => {
-  it('at least the A1 / A2 speaking and the four B1 papers are wired, one form each', () => {
-    const names = huFiles.map((f) => `${f.level}-${f.paper}`);
-    for (const wanted of ['A1-speaking', 'A2-speaking', 'B1-reading', 'B1-listening', 'B1-writing', 'B1-speaking']) expect(names).toContain(wanted);
+  it('all 14 papers are wired (A1 / A2 speaking, four papers each of B1, B2 and C1), one form each', () => {
+    const names = huFiles.map((f) => `${f.level}-${f.paper}`).sort();
+    const wanted = [
+      ...['A1', 'A2'].map((l) => `${l}-speaking`),
+      ...['B1', 'B2', 'C1'].flatMap((l) => ['reading', 'listening', 'writing', 'speaking'].map((p) => `${l}-${p}`)),
+    ];
+    expect(names).toEqual([...wanted].sort());
     for (const f of huFiles) expect(f.forms.length).toBeGreaterThanOrEqual(1);
   });
 
