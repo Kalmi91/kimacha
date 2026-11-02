@@ -1,0 +1,1007 @@
+{
+  "schema": 2,
+  "topic": "mittelfeld-tekamolo",
+  "level": "B1",
+  "title": {
+    "en": "Word order in the middle of the sentence",
+    "es": "Orden de las palabras en el medio de la frase"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "A German main clause has a frame: the conjugated verb stands in position 2, and the rest of the verb (participle, infinitive, separable prefix) stands at the end. Between the two lies the Mittelfeld, where subject, objects and adverbs go. There is a neutral order for it: pronouns first, then time, reason, manner, place (te-ka-mo-lo): Ich fahre morgen wegen der Arbeit mit dem Zug nach Berlin. English puts the place before the time (to Berlin tomorrow), and German does not.",
+        "es": "Una oración principal alemana tiene un marco: el verbo conjugado está en la posición 2, y el resto del verbo (participio, infinitivo, prefijo separable) está al final. Entre los dos queda el Mittelfeld, donde van el sujeto, los complementos y los adverbios. Hay un orden neutro para él: primero los pronombres, luego tiempo, causa, modo, lugar (te-ka-mo-lo): Ich fahre morgen wegen der Arbeit mit dem Zug nach Berlin. El inglés pone el lugar antes del tiempo (to Berlin tomorrow), y el alemán no."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "objekte-reihenfolge",
+      "title": {
+        "en": "The order of two objects",
+        "es": "El orden de dos complementos"
+      },
+      "header": [
+        {
+          "en": "Objects",
+          "es": "Complementos"
+        },
+        {
+          "en": "zwei Nomen",
+          "es": "zwei Nomen"
+        },
+        {
+          "en": "zwei Pronomen",
+          "es": "zwei Pronomen"
+        }
+      ],
+      "rows": [
+        [
+          "das Buch + der Mann",
+          "dem Mann das Buch",
+          "es ihm"
+        ],
+        [
+          "die Tasche + die Frau",
+          "der Frau die Tasche",
+          "sie ihr"
+        ],
+        [
+          "das Auto + das Kind",
+          "dem Kind das Auto",
+          "es ihm"
+        ],
+        [
+          "der Brief + die Lehrerin",
+          "der Lehrerin den Brief",
+          "ihn ihr"
+        ],
+        [
+          "die Blumen + die Mutter",
+          "der Mutter die Blumen",
+          "sie ihr"
+        ],
+        [
+          "der Kaffee + die Freunde",
+          "den Freunden den Kaffee",
+          "ihn ihnen"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "tekamolo-fragen",
+      "title": {
+        "en": "te-ka-mo-lo: the four types of adverbials",
+        "es": "te-ka-mo-lo: los cuatro tipos de complementos circunstanciales"
+      },
+      "header": [
+        {
+          "en": "Type",
+          "es": "Tipo"
+        },
+        {
+          "en": "Frage",
+          "es": "Frage"
+        },
+        {
+          "en": "Beispiel",
+          "es": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "temporal",
+          "wann",
+          "morgen"
+        ],
+        [
+          "kausal",
+          "warum",
+          "wegen der Arbeit"
+        ],
+        [
+          "modal",
+          "wie",
+          "mit dem Zug"
+        ],
+        [
+          "lokal",
+          "wo",
+          "nach Berlin"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "satzfeld",
+      "title": {
+        "en": "The sentence frame",
+        "es": "El marco de la oración"
+      },
+      "header": [
+        {
+          "en": "Position 1",
+          "es": "Posición 1"
+        },
+        {
+          "en": "Position 2",
+          "es": "Posición 2"
+        },
+        {
+          "en": "Middle field",
+          "es": "Campo medio"
+        },
+        {
+          "en": "End",
+          "es": "Final"
+        }
+      ],
+      "rows": [
+        [
+          "Ich",
+          "habe",
+          "ihn gestern",
+          "gesehen."
+        ],
+        [
+          "Wir",
+          "haben",
+          "heute im Park Fußball",
+          "gespielt."
+        ],
+        [
+          "Ich",
+          "rufe",
+          "dich morgen",
+          "an."
+        ],
+        [
+          "Morgen",
+          "kann",
+          "ich nach Berlin",
+          "fahren."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The neutral order in the Mittelfeld",
+        "es": "El orden neutro en el Mittelfeld"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Pronouns come first. Then time (wann?), reason (warum?), manner (wie?), place (wo? wohin?). If you know the question words wann, warum, wie, wo, you know the order.",
+            "es": "Primero van los pronombres. Después tiempo (¿cuándo?), causa (¿por qué?), modo (¿cómo?), lugar (¿dónde? ¿adónde?). Si conoces las palabras interrogativas wann, warum, wie, wo, conoces el orden."
+          },
+          "examples": [
+            {
+              "es": "Ich fahre morgen mit dem Zug nach Berlin.",
+              "tr": {
+                "en": "I am going to Berlin by train tomorrow.",
+                "es": "Voy a Berlín en tren mañana."
+              }
+            },
+            {
+              "es": "Ich bleibe heute wegen der Kälte zu Hause.",
+              "tr": {
+                "en": "I am staying at home today because of the cold.",
+                "es": "Hoy me quedo en casa por el frío."
+              }
+            },
+            {
+              "es": "Er kommt wegen des Regens mit dem Bus nach Hause.",
+              "tr": {
+                "en": "He comes home by bus because of the rain.",
+                "es": "Viene a casa en autobús por la lluvia."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With two objects, a dative noun usually stands before an accusative noun. A pronoun stands before a noun. Two pronouns: accusative first, dative second (es ihm).",
+            "es": "Con dos complementos, un sustantivo en dativo suele ir antes de un sustantivo en acusativo. Un pronombre va antes de un sustantivo. Dos pronombres: primero el acusativo, después el dativo (es ihm)."
+          },
+          "examples": [
+            {
+              "es": "Ich gebe dem Mann das Buch.",
+              "tr": {
+                "en": "I give the man the book.",
+                "es": "Le doy el libro al hombre."
+              }
+            },
+            {
+              "es": "Ich gebe ihm das Buch.",
+              "tr": {
+                "en": "I give him the book.",
+                "es": "Le doy el libro."
+              }
+            },
+            {
+              "es": "Ich gebe es ihm.",
+              "tr": {
+                "en": "I give it to him.",
+                "es": "Se lo doy."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "nicht negates the whole sentence at the end (Ich kaufe das Auto nicht). If a place or a second verb part follows, nicht stands before it (Ich fahre nicht nach Berlin).",
+            "es": "nicht niega toda la oración al final (Ich kaufe das Auto nicht). Si sigue un lugar o una segunda parte del verbo, nicht va antes (Ich fahre nicht nach Berlin)."
+          },
+          "examples": [
+            {
+              "es": "Ich kaufe das Auto nicht.",
+              "tr": {
+                "en": "I am not buying the car.",
+                "es": "No compro el carro."
+              }
+            },
+            {
+              "es": "Ich fahre nicht nach Berlin.",
+              "tr": {
+                "en": "I am not going to Berlin.",
+                "es": "No voy a Berlín."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Neutral order or emphasis",
+        "es": "Orden neutro o énfasis"
+      },
+      "pairs": [
+        {
+          "a": "Ich habe ihn gestern gesehen.",
+          "b": "Gestern habe ich ihn gesehen.",
+          "note": {
+            "en": "Any element can move to position 1 to stress it. The verb stays in position 2, and the subject moves behind it. The order of the rest of the Mittelfeld stays the same.",
+            "es": "Cualquier elemento puede pasar a la posición 1 para destacarlo. El verbo se queda en la posición 2, y el sujeto pasa detrás. El orden del resto del Mittelfeld no cambia."
+          },
+          "examples": [
+            {
+              "es": "Morgen fahre ich nach Berlin.",
+              "tr": {
+                "en": "Tomorrow I am going to Berlin.",
+                "es": "Mañana voy a Berlín."
+              }
+            },
+            {
+              "es": "Mit dem Zug fahre ich nach Berlin.",
+              "tr": {
+                "en": "I am going to Berlin by train.",
+                "es": "Voy a Berlín en tren."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: time comes before place (not Ich fahre nach Berlin morgen). The pronoun comes before the noun and before time: Ich habe ihn gestern gesehen, not gestern ihn. Two pronouns: accusative before dative (Ich gebe es ihm). The participle or the infinitive stays at the very end: Wir haben heute im Park Fußball gespielt. A separable prefix goes to the end too: Ich rufe dich morgen an. nicht goes before a place and at the end of a short sentence. When an element stands in position 1, the verb is still second.",
+        "es": "Trampas clásicas: el tiempo va antes del lugar (no Ich fahre nach Berlin morgen). El pronombre va antes del sustantivo y antes del tiempo: Ich habe ihn gestern gesehen, no gestern ihn. Dos pronombres: acusativo antes del dativo (Ich gebe es ihm). El participio o el infinitivo se queda al final del todo: Wir haben heute im Park Fußball gespielt. Un prefijo separable también va al final: Ich rufe dich morgen an. nicht va antes de un lugar y al final de una oración corta. Cuando un elemento está en la posición 1, el verbo sigue siendo el segundo."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In the middle of the sentence the order is: first the pronouns, then time, reason, manner and place. «Ich fahre morgen wegen der Arbeit mit dem Zug nach Berlin.» The participle or the infinitive stands at the very end: «Wir haben heute im Park Fußball gespielt.» A pronoun comes before a noun: «Ich habe ihn gestern gesehen.» With two pronouns the accusative comes first: «Ich gebe es ihm.»",
+    "es": "En el medio de la oración el orden es: primero los pronombres, luego tiempo, causa, modo y lugar. «Ich fahre morgen wegen der Arbeit mit dem Zug nach Berlin.» El participio o el infinitivo va al final del todo: «Wir haben heute im Park Fußball gespielt.» Un pronombre va antes de un sustantivo: «Ich habe ihn gestern gesehen.» Con dos pronombres va primero el acusativo: «Ich gebe es ihm.»"
+  },
+  "items": [
+    {
+      "id": "mittelfeld-tekamolo-c01",
+      "sentence": "Ich fahre morgen ___.",
+      "options": [
+        "nach Berlin mit dem Zug",
+        "mit dem Zug nach Berlin",
+        "mit dem Zug in Berlin"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Manner comes before place: mit dem Zug (modal) then nach Berlin (local).",
+        "es": "El modo va antes del lugar: mit dem Zug (modal) y luego nach Berlin (local)."
+      },
+      "wrong": {
+        "nach Berlin mit dem Zug": {
+          "en": "This puts the place before the manner, the English order. In German the manner comes first.",
+          "es": "Esto pone el lugar antes del modo, el orden del inglés. En alemán va primero el modo."
+        },
+        "mit dem Zug in Berlin": {
+          "en": "in Berlin answers where you are. With a trip you need the direction nach Berlin.",
+          "es": "in Berlin responde dónde estás. Con un viaje necesitas la dirección nach Berlin."
+        }
+      },
+      "examples": [
+        "Ich fahre heute mit dem Bus nach Hause.",
+        "Wir fliegen morgen mit dem Flugzeug nach Wien."
+      ],
+      "tr": {
+        "en": "Tomorrow I am going to Berlin by train.",
+        "es": "Mañana voy a Berlín en tren."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f01",
+      "kind": "form",
+      "verb": "zwei Nomen",
+      "person": "das Buch + der Mann",
+      "answer": "dem Mann das Buch",
+      "table": "objekte-reihenfolge"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c02",
+      "sentence": "Anna arbeitet ___.",
+      "options": [
+        "heute im Büro",
+        "im Büro heute",
+        "im heute Büro"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Time comes before place: heute (temporal) then im Büro (local).",
+        "es": "El tiempo va antes del lugar: heute (temporal) y luego im Büro (local)."
+      },
+      "wrong": {
+        "im Büro heute": {
+          "en": "This puts the place before the time. In the neutral German order the time stands first.",
+          "es": "Esto pone el lugar antes del tiempo. En el orden neutro del alemán va primero el tiempo."
+        },
+        "im heute Büro": {
+          "en": "This splits the phrase im Büro. A preposition and its noun always stay together.",
+          "es": "Esto parte la frase im Büro. Una preposición y su sustantivo siempre van juntas."
+        }
+      },
+      "examples": [
+        "Paul schläft heute zu Hause.",
+        "Wir essen jetzt im Garten."
+      ],
+      "tr": {
+        "en": "Anna is working in the office today.",
+        "es": "Anna trabaja hoy en la oficina."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f02",
+      "kind": "form",
+      "verb": "Frage",
+      "person": "temporal",
+      "answer": "wann",
+      "table": "tekamolo-fragen"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c03",
+      "sentence": "Ich bleibe ___ zu Hause.",
+      "options": [
+        "wegen der Kälte heute",
+        "wegen heute der Kälte",
+        "heute wegen der Kälte"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Time comes before reason: heute (temporal) then wegen der Kälte (kausal).",
+        "es": "El tiempo va antes de la causa: heute (temporal) y luego wegen der Kälte (kausal)."
+      },
+      "wrong": {
+        "wegen der Kälte heute": {
+          "en": "This puts the reason before the time. The neutral order is time first, then reason.",
+          "es": "Esto pone la causa antes del tiempo. El orden neutro es primero el tiempo y luego la causa."
+        },
+        "wegen heute der Kälte": {
+          "en": "This splits the phrase wegen der Kälte. A preposition and its noun phrase stay together.",
+          "es": "Esto parte la frase wegen der Kälte. Una preposición y su grupo nominal van juntos."
+        }
+      },
+      "examples": [
+        "Ich komme morgen wegen der Arbeit.",
+        "Sie bleibt heute wegen der Prüfung hier."
+      ],
+      "tr": {
+        "en": "Today I am staying at home because of the cold.",
+        "es": "Hoy me quedo en casa por el frío."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f03",
+      "kind": "form",
+      "verb": "zwei Pronomen",
+      "person": "das Buch + der Mann",
+      "answer": "es ihm",
+      "table": "objekte-reihenfolge"
+    },
+    {
+      "id": "mittelfeld-tekamolo-w01",
+      "kind": "why",
+      "es": "Ich fahre morgen mit dem Zug nach Berlin.",
+      "target": "morgen",
+      "tr": {
+        "en": "I am going to Berlin by train tomorrow.",
+        "es": "Voy a Berlín en tren mañana."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "morgen comes last, because the place is the most important information",
+            "es": "morgen va al final, porque el lugar es la información más importante"
+          },
+          "wrong": {
+            "en": "In the neutral order the time is the first adverbial. The place comes last, as the information that is new.",
+            "es": "En el orden neutro el tiempo es el primer complemento circunstancial. El lugar va al final, como la información nueva."
+          }
+        },
+        {
+          "text": {
+            "en": "morgen is free: any order works, as in Hungarian",
+            "es": "morgen es libre: cualquier orden funciona, como en húngaro"
+          },
+          "wrong": {
+            "en": "German has a neutral order: time, reason, manner, place. Other orders exist, but they put a focus on one element.",
+            "es": "El alemán tiene un orden neutro: tiempo, causa, modo, lugar. Existen otros órdenes, pero ponen el foco en un elemento."
+          }
+        },
+        {
+          "text": {
+            "en": "morgen comes first of the adverbials: time before manner before place",
+            "es": "morgen va primero entre los complementos circunstanciales: tiempo antes de modo antes de lugar"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "mittelfeld-tekamolo-c04",
+      "sentence": "Er kommt ___ nach Hause.",
+      "options": [
+        "wegen des Regens mit dem Bus",
+        "mit dem Bus wegen des Regens",
+        "wegen mit dem Bus des Regens"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Reason comes before manner: wegen des Regens (kausal) then mit dem Bus (modal).",
+        "es": "La causa va antes del modo: wegen des Regens (kausal) y luego mit dem Bus (modal)."
+      },
+      "wrong": {
+        "mit dem Bus wegen des Regens": {
+          "en": "This puts the manner before the reason. In the neutral order the reason comes first.",
+          "es": "Esto pone el modo antes de la causa. En el orden neutro va primero la causa."
+        },
+        "wegen mit dem Bus des Regens": {
+          "en": "This mixes the two phrases. Each prepositional phrase has to stay in one piece.",
+          "es": "Esto mezcla las dos frases. Cada frase con preposición tiene que quedar en una pieza."
+        }
+      },
+      "examples": [
+        "Sie fährt wegen der Arbeit mit dem Zug.",
+        "Wir bleiben wegen des Wetters im Haus."
+      ],
+      "tr": {
+        "en": "He comes home by bus because of the rain.",
+        "es": "Viene a casa en autobús por la lluvia."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f04",
+      "kind": "form",
+      "verb": "Frage",
+      "person": "kausal",
+      "answer": "warum",
+      "table": "tekamolo-fragen"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c05",
+      "sentence": "Ich gebe ___.",
+      "options": [
+        "ihm es",
+        "es ihm",
+        "ihm das"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With two pronouns, the accusative comes first and the dative second: es ihm.",
+        "es": "Con dos pronombres, el acusativo va primero y el dativo después: es ihm."
+      },
+      "wrong": {
+        "ihm es": {
+          "en": "ihm es puts the dative first, the order for two nouns. Two pronouns go the other way round.",
+          "es": "ihm es pone primero el dativo, el orden para dos sustantivos. Dos pronombres van al revés."
+        },
+        "ihm das": {
+          "en": "ihm das mixes a pronoun with an article that has no noun. The sentence needs two pronouns.",
+          "es": "ihm das mezcla un pronombre con un artículo que no tiene sustantivo. La oración necesita dos pronombres."
+        }
+      },
+      "examples": [
+        "Ich zeige es dir.",
+        "Ich schicke ihn ihr."
+      ],
+      "tr": {
+        "en": "I give it to him.",
+        "es": "Se lo doy."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f05",
+      "kind": "form",
+      "verb": "zwei Nomen",
+      "person": "die Tasche + die Frau",
+      "answer": "der Frau die Tasche",
+      "table": "objekte-reihenfolge"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c06",
+      "sentence": "Ich gebe ___ das Buch.",
+      "options": [
+        "es",
+        "dem",
+        "ihm"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The man is replaced by the dative pronoun ihm, which stands before the noun das Buch.",
+        "es": "El hombre se reemplaza por el pronombre en dativo ihm, que va antes del sustantivo das Buch."
+      },
+      "wrong": {
+        "es": {
+          "en": "es would replace das Buch, which is already named later in the sentence. The gap stands for the man.",
+          "es": "es reemplazaría a das Buch, que ya se nombra después en la oración. El hueco representa al hombre."
+        },
+        "dem": {
+          "en": "dem is an article and needs a noun after it. Here the pronoun ihm is needed.",
+          "es": "dem es un artículo y necesita un sustantivo detrás. Aquí se necesita el pronombre ihm."
+        }
+      },
+      "examples": [
+        "Ich zeige ihr das Foto.",
+        "Ich bringe ihm den Kaffee."
+      ],
+      "tr": {
+        "en": "I give him the book.",
+        "es": "Le doy el libro."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f06",
+      "kind": "form",
+      "verb": "Frage",
+      "person": "modal",
+      "answer": "wie",
+      "table": "tekamolo-fragen"
+    },
+    {
+      "id": "mittelfeld-tekamolo-w02",
+      "kind": "why",
+      "es": "Ich gebe es ihm.",
+      "target": "es",
+      "tr": {
+        "en": "I give it to him.",
+        "es": "Se lo doy."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "es stands first, because with two pronouns the accusative comes before the dative",
+            "es": "es va primero, porque con dos pronombres el acusativo va antes del dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "ihm es would be right: the dative always comes first",
+            "es": "ihm es sería correcto: el dativo va siempre primero"
+          },
+          "wrong": {
+            "en": "The dative first is the rule for two nouns. With two pronouns the order reverses: es ihm.",
+            "es": "El dativo primero es la regla para dos sustantivos. Con dos pronombres el orden se invierte: es ihm."
+          }
+        },
+        {
+          "text": {
+            "en": "es stands first because it is neuter",
+            "es": "es va primero porque es neutro"
+          },
+          "wrong": {
+            "en": "The gender does not matter. The accusative pronoun comes first, also for ihn (ihn ihr) and sie (sie ihr).",
+            "es": "El género no importa. El pronombre en acusativo va primero, también con ihn (ihn ihr) y sie (sie ihr)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "mittelfeld-tekamolo-c07",
+      "sentence": "Ich gebe ___ dem Kind.",
+      "options": [
+        "es",
+        "ihm",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The accusative pronoun es replaces the thing and stands before the dative noun: es dem Kind.",
+        "es": "El pronombre en acusativo es reemplaza la cosa y va antes del sustantivo en dativo: es dem Kind."
+      },
+      "wrong": {
+        "ihm": {
+          "en": "ihm would name the child a second time, because dem Kind is already in the sentence.",
+          "es": "ihm nombraría al niño por segunda vez, porque dem Kind ya está en la oración."
+        },
+        "dem": {
+          "en": "dem is an article. It needs a noun, and dem Kind already follows in the sentence.",
+          "es": "dem es un artículo. Necesita un sustantivo, y dem Kind ya sigue en la oración."
+        }
+      },
+      "examples": [
+        "Ich gebe es der Mutter.",
+        "Ich zeige ihn dem Lehrer."
+      ],
+      "tr": {
+        "en": "I give it to the child.",
+        "es": "Se lo doy al niño."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f07",
+      "kind": "form",
+      "verb": "zwei Pronomen",
+      "person": "die Tasche + die Frau",
+      "answer": "sie ihr",
+      "table": "objekte-reihenfolge"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c08",
+      "sentence": "Ich kaufe das Auto ___.",
+      "options": [
+        "kein",
+        "nicht",
+        "nichts"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The whole sentence is negated, so nicht stands at the end: Ich kaufe das Auto nicht.",
+        "es": "Se niega toda la oración, así que nicht va al final: Ich kaufe das Auto nicht."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein negates a noun with an indefinite article or no article. das Auto has a definite article.",
+          "es": "kein niega un sustantivo con artículo indefinido o sin artículo. das Auto lleva artículo definido."
+        },
+        "nichts": {
+          "en": "nichts means nothing and is a noun-like word. It cannot negate the verb phrase.",
+          "es": "nichts significa nada y es una palabra parecida a un sustantivo. No puede negar el grupo verbal."
+        }
+      },
+      "examples": [
+        "Ich sehe den Film nicht.",
+        "Er kennt das Buch nicht."
+      ],
+      "tr": {
+        "en": "I am not buying the car.",
+        "es": "No compro el carro."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f08",
+      "kind": "form",
+      "verb": "Frage",
+      "person": "lokal",
+      "answer": "wo",
+      "accept": [
+        "wohin"
+      ],
+      "table": "tekamolo-fragen"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c09",
+      "sentence": "Ich fahre ___ nach Berlin.",
+      "options": [
+        "nichts",
+        "kein",
+        "nicht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nicht stands before the place when the place completes the sentence: Ich fahre nicht nach Berlin.",
+        "es": "nicht va antes del lugar cuando el lugar completa la oración: Ich fahre nicht nach Berlin."
+      },
+      "wrong": {
+        "nichts": {
+          "en": "nichts means nothing. It does not negate a trip to Berlin.",
+          "es": "nichts significa nada. No niega un viaje a Berlín."
+        },
+        "kein": {
+          "en": "kein belongs before a noun. nach Berlin is a place, so the negation needs nicht.",
+          "es": "kein va antes de un sustantivo. nach Berlin es un lugar, así que la negación necesita nicht."
+        }
+      },
+      "examples": [
+        "Er geht nicht ins Kino.",
+        "Wir wohnen nicht in Köln."
+      ],
+      "tr": {
+        "en": "I am not going to Berlin.",
+        "es": "No voy a Berlín."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f09",
+      "kind": "form",
+      "verb": "zwei Nomen",
+      "person": "der Brief + die Lehrerin",
+      "answer": "der Lehrerin den Brief",
+      "table": "objekte-reihenfolge"
+    },
+    {
+      "id": "mittelfeld-tekamolo-w03",
+      "kind": "why",
+      "es": "Ich habe ihn gestern gesehen.",
+      "target": "ihn",
+      "tr": {
+        "en": "I saw him yesterday.",
+        "es": "Lo vi ayer."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "ihn comes after gestern, because time always stands first",
+            "es": "ihn va después de gestern, porque el tiempo va siempre primero"
+          },
+          "wrong": {
+            "en": "Pronouns stand before everything else in the Mittelfeld, also before time words.",
+            "es": "Los pronombres van antes de todo lo demás en el Mittelfeld, también antes de las palabras de tiempo."
+          }
+        },
+        {
+          "text": {
+            "en": "ihn stands first in the Mittelfeld: a pronoun comes before the time",
+            "es": "ihn va primero en el Mittelfeld: un pronombre va antes del tiempo"
+          }
+        },
+        {
+          "text": {
+            "en": "ihn stands at the end, because the accusative goes last",
+            "es": "ihn va al final, porque el acusativo va al final"
+          },
+          "wrong": {
+            "en": "The case does not decide the position. The participle gesehen stands at the end, and the pronoun at the start of the middle field.",
+            "es": "El caso no decide la posición. El participio gesehen va al final, y el pronombre al principio del campo medio."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "mittelfeld-tekamolo-c10",
+      "sentence": "Morgen ___ nach Berlin.",
+      "options": [
+        "fahre ich",
+        "ich fahre",
+        "fahre"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Morgen fills position 1, so the verb stays in position 2 and the subject follows: fahre ich.",
+        "es": "Morgen ocupa la posición 1, así que el verbo se queda en la posición 2 y el sujeto sigue: fahre ich."
+      },
+      "wrong": {
+        "ich fahre": {
+          "en": "ich fahre would put the verb in position 3. After a first element the verb must come second.",
+          "es": "ich fahre pondría el verbo en la posición 3. Después de un primer elemento el verbo debe ir segundo."
+        },
+        "fahre": {
+          "en": "fahre alone has no subject. The sentence needs ich after the verb.",
+          "es": "fahre solo no tiene sujeto. La oración necesita ich después del verbo."
+        }
+      },
+      "examples": [
+        "Heute bleibe ich zu Hause.",
+        "Am Montag arbeite ich nicht."
+      ],
+      "tr": {
+        "en": "Tomorrow I am going to Berlin.",
+        "es": "Mañana voy a Berlín."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f10",
+      "kind": "form",
+      "verb": "zwei Pronomen",
+      "person": "der Brief + die Lehrerin",
+      "answer": "ihn ihr",
+      "table": "objekte-reihenfolge"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c11",
+      "sentence": "Ich habe ___ gesehen.",
+      "options": [
+        "gestern ihn",
+        "ihn gestern",
+        "den gestern Mann"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A pronoun stands first in the Mittelfeld, before the time: ihn gestern.",
+        "es": "Un pronombre va primero en el Mittelfeld, antes del tiempo: ihn gestern."
+      },
+      "wrong": {
+        "gestern ihn": {
+          "en": "gestern ihn puts the time before the pronoun. Pronouns come before nouns and time words.",
+          "es": "gestern ihn pone el tiempo antes del pronombre. Los pronombres van antes de los sustantivos y las palabras de tiempo."
+        },
+        "den gestern Mann": {
+          "en": "This separates the article den from its noun Mann. An article and its noun stay together.",
+          "es": "Esto separa el artículo den de su sustantivo Mann. Un artículo y su sustantivo van juntos."
+        }
+      },
+      "examples": [
+        "Ich habe sie heute gesehen.",
+        "Er hat es gestern gekauft."
+      ],
+      "tr": {
+        "en": "I saw him yesterday.",
+        "es": "Lo vi ayer."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f11",
+      "kind": "form",
+      "verb": "zwei Nomen",
+      "person": "das Auto + das Kind",
+      "answer": "dem Kind das Auto",
+      "table": "objekte-reihenfolge"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c12",
+      "sentence": "Wir haben heute im Park ___.",
+      "options": [
+        "gespielt Fußball",
+        "Fußball spielen",
+        "Fußball gespielt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The object comes first and the participle stands at the very end: Fußball gespielt.",
+        "es": "El complemento va primero y el participio queda al final del todo: Fußball gespielt."
+      },
+      "wrong": {
+        "gespielt Fußball": {
+          "en": "This puts the participle before the object. The participle must close the verb frame at the end.",
+          "es": "Esto pone el participio antes del complemento. El participio debe cerrar el marco verbal al final."
+        },
+        "Fußball spielen": {
+          "en": "spielen is the infinitive. The Perfekt with haben needs the participle gespielt.",
+          "es": "spielen es el infinitivo. El Perfekt con haben necesita el participio gespielt."
+        }
+      },
+      "examples": [
+        "Wir haben gestern im Garten gegessen.",
+        "Ich habe heute Brot gekauft."
+      ],
+      "tr": {
+        "en": "We played soccer in the park today.",
+        "es": "Hoy jugamos fútbol en el parque."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-f12",
+      "kind": "form",
+      "verb": "zwei Pronomen",
+      "person": "der Kaffee + die Freunde",
+      "answer": "ihn ihnen",
+      "table": "objekte-reihenfolge"
+    },
+    {
+      "id": "mittelfeld-tekamolo-c13",
+      "sentence": "Ich rufe dich morgen ___.",
+      "options": [
+        "an",
+        "anrufe",
+        "anzurufen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The separable prefix an goes to the very end of the main clause: Ich rufe dich morgen an.",
+        "es": "El prefijo separable an va al final del todo de la oración principal: Ich rufe dich morgen an."
+      },
+      "wrong": {
+        "anrufe": {
+          "en": "anrufe is the whole verb in one piece, which belongs in a subordinate clause. In a main clause it splits.",
+          "es": "anrufe es el verbo entero en una pieza, lo que pertenece a una oración subordinada. En una principal se separa."
+        },
+        "anzurufen": {
+          "en": "anzurufen is the infinitive with zu. It is not used here, because ich rufe is already conjugated.",
+          "es": "anzurufen es el infinitivo con zu. No se usa aquí, porque ich rufe ya está conjugado."
+        }
+      },
+      "examples": [
+        "Ich stehe morgen früh auf.",
+        "Wir holen dich heute ab."
+      ],
+      "tr": {
+        "en": "I will call you tomorrow.",
+        "es": "Te llamo mañana."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-c14",
+      "sentence": "Ich fahre ___ nach Berlin.",
+      "options": [
+        "mit dem Zug wegen der Arbeit morgen",
+        "wegen der Arbeit morgen mit dem Zug",
+        "morgen wegen der Arbeit mit dem Zug"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The full neutral order is time, reason, manner, place: morgen, wegen der Arbeit, mit dem Zug, nach Berlin.",
+        "es": "El orden neutro completo es tiempo, causa, modo, lugar: morgen, wegen der Arbeit, mit dem Zug, nach Berlin."
+      },
+      "wrong": {
+        "mit dem Zug wegen der Arbeit morgen": {
+          "en": "This reverses the order: manner, reason, time. The neutral order starts with the time.",
+          "es": "Esto invierte el orden: modo, causa, tiempo. El orden neutro empieza con el tiempo."
+        },
+        "wegen der Arbeit morgen mit dem Zug": {
+          "en": "The reason stands before the time here. The neutral order is time first, then reason.",
+          "es": "Aquí la causa va antes del tiempo. El orden neutro es primero el tiempo y luego la causa."
+        }
+      },
+      "examples": [
+        "Sie fliegt heute wegen der Konferenz mit dem Flugzeug nach Wien.",
+        "Er kommt morgen wegen des Wetters mit dem Bus nach Hause."
+      ],
+      "tr": {
+        "en": "Tomorrow I am going to Berlin by train because of work.",
+        "es": "Mañana voy a Berlín en tren por el trabajo."
+      }
+    },
+    {
+      "id": "mittelfeld-tekamolo-w04",
+      "kind": "why",
+      "es": "Morgen fahre ich nach Berlin.",
+      "target": "fahre",
+      "tr": {
+        "en": "Tomorrow I am going to Berlin.",
+        "es": "Mañana voy a Berlín."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "fahre stays in position 2, and the subject ich follows it",
+            "es": "fahre se queda en la posición 2, y el sujeto ich le sigue"
+          }
+        },
+        {
+          "text": {
+            "en": "fahre moves to the end, because Morgen starts the sentence",
+            "es": "fahre pasa al final, porque Morgen inicia la oración"
+          },
+          "wrong": {
+            "en": "The verb goes to the end only in subordinate clauses. In a main clause with another first element it stays second.",
+            "es": "El verbo va al final solo en las oraciones subordinadas. En una oración principal con otro primer elemento se queda segundo."
+          }
+        },
+        {
+          "text": {
+            "en": "the subject must come first, so it should be ich fahre",
+            "es": "el sujeto debe ir primero, así que debería ser ich fahre"
+          },
+          "wrong": {
+            "en": "The subject can stand behind the verb. Only the verb is fixed in position 2, any element can take position 1.",
+            "es": "El sujeto puede ir detrás del verbo. Solo el verbo está fijo en la posición 2, cualquier elemento puede ocupar la posición 1."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
