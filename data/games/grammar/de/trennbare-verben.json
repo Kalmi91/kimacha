@@ -1,0 +1,1129 @@
+{
+  "schema": 2,
+  "topic": "trennbare-verben",
+  "level": "A1",
+  "title": {
+    "en": "Separable verbs",
+    "es": "Verbos separables"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Many German verbs have a prefix that splits off in the present tense: aufstehen (get up), anrufen (call), einkaufen (shop). The conjugated verb stands in second position and the prefix goes to the very end of the sentence: Ich stehe um sieben Uhr auf. English phrasal verbs work in a similar way (I get up at seven). With a modal verb the verb stays in one piece at the end: Ich muss früh aufstehen. The separable prefix carries the stress: AUFstehen.",
+        "es": "Muchos verbos alemanes tienen un prefijo que se separa en presente: aufstehen (levantarse), anrufen (llamar), einkaufen (comprar, ir de compras). El verbo conjugado va en segunda posición y el prefijo va al final de la oración: Ich stehe um sieben Uhr auf. Con un verbo modal el verbo se queda entero al final: Ich muss früh aufstehen. El prefijo separable lleva el acento: AUFstehen. El español no tiene verbos así, por eso hay que acostumbrarse a esta separación."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "vorsilben",
+      "title": {
+        "en": "Separable and inseparable prefixes",
+        "es": "Prefijos separables e inseparables"
+      },
+      "header": [
+        {
+          "en": "Prefix",
+          "es": "Prefijo"
+        },
+        {
+          "en": "Infinitiv",
+          "es": "Infinitiv"
+        },
+        {
+          "en": "Beispiel",
+          "es": "Beispiel"
+        }
+      ],
+      "rows": [
+        [
+          "an-",
+          "anrufen",
+          "Ich rufe Anna an."
+        ],
+        [
+          "auf-",
+          "aufstehen",
+          "Paul steht früh auf."
+        ],
+        [
+          "aus-",
+          "aussteigen",
+          "Wir steigen in Köln aus."
+        ],
+        [
+          "ein-",
+          "einkaufen",
+          "Anna kauft Brot ein."
+        ],
+        [
+          "mit-",
+          "mitkommen",
+          "Kommst du mit?"
+        ],
+        [
+          "be- (nicht trennbar)",
+          "besuchen",
+          "Ich besuche Anna."
+        ],
+        [
+          "ver- (nicht trennbar)",
+          "verkaufen",
+          "Wir verkaufen das Auto."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "trennbar-a",
+      "title": {
+        "en": "Separable verbs in the present tense, part one",
+        "es": "Verbos separables en presente, primera parte"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "ich",
+          "es": "ich"
+        },
+        {
+          "en": "du",
+          "es": "du"
+        },
+        {
+          "en": "er/sie/es",
+          "es": "er/sie/es"
+        },
+        {
+          "en": "wir",
+          "es": "wir"
+        }
+      ],
+      "rows": [
+        [
+          "aufstehen",
+          "stehe auf",
+          "stehst auf",
+          "steht auf",
+          "stehen auf"
+        ],
+        [
+          "anrufen",
+          "rufe an",
+          "rufst an",
+          "ruft an",
+          "rufen an"
+        ],
+        [
+          "einkaufen",
+          "kaufe ein",
+          "kaufst ein",
+          "kauft ein",
+          "kaufen ein"
+        ],
+        [
+          "mitkommen",
+          "komme mit",
+          "kommst mit",
+          "kommt mit",
+          "kommen mit"
+        ],
+        [
+          "ankommen",
+          "komme an",
+          "kommst an",
+          "kommt an",
+          "kommen an"
+        ],
+        [
+          "abfahren",
+          "fahre ab",
+          "fährst ab",
+          "fährt ab",
+          "fahren ab"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "trennbar-b",
+      "title": {
+        "en": "Separable verbs in the present tense, part two",
+        "es": "Verbos separables en presente, segunda parte"
+      },
+      "header": [
+        {
+          "en": "Infinitive",
+          "es": "Infinitivo"
+        },
+        {
+          "en": "ich",
+          "es": "ich"
+        },
+        {
+          "en": "du",
+          "es": "du"
+        },
+        {
+          "en": "er/sie/es",
+          "es": "er/sie/es"
+        },
+        {
+          "en": "wir",
+          "es": "wir"
+        }
+      ],
+      "rows": [
+        [
+          "aussteigen",
+          "steige aus",
+          "steigst aus",
+          "steigt aus",
+          "steigen aus"
+        ],
+        [
+          "einsteigen",
+          "steige ein",
+          "steigst ein",
+          "steigt ein",
+          "steigen ein"
+        ],
+        [
+          "fernsehen",
+          "sehe fern",
+          "siehst fern",
+          "sieht fern",
+          "sehen fern"
+        ],
+        [
+          "anfangen",
+          "fange an",
+          "fängst an",
+          "fängt an",
+          "fangen an"
+        ],
+        [
+          "aufmachen",
+          "mache auf",
+          "machst auf",
+          "macht auf",
+          "machen auf"
+        ],
+        [
+          "zumachen",
+          "mache zu",
+          "machst zu",
+          "macht zu",
+          "machen zu"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "How separable verbs work",
+        "es": "Cómo funcionan los verbos separables"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "In the present tense the stem is conjugated in second position, and the prefix goes to the end. Anything between them is the rest of the sentence.",
+            "es": "En presente la raíz se conjuga en segunda posición y el prefijo va al final. Todo lo que queda entre los dos es el resto de la oración."
+          },
+          "examples": [
+            {
+              "es": "Ich stehe um sieben Uhr auf.",
+              "tr": {
+                "en": "I get up at seven.",
+                "es": "Me levanto a las siete."
+              }
+            },
+            {
+              "es": "Anna ruft Paul an.",
+              "tr": {
+                "en": "Anna calls Paul.",
+                "es": "Anna llama a Paul."
+              }
+            },
+            {
+              "es": "Der Zug kommt um acht Uhr an.",
+              "tr": {
+                "en": "The train arrives at eight.",
+                "es": "El tren llega a las ocho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With a modal verb the separable verb stays whole as an infinitive at the end. The prefix does not split off.",
+            "es": "Con un verbo modal el verbo separable se queda entero, como infinitivo, al final. El prefijo no se separa."
+          },
+          "examples": [
+            {
+              "es": "Ich muss früh aufstehen.",
+              "tr": {
+                "en": "I have to get up early.",
+                "es": "Tengo que levantarme temprano."
+              }
+            },
+            {
+              "es": "Wir wollen heute einkaufen.",
+              "tr": {
+                "en": "We want to go shopping today.",
+                "es": "Hoy queremos ir de compras."
+              }
+            },
+            {
+              "es": "Kannst du mitkommen?",
+              "tr": {
+                "en": "Can you come along?",
+                "es": "¿Puedes venir con nosotros?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Stem-changing verbs still change their vowel: sehen becomes sieht, fahren becomes fährt, fangen becomes fängt.",
+            "es": "Los verbos con cambio de raíz siguen cambiando la vocal: sehen pasa a sieht, fahren a fährt, fangen a fängt."
+          },
+          "examples": [
+            {
+              "es": "Er sieht abends fern.",
+              "tr": {
+                "en": "He watches TV in the evening.",
+                "es": "Él ve la tele por las noches."
+              }
+            },
+            {
+              "es": "Der Film fängt um acht Uhr an.",
+              "tr": {
+                "en": "The film starts at eight.",
+                "es": "La película empieza a las ocho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "In questions and after another first element the order rules stay the same: the stem is in the verb place, the prefix is at the end.",
+            "es": "En preguntas y después de otro primer elemento las reglas de orden siguen igual: la raíz está en el lugar del verbo y el prefijo al final."
+          },
+          "examples": [
+            {
+              "es": "Wann kommst du an?",
+              "tr": {
+                "en": "When do you arrive?",
+                "es": "¿Cuándo llegas?"
+              }
+            },
+            {
+              "es": "Heute fangen wir früh an.",
+              "tr": {
+                "en": "Today we start early.",
+                "es": "Hoy empezamos temprano."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The prefixes be-, ge-, er-, ver- and zer- are never separated, and the stress is on the stem. So besuchen, verkaufen and verstehen stay in one piece.",
+            "es": "Los prefijos be-, ge-, er-, ver- y zer- nunca se separan, y el acento está en la raíz. Así besuchen, verkaufen y verstehen se quedan enteros."
+          },
+          "examples": [
+            {
+              "es": "Ich besuche Anna.",
+              "tr": {
+                "en": "I visit Anna.",
+                "es": "Visito a Anna."
+              }
+            },
+            {
+              "es": "Wir verkaufen das Auto.",
+              "tr": {
+                "en": "We sell the car.",
+                "es": "Vendemos el carro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Split or not split?",
+        "es": "¿Separado o no?"
+      },
+      "pairs": [
+        {
+          "a": "Ich stehe um sieben Uhr auf.",
+          "b": "Ich muss um sieben Uhr aufstehen.",
+          "note": {
+            "en": "With only one verb the prefix goes to the end. With a modal verb the verb stays together at the end as an infinitive.",
+            "es": "Con un solo verbo el prefijo va al final. Con un verbo modal el verbo se queda junto al final, como infinitivo."
+          },
+          "examples": [
+            {
+              "es": "Paul kauft Brot ein.",
+              "tr": {
+                "en": "Paul buys bread.",
+                "es": "Paul compra pan."
+              }
+            },
+            {
+              "es": "Paul muss Brot einkaufen.",
+              "tr": {
+                "en": "Paul has to buy bread.",
+                "es": "Paul tiene que comprar pan."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich kaufe heute ein.",
+          "b": "Ich verkaufe das Auto.",
+          "note": {
+            "en": "ein- is a separable prefix and splits off. ver- is not, so verkaufen stays in one piece. Check the prefix before you split.",
+            "es": "ein- es un prefijo separable y se separa. ver- no lo es, así que verkaufen se queda entero. Revisa el prefijo antes de separar."
+          },
+          "examples": [
+            {
+              "es": "Anna kauft Obst ein.",
+              "tr": {
+                "en": "Anna buys fruit.",
+                "es": "Anna compra fruta."
+              }
+            },
+            {
+              "es": "Anna verkauft Obst.",
+              "tr": {
+                "en": "Anna sells fruit.",
+                "es": "Anna vende fruta."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not leave the prefix attached in the present tense (Ich stehe auf, not Ich aufstehe). The prefix goes to the very end, not right after the verb. With a modal verb do not split (Ich muss aufstehen, not Ich muss stehen auf). And do not split the inseparable ones (Ich verstehe das, not Ich stehe das ver).",
+        "es": "Trampas clásicas: no dejes el prefijo pegado en presente (Ich stehe auf, no Ich aufstehe). El prefijo va al final de todo, no justo después del verbo. Con un verbo modal no se separa (Ich muss aufstehen, no Ich muss stehen auf). Y no separes los inseparables (Ich verstehe das, no Ich stehe das ver)."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Many German verbs have a prefix that separates. Say «Ich stehe um sieben Uhr auf», with the prefix at the very end. Say «Anna ruft Paul an». With a modal verb the verb stays whole: «Ich muss früh aufstehen». Stem-changing verbs still change: «Er sieht abends fern». But the prefixes be, ver and er never separate: «Ich besuche Anna».",
+    "es": "Muchos verbos alemanes tienen un prefijo que se separa. Di «Ich stehe um sieben Uhr auf», con el prefijo al final de todo. Di «Anna ruft Paul an». Con un verbo modal el verbo se queda entero: «Ich muss früh aufstehen». Los verbos con cambio de raíz siguen cambiando: «Er sieht abends fern». Pero los prefijos be, ver y er nunca se separan: «Ich besuche Anna»."
+  },
+  "items": [
+    {
+      "id": "trennbare-verben-c01",
+      "sentence": "Ich stehe um sieben Uhr ___.",
+      "options": [
+        "auf",
+        "mit",
+        "zu"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The verb is aufstehen. The prefix auf goes to the end of the sentence: Ich stehe um sieben Uhr auf.",
+        "es": "El verbo es aufstehen. El prefijo auf va al final de la oración: Ich stehe um sieben Uhr auf."
+      },
+      "wrong": {
+        "mit": {
+          "en": "mit belongs to mitkommen. The verb here is stehen, and it needs the prefix auf to mean get up.",
+          "es": "mit pertenece a mitkommen. El verbo aquí es stehen, y necesita el prefijo auf para significar «levantarse»."
+        },
+        "zu": {
+          "en": "zu belongs to zumachen. Ich stehe zu does not mean get up, you need the prefix auf.",
+          "es": "zu pertenece a zumachen. Ich stehe zu no significa «levantarse», necesitas el prefijo auf."
+        }
+      },
+      "examples": [
+        "Paul steht um acht Uhr auf.",
+        "Wir stehen früh auf."
+      ],
+      "tr": {
+        "en": "I get up at seven o'clock.",
+        "es": "Me levanto a las siete."
+      }
+    },
+    {
+      "id": "trennbare-verben-f01",
+      "kind": "form",
+      "verb": "ich",
+      "person": "aufstehen",
+      "answer": "stehe auf",
+      "table": "trennbar-a"
+    },
+    {
+      "id": "trennbare-verben-c02",
+      "sentence": "Anna ___ Paul an.",
+      "options": [
+        "rufen",
+        "ruft",
+        "anruft"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The stem ruft stands in second position and the prefix an goes to the end: Anna ruft Paul an.",
+        "es": "La raíz ruft va en segunda posición y el prefijo an va al final: Anna ruft Paul an."
+      },
+      "wrong": {
+        "rufen": {
+          "en": "rufen is the form for wir and sie (they). Anna is one person, so you need ruft.",
+          "es": "rufen es la forma de wir y de sie (ellos). Anna es una persona, así que necesitas ruft."
+        },
+        "anruft": {
+          "en": "anruft keeps the prefix attached to the verb. In the present tense the prefix goes to the end of the sentence.",
+          "es": "anruft deja el prefijo pegado al verbo. En presente el prefijo va al final de la oración."
+        }
+      },
+      "examples": [
+        "Paul ruft Anna an.",
+        "Ich rufe Lukas an."
+      ],
+      "tr": {
+        "en": "Anna calls Paul.",
+        "es": "Anna llama a Paul."
+      }
+    },
+    {
+      "id": "trennbare-verben-f02",
+      "kind": "form",
+      "verb": "ich",
+      "person": "aussteigen",
+      "answer": "steige aus",
+      "table": "trennbar-b"
+    },
+    {
+      "id": "trennbare-verben-c03",
+      "sentence": "Wir kaufen Brot ___.",
+      "options": [
+        "auf",
+        "mit",
+        "ein"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The verb is einkaufen. The prefix ein goes to the end: Wir kaufen Brot ein.",
+        "es": "El verbo es einkaufen. El prefijo ein va al final: Wir kaufen Brot ein."
+      },
+      "wrong": {
+        "auf": {
+          "en": "auf does not fit kaufen. The verb that means shop is einkaufen, with ein at the end.",
+          "es": "auf no encaja con kaufen. El verbo que significa «ir de compras» es einkaufen, con ein al final."
+        },
+        "mit": {
+          "en": "mit does not fit kaufen. The verb that means shop is einkaufen, with ein at the end.",
+          "es": "mit no encaja con kaufen. El verbo que significa «ir de compras» es einkaufen, con ein al final."
+        }
+      },
+      "examples": [
+        "Anna kauft Obst ein.",
+        "Paul kauft heute ein."
+      ],
+      "tr": {
+        "en": "We buy bread.",
+        "es": "Compramos pan."
+      }
+    },
+    {
+      "id": "trennbare-verben-f03",
+      "kind": "form",
+      "verb": "du",
+      "person": "anrufen",
+      "answer": "rufst an",
+      "table": "trennbar-a"
+    },
+    {
+      "id": "trennbare-verben-w01",
+      "kind": "why",
+      "es": "Ich stehe um sieben Uhr auf.",
+      "target": "auf",
+      "tr": {
+        "en": "I get up at seven o'clock.",
+        "es": "Me levanto a las siete."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The prefix stays attached to the verb: Ich aufstehe",
+            "es": "El prefijo se queda pegado al verbo: Ich aufstehe"
+          },
+          "wrong": {
+            "en": "In the present tense a separable prefix splits off and goes to the end. Ich aufstehe is wrong.",
+            "es": "En presente un prefijo separable se separa y va al final. Ich aufstehe es incorrecto."
+          }
+        },
+        {
+          "text": {
+            "en": "auf is a preposition with an object",
+            "es": "auf es una preposición con complemento"
+          },
+          "wrong": {
+            "en": "Here auf is part of the verb aufstehen and has no object. It is a prefix that splits off.",
+            "es": "Aquí auf es parte del verbo aufstehen y no tiene complemento. Es un prefijo que se separa."
+          }
+        },
+        {
+          "text": {
+            "en": "The separable prefix goes to the end of the sentence",
+            "es": "El prefijo separable va al final de la oración"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "trennbare-verben-c04",
+      "sentence": "Der Zug kommt um acht Uhr ___.",
+      "options": [
+        "auf",
+        "an",
+        "mit"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The verb is ankommen, to arrive. The prefix an goes to the end: Der Zug kommt um acht Uhr an.",
+        "es": "El verbo es ankommen, «llegar». El prefijo an va al final: Der Zug kommt um acht Uhr an."
+      },
+      "wrong": {
+        "auf": {
+          "en": "auf does not combine with kommen to mean arrive. The verb you need is ankommen.",
+          "es": "auf no se combina con kommen para significar «llegar». El verbo que necesitas es ankommen."
+        },
+        "mit": {
+          "en": "mit makes mitkommen, to come along. For arrive you need an: ankommen.",
+          "es": "mit forma mitkommen, «venir con alguien». Para «llegar» necesitas an: ankommen."
+        }
+      },
+      "examples": [
+        "Anna kommt um zehn Uhr an.",
+        "Wann kommt der Bus an?"
+      ],
+      "tr": {
+        "en": "The train arrives at eight o'clock.",
+        "es": "El tren llega a las ocho."
+      }
+    },
+    {
+      "id": "trennbare-verben-f04",
+      "kind": "form",
+      "verb": "er/sie/es",
+      "person": "einsteigen",
+      "answer": "steigt ein",
+      "table": "trennbar-b"
+    },
+    {
+      "id": "trennbare-verben-c05",
+      "sentence": "Kommst du ___?",
+      "options": [
+        "mit",
+        "ab",
+        "zu"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The verb is mitkommen, to come along. The prefix mit goes to the end of the question: Kommst du mit?",
+        "es": "El verbo es mitkommen, «venir con alguien». El prefijo mit va al final de la pregunta: Kommst du mit?"
+      },
+      "wrong": {
+        "ab": {
+          "en": "ab would make abkommen, which is not an everyday verb. To ask whether someone comes along you need mit.",
+          "es": "ab formaría abkommen, que no es un verbo cotidiano. Para preguntar si alguien viene con nosotros necesitas mit."
+        },
+        "zu": {
+          "en": "zu would make zukommen, which is a different verb. To ask whether someone comes along you need mit.",
+          "es": "zu formaría zukommen, que es otro verbo. Para preguntar si alguien viene con nosotros necesitas mit."
+        }
+      },
+      "examples": [
+        "Kommt Anna mit?",
+        "Kommt ihr mit?"
+      ],
+      "tr": {
+        "en": "Are you coming along?",
+        "es": "¿Vienes con nosotros?"
+      }
+    },
+    {
+      "id": "trennbare-verben-f05",
+      "kind": "form",
+      "verb": "wir",
+      "person": "einkaufen",
+      "answer": "kaufen ein",
+      "table": "trennbar-a"
+    },
+    {
+      "id": "trennbare-verben-c06",
+      "sentence": "Ich muss früh ___.",
+      "options": [
+        "stehe auf",
+        "aufstehe",
+        "aufstehen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "After a modal verb the separable verb stays whole as an infinitive at the end: Ich muss früh aufstehen.",
+        "es": "Después de un verbo modal el verbo separable se queda entero, como infinitivo, al final: Ich muss früh aufstehen."
+      },
+      "wrong": {
+        "stehe auf": {
+          "en": "stehe auf is the split form of ich. After a modal verb the verb is not conjugated and not split.",
+          "es": "stehe auf es la forma separada de ich. Después de un verbo modal el verbo no se conjuga ni se separa."
+        },
+        "aufstehe": {
+          "en": "aufstehe is a conjugated form in one piece. After a modal verb you need the infinitive aufstehen.",
+          "es": "aufstehe es una forma conjugada en una pieza. Después de un verbo modal necesitas el infinitivo aufstehen."
+        }
+      },
+      "examples": [
+        "Ich muss heute früh aufstehen.",
+        "Du musst früh aufstehen."
+      ],
+      "tr": {
+        "en": "I have to get up early.",
+        "es": "Tengo que levantarme temprano."
+      }
+    },
+    {
+      "id": "trennbare-verben-f06",
+      "kind": "form",
+      "verb": "du",
+      "person": "fernsehen",
+      "answer": "siehst fern",
+      "table": "trennbar-b"
+    },
+    {
+      "id": "trennbare-verben-w02",
+      "kind": "why",
+      "es": "Ich muss früh aufstehen.",
+      "target": "aufstehen",
+      "tr": {
+        "en": "I have to get up early.",
+        "es": "Tengo que levantarme temprano."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "After a modal verb the separable verb stays whole at the end",
+            "es": "Después de un verbo modal el verbo separable se queda entero al final"
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix splits off even with a modal: Ich muss früh stehen auf",
+            "es": "El prefijo se separa incluso con un modal: Ich muss früh stehen auf"
+          },
+          "wrong": {
+            "en": "The verb splits only when it is conjugated. After a modal verb it is an infinitive, so it stays in one piece.",
+            "es": "El verbo se separa solo cuando está conjugado. Después de un verbo modal es un infinitivo, así que se queda en una pieza."
+          }
+        },
+        {
+          "text": {
+            "en": "The verb is conjugated for ich: aufstehe",
+            "es": "El verbo está conjugado para ich: aufstehe"
+          },
+          "wrong": {
+            "en": "The ending belongs to the modal muss. The second verb stays an infinitive: aufstehen.",
+            "es": "La terminación corresponde al modal muss. El segundo verbo se queda en infinitivo: aufstehen."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "trennbare-verben-c07",
+      "sentence": "Wir wollen heute ___.",
+      "options": [
+        "kaufen ein",
+        "einkaufen",
+        "einkaufe"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After wollen the verb stays whole at the end: Wir wollen heute einkaufen.",
+        "es": "Después de wollen el verbo se queda entero al final: Wir wollen heute einkaufen."
+      },
+      "wrong": {
+        "kaufen ein": {
+          "en": "kaufen ein is the split present form. After a modal verb the separable verb stays in one piece.",
+          "es": "kaufen ein es la forma separada del presente. Después de un verbo modal el verbo separable se queda en una pieza."
+        },
+        "einkaufe": {
+          "en": "einkaufe is a conjugated form with ich. After wollen you need the infinitive einkaufen.",
+          "es": "einkaufe es una forma conjugada con ich. Después de wollen necesitas el infinitivo einkaufen."
+        }
+      },
+      "examples": [
+        "Wir wollen morgen einkaufen.",
+        "Anna will heute einkaufen."
+      ],
+      "tr": {
+        "en": "We want to go shopping today.",
+        "es": "Hoy queremos ir de compras."
+      }
+    },
+    {
+      "id": "trennbare-verben-f07",
+      "kind": "form",
+      "verb": "er/sie/es",
+      "person": "mitkommen",
+      "answer": "kommt mit",
+      "table": "trennbar-a"
+    },
+    {
+      "id": "trennbare-verben-c08",
+      "sentence": "Er ___ abends fern.",
+      "options": [
+        "sieht",
+        "sehen",
+        "seht"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "fernsehen is conjugated like sehen: e becomes ie in the er-form, so er sieht, and the prefix fern goes to the end.",
+        "es": "fernsehen se conjuga como sehen: e pasa a ie en la forma de er, así que er sieht, y el prefijo fern va al final."
+      },
+      "wrong": {
+        "sehen": {
+          "en": "sehen is the form for wir and sie (they). For er you need sieht.",
+          "es": "sehen es la forma de wir y de sie (ellos). Para er necesitas sieht."
+        },
+        "seht": {
+          "en": "seht is the form for ihr, without the vowel change. For er you need sieht.",
+          "es": "seht es la forma de ihr, sin cambio de vocal. Para er necesitas sieht."
+        }
+      },
+      "examples": [
+        "Anna sieht abends fern.",
+        "Paul sieht heute fern."
+      ],
+      "tr": {
+        "en": "He watches TV in the evening.",
+        "es": "Él ve la tele por las noches."
+      }
+    },
+    {
+      "id": "trennbare-verben-f08",
+      "kind": "form",
+      "verb": "er/sie/es",
+      "person": "anfangen",
+      "answer": "fängt an",
+      "table": "trennbar-b"
+    },
+    {
+      "id": "trennbare-verben-c09",
+      "sentence": "Paul ___ die Tür auf.",
+      "options": [
+        "machst",
+        "mache",
+        "macht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With Paul (er) the stem is conjugated with -t: macht. The prefix auf goes to the end: Paul macht die Tür auf.",
+        "es": "Con Paul (er) la raíz se conjuga con -t: macht. El prefijo auf va al final: Paul macht die Tür auf."
+      },
+      "wrong": {
+        "machst": {
+          "en": "machst is the form for du. Paul is one person, a he, so you need macht.",
+          "es": "machst es la forma de du. Paul es una persona, un él, así que necesitas macht."
+        },
+        "mache": {
+          "en": "mache is the form for ich. Paul is a he, so you need macht.",
+          "es": "mache es la forma de ich. Paul es un él, así que necesitas macht."
+        }
+      },
+      "examples": [
+        "Anna macht das Fenster auf.",
+        "Paul macht die Tür zu."
+      ],
+      "tr": {
+        "en": "Paul opens the door.",
+        "es": "Paul abre la puerta."
+      }
+    },
+    {
+      "id": "trennbare-verben-f09",
+      "kind": "form",
+      "verb": "du",
+      "person": "ankommen",
+      "answer": "kommst an",
+      "table": "trennbar-a"
+    },
+    {
+      "id": "trennbare-verben-w03",
+      "kind": "why",
+      "es": "Ich besuche Anna.",
+      "target": "besuche",
+      "tr": {
+        "en": "I visit Anna.",
+        "es": "Visito a Anna."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "besuchen is separable like anrufen: Ich suche Anna be",
+            "es": "besuchen es separable como anrufen: Ich suche Anna be"
+          },
+          "wrong": {
+            "en": "The prefix be- is never separated. Only stressed prefixes like an-, auf- and aus- split off.",
+            "es": "El prefijo be- nunca se separa. Solo se separan los prefijos acentuados como an-, auf- y aus-."
+          }
+        },
+        {
+          "text": {
+            "en": "besuchen has no prefix, only the stem",
+            "es": "besuchen no tiene prefijo, solo la raíz"
+          },
+          "wrong": {
+            "en": "be- is a real prefix, but an inseparable one. besuchen means visit, and suchen means look for, which is a different verb.",
+            "es": "be- es un prefijo real, pero inseparable. besuchen significa «visitar», y suchen significa «buscar», que es otro verbo."
+          }
+        },
+        {
+          "text": {
+            "en": "be- is an inseparable prefix, so the verb never splits",
+            "es": "be- es un prefijo inseparable, así que el verbo nunca se separa"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "trennbare-verben-c10",
+      "sentence": "Der Film ___ um acht Uhr an.",
+      "options": [
+        "fängt",
+        "fangt",
+        "fangen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "anfangen is a stem-changing verb: a becomes ä in the er-form, so fängt, and the prefix an goes to the end.",
+        "es": "anfangen es un verbo con cambio de raíz: a pasa a ä en la forma de er, así que fängt, y el prefijo an va al final."
+      },
+      "wrong": {
+        "fangt": {
+          "en": "fangt would be the regular form, but fangen changes a to ä in the er-form: fängt.",
+          "es": "fangt sería la forma regular, pero fangen cambia a por ä en la forma de er: fängt."
+        },
+        "fangen": {
+          "en": "fangen is the form for wir and sie (they). The subject is der Film, one thing, so you need fängt.",
+          "es": "fangen es la forma de wir y de sie (ellos). El sujeto es der Film, una sola cosa, así que necesitas fängt."
+        }
+      },
+      "examples": [
+        "Der Unterricht fängt um neun Uhr an.",
+        "Das Konzert fängt um acht Uhr an."
+      ],
+      "tr": {
+        "en": "The film starts at eight o'clock.",
+        "es": "La película empieza a las ocho."
+      }
+    },
+    {
+      "id": "trennbare-verben-f10",
+      "kind": "form",
+      "verb": "wir",
+      "person": "aufmachen",
+      "answer": "machen auf",
+      "table": "trennbar-b"
+    },
+    {
+      "id": "trennbare-verben-c11",
+      "sentence": "Du ___ um acht Uhr ab.",
+      "options": [
+        "fahrst",
+        "fährst",
+        "fährt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "abfahren is a stem-changing verb: a becomes ä in the du-form, so fährst, and the prefix ab goes to the end.",
+        "es": "abfahren es un verbo con cambio de raíz: a pasa a ä en la forma de du, así que fährst, y el prefijo ab va al final."
+      },
+      "wrong": {
+        "fahrst": {
+          "en": "fahrst is the regular form, but fahren changes a to ä in the du-form: fährst.",
+          "es": "fahrst es la forma regular, pero fahren cambia a por ä en la forma de du: fährst."
+        },
+        "fährt": {
+          "en": "fährt is the form for er/sie/es. With du you need fährst.",
+          "es": "fährt es la forma de er/sie/es. Con du necesitas fährst."
+        }
+      },
+      "examples": [
+        "Du fährst heute ab.",
+        "Anna fährt um neun Uhr ab."
+      ],
+      "tr": {
+        "en": "You leave at eight o'clock.",
+        "es": "Sales a las ocho."
+      }
+    },
+    {
+      "id": "trennbare-verben-f11",
+      "kind": "form",
+      "verb": "du",
+      "person": "abfahren",
+      "answer": "fährst ab",
+      "table": "trennbar-a"
+    },
+    {
+      "id": "trennbare-verben-c12",
+      "sentence": "Wir ___ das Auto.",
+      "options": [
+        "kaufen ver",
+        "verkauft",
+        "verkaufen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "ver- is an inseparable prefix, so the verb stays in one piece: Wir verkaufen das Auto.",
+        "es": "ver- es un prefijo inseparable, así que el verbo se queda entero: Wir verkaufen das Auto."
+      },
+      "wrong": {
+        "kaufen ver": {
+          "en": "kaufen ver splits the prefix off, but ver- is never separated. The whole verb stays together: verkaufen.",
+          "es": "kaufen ver separa el prefijo, pero ver- nunca se separa. El verbo entero se queda junto: verkaufen."
+        },
+        "verkauft": {
+          "en": "verkauft is the form for er/sie/es. The subject here is wir, so you need verkaufen.",
+          "es": "verkauft es la forma de er/sie/es. El sujeto aquí es wir, así que necesitas verkaufen."
+        }
+      },
+      "examples": [
+        "Anna verkauft Obst.",
+        "Ich verkaufe das Auto."
+      ],
+      "tr": {
+        "en": "We sell the car.",
+        "es": "Vendemos el carro."
+      }
+    },
+    {
+      "id": "trennbare-verben-f12",
+      "kind": "form",
+      "verb": "ich",
+      "person": "zumachen",
+      "answer": "mache zu",
+      "table": "trennbar-b"
+    },
+    {
+      "id": "trennbare-verben-c13",
+      "sentence": "Heute ___ wir früh an.",
+      "options": [
+        "fangen",
+        "fängt",
+        "anfangen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Heute is in position 1, so the verb comes next and wir follows it. The prefix an stays at the end: Heute fangen wir früh an.",
+        "es": "Heute está en la posición 1, así que el verbo viene después y wir lo sigue. El prefijo an se queda al final: Heute fangen wir früh an."
+      },
+      "wrong": {
+        "fängt": {
+          "en": "fängt is the form for er/sie/es. With wir the verb keeps the stem a: fangen.",
+          "es": "fängt es la forma de er/sie/es. Con wir el verbo conserva la a de la raíz: fangen."
+        },
+        "anfangen": {
+          "en": "anfangen is the whole infinitive. In a present-tense sentence without a modal the prefix splits off and goes to the end.",
+          "es": "anfangen es el infinitivo completo. En una oración en presente sin modal el prefijo se separa y va al final."
+        }
+      },
+      "examples": [
+        "Morgen fangen wir spät an.",
+        "Jetzt fangen wir an."
+      ],
+      "tr": {
+        "en": "Today we start early.",
+        "es": "Hoy empezamos temprano."
+      }
+    },
+    {
+      "id": "trennbare-verben-c14",
+      "sentence": "Wann ___ du an?",
+      "options": [
+        "kommt",
+        "kommst",
+        "komme"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "In a W-question the verb comes right after the question word, and the prefix an goes to the end: Wann kommst du an?",
+        "es": "En una pregunta con palabra interrogativa el verbo va justo después de esa palabra, y el prefijo an va al final: Wann kommst du an?"
+      },
+      "wrong": {
+        "kommt": {
+          "en": "kommt is the form for er/sie/es and ihr. With du you need kommst.",
+          "es": "kommt es la forma de er/sie/es e ihr. Con du necesitas kommst."
+        },
+        "komme": {
+          "en": "komme is the form for ich. With du you need kommst.",
+          "es": "komme es la forma de ich. Con du necesitas kommst."
+        }
+      },
+      "examples": [
+        "Wann kommt Paul an?",
+        "Wann fährt der Zug ab?"
+      ],
+      "tr": {
+        "en": "When do you arrive?",
+        "es": "¿Cuándo llegas?"
+      }
+    },
+    {
+      "id": "trennbare-verben-w04",
+      "kind": "why",
+      "es": "Er sieht abends fern.",
+      "target": "sieht",
+      "tr": {
+        "en": "He watches TV in the evening.",
+        "es": "Él ve la tele por las noches."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sieht is the stem-changing er-form of sehen, and fern goes to the end",
+            "es": "sieht es la forma de er de sehen con cambio de raíz, y fern va al final"
+          }
+        },
+        {
+          "text": {
+            "en": "The prefix fern means the verb does not change its stem: Er seht fern",
+            "es": "El prefijo fern significa que el verbo no cambia la raíz: Er seht fern"
+          },
+          "wrong": {
+            "en": "The stem change still applies. fernsehen is conjugated like sehen, so it is er sieht fern.",
+            "es": "El cambio de raíz sigue aplicándose. fernsehen se conjuga como sehen, así que es er sieht fern."
+          }
+        },
+        {
+          "text": {
+            "en": "sieht stands at the end because it is the main verb",
+            "es": "sieht va al final porque es el verbo principal"
+          },
+          "wrong": {
+            "en": "The conjugated verb is in second position. Only the prefix goes to the end of the sentence.",
+            "es": "El verbo conjugado está en segunda posición. Solo el prefijo va al final de la oración."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
