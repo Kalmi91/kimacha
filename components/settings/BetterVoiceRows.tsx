@@ -3,7 +3,7 @@
 // Hidden where the voices do not exist (the web build). The Row is the Settings screen's own card row.
 
 import { type ReactNode } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Alert, Pressable, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { BrutalSwitch } from '@/components/grammar/Brutal';
 import Colors from '@/constants/Colors';
@@ -40,6 +40,14 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
   const usable = PIPER_MODEL_KEYS.every(key => state.installed[key]);
   const { running, percent, phase, failed } = state.download;
   const langName = (code: NeuralLang) => languages.find(l => l.code === code)?.name ?? code;
+  // Nothing downloads without a question that names the size (the phone may be on mobile data).
+  const confirmDownload = (bytes: number, go: () => void) => {
+    Alert.alert(s.confirmTitle, s.confirmMessage(formatMegabytes(bytes)), [
+      { text: t().feedback.cancel, style: 'cancel' },
+      { text: s.confirmYes, onPress: go },
+    ]);
+  };
+  const askMissing = () => confirmDownload(missingBytes(items, state.installed), () => void downloadNeural());
 
   const right = running ? (
     <Text style={[styles.status, { color: colors.text }]}>{phase === 'unpack' ? s.unpacking : s.downloading(percent)}</Text>
@@ -50,7 +58,7 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
       testID="settings-better-voice-download"
       accessibilityRole="button"
       style={[styles.button, { borderColor: g.a }]}
-      onPress={() => void downloadNeural()}
+      onPress={askMissing}
     >
       <Text style={[styles.buttonText, { color: g.ink }]}>{s.download(formatMegabytes(missingBytes(items, state.installed)))}</Text>
     </Pressable>
@@ -64,12 +72,12 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
           <Text style={[styles.label, { color: colors.text }]}>{s.title}</Text>
           <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{hint}</Text>
           {!running && failed.length > 0 && (
-            <Text testID="settings-better-voice-retry" accessibilityRole="button" onPress={() => void downloadNeural()} style={[styles.hint, { color: colors.text }]}>
+            <Text testID="settings-better-voice-retry" accessibilityRole="button" onPress={askMissing} style={[styles.hint, { color: colors.text }]}>
               {s.retry}
             </Text>
           )}
           {!running && usable && failed.length === 0 && missing.length > 0 && (
-            <Text accessibilityRole="button" onPress={() => void downloadNeural()} style={[styles.hint, { color: colors.text }]}>
+            <Text accessibilityRole="button" onPress={askMissing} style={[styles.hint, { color: colors.text }]}>
               {s.download(formatMegabytes(missingBytes(items, state.installed)))}
             </Text>
           )}
@@ -96,7 +104,11 @@ export default function BetterVoiceRows({ Row }: { Row: RowComponent }) {
                     accessibilityState={{ selected }}
                     disabled={running}
                     style={[styles.pill, { borderColor: selected ? g.a : colors.tabIconDefault, borderWidth: selected ? 2 : 1 }]}
-                    onPress={() => void setNeuralEngine(lang, engine)}
+                    onPress={() => {
+                      const bytes = missingBytes(requiredItems({ ...state.engines, [lang]: engine }), state.installed);
+                      if (engine === state.engines[lang] || bytes === 0) void setNeuralEngine(lang, engine);
+                      else confirmDownload(bytes, () => void setNeuralEngine(lang, engine));
+                    }}
                   >
                     <Text style={[styles.pillText, { color: selected ? g.ink : colors.tabIconDefault }]}>{engine === 'piper' ? s.piper : s.kokoro}</Text>
                   </Pressable>
