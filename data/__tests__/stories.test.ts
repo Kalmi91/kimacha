@@ -160,3 +160,49 @@ describe('reading stories, Spanish', () => {
     expect(idsOf(easy).length).toBeLessThan(idsOf(STORIES).length);
   });
 });
+
+// The German layer: every sentence of every story has a German translation and every story German false statements, so a German
+// speaker can read the stories of all three target languages (de to es, en, hu).
+interface GermanLayer {
+  id: string;
+  sentences: ({ de?: string } & Record<string, unknown>)[];
+  false_de?: string[];
+  [key: string]: unknown;
+}
+
+describe.each<PcicTarget>(['es', 'en', 'hu'])('reading stories, German translations, target %s', (target) => {
+  const stories = FILES[target] as GermanLayer[];
+  const ending = (text: string) => text.trim().slice(-1);
+
+  it('every sentence has a German translation that ends like its source sentence', () => {
+    for (const story of stories) {
+      for (const s of story.sentences) {
+        const source = String(s[target] ?? '');
+        expect([story.id, source, (s.de ?? '').trim() !== '']).toEqual([story.id, source, true]);
+        expect([story.id, source, s.de === source]).toEqual([story.id, source, false]);
+        expect([story.id, source, ending(s.de ?? '') === ending(source)]).toEqual([story.id, source, true]);
+      }
+    }
+  });
+
+  it('every story has as many German false statements as it has in the other languages, none equal to a sentence of the story', () => {
+    for (const story of stories) {
+      const wrong = story.false_de ?? [];
+      const others = Object.keys(story).filter((k) => k.startsWith('false_') && k !== 'false_de');
+      expect([story.id, wrong.length >= 2 && wrong.length <= 3]).toEqual([story.id, true]);
+      for (const key of others) expect([story.id, key, (story[key] as string[]).length]).toEqual([story.id, key, wrong.length]);
+      const sentences = story.sentences.map((s) => norm(s.de ?? ''));
+      for (const f of wrong) {
+        expect([story.id, f]).not.toEqual([story.id, '']);
+        expect([story.id, f, sentences.includes(norm(f))]).toEqual([story.id, f, false]);
+      }
+      expect(new Set(wrong.map(norm)).size).toBe(wrong.length);
+    }
+  });
+
+  it('no dash in a German text (house style)', () => {
+    const texts = stories.flatMap((s) => [...s.sentences.map((x) => x.de ?? ''), ...(s.false_de ?? [])]);
+    const dash = new RegExp(`[${String.fromCharCode(8211, 8212)}]`);
+    expect(texts.filter((t) => dash.test(t))).toEqual([]);
+  });
+});
