@@ -34,7 +34,7 @@ const only = args.includes('--lesson') ? args[args.indexOf('--lesson') + 1] : nu
 const LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'];
 const LANGS = ['en', 'es'];
 const EM_DASH = String.fromCharCode(0x2014);
-const { lang4Keys } = await importTs(join(root, 'lib', 'grammar', 'huOverlay.ts'));
+const { lang4Keys } = await importTs(join(root, 'lib', 'grammar', 'overlay.ts'));
 
 const p1 = [];
 const p2 = [];
