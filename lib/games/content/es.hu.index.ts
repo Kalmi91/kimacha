@@ -58,6 +58,7 @@ export const ES_GRAMMAR_HU: Record<string, () => Record<string, string>> = {
   'relativos': () => require('@/data/games/grammar-hu/es/relativos.json'),
   'se-impersonal-pasiva': () => require('@/data/games/grammar-hu/es/se-impersonal-pasiva.json'),
   'se-accidental': () => require('@/data/games/grammar-hu/es/se-accidental.json'),
+  'verbos-pronominales': () => require('@/data/games/grammar-hu/es/verbos-pronominales.json'),
   'numerales-ordinales': () => require('@/data/games/grammar-hu/es/numerales-ordinales.json'),
   'perifrasis': () => require('@/data/games/grammar-hu/es/perifrasis.json'),
   'por-para-avanzado': () => require('@/data/games/grammar-hu/es/por-para-avanzado.json'),

@@ -120,6 +120,7 @@ const GRAMMAR_TIER: Record<string, GrammarTier> = {
   relativos: 'core',
   'se-impersonal-pasiva': 'exam',
   'se-accidental': 'full',
+  'verbos-pronominales': 'exam',
   perifrasis: 'exam',
   'por-para-avanzado': 'exam',
   'verbos-preposicion': 'exam',

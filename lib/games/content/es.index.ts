@@ -60,6 +60,7 @@ export const ES_GRAMMAR_INDEX: GrammarIndexEntry[] = [
   { id: 'relativos', load: () => require('@/data/games/grammar/es/relativos.json') },
   { id: 'se-impersonal-pasiva', load: () => require('@/data/games/grammar/es/se-impersonal-pasiva.json') },
   { id: 'se-accidental', load: () => require('@/data/games/grammar/es/se-accidental.json') },
+  { id: 'verbos-pronominales', load: () => require('@/data/games/grammar/es/verbos-pronominales.json') },
   { id: 'numerales-ordinales', load: () => require('@/data/games/grammar/es/numerales-ordinales.json') },
   { id: 'perifrasis', load: () => require('@/data/games/grammar/es/perifrasis.json') },
   { id: 'por-para-avanzado', load: () => require('@/data/games/grammar/es/por-para-avanzado.json') },
