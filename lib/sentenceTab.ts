@@ -6,10 +6,10 @@
 // prebuilt token set instead of per sentence.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
-import { isSentenceKnownIn, knownTokens, sentenceTokens, type ResolvedTense } from '@/lib/knownSentence';
+import { detachedPrefixes, isSentenceKnownIn, knownTokens, ownerKeys, sentenceTokens, type ResolvedTense } from '@/lib/knownSentence';
 import { recordCorrectHalf } from '@/lib/practice/halfXp';
 import { recordPracticeResult } from '@/lib/practice/halfStep';
-import { learnedEntryOf, sentencePair, tileWords } from '@/lib/sentenceCards';
+import { learnedEntryOf, learnerLevel, sentenceLevel, sentencePair, tileWords } from '@/lib/sentenceCards';
 import { chunksFor, type SentenceChunk } from '@/lib/sentenceChunks';
 import type { WordVerdict } from '@/lib/sentenceTyping';
 import type { Sm2Card } from '@/lib/sm2';
@@ -52,6 +52,8 @@ export interface SentenceQueueDeps {
   tenses?: ReadonlySet<ResolvedTense>;
   items: Iterable<PcicItem>;
   findItem: (id: string) => PcicItem | undefined;
+  /** German: the deck level of an item, for the grammar level the learner has reached (the tenses a sentence may use). */
+  levelOf?: (id: string) => string | undefined;
   today: string;
   /** Sentences already done (by sentenceKey), left out. */
   done?: ReadonlySet<string>;
@@ -72,9 +74,11 @@ export function isDueCard(card: Sm2Card, today: string): boolean {
  * Every sentence the learner may see: all its words learned (or free). Order: the most `focus` cards, then the
  * most due words, then the least fresh review, then fewer words (stable on the corpus order).
  */
-export function buildSentenceQueue({ target, cards, tenses, items, findItem, today, done, focus }: SentenceQueueDeps): SentenceEntry[] {
+export function buildSentenceQueue({ target, cards: cardsIn, tenses, items, findItem, levelOf, today, done, focus }: SentenceQueueDeps): SentenceEntry[] {
+  const cards = [...cardsIn];
+  const level = target === 'de' ? learnerLevel(cards, levelOf) : undefined;
   // The gate's token set, built once, plus which learned cards own which token (a half goes to the owners).
-  const free = knownTokens(target, { learned: [], tenses });
+  const free = knownTokens(target, { learned: [], tenses, level });
   const known = new Set(free);
   const owners = new Map<string, string[]>();
   const dueIds = new Set<string>();
@@ -84,7 +88,7 @@ export function buildSentenceQueue({ target, cards, tenses, items, findItem, tod
     if (!entry) continue;
     if (isDueCard(card, today)) dueIds.add(card.itemId);
     lastReviews.set(card.itemId, card.lastReview ?? '');
-    const own = knownTokens(target, { learned: [entry], tenses });
+    const own = knownTokens(target, { learned: [entry], tenses, level });
     // A card made only of free words ("de") owns them; otherwise ("el libro") the free words are nobody's.
     const hasOwnToken = [...own].some((tok) => !free.has(tok));
     for (const tok of own) {
@@ -104,10 +108,11 @@ export function buildSentenceQueue({ target, cards, tenses, items, findItem, tod
     const key = sentenceKey(pair);
     if (seen.has(key) || done?.has(key)) continue;
     seen.add(key);
-    if (!isSentenceKnownIn(pair.target, target, known)) continue;
+    if (!isSentenceKnownIn(pair.target, target, known, level && sentenceLevel(level, item.id, levelOf))) continue;
     const owned = new Map<string, string[]>();
+    const prefixes = target === 'de' ? detachedPrefixes(pair.target) : new Set<string>();
     for (const tok of sentenceTokens(pair.target, target)) {
-      for (const id of owners.get(tok) ?? []) {
+      for (const id of ownerKeys(tok, target, prefixes).flatMap((key) => owners.get(key) ?? [])) {
         const words = owned.get(id);
         if (!words) owned.set(id, [tok]);
         else if (!words.includes(tok)) words.push(tok);

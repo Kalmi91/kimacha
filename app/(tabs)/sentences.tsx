@@ -178,6 +178,7 @@ export default function SentencesScreen() {
         tenses: resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()),
         items: itemsForSentenceLevel(chosen, PCIC_LEVELS, pcicItemsForLevel),
         findItem: findPcicItem,
+        levelOf: levelOfItem,
         today,
         done: doneKeys.current,
         focus: new Set(focusKey.split(',').filter(Boolean)),
@@ -215,7 +216,7 @@ export default function SentencesScreen() {
   const current = round ? currentEntry(round) : undefined;
   const { done, total } = round ? roundProgress(round) : { done: 0, total: 0 };
   // The tappable words of the prompt on screen (Spanish direction only; a part of a sentence and the listening step have none).
-  const hints = hintBeta && target === 'es' && current && step && step.kind !== 'chunk' && step.kind !== 'listen' ? hintPieces(current) : null;
+  const hints = hintBeta && target === 'es' && activeSourceFor(target) !== 'de' && current && step && step.kind !== 'chunk' && step.kind !== 'listen' ? hintPieces(current) : null;
 
   // The new state is saved BEFORE the words are credited: a kill in between loses a credit, it never pays one twice.
   const keepRound = async (next: SentenceRound) => {
