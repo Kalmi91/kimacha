@@ -201,7 +201,7 @@ describe('word pack player', () => {
       mockCreatePlayer.mockImplementation(() => fakePlayer());
       const options = { onFail: jest.fn(), onDone: jest.fn() };
       await playPackFile('/missing.mp3', options);
-      jest.advanceTimersByTime(3900);
+      jest.advanceTimersByTime(7900);
       expect(options.onFail).not.toHaveBeenCalled();
       jest.advanceTimersByTime(200);
       expect(options.onFail).toHaveBeenCalledTimes(1);

@@ -15,8 +15,10 @@ export interface PackPlayOptions {
   onFail?: () => void;
 }
 
-// A file that is not loaded and not playing after this long counts as broken.
-const LOAD_TIMEOUT_MS = 4000;
+// A file that is not loaded after this long counts as broken. The first player of a run also starts the
+// media session, which took over 4 s on the loaded x86_64 emulator, so the limit is generous: a good file
+// never waits for it, only a broken one does.
+const LOAD_TIMEOUT_MS = 8000;
 
 interface Current {
   player: { remove(): void; pause(): void } | null;
