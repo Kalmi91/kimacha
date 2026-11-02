@@ -3,6 +3,7 @@ import { StyleSheet, View, Pressable, TextInput, Modal, PanResponder, Dimensions
 import { Text } from '@/components/KText';
 import { TitleText, themedInputStyle } from '@/components/grammar/Themed';
 import Colors from '@/constants/Colors';
+import { FEEDBACK_FAB_MARGIN, FEEDBACK_FAB_SIZE } from '@/constants/FeedbackFab';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, BrutalButton } from '@/components/grammar/Brutal';
@@ -155,7 +156,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
           { backgroundColor: colors.tint },
           g.brutal && (slot === 'fab' ? styles.brutalFab : styles.brutalSlot),
           slot === 'fab' && draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
-          slot === 'fab' && bottomOffset > 0 && { bottom: 24 + bottomOffset },
+          slot === 'fab' && bottomOffset > 0 && { bottom: FEEDBACK_FAB_MARGIN + bottomOffset },
         ]}
         onPress={() => setVisible(true)}
         {...(draggable ? panResponder.panHandlers : {})}
@@ -269,8 +270,8 @@ const styles = StyleSheet.create({
   sendError: { color: '#EF4444', fontWeight: '600', marginBottom: 8 },
   fab: {
     position: 'absolute',
-    bottom: 24,
-    right: 24,
+    bottom: FEEDBACK_FAB_MARGIN,
+    right: FEEDBACK_FAB_MARGIN,
     width: 52,
     height: 52,
     borderRadius: 26,
@@ -286,17 +287,17 @@ const styles = StyleSheet.create({
   // draggable tree-tab button only, override fab's default right:24
   // to switch sides (left clears the inherited right, and vice versa).
   fabLeft: {
-    left: 24,
+    left: FEEDBACK_FAB_MARGIN,
     right: undefined,
   },
   fabRight: {
-    right: 24,
+    right: FEEDBACK_FAB_MARGIN,
     left: undefined,
   },
   // The Pressable is a transparent holder, the box is the BrutalBox (52 + 3 px shadow).
   brutalFab: {
-    width: 55,
-    height: 55,
+    width: FEEDBACK_FAB_SIZE,
+    height: FEEDBACK_FAB_SIZE,
     borderRadius: 0,
     backgroundColor: 'transparent',
     shadowOpacity: 0,

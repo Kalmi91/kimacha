@@ -3,6 +3,7 @@ import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { Text } from '@/components/KText';
 
 import Colors, { isDarkTheme } from '@/constants/Colors';
+import { FEEDBACK_FAB_SIZE } from '@/constants/FeedbackFab';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { Card } from '@/components/grammar/Brutal';
@@ -383,7 +384,8 @@ const styles = StyleSheet.create({
   card: { borderRadius: 14, padding: 14, gap: 6 },
   pointText: { fontSize: 14, lineHeight: 21 },
   exampleBlock: { marginTop: 2 },
-  exampleRow: { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  // paddingRight: the floating 💬 button would cover the 🔊 at the row's right edge when the page scrolls under it.
+  exampleRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingRight: FEEDBACK_FAB_SIZE },
   exampleEs: { fontSize: 15, fontWeight: '700', flex: 1 },
   exampleTr: { fontSize: 13 },
   speak: { fontSize: 16 },
