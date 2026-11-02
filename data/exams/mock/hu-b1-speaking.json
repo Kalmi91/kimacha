@@ -135,7 +135,7 @@
                 },
                 {
                   "id": "t2",
-                  "ask": "Emlékszik, hogyan tartotta a kapcsolatot a barátaival, mielőtt volt okostelefonja? Miben más ez ma?",
+                  "ask": "Emlékszik, hogyan tartotta a kapcsolatot a barátaival, amikor még nem volt okostelefonja? Miben más ez ma?",
                   "minWords": 20,
                   "points": [
                     { "id": "p1", "label": "Elmondja, hogyan tartotta a kapcsolatot régen", "keywords": ["level", "telefonaltam", "telefonfulke", "uzenetet", "talalkoz", "irtam", "hivtam", "postai", "telefonkartya", "vezetekes", "szemelyesen", "regen"] },
@@ -151,7 +151,7 @@
                     { "id": "p1", "label": "Megmondja, egyetért-e", "keywords": ["egyetertek", "nem ertek egyet", "helyes", "jo otlet", "szukseges", "indokolt", "tul szigoru", "tamogatom", "ellenzem", "jogos", "ertelmes", "nem helyes"] },
                     { "id": "p2", "label": "Megindokolja a véleményét", "keywords": ["egeszseg", "tanulas", "alvas", "szem", "fuggo", "internet", "veszely", "vedeni", "ellenorz", "kozossegi", "idopazarl", "figyelem"] }
                   ],
-                  "model": "Egyetértek vele, mert a kisgyerekek még nem tudják jól beosztani az idejüket, és a túl sok telefon árthat az egészségüknek és a tanulásnak. Szerintem jó, ha a szülők szabályokat hoznak, de nem szabad mindent megtiltani."
+                  "model": "Egyetértek ezzel, mert a kisgyerekek még nem tudják jól beosztani az idejüket, és a túl sok telefon árthat az egészségüknek és a tanulásnak. Szerintem jó, ha a szülők szabályokat hoznak, de nem szabad mindent megtiltani."
                 },
                 {
                   "id": "t4",
@@ -179,19 +179,19 @@
         {
           "skill": "speaking",
           "kind": "speaking",
-          "instruction": "Válasszon a két fénykép közül, és írja le. Utána válaszoljon a vizsgáztató egy kérdésére. Ezt a feladatot nem kell előkészíteni.",
+          "instruction": "Válasszon a két fénykép közül, és mondja el, mit lát rajta. Utána válaszoljon a vizsgáztató egy kérdésére. Ezt a feladatot nem kell előkészíteni.",
           "talkMinutes": [2, 3],
           "choices": [
             {
               "id": "a",
               "title": "Utasok egy pályaudvaron",
               "photos": ["es-b1-1"],
-              "prompt": "A fényképen emberek láthatók egy vasútállomáson. Írja le a fényképet, és válaszoljon utána a vizsgáztató egy kérdésére.",
+              "prompt": "A fényképen emberek láthatók egy vasútállomáson. Mondja el, mit lát a fényképen, és válaszoljon utána a vizsgáztató egy kérdésére.",
               "bullets": ["kik vannak a képen, és hol", "mit csinálnak", "milyen a hangulat"],
               "turns": [
                 {
                   "id": "t1",
-                  "ask": "Írja le a kiválasztott fényképet. Amikor készen áll, kezdheti.",
+                  "ask": "Mondja el, mit lát a kiválasztott fényképen. Amikor készen áll, kezdheti.",
                   "minWords": 45,
                   "points": [
                     { "id": "p1", "label": "Megmondja, hol vannak az emberek", "keywords": ["palyaudvar", "allomas", "vasutallomas", "vonat", "peron", "metro", "repuloter", "aluljaro", "csarnok", "vagon", "kocsi", "terminal"] },
@@ -202,7 +202,7 @@
                 },
                 {
                   "id": "t2",
-                  "ask": "Ön hogyan szeret hosszú utat tenni? Mesélje el, miért.",
+                  "ask": "Ön hogyan szeret hosszú úton utazni? Mesélje el, miért.",
                   "minWords": 15,
                   "points": [
                     { "id": "p1", "label": "Megmondja, hogyan szeret utazni, és miért", "keywords": ["vonattal", "repulovel", "repulon", "autoval", "busszal", "kenyelmes", "gyorsabb", "olcsobb", "konyvet", "aludhat", "kilatas", "kornyezet"] }
@@ -215,12 +215,12 @@
               "id": "b",
               "title": "Egy csoport a parkban",
               "photos": ["es-b1-2"],
-              "prompt": "A fényképen emberek jógáznak egy parkban. Írja le a fényképet, és válaszoljon utána a vizsgáztató egy kérdésére.",
+              "prompt": "A fényképen emberek jógáznak egy parkban. Mondja el, mit lát a fényképen, és válaszoljon utána a vizsgáztató egy kérdésére.",
               "bullets": ["kik vannak a képen, és hol", "mit csinálnak", "milyen a hangulat"],
               "turns": [
                 {
                   "id": "t1",
-                  "ask": "Írja le a kiválasztott fényképet. Amikor készen áll, kezdheti.",
+                  "ask": "Mondja el, mit lát a kiválasztott fényképen. Amikor készen áll, kezdheti.",
                   "minWords": 45,
                   "points": [
                     { "id": "p1", "label": "Megmondja, hol vannak az emberek", "keywords": ["park", "gyep", "szabadban", "tisztas", "reten", "hatterben", "jobb oldalon", "bal oldalon", "kozepen", "erdo", "homokos", "palya"] },
@@ -253,7 +253,7 @@
               "id": "a",
               "title": "A pályaudvaron: jegyátváltás",
               "photos": ["es-b1-1"],
-              "prompt": "Egy pályaudvaron áll egy bőrönddel és egy egy óra múlva induló vonatra szóló jeggyel. Szeretné, ha később indulna, ezért az állomás alkalmazottjához fordul. A vizsgáztató az alkalmazott szerepét játssza.",
+              "prompt": "Egy pályaudvaron áll egy bőrönddel és egy jeggyel, amely egy óra múlva induló vonatra szól. Szeretné, ha később indulna, ezért az állomás alkalmazottjához fordul. A vizsgáztató az alkalmazott szerepét játssza.",
               "bullets": ["megmondja, mit szeretne", "megmondja, mikor szeretne indulni", "az árról beszél", "információt kér"],
               "turns": [
                 {
@@ -285,7 +285,7 @@
                 },
                 {
                   "id": "t4",
-                  "ask": "Tessék, itt az új jegye. A vonat a negyedik peronról indul. Szüksége van még valamire?",
+                  "ask": "Tessék, itt az új jegye. A vonat a negyedik vágányról indul. Szüksége van még valamire?",
                   "minWords": 15,
                   "points": [
                     { "id": "p1", "label": "Megköszöni, és információt kér", "keywords": ["hol van", "merre", "melyik", "mosdo", "kavezo", "csomagmegorzo", "kerdezhetek", "kerdeznem", "segitseg", "lift", "mozgolepcso", "mennyi ido"] }

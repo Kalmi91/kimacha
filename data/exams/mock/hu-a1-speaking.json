@@ -170,7 +170,7 @@
                   "ask": "Milyen napokon dolgozik vagy tanul?",
                   "minWords": 6,
                   "points": [
-                    { "id": "p1", "label": "Megmondja, mely napokon dolgozik vagy tanul", "keywords": ["hetfo", "kedd", "szerda", "csutortok", "pentek", "hetkoznap", "minden nap", "naponta", "szombat", "vasarnap", "hetvege", "hetfotol"] }
+                    { "id": "p1", "label": "Megmondja, milyen napokon dolgozik vagy tanul", "keywords": ["hetfo", "kedd", "szerda", "csutortok", "pentek", "hetkoznap", "minden nap", "naponta", "szombat", "vasarnap", "hetvege", "hetfotol"] }
                   ],
                   "model": "Hétfőtől péntekig dolgozom, szombaton és vasárnap pihenek."
                 },

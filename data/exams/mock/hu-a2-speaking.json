@@ -16,7 +16,7 @@
             {
               "id": "a",
               "title": "Egy nyaralás",
-              "prompt": "Egy nemrég tett nyaralásról vagy utazásról fog beszélni. Mondja el a következőket.",
+              "prompt": "Egy nemrégi nyaralásról vagy utazásról fog beszélni. Mondja el a következőket.",
               "bullets": ["hová utazott, és kivel", "mit csinált ott", "milyen volt az időjárás és a szállás", "mi tetszett a legjobban"],
               "turns": [
                 {
@@ -58,7 +58,7 @@
         {
           "skill": "speaking",
           "kind": "speaking",
-          "instruction": "Írja le a választott téma fényképét, és válaszoljon a vizsgáztató két kérdésére.",
+          "instruction": "Mondja el, mit lát a választott téma fényképén, és válaszoljon a vizsgáztató két kérdésére.",
           "prepSeconds": 360,
           "talkMinutes": [2, 3],
           "choices": [
@@ -66,19 +66,19 @@
               "id": "a",
               "title": "Családi ebéd",
               "photos": ["es-a2-1"],
-              "prompt": "Nézze meg a fényképet, és írja le a saját szavaival. Utána a vizsgáztató két kérdést fog feltenni.",
+              "prompt": "Nézze meg a fényképet, és mondja el a saját szavaival, mit lát. Utána a vizsgáztató két kérdést fog feltenni.",
               "bullets": ["kik vannak a képen", "mit csinálnak", "milyen a hangulat"],
               "turns": [
                 {
                   "id": "t1",
-                  "ask": "Kérem, írja le a fényképet.",
+                  "ask": "Kérem, mondja el, mit lát a fényképen.",
                   "minWords": 40,
                   "points": [
                     { "id": "p1", "label": "Megmondja, kik vannak a képen", "keywords": ["csalad", "nagymama", "gyerek", "kislany", "kisfiu", "ferfi", "asszony", "emberek", "szulok", "apuka", "anyuka", "oten"] },
                     { "id": "p2", "label": "Elmondja, mit csinálnak", "keywords": ["esznek", "ebedelnek", "vacsoraznak", "beszelgetnek", "mosolyognak", "nevetnek", "asztalnal", "asztal", "kinal", "tolt", "ulnek", "uldogelnek"] },
                     { "id": "p3", "label": "Beszél az ételekről vagy a hangulatról", "keywords": ["leves", "salata", "rizs", "zoldseg", "krumpli", "finom", "etel", "kancso", "boldog", "vidam", "kellemes", "hangulat"] }
                   ],
-                  "model": "A képen egy család ül az asztalnál. Öten vannak: egy nagymama, egy apa, egy anya és két gyerek, egy kislány és egy kisfiú. Ebédelnek, és mosolyognak. Az asztalon van leves, rizs és saláta. Az emberek boldogok, a hangulat nagyon kellemes. Mindenki beszélget, és együtt esznek."
+                  "model": "A képen egy család ül az asztalnál. Öten vannak: egy nagymama, egy apa, egy anya és két gyerek, egy kislány és egy kisfiú. Ebédelnek, és mosolyognak. Az asztalon van leves, rizs és saláta. Az emberek boldogok, a hangulat nagyon kellemes. Mindenki beszélget, és együtt eszik."
                 },
                 {
                   "id": "t2",
@@ -104,12 +104,12 @@
               "id": "b",
               "title": "Egy nap a piacon",
               "photos": ["es-a2-2"],
-              "prompt": "Nézze meg a fényképet, és írja le a saját szavaival. Utána a vizsgáztató két kérdést fog feltenni.",
+              "prompt": "Nézze meg a fényképet, és mondja el a saját szavaival, mit lát. Utána a vizsgáztató két kérdést fog feltenni.",
               "bullets": ["hol vannak az emberek", "mit árulnak", "mit csinálnak az emberek"],
               "turns": [
                 {
                   "id": "t1",
-                  "ask": "Kérem, írja le a fényképet.",
+                  "ask": "Kérem, mondja el, mit lát a fényképen.",
                   "minWords": 40,
                   "points": [
                     { "id": "p1", "label": "Megmondja, hol vannak az emberek", "keywords": ["piac", "vasar", "utca", "sator", "szabadban", "kozepen", "jobbra", "balra", "mogott", "elol", "hely", "teren"] },
@@ -120,10 +120,10 @@
                 },
                 {
                   "id": "t2",
-                  "ask": "Hol szokott Ön ételt vásárolni?",
+                  "ask": "Hol szokott Ön bevásárolni?",
                   "minWords": 10,
                   "points": [
-                    { "id": "p1", "label": "Megmondja, hol vásárol ételt", "keywords": ["piac", "bolt", "uzlet", "aruhaz", "szupermarket", "vasarcsarnok", "interneten", "kozelben", "sarkon", "hetvegen", "zoldseges", "pekseg"] }
+                    { "id": "p1", "label": "Megmondja, hol szokott bevásárolni", "keywords": ["piac", "bolt", "uzlet", "aruhaz", "szupermarket", "vasarcsarnok", "interneten", "kozelben", "sarkon", "hetvegen", "zoldseges", "pekseg"] }
                   ],
                   "model": "Általában a közeli szupermarketben vásárolok, de hétvégén a piacra is elmegyek."
                 },
@@ -184,7 +184,7 @@
                 },
                 {
                   "id": "t4",
-                  "ask": "Elnézést kérek, ma lassú a konyha, és az étel körülbelül harminc percet késik. Megfelel Önöknek?",
+                  "ask": "Elnézést kérek, ma lassú a konyha, ezért az ételre körülbelül harminc percet kell várni. Megfelel Önöknek?",
                   "minWords": 12,
                   "points": [
                     { "id": "p1", "label": "Reagál a késésre", "keywords": ["megvarjuk", "varunk", "varhatunk", "sietunk", "sajnos", "nem baj", "nem tudunk", "nem probl", "inkabb", "elfogadjuk", "nincs gond", "nem gond"] }
@@ -250,7 +250,7 @@
                   "ask": "Rendben, akkor kétezer forint lesz. Tessék, itt van minden. Viszontlátásra!",
                   "minWords": 12,
                   "points": [
-                    { "id": "p1", "label": "Fizet, és elköszön", "keywords": ["koszonom", "fizetek", "kartya", "keszpenz", "ezer", "szep napot", "jo napot", "jo munkat", "legkozelebb", "kellemes", "nagyon koszon", "hamarosan"] }
+                    { "id": "p1", "label": "Fizet, és elköszön", "keywords": ["penz", "fizetek", "kartya", "keszpenz", "ezer", "szep napot", "jo napot", "jo munkat", "legkozelebb", "kellemes", "nagyon koszon", "hamarosan"] }
                   ],
                   "model": "Köszönöm szépen, tessék, itt van kétezer forint készpénzben. Viszontlátásra, szép napot kívánok!"
                 }

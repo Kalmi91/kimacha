@@ -95,7 +95,7 @@
                 },
                 {
                   "id": "t3",
-                  "ask": "Gondoljon a saját otthonára. Mit tehetne ön azért, hogy kevesebb ételt dobjon ki?",
+                  "ask": "Gondoljon a saját otthonára. Mit tehetne Ön azért, hogy kevesebb ételt dobjon ki?",
                   "minWords": 30,
                   "points": [
                     { "id": "cselekves", "label": "Konkrét otthoni lépéseket említ", "keywords": ["bevásárlólista", "tervez", "lefagyaszt", "fagyaszt", "maradék", "komposzt", "felhasznál", "dátum", "ellenőriz"] }
@@ -123,7 +123,7 @@
                 "Tegyen feltevéseket arról, mit gondolnak vagy éreznek az emberek most.",
                 "Meséljen egy hasonló saját élményről."
               ],
-              "input": "Képzelje el, hogy ön is ennek a cégnek dolgozik, és éppen most lépett be a terembe. Gondolja végig, miről vitatkoznak, milyen döntést kell hozniuk, és hogyan érzi magát mindenki.",
+              "input": "Képzelje el, hogy Ön is ennek a cégnek dolgozik, és éppen most lépett be a terembe. Gondolja végig, miről vitatkoznak, milyen döntést kell hozniuk, és hogyan érzi magát mindenki.",
               "photos": ["es-b2-1"],
               "turns": [
                 {
@@ -168,9 +168,9 @@
                 "Mondja el, mit lát: hol vannak, és ki mit csinál.",
                 "Képzelje el, miért költöznek, és milyen volt eddig a délelőtt.",
                 "Tegyen feltevéseket arról, mit éreznek az emberek most.",
-                "Meséljen egy költözésről, amelyet ön vagy valaki közeli átélt."
+                "Meséljen egy költözésről, amelyet Ön vagy valaki közeli átélt."
               ],
-              "input": "Képzelje el, hogy a költöző személy az ön barátja, és ön elment neki segíteni. Gondolja végig, miért vált lakást, milyen volt eddig a délelőtt, és mit éreznek az emberek.",
+              "input": "Képzelje el, hogy a költöző személy az Ön barátja, és Ön elment neki segíteni. Gondolja végig, miért vált lakást, milyen volt eddig a délelőtt, és mit éreznek az emberek.",
               "photos": ["es-b2-2"],
               "turns": [
                 {
@@ -187,7 +187,7 @@
                 },
                 {
                   "id": "t2",
-                  "ask": "Részt vett már ön valaha költözésben? Mesélje el, milyen volt.",
+                  "ask": "Részt vett már Ön valaha költözésben? Mesélje el, milyen volt.",
                   "minWords": 25,
                   "points": [
                     { "id": "elbeszeles", "label": "Konkrét élményt mesél el", "keywords": ["segít", "család", "barát", "testvér", "szülő", "unokatestvér", "cipel", "pakol", "egész nap", "órákig"] },
@@ -271,7 +271,7 @@
               "turns": [
                 {
                   "id": "t1",
-                  "ask": "Nézze meg az eredményeket. Melyik tanulási módot használja ön, és miért?",
+                  "ask": "Nézze meg az eredményeket. Melyik tanulási módot használja Ön, és miért?",
                   "minWords": 25,
                   "points": [
                     { "id": "mod", "label": "Megnevezi a saját tanulási módját", "keywords": ["alkalmazás", "applikáció", "tanfolyam", "magántanár", "könyv", "videó", "kurzus", "külföldön", "program"] },
