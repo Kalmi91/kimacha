@@ -5,6 +5,7 @@ import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { BrutalBox, SegmentBar, segmentsFilled } from '@/components/grammar/Brutal';
+import { ON_FILL } from '@/constants/GrammarPalettes';
 import type { PcicLevel } from '@/data/pcic';
 
 type ColorScheme = (typeof Colors)['light'];
@@ -17,11 +18,13 @@ type Props = {
   introduced: number;
   total: number;
   active: boolean;
+  // FB541: today's new-word batch is done; the whole row turns green with a bigger check.
+  done?: boolean;
   colors: ColorScheme;
   onPress: () => void;
 };
 
-export default function LevelRow({ level, label, introduced, total, active, colors, onPress }: Props) {
+export default function LevelRow({ level, label, introduced, total, active, done = false, colors, onPress }: Props) {
   const pct = total > 0 ? (introduced / total) * 100 : 0;
   // The row used to show these two texts hardcoded in English, so they
   // stayed English on a Spanish UI too.
@@ -29,22 +32,22 @@ export default function LevelRow({ level, label, introduced, total, active, colo
   const g = useGrammarColors();
   // brutalist palette: a box (active = the fill) + a segmented bar.
   if (g.brutal) {
-    const ink = active ? g.onFill : g.ink;
+    const ink = done ? ON_FILL : active ? g.onFill : g.ink;
     return (
       <BrutalBox
         testID={`level-row-${level}`}
         fill={active ? 'a' : 'paper'}
         offset={2}
         style={styles.brutalRow}
-        boxStyle={styles.brutalBox}
+        boxStyle={[styles.brutalBox, done && { backgroundColor: colors.successFill }]}
         onPress={onPress}
       >
         <View style={styles.topLine}>
           <Text style={[styles.label, { color: ink, fontWeight: '500', textTransform: 'uppercase' }]}>{`${level} · ${label}`}</Text>
-          {active && <Text style={[styles.check, { color: ink }]}>✓</Text>}
+          {(active || done) && <Text testID={done ? `level-row-done-${level}` : undefined} style={[styles.check, done && styles.doneCheck, { color: ink }]}>✓</Text>}
         </View>
         <SegmentBar filled={segmentsFilled(pct, 8)} segments={8} style={styles.brutalBar} />
-        <Text style={[styles.progress, { color: active ? g.onFill : g.mu }]}>
+        <Text style={[styles.progress, { color: done ? ON_FILL : active ? g.onFill : g.mu }]}>
           {introduced > 0 ? s.pcic.levelRowIntroduced(introduced, total) : s.pcic.levelNotStarted}
         </Text>
       </BrutalBox>
@@ -52,20 +55,22 @@ export default function LevelRow({ level, label, introduced, total, active, colo
   }
   return (
     <Pressable
-      style={[styles.row, { backgroundColor: colors.card, borderColor: active ? colors.tint : 'transparent' }]}
+      style={[styles.row, done
+        ? { backgroundColor: colors.successFill, borderColor: colors.successFill }
+        : { backgroundColor: colors.card, borderColor: active ? colors.tint : 'transparent' }]}
       onPress={onPress}
     >
       <View style={styles.topLine}>
         <View style={[styles.badge, { backgroundColor: colors.tint }]}>
           <Text style={styles.badgeText}>{level}</Text>
         </View>
-        <Text style={[styles.label, { color: colors.text }]}>{label}</Text>
-        {active && <Text style={[styles.check, { color: colors.tint }]}>✓</Text>}
+        <Text style={[styles.label, { color: done ? ON_FILL : colors.text }]}>{label}</Text>
+        {(active || done) && <Text testID={done ? `level-row-done-${level}` : undefined} style={[styles.check, done && styles.doneCheck, { color: done ? ON_FILL : colors.tint }]}>✓</Text>}
       </View>
       <View style={[styles.track, { backgroundColor: colors.background }]}>
         <View style={[styles.fill, { backgroundColor: colors.tint, width: `${pct}%` }]} />
       </View>
-      <Text style={[styles.progress, { color: colors.tabIconDefault }]}>
+      <Text style={[styles.progress, { color: done ? ON_FILL : colors.tabIconDefault }]}>
         {introduced > 0 ? s.pcic.levelRowIntroduced(introduced, total) : s.pcic.levelNotStarted}
       </Text>
     </Pressable>
@@ -106,6 +111,10 @@ const styles = StyleSheet.create({
   check: {
     fontSize: 18,
     fontWeight: '700',
+  },
+  doneCheck: {
+    fontSize: 28,
+    lineHeight: 30,
   },
   track: {
     height: 6,

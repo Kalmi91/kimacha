@@ -567,3 +567,18 @@ describe('autoNewTopUp (FB535)', () => {
     expect(autoNewTopUp([], learned, order, TODAY, budget)).toBeNull();
   });
 });
+
+import { dayBatchDone } from '../pcicSession';
+
+// FB541: the level picker paints the active row green once today's batch is done.
+describe('dayBatchDone', () => {
+  it('done once the day introductions reach the daily limit, not before', () => {
+    expect(dayBatchDone(9, 10)).toBe(false);
+    expect(dayBatchDone(10, 10)).toBe(true);
+    expect(dayBatchDone(23, 10)).toBe(true);
+  });
+  it('a zero limit is never done', () => {
+    expect(dayBatchDone(0, 0)).toBe(false);
+    expect(dayBatchDone(5, 0)).toBe(false);
+  });
+});

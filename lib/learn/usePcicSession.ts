@@ -15,7 +15,7 @@ import { pcicItemsForLevel, findPcicItem, type PcicLevel, type PcicTarget } from
 import { gradePcicAnswer, gradeSentenceAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, mixNewCards, autoNewTopUp, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, dayBatchDone, requeueAfterGrade, requeueAfterUndo, mixNewCards, autoNewTopUp, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
 import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -311,6 +311,7 @@ export function usePcicSession() {
   });
   const introducedTodayByKind = countIntroducedTodayByKind(cardsAllLevels, today, (id) => findPcicItem(id)?.kind);
   const todayNewBudget = dailyNewLimit + pcicBonus;
+  const dayDone = dayBatchDone(introducedTodayByKind.words + introducedTodayByKind.sentences, dailyNewLimit);
 
   // The DB write + counters are here, the queue step (advance) is in the
   // caller handleGrade, separately.
@@ -528,10 +529,12 @@ export function usePcicSession() {
     handleUndo,
     introducedTodayByKind,
     todayNewBudget,
+    dayDone,
     sentenceCard,
     setSentenceCard,
     levelSheetOpen,
-    allLevelCards,
+    // FB541: the level picker shows the live progress (the load-time list said "not started" after a finished day).
+    allLevelCards: cardsAllLevels,
     target,
     examRow,
     openPlacement,
