@@ -48,8 +48,6 @@ export default function PcicCardView({
   xpToday,
   lastGraded,
   handleUndo,
-  introducedTodayByKind,
-  todayNewBudget,
   dayDone,
   sentenceCard,
   setSentenceCard,
@@ -110,46 +108,41 @@ export default function PcicCardView({
 
   const headerRow = (
     <SkinHeader>
+    {/* Row 1: the level chip on the left, undo + 💬 on the right (💬 is the level chip's size).
+        Row 2: the five count chips in one line. */}
     <View style={styles.headerRow}>
-      <View style={styles.headerBadges}>
-        {g.brutal ? (
-          // The level chip box (active = filled).
-          <BrutalBox testID="learn-level-chip" fill="a" offset={2} boxStyle={styles.brutalLevelChip} onPress={() => setLevelSheetOpen(true)}>
-            <Text style={[styles.levelChipText, { color: g.onFill, fontWeight: '500' }]}>{level} ▾</Text>
-          </BrutalBox>
-        ) : (
-          <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
-            <Text style={[styles.levelChipText, { color: colors.onTint }]}>{level} ▾</Text>
-          </Pressable>
-        )}
-        <BadgeRow
-          colors={colors}
-          items={[
-            { label: s.pcic.badgeTotal(newOrder.length) },
-            { label: s.pcic.badgeDue(dueRemaining), tone: 'blue' },
-            { label: s.pcic.badgeNew(newRemaining), tone: 'green' },
-            { label: s.pcic.badgeDone(doneToday) },
-            { label: s.pcic.badgeXp(xpToday, DAILY_XP_GOAL), tone: 'accent', accessibilityLabel: s.pcic.badgeXpA11y(xpToday, DAILY_XP_GOAL), tabular: true },
-          ]}
-        />
-      </View>
+      {g.brutal ? (
+        // The level chip box (active = filled).
+        <BrutalBox testID="learn-level-chip" fill="a" offset={2} boxStyle={styles.brutalLevelChip} onPress={() => setLevelSheetOpen(true)}>
+          <Text style={[styles.levelChipText, { color: g.onFill, fontWeight: '500' }]}>{level} ▾</Text>
+        </BrutalBox>
+      ) : (
+        <Pressable style={[styles.levelChip, { backgroundColor: colors.tint }]} onPress={() => setLevelSheetOpen(true)}>
+          <Text style={[styles.levelChipText, { color: colors.onTint }]}>{level} ▾</Text>
+        </Pressable>
+      )}
       <View style={styles.headerIcons}>
         {lastGraded && (
           <Pressable onPress={handleUndo} hitSlop={12} style={styles.resetBtn} accessibilityLabel={s.pcic.undo}>
             <Text style={styles.resetIcon}>↶</Text>
           </Pressable>
         )}
-        <ScreenFeedback placement="inline" level={level} languagePair={languagePair} currentCard={feedbackCard} />
+        <ScreenFeedback placement="inline" compact level={level} languagePair={languagePair} currentCard={feedbackCard} />
       </View>
     </View>
-    {/* fix: the old fifth BadgeRow chip (what today's introduction consists of
-        + today's total budget) was one long, continuous text that stuck out
-        of the screen's right edge as a chip (it did not fit in the row, and the chip's interior
-        cannot wrap). It became a separate, full-width, wrappable row
-        BELOW the chip row; the content (i18n) is unchanged. */}
-    <Text style={[styles.todayLine, { color: colors.tabIconDefault }]}>
-      {s.pcic.badgeIntroducedToday(introducedTodayByKind.words, introducedTodayByKind.sentences, todayNewBudget)}
-    </Text>
+    <View style={styles.badgeRowWrap}>
+      <BadgeRow
+        singleLine
+        colors={colors}
+        items={[
+          { label: s.pcic.badgeTotal(newOrder.length) },
+          { label: s.pcic.badgeDue(dueRemaining), tone: 'blue' },
+          { label: s.pcic.badgeNew(newRemaining), tone: 'green' },
+          { label: s.pcic.badgeDone(doneToday) },
+          { label: s.pcic.badgeXp(xpToday, DAILY_XP_GOAL), tone: 'accent', accessibilityLabel: s.pcic.badgeXpA11y(xpToday, DAILY_XP_GOAL), tabular: true },
+        ]}
+      />
+    </View>
     <MistakesEntry colors={colors} />
     </SkinHeader>
   );
@@ -369,6 +362,7 @@ export default function PcicCardView({
 
       <ProgressBar
         testID="learn-progress"
+        continuous
         pct={barPct}
         brutalStyle={styles.brutalProgress}
         trackStyle={styles.progressTrack}

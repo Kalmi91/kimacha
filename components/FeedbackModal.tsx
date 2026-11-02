@@ -13,6 +13,7 @@ import { useLearner } from '@/lib/learner';
 import { feedbackBuildTag } from '@/lib/appBuild';
 import { IS_PLAY_BUILD, FEEDBACK_URL } from '@/lib/buildFlavor';
 import { FeedbackHeaderContext } from '@/lib/feedbackHeader';
+import { HEADER_CHIP } from '@/components/learn/pcicStyles';
 
 interface Props {
   level: string;
@@ -29,6 +30,8 @@ interface Props {
   //   in the screen's top right corner instead. 'inline': a header-sized button in the normal layout flow, for a screen
   //   that draws its own top row (the Learn tab, the neo-brutalist Course tab).
   placement?: 'fab' | 'header' | 'inline';
+  // the Learn header's 💬 is the size of the level chip (HEADER_CHIP); only for the 'inline' / corner slots, never the fab.
+  compact?: boolean;
 }
 
 // `corner`: the 'header' button of a screen without a navigator header around it (jest renders the screens bare).
@@ -47,7 +50,7 @@ function ModalBox({ children }: { children: ReactNode }) {
   return <View style={[styles.modal, { backgroundColor: g.paper }]}>{children}</View>;
 }
 
-function FeedbackControl({ level, languagePair, currentCard, draggable = false, bottomOffset = 0, slot }: Omit<Props, 'placement'> & { slot: Slot }) {
+function FeedbackControl({ level, languagePair, currentCard, draggable = false, bottomOffset = 0, compact = false, slot }: Omit<Props, 'placement'> & { slot: Slot }) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -144,6 +147,8 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
     setTimeout(() => setShowThanks(false), 2000);
   };
 
+  const small = compact && slot !== 'fab';
+
   return (
     <>
       <Pressable
@@ -151,10 +156,10 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
         accessibilityLabel={s.feedback.button}
         hitSlop={slot === 'fab' ? undefined : 4}
         style={[
-          slot === 'fab' ? styles.fab : styles.slot,
+          slot === 'fab' ? styles.fab : small ? styles.compactSlot : styles.slot,
           slot === 'corner' && styles.corner,
           { backgroundColor: colors.tint },
-          g.brutal && (slot === 'fab' ? styles.brutalFab : styles.brutalSlot),
+          g.brutal && (slot === 'fab' ? styles.brutalFab : small ? styles.brutalCompactSlot : styles.brutalSlot),
           slot === 'fab' && draggable && (side === 'left' ? styles.fabLeft : styles.fabRight),
           slot === 'fab' && bottomOffset > 0 && { bottom: FEEDBACK_FAB_MARGIN + bottomOffset },
         ]}
@@ -163,11 +168,17 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
       >
         {g.brutal ? (
           // A square BrutalBox with the fill instead of the circle.
-          <BrutalBox testID="feedback-fab" fill="a" boxStyle={slot === 'fab' ? styles.brutalFabBox : styles.brutalSlotBox}>
-            <Text style={slot === 'fab' ? styles.fabText : styles.slotText}>💬</Text>
+          <BrutalBox
+            testID="feedback-fab"
+            fill="a"
+            // the compact box uses the same offset as the Learn level chip's BrutalBox, so the two shadows match
+            offset={small ? 2 : undefined}
+            boxStyle={slot === 'fab' ? styles.brutalFabBox : small ? styles.brutalCompactBox : styles.brutalSlotBox}
+          >
+            <Text style={slot === 'fab' ? styles.fabText : small ? styles.compactText : styles.slotText}>💬</Text>
           </BrutalBox>
         ) : (
-          <Text style={slot === 'fab' ? styles.fabText : styles.slotText}>💬</Text>
+          <Text style={slot === 'fab' ? styles.fabText : small ? styles.compactText : styles.slotText}>💬</Text>
         )}
       </Pressable>
 
@@ -234,7 +245,7 @@ function FeedbackControl({ level, languagePair, currentCard, draggable = false, 
 }
 
 export default function FeedbackButton(props: Props) {
-  const { placement = 'fab', level, languagePair, currentCard, draggable, bottomOffset } = props;
+  const { placement = 'fab', level, languagePair, currentCard, draggable, bottomOffset, compact } = props;
   // Set by the tabs layout around every screen; null where there is no navigator header (a test renders the screen bare).
   const setHeaderRight = useContext(FeedbackHeaderContext);
   const inHeader = placement === 'header' && setHeaderRight !== null;
@@ -261,6 +272,7 @@ export default function FeedbackButton(props: Props) {
       currentCard={currentCard}
       draggable={draggable}
       bottomOffset={bottomOffset}
+      compact={compact}
       slot={placement === 'header' ? 'corner' : placement}
     />
   );
@@ -312,6 +324,11 @@ const styles = StyleSheet.create({
   brutalSlot: { width: 44, height: 44, borderRadius: 0, backgroundColor: 'transparent' },
   brutalSlotBox: { width: 40, height: 40, alignItems: 'center', justifyContent: 'center' },
   slotText: { fontSize: 20 },
+  // Learn header, `compact`: the level chip's size. The brutal holder adds the box's 2 px shadow to the box size.
+  compactSlot: { width: HEADER_CHIP.width, height: HEADER_CHIP.height, borderRadius: HEADER_CHIP.height / 2, alignItems: 'center', justifyContent: 'center' },
+  brutalCompactSlot: { width: HEADER_CHIP.width + 2, height: HEADER_CHIP.height + 2, borderRadius: 0, backgroundColor: 'transparent' },
+  brutalCompactBox: { width: HEADER_CHIP.width, height: HEADER_CHIP.height, alignItems: 'center', justifyContent: 'center' },
+  compactText: { fontSize: 15 },
   brutalModalOuter: {},
   brutalModal: { padding: 24 },
   brutalModalBtn: { flex: 1 },

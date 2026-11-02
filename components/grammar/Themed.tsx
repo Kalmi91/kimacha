@@ -1,7 +1,7 @@
 import { Pressable, View, type StyleProp, type TextStyle, type ViewProps, type ViewStyle } from 'react-native';
 import { Text, type KTextProps } from '@/components/KText';
 
-import { BrutalBackButton, BrutalButton, SegmentBar, Sticker, brutalInputStyle, segmentsFilled, type BrutalFill } from '@/components/grammar/Brutal';
+import { BrutalBackButton, BrutalButton, ContinuousBar, SegmentBar, Sticker, brutalInputStyle, segmentsFilled, type BrutalFill } from '@/components/grammar/Brutal';
 import { useGrammarColors, type GrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 
@@ -120,11 +120,13 @@ export function ActionButton({
 // A progress bar: the segmented bar on the brutalist palette (`filled` of `segments` blocks, by default
 // from `pct`), a track + fill on classic. `testID` goes on the segmented bar; `trackProps` / `fillProps`
 // carry the classic track's / fill's own testID and accessibility props; `fillWidth` overrides the
-// fill's width in percent (default `pct`).
+// fill's width in percent (default `pct`). `continuous`: on the brutalist palette one continuous
+// track (ContinuousBar, its fill gets `fillProps.testID`) instead of the blocks.
 export function ProgressBar({
   pct,
   filled,
   segments = 8,
+  continuous = false,
   testID,
   brutalStyle,
   trackStyle,
@@ -138,6 +140,7 @@ export function ProgressBar({
   pct: number;
   filled?: number;
   segments?: number;
+  continuous?: boolean;
   testID?: string;
   brutalStyle?: StyleProp<ViewStyle>;
   trackStyle?: StyleProp<ViewStyle>;
@@ -149,6 +152,7 @@ export function ProgressBar({
   fillProps?: ViewProps;
 }) {
   const g = useGrammarColors();
+  if (g.brutal && continuous) return <ContinuousBar testID={testID} pct={fillWidth ?? pct} style={brutalStyle} fillTestID={fillProps?.testID} />;
   if (g.brutal) return <SegmentBar testID={testID} filled={filled ?? segmentsFilled(pct, segments)} segments={segments} style={brutalStyle} />;
   return (
     <View {...trackProps} style={[trackStyle, { backgroundColor: trackColor }]}>

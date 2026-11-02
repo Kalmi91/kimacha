@@ -35,6 +35,7 @@ import { act, fireEvent, render } from '@testing-library/react-native';
 import { DeviceEventEmitter, KeyboardAvoidingView, ScrollView, StyleSheet, TextInput } from 'react-native';
 
 import { DOCK_RESERVE, FAB_CLEARANCE } from '@/components/learn/DockedAction';
+import { HEADER_CHIP } from '@/components/learn/pcicStyles';
 import { getDb } from '@/lib/database';
 import PcicScreen from '../index';
 import { makeFlush } from '@/test-utils/flush';
@@ -86,7 +87,8 @@ describe('PCIC tab: the card never runs under the docked Next bar', () => {
     expect(content.paddingBottom).toBe(0);
     const fab = StyleSheet.flatten(utils.getByLabelText('Feedback').props.style);
     expect(fab.position).not.toBe('absolute');
-    expect(fab.width).toBe(40);
+    // the Learn header's 💬 is the compact, level-chip-sized one
+    expect(fab.width).toBe(HEADER_CHIP.width);
   });
 
   it('keyboard open: the typing layout is unchanged (full-height scroller, room under the bar as padding)', async () => {
