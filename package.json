@@ -29,6 +29,8 @@
     "react-native-worklets": "0.8.3"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^10.1.1",
+    "@stryker-mutator/jest-runner": "^10.1.1",
     "@testing-library/react-native": "^13.3.3",
     "@types/jest": "^29.5.14",
     "@types/react": "~19.2.2",
@@ -53,6 +55,7 @@
     "typecheck:ci": "tsc --noEmit",
     "test": "jest",
     "test:ci": "jest --ci --coverage --maxWorkers=2",
+    "test:mutation": "stryker run",
     "gen:content": "node scripts/gen-content-index.mjs",
     "audit:data": "node scripts/words-open-check.mjs && node scripts/validate-en-track.mjs && node scripts/audit-corpus-en.mjs && node scripts/audit-games.mjs",
     "gate": "npm run typecheck:ci && npm run lint && npm run test:ci && npm run audit:data",
