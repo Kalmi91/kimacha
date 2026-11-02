@@ -10,6 +10,7 @@ import { activeSourceFor } from '@/lib/languagePair';
 import { wordIn } from '@/lib/pcicItemText';
 import { hashString, shuffleArray, shuffleOptions } from '@/lib/shuffle';
 import { gapSourcesForLevel, type GapSource } from './grammarItems';
+import { placementBankGaps } from './placementBank';
 
 /** The order of one step (5 questions): word, grammar, word, grammar, word. */
 export const PLACEMENT_PATTERN = ['word', 'gap', 'word', 'gap', 'word'] as const;
@@ -55,12 +56,12 @@ export function placementLevels(): PcicLevel[] {
   return PCIC_LEVELS.filter((level) => pcicItemsForLevel(level).length > 0);
 }
 
-/** The pool of one level for the active direction: the level's words + the gap items of EVERY written grammar lesson. */
+/** The pool of one level for the active direction: the level's words + the gap items of EVERY written grammar lesson (+ the target's authored bank, lib/exam/placementBank.ts). */
 export function placementPoolFor(level: PcicLevel, target: PcicTarget): PlacementPool {
   const topicIds = syllabusForLevel(level, target)
     .map((topic) => topic.id)
     .filter((id) => hasLesson(target, id));
-  return { items: pcicItemsForLevel(level), gaps: gapSourcesForLevel(level, target, topicIds) };
+  return { items: pcicItemsForLevel(level), gaps: [...gapSourcesForLevel(level, target, topicIds), ...placementBankGaps(level, target)] };
 }
 
 const norm = (text: string) => text.trim().toLowerCase();
