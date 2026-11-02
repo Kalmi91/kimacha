@@ -1,7 +1,8 @@
-// Checks the German A1 gloss overlays (gloss-de) against the Spanish, English and Hungarian A1 decks.
+// Checks the German gloss overlays (gloss-de) against the Spanish, English and Hungarian decks, every level.
+// A level file that is still an empty array is not written yet and is skipped.
 //   node scripts/de-words-check.mjs          errors only (exit 1 when there are any), warning count
 //   node scripts/de-words-check.mjs --warn   also list the warnings (headword missing from the sentence,
-//                                            possible formal Sie, tense or case above A1, ...)
+//                                            possible formal Sie, tense or case above the level, ...)
 // Run `node scripts/build-de-deck.mjs` afterwards to rebuild data/words/de.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -55,9 +56,9 @@ function checkWordInSentence(de, sentence) {
   return false;
 }
 const FILES = [
-  { dir: 'data/words-open', gl: 'data/words-open/gloss-de', key: 'order', lv: ['a1'], sent: 'sentence_es' },
-  { dir: 'data/words/en', gl: 'data/words/en/gloss-de', key: 'id', lv: ['a0', 'a1'], sent: 'sentence_en' },
-  { dir: 'data/words/hu', gl: 'data/words/hu/gloss-de', key: 'id', lv: ['a0', 'a1'], sent: 'sentence_hu' },
+  { dir: 'data/words-open', gl: 'data/words-open/gloss-de', key: 'order', lv: ['a1', 'a2', 'b1', 'b2', 'c1'], sent: 'sentence_es' },
+  { dir: 'data/words/en', gl: 'data/words/en/gloss-de', key: 'id', lv: ['a0', 'a1', 'a2', 'b1', 'b2', 'c1'], sent: 'sentence_en' },
+  { dir: 'data/words/hu', gl: 'data/words/hu/gloss-de', key: 'id', lv: ['a0', 'a1', 'a2', 'b1', 'b2', 'c1'], sent: 'sentence_hu' },
 ];
 const stats = {};
 for (const F of FILES) {
@@ -69,6 +70,10 @@ for (const F of FILES) {
     if (!raw.endsWith(']\n')) errors.push(`${gf}: must end with newline after ]`);
     const g = JSON.parse(raw), src = R(`${F.dir}/${lv}.json`);
     stats[gf] = g.length;
+    if (g.length === 0) continue;
+    // tense / case warnings by level: A1 (a0, a1) flags Präteritum, Konjunktiv II, Passiv, Genitiv; A2 flags Konjunktiv II,
+    // Passiv and Genitiv; B1 and above flag none (the contract allows them there).
+    const a1 = lv === 'a0' || lv === 'a1', a2 = lv === 'a2';
     if (g.length !== src.length) errors.push(`${gf}: ${g.length} rows, source has ${src.length}`);
     const seen = new Set();
     src.forEach((c, i) => {
@@ -115,16 +120,14 @@ for (const F of FILES) {
       if (OLDSPELL.test(s + ' ' + de)) E(gf, k, `spelling ss/ß: ${s} | ${de}`);
       if (!checkWordInSentence(de, s)) W(gf, k, `headword "${de}" not in sentence: ${s}`);
       if (SIE_FORMAL.test(s)) W(gf, k, `formal Sie? ${s}`);
-      if (PRAET.test(s)) W(gf, k, `Präteritum? ${s}`);
-      if (KONJ.test(s)) W(gf, k, `Konjunktiv? ${s}`);
-      if (PASSIV.test(s)) W(gf, k, `Passiv? ${s}`);
-      if (GEN.test(s)) W(gf, k, `Genitiv? ${s}`);
+      if (a1 && PRAET.test(s)) W(gf, k, `Präteritum? ${s}`);
+      if ((a1 || a2) && KONJ.test(s)) W(gf, k, `Konjunktiv? ${s}`);
+      if ((a1 || a2) && PASSIV.test(s)) W(gf, k, `Passiv? ${s}`);
+      if ((a1 || a2) && GEN.test(s)) W(gf, k, `Genitiv? ${s}`);
       if (/\d/.test(s)) W(gf, k, `digit in sentence: ${s}`);
     });
   }
 }
-// empty higher-level files
-for (const F of FILES) for (const lv of ['a2', 'b1', 'b2', 'c1']) { const f = `${F.gl}/${lv}.json`; if (!fs.existsSync(base + f)) errors.push(`${f}: missing`); }
 console.log(stats);
 const show = process.argv.includes('--warn') ? warns : warns.slice(0, 0);
 console.log(`errors ${errors.length}, warnings ${warns.length}`);
