@@ -5,7 +5,7 @@ import { EN_GRAMMAR_INDEX } from '../content/en.index';
 import { ES_GRAMMAR_INDEX } from '../content/es.index';
 import { HU_GRAMMAR_INDEX } from '../content/hu.index';
 import { DE_GRAMMAR_INDEX } from '../content/de.index';
-import { withArticleNouns } from '@/lib/grammar/nounArticles';
+import { withArticleNouns, withArticleNounsDe } from '@/lib/grammar/nounArticles';
 import { withHu } from '@/lib/grammar/huOverlay';
 import { withOverlay } from '@/lib/grammar/overlay';
 
@@ -41,7 +41,7 @@ describe.each(['es', 'en', 'hu', 'de'] as const)('lazy grammar registry (%s)', (
       }
       // the de course has no German sidecar (a German speaker never takes it), only the Hungarian one
       if (lang === 'de') {
-        expect(lesson).toEqual(withHu(json, require(`@/data/games/grammar-hu/de/${file}.json`)));
+        expect(lesson).toEqual(withArticleNounsDe(withHu(json, require(`@/data/games/grammar-hu/de/${file}.json`)) as never));
         continue;
       }
       const withSidecar = withGerman(withHu(json, require(`@/data/games/grammar-hu/${lang}/${file}.json`)));

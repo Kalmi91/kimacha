@@ -60,6 +60,7 @@ const de: typeof en = {
     yourAnswer: 'Deine Antwort',
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
     startArticle: (n: number) => `El oder la? (${n})`,
+    startArticleDe: (n: number) => `Der, die oder das? (${n})`,
     startSpot: (n: number) => `Fehler finden (${n})`,
     startOrder: (n: number) => `Wortstellung (${n})`,
     startDictation: (n: number) => `Diktat (${n})`,

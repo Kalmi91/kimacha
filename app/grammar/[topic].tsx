@@ -13,7 +13,7 @@ import { nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { kindPercent, kindProgressFromRows, kindRunKey, runSummary, type KindRun } from '@/lib/grammar/lessonScore';
 import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
 import { TRANSFORM_ROUND_SIZE } from '@/lib/grammar/transformRounds';
-import { ARTICLE_LESSON_ID, ARTICLE_ROUND_SIZE } from '@/lib/grammar/nounArticles';
+import { ARTICLE_ROUND_SIZE, isArticleLesson } from '@/lib/grammar/nounArticles';
 import { lessonTestFromRows, lessonTestKey } from '@/lib/grammar/lessonTest';
 import { KIND_ORDER, useGrammarTopic } from '@/lib/grammar/useGrammarTopic';
 import { getScrollY, setScrollY } from '@/lib/grammar/scrollMemory';
@@ -360,7 +360,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
                 kind === 'choice'
                     ? s.grammar.startChoice(kindCounts.choice)
                     : kind === 'article'
-                      ? s.grammar.startArticle(topicId === ARTICLE_LESSON_ID ? Math.min(kindCounts.article, ARTICLE_ROUND_SIZE) : kindCounts.article)
+                      ? (learnedLang === 'de' ? s.grammar.startArticleDe : s.grammar.startArticle)(isArticleLesson(String(topicId)) ? Math.min(kindCounts.article, ARTICLE_ROUND_SIZE) : kindCounts.article)
                     : kind === 'match'
                       ? s.grammar.startMatch(kindCounts.match)
                       : kind === 'form'

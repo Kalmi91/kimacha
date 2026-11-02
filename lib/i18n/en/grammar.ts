@@ -75,6 +75,8 @@ export default {
     runProgress: (done: number, total: number, pct: number) => `${done}/${total} · ${pct}%`,
     // button of the el / la article-chooser task (only where such a set exists).
     startArticle: (n: number) => `El or la? (${n})`,
+    // the same for the German course (der / die / das).
+    startArticleDe: (n: number) => `Der, die or das? (${n})`,
     // temporary, new task kinds (error finder, word order, dictation).
     startSpot: (n: number) => `Spot the mistake (${n})`,
     startOrder: (n: number) => `Word order (${n})`,

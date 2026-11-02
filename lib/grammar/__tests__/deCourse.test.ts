@@ -5,7 +5,7 @@
 
 import { existsSync, readdirSync, readFileSync } from 'fs';
 import { join } from 'path';
-import { getGrammarTopic, getGrammarTopicIds, getGrammarTopics, type GrammarItem } from '@/lib/games/content';
+import { getGrammarTopic, getGrammarTopicIds, getGrammarTopics, isArticleSetItem, type GrammarItem } from '@/lib/games/content';
 import { buildGrammarRound } from '@/lib/games/grammarChoice';
 import { isVosotrosItem } from '@/lib/grammar/vosotros';
 import { DE_GRAMMAR_INDEX } from '@/lib/games/content/de.index';
@@ -103,7 +103,8 @@ describe('German lessons: registry', () => {
       expect(lesson.schema).toBe(2);
       expect(lesson.topic).toBe(t.id);
       expect(lesson.level).toBe(t.level);
-      expect(lessonKinds('de', t.id)).toEqual(['choice', 'form', 'why']);
+      // artikel-genus also carries the der / die / das noun task, with its own button
+      expect(lessonKinds('de', t.id)).toEqual(t.id === 'artikel-genus' ? ['choice', 'article', 'form', 'why'] : ['choice', 'form', 'why']);
     }
   });
 
@@ -112,7 +113,9 @@ describe('German lessons: registry', () => {
       const sidecar = join(ROOT, 'data', 'games', 'grammar-hu', 'de', `${lesson.topic}.json`);
       expect(existsSync(sidecar)).toBe(true);
       const hu = JSON.parse(readFileSync(sidecar, 'utf8')) as Record<string, string>;
-      for (const key of lang4Keys(lesson)) expect([lesson.topic, key, (hu[key] ?? '').trim().length > 0]).toEqual([lesson.topic, key, true]);
+      // the generated noun task of artikel-genus carries its Hungarian texts itself (lib/grammar/nounArticles.ts)
+      const authored = { ...lesson, items: lesson.items.filter((i) => !isArticleSetItem(i as GrammarItem)) };
+      for (const key of lang4Keys(authored)) expect([lesson.topic, key, (hu[key] ?? '').trim().length > 0]).toEqual([lesson.topic, key, true]);
       expect(lesson.speak.hu?.trim()).toBeTruthy();
       expect(lesson.title.hu?.trim()).toBeTruthy();
     }
@@ -147,7 +150,8 @@ describe('German lessons: the round', () => {
     for (const lesson of getGrammarTopics('de')) {
       expect((lesson.items as GrammarItem[]).filter(isVosotrosItem)).toEqual([]);
       expect(lesson.items.length).toBeGreaterThanOrEqual(30);
-      expect(buildGrammarRound(lesson, 1)).toHaveLength(lesson.items.length);
+      // artikel-genus: the noun task is a seeded sample of 20, not all of its (hundreds of) items
+      if (lesson.topic !== 'artikel-genus') expect(buildGrammarRound(lesson, 1)).toHaveLength(lesson.items.length);
     }
   });
 });
