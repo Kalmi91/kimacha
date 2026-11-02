@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import deSyllabus from '@/data/games/grammar-de/syllabus.json';
-import { getGrammarSyllabus, getGrammarUnits, syllabusTopic, topicsForUnit, unitsForLevel } from '../syllabus';
+import { getGrammarSyllabus, getGrammarUnits, syllabusForLevel, syllabusLevels, syllabusTopic, topicsForUnit, unitsForLevel } from '../syllabus';
 import { EN_SYLLABUS, EN_UNITS } from '../syllabusEn';
 import { lang4Keys, withOverlay, withOverlayIndex, withOverlayTitles } from '../overlay';
 
@@ -152,8 +152,23 @@ describe('German syllabus titles', () => {
     expect(Object.keys(deSyllabus.en.topics).sort()).toEqual(EN_SYLLABUS.map((t) => t.id).sort());
   });
 
+  it('hu course: every unit has a de title, every topic a de title and blurb, and the file has no stray ids', () => {
+    const units = syllabusLevels('hu').flatMap((l) => unitsForLevel(l, 'hu'));
+    const topics = syllabusLevels('hu').flatMap((l) => syllabusForLevel(l, 'hu'));
+    expect(units).toHaveLength(18);
+    expect(topics).toHaveLength(75);
+    for (const u of units) expect(u.title.de?.trim()).toBeTruthy();
+    for (const t of topics) {
+      expect(t.title.de?.trim()).toBeTruthy();
+      expect(t.blurb.de?.trim()).toBeTruthy();
+    }
+    expect(Object.keys(deSyllabus.hu.units).sort()).toEqual(units.map((u) => u.id).sort());
+    expect(Object.keys(deSyllabus.hu.topics).sort()).toEqual(topics.map((t) => t.id).sort());
+  });
+
   it('a topic whose list title and lesson title agree in English agrees in German too (list row = lesson header)', () => {
-    for (const [course, topics] of [['es', getGrammarSyllabus()], ['en', EN_SYLLABUS]] as const) {
+    const huTopics = syllabusLevels('hu').flatMap((l) => syllabusForLevel(l, 'hu'));
+    for (const [course, topics] of [['es', getGrammarSyllabus()], ['en', EN_SYLLABUS], ['hu', huTopics]] as const) {
       for (const t of topics) {
         const file = [t.id, t.id.replace(/_/g, '-')].find((f) => fs.existsSync(path.join(ROOT, `data/games/grammar/${course}/${f}.json`)));
         if (!file) continue;
@@ -172,6 +187,9 @@ describe('German syllabus titles', () => {
     expect(serEstar.title.en).toBe('Ser or estar?');
     expect(syllabusTopic('to_be', 'en')!.title.de).toBeTruthy();
     expect(unitsForLevel('A1', 'en')[0].title.de).toBe('Erste Schritte');
+    expect(unitsForLevel('A1', 'hu')[0].title.de).toBe('Laute und Vokalharmonie');
+    expect(syllabusTopic('lenni-van', 'hu')!.title.de).toBe('Sein: vagyok, vagy, van');
+    expect(syllabusTopic('lenni-van', 'hu')!.title.en).toBe('To be: vagyok, vagy, van');
     for (const t of topicsForUnit('a1-presente', 'es')) expect(t.title.de).toBeTruthy();
   });
 
