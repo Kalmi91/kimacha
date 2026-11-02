@@ -411,3 +411,114 @@ describe('knownSentence, Spanish irregular verb forms', () => {
     expect(known('Y una mesa.', ['la mesa'])).toBe(true);
   });
 });
+
+describe('knownSentence, proper names', () => {
+  const es = (sentence: string, learned: string[]) => isSentenceKnown(sentence, 'es', { learned });
+  const en = (sentence: string, learned: string[]) => isSentenceKnown(sentence, 'en', { learned });
+  const hu = (sentence: string, learned: string[]) => isSentenceKnown(sentence, 'hu', { learned });
+
+  it('takes a capitalised word inside the sentence as a name', () => {
+    expect(es('La casa de Pedro.', ['la casa'])).toBe(true);
+    expect(en('The dog likes Zorblax.', ['dog', 'like'])).toBe(true);
+    expect(hu('A kutya Zorblaxban van.', ['kutya', 'van'])).toBe(true);
+  });
+
+  it('does not take a lowercase word inside the sentence as a name', () => {
+    expect(es('La casa de pedro.', ['la casa'])).toBe(false);
+    expect(en('The dog likes zorblax.', ['dog', 'like'])).toBe(false);
+  });
+
+  it('takes a sentence-initial word as a name only when the corpus writes it with a capital inside a sentence', () => {
+    expect(es('Tom y la mesa.', ['la mesa'])).toBe(true);
+    expect(en('Tom likes the dog.', ['dog', 'like'])).toBe(true);
+    expect(hu('Anna és a kutya.', ['kutya'])).toBe(true);
+    expect(es('Zorblax y la mesa.', ['la mesa'])).toBe(false);
+    expect(en('Zorblax likes the dog.', ['dog', 'like'])).toBe(false);
+  });
+
+  it('keeps an ordinary capitalised first word unknown', () => {
+    expect(es('Perro y la mesa.', ['la mesa'])).toBe(false);
+    expect(en('Cat and the dog.', ['dog'])).toBe(false);
+    expect(en('Cat and the dog.', ['dog', 'cat'])).toBe(true);
+  });
+
+  it("reads an English possessive of a name (Tom's)", () => {
+    expect(en("Tom's dog runs.", ['dog', 'run'])).toBe(true);
+    expect(en("The dog is Zorblax's.", ['dog', 'to be'])).toBe(true);
+    expect(en("The dog is zorblax's.", ['dog', 'to be'])).toBe(false);
+  });
+
+  it('treats the word after a quotation mark or a question mark as a sentence start', () => {
+    expect(en('"Zorblax" is here.', ['to be', 'here'])).toBe(false);
+    expect(es('¿Dónde? Zorblax y la mesa.', ['la mesa', 'dónde'])).toBe(false);
+  });
+
+  it('lists the unknown words but not the names', () => {
+    expect(unknownTokens('The dog likes Zorblax and cats.', 'en', { learned: ['dog', 'like'] })).toEqual(['cats']);
+  });
+});
+
+describe('knownSentence, Spanish past participles', () => {
+  const verb = (text: string) => ({ text, pos: 'verb' });
+  const known = (sentence: string, learned: Array<string | { text: string; pos: string }>, tenses: ReadonlySet<ResolvedTense> = new Set()) =>
+    isSentenceKnown(sentence, 'es', { learned, tenses });
+
+  it('gives a learned verb its participle in gender and number, with no tense unlocked', () => {
+    expect(known('El libro cerrado.', ['el libro', verb('cerrar')])).toBe(true);
+    expect(known('La puerta cerrada.', ['la puerta', verb('cerrar')])).toBe(true);
+    expect(known('Los libros cerrados.', ['los libros', verb('cerrar')])).toBe(true);
+    expect(known('Las puertas cerradas.', ['las puertas', verb('cerrar')])).toBe(true);
+    expect(known('El libro terminado.', ['el libro', verb('terminar')])).toBe(true);
+  });
+
+  it('writes the accent of -er / -ir stems that end in a vowel (leído, oído, caído, creído)', () => {
+    expect(known('El libro leído.', ['el libro', verb('leer')])).toBe(true);
+    expect(known('El libro oído.', ['el libro', verb('oír')])).toBe(true);
+    expect(known('El libro caído.', ['el libro', verb('caer')])).toBe(true);
+    expect(known('El libro creído.', ['el libro', verb('creer')])).toBe(true);
+    expect(known('La puerta leída.', ['la puerta', verb('leer')])).toBe(true);
+    expect(known('El libro leido.', ['el libro', verb('leer')])).toBe(false);
+    expect(known('El libro vendido.', ['el libro', verb('vender')])).toBe(true);
+  });
+
+  it('gives the irregular participles, also of the compounds', () => {
+    const cases: Array<[string, string]> = [
+      ['hacer', 'hecho'], ['decir', 'dicho'], ['escribir', 'escrito'], ['ver', 'visto'], ['poner', 'puesto'],
+      ['volver', 'vuelto'], ['abrir', 'abierto'], ['romper', 'roto'], ['morir', 'muerto'], ['cubrir', 'cubierto'],
+      ['descubrir', 'descubierto'], ['resolver', 'resuelto'], ['devolver', 'devuelto'], ['imprimir', 'impreso'],
+      ['freír', 'frito'], ['satisfacer', 'satisfecho'], ['deshacer', 'deshecho'], ['suponer', 'supuesto'],
+    ];
+    for (const [inf, participle] of cases) {
+      expect(known(`El libro ${participle}.`, ['el libro', verb(inf)])).toBe(true);
+      expect(known(`Los libros ${participle.slice(0, -1)}as.`, ['los libros', verb(inf)])).toBe(true);
+    }
+  });
+
+  it('does not give the regular participle of a verb whose participle is irregular, nor of "mover" the irregular one', () => {
+    expect(known('El libro hacido.', ['el libro', verb('hacer')])).toBe(false);
+    expect(known('El libro escribido.', ['el libro', verb('escribir')])).toBe(false);
+    expect(known('El libro movido.', ['el libro', verb('mover')])).toBe(true);
+    expect(known('El libro muesto.', ['el libro', verb('mover')])).toBe(false);
+  });
+
+  it('reads the reflexive and the alternative infinitives of an entry', () => {
+    expect(known('El libro puesto.', ['el libro', verb('ponerse')])).toBe(true);
+    expect(known('El libro vuelto.', ['el libro', verb('volver / regresar')])).toBe(true);
+    expect(known('El libro regresado.', ['el libro', verb('volver / regresar')])).toBe(true);
+  });
+
+  it('keeps the participle of a verb that is not learned unknown', () => {
+    expect(known('El libro cerrado.', ['el libro', verb('abrir')])).toBe(false);
+    expect(known('El libro hecho.', ['el libro', verb('decir')])).toBe(false);
+    expect(known('El libro cerrado.', ['el libro'])).toBe(false);
+  });
+
+  it('gives a participle only to a verb, not to a noun with the same infinitive-like text', () => {
+    expect(known('El libro cerrado.', ['el libro', { text: 'cerrar', pos: 'noun' }])).toBe(false);
+  });
+
+  it('keeps the compound tenses blocked even with the participle known', () => {
+    expect(known('He terminado el libro.', ['el libro', verb('terminar')], new Set<ResolvedTense>(['presente']))).toBe(false);
+    expect(known('Había abierto el libro.', ['el libro', verb('abrir')], new Set<ResolvedTense>(['presente', 'imperfecto']))).toBe(false);
+  });
+});
