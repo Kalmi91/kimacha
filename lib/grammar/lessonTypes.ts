@@ -14,6 +14,12 @@ import type { GrammarGapItem, GrammarMarkItem } from '../games/content';
 // back to English with `field[lang] ?? field.en`.
 export type Lang4 = Record<'en' | 'es', string> & { hu?: string; de?: string };
 
+/**
+ * The language a lesson is explained in: the learner's own (the pair's source). `en` / `es` are authored in every lesson,
+ * `hu` / `de` come from the sidecar overlays (lib/grammar/overlay.ts); read a text as `field[contentLang] ?? field.en`.
+ */
+export type ContentLang = 'en' | 'es' | 'hu' | 'de';
+
 // The tenses of the tense drill (8 + the 4 added later). The order here is the
 // source of TENSE_IDS, do not swap it.
 export type TenseId =

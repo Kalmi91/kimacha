@@ -58,11 +58,13 @@ export interface LanguageContentBundle {
 import { esContent } from './content/es';
 import { enContent } from './content/en';
 import { huContent } from './content/hu';
+import { deContent } from './content/de';
 
 const BUNDLES: Partial<Record<string, LanguageContentBundle>> = {
   es: esContent,
   en: enContent,
   hu: huContent,
+  de: deContent,
 };
 
 function byLang<K extends keyof LanguageContentBundle>(

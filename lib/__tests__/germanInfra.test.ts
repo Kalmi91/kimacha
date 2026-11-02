@@ -123,12 +123,13 @@ describe('typing German', () => {
 });
 
 describe('places with no German content yet say so, they never answer in another language', () => {
-  it('has no grammar course: no lesson, no syllabus, no tappable word, no known word', () => {
-    expect(getGrammarTopicIds('de')).toEqual([]);
-    expect(syllabusLevels('de')).toEqual([]);
-    expect(syllabusForLevel('A1', 'de')).toEqual([]);
-    expect(unitsForLevel('A1', 'de')).toEqual([]);
+  it('has the German grammar course (its own syllabus, never the Spanish one), but no tappable word and no known word', () => {
+    expect(getGrammarTopicIds('de').length).toBeGreaterThan(0);
+    expect(syllabusLevels('de')).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
+    expect(syllabusForLevel('A1', 'de').map((t) => t.id)).toContain('aussprache-umlaute');
+    expect(unitsForLevel('A1', 'de').length).toBeGreaterThan(0);
     expect(syllabusTopic('presente-regular', 'de')).toBeUndefined();
+    expect(syllabusTopic('praesens-regelmaessig', 'de')).toBeDefined();
     expect(syllabusLevels('es').length).toBeGreaterThan(0);
     expect(findWordByText('perro', 'es', 'de')).toBeUndefined();
     expect(cumulativeCorpusWordIds('B1', 'de').size).toBe(0);

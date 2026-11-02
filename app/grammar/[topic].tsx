@@ -8,6 +8,7 @@ import { t } from '@/lib/i18n';
 import { normalizeWordToken } from '@/data/words';
 import { cumulativeCorpusWordIds, grammarKindCounts, type GrammarGapItem, type GrammarItem } from '@/lib/games/content';
 import { buildGlossMap } from '@/lib/games/gloss';
+import type { ContentLang } from '@/lib/grammar/lessonTypes';
 import { nextWrittenTopic, syllabusTopic } from '@/lib/grammar/syllabus';
 import { kindPercent, kindProgressFromRows, kindRunKey, runSummary, type KindRun } from '@/lib/grammar/lessonScore';
 import { tableCellsForLesson, wordCellsForLesson, WORD_DECK_MIN_CARDS } from '@/lib/grammar/tableDeck';
@@ -134,7 +135,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
   // the deck button only where the lesson actually
   // has a conjugation table (lib/grammar/tableDeck.ts already excludes the
   // reference GridTables and vosotros rows).
-  const tableDeckCells = tableCellsForLesson(lesson);
+  const tableDeckCells = tableCellsForLesson(lesson, learnedLang);
   // a table-less lesson gets a word-deck
   // instead, built from its own vocabulary; only shown at >= 8 cards, and
   // never alongside the table-deck button (no two buttons).
@@ -319,7 +320,7 @@ function GrammarLessonPhases({ topic }: { topic: ReturnType<typeof useGrammarTop
           onPress={toggleLessonSpeech}
           hitSlop={10}
         />
-        <LessonBody blocks={lesson.body} contentLang={contentLang as 'en' | 'es'} learnedLang={learnedLang} />
+        <LessonBody blocks={lesson.body} contentLang={contentLang as ContentLang} learnedLang={learnedLang} />
 
         <Text style={[styles.sectionLabel, { color: accentText }]}>{s.grammar.examplesLabel}</Text>
         {worked.map((w, i) => (

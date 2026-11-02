@@ -1,5 +1,15 @@
-// Learning German (es→de, en→de, hu→de): there is no German grammar course yet, so the grammar tab says so
-// instead of listing the Spanish syllabus or an empty one.
+// Learning German (es→de, en→de, hu→de) while NOT ONE German lesson is written (the registry is emptied here): the grammar
+// tab says so instead of listing the Spanish syllabus or an empty one. With any lesson written the course is listed
+// (deCourse.play.test.tsx).
+
+jest.mock('@/lib/games/content', () => {
+  const actual = jest.requireActual('@/lib/games/content');
+  return {
+    ...actual,
+    getGrammarTopic: (lang: string, id: string) => (lang === 'de' ? undefined : actual.getGrammarTopic(lang, id)),
+    getGrammarTopicIds: (lang: string) => (lang === 'de' ? [] : actual.getGrammarTopicIds(lang)),
+  };
+});
 
 jest.mock('expo-router', () => ({
   useRouter: () => ({ back: jest.fn(), push: jest.fn() }),
@@ -30,7 +40,7 @@ describe.each([
   });
   afterEach(() => setLanguage('en'));
 
-  it('shows the "no German course yet" line, no level, no topic, no Spanish lesson', async () => {
+  it('shows the "no German course yet" line, no level, no topic, no Spanish lesson, when no German lesson exists', async () => {
     render(<GrammarSyllabusScreen />);
     await flush(4);
 

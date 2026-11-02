@@ -92,8 +92,11 @@ const VOSOTROS_PERSONS = new Set(['vosotros', 'vosotros/vosotras']);
  * word-deck, where the target terms are often closed-class words
  * (qué/quién/dónde...) filtered out by FUNCTION_WORDS_ES below.
  */
-export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined): DeckCell[] {
+export function tableCellsForLesson(lesson: GrammarTopicData | null | undefined, learnedLang: string = 'es'): DeckCell[] {
   if (!lesson) return [];
+  // The Hungarian and German courses have no table deck: it recognises Spanish person rows (yo, tú ...) and -ar / -er / -ir
+  // infinitives, and its prompts are Spanish / English, so on a German or Hungarian table it would build nothing or nonsense.
+  if (learnedLang === 'hu' || learnedLang === 'de') return [];
   const cells: DeckCell[] = [];
   const seen = new Set<string>();
   for (const block of lesson.body) {
@@ -362,7 +365,7 @@ export function wordCellsForLesson(
   // the lesson itself asks for no word deck (lesson-level switch-off).
   if (lesson.noWordDeck) return [];
   // The Hungarian course (target hu) has no word deck yet: the cards would come from the Spanish PCIC and show Spanish.
-  // Its table deck is off too (tableCellsForLesson only builds tables with Spanish person rows; huCourse.test.ts guards both).
+  // Its table deck is off too (tableCellsForLesson above; huCourse.test.ts and deCourse.test.ts guard both).
   if (learnedLang === 'hu' || learnedLang === 'de') return [];
   // in the es→en direction the deck is built from the English vocabulary.
   if (learnedLang === 'en') return wordCellsForEnglishLesson(lesson);

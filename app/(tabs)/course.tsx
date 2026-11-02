@@ -154,8 +154,9 @@ export default function GrammarSyllabusScreen() {
   }, [writtenIds, percents, progress]);
   const randomScore = rr.score(overallScore(writtenIds, lessonPcts, evidence), weakTopicCount(evidence));
 
-  // No German course exists yet: say so, never list the Spanish syllabus or an empty one.
-  if (learnedLang === 'de') {
+  // A German course with no written lesson at all: say so, never list the Spanish syllabus or an empty one.
+  // (With any lesson written the course is listed like the others; a topic without a lesson file shows the "coming soon" badge.)
+  if (learnedLang === 'de' && coverage.written === 0) {
     return (
       <View testID="grammar-no-course" style={[styles.container, { backgroundColor: g.brutal ? g.bg : colors.background, justifyContent: 'center', padding: 24 }]}>
         <Text variant="title" style={{ color: g.brutal ? g.ink : colors.text, textAlign: 'center' }}>{s.tabs.grammar}</Text>

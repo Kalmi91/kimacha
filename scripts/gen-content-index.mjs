@@ -3,9 +3,10 @@
  * gen-content-index.mjs, writes the lazy grammar-lesson registry of each language lane:
  *   lib/games/content/<lang>.index.ts   from   data/games/grammar/<lang>/*.json
  *   lib/games/content/<lang>.hu.index.ts   topic id -> lazy Hungarian sidecar data/games/grammar-hu/<lang>/<file>.json
- *                                          (only for lessons that have one; the hu lane has none)
+ *                                          (only for lessons that have one; the hu lane has none, the de lane has this one only)
  *   lib/games/content/<lang>.de.index.ts   topic id -> lazy German sidecar data/games/grammar-de/<lang>/<file>.json
- *                                          (only for lessons that have one; es, en and hu lanes)
+ *                                          (only for lessons that have one; es, en and hu lanes, the de lane has none:
+ *                                          a German speaker never takes the German course)
  *
  * Every entry is `{ id, load: () => require('<static path>') }`, so Metro still
  * bundles the JSON but nothing is parsed until the lesson is first asked for.
@@ -14,6 +15,8 @@
  * Order = the learning order (it is the order getGrammarTopics returns). It is kept from the
  * existing index file; JSON files that are not in it yet are appended alphabetically,
  * files that are gone are dropped. Re-order by moving a line in the generated file, then re-run.
+ * The German course (lang de) is the exception: its order is the syllabus order (data/grammar/syllabus-de.json),
+ * so a lesson file added later lands at its place in the course, whatever order the files arrive in.
  *
  * Run: npm run gen:content            (rewrites the index files)
  *      node scripts/gen-content-index.mjs --check   (exit 1 if an index file is out of date)
@@ -24,12 +27,14 @@ import { fileURLToPath } from 'url';
 import { basename, dirname, join } from 'path';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const LANGS = ['es', 'en', 'hu'];
+const LANGS = ['es', 'en', 'hu', 'de'];
 // The overlay languages: their sidecar folder, and the lanes that take them (nobody learns Hungarian from Hungarian text).
 const OVERLAYS = [
-  { code: 'hu', dir: join(root, 'data', 'games', 'grammar-hu'), lanes: ['es', 'en'], name: 'Hungarian' },
+  { code: 'hu', dir: join(root, 'data', 'games', 'grammar-hu'), lanes: ['es', 'en', 'de'], name: 'Hungarian' },
   { code: 'de', dir: join(root, 'data', 'games', 'grammar-de'), lanes: ['es', 'en', 'hu'], name: 'German' },
 ];
+// Languages whose lesson order follows a syllabus file (topic ids in teaching order) instead of the previous index.
+const SYLLABUS_ORDER = { de: join(root, 'data', 'grammar', 'syllabus-de.json') };
 const check = process.argv.includes('--check');
 
 function render(lang, dir, previous) {
@@ -38,7 +43,10 @@ function render(lang, dir, previous) {
   const prevOrder = previous
     ? [...previous.matchAll(new RegExp(`grammar/${lang}/([^']+)\\.json'`, 'g'))].map((m) => m[1])
     : [];
-  const ordered = [...new Set(prevOrder.filter((f) => known.has(f)))];
+  const syllabusFile = SYLLABUS_ORDER[lang];
+  const syllabusIds = syllabusFile && existsSync(syllabusFile) ? JSON.parse(readFileSync(syllabusFile, 'utf8')).topics.map((t) => t.id) : [];
+  const fromSyllabus = syllabusIds.filter((id) => known.has(id));
+  const ordered = [...new Set([...fromSyllabus, ...prevOrder.filter((f) => known.has(f))])];
   const placed = new Set(ordered);
   for (const f of files.sort()) if (!placed.has(f)) ordered.push(f);
 
