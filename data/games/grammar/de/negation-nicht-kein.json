@@ -1,0 +1,1098 @@
+{
+  "schema": 2,
+  "topic": "negation-nicht-kein",
+  "level": "A1",
+  "title": {
+    "en": "Negation: nicht and kein",
+    "es": "La negación: nicht y kein"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "German has two words for no inside a sentence. kein negates a noun that would have ein or no article at all: Ich habe ein Auto becomes Ich habe kein Auto, and Wir haben Zeit becomes Wir haben keine Zeit. nicht negates everything else: a verb, an adjective, a place, a name, or a noun with der, die, das. Nein is only the answer no.",
+        "es": "El alemán tiene dos palabras para negar dentro de una oración. kein niega un sustantivo que llevaría ein o ningún artículo: Ich habe ein Auto pasa a Ich habe kein Auto, y Wir haben Zeit pasa a Wir haben keine Zeit. nicht niega todo lo demás: un verbo, un adjetivo, un lugar, un nombre o un sustantivo con der, die, das. Nein es solo la respuesta «no»."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "kein-uebersicht",
+      "title": {
+        "en": "The forms of kein",
+        "es": "Las formas de kein"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "Das ist ...",
+          "es": "Das ist ..."
+        },
+        {
+          "en": "Ich habe ...",
+          "es": "Ich habe ..."
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "kein Hund",
+          "keinen Hund"
+        ],
+        [
+          "feminin",
+          "keine Katze",
+          "keine Katze"
+        ],
+        [
+          "neutral",
+          "kein Auto",
+          "kein Auto"
+        ],
+        [
+          "Plural",
+          "keine Kinder",
+          "keine Kinder"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "kein-formen",
+      "title": {
+        "en": "kein with different nouns",
+        "es": "kein con distintos sustantivos"
+      },
+      "header": [
+        {
+          "en": "Noun",
+          "es": "Sustantivo"
+        },
+        {
+          "en": "Das ist ...",
+          "es": "Das ist ..."
+        },
+        {
+          "en": "Ich habe ...",
+          "es": "Ich habe ..."
+        }
+      ],
+      "rows": [
+        [
+          "der Hund",
+          "kein",
+          "keinen"
+        ],
+        [
+          "der Tisch",
+          "kein",
+          "keinen"
+        ],
+        [
+          "die Katze",
+          "keine",
+          "keine"
+        ],
+        [
+          "die Schwester",
+          "keine",
+          "keine"
+        ],
+        [
+          "das Auto",
+          "kein",
+          "kein"
+        ],
+        [
+          "das Kind",
+          "kein",
+          "kein"
+        ],
+        [
+          "die Kinder",
+          "keine",
+          "keine"
+        ],
+        [
+          "die Zeit",
+          "keine",
+          "keine"
+        ],
+        [
+          "das Geld",
+          "kein",
+          "kein"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "negation-wort",
+      "title": {
+        "en": "Which negation word goes where",
+        "es": "Qué palabra de negación va dónde"
+      },
+      "header": [
+        {
+          "en": "You negate",
+          "es": "Niegas"
+        },
+        {
+          "en": "Negation",
+          "es": "Negation"
+        }
+      ],
+      "rows": [
+        [
+          "ein Auto",
+          "kein Auto"
+        ],
+        [
+          "eine Katze",
+          "keine Katze"
+        ],
+        [
+          "ein Kind",
+          "kein Kind"
+        ],
+        [
+          "Zeit",
+          "keine Zeit"
+        ],
+        [
+          "Geld",
+          "kein Geld"
+        ],
+        [
+          "Kinder",
+          "keine Kinder"
+        ],
+        [
+          "gut",
+          "nicht gut"
+        ],
+        [
+          "in Berlin",
+          "nicht in Berlin"
+        ],
+        [
+          "Anna",
+          "nicht Anna"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "When to use kein and when to use nicht",
+        "es": "Cuándo usar kein y cuándo nicht"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "kein negates a noun with ein or without any article. It also negates nouns like Zeit and Geld that have no article.",
+            "es": "kein niega un sustantivo con ein o sin ningún artículo. También niega sustantivos como Zeit y Geld, que no llevan artículo."
+          },
+          "examples": [
+            {
+              "es": "Ich habe kein Auto.",
+              "tr": {
+                "en": "I do not have a car.",
+                "es": "No tengo carro."
+              }
+            },
+            {
+              "es": "Wir haben keine Zeit.",
+              "tr": {
+                "en": "We have no time.",
+                "es": "No tenemos tiempo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "kein has the endings of ein: kein for masculine and neuter, keine for feminine and plural. After haben a masculine noun takes keinen, like einen. The full rule comes in the lesson on nominative and accusative.",
+            "es": "kein tiene las terminaciones de ein: kein para masculino y neutro, keine para femenino y plural. Después de haben un sustantivo masculino lleva keinen, como einen. La regla completa viene en la lección del nominativo y el acusativo."
+          },
+          "examples": [
+            {
+              "es": "Das ist kein Hund.",
+              "tr": {
+                "en": "That is not a dog.",
+                "es": "Eso no es un perro."
+              }
+            },
+            {
+              "es": "Ich habe keinen Hund.",
+              "tr": {
+                "en": "I do not have a dog.",
+                "es": "No tengo perro."
+              }
+            },
+            {
+              "es": "Anna hat keine Kinder.",
+              "tr": {
+                "en": "Anna has no children.",
+                "es": "Anna no tiene hijos."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "nicht negates a verb, an adjective, a place, a name and a noun with der, die or das. It is never used directly in front of a noun without an article.",
+            "es": "nicht niega un verbo, un adjetivo, un lugar, un nombre y un sustantivo con der, die o das. Nunca se usa directamente delante de un sustantivo sin artículo."
+          },
+          "examples": [
+            {
+              "es": "Das ist nicht gut.",
+              "tr": {
+                "en": "That is not good.",
+                "es": "Eso no está bien."
+              }
+            },
+            {
+              "es": "Das ist nicht Anna.",
+              "tr": {
+                "en": "That is not Anna.",
+                "es": "Ella no es Anna."
+              }
+            },
+            {
+              "es": "Ich kaufe das Brot nicht.",
+              "tr": {
+                "en": "I am not buying the bread.",
+                "es": "No compro el pan."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Where nicht goes: if you negate the whole sentence, it stands at the end. If you negate one word, it stands right before that word, for example an adjective or a place.",
+            "es": "Dónde va nicht: si niegas toda la oración, va al final. Si niegas una sola palabra, va justo antes de esa palabra, por ejemplo un adjetivo o un lugar."
+          },
+          "examples": [
+            {
+              "es": "Ich arbeite heute nicht.",
+              "tr": {
+                "en": "I am not working today.",
+                "es": "Hoy no trabajo."
+              }
+            },
+            {
+              "es": "Ich wohne nicht in Berlin.",
+              "tr": {
+                "en": "I do not live in Berlin.",
+                "es": "No vivo en Berlín."
+              }
+            },
+            {
+              "es": "Das Wasser ist nicht kalt.",
+              "tr": {
+                "en": "The water is not cold.",
+                "es": "El agua no está fría."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Nein is the answer to a yes/no question. Inside the sentence you still need nicht or kein.",
+            "es": "Nein es la respuesta a una pregunta de sí o no. Dentro de la oración sigues necesitando nicht o kein."
+          },
+          "examples": [
+            {
+              "es": "Kommst du? Nein, ich komme nicht.",
+              "tr": {
+                "en": "Are you coming? No, I am not coming.",
+                "es": "¿Vienes? No, no vengo."
+              }
+            },
+            {
+              "es": "Hast du ein Auto? Nein, ich habe kein Auto.",
+              "tr": {
+                "en": "Do you have a car? No, I do not have a car.",
+                "es": "¿Tienes carro? No, no tengo carro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "kein or nicht with a noun?",
+        "es": "¿kein o nicht con un sustantivo?"
+      },
+      "pairs": [
+        {
+          "a": "Das ist kein Hund.",
+          "b": "Das ist nicht der Hund.",
+          "note": {
+            "en": "kein says that it is not a dog at all. nicht with der, die or das says that it is not the dog you mean.",
+            "es": "kein dice que no es un perro en absoluto. nicht con der, die o das dice que no es el perro del que hablas."
+          },
+          "examples": [
+            {
+              "es": "Ich habe keine Katze.",
+              "tr": {
+                "en": "I do not have a cat.",
+                "es": "No tengo gato."
+              }
+            },
+            {
+              "es": "Das ist nicht die Katze.",
+              "tr": {
+                "en": "That is not the cat.",
+                "es": "Esa no es la gata."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich bin nicht müde.",
+          "b": "Ich habe keine Zeit.",
+          "note": {
+            "en": "An adjective like müde is negated with nicht. A noun like Zeit, with no article, is negated with kein.",
+            "es": "Un adjetivo como müde se niega con nicht. Un sustantivo como Zeit, sin artículo, se niega con kein."
+          },
+          "examples": [
+            {
+              "es": "Das Auto ist nicht neu.",
+              "tr": {
+                "en": "The car is not new.",
+                "es": "El carro no es nuevo."
+              }
+            },
+            {
+              "es": "Wir haben kein Geld.",
+              "tr": {
+                "en": "We have no money.",
+                "es": "No tenemos dinero."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not put nicht directly before a noun without an article. Say Ich habe keine Zeit, not Ich habe nicht Zeit. Do not use kein with an adjective: Ich bin nicht müde, not Ich bin kein müde. A noun with der, die or das takes nicht, not kein. One negation word is enough in a sentence, there is no double negation like in Spanish no tengo nada.",
+        "es": "Trampas clásicas: no pongas nicht directamente delante de un sustantivo sin artículo. Di Ich habe keine Zeit, no Ich habe nicht Zeit. No uses kein con un adjetivo: Ich bin nicht müde, no Ich bin kein müde. Un sustantivo con der, die o das lleva nicht, no kein. En una oración basta una palabra de negación: no hay doble negación como en el español «no tengo nada»."
+      }
+    }
+  ],
+  "speak": {
+    "en": "German has two negation words. Use kein with a noun that has ein or no article: «Ich habe kein Auto», «Wir haben keine Zeit». Use nicht for everything else: «Das ist nicht gut», «Ich arbeite heute nicht». A noun with der, die or das takes nicht: «Ich kaufe das Brot nicht». The word nein is only the answer: «Nein, ich komme nicht».",
+    "es": "El alemán tiene dos palabras de negación. Usa kein con un sustantivo que lleva ein o ningún artículo: «Ich habe kein Auto», «Wir haben keine Zeit». Usa nicht para todo lo demás: «Das ist nicht gut», «Ich arbeite heute nicht». Un sustantivo con der, die o das lleva nicht: «Ich kaufe das Brot nicht». La palabra nein es solo la respuesta: «Nein, ich komme nicht»."
+  },
+  "items": [
+    {
+      "id": "negation-nicht-kein-c01",
+      "sentence": "Ich habe ___ Auto.",
+      "options": [
+        "kein",
+        "keine",
+        "nicht"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Auto is a neuter noun and has ein in the affirmative, so you negate it with kein: Ich habe kein Auto.",
+        "es": "Auto es un sustantivo neutro y lleva ein en la afirmativa, así que se niega con kein: Ich habe kein Auto."
+      },
+      "wrong": {
+        "keine": {
+          "en": "keine is for feminine and plural nouns. Auto is neuter, so the form is kein.",
+          "es": "keine es para sustantivos femeninos y plurales. Auto es neutro, así que la forma es kein."
+        },
+        "nicht": {
+          "en": "nicht cannot stand directly before a noun with ein. Ich habe nicht Auto is wrong, you need kein.",
+          "es": "nicht no puede ir directamente delante de un sustantivo con ein. Ich habe nicht Auto es incorrecto, necesitas kein."
+        }
+      },
+      "examples": [
+        "Ich habe kein Haus.",
+        "Anna hat kein Kind."
+      ],
+      "tr": {
+        "en": "I do not have a car.",
+        "es": "No tengo carro."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f01",
+      "kind": "form",
+      "verb": "Das ist ...",
+      "person": "der Hund",
+      "answer": "kein",
+      "table": "kein-formen"
+    },
+    {
+      "id": "negation-nicht-kein-c02",
+      "sentence": "Wir haben ___ Zeit.",
+      "options": [
+        "kein",
+        "keine",
+        "nicht"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Zeit has no article and is feminine, so you negate it with keine: Wir haben keine Zeit.",
+        "es": "Zeit no lleva artículo y es femenino, así que se niega con keine: Wir haben keine Zeit."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein is for masculine and neuter nouns. Zeit is feminine, so the form is keine.",
+          "es": "kein es para sustantivos masculinos y neutros. Zeit es femenino, así que la forma es keine."
+        },
+        "nicht": {
+          "en": "nicht does not stand directly before a noun without an article. Wir haben nicht Zeit is wrong, you need keine.",
+          "es": "nicht no va directamente delante de un sustantivo sin artículo. Wir haben nicht Zeit es incorrecto, necesitas keine."
+        }
+      },
+      "examples": [
+        "Ich habe keine Zeit.",
+        "Hast du keine Zeit?"
+      ],
+      "tr": {
+        "en": "We have no time.",
+        "es": "No tenemos tiempo."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f02",
+      "kind": "form",
+      "verb": "Negation",
+      "person": "ein Auto",
+      "answer": "kein Auto",
+      "table": "negation-wort"
+    },
+    {
+      "id": "negation-nicht-kein-c03",
+      "sentence": "Das ist ___ Hund.",
+      "options": [
+        "keine",
+        "nicht",
+        "kein"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Hund is masculine and is the subject here, so the form is kein: Das ist kein Hund.",
+        "es": "Hund es masculino y aquí es el sujeto, así que la forma es kein: Das ist kein Hund."
+      },
+      "wrong": {
+        "keine": {
+          "en": "keine is for feminine and plural nouns. Hund is masculine, so you need kein.",
+          "es": "keine es para sustantivos femeninos y plurales. Hund es masculino, así que necesitas kein."
+        },
+        "nicht": {
+          "en": "nicht cannot stand directly before a noun without der, die or das. Say kein Hund.",
+          "es": "nicht no puede ir directamente delante de un sustantivo sin der, die o das. Di kein Hund."
+        }
+      },
+      "examples": [
+        "Das ist kein Tisch.",
+        "Das ist kein Buch."
+      ],
+      "tr": {
+        "en": "That is not a dog.",
+        "es": "Eso no es un perro."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f03",
+      "kind": "form",
+      "verb": "Ich habe ...",
+      "person": "der Hund",
+      "answer": "keinen",
+      "table": "kein-formen"
+    },
+    {
+      "id": "negation-nicht-kein-w01",
+      "kind": "why",
+      "es": "Ich habe keine Zeit.",
+      "target": "keine",
+      "tr": {
+        "en": "I have no time.",
+        "es": "No tengo tiempo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "kein, because Zeit is a noun without an article and it is feminine",
+            "es": "kein, porque Zeit es un sustantivo sin artículo y es femenino"
+          }
+        },
+        {
+          "text": {
+            "en": "nicht, because nicht negates every noun",
+            "es": "nicht, porque nicht niega todos los sustantivos"
+          },
+          "wrong": {
+            "en": "nicht does not stand directly before a noun without an article. Ich habe nicht Zeit is wrong, the correct form is Ich habe keine Zeit.",
+            "es": "nicht no va directamente delante de un sustantivo sin artículo. Ich habe nicht Zeit es incorrecto, la forma correcta es Ich habe keine Zeit."
+          }
+        },
+        {
+          "text": {
+            "en": "keine, because Zeit is plural",
+            "es": "keine, porque Zeit es plural"
+          },
+          "wrong": {
+            "en": "Zeit is singular here. keine is used because Zeit is a feminine noun, not because it is plural.",
+            "es": "Zeit es singular aquí. Se usa keine porque Zeit es un sustantivo femenino, no porque sea plural."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "negation-nicht-kein-c04",
+      "sentence": "Ich habe ___ Hund.",
+      "options": [
+        "kein",
+        "keinen",
+        "keine"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Hund is masculine and is the object of haben, so kein becomes keinen, like ein becomes einen.",
+        "es": "Hund es masculino y es el complemento de haben, así que kein pasa a keinen, igual que ein pasa a einen."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein is the form for the subject, as in Das ist kein Hund. As the object of haben a masculine noun needs keinen.",
+          "es": "kein es la forma del sujeto, como en Das ist kein Hund. Como complemento de haben un sustantivo masculino necesita keinen."
+        },
+        "keine": {
+          "en": "keine is for feminine and plural nouns. Hund is masculine, so you need keinen here.",
+          "es": "keine es para sustantivos femeninos y plurales. Hund es masculino, así que aquí necesitas keinen."
+        }
+      },
+      "examples": [
+        "Ich habe keinen Bruder.",
+        "Wir haben keinen Tisch."
+      ],
+      "tr": {
+        "en": "I do not have a dog.",
+        "es": "No tengo perro."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f04",
+      "kind": "form",
+      "verb": "Negation",
+      "person": "eine Katze",
+      "answer": "keine Katze",
+      "table": "negation-wort"
+    },
+    {
+      "id": "negation-nicht-kein-c05",
+      "sentence": "Anna hat ___ Kinder.",
+      "options": [
+        "keine",
+        "kein",
+        "nicht"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kinder is a plural noun without an article, and the negative plural form is keine: Anna hat keine Kinder.",
+        "es": "Kinder es un sustantivo plural sin artículo, y la forma negativa del plural es keine: Anna hat keine Kinder."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein is for masculine and neuter singular nouns. Kinder is plural, so you need keine.",
+          "es": "kein es para sustantivos masculinos y neutros en singular. Kinder es plural, así que necesitas keine."
+        },
+        "nicht": {
+          "en": "nicht does not stand directly before a plural noun without an article. Anna hat nicht Kinder is wrong.",
+          "es": "nicht no va directamente delante de un sustantivo plural sin artículo. Anna hat nicht Kinder es incorrecto."
+        }
+      },
+      "examples": [
+        "Paul hat keine Schwestern.",
+        "Wir haben keine Kinder."
+      ],
+      "tr": {
+        "en": "Anna has no children.",
+        "es": "Anna no tiene hijos."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f05",
+      "kind": "form",
+      "verb": "Das ist ...",
+      "person": "die Katze",
+      "answer": "keine",
+      "table": "kein-formen"
+    },
+    {
+      "id": "negation-nicht-kein-c06",
+      "sentence": "Das ist ___ gut.",
+      "options": [
+        "kein",
+        "keine",
+        "nicht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "gut is an adjective, and an adjective is negated with nicht, placed right before it: Das ist nicht gut.",
+        "es": "gut es un adjetivo, y un adjetivo se niega con nicht, colocado justo antes: Das ist nicht gut."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein only negates nouns. gut is an adjective, so you need nicht.",
+          "es": "kein solo niega sustantivos. gut es un adjetivo, así que necesitas nicht."
+        },
+        "keine": {
+          "en": "keine is a form of kein and only goes with a noun. gut is an adjective, so you need nicht.",
+          "es": "keine es una forma de kein y solo va con un sustantivo. gut es un adjetivo, así que necesitas nicht."
+        }
+      },
+      "examples": [
+        "Das ist nicht teuer.",
+        "Das Essen ist nicht gut."
+      ],
+      "tr": {
+        "en": "That is not good.",
+        "es": "Eso no está bien."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f06",
+      "kind": "form",
+      "verb": "Negation",
+      "person": "Zeit",
+      "answer": "keine Zeit",
+      "table": "negation-wort"
+    },
+    {
+      "id": "negation-nicht-kein-w02",
+      "kind": "why",
+      "es": "Das ist nicht gut.",
+      "target": "nicht",
+      "tr": {
+        "en": "That is not good.",
+        "es": "Eso no está bien."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "kein, because gut has no article",
+            "es": "kein, porque gut no lleva artículo"
+          },
+          "wrong": {
+            "en": "kein only negates nouns. gut is an adjective, and an adjective is negated with nicht.",
+            "es": "kein solo niega sustantivos. gut es un adjetivo, y un adjetivo se niega con nicht."
+          }
+        },
+        {
+          "text": {
+            "en": "nicht at the end of the sentence, as with a verb",
+            "es": "nicht al final de la oración, como con un verbo"
+          },
+          "wrong": {
+            "en": "When you negate a single word, nicht stands right before it. Here that is gut, so the order is nicht gut.",
+            "es": "Cuando niegas una sola palabra, nicht va justo antes de ella. Aquí es gut, así que el orden es nicht gut."
+          }
+        },
+        {
+          "text": {
+            "en": "nicht, placed before the adjective it negates",
+            "es": "nicht, colocado antes del adjetivo que niega"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "negation-nicht-kein-c07",
+      "sentence": "Wir lernen heute ___.",
+      "options": [
+        "kein",
+        "nicht",
+        "keine"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "To negate the whole sentence, nicht stands at the end: Wir lernen heute nicht.",
+        "es": "Para negar toda la oración, nicht va al final: Wir lernen heute nicht."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein needs a noun after it. Here the verb lernen is negated, so you need nicht.",
+          "es": "kein necesita un sustantivo detrás. Aquí se niega el verbo lernen, así que necesitas nicht."
+        },
+        "keine": {
+          "en": "keine needs a noun after it. Here the verb lernen is negated, so you need nicht.",
+          "es": "keine necesita un sustantivo detrás. Aquí se niega el verbo lernen, así que necesitas nicht."
+        }
+      },
+      "examples": [
+        "Ich arbeite heute nicht.",
+        "Anna kommt heute nicht."
+      ],
+      "tr": {
+        "en": "We are not learning today.",
+        "es": "Hoy no estudiamos."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f07",
+      "kind": "form",
+      "verb": "Ich habe ...",
+      "person": "das Auto",
+      "answer": "kein",
+      "table": "kein-formen"
+    },
+    {
+      "id": "negation-nicht-kein-c08",
+      "sentence": "Ich ___ in Berlin.",
+      "options": [
+        "wohne nicht",
+        "nicht wohne",
+        "wohne kein"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The verb stays in second place, and nicht stands right before the place it negates: Ich wohne nicht in Berlin.",
+        "es": "El verbo se queda en segundo lugar, y nicht va justo antes del lugar que niega: Ich wohne nicht in Berlin."
+      },
+      "wrong": {
+        "nicht wohne": {
+          "en": "nicht wohne puts nicht before the verb, so the verb ends up in third place. The verb must stay second: wohne nicht.",
+          "es": "nicht wohne pone nicht antes del verbo, y el verbo queda en tercer lugar. El verbo debe quedarse en segundo lugar: wohne nicht."
+        },
+        "wohne kein": {
+          "en": "kein needs a noun after it, and in Berlin is a place. To negate a place you need nicht.",
+          "es": "kein necesita un sustantivo detrás, e in Berlin es un lugar. Para negar un lugar necesitas nicht."
+        }
+      },
+      "examples": [
+        "Wir wohnen nicht in Köln.",
+        "Paul arbeitet nicht in Hamburg."
+      ],
+      "tr": {
+        "en": "I do not live in Berlin.",
+        "es": "No vivo en Berlín."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f08",
+      "kind": "form",
+      "verb": "Negation",
+      "person": "Kinder",
+      "answer": "keine Kinder",
+      "table": "negation-wort"
+    },
+    {
+      "id": "negation-nicht-kein-c09",
+      "sentence": "Das ist ___ Anna.",
+      "options": [
+        "kein",
+        "keine",
+        "nicht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "A name is negated with nicht, directly before it: Das ist nicht Anna.",
+        "es": "Un nombre se niega con nicht, directamente antes: Das ist nicht Anna."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein replaces ein. A name has no ein, so kein cannot be used. You need nicht.",
+          "es": "kein sustituye a ein. Un nombre no lleva ein, así que no se puede usar kein. Necesitas nicht."
+        },
+        "keine": {
+          "en": "keine replaces eine. A name has no eine, so keine cannot be used. You need nicht.",
+          "es": "keine sustituye a eine. Un nombre no lleva eine, así que no se puede usar keine. Necesitas nicht."
+        }
+      },
+      "examples": [
+        "Das ist nicht Paul.",
+        "Das ist nicht Frau Müller."
+      ],
+      "tr": {
+        "en": "That is not Anna.",
+        "es": "Ella no es Anna."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f09",
+      "kind": "form",
+      "verb": "Ich habe ...",
+      "person": "die Kinder",
+      "answer": "keine",
+      "table": "kein-formen"
+    },
+    {
+      "id": "negation-nicht-kein-w03",
+      "kind": "why",
+      "es": "Ich kaufe das Brot nicht.",
+      "target": "nicht",
+      "tr": {
+        "en": "I am not buying the bread.",
+        "es": "No compro el pan."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A noun with das is negated with nicht, and nicht stands at the end",
+            "es": "Un sustantivo con das se niega con nicht, y nicht va al final"
+          }
+        },
+        {
+          "text": {
+            "en": "kein, because Brot is a noun",
+            "es": "kein, porque Brot es un sustantivo"
+          },
+          "wrong": {
+            "en": "kein replaces ein or stands for no article. With das in front, kein is not possible. Kein Brot would mean no bread at all.",
+            "es": "kein sustituye a ein o a la falta de artículo. Con das delante, kein no es posible. Kein Brot significaría nada de pan."
+          }
+        },
+        {
+          "text": {
+            "en": "nicht before the noun: Ich kaufe nicht das Brot",
+            "es": "nicht antes del sustantivo: Ich kaufe nicht das Brot"
+          },
+          "wrong": {
+            "en": "Ich kaufe nicht das Brot is only said to contrast, for example not the bread but the cheese. For a plain negation nicht goes to the end.",
+            "es": "Ich kaufe nicht das Brot solo se dice para contrastar, por ejemplo no el pan sino el queso. Para una negación simple nicht va al final."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "negation-nicht-kein-c10",
+      "sentence": "Ich kaufe das Brot ___.",
+      "options": [
+        "nicht",
+        "kein",
+        "keine"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Das Brot has the article das, so it is negated with nicht, and nicht stands at the end of the sentence: Ich kaufe das Brot nicht.",
+        "es": "Das Brot lleva el artículo das, así que se niega con nicht, y nicht va al final de la oración: Ich kaufe das Brot nicht."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein replaces ein or stands alone before a noun. After das it cannot be used. You need nicht.",
+          "es": "kein sustituye a ein o va solo delante de un sustantivo. Después de das no se puede usar. Necesitas nicht."
+        },
+        "keine": {
+          "en": "keine is a form of kein and cannot stand after das. The definite noun das Brot takes nicht.",
+          "es": "keine es una forma de kein y no puede ir después de das. El sustantivo determinado das Brot lleva nicht."
+        }
+      },
+      "examples": [
+        "Ich esse die Suppe nicht.",
+        "Wir kaufen das Auto nicht."
+      ],
+      "tr": {
+        "en": "I am not buying the bread.",
+        "es": "No compro el pan."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f10",
+      "kind": "form",
+      "verb": "Negation",
+      "person": "gut",
+      "answer": "nicht gut",
+      "table": "negation-wort"
+    },
+    {
+      "id": "negation-nicht-kein-c11",
+      "sentence": "___, ich komme nicht.",
+      "options": [
+        "Nicht",
+        "Nein",
+        "Kein"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Nein is the answer no at the beginning. Inside the sentence nicht negates the verb: Nein, ich komme nicht.",
+        "es": "Nein es la respuesta «no» al principio. Dentro de la oración nicht niega el verbo: Nein, ich komme nicht."
+      },
+      "wrong": {
+        "Nicht": {
+          "en": "Nicht negates a word inside the sentence. It is not used as the answer on its own, and the sentence already has nicht.",
+          "es": "Nicht niega una palabra dentro de la oración. No se usa solo como respuesta, y la oración ya tiene nicht."
+        },
+        "Kein": {
+          "en": "Kein needs a noun after it and is not an answer. For the answer no you say Nein.",
+          "es": "Kein necesita un sustantivo detrás y no es una respuesta. Para responder «no» se dice Nein."
+        }
+      },
+      "examples": [
+        "Nein, ich arbeite nicht.",
+        "Nein, Anna kommt nicht."
+      ],
+      "tr": {
+        "en": "No, I am not coming.",
+        "es": "No, no vengo."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f11",
+      "kind": "form",
+      "verb": "Ich habe ...",
+      "person": "der Tisch",
+      "answer": "keinen",
+      "table": "kein-formen"
+    },
+    {
+      "id": "negation-nicht-kein-c12",
+      "sentence": "Paul kommt ___ aus Mexiko.",
+      "options": [
+        "kein",
+        "keine",
+        "nicht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "nicht stands right before the place it negates: Paul kommt nicht aus Mexiko.",
+        "es": "nicht va justo antes del lugar que niega: Paul kommt nicht aus Mexiko."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein needs a noun after it, but aus Mexiko is a place with a preposition. A place is negated with nicht.",
+          "es": "kein necesita un sustantivo detrás, pero aus Mexiko es un lugar con preposición. Un lugar se niega con nicht."
+        },
+        "keine": {
+          "en": "keine needs a noun after it, but aus Mexiko is a place with a preposition. A place is negated with nicht.",
+          "es": "keine necesita un sustantivo detrás, pero aus Mexiko es un lugar con preposición. Un lugar se niega con nicht."
+        }
+      },
+      "examples": [
+        "Anna kommt nicht aus Berlin.",
+        "Wir kommen nicht aus Köln."
+      ],
+      "tr": {
+        "en": "Paul is not from Mexico.",
+        "es": "Paul no es de México."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-f12",
+      "kind": "form",
+      "verb": "Negation",
+      "person": "in Berlin",
+      "answer": "nicht in Berlin",
+      "table": "negation-wort"
+    },
+    {
+      "id": "negation-nicht-kein-c13",
+      "sentence": "Ich habe ___ Geld.",
+      "options": [
+        "kein",
+        "keine",
+        "nicht"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Geld is a neuter noun without an article, so it is negated with kein: Ich habe kein Geld.",
+        "es": "Geld es un sustantivo neutro sin artículo, así que se niega con kein: Ich habe kein Geld."
+      },
+      "wrong": {
+        "keine": {
+          "en": "keine is for feminine and plural nouns. Geld is neuter, so the form is kein.",
+          "es": "keine es para sustantivos femeninos y plurales. Geld es neutro, así que la forma es kein."
+        },
+        "nicht": {
+          "en": "nicht does not stand directly before a noun without an article. Ich habe nicht Geld is wrong.",
+          "es": "nicht no va directamente delante de un sustantivo sin artículo. Ich habe nicht Geld es incorrecto."
+        }
+      },
+      "examples": [
+        "Wir haben kein Brot.",
+        "Paul hat kein Geld."
+      ],
+      "tr": {
+        "en": "I have no money.",
+        "es": "No tengo dinero."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-c14",
+      "sentence": "Das Auto ist ___ neu.",
+      "options": [
+        "kein",
+        "nicht",
+        "keine"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "neu is an adjective, so it is negated with nicht, placed right before it: Das Auto ist nicht neu.",
+        "es": "neu es un adjetivo, así que se niega con nicht, colocado justo antes: Das Auto ist nicht neu."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein only goes with a noun. neu is an adjective, so you need nicht.",
+          "es": "kein solo va con un sustantivo. neu es un adjetivo, así que necesitas nicht."
+        },
+        "keine": {
+          "en": "keine only goes with a noun. neu is an adjective, so you need nicht.",
+          "es": "keine solo va con un sustantivo. neu es un adjetivo, así que necesitas nicht."
+        }
+      },
+      "examples": [
+        "Das Haus ist nicht alt.",
+        "Das Essen ist nicht kalt."
+      ],
+      "tr": {
+        "en": "The car is not new.",
+        "es": "El carro no es nuevo."
+      }
+    },
+    {
+      "id": "negation-nicht-kein-w04",
+      "kind": "why",
+      "es": "Ich habe keinen Hund.",
+      "target": "keinen",
+      "tr": {
+        "en": "I do not have a dog.",
+        "es": "No tengo perro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Hund is masculine and the object of haben, so kein becomes keinen",
+            "es": "Hund es masculino y complemento de haben, así que kein pasa a keinen"
+          }
+        },
+        {
+          "text": {
+            "en": "keinen is the plural form",
+            "es": "keinen es la forma plural"
+          },
+          "wrong": {
+            "en": "The plural is keine, as in keine Kinder. keinen belongs to a masculine noun that is an object.",
+            "es": "El plural es keine, como en keine Kinder. keinen corresponde a un sustantivo masculino que es complemento."
+          }
+        },
+        {
+          "text": {
+            "en": "kein always stays kein",
+            "es": "kein se queda siempre en kein"
+          },
+          "wrong": {
+            "en": "kein changes like ein: ein becomes einen with a masculine object, so kein becomes keinen.",
+            "es": "kein cambia como ein: ein pasa a einen con un complemento masculino, así que kein pasa a keinen."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

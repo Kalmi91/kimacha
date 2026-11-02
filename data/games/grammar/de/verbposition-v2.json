@@ -1,0 +1,1080 @@
+{
+  "schema": 2,
+  "topic": "verbposition-v2",
+  "level": "A1",
+  "title": {
+    "en": "Word order: the verb in second place",
+    "es": "Orden de las palabras: el verbo en segundo lugar"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "In a German statement the conjugated verb always stands in second position. The first position can be filled by the subject (Ich lerne heute Deutsch) or by something else, such as a time or a place (Heute lerne ich Deutsch). When something else comes first, the subject moves behind the verb: the verb never slips to third place. English does this only rarely, so do not keep the subject in front after Heute or Dann.",
+        "es": "En una oración enunciativa alemana el verbo conjugado ocupa siempre el segundo lugar. El primer lugar puede ocuparlo el sujeto (Ich lerne heute Deutsch) u otro elemento, como un tiempo o un lugar (Heute lerne ich Deutsch). Cuando otro elemento va primero, el sujeto pasa detrás del verbo: el verbo nunca baja al tercer lugar. En español el orden es muy libre y el sujeto suele omitirse; en alemán el sujeto siempre se dice."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "v2-bausteine",
+      "title": {
+        "en": "The building blocks",
+        "es": "Las piezas de la oración"
+      },
+      "header": [
+        {
+          "en": "Position 1",
+          "es": "Posición 1"
+        },
+        {
+          "en": "Position 2: verb",
+          "es": "Posición 2: verbo"
+        },
+        {
+          "en": "Rest",
+          "es": "Resto"
+        }
+      ],
+      "rows": [
+        [
+          "Ich",
+          "lerne",
+          "heute Deutsch."
+        ],
+        [
+          "Heute",
+          "lerne",
+          "ich Deutsch."
+        ],
+        [
+          "In Köln",
+          "wohnt",
+          "Anna."
+        ],
+        [
+          "Dann",
+          "gehen",
+          "wir nach Hause."
+        ],
+        [
+          "Am Montag um acht Uhr",
+          "arbeitet",
+          "Paul."
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "table",
+      "id": "v2-ich-du-wir",
+      "title": {
+        "en": "Verb and subject after the first element",
+        "es": "Verbo y sujeto después del primer elemento"
+      },
+      "header": [
+        {
+          "en": "First element + verb",
+          "es": "Primer elemento + verbo"
+        },
+        {
+          "en": "ich",
+          "es": "ich"
+        },
+        {
+          "en": "du",
+          "es": "du"
+        },
+        {
+          "en": "wir",
+          "es": "wir"
+        }
+      ],
+      "rows": [
+        [
+          "Heute + lernen",
+          "lerne ich",
+          "lernst du",
+          "lernen wir"
+        ],
+        [
+          "Morgen + kommen",
+          "komme ich",
+          "kommst du",
+          "kommen wir"
+        ],
+        [
+          "Dann + gehen",
+          "gehe ich",
+          "gehst du",
+          "gehen wir"
+        ],
+        [
+          "Jetzt + arbeiten",
+          "arbeite ich",
+          "arbeitest du",
+          "arbeiten wir"
+        ],
+        [
+          "In Köln + wohnen",
+          "wohne ich",
+          "wohnst du",
+          "wohnen wir"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "v2-er-ihr-anna",
+      "title": {
+        "en": "Verb and subject, third person and ihr",
+        "es": "Verbo y sujeto, tercera persona e ihr"
+      },
+      "header": [
+        {
+          "en": "First element + verb",
+          "es": "Primer elemento + verbo"
+        },
+        {
+          "en": "er",
+          "es": "er"
+        },
+        {
+          "en": "ihr",
+          "es": "ihr"
+        },
+        {
+          "en": "Anna",
+          "es": "Anna"
+        }
+      ],
+      "rows": [
+        [
+          "Heute + lernen",
+          "lernt er",
+          "lernt ihr",
+          "lernt Anna"
+        ],
+        [
+          "Morgen + kommen",
+          "kommt er",
+          "kommt ihr",
+          "kommt Anna"
+        ],
+        [
+          "Dann + gehen",
+          "geht er",
+          "geht ihr",
+          "geht Anna"
+        ],
+        [
+          "Jetzt + arbeiten",
+          "arbeitet er",
+          "arbeitet ihr",
+          "arbeitet Anna"
+        ],
+        [
+          "In Köln + wohnen",
+          "wohnt er",
+          "wohnt ihr",
+          "wohnt Anna"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Position 1 and position 2",
+        "es": "Posición 1 y posición 2"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The verb is in second position. If the subject opens the sentence, the order is the same as in English: subject, verb, rest.",
+            "es": "El verbo está en segundo lugar. Si el sujeto abre la oración, el orden es como en español o en inglés: sujeto, verbo, resto."
+          },
+          "examples": [
+            {
+              "es": "Ich wohne in Köln.",
+              "tr": {
+                "en": "I live in Cologne.",
+                "es": "Vivo en Colonia."
+              }
+            },
+            {
+              "es": "Wir lernen Deutsch.",
+              "tr": {
+                "en": "We learn German.",
+                "es": "Aprendemos alemán."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Anything else can open the sentence: a time word, a place, or a link word like dann. The subject then follows the verb. The meaning does not change, only the emphasis.",
+            "es": "Cualquier otro elemento puede abrir la oración: una palabra de tiempo, un lugar o una palabra de enlace como dann. Entonces el sujeto va detrás del verbo. El significado no cambia, solo el énfasis."
+          },
+          "examples": [
+            {
+              "es": "Heute lerne ich Deutsch.",
+              "tr": {
+                "en": "Today I learn German.",
+                "es": "Hoy aprendo alemán."
+              }
+            },
+            {
+              "es": "Dann gehen wir nach Hause.",
+              "tr": {
+                "en": "Then we go home.",
+                "es": "Luego vamos a casa."
+              }
+            },
+            {
+              "es": "In Köln wohnt Anna.",
+              "tr": {
+                "en": "Anna lives in Cologne.",
+                "es": "Anna vive en Colonia."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Position 1 holds one element only, but an element can be a whole phrase. Am Montag um acht Uhr is one element, so the verb comes right after it.",
+            "es": "La posición 1 admite un solo elemento, pero un elemento puede ser toda una frase. Am Montag um acht Uhr es un elemento, así que el verbo viene justo después."
+          },
+          "examples": [
+            {
+              "es": "Am Montag um acht Uhr lernen wir Deutsch.",
+              "tr": {
+                "en": "On Monday at eight o'clock we learn German.",
+                "es": "El lunes a las ocho aprendemos alemán."
+              }
+            },
+            {
+              "es": "Um acht Uhr kommt Anna.",
+              "tr": {
+                "en": "Anna comes at eight o'clock.",
+                "es": "Anna viene a las ocho."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With several details, time usually comes before place. The verb still stays second.",
+            "es": "Cuando hay varios datos, el tiempo suele ir antes que el lugar. El verbo sigue en segundo lugar."
+          },
+          "examples": [
+            {
+              "es": "Ich fahre heute nach Hamburg.",
+              "tr": {
+                "en": "I am going to Hamburg today.",
+                "es": "Hoy voy a Hamburgo."
+              }
+            },
+            {
+              "es": "Wir gehen jetzt nach Hause.",
+              "tr": {
+                "en": "We are going home now.",
+                "es": "Ahora nos vamos a casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A second verb part goes to the very end of the sentence, as an infinitive. This is only a preview, the modal verbs lesson explains it.",
+            "es": "Una segunda parte del verbo va al final de la oración, en infinitivo. Es solo un adelanto: la lección de los verbos modales lo explica."
+          },
+          "examples": [
+            {
+              "es": "Ich möchte Tee trinken.",
+              "tr": {
+                "en": "I would like to drink tea.",
+                "es": "Quiero tomar té."
+              }
+            },
+            {
+              "es": "Wir möchten Deutsch lernen.",
+              "tr": {
+                "en": "We would like to learn German.",
+                "es": "Queremos aprender alemán."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Same meaning, two orders",
+        "es": "Mismo significado, dos órdenes"
+      },
+      "pairs": [
+        {
+          "a": "Ich gehe heute nach Hause.",
+          "b": "Heute gehe ich nach Hause.",
+          "note": {
+            "en": "Both are correct. The second puts Heute first for emphasis or to link to the last sentence. The verb gehe stays second, and ich moves behind it.",
+            "es": "Las dos son correctas. La segunda pone Heute primero para dar énfasis o para enlazar con la frase anterior. El verbo gehe se queda en segundo lugar e ich pasa detrás."
+          },
+          "examples": [
+            {
+              "es": "Wir lernen morgen Deutsch.",
+              "tr": {
+                "en": "We learn German tomorrow.",
+                "es": "Mañana aprendemos alemán."
+              }
+            },
+            {
+              "es": "Morgen lernen wir Deutsch.",
+              "tr": {
+                "en": "Tomorrow we learn German.",
+                "es": "Mañana aprendemos alemán."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Anna wohnt in Köln.",
+          "b": "In Köln wohnt Anna.",
+          "note": {
+            "en": "A noun subject behaves like a pronoun: it moves behind the verb when another element opens the sentence.",
+            "es": "Un sujeto que es un sustantivo se comporta como un pronombre: pasa detrás del verbo cuando otro elemento abre la oración."
+          },
+          "examples": [
+            {
+              "es": "Paul arbeitet heute.",
+              "tr": {
+                "en": "Paul works today.",
+                "es": "Paul trabaja hoy."
+              }
+            },
+            {
+              "es": "Heute arbeitet Paul.",
+              "tr": {
+                "en": "Today Paul works.",
+                "es": "Hoy trabaja Paul."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: after Heute, Dann or Morgen comes the verb, not the subject (Heute lerne ich, not Heute ich lerne). The verb does not go to the end of a simple sentence (Ich lerne Deutsch, not Ich Deutsch lerne). And the subject is never dropped: Heute lerne ich, not Heute lerne.",
+        "es": "Trampas clásicas: después de Heute, Dann o Morgen viene el verbo, no el sujeto (Heute lerne ich, no Heute ich lerne). En una oración simple el verbo no va al final (Ich lerne Deutsch, no Ich Deutsch lerne). Y el sujeto nunca se omite: Heute lerne ich, no Heute lerne."
+      }
+    }
+  ],
+  "speak": {
+    "en": "In a German statement the verb is always in second place. If the subject comes first, it sounds just like English: «Ich lerne heute Deutsch». If something else comes first, the subject moves behind the verb: «Heute lerne ich Deutsch». Say «Dann gehen wir nach Hause», with the verb right after dann. A whole phrase can be the first element: «Am Montag um acht Uhr lernen wir Deutsch». A second verb goes to the end: «Ich möchte Tee trinken».",
+    "es": "En una oración enunciativa alemana el verbo está siempre en segundo lugar. Si el sujeto va primero, suena como en español o en inglés: «Ich lerne heute Deutsch». Si otro elemento va primero, el sujeto pasa detrás del verbo: «Heute lerne ich Deutsch». Di «Dann gehen wir nach Hause», con el verbo justo después de dann. Una frase completa puede ser el primer elemento: «Am Montag um acht Uhr lernen wir Deutsch». Un segundo verbo va al final: «Ich möchte Tee trinken»."
+  },
+  "items": [
+    {
+      "id": "verbposition-v2-c01",
+      "sentence": "Heute ___ Deutsch.",
+      "options": [
+        "lerne ich",
+        "ich lerne",
+        "lernt ich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After Heute the verb comes in second place and the subject follows it: Heute lerne ich Deutsch.",
+        "es": "Después de Heute el verbo va en segundo lugar y el sujeto lo sigue: Heute lerne ich Deutsch."
+      },
+      "wrong": {
+        "ich lerne": {
+          "en": "ich lerne puts the subject in second place and the verb in third. After Heute the verb must come right away: lerne ich.",
+          "es": "ich lerne pone el sujeto en segundo lugar y el verbo en tercero. Después de Heute el verbo tiene que venir enseguida: lerne ich."
+        },
+        "lernt ich": {
+          "en": "The order verb, subject is right, but lernt is the form for er, sie, es and ihr. With ich the verb is lerne.",
+          "es": "El orden verbo, sujeto es correcto, pero lernt es la forma de er, sie, es e ihr. Con ich el verbo es lerne."
+        }
+      },
+      "examples": [
+        "Morgen lerne ich Spanisch.",
+        "Jetzt lerne ich Deutsch."
+      ],
+      "tr": {
+        "en": "Today I learn German.",
+        "es": "Hoy aprendo alemán."
+      }
+    },
+    {
+      "id": "verbposition-v2-f01",
+      "kind": "form",
+      "verb": "ich",
+      "person": "Heute + lernen",
+      "answer": "lerne ich",
+      "table": "v2-ich-du-wir"
+    },
+    {
+      "id": "verbposition-v2-c02",
+      "sentence": "Dann ___ nach Hause.",
+      "options": [
+        "wir gehen",
+        "gehen wir",
+        "geht wir"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Dann opens the sentence, so the verb comes next and wir follows it: Dann gehen wir nach Hause.",
+        "es": "Dann abre la oración, así que el verbo viene después y wir lo sigue: Dann gehen wir nach Hause."
+      },
+      "wrong": {
+        "wir gehen": {
+          "en": "wir gehen keeps the subject in front. After Dann the subject must move behind the verb: gehen wir.",
+          "es": "wir gehen deja el sujeto delante. Después de Dann el sujeto tiene que pasar detrás del verbo: gehen wir."
+        },
+        "geht wir": {
+          "en": "The order is right, but geht is the form for er and ihr. With wir the verb is gehen.",
+          "es": "El orden es correcto, pero geht es la forma de er e ihr. Con wir el verbo es gehen."
+        }
+      },
+      "examples": [
+        "Jetzt gehen wir nach Hause.",
+        "Dann gehen wir nach Köln."
+      ],
+      "tr": {
+        "en": "Then we go home.",
+        "es": "Luego nos vamos a casa."
+      }
+    },
+    {
+      "id": "verbposition-v2-f02",
+      "kind": "form",
+      "verb": "er",
+      "person": "Morgen + kommen",
+      "answer": "kommt er",
+      "table": "v2-er-ihr-anna"
+    },
+    {
+      "id": "verbposition-v2-c03",
+      "sentence": "In Köln ___ Anna.",
+      "options": [
+        "wohne",
+        "wohnen",
+        "wohnt"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "In Köln fills position 1. The verb comes next and agrees with Anna, who follows it: wohnt.",
+        "es": "In Köln ocupa la posición 1. El verbo viene después y concuerda con Anna, que lo sigue: wohnt."
+      },
+      "wrong": {
+        "wohne": {
+          "en": "wohne is the ich-form. Anna is one person, so the verb is wohnt, even though it stands before her.",
+          "es": "wohne es la forma de ich. Anna es una persona, así que el verbo es wohnt, aunque vaya antes que ella."
+        },
+        "wohnen": {
+          "en": "wohnen is the form for wir and sie (they). One person like Anna takes wohnt.",
+          "es": "wohnen es la forma de wir y de sie (ellos). Una persona como Anna lleva wohnt."
+        }
+      },
+      "examples": [
+        "In Berlin wohnt Paul.",
+        "In Hamburg arbeitet Anna."
+      ],
+      "tr": {
+        "en": "Anna lives in Cologne.",
+        "es": "Anna vive en Colonia."
+      }
+    },
+    {
+      "id": "verbposition-v2-f03",
+      "kind": "form",
+      "verb": "du",
+      "person": "Morgen + kommen",
+      "answer": "kommst du",
+      "table": "v2-ich-du-wir"
+    },
+    {
+      "id": "verbposition-v2-w01",
+      "kind": "why",
+      "es": "Heute lerne ich Deutsch.",
+      "target": "lerne",
+      "tr": {
+        "en": "Today I learn German.",
+        "es": "Hoy aprendo alemán."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "The subject must always stand first",
+            "es": "El sujeto debe ir siempre primero"
+          },
+          "wrong": {
+            "en": "That is the habit of English and Spanish speakers. In German the first place can belong to Heute, and then the verb follows: lerne ich, not ich lerne.",
+            "es": "Ese es el hábito de quien habla inglés o español. En alemán el primer lugar puede ser de Heute, y entonces sigue el verbo: lerne ich, no ich lerne."
+          }
+        },
+        {
+          "text": {
+            "en": "The conjugated verb is always in second position",
+            "es": "El verbo conjugado está siempre en segundo lugar"
+          }
+        },
+        {
+          "text": {
+            "en": "The verb goes to the end of the sentence",
+            "es": "El verbo va al final de la oración"
+          },
+          "wrong": {
+            "en": "The end is only for a second verb part, as in Ich möchte Tee trinken. A single conjugated verb stays in second place.",
+            "es": "El final es solo para una segunda parte del verbo, como en Ich möchte Tee trinken. Un verbo conjugado solo se queda en segundo lugar."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "verbposition-v2-c04",
+      "sentence": "Ich ___ Deutsch.",
+      "options": [
+        "heute lerne",
+        "lerne heute",
+        "lernen heute"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The subject ich is in position 1, so the verb lerne must be in position 2. The time word heute comes after the verb.",
+        "es": "El sujeto ich está en la posición 1, así que el verbo lerne tiene que estar en la posición 2. La palabra de tiempo heute viene después del verbo."
+      },
+      "wrong": {
+        "heute lerne": {
+          "en": "heute lerne puts the time word before the verb, so the verb ends up in third place: Ich heute lerne Deutsch. That is wrong.",
+          "es": "heute lerne pone la palabra de tiempo antes del verbo, y el verbo queda en tercer lugar: Ich heute lerne Deutsch. Eso es incorrecto."
+        },
+        "lernen heute": {
+          "en": "lernen is the form for wir and sie (they). With ich the verb is lerne.",
+          "es": "lernen es la forma de wir y de sie (ellos). Con ich el verbo es lerne."
+        }
+      },
+      "examples": [
+        "Wir spielen heute Fußball.",
+        "Anna kocht heute Suppe."
+      ],
+      "tr": {
+        "en": "I learn German today.",
+        "es": "Hoy aprendo alemán."
+      }
+    },
+    {
+      "id": "verbposition-v2-f04",
+      "kind": "form",
+      "verb": "ihr",
+      "person": "Dann + gehen",
+      "answer": "geht ihr",
+      "table": "v2-er-ihr-anna"
+    },
+    {
+      "id": "verbposition-v2-c05",
+      "sentence": "Jetzt ___ du Tee.",
+      "options": [
+        "trinkst",
+        "trinke",
+        "trinken"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Jetzt fills position 1, so the verb comes next. It agrees with du: trinkst.",
+        "es": "Jetzt ocupa la posición 1, así que el verbo viene después. Concuerda con du: trinkst."
+      },
+      "wrong": {
+        "trinke": {
+          "en": "trinke is the ich-form. The subject here is du, so the verb is trinkst.",
+          "es": "trinke es la forma de ich. El sujeto aquí es du, así que el verbo es trinkst."
+        },
+        "trinken": {
+          "en": "trinken is the form for wir and sie (they). With du you need trinkst.",
+          "es": "trinken es la forma de wir y de sie (ellos). Con du necesitas trinkst."
+        }
+      },
+      "examples": [
+        "Heute trinkst du Kaffee.",
+        "Dann trinkst du Wasser."
+      ],
+      "tr": {
+        "en": "Now you drink tea.",
+        "es": "Ahora tomas té."
+      }
+    },
+    {
+      "id": "verbposition-v2-f05",
+      "kind": "form",
+      "verb": "wir",
+      "person": "Dann + gehen",
+      "answer": "gehen wir",
+      "table": "v2-ich-du-wir"
+    },
+    {
+      "id": "verbposition-v2-c06",
+      "sentence": "Morgen kommt ___ nach Berlin.",
+      "options": [
+        "wir",
+        "ich",
+        "er"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The verb kommt is the form for er, sie, es and ihr. Of the three options only er fits, and it stands behind the verb because Morgen is first.",
+        "es": "El verbo kommt es la forma de er, sie, es e ihr. De las tres opciones solo encaja er, y va detrás del verbo porque Morgen va primero."
+      },
+      "wrong": {
+        "wir": {
+          "en": "With wir the verb would be kommen. The verb kommt does not fit wir.",
+          "es": "Con wir el verbo sería kommen. El verbo kommt no concuerda con wir."
+        },
+        "ich": {
+          "en": "With ich the verb would be komme. The verb kommt does not fit ich.",
+          "es": "Con ich el verbo sería komme. El verbo kommt no concuerda con ich."
+        }
+      },
+      "examples": [
+        "Heute kommt er nach Köln.",
+        "Dann kommt er nach Hause."
+      ],
+      "tr": {
+        "en": "Tomorrow he comes to Berlin.",
+        "es": "Mañana viene a Berlín."
+      }
+    },
+    {
+      "id": "verbposition-v2-f06",
+      "kind": "form",
+      "verb": "Anna",
+      "person": "Jetzt + arbeiten",
+      "answer": "arbeitet Anna",
+      "table": "v2-er-ihr-anna"
+    },
+    {
+      "id": "verbposition-v2-w02",
+      "kind": "why",
+      "es": "In Köln wohnt Anna.",
+      "target": "Anna",
+      "tr": {
+        "en": "Anna lives in Cologne.",
+        "es": "Anna vive en Colonia."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "In Köln fills position 1, so the subject follows the verb",
+            "es": "In Köln ocupa la posición 1, así que el sujeto sigue al verbo"
+          }
+        },
+        {
+          "text": {
+            "en": "Names always stand behind the verb",
+            "es": "Los nombres van siempre detrás del verbo"
+          },
+          "wrong": {
+            "en": "Names can open a sentence: Anna wohnt in Köln. Here Anna stands behind the verb only because In Köln is first.",
+            "es": "Los nombres pueden abrir una oración: Anna wohnt in Köln. Aquí Anna va detrás del verbo solo porque In Köln va primero."
+          }
+        },
+        {
+          "text": {
+            "en": "Anna moves to the end to be emphasised",
+            "es": "Anna pasa al final para destacarse"
+          },
+          "wrong": {
+            "en": "There is no emphasis rule here. The order verb, subject happens automatically whenever another element opens the sentence.",
+            "es": "Aquí no hay una regla de énfasis. El orden verbo, sujeto ocurre automáticamente siempre que otro elemento abre la oración."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "verbposition-v2-c07",
+      "sentence": "Ich möchte Tee ___.",
+      "options": [
+        "trinke",
+        "trinken",
+        "trinkt"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The second verb stands at the end of the sentence and stays in the infinitive: Ich möchte Tee trinken.",
+        "es": "El segundo verbo va al final de la oración y se queda en infinitivo: Ich möchte Tee trinken."
+      },
+      "wrong": {
+        "trinke": {
+          "en": "trinke is the conjugated ich-form. The ending belongs to möchte, the second verb stays trinken.",
+          "es": "trinke es la forma conjugada de ich. La conjugación corresponde a möchte, el segundo verbo se queda en trinken."
+        },
+        "trinkt": {
+          "en": "trinkt is a conjugated form for er or ihr. The second verb does not change: it is the infinitive trinken.",
+          "es": "trinkt es una forma conjugada de er o ihr. El segundo verbo no cambia: es el infinitivo trinken."
+        }
+      },
+      "examples": [
+        "Ich möchte Kaffee trinken.",
+        "Ich möchte Suppe kochen."
+      ],
+      "tr": {
+        "en": "I would like to drink tea.",
+        "es": "Quiero tomar té."
+      }
+    },
+    {
+      "id": "verbposition-v2-f07",
+      "kind": "form",
+      "verb": "du",
+      "person": "Jetzt + arbeiten",
+      "answer": "arbeitest du",
+      "table": "v2-ich-du-wir"
+    },
+    {
+      "id": "verbposition-v2-c08",
+      "sentence": "Am Montag um acht Uhr ___ Paul.",
+      "options": [
+        "arbeitet",
+        "arbeiten",
+        "arbeite"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Am Montag um acht Uhr is one element in position 1, so the verb follows it and agrees with Paul: arbeitet.",
+        "es": "Am Montag um acht Uhr es un solo elemento en la posición 1, así que el verbo viene después y concuerda con Paul: arbeitet."
+      },
+      "wrong": {
+        "arbeiten": {
+          "en": "arbeiten is the form for wir and sie (they). Paul is one person, so you need arbeitet.",
+          "es": "arbeiten es la forma de wir y de sie (ellos). Paul es una persona, así que necesitas arbeitet."
+        },
+        "arbeite": {
+          "en": "arbeite is the ich-form. The subject Paul is a he, so the verb is arbeitet.",
+          "es": "arbeite es la forma de ich. El sujeto Paul es un él, así que el verbo es arbeitet."
+        }
+      },
+      "examples": [
+        "Um acht Uhr arbeitet Anna.",
+        "Am Dienstag arbeitet Paul."
+      ],
+      "tr": {
+        "en": "On Monday at eight o'clock Paul works.",
+        "es": "El lunes a las ocho Paul trabaja."
+      }
+    },
+    {
+      "id": "verbposition-v2-f08",
+      "kind": "form",
+      "verb": "ihr",
+      "person": "In Köln + wohnen",
+      "answer": "wohnt ihr",
+      "table": "v2-er-ihr-anna"
+    },
+    {
+      "id": "verbposition-v2-c09",
+      "sentence": "Heute lernen ___ Deutsch.",
+      "options": [
+        "er",
+        "du",
+        "wir"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The verb lernen is the form for wir and sie (they). Of the options only wir fits, and it stands behind the verb because Heute opens the sentence.",
+        "es": "El verbo lernen es la forma de wir y de sie (ellos). De las opciones solo encaja wir, y va detrás del verbo porque Heute abre la oración."
+      },
+      "wrong": {
+        "er": {
+          "en": "With er the verb would be lernt. The verb lernen does not fit er.",
+          "es": "Con er el verbo sería lernt. El verbo lernen no concuerda con er."
+        },
+        "du": {
+          "en": "With du the verb would be lernst. The verb lernen does not fit du.",
+          "es": "Con du el verbo sería lernst. El verbo lernen no concuerda con du."
+        }
+      },
+      "examples": [
+        "Morgen lernen wir Spanisch.",
+        "Jetzt lernen wir Deutsch."
+      ],
+      "tr": {
+        "en": "Today we learn German.",
+        "es": "Hoy aprendemos alemán."
+      }
+    },
+    {
+      "id": "verbposition-v2-f09",
+      "kind": "form",
+      "verb": "ich",
+      "person": "In Köln + wohnen",
+      "answer": "wohne ich",
+      "table": "v2-ich-du-wir"
+    },
+    {
+      "id": "verbposition-v2-w03",
+      "kind": "why",
+      "es": "Am Montag um acht Uhr lernen wir Deutsch.",
+      "target": "lernen",
+      "tr": {
+        "en": "On Monday at eight o'clock we learn German.",
+        "es": "El lunes a las ocho aprendemos alemán."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Each word of the time phrase takes its own position",
+            "es": "Cada palabra de la frase de tiempo ocupa su propia posición"
+          },
+          "wrong": {
+            "en": "Words that belong together count as one element. Am Montag um acht Uhr is a single position 1, so the verb is not fifth.",
+            "es": "Las palabras que van juntas cuentan como un solo elemento. Am Montag um acht Uhr es una sola posición 1, así que el verbo no es el quinto."
+          }
+        },
+        {
+          "text": {
+            "en": "The verb is second because wir is the subject",
+            "es": "El verbo es el segundo porque wir es el sujeto"
+          },
+          "wrong": {
+            "en": "The verb is second in every statement, whatever the subject. The subject wir only decides the ending of lernen.",
+            "es": "El verbo es el segundo en toda oración enunciativa, sea cual sea el sujeto. El sujeto wir solo decide la terminación de lernen."
+          }
+        },
+        {
+          "text": {
+            "en": "Am Montag um acht Uhr is one element, so the verb follows it",
+            "es": "Am Montag um acht Uhr es un solo elemento, así que el verbo lo sigue"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "verbposition-v2-c10",
+      "sentence": "Morgen ___ nach Berlin.",
+      "options": [
+        "fahre ich",
+        "ich fahre",
+        "fahren ich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Morgen is in position 1, so the verb comes second and ich follows it: Morgen fahre ich nach Berlin.",
+        "es": "Morgen está en la posición 1, así que el verbo va en segundo lugar e ich lo sigue: Morgen fahre ich nach Berlin."
+      },
+      "wrong": {
+        "ich fahre": {
+          "en": "ich fahre keeps the subject first, which pushes the verb to third place. After Morgen the order is verb, subject: fahre ich.",
+          "es": "ich fahre deja el sujeto primero y empuja el verbo al tercer lugar. Después de Morgen el orden es verbo, sujeto: fahre ich."
+        },
+        "fahren ich": {
+          "en": "The order is right, but fahren is the form for wir and sie (they). With ich the verb is fahre.",
+          "es": "El orden es correcto, pero fahren es la forma de wir y de sie (ellos). Con ich el verbo es fahre."
+        }
+      },
+      "examples": [
+        "Heute fahre ich nach Hamburg.",
+        "Jetzt fahre ich nach Hause."
+      ],
+      "tr": {
+        "en": "Tomorrow I am going to Berlin.",
+        "es": "Mañana voy a Berlín."
+      }
+    },
+    {
+      "id": "verbposition-v2-f10",
+      "kind": "form",
+      "verb": "Anna",
+      "person": "Heute + lernen",
+      "answer": "lernt Anna",
+      "table": "v2-er-ihr-anna"
+    },
+    {
+      "id": "verbposition-v2-c11",
+      "sentence": "Wir ___ Fußball.",
+      "options": [
+        "morgen spielen",
+        "spielen morgen",
+        "spielt morgen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The subject wir opens the sentence, so the verb spielen comes second. The time word morgen follows the verb.",
+        "es": "El sujeto wir abre la oración, así que el verbo spielen va en segundo lugar. La palabra de tiempo morgen viene después del verbo."
+      },
+      "wrong": {
+        "morgen spielen": {
+          "en": "morgen spielen puts the time word before the verb, so the verb ends up in third place: Wir morgen spielen Fußball. That is wrong.",
+          "es": "morgen spielen pone la palabra de tiempo antes del verbo, y el verbo queda en tercer lugar: Wir morgen spielen Fußball. Eso es incorrecto."
+        },
+        "spielt morgen": {
+          "en": "The order is right, but spielt is the form for er and ihr. With wir the verb is spielen.",
+          "es": "El orden es correcto, pero spielt es la forma de er e ihr. Con wir el verbo es spielen."
+        }
+      },
+      "examples": [
+        "Anna spielt heute Fußball.",
+        "Wir spielen jetzt Fußball."
+      ],
+      "tr": {
+        "en": "We play soccer tomorrow.",
+        "es": "Mañana jugamos fútbol."
+      }
+    },
+    {
+      "id": "verbposition-v2-f11",
+      "kind": "form",
+      "verb": "wir",
+      "person": "Heute + lernen",
+      "answer": "lernen wir",
+      "table": "v2-ich-du-wir"
+    },
+    {
+      "id": "verbposition-v2-c12",
+      "sentence": "Dann ___ wir Suppe.",
+      "options": [
+        "kocht",
+        "koche",
+        "kochen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Dann opens the sentence, so the verb comes next and wir follows it. With wir the verb is kochen.",
+        "es": "Dann abre la oración, así que el verbo viene después y wir lo sigue. Con wir el verbo es kochen."
+      },
+      "wrong": {
+        "kocht": {
+          "en": "kocht is the form for er and ihr. The subject wir needs kochen.",
+          "es": "kocht es la forma de er e ihr. El sujeto wir necesita kochen."
+        },
+        "koche": {
+          "en": "koche is the ich-form. The subject wir needs kochen.",
+          "es": "koche es la forma de ich. El sujeto wir necesita kochen."
+        }
+      },
+      "examples": [
+        "Jetzt kochen wir Suppe.",
+        "Heute kochen wir Fisch."
+      ],
+      "tr": {
+        "en": "Then we cook soup.",
+        "es": "Luego cocinamos sopa."
+      }
+    },
+    {
+      "id": "verbposition-v2-f12",
+      "kind": "form",
+      "verb": "er",
+      "person": "Dann + gehen",
+      "answer": "geht er",
+      "table": "v2-er-ihr-anna"
+    },
+    {
+      "id": "verbposition-v2-c13",
+      "sentence": "In Köln ___ Deutsch.",
+      "options": [
+        "lernen wir",
+        "wir lernen",
+        "lernt wir"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "In Köln opens the sentence, so the verb is second and wir follows: In Köln lernen wir Deutsch.",
+        "es": "In Köln abre la oración, así que el verbo es el segundo y wir lo sigue: In Köln lernen wir Deutsch."
+      },
+      "wrong": {
+        "wir lernen": {
+          "en": "wir lernen keeps the subject in second place, so the verb becomes third: In Köln wir lernen Deutsch. The verb must come right after In Köln.",
+          "es": "wir lernen deja el sujeto en segundo lugar, y el verbo pasa a ser el tercero: In Köln wir lernen Deutsch. El verbo debe venir justo después de In Köln."
+        },
+        "lernt wir": {
+          "en": "The order is right, but lernt is the form for er and ihr. With wir the verb is lernen.",
+          "es": "El orden es correcto, pero lernt es la forma de er e ihr. Con wir el verbo es lernen."
+        }
+      },
+      "examples": [
+        "In Berlin lernen wir Spanisch.",
+        "In Hamburg lernen wir Deutsch."
+      ],
+      "tr": {
+        "en": "In Cologne we learn German.",
+        "es": "En Colonia aprendemos alemán."
+      }
+    },
+    {
+      "id": "verbposition-v2-c14",
+      "sentence": "Wir möchten Deutsch ___.",
+      "options": [
+        "lernt",
+        "lernen",
+        "lernst"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "möchten is the conjugated verb in second place. The second verb goes to the end in the infinitive: lernen.",
+        "es": "möchten es el verbo conjugado en segundo lugar. El segundo verbo va al final en infinitivo: lernen."
+      },
+      "wrong": {
+        "lernt": {
+          "en": "lernt is a conjugated form for er or ihr. The second verb stays in the infinitive: lernen.",
+          "es": "lernt es una forma conjugada de er o ihr. El segundo verbo se queda en infinitivo: lernen."
+        },
+        "lernst": {
+          "en": "lernst is the du-form. The ending belongs to möchten, so the second verb does not change.",
+          "es": "lernst es la forma de du. La conjugación corresponde a möchten, así que el segundo verbo no cambia."
+        }
+      },
+      "examples": [
+        "Wir möchten Tee trinken.",
+        "Wir möchten Suppe kochen."
+      ],
+      "tr": {
+        "en": "We would like to learn German.",
+        "es": "Queremos aprender alemán."
+      }
+    },
+    {
+      "id": "verbposition-v2-w04",
+      "kind": "why",
+      "es": "Ich möchte Tee trinken.",
+      "target": "trinken",
+      "tr": {
+        "en": "I would like to drink tea.",
+        "es": "Quiero tomar té."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "trinken is the second verb, so it stands at the end in the infinitive",
+            "es": "trinken es el segundo verbo, así que va al final en infinitivo"
+          }
+        },
+        {
+          "text": {
+            "en": "Every verb must be in second position",
+            "es": "Todos los verbos deben estar en segundo lugar"
+          },
+          "wrong": {
+            "en": "Only the conjugated verb, here möchte, is in second position. A second verb stays at the end as an infinitive.",
+            "es": "Solo el verbo conjugado, aquí möchte, está en segundo lugar. Un segundo verbo se queda al final como infinitivo."
+          }
+        },
+        {
+          "text": {
+            "en": "trinken is conjugated for ich: trinke",
+            "es": "trinken está conjugado para ich: trinke"
+          },
+          "wrong": {
+            "en": "The ending belongs to the first verb, möchte. The second verb does not change: trinken.",
+            "es": "La terminación corresponde al primer verbo, möchte. El segundo verbo no cambia: trinken."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
