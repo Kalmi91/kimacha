@@ -93,3 +93,7 @@ docs/UI-NEVEK.md
 # Output of the audit scripts (regenerated on every run, not project state)
 /scripts/audit-prompts.md
 /scripts/audit-report-en.md
+
+# Stryker mutation testing (npm run test:mutation): sandbox copy and reports, regenerated on every run
+/.stryker-tmp/
+/reports/mutation/

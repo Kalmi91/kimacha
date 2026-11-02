@@ -1,0 +1,50 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "mutate": [
+    "lib/sm2.ts",
+    "cloud/logic.ts"
+  ],
+  "testRunner": "jest",
+  "jest": {
+    "projectType": "custom",
+    "configFile": "jest.mutation.config.js",
+    "config": {
+      "testMatch": [
+        "<rootDir>/lib/__tests__/sm2.test.ts",
+        "<rootDir>/lib/__tests__/sm2Known.test.ts",
+        "<rootDir>/lib/__tests__/sm2.mutation.test.ts",
+        "<rootDir>/lib/cloud/__tests__/workerLogic.test.ts",
+        "<rootDir>/lib/cloud/__tests__/workerLogic.mutation.test.ts",
+        "<rootDir>/lib/cloud/__tests__/loginGuard.test.ts",
+        "<rootDir>/lib/cloud/__tests__/payloadAndAdmin.test.ts"
+      ]
+    }
+  },
+  "coverageAnalysis": "perTest",
+  "concurrency": 2,
+  "reporters": [
+    "clear-text",
+    "progress",
+    "json",
+    "html"
+  ],
+  "jsonReporter": {
+    "fileName": "reports/mutation/mutation.json"
+  },
+  "htmlReporter": {
+    "fileName": "reports/mutation/mutation.html"
+  },
+  "tempDirName": ".stryker-tmp",
+  "cleanTempDir": true,
+  "ignorePatterns": [
+    "android",
+    "docs",
+    "scripts",
+    ".expo",
+    "dist",
+    ".git",
+    "reports"
+  ],
+  "incremental": true,
+  "incrementalFile": "reports/mutation/stryker-incremental.json"
+}
