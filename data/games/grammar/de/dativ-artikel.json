@@ -1,0 +1,1012 @@
+{
+  "schema": 2,
+  "topic": "dativ-artikel",
+  "level": "A2",
+  "title": {
+    "en": "The dative: articles and nouns",
+    "es": "El dativo: artículos y sustantivos"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "The dative is the case of the receiver: the person (or animal) who gets, sees or hears something from the subject. In Ich gebe dem Mann das Buch, dem Mann is the receiver (dative) and das Buch is the thing (accusative). The articles change: dem for masculine and neuter, der for feminine, den for the plural, and a plural noun adds -n (den Kindern). English and Spanish mark the receiver with to or a (to the man, al hombre); German has no extra word, only the new article, much like the Hungarian ending -nak/-nek (a férfinak).",
+        "es": "El dativo es el caso del receptor: la persona (o el animal) que recibe, ve u oye algo del sujeto. En Ich gebe dem Mann das Buch, dem Mann es el receptor (dativo) y das Buch es la cosa (acusativo). Los artículos cambian: dem para masculino y neutro, der para femenino, den para el plural, y un sustantivo plural añade -n (den Kindern). El inglés y el español marcan al receptor con to o a (al hombre); el alemán no usa ninguna palabra extra, solo el artículo nuevo, de forma parecida a la terminación húngara -nak/-nek (a férfinak)."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "dativ-artikel",
+      "title": {
+        "en": "Dative articles",
+        "es": "Artículos en dativo"
+      },
+      "header": [
+        {
+          "en": "Gender",
+          "es": "Género"
+        },
+        {
+          "en": "bestimmt",
+          "es": "bestimmt"
+        },
+        {
+          "en": "unbestimmt",
+          "es": "unbestimmt"
+        },
+        {
+          "en": "kein",
+          "es": "kein"
+        },
+        {
+          "en": "mein",
+          "es": "mein"
+        }
+      ],
+      "rows": [
+        [
+          "maskulin",
+          "dem",
+          "einem",
+          "keinem",
+          "meinem"
+        ],
+        [
+          "feminin",
+          "der",
+          "einer",
+          "keiner",
+          "meiner"
+        ],
+        [
+          "neutral",
+          "dem",
+          "einem",
+          "keinem",
+          "meinem"
+        ],
+        [
+          "Plural",
+          "den",
+          "(kein Artikel)",
+          "keinen",
+          "meinen"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The receiver and wem?",
+        "es": "El receptor y wem?"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The dative names the person who receives something. The thing itself stays in the accusative. Ask wem? (to whom?) to find the dative.",
+            "es": "El dativo nombra a la persona que recibe algo. La cosa misma se queda en acusativo. Pregunta wem? (¿a quién?) para encontrar el dativo."
+          },
+          "examples": [
+            {
+              "es": "Ich gebe dem Mann das Buch.",
+              "tr": {
+                "en": "I give the man the book.",
+                "es": "Le doy el libro al señor."
+              }
+            },
+            {
+              "es": "Anna schenkt der Frau Blumen.",
+              "tr": {
+                "en": "Anna gives the woman flowers.",
+                "es": "Anna le regala flores a la señora."
+              }
+            },
+            {
+              "es": "Paul zeigt dem Kind das Foto.",
+              "tr": {
+                "en": "Paul shows the child the photo.",
+                "es": "Paul le muestra la foto al niño."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A wem? question gets a dative answer. The noun and its article are enough, and no extra word like to is needed.",
+            "es": "Una pregunta con wem? recibe una respuesta en dativo. Bastan el sustantivo y su artículo, sin palabra extra como to."
+          },
+          "examples": [
+            {
+              "es": "Wem gibst du das Geld? Dem Verkäufer.",
+              "tr": {
+                "en": "Who do you give the money to? To the salesman.",
+                "es": "¿A quién le das el dinero? Al vendedor."
+              }
+            },
+            {
+              "es": "Wem schenkst du die Blumen? Meiner Mutter.",
+              "tr": {
+                "en": "Who are you giving the flowers to? To my mother.",
+                "es": "¿A quién le regalas las flores? A mi mamá."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "dativ-plural",
+      "title": {
+        "en": "The dative plural",
+        "es": "El plural en dativo"
+      },
+      "header": [
+        {
+          "en": "Plural",
+          "es": "Plural"
+        },
+        {
+          "en": "Dativ Plural",
+          "es": "Dativ Plural"
+        }
+      ],
+      "rows": [
+        [
+          "die Kinder",
+          "den Kindern"
+        ],
+        [
+          "die Freunde",
+          "den Freunden"
+        ],
+        [
+          "die Männer",
+          "den Männern"
+        ],
+        [
+          "die Frauen",
+          "den Frauen"
+        ],
+        [
+          "die Eltern",
+          "den Eltern"
+        ],
+        [
+          "die Autos",
+          "den Autos"
+        ]
+      ]
+    },
+    {
+      "kind": "list",
+      "title": {
+        "en": "Verbs with two objects",
+        "es": "Verbos con dos complementos"
+      },
+      "items": [
+        {
+          "text": {
+            "en": "geben, schenken, zeigen, schicken and bringen take the receiver in the dative first and the thing in the accusative second. The plural noun gets -n, unless it already ends in -n or -s.",
+            "es": "geben, schenken, zeigen, schicken y bringen llevan primero al receptor en dativo y después la cosa en acusativo. El sustantivo plural recibe -n, salvo que ya termine en -n o -s."
+          },
+          "examples": [
+            {
+              "es": "Ich schicke meiner Mutter einen Brief.",
+              "tr": {
+                "en": "I send my mother a letter.",
+                "es": "Le mando una carta a mi mamá."
+              }
+            },
+            {
+              "es": "Wir bringen den Kindern Kuchen.",
+              "tr": {
+                "en": "We bring the children cake.",
+                "es": "Les llevamos pastel a los niños."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "kaufen, verkaufen and erklären work the same way: Anna kauft dem Kind ein Eis. The same dative also follows the prepositions you know from A1 (mit, bei, von, zu, nach, aus).",
+            "es": "kaufen, verkaufen y erklären funcionan igual: Anna kauft dem Kind ein Eis. El mismo dativo sigue también a las preposiciones que ya conoces de A1 (mit, bei, von, zu, nach, aus)."
+          },
+          "examples": [
+            {
+              "es": "Der Lehrer erklärt den Kindern das Wort.",
+              "tr": {
+                "en": "The teacher explains the word to the children.",
+                "es": "El maestro les explica la palabra a los niños."
+              }
+            },
+            {
+              "es": "Wir wohnen bei den Eltern.",
+              "tr": {
+                "en": "We live with our parents.",
+                "es": "Vivimos con mis papás."
+              }
+            },
+            {
+              "es": "Ich fahre mit dem Bus.",
+              "tr": {
+                "en": "I take the bus.",
+                "es": "Voy en camión."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Accusative or dative?",
+        "es": "¿Acusativo o dativo?"
+      },
+      "pairs": [
+        {
+          "a": "Ich sehe den Mann.",
+          "b": "Ich gebe dem Mann das Buch.",
+          "note": {
+            "en": "With sehen, the man is just seen: accusative den. With geben, the man receives the book: dative dem. One verb with one object takes the accusative; the receiver of a giving verb takes the dative.",
+            "es": "Con sehen, al señor solo se le ve: acusativo den. Con geben, el señor recibe el libro: dativo dem. Un verbo con un solo complemento lleva acusativo; el receptor de un verbo de dar lleva dativo."
+          },
+          "examples": [
+            {
+              "es": "Ich kenne die Frau.",
+              "tr": {
+                "en": "I know the woman.",
+                "es": "Conozco a la señora."
+              }
+            },
+            {
+              "es": "Ich schenke der Frau Blumen.",
+              "tr": {
+                "en": "I give the woman flowers.",
+                "es": "Le regalo flores a la señora."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich besuche die Kinder.",
+          "b": "Ich zeige den Kindern das Haus.",
+          "note": {
+            "en": "In the plural the accusative is the same as the nominative (die Kinder), but the dative is different: den and an extra -n on the noun (den Kindern).",
+            "es": "En el plural el acusativo es igual al nominativo (die Kinder), pero el dativo es distinto: den y una -n extra en el sustantivo (den Kindern)."
+          },
+          "examples": [
+            {
+              "es": "Wir sehen die Freunde.",
+              "tr": {
+                "en": "We see the friends.",
+                "es": "Vemos a los amigos."
+              }
+            },
+            {
+              "es": "Wir schicken den Freunden eine Karte.",
+              "tr": {
+                "en": "We send the friends a card.",
+                "es": "Les mandamos una tarjeta a los amigos."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not add to (not Ich gebe das Buch zu dem Mann) and do not double the receiver (not Ich gebe ihm dem Mann). The masculine dative is dem, not den (den is the accusative masculine and the dative plural). Feminine der is also the masculine nominative, so check the noun. And do not forget the -n in the dative plural: den Kindern, not den Kinder, but den Frauen and den Autos stay as they are.",
+        "es": "Trampas clásicas: no agregues to (no Ich gebe das Buch zu dem Mann) y no dupliques al receptor (no Ich gebe ihm dem Mann). El dativo masculino es dem, no den (den es el acusativo masculino y el dativo plural). La der femenina también es el nominativo masculino, así que fíjate en el sustantivo. Y no olvides la -n en el dativo plural: den Kindern, no den Kinder, pero den Frauen y den Autos se quedan igual."
+      }
+    }
+  ],
+  "speak": {
+    "en": "The dative is the case of the receiver. Ask «wem», to whom. «Ich gebe dem Mann das Buch». The dative articles are «dem» for masculine, «der» for feminine, «dem» for neuter and «den» for the plural. With «ein», it is «einem», «einer», «einem». With «mein», it is «meinem», «meiner», «meinem», «meinen». A plural noun adds an «n» in the dative: «den Kindern», but «den Frauen» stays the same. Verbs like «geben», «schenken» and «zeigen» take the receiver first.",
+    "es": "El dativo es el caso del receptor. Pregunta «wem», a quién. «Ich gebe dem Mann das Buch». Los artículos en dativo son «dem» para masculino, «der» para femenino, «dem» para neutro y «den» para el plural. Con «ein», es «einem», «einer», «einem». Con «mein», es «meinem», «meiner», «meinem», «meinen». Un sustantivo plural añade una «n» en dativo: «den Kindern», pero «den Frauen» se queda igual. Verbos como «geben», «schenken» y «zeigen» llevan primero al receptor."
+  },
+  "items": [
+    {
+      "id": "dativ-artikel-c01",
+      "sentence": "Ich gebe ___ Mann das Buch.",
+      "options": [
+        "dem",
+        "der",
+        "den"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The man is the receiver, so he is in the dative. For masculine nouns the dative article is dem: dem Mann.",
+        "es": "El señor es el receptor, así que va en dativo. Para sustantivos masculinos el artículo en dativo es dem: dem Mann."
+      },
+      "wrong": {
+        "der": {
+          "en": "der is the dative article for feminine nouns (der Frau). Mann is masculine, so the dative is dem.",
+          "es": "der es el artículo en dativo para sustantivos femeninos (der Frau). Mann es masculino, así que el dativo es dem."
+        },
+        "den": {
+          "en": "den is the masculine accusative (den Mann). Here the man is the receiver, not the thing given, so you need the dative dem.",
+          "es": "den es el acusativo masculino (den Mann). Aquí el señor es el receptor, no la cosa dada, así que necesitas el dativo dem."
+        }
+      },
+      "examples": [
+        "Ich zeige dem Mann den Weg.",
+        "Wir geben dem Lehrer ein Buch."
+      ],
+      "tr": {
+        "en": "I give the man the book.",
+        "es": "Le doy el libro al señor."
+      }
+    },
+    {
+      "id": "dativ-artikel-f01",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "maskulin",
+      "answer": "dem",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-c02",
+      "sentence": "Wir schenken ___ Frau Blumen.",
+      "options": [
+        "die",
+        "der",
+        "dem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Frau is feminine, and the dative article for feminine nouns is der: der Frau.",
+        "es": "Frau es femenino, y el artículo en dativo para sustantivos femeninos es der: der Frau."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the nominative and accusative of feminine nouns. The woman is the receiver of the flowers, so she needs the dative.",
+          "es": "die es el nominativo y el acusativo de los sustantivos femeninos. La señora es la receptora de las flores, así que necesita el dativo."
+        },
+        "dem": {
+          "en": "dem is the dative for masculine and neuter nouns. Frau is feminine and takes der.",
+          "es": "dem es el dativo para sustantivos masculinos y neutros. Frau es femenino y lleva der."
+        }
+      },
+      "examples": [
+        "Paul schenkt der Lehrerin ein Buch.",
+        "Ich gebe der Frau das Geld."
+      ],
+      "tr": {
+        "en": "We give the woman flowers.",
+        "es": "Le regalamos flores a la señora."
+      }
+    },
+    {
+      "id": "dativ-artikel-f02",
+      "kind": "form",
+      "verb": "Dativ Plural",
+      "person": "die Kinder",
+      "answer": "den Kindern",
+      "table": "dativ-plural"
+    },
+    {
+      "id": "dativ-artikel-c03",
+      "sentence": "Paul zeigt ___ Kind das Foto.",
+      "options": [
+        "den",
+        "der",
+        "dem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Kind is neuter (das Kind), and the dative of neuter nouns is dem: dem Kind.",
+        "es": "Kind es neutro (das Kind), y el dativo de los sustantivos neutros es dem: dem Kind."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the dative plural (den Kindern) and the masculine accusative. One child in the dative is dem Kind.",
+          "es": "den es el dativo plural (den Kindern) y el acusativo masculino. Un niño en dativo es dem Kind."
+        },
+        "der": {
+          "en": "der is the dative of feminine nouns. Kind is neuter, so you need dem.",
+          "es": "der es el dativo de los sustantivos femeninos. Kind es neutro, así que necesitas dem."
+        }
+      },
+      "examples": [
+        "Ich gebe dem Kind einen Apfel.",
+        "Anna zeigt dem Kind das Haus."
+      ],
+      "tr": {
+        "en": "Paul shows the child the photo.",
+        "es": "Paul le muestra la foto al niño."
+      }
+    },
+    {
+      "id": "dativ-artikel-f03",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "feminin",
+      "answer": "der",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-w01",
+      "kind": "why",
+      "es": "Ich gebe dem Mann das Buch.",
+      "target": "dem",
+      "tr": {
+        "en": "I give the man the book.",
+        "es": "Le doy el libro al señor."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Accusative: the man is an object, and the masculine accusative is den",
+            "es": "Acusativo: el señor es un complemento, y el acusativo masculino es den"
+          },
+          "wrong": {
+            "en": "The accusative object is das Buch. The man receives the book, and the receiver takes the dative, dem.",
+            "es": "El complemento en acusativo es das Buch. El señor recibe el libro, y el receptor lleva dativo, dem."
+          }
+        },
+        {
+          "text": {
+            "en": "Dative: the man is the receiver, and the masculine dative is dem",
+            "es": "Dativo: el señor es el receptor, y el dativo masculino es dem"
+          }
+        },
+        {
+          "text": {
+            "en": "Nominative: the man does something, so der",
+            "es": "Nominativo: el señor hace algo, así que der"
+          },
+          "wrong": {
+            "en": "The subject is Ich, not the man. The man is not the doer but the receiver, and he is in the dative.",
+            "es": "El sujeto es Ich, no el señor. El señor no es quien hace la acción, sino el receptor, y va en dativo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "dativ-artikel-c04",
+      "sentence": "Der Lehrer erklärt ___ Kindern das Wort.",
+      "options": [
+        "den",
+        "die",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Kindern is a plural in the dative, and the dative plural article is always den.",
+        "es": "Kindern es un plural en dativo, y el artículo del dativo plural es siempre den."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the plural of the nominative and the accusative. The children receive the explanation, so the dative den is needed.",
+          "es": "die es el plural del nominativo y del acusativo. Los niños reciben la explicación, así que se necesita el dativo den."
+        },
+        "dem": {
+          "en": "dem is for one masculine or neuter noun. Kindern is plural and takes den.",
+          "es": "dem es para un solo sustantivo masculino o neutro. Kindern es plural y lleva den."
+        }
+      },
+      "examples": [
+        "Wir zeigen den Kindern das Haus.",
+        "Ich bringe den Kindern Kuchen."
+      ],
+      "tr": {
+        "en": "The teacher explains the word to the children.",
+        "es": "El maestro les explica la palabra a los niños."
+      }
+    },
+    {
+      "id": "dativ-artikel-f04",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "maskulin",
+      "answer": "einem",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-c05",
+      "sentence": "Ich schicke ___ Freundin eine Karte.",
+      "options": [
+        "meine",
+        "meiner",
+        "meinem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Freundin is feminine, and the dative of mein for feminine nouns is meiner: meiner Freundin.",
+        "es": "Freundin es femenino, y el dativo de mein para sustantivos femeninos es meiner: meiner Freundin."
+      },
+      "wrong": {
+        "meine": {
+          "en": "meine is the nominative and accusative of feminine nouns. The friend receives the card, so you need the dative meiner.",
+          "es": "meine es el nominativo y el acusativo de los sustantivos femeninos. La amiga recibe la tarjeta, así que necesitas el dativo meiner."
+        },
+        "meinem": {
+          "en": "meinem is the dative for masculine and neuter nouns. Freundin is feminine and takes meiner.",
+          "es": "meinem es el dativo para sustantivos masculinos y neutros. Freundin es femenino y lleva meiner."
+        }
+      },
+      "examples": [
+        "Ich schreibe meiner Schwester eine Karte.",
+        "Paul schenkt meiner Mutter Blumen."
+      ],
+      "tr": {
+        "en": "I send my girlfriend a card.",
+        "es": "Le mando una tarjeta a mi amiga."
+      }
+    },
+    {
+      "id": "dativ-artikel-f05",
+      "kind": "form",
+      "verb": "mein",
+      "person": "maskulin",
+      "answer": "meinem",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-c06",
+      "sentence": "Anna kauft ___ Bruder ein Eis.",
+      "options": [
+        "mein",
+        "meinen",
+        "meinem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Bruder is masculine, and the dative of mein for masculine nouns is meinem: meinem Bruder.",
+        "es": "Bruder es masculino, y el dativo de mein para sustantivos masculinos es meinem: meinem Bruder."
+      },
+      "wrong": {
+        "mein": {
+          "en": "mein is the nominative (mein Bruder). The brother receives the ice cream, so the ending -em of the dative is needed.",
+          "es": "mein es el nominativo (mein Bruder). El hermano recibe el helado, así que se necesita la terminación -em del dativo."
+        },
+        "meinen": {
+          "en": "meinen is the masculine accusative (Ich sehe meinen Bruder) or the dative plural. For one brother as the receiver you need meinem.",
+          "es": "meinen es el acusativo masculino (Ich sehe meinen Bruder) o el dativo plural. Para un hermano como receptor necesitas meinem."
+        }
+      },
+      "examples": [
+        "Ich gebe meinem Vater das Handy.",
+        "Paul zeigt meinem Bruder das Foto."
+      ],
+      "tr": {
+        "en": "Anna buys her brother an ice cream.",
+        "es": "Anna le compra un helado a su hermano."
+      }
+    },
+    {
+      "id": "dativ-artikel-f06",
+      "kind": "form",
+      "verb": "Dativ Plural",
+      "person": "die Freunde",
+      "answer": "den Freunden",
+      "table": "dativ-plural"
+    },
+    {
+      "id": "dativ-artikel-w02",
+      "kind": "why",
+      "es": "Anna schenkt den Kindern Kuchen.",
+      "target": "Kindern",
+      "tr": {
+        "en": "Anna gives the children cake.",
+        "es": "Anna les regala pastel a los niños."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Kindern is an irregular plural of Kind",
+            "es": "Kindern es un plural irregular de Kind"
+          },
+          "wrong": {
+            "en": "The plural of Kind is Kinder. The extra -n is an ending of the dative plural, which every plural noun gets (Freunden, Männern).",
+            "es": "El plural de Kind es Kinder. La -n extra es una terminación del dativo plural, que reciben todos los sustantivos plurales (Freunden, Männern)."
+          }
+        },
+        {
+          "text": {
+            "en": "The noun gets -n in the dative plural, unless it already ends in -n or -s",
+            "es": "El sustantivo recibe -n en el dativo plural, salvo que ya termine en -n o -s"
+          }
+        },
+        {
+          "text": {
+            "en": "The -n marks the accusative plural",
+            "es": "La -n marca el acusativo plural"
+          },
+          "wrong": {
+            "en": "The accusative plural looks like the nominative: die Kinder. The extra -n belongs to the dative plural only.",
+            "es": "El acusativo plural se ve igual que el nominativo: die Kinder. La -n extra pertenece solo al dativo plural."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "dativ-artikel-c07",
+      "sentence": "Ich zeige den ___ das Haus.",
+      "options": [
+        "Freunden",
+        "Freunde",
+        "Freund"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "After den the noun is a plural in the dative, and the dative plural gets an extra -n: Freunden.",
+        "es": "Después de den el sustantivo es un plural en dativo, y el dativo plural recibe una -n extra: Freunden."
+      },
+      "wrong": {
+        "Freunde": {
+          "en": "Freunde is the plain plural. In the dative plural the noun adds -n, unless it ends in -n or -s already.",
+          "es": "Freunde es el plural simple. En el dativo plural el sustantivo añade -n, salvo que ya termine en -n o -s."
+        },
+        "Freund": {
+          "en": "Freund is singular, but den marks the plural dative. The noun has to be plural, too: Freunden.",
+          "es": "Freund es singular, pero den marca el dativo plural. El sustantivo también tiene que ser plural: Freunden."
+        }
+      },
+      "examples": [
+        "Ich gebe den Kindern Kuchen.",
+        "Wir schicken den Männern eine Karte."
+      ],
+      "tr": {
+        "en": "I show my friends the house.",
+        "es": "Les muestro la casa a los amigos."
+      }
+    },
+    {
+      "id": "dativ-artikel-f07",
+      "kind": "form",
+      "verb": "bestimmt",
+      "person": "Plural",
+      "answer": "den",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-c08",
+      "sentence": "Wem schenkst du die Blumen? ___ Mutter.",
+      "options": [
+        "Meine",
+        "Meiner",
+        "Meinem"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The question wem? asks for the dative. Mutter is feminine, so the answer is Meiner Mutter.",
+        "es": "La pregunta wem? pide el dativo. Mutter es femenino, así que la respuesta es Meiner Mutter."
+      },
+      "wrong": {
+        "Meine": {
+          "en": "Meine is the nominative or accusative. Wem? asks for the receiver, which needs the dative.",
+          "es": "Meine es el nominativo o el acusativo. Wem? pide al receptor, que necesita el dativo."
+        },
+        "Meinem": {
+          "en": "Meinem is the dative for masculine and neuter nouns. Mutter is feminine and takes Meiner.",
+          "es": "Meinem es el dativo para sustantivos masculinos y neutros. Mutter es femenino y lleva Meiner."
+        }
+      },
+      "examples": [
+        "Wem gibst du das Buch? Meiner Schwester.",
+        "Wem zeigst du das Foto? Meiner Freundin."
+      ],
+      "tr": {
+        "en": "Who are you giving the flowers to? To my mother.",
+        "es": "¿A quién le regalas las flores? A mi mamá."
+      }
+    },
+    {
+      "id": "dativ-artikel-f08",
+      "kind": "form",
+      "verb": "unbestimmt",
+      "person": "feminin",
+      "answer": "einer",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-c09",
+      "sentence": "Wem gibst du das Geld? ___ Verkäufer.",
+      "options": [
+        "Der",
+        "Den",
+        "Dem"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Wem? asks for the dative. Verkäufer is masculine, so the answer is Dem Verkäufer.",
+        "es": "Wem? pide el dativo. Verkäufer es masculino, así que la respuesta es Dem Verkäufer."
+      },
+      "wrong": {
+        "Der": {
+          "en": "Der is the masculine nominative or the feminine dative. The masculine dative is Dem.",
+          "es": "Der es el nominativo masculino o el dativo femenino. El dativo masculino es Dem."
+        },
+        "Den": {
+          "en": "Den is the masculine accusative or the dative plural. For one man as the receiver you need Dem.",
+          "es": "Den es el acusativo masculino o el dativo plural. Para un señor como receptor necesitas Dem."
+        }
+      },
+      "examples": [
+        "Wem schreibst du? Dem Lehrer.",
+        "Wem zeigst du den Weg? Dem Mann."
+      ],
+      "tr": {
+        "en": "Who do you give the money to? To the salesman.",
+        "es": "¿A quién le das el dinero? Al vendedor."
+      }
+    },
+    {
+      "id": "dativ-artikel-f09",
+      "kind": "form",
+      "verb": "kein",
+      "person": "feminin",
+      "answer": "keiner",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-w03",
+      "kind": "why",
+      "es": "Er zeigt der Frau das Haus.",
+      "target": "der",
+      "tr": {
+        "en": "He shows the woman the house.",
+        "es": "Él le muestra la casa a la señora."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "der is the nominative masculine, so the man is the subject",
+            "es": "der es el nominativo masculino, así que el señor es el sujeto"
+          },
+          "wrong": {
+            "en": "The subject is already Er, and Frau is feminine, not masculine. Here der is the feminine dative.",
+            "es": "El sujeto ya es Er, y Frau es femenino, no masculino. Aquí der es el dativo femenino."
+          }
+        },
+        {
+          "text": {
+            "en": "die would be correct, because the woman is the object",
+            "es": "die sería correcto, porque la señora es el complemento"
+          },
+          "wrong": {
+            "en": "die Frau is the accusative or nominative. Here the woman is the receiver of the showing, so the dative der is needed.",
+            "es": "die Frau es el acusativo o el nominativo. Aquí la señora es la receptora de lo que se muestra, así que se necesita el dativo der."
+          }
+        },
+        {
+          "text": {
+            "en": "der is the dative of feminine nouns, and the woman is the receiver",
+            "es": "der es el dativo de los sustantivos femeninos, y la señora es la receptora"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "dativ-artikel-c10",
+      "sentence": "Ich sehe ___ Mann.",
+      "options": [
+        "den",
+        "dem",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sehen takes only an accusative object: the man is just seen, nobody receives anything. Masculine accusative: den Mann.",
+        "es": "sehen lleva solo un complemento en acusativo: al señor solo se le ve, nadie recibe nada. Acusativo masculino: den Mann."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem is the dative, the case of a receiver. With sehen there is no receiver, so the man is in the accusative.",
+          "es": "dem es el dativo, el caso de un receptor. Con sehen no hay receptor, así que el señor va en acusativo."
+        },
+        "der": {
+          "en": "der is the masculine nominative (the subject) or the feminine dative. Here Mann is the object of sehen: den Mann.",
+          "es": "der es el nominativo masculino (el sujeto) o el dativo femenino. Aquí Mann es el complemento de sehen: den Mann."
+        }
+      },
+      "examples": [
+        "Ich kenne den Lehrer.",
+        "Wir besuchen den Arzt."
+      ],
+      "tr": {
+        "en": "I see the man.",
+        "es": "Veo al señor."
+      }
+    },
+    {
+      "id": "dativ-artikel-f10",
+      "kind": "form",
+      "verb": "mein",
+      "person": "Plural",
+      "answer": "meinen",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-c11",
+      "sentence": "Ich gebe ___ Kind ein Eis.",
+      "options": [
+        "einen",
+        "einem",
+        "einer"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Kind is neuter and the receiver of the ice cream, so it takes the dative of ein, which is einem: einem Kind.",
+        "es": "Kind es neutro y es el receptor del helado, así que lleva el dativo de ein, que es einem: einem Kind."
+      },
+      "wrong": {
+        "einen": {
+          "en": "einen is the masculine accusative (einen Hund). Kind is neuter, and here it needs the dative.",
+          "es": "einen es el acusativo masculino (einen Hund). Kind es neutro, y aquí necesita el dativo."
+        },
+        "einer": {
+          "en": "einer is the dative of feminine nouns (einer Frau). Kind is neuter and takes einem.",
+          "es": "einer es el dativo de los sustantivos femeninos (einer Frau). Kind es neutro y lleva einem."
+        }
+      },
+      "examples": [
+        "Wir geben einem Mann das Buch.",
+        "Paul zeigt einer Frau den Weg."
+      ],
+      "tr": {
+        "en": "I give a child an ice cream.",
+        "es": "Le doy un helado a un niño."
+      }
+    },
+    {
+      "id": "dativ-artikel-f11",
+      "kind": "form",
+      "verb": "Dativ Plural",
+      "person": "die Frauen",
+      "answer": "den Frauen",
+      "table": "dativ-plural"
+    },
+    {
+      "id": "dativ-artikel-c12",
+      "sentence": "Paul schickt ___ Eltern einen Brief.",
+      "options": [
+        "die",
+        "dem",
+        "den"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The parents receive the letter, so they are in the dative plural: den Eltern. Eltern already ends in -n, so it gets no extra -n.",
+        "es": "Los papás reciben la carta, así que van en dativo plural: den Eltern. Eltern ya termina en -n, así que no recibe otra -n."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the plural of the nominative and the accusative. The object einen Brief is already in the accusative, so the receiver needs the dative.",
+          "es": "die es el plural del nominativo y del acusativo. El complemento einen Brief ya está en acusativo, así que el receptor necesita el dativo."
+        },
+        "dem": {
+          "en": "dem is the dative of one masculine or neuter noun. Eltern is plural and takes den.",
+          "es": "dem es el dativo de un solo sustantivo masculino o neutro. Eltern es plural y lleva den."
+        }
+      },
+      "examples": [
+        "Ich schreibe den Eltern eine Karte.",
+        "Wir bringen den Eltern Blumen."
+      ],
+      "tr": {
+        "en": "Paul sends his parents a letter.",
+        "es": "Paul le manda una carta a sus papás."
+      }
+    },
+    {
+      "id": "dativ-artikel-f12",
+      "kind": "form",
+      "verb": "kein",
+      "person": "Plural",
+      "answer": "keinen",
+      "table": "dativ-artikel"
+    },
+    {
+      "id": "dativ-artikel-c13",
+      "sentence": "Ich fahre mit ___ Bus.",
+      "options": [
+        "dem",
+        "den",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The preposition mit always takes the dative. Bus is masculine, so the article is dem: mit dem Bus.",
+        "es": "La preposición mit siempre lleva dativo. Bus es masculino, así que el artículo es dem: mit dem Bus."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the masculine accusative. After mit you need the dative, and the masculine dative is dem.",
+          "es": "den es el acusativo masculino. Después de mit necesitas el dativo, y el dativo masculino es dem."
+        },
+        "der": {
+          "en": "der is the dative of feminine nouns. Bus is masculine, so the dative is dem.",
+          "es": "der es el dativo de los sustantivos femeninos. Bus es masculino, así que el dativo es dem."
+        }
+      },
+      "examples": [
+        "Wir fahren mit dem Zug.",
+        "Ich komme mit dem Auto."
+      ],
+      "tr": {
+        "en": "I take the bus.",
+        "es": "Voy en camión."
+      }
+    },
+    {
+      "id": "dativ-artikel-c14",
+      "sentence": "Ich zeige ___ Kind das Bild.",
+      "options": [
+        "keinen",
+        "keinem",
+        "keiner"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The dative of kein follows ein: neuter Kind takes keinem. The child is the receiver of the picture.",
+        "es": "El dativo de kein sigue a ein: el neutro Kind lleva keinem. El niño es el receptor del cuadro."
+      },
+      "wrong": {
+        "keinen": {
+          "en": "keinen is the masculine accusative (keinen Hund) or the dative plural. One neuter child in the dative is keinem.",
+          "es": "keinen es el acusativo masculino (keinen Hund) o el dativo plural. Un niño neutro en dativo es keinem."
+        },
+        "keiner": {
+          "en": "keiner is the dative of feminine nouns (keiner Frau). Kind is neuter and takes keinem.",
+          "es": "keiner es el dativo de los sustantivos femeninos (keiner Frau). Kind es neutro y lleva keinem."
+        }
+      },
+      "examples": [
+        "Ich gebe keinem Mann das Geld.",
+        "Wir schenken keiner Frau Blumen."
+      ],
+      "tr": {
+        "en": "I do not show the picture to any child.",
+        "es": "No le muestro el cuadro a ningún niño."
+      }
+    },
+    {
+      "id": "dativ-artikel-w04",
+      "kind": "why",
+      "es": "Ich sehe den Mann.",
+      "target": "den",
+      "tr": {
+        "en": "I see the man.",
+        "es": "Veo al señor."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "sehen takes an accusative object: the man is only seen and nobody receives anything",
+            "es": "sehen lleva un complemento en acusativo: al señor solo se le ve y nadie recibe nada"
+          }
+        },
+        {
+          "text": {
+            "en": "The dative dem, because the man is a person",
+            "es": "El dativo dem, porque el señor es una persona"
+          },
+          "wrong": {
+            "en": "Being a person does not decide the case. Only a receiver, with verbs like geben and schenken, takes the dative.",
+            "es": "Ser una persona no decide el caso. Solo un receptor, con verbos como geben y schenken, lleva dativo."
+          }
+        },
+        {
+          "text": {
+            "en": "den, because all masculine nouns take den",
+            "es": "den, porque todos los sustantivos masculinos llevan den"
+          },
+          "wrong": {
+            "en": "den is the masculine accusative and the dative plural only. The masculine dative is dem (Ich gebe dem Mann ein Buch).",
+            "es": "den es solo el acusativo masculino y el dativo plural. El dativo masculino es dem (Ich gebe dem Mann ein Buch)."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

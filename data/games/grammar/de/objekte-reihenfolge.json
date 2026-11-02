@@ -1,0 +1,1074 @@
+{
+  "schema": 2,
+  "topic": "objekte-reihenfolge",
+  "level": "A2",
+  "title": {
+    "en": "Word order of objects",
+    "es": "Orden de los complementos"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "With two objects, nouns follow the order dative, then accusative (Ich gebe dem Kind einen Apfel), but a pronoun always comes before a noun (Ich gebe ihm einen Apfel, Ich gebe ihn dem Kind). If both are pronouns, the order is accusative, then dative (Ich gebe es dir). In the middle of the sentence, the other parts follow the order time, manner, place (Ich fahre morgen mit dem Bus nach Berlin). English puts them the other way round (to Berlin by bus tomorrow), Spanish and Hungarian order them more freely.",
+        "es": "Con dos complementos, los sustantivos siguen el orden dativo y luego acusativo (Ich gebe dem Kind einen Apfel), pero un pronombre va siempre antes de un sustantivo (Ich gebe ihm einen Apfel, Ich gebe ihn dem Kind). Si los dos son pronombres, el orden es acusativo y luego dativo (Ich gebe es dir). En el centro de la oración, las demás partes siguen el orden tiempo, modo, lugar (Ich fahre morgen mit dem Bus nach Berlin). El inglés las pone al revés (to Berlin by bus tomorrow), el español y el húngaro las ordenan con más libertad."
+      }
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Two objects",
+        "es": "Dos complementos"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Two nouns: the receiver (dative) comes first, the thing (accusative) second.",
+            "es": "Dos sustantivos: primero va el receptor (dativo), después la cosa (acusativo)."
+          },
+          "examples": [
+            {
+              "es": "Ich gebe dem Kind einen Apfel.",
+              "tr": {
+                "en": "I give the child an apple.",
+                "es": "Le doy una manzana al niño."
+              }
+            },
+            {
+              "es": "Anna zeigt dem Lehrer das Foto.",
+              "tr": {
+                "en": "Anna shows the teacher the photo.",
+                "es": "Anna le muestra la foto al maestro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "A pronoun comes before a noun, whatever its case. A dative pronoun stands before the accusative noun, and an accusative pronoun before the dative noun.",
+            "es": "Un pronombre va antes de un sustantivo, sea cual sea su caso. Un pronombre en dativo va antes del sustantivo en acusativo, y un pronombre en acusativo antes del sustantivo en dativo."
+          },
+          "examples": [
+            {
+              "es": "Ich gebe ihm einen Apfel.",
+              "tr": {
+                "en": "I give him an apple.",
+                "es": "Le doy una manzana."
+              }
+            },
+            {
+              "es": "Ich gebe ihn dem Kind.",
+              "tr": {
+                "en": "I give it to the child.",
+                "es": "Se la doy al niño."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Two pronouns: the accusative first, the dative second. The order of two nouns is reversed.",
+            "es": "Dos pronombres: primero el acusativo, después el dativo. El orden de dos sustantivos es el inverso."
+          },
+          "examples": [
+            {
+              "es": "Ich gebe es dir.",
+              "tr": {
+                "en": "I give it to you.",
+                "es": "Te lo doy."
+              }
+            },
+            {
+              "es": "Ich zeige sie ihm.",
+              "tr": {
+                "en": "I show it to him.",
+                "es": "Se la muestro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "objekte-pronomen",
+      "title": {
+        "en": "Noun phrase and pronoun",
+        "es": "Sintagma nominal y pronombre"
+      },
+      "header": [
+        {
+          "en": "Noun phrase",
+          "es": "Sintagma nominal"
+        },
+        {
+          "en": "Pronomen",
+          "es": "Pronomen"
+        }
+      ],
+      "rows": [
+        [
+          "dem Kind",
+          "ihm"
+        ],
+        [
+          "der Frau",
+          "ihr"
+        ],
+        [
+          "dem Mann",
+          "ihm"
+        ],
+        [
+          "den Kindern",
+          "ihnen"
+        ],
+        [
+          "den Apfel",
+          "ihn"
+        ],
+        [
+          "das Buch",
+          "es"
+        ],
+        [
+          "die Karte",
+          "sie"
+        ],
+        [
+          "die Blumen",
+          "sie"
+        ],
+        [
+          "den Brief",
+          "ihn"
+        ],
+        [
+          "das Geld",
+          "es"
+        ]
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "satzmittelfeld",
+      "title": {
+        "en": "Time, manner, place",
+        "es": "Tiempo, modo, lugar"
+      },
+      "header": [
+        {
+          "en": "Expression",
+          "es": "Expresión"
+        },
+        {
+          "en": "Gruppe",
+          "es": "Gruppe"
+        }
+      ],
+      "rows": [
+        [
+          "morgen",
+          "Zeit"
+        ],
+        [
+          "heute Abend",
+          "Zeit"
+        ],
+        [
+          "am Montag",
+          "Zeit"
+        ],
+        [
+          "um acht Uhr",
+          "Zeit"
+        ],
+        [
+          "mit dem Bus",
+          "Art"
+        ],
+        [
+          "mit dem Auto",
+          "Art"
+        ],
+        [
+          "gern",
+          "Art"
+        ],
+        [
+          "schnell",
+          "Art"
+        ],
+        [
+          "nach Berlin",
+          "Ort"
+        ],
+        [
+          "zu Hause",
+          "Ort"
+        ],
+        [
+          "im Büro",
+          "Ort"
+        ],
+        [
+          "zur Schule",
+          "Ort"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Time, manner, place, nicht",
+        "es": "Tiempo, modo, lugar, nicht"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "In the middle of the sentence, the order is time, manner, place: Zeit (when), Art (how) and Ort (where). Any of them can also start the sentence, and then the verb stays second.",
+            "es": "En el centro de la oración, el orden es tiempo, modo, lugar: Zeit (cuándo), Art (cómo) y Ort (dónde). Cualquiera de ellos puede también abrir la oración, y entonces el verbo se queda en segundo lugar."
+          },
+          "examples": [
+            {
+              "es": "Ich fahre morgen mit dem Bus nach Berlin.",
+              "tr": {
+                "en": "I am going to Berlin by bus tomorrow.",
+                "es": "Mañana voy a Berlín en camión."
+              }
+            },
+            {
+              "es": "Wir fahren am Samstag mit dem Auto nach Hamburg.",
+              "tr": {
+                "en": "We drive to Hamburg by car on Saturday.",
+                "es": "El sábado vamos a Hamburgo en carro."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "Time comes before place even when no manner is there.",
+            "es": "El tiempo va antes del lugar incluso cuando no hay modo."
+          },
+          "examples": [
+            {
+              "es": "Er wohnt jetzt in Berlin.",
+              "tr": {
+                "en": "He lives in Berlin now.",
+                "es": "Ahora vive en Berlín."
+              }
+            },
+            {
+              "es": "Anna arbeitet heute zu Hause.",
+              "tr": {
+                "en": "Anna works at home today.",
+                "es": "Hoy Anna trabaja en casa."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "nicht stands before a place or a direction (Ich gehe nicht zum Arzt). Without a place it stands at the end (Ich arbeite heute nicht).",
+            "es": "nicht va antes de un lugar o de una dirección (Ich gehe nicht zum Arzt). Sin lugar, va al final (Ich arbeite heute nicht)."
+          },
+          "examples": [
+            {
+              "es": "Ich gehe heute Abend nicht zum Arzt.",
+              "tr": {
+                "en": "I am not going to the doctor this evening.",
+                "es": "Esta noche no voy al médico."
+              }
+            },
+            {
+              "es": "Ich arbeite heute nicht.",
+              "tr": {
+                "en": "I do not work today.",
+                "es": "Hoy no trabajo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Order of the objects",
+        "es": "Orden de los complementos"
+      },
+      "pairs": [
+        {
+          "a": "Ich gebe dem Kind einen Apfel.",
+          "b": "Ich gebe ihn dem Kind.",
+          "note": {
+            "en": "Two nouns: dative, then accusative. As soon as the apple becomes a pronoun, it moves forward: ihn comes before the noun dem Kind.",
+            "es": "Dos sustantivos: dativo, luego acusativo. En cuanto la manzana se convierte en pronombre, avanza: ihn va antes del sustantivo dem Kind."
+          },
+          "examples": [
+            {
+              "es": "Ich schenke der Frau Blumen.",
+              "tr": {
+                "en": "I give the woman flowers.",
+                "es": "Le regalo flores a la señora."
+              }
+            },
+            {
+              "es": "Ich schenke sie der Frau.",
+              "tr": {
+                "en": "I give them to the woman.",
+                "es": "Se las regalo a la señora."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich fahre morgen mit dem Bus nach Berlin.",
+          "b": "Morgen fahre ich mit dem Bus nach Berlin.",
+          "note": {
+            "en": "The time word can start the sentence. Then the verb stays second and the subject follows it. The rest keeps its order: manner, then place.",
+            "es": "La palabra de tiempo puede abrir la oración. Entonces el verbo se queda en segundo lugar y el sujeto lo sigue. El resto conserva su orden: modo, luego lugar."
+          },
+          "examples": [
+            {
+              "es": "Wir essen heute zu Hause.",
+              "tr": {
+                "en": "We eat at home today.",
+                "es": "Hoy comemos en casa."
+              }
+            },
+            {
+              "es": "Heute essen wir zu Hause.",
+              "tr": {
+                "en": "Today we eat at home.",
+                "es": "Hoy comemos en casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: do not follow the English order (not Ich fahre nach Berlin mit dem Bus morgen). Remember that pronouns move forward: Ich gebe es dir, not Ich gebe dir es, and Ich gebe ihn dem Kind, not Ich gebe dem Kind ihn. Do not put nicht right after the verb when a place follows; it stands before the place. Keep sentences short and check the order time, manner, place step by step.",
+        "es": "Trampas clásicas: no sigas el orden del inglés (no Ich fahre nach Berlin mit dem Bus morgen). Recuerda que los pronombres avanzan: Ich gebe es dir, no Ich gebe dir es, e Ich gebe ihn dem Kind, no Ich gebe dem Kind ihn. No pongas nicht justo después del verbo cuando sigue un lugar; va antes del lugar. Mantén las oraciones cortas y comprueba el orden tiempo, modo, lugar paso a paso."
+      }
+    }
+  ],
+  "speak": {
+    "en": "With two objects, nouns follow the order dative, then accusative: «Ich gebe dem Kind einen Apfel». A pronoun always comes before a noun: «Ich gebe ihm einen Apfel», «Ich gebe ihn dem Kind». Two pronouns have the order accusative, then dative: «Ich gebe es dir». For the other parts of the sentence use the order time, manner, place: «Ich fahre morgen mit dem Bus nach Berlin». The word «nicht» stands before the place: «Ich gehe heute nicht zum Arzt».",
+    "es": "Con dos complementos, los sustantivos siguen el orden dativo y luego acusativo: «Ich gebe dem Kind einen Apfel». Un pronombre va siempre antes de un sustantivo: «Ich gebe ihm einen Apfel», «Ich gebe ihn dem Kind». Dos pronombres tienen el orden acusativo y luego dativo: «Ich gebe es dir». Para las demás partes de la oración se usa el orden tiempo, modo, lugar: «Ich fahre morgen mit dem Bus nach Berlin». La palabra «nicht» va antes del lugar: «Ich gehe heute nicht zum Arzt»."
+  },
+  "items": [
+    {
+      "id": "objekte-reihenfolge-c01",
+      "sentence": "Das ist Paul. Ich gebe ___ einen Apfel.",
+      "options": [
+        "ihm",
+        "ihn",
+        "er"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Paul is the receiver, so he is in the dative: ihm. A dative pronoun stands before the accusative noun einen Apfel.",
+        "es": "Paul es el receptor, así que va en dativo: ihm. Un pronombre en dativo va antes del sustantivo en acusativo einen Apfel."
+      },
+      "wrong": {
+        "ihn": {
+          "en": "ihn is the accusative. The apple is already the accusative object, so the receiver needs the dative ihm.",
+          "es": "ihn es el acusativo. La manzana ya es el complemento en acusativo, así que el receptor necesita el dativo ihm."
+        },
+        "er": {
+          "en": "er is the subject form. The subject is Ich, and Paul is the person who receives the apple.",
+          "es": "er es la forma del sujeto. El sujeto es Ich, y Paul es la persona que recibe la manzana."
+        }
+      },
+      "examples": [
+        "Ich gebe ihr ein Buch.",
+        "Wir schenken ihm Blumen."
+      ],
+      "tr": {
+        "en": "That is Paul. I give him an apple.",
+        "es": "Ese es Paul. Le doy una manzana."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f01",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "dem Kind",
+      "answer": "ihm",
+      "table": "objekte-pronomen"
+    },
+    {
+      "id": "objekte-reihenfolge-c02",
+      "sentence": "Der Apfel ist gut. Ich gebe ___ dem Kind.",
+      "options": [
+        "es",
+        "ihn",
+        "ihm"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "Apfel is masculine, so the accusative pronoun is ihn. A pronoun comes before the dative noun dem Kind.",
+        "es": "Apfel es masculino, así que el pronombre en acusativo es ihn. Un pronombre va antes del sustantivo en dativo dem Kind."
+      },
+      "wrong": {
+        "es": {
+          "en": "es replaces neuter nouns (das Buch). Apfel is masculine (der Apfel), so the accusative is ihn.",
+          "es": "es reemplaza sustantivos neutros (das Buch). Apfel es masculino (der Apfel), así que el acusativo es ihn."
+        },
+        "ihm": {
+          "en": "ihm is the dative. The child is already the dative noun dem Kind, so the apple needs the accusative ihn.",
+          "es": "ihm es el dativo. El niño ya es el sustantivo en dativo dem Kind, así que la manzana necesita el acusativo ihn."
+        }
+      },
+      "examples": [
+        "Ich gebe ihn dem Lehrer.",
+        "Wir schicken ihn der Frau."
+      ],
+      "tr": {
+        "en": "The apple is good. I give it to the child.",
+        "es": "La manzana está buena. Se la doy al niño."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f02",
+      "kind": "form",
+      "verb": "Gruppe",
+      "person": "morgen",
+      "answer": "Zeit",
+      "table": "satzmittelfeld"
+    },
+    {
+      "id": "objekte-reihenfolge-c03",
+      "sentence": "Das Buch ist neu. Ich schenke ___ meiner Mutter.",
+      "options": [
+        "ihr",
+        "sie",
+        "es"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Buch is neuter, so the accusative pronoun is es. It comes before the dative noun meiner Mutter.",
+        "es": "Buch es neutro, así que el pronombre en acusativo es es. Va antes del sustantivo en dativo meiner Mutter."
+      },
+      "wrong": {
+        "ihr": {
+          "en": "ihr is the dative of she. The mother is already named as the dative noun, so the book needs the accusative es.",
+          "es": "ihr es el dativo de ella. La mamá ya está nombrada como sustantivo en dativo, así que el libro necesita el acusativo es."
+        },
+        "sie": {
+          "en": "sie replaces feminine and plural nouns. Buch is neuter, so the pronoun is es.",
+          "es": "sie reemplaza sustantivos femeninos y plurales. Buch es neutro, así que el pronombre es es."
+        }
+      },
+      "examples": [
+        "Ich schenke es meinem Vater.",
+        "Paul zeigt es dem Lehrer."
+      ],
+      "tr": {
+        "en": "The book is new. I give it to my mother.",
+        "es": "El libro es nuevo. Se lo regalo a mi mamá."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f03",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "den Apfel",
+      "answer": "ihn",
+      "table": "objekte-pronomen"
+    },
+    {
+      "id": "objekte-reihenfolge-w01",
+      "kind": "why",
+      "es": "Ich gebe ihn dem Kind.",
+      "target": "ihn",
+      "tr": {
+        "en": "I give it to the child.",
+        "es": "Se la doy al niño."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "A pronoun comes before a noun object, so ihn stands before dem Kind",
+            "es": "Un pronombre va antes de un complemento sustantivo, así que ihn va antes de dem Kind"
+          }
+        },
+        {
+          "text": {
+            "en": "The dative always comes first, so dem Kind must stand before ihn",
+            "es": "El dativo siempre va primero, así que dem Kind debe ir antes de ihn"
+          },
+          "wrong": {
+            "en": "That rule is for two nouns (dem Kind einen Apfel). A pronoun object stands before a noun object, whatever the case.",
+            "es": "Esa regla es para dos sustantivos (dem Kind einen Apfel). Un pronombre va antes de un sustantivo, sea cual sea el caso."
+          }
+        },
+        {
+          "text": {
+            "en": "ihn goes last because it is the accusative",
+            "es": "ihn va al final porque es el acusativo"
+          },
+          "wrong": {
+            "en": "The case does not decide here. Pronouns go early in the middle field, before nouns.",
+            "es": "El caso no decide aquí. Los pronombres van pronto en el centro de la oración, antes de los sustantivos."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "objekte-reihenfolge-c04",
+      "sentence": "Das ist Anna. Ich schenke ___ Blumen.",
+      "options": [
+        "ihr",
+        "sie",
+        "ihm"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "Anna is the receiver, so she is in the dative: ihr. A dative pronoun stands before the accusative noun Blumen.",
+        "es": "Anna es la receptora, así que va en dativo: ihr. Un pronombre en dativo va antes del sustantivo en acusativo Blumen."
+      },
+      "wrong": {
+        "sie": {
+          "en": "sie is the accusative of she. The flowers are the accusative object, so Anna needs the dative ihr.",
+          "es": "sie es el acusativo de ella. Las flores son el complemento en acusativo, así que Anna necesita el dativo ihr."
+        },
+        "ihm": {
+          "en": "ihm is the dative for he and it (masculine or neuter). Anna is a woman, so the dative is ihr.",
+          "es": "ihm es el dativo de él y de ello (masculino o neutro). Anna es una mujer, así que el dativo es ihr."
+        }
+      },
+      "examples": [
+        "Ich gebe ihr das Buch.",
+        "Wir bringen ihr Kuchen."
+      ],
+      "tr": {
+        "en": "That is Anna. I give her flowers.",
+        "es": "Ella es Anna. Le regalo flores."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f04",
+      "kind": "form",
+      "verb": "Gruppe",
+      "person": "mit dem Bus",
+      "answer": "Art",
+      "accept": [
+        "Art und Weise",
+        "Weise"
+      ],
+      "table": "satzmittelfeld"
+    },
+    {
+      "id": "objekte-reihenfolge-c05",
+      "sentence": "Das Buch ist für dich. Ich gebe ___ dir.",
+      "options": [
+        "ihm",
+        "es",
+        "mir"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "With two pronouns, the accusative comes first: es dir. Buch is neuter, so the accusative pronoun is es.",
+        "es": "Con dos pronombres, el acusativo va primero: es dir. Buch es neutro, así que el pronombre en acusativo es es."
+      },
+      "wrong": {
+        "ihm": {
+          "en": "ihm is a dative pronoun, but dir already is the dative. The book needs the accusative es.",
+          "es": "ihm es un pronombre en dativo, pero dir ya es el dativo. El libro necesita el acusativo es."
+        },
+        "mir": {
+          "en": "mir is the dative of ich, but the receiver here is du (dir). The thing given is the accusative es.",
+          "es": "mir es el dativo de ich, pero el receptor aquí es du (dir). La cosa dada es el acusativo es."
+        }
+      },
+      "examples": [
+        "Ich gebe es dir.",
+        "Ich schicke es euch."
+      ],
+      "tr": {
+        "en": "The book is for you. I give it to you.",
+        "es": "El libro es para ti. Te lo doy."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f05",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "die Karte",
+      "answer": "sie",
+      "table": "objekte-pronomen"
+    },
+    {
+      "id": "objekte-reihenfolge-c06",
+      "sentence": "Das ist meine Karte. Ich schicke ___ ihm.",
+      "options": [
+        "ihr",
+        "es",
+        "sie"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "Karte is feminine, so the accusative pronoun is sie. With two pronouns, the accusative comes first: sie ihm.",
+        "es": "Karte es femenino, así que el pronombre en acusativo es sie. Con dos pronombres, el acusativo va primero: sie ihm."
+      },
+      "wrong": {
+        "ihr": {
+          "en": "ihr is the dative of she. The receiver is ihm already, so the card needs the accusative sie.",
+          "es": "ihr es el dativo de ella. El receptor ya es ihm, así que la tarjeta necesita el acusativo sie."
+        },
+        "es": {
+          "en": "es replaces neuter nouns. Karte is feminine (die Karte), so the pronoun is sie.",
+          "es": "es reemplaza sustantivos neutros. Karte es femenino (die Karte), así que el pronombre es sie."
+        }
+      },
+      "examples": [
+        "Ich zeige sie ihm.",
+        "Paul schickt sie ihr."
+      ],
+      "tr": {
+        "en": "That is my card. I send it to him.",
+        "es": "Esa es mi tarjeta. Se la mando a él."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f06",
+      "kind": "form",
+      "verb": "Gruppe",
+      "person": "nach Berlin",
+      "answer": "Ort",
+      "table": "satzmittelfeld"
+    },
+    {
+      "id": "objekte-reihenfolge-w02",
+      "kind": "why",
+      "es": "Ich gebe es dir.",
+      "target": "es",
+      "tr": {
+        "en": "I give it to you.",
+        "es": "Te lo doy."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Two pronouns follow the order of two nouns: dative, then accusative",
+            "es": "Dos pronombres siguen el orden de dos sustantivos: dativo y luego acusativo"
+          },
+          "wrong": {
+            "en": "That is the order of two nouns (dem Kind einen Apfel). With two pronouns it is reversed: es dir, accusative before dative.",
+            "es": "Ese es el orden de dos sustantivos (dem Kind einen Apfel). Con dos pronombres es el inverso: es dir, acusativo antes del dativo."
+          }
+        },
+        {
+          "text": {
+            "en": "Two pronouns: accusative first, dative second",
+            "es": "Dos pronombres: primero el acusativo, después el dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "es goes at the end because it is short",
+            "es": "es va al final porque es corto"
+          },
+          "wrong": {
+            "en": "Length does not decide. Both pronouns come right after the verb, in the order accusative, dative.",
+            "es": "La longitud no decide. Los dos pronombres van justo después del verbo, en el orden acusativo, dativo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "objekte-reihenfolge-c07",
+      "sentence": "Das sind meine Eltern. Ich zeige ___ das Haus.",
+      "options": [
+        "ihnen",
+        "sie",
+        "ihm"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The parents are several people and the receivers, so the dative plural ihnen stands before the noun das Haus.",
+        "es": "Los papás son varias personas y los receptores, así que el dativo plural ihnen va antes del sustantivo das Haus."
+      },
+      "wrong": {
+        "sie": {
+          "en": "sie is the accusative plural. The house is the accusative object, so the parents need the dative ihnen.",
+          "es": "sie es el acusativo plural. La casa es el complemento en acusativo, así que los papás necesitan el dativo ihnen."
+        },
+        "ihm": {
+          "en": "ihm is the dative for one person or thing. Eltern is plural, so you need ihnen.",
+          "es": "ihm es el dativo para una persona o cosa. Eltern es plural, así que necesitas ihnen."
+        }
+      },
+      "examples": [
+        "Ich zeige ihnen den Garten.",
+        "Wir bringen ihnen Kuchen."
+      ],
+      "tr": {
+        "en": "Those are my parents. I show them the house.",
+        "es": "Esos son mis papás. Les enseño la casa."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f07",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "der Frau",
+      "answer": "ihr",
+      "table": "objekte-pronomen"
+    },
+    {
+      "id": "objekte-reihenfolge-c08",
+      "sentence": "Ich fahre morgen ___ nach Berlin.",
+      "options": [
+        "am Montag",
+        "mit dem Zug",
+        "nach Hause"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "After the time word morgen comes the manner, mit dem Zug, and the place nach Berlin is last: time, manner, place.",
+        "es": "Después de la palabra de tiempo morgen viene el modo, mit dem Zug, y el lugar nach Berlin va al final: tiempo, modo, lugar."
+      },
+      "wrong": {
+        "am Montag": {
+          "en": "am Montag is a second time expression, and morgen already gives the time. Only one time slot is needed.",
+          "es": "am Montag es una segunda expresión de tiempo, y morgen ya da el tiempo. Solo hace falta un lugar para el tiempo."
+        },
+        "nach Hause": {
+          "en": "nach Hause is a place, and the place is already nach Berlin. The slot between time and place needs a manner.",
+          "es": "nach Hause es un lugar, y el lugar ya es nach Berlin. El hueco entre tiempo y lugar necesita un modo."
+        }
+      },
+      "examples": [
+        "Ich fahre heute mit dem Bus nach Hause.",
+        "Wir fahren morgen mit dem Auto nach Hamburg."
+      ],
+      "tr": {
+        "en": "Tomorrow I am going to Berlin by train.",
+        "es": "Mañana voy a Berlín en tren."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f08",
+      "kind": "form",
+      "verb": "Gruppe",
+      "person": "am Montag",
+      "answer": "Zeit",
+      "table": "satzmittelfeld"
+    },
+    {
+      "id": "objekte-reihenfolge-c09",
+      "sentence": "Wir fahren ___ mit dem Auto nach Hamburg.",
+      "options": [
+        "nach Hause",
+        "in der Stadt",
+        "am Samstag"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The time am Samstag comes first, then the manner mit dem Auto, then the place nach Hamburg.",
+        "es": "El tiempo am Samstag va primero, luego el modo mit dem Auto, y después el lugar nach Hamburg."
+      },
+      "wrong": {
+        "nach Hause": {
+          "en": "nach Hause is a place. The place nach Hamburg is already there, and a place never comes before the manner.",
+          "es": "nach Hause es un lugar. El lugar nach Hamburg ya está, y un lugar nunca va antes del modo."
+        },
+        "in der Stadt": {
+          "en": "in der Stadt is also a place. A place comes last, after the manner, and Hamburg is already the place.",
+          "es": "in der Stadt también es un lugar. Un lugar va al final, después del modo, y Hamburg ya es el lugar."
+        }
+      },
+      "examples": [
+        "Wir wohnen jetzt in Hamburg.",
+        "Ich fahre am Montag mit dem Bus zur Schule."
+      ],
+      "tr": {
+        "en": "On Saturday we drive to Hamburg by car.",
+        "es": "El sábado vamos a Hamburgo en carro."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f09",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "das Buch",
+      "answer": "es",
+      "table": "objekte-pronomen"
+    },
+    {
+      "id": "objekte-reihenfolge-w03",
+      "kind": "why",
+      "es": "Ich fahre morgen mit dem Bus nach Berlin.",
+      "target": "morgen",
+      "tr": {
+        "en": "I am going to Berlin by bus tomorrow.",
+        "es": "Mañana voy a Berlín en camión."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Place comes first: nach Berlin morgen mit dem Bus",
+            "es": "El lugar va primero: nach Berlin morgen mit dem Bus"
+          },
+          "wrong": {
+            "en": "In German the middle of the sentence is ordered time, manner, place. The place usually comes last.",
+            "es": "En alemán el centro de la oración se ordena tiempo, modo, lugar. El lugar suele ir al final."
+          }
+        },
+        {
+          "text": {
+            "en": "Manner comes first: mit dem Bus morgen nach Berlin",
+            "es": "El modo va primero: mit dem Bus morgen nach Berlin"
+          },
+          "wrong": {
+            "en": "The manner (mit dem Bus) comes after the time word and before the place.",
+            "es": "El modo (mit dem Bus) va después de la palabra de tiempo y antes del lugar."
+          }
+        },
+        {
+          "text": {
+            "en": "Time comes first, then manner, then place",
+            "es": "El tiempo va primero, luego el modo y después el lugar"
+          }
+        }
+      ],
+      "correctIndex": 2
+    },
+    {
+      "id": "objekte-reihenfolge-c10",
+      "sentence": "Er wohnt ___ in Berlin.",
+      "options": [
+        "jetzt",
+        "nach Hause",
+        "mit dem Bus"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A time word such as jetzt stands before the place: Er wohnt jetzt in Berlin.",
+        "es": "Una palabra de tiempo como jetzt va antes del lugar: Er wohnt jetzt in Berlin."
+      },
+      "wrong": {
+        "nach Hause": {
+          "en": "nach Hause is a direction, a second place. He lives in Berlin, so no other place fits before it.",
+          "es": "nach Hause es una dirección, un segundo lugar. Él vive en Berlín, así que ningún otro lugar cabe antes."
+        },
+        "mit dem Bus": {
+          "en": "mit dem Bus is a manner of moving. It does not describe how someone lives in a city.",
+          "es": "mit dem Bus es un modo de desplazarse. No describe cómo se vive en una ciudad."
+        }
+      },
+      "examples": [
+        "Anna arbeitet heute im Büro.",
+        "Wir sind morgen zu Hause."
+      ],
+      "tr": {
+        "en": "He lives in Berlin now.",
+        "es": "Ahora vive en Berlín."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f10",
+      "kind": "form",
+      "verb": "Gruppe",
+      "person": "gern",
+      "answer": "Art",
+      "accept": [
+        "Art und Weise",
+        "Weise"
+      ],
+      "table": "satzmittelfeld"
+    },
+    {
+      "id": "objekte-reihenfolge-c11",
+      "sentence": "Ich gehe heute Abend ___ zum Arzt.",
+      "options": [
+        "kein",
+        "nicht",
+        "keinen"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "nicht stands before a direction such as zum Arzt: Ich gehe heute Abend nicht zum Arzt.",
+        "es": "nicht va antes de una dirección como zum Arzt: Ich gehe heute Abend nicht zum Arzt."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein negates a noun with ein or without an article. zum Arzt has the article in zum, so nicht is needed.",
+          "es": "kein niega un sustantivo con ein o sin artículo. zum Arzt ya tiene el artículo en zum, así que se necesita nicht."
+        },
+        "keinen": {
+          "en": "keinen is the masculine accusative of kein and negates a noun. A direction like zum Arzt is negated with nicht.",
+          "es": "keinen es el acusativo masculino de kein y niega un sustantivo. Una dirección como zum Arzt se niega con nicht."
+        }
+      },
+      "examples": [
+        "Ich fahre morgen nicht nach Berlin.",
+        "Anna geht heute nicht zur Schule."
+      ],
+      "tr": {
+        "en": "I am not going to the doctor this evening.",
+        "es": "Esta noche no voy al médico."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f11",
+      "kind": "form",
+      "verb": "Pronomen",
+      "person": "den Kindern",
+      "answer": "ihnen",
+      "table": "objekte-pronomen"
+    },
+    {
+      "id": "objekte-reihenfolge-c12",
+      "sentence": "Ich arbeite heute ___.",
+      "options": [
+        "kein",
+        "keine",
+        "nicht"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With no place and no noun to negate, nicht goes to the end of the sentence: Ich arbeite heute nicht.",
+        "es": "Sin lugar y sin sustantivo que negar, nicht va al final de la oración: Ich arbeite heute nicht."
+      },
+      "wrong": {
+        "kein": {
+          "en": "kein needs a noun after it (kein Auto). Here nothing follows, so you negate the verb with nicht.",
+          "es": "kein necesita un sustantivo después (kein Auto). Aquí no sigue nada, así que se niega el verbo con nicht."
+        },
+        "keine": {
+          "en": "keine needs a feminine or plural noun after it (keine Zeit). Nothing follows here, so the sentence needs nicht.",
+          "es": "keine necesita después un sustantivo femenino o plural (keine Zeit). Aquí no sigue nada, así que la oración necesita nicht."
+        }
+      },
+      "examples": [
+        "Anna kommt heute nicht.",
+        "Paul schläft nicht."
+      ],
+      "tr": {
+        "en": "I do not work today.",
+        "es": "Hoy no trabajo."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-f12",
+      "kind": "form",
+      "verb": "Gruppe",
+      "person": "zu Hause",
+      "answer": "Ort",
+      "table": "satzmittelfeld"
+    },
+    {
+      "id": "objekte-reihenfolge-c13",
+      "sentence": "Wir fahren heute mit dem Bus ___.",
+      "options": [
+        "nach Hause",
+        "gern",
+        "morgen"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The place or direction comes last: heute (time), mit dem Bus (manner), nach Hause (place).",
+        "es": "El lugar o la dirección va al final: heute (tiempo), mit dem Bus (modo), nach Hause (lugar)."
+      },
+      "wrong": {
+        "gern": {
+          "en": "gern is a manner word, and it would have to come before mit dem Bus. It does not fit after it.",
+          "es": "gern es una palabra de modo, y tendría que ir antes de mit dem Bus. No cabe después."
+        },
+        "morgen": {
+          "en": "morgen is a time word. The time heute is already there, and a second time word does not belong at the end.",
+          "es": "morgen es una palabra de tiempo. El tiempo heute ya está, y una segunda palabra de tiempo no va al final."
+        }
+      },
+      "examples": [
+        "Ich fahre morgen mit dem Auto zur Arbeit.",
+        "Anna geht heute zu Fuß nach Hause."
+      ],
+      "tr": {
+        "en": "Today we go home by bus.",
+        "es": "Hoy nos vamos a casa en camión."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-c14",
+      "sentence": "Frau Müller, ich gebe ___ das Buch.",
+      "options": [
+        "Sie",
+        "Ihnen",
+        "Ihr"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The formal receiver is in the dative: Ihnen. It stands before the noun das Buch.",
+        "es": "El receptor formal va en dativo: Ihnen. Va antes del sustantivo das Buch."
+      },
+      "wrong": {
+        "Sie": {
+          "en": "Sie is the nominative and accusative of the formal you. The receiver needs the dative, Ihnen.",
+          "es": "Sie es el nominativo y el acusativo del usted. El receptor necesita el dativo, Ihnen."
+        },
+        "Ihr": {
+          "en": "Ihr is a possessive (Ihr Buch). It cannot stand alone as a pronoun here.",
+          "es": "Ihr es un posesivo (Ihr Buch). No puede estar solo como pronombre aquí."
+        }
+      },
+      "examples": [
+        "Ich zeige Ihnen das Haus.",
+        "Kann ich Ihnen die Karte geben?"
+      ],
+      "tr": {
+        "en": "Ms Müller, I give you the book.",
+        "es": "Señora Müller, le doy el libro."
+      }
+    },
+    {
+      "id": "objekte-reihenfolge-w04",
+      "kind": "why",
+      "es": "Ich gehe heute nicht zum Arzt.",
+      "target": "nicht",
+      "tr": {
+        "en": "I am not going to the doctor today.",
+        "es": "Hoy no voy al médico."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "nicht stands before the place or direction, here zum Arzt",
+            "es": "nicht va antes del lugar o de la dirección, aquí zum Arzt"
+          }
+        },
+        {
+          "text": {
+            "en": "nicht always stands at the end of the sentence",
+            "es": "nicht siempre va al final de la oración"
+          },
+          "wrong": {
+            "en": "At the end it only negates the whole sentence when no place follows (Ich arbeite heute nicht). With a direction, nicht stands before it.",
+            "es": "Al final solo niega toda la oración cuando no sigue un lugar (Ich arbeite heute nicht). Con una dirección, nicht va antes de ella."
+          }
+        },
+        {
+          "text": {
+            "en": "nicht goes right behind ich",
+            "es": "nicht va justo detrás de ich"
+          },
+          "wrong": {
+            "en": "nicht stays in the middle field, not right after the subject. It stands before the part that is negated, here the direction.",
+            "es": "nicht se queda en el centro de la oración, no justo después del sujeto. Va antes de la parte que se niega, aquí la dirección."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}

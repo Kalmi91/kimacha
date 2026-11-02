@@ -1,0 +1,1061 @@
+{
+  "schema": 2,
+  "topic": "personalpronomen-akk-dativ",
+  "level": "A2",
+  "title": {
+    "en": "Personal pronouns in accusative and dative",
+    "es": "Pronombres personales en acusativo y dativo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Personal pronouns change with the case: ich becomes mich in the accusative and mir in the dative. The accusative is the object of verbs like sehen, brauchen, lieben, besuchen and kennen (Ich sehe dich). The dative is the receiver, and it follows verbs like helfen, gefallen, antworten, zuhören and fehlen (Ich helfe dir). English uses me and him for both, and Spanish me and le for the two cases, but German has two separate forms, almost like Hungarian engem and nekem.",
+        "es": "Los pronombres personales cambian con el caso: ich pasa a mich en acusativo y a mir en dativo. El acusativo es el complemento de verbos como sehen, brauchen, lieben, besuchen y kennen (Ich sehe dich). El dativo es el receptor, y sigue a verbos como helfen, gefallen, antworten, zuhören y fehlen (Ich helfe dir). El inglés usa me y him para los dos casos, y el español me y le, pero el alemán tiene dos formas distintas, casi como el húngaro engem y nekem."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "pronomen-kasus",
+      "title": {
+        "en": "The personal pronouns",
+        "es": "Los pronombres personales"
+      },
+      "header": [
+        {
+          "en": "Nominative",
+          "es": "Nominativo"
+        },
+        {
+          "en": "Akkusativ",
+          "es": "Akkusativ"
+        },
+        {
+          "en": "Dativ",
+          "es": "Dativ"
+        }
+      ],
+      "rows": [
+        [
+          "ich",
+          "mich",
+          "mir"
+        ],
+        [
+          "du",
+          "dich",
+          "dir"
+        ],
+        [
+          "er",
+          "ihn",
+          "ihm"
+        ],
+        [
+          "sie (Sg.)",
+          "sie",
+          "ihr"
+        ],
+        [
+          "es",
+          "es",
+          "ihm"
+        ],
+        [
+          "wir",
+          "uns",
+          "uns"
+        ],
+        [
+          "ihr",
+          "euch",
+          "euch"
+        ],
+        [
+          "sie (Pl.)",
+          "sie",
+          "ihnen"
+        ],
+        [
+          "Sie",
+          "Sie",
+          "Ihnen"
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Accusative and dative",
+        "es": "Acusativo y dativo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "The accusative pronoun is the direct object: the person or thing the verb acts on (sehen, brauchen, lieben, besuchen, kennen).",
+            "es": "El pronombre en acusativo es el complemento directo: la persona o cosa sobre la que actúa el verbo (sehen, brauchen, lieben, besuchen, kennen)."
+          },
+          "examples": [
+            {
+              "es": "Ich sehe dich.",
+              "tr": {
+                "en": "I see you.",
+                "es": "Te veo."
+              }
+            },
+            {
+              "es": "Anna braucht mich.",
+              "tr": {
+                "en": "Anna needs me.",
+                "es": "Anna me necesita."
+              }
+            },
+            {
+              "es": "Wir besuchen euch am Sonntag.",
+              "tr": {
+                "en": "We visit you on Sunday.",
+                "es": "Los visitamos el domingo."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "The dative pronoun is the receiver. A few verbs always take it: helfen, gefallen, antworten, zuhören, fehlen, gratulieren.",
+            "es": "El pronombre en dativo es el receptor. Algunos verbos siempre lo llevan: helfen, gefallen, antworten, zuhören, fehlen, gratulieren."
+          },
+          "examples": [
+            {
+              "es": "Ich helfe dir.",
+              "tr": {
+                "en": "I help you.",
+                "es": "Te ayudo."
+              }
+            },
+            {
+              "es": "Das Haus gefällt uns.",
+              "tr": {
+                "en": "We like the house.",
+                "es": "Nos gusta la casa."
+              }
+            },
+            {
+              "es": "Du fehlst mir.",
+              "tr": {
+                "en": "I miss you.",
+                "es": "Te extraño."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "After a preposition, the preposition decides the case: für, ohne, durch and um take the accusative; mit, bei, von, zu, nach and aus take the dative.",
+            "es": "Después de una preposición, la preposición decide el caso: für, ohne, durch y um llevan acusativo; mit, bei, von, zu, nach y aus llevan dativo."
+          },
+          "examples": [
+            {
+              "es": "Das Geschenk ist für dich.",
+              "tr": {
+                "en": "The present is for you.",
+                "es": "El regalo es para ti."
+              }
+            },
+            {
+              "es": "Ich gehe mit dir ins Kino.",
+              "tr": {
+                "en": "I am going to the movies with you.",
+                "es": "Voy contigo al cine."
+              }
+            },
+            {
+              "es": "Wir kommen zu euch.",
+              "tr": {
+                "en": "We are coming to your place.",
+                "es": "Vamos a su casa."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "id": "kasus-verben",
+      "title": {
+        "en": "Which verb takes which case",
+        "es": "Qué verbo lleva qué caso"
+      },
+      "header": [
+        {
+          "en": "Accusative verbs",
+          "es": "Verbos con acusativo"
+        },
+        {
+          "en": "Dative verbs",
+          "es": "Verbos con dativo"
+        }
+      ],
+      "rows": [
+        [
+          "sehen",
+          "helfen"
+        ],
+        [
+          "brauchen",
+          "gefallen"
+        ],
+        [
+          "lieben",
+          "antworten"
+        ],
+        [
+          "besuchen",
+          "zuhören"
+        ],
+        [
+          "kennen",
+          "fehlen"
+        ]
+      ],
+      "noTableDeck": true
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Fixed phrases and word order",
+        "es": "Frases fijas y orden de las palabras"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Feelings and health use the dative: Wie geht es dir? (How are you?), Mir geht es gut, Mir ist kalt, Mir ist warm. The formal form is Wie geht es Ihnen?",
+            "es": "Los sentimientos y la salud usan el dativo: Wie geht es dir? («¿Cómo estás?»), Mir geht es gut, Mir ist kalt, Mir ist warm. La forma formal es Wie geht es Ihnen?"
+          },
+          "examples": [
+            {
+              "es": "Wie geht es dir?",
+              "tr": {
+                "en": "How are you?",
+                "es": "¿Cómo estás?"
+              }
+            },
+            {
+              "es": "Mir ist kalt.",
+              "tr": {
+                "en": "I am cold.",
+                "es": "Tengo frío."
+              }
+            },
+            {
+              "es": "Wie geht es Ihnen, Frau Müller?",
+              "tr": {
+                "en": "How are you, Ms Müller?",
+                "es": "¿Cómo está usted, señora Müller?"
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "With verbs like geben, schicken and zeigen, a dative pronoun stands before a noun object. If both are pronouns, the accusative comes first (Ich gebe es dir); the full rule follows in the lesson on the order of objects.",
+            "es": "Con verbos como geben, schicken y zeigen, un pronombre en dativo va antes de un complemento sustantivo. Si los dos son pronombres, el acusativo va primero (Ich gebe es dir); la regla completa sigue en la lección sobre el orden de los complementos."
+          },
+          "examples": [
+            {
+              "es": "Ich gebe dir das Buch.",
+              "tr": {
+                "en": "I give you the book.",
+                "es": "Te doy el libro."
+              }
+            },
+            {
+              "es": "Paul schickt uns eine Karte.",
+              "tr": {
+                "en": "Paul sends us a card.",
+                "es": "Paul nos manda una tarjeta."
+              }
+            },
+            {
+              "es": "Ich gebe es dir.",
+              "tr": {
+                "en": "I give it to you.",
+                "es": "Te lo doy."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Accusative or dative?",
+        "es": "¿Acusativo o dativo?"
+      },
+      "pairs": [
+        {
+          "a": "Ich sehe dich.",
+          "b": "Ich helfe dir.",
+          "note": {
+            "en": "The same person, two different cases. The verb decides: sehen takes the accusative, helfen the dative. Learn helfen, gefallen, antworten, zuhören and fehlen with the dative pronoun, as chunks.",
+            "es": "La misma persona, dos casos distintos. El verbo decide: sehen lleva acusativo, helfen dativo. Aprende helfen, gefallen, antworten, zuhören y fehlen con el pronombre en dativo, como bloques."
+          },
+          "examples": [
+            {
+              "es": "Wir besuchen sie.",
+              "tr": {
+                "en": "We visit her.",
+                "es": "La visitamos."
+              }
+            },
+            {
+              "es": "Wir antworten ihr.",
+              "tr": {
+                "en": "We answer her.",
+                "es": "Le respondemos."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Das Geschenk ist für mich.",
+          "b": "Das Geschenk ist von mir.",
+          "note": {
+            "en": "für takes the accusative (mich), von takes the dative (mir). The meaning does not choose the case, the preposition does.",
+            "es": "für lleva acusativo (mich), von lleva dativo (mir). El significado no elige el caso, lo elige la preposición."
+          },
+          "examples": [
+            {
+              "es": "Ich gehe ohne dich.",
+              "tr": {
+                "en": "I am going without you.",
+                "es": "Voy sin ti."
+              }
+            },
+            {
+              "es": "Ich gehe mit dir.",
+              "tr": {
+                "en": "I am going with you.",
+                "es": "Voy contigo."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: mir and mich are the most common mix-up (not Ich helfe dich, but Ich helfe dir; not Er hilft ich). Do not use the nominative after a preposition (not mit ich, but mit mir). Do not copy the English or Spanish pattern for gefallen: the thing that pleases is the subject (Das Haus gefällt mir), and you are in the dative. es stays es in the accusative, but in the dative it becomes ihm. And remember that sie can mean she, her, they and them: look at the verb ending and the case.",
+        "es": "Trampas clásicas: mir y mich son la confusión más común (no Ich helfe dich, sino Ich helfe dir; no Er hilft ich). No uses el nominativo después de una preposición (no mit ich, sino mit mir). No copies el patrón del inglés ni del español para gefallen: la cosa que gusta es el sujeto (Das Haus gefällt mir), y tú estás en dativo. es sigue siendo es en acusativo, pero en dativo pasa a ihm. Y recuerda que sie puede significar ella, la, ellos y los: fíjate en la terminación del verbo y en el caso."
+      }
+    }
+  ],
+  "speak": {
+    "en": "Pronouns change with the case. The accusative forms are «mich», «dich», «ihn», «sie», «es», «uns», «euch», «sie», «Sie». The dative forms are «mir», «dir», «ihm», «ihr», «ihm», «uns», «euch», «ihnen», «Ihnen». Verbs like «sehen» and «brauchen» take the accusative: «Ich sehe dich». Verbs like «helfen» and «gefallen» take the dative: «Ich helfe dir». After «für» you need the accusative, «für mich». After «mit» you need the dative, «mit dir». And remember the greeting: «Wie geht es dir?»",
+    "es": "Los pronombres cambian con el caso. Las formas del acusativo son «mich», «dich», «ihn», «sie», «es», «uns», «euch», «sie», «Sie». Las formas del dativo son «mir», «dir», «ihm», «ihr», «ihm», «uns», «euch», «ihnen», «Ihnen». Verbos como «sehen» y «brauchen» llevan acusativo: «Ich sehe dich». Verbos como «helfen» y «gefallen» llevan dativo: «Ich helfe dir». Después de «für» necesitas el acusativo, «für mich». Después de «mit» necesitas el dativo, «mit dir». Y recuerda el saludo: «Wie geht es dir?»"
+  },
+  "items": [
+    {
+      "id": "personalpronomen-akk-dativ-c01",
+      "sentence": "Ich sehe ___ im Park.",
+      "options": [
+        "dich",
+        "dir",
+        "du"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "sehen takes the accusative, and the accusative of du is dich.",
+        "es": "sehen lleva acusativo, y el acusativo de du es dich."
+      },
+      "wrong": {
+        "dir": {
+          "en": "dir is the dative, the case for helfen or geben. sehen needs the accusative, dich.",
+          "es": "dir es el dativo, el caso de helfen o geben. sehen necesita el acusativo, dich."
+        },
+        "du": {
+          "en": "du is the subject form. You is the object of sehen here, so it must be in the accusative.",
+          "es": "du es la forma del sujeto. Aquí tú eres el complemento de sehen, así que debe ir en acusativo."
+        }
+      },
+      "examples": [
+        "Paul sieht dich im Café.",
+        "Wir sehen dich am Montag."
+      ],
+      "tr": {
+        "en": "I see you in the park.",
+        "es": "Te veo en el parque."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f01",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "ich",
+      "answer": "mich",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c02",
+      "sentence": "Anna braucht ___ heute.",
+      "options": [
+        "mir",
+        "mich",
+        "ich"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "brauchen takes the accusative, and the accusative of ich is mich.",
+        "es": "brauchen lleva acusativo, y el acusativo de ich es mich."
+      },
+      "wrong": {
+        "mir": {
+          "en": "mir is the dative. brauchen is not one of the dative verbs, so it needs the accusative mich.",
+          "es": "mir es el dativo. brauchen no es uno de los verbos con dativo, así que necesita el acusativo mich."
+        },
+        "ich": {
+          "en": "ich is the subject form. Here I am the object of brauchen: Anna is the one who needs.",
+          "es": "ich es la forma del sujeto. Aquí yo soy el complemento de brauchen: Anna es quien necesita."
+        }
+      },
+      "examples": [
+        "Paul braucht mich am Sonntag.",
+        "Du brauchst mich nicht."
+      ],
+      "tr": {
+        "en": "Anna needs me today.",
+        "es": "Anna me necesita hoy."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f02",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "ich",
+      "answer": "mir",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c03",
+      "sentence": "Ich helfe ___ bei den Hausaufgaben.",
+      "options": [
+        "dich",
+        "du",
+        "dir"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "helfen is one of the verbs that take the dative, and the dative of du is dir.",
+        "es": "helfen es uno de los verbos que llevan dativo, y el dativo de du es dir."
+      },
+      "wrong": {
+        "dich": {
+          "en": "dich is the accusative. Most verbs take it (Ich sehe dich), but helfen needs the dative.",
+          "es": "dich es el acusativo. La mayoría de los verbos lo llevan (Ich sehe dich), pero helfen necesita el dativo."
+        },
+        "du": {
+          "en": "du is the subject form. The person who gets help is an object, not the subject.",
+          "es": "du es la forma del sujeto. La persona que recibe la ayuda es un complemento, no el sujeto."
+        }
+      },
+      "examples": [
+        "Ich helfe dir heute.",
+        "Paul hilft dir gern."
+      ],
+      "tr": {
+        "en": "I help you with your homework.",
+        "es": "Te ayudo con la tarea."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f03",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "du",
+      "answer": "dich",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-w01",
+      "kind": "why",
+      "es": "Ich helfe dir.",
+      "target": "dir",
+      "tr": {
+        "en": "I help you.",
+        "es": "Te ayudo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "helfen takes the dative, so the pronoun is dir",
+            "es": "helfen lleva dativo, así que el pronombre es dir"
+          }
+        },
+        {
+          "text": {
+            "en": "dich: the person is the object, so it is the accusative",
+            "es": "dich: la persona es el complemento, así que es el acusativo"
+          },
+          "wrong": {
+            "en": "Most verbs take the accusative (Ich sehe dich), but helfen is one of the few that need the dative: Ich helfe dir.",
+            "es": "La mayoría de los verbos llevan acusativo (Ich sehe dich), pero helfen es uno de los pocos que necesitan dativo: Ich helfe dir."
+          }
+        },
+        {
+          "text": {
+            "en": "du: the pronoun stays in the nominative",
+            "es": "du: el pronombre se queda en nominativo"
+          },
+          "wrong": {
+            "en": "Ich is the subject. The person who gets the help is an object and never stands in the nominative.",
+            "es": "Ich es el sujeto. La persona que recibe la ayuda es un complemento y nunca va en nominativo."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c04",
+      "sentence": "Das Haus gefällt ___ sehr.",
+      "options": [
+        "uns",
+        "wir",
+        "ich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "gefallen takes the dative, and the dative of wir is uns. The house is the subject, and we are the ones it pleases.",
+        "es": "gefallen lleva dativo, y el dativo de wir es uns. La casa es el sujeto, y nosotros somos a quienes les gusta."
+      },
+      "wrong": {
+        "wir": {
+          "en": "wir is the subject. The subject is already das Haus, so the people who like it must be in the dative.",
+          "es": "wir es el sujeto. El sujeto ya es das Haus, así que las personas a quienes les gusta deben ir en dativo."
+        },
+        "ich": {
+          "en": "ich is the nominative and means only one person. The sentence is about several people to whom the house is pleasing, so you need the dative form uns.",
+          "es": "ich es el nominativo y significa solo una persona. La oración habla de varias personas a quienes les gusta la casa, así que necesitas la forma en dativo uns."
+        }
+      },
+      "examples": [
+        "Das Auto gefällt mir.",
+        "Das Kleid gefällt dir."
+      ],
+      "tr": {
+        "en": "We like the house a lot.",
+        "es": "Nos gusta mucho la casa."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f04",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "du",
+      "answer": "dir",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c05",
+      "sentence": "Paul ist krank. Wir besuchen ___ heute.",
+      "options": [
+        "er",
+        "ihn",
+        "ihm"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "besuchen takes the accusative, and the accusative of er is ihn.",
+        "es": "besuchen lleva acusativo, y el acusativo de er es ihn."
+      },
+      "wrong": {
+        "er": {
+          "en": "er is the subject form. Paul is the one we visit, so he is the object.",
+          "es": "er es la forma del sujeto. Paul es a quien visitamos, así que es el complemento."
+        },
+        "ihm": {
+          "en": "ihm is the dative. besuchen is a normal verb with an accusative object, so you need ihn.",
+          "es": "ihm es el dativo. besuchen es un verbo normal con complemento en acusativo, así que necesitas ihn."
+        }
+      },
+      "examples": [
+        "Wir besuchen ihn am Sonntag.",
+        "Anna besucht ihn im Krankenhaus."
+      ],
+      "tr": {
+        "en": "Paul is sick. We visit him today.",
+        "es": "Paul está enfermo. Hoy lo visitamos."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f05",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "er",
+      "answer": "ihn",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c06",
+      "sentence": "Paul ist krank. Ich helfe ___.",
+      "options": [
+        "ihn",
+        "er",
+        "ihm"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "helfen takes the dative, and the dative of er is ihm.",
+        "es": "helfen lleva dativo, y el dativo de er es ihm."
+      },
+      "wrong": {
+        "ihn": {
+          "en": "ihn is the accusative. With helfen you always need the dative: ihm.",
+          "es": "ihn es el acusativo. Con helfen siempre necesitas el dativo: ihm."
+        },
+        "er": {
+          "en": "er is the subject form. The person who gets help is an object.",
+          "es": "er es la forma del sujeto. La persona que recibe la ayuda es un complemento."
+        }
+      },
+      "examples": [
+        "Anna hilft ihm.",
+        "Wir helfen ihm heute."
+      ],
+      "tr": {
+        "en": "Paul is sick. I help him.",
+        "es": "Paul está enfermo. Yo le ayudo."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f06",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "er",
+      "answer": "ihm",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-w02",
+      "kind": "why",
+      "es": "Ich sehe dich.",
+      "target": "dich",
+      "tr": {
+        "en": "I see you.",
+        "es": "Te veo."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "dir: any person who is involved takes the dative",
+            "es": "dir: toda persona involucrada lleva dativo"
+          },
+          "wrong": {
+            "en": "You do not give or tell the person anything, you just see him or her. sehen takes the accusative.",
+            "es": "No le das ni le dices nada a la persona, solo la ves. sehen lleva acusativo."
+          }
+        },
+        {
+          "text": {
+            "en": "dich: sehen takes an accusative object",
+            "es": "dich: sehen lleva un complemento en acusativo"
+          }
+        },
+        {
+          "text": {
+            "en": "dich, because the pronoun for you is always dich",
+            "es": "dich, porque el pronombre de tú es siempre dich"
+          },
+          "wrong": {
+            "en": "The pronoun changes with the case: du, dich, dir. After sehen it is dich, after helfen it is dir.",
+            "es": "El pronombre cambia con el caso: du, dich, dir. Después de sehen es dich, después de helfen es dir."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c07",
+      "sentence": "Das Geschenk ist für ___.",
+      "options": [
+        "mich",
+        "mir",
+        "ich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The preposition für always takes the accusative, so it is für mich.",
+        "es": "La preposición für siempre lleva acusativo, así que es für mich."
+      },
+      "wrong": {
+        "mir": {
+          "en": "mir is the dative. Even though a gift has a receiver, für decides the case, and für always takes the accusative.",
+          "es": "mir es el dativo. Aunque un regalo tiene un receptor, für decide el caso, y für siempre lleva acusativo."
+        },
+        "ich": {
+          "en": "ich is the subject form. After a preposition the pronoun is never in the nominative.",
+          "es": "ich es la forma del sujeto. Después de una preposición el pronombre nunca va en nominativo."
+        }
+      },
+      "examples": [
+        "Die Blumen sind für dich.",
+        "Das Buch ist für ihn."
+      ],
+      "tr": {
+        "en": "The present is for me.",
+        "es": "El regalo es para mí."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f07",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "sie (Sg.)",
+      "answer": "sie",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c08",
+      "sentence": "Ich gehe mit ___ ins Kino.",
+      "options": [
+        "dich",
+        "dir",
+        "du"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The preposition mit always takes the dative, so it is mit dir.",
+        "es": "La preposición mit siempre lleva dativo, así que es mit dir."
+      },
+      "wrong": {
+        "dich": {
+          "en": "dich is the accusative. mit is a dative preposition, so you need dir.",
+          "es": "dich es el acusativo. mit es una preposición de dativo, así que necesitas dir."
+        },
+        "du": {
+          "en": "du is the subject form. After a preposition the pronoun is never in the nominative.",
+          "es": "du es la forma del sujeto. Después de una preposición el pronombre nunca va en nominativo."
+        }
+      },
+      "examples": [
+        "Ich komme mit dir.",
+        "Paul spielt mit dir."
+      ],
+      "tr": {
+        "en": "I am going to the movies with you.",
+        "es": "Voy contigo al cine."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f08",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "sie (Sg.)",
+      "answer": "ihr",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c09",
+      "sentence": "Wie geht es ___?",
+      "options": [
+        "du",
+        "dich",
+        "dir"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "How someone is doing is expressed with the dative: Wie geht es dir?",
+        "es": "Cómo está alguien se expresa con el dativo: Wie geht es dir?"
+      },
+      "wrong": {
+        "du": {
+          "en": "du is the subject form, but the subject of this sentence is es. The person is in the dative.",
+          "es": "du es la forma del sujeto, pero el sujeto de esta oración es es. La persona va en dativo."
+        },
+        "dich": {
+          "en": "dich is the accusative. In this fixed question the person is in the dative: dir.",
+          "es": "dich es el acusativo. En esta pregunta fija la persona va en dativo: dir."
+        }
+      },
+      "examples": [
+        "Wie geht es ihm?",
+        "Wie geht es Ihnen?"
+      ],
+      "tr": {
+        "en": "How are you?",
+        "es": "¿Cómo estás?"
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f09",
+      "kind": "form",
+      "verb": "Akkusativ",
+      "person": "wir",
+      "answer": "uns",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-w03",
+      "kind": "why",
+      "es": "Das Geschenk ist für dich.",
+      "target": "dich",
+      "tr": {
+        "en": "The present is for you.",
+        "es": "El regalo es para ti."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "dir: it is a present, so the pronoun is a receiver in the dative",
+            "es": "dir: es un regalo, así que el pronombre es un receptor en dativo"
+          },
+          "wrong": {
+            "en": "The preposition decides the case, not the meaning. für always takes the accusative.",
+            "es": "La preposición decide el caso, no el significado. für siempre lleva acusativo."
+          }
+        },
+        {
+          "text": {
+            "en": "dich: für always takes the accusative",
+            "es": "dich: für siempre lleva acusativo"
+          }
+        },
+        {
+          "text": {
+            "en": "du: after für the pronoun stays in the nominative",
+            "es": "du: después de für el pronombre se queda en nominativo"
+          },
+          "wrong": {
+            "en": "A pronoun after a preposition is never in the nominative. für takes the accusative: dich.",
+            "es": "Un pronombre después de una preposición nunca va en nominativo. für lleva acusativo: dich."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c10",
+      "sentence": "___ ist kalt.",
+      "options": [
+        "Mir",
+        "Ich",
+        "Mich"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "A physical feeling is expressed with the dative: Mir ist kalt.",
+        "es": "Una sensación física se expresa con el dativo: Mir ist kalt."
+      },
+      "wrong": {
+        "Ich": {
+          "en": "Ich ist kalt is not possible, and Ich bin kalt would say that you are a cold person. For feeling cold, use Mir ist kalt.",
+          "es": "Ich ist kalt no es posible, e Ich bin kalt diría que eres una persona fría. Para tener frío se usa Mir ist kalt."
+        },
+        "Mich": {
+          "en": "Mich is the accusative, the case of objects like in Ich sehe dich. Physical feelings use the dative: Mir.",
+          "es": "Mich es el acusativo, el caso de los complementos como en Ich sehe dich. Las sensaciones físicas usan el dativo: Mir."
+        }
+      },
+      "examples": [
+        "Mir ist warm.",
+        "Mir geht es gut."
+      ],
+      "tr": {
+        "en": "I am cold.",
+        "es": "Tengo frío."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f10",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "ihr",
+      "answer": "euch",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c11",
+      "sentence": "Anna ist meine Freundin. Ich schreibe ___ eine Karte.",
+      "options": [
+        "sie",
+        "ihr",
+        "ihn"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "schreiben has a receiver here (the card goes to Anna), and the dative of sie (she) is ihr.",
+        "es": "schreiben tiene aquí un receptor (la tarjeta va a Anna), y el dativo de sie (ella) es ihr."
+      },
+      "wrong": {
+        "sie": {
+          "en": "sie is the accusative of she. Here Anna receives the card, so you need the dative ihr.",
+          "es": "sie es el acusativo de ella. Aquí Anna recibe la tarjeta, así que necesitas el dativo ihr."
+        },
+        "ihn": {
+          "en": "ihn is the masculine accusative (him). Anna is a woman, and she is the receiver, so the dative ihr.",
+          "es": "ihn es el acusativo masculino (a él). Anna es una mujer, y es la receptora, así que el dativo ihr."
+        }
+      },
+      "examples": [
+        "Ich gebe ihr das Buch.",
+        "Paul schickt ihr Blumen."
+      ],
+      "tr": {
+        "en": "Anna is my girlfriend. I write her a card.",
+        "es": "Anna es mi amiga. Le escribo una tarjeta."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f11",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "sie (Pl.)",
+      "answer": "ihnen",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c12",
+      "sentence": "Das sind die Kinder. Ich gebe ___ Kuchen.",
+      "options": [
+        "sie",
+        "ihm",
+        "ihnen"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "The children receive the cake, so they are in the dative. The dative of sie (they) is ihnen.",
+        "es": "Los niños reciben el pastel, así que van en dativo. El dativo de sie (ellos) es ihnen."
+      },
+      "wrong": {
+        "sie": {
+          "en": "sie is the accusative of they. The cake is the accusative object here, and the children are the receivers: ihnen.",
+          "es": "sie es el acusativo de ellos. El pastel es el complemento en acusativo aquí, y los niños son los receptores: ihnen."
+        },
+        "ihm": {
+          "en": "ihm is the dative for one person (him, it). The children are several, so you need ihnen.",
+          "es": "ihm es el dativo para una persona (le, a él). Los niños son varios, así que necesitas ihnen."
+        }
+      },
+      "examples": [
+        "Ich zeige ihnen das Haus.",
+        "Wir bringen ihnen Blumen."
+      ],
+      "tr": {
+        "en": "Those are the children. I give them cake.",
+        "es": "Esos son los niños. Les doy pastel."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-f12",
+      "kind": "form",
+      "verb": "Dativ",
+      "person": "Sie",
+      "answer": "Ihnen",
+      "table": "pronomen-kasus"
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c13",
+      "sentence": "Frau Müller, ich helfe ___.",
+      "options": [
+        "Ihnen",
+        "Sie",
+        "Ihr"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The formal Sie in the dative is Ihnen, always with a capital letter: Ich helfe Ihnen.",
+        "es": "El Sie formal en dativo es Ihnen, siempre con mayúscula: Ich helfe Ihnen."
+      },
+      "wrong": {
+        "Sie": {
+          "en": "Sie is the nominative and accusative of the formal you. helfen needs the dative, which is Ihnen.",
+          "es": "Sie es el nominativo y el acusativo del usted. helfen necesita el dativo, que es Ihnen."
+        },
+        "Ihr": {
+          "en": "Ihr is a possessive (Ihr Haus) and not a pronoun that can stand alone here. The pronoun is Ihnen.",
+          "es": "Ihr es un posesivo (Ihr Haus) y no un pronombre que pueda estar solo aquí. El pronombre es Ihnen."
+        }
+      },
+      "examples": [
+        "Kann ich Ihnen helfen?",
+        "Wie geht es Ihnen?"
+      ],
+      "tr": {
+        "en": "Ms Müller, I will help you.",
+        "es": "Señora Müller, yo le ayudo."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-c14",
+      "sentence": "Du fehlst ___.",
+      "options": [
+        "mich",
+        "mir",
+        "ich"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "fehlen takes the dative: the person who misses somebody is in the dative, here mir. The missed person (du) is the subject.",
+        "es": "fehlen lleva dativo: la persona que extraña a alguien va en dativo, aquí mir. La persona extrañada (du) es el sujeto."
+      },
+      "wrong": {
+        "mich": {
+          "en": "mich is the accusative. fehlen is a dative verb, and the person who misses somebody is in the dative: mir.",
+          "es": "mich es el acusativo. fehlen es un verbo con dativo, y la persona que extraña a alguien va en dativo: mir."
+        },
+        "ich": {
+          "en": "ich is the subject form, but the subject here is du. The speaker is the one who feels the lack, so the dative mir.",
+          "es": "ich es la forma del sujeto, pero el sujeto aquí es du. El que habla es quien siente la falta, así que el dativo mir."
+        }
+      },
+      "examples": [
+        "Du fehlst uns.",
+        "Anna fehlt mir."
+      ],
+      "tr": {
+        "en": "I miss you.",
+        "es": "Te extraño."
+      }
+    },
+    {
+      "id": "personalpronomen-akk-dativ-w04",
+      "kind": "why",
+      "es": "Mir ist kalt.",
+      "target": "Mir",
+      "tr": {
+        "en": "I am cold.",
+        "es": "Tengo frío."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "Ich: Ich bin kalt, as in English I am cold",
+            "es": "Ich: Ich bin kalt, como en inglés I am cold"
+          },
+          "wrong": {
+            "en": "Ich bin kalt would mean that you are a cold person. For the feeling of cold, German says Mir ist kalt.",
+            "es": "Ich bin kalt significaría que eres una persona fría. Para la sensación de frío, el alemán dice Mir ist kalt."
+          }
+        },
+        {
+          "text": {
+            "en": "Mich: it is the accusative, as with sehen",
+            "es": "Mich: es el acusativo, como con sehen"
+          },
+          "wrong": {
+            "en": "mich is the object of verbs like sehen and brauchen. Physical feelings use the dative: Mir ist kalt, Mir ist warm.",
+            "es": "mich es el complemento de verbos como sehen y brauchen. Las sensaciones físicas usan el dativo: Mir ist kalt, Mir ist warm."
+          }
+        },
+        {
+          "text": {
+            "en": "Mir: the feeling is expressed with the dative",
+            "es": "Mir: la sensación se expresa con el dativo"
+          }
+        }
+      ],
+      "correctIndex": 2
+    }
+  ]
+}

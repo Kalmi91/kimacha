@@ -1,0 +1,1050 @@
+{
+  "schema": 2,
+  "topic": "verben-mit-dativ",
+  "level": "A2",
+  "title": {
+    "en": "Verbs with the dative",
+    "es": "Verbos con dativo"
+  },
+  "body": [
+    {
+      "kind": "text",
+      "text": {
+        "en": "Most German verbs take the accusative, but a small group of common verbs takes only a dative object, the person: helfen, antworten, zuhören, gratulieren, glauben, gefallen, fehlen. You have to learn them as chunks with a dative pronoun (Ich helfe dir, Das Haus gefällt mir). Spanish learners already know the idea (le ayudo, me gusta), and Hungarian has it too (segítek neki, nekem tetszik), but English hides it (I help him). Careful with verbs that look similar but take the accusative: fragen, anrufen, besuchen.",
+        "es": "La mayoría de los verbos alemanes llevan acusativo, pero un grupito de verbos frecuentes lleva solo un complemento en dativo, la persona: helfen, antworten, zuhören, gratulieren, glauben, gefallen, fehlen. Hay que aprenderlos como bloques con un pronombre en dativo (Ich helfe dir, Das Haus gefällt mir). Los hispanohablantes ya conocen la idea (le ayudo, me gusta), y el húngaro también la tiene (segítek neki, nekem tetszik), pero el inglés la oculta (I help him). Cuidado con los verbos que se parecen pero llevan acusativo: fragen, anrufen, besuchen."
+      }
+    },
+    {
+      "kind": "table",
+      "id": "dativ-verben",
+      "title": {
+        "en": "Dative or accusative verbs",
+        "es": "Verbos con dativo o con acusativo"
+      },
+      "header": [
+        {
+          "en": "Verb",
+          "es": "Verbo"
+        },
+        {
+          "en": "Pronomen (er)",
+          "es": "Pronomen (er)"
+        },
+        {
+          "en": "Example",
+          "es": "Ejemplo"
+        }
+      ],
+      "rows": [
+        [
+          "helfen",
+          "ihm",
+          "Ich helfe ihm."
+        ],
+        [
+          "gefallen",
+          "ihm",
+          "Das Haus gefällt ihm."
+        ],
+        [
+          "antworten",
+          "ihm",
+          "Anna antwortet ihm."
+        ],
+        [
+          "zuhören",
+          "ihm",
+          "Wir hören ihm zu."
+        ],
+        [
+          "fehlen",
+          "ihm",
+          "Du fehlst ihm."
+        ],
+        [
+          "gratulieren",
+          "ihm",
+          "Ich gratuliere ihm."
+        ],
+        [
+          "glauben",
+          "ihm",
+          "Wir glauben ihm."
+        ],
+        [
+          "sehen",
+          "ihn",
+          "Ich sehe ihn."
+        ],
+        [
+          "besuchen",
+          "ihn",
+          "Wir besuchen ihn."
+        ],
+        [
+          "fragen",
+          "ihn",
+          "Ich frage ihn."
+        ],
+        [
+          "anrufen",
+          "ihn",
+          "Ich rufe ihn an."
+        ],
+        [
+          "brauchen",
+          "ihn",
+          "Anna braucht ihn."
+        ],
+        [
+          "lieben",
+          "ihn",
+          "Paul liebt ihn."
+        ],
+        [
+          "kennen",
+          "ihn",
+          "Ich kenne ihn."
+        ]
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "The person in the dative",
+        "es": "La persona en dativo"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "helfen, antworten, zuhören, gratulieren and glauben take the person in the dative, whether it is a pronoun or a noun with its article.",
+            "es": "helfen, antworten, zuhören, gratulieren y glauben llevan a la persona en dativo, sea un pronombre o un sustantivo con su artículo."
+          },
+          "examples": [
+            {
+              "es": "Ich helfe dem Mann.",
+              "tr": {
+                "en": "I help the man.",
+                "es": "Ayudo al señor."
+              }
+            },
+            {
+              "es": "Anna antwortet der Lehrerin.",
+              "tr": {
+                "en": "Anna answers the teacher.",
+                "es": "Anna le responde a la maestra."
+              }
+            },
+            {
+              "es": "Wir hören den Kindern zu.",
+              "tr": {
+                "en": "We listen to the children.",
+                "es": "Escuchamos a los niños."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "gratulieren and glauben work the same way. With gratulieren you name the occasion with zu: zum Geburtstag.",
+            "es": "gratulieren y glauben funcionan igual. Con gratulieren se nombra la ocasión con zu: zum Geburtstag."
+          },
+          "examples": [
+            {
+              "es": "Ich gratuliere dir zum Geburtstag.",
+              "tr": {
+                "en": "I congratulate you on your birthday.",
+                "es": "Te felicito por tu cumpleaños."
+              }
+            },
+            {
+              "es": "Wir glauben dem Lehrer.",
+              "tr": {
+                "en": "We believe the teacher.",
+                "es": "Le creemos al maestro."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "gefallen and fehlen: the thing is the subject",
+        "es": "gefallen y fehlen: la cosa es el sujeto"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "With gefallen the thing that pleases is the subject, and the person who likes it is in the dative: Das Haus gefällt mir, like Hungarian Nekem tetszik a ház. The verb agrees with the thing.",
+            "es": "Con gefallen la cosa que gusta es el sujeto, y la persona a quien le gusta va en dativo: Das Haus gefällt mir, como en húngaro Nekem tetszik a ház. El verbo concuerda con la cosa."
+          },
+          "examples": [
+            {
+              "es": "Das Haus gefällt mir.",
+              "tr": {
+                "en": "I like the house.",
+                "es": "Me gusta la casa."
+              }
+            },
+            {
+              "es": "Die Blumen gefallen Anna.",
+              "tr": {
+                "en": "Anna likes the flowers.",
+                "es": "A Anna le gustan las flores."
+              }
+            }
+          ]
+        },
+        {
+          "text": {
+            "en": "fehlen works the same way: the missed person is the subject, the one who misses is in the dative. Du fehlst mir means I miss you.",
+            "es": "fehlen funciona igual: la persona extrañada es el sujeto, y quien extraña va en dativo. Du fehlst mir significa «te extraño»."
+          },
+          "examples": [
+            {
+              "es": "Du fehlst mir.",
+              "tr": {
+                "en": "I miss you.",
+                "es": "Te extraño."
+              }
+            },
+            {
+              "es": "Die Kinder fehlen der Mutter.",
+              "tr": {
+                "en": "The mother misses the children.",
+                "es": "La mamá extraña a los niños."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "usage",
+      "title": {
+        "en": "Feelings and health",
+        "es": "Sentimientos y salud"
+      },
+      "points": [
+        {
+          "text": {
+            "en": "Feelings of the body use a dative pronoun: Mir ist kalt, Mir ist warm, Mir ist schlecht. The question is Wie geht es dir? and the answer Mir geht es gut.",
+            "es": "Las sensaciones del cuerpo usan un pronombre en dativo: Mir ist kalt, Mir ist warm, Mir ist schlecht. La pregunta es Wie geht es dir? y la respuesta Mir geht es gut."
+          },
+          "examples": [
+            {
+              "es": "Mir ist schlecht.",
+              "tr": {
+                "en": "I feel sick.",
+                "es": "Me siento mal."
+              }
+            },
+            {
+              "es": "Wie geht es deinen Eltern?",
+              "tr": {
+                "en": "How are your parents?",
+                "es": "¿Cómo están tus papás?"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "contrast",
+      "title": {
+        "en": "Easy to mix up",
+        "es": "Fáciles de confundir"
+      },
+      "pairs": [
+        {
+          "a": "Ich besuche den Mann.",
+          "b": "Ich helfe dem Mann.",
+          "note": {
+            "en": "besuchen takes the accusative (den Mann), helfen the dative (dem Mann). The pronoun versions are ihn and ihm. For every new verb, check which case it takes.",
+            "es": "besuchen lleva acusativo (den Mann), helfen dativo (dem Mann). Las versiones con pronombre son ihn e ihm. Con cada verbo nuevo, comprueba qué caso lleva."
+          },
+          "examples": [
+            {
+              "es": "Wir besuchen den Arzt.",
+              "tr": {
+                "en": "We visit the doctor.",
+                "es": "Visitamos al médico."
+              }
+            },
+            {
+              "es": "Wir helfen dem Arzt.",
+              "tr": {
+                "en": "We help the doctor.",
+                "es": "Ayudamos al médico."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich frage den Lehrer.",
+          "b": "Ich antworte dem Lehrer.",
+          "note": {
+            "en": "Two verbs of speaking, two different cases: fragen takes the accusative, antworten the dative. In the same way, anrufen takes the accusative.",
+            "es": "Dos verbos de comunicación, dos casos distintos: fragen lleva acusativo, antworten dativo. Igualmente, anrufen lleva acusativo."
+          },
+          "examples": [
+            {
+              "es": "Ich rufe meine Mutter an.",
+              "tr": {
+                "en": "I call my mother.",
+                "es": "Le llamo a mi mamá."
+              }
+            },
+            {
+              "es": "Ich antworte meiner Mutter.",
+              "tr": {
+                "en": "I answer my mother.",
+                "es": "Le respondo a mi mamá."
+              }
+            }
+          ]
+        },
+        {
+          "a": "Ich mag das Kleid.",
+          "b": "Das Kleid gefällt mir.",
+          "note": {
+            "en": "Both mean that you like the dress. With mögen you are the subject and the dress is in the accusative. With gefallen the dress is the subject and you are in the dative.",
+            "es": "Las dos significan que te gusta el vestido. Con mögen tú eres el sujeto y el vestido va en acusativo. Con gefallen el vestido es el sujeto y tú vas en dativo."
+          },
+          "examples": [
+            {
+              "es": "Ich mag den Park.",
+              "tr": {
+                "en": "I like the park.",
+                "es": "Me gusta el parque."
+              }
+            },
+            {
+              "es": "Der Park gefällt mir.",
+              "tr": {
+                "en": "The park appeals to me.",
+                "es": "Me gusta el parque."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "tip",
+      "text": {
+        "en": "Classic traps: English helps you wrongly here (not Ich helfe dich, but Ich helfe dir). fragen and anrufen take the accusative, antworten takes the dative. With gefallen the subject is the thing, not you (not Ich gefalle das Kleid). With fehlen the missed person is the subject (Du fehlst mir). Learn each dative verb with a dative pronoun in one piece, and ask wem? to check: the dative answers wem?.",
+        "es": "Trampas clásicas: aquí el inglés te ayuda mal (no Ich helfe dich, sino Ich helfe dir). fragen y anrufen llevan acusativo, antworten lleva dativo. Con gefallen el sujeto es la cosa, no tú (no Ich gefalle das Kleid). Con fehlen la persona extrañada es el sujeto (Du fehlst mir). Aprende cada verbo con dativo junto con un pronombre en dativo, en un solo bloque, y pregunta wem? para comprobarlo: el dativo responde a wem?."
+      }
+    }
+  ],
+  "speak": {
+    "en": "A few common verbs take the person in the dative. «Ich helfe dir», «Anna antwortet der Lehrerin», «Wir hören den Kindern zu». With «gefallen» the thing is the subject: «Das Haus gefällt mir». With «fehlen» the missed person is the subject: «Du fehlst mir». But «besuchen», «fragen» and «anrufen» take the accusative: «Ich frage den Lehrer», «Ich rufe meine Mutter an». For feelings use the dative: «Mir ist kalt», «Wie geht es dir?»",
+    "es": "Algunos verbos frecuentes llevan a la persona en dativo. «Ich helfe dir», «Anna antwortet der Lehrerin», «Wir hören den Kindern zu». Con «gefallen» la cosa es el sujeto: «Das Haus gefällt mir». Con «fehlen» la persona extrañada es el sujeto: «Du fehlst mir». Pero «besuchen», «fragen» y «anrufen» llevan acusativo: «Ich frage den Lehrer», «Ich rufe meine Mutter an». Para las sensaciones se usa el dativo: «Mir ist kalt», «Wie geht es dir?»"
+  },
+  "items": [
+    {
+      "id": "verben-mit-dativ-c01",
+      "sentence": "Ich helfe ___ Mann.",
+      "options": [
+        "den",
+        "dem",
+        "der"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "helfen takes the dative, and the masculine dative article is dem: dem Mann.",
+        "es": "helfen lleva dativo, y el artículo masculino en dativo es dem: dem Mann."
+      },
+      "wrong": {
+        "den": {
+          "en": "den is the masculine accusative, the case of verbs like besuchen. helfen needs the dative.",
+          "es": "den es el acusativo masculino, el caso de verbos como besuchen. helfen necesita el dativo."
+        },
+        "der": {
+          "en": "der is the dative of feminine nouns. Mann is masculine and takes dem.",
+          "es": "der es el dativo de los sustantivos femeninos. Mann es masculino y lleva dem."
+        }
+      },
+      "examples": [
+        "Wir helfen dem Lehrer.",
+        "Paul hilft dem Kind."
+      ],
+      "tr": {
+        "en": "I help the man.",
+        "es": "Ayudo al señor."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f01",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "helfen",
+      "answer": "ihm",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c02",
+      "sentence": "Wir besuchen ___ Lehrer.",
+      "options": [
+        "den",
+        "dem",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "besuchen takes the accusative, and the masculine accusative article is den: den Lehrer.",
+        "es": "besuchen lleva acusativo, y el artículo masculino en acusativo es den: den Lehrer."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem is the dative, the case of helfen or antworten. besuchen is not a dative verb.",
+          "es": "dem es el dativo, el caso de helfen o antworten. besuchen no es un verbo con dativo."
+        },
+        "der": {
+          "en": "der is the masculine nominative or the feminine dative. Here the teacher is the object of besuchen: den Lehrer.",
+          "es": "der es el nominativo masculino o el dativo femenino. Aquí el maestro es el complemento de besuchen: den Lehrer."
+        }
+      },
+      "examples": [
+        "Ich besuche den Arzt.",
+        "Anna besucht den Lehrer."
+      ],
+      "tr": {
+        "en": "We visit the teacher.",
+        "es": "Visitamos al maestro."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f02",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "sehen",
+      "answer": "ihn",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c03",
+      "sentence": "Anna antwortet ___ Lehrerin.",
+      "options": [
+        "die",
+        "den",
+        "der"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "antworten takes the dative, and the feminine dative article is der: der Lehrerin.",
+        "es": "antworten lleva dativo, y el artículo femenino en dativo es der: der Lehrerin."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the nominative and accusative of feminine nouns. antworten needs the dative, der.",
+          "es": "die es el nominativo y el acusativo de los sustantivos femeninos. antworten necesita el dativo, der."
+        },
+        "den": {
+          "en": "den is the masculine accusative or the dative plural. Lehrerin is feminine singular, so the dative is der.",
+          "es": "den es el acusativo masculino o el dativo plural. Lehrerin es femenino singular, así que el dativo es der."
+        }
+      },
+      "examples": [
+        "Ich antworte der Frau.",
+        "Paul antwortet der Mutter."
+      ],
+      "tr": {
+        "en": "Anna answers the teacher.",
+        "es": "Anna le responde a la maestra."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f03",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "antworten",
+      "answer": "ihm",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-w01",
+      "kind": "why",
+      "es": "Ich helfe dem Mann.",
+      "target": "dem",
+      "tr": {
+        "en": "I help the man.",
+        "es": "Ayudo al señor."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "den, because the man is the object of the sentence",
+            "es": "den, porque el señor es el complemento de la oración"
+          },
+          "wrong": {
+            "en": "The accusative is the usual case for objects, but helfen is one of the verbs that take the dative: dem Mann.",
+            "es": "El acusativo es el caso habitual de los complementos, pero helfen es uno de los verbos que llevan dativo: dem Mann."
+          }
+        },
+        {
+          "text": {
+            "en": "dem: helfen takes the dative, and Mann is masculine",
+            "es": "dem: helfen lleva dativo, y Mann es masculino"
+          }
+        },
+        {
+          "text": {
+            "en": "der, because the man is the subject",
+            "es": "der, porque el señor es el sujeto"
+          },
+          "wrong": {
+            "en": "The subject of the sentence is Ich. The man is not the doer but the person who gets the help, so he is in the dative.",
+            "es": "El sujeto de la oración es Ich. El señor no es quien hace la acción, sino quien recibe la ayuda, así que va en dativo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "verben-mit-dativ-c04",
+      "sentence": "Paul hört ___ Kindern zu.",
+      "options": [
+        "den",
+        "die",
+        "dem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "zuhören takes the dative, and the dative plural article is den: den Kindern.",
+        "es": "zuhören lleva dativo, y el artículo del dativo plural es den: den Kindern."
+      },
+      "wrong": {
+        "die": {
+          "en": "die is the plural of the nominative and the accusative. zuhören needs the dative plural, den.",
+          "es": "die es el plural del nominativo y del acusativo. zuhören necesita el dativo plural, den."
+        },
+        "dem": {
+          "en": "dem is for one masculine or neuter noun. Kindern is plural and takes den.",
+          "es": "dem es para un solo sustantivo masculino o neutro. Kindern es plural y lleva den."
+        }
+      },
+      "examples": [
+        "Wir hören dem Lehrer zu.",
+        "Ich höre der Lehrerin zu."
+      ],
+      "tr": {
+        "en": "Paul listens to the children.",
+        "es": "Paul escucha a los niños."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f04",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "besuchen",
+      "answer": "ihn",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c05",
+      "sentence": "Ich gratuliere ___ zum Geburtstag.",
+      "options": [
+        "dich",
+        "dir",
+        "du"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "gratulieren takes the dative, and the dative of du is dir.",
+        "es": "gratulieren lleva dativo, y el dativo de du es dir."
+      },
+      "wrong": {
+        "dich": {
+          "en": "dich is the accusative. gratulieren is one of the dative verbs, so you need dir.",
+          "es": "dich es el acusativo. gratulieren es uno de los verbos con dativo, así que necesitas dir."
+        },
+        "du": {
+          "en": "du is the subject form. The person you congratulate is an object, in the dative.",
+          "es": "du es la forma del sujeto. La persona a quien felicitas es un complemento, en dativo."
+        }
+      },
+      "examples": [
+        "Wir gratulieren dir.",
+        "Anna gratuliert ihm zum Geburtstag."
+      ],
+      "tr": {
+        "en": "I congratulate you on your birthday.",
+        "es": "Te felicito por tu cumpleaños."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f05",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "gefallen",
+      "answer": "ihm",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c06",
+      "sentence": "Das Kleid gefällt ___.",
+      "options": [
+        "ich",
+        "mich",
+        "mir"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "With gefallen the person who likes the dress is in the dative: mir.",
+        "es": "Con gefallen la persona a quien le gusta el vestido va en dativo: mir."
+      },
+      "wrong": {
+        "ich": {
+          "en": "ich is the subject form, but the subject of this sentence is das Kleid. The person who likes it is in the dative.",
+          "es": "ich es la forma del sujeto, pero el sujeto de esta oración es das Kleid. La persona a quien le gusta va en dativo."
+        },
+        "mich": {
+          "en": "mich is the accusative. gefallen needs the dative, mir.",
+          "es": "mich es el acusativo. gefallen necesita el dativo, mir."
+        }
+      },
+      "examples": [
+        "Das Haus gefällt mir.",
+        "Das Auto gefällt dir."
+      ],
+      "tr": {
+        "en": "I like the dress.",
+        "es": "Me gusta el vestido."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f06",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "fragen",
+      "answer": "ihn",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-w02",
+      "kind": "why",
+      "es": "Ich frage den Lehrer.",
+      "target": "den",
+      "tr": {
+        "en": "I ask the teacher.",
+        "es": "Le pregunto al maestro."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "fragen takes the accusative; only antworten takes the dative",
+            "es": "fragen lleva acusativo; solo antworten lleva dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "dem: all verbs of speaking take the dative",
+            "es": "dem: todos los verbos de comunicación llevan dativo"
+          },
+          "wrong": {
+            "en": "antworten and gratulieren take the dative, but fragen does not. Ich frage den Lehrer is accusative.",
+            "es": "antworten y gratulieren llevan dativo, pero fragen no. Ich frage den Lehrer es acusativo."
+          }
+        },
+        {
+          "text": {
+            "en": "den, because Lehrer is plural",
+            "es": "den, porque Lehrer es plural"
+          },
+          "wrong": {
+            "en": "Lehrer is singular here. den is the masculine accusative, and the plural of Lehrer would be die Lehrer.",
+            "es": "Lehrer es singular aquí. den es el acusativo masculino, y el plural de Lehrer sería die Lehrer."
+          }
+        }
+      ],
+      "correctIndex": 0
+    },
+    {
+      "id": "verben-mit-dativ-c07",
+      "sentence": "Das Kleid ___ mir.",
+      "options": [
+        "mag",
+        "gefällt",
+        "gefalle"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "The dress is the subject (third person singular) and mir is the dative, so the verb is gefällt.",
+        "es": "El vestido es el sujeto (tercera persona del singular) y mir es el dativo, así que el verbo es gefällt."
+      },
+      "wrong": {
+        "mag": {
+          "en": "mögen would need the person as the subject (Ich mag das Kleid). With mir in the dative you need gefallen.",
+          "es": "mögen necesitaría a la persona como sujeto (Ich mag das Kleid). Con mir en dativo necesitas gefallen."
+        },
+        "gefalle": {
+          "en": "gefalle is the ich-form of gefallen. The verb agrees with the subject, das Kleid, so it is gefällt.",
+          "es": "gefalle es la forma de ich de gefallen. El verbo concuerda con el sujeto, das Kleid, así que es gefällt."
+        }
+      },
+      "examples": [
+        "Das Haus gefällt ihm.",
+        "Der Film gefällt uns."
+      ],
+      "tr": {
+        "en": "I like the dress.",
+        "es": "Me gusta el vestido."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f07",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "zuhören",
+      "answer": "ihm",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c08",
+      "sentence": "Paul ist krank. Wir besuchen ihn und helfen ___.",
+      "options": [
+        "ihn",
+        "er",
+        "ihm"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "besuchen takes ihn (accusative), but helfen takes the dative, so the second verb needs ihm.",
+        "es": "besuchen lleva ihn (acusativo), pero helfen lleva dativo, así que el segundo verbo necesita ihm."
+      },
+      "wrong": {
+        "ihn": {
+          "en": "ihn is correct after besuchen, but helfen is a dative verb and needs ihm.",
+          "es": "ihn es correcto después de besuchen, pero helfen es un verbo con dativo y necesita ihm."
+        },
+        "er": {
+          "en": "er is the subject form. Paul is an object here, who gets the help.",
+          "es": "er es la forma del sujeto. Paul es aquí un complemento, quien recibe la ayuda."
+        }
+      },
+      "examples": [
+        "Wir besuchen sie und helfen ihr.",
+        "Ich sehe ihn und antworte ihm."
+      ],
+      "tr": {
+        "en": "Paul is sick. We visit him and help him.",
+        "es": "Paul está enfermo. Lo visitamos y le ayudamos."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f08",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "anrufen",
+      "answer": "ihn",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c09",
+      "sentence": "Anna fragt den Lehrer. Er antwortet ___.",
+      "options": [
+        "sie",
+        "ihr",
+        "ihn"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "antworten takes the dative, and the dative of sie (she, Anna) is ihr.",
+        "es": "antworten lleva dativo, y el dativo de sie (ella, Anna) es ihr."
+      },
+      "wrong": {
+        "sie": {
+          "en": "sie is the accusative of she. antworten is a dative verb and needs ihr.",
+          "es": "sie es el acusativo de ella. antworten es un verbo con dativo y necesita ihr."
+        },
+        "ihn": {
+          "en": "ihn is the masculine accusative. Anna is a woman, and antworten needs the dative anyway: ihr.",
+          "es": "ihn es el acusativo masculino. Anna es una mujer, y antworten necesita dativo de todos modos: ihr."
+        }
+      },
+      "examples": [
+        "Paul fragt Anna. Sie antwortet ihm.",
+        "Ich frage ihn, und er antwortet mir."
+      ],
+      "tr": {
+        "en": "Anna asks the teacher. He answers her.",
+        "es": "Anna le pregunta al maestro. Él le responde a ella."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f09",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "fehlen",
+      "answer": "ihm",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-w03",
+      "kind": "why",
+      "es": "Das Kleid gefällt mir.",
+      "target": "mir",
+      "tr": {
+        "en": "I like the dress.",
+        "es": "Me gusta el vestido."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "I am the subject, so ich: Ich gefalle das Kleid",
+            "es": "Yo soy el sujeto, así que ich: Ich gefalle das Kleid"
+          },
+          "wrong": {
+            "en": "Ich gefalle would mean that I please somebody. Das Kleid is the subject here, and I am the one who is pleased.",
+            "es": "Ich gefalle significaría que yo le gusto a alguien. Das Kleid es aquí el sujeto, y yo soy a quien le gusta."
+          }
+        },
+        {
+          "text": {
+            "en": "The thing is the subject; the person who likes it is in the dative",
+            "es": "La cosa es el sujeto; la persona a quien le gusta va en dativo"
+          }
+        },
+        {
+          "text": {
+            "en": "mich: the dress is the object",
+            "es": "mich: el vestido es el complemento"
+          },
+          "wrong": {
+            "en": "The dress is the subject (nominative), and the verb agrees with it: gefällt. The person who likes it is in the dative.",
+            "es": "El vestido es el sujeto (nominativo), y el verbo concuerda con él: gefällt. La persona a quien le gusta va en dativo."
+          }
+        }
+      ],
+      "correctIndex": 1
+    },
+    {
+      "id": "verben-mit-dativ-c10",
+      "sentence": "Ich frage ___ Lehrer.",
+      "options": [
+        "den",
+        "dem",
+        "der"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "fragen takes the accusative, not the dative: den Lehrer. Only antworten takes the dative.",
+        "es": "fragen lleva acusativo, no dativo: den Lehrer. Solo antworten lleva dativo."
+      },
+      "wrong": {
+        "dem": {
+          "en": "dem would be right after antworten, but fragen is a verb of the accusative: Ich frage den Lehrer.",
+          "es": "dem sería correcto después de antworten, pero fragen es un verbo de acusativo: Ich frage den Lehrer."
+        },
+        "der": {
+          "en": "der is the feminine dative or the masculine nominative. Lehrer is the object of fragen, so den.",
+          "es": "der es el dativo femenino o el nominativo masculino. Lehrer es el complemento de fragen, así que den."
+        }
+      },
+      "examples": [
+        "Ich frage den Arzt.",
+        "Anna fragt den Mann."
+      ],
+      "tr": {
+        "en": "I ask the teacher.",
+        "es": "Le pregunto al maestro."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f10",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "brauchen",
+      "answer": "ihn",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c11",
+      "sentence": "Ich rufe ___ Mutter an.",
+      "options": [
+        "meine",
+        "meiner",
+        "meinem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "anrufen takes the accusative, and the feminine accusative of mein is meine: meine Mutter.",
+        "es": "anrufen lleva acusativo, y el acusativo femenino de mein es meine: meine Mutter."
+      },
+      "wrong": {
+        "meiner": {
+          "en": "meiner is the feminine dative. anrufen is not a dative verb (unlike antworten), so you need meine.",
+          "es": "meiner es el dativo femenino. anrufen no es un verbo con dativo (a diferencia de antworten), así que necesitas meine."
+        },
+        "meinem": {
+          "en": "meinem is the dative of masculine and neuter nouns. Mutter is feminine, and the object of anrufen is accusative.",
+          "es": "meinem es el dativo de los sustantivos masculinos y neutros. Mutter es femenino, y el complemento de anrufen va en acusativo."
+        }
+      },
+      "examples": [
+        "Ich rufe meinen Vater an.",
+        "Anna ruft ihre Freundin an."
+      ],
+      "tr": {
+        "en": "I call my mother.",
+        "es": "Le llamo a mi mamá."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f11",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "gratulieren",
+      "answer": "ihm",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c12",
+      "sentence": "Die Kinder fehlen ___ Mutter.",
+      "options": [
+        "die",
+        "den",
+        "der"
+      ],
+      "correct": 2,
+      "why": {
+        "en": "fehlen takes the dative: the mother, who misses the children, is der Mutter. The children are the subject.",
+        "es": "fehlen lleva dativo: la mamá, que extraña a los niños, es der Mutter. Los niños son el sujeto."
+      },
+      "wrong": {
+        "die": {
+          "en": "die Mutter would be the subject or the object. The mother is the one who misses someone, so the dative der is needed.",
+          "es": "die Mutter sería el sujeto o el complemento. La mamá es quien extraña a alguien, así que se necesita el dativo der."
+        },
+        "den": {
+          "en": "den is the masculine accusative or the dative plural. Mutter is feminine singular, so the dative is der.",
+          "es": "den es el acusativo masculino o el dativo plural. Mutter es femenino singular, así que el dativo es der."
+        }
+      },
+      "examples": [
+        "Du fehlst der Mutter.",
+        "Die Freunde fehlen dem Kind."
+      ],
+      "tr": {
+        "en": "The mother misses the children.",
+        "es": "La mamá extraña a los niños."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-f12",
+      "kind": "form",
+      "verb": "Pronomen (er)",
+      "person": "kennen",
+      "answer": "ihn",
+      "table": "dativ-verben"
+    },
+    {
+      "id": "verben-mit-dativ-c13",
+      "sentence": "Mir ___ schlecht.",
+      "options": [
+        "bin",
+        "ist",
+        "hat"
+      ],
+      "correct": 1,
+      "why": {
+        "en": "A bodily feeling is expressed with sein and a dative pronoun: Mir ist schlecht. The verb is ist.",
+        "es": "Una sensación del cuerpo se expresa con sein y un pronombre en dativo: Mir ist schlecht. El verbo es ist."
+      },
+      "wrong": {
+        "bin": {
+          "en": "bin goes with ich. The sentence starts with the dative mir, and the verb is the impersonal ist.",
+          "es": "bin va con ich. La oración empieza con el dativo mir, y el verbo es el impersonal ist."
+        },
+        "hat": {
+          "en": "hat belongs to haben, which is used for needs like Hunger. For feeling sick, German says Mir ist schlecht.",
+          "es": "hat es de haben, que se usa para necesidades como Hunger. Para sentirse mal, el alemán dice Mir ist schlecht."
+        }
+      },
+      "examples": [
+        "Mir ist kalt.",
+        "Mir ist warm."
+      ],
+      "tr": {
+        "en": "I feel sick.",
+        "es": "Me siento mal."
+      }
+    },
+    {
+      "id": "verben-mit-dativ-c14",
+      "sentence": "Wie geht es ___ Eltern?",
+      "options": [
+        "deinen",
+        "deine",
+        "deinem"
+      ],
+      "correct": 0,
+      "why": {
+        "en": "The question Wie geht es ...? takes the dative, and the dative plural of dein is deinen: deinen Eltern.",
+        "es": "La pregunta Wie geht es ...? lleva dativo, y el dativo plural de dein es deinen: deinen Eltern."
+      },
+      "wrong": {
+        "deine": {
+          "en": "deine is the nominative or accusative plural. The people asked about are in the dative.",
+          "es": "deine es el nominativo o el acusativo plural. Las personas por las que se pregunta van en dativo."
+        },
+        "deinem": {
+          "en": "deinem is the dative of one masculine or neuter noun. Eltern is plural and takes deinen.",
+          "es": "deinem es el dativo de un solo sustantivo masculino o neutro. Eltern es plural y lleva deinen."
+        }
+      },
+      "examples": [
+        "Wie geht es deiner Mutter?",
+        "Wie geht es deinem Bruder?"
+      ],
+      "tr": {
+        "en": "How are your parents?",
+        "es": "¿Cómo están tus papás?"
+      }
+    },
+    {
+      "id": "verben-mit-dativ-w04",
+      "kind": "why",
+      "es": "Wir hören den Kindern zu.",
+      "target": "den",
+      "tr": {
+        "en": "We listen to the children.",
+        "es": "Escuchamos a los niños."
+      },
+      "options": [
+        {
+          "text": {
+            "en": "zuhören takes the dative, so the plural article is den",
+            "es": "zuhören lleva dativo, así que el artículo plural es den"
+          }
+        },
+        {
+          "text": {
+            "en": "den is the accusative plural, as with sehen",
+            "es": "den es el acusativo plural, como con sehen"
+          },
+          "wrong": {
+            "en": "The accusative plural is die (die Kinder). den is the dative plural, which zuhören requires, and the noun gets -n: Kindern.",
+            "es": "El acusativo plural es die (die Kinder). den es el dativo plural, que zuhören exige, y el sustantivo recibe -n: Kindern."
+          }
+        },
+        {
+          "text": {
+            "en": "den is simply the plural article, always",
+            "es": "den es simplemente el artículo plural, siempre"
+          },
+          "wrong": {
+            "en": "The plural article is die in the nominative and accusative. den appears only in the dative plural.",
+            "es": "El artículo plural es die en nominativo y acusativo. den aparece solo en el dativo plural."
+          }
+        }
+      ],
+      "correctIndex": 0
+    }
+  ]
+}
