@@ -437,7 +437,7 @@
     },
     {
       "id": "plusquamperfekt-c04",
-      "sentence": "Er war müde, weil er nichts gegessen ___.",
+      "sentence": "Er war müde, weil er am Tag davor nichts gegessen ___.",
       "options": [
         "hatte",
         "hat",
@@ -463,8 +463,8 @@
         "Ich war satt, weil ich viel gegessen hatte."
       ],
       "tr": {
-        "en": "He was tired because he had not eaten anything.",
-        "es": "Estaba cansado porque no había comido nada."
+        "en": "He was tired because he had not eaten anything the day before.",
+        "es": "Estaba cansado porque el día anterior no había comido nada."
       }
     },
     {
@@ -636,7 +636,7 @@
     },
     {
       "id": "plusquamperfekt-c08",
-      "sentence": "Bevor ich ins Bett ging, ___ ich die Tür geschlossen.",
+      "sentence": "Als ich ins Bett ging, ___ ich die Tür schon geschlossen.",
       "options": [
         "habe",
         "hatte",
@@ -644,8 +644,8 @@
       ],
       "correct": 1,
       "why": {
-        "en": "With bevor the main clause is the earlier action: closing the door came first, so hatte geschlossen.",
-        "es": "Con bevor la oración principal es la acción anterior: cerrar la puerta ocurrió primero, así que hatte geschlossen."
+        "en": "With als and the word schon, closing the door came before going to bed, so hatte geschlossen.",
+        "es": "Con als y la palabra schon, cerrar la puerta ocurrió antes de acostarme, así que hatte geschlossen."
       },
       "wrong": {
         "habe": {
@@ -662,8 +662,8 @@
         "Bevor wir gingen, hatten wir gegessen."
       ],
       "tr": {
-        "en": "Before I went to bed, I had closed the door.",
-        "es": "Antes de acostarme, había cerrado la puerta."
+        "en": "When I went to bed, I had already closed the door.",
+        "es": "Cuando me acosté, ya había cerrado la puerta."
       }
     },
     {
@@ -676,7 +676,7 @@
     },
     {
       "id": "plusquamperfekt-c09",
-      "sentence": "Er erzählte, dass er in Köln gewohnt ___.",
+      "sentence": "Er erzählte, dass er vor dem Umzug lange in Köln gewohnt ___.",
       "options": [
         "hat",
         "wohnt",
@@ -702,8 +702,8 @@
         "Er wusste, dass wir schon gegessen hatten."
       ],
       "tr": {
-        "en": "He told us that he had lived in Cologne.",
-        "es": "Contó que había vivido en Colonia."
+        "en": "He said that before the move he had lived in Cologne for a long time.",
+        "es": "Contó que antes de la mudanza había vivido mucho tiempo en Colonia."
       }
     },
     {
@@ -755,7 +755,7 @@
     },
     {
       "id": "plusquamperfekt-c10",
-      "sentence": "Gestern kam Paul nach Hause. Er ___ lange gearbeitet.",
+      "sentence": "Gestern kam Paul nach Hause. Er ___ vorher lange gearbeitet.",
       "options": [
         "hatte",
         "hat",
@@ -781,8 +781,8 @@
         "Heute kam Anna. Sie hatte gut geschlafen."
       ],
       "tr": {
-        "en": "Yesterday Paul came home. He had worked for a long time.",
-        "es": "Ayer Paul llegó a casa. Había trabajado mucho tiempo."
+        "en": "Yesterday Paul came home. Before that he had worked for a long time.",
+        "es": "Ayer Paul llegó a casa. Antes había trabajado mucho tiempo."
       }
     },
     {
