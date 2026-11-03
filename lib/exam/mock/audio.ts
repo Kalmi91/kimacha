@@ -10,7 +10,13 @@ export const SPEAKER_PITCH = { m: 0.85, f: 1.15, n: 1.0 } as const;
 
 /** The lines as speech segments in the target language, each with its speaker's pitch and sex. */
 export function audioSegments(lines: MockAudioLine[], locale: string): SpeechRunSegment[] {
-  return lines.map((line) => ({ text: line.text, locale, pitch: SPEAKER_PITCH[line.speaker ?? 'n'], gender: line.speaker ?? 'n' }));
+  return lines.map((line) => ({
+    text: line.text,
+    locale,
+    pitch: SPEAKER_PITCH[line.speaker ?? 'n'],
+    gender: line.speaker ?? 'n',
+    ...(line.speaker === 'm' || line.speaker === 'f' ? { strict: true } : {}), // a speaker keeps its sex
+  }));
 }
 
 /** The transcript for a device without a voice: the lines, led by A / B when exactly two speakers talk. */

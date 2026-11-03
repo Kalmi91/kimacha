@@ -28,7 +28,7 @@ import * as models from '../neuralModels';
 import * as engine from '../neuralTts';
 import * as pack from '../packAudio';
 import { DEFAULT_SPEAKERS, voiceFor, type NeuralLang } from '../neuralVoices';
-import { setSpeakerChoice, setSpeakerChoices } from '../voicePreference';
+import { setFastFallback, setSpeakerChoice, setSpeakerChoices } from '../voicePreference';
 
 const packFile = models.neuralPackFile as jest.Mock;
 const sentenceFile = models.neuralSentenceFile as jest.Mock;
@@ -47,12 +47,16 @@ beforeEach(() => {
   jest.clearAllMocks();
   resetVoiceCache();
   setSpeakerChoices({ ...DEFAULT_SPEAKERS });
+  setFastFallback(false); // the tests above are the pure picked-person behavior; the fast fallback has its own block
   packFile.mockReturnValue(null);
   sentenceFile.mockReturnValue(null);
   engineFor.mockReturnValue('piper');
   speakNeural.mockResolvedValue({ firstChunkMs: 1, generatedMs: 2, audioMs: 3, peak: 0.5 });
 });
-afterAll(() => setSpeakerChoices({ ...DEFAULT_SPEAKERS }));
+afterAll(() => {
+  setSpeakerChoices({ ...DEFAULT_SPEAKERS });
+  setFastFallback(true);
+});
 
 describe('Automatic: today\'s behavior', () => {
   it('each text keeps its own hash voice and the packs are asked without a gender', () => {
@@ -132,6 +136,137 @@ describe('a chosen person speaks everything of the language that has no explicit
     expect(preferredGenderFor('es-MX')).toBe('m');
     expect(speakerGenderFor('hello', 'fr-FR')).toBeUndefined();
     expect(preferredGenderFor('fr-FR')).toBeUndefined();
+  });
+});
+
+// Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03: with the "Fast fallback" switch on, a picked
+// person with no recording of the text gets the existing recording of the other person instead of the engine.
+describe('fast fallback: the picked person has no recording', () => {
+  const OTHER = '/files/tts/sentences/es/other.mp3';
+  beforeEach(() => setFastFallback(true));
+
+  it('the word pack own-voice file plays at once, not the engine', () => {
+    setSpeakerChoice('es', 'f');
+    packFile.mockReturnValue('/files/tts/pack/es/x.mp3'); // the word's recording is the man
+    speak(esText('m'), 'es-MX');
+    expect(playPack).toHaveBeenCalledTimes(1);
+    expect(playPack.mock.calls[0][0]).toBe('/files/tts/pack/es/x.mp3');
+    expect(speakNeural).not.toHaveBeenCalled();
+  });
+
+  it('else the sentence pack other speaker plays, asked after the picked one', () => {
+    setSpeakerChoice('es', 'f');
+    const text = esText('f');
+    sentenceFile.mockImplementation((_lang: string, _text: string, g?: string) => (g === 'm' ? OTHER : null));
+    speak(text, 'es-MX');
+    expect(sentenceFile.mock.calls.map(call => call[2])).toEqual(['f', 'm']);
+    expect(playPack.mock.calls[0][0]).toBe(OTHER);
+    expect(speakNeural).not.toHaveBeenCalled();
+  });
+
+  it('else the sentence pack own-hash recording (asked without a gender) plays', () => {
+    setSpeakerChoice('es', 'm');
+    sentenceFile.mockImplementation((_lang: string, _text: string, g?: string) => (g === undefined ? OTHER : null));
+    speak('Tengo un perro negro.', 'es-MX');
+    expect(sentenceFile.mock.calls.map(call => call[2])).toEqual(['m', 'f', undefined]);
+    expect(playPack.mock.calls[0][0]).toBe(OTHER);
+  });
+
+  it('no recording of either person: the engine speaks, as the picked person', () => {
+    setSpeakerChoice('es', 'm');
+    speak(esText('f'), 'es-MX');
+    expect(playPack).not.toHaveBeenCalled();
+    expect(speakNeural.mock.calls[0][2].gender).toBe('m');
+  });
+
+  it('the own recording of the picked person wins: the other one is not even asked for', () => {
+    setSpeakerChoice('es', 'f');
+    sentenceFile.mockImplementation((_lang: string, _text: string, g?: string) => (g === 'f' ? '/files/tts/sentences/es/picked.mp3' : OTHER));
+    speak('Tengo un perro negro.', 'es-MX');
+    expect(playPack.mock.calls[0][0]).toBe('/files/tts/sentences/es/picked.mp3');
+    expect(sentenceFile).toHaveBeenCalledTimes(1);
+  });
+
+  it('a file that fails to play hands the text to the engine, still as the picked person', () => {
+    setSpeakerChoice('es', 'f');
+    packFile.mockReturnValue('/files/tts/pack/es/x.mp3');
+    speak(esText('m'), 'es-MX');
+    expect(speakNeural).not.toHaveBeenCalled();
+    playPack.mock.calls[0][1].onFail();
+    expect(speakNeural.mock.calls[0][2].gender).toBe('f');
+  });
+
+  it('switch off: the engine speaks as before, the other recording is not used', () => {
+    setFastFallback(false);
+    setSpeakerChoice('es', 'f');
+    packFile.mockReturnValue('/files/tts/pack/es/x.mp3');
+    sentenceFile.mockReturnValue(null);
+    speak(esText('m'), 'es-MX');
+    expect(playPack).not.toHaveBeenCalled();
+    expect(speakNeural.mock.calls[0][2].gender).toBe('f');
+  });
+
+  it('an explicit exam sex never takes the other sex: the engine speaks, only that sex is asked for', () => {
+    setSpeakerChoice('es', 'm');
+    packFile.mockReturnValue('/files/tts/pack/es/x.mp3');
+    sentenceFile.mockImplementation((_lang: string, _text: string, g?: string) => (g === 'f' ? null : OTHER));
+    speak(esText('m'), 'es-MX', { gender: 'f' }); // the word pack's file is the man, the exam line is a woman
+    expect(playPack).not.toHaveBeenCalled();
+    expect(speakNeural.mock.calls[0][2].gender).toBe('f');
+    expect(sentenceFile.mock.calls.map(call => call[2])).toEqual(['f']);
+  });
+
+  it('Automatic is untouched: no picked person, no fallback', () => {
+    sentenceFile.mockImplementation((_lang: string, _text: string, g?: string) => (g === undefined ? null : OTHER));
+    speak(esText('f'), 'es-MX');
+    expect(playPack).not.toHaveBeenCalled();
+    expect(sentenceFile.mock.calls.map(call => call[2])).toEqual([undefined]);
+  });
+
+  // withSharedSpeaker / wordSpeakerGender hand the picked person in as an explicit gender: the fallback still applies.
+  const otherSex = (text: string, g?: string) => (g === 'f' ? `/files/tts/sentences/es/${text.length}-f.mp3` : null);
+
+  it('speakSequence [word, sentence]: both fall back to the other recording when the picked person has none', () => {
+    setSpeakerChoice('es', 'm');
+    sentenceFile.mockImplementation((_lang: string, text: string, g?: string) => otherSex(text, g));
+    const word = esText('f');
+    const sentence = 'Tengo un perro negro.';
+    speakSequence([{ text: word, locale: 'es-MX' }, { text: sentence, locale: 'es-MX' }]);
+    expect(playPack).toHaveBeenCalledTimes(1);
+    expect(playPack.mock.calls[0][0]).toBe(`/files/tts/sentences/es/${word.length}-f.mp3`);
+    playPack.mock.calls[0][1].onDone();
+    expect(playPack).toHaveBeenCalledTimes(2);
+    expect(playPack.mock.calls[1][0]).toBe(`/files/tts/sentences/es/${sentence.length}-f.mp3`);
+    expect(speakNeural).not.toHaveBeenCalled();
+  });
+
+  it('speakSequence with strict lines (the exam\'s dialogue) goes to the engine, as the explicit sex', () => {
+    setSpeakerChoice('es', 'm');
+    sentenceFile.mockImplementation((_lang: string, text: string, g?: string) => otherSex(text, g));
+    speakSequence([
+      { text: 'Tengo un perro negro.', locale: 'es-MX', gender: 'm', strict: true },
+      { text: 'Buenos días.', locale: 'es-MX', gender: 'm', strict: true },
+    ]);
+    expect(playPack).not.toHaveBeenCalled();
+    expect(speakNeural.mock.calls[0][2].gender).toBe('m');
+    speakNeural.mock.calls[0][3].onDone();
+    expect(speakNeural).toHaveBeenCalledTimes(2);
+    expect(playPack).not.toHaveBeenCalled();
+    expect(sentenceFile.mock.calls.map(call => call[2])).toEqual(['m', 'm']);
+  });
+
+  it('speak() with the picked person as the gender (speakerGenderFor / wordSpeakerGender) falls back; strict does not', () => {
+    setSpeakerChoice('es', 'f');
+    const text = esText('m');
+    const gender = speakerGenderFor(text, 'es-MX');
+    expect(gender).toBe('f');
+    packFile.mockReturnValue('/files/tts/pack/es/x.mp3'); // the word's recording is the man
+    speak(text, 'es-MX', { gender });
+    expect(playPack).toHaveBeenCalledTimes(1);
+    expect(playPack.mock.calls[0][0]).toBe('/files/tts/pack/es/x.mp3');
+    speak(text, 'es-MX', { gender, strict: true });
+    expect(playPack).toHaveBeenCalledTimes(1);
+    expect(speakNeural.mock.calls[0][2].gender).toBe('f');
   });
 });
 

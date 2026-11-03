@@ -113,7 +113,7 @@ export default function MockTaskCard({ task, answer, onAnswer, target, canSpeak,
       audioLines.map((line, i) => ({
         text: line,
         locale: speechLang(target),
-        ...(isDialogue ? { gender: i % 2 === 1 ? ('m' as const) : ('f' as const) } : {}),
+        ...(isDialogue ? { gender: i % 2 === 1 ? ('m' as const) : ('f' as const), strict: true } : {}),
         ...(isDialogue && i % 2 === 1 ? { pitch: 0.8 } : {}),
       })),
       release,

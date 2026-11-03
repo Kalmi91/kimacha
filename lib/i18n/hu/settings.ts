@@ -61,6 +61,9 @@ const hu: typeof en = {
       auto: 'Automatikus (leggyorsabb)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'nő' : 'férfi'}`,
       hint: 'A másik személy szavainak felvételei kicsit lassabban indulnak.',
+      // Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03.
+      fastFallback: 'Gyors tartalék',
+      fastFallbackHint: 'Ha a kiválasztott személytől nincs felvétel, a másik személy meglévő felvétele szól azonnal a lassabb, generált hang helyett.',
     },
     dailyNewLimit: 'Napi új szavak',
     dailyNewLimitWords: (n: string) => `${n} szó / nap`,

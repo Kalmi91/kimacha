@@ -61,6 +61,9 @@ const es: typeof en = {
       auto: 'Automático (el más rápido)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'mujer' : 'hombre'}`,
       hint: 'Las grabaciones de las palabras de la otra persona empiezan un poco más lento.',
+      // Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03.
+      fastFallback: 'Respaldo rápido',
+      fastFallbackHint: 'Cuando la persona elegida no tiene grabación, se reproduce al instante la grabación existente de la otra persona en lugar de una voz generada más lenta.',
     },
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,

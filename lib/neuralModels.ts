@@ -7,7 +7,7 @@
 //   <files>/tts/<model dir>.ok         marker, written after the extraction finished: no marker = not installed
 //   <files>/tts/<PACK_DIR>/index.json  the word pack, its mp3 files below (<PACK_DIR>.ok is its marker)
 //   <files>/tts/<SENTENCE_PACK_DIR>/   the sentence pack, same layout (<SENTENCE_PACK_DIR>.ok is its marker)
-//   <files>/tts/settings.json          { enabled, engines, speakers }
+//   <files>/tts/settings.json          { enabled, engines, speakers, fastFallback }
 //   <files>/tts/dl/                    the archives while they download
 //
 // The downloads use react-native-fs, the extraction the sherpa package's own (react-native-sherpa-onnx/
@@ -45,7 +45,7 @@ import {
 } from './neuralVoices';
 import { isNeuralReady, loadNeuralVoice, releaseNeural, releaseNeuralPair, stopNeural } from './neuralTts';
 import { stopPack } from './packAudio';
-import { getSpeakerChoices, setSpeakerChoice, setSpeakerChoices } from './voicePreference';
+import { getFastFallback, getSpeakerChoices, setFastFallback, setSpeakerChoice, setSpeakerChoices } from './voicePreference';
 
 export interface NeuralDownloadState {
   running: boolean;
@@ -123,12 +123,17 @@ async function readInstalled(fs: Fs): Promise<Record<string, boolean>> {
   return installed;
 }
 
-async function readSettings(fs: Fs): Promise<Pick<NeuralState, 'enabled' | 'engines'> & { speakers: SpeakerChoices }> {
+async function readSettings(fs: Fs): Promise<Pick<NeuralState, 'enabled' | 'engines'> & { speakers: SpeakerChoices; fastFallback: boolean }> {
   try {
     const raw = JSON.parse(await fs.readFile(`${ttsDir(fs)}/settings.json`, 'utf8'));
-    return { enabled: raw?.enabled !== false, engines: normalizeEngines(raw?.engines), speakers: normalizeSpeakers(raw?.speakers) };
+    return {
+      enabled: raw?.enabled !== false,
+      engines: normalizeEngines(raw?.engines),
+      speakers: normalizeSpeakers(raw?.speakers),
+      fastFallback: raw?.fastFallback !== false,
+    };
   } catch {
-    return { enabled: true, engines: { ...DEFAULT_ENGINES }, speakers: { ...DEFAULT_SPEAKERS } };
+    return { enabled: true, engines: { ...DEFAULT_ENGINES }, speakers: { ...DEFAULT_SPEAKERS }, fastFallback: true };
   }
 }
 
@@ -136,7 +141,11 @@ async function writeSettings(): Promise<void> {
   try {
     const fs = getFs();
     await fs.mkdir(ttsDir(fs));
-    await fs.writeFile(`${ttsDir(fs)}/settings.json`, JSON.stringify({ enabled: state.enabled, engines: state.engines, speakers: getSpeakerChoices() }), 'utf8');
+    await fs.writeFile(
+      `${ttsDir(fs)}/settings.json`,
+      JSON.stringify({ enabled: state.enabled, engines: state.engines, speakers: getSpeakerChoices(), fastFallback: getFastFallback() }),
+      'utf8',
+    );
   } catch (e) {
     console.log(`[neural] settings not saved: ${String(e)}`);
   }
@@ -210,8 +219,9 @@ export async function startNeural(): Promise<void> {
   started = true;
   try {
     const fs = getFs();
-    const { speakers, ...settings } = await readSettings(fs);
+    const { speakers, fastFallback, ...settings } = await readSettings(fs);
     setSpeakerChoices(speakers);
+    setFastFallback(fastFallback);
     update({ ...settings, installed: await readInstalled(fs), ready: true });
     await loadPackIndex(fs);
   } catch (e) {
@@ -253,6 +263,13 @@ export function neuralSentenceFile(lang: NeuralLang, text: string, gender?: Voic
 export function setNeuralSpeaker(lang: NeuralLang, choice: SpeakerChoice): void {
   if (getSpeakerChoices()[lang] === choice) return;
   setSpeakerChoice(lang, choice);
+  void writeSettings();
+}
+
+// Settings -> Voice, "Fast fallback" (temporary until EJSZAKA E101, Kálmán 2026-11-03).
+export function setNeuralFastFallback(on: boolean): void {
+  if (getFastFallback() === on) return;
+  setFastFallback(on);
   void writeSettings();
 }
 

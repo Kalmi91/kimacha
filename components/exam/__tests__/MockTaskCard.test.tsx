@@ -314,9 +314,9 @@ describe('older listening kinds: the lines go through speakSequence', () => {
     expect(speakSequence).toHaveBeenCalledTimes(1);
     const [segments, onEnd, onStopped] = (speakSequence as jest.Mock).mock.calls[0];
     expect(segments).toEqual([
-      { text: 'Hola.', locale: 'es-MX', gender: 'f' },
-      { text: 'Buenos días.', locale: 'es-MX', gender: 'm', pitch: 0.8 },
-      { text: '¿Cómo estás?', locale: 'es-MX', gender: 'f' },
+      { text: 'Hola.', locale: 'es-MX', gender: 'f', strict: true },
+      { text: 'Buenos días.', locale: 'es-MX', gender: 'm', strict: true, pitch: 0.8 },
+      { text: '¿Cómo estás?', locale: 'es-MX', gender: 'f', strict: true },
     ]);
     act(() => onEnd());
     fireEvent.press(view.getByTestId('mock-play'));
