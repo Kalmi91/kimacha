@@ -230,3 +230,96 @@ export function toAdminStats(rows: AdminUserRow[], today: string): AdminUserStat
     .sort((a, b) => (a.at < b.at ? 1 : a.at > b.at ? -1 : 0))
     .map((x) => x.stat);
 }
+
+// The weekly XP leaderboard (PLAN-rangsor.md, "API-szerződés"): the table `board` holds one row per player, `daily_xp` is a JSON
+// array of [date, tenths] pairs (tenths of XP, the unit of dailyXp in the app's MemoryStore).
+export const BOARD_MAX_TENTHS = 20_000; // one pushed day is clamped to this (2000 XP)
+export const BOARD_WINDOW_DAYS = 14; // pushed days reach back this many days from today (today included), and one day ahead
+export const BOARD_MAX_DAYS = 20; // entries of a PUT /api/board/xp body that are read, the rest is ignored
+export const BOARD_MAX_ROWS = 50; // rows of the GET /api/board list
+export const BOARD_JOINS_PER_DAY = 10; // POST /api/board/join per address and UTC day
+export const BOARD_RETENTION_DAYS = 28; // a board row nobody pushed to for this long is deleted (orphan devices, squatted names)
+
+/** Whether `s` is a real calendar date written YYYY-MM-DD (2026-02-30 is not). */
+function isIsoDay(s: unknown): s is string {
+  if (typeof s !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const ms = Date.parse(s + 'T00:00:00Z');
+  return !Number.isNaN(ms) && new Date(ms).toISOString().slice(0, 10) === s;
+}
+
+/** The POST /api/board/join body's name, or null when it breaks the login name rule (-> 400 bad_input). */
+export function parseBoardName(body: unknown): string | null {
+  const name = asRecord(body)?.name;
+  return typeof name === 'string' && isValidName(name) ? name : null;
+}
+
+/**
+ * The PUT /api/board/xp body as the days to store: `days` is a list of [date, tenths]; an entry whose date is not YYYY-MM-DD,
+ * is outside [utcToday - (BOARD_WINDOW_DAYS - 1), utcToday + 1] or whose tenths is not an integer is dropped, tenths is clamped
+ * to 0..BOARD_MAX_TENTHS, of a repeated date the last one counts, only the first BOARD_MAX_DAYS entries are read. Sorted by date.
+ * Null when `days` is not an array (-> 400 bad_input). Never throws.
+ */
+export function parseBoardDays(body: unknown, utcToday: string): [string, number][] | null {
+  const days = asRecord(body)?.days;
+  if (!Array.isArray(days)) return null;
+  const from = shiftDay(utcToday, 1 - BOARD_WINDOW_DAYS);
+  const to = shiftDay(utcToday, 1);
+  const byDay = new Map<string, number>();
+  for (const e of days.slice(0, BOARD_MAX_DAYS)) {
+    if (!Array.isArray(e) || !isIsoDay(e[0]) || e[0] < from || e[0] > to || !Number.isInteger(e[1])) continue;
+    byDay.set(e[0], Math.min(Math.max(e[1], 0), BOARD_MAX_TENTHS));
+  }
+  return [...byDay].sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0));
+}
+
+/** The day a GET /api/board counts as today: the client's `?today=` when it is a real date at most 1 day from `utcToday` (its time zone), else `utcToday`. */
+export function boardToday(param: string | null, utcToday: string): string {
+  return isIsoDay(param) && param >= shiftDay(utcToday, -1) && param <= shiftDay(utcToday, 1) ? param : utcToday;
+}
+
+/** The Monday (YYYY-MM-DD) of the week `today` is in; weeks run Monday to Sunday. '' when `today` is not a date. */
+export function weekStartOf(today: string): string {
+  if (!isIsoDay(today)) return '';
+  const sinceMonday = (new Date(today + 'T00:00:00Z').getUTCDay() + 6) % 7;
+  return shiftDay(today, -sinceMonday);
+}
+
+/** Whole seconds from `now` (epoch ms) to the next 00:00 UTC, 1..86400 (the end of the join limit's day). */
+export function secondsToNextUtcDay(now: number): number {
+  return Math.ceil((86_400_000 - (now % 86_400_000)) / 1000);
+}
+
+/** One player as the board table has it; `dailyXp` is the stored JSON text. */
+export type BoardEntry = { owner: string; name: string; dailyXp: string };
+export type BoardRow = { rank: number; name: string; xp: number; me: boolean };
+export type BoardRanking = { rows: BoardRow[]; me: { rank: number; xp: number; name: string } | null };
+
+/** The XP of a stored `daily_xp` text inside the week that starts on `weekStart`: the tenths of its 7 days summed, / 10, rounded. 0 for whatever cannot be read. */
+function weekXp(dailyXp: string, weekStart: string): number {
+  const end = shiftDay(weekStart, 6);
+  let days: unknown;
+  try {
+    days = JSON.parse(dailyXp);
+  } catch {
+    return 0;
+  }
+  if (!Array.isArray(days)) return 0;
+  let tenths = 0;
+  for (const e of days) if (Array.isArray(e) && typeof e[0] === 'string' && typeof e[1] === 'number' && Number.isFinite(e[1]) && e[0] >= weekStart && e[0] <= end) tenths += e[1];
+  return Math.round(tenths / 10);
+}
+
+/**
+ * The board of the week starting on `weekStart`: XP descending, then name (case and accents ignored); players with 0 XP are left
+ * out except the caller (`callerOwner`), who then stands last. Rank = 1-based position. `rows` are the first BOARD_MAX_ROWS,
+ * `me` is the caller wherever they stand (null when no entry has that owner). Never throws.
+ */
+export function rankBoard(entries: BoardEntry[], weekStart: string, callerOwner: string): BoardRanking {
+  const ranked = entries
+    .map((e) => ({ owner: e.owner, name: e.name, xp: weekXp(e.dailyXp, weekStart) }))
+    .filter((e) => e.xp > 0 || e.owner === callerOwner)
+    .sort((a, b) => b.xp - a.xp || a.name.localeCompare(b.name, undefined, { sensitivity: 'base' }) || (a.owner < b.owner ? -1 : a.owner > b.owner ? 1 : 0));
+  const rows = ranked.slice(0, BOARD_MAX_ROWS).map((e, i) => ({ rank: i + 1, name: e.name, xp: e.xp, me: e.owner === callerOwner }));
+  const at = ranked.findIndex((e) => e.owner === callerOwner);
+  return { rows, me: at < 0 ? null : { rank: at + 1, xp: ranked[at].xp, name: ranked[at].name } };
+}

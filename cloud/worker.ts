@@ -6,7 +6,7 @@
 import { DurableObject } from 'cloudflare:workers';
 import { nameKey } from '../lib/cloud/validate';
 import { ADMIN_PAGE } from './admin';
-import { adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, clientIp, displayName, lockRemainingSec, parseBaseRev, parseLogin, parsePayload, safeEqual, toAdminStats, toHex } from './logic';
+import { BOARD_JOINS_PER_DAY, BOARD_RETENTION_DAYS, adminAuthorized, afterBadPin, afterBadPinForName, bearerToken, boardToday, clientIp, displayName, lockRemainingSec, parseBaseRev, parseBoardDays, parseBoardName, parseLogin, parsePayload, rankBoard, safeEqual, secondsToNextUtcDay, toAdminStats, toHex, weekStartOf } from './logic';
 import type { AdminUserRow } from './logic';
 
 interface Env {
@@ -26,6 +26,9 @@ type UserRow = {
   rev: number;
   fail_since: number | null;
 };
+
+// Who a board call comes from: an account's web token (`u:` + name_key) or a device token of the app (`d:` + the token's hash).
+type BoardCaller = { owner: string; key: string; name: string; web: boolean };
 
 function json(body: unknown, status = 200): Response {
   return new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
@@ -74,6 +77,15 @@ export class KimachaUsers extends DurableObject<Env> {
     const columns = new Set(sql.exec<{ name: string }>('PRAGMA table_info(users)').toArray().map((c) => c.name));
     if (!columns.has('rev')) sql.exec('ALTER TABLE users ADD COLUMN rev INTEGER NOT NULL DEFAULT 0');
     if (!columns.has('fail_since')) sql.exec('ALTER TABLE users ADD COLUMN fail_since INTEGER');
+    // The weekly XP board (PLAN-rangsor.md). `daily_xp` is a JSON array of [date, tenths]. A device's raw token is never stored, only
+    // its hash inside `owner`. `board_joins` counts the joins of one address per UTC day.
+    sql.exec(
+      `CREATE TABLE IF NOT EXISTS board (
+        owner TEXT PRIMARY KEY, name_key TEXT NOT NULL UNIQUE, display_name TEXT NOT NULL, daily_xp TEXT NOT NULL DEFAULT '[]', updated_at TEXT NOT NULL)`,
+    );
+    sql.exec('CREATE TABLE IF NOT EXISTS board_joins (ip TEXT NOT NULL, day TEXT NOT NULL, count INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (ip, day))');
+    // An account that left the board (DELETE /api/board/me) stays off it: its next automatic push would otherwise put it back.
+    sql.exec('CREATE TABLE IF NOT EXISTS board_optout (name_key TEXT PRIMARY KEY)');
   }
 
   async fetch(req: Request): Promise<Response> {
@@ -86,6 +98,10 @@ export class KimachaUsers extends DurableObject<Env> {
         return this.wrongMethod();
       }
       if (pathname === '/api/logout') return req.method === 'POST' ? this.logout(req) : this.wrongMethod();
+      if (pathname === '/api/board/join') return req.method === 'POST' ? await this.serial(async () => this.boardJoin(await readJson(req), req)) : this.wrongMethod();
+      if (pathname === '/api/board/xp') return req.method === 'PUT' ? await this.putBoardXp(req, await readJson(req)) : this.wrongMethod();
+      if (pathname === '/api/board/me') return req.method === 'DELETE' ? await this.deleteBoardMe(req) : this.wrongMethod();
+      if (pathname === '/api/board') return req.method === 'GET' ? await this.getBoard(req) : this.wrongMethod();
       if (pathname === '/api/admin/stats') return req.method === 'GET' ? this.adminStats(req) : this.wrongMethod();
       return json({ error: 'not_found' }, 404);
     } catch {
@@ -122,6 +138,7 @@ export class KimachaUsers extends DurableObject<Env> {
     const user = sql.exec<UserRow>('SELECT * FROM users WHERE name_key = ?', key).toArray()[0];
 
     if (!user) {
+      if (this.boardOwnerOf(key)?.startsWith('d:')) return json({ error: 'name_taken' }, 409); // a device of the app already plays under this name
       const salt = randomHex(16);
       const pinHash = await sha256Hex(salt + input.pin);
       const display = displayName(input.name);
@@ -194,6 +211,126 @@ export class KimachaUsers extends DurableObject<Env> {
     const token = bearerToken(req.headers.get('Authorization'));
     if (token === null || this.authedKey(req) === null) return json({ error: 'bad_token' }, 401);
     this.ctx.storage.sql.exec('DELETE FROM tokens WHERE token = ?', token);
+    return json({});
+  }
+
+  /** The owner of the board row that holds this name key (`u:` account, `d:` device), or null. */
+  private boardOwnerOf(key: string): string | null {
+    return this.ctx.storage.sql.exec<{ owner: string }>('SELECT owner FROM board WHERE name_key = ?', key).toArray()[0]?.owner ?? null;
+  }
+
+  // The caller of a board route: a web token (tokens table) is an account, any other bearer token is a device if its hash is a
+  // board owner. Null = 401 bad_token.
+  private async boardCaller(req: Request): Promise<BoardCaller | null> {
+    const token = bearerToken(req.headers.get('Authorization'));
+    if (!token) return null;
+    const sql = this.ctx.storage.sql;
+    const key = this.authedKey(req);
+    if (key !== null) {
+      const user = sql.exec<{ display_name: string }>('SELECT display_name FROM users WHERE name_key = ?', key).toArray()[0];
+      return user ? { owner: 'u:' + key, key, name: user.display_name, web: true } : null;
+    }
+    const row = sql.exec<{ owner: string; name_key: string; display_name: string }>('SELECT owner, name_key, display_name FROM board WHERE owner = ?', 'd:' + (await sha256Hex(token))).toArray()[0];
+    return row ? { owner: row.owner, key: row.name_key, name: row.display_name, web: false } : null;
+  }
+
+  // Run first in the board routes that join, push or list. A row nobody pushed to for BOARD_RETENTION_DAYS goes ('u:' and 'd:' alike:
+  // an account's row is back with its next push, a purged device's token is dead, 401), so a dead nickname does not block its name
+  // for ever. The join counters of past days go too. board_optout stays: it is the account's own decision.
+  private purgeBoard(now: number): void {
+    const sql = this.ctx.storage.sql;
+    sql.exec('DELETE FROM board WHERE updated_at < ?', new Date(now - BOARD_RETENTION_DAYS * 86_400_000).toISOString());
+    sql.exec('DELETE FROM board_joins WHERE day < ?', new Date(now).toISOString().slice(0, 10));
+  }
+
+  /** Whether this account left the board (DELETE /api/board/me) and has not come back (POST /api/board/join). */
+  private optedOut(key: string): boolean {
+    return this.ctx.storage.sql.exec('SELECT name_key FROM board_optout WHERE name_key = ?', key).toArray().length > 0;
+  }
+
+  // A device joins under a nickname, which lives in the same name space as the accounts and the other devices: a name never means
+  // two players. Runs through serial() like login, so the name check and the insert cannot interleave with a login that creates the
+  // same name. Only a join that goes through counts against the address's BOARD_JOINS_PER_DAY.
+  // An account (valid web token, no name needed) that left comes back here: its opt-out goes, no token, no count.
+  private async boardJoin(body: unknown, req: Request): Promise<Response> {
+    const now = Date.now();
+    this.purgeBoard(now);
+    const accountKey = this.authedKey(req);
+    if (accountKey !== null) {
+      const user = this.ctx.storage.sql.exec<{ display_name: string }>('SELECT display_name FROM users WHERE name_key = ?', accountKey).toArray()[0];
+      if (user) {
+        this.ctx.storage.sql.exec('DELETE FROM board_optout WHERE name_key = ?', accountKey);
+        return json({ displayName: user.display_name });
+      }
+    }
+    const name = parseBoardName(body);
+    if (name === null) return json({ error: 'bad_input' }, 400);
+    const sql = this.ctx.storage.sql;
+    const key = nameKey(name);
+    const day = new Date(now).toISOString().slice(0, 10);
+    const ip = clientIp(req.headers.get('CF-Connecting-IP'));
+    const token = randomHex(32);
+    const owner = 'd:' + (await sha256Hex(token));
+    const joined = sql.exec<{ count: number }>('SELECT count FROM board_joins WHERE ip = ? AND day = ?', ip, day).toArray()[0]?.count ?? 0;
+    if (joined >= BOARD_JOINS_PER_DAY) return json({ error: 'locked', retryAfterSec: secondsToNextUtcDay(now) }, 429);
+    if (sql.exec('SELECT name_key FROM users WHERE name_key = ?', key).toArray().length > 0 || this.boardOwnerOf(key) !== null) return json({ error: 'name_taken' }, 409);
+    const display = displayName(name);
+    sql.exec('INSERT INTO board (owner, name_key, display_name, daily_xp, updated_at) VALUES (?, ?, ?, ?, ?)', owner, key, display, '[]', new Date(now).toISOString());
+    sql.exec('INSERT INTO board_joins (ip, day, count) VALUES (?, ?, 1) ON CONFLICT (ip, day) DO UPDATE SET count = count + 1', ip, day);
+    return json({ token, displayName: display });
+  }
+
+  // The caller's days replace the stored ones. An account gets its row on the first push (name from users); a device's row exists
+  // since the join, so a device whose row was deleted (DELETE /api/board/me) is refused above and writes nothing.
+  private async putBoardXp(req: Request, body: unknown): Promise<Response> {
+    const now = Date.now();
+    this.purgeBoard(now);
+    const caller = await this.boardCaller(req);
+    if (!caller) return json({ error: 'bad_token' }, 401);
+    const days = parseBoardDays(body, new Date(now).toISOString().slice(0, 10));
+    if (!days) return json({ error: 'bad_input' }, 400);
+    if (caller.web && this.optedOut(caller.key)) return json({}); // left the board: the automatic push writes nothing
+    const sql = this.ctx.storage.sql;
+    const updatedAt = new Date(now).toISOString();
+    if (caller.web) {
+      sql.exec(
+        `INSERT INTO board (owner, name_key, display_name, daily_xp, updated_at) VALUES (?, ?, ?, ?, ?)
+        ON CONFLICT (owner) DO UPDATE SET daily_xp = excluded.daily_xp, updated_at = excluded.updated_at`,
+        caller.owner,
+        caller.key,
+        caller.name,
+        JSON.stringify(days),
+        updatedAt,
+      );
+    } else {
+      sql.exec('UPDATE board SET daily_xp = ?, updated_at = ? WHERE owner = ?', JSON.stringify(days), updatedAt, caller.owner);
+    }
+    return json({});
+  }
+
+  private async getBoard(req: Request): Promise<Response> {
+    const now = Date.now();
+    this.purgeBoard(now);
+    const caller = await this.boardCaller(req);
+    if (!caller) return json({ error: 'bad_token' }, 401);
+    const utcToday = new Date(now).toISOString().slice(0, 10);
+    const weekStart = weekStartOf(boardToday(new URL(req.url).searchParams.get('today'), utcToday));
+    const entries = this.ctx.storage.sql
+      .exec<{ owner: string; display_name: string; daily_xp: string }>('SELECT owner, display_name, daily_xp FROM board')
+      .toArray()
+      .map((r) => ({ owner: r.owner, name: r.display_name, dailyXp: r.daily_xp }));
+    // An account that left sees the list but is not on it: `me` null, `left` true.
+    if (caller.web && this.optedOut(caller.key)) return json({ weekStart, ...rankBoard(entries, weekStart, caller.owner), me: null, left: true });
+    // An account that has not pushed yet has no row, but still sees itself: 0 XP, last.
+    if (!entries.some((e) => e.owner === caller.owner)) entries.push({ owner: caller.owner, name: caller.name, dailyXp: '[]' });
+    return json({ weekStart, ...rankBoard(entries, weekStart, caller.owner) });
+  }
+
+  private async deleteBoardMe(req: Request): Promise<Response> {
+    const caller = await this.boardCaller(req);
+    if (!caller) return json({ error: 'bad_token' }, 401);
+    this.ctx.storage.sql.exec('DELETE FROM board WHERE owner = ?', caller.owner);
+    if (caller.web) this.ctx.storage.sql.exec('INSERT OR IGNORE INTO board_optout (name_key) VALUES (?)', caller.key); // else the next push would put the account back
     return json({});
   }
 

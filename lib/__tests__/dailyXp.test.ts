@@ -9,6 +9,7 @@ import {
   addXp,
   getXp,
   onDailyGoalReached,
+  onXpChanged,
   wholeXp,
   xpForCard,
   xpForGrade,
@@ -63,6 +64,24 @@ describe('addXp / daily total', () => {
     expect((await addXp(-3, '2026-11-01')).xp).toBe(0);
     expect((await addXp(-2, '2026-11-01')).xp).toBe(0);
     expect((await addXp(-2, '2026-11-02')).xp).toBe(0);
+  });
+});
+
+describe('XP changed event', () => {
+  beforeEach(() => __resetForTests());
+
+  it('fires after every addXp (undo and zero included) with the new total already stored, and stops after unsubscribe', async () => {
+    const seen: number[] = [];
+    const stop = onXpChanged(() => void getDb().getDailyXpTenths('2031-07-01').then((v) => seen.push(v)));
+    await addXp(3, '2031-07-01');
+    await addXp(-1, '2031-07-01');
+    await addXp(0, '2031-07-01');
+    await new Promise((r) => setTimeout(r, 0));
+    expect(seen).toEqual([30, 20, 20]);
+    stop();
+    await addXp(3, '2031-07-01');
+    await new Promise((r) => setTimeout(r, 0));
+    expect(seen).toHaveLength(3);
   });
 });
 

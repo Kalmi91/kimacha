@@ -68,6 +68,25 @@ const hu: typeof en = {
     scheduleNextDays: (days: number) => `${days} nap múlva`,
     scheduleEmpty: 'Még nincs elrakott szó, tanulj párat!',
   },
+  board: {
+    title: 'Heti rangsor',
+    rankLine: (rank: number, xp: number) => `${rank}. hely · ${xp} XP`,
+    resets: 'Hétfőn nullázódik',
+    joinPrompt: 'Adj meg egy nevet, és meglátod, hol állsz a többiekhez képest.',
+    joinWarning: 'A neved és a heti XP-d a többi tanuló is látja.',
+    namePlaceholder: 'Becenév',
+    join: 'Csatlakozom',
+    nameTaken: 'Ez a név foglalt, válassz másikat.',
+    badName: 'Írj be egy nevet (2-24 karakter).',
+    tooManyJoins: 'Erről a hálózatról ma már túl sokan csatlakoztak. Próbáld újra holnap.',
+    offline: 'A rangsor most nem érhető el.',
+    loading: 'Töltöm...',
+    empty: 'Ezen a héten még senki nem szerzett XP-t.',
+    xp: (xp: number) => `${xp} XP`,
+    leave: 'Kilépés a rangsorból',
+    leaveConfirm: 'Kilépsz? A neved és a heti XP-d törlődik a rangsorból.',
+    leaveYes: 'Kilépek',
+  },
 };
 
 export default hu;

@@ -120,6 +120,31 @@ describe('beta flags and practice counters in the backup', () => {
     expect(await db.getPracticeRound()).toBeNull();
   });
 
+  it('the leaderboard identity is { token, name }; the backup never carries it and a restore keeps the own one', async () => {
+    const db = getDb();
+    expect(await db.getBoardIdentity()).toBeNull();
+    await db.setBoardIdentity({ token: 'dev-tok', name: 'Kálmán' });
+    expect(await db.getBoardIdentity()).toEqual({ token: 'dev-tok', name: 'Kálmán' });
+    const payload = JSON.parse(JSON.stringify(await db.exportAll()));
+    expect(() => validateBackupPayload(payload)).not.toThrow();
+    expect(payload.tables.user_meta[0].board_identity).toBeNull();
+    expect(JSON.stringify(payload)).not.toContain('dev-tok');
+
+    // restoring (also a file from another device, or an old one without the column) leaves this device's identity alone
+    await db.importAll(payload);
+    expect(await db.getBoardIdentity()).toEqual({ token: 'dev-tok', name: 'Kálmán' });
+    payload.tables.user_meta[0].board_identity = '{"token":"other","name":"Other"}';
+    await db.importAll(payload);
+    expect(await db.getBoardIdentity()).toEqual({ token: 'dev-tok', name: 'Kálmán' });
+    delete payload.tables.user_meta[0].board_identity;
+    expect(() => validateBackupPayload(payload)).not.toThrow();
+    await db.importAll(payload);
+    expect(await db.getBoardIdentity()).toEqual({ token: 'dev-tok', name: 'Kálmán' });
+    await db.setBoardIdentity(null);
+    await db.importAll(payload);
+    expect(await db.getBoardIdentity()).toBeNull();
+  });
+
   it('an old backup (no beta_flags, no half_steps / wrong_streak) validates and loads: switches off, counters 0', async () => {
     const db = getDb();
     await db.setBetaFlag('levels', true);

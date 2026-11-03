@@ -269,12 +269,20 @@ async function migrateToV1(db: SQLite.SQLiteDatabase) {
   }
 }
 
+// v2: user_meta.board_identity, the weekly leaderboard's { token, name } as one JSON string (lib/cloud/board.ts).
+async function migrateToV2(db: SQLite.SQLiteDatabase) {
+  await addColumnIfMissing(db, 'user_meta', 'board_identity', 'TEXT');
+}
+
 export interface Migration {
   version: number;
   up: (db: SQLite.SQLiteDatabase) => Promise<void>;
 }
 
-export const MIGRATIONS: readonly Migration[] = [{ version: 1, up: migrateToV1 }];
+export const MIGRATIONS: readonly Migration[] = [
+  { version: 1, up: migrateToV1 },
+  { version: 2, up: migrateToV2 },
+];
 
 export const LATEST_SCHEMA_VERSION = MIGRATIONS[MIGRATIONS.length - 1].version;
 

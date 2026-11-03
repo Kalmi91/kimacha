@@ -84,6 +84,7 @@ function makeSql(legacy = false) {
       return cursor([]);
     }
     if (q === 'select name_key from tokens where token = ?') return cursor(tokens.has(b[0]) ? [{ name_key: tokens.get(b[0])!.name_key }] : []);
+    if (q === 'select owner from board where name_key = ?') return cursor([]); // login asks whether a device holds the new name; the board itself is tested in boardWorker.test.ts
     if (q === 'select fail_count, locked_until from login_fails where name_key = ? and ip = ?') {
       const f = fails.get(b[0] + '|' + b[1]);
       return cursor(f ? [{ fail_count: f.fail_count, locked_until: f.locked_until }] : []);

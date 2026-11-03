@@ -10,7 +10,7 @@ import { DEFAULT_GRAMMAR_PALETTE, isGrammarPaletteId, type GrammarPaletteId } fr
 import { isSkinSelection, parseSkinMix, type SkinMix, type SkinSelection } from '@/constants/Skins';
 import { readExamResults, writeExamResult } from '../exam/result';
 import type { ExamResult, ExamResults } from '../exam/types';
-import type { DB } from '../dbTypes';
+import type { BoardIdentity, DB } from '../dbTypes';
 import type { DbStore, SettingColumn } from './store';
 
 // on an existing installation the progress currently runs with "b1-..." ids,
@@ -339,6 +339,23 @@ export class DbCore implements DB {
     await this.store.writeMeta('practice_round', json);
   }
 
+  // The leaderboard identity ({ token, name }, lib/cloud/board.ts) as one JSON string, app-wide like the
+  // beta flags; a missing / broken value reads as null (not joined).
+  async getBoardIdentity(): Promise<BoardIdentity | null> {
+    const v = await this.store.readMeta('board_identity');
+    if (typeof v !== 'string') return null;
+    try {
+      const o = JSON.parse(v);
+      return typeof o?.token === 'string' && o.token && typeof o.name === 'string' ? { token: o.token, name: o.name } : null;
+    } catch {
+      return null;
+    }
+  }
+
+  async setBoardIdentity(identity: BoardIdentity | null): Promise<void> {
+    await this.store.writeMeta('board_identity', identity ? JSON.stringify({ token: identity.token, name: identity.name }) : null);
+  }
+
   // `levelPrefix` (e.g. "a1") no longer gives the LIKE pattern
   // (since the difficulty re-leveling, an id's prefix is not necessarily its real level,
   // see matchesLevel in lib/pcicLevels.ts), it is the name of the level to clear; the
@@ -372,7 +389,8 @@ export class DbCore implements DB {
   async exportAll(): Promise<BackupPayload> {
     const tables = await this.store.exportTables();
     // user_id (NOT NULL, key stays) is a leftover identifier of older installs: never export it.
-    tables.user_meta = tables.user_meta.map((r: any) => ({ ...r, user_id: '' }));
+    // board_identity is the leaderboard's bearer device token: a backup file must not carry it either.
+    tables.user_meta = tables.user_meta.map((r: any) => ({ ...r, user_id: '', board_identity: null }));
     // pcic_cards.known was added with a bare ALTER (no default): rows from before it keep NULL.
     tables.pcic_cards = tables.pcic_cards.map((r: any) => ({ ...r, known: r.known ? 1 : 0 }));
     return {
@@ -386,7 +404,11 @@ export class DbCore implements DB {
   // Q0: restore, replaces the whole learning state (the store decides how atomically).
   async importAll(payload: BackupPayload): Promise<void> {
     await this.ready();
+    // The backup carries no leaderboard token (exportAll blanks it): the import keeps this device's own, otherwise
+    // the server row would be orphaned and the nickname could not be taken again.
+    const boardIdentity = await this.store.readMeta('board_identity');
     await this.store.importTables(payload.tables);
+    await this.store.writeMeta('board_identity', boardIdentity ?? null);
     // The imported onboarding decides the active pair from here on, corrected
     // to the single supported pair if the backup carries an older one (same
     // rule as the app/_layout.tsx startup check).

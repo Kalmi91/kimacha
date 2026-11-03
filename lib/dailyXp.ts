@@ -58,6 +58,7 @@ export type DailyXp = { date: string; xp: number };
 
 type Listener = () => void;
 const goalListeners = new Set<Listener>();
+const xpListeners = new Set<Listener>();
 // The local day the goal pill was last announced for: the pill shows once a day,
 // even if an undo drops the total below the goal and it is crossed again.
 let announcedFor: string | null = null;
@@ -66,6 +67,12 @@ let announcedFor: string | null = null;
 export function onDailyGoalReached(callback: Listener): () => void {
   goalListeners.add(callback);
   return () => goalListeners.delete(callback);
+}
+
+// Fires after every addXp (lib/cloud/boardSync.ts pushes the leaderboard from it).
+export function onXpChanged(callback: Listener): () => void {
+  xpListeners.add(callback);
+  return () => xpListeners.delete(callback);
 }
 
 // Adds `delta` XP to `date` (negative = undo of a grade) and returns the day's new
@@ -78,6 +85,7 @@ export async function addXp(delta: number, date: string = localDateString()): Pr
     announcedFor = date;
     for (const listener of goalListeners) listener();
   }
+  for (const listener of xpListeners) listener();
   return { date, xp: total / TENTHS };
 }
 
@@ -90,4 +98,5 @@ export async function getXp(date: string = localDateString()): Promise<DailyXp> 
 export function __resetForTests(): void {
   announcedFor = null;
   goalListeners.clear();
+  xpListeners.clear();
 }

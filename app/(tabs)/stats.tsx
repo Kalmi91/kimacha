@@ -15,6 +15,7 @@ import { Card } from '@/components/grammar/Brutal';
 import { SkinBackdrop } from '@/components/skins/Slots';
 import MockExamCard from '@/components/exam/MockExamCard';
 import LevelCard from '@/components/stats/LevelCard';
+import WeeklyBoardCard from '@/components/stats/WeeklyBoardCard';
 import { useStatsScreen } from '@/lib/stats/useStatsScreen';
 
 export default function StatsScreen() {
@@ -73,6 +74,8 @@ export default function StatsScreen() {
       <SkinBackdrop />
       <ScrollView style={styles.container} contentContainerStyle={[styles.content, g.brutal && styles.brutalContent]}>
         <TitleText variant="title" style={[styles.title, { color: colors.text }]}>{s.stats.title}</TitleText>
+
+      <WeeklyBoardCard />
 
       {/* badge of the PCIC level + known/total (interval
           >= 21 days), below it the known count of the other 3 PCIC levels. */}

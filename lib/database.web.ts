@@ -77,6 +77,7 @@ export class MemoryStore implements DbStore {
     skin_mix: null,
     beta_flags: null,
     practice_round: null,
+    board_identity: null,
   };
   private userMeta = { userId: '', firstUseDate: new Date().toISOString(), lastSyncDate: null as string | null };
 
@@ -325,7 +326,8 @@ export class MemoryStore implements DbStore {
       streak: this.streak,
       onboarding: this.onboarding,
       userLevels: [...this.userLevels],
-      meta: this.meta,
+      // board_identity is the native leaderboard token (lib/cloud/board.ts): the web uses the cloud session, so it stays out of the cloud payload.
+      meta: { ...this.meta, board_identity: undefined },
       userMeta: this.userMeta,
       settings: [...this.settings],
       usageMinutes: [...this.usageMinutes],
@@ -357,7 +359,7 @@ export class MemoryStore implements DbStore {
     this.streak = { ...fresh.streak, ...s.streak };
     this.onboarding = s.onboarding ?? null;
     this.userLevels = userLevels;
-    this.meta = { ...fresh.meta, ...s.meta };
+    this.meta = { ...fresh.meta, ...s.meta, board_identity: this.meta.board_identity };
     this.userMeta = { ...fresh.userMeta, ...s.userMeta };
     this.settings = settings;
     this.usageMinutes = usageMinutes;
