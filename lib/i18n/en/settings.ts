@@ -93,6 +93,8 @@ export default {
     learningDirection: 'Learning direction',
     chooseDirection: 'Choose learning direction',
     credits: 'Credits',
+    // the web guest's row that opens the cloud sign-in (components/cloud/CloudGate.tsx).
+    signIn: 'Sign in',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reset grammar progress',
     resetGrammarTitle: 'Reset grammar progress',

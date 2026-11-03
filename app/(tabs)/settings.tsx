@@ -1,5 +1,5 @@
 import { useState, type ReactNode } from 'react';
-import { StyleSheet, View, Pressable, ScrollView, Modal, useWindowDimensions } from 'react-native';
+import { StyleSheet, View, Pressable, ScrollView, Modal, Platform, useWindowDimensions } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedSheetStyle } from '@/components/grammar/Themed';
 import { useRouter } from 'expo-router';
@@ -20,6 +20,7 @@ import { appBuildTag } from '@/lib/appBuild';
 import { languages, pairLabel, supportedPairs } from '@/lib/languages';
 import { articleOptionsFor } from '@/lib/articlePicker';
 import { useBeta, setBeta, BETA_FLAGS, type BetaFlag } from '@/lib/beta';
+import { requestCloudSignIn, useIsCloudGuest } from '@/lib/cloud/guest';
 import { useSettingsScreen } from '@/lib/settings/useSettingsScreen';
 import BetterVoiceRows from '@/components/settings/BetterVoiceRows';
 import SpeakerPickerRows from '@/components/settings/SpeakerPickerRows';
@@ -93,6 +94,8 @@ export default function SettingsScreen() {
   const [tab, setTab] = useState<SettingsTab>('general');
   // the direction sheet lists all 12 pairs: its rows scroll inside a list that leaves room for the title on a small phone.
   const sheetListMax = useWindowDimensions().height * 0.6;
+  // web guest (no cloud account yet): the sign-in row below
+  const isCloudGuest = useIsCloudGuest();
   const {
     level, direction, directionSheetOpen, setDirectionSheetOpen, weeklyGoal, dailyNewLimit, againDelaySec,
     strictAccents, articlePicker, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
@@ -111,6 +114,14 @@ export default function SettingsScreen() {
           unreachable), so the settings list scrolls. The modal stays outside, pinned to the screen. */}
       <ScrollView contentContainerStyle={styles.container}>
       <TitleText style={[styles.sectionTitle, { color: colors.text }]}>{s.tabs.settings}</TitleText>
+
+      {/* web guest only, first on the page (above the tabs) so it is found: opens the sign-in chooser of the cloud gate (components/cloud/CloudGate.tsx). */}
+      {Platform.OS === 'web' && isCloudGuest && (
+        <Row onPress={requestCloudSignIn}>
+          <Text style={[styles.wordsOnlyLabel, { color: colors.text }]}>{s.settings.signIn}</Text>
+          <Text style={[styles.rowArrow, { color: arrowColor }]}>→</Text>
+        </Row>
+      )}
 
       <SettingsTabs tab={tab} onChange={setTab} />
 

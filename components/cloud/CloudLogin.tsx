@@ -15,6 +15,7 @@ import { useTheme } from '@/lib/ThemeContext';
 
 // The web sign-in screen: name + 4-digit PIN. A new name makes a new account, a known name with the right PIN
 // brings the saved progress back. The caller (CloudGate) takes over once login() answered with a token.
+// `mode` only changes the texts (what to type where); the backend call is the same. `onBack` adds a Back button.
 function errorText(failure: CloudFailure): string {
   const s = t().cloud;
   switch (failure.error) {
@@ -31,8 +32,9 @@ function errorText(failure: CloudFailure): string {
   }
 }
 
-export default function CloudLogin({ onLoggedIn }: { onLoggedIn: (data: LoginData) => void }) {
+export default function CloudLogin({ mode, onLoggedIn, onBack }: { mode: 'signin' | 'create'; onLoggedIn: (data: LoginData) => void; onBack?: () => void }) {
   const s = t().cloud;
+  const creating = mode === 'create';
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -60,8 +62,8 @@ export default function CloudLogin({ onLoggedIn }: { onLoggedIn: (data: LoginDat
     <View testID="cloud-login" style={[styles.container, { backgroundColor: colors.background }]}>
       <ScrollView contentContainerStyle={styles.scroll} keyboardShouldPersistTaps="handled">
         <View style={styles.form}>
-          <TitleText variant="title" style={[styles.title, { color: g.ink }]}>{s.title}</TitleText>
-          <Text style={[styles.hint, { color: g.mu }]}>{s.hint}</Text>
+          <TitleText variant="title" style={[styles.title, { color: g.ink }]}>{creating ? s.createTitle : s.signinTitle}</TitleText>
+          <Text style={[styles.hint, { color: g.mu }]}>{creating ? s.createHint : s.signinHint}</Text>
           <Text style={[styles.label, { color: g.ink }]}>{s.nameLabel}</Text>
           <TextInput
             testID="cloud-login-name"
@@ -76,10 +78,10 @@ export default function CloudLogin({ onLoggedIn }: { onLoggedIn: (data: LoginDat
             autoCorrect={false}
             returnKeyType="next"
           />
-          <Text style={[styles.label, { color: g.ink }]}>{s.pinLabel}</Text>
+          <Text style={[styles.label, { color: g.ink }]}>{creating ? s.createPinLabel : s.pinLabel}</Text>
           <TextInput
             testID="cloud-login-pin"
-            accessibilityLabel={s.pinLabel}
+            accessibilityLabel={creating ? s.createPinLabel : s.pinLabel}
             style={inputStyle}
             value={pin}
             onChangeText={(v) => { setPin(v.replace(/\D/g, '')); setError(null); }}
@@ -96,13 +98,24 @@ export default function CloudLogin({ onLoggedIn }: { onLoggedIn: (data: LoginDat
           {error ? <Text testID="cloud-login-error" style={[styles.error, { color: colors.danger }]}>{error}</Text> : null}
           <ActionButton
             testID="cloud-login-submit"
-            label={s.submit}
+            label={creating ? s.createSubmit : s.signinSubmit}
             onPress={submit}
             disabled={!canSubmit}
             brutalStyle={styles.button}
             classicStyle={[styles.button, styles.classicButton, { backgroundColor: colors.tint, opacity: canSubmit ? 1 : 0.4 }]}
             classicTextStyle={[styles.classicButtonText, { color: colors.onTint }]}
           />
+          {onBack ? (
+            <ActionButton
+              testID="cloud-login-back"
+              label={s.back}
+              onPress={onBack}
+              fill="paper"
+              brutalStyle={styles.button}
+              classicStyle={[styles.button, styles.classicButton, { borderWidth: 1, borderColor: colors.tint }]}
+              classicTextStyle={[styles.classicButtonText, { color: colors.tint }]}
+            />
+          ) : null}
         </View>
       </ScrollView>
       {/* the feedback button works before sign-in too: it sends the text to the feedback sheet, no account needed.

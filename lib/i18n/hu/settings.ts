@@ -89,6 +89,7 @@ const hu: typeof en = {
     learningDirection: 'Tanulási irány',
     chooseDirection: 'Válaszd ki a tanulási irányt',
     credits: 'Források és licencek',
+    signIn: 'Bejelentkezés',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Nyelvtani haladás törlése',
     resetGrammarTitle: 'Nyelvtani haladás törlése',

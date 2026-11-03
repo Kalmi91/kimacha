@@ -89,6 +89,7 @@ const es: typeof en = {
     learningDirection: 'Dirección de aprendizaje',
     chooseDirection: 'Elige la dirección de aprendizaje',
     credits: 'Créditos',
+    signIn: 'Iniciar sesión',
     // the row that resets the grammar progress, and its confirmation.
     resetGrammar: '🗑️ Reiniciar progreso de gramática',
     resetGrammarTitle: 'Reiniciar progreso de gramática',
