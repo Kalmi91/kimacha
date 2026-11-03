@@ -196,6 +196,34 @@ describe('essay', () => {
     expect(flags(essay, { choice: 'b', text: text(6, 'kemo') })).toEqual([true, true]);
   });
 
+  it('German typed without umlauts: ue / ae / oe for ü / ä / ö (and ss for ß) match the folded keywords, in German exams only', () => {
+    const de: MockTask = {
+      ...base('e', 'writing'),
+      kind: 'essay',
+      choices: [
+        {
+          id: 'a',
+          title: 'A',
+          prompt: 'Schreiben Sie ueber Ihren Urlaub und erklaeren Sie, warum er so schoen war.',
+          minWords: 10,
+          maxWords: 20,
+          points: [
+            { id: 'p1', label: 'Frühstück', keywords: ['frühstück'] },
+            { id: 'p2', label: 'Straße', keywords: ['straße'] },
+            { id: 'p3', label: 'schön', keywords: ['schön'] },
+            { id: 'p4', label: 'Quelle', keywords: ['quelle'] },
+          ],
+        },
+      ],
+    };
+    const scoreDe = (words: string[], target?: 'de' | 'es') => scoreMockTask(de, { choice: 'a', text: [...words, ...distinctWords(12 - words.length, 100)].join(' ') }, { target }).items.map((i) => i.ok);
+    expect(scoreDe(['Frühstück', 'Straße', 'schön', 'Quelle'], 'de')).toEqual([true, true, true, true, true]);
+    expect(scoreDe(['Fruehstueck', 'Strasse', 'schoen', 'Quelle'], 'de')).toEqual([true, true, true, true, true]);
+    expect(scoreDe(['FRUEHSTUECK', 'Strasse', 'SCHOEN', 'Quelle'], 'de')).toEqual([true, true, true, true, true]);
+    expect(scoreDe(['Fruehstueck', 'Strasse', 'schoen', 'Quelle'], 'es')).toEqual([false, true, false, true, true]);
+    expect(scoreDe(['Fruehstueck', 'Strasse', 'schoen', 'Quelle'])).toEqual([false, true, false, true, true]);
+  });
+
   it('no choice yet: the first task is scored and nothing is earned', () => {
     expect(run(essay)).toMatchObject({ correct: 0, total: 3 });
     expect(run(essay, { text: text(12, 'bamo', 'zuli') }).items).toHaveLength(3);

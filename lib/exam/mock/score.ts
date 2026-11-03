@@ -22,7 +22,7 @@
 // There is no self-assessment of speaking; a speaking paper without a task is a placeholder and is not counted ("provisional").
 
 import { assessMessage, checkField, countWords, fold, foldedTokens } from './writing';
-import { MATCH_NONE, mockTaskMarks, type MockAnswers, type MockExam, type MockSkill, type MockTask, type MockTaskAnswer } from './types';
+import { MATCH_NONE, mockTaskMarks, type MockAnswers, type MockTarget, type MockExam, type MockSkill, type MockTask, type MockTaskAnswer } from './types';
 
 /** A skill's points on the real exam (all four are 25). */
 const SKILL_POINTS = 25;
@@ -35,10 +35,16 @@ const SKILL_ORDER: MockSkill[] = ['reading', 'use', 'writing', 'listening', 'spe
  * because punctuation drops out of the words. English contractions match their full form both ways ("i'm" = "i am",
  * "don't" = "do not"); "'s" stays as it is (is / has / possessive).
  */
-function keywordHit(kw: string, words: string, raw: string): boolean {
+function keywordHit(kw: string, words: string, raw: string, german = false): boolean {
   const k = expandContractions(fold(kw));
-  return /[a-z0-9]/.test(k) ? ` ${expandContractions(words)}`.includes(` ${k}`) : raw.includes(k);
+  if (!/[a-z0-9]/.test(k)) return raw.includes(k);
+  if (` ${expandContractions(words)}`.includes(` ${k}`)) return true;
+  // German typed on a keyboard without umlauts: "ue" for ü, "ae" for ä, "oe" for ö (ß as "ss" already folds). Both sides are
+  // collapsed the same way, so "fruehstueck" finds the folded keyword "fruhstuck" and a real "ue" word (Quelle) still matches itself.
+  return german && ` ${collapseDigraphs(words)}`.includes(` ${collapseDigraphs(k)}`);
 }
+
+const collapseDigraphs = (text: string) => text.replace(/ae|oe|ue/g, (m) => m[0]);
 
 const CONTRACTIONS: [RegExp, string][] = [
   [/\bwon't\b/g, 'will not'],
@@ -135,6 +141,8 @@ export { countWords, fold };
 /** The scoring context: the target-language dictionary for checking that the writing is meaningful (without it this step is skipped). */
 interface MockScoreContext {
   lexicon?: ReadonlySet<string>;
+  /** The exam's target language: German also accepts ae / oe / ue for ä / ö / ü in the keywords. */
+  target?: MockTarget;
 }
 
 /** Open answers are compared without case, spaces and punctuation ("Don't" = "dont"). */
@@ -271,7 +279,7 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       const raw = fold(text);
       for (const p of task.points) {
         // A keyword made only of punctuation (a question mark) runs on the raw text, because punctuation drops out of the words.
-        const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw));
+        const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw, ctx.target === 'de'));
         items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok });
       }
       items.push({ label: `≥ ${task.minWords}`, given: String(a.valid ? a.words : 0), expected: String(task.minWords), ok: a.valid && a.words >= task.minWords });
@@ -341,7 +349,7 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
       const enough = a.valid && a.words >= Math.ceil(choice.minWords / 2);
       const raw = fold(text);
       for (const p of choice.points) {
-        const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw));
+        const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw, ctx.target === 'de'));
         items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok });
       }
       // min <= words <= max x 1.2 (integer arithmetic: words x 5 <= max x 6)
@@ -361,7 +369,7 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
         const raw = fold(text);
         const review = { group: turn.ask, model: turn.model, answer: text };
         for (const p of turn.points) {
-          const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw));
+          const ok = enough && p.keywords.some((kw) => keywordHit(kw, a.text, raw, ctx.target === 'de'));
           items.push({ label: p.label, given: ok ? '✓' : '✗', expected: p.keywords[0], ok, ...review });
         }
         items.push({ label: `≥ ${turn.minWords}`, given: String(a.valid ? a.words : 0), expected: String(turn.minWords), ok: a.valid && a.words >= turn.minWords, ...review });
@@ -385,7 +393,7 @@ export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockSco
   const papers: MockPaperResult[] = exam.papers.map((paper) => ({
     id: paper.id,
     name: paper.name,
-    tasks: paper.tasks.map((task, i) => scoreMockTask(task, answers[task.id], ctx, followedChoice(paper.tasks, i, answers))),
+    tasks: paper.tasks.map((task, i) => scoreMockTask(task, answers[task.id], { ...ctx, target: ctx.target ?? exam.target }, followedChoice(paper.tasks, i, answers))),
   }));
 
   // Per skill: the tasks' items (the words of a dictation count into two skills).
