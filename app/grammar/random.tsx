@@ -363,8 +363,12 @@ export default function RandomRoundScreen() {
   const checkSteps = run.steps.filter((st) => st.phase === 'check');
   const rightOverlay =
     rightMark > 0 ? (
-      <View pointerEvents="none" style={styles.rightMark}>
-        <ResultBadge testID="random-right-mark" correct label={s.correct} />
+      // a zero-height anchor under the progress bar: the badge lies over the top of the next question, centered,
+      // and never covers the ✕ or the counter
+      <View pointerEvents="none" style={styles.rightMarkAnchor}>
+        <View style={styles.rightMark}>
+          <ResultBadge testID="random-right-mark" correct align="center" label={s.correct} />
+        </View>
       </View>
     ) : null;
 
@@ -490,6 +494,7 @@ export default function RandomRoundScreen() {
     <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header(phaseLabel(s, phase, progress.index + 1, progress.of))}
       <ProgressBar testID="random-progress" pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
+      {rightOverlay}
       {ladder && (
         <View style={styles.ladder}>
           {data.levels.map((lvl) => {
@@ -535,10 +540,7 @@ export default function RandomRoundScreen() {
     </KeyboardAvoidingView>,
     leaving ? 'leave:' : `${phase}:${pendingQ.id}`,
     dock.bottomOffset,
-    <>
-      {leaveOverlay}
-      {rightOverlay}
-    </>
+    leaveOverlay
   );
 }
 
@@ -574,6 +576,7 @@ const styles = StyleSheet.create({
   missedLabel: { fontSize: fontSize.sm },
   missedAnswer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   greenMark: { borderWidth: 2.5, borderRadius: radius.sm, paddingVertical: spacing.sm, paddingHorizontal: spacing.md },
-  rightMark: { position: 'absolute', top: spacing.xl, left: 0, right: 0, alignItems: 'center' },
+  rightMarkAnchor: { height: 0, zIndex: 10 },
+  rightMark: { position: 'absolute', top: spacing.sm, left: 0, right: 0, alignItems: 'center' },
   missedWhy: { fontSize: fontSize.sm },
 });
