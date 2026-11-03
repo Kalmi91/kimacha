@@ -9,8 +9,9 @@ Commands (count, gen, verify, pack take --set words|sentences; words is the defa
   count                         unique keys per language, characters, collisions; writes keys.json
                                 (--set sentences: per source and language entries, characters, estimated
                                 audio minutes; writes keys-sentences.json)
-  gen [--lang es|en] [--limit N] [--shard I/N] [--threads T] [--force]
-                                synthesize the missing files (resumable: existing files are kept)
+  gen [--lang es|en] [--limit N] [--shard I/N] [--threads T] [--force] [--order]
+                                synthesize the missing files (resumable: existing files are kept);
+                                --order (sentences): sources by priority, deck-examples first, instead of by key
   verify [--n 20]               sample check: length > 0.2 s, peak > 0.05, file name = FNV-1a of the key
   pack                          kimacha-tts-pack-v1.tar.bz2 with index.json
                                 (--set sentences: kimacha-tts-sentences-v1.tar.bz2)
@@ -86,6 +87,7 @@ PACK_FILE = OUT / "kimacha-tts-pack-v1.tar.bz2"
 SET = "words"
 SENT_OUT = Path(os.environ.get("TTS_PACK_OUT_SENTENCES", r"C:\AI\_work\tts-sentences"))
 SENT_PACK_NAME = "kimacha-tts-sentences-v1.tar.bz2"
+SENT_MP3_LEVEL = 0.7  # libsndfile MP3 compression_level (VBR quality scale 0..1) of the sentence pack only
 GRAMMAR_DIRS = ("es", "en", "hu")  # data/games/grammar/<dir>: the language the lessons teach
 
 JS_WS = set("\t\n\v\f\r \u00a0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u2028\u2029\u202f\u205f\u3000\ufeff")
@@ -248,8 +250,9 @@ def collect_keys():
 #                      lib/learn/usePcicSession.ts speakRevealed; the reading speaks each sentence with its word's gender)
 #   reading-stories    rule 2: data/practice/stories*.json, the target-language sentence with the gender of its word's
 #                      full field (app/(tabs)/practice.tsx readAloud)
-#   sentence-tab       rule 3: the deck example sentences as the sentence cards speak them (TypedSentenceCard,
-#                      EasySentenceCard: the target sentence and the source-language sentence), own hash gender
+#   sentence-tab       the deck example sentences as the sentence cards speak them (TypedSentenceCard, EasySentenceCard:
+#                      the ORIGINAL target sentence and the source-language sentence), with the gender of the card's
+#                      word (the answer field's full-field word-pack voice, the reading's rule), not the sentence's own
 #   sentence-chunks    rule 3: data/sentences/chunks.json (the shorter sentences of the tile steps, es target + en prompt)
 #   situation          rule 3: the situation game (lines, pattern examples, words), es
 #   grammar-read-aloud rule 3: a lesson's `speak` field as the read-aloud speaks it (lib/mixedSpeech.ts segments, one
@@ -258,16 +261,17 @@ def collect_keys():
 #   grammar-items      rule 3: the drills' sentences: gap (filled), mark, why, transform answer, spot (fixed), order,
 #                      dictation (GrammarDrill, lessonTest `say`, WhyTransformItems, NewKinds)
 #   grammar-forms      rule 3: form answers and the table deck's cells (MatchFormItems, app/grammar/deck)
+# Priority order = what is heard most first (gen --order priority walks the keys in this order).
 SENT_SOURCES = (
     "deck-examples",
-    "reading-stories",
     "sentence-tab",
+    "reading-stories",
     "sentence-chunks",
-    "situation",
     "grammar-read-aloud",
-    "grammar-examples",
     "grammar-items",
+    "grammar-examples",
     "grammar-forms",
+    "situation",
 )
 CHARS_PER_SEC = 14  # PLAN: estimated audio minutes = chars / 14 per second
 
@@ -401,7 +405,7 @@ def collect_sentences():
         if isinstance(text, str) and make_key(text):
             add(source, lang, gender_of(make_key(text)), text)
 
-    # rule 1 / 2 (deck-examples) and rule 3 (sentence-tab): same files and vosotros rule as the word pack
+    # rule 1 / 2 (deck-examples) and the sentence cards (sentence-tab): same files and vosotros rule as the word pack
     for rel, tl, tfield, sl, sfield in (
         ("data/words-open", "es", "sentence_es", "en", "sentence_en"),
         ("data/words/en", "en", "sentence_en", "es", "sentence_es"),
@@ -412,8 +416,11 @@ def collect_sentences():
                     continue
                 for g in sorted(word_genders(c.get(tl))):
                     add("deck-examples", tl, g, c.get(tfield))
-                add_own("sentence-tab", tl, c.get(tfield))
-                add_own("sentence-tab", sl, c.get(sfield))
+                # the sentence cards speak both sides with the card word's gender (full field), the original text
+                word = c.get(tl)
+                if isinstance(word, str) and make_key(word):
+                    add("sentence-tab", tl, gender_of(make_key(word)), c.get(tfield))
+                    add("sentence-tab", sl, gender_of(make_key(word)), c.get(sfield))
 
     # rule 2: the reading's stories, each sentence with the gender of its word's full field
     open_es = {f"o{c['order']}": c.get("es") for cards in deck_files("data/words-open") for c in cards if "order" in c}
@@ -509,7 +516,7 @@ def assign_files(keys: dict) -> dict:
     collisions = 0
     for lang in LANGS:
         used, m = set(), {}
-        for k in keys[lang]:
+        for k in sorted(keys[lang]):  # sorted: the same names whatever order the caller walks the keys in
             g, text = split_key(k)
             h = hash_hex(text)
             name = h
@@ -637,7 +644,9 @@ def write_audio(path: Path, samples):
 
     tmp = path.with_name(path.name + ".part")
     if FORMAT == "mp3":
-        sf.write(str(tmp), samples, SAMPLE_RATE, format="MP3", subtype="MPEG_LAYER_III")
+        # the sentence pack is VBR (smaller files); the word pack keeps the default encoding, byte for byte
+        vbr = {"compression_level": SENT_MP3_LEVEL, "bitrate_mode": "VARIABLE"} if SET == "sentences" else {}
+        sf.write(str(tmp), samples, SAMPLE_RATE, format="MP3", subtype="MPEG_LAYER_III", **vbr)
     else:
         sf.write(str(tmp), samples, SAMPLE_RATE, format="OGG", subtype="VORBIS")
     os.replace(tmp, path)
@@ -669,6 +678,8 @@ def cmd_gen(args) -> int:
     files = assign_files(keys)
     OUT.mkdir(parents=True, exist_ok=True)
     keys_path().write_text(json.dumps(keys, ensure_ascii=False), encoding="utf-8")
+    if SET == "sentences" and args.order != "priority":
+        keys = {l: sorted(keys[l]) for l in LANGS}  # collect_sentences walks the sources in priority order
     shard_i, shard_n = 0, 1
     if args.shard:
         shard_i, shard_n = (int(x) for x in args.shard.split("/"))
@@ -682,6 +693,8 @@ def cmd_gen(args) -> int:
         log_line(logname, f"es-419 failed ({str(e)[:80]}), falling back to es")
         codes["es"] = "es"
     meta = {"es_lang": codes["es"], "en_lang": codes["en"], "format": EXT, "sample_rate": SAMPLE_RATE}
+    if SET == "sentences" and FORMAT == "mp3":
+        meta.update({"compression_level": SENT_MP3_LEVEL, "bitrate_mode": "VARIABLE"})
     (OUT / "gen-meta.json").write_text(json.dumps(meta), encoding="utf-8")
     langs = [args.lang] if args.lang else list(LANGS)
     t0 = time.time()
@@ -815,6 +828,14 @@ def main() -> int:
     g.add_argument("--shard", help="I/N: only keys whose position % N == I")
     g.add_argument("--threads", type=int, default=0)
     g.add_argument("--force", action="store_true")
+    g.add_argument(
+        "--order",
+        nargs="?",
+        const="priority",
+        default="sorted",
+        choices=("priority", "sorted"),
+        help="sentences set: --order walks the sources by priority (what is heard most first); default sorted by key. Use the same value in every shard.",
+    )
     v = with_set(sub.add_parser("verify"))
     v.add_argument("--n", type=int, default=20)
     with_set(sub.add_parser("pack"))
