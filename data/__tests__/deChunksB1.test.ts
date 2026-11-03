@@ -35,7 +35,7 @@ describe('chunks-de-b1.json', () => {
       if (sizes.some((n, i) => i > 0 && n <= sizes[i - 1])) problems.push(`${id}: the steps do not grow`);
     }
     expect(problems).toEqual([]);
-    expect(Object.keys(steps).length).toBeGreaterThanOrEqual(400);
+    expect(Object.keys(steps).length).toBeGreaterThanOrEqual(1250);
   });
 
   it('every step has its prompt in all four languages, ends like a sentence and has no em dash', () => {
