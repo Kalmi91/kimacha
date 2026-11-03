@@ -1,6 +1,6 @@
 {
  "With, by: -val / -vel": "Mit, per: -val / -vel",
- "The ending -val / -vel does two jobs. It says WITH a person (Annával = with Anna) and BY MEANS OF something (busszal = by bus, tollal = with a pen). It follows vowel harmony: -val after back vowels, -vel after front vowels. The surprise comes after a consonant: the v disappears and copies that consonant, so busz + val = busszal and Péter + vel = Péterrel.": "Die Endung -val / -vel hat zwei Aufgaben. Sie sagt MIT einer Person (Annával = mit Anna) und MITTELS etwas (busszal = mit dem Bus, tollal = mit einem Stift). Sie folgt der Vokalharmonie: -val nach hinteren Vokalen, -vel nach vorderen Vokalen. Die Überraschung kommt nach einem Konsonanten: Das v verschwindet und übernimmt diesen Konsonanten, also busz + val = busszal und Péter + vel = Péterrel.",
+ "The ending -val / -vel does two jobs. It says WITH a person (Annával = with Anna) and BY MEANS OF something (busszal = by bus, tollal = with a pen). It follows vowel harmony: -val after back vowels, -vel after front vowels. The surprise comes after a consonant: the v disappears and copies that consonant, so busz + val = busszal and Péter + vel = Péterrel.": "Die Endung -val / -vel hat zwei Aufgaben. Sie sagt MIT einer Person (Annával = mit Anna) und MITHILFE von etwas (busszal = mit dem Bus, tollal = mit einem Stift). Sie folgt der Vokalharmonie: -val nach hinteren Vokalen, -vel nach vorderen Vokalen. Die Überraschung kommt nach einem Konsonanten: Das v verschwindet und übernimmt diesen Konsonanten, also busz + val = busszal und Péter + vel = Péterrel.",
  "After a vowel: the v stays": "Nach einem Vokal: Das v bleibt",
  "Word": "Wort",
  "Ending": "Endung",
@@ -10,7 +10,7 @@
  "Person": "Person",
  "with (-val/-vel)": "mit (-val/-vel)",
  "What does -val / -vel say?": "Was sagt -val / -vel?",
- "HOW you travel. English says 'by bus'; Hungarian puts the ending on the vehicle, with no 'in' and no -ban.": "WIE du reist. Das Englische sagt „by bus“; das Ungarische setzt die Endung ans Fahrzeug, ohne „in“ und ohne -ban.",
+ "HOW you travel. English says 'by bus'; Hungarian puts the ending on the vehicle, with no 'in' and no -ban.": "WIE du reist. Das Deutsche sagt „mit dem Bus“; das Ungarische setzt die Endung ans Fahrzeug, ohne Präposition und ohne -ban.",
  "I go to work by bus.": "Ich fahre mit dem Bus zur Arbeit.",
  "I travel by train.": "Ich reise mit dem Zug.",
  "We are going by car.": "Wir fahren mit dem Auto.",
@@ -42,7 +42,7 @@
  "With buszban the sentence would say 'I go to work inside the bus', a place; how you travel takes -val.": "Mit buszban würde der Satz sagen „Ich fahre im Inneren des Busses zur Arbeit“, ein Ort; wie du reist, nimmt -val.",
  "buszval is the form you get by gluing busz + val without copying; after sz the v becomes sz, so it is written busszal.": "buszval ist die Form, die man bekommt, wenn man busz + val zusammenklebt, ohne zu übernehmen; nach sz wird das v zu sz, also schreibt man busszal.",
  "Kati goes together with Péter: -vel after front vowels (é, e), and the v copies the r: Péterrel.": "Kati geht zusammen mit Péter: -vel nach vorderen Vokalen (é, e), und das v übernimmt das r: Péterrel.",
- "Péternek is 'to / for Péter'; the sentence would say that Kati goes to the cinema for Péter, not with him.": "Péternek heißt „zu / für Péter“; der Satz würde sagen, dass Kati für Péter ins Kino geht, nicht mit ihm.",
+ "Péternek is 'to / for Péter'; the sentence would say that Kati goes to the cinema for Péter, not with him.": "Péternek heißt „an / für Péter“; der Satz würde sagen, dass Kati für Péter ins Kino geht, nicht mit ihm.",
  "Péterval has the wrong ending: Péter has front vowels, so it takes -vel, and the v becomes r: Péterrel.": "Péterval hat die falsche Endung: Péter hat vordere Vokale, deshalb nimmt es -vel, und das v wird zu r: Péterrel.",
  "Kati is going to the cinema with Péter.": "Kati geht mit Péter ins Kino.",
  "Lupita has back vowels, so the ending is -val, and the final a lengthens to á: Lupitával.": "Lupita hat hintere Vokale, deshalb ist die Endung -val, und das auslautende a wird zu á gedehnt: Lupitával.",
@@ -56,7 +56,7 @@
  "With this rule the form would be buszban, 'inside the bus'; here the bus is how you travel, not where you are.": "Mit dieser Regel hieße die Form buszban, „im Inneren des Busses“; hier ist der Bus, wie du reist, nicht wo du bist.",
  "Gábor has back vowels (á, o), so the ending is -val, and the v copies the r: Gáborral.": "Gábor hat hintere Vokale (á, o), deshalb ist die Endung -val, und das v übernimmt das r: Gáborral.",
  "Gáborrel uses the front ending -vel; Gábor has back vowels, so it is -val.": "Gáborrel verwendet die vordere Endung -vel; Gábor hat hintere Vokale, also ist es -val.",
- "Gábornak is 'to / for Gábor'; the sentence would say that I work for Gábor, not with him.": "Gábornak heißt „zu / für Gábor“; der Satz würde sagen, dass ich für Gábor arbeite, nicht mit ihm.",
+ "Gábornak is 'to / for Gábor'; the sentence would say that I work for Gábor, not with him.": "Gábornak heißt „an / für Gábor“; der Satz würde sagen, dass ich für Gábor arbeite, nicht mit ihm.",
  "I work with Gábor.": "Ich arbeite mit Gábor.",
  "The pen is the tool you write WITH: toll + -val. Toll already ends in l, so the v copies it: tollal.": "Der Stift ist das Werkzeug, MIT dem du schreibst: toll + -val. Toll endet schon auf l, deshalb übernimmt das v es: tollal.",
  "Tollat is the object form with -t; the sentence would say 'I write a pen', as if the pen were what is written.": "Tollat ist die Objektform mit -t; der Satz würde sagen „Ich schreibe einen Stift“, als wäre der Stift das, was geschrieben wird.",
@@ -111,6 +111,6 @@
  "With this rule you would write villével; but villa has back vowels, so the ending is -val.": "Mit dieser Regel würdest du villével schreiben; aber villa hat hintere Vokale, also ist die Endung -val.",
  "The train is how you travel: vonat ends in t, so the v becomes t: vonattal.": "Der Zug ist das, womit du reist: vonat endet auf t, also wird das v zu t: vonattal.",
  "vonatval is what you get by gluing vonat + val without copying; after t the v becomes t, so it is vonattal.": "vonatval ist das, was man bekommt, wenn man vonat + val ohne Übernahme zusammenklebt; nach t wird das v zu t, also vonattal.",
- "vonatnak is 'to / for the train'; the train would be a receiver, not the way you travel.": "vonatnak heißt „zum / für den Zug“; der Zug wäre ein Empfänger, nicht das Mittel, mit dem du reist.",
+ "vonatnak is 'to / for the train'; the train would be a receiver, not the way you travel.": "vonatnak heißt „für den Zug“; der Zug wäre ein Empfänger, nicht das Mittel, mit dem du reist.",
  "I go to Debrecen by train.": "Ich fahre mit dem Zug nach Debrecen."
 }
