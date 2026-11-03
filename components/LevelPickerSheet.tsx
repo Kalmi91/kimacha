@@ -6,7 +6,8 @@ import Colors from '@/constants/Colors';
 import { t } from '@/lib/i18n';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { PCIC_VIEW_LEVELS, pcicItemsForLevel, type PcicLevel, type PcicTarget } from '@/data/pcic';
-import { levelProgress } from '@/lib/pcicLevels';
+import { levelDone, levelProgress } from '@/lib/pcicLevels';
+import { localDateString } from '@/lib/usageStats';
 import type { Sm2Card } from '@/lib/sm2';
 import LevelRow from './LevelRow';
 import ExamLevelRow from './exam/ExamLevelRow';
@@ -37,14 +38,13 @@ type Props = {
   exam?: ExamRow | ExamRow[];
   // a quiet entry to the adaptive placement test below the level rows.
   onPlacement?: () => void;
-  // FB541: today's new-word batch is done; the active level's row turns green.
-  dayDone?: boolean;
   onSelect: (level: PcicLevel) => void;
   onClose: () => void;
 };
 
-export default function LevelPickerSheet({ visible, active, cards, colors, title, target, exam, onPlacement, dayDone = false, onSelect, onClose }: Props) {
+export default function LevelPickerSheet({ visible, active, cards, colors, title, target, exam, onPlacement, onSelect, onClose }: Props) {
   const s = t();
+  const today = localDateString();
   const g = useGrammarColors();
   const levelLabels: Partial<Record<PcicLevel, string>> = {
     A1: s.pcic.levelBeginner,
@@ -80,7 +80,7 @@ export default function LevelPickerSheet({ visible, active, cards, colors, title
                   introduced={introduced}
                   total={total}
                   active={lvl === active}
-                  done={dayDone && lvl === active}
+                  done={levelDone(cards, lvl, today)}
                   colors={colors}
                   onPress={() => onSelect(lvl)}
                 />

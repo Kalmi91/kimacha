@@ -18,7 +18,7 @@ type Props = {
   introduced: number;
   total: number;
   active: boolean;
-  // FB541: today's new-word batch is done; the whole row turns green with a bigger check.
+  // FB547: the level is started and has nothing due; the whole row turns green with a bigger check.
   done?: boolean;
   colors: ColorScheme;
   onPress: () => void;

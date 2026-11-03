@@ -48,7 +48,6 @@ export default function PcicCardView({
   xpToday,
   lastGraded,
   handleUndo,
-  dayDone,
   sentenceCard,
   setSentenceCard,
   levelSheetOpen,
@@ -177,7 +176,6 @@ export default function PcicCardView({
           target={target}
           exam={examRow}
           onPlacement={openPlacement}
-          dayDone={dayDone}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -240,7 +238,6 @@ export default function PcicCardView({
           target={target}
           exam={examRow}
           onPlacement={openPlacement}
-          dayDone={dayDone}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -358,7 +355,6 @@ export default function PcicCardView({
         target={target}
         exam={examRow}
         onPlacement={openPlacement}
-        dayDone={dayDone}
         onSelect={handleSelectLevel}
         onClose={() => setLevelSheetOpen(false)}
       />
