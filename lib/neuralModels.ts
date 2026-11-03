@@ -7,7 +7,7 @@
 //   <files>/tts/<model dir>.ok         marker, written after the extraction finished: no marker = not installed
 //   <files>/tts/<PACK_DIR>/index.json  the word pack, its mp3 files below (<PACK_DIR>.ok is its marker)
 //   <files>/tts/<SENTENCE_PACK_DIR>/   the sentence pack, same layout (<SENTENCE_PACK_DIR>.ok is its marker)
-//   <files>/tts/settings.json          { enabled, engines }
+//   <files>/tts/settings.json          { enabled, engines, speakers }
 //   <files>/tts/dl/                    the archives while they download
 //
 // The downloads use react-native-fs, the extraction the sherpa package's own (react-native-sherpa-onnx/
@@ -19,6 +19,7 @@ import { useSyncExternalStore } from 'react';
 import { Platform } from 'react-native';
 import {
   DEFAULT_ENGINES,
+  DEFAULT_SPEAKERS,
   NEURAL_MODELS,
   PACK_DIR,
   PACK_KEY,
@@ -28,6 +29,7 @@ import {
   SENTENCE_PACK_URL,
   itemBytes,
   normalizeEngines,
+  normalizeSpeakers,
   packFileFor,
   requiredItems,
   sentencePackFileFor,
@@ -36,10 +38,13 @@ import {
   type NeuralEngine,
   type NeuralLang,
   type PackIndex,
+  type SpeakerChoice,
+  type SpeakerChoices,
   type VoiceGender,
 } from './neuralVoices';
 import { isNeuralReady, loadNeuralVoice, releaseNeural, releaseNeuralPair, stopNeural } from './neuralTts';
 import { stopPack } from './packAudio';
+import { getSpeakerChoices, setSpeakerChoice, setSpeakerChoices } from './voicePreference';
 
 export interface NeuralDownloadState {
   running: boolean;
@@ -117,12 +122,12 @@ async function readInstalled(fs: Fs): Promise<Record<string, boolean>> {
   return installed;
 }
 
-async function readSettings(fs: Fs): Promise<Pick<NeuralState, 'enabled' | 'engines'>> {
+async function readSettings(fs: Fs): Promise<Pick<NeuralState, 'enabled' | 'engines'> & { speakers: SpeakerChoices }> {
   try {
     const raw = JSON.parse(await fs.readFile(`${ttsDir(fs)}/settings.json`, 'utf8'));
-    return { enabled: raw?.enabled !== false, engines: normalizeEngines(raw?.engines) };
+    return { enabled: raw?.enabled !== false, engines: normalizeEngines(raw?.engines), speakers: normalizeSpeakers(raw?.speakers) };
   } catch {
-    return { enabled: true, engines: { ...DEFAULT_ENGINES } };
+    return { enabled: true, engines: { ...DEFAULT_ENGINES }, speakers: { ...DEFAULT_SPEAKERS } };
   }
 }
 
@@ -130,7 +135,7 @@ async function writeSettings(): Promise<void> {
   try {
     const fs = getFs();
     await fs.mkdir(ttsDir(fs));
-    await fs.writeFile(`${ttsDir(fs)}/settings.json`, JSON.stringify({ enabled: state.enabled, engines: state.engines }), 'utf8');
+    await fs.writeFile(`${ttsDir(fs)}/settings.json`, JSON.stringify({ enabled: state.enabled, engines: state.engines, speakers: getSpeakerChoices() }), 'utf8');
   } catch (e) {
     console.log(`[neural] settings not saved: ${String(e)}`);
   }
@@ -204,7 +209,8 @@ export async function startNeural(): Promise<void> {
   started = true;
   try {
     const fs = getFs();
-    const settings = await readSettings(fs);
+    const { speakers, ...settings } = await readSettings(fs);
+    setSpeakerChoices(speakers);
     update({ ...settings, installed: await readInstalled(fs), ready: true });
     await loadPackIndex(fs);
   } catch (e) {
@@ -240,6 +246,13 @@ export function neuralSentenceFile(lang: NeuralLang, text: string, gender?: Voic
   if (!state.supported || !state.enabled || !sentenceIndex || !sentenceRoot) return null;
   const relative = sentencePackFileFor(sentenceIndex, lang, text, gender);
   return relative ? `${sentenceRoot}/${relative}` : null;
+}
+
+// Settings -> Voice: whose voice a language speaks with ('auto' = each word's own recorded voice).
+export function setNeuralSpeaker(lang: NeuralLang, choice: SpeakerChoice): void {
+  if (getSpeakerChoices()[lang] === choice) return;
+  setSpeakerChoice(lang, choice);
+  void writeSettings();
 }
 
 export async function setNeuralEnabled(enabled: boolean): Promise<void> {

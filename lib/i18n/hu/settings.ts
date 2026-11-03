@@ -53,6 +53,15 @@ const hu: typeof en = {
       confirmMessage: (mb: string) => `Ez ${mb} letöltés (a szavak és mondatok felvételei és a hangok). Mobilneten a csomagodból fogy, ezért Wi-Fi ajánlott.`,
       confirmYes: 'Letöltés',
     },
+    // Settings: the two tabs at the top, and the Voice tab's speaker picker (lib/voicePreference.ts).
+    tabGeneral: 'Általános',
+    tabVoice: 'Hang',
+    speaker: {
+      title: (lang: string) => `Ki olvassa fel: ${lang}`,
+      auto: 'Automatikus (leggyorsabb)',
+      person: (name: string, female: boolean) => `${name}, ${female ? 'nő' : 'férfi'}`,
+      hint: 'A másik személy szavainak felvételei kicsit lassabban indulnak.',
+    },
     dailyNewLimit: 'Napi új szavak',
     dailyNewLimitWords: (n: string) => `${n} szó / nap`,
     beta: {

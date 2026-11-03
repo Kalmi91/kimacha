@@ -203,6 +203,65 @@ describe('better voice: state at start', () => {
   });
 });
 
+// Settings -> Voice: the chosen person per language is kept in settings.json next to the switch and the engines.
+describe('better voice: the chosen speaker', () => {
+  type Prefs = typeof import('../voicePreference');
+  const loadBoth = (): { m: Models; prefs: Prefs } => {
+    let both!: { m: Models; prefs: Prefs };
+    jest.isolateModules(() => {
+      jest.replaceProperty(require('react-native').Platform, 'OS', 'android');
+      both = { m: require('../neuralModels'), prefs: require('../voicePreference') };
+    });
+    return both;
+  };
+  const saved = () => JSON.parse(mockFs.get(`${TTS}/settings.json`) as string);
+
+  it('starts on Automatic everywhere, also from a settings file written before the choice existed', async () => {
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper' } }));
+    const { m, prefs } = loadBoth();
+    await m.startNeural();
+    expect(prefs.getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'auto' });
+    expect(prefs.preferredGender('es')).toBeUndefined();
+  });
+
+  it('a choice is saved with the switch and the engines, and comes back after a restart', async () => {
+    const first = loadBoth();
+    await first.m.startNeural();
+    first.m.setNeuralSpeaker('es', 'm');
+    first.m.setNeuralSpeaker('hu', 'f');
+    await flush();
+    expect(first.prefs.preferredGender('es')).toBe('m');
+    expect(saved()).toEqual({ enabled: true, engines: { es: 'piper', en: 'piper', hu: 'piper' }, speakers: { es: 'm', en: 'auto', hu: 'f' } });
+
+    const second = loadBoth(); // the app restarted: a fresh module registry reads the file
+    expect(second.prefs.preferredGender('es')).toBeUndefined();
+    await second.m.startNeural();
+    expect(second.prefs.getSpeakerChoices()).toEqual({ es: 'm', en: 'auto', hu: 'f' });
+    expect(second.prefs.preferredGender('hu')).toBe('f');
+  });
+
+  it('Automatic again is saved, an unchanged choice writes nothing, and the other settings are kept', async () => {
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'piper' }, speakers: { es: 'm', en: 'f', hu: 'auto' } }));
+    const { m, prefs } = loadBoth();
+    await m.startNeural();
+    m.setNeuralSpeaker('es', 'auto');
+    await flush();
+    expect(saved()).toEqual({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'piper' }, speakers: { es: 'auto', en: 'f', hu: 'auto' } });
+    mockFs.set(`${TTS}/settings.json`, 'untouched');
+    m.setNeuralSpeaker('es', 'auto');
+    await flush();
+    expect(mockFs.get(`${TTS}/settings.json`)).toBe('untouched');
+    expect(prefs.preferredGender('en')).toBe('f');
+  });
+
+  it('a damaged value in the file is Automatic, not a crash', async () => {
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: {}, speakers: { es: 'x', en: 3, hu: 'm' } }));
+    const { m, prefs } = loadBoth();
+    await m.startNeural();
+    expect(prefs.getSpeakerChoices()).toEqual({ es: 'auto', en: 'auto', hu: 'm' });
+  });
+});
+
 describe('better voice: download', () => {
   it('fetches the word pack first, then the six Piper models and the sentence pack last, extracts each into the right folder and marks it installed', async () => {
     const m = load();

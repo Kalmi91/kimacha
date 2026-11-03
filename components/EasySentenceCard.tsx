@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Animated, PanResponder, StyleSheet, View, Pressable, type PanResponderInstance } from 'react-native';
 import { Text } from '@/components/KText';
-import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
+import { preferredGenderFor, speak as speakIn, stop as stopSpeech } from '@/lib/speech';
 import type { VoiceGender } from '@/lib/neuralVoices';
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
@@ -78,8 +78,9 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     // spoken, so the whole sentence is never given away.
     if (speechLocale) {
       stopSpeech();
-      // FB555: every tile is read by the female voice (the voice picked by the word's hash gave one sentence two voices).
-      speakIn(bank[bankIdx], speechLocale, { gender: 'f' });
+      // FB555: every tile is read by one voice (the voice picked by the word's hash gave one sentence two voices):
+      // the person picked on the Settings voice tab, else the female voice.
+      speakIn(bank[bankIdx], speechLocale, { gender: preferredGenderFor(speechLocale) ?? 'f' });
     }
   };
 

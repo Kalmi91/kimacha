@@ -127,6 +127,25 @@ export function normalizeEngines(raw: Partial<Record<NeuralLang, NeuralEngine>> 
   };
 }
 
+// Settings -> Voice: whose voice the learner wants per language. 'auto' = today's behavior (each word's own
+// recorded voice, the fastest); 'f' / 'm' = that person of the language's engine pair speaks everything that has
+// no explicit gender (lib/voicePreference.ts). Hungarian has Piper voices only, so it takes part too.
+export type SpeakerChoice = 'auto' | 'f' | 'm';
+export type SpeakerChoices = Record<NeuralLang, SpeakerChoice>;
+export const DEFAULT_SPEAKERS: SpeakerChoices = { es: 'auto', en: 'auto', hu: 'auto' };
+
+const speakerOf = (raw: unknown): SpeakerChoice => (raw === 'f' || raw === 'm' ? raw : 'auto');
+
+export function normalizeSpeakers(raw: Partial<Record<NeuralLang, unknown>> | null | undefined): SpeakerChoices {
+  return { es: speakerOf(raw?.es), en: speakerOf(raw?.en), hu: speakerOf(raw?.hu) };
+}
+
+// The person's first name, for Settings: "ef_dora" -> "Dora", "es_MX-claude-high" -> "Claude".
+export function voiceName(voice: NeuralVoice): string {
+  const raw = (voice.engine === 'kokoro' ? voice.id.split('_').pop() : voice.id.split('-')[1]) ?? voice.id;
+  return raw.charAt(0).toUpperCase() + raw.slice(1);
+}
+
 export function packKey(text: string): string {
   const trimmed = text.trim();
   return typeof trimmed.normalize === 'function' ? trimmed.normalize('NFC') : trimmed;

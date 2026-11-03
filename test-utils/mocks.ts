@@ -11,6 +11,7 @@ export const speechMock = () => {
     speakAuto: jest.fn((...args: unknown[]) => speak(...args)),
     speakSequence: jest.fn(),
     speakerGenderFor: jest.fn(() => 'f'),
+    preferredGenderFor: jest.fn((): 'f' | 'm' | undefined => undefined), // no person picked on the voice tab
     stopSpeaking: jest.fn(),
   };
 };

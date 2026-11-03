@@ -22,7 +22,7 @@ import {
   type NeuralLang,
 } from '@/lib/neuralVoices';
 
-type RowComponent = (props: { onPress?: () => void; children: ReactNode }) => ReactNode;
+export type RowComponent = (props: { onPress?: () => void; children: ReactNode }) => ReactNode;
 
 // Hungarian has no Kokoro voice, so only es and en get a choice.
 const CHOICE_LANGS: ('es' | 'en')[] = ['es', 'en'];

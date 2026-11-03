@@ -5,7 +5,7 @@ import TypedSentenceCard from '../TypedSentenceCard';
 
 jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock(), stop: jest.fn() }));
 
-const speech = require('@/lib/speech') as { speak: jest.Mock; stop: jest.Mock };
+const speech = require('@/lib/speech') as { speak: jest.Mock; stop: jest.Mock; preferredGenderFor: jest.Mock };
 
 beforeEach(() => {
   speech.speak.mockClear();
@@ -31,6 +31,14 @@ describe('EasySentenceCard (build-the-sentence)', () => {
     expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(true);
+  });
+
+  it('a person picked on the voice tab reads the tiles instead of the female voice', () => {
+    speech.preferredGenderFor.mockReturnValueOnce('m');
+    const { getAllByText } = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    fireEvent.press(getAllByText('el')[0]);
+    expect(speech.preferredGenderFor).toHaveBeenCalledWith('es-MX');
+    expect(speech.speak).toHaveBeenLastCalledWith('el', 'es-MX', { gender: 'm' });
   });
 
   it('FB555: every tapped tile, whichever word, is spoken with the female voice', () => {

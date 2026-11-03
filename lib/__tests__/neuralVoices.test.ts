@@ -16,6 +16,7 @@ import {
   missingBytes,
   modelKeysFor,
   normalizeEngines,
+  normalizeSpeakers,
   packFileFor,
   packHash,
   packKey,
@@ -23,6 +24,7 @@ import {
   sentencePackFileFor,
   voiceFor,
   voiceIndexFor,
+  voiceName,
   type PackIndex,
 } from '../neuralVoices';
 
@@ -191,5 +193,18 @@ describe('sentence pack lookup', () => {
 
   it('the word pack lookup is untouched by the g| keys', () => {
     expect(packFileFor(index, 'es', '¿Dónde está el baño?')).toBeNull();
+  });
+});
+
+describe('the speaker choice of Settings -> Voice', () => {
+  it('normalizeSpeakers: only f and m are a person, anything else (and nothing) is Automatic', () => {
+    expect(normalizeSpeakers(undefined)).toEqual({ es: 'auto', en: 'auto', hu: 'auto' });
+    expect(normalizeSpeakers({ es: 'm', en: 'f', hu: 'n' })).toEqual({ es: 'm', en: 'f', hu: 'auto' });
+    expect(normalizeSpeakers({ es: 1, en: null, hu: 'F' })).toEqual({ es: 'auto', en: 'auto', hu: 'auto' });
+  });
+
+  it('voiceName: the first name of every voice of both engines, as Settings shows it', () => {
+    expect([...KOKORO_VOICES.es, ...KOKORO_VOICES.en].map(voiceName)).toEqual(['Dora', 'Alex', 'Heart', 'Michael']);
+    expect([...PIPER_VOICES.es, ...PIPER_VOICES.en, ...PIPER_VOICES.hu].map(voiceName)).toEqual(['Claude', 'Ald', 'Kristin', 'John', 'Berta', 'Imre']);
   });
 });

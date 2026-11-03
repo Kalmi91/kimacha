@@ -4,6 +4,7 @@ jest.mock('@/lib/speech', () => ({
   speakSequence: jest.fn(),
   stopSpeaking: jest.fn(),
   stop: jest.fn(),
+  preferredGenderFor: jest.fn(), // no person picked on the voice tab
 }));
 jest.mock('@/lib/ThemeContext', () => ({
   useTheme: () => ({ theme: 'brand-light' }),

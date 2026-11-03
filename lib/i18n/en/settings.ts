@@ -53,6 +53,15 @@ export default {
       confirmMessage: (mb: string) => `This downloads ${mb} (the word and sentence recordings and the voices). On mobile data it counts against your plan, so Wi-Fi is recommended.`,
       confirmYes: 'Download',
     },
+    // Settings: the two tabs at the top, and the Voice tab's speaker picker (lib/voicePreference.ts).
+    tabGeneral: 'General',
+    tabVoice: 'Voice',
+    speaker: {
+      title: (lang: string) => `Who reads ${lang}`,
+      auto: 'Automatic (fastest)',
+      person: (name: string, female: boolean) => `${name}, ${female ? 'female' : 'male'}`,
+      hint: "Recordings of the other person's words start a little slower.",
+    },
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,
     // Settings -> Beta: early features, each one a switch; off = the app works as before.
