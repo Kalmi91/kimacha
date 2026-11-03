@@ -27,7 +27,7 @@ import { setLanguage } from '@/lib/i18n';
 import { parsePracticeRound } from '@/lib/practice/practiceRound';
 import { readingWordFor, resolveSet, type ResolvedQuestion } from '@/lib/practice/reading';
 import { STORIES } from '@/lib/practice/stories';
-import { speak } from '@/lib/speech';
+import { speak, speakSequence } from '@/lib/speech';
 import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { localDateString } from '@/lib/usageStats';
@@ -37,6 +37,7 @@ import { makeFlush } from '@/test-utils/flush';
 jest.setTimeout(60000);
 
 const mockSpeak = speak as jest.Mock;
+const mockSequence = speakSequence as jest.Mock;
 const TODAY = localDateString();
 
 // The five due words, the longest overdue first, and their sentences (words-open sentence_es).
@@ -113,6 +114,7 @@ const finishQuestions = async (view: View) => {
 beforeEach(async () => {
   mockPush.mockClear();
   mockSpeak.mockClear();
+  mockSequence.mockClear();
   jest.spyOn(Math, 'random').mockImplementation(seeded(11));
   await getDb().resetPcicCards();
   await getDb().setPracticeRound(null);
@@ -145,11 +147,13 @@ describe('Practice tab: the text', () => {
     view.unmount();
   });
 
-  it('reads the whole paragraph aloud, in Spanish', async () => {
+  it('FB552: reads the paragraph aloud sentence by sentence, in Spanish', async () => {
     await learnWords();
     const view = await mount();
     await press(view, 'practice-speak');
-    expect(mockSpeak).toHaveBeenCalledWith(SENTENCES.join(' '), 'es-MX');
+    expect(mockSequence).toHaveBeenCalledTimes(1);
+    expect(mockSequence).toHaveBeenCalledWith(SENTENCES.map((text) => ({ text, locale: 'es-MX' })));
+    expect(mockSpeak).not.toHaveBeenCalled();
     view.unmount();
   });
 

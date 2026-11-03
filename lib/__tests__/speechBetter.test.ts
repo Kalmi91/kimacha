@@ -236,6 +236,16 @@ describe('speakSequence(): one speaker per language (FB543)', () => {
     expect(speakNeural.mock.calls[2][2].id).toBe(speakNeural.mock.calls[1][2].id);
   });
 
+  it('a stop() ends the whole chain: the sentences after the one that was cut never start', () => {
+    engineFor.mockReturnValue('piper');
+    speakSequence([{ text: ES_SENTENCES[0], locale: 'es-MX' }, { text: ES_SENTENCES[1], locale: 'es-MX' }, { text: ES_SENTENCES[2], locale: 'es-MX' }]);
+    speakNeural.mock.calls[0][3].onDone();
+    expect(speakNeural).toHaveBeenCalledTimes(2);
+    stop();
+    speakNeural.mock.calls[1][3].onDone(); // a late end event of the cut sentence
+    expect(speakNeural).toHaveBeenCalledTimes(2);
+  });
+
   it('Hungarian follows the same rule', () => {
     engineFor.mockReturnValue('piper');
     const HU = ['A kutya alszik.', 'A kutyám nagy.', 'Kutyát szeretnék.', 'A kutya a parkban fut.', 'Van egy fekete kutyám.', 'Az a kutya sokat ugat.'];

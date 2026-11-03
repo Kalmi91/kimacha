@@ -36,7 +36,7 @@ import {
   type PracticeRound,
 } from '@/lib/practice/practiceRound';
 import { buildReadingSet, readingWordFor, type ReadingSet } from '@/lib/practice/reading';
-import { speak, stopSpeaking } from '@/lib/speech';
+import { speakSequence, stopSpeaking } from '@/lib/speech';
 import { localDateString } from '@/lib/usageStats';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 
@@ -155,7 +155,8 @@ function ReadingMode() {
   const readAloud = () => {
     if (!set) return;
     stopSpeaking();
-    speak(set.words.map((w) => w.sentence).join(' '), speechLang(target));
+    // FB552: one sentence at a time, each starts when it is generated; lib/speech.ts keeps one speaker for the chain
+    speakSequence(set.words.map((w) => ({ text: w.sentence, locale: speechLang(target) })));
   };
   const practiceSentences = () => {
     if (!set) return;
