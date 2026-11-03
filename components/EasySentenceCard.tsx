@@ -78,7 +78,8 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     // spoken, so the whole sentence is never given away.
     if (speechLocale) {
       stopSpeech();
-      speakIn(bank[bankIdx], speechLocale);
+      // FB555: every tile is read by the female voice (the voice picked by the word's hash gave one sentence two voices).
+      speakIn(bank[bankIdx], speechLocale, { gender: 'f' });
     }
   };
 

@@ -24,12 +24,21 @@ describe('EasySentenceCard (build-the-sentence)', () => {
     const onResult = jest.fn();
     const { getByText, getAllByText } = render(<EasySentenceCard {...props} onResult={onResult} />);
     for (const w of props.targetWords) fireEvent.press(getAllByText(w)[0]);
-    expect(speech.speak).toHaveBeenCalledWith('el', 'es-MX');
-    expect(speech.speak).toHaveBeenCalledWith('mesa', 'es-MX');
+    // FB555: a tile is read by the female voice, the full sentence after Check is not given a gender.
+    expect(speech.speak).toHaveBeenCalledWith('el', 'es-MX', { gender: 'f' });
+    expect(speech.speak).toHaveBeenCalledWith('mesa', 'es-MX', { gender: 'f' });
     fireEvent.press(getByText('Check'));
     expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(true);
+  });
+
+  it('FB555: every tapped tile, whichever word, is spoken with the female voice', () => {
+    const { getAllByText } = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    for (const w of props.targetWords) fireEvent.press(getAllByText(w)[0]);
+    const tileCalls = speech.speak.mock.calls.filter(([text]) => props.targetWords.includes(text as string));
+    expect(tileCalls).toHaveLength(props.targetWords.length);
+    for (const call of tileCalls) expect(call.slice(1)).toEqual(['es-MX', { gender: 'f' }]);
   });
 
   it('a wrong build turns red and shows the correct sentence', () => {
