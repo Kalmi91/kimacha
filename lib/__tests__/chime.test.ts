@@ -5,6 +5,9 @@ import { Platform } from 'react-native';
 
 const mockCreatePlayer = jest.fn();
 jest.mock('expo-audio', () => ({ createAudioPlayer: (...args: unknown[]) => mockCreatePlayer(...args) }), { virtual: true });
+// the bundled file stands in as a plain module id, so the test does not depend on the asset transform (on the CI
+// runner playChime skipped the player while it played locally)
+jest.mock('../../assets/sounds/correct.wav', () => 1, { virtual: true });
 
 import { playChime } from '../chime';
 
