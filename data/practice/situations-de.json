@@ -95,7 +95,8 @@
           "Ich habe einen Bruder und eine Schwester.",
           "Ich habe einen Bruder.",
           "Ich habe eine Schwester.",
-          "Ich habe keine Geschwister."
+          "Ich habe keine Geschwister.",
+          "Ja, ich habe zwei Brüder und eine Schwester."
         ]
       },
       {
@@ -133,7 +134,7 @@
         "es": "¿Cuántos años tiene tu hermano?",
         "hu": "Hány éves a fiútestvéred?",
         "en": "How old is your brother?",
-        "answers": ["Mein Bruder ist dreißig Jahre alt.", "Er ist dreißig Jahre alt.", "Er ist dreißig."]
+        "answers": ["Mein Bruder ist dreißig Jahre alt.", "Er ist dreißig Jahre alt.", "Er ist dreißig.", "Mein Bruder ist dreißig."]
       },
       {
         "speaker": "me",
@@ -382,7 +383,8 @@
           "Ja, bitte.",
           "Ja, ein Brot, bitte.",
           "Nein, danke.",
-          "Nein, danke, das ist alles."
+          "Nein, danke, das ist alles.",
+          "Ja, bitte, ein Brot."
         ]
       },
       {
@@ -399,7 +401,7 @@
         "es": "Son cinco euros.",
         "hu": "Ez öt euró.",
         "en": "That is five euros.",
-        "answers": ["Hier sind fünf Euro, bitte.", "Hier sind fünf Euro.", "Hier, bitte.", "Bitte, fünf Euro."]
+        "answers": ["Hier sind fünf Euro, bitte.", "Hier sind fünf Euro.", "Hier, bitte.", "Bitte, fünf Euro.", "Hier, fünf Euro."]
       },
       {
         "speaker": "me",
@@ -606,12 +608,13 @@
         "en": "Excuse me, where is the station?",
         "answers": [
           "Sie gehen hier geradeaus.",
-          "Sie gehen hier geradeaus.",
           "Gehen Sie hier geradeaus.",
           "Gehen Sie geradeaus.",
           "Der Bahnhof ist hier geradeaus.",
           "Der Bahnhof ist dort rechts.",
-          "Der Bahnhof ist dort links."
+          "Der Bahnhof ist dort links.",
+          "Dort geradeaus.",
+          "Hier geradeaus."
         ]
       },
       {
@@ -673,7 +676,7 @@
         "es": "¡Muchas gracias!",
         "hu": "Köszönöm szépen!",
         "en": "Thank you very much!",
-        "answers": ["Bitte schön!", "Bitte!"]
+        "answers": ["Bitte schön!", "Bitte!", "Bitte sehr!"]
       },
       {
         "speaker": "me",
@@ -925,7 +928,8 @@
           "Ich möchte einen Kaffee, bitte.",
           "Ich trinke einen Tee, bitte.",
           "Einen Tee, bitte.",
-          "Ich möchte Milch, bitte."
+          "Ich möchte Milch, bitte.",
+          "Ich möchte einen Kaffee."
         ]
       },
       {
@@ -947,7 +951,8 @@
           "Ja, ein Brötchen, bitte.",
           "Ja, ich möchte ein Brötchen.",
           "Nein, danke.",
-          "Nein, ich esse nichts."
+          "Nein, ich esse nichts.",
+          "Nein, danke, nichts."
         ]
       },
       {
@@ -1355,7 +1360,8 @@
           "Ja, das ist gut. Danke!",
           "Ja, ich kann kommen.",
           "Ja, um drei Uhr ist gut.",
-          "Nein, ich kann heute nicht kommen."
+          "Nein, ich kann heute nicht kommen.",
+          "Ja, um drei Uhr kann ich."
         ]
       },
       {
@@ -1643,7 +1649,7 @@
         "speaker": "other",
         "de": "Haben Sie auch den Balkon gesehen?",
         "es": "¿Ya vio también el balcón?",
-        "hu": "Látta a erkélyt is?",
+        "hu": "Látta az erkélyt is?",
         "en": "Have you seen the balcony too?",
         "answers": [
           "Ja, ich habe ihn gesehen. Er ist schön.",
@@ -1686,7 +1692,7 @@
         "es": "Sí, es muy tranquilo. ¿Quiere quedarse con el departamento?",
         "hu": "Igen, nagyon csendes. Szeretné kivenni a lakást?",
         "en": "Yes, it is very quiet. Would you like to take the flat?",
-        "answers": ["Ja, ich möchte die Wohnung nehmen.", "Ja, ich nehme die Wohnung.", "Ja, bitte.", "Nein, danke."]
+        "answers": ["Ja, ich möchte die Wohnung nehmen.", "Ja, ich nehme die Wohnung.", "Ja, bitte.", "Nein, danke.", "Ja, ich nehme sie."]
       },
       {
         "speaker": "me",
@@ -1975,7 +1981,7 @@
         "es": "¡Buenos días! ¿A dónde desea ir?",
         "hu": "Jó napot! Hová szeretne utazni?",
         "en": "Good day! Where would you like to go?",
-        "answers": ["Ich möchte nach Berlin fahren.", "Nach Berlin, bitte.", "Ich fahre nach Berlin."]
+        "answers": ["Ich möchte nach Berlin fahren.", "Nach Berlin, bitte.", "Ich fahre nach Berlin.", "Ich möchte nach Berlin, bitte."]
       },
       {
         "speaker": "me",
@@ -1994,7 +2000,8 @@
           "Morgen früh um acht Uhr, bitte.",
           "Morgen um acht Uhr.",
           "Ich möchte morgen früh fahren.",
-          "Am Sonntag um acht Uhr, bitte."
+          "Morgen früh, bitte.",
+          "Morgen früh um acht, bitte."
         ]
       },
       {
@@ -3194,7 +3201,7 @@
         "forms": ["unterschreiben", "unterschreibe"],
         "en": "to sign",
         "es": "firmar",
-        "hu": "aláír"
+        "hu": "aláírni"
       },
       {
         "de": "sie",
@@ -3560,7 +3567,7 @@
         "forms": ["geliefert"],
         "en": "to deliver",
         "es": "entregar (a domicilio)",
-        "hu": "kiszállít / házhoz szállít"
+        "hu": "kiszállítani / házhoz szállítani"
       },
       {
         "de": "der Montag",
