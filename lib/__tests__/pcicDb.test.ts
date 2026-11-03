@@ -66,6 +66,19 @@ describe('pcic_cards (memory db)', () => {
     expect(await db.getPcicLevel()).toBe('A1');
   });
 
+  // A pair switched to in Settings has no level of its own yet: only a Spanish target falls back to the old B1
+  // default (the legacy "b1-..." progress of en-es); a German target starts at A1 like the English and Hungarian ones.
+  it('a pair with no chosen level: the Spanish target falls back to B1, the German, English and Hungarian ones start at A1', async () => {
+    await db.setOnboarding('en', 'es');
+    expect(await db.getPcicLevel()).toBe('B1');
+    for (const [source, target] of [['hu', 'de'], ['en', 'de'], ['es', 'de'], ['de', 'en'], ['de', 'hu']] as const) {
+      await db.setOnboarding(source, target);
+      expect(await db.getPcicLevel()).toBe('A1');
+    }
+    await db.setOnboarding('de', 'es');
+    expect(await db.getPcicLevel()).toBe('B1');
+  });
+
   // The same point: hasPcicLevel is true only if the active pair
   // EXPLICITLY has a chosen level (not because of getPcicLevel's fallback);
   // this is what the Settings direction-switch row / the main tab's load() use
