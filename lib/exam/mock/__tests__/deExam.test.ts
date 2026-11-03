@@ -209,6 +209,24 @@ describe('de: the Schreiben tasks weigh as in the Goethe module and have the off
     expect(task.options.length - task.prompts.length).toBe(2);
   });
 
+  it('A1 Sprechen Teil 2 is the Goethe card format (Thema + Wortkarten: ask a question, answer the partner), Teil 3 the request cards (Bitten)', () => {
+    const [, teil2, teil3] = file('A1', 'speaking').forms[0].tasks;
+    if (teil2.kind !== 'speaking' || teil3.kind !== 'speaking') throw new Error('speaking expected');
+    expect(teil3.follows).toBe(2);
+    for (const choice of teil2.choices) {
+      expect(choice.bullets).toHaveLength(3);
+      expect(choice.turns).toHaveLength(6);
+      // The learner's turns (1, 3, 5) name a word card and ask for a question; the partner's turns (2, 4, 6) end in a question to answer.
+      for (const i of [0, 2, 4]) expect(choice.turns[i].ask).toMatch(/Wortkarte heißt .+ Stellen Sie mir eine Frage/);
+      for (const i of [1, 3, 5]) expect(choice.turns[i].ask).toMatch(/\?$/);
+    }
+    for (const choice of teil3.choices) {
+      expect(choice.turns).toHaveLength(6);
+      for (const i of [0, 2, 4]) expect(choice.turns[i].ask).toMatch(/^Karte: .+ Formulieren Sie eine Bitte\.$/);
+      for (const i of [1, 3, 5]) expect(choice.turns[i].ask).toMatch(/bitte.*\?$/);
+    }
+  });
+
   it('the A1 / A2 speaking papers have no preparation time (the Goethe A1 / A2 give none)', () => {
     for (const level of ['A1', 'A2']) for (const task of file(level, 'speaking').forms[0].tasks) expect((task as { prepSeconds?: number }).prepSeconds).toBeUndefined();
   });

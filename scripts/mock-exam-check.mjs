@@ -234,7 +234,7 @@ for (const [name, spec] of Object.entries(SPEC)) {
 // de (German): the Goethe-Zertifikat structure (.work notes: Durchfuehrungsbestimmungen, Uebungssatz B1, Modellsatz B2, Handbuch C1), mapped to the app's kinds.
 // Lesen / Hoeren have 30 items at B1-C1 as in the real exams; `plays` is the real number of plays (an audio task without it is played twice).
 const T2 = [2, 3]; // a short-text clip with a richtig / falsch item (2 options) and a multiple-choice item (3 options)
-SPEC['de-a1-speaking'] = [speaking(1, 0, [1, 2], 1), speaking(2, 0, [2, 3], 1), speaking(2, 0, [3, 4], 5, { follows: 2 })];
+SPEC['de-a1-speaking'] = [speaking(1, 0, [1, 2], 1), speaking(2, 0, [2, 3], 6), speaking(2, 0, [3, 4], 6, { follows: 2 })];
 SPEC['de-a2-speaking'] = [speaking(2, 0, [2, 3], 3), speaking(2, 0, [2, 3], 1), speaking(2, 0, [3, 4], 4)];
 SPEC['de-b1-reading'] = [
   passage('reading', 'text', [200, 290], 6, 2),
