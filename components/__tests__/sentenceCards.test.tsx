@@ -420,3 +420,75 @@ describe('TypedSentenceCard listening step (beta sentenceListening, FB524)', () 
     expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US');
   });
 });
+
+// Audio round B: the sentence pack holds a sentence under a speaker, and the cards ask for the speaker of the
+// card's word (lib/cardSpeaker.ts), the sentence as written (EasySentenceCard).
+describe('Audio round B: the sentence cards speak with the voice of the card word', () => {
+  const typed = {
+    sourceSentence: 'The book and the table.',
+    targetSentence: 'El libro y la mesa.',
+    speechLocale: 'es-MX',
+    sourceSpeechLocale: 'en-US',
+  };
+
+  it('type-it: the prompt on open, the Check read-out and nothing else carry the speaker', () => {
+    const { getByText, getByPlaceholderText } = render(<TypedSentenceCard {...typed} speakerGender="m" onResult={jest.fn()} />);
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US', { gender: 'm' });
+    fireEvent.changeText(getByPlaceholderText('Type the sentence'), 'el libro y la mesa');
+    fireEvent.press(getByText('✓ Check'));
+    expect(speech.speak).toHaveBeenLastCalledWith('El libro y la mesa.', 'es-MX', { gender: 'm' });
+  });
+
+  it('the listening step: the target sentence on open and on the replay button carry the speaker', () => {
+    const { getByTestId } = render(<TypedSentenceCard {...typed} listening speakerGender="f" onResult={jest.fn()} />);
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX', { gender: 'f' });
+    speech.speak.mockClear();
+    fireEvent.press(getByTestId('sentence-listen-play'));
+    expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX', { gender: 'f' });
+  });
+
+  it('build-the-sentence: the prompt and the finished sentence carry the speaker, a placed tile does not', () => {
+    const { getByText, getAllByText } = render(
+      <EasySentenceCard
+        sourceSentence="The book and the table."
+        targetWords={['el', 'libro', 'y', 'la', 'mesa']}
+        trapWords={['los']}
+        speechLocale="es-MX"
+        sourceSpeechLocale="en-US"
+        speakerGender="f"
+        onResult={jest.fn()}
+      />
+    );
+    expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US', { gender: 'f' });
+    fireEvent.press(getAllByText('el')[0]);
+    expect(speech.speak).toHaveBeenLastCalledWith('el', 'es-MX');
+    fireEvent.press(getByText('Check'));
+    expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX', { gender: 'f' });
+  });
+
+  it('build-the-sentence speaks the sentence as written, not the joined tiles', () => {
+    const { getByText, getAllByText } = render(
+      <EasySentenceCard
+        sourceSentence="The book and the table."
+        targetWords={['el', 'libro', 'y', 'la', 'mesa']}
+        trapWords={[]}
+        speechLocale="es-MX"
+        speakerGender="m"
+        spokenSentence="El libro y la mesa."
+        onResult={jest.fn()}
+      />
+    );
+    for (const w of ['el', 'libro', 'y', 'la', 'mesa']) fireEvent.press(getAllByText(w)[0]);
+    fireEvent.press(getByText('Check'));
+    expect(speech.speak).toHaveBeenLastCalledWith('El libro y la mesa.', 'es-MX', { gender: 'm' });
+  });
+
+  it('without a speaker the calls are the old ones (no options)', () => {
+    const { getByText, getAllByText } = render(
+      <EasySentenceCard sourceSentence="x" targetWords={['el', 'libro']} trapWords={[]} speechLocale="es-MX" spokenSentence="El libro." onResult={jest.fn()} />
+    );
+    for (const w of ['el', 'libro']) fireEvent.press(getAllByText(w)[0]);
+    fireEvent.press(getByText('Check'));
+    expect(speech.speak).toHaveBeenLastCalledWith('El libro.', 'es-MX');
+  });
+});

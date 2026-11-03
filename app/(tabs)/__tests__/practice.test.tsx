@@ -26,6 +26,7 @@ import { GRAMMAR_PROGRESS_KEY } from '@/lib/grammar/syllabus';
 import { setLanguage } from '@/lib/i18n';
 import { parsePracticeRound } from '@/lib/practice/practiceRound';
 import { readingWordFor, resolveSet, type ResolvedQuestion } from '@/lib/practice/reading';
+import { voiceFor } from '@/lib/neuralVoices';
 import { STORIES } from '@/lib/practice/stories';
 import { speak, speakSequence } from '@/lib/speech';
 import { addDays, sm2NewCard, type Sm2Card } from '@/lib/sm2';
@@ -147,12 +148,15 @@ describe('Practice tab: the text', () => {
     view.unmount();
   });
 
-  it('FB552: reads the paragraph aloud sentence by sentence, in Spanish', async () => {
+  it('FB552 + Audio round B: reads the paragraph aloud sentence by sentence, in Spanish, each by the voice of its own word', async () => {
     await learnWords();
     const view = await mount();
     await press(view, 'practice-speak');
     expect(mockSequence).toHaveBeenCalledTimes(1);
-    expect(mockSequence).toHaveBeenCalledWith(SENTENCES.map((text) => ({ text, locale: 'es-MX' })));
+    // the gender is the sex of the word-pack voice of the card's Spanish field (the speaker the sentence pack holds it under)
+    const genders = DUE.map((id) => voiceFor('es', 'kokoro', findPcicItem(id)!.es).gender);
+    expect(new Set(genders).size).toBe(2); // the five words really do not share one speaker, so the rule is exercised
+    expect(mockSequence).toHaveBeenCalledWith(SENTENCES.map((text, i) => ({ text, locale: 'es-MX', gender: genders[i] })));
     expect(mockSpeak).not.toHaveBeenCalled();
     view.unmount();
   });

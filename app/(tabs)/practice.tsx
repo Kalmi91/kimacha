@@ -37,6 +37,7 @@ import {
 } from '@/lib/practice/practiceRound';
 import { buildReadingSet, readingWordFor, type ReadingSet } from '@/lib/practice/reading';
 import { speakSequence, stopSpeaking } from '@/lib/speech';
+import { wordSpeakerGender } from '@/lib/cardSpeaker';
 import { localDateString } from '@/lib/usageStats';
 import { useScreenLoad } from '@/lib/useScreenLoad';
 
@@ -155,8 +156,9 @@ function ReadingMode() {
   const readAloud = () => {
     if (!set) return;
     stopSpeaking();
-    // FB552: one sentence at a time, each starts when it is generated; lib/speech.ts keeps one speaker for the chain
-    speakSequence(set.words.map((w) => ({ text: w.sentence, locale: speechLang(target) })));
+    // FB552: one sentence at a time, each starts when it is generated. Audio round B: each sentence is spoken by the
+    // voice of its own word (lib/cardSpeaker.ts), the speaker the sentence pack holds it under.
+    speakSequence(set.words.map((w) => ({ text: w.sentence, locale: speechLang(target), gender: wordSpeakerGender(findPcicItem(w.itemId), target) })));
   };
   const practiceSentences = () => {
     if (!set) return;
