@@ -9,9 +9,9 @@
 // once; every later upgrade keeps it).
 //
 // Pass = within the time limit the log shows a voice load ("[neural] loaded") and a sentence the voice
-// spoke ("[neural] <lang>/<voice> first="), and the app still runs 10 s later. The voice loads on its
-// first use, so the start-up speech goes to the phone meanwhile: once the load is in the log, play an
-// example sentence by hand (or with the emulator driver), the script prompts for it.
+// spoke ("[neural] <lang>/<voice> first="), and the app still runs 10 s later. Since 4.1.31 the app opens
+// silently and a voice loads on its first use, so the script prompts for two taps by hand (or with the
+// emulator driver): a word's speaker button (loads the voice), then an example sentence's.
 // Fail = the app crashed (anything of the app in the crash log, or its process is gone), or the better voice
 // never loaded: then the run proved nothing (download the voice, or open a learn card that speaks).
 // Partial = the voice loaded and the app stayed up, but no sentence was spoken in time.
@@ -111,6 +111,7 @@ while (Date.now() < deadline) {
     fail(`the app crashed: ${crashOf()}`);
   }
   const pid = appPid();
+  if (pid && !started) console.log('the app is up and silent: tap the speaker button of the word on the learn card');
   if (pid) started = true;
   else if (started) fail('the app process is gone (no crash log line)');
   const log = adb(['logcat', '-d', '-b', 'main', '-s', 'ReactNativeJS']);
