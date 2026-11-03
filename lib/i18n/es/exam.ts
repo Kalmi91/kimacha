@@ -94,6 +94,7 @@ const es: typeof en = {
     passRuleTotal: (needed: number, of: number) => `Para aprobar: al menos ${needed} de ${of} puntos en total. Una destreza puede compensar a otra.`,
     passRuleAverage: (pct: number) =>
       `Para aprobar: un promedio de alrededor del ${pct}% entre las destrezas. Este puntaje mínimo es una estimación, el examen real no publica uno.`,
+    passRuleEach: (pct: number) => `Para aprobar: al menos ${pct}% en cada destreza, como en cada módulo del examen real. Una destreza fuerte no compensa una débil.`,
     passRuleScale: (needed: number) =>
       `Para aprobar: un promedio de al menos ${needed} puntos en la escala del examen. Tu puntaje en la escala aquí es una estimación a partir de tus puntos.`,
     shortNote: 'Más corto que el examen real, los puntos se escalan. El reloj es el real.',
@@ -160,6 +161,8 @@ const es: typeof en = {
       `Grupo ${i}: ${points} / ${of}, mínimo ${needed}, ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
     totalLine: (points: number, of: number, needed: number, passed: boolean, provisional: boolean) =>
       `Total: ${points} / ${of}, mínimo ${needed}, ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
+    eachLine: (passPct: number, below: string[], passed: boolean, provisional: boolean) =>
+      `Cada destreza necesita al menos ${passPct}%: ${passed ? 'aprobado' : `no aprobado${below.length > 0 ? ` (por debajo de ${passPct}%: ${below.join(', ')})` : ''}`}${provisional ? ' (provisional)' : ''}`,
     averageLine: (pct: number, passPct: number, passed: boolean, provisional: boolean) =>
       `Promedio de las destrezas: ${pct}%, mínimo aproximado ${passPct}% (estimación), ${passed ? 'aprobado' : 'no aprobado'}${provisional ? ' (provisional)' : ''}`,
     checkAnswers: 'Revisar respuestas',

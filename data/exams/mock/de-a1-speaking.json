@@ -53,8 +53,7 @@
         {
           "skill": "speaking",
           "kind": "speaking",
-          "instruction": "Wählen Sie ein Thema und sprechen Sie zwei bis drei Minuten darüber. Sie haben zehn Minuten Zeit zur Vorbereitung und können Notizen machen.",
-          "prepSeconds": 600,
+          "instruction": "Wählen Sie ein Thema und sprechen Sie zwei bis drei Minuten darüber.",
           "talkMinutes": [2, 3],
           "choices": [
             {

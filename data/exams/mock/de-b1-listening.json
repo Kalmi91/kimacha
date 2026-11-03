@@ -117,7 +117,7 @@
         {
           "skill": "listening",
           "kind": "passage_mc",
-          "instruction": "Sie hören eine Führung in einem Museum. Sie hören den Text einmal. Zu den Aufgaben 11 bis 15 wählen Sie die richtige Lösung a, b oder c.",
+          "instruction": "Sie hören eine Führung in einem Museum. Sie hören den Text einmal. Zu den Aufgaben 1 bis 5 wählen Sie die richtige Lösung a, b oder c.",
           "plays": 1,
           "audio": [
             {
@@ -164,7 +164,7 @@
         {
           "skill": "listening",
           "kind": "passage_mc",
-          "instruction": "Sie hören ein Gespräch zwischen zwei Bekannten. Sie hören das Gespräch einmal. Sind die Aussagen 16 bis 22 richtig oder falsch? Kreuzen Sie an.",
+          "instruction": "Sie hören ein Gespräch zwischen zwei Bekannten. Sie hören das Gespräch einmal. Sind die Aussagen 1 bis 7 richtig oder falsch? Kreuzen Sie an.",
           "plays": 1,
           "audio": [
             { "speaker": "f", "text": "Hallo Tobias! Mensch, lange nicht gesehen. Wie geht es dir?" },
@@ -237,8 +237,8 @@
         {
           "skill": "listening",
           "kind": "passage_mc",
-          "instruction": "Sie hören eine Diskussion im Radio. Sie hören die Diskussion einmal. Zu den Aufgaben 23 bis 30 wählen Sie: Wer sagt das? Frau Aydin, Herr Berger oder beide?",
-          "plays": 1,
+          "instruction": "Sie hören eine Diskussion im Radio. Sie hören die Diskussion zweimal. Zu den Aufgaben 1 bis 8 wählen Sie: Wer sagt das? Frau Aydin, Herr Berger oder beide?",
+          "plays": 2,
           "audio": [
             {
               "speaker": "n",

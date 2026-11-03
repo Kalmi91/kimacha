@@ -96,6 +96,7 @@ const de: typeof en = {
     passRuleTotal: (needed: number, of: number) => `Zum Bestehen: mindestens ${needed} von ${of} Punkten insgesamt. Eine Fertigkeit kann eine andere ausgleichen.`,
     passRuleAverage: (pct: number) =>
       `Zum Bestehen: im Durchschnitt etwa ${pct}% über alle Fertigkeiten. Diese Bestehensgrenze ist eine Schätzung, die echte Prüfung veröffentlicht keine.`,
+    passRuleEach: (pct: number) => `Zum Bestehen: in jeder Fertigkeit mindestens ${pct}%, wie in jedem Modul der echten Prüfung. Eine starke Fertigkeit gleicht eine schwache nicht aus.`,
     passRuleScale: (needed: number) =>
       `Zum Bestehen: im Durchschnitt mindestens ${needed} Punkte auf der Prüfungsskala. Dein Skalenwert hier ist eine Schätzung aus deinen Rohpunkten.`,
     shortNote: 'Kürzer als die echte Prüfung, die Punkte sind skaliert. Die Uhr ist die echte.',
@@ -162,6 +163,8 @@ const de: typeof en = {
       `Gruppe ${i}: ${points} / ${of}, nötig ${needed}, ${passed ? 'bestanden' : 'nicht bestanden'}${provisional ? ' (vorläufig)' : ''}`,
     totalLine: (points: number, of: number, needed: number, passed: boolean, provisional: boolean) =>
       `Gesamt: ${points} / ${of}, nötig ${needed}, ${passed ? 'bestanden' : 'nicht bestanden'}${provisional ? ' (vorläufig)' : ''}`,
+    eachLine: (passPct: number, below: string[], passed: boolean, provisional: boolean) =>
+      `Jede Fertigkeit braucht mindestens ${passPct}%: ${passed ? 'bestanden' : `nicht bestanden${below.length > 0 ? ` (unter ${passPct}%: ${below.join(', ')})` : ''}`}${provisional ? ' (vorläufig)' : ''}`,
     averageLine: (pct: number, passPct: number, passed: boolean, provisional: boolean) =>
       `Durchschnitt der Fertigkeiten: ${pct}%, nötig etwa ${passPct}% (Schätzung), ${passed ? 'bestanden' : 'nicht bestanden'}${provisional ? ' (vorläufig)' : ''}`,
     checkAnswers: 'Antworten prüfen',

@@ -6,7 +6,8 @@
 //  - total (English A1): total out of 100, no per-skill minimum; a missing (placeholder) speaking is made up from the
 //    ratio of the other three skills (sum / counted maximum x 100), flagged "provisional";
 //  - average (English A2): the percentage average of the counted skills against a threshold (approximate
-//    value, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT), a missing speaking is left out here too;
+//    value, lib/exam/mock/blueprint.ts AVERAGE_PASS_PCT), a missing speaking is left out here too; with `each` (German) every counted
+//    skill must reach the percentage on its own, as every module of the Goethe-Zertifikat does;
 //  - scale (English B1 / B2 / C1): per skill the hit ratio x the real paper's maximum is a raw score, which is turned into a
 //    scale score along the rule's anchors; the average of the counted skills against the needed scale score.
 //    An item can weigh more than one mark (`marks` of the task): the hit ratio of a skill is weighed by the marks.
@@ -114,7 +115,7 @@ interface MockGroupResult {
 export type MockRuleResult =
   | { kind: 'groups'; groups: MockGroupResult[]; passed: boolean; provisional: boolean }
   | { kind: 'total'; points: number; needed: number; of: number; passed: boolean; provisional: boolean }
-  | { kind: 'average'; pct: number; passPct: number; approximate: true; passed: boolean; provisional: boolean }
+  | { kind: 'average'; pct: number; passPct: number; approximate: true; passed: boolean; provisional: boolean; each?: true; below?: MockSkill[] }
   | { kind: 'scale'; points: number; needed: number; approximate: true; passed: boolean; provisional: boolean };
 
 export interface MockResult {
@@ -448,9 +449,16 @@ export function scoreMockExam(exam: MockExam, answers: MockAnswers, ctx: MockSco
     scaleTotal = counted.length > 0 ? Math.round(counted.reduce((n, s) => n + s.scale!, 0) / counted.length) : 0;
     rule = { kind: 'scale', points: scaleTotal, needed: exam.rule.needed, approximate: true, passed: counted.length > 0 && scaleTotal >= exam.rule.needed, provisional };
   } else {
-    // The percentage average of the counted skills (equal weight).
+    // The percentage average of the counted skills (equal weight). With `each` (German: every Goethe module is passed on its own at 60 percent)
+    // no skill may be under the pass mark, and a strong skill does not make up for a weak one.
     const pct = real.length > 0 ? Math.round(real.reduce((n, s) => n + (s.points / s.maxPoints) * 100, 0) / real.length) : 0;
-    rule = { kind: 'average', pct, passPct: exam.rule.passPct, approximate: true, passed: real.length > 0 && pct >= exam.rule.passPct, provisional };
+    if (exam.rule.each) {
+      const passPct = exam.rule.passPct;
+      const below = real.filter((s) => s.correct * 100 < passPct * s.total).map((s) => s.skill);
+      rule = { kind: 'average', pct, passPct, approximate: true, passed: real.length > 0 && below.length === 0, provisional, each: true, below };
+    } else {
+      rule = { kind: 'average', pct, passPct: exam.rule.passPct, approximate: true, passed: real.length > 0 && pct >= exam.rule.passPct, provisional };
+    }
   }
 
   const included = skills.filter((s) => s.included);

@@ -234,8 +234,8 @@ for (const [name, spec] of Object.entries(SPEC)) {
 // de (German): the Goethe-Zertifikat structure (.work notes: Durchfuehrungsbestimmungen, Uebungssatz B1, Modellsatz B2, Handbuch C1), mapped to the app's kinds.
 // Lesen / Hoeren have 30 items at B1-C1 as in the real exams; `plays` is the real number of plays (an audio task without it is played twice).
 const T2 = [2, 3]; // a short-text clip with a richtig / falsch item (2 options) and a multiple-choice item (3 options)
-SPEC['de-a1-speaking'] = [speaking(1, 0, [1, 2], 1), speaking(2, 600, [2, 3], 1), speaking(2, 0, [3, 4], 5, { follows: 2 })];
-SPEC['de-a2-speaking'] = [speaking(2, 0, [2, 3], 3), speaking(2, 360, [2, 3], 1), speaking(2, 0, [3, 4], 4)];
+SPEC['de-a1-speaking'] = [speaking(1, 0, [1, 2], 1), speaking(2, 0, [2, 3], 1), speaking(2, 0, [3, 4], 5, { follows: 2 })];
+SPEC['de-a2-speaking'] = [speaking(2, 0, [2, 3], 3), speaking(2, 0, [2, 3], 1), speaking(2, 0, [3, 4], 4)];
 SPEC['de-b1-reading'] = [
   passage('reading', 'text', [200, 290], 6, 2),
   clips('reading', 'text', 2, 3, 3, { clipWords: [150, 230] }),
@@ -247,19 +247,19 @@ SPEC['de-b1-listening'] = [
   clips('listening', 'audio', 5, 2, T2, { clipWords: [45, 95], plays: 2 }),
   passage('listening', 'audio', [280, 400], 5, 3, { plays: 1 }),
   passage('listening', 'audio', [300, 420], 7, 2, { speakers: ['m', 'f'], plays: 1 }),
-  passage('listening', 'audio', [380, 520], 8, 3, { speakers: ['m', 'f', 'n'], plays: 1 }),
+  passage('listening', 'audio', [380, 520], 8, 3, { speakers: ['m', 'f', 'n'], plays: 2 }),
 ];
 SPEC['de-b1-writing'] = [
-  essay(1, 80, 100, { input: 'text', inputWords: [40, 120] }),
-  essay(1, 80, 100, { input: 'text', inputWords: [40, 130] }),
-  essay(1, 40, 60, { input: 'text', inputWords: [30, 80] }),
+  essay(1, 80, 100, { input: 'text', inputWords: [40, 120], marks: 2 }),
+  essay(1, 80, 100, { input: 'text', inputWords: [40, 130], marks: 2 }),
+  essay(1, 40, 60, { input: 'text', inputWords: [30, 80], marks: 1 }),
 ];
 SPEC['de-b1-speaking'] = [speaking(2, 900, [3, 4], 4), speaking(2, 0, [3, 3], 1), speaking(2, 0, [2, 3], 4, { follows: 2 })];
 SPEC['de-b2-reading'] = [
   pool('reading', 9, 4, false, { optionWords: [70, 105] }),
-  pool('reading', 6, 8, true, { promptWords: [55, 85], optionWords: [3, 12] }),
-  passage('reading', 'text', [430, 560], 6, 3),
   gapped('reading', [300, 450], 6, 8, { fragmentWords: [12, 45] }),
+  passage('reading', 'text', [430, 560], 6, 3),
+  pool('reading', 6, 8, true, { promptWords: [55, 85], optionWords: [3, 12] }),
   gapped('reading', [100, 200], 3, 5, { fragmentWords: [10, 35] }),
 ];
 SPEC['de-b2-listening'] = [
@@ -268,7 +268,7 @@ SPEC['de-b2-listening'] = [
   passage('listening', 'audio', [300, 480], 6, 3, { plays: 1 }),
   passage('listening', 'audio', [350, 520], 8, 3, { plays: 2 }),
 ];
-SPEC['de-b2-writing'] = [essay(1, 150, 190, { input: 'text', inputWords: [70, 170] }), essay(1, 100, 130, { input: 'text', inputWords: [60, 140] })];
+SPEC['de-b2-writing'] = [essay(1, 150, 190, { input: 'text', inputWords: [70, 170], marks: 3 }), essay(1, 100, 130, { input: 'text', inputWords: [60, 140], marks: 2 })];
 SPEC['de-b2-speaking'] = [speaking(2, 900, [4, 4], 3), speaking(2, 0, [5, 5], 4)];
 SPEC['de-c1-reading'] = [
   cloze('reading', [200, 330], 8, 'mc', { options: 4 }),
@@ -282,11 +282,11 @@ SPEC['de-c1-listening'] = [
   passage('listening', 'audio', [400, 560], 8, 3, { plays: 1 }),
   passage('listening', 'audio', [350, 500], 7, 3, { plays: 2 }),
 ];
-SPEC['de-c1-writing'] = [essay(1, 200, 250, { input: 'text', inputWords: [120, 260] }), essay(1, 150, 200, { input: 'text', inputWords: [60, 160] })];
+SPEC['de-c1-writing'] = [essay(1, 230, 290, { input: 'text', inputWords: [120, 260], marks: 3 }), essay(1, 120, 150, { input: 'text', inputWords: [60, 160], marks: 2 })];
 SPEC['de-c1-speaking'] = [speaking(2, 900, [6, 7], 3), speaking(2, 0, [5, 5], 4)];
 
 // S7: the minutes of the speaking papers (lib/exam/mock/blueprint.ts) and the words a learner can type / dictate per minute.
-const SPEAKING_MINUTES = { 'es-a1': 10, 'es-a2': 12, 'es-b1': 15, 'es-b2': 20, 'es-c1': 20, 'en-a1': 3.5, 'en-a2': 9, 'en-b1': 12, 'en-b2': 14, 'en-c1': 15, 'hu-a1': 10, 'hu-a2': 12, 'hu-b1': 15, 'hu-b2': 20, 'hu-c1': 20, 'de-a1': 10, 'de-a2': 12, 'de-b1': 15, 'de-b2': 15, 'de-c1': 20 };
+const SPEAKING_MINUTES = { 'es-a1': 10, 'es-a2': 12, 'es-b1': 15, 'es-b2': 20, 'es-c1': 20, 'en-a1': 3.5, 'en-a2': 9, 'en-b1': 12, 'en-b2': 14, 'en-c1': 15, 'hu-a1': 10, 'hu-a2': 12, 'hu-b1': 15, 'hu-b2': 20, 'hu-c1': 20, 'de-a1': 15, 'de-a2': 15, 'de-b1': 15, 'de-b2': 15, 'de-c1': 20 };
 const WORDS_PER_MINUTE = 20;
 
 const EXPECTED_FILES = Object.keys(SPEC).map((name) => `${name}.json`);

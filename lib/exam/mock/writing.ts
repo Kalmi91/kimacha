@@ -49,6 +49,7 @@ const VOWELS = /[aeiouy]/;
 
 // Keyboard rows: 4 adjacent keys ("asdf", "qwer", "zxcv", also reversed) are not a word.
 const ROWS = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm'];
+// "wert" is left out: it is the German word Wert (bewerten, wertvoll, empfehlenswert ...), not a keyboard mash.
 const KEY_RUNS = ROWS.flatMap((row) => {
   const out: string[] = [];
   for (let i = 0; i + 4 <= row.length; i++) {
@@ -56,10 +57,11 @@ const KEY_RUNS = ROWS.flatMap((row) => {
     out.push(run, [...run].reverse().join(''));
   }
   return out;
-});
+}).filter((run) => run !== 'wert');
 
 // German digraph clusters count as one letter: "Gesellschaft", "Handschrift" and "Landschaft" are real words, not 6+ consonants in a row.
-const CLUSTER = /tsch|sch|ch|ck|ph|th|ng|pf/g;
+// st too: "selbstständig" and "Rechtsstreit" (b-s-t-s-t, t-s-s-t-r) are real words.
+const CLUSTER = /tsch|sch|ch|ck|ph|th|ng|pf|st/g;
 
 /** Nonsense word: with no vowels (3+ letters), the same letter 4+ times, 6+ consonants in a row (sch, ch, ck, ... count as one), or 4 adjacent keys. */
 export function isNonsenseToken(tok: string): boolean {

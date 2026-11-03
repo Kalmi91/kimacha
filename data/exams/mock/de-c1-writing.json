@@ -9,15 +9,16 @@
         {
           "skill": "writing",
           "kind": "essay",
-          "instruction": "Sie lesen in einer Zeitung einen Beitrag über ein Handyverbot an einer Schule. Schreiben Sie einen Forumsbeitrag von etwa 200 Wörtern, in dem Sie Stellung nehmen. Gehen Sie auf die Argumente im Text ein.",
+          "marks": 3,
+          "instruction": "Sie lesen in einer Zeitung einen Beitrag über ein Handyverbot an einer Schule. Schreiben Sie einen Forumsbeitrag von etwa 230 Wörtern, in dem Sie Stellung nehmen. Gehen Sie auf die Argumente im Text ein.",
           "choices": [
             {
               "id": "w1",
               "title": "Forumsbeitrag zum Handyverbot",
               "prompt": "Nehmen Sie Stellung: Welche Position vertreten Sie? Setzen Sie sich mit den Argumenten im Text auseinander, belegen Sie Ihre Meinung mit einem Beispiel und schließen Sie mit einer Empfehlung ab.",
               "input": "Handys bleiben künftig im Schließfach\nAb dem neuen Schuljahr dürfen Schülerinnen und Schüler des Albert-Schweitzer-Gymnasiums ihre Smartphones auf dem Schulgelände nicht mehr benutzen. Schulleiterin Dr. Winkler begründet die Entscheidung: „Wir haben beobachtet, dass in den Pausen kaum noch gesprochen wird. Die Kinder sitzen nebeneinander und schauen auf ihre Bildschirme. Das wollen wir ändern.“ Eltern reagieren geteilt. Einige begrüßen die Regel, andere befürchten, dass sie ihre Kinder im Notfall nicht mehr erreichen. Der Elternvertreter Marc Jäger sagt: „Statt zu verbieten, sollte die Schule lieber lehren, wie man vernünftig mit dem Gerät umgeht.“ Die Schülervertretung kündigte an, gegen den Beschluss zu protestieren. Die Lehrerkonferenz hatte ihn mit knapper Mehrheit gefasst, einzelne Fachlehrer wollen Geräte aber weiterhin im Unterricht einsetzen.",
-              "minWords": 200,
-              "maxWords": 250,
+              "minWords": 230,
+              "maxWords": 290,
               "points": [
                 {
                   "id": "p1",
@@ -46,15 +47,16 @@
         {
           "skill": "writing",
           "kind": "essay",
-          "instruction": "Sie wohnen in einem Mietshaus. Die Hausverwaltung hat Ihnen einen Brief über Bauarbeiten geschickt. Schreiben Sie eine formelle Nachricht von etwa 150 Wörtern an die Hausverwaltung. Achten Sie auf Aufbau, Register und höfliche Formulierungen.",
+          "marks": 2,
+          "instruction": "Sie wohnen in einem Mietshaus. Die Hausverwaltung hat Ihnen einen Brief über Bauarbeiten geschickt. Schreiben Sie eine formelle Nachricht von etwa 120 Wörtern an die Hausverwaltung. Achten Sie auf Aufbau, Register und höfliche Formulierungen.",
           "choices": [
             {
               "id": "w2",
               "title": "Beschwerde an die Hausverwaltung",
               "prompt": "Schildern Sie Ihre persönliche Situation (Sie arbeiten tagsüber zu Hause). Kritisieren Sie die kurze Vorankündigung und die langen Arbeitszeiten, machen Sie einen konkreten Vorschlag und bitten Sie um eine Antwort innerhalb einer Frist.",
               "input": "Betreff: Fassadensanierung ab dem 3. Mai\nSehr geehrte Mieterinnen und Mieter,\nab dem 3. Mai wird die Fassade unseres Hauses saniert. Die Arbeiten dauern voraussichtlich sechs Monate und finden montags bis samstags von 7 bis 18 Uhr statt. Das Gerüst wird in der kommenden Woche aufgestellt. Wir bitten um Verständnis für die zeitweise Beeinträchtigung. Eine Minderung der Miete ist laut Mietvertrag nicht vorgesehen.\nIhre Hausverwaltung Berger",
-              "minWords": 150,
-              "maxWords": 200,
+              "minWords": 120,
+              "maxWords": 150,
               "points": [
                 {
                   "id": "p1",

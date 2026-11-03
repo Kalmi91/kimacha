@@ -65,7 +65,14 @@ export function MockResultView({ result, timedOut, onReview, onRetry, onExit, fu
         )}
         {result.rule.kind === 'average' && (
           <Text testID="mock-average" style={[styles.line, { color: result.rule.passed ? colors.success : colors.danger }]}>
-            {s.averageLine(result.rule.pct, result.rule.passPct, result.rule.passed, result.rule.provisional)}
+            {result.rule.each
+              ? s.eachLine(
+                  result.rule.passPct,
+                  result.skills.filter((sk) => result.rule.kind === 'average' && result.rule.below?.includes(sk.skill)).map((sk) => sk.name),
+                  result.rule.passed,
+                  result.rule.provisional,
+                )
+              : s.averageLine(result.rule.pct, result.rule.passPct, result.rule.passed, result.rule.provisional)}
           </Text>
         )}
         {result.rule.kind === 'scale' && (

@@ -100,6 +100,7 @@ export default {
     passRuleTotal: (needed: number, of: number) => `To pass: at least ${needed} of ${of} points in total. One skill can make up for another.`,
     passRuleAverage: (pct: number) =>
       `To pass: an average of about ${pct}% across the skills. This pass line is an estimate, the real exam does not publish one.`,
+    passRuleEach: (pct: number) => `To pass: at least ${pct}% in every skill, as in each module of the real exam. A strong skill cannot make up for a weak one.`,
     passRuleScale: (needed: number) =>
       `To pass: an average of at least ${needed} points on the exam scale. Your scale score here is an estimate from your raw points.`,
     shortNote: 'Shorter than the real exam, points are scaled. The clock is the real one.',
@@ -166,6 +167,8 @@ export default {
       `Group ${i}: ${points} / ${of}, needed ${needed}, ${passed ? 'passed' : 'not passed'}${provisional ? ' (provisional)' : ''}`,
     totalLine: (points: number, of: number, needed: number, passed: boolean, provisional: boolean) =>
       `Total: ${points} / ${of}, needed ${needed}, ${passed ? 'passed' : 'not passed'}${provisional ? ' (provisional)' : ''}`,
+    eachLine: (passPct: number, below: string[], passed: boolean, provisional: boolean) =>
+      `Every skill needs at least ${passPct}%: ${passed ? 'passed' : `not passed${below.length > 0 ? ` (under ${passPct}%: ${below.join(', ')})` : ''}`}${provisional ? ' (provisional)' : ''}`,
     averageLine: (pct: number, passPct: number, passed: boolean, provisional: boolean) =>
       `Average of the skills: ${pct}%, needed about ${passPct}% (estimate), ${passed ? 'passed' : 'not passed'}${provisional ? ' (provisional)' : ''}`,
     checkAnswers: 'Check answers',

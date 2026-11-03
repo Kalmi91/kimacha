@@ -21,8 +21,8 @@ describe('de: levels, papers, names, rule', () => {
     expect(MOCK_LEVELS.de).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
   });
 
-  it('A1 / A2 are the speaking paper only (not a placeholder), minutes as in es', () => {
-    for (const [level, minutes] of [['A1', 10], ['A2', 12]] as const) {
+  it('A1 / A2 are the speaking paper only (not a placeholder), 15 minutes like the Goethe pair exam', () => {
+    for (const [level, minutes] of [['A1', 15], ['A2', 15]] as const) {
       const bp = getMockBlueprint('de', level);
       expect(bp.papers.map((p) => [p.id, p.name, p.minutes, p.skills, !!p.placeholder])).toEqual([['speaking', 'Sprechen', minutes, ['speaking'], false]]);
     }
@@ -35,11 +35,11 @@ describe('de: levels, papers, names, rule', () => {
     expect(shapeOf('C1')).toEqual([['reading', 'Lesen', 65, false], ['listening', 'Hören', 40, false], ['writing', 'Schreiben', 75, false], ['speaking', 'Sprechen', 20, true]]);
   });
 
-  it('the rule is the approximate average against 60 percent (the Goethe pass mark), the exam is labelled as a sample, the skill names are German', () => {
+  it('the rule is 60 percent in EVERY skill (each Goethe module is passed on its own), the exam is labelled as a sample, the skill names are German', () => {
     for (const level of ['A1', 'A2', 'B1', 'B2', 'C1'] as const) {
       const bp = getMockBlueprint('de', level);
       expect(bp.official).toBe(false);
-      expect(bp.rule).toMatchObject({ kind: 'average', passPct: 60, approximate: true });
+      expect(bp.rule).toMatchObject({ kind: 'average', passPct: 60, approximate: true, each: true });
       expect(bp.skillNames.speaking).toBe('Sprechen');
     }
   });
@@ -108,6 +108,92 @@ describe('de: German writing is not mistaken for nonsense', () => {
     for (const word of ['Gesellschaft', 'Landschaft', 'Handschrift', 'Freundschaft', 'Wirtschaftsprüfung', 'Angstschweiß', 'Deutschstunde']) expect(isNonsenseToken(fold(word).replace(/[^a-z]/g, ''))).toBe(false);
     for (const mash of ['bcdfghk', 'qwertz', 'asdfgh', 'aaaaa']) expect(isNonsenseToken(mash)).toBe(true);
   });
+
+  it('real German words that hold a keyboard run (wert) or four consonants around st are not nonsense either', () => {
+    for (const word of ['Wert', 'wertvoll', 'bewerten', 'Bewertung', 'empfehlenswert', 'beschwert', 'selbstständig', 'Selbstständigkeit', 'Rechtsstreit']) {
+      expect([word, isNonsenseToken(fold(word).replace(/[^a-z]/g, ''))]).toEqual([word, false]);
+    }
+  });
+});
+
+describe('de: every skill must reach 60 percent, as every Goethe module does (B1 and up)', () => {
+  /** The right answers of every choice, match and speaking task of the built exam (the writing needs real text and stays empty). */
+  function rightAnswers(exam: ReturnType<typeof buildMockExam>): MockAnswers {
+    const answers: MockAnswers = {};
+    for (const paper of exam.papers) {
+      for (const task of paper.tasks) {
+        if (task.kind === 'passage_mc') answers[task.id] = Object.fromEntries(task.questions.map((q, i) => [String(i), q.correct]));
+        else if (task.kind === 'clips_mc') {
+          let n = 0;
+          const given: Record<string, number> = {};
+          for (const clip of task.clips) for (const q of clip.questions) given[String(n++)] = q.correct;
+          answers[task.id] = given;
+        } else if (task.kind === 'match_pool') answers[task.id] = { ...task.answer };
+        else if (task.kind === 'speaking') answers[task.id] = { choice: task.choices[0].id, ...Object.fromEntries(task.choices[0].turns.map((t) => [t.id, t.model])) };
+      }
+    }
+    return answers;
+  }
+  const withoutWriting = () => {
+    const exam = buildMockExam({ target: 'de', level: 'B1', items: [], seed: 2 });
+    return { ...exam, papers: exam.papers.filter((p) => p.id !== 'writing') };
+  };
+
+  it('three skills at 100 percent pass (the writing paper has no task here, so it is not counted)', () => {
+    const exam = withoutWriting();
+    const result = scoreMockExam(exam, rightAnswers(exam));
+    expect(result.rule).toMatchObject({ kind: 'average', each: true, passed: true, below: [] });
+    expect(result.passed).toBe(true);
+  });
+
+  it('one skill under 60 percent fails the exam although the average is far above 60 percent', () => {
+    const exam = withoutWriting();
+    const answers = rightAnswers(exam);
+    for (const task of exam.papers.find((p) => p.id === 'reading')!.tasks) delete answers[task.id];
+    const result = scoreMockExam(exam, answers);
+    expect(result.rule).toMatchObject({ kind: 'average', each: true, passed: false, below: ['reading'] });
+    expect((result.rule as { pct: number }).pct).toBeGreaterThanOrEqual(60);
+    expect(result.passed).toBe(false);
+  });
+
+  it('exactly 60 percent in a skill (18 of 30 reading items) passes it, one item less does not', () => {
+    const exam = withoutWriting();
+    const reading = exam.papers.find((p) => p.id === 'reading')!;
+    expect(reading.tasks.map((t) => mockTaskItemCount(t))).toEqual([6, 6, 7, 7, 4]);
+    // Leave tasks 1 and 2 unanswered (12 items): 18 of 30 are right. Leave tasks 2 and 3 unanswered (13 items): 17 of 30.
+    const without = (...ids: number[]) => {
+      const answers = rightAnswers(exam);
+      for (const i of ids) delete answers[reading.tasks[i].id];
+      return scoreMockExam(exam, answers);
+    };
+    const at18 = without(0, 1);
+    expect(at18.skills.find((x) => x.skill === 'reading')!.correct).toBe(18);
+    expect(at18.rule).toMatchObject({ passed: true, below: [] });
+    const at17 = without(1, 2);
+    expect(at17.skills.find((x) => x.skill === 'reading')!.correct).toBe(17);
+    expect(at17.rule).toMatchObject({ passed: false, below: ['reading'] });
+  });
+});
+
+describe('de: the Schreiben tasks weigh as in the Goethe module and have the official length', () => {
+  const marksOf = (level: string) => file(level, 'writing').forms[0].tasks.map((t) => (t as { marks?: number }).marks);
+  const limitsOf = (level: string) => file(level, 'writing').forms[0].tasks.map((t) => (t as { choices: { minWords: number; maxWords: number }[] }).choices[0]).map((c) => [c.minWords, c.maxWords]);
+
+  it('B1 40 / 40 / 20, B2 and C1 60 / 40 of 100 points (a task has 4 content points and 1 length mark)', () => {
+    expect(marksOf('B1')).toEqual([2, 2, 1]);
+    expect(marksOf('B2')).toEqual([3, 2]);
+    expect(marksOf('C1')).toEqual([3, 2]);
+  });
+
+  it('about 80 / 80 / 40 words at B1, 150 / 100 at B2, 230 / 120 at C1', () => {
+    expect(limitsOf('B1').map(([min]) => min)).toEqual([80, 80, 40]);
+    expect(limitsOf('B2').map(([min]) => min)).toEqual([150, 100]);
+    expect(limitsOf('C1').map(([min]) => min)).toEqual([230, 120]);
+  });
+
+  it('the A1 / A2 speaking papers have no preparation time (the Goethe A1 / A2 give none)', () => {
+    for (const level of ['A1', 'A2']) for (const task of file(level, 'speaking').forms[0].tasks) expect((task as { prepSeconds?: number }).prepSeconds).toBeUndefined();
+  });
 });
 
 describe('de: the glossary of a de exam gives the meaning in the learner language', () => {
@@ -139,7 +225,7 @@ describe('de: the shipped papers', () => {
 
   it('the listening papers play each recording as often as the Goethe module does', () => {
     const plays = (level: string) => file(level, 'listening').forms[0].tasks.map((t) => (t as { plays?: number }).plays);
-    expect(plays('B1')).toEqual([2, 1, 1, 1]);
+    expect(plays('B1')).toEqual([2, 1, 1, 2]);
     expect(plays('B2')).toEqual([1, 2, 1, 2]);
     expect(plays('C1')).toEqual([1, 2, 1, 2]);
   });

@@ -9,6 +9,7 @@
         {
           "skill": "writing",
           "kind": "essay",
+          "marks": 2,
           "instruction": "Sie haben eine Nachricht von einem Freund bekommen. Schreiben Sie ihm eine Antwort von etwa 80 Wörtern. Schreiben Sie zu allen drei Punkten und achten Sie auf Anrede und Gruß.",
           "choices": [
             {
@@ -46,6 +47,7 @@
         {
           "skill": "writing",
           "kind": "essay",
+          "marks": 2,
           "instruction": "Sie lesen in einem Internetforum die Frage unten. Schreiben Sie dazu Ihre Meinung (etwa 80 Wörter).",
           "choices": [
             {
@@ -83,6 +85,7 @@
         {
           "skill": "writing",
           "kind": "essay",
+          "marks": 1,
           "instruction": "Sie können nächste Woche nicht zum Deutschkurs kommen. Schreiben Sie an Ihre Kursleiterin eine kurze, höfliche Nachricht (etwa 40 Wörter). Schreiben Sie zu allen drei Punkten.",
           "choices": [
             {

@@ -316,7 +316,7 @@ export interface MockGroup {
 export type MockRule =
   | { kind: 'groups'; groups: MockGroup[] }
   | { kind: 'total'; needed: number; of: number }
-  | { kind: 'average'; passPct: number; approximate: true }
+  | { kind: 'average'; passPct: number; approximate: true; each?: true }
   | { kind: 'scale'; needed: number; approximate: true; skills: Partial<Record<MockSkill, { officialMax: number; anchors: [raw: number, scale: number][] }>> };
 
 export interface MockExam {

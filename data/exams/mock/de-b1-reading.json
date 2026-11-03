@@ -48,7 +48,7 @@
         {
           "skill": "reading",
           "kind": "clips_mc",
-          "instruction": "Lesen Sie die zwei Texte aus der Zeitung und die Aufgaben 7 bis 12 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+          "instruction": "Lesen Sie die zwei Texte aus der Zeitung und die Aufgaben 1 bis 6 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
           "clips": [
             {
               "text": "Mehr Platz für Fahrräder in Rotenbach\n\nDer Stadtrat von Rotenbach hat gestern beschlossen, bis zum Jahr 2027 zwölf Kilometer neue Radwege zu bauen. Das Projekt kostet rund 3,2 Millionen Euro. Ein Teil des Geldes kommt vom Land, den Rest bezahlt die Stadt aus ihrem Haushalt.\n\nBesonders auf der Hauptstraße soll es sicherer werden: Dort fahren jeden Tag Tausende Radfahrer zwischen den Wohngebieten und dem Bahnhof, und es gibt immer wieder Unfälle. Die neuen Radwege werden deshalb breiter und getrennt vom Autoverkehr gebaut.\n\nNicht alle sind begeistert. Einige Geschäftsleute fürchten, dass ihre Kunden nicht mehr mit dem Auto vorfahren können, weil Parkplätze wegfallen. Der Bürgermeister versteht diese Sorge, ist aber sicher, dass die Geschäfte profitieren: „Wer mit dem Rad kommt, hält öfter an und kauft spontan ein.“\n\nEine Umfrage der Stadt zeigt, dass 62 Prozent der Einwohner mehr Radwege wünschen. Die Bauarbeiten beginnen im Herbst.",
@@ -95,7 +95,7 @@
         {
           "skill": "reading",
           "kind": "match_pool",
-          "instruction": "Lesen Sie die Situationen 13 bis 19 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Situation? Jede Anzeige können Sie nur einmal verwenden. Nicht alle Anzeigen passen.",
+          "instruction": "Lesen Sie die Situationen 1 bis 7 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Situation? Jede Anzeige können Sie nur einmal verwenden. Nicht alle Anzeigen passen.",
           "prompts": [
             { "id": "13", "text": "Marta ist vor Kurzem aus Spanien nach Deutschland gezogen. Sie möchte ihr Deutsch verbessern, aber keinen Kurs besuchen." },
             { "id": "14", "text": "Tim zieht nächste Woche um und hat viele schwere Möbel. Er sucht jemanden, der ihm beim Tragen hilft." },
@@ -163,7 +163,7 @@
         {
           "skill": "reading",
           "kind": "passage_mc",
-          "instruction": "Lesen Sie die Beiträge aus einem Internetforum und die Aufgaben 20 bis 26. Ist die Person der Meinung, dass man in einer Großstadt gut ohne Auto leben kann? Kreuzen Sie ja oder nein an.",
+          "instruction": "Lesen Sie die Beiträge aus einem Internetforum und die Aufgaben 1 bis 7. Ist die Person der Meinung, dass man in einer Großstadt gut ohne Auto leben kann? Kreuzen Sie ja oder nein an.",
           "title": "Forum: Leben ohne Auto in der Großstadt?",
           "text": "Anna: Ich habe mein Auto vor zwei Jahren verkauft und vermisse es kein bisschen. Bus und Bahn fahren alle paar Minuten, und fürs Einkaufen nehme ich das Lastenrad. Ich spare jeden Monat viel Geld.\n\nBen: Das funktioniert nur, wenn man im Zentrum wohnt. Ich wohne am Stadtrand und arbeite im Schichtdienst. Nachts fährt kein Bus mehr, also brauche ich mein Auto jeden Tag.\n\nChiara: Mit zwei kleinen Kindern geht es für uns nicht ohne Auto. Ich bringe sie morgens zur Kita, danach muss ich schnell zur Arbeit. Mit den öffentlichen Verkehrsmitteln würde ich fast doppelt so lange brauchen.\n\nDavid: Für mich ist es eine Frage der Gewohnheit. Ich gehe fast alles zu Fuß, und für längere Strecken leihe ich mir ein Auto aus. Das ist billiger, und ich muss mich nicht um Reparaturen kümmern.\n\nEmre: Ich verstehe die ganze Aufregung nicht. Wenn die Wege kurz sind, braucht man wirklich kein Auto. Bei uns in der Stadt braucht man es nur für den Urlaub.\n\nFiona: In meinem Viertel gibt es kaum Radwege, und die Straßenbahn ist ständig überfüllt. Solange das so ist, bleibe ich beim Auto, auch wenn die Parkplatzsuche mich nervt.\n\nGeorg: Ich bin Rentner und gehe gern zu Fuß. Ärzte, Läden und Park sind in zehn Minuten erreichbar. Ein Auto würde mich nur Geld und Nerven kosten.",
           "questions": [
@@ -207,7 +207,7 @@
         {
           "skill": "reading",
           "kind": "passage_mc",
-          "instruction": "Lesen Sie den Text und die Aufgaben 27 bis 30 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+          "instruction": "Lesen Sie den Text und die Aufgaben 1 bis 4 dazu. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
           "title": "Informationen für Kursteilnehmer der Volkshochschule",
           "text": "Liebe Kursteilnehmerinnen und Kursteilnehmer,\n\nbitte lesen Sie die folgenden Hinweise sorgfältig durch.\n\nAnmeldung und Gebühren: Die Kursgebühr überweisen Sie bitte spätestens eine Woche vor dem ersten Termin. Erst danach ist Ihr Platz sicher. Wenn Sie nicht bezahlen, geben wir den Platz an die nächste Person auf der Warteliste.\n\nAbmeldung: Sie können sich bis sieben Tage vor Kursbeginn kostenlos abmelden. Danach müssen wir leider die Hälfte der Gebühr berechnen. Wer nach dem ersten Kurstag aufhört, bekommt kein Geld zurück, es sei denn, er ist krank und bringt ein ärztliches Attest mit.\n\nTeilnahmebescheinigung: Eine Bescheinigung erhalten alle, die an mindestens 80 Prozent der Termine teilgenommen haben. Bitte tragen Sie sich deshalb bei jedem Besuch in die Anwesenheitsliste ein.\n\nGebäude: Fahrräder können im Hof abgestellt werden. Im Haus ist das Rauchen nicht erlaubt. Getränke dürfen Sie in die Kursräume mitnehmen, Essen jedoch nicht. Im Erdgeschoss finden Sie einen Automaten für Kaffee und Tee.\n\nWir wünschen Ihnen viel Freude und Erfolg!",
           "questions": [

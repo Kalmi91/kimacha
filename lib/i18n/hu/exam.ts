@@ -94,6 +94,7 @@ const hu: typeof en = {
     passRuleTotal: (needed: number, of: number) => `A sikerhez: összesen legalább ${needed} / ${of} pont. Az egyik készség pótolhatja a másikat.`,
     passRuleAverage: (pct: number) =>
       `A sikerhez: a készségek átlaga kb. ${pct}%. Ez a határ becslés, a valódi vizsga nem közöl ilyet.`,
+    passRuleEach: (pct: number) => `A sikerhez: minden készségben legalább ${pct}%, mint a valódi vizsga minden moduljában. Az erős készség nem pótolja a gyengét.`,
     passRuleScale: (needed: number) =>
       `A sikerhez: átlagosan legalább ${needed} pont a vizsgaskálán. A skálapontszámod itt becslés a nyers pontjaidból.`,
     shortNote: 'Rövidebb, mint a valódi vizsga, a pontok át vannak számolva. Az óra viszont valódi.',
@@ -160,6 +161,8 @@ const hu: typeof en = {
       `${i}. csoport: ${points} / ${of}, kell: ${needed}, ${passed ? 'sikeres' : 'sikertelen'}${provisional ? ' (ideiglenes)' : ''}`,
     totalLine: (points: number, of: number, needed: number, passed: boolean, provisional: boolean) =>
       `Összesen: ${points} / ${of}, kell: ${needed}, ${passed ? 'sikeres' : 'sikertelen'}${provisional ? ' (ideiglenes)' : ''}`,
+    eachLine: (passPct: number, below: string[], passed: boolean, provisional: boolean) =>
+      `Minden készségben kell legalább ${passPct}%: ${passed ? 'sikeres' : `sikertelen${below.length > 0 ? ` (${passPct}% alatt: ${below.join(', ')})` : ''}`}${provisional ? ' (ideiglenes)' : ''}`,
     averageLine: (pct: number, passPct: number, passed: boolean, provisional: boolean) =>
       `A készségek átlaga: ${pct}%, kell kb. ${passPct}% (becslés), ${passed ? 'sikeres' : 'sikertelen'}${provisional ? ' (ideiglenes)' : ''}`,
     checkAnswers: 'Válaszok ellenőrzése',
