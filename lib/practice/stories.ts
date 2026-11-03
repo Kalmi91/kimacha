@@ -30,10 +30,24 @@ export interface StorySentence {
   form: string;
 }
 
+/**
+ * A linking sentence between two sentences of a story (FB551): shown after sentence `after` (0-based), with no word to practise
+ * and no question. Every token of its Spanish text is a token of the story or a free word (lib/knownSentence.ts), so it is
+ * known whenever the story is (data/__tests__/stories.test.ts); at most four per story.
+ */
+export interface StoryBridge {
+  after: number;
+  es?: string;
+  en?: string;
+  hu?: string;
+  de?: string;
+}
+
 export interface Story {
   id: string;
   level: PcicLevel;
   sentences: StorySentence[];
+  bridges?: StoryBridge[];
   /** Statements that are false for this story, in the language of the learner (the false answers of the true/false questions). */
   false_en?: string[];
   false_es?: string[];
@@ -60,6 +74,11 @@ export function storiesFor(target: PcicTarget): readonly Story[] {
 /** The false statements of a story in the learner's language. */
 export function falseIn(story: Story, lang: Lang): string[] {
   return story[`false_${lang}` as `false_${Lang}`] ?? [];
+}
+
+/** The bridges of a story in the target language, in text order (a bridge without a text in that language is left out). */
+export function bridgesIn(story: Story, target: PcicTarget): { after: number; text: string }[] {
+  return (story.bridges ?? []).flatMap((b) => (b[target]?.trim() ? [{ after: b.after, text: b[target]!.trim() }] : []));
 }
 
 /** The reading words of a story, in order, or null when a card is gone, a `form` is not a whole word of its sentence, or a text is missing. */

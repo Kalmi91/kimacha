@@ -3,8 +3,8 @@ import { knownTokens, type ResolvedTense } from '@/lib/knownSentence';
 import { setActiveSource, type Lang } from '@/lib/languagePair';
 import { learnedEntries } from '@/lib/sentenceCards';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
-import { buildQuestions, buildReadingSet, resolveSet, type ReadingDeps } from '../reading';
-import { falseIn, pickStory, storiesFor, storyWords, type Story, type StorySentence } from '../stories';
+import { buildQuestions, buildReadingSet, readingSegments, resolveSet, type ReadingDeps } from '../reading';
+import { bridgesIn, falseIn, pickStory, storiesFor, storyWords, type Story, type StorySentence } from '../stories';
 
 const TODAY = '2026-10-23';
 const TENSES: ReadonlySet<ResolvedTense> = new Set<ResolvedTense>(['presente']);
@@ -362,5 +362,54 @@ describe('German stories: every level, learners who know too little', () => {
       expect(w.meaning.trim()).toBeTruthy();
       expect(w.translation.trim()).toBeTruthy();
     }
+  });
+});
+
+// FB551: bridges, the linking sentences between a story's sentences (no word, no question)
+describe('bridges', () => {
+  const AB: Story = {
+    ...A,
+    bridges: [
+      { after: 0, es: ' Y el perro también. ', en: 'And the dog too.' },
+      { after: 3, es: 'Luego, la mesa.', en: 'Then, the table.', hu: 'Aztán az asztal.' },
+      { after: 3, es: 'Segundo puente.' },
+      { after: 9, es: 'Fuera del texto.' },
+    ],
+  };
+  const text = (set: { segments: ReturnType<typeof readingSegments> }) => set.segments.map((s) => (s.kind === 'word' ? `w${s.index}` : s.text));
+
+  it('bridgesIn: the text of the target language, trimmed, in data order; a bridge without it is left out', () => {
+    expect(bridgesIn(AB, 'es')).toEqual([
+      { after: 0, text: 'Y el perro también.' },
+      { after: 3, text: 'Luego, la mesa.' },
+      { after: 3, text: 'Segundo puente.' },
+      { after: 9, text: 'Fuera del texto.' },
+    ]);
+    expect(bridgesIn(AB, 'en')).toEqual([{ after: 0, text: 'And the dog too.' }, { after: 3, text: 'Then, the table.' }]);
+    expect(bridgesIn(AB, 'hu')).toEqual([{ after: 3, text: 'Aztán az asztal.' }]);
+    expect(bridgesIn(A, 'es')).toEqual([]);
+  });
+
+  it('readingSegments: every word in order, its bridges right after it, two after one sentence keep their order, one past the text is dropped', () => {
+    const words = storyWords(AB, findItem)!;
+    expect(text({ segments: readingSegments(words, 'es', AB) })).toEqual(['w0', 'Y el perro también.', 'w1', 'w2', 'w3', 'Luego, la mesa.', 'Segundo puente.', 'w4']);
+  });
+
+  it('readingSegments: without a story, or a story without bridges, the text is just the words', () => {
+    const words = storyWords(A, findItem)!;
+    const plain = ['w0', 'w1', 'w2', 'w3', 'w4'];
+    expect(text({ segments: readingSegments(words, 'es') })).toEqual(plain);
+    expect(text({ segments: readingSegments(words, 'es', A) })).toEqual(plain);
+  });
+
+  it('resolveSet gives the segments of the round: a story round with its bridges, a sentence round with only words', () => {
+    const d = deps(deckOf([]));
+    const words = storyWords(AB, findItem)!;
+    const questions = buildQuestions(words, d, knownOf(d), AB);
+    const withBridges = resolveSet(words, questions, findItem, 'es', AB)!;
+    expect(withBridges.segments).toHaveLength(5 + 3); // the bridge past the text is dropped
+    expect(withBridges.questions).toHaveLength(5); // the questions stay on the words
+    const withoutStory = resolveSet(words, buildQuestions(words, d, knownOf(d)), findItem, 'es')!;
+    expect(withoutStory.segments).toEqual(words.map((_, index) => ({ kind: 'word', index })));
   });
 });

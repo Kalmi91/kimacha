@@ -577,6 +577,35 @@ describe('Practice tab: stories (FB526)', () => {
     second.unmount();
   });
 
+  it('FB551: the bridges of the story sit between its sentences, are read aloud in order in the voice of the sentence before, and come back on a resumed round', async () => {
+    await learnFirst150();
+    const story = STORIES[0];
+    const bridges = story.bridges ?? [];
+    expect(bridges.length).toBeGreaterThan(0);
+    const order = story.sentences.flatMap((s, i) => [s.es!, ...bridges.filter((b) => b.after === i).map((b) => b.es!)]);
+    const flatText = (node: unknown): string =>
+      Array.isArray(node) ? node.map(flatText).join('') : typeof node === 'string' ? node : node && typeof node === 'object' && 'props' in node ? flatText((node as { props: { children?: unknown } }).props.children) : '';
+    const view = await mount();
+    expect(flatText(view.getByTestId('practice-text').props.children)).toBe(order.join(' '));
+    expect(forms(view)).toEqual(story.sentences.map((s) => s.form)); // only the word of each real sentence is highlighted
+    expect(view.queryByTestId('practice-word-5')).toBeNull();
+    const first = order.indexOf(bridges[0].es!);
+    expect(view.getByTestId(`practice-bridge-${first}`).props.children).toBe(` ${bridges[0].es}`);
+
+    await press(view, 'practice-speak');
+    const spoken = mockSequence.mock.calls[0][0] as { text: string; locale: string; gender?: string }[];
+    expect(spoken.map((x) => x.text)).toEqual(order);
+    expect(spoken.every((x) => x.locale === 'es-MX')).toBe(true);
+    spoken.forEach((x, i) => {
+      if (bridges.some((b) => b.es === x.text)) expect(x.gender).toBe(spoken[i - 1].gender);
+    });
+    view.unmount();
+
+    const second = await mount();
+    expect(flatText(second.getByTestId('practice-text').props.children)).toBe(order.join(' '));
+    second.unmount();
+  });
+
   it('"New reading" reads the next story, not the one just read', async () => {
     await learnFirst150();
     const view = await mount();
