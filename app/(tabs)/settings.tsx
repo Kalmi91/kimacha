@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { useState, type ReactNode } from 'react';
 import { StyleSheet, View, Pressable, ScrollView, Modal } from 'react-native';
 import { Text } from '@/components/KText';
 import { TitleText, themedSheetStyle } from '@/components/grammar/Themed';
@@ -21,6 +21,8 @@ import { languages, pairLabel, supportedPairs } from '@/lib/languages';
 import { useBeta, setBeta, BETA_FLAGS, type BetaFlag } from '@/lib/beta';
 import { useSettingsScreen } from '@/lib/settings/useSettingsScreen';
 import BetterVoiceRows from '@/components/settings/BetterVoiceRows';
+import SpeakerPickerRows from '@/components/settings/SpeakerPickerRows';
+import SettingsTabs, { type SettingsTab } from '@/components/settings/SettingsTabs';
 
 const appVersionLabel = appBuildTag();
 
@@ -86,6 +88,8 @@ export default function SettingsScreen() {
   const g = useGrammarColors();
   const s = t();
   const router = useRouter();
+  // General (everything else) or Voice (the better voice and whose voice reads each language).
+  const [tab, setTab] = useState<SettingsTab>('general');
   const {
     level, direction, directionSheetOpen, setDirectionSheetOpen, weeklyGoal, dailyNewLimit, againDelaySec,
     strictAccents, articlePicker, goalReached, missingVoices, resetLevels, hasGrammarProgress, resetOpen,
@@ -105,6 +109,18 @@ export default function SettingsScreen() {
       <ScrollView contentContainerStyle={styles.container}>
       <TitleText style={[styles.sectionTitle, { color: colors.text }]}>{s.tabs.settings}</TitleText>
 
+      <SettingsTabs tab={tab} onChange={setTab} />
+
+      {/* the on-device neural voices (download, switch, sentence engine per language) and whose voice reads each language. */}
+      {tab === 'voice' && (
+        <>
+          <BetterVoiceRows Row={Row} />
+          <SpeakerPickerRows Row={Row} />
+        </>
+      )}
+
+      {tab === 'general' && (
+      <>
       <Text style={[styles.sectionHint, { color: colors.textMuted, marginBottom: 8 }]}>{s.settings.themes.title}</Text>
       <Row onPress={() => router.push('/themes')}>
         <View testID="settings-theme-row" style={styles.themeRow}>
@@ -123,9 +139,6 @@ export default function SettingsScreen() {
           </Text>
         </Row>
       )}
-
-      {/* the on-device neural voices (download, switch, sentence engine per language). */}
-      <BetterVoiceRows Row={Row} />
 
       {/* the "weekly goal reached" card is gone (felesleges);
           the reached state stays as the green tag on the goal row below. */}
@@ -264,6 +277,8 @@ export default function SettingsScreen() {
           </Text>
           <Text style={[styles.rowArrow, { color: colors.tint }]}>→</Text>
         </Row>
+      )}
+      </>
       )}
       </ScrollView>
 

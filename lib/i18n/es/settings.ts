@@ -53,6 +53,15 @@ const es: typeof en = {
       confirmMessage: (mb: string) => `Se descargan ${mb} (las grabaciones de las palabras y las frases, y las voces). Con datos móviles cuenta en tu plan, por eso se recomienda Wi-Fi.`,
       confirmYes: 'Descargar',
     },
+    // Settings: the two tabs at the top, and the Voice tab's speaker picker (lib/voicePreference.ts).
+    tabGeneral: 'General',
+    tabVoice: 'Voz',
+    speaker: {
+      title: (lang: string) => `Quién lee ${lang}`,
+      auto: 'Automático (el más rápido)',
+      person: (name: string, female: boolean) => `${name}, ${female ? 'mujer' : 'hombre'}`,
+      hint: 'Las grabaciones de las palabras de la otra persona empiezan un poco más lento.',
+    },
     dailyNewLimit: 'Palabras nuevas al día',
     dailyNewLimitWords: (n: string) => `${n} palabras / día`,
     beta: {

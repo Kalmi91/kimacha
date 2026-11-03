@@ -33,6 +33,7 @@ import { speakNeural, stopNeural } from './neuralTts';
 import { neuralEngineFor, neuralPackFile, neuralSentenceFile, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
 import { voiceFor, type NeuralLang, type VoiceGender } from './neuralVoices';
+import { preferredGender } from './voicePreference';
 
 let voiceLanguages: Set<string> | null = null;
 let voicesByLanguage: Map<string, Speech.Voice[]> | null = null;
@@ -177,10 +178,17 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
 
 // FB543: the sex of the voice that speaks `text` (the word pack and both engines pick it the same way), so a
 // learner's tap on the example sentence's own speaker keeps the word's speaker. Undefined for a language the
-// better voice does not cover.
+// better voice does not cover. The person chosen in Settings -> Voice speaks it when there is one.
 export function speakerGenderFor(text: string, locale: string): VoiceGender | undefined {
   const lang = neuralLangFor(locale);
-  return lang ? voiceFor(lang, 'kokoro', text).gender : undefined;
+  return lang ? preferredGender(lang) ?? voiceFor(lang, 'kokoro', text).gender : undefined;
+}
+
+// The person chosen in Settings -> Voice for the locale's language (f / m); undefined = Automatic or a language
+// the better voice does not cover.
+export function preferredGenderFor(locale: string): 'f' | 'm' | undefined {
+  const lang = neuralLangFor(locale);
+  return lang ? preferredGender(lang) : undefined;
 }
 
 function neuralLangFor(locale: string): NeuralLang | null {
@@ -206,12 +214,14 @@ interface BetterOptions {
 function speakBetter(text: string, locale: string, opts: BetterOptions, phone: () => void): boolean {
   const lang = neuralLangFor(locale);
   if (!lang) return false;
-  // A male / female line (practice exam) must not get a pack recording of the other sex.
-  const wrongSex = !!opts.gender && opts.gender !== 'n' && lang !== 'hu' && voiceFor(lang, 'kokoro', text).gender !== opts.gender;
+  // A male / female line (practice exam) keeps its sex; any other speech takes the person chosen in Settings -> Voice.
+  // Either way the speech must not get a pack recording of the other sex.
+  const gender = opts.gender === 'f' || opts.gender === 'm' ? opts.gender : preferredGender(lang) ?? opts.gender;
+  const wrongSex = !!gender && gender !== 'n' && lang !== 'hu' && voiceFor(lang, 'kokoro', text).gender !== gender;
   const wordFile = wrongSex ? null : neuralPackFile(lang, text);
   // The sentence pack (Audio round B) after the word pack: the speaker is the explicit gender (a sequence's shared
   // speaker, a card's word), else the text's own hash gender, the one the engine would pick.
-  const pack = wordFile ?? neuralSentenceFile(lang, text, opts.gender);
+  const pack = wordFile ?? neuralSentenceFile(lang, text, gender);
   const engine = neuralEngineFor(lang);
   if (!pack && !engine) return false;
   Speech.stop();
@@ -229,7 +239,7 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
       toPhone();
       return;
     }
-    speakNeural(text, lang, voiceFor(lang, now, text, opts.gender), {
+    speakNeural(text, lang, voiceFor(lang, now, text, gender), {
       rate: opts.rate,
       onDone: opts.onDone,
       onStopped: opts.onStopped,
@@ -317,12 +327,15 @@ function withSharedSpeaker(segments: SpeechRunSegment[]): SpeechRunSegment[] {
   return segments.map((seg) => {
     const lang = neuralLangFor(seg.locale);
     if (!lang) return seg;
+    const chosen = preferredGender(lang);
+    const fixed = seg.gender === 'f' || seg.gender === 'm';
     let gender = first.get(lang);
     if (!gender) {
-      gender = voiceFor(lang, 'kokoro', seg.text, seg.gender).gender;
+      gender = voiceFor(lang, 'kokoro', seg.text, fixed ? seg.gender : chosen).gender;
       first.set(lang, gender);
     }
-    return seg.gender ? seg : { ...seg, gender };
+    // the person chosen in Settings -> Voice also takes the segments of no sex (the exam's narrator, 'n')
+    return fixed || (seg.gender && !chosen) ? seg : { ...seg, gender };
   });
 }
 
