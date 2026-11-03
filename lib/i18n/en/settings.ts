@@ -61,6 +61,9 @@ export default {
       auto: 'Automatic (fastest)',
       person: (name: string, female: boolean) => `${name}, ${female ? 'female' : 'male'}`,
       hint: "Recordings of the other person's words start a little slower.",
+      // Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03.
+      fastFallback: 'Fast fallback',
+      fastFallbackHint: 'When the picked person has no recording, the existing recording of the other person plays at once instead of a slower generated one.',
     },
     dailyNewLimit: 'New words a day',
     dailyNewLimitWords: (n: string) => `${n} words / day`,

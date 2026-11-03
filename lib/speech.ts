@@ -33,7 +33,7 @@ import { speakNeural, stopNeural } from './neuralTts';
 import { neuralEngineFor, neuralPackFile, neuralSentenceFile, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
 import { isPiperOnly, voiceFor, type NeuralLang, type VoiceGender } from './neuralVoices';
-import { preferredGender } from './voicePreference';
+import { getFastFallback, preferredGender } from './voicePreference';
 
 let voiceLanguages: Set<string> | null = null;
 let voicesByLanguage: Map<string, Speech.Voice[]> | null = null;
@@ -149,7 +149,7 @@ function isHeadlessWeb(): boolean {
 }
 
 // `gender` picks the male / female voice of the better voice (speakerGenderFor gives the one of another text).
-export function speak(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender } = {}): void {
+export function speak(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender; strict?: boolean } = {}): void {
   if (!text) return;
   if (isHeadlessWeb()) {
     setTimeout(() => options.onDone?.(), 0);
@@ -159,7 +159,7 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
   // word + example chain in flight (speakSequence) stops there too; the phone's own queue (QUEUE_ADD) only
   // kept the phone from talking over itself, not over the word pack or the better voice.
   stop();
-  const { gender, ...phoneOptions } = options;
+  const { gender, strict, ...phoneOptions } = options;
   const viaPhone = () => {
     if (!hasVoiceFor(locale)) {
       missing.add(baseLanguage(locale));
@@ -172,7 +172,7 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
       ...(voice ? { voice } : {}),
     });
   };
-  if (speakBetter(text, locale, { rate: options.rate, gender, onDone: options.onDone, onStopped: options.onStopped }, viaPhone)) return;
+  if (speakBetter(text, locale, { rate: options.rate, gender, strict, onDone: options.onDone, onStopped: options.onStopped }, viaPhone)) return;
   viaPhone();
 }
 
@@ -207,6 +207,8 @@ function neuralLangFor(locale: string): NeuralLang | null {
 interface BetterOptions {
   rate?: number;
   gender?: VoiceGender;
+  /** A line whose speaker must never be swapped for the other sex (the practice exam's dialogue): no fast fallback. */
+  strict?: boolean;
   onDone?: () => void;
   onStopped?: () => void;
 }
@@ -216,12 +218,22 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   if (!lang) return false;
   // A male / female line (practice exam) keeps its sex; any other speech takes the person chosen in Settings -> Voice.
   // Either way the speech must not get a pack recording of the other sex.
-  const gender = opts.gender === 'f' || opts.gender === 'm' ? opts.gender : preferredGender(lang) ?? opts.gender;
+  const explicitSex = opts.gender === 'f' || opts.gender === 'm';
+  const picked = preferredGender(lang);
+  const gender = explicitSex ? opts.gender : picked ?? opts.gender;
   const wrongSex = !!gender && gender !== 'n' && !isPiperOnly(lang) && voiceFor(lang, 'kokoro', text).gender !== gender;
   const wordFile = wrongSex ? null : neuralPackFile(lang, text);
   // The sentence pack (Audio round B) after the word pack: the speaker is the explicit gender (a sequence's shared
   // speaker, a card's word), else the text's own hash gender, the one the engine would pick.
-  const pack = wordFile ?? neuralSentenceFile(lang, text, gender);
+  let pack = wordFile ?? neuralSentenceFile(lang, text, gender);
+  // Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03: the picked person has no recording of
+  // this text, so with the "Fast fallback" switch on the existing recording of the other person plays at once
+  // (the word's own voice, else the sentence pack's other speaker) instead of a slower generated one. It applies
+  // when the speaking gender is the picked person (handed in explicitly by withSharedSpeaker / wordSpeakerGender
+  // or not); a different explicit sex and a strict line (the practice exam's dialogue) never take the other sex.
+  if (!pack && picked && gender === picked && !opts.strict && getFastFallback()) {
+    pack = neuralPackFile(lang, text) ?? neuralSentenceFile(lang, text, picked === 'f' ? 'm' : 'f') ?? neuralSentenceFile(lang, text);
+  }
   const engine = neuralEngineFor(lang);
   if (!pack && !engine) return false;
   Speech.stop();
@@ -266,7 +278,7 @@ export function stop(): void {
 // learner asks for (a speaker button, a Check) goes through speak() and always sounds.
 let quietStart = true;
 
-export function speakAuto(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender } = {}): void {
+export function speakAuto(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender; strict?: boolean } = {}): void {
   if (quietStart) return;
   speak(text, locale, options);
 }
@@ -316,6 +328,8 @@ export interface SpeechRunSegment {
   pitch?: number;
   /** m / f picks the male / female voice of the better voice; n or nothing leaves it to the text. */
   gender?: VoiceGender;
+  /** The practice exam's dialogue speakers: never swapped for the other sex when the picked person has no recording. */
+  strict?: boolean;
 }
 
 // FB543: one speaker per language in a sequence. A segment without a gender of its own gets the sex of the
@@ -374,7 +388,7 @@ export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, 
         onError: () => next(index + 1),
       });
     };
-    const better = { gender: segment.gender, onDone: () => next(index + 1), onStopped: () => onStopped?.() };
+    const better = { gender: segment.gender, strict: segment.strict, onDone: () => next(index + 1), onStopped: () => onStopped?.() };
     if (!speakBetter(segment.text, segment.locale, better, viaPhone)) viaPhone();
   };
 

@@ -6,13 +6,18 @@ import { fireEvent, render } from '@testing-library/react-native';
 
 import { ThemeProvider } from '@/lib/ThemeContext';
 import { DEFAULT_SPEAKERS } from '@/lib/neuralVoices';
-import { setSpeakerChoices } from '@/lib/voicePreference';
+import { getFastFallback, setFastFallback, setSpeakerChoices } from '@/lib/voicePreference';
 import SpeakerPickerRows from '../SpeakerPickerRows';
 
 let mockState: any;
 const mockSetSpeaker = jest.fn();
+const mockSetFastFallback = jest.fn();
 jest.mock('@/lib/neuralModels', () => ({
   useNeuralState: () => mockState,
+  setNeuralFastFallback: (on: boolean) => {
+    mockSetFastFallback(on);
+    require('@/lib/voicePreference').setFastFallback(on);
+  },
   setNeuralSpeaker: (lang: string, choice: string) => {
     mockSetSpeaker(lang, choice);
     require('@/lib/voicePreference').setSpeakerChoice(lang, choice);
@@ -45,7 +50,9 @@ const checked = (view: ReturnType<typeof show>, lang: string) =>
 
 beforeEach(() => {
   mockSetSpeaker.mockClear();
+  mockSetFastFallback.mockClear();
   setSpeakerChoices({ ...DEFAULT_SPEAKERS });
+  setFastFallback(true);
 });
 
 describe('SpeakerPickerRows', () => {
@@ -110,5 +117,38 @@ describe('SpeakerPickerRows', () => {
     mockState = stateWith({ supported: false });
     const view = show();
     expect(view.toJSON()).toBeNull();
+  });
+
+  // Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03.
+  it('has the "Fast fallback" switch row below the pickers, on to begin with, with its hint', () => {
+    mockState = stateWith();
+    const view = show();
+    expect(view.getByText('Fast fallback')).toBeTruthy();
+    expect(
+      view.getByText('When the picked person has no recording, the existing recording of the other person plays at once instead of a slower generated one.'),
+    ).toBeTruthy();
+    const sw = view.getByTestId('settings-fast-fallback');
+    expect(sw.props.value ?? sw.props.accessibilityState?.checked).toBe(true);
+  });
+
+  it('turning the switch off (and on again) hands the value to lib/neuralModels', () => {
+    mockState = stateWith();
+    const view = show();
+    const sw = view.getByTestId('settings-fast-fallback');
+    if ('value' in sw.props) fireEvent(sw, 'valueChange', false);
+    else fireEvent.press(sw);
+    expect(mockSetFastFallback).toHaveBeenLastCalledWith(false);
+    expect(getFastFallback()).toBe(false);
+    const again = view.getByTestId('settings-fast-fallback');
+    if ('value' in again.props) fireEvent(again, 'valueChange', true);
+    else fireEvent.press(again);
+    expect(mockSetFastFallback).toHaveBeenLastCalledWith(true);
+  });
+
+  it('shows the switch as off when the saved value is off', () => {
+    mockState = stateWith();
+    setFastFallback(false);
+    const sw = show().getByTestId('settings-fast-fallback');
+    expect(sw.props.value ?? sw.props.accessibilityState?.checked).toBe(false);
   });
 });

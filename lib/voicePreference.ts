@@ -32,6 +32,25 @@ export function useSpeakerChoices(): SpeakerChoices {
   return useSyncExternalStore(subscribe, () => choices, () => choices);
 }
 
+// Settings -> Voice, "Fast fallback": when the picked person has no recording of a text, the existing recording of
+// the other person plays at once instead of a slower generated one. Default on.
+// Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03.
+let fastFallback = true;
+
+export function getFastFallback(): boolean {
+  return fastFallback;
+}
+
+export function setFastFallback(on: boolean): void {
+  if (fastFallback === on) return;
+  fastFallback = on;
+  listeners.forEach(fn => fn());
+}
+
+export function useFastFallback(): boolean {
+  return useSyncExternalStore(subscribe, () => fastFallback, () => fastFallback);
+}
+
 // The person every speech of `lang` without an explicit gender uses; undefined = Automatic (the text's own voice).
 export function preferredGender(lang: NeuralLang): 'f' | 'm' | undefined {
   const choice = choices[lang];

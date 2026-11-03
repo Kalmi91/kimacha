@@ -1,18 +1,20 @@
 // Settings -> Voice: whose voice reads each language (lib/voicePreference.ts). One block per language the better voice
 // covers: "Automatic (fastest)" (each word's own recorded voice, today's behavior), then the two people of the
 // language's current engine pair, named with their sex. Exactly one row of a block is checked. Hidden where the
-// better voice does not exist (the web build). The Row is the Settings screen's own card row.
+// better voice does not exist (the web build). Below the pickers, the temporary "Fast fallback" switch. The Row is
+// the Settings screen's own card row.
 
 import { View, StyleSheet } from 'react-native';
 import { Text } from '@/components/KText';
+import { BrutalSwitch } from '@/components/grammar/Brutal';
 import Colors from '@/constants/Colors';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { t } from '@/lib/i18n';
 import { languages } from '@/lib/languages';
-import { setNeuralSpeaker, useNeuralState } from '@/lib/neuralModels';
+import { setNeuralFastFallback, setNeuralSpeaker, useNeuralState } from '@/lib/neuralModels';
 import { voiceName, voicePair, type NeuralLang, type SpeakerChoice } from '@/lib/neuralVoices';
-import { useSpeakerChoices } from '@/lib/voicePreference';
+import { useFastFallback, useSpeakerChoices } from '@/lib/voicePreference';
 import type { RowComponent } from './BetterVoiceRows';
 
 const SPEAKER_LANGS: NeuralLang[] = ['es', 'en', 'hu', 'de'];
@@ -24,6 +26,7 @@ export default function SpeakerPickerRows({ Row }: { Row: RowComponent }) {
   const s = t().settings.speaker;
   const state = useNeuralState();
   const choices = useSpeakerChoices();
+  const fastFallback = useFastFallback();
   if (!state.supported) return null;
 
   const langName = (code: NeuralLang) => languages.find(l => l.code === code)?.name ?? code;
@@ -62,6 +65,14 @@ export default function SpeakerPickerRows({ Row }: { Row: RowComponent }) {
           </View>
         );
       })}
+      {/* Temporary until EJSZAKA E101 (both voices recorded), Kálmán 2026-11-03. */}
+      <Row>
+        <View style={styles.labelBox}>
+          <Text style={[styles.label, { color: colors.text }]}>{s.fastFallback}</Text>
+          <Text style={[styles.hint, { color: colors.tabIconDefault }]}>{s.fastFallbackHint}</Text>
+        </View>
+        <BrutalSwitch testID="settings-fast-fallback" accessibilityLabel={s.fastFallback} value={fastFallback} onValueChange={setNeuralFastFallback} />
+      </Row>
     </>
   );
 }
