@@ -13,6 +13,7 @@ const de: typeof en = {
     errorLocked: (minutes: number) => `Zu viele falsche PIN-Eingaben. Versuche es in ${minutes} Min. noch einmal.`,
     errorNetwork: 'Keine Verbindung. Prüfe dein Internet und versuche es noch einmal.',
     errorBadInput: 'Gib einen Namen (2-24 Zeichen) und eine 4-stellige PIN ein.',
+    errorNameTaken: 'Dieser Name ist in der Rangliste vergeben. Wähle einen anderen.',
     errorServer: 'Etwas ist schiefgelaufen. Versuche es gleich noch einmal.',
     loading: 'Dein Fortschritt wird geladen...',
     loadFailed: 'Dein Fortschritt konnte nicht geladen werden.',
