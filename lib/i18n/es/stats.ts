@@ -73,6 +73,25 @@ const es: typeof en = {
     scheduleNextDays: (days: number) => `en ${days} ${days === 1 ? 'día' : 'días'}`,
     scheduleEmpty: '¡Todavía no hay nada guardado, aprende algunas palabras!',
   },
+  board: {
+    title: 'Ranking semanal',
+    rankLine: (rank: number, xp: number) => `Lugar ${rank} · ${xp} XP`,
+    resets: 'Se reinicia el lunes',
+    joinPrompt: 'Escribe un nombre y descubre en qué lugar estás frente a los demás estudiantes.',
+    joinWarning: 'Los demás estudiantes pueden ver tu nombre y tus XP de la semana.',
+    namePlaceholder: 'Apodo',
+    join: 'Unirme',
+    nameTaken: 'Ese nombre ya está en uso, elige otro.',
+    badName: 'Escribe un nombre (2-24 caracteres).',
+    tooManyJoins: 'Hoy se unieron demasiadas personas desde esta red. Inténtalo de nuevo mañana.',
+    offline: 'El ranking no está disponible por ahora.',
+    loading: 'Cargando...',
+    empty: 'Nadie ha ganado XP esta semana todavía.',
+    xp: (xp: number) => `${xp} XP`,
+    leave: 'Salir del ranking',
+    leaveConfirm: 'Seguro que quieres salir? Tu nombre y tus XP de la semana se borrarán del ranking.',
+    leaveYes: 'Salir',
+  },
 };
 
 export default es;

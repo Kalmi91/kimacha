@@ -13,6 +13,7 @@ const hu: typeof en = {
     errorLocked: (minutes: number) => `Túl sok rossz PIN. Próbáld újra ${minutes} perc múlva.`,
     errorNetwork: 'Nincs kapcsolat. Nézd meg az internetet, és próbáld újra.',
     errorBadInput: 'Írj be egy nevet (2-24 karakter) és egy 4 jegyű PIN-t.',
+    errorNameTaken: 'Ez a név foglalt a rangsorban. Válassz másikat.',
     errorServer: 'Valami hiba történt. Próbáld újra egy kicsit később.',
     loading: 'Töltöm a haladásodat...',
     loadFailed: 'Nem sikerült betölteni a haladásodat.',

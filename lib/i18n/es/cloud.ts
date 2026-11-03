@@ -13,6 +13,7 @@ const es: typeof en = {
     errorLocked: (minutes: number) => `Demasiados PIN incorrectos. Inténtalo de nuevo en ${minutes} min.`,
     errorNetwork: 'Sin conexión. Revisa tu internet e inténtalo de nuevo.',
     errorBadInput: 'Escribe un nombre (2-24 caracteres) y un PIN de 4 dígitos.',
+    errorNameTaken: 'Este nombre ya está en la clasificación. Elige otro.',
     errorServer: 'Algo salió mal. Inténtalo de nuevo en un momento.',
     loading: 'Cargando tu progreso...',
     loadFailed: 'No se pudo cargar tu progreso.',

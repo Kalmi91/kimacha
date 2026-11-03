@@ -137,6 +137,19 @@ describe('exportAll / importAll (native db)', () => {
     expect(tables.streak).toEqual(payload.tables.streak);
   });
 
+  it('the backup blanks the leaderboard token like user_id, and a restore writes the own token back', async () => {
+    seedAll();
+    tables.user_meta = [{ id: 1, user_id: 'old-install-id', first_use_date: '2026-09-01T00:00:00.000Z', board_identity: '{"token":"dev-tok","name":"Kálmán"}' }];
+    const payload = JSON.parse(JSON.stringify(await getDb().exportAll()));
+    expect(payload.tables.user_meta[0].board_identity).toBeNull();
+    expect(JSON.stringify(payload)).not.toContain('dev-tok');
+
+    payload.tables.user_meta[0].board_identity = '{"token":"from-file","name":"X"}';
+    mockFakeDb.runAsync.mockClear();
+    await getDb().importAll(payload);
+    expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET board_identity = ? WHERE id = 1', ['{"token":"dev-tok","name":"Kálmán"}']);
+  });
+
   it('exports a legacy pcic_cards row with known NULL as 0, so the backup still validates', async () => {
     seedAll();
     tables.pcic_cards = [{ ...pcicRow('b1-0001', '2026-10-08'), known: null }, { ...pcicRow('b1-0002', '2026-10-07'), known: 1 }];
@@ -222,6 +235,25 @@ describe('practice counters and beta flags (native db)', () => {
     expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET practice_round = ? WHERE id = 1', ['{"v":1}']);
     await getDb().setPracticeRound(null);
     expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET practice_round = ? WHERE id = 1', [null]);
+  });
+});
+
+describe('leaderboard identity (native db)', () => {
+  it('getBoardIdentity reads the user_meta JSON; no row value or a broken one = not joined', async () => {
+    tables.user_meta = [{ id: 1, board_identity: '{"token":"dev-tok","name":"Kálmán"}' }];
+    expect(await getDb().getBoardIdentity()).toEqual({ token: 'dev-tok', name: 'Kálmán' });
+    tables.user_meta = [{ id: 1, board_identity: 'nope' }];
+    expect(await getDb().getBoardIdentity()).toBeNull();
+    tables.user_meta = [{ id: 1, board_identity: null }];
+    expect(await getDb().getBoardIdentity()).toBeNull();
+  });
+
+  it('setBoardIdentity writes only token and name as JSON to user_meta.board_identity; null clears it', async () => {
+    mockFakeDb.runAsync.mockClear();
+    await getDb().setBoardIdentity({ token: 'dev-tok', name: 'Kálmán' });
+    expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET board_identity = ? WHERE id = 1', ['{"token":"dev-tok","name":"Kálmán"}']);
+    await getDb().setBoardIdentity(null);
+    expect(mockFakeDb.runAsync).toHaveBeenLastCalledWith('UPDATE user_meta SET board_identity = ? WHERE id = 1', [null]);
   });
 });
 

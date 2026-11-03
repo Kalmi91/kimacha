@@ -9,6 +9,7 @@ import 'react-native-reanimated';
 import { bottomGutter } from '@/lib/bottomGutter';
 import { isDarkTheme } from '@/constants/Colors';
 import { FONT_FILES } from '@/constants/Fonts';
+import { startBoardSync } from '@/lib/cloud/boardSync';
 import { getDb } from '@/lib/database';
 import { initI18n, setLanguage, subscribeLanguage } from '@/lib/i18n';
 import { FORCED_PAIR, needsPairCorrection } from '@/lib/languages';
@@ -48,6 +49,9 @@ function RootLayout() {
   }, [error]);
 
   useEffect(() => subscribeLanguage(() => setLangVersion((v) => v + 1)), []);
+
+  // The weekly leaderboard push (lib/cloud/boardSync.ts); it sends nothing until the learner has joined it.
+  useEffect(() => startBoardSync(), []);
 
   // On a cold start it returns to the last used tab / lesson (lib/useAppResume.ts).
   useAppResume(onboardingDone);

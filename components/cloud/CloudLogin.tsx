@@ -26,6 +26,8 @@ function errorText(failure: CloudFailure): string {
       return s.errorNetwork;
     case 'bad_input':
       return s.errorBadInput;
+    case 'name_taken':
+      return s.errorNameTaken;
     default:
       return s.errorServer;
   }

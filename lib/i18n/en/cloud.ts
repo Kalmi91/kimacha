@@ -12,6 +12,7 @@ export default {
     errorLocked: (minutes: number) => `Too many wrong PINs. Try again in ${minutes} min.`,
     errorNetwork: 'No connection. Check your internet and try again.',
     errorBadInput: 'Enter a name (2-24 characters) and a 4-digit PIN.',
+    errorNameTaken: 'This name is taken on the leaderboard. Pick another one.',
     errorServer: 'Something went wrong. Try again in a moment.',
     loading: 'Loading your progress...',
     loadFailed: 'Could not load your progress.',

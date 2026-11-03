@@ -68,6 +68,26 @@ const de: typeof en = {
     scheduleNextDays: (days: number) => `in ${days} ${days === 1 ? 'Tag' : 'Tagen'}`,
     scheduleEmpty: 'Noch nichts weggelegt, lerne ein paar Wörter!',
   },
+  // The Stats tab's weekly leaderboard (components/stats/WeeklyBoardCard.tsx).
+  board: {
+    title: 'Wochenrangliste',
+    rankLine: (rank: number, xp: number) => `Platz ${rank} · ${xp} XP`,
+    resets: 'Wird am Montag zurückgesetzt',
+    joinPrompt: 'Wähle einen Namen und sieh, wo du unter den anderen Lernenden stehst.',
+    joinWarning: 'Andere Lernende sehen deinen Namen und deine Wochen-XP.',
+    namePlaceholder: 'Spitzname',
+    join: 'Mitmachen',
+    nameTaken: 'Dieser Name ist vergeben, wähle einen anderen.',
+    badName: 'Gib einen Namen ein (2-24 Zeichen).',
+    tooManyJoins: 'Aus diesem Netz sind heute schon zu viele beigetreten. Versuche es morgen wieder.',
+    offline: 'Die Rangliste ist gerade nicht erreichbar.',
+    loading: 'Wird geladen...',
+    empty: 'Diese Woche hat noch niemand XP gesammelt.',
+    xp: (xp: number) => `${xp} XP`,
+    leave: 'Rangliste verlassen',
+    leaveConfirm: 'Verlassen? Dein Name und deine Wochen-XP werden aus der Rangliste gelöscht.',
+    leaveYes: 'Verlassen',
+  },
 };
 
 export default de;

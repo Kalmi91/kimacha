@@ -11,6 +11,11 @@ import type { MistakeBatchRow } from './mistakes/deck';
 import type { Sm2Card } from './sm2';
 import type { UsageStats } from './usageStats';
 
+export interface BoardIdentity {
+  token: string;
+  name: string;
+}
+
 export interface DB {
   getStreak(): Promise<{ current_count: number; last_date: string | null; longest_count: number }>;
   getOnboarding(): Promise<{ source: string; target: string } | null>;
@@ -80,6 +85,9 @@ export interface DB {
   // null = no round saved.
   getPracticeRound(): Promise<string | null>;
   setPracticeRound(json: string | null): Promise<void>;
+  // the weekly leaderboard identity of this device (lib/cloud/board.ts), app-wide; null = not joined.
+  getBoardIdentity(): Promise<BoardIdentity | null>;
+  setBoardIdentity(identity: BoardIdentity | null): Promise<void>;
   // the selected PCIC level (A1-C1), app-wide, like the
   // status-bar tint. `levelPrefix` is optional: it clears only that level
   // (by the id list fetched from the loaded corpus, following lib/pcicLevels.ts

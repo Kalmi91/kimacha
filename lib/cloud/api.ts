@@ -3,7 +3,7 @@
 // Nothing here throws: every call answers { ok: true, data } or { ok: false, error }.
 import { loadSession } from './session';
 
-export type CloudErrorCode = 'network' | 'bad_input' | 'locked' | 'bad_pin' | 'bad_token' | 'too_large' | 'conflict' | 'server';
+export type CloudErrorCode = 'network' | 'bad_input' | 'locked' | 'bad_pin' | 'bad_token' | 'too_large' | 'conflict' | 'name_taken' | 'server';
 
 // `current`: with 'conflict', the state the server holds now (PUT /api/progress was based on an older revision).
 export type CloudFailure = { ok: false; error: CloudErrorCode; retryAfterSec?: number; current?: ProgressData };
@@ -26,7 +26,7 @@ export interface ProgressData {
   rev: number;
 }
 
-const SERVER_CODES: readonly CloudErrorCode[] = ['bad_input', 'locked', 'bad_pin', 'bad_token', 'too_large', 'conflict'];
+const SERVER_CODES: readonly CloudErrorCode[] = ['bad_input', 'locked', 'bad_pin', 'bad_token', 'too_large', 'conflict', 'name_taken'];
 
 // fetch() is allowed to outlive the page only with a body under 64 KiB; 3 bytes per char at most.
 const KEEPALIVE_MAX_CHARS = 20000;

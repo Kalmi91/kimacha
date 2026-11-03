@@ -16,7 +16,8 @@ export type MetaColumn =
   | 'skin'
   | 'skin_mix'
   | 'beta_flags'
-  | 'practice_round';
+  | 'practice_round'
+  | 'board_identity';
 
 // learn_settings columns, one row per language pair.
 export type SettingColumn =
