@@ -88,6 +88,7 @@ const de: typeof en = {
     learningDirection: 'Lernrichtung',
     chooseDirection: 'Lernrichtung wählen',
     credits: 'Quellen und Lizenzen',
+    signIn: 'Anmelden',
     resetGrammar: '🗑️ Grammatikfortschritt zurücksetzen',
     resetGrammarTitle: 'Grammatikfortschritt zurücksetzen',
     resetGrammarMessage: 'Das löscht den gesamten Fortschritt in Grammatiklektionen und -übungen. Bist du sicher?',

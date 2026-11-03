@@ -6,6 +6,7 @@ import { speak, speakAuto, speakSequence, stopSpeaking } from '@/lib/speech';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { getBeta, useBeta } from '@/lib/beta';
+import { noteCardGraded } from '@/lib/cloud/guest';
 import { pairOf, sourceFor, type Lang } from '@/lib/languagePair';
 import { exampleIn, wordIn } from '@/lib/pcicItemText';
 import { speechLang } from '@/lib/languages';
@@ -438,7 +439,7 @@ export function usePcicSession() {
     const wasNew = current?.state === 'new';
     const next = await commitGrade(g);
     if (!next) return;
-    advance(next, g);
+    advance(next, g); noteCardGraded(); // web guest mode counts the cards for its save offer (lib/cloud/guest.ts)
     // After every 4th NEW word a sentence card can come
     // (practice only, its result does not write SRS).
     if (!wasNew) return;

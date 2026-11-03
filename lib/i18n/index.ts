@@ -10,6 +10,10 @@ const LANGS: Record<string, Strings> = { en, es, hu, de };
 let current: Strings = en;
 let currentCode = 'en';
 
+// The web DB lives in memory, so on the next visit the language is not known until a sign-in restores it: setLanguage()
+// remembers the last one here, and the web gate (components/cloud/CloudGate.tsx) reads it so its welcome screen speaks it.
+export const UI_LANG_KEY = 'kimacha.uiLang';
+
 // the interface language is now the pair's
 // SOURCE language (onboarding.source), not always English; setLanguage() now
 // really switches, it is no longer a no-op. app/_layout.tsx calls it with the
@@ -30,6 +34,21 @@ export function t(): Strings {
 export function setLanguage(code: string) {
   current = LANGS[code] ?? en;
   currentCode = code;
+  try {
+    localStorage.setItem(UI_LANG_KEY, code);
+  } catch {
+    // native or blocked site data: nothing to remember
+  }
+}
+
+// null = none stored (or not one of LANGS).
+export function rememberedLanguage(): string | null {
+  try {
+    const code = localStorage.getItem(UI_LANG_KEY);
+    return code !== null && code in LANGS ? code : null;
+  } catch {
+    return null;
+  }
 }
 
 export function currentLanguage(): string {
