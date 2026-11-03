@@ -229,6 +229,31 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
     expect(mockBack).toHaveBeenCalledTimes(1);
   });
 
+  it('FB550: every topic row of the end screen opens that topic\'s lesson, the round stays', async () => {
+    await open();
+    for (let i = 0; i < 20; i++) await answer(true);
+    const touched = [...evidenceFromRows(await rows()).keys()];
+    expect(touched.length).toBeGreaterThan(5);
+    for (const id of touched) expect(screen.getByTestId(`random-open-${id}`)).toBeTruthy();
+    await press(`random-open-${touched[0]}`);
+    expect(mockPush).toHaveBeenCalledTimes(1);
+    expect(mockPush).toHaveBeenCalledWith(`/grammar/${touched[0]}`);
+    expect(screen.getByTestId('random-end-full')).toBeTruthy(); // a push: the end screen is still there
+    await press(`random-open-${touched[touched.length - 1]}`);
+    expect(mockPush).toHaveBeenLastCalledWith(`/grammar/${touched[touched.length - 1]}`);
+  });
+
+  it('FB550: a weak topic of the mixed round\'s check result opens its lesson', async () => {
+    await mixedNext();
+    await open();
+    for (let i = 0; i < 10; i++) await answer(i >= 4);
+    const saved = runFromRows(await rows())!;
+    expect(saved.weak.length).toBeGreaterThan(0);
+    await press(`random-open-${saved.weak[0]}`);
+    expect(mockPush).toHaveBeenCalledWith(`/grammar/${saved.weak[0]}`);
+    expect(screen.getByTestId('random-practice-these')).toBeTruthy(); // the result pause stays
+  });
+
   it('a full round marks the topic that is ticked off: 5+ answers, 80%, two kinds', async () => {
     // every topic has 4 right answers of two kinds: nothing is needed any more, each topic gets 2 more questions
     for (const topic of TOPICS) {
@@ -307,6 +332,9 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
       const pct = (p: number | null) => (p === null ? '–' : `${p}%`);
       expect(text(`random-end-topic-${id}`)).toBe(`${TITLES[id]} ${pct(before)} → ${pct(now)}`);
     }
+    mockPush.mockClear();
+    await press(`random-open-${saved.weak[0]}`); // FB550: the end screen's weak list opens the lesson too
+    expect(mockPush).toHaveBeenCalledWith(`/grammar/${saved.weak[0]}`);
     expect((await rows()).find((r) => r.itemId === META_ITEM_ID)?.data).toEqual({ rounds: 2 });
     expect((await rows()).find((r) => r.itemId === RUN_ITEM_ID)).toMatchObject({ state: 'none', data: null });
     await press('random-done');

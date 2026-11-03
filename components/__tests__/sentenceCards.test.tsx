@@ -24,12 +24,21 @@ describe('EasySentenceCard (build-the-sentence)', () => {
     const onResult = jest.fn();
     const { getByText, getAllByText } = render(<EasySentenceCard {...props} onResult={onResult} />);
     for (const w of props.targetWords) fireEvent.press(getAllByText(w)[0]);
-    expect(speech.speak).toHaveBeenCalledWith('el', 'es-MX');
-    expect(speech.speak).toHaveBeenCalledWith('mesa', 'es-MX');
+    // FB555: a tile is read by the female voice, the full sentence after Check is not given a gender.
+    expect(speech.speak).toHaveBeenCalledWith('el', 'es-MX', { gender: 'f' });
+    expect(speech.speak).toHaveBeenCalledWith('mesa', 'es-MX', { gender: 'f' });
     fireEvent.press(getByText('Check'));
     expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX');
     fireEvent.press(getByText(/Next/));
     expect(onResult).toHaveBeenCalledWith(true);
+  });
+
+  it('FB555: every tapped tile, whichever word, is spoken with the female voice', () => {
+    const { getAllByText } = render(<EasySentenceCard {...props} onResult={jest.fn()} />);
+    for (const w of props.targetWords) fireEvent.press(getAllByText(w)[0]);
+    const tileCalls = speech.speak.mock.calls.filter(([text]) => props.targetWords.includes(text as string));
+    expect(tileCalls).toHaveLength(props.targetWords.length);
+    for (const call of tileCalls) expect(call.slice(1)).toEqual(['es-MX', { gender: 'f' }]);
   });
 
   it('a wrong build turns red and shows the correct sentence', () => {
@@ -447,7 +456,7 @@ describe('Audio round B: the sentence cards speak with the voice of the card wor
     expect(speech.speak).toHaveBeenCalledWith('El libro y la mesa.', 'es-MX', { gender: 'f' });
   });
 
-  it('build-the-sentence: the prompt and the finished sentence carry the speaker, a placed tile does not', () => {
+  it('build-the-sentence: the prompt and the finished sentence carry the speaker, a placed tile the female voice (FB555)', () => {
     const { getByText, getAllByText } = render(
       <EasySentenceCard
         sourceSentence="The book and the table."
@@ -461,7 +470,7 @@ describe('Audio round B: the sentence cards speak with the voice of the card wor
     );
     expect(speech.speak).toHaveBeenCalledWith('The book and the table.', 'en-US', { gender: 'f' });
     fireEvent.press(getAllByText('el')[0]);
-    expect(speech.speak).toHaveBeenLastCalledWith('el', 'es-MX');
+    expect(speech.speak).toHaveBeenLastCalledWith('el', 'es-MX', { gender: 'f' });
     fireEvent.press(getByText('Check'));
     expect(speech.speak).toHaveBeenLastCalledWith('el libro y la mesa', 'es-MX', { gender: 'f' });
   });

@@ -133,6 +133,38 @@ describe('Situations: words, structures', () => {
     build.unmount();
   });
 
+  it('FB553: the words step and the structures step say what to do; the fill step shows neither hint', async () => {
+    const sx = t().practiceTab.situations;
+    const view = await mount();
+    expect(view.getByTestId('situations-words-hint').props.children).toBe(sx.wordsHint);
+    expect(view.getByTestId('situations-words-hint').props.children).toBe('Listen to the word and its meaning, then tap Next.');
+    expect(view.queryByTestId('situations-patterns-hint')).toBeNull();
+    view.unmount();
+    await saveRun(at('patterns', { index: 0 }));
+    const patterns = await mount();
+    expect(patterns.getByTestId('situations-patterns-hint').props.children).toBe(sx.patternsHint);
+    expect(patterns.queryByTestId('situations-words-hint')).toBeNull();
+    patterns.unmount();
+    await saveRun(at('fill'));
+    const fill = await mount();
+    expect(fill.getByTestId('situations-line-0')).toBeTruthy();
+    expect(fill.queryByTestId('situations-words-hint')).toBeNull();
+    expect(fill.queryByTestId('situations-patterns-hint')).toBeNull();
+    fill.unmount();
+  });
+
+  it('FB553: the hints are written in Spanish and Hungarian too, not left in English', async () => {
+    const en = t().practiceTab.situations;
+    for (const lang of ['es', 'hu'] as const) {
+      setLanguage(lang);
+      const sx = t().practiceTab.situations;
+      expect(sx.wordsHint).toBeTruthy();
+      expect(sx.patternsHint).toBeTruthy();
+      expect(sx.wordsHint).not.toBe(en.wordsHint);
+      expect(sx.patternsHint).not.toBe(en.patternsHint);
+    }
+  });
+
   it('no situation for another target language: the empty state', async () => {
     await getDb().setOnboarding('es', 'en');
     const view = await mount();

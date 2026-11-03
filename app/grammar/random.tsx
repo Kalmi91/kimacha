@@ -234,6 +234,13 @@ export default function RandomRoundScreen() {
     return tp ? tp.title[data.contentLang] ?? tp.title.en : id;
   };
   const levelOf = (id: string): Level => data.topics.find((x) => x.id === id)?.level ?? data.startLevel;
+  // FB550: a topic row of the result / end lists opens that topic's lesson (a push: back returns to this screen, nothing is saved).
+  const lessonRow = (id: string, card: ReactNode) => (
+    <Pressable key={id} testID={`random-open-${id}`} accessibilityRole="button" accessibilityLabel={titleOf(id)}
+      style={({ pressed }) => ({ opacity: pressed ? 0.7 : 1 })} onPress={() => router.push(`/grammar/${id}` as never)}>
+      {card}
+    </Pressable>
+  );
 
   const startRound = (mode: RoundMode) => {
     setFeedback(null);
@@ -390,13 +397,15 @@ export default function RandomRoundScreen() {
             <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>{s.weakTitle}</Text>
             {run.weak.map((id) => {
               const asked = checkSteps.filter((st) => st.topicId === id);
-              return (
-                <Card key={id} classicStyle={styles.card} boxStyle={styles.brutalCard}>
+              return lessonRow(
+                id,
+                <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
                   <View style={styles.row}>
                     <Text testID={`random-weak-${id}`} style={[styles.rowTitle, { color: colors.text }]}>
                       {titleOf(id)}
                     </Text>
                     <Text style={[styles.rowValue, { color: colors.textMuted }]}>{`${asked.filter((st) => st.ok).length}/${asked.length}`}</Text>
+                    <Text style={[styles.rowValue, { color: colors.textMuted }]}>›</Text>
                   </View>
                 </Card>
               );
@@ -441,21 +450,28 @@ export default function RandomRoundScreen() {
         {run.mode === 'mixed' ? (
           <View testID="random-weak-list" style={styles.list}>
             <Text style={[styles.sectionTitle, { color: colors.textMuted }]}>{s.weakTitle}</Text>
-            {run.weak.map((id) => (
-              <Card key={id} classicStyle={styles.card} boxStyle={styles.brutalCard}>
-                <Text testID={`random-end-topic-${id}`} style={[styles.rowTitle, { color: colors.text }]}>
-                  {`${titleOf(id)} ${pctText(run.before[id] ?? null)} → ${pctText(topicPercent(evidence.get(id)))}`}
-                </Text>
-              </Card>
-            ))}
+            {run.weak.map((id) =>
+              lessonRow(
+                id,
+                <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
+                  <View style={styles.row}>
+                    <Text testID={`random-end-topic-${id}`} style={[styles.rowTitle, { color: colors.text }]}>
+                      {`${titleOf(id)} ${pctText(run.before[id] ?? null)} → ${pctText(topicPercent(evidence.get(id)))}`}
+                    </Text>
+                    <Text style={[styles.rowValue, { color: colors.textMuted }]}>›</Text>
+                  </View>
+                </Card>
+              )
+            )}
           </View>
         ) : (
           <View testID="random-topic-list" style={styles.list}>
             {touched.map((id) => {
               const ev = evidence.get(id);
               const pct = topicPercent(ev);
-              return (
-                <Card key={id} classicStyle={styles.card} boxStyle={styles.brutalCard}>
+              return lessonRow(
+                id,
+                <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
                   <View style={styles.row}>
                     <View style={styles.flex}>
                       <Text testID={`random-end-topic-${id}`} style={[styles.rowTitle, { color: colors.text }]}>
@@ -471,6 +487,7 @@ export default function RandomRoundScreen() {
                         {`✓ ${s.ticked}`}
                       </Text>
                     )}
+                    <Text style={[styles.rowValue, { color: colors.textMuted }]}>›</Text>
                   </View>
                 </Card>
               );
