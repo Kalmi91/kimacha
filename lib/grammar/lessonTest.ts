@@ -128,6 +128,8 @@ export interface LessonTestQuestion {
   view: LessonTestView;
   /** The result sheet row: what was asked, what is correct (empty: no single answer), and why. */
   review: { question: string; answer: string; why?: string };
+  /** FB549: the whole sentence in the learned language, read aloud after the answer; none for a form or a match. */
+  say?: string;
 }
 
 interface Ctx {
@@ -158,14 +160,17 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
           correctIndex: r.correctIndex,
         },
         review: { question: it.sentence, answer: r.options[r.correctIndex], why: pick(it.why) },
+        say: it.sentence,
       };
     }
     if (!it.sentence.includes('___')) return null;
+    const filled = it.sentence.replace('___', r.options[r.correctIndex]);
     return {
       id: it.id,
       kind,
       view: { card: 'choice', heading: s.exam.chooseGap, text: it.sentence, options: r.options, correctIndex: r.correctIndex },
-      review: { question: it.sentence, answer: it.sentence.replace('___', r.options[r.correctIndex]), why: pick(it.why) },
+      review: { question: it.sentence, answer: filled, why: pick(it.why) },
+      say: filled,
     };
   }
 
@@ -208,6 +213,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       view: { card: 'choice', heading, text: item.es, options: sh.options, correctIndex: sh.correctIndex },
       // The result sheet also shows the question text, not just the sentence.
       review: { question: `${heading}\n${item.es}`, answer: sh.options[sh.correctIndex], why: pick(item.tr) },
+      say: item.es,
     };
   }
   if (isTransformItem(item)) {
@@ -224,6 +230,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
         sentence: true,
       },
       review: { question: item.prompt.es, answer: item.answer, why: pick(item.why) },
+      say: item.answer,
     };
   }
   if (isSpotItem(item)) {
@@ -235,15 +242,13 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       item.correctIndex,
       optionSeed(item.id)
     );
+    const fixed = fixedSentence(item.es, item.wrongIndex, item.options[item.correctIndex]);
     return {
       id: item.id,
       kind,
       view: { card: 'choice', heading: s.grammar.spotPickFix, text: marked, options: sh.options, correctIndex: sh.correctIndex },
-      review: {
-        question: item.es,
-        answer: fixedSentence(item.es, item.wrongIndex, item.options[item.correctIndex]),
-        why: pick(item.explain),
-      },
+      review: { question: item.es, answer: fixed, why: pick(item.explain) },
+      say: fixed,
     };
   }
   if (isOrderItem(item)) {
@@ -254,6 +259,7 @@ function toQuestion(r: GrammarRoundItem, ctx: Ctx): LessonTestQuestion | null {
       kind,
       view: { card: 'tiles', prompt: pick(item.prompt), answerTokens, sentence: item.es },
       review: { question: pick(item.prompt), answer: item.es },
+      say: item.es,
     };
   }
   // Dictation would require listening, and the test (like the exam) runs without sound: it is left out.

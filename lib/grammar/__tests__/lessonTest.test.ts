@@ -185,6 +185,19 @@ describe('every item kind turns into an exam card', () => {
     }
   });
 
+  it('FB549: the sentence to read aloud is the whole right sentence, none for a form', () => {
+    const qs = all(TOPIC);
+    const gap = qs.filter((q) => q.view.card === 'choice' && q.kind === 'choice');
+    expect(gap.length).toBeGreaterThan(0);
+    for (const q of gap) expect(q.say).toBe(q.review.answer); // the gap filled with the right option
+    for (const q of qs.filter((x) => x.kind === 'why')) {
+      if (q.view.card === 'choice') expect(q.say).toBe(q.view.text);
+    }
+    for (const q of all('ir-a-infinitivo').filter((x) => x.kind === 'transform')) expect(q.say).toBe(q.review.answer);
+    for (const q of allApproved('negacion').filter((x) => x.kind === 'spot' || x.kind === 'order')) expect(q.say).toBe(q.review.answer);
+    for (const q of qs.filter((x) => x.kind === 'form')) expect(q.say).toBeUndefined();
+  });
+
   it('conjugation and "why": conjugation is type-it, "why" is multiple choice with the lesson explanation', () => {
     const qs = all(TOPIC);
     expect(qs.filter((q) => q.kind === 'form').every((q) => q.view.card === 'type')).toBe(true);
