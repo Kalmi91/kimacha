@@ -107,7 +107,7 @@ export const PACK_DIR = 'kimacha-tts-pack-v1';
 // is { version, engine, files: { es: { "<g>|<key>": "es/<g>/<hash>.mp3" }, en: { ... } } }, g = f | m, key = packKey(text).
 // An empty URL keeps today's behavior: the item is not required and nothing is downloaded.
 export const SENTENCES_KEY = 'sentences';
-export const SENTENCE_PACK_BYTES = 0; // filled after packing: the size of the uploaded asset
+export const SENTENCE_PACK_BYTES = 343377219;
 export const SENTENCE_PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v1/kimacha-tts-sentences-v1.tar.bz2';
 export const SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v1';
 

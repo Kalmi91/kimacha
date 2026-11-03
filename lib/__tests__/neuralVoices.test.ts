@@ -129,7 +129,7 @@ describe('models', () => {
     const items = requiredItems({ es: 'piper', en: 'piper', hu: 'piper' });
     const all = missingBytes(items, {});
     expect(all).toBe(PACK_BYTES + SENTENCE_PACK_BYTES + PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0)); // the pack counts too
-    expect(formatMegabytes(all)).toBe('235 MB');
+    expect(formatMegabytes(all)).toBe('562 MB');
     expect(missingBytes(items, { 'hu_HU-berta-medium': true })).toBe(all - NEURAL_MODELS['hu_HU-berta-medium'].bytes);
     expect(missingBytes(items, { [PACK_KEY]: true })).toBe(all - PACK_BYTES);
     expect(missingBytes(items, { [SENTENCES_KEY]: true })).toBe(all - SENTENCE_PACK_BYTES);
