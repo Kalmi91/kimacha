@@ -4,10 +4,9 @@
 import { Platform } from 'react-native';
 
 const mockCreatePlayer = jest.fn();
-jest.mock('expo-audio', () => ({ createAudioPlayer: (...args: unknown[]) => mockCreatePlayer(...args) }), { virtual: true });
-// the bundled file stands in as a plain module id, so the test does not depend on the asset transform (on the CI
-// runner playChime skipped the player while it played locally)
-jest.mock('../chimeAsset', () => ({ chimeAsset: () => 1 }));
+// the player maker is stubbed, not expo-audio and the asset path: those stubs worked locally, but on the CI
+// runner playChime never reached the player
+jest.mock('../chimePlayer', () => ({ makeChimePlayer: (...args: unknown[]) => mockCreatePlayer(...args) }));
 
 import { playChime } from '../chime';
 
@@ -27,6 +26,7 @@ function fakePlayer() {
 }
 
 beforeEach(() => {
+  jest.replaceProperty(Platform, 'OS', 'android'); // the native path, whatever the runner's default platform
   jest.useFakeTimers();
   mockCreatePlayer.mockReset();
 });
