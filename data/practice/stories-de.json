@@ -283,280 +283,280 @@
     "id": "a2-zoo",
     "level": "A2",
     "sentences": [
-      { "de": "Am Wochenende gehe ich mit meiner Schwester in den Zoo.", "es": "El fin de semana voy al zoológico con mi hermana.", "en": "On the weekend I go to the zoo with my sister.", "hu": "Hétvégén a nővéremmel az állatkertbe megyek.", "word": "d101129", "form": "Zoo" },
-      { "de": "Die Giraffe ist wirklich groß, und ihr Hals ist sehr lang.", "es": "La jirafa es realmente grande, y su cuello es muy largo.", "en": "The giraffe is really big, and its neck is very long.", "hu": "A zsiráf tényleg nagy, és a nyaka nagyon hosszú.", "word": "d101615", "form": "Giraffe" },
-      { "de": "Ich lache, denn der Pinguin ist sehr lustig.", "es": "Me río porque el pingüino es muy gracioso.", "en": "I laugh because the penguin is very funny.", "hu": "Nevetek, mert a pingvin nagyon vicces.", "word": "d102161", "form": "Pinguin" },
-      { "de": "Das Känguru ist müde und will schlafen.", "es": "El canguro está cansado y quiere dormir.", "en": "The kangaroo is tired and wants to sleep.", "hu": "A kenguru fáradt, és aludni akar.", "word": "d102745", "form": "Känguru" },
-      { "de": "Dann kaufe ich ein Eis am Stiel für meine Schwester.", "es": "Luego le compro una paleta a mi hermana.", "en": "Then I buy a popsicle for my sister.", "hu": "Aztán veszek egy jégnyalókát a nővéremnek.", "word": "d101549", "form": "Stiel" }
+      { "de": "Am Wochenende bin ich mit meiner Schwester in den Zoo gegangen.", "es": "El fin de semana fui al zoológico con mi hermana.", "en": "On the weekend I went to the zoo with my sister.", "hu": "Hétvégén a húgommal elmentem az állatkertbe.", "word": "d101129", "form": "Zoo" },
+      { "de": "Die Giraffe war wirklich groß, und ihr Hals war sehr lang.", "es": "La jirafa era realmente grande y su cuello era larguísimo.", "en": "The giraffe was really big, and its neck was very long.", "hu": "A zsiráf igazán nagy volt, és a nyaka nagyon hosszú.", "word": "d101615", "form": "Giraffe" },
+      { "de": "Ich habe gelacht, denn der Pinguin war sehr lustig.", "es": "Me reí, porque el pingüino era muy gracioso.", "en": "I laughed because the penguin was very funny.", "hu": "Nevettem, mert a pingvin nagyon vicces volt.", "word": "d102161", "form": "Pinguin" },
+      { "de": "Das Känguru war müde und wollte schlafen.", "es": "El canguro estaba cansado y quería dormir.", "en": "The kangaroo was tired and wanted to sleep.", "hu": "A kenguru fáradt volt, és aludni akart.", "word": "d102745", "form": "Känguru" },
+      { "de": "Dann habe ich ein Eis am Stiel für meine Schwester gekauft.", "es": "Luego le compré una paleta helada a mi hermana.", "en": "Then I bought an ice cream on a stick for my sister.", "hu": "Aztán vettem egy jégkrémet a húgomnak.", "word": "d101549", "form": "Stiel" }
     ],
-    "false_es": ["Voy al zoológico con mi hermano.","La jirafa es muy pequeña.","El pingüino es muy triste."],
-    "false_en": ["I go to the zoo with my brother.","The giraffe is very small.","The penguin is very sad."],
-    "false_hu": ["A bátyámmal megyek az állatkertbe.","A zsiráf nagyon kicsi.","A pingvin nagyon szomorú."]
+    "false_es": ["Fui al zoológico con mi hermano.","La jirafa era muy pequeña.","El canguro quería correr."],
+    "false_en": ["I went to the zoo with my brother.","The giraffe was very small.","The kangaroo wanted to run."],
+    "false_hu": ["A bátyámmal mentem az állatkertbe.","A zsiráf nagyon kicsi volt.","A kenguru futni akart."]
   },
   {
     "id": "a2-reise",
     "level": "A2",
     "sentences": [
-      { "de": "Mein Flug geht heute Abend.", "es": "Mi vuelo sale esta noche.", "en": "My flight leaves tonight.", "hu": "A járatom ma este indul.", "word": "d101130", "form": "Flug" },
-      { "de": "Das Gepäck ist schwer, aber ich kann es tragen.", "es": "El equipaje está pesado, pero puedo cargarlo.", "en": "The luggage is heavy, but I can carry it.", "hu": "A poggyász nehéz, de el tudom vinni.", "word": "d101131", "form": "Gepäck" },
-      { "de": "Am Gate warte ich und lese ein Buch.", "es": "En la puerta de embarque espero y leo un libro.", "en": "At the gate I wait and read a book.", "hu": "A beszállókapunál várok, és egy könyvet olvasok.", "word": "d321310", "form": "Gate" },
-      { "de": "Der Pilot ist freundlich, und ich bin ruhig.", "es": "El piloto es amable y yo estoy tranquilo.", "en": "The pilot is friendly, and I am calm.", "hu": "A pilóta kedves, én pedig nyugodt vagyok.", "word": "d101140", "form": "Pilot" },
-      { "de": "Endlich fliege ich in den Urlaub.", "es": "Finalmente viajo en avión de vacaciones.", "en": "Finally I fly off on vacation.", "hu": "Végre nyaralni repülök.", "word": "d101772", "form": "Endlich" }
+      { "de": "Mein Flug war gestern Abend, deshalb musste ich früh am Flughafen sein.", "es": "Mi vuelo fue ayer por la noche, así que tuve que estar temprano en el aeropuerto.", "en": "My flight was yesterday evening, so I had to be at the airport early.", "hu": "A járatom tegnap este volt, ezért korán a repülőtéren kellett lennem.", "word": "d101130", "form": "Flug" },
+      { "de": "Das Gepäck war schwer, aber ich konnte es tragen.", "es": "El equipaje estaba pesado, pero pude cargarlo.", "en": "The luggage was heavy, but I could carry it.", "hu": "A csomag nehéz volt, de el tudtam vinni.", "word": "d101131", "form": "Gepäck" },
+      { "de": "Am Gate habe ich gewartet und ein Buch gelesen.", "es": "En la puerta de embarque esperé y leí un libro.", "en": "At the gate I waited and read a book.", "hu": "A kapunál vártam és egy könyvet olvastam.", "word": "d321310", "form": "Gate" },
+      { "de": "Der Pilot war freundlich, und ich war ruhig.", "es": "El piloto era amable y yo estaba tranquilo.", "en": "The pilot was friendly, and I was calm.", "hu": "A pilóta barátságos volt, és én nyugodt voltam.", "word": "d101140", "form": "Pilot" },
+      { "de": "Endlich bin ich in den Urlaub geflogen.", "es": "Por fin me fui de vacaciones en avión.", "en": "At last I flew off on vacation.", "hu": "Végre elrepültem nyaralni.", "word": "d101772", "form": "Endlich" }
     ],
-    "false_es": ["Mi vuelo sale mañana temprano.","El equipaje es muy ligero.","El piloto es antipático."],
-    "false_en": ["My flight leaves early tomorrow.","The luggage is very light.","The pilot is unfriendly."],
-    "false_hu": ["A járatom holnap korán indul.","A poggyász nagyon könnyű.","A pilóta barátságtalan."]
+    "false_es": ["Mi vuelo fue por la mañana.","El equipaje era muy ligero.","El piloto estaba enojado."],
+    "false_en": ["My flight was in the morning.","The luggage was very light.","The pilot was angry."],
+    "false_hu": ["A járatom reggel volt.","A csomag nagyon könnyű volt.","A pilóta mérges volt."]
   },
   {
     "id": "a2-kuchen",
     "level": "A2",
     "sentences": [
-      { "de": "Heute backe ich einen Kuchen für meine Mutter.", "es": "Hoy horneo un pastel para mi mamá.", "en": "Today I bake a cake for my mother.", "hu": "Ma tortát sütök az anyámnak.", "word": "d100698", "form": "Kuchen" },
-      { "de": "Der Mixer ist laut, aber er ist sehr nützlich.", "es": "La licuadora es ruidosa, pero es muy útil.", "en": "The blender is loud, but it is very useful.", "hu": "A turmixgép hangos, de nagyon hasznos.", "word": "d102098", "form": "Mixer" },
-      { "de": "Der Backofen ist heiß, und die Küche ist warm.", "es": "El horno está caliente y la cocina está calurosa.", "en": "The oven is hot, and the kitchen is warm.", "hu": "A sütő forró, és a konyha meleg.", "word": "d101109", "form": "Backofen" },
-      { "de": "Ich kann den Kuchen schon riechen.", "es": "Ya puedo oler el pastel.", "en": "I can already smell the cake.", "hu": "Már érzem a torta illatát.", "word": "d101043", "form": "riechen" },
-      { "de": "Der Kuchen ist köstlich, und ich habe schon ein Stück gegessen.", "es": "El pastel está delicioso y ya me comí un pedazo.", "en": "The cake is delicious, and I have already eaten a piece.", "hu": "A torta ízletes, és már ettem egy darabot.", "word": "d100910", "form": "köstlich" }
+      { "de": "Gestern habe ich einen Kuchen für meine Mutter gebacken.", "es": "Ayer horneé un pastel para mi mamá.", "en": "Yesterday I baked a cake for my mother.", "hu": "Tegnap tortát sütöttem az anyukámnak.", "word": "d100698", "form": "Kuchen" },
+      { "de": "Der Mixer war laut, aber er war sehr nützlich.", "es": "La batidora era ruidosa, pero era muy útil.", "en": "The mixer was loud, but it was very useful.", "hu": "A mixer hangos volt, de nagyon hasznos.", "word": "d102098", "form": "Mixer" },
+      { "de": "Der Backofen war heiß, und die Küche war warm.", "es": "El horno estaba caliente y la cocina estaba cálida.", "en": "The oven was hot, and the kitchen was warm.", "hu": "A sütő forró volt, és a konyha meleg.", "word": "d101109", "form": "Backofen" },
+      { "de": "Ich konnte den Kuchen schon riechen.", "es": "Ya podía oler el pastel.", "en": "I could already smell the cake.", "hu": "Már éreztem a torta illatát.", "word": "d101043", "form": "riechen" },
+      { "de": "Der Kuchen war köstlich, und ich habe schon ein Stück gegessen.", "es": "El pastel estaba delicioso y ya me comí un pedazo.", "en": "The cake was delicious, and I have already eaten a piece.", "hu": "A torta finom volt, és már ettem egy darabot.", "word": "d100910", "form": "köstlich" }
     ],
-    "false_es": ["Horneo un pastel para mi papá.","El horno está frío.","El pastel no está rico."],
-    "false_en": ["I bake a cake for my father.","The oven is cold.","The cake does not taste good."],
-    "false_hu": ["Az apámnak sütök tortát.","A sütő hideg.","A torta nem finom."]
+    "false_es": ["Horneé el pastel para mi papá.","La batidora era muy silenciosa.","El horno estaba frío."],
+    "false_en": ["I baked the cake for my father.","The mixer was very quiet.","The oven was cold."],
+    "false_hu": ["Az apukámnak sütöttem a tortát.","A mixer nagyon halk volt.","A sütő hideg volt."]
   },
   {
     "id": "a2-fussball",
     "level": "A2",
     "sentences": [
-      { "de": "Heute ist das Spiel, und mein Team ist aufgeregt.", "es": "Hoy es el partido y mi equipo está emocionado.", "en": "Today is the game, and my team is excited.", "hu": "Ma van a meccs, és a csapatom izgatott.", "word": "d100859", "form": "Team" },
-      { "de": "Der Schiedsrichter ist da, und das Spiel kann beginnen.", "es": "El árbitro ya está aquí y el partido puede comenzar.", "en": "The referee is here, and the game can begin.", "hu": "A játékvezető itt van, és a meccs kezdődhet.", "word": "d101751", "form": "Schiedsrichter" },
-      { "de": "Der Torwart ist sehr gut, aber wir wollen gewinnen.", "es": "El portero es muy bueno, pero queremos ganar.", "en": "The goalkeeper is very good, but we want to win.", "hu": "A kapus nagyon jó, de mi nyerni akarunk.", "word": "d104441", "form": "Torwart" },
-      { "de": "Am Ende ist das Ergebnis drei zu zwei.", "es": "Al final el resultado es tres a dos.", "en": "In the end the result is three to two.", "hu": "Végül az eredmény három-kettő.", "word": "d100362", "form": "Ergebnis" },
-      { "de": "Alle wollen applaudieren, und ich bin sehr froh.", "es": "Todos quieren aplaudir y yo estoy muy contento.", "en": "Everyone wants to applaud, and I am very happy.", "hu": "Mindenki tapsolni akar, és én nagyon boldog vagyok.", "word": "d102205", "form": "applaudieren" }
+      { "de": "Gestern war das Spiel, und mein Team war aufgeregt.", "es": "Ayer fue el partido y mi equipo estaba emocionado.", "en": "Yesterday was the game, and my team was excited.", "hu": "Tegnap volt a meccs, és a csapatom izgatott volt.", "word": "d100859", "form": "Team" },
+      { "de": "Der Schiedsrichter war da, und das Spiel konnte beginnen.", "es": "El árbitro ya estaba ahí y el partido pudo empezar.", "en": "The referee was there, and the game could begin.", "hu": "A játékvezető ott volt, és a meccs elkezdődhetett.", "word": "d101751", "form": "Schiedsrichter" },
+      { "de": "Der Torwart war sehr gut, aber wir wollten gewinnen.", "es": "El portero era muy bueno, pero nosotros queríamos ganar.", "en": "The goalkeeper was very good, but we wanted to win.", "hu": "A kapus nagyon jó volt, de mi nyerni akartunk.", "word": "d104441", "form": "Torwart" },
+      { "de": "Am Ende haben wir gewonnen, und das Ergebnis war drei zu zwei.", "es": "Al final ganamos, y el resultado fue tres a dos.", "en": "In the end we won, and the result was three to two.", "hu": "A végén nyertünk, és az eredmény három-kettő volt.", "word": "d100362", "form": "Ergebnis" },
+      { "de": "Alle wollten applaudieren, und ich war sehr froh.", "es": "Todos querían aplaudir y yo estaba muy contento.", "en": "Everyone wanted to applaud, and I was very happy.", "hu": "Mindenki tapsolni akart, és én nagyon boldog voltam.", "word": "d102205", "form": "applaudieren" }
     ],
-    "false_es": ["El partido es mañana.","El portero es muy malo.","Al final el resultado es cero a cero."],
-    "false_en": ["The game is tomorrow.","The goalkeeper is very bad.","In the end the result is zero to zero."],
-    "false_hu": ["A meccs holnap van.","A kapus nagyon rossz.","Végül az eredmény nulla-nulla."]
+    "false_es": ["El partido fue ayer.","Perdimos el partido.","El árbitro llegó tarde."],
+    "false_en": ["The game was yesterday.","We lost the game.","The referee arrived late."],
+    "false_hu": ["A meccs tegnap volt.","Elvesztettük a meccset.","A játékvezető későn érkezett."]
   },
   {
     "id": "a2-umzug",
     "level": "A2",
     "sentences": [
-      { "de": "Morgen ist der Umzug, und ich bin aufgeregt.", "es": "Mañana es la mudanza y estoy emocionado.", "en": "Tomorrow is moving day, and I am excited.", "hu": "Holnap lesz a költözés, és izgatott vagyok.", "word": "d102900", "form": "Umzug" },
-      { "de": "In der Wohnung gibt es ein Schlafzimmer und eine Küche.", "es": "En el departamento hay una recámara y una cocina.", "en": "In the apartment there is a bedroom and a kitchen.", "hu": "A lakásban van egy hálószoba és egy konyha.", "word": "d103339", "form": "Schlafzimmer" },
-      { "de": "Der Aufzug ist klein, aber er ist neu.", "es": "El elevador es pequeño, pero es nuevo.", "en": "The elevator is small, but it is new.", "hu": "A lift kicsi, de új.", "word": "d103345", "form": "Aufzug" },
-      { "de": "Der Nachbar ist sympathisch, und er will mir helfen.", "es": "El vecino es simpático y quiere ayudarme.", "en": "The neighbor is nice, and he wants to help me.", "hu": "A szomszéd szimpatikus, és segíteni akar nekem.", "word": "d100385", "form": "Nachbar" },
-      { "de": "Am Abend ist das Regal an der Wand, und ich bin zufrieden.", "es": "Por la noche el estante ya está en la pared y estoy satisfecho.", "en": "In the evening the shelf is on the wall, and I am satisfied.", "hu": "Este a polc a falon van, és elégedett vagyok.", "word": "d102300", "form": "Regal" }
+      { "de": "Gestern war der Umzug, und ich war aufgeregt.", "es": "Ayer fue la mudanza y yo estaba emocionado.", "en": "Yesterday was the move, and I was excited.", "hu": "Tegnap volt a költözés, és izgatott voltam.", "word": "d102900", "form": "Umzug" },
+      { "de": "In der neuen Wohnung gibt es ein Schlafzimmer und eine Küche.", "es": "En el nuevo departamento hay una recámara y una cocina.", "en": "In the new apartment there is a bedroom and a kitchen.", "hu": "Az új lakásban van egy hálószoba és egy konyha.", "word": "d103339", "form": "Schlafzimmer" },
+      { "de": "Der Aufzug war klein, aber er war neu.", "es": "El elevador era pequeño, pero era nuevo.", "en": "The elevator was small, but it was new.", "hu": "A lift kicsi volt, de új.", "word": "d103345", "form": "Aufzug" },
+      { "de": "Der Nachbar war sympathisch, und er wollte mir helfen.", "es": "El vecino era simpático y quería ayudarme.", "en": "The neighbor was nice, and he wanted to help me.", "hu": "A szomszéd szimpatikus volt, és segíteni akart nekem.", "word": "d100385", "form": "Nachbar" },
+      { "de": "Am Abend habe ich das Regal an die Wand gestellt, und ich war zufrieden.", "es": "Por la noche puse el estante contra la pared y estaba satisfecho.", "en": "In the evening I put the shelf against the wall, and I was satisfied.", "hu": "Este a polcot a falhoz állítottam, és elégedett voltam.", "word": "d102300", "form": "Regal" }
     ],
-    "false_es": ["La mudanza es la próxima semana.","El elevador es muy grande.","El vecino es antipático."],
-    "false_en": ["The move is next week.","The elevator is very big.","The neighbor is unfriendly."],
-    "false_hu": ["A költözés a jövő héten lesz.","A lift nagyon nagy.","A szomszéd ellenszenves."]
+    "false_es": ["La mudanza fue la semana pasada.","El elevador era muy grande.","El vecino no quería ayudar."],
+    "false_en": ["The move was last week.","The elevator was very big.","The neighbor did not want to help."],
+    "false_hu": ["A költözés a múlt héten volt.","A lift nagyon nagy volt.","A szomszéd nem akart segíteni."]
   },
   {
     "id": "b1-amt",
     "level": "B1",
     "sentences": [
-      { "de": "Ich möchte einen Reisepass beantragen.", "es": "Quiero solicitar un pasaporte.", "en": "I would like to apply for a passport.", "hu": "Útlevelet szeretnék kérelmezni.", "word": "d104446", "form": "beantragen" },
-      { "de": "Das Rathaus ist heute bis vier Uhr geöffnet, deshalb gehe ich sofort.", "es": "El ayuntamiento está abierto hoy hasta las cuatro, así que voy de inmediato.", "en": "The town hall is open until four o'clock today, so I go right away.", "hu": "A városháza ma négy óráig nyitva van, ezért azonnal megyek.", "word": "d102450", "form": "Rathaus" },
-      { "de": "Das Formular ist lang, und ich muss es ausfüllen.", "es": "El formulario es largo y tengo que llenarlo.", "en": "The form is long, and I have to fill it out.", "hu": "Az űrlap hosszú, és ki kell töltenem.", "word": "d322949", "form": "ausfüllen" },
-      { "de": "Ich muss die Gebühr bezahlen.", "es": "Tengo que pagar la cuota.", "en": "I have to pay the fee.", "hu": "Ki kell fizetnem a díjat.", "word": "d103571", "form": "Gebühr" },
-      { "de": "Der Stempel ist rot, und mein Antrag ist fertig.", "es": "El sello es rojo y mi solicitud está lista.", "en": "The stamp is red, and my application is finished.", "hu": "A bélyegző piros, és a kérelmem kész.", "word": "d103598", "form": "Stempel" }
+      { "de": "Mein Reisepass war alt, deshalb musste ich einen neuen beantragen.", "es": "Mi pasaporte era viejo, así que tuve que solicitar uno nuevo.", "en": "My passport was old, so I had to apply for a new one.", "hu": "Az útlevelem régi volt, ezért újat kellett kérelmeznem.", "word": "d104446", "form": "beantragen" },
+      { "de": "Ich fuhr zum Rathaus, das bis vier Uhr geöffnet war.", "es": "Fui al ayuntamiento, que estaba abierto hasta las cuatro.", "en": "I went to the town hall, which was open until four o'clock.", "hu": "A városházára mentem, amely négy óráig volt nyitva.", "word": "d102450", "form": "Rathaus" },
+      { "de": "Dort wartete ein langes Formular auf mich, das ich ausfüllen musste.", "es": "Allí me esperaba un formulario largo que tuve que llenar.", "en": "A long form was waiting for me there, which I had to fill out.", "hu": "Ott egy hosszú űrlap várt rám, amelyet ki kellett töltenem.", "word": "d322949", "form": "ausfüllen" },
+      { "de": "Die Gebühr wird an der Kasse bezahlt, nicht im Büro.", "es": "La cuota se paga en la caja, no en la oficina.", "en": "The fee is paid at the cash desk, not in the office.", "hu": "A díjat a pénztárnál fizetik, nem az irodában.", "word": "d103571", "form": "Gebühr" },
+      { "de": "Ohne den Stempel wäre der Antrag nicht fertig, aber ich bekam ihn sofort.", "es": "Sin el sello la solicitud no estaría lista, pero me lo dieron enseguida.", "en": "Without the stamp the application would not be finished, but I got it right away.", "hu": "A bélyegző nélkül a kérelem nem lenne kész, de azonnal megkaptam.", "word": "d103598", "form": "Stempel" }
     ],
-    "false_es": ["Quiero solicitar una licencia de conducir.","El ayuntamiento está cerrado hoy.","El sello es azul."],
-    "false_en": ["I would like to apply for a driver's license.","The town hall is closed today.","The stamp is blue."],
-    "false_hu": ["Jogosítványt szeretnék kérelmezni.","A városháza ma zárva van.","A bélyegző kék."]
+    "false_es": ["Quise solicitar una licencia de conducir.","El ayuntamiento estaba cerrado.","La cuota se paga en línea."],
+    "false_en": ["I wanted to apply for a driver's license.","The town hall was closed.","The fee is paid online."],
+    "false_hu": ["Jogosítványt akartam kérelmezni.","A városháza zárva volt.","A díjat online fizetik."]
   },
   {
     "id": "b1-studium",
     "level": "B1",
     "sentences": [
-      { "de": "Ich bin müde, weil das Semester fast zu Ende ist.", "es": "Estoy cansado porque el semestre casi termina.", "en": "I am tired because the semester is almost over.", "hu": "Fáradt vagyok, mert a félév mindjárt véget ér.", "word": "d102891", "form": "Semester" },
-      { "de": "Ich muss meine Abschlussarbeit schreiben.", "es": "Tengo que escribir mi tesis.", "en": "I have to write my thesis.", "hu": "Meg kell írnom a szakdolgozatomat.", "word": "d103023", "form": "Abschlussarbeit" },
-      { "de": "Zu Hause will ich mich konzentrieren.", "es": "En casa quiero concentrarme.", "en": "At home I want to concentrate.", "hu": "Otthon koncentrálni akarok.", "word": "d101803", "form": "konzentrieren" },
-      { "de": "Mein Durchschnitt ist sehr gut.", "es": "Mi promedio es muy bueno.", "en": "My grade average is very good.", "hu": "Az átlagom nagyon jó.", "word": "d103019", "form": "Durchschnitt" },
-      { "de": "Dann mache ich den Abschluss, und ich bin sehr froh.", "es": "Luego me gradúo y estoy muy contento.", "en": "Then I graduate, and I am very happy.", "hu": "Aztán diplomázom, és nagyon boldog vagyok.", "word": "d323108", "form": "Abschluss" }
+      { "de": "Das Semester war lang, und am Ende war ich müde.", "es": "El semestre fue largo y al final estaba cansado.", "en": "The semester was long, and at the end I was tired.", "hu": "A félév hosszú volt, és a végén fáradt voltam.", "word": "d102891", "form": "Semester" },
+      { "de": "Ich schrieb jeden Abend an meiner Abschlussarbeit, die im Juni geprüft wird.", "es": "Escribía todas las noches en mi tesis, que se revisa en junio.", "en": "I wrote on my thesis every evening, which is reviewed in June.", "hu": "Minden este a szakdolgozatomon dolgoztam, amelyet júniusban értékelnek.", "word": "d103023", "form": "Abschlussarbeit" },
+      { "de": "Zu Hause konnte ich mich nicht konzentrieren, deshalb ging ich in die Bibliothek.", "es": "En casa no podía concentrarme, así que fui a la biblioteca.", "en": "At home I could not concentrate, so I went to the library.", "hu": "Otthon nem tudtam koncentrálni, ezért a könyvtárba mentem.", "word": "d101803", "form": "konzentrieren" },
+      { "de": "Mein Durchschnitt wäre noch besser, wenn ich mehr Zeit hätte.", "es": "Mi promedio sería aún mejor si tuviera más tiempo.", "en": "My average would be even better if I had more time.", "hu": "Az átlagom még jobb lenne, ha több időm lenne.", "word": "d103019", "form": "Durchschnitt" },
+      { "de": "Nächstes Jahr mache ich meinen Abschluss, und meine Eltern, die sehr stolz sind, kommen zur Feier.", "es": "El próximo año termino mis estudios, y mis padres, que están muy orgullosos, vendrán a la fiesta.", "en": "Next year I will finish my degree, and my parents, who are very proud, will come to the celebration.", "hu": "Jövőre befejezem az egyetemet, és a szüleim, akik nagyon büszkék, eljönnek az ünnepségre.", "word": "d323108", "form": "Abschluss" }
     ],
-    "false_es": ["El semestre apenas empieza.","Quiero concentrarme en la biblioteca.","Mi promedio es muy malo."],
-    "false_en": ["The semester is just beginning.","I want to concentrate in the library.","My grade average is very bad."],
-    "false_hu": ["A félév épp csak kezdődik.","A könyvtárban akarok koncentrálni.","Az átlagom nagyon rossz."]
+    "false_es": ["El semestre fue muy fácil.","La tesis se revisa en diciembre.","En casa podía concentrarme muy bien."],
+    "false_en": ["The semester was very easy.","The thesis is reviewed in December.","At home I could concentrate very well."],
+    "false_hu": ["A félév nagyon könnyű volt.","A szakdolgozatot decemberben értékelik.","Otthon nagyon jól tudtam koncentrálni."]
   },
   {
     "id": "b1-handy",
     "level": "B1",
     "sentences": [
-      { "de": "Zu Hause ist der Router alt, und das Signal ist schlecht.", "es": "En casa el router es viejo y la señal es mala.", "en": "At home the router is old, and the signal is bad.", "hu": "Otthon a router régi, és a jel rossz.", "word": "d104426", "form": "Router" },
-      { "de": "Mein Datenvolumen ist leer, und ich habe kein Internet.", "es": "Mis megas se acabaron y no tengo internet.", "en": "My mobile data is gone, and I have no internet.", "hu": "A mobilnetem elfogyott, és nincs internetem.", "word": "d104656", "form": "Datenvolumen" },
-      { "de": "Ich möchte mein Guthaben aufladen.", "es": "Quiero recargar mi saldo.", "en": "I want to top up my credit.", "hu": "Fel szeretném tölteni az egyenlegemet.", "word": "d104265", "form": "Guthaben" },
-      { "de": "Ich muss warten, weil die Aktualisierung groß ist.", "es": "Tengo que esperar porque la actualización es grande.", "en": "I have to wait because the update is big.", "hu": "Várnom kell, mert a frissítés nagy.", "word": "d104283", "form": "Aktualisierung" },
-      { "de": "Jetzt kann ich im Netz surfen.", "es": "Ahora puedo navegar en internet.", "en": "Now I can browse the web.", "hu": "Most már böngészhetek a neten.", "word": "d321878", "form": "surfen" }
+      { "de": "Der Router, den wir vor Jahren gekauft haben, ist alt, deshalb war das Signal schlecht.", "es": "El router que compramos hace años es viejo, por eso la señal era mala.", "en": "The router we bought years ago is old, so the signal was bad.", "hu": "A router, amelyet évekkel ezelőtt vettünk, régi, ezért rossz volt a jel.", "word": "d104426", "form": "Router" },
+      { "de": "Schon nach zwei Wochen war mein Datenvolumen leer, und ich hatte kein Internet.", "es": "Ya después de dos semanas mi volumen de datos se acabó y no tenía internet.", "en": "After only two weeks my data allowance was used up, and I had no internet.", "hu": "Már két hét után elfogyott az adatkeretem, és nem volt internetem.", "word": "d104656", "form": "Datenvolumen" },
+      { "de": "Wenn ich mein Guthaben aufladen könnte, würde ich sofort meiner Schwester schreiben.", "es": "Si pudiera recargar mi saldo, le escribiría enseguida a mi hermana.", "en": "If I could top up my credit, I would write to my sister right away.", "hu": "Ha fel tudnám tölteni az egyenlegemet, azonnal írnék a húgomnak.", "word": "d104265", "form": "Guthaben" },
+      { "de": "Die Aktualisierung wird gerade geladen, deshalb musste ich warten.", "es": "La actualización se está descargando, así que tuve que esperar.", "en": "The update is being downloaded right now, so I had to wait.", "hu": "A frissítés éppen letöltődik, ezért várnom kellett.", "word": "d104283", "form": "Aktualisierung" },
+      { "de": "Danach konnte ich endlich wieder im Netz surfen.", "es": "Después por fin pude navegar otra vez en la red.", "en": "After that I could finally surf the web again.", "hu": "Utána végre újra tudtam szörfözni a neten.", "word": "d321878", "form": "surfen" }
     ],
-    "false_es": ["En casa el router es nuevo.","Tengo muchos megas.","La actualización es pequeña."],
-    "false_en": ["At home the router is new.","I have a lot of mobile data.","The update is small."],
-    "false_hu": ["Otthon a router új.","Rengeteg mobilnetem van.","A frissítés kicsi."]
+    "false_es": ["El router es nuevo.","Tenía mucho volumen de datos.","La actualización estaba lista de inmediato."],
+    "false_en": ["The router is new.","I had plenty of data left.","The update was ready right away."],
+    "false_hu": ["A router új.","Rengeteg adatkeretem volt.","A frissítés azonnal kész volt."]
   },
   {
     "id": "b1-arzt",
     "level": "B1",
     "sentences": [
-      { "de": "Heute habe ich einen Arzttermin.", "es": "Hoy tengo consulta con el médico.", "en": "Today I have a doctor's appointment.", "hu": "Ma orvosi időpontom van.", "word": "d103029", "form": "Arzttermin" },
-      { "de": "Ich habe Schnupfen, und ich bin sehr müde.", "es": "Tengo catarro y estoy muy cansado.", "en": "I have a cold, and I am very tired.", "hu": "Náthás vagyok, és nagyon fáradt vagyok.", "word": "d104170", "form": "Schnupfen" },
-      { "de": "Die Diagnose ist einfach: Es ist eine Infektion.", "es": "El diagnóstico es sencillo: es una infección.", "en": "The diagnosis is simple: it is an infection.", "hu": "A diagnózis egyszerű: fertőzés.", "word": "d103026", "form": "Diagnose" },
-      { "de": "Ich muss Medizin nehmen, und die Therapie ist kurz.", "es": "Tengo que tomar medicina y la terapia es corta.", "en": "I have to take medicine, and the therapy is short.", "hu": "Gyógyszert kell szednem, és a terápia rövid.", "word": "d103031", "form": "Therapie" },
-      { "de": "Die Genesung ist gut, und ich bin bald wieder gesund.", "es": "La recuperación va bien y pronto estaré sano otra vez.", "en": "The recovery is going well, and I will soon be healthy again.", "hu": "A felépülés jól halad, és hamarosan újra egészséges leszek.", "word": "d323117", "form": "Genesung" }
+      { "de": "Gestern hatte ich einen Arzttermin, weil ich mich krank fühlte.", "es": "Ayer tuve una cita con el médico porque me sentía enfermo.", "en": "Yesterday I had a doctor's appointment because I felt sick.", "hu": "Tegnap orvosi időpontom volt, mert betegnek éreztem magam.", "word": "d103029", "form": "Arzttermin" },
+      { "de": "Ich hatte Schnupfen und war sehr müde.", "es": "Tenía catarro y estaba muy cansado.", "en": "I had a cold and was very tired.", "hu": "Náthás voltam, és nagyon fáradt.", "word": "d104170", "form": "Schnupfen" },
+      { "de": "Die Diagnose, die der Arzt stellte, war einfach: eine Infektion.", "es": "El diagnóstico que dio el médico fue sencillo: una infección.", "en": "The diagnosis the doctor gave was simple: an infection.", "hu": "Az orvos diagnózisa egyszerű volt: fertőzés.", "word": "d103026", "form": "Diagnose" },
+      { "de": "Ich sollte Medizin nehmen, aber eine lange Therapie war nicht nötig.", "es": "Debía tomar medicina, pero no hacía falta una terapia larga.", "en": "I was supposed to take medicine, but a long therapy was not necessary.", "hu": "Gyógyszert kellett szednem, de hosszú terápiára nem volt szükség.", "word": "d103031", "form": "Therapie" },
+      { "de": "Die Genesung ging schnell, und bald war ich wieder gesund.", "es": "La recuperación fue rápida y pronto volví a estar sano.", "en": "The recovery went quickly, and soon I was healthy again.", "hu": "A felépülés gyorsan ment, és hamarosan újra egészséges voltam.", "word": "d323117", "form": "Genesung" }
     ],
-    "false_es": ["La consulta es mañana.","El diagnóstico es difícil.","La terapia es muy larga."],
-    "false_en": ["The appointment is tomorrow.","The diagnosis is difficult.","The therapy is very long."],
-    "false_hu": ["Az időpont holnap van.","A diagnózis nehéz.","A terápia nagyon hosszú."]
+    "false_es": ["La cita era con el dentista.","El diagnóstico fue una fractura.","La recuperación duró varios meses."],
+    "false_en": ["The appointment was with the dentist.","The diagnosis was a fracture.","The recovery took several months."],
+    "false_hu": ["Az időpont a fogorvoshoz szólt.","A diagnózis csonttörés volt.","A felépülés több hónapig tartott."]
   },
   {
     "id": "b1-camping",
     "level": "B1",
     "sentences": [
-      { "de": "Am Samstag gehen wir zu Fuß auf einen Hügel.", "es": "El sábado subimos a pie a un cerro.", "en": "On Saturday we walk up a hill.", "hu": "Szombaton gyalog felmegyünk egy dombra.", "word": "d101632", "form": "Hügel" },
-      { "de": "Ich habe einen Kompass, aber der Pfad ist klar.", "es": "Tengo una brújula, pero el sendero es claro.", "en": "I have a compass, but the trail is clear.", "hu": "Van iránytűm, de az ösvény egyértelmű.", "word": "d104352", "form": "Pfad" },
-      { "de": "Am Bach sehe ich ein Nest, das sehr klein ist.", "es": "En el arroyo veo un nido que es muy pequeño.", "en": "By the stream I see a nest that is very small.", "hu": "A pataknál látok egy fészket, ami nagyon kicsi.", "word": "d104310", "form": "Nest" },
-      { "de": "Am Abend machen wir ein Lagerfeuer.", "es": "Por la noche hacemos una fogata.", "en": "In the evening we make a campfire.", "hu": "Este tábortüzet rakunk.", "word": "d102188", "form": "Lagerfeuer" },
-      { "de": "Der Sonnenuntergang ist wunderschön, und wir sind glücklich.", "es": "El atardecer es precioso y estamos felices.", "en": "The sunset is beautiful, and we are happy.", "hu": "A naplemente gyönyörű, és boldogok vagyunk.", "word": "d101572", "form": "Sonnenuntergang" }
+      { "de": "Am Samstag gingen wir auf einen Hügel, von dem man den ganzen See sah.", "es": "El sábado subimos a una colina desde la que se veía todo el lago.", "en": "On Saturday we went up a hill from which you could see the whole lake.", "hu": "Szombaton felmentünk egy dombra, ahonnan az egész tó látszott.", "word": "d101632", "form": "Hügel" },
+      { "de": "Der Pfad war schmal, aber ich hatte einen Kompass und fand ihn leicht.", "es": "El sendero era estrecho, pero tenía una brújula y lo encontré fácilmente.", "en": "The path was narrow, but I had a compass and found it easily.", "hu": "Az ösvény keskeny volt, de volt iránytűm, és könnyen megtaláltam.", "word": "d104352", "form": "Pfad" },
+      { "de": "Am Bach entdeckte ich ein Nest, das sehr klein war.", "es": "Junto al arroyo descubrí un nido que era muy pequeño.", "en": "By the stream I discovered a nest that was very small.", "hu": "A pataknál felfedeztem egy fészket, amely nagyon kicsi volt.", "word": "d104310", "form": "Nest" },
+      { "de": "Am Abend machten wir ein Lagerfeuer, und es wurde warm.", "es": "Por la noche hicimos una fogata y se puso cálido.", "en": "In the evening we made a campfire, and it got warm.", "hu": "Este tábortüzet raktunk, és meleg lett.", "word": "d102188", "form": "Lagerfeuer" },
+      { "de": "Der Sonnenuntergang war wunderschön, und wir waren glücklich.", "es": "La puesta de sol fue hermosísima y éramos felices.", "en": "The sunset was beautiful, and we were happy.", "hu": "A naplemente gyönyörű volt, és boldogok voltunk.", "word": "d101572", "form": "Sonnenuntergang" }
     ],
-    "false_es": ["El domingo subimos a un cerro.","No tengo brújula.","Hacemos una fogata por la mañana."],
-    "false_en": ["On Sunday we walk up a hill.","I do not have a compass.","We make a campfire in the morning."],
-    "false_hu": ["Vasárnap gyalog felmegyünk egy dombra.","Nincs iránytűm.","Reggel tábortüzet rakunk."]
+    "false_es": ["Subimos a una montaña muy alta.","El sendero era ancho y fácil.","Hacía mucho frío y no hicimos fogata."],
+    "false_en": ["We climbed a very high mountain.","The path was wide and easy.","It was very cold and we made no campfire."],
+    "false_hu": ["Egy nagyon magas hegyre másztunk fel.","Az ösvény széles és könnyű volt.","Nagyon hideg volt, és nem raktunk tüzet."]
   },
   {
     "id": "b2-bewerbung",
     "level": "B2",
     "sentences": [
-      { "de": "Ich möchte mich bei einer Firma bewerben.", "es": "Quiero postularme en una empresa.", "en": "I would like to apply to a company.", "hu": "Egy cégnél szeretnék jelentkezni.", "word": "d104615", "form": "bewerben" },
-      { "de": "Der Arbeitgeber ist bekannt, und die Firma ist groß.", "es": "El empleador es conocido y la empresa es grande.", "en": "The employer is well known, and the company is big.", "hu": "A munkáltató ismert, és a cég nagy.", "word": "d104236", "form": "Arbeitgeber" },
-      { "de": "Das Gehalt ist gut, und es gibt einen Bonus.", "es": "El sueldo es bueno y hay un bono.", "en": "The salary is good, and there is a bonus.", "hu": "A fizetés jó, és prémium is van.", "word": "d100535", "form": "Gehalt" },
-      { "de": "Der Vorgesetzte kann mir eine Referenz schreiben.", "es": "El supervisor puede escribirme una referencia.", "en": "The supervisor can write me a reference.", "hu": "A felettesem írhat nekem egy ajánlást.", "word": "d104586", "form": "Referenz" },
-      { "de": "Am Ende bekomme ich die Stelle, und ich kann im Homeoffice arbeiten.", "es": "Al final consigo el puesto y puedo trabajar desde casa.", "en": "In the end I get the job, and I can work from home.", "hu": "Végül megkapom az állást, és otthonról dolgozhatok.", "word": "d104603", "form": "Homeoffice" }
+      { "de": "Nachdem ich meinen Lebenslauf geschrieben hatte, wollte ich mich bei einer Firma bewerben.", "es": "Después de escribir mi currículum, quise postularme en una empresa.", "en": "After I had written my résumé, I wanted to apply to a company.", "hu": "Miután megírtam az önéletrajzomat, jelentkezni akartam egy cégnél.", "word": "d104615", "form": "bewerben" },
+      { "de": "Der Arbeitgeber, der als sehr zuverlässig bekannt ist, wurde mir von einem Freund empfohlen.", "es": "Un amigo me recomendó al empleador, que es conocido por ser muy confiable.", "en": "The employer, who is known to be very reliable, was recommended to me by a friend.", "hu": "A munkáltatót, aki nagyon megbízhatónak ismert, egy barátom ajánlotta nekem.", "word": "d104236", "form": "Arbeitgeber" },
+      { "de": "Das Gehalt, das im Vertrag genannt wurde, war besser, als ich gedacht hatte.", "es": "El sueldo que se mencionaba en el contrato era mejor de lo que había pensado.", "en": "The salary that was named in the contract was better than I had thought.", "hu": "A fizetés, amelyet a szerződésben megneveztek, jobb volt, mint amire számítottam.", "word": "d100535", "form": "Gehalt" },
+      { "de": "Mein Chef sagte, er sei gern bereit, mir eine Referenz zu schreiben.", "es": "Mi jefe dijo que con gusto estaba dispuesto a escribirme una carta de recomendación.", "en": "My boss said he was glad to write me a reference.", "hu": "A főnököm azt mondta, szívesen megírja nekem az ajánlást.", "word": "d104586", "form": "Referenz" },
+      { "de": "Am Ende wurde mir die Stelle angeboten, und ich darf im Homeoffice arbeiten.", "es": "Al final me ofrecieron el puesto, y puedo trabajar desde casa.", "en": "In the end the job was offered to me, and I am allowed to work from home.", "hu": "A végén felajánlották az állást, és otthonról dolgozhatok.", "word": "d104603", "form": "Homeoffice" }
     ],
-    "false_es": ["La empresa es muy pequeña.","El sueldo es malo.","Al final no consigo el puesto."],
-    "false_en": ["The company is very small.","The salary is bad.","In the end I do not get the job."],
-    "false_hu": ["A cég nagyon kicsi.","A fizetés rossz.","Végül nem kapom meg az állást."]
+    "false_es": ["Me postulé en una empresa sin currículum.","El sueldo era peor de lo que había pensado.","Debo trabajar siempre en la oficina."],
+    "false_en": ["I applied to a company without a résumé.","The salary was worse than I had thought.","I always have to work in the office."],
+    "false_hu": ["Önéletrajz nélkül jelentkeztem egy cégnél.","A fizetés rosszabb volt, mint amire számítottam.","Mindig az irodában kell dolgoznom."]
   },
   {
     "id": "b2-kredit",
     "level": "B2",
     "sentences": [
-      { "de": "Ich möchte eine Wohnung kaufen, deshalb suche ich einen Berater.", "es": "Me gustaría comprar un departamento, por eso busco un asesor.", "en": "I would like to buy an apartment, so I am looking for an advisor.", "hu": "Szívesen vennék egy lakást, ezért tanácsadót keresek.", "word": "d104528", "form": "Berater" },
-      { "de": "Die Hypothek ist groß, aber ich kann sie bezahlen.", "es": "La hipoteca es grande, pero puedo pagarla.", "en": "The mortgage is big, but I can pay it.", "hu": "A jelzáloghitel nagy, de ki tudom fizetni.", "word": "d104506", "form": "Hypothek" },
-      { "de": "Der Zinssatz ist niedrig, und das ist ein Vorteil.", "es": "La tasa es baja y eso es una ventaja.", "en": "The interest rate is low, and that is an advantage.", "hu": "A kamatláb alacsony, és ez előny.", "word": "d104507", "form": "Zinssatz" },
-      { "de": "Jeden Monat zahle ich eine Rate.", "es": "Cada mes pago un abono.", "en": "Every month I pay an installment.", "hu": "Minden hónapban fizetek egy részletet.", "word": "d104504", "form": "Rate" },
-      { "de": "Ich gehe zum Notar und muss die Eigentumsurkunde unterschreiben.", "es": "Voy con el notario y tengo que firmar la escritura.", "en": "I go to the notary and have to sign the property deed.", "hu": "Elmegyek a közjegyzőhöz, és alá kell írnom a tulajdoni okiratot.", "word": "d323897", "form": "Eigentumsurkunde" }
+      { "de": "Ich hatte lange gespart, deshalb suchte ich jetzt einen Berater für den Kauf einer Wohnung.", "es": "Había ahorrado mucho tiempo, así que ahora buscaba un asesor para comprar un departamento.", "en": "I had saved for a long time, so now I was looking for an adviser for buying an apartment.", "hu": "Sokáig spóroltam, ezért most tanácsadót kerestem egy lakás megvásárlásához.", "word": "d104528", "form": "Berater" },
+      { "de": "Die Hypothek, die mir angeboten wurde, war groß, aber ich konnte sie bezahlen.", "es": "La hipoteca que me ofrecieron era grande, pero podía pagarla.", "en": "The mortgage that was offered to me was large, but I could pay it.", "hu": "A jelzálog, amelyet felajánlottak nekem, nagy volt, de ki tudtam fizetni.", "word": "d104506", "form": "Hypothek" },
+      { "de": "Der Berater erklärte, der Zinssatz sei im Moment niedrig.", "es": "El asesor explicó que la tasa de interés estaba baja por el momento.", "en": "The adviser explained that the interest rate was low at the moment.", "hu": "A tanácsadó elmagyarázta, hogy a kamatláb jelenleg alacsony.", "word": "d104507", "form": "Zinssatz" },
+      { "de": "Die Rate war so berechnet worden, dass ich sie jeden Monat bezahlen konnte.", "es": "La cuota se había calculado de tal modo que podía pagarla cada mes.", "en": "The installment had been calculated so that I could pay it every month.", "hu": "A részletet úgy számolták ki, hogy minden hónapban ki tudtam fizetni.", "word": "d104504", "form": "Rate" },
+      { "de": "Beim Notar wurde die Eigentumsurkunde unterschrieben, und die Wohnung gehörte mir.", "es": "Con el notario se firmó la escritura de propiedad, y el departamento era mío.", "en": "At the notary the title deed was signed, and the apartment belonged to me.", "hu": "A közjegyzőnél aláírták a tulajdoni okiratot, és a lakás az enyém lett.", "word": "d323897", "form": "Eigentumsurkunde" }
     ],
-    "false_es": ["Me gustaría comprar un carro.","La tasa es muy alta.","Pago el abono cada semana."],
-    "false_en": ["I would like to buy a car.","The interest rate is very high.","I pay the installment every week."],
-    "false_hu": ["Autót szeretnék venni.","A kamatláb nagyon magas.","A részletet minden héten fizetem."]
+    "false_es": ["Había ahorrado muy poco dinero.","La tasa de interés era muy alta.","La escritura se firmó en el banco."],
+    "false_en": ["I had saved very little money.","The interest rate was very high.","The title deed was signed at the bank."],
+    "false_hu": ["Nagyon keveset spóroltam.","A kamatláb nagyon magas volt.","A tulajdoni okiratot a bankban írták alá."]
   },
   {
     "id": "b2-bauernhof",
     "level": "B2",
     "sentences": [
-      { "de": "Der Bauernhof ist groß, und dort gibt es eine Herde.", "es": "El rancho es grande y ahí hay un rebaño.", "en": "The farm is big, and there is a flock there.", "hu": "A tanya nagy, és ott van egy nyáj.", "word": "d104332", "form": "Herde" },
-      { "de": "Das Fohlen ist noch klein, und es ist sehr schnell.", "es": "El potro todavía es pequeño y es muy rápido.", "en": "The foal is still small, and it is very fast.", "hu": "A csikó még kicsi, és nagyon gyors.", "word": "d104328", "form": "Fohlen" },
-      { "de": "Der Falke ist hoch über dem Feld.", "es": "El halcón está muy alto sobre el campo.", "en": "The falcon is high above the field.", "hu": "A sólyom magasan a mező fölött van.", "word": "d104290", "form": "Falke" },
-      { "de": "Das Stinktier ist klein, aber der Geruch ist schlecht.", "es": "El zorrillo es pequeño, pero el olor es malo.", "en": "The skunk is small, but the smell is bad.", "hu": "A skunk kicsi, de a szaga rossz.", "word": "d104300", "form": "Stinktier" },
-      { "de": "Am Abend ist mein Hund müde, und seine Schnauze ist nass.", "es": "Por la noche mi perro está cansado y su hocico está mojado.", "en": "In the evening my dog is tired, and his snout is wet.", "hu": "Este a kutyám fáradt, és az orra nedves.", "word": "d104315", "form": "Schnauze" }
+      { "de": "Auf dem Bauernhof, den wir besuchten, gab es eine große Herde.", "es": "En la granja que visitamos había un rebaño grande.", "en": "On the farm we visited there was a large herd.", "hu": "A tanyán, amelyet meglátogattunk, nagy nyáj volt.", "word": "d104332", "form": "Herde" },
+      { "de": "Das Fohlen, das erst vor einer Woche geboren worden war, lief schon sehr schnell.", "es": "El potrillo, que había nacido apenas una semana antes, ya corría muy rápido.", "en": "The foal, which had been born only a week before, was already running very fast.", "hu": "A csikó, amely csak egy hete született, már nagyon gyorsan futott.", "word": "d104328", "form": "Fohlen" },
+      { "de": "Über dem Feld flog ein Falke, der von allen bewundert wurde.", "es": "Sobre el campo volaba un halcón, al que todos admiraban.", "en": "Over the field flew a falcon that was admired by everyone.", "hu": "A mező fölött egy sólyom repült, akit mindenki csodált.", "word": "d104290", "form": "Falke" },
+      { "de": "Der Bauer sagte, nachts sei ein Stinktier im Hof gewesen.", "es": "El granjero dijo que por la noche había estado una mofeta en el patio.", "en": "The farmer said that a skunk had been in the yard at night.", "hu": "A gazda azt mondta, éjjel egy bűzösborz járt az udvaron.", "word": "d104300", "form": "Stinktier" },
+      { "de": "Am Abend war mein Hund so müde, als hätte er den ganzen Tag gearbeitet, und seine Schnauze war nass.", "es": "Por la noche mi perro estaba tan cansado como si hubiera trabajado todo el día, y tenía el hocico mojado.", "en": "In the evening my dog was as tired as if he had worked all day, and his snout was wet.", "hu": "Este a kutyám olyan fáradt volt, mintha egész nap dolgozott volna, és az orra nedves volt.", "word": "d104315", "form": "Schnauze" }
     ],
-    "false_es": ["El rancho es muy pequeño.","El potro es muy lento.","El olor del zorrillo es agradable."],
-    "false_en": ["The farm is very small.","The foal is very slow.","The smell of the skunk is pleasant."],
-    "false_hu": ["A tanya nagyon kicsi.","A csikó nagyon lassú.","A skunk szaga kellemes."]
+    "false_es": ["La granja era muy pequeña.","El potrillo ya tenía un año.","Mi perro seguía lleno de energía."],
+    "false_en": ["The farm was very small.","The foal was already a year old.","My dog was still full of energy."],
+    "false_hu": ["A tanya nagyon kicsi volt.","A csikó már egyéves volt.","A kutyám még tele volt energiával."]
   },
   {
     "id": "b2-haus",
     "level": "B2",
     "sentences": [
-      { "de": "Ich wohne in einer Wohnsiedlung, aber das Haus ist alt.", "es": "Vivo en un fraccionamiento, pero la casa es vieja.", "en": "I live in a housing development, but the house is old.", "hu": "Egy lakóparkban lakom, de a ház régi.", "word": "d104011", "form": "Wohnsiedlung" },
-      { "de": "Die Wand ist kaputt, deshalb nehme ich Gips.", "es": "La pared está dañada, por eso uso yeso.", "en": "The wall is damaged, so I use plaster.", "hu": "A fal sérült, ezért gipszet használok.", "word": "d104036", "form": "Gips" },
-      { "de": "Mit der Farbrolle kann ich schnell streichen.", "es": "Con el rodillo puedo pintar rápido.", "en": "With the paint roller I can paint quickly.", "hu": "A festőhengerrel gyorsan tudok festeni.", "word": "d323812", "form": "Farbrolle" },
-      { "de": "Der Bodenablauf im Badezimmer ist kaputt.", "es": "La coladera del baño está descompuesta.", "en": "The floor drain in the bathroom is broken.", "hu": "A fürdőszobában tönkrement a padlólefolyó.", "word": "d104023", "form": "Bodenablauf" },
-      { "de": "Am Ende ist die Mauer niedrig, aber der Garten ist wunderschön.", "es": "Al final la barda es baja, pero el jardín es precioso.", "en": "In the end the wall is low, but the garden is beautiful.", "hu": "Végül a kerítésfal alacsony, de a kert gyönyörű.", "word": "d104037", "form": "Mauer" }
+      { "de": "Die Wohnsiedlung, in der ich wohne, wurde vor vielen Jahren gebaut.", "es": "La unidad habitacional donde vivo se construyó hace muchos años.", "en": "The housing estate where I live was built many years ago.", "hu": "A lakótelep, ahol lakom, sok évvel ezelőtt épült.", "word": "d104011", "form": "Wohnsiedlung" },
+      { "de": "Als die Wand kaputt war, wurde sie mit Gips repariert.", "es": "Cuando la pared estaba rota, se reparó con yeso.", "en": "When the wall was broken, it was repaired with plaster.", "hu": "Amikor a fal tönkrement, gipsszel megjavították.", "word": "d104036", "form": "Gips" },
+      { "de": "Mit der Farbrolle, die mein Nachbar mir geliehen hatte, konnte ich schnell streichen.", "es": "Con el rodillo que me había prestado mi vecino pude pintar rápido.", "en": "With the paint roller that my neighbor had lent me, I could paint quickly.", "hu": "A festőhengerrel, amelyet a szomszédom kölcsönadott, gyorsan tudtam festeni.", "word": "d323812", "form": "Farbrolle" },
+      { "de": "Der Bodenablauf im Badezimmer ist letzte Woche repariert worden.", "es": "El desagüe del piso del baño se reparó la semana pasada.", "en": "The floor drain in the bathroom was repaired last week.", "hu": "A fürdőszobai padlóösszefolyót a múlt héten megjavították.", "word": "d104023", "form": "Bodenablauf" },
+      { "de": "Am Ende war die Mauer niedrig, aber der Garten sah aus, als hätte jemand ihn neu gepflanzt.", "es": "Al final el muro era bajo, pero el jardín parecía recién plantado.", "en": "In the end the wall was low, but the garden looked as if someone had planted it anew.", "hu": "A végén a fal alacsony volt, de a kert úgy nézett ki, mintha valaki újra beültette volna.", "word": "d104037", "form": "Mauer" }
     ],
-    "false_es": ["Vivo en un departamento nuevo.","La pared está en buen estado.","La coladera del baño funciona bien."],
-    "false_en": ["I live in a new apartment.","The wall is in good shape.","The floor drain in the bathroom works well."],
-    "false_hu": ["Új lakásban lakom.","A fal jó állapotban van.","A fürdőszobában jól működik a padlólefolyó."]
+    "false_es": ["La unidad habitacional es muy nueva.","La pared se reparó con madera.","El muro era muy alto."],
+    "false_en": ["The housing estate is very new.","The wall was repaired with wood.","The wall was very high."],
+    "false_hu": ["A lakótelep nagyon új.","A falat fával javították meg.","A fal nagyon magas volt."]
   },
   {
     "id": "b2-server",
     "level": "B2",
     "sentences": [
-      { "de": "Heute habe ich eine Videokonferenz mit dem Team.", "es": "Hoy tengo una videoconferencia con el equipo.", "en": "Today I have a video conference with the team.", "hu": "Ma videókonferenciám van a csapattal.", "word": "d104604", "form": "Videokonferenz" },
-      { "de": "Der Server ist langsam, und das Bild ist schlecht.", "es": "El servidor es lento y la imagen es mala.", "en": "The server is slow, and the picture is bad.", "hu": "A szerver lassú, és a kép rossz.", "word": "d104621", "form": "Server" },
-      { "de": "Ich rufe den Support an.", "es": "Llamo a soporte técnico.", "en": "I call tech support.", "hu": "Felhívom a műszaki támogatást.", "word": "d104632", "form": "Support" },
-      { "de": "Die Konfiguration ist falsch, deshalb muss ich sie ändern.", "es": "La configuración es incorrecta, por eso tengo que cambiarla.", "en": "The setup is wrong, so I have to change it.", "hu": "A beállítás rossz, ezért meg kell változtatnom.", "word": "d104629", "form": "Konfiguration" },
-      { "de": "Ich bin ruhig, weil das Antivirenprogramm aktiv ist.", "es": "Estoy tranquilo porque el antivirus está activo.", "en": "I am calm because the antivirus program is active.", "hu": "Nyugodt vagyok, mert a vírusirtó aktív.", "word": "d323966", "form": "Antivirenprogramm" }
+      { "de": "Vor der Videokonferenz mit dem Team hatte ich alles geprüft.", "es": "Antes de la videoconferencia con el equipo había revisado todo.", "en": "Before the video conference with the team I had checked everything.", "hu": "A csapattal tartott videokonferencia előtt mindent ellenőriztem.", "word": "d104604", "form": "Videokonferenz" },
+      { "de": "Der Server war langsam, denn er wurde von zu vielen Kollegen benutzt.", "es": "El servidor era lento porque demasiados colegas lo usaban.", "en": "The server was slow because it was being used by too many colleagues.", "hu": "A szerver lassú volt, mert túl sok kolléga használta.", "word": "d104621", "form": "Server" },
+      { "de": "Ich rief den Support an, und mir wurde sofort geholfen.", "es": "Llamé al soporte y me ayudaron de inmediato.", "en": "I called support, and I was helped right away.", "hu": "Felhívtam a támogatást, és azonnal segítettek.", "word": "d104632", "form": "Support" },
+      { "de": "Der Techniker meinte, die Konfiguration sei falsch und müsse geändert werden.", "es": "El técnico opinó que la configuración era incorrecta y había que cambiarla.", "en": "The technician thought the configuration was wrong and had to be changed.", "hu": "A technikus szerint a konfiguráció hibás volt, és meg kellett változtatni.", "word": "d104629", "form": "Konfiguration" },
+      { "de": "Ich war ruhig, weil das Antivirenprogramm, das gestern aktualisiert worden war, aktiv war.", "es": "Estaba tranquilo porque el antivirus, que se había actualizado ayer, estaba activo.", "en": "I was calm because the antivirus program, which had been updated yesterday, was active.", "hu": "Nyugodt voltam, mert a vírusirtó, amelyet tegnap frissítettek, aktív volt.", "word": "d323966", "form": "Antivirenprogramm" }
     ],
-    "false_es": ["Hoy no tengo videoconferencia.","El servidor es muy rápido.","El antivirus no está activo."],
-    "false_en": ["Today I do not have a video conference.","The server is very fast.","The antivirus program is not active."],
-    "false_hu": ["Ma nincs videókonferenciám.","A szerver nagyon gyors.","A vírusirtó nem aktív."]
+    "false_es": ["La videoconferencia era con un cliente.","El servidor era muy rápido.","El soporte no contestó."],
+    "false_en": ["The video conference was with a customer.","The server was very fast.","Support did not answer."],
+    "false_hu": ["A videokonferencia egy ügyféllel volt.","A szerver nagyon gyors volt.","A támogatás nem vette fel."]
   },
   {
     "id": "c1-testament",
     "level": "C1",
     "sentences": [
-      { "de": "Das Testament ist alt, und die Familie ist nervös.", "es": "El testamento es viejo y la familia está nerviosa.", "en": "The will is old, and the family is nervous.", "hu": "A végrendelet régi, és a család ideges.", "word": "d104485", "form": "Testament" },
-      { "de": "Der Gutachter muss das Haus untersuchen.", "es": "El perito tiene que examinar la casa.", "en": "The appraiser has to examine the house.", "hu": "A szakértőnek meg kell vizsgálnia a házat.", "word": "d104571", "form": "Gutachter" },
-      { "de": "Es gibt einen Rechtsstreit, weil die Familie nicht zufrieden ist.", "es": "Hay un litigio porque la familia no está conforme.", "en": "There is a legal dispute because the family is not satisfied.", "hu": "Per van, mert a család nem elégedett.", "word": "d103213", "form": "Rechtsstreit" },
-      { "de": "Die Vorladung ist da, und alle müssen zum Gericht gehen.", "es": "El citatorio ya llegó y todos tienen que ir al juzgado.", "en": "The summons has arrived, and everyone has to go to court.", "hu": "Megjött az idézés, és mindenkinek el kell mennie a bíróságra.", "word": "d104469", "form": "Vorladung" },
-      { "de": "Am Ende ist die Entschädigung hoch, aber ich will Frieden.", "es": "Al final la indemnización es alta, pero yo quiero paz.", "en": "In the end the compensation is high, but I want peace.", "hu": "Végül a kártérítés magas, de én békét akarok.", "word": "d102644", "form": "Entschädigung" }
+      { "de": "Das vom Großvater geschriebene Testament machte die ganze Familie nervös.", "es": "El testamento escrito por el abuelo puso nerviosa a toda la familia.", "en": "The will written by the grandfather made the whole family nervous.", "hu": "A nagyapa által írt végrendelet az egész családot idegessé tette.", "word": "d104485", "form": "Testament" },
+      { "de": "Der vom Gericht bestellte Gutachter musste das Haus untersuchen.", "es": "El perito designado por el tribunal tuvo que examinar la casa.", "en": "The expert appointed by the court had to examine the house.", "hu": "A bíróság által megbízott szakértőnek meg kellett vizsgálnia a házat.", "word": "d104571", "form": "Gutachter" },
+      { "de": "Die Familie war nicht zufrieden, und es kam zu einem langen Rechtsstreit um das Haus.", "es": "La familia no estaba conforme, y se llegó a un largo litigio por la casa.", "en": "The family was not satisfied, and a long legal dispute over the house arose.", "hu": "A család nem volt elégedett, és hosszú jogvita alakult ki a ház miatt.", "word": "d103213", "form": "Rechtsstreit" },
+      { "de": "Nach Erhalt der Vorladung mussten alle vor Gericht erscheinen.", "es": "Tras recibir la citación, todos tuvieron que presentarse ante el tribunal.", "en": "After receiving the summons, everyone had to appear in court.", "hu": "A idézés kézhezvétele után mindenkinek meg kellett jelennie a bíróság előtt.", "word": "d104469", "form": "Vorladung" },
+      { "de": "Trotz der hohen Entschädigung wünschte ich mir vor allem Frieden.", "es": "A pesar de la elevada indemnización, yo deseaba sobre todo paz.", "en": "Despite the high compensation, I wished above all for peace.", "hu": "A magas kártérítés ellenére elsősorban békét kívántam.", "word": "d102644", "form": "Entschädigung" }
     ],
-    "false_es": ["El testamento es nuevo.","El perito tiene que vender la casa.","La familia está contenta."],
-    "false_en": ["The will is new.","The appraiser has to sell the house.","The family is satisfied."],
-    "false_hu": ["A végrendelet új.","A szakértőnek el kell adnia a házat.","A család elégedett."]
+    "false_es": ["El testamento no causó ningún problema.","El perito no examinó la casa.","La familia estaba muy satisfecha con todo."],
+    "false_en": ["The will caused no problems at all.","The expert did not examine the house.","The family was very satisfied with everything."],
+    "false_hu": ["A végrendelet semmilyen gondot nem okozott.","A szakértő nem vizsgálta meg a házat.","A család mindennel nagyon elégedett volt."]
   },
   {
     "id": "c1-projekt",
     "level": "C1",
     "sentences": [
-      { "de": "Wir müssen den Zeitplan einhalten.", "es": "Tenemos que cumplir el cronograma.", "en": "We have to stick to the timeline.", "hu": "Be kell tartanunk az ütemtervet.", "word": "d104597", "form": "Zeitplan" },
-      { "de": "Der Algorithmus ist schnell, aber er ist nicht perfekt.", "es": "El algoritmo es rápido, pero no es perfecto.", "en": "The algorithm is fast, but it is not perfect.", "hu": "Az algoritmus gyors, de nem tökéletes.", "word": "d104640", "form": "Algorithmus" },
-      { "de": "Der Patch ist fertig, und ich muss ihn prüfen.", "es": "El parche está listo y tengo que revisarlo.", "en": "The patch is ready, and I have to check it.", "hu": "A javítócsomag kész, és ellenőriznem kell.", "word": "d104628", "form": "Patch" },
-      { "de": "Heute Abend ist das Deployment.", "es": "Esta noche es el despliegue.", "en": "Tonight is the deployment.", "hu": "Ma este van az élesítés.", "word": "d324191", "form": "Deployment" },
-      { "de": "Die Automatisierung ist sehr nützlich, und das Team ist zufrieden.", "es": "La automatización es muy útil y el equipo está satisfecho.", "en": "The automation is very useful, and the team is satisfied.", "hu": "Az automatizálás nagyon hasznos, és a csapat elégedett.", "word": "d104642", "form": "Automatisierung" }
+      { "de": "Wir mussten den Zeitplan einhalten, obwohl sich die Anforderungen ständig änderten.", "es": "Teníamos que cumplir el cronograma aunque los requisitos cambiaban constantemente.", "en": "We had to keep to the schedule even though the requirements kept changing.", "hu": "Be kellett tartanunk az ütemtervet, bár a követelmények folyton változtak.", "word": "d104597", "form": "Zeitplan" },
+      { "de": "Der von unserem Team entwickelte Algorithmus ist schnell, aber nicht perfekt.", "es": "El algoritmo desarrollado por nuestro equipo es rápido, pero no perfecto.", "en": "The algorithm developed by our team is fast, but not perfect.", "hu": "A csapatunk által fejlesztett algoritmus gyors, de nem tökéletes.", "word": "d104640", "form": "Algorithmus" },
+      { "de": "Der Patch, dessen Entwicklung sich verzögert hatte, musste noch geprüft werden.", "es": "El parche, cuyo desarrollo se había retrasado, todavía tenía que revisarse.", "en": "The patch, whose development had been delayed, still had to be tested.", "hu": "A patch, amelynek fejlesztése késett, még ellenőrzésre szorult.", "word": "d104628", "form": "Patch" },
+      { "de": "Das für heute Abend geplante Deployment wurde verschoben, weil ein Fehler entdeckt worden war.", "es": "El despliegue planeado para esta noche se pospuso porque se había descubierto un error.", "en": "The deployment planned for tonight was postponed because an error had been discovered.", "hu": "A ma estére tervezett telepítést elhalasztották, mert hibát fedeztek fel.", "word": "d324191", "form": "Deployment" },
+      { "de": "Die zunehmende Automatisierung der Arbeit spart Zeit, und das Team zeigt sich zufrieden.", "es": "La creciente automatización del trabajo ahorra tiempo, y el equipo se muestra satisfecho.", "en": "The increasing automation of the work saves time, and the team is satisfied.", "hu": "A munka egyre erősödő automatizálása időt takarít meg, és a csapat elégedett.", "word": "d104642", "form": "Automatisierung" }
     ],
-    "false_es": ["El algoritmo es muy lento.","El despliegue es mañana en la mañana.","El equipo no está satisfecho."],
-    "false_en": ["The algorithm is very slow.","The deployment is tomorrow morning.","The team is not satisfied."],
-    "false_hu": ["Az algoritmus nagyon lassú.","Az élesítés holnap reggel van.","A csapat nem elégedett."]
+    "false_es": ["El cronograma era muy flexible.","El algoritmo es lento.","El despliegue se hizo como estaba planeado."],
+    "false_en": ["The schedule was very flexible.","The algorithm is slow.","The deployment took place as planned."],
+    "false_hu": ["Az ütemterv nagyon rugalmas volt.","Az algoritmus lassú.","A telepítés a terv szerint zajlott."]
   },
   {
     "id": "c1-wirtschaft",
     "level": "C1",
     "sentences": [
-      { "de": "Die Konjunktur ist gut, und meine Firma ist optimistisch.", "es": "La coyuntura económica es buena y mi empresa es optimista.", "en": "The economic situation is good, and my company is optimistic.", "hu": "A konjunktúra jó, és a cégem optimista.", "word": "d102612", "form": "Konjunktur" },
-      { "de": "Es gibt einen Aufschwung, weil die Nachfrage hoch ist.", "es": "Hay un auge porque la demanda es alta.", "en": "There is a boom because demand is high.", "hu": "Fellendülés van, mert nagy a kereslet.", "word": "d103194", "form": "Aufschwung" },
-      { "de": "Die Regierung gibt der Firma eine Subvention.", "es": "El gobierno le da un subsidio a la empresa.", "en": "The government gives the company a subsidy.", "hu": "A kormány támogatást ad a cégnek.", "word": "d103243", "form": "Subvention" },
-      { "de": "Die Ausschreibung ist offen, und wir wollen teilnehmen.", "es": "La convocatoria está abierta y queremos participar.", "en": "The call for applications is open, and we want to take part.", "hu": "A pályázati felhívás nyitva van, és részt akarunk venni.", "word": "d103199", "form": "Ausschreibung" },
-      { "de": "Der Anreiz ist groß, und wir müssen schnell sein.", "es": "El incentivo es grande y tenemos que ser rápidos.", "en": "The incentive is big, and we have to be fast.", "hu": "Az ösztönző nagy, és gyorsnak kell lennünk.", "word": "d103208", "form": "Anreiz" }
+      { "de": "Nachdem sich die Konjunktur erholt hat, ist meine Firma optimistisch.", "es": "Ahora que la coyuntura económica se ha recuperado, mi empresa es optimista.", "en": "Now that the economy has recovered, my company is optimistic.", "hu": "Miután a konjunktúra magához tért, a cégem derűlátó.", "word": "d102612", "form": "Konjunktur" },
+      { "de": "Der Aufschwung ist auf die gestiegene Nachfrage zurückzuführen.", "es": "La reactivación se debe al aumento de la demanda.", "en": "The upswing is attributable to the increased demand.", "hu": "A fellendülés a megnövekedett keresletnek köszönhető.", "word": "d103194", "form": "Aufschwung" },
+      { "de": "Die vom Staat gewährte Subvention half der Firma bei zusätzlichen Investitionen.", "es": "La subvención otorgada por el Estado ayudó a la empresa con inversiones adicionales.", "en": "The subsidy granted by the state helped the company with additional investments.", "hu": "Az állam által nyújtott támogatás segített a cégnek a további beruházásokban.", "word": "d103243", "form": "Subvention" },
+      { "de": "Die Ausschreibung, an der wir teilnehmen wollten, wurde um eine Woche verlängert.", "es": "La licitación en la que queríamos participar se prorrogó una semana.", "en": "The call for tenders in which we wanted to take part was extended by a week.", "hu": "A pályázati kiírást, amelyen részt akartunk venni, egy héttel meghosszabbították.", "word": "d103199", "form": "Ausschreibung" },
+      { "de": "Ohne diesen Anreiz hätten wir uns nie beworben.", "es": "Sin ese incentivo nunca nos habríamos postulado.", "en": "Without this incentive we would never have applied.", "hu": "Enélkül az ösztönző nélkül soha nem jelentkeztünk volna.", "word": "d103208", "form": "Anreiz" }
     ],
-    "false_es": ["La coyuntura económica es mala.","La demanda es baja.","El gobierno no da ningún subsidio."],
-    "false_en": ["The economic situation is bad.","Demand is low.","The government gives no subsidy."],
-    "false_hu": ["A konjunktúra rossz.","A kereslet alacsony.","A kormány nem ad támogatást."]
+    "false_es": ["La coyuntura empeoró mucho.","La subvención no sirvió para nada.","La licitación se cerró antes de tiempo."],
+    "false_en": ["The economy got much worse.","The subsidy was of no use at all.","The call for tenders was closed early."],
+    "false_hu": ["A konjunktúra sokat romlott.","A támogatás semmire sem volt jó.","A pályázati kiírást korán lezárták."]
   },
   {
     "id": "c1-schule",
     "level": "C1",
     "sentences": [
-      { "de": "In der Schule ist die Inklusion sehr wichtig.", "es": "En la escuela la inclusión es muy importante.", "en": "In school, inclusion is very important.", "hu": "Az iskolában az inklúzió nagyon fontos.", "word": "d103210", "form": "Inklusion" },
-      { "de": "Ein Vorurteil ist immer schlecht.", "es": "Un prejuicio siempre es malo.", "en": "A prejudice is always bad.", "hu": "Az előítélet mindig rossz.", "word": "d103827", "form": "Vorurteil" },
-      { "de": "Wir wollen keine Ausgrenzung.", "es": "No queremos exclusión.", "en": "We do not want any exclusion.", "hu": "Nem akarunk kirekesztést.", "word": "d102629", "form": "Ausgrenzung" },
-      { "de": "Die Chancengerechtigkeit ist ein Ziel für alle.", "es": "La equidad de oportunidades es una meta para todos.", "en": "Equal opportunity is a goal for everyone.", "hu": "Az esélyegyenlőség mindenki számára cél.", "word": "d102626", "form": "Chancengerechtigkeit" },
-      { "de": "Wir sind optimistisch, weil der Zusammenhalt stark ist.", "es": "Somos optimistas porque la cohesión es fuerte.", "en": "We are optimistic because our cohesion is strong.", "hu": "Optimisták vagyunk, mert az összetartás erős.", "word": "d102601", "form": "Zusammenhalt" }
+      { "de": "In unserer Schule ist die Inklusion ein wichtiges Thema.", "es": "En nuestra escuela la inclusión es un tema importante.", "en": "In our school inclusion is an important topic.", "hu": "Az iskolánkban a befogadás fontos téma.", "word": "d103210", "form": "Inklusion" },
+      { "de": "Ein Vorurteil entsteht oft aus Angst und lässt sich nur durch Gespräche überwinden.", "es": "Un prejuicio surge a menudo del miedo y solo se puede superar mediante el diálogo.", "en": "A prejudice often arises from fear and can only be overcome through conversation.", "hu": "Az előítélet gyakran félelemből ered, és csak beszélgetéssel lehet leküzdeni.", "word": "d103827", "form": "Vorurteil" },
+      { "de": "Die Ausgrenzung einzelner Kinder darf in keiner Klasse akzeptiert werden.", "es": "La exclusión de algunos niños no debe aceptarse en ninguna clase.", "en": "The exclusion of individual children must not be accepted in any class.", "hu": "Egyes gyerekek kirekesztését egyetlen osztályban sem szabad elfogadni.", "word": "d102629", "form": "Ausgrenzung" },
+      { "de": "Die Chancengerechtigkeit, die lange gefordert worden war, ist heute ein Ziel für alle.", "es": "La equidad de oportunidades, que se había exigido durante mucho tiempo, es hoy una meta para todos.", "en": "Equal opportunity, which had been demanded for a long time, is now a goal for everyone.", "hu": "Az esélyegyenlőség, amelyet régóta követeltek, ma mindenki célja.", "word": "d102626", "form": "Chancengerechtigkeit" },
+      { "de": "Wir sind optimistisch, weil der Zusammenhalt in der Klasse stärker geworden ist.", "es": "Somos optimistas porque la cohesión en la clase se ha fortalecido.", "en": "We are optimistic because the cohesion in the class has grown stronger.", "hu": "Derűlátóak vagyunk, mert az osztály összetartása erősebb lett.", "word": "d102601", "form": "Zusammenhalt" }
     ],
-    "false_es": ["En la escuela la inclusión no importa.","Un prejuicio siempre es bueno.","Queremos más exclusión."],
-    "false_en": ["In school, inclusion does not matter.","A prejudice is always good.","We want more exclusion."],
-    "false_hu": ["Az iskolában az inklúzió nem fontos.","Az előítélet mindig jó.","Több kirekesztést akarunk."]
+    "false_es": ["La inclusión no importa en nuestra escuela.","Un prejuicio solo se elimina con castigos.","La cohesión de la clase es cada vez más débil."],
+    "false_en": ["Inclusion does not matter in our school.","A prejudice is only removed by punishment.","The cohesion of the class is getting weaker."],
+    "false_hu": ["Az iskolánkban a befogadás nem számít.","Az előítéletet csak büntetéssel lehet megszüntetni.","Az osztály összetartása egyre gyengébb."]
   },
   {
     "id": "c1-stadt",
     "level": "C1",
     "sentences": [
-      { "de": "Heute ist die Volkszählung in der Stadt.", "es": "Hoy es el censo en la ciudad.", "en": "Today is the census in the city.", "hu": "Ma van a népszámlálás a városban.", "word": "d324047", "form": "Volkszählung" },
-      { "de": "Die Zuständigkeit ist nicht klar, deshalb frage ich im Rathaus.", "es": "La jurisdicción no está clara, por eso pregunto en el ayuntamiento.", "en": "The jurisdiction is not clear, so I ask at the town hall.", "hu": "Az illetékesség nem világos, ezért a városházán kérdezek.", "word": "d102649", "form": "Zuständigkeit" },
-      { "de": "Die Machbarkeit ist wichtig, denn das Geld ist knapp.", "es": "La viabilidad es importante, porque el dinero es escaso.", "en": "Feasibility is important because money is tight.", "hu": "A megvalósíthatóság fontos, mert kevés a pénz.", "word": "d324148", "form": "Machbarkeit" },
-      { "de": "Der Bürgermeister will einen Konsens.", "es": "El alcalde quiere un consenso.", "en": "The mayor wants a consensus.", "hu": "A polgármester konszenzust akar.", "word": "d323997", "form": "Konsens" },
-      { "de": "Die Amtszeit ist bald zu Ende, und er ist zufrieden.", "es": "El mandato termina pronto y él está satisfecho.", "en": "His term of office is ending soon, and he is satisfied.", "hu": "A megbízatása hamarosan véget ér, és elégedett.", "word": "d103215", "form": "Amtszeit" }
+      { "de": "Die Volkszählung, die alle zehn Jahre durchgeführt wird, findet heute in der Stadt statt.", "es": "El censo, que se realiza cada diez años, tiene lugar hoy en la ciudad.", "en": "The census, which is carried out every ten years, takes place in the city today.", "hu": "A népszámlálást, amelyet tízévente tartanak, ma tartják a városban.", "word": "d324047", "form": "Volkszählung" },
+      { "de": "Da die Zuständigkeit nicht klar war, fragte ich im Rathaus nach.", "es": "Como la competencia no estaba clara, pregunté en el ayuntamiento.", "en": "Since the responsibility was unclear, I inquired at the town hall.", "hu": "Mivel az illetékesség nem volt egyértelmű, érdeklődtem a városházán.", "word": "d102649", "form": "Zuständigkeit" },
+      { "de": "Die Machbarkeit des Projekts muss geprüft werden, denn das Geld ist knapp.", "es": "Hay que examinar la viabilidad del proyecto, porque el dinero es escaso.", "en": "The feasibility of the project has to be examined, because money is tight.", "hu": "A projekt megvalósíthatóságát meg kell vizsgálni, mert kevés a pénz.", "word": "d324148", "form": "Machbarkeit" },
+      { "de": "Der Bürgermeister, der einen Konsens erreichen wollte, lud alle Parteien zu einem Gespräch ein.", "es": "El alcalde, que quería lograr un consenso, invitó a todos los partidos a una conversación.", "en": "The mayor, who wanted to reach a consensus, invited all parties to a talk.", "hu": "A polgármester, aki konszenzust akart elérni, minden pártot meghívott egy beszélgetésre.", "word": "d323997", "form": "Konsens" },
+      { "de": "Seine Amtszeit geht bald zu Ende, und er ist mit der geleisteten Arbeit zufrieden.", "es": "Su periodo en el cargo termina pronto, y está satisfecho con el trabajo realizado.", "en": "His term of office is coming to an end soon, and he is satisfied with the work done.", "hu": "A hivatali ideje hamarosan véget ér, és elégedett az elvégzett munkával.", "word": "d103215", "form": "Amtszeit" }
     ],
-    "false_es": ["El censo es el próximo año.","Hay dinero de sobra.","El alcalde no quiere un consenso."],
-    "false_en": ["The census is next year.","There is plenty of money.","The mayor does not want a consensus."],
-    "false_hu": ["A népszámlálás jövőre lesz.","Bőven van pénz.","A polgármester nem akar konszenzust."]
+    "false_es": ["El censo se realiza cada año.","El alcalde rechazó toda conversación.","Su periodo en el cargo acaba de empezar."],
+    "false_en": ["The census is carried out every year.","The mayor refused any talks.","His term of office has just begun."],
+    "false_hu": ["A népszámlálást minden évben tartják.","A polgármester minden beszélgetést elutasított.","A hivatali ideje éppen most kezdődött."]
   }
 ]

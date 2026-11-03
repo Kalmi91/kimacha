@@ -9,7 +9,7 @@ import { detectStructures } from '@/lib/grammar/tenseGate';
 import { isSentenceKnownIn, knownTokens, sentenceTokens, type ResolvedTense } from '@/lib/knownSentence';
 import type { Lang } from '@/lib/languagePair';
 import { falseIn, pickStory, STORIES, storiesFor, storyWords } from '@/lib/practice/stories';
-import { learnedEntries } from '@/lib/sentenceCards';
+import { learnedEntries, learnerLevel } from '@/lib/sentenceCards';
 import { sm2NewCard, type Sm2Card } from '@/lib/sm2';
 
 const LEVELS: PcicLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1'];
@@ -48,7 +48,7 @@ const learned = (ids: string[]): Sm2Card[] =>
   ids.map((id) => ({ ...sm2NewCard(id), state: 'review', interval: 4, reps: 2, due: '2026-10-23', lastReview: '2026-10-01', introducedAt: '2026-10-01' }));
 // the active deck is the one of the pair set with setPcicTarget
 const knownOf = (target: PcicTarget, ids: string[], level: PcicLevel = 'A1') =>
-  knownTokens(target, { learned: learnedEntries(learned(ids), target, findPcicItem), tenses: tensesOf(level) });
+  knownTokens(target, { learned: learnedEntries(learned(ids), target, findPcicItem), tenses: tensesOf(level), level });
 const idsOf = (stories: typeof STORIES) => stories.flatMap((s) => s.sentences.map((x) => x.word));
 const norm = (text: string) => text.trim().toLowerCase();
 const WORDS = /\p{L}+/gu;
@@ -149,7 +149,7 @@ describe.each<PcicTarget>(['es', 'en', 'hu', 'de'])('reading stories, target %s'
                   return taught === undefined || rank(taught) > rank(story.level);
                 })
               : [];
-          if (unknown.length > 0 || other.length > 0 || !isSentenceKnownIn(text, target, known)) {
+          if (unknown.length > 0 || other.length > 0 || !isSentenceKnownIn(text, target, known, story.level)) {
             problems.push(`${story.id}: ${text} | unknown: ${unknown.join(',')} | structures: ${other.join(',')}`);
           }
         }
@@ -182,18 +182,31 @@ describe('reading stories, German: each story is offered to a learner with the c
   beforeAll(() => setPcicTarget('de'));
   afterAll(() => setPcicTarget('es'));
 
-  const deps = (cards: Sm2Card[]) => ({ target: 'de' as PcicTarget, cards, findItem: findPcicItem, today: '2026-10-23' });
-  const knownFor = (cards: Sm2Card[]) => knownTokens('de', { learned: learnedEntries(cards, 'de', findPcicItem) });
+  const deps = (cards: Sm2Card[]) => ({ target: 'de' as PcicTarget, cards, findItem: findPcicItem, levelOf: levelOfItem, today: '2026-10-23' });
+  const knownFor = (cards: Sm2Card[]) =>
+    knownTokens('de', { learned: learnedEntries(cards, 'de', findPcicItem), level: learnerLevel(cards, levelOfItem) });
 
   it('with exactly those cards the story is picked, without the card of one of its words it is not', () => {
-    const firstCard = new Map<string, string>();
-    for (const level of LEVELS) {
-      for (const item of pcicItemsForLevel(level)) for (const token of sentenceTokens(item.de ?? '', 'de')) if (!firstCard.has(token)) firstCard.set(token, item.id);
-    }
-    const free = knownTokens('de', { learned: [] });
+    // token -> the first card of the deck (A1 up to C1) that makes the gate know it at a level, with its inflected forms
+    const firstCardAt = new Map<PcicLevel, Map<string, string>>();
+    const firstCardOf = (level: PcicLevel) => {
+      let map = firstCardAt.get(level);
+      if (!map) {
+        map = new Map<string, string>();
+        for (const l of LEVELS) {
+          for (const item of pcicItemsForLevel(l)) {
+            for (const token of knownTokens('de', { learned: learnedEntries(learned([item.id]), 'de', findPcicItem), level })) if (!map.has(token)) map.set(token, item.id);
+          }
+        }
+        firstCardAt.set(level, map);
+      }
+      return map;
+    };
     const problems: string[] = [];
     for (const story of storiesFor('de')) {
       const needed = new Set(story.sentences.map((x) => x.word));
+      const free = knownTokens('de', { learned: [], level: story.level });
+      const firstCard = firstCardOf(story.level);
       for (const x of story.sentences) {
         for (const token of sentenceTokens(x.de ?? '', 'de')) if (!free.has(token)) needed.add(firstCard.get(token) ?? `missing:${token}`);
       }

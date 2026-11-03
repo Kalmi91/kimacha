@@ -17,7 +17,7 @@ import SpeakButton from '@/components/SpeakButton';
 import LevelCounter from '@/components/practice/LevelCounter';
 import ModeChips from '@/components/practice/ModeChips';
 import { usePracticeMode } from '@/components/practice/modes';
-import { findPcicItem, type PcicTarget } from '@/data/pcic';
+import { findPcicItem, levelOfItem, type PcicTarget } from '@/data/pcic';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
@@ -103,6 +103,7 @@ function ReadingMode() {
         cards,
         tenses: resolvedTensesFromLessons(doneGrammarTopicProgress(dir, grammarRows).keys()),
         findItem: findPcicItem,
+        levelOf: levelOfItem,
         today,
         // the button or a new day replaces a round of this direction; a broken round of today is just dropped
         avoid: stored && stored.target === dir && (fresh || stored.date !== today) ? new Set(stored.ids) : undefined,

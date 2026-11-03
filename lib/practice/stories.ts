@@ -18,7 +18,7 @@ import { isSentenceKnownIn } from '@/lib/knownSentence';
 import { activeSourceFor, type Lang } from '@/lib/languagePair';
 import { learnedEntryOf } from '@/lib/sentenceCards';
 import { gapByWord, practiceCandidates } from './gapFill';
-import { meaningOf, type ReadingDeps, type ReadingWord } from './reading';
+import { meaningOf, readingLevelFor, type ReadingDeps, type ReadingWord } from './reading';
 
 /** One sentence of a story: its text per language, and the card it practises (`word`: `o<order>`, `e<id>`, `h<id>` or `d<id>`) as written in the target-language text (`form`). */
 export interface StorySentence {
@@ -89,10 +89,11 @@ export function storyWords(story: Story, findItem: (id: string) => PcicItem | un
 export function pickStory(deps: ReadingDeps, known: ReadonlySet<string>, stories: readonly Story[] = storiesFor(deps.target)): { story: Story; words: ReadingWord[] } | null {
   const target = deps.target;
   const cardOf = new Map(deps.cards.map((c) => [c.itemId, c]));
+  const levelFor = readingLevelFor(deps);
   const due = new Set(practiceCandidates(deps.cards, deps.today).map((c) => c.itemId));
   const usable: { story: Story; words: ReadingWord[]; score: number; index: number }[] = [];
   stories.forEach((story, index) => {
-    if (!story.sentences.every((s) => isSentenceKnownIn(s[target] ?? '', target, known))) return;
+    if (!story.sentences.every((s) => isSentenceKnownIn(s[target] ?? '', target, known, levelFor(s.word)))) return;
     if (!story.sentences.every((s) => cardOf.has(s.word) && learnedEntryOf(cardOf.get(s.word)!, target, deps.findItem))) return;
     const words = storyWords(story, deps.findItem, target);
     if (words) usable.push({ story, words, score: words.filter((w) => due.has(w.itemId)).length, index });
