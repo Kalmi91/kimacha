@@ -7,6 +7,9 @@ import CloudGate from '@/components/cloud/CloudGate';
 import { GUEST_OFFER_AFTER, OFFER_DONE_KEY, VISITED_KEY, noteCardGraded, requestCloudSignIn, resetGuestStateForTests } from '@/lib/cloud/guest';
 import { SESSION_KEY, loadSession } from '@/lib/cloud/session';
 import { makeFlush } from '@/test-utils/flush';
+import { UI_LANG_KEY, rememberedLanguage, setLanguage } from '@/lib/i18n';
+import en from '@/lib/i18n/en';
+import hu from '@/lib/i18n/hu';
 
 const mockLogin = jest.fn();
 const mockGetProgress = jest.fn();
@@ -286,5 +289,31 @@ describe('CloudGate: a guest signs in', () => {
     expect(mockPutProgress).not.toHaveBeenCalled();
     expect(loadSession()).toEqual({ name: 'Kálmán', token: 'tok' });
     expect(reload).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('CloudGate: the remembered language', () => {
+  afterEach(() => setLanguage('en'));
+
+  it('the welcome screen speaks the language of the last visit', async () => {
+    memoryStorage({ [VISITED_KEY]: '1', [UI_LANG_KEY]: 'hu' });
+    gate();
+    await flush();
+    expect(screen.getByTestId('cloud-welcome')).toBeTruthy();
+    expect(screen.getByText(hu.cloud.welcomeTitle)).toBeTruthy();
+  });
+
+  it('a stored code that is not a UI language leaves English', async () => {
+    memoryStorage({ [VISITED_KEY]: '1', [UI_LANG_KEY]: 'xx' });
+    gate();
+    await flush();
+    expect(screen.getByText(en.cloud.welcomeTitle)).toBeTruthy();
+  });
+
+  it('setLanguage remembers the code for the next visit', () => {
+    const store = memoryStorage();
+    setLanguage('es');
+    expect(store.map.get(UI_LANG_KEY)).toBe('es');
+    expect(rememberedLanguage()).toBe('es');
   });
 });

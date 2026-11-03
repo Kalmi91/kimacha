@@ -15,7 +15,7 @@ import { mergeCloudPayloads } from '@/lib/cloud/merge';
 import { clearSession, loadSession, saveSession } from '@/lib/cloud/session';
 import { exportCloudPayload, restoreFromCloud, snapshotKey, startSync } from '@/lib/cloud/sync';
 import { useGrammarColors } from '@/lib/grammarColors';
-import { t } from '@/lib/i18n';
+import { rememberedLanguage, setLanguage, t } from '@/lib/i18n';
 import { pairOf } from '@/lib/languagePair';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
@@ -152,6 +152,9 @@ export default function CloudGate({ children }: { children: ReactNode }) {
     if (started.current) return;
     started.current = true;
     const returning = hasVisited();
+    // the language of the last visit, for the welcome screen; a restored session's own language replaces it later
+    const lang = rememberedLanguage();
+    if (lang) setLanguage(lang);
     // from now on this browser is a returning one, with or without a session (a dead token then lands on the welcome screen)
     markVisited();
     if (token.current) void restore(token.current);
