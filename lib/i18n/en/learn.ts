@@ -252,6 +252,12 @@ export default {
     empty: 'Learn more words to unlock sentences',
     roundDone: (n: number) => (n === 1 ? 'Round done: 1 sentence' : `Round done: ${n} sentences`),
     more: 'More sentences',
+    // Level picker on top (lib/sentenceLevel.ts): all levels, or only the sentences of one level.
+    levelPickerLabel: 'Sentence level',
+    levelAll: 'All',
+    levelAllA11y: 'All levels',
+    levelOptionA11y: (level: string) => `Level ${level}`,
+    emptyLevel: 'No sentences at this level with the words you know yet. Pick another level',
   },
   // components/practice/LevelCounter.tsx (Sentences and Practice tabs): the level and its word counts, same chips as the Words tab.
   levelCounter: {

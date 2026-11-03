@@ -220,6 +220,11 @@ const es: typeof en = {
     empty: 'Aprende más palabras para desbloquear frases',
     roundDone: (n: number) => (n === 1 ? 'Ronda terminada: 1 frase' : `Ronda terminada: ${n} frases`),
     more: 'Más frases',
+    levelPickerLabel: 'Nivel de las frases',
+    levelAll: 'Todos',
+    levelAllA11y: 'Todos los niveles',
+    levelOptionA11y: (level: string) => `Nivel ${level}`,
+    emptyLevel: 'Aún no hay frases de este nivel con las palabras que conoces. Elige otro nivel',
   },
   // components/practice/LevelCounter.tsx (pestañas Frases y Práctica): el nivel y sus palabras, los mismos chips que la pestaña Palabras.
   levelCounter: {
