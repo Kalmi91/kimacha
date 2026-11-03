@@ -90,6 +90,8 @@ const de: typeof en = {
     moreNew: (n: number) => `+${n} neue Wörter`,
     moreNewShort: (n: number) => `+${n}`,
     moreNewHint: 'Heute noch mehr neue Wörter?',
+    moreNewAsk: 'Die neuen Wörter für heute sind geschafft, aber es stehen noch Wiederholungen an. Möchtest du mehr neue Wörter?',
+    moreNewNo: 'Nein, nur Wiederholungen',
     tileAnswered: 'Beantwortet',
     tileNew: 'Neu',
     tileAgain: 'Nochmal',
