@@ -242,7 +242,7 @@
           "audio": [
             {
               "speaker": "n",
-              "text": "Willkommen zu unserer Sendung „Arbeitswelt“. Heute geht es um die Frage: Arbeiten im Homeoffice, ein Gewinn oder ein Problem? Ich begrüße Frau Aydin, die Projektleiterin in einem Softwareunternehmen ist, und Herrn Berger, der einer Versicherung die Personalabteilung leitet. Frau Aydin, Sie arbeiten drei Tage in der Woche zu Hause. Wie gefällt Ihnen das?"
+              "text": "Willkommen zu unserer Sendung „Arbeitswelt“. Heute geht es um die Frage: Arbeiten im Homeoffice, ein Gewinn oder ein Problem? Ich begrüße Frau Aydin, die Projektleiterin in einem Softwareunternehmen ist, und Herrn Berger, der bei einer Versicherung die Personalabteilung leitet. Frau Aydin, Sie arbeiten drei Tage in der Woche zu Hause. Wie gefällt Ihnen das?"
             },
             {
               "speaker": "f",
@@ -293,7 +293,7 @@
             {
               "stem": "Die Firma sollte den Mitarbeitern die Wahl lassen, wo sie arbeiten.",
               "options": ["Frau Aydin", "Herr Berger", "beide"],
-              "correct": 2
+              "correct": 0
             },
             {
               "stem": "Man braucht zu Hause ein eigenes Zimmer zum Arbeiten.",
