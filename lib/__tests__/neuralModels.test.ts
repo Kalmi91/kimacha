@@ -138,7 +138,7 @@ describe('better voice: state at start', () => {
     expect(s.supported).toBe(true);
     expect(s.ready).toBe(true);
     expect(s.enabled).toBe(true);
-    expect(s.engines).toEqual({ es: 'piper', en: 'piper', hu: 'piper' });
+    expect(s.engines).toEqual({ es: 'piper', en: 'piper', hu: 'piper', de: 'piper' });
     expect(Object.values(s.installed).every(v => !v)).toBe(true);
     expect(m.neuralEngineFor('es')).toBeNull();
     expect(m.neuralPackFile('es', 'el perro')).toBeNull();
@@ -165,6 +165,29 @@ describe('better voice: state at start', () => {
     await flush();
     expect(m.neuralEngineFor('hu')).toBe('piper');
     expect(mockLoaded.some(x => x.startsWith('en:'))).toBe(false); // English was never asked for
+  });
+
+  it('German loads Kerstin and Thorsten (Piper) on first use and is Piper only', async () => {
+    for (const key of PIPER_MODEL_KEYS) installModel(key);
+    const m = load();
+    await m.startNeural();
+    await flush();
+    expect(m.neuralEngineFor('de')).toBeNull(); // asking starts its load
+    await flush();
+    expect(mockLoaded.map(x => x.split('@')[0]).sort()).toEqual(['de:de_DE-kerstin-low', 'de:de_DE-thorsten-medium']);
+    expect(m.neuralEngineFor('de')).toBe('piper');
+    expect(m.neuralPackFile('de', 'der Hund')).toBeNull();
+    await m.setNeuralEngine('de', 'kokoro');
+    expect(m.getNeuralState().engines.de).toBe('piper');
+  });
+
+  it('German stays on the phone while its voices are not installed', async () => {
+    const m = load();
+    await m.startNeural();
+    await flush();
+    expect(m.neuralEngineFor('de')).toBeNull();
+    await flush();
+    expect(mockLoaded.some(x => x.startsWith('de:'))).toBe(false);
   });
 
   it('a model that fails to load is not tried again on every speech', async () => {
@@ -195,11 +218,11 @@ describe('better voice: state at start', () => {
   });
 
   it('the saved switch and choices come back after a restart', async () => {
-    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'kokoro' } }));
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: false, engines: { es: 'kokoro', en: 'piper', hu: 'kokoro', de: 'kokoro' } }));
     const m = load();
     await m.startNeural();
     expect(m.getNeuralState().enabled).toBe(false);
-    expect(m.getNeuralState().engines).toEqual({ es: 'kokoro', en: 'piper', hu: 'piper' });
+    expect(m.getNeuralState().engines).toEqual({ es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' });
   });
 });
 
@@ -476,7 +499,7 @@ describe('better voice: switch and engine choice', () => {
 
   it('Kokoro chosen but not loaded yet: the other engine speaks, and when none is ready the phone does', async () => {
     for (const key of PIPER_MODEL_KEYS) installModel(key);
-    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'piper', hu: 'piper' } }));
+    mockFs.set(`${TTS}/settings.json`, JSON.stringify({ enabled: true, engines: { es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' } }));
     const m = load();
     await m.startNeural();
     await flush();

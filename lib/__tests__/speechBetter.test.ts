@@ -132,9 +132,26 @@ describe('speak(): the levels', () => {
   it('a language the better voice does not have is the phone', () => {
     packFile.mockReturnValue('/files/x.mp3');
     engineFor.mockReturnValue('piper');
-    speak('Hund', 'de-DE');
-    expect(speech.speak).toHaveBeenCalledWith('Hund', { language: 'de-DE' });
+    speak('Bonjour', 'fr-FR');
+    expect(speech.speak).toHaveBeenCalledWith('Bonjour', { language: 'fr-FR' });
     expect(playPack).not.toHaveBeenCalled();
+  });
+
+  it('German speaks with the German Piper voice when it is installed', () => {
+    engineFor.mockReturnValue('piper');
+    speak('der Hund', 'de-DE');
+    expect(engineFor).toHaveBeenCalledWith('de');
+    expect(speakNeural).toHaveBeenCalledTimes(1);
+    expect(speakNeural).toHaveBeenCalledWith('der Hund', 'de', expect.objectContaining({ id: expect.stringMatching(/^de_DE-(kerstin-low|thorsten-medium)$/), engine: 'piper' }), expect.anything());
+    expect(speech.speak).not.toHaveBeenCalled();
+  });
+
+  it('German falls back to the phone de-DE voice when the German voice is not installed', () => {
+    engineFor.mockReturnValue(null);
+    packFile.mockReturnValue(null);
+    speak('der Hund', 'de-DE');
+    expect(speakNeural).not.toHaveBeenCalled();
+    expect(speech.speak).toHaveBeenCalledWith('der Hund', { language: 'de-DE' });
   });
 
   it('stop() stops the phone, the engine and the pack', () => {

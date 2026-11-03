@@ -1,5 +1,5 @@
 // On-device neural speech (react-native-sherpa-onnx, sherpa-onnx under the hood): Piper (VITS) and Kokoro
-// voices for es, en and hu. Native only: lib/neuralTts.web.ts is the no-op twin Metro picks for the web
+// voices for es, en, hu and de. Native only: lib/neuralTts.web.ts is the no-op twin Metro picks for the web
 // build. The voice tables, the hash and the engine choice live in lib/neuralVoices.ts; the downloads in
 // lib/neuralModels.ts; lib/speech.ts decides which level (word pack, this engine, the phone) speaks.
 //

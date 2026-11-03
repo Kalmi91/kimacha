@@ -10,9 +10,13 @@
 // The sentence engines (Piper / Kokoro) pick their voice with the same rule, so a word sounds the
 // same whichever of the three levels (pack, engine, phone) happens to speak it.
 
-export type NeuralLang = 'es' | 'en' | 'hu';
+export type NeuralLang = 'es' | 'en' | 'hu' | 'de';
 export type NeuralEngine = 'piper' | 'kokoro';
 export type VoiceGender = 'f' | 'm' | 'n';
+
+// Languages that have a Piper voice only (no Kokoro voice): their engine is always Piper, no choice.
+export const PIPER_ONLY_LANGS: readonly NeuralLang[] = ['hu', 'de'];
+export const isPiperOnly = (lang: NeuralLang): boolean => PIPER_ONLY_LANGS.includes(lang);
 
 export interface NeuralVoice {
   id: string;
@@ -39,7 +43,8 @@ export const KOKORO_VOICES: Record<'es' | 'en', [NeuralVoice, NeuralVoice]> = {
 };
 
 // Piper (VITS) models have one speaker each, so a pair is two models. en kristin and john are public
-// domain, hu berta and imre are CC0. The gender of the two es_MX voices is not documented anywhere the
+// domain, hu berta and imre are CC0, de thorsten is CC0 and de kerstin is
+// public domain (the MODEL_CARD of each archive). The gender of the two es_MX voices is not documented anywhere the
 // model ships; it was measured on the emulator (fundamental frequency of the generated speech), see
 // the PLAN-tts-1101 log.
 export const PIPER_VOICES: Record<NeuralLang, [NeuralVoice, NeuralVoice]> = {
@@ -54,6 +59,10 @@ export const PIPER_VOICES: Record<NeuralLang, [NeuralVoice, NeuralVoice]> = {
   hu: [
     { id: 'hu_HU-berta-medium', engine: 'piper', model: 'hu_HU-berta-medium', sid: 0, gender: 'f' },
     { id: 'hu_HU-imre-medium', engine: 'piper', model: 'hu_HU-imre-medium', sid: 0, gender: 'm' },
+  ],
+  de: [
+    { id: 'de_DE-kerstin-low', engine: 'piper', model: 'de_DE-kerstin-low', sid: 0, gender: 'f' },
+    { id: 'de_DE-thorsten-medium', engine: 'piper', model: 'de_DE-thorsten-medium', sid: 0, gender: 'm' },
   ],
 };
 
@@ -89,6 +98,8 @@ export const NEURAL_MODELS: Record<string, NeuralModel> = {
   'en_US-john-medium': piper('en_US-john-medium', 20800096),
   'hu_HU-berta-medium': piper('hu_HU-berta-medium', 21072384),
   'hu_HU-imre-medium': piper('hu_HU-imre-medium', 21202370),
+  'de_DE-kerstin-low': piper('de_DE-kerstin-low', 21174728),
+  'de_DE-thorsten-medium': piper('de_DE-thorsten-medium', 20949833),
 };
 
 export const PIPER_MODEL_KEYS: string[] = Object.values(NEURAL_MODELS)
@@ -116,14 +127,15 @@ export const SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v1';
 export const KOKORO_LANG_TAG: Record<'es' | 'en', string> = { es: 'es-419', en: 'en-us' };
 
 export type EngineChoice = Record<NeuralLang, NeuralEngine>;
-// Piper is the default (fast); Hungarian has no Kokoro voice, so it is always Piper.
-export const DEFAULT_ENGINES: EngineChoice = { es: 'piper', en: 'piper', hu: 'piper' };
+// Piper is the default (fast); Hungarian and German have no Kokoro voice, so they are always Piper.
+export const DEFAULT_ENGINES: EngineChoice = { es: 'piper', en: 'piper', hu: 'piper', de: 'piper' };
 
 export function normalizeEngines(raw: Partial<Record<NeuralLang, NeuralEngine>> | null | undefined): EngineChoice {
   return {
     es: raw?.es === 'kokoro' ? 'kokoro' : 'piper',
     en: raw?.en === 'kokoro' ? 'kokoro' : 'piper',
     hu: 'piper',
+    de: 'piper',
   };
 }
 
@@ -198,7 +210,7 @@ export function voiceIndexFor(lang: NeuralLang, engine: NeuralEngine, text: stri
 }
 
 export function voicePair(lang: NeuralLang, engine: NeuralEngine): [NeuralVoice, NeuralVoice] {
-  if (engine === 'kokoro' && lang !== 'hu') return KOKORO_VOICES[lang];
+  if (engine === 'kokoro' && !isPiperOnly(lang)) return KOKORO_VOICES[lang as 'es' | 'en'];
   return PIPER_VOICES[lang];
 }
 
@@ -211,8 +223,8 @@ export function modelKeysFor(lang: NeuralLang, engine: NeuralEngine): string[] {
   return [...new Set(voicePair(lang, engine).map(v => v.model))];
 }
 
-// What the better voice needs on the phone: the word pack, the six Piper models (the default engine, and
-// Hungarian's only one), and the Kokoro model when a language chose Kokoro.
+// What the better voice needs on the phone: the word pack, the eight Piper models (the default engine, and
+// the only one of Hungarian and German), and the Kokoro model when a language chose Kokoro.
 // The sentence pack comes last (a late or failed download of it never delays the voice) and only with a URL.
 export function requiredItems(engines: EngineChoice, sentencePackUrl: string = SENTENCE_PACK_URL): string[] {
   const kokoro = engines.es === 'kokoro' || engines.en === 'kokoro';
@@ -237,18 +249,21 @@ export interface PackIndex {
 }
 
 // Relative path of the pack's audio file for the text, or null (the pack covers es and en card words).
+// There is no German in the pack (kimacha-tts-pack-v1 was rendered before German existed) and none for
+// Hungarian: those languages always return null here, so a German word is never looked up in the pack
+// (and never gets a Spanish or English recording by a key clash); the Piper voice speaks it.
 export function packFileFor(index: PackIndex | null, lang: NeuralLang, text: string): string | null {
-  if (!index || lang === 'hu') return null;
-  return index.files[lang]?.[packKey(text)] ?? null;
+  if (!index || isPiperOnly(lang)) return null;
+  return index.files[lang as 'es' | 'en']?.[packKey(text)] ?? null;
 }
 
 // Relative path of the sentence pack's audio file for the text, or null. `gender` (f / m) is the speaker the
 // speech call carries (explicit, or the one the speakSequence shared-speaker rule gave it); without one, the
 // text's own hash gender (the sex of the voice voiceFor picks). hu is never in the pack.
 export function sentencePackFileFor(index: PackIndex | null, lang: NeuralLang, text: string, gender?: VoiceGender): string | null {
-  if (!index || lang === 'hu') return null;
+  if (!index || isPiperOnly(lang)) return null;
   const g = gender === 'f' || gender === 'm' ? gender : voiceFor(lang, 'kokoro', text).gender;
-  return index.files[lang]?.[`${g}|${packKey(text)}`] ?? null;
+  return index.files[lang as 'es' | 'en']?.[`${g}|${packKey(text)}`] ?? null;
 }
 
 export function formatMegabytes(bytes: number): string {

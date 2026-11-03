@@ -26,6 +26,7 @@ import {
   voiceIndexFor,
   voiceName,
   type PackIndex,
+  voicePair,
 } from '../neuralVoices';
 
 describe('pack key and hash', () => {
@@ -65,6 +66,10 @@ describe('voice choice', () => {
     expect(voiceFor('en', 'kokoro', 'the dog').id).toBe('af_heart');
     expect(voiceFor('hu', 'piper', 'a kutya').id).toBe('hu_HU-berta-medium');
     expect(voiceFor('hu', 'piper', 'ő').id).toBe('hu_HU-imre-medium');
+    // the hash of both is the same rule: even = first voice (female), odd = second (male)
+    expect(voiceFor('de', 'piper', 'der Hund').id).toBe(voiceFor('de', 'piper', 'der Hund').id);
+    expect(voiceFor('de', 'piper', 'x', 'f').id).toBe('de_DE-kerstin-low');
+    expect(voiceFor('de', 'piper', 'x', 'm').id).toBe('de_DE-thorsten-medium');
   });
 
   it('whitespace around the text does not change the voice', () => {
@@ -77,7 +82,7 @@ describe('voice choice', () => {
   });
 
   it('m / f pick the voice of that sex in every pair, n and nothing keep the hash', () => {
-    for (const lang of ['es', 'en', 'hu'] as const) {
+    for (const lang of ['es', 'en', 'hu', 'de'] as const) {
       expect(voiceFor(lang, 'piper', 'x', 'f').gender).toBe('f');
       expect(voiceFor(lang, 'piper', 'x', 'm').gender).toBe('m');
     }
@@ -94,9 +99,16 @@ describe('voice choice', () => {
   });
 
   it('Hungarian has no Kokoro voice: the choice is always Piper', () => {
-    expect(normalizeEngines({ es: 'kokoro', en: 'kokoro', hu: 'kokoro' })).toEqual({ es: 'kokoro', en: 'kokoro', hu: 'piper' });
-    expect(normalizeEngines(null)).toEqual({ es: 'piper', en: 'piper', hu: 'piper' });
+    expect(normalizeEngines({ es: 'kokoro', en: 'kokoro', hu: 'kokoro' })).toEqual({ es: 'kokoro', en: 'kokoro', hu: 'piper', de: 'piper' });
+    expect(normalizeEngines(null)).toEqual({ es: 'piper', en: 'piper', hu: 'piper', de: 'piper' });
     expect(voiceFor('hu', 'kokoro', 'a kutya').engine).toBe('piper');
+  });
+
+  it('German has no Kokoro voice either: the choice is always Piper, Thorsten and Kerstin', () => {
+    expect(normalizeEngines({ de: 'kokoro' }).de).toBe('piper');
+    expect(voiceFor('de', 'kokoro', 'der Hund').engine).toBe('piper');
+    expect(voicePair('de', 'kokoro').map(v => v.id)).toEqual(['de_DE-kerstin-low', 'de_DE-thorsten-medium']);
+    expect(modelKeysFor('de', 'kokoro')).toEqual(['de_DE-kerstin-low', 'de_DE-thorsten-medium']);
   });
 });
 
@@ -105,9 +117,14 @@ describe('models', () => {
     for (const voice of [...Object.values(PIPER_VOICES).flat(), ...Object.values(KOKORO_VOICES).flat()]) {
       expect(NEURAL_MODELS[voice.model]).toBeDefined();
     }
-    expect(PIPER_MODEL_KEYS).toHaveLength(6);
+    expect(PIPER_MODEL_KEYS).toHaveLength(8);
     expect(NEURAL_MODELS['hu_HU-berta-medium'].archive).toBe(
       'https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-hu_HU-berta-medium-int8.tar.bz2',
+    );
+    expect(NEURAL_MODELS['de_DE-thorsten-medium'].bytes).toBe(20949833);
+    expect(NEURAL_MODELS['de_DE-kerstin-low'].bytes).toBe(21174728);
+    expect(NEURAL_MODELS['de_DE-kerstin-low'].archive).toBe(
+      'https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/vits-piper-de_DE-kerstin-low-int8.tar.bz2',
     );
     expect(NEURAL_MODELS.kokoro.dir).toBe('kokoro-int8-multi-lang-v1_0');
   });
@@ -117,21 +134,21 @@ describe('models', () => {
     expect(modelKeysFor('es', 'piper')).toEqual(['es_MX-claude-high', 'es_MX-ald-medium']);
   });
 
-  it('the first download is the word pack and the six Piper models, Kokoro only when a language chose it; the sentence pack comes last', () => {
-    expect(requiredItems({ es: 'piper', en: 'piper', hu: 'piper' })).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, SENTENCES_KEY]);
-    expect(requiredItems({ es: 'kokoro', en: 'piper', hu: 'piper' })).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, 'kokoro', SENTENCES_KEY]);
+  it('the first download is the word pack and the eight Piper models, Kokoro only when a language chose it; the sentence pack comes last', () => {
+    expect(requiredItems({ es: 'piper', en: 'piper', hu: 'piper', de: 'piper' })).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, SENTENCES_KEY]);
+    expect(requiredItems({ es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' })).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, 'kokoro', SENTENCES_KEY]);
   });
 
   it('an empty sentence-pack URL keeps the old behavior: the item is not required', () => {
-    expect(requiredItems({ es: 'piper', en: 'piper', hu: 'piper' }, '')).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS]);
-    expect(requiredItems({ es: 'kokoro', en: 'piper', hu: 'piper' }, '')).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, 'kokoro']);
+    expect(requiredItems({ es: 'piper', en: 'piper', hu: 'piper', de: 'piper' }, '')).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS]);
+    expect(requiredItems({ es: 'kokoro', en: 'piper', hu: 'piper', de: 'piper' }, '')).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, 'kokoro']);
   });
 
   it('counts the bytes of what is not installed yet', () => {
-    const items = requiredItems({ es: 'piper', en: 'piper', hu: 'piper' });
+    const items = requiredItems({ es: 'piper', en: 'piper', hu: 'piper', de: 'piper' });
     const all = missingBytes(items, {});
     expect(all).toBe(PACK_BYTES + SENTENCE_PACK_BYTES + PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0)); // the pack counts too
-    expect(formatMegabytes(all)).toBe('562 MB');
+    expect(formatMegabytes(all)).toBe('602 MB');
     expect(missingBytes(items, { 'hu_HU-berta-medium': true })).toBe(all - NEURAL_MODELS['hu_HU-berta-medium'].bytes);
     expect(missingBytes(items, { [PACK_KEY]: true })).toBe(all - PACK_BYTES);
     expect(missingBytes(items, { [SENTENCES_KEY]: true })).toBe(all - SENTENCE_PACK_BYTES);
@@ -148,9 +165,11 @@ describe('pack lookup', () => {
     expect(packFileFor(index, 'en', 'el perro')).toBeNull();
   });
 
-  it('a sentence, Hungarian and a missing pack are not in the pack', () => {
+  it('a sentence, Hungarian, German and a missing pack are not in the pack', () => {
     expect(packFileFor(index, 'es', 'El perro duerme en el sofá.')).toBeNull();
     expect(packFileFor(index, 'hu', 'a kutya')).toBeNull();
+    expect(packFileFor(index, 'de', 'der Hund')).toBeNull();
+    expect(packFileFor({ ...index, files: { ...index.files, de: { 'der Hund': 'de/x.mp3' } } } as PackIndex, 'de', 'der Hund')).toBeNull();
     expect(packFileFor(null, 'es', 'el perro')).toBeNull();
   });
 });
