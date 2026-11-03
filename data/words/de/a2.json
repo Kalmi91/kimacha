@@ -13656,7 +13656,7 @@
     "es": "prohibido",
     "en": "forbidden",
     "hu": "tilos",
-    "sentence_de": "Im Krankenhaus ist es verboten zu rennen.",
+    "sentence_de": "Im Krankenhaus ist es verboten, zu rennen.",
     "sentence_es": "Está prohibido correr en el hospital.",
     "sentence_en": "Running is forbidden in the hospital.",
     "sentence_hu": "A kórházban tilos futni.",
@@ -17458,20 +17458,6 @@
     "src": "h20535"
   },
   {
-    "id": 320541,
-    "level": "A2",
-    "de": "das Gelee",
-    "es": "la gelatina",
-    "en": "gelatin dessert, jello",
-    "hu": "zselé (desszert)",
-    "sentence_de": "Das Erdbeergelee ist rot.",
-    "sentence_es": "La gelatina de fresa es roja.",
-    "sentence_en": "The strawberry gelatin is red.",
-    "sentence_hu": "Az epres zselé piros.",
-    "pos": "noun",
-    "src": "h20541"
-  },
-  {
     "id": 320548,
     "level": "A2",
     "de": "der Führerschein / die Erlaubnis",
@@ -19910,11 +19896,11 @@
   {
     "id": 321265,
     "level": "A2",
-    "de": "das College / die Hochschule",
+    "de": "die Hochschule / das College",
     "es": "el colegio universitario",
     "en": "college",
     "hu": "főiskola",
-    "sentence_de": "Mein Cousin geht jetzt aufs College.",
+    "sentence_de": "Mein Cousin studiert jetzt an einer Hochschule.",
     "sentence_es": "Mi primo ahora va a la universidad.",
     "sentence_en": "My cousin goes to college now.",
     "sentence_hu": "Az unokatestvérem most főiskolára jár.",
