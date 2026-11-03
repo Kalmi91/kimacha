@@ -1,4 +1,8 @@
 import { gapByWord } from '../gapFill';
+import a1Deck from '@/data/words/de/a1.json';
+import a2Deck from '@/data/words/de/a2.json';
+import b1Deck from '@/data/words/de/b1.json';
+import b2Deck from '@/data/words/de/b2.json';
 import { knownTokens, sentenceTokens } from '@/lib/knownSentence';
 import {
   SITUATIONS,
@@ -358,5 +362,65 @@ describe('the German family lunch (target de)', () => {
     expect(st.scores).toEqual({ fill: 3, build: 3, say: 6, questions: 3 });
     // a Spanish run is not a run of the German situation
     expect(parseSituation(savedSituation(startSituation(family, NOTHING, 1)), [familie])).toBeNull();
+  });
+});
+
+describe('the German situations', () => {
+  const RANK = { A1: 1, A2: 2, B1: 3, B2: 4, C1: 5 } as const;
+  const norm = (head: string) =>
+    head.replace(/\([^)]*\)/g, '').replace(/^(der|die|das)\s+/i, '').trim().toLowerCase();
+  // the lowest level of every German headword of the deck (a card can hold several branches: "gehen / fahren")
+  const deckLevel = new Map<string, number>();
+  for (const [level, cards] of [[1, a1Deck], [2, a2Deck], [3, b1Deck], [4, b2Deck]] as const) {
+    for (const card of cards as { de: string }[]) {
+      for (const branch of card.de.split(' / ')) if (!deckLevel.has(norm(branch))) deckLevel.set(norm(branch), level);
+    }
+  }
+  // words the German situations may teach although the deck has no card of that form: names, the auxiliary haben, closed-class words
+  const FREE_HEADS = new Set(['berlin', 'haben', 'ich', 'sie', 'er', 'es', 'ihn', 'ihnen', 'ihr', 'mir', 'wir', 'uns', 'sich', 'ein', 'der', 'kein', 'mein', 'was', 'wie', 'wo', 'wohin', 'wann', 'warum', 'welch', 'worum', 'und', 'oder', 'aber', 'denn', 'dass', 'als', 'nicht', 'sehr', 'so', 'etwas', 'ander', 'für', 'um', 'nach', 'bei', 'in', 'zu', 'am', 'über', 'ohne', 'seit', 'vor', 'mit']);
+
+  it('has 11 situations: A1 x4, A2 x3, B1 x2, B2 x2 with the planned ids', () => {
+    expect(SITUATIONS_DE.map((s) => s.id)).toEqual([
+      'a1-familie', 'a1-baeckerei', 'a1-weg', 'a1-cafe',
+      'a2-arzt', 'a2-wohnung', 'a2-zugticket',
+      'b1-hotel', 'b1-vorstellung',
+      'b2-mietvertrag', 'b2-reklamation',
+    ]);
+    expect(SITUATIONS_DE.map((s) => s.level)).toEqual(['A1', 'A1', 'A1', 'A1', 'A2', 'A2', 'A2', 'B1', 'B1', 'B2', 'B2']);
+  });
+
+  it.each(SITUATIONS_DE.filter((s) => s.id !== 'a1-familie').map((s) => [s.id, s] as const))('%s: every taught word is a card of the German deck at or below the level of the situation', (_id, s) => {
+    for (const w of s.words) {
+      const head = norm(headwordOf(s, w));
+      if (FREE_HEADS.has(head)) continue;
+      expect(deckLevel.get(head) ?? 99).toBeLessThanOrEqual(RANK[s.level]);
+    }
+  });
+
+  it.each(SITUATIONS_DE.map((s) => [s.id, s] as const))('%s: 3 gaps, 3 build lines, 3 or more questions, and a run goes through all steps', (_id, s) => {
+    expect(fillGaps(s)).toHaveLength(3);
+    expect(s.build).toHaveLength(3);
+    expect(questionLines(s).length).toBeGreaterThanOrEqual(3);
+    // no em dash anywhere in the texts
+    expect(JSON.stringify(s)).not.toContain('\u2014');
+    let st = startSituation(s, NOTHING_DE, 5);
+    const seen = new Set<string>();
+    for (let guard = 0; st.step !== 'summary' && guard < 300; guard++) {
+      seen.add(st.step);
+      st = st.step === 'words' || st.step === 'patterns' || st.done ? nextSituation(st, s) : answerSituation(st, s, true);
+    }
+    expect(st.step).toBe('summary');
+    expect(seen).toEqual(new Set(['words', 'patterns', 'fill', 'build', 'say', 'questions']));
+  });
+
+  it('the formal situations answer with Sie, the model answers of the cafe and the way start with the model line', () => {
+    for (const id of ['a1-baeckerei', 'a1-weg', 'a1-cafe', 'a2-arzt', 'b1-hotel']) {
+      const s = SITUATIONS_DE.find((x) => x.id === id)!;
+      expect(s.lines.some((l) => /\bSie\b|\bIhnen\b|\bIhre\b/.test(l.de))).toBe(true);
+    }
+    const weg = SITUATIONS_DE.find((x) => x.id === 'a1-weg')!;
+    expect(weg.lines[0].answers).toEqual(expect.arrayContaining(['Gehen Sie geradeaus.', 'Sie gehen hier geradeaus.']));
+    const cafe = SITUATIONS_DE.find((x) => x.id === 'a1-cafe')!;
+    expect(cafe.lines[0].answers).toEqual(expect.arrayContaining(['Einen Kaffee, bitte.', 'Ich möchte einen Kaffee, bitte.']));
   });
 });
