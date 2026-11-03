@@ -2,12 +2,7 @@
 // same counter, and a finished round stays on its done screen. Mock pattern: sentencesTab.test.tsx, with a
 // useFocusEffect that can be fired again.
 
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-  stop: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock(), stop: jest.fn() }));
 let mockFocus: (() => void) | null = null;
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {

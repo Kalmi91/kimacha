@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
 import { Text } from '@/components/KText';
-import { speak, stop as stopSpeech } from '@/lib/speech';
+import { speak, speakAuto, stop as stopSpeech } from '@/lib/speech';
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
@@ -112,10 +112,11 @@ export default function TypedSentenceCard({
   // Check judged the answer wrong; the correct sentence is also shown after an override ("Knew it").
   const [missed, setMissed] = useState(false);
 
+  // A new sentence reads itself aloud, except right after the app opens (lib/speech.ts speakAuto).
   useEffect(() => {
     if (listening) {
-      if (speechLocale) speak(targetSentence, speechLocale);
-    } else if (sourceSpeechLocale) speak(sourceSentence, sourceSpeechLocale);
+      if (speechLocale) speakAuto(targetSentence, speechLocale);
+    } else if (sourceSpeechLocale) speakAuto(sourceSentence, sourceSpeechLocale);
     return () => stopSpeech();
   }, [listening, sourceSentence, sourceSpeechLocale, targetSentence, speechLocale]);
 

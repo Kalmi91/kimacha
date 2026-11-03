@@ -44,10 +44,10 @@ beforeEach(() => {
 });
 
 describe('speak(): the levels', () => {
-  it('nothing installed: the phone speaks, and nothing is cut first', () => {
+  it('nothing installed: the phone speaks, after whatever still sounded was cut', () => {
     speak('el perro', 'es-MX');
     expect(speech.speak).toHaveBeenCalledWith('el perro', { language: 'es-MX' });
-    expect(speech.stop).not.toHaveBeenCalled();
+    expect(speech.stop.mock.invocationCallOrder[0]).toBeLessThan(speech.speak.mock.invocationCallOrder[0]);
     expect(playPack).not.toHaveBeenCalled();
     expect(speakNeural).not.toHaveBeenCalled();
   });

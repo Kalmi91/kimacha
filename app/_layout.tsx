@@ -18,7 +18,7 @@ import { useGrammarColors } from '@/lib/grammarColors';
 import { useSkin } from '@/lib/useSkin';
 import { brutalHeaderOptions } from '@/lib/brutalHeader';
 import { startUsageTimer, stopUsageTimer, noteInteraction } from '@/lib/usageTimer';
-import { watchAppStateForSpeech } from '@/lib/speech';
+import { noteSpeechTouch, watchAppStateForSpeech } from '@/lib/speech';
 import { applyWebTestParams, getWebTestParams } from '@/lib/webTestHooks';
 import { useAppResume } from '@/lib/useAppResume';
 import CloudGate from '@/components/cloud/CloudGate';
@@ -138,6 +138,7 @@ function RootLayoutNav() {
         style={{ flex: 1, paddingBottom: gutter }}
         onStartShouldSetResponderCapture={() => {
           noteInteraction();
+          noteSpeechTouch(); // the first touch lets the automatic read-aloud speak again
           return false; // never claim the touch, just observe it
         }}
       >

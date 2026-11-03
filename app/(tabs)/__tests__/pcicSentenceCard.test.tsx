@@ -2,12 +2,7 @@
 // (alternating assemble and type-in), practice only: it writes no SRS.
 // Mock pattern: app/(tabs)/__tests__/pcicDirection.test.tsx.
 
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-  stop: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock(), stop: jest.fn() }));
 
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {

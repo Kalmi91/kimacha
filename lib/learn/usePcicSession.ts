@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { TextInput } from 'react-native';
 import { router } from 'expo-router';
-import { speak, speakSequence, stopSpeaking } from '@/lib/speech';
+import { speak, speakAuto, speakSequence, stopSpeaking } from '@/lib/speech';
 
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
@@ -270,7 +270,7 @@ export function usePcicSession() {
   const sentenceOpen = sentenceCard !== null;
   useEffect(() => {
     if (!loading && !sentenceOpen && currentItem && promptSource && !grade) {
-      speak(promptSource, speechLang(sourceLang));
+      speakAuto(promptSource, speechLang(sourceLang)); // silent right after the app opens (lib/speech.ts)
       inputRef.current?.focus();
     }
     // On a card change, any read-aloud in progress
