@@ -123,7 +123,7 @@ describe('typing German', () => {
 });
 
 describe('places with no German content yet say so, they never answer in another language', () => {
-  it('has the German grammar course (its own syllabus, never the Spanish one), but no tappable word and no known word', () => {
+  it('has the German grammar course (its own syllabus, never the Spanish one), whose words are the German deck, never a Spanish card', () => {
     expect(getGrammarTopicIds('de').length).toBeGreaterThan(0);
     expect(syllabusLevels('de')).toEqual(['A1', 'A2', 'B1', 'B2', 'C1']);
     expect(syllabusForLevel('A1', 'de').map((t) => t.id)).toContain('aussprache-umlaute');
@@ -131,8 +131,12 @@ describe('places with no German content yet say so, they never answer in another
     expect(syllabusTopic('presente-regular', 'de')).toBeUndefined();
     expect(syllabusTopic('praesens-regelmaessig', 'de')).toBeDefined();
     expect(syllabusLevels('es').length).toBeGreaterThan(0);
-    expect(findWordByText('perro', 'es', 'de')).toBeUndefined();
-    expect(cumulativeCorpusWordIds('B1', 'de').size).toBe(0);
+    // a Spanish word tapped in the German course finds the German card that means it, never a words-open card
+    expect(findWordByText('perro', 'es', 'de')?.id).toBeGreaterThanOrEqual(100000);
+    // the known words of a German lesson are cards of the German deck (ids 100000 and up), none of words-open
+    const known = cumulativeCorpusWordIds('B1', 'de');
+    expect(known.size).toBeGreaterThan(1000);
+    expect([...known].every((id) => id >= 100000)).toBe(true);
     expect(wordCellsForLesson({ id: 'x', items: [] } as never, 'de')).toEqual([]);
   });
 

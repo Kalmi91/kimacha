@@ -43,29 +43,22 @@ export interface WordEntry {
   [key: string]: string | number | boolean | undefined;
 }
 
+import { findDeWord, getDeWords } from './deWords';
 import { getHuWords } from './huWords';
 import { findOpenWordByForm, getOpenWords } from './openWords';
 
-// User feedback (`sentence:El calabacín es una verdura verde.`), translated from Hungarian:
-// "if I tap ... on calabacín or on courset ... put it among the
-// words where I can practise their spelling".
-// A tap lands on a token of running text, the spelling list stores word ids, so
-// the token has to find its card. Matching forgives what running text adds
-// (case, punctuation) and what a headword carries (its article), but never the
-// accents: those ARE the spelling being practised.
-const TOKEN_PUNCTUATION = /[¿?¡!.,;:«»"'“”‘’()…\-–—]/g;
-const LEADING_ARTICLE = /^(el|la|los|las|un|una|unos|unas|the|a|an|to|der|die|das|ein|eine|az|egy)\s+/;
+import { normalizeWordToken } from './wordToken';
 
-export function normalizeWordToken(raw: string): string {
-  return raw.toLowerCase().replace(TOKEN_PUNCTUATION, '').replace(/\s+/g, ' ').trim();
-}
+export { normalizeWordToken };
+
+const LEADING_ARTICLE = /^(el|la|los|las|un|una|unos|unas|the|a|an|to|der|die|das|ein|eine|az|egy)\s+/;
 
 // the lookup by text (glossary, mixed read-aloud)
 // runs on the words-open cards (data/openWords.ts), not on the old word list. The Hungarian course
 // (learned language 'hu') has no words-open card to tap: it runs on the Hungarian deck (data/huWords.ts).
-// The German course has no tappable cards yet (no lesson text exists for it), so it finds nothing: never a Spanish card.
+// The German course (learned language 'de') runs on the German deck (data/deWords.ts), never on a Spanish card.
 function allWordsFor(lang: string): WordEntry[] {
-  if (lang === 'de') return [];
+  if (lang === 'de') return getDeWords();
   return lang === 'hu' ? getHuWords() : getOpenWords();
 }
 
@@ -110,15 +103,19 @@ function textIndexFor(lang: string, field: string): Map<string, WordEntry> {
 // not its meaning: of them only "pronoun + verb" (én vagyok) is the card of its verb form.
 const HU_PRONOUN_HEAD = /^(én|te|ő|mi|ti|ők|ön|önök) $/;
 
+// German phrases ("guten Morgen", "wie geht es dir") are no meaning of their last word either.
 function tailBelongsToCard(key: string, tail: string, lang: string): boolean {
+  if (lang === 'de') return false;
   return lang !== 'hu' || HU_PRONOUN_HEAD.test(key.slice(0, key.length - tail.length));
 }
 
 // `field` is the language the tapped text is written in ('es', 'en'),
-// `lang` the branch being learned: 'hu' looks the token up in the Hungarian deck, every other branch in words-open.
+// `lang` the branch being learned: 'hu' looks the token up in the Hungarian deck, 'de' in the German deck, every other branch in words-open.
 export function findWordByText(token: string, field: string, lang: string = 'es'): WordEntry | undefined {
   const norm = normalizeWordToken(token);
   if (!norm) return undefined;
+  // German text in a German lesson: the headword or an inflected form of it (data/deWords.ts).
+  if (lang === 'de' && field === 'de') return findDeWord(token);
   const map = textIndexFor(lang, field);
   const direct = map.get(norm) ?? map.get(norm.replace(LEADING_ARTICLE, ''));
   if (direct) return direct;
@@ -127,7 +124,7 @@ export function findWordByText(token: string, field: string, lang: string = 'es'
   for (const [key, entry] of map) {
     if (key.endsWith(` ${norm}`) && tailBelongsToCard(key, norm, lang)) return entry;
   }
-  // An inflected/plural/gendered form belongs to the base-form words-open card (Spanish only).
-  if (field === 'es') return findOpenWordByForm(norm);
+  // An inflected/plural/gendered form belongs to the base-form words-open card (Spanish only, never in the German course).
+  if (field === 'es' && lang !== 'de') return findOpenWordByForm(norm);
   return undefined;
 }

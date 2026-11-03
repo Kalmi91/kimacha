@@ -5,19 +5,8 @@
 // preposition, conjunction). A pure module: no database, no corpus import.
 
 import { CORPUS_NAMES } from '@/lib/corpusNames';
-import deNounPlurals from '@/data/de/plurals.json';
-import {
-  deAdjectiveForms,
-  deColourCompounds,
-  deCompoundNumber,
-  deInfinitiveOf,
-  deNominalisedForms,
-  deNounForms,
-  deOrdinalForms,
-  deTimeAdverb,
-  deVerbTokens,
-  type DeLevel,
-} from '@/lib/deForms';
+import { deTokenize, germanEntryForms } from '@/lib/deEntryForms';
+import { deCompoundNumber, type DeLevel } from '@/lib/deForms';
 import { enDegreeForms, enForms, enPlurals } from '@/lib/enForms';
 import { gerundForms } from '@/lib/esGerunds';
 import { esFeminine, esPlural, esSuperlativeForms } from '@/lib/esInflect';
@@ -232,17 +221,6 @@ function huTokenize(text: string): string[] {
     .filter(Boolean);
 }
 
-// German: ä ö ü ß are letters, and so are the accented letters of names and loanwords (Péter, Café). A bracketed gloss of a
-// headword ("die Leute (Pl.)") is not a word of the sentence.
-function deTokenize(text: string): string[] {
-  return text
-    .toLowerCase()
-    .replace(/\([^)]*\)/g, ' ')
-    .replace(/[^a-z0-9äöüßàáâãåæçèéêëìíîïñòóôõøùúûýÿœ\s]/g, ' ')
-    .split(/\s+/)
-    .filter(Boolean);
-}
-
 // Subjunctive imperfecto: from the stem of the 3rd person plural indefinido (-ra instead of -ron…).
 function subjuntivoImperfecto(infinitive: string): string[] | null {
   const ellos = conjugate(infinitive, 'indefinido')?.[4]?.form;
@@ -403,58 +381,14 @@ function addHungarian(known: Set<string>, entry: LearnedEntry) {
   for (const key of huStemKeys(entry.text, entry.pos)) known.add(key);
 }
 
-// Adverbs of the deck that also stand as an adjective before a noun ("ein guter Freund"): the adjective endings count for them.
-const DE_ADVERB_ADJECTIVES: ReadonlySet<string> = new Set([
-  'gut', 'schlecht', 'schnell', 'langsam', 'früh', 'spät', 'laut', 'leise', 'weit', 'nah', 'fern', 'hell', 'dunkel', 'richtig',
-  'falsch', 'wichtig', 'ganz', 'genau', 'oben', 'fertig', 'gesund', 'krank', 'jung', 'alt', 'neu', 'gleich', 'wenig', 'viel',
-]);
-const DE_PLURALS = deNounPlurals as Record<string, string[]>;
-const DE_ARTICLE = /^(der\/die|der|die|das)\s+(.*)$/i;
-
 function addGerman(known: Set<string>, entry: LearnedEntry, level: DeLevel) {
-  const text = entry.text.trim();
-  const addForm = (form: string) => {
-    for (const token of deTokenize(form)) known.add(token);
-  };
-  for (const token of deTokenize(text)) known.add(token);
-  for (const raw of text.split(' / ')) {
-    const alt = raw.replace(/\([^)]*\)/g, ' ').replace(/\s+/g, ' ').trim();
-    if (!alt) continue;
-    if (entry.pos === 'verb' || (entry.pos === undefined && !alt.includes(' '))) {
-      const infinitive = deInfinitiveOf(alt);
-      if (infinitive) {
-        const { plain, split } = deVerbTokens(infinitive, level);
-        for (const form of plain) addForm(form);
-        // a participle before a noun takes the adjective endings (das gekochte Ei)
-        for (const form of plain) if (/^ge\w+(?:t|en)$/.test(form)) for (const adj of deAdjectiveForms(form, 'A1')) addForm(adj);
-        // a finite form that stands apart from its detached prefix: only together with that prefix in the sentence
-        for (const { form, prefix } of split) {
-          known.add(`${form}>${prefix}`);
-          known.add(prefix);
-        }
-      }
-    } else if (entry.pos === 'noun') {
-      const m = DE_ARTICLE.exec(alt);
-      const article = m ? m[1].toLowerCase() : '';
-      const gender = article === 'der' ? 'm' : article === 'die' ? 'f' : article === 'das' ? 'n' : '';
-      const nouns = (m ? m[2] : alt).split(/\s+/).filter((w) => /^[A-ZÄÖÜ]/.test(w));
-      nouns.forEach((word, i) => {
-        const noun = word.toLowerCase();
-        // only the head noun (the first) takes the genitive -s; the others of a phrase ("der Name meiner Mutter") are in the plural table
-        for (const form of deNounForms(noun, i === 0 ? gender : 'f', DE_PLURALS[noun] ?? [], level)) addForm(form);
-      });
-      for (const word of nouns.slice(0, 1)) for (const adverb of deTimeAdverb(word)) addForm(adverb);
-      if (article === 'der/die' && nouns.length === 1) for (const form of deNominalisedForms(nouns[0].toLowerCase())) addForm(form);
-    } else if (entry.pos === 'adj' || ((entry.pos === 'adv' || entry.pos === 'det') && DE_ADVERB_ADJECTIVES.has(alt.toLowerCase()))) {
-      if (!alt.includes(' ')) {
-        for (const form of deAdjectiveForms(alt, level)) addForm(form);
-        for (const form of deColourCompounds(alt)) addForm(form);
-      }
-    } else if (entry.pos === 'num') {
-      if (!alt.includes(' ')) for (const form of deOrdinalForms(alt)) addForm(form);
-    }
-    // rechts / links stand for the adjectives rechte / linke (die rechte Hand)
-    if (alt === 'rechts' || alt === 'links') for (const form of deAdjectiveForms(alt.slice(0, -1), level)) addForm(form);
+  for (const token of deTokenize(entry.text.trim())) known.add(token);
+  const { plain, split } = germanEntryForms(entry, level);
+  for (const form of plain) known.add(form);
+  // a finite form that stands apart from its detached prefix: only together with that prefix in the sentence
+  for (const { form, prefix } of split) {
+    known.add(`${form}>${prefix}`);
+    known.add(prefix);
   }
 }
 

@@ -4,7 +4,9 @@
 // it and it shows". components/games/GlossText.tsx renders what this module
 // resolves, it never looks anything up itself.
 
-import { findWordByText, normalizeWordToken } from '@/data/words';
+import { findDeSplitVerb } from '@/data/deWords';
+import { findWordByText, normalizeWordToken, type WordEntry } from '@/data/words';
+import { detachedPrefixes } from '@/lib/knownSentence';
 
 export interface GlossInfo {
   wordId?: number; // absent for an authored-content override (proper nouns etc.)
@@ -40,7 +42,10 @@ export function resolveGloss(token: string, opts: ResolveGlossOptions): GlossInf
   }
 
   const word = findWordByText(token, opts.learnedLang, opts.learnedLang);
-  if (!word) return undefined;
+  return word ? glossOf(word, token, opts) : undefined;
+}
+
+function glossOf(word: WordEntry, token: string, opts: ResolveGlossOptions): GlossInfo {
   const learned = word[opts.learnedLang];
   const native = word[opts.nativeLang];
   return {
@@ -62,5 +67,24 @@ export function buildGlossMap(text: string, opts: ResolveGlossOptions): Map<stri
     const info = resolveGloss(raw, opts);
     if (info) map.set(norm, info);
   }
+  if (opts.learnedLang === 'de') glossSeparableVerbs(text, map, opts);
   return map;
+}
+
+// "Ich stehe um sieben Uhr auf": a German verb splits, and neither half means anything alone. When a finite form and the prefix
+// that closes the clause make a separable verb of the deck, both words show that verb ("aufstehen"), not "stehen" and "auf".
+// The lesson's own glossary still wins (an override stays as it is).
+function glossSeparableVerbs(text: string, map: Map<string, GlossInfo>, opts: ResolveGlossOptions): void {
+  const prefixes = detachedPrefixes(text);
+  if (prefixes.size === 0) return;
+  const tokens = [...new Set(text.split(/\s+/).map((raw) => normalizeWordToken(raw)).filter(Boolean))];
+  for (const form of tokens) {
+    for (const prefix of prefixes) {
+      if (prefix === form || opts.overrides?.[form] || opts.overrides?.[prefix]) continue;
+      const verb = findDeSplitVerb(form, prefix);
+      if (!verb) continue;
+      map.set(form, glossOf(verb, form, opts));
+      map.set(prefix, glossOf(verb, prefix, opts));
+    }
+  }
 }
