@@ -10,7 +10,7 @@ const de: typeof en = {
     pinPlaceholder: '4 Ziffern',
     submit: 'Anmelden',
     errorBadPin: 'Falsche PIN. Versuche es noch einmal.',
-    errorLocked: (minutes: number) => `Zu viele falsche PINs. Versuche es in ${minutes} Min. noch einmal.`,
+    errorLocked: (minutes: number) => `Zu viele falsche PIN-Eingaben. Versuche es in ${minutes} Min. noch einmal.`,
     errorNetwork: 'Keine Verbindung. Prüfe dein Internet und versuche es noch einmal.',
     errorBadInput: 'Gib einen Namen (2-24 Zeichen) und eine 4-stellige PIN ein.',
     errorServer: 'Etwas ist schiefgelaufen. Versuche es gleich noch einmal.',

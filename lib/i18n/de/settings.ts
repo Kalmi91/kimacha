@@ -11,8 +11,8 @@ const de: typeof en = {
     paletteCyan: 'Cyan + Violett',
     paletteOrange: 'Orange + Türkis',
     themes: {
-      title: 'Themen',
-      oneLook: 'Dieses Thema hat nur ein Aussehen.',
+      title: 'Designs',
+      oneLook: 'Dieses Design gibt es nur in einer Variante.',
       posterSlogan: 'LERNEN, LERNEN, LERNEN!',
       know: 'Weiß ich',
       readAloud: 'Vorlesen',
@@ -33,7 +33,7 @@ const de: typeof en = {
     weeklyGoalHours: (h: string) => `${h} Stunden / Woche`,
     weeklyGoalDoneTag: '✓ FERTIG',
     missingVoice: (langs: string) =>
-      `⚠️ Keine Stimme installiert für: ${langs}. Lade sie in den Text-to-Speech-Einstellungen des Telefons herunter; bis dahin bleibt die App in dieser Sprache stumm.`,
+      `⚠️ Keine Stimme installiert für: ${langs}. Lade sie in den Sprachausgabe-Einstellungen des Telefons herunter; bis dahin bleibt die App in dieser Sprache stumm.`,
     // Einstellungen -> Bessere Stimme (Beta): die neuronalen Stimmen auf dem Telefon (lib/neuralModels.ts).
     betterVoice: {
       title: 'Bessere Stimme (Beta)',
@@ -49,22 +49,22 @@ const de: typeof en = {
       kokoro: 'Kokoro (schöner, langsamer)',
       kokoroSize: (mb: string) => `Kokoro braucht einen Download von ${mb}`,
       confirmTitle: 'Die bessere Stimme herunterladen?',
-      confirmMessage: (mb: string) => `Das lädt ${mb} herunter (die Wortaufnahmen und die Stimmen). Mit mobilen Daten zählt es zu deinem Datenvolumen, deshalb empfehlen wir WLAN.`,
+      confirmMessage: (mb: string) => `Das lädt ${mb} herunter (die Wortaufnahmen und die Stimmen). Mit mobilen Daten zählt es zu deinem Datenvolumen, deshalb ist WLAN empfehlenswert.`,
       confirmYes: 'Herunterladen',
     },
     dailyNewLimit: 'Neue Wörter pro Tag',
     dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,
     beta: {
       title: 'Beta',
-      practiceTab: 'Üben-Tab',
-      sentenceTab: 'Sätze-Tab',
+      practiceTab: 'Tab „Üben“',
+      sentenceTab: 'Tab „Sätze“',
       xpV2: 'Neue XP-Werte',
       levels: 'Stufen A1-C1',
-      practiceDictation: 'Diktat-Spiel',
-      practiceScramble: 'Buchstabensalat-Spiel',
-      practiceMatch: 'Schnell-Zuordnen-Spiel',
-      practiceOpposites: 'Gegenteile-Spiel',
-      practiceSituations: 'Situationen-Spiel',
+      practiceDictation: 'Spiel „Diktat“',
+      practiceScramble: 'Spiel „Buchstabensalat“',
+      practiceMatch: 'Schnellzuordnung (Spiel)',
+      practiceOpposites: 'Spiel „Gegenteile“',
+      practiceSituations: 'Spiel „Situationen“',
       sentenceListening: 'Sätze: Schritt Hören und Tippen',
       sentenceMistakes: 'Sätze: aus meinen Fehlern',
       sentenceHint: 'Sätze: Hinweis per Tipp auf ein Wort',
@@ -72,8 +72,8 @@ const de: typeof en = {
     },
     strictAccents: 'Akzente zählen',
     strictAccentsHint: 'Ein fehlender Akzent (á, é, ñ) gilt beim Tippen als Fehler.',
-    articlePicker: 'Artikel-Knöpfe',
-    articlePickerHint: 'Auf spanischen Nomenkarten wählst du el/la/los/las aus, statt es zu tippen. ⊘ heißt: kein Artikel.',
+    articlePicker: 'Artikeltasten',
+    articlePickerHint: 'Auf spanischen und deutschen Nomenkarten wählst du den Artikel (el/la/los/las, der/die/das) aus, statt ihn zu tippen. ⊘ heißt: kein Artikel.',
     missedWordDelay: 'Ein verpasstes Wort kommt zurück nach',
     missedWordDelaySeconds: (n: string) => `${n} s`,
     learningDirection: 'Lernrichtung',
@@ -122,7 +122,7 @@ const de: typeof en = {
       olvasas: 'Leicht lesbar',
     },
     ukiyoeSealMeaning: 'Japanisch „go“: Sprache, Wort',
-    ukiyoeSealNote: 'Ukiyo-e-Holzschnitte tragen oft ein rotes Siegel. Dies ist das Siegel des Ukiyo-e-Themas.',
+    ukiyoeSealNote: 'Ukiyo-e-Holzschnitte tragen oft ein rotes Siegel. Dies ist das Siegel des Ukiyo-e-Designs.',
   },
   backup: {
     backup: 'Sicherung',
@@ -144,7 +144,7 @@ const de: typeof en = {
     cefrjLabel: 'github.com/openlanguageprofiles/olp-en-cefrj',
     cefrjUrl: 'https://github.com/openlanguageprofiles/olp-en-cefrj',
     fontsBody:
-      'Schriften der App-Themen. Alle sind Open Source: SIL Open Font License 1.1, ' +
+      'Schriften der App-Designs. Alle sind Open Source: SIL Open Font License 1.1, ' +
       'außer Permanent Marker (Apache License 2.0).',
     photosBody:
       'Fotos auf einigen Karten stammen von Wikimedia Commons. Jedes Foto ist auf seiner Karte ' +

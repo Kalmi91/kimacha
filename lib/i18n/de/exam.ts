@@ -115,7 +115,7 @@ const de: typeof en = {
     nextTask: 'Nächste Aufgabe',
     finishPaper: 'Teil abschließen',
     play: 'Abspielen',
-    playsLeft: (n: number) => `Verbleibende Wiedergaben: ${n}`,
+    playsLeft: (n: number) => `Wiedergaben übrig: ${n}`,
     showTranscript: 'Transkript zeigen',
     hideTranscript: 'Transkript verbergen',
     speakerA: 'A',
@@ -180,7 +180,7 @@ const de: typeof en = {
     mockHintClipsListen: 'Höre dir jede Aufnahme an und beantworte die dazugehörigen Fragen. Jede Aufnahme hat ihre eigenen Wiedergaben.',
     mockClipText: (n: number) => `Text ${n}`,
     mockHintMatch:
-      'Ordne jedem Eintrag eine Option zu. Tippe auf einen Buchstaben, um ihn zu wählen, und noch einmal, um ihn zu löschen. Eine Option kann mehrfach verwendet werden.',
+      'Ordne jedem Eintrag eine Option zu. Tippe auf einen Buchstaben, um ihn zu wählen, und noch einmal, um die Auswahl aufzuheben. Eine Option kann mehrfach verwendet werden.',
     mockHintMatchUnique:
       'Ordne jedem Eintrag eine andere Option zu. Tippe auf einen Buchstaben, um ihn zu wählen; ist er schon vergeben, wandert er hierher. Einige Optionen werden nicht gebraucht.',
     mockHintMatchNone:
@@ -194,7 +194,7 @@ const de: typeof en = {
     mockHintClozeChoice: 'Wähle für jede nummerierte Lücke das passende Wort.',
     mockHintClozeOpen: 'Tippe in jede nummerierte Lücke das fehlende Wort.',
     mockHintClozeMixed: 'Fülle jede nummerierte Lücke: Wähle eine Option oder tippe das fehlende Wort.',
-    mockHintClozeStem: 'Verändere das Wort in Großbuchstaben so, dass es in die nummerierte Lücke passt, und tippe es ein.',
+    mockHintClozeStem: 'Forme das Wort in Großbuchstaben so um, dass es in die nummerierte Lücke passt, und tippe es ein.',
     mockHintPick: (n: number) => `Wähle die ${n} Aussagen, die stimmen. Du kannst höchstens ${n} markieren.`,
     mockPickCount: (n: number, pick: number) => `${n} / ${pick}`,
     mockHintTransform: 'Ergänze den zweiten Satz so, dass er dasselbe bedeutet wie der erste. Verwende das Wort in Großbuchstaben, ohne es zu verändern.',
@@ -216,9 +216,9 @@ const de: typeof en = {
     speakHintSheet:
       'Lies das Aufgabenblatt und starte dann. Der Prüfer stellt eine Frage nach der anderen; du antwortest mit dem Mikrofon deiner Tastatur oder durch Tippen.',
     speakHintPrep: 'Bereite dich mit dem Aufgabenblatt vor und mache dir Notizen. Die Prüfungsuhr ist während der Vorbereitung angehalten.',
-    speakHintTurns: 'Beantworte jede Frage des Prüfers. Aufgabenblatt und Notizen sind nur einen Tipp entfernt.',
+    speakHintTurns: 'Beantworte jede Frage des Prüfers. Aufgabenblatt und Notizen sind nur einen Fingertipp entfernt.',
     speakTalkTime: (min: number, max: number) => (min === max ? `Sprich etwa ${min} ${min === 1 ? 'Minute' : 'Minuten'}` : `Sprich etwa ${min}-${max} Minuten`),
-    speakPrepLeft: (clock: string) => `Verbleibende Vorbereitungszeit: ${clock}`,
+    speakPrepLeft: (clock: string) => `Noch ${clock} zur Vorbereitung`,
     speakNotes: 'Deine Notizen (ohne Wertung)',
     speakNotesPlaceholder: 'Schreibe hier deine Notizen',
     speakStart: "Ich bin bereit, los geht's",
