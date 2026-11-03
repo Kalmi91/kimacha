@@ -304,7 +304,7 @@
       "id": "mittelfeld-tekamolo-c01",
       "sentence": "Ich fahre morgen ___.",
       "options": [
-        "nach Berlin mit dem Zug",
+        "mit dem Zug Berlin nach",
         "mit dem Zug nach Berlin",
         "mit dem Zug in Berlin"
       ],
@@ -314,9 +314,9 @@
         "es": "El modo va antes del lugar: mit dem Zug (modal) y luego nach Berlin (local)."
       },
       "wrong": {
-        "nach Berlin mit dem Zug": {
-          "en": "This puts the place before the manner, the English order. In German the manner comes first.",
-          "es": "Esto pone el lugar antes del modo, el orden del inglés. En alemán va primero el modo."
+        "mit dem Zug Berlin nach": {
+          "en": "nach is a preposition: it stands before Berlin, never after it. The correct phrase is nach Berlin.",
+          "es": "nach es una preposición: va antes de Berlin, nunca después. La frase correcta es nach Berlin."
         },
         "mit dem Zug in Berlin": {
           "en": "in Berlin answers where you are. With a trip you need the direction nach Berlin.",
@@ -384,7 +384,7 @@
       "id": "mittelfeld-tekamolo-c03",
       "sentence": "Ich bleibe ___ zu Hause.",
       "options": [
-        "wegen der Kälte heute",
+        "heute wegen die Kälte",
         "wegen heute der Kälte",
         "heute wegen der Kälte"
       ],
@@ -394,9 +394,9 @@
         "es": "El tiempo va antes de la causa: heute (temporal) y luego wegen der Kälte (kausal)."
       },
       "wrong": {
-        "wegen der Kälte heute": {
-          "en": "This puts the reason before the time. The neutral order is time first, then reason.",
-          "es": "Esto pone la causa antes del tiempo. El orden neutro es primero el tiempo y luego la causa."
+        "heute wegen die Kälte": {
+          "en": "The order is right, but wegen takes the genitive: der Kälte. die Kälte is the accusative.",
+          "es": "El orden es correcto, pero wegen lleva genitivo: der Kälte. die Kälte es el acusativo."
         },
         "wegen heute der Kälte": {
           "en": "This splits the phrase wegen der Kälte. A preposition and its noun phrase stay together.",
@@ -505,7 +505,7 @@
       "options": [
         "ihm es",
         "es ihm",
-        "ihm das"
+        "es ihn"
       ],
       "correct": 1,
       "why": {
@@ -517,9 +517,9 @@
           "en": "ihm es puts the dative first, the order for two nouns. Two pronouns go the other way round.",
           "es": "ihm es pone primero el dativo, el orden para dos sustantivos. Dos pronombres van al revés."
         },
-        "ihm das": {
-          "en": "ihm das mixes a pronoun with an article that has no noun. The sentence needs two pronouns.",
-          "es": "ihm das mezcla un pronombre con un artículo que no tiene sustantivo. La oración necesita dos pronombres."
+        "es ihn": {
+          "en": "es ihn has the right order, but ihn is the accusative. The receiver needs the dative: ihm.",
+          "es": "es ihn tiene el orden correcto, pero ihn es acusativo. El receptor necesita el dativo: ihm."
         }
       },
       "examples": [
@@ -937,7 +937,7 @@
       "sentence": "Ich fahre ___ nach Berlin.",
       "options": [
         "mit dem Zug wegen der Arbeit morgen",
-        "wegen der Arbeit morgen mit dem Zug",
+        "morgen wegen die Arbeit mit dem Zug",
         "morgen wegen der Arbeit mit dem Zug"
       ],
       "correct": 2,
@@ -950,9 +950,9 @@
           "en": "This reverses the order: manner, reason, time. The neutral order starts with the time.",
           "es": "Esto invierte el orden: modo, causa, tiempo. El orden neutro empieza con el tiempo."
         },
-        "wegen der Arbeit morgen mit dem Zug": {
-          "en": "The reason stands before the time here. The neutral order is time first, then reason.",
-          "es": "Aquí la causa va antes del tiempo. El orden neutro es primero el tiempo y luego la causa."
+        "morgen wegen die Arbeit mit dem Zug": {
+          "en": "The order is right, but wegen takes the genitive: wegen der Arbeit. die Arbeit is the accusative.",
+          "es": "El orden es correcto, pero wegen lleva genitivo: wegen der Arbeit. die Arbeit es el acusativo."
         }
       },
       "examples": [

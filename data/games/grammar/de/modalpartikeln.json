@@ -349,7 +349,10 @@
       "verb": "Partikel",
       "person": "Du weißt ___, dass ich müde bin. (gemeinsames Wissen)",
       "answer": "ja",
-      "table": "modalpartikeln-liste"
+      "table": "modalpartikeln-liste",
+      "accept": [
+        "doch"
+      ]
     },
     {
       "id": "modalpartikeln-c02",
@@ -511,7 +514,10 @@
       "verb": "Partikel",
       "person": "Wie heißt du ___? (Interesse)",
       "answer": "denn",
-      "table": "modalpartikeln-liste"
+      "table": "modalpartikeln-liste",
+      "accept": [
+        "eigentlich"
+      ]
     },
     {
       "id": "modalpartikeln-c05",
@@ -713,7 +719,10 @@
       "verb": "Partikel",
       "person": "Das ist ___ schön! (Überraschung)",
       "answer": "aber",
-      "table": "modalpartikeln-liste"
+      "table": "modalpartikeln-liste",
+      "accept": [
+        "ja"
+      ]
     },
     {
       "id": "modalpartikeln-c09",
@@ -832,7 +841,10 @@
       "verb": "Partikel",
       "person": "Was machst du ___ hier? (neugierig gefragt)",
       "answer": "eigentlich",
-      "table": "modalpartikeln-liste"
+      "table": "modalpartikeln-liste",
+      "accept": [
+        "denn"
+      ]
     },
     {
       "id": "modalpartikeln-c11",

@@ -148,8 +148,8 @@
       "points": [
         {
           "text": {
-            "en": "Typical members are masculine nouns for people and animals that end in -e (der Junge, der Kollege, der Kunde, der Affe, der Bär) and foreign nouns for people on -ent, -ist, -ant (der Student, der Polizist, der Tourist, der Praktikant). A few common nouns belong too: der Herr, der Mensch, der Nachbar.",
-            "es": "Son típicos los sustantivos masculinos de personas y animales que terminan en -e (der Junge, der Kollege, der Kunde, der Affe, der Bär) y los sustantivos extranjeros de personas en -ent, -ist, -ant (der Student, der Polizist, der Tourist, der Praktikant). También pertenecen algunos sustantivos comunes: der Herr, der Mensch, der Nachbar."
+            "en": "Typical members are masculine nouns for people and animals that end in -e (der Junge, der Kollege, der Kunde, der Affe) and foreign nouns for people on -ent, -ist, -ant (der Student, der Polizist, der Tourist, der Praktikant). A few common nouns belong too: der Herr, der Mensch, der Nachbar, der Bär.",
+            "es": "Son típicos los sustantivos masculinos de personas y animales que terminan en -e (der Junge, der Kollege, der Kunde, der Affe) y los sustantivos extranjeros de personas en -ent, -ist, -ant (der Student, der Polizist, der Tourist, der Praktikant). También pertenecen algunos sustantivos comunes: der Herr, der Mensch, der Nachbar, der Bär."
           },
           "examples": [
             {
@@ -234,7 +234,7 @@
       "rows": [
         [
           "-e",
-          "der Junge, der Kollege, der Kunde, der Affe, der Bär"
+          "der Junge, der Kollege, der Kunde, der Affe"
         ],
         [
           "-ent",
@@ -250,7 +250,7 @@
         ],
         [
           "others",
-          "der Herr, der Mensch, der Nachbar"
+          "der Herr, der Mensch, der Nachbar, der Bär"
         ]
       ],
       "noTableDeck": true
@@ -654,8 +654,8 @@
         },
         {
           "text": {
-            "en": "n-declension of Herr: only -n in the singular, because it does not end in -e",
-            "es": "declinación en -n de Herr: solo -n en singular, porque no termina en -e"
+            "en": "n-declension of Herr: a special case with only -n in the singular",
+            "es": "declinación en -n de Herr: un caso especial con solo -n en singular"
           }
         }
       ],
