@@ -34,6 +34,7 @@ const es: typeof en = {
     errorServer: 'Algo salió mal. Inténtalo de nuevo en un momento.',
     loading: 'Cargando tu progreso...',
     loadFailed: 'No se pudo cargar tu progreso.',
+    contentLoadFailed: 'No se pudieron cargar las lecciones. Revisa tu internet e inténtalo de nuevo.',
     retry: 'Reintentar',
     backToLogin: 'Volver al inicio de sesión',
   },

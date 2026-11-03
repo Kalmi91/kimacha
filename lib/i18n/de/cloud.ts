@@ -34,6 +34,7 @@ const de: typeof en = {
     errorServer: 'Etwas ist schiefgelaufen. Versuche es gleich noch einmal.',
     loading: 'Dein Fortschritt wird geladen...',
     loadFailed: 'Dein Fortschritt konnte nicht geladen werden.',
+    contentLoadFailed: 'Die Lektionen konnten nicht geladen werden. Prüfe deine Internetverbindung und versuche es noch einmal.',
     retry: 'Noch einmal',
     backToLogin: 'Zurück zur Anmeldung',
   },

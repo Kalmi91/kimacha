@@ -14,6 +14,7 @@ import { GUEST_OFFER_AFTER, hasVisited, isOfferDone, markOfferDone, markVisited,
 import { mergeCloudPayloads } from '@/lib/cloud/merge';
 import { clearSession, loadSession, saveSession } from '@/lib/cloud/session';
 import { exportCloudPayload, restoreFromCloud, snapshotKey, startSync } from '@/lib/cloud/sync';
+import { prefetchContentPacks } from '@/lib/games/content/webPacks';
 import { useGrammarColors } from '@/lib/grammarColors';
 import { rememberedLanguage, setLanguage, t } from '@/lib/i18n';
 import { pairOf } from '@/lib/languagePair';
@@ -25,7 +26,7 @@ import { ThemeProvider, useTheme } from '@/lib/ThemeContext';
 // Without a session the visitor is a guest (lib/cloud/guest.ts): a first visit goes straight into the app, a later one meets
 // the welcome screen first (Sign in / Create account / Skip). A guest has no restore and no sync; a modal over the app offers
 // the save after a few cards, and the Settings row opens the sign-in chooser.
-type Phase = 'boot' | 'welcome' | 'guest' | 'loading' | 'error' | 'ready';
+type Phase = 'boot' | 'contentError' | 'welcome' | 'guest' | 'loading' | 'error' | 'ready';
 type GuestStep = 'ask' | 'create' | 'declined' | 'choose';
 
 // The web DB lives in memory and still holds the old account's progress, so the way back to a clean sign-in is a page restart.
@@ -148,9 +149,14 @@ export default function CloudGate({ children }: { children: ReactNode }) {
     [enter],
   );
 
-  useEffect(() => {
-    if (started.current) return;
-    started.current = true;
+  // The lesson packs come first (lib/games/content/webPacks.ts: the web bundle holds no lesson JSON), then the decision.
+  const start = useCallback(async () => {
+    try {
+      await prefetchContentPacks();
+    } catch {
+      setPhase('contentError');
+      return;
+    }
     const returning = hasVisited();
     // the language of the last visit, for the welcome screen; a restored session's own language replaces it later
     const lang = rememberedLanguage();
@@ -160,6 +166,12 @@ export default function CloudGate({ children }: { children: ReactNode }) {
     if (token.current) void restore(token.current);
     else setPhase(returning ? 'welcome' : 'guest');
   }, [restore]);
+
+  useEffect(() => {
+    if (started.current) return;
+    started.current = true;
+    void start();
+  }, [start]);
 
   useEffect(() => () => stopSync.current?.(), []);
 
@@ -198,7 +210,10 @@ export default function CloudGate({ children }: { children: ReactNode }) {
   };
 
   const retry = () => {
-    if (token.current) void restore(token.current);
+    if (phase === 'contentError') {
+      setPhase('boot');
+      void start();
+    } else if (token.current) void restore(token.current);
   };
 
   if (phase === 'ready' || phase === 'guest') {
@@ -214,6 +229,12 @@ export default function CloudGate({ children }: { children: ReactNode }) {
   const s = t().cloud;
   return (
     <ThemeProvider>
+      {phase === 'boot' ? <Notice text={s.loading} spinner /> : null}
+      {phase === 'contentError' ? (
+        <Notice text={s.contentLoadFailed}>
+          <NoticeButton testID="cloud-retry" label={s.retry} onPress={retry} />
+        </Notice>
+      ) : null}
       {phase === 'welcome' ? <CloudWelcome onLoggedIn={onLoggedIn} thirdLabel={s.welcomeSkip} onThird={() => setPhase('guest')} /> : null}
       {phase === 'loading' ? <Notice text={s.loading} spinner /> : null}
       {phase === 'error' ? (

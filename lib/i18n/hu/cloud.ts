@@ -34,6 +34,7 @@ const hu: typeof en = {
     errorServer: 'Valami hiba történt. Próbáld újra egy kicsit később.',
     loading: 'Töltöm a haladásodat...',
     loadFailed: 'Nem sikerült betölteni a haladásodat.',
+    contentLoadFailed: 'Nem sikerült betölteni a leckéket. Ellenőrizd az internetkapcsolatot, és próbáld újra.',
     retry: 'Újra',
     backToLogin: 'Vissza a belépéshez',
   },
