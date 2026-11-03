@@ -35,11 +35,12 @@ describe('what a learned word stands for', () => {
     expect(ok('Ich habe ein neues Haus.', [verb('haben'), adj('neu'), noun('das Haus')])).toBe(true);
   });
 
-  it('a phrase card is learned as written, its words are not conjugated', () => {
+  it('a phrase card is learned as written, its pronoun + verb teaches that verb (not the participle\'s verb)', () => {
     const known = knownTokens('de', { learned: [{ text: 'ich habe gegessen', pos: 'verb' }, { text: 'es tut mir leid', pos: 'phrase' }] });
     expect(known.has('gegessen')).toBe(true);
-    expect(known.has('hat')).toBe(false);
-    expect(known.has('tue')).toBe(false);
+    expect(known.has('hat')).toBe(true); // ich habe > haben
+    expect(known.has('isst')).toBe(false);
+    expect(known.has('tue')).toBe(false); // es tut mir leid > leidtun, only split
   });
 
   it('a nominalised adjective and the time adverb of a day', () => {

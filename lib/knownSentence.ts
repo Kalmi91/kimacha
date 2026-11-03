@@ -6,6 +6,7 @@
 
 import { CORPUS_NAMES } from '@/lib/corpusNames';
 import { deTokenize, germanEntryForms } from '@/lib/deEntryForms';
+import { isKnownCompound } from '@/lib/deCompounds';
 import { deCompoundNumber, type DeLevel } from '@/lib/deForms';
 import { enDegreeForms, enForms, enPlurals } from '@/lib/enForms';
 import { gerundForms } from '@/lib/esGerunds';
@@ -383,8 +384,9 @@ function addHungarian(known: Set<string>, entry: LearnedEntry) {
 
 function addGerman(known: Set<string>, entry: LearnedEntry, level: DeLevel) {
   for (const token of deTokenize(entry.text.trim())) known.add(token);
-  const { plain, split } = germanEntryForms(entry, level);
+  const { plain, split, compound } = germanEntryForms(entry, level);
   for (const form of plain) known.add(form);
+  for (const key of compound) known.add(key);
   // a finite form that stands apart from its detached prefix: only together with that prefix in the sentence
   for (const { form, prefix } of split) {
     known.add(`${form}>${prefix}`);
@@ -451,14 +453,23 @@ function nameTokens(sentence: string, lang: KnownLang): Set<string> {
   return names;
 }
 
-function isKnownToken(token: string, lang: KnownLang, known: ReadonlySet<string>, names: ReadonlySet<string>, prefixes: ReadonlySet<string> = NO_PREFIXES): boolean {
+function isKnownToken(
+  token: string,
+  lang: KnownLang,
+  known: ReadonlySet<string>,
+  names: ReadonlySet<string>,
+  prefixes: ReadonlySet<string> = NO_PREFIXES,
+  capitals: ReadonlySet<string> = NO_PREFIXES,
+): boolean {
   if (known.has(token) || names.has(token)) return true;
   if (lang === 'hu') return huRecognises(token, known);
   if (lang === 'de') {
     // a number, or a finite form of a separable verb together with its detached prefix ("stehe ... auf")
     if (/^\d+$/.test(token) || [...prefixes].some((prefix) => prefix !== token && known.has(`${token}>${prefix}`))) return true;
     const number = deCompoundNumber(token);
-    return number !== null && (number[0] === 'ein' || known.has(number[0])) && known.has(number[1]);
+    if (number !== null) return (number[0] === 'ein' || known.has(number[0])) && known.has(number[1]);
+    // a noun (written with a capital) made only of learned nouns: Kind + Zimmer
+    return capitals.has(token) && isKnownCompound(token, known);
   }
   if (lang !== 'en') return false;
   const stem = enStem(token);
@@ -466,6 +477,13 @@ function isKnownToken(token: string, lang: KnownLang, known: ReadonlySet<string>
 }
 
 const NO_PREFIXES: ReadonlySet<string> = new Set();
+
+/** The (lowercase) tokens a German sentence writes with a capital (nouns, and the first word of a sentence). */
+function capitalTokens(sentence: string): Set<string> {
+  const out = new Set<string>();
+  for (const { word } of capitalizedWords(sentence)) for (const token of deTokenize(word)) out.add(token);
+  return out;
+}
 // What may close a German clause besides its end: a detached prefix stands last ("Ich stehe auf und gehe...", "Ich fange an zu arbeiten").
 const DE_CLAUSE_JOINERS: ReadonlySet<string> = new Set(['und', 'oder', 'aber', 'denn', 'sondern', 'zu']);
 
@@ -499,7 +517,8 @@ export function unknownTokens(sentence: string, lang: KnownLang, ctx: KnownConte
 export function unknownTokensIn(sentence: string, lang: KnownLang, known: ReadonlySet<string>): string[] {
   const names = nameTokens(sentence, lang);
   const prefixes = lang === 'de' ? detachedPrefixes(sentence) : NO_PREFIXES;
-  return sentenceTokens(sentence, lang).filter((token) => !isKnownToken(token, lang, known, names, prefixes));
+  const capitals = lang === 'de' ? capitalTokens(sentence) : NO_PREFIXES;
+  return sentenceTokens(sentence, lang).filter((token) => !isKnownToken(token, lang, known, names, prefixes, capitals));
 }
 
 /**
@@ -515,7 +534,8 @@ export function isSentenceKnownIn(sentence: string, lang: KnownLang, known: Read
   }
   const names = nameTokens(sentence, lang);
   const prefixes = lang === 'de' ? detachedPrefixes(sentence) : NO_PREFIXES;
-  if (!sentenceTokens(sentence, lang).every((token) => isKnownToken(token, lang, known, names, prefixes))) return false;
+  const capitals = lang === 'de' ? capitalTokens(sentence) : NO_PREFIXES;
+  if (!sentenceTokens(sentence, lang).every((token) => isKnownToken(token, lang, known, names, prefixes, capitals))) return false;
   // German has no grammar lesson that unlocks a tense: the learner's level decides (never a tense above it)
   return lang !== 'de' || deStructuresAbove(sentence, level).length === 0;
 }

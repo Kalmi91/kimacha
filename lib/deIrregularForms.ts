@@ -186,7 +186,7 @@ export const MODAL_VERBS: ReadonlySet<string> = new Set(['können', 'müssen', '
 
 // Verb prefixes. A separable prefix goes to the end of the main clause ("Ich stehe um sieben Uhr auf").
 export const SEPARABLE_PREFIXES: readonly string[] = [
-  'zusammen', 'zurück', 'vorbei', 'spazieren', 'kennen', 'heraus', 'herein', 'herauf', 'herunter', 'hinaus', 'hinein',
+  'zusammen', 'zurecht', 'zurück', 'vorbei', 'hinzu', 'dazu', 'fern', 'spazieren', 'kennen', 'heraus', 'herein', 'herauf', 'herunter', 'hinaus', 'hinein',
   'hinauf', 'hinunter', 'voraus', 'weiter', 'wieder', 'empor', 'heran', 'herum', 'hervor', 'nieder', 'durch', 'heim',
   'fest', 'fort', 'frei', 'hoch', 'statt', 'teil', 'über', 'unter', 'bei', 'dar', 'ein', 'her', 'hin', 'los', 'mit', 'nach',
   'vor', 'weg', 'weh', 'auf', 'aus', 'ab', 'an', 'um', 'zu', 'leid', 'raus', 'rein', 'rauf', 'runter',

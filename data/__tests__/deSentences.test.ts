@@ -71,8 +71,8 @@ describe('plurals.json', () => {
 });
 
 describe('the example sentences of the German deck, each level with its own words learned', () => {
-  // floors, a little under the measured pass rate (2026-11-02: A1 94%, A2 82%, B1 83%, B2 82%, C1 83%)
-  const FLOOR: Record<DeLevel, number> = { A1: 0.9, A2: 0.78, B1: 0.78, B2: 0.78, C1: 0.78 };
+  // floors, a little under the measured pass rate (2026-11-03: A1 96.9%, A2 94.0%, B1 90.1%, B2 90.2%, C1 90.5%; was A1 94%, A2 81%, B1 83%, B2 82%, C1 83%)
+  const FLOOR: Record<DeLevel, number> = { A1: 0.95, A2: 0.92, B1: 0.88, B2: 0.88, C1: 0.88 };
   let learnedSoFar: Card[] = [];
   for (const [level, cards] of LEVELS) {
     learnedSoFar = learnedSoFar.concat(cards);

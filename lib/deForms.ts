@@ -350,6 +350,8 @@ export function deAdjectiveForms(adjective: string, level: DeLevel): string[] {
 
 // ---------------------------------------------------------------- nouns
 
+const PERSON_ENDING = /(?:er|ent|ant|ist|eur|or)$/;
+
 /**
  * The forms of a noun from its plural(s) (the data table `data/de/plurals.json`, lower-case, no article):
  * the plural, the dative plural (+n) and, from B1, the genitive singular of a masculine / neuter noun.
@@ -365,6 +367,12 @@ export function deNounForms(noun: string, gender: 'm' | 'f' | 'n' | '', plurals:
     out.add(`${noun}s`);
     out.add(`${noun}es`);
     if (/e$/.test(noun) && gender !== 'n') out.add(`${noun}ns`);
+    if (/[^s]s$/.test(noun)) out.add(`${noun}ses`); // Bus > des Busses
+  }
+  // the feminine of a person noun on -er / -ent / -ist / -ant ... (Sänger > Sängerin, Student > Studentinnen), and Arzt > Ärztin
+  if (gender === 'm') {
+    const feminine = noun === 'arzt' ? 'ärztin' : PERSON_ENDING.test(noun) ? `${noun}in` : '';
+    if (feminine) out.add(feminine).add(`${feminine}nen`);
   }
   return [...out];
 }
