@@ -8,6 +8,7 @@
 import chunkData from '@/data/sentences/chunks.json';
 import chunkDataDe from '@/data/sentences/chunks-de.json';
 import chunkDataDeA2 from '@/data/sentences/chunks-de-a2.json';
+import chunkDataDeB1 from '@/data/sentences/chunks-de-b1.json';
 import chunkDataDeB2c1 from '@/data/sentences/chunks-de-b2c1.json';
 import type { PcicTarget } from '@/data/pcic';
 import { activeSourceFor } from '@/lib/languagePair';
@@ -22,7 +23,14 @@ export interface SentenceChunk {
 const CHUNKS = chunkData as Record<string, { es: string; en: string }[]>;
 // The German deck's steps (data/sentences/chunks-de.json, keyed by the deck item id "d<id>"): the German sentence and its
 // prompt in each of the three languages a German learner can come from.
-const CHUNKS_DE = { ...chunkDataDe, ...chunkDataDeA2, ...chunkDataDeB2c1 } as Record<string, { de: string; en: string; es: string; hu: string }[]>;
+type DeSteps = Record<string, { de: string; en: string; es: string; hu: string }[]>;
+// One file per level written in its own pass (A1 in chunks-de.json, then A2, B1, B2 + C1); the keys never overlap.
+const CHUNKS_DE: DeSteps = {
+  ...(chunkDataDe as DeSteps),
+  ...(chunkDataDeA2 as DeSteps),
+  ...(chunkDataDeB1 as DeSteps),
+  ...(chunkDataDeB2c1 as DeSteps),
+};
 
 const words = (sentence: string): string[] => tileWords(sentence).map((w) => w.toLowerCase());
 
