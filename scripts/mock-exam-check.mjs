@@ -491,6 +491,7 @@ const KINDS = {
     if (!Array.isArray(t.prompts) || t.prompts.length === 0) return err('prompts must be a non-empty list');
     if (!Array.isArray(t.options) || t.options.length === 0) return err('options must be a non-empty list');
     if (typeof t.unique !== 'boolean') err('unique must be true or false');
+    if (t.allowNone !== undefined && typeof t.allowNone !== 'boolean') err('allowNone must be true or false');
     const promptIds = t.prompts.map((p) => p && p.id);
     const optionIds = t.options.map((o) => o && o.id);
     if (!promptIds.every(isStr) || !unique(promptIds)) err('prompt ids must be unique non-empty strings');
@@ -516,8 +517,11 @@ const KINDS = {
     else {
       const keys = Object.keys(t.answer);
       if (keys.length !== promptIds.length || !promptIds.every((id) => keys.includes(id))) err('answer must have exactly one entry per prompt id');
-      for (const k of keys) if (!optionIds.includes(t.answer[k])) err(`answer["${k}"] = "${t.answer[k]}" is not an option id`);
-      if (t.unique === true && !unique(Object.values(t.answer))) err('unique is true but an option is the answer of more than one prompt');
+      for (const k of keys) if (!optionIds.includes(t.answer[k]) && !(t.allowNone === true && t.answer[k] === 'none')) err(`answer["${k}"] = "${t.answer[k]}" is not an option id`);
+      if (optionIds.includes('none')) err('"none" is reserved for the no-match answer, not an option id');
+      if (t.allowNone === true && !Object.values(t.answer).includes('none')) err('allowNone is true but no prompt has the answer "none"');
+      if (t.allowNone !== true && Object.values(t.answer).includes('none')) err('the answer "none" needs allowNone: true');
+      if (t.unique === true && !unique(Object.values(t.answer).filter((v) => v !== 'none'))) err('unique is true but an option is the answer of more than one prompt');
     }
     if (!s) return;
     if (t.unique !== s.unique) err(`unique is ${t.unique}, the format wants ${s.unique}`);

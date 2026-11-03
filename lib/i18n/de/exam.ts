@@ -183,6 +183,8 @@ const de: typeof en = {
       'Ordne jedem Eintrag eine Option zu. Tippe auf einen Buchstaben, um ihn zu wählen, und noch einmal, um ihn zu löschen. Eine Option kann mehrfach verwendet werden.',
     mockHintMatchUnique:
       'Ordne jedem Eintrag eine andere Option zu. Tippe auf einen Buchstaben, um ihn zu wählen; ist er schon vergeben, wandert er hierher. Einige Optionen werden nicht gebraucht.',
+    mockHintMatchNone:
+      'Ordne jedem Eintrag eine andere Option zu. Tippe auf einen Buchstaben, um ihn zu wählen; ist er schon vergeben, wandert er hierher. Tippe auf 0, wenn keine Option passt. Einige Optionen werden nicht gebraucht.',
     mockShowMore: 'Mehr anzeigen',
     mockShowLess: 'Weniger anzeigen',
     mockHintGapped:

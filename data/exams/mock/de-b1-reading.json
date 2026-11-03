@@ -95,7 +95,7 @@
         {
           "skill": "reading",
           "kind": "match_pool",
-          "instruction": "Lesen Sie die Situationen 1 bis 7 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Situation? Jede Anzeige können Sie nur einmal verwenden. Nicht alle Anzeigen passen.",
+          "instruction": "Lesen Sie die Situationen 1 bis 7 und die Anzeigen a bis j. Welche Anzeige passt zu welcher Situation? Jede Anzeige können Sie nur einmal verwenden. Nicht alle Anzeigen passen. Für eine Situation gibt es keine passende Anzeige: Wählen Sie 0.",
           "prompts": [
             { "id": "13", "text": "Marta ist vor Kurzem aus Spanien nach Deutschland gezogen. Sie möchte ihr Deutsch verbessern, aber keinen Kurs besuchen." },
             { "id": "14", "text": "Tim zieht nächste Woche um und hat viele schwere Möbel. Er sucht jemanden, der ihm beim Tragen hilft." },
@@ -103,7 +103,7 @@
             { "id": "16", "text": "Jana studiert und sucht ein Zimmer in einer Wohngemeinschaft. Sie hat eine Katze und möchte sie mitbringen." },
             { "id": "17", "text": "Das Fahrrad von Herrn Weber ist kaputt. Er braucht es schon morgen wieder für den Weg zur Arbeit." },
             { "id": "18", "text": "Elif möchte nicht den ganzen Tag arbeiten und sucht eine Teilzeitstelle. Sie spricht gut Deutsch und hat gern Kontakt zu Menschen." },
-            { "id": "19", "text": "Paul möchte am Wochenende wandern. Er hat kein Auto und sucht eine Gruppe, die gemeinsam fährt." }
+            { "id": "19", "text": "Herr Yilmaz hat einen Laptop, der nicht mehr startet. Er möchte ihn noch diese Woche reparieren lassen und sucht dafür eine Werkstatt." }
           ],
           "options": [
             {
@@ -157,8 +157,9 @@
               "text": "Unser Zimmer (16 Quadratmeter, möbliert) ist ab 1. Juni frei. Miete 320 Euro warm. Wir sind drei Studenten, kochen oft zusammen und freuen uns über Haustiere. Besichtigung jederzeit möglich."
             }
           ],
-          "answer": { "13": "b", "14": "c", "15": "g", "16": "j", "17": "a", "18": "f", "19": "h" },
-          "unique": true
+          "answer": { "13": "b", "14": "c", "15": "g", "16": "j", "17": "a", "18": "f", "19": "none" },
+          "unique": true,
+          "allowNone": true
         },
         {
           "skill": "reading",

@@ -77,6 +77,22 @@ describe('matching kinds', () => {
     expect(r.items[1].label).toBe('two heard');
   });
 
+  it('match_pool with allowNone: the answer "none" (button 0) is a right answer for a prompt without a fitting option', () => {
+    const t: MockTask = {
+      ...base('m', 'reading'),
+      kind: 'match_pool',
+      prompts: [{ id: 'p1', text: 'one' }, { id: 'p2', text: 'two' }],
+      options: [{ id: 'a', text: 'Option A' }, { id: 'b', text: 'Option B' }],
+      answer: { p1: 'a', p2: 'none' },
+      unique: true,
+      allowNone: true,
+    };
+    expect(flags(t, { p1: 'a', p2: 'none' })).toEqual([true, true]);
+    expect(flags(t, { p1: 'none', p2: 'b' })).toEqual([false, false]);
+    expect(flags(t, { p1: 'a' })).toEqual([true, false]);
+    expect(run(t, { p1: 'none', p2: 'b' }).items.map((i) => [i.given, i.expected])).toEqual([['0', 'Option A'], ['Option B', '0']]);
+  });
+
   it('gapped_text: the fragment id per gap number, in gap order', () => {
     const t: MockTask = {
       ...base('g', 'reading'),

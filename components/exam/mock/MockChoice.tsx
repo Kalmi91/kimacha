@@ -56,9 +56,11 @@ type ChipsProps = {
   taken?: ReadonlySet<string>;
   onPick: (key: string) => void;
   testID: (key: string) => string;
+  /** Shown instead of the letter for these keys (the "no option fits" button is a 0). */
+  labels?: Readonly<Record<string, string>>;
 };
 
-export function MockChips({ keys, picked, taken, onPick, testID }: ChipsProps) {
+export function MockChips({ keys, picked, taken, onPick, testID, labels }: ChipsProps) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   return (
@@ -70,12 +72,12 @@ export function MockChips({ keys, picked, taken, onPick, testID }: ChipsProps) {
             key={key}
             testID={testID(key)}
             accessibilityRole="button"
-            accessibilityLabel={letterOf(i)}
+            accessibilityLabel={labels?.[key] ?? letterOf(i)}
             accessibilityState={{ selected: on }}
             onPress={() => onPick(key)}
             style={[styles.chip, { backgroundColor: on ? colors.tint : colors.card, borderColor: on ? colors.tint : colors.border, opacity: !on && taken?.has(key) ? 0.35 : 1 }]}
           >
-            <Text style={[styles.chipText, { color: on ? colors.onTint : colors.text }]}>{letterOf(i)}</Text>
+            <Text style={[styles.chipText, { color: on ? colors.onTint : colors.text }]}>{labels?.[key] ?? letterOf(i)}</Text>
           </Pressable>
         );
       })}

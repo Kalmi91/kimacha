@@ -186,6 +186,8 @@ export default {
     mockClipText: (n: number) => `Text ${n}`,
     mockHintMatch: 'Match each item with an option. Tap a letter to choose it, tap it again to clear it. An option can be used more than once.',
     mockHintMatchUnique: 'Match each item with a different option. Tap a letter to choose it; if it is already used, it moves here. Some options are not needed.',
+    mockHintMatchNone:
+      'Match each item with a different option. Tap a letter to choose it; if it is already used, it moves here. Tap 0 if no option fits. Some options are not needed.',
     mockShowMore: 'Show more',
     mockShowLess: 'Show less',
     mockHintGapped: 'Choose the fragment that fits each numbered gap. Each fragment fits one gap only, and some fragments are not needed.',

@@ -157,7 +157,12 @@ export interface MockMatchPoolTask extends MockTaskBase, MockPlays, MockMarks {
   options: { id: string; title?: string; text: string }[];
   answer: Record<string, string>;
   unique: boolean;
+  /** An extra "none of the options fits" button (shown as 0); the answer of a prompt without a matching option is `MATCH_NONE`. */
+  allowNone?: boolean;
 }
+
+/** The answer value of a match_pool prompt for which no option fits (Goethe B1 Lesen Teil 3: "0"). */
+export const MATCH_NONE = 'none';
 
 /** A text with `{{1}}`..`{{n}}` gaps and fragments (gaps + extra) to put back; the answer maps the gap number to a fragment id. */
 export interface MockGappedTextTask extends MockTaskBase, MockPlays, MockMarks {

@@ -121,6 +121,14 @@ describe('the rules, each with a bad fixture', () => {
     fails(broken('es-b1-reading', (d) => (tasks(d)[2].unique = true)), /unique is true, the format wants false/);
   });
 
+  it('allowNone: the answer "none" needs the flag, the flag needs a "none" answer, and "none" is no option id', () => {
+    fails(broken('es-b1-reading', (d) => (tasks(d)[0].allowNone = true)), /allowNone is true but no prompt has the answer "none"/);
+    fails(broken('es-b1-reading', (d) => (tasks(d)[0].answer.p1 = 'none')), /answer\["p1"\] = "none" is not an option id/);
+    fails(broken('es-b1-reading', (d) => { tasks(d)[0].allowNone = true; tasks(d)[0].options[0].id = 'none'; }), /"none" is reserved/);
+    const ok = broken('es-b1-reading', (d) => { tasks(d)[0].allowNone = true; tasks(d)[0].answer.p1 = 'none'; });
+    expect(ok.out).not.toMatch(/allowNone|"none"/);
+  });
+
   it('answer keys point at existing ids, in range, and a fragment fits one gap only', () => {
     fails(broken('es-b1-reading', (d) => (tasks(d)[0].answer.p1 = 'zz')), /answer\["p1"\] = "zz" is not an option id/);
     fails(broken('es-b1-reading', (d) => (tasks(d)[1].questions[2].correct = 3)), /questions\[2\]: correct \(3\) is not an index of the 3 options/);

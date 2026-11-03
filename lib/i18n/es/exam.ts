@@ -180,6 +180,8 @@ const es: typeof en = {
     mockClipText: (n: number) => `Texto ${n}`,
     mockHintMatch: 'Relaciona cada elemento con una opción. Toca una letra para elegirla, tócala otra vez para quitarla. Una opción se puede usar más de una vez.',
     mockHintMatchUnique: 'Relaciona cada elemento con una opción distinta. Toca una letra para elegirla; si ya está en uso, pasa aquí. Algunas opciones no hacen falta.',
+    mockHintMatchNone:
+      'Relaciona cada elemento con una opción distinta. Toca una letra para elegirla; si ya está en uso, pasa aquí. Toca 0 si ninguna opción encaja. Algunas opciones no hacen falta.',
     mockShowMore: 'Mostrar más',
     mockShowLess: 'Mostrar menos',
     mockHintGapped: 'Elige el fragmento que encaja en cada hueco numerado. Cada fragmento encaja en un solo hueco, y sobran algunos fragmentos.',

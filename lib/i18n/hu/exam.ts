@@ -180,6 +180,8 @@ const hu: typeof en = {
     mockClipText: (n: number) => `${n}. szöveg`,
     mockHintMatch: 'Párosíts minden elemet egy lehetőséggel. Koppints egy betűre a kiválasztáshoz, még egyszer rákoppintva törlöd. Egy lehetőséget többször is használhatsz.',
     mockHintMatchUnique: 'Párosíts minden elemet egy másik lehetőséggel. Koppints egy betűre a kiválasztáshoz; ha már foglalt, ide kerül át. Néhány lehetőségre nincs szükség.',
+    mockHintMatchNone:
+      'Párosíts minden elemet egy másik lehetőséggel. Koppints egy betűre a kiválasztáshoz; ha már foglalt, ide kerül át. Koppints a 0-ra, ha egyik lehetőség sem illik. Néhány lehetőségre nincs szükség.',
     mockShowMore: 'Több mutatása',
     mockShowLess: 'Kevesebb mutatása',
     mockHintGapped: 'Válaszd ki azt a szövegrészt, amelyik illik a számozott helyre. Minden szövegrész csak egy helyre illik, és néhány felesleges.',

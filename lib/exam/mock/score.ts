@@ -22,7 +22,7 @@
 // There is no self-assessment of speaking; a speaking paper without a task is a placeholder and is not counted ("provisional").
 
 import { assessMessage, checkField, countWords, fold, foldedTokens } from './writing';
-import { mockTaskMarks, type MockAnswers, type MockExam, type MockSkill, type MockTask, type MockTaskAnswer } from './types';
+import { MATCH_NONE, mockTaskMarks, type MockAnswers, type MockExam, type MockSkill, type MockTask, type MockTaskAnswer } from './types';
 
 /** A skill's points on the real exam (all four are 25). */
 const SKILL_POINTS = 25;
@@ -291,8 +291,8 @@ export function scoreMockTask(task: MockTask, answer: MockTaskAnswer = {}, ctx: 
         const givenId = answer[p.id];
         items.push({
           label: p.text ?? p.audio?.map((l) => l.text).join(' ') ?? '',
-          given: task.options.find((o) => o.id === givenId)?.text ?? '',
-          expected: task.options.find((o) => o.id === expectedId)?.text ?? '',
+          given: givenId === MATCH_NONE ? '0' : (task.options.find((o) => o.id === givenId)?.text ?? ''),
+          expected: expectedId === MATCH_NONE ? '0' : (task.options.find((o) => o.id === expectedId)?.text ?? ''),
           ok: givenId === expectedId,
         });
       });

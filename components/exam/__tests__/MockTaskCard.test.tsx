@@ -150,6 +150,20 @@ describe('match_pool', () => {
     expect(sink.current.p2).toBeNull();
   });
 
+  it('allowNone: a 0 button after the letters; it can stand at one prompt and does not take a letter away', () => {
+    const base = taskAt('es', 'B1', 'reading', 0);
+    if (base.kind !== 'match_pool') throw new Error('fixture');
+    const { view, sink } = show({ ...base, allowNone: true, answer: { ...base.answer, p2: 'none' } }, 'es');
+    expect(view.getByTestId('mock-match-p1-none').props.accessibilityLabel).toBe('0');
+    fireEvent.press(view.getByTestId('mock-match-p1-a'));
+    fireEvent.press(view.getByTestId('mock-match-p2-none'));
+    expect(sink.current).toMatchObject({ p1: 'a', p2: 'none' });
+    fireEvent.press(view.getByTestId('mock-match-p3-none'));
+    expect(sink.current).toMatchObject({ p1: 'a', p2: 'none', p3: 'none' });
+    fireEvent.press(view.getByTestId('mock-match-p2-none'));
+    expect(sink.current.p2).toBeNull();
+  });
+
   it('not unique: the same letter can stand at several prompts', () => {
     const { view, sink } = show(taskAt('es', 'B1', 'reading', 2), 'es');
     fireEvent.press(view.getByTestId('mock-match-p1-a'));
