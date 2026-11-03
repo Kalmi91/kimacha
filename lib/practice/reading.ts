@@ -13,7 +13,8 @@
 //
 // Stories (FB526, lib/practice/stories.ts): the text is first a ready-made five-sentence story the learner fully knows
 // (the one with the most due words); its false statements come from the story's own `false_<source language>`, in order,
-// each once (then a true one). Without such a story the text is built as above.
+// each once (then a true one). Without such a story the text is built as above. The story's bridges (FB551, linking sentences
+// with no word and no question) sit between its sentences in `ReadingSet.segments`.
 
 import type { PcicItem, PcicTarget } from '@/data/pcic';
 import { isSentenceKnownIn, knownTokens, type ResolvedTense } from '@/lib/knownSentence';
@@ -23,7 +24,7 @@ import { activeSourceFor } from '@/lib/languagePair';
 import { wordIn } from '@/lib/pcicItemText';
 import type { Sm2Card } from '@/lib/sm2';
 import { gapTaskFor, practiceCandidates, type GapSourceInfo, type GapTask } from './gapFill';
-import { falseIn, pickStory, type Story } from './stories';
+import { bridgesIn, falseIn, pickStory, type Story } from './stories';
 
 /** The text holds this many sentences (and the round this many questions: one per sentence). */
 export const READING_WORDS = 5;
@@ -52,8 +53,13 @@ export type ResolvedQuestion =
   /** `correct` = 0 when the statement is true (True is the first option), 1 when it is false. */
   | { kind: 'truefalse'; statement: string; truth: boolean; correct: number };
 
+/** One piece of the text in reading order: the sentence of word `index` of `words`, or a bridge (FB551: a linking sentence of a story, no word, no question). */
+export type ReadingSegment = { kind: 'word'; index: number } | { kind: 'bridge'; text: string };
+
 export interface ReadingSet {
   words: ReadingWord[];
+  /** The text in reading order: every word's sentence, with the story's bridges between them. */
+  segments: ReadingSegment[];
   questions: ReadingQuestion[];
   resolved: ResolvedQuestion[];
   /** The story the text is (lib/practice/stories.ts), absent for a text of example sentences. */
@@ -220,6 +226,15 @@ function learnedEntryItems(deps: ReadingDeps): PcicItem[] {
   return out;
 }
 
+/** The text of a round: the sentence of every word in order, each followed by the bridges of the story placed after it. */
+export function readingSegments(words: ReadingWord[], target: PcicTarget, story?: Story): ReadingSegment[] {
+  const bridges = story ? bridgesIn(story, target) : [];
+  return words.flatMap((_, index): ReadingSegment[] => [
+    { kind: 'word', index },
+    ...bridges.filter((b) => b.after === index).map((b): ReadingSegment => ({ kind: 'bridge', text: b.text })),
+  ]);
+}
+
 /** The texts of the questions, or null when a card of the round is gone from the corpus (a saved round then starts over). */
 export function resolveSet(
   words: ReadingWord[],
@@ -253,7 +268,8 @@ export function resolveSet(
       resolved.push({ kind: 'truefalse', statement: pair.source, truth: false, correct: 1 });
     }
   }
-  return story ? { words, questions, resolved, storyId: story.id } : { words, questions, resolved };
+  const segments = readingSegments(words, target, story);
+  return story ? { words, segments, questions, resolved, storyId: story.id } : { words, segments, questions, resolved };
 }
 
 /** The whole round, or null when fewer than READING_MIN_WORDS sentences can be made (the empty state). */

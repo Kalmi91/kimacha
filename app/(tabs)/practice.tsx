@@ -159,7 +159,18 @@ function ReadingMode() {
     stopSpeaking();
     // FB552: one sentence at a time, each starts when it is generated. Audio round B: each sentence is spoken by the
     // voice of its own word (lib/cardSpeaker.ts), the speaker the sentence pack holds it under.
-    speakSequence(set.words.map((w) => ({ text: w.sentence, locale: speechLang(target), gender: wordSpeakerGender(findPcicItem(w.itemId), target) })));
+    // FB551: a bridge is read between the sentences, in the voice of the sentence it follows.
+    let gender: ReturnType<typeof wordSpeakerGender>;
+    speakSequence(
+      set.segments.map((seg) => {
+        if (seg.kind === 'word') {
+          const w = set.words[seg.index];
+          gender = wordSpeakerGender(findPcicItem(w.itemId), target);
+          return { text: w.sentence, locale: speechLang(target), gender };
+        }
+        return { text: seg.text, locale: speechLang(target), gender };
+      }),
+    );
   };
   const practiceSentences = () => {
     if (!set) return;
@@ -221,14 +232,18 @@ function ReadingMode() {
         <View style={styles.cardMargin}>
         <Card classicStyle={styles.card} boxStyle={styles.brutalCard}>
           <Text testID="practice-text" style={[styles.paragraph, { color: colors.text }]}>
-            {set.words.map((w, i) => (
-              <Text key={w.itemId}>
-                {i > 0 ? ' ' : ''}
-                {w.before}
-                <Text testID={`practice-word-${i}`} style={[styles.word, { color: colors.tint }]}>{w.answer}</Text>
-                {w.after}
-              </Text>
-            ))}
+            {set.segments.map((seg, n) => {
+              if (seg.kind === 'bridge') return <Text key={`bridge-${n}`} testID={`practice-bridge-${n}`}>{` ${seg.text}`}</Text>;
+              const w = set.words[seg.index];
+              return (
+                <Text key={w.itemId}>
+                  {n > 0 ? ' ' : ''}
+                  {w.before}
+                  <Text testID={`practice-word-${seg.index}`} style={[styles.word, { color: colors.tint }]}>{w.answer}</Text>
+                  {w.after}
+                </Text>
+              );
+            })}
           </Text>
           <SpeakButton
             testID="practice-speak"

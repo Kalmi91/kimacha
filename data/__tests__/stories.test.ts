@@ -107,9 +107,36 @@ describe.each<PcicTarget>(['es', 'en', 'hu', 'de'])('reading stories, target %s'
     }
   });
 
+  it('bridges (FB551): at most four per story, each after another sentence (0-3), a text in all three languages; every A1 Spanish story has some', () => {
+    for (const story of stories) {
+      const bridges = story.bridges ?? [];
+      const afters = bridges.map((b) => b.after);
+      expect([story.id, bridges.length <= 4]).toEqual([story.id, true]);
+      expect([story.id, new Set(afters).size === afters.length && afters.every((a) => Number.isInteger(a) && a >= 0 && a <= 3)]).toEqual([story.id, true]);
+      for (const b of bridges) {
+        for (const lang of ['es', 'en', 'hu'] as const) expect([story.id, b.after, lang, (b[lang] ?? '').trim()]).not.toEqual([story.id, b.after, lang, '']);
+      }
+      if (target === 'es' && story.level === 'A1') expect([story.id, bridges.length > 0]).toEqual([story.id, true]);
+    }
+  });
+
+  it('bridges (FB551): every token of a bridge is a token of its own story or a free word, so it is known whenever the story is', () => {
+    const free = knownTokens(target, { learned: [] }); // no learned word: only the free words
+    const problems: string[] = [];
+    for (const story of stories) {
+      const own = new Set(story.sentences.flatMap((s) => sentenceTokens(s[target] ?? '', target)));
+      for (const b of story.bridges ?? []) {
+        const outside = sentenceTokens(b[target] ?? '', target).filter((t) => !own.has(t) && !free.has(t));
+        if (outside.length > 0) problems.push(`${story.id} after ${b.after}: ${b[target]} | ${outside.join(',')}`);
+      }
+    }
+    expect(problems).toEqual([]);
+  });
+
   it('no dash in a text (house style)', () => {
     const texts = stories.flatMap((s) => [
       ...s.sentences.flatMap((x) => [x.es ?? '', x.en ?? '', x.hu ?? '', x.de ?? '']),
+      ...(s.bridges ?? []).flatMap((x) => [x.es ?? '', x.en ?? '', x.hu ?? '']),
       ...falseIn(s, 'en'),
       ...falseIn(s, 'es'),
       ...falseIn(s, 'hu'),
@@ -120,7 +147,7 @@ describe.each<PcicTarget>(['es', 'en', 'hu', 'de'])('reading stories, target %s'
   });
 
   it('no inverted ? or ! in Spanish (house style)', () => {
-    const spanish = stories.flatMap((s) => [...s.sentences.map((x) => x.es ?? ''), ...falseIn(s, 'es')]);
+    const spanish = stories.flatMap((s) => [...s.sentences.map((x) => x.es ?? ''), ...(s.bridges ?? []).map((x) => x.es ?? ''), ...falseIn(s, 'es')]);
     expect(spanish.filter((t) => /[¿¡]/.test(t))).toEqual([]);
   });
 
@@ -138,8 +165,8 @@ describe.each<PcicTarget>(['es', 'en', 'hu', 'de'])('reading stories, target %s'
           continue;
         }
         const known = knownByLevel.get(story.level) ?? new Set<string>();
-        for (const s of story.sentences) {
-          const text = s[target] ?? '';
+        // the bridges (FB551) are read with the story: the same gate, token by token
+        for (const text of [...story.sentences.map((s) => s[target] ?? ''), ...(story.bridges ?? []).map((b) => b[target] ?? '')]) {
           const unknown = sentenceTokens(text, target).filter((t) => !known.has(t));
           // the structure detector reads Spanish only; a structure taught above the level of the story (or not taught) is another structure
           const other =
