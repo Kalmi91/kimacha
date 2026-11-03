@@ -75,3 +75,18 @@ export async function saveLearnResume(db: DB, resume: LearnResume): Promise<void
 export async function clearLearnResume(db: DB): Promise<void> {
   await saveResumeValue(db, LEARN_KEY, null);
 }
+
+// FB542: the day on which the learner answered "No, only reviews" to the more-new-words question; the question does
+// not come back that day (not after a grade, a tab switch or an app restart), a new calendar day asks again.
+const NEW_DECLINED_KEY = 'learn-new-declined';
+
+/** The day of the last "No" answer, '' when there is none. */
+export async function loadNewDeclinedDay(db: DB): Promise<string> {
+  const raw = await loadResumeValue(db, NEW_DECLINED_KEY);
+  const day = typeof raw === 'object' && raw !== null ? (raw as { day?: unknown }).day : undefined;
+  return typeof day === 'string' ? day : '';
+}
+
+export async function saveNewDeclinedDay(db: DB, day: string): Promise<void> {
+  await saveResumeValue(db, NEW_DECLINED_KEY, { day });
+}

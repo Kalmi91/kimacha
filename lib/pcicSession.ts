@@ -107,31 +107,48 @@ export function mixNewCards(queue: QueuedSm2Card[], today: string): QueuedSm2Car
   return [...rest.slice(0, at), first, ...rest.slice(at), ...later];
 }
 
-/** FB535: the daily new-word budget ran out while reviews are left, so +10 comes by itself. */
+/** FB535: the daily new-word budget ran out while reviews are left (reviews in the queue, no new word in it). */
 export function needsNewTopUp(queue: Sm2Card[], today: string): boolean {
   return queue.some((c) => isReview(c, today)) && !queue.some((c) => c.state === 'new');
 }
 
 /**
- * The +10 that comes by itself (needsNewTopUp): the new cards to append and the bonus to persist,
- * the same budget step as the "+10" button (nextPcicNewBonus). Null when no top-up is due or the
- * level has no new word left.
+ * FB542: the "+N" answer to the more-new-words question (needsNewTopUp): the new cards to append and the
+ * bonus to persist, the same budget step as the "+N" buttons of the done screen (nextPcicNewBonus). Null when
+ * no top-up is due or the level has no new word left.
  */
-export function autoNewTopUp(
+export function newTopUp(
   queue: Sm2Card[],
   cards: Sm2Card[],
   order: string[],
   today: string,
-  budget: { limit: number; bonus: number; introducedAllLevels: number; introducedThisLevel: number }
+  budget: { limit: number; bonus: number; introducedAllLevels: number; introducedThisLevel: number },
+  step: number = PCIC_NEW_BONUS_STEP
 ): { bonus: number; fresh: Sm2Card[] } | null {
   if (!needsNewTopUp(queue, today)) return null;
   const { limit, bonus, introducedAllLevels, introducedThisLevel } = budget;
-  const next = nextPcicNewBonus({ limit, bonus, introducedToday: introducedAllLevels });
+  const next = nextPcicNewBonus({ limit, bonus, introducedToday: introducedAllLevels }, step);
   const inQueue = new Set(queue.map((c) => c.itemId));
   const fresh = pickSm2Session(cards, order, today, pcicSessionNewLimit({ limit, bonus: next, introducedAllLevels, introducedThisLevel })).filter(
     (c) => c.state === 'new' && !inQueue.has(c.itemId)
   );
   return fresh.length > 0 ? { bonus: next, fresh } : null;
+}
+
+/**
+ * FB542: the learner is asked (instead of getting +10 by itself) when the budget ran out while reviews are
+ * left, the level still has new words to offer, and "No, only reviews" was not answered today
+ * (`declinedDay` is the day of that answer, '' when never; a new calendar day asks again).
+ */
+export function shouldAskMoreNew(
+  queue: Sm2Card[],
+  cards: Sm2Card[],
+  order: string[],
+  today: string,
+  budget: { limit: number; bonus: number; introducedAllLevels: number; introducedThisLevel: number },
+  declinedDay: string
+): boolean {
+  return declinedDay !== today && newTopUp(queue, cards, order, today, budget) !== null;
 }
 
 // Extracted into a pure function so that the daily progress (the header row and the

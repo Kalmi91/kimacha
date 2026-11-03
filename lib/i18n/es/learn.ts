@@ -93,6 +93,9 @@ const es: typeof en = {
     moreNew: (n: number) => `+${n} palabras nuevas`,
     moreNewShort: (n: number) => `+${n}`,
     moreNewHint: '¿Más palabras nuevas hoy?',
+    // FB542: asked when today's new words are done but reviews are left.
+    moreNewAsk: 'Las palabras nuevas de hoy están hechas, pero quedan repasos. ¿Quieres más palabras nuevas?',
+    moreNewNo: 'No, solo repasos',
     tileAnswered: 'Respondidas',
     tileNew: 'Nuevas',
     tileAgain: 'Falladas',

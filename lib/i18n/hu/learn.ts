@@ -90,6 +90,9 @@ const hu: typeof en = {
     moreNew: (n: number) => `+${n} új szó`,
     moreNewShort: (n: number) => `+${n}`,
     moreNewHint: 'Még több új szó ma?',
+    // FB542: asked when today's new words are done but reviews are left.
+    moreNewAsk: 'A mai új szavak megvannak, de még van ismétlés hátra. Kérsz még új szavakat?',
+    moreNewNo: 'Nem, csak ismétlés',
     tileAnswered: 'Megválaszolt',
     tileNew: 'Új',
     tileAgain: 'Újra',

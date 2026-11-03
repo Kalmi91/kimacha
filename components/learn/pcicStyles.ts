@@ -55,6 +55,9 @@ export const styles = StyleSheet.create({
   // the three "+N new words" buttons in one row.
   moreNewBlock: { gap: 4 },
   moreNewHint: { fontSize: 13, textAlign: 'center' },
+  // FB542: the question that replaces the card when the day's new words are done but reviews are left.
+  moreNewAskBlock: { gap: 12 },
+  moreNewAsk: { fontSize: 18, fontWeight: '600', textAlign: 'center' },
   moreNewRow: { flexDirection: 'row', gap: 10 },
   moreNewBtn: { flex: 1, width: 'auto', marginTop: 0 },
   brutalProgress: { marginBottom: 16 },

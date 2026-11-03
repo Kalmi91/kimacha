@@ -15,9 +15,9 @@ import { pcicItemsForLevel, findPcicItem, type PcicLevel, type PcicTarget } from
 import { gradePcicAnswer, gradeSentenceAnswer, type PcicGrade } from '@/lib/pcicMatch';
 import { articleOf, composeAnswer, type ArticlePick } from '@/lib/articlePicker';
 import { sm2Review, pickSm2Session, sm2MarkKnown, type Sm2Card, type Sm2Grade } from '@/lib/sm2';
-import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, mixNewCards, autoNewTopUp, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
+import { countDoneToday, countIntroducedTodayByKind, requeueAfterGrade, requeueAfterUndo, mixNewCards, newTopUp, shouldAskMoreNew, nextPcicNewBonus, pcicSessionNewLimit, practiceTopUpStep, PCIC_NEW_BONUS_STEP, thinSentences, dropOrphanCards, countFinishedToday } from '@/lib/pcicSession';
 import { cardsForLevel } from '@/lib/pcicLevels';
-import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, saveLearnResume } from '@/lib/learnResume';
+import { applyLearnResume, buildLearnResume, isLearnResumeFor, loadLearnResume, loadNewDeclinedDay, saveLearnResume, saveNewDeclinedDay } from '@/lib/learnResume';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
 import { useDockLift } from '@/components/learn/useDockLift';
 import { GRAMMAR_PROGRESS_KEY, doneGrammarTopicProgress } from '@/lib/grammar/syllabus';
@@ -116,6 +116,10 @@ export function usePcicSession() {
   // persisted in the learn_settings.new_bonus/new_bonus_date columns (it
   // expires with the calendar day); load() reads it back from the DB, it does not reset it.
   const [pcicBonus, setPcicBonus] = useState(0);
+  // FB542: the budget ran out while reviews are left: the learner is asked about more new words instead of getting +10 by
+  // itself; the question replaces the card until it is answered. "No" is remembered for the day (learn-new-declined).
+  const [askMoreNew, setAskMoreNew] = useState(false);
+  const [newDeclinedDay, setNewDeclinedDay] = useState('');
   // The Settings "New words a day" (learn_settings.daily_new_limit,
   // previously read only by the deleted Learn tab) now also sets the number of
   // PCIC daily new items; the header's "new" chip counts from it (queue state === 'new').
@@ -198,10 +202,11 @@ export function usePcicSession() {
     // Card-level resume: the saved order and the "again" timers are put back on the rebuilt queue (invalid after a day change / level change).
     const resume = await loadLearnResume(db);
     const resumed = mixNewCards(applyLearnResume(pickSm2Session(cards, pcicIntroOrder(newOrder), day, pcicSessionNewLimit({ limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday })), resume, day, lvl), day);
-    // FB535: reviews left with the new-word budget used up: +10 by itself (lib/pcicSession.ts autoNewTopUp).
-    const topUp = autoNewTopUp(resumed, cards, pcicIntroOrder(newOrder), day, { limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday });
-    if (topUp) await db.setPcicNewBonus(topUp.bonus, day);
-    setQueue(topUp ? mixNewCards([...resumed, ...topUp.fresh], day) : resumed);
+    // FB542: reviews left with the new-word budget used up: ask about more new words (lib/pcicSession.ts shouldAskMoreNew).
+    const declinedDay = await loadNewDeclinedDay(db);
+    setNewDeclinedDay(declinedDay);
+    setAskMoreNew(shouldAskMoreNew(resumed, cards, pcicIntroOrder(newOrder), day, { limit: newLimit, bonus, introducedAllLevels, introducedThisLevel: introducedToday }, declinedDay));
+    setQueue(resumed);
     if (isLearnResumeFor(resume, day, lvl) && resume.base !== null) setBatchBase({ day, level: lvl, n: resume.base });
     setTypedAnswer('');
     setGrade(null);
@@ -210,7 +215,7 @@ export function usePcicSession() {
     setSessionAgain(0);
     setLastGraded(null);
     setSentenceCard(null);
-    setPcicBonus(topUp ? topUp.bonus : bonus);
+    setPcicBonus(bonus);
     setLoading(false);
     setLoadSeq((n) => n + 1);
     // setTypedAnswer is listed because the React Compiler infers it as a
@@ -267,9 +272,10 @@ export function usePcicSession() {
   // changes) it should not repeat, neither the read-aloud nor the focus.
   // Under a sentence card the next prompt is not spoken;
   // it is spoken when the card closes (sentenceOpen false), like on a new card.
+  // The same while the more-new-words question (FB542) replaces the card.
   const sentenceOpen = sentenceCard !== null;
   useEffect(() => {
-    if (!loading && !sentenceOpen && currentItem && promptSource && !grade) {
+    if (!loading && !sentenceOpen && !askMoreNew && currentItem && promptSource && !grade) {
       speakAuto(promptSource, speechLang(sourceLang)); // silent right after the app opens (lib/speech.ts)
       inputRef.current?.focus();
     }
@@ -277,7 +283,7 @@ export function usePcicSession() {
     // (e.g. the word + example sentence chain after Check) should stop (same pattern).
     return () => stopSpeaking();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current?.itemId, loading, sentenceOpen, loadSeq]);
+  }, [current?.itemId, loading, sentenceOpen, askMoreNew, loadSeq]);
 
   // Card-level resume: after every queue / batch change it saves a snapshot (lib/learnResume.ts).
   useEffect(() => {
@@ -337,13 +343,23 @@ export function usePcicSession() {
     return next;
   };
 
-  // FB535: the new-word budget ran out while reviews are left: +10 by itself, one at a time
-  // (lib/pcicSession.ts autoNewTopUp + mixNewCards). `cards` already holds the card just graded.
-  const topUpNew = (queueAfter: Sm2Card[], cards: Map<string, Sm2Card>) => {
+  // FB542: the new-word budget ran out while reviews are left: ask about more new words instead of adding them
+  // (lib/pcicSession.ts shouldAskMoreNew). `cards` already holds the card just graded.
+  const askAfterGrade = (queueAfter: Sm2Card[], cards: Map<string, Sm2Card>) => {
     const activeCards = [...cards.values()];
     const introducedAllLevels = [...activeCards, ...allLevelCards.filter((c) => !cards.has(c.itemId) && findPcicItem(c.itemId) !== undefined)].filter((c) => c.introducedAt === today).length;
     const introducedThisLevel = activeCards.filter((c) => c.introducedAt === today).length;
-    const top = autoNewTopUp(queueAfter, activeCards, pcicIntroOrder(newOrder), today, { limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, introducedThisLevel });
+    setAskMoreNew(shouldAskMoreNew(queueAfter, activeCards, pcicIntroOrder(newOrder), today, { limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, introducedThisLevel }, newDeclinedDay));
+  };
+
+  // FB542: "+N" on the question: the same budget step as the done screen's buttons, the fresh cards one at a time among
+  // the reviews (mixNewCards). batchBase is not reset, the bar keeps measuring the day's batch.
+  const handleAskMoreNew = (step: number) => {
+    const activeCards = [...allCards.values()];
+    const introducedThisLevel = activeCards.filter((c) => c.introducedAt === today).length;
+    const introducedAllLevels = cardsAllLevels.filter((c) => c.introducedAt === today).length;
+    setAskMoreNew(false);
+    const top = newTopUp(queue, activeCards, pcicIntroOrder(newOrder), today, { limit: dailyNewLimit, bonus: pcicBonus, introducedAllLevels, introducedThisLevel }, step);
     if (!top) return;
     setPcicBonus(top.bonus);
     getDb().setPcicNewBonus(top.bonus, today).catch(() => {
@@ -352,11 +368,18 @@ export function usePcicSession() {
     setQueue((prev) => mixNewCards([...prev, ...top.fresh.filter((c) => !prev.some((p) => p.itemId === c.itemId))], today));
   };
 
+  // FB542: "No, only reviews": no new card comes and the question does not return today.
+  const handleDeclineMoreNew = () => {
+    setAskMoreNew(false);
+    setNewDeclinedDay(today);
+    void saveNewDeclinedDay(getDb(), today);
+  };
+
   // It also passes `grade` to requeue, so that only the "Didn't know"
   // (again) card gets a returnAt timer, and the "Knew it" (good) one does not.
   const advance = (next: Sm2Card, g: Sm2Grade) => {
     setQueue((prev) => mixNewCards(requeueAfterGrade(prev, next, today, g, Date.now(), againDelaySec), today));
-    topUpNew(requeueAfterGrade(queue, next, today, g), new Map(allCards).set(next.itemId, next));
+    askAfterGrade(requeueAfterGrade(queue, next, today, g), new Map(allCards).set(next.itemId, next));
     setTypedAnswer('');
     setArticlePick('');
     setGrade(null);
@@ -454,6 +477,7 @@ export function usePcicSession() {
     setLastGraded(null);
     setCadence(lastGraded.cadenceBefore);
     setSentenceCard(null);
+    setAskMoreNew(false);
   };
 
   const handleDontLearn = async () => {
@@ -530,6 +554,9 @@ export function usePcicSession() {
     todayNewBudget,
     sentenceCard,
     setSentenceCard,
+    askMoreNew,
+    handleAskMoreNew,
+    handleDeclineMoreNew,
     levelSheetOpen,
     // FB547: the level picker shows the live progress (the load-time list said "not started" after a finished day).
     allLevelCards: cardsAllLevels,
