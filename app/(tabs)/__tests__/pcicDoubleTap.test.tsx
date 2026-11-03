@@ -3,11 +3,7 @@
 // the XP once. Mock pattern: pcicXpChip.test.tsx.
 
 jest.mock('@/lib/database', () => jest.requireActual('@/lib/database.web'));
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {

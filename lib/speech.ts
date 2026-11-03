@@ -153,6 +153,10 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
     setTimeout(() => options.onDone?.(), 0);
     return;
   }
+  // Reported 2026-11-02: two voices at once. A new speech cuts whatever still sounds on every level, and a
+  // word + example chain in flight (speakSequence) stops there too; the phone's own queue (QUEUE_ADD) only
+  // kept the phone from talking over itself, not over the word pack or the better voice.
+  stop();
   const viaPhone = () => {
     if (!hasVoiceFor(locale)) {
       missing.add(baseLanguage(locale));
@@ -232,6 +236,21 @@ export function stop(): void {
   stopPack();
 }
 
+// Opening the app must not talk (Kálmán, 2026-11-02). An automatic read-aloud (a new card's prompt, a new
+// sentence card, word and sentence alike) stays silent from the start, and from every return out of the
+// background, until the learner first touches the screen (the root layout reports each touch). Whatever the
+// learner asks for (a speaker button, a Check) goes through speak() and always sounds.
+let quietStart = true;
+
+export function speakAuto(text: string, locale: string, options: Speech.SpeechOptions = {}): void {
+  if (quietStart) return;
+  speak(text, locale, options);
+}
+
+export function noteSpeechTouch(): void {
+  quietStart = false;
+}
+
 // The lesson screen's stop button calls this (the same button
 // that started the speech, play → stop). It differs from `stop()` only in the
 // name; on the screen side it is more readable what the button press does.
@@ -250,7 +269,10 @@ let appStateSub: { remove(): void } | null = null;
 export function watchAppStateForSpeech(): () => void {
   void startNeural(); // reads the better voice's settings and loads its engines (once per run)
   appStateSub?.remove();
-  appStateSub = AppState.addEventListener('change', () => stop());
+  appStateSub = AppState.addEventListener('change', state => {
+    stop();
+    if (state === 'background') quietStart = true;
+  });
   return () => {
     appStateSub?.remove();
     appStateSub = null;
@@ -326,4 +348,5 @@ export function resetVoiceCache(): void {
   loading = null;
   missing.clear();
   speakingRun = 0;
+  quietStart = true;
 }

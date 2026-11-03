@@ -6,12 +6,7 @@
 // parameter puts the sentences with those words first, the level counter on top drops as words are credited, and the
 // feedback button is on the screen. Mock pattern: pcicSentenceCard.test.tsx.
 
-jest.mock('@/lib/speech', () => ({
-  speak: jest.fn(),
-  speakSequence: jest.fn(),
-  stopSpeaking: jest.fn(),
-  stop: jest.fn(),
-}));
+jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock(), stop: jest.fn() }));
 // The route parameters of the screen: a test sets `mockParams.focus` before it renders.
 const mockParams: { focus?: string } = {};
 jest.mock('expo-router', () => ({

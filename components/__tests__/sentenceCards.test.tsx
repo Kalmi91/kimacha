@@ -3,7 +3,7 @@ import { fireEvent, render, within } from '@testing-library/react-native';
 import EasySentenceCard from '../EasySentenceCard';
 import TypedSentenceCard from '../TypedSentenceCard';
 
-jest.mock('@/lib/speech', () => ({ speak: jest.fn(), stop: jest.fn() }));
+jest.mock('@/lib/speech', () => ({ ...require('@/test-utils/mocks').speechMock(), stop: jest.fn() }));
 
 const speech = require('@/lib/speech') as { speak: jest.Mock; stop: jest.Mock };
 
