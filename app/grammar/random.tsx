@@ -3,11 +3,16 @@ import { ActivityIndicator, KeyboardAvoidingView, Platform, Pressable, ScrollVie
 import { useRouter } from 'expo-router';
 
 import Colors from '@/constants/Colors';
+import { ON_FILL } from '@/constants/GrammarPalettes';
+import { bestOn } from '@/constants/Skins';
 import { fontSize, fontWeight, radius, spacing } from '@/constants/Theme';
 import type { Level } from '@/data/words';
 import { getDb } from '@/lib/database';
 import { useLearner } from '@/lib/learner';
 import { sourceFor } from '@/lib/languagePair';
+import { speechLang } from '@/lib/languages';
+import { playChime } from '@/lib/chime';
+import { speak, stopSpeaking } from '@/lib/speech';
 import { t } from '@/lib/i18n';
 import { useTheme } from '@/lib/ThemeContext';
 import { useGrammarColors } from '@/lib/grammarColors';
@@ -56,6 +61,8 @@ import ScreenFeedback from '@/lib/screenFeedback';
 // and keeps the open round (`_run`) so it can be continued. Check / re-check / full run exam-style (a right
 // answer shows nothing, a wrong one shows the right one); the practice cards answer at once (`instant`) and the
 // explanation card after them shows the right answer and the why.
+// FB549: every answer, in every phase, reads the right sentence aloud; a right one first chimes and is marked green
+// (on the explanation card in the practice, a short green badge over the next question elsewhere).
 
 type RoundStrings = ReturnType<typeof t>['randomRound'];
 
@@ -81,6 +88,9 @@ function phaseLabel(s: RoundStrings, phase: AskPhase, i: number, n: number): str
   }
 }
 
+// how long the green badge of a right answer stays over the next question
+const RIGHT_MARK_MS = 900;
+
 const pctText = (p: number | null) => (p === null ? '–' : `${p}%`);
 
 export default function RandomRoundScreen() {
@@ -98,6 +108,8 @@ export default function RandomRoundScreen() {
   const [evidence, setEvidence] = useState<Map<string, TopicEvidence>>(new Map());
   const [feedback, setFeedback] = useState<Feedback | null>(null);
   const [leaving, setLeaving] = useState(false);
+  // FB549: a right answer in the exam-style phases moves on at once; the green badge over the next question is its mark.
+  const [rightMark, setRightMark] = useState(0);
 
   // the number of finished rounds, and whether the round in memory is already counted in it.
   const metaRef = useRef<RandomMeta>({ rounds: 0 });
@@ -189,6 +201,15 @@ export default function RandomRoundScreen() {
     };
   }, [refresh, beginRun, commit, enqueue]);
 
+  useEffect(() => {
+    if (rightMark === 0) return;
+    const timer = setTimeout(() => setRightMark(0), RIGHT_MARK_MS);
+    return () => clearTimeout(timer);
+  }, [rightMark]);
+
+  // the sentence that was read aloud must not go on over another screen
+  useEffect(() => () => stopSpeaking(), []);
+
   // the 💬 is on every part of the round; `part` tells the Feedback sheet exactly which one it is about
   // (grammar-random:<phase>:<question id or empty>). On a typed question the 💬 sits above the docked bar.
   const shell = (children: ReactNode, part?: string, bottomOffset?: number, overlay?: ReactNode) => (
@@ -256,6 +277,13 @@ export default function RandomRoundScreen() {
     setEvidence(nextEvidence);
     setRun(next);
     if (phase === 'practice') setFeedback({ q: pendingQ, ok, topicId, index: before.index + 1, of: before.of });
+    else if (ok) setRightMark((n) => n + 1);
+    // FB549: a right answer chimes first and the sentence follows; a wrong one is only read out
+    const say = () => {
+      if (pendingQ.say) speak(pendingQ.say, speechLang(data.learnedLang));
+    };
+    if (ok) playChime(say);
+    else say();
   };
 
   const header = (label: string, testID = 'random-counter') => (
@@ -303,9 +331,17 @@ export default function RandomRoundScreen() {
             {q.review.answer !== '' && (
               <>
                 <Text style={[styles.missedLabel, { color: colors.textMuted }]}>{t().exam.correctAnswer}</Text>
-                <Text testID="random-feedback-answer" style={[styles.missedAnswer, { color: colors.success }]}>
-                  {q.review.answer}
-                </Text>
+                <View
+                  testID={ok ? 'random-feedback-green' : undefined}
+                  style={ok ? [styles.greenMark, { backgroundColor: colors.successFill, borderColor: g.ink }] : undefined}
+                >
+                  <Text
+                    testID="random-feedback-answer"
+                    style={[styles.missedAnswer, { color: ok ? bestOn(colors.successFill, [ON_FILL, colors.onTint]) : colors.success }]}
+                  >
+                    {q.review.answer}
+                  </Text>
+                </View>
               </>
             )}
             {q.review.why ? (
@@ -325,6 +361,16 @@ export default function RandomRoundScreen() {
   }
 
   const checkSteps = run.steps.filter((st) => st.phase === 'check');
+  const rightOverlay =
+    rightMark > 0 ? (
+      // a zero-height anchor under the progress bar: the badge lies over the top of the next question, centered,
+      // and never covers the ✕ or the counter
+      <View pointerEvents="none" style={styles.rightMarkAnchor}>
+        <View style={styles.rightMark}>
+          <ResultBadge testID="random-right-mark" correct align="center" label={s.correct} />
+        </View>
+      </View>
+    ) : null;
 
   // mixed round: the check result (weak topics), until the practice starts.
   if (isResultPause(run)) {
@@ -448,6 +494,7 @@ export default function RandomRoundScreen() {
     <KeyboardAvoidingView style={styles.flex} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       {header(phaseLabel(s, phase, progress.index + 1, progress.of))}
       <ProgressBar testID="random-progress" pct={pct} brutalStyle={styles.brutalProgress} trackStyle={styles.track} trackColor={colors.border} fillStyle={styles.fill} fillColor={colors.tint} />
+      {rightOverlay}
       {ladder && (
         <View style={styles.ladder}>
           {data.levels.map((lvl) => {
@@ -528,5 +575,8 @@ const styles = StyleSheet.create({
   missedQuestion: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
   missedLabel: { fontSize: fontSize.sm },
   missedAnswer: { fontSize: fontSize.md, fontWeight: fontWeight.semibold },
+  greenMark: { borderWidth: 2.5, borderRadius: radius.sm, paddingVertical: spacing.sm, paddingHorizontal: spacing.md },
+  rightMarkAnchor: { height: 0, zIndex: 10 },
+  rightMark: { position: 'absolute', top: spacing.sm, left: 0, right: 0, alignItems: 'center' },
   missedWhy: { fontSize: fontSize.sm },
 });

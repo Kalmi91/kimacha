@@ -115,6 +115,24 @@ describe('neural engines', () => {
     expect(engine.stopPcmPlayer).toHaveBeenCalled();
   });
 
+  it('FB544/545: a Piper chunk is cleaned (starts and ends on zero), a Kokoro chunk is written as it is', async () => {
+    const piper = fakeEngine();
+    mockCreate.mockImplementation(async () => piper);
+    await loadNeuralVoice(PIPER_VOICES.es[0], 'es', '/p');
+    await speakNeural('hola', 'es', PIPER_VOICES.es[0]);
+    const written: number[] = piper.writePcmChunk.mock.calls[0][0];
+    expect(written).toHaveLength(3);
+    expect(Math.abs(written[0])).toBe(0);
+    expect(Math.abs(written[2])).toBe(0);
+    await releaseNeural();
+
+    const kokoro = fakeEngine();
+    mockCreate.mockImplementation(async () => kokoro);
+    await loadNeuralVoice(KOKORO_VOICES.es[0], 'es', '/k');
+    await speakNeural('hola', 'es', KOKORO_VOICES.es[0]);
+    expect(kokoro.writePcmChunk).toHaveBeenCalledWith([0.1, -0.5, 0.25]);
+  });
+
   it('a voice that is not loaded rejects, so the caller can use the next level', async () => {
     await expect(speakNeural('hola', 'es', PIPER_VOICES.es[0])).rejects.toThrow('not ready');
   });

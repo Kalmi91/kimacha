@@ -22,10 +22,11 @@ jest.mock('../packAudio', () => ({
 }));
 
 import * as Speech from 'expo-speech';
-import { speak, speakSequence, stop, resetVoiceCache, loadVoices, missingVoiceLanguages } from '@/lib/speech';
+import { speak, speakSequence, speakerGenderFor, stop, resetVoiceCache, loadVoices, missingVoiceLanguages } from '@/lib/speech';
 import * as models from '../neuralModels';
 import * as engine from '../neuralTts';
 import * as pack from '../packAudio';
+import { voiceFor } from '../neuralVoices';
 
 const speech = Speech as jest.Mocked<typeof Speech>;
 const packFile = models.neuralPackFile as jest.Mock;
@@ -178,5 +179,98 @@ describe('speakSequence(): the levels per segment', () => {
     speakSequence([{ text: 'Hola', locale: 'es-MX' }], onEnd, onStopped);
     speakNeural.mock.calls[speakNeural.mock.calls.length - 1][3].onStopped();
     expect(onStopped).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('speakSequence(): one speaker per language (FB543)', () => {
+  const WORD = 'el perro'; // hash even: the woman (ef_dora / claude)
+  // sentences of the other sex than the word, found through the same voice table the app uses
+  const pick = (lang: 'es' | 'en' | 'hu', from: string, otherSex: boolean, candidates: string[]) => {
+    const gender = voiceFor(lang, 'kokoro', from).gender;
+    const found = candidates.find(c => (voiceFor(lang, 'kokoro', c).gender !== gender) === otherSex);
+    if (!found) throw new Error('no candidate');
+    return found;
+  };
+  const ES_SENTENCES = ['El perro duerme.', 'Mi perro es grande.', 'Quiero un perro.', 'El perro corre en el parque.', 'Tengo un perro negro.', 'Ese perro ladra mucho.'];
+
+  it('the sentence after the word gets the sex of the word voice, not its own hash voice', () => {
+    engineFor.mockReturnValue('piper');
+    const sentence = pick('es', WORD, true, ES_SENTENCES);
+    expect(voiceFor('es', 'kokoro', sentence).gender).not.toBe(voiceFor('es', 'kokoro', WORD).gender);
+    speakSequence([{ text: WORD, locale: 'es-MX' }, { text: sentence, locale: 'es-MX' }]);
+    const wordVoice = speakNeural.mock.calls[0][2];
+    speakNeural.mock.calls[0][3].onDone();
+    expect(speakNeural).toHaveBeenCalledTimes(2);
+    expect(speakNeural.mock.calls[1][0]).toBe(sentence);
+    expect(speakNeural.mock.calls[1][2].id).toBe(wordVoice.id);
+  });
+
+  it('Kokoro and Piper keep the same speaker: the engine in use does not decide the sex', () => {
+    const sentence = pick('es', WORD, true, ES_SENTENCES);
+    for (const kind of ['kokoro', 'piper']) {
+      speakNeural.mockClear();
+      engineFor.mockReturnValue(kind);
+      speakSequence([{ text: WORD, locale: 'es-MX' }, { text: sentence, locale: 'es-MX' }]);
+      speakNeural.mock.calls[0][3].onDone();
+      expect(speakNeural.mock.calls[1][2].gender).toBe(speakNeural.mock.calls[0][2].gender);
+    }
+  });
+
+  it("the example sentence's own speaker button keeps the word's speaker (speak + speakerGenderFor)", () => {
+    engineFor.mockReturnValue('piper');
+    const sentence = pick('es', WORD, true, ES_SENTENCES);
+    speak(sentence, 'es-MX', { gender: speakerGenderFor(WORD, 'es-MX') });
+    expect(speakNeural.mock.calls[0][0]).toBe(sentence);
+    expect(speakNeural.mock.calls[0][2].gender).toBe(voiceFor('es', 'kokoro', WORD).gender);
+  });
+
+  it('a segment with its own gender keeps it (the practice exam speakers)', () => {
+    engineFor.mockReturnValue('piper');
+    const sentence = pick('es', WORD, true, ES_SENTENCES);
+    const own = voiceFor('es', 'kokoro', sentence).gender;
+    speakSequence([{ text: WORD, locale: 'es-MX' }, { text: sentence, locale: 'es-MX', gender: own }]);
+    speakNeural.mock.calls[0][3].onDone();
+    expect(speakNeural.mock.calls[1][2].gender).toBe(own);
+  });
+
+  it('each language has its own speaker: the English segments follow the first English one', () => {
+    engineFor.mockReturnValue('piper');
+    const EN = ['The dog sleeps.', 'My dog is big.', 'I want a dog.', 'The dog runs in the park.', 'I have a black dog.', 'That dog barks a lot.'];
+    const second = pick('en', EN[0], true, EN.slice(1));
+    speakSequence([{ text: WORD, locale: 'es-MX' }, { text: EN[0], locale: 'en-US' }, { text: second, locale: 'en-US' }]);
+    speakNeural.mock.calls[0][3].onDone();
+    speakNeural.mock.calls[1][3].onDone();
+    expect(speakNeural).toHaveBeenCalledTimes(3);
+    expect(speakNeural.mock.calls[2][2].id).toBe(speakNeural.mock.calls[1][2].id);
+  });
+
+  it('a stop() ends the whole chain: the sentences after the one that was cut never start', () => {
+    engineFor.mockReturnValue('piper');
+    speakSequence([{ text: ES_SENTENCES[0], locale: 'es-MX' }, { text: ES_SENTENCES[1], locale: 'es-MX' }, { text: ES_SENTENCES[2], locale: 'es-MX' }]);
+    speakNeural.mock.calls[0][3].onDone();
+    expect(speakNeural).toHaveBeenCalledTimes(2);
+    stop();
+    speakNeural.mock.calls[1][3].onDone(); // a late end event of the cut sentence
+    expect(speakNeural).toHaveBeenCalledTimes(2);
+  });
+
+  it('Hungarian follows the same rule', () => {
+    engineFor.mockReturnValue('piper');
+    const HU = ['A kutya alszik.', 'A kutyám nagy.', 'Kutyát szeretnék.', 'A kutya a parkban fut.', 'Van egy fekete kutyám.', 'Az a kutya sokat ugat.'];
+    const second = pick('hu', HU[0], true, HU.slice(1));
+    speakSequence([{ text: HU[0], locale: 'hu-HU' }, { text: second, locale: 'hu-HU' }]);
+    speakNeural.mock.calls[0][3].onDone();
+    expect(speakNeural.mock.calls[1][2].id).toBe(speakNeural.mock.calls[0][2].id);
+  });
+
+  it('the example of the other hash voice is not played from its pack recording', () => {
+    packFile.mockReturnValue('/files/tts/pack/es/x.mp3');
+    engineFor.mockReturnValue('piper');
+    const sentence = pick('es', WORD, true, ES_SENTENCES);
+    speakSequence([{ text: WORD, locale: 'es-MX' }, { text: sentence, locale: 'es-MX' }]);
+    expect(playPack).toHaveBeenCalledTimes(1); // the word, its own voice
+    playPack.mock.calls[0][1].onDone();
+    expect(playPack).toHaveBeenCalledTimes(1); // the sentence recording is of the other sex: the engine speaks it
+    expect(speakNeural).toHaveBeenCalledWith(sentence, 'es', expect.anything(), expect.anything());
   });
 });

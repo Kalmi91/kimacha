@@ -13,6 +13,7 @@
 import { Platform } from 'react-native';
 import type { StreamingTtsEngine, TtsStreamController } from 'react-native-sherpa-onnx/tts';
 import { KOKORO_LANG_TAG, voicePair, type NeuralEngine, type NeuralLang, type NeuralVoice } from './neuralVoices';
+import { cleanPcm } from './pcmClean';
 
 export interface NeuralSpeakOptions {
   /** Speech speed multiplier of the engine (1 = normal). */
@@ -282,12 +283,14 @@ export async function speakNeural(
           onChunk: chunk => {
             if (run.finished) return;
             if (firstChunkMs < 0) firstChunkMs = now() - t0;
-            samplesTotal += chunk.samples.length;
-            for (let i = 0; i < chunk.samples.length; i += 1) {
-              const a = Math.abs(chunk.samples[i]);
+            // FB544/545: the Piper voices hiss in the pauses and click at the edges; Kokoro is clean
+            const samples = voice.engine === 'piper' ? Array.from(cleanPcm(Float32Array.from(chunk.samples), sampleRate)) : chunk.samples;
+            samplesTotal += samples.length;
+            for (let i = 0; i < samples.length; i += 1) {
+              const a = Math.abs(samples[i]);
               if (a > peak) peak = a;
             }
-            writeChain = writeChain.then(() => (run.finished ? undefined : engine.writePcmChunk(chunk.samples)));
+            writeChain = writeChain.then(() => (run.finished ? undefined : engine.writePcmChunk(samples)));
           },
           onEnd: event => {
             endNative(); // the native generation is over, cancelled or not

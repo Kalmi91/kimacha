@@ -10,6 +10,8 @@ jest.mock('expo-speech', () => ({
   getAvailableVoicesAsync: jest.fn(async () => []),
 }));
 jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
+// the chime is a sound: not in jest. The mock ends it at once, so what follows it (the sentence) runs.
+jest.mock('@/lib/chime', () => ({ playChime: jest.fn((done?: () => void) => done?.()) }));
 const mockBack = jest.fn();
 const mockPush = jest.fn();
 jest.mock('expo-router', () => ({
@@ -53,6 +55,8 @@ jest.mock('@/lib/grammar/syllabus', () => {
 import { fireEvent, render, screen } from '@testing-library/react-native';
 
 import { getDb } from '@/lib/database.web';
+import { playChime } from '@/lib/chime';
+import { speak } from '@/lib/speech';
 import { lessonFor } from '@/lib/grammar/syllabus';
 import { buildLessonTest, type LessonTestQuestion } from '@/lib/grammar/lessonTest';
 import {
@@ -146,6 +150,62 @@ describe.each(['brand', 'classic'] as const)('random grammar round (%s palette)'
     await answer(true);
     expect(text('random-counter')).toBe('Full check 2/20');
     expect(screen.queryByTestId('random-full-intro')).toBeNull();
+  });
+
+  describe('FB549: the sentence, the chime and the green mark', () => {
+    const mockChime = playChime as jest.Mock;
+    const mockSpeak = speak as jest.Mock;
+
+    it('a right answer chimes, then reads the right sentence aloud, and a green badge marks it', async () => {
+      await open();
+      const { q } = onScreen();
+      expect(q.say).toBeTruthy();
+      await answer(true);
+      expect(mockChime).toHaveBeenCalledTimes(1);
+      expect(mockSpeak).toHaveBeenCalledTimes(1);
+      expect(mockSpeak).toHaveBeenCalledWith(q.say, 'es-MX');
+      expect(mockChime.mock.invocationCallOrder[0]).toBeLessThan(mockSpeak.mock.invocationCallOrder[0]);
+      expect(screen.getByTestId('random-right-mark')).toHaveTextContent(/Correct/);
+    });
+
+    it('the sentence waits for the end of the chime', async () => {
+      mockChime.mockImplementationOnce(() => {}); // a chime that is still playing
+      await open();
+      const { q } = onScreen();
+      await answer(true);
+      expect(mockSpeak).not.toHaveBeenCalled();
+      mockChime.mock.calls[0][0]();
+      expect(mockSpeak).toHaveBeenCalledWith(q.say, 'es-MX');
+    });
+
+    it('a wrong answer does not chime, the right sentence is still read aloud, nothing is marked green', async () => {
+      await open();
+      const { q } = onScreen();
+      await answer(false);
+      expect(mockChime).not.toHaveBeenCalled();
+      expect(mockSpeak).toHaveBeenCalledWith(q.say, 'es-MX');
+      expect(screen.queryByTestId('random-right-mark')).toBeNull();
+    });
+
+    it('practice: the explanation card of a right answer is green, a wrong one is not; both read the sentence', async () => {
+      await mixedNext();
+      await open();
+      for (let i = 0; i < 10; i++) await answer(i >= 4);
+      await press('random-practice-these');
+      mockChime.mockClear();
+      mockSpeak.mockClear();
+      const right = await answer(true, true);
+      expect(screen.getByTestId('random-feedback-green')).toBeTruthy();
+      expect(text('random-feedback-answer')).toBe(right.q.review.answer);
+      expect(mockChime).toHaveBeenCalledTimes(1);
+      expect(mockSpeak).toHaveBeenLastCalledWith(right.q.say, 'es-MX');
+      expect(screen.queryByTestId('random-right-mark')).toBeNull(); // the card is the mark here
+      await press('random-next');
+      const wrong = await answer(false, true);
+      expect(screen.queryByTestId('random-feedback-green')).toBeNull();
+      expect(mockChime).toHaveBeenCalledTimes(1);
+      expect(mockSpeak).toHaveBeenLastCalledWith(wrong.q.say, 'es-MX');
+    });
   });
 
   it('a full round to the end: topics with their percent or the answers so far, then another round is a mixed one', async () => {

@@ -147,7 +147,8 @@ function isHeadlessWeb(): boolean {
   return /HeadlessChrome/.test(String(ua ?? ''));
 }
 
-export function speak(text: string, locale: string, options: Speech.SpeechOptions = {}): void {
+// `gender` picks the male / female voice of the better voice (speakerGenderFor gives the one of another text).
+export function speak(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender } = {}): void {
   if (!text) return;
   if (isHeadlessWeb()) {
     setTimeout(() => options.onDone?.(), 0);
@@ -157,6 +158,7 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
   // word + example chain in flight (speakSequence) stops there too; the phone's own queue (QUEUE_ADD) only
   // kept the phone from talking over itself, not over the word pack or the better voice.
   stop();
+  const { gender, ...phoneOptions } = options;
   const viaPhone = () => {
     if (!hasVoiceFor(locale)) {
       missing.add(baseLanguage(locale));
@@ -164,13 +166,21 @@ export function speak(text: string, locale: string, options: Speech.SpeechOption
     }
     const voice = voiceIdFor(locale);
     Speech.speak(padForAndroid(text), {
-      ...options,
+      ...phoneOptions,
       language: speechTag(locale),
       ...(voice ? { voice } : {}),
     });
   };
-  if (speakBetter(text, locale, { rate: options.rate, onDone: options.onDone, onStopped: options.onStopped }, viaPhone)) return;
+  if (speakBetter(text, locale, { rate: options.rate, gender, onDone: options.onDone, onStopped: options.onStopped }, viaPhone)) return;
   viaPhone();
+}
+
+// FB543: the sex of the voice that speaks `text` (the word pack and both engines pick it the same way), so a
+// learner's tap on the example sentence's own speaker keeps the word's speaker. Undefined for a language the
+// better voice does not cover.
+export function speakerGenderFor(text: string, locale: string): VoiceGender | undefined {
+  const lang = neuralLangFor(locale);
+  return lang ? voiceFor(lang, 'kokoro', text).gender : undefined;
 }
 
 function neuralLangFor(locale: string): NeuralLang | null {
@@ -294,6 +304,24 @@ export interface SpeechRunSegment {
   gender?: VoiceGender;
 }
 
+// FB543: one speaker per language in a sequence. A segment without a gender of its own gets the sex of the
+// voice that speaks the first segment of its language, so a word and its example sentence do not change
+// voice (the Kokoro and Piper pairs are both ordered f, m: the engine that is ready does not change the
+// speaker). An explicit gender (the practice exam's speakers) stays.
+function withSharedSpeaker(segments: SpeechRunSegment[]): SpeechRunSegment[] {
+  const first = new Map<NeuralLang, 'f' | 'm'>();
+  return segments.map((seg) => {
+    const lang = neuralLangFor(seg.locale);
+    if (!lang) return seg;
+    let gender = first.get(lang);
+    if (!gender) {
+      gender = voiceFor(lang, 'kokoro', seg.text, seg.gender).gender;
+      first.set(lang, gender);
+    }
+    return seg.gender ? seg : { ...seg, gender };
+  });
+}
+
 // `onStopped` fires when a segment in flight is cut off by a stop() or by the next speech (not at the natural end).
 export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, onStopped?: () => void): void {
   Speech.stop();
@@ -301,7 +329,7 @@ export function speakSequence(segments: SpeechRunSegment[], onEnd?: () => void, 
   stopPack();
   speakingRun += 1;
   const run = speakingRun;
-  const queue = segments.filter((seg) => seg.text.trim());
+  const queue = withSharedSpeaker(segments.filter((seg) => seg.text.trim()));
 
   const next = (index: number) => {
     if (run !== speakingRun) return; // another speech started in the meantime
