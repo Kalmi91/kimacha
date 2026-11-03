@@ -8,7 +8,8 @@ import {
   reorderForReturn,
   mixNewCards,
   needsNewTopUp,
-  autoNewTopUp,
+  newTopUp,
+  shouldAskMoreNew,
   nextPcicNewBonus,
   pcicNewBudget,
   pcicSessionNewLimit,
@@ -539,46 +540,59 @@ describe('mixNewCards (FB535: one new word at a time among the reviews)', () => 
   });
 });
 
-describe('needsNewTopUp (FB535: +10 by itself while reviews are left)', () => {
-  it('reviews left and no new word in the queue: top up', () => {
+describe('needsNewTopUp (FB535: the budget ran out while reviews are left)', () => {
+  it('reviews left and no new word in the queue: true', () => {
     expect(needsNewTopUp([reviewCard()], TODAY)).toBe(true);
   });
 
-  it('a new word still waiting, or no reviews left (only today\'s missed new words): no top up', () => {
+  it('a new word still waiting, or no reviews left (only today\'s missed new words): false', () => {
     expect(needsNewTopUp([reviewCard(), sm2NewCard('n0')], TODAY)).toBe(false);
     expect(needsNewTopUp([sm2Review(sm2NewCard('m0'), 'again', TODAY)], TODAY)).toBe(false);
     expect(needsNewTopUp([], TODAY)).toBe(false);
   });
 });
 
-describe('autoNewTopUp (FB535)', () => {
-  const order = Array.from({ length: 15 }, (_, i) => `n${i}`);
+describe('newTopUp (FB542: the "+N" answer to the more-new-words question)', () => {
+  const order = Array.from({ length: 40 }, (_, i) => `n${i}`);
   const budget = { limit: 10, bonus: 0, introducedAllLevels: 10, introducedThisLevel: 10 };
   const learned = order.slice(0, 10).map((id) => sm2Review(sm2NewCard(id), 'good', TODAY));
 
-  it('budget used up with reviews left: the next 10 new words and the "+10" bonus', () => {
-    const top = autoNewTopUp([reviewCard()], [...learned, reviewCard()], order, TODAY, budget);
+  it('budget used up with reviews left: the next 10 new words and the "+10" bonus by default', () => {
+    const top = newTopUp([reviewCard()], [...learned, reviewCard()], order.slice(0, 15), TODAY, budget);
     expect(top?.bonus).toBe(10);
     expect(top?.fresh.map((c) => c.itemId)).toEqual(['n10', 'n11', 'n12', 'n13', 'n14']);
   });
 
+  it.each([5, 10, 15])('step %i: that many new words, the bonus is that step', (step) => {
+    const top = newTopUp([reviewCard()], [...learned, reviewCard()], order, TODAY, budget, step);
+    expect(top?.bonus).toBe(step);
+    expect(top?.fresh).toHaveLength(step);
+  });
+
   it('no new word left on the level, or no reviews left: nothing', () => {
-    expect(autoNewTopUp([reviewCard()], [...learned, reviewCard()], order.slice(0, 10), TODAY, budget)).toBeNull();
-    expect(autoNewTopUp([], learned, order, TODAY, budget)).toBeNull();
+    expect(newTopUp([reviewCard()], [...learned, reviewCard()], order.slice(0, 10), TODAY, budget)).toBeNull();
+    expect(newTopUp([], learned, order, TODAY, budget)).toBeNull();
   });
 });
 
-import { dayBatchDone } from '../pcicSession';
+describe('shouldAskMoreNew (FB542: ask instead of adding +10 by itself)', () => {
+  const order = Array.from({ length: 40 }, (_, i) => `n${i}`);
+  const budget = { limit: 10, bonus: 0, introducedAllLevels: 10, introducedThisLevel: 10 };
+  const learned = order.slice(0, 10).map((id) => sm2Review(sm2NewCard(id), 'good', TODAY));
+  const cards = [...learned, reviewCard()];
 
-// FB541: the level picker paints the active row green once today's batch is done.
-describe('dayBatchDone', () => {
-  it('done once the day introductions reach the daily limit, not before', () => {
-    expect(dayBatchDone(9, 10)).toBe(false);
-    expect(dayBatchDone(10, 10)).toBe(true);
-    expect(dayBatchDone(23, 10)).toBe(true);
+  it('budget used up, reviews left, no new card in the queue, not declined today: ask', () => {
+    expect(shouldAskMoreNew([reviewCard()], cards, order, TODAY, budget, '')).toBe(true);
   });
-  it('a zero limit is never done', () => {
-    expect(dayBatchDone(0, 0)).toBe(false);
-    expect(dayBatchDone(5, 0)).toBe(false);
+
+  it('declined today: do not ask; declined on an earlier day: ask again', () => {
+    expect(shouldAskMoreNew([reviewCard()], cards, order, TODAY, budget, TODAY)).toBe(false);
+    expect(shouldAskMoreNew([reviewCard()], cards, order, TODAY, budget, addDays(TODAY, -1))).toBe(true);
+  });
+
+  it('a new card still in the queue, no reviews left, or no new word left on the level: do not ask', () => {
+    expect(shouldAskMoreNew([reviewCard(), sm2NewCard('n10')], cards, order, TODAY, budget, '')).toBe(false);
+    expect(shouldAskMoreNew([], learned, order, TODAY, budget, '')).toBe(false);
+    expect(shouldAskMoreNew([reviewCard()], cards, order.slice(0, 10), TODAY, budget, '')).toBe(false);
   });
 });

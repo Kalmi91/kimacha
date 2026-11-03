@@ -24,6 +24,7 @@ import DockedAction from '@/components/learn/DockedAction';
 import { dockScrollInsets } from '@/components/learn/dockScrollInsets';
 import PcicRevealedAnswer from '@/components/learn/PcicRevealedAnswer';
 import MistakesEntry from '@/components/learn/MistakesEntry';
+import MoreNewAsk from '@/components/learn/MoreNewAsk';
 import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
@@ -48,9 +49,11 @@ export default function PcicCardView({
   xpToday,
   lastGraded,
   handleUndo,
-  dayDone,
   sentenceCard,
   setSentenceCard,
+  askMoreNew,
+  handleAskMoreNew,
+  handleDeclineMoreNew,
   levelSheetOpen,
   allLevelCards,
   target,
@@ -177,7 +180,6 @@ export default function PcicCardView({
           target={target}
           exam={examRow}
           onPlacement={openPlacement}
-          dayDone={dayDone}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -222,6 +224,30 @@ export default function PcicCardView({
     );
   }
 
+  // FB542: today's new words are done but reviews are left: the question replaces the card until it is answered.
+  // The header (with the 💬 button) stays.
+  if (askMoreNew && current && currentItem) {
+    return (
+      <View style={[styles.container, styles.doneContainer, { backgroundColor: colors.background }]}>
+        <SkinBackdrop />
+        {headerRow}
+        <LevelPickerSheet
+          visible={levelSheetOpen}
+          active={level}
+          cards={allLevelCards}
+          colors={colors}
+          title={s.pcic.chooseLevel}
+          target={target}
+          exam={examRow}
+          onPlacement={openPlacement}
+          onSelect={handleSelectLevel}
+          onClose={() => setLevelSheetOpen(false)}
+        />
+        <MoreNewAsk colors={colors} onPick={handleAskMoreNew} onDecline={handleDeclineMoreNew} />
+      </View>
+    );
+  }
+
   if (!current || !currentItem) {
     // How many PCIC items are already introduced (not in 'new' state) in the whole
     // list, for the done screen's own progress bar.
@@ -240,7 +266,6 @@ export default function PcicCardView({
           target={target}
           exam={examRow}
           onPlacement={openPlacement}
-          dayDone={dayDone}
           onSelect={handleSelectLevel}
           onClose={() => setLevelSheetOpen(false)}
         />
@@ -358,7 +383,6 @@ export default function PcicCardView({
         target={target}
         exam={examRow}
         onPlacement={openPlacement}
-        dayDone={dayDone}
         onSelect={handleSelectLevel}
         onClose={() => setLevelSheetOpen(false)}
       />

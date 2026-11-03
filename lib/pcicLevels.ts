@@ -25,3 +25,11 @@ export function levelProgress(cards: Sm2Card[], level: PcicLevel, total: number)
   const introduced = cardsForLevel(cards, level).filter((c) => c.state !== 'new').length;
   return { introduced, total };
 }
+
+// FB547: the done look (green row + check) of the level picker is decided per level: the level is started (at least
+// one card that is not 'new') and nothing of it is due (a card missed earlier waits in today's queue with
+// `due <= today`, so it counts as due). A never started level is not done.
+export function levelDone(cards: Sm2Card[], level: PcicLevel, today: string): boolean {
+  const started = cardsForLevel(cards, level).filter((c) => c.state !== 'new');
+  return started.length > 0 && !started.some((c) => c.due <= today);
+}

@@ -110,6 +110,9 @@ export default {
     moreNew: (n: number) => `+${n} new words`,
     moreNewShort: (n: number) => `+${n}`,
     moreNewHint: 'More new words today?',
+    // FB542: asked when today's new words are done but reviews are left.
+    moreNewAsk: "Today's new words are done, but reviews are left. Do you want more new words?",
+    moreNewNo: 'No, only reviews',
     tileAnswered: 'Answered',
     tileNew: 'New',
     tileAgain: 'Again',
