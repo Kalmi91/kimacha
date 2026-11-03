@@ -30,7 +30,7 @@
     ],
     "bridges": [
       { "after": 0, "es": "Tenemos dinero para pan y fruta.", "en": "We have money for bread and fruit.", "hu": "Van pénzünk kenyérre és gyümölcsre." },
-      { "after": 2, "es": "Por eso mi padre quiere comprar fruta.", "en": "That is why my father wants to buy fruit.", "hu": "Ezért apám gyümölcsöt akar venni." },
+      { "after": 2, "es": "Pero tenemos dinero para el pan.", "en": "But we have money for the bread.", "hu": "De van pénzünk kenyérre." },
       { "after": 3, "es": "La mujer da pan y fruta a mi padre.", "en": "The woman gives bread and fruit to my father.", "hu": "A nő kenyeret és gyümölcsöt ad apámnak." }
     ],
     "false_en": ["The fruit is expensive.", "I am at the store with my mother."],
@@ -49,7 +49,7 @@
     ],
     "bridges": [
       { "after": 0, "es": "Él tiene un libro.", "en": "He has a book.", "hu": "Van egy könyve." },
-      { "after": 2, "es": "Pero él no es feliz.", "en": "But he is not happy.", "hu": "De nem boldog." },
+      { "after": 2, "es": "Él no está feliz.", "en": "He is not happy.", "hu": "Nem boldog." },
       { "after": 3, "es": "Él lee la palabra con su amigo.", "en": "He reads the word with his friend.", "hu": "A barátjával olvassa a szót." }
     ],
     "false_en": ["He reads a book in English.", "His friend does not help him."],
@@ -86,7 +86,7 @@
     ],
     "bridges": [
       { "after": 0, "es": "Hoy él trabaja mucho.", "en": "Today he works a lot.", "hu": "Ma sokat dolgozik." },
-      { "after": 1, "es": "Mi madre está en casa con la familia.", "en": "My mother is at home with the family.", "hu": "Anyám otthon van a családdal." },
+      { "after": 1, "es": "Mi padre está en casa.", "en": "My father is at home.", "hu": "Apám otthon van." },
       { "after": 2, "es": "Él no está bien.", "en": "He is not well.", "hu": "Nem érzi jól magát." }
     ],
     "false_en": ["My father works in the house.", "My father does not talk with his son."],
@@ -284,7 +284,7 @@
       { "es": "Ella da diez pesos al hombre.", "en": "She gives ten pesos to the man.", "hu": "Ő tíz pesót ad a férfinak.", "de": "Sie gibt dem Mann zehn Pesos.", "word": "o890", "form": "pesos" }
     ],
     "bridges": [
-      { "after": 1, "es": "Mi madre está con el hombre.", "en": "My mother is with the man.", "hu": "Anyám a férfival van." },
+      { "after": 1, "es": "El hombre vende la fruta a mi madre.", "en": "The man sells the fruit to my mother.", "hu": "A férfi eladja a gyümölcsöt anyámnak." },
       { "after": 2, "es": "Por eso mi madre compra la fruta.", "en": "That is why my mother buys the fruit.", "hu": "Ezért anyám megveszi a gyümölcsöt." }
     ],
     "false_en": ["My mother is at the market tomorrow.", "She gives fifty pesos to the man."],
