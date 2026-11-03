@@ -3,6 +3,11 @@
 // checked on screen: German words with their article, read aloud in de-DE, typing with ss / ae / ue, ß and ä as single tiles.
 
 jest.mock('@/data/words/de/a1.json', () => require('@/test-utils/germanDeck').germanDeckA1());
+// the fixture is the whole German deck: the generated higher levels stay out of the test
+jest.mock('@/data/words/de/a2.json', () => []);
+jest.mock('@/data/words/de/b1.json', () => []);
+jest.mock('@/data/words/de/b2.json', () => []);
+jest.mock('@/data/words/de/c1.json', () => []);
 jest.mock('@/lib/speech', () => require('@/test-utils/mocks').speechMock());
 jest.mock('expo-router', () => ({
   useFocusEffect: (cb: () => void) => {

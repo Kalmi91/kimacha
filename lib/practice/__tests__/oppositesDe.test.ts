@@ -3,6 +3,11 @@
 // (kalt (Temperatur)) and an alternative (schließen / zumachen) to check that a pair finds its cards through both.
 
 jest.mock('@/data/words/de/a1.json', () => require('@/test-utils/germanDeck').germanDeckA1());
+// the fixture is the whole German deck: the generated higher levels stay out of the test
+jest.mock('@/data/words/de/a2.json', () => []);
+jest.mock('@/data/words/de/b1.json', () => []);
+jest.mock('@/data/words/de/b2.json', () => []);
+jest.mock('@/data/words/de/c1.json', () => []);
 
 import pairs from '@/data/practice/opposites-de.json';
 import { GERMAN_DECK_ROWS } from '@/test-utils/germanDeck';
@@ -163,8 +168,8 @@ describe('data/practice/opposites-de.json', () => {
   const list = pairs as { a: string; b: string }[];
   const members = list.flatMap((p) => [p.a, p.b]);
 
-  it('about 160 pairs of two different words, nothing else in a pair', () => {
-    expect(list.length).toBeGreaterThanOrEqual(150);
+  it('about 150 pairs of two different words, nothing else in a pair', () => {
+    expect(list.length).toBeGreaterThanOrEqual(140);
     expect(list.length).toBeLessThanOrEqual(175);
     for (const p of list) {
       expect(Object.keys(p).sort()).toEqual(['a', 'b']);

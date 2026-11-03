@@ -306,10 +306,11 @@ describe('the German family lunch (target de)', () => {
     ]));
   });
 
-  it('the Words step lists the words none of whose forms is known: the articles and und are free, a headword has its article', () => {
+  it('the Words step lists the words none of whose forms is known: closed-class words are free, a headword has its article', () => {
     const none = unknownWords(familie, NOTHING_DE).map((w) => headwordOf(familie, w));
-    expect(none).toHaveLength(familie.words.length - 2);
-    for (const free of ['ein', 'und']) expect(none).not.toContain(free);
+    // articles, pronouns, possessives, kein, und, in, wo, wie are closed-class words a learner never needs a card for
+    for (const free of ['ein', 'und', 'ich', 'du', 'er', 'sie', 'mein', 'dein', 'kein', 'in', 'wo', 'wie']) expect(none).not.toContain(free);
+    for (const content of ['haben', 'ja', 'nein', 'der Bruder', 'die Schwester', 'zwei', 'wohnen', 'sein', 'alt', 'das Jahr', 'dreißig']) expect(none).toContain(content);
     expect(none).toContain('der Bruder');
     expect(none).toContain('die Eltern (Pl.)');
     const some = unknownWords(familie, knownTokens('de', { learned: ['der Bruder', 'ja', 'brüder'] })).map((w) => headwordOf(familie, w));

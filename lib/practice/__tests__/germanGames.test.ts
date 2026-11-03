@@ -249,11 +249,12 @@ describe('German (target) in detail', () => {
     expect(gapTaskFor({ ...byDe('der Tag'), exampleDe: 'Der Tagesplan ist heiß.' }, 'de')).toBeNull();
   });
 
-  it('the known words of a German learner: the articles are free, a noun needs its own card, nothing is inflected', () => {
+  it('the known words of a German learner: the articles are free, a noun needs its own card, its plural comes with it', () => {
     const known = knownTokens('de', { learned: learnedEntries(CARDS, 'de', findItem) });
     for (const free of ['der', 'die', 'das', 'den', 'dem', 'des', 'ein', 'eine', 'einen', 'und', 'nicht']) expect(known.has(free)).toBe(true);
     for (const token of ['hund', 'katze', 'auto', 'mädchen', 'straße', 'leute', 'schließen', 'zumachen', 'heiß']) expect(known.has(token)).toBe(true);
-    expect(known.has('hunde')).toBe(false);
+    // a noun's plural comes from its card (lib/deForms.ts, data/de/plurals.json): Hunde is known with der Hund
+    expect(known.has('hunde')).toBe(true);
     expect(known.has('(pl.)')).toBe(false);
   });
 });

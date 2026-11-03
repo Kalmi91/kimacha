@@ -1,5 +1,7 @@
-// A small German deck for tests that must not depend on how far the generated deck (data/words/de) is. Use it as the A1 file:
+// A small German deck for tests that must not depend on how far the generated deck (data/words/de) is. Use it as the A1 file
+// and empty the generated higher levels:
 //   jest.mock('@/data/words/de/a1.json', () => require('@/test-utils/germanDeck').germanDeckA1());
+//   jest.mock('@/data/words/de/a2.json', () => []); (and b1, b2, c1)
 // The cards have the shape of data/words/de (scripts/build-de-deck.mjs): three genders, umlauts, ß, a bracketed gloss, an
 // alternative, a plural-only noun, and an example sentence of every word that contains the word itself. Most sentences are
 // "article noun ist adjective" in all four languages (es "es", en "is", hu none): whoever knows the nouns, the adjectives and
