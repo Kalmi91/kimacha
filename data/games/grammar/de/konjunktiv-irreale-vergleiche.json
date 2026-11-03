@@ -458,8 +458,8 @@
       ],
       "correct": 2,
       "why": {
-        "en": "The Konjunktiv II of kennen looks like the Präteritum and is rare, so speech uses würde plus infinitive: als ob sie mich nicht kennen würde.",
-        "es": "El Konjunktiv II de kennen se parece al Präteritum y es raro, por eso el habla usa würde más infinitivo: als ob sie mich nicht kennen würde."
+        "en": "The Konjunktiv II of kennen is kennte, which is rare and sounds old-fashioned, so speech uses würde plus infinitive: als ob sie mich nicht kennen würde.",
+        "es": "El Konjunktiv II de kennen es kennte, que es raro y suena anticuado, por eso el habla usa würde más infinitivo: als ob sie mich nicht kennen würde."
       },
       "wrong": {
         "kannte": {
@@ -848,7 +848,7 @@
     },
     {
       "id": "konjunktiv-irreale-vergleiche-c12",
-      "sentence": "Es heißt, er ___ krank. Aber er tut nur so.",
+      "sentence": "Es heißt, er ___ krank.",
       "options": [
         "wäre",
         "ist",
@@ -874,8 +874,8 @@
         "Man sagt, sie habe Geld."
       ],
       "tr": {
-        "en": "It is said that he is sick. But he is only pretending.",
-        "es": "Se dice que está enfermo. Pero solo está fingiendo."
+        "en": "It is said that he is sick.",
+        "es": "Se dice que está enfermo."
       }
     },
     {
