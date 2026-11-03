@@ -10,6 +10,7 @@ jest.mock('expo-speech', () => ({
 jest.mock('../neuralModels', () => ({
   startNeural: jest.fn(async () => {}),
   neuralPackFile: jest.fn(() => null),
+  neuralSentenceFile: jest.fn(() => null),
   neuralEngineFor: jest.fn(() => null),
 }));
 jest.mock('../neuralTts', () => ({
@@ -30,6 +31,7 @@ import { voiceFor } from '../neuralVoices';
 
 const speech = Speech as jest.Mocked<typeof Speech>;
 const packFile = models.neuralPackFile as jest.Mock;
+const sentenceFile = models.neuralSentenceFile as jest.Mock;
 const engineFor = models.neuralEngineFor as jest.Mock;
 const speakNeural = engine.speakNeural as jest.Mock;
 const playPack = pack.playPackFile as jest.Mock;
@@ -40,6 +42,7 @@ beforeEach(() => {
   jest.clearAllMocks();
   resetVoiceCache();
   packFile.mockReturnValue(null);
+  sentenceFile.mockReturnValue(null);
   engineFor.mockReturnValue(null);
   speakNeural.mockResolvedValue({ firstChunkMs: 1, generatedMs: 2, audioMs: 3, peak: 0.5 });
 });
@@ -272,5 +275,86 @@ describe('speakSequence(): one speaker per language (FB543)', () => {
     playPack.mock.calls[0][1].onDone();
     expect(playPack).toHaveBeenCalledTimes(1); // the sentence recording is of the other sex: the engine speaks it
     expect(speakNeural).toHaveBeenCalledWith(sentence, 'es', expect.anything(), expect.anything());
+  });
+});
+
+describe('speak(): the sentence pack (Audio round B)', () => {
+  const SENTENCE = 'El perro duerme en el sofá.';
+
+  it('a sentence of the pack plays its file after the word pack missed; the word pack is asked first', () => {
+    sentenceFile.mockReturnValue('/files/tts/sentences/es/f/abc.mp3');
+    engineFor.mockReturnValue('piper');
+    const onDone = jest.fn();
+    speak(SENTENCE, 'es-MX', { rate: 0.9, onDone });
+    expect(packFile).toHaveBeenCalledWith('es', SENTENCE);
+    expect(sentenceFile).toHaveBeenCalledWith('es', SENTENCE, undefined); // no gender: the pack uses the text's own hash gender
+    expect(playPack).toHaveBeenCalledWith('/files/tts/sentences/es/f/abc.mp3', expect.objectContaining({ rate: 0.9, onDone }));
+    expect(speakNeural).not.toHaveBeenCalled();
+    expect(speech.speak).not.toHaveBeenCalled();
+  });
+
+  it('the word pack wins: a card word never asks the sentence pack', () => {
+    packFile.mockReturnValue('/files/tts/pack/es/27956ac4.mp3');
+    sentenceFile.mockReturnValue('/files/tts/sentences/es/f/abc.mp3');
+    speak('el perro', 'es-MX');
+    expect(playPack).toHaveBeenCalledWith('/files/tts/pack/es/27956ac4.mp3', expect.anything());
+    expect(sentenceFile).not.toHaveBeenCalled();
+  });
+
+  it('the explicit gender goes to the lookup, and a word recording of the other sex is skipped for it', () => {
+    const ownGender = voiceFor('es', 'kokoro', SENTENCE).gender;
+    const other = ownGender === 'f' ? 'm' : 'f';
+    packFile.mockReturnValue('/files/tts/pack/es/x.mp3'); // a recording of the sentence's own voice
+    sentenceFile.mockReturnValue('/files/tts/sentences/es/other/y.mp3');
+    engineFor.mockReturnValue('piper');
+    speak(SENTENCE, 'es-MX', { gender: other });
+    expect(sentenceFile).toHaveBeenCalledWith('es', SENTENCE, other);
+    expect(playPack).toHaveBeenCalledWith('/files/tts/sentences/es/other/y.mp3', expect.anything());
+  });
+
+  it('a sentence that is not in the pack goes to the engine, as before', () => {
+    engineFor.mockReturnValue('piper');
+    speak(SENTENCE, 'es-MX');
+    expect(sentenceFile).toHaveBeenCalled();
+    expect(playPack).not.toHaveBeenCalled();
+    expect(speakNeural).toHaveBeenCalledWith(SENTENCE, 'es', expect.anything(), expect.anything());
+  });
+
+  it('a sentence-pack file that cannot be played falls to the engine, and an engine that fails to the phone', async () => {
+    sentenceFile.mockReturnValue('/files/tts/sentences/es/f/broken.mp3');
+    engineFor.mockReturnValue('piper');
+    speakNeural.mockRejectedValue(new Error('engine down'));
+    speak(SENTENCE, 'es-MX');
+    playPack.mock.calls[0][1].onFail();
+    expect(speakNeural).toHaveBeenCalledTimes(1);
+    expect(speakNeural).toHaveBeenCalledWith(SENTENCE, 'es', expect.anything(), expect.anything());
+    await flush();
+    expect(speech.speak).toHaveBeenCalledWith(SENTENCE, { language: 'es-MX' });
+  });
+
+  it('the sentence pack alone (no engine installed) still speaks; without both the phone speaks', () => {
+    sentenceFile.mockReturnValue('/files/tts/sentences/es/f/abc.mp3');
+    speak(SENTENCE, 'es-MX');
+    expect(playPack).toHaveBeenCalledTimes(1);
+    sentenceFile.mockReturnValue(null);
+    speak(SENTENCE, 'es-MX');
+    expect(speech.speak).toHaveBeenCalledWith(SENTENCE, { language: 'es-MX' });
+  });
+
+  it('a sequence looks each segment up with its speaker: the first segment decides, an explicit gender stays', () => {
+    sentenceFile.mockReturnValue('/files/tts/sentences/es/f/abc.mp3');
+    engineFor.mockReturnValue('piper');
+    const first = voiceFor('es', 'kokoro', 'la casa').gender;
+    const forced = first === 'f' ? 'm' : 'f';
+    speakSequence([
+      { text: 'la casa', locale: 'es-MX' },
+      { text: SENTENCE, locale: 'es-MX' },
+      { text: 'Otra oración.', locale: 'es-MX', gender: forced },
+    ]);
+    playPack.mock.calls[0][1].onDone();
+    playPack.mock.calls[1][1].onDone();
+    expect(sentenceFile).toHaveBeenNthCalledWith(1, 'es', 'la casa', first);
+    expect(sentenceFile).toHaveBeenNthCalledWith(2, 'es', SENTENCE, first);
+    expect(sentenceFile).toHaveBeenNthCalledWith(3, 'es', 'Otra oración.', forced);
   });
 });

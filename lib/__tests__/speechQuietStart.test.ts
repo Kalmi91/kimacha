@@ -10,6 +10,7 @@ jest.mock('expo-speech', () => ({
 jest.mock('../neuralModels', () => ({
   startNeural: jest.fn(async () => {}),
   neuralPackFile: jest.fn(() => null),
+  neuralSentenceFile: jest.fn(() => null),
   neuralEngineFor: jest.fn(() => null),
 }));
 jest.mock('../neuralTts', () => ({

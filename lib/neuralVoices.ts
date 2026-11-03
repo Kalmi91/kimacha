@@ -102,6 +102,15 @@ export const PACK_BYTES = 119608678;
 export const PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-pack-v1/kimacha-tts-pack-v1.tar.bz2';
 export const PACK_DIR = 'kimacha-tts-pack-v1';
 
+// The sentence pack (scripts/tts-pack.py --set sentences, PLAN-fb1102 "Audio round B"): a second release asset with a
+// Kokoro recording of the fixed sentences the screens speak, one per (speaker sex, sentence). Its index.json
+// is { version, engine, files: { es: { "<g>|<key>": "es/<g>/<hash>.mp3" }, en: { ... } } }, g = f | m, key = packKey(text).
+// An empty URL keeps today's behavior: the item is not required and nothing is downloaded.
+export const SENTENCES_KEY = 'sentences';
+export const SENTENCE_PACK_BYTES = 0; // filled after packing: the size of the uploaded asset
+export const SENTENCE_PACK_URL = 'https://github.com/Kalmi91/kimacha/releases/download/tts-sentences-v1/kimacha-tts-sentences-v1.tar.bz2';
+export const SENTENCE_PACK_DIR = 'kimacha-tts-sentences-v1';
+
 // espeak-ng voice the Kokoro engine speaks each language with. es-419 is Latin-American Spanish and is
 // in the espeak-ng data of the Kokoro archive (espeak-ng-data/lang/roa/es-419, checked 2026-11-02).
 export const KOKORO_LANG_TAG: Record<'es' | 'en', string> = { es: 'es-419', en: 'en-us' };
@@ -185,14 +194,20 @@ export function modelKeysFor(lang: NeuralLang, engine: NeuralEngine): string[] {
 
 // What the better voice needs on the phone: the word pack, the six Piper models (the default engine, and
 // Hungarian's only one), and the Kokoro model when a language chose Kokoro.
-export function requiredItems(engines: EngineChoice): string[] {
+// The sentence pack comes last (a late or failed download of it never delays the voice) and only with a URL.
+export function requiredItems(engines: EngineChoice, sentencePackUrl: string = SENTENCE_PACK_URL): string[] {
   const kokoro = engines.es === 'kokoro' || engines.en === 'kokoro';
-  return [PACK_KEY, ...PIPER_MODEL_KEYS, ...(kokoro ? ['kokoro'] : [])];
+  return [PACK_KEY, ...PIPER_MODEL_KEYS, ...(kokoro ? ['kokoro'] : []), ...(sentencePackUrl ? [SENTENCES_KEY] : [])];
 }
 
-// Bytes still to fetch for the items that are not installed yet (the pack included).
+// The size built in for an item key (the two packs and the models).
+export function itemBytes(key: string): number {
+  return key === PACK_KEY ? PACK_BYTES : key === SENTENCES_KEY ? SENTENCE_PACK_BYTES : NEURAL_MODELS[key]?.bytes ?? 0;
+}
+
+// Bytes still to fetch for the items that are not installed yet (the packs included).
 export function missingBytes(items: string[], installed: Record<string, boolean>): number {
-  return items.filter(key => !installed[key]).reduce((sum, key) => sum + (key === PACK_KEY ? PACK_BYTES : NEURAL_MODELS[key]?.bytes ?? 0), 0);
+  return items.filter(key => !installed[key]).reduce((sum, key) => sum + itemBytes(key), 0);
 }
 
 // The shape of the pack's index.json.
@@ -206,6 +221,15 @@ export interface PackIndex {
 export function packFileFor(index: PackIndex | null, lang: NeuralLang, text: string): string | null {
   if (!index || lang === 'hu') return null;
   return index.files[lang]?.[packKey(text)] ?? null;
+}
+
+// Relative path of the sentence pack's audio file for the text, or null. `gender` (f / m) is the speaker the
+// speech call carries (explicit, or the one the speakSequence shared-speaker rule gave it); without one, the
+// text's own hash gender (the sex of the voice voiceFor picks). hu is never in the pack.
+export function sentencePackFileFor(index: PackIndex | null, lang: NeuralLang, text: string, gender?: VoiceGender): string | null {
+  if (!index || lang === 'hu') return null;
+  const g = gender === 'f' || gender === 'm' ? gender : voiceFor(lang, 'kokoro', text).gender;
+  return index.files[lang]?.[`${g}|${packKey(text)}`] ?? null;
 }
 
 export function formatMegabytes(bytes: number): string {
