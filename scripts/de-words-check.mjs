@@ -1,4 +1,5 @@
-// Checks the German gloss overlays (gloss-de) against the Spanish, English and Hungarian decks, every level.
+// Checks the German gloss overlays (gloss-de) against the Spanish, English and Hungarian decks, every level, and the
+// German-native card source data/words/de-extra (shape, ids, headword rules, sentences in all four languages).
 // A level file that is still an empty array is not written yet and is skipped.
 //   node scripts/de-words-check.mjs          errors only (exit 1 when there are any), warning count
 //   node scripts/de-words-check.mjs --warn   also list the warnings (headword missing from the sentence,
@@ -19,7 +20,7 @@ const LANGS = new Set(['Spanisch', 'Englisch', 'Deutsch', 'Ungarisch', 'Französ
 const NOART_OK = new Set(['rechts', 'links', 'erste', 'zweite', 'dritte', 'letzte Woche', 'letzten Winter', 'letztes Jahr', 'derselbe', 'noch einmal', 'Jahre alt', 'Weihnachten', 'Neujahr', 'Ostern', 'Gleis zwei', 'letzte Woche', 'gestern Morgen', 'jede Woche', 'jeden Monat', 'zweimal', 'einmal', 'fast immer', 'nie wieder', 'vielleicht', 'übermorgen', 'nächste Woche', 'nächstes Jahr', 'fünfundfünfzig', 'neunundneunzig', 'zweitausend', 'ich arbeite (morgen)']);
 const PHRASE_OK = new Set(['die Katze schläft', 'der Hund frisst', 'der Zug kommt an', 'der Laden öffnet', 'das Museum schließt', 'der gleiche', 'die gleiche Farbe', 'der Frühling kommt', 'der Schnee fällt', 'der Wind weht', 'die Sonne scheint']);
 const AUSTRIAN = ['jänner', 'paradeiser', 'velo', 'erdapfel', 'marille', 'topfen', 'sackerl', 'obers', 'fleischhauer', 'heuer', 'spital', 'grüezi', 'trottoir', 'billett', 'zmorge', 'znüni', 'zvieri', 'karfiol', 'melanzani', 'palatschinke', 'semmel', 'kren', 'schlagobers', 'faschiert', 'sessel', 'servus', 'nachtessen', 'poulet', 'glace', 'coiffeur', 'perron', 'natel'];
-const IRREG = { du: ['dir', 'dich', 'dein'], ich: ['mir', 'mich', 'mein'], er: ['ihn', 'ihm', 'sein'], sie: ['ihr', 'ihnen', 'ihre'], wir: ['uns', 'unser'], ihr: ['euch', 'eure'], es: ['ihm'], sein: ['bin', 'bist', 'ist', 'sind', 'seid', 'war', 'gewesen'], haben: ['habe', 'hast', 'hat', 'habt', 'hatte', 'gehabt'], werden: ['werde', 'wirst', 'wird', 'wurde', 'geworden'], essen: ['isst', 'iss', 'gegessen', 'aß'], geben: ['gibt', 'gib', 'gegeben'], sehen: ['sieht', 'siehst', 'sah', 'gesehen'], lesen: ['liest', 'liesst', 'gelesen'], nehmen: ['nimmt', 'nimmst', 'genommen'], fahren: ['fährt', 'fährst', 'gefahren'], schlafen: ['schläft', 'schläfst', 'geschlafen'], laufen: ['läuft', 'läufst', 'gelaufen'], helfen: ['hilft', 'hilfst', 'geholfen'], sprechen: ['spricht', 'sprichst', 'gesprochen'], wissen: ['weiß', 'weißt', 'wusste', 'gewusst'], können: ['kann', 'kannst', 'könnt', 'konnte'], müssen: ['muss', 'musst', 'musste'], wollen: ['will', 'willst', 'wollt'], dürfen: ['darf', 'darfst', 'dürft'], sollen: ['soll', 'sollst', 'sollt'], mögen: ['mag', 'magst', 'möchte', 'möchtest', 'möchten', 'möchtet'], gehen: ['ging', 'gegangen'], kommen: ['kam', 'gekommen'], stehen: ['stand', 'gestanden'], tun: ['tue', 'tust', 'tut', 'getan'], treffen: ['trifft', 'triffst', 'getroffen'], vergessen: ['vergisst', 'vergessen'], waschen: ['wäscht', 'wäschst'], tragen: ['trägt', 'trägst', 'getragen'], fressen: ['frisst', 'frisst'], anfangen: ['fängt', 'fange'], einladen: ['lädt', 'ladest'], gefallen: ['gefällt'], aussehen: ['sieht', 'siehst'], 'es gibt': ['gibt'], bringen: ['bringe', 'bringt', 'gebracht'], denken: ['denke', 'denkt', 'gedacht'], kennen: ['kenne', 'kennt', 'gekannt'], heißen: ['heiße', 'heißt'], schneiden: ['schneide', 'schneidet'], schließen: ['schließe', 'schließt'], lassen: ['lasse', 'lässt', 'lässt'], fallen: ['fällt'], halten: ['hält'], rufen: ['rufe', 'ruft', 'gerufen'] };
+const IRREG = { du: ['dir', 'dich', 'dein'], ich: ['mir', 'mich', 'mein'], er: ['ihn', 'ihm', 'sein'], sie: ['ihr', 'ihnen', 'ihre'], wir: ['uns', 'unser'], ihr: ['euch', 'eure'], es: ['ihm'], sein: ['bin', 'bist', 'ist', 'sind', 'seid', 'war', 'gewesen'], haben: ['habe', 'hast', 'hat', 'habt', 'hatte', 'gehabt'], werden: ['werde', 'wirst', 'wird', 'wurde', 'geworden'], essen: ['isst', 'iss', 'gegessen', 'aß'], geben: ['gibt', 'gib', 'gegeben'], sehen: ['sieht', 'siehst', 'sah', 'gesehen'], lesen: ['liest', 'liesst', 'gelesen'], nehmen: ['nimmt', 'nimmst', 'genommen'], fahren: ['fährt', 'fährst', 'gefahren'], schlafen: ['schläft', 'schläfst', 'geschlafen'], laufen: ['läuft', 'läufst', 'gelaufen'], helfen: ['hilft', 'hilfst', 'geholfen'], sprechen: ['spricht', 'sprichst', 'gesprochen'], wissen: ['weiß', 'weißt', 'wusste', 'gewusst'], können: ['kann', 'kannst', 'könnt', 'konnte'], müssen: ['muss', 'musst', 'musste'], wollen: ['will', 'willst', 'wollt'], dürfen: ['darf', 'darfst', 'dürft'], sollen: ['soll', 'sollst', 'sollt'], mögen: ['mag', 'magst', 'möchte', 'möchtest', 'möchten', 'möchtet'], gehen: ['ging', 'gegangen'], kommen: ['kam', 'gekommen'], stehen: ['stand', 'gestanden'], tun: ['tue', 'tust', 'tut', 'getan'], treffen: ['trifft', 'triffst', 'getroffen'], vergessen: ['vergisst', 'vergessen'], waschen: ['wäscht', 'wäschst'], tragen: ['trägt', 'trägst', 'getragen'], fressen: ['frisst', 'frisst'], anfangen: ['fängt', 'fange'], einladen: ['lädt', 'ladest'], gefallen: ['gefällt'], aussehen: ['sieht', 'siehst'], 'es gibt': ['gibt'], bringen: ['bringe', 'bringt', 'gebracht'], denken: ['denke', 'denkt', 'gedacht'], kennen: ['kenne', 'kennt', 'gekannt'], heißen: ['heiße', 'heißt'], schneiden: ['schneide', 'schneidet'], schließen: ['schließe', 'schließt'], lassen: ['lasse', 'lässt', 'lässt'], fallen: ['fällt'], halten: ['hält'], rufen: ['rufe', 'ruft', 'gerufen'], gelten: ['gilt', 'gegolten'], gelingen: ['gelungen', 'gelingt'], brechen: ['bricht', 'gebrochen'], finden: ['findet', 'gefunden'], kommen: ['kam', 'gekommen', 'kommt', 'komme'] };
 const SIE_FORMAL = /(\b(Haben|Sind|Möchten|Können|Wollen|Müssen|Dürfen|Wie heißen|Wo wohnen|Was machen|Kommen|Brauchen|Sprechen|Haben) Sie\b)|[a-zäöüß,;:] (Sie|Ihnen|Ihr|Ihre|Ihren|Ihrem|Ihrer|Ihres)\b/;
 const PRAET = /\b(war|waren|warst|hatte|hatten|ging|kam|sah|aß|trank|fuhr|las|schrieb|nahm|gab|ließ|blieb|stand|saß|lag|wusste|brachte|dachte|kannte|nannte|rief|lief|traf|zog|hielt|fand|verstand|begann|schlief|half|sprach|wurde|wurden|bekam|wollte|sollte)\b/;
 const KONJ = /\b(würde|würden|würdest|wäre|wären|hätte|hätten|könnte|könnten|sollte|sollten|dürfte)\b/;
@@ -48,7 +49,7 @@ function checkWordInSentence(de, sentence) {
     // separable verb: also test without a known prefix
     const ok = ws.every((w) => {
       if (stemMatch(sentence, w, br.toLowerCase())) return true;
-      const m = w.toLowerCase().match(/^(zurück|hinunter|herunter|hinauf|fest|fern|durch|nach|weg|los|weh|dar|auf|aus|ein|mit|vor|her|hin|bei|ab|an|um|zu)(.{3,})$/);
+      const m = w.toLowerCase().match(/^(zurück|hinunter|herunter|hinauf|vorbei|statt|klar|fest|fern|durch|nach|weg|los|weh|dar|auf|aus|ein|mit|vor|her|hin|bei|ab|an|um|zu)(.{3,})$/);
       return m ? stemMatch(sentence, m[2], br.toLowerCase()) && stemMatch(sentence, m[1], '') : false;
     });
     if (ok) return true;
@@ -126,6 +127,57 @@ for (const F of FILES) {
       if ((a1 || a2) && GEN.test(s)) W(gf, k, `Genitiv? ${s}`);
       if (/\d/.test(s)) W(gf, k, `digit in sentence: ${s}`);
     });
+  }
+}
+// German-native card source (data/words/de-extra): self-contained cards, ids unique across the levels.
+{
+  const KEYS = 'id,level,de,es,en,hu,sentence_de,sentence_es,sentence_en,sentence_hu,pos';
+  const POS = new Set(['noun', 'verb', 'adj', 'adv', 'pron', 'prep', 'num', 'conj', 'det', 'interj', 'phrase']);
+  const ids = new Set();
+  for (const lv of ['a1', 'a2', 'b1', 'b2', 'c1']) {
+    const f = `data/words/de-extra/${lv}.json`;
+    if (!fs.existsSync(base + f)) { errors.push(`${f}: missing`); continue; }
+    const raw = fs.readFileSync(base + f, 'utf8');
+    if (raw.includes(EM_DASH)) errors.push(`${f}: em dash present`);
+    if (!raw.endsWith(']\n')) errors.push(`${f}: must end with newline after ]`);
+    const cards = JSON.parse(raw);
+    stats[f] = cards.length;
+    const a1 = lv === 'a1', a2 = lv === 'a2';
+    for (const c of cards) {
+      const k = c.id;
+      if (Object.keys(c).join(',') !== KEYS) E(f, k, `keys ${Object.keys(c).join(',')}`);
+      if (!Number.isInteger(k) || k < 1) E(f, k, 'id must be a positive integer');
+      if (ids.has(k)) E(f, k, 'duplicate id'); ids.add(k);
+      if (c.level !== lv.toUpperCase()) E(f, k, `level ${c.level} in file ${lv}`);
+      if (!POS.has(c.pos)) E(f, k, `pos ${c.pos}`);
+      for (const field of ['de', 'es', 'en', 'hu', 'sentence_de', 'sentence_es', 'sentence_en', 'sentence_hu']) {
+        const v = c[field];
+        if (typeof v !== 'string' || !v.trim()) { E(f, k, `empty ${field}`); continue; }
+        if (v !== v.trim() || /\s{2,}/.test(v)) E(f, k, `whitespace in ${field} "${v}"`);
+        if (v.includes(EM_DASH)) E(f, k, `em dash in ${field}`);
+        if (field.startsWith('sentence_') && !/[.!?]["”“]?$/.test(v)) E(f, k, `${field} end: ${v}`);
+      }
+      const de = c.de || '', s = c.sentence_de || '';
+      if (/[?]|\|\||^\s*$/.test(de)) E(f, k, `placeholder in de "${de}"`);
+      if (/[,;]/.test(de.replace(/\(.*?\)/g, ''))) E(f, k, `use " / " not , or ; in "${de}"`);
+      const branches = de.split(' / ').map((x) => x.trim());
+      if (branches.some((b) => !b)) E(f, k, `empty branch "${de}"`);
+      if (c.pos === 'noun') {
+        for (const b of branches) {
+          const bare = b.replace(/\(.*?\)/g, '').trim();
+          if (!ART.test(bare)) E(f, k, `noun without article "${b}"`);
+          else if (!/^[A-ZÄÖÜ]/.test(bare.split(/\s+/).pop())) E(f, k, `noun head not capitalised in "${b}"`);
+        }
+      }
+      for (const b of branches) { const lb = b.toLowerCase(); for (const a of AUSTRIAN) if (new RegExp('(^|[^a-zäöüß])' + a + '([^a-zäöüß]|$)').test(lb)) E(f, k, `Austrian/Swiss headword "${b}"`); }
+      if (!/^[A-ZÄÖÜ„"]/.test(s)) E(f, k, `sentence not upper-case at start: ${s}`);
+      if (/\s{2,}| [.,!?]/.test(s)) E(f, k, `spacing: ${s}`);
+      if (OLDSPELL.test(s + ' ' + de)) E(f, k, `spelling ss/ß: ${s} | ${de}`);
+      if (!checkWordInSentence(de, s)) E(f, k, `headword "${de}" not in sentence: ${s}`);
+      if (SIE_FORMAL.test(s)) W(f, k, `formal Sie? ${s}`);
+      if (a1 && PRAET.test(s)) W(f, k, `Präteritum? ${s}`);
+      if ((a1 || a2) && (KONJ.test(s) || PASSIV.test(s) || GEN.test(s))) W(f, k, `tense or case above the level? ${s}`);
+    }
   }
 }
 console.log(stats);

@@ -6,12 +6,17 @@
 //   node scripts/build-de-deck.mjs --check  exit 1 when the committed files differ from what would be built
 //
 // Rules (see the German expansion contract):
-//   - sources: words-open (Spanish deck, key = order) and the hu deck (key = id). The en deck is not a source (its
-//     German gloss serves de→en); with it the deck grew to about 1.5 times the planned size at every level.
-//   - level map: words-open a1..c1 -> A1..C1; hu a0 + a1 -> A1, a2..c1 -> same level
-//   - ids: 100000 + order (words-open), 300000 + id (hu); src = o<order> | h<id> (200000 + id / e<id> stays reserved)
+//   - sources: words-open (Spanish deck, key = order), the hu deck (key = id) and data/words/de-extra (a small German-native
+//     card source for the words neither deck has: fressen, spüren, das Bad, haben, gern ...; key = id). The en deck is not a
+//     source (its German gloss serves de→en); with it the deck grew to about 1.5 times the planned size at every level.
+//   - level map: words-open a1..c1 -> A1..C1; hu a0 + a1 -> A1, a2..c1 -> same level; de-extra a1..c1 -> A1..C1
+//   - ids: 100000 + order (words-open), 300000 + id (hu), 400000 + id (de-extra); src = o<order> | h<id> | x<id>
+//     (200000 + id / e<id> stays reserved)
 //   - a German headword appears once (key: lower-case, article and parenthetical stripped), at the LOWEST
-//     level; within a level the priority is words-open > hu, then file order
+//     level; within a level the priority is words-open > hu > de-extra, then file order
+//   - exception: a de-extra card at a LOWER level than an existing card claims the headword. Every " / " branch of its
+//     headword is claimed, so an existing card at a higher level with that branch is dropped (that is how "liegen" moves
+//     from A2 to A1). A de-extra card is dropped when any of its branches is already owned at the same or a lower level.
 //   - a card is kept only when it has all four meanings and all four sentences
 
 import fs from 'node:fs';
@@ -48,6 +53,16 @@ const SOURCES = [
     glossHu: null, // the hu deck carries its own Hungarian
     glossDe: 'data/words/hu/gloss-de',
   },
+  {
+    name: 'extra',
+    prefix: 'x',
+    base: 400000,
+    key: 'id',
+    levelFiles: { a1: ['a1'], a2: ['a2'], b1: ['b1'], b2: ['b2'], c1: ['c1'] },
+    dir: 'data/words/de-extra',
+    glossHu: null,
+    glossDe: null, // self-contained: the card carries its own German
+  },
 ];
 
 // Dedupe key: lower-case, parentheticals and a leading article stripped from every " / " branch.
@@ -68,7 +83,7 @@ export function headwordKey(de) {
 
 function toCard(src, level, file, card, glossDe, glossHu) {
   const k = card[src.key];
-  const gd = glossDe.get(k);
+  const gd = src.glossDe ? glossDe.get(k) : { de: card.de, sentence_de: card.sentence_de };
   if (!gd) return null;
   let hu;
   let sentenceHu;
@@ -101,15 +116,30 @@ function toCard(src, level, file, card, glossDe, glossHu) {
   return out;
 }
 
+export function branchKeys(de) {
+  return headwordKey(de).split(' / ').filter(Boolean);
+}
+
 export function buildDeck() {
   const seen = new Map(); // headword key -> src of the card that owns it
+  const seenBranches = new Set(); // every branch key of a kept card
+  // branch key -> index of the lowest level at which a de-extra card claims it
+  const claimed = new Map();
+  const extra = SOURCES.find((s) => s.name === 'extra');
+  LEVELS.forEach((level, li) => {
+    for (const file of extra.levelFiles[level]) {
+      for (const card of readIfExists(`${extra.dir}/${file}.json`)) {
+        for (const b of branchKeys(text(card.de))) if (!claimed.has(b)) claimed.set(b, li);
+      }
+    }
+  });
   const decks = Object.fromEntries(LEVELS.map((l) => [l, []]));
   const stats = { considered: 0, incomplete: 0, duplicate: 0, kept: 0, bySource: {}, perLevel: {} };
-  for (const level of LEVELS) {
+  for (const [li, level] of LEVELS.entries()) {
     for (const src of SOURCES) {
       for (const file of src.levelFiles[level]) {
         const cards = readIfExists(`${src.dir}/${file}.json`);
-        const glossDe = byKey(readIfExists(`${src.glossDe}/${file}.json`));
+        const glossDe = src.glossDe ? byKey(readIfExists(`${src.glossDe}/${file}.json`)) : null;
         const glossHu = src.glossHu ? byKey(readIfExists(`${src.glossHu}/${file}.json`)) : null;
         for (const card of cards) {
           stats.considered += 1;
@@ -119,11 +149,16 @@ export function buildDeck() {
             continue;
           }
           const key = headwordKey(out.de);
-          if (seen.has(key)) {
+          const branches = branchKeys(out.de);
+          const isExtra = src.name === 'extra';
+          // an existing card gives way to a de-extra card of a lower level; a de-extra card gives way to any owner
+          const claimedLower = !isExtra && branches.some((b) => claimed.has(b) && claimed.get(b) < li);
+          if (seen.has(key) || claimedLower || (isExtra && branches.some((b) => seenBranches.has(b)))) {
             stats.duplicate += 1;
             continue;
           }
           seen.set(key, out.src);
+          for (const b of branches) seenBranches.add(b);
           decks[level].push(out);
           stats.kept += 1;
           stats.bySource[src.name] = (stats.bySource[src.name] || 0) + 1;

@@ -35,7 +35,7 @@ import TenseDrillScreen from '../tense-drill';
 import { makeFlush } from '@/test-utils/flush';
 
 const flush = makeFlush(3);
-const NOW = 1_700_000_000_000;
+const NOW = 1_700_000_001_000;
 
 async function open(source: 'en' | 'es' | 'hu', level = 'A1') {
   const db = getDb();
