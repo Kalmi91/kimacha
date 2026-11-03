@@ -186,6 +186,8 @@ const es: typeof en = {
       speakerOther: 'Tía',
       speakerMe: 'Tú',
       fillHint: 'Toca la palabra que va en el primer hueco',
+      wordsHint: 'Escucha la palabra y su significado, y toca Siguiente.',
+      patternsHint: 'Lee la estructura y escucha el ejemplo. Aquí no hay nada que responder: toca Siguiente.',
       listen: 'Escuchar',
       sayIt: 'Dilo',
       listening: 'Escuchando… toca para parar',

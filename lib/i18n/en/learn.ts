@@ -214,6 +214,8 @@ export default {
       speakerOther: 'Aunt',
       speakerMe: 'You',
       fillHint: 'Tap the word that fits the first gap',
+      wordsHint: 'Listen to the word and its meaning, then tap Next.',
+      patternsHint: 'Read the pattern and listen to the example. Nothing to answer here: tap Next.',
       listen: 'Listen',
       sayIt: 'Say it',
       listening: 'Listening… tap to stop',

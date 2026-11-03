@@ -289,6 +289,8 @@ export default function SituationGame() {
             <Text testID="situations-card-meaning" style={[styles.meaning, { color: colors.textMuted }]}>{word[source]}</Text>
           </Card>
         )}
+        {/* FB553: the words and patterns steps only read and listen; the hint says so (what to do here) */}
+        {word && <Text testID="situations-words-hint" style={[styles.hint, { color: colors.textMuted }]}>{sx.wordsHint}</Text>}
 
         {pattern && (
           <Card {...card}>
@@ -298,6 +300,7 @@ export default function SituationGame() {
             <SpeakButton testID="situations-speak" accessibilityLabel={sx.listen} onPress={() => say(pattern.example)} style={styles.speakBtn} iconStyle={styles.speakIcon} />
           </Card>
         )}
+        {pattern && <Text testID="situations-patterns-hint" style={[styles.hint, { color: colors.textMuted }]}>{sx.patternsHint}</Text>}
 
         {step === 'fill' && (
           <Card {...card}>

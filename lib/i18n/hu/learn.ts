@@ -183,6 +183,8 @@ const hu: typeof en = {
       speakerOther: 'Nagynéni',
       speakerMe: 'Te',
       fillHint: 'Koppints az első résbe illő szóra',
+      wordsHint: 'Hallgasd meg a szót és a jelentését, aztán koppints a Tovább gombra.',
+      patternsHint: 'Olvasd el a szerkezetet, és hallgasd meg a példát. Itt nincs mit válaszolni: koppints a Tovább gombra.',
       listen: 'Meghallgatás',
       sayIt: 'Mondd ki',
       listening: 'Hallgatlak… koppints a leállításhoz',
