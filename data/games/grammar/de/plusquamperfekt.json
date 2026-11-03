@@ -223,7 +223,7 @@
               "es": "Nachdem sie nach Berlin gezogen war, suchte sie eine Wohnung.",
               "tr": {
                 "en": "After she had moved to Berlin, she looked for an apartment.",
-                "es": "Después de haberse mudado a Berlín, buscó un apartamento."
+                "es": "Después de haberse mudado a Berlín, buscó un departamento."
               }
             }
           ]
@@ -429,7 +429,7 @@
           },
           "wrong": {
             "en": "The Konjunktiv II is hätte, with an umlaut. hatte is a plain past tense for a real event.",
-            "es": "El Konjunktiv II es hätte, con diéresis. hatte es un pasado simple para un hecho real."
+            "es": "El Konjunktiv II es hätte, con diéresis. hatte es un pretérito para un hecho real."
           }
         }
       ],
@@ -862,7 +862,7 @@
       ],
       "tr": {
         "en": "After she had moved to Berlin, she looked for an apartment.",
-        "es": "Después de haberse mudado a Berlín, buscó un apartamento."
+        "es": "Después de haberse mudado a Berlín, buscó un departamento."
       }
     },
     {
@@ -884,7 +884,7 @@
       "correct": 2,
       "why": {
         "en": "After the auxiliary hatte comes the participle: geschlafen. The sleeping was missing before I was tired.",
-        "es": "Después del auxiliar hatte viene el participio: geschlafen. El sueño faltó antes de que yo estuviera cansado."
+        "es": "Después del auxiliar hatte viene el participio: geschlafen. La falta de sueño vino antes del cansancio."
       },
       "wrong": {
         "schlafen": {
@@ -944,7 +944,7 @@
       "target": "suchte",
       "tr": {
         "en": "After she had moved to Berlin, she looked for an apartment.",
-        "es": "Después de haberse mudado a Berlín, buscó un apartamento."
+        "es": "Después de haberse mudado a Berlín, buscó un departamento."
       },
       "options": [
         {

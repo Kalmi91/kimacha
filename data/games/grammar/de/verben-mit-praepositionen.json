@@ -174,7 +174,7 @@
               "es": "Ich warte auf den Bus.",
               "tr": {
                 "en": "I am waiting for the bus.",
-                "es": "Espero el autobús."
+                "es": "Espero el camión."
               }
             },
             {
@@ -241,7 +241,7 @@
               "es": "Worauf wartest du? Auf den Bus.",
               "tr": {
                 "en": "What are you waiting for? For the bus.",
-                "es": "¿Qué esperas? El autobús."
+                "es": "¿Qué esperas? El camión."
               }
             },
             {
@@ -303,7 +303,7 @@
               "es": "Ich freue mich auf den Urlaub.",
               "tr": {
                 "en": "I am looking forward to the vacation.",
-                "es": "Tengo ganas de las vacaciones."
+                "es": "Tengo ganas de que lleguen las vacaciones."
               }
             },
             {
@@ -359,7 +359,7 @@
       ],
       "tr": {
         "en": "I am waiting for the bus.",
-        "es": "Espero el autobús."
+        "es": "Espero el camión."
       }
     },
     {
@@ -457,7 +457,7 @@
       "target": "auf",
       "tr": {
         "en": "I am waiting for the bus.",
-        "es": "Espero el autobús."
+        "es": "Espero el camión."
       },
       "options": [
         {
@@ -469,7 +469,7 @@
         {
           "text": {
             "en": "auf means on, so the bus is on something",
-            "es": "auf significa sobre, así que el autobús está sobre algo"
+            "es": "auf significa sobre, así que el camión está sobre algo"
           },
           "wrong": {
             "en": "The preposition is not translated word for word. With warten, auf only belongs to the verb and has no meaning of place.",
@@ -717,7 +717,7 @@
       ],
       "tr": {
         "en": "Tomorrow is Saturday. I am looking forward to the weekend.",
-        "es": "Mañana es sábado. Tengo ganas del fin de semana."
+        "es": "Mañana es sábado. Tengo ganas de que llegue el fin de semana."
       }
     },
     {
@@ -818,12 +818,12 @@
       "correct": 0,
       "why": {
         "en": "The bus is a thing, so the preposition and the noun become a da-compound: darauf.",
-        "es": "El autobús es una cosa, así que la preposición y el sustantivo se vuelven un compuesto con da-: darauf."
+        "es": "El camión es una cosa, así que la preposición y el sustantivo se vuelven un compuesto con da-: darauf."
       },
       "wrong": {
         "auf ihn": {
           "en": "auf ihn is used for a person. For a thing like the bus you use the da-compound.",
-          "es": "auf ihn se usa para una persona. Para una cosa como el autobús se usa el compuesto con da-."
+          "es": "auf ihn se usa para una persona. Para una cosa como el camión se usa el compuesto con da-."
         },
         "dafür": {
           "en": "dafür is the da-compound of für. The preposition of warten is auf, so it must be darauf.",
@@ -836,7 +836,7 @@
       ],
       "tr": {
         "en": "Are you waiting for the bus? Yes, I am waiting for it.",
-        "es": "¿Esperas el autobús? Sí, lo espero."
+        "es": "¿Esperas el camión? Sí, lo espero."
       }
     },
     {
@@ -898,12 +898,12 @@
       "correct": 2,
       "why": {
         "en": "The answer is a thing, the bus, so the question is a wo-compound of auf: Worauf?",
-        "es": "La respuesta es una cosa, el autobús, así que la pregunta es un compuesto con wo- de auf: Worauf?"
+        "es": "La respuesta es una cosa, el camión, así que la pregunta es un compuesto con wo- de auf: Worauf?"
       },
       "wrong": {
         "Auf wen": {
           "en": "Auf wen asks about a person. The answer here is a thing, the bus.",
-          "es": "Auf wen pregunta por una persona. La respuesta aquí es una cosa, el autobús."
+          "es": "Auf wen pregunta por una persona. La respuesta aquí es una cosa, el camión."
         },
         "Wofür": {
           "en": "Wofür is the wo-compound of für. The preposition of warten is auf.",
@@ -916,7 +916,7 @@
       ],
       "tr": {
         "en": "What are you waiting for? For the bus.",
-        "es": "¿Qué esperas? El autobús."
+        "es": "¿Qué esperas? El camión."
       }
     },
     {

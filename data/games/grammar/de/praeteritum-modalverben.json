@@ -11,7 +11,7 @@
       "kind": "text",
       "text": {
         "en": "Modal verbs use the simple past (Präteritum) instead of the Perfekt in everyday German: Gestern musste ich arbeiten. The past stem is the infinitive without the umlaut plus -te: konnte, musste, wollte, durfte, sollte, mochte. The endings are -te, -test, -te, -ten, -tet, -ten, and ich and er have the same form. The modal stays in second place and the infinitive goes to the end, or the infinitive is left out when it is clear: Ich musste nach Hause. English could and had to, Spanish pude and tuve que, and Hungarian tudtam and kellett become one regular pattern in German.",
-        "es": "Los verbos modales usan el pasado simple (Präteritum) en lugar del Perfekt en el alemán cotidiano: Gestern musste ich arbeiten. La raíz del pasado es el infinitivo sin diéresis más -te: konnte, musste, wollte, durfte, sollte, mochte. Las terminaciones son -te, -test, -te, -ten, -tet, -ten, e ich y er tienen la misma forma. El modal se queda en segundo lugar y el infinitivo va al final, o se omite el infinitivo cuando está claro: Ich musste nach Hause. El inglés could y had to, el español pude y tuve que, y el húngaro tudtam y kellett se convierten en un solo patrón regular en alemán."
+        "es": "Los verbos modales usan el pretérito (Präteritum) en lugar del Perfekt en el alemán cotidiano: Gestern musste ich arbeiten. La raíz del pasado es el infinitivo sin diéresis más -te: konnte, musste, wollte, durfte, sollte, mochte. Las terminaciones son -te, -test, -te, -ten, -tet, -ten, e ich y er tienen la misma forma. El modal se queda en segundo lugar y el infinitivo va al final, o se omite el infinitivo cuando está claro: Ich musste nach Hause. El inglés could y had to, el español pude y tuve que, y el húngaro tudtam y kellett se convierten en un solo patrón regular en alemán."
       }
     },
     {
@@ -19,7 +19,7 @@
       "id": "modalverben-praeteritum",
       "title": {
         "en": "The modal verbs in the simple past",
-        "es": "Los verbos modales en pasado simple"
+        "es": "Los verbos modales en pretérito"
       },
       "header": [
         {
@@ -103,7 +103,7 @@
       "id": "praesens-praeteritum-modal",
       "title": {
         "en": "Present and simple past",
-        "es": "Presente y pasado simple"
+        "es": "Presente y pretérito"
       },
       "header": [
         {
@@ -116,7 +116,7 @@
         },
         {
           "en": "Simple past (ich)",
-          "es": "Pasado simple (ich)"
+          "es": "Pretérito (ich)"
         }
       ],
       "rows": [
@@ -269,7 +269,7 @@
           "b": "Ich musste arbeiten.",
           "note": {
             "en": "The present tense and the simple past differ only in the stem and the ending: muss against musste. The time word (heute, gestern) tells you which one fits.",
-            "es": "El presente y el pasado simple solo se distinguen por la raíz y la terminación: muss frente a musste. La palabra de tiempo (heute, gestern) indica cuál corresponde."
+            "es": "El presente y el pretérito solo se distinguen por la raíz y la terminación: muss frente a musste. La palabra de tiempo (heute, gestern) indica cuál corresponde."
           },
           "examples": [
             {
@@ -324,7 +324,7 @@
   ],
   "speak": {
     "en": "The modal verbs use the simple past in everyday speech. The past stem has no umlaut and takes «te»: «konnte», «musste», «wollte», «durfte», «sollte», «mochte». The endings are «te», «test», «te», «ten», «tet», «ten». «Ich konnte» and «er konnte» are the same. The modal stays in second place and the infinitive goes to the end: «Gestern musste ich arbeiten». You can leave out the infinitive when it is clear: «Ich musste nach Hause». And ask «Konntest du kommen?»",
-    "es": "Los verbos modales usan el pasado simple en el habla cotidiana. La raíz del pasado no tiene diéresis y lleva «te»: «konnte», «musste», «wollte», «durfte», «sollte», «mochte». Las terminaciones son «te», «test», «te», «ten», «tet», «ten». «Ich konnte» y «er konnte» son iguales. El modal se queda en segundo lugar y el infinitivo va al final: «Gestern musste ich arbeiten». Puedes omitir el infinitivo cuando está claro: «Ich musste nach Hause». Y pregunta «Konntest du kommen?»"
+    "es": "Los verbos modales usan el pretérito en el habla cotidiana. La raíz del pasado no tiene diéresis y lleva «te»: «konnte», «musste», «wollte», «durfte», «sollte», «mochte». Las terminaciones son «te», «test», «te», «ten», «tet», «ten». «Ich konnte» y «er konnte» son iguales. El modal se queda en segundo lugar y el infinitivo va al final: «Gestern musste ich arbeiten». Puedes omitir el infinitivo cuando está claro: «Ich musste nach Hause». Y pregunta «Konntest du kommen?»"
   },
   "items": [
     {
@@ -338,7 +338,7 @@
       "correct": 0,
       "why": {
         "en": "Gestern points to the past, and the simple past of müssen for ich is musste.",
-        "es": "Gestern apunta al pasado, y el pasado simple de müssen para ich es musste."
+        "es": "Gestern apunta al pasado, y el pretérito de müssen para ich es musste."
       },
       "wrong": {
         "muss": {
@@ -383,7 +383,7 @@
       "wrong": {
         "kannst": {
           "en": "kannst is the present tense. With gestern you need the simple past: konntest.",
-          "es": "kannst es el presente. Con gestern necesitas el pasado simple: konntest."
+          "es": "kannst es el presente. Con gestern necesitas el pretérito: konntest."
         },
         "konnten": {
           "en": "konnten is the form for wir and sie (they). With du you need konntest.",
@@ -418,7 +418,7 @@
       "correct": 2,
       "why": {
         "en": "Paul is one person (he), and the simple past of dürfen for er is durfte, with no ending.",
-        "es": "Paul es una persona (él), y el pasado simple de dürfen para er es durfte, sin terminación."
+        "es": "Paul es una persona (él), y el pretérito de dürfen para er es durfte, sin terminación."
       },
       "wrong": {
         "durften": {
@@ -470,7 +470,7 @@
           },
           "wrong": {
             "en": "könnte is a different form that belongs to a later level (a polite or unreal can). The simple past drops the umlaut: konnte.",
-            "es": "könnte es otra forma que pertenece a un nivel posterior (un poder cortés o irreal). El pasado simple pierde la diéresis: konnte."
+            "es": "könnte es otra forma que pertenece a un nivel posterior (un poder cortés o irreal). El pretérito pierde la diéresis: konnte."
           }
         },
         {
@@ -497,7 +497,7 @@
       "correct": 0,
       "why": {
         "en": "With wir the simple past of müssen is mussten: the past stem muss- plus the plural ending -ten.",
-        "es": "Con wir el pasado simple de müssen es mussten: la raíz del pasado muss- más la terminación plural -ten."
+        "es": "Con wir el pretérito de müssen es mussten: la raíz del pasado muss- más la terminación plural -ten."
       },
       "wrong": {
         "musste": {
@@ -537,7 +537,7 @@
       "correct": 1,
       "why": {
         "en": "With ihr the simple past of sollen is solltet: the past stem sollte- plus -t.",
-        "es": "Con ihr el pasado simple de sollen es solltet: la terminación -tet se aplica a ihr."
+        "es": "Con ihr el pretérito de sollen es solltet: la terminación -tet se aplica a ihr."
       },
       "wrong": {
         "sollten": {
@@ -577,7 +577,7 @@
       "correct": 2,
       "why": {
         "en": "The simple past of wollen for ich is wollte. The infinitive gehen can be left out because ins Kino shows the direction.",
-        "es": "El pasado simple de wollen para ich es wollte. El infinitivo gehen se puede omitir porque ins Kino muestra la dirección."
+        "es": "El pretérito de wollen para ich es wollte. El infinitivo gehen se puede omitir porque ins Kino muestra la dirección."
       },
       "wrong": {
         "wollten": {
@@ -656,7 +656,7 @@
       "correct": 0,
       "why": {
         "en": "The question is about your childhood, so the simple past: wolltest for du.",
-        "es": "La pregunta es sobre tu infancia, así que el pasado simple: wolltest para du."
+        "es": "La pregunta es sobre tu infancia, así que el pretérito: wolltest para du."
       },
       "wrong": {
         "willst": {
@@ -696,7 +696,7 @@
       "correct": 1,
       "why": {
         "en": "The simple past of können for wir is konnten. After Gestern the subject wir follows the modal.",
-        "es": "El pasado simple de können para wir es konnten. Después de Gestern el sujeto wir sigue al modal."
+        "es": "El pretérito de können para wir es konnten. Después de Gestern el sujeto wir sigue al modal."
       },
       "wrong": {
         "können": {
@@ -741,7 +741,7 @@
       "wrong": {
         "musste": {
           "en": "musste is the simple past. Im Moment talks about the present, so the verb must be in the present.",
-          "es": "musste es el pasado simple. Im Moment habla del presente, así que el verbo debe ir en presente."
+          "es": "musste es el pretérito. Im Moment habla del presente, así que el verbo debe ir en presente."
         },
         "musst": {
           "en": "musst is the present form for du. The subject here is ich, so the form is muss.",
@@ -798,7 +798,7 @@
           },
           "wrong": {
             "en": "It is the simple past. The Perfekt of wollen (hat gewollt) is rarely used.",
-            "es": "Es el pasado simple. El Perfekt de wollen (hat gewollt) se usa rara vez."
+            "es": "Es el pretérito. El Perfekt de wollen (hat gewollt) se usa rara vez."
           }
         }
       ],
@@ -815,7 +815,7 @@
       "correct": 0,
       "why": {
         "en": "Letztes Jahr is in the past, so the simple past of können for ich: konnte.",
-        "es": "Letztes Jahr está en el pasado, así que el pasado simple de können para ich: konnte."
+        "es": "Letztes Jahr está en el pasado, así que el pretérito de können para ich: konnte."
       },
       "wrong": {
         "kann": {
@@ -855,7 +855,7 @@
       "correct": 1,
       "why": {
         "en": "Als Kind points to the past, and the simple past of mögen for ich is mochte.",
-        "es": "Als Kind apunta al pasado, y el pasado simple de mögen para ich es mochte."
+        "es": "Als Kind apunta al pasado, y el pretérito de mögen para ich es mochte."
       },
       "wrong": {
         "mag": {
@@ -895,7 +895,7 @@
       "correct": 2,
       "why": {
         "en": "In a yes/no question the modal comes first, and the simple past for du is Konntest.",
-        "es": "En una pregunta de sí o no el modal va primero, y el pasado simple para du es Konntest."
+        "es": "En una pregunta de sí o no el modal va primero, y el pretérito para du es Konntest."
       },
       "wrong": {
         "Kannst": {
@@ -967,7 +967,7 @@
       "correct": 1,
       "why": {
         "en": "The children are plural, so the simple past of dürfen is durften.",
-        "es": "Los niños son plural, así que el pasado simple de dürfen es durften."
+        "es": "Los niños son plural, así que el pretérito de dürfen es durften."
       },
       "wrong": {
         "durfte": {
@@ -1005,7 +1005,7 @@
           },
           "wrong": {
             "en": "The -te of the simple past stays in all persons: konn + te + st. Without it the form would look like the present.",
-            "es": "La -te del pasado simple se queda en todas las personas: konn + te + st. Sin ella, la forma parecería presente."
+            "es": "La -te del pretérito se queda en todas las personas: konn + te + st. Sin ella, la forma parecería presente."
           }
         },
         {

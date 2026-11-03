@@ -11,7 +11,7 @@
       "kind": "text",
       "text": {
         "en": "To say what must, can, may or should be done without naming who does it, German puts a modal verb in the passive: modal verb (position 2) + Partizip II + werden (at the end). Das Formular muss ausgefüllt werden. The modal verb carries the person and number, and werden never changes, because it is an infinitive. English has has to be filled out and Spanish debe rellenarse or hay que rellenar. The thing that is done is the subject in German.",
-        "es": "Para decir qué se debe, puede, permite o tiene que hacer sin nombrar quién lo hace, el alemán pone un verbo modal en pasiva: verbo modal (posición 2) + Partizip II + werden (al final). Das Formular muss ausgefüllt werden. El verbo modal lleva la persona y el número, y werden nunca cambia, porque es un infinitivo. El inglés tiene has to be filled out y el español debe rellenarse o hay que rellenar. En alemán, la cosa que se hace es el sujeto."
+        "es": "Para decir qué se debe, puede, permite o tiene que hacer sin nombrar quién lo hace, el alemán pone un verbo modal en pasiva: verbo modal (posición 2) + Partizip II + werden (al final). Das Formular muss ausgefüllt werden. El verbo modal lleva la persona y el número, y werden nunca cambia, porque es un infinitivo. El inglés tiene has to be filled out y el español debe llenarse o hay que llenar. En alemán, la cosa que se hace es el sujeto."
       }
     },
     {
@@ -75,7 +75,7 @@
               "es": "Das Formular muss ausgefüllt werden.",
               "tr": {
                 "en": "The form has to be filled out.",
-                "es": "El formulario tiene que rellenarse."
+                "es": "El formulario tiene que llenarse."
               }
             },
             {
@@ -90,7 +90,7 @@
         {
           "text": {
             "en": "können: something is possible. dürfen: something is allowed, and dürfen with nicht is a ban. sollen: a request or a rule from someone else.",
-            "es": "können: algo es posible. dürfen: algo está permitido, y dürfen con nicht es una prohibición. sollen: un pedido o una regla de otra persona."
+            "es": "können: algo es posible. dürfen: algo está permitido, y dürfen con nicht es una prohibición. sollen: una petición o una regla de otra persona."
           },
           "examples": [
             {
@@ -187,7 +187,7 @@
               "es": "Muss das Formular heute ausgefüllt werden?",
               "tr": {
                 "en": "Does the form have to be filled out today?",
-                "es": "¿Hay que rellenar el formulario hoy?"
+                "es": "¿Hay que llenar el formulario hoy?"
               }
             },
             {
@@ -216,7 +216,7 @@
               "es": "Ich weiß, dass das Formular ausgefüllt werden muss.",
               "tr": {
                 "en": "I know that the form has to be filled out.",
-                "es": "Sé que hay que rellenar el formulario."
+                "es": "Sé que hay que llenar el formulario."
               }
             },
             {
@@ -342,7 +342,7 @@
       ],
       "tr": {
         "en": "The form has to be filled out.",
-        "es": "El formulario tiene que rellenarse."
+        "es": "El formulario tiene que llenarse."
       }
     },
     {
@@ -440,7 +440,7 @@
       "target": "werden",
       "tr": {
         "en": "The form has to be filled out.",
-        "es": "El formulario tiene que rellenarse."
+        "es": "El formulario tiene que llenarse."
       },
       "options": [
         {
@@ -492,7 +492,7 @@
         },
         "reparierte": {
           "en": "reparierte is the simple past. The passive never uses a past form here, only the participle.",
-          "es": "reparierte es el pasado simple. La pasiva no usa aquí una forma de pasado, solo el participio."
+          "es": "reparierte es el pretérito. La pasiva no usa aquí una forma de pasado, solo el participio."
         }
       },
       "examples": [
@@ -599,7 +599,7 @@
       "target": "müssen",
       "tr": {
         "en": "The forms have to be filled out.",
-        "es": "Los formularios tienen que rellenarse."
+        "es": "Los formularios tienen que llenarse."
       },
       "options": [
         {
@@ -621,11 +621,11 @@
         {
           "text": {
             "en": "müssen is the polite form for the person who fills out the forms",
-            "es": "müssen es la forma cortés para la persona que rellena los formularios"
+            "es": "müssen es la forma cortés para la persona que llena los formularios"
           },
           "wrong": {
             "en": "The person who fills out the forms is not mentioned at all. The modal verb only follows the grammatical subject, die Formulare.",
-            "es": "La persona que rellena los formularios no se menciona. El verbo modal solo sigue al sujeto gramatical, die Formulare."
+            "es": "La persona que llena los formularios no se menciona. El verbo modal solo sigue al sujeto gramatical, die Formulare."
           }
         }
       ],
@@ -660,7 +660,7 @@
       ],
       "tr": {
         "en": "Does the form have to be filled out today?",
-        "es": "¿Hay que rellenar el formulario hoy?"
+        "es": "¿Hay que llenar el formulario hoy?"
       }
     },
     {
@@ -700,7 +700,7 @@
       ],
       "tr": {
         "en": "I know that the form has to be filled out.",
-        "es": "Sé que hay que rellenar el formulario."
+        "es": "Sé que hay que llenar el formulario."
       }
     },
     {
@@ -850,7 +850,7 @@
         },
         "parkte": {
           "en": "parkte is the simple past. The modal passive needs the participle geparkt, not a past form.",
-          "es": "parkte es el pasado simple. La pasiva con modal necesita el participio geparkt, no una forma de pasado."
+          "es": "parkte es el pretérito. La pasiva con modal necesita el participio geparkt, no una forma de pasado."
         }
       },
       "examples": [
@@ -881,7 +881,7 @@
       "correct": 0,
       "why": {
         "en": "For er, sie and es the modal verb has no ending: muss. Der Brief is a he in this sentence.",
-        "es": "Para er, sie y es el verbo modal no lleva terminación: muss. Der Brief es un él en esta oración."
+        "es": "Para er, sie y es el verbo modal no lleva terminación: muss. Der Brief cuenta como er (él) en esta oración."
       },
       "wrong": {
         "musst": {

@@ -11,7 +11,7 @@
       "kind": "text",
       "text": {
         "en": "War and hatte are the simple past (Präteritum) of sein and haben. In everyday German these two verbs almost always use the Präteritum instead of the Perfekt: Ich war gestern im Kino, Ich hatte Hunger. The first and the third person singular have no ending (ich war, er war; ich hatte, er hatte). All other verbs keep using the Perfekt in speech (Ich bin ins Kino gegangen). English has was and were, Spanish estuve and estaba, and Hungarian volt and voltam: German needs two different stems, war- and hatte-.",
-        "es": "War y hatte son el pasado simple (Präteritum) de sein y haben. En el alemán cotidiano estos dos verbos casi siempre usan el Präteritum en lugar del Perfekt: Ich war gestern im Kino, Ich hatte Hunger. La primera y la tercera persona del singular no llevan terminación (ich war, er war; ich hatte, er hatte). Todos los demás verbos siguen usando el Perfekt en el habla (Ich bin ins Kino gegangen). El inglés tiene was y were, el español estuve y estaba, y el húngaro volt y voltam: el alemán necesita dos raíces distintas, war- y hatte-."
+        "es": "War y hatte son el pretérito (Präteritum) de sein y haben. En el alemán cotidiano estos dos verbos casi siempre usan el Präteritum en lugar del Perfekt: Ich war gestern im Kino, Ich hatte Hunger. La primera y la tercera persona del singular no llevan terminación (ich war, er war; ich hatte, er hatte). Todos los demás verbos siguen usando el Perfekt en el habla (Ich bin ins Kino gegangen). El inglés tiene was y were, el español estuve y estaba, y el húngaro volt y voltam: el alemán necesita dos raíces distintas, war- y hatte-."
       }
     },
     {
@@ -19,7 +19,7 @@
       "id": "sein-war",
       "title": {
         "en": "sein in the simple past",
-        "es": "sein en pasado simple"
+        "es": "sein en pretérito"
       },
       "header": [
         {
@@ -63,7 +63,7 @@
       "id": "haben-hatte",
       "title": {
         "en": "haben in the simple past",
-        "es": "haben en pasado simple"
+        "es": "haben en pretérito"
       },
       "header": [
         {
@@ -224,7 +224,7 @@
       "kind": "contrast",
       "title": {
         "en": "Perfekt or simple past?",
-        "es": "¿Perfekt o pasado simple?"
+        "es": "¿Perfekt o pretérito?"
       },
       "pairs": [
         {
@@ -287,7 +287,7 @@
   ],
   "speak": {
     "en": "The simple past of «sein» is «ich war», «du warst», «er war», «wir waren», «ihr wart», «sie waren». The simple past of «haben» is «ich hatte», «du hattest», «er hatte», «wir hatten», «ihr hattet», «sie hatten». In speech, these two verbs almost always use this form: «Ich war gestern im Kino», «Ich hatte Hunger». Ask «Wo warst du?» and «Hattest du Zeit?» The forms for «ich» and «er» are the same. All other verbs use the Perfekt: «Ich bin ins Kino gegangen. Es war schön.»",
-    "es": "El pasado simple de «sein» es «ich war», «du warst», «er war», «wir waren», «ihr wart», «sie waren». El pasado simple de «haben» es «ich hatte», «du hattest», «er hatte», «wir hatten», «ihr hattet», «sie hatten». En el habla, estos dos verbos casi siempre usan esta forma: «Ich war gestern im Kino», «Ich hatte Hunger». Pregunta «Wo warst du?» y «Hattest du Zeit?» Las formas de «ich» y «er» son iguales. Todos los demás verbos usan el Perfekt: «Ich bin ins Kino gegangen. Es war schön.»"
+    "es": "El pretérito de «sein» es «ich war», «du warst», «er war», «wir waren», «ihr wart», «sie waren». El pretérito de «haben» es «ich hatte», «du hattest», «er hatte», «wir hatten», «ihr hattet», «sie hatten». En el habla, estos dos verbos casi siempre usan esta forma: «Ich war gestern im Kino», «Ich hatte Hunger». Pregunta «Wo warst du?» y «Hattest du Zeit?» Las formas de «ich» y «er» son iguales. Todos los demás verbos usan el Perfekt: «Ich bin ins Kino gegangen. Es war schön.»"
   },
   "items": [
     {
@@ -301,7 +301,7 @@
       "correct": 0,
       "why": {
         "en": "The simple past of sein for ich is war, and the first person singular has no ending.",
-        "es": "El pasado simple de sein para ich es war, y la primera persona del singular no lleva terminación."
+        "es": "El pretérito de sein para ich es war, y la primera persona del singular no lleva terminación."
       },
       "wrong": {
         "waren": {
@@ -341,7 +341,7 @@
       "correct": 1,
       "why": {
         "en": "With du the simple past of sein is warst: du adds -st to war.",
-        "es": "Con du el pasado simple de sein es warst: du añade -st a war."
+        "es": "Con du el pretérito de sein es warst: du añade -st a war."
       },
       "wrong": {
         "war": {
@@ -423,7 +423,7 @@
         {
           "text": {
             "en": "In speech, sein is normally used in the simple past: war",
-            "es": "En el habla, sein se usa normalmente en pasado simple: war"
+            "es": "En el habla, sein se usa normalmente en pretérito: war"
           }
         },
         {
@@ -443,7 +443,7 @@
           },
           "wrong": {
             "en": "war is the simple past (Präteritum). The Perfekt would be bin gewesen.",
-            "es": "war es el pasado simple (Präteritum). El Perfekt sería bin gewesen."
+            "es": "war es el pretérito (Präteritum). El Perfekt sería bin gewesen."
           }
         }
       ],
@@ -460,7 +460,7 @@
       "correct": 1,
       "why": {
         "en": "With wir the simple past of sein is waren: the plural adds -en to the stem.",
-        "es": "Con wir el pasado simple de sein es waren: el plural añade -en a la raíz."
+        "es": "Con wir el pretérito de sein es waren: el plural añade -en a la raíz."
       },
       "wrong": {
         "war": {
@@ -500,7 +500,7 @@
       "correct": 2,
       "why": {
         "en": "With ihr the simple past of sein is wart: ihr adds -t to the stem war-.",
-        "es": "Con ihr el pasado simple de sein es wart: ihr añade -t a la raíz war-."
+        "es": "Con ihr el pretérito de sein es wart: ihr añade -t a la raíz war-."
       },
       "wrong": {
         "waren": {
@@ -540,7 +540,7 @@
       "correct": 0,
       "why": {
         "en": "The simple past of haben for ich is hatte, with no ending in the first person singular.",
-        "es": "El pasado simple de haben para ich es hatte, sin terminación en la primera persona del singular."
+        "es": "El pretérito de haben para ich es hatte, sin terminación en la primera persona del singular."
       },
       "wrong": {
         "hattest": {
@@ -586,13 +586,13 @@
           },
           "wrong": {
             "en": "Ich habe Hunger gehabt is possible but rare. For haben the simple past hatte is the usual past form in speech.",
-            "es": "Ich habe Hunger gehabt es posible pero raro. Para haben, el pasado simple hatte es la forma usual del pasado en el habla."
+            "es": "Ich habe Hunger gehabt es posible pero raro. Para haben, el pretérito hatte es la forma usual del pasado en el habla."
           }
         },
         {
           "text": {
             "en": "hatte: haben is normally used in the simple past",
-            "es": "hatte: haben se usa normalmente en pasado simple"
+            "es": "hatte: haben se usa normalmente en pretérito"
           }
         },
         {
@@ -602,7 +602,7 @@
           },
           "wrong": {
             "en": "The present tense is habe. hatte is the Präteritum, the simple past.",
-            "es": "El presente es habe. hatte es el Präteritum, el pasado simple."
+            "es": "El presente es habe. hatte es el Präteritum, el pretérito."
           }
         }
       ],
@@ -619,7 +619,7 @@
       "correct": 1,
       "why": {
         "en": "With du the simple past of haben is hattest, and in a yes/no question the verb comes first.",
-        "es": "Con du el pasado simple de haben es hattest, y en una pregunta de sí o no el verbo va primero."
+        "es": "Con du el pretérito de haben es hattest, y en una pregunta de sí o no el verbo va primero."
       },
       "wrong": {
         "Hatte": {
@@ -699,7 +699,7 @@
       "correct": 1,
       "why": {
         "en": "With wir the simple past of haben is hatten: the plural adds -en to the stem hatt-.",
-        "es": "Con wir el pasado simple de haben es hatten: el plural añade -en a la raíz hatt-."
+        "es": "Con wir el pretérito de haben es hatten: el plural añade -en a la raíz hatt-."
       },
       "wrong": {
         "hatte": {
@@ -745,7 +745,7 @@
           },
           "wrong": {
             "en": "In the simple past the first and third person singular have no ending. The -t belongs to ihr: hattet.",
-            "es": "En el pasado simple la primera y la tercera persona del singular no llevan terminación. La -t pertenece a ihr: hattet."
+            "es": "En el pretérito la primera y la tercera persona del singular no llevan terminación. La -t pertenece a ihr: hattet."
           }
         },
         {
@@ -778,7 +778,7 @@
       "correct": 2,
       "why": {
         "en": "With ihr the simple past of haben is hattet: ihr adds -et to the stem hatt-.",
-        "es": "Con ihr el pasado simple de haben es hattet: ihr añade -et a la raíz hatt-."
+        "es": "Con ihr el pretérito de haben es hattet: ihr añade -et a la raíz hatt-."
       },
       "wrong": {
         "hatten": {
@@ -823,7 +823,7 @@
       "wrong": {
         "war": {
           "en": "war is the simple past and does not need gewesen. Either war alone or bin gewesen, but not both.",
-          "es": "war es el pasado simple y no necesita gewesen. O war solo o bin gewesen, pero no los dos."
+          "es": "war es el pretérito y no necesita gewesen. O war solo o bin gewesen, pero no los dos."
         },
         "habe": {
           "en": "habe gewesen does not exist. The Perfekt of sein uses sein as the helper: bin gewesen.",
@@ -858,7 +858,7 @@
       "correct": 1,
       "why": {
         "en": "Das Wetter is singular (it), so the simple past of sein is war.",
-        "es": "Das Wetter es singular (ello), así que el pasado simple de sein es war."
+        "es": "Das Wetter es singular (ello), así que el pretérito de sein es war."
       },
       "wrong": {
         "waren": {
@@ -898,7 +898,7 @@
       "correct": 0,
       "why": {
         "en": "The question is about the past (am Samstag, last Saturday), and the simple past of sein for du is warst.",
-        "es": "La pregunta es sobre el pasado (am Samstag, el sábado pasado), y el pasado simple de sein para du es warst."
+        "es": "La pregunta es sobre el pasado (am Samstag, el sábado pasado), y el pretérito de sein para du es warst."
       },
       "wrong": {
         "bist": {
@@ -964,11 +964,11 @@
         {
           "text": {
             "en": "Every verb uses the simple past in speech",
-            "es": "Todos los verbos usan el pasado simple en el habla"
+            "es": "Todos los verbos usan el pretérito en el habla"
           },
           "wrong": {
             "en": "Only sein, haben and the modal verbs normally use the simple past in speech. Most other verbs use the Perfekt: bin gegangen.",
-            "es": "Solo sein, haben y los verbos modales usan normalmente el pasado simple en el habla. La mayoría de los otros verbos usan el Perfekt: bin gegangen."
+            "es": "Solo sein, haben y los verbos modales usan normalmente el pretérito en el habla. La mayoría de los otros verbos usan el Perfekt: bin gegangen."
           }
         },
         {
@@ -984,7 +984,7 @@
           },
           "wrong": {
             "en": "gehen is a verb of movement, so the helper is sein. Only most other verbs use haben.",
-            "es": "gehen es un verbo de movimiento, así que el auxiliar es sein. Solo la mayoría de los otros verbos usan haben."
+            "es": "gehen es un verbo de movimiento, así que el auxiliar es sein. La mayoría de los demás verbos usan haben, pero gehen no."
           }
         }
       ],

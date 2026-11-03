@@ -184,7 +184,7 @@
               "es": "Das Formular musste ausgefüllt werden.",
               "tr": {
                 "en": "The form had to be filled out.",
-                "es": "El formulario tenía que rellenarse."
+                "es": "El formulario tenía que llenarse."
               }
             }
           ]
@@ -757,7 +757,7 @@
         {
           "text": {
             "en": "wurde: the subject es is hidden and must be written in the middle of the sentence",
-            "es": "wurde: el sujeto es está oculto y debe escribirse en medio de la oración"
+            "es": "wurde: el sujeto «es» está oculto y debe escribirse en medio de la oración"
           },
           "wrong": {
             "en": "es appears only when it fills position 1 (Es wurde viel getanzt). After Gestern it disappears.",
@@ -836,7 +836,7 @@
       ],
       "tr": {
         "en": "The form had to be filled out yesterday.",
-        "es": "El formulario tenía que rellenarse ayer."
+        "es": "El formulario tenía que llenarse ayer."
       }
     },
     {

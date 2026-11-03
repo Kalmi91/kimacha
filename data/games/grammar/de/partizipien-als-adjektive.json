@@ -144,7 +144,7 @@
               "es": "Der gefallene Schnee liegt auf der Straße.",
               "tr": {
                 "en": "The snow that has fallen is lying on the street.",
-                "es": "La nieve que cayó está sobre la calle."
+                "es": "La nieve que cayó está en la calle."
               }
             },
             {
@@ -629,7 +629,7 @@
       "wrong": {
         "fallende": {
           "en": "fallende Schnee would be snow that is falling right now. This snow is already lying on the street.",
-          "es": "fallende Schnee sería la nieve que está cayendo ahora mismo. Esta nieve ya está sobre la calle."
+          "es": "fallende Schnee sería la nieve que está cayendo ahora mismo. Esta nieve ya está en la calle."
         },
         "gefallenem": {
           "en": "gefallenem is a dative ending. Schnee is the subject here, so after der the nominative ending is -e.",
@@ -642,7 +642,7 @@
       ],
       "tr": {
         "en": "The snow that has fallen is now lying on the street.",
-        "es": "La nieve que cayó está ahora sobre la calle."
+        "es": "La nieve que cayó está ahora en la calle."
       }
     },
     {
@@ -740,7 +740,7 @@
       "target": "gefallene",
       "tr": {
         "en": "The snow that has fallen is lying on the street.",
-        "es": "La nieve que cayó está sobre la calle."
+        "es": "La nieve que cayó está en la calle."
       },
       "options": [
         {
@@ -760,7 +760,7 @@
           },
           "wrong": {
             "en": "fallend would describe snow that is falling at this moment. This snow has fallen already and is lying on the street.",
-            "es": "fallend describiría nieve que está cayendo en este momento. Esta nieve ya cayó y está sobre la calle."
+            "es": "fallend describiría nieve que está cayendo en este momento. Esta nieve ya cayó y está en la calle."
           }
         },
         {
