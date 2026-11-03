@@ -260,7 +260,7 @@ SPEC['de-b2-reading'] = [
   gapped('reading', [300, 450], 6, 8, { fragmentWords: [12, 45] }),
   passage('reading', 'text', [430, 560], 6, 3),
   pool('reading', 6, 8, true, { promptWords: [55, 85], optionWords: [3, 12] }),
-  gapped('reading', [100, 200], 3, 5, { fragmentWords: [10, 35] }),
+  pool('reading', 3, 5, true, { promptWords: [38, 62], optionWords: [3, 12] }),
 ];
 SPEC['de-b2-listening'] = [
   clips('listening', 'audio', 5, 2, T2, { clipWords: [70, 125], plays: 1 }),

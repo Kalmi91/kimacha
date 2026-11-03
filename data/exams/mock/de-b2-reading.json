@@ -148,18 +148,22 @@
         },
         {
           "skill": "reading",
-          "kind": "gapped_text",
-          "instruction": "Lesen Sie die Hinweise zu einem Coworking-Raum. Welcher Satz (a bis e) passt in welche Lücke (1 bis 3)? Jeden Satz können Sie nur einmal verwenden. Zwei Sätze passen nicht.",
-          "title": "Nutzungsbedingungen für den Coworking-Raum",
-          "text": "Mit dem Betreten des Raumes erkennen Sie die folgenden Regeln an. Der Coworking-Raum steht allen Mitgliedern von Montag bis Freitag von 7 bis 22 Uhr zur Verfügung. {{1}} Am Wochenende ist der Raum geschlossen, es sei denn, ein Mitglied hat ihn für eine Veranstaltung gebucht.\n\nBitte reservieren Sie Ihren Arbeitsplatz im Voraus über die App. Die Plätze sind nicht fest zugeordnet, Sie können jeden Tag einen anderen Platz wählen. {{2}} Wer seinen Platz nicht innerhalb von 30 Minuten nach Beginn der Reservierung belegt, verliert den Anspruch darauf.\n\nTelefongespräche führen Sie bitte in den dafür vorgesehenen Kabinen. {{3}} Besprechungen mit mehreren Personen finden ausschließlich in den Konferenzräumen statt, die ebenfalls über die App gebucht werden. Bitte halten Sie Ihre Umgebung sauber und stellen Sie benutztes Geschirr in die Spülmaschine.",
-          "fragments": [
-            { "id": "a", "text": "Die Kabinen sind schallgedämmt, damit andere Nutzer nicht gestört werden." },
-            { "id": "b", "text": "Neue Mitglieder erhalten zu Beginn eine persönliche Einführung in die Ausstattung des Hauses." },
-            { "id": "c", "text": "Nach 18 Uhr ist die Küche nicht mehr besetzt, Getränke können Sie aber weiterhin selbst zubereiten." },
-            { "id": "d", "text": "Nur so können wir sicherstellen, dass an stark nachgefragten Tagen für alle ein Platz frei ist." },
-            { "id": "e", "text": "Die Gebühr für den Raum wird jeweils am Monatsanfang abgebucht." }
+          "kind": "match_pool",
+          "instruction": "Lesen Sie die Nutzungsbedingungen für einen Coworking-Raum. Welche Überschrift (a bis e) passt zu welchem Abschnitt (1 bis 3)? Jede Überschrift können Sie nur einmal verwenden. Zwei Überschriften passen nicht.",
+          "prompts": [
+            { "id": "25", "text": "Der Coworking-Raum steht allen Mitgliedern von Montag bis Freitag von 7 bis 22 Uhr zur Verfügung. Nach 18 Uhr ist die Küche nicht mehr besetzt, Getränke können Sie aber weiterhin selbst zubereiten. Am Wochenende ist der Raum geschlossen, es sei denn, ein Mitglied hat ihn für eine Veranstaltung gebucht." },
+            { "id": "26", "text": "Bitte reservieren Sie Ihren Arbeitsplatz im Voraus über die App. Die Plätze sind nicht fest zugeordnet, Sie können jeden Tag einen anderen Platz wählen. Wer seinen Platz nicht innerhalb von 30 Minuten nach Beginn der Reservierung belegt, verliert den Anspruch darauf, damit an stark nachgefragten Tagen für alle ein Platz frei ist." },
+            { "id": "27", "text": "Telefongespräche führen Sie bitte in den dafür vorgesehenen, schallgedämmten Kabinen. Besprechungen mit mehreren Personen finden ausschließlich in den Konferenzräumen statt, die ebenfalls über die App gebucht werden. Bitte halten Sie Ihre Umgebung sauber und stellen Sie benutztes Geschirr in die Spülmaschine." }
           ],
-          "answer": { "1": "c", "2": "d", "3": "a" }
+          "options": [
+            { "id": "a", "text": "Rücksicht auf andere: Telefonate, Besprechungen und Sauberkeit" },
+            { "id": "b", "text": "Einführung und Rundgang für neue Mitglieder" },
+            { "id": "c", "text": "Wann der Raum geöffnet ist" },
+            { "id": "d", "text": "Monatsgebühr und Zahlungsweise" },
+            { "id": "e", "text": "So sichern Sie sich einen Arbeitsplatz" }
+          ],
+          "answer": { "25": "c", "26": "e", "27": "a" },
+          "unique": true
         }
       ]
     }

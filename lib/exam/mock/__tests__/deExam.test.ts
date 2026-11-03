@@ -191,6 +191,24 @@ describe('de: the Schreiben tasks weigh as in the Goethe module and have the off
     expect(limitsOf('C1').map(([min]) => min)).toEqual([230, 120]);
   });
 
+  it('B1 Lesen Teil 3 is the Goethe task: seven situations, ten ads, and one situation for which no ad fits (answer 0)', () => {
+    const task = file('B1', 'reading').forms[0].tasks[2];
+    if (task.kind !== 'match_pool') throw new Error('match_pool expected');
+    expect(task.prompts).toHaveLength(7);
+    expect(task.options).toHaveLength(10);
+    expect(task.allowNone).toBe(true);
+    expect(Object.values(task.answer).filter((a) => a === 'none')).toHaveLength(1);
+    expect(new Set(Object.values(task.answer).filter((a) => a !== 'none')).size).toBe(6);
+  });
+
+  it('B2 Lesen Teil 5 matches headings to the sections of a text, with two headings too many', () => {
+    const tasks = file('B2', 'reading').forms[0].tasks;
+    const task = tasks[tasks.length - 1];
+    if (task.kind !== 'match_pool') throw new Error('match_pool expected');
+    expect(task.unique).toBe(true);
+    expect(task.options.length - task.prompts.length).toBe(2);
+  });
+
   it('the A1 / A2 speaking papers have no preparation time (the Goethe A1 / A2 give none)', () => {
     for (const level of ['A1', 'A2']) for (const task of file(level, 'speaking').forms[0].tasks) expect((task as { prepSeconds?: number }).prepSeconds).toBeUndefined();
   });
@@ -248,8 +266,9 @@ describe('de: the shipped papers', () => {
         if (task.kind === 'clips_mc') for (const c of task.clips) for (const q of c.questions) expect(q.correct).toBeLessThan(q.options.length);
         if (task.kind === 'match_pool') {
           const ids = task.options.map((o) => o.id);
-          for (const p of task.prompts) expect(ids).toContain(task.answer[p.id]);
-          if (task.unique) expect(new Set(Object.values(task.answer)).size).toBe(task.prompts.length);
+          for (const p of task.prompts) expect(task.allowNone ? [...ids, 'none'] : ids).toContain(task.answer[p.id]);
+          const answers = Object.values(task.answer).filter((a) => a !== 'none');
+          if (task.unique) expect(new Set(answers).size).toBe(answers.length);
         }
         if (task.kind === 'gapped_text') for (const id of Object.values(task.answer)) expect(task.fragments.map((x) => x.id)).toContain(id);
         if (task.kind === 'cloze') for (const g of task.gaps) if ('options' in g) expect(g.correct).toBeLessThan(g.options.length);
