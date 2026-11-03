@@ -8,6 +8,7 @@
 import chunkData from '@/data/sentences/chunks.json';
 import chunkDataDe from '@/data/sentences/chunks-de.json';
 import chunkDataDeA2 from '@/data/sentences/chunks-de-a2.json';
+import chunkDataDeB2c1 from '@/data/sentences/chunks-de-b2c1.json';
 import type { PcicTarget } from '@/data/pcic';
 import { activeSourceFor } from '@/lib/languagePair';
 import { tileWords } from '@/lib/sentenceCards';
@@ -21,7 +22,7 @@ export interface SentenceChunk {
 const CHUNKS = chunkData as Record<string, { es: string; en: string }[]>;
 // The German deck's steps (data/sentences/chunks-de.json, keyed by the deck item id "d<id>"): the German sentence and its
 // prompt in each of the three languages a German learner can come from.
-const CHUNKS_DE = { ...chunkDataDe, ...chunkDataDeA2 } as Record<string, { de: string; en: string; es: string; hu: string }[]>;
+const CHUNKS_DE = { ...chunkDataDe, ...chunkDataDeA2, ...chunkDataDeB2c1 } as Record<string, { de: string; en: string; es: string; hu: string }[]>;
 
 const words = (sentence: string): string[] => tileWords(sentence).map((w) => w.toLowerCase());
 
