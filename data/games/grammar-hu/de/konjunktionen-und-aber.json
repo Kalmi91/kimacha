@@ -25,7 +25,7 @@
   "That is not a dog, but a cat.": "Ez nem kutya, hanem macska.",
   "I do not live in Cologne, but in Berlin.": "Nem Kölnben lakom, hanem Berlinben.",
   "The connecting word is in position 0. The next element is in position 1, and the verb stays in position 2. So after und you can see an inversion.": "A kötőszó a 0. helyen áll. A következő elem az 1. helyen, az ige pedig a 2. helyen marad. Ezért az und után előfordulhat az alany és az ige felcserélődése.",
-  "Today I learn German, and tomorrow I learn Spanish.": "Ma németet tanulok, és holnap spanyolul tanulok.",
+  "Today I learn German, and tomorrow I learn Spanish.": "Ma németül tanulok, és holnap spanyolul tanulok.",
   "I am tired, but today I work.": "Fáradt vagyok, de ma dolgozom.",
   "Pairs that are easy to mix up": "Könnyen összekeverhető párok",
   "sondern needs a negation before it and replaces the wrong part. aber just adds a contrast and needs no negation.": "A sondern előtt tagadás áll, és a téves részt cseréli le. Az aber csak ellentétet fűz hozzá, és nem kell elé tagadás.",
@@ -82,7 +82,7 @@
   "The omitted subject is still ich, and the verb keeps the ich-ending: höre. The infinitive is not used.": "Az elhagyott alany továbbra is az ich, és az ige megtartja az ich ragját: höre. A főnévi igenevet nem használjuk.",
   "The subject ich is not repeated, and the verb still agrees with it": "Az ich alany nem ismétlődik, és az ige továbbra is egyezik vele",
   "When the subject is the same, you may leave it out after und. The omitted subject is ich, so the verb is höre.": "Ha az alany ugyanaz, az und után elhagyható. Az elhagyott alany az ich, ezért az ige höre.",
-  "hörst is the du-form. The omitted subject is still ich, so the verb must be höre.": "A hörst a du alakja. Az elhagyott alany továbbra is az ich, ezért az igének höre kell legyen.",
+  "hörst is the du-form. The omitted subject is still ich, so the verb must be höre.": "A hörst a du alakja. Az elhagyott alany továbbra is az ich, ezért höre kell.",
   "hören is the form for wir and sie (they). With the omitted subject ich the verb is höre.": "A hören a wir és a sie (ők) alakja. Az elhagyott ich alanyhoz höre tartozik.",
   "The second word is a contrast to gut, so you need aber: gut, aber teuer.": "A második szó ellentétben áll a gut-tal, ezért aber kell: gut, aber teuer.",
   "denn needs a full clause with a subject and a verb after it. teuer is only one word, and it is a contrast, so you need aber.": "A denn után teljes tagmondat kell, alannyal és igével. A teuer csak egy szó, és ellentét, ezért aber kell.",
@@ -101,6 +101,6 @@
   "und is in position 1 and morgen in position 2": "az und az 1. helyen áll, a morgen a 2. helyen",
   "und does not count as a position. If it did, the verb would be third, but the verb must be second after morgen.": "Az und nem számít helynek. Ha számítana, az ige harmadik lenne, pedig a morgen után másodiknak kell lennie.",
   "und stands in position 0, so morgen is position 1 and the verb follows": "az und a 0. helyen áll, ezért a morgen az 1. hely, és az ige követi",
-  "morgen always has to come after the subject": "a morgen mindig az alany után kell álljon",
+  "morgen always has to come after the subject": "a morgen mindig az alany után kell, hogy álljon",
   "morgen can open a clause. Then the subject follows the verb, as in morgen lerne ich.": "A morgen nyithat tagmondatot. Ilyenkor az alany az ige után áll, mint a morgen lerne ich esetében."
 }
