@@ -57,13 +57,75 @@ const STEM_CHANGING: Record<string, string[]> = {
   nagynéni: ['nagynéném', 'nagynénémmel', 'nagynénit', 'nagynénik'],
 };
 
+// One negative expectation per row: the long stem takes no accusative, plural or possessive (vízet, kézek), the
+// short stem takes no consonant-initial case (vizben), and an ending of the wrong harmony is still wrong.
+const STEM_LACKS: Record<string, string[]> = {
+  ló: ['lót', 'lók', 'lovban'],
+  tó: ['tót', 'tók', 'tavban'],
+  kő: ['kőt', 'kők', 'kövben'],
+  fű: ['fűt', 'fűk', 'füvben'],
+  hó: ['hót', 'hók', 'havban'],
+  szó: ['szavban', 'szavval', 'szavnak'],
+  nyár: ['nyárat', 'nyárak', 'nyarban'],
+  tél: ['télet', 'télek', 'telben'],
+  víz: ['vízet', 'vízek', 'vízem', 'vizben', 'vizzel'],
+  kéz: ['kézet', 'kézek', 'kézem', 'kezben', 'kezzel'],
+  tűz: ['tűzet', 'tűzek', 'tűzem', 'tüzben'],
+  út: ['útat', 'útak', 'útam', 'utban'],
+  kút: ['kútat', 'kútak', 'kutban'],
+  híd: ['hídat', 'hídak', 'hidban'],
+  ég: ['éget', 'égek', 'egben'],
+  nyúl: ['nyúlat', 'nyúlak', 'nyulban'],
+  név: ['névet', 'névek', 'névem', 'nevben'],
+  tér: ['téret', 'térek', 'terben'],
+  erő: ['erejben', 'erejnek', 'erejvel'],
+  idő: ['idejben', 'idejnek', 'idejvel'],
+  fiú: ['fiban', 'finak', 'fival'],
+  lélek: ['lelkben', 'lélekek', 'lélekot'],
+  ajak: ['ajkban', 'ajakot', 'ajakak'],
+  bokor: ['bokort', 'bokroban', 'bokrban'],
+  tükör: ['tükörot', 'tükröban', 'tükrben'],
+  torony: ['toronyot', 'tornyban', 'toronyak'],
+  ökör: ['ökörot', 'ökrben', 'ökrban'],
+  teher: ['teheret', 'terhben', 'teherek'],
+  szerelem: ['szerelemet', 'szerelmben', 'szerelemek'],
+  sarok: ['sarokot', 'sarokak', 'sarkban', 'sarokon'],
+  farok: ['farokat', 'farokak', 'farkban'],
+  torok: ['torokat', 'torokak', 'torkban'],
+  étterem: ['étteremet', 'étteremek', 'éttermben'],
+  terem: ['teremet', 'teremek', 'termben'],
+  derék: ['derékat', 'derékak', 'derekban'],
+  egér: ['egérek', 'egért', 'egerben'],
+  pohár: ['pohárat', 'pohárak', 'poharban'],
+  tenyér: ['tenyérek', 'tenyért', 'tenyerben'],
+  gyökér: ['gyökérek', 'gyökért', 'gyökerben'],
+  kenyér: ['kenyérek', 'kenyért', 'kenyerben'],
+  levél: ['levélek', 'levélet', 'levelben'],
+  tehén: ['tehénet', 'tehének', 'tehenben'],
+  madár: ['madárat', 'madárak', 'madarban'],
+  szülő: ['szülnek', 'szülben', 'szüleben'],
+  szülők: ['szülnek', 'szülben'],
+  nagyszülő: ['nagyszülnek', 'nagyszülben'],
+  nagyszülők: ['nagyszülnek', 'nagyszülben'],
+  anya: ['anyjban', 'anyjnak', 'anyjval'],
+  apa: ['apjban', 'apjnak', 'apjval'],
+  nagyapa: ['nagyapjban', 'nagyapjnak'],
+  nagybácsi: ['nagybátyban', 'nagybátyval'],
+  nagynéni: ['nagynénban', 'nagynénval'],
+};
+
 describe('huForms, stem-changing nouns', () => {
   it('every row of the table has an expectation, and no expectation is orphaned', () => {
     expect(Object.keys(STEM_CHANGING).sort()).toEqual(huStemChangingWords().sort());
   });
 
+  it('every row of the table has a negative expectation too', () => {
+    expect(Object.keys(STEM_LACKS).sort()).toEqual(huStemChangingWords().sort());
+  });
+
   it.each(Object.entries(STEM_CHANGING))('%s', (word, forms) => {
     has([noun(word)], ...forms);
+    lacks([noun(word)], ...STEM_LACKS[word]);
   });
 
   it('does not give the stem change to the wrong cases', () => {

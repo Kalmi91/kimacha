@@ -1,4 +1,5 @@
 import { huHarmony } from '@/lib/huForms';
+import { unknownTokens } from '@/lib/knownSentence';
 import { adj, has, lacks, noun, verb } from '@/test-utils/huForms';
 
 describe('huHarmony', () => {
@@ -118,5 +119,38 @@ describe('huForms, false positives', () => {
   it('keeps nouns and verbs apart', () => {
     lacks([noun('a ház')], 'házott', 'házol', 'házni');
     lacks([verb('látok')], 'látban', 'látat');
+  });
+});
+
+describe('huForms, comparatives and the "ülj le" card', () => {
+  it('the irregular comparatives of a learned adjective (kisebb, jobb, szebb, hosszabb, nehezebb)', () => {
+    has([adj('kicsi')], 'kisebb', 'kisebbet', 'kisebbek', 'kisebben', 'legkisebb');
+    has([adj('jó')], 'jobb', 'jobbat', 'jobban', 'legjobb');
+    has([adj('szép')], 'szebb', 'szebben', 'legszebb');
+    has([adj('hosszú')], 'hosszabb', 'hosszabban', 'leghosszabb');
+    has([adj('nehéz')], 'nehezebb', 'nehezebben', 'legnehezebb');
+    has([adj('nagy')], 'nagyobb', 'legnagyobb');
+    has([adj('magas')], 'magasabb', 'legmagasabb');
+  });
+
+  it('a comparative needs its adjective to be learned', () => {
+    lacks([adj('nagy')], 'kisebb', 'jobb', 'szebb', 'legkisebb');
+    lacks([adj('kicsi')], 'jobb', 'nagyobb', 'kisebbb');
+  });
+
+  it('the card "ülj le" is a phrase, not an adjective, so it gives no noun forms (léhez)', () => {
+    const cards = require('@/data/words/hu/a1.json') as { id: number; hu: string; pos: string }[];
+    const card = cards.find((c) => c.id === 6985);
+    expect(card?.hu).toBe('ülj le');
+    expect(card?.pos).toBe('phrase');
+    lacks([['ülj le', card?.pos]], 'léhez', 'lében', 'lét');
+    const ctx = { learned: [{ text: 'ülj le', pos: card?.pos }] };
+    expect(unknownTokens('Ülj le!', 'hu', ctx)).toEqual([]);
+    expect(unknownTokens('Léhez ülj le.', 'hu', ctx)).toEqual(['léhez']);
+  });
+
+  it('a piñata form is recognised as one word', () => {
+    has([noun('piñata')], 'piñata', 'piñatát', 'piñaták', 'piñatában', 'piñatával');
+    lacks([noun('piñata')], 'piñatat', 'piñataban', 'piñatak');
   });
 });

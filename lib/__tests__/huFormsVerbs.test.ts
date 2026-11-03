@@ -62,6 +62,41 @@ describe('huForms, verbs: ordinary stems', () => {
   });
 });
 
+describe('huForms, verbs: the -ott- past', () => {
+  it('the whole paradigm for a stem ending in t (tartottam, futottam, tanítottam)', () => {
+    has([verb('tartok')], 'tartottam', 'tartottál', 'tartott', 'tartottunk', 'tartottatok', 'tartottak', 'tartotta', 'tartottuk', 'tartották');
+    has([verb('futok')], 'futottam', 'futottak', 'futott');
+    has([verb('tanítok')], 'tanítottam', 'tanítottál', 'tanítottak', 'tanította');
+    has([verb('értek')], 'értettem', 'értettek', 'értette', 'értették');
+    has([verb('sütök')], 'sütöttem', 'sütöttek', 'sütötte');
+  });
+
+  it('a short hand list of other stems has it too (hallottam, játszottak, megoldották)', () => {
+    has([verb('hallok')], 'hallottam', 'hallottál', 'hallottunk', 'hallott', 'hallották', 'meghallottam');
+    has([verb('játszom')], 'játszottam', 'játszottak', 'játszott');
+    has([verb('megoldom')], 'megoldottam', 'megoldották', 'megoldott');
+  });
+
+  it('any other stem has only the 3rd person -ott/-ett/-ött (olvasott, but olvastam)', () => {
+    has([verb('olvasok')], 'olvasott', 'olvastam', 'olvastak', 'olvasta');
+    has([verb('dolgozom')], 'dolgozott', 'dolgoztam', 'dolgoztak');
+    has([verb('tanulok')], 'tanult', 'tanultam', 'tanultunk');
+    has([verb('főzök')], 'főzött', 'főztem');
+    lacks([verb('olvasok')], 'olvasottam', 'olvasottál', 'olvasottunk', 'olvasottatok', 'olvasottak', 'olvasotta', 'olvasottuk');
+    lacks([verb('dolgozom')], 'dolgozottam', 'dolgozottunk', 'dolgozottak');
+    lacks([verb('tanulok')], 'tanulottam', 'tanulottál', 'tanulottak');
+    lacks([verb('főzök')], 'főzöttem', 'főzöttek', 'főzötte');
+    lacks([verb('kérek')], 'kérettem', 'kérettek');
+  });
+
+  it('the -hat/-het of can / may doubles its t (kaphattam), it has no -ott- paradigm', () => {
+    has([verb('kapok')], 'kaphattam', 'kaphatott', 'kaphattak');
+    has([verb('kérek')], 'kérhettem', 'kérhetett', 'kérhettek');
+    lacks([verb('kapok')], 'kaphatottam', 'kaphatottak');
+    lacks([verb('kérek')], 'kérhetettem', 'kérhetettek');
+  });
+});
+
 describe('huForms, verbs: preverbs and irregular verbs', () => {
   it('a preverb in front of a learned verb (megérkezik, elmegyek, megláttam)', () => {
     has([verb('érkezem')], 'megérkezik', 'megérkeztem');
