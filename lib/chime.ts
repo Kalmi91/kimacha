@@ -7,6 +7,8 @@
 
 import { Platform } from 'react-native';
 
+import { chimeAsset } from './chimeAsset';
+
 // The file is 250 ms long; a chime that has not finished by now did not load.
 const CHIME_MAX_MS = 1500;
 
@@ -34,7 +36,7 @@ export function playChime(onDone?: () => void): void {
   }
   try {
     const { createAudioPlayer } = require('expo-audio') as typeof import('expo-audio');
-    const created = createAudioPlayer(require('../assets/sounds/correct.wav'));
+    const created = createAudioPlayer(chimeAsset());
     player = created;
     sub = created.addListener('playbackStatusUpdate', status => {
       if (status.didJustFinish) finish();
