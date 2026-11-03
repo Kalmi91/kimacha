@@ -180,6 +180,7 @@ export function OrderDrillItem({
         targetWords={tileWords(item.es)}
         trapWords={[]}
         speechLocale={speechLang(learnedLang)}
+        spokenSentence={item.es}
         onResult={onDone}
       />
     </View>

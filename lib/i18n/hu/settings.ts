@@ -50,7 +50,7 @@ const hu: typeof en = {
       kokoro: 'Kokoro (szebb, lassabb)',
       kokoroSize: (mb: string) => `A Kokoro ${mb} letöltést kér`,
       confirmTitle: 'Letöltöd a jobb hangot?',
-      confirmMessage: (mb: string) => `Ez ${mb} letöltés (a szavak felvételei és a hangok). Mobilneten a csomagodból fogy, ezért Wi-Fi ajánlott.`,
+      confirmMessage: (mb: string) => `Ez ${mb} letöltés (a szavak és mondatok felvételei és a hangok). Mobilneten a csomagodból fogy, ezért Wi-Fi ajánlott.`,
       confirmYes: 'Letöltés',
     },
     dailyNewLimit: 'Napi új szavak',

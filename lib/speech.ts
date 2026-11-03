@@ -30,7 +30,7 @@
 import { AppState, Platform } from 'react-native';
 import * as Speech from 'expo-speech';
 import { speakNeural, stopNeural } from './neuralTts';
-import { neuralEngineFor, neuralPackFile, startNeural } from './neuralModels';
+import { neuralEngineFor, neuralPackFile, neuralSentenceFile, startNeural } from './neuralModels';
 import { playPackFile, stopPack } from './packAudio';
 import { voiceFor, type NeuralLang, type VoiceGender } from './neuralVoices';
 
@@ -188,8 +188,9 @@ function neuralLangFor(locale: string): NeuralLang | null {
   return base === 'es' || base === 'en' || base === 'hu' ? base : null;
 }
 
-// The better voice (Settings, lib/neuralModels.ts) is tried before the phone's own, on three levels:
-// (1) the word pack's recording of a card word, (2) the language's sentence engine (Piper or Kokoro, the
+// The better voice (Settings, lib/neuralModels.ts) is tried before the phone's own, on four levels:
+// (1) the word pack's recording of a card word, (1b) the sentence pack's recording of a fixed sentence by the
+// speaker of the call's gender, (2) the language's sentence engine (Piper or Kokoro, the
 // text spoken by the voice lib/neuralVoices.ts picks), (3) the phone. A level that is not ready is
 // skipped, and one that fails (a broken file, an engine error) hands the same text to the next, so the
 // learner never gets silence for a text the phone could have read. Returns false when neither of the
@@ -207,7 +208,10 @@ function speakBetter(text: string, locale: string, opts: BetterOptions, phone: (
   if (!lang) return false;
   // A male / female line (practice exam) must not get a pack recording of the other sex.
   const wrongSex = !!opts.gender && opts.gender !== 'n' && lang !== 'hu' && voiceFor(lang, 'kokoro', text).gender !== opts.gender;
-  const pack = wrongSex ? null : neuralPackFile(lang, text);
+  const wordFile = wrongSex ? null : neuralPackFile(lang, text);
+  // The sentence pack (Audio round B) after the word pack: the speaker is the explicit gender (a sequence's shared
+  // speaker, a card's word), else the text's own hash gender, the one the engine would pick.
+  const pack = wordFile ?? neuralSentenceFile(lang, text, opts.gender);
   const engine = neuralEngineFor(lang);
   if (!pack && !engine) return false;
   Speech.stop();
@@ -252,7 +256,7 @@ export function stop(): void {
 // learner asks for (a speaker button, a Check) goes through speak() and always sounds.
 let quietStart = true;
 
-export function speakAuto(text: string, locale: string, options: Speech.SpeechOptions = {}): void {
+export function speakAuto(text: string, locale: string, options: Speech.SpeechOptions & { gender?: VoiceGender } = {}): void {
   if (quietStart) return;
   speak(text, locale, options);
 }

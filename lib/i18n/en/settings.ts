@@ -50,7 +50,7 @@ export default {
       kokoro: 'Kokoro (nicer, slower)',
       kokoroSize: (mb: string) => `Kokoro needs a ${mb} download`,
       confirmTitle: 'Download the better voice?',
-      confirmMessage: (mb: string) => `This downloads ${mb} (the word recordings and the voices). On mobile data it counts against your plan, so Wi-Fi is recommended.`,
+      confirmMessage: (mb: string) => `This downloads ${mb} (the word and sentence recordings and the voices). On mobile data it counts against your plan, so Wi-Fi is recommended.`,
       confirmYes: 'Download',
     },
     dailyNewLimit: 'New words a day',

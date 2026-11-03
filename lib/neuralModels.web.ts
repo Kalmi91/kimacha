@@ -2,7 +2,7 @@
 // not exist here (the Settings row is hidden, `supported` is false) and nothing is ever downloaded.
 
 import { useSyncExternalStore } from 'react';
-import { DEFAULT_ENGINES, type NeuralEngine, type NeuralLang } from './neuralVoices';
+import { DEFAULT_ENGINES, type NeuralEngine, type NeuralLang, type VoiceGender } from './neuralVoices';
 import type { NeuralState } from './neuralModels';
 
 const state: NeuralState = {
@@ -29,6 +29,10 @@ export function neuralEngineFor(_lang: NeuralLang): NeuralEngine | null {
 }
 
 export function neuralPackFile(_lang: NeuralLang, _text: string): string | null {
+  return null;
+}
+
+export function neuralSentenceFile(_lang: NeuralLang, _text: string, _gender?: VoiceGender): string | null {
   return null;
 }
 

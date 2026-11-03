@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Animated, PanResponder, StyleSheet, View, Pressable, type PanResponderInstance } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak as speakIn, stop as stopSpeech } from '@/lib/speech';
+import type { VoiceGender } from '@/lib/neuralVoices';
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
@@ -33,9 +34,15 @@ interface Props {
   // looked-at word belongs to.
   sourceHints?: HintPiece[] | null;
   onSourceHint?: (ids: string[]) => void;
+  // Audio round B: the whole sentences (the prompt and the finished target sentence, not a placed tile) are spoken by this
+  // speaker, the sex of the card's word voice (lib/cardSpeaker.ts), so the sentence pack finds its recording.
+  speakerGender?: VoiceGender;
+  // The sentence as written, spoken after Check. The tiles are lower-cased and without punctuation, which is not the
+  // sentence the pack holds; without it the joined tiles are spoken as before.
+  spokenSentence?: string;
 }
 
-export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, sourceHints, onSourceHint }: Props) {
+export default function EasySentenceCard({ sourceSentence, targetWords, trapWords, onResult, speechLocale, sourceSpeechLocale, gradeButtons = false, sourceHints, onSourceHint, speakerGender, spokenSentence }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
   const g = useGrammarColors();
@@ -53,10 +60,12 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
   // Check judged the build wrong; the correct sentence is also shown after an override ("Knew it").
   const [missed, setMissed] = useState(false);
   const targetSentence = targetWords.join(' ');
+  const saySentence = (text: string, locale: string) => (speakerGender ? speakIn(text, locale, { gender: speakerGender }) : speakIn(text, locale));
 
   useEffect(() => {
-    if (sourceSpeechLocale) speakIn(sourceSentence, sourceSpeechLocale);
+    if (sourceSpeechLocale) saySentence(sourceSentence, sourceSpeechLocale);
     return () => stopSpeech();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sourceSentence, sourceSpeechLocale]);
 
   const usedSet = new Set(placed);
@@ -120,7 +129,7 @@ export default function EasySentenceCard({ sourceSentence, targetWords, trapWord
     // build alike (after a bad build it is also shown).
     if (speechLocale) {
       stopSpeech();
-      speakIn(targetSentence, speechLocale);
+      saySentence(spokenSentence ?? targetSentence, speechLocale);
     }
   };
 

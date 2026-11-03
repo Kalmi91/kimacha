@@ -29,6 +29,8 @@ import { answerInputProps } from '@/lib/inputProps';
 import LevelPickerSheet from '@/components/LevelPickerSheet';
 import { BrutalBox, textOnFill } from '@/components/grammar/Brutal';
 import EasySentenceCard from '@/components/EasySentenceCard';
+import { wordSpeakerGender } from '@/lib/cardSpeaker';
+import { findPcicItem } from '@/data/pcic';
 import FitText from '@/components/FitText';
 import DoneBadge from '@/components/DoneBadge';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
@@ -197,6 +199,8 @@ export default function PcicCardView({
               trapWords={sentenceCard.trapWords}
               speechLocale={speechLang(target)}
               sourceSpeechLocale={speechLang(sourceLang)}
+              speakerGender={wordSpeakerGender(findPcicItem(sentenceCard.itemId), target)}
+              spokenSentence={sentenceCard.target}
               onResult={() => setSentenceCard(null)}
               gradeButtons
             />
@@ -212,6 +216,7 @@ export default function PcicCardView({
             lang={target}
             speechLocale={speechLang(target)}
             sourceSpeechLocale={speechLang(sourceLang)}
+            speakerGender={wordSpeakerGender(findPcicItem(sentenceCard.itemId), target)}
             onResult={() => setSentenceCard(null)}
             dockLift={dockLift}
             keyboardOpen={kbHeight > 0}

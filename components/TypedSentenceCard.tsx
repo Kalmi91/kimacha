@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, TextInput, Keyboard, View } from 'react-native';
 import { Text } from '@/components/KText';
 import { speak, speakAuto, stop as stopSpeech } from '@/lib/speech';
+import type { VoiceGender } from '@/lib/neuralVoices';
 import Colors from '@/constants/Colors';
 import { ON_FILL } from '@/constants/GrammarPalettes';
 import { useTheme } from '@/lib/ThemeContext';
@@ -51,6 +52,9 @@ interface Props {
   // Listen-and-type step (Sentences tab, beta sentenceListening): the TARGET sentence is heard when the card opens and a big
   // 🔊 button replaces the prompt sentence, which (with its hints) is shown only once the answer is checked.
   listening?: boolean;
+  // Audio round B: every sentence this card speaks (target and source side) is spoken by this speaker, the sex of the
+  // card's word voice (lib/cardSpeaker.ts), so the sentence pack finds its recording.
+  speakerGender?: VoiceGender;
 }
 
 type Seg = { text: string; kind: 'ok' | 'wrong' | 'missing' };
@@ -100,6 +104,7 @@ export default function TypedSentenceCard({
   sourceHints,
   onSourceHint,
   listening = false,
+  speakerGender,
 }: Props) {
   const { theme } = useTheme();
   const colors = Colors[theme];
@@ -112,18 +117,22 @@ export default function TypedSentenceCard({
   // Check judged the answer wrong; the correct sentence is also shown after an override ("Knew it").
   const [missed, setMissed] = useState(false);
 
+  const say = (text: string, locale: string) => (speakerGender ? speak(text, locale, { gender: speakerGender }) : speak(text, locale));
+  const sayAuto = (text: string, locale: string) => (speakerGender ? speakAuto(text, locale, { gender: speakerGender }) : speakAuto(text, locale));
+
   // A new sentence reads itself aloud, except right after the app opens (lib/speech.ts speakAuto).
   useEffect(() => {
     if (listening) {
-      if (speechLocale) speakAuto(targetSentence, speechLocale);
-    } else if (sourceSpeechLocale) speakAuto(sourceSentence, sourceSpeechLocale);
+      if (speechLocale) sayAuto(targetSentence, speechLocale);
+    } else if (sourceSpeechLocale) sayAuto(sourceSentence, sourceSpeechLocale);
     return () => stopSpeech();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listening, sourceSentence, sourceSpeechLocale, targetSentence, speechLocale]);
 
   const replay = () => {
     if (!speechLocale) return;
     stopSpeech();
-    speak(targetSentence, speechLocale);
+    say(targetSentence, speechLocale);
   };
 
   const handleCheck = () => {
@@ -138,7 +147,7 @@ export default function TypedSentenceCard({
     // The correct sentence is ALWAYS spoken, after a good and after a wrong answer alike.
     if (speechLocale) {
       stopSpeech();
-      speak(targetSentence, speechLocale);
+      say(targetSentence, speechLocale);
     }
   };
 

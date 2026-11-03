@@ -8,6 +8,8 @@ import {
   PACK_BYTES,
   PACK_KEY,
   PIPER_MODEL_KEYS,
+  SENTENCES_KEY,
+  SENTENCE_PACK_BYTES,
   PIPER_VOICES,
   fnv1a,
   formatMegabytes,
@@ -18,6 +20,7 @@ import {
   packHash,
   packKey,
   requiredItems,
+  sentencePackFileFor,
   voiceFor,
   voiceIndexFor,
   type PackIndex,
@@ -112,18 +115,24 @@ describe('models', () => {
     expect(modelKeysFor('es', 'piper')).toEqual(['es_MX-claude-high', 'es_MX-ald-medium']);
   });
 
-  it('the first download is the pack and the six Piper models, Kokoro only when a language chose it', () => {
-    expect(requiredItems({ es: 'piper', en: 'piper', hu: 'piper' })).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS]);
-    expect(requiredItems({ es: 'kokoro', en: 'piper', hu: 'piper' })).toContain('kokoro');
+  it('the first download is the word pack and the six Piper models, Kokoro only when a language chose it; the sentence pack comes last', () => {
+    expect(requiredItems({ es: 'piper', en: 'piper', hu: 'piper' })).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, SENTENCES_KEY]);
+    expect(requiredItems({ es: 'kokoro', en: 'piper', hu: 'piper' })).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, 'kokoro', SENTENCES_KEY]);
+  });
+
+  it('an empty sentence-pack URL keeps the old behavior: the item is not required', () => {
+    expect(requiredItems({ es: 'piper', en: 'piper', hu: 'piper' }, '')).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS]);
+    expect(requiredItems({ es: 'kokoro', en: 'piper', hu: 'piper' }, '')).toEqual([PACK_KEY, ...PIPER_MODEL_KEYS, 'kokoro']);
   });
 
   it('counts the bytes of what is not installed yet', () => {
     const items = requiredItems({ es: 'piper', en: 'piper', hu: 'piper' });
     const all = missingBytes(items, {});
-    expect(all).toBe(PACK_BYTES + PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0)); // the pack counts too
-    expect(formatMegabytes(all)).toBe('235 MB');
+    expect(all).toBe(PACK_BYTES + SENTENCE_PACK_BYTES + PIPER_MODEL_KEYS.reduce((sum, key) => sum + NEURAL_MODELS[key].bytes, 0)); // the pack counts too
+    expect(formatMegabytes(all)).toBe('562 MB');
     expect(missingBytes(items, { 'hu_HU-berta-medium': true })).toBe(all - NEURAL_MODELS['hu_HU-berta-medium'].bytes);
     expect(missingBytes(items, { [PACK_KEY]: true })).toBe(all - PACK_BYTES);
+    expect(missingBytes(items, { [SENTENCES_KEY]: true })).toBe(all - SENTENCE_PACK_BYTES);
     expect(formatMegabytes(NEURAL_MODELS.kokoro.bytes)).toBe('126 MB');
   });
 });
@@ -141,5 +150,46 @@ describe('pack lookup', () => {
     expect(packFileFor(index, 'es', 'El perro duerme en el sofá.')).toBeNull();
     expect(packFileFor(index, 'hu', 'a kutya')).toBeNull();
     expect(packFileFor(null, 'es', 'el perro')).toBeNull();
+  });
+});
+
+describe('sentence pack lookup', () => {
+  const index: PackIndex = {
+    version: 1,
+    engine: 'kokoro-v1.0',
+    files: {
+      es: {
+        'f|¿Dónde está el baño?': 'es/f/5382b1ed.mp3',
+        'm|¿Dónde está el baño?': 'es/m/5382b1ed.mp3',
+        'f|Mañana voy al médico.': 'es/f/8de73d02.mp3',
+      },
+      en: { "m|I'm hungry.": 'en/m/b889eaa9.mp3' },
+    },
+  };
+  // FNV-1a of the key: 5382b1ed is odd (m), 8de73d02 even (f), b889eaa9 odd (m), computed with the generator's selftest
+
+  it('an explicit gender picks the speaker, whatever the hash gender of the text is', () => {
+    expect(voiceFor('es', 'kokoro', '¿Dónde está el baño?').gender).toBe('m');
+    expect(sentencePackFileFor(index, 'es', '¿Dónde está el baño?', 'f')).toBe('es/f/5382b1ed.mp3');
+    expect(sentencePackFileFor(index, 'es', '¿Dónde está el baño?', 'm')).toBe('es/m/5382b1ed.mp3');
+  });
+
+  it('without a gender (or n) the hash gender of the text decides; the key is trimmed and NFC', () => {
+    expect(sentencePackFileFor(index, 'es', '¿Dónde está el baño?')).toBe('es/m/5382b1ed.mp3');
+    expect(sentencePackFileFor(index, 'es', '¿Dónde está el baño?', 'n')).toBe('es/m/5382b1ed.mp3');
+    expect(sentencePackFileFor(index, 'es', '  Mañana voy al médico. '.normalize('NFD'))).toBe('es/f/8de73d02.mp3');
+    expect(sentencePackFileFor(index, 'en', "I'm hungry.")).toBe('en/m/b889eaa9.mp3');
+  });
+
+  it('a miss is null (the engine speaks): another speaker, another sentence, another language, Hungarian, no pack', () => {
+    expect(sentencePackFileFor(index, 'es', 'Mañana voy al médico.', 'm')).toBeNull();
+    expect(sentencePackFileFor(index, 'es', 'El perro duerme.')).toBeNull();
+    expect(sentencePackFileFor(index, 'en', '¿Dónde está el baño?')).toBeNull();
+    expect(sentencePackFileFor(index, 'hu', 'Hol van a fürdőszoba?', 'f')).toBeNull();
+    expect(sentencePackFileFor(null, 'es', '¿Dónde está el baño?')).toBeNull();
+  });
+
+  it('the word pack lookup is untouched by the g| keys', () => {
+    expect(packFileFor(index, 'es', '¿Dónde está el baño?')).toBeNull();
   });
 });

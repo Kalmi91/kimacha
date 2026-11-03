@@ -7,6 +7,7 @@ import Colors from '@/constants/Colors';
 import EasySentenceCard from '@/components/EasySentenceCard';
 import ScreenFeedback from '@/lib/screenFeedback';
 import { wordIn } from '@/lib/pcicItemText';
+import { wordSpeakerGender } from '@/lib/cardSpeaker';
 import TypedSentenceCard from '@/components/TypedSentenceCard';
 import { ActionButton, ProgressBar } from '@/components/grammar/Themed';
 import { DOCK_RESERVE } from '@/components/learn/DockedAction';
@@ -76,7 +77,7 @@ function BuildStep({ entry, target, step, hints, onHint, onResult }: { entry: Se
     );
     // A mistake step's decoys are the words of the faulty sentence the learner wrote (lib/sentenceMistakes.ts).
     const trapWords = step.kind === 'mistake' && entry.mistake ? mistakeTrapWords(targetWords, entry.mistake.wrong, vocab, target) : nearMissDistractors(targetWords, vocab, target);
-    return { source: chunk ? chunk.source : entry.source, targetWords, trapWords };
+    return { source: chunk ? chunk.source : entry.source, target: chunk ? chunk.target : entry.target, targetWords, trapWords };
   });
   return (
     <EasySentenceCard
@@ -85,6 +86,8 @@ function BuildStep({ entry, target, step, hints, onHint, onResult }: { entry: Se
       trapWords={tiles.trapWords}
       speechLocale={speechLang(target)}
       sourceSpeechLocale={speechLang(activeSourceFor(target))}
+      speakerGender={wordSpeakerGender(findPcicItem(entry.itemId), target)}
+      spokenSentence={tiles.target}
       onResult={onResult}
       gradeButtons
       sourceHints={hints}
@@ -364,6 +367,7 @@ export default function SentencesScreen() {
           lang={target}
           speechLocale={speechLang(target)}
           sourceSpeechLocale={speechLang(activeSourceFor(target))}
+          speakerGender={wordSpeakerGender(findPcicItem(current.itemId), target)}
           onResult={(correct, typed) => void onStepResult(correct, typed)}
           dockLift={dockLift}
           keyboardOpen={kbHeight > 0}

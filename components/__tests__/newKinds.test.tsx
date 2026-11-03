@@ -103,7 +103,8 @@ describe('word order (order)', () => {
     for (const w of ['no', 'hablo', 'español']) fireEvent.press(screen.getAllByText(w)[0]);
     fireEvent.press(screen.getByText('Check'));
     expect(screen.getByText(/^Correct/)).toBeTruthy();
-    expect(speech.speak).toHaveBeenLastCalledWith('no hablo español', 'es-MX');
+    // Audio round B: the sentence as written (the sentence pack holds it so), not the joined tiles
+    expect(speech.speak).toHaveBeenLastCalledWith('No hablo español.', 'es-MX');
     fireEvent.press(screen.getByText(/Next/));
     expect(onFinish).toHaveBeenCalledWith(1, 1);
   });

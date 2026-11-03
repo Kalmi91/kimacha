@@ -6,6 +6,7 @@
 //   <files>/tts/<model dir>/           an extracted sherpa-onnx model (NEURAL_MODELS[key].dir)
 //   <files>/tts/<model dir>.ok         marker, written after the extraction finished: no marker = not installed
 //   <files>/tts/<PACK_DIR>/index.json  the word pack, its mp3 files below (<PACK_DIR>.ok is its marker)
+//   <files>/tts/<SENTENCE_PACK_DIR>/   the sentence pack, same layout (<SENTENCE_PACK_DIR>.ok is its marker)
 //   <files>/tts/settings.json          { enabled, engines }
 //   <files>/tts/dl/                    the archives while they download
 //
@@ -19,18 +20,23 @@ import { Platform } from 'react-native';
 import {
   DEFAULT_ENGINES,
   NEURAL_MODELS,
-  PACK_BYTES,
   PACK_DIR,
   PACK_KEY,
   PACK_URL,
+  SENTENCES_KEY,
+  SENTENCE_PACK_DIR,
+  SENTENCE_PACK_URL,
+  itemBytes,
   normalizeEngines,
   packFileFor,
   requiredItems,
+  sentencePackFileFor,
   voicePair,
   type EngineChoice,
   type NeuralEngine,
   type NeuralLang,
   type PackIndex,
+  type VoiceGender,
 } from './neuralVoices';
 import { isNeuralReady, loadNeuralVoice, releaseNeural, releaseNeuralPair, stopNeural } from './neuralTts';
 import { stopPack } from './packAudio';
@@ -91,15 +97,21 @@ type Fs = typeof import('@dr.pogodin/react-native-fs');
 const getFs = (): Fs => require('@dr.pogodin/react-native-fs');
 
 const ttsDir = (fs: Fs) => `${fs.DocumentDirectoryPath}/tts`;
-const itemDir = (fs: Fs, key: string) => `${ttsDir(fs)}/${key === PACK_KEY ? PACK_DIR : NEURAL_MODELS[key].dir}`;
+// The two packs (word, sentence) install into their own folder; a model's archive carries its own.
+const isPack = (key: string) => key === PACK_KEY || key === SENTENCES_KEY;
+const packDirName = (key: string) => (key === SENTENCES_KEY ? SENTENCE_PACK_DIR : PACK_DIR);
+const itemDir = (fs: Fs, key: string) => `${ttsDir(fs)}/${isPack(key) ? packDirName(key) : NEURAL_MODELS[key].dir}`;
 const itemMarker = (fs: Fs, key: string) => `${itemDir(fs, key)}.ok`;
+const itemUrl = (key: string) => (key === PACK_KEY ? PACK_URL : key === SENTENCES_KEY ? SENTENCE_PACK_URL : NEURAL_MODELS[key].archive);
 
 let packIndex: PackIndex | null = null;
 let packRoot: string | null = null;
+let sentenceIndex: PackIndex | null = null;
+let sentenceRoot: string | null = null;
 
 async function readInstalled(fs: Fs): Promise<Record<string, boolean>> {
   const installed: Record<string, boolean> = {};
-  for (const key of [...Object.keys(NEURAL_MODELS), PACK_KEY]) {
+  for (const key of [...Object.keys(NEURAL_MODELS), PACK_KEY, SENTENCES_KEY]) {
     installed[key] = await fs.exists(itemMarker(fs, key)).catch(() => false);
   }
   return installed;
@@ -124,25 +136,30 @@ async function writeSettings(): Promise<void> {
   }
 }
 
-// The pack's index.json, from the pack folder (or one folder below it, if the archive had a top folder).
-async function loadPackIndex(fs: Fs): Promise<void> {
-  packIndex = null;
-  packRoot = null;
-  if (!state.installed[PACK_KEY]) return;
-  const base = itemDir(fs, PACK_KEY);
-  for (const root of [base, `${base}/${PACK_DIR}`]) {
+// A pack's index.json, from the pack folder (or one folder below it, if the archive had a top folder). A pack
+// that is not installed or whose index is unreadable is simply absent: the other levels keep speaking.
+async function readPackIndex(fs: Fs, key: string, label: string): Promise<{ index: PackIndex; root: string } | null> {
+  if (!state.installed[key]) return null;
+  const base = itemDir(fs, key);
+  for (const root of [base, `${base}/${packDirName(key)}`]) {
     try {
       const index = JSON.parse(await fs.readFile(`${root}/index.json`, 'utf8')) as PackIndex;
-      if (index && typeof index === 'object' && index.files) {
-        packIndex = index;
-        packRoot = root;
-        return;
-      }
+      if (index && typeof index === 'object' && index.files) return { index, root };
     } catch {
       // not here
     }
   }
-  console.log('[neural] word pack installed but its index.json is unreadable');
+  console.log(`[neural] ${label} installed but its index.json is unreadable`);
+  return null;
+}
+
+async function loadPackIndex(fs: Fs): Promise<void> {
+  const word = await readPackIndex(fs, PACK_KEY, 'word pack');
+  packIndex = word?.index ?? null;
+  packRoot = word?.root ?? null;
+  const sentences = await readPackIndex(fs, SENTENCES_KEY, 'sentence pack');
+  sentenceIndex = sentences?.index ?? null;
+  sentenceRoot = sentences?.root ?? null;
 }
 
 // Voices load one after the other (a load takes seconds and memory). A language loads lazily, on its first
@@ -217,6 +234,14 @@ export function neuralPackFile(lang: NeuralLang, text: string): string | null {
   return relative ? `${packRoot}/${relative}` : null;
 }
 
+// Absolute path of the sentence pack's audio for this sentence spoken by the speaker of `gender` (f / m; without
+// one the text's own hash gender), or null (not installed, switched off, or the sentence is not in the pack).
+export function neuralSentenceFile(lang: NeuralLang, text: string, gender?: VoiceGender): string | null {
+  if (!state.supported || !state.enabled || !sentenceIndex || !sentenceRoot) return null;
+  const relative = sentencePackFileFor(sentenceIndex, lang, text, gender);
+  return relative ? `${sentenceRoot}/${relative}` : null;
+}
+
 export async function setNeuralEnabled(enabled: boolean): Promise<void> {
   if (state.enabled === enabled) return;
   update({ enabled });
@@ -256,8 +281,8 @@ export async function downloadNeural(): Promise<void> {
   const jobs: Job[] = requiredItems(state.engines)
     .filter(key => !state.installed[key])
     .map(key => {
-      const url = key === PACK_KEY ? PACK_URL : NEURAL_MODELS[key].archive;
-      return { key, url, file: `${ttsDir(fs)}/dl/${url.split('/').pop()}`, bytes: key === PACK_KEY ? PACK_BYTES : NEURAL_MODELS[key].bytes };
+      const url = itemUrl(key);
+      return { key, url, file: `${ttsDir(fs)}/dl/${url.split('/').pop()}`, bytes: itemBytes(key) };
     });
   if (jobs.length === 0) return;
 
@@ -283,7 +308,7 @@ export async function downloadNeural(): Promise<void> {
         progressDivider: 1,
         progressInterval: 400,
         begin: ({ contentLength }) => {
-          if (job.key === PACK_KEY && contentLength > 0) {
+          if (isPack(job.key) && contentLength > 0) {
             totalBytes += contentLength - size; // the server's size replaces the one built in
             size = contentLength;
           }
@@ -295,8 +320,8 @@ export async function downloadNeural(): Promise<void> {
       show(size, 'unpack');
       await fs.unlink(dir).catch(() => {});
       await fs.unlink(`${dir}.ok`).catch(() => {});
-      // the pack's files sit at the archive root, the models' in their own folder
-      const target = job.key === PACK_KEY ? dir : ttsDir(fs);
+      // the packs' files sit at the archive root, the models' in their own folder
+      const target = isPack(job.key) ? dir : ttsDir(fs);
       await fs.mkdir(target);
       const extracted = await extractArchive({ modelId: job.key, archivePath: job.file, format: 'tar.bz2' }, target, {
         force: true,

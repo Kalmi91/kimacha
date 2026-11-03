@@ -788,7 +788,7 @@ describe('listen-and-type step (beta sentenceListening, FB523/FB524)', () => {
     expect(play(r)).not.toBeNull();
     expect(onScreen(r)).toEqual([]); // the prompt is hidden
     expect(r.getByText('Listen, then type the sentence')).toBeTruthy();
-    expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String)); // the target sentence, when the step opens
+    expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String), { gender: expect.stringMatching(/^[fm]$/) }); // the target sentence, when the step opens
     expect(mockSpeak).not.toHaveBeenCalledWith('The cat.', expect.any(String));
     typeIt(r, 'el gato');
     expect(r.getByText('The cat.')).toBeTruthy(); // shown after the check
@@ -816,7 +816,7 @@ describe('listen-and-type step (beta sentenceListening, FB523/FB524)', () => {
     await flush();
     mockSpeak.mockClear();
     fireEvent.press(play(r)!);
-    expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String));
+    expect(mockSpeak).toHaveBeenCalledWith('El gato.', expect.any(String), { gender: expect.stringMatching(/^[fm]$/) });
   });
 
   it('a wrong answer here is credited to nothing and the step comes back at the end of the round', async () => {

@@ -50,7 +50,7 @@ const es: typeof en = {
       kokoro: 'Kokoro (mejor, más lenta)',
       kokoroSize: (mb: string) => `Kokoro necesita una descarga de ${mb}`,
       confirmTitle: '¿Descargar la voz mejor?',
-      confirmMessage: (mb: string) => `Se descargan ${mb} (las grabaciones de las palabras y las voces). Con datos móviles cuenta en tu plan, por eso se recomienda Wi-Fi.`,
+      confirmMessage: (mb: string) => `Se descargan ${mb} (las grabaciones de las palabras y las frases, y las voces). Con datos móviles cuenta en tu plan, por eso se recomienda Wi-Fi.`,
       confirmYes: 'Descargar',
     },
     dailyNewLimit: 'Palabras nuevas al día',
