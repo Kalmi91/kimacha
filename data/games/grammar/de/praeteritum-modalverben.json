@@ -346,8 +346,8 @@
           "es": "muss es el presente. Gestern necesita el pasado: musste."
         },
         "musst": {
-          "en": "musst is the present tense for du and ihr. With ich and the past you need musste.",
-          "es": "musst es el presente de du e ihr. Con ich y el pasado necesitas musste."
+          "en": "musst is the present tense for du. With ich and the past you need musste.",
+          "es": "musst es el presente de du. Con ich y el pasado necesitas musste."
         }
       },
       "examples": [
@@ -727,7 +727,7 @@
     },
     {
       "id": "praeteritum-modalverben-c09",
-      "sentence": "Heute ___ ich arbeiten, gestern nicht.",
+      "sentence": "Im Moment ___ ich arbeiten, gestern nicht.",
       "options": [
         "musste",
         "musst",
@@ -735,17 +735,17 @@
       ],
       "correct": 2,
       "why": {
-        "en": "Heute points to the present, so the present tense muss. gestern nicht refers to the past, but the first clause is about today.",
-        "es": "Heute apunta al presente, así que el presente muss. gestern nicht se refiere al pasado, pero la primera parte trata de hoy."
+        "en": "Im Moment points to the present, so the present tense muss. gestern nicht refers to the past, but the first clause is about now.",
+        "es": "Im Moment apunta al presente, así que el presente muss. gestern nicht se refiere al pasado, pero la primera parte trata del momento actual."
       },
       "wrong": {
         "musste": {
-          "en": "musste is the simple past. Heute talks about today, so the verb must be in the present.",
-          "es": "musste es el pasado simple. Heute habla de hoy, así que el verbo debe ir en presente."
+          "en": "musste is the simple past. Im Moment talks about the present, so the verb must be in the present.",
+          "es": "musste es el pasado simple. Im Moment habla del presente, así que el verbo debe ir en presente."
         },
         "musst": {
-          "en": "musst is the present form for du and ihr. The subject here is ich, so the form is muss.",
-          "es": "musst es la forma de presente de du e ihr. El sujeto aquí es ich, así que la forma es muss."
+          "en": "musst is the present form for du. The subject here is ich, so the form is muss.",
+          "es": "musst es la forma de presente de du. El sujeto aquí es ich, así que la forma es muss."
         }
       },
       "examples": [
@@ -753,8 +753,8 @@
         "Heute kann ich nicht kommen."
       ],
       "tr": {
-        "en": "Today I have to work, yesterday I did not.",
-        "es": "Hoy tengo que trabajar, ayer no."
+        "en": "Right now I have to work, yesterday I did not.",
+        "es": "Ahorita tengo que trabajar, ayer no."
       }
     },
     {

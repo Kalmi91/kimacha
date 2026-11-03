@@ -260,8 +260,8 @@
         },
         {
           "text": {
-            "en": "unser and euer lose the e before an ending: unsere Katze, unseren Hund, eure Tasche, euren Hund. Without an ending: unser Haus, euer Haus.",
-            "es": "unser y euer pierden la e delante de una terminación: unsere Katze, unseren Hund, eure Tasche, euren Hund. Sin terminación: unser Haus, euer Haus."
+            "en": "euer loses its second e before an ending: eure Tasche, euren Hund. unser keeps it: unsere Katze, unseren Hund. Without an ending: unser Haus, euer Haus.",
+            "es": "euer pierde la segunda e delante de una terminación: eure Tasche, euren Hund. unser la conserva: unsere Katze, unseren Hund. Sin terminación: unser Haus, euer Haus."
           },
           "examples": [
             {
@@ -364,8 +364,8 @@
     {
       "kind": "tip",
       "text": {
-        "en": "Classic traps: the ending depends on the owned noun, not on the owner (meine Schwester, even if a man says it). sein is his and ihr is her, as the owner decides. Do not forget -en for a masculine object (Ich sehe meinen Bruder, not Ich sehe mein Bruder). Remember unsere and eure lose the e. And write the formal Ihr with a capital letter.",
-        "es": "Trampas clásicas: la terminación depende del sustantivo poseído, no del poseedor (meine Schwester, aunque lo diga un hombre). sein es «su» de él e ihr es «su» de ella, según decide el poseedor. No olvides -en para un complemento masculino (Ich sehe meinen Bruder, no Ich sehe mein Bruder). Recuerda que unsere y eure pierden la e. Y escribe el Ihr formal con mayúscula."
+        "en": "Classic traps: the ending depends on the owned noun, not on the owner (meine Schwester, even if a man says it). sein is his and ihr is her, as the owner decides. Do not forget -en for a masculine object (Ich sehe meinen Bruder, not Ich sehe mein Bruder). Remember that euer loses its second e (eure, euren), while unser keeps it (unsere, unseren). And write the formal Ihr with a capital letter.",
+        "es": "Trampas clásicas: la terminación depende del sustantivo poseído, no del poseedor (meine Schwester, aunque lo diga un hombre). sein es «su» de él e ihr es «su» de ella, según decide el poseedor. No olvides -en para un complemento masculino (Ich sehe meinen Bruder, no Ich sehe mein Bruder). Recuerda que euer pierde la segunda e (eure, euren), mientras que unser la conserva (unsere, unseren). Y escribe el Ihr formal con mayúscula."
       }
     }
   ],
@@ -742,8 +742,8 @@
       ],
       "correct": 0,
       "why": {
-        "en": "The owner is wir, so the stem is unser-. Hund is a masculine object, so you add -en and the e drops: unseren.",
-        "es": "El poseedor es wir, así que la raíz es unser-. Hund es un complemento masculino, así que se añade -en y la e se pierde: unseren."
+        "en": "The owner is wir, so the stem is unser-. Hund is a masculine object, so you add -en: unseren.",
+        "es": "El poseedor es wir, así que la raíz es unser-. Hund es un complemento masculino, así que se añade -en: unseren."
       },
       "wrong": {
         "unser": {
