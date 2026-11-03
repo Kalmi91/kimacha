@@ -6545,16 +6545,16 @@
   ],
   "d323465": [
     {
-      "de": "Ich nehme Gemüse auf.",
-      "en": "I take in vegetables.",
-      "es": "Incorporo verduras.",
-      "hu": "Zöldséget csempészek bele."
+      "de": "Ich mische Gemüse unter.",
+      "en": "I mix in vegetables.",
+      "es": "Mezclo verduras.",
+      "hu": "Zöldséget keverek hozzá."
     },
     {
-      "de": "Ich nehme Gemüse in das Essen auf.",
-      "en": "I add vegetables to the meal.",
-      "es": "Incorporo verduras a la comida.",
-      "hu": "Zöldséget csempészek az ételbe."
+      "de": "Ich mische Gemüse unter das Essen.",
+      "en": "I mix vegetables into the food.",
+      "es": "Mezclo verduras en la comida.",
+      "hu": "Zöldséget keverek az ételbe."
     }
   ],
   "d323468": [
@@ -6597,16 +6597,16 @@
   ],
   "d323529": [
     {
-      "de": "Ich bin Helfer.",
-      "en": "I am a helper.",
-      "es": "Soy ayudante.",
-      "hu": "Segítő vagyok."
+      "de": "Ich arbeite ehrenamtlich.",
+      "en": "I work as a volunteer.",
+      "es": "Soy voluntario.",
+      "hu": "Önkéntesként dolgozom."
     },
     {
-      "de": "Ich bin Helfer in einem Krankenhaus.",
-      "en": "I am a helper at a hospital.",
-      "es": "Soy ayudante en un hospital.",
-      "hu": "Segítő vagyok egy kórházban."
+      "de": "Ich arbeite in einem Krankenhaus.",
+      "en": "I work in a hospital.",
+      "es": "Trabajo en un hospital.",
+      "hu": "Egy kórházban dolgozom."
     }
   ],
   "d323531": [
@@ -6721,7 +6721,7 @@
   ],
   "d323677": [
     {
-      "de": "Du kannst die Stadt ausfindig machen.",
+      "de": "Du kannst die Stadt lokalisieren.",
       "en": "You can locate the city.",
       "es": "Puedes localizar la ciudad.",
       "hu": "Megtalálhatod a várost."
@@ -6833,10 +6833,16 @@
   ],
   "d323851": [
     {
-      "de": "Die Lohnabrechnung kommt alle zwei Wochen.",
-      "en": "The payroll comes every two weeks.",
-      "es": "La nómina llega cada dos semanas.",
-      "hu": "A bérszámfejtés kéthetente érkezik."
+      "de": "Die Lohnabrechnung findet statt.",
+      "en": "The payroll takes place.",
+      "es": "La nómina se realiza.",
+      "hu": "A bérszámfejtés megtörténik."
+    },
+    {
+      "de": "Im Unternehmen findet die Lohnabrechnung statt.",
+      "en": "The payroll takes place at the company.",
+      "es": "En la empresa se hace la nómina.",
+      "hu": "A cégnél megtörténik a bérszámfejtés."
     }
   ],
   "d323856": [
@@ -7171,16 +7177,16 @@
   ],
   "d323966": [
     {
-      "de": "Mein Computer hat sich gefüllt.",
-      "en": "My computer filled up.",
-      "es": "Mi computadora se llenó.",
-      "hu": "Megtelt a számítógépem."
+      "de": "Mein Computer war voller Werbung.",
+      "en": "My computer was full of ads.",
+      "es": "Mi computadora estaba llena de publicidad.",
+      "hu": "A számítógépem tele volt reklámmal."
     },
     {
-      "de": "Mein Computer hat sich mit Werbung gefüllt.",
-      "en": "My computer filled up with ads.",
-      "es": "Mi computadora se llenó de publicidad.",
-      "hu": "A számítógépem megtelt reklámmal."
+      "de": "Mein Computer war plötzlich voller Werbung.",
+      "en": "My computer was suddenly full of ads.",
+      "es": "Mi computadora estaba de repente llena de publicidad.",
+      "hu": "A számítógépem hirtelen tele volt reklámmal."
     }
   ],
   "d323969": [
@@ -7475,16 +7481,22 @@
   ],
   "d324184": [
     {
-      "de": "Der Händler geht jeden Tag.",
-      "en": "The vendor goes every day.",
-      "es": "El vendedor va todos los días.",
-      "hu": "Az árus minden nap elmegy."
+      "de": "Der Händler kommt.",
+      "en": "The vendor comes.",
+      "es": "Viene el vendedor.",
+      "hu": "Jön az árus."
     },
     {
-      "de": "Der Händler geht durch meine Straße.",
-      "en": "The vendor goes down my street.",
-      "es": "El vendedor pasa por mi calle.",
-      "hu": "Az árus végigmegy az utcámon."
+      "de": "Der Händler kommt jeden Tag.",
+      "en": "The vendor comes every day.",
+      "es": "El vendedor viene todos los días.",
+      "hu": "Az árus minden nap jön."
+    },
+    {
+      "de": "Der fliegende Händler kommt durch meine Straße.",
+      "en": "The street vendor comes down my street.",
+      "es": "El vendedor ambulante pasa por mi calle.",
+      "hu": "A házaló árus végigmegy az utcámon."
     }
   ],
   "d324186": [
@@ -9303,16 +9315,16 @@
   ],
   "d324159": [
     {
-      "de": "Es ist eine Frage.",
-      "en": "It is a question.",
+      "de": "Das ist eine Frage.",
+      "en": "That is a question.",
       "es": "Es una pregunta.",
       "hu": "Ez egy kérdés."
     },
     {
-      "de": "Es ist eine angebrachte Frage.",
-      "en": "It is a fitting question.",
-      "es": "Es una pregunta oportuna.",
-      "hu": "Ez egy helyénvaló kérdés."
+      "de": "Das ist eine treffende Frage.",
+      "en": "That is a fitting question.",
+      "es": "Es una pregunta acertada.",
+      "hu": "Ez egy találó kérdés."
     }
   ],
   "d324185": [
@@ -10159,10 +10171,10 @@
   ],
   "d324158": [
     {
-      "de": "Ich mache eine Arbeit.",
-      "en": "I do a job.",
-      "es": "Hago un trabajo.",
-      "hu": "Egy munkát végzek."
+      "de": "Ich leiste Arbeit.",
+      "en": "I do work.",
+      "es": "Hago trabajo.",
+      "hu": "Munkát végzek."
     }
   ],
   "d324163": [
@@ -10545,10 +10557,10 @@
   ],
   "d323408": [
     {
-      "de": "Es ist interessant.",
-      "en": "It is interesting.",
-      "es": "Es interesante.",
-      "hu": "Érdekes."
+      "de": "Es ist merkwürdig.",
+      "en": "It is strange.",
+      "es": "Es raro.",
+      "hu": "Furcsa."
     },
     {
       "de": "Mein Hund frisst Obst.",
@@ -11809,10 +11821,10 @@
   ],
   "d324090": [
     {
-      "de": "Stress verändert meine Art.",
-      "en": "Stress changes my way.",
-      "es": "El estrés cambia mi manera.",
-      "hu": "A stressz megváltoztatja a módomat."
+      "de": "Stress stört.",
+      "en": "Stress disturbs.",
+      "es": "El estrés molesta.",
+      "hu": "A stressz zavar."
     }
   ],
   "d103149": [
