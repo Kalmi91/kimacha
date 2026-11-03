@@ -177,7 +177,7 @@
       { "es": "Yo como un helado y bebo agua.", "en": "I eat an ice cream and drink water.", "hu": "Én fagylaltot eszem, és vizet iszom.", "de": "Ich esse ein Eis und trinke Wasser.", "word": "o655", "form": "helado" },
       { "es": "Después todos estamos cansados, pero muy felices.", "en": "Afterwards we are all tired, but very happy.", "hu": "Utána mindannyian fáradtak vagyunk, de nagyon boldogok.", "de": "Danach sind wir alle müde, aber sehr glücklich.", "word": "o69", "form": "cansados" }
     ],
-    "false_en": ["In winter we are at the beach.","I eat a cookie and drink water."],
+    "false_en": ["In winter we are at the beach.", "I eat a cookie and drink water."],
     "false_hu": ["Télen a tengerparton vagyunk.", "Egy sütit eszem, és vizet iszom."],
     "false_de": ["Im Winter sind wir am Strand.", "Ich esse einen Keks und trinke Wasser."]
   },
@@ -219,7 +219,7 @@
       { "es": "Mi madre compra arroz, huevos y verdura.", "en": "My mother buys rice, eggs and vegetables.", "hu": "Anyám rizst, tojást és zöldséget vesz.", "de": "Meine Mutter kauft Reis, Eier und Gemüse.", "word": "o936", "form": "arroz" },
       { "es": "Ella da diez pesos al hombre.", "en": "She gives ten pesos to the man.", "hu": "Ő tíz pesót ad a férfinak.", "de": "Sie gibt dem Mann zehn Pesos.", "word": "o890", "form": "pesos" }
     ],
-    "false_en": ["My mother is at the market tomorrow.","She gives fifty pesos to the man."],
+    "false_en": ["My mother is at the market tomorrow.", "She gives fifty pesos to the man."],
     "false_hu": ["Anyám holnap a piacon van.", "Ő ötven pesót ad a férfinak."],
     "false_de": ["Meine Mutter ist morgen auf dem Markt.", "Sie gibt dem Mann fünfzig Pesos."]
   },
@@ -375,13 +375,13 @@
     ],
     "false_en": ["I went to the office in the afternoon.", "I waited only five minutes at the window."],
     "false_hu": ["Délután mentem el a hivatalba.", "Csak öt percet vártam az ügyfélablaknál."],
-    "false_de": ["Ich bin am Nachmittag zu dem Amt gegangen.", "Ich habe nur fünf Minuten am Schalter gewartet."]
+    "false_de": ["Ich bin am Nachmittag zum Amt gegangen.", "Ich habe nur fünf Minuten am Schalter gewartet."]
   },
   {
     "id": "b1-averia",
     "level": "B1",
     "sentences": [
-      { "es": "El sábado mi coche tuvo una avería en la carretera.", "en": "On Saturday my car broke down on the highway.", "hu": "Szombaton lerobbant az autóm az országúton.", "de": "Am Samstag hatte mein Auto auf der Autobahn eine Panne.", "word": "o2449", "form": "avería" },
+      { "es": "El sábado mi coche tuvo una avería en la carretera.", "en": "On Saturday my car broke down on the highway.", "hu": "Szombaton lerobbant az autóm az országúton.", "de": "Am Samstag hatte mein Auto auf der Landstraße eine Panne.", "word": "o2449", "form": "avería" },
       { "es": "Primero el coche se apagó y después ya no arrancó.", "en": "First the car shut off and then it would not start anymore.", "hu": "Először lefulladt az autó, aztán már nem indult be.", "de": "Zuerst ist das Auto ausgegangen und dann ist es nicht mehr angesprungen.", "word": "o1791", "form": "arrancó" },
       { "es": "Llamé a una grúa desde mi teléfono.", "en": "I called a tow truck from my phone.", "hu": "Felhívtam egy autómentőt a telefonomról.", "de": "Ich habe mit meinem Handy einen Abschleppwagen gerufen.", "word": "o2230", "form": "grúa" },
       { "es": "El mecánico revisó el coche y descubrió el problema.", "en": "The mechanic checked the car and discovered the problem.", "hu": "A szerelő átvizsgálta az autót, és rájött a hibára.", "de": "Der Mechaniker hat das Auto untersucht und das Problem gefunden.", "word": "o1239", "form": "revisó" },

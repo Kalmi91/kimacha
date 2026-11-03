@@ -4,7 +4,7 @@
     "level": "A1",
     "sentences": [
       { "hu": "Reggel otthon vagyok.", "es": "Por la mañana estoy en casa.", "en": "In the morning I am at home.", "de": "Morgens bin ich zu Hause.", "word": "h6288", "form": "otthon" },
-      { "hu": "A testvér a szobában van.", "es": "El hermano está en la habitación.", "en": "The sibling is in the room.", "de": "Das Geschwisterkind ist im Zimmer.", "word": "h6281", "form": "szobában" },
+      { "hu": "A testvér a szobában van.", "es": "El hermano está en la habitación.", "en": "The sibling is in the room.", "de": "Mein Bruder ist im Zimmer.", "word": "h6281", "form": "szobában" },
       { "hu": "Kenyeret eszem.", "es": "Como pan.", "en": "I eat bread.", "de": "Ich esse Brot.", "word": "h6250", "form": "Kenyeret" },
       { "hu": "Tejet iszom.", "es": "Bebo leche.", "en": "I drink milk.", "de": "Ich trinke Milch.", "word": "h6257", "form": "Tejet" },
       { "hu": "Boldog vagyok.", "es": "Estoy feliz.", "en": "I am happy.", "de": "Ich bin glücklich.", "word": "h6580", "form": "Boldog" }
@@ -284,7 +284,7 @@
     "level": "A2",
     "sentences": [
       { "hu": "A barátom költözik, mert az új lakás nagy.", "es": "Mi amigo se muda porque el departamento nuevo es grande.", "en": "My friend is moving because the new apartment is big.", "de": "Mein Freund zieht um, weil die neue Wohnung groß ist.", "word": "h20176", "form": "költözik" },
-      { "hu": "Az új bérház a belváros mellett van.", "es": "El edificio nuevo está junto al centro.", "en": "The new apartment building is next to downtown.", "de": "Das neue Mietshaus ist neben der Innenstadt.", "word": "h20774", "form": "bérház" },
+      { "hu": "Az új bérház a belváros mellett van.", "es": "El edificio nuevo está junto al centro.", "en": "The new apartment building is next to downtown.", "de": "Das neue Mietshaus liegt in der Nähe der Innenstadt.", "word": "h20774", "form": "bérház" },
       { "hu": "A lakásban van egy kis hálószoba és egy nagy konyha.", "es": "En el departamento hay una recámara pequeña y una cocina grande.", "en": "In the apartment there is a small bedroom and a big kitchen.", "de": "In der Wohnung gibt es ein kleines Schlafzimmer und eine große Küche.", "word": "h20874", "form": "hálószoba" },
       { "hu": "A házban van lift, ezért a költözés könnyű.", "es": "En el edificio hay elevador, por eso la mudanza es fácil.", "en": "The building has an elevator, so the move is easy.", "de": "Im Haus gibt es einen Aufzug, deshalb ist der Umzug leicht.", "word": "h20879", "form": "lift" },
       { "hu": "Este a barátom fáradt, de izgatott.", "es": "Por la noche mi amigo está cansado, pero emocionado.", "en": "In the evening my friend is tired but excited.", "de": "Am Abend ist mein Freund müde, aber aufgeregt.", "word": "h21116", "form": "izgatott" }
@@ -356,7 +356,7 @@
       { "hu": "Új útlevél kell nekem, ezért időpontot foglalok.", "es": "Necesito un pasaporte nuevo, así que hago una cita.", "en": "I need a new passport, so I make an appointment.", "de": "Ich brauche einen neuen Pass, deshalb vereinbare ich einen Termin.", "word": "h22880", "form": "időpontot" },
       { "hu": "Az ügyfélpult előtt sok ember áll.", "es": "Mucha gente está de pie frente al mostrador de atención.", "en": "Many people are standing in front of the service counter.", "de": "Vor dem Schalter stehen viele Leute.", "word": "h22872", "form": "ügyfélpult" },
       { "hu": "Az asztalon egy hosszú kérvény van, és sokáig írok.", "es": "Hay una solicitud larga sobre la mesa y escribo por mucho tiempo.", "en": "There is a long application form on the table, and I write for a long time.", "de": "Auf dem Tisch liegt ein langer Antrag, und ich schreibe lange.", "word": "h22257", "form": "kérvény" },
-      { "hu": "Aztán a titkár aláír és lepecsétel.", "es": "Luego el secretario firma y sella.", "en": "Then the secretary signs and stamps.", "de": "Dann unterschreibt der Sekretär und stempelt ab.", "word": "h22933", "form": "aláír" },
+      { "hu": "Aztán a titkár aláír és lepecsétel.", "es": "Luego el secretario firma y sella.", "en": "Then the secretary signs and stamps.", "de": "Dann unterschreibt der Sekretär den Antrag und stempelt ihn ab.", "word": "h22933", "form": "aláír" },
       { "hu": "Végül az okmány kész, és nagyon örülök.", "es": "Al final el documento está listo y estoy muy contento.", "en": "In the end the document is ready, and I am very happy.", "de": "Am Ende ist das Dokument fertig, und ich freue mich sehr.", "word": "h22174", "form": "okmány" }
     ],
     "false_es": ["Necesito una licencia de conducir nueva.","Hay muy poca gente frente al mostrador de atención."],
@@ -451,7 +451,7 @@
     "id": "b2-tanya",
     "level": "B2",
     "sentences": [
-      { "hu": "A tanya a hegy mellett van, és ott egy nagy nyáj él.", "es": "El rancho está junto a la montaña, y allí vive un rebaño grande.", "en": "The farm is next to the mountain, and a big flock lives there.", "de": "Der Bauernhof ist neben dem Berg, und dort lebt eine große Herde.", "word": "h23873", "form": "nyáj" },
+      { "hu": "A tanya a hegy mellett van, és ott egy nagy nyáj él.", "es": "El rancho está junto a la montaña, y allí vive un rebaño grande.", "en": "The farm is next to the mountain, and a big flock lives there.", "de": "Der Bauernhof liegt am Berg, und dort lebt eine große Herde.", "word": "h23873", "form": "nyáj" },
       { "hu": "Egy kis csikó ugrik a kerítés mellett.", "es": "Un potrillo salta junto a la cerca.", "en": "A little foal jumps next to the fence.", "de": "Ein kleines Fohlen springt neben dem Zaun.", "word": "h23871", "form": "csikó" },
       { "hu": "A hegy fölött egy sólyom repül.", "es": "Sobre la montaña vuela un halcón.", "en": "A falcon flies over the mountain.", "de": "Über dem Berg fliegt ein Falke.", "word": "h23864", "form": "sólyom" },
       { "hu": "A fa alatt egy vipera alszik, ezért óvatos vagyok.", "es": "Bajo el árbol duerme una víbora, por eso tengo cuidado.", "en": "A viper sleeps under the tree, so I am careful.", "de": "Unter dem Baum schläft eine Viper, deshalb bin ich vorsichtig.", "word": "h23866", "form": "vipera" },
@@ -459,7 +459,7 @@
     ],
     "false_es": ["El rancho está junto al mar.","Una víbora vuela sobre la montaña.","Por la mañana llega un enjambre de mosquitos."],
     "false_en": ["The farm is next to the sea.","A viper flies over the mountain.","A swarm of mosquitoes comes in the morning."],
-    "false_de": ["Der Bauernhof ist neben dem Meer.","Eine Viper fliegt über den Berg.","Ein Schwarm Mücken kommt am Morgen."]
+    "false_de": ["Der Bauernhof liegt am Meer.","Eine Viper fliegt über den Berg.","Ein Schwarm Mücken kommt am Morgen."]
   },
   {
     "id": "b2-felujitas",
@@ -469,7 +469,7 @@
       { "hu": "A festőhenger gyors, de az ecset pontos.", "es": "El rodillo es rápido, pero la brocha es precisa.", "en": "The paint roller is fast, but the brush is precise.", "de": "Die Farbrolle ist schnell, aber der Pinsel ist genau.", "word": "h23812", "form": "festőhenger" },
       { "hu": "A fürdőszoba is rossz, és a lefolyó nem működik.", "es": "El baño también está mal, y el desagüe no funciona.", "en": "The bathroom is also bad, and the drain does not work.", "de": "Das Badezimmer ist auch schlecht, und der Abfluss funktioniert nicht.", "word": "h23813", "form": "lefolyó" },
       { "hu": "A kerítésfal alacsony, de a kert szép.", "es": "La barda es baja, pero el jardín es bonito.", "en": "The fence wall is low, but the garden is pretty.", "de": "Die Gartenmauer ist niedrig, aber der Garten ist schön.", "word": "h23815", "form": "kerítésfal" },
-      { "hu": "A lakópark csendes, ezért itt nyugodt vagyok.", "es": "El fraccionamiento es silencioso, por eso aquí estoy en calma.", "en": "The housing estate is quiet, so I am calm here.", "de": "Die Wohnanlage ist still, deshalb bin ich hier entspannt.", "word": "h23811", "form": "lakópark" }
+      { "hu": "A lakópark csendes, ezért itt nyugodt vagyok.", "es": "El fraccionamiento es silencioso, por eso aquí estoy en calma.", "en": "The housing estate is quiet, so I am calm here.", "de": "Die Wohnanlage ist ruhig, deshalb bin ich hier entspannt.", "word": "h23811", "form": "lakópark" }
     ],
     "false_es": ["La pared es nueva.","El agua baja bien por el desagüe.","El fraccionamiento es ruidoso."],
     "false_en": ["The wall is new.","The water drains well.","The housing estate is noisy."],
@@ -480,7 +480,7 @@
     "level": "B2",
     "sentences": [
       { "hu": "Éjszaka a szerver lefagy, ezért a weboldal nem működik.", "es": "De noche el servidor se traba, por eso el sitio web no funciona.", "en": "At night the server freezes, so the website does not work.", "de": "Nachts hängt sich der Server auf, deshalb funktioniert die Website nicht.", "word": "h23961", "form": "szerver" },
-      { "hu": "A napló szerint egy vírus van, ezért azonnal javítok.", "es": "Según el registro hay un virus, por eso lo arreglo de inmediato.", "en": "According to the log there is a virus, so I fix it immediately.", "de": "Laut Protokoll gibt es einen Virus, deshalb repariere ich es sofort.", "word": "h23969", "form": "napló" },
+      { "hu": "A napló szerint egy vírus van, ezért azonnal javítok.", "es": "Según el registro hay un virus, por eso lo arreglo de inmediato.", "en": "According to the log there is a virus, so I fix it immediately.", "de": "Laut Protokoll gibt es ein Virus, deshalb repariere ich es sofort.", "word": "h23969", "form": "napló" },
       { "hu": "A vírusirtó nem aktív, mert nincs előfizetés.", "es": "El antivirus no está activo porque no hay suscripción.", "en": "The antivirus is not active because there is no subscription.", "de": "Das Antivirenprogramm ist nicht aktiv, weil es kein Abonnement gibt.", "word": "h23966", "form": "vírusirtó" },
       { "hu": "A beállítás rossz, ezért a gép nem indul.", "es": "La configuración está mal, por eso la máquina no arranca.", "en": "The setting is wrong, so the machine does not start.", "de": "Die Einstellung ist falsch, deshalb startet der Rechner nicht.", "word": "h23964", "form": "beállítás" },
       { "hu": "Végül egy hordozható gép működik, és az ügyfél elégedett.", "es": "Al final funciona un equipo portátil y el cliente está satisfecho.", "en": "In the end a portable machine works, and the client is satisfied.", "de": "Am Ende funktioniert ein tragbarer Rechner, und der Kunde ist zufrieden.", "word": "h23975", "form": "hordozható" }
@@ -495,7 +495,7 @@
     "sentences": [
       { "hu": "A végrendelet nem egyértelmű, ezért a család vitatkozik.", "es": "El testamento no es claro, por eso la familia discute.", "en": "The will is not clear, so the family argues.", "de": "Das Testament ist nicht eindeutig, deshalb streitet die Familie.", "word": "h24181", "form": "végrendelet" },
       { "hu": "Az ügyvéd szerint a hagyaték nagyon értékes.", "es": "Según el abogado, la herencia es muy valiosa.", "en": "According to the lawyer, the estate is very valuable.", "de": "Laut dem Anwalt ist der Nachlass sehr wertvoll.", "word": "h24129", "form": "hagyaték" },
-      { "hu": "A testvér szerint a kártérítés összege túl kevés.", "es": "Según el hermano, el monto de la indemnización es demasiado bajo.", "en": "According to the sibling, the amount of the compensation is too low.", "de": "Laut dem Geschwisterkind ist die Entschädigungssumme zu niedrig.", "word": "h24072", "form": "kártérítés" },
+      { "hu": "A testvér szerint a kártérítés összege túl kevés.", "es": "Según el hermano, el monto de la indemnización es demasiado bajo.", "en": "According to the sibling, the amount of the compensation is too low.", "de": "Laut meinem Bruder ist die Entschädigungssumme zu niedrig.", "word": "h24072", "form": "kártérítés" },
       { "hu": "Az idézés szerint a per holnap kezdődik.", "es": "Según la citación, el juicio empieza mañana.", "en": "According to the summons, the trial starts tomorrow.", "de": "Laut der Vorladung beginnt der Prozess morgen.", "word": "h24179", "form": "idézés" },
       { "hu": "A bíró pártatlan, és a döntés végleges.", "es": "El juez es imparcial y la decisión es definitiva.", "en": "The judge is impartial, and the decision is final.", "de": "Der Richter ist unparteiisch, und die Entscheidung ist endgültig.", "word": "h24084", "form": "pártatlan" }
     ],
