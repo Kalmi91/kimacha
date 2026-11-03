@@ -76,6 +76,53 @@ export function germanReadings(text: string): string[] {
 }
 
 /**
+ * Austrian and Swiss German words that are true equivalents of a standard (Germany) headword. The deck keeps the
+ * standard word as the headword and on the reveal; a learner who types the regional word (der Paradeiser for die
+ * Tomate) is right too. Key: the standard word lower-case, without article, gloss or plural note. Value: the
+ * regional answers, each with its own article (a noun keeps ITS gender: der Paradeiser, not die). Only pairs that
+ * mean the same thing in that region; AT = Austria, CH = Switzerland (also southern Germany where noted).
+ */
+export const deRegionalVariants: Record<string, string[]> = {
+  januar: ['der Jänner'], // AT
+  februar: ['der Feber'], // AT
+  tomate: ['der Paradeiser'], // AT
+  kartoffel: ['der Erdapfel'], // AT
+  blumenkohl: ['der Karfiol'], // AT
+  aprikose: ['die Marille'], // AT
+  quark: ['der Topfen'], // AT
+  sahne: ['das Obers', 'das Schlagobers', 'der Rahm'], // AT, CH (Rahm)
+  brötchen: ['die Semmel'], // AT, Bavaria
+  tüte: ['das Sackerl'], // AT
+  plastiktüte: ['das Plastiksackerl'], // AT
+  meerrettich: ['der Kren'], // AT
+  aubergine: ['die Melanzani'], // AT
+  'grüne bohne': ['die Fisole'], // AT
+  'grüne bohnen': ['die Fisolen'], // AT
+  fahrrad: ['das Velo'], // CH
+  bürgersteig: ['das Trottoir'], // CH
+  gehweg: ['das Trottoir'], // CH
+  handy: ['das Natel'], // CH
+  eis: ['die Glace'], // CH, ice cream
+  hähnchen: ['das Poulet'], // CH
+  hallo: ['grüezi', 'servus', 'grüß Gott'], // CH, AT, southern Germany
+  'dieses jahr': ['heuer'], // AT, southern Germany
+  krankenhaus: ['das Spital'], // AT, CH
+  stuhl: ['der Sessel'], // AT
+  schrank: ['der Kasten'], // AT
+  treppe: ['die Stiege'], // AT
+  bonbon: ['das Zuckerl'], // AT
+  parken: ['parkieren'], // CH
+};
+
+const DE_ARTICLE = /^(?:der|die|das)\s+/i;
+
+/** The regional (Austrian/Swiss) answers that stand for the standard German `answer`; empty for most words. */
+export function germanRegionalVariants(answer: string): string[] {
+  const key = withoutGloss(answer).toLowerCase().replace(DE_ARTICLE, '').trim();
+  return deRegionalVariants[key] ?? [];
+}
+
+/**
  * Every word list `text` may legitimately normalise to. One entry for most
  * languages; German adds its digraph reading, and only while accents are
  * forgiven — with strict accents on, ß and ä are the spelling being graded.
@@ -186,6 +233,10 @@ export function strictAnswerMatch(answer: string, correct: string, opts: MatchOp
       const swapped = withSwappedArticle(c);
       if (swapped) candidates.push(swapped);
     }
+  }
+  // German: the Austrian/Swiss word counts for the standard headword (the reveal still shows the standard one).
+  if (opts.lang === 'de') {
+    for (const c of [...candidates]) candidates.push(...germanRegionalVariants(c));
   }
   return candidates.some((candidate) =>
     normalizedForms(candidate, opts).some((c) => {

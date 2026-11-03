@@ -6,6 +6,7 @@ import { setPcicTarget, type PcicItem } from '@/data/pcic';
 import { cumulativeCorpusWordIds, getGrammarTopicIds } from '@/lib/games/content';
 import { findWordByText } from '@/data/words';
 import { germanReadings, strictAnswerMatch } from '@/lib/answerMatch';
+import { gradePcicAnswer } from '@/lib/pcicMatch';
 import { placementPoolFor } from '@/lib/exam/placementQuestions';
 import { mockAvailable, MOCK_LEVELS } from '@/lib/exam/mock/blueprint';
 import { mockInstruction } from '@/lib/exam/mock/author';
@@ -119,6 +120,29 @@ describe('typing German', () => {
     expect(strictAnswerMatch('die Strasse', 'die Straße', { lang: 'de' })).toBe(true);
     expect(strictAnswerMatch('schoen', 'schön', { lang: 'de' })).toBe(true);
     expect(strictAnswerMatch('die Hund', 'der Hund', { lang: 'de', eitherArticle: true })).toBe(false);
+  });
+});
+
+describe('Austrian and Swiss German words are right answers', () => {
+  it('accepts the regional word with its own article for the standard headword', () => {
+    expect(strictAnswerMatch('der Paradeiser', 'die Tomate', { lang: 'de' })).toBe(true);
+    expect(strictAnswerMatch('der jänner', 'der Januar', { lang: 'de' })).toBe(true);
+    expect(strictAnswerMatch('Velo', 'das Fahrrad', { lang: 'de' })).toBe(false);
+    expect(strictAnswerMatch('das Velo', 'das Fahrrad', { lang: 'de' })).toBe(true);
+    expect(strictAnswerMatch('Servus', 'hallo / hi', { lang: 'de' })).toBe(true);
+    expect(strictAnswerMatch('heuer', 'dieses Jahr (jetzt)', { lang: 'de' })).toBe(true);
+    expect(strictAnswerMatch('das Poulet', 'das Hähnchen / das Huhn', { lang: 'de' })).toBe(true);
+    expect(strictAnswerMatch('grüezi', 'hallo', { lang: 'de', strictAccents: true })).toBe(true);
+  });
+  it('keeps the wrong article and other languages wrong', () => {
+    expect(strictAnswerMatch('die Paradeiser', 'die Tomate', { lang: 'de' })).toBe(false);
+    expect(strictAnswerMatch('der Sessel', 'der Tisch', { lang: 'de' })).toBe(false);
+    expect(strictAnswerMatch('der Paradeiser', 'die Tomate', { lang: 'en' })).toBe(false);
+  });
+  it('grades a typed regional word exact and the reveal keeps the standard word', () => {
+    expect(gradePcicAnswer('der Paradeiser', 'die Tomate', false, 'de')).toEqual({ match: 'exact', best: 'die Tomate' });
+    expect(gradePcicAnswer('die Marille', 'die Aprikose', true, 'de')).toEqual({ match: 'exact', best: 'die Aprikose' });
+    expect(gradePcicAnswer('der Paradeiser', 'die Tomate', false, 'es').match).toBe('wrong');
   });
 });
 

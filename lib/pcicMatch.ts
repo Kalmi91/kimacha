@@ -5,7 +5,7 @@
 // matters grammatically, so it is
 // wrong, not near, even if the edit distance is only 1.
 
-import { germanReadings } from './answerMatch';
+import { germanReadings, germanRegionalVariants } from './answerMatch';
 import { levenshtein } from './levenshtein';
 import { stripTrailingPunct } from './charDiff';
 import type { Sm2Grade } from './sm2';
@@ -109,6 +109,18 @@ export function gradePcicAnswer(typed: string, target: string, strictAccents = f
   for (const alt of alternatives) {
     if (stripTrailingPunct(norm(alt)) === typedNorm) {
       return { match: 'exact', best: alt };
+    }
+  }
+
+  // German: an Austrian/Swiss word is right for the standard one; the reveal keeps the standard word.
+  if (lang === 'de') {
+    const typedForms = strictAccents ? [typedNorm] : germanReadings(typedNorm);
+    for (const alt of alternatives) {
+      for (const regional of germanRegionalVariants(alt)) {
+        const regionalNorm = stripTrailingPunct(norm(regional));
+        const forms = strictAccents ? [regionalNorm] : germanReadings(regionalNorm);
+        if (typedForms.some((r) => forms.includes(r))) return { match: 'exact', best: alt };
+      }
     }
   }
 
