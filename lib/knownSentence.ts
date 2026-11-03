@@ -167,12 +167,12 @@ function enTokenize(text: string): string[] {
     .filter(Boolean);
 }
 
-// Hungarian: the letters with an accent or a double acute (á é í ó ö ő ú ü ű) are part of a word, so a
-// token keeps them. The suffixed forms of a learned word are recognised by lib/huForms.ts (stem keys in the set).
+// Hungarian: the letters with an accent or a double acute (á é í ó ö ő ú ü ű) and the ñ of piñata are part of a
+// word, so a token keeps them. The suffixed forms of a learned word are recognised by lib/huForms.ts (stem keys in the set).
 function huTokenize(text: string): string[] {
   return text
     .toLowerCase()
-    .replace(/[^a-z0-9áéíóöőúüű\s]/g, ' ')
+    .replace(/[^a-z0-9áéíóöőúüűñ\s]/g, ' ')
     .split(/\s+/)
     .filter(Boolean);
 }

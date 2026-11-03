@@ -21,7 +21,9 @@ export { HU_CLOSED_CLASS } from '@/lib/huFormTables';
 
 export type Harmony = 'b' | 'f' | 'r';
 type NounKind = 'N' | 'A' | 'M';
-type NounCtx = 'a' | 'l' | 'v' | 'c' | 'i';
+// a: every ending, l: after a lengthened final a/e, v: vowel-initial endings only, c: the consonant-initial cases,
+// p: c + the superessive (vízen), q: p + the j-possessive (útja), i: the adjective -i.
+type NounCtx = 'a' | 'l' | 'v' | 'c' | 'p' | 'q' | 'i';
 
 const VOWELS = 'aáeéiíoóöőuúüű';
 const BACK_VOWELS = 'aáoóuú';
@@ -125,6 +127,10 @@ const POSS_AFTER_CONSONANT: [string, End | null][] = [
 interface NounSuffixes {
   all: ReadonlySet<string>;
   plain: ReadonlySet<string>;
+  /** `plain` + the superessive (-on/-en/-ön). */
+  onLong: ReadonlySet<string>;
+  /** `onLong` + the j-possessive chains (útja, hídjai). */
+  jLong: ReadonlySet<string>;
 }
 const nounSuffixCache = new Map<string, NounSuffixes>();
 
@@ -140,12 +146,12 @@ function nounSuffixes(tail: string, h: Harmony, kind: NounKind, forceConsonant: 
   const double = tail.length >= 2 && tail.slice(-1) === tail.slice(-2, -1) && !isVowel(tail.slice(-1));
   const end: End = vowelFinal ? V_END : { vowel: false, unit, direct, double };
   const all = new Set<string>();
-  const addWithCases = (template: string, after: End | null) => {
+  const addWithCases = (template: string, after: End | null, into: Set<string> = all) => {
     for (const base of expand(template, h)) {
-      all.add(base);
+      into.add(base);
       if (!after) continue;
       const { plain, rest } = caseTemplates(after);
-      for (const c of [...plain, ...rest]) for (const tail2 of expand(c, h)) all.add(base + tail2);
+      for (const c of [...plain, ...rest]) for (const tail2 of expand(c, h)) into.add(base + tail2);
     }
   };
   addWithCases('', end);
@@ -165,7 +171,14 @@ function nounSuffixes(tail: string, h: Harmony, kind: NounKind, forceConsonant: 
   }
   const plain = new Set<string>();
   for (const c of caseTemplates(end).plain) for (const s of expand(c, h)) plain.add(s);
-  const result = { all, plain };
+  // A long (unshortened) stem of a stem-changing noun: the consonant-initial cases, the superessive, the j-possessive.
+  const onLong = new Set(plain);
+  for (const s of expand(vowelFinal ? 'n' : 'On', h)) onLong.add(s);
+  const jLong = new Set(onLong);
+  for (const [template, after] of vowelFinal ? POSS_AFTER_VOWEL : POSS_AFTER_CONSONANT) {
+    if (template.startsWith('j')) addWithCases(template, after, jLong);
+  }
+  const result = { all, plain, onLong, jLong };
   nounSuffixCache.set(cacheKey, result);
   return result;
 }
@@ -175,6 +188,8 @@ function nounSuffixOk(stem: string, h: Harmony, kind: NounKind, ctx: NounCtx, su
   const tail = stem.slice(-3);
   if (ctx === 'i') return suffix === 'i';
   if (ctx === 'c') return suffix === '' || nounSuffixes(tail, h, kind, false).plain.has(suffix);
+  if (ctx === 'p') return suffix === '' || nounSuffixes(tail, h, kind, false).onLong.has(suffix);
+  if (ctx === 'q') return suffix === '' || nounSuffixes(tail, h, kind, false).jLong.has(suffix);
   if (ctx === 'v') return suffix !== '' && isVowel(suffix[0]) && nounSuffixes(tail, h, kind, true).all.has(suffix);
   if (ctx === 'l') return suffix !== '' && nounSuffixes(tail, h, kind, false).all.has(suffix);
   return nounSuffixes(tail, h, kind, false).all.has(suffix);
@@ -183,6 +198,8 @@ function nounSuffixOk(stem: string, h: Harmony, kind: NounKind, ctx: NounCtx, su
 interface IrregularNoun {
   stems: string[];
   keepRegular: boolean;
+  /** What the long stem (the word itself) takes: the consonant-initial cases (c), + the superessive (p), + the j-possessive (q). */
+  long: 'c' | 'p' | 'q';
 }
 let irregularNouns: Map<string, IrregularNoun> | undefined;
 function irregularNounTable(): Map<string, IrregularNoun> {
@@ -190,13 +207,14 @@ function irregularNounTable(): Map<string, IrregularNoun> {
   irregularNouns = new Map();
   for (const entry of STEM_CHANGING_NOUNS.split(/\s+/).filter(Boolean)) {
     const keepRegular = entry.endsWith('+');
-    const [word, stems] = entry.replace(/\+$/, '').split('>');
-    irregularNouns.set(word, { stems: stems.split(','), keepRegular });
+    const long = entry.endsWith('~j') ? 'q' : entry.endsWith('~') ? 'p' : 'c';
+    const [word, stems] = entry.replace(/(?:\+|~j?)$/, '').split('>');
+    irregularNouns.set(word, { stems: stems.split(','), keepRegular, long });
   }
   return irregularNouns;
 }
 
-const NOUN_WORD = /^[a-záéíóöőúüű]{2,}$/;
+const NOUN_WORD = /^[a-záéíóöőúüűñ]{2,}$/;
 
 function nounKeys(head: string, kind: NounKind): string[] {
   if (!NOUN_WORD.test(head)) return [];
@@ -204,7 +222,7 @@ function nounKeys(head: string, kind: NounKind): string[] {
   const keys: string[] = [];
   const irregular = irregularNounTable().get(head);
   if (irregular) {
-    keys.push(`#${kind}${h}c:${head}`);
+    keys.push(`#${kind}${h}${irregular.long}:${head}`);
     for (const stem of irregular.stems) {
       if (stem.endsWith('!')) keys.push(`#${kind}${h}l:${stem.slice(0, -1)}`);
       else keys.push(`#${kind}${h}v:${stem}`);
@@ -223,7 +241,7 @@ function nounKeys(head: string, kind: NounKind): string[] {
 
 const NOUN_KINDS: NounKind[] = ['N', 'A', 'M'];
 const HARMONIES: Harmony[] = ['b', 'f', 'r'];
-const NOUN_CTXS: NounCtx[] = ['a', 'l', 'v', 'c', 'i'];
+const NOUN_CTXS: NounCtx[] = ['a', 'l', 'v', 'c', 'p', 'q', 'i'];
 const MAX_SUFFIX = 11;
 const NOUN_KEY_PREFIXES = NOUN_KINDS.flatMap((kind) =>
   HARMONIES.flatMap((h) => NOUN_CTXS.map((ctx) => ({ kind, h, ctx, prefix: `#${kind}${h}${ctx}:` }))),
@@ -270,8 +288,11 @@ interface VerbEndings {
   /** Present of an -ik verb (eszem, eszel, eszik, ...). */
   ik: string[];
   def: string[];
+  /** Past indefinite and definite of every stem (olvastam, olvasta; the 3rd person singular -ott/-ett/-ött). */
   past: string[];
   pastDef: string[];
+  /** The rest of the -ott- past (tartottam, tartotta): only stems ending in t, and a few listed ones (hall). */
+  pastOtt: string[];
   cond: string[];
   condDef: string[];
   inf: string[];
@@ -287,8 +308,9 @@ const VERB_ENDINGS: Record<Harmony, VerbEndings> = {
     sibilant: 'ol',
     ik: ['om', 'ol', 'ik', 'unk', 'tok', 'nak', 'anak'],
     def: ['om', 'od', 'ja', 'juk', 'játok', 'ják'],
-    past: ['tam', 'tál', 't', 'ott', 'tunk', 'tatok', 'tak', 'ottam', 'ottál', 'ottunk', 'ottatok', 'ottak'],
-    pastDef: ['tam', 'tad', 'ta', 'tuk', 'tátok', 'ták', 'otta', 'ottam', 'ottad', 'ottuk', 'ottátok', 'ották'],
+    past: ['tam', 'tál', 't', 'ott', 'tunk', 'tatok', 'tak'],
+    pastDef: ['tam', 'tad', 'ta', 'tuk', 'tátok', 'ták'],
+    pastOtt: ['ottam', 'ottál', 'ottunk', 'ottatok', 'ottak', 'otta', 'ottad', 'ottuk', 'ottátok', 'ották'],
     cond: ['nék', 'nál', 'na', 'nánk', 'nátok', 'nának'],
     condDef: ['nám', 'nád', 'ná', 'nánk', 'nátok', 'nák'],
     inf: ['ni', 'ani'],
@@ -301,8 +323,9 @@ const VERB_ENDINGS: Record<Harmony, VerbEndings> = {
     sibilant: 'el',
     ik: ['em', 'el', 'ik', 'ünk', 'tek', 'nek', 'enek'],
     def: ['em', 'ed', 'i', 'jük', 'itek', 'ik'],
-    past: ['tem', 'tél', 't', 'ett', 'tünk', 'tetek', 'tek', 'ettem', 'ettél', 'ettünk', 'ettetek', 'ettek'],
-    pastDef: ['tem', 'ted', 'te', 'tük', 'tétek', 'ték', 'ette', 'ettem', 'etted', 'ettük', 'ettétek', 'ették'],
+    past: ['tem', 'tél', 't', 'ett', 'tünk', 'tetek', 'tek'],
+    pastDef: ['tem', 'ted', 'te', 'tük', 'tétek', 'ték'],
+    pastOtt: ['ettem', 'ettél', 'ettünk', 'ettetek', 'ettek', 'ette', 'etted', 'ettük', 'ettétek', 'ették'],
     cond: ['nék', 'nél', 'ne', 'nénk', 'nétek', 'nének'],
     condDef: ['ném', 'néd', 'né', 'nénk', 'nétek', 'nék'],
     inf: ['ni', 'eni'],
@@ -315,8 +338,9 @@ const VERB_ENDINGS: Record<Harmony, VerbEndings> = {
     sibilant: 'öl',
     ik: ['öm', 'öl', 'ik', 'ünk', 'tök', 'nek', 'enek'],
     def: ['öm', 'öd', 'i', 'jük', 'itek', 'ik'],
-    past: ['tem', 'tél', 't', 'ött', 'tünk', 'tetek', 'tek', 'öttem', 'öttél', 'öttünk', 'öttetek', 'öttek'],
-    pastDef: ['tem', 'ted', 'te', 'tük', 'tétek', 'ték', 'ötte', 'öttem', 'ötted', 'öttük', 'öttétek', 'ötték'],
+    past: ['tem', 'tél', 't', 'ött', 'tünk', 'tetek', 'tek'],
+    pastDef: ['tem', 'ted', 'te', 'tük', 'tétek', 'ték'],
+    pastOtt: ['öttem', 'öttél', 'öttünk', 'öttetek', 'öttek', 'ötte', 'ötted', 'öttük', 'öttétek', 'ötték'],
     cond: ['nék', 'nél', 'ne', 'nénk', 'nétek', 'nének'],
     condDef: ['ném', 'néd', 'né', 'nénk', 'nétek', 'nék'],
     inf: ['ni', 'eni'],
@@ -325,6 +349,10 @@ const VERB_ENDINGS: Record<Harmony, VerbEndings> = {
     impDef: ['d', 'jem', 'je', 'jük', 'jétek', 'jék'],
   },
 };
+
+// Stems that do not end in t but still take the whole -ott- past (hallottam, játszottak, megoldották); every other stem
+// has only the 3rd person -ott (olvasott, but olvastam). Checked by the end of the stem, so a preverb in front fits.
+const OTT_STEM_ENDS = ['hall', 'játsz', 'old'];
 
 /** The suffix a j-initial ending takes after the stem (olvas + ja = olvassa, főz + jük = főzzük); null = none. */
 function joinJ(stem: string, ending: string): string | null {
@@ -363,6 +391,7 @@ function verbSuffixes(stem: string, h: Harmony, type: VerbType): ReadonlySet<str
   }
   addAll(e.past);
   addAll(e.pastDef);
+  if (stem.endsWith('t')) addAll(e.pastOtt);
   addAll(e.cond);
   addAll(e.inf);
   addAll(e.infPerson);
@@ -482,9 +511,13 @@ function plainVerbKnown(word: string, known: ReadonlySet<string>): boolean {
         if (!known.has(`#V${type}${h}:${stem}`)) continue;
         const suffix = word.slice(i);
         if (verbSuffixes(stem, h, type).has(suffix)) return true;
-        // can / may: -hat / -het, then the present or past endings (kérhetek, kaphatok, választhatsz).
+        if (OTT_STEM_ENDS.some((end) => stem.endsWith(end)) && VERB_ENDINGS[h].pastOtt.includes(suffix)) return true;
+        // can / may: -hat / -het, then the present or past endings (kérhetek, kaphatok, választhatsz). The -hat/-het
+        // itself ends in t but doubles it (kaphattam), so it has no -ott- paradigm of its own (kaphatottam is not a form).
         const modal = h === 'b' ? 'hat' : 'het';
-        if (suffix.startsWith(modal) && verbSuffixes(modal, h === 'b' ? 'b' : 'f', 'n').has(suffix.slice(3))) return true;
+        const modalH = h === 'b' ? 'b' : 'f';
+        const modalRest = suffix.slice(3);
+        if (suffix.startsWith(modal) && !VERB_ENDINGS[modalH].pastOtt.includes(modalRest) && verbSuffixes(modal, modalH, 'n').has(modalRest)) return true;
       }
     }
   }
@@ -512,7 +545,7 @@ export function huStemKeys(text: string, pos?: string): string[] {
   for (const alternative of text.toLowerCase().split('/')) {
     const tokens = alternative
       .replace(/\([^)]*\)/g, ' ')
-      .replace(/[^a-záéíóöőúüű\s]/g, ' ')
+      .replace(/[^a-záéíóöőúüűñ\s]/g, ' ')
       .split(/\s+/)
       .filter(Boolean);
     if (tokens.length === 0) continue;

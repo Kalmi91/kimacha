@@ -315,6 +315,13 @@ describe('knownSentence, Hungarian', () => {
     expect(sentenceTokens('Az őszi főzőkanál nagyon szűk, és kék.', 'hu')).toEqual(['az', 'őszi', 'főzőkanál', 'nagyon', 'szűk', 'és', 'kék']);
   });
 
+  it('keeps the ñ of piñata inside a token, and the piñata cards recognise their forms', () => {
+    expect(sentenceTokens('Egy piñata és két piñatát.', 'hu')).toEqual(['egy', 'piñata', 'és', 'két', 'piñatát']);
+    const ctx = { learned: [{ text: 'a piñata (papírmasé figura)', pos: 'noun' }] };
+    expect(unknownTokens('A piñatát és a piñaták.', 'hu', ctx)).toEqual([]);
+    expect(unknownTokens('A piñatat.', 'hu', ctx)).toEqual(['piñatat']);
+  });
+
   it('a sentence is known when every token is a learned form or a free word', () => {
     const ctx = { learned: ['a fű', 'zöld'] };
     expect(isSentenceKnown('A fű zöld.', 'hu', ctx)).toBe(true);

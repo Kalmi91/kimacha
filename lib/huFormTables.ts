@@ -4,14 +4,16 @@
 
 // Stem-changing nouns (hand table, the words of the corpus). "word>stem,stem": `word` stays the stem for the
 // consonant-initial cases (lóval, lónak), each `stem` is the one before a vowel (lovat, lovak, lova, lovon).
-// A trailing "+" keeps the ordinary paradigm of `word` as well (szó: szót and szavak). A stem ending in "!" is
-// one that, like the lengthened iroda -> irodá-, takes every ending (nagybátyá-m).
+// A trailing "+" keeps the ordinary paradigm of `word` as well (szó: szót and szavak). A trailing "~" keeps the
+// long `word` only before the consonant-initial endings and the superessive (víz: vízben, vízzel, vízen, but vizet,
+// vizek; the accusative and the plural are the short stem's); "~j" adds the j-possessive (út: útja). A stem ending
+// in "!" is one that, like the lengthened iroda -> irodá-, takes every ending (nagybátyá-m).
 export const STEM_CHANGING_NOUNS = `
-ló>lov tó>tav kő>köv fű>füv hó>hav szó>szav+ nyár>nyar+ tél>tel+ víz>viz+ kéz>kez+ tűz>tüz+
-út>ut+ kút>kut+ híd>hid+ ég>eg+ nyúl>nyul név>nev+ tér>ter+ erő>erej+ idő>idej+ fiú>fi+
-lélek>lelk ajak>ajk bokor>bokr tükör>tükr torony>torny ökör>ökr teher>terh szerelem>szerelm sarok>sark+ farok>fark+ torok>tork+
-étterem>étterm+ terem>term+ derék>derek+ egér>eger+ pohár>pohar+ tenyér>tenyer+ gyökér>gyöker+
-kenyér>kenyer levél>level tehén>tehen madár>madar+
+ló>lov tó>tav kő>köv fű>füv hó>hav szó>szav+ nyár>nyar~ tél>tel~ víz>viz~ kéz>kez~ tűz>tüz~
+út>ut~j kút>kut~j híd>hid~j ég>eg~ nyúl>nyul név>nev~ tér>ter~ erő>erej+ idő>idej+ fiú>fi+
+lélek>lelk ajak>ajk bokor>bokr tükör>tükr torony>torny ökör>ökr teher>terh szerelem>szerelm sarok>sark farok>fark torok>tork
+étterem>étterm terem>term derék>derek egér>eger~ pohár>pohar~ tenyér>tenyer gyökér>gyöker
+kenyér>kenyer levél>level tehén>tehen madár>madar~
 szülő>szül+ szülők>szül+ nagyszülő>nagyszül+ nagyszülők>nagyszül+ anya>anyj+ apa>apj+ nagyapa>nagyapj+
 nagybácsi>nagybátyá!+ nagynéni>nagynéné!+
 `;
@@ -29,6 +31,12 @@ export const RAW_NOUN_FORMS: Record<string, string> = {
   óra: 'órakor',
   húsvét: 'húsvétkor',
   könnyű: 'könnyebb könnyebben',
+  // The irregular comparatives (nagyobb, magasabb are regular and need no row).
+  kicsi: 'kisebb kisebbet kisebbek kisebben legkisebb',
+  jó: 'jobb jobbat jobbak jobban legjobb',
+  szép: 'szebb szebbet szebbek szebben legszebb',
+  hosszú: 'hosszabb hosszabbat hosszabbak hosszabban leghosszabb',
+  nehéz: 'nehezebb nehezebbet nehezebbek nehezebben legnehezebb',
 };
 // Irregular verbs, every form listed (the regular endings do not fit them). A family is switched on by any of
 // its forms in a learned verb entry; its forms then count as known, with a preverb in front as well.
@@ -92,7 +100,7 @@ const CLOSED_CLASS_SOURCE = `
   mellé alá elé fölé mögé közé mellől alól elől fölül mögül közül felől számára részére
   közelében közelébe közeléből
   fel le át rá vissza össze haza oda ide
-  két sok sokat kevés keveset több többet néhány összes minden mindent mindennek mindenben mindenki mindenkit
+  két sok sokat kevés keveset kevesebb kevesebbet több többet néhány összes minden mindent mindennek mindenben mindenki mindenkit
   mindenkinek mindenkivel mindenkitől mindenkiről mindenkiért
 `;
 export const HU_CLOSED_CLASS: string[] = CLOSED_CLASS_SOURCE.split(/\s+/).filter(Boolean);
