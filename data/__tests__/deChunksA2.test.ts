@@ -61,7 +61,7 @@ describe('chunks-de-a2.json', () => {
       }
     }
     expect(problems).toEqual([]);
-    expect(Object.keys(steps).length).toBeGreaterThanOrEqual(950);
+    expect(Object.keys(steps).length).toBeGreaterThanOrEqual(1150);
   });
 });
 
