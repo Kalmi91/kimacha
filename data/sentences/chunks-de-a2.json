@@ -5095,7 +5095,7 @@
   ],
   "d320313": [
     {
-      "de": "Das Auto ist kollidiert.",
+      "de": "Das Auto ist zusammengestoßen.",
       "en": "The car collided.",
       "es": "El carro chocó.",
       "hu": "Az autó ütközött."
@@ -5143,10 +5143,10 @@
   ],
   "d320648": [
     {
-      "de": "Wir bauen ein Zelt auf.",
-      "en": "We set up a tent.",
-      "es": "Armamos una tienda de campaña.",
-      "hu": "Felállítunk egy sátrat."
+      "de": "Wir bauen das Zelt auf.",
+      "en": "We set up the tent.",
+      "es": "Armamos la tienda de campaña.",
+      "hu": "Felállítjuk a sátrat."
     }
   ],
   "d320657": [
@@ -5173,16 +5173,16 @@
   ],
   "d320716": [
     {
-      "de": "Er ist unsympathisch.",
+      "de": "Er ist unfreundlich.",
       "en": "He is unfriendly.",
       "es": "Es antipático.",
-      "hu": "Nem szimpatikus."
+      "hu": "Barátságtalan."
     },
     {
-      "de": "Er ist nicht freundlich.",
-      "en": "He is not kind.",
-      "es": "No es amable.",
-      "hu": "Nem barátságos."
+      "de": "Er ist nicht nett.",
+      "en": "He is not nice.",
+      "es": "No es simpático.",
+      "hu": "Nem kedves."
     }
   ],
   "d320717": [
@@ -5293,10 +5293,10 @@
       "hu": "Egy kis étteremben eszünk."
     },
     {
-      "de": "Wir essen in der Nähe vom Büro.",
-      "en": "We eat near the office.",
-      "es": "Comemos cerca de la oficina.",
-      "hu": "Az iroda közelében eszünk."
+      "de": "Wir essen nahe dem Büro zu Mittag.",
+      "en": "We eat lunch near the office.",
+      "es": "Almorzamos cerca de la oficina.",
+      "hu": "Az iroda közelében ebédelünk."
     }
   ],
   "d320903": [
@@ -5309,10 +5309,10 @@
   ],
   "d320904": [
     {
-      "de": "Der Junge schweigt.",
-      "en": "The boy stays silent.",
+      "de": "Der Junge verstummt.",
+      "en": "The boy falls silent.",
       "es": "El niño se queda callado.",
-      "hu": "A fiú hallgat."
+      "hu": "A fiú elhallgat."
     }
   ],
   "d320976": [
@@ -5547,7 +5547,7 @@
   ],
   "d321188": [
     {
-      "de": "Der Abflug ist um neun Uhr.",
+      "de": "Die Abfahrt ist um neun Uhr.",
       "en": "The departure is at nine.",
       "es": "La salida es a las nueve.",
       "hu": "Az indulás kilenc órakor van."
@@ -8163,10 +8163,16 @@
   ],
   "d320163": [
     {
-      "de": "Der Bus braucht lange.",
-      "en": "The bus takes long.",
-      "es": "El autobús tarda mucho.",
-      "hu": "A busz sokáig tart."
+      "de": "Es dauert lange.",
+      "en": "It takes a long time.",
+      "es": "Tarda mucho.",
+      "hu": "Sokáig tart."
+    },
+    {
+      "de": "Heute dauert es lange.",
+      "en": "It takes a long time today.",
+      "es": "Hoy tarda mucho.",
+      "hu": "Ma sokáig tart."
     }
   ],
   "d101061": [
