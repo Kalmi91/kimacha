@@ -34,6 +34,24 @@ const de: typeof en = {
     weeklyGoalDoneTag: '✓ FERTIG',
     missingVoice: (langs: string) =>
       `⚠️ Keine Stimme installiert für: ${langs}. Lade sie in den Text-to-Speech-Einstellungen des Telefons herunter; bis dahin bleibt die App in dieser Sprache stumm.`,
+    // Einstellungen -> Bessere Stimme (Beta): die neuronalen Stimmen auf dem Telefon (lib/neuralModels.ts).
+    betterVoice: {
+      title: 'Bessere Stimme (Beta)',
+      download: (mb: string) => `Herunterladen (${mb})`,
+      downloading: (percent: number) => `Lädt herunter… ${percent}%`,
+      unpacking: 'Wird entpackt…',
+      wifi: 'WLAN empfohlen',
+      on: 'An',
+      off: 'Aus: die Stimme des Telefons spricht',
+      retry: 'Ein Teil des Downloads ist fehlgeschlagen. Tippe, um es erneut zu versuchen',
+      sentences: (lang: string) => `Satzstimme: ${lang}`,
+      piper: 'Piper (schnell)',
+      kokoro: 'Kokoro (schöner, langsamer)',
+      kokoroSize: (mb: string) => `Kokoro braucht einen Download von ${mb}`,
+      confirmTitle: 'Die bessere Stimme herunterladen?',
+      confirmMessage: (mb: string) => `Das lädt ${mb} herunter (die Wortaufnahmen und die Stimmen). Mit mobilen Daten zählt es zu deinem Datenvolumen, deshalb empfehlen wir WLAN.`,
+      confirmYes: 'Herunterladen',
+    },
     dailyNewLimit: 'Neue Wörter pro Tag',
     dailyNewLimitWords: (n: string) => `${n} Wörter / Tag`,
     beta: {
